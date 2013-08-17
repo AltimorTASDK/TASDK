@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_ClientTracer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrProjectile;
@@ -10,9 +11,9 @@ extern(C++) interface TrProj_ClientTracer : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_ClientTracer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_ClientTracer")()); }
 	private static __gshared TrProj_ClientTracer mDefaultProperties;
-	@property final static TrProj_ClientTracer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_ClientTracer)("TrProj_ClientTracer TribesGame.Default__TrProj_ClientTracer")); }
+	@property final static TrProj_ClientTracer DefaultProperties() { mixin(MGDPC!(TrProj_ClientTracer, "TrProj_ClientTracer TribesGame.Default__TrProj_ClientTracer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,12 +24,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_ClientTracer.InitProjectile")); }
-			ScriptFunction GetExplosionSound() { return mGetExplosionSound ? mGetExplosionSound : (mGetExplosionSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_ClientTracer.GetExplosionSound")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_ClientTracer.ProcessTouch")); }
+			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_ClientTracer.InitProjectile")()); }
+			ScriptFunction GetExplosionSound() { mixin(MGF!("mGetExplosionSound", "Function TribesGame.TrProj_ClientTracer.GetExplosionSound")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_ClientTracer.ProcessTouch")()); }
 		}
 	}
-	@property final auto ref ScriptClass m_InheritedClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 816); }
+	@property final auto ref ScriptClass m_InheritedClass() { mixin(MGPC!(ScriptClass, 816)()); }
 final:
 	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
 	{

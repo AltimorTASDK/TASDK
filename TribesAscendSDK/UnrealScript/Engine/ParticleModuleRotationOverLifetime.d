@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleRotationOverLifetime;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleRotationBase;
 import UnrealScript.Core.DistributionFloat;
 
@@ -8,13 +9,13 @@ extern(C++) interface ParticleModuleRotationOverLifetime : ParticleModuleRotatio
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleRotationOverLifetime")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleRotationOverLifetime")()); }
 	private static __gshared ParticleModuleRotationOverLifetime mDefaultProperties;
-	@property final static ParticleModuleRotationOverLifetime DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleRotationOverLifetime)("ParticleModuleRotationOverLifetime Engine.Default__ParticleModuleRotationOverLifetime")); }
+	@property final static ParticleModuleRotationOverLifetime DefaultProperties() { mixin(MGDPC!(ParticleModuleRotationOverLifetime, "ParticleModuleRotationOverLifetime Engine.Default__ParticleModuleRotationOverLifetime")()); }
 	@property final
 	{
-		@property final auto ref DistributionFloat.RawDistributionFloat RotationOverLife() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 72); }
-		bool Scale() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x1) != 0; }
-		bool Scale(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x1; } return val; }
+		@property final auto ref DistributionFloat.RawDistributionFloat RotationOverLife() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 72)()); }
+		bool Scale() { mixin(MGBPC!(100, 0x1)()); }
+		bool Scale(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}
 }

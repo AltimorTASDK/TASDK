@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTHoldSpot;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTDefensePoint;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.UTGame.UTVehicle;
@@ -11,9 +12,9 @@ extern(C++) interface UTHoldSpot : UTDefensePoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTHoldSpot")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTHoldSpot")()); }
 	private static __gshared UTHoldSpot mDefaultProperties;
-	@property final static UTHoldSpot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTHoldSpot)("UTHoldSpot UTGame.Default__UTHoldSpot")); }
+	@property final static UTHoldSpot DefaultProperties() { mixin(MGDPC!(UTHoldSpot, "UTHoldSpot UTGame.Default__UTHoldSpot")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,17 +27,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHoldSpot.PreBeginPlay")); }
-			ScriptFunction GetMoveTarget() { return mGetMoveTarget ? mGetMoveTarget : (mGetMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHoldSpot.GetMoveTarget")); }
-			ScriptFunction FreePoint() { return mFreePoint ? mFreePoint : (mFreePoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHoldSpot.FreePoint")); }
-			ScriptFunction SpecifyEndAnchor() { return mSpecifyEndAnchor ? mSpecifyEndAnchor : (mSpecifyEndAnchor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHoldSpot.SpecifyEndAnchor")); }
-			ScriptFunction NotifyAnchorFindingResult() { return mNotifyAnchorFindingResult ? mNotifyAnchorFindingResult : (mNotifyAnchorFindingResult = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHoldSpot.NotifyAnchorFindingResult")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTHoldSpot.PreBeginPlay")()); }
+			ScriptFunction GetMoveTarget() { mixin(MGF!("mGetMoveTarget", "Function UTGame.UTHoldSpot.GetMoveTarget")()); }
+			ScriptFunction FreePoint() { mixin(MGF!("mFreePoint", "Function UTGame.UTHoldSpot.FreePoint")()); }
+			ScriptFunction SpecifyEndAnchor() { mixin(MGF!("mSpecifyEndAnchor", "Function UTGame.UTHoldSpot.SpecifyEndAnchor")()); }
+			ScriptFunction NotifyAnchorFindingResult() { mixin(MGF!("mNotifyAnchorFindingResult", "Function UTGame.UTHoldSpot.NotifyAnchorFindingResult")()); }
 		}
 	}
 	@property final auto ref
 	{
-		NavigationPoint LastAnchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 744); }
-		UTVehicle HoldVehicle() { return *cast(UTVehicle*)(cast(size_t)cast(void*)this + 740); }
+		NavigationPoint LastAnchor() { mixin(MGPC!(NavigationPoint, 744)()); }
+		UTVehicle HoldVehicle() { mixin(MGPC!(UTVehicle, 740)()); }
 	}
 final:
 	void PreBeginPlay()

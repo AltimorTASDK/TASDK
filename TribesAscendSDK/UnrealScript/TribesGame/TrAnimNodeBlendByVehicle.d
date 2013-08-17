@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrAnimNodeBlendByVehicle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.TribesGame.TrAnimNodeBlendList;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrAnimNodeBlendByVehicle : TrAnimNodeBlendList
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByVehicle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendByVehicle")()); }
 	private static __gshared TrAnimNodeBlendByVehicle mDefaultProperties;
-	@property final static TrAnimNodeBlendByVehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByVehicle)("TrAnimNodeBlendByVehicle TribesGame.Default__TrAnimNodeBlendByVehicle")); }
+	@property final static TrAnimNodeBlendByVehicle DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByVehicle, "TrAnimNodeBlendByVehicle TribesGame.Default__TrAnimNodeBlendByVehicle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayNoVehicleAnim() { return mPlayNoVehicleAnim ? mPlayNoVehicleAnim : (mPlayNoVehicleAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayNoVehicleAnim")); }
-			ScriptFunction PlayDrivingAnim() { return mPlayDrivingAnim ? mPlayDrivingAnim : (mPlayDrivingAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayDrivingAnim")); }
-			ScriptFunction PlayEnterAnim() { return mPlayEnterAnim ? mPlayEnterAnim : (mPlayEnterAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayEnterAnim")); }
-			ScriptFunction PlayExitAnim() { return mPlayExitAnim ? mPlayExitAnim : (mPlayExitAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayExitAnim")); }
-			ScriptFunction PlayChangeSeatAnim() { return mPlayChangeSeatAnim ? mPlayChangeSeatAnim : (mPlayChangeSeatAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayChangeSeatAnim")); }
+			ScriptFunction PlayNoVehicleAnim() { mixin(MGF!("mPlayNoVehicleAnim", "Function TribesGame.TrAnimNodeBlendByVehicle.PlayNoVehicleAnim")()); }
+			ScriptFunction PlayDrivingAnim() { mixin(MGF!("mPlayDrivingAnim", "Function TribesGame.TrAnimNodeBlendByVehicle.PlayDrivingAnim")()); }
+			ScriptFunction PlayEnterAnim() { mixin(MGF!("mPlayEnterAnim", "Function TribesGame.TrAnimNodeBlendByVehicle.PlayEnterAnim")()); }
+			ScriptFunction PlayExitAnim() { mixin(MGF!("mPlayExitAnim", "Function TribesGame.TrAnimNodeBlendByVehicle.PlayExitAnim")()); }
+			ScriptFunction PlayChangeSeatAnim() { mixin(MGF!("mPlayChangeSeatAnim", "Function TribesGame.TrAnimNodeBlendByVehicle.PlayChangeSeatAnim")()); }
 		}
 	}
 	enum EVehicleAnims : ubyte
@@ -39,7 +40,7 @@ public extern(D):
 		VANIM_ChangeSeat = 4,
 		VANIM_MAX = 5,
 	}
-	@property final auto ref TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 292); }
+	@property final auto ref TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 292)()); }
 final:
 	void PlayNoVehicleAnim()
 	{

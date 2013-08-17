@@ -1,6 +1,7 @@
 module UnrealScript.PlatformCommon.TgGameEngine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameEngine;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface TgGameEngine : GameEngine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgGameEngine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class PlatformCommon.TgGameEngine")()); }
 	private static __gshared TgGameEngine mDefaultProperties;
-	@property final static TgGameEngine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TgGameEngine)("TgGameEngine PlatformCommon.Default__TgGameEngine")); }
+	@property final static TgGameEngine DefaultProperties() { mixin(MGDPC!(TgGameEngine, "TgGameEngine PlatformCommon.Default__TgGameEngine")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,22 +37,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnMarshalEvent() { return mOnMarshalEvent ? mOnMarshalEvent : (mOnMarshalEvent = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.OnMarshalEvent")); }
-			ScriptFunction SetFunction() { return mSetFunction ? mSetFunction : (mSetFunction = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SetFunction")); }
-			ScriptFunction SetFieldInt() { return mSetFieldInt ? mSetFieldInt : (mSetFieldInt = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SetFieldInt")); }
-			ScriptFunction SetFieldFloat() { return mSetFieldFloat ? mSetFieldFloat : (mSetFieldFloat = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SetFieldFloat")); }
-			ScriptFunction SetFieldString() { return mSetFieldString ? mSetFieldString : (mSetFieldString = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SetFieldString")); }
-			ScriptFunction ClearMarshal() { return mClearMarshal ? mClearMarshal : (mClearMarshal = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.ClearMarshal")); }
-			ScriptFunction SendMarshal() { return mSendMarshal ? mSendMarshal : (mSendMarshal = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SendMarshal")); }
-			ScriptFunction SendMarshalAll() { return mSendMarshalAll ? mSendMarshalAll : (mSendMarshalAll = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SendMarshalAll")); }
-			ScriptFunction GetFieldInt() { return mGetFieldInt ? mGetFieldInt : (mGetFieldInt = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.GetFieldInt")); }
-			ScriptFunction GetFieldFloat() { return mGetFieldFloat ? mGetFieldFloat : (mGetFieldFloat = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.GetFieldFloat")); }
-			ScriptFunction GetFieldString() { return mGetFieldString ? mGetFieldString : (mGetFieldString = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.GetFieldString")); }
-			ScriptFunction AddMarshalEventDelegate() { return mAddMarshalEventDelegate ? mAddMarshalEventDelegate : (mAddMarshalEventDelegate = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.AddMarshalEventDelegate")); }
-			ScriptFunction ClearMarshalEventDelegate() { return mClearMarshalEventDelegate ? mClearMarshalEventDelegate : (mClearMarshalEventDelegate = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.ClearMarshalEventDelegate")); }
-			ScriptFunction SendCtrlRequest() { return mSendCtrlRequest ? mSendCtrlRequest : (mSendCtrlRequest = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SendCtrlRequest")); }
-			ScriptFunction SendGameRequest() { return mSendGameRequest ? mSendGameRequest : (mSendGameRequest = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.SendGameRequest")); }
-			ScriptFunction HandlePlayerCommandInput() { return mHandlePlayerCommandInput ? mHandlePlayerCommandInput : (mHandlePlayerCommandInput = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgGameEngine.HandlePlayerCommandInput")); }
+			ScriptFunction OnMarshalEvent() { mixin(MGF!("mOnMarshalEvent", "Function PlatformCommon.TgGameEngine.OnMarshalEvent")()); }
+			ScriptFunction SetFunction() { mixin(MGF!("mSetFunction", "Function PlatformCommon.TgGameEngine.SetFunction")()); }
+			ScriptFunction SetFieldInt() { mixin(MGF!("mSetFieldInt", "Function PlatformCommon.TgGameEngine.SetFieldInt")()); }
+			ScriptFunction SetFieldFloat() { mixin(MGF!("mSetFieldFloat", "Function PlatformCommon.TgGameEngine.SetFieldFloat")()); }
+			ScriptFunction SetFieldString() { mixin(MGF!("mSetFieldString", "Function PlatformCommon.TgGameEngine.SetFieldString")()); }
+			ScriptFunction ClearMarshal() { mixin(MGF!("mClearMarshal", "Function PlatformCommon.TgGameEngine.ClearMarshal")()); }
+			ScriptFunction SendMarshal() { mixin(MGF!("mSendMarshal", "Function PlatformCommon.TgGameEngine.SendMarshal")()); }
+			ScriptFunction SendMarshalAll() { mixin(MGF!("mSendMarshalAll", "Function PlatformCommon.TgGameEngine.SendMarshalAll")()); }
+			ScriptFunction GetFieldInt() { mixin(MGF!("mGetFieldInt", "Function PlatformCommon.TgGameEngine.GetFieldInt")()); }
+			ScriptFunction GetFieldFloat() { mixin(MGF!("mGetFieldFloat", "Function PlatformCommon.TgGameEngine.GetFieldFloat")()); }
+			ScriptFunction GetFieldString() { mixin(MGF!("mGetFieldString", "Function PlatformCommon.TgGameEngine.GetFieldString")()); }
+			ScriptFunction AddMarshalEventDelegate() { mixin(MGF!("mAddMarshalEventDelegate", "Function PlatformCommon.TgGameEngine.AddMarshalEventDelegate")()); }
+			ScriptFunction ClearMarshalEventDelegate() { mixin(MGF!("mClearMarshalEventDelegate", "Function PlatformCommon.TgGameEngine.ClearMarshalEventDelegate")()); }
+			ScriptFunction SendCtrlRequest() { mixin(MGF!("mSendCtrlRequest", "Function PlatformCommon.TgGameEngine.SendCtrlRequest")()); }
+			ScriptFunction SendGameRequest() { mixin(MGF!("mSendGameRequest", "Function PlatformCommon.TgGameEngine.SendGameRequest")()); }
+			ScriptFunction HandlePlayerCommandInput() { mixin(MGF!("mHandlePlayerCommandInput", "Function PlatformCommon.TgGameEngine.HandlePlayerCommandInput")()); }
 		}
 	}
 	struct MAR_EVENT
@@ -59,31 +60,32 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct PlatformCommon.TgGameEngine.MAR_EVENT")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct PlatformCommon.TgGameEngine.MAR_EVENT")()); }
 		@property final
 		{
 			auto ref
 			{
-				UObject.Pointer pMarshal() { return *cast(UObject.Pointer*)(cast(size_t)&this + 40); }
-				ScriptString fsMessage() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
-				int nStmMsgId() { return *cast(int*)(cast(size_t)&this + 24); }
-				QWord qwInfo() { return *cast(QWord*)(cast(size_t)&this + 16); }
-				QWord qwId() { return *cast(QWord*)(cast(size_t)&this + 8); }
-				int nFunction() { return *cast(int*)(cast(size_t)&this + 4); }
+				UObject.Pointer pMarshal() { mixin(MGPS!(UObject.Pointer, 40)()); }
+				ScriptString fsMessage() { mixin(MGPS!(ScriptString, 28)()); }
+				int nStmMsgId() { mixin(MGPS!(int, 24)()); }
+				QWord qwInfo() { mixin(MGPS!(QWord, 16)()); }
+				QWord qwId() { mixin(MGPS!(QWord, 8)()); }
+				int nFunction() { mixin(MGPS!(int, 4)()); }
 			}
-			bool bSuccess() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bSuccess(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bSuccess() { mixin(MGBPS!(0, 0x1)()); }
+			bool bSuccess(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) MarshalEventDelegates() { return *cast(ScriptArray!(
+void*) MarshalEventDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 1808); }
-		UObject.Pointer pEventMarshal() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 1824); }
-		UObject.Pointer pOutgoingMarshal() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 1820); }
+void*), 1808)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnMarshalEvent__Delegate'!
+		UObject.Pointer pEventMarshal() { mixin(MGPC!(UObject.Pointer, 1824)()); }
+		UObject.Pointer pOutgoingMarshal() { mixin(MGPC!(UObject.Pointer, 1820)()); }
 	}
 final:
 	void OnMarshalEvent(UObject.Pointer pMarEvent)
@@ -147,32 +149,32 @@ final:
 		*cast(bool*)params.ptr = bLowPriority;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendMarshalAll, params.ptr, cast(void*)0);
 	}
-	bool GetFieldInt(int nToken, int* IntValue)
+	bool GetFieldInt(int nToken, ref int IntValue)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = nToken;
-		*cast(int*)&params[4] = *IntValue;
+		*cast(int*)&params[4] = IntValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldInt, params.ptr, cast(void*)0);
 		*IntValue = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	bool GetFieldFloat(int nToken, float* FloatValue)
+	bool GetFieldFloat(int nToken, ref float FloatValue)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = nToken;
-		*cast(float*)&params[4] = *FloatValue;
+		*cast(float*)&params[4] = FloatValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldFloat, params.ptr, cast(void*)0);
 		*FloatValue = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	bool GetFieldString(int nToken, ScriptString* StrValue)
+	bool GetFieldString(int nToken, ref ScriptString StrValue)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = nToken;
-		*cast(ScriptString*)&params[4] = *StrValue;
+		*cast(ScriptString*)&params[4] = StrValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldString, params.ptr, cast(void*)0);
 		*StrValue = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];

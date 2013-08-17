@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Console;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface Console : Interaction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Console")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Console")()); }
 	private static __gshared Console mDefaultProperties;
-	@property final static Console DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Console)("Console Engine.Default__Console")); }
+	@property final static Console DefaultProperties() { mixin(MGDPC!(Console, "Console Engine.Default__Console")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,23 +39,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialized() { return mInitialized ? mInitialized : (mInitialized = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.Initialized")); }
-			ScriptFunction SetInputText() { return mSetInputText ? mSetInputText : (mSetInputText = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.SetInputText")); }
-			ScriptFunction SetCursorPos() { return mSetCursorPos ? mSetCursorPos : (mSetCursorPos = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.SetCursorPos")); }
-			ScriptFunction PurgeCommandFromHistory() { return mPurgeCommandFromHistory ? mPurgeCommandFromHistory : (mPurgeCommandFromHistory = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.PurgeCommandFromHistory")); }
-			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.ConsoleCommand")); }
-			ScriptFunction ClearOutput() { return mClearOutput ? mClearOutput : (mClearOutput = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.ClearOutput")); }
-			ScriptFunction OutputTextLine() { return mOutputTextLine ? mOutputTextLine : (mOutputTextLine = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.OutputTextLine")); }
-			ScriptFunction OutputText() { return mOutputText ? mOutputText : (mOutputText = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.OutputText")); }
-			ScriptFunction StartTyping() { return mStartTyping ? mStartTyping : (mStartTyping = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.StartTyping")); }
-			ScriptFunction PostRender_Console() { return mPostRender_Console ? mPostRender_Console : (mPostRender_Console = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.PostRender_Console")); }
-			ScriptFunction InputKey() { return mInputKey ? mInputKey : (mInputKey = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.InputKey")); }
-			ScriptFunction InputChar() { return mInputChar ? mInputChar : (mInputChar = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.InputChar")); }
-			ScriptFunction FlushPlayerInput() { return mFlushPlayerInput ? mFlushPlayerInput : (mFlushPlayerInput = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.FlushPlayerInput")); }
-			ScriptFunction ProcessControlKey() { return mProcessControlKey ? mProcessControlKey : (mProcessControlKey = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.ProcessControlKey")); }
-			ScriptFunction AppendInputText() { return mAppendInputText ? mAppendInputText : (mAppendInputText = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.AppendInputText")); }
-			ScriptFunction BuildRuntimeAutoCompleteList() { return mBuildRuntimeAutoCompleteList ? mBuildRuntimeAutoCompleteList : (mBuildRuntimeAutoCompleteList = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.BuildRuntimeAutoCompleteList")); }
-			ScriptFunction UpdateCompleteIndices() { return mUpdateCompleteIndices ? mUpdateCompleteIndices : (mUpdateCompleteIndices = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.UpdateCompleteIndices")); }
+			ScriptFunction Initialized() { mixin(MGF!("mInitialized", "Function Engine.Console.Initialized")()); }
+			ScriptFunction SetInputText() { mixin(MGF!("mSetInputText", "Function Engine.Console.SetInputText")()); }
+			ScriptFunction SetCursorPos() { mixin(MGF!("mSetCursorPos", "Function Engine.Console.SetCursorPos")()); }
+			ScriptFunction PurgeCommandFromHistory() { mixin(MGF!("mPurgeCommandFromHistory", "Function Engine.Console.PurgeCommandFromHistory")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function Engine.Console.ConsoleCommand")()); }
+			ScriptFunction ClearOutput() { mixin(MGF!("mClearOutput", "Function Engine.Console.ClearOutput")()); }
+			ScriptFunction OutputTextLine() { mixin(MGF!("mOutputTextLine", "Function Engine.Console.OutputTextLine")()); }
+			ScriptFunction OutputText() { mixin(MGF!("mOutputText", "Function Engine.Console.OutputText")()); }
+			ScriptFunction StartTyping() { mixin(MGF!("mStartTyping", "Function Engine.Console.StartTyping")()); }
+			ScriptFunction PostRender_Console() { mixin(MGF!("mPostRender_Console", "Function Engine.Console.PostRender_Console")()); }
+			ScriptFunction InputKey() { mixin(MGF!("mInputKey", "Function Engine.Console.InputKey")()); }
+			ScriptFunction InputChar() { mixin(MGF!("mInputChar", "Function Engine.Console.InputChar")()); }
+			ScriptFunction FlushPlayerInput() { mixin(MGF!("mFlushPlayerInput", "Function Engine.Console.FlushPlayerInput")()); }
+			ScriptFunction ProcessControlKey() { mixin(MGF!("mProcessControlKey", "Function Engine.Console.ProcessControlKey")()); }
+			ScriptFunction AppendInputText() { mixin(MGF!("mAppendInputText", "Function Engine.Console.AppendInputText")()); }
+			ScriptFunction BuildRuntimeAutoCompleteList() { mixin(MGF!("mBuildRuntimeAutoCompleteList", "Function Engine.Console.BuildRuntimeAutoCompleteList")()); }
+			ScriptFunction UpdateCompleteIndices() { mixin(MGF!("mUpdateCompleteIndices", "Function Engine.Console.UpdateCompleteIndices")()); }
 		}
 	}
 	static struct Constants
@@ -66,11 +67,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Console.scrollbackData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.scrollbackData")()); }
 		@property final auto ref
 		{
-			UObject.Color OverrideColor() { return *cast(UObject.Color*)(cast(size_t)&this + 12); }
-			ScriptString Text() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			UObject.Color OverrideColor() { mixin(MGPS!(UObject.Color, 12)()); }
+			ScriptString Text() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct AutoCompleteCommand
@@ -78,11 +79,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Console.AutoCompleteCommand")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.AutoCompleteCommand")()); }
 		@property final auto ref
 		{
-			ScriptString Desc() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			ScriptString Command() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			ScriptString Desc() { mixin(MGPS!(ScriptString, 12)()); }
+			ScriptString Command() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct AutoCompleteNode
@@ -90,53 +91,63 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Console.AutoCompleteNode")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.AutoCompleteNode")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) AutoCompleteListIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 4); }
-			ScriptArray!(UObject.Pointer) ChildNodes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)&this + 16); }
-			int IndexChar() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptArray!(int) AutoCompleteListIndices() { mixin(MGPS!(ScriptArray!(int), 4)()); }
+			ScriptArray!(UObject.Pointer) ChildNodes() { mixin(MGPS!(ScriptArray!(UObject.Pointer), 16)()); }
+			int IndexChar() { mixin(MGPS!(int, 0)()); }
 		}
+	}
+	static struct Typing
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Console.Typing")()); }
+	}
+	static struct Open
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Console.Open")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Console.scrollbackData) Scrollback() { return *cast(ScriptArray!(Console.scrollbackData)*)(cast(size_t)cast(void*)this + 140); }
-			ScriptArray!(Console.AutoCompleteCommand) ManualAutoCompleteList() { return *cast(ScriptArray!(Console.AutoCompleteCommand)*)(cast(size_t)cast(void*)this + 384); }
-			ScriptArray!(Console.AutoCompleteCommand) AutoCompleteList() { return *cast(ScriptArray!(Console.AutoCompleteCommand)*)(cast(size_t)cast(void*)this + 396); }
-			ScriptArray!(int) AutoCompleteIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 440); }
-			Console.AutoCompleteNode AutoCompleteTree() { return *cast(Console.AutoCompleteNode*)(cast(size_t)cast(void*)this + 412); }
-			int AutoCompleteIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 408); }
-			int TypedStrPos() { return *cast(int*)(cast(size_t)cast(void*)this + 380); }
-			ScriptString TypedStr() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 368); }
-			ScriptString History() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-			int HistoryCur() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
-			int HistoryBot() { return *cast(int*)(cast(size_t)cast(void*)this + 164); }
-			int HistoryTop() { return *cast(int*)(cast(size_t)cast(void*)this + 160); }
-			int SBPos() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			int SBHead() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
-			int MaxScrollbackSize() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-			ScriptName TypeKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 128); }
-			ScriptName ConsoleKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 120); }
-			Texture2D DefaultTexture_White() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 116); }
-			Texture2D DefaultTexture_Black() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 112); }
-			LocalPlayer ConsoleTargetPlayer() { return *cast(LocalPlayer*)(cast(size_t)cast(void*)this + 108); }
+			ScriptArray!(Console.scrollbackData) Scrollback() { mixin(MGPC!(ScriptArray!(Console.scrollbackData), 140)()); }
+			ScriptArray!(Console.AutoCompleteCommand) ManualAutoCompleteList() { mixin(MGPC!(ScriptArray!(Console.AutoCompleteCommand), 384)()); }
+			ScriptArray!(Console.AutoCompleteCommand) AutoCompleteList() { mixin(MGPC!(ScriptArray!(Console.AutoCompleteCommand), 396)()); }
+			ScriptArray!(int) AutoCompleteIndices() { mixin(MGPC!(ScriptArray!(int), 440)()); }
+			Console.AutoCompleteNode AutoCompleteTree() { mixin(MGPC!(Console.AutoCompleteNode, 412)()); }
+			int AutoCompleteIndex() { mixin(MGPC!(int, 408)()); }
+			int TypedStrPos() { mixin(MGPC!(int, 380)()); }
+			ScriptString TypedStr() { mixin(MGPC!(ScriptString, 368)()); }
+			ScriptString History() { mixin(MGPC!(ScriptString, 172)()); }
+			int HistoryCur() { mixin(MGPC!(int, 168)()); }
+			int HistoryBot() { mixin(MGPC!(int, 164)()); }
+			int HistoryTop() { mixin(MGPC!(int, 160)()); }
+			int SBPos() { mixin(MGPC!(int, 156)()); }
+			int SBHead() { mixin(MGPC!(int, 152)()); }
+			int MaxScrollbackSize() { mixin(MGPC!(int, 136)()); }
+			ScriptName TypeKey() { mixin(MGPC!(ScriptName, 128)()); }
+			ScriptName ConsoleKey() { mixin(MGPC!(ScriptName, 120)()); }
+			Texture2D DefaultTexture_White() { mixin(MGPC!(Texture2D, 116)()); }
+			Texture2D DefaultTexture_Black() { mixin(MGPC!(Texture2D, 112)()); }
+			LocalPlayer ConsoleTargetPlayer() { mixin(MGPC!(LocalPlayer, 108)()); }
 		}
-		bool bIsRuntimeAutoCompleteUpToDate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x40) != 0; }
-		bool bIsRuntimeAutoCompleteUpToDate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x40; } return val; }
-		bool bRequireCtrlToNavigateAutoComplete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x20) != 0; }
-		bool bRequireCtrlToNavigateAutoComplete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x20; } return val; }
-		bool bAutoCompleteLocked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x10) != 0; }
-		bool bAutoCompleteLocked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x10; } return val; }
-		bool bEnableUI() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x8) != 0; }
-		bool bEnableUI(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x8; } return val; }
-		bool bCtrl() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x4) != 0; }
-		bool bCtrl(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x4; } return val; }
-		bool bCaptureKeyInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x2) != 0; }
-		bool bCaptureKeyInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x2; } return val; }
-		bool bNavigatingHistory() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x1) != 0; }
-		bool bNavigatingHistory(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x1; } return val; }
+		bool bIsRuntimeAutoCompleteUpToDate() { mixin(MGBPC!(364, 0x40)()); }
+		bool bIsRuntimeAutoCompleteUpToDate(bool val) { mixin(MSBPC!(364, 0x40)()); }
+		bool bRequireCtrlToNavigateAutoComplete() { mixin(MGBPC!(364, 0x20)()); }
+		bool bRequireCtrlToNavigateAutoComplete(bool val) { mixin(MSBPC!(364, 0x20)()); }
+		bool bAutoCompleteLocked() { mixin(MGBPC!(364, 0x10)()); }
+		bool bAutoCompleteLocked(bool val) { mixin(MSBPC!(364, 0x10)()); }
+		bool bEnableUI() { mixin(MGBPC!(364, 0x8)()); }
+		bool bEnableUI(bool val) { mixin(MSBPC!(364, 0x8)()); }
+		bool bCtrl() { mixin(MGBPC!(364, 0x4)()); }
+		bool bCtrl(bool val) { mixin(MSBPC!(364, 0x4)()); }
+		bool bCaptureKeyInput() { mixin(MGBPC!(364, 0x2)()); }
+		bool bCaptureKeyInput(bool val) { mixin(MSBPC!(364, 0x2)()); }
+		bool bNavigatingHistory() { mixin(MGBPC!(364, 0x1)()); }
+		bool bNavigatingHistory(bool val) { mixin(MSBPC!(364, 0x1)()); }
 	}
 final:
 	void Initialized()

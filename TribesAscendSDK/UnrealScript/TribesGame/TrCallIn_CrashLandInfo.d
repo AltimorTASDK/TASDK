@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCallIn_CrashLandInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.Info;
@@ -9,9 +10,9 @@ extern(C++) interface TrCallIn_CrashLandInfo : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_CrashLandInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallIn_CrashLandInfo")()); }
 	private static __gshared TrCallIn_CrashLandInfo mDefaultProperties;
-	@property final static TrCallIn_CrashLandInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_CrashLandInfo)("TrCallIn_CrashLandInfo TribesGame.Default__TrCallIn_CrashLandInfo")); }
+	@property final static TrCallIn_CrashLandInfo DefaultProperties() { mixin(MGDPC!(TrCallIn_CrashLandInfo, "TrCallIn_CrashLandInfo TribesGame.Default__TrCallIn_CrashLandInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,30 +26,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnCrashLandInfo() { return mSpawnCrashLandInfo ? mSpawnCrashLandInfo : (mSpawnCrashLandInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.SpawnCrashLandInfo")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.PostBeginPlay")); }
-			ScriptFunction InitTimer() { return mInitTimer ? mInitTimer : (mInitTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.InitTimer")); }
-			ScriptFunction DeliveryPodLanded() { return mDeliveryPodLanded ? mDeliveryPodLanded : (mDeliveryPodLanded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.DeliveryPodLanded")); }
-			ScriptFunction MoveSameTeamPawn() { return mMoveSameTeamPawn ? mMoveSameTeamPawn : (mMoveSameTeamPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.MoveSameTeamPawn")); }
-			ScriptFunction PerformLandingDamage() { return mPerformLandingDamage ? mPerformLandingDamage : (mPerformLandingDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.PerformLandingDamage")); }
+			ScriptFunction SpawnCrashLandInfo() { mixin(MGF!("mSpawnCrashLandInfo", "Function TribesGame.TrCallIn_CrashLandInfo.SpawnCrashLandInfo")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrCallIn_CrashLandInfo.PostBeginPlay")()); }
+			ScriptFunction InitTimer() { mixin(MGF!("mInitTimer", "Function TribesGame.TrCallIn_CrashLandInfo.InitTimer")()); }
+			ScriptFunction DeliveryPodLanded() { mixin(MGF!("mDeliveryPodLanded", "Function TribesGame.TrCallIn_CrashLandInfo.DeliveryPodLanded")()); }
+			ScriptFunction MoveSameTeamPawn() { mixin(MGF!("mMoveSameTeamPawn", "Function TribesGame.TrCallIn_CrashLandInfo.MoveSameTeamPawn")()); }
+			ScriptFunction PerformLandingDamage() { mixin(MGF!("mPerformLandingDamage", "Function TribesGame.TrCallIn_CrashLandInfo.PerformLandingDamage")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float MomentumTransfer() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			float Damage() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			float DamageRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 520); }
-			ScriptClass DamageTypeClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 516); }
-			Vector r_CrashLandNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 504); }
-			Vector r_CrashLandPoint() { return *cast(Vector*)(cast(size_t)cast(void*)this + 492); }
-			float r_fCrashLandTime() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-			Controller m_Owner() { return *cast(Controller*)(cast(size_t)cast(void*)this + 480); }
-			ScriptClass m_ItemToDeploy() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 476); }
+			float MomentumTransfer() { mixin(MGPC!(float, 528)()); }
+			float Damage() { mixin(MGPC!(float, 524)()); }
+			float DamageRadius() { mixin(MGPC!(float, 520)()); }
+			ScriptClass DamageTypeClass() { mixin(MGPC!(ScriptClass, 516)()); }
+			Vector r_CrashLandNormal() { mixin(MGPC!(Vector, 504)()); }
+			Vector r_CrashLandPoint() { mixin(MGPC!(Vector, 492)()); }
+			float r_fCrashLandTime() { mixin(MGPC!(float, 488)()); }
+			Controller m_Owner() { mixin(MGPC!(Controller, 480)()); }
+			ScriptClass m_ItemToDeploy() { mixin(MGPC!(ScriptClass, 476)()); }
 		}
-		bool r_bPodLanded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x1) != 0; }
-		bool r_bPodLanded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x1; } return val; }
+		bool r_bPodLanded() { mixin(MGBPC!(484, 0x1)()); }
+		bool r_bPodLanded(bool val) { mixin(MSBPC!(484, 0x1)()); }
 	}
 final:
 	static bool SpawnCrashLandInfo(Controller Initializer, float CrashLandTime, Vector CrashLandPoint, Vector CrashLandNormal, ScriptClass ItemInDeliveryPod)

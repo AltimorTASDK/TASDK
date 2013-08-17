@@ -1,6 +1,7 @@
 module UnrealScript.Engine.BroadcastHandler;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -12,9 +13,9 @@ extern(C++) interface BroadcastHandler : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.BroadcastHandler")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.BroadcastHandler")()); }
 	private static __gshared BroadcastHandler mDefaultProperties;
-	@property final static BroadcastHandler DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(BroadcastHandler)("BroadcastHandler Engine.Default__BroadcastHandler")); }
+	@property final static BroadcastHandler DefaultProperties() { mixin(MGDPC!(BroadcastHandler, "BroadcastHandler Engine.Default__BroadcastHandler")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,21 +31,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateSentText() { return mUpdateSentText ? mUpdateSentText : (mUpdateSentText = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.UpdateSentText")); }
-			ScriptFunction AllowsBroadcast() { return mAllowsBroadcast ? mAllowsBroadcast : (mAllowsBroadcast = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.AllowsBroadcast")); }
-			ScriptFunction BroadcastText() { return mBroadcastText ? mBroadcastText : (mBroadcastText = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.BroadcastText")); }
-			ScriptFunction BroadcastLocalized() { return mBroadcastLocalized ? mBroadcastLocalized : (mBroadcastLocalized = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.BroadcastLocalized")); }
-			ScriptFunction Broadcast() { return mBroadcast ? mBroadcast : (mBroadcast = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.Broadcast")); }
-			ScriptFunction BroadcastTeam() { return mBroadcastTeam ? mBroadcastTeam : (mBroadcastTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.BroadcastTeam")); }
-			ScriptFunction AllowBroadcastLocalized() { return mAllowBroadcastLocalized ? mAllowBroadcastLocalized : (mAllowBroadcastLocalized = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.AllowBroadcastLocalized")); }
-			ScriptFunction AllowBroadcastLocalizedTeam() { return mAllowBroadcastLocalizedTeam ? mAllowBroadcastLocalizedTeam : (mAllowBroadcastLocalizedTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.AllowBroadcastLocalizedTeam")); }
+			ScriptFunction UpdateSentText() { mixin(MGF!("mUpdateSentText", "Function Engine.BroadcastHandler.UpdateSentText")()); }
+			ScriptFunction AllowsBroadcast() { mixin(MGF!("mAllowsBroadcast", "Function Engine.BroadcastHandler.AllowsBroadcast")()); }
+			ScriptFunction BroadcastText() { mixin(MGF!("mBroadcastText", "Function Engine.BroadcastHandler.BroadcastText")()); }
+			ScriptFunction BroadcastLocalized() { mixin(MGF!("mBroadcastLocalized", "Function Engine.BroadcastHandler.BroadcastLocalized")()); }
+			ScriptFunction Broadcast() { mixin(MGF!("mBroadcast", "Function Engine.BroadcastHandler.Broadcast")()); }
+			ScriptFunction BroadcastTeam() { mixin(MGF!("mBroadcastTeam", "Function Engine.BroadcastHandler.BroadcastTeam")()); }
+			ScriptFunction AllowBroadcastLocalized() { mixin(MGF!("mAllowBroadcastLocalized", "Function Engine.BroadcastHandler.AllowBroadcastLocalized")()); }
+			ScriptFunction AllowBroadcastLocalizedTeam() { mixin(MGF!("mAllowBroadcastLocalizedTeam", "Function Engine.BroadcastHandler.AllowBroadcastLocalizedTeam")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref int SentText() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
-		bool bMuteSpectators() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bMuteSpectators(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		@property final auto ref int SentText() { mixin(MGPC!(int, 476)()); }
+		bool bMuteSpectators() { mixin(MGBPC!(480, 0x1)()); }
+		bool bMuteSpectators(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	void UpdateSentText()

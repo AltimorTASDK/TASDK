@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTTeamHUD;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.UTGame.UTHUD;
@@ -9,9 +10,9 @@ extern(C++) interface UTTeamHUD : UTHUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamHUD")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamHUD")()); }
 	private static __gshared UTTeamHUD mDefaultProperties;
-	@property final static UTTeamHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeamHUD)("UTTeamHUD UTGame.Default__UTTeamHUD")); }
+	@property final static UTTeamHUD DefaultProperties() { mixin(MGDPC!(UTTeamHUD, "UTTeamHUD UTGame.Default__UTTeamHUD")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,29 +26,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DisplayScoring() { return mDisplayScoring ? mDisplayScoring : (mDisplayScoring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamHUD.DisplayScoring")); }
-			ScriptFunction DisplayTeamScore() { return mDisplayTeamScore ? mDisplayTeamScore : (mDisplayTeamScore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamHUD.DisplayTeamScore")); }
-			ScriptFunction GetTeamScore() { return mGetTeamScore ? mGetTeamScore : (mGetTeamScore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamHUD.GetTeamScore")); }
-			ScriptFunction GetDirectionalDest() { return mGetDirectionalDest ? mGetDirectionalDest : (mGetDirectionalDest = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamHUD.GetDirectionalDest")); }
-			ScriptFunction DisplayTeamLogos() { return mDisplayTeamLogos ? mDisplayTeamLogos : (mDisplayTeamLogos = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamHUD.DisplayTeamLogos")); }
-			ScriptFunction DisplayDirectionIndicator() { return mDisplayDirectionIndicator ? mDisplayDirectionIndicator : (mDisplayDirectionIndicator = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamHUD.DisplayDirectionIndicator")); }
+			ScriptFunction DisplayScoring() { mixin(MGF!("mDisplayScoring", "Function UTGame.UTTeamHUD.DisplayScoring")()); }
+			ScriptFunction DisplayTeamScore() { mixin(MGF!("mDisplayTeamScore", "Function UTGame.UTTeamHUD.DisplayTeamScore")()); }
+			ScriptFunction GetTeamScore() { mixin(MGF!("mGetTeamScore", "Function UTGame.UTTeamHUD.GetTeamScore")()); }
+			ScriptFunction GetDirectionalDest() { mixin(MGF!("mGetDirectionalDest", "Function UTGame.UTTeamHUD.GetDirectionalDest")()); }
+			ScriptFunction DisplayTeamLogos() { mixin(MGF!("mDisplayTeamLogos", "Function UTGame.UTTeamHUD.DisplayTeamLogos")()); }
+			ScriptFunction DisplayDirectionIndicator() { mixin(MGF!("mDisplayDirectionIndicator", "Function UTGame.UTTeamHUD.DisplayDirectionIndicator")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float TeamScaleModifier() { return *cast(float*)(cast(size_t)cast(void*)this + 2736); }
-			float OldRightScore() { return *cast(float*)(cast(size_t)cast(void*)this + 2732); }
-			float OldLeftScore() { return *cast(float*)(cast(size_t)cast(void*)this + 2728); }
-			float RightTeamPulseTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2724); }
-			float LeftTeamPulseTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2720); }
-			UObject.Vector2D TeamIconCenterPoints() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 2704); }
-			int ScoreTransitionTime() { return *cast(int*)(cast(size_t)cast(void*)this + 2696); }
-			int LastScores() { return *cast(int*)(cast(size_t)cast(void*)this + 2688); }
+			float TeamScaleModifier() { mixin(MGPC!(float, 2736)()); }
+			float OldRightScore() { mixin(MGPC!(float, 2732)()); }
+			float OldLeftScore() { mixin(MGPC!(float, 2728)()); }
+			float RightTeamPulseTime() { mixin(MGPC!(float, 2724)()); }
+			float LeftTeamPulseTime() { mixin(MGPC!(float, 2720)()); }
+			UObject.Vector2D TeamIconCenterPoints() { mixin(MGPC!(UObject.Vector2D, 2704)()); }
+			int ScoreTransitionTime() { mixin(MGPC!(int, 2696)()); }
+			int LastScores() { mixin(MGPC!(int, 2688)()); }
 		}
-		bool bShowDirectional() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2684) & 0x1) != 0; }
-		bool bShowDirectional(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2684) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2684) &= ~0x1; } return val; }
+		bool bShowDirectional() { mixin(MGBPC!(2684, 0x1)()); }
+		bool bShowDirectional(bool val) { mixin(MSBPC!(2684, 0x1)()); }
 	}
 final:
 	void DisplayScoring()

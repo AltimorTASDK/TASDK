@@ -1,21 +1,22 @@
 module UnrealScript.UDKBase.UDKAnimBlendByHoverboardTilt;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface UDKAnimBlendByHoverboardTilt : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByHoverboardTilt")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByHoverboardTilt")()); }
 	private static __gshared UDKAnimBlendByHoverboardTilt mDefaultProperties;
-	@property final static UDKAnimBlendByHoverboardTilt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByHoverboardTilt)("UDKAnimBlendByHoverboardTilt UDKBase.Default__UDKAnimBlendByHoverboardTilt")); }
+	@property final static UDKAnimBlendByHoverboardTilt DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByHoverboardTilt, "UDKAnimBlendByHoverboardTilt UDKBase.Default__UDKAnimBlendByHoverboardTilt")()); }
 	@property final auto ref
 	{
-		ScriptName UpperBodyName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 268); }
-		float TiltYScale() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-		float TiltDeadZone() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-		float TiltScale() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-		Vector UpVector() { return *cast(Vector*)(cast(size_t)cast(void*)this + 244); }
+		ScriptName UpperBodyName() { mixin(MGPC!(ScriptName, 268)()); }
+		float TiltYScale() { mixin(MGPC!(float, 264)()); }
+		float TiltDeadZone() { mixin(MGPC!(float, 260)()); }
+		float TiltScale() { mixin(MGPC!(float, 256)()); }
+		Vector UpVector() { mixin(MGPC!(Vector, 244)()); }
 	}
 }

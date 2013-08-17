@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface UIManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIManager")()); }
 	private static __gshared UIManager mDefaultProperties;
-	@property final static UIManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIManager)("UIManager Engine.Default__UIManager")); }
+	@property final static UIManager DefaultProperties() { mixin(MGDPC!(UIManager, "UIManager Engine.Default__UIManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetUIManager() { return mGetUIManager ? mGetUIManager : (mGetUIManager = ScriptObject.Find!(ScriptFunction)("Function Engine.UIManager.GetUIManager")); }
-			ScriptFunction CanUnpauseInternalUI() { return mCanUnpauseInternalUI ? mCanUnpauseInternalUI : (mCanUnpauseInternalUI = ScriptObject.Find!(ScriptFunction)("Function Engine.UIManager.CanUnpauseInternalUI")); }
-			ScriptFunction PauseGame() { return mPauseGame ? mPauseGame : (mPauseGame = ScriptObject.Find!(ScriptFunction)("Function Engine.UIManager.PauseGame")); }
-			ScriptFunction NotifyPlayerAdded() { return mNotifyPlayerAdded ? mNotifyPlayerAdded : (mNotifyPlayerAdded = ScriptObject.Find!(ScriptFunction)("Function Engine.UIManager.NotifyPlayerAdded")); }
-			ScriptFunction NotifyPlayerRemoved() { return mNotifyPlayerRemoved ? mNotifyPlayerRemoved : (mNotifyPlayerRemoved = ScriptObject.Find!(ScriptFunction)("Function Engine.UIManager.NotifyPlayerRemoved")); }
+			ScriptFunction GetUIManager() { mixin(MGF!("mGetUIManager", "Function Engine.UIManager.GetUIManager")()); }
+			ScriptFunction CanUnpauseInternalUI() { mixin(MGF!("mCanUnpauseInternalUI", "Function Engine.UIManager.CanUnpauseInternalUI")()); }
+			ScriptFunction PauseGame() { mixin(MGF!("mPauseGame", "Function Engine.UIManager.PauseGame")()); }
+			ScriptFunction NotifyPlayerAdded() { mixin(MGF!("mNotifyPlayerAdded", "Function Engine.UIManager.NotifyPlayerAdded")()); }
+			ScriptFunction NotifyPlayerRemoved() { mixin(MGF!("mNotifyPlayerRemoved", "Function Engine.UIManager.NotifyPlayerRemoved")()); }
 		}
 	}
 final:

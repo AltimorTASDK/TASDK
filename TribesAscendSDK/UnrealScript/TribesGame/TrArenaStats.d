@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrArenaStats;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrPlayerController;
 import UnrealScript.TribesGame.GfxTrHud;
@@ -10,9 +11,9 @@ extern(C++) interface TrArenaStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrArenaStats")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrArenaStats")()); }
 	private static __gshared TrArenaStats mDefaultProperties;
-	@property final static TrArenaStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrArenaStats)("TrArenaStats TribesGame.Default__TrArenaStats")); }
+	@property final static TrArenaStats DefaultProperties() { mixin(MGDPC!(TrArenaStats, "TrArenaStats TribesGame.Default__TrArenaStats")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,17 +32,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.Initialize")); }
-			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.Show")); }
-			ScriptFunction Hide() { return mHide ? mHide : (mHide = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.Hide")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.Tick")); }
-			ScriptFunction UpdateTeam() { return mUpdateTeam ? mUpdateTeam : (mUpdateTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.UpdateTeam")); }
-			ScriptFunction UpdateTeamScore() { return mUpdateTeamScore ? mUpdateTeamScore : (mUpdateTeamScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.UpdateTeamScore")); }
-			ScriptFunction SetManGraphicState() { return mSetManGraphicState ? mSetManGraphicState : (mSetManGraphicState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.SetManGraphicState")); }
-			ScriptFunction UpdateRound() { return mUpdateRound ? mUpdateRound : (mUpdateRound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.UpdateRound")); }
-			ScriptFunction UpdateTime() { return mUpdateTime ? mUpdateTime : (mUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.UpdateTime")); }
-			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.FormatTime")); }
-			ScriptFunction ForceUpdate() { return mForceUpdate ? mForceUpdate : (mForceUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.ForceUpdate")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrArenaStats.Initialize")()); }
+			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrArenaStats.Show")()); }
+			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrArenaStats.Hide")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrArenaStats.Tick")()); }
+			ScriptFunction UpdateTeam() { mixin(MGF!("mUpdateTeam", "Function TribesGame.TrArenaStats.UpdateTeam")()); }
+			ScriptFunction UpdateTeamScore() { mixin(MGF!("mUpdateTeamScore", "Function TribesGame.TrArenaStats.UpdateTeamScore")()); }
+			ScriptFunction SetManGraphicState() { mixin(MGF!("mSetManGraphicState", "Function TribesGame.TrArenaStats.SetManGraphicState")()); }
+			ScriptFunction UpdateRound() { mixin(MGF!("mUpdateRound", "Function TribesGame.TrArenaStats.UpdateRound")()); }
+			ScriptFunction UpdateTime() { mixin(MGF!("mUpdateTime", "Function TribesGame.TrArenaStats.UpdateTime")()); }
+			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrArenaStats.FormatTime")()); }
+			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrArenaStats.ForceUpdate")()); }
 		}
 	}
 	static struct Constants
@@ -60,20 +61,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MyTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
-			TrPlayerController TrPC() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 96); }
-			GfxTrHud m_MoviePlayer() { return *cast(GfxTrHud*)(cast(size_t)cast(void*)this + 92); }
-			int TeamScore() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			TrArenaStats.ManGraphicState FriendlyManGraphics() { return *cast(TrArenaStats.ManGraphicState*)(cast(size_t)cast(void*)this + 100); }
-			TrArenaStats.ManGraphicState EnemyManGraphics() { return *cast(TrArenaStats.ManGraphicState*)(cast(size_t)cast(void*)this + 108); }
-			int RoundScore() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
-			int RoundNum() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int RemainingTime() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
+			int MyTeam() { mixin(MGPC!(int, 60)()); }
+			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 96)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 92)()); }
+			int TeamScore() { mixin(MGPC!(int, 72)()); }
+			TrArenaStats.ManGraphicState FriendlyManGraphics() { mixin(MGPC!(TrArenaStats.ManGraphicState, 100)()); }
+			TrArenaStats.ManGraphicState EnemyManGraphics() { mixin(MGPC!(TrArenaStats.ManGraphicState, 108)()); }
+			int RoundScore() { mixin(MGPC!(int, 80)()); }
+			int RoundNum() { mixin(MGPC!(int, 88)()); }
+			int RemainingTime() { mixin(MGPC!(int, 64)()); }
 		}
-		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x1) != 0; }
-		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x1; } return val; }
-		bool bForcingUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x2) != 0; }
-		bool bForcingUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x2; } return val; }
+		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
+		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool bForcingUpdate() { mixin(MGBPC!(68, 0x2)()); }
+		bool bForcingUpdate(bool val) { mixin(MSBPC!(68, 0x2)()); }
 	}
 final:
 	void Initialize(TrPlayerController PC, GfxTrHud MP)

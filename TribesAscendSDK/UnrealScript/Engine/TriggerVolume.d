@@ -1,6 +1,7 @@
 module UnrealScript.Engine.TriggerVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.Volume;
 
@@ -8,9 +9,9 @@ extern(C++) interface TriggerVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TriggerVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TriggerVolume")()); }
 	private static __gshared TriggerVolume mDefaultProperties;
-	@property final static TriggerVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TriggerVolume)("TriggerVolume Engine.Default__TriggerVolume")); }
+	@property final static TriggerVolume DefaultProperties() { mixin(MGDPC!(TriggerVolume, "TriggerVolume Engine.Default__TriggerVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggerVolume.PostBeginPlay")); }
-			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggerVolume.StopsProjectile")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.TriggerVolume.PostBeginPlay")()); }
+			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function Engine.TriggerVolume.StopsProjectile")()); }
 		}
 	}
 final:

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrVehiclePad;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrSkelControl_SpinControl;
 import UnrealScript.Engine.SkeletalMeshActor;
 import UnrealScript.TribesGame.TrAnimNodeBlendList;
@@ -9,9 +10,9 @@ extern(C++) interface TrVehiclePad : SkeletalMeshActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehiclePad")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehiclePad")()); }
 	private static __gshared TrVehiclePad mDefaultProperties;
-	@property final static TrVehiclePad DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehiclePad)("TrVehiclePad TribesGame.Default__TrVehiclePad")); }
+	@property final static TrVehiclePad DefaultProperties() { mixin(MGDPC!(TrVehiclePad, "TrVehiclePad TribesGame.Default__TrVehiclePad")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,17 +25,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehiclePad.PostBeginPlay")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehiclePad.PostInitAnimTree")); }
-			ScriptFunction PlayIdleAnim() { return mPlayIdleAnim ? mPlayIdleAnim : (mPlayIdleAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehiclePad.PlayIdleAnim")); }
-			ScriptFunction PlayDeployAnim() { return mPlayDeployAnim ? mPlayDeployAnim : (mPlayDeployAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehiclePad.PlayDeployAnim")); }
-			ScriptFunction PlayCollapseAnim() { return mPlayCollapseAnim ? mPlayCollapseAnim : (mPlayCollapseAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehiclePad.PlayCollapseAnim")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrVehiclePad.PostBeginPlay")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrVehiclePad.PostInitAnimTree")()); }
+			ScriptFunction PlayIdleAnim() { mixin(MGF!("mPlayIdleAnim", "Function TribesGame.TrVehiclePad.PlayIdleAnim")()); }
+			ScriptFunction PlayDeployAnim() { mixin(MGF!("mPlayDeployAnim", "Function TribesGame.TrVehiclePad.PlayDeployAnim")()); }
+			ScriptFunction PlayCollapseAnim() { mixin(MGF!("mPlayCollapseAnim", "Function TribesGame.TrVehiclePad.PlayCollapseAnim")()); }
 		}
 	}
 	@property final auto ref
 	{
-		TrSkelControl_SpinControl m_SpinControl() { return *cast(TrSkelControl_SpinControl*)(cast(size_t)cast(void*)this + 540); }
-		TrAnimNodeBlendList m_VehiclePadBlendNode() { return *cast(TrAnimNodeBlendList*)(cast(size_t)cast(void*)this + 536); }
+		TrSkelControl_SpinControl m_SpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 540)()); }
+		TrAnimNodeBlendList m_VehiclePadBlendNode() { mixin(MGPC!(TrAnimNodeBlendList, 536)()); }
 	}
 final:
 	void PostBeginPlay()

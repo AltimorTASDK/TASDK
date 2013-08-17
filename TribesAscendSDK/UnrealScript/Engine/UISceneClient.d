@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UISceneClient;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIRoot;
 import UnrealScript.Engine.PostProcessChain;
@@ -10,9 +11,9 @@ extern(C++) interface UISceneClient : UIRoot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UISceneClient")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UISceneClient")()); }
 	private static __gshared UISceneClient mDefaultProperties;
-	@property final static UISceneClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UISceneClient)("UISceneClient Engine.Default__UISceneClient")); }
+	@property final static UISceneClient DefaultProperties() { mixin(MGDPC!(UISceneClient, "UISceneClient Engine.Default__UISceneClient")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,10 +25,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsUIActive() { return mIsUIActive ? mIsUIActive : (mIsUIActive = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.IsUIActive")); }
-			ScriptFunction GetCanvasToScreen() { return mGetCanvasToScreen ? mGetCanvasToScreen : (mGetCanvasToScreen = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.GetCanvasToScreen")); }
-			ScriptFunction GetInverseCanvasToScreen() { return mGetInverseCanvasToScreen ? mGetInverseCanvasToScreen : (mGetInverseCanvasToScreen = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.GetInverseCanvasToScreen")); }
-			ScriptFunction InitializeSceneClient() { return mInitializeSceneClient ? mInitializeSceneClient : (mInitializeSceneClient = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.InitializeSceneClient")); }
+			ScriptFunction IsUIActive() { mixin(MGF!("mIsUIActive", "Function Engine.UISceneClient.IsUIActive")()); }
+			ScriptFunction GetCanvasToScreen() { mixin(MGF!("mGetCanvasToScreen", "Function Engine.UISceneClient.GetCanvasToScreen")()); }
+			ScriptFunction GetInverseCanvasToScreen() { mixin(MGF!("mGetInverseCanvasToScreen", "Function Engine.UISceneClient.GetInverseCanvasToScreen")()); }
+			ScriptFunction InitializeSceneClient() { mixin(MGF!("mInitializeSceneClient", "Function Engine.UISceneClient.InitializeSceneClient")()); }
 		}
 	}
 	static struct Constants
@@ -48,16 +49,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			PostProcessChain UIScenePostProcess() { return *cast(PostProcessChain*)(cast(size_t)cast(void*)this + 208); }
-			UObject.Matrix InvCanvasToScreen() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 144); }
-			UObject.Matrix CanvasToScreen() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 80); }
-			DataStoreClient DataStoreManager() { return *cast(DataStoreClient*)(cast(size_t)cast(void*)this + 76); }
-			UObject.IntPoint MousePosition() { return *cast(UObject.IntPoint*)(cast(size_t)cast(void*)this + 68); }
-			UObject.Pointer RenderViewport() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 64); }
-			UObject.Pointer VfTable_FExec() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+			PostProcessChain UIScenePostProcess() { mixin(MGPC!(PostProcessChain, 208)()); }
+			UObject.Matrix InvCanvasToScreen() { mixin(MGPC!(UObject.Matrix, 144)()); }
+			UObject.Matrix CanvasToScreen() { mixin(MGPC!(UObject.Matrix, 80)()); }
+			DataStoreClient DataStoreManager() { mixin(MGPC!(DataStoreClient, 76)()); }
+			UObject.IntPoint MousePosition() { mixin(MGPC!(UObject.IntPoint, 68)()); }
+			UObject.Pointer RenderViewport() { mixin(MGPC!(UObject.Pointer, 64)()); }
+			UObject.Pointer VfTable_FExec() { mixin(MGPC!(UObject.Pointer, 60)()); }
 		}
-		bool bEnablePostProcess() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x1) != 0; }
-		bool bEnablePostProcess(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x1; } return val; }
+		bool bEnablePostProcess() { mixin(MGBPC!(212, 0x1)()); }
+		bool bEnablePostProcess(bool val) { mixin(MSBPC!(212, 0x1)()); }
 	}
 final:
 	bool IsUIActive(int Flags)

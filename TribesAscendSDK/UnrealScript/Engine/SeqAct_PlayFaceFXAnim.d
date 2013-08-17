@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqAct_PlayFaceFXAnim;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.FaceFXAnimSet;
 import UnrealScript.Engine.SequenceAction;
@@ -9,14 +10,14 @@ extern(C++) interface SeqAct_PlayFaceFXAnim : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_PlayFaceFXAnim")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_PlayFaceFXAnim")()); }
 	private static __gshared SeqAct_PlayFaceFXAnim mDefaultProperties;
-	@property final static SeqAct_PlayFaceFXAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_PlayFaceFXAnim)("SeqAct_PlayFaceFXAnim Engine.Default__SeqAct_PlayFaceFXAnim")); }
+	@property final static SeqAct_PlayFaceFXAnim DefaultProperties() { mixin(MGDPC!(SeqAct_PlayFaceFXAnim, "SeqAct_PlayFaceFXAnim Engine.Default__SeqAct_PlayFaceFXAnim")()); }
 	@property final auto ref
 	{
-		FaceFXAnimSet FaceFXAnimSetRef() { return *cast(FaceFXAnimSet*)(cast(size_t)cast(void*)this + 232); }
-		ScriptString FaceFXAnimName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 248); }
-		ScriptString FaceFXGroupName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 236); }
-		SoundCue SoundCueToPlay() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 260); }
+		FaceFXAnimSet FaceFXAnimSetRef() { mixin(MGPC!(FaceFXAnimSet, 232)()); }
+		ScriptString FaceFXAnimName() { mixin(MGPC!(ScriptString, 248)()); }
+		ScriptString FaceFXGroupName() { mixin(MGPC!(ScriptString, 236)()); }
+		SoundCue SoundCueToPlay() { mixin(MGPC!(SoundCue, 260)()); }
 	}
 }

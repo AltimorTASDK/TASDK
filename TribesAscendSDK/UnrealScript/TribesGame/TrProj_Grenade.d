@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_Grenade;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.TribesGame.TrCollisionProxy;
@@ -13,9 +14,9 @@ extern(C++) interface TrProj_Grenade : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Grenade")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Grenade")()); }
 	private static __gshared TrProj_Grenade mDefaultProperties;
-	@property final static TrProj_Grenade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Grenade)("TrProj_Grenade TribesGame.Default__TrProj_Grenade")); }
+	@property final static TrProj_Grenade DefaultProperties() { mixin(MGDPC!(TrProj_Grenade, "TrProj_Grenade TribesGame.Default__TrProj_Grenade")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,57 +41,58 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.PostBeginPlay")); }
-			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.InitProjectile")); }
-			ScriptFunction SpawnCollisionProxy() { return mSpawnCollisionProxy ? mSpawnCollisionProxy : (mSpawnCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.SpawnCollisionProxy")); }
-			ScriptFunction DestroyCollisionProxy() { return mDestroyCollisionProxy ? mDestroyCollisionProxy : (mDestroyCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.DestroyCollisionProxy")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.ShutDown")); }
-			ScriptFunction ApplyInheritance() { return mApplyInheritance ? mApplyInheritance : (mApplyInheritance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.ApplyInheritance")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.Timer")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.HitWall")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.ProcessTouch")); }
-			ScriptFunction PhysicsVolumeChange() { return mPhysicsVolumeChange ? mPhysicsVolumeChange : (mPhysicsVolumeChange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.PhysicsVolumeChange")); }
-			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.Explode")); }
-			ScriptFunction StickToTarget() { return mStickToTarget ? mStickToTarget : (mStickToTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.StickToTarget")); }
-			ScriptFunction PlayStuckOnEffects() { return mPlayStuckOnEffects ? mPlayStuckOnEffects : (mPlayStuckOnEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.PlayStuckOnEffects")); }
-			ScriptFunction MyOnParticleSystemFinished() { return mMyOnParticleSystemFinished ? mMyOnParticleSystemFinished : (mMyOnParticleSystemFinished = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.MyOnParticleSystemFinished")); }
-			ScriptFunction PawnEnteredDetonationArea() { return mPawnEnteredDetonationArea ? mPawnEnteredDetonationArea : (mPawnEnteredDetonationArea = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.PawnEnteredDetonationArea")); }
-			ScriptFunction PawnLeftDetonationArea() { return mPawnLeftDetonationArea ? mPawnLeftDetonationArea : (mPawnLeftDetonationArea = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.PawnLeftDetonationArea")); }
-			ScriptFunction NativeExplode() { return mNativeExplode ? mNativeExplode : (mNativeExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Grenade.NativeExplode")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_Grenade.PostBeginPlay")()); }
+			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_Grenade.InitProjectile")()); }
+			ScriptFunction SpawnCollisionProxy() { mixin(MGF!("mSpawnCollisionProxy", "Function TribesGame.TrProj_Grenade.SpawnCollisionProxy")()); }
+			ScriptFunction DestroyCollisionProxy() { mixin(MGF!("mDestroyCollisionProxy", "Function TribesGame.TrProj_Grenade.DestroyCollisionProxy")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function TribesGame.TrProj_Grenade.ShutDown")()); }
+			ScriptFunction ApplyInheritance() { mixin(MGF!("mApplyInheritance", "Function TribesGame.TrProj_Grenade.ApplyInheritance")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function TribesGame.TrProj_Grenade.Timer")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_Grenade.HitWall")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_Grenade.ProcessTouch")()); }
+			ScriptFunction PhysicsVolumeChange() { mixin(MGF!("mPhysicsVolumeChange", "Function TribesGame.TrProj_Grenade.PhysicsVolumeChange")()); }
+			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_Grenade.Explode")()); }
+			ScriptFunction StickToTarget() { mixin(MGF!("mStickToTarget", "Function TribesGame.TrProj_Grenade.StickToTarget")()); }
+			ScriptFunction PlayStuckOnEffects() { mixin(MGF!("mPlayStuckOnEffects", "Function TribesGame.TrProj_Grenade.PlayStuckOnEffects")()); }
+			ScriptFunction MyOnParticleSystemFinished() { mixin(MGF!("mMyOnParticleSystemFinished", "Function TribesGame.TrProj_Grenade.MyOnParticleSystemFinished")()); }
+			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF!("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Grenade.PawnEnteredDetonationArea")()); }
+			ScriptFunction PawnLeftDetonationArea() { mixin(MGF!("mPawnLeftDetonationArea", "Function TribesGame.TrProj_Grenade.PawnLeftDetonationArea")()); }
+			ScriptFunction NativeExplode() { mixin(MGF!("mNativeExplode", "Function TribesGame.TrProj_Grenade.NativeExplode")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Pawn) m_PotentialTargets() { return *cast(ScriptArray!(Pawn)*)(cast(size_t)cast(void*)this + 872); }
-			float m_fProxyDetonationHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 868); }
-			float m_fProxyDetonationRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 864); }
-			ScriptClass m_CollisionProxyClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 860); }
-			TrCollisionProxy m_CollisionProxy() { return *cast(TrCollisionProxy*)(cast(size_t)cast(void*)this + 856); }
-			float m_fStuckMomentumMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 852); }
-			float m_fStuckDamageMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 848); }
-			Vector m_OverloadHitNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 836); }
-			SoundCue m_StuckOnPawnLoopingSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 832); }
-			ParticleSystem m_StuckOnTargetTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 828); }
-			float m_fExplosionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
+			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!(ScriptArray!(Pawn), 872)()); }
+			float m_fProxyDetonationHeight() { mixin(MGPC!(float, 868)()); }
+			float m_fProxyDetonationRadius() { mixin(MGPC!(float, 864)()); }
+			ScriptClass m_CollisionProxyClass() { mixin(MGPC!(ScriptClass, 860)()); }
+			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!(TrCollisionProxy, 856)()); }
+			float m_fStuckMomentumMultiplier() { mixin(MGPC!(float, 852)()); }
+			float m_fStuckDamageMultiplier() { mixin(MGPC!(float, 848)()); }
+			Vector m_OverloadHitNormal() { mixin(MGPC!(Vector, 836)()); }
+			SoundCue m_StuckOnPawnLoopingSound() { mixin(MGPC!(SoundCue, 832)()); }
+			ParticleSystem m_StuckOnTargetTemplate() { mixin(MGPC!(ParticleSystem, 828)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StuckOnTargetEffects'!
+			float m_fExplosionTime() { mixin(MGPC!(float, 820)()); }
 		}
-		bool m_bStuckOnPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x1) != 0; }
-		bool m_bStuckOnPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x1; } return val; }
-		bool m_bSpawnProxyOnInit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x80) != 0; }
-		bool m_bSpawnProxyOnInit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x80; } return val; }
-		bool m_bScanProxyOnInit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x40) != 0; }
-		bool m_bScanProxyOnInit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x40; } return val; }
-		bool m_bFullyInheritVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x20) != 0; }
-		bool m_bFullyInheritVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x20; } return val; }
-		bool m_bDoRandSpin() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x10) != 0; }
-		bool m_bDoRandSpin(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x10; } return val; }
-		bool m_bBounceRequiredForExplode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x8) != 0; }
-		bool m_bBounceRequiredForExplode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x8; } return val; }
-		bool m_bExplodeOnTouchEvent() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x4) != 0; }
-		bool m_bExplodeOnTouchEvent(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x4; } return val; }
-		bool m_bTimedExplosion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 816) & 0x2) != 0; }
-		bool m_bTimedExplosion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 816) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 816) &= ~0x2; } return val; }
+		bool m_bStuckOnPlayer() { mixin(MGBPC!(816, 0x1)()); }
+		bool m_bStuckOnPlayer(bool val) { mixin(MSBPC!(816, 0x1)()); }
+		bool m_bSpawnProxyOnInit() { mixin(MGBPC!(816, 0x80)()); }
+		bool m_bSpawnProxyOnInit(bool val) { mixin(MSBPC!(816, 0x80)()); }
+		bool m_bScanProxyOnInit() { mixin(MGBPC!(816, 0x40)()); }
+		bool m_bScanProxyOnInit(bool val) { mixin(MSBPC!(816, 0x40)()); }
+		bool m_bFullyInheritVelocity() { mixin(MGBPC!(816, 0x20)()); }
+		bool m_bFullyInheritVelocity(bool val) { mixin(MSBPC!(816, 0x20)()); }
+		bool m_bDoRandSpin() { mixin(MGBPC!(816, 0x10)()); }
+		bool m_bDoRandSpin(bool val) { mixin(MSBPC!(816, 0x10)()); }
+		bool m_bBounceRequiredForExplode() { mixin(MGBPC!(816, 0x8)()); }
+		bool m_bBounceRequiredForExplode(bool val) { mixin(MSBPC!(816, 0x8)()); }
+		bool m_bExplodeOnTouchEvent() { mixin(MGBPC!(816, 0x4)()); }
+		bool m_bExplodeOnTouchEvent(bool val) { mixin(MSBPC!(816, 0x4)()); }
+		bool m_bTimedExplosion() { mixin(MGBPC!(816, 0x2)()); }
+		bool m_bTimedExplosion(bool val) { mixin(MSBPC!(816, 0x2)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.SeqEvent_HudRenderImage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
@@ -11,25 +12,25 @@ extern(C++) interface SeqEvent_HudRenderImage : SeqEvent_HudRender
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_HudRenderImage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.SeqEvent_HudRenderImage")()); }
 	private static __gshared SeqEvent_HudRenderImage mDefaultProperties;
-	@property final static SeqEvent_HudRenderImage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_HudRenderImage)("SeqEvent_HudRenderImage GameFramework.Default__SeqEvent_HudRenderImage")); }
+	@property final static SeqEvent_HudRenderImage DefaultProperties() { mixin(MGDPC!(SeqEvent_HudRenderImage, "SeqEvent_HudRenderImage GameFramework.Default__SeqEvent_HudRenderImage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mRender;
-		public @property static final ScriptFunction Render() { return mRender ? mRender : (mRender = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_HudRenderImage.Render")); }
+		public @property static final ScriptFunction Render() { mixin(MGF!("mRender", "Function GameFramework.SeqEvent_HudRenderImage.Render")()); }
 	}
 	@property final auto ref
 	{
-		float VL() { return *cast(float*)(cast(size_t)cast(void*)this + 328); }
-		float UL() { return *cast(float*)(cast(size_t)cast(void*)this + 324); }
-		float V() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }
-		float U() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-		float YL() { return *cast(float*)(cast(size_t)cast(void*)this + 312); }
-		float XL() { return *cast(float*)(cast(size_t)cast(void*)this + 308); }
-		Texture2D DisplayTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 304); }
-		Vector DisplayLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 292); }
-		UObject.LinearColor DisplayColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 276); }
+		float VL() { mixin(MGPC!(float, 328)()); }
+		float UL() { mixin(MGPC!(float, 324)()); }
+		float V() { mixin(MGPC!(float, 320)()); }
+		float U() { mixin(MGPC!(float, 316)()); }
+		float YL() { mixin(MGPC!(float, 312)()); }
+		float XL() { mixin(MGPC!(float, 308)()); }
+		Texture2D DisplayTexture() { mixin(MGPC!(Texture2D, 304)()); }
+		Vector DisplayLocation() { mixin(MGPC!(Vector, 292)()); }
+		UObject.LinearColor DisplayColor() { mixin(MGPC!(UObject.LinearColor, 276)()); }
 	}
 	final void Render(Canvas TargetCanvas, HUD TargetHud)
 	{

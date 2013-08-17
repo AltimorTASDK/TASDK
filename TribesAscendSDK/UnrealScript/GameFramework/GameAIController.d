@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameAIController;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AIController;
 import UnrealScript.Engine.FileLog;
 import UnrealScript.GameFramework.GameTypes;
@@ -11,9 +12,9 @@ extern(C++) interface GameAIController : AIController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameAIController")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameAIController")()); }
 	private static __gshared GameAIController mDefaultProperties;
-	@property final static GameAIController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameAIController)("GameAIController GameFramework.Default__GameAIController")); }
+	@property final static GameAIController DefaultProperties() { mixin(MGDPC!(GameAIController, "GameAIController GameFramework.Default__GameAIController")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,63 +39,68 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AllCommands() { return mAllCommands ? mAllCommands : (mAllCommands = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.AllCommands")); }
-			ScriptFunction PushCommand() { return mPushCommand ? mPushCommand : (mPushCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.PushCommand")); }
-			ScriptFunction PopCommand() { return mPopCommand ? mPopCommand : (mPopCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.PopCommand")); }
-			ScriptFunction AbortCommand() { return mAbortCommand ? mAbortCommand : (mAbortCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.AbortCommand")); }
-			ScriptFunction GetActiveCommand() { return mGetActiveCommand ? mGetActiveCommand : (mGetActiveCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetActiveCommand")); }
-			ScriptFunction CheckCommandCount() { return mCheckCommandCount ? mCheckCommandCount : (mCheckCommandCount = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.CheckCommandCount")); }
-			ScriptFunction DumpCommandStack() { return mDumpCommandStack ? mDumpCommandStack : (mDumpCommandStack = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.DumpCommandStack")); }
-			ScriptFunction FindCommandOfClass() { return mFindCommandOfClass ? mFindCommandOfClass : (mFindCommandOfClass = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.FindCommandOfClass")); }
-			ScriptFunction GetAICommandInStack() { return mGetAICommandInStack ? mGetAICommandInStack : (mGetAICommandInStack = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetAICommandInStack")); }
-			ScriptFunction GetDestinationOffset() { return mGetDestinationOffset ? mGetDestinationOffset : (mGetDestinationOffset = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetDestinationOffset")); }
-			ScriptFunction ReachedMoveGoal() { return mReachedMoveGoal ? mReachedMoveGoal : (mReachedMoveGoal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.ReachedMoveGoal")); }
-			ScriptFunction ReachedIntermediateMoveGoal() { return mReachedIntermediateMoveGoal ? mReachedIntermediateMoveGoal : (mReachedIntermediateMoveGoal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.ReachedIntermediateMoveGoal")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.Destroyed")); }
-			ScriptFunction RecordDemoAILog() { return mRecordDemoAILog ? mRecordDemoAILog : (mRecordDemoAILog = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.RecordDemoAILog")); }
-			ScriptFunction AILog_Internal() { return mAILog_Internal ? mAILog_Internal : (mAILog_Internal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.AILog_Internal")); }
-			ScriptFunction SetDesiredRotation() { return mSetDesiredRotation ? mSetDesiredRotation : (mSetDesiredRotation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.SetDesiredRotation")); }
-			ScriptFunction GetActionString() { return mGetActionString ? mGetActionString : (mGetActionString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetActionString")); }
+			ScriptFunction AllCommands() { mixin(MGF!("mAllCommands", "Function GameFramework.GameAIController.AllCommands")()); }
+			ScriptFunction PushCommand() { mixin(MGF!("mPushCommand", "Function GameFramework.GameAIController.PushCommand")()); }
+			ScriptFunction PopCommand() { mixin(MGF!("mPopCommand", "Function GameFramework.GameAIController.PopCommand")()); }
+			ScriptFunction AbortCommand() { mixin(MGF!("mAbortCommand", "Function GameFramework.GameAIController.AbortCommand")()); }
+			ScriptFunction GetActiveCommand() { mixin(MGF!("mGetActiveCommand", "Function GameFramework.GameAIController.GetActiveCommand")()); }
+			ScriptFunction CheckCommandCount() { mixin(MGF!("mCheckCommandCount", "Function GameFramework.GameAIController.CheckCommandCount")()); }
+			ScriptFunction DumpCommandStack() { mixin(MGF!("mDumpCommandStack", "Function GameFramework.GameAIController.DumpCommandStack")()); }
+			ScriptFunction FindCommandOfClass() { mixin(MGF!("mFindCommandOfClass", "Function GameFramework.GameAIController.FindCommandOfClass")()); }
+			ScriptFunction GetAICommandInStack() { mixin(MGF!("mGetAICommandInStack", "Function GameFramework.GameAIController.GetAICommandInStack")()); }
+			ScriptFunction GetDestinationOffset() { mixin(MGF!("mGetDestinationOffset", "Function GameFramework.GameAIController.GetDestinationOffset")()); }
+			ScriptFunction ReachedMoveGoal() { mixin(MGF!("mReachedMoveGoal", "Function GameFramework.GameAIController.ReachedMoveGoal")()); }
+			ScriptFunction ReachedIntermediateMoveGoal() { mixin(MGF!("mReachedIntermediateMoveGoal", "Function GameFramework.GameAIController.ReachedIntermediateMoveGoal")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function GameFramework.GameAIController.Destroyed")()); }
+			ScriptFunction RecordDemoAILog() { mixin(MGF!("mRecordDemoAILog", "Function GameFramework.GameAIController.RecordDemoAILog")()); }
+			ScriptFunction AILog_Internal() { mixin(MGF!("mAILog_Internal", "Function GameFramework.GameAIController.AILog_Internal")()); }
+			ScriptFunction SetDesiredRotation() { mixin(MGF!("mSetDesiredRotation", "Function GameFramework.GameAIController.SetDesiredRotation")()); }
+			ScriptFunction GetActionString() { mixin(MGF!("mGetActionString", "Function GameFramework.GameAIController.GetActionString")()); }
 		}
+	}
+	static struct DebugState
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAIController.DebugState")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GameTypes.AICmdHistoryItem) CommandHistory() { return *cast(ScriptArray!(GameTypes.AICmdHistoryItem)*)(cast(size_t)cast(void*)this + 992); }
-			ScriptArray!(ScriptName) AILogFilter() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1008); }
-			ScriptString DemoActionString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1020); }
-			int CommandHistoryNum() { return *cast(int*)(cast(size_t)cast(void*)this + 1004); }
-			float DebugTextMaxLen() { return *cast(float*)(cast(size_t)cast(void*)this + 988); }
-			FileLog AILogFile() { return *cast(FileLog*)(cast(size_t)cast(void*)this + 984); }
-			GameAICommand CommandList() { return *cast(GameAICommand*)(cast(size_t)cast(void*)this + 980); }
+			ScriptArray!(GameTypes.AICmdHistoryItem) CommandHistory() { mixin(MGPC!(ScriptArray!(GameTypes.AICmdHistoryItem), 992)()); }
+			ScriptArray!(ScriptName) AILogFilter() { mixin(MGPC!(ScriptArray!(ScriptName), 1008)()); }
+			ScriptString DemoActionString() { mixin(MGPC!(ScriptString, 1020)()); }
+			int CommandHistoryNum() { mixin(MGPC!(int, 1004)()); }
+			float DebugTextMaxLen() { mixin(MGPC!(float, 988)()); }
+			FileLog AILogFile() { mixin(MGPC!(FileLog, 984)()); }
+			GameAICommand CommandList() { mixin(MGPC!(GameAICommand, 980)()); }
 			// WARNING: Property 'AITreeHandle' has the same name as a defined type!
 			// WARNING: Property 'AITree' has the same name as a defined type!
 		}
-		bool bAIBroken() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x80) != 0; }
-		bool bAIBroken(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x80; } return val; }
-		bool bAIDrawDebug() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x40) != 0; }
-		bool bAIDrawDebug(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x40; } return val; }
-		bool bMapBasedLogName() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x20) != 0; }
-		bool bMapBasedLogName(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x20; } return val; }
-		bool bFlushAILogEachLine() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x10) != 0; }
-		bool bFlushAILogEachLine(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x10; } return val; }
-		bool bAILogToWindow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x8) != 0; }
-		bool bAILogToWindow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x8; } return val; }
-		bool bAILogging() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x4) != 0; }
-		bool bAILogging(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x4; } return val; }
-		bool bHasRunawayCommandList() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x2) != 0; }
-		bool bHasRunawayCommandList(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x2; } return val; }
-		bool bUseAITree() { return (*cast(uint*)(cast(size_t)cast(void*)this + 976) & 0x1) != 0; }
-		bool bUseAITree(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 976) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 976) &= ~0x1; } return val; }
+		bool bAIBroken() { mixin(MGBPC!(976, 0x80)()); }
+		bool bAIBroken(bool val) { mixin(MSBPC!(976, 0x80)()); }
+		bool bAIDrawDebug() { mixin(MGBPC!(976, 0x40)()); }
+		bool bAIDrawDebug(bool val) { mixin(MSBPC!(976, 0x40)()); }
+		bool bMapBasedLogName() { mixin(MGBPC!(976, 0x20)()); }
+		bool bMapBasedLogName(bool val) { mixin(MSBPC!(976, 0x20)()); }
+		bool bFlushAILogEachLine() { mixin(MGBPC!(976, 0x10)()); }
+		bool bFlushAILogEachLine(bool val) { mixin(MSBPC!(976, 0x10)()); }
+		bool bAILogToWindow() { mixin(MGBPC!(976, 0x8)()); }
+		bool bAILogToWindow(bool val) { mixin(MSBPC!(976, 0x8)()); }
+		bool bAILogging() { mixin(MGBPC!(976, 0x4)()); }
+		bool bAILogging(bool val) { mixin(MSBPC!(976, 0x4)()); }
+		bool bHasRunawayCommandList() { mixin(MGBPC!(976, 0x2)()); }
+		bool bHasRunawayCommandList(bool val) { mixin(MSBPC!(976, 0x2)()); }
+		bool bUseAITree() { mixin(MGBPC!(976, 0x1)()); }
+		bool bUseAITree(bool val) { mixin(MSBPC!(976, 0x1)()); }
 	}
 final:
-	void AllCommands(ScriptClass BaseClass, GameAICommand* Cmd)
+	void AllCommands(ScriptClass BaseClass, ref GameAICommand Cmd)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(GameAICommand*)&params[4] = *Cmd;
+		*cast(GameAICommand*)&params[4] = Cmd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllCommands, params.ptr, cast(void*)0);
 		*Cmd = *cast(GameAICommand*)&params[4];
 	}
@@ -144,7 +150,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindCommandOfClass, params.ptr, cast(void*)0);
 		return *cast(GameAICommand*)&params[4];
 	}
-	GameAICommand GetAICommandInStack(ScriptClass InClass)
+	GameAICommand GetAICommandInStack(const ScriptClass InClass)
 	{
 		ubyte params[8];
 		params[] = 0;

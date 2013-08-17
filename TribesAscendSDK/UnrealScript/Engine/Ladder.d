@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Ladder;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.LadderVolume;
 import UnrealScript.Engine.Pawn;
@@ -9,18 +10,18 @@ extern(C++) interface Ladder : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Ladder")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Ladder")()); }
 	private static __gshared Ladder mDefaultProperties;
-	@property final static Ladder DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Ladder)("Ladder Engine.Default__Ladder")); }
+	@property final static Ladder DefaultProperties() { mixin(MGDPC!(Ladder, "Ladder Engine.Default__Ladder")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSuggestMovePreparation;
-		public @property static final ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.Ladder.SuggestMovePreparation")); }
+		public @property static final ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.Ladder.SuggestMovePreparation")()); }
 	}
 	@property final auto ref
 	{
-		Ladder LadderList() { return *cast(Ladder*)(cast(size_t)cast(void*)this + 696); }
-		LadderVolume MyLadder() { return *cast(LadderVolume*)(cast(size_t)cast(void*)this + 692); }
+		Ladder LadderList() { mixin(MGPC!(Ladder, 696)()); }
+		LadderVolume MyLadder() { mixin(MGPC!(LadderVolume, 692)()); }
 	}
 	final bool SuggestMovePreparation(Pawn Other)
 	{

@@ -1,15 +1,16 @@
 module UnrealScript.Engine.Interface_NavMeshPathObstacle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UInterface;
 
 extern(C++) interface Interface_NavMeshPathObstacle : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Interface_NavMeshPathObstacle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Interface_NavMeshPathObstacle")()); }
 	private static __gshared Interface_NavMeshPathObstacle mDefaultProperties;
-	@property final static Interface_NavMeshPathObstacle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Interface_NavMeshPathObstacle)("Interface_NavMeshPathObstacle Engine.Default__Interface_NavMeshPathObstacle")); }
+	@property final static Interface_NavMeshPathObstacle DefaultProperties() { mixin(MGDPC!(Interface_NavMeshPathObstacle, "Interface_NavMeshPathObstacle Engine.Default__Interface_NavMeshPathObstacle")()); }
 	enum EEdgeHandlingStatus : ubyte
 	{
 		EHS_AddedBothDirs = 0,

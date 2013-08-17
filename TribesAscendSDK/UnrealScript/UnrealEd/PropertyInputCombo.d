@@ -1,13 +1,14 @@
 module UnrealScript.UnrealEd.PropertyInputCombo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UnrealEd.PropertyInputArrayItemBase;
 
 extern(C++) interface PropertyInputCombo : PropertyInputArrayItemBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.PropertyInputCombo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.PropertyInputCombo")()); }
 	private static __gshared PropertyInputCombo mDefaultProperties;
-	@property final static PropertyInputCombo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PropertyInputCombo)("PropertyInputCombo UnrealEd.Default__PropertyInputCombo")); }
+	@property final static PropertyInputCombo DefaultProperties() { mixin(MGDPC!(PropertyInputCombo, "PropertyInputCombo UnrealEd.Default__PropertyInputCombo")()); }
 }

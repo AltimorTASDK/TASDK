@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCarriedObjectMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -13,9 +14,9 @@ extern(C++) interface UTCarriedObjectMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCarriedObjectMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCarriedObjectMessage")()); }
 	private static __gshared UTCarriedObjectMessage mDefaultProperties;
-	@property final static UTCarriedObjectMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCarriedObjectMessage)("UTCarriedObjectMessage UTGame.Default__UTCarriedObjectMessage")); }
+	@property final static UTCarriedObjectMessage DefaultProperties() { mixin(MGDPC!(UTCarriedObjectMessage, "UTCarriedObjectMessage UTGame.Default__UTCarriedObjectMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,33 +32,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.AnnouncementSound")); }
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.AnnouncementLevel")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.GetString")); }
-			ScriptFunction ShouldBeRemoved() { return mShouldBeRemoved ? mShouldBeRemoved : (mShouldBeRemoved = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.ShouldBeRemoved")); }
-			ScriptFunction ShouldRemoveFlagAnnouncement() { return mShouldRemoveFlagAnnouncement ? mShouldRemoveFlagAnnouncement : (mShouldRemoveFlagAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.ShouldRemoveFlagAnnouncement")); }
-			ScriptFunction AddAnnouncement() { return mAddAnnouncement ? mAddAnnouncement : (mAddAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.AddAnnouncement")); }
-			ScriptFunction PartiallyDuplicates() { return mPartiallyDuplicates ? mPartiallyDuplicates : (mPartiallyDuplicates = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObjectMessage.PartiallyDuplicates")); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTCarriedObjectMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTCarriedObjectMessage.AnnouncementSound")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTCarriedObjectMessage.AnnouncementLevel")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTCarriedObjectMessage.GetString")()); }
+			ScriptFunction ShouldBeRemoved() { mixin(MGF!("mShouldBeRemoved", "Function UTGame.UTCarriedObjectMessage.ShouldBeRemoved")()); }
+			ScriptFunction ShouldRemoveFlagAnnouncement() { mixin(MGF!("mShouldRemoveFlagAnnouncement", "Function UTGame.UTCarriedObjectMessage.ShouldRemoveFlagAnnouncement")()); }
+			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTCarriedObjectMessage.AddAnnouncement")()); }
+			ScriptFunction PartiallyDuplicates() { mixin(MGF!("mPartiallyDuplicates", "Function UTGame.UTCarriedObjectMessage.PartiallyDuplicates")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave TakenSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 260); }
-		SoundNodeWave DroppedSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 252); }
-		SoundNodeWave ReturnSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 244); }
-		ScriptString KilledRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 232); }
-		ScriptString KilledBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 220); }
-		ScriptString HasRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 208); }
-		ScriptString HasBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-		ScriptString DroppedRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-		ScriptString DroppedBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-		ScriptString CaptureRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString CaptureBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString ReturnedRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString ReturnedBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString ReturnRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString ReturnBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundNodeWave TakenSounds() { mixin(MGPC!(SoundNodeWave, 260)()); }
+		SoundNodeWave DroppedSounds() { mixin(MGPC!(SoundNodeWave, 252)()); }
+		SoundNodeWave ReturnSounds() { mixin(MGPC!(SoundNodeWave, 244)()); }
+		ScriptString KilledRed() { mixin(MGPC!(ScriptString, 232)()); }
+		ScriptString KilledBlue() { mixin(MGPC!(ScriptString, 220)()); }
+		ScriptString HasRed() { mixin(MGPC!(ScriptString, 208)()); }
+		ScriptString HasBlue() { mixin(MGPC!(ScriptString, 196)()); }
+		ScriptString DroppedRed() { mixin(MGPC!(ScriptString, 184)()); }
+		ScriptString DroppedBlue() { mixin(MGPC!(ScriptString, 172)()); }
+		ScriptString CaptureRed() { mixin(MGPC!(ScriptString, 160)()); }
+		ScriptString CaptureBlue() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString ReturnedRed() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString ReturnedBlue() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString ReturnRed() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString ReturnBlue() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

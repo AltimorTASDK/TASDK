@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrScene_MatchSummary;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrScene;
 import UnrealScript.TribesGame.TrPlayerReplicationInfo;
 import UnrealScript.TribesGame.TrSummaryHelper;
@@ -10,9 +11,9 @@ extern(C++) interface GFxTrScene_MatchSummary : GFxTrScene
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrScene_MatchSummary")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrScene_MatchSummary")()); }
 	private static __gshared GFxTrScene_MatchSummary mDefaultProperties;
-	@property final static GFxTrScene_MatchSummary DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrScene_MatchSummary)("GFxTrScene_MatchSummary TribesGame.Default__GFxTrScene_MatchSummary")); }
+	@property final static GFxTrScene_MatchSummary DefaultProperties() { mixin(MGDPC!(GFxTrScene_MatchSummary, "GFxTrScene_MatchSummary TribesGame.Default__GFxTrScene_MatchSummary")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,22 +37,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreditsSort() { return mCreditsSort ? mCreditsSort : (mCreditsSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.CreditsSort")); }
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.Initialize")); }
-			ScriptFunction ClearSummary() { return mClearSummary ? mClearSummary : (mClearSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.ClearSummary")); }
-			ScriptFunction SummaryReady() { return mSummaryReady ? mSummaryReady : (mSummaryReady = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.SummaryReady")); }
-			ScriptFunction LoadTeamStatsData() { return mLoadTeamStatsData ? mLoadTeamStatsData : (mLoadTeamStatsData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.LoadTeamStatsData")); }
-			ScriptFunction LoadTeamAccoladeData() { return mLoadTeamAccoladeData ? mLoadTeamAccoladeData : (mLoadTeamAccoladeData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.LoadTeamAccoladeData")); }
-			ScriptFunction LoadTeamScoreboardData() { return mLoadTeamScoreboardData ? mLoadTeamScoreboardData : (mLoadTeamScoreboardData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.LoadTeamScoreboardData")); }
-			ScriptFunction LoadTeamMiscData() { return mLoadTeamMiscData ? mLoadTeamMiscData : (mLoadTeamMiscData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.LoadTeamMiscData")); }
-			ScriptFunction AddAward() { return mAddAward ? mAddAward : (mAddAward = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.AddAward")); }
-			ScriptFunction AddAccolade() { return mAddAccolade ? mAddAccolade : (mAddAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.AddAccolade")); }
-			ScriptFunction AddScoreSlot() { return mAddScoreSlot ? mAddScoreSlot : (mAddScoreSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.AddScoreSlot")); }
-			ScriptFunction AddMiscData() { return mAddMiscData ? mAddMiscData : (mAddMiscData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.AddMiscData")); }
-			ScriptFunction FormatResult() { return mFormatResult ? mFormatResult : (mFormatResult = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.FormatResult")); }
-			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.FormatTime")); }
-			ScriptFunction FindPlayerName() { return mFindPlayerName ? mFindPlayerName : (mFindPlayerName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.FindPlayerName")); }
-			ScriptFunction PopulateScoreboardDataFromGRI() { return mPopulateScoreboardDataFromGRI ? mPopulateScoreboardDataFromGRI : (mPopulateScoreboardDataFromGRI = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_MatchSummary.PopulateScoreboardDataFromGRI")); }
+			ScriptFunction CreditsSort() { mixin(MGF!("mCreditsSort", "Function TribesGame.GFxTrScene_MatchSummary.CreditsSort")()); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrScene_MatchSummary.Initialize")()); }
+			ScriptFunction ClearSummary() { mixin(MGF!("mClearSummary", "Function TribesGame.GFxTrScene_MatchSummary.ClearSummary")()); }
+			ScriptFunction SummaryReady() { mixin(MGF!("mSummaryReady", "Function TribesGame.GFxTrScene_MatchSummary.SummaryReady")()); }
+			ScriptFunction LoadTeamStatsData() { mixin(MGF!("mLoadTeamStatsData", "Function TribesGame.GFxTrScene_MatchSummary.LoadTeamStatsData")()); }
+			ScriptFunction LoadTeamAccoladeData() { mixin(MGF!("mLoadTeamAccoladeData", "Function TribesGame.GFxTrScene_MatchSummary.LoadTeamAccoladeData")()); }
+			ScriptFunction LoadTeamScoreboardData() { mixin(MGF!("mLoadTeamScoreboardData", "Function TribesGame.GFxTrScene_MatchSummary.LoadTeamScoreboardData")()); }
+			ScriptFunction LoadTeamMiscData() { mixin(MGF!("mLoadTeamMiscData", "Function TribesGame.GFxTrScene_MatchSummary.LoadTeamMiscData")()); }
+			ScriptFunction AddAward() { mixin(MGF!("mAddAward", "Function TribesGame.GFxTrScene_MatchSummary.AddAward")()); }
+			ScriptFunction AddAccolade() { mixin(MGF!("mAddAccolade", "Function TribesGame.GFxTrScene_MatchSummary.AddAccolade")()); }
+			ScriptFunction AddScoreSlot() { mixin(MGF!("mAddScoreSlot", "Function TribesGame.GFxTrScene_MatchSummary.AddScoreSlot")()); }
+			ScriptFunction AddMiscData() { mixin(MGF!("mAddMiscData", "Function TribesGame.GFxTrScene_MatchSummary.AddMiscData")()); }
+			ScriptFunction FormatResult() { mixin(MGF!("mFormatResult", "Function TribesGame.GFxTrScene_MatchSummary.FormatResult")()); }
+			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.GFxTrScene_MatchSummary.FormatTime")()); }
+			ScriptFunction FindPlayerName() { mixin(MGF!("mFindPlayerName", "Function TribesGame.GFxTrScene_MatchSummary.FindPlayerName")()); }
+			ScriptFunction PopulateScoreboardDataFromGRI() { mixin(MGF!("mPopulateScoreboardDataFromGRI", "Function TribesGame.GFxTrScene_MatchSummary.PopulateScoreboardDataFromGRI")()); }
 		}
 	}
 	struct ScoreSlot
@@ -59,45 +60,46 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.GFxTrScene_MatchSummary.ScoreSlot")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrScene_MatchSummary.ScoreSlot")()); }
 		@property final auto ref
 		{
-			ScriptString PlayerName() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
-			int PlayerID() { return *cast(int*)(cast(size_t)&this + 16); }
-			int Credits() { return *cast(int*)(cast(size_t)&this + 12); }
-			int Assists() { return *cast(int*)(cast(size_t)&this + 8); }
-			int Rank() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Kills() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptString PlayerName() { mixin(MGPS!(ScriptString, 20)()); }
+			int PlayerID() { mixin(MGPS!(int, 16)()); }
+			int Credits() { mixin(MGPS!(int, 12)()); }
+			int Assists() { mixin(MGPS!(int, 8)()); }
+			int Rank() { mixin(MGPS!(int, 4)()); }
+			int Kills() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrSummaryHelper.MVPAward) MVPAwards() { return *cast(ScriptArray!(TrSummaryHelper.MVPAward)*)(cast(size_t)cast(void*)this + 1228); }
-			ScriptArray!(TrSummaryHelper.MVPAward) MVPAccolades() { return *cast(ScriptArray!(TrSummaryHelper.MVPAward)*)(cast(size_t)cast(void*)this + 1240); }
-			TrSummaryHelper SummaryHelper() { return *cast(TrSummaryHelper*)(cast(size_t)cast(void*)this + 1252); }
-			GFxTrScene_MatchSummary.ScoreSlot Scoreboard() { return *cast(GFxTrScene_MatchSummary.ScoreSlot*)(cast(size_t)cast(void*)this + 204); }
-			int Team2Score() { return *cast(int*)(cast(size_t)cast(void*)this + 196); }
-			int Team1Score() { return *cast(int*)(cast(size_t)cast(void*)this + 192); }
-			int MatchDate() { return *cast(int*)(cast(size_t)cast(void*)this + 188); }
-			int MatchDuration() { return *cast(int*)(cast(size_t)cast(void*)this + 184); }
-			int MatchGameType() { return *cast(int*)(cast(size_t)cast(void*)this + 180); }
-			int MatchMapId() { return *cast(int*)(cast(size_t)cast(void*)this + 176); }
-			int MatchId() { return *cast(int*)(cast(size_t)cast(void*)this + 172); }
-			int WinningTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
-			GFxObject ScoreboardDataList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 164); }
-			GFxObject AccoladeDataList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 160); }
-			GFxObject AwardDataList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 156); }
-			GFxObject MiscDataList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 152); }
-			int ScoreboardDataCount() { return *cast(int*)(cast(size_t)cast(void*)this + 148); }
-			int AccoladeDataCount() { return *cast(int*)(cast(size_t)cast(void*)this + 144); }
-			int AwardDataCount() { return *cast(int*)(cast(size_t)cast(void*)this + 140); }
-			int MiscDataCount() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-			int SCOREBOARD_SIZE() { return *cast(int*)(cast(size_t)cast(void*)this + 132); }
+			ScriptArray!(TrSummaryHelper.MVPAward) MVPAwards() { mixin(MGPC!(ScriptArray!(TrSummaryHelper.MVPAward), 1228)()); }
+			ScriptArray!(TrSummaryHelper.MVPAward) MVPAccolades() { mixin(MGPC!(ScriptArray!(TrSummaryHelper.MVPAward), 1240)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditsSort__Delegate'!
+			TrSummaryHelper SummaryHelper() { mixin(MGPC!(TrSummaryHelper, 1252)()); }
+			GFxTrScene_MatchSummary.ScoreSlot Scoreboard() { mixin(MGPC!(GFxTrScene_MatchSummary.ScoreSlot, 204)()); }
+			int Team2Score() { mixin(MGPC!(int, 196)()); }
+			int Team1Score() { mixin(MGPC!(int, 192)()); }
+			int MatchDate() { mixin(MGPC!(int, 188)()); }
+			int MatchDuration() { mixin(MGPC!(int, 184)()); }
+			int MatchGameType() { mixin(MGPC!(int, 180)()); }
+			int MatchMapId() { mixin(MGPC!(int, 176)()); }
+			int MatchId() { mixin(MGPC!(int, 172)()); }
+			int WinningTeam() { mixin(MGPC!(int, 168)()); }
+			GFxObject ScoreboardDataList() { mixin(MGPC!(GFxObject, 164)()); }
+			GFxObject AccoladeDataList() { mixin(MGPC!(GFxObject, 160)()); }
+			GFxObject AwardDataList() { mixin(MGPC!(GFxObject, 156)()); }
+			GFxObject MiscDataList() { mixin(MGPC!(GFxObject, 152)()); }
+			int ScoreboardDataCount() { mixin(MGPC!(int, 148)()); }
+			int AccoladeDataCount() { mixin(MGPC!(int, 144)()); }
+			int AwardDataCount() { mixin(MGPC!(int, 140)()); }
+			int MiscDataCount() { mixin(MGPC!(int, 136)()); }
+			int SCOREBOARD_SIZE() { mixin(MGPC!(int, 132)()); }
 		}
-		bool bUseSNS() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x1) != 0; }
-		bool bUseSNS(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x1; } return val; }
+		bool bUseSNS() { mixin(MGBPC!(200, 0x1)()); }
+		bool bUseSNS(bool val) { mixin(MSBPC!(200, 0x1)()); }
 	}
 final:
 	int CreditsSort(TrPlayerReplicationInfo A, TrPlayerReplicationInfo B)

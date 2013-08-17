@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProximityGrenadeCollisionProxy;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.TribesGame.TrCollisionProxy;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface TrProximityGrenadeCollisionProxy : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProximityGrenadeCollisionProxy")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProximityGrenadeCollisionProxy")()); }
 	private static __gshared TrProximityGrenadeCollisionProxy mDefaultProperties;
-	@property final static TrProximityGrenadeCollisionProxy DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProximityGrenadeCollisionProxy)("TrProximityGrenadeCollisionProxy TribesGame.Default__TrProximityGrenadeCollisionProxy")); }
+	@property final static TrProximityGrenadeCollisionProxy DefaultProperties() { mixin(MGDPC!(TrProximityGrenadeCollisionProxy, "TrProximityGrenadeCollisionProxy TribesGame.Default__TrProximityGrenadeCollisionProxy")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,9 +23,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPawnAdded() { return mOnPawnAdded ? mOnPawnAdded : (mOnPawnAdded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProximityGrenadeCollisionProxy.OnPawnAdded")); }
-			ScriptFunction OnPawnRemoved() { return mOnPawnRemoved ? mOnPawnRemoved : (mOnPawnRemoved = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProximityGrenadeCollisionProxy.OnPawnRemoved")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProximityGrenadeCollisionProxy.Touch")); }
+			ScriptFunction OnPawnAdded() { mixin(MGF!("mOnPawnAdded", "Function TribesGame.TrProximityGrenadeCollisionProxy.OnPawnAdded")()); }
+			ScriptFunction OnPawnRemoved() { mixin(MGF!("mOnPawnRemoved", "Function TribesGame.TrProximityGrenadeCollisionProxy.OnPawnRemoved")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrProximityGrenadeCollisionProxy.Touch")()); }
 		}
 	}
 final:

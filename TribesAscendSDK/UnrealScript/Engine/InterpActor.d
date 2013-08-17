@@ -1,6 +1,7 @@
 module UnrealScript.Engine.InterpActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.DynamicSMActor;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.SoundCue;
@@ -12,9 +13,9 @@ extern(C++) interface InterpActor : DynamicSMActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpActor")()); }
 	private static __gshared InterpActor mDefaultProperties;
-	@property final static InterpActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpActor)("InterpActor Engine.Default__InterpActor")); }
+	@property final static InterpActor DefaultProperties() { mixin(MGDPC!(InterpActor, "InterpActor Engine.Default__InterpActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,22 +39,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.PostBeginPlay")); }
-			ScriptFunction SetShadowParentOnAllAttachedComponents() { return mSetShadowParentOnAllAttachedComponents ? mSetShadowParentOnAllAttachedComponents : (mSetShadowParentOnAllAttachedComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.SetShadowParentOnAllAttachedComponents")); }
-			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.EncroachingOn")); }
-			ScriptFunction RanInto() { return mRanInto ? mRanInto : (mRanInto = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.RanInto")); }
-			ScriptFunction Attach() { return mAttach ? mAttach : (mAttach = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.Attach")); }
-			ScriptFunction Detach() { return mDetach ? mDetach : (mDetach = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.Detach")); }
-			ScriptFunction Restart() { return mRestart ? mRestart : (mRestart = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.Restart")); }
-			ScriptFunction FinishedOpen() { return mFinishedOpen ? mFinishedOpen : (mFinishedOpen = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.FinishedOpen")); }
-			ScriptFunction PlayMovingSound() { return mPlayMovingSound ? mPlayMovingSound : (mPlayMovingSound = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.PlayMovingSound")); }
-			ScriptFunction InterpolationStarted() { return mInterpolationStarted ? mInterpolationStarted : (mInterpolationStarted = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.InterpolationStarted")); }
-			ScriptFunction InterpolationFinished() { return mInterpolationFinished ? mInterpolationFinished : (mInterpolationFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.InterpolationFinished")); }
-			ScriptFunction InterpolationChanged() { return mInterpolationChanged ? mInterpolationChanged : (mInterpolationChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.InterpolationChanged")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.ShutDown")); }
-			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.ShouldSaveForCheckpoint")); }
-			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.CreateCheckpointRecord")); }
-			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.ApplyCheckpointRecord")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.InterpActor.PostBeginPlay")()); }
+			ScriptFunction SetShadowParentOnAllAttachedComponents() { mixin(MGF!("mSetShadowParentOnAllAttachedComponents", "Function Engine.InterpActor.SetShadowParentOnAllAttachedComponents")()); }
+			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.InterpActor.EncroachingOn")()); }
+			ScriptFunction RanInto() { mixin(MGF!("mRanInto", "Function Engine.InterpActor.RanInto")()); }
+			ScriptFunction Attach() { mixin(MGF!("mAttach", "Function Engine.InterpActor.Attach")()); }
+			ScriptFunction Detach() { mixin(MGF!("mDetach", "Function Engine.InterpActor.Detach")()); }
+			ScriptFunction Restart() { mixin(MGF!("mRestart", "Function Engine.InterpActor.Restart")()); }
+			ScriptFunction FinishedOpen() { mixin(MGF!("mFinishedOpen", "Function Engine.InterpActor.FinishedOpen")()); }
+			ScriptFunction PlayMovingSound() { mixin(MGF!("mPlayMovingSound", "Function Engine.InterpActor.PlayMovingSound")()); }
+			ScriptFunction InterpolationStarted() { mixin(MGF!("mInterpolationStarted", "Function Engine.InterpActor.InterpolationStarted")()); }
+			ScriptFunction InterpolationFinished() { mixin(MGF!("mInterpolationFinished", "Function Engine.InterpActor.InterpolationFinished")()); }
+			ScriptFunction InterpolationChanged() { mixin(MGF!("mInterpolationChanged", "Function Engine.InterpActor.InterpolationChanged")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.InterpActor.ShutDown")()); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.InterpActor.ShouldSaveForCheckpoint")()); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.InterpActor.CreateCheckpointRecord")()); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.InterpActor.ApplyCheckpointRecord")()); }
 		}
 	}
 	struct CheckpointRecord
@@ -61,53 +62,54 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpActor.CheckpointRecord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpActor.CheckpointRecord")()); }
 		@property final
 		{
 			auto ref
 			{
-				Actor.ECollisionType CollisionType() { return *cast(Actor.ECollisionType*)(cast(size_t)&this + 24); }
-				Rotator Rotation() { return *cast(Rotator*)(cast(size_t)&this + 12); }
-				Vector Location() { return *cast(Vector*)(cast(size_t)&this + 0); }
+				Actor.ECollisionType CollisionType() { mixin(MGPS!(Actor.ECollisionType, 24)()); }
+				Rotator Rotation() { mixin(MGPS!(Rotator, 12)()); }
+				Vector Location() { mixin(MGPS!(Vector, 0)()); }
 			}
-			bool bNeedsPositionReplication() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x4) != 0; }
-			bool bNeedsPositionReplication(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x4; } return val; }
-			bool bIsShutdown() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bIsShutdown(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bHidden() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bHidden(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bNeedsPositionReplication() { mixin(MGBPS!(28, 0x4)()); }
+			bool bNeedsPositionReplication(bool val) { mixin(MSBPS!(28, 0x4)()); }
+			bool bIsShutdown() { mixin(MGBPS!(28, 0x2)()); }
+			bool bIsShutdown(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bHidden() { mixin(MGBPS!(28, 0x1)()); }
+			bool bHidden(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			NavigationPoint MyMarker() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 536); }
-			SoundCue ClosedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 568); }
-			SoundCue ClosingAmbientSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 564); }
-			SoundCue CloseSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 560); }
-			SoundCue OpenedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 556); }
-			SoundCue OpeningAmbientSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 552); }
-			SoundCue OpenSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 548); }
-			float StayOpenTime() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
-			float MaxZVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
+			NavigationPoint MyMarker() { mixin(MGPC!(NavigationPoint, 536)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientSoundComponent'!
+			SoundCue ClosedSound() { mixin(MGPC!(SoundCue, 568)()); }
+			SoundCue ClosingAmbientSound() { mixin(MGPC!(SoundCue, 564)()); }
+			SoundCue CloseSound() { mixin(MGPC!(SoundCue, 560)()); }
+			SoundCue OpenedSound() { mixin(MGPC!(SoundCue, 556)()); }
+			SoundCue OpeningAmbientSound() { mixin(MGPC!(SoundCue, 552)()); }
+			SoundCue OpenSound() { mixin(MGPC!(SoundCue, 548)()); }
+			float StayOpenTime() { mixin(MGPC!(float, 544)()); }
+			float MaxZVelocity() { mixin(MGPC!(float, 540)()); }
 		}
-		bool bMonitorMover() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
-		bool bMonitorMover(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
-		bool bIsLift() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x80) != 0; }
-		bool bIsLift(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x80; } return val; }
-		bool bShouldShadowParentAllAttachedActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x40) != 0; }
-		bool bShouldShadowParentAllAttachedActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x40; } return val; }
-		bool bStopOnEncroach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x20) != 0; }
-		bool bStopOnEncroach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x20; } return val; }
-		bool bContinueOnEncroachPhysicsObject() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10) != 0; }
-		bool bContinueOnEncroachPhysicsObject(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10; } return val; }
-		bool bDestroyProjectilesOnEncroach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8) != 0; }
-		bool bDestroyProjectilesOnEncroach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8; } return val; }
-		bool bMonitorZVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
-		bool bMonitorZVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
-		bool bShouldSaveForCheckpoint() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool bShouldSaveForCheckpoint(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		bool bMonitorMover() { mixin(MGBPC!(532, 0x2)()); }
+		bool bMonitorMover(bool val) { mixin(MSBPC!(532, 0x2)()); }
+		bool bIsLift() { mixin(MGBPC!(532, 0x80)()); }
+		bool bIsLift(bool val) { mixin(MSBPC!(532, 0x80)()); }
+		bool bShouldShadowParentAllAttachedActors() { mixin(MGBPC!(532, 0x40)()); }
+		bool bShouldShadowParentAllAttachedActors(bool val) { mixin(MSBPC!(532, 0x40)()); }
+		bool bStopOnEncroach() { mixin(MGBPC!(532, 0x20)()); }
+		bool bStopOnEncroach(bool val) { mixin(MSBPC!(532, 0x20)()); }
+		bool bContinueOnEncroachPhysicsObject() { mixin(MGBPC!(532, 0x10)()); }
+		bool bContinueOnEncroachPhysicsObject(bool val) { mixin(MSBPC!(532, 0x10)()); }
+		bool bDestroyProjectilesOnEncroach() { mixin(MGBPC!(532, 0x8)()); }
+		bool bDestroyProjectilesOnEncroach(bool val) { mixin(MSBPC!(532, 0x8)()); }
+		bool bMonitorZVelocity() { mixin(MGBPC!(532, 0x4)()); }
+		bool bMonitorZVelocity(bool val) { mixin(MSBPC!(532, 0x4)()); }
+		bool bShouldSaveForCheckpoint() { mixin(MGBPC!(532, 0x1)()); }
+		bool bShouldSaveForCheckpoint(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -195,19 +197,19 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void CreateCheckpointRecord(InterpActor.CheckpointRecord* Record)
+	void CreateCheckpointRecord(ref InterpActor.CheckpointRecord Record)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(InterpActor.CheckpointRecord*)params.ptr = *Record;
+		*cast(InterpActor.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(InterpActor.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(InterpActor.CheckpointRecord* Record)
+	void ApplyCheckpointRecord(ref const InterpActor.CheckpointRecord Record)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(InterpActor.CheckpointRecord*)params.ptr = *Record;
+		*cast(InterpActor.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(InterpActor.CheckpointRecord*)params.ptr;
 	}

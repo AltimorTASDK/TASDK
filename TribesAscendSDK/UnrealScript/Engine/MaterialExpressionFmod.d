@@ -1,18 +1,19 @@
 module UnrealScript.Engine.MaterialExpressionFmod;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionFmod : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionFmod")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionFmod")()); }
 	private static __gshared MaterialExpressionFmod mDefaultProperties;
-	@property final static MaterialExpressionFmod DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionFmod)("MaterialExpressionFmod Engine.Default__MaterialExpressionFmod")); }
+	@property final static MaterialExpressionFmod DefaultProperties() { mixin(MGDPC!(MaterialExpressionFmod, "MaterialExpressionFmod Engine.Default__MaterialExpressionFmod")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput B() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 136); }
-		MaterialExpression.ExpressionInput A() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 108); }
+		MaterialExpression.ExpressionInput B() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
+		MaterialExpression.ExpressionInput A() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
 	}
 }

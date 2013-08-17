@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PortalTeleporter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.TextureRenderTarget2D;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Projectile;
@@ -11,9 +12,9 @@ extern(C++) interface PortalTeleporter : SceneCapturePortalActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PortalTeleporter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PortalTeleporter")()); }
 	private static __gshared PortalTeleporter mDefaultProperties;
-	@property final static PortalTeleporter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PortalTeleporter)("PortalTeleporter Engine.Default__PortalTeleporter")); }
+	@property final static PortalTeleporter DefaultProperties() { mixin(MGDPC!(PortalTeleporter, "PortalTeleporter Engine.Default__PortalTeleporter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,28 +27,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TransformActor() { return mTransformActor ? mTransformActor : (mTransformActor = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.TransformActor")); }
-			ScriptFunction TransformVectorDir() { return mTransformVectorDir ? mTransformVectorDir : (mTransformVectorDir = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.TransformVectorDir")); }
-			ScriptFunction TransformHitLocation() { return mTransformHitLocation ? mTransformHitLocation : (mTransformHitLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.TransformHitLocation")); }
-			ScriptFunction CreatePortalTexture() { return mCreatePortalTexture ? mCreatePortalTexture : (mCreatePortalTexture = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.CreatePortalTexture")); }
-			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.StopsProjectile")); }
+			ScriptFunction TransformActor() { mixin(MGF!("mTransformActor", "Function Engine.PortalTeleporter.TransformActor")()); }
+			ScriptFunction TransformVectorDir() { mixin(MGF!("mTransformVectorDir", "Function Engine.PortalTeleporter.TransformVectorDir")()); }
+			ScriptFunction TransformHitLocation() { mixin(MGF!("mTransformHitLocation", "Function Engine.PortalTeleporter.TransformHitLocation")()); }
+			ScriptFunction CreatePortalTexture() { mixin(MGF!("mCreatePortalTexture", "Function Engine.PortalTeleporter.CreatePortalTexture")()); }
+			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function Engine.PortalTeleporter.StopsProjectile")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PortalMarker MyMarker() { return *cast(PortalMarker*)(cast(size_t)cast(void*)this + 500); }
-			int TextureResolutionY() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-			int TextureResolutionX() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
-			PortalTeleporter SisterPortal() { return *cast(PortalTeleporter*)(cast(size_t)cast(void*)this + 488); }
+			PortalMarker MyMarker() { mixin(MGPC!(PortalMarker, 500)()); }
+			int TextureResolutionY() { mixin(MGPC!(int, 496)()); }
+			int TextureResolutionX() { mixin(MGPC!(int, 492)()); }
+			PortalTeleporter SisterPortal() { mixin(MGPC!(PortalTeleporter, 488)()); }
 		}
-		bool bCanTeleportVehicles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x4) != 0; }
-		bool bCanTeleportVehicles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x4; } return val; }
-		bool bAlwaysTeleportNonPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x2) != 0; }
-		bool bAlwaysTeleportNonPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x2; } return val; }
-		bool bMovablePortal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x1) != 0; }
-		bool bMovablePortal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x1; } return val; }
+		bool bCanTeleportVehicles() { mixin(MGBPC!(504, 0x4)()); }
+		bool bCanTeleportVehicles(bool val) { mixin(MSBPC!(504, 0x4)()); }
+		bool bAlwaysTeleportNonPawns() { mixin(MGBPC!(504, 0x2)()); }
+		bool bAlwaysTeleportNonPawns(bool val) { mixin(MSBPC!(504, 0x2)()); }
+		bool bMovablePortal() { mixin(MGBPC!(504, 0x1)()); }
+		bool bMovablePortal(bool val) { mixin(MSBPC!(504, 0x1)()); }
 	}
 final:
 	bool TransformActor(Actor A)

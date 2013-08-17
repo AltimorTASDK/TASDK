@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Projectile;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface Projectile : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Projectile")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Projectile")()); }
 	private static __gshared Projectile mDefaultProperties;
-	@property final static Projectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Projectile)("Projectile Engine.Default__Projectile")); }
+	@property final static Projectile DefaultProperties() { mixin(MGDPC!(Projectile, "Projectile Engine.Default__Projectile")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,54 +42,56 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.EncroachingOn")); }
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.PreBeginPlay")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.PostBeginPlay")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Init")); }
-			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.GetTeamNum")); }
-			ScriptFunction CanSplash() { return mCanSplash ? mCanSplash : (mCanSplash = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.CanSplash")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Reset")); }
-			ScriptFunction ProjectileHurtRadius() { return mProjectileHurtRadius ? mProjectileHurtRadius : (mProjectileHurtRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.ProjectileHurtRadius")); }
-			ScriptFunction HurtRadius() { return mHurtRadius ? mHurtRadius : (mHurtRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.HurtRadius")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Touch")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.ProcessTouch")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.HitWall")); }
-			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.EncroachedBy")); }
-			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Explode")); }
-			ScriptFunction RandSpin() { return mRandSpin ? mRandSpin : (mRandSpin = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.RandSpin")); }
-			ScriptFunction IsStationary() { return mIsStationary ? mIsStationary : (mIsStationary = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.IsStationary")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.FellOutOfWorld")); }
-			ScriptFunction GetTimeToLocation() { return mGetTimeToLocation ? mGetTimeToLocation : (mGetTimeToLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.GetTimeToLocation")); }
-			ScriptFunction StaticGetTimeToLocation() { return mStaticGetTimeToLocation ? mStaticGetTimeToLocation : (mStaticGetTimeToLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.StaticGetTimeToLocation")); }
-			ScriptFunction GetRange() { return mGetRange ? mGetRange : (mGetRange = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.GetRange")); }
-			ScriptFunction ApplyFluidSurfaceImpact() { return mApplyFluidSurfaceImpact ? mApplyFluidSurfaceImpact : (mApplyFluidSurfaceImpact = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.ApplyFluidSurfaceImpact")); }
+			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.Projectile.EncroachingOn")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.Projectile.PreBeginPlay")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Projectile.PostBeginPlay")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.Projectile.Init")()); }
+			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.Projectile.GetTeamNum")()); }
+			ScriptFunction CanSplash() { mixin(MGF!("mCanSplash", "Function Engine.Projectile.CanSplash")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.Projectile.Reset")()); }
+			ScriptFunction ProjectileHurtRadius() { mixin(MGF!("mProjectileHurtRadius", "Function Engine.Projectile.ProjectileHurtRadius")()); }
+			ScriptFunction HurtRadius() { mixin(MGF!("mHurtRadius", "Function Engine.Projectile.HurtRadius")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.Projectile.Touch")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function Engine.Projectile.ProcessTouch")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function Engine.Projectile.HitWall")()); }
+			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.Projectile.EncroachedBy")()); }
+			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function Engine.Projectile.Explode")()); }
+			ScriptFunction RandSpin() { mixin(MGF!("mRandSpin", "Function Engine.Projectile.RandSpin")()); }
+			ScriptFunction IsStationary() { mixin(MGF!("mIsStationary", "Function Engine.Projectile.IsStationary")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.Projectile.FellOutOfWorld")()); }
+			ScriptFunction GetTimeToLocation() { mixin(MGF!("mGetTimeToLocation", "Function Engine.Projectile.GetTimeToLocation")()); }
+			ScriptFunction StaticGetTimeToLocation() { mixin(MGF!("mStaticGetTimeToLocation", "Function Engine.Projectile.StaticGetTimeToLocation")()); }
+			ScriptFunction GetRange() { mixin(MGF!("mGetRange", "Function Engine.Projectile.GetRange")()); }
+			ScriptFunction ApplyFluidSurfaceImpact() { mixin(MGF!("mApplyFluidSurfaceImpact", "Function Engine.Projectile.ApplyFluidSurfaceImpact")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float NetCullDistanceSquared() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			Actor ImpactedActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 524); }
-			Controller InstigatorController() { return *cast(Controller*)(cast(size_t)cast(void*)this + 520); }
-			SoundCue ImpactSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 516); }
-			SoundCue SpawnSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 512); }
-			ScriptClass MyDamageType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 508); }
-			float MomentumTransfer() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			float DamageRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-			float Damage() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			Actor ZeroCollider() { return *cast(Actor*)(cast(size_t)cast(void*)this + 488); }
-			float MaxSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
-			float Speed() { return *cast(float*)(cast(size_t)cast(void*)this + 476); }
+			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+			float NetCullDistanceSquared() { mixin(MGPC!(float, 528)()); }
+			Actor ImpactedActor() { mixin(MGPC!(Actor, 524)()); }
+			Controller InstigatorController() { mixin(MGPC!(Controller, 520)()); }
+			SoundCue ImpactSound() { mixin(MGPC!(SoundCue, 516)()); }
+			SoundCue SpawnSound() { mixin(MGPC!(SoundCue, 512)()); }
+			ScriptClass MyDamageType() { mixin(MGPC!(ScriptClass, 508)()); }
+			float MomentumTransfer() { mixin(MGPC!(float, 504)()); }
+			float DamageRadius() { mixin(MGPC!(float, 500)()); }
+			float Damage() { mixin(MGPC!(float, 496)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ZeroColliderComponent'!
+			Actor ZeroCollider() { mixin(MGPC!(Actor, 488)()); }
+			float MaxSpeed() { mixin(MGPC!(float, 480)()); }
+			float Speed() { mixin(MGPC!(float, 476)()); }
 		}
-		bool bRotationFollowsVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x8) != 0; }
-		bool bRotationFollowsVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x8; } return val; }
-		bool bBegunPlay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x4) != 0; }
-		bool bBegunPlay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x4; } return val; }
-		bool bBlockedByInstigator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x2) != 0; }
-		bool bBlockedByInstigator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x2; } return val; }
-		bool bSwitchToZeroCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x1) != 0; }
-		bool bSwitchToZeroCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x1; } return val; }
+		bool bRotationFollowsVelocity() { mixin(MGBPC!(484, 0x8)()); }
+		bool bRotationFollowsVelocity(bool val) { mixin(MSBPC!(484, 0x8)()); }
+		bool bBegunPlay() { mixin(MGBPC!(484, 0x4)()); }
+		bool bBegunPlay(bool val) { mixin(MSBPC!(484, 0x4)()); }
+		bool bBlockedByInstigator() { mixin(MGBPC!(484, 0x2)()); }
+		bool bBlockedByInstigator(bool val) { mixin(MSBPC!(484, 0x2)()); }
+		bool bSwitchToZeroCollision() { mixin(MGBPC!(484, 0x1)()); }
+		bool bSwitchToZeroCollision(bool val) { mixin(MSBPC!(484, 0x1)()); }
 	}
 final:
 	bool EncroachingOn(Actor Other)

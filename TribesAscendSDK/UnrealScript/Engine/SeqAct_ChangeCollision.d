@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqAct_ChangeCollision;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.SequenceAction;
 
@@ -8,23 +9,23 @@ extern(C++) interface SeqAct_ChangeCollision : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ChangeCollision")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_ChangeCollision")()); }
 	private static __gshared SeqAct_ChangeCollision mDefaultProperties;
-	@property final static SeqAct_ChangeCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ChangeCollision)("SeqAct_ChangeCollision Engine.Default__SeqAct_ChangeCollision")); }
+	@property final static SeqAct_ChangeCollision DefaultProperties() { mixin(MGDPC!(SeqAct_ChangeCollision, "SeqAct_ChangeCollision Engine.Default__SeqAct_ChangeCollision")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_ChangeCollision.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_ChangeCollision.GetObjClassVersion")()); }
 	}
 	@property final
 	{
-		@property final auto ref Actor.ECollisionType CollisionType() { return *cast(Actor.ECollisionType*)(cast(size_t)cast(void*)this + 236); }
-		bool bCollideActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x1) != 0; }
-		bool bCollideActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x1; } return val; }
-		bool bBlockActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x2) != 0; }
-		bool bBlockActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x2; } return val; }
-		bool bIgnoreEncroachers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x4) != 0; }
-		bool bIgnoreEncroachers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x4; } return val; }
+		@property final auto ref Actor.ECollisionType CollisionType() { mixin(MGPC!(Actor.ECollisionType, 236)()); }
+		bool bCollideActors() { mixin(MGBPC!(232, 0x1)()); }
+		bool bCollideActors(bool val) { mixin(MSBPC!(232, 0x1)()); }
+		bool bBlockActors() { mixin(MGBPC!(232, 0x2)()); }
+		bool bBlockActors(bool val) { mixin(MSBPC!(232, 0x2)()); }
+		bool bIgnoreEncroachers() { mixin(MGBPC!(232, 0x4)()); }
+		bool bIgnoreEncroachers(bool val) { mixin(MSBPC!(232, 0x4)()); }
 	}
 	final static int GetObjClassVersion()
 	{

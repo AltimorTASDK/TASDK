@@ -1,6 +1,7 @@
 module UnrealScript.Engine.GameEngine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.Level;
 import UnrealScript.Core.UObject;
@@ -15,9 +16,9 @@ extern(C++) interface GameEngine : Engine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameEngine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameEngine")()); }
 	private static __gshared GameEngine mDefaultProperties;
-	@property final static GameEngine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameEngine)("GameEngine Engine.Default__GameEngine")); }
+	@property final static GameEngine DefaultProperties() { mixin(MGDPC!(GameEngine, "GameEngine Engine.Default__GameEngine")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,12 +32,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetOnlineSubsystem() { return mGetOnlineSubsystem ? mGetOnlineSubsystem : (mGetOnlineSubsystem = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetOnlineSubsystem")); }
-			ScriptFunction GetDLCManager() { return mGetDLCManager ? mGetDLCManager : (mGetDLCManager = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetDLCManager")); }
-			ScriptFunction GetDLCEnumerator() { return mGetDLCEnumerator ? mGetDLCEnumerator : (mGetDLCEnumerator = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetDLCEnumerator")); }
-			ScriptFunction CreateNamedNetDriver() { return mCreateNamedNetDriver ? mCreateNamedNetDriver : (mCreateNamedNetDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.CreateNamedNetDriver")); }
-			ScriptFunction DestroyNamedNetDriver() { return mDestroyNamedNetDriver ? mDestroyNamedNetDriver : (mDestroyNamedNetDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.DestroyNamedNetDriver")); }
-			ScriptFunction GetAdManager() { return mGetAdManager ? mGetAdManager : (mGetAdManager = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetAdManager")); }
+			ScriptFunction GetOnlineSubsystem() { mixin(MGF!("mGetOnlineSubsystem", "Function Engine.GameEngine.GetOnlineSubsystem")()); }
+			ScriptFunction GetDLCManager() { mixin(MGF!("mGetDLCManager", "Function Engine.GameEngine.GetDLCManager")()); }
+			ScriptFunction GetDLCEnumerator() { mixin(MGF!("mGetDLCEnumerator", "Function Engine.GameEngine.GetDLCEnumerator")()); }
+			ScriptFunction CreateNamedNetDriver() { mixin(MGF!("mCreateNamedNetDriver", "Function Engine.GameEngine.CreateNamedNetDriver")()); }
+			ScriptFunction DestroyNamedNetDriver() { mixin(MGF!("mDestroyNamedNetDriver", "Function Engine.GameEngine.DestroyNamedNetDriver")()); }
+			ScriptFunction GetAdManager() { mixin(MGF!("mGetAdManager", "Function Engine.GameEngine.GetAdManager")()); }
 		}
 	}
 	enum EFullyLoadPackageType : ubyte
@@ -53,14 +54,14 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.LevelStreamingStatus")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameEngine.LevelStreamingStatus")()); }
 		@property final
 		{
-			@property final auto ref ScriptName PackageName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			bool bShouldBeLoaded() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bShouldBeLoaded(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
-			bool bShouldBeVisible() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x2) != 0; }
-			bool bShouldBeVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x2; } return val; }
+			@property final auto ref ScriptName PackageName() { mixin(MGPS!(ScriptName, 0)()); }
+			bool bShouldBeLoaded() { mixin(MGBPS!(8, 0x1)()); }
+			bool bShouldBeLoaded(bool val) { mixin(MSBPS!(8, 0x1)()); }
+			bool bShouldBeVisible() { mixin(MGBPS!(8, 0x2)()); }
+			bool bShouldBeVisible(bool val) { mixin(MSBPS!(8, 0x2)()); }
 		}
 	}
 	struct FullyLoadedPackagesInfo
@@ -68,13 +69,13 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.FullyLoadedPackagesInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameEngine.FullyLoadedPackagesInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptName) PackagesToLoad() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)&this + 16); }
-			ScriptArray!(UObject) LoadedObjects() { return *cast(ScriptArray!(UObject)*)(cast(size_t)&this + 28); }
-			ScriptString Tag() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-			GameEngine.EFullyLoadPackageType FullyLoadType() { return *cast(GameEngine.EFullyLoadPackageType*)(cast(size_t)&this + 0); }
+			ScriptArray!(ScriptName) PackagesToLoad() { mixin(MGPS!(ScriptArray!(ScriptName), 16)()); }
+			ScriptArray!(UObject) LoadedObjects() { mixin(MGPS!(ScriptArray!(UObject), 28)()); }
+			ScriptString Tag() { mixin(MGPS!(ScriptString, 4)()); }
+			GameEngine.EFullyLoadPackageType FullyLoadType() { mixin(MGPS!(GameEngine.EFullyLoadPackageType, 0)()); }
 		}
 	}
 	struct NamedNetDriver
@@ -82,11 +83,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.NamedNetDriver")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameEngine.NamedNetDriver")()); }
 		@property final auto ref
 		{
 			// WARNING: Property 'NetDriver' has the same name as a defined type!
-			ScriptName NetDriverName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptName NetDriverName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct URL
@@ -94,51 +95,51 @@ public extern(D):
 		private ubyte __buffer__[68];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.URL")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameEngine.URL")()); }
 		@property final auto ref
 		{
-			ScriptString Protocol() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
-			ScriptString Host() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			int Port() { return *cast(int*)(cast(size_t)&this + 24); }
-			ScriptString Map() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
-			ScriptArray!(ScriptString) Op() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 40); }
-			ScriptString Portal() { return *cast(ScriptString*)(cast(size_t)&this + 52); }
-			int Valid() { return *cast(int*)(cast(size_t)&this + 64); }
+			ScriptString Protocol() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptString Host() { mixin(MGPS!(ScriptString, 12)()); }
+			int Port() { mixin(MGPS!(int, 24)()); }
+			ScriptString Map() { mixin(MGPS!(ScriptString, 28)()); }
+			ScriptArray!(ScriptString) Op() { mixin(MGPS!(ScriptArray!(ScriptString), 40)()); }
+			ScriptString Portal() { mixin(MGPS!(ScriptString, 52)()); }
+			int Valid() { mixin(MGPS!(int, 64)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PendingLevel GPendingLevel() { return *cast(PendingLevel*)(cast(size_t)cast(void*)this + 1484); }
-			ScriptString PendingLevelPlayerControllerClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1488); }
-			GameEngine.URL LastURL() { return *cast(GameEngine.URL*)(cast(size_t)cast(void*)this + 1500); }
-			GameEngine.URL LastRemoteURL() { return *cast(GameEngine.URL*)(cast(size_t)cast(void*)this + 1568); }
-			ScriptArray!(ScriptString) ServerActors() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 1636); }
-			ScriptString TravelURL() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1648); }
-			ubyte TravelType() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1660); }
+			PendingLevel GPendingLevel() { mixin(MGPC!(PendingLevel, 1484)()); }
+			ScriptString PendingLevelPlayerControllerClassName() { mixin(MGPC!(ScriptString, 1488)()); }
+			GameEngine.URL LastURL() { mixin(MGPC!(GameEngine.URL, 1500)()); }
+			GameEngine.URL LastRemoteURL() { mixin(MGPC!(GameEngine.URL, 1568)()); }
+			ScriptArray!(ScriptString) ServerActors() { mixin(MGPC!(ScriptArray!(ScriptString), 1636)()); }
+			ScriptString TravelURL() { mixin(MGPC!(ScriptString, 1648)()); }
+			ubyte TravelType() { mixin(MGPC!(ubyte, 1660)()); }
 			// WARNING: Property 'OnlineSubsystem' has the same name as a defined type!
-			DownloadableContentEnumerator DLCEnumerator() { return *cast(DownloadableContentEnumerator*)(cast(size_t)cast(void*)this + 1672); }
-			ScriptString DownloadableContentEnumeratorClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1676); }
-			DownloadableContentManager DLCManager() { return *cast(DownloadableContentManager*)(cast(size_t)cast(void*)this + 1688); }
-			ScriptString DownloadableContentManagerClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1692); }
-			InGameAdManager AdManager() { return *cast(InGameAdManager*)(cast(size_t)cast(void*)this + 1704); }
-			ScriptString InGameAdManagerClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1708); }
-			ScriptArray!(ScriptName) LevelsToLoadForPendingMapChange() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1720); }
-			ScriptArray!(Level) LoadedLevelsForPendingMapChange() { return *cast(ScriptArray!(Level)*)(cast(size_t)cast(void*)this + 1732); }
-			ScriptString PendingMapChangeFailureDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1744); }
-			float MaxDeltaTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1756); }
-			ScriptArray!(GameEngine.LevelStreamingStatus) PendingLevelStreamingStatusUpdates() { return *cast(ScriptArray!(GameEngine.LevelStreamingStatus)*)(cast(size_t)cast(void*)this + 1760); }
-			ScriptArray!(ObjectReferencer) ObjectReferencers() { return *cast(ScriptArray!(ObjectReferencer)*)(cast(size_t)cast(void*)this + 1772); }
-			ScriptArray!(GameEngine.FullyLoadedPackagesInfo) PackagesToFullyLoad() { return *cast(ScriptArray!(GameEngine.FullyLoadedPackagesInfo)*)(cast(size_t)cast(void*)this + 1784); }
-			ScriptArray!(GameEngine.NamedNetDriver) NamedNetDrivers() { return *cast(ScriptArray!(GameEngine.NamedNetDriver)*)(cast(size_t)cast(void*)this + 1796); }
+			DownloadableContentEnumerator DLCEnumerator() { mixin(MGPC!(DownloadableContentEnumerator, 1672)()); }
+			ScriptString DownloadableContentEnumeratorClassName() { mixin(MGPC!(ScriptString, 1676)()); }
+			DownloadableContentManager DLCManager() { mixin(MGPC!(DownloadableContentManager, 1688)()); }
+			ScriptString DownloadableContentManagerClassName() { mixin(MGPC!(ScriptString, 1692)()); }
+			InGameAdManager AdManager() { mixin(MGPC!(InGameAdManager, 1704)()); }
+			ScriptString InGameAdManagerClassName() { mixin(MGPC!(ScriptString, 1708)()); }
+			ScriptArray!(ScriptName) LevelsToLoadForPendingMapChange() { mixin(MGPC!(ScriptArray!(ScriptName), 1720)()); }
+			ScriptArray!(Level) LoadedLevelsForPendingMapChange() { mixin(MGPC!(ScriptArray!(Level), 1732)()); }
+			ScriptString PendingMapChangeFailureDescription() { mixin(MGPC!(ScriptString, 1744)()); }
+			float MaxDeltaTime() { mixin(MGPC!(float, 1756)()); }
+			ScriptArray!(GameEngine.LevelStreamingStatus) PendingLevelStreamingStatusUpdates() { mixin(MGPC!(ScriptArray!(GameEngine.LevelStreamingStatus), 1760)()); }
+			ScriptArray!(ObjectReferencer) ObjectReferencers() { mixin(MGPC!(ScriptArray!(ObjectReferencer), 1772)()); }
+			ScriptArray!(GameEngine.FullyLoadedPackagesInfo) PackagesToFullyLoad() { mixin(MGPC!(ScriptArray!(GameEngine.FullyLoadedPackagesInfo), 1784)()); }
+			ScriptArray!(GameEngine.NamedNetDriver) NamedNetDrivers() { mixin(MGPC!(ScriptArray!(GameEngine.NamedNetDriver), 1796)()); }
 		}
-		bool bWorldWasLoadedThisTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1664) & 0x1) != 0; }
-		bool bWorldWasLoadedThisTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1664) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1664) &= ~0x1; } return val; }
-		bool bShouldCommitPendingMapChange() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1664) & 0x2) != 0; }
-		bool bShouldCommitPendingMapChange(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1664) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1664) &= ~0x2; } return val; }
-		bool bClearAnimSetLinkupCachesOnLoadMap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1664) & 0x4) != 0; }
-		bool bClearAnimSetLinkupCachesOnLoadMap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1664) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1664) &= ~0x4; } return val; }
+		bool bWorldWasLoadedThisTick() { mixin(MGBPC!(1664, 0x1)()); }
+		bool bWorldWasLoadedThisTick(bool val) { mixin(MSBPC!(1664, 0x1)()); }
+		bool bShouldCommitPendingMapChange() { mixin(MGBPC!(1664, 0x2)()); }
+		bool bShouldCommitPendingMapChange(bool val) { mixin(MSBPC!(1664, 0x2)()); }
+		bool bClearAnimSetLinkupCachesOnLoadMap() { mixin(MGBPC!(1664, 0x4)()); }
+		bool bClearAnimSetLinkupCachesOnLoadMap(bool val) { mixin(MSBPC!(1664, 0x4)()); }
 	}
 final:
 	static OnlineSubsystem GetOnlineSubsystem()

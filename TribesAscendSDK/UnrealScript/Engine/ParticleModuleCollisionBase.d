@@ -1,15 +1,16 @@
 module UnrealScript.Engine.ParticleModuleCollisionBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModule;
 
 extern(C++) interface ParticleModuleCollisionBase : ParticleModule
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleCollisionBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleCollisionBase")()); }
 	private static __gshared ParticleModuleCollisionBase mDefaultProperties;
-	@property final static ParticleModuleCollisionBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleCollisionBase)("ParticleModuleCollisionBase Engine.Default__ParticleModuleCollisionBase")); }
+	@property final static ParticleModuleCollisionBase DefaultProperties() { mixin(MGDPC!(ParticleModuleCollisionBase, "ParticleModuleCollisionBase Engine.Default__ParticleModuleCollisionBase")()); }
 	enum EParticleCollisionComplete : ubyte
 	{
 		EPCC_Kill = 0,

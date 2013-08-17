@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTKismetAnnouncement;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTObjectiveSpecificMessage;
 import UnrealScript.UDKBase.UDKPlayerController;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface UTKismetAnnouncement : UTObjectiveSpecificMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKismetAnnouncement")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTKismetAnnouncement")()); }
 	private static __gshared UTKismetAnnouncement mDefaultProperties;
-	@property final static UTKismetAnnouncement DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKismetAnnouncement)("UTKismetAnnouncement UTGame.Default__UTKismetAnnouncement")); }
+	@property final static UTKismetAnnouncement DefaultProperties() { mixin(MGDPC!(UTKismetAnnouncement, "UTKismetAnnouncement UTGame.Default__UTKismetAnnouncement")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjectiveAnnouncement() { return mGetObjectiveAnnouncement ? mGetObjectiveAnnouncement : (mGetObjectiveAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKismetAnnouncement.GetObjectiveAnnouncement")); }
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKismetAnnouncement.AnnouncementLevel")); }
+			ScriptFunction GetObjectiveAnnouncement() { mixin(MGF!("mGetObjectiveAnnouncement", "Function UTGame.UTKismetAnnouncement.GetObjectiveAnnouncement")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTKismetAnnouncement.AnnouncementLevel")()); }
 		}
 	}
 final:

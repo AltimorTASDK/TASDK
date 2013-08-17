@@ -1,30 +1,31 @@
 module UnrealScript.Engine.UIWeaponSummary;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIResourceDataProvider;
 
 extern(C++) interface UIWeaponSummary : UIResourceDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIWeaponSummary")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIWeaponSummary")()); }
 	private static __gshared UIWeaponSummary mDefaultProperties;
-	@property final static UIWeaponSummary DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIWeaponSummary)("UIWeaponSummary Engine.Default__UIWeaponSummary")); }
+	@property final static UIWeaponSummary DefaultProperties() { mixin(MGDPC!(UIWeaponSummary, "UIWeaponSummary Engine.Default__UIWeaponSummary")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsProviderDisabled;
-		public @property static final ScriptFunction IsProviderDisabled() { return mIsProviderDisabled ? mIsProviderDisabled : (mIsProviderDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.UIWeaponSummary.IsProviderDisabled")); }
+		public @property static final ScriptFunction IsProviderDisabled() { mixin(MGF!("mIsProviderDisabled", "Function Engine.UIWeaponSummary.IsProviderDisabled")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString WeaponDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-			ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-			ScriptString ClassPathName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+			ScriptString WeaponDescription() { mixin(MGPC!(ScriptString, 148)()); }
+			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 136)()); }
+			ScriptString ClassPathName() { mixin(MGPC!(ScriptString, 124)()); }
 		}
-		bool bIsDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x1) != 0; }
-		bool bIsDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x1; } return val; }
+		bool bIsDisabled() { mixin(MGBPC!(160, 0x1)()); }
+		bool bIsDisabled(bool val) { mixin(MSBPC!(160, 0x1)()); }
 	}
 	final bool IsProviderDisabled()
 	{

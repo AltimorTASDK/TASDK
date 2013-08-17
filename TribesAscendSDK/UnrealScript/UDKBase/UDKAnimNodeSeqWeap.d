@@ -1,21 +1,22 @@
 module UnrealScript.UDKBase.UDKAnimNodeSeqWeap;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKAnimNodeSequence;
 
 extern(C++) interface UDKAnimNodeSeqWeap : UDKAnimNodeSequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeSeqWeap")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimNodeSeqWeap")()); }
 	private static __gshared UDKAnimNodeSeqWeap mDefaultProperties;
-	@property final static UDKAnimNodeSeqWeap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimNodeSeqWeap)("UDKAnimNodeSeqWeap UDKBase.Default__UDKAnimNodeSeqWeap")); }
+	@property final static UDKAnimNodeSeqWeap DefaultProperties() { mixin(MGDPC!(UDKAnimNodeSeqWeap, "UDKAnimNodeSeqWeap UDKBase.Default__UDKAnimNodeSeqWeap")()); }
 	@property final auto ref
 	{
-		ScriptName StingerAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 368); }
-		ScriptName ShoulderRocketAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 360); }
-		ScriptName SinglePistolAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 352); }
-		ScriptName DualPistolAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 344); }
-		ScriptName DefaultAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 336); }
+		ScriptName StingerAnim() { mixin(MGPC!(ScriptName, 368)()); }
+		ScriptName ShoulderRocketAnim() { mixin(MGPC!(ScriptName, 360)()); }
+		ScriptName SinglePistolAnim() { mixin(MGPC!(ScriptName, 352)()); }
+		ScriptName DualPistolAnim() { mixin(MGPC!(ScriptName, 344)()); }
+		ScriptName DefaultAnim() { mixin(MGPC!(ScriptName, 336)()); }
 	}
 }

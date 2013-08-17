@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleColorByParameter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleModuleColorBase;
 
@@ -8,12 +9,12 @@ extern(C++) interface ParticleModuleColorByParameter : ParticleModuleColorBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleColorByParameter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleColorByParameter")()); }
 	private static __gshared ParticleModuleColorByParameter mDefaultProperties;
-	@property final static ParticleModuleColorByParameter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleColorByParameter)("ParticleModuleColorByParameter Engine.Default__ParticleModuleColorByParameter")); }
+	@property final static ParticleModuleColorByParameter DefaultProperties() { mixin(MGDPC!(ParticleModuleColorByParameter, "ParticleModuleColorByParameter Engine.Default__ParticleModuleColorByParameter")()); }
 	@property final auto ref
 	{
-		UObject.Color DefaultColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 80); }
-		ScriptName ColorParam() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 72); }
+		UObject.Color DefaultColor() { mixin(MGPC!(UObject.Color, 80)()); }
+		ScriptName ColorParam() { mixin(MGPC!(ScriptName, 72)()); }
 	}
 }

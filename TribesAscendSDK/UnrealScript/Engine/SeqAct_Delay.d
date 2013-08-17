@@ -1,15 +1,16 @@
 module UnrealScript.Engine.SeqAct_Delay;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Latent;
 
 extern(C++) interface SeqAct_Delay : SeqAct_Latent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Delay")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_Delay")()); }
 	private static __gshared SeqAct_Delay mDefaultProperties;
-	@property final static SeqAct_Delay DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Delay)("SeqAct_Delay Engine.Default__SeqAct_Delay")); }
+	@property final static SeqAct_Delay DefaultProperties() { mixin(MGDPC!(SeqAct_Delay, "SeqAct_Delay Engine.Default__SeqAct_Delay")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,23 +20,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Delay.Reset")); }
-			ScriptFunction ResetDelayActive() { return mResetDelayActive ? mResetDelayActive : (mResetDelayActive = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Delay.ResetDelayActive")); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.SeqAct_Delay.Reset")()); }
+			ScriptFunction ResetDelayActive() { mixin(MGF!("mResetDelayActive", "Function Engine.SeqAct_Delay.ResetDelayActive")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float RemainingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			float LastUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-			float Duration() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-			float DefaultDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
+			float RemainingTime() { mixin(MGPC!(float, 264)()); }
+			float LastUpdateTime() { mixin(MGPC!(float, 260)()); }
+			float Duration() { mixin(MGPC!(float, 256)()); }
+			float DefaultDuration() { mixin(MGPC!(float, 252)()); }
 		}
-		bool bStartWillRestart() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x2) != 0; }
-		bool bStartWillRestart(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x2; } return val; }
-		bool bDelayActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x1) != 0; }
-		bool bDelayActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x1; } return val; }
+		bool bStartWillRestart() { mixin(MGBPC!(248, 0x2)()); }
+		bool bStartWillRestart(bool val) { mixin(MSBPC!(248, 0x2)()); }
+		bool bDelayActive() { mixin(MGBPC!(248, 0x1)()); }
+		bool bDelayActive(bool val) { mixin(MSBPC!(248, 0x1)()); }
 	}
 final:
 	void Reset()

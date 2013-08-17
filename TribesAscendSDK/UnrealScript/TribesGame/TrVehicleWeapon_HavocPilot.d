@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrVehicleWeapon_HavocPilot;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrEffect_MovableDecal;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.TribesGame.TrVehicleWeapon_BurstShot;
@@ -9,9 +10,9 @@ extern(C++) interface TrVehicleWeapon_HavocPilot : TrVehicleWeapon_BurstShot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleWeapon_HavocPilot")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicleWeapon_HavocPilot")()); }
 	private static __gshared TrVehicleWeapon_HavocPilot mDefaultProperties;
-	@property final static TrVehicleWeapon_HavocPilot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleWeapon_HavocPilot)("TrVehicleWeapon_HavocPilot TribesGame.Default__TrVehicleWeapon_HavocPilot")); }
+	@property final static TrVehicleWeapon_HavocPilot DefaultProperties() { mixin(MGDPC!(TrVehicleWeapon_HavocPilot, "TrVehicleWeapon_HavocPilot TribesGame.Default__TrVehicleWeapon_HavocPilot")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,16 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleWeapon_HavocPilot.PostBeginPlay")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleWeapon_HavocPilot.Destroyed")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleWeapon_HavocPilot.Tick")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrVehicleWeapon_HavocPilot.PostBeginPlay")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrVehicleWeapon_HavocPilot.Destroyed")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrVehicleWeapon_HavocPilot.Tick")()); }
 		}
 	}
 	@property final auto ref
 	{
-		TrEffect_MovableDecal m_BombMarkerDecal() { return *cast(TrEffect_MovableDecal*)(cast(size_t)cast(void*)this + 1804); }
-		MaterialInstanceConstant m_BombMarkerMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1800); }
-		MaterialInstanceConstant m_BombMarkerTemplate() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1796); }
+		TrEffect_MovableDecal m_BombMarkerDecal() { mixin(MGPC!(TrEffect_MovableDecal, 1804)()); }
+		MaterialInstanceConstant m_BombMarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 1800)()); }
+		MaterialInstanceConstant m_BombMarkerTemplate() { mixin(MGPC!(MaterialInstanceConstant, 1796)()); }
 	}
 final:
 	void PostBeginPlay()

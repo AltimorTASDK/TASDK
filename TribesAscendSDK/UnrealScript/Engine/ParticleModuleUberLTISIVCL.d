@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleUberLTISIVCL;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleUberBase;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
@@ -9,16 +10,16 @@ extern(C++) interface ParticleModuleUberLTISIVCL : ParticleModuleUberBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleUberLTISIVCL")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleUberLTISIVCL")()); }
 	private static __gshared ParticleModuleUberLTISIVCL mDefaultProperties;
-	@property final static ParticleModuleUberLTISIVCL DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleUberLTISIVCL)("ParticleModuleUberLTISIVCL Engine.Default__ParticleModuleUberLTISIVCL")); }
+	@property final static ParticleModuleUberLTISIVCL DefaultProperties() { mixin(MGDPC!(ParticleModuleUberLTISIVCL, "ParticleModuleUberLTISIVCL Engine.Default__ParticleModuleUberLTISIVCL")()); }
 	@property final auto ref
 	{
-		DistributionFloat.RawDistributionFloat AlphaOverLife() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 224); }
-		DistributionVector.RawDistributionVector ColorOverLife() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 196); }
-		DistributionFloat.RawDistributionFloat StartVelocityRadial() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 168); }
-		DistributionVector.RawDistributionVector StartVelocity() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 140); }
-		DistributionVector.RawDistributionVector StartSize() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 112); }
-		DistributionFloat.RawDistributionFloat Lifetime() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 84); }
+		DistributionFloat.RawDistributionFloat AlphaOverLife() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 224)()); }
+		DistributionVector.RawDistributionVector ColorOverLife() { mixin(MGPC!(DistributionVector.RawDistributionVector, 196)()); }
+		DistributionFloat.RawDistributionFloat StartVelocityRadial() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 168)()); }
+		DistributionVector.RawDistributionVector StartVelocity() { mixin(MGPC!(DistributionVector.RawDistributionVector, 140)()); }
+		DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!(DistributionVector.RawDistributionVector, 112)()); }
+		DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 84)()); }
 	}
 }

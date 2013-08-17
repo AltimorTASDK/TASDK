@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGameNextRoundMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface TrGameNextRoundMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameNextRoundMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameNextRoundMessage")()); }
 	private static __gshared TrGameNextRoundMessage mDefaultProperties;
-	@property final static TrGameNextRoundMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameNextRoundMessage)("TrGameNextRoundMessage TribesGame.Default__TrGameNextRoundMessage")); }
+	@property final static TrGameNextRoundMessage DefaultProperties() { mixin(MGDPC!(TrGameNextRoundMessage, "TrGameNextRoundMessage TribesGame.Default__TrGameNextRoundMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,14 +23,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameNextRoundMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameNextRoundMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrGameNextRoundMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrGameNextRoundMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString BeginsIn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString Round() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString BeginsIn() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString Round() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

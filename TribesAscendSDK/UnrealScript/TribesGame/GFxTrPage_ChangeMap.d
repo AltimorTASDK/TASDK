@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_ChangeMap;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxTrPage_ChangeMap : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ChangeMap")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ChangeMap")()); }
 	private static __gshared GFxTrPage_ChangeMap mDefaultProperties;
-	@property final static GFxTrPage_ChangeMap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ChangeMap)("GFxTrPage_ChangeMap TribesGame.Default__GFxTrPage_ChangeMap")); }
+	@property final static GFxTrPage_ChangeMap DefaultProperties() { mixin(MGDPC!(GFxTrPage_ChangeMap, "GFxTrPage_ChangeMap TribesGame.Default__GFxTrPage_ChangeMap")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,24 +25,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ChangeMap.TakeAction")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ChangeMap.TakeFocus")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ChangeMap.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ChangeMap.FillOption")); }
-			ScriptFunction CheckDescription() { return mCheckDescription ? mCheckDescription : (mCheckDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ChangeMap.CheckDescription")); }
-			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ChangeMap.FillDescription")); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_ChangeMap.TakeAction")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_ChangeMap.TakeFocus")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ChangeMap.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ChangeMap.FillOption")()); }
+			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ChangeMap.CheckDescription")()); }
+			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ChangeMap.FillDescription")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int CurrentSlotId() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-			int CurrentMapId() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int RemoveMapNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			int CurrentSlotId() { mixin(MGPC!(int, 364)()); }
+			int CurrentMapId() { mixin(MGPC!(int, 360)()); }
+			int RemoveMapNumber() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bAllowRemove() { return (*cast(uint*)(cast(size_t)cast(void*)this + 368) & 0x1) != 0; }
-		bool bAllowRemove(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 368) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 368) &= ~0x1; } return val; }
+		bool bAllowRemove() { mixin(MGBPC!(368, 0x1)()); }
+		bool bAllowRemove(bool val) { mixin(MSBPC!(368, 0x1)()); }
 	}
 final:
 	int TakeAction(int ActionIndex, GFxObject DataList)

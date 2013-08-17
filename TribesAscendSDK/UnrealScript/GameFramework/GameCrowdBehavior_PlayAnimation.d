@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdBehavior_PlayAnimation;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.GameFramework.SeqAct_PlayAgentAnimation;
@@ -11,9 +12,9 @@ extern(C++) interface GameCrowdBehavior_PlayAnimation : GameCrowdAgentBehavior
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdBehavior_PlayAnimation")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdBehavior_PlayAnimation")()); }
 	private static __gshared GameCrowdBehavior_PlayAnimation mDefaultProperties;
-	@property final static GameCrowdBehavior_PlayAnimation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdBehavior_PlayAnimation)("GameCrowdBehavior_PlayAnimation GameFramework.Default__GameCrowdBehavior_PlayAnimation")); }
+	@property final static GameCrowdBehavior_PlayAnimation DefaultProperties() { mixin(MGDPC!(GameCrowdBehavior_PlayAnimation, "GameCrowdBehavior_PlayAnimation GameFramework.Default__GameCrowdBehavior_PlayAnimation")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,36 +29,36 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitBehavior() { return mInitBehavior ? mInitBehavior : (mInitBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.InitBehavior")); }
-			ScriptFunction FinishedTargetRotation() { return mFinishedTargetRotation ? mFinishedTargetRotation : (mFinishedTargetRotation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.FinishedTargetRotation")); }
-			ScriptFunction SetSequenceOutput() { return mSetSequenceOutput ? mSetSequenceOutput : (mSetSequenceOutput = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.SetSequenceOutput")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.OnAnimEnd")); }
-			ScriptFunction PlayAgentAnimationNow() { return mPlayAgentAnimationNow ? mPlayAgentAnimationNow : (mPlayAgentAnimationNow = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.PlayAgentAnimationNow")); }
-			ScriptFunction StopBehavior() { return mStopBehavior ? mStopBehavior : (mStopBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.StopBehavior")); }
-			ScriptFunction GetBehaviorString() { return mGetBehaviorString ? mGetBehaviorString : (mGetBehaviorString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.GetBehaviorString")); }
+			ScriptFunction InitBehavior() { mixin(MGF!("mInitBehavior", "Function GameFramework.GameCrowdBehavior_PlayAnimation.InitBehavior")()); }
+			ScriptFunction FinishedTargetRotation() { mixin(MGF!("mFinishedTargetRotation", "Function GameFramework.GameCrowdBehavior_PlayAnimation.FinishedTargetRotation")()); }
+			ScriptFunction SetSequenceOutput() { mixin(MGF!("mSetSequenceOutput", "Function GameFramework.GameCrowdBehavior_PlayAnimation.SetSequenceOutput")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function GameFramework.GameCrowdBehavior_PlayAnimation.OnAnimEnd")()); }
+			ScriptFunction PlayAgentAnimationNow() { mixin(MGF!("mPlayAgentAnimationNow", "Function GameFramework.GameCrowdBehavior_PlayAnimation.PlayAgentAnimationNow")()); }
+			ScriptFunction StopBehavior() { mixin(MGF!("mStopBehavior", "Function GameFramework.GameCrowdBehavior_PlayAnimation.StopBehavior")()); }
+			ScriptFunction GetBehaviorString() { mixin(MGF!("mGetBehaviorString", "Function GameFramework.GameCrowdBehavior_PlayAnimation.GetBehaviorString")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) AnimationList() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 84); }
-			int AnimationIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
+			ScriptArray!(ScriptName) AnimationList() { mixin(MGPC!(ScriptArray!(ScriptName), 84)()); }
+			int AnimationIndex() { mixin(MGPC!(int, 124)()); }
 			// WARNING: Property 'AnimSequence' has the same name as a defined type!
-			float LoopTime() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			int LoopIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 112); }
-			Actor CustomActionTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 108); }
-			float BlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float BlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
+			float LoopTime() { mixin(MGPC!(float, 116)()); }
+			int LoopIndex() { mixin(MGPC!(int, 112)()); }
+			Actor CustomActionTarget() { mixin(MGPC!(Actor, 108)()); }
+			float BlendOutTime() { mixin(MGPC!(float, 100)()); }
+			float BlendInTime() { mixin(MGPC!(float, 96)()); }
 		}
-		bool bBlendBetweenAnims() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x8) != 0; }
-		bool bBlendBetweenAnims(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x8; } return val; }
-		bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x4) != 0; }
-		bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x4; } return val; }
-		bool bLookAtPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x2) != 0; }
-		bool bLookAtPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x2; } return val; }
-		bool bUseRootMotion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x1) != 0; }
-		bool bUseRootMotion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x1; } return val; }
+		bool bBlendBetweenAnims() { mixin(MGBPC!(104, 0x8)()); }
+		bool bBlendBetweenAnims(bool val) { mixin(MSBPC!(104, 0x8)()); }
+		bool bLooping() { mixin(MGBPC!(104, 0x4)()); }
+		bool bLooping(bool val) { mixin(MSBPC!(104, 0x4)()); }
+		bool bLookAtPlayer() { mixin(MGBPC!(104, 0x2)()); }
+		bool bLookAtPlayer(bool val) { mixin(MSBPC!(104, 0x2)()); }
+		bool bUseRootMotion() { mixin(MGBPC!(104, 0x1)()); }
+		bool bUseRootMotion(bool val) { mixin(MSBPC!(104, 0x1)()); }
 	}
 final:
 	void InitBehavior(GameCrowdAgent Agent)

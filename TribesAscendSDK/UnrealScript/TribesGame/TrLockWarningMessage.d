@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrLockWarningMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -9,9 +10,9 @@ extern(C++) interface TrLockWarningMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLockWarningMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLockWarningMessage")()); }
 	private static __gshared TrLockWarningMessage mDefaultProperties;
-	@property final static TrLockWarningMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLockWarningMessage)("TrLockWarningMessage TribesGame.Default__TrLockWarningMessage")); }
+	@property final static TrLockWarningMessage DefaultProperties() { mixin(MGDPC!(TrLockWarningMessage, "TrLockWarningMessage TribesGame.Default__TrLockWarningMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +23,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockWarningMessage.AnnouncementLevel")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockWarningMessage.GetString")); }
-			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockWarningMessage.GetColor")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function TribesGame.TrLockWarningMessage.AnnouncementLevel")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrLockWarningMessage.GetString")()); }
+			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function TribesGame.TrLockWarningMessage.GetColor")()); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 128); }
-		UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString RadarLockString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString MissileLockOnString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		UObject.Color YellowColor() { mixin(MGPC!(UObject.Color, 128)()); }
+		UObject.Color RedColor() { mixin(MGPC!(UObject.Color, 124)()); }
+		ScriptString RadarLockString() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString MissileLockOnString() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ubyte AnnouncementLevel(ubyte MessageIndex)

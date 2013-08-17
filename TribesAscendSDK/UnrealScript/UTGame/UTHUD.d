@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTHUD;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Engine.Material;
@@ -24,9 +25,9 @@ extern(C++) interface UTHUD : UTHUDBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTHUD")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTHUD")()); }
 	private static __gshared UTHUD mDefaultProperties;
-	@property final static UTHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTHUD)("UTHUD UTGame.Default__UTHUD")); }
+	@property final static UTHUD DefaultProperties() { mixin(MGDPC!(UTHUD, "UTHUD UTGame.Default__UTHUD")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -77,49 +78,49 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DrawTileCentered() { return mDrawTileCentered ? mDrawTileCentered : (mDrawTileCentered = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawTileCentered")); }
-			ScriptFunction SetDisplayedOrders() { return mSetDisplayedOrders ? mSetDisplayedOrders : (mSetDisplayedOrders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.SetDisplayedOrders")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.PostBeginPlay")); }
-			ScriptFunction Message() { return mMessage ? mMessage : (mMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.Message")); }
-			ScriptFunction ResolveHUDPosition() { return mResolveHUDPosition ? mResolveHUDPosition : (mResolveHUDPosition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.ResolveHUDPosition")); }
-			ScriptFunction GetScreenCoords() { return mGetScreenCoords ? mGetScreenCoords : (mGetScreenCoords = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetScreenCoords")); }
-			ScriptFunction DrawMessageText() { return mDrawMessageText ? mDrawMessageText : (mDrawMessageText = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawMessageText")); }
-			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.PostRender")); }
-			ScriptFunction DrawHUD() { return mDrawHUD ? mDrawHUD : (mDrawHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawHUD")); }
-			ScriptFunction DrawGameHud() { return mDrawGameHud ? mDrawGameHud : (mDrawGameHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawGameHud")); }
-			ScriptFunction DrawMicIcon() { return mDrawMicIcon ? mDrawMicIcon : (mDrawMicIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawMicIcon")); }
-			ScriptFunction DisplayLocalMessages() { return mDisplayLocalMessages ? mDisplayLocalMessages : (mDisplayLocalMessages = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayLocalMessages")); }
-			ScriptFunction DrawLivingHud() { return mDrawLivingHud ? mDrawLivingHud : (mDrawLivingHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawLivingHud")); }
-			ScriptFunction DrawPostGameHud() { return mDrawPostGameHud ? mDrawPostGameHud : (mDrawPostGameHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawPostGameHud")); }
-			ScriptFunction DisplayWeaponBar() { return mDisplayWeaponBar ? mDisplayWeaponBar : (mDisplayWeaponBar = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayWeaponBar")); }
-			ScriptFunction DisplayMap() { return mDisplayMap ? mDisplayMap : (mDisplayMap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayMap")); }
-			ScriptFunction DrawAIOverlays() { return mDrawAIOverlays ? mDrawAIOverlays : (mDrawAIOverlays = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawAIOverlays")); }
-			ScriptFunction GetUIController() { return mGetUIController ? mGetUIController : (mGetUIController = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetUIController")); }
-			ScriptFunction StartMusic() { return mStartMusic ? mStartMusic : (mStartMusic = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.StartMusic")); }
-			ScriptFunction GetTeamColor() { return mGetTeamColor ? mGetTeamColor : (mGetTeamColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetTeamColor")); }
-			ScriptFunction DisplayHit() { return mDisplayHit ? mDisplayHit : (mDisplayHit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayHit")); }
-			ScriptFunction FlashDamage() { return mFlashDamage ? mFlashDamage : (mFlashDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.FlashDamage")); }
-			ScriptFunction UpdateDamage() { return mUpdateDamage ? mUpdateDamage : (mUpdateDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.UpdateDamage")); }
-			ScriptFunction DisplayDamage() { return mDisplayDamage ? mDisplayDamage : (mDisplayDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayDamage")); }
-			ScriptFunction DrawBackground() { return mDrawBackground ? mDrawBackground : (mDrawBackground = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawBackground")); }
-			ScriptFunction DrawBeaconBackground() { return mDrawBeaconBackground ? mDrawBeaconBackground : (mDrawBeaconBackground = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawBeaconBackground")); }
-			ScriptFunction DrawHealth() { return mDrawHealth ? mDrawHealth : (mDrawHealth = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawHealth")); }
-			ScriptFunction DrawBarGraph() { return mDrawBarGraph ? mDrawBarGraph : (mDrawBarGraph = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawBarGraph")); }
-			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.FormatTime")); }
-			ScriptFunction GetFontSizeIndex() { return mGetFontSizeIndex ? mGetFontSizeIndex : (mGetFontSizeIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetFontSizeIndex")); }
-			ScriptFunction ShowPortrait() { return mShowPortrait ? mShowPortrait : (mShowPortrait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.ShowPortrait")); }
-			ScriptFunction HidePortrait() { return mHidePortrait ? mHidePortrait : (mHidePortrait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.HidePortrait")); }
-			ScriptFunction DisplayPortrait() { return mDisplayPortrait ? mDisplayPortrait : (mDisplayPortrait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayPortrait")); }
-			ScriptFunction DisplayHUDMessage() { return mDisplayHUDMessage ? mDisplayHUDMessage : (mDisplayHUDMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayHUDMessage")); }
-			ScriptFunction DisplayClock() { return mDisplayClock ? mDisplayClock : (mDisplayClock = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayClock")); }
-			ScriptFunction DisplayPawnDoll() { return mDisplayPawnDoll ? mDisplayPawnDoll : (mDisplayPawnDoll = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayPawnDoll")); }
-			ScriptFunction DisplayAmmo() { return mDisplayAmmo ? mDisplayAmmo : (mDisplayAmmo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayAmmo")); }
-			ScriptFunction DisplayPowerups() { return mDisplayPowerups ? mDisplayPowerups : (mDisplayPowerups = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayPowerups")); }
-			ScriptFunction DisplayScoring() { return mDisplayScoring ? mDisplayScoring : (mDisplayScoring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayScoring")); }
-			ScriptFunction DisplayFragCount() { return mDisplayFragCount ? mDisplayFragCount : (mDisplayFragCount = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayFragCount")); }
-			ScriptFunction DrawNameplateBackground() { return mDrawNameplateBackground ? mDrawNameplateBackground : (mDrawNameplateBackground = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawNameplateBackground")); }
-			ScriptFunction DisplayLeaderBoard() { return mDisplayLeaderBoard ? mDisplayLeaderBoard : (mDisplayLeaderBoard = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayLeaderBoard")); }
-			ScriptFunction DisplayConsoleMessages() { return mDisplayConsoleMessages ? mDisplayConsoleMessages : (mDisplayConsoleMessages = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayConsoleMessages")); }
+			ScriptFunction DrawTileCentered() { mixin(MGF!("mDrawTileCentered", "Function UTGame.UTHUD.DrawTileCentered")()); }
+			ScriptFunction SetDisplayedOrders() { mixin(MGF!("mSetDisplayedOrders", "Function UTGame.UTHUD.SetDisplayedOrders")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTHUD.PostBeginPlay")()); }
+			ScriptFunction Message() { mixin(MGF!("mMessage", "Function UTGame.UTHUD.Message")()); }
+			ScriptFunction ResolveHUDPosition() { mixin(MGF!("mResolveHUDPosition", "Function UTGame.UTHUD.ResolveHUDPosition")()); }
+			ScriptFunction GetScreenCoords() { mixin(MGF!("mGetScreenCoords", "Function UTGame.UTHUD.GetScreenCoords")()); }
+			ScriptFunction DrawMessageText() { mixin(MGF!("mDrawMessageText", "Function UTGame.UTHUD.DrawMessageText")()); }
+			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function UTGame.UTHUD.PostRender")()); }
+			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function UTGame.UTHUD.DrawHUD")()); }
+			ScriptFunction DrawGameHud() { mixin(MGF!("mDrawGameHud", "Function UTGame.UTHUD.DrawGameHud")()); }
+			ScriptFunction DrawMicIcon() { mixin(MGF!("mDrawMicIcon", "Function UTGame.UTHUD.DrawMicIcon")()); }
+			ScriptFunction DisplayLocalMessages() { mixin(MGF!("mDisplayLocalMessages", "Function UTGame.UTHUD.DisplayLocalMessages")()); }
+			ScriptFunction DrawLivingHud() { mixin(MGF!("mDrawLivingHud", "Function UTGame.UTHUD.DrawLivingHud")()); }
+			ScriptFunction DrawPostGameHud() { mixin(MGF!("mDrawPostGameHud", "Function UTGame.UTHUD.DrawPostGameHud")()); }
+			ScriptFunction DisplayWeaponBar() { mixin(MGF!("mDisplayWeaponBar", "Function UTGame.UTHUD.DisplayWeaponBar")()); }
+			ScriptFunction DisplayMap() { mixin(MGF!("mDisplayMap", "Function UTGame.UTHUD.DisplayMap")()); }
+			ScriptFunction DrawAIOverlays() { mixin(MGF!("mDrawAIOverlays", "Function UTGame.UTHUD.DrawAIOverlays")()); }
+			ScriptFunction GetUIController() { mixin(MGF!("mGetUIController", "Function UTGame.UTHUD.GetUIController")()); }
+			ScriptFunction StartMusic() { mixin(MGF!("mStartMusic", "Function UTGame.UTHUD.StartMusic")()); }
+			ScriptFunction GetTeamColor() { mixin(MGF!("mGetTeamColor", "Function UTGame.UTHUD.GetTeamColor")()); }
+			ScriptFunction DisplayHit() { mixin(MGF!("mDisplayHit", "Function UTGame.UTHUD.DisplayHit")()); }
+			ScriptFunction FlashDamage() { mixin(MGF!("mFlashDamage", "Function UTGame.UTHUD.FlashDamage")()); }
+			ScriptFunction UpdateDamage() { mixin(MGF!("mUpdateDamage", "Function UTGame.UTHUD.UpdateDamage")()); }
+			ScriptFunction DisplayDamage() { mixin(MGF!("mDisplayDamage", "Function UTGame.UTHUD.DisplayDamage")()); }
+			ScriptFunction DrawBackground() { mixin(MGF!("mDrawBackground", "Function UTGame.UTHUD.DrawBackground")()); }
+			ScriptFunction DrawBeaconBackground() { mixin(MGF!("mDrawBeaconBackground", "Function UTGame.UTHUD.DrawBeaconBackground")()); }
+			ScriptFunction DrawHealth() { mixin(MGF!("mDrawHealth", "Function UTGame.UTHUD.DrawHealth")()); }
+			ScriptFunction DrawBarGraph() { mixin(MGF!("mDrawBarGraph", "Function UTGame.UTHUD.DrawBarGraph")()); }
+			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function UTGame.UTHUD.FormatTime")()); }
+			ScriptFunction GetFontSizeIndex() { mixin(MGF!("mGetFontSizeIndex", "Function UTGame.UTHUD.GetFontSizeIndex")()); }
+			ScriptFunction ShowPortrait() { mixin(MGF!("mShowPortrait", "Function UTGame.UTHUD.ShowPortrait")()); }
+			ScriptFunction HidePortrait() { mixin(MGF!("mHidePortrait", "Function UTGame.UTHUD.HidePortrait")()); }
+			ScriptFunction DisplayPortrait() { mixin(MGF!("mDisplayPortrait", "Function UTGame.UTHUD.DisplayPortrait")()); }
+			ScriptFunction DisplayHUDMessage() { mixin(MGF!("mDisplayHUDMessage", "Function UTGame.UTHUD.DisplayHUDMessage")()); }
+			ScriptFunction DisplayClock() { mixin(MGF!("mDisplayClock", "Function UTGame.UTHUD.DisplayClock")()); }
+			ScriptFunction DisplayPawnDoll() { mixin(MGF!("mDisplayPawnDoll", "Function UTGame.UTHUD.DisplayPawnDoll")()); }
+			ScriptFunction DisplayAmmo() { mixin(MGF!("mDisplayAmmo", "Function UTGame.UTHUD.DisplayAmmo")()); }
+			ScriptFunction DisplayPowerups() { mixin(MGF!("mDisplayPowerups", "Function UTGame.UTHUD.DisplayPowerups")()); }
+			ScriptFunction DisplayScoring() { mixin(MGF!("mDisplayScoring", "Function UTGame.UTHUD.DisplayScoring")()); }
+			ScriptFunction DisplayFragCount() { mixin(MGF!("mDisplayFragCount", "Function UTGame.UTHUD.DisplayFragCount")()); }
+			ScriptFunction DrawNameplateBackground() { mixin(MGF!("mDrawNameplateBackground", "Function UTGame.UTHUD.DrawNameplateBackground")()); }
+			ScriptFunction DisplayLeaderBoard() { mixin(MGF!("mDisplayLeaderBoard", "Function UTGame.UTHUD.DisplayLeaderBoard")()); }
+			ScriptFunction DisplayConsoleMessages() { mixin(MGF!("mDisplayConsoleMessages", "Function UTGame.UTHUD.DisplayConsoleMessages")()); }
 		}
 	}
 	struct DamageInfo
@@ -127,221 +128,221 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTHUD.DamageInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTHUD.DamageInfo")()); }
 		@property final auto ref
 		{
-			MaterialInstanceConstant MatConstant() { return *cast(MaterialInstanceConstant*)(cast(size_t)&this + 8); }
-			float FadeValue() { return *cast(float*)(cast(size_t)&this + 4); }
-			float FadeTime() { return *cast(float*)(cast(size_t)&this + 0); }
+			MaterialInstanceConstant MatConstant() { mixin(MGPS!(MaterialInstanceConstant, 8)()); }
+			float FadeValue() { mixin(MGPS!(float, 4)()); }
+			float FadeTime() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Texture2D AltHudTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1528); }
-			UObject.LinearColor WhiteLinearColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2612); }
-			UObject.LinearColor TeamHUDColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1664); }
-			float TX() { return *cast(float*)(cast(size_t)cast(void*)this + 2540); }
-			float TY() { return *cast(float*)(cast(size_t)cast(void*)this + 2544); }
-			UObject.LinearColor GoldLinearColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2628); }
-			Pawn PawnOwner() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 1572); }
-			float LastAmmoPickupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1560); }
-			float LastArmorPickupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1568); }
-			float MessageOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1844); }
-			ScriptArray!(Font) HudFonts() { return *cast(ScriptArray!(Font)*)(cast(size_t)cast(void*)this + 1588); }
-			ScriptArray!(UTHUD.DamageInfo) DamageData() { return *cast(ScriptArray!(UTHUD.DamageInfo)*)(cast(size_t)cast(void*)this + 1916); }
-			UObject.Color BkgTexColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 2680); }
-			UIRoot.TextureCoordinates BkgTexCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2664); }
-			Texture2D BkgTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 2660); }
-			UObject.LinearColor SilverLinearColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2644); }
-			UObject.LinearColor DMLinearColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2596); }
-			UObject.LinearColor BlueLinearColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2580); }
-			UObject.LinearColor RedLinearColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2564); }
-			UObject.LinearColor AmmoBarColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2548); }
-			float THeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2536); }
-			float BootHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2532); }
-			float BootWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2528); }
-			float BootY() { return *cast(float*)(cast(size_t)cast(void*)this + 2524); }
-			float BootX() { return *cast(float*)(cast(size_t)cast(void*)this + 2520); }
-			float HelmetHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2516); }
-			float HelmetWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2512); }
-			float HelmetY() { return *cast(float*)(cast(size_t)cast(void*)this + 2508); }
-			float HelmetX() { return *cast(float*)(cast(size_t)cast(void*)this + 2504); }
-			float ThighHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2500); }
-			float ThighWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2496); }
-			float ThighY() { return *cast(float*)(cast(size_t)cast(void*)this + 2492); }
-			float ThighX() { return *cast(float*)(cast(size_t)cast(void*)this + 2488); }
-			float VestHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2484); }
-			float VestWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2480); }
-			float VestY() { return *cast(float*)(cast(size_t)cast(void*)this + 2476); }
-			float VestX() { return *cast(float*)(cast(size_t)cast(void*)this + 2472); }
-			float DollHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2468); }
-			float DollWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2464); }
-			float DollOffsetY() { return *cast(float*)(cast(size_t)cast(void*)this + 2460); }
-			float DollOffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 2456); }
-			UIRoot.TextureCoordinates PawnDollBGCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2440); }
-			ScriptString PlaceMarks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2392); }
-			ScriptString YouHaveLost() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2380); }
-			ScriptString YouHaveWon() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2368); }
-			ScriptString FireToRespawnMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2356); }
-			ScriptString DeadMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2344); }
-			ScriptString SpectatorMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2332); }
-			ScriptString PressFireToBegin() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2320); }
-			ScriptString WaitingForMatch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2308); }
-			ScriptString WarmupString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2296); }
-			UObject.LinearColor BlackBackgroundColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2280); }
-			UIRoot.TextureCoordinates NameplateRight() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2264); }
-			UIRoot.TextureCoordinates NameplateBubble() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2248); }
-			UIRoot.TextureCoordinates NameplateCenter() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2232); }
-			UIRoot.TextureCoordinates NameplateLeft() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2216); }
-			float NameplateBubbleWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2212); }
-			float NameplateWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2208); }
-			float DamageIndicatorSize() { return *cast(float*)(cast(size_t)cast(void*)this + 2204); }
-			UObject.Vector2D VehiclePosition() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 2196); }
-			int LastFragCount() { return *cast(int*)(cast(size_t)cast(void*)this + 2192); }
-			float FragPulseTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2188); }
-			UObject.Vector2D ScoringPosition() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 2180); }
-			float PowerupTransitionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2176); }
-			float PowerupYPos() { return *cast(float*)(cast(size_t)cast(void*)this + 2172); }
-			UObject.Vector2D PowerupDims() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 2164); }
-			UObject.Vector2D MapPosition() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 2156); }
-			float AmmoPulseTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2152); }
-			int LastAmmoCount() { return *cast(int*)(cast(size_t)cast(void*)this + 2148); }
-			UTWeapon LastWeapon() { return *cast(UTWeapon*)(cast(size_t)cast(void*)this + 2144); }
-			float AmmoTextOffsetY() { return *cast(float*)(cast(size_t)cast(void*)this + 2140); }
-			float AmmoTextOffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 2136); }
-			UIRoot.TextureCoordinates AmmoBGCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2120); }
-			float AmmoBarOffsetY() { return *cast(float*)(cast(size_t)cast(void*)this + 2116); }
-			UObject.Vector2D AmmoPosition() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 2108); }
-			float ArmorPulseTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2104); }
-			int LastArmorAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 2100); }
-			float ArmorTextY() { return *cast(float*)(cast(size_t)cast(void*)this + 2096); }
-			float ArmorTextX() { return *cast(float*)(cast(size_t)cast(void*)this + 2092); }
-			float ArmorIconY() { return *cast(float*)(cast(size_t)cast(void*)this + 2088); }
-			float ArmorIconX() { return *cast(float*)(cast(size_t)cast(void*)this + 2084); }
-			float ArmorBGOffsetY() { return *cast(float*)(cast(size_t)cast(void*)this + 2080); }
-			float ArmorBGOffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 2076); }
-			UIRoot.TextureCoordinates ArmorBGCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2060); }
-			float HealthPulseTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2056); }
-			int LastHealth() { return *cast(int*)(cast(size_t)cast(void*)this + 2052); }
-			float HealthTextY() { return *cast(float*)(cast(size_t)cast(void*)this + 2048); }
-			float HealthTextX() { return *cast(float*)(cast(size_t)cast(void*)this + 2044); }
-			float HealthIconY() { return *cast(float*)(cast(size_t)cast(void*)this + 2040); }
-			float HealthIconX() { return *cast(float*)(cast(size_t)cast(void*)this + 2036); }
-			float HealthBGOffsetY() { return *cast(float*)(cast(size_t)cast(void*)this + 2032); }
-			float HealthBGOffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 2028); }
-			float HealthOffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 2024); }
-			UIRoot.TextureCoordinates HealthBGCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2008); }
-			float DollVisibility() { return *cast(float*)(cast(size_t)cast(void*)this + 2004); }
-			float LastDollUpdate() { return *cast(float*)(cast(size_t)cast(void*)this + 2000); }
-			UObject.Vector2D DollPosition() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 1992); }
-			UObject.Vector2D ClockPosition() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 1984); }
-			MaterialInstanceConstant HitEffectMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1980); }
-			MaterialEffect HitEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 1976); }
-			float HitEffectFadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1972); }
-			UObject.LinearColor MaxHitEffectColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1956); }
-			float HitEffectIntensity() { return *cast(float*)(cast(size_t)cast(void*)this + 1952); }
-			ScriptName FadeParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1944); }
-			ScriptName PositionalParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1936); }
-			float FadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1932); }
-			Material BaseMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 1928); }
-			int MaxNoOfIndicators() { return *cast(int*)(cast(size_t)cast(void*)this + 1912); }
-			float FullHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1908); }
-			float FullWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 1904); }
-			float SafeRegionPct() { return *cast(float*)(cast(size_t)cast(void*)this + 1900); }
-			Weapon LastSelectedWeapon() { return *cast(Weapon*)(cast(size_t)cast(void*)this + 1896); }
-			float OrderUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1892); }
-			ScriptString DisplayedOrders() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1880); }
-			float MapDefaultSize() { return *cast(float*)(cast(size_t)cast(void*)this + 1876); }
-			Texture2D MapBackground() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1872); }
-			float LastWeaponBarDrawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1840); }
-			float SelectedWeaponAmmoOffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 1836); }
-			float WeaponAmmoOffsetY() { return *cast(float*)(cast(size_t)cast(void*)this + 1832); }
-			float WeaponAmmoOffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 1828); }
-			float WeaponAmmoThickness() { return *cast(float*)(cast(size_t)cast(void*)this + 1824); }
-			float WeaponAmmoLength() { return *cast(float*)(cast(size_t)cast(void*)this + 1820); }
-			float WeaponYOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1816); }
-			float WeaponYScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1812); }
-			float SelectedBoxScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1808); }
-			float WeaponXOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1804); }
-			float WeaponBarXOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1800); }
-			float WeaponScaleSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1796); }
-			int BouncedWeapon() { return *cast(int*)(cast(size_t)cast(void*)this + 1792); }
-			float LastHUDUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1788); }
-			float EmptyWeaponAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 1784); }
-			float OffWeaponAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 1780); }
-			float SelectedWeaponAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 1776); }
-			float BounceWeaponScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1772); }
-			float SelectedWeaponScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1768); }
-			float CurrentWeaponScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1728); }
-			UTWeapon WeaponList() { return *cast(UTWeapon*)(cast(size_t)cast(void*)this + 1688); }
-			float WeaponBarY() { return *cast(float*)(cast(size_t)cast(void*)this + 1684); }
-			UObject.Color TeamTextColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 1680); }
-			float HUDScaleY() { return *cast(float*)(cast(size_t)cast(void*)this + 1660); }
-			float HUDScaleX() { return *cast(float*)(cast(size_t)cast(void*)this + 1656); }
-			float WeaponBoxHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1652); }
-			float WeaponBoxWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 1648); }
-			float WeaponBarScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1644); }
-			UTPlayerReplicationInfo CharPendingPRI() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 1640); }
-			UTPlayerReplicationInfo CharPRI() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 1636); }
-			UObject.Vector2D CharPortraitSize() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 1628); }
-			float CharPortraitSlideTransitionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1624); }
-			float CharPortraitSlideTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1620); }
-			float CharPortraitTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1616); }
-			float CharPortraitXPerc() { return *cast(float*)(cast(size_t)cast(void*)this + 1612); }
-			float CharPortraitYPerc() { return *cast(float*)(cast(size_t)cast(void*)this + 1608); }
-			MaterialInstanceConstant CharPortraitMI() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1604); }
-			Material CharPortraitMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 1600); }
-			UTPlayerReplicationInfo UTOwnerPRI() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 1580); }
-			UTPawn UTPawnOwner() { return *cast(UTPawn*)(cast(size_t)cast(void*)this + 1576); }
-			float LastHealthPickupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1564); }
-			UObject.Color GrayColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 1556); }
-			UObject.LinearColor LC_White() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1540); }
-			Texture2D UT3GHudTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1536); }
-			Texture2D TalkingTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1532); }
-			ScriptClass WeaponSwitchMessage() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1524); }
+			Texture2D AltHudTexture() { mixin(MGPC!(Texture2D, 1528)()); }
+			UObject.LinearColor WhiteLinearColor() { mixin(MGPC!(UObject.LinearColor, 2612)()); }
+			UObject.LinearColor TeamHUDColor() { mixin(MGPC!(UObject.LinearColor, 1664)()); }
+			float TX() { mixin(MGPC!(float, 2540)()); }
+			float TY() { mixin(MGPC!(float, 2544)()); }
+			UObject.LinearColor GoldLinearColor() { mixin(MGPC!(UObject.LinearColor, 2628)()); }
+			Pawn PawnOwner() { mixin(MGPC!(Pawn, 1572)()); }
+			float LastAmmoPickupTime() { mixin(MGPC!(float, 1560)()); }
+			float LastArmorPickupTime() { mixin(MGPC!(float, 1568)()); }
+			float MessageOffset() { mixin(MGPC!(float, 1844)()); }
+			ScriptArray!(Font) HudFonts() { mixin(MGPC!(ScriptArray!(Font), 1588)()); }
+			ScriptArray!(UTHUD.DamageInfo) DamageData() { mixin(MGPC!(ScriptArray!(UTHUD.DamageInfo), 1916)()); }
+			UObject.Color BkgTexColor() { mixin(MGPC!(UObject.Color, 2680)()); }
+			UIRoot.TextureCoordinates BkgTexCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 2664)()); }
+			Texture2D BkgTexture() { mixin(MGPC!(Texture2D, 2660)()); }
+			UObject.LinearColor SilverLinearColor() { mixin(MGPC!(UObject.LinearColor, 2644)()); }
+			UObject.LinearColor DMLinearColor() { mixin(MGPC!(UObject.LinearColor, 2596)()); }
+			UObject.LinearColor BlueLinearColor() { mixin(MGPC!(UObject.LinearColor, 2580)()); }
+			UObject.LinearColor RedLinearColor() { mixin(MGPC!(UObject.LinearColor, 2564)()); }
+			UObject.LinearColor AmmoBarColor() { mixin(MGPC!(UObject.LinearColor, 2548)()); }
+			float THeight() { mixin(MGPC!(float, 2536)()); }
+			float BootHeight() { mixin(MGPC!(float, 2532)()); }
+			float BootWidth() { mixin(MGPC!(float, 2528)()); }
+			float BootY() { mixin(MGPC!(float, 2524)()); }
+			float BootX() { mixin(MGPC!(float, 2520)()); }
+			float HelmetHeight() { mixin(MGPC!(float, 2516)()); }
+			float HelmetWidth() { mixin(MGPC!(float, 2512)()); }
+			float HelmetY() { mixin(MGPC!(float, 2508)()); }
+			float HelmetX() { mixin(MGPC!(float, 2504)()); }
+			float ThighHeight() { mixin(MGPC!(float, 2500)()); }
+			float ThighWidth() { mixin(MGPC!(float, 2496)()); }
+			float ThighY() { mixin(MGPC!(float, 2492)()); }
+			float ThighX() { mixin(MGPC!(float, 2488)()); }
+			float VestHeight() { mixin(MGPC!(float, 2484)()); }
+			float VestWidth() { mixin(MGPC!(float, 2480)()); }
+			float VestY() { mixin(MGPC!(float, 2476)()); }
+			float VestX() { mixin(MGPC!(float, 2472)()); }
+			float DollHeight() { mixin(MGPC!(float, 2468)()); }
+			float DollWidth() { mixin(MGPC!(float, 2464)()); }
+			float DollOffsetY() { mixin(MGPC!(float, 2460)()); }
+			float DollOffsetX() { mixin(MGPC!(float, 2456)()); }
+			UIRoot.TextureCoordinates PawnDollBGCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 2440)()); }
+			ScriptString PlaceMarks() { mixin(MGPC!(ScriptString, 2392)()); }
+			ScriptString YouHaveLost() { mixin(MGPC!(ScriptString, 2380)()); }
+			ScriptString YouHaveWon() { mixin(MGPC!(ScriptString, 2368)()); }
+			ScriptString FireToRespawnMessage() { mixin(MGPC!(ScriptString, 2356)()); }
+			ScriptString DeadMessage() { mixin(MGPC!(ScriptString, 2344)()); }
+			ScriptString SpectatorMessage() { mixin(MGPC!(ScriptString, 2332)()); }
+			ScriptString PressFireToBegin() { mixin(MGPC!(ScriptString, 2320)()); }
+			ScriptString WaitingForMatch() { mixin(MGPC!(ScriptString, 2308)()); }
+			ScriptString WarmupString() { mixin(MGPC!(ScriptString, 2296)()); }
+			UObject.LinearColor BlackBackgroundColor() { mixin(MGPC!(UObject.LinearColor, 2280)()); }
+			UIRoot.TextureCoordinates NameplateRight() { mixin(MGPC!(UIRoot.TextureCoordinates, 2264)()); }
+			UIRoot.TextureCoordinates NameplateBubble() { mixin(MGPC!(UIRoot.TextureCoordinates, 2248)()); }
+			UIRoot.TextureCoordinates NameplateCenter() { mixin(MGPC!(UIRoot.TextureCoordinates, 2232)()); }
+			UIRoot.TextureCoordinates NameplateLeft() { mixin(MGPC!(UIRoot.TextureCoordinates, 2216)()); }
+			float NameplateBubbleWidth() { mixin(MGPC!(float, 2212)()); }
+			float NameplateWidth() { mixin(MGPC!(float, 2208)()); }
+			float DamageIndicatorSize() { mixin(MGPC!(float, 2204)()); }
+			UObject.Vector2D VehiclePosition() { mixin(MGPC!(UObject.Vector2D, 2196)()); }
+			int LastFragCount() { mixin(MGPC!(int, 2192)()); }
+			float FragPulseTime() { mixin(MGPC!(float, 2188)()); }
+			UObject.Vector2D ScoringPosition() { mixin(MGPC!(UObject.Vector2D, 2180)()); }
+			float PowerupTransitionTime() { mixin(MGPC!(float, 2176)()); }
+			float PowerupYPos() { mixin(MGPC!(float, 2172)()); }
+			UObject.Vector2D PowerupDims() { mixin(MGPC!(UObject.Vector2D, 2164)()); }
+			UObject.Vector2D MapPosition() { mixin(MGPC!(UObject.Vector2D, 2156)()); }
+			float AmmoPulseTime() { mixin(MGPC!(float, 2152)()); }
+			int LastAmmoCount() { mixin(MGPC!(int, 2148)()); }
+			UTWeapon LastWeapon() { mixin(MGPC!(UTWeapon, 2144)()); }
+			float AmmoTextOffsetY() { mixin(MGPC!(float, 2140)()); }
+			float AmmoTextOffsetX() { mixin(MGPC!(float, 2136)()); }
+			UIRoot.TextureCoordinates AmmoBGCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 2120)()); }
+			float AmmoBarOffsetY() { mixin(MGPC!(float, 2116)()); }
+			UObject.Vector2D AmmoPosition() { mixin(MGPC!(UObject.Vector2D, 2108)()); }
+			float ArmorPulseTime() { mixin(MGPC!(float, 2104)()); }
+			int LastArmorAmount() { mixin(MGPC!(int, 2100)()); }
+			float ArmorTextY() { mixin(MGPC!(float, 2096)()); }
+			float ArmorTextX() { mixin(MGPC!(float, 2092)()); }
+			float ArmorIconY() { mixin(MGPC!(float, 2088)()); }
+			float ArmorIconX() { mixin(MGPC!(float, 2084)()); }
+			float ArmorBGOffsetY() { mixin(MGPC!(float, 2080)()); }
+			float ArmorBGOffsetX() { mixin(MGPC!(float, 2076)()); }
+			UIRoot.TextureCoordinates ArmorBGCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 2060)()); }
+			float HealthPulseTime() { mixin(MGPC!(float, 2056)()); }
+			int LastHealth() { mixin(MGPC!(int, 2052)()); }
+			float HealthTextY() { mixin(MGPC!(float, 2048)()); }
+			float HealthTextX() { mixin(MGPC!(float, 2044)()); }
+			float HealthIconY() { mixin(MGPC!(float, 2040)()); }
+			float HealthIconX() { mixin(MGPC!(float, 2036)()); }
+			float HealthBGOffsetY() { mixin(MGPC!(float, 2032)()); }
+			float HealthBGOffsetX() { mixin(MGPC!(float, 2028)()); }
+			float HealthOffsetX() { mixin(MGPC!(float, 2024)()); }
+			UIRoot.TextureCoordinates HealthBGCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 2008)()); }
+			float DollVisibility() { mixin(MGPC!(float, 2004)()); }
+			float LastDollUpdate() { mixin(MGPC!(float, 2000)()); }
+			UObject.Vector2D DollPosition() { mixin(MGPC!(UObject.Vector2D, 1992)()); }
+			UObject.Vector2D ClockPosition() { mixin(MGPC!(UObject.Vector2D, 1984)()); }
+			MaterialInstanceConstant HitEffectMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 1980)()); }
+			MaterialEffect HitEffect() { mixin(MGPC!(MaterialEffect, 1976)()); }
+			float HitEffectFadeTime() { mixin(MGPC!(float, 1972)()); }
+			UObject.LinearColor MaxHitEffectColor() { mixin(MGPC!(UObject.LinearColor, 1956)()); }
+			float HitEffectIntensity() { mixin(MGPC!(float, 1952)()); }
+			ScriptName FadeParamName() { mixin(MGPC!(ScriptName, 1944)()); }
+			ScriptName PositionalParamName() { mixin(MGPC!(ScriptName, 1936)()); }
+			float FadeTime() { mixin(MGPC!(float, 1932)()); }
+			Material BaseMaterial() { mixin(MGPC!(Material, 1928)()); }
+			int MaxNoOfIndicators() { mixin(MGPC!(int, 1912)()); }
+			float FullHeight() { mixin(MGPC!(float, 1908)()); }
+			float FullWidth() { mixin(MGPC!(float, 1904)()); }
+			float SafeRegionPct() { mixin(MGPC!(float, 1900)()); }
+			Weapon LastSelectedWeapon() { mixin(MGPC!(Weapon, 1896)()); }
+			float OrderUpdateTime() { mixin(MGPC!(float, 1892)()); }
+			ScriptString DisplayedOrders() { mixin(MGPC!(ScriptString, 1880)()); }
+			float MapDefaultSize() { mixin(MGPC!(float, 1876)()); }
+			Texture2D MapBackground() { mixin(MGPC!(Texture2D, 1872)()); }
+			float LastWeaponBarDrawnTime() { mixin(MGPC!(float, 1840)()); }
+			float SelectedWeaponAmmoOffsetX() { mixin(MGPC!(float, 1836)()); }
+			float WeaponAmmoOffsetY() { mixin(MGPC!(float, 1832)()); }
+			float WeaponAmmoOffsetX() { mixin(MGPC!(float, 1828)()); }
+			float WeaponAmmoThickness() { mixin(MGPC!(float, 1824)()); }
+			float WeaponAmmoLength() { mixin(MGPC!(float, 1820)()); }
+			float WeaponYOffset() { mixin(MGPC!(float, 1816)()); }
+			float WeaponYScale() { mixin(MGPC!(float, 1812)()); }
+			float SelectedBoxScale() { mixin(MGPC!(float, 1808)()); }
+			float WeaponXOffset() { mixin(MGPC!(float, 1804)()); }
+			float WeaponBarXOffset() { mixin(MGPC!(float, 1800)()); }
+			float WeaponScaleSpeed() { mixin(MGPC!(float, 1796)()); }
+			int BouncedWeapon() { mixin(MGPC!(int, 1792)()); }
+			float LastHUDUpdateTime() { mixin(MGPC!(float, 1788)()); }
+			float EmptyWeaponAlpha() { mixin(MGPC!(float, 1784)()); }
+			float OffWeaponAlpha() { mixin(MGPC!(float, 1780)()); }
+			float SelectedWeaponAlpha() { mixin(MGPC!(float, 1776)()); }
+			float BounceWeaponScale() { mixin(MGPC!(float, 1772)()); }
+			float SelectedWeaponScale() { mixin(MGPC!(float, 1768)()); }
+			float CurrentWeaponScale() { mixin(MGPC!(float, 1728)()); }
+			UTWeapon WeaponList() { mixin(MGPC!(UTWeapon, 1688)()); }
+			float WeaponBarY() { mixin(MGPC!(float, 1684)()); }
+			UObject.Color TeamTextColor() { mixin(MGPC!(UObject.Color, 1680)()); }
+			float HUDScaleY() { mixin(MGPC!(float, 1660)()); }
+			float HUDScaleX() { mixin(MGPC!(float, 1656)()); }
+			float WeaponBoxHeight() { mixin(MGPC!(float, 1652)()); }
+			float WeaponBoxWidth() { mixin(MGPC!(float, 1648)()); }
+			float WeaponBarScale() { mixin(MGPC!(float, 1644)()); }
+			UTPlayerReplicationInfo CharPendingPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 1640)()); }
+			UTPlayerReplicationInfo CharPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 1636)()); }
+			UObject.Vector2D CharPortraitSize() { mixin(MGPC!(UObject.Vector2D, 1628)()); }
+			float CharPortraitSlideTransitionTime() { mixin(MGPC!(float, 1624)()); }
+			float CharPortraitSlideTime() { mixin(MGPC!(float, 1620)()); }
+			float CharPortraitTime() { mixin(MGPC!(float, 1616)()); }
+			float CharPortraitXPerc() { mixin(MGPC!(float, 1612)()); }
+			float CharPortraitYPerc() { mixin(MGPC!(float, 1608)()); }
+			MaterialInstanceConstant CharPortraitMI() { mixin(MGPC!(MaterialInstanceConstant, 1604)()); }
+			Material CharPortraitMaterial() { mixin(MGPC!(Material, 1600)()); }
+			UTPlayerReplicationInfo UTOwnerPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 1580)()); }
+			UTPawn UTPawnOwner() { mixin(MGPC!(UTPawn, 1576)()); }
+			float LastHealthPickupTime() { mixin(MGPC!(float, 1564)()); }
+			UObject.Color GrayColor() { mixin(MGPC!(UObject.Color, 1556)()); }
+			UObject.LinearColor LC_White() { mixin(MGPC!(UObject.LinearColor, 1540)()); }
+			Texture2D UT3GHudTexture() { mixin(MGPC!(Texture2D, 1536)()); }
+			Texture2D TalkingTexture() { mixin(MGPC!(Texture2D, 1532)()); }
+			ScriptClass WeaponSwitchMessage() { mixin(MGPC!(ScriptClass, 1524)()); }
 		}
-		bool bShowVehicleArmorCount() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x40000) != 0; }
-		bool bShowVehicleArmorCount(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x40000; } return val; }
-		bool bIsFirstPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x80000) != 0; }
-		bool bIsFirstPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x80000; } return val; }
-		bool bShowVehicle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x20000) != 0; }
-		bool bShowVehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x20000; } return val; }
-		bool bShowLeaderboard() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x10000) != 0; }
-		bool bShowLeaderboard(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x10000; } return val; }
-		bool bHasLeaderboard() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x8000) != 0; }
-		bool bHasLeaderboard(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x8000; } return val; }
-		bool bShowFragCount() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x4000) != 0; }
-		bool bShowFragCount(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x4000; } return val; }
-		bool bShowScoring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x2000) != 0; }
-		bool bShowScoring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x2000; } return val; }
-		bool bDisplayingPowerups() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x1000) != 0; }
-		bool bDisplayingPowerups(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x1000; } return val; }
-		bool bShowPowerups() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x800) != 0; }
-		bool bShowPowerups(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x800; } return val; }
-		bool bShowMap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x400) != 0; }
-		bool bShowMap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x400; } return val; }
-		bool bHasMap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x200) != 0; }
-		bool bHasMap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x200; } return val; }
-		bool bShowAmmo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x100) != 0; }
-		bool bShowAmmo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x100; } return val; }
-		bool bShowDoll() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x80) != 0; }
-		bool bShowDoll(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x80; } return val; }
-		bool bShowClock() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x40) != 0; }
-		bool bShowClock(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x40; } return val; }
-		bool bFadeOutHitEffect() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x20) != 0; }
-		bool bFadeOutHitEffect(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x20; } return val; }
-		bool bNoWeaponNumbers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x10) != 0; }
-		bool bNoWeaponNumbers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x10; } return val; }
-		bool bOnlyShowWeaponBarIfChanging() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x8) != 0; }
-		bool bOnlyShowWeaponBarIfChanging(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x8; } return val; }
-		bool bShowWeaponbar() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x4) != 0; }
-		bool bShowWeaponbar(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x4; } return val; }
-		bool bHudMessageRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x2) != 0; }
-		bool bHudMessageRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x2; } return val; }
-		bool bShowAllAI() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1584) & 0x1) != 0; }
-		bool bShowAllAI(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1584) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1584) &= ~0x1; } return val; }
+		bool bShowVehicleArmorCount() { mixin(MGBPC!(1584, 0x40000)()); }
+		bool bShowVehicleArmorCount(bool val) { mixin(MSBPC!(1584, 0x40000)()); }
+		bool bIsFirstPlayer() { mixin(MGBPC!(1584, 0x80000)()); }
+		bool bIsFirstPlayer(bool val) { mixin(MSBPC!(1584, 0x80000)()); }
+		bool bShowVehicle() { mixin(MGBPC!(1584, 0x20000)()); }
+		bool bShowVehicle(bool val) { mixin(MSBPC!(1584, 0x20000)()); }
+		bool bShowLeaderboard() { mixin(MGBPC!(1584, 0x10000)()); }
+		bool bShowLeaderboard(bool val) { mixin(MSBPC!(1584, 0x10000)()); }
+		bool bHasLeaderboard() { mixin(MGBPC!(1584, 0x8000)()); }
+		bool bHasLeaderboard(bool val) { mixin(MSBPC!(1584, 0x8000)()); }
+		bool bShowFragCount() { mixin(MGBPC!(1584, 0x4000)()); }
+		bool bShowFragCount(bool val) { mixin(MSBPC!(1584, 0x4000)()); }
+		bool bShowScoring() { mixin(MGBPC!(1584, 0x2000)()); }
+		bool bShowScoring(bool val) { mixin(MSBPC!(1584, 0x2000)()); }
+		bool bDisplayingPowerups() { mixin(MGBPC!(1584, 0x1000)()); }
+		bool bDisplayingPowerups(bool val) { mixin(MSBPC!(1584, 0x1000)()); }
+		bool bShowPowerups() { mixin(MGBPC!(1584, 0x800)()); }
+		bool bShowPowerups(bool val) { mixin(MSBPC!(1584, 0x800)()); }
+		bool bShowMap() { mixin(MGBPC!(1584, 0x400)()); }
+		bool bShowMap(bool val) { mixin(MSBPC!(1584, 0x400)()); }
+		bool bHasMap() { mixin(MGBPC!(1584, 0x200)()); }
+		bool bHasMap(bool val) { mixin(MSBPC!(1584, 0x200)()); }
+		bool bShowAmmo() { mixin(MGBPC!(1584, 0x100)()); }
+		bool bShowAmmo(bool val) { mixin(MSBPC!(1584, 0x100)()); }
+		bool bShowDoll() { mixin(MGBPC!(1584, 0x80)()); }
+		bool bShowDoll(bool val) { mixin(MSBPC!(1584, 0x80)()); }
+		bool bShowClock() { mixin(MGBPC!(1584, 0x40)()); }
+		bool bShowClock(bool val) { mixin(MSBPC!(1584, 0x40)()); }
+		bool bFadeOutHitEffect() { mixin(MGBPC!(1584, 0x20)()); }
+		bool bFadeOutHitEffect(bool val) { mixin(MSBPC!(1584, 0x20)()); }
+		bool bNoWeaponNumbers() { mixin(MGBPC!(1584, 0x10)()); }
+		bool bNoWeaponNumbers(bool val) { mixin(MSBPC!(1584, 0x10)()); }
+		bool bOnlyShowWeaponBarIfChanging() { mixin(MGBPC!(1584, 0x8)()); }
+		bool bOnlyShowWeaponBarIfChanging(bool val) { mixin(MSBPC!(1584, 0x8)()); }
+		bool bShowWeaponbar() { mixin(MGBPC!(1584, 0x4)()); }
+		bool bShowWeaponbar(bool val) { mixin(MSBPC!(1584, 0x4)()); }
+		bool bHudMessageRendered() { mixin(MGBPC!(1584, 0x2)()); }
+		bool bHudMessageRendered(bool val) { mixin(MSBPC!(1584, 0x2)()); }
+		bool bShowAllAI() { mixin(MGBPC!(1584, 0x1)()); }
+		bool bShowAllAI(bool val) { mixin(MSBPC!(1584, 0x1)()); }
 	}
 final:
 	void DrawTileCentered(Texture2D Tex, float XL, float YL, float U, float V, float UL, float VL, UObject.LinearColor C)
@@ -389,14 +390,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResolveHUDPosition, params.ptr, cast(void*)0);
 		return *cast(UObject.Vector2D*)&params[16];
 	}
-	void GetScreenCoords(float PosY, float* ScreenX, float* ScreenY, HUD.HudLocalizedMessage* InMessage)
+	void GetScreenCoords(float PosY, ref float ScreenX, ref float ScreenY, ref HUD.HudLocalizedMessage InMessage)
 	{
 		ubyte params[76];
 		params[] = 0;
 		*cast(float*)params.ptr = PosY;
-		*cast(float*)&params[4] = *ScreenX;
-		*cast(float*)&params[8] = *ScreenY;
-		*cast(HUD.HudLocalizedMessage*)&params[12] = *InMessage;
+		*cast(float*)&params[4] = ScreenX;
+		*cast(float*)&params[8] = ScreenY;
+		*cast(HUD.HudLocalizedMessage*)&params[12] = InMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetScreenCoords, params.ptr, cast(void*)0);
 		*ScreenX = *cast(float*)&params[4];
 		*ScreenY = *cast(float*)&params[8];
@@ -455,7 +456,7 @@ final:
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = *LP;
+		*cast(LocalPlayer*)params.ptr = LP;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetUIController, params.ptr, cast(void*)0);
 		*LP = *cast(LocalPlayer*)params.ptr;
 		return *cast(UIInteraction*)&params[4];
@@ -469,8 +470,8 @@ final:
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		*cast(UObject.LinearColor*)&params[4] = *ImageColor;
-		*cast(UObject.Color*)&params[20] = *TextColor;
+		*cast(UObject.LinearColor*)&params[4] = ImageColor;
+		*cast(UObject.Color*)&params[20] = TextColor;
 		StaticClass.ProcessEvent(Functions.GetTeamColor, params.ptr, cast(void*)0);
 		*ImageColor = *cast(UObject.LinearColor*)&params[4];
 		*TextColor = *cast(UObject.Color*)&params[20];

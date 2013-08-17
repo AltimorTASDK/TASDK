@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_PartyMember;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxTrPage_PartyMember : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_PartyMember")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_PartyMember")()); }
 	private static __gshared GFxTrPage_PartyMember mDefaultProperties;
-	@property final static GFxTrPage_PartyMember DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_PartyMember)("GFxTrPage_PartyMember TribesGame.Default__GFxTrPage_PartyMember")); }
+	@property final static GFxTrPage_PartyMember DefaultProperties() { mixin(MGDPC!(GFxTrPage_PartyMember, "GFxTrPage_PartyMember TribesGame.Default__GFxTrPage_PartyMember")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,13 +26,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyMember.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyMember.FillOption")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyMember.TakeFocus")); }
-			ScriptFunction CheckPricing() { return mCheckPricing ? mCheckPricing : (mCheckPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyMember.CheckPricing")); }
-			ScriptFunction FillPricing() { return mFillPricing ? mFillPricing : (mFillPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyMember.FillPricing")); }
-			ScriptFunction ModifyAction() { return mModifyAction ? mModifyAction : (mModifyAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyMember.ModifyAction")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyMember.ShowModel")); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_PartyMember.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_PartyMember.FillOption")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_PartyMember.TakeFocus")()); }
+			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_PartyMember.CheckPricing")()); }
+			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage_PartyMember.FillPricing")()); }
+			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_PartyMember.ModifyAction")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_PartyMember.ShowModel")()); }
 		}
 	}
 final:

@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.InternetLink;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Info;
 
@@ -8,9 +9,9 @@ extern(C++) interface InternetLink : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.InternetLink")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.InternetLink")()); }
 	private static __gshared InternetLink mDefaultProperties;
-	@property final static InternetLink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InternetLink)("InternetLink IpDrv.Default__InternetLink")); }
+	@property final static InternetLink DefaultProperties() { mixin(MGDPC!(InternetLink, "InternetLink IpDrv.Default__InternetLink")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,15 +28,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsDataPending() { return mIsDataPending ? mIsDataPending : (mIsDataPending = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.IsDataPending")); }
-			ScriptFunction ParseURL() { return mParseURL ? mParseURL : (mParseURL = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.ParseURL")); }
-			ScriptFunction Resolve() { return mResolve ? mResolve : (mResolve = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.Resolve")); }
-			ScriptFunction GetLastError() { return mGetLastError ? mGetLastError : (mGetLastError = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.GetLastError")); }
-			ScriptFunction IpAddrToString() { return mIpAddrToString ? mIpAddrToString : (mIpAddrToString = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.IpAddrToString")); }
-			ScriptFunction StringToIpAddr() { return mStringToIpAddr ? mStringToIpAddr : (mStringToIpAddr = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.StringToIpAddr")); }
-			ScriptFunction GetLocalIP() { return mGetLocalIP ? mGetLocalIP : (mGetLocalIP = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.GetLocalIP")); }
-			ScriptFunction Resolved() { return mResolved ? mResolved : (mResolved = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.Resolved")); }
-			ScriptFunction ResolveFailed() { return mResolveFailed ? mResolveFailed : (mResolveFailed = ScriptObject.Find!(ScriptFunction)("Function IpDrv.InternetLink.ResolveFailed")); }
+			ScriptFunction IsDataPending() { mixin(MGF!("mIsDataPending", "Function IpDrv.InternetLink.IsDataPending")()); }
+			ScriptFunction ParseURL() { mixin(MGF!("mParseURL", "Function IpDrv.InternetLink.ParseURL")()); }
+			ScriptFunction Resolve() { mixin(MGF!("mResolve", "Function IpDrv.InternetLink.Resolve")()); }
+			ScriptFunction GetLastError() { mixin(MGF!("mGetLastError", "Function IpDrv.InternetLink.GetLastError")()); }
+			ScriptFunction IpAddrToString() { mixin(MGF!("mIpAddrToString", "Function IpDrv.InternetLink.IpAddrToString")()); }
+			ScriptFunction StringToIpAddr() { mixin(MGF!("mStringToIpAddr", "Function IpDrv.InternetLink.StringToIpAddr")()); }
+			ScriptFunction GetLocalIP() { mixin(MGF!("mGetLocalIP", "Function IpDrv.InternetLink.GetLocalIP")()); }
+			ScriptFunction Resolved() { mixin(MGF!("mResolved", "Function IpDrv.InternetLink.Resolved")()); }
+			ScriptFunction ResolveFailed() { mixin(MGF!("mResolveFailed", "Function IpDrv.InternetLink.ResolveFailed")()); }
 		}
 	}
 	enum ELinkMode : ubyte
@@ -64,24 +65,24 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.InternetLink.IpAddr")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.InternetLink.IpAddr")()); }
 		@property final auto ref
 		{
-			int Port() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Addr() { return *cast(int*)(cast(size_t)&this + 0); }
+			int Port() { mixin(MGPS!(int, 4)()); }
+			int Addr() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		int DataPending() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-		UObject.Pointer PrivateResolveInfo() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 492); }
-		UObject.Pointer RemoteSocket() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 488); }
-		int Port() { return *cast(int*)(cast(size_t)cast(void*)this + 484); }
-		UObject.Pointer Socket() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 480); }
-		InternetLink.EReceiveMode ReceiveMode() { return *cast(InternetLink.EReceiveMode*)(cast(size_t)cast(void*)this + 479); }
-		InternetLink.ELineMode OutLineMode() { return *cast(InternetLink.ELineMode*)(cast(size_t)cast(void*)this + 478); }
-		InternetLink.ELinkMode LinkMode() { return *cast(InternetLink.ELinkMode*)(cast(size_t)cast(void*)this + 476); }
-		InternetLink.ELineMode InLineMode() { return *cast(InternetLink.ELineMode*)(cast(size_t)cast(void*)this + 477); }
+		int DataPending() { mixin(MGPC!(int, 496)()); }
+		UObject.Pointer PrivateResolveInfo() { mixin(MGPC!(UObject.Pointer, 492)()); }
+		UObject.Pointer RemoteSocket() { mixin(MGPC!(UObject.Pointer, 488)()); }
+		int Port() { mixin(MGPC!(int, 484)()); }
+		UObject.Pointer Socket() { mixin(MGPC!(UObject.Pointer, 480)()); }
+		InternetLink.EReceiveMode ReceiveMode() { mixin(MGPC!(InternetLink.EReceiveMode, 479)()); }
+		InternetLink.ELineMode OutLineMode() { mixin(MGPC!(InternetLink.ELineMode, 478)()); }
+		InternetLink.ELinkMode LinkMode() { mixin(MGPC!(InternetLink.ELinkMode, 476)()); }
+		InternetLink.ELineMode InLineMode() { mixin(MGPC!(InternetLink.ELineMode, 477)()); }
 	}
 final:
 	bool IsDataPending()
@@ -91,15 +92,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsDataPending, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool ParseURL(ScriptString pURL, ScriptString* Addr, int* PortNum, ScriptString* LevelName, ScriptString* EntryName)
+	bool ParseURL(ScriptString pURL, ref ScriptString Addr, ref int PortNum, ref ScriptString LevelName, ref ScriptString EntryName)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
-		*cast(ScriptString*)&params[12] = *Addr;
-		*cast(int*)&params[24] = *PortNum;
-		*cast(ScriptString*)&params[28] = *LevelName;
-		*cast(ScriptString*)&params[40] = *EntryName;
+		*cast(ScriptString*)&params[12] = Addr;
+		*cast(int*)&params[24] = PortNum;
+		*cast(ScriptString*)&params[28] = LevelName;
+		*cast(ScriptString*)&params[40] = EntryName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ParseURL, params.ptr, cast(void*)0);
 		*Addr = *cast(ScriptString*)&params[12];
 		*PortNum = *cast(int*)&params[24];
@@ -129,21 +130,21 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IpAddrToString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
-	bool StringToIpAddr(ScriptString Str, InternetLink.IpAddr* Addr)
+	bool StringToIpAddr(ScriptString Str, ref InternetLink.IpAddr Addr)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Str;
-		*cast(InternetLink.IpAddr*)&params[12] = *Addr;
+		*cast(InternetLink.IpAddr*)&params[12] = Addr;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StringToIpAddr, params.ptr, cast(void*)0);
 		*Addr = *cast(InternetLink.IpAddr*)&params[12];
 		return *cast(bool*)&params[20];
 	}
-	void GetLocalIP(InternetLink.IpAddr* Arg)
+	void GetLocalIP(ref InternetLink.IpAddr Arg)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(InternetLink.IpAddr*)params.ptr = *Arg;
+		*cast(InternetLink.IpAddr*)params.ptr = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocalIP, params.ptr, cast(void*)0);
 		*Arg = *cast(InternetLink.IpAddr*)params.ptr;
 	}

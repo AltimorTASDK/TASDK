@@ -1,15 +1,16 @@
 module UnrealScript.Engine.ParticleModule;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface ParticleModule : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModule")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModule")()); }
 	private static __gshared ParticleModule mDefaultProperties;
-	@property final static ParticleModule DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModule)("ParticleModule Engine.Default__ParticleModule")); }
+	@property final static ParticleModule DefaultProperties() { mixin(MGDPC!(ParticleModule, "ParticleModule Engine.Default__ParticleModule")()); }
 	enum EModuleType : ubyte
 	{
 		EPMT_General = 0,
@@ -32,11 +33,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModule.ParticleCurvePair")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModule.ParticleCurvePair")()); }
 		@property final auto ref
 		{
-			UObject CurveObject() { return *cast(UObject*)(cast(size_t)&this + 12); }
-			ScriptString CurveName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			UObject CurveObject() { mixin(MGPS!(UObject, 12)()); }
+			ScriptString CurveName() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct ParticleRandomSeedInfo
@@ -44,50 +45,50 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModule.ParticleRandomSeedInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModule.ParticleRandomSeedInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(int) RandomSeeds() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 12); }
-				ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				ScriptArray!(int) RandomSeeds() { mixin(MGPS!(ScriptArray!(int), 12)()); }
+				ScriptName ParameterName() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bResetSeedOnEmitterLooping() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x4) != 0; }
-			bool bResetSeedOnEmitterLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x4; } return val; }
-			bool bInstanceSeedIsIndex() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x2) != 0; }
-			bool bInstanceSeedIsIndex(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x2; } return val; }
-			bool bGetSeedFromInstance() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bGetSeedFromInstance(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
+			bool bResetSeedOnEmitterLooping() { mixin(MGBPS!(8, 0x4)()); }
+			bool bResetSeedOnEmitterLooping(bool val) { mixin(MSBPS!(8, 0x4)()); }
+			bool bInstanceSeedIsIndex() { mixin(MGBPS!(8, 0x2)()); }
+			bool bInstanceSeedIsIndex(bool val) { mixin(MSBPS!(8, 0x2)()); }
+			bool bGetSeedFromInstance() { mixin(MGBPS!(8, 0x1)()); }
+			bool bGetSeedFromInstance(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Color ModuleEditorColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 68); }
-			ubyte LODValidity() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 64); }
+			UObject.Color ModuleEditorColor() { mixin(MGPC!(UObject.Color, 68)()); }
+			ubyte LODValidity() { mixin(MGPC!(ubyte, 64)()); }
 		}
-		bool bRequiresLoopingNotification() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x400) != 0; }
-		bool bRequiresLoopingNotification(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x400; } return val; }
-		bool bSupportsRandomSeed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x200) != 0; }
-		bool bSupportsRandomSeed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x200; } return val; }
-		bool LODDuplicate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x100) != 0; }
-		bool LODDuplicate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x100; } return val; }
-		bool bEditable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x80) != 0; }
-		bool bEditable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x80; } return val; }
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x40) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x40; } return val; }
-		bool bSupported3DDrawMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x20) != 0; }
-		bool bSupported3DDrawMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x20; } return val; }
-		bool b3DDrawMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x10) != 0; }
-		bool b3DDrawMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x10; } return val; }
-		bool bCurvesAsColor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x8) != 0; }
-		bool bCurvesAsColor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x8; } return val; }
-		bool bFinalUpdateModule() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x4) != 0; }
-		bool bFinalUpdateModule(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x4; } return val; }
-		bool bUpdateModule() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2) != 0; }
-		bool bUpdateModule(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2; } return val; }
-		bool bSpawnModule() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bSpawnModule(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bRequiresLoopingNotification() { mixin(MGBPC!(60, 0x400)()); }
+		bool bRequiresLoopingNotification(bool val) { mixin(MSBPC!(60, 0x400)()); }
+		bool bSupportsRandomSeed() { mixin(MGBPC!(60, 0x200)()); }
+		bool bSupportsRandomSeed(bool val) { mixin(MSBPC!(60, 0x200)()); }
+		bool LODDuplicate() { mixin(MGBPC!(60, 0x100)()); }
+		bool LODDuplicate(bool val) { mixin(MSBPC!(60, 0x100)()); }
+		bool bEditable() { mixin(MGBPC!(60, 0x80)()); }
+		bool bEditable(bool val) { mixin(MSBPC!(60, 0x80)()); }
+		bool bEnabled() { mixin(MGBPC!(60, 0x40)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(60, 0x40)()); }
+		bool bSupported3DDrawMode() { mixin(MGBPC!(60, 0x20)()); }
+		bool bSupported3DDrawMode(bool val) { mixin(MSBPC!(60, 0x20)()); }
+		bool b3DDrawMode() { mixin(MGBPC!(60, 0x10)()); }
+		bool b3DDrawMode(bool val) { mixin(MSBPC!(60, 0x10)()); }
+		bool bCurvesAsColor() { mixin(MGBPC!(60, 0x8)()); }
+		bool bCurvesAsColor(bool val) { mixin(MSBPC!(60, 0x8)()); }
+		bool bFinalUpdateModule() { mixin(MGBPC!(60, 0x4)()); }
+		bool bFinalUpdateModule(bool val) { mixin(MSBPC!(60, 0x4)()); }
+		bool bUpdateModule() { mixin(MGBPC!(60, 0x2)()); }
+		bool bUpdateModule(bool val) { mixin(MSBPC!(60, 0x2)()); }
+		bool bSpawnModule() { mixin(MGBPC!(60, 0x1)()); }
+		bool bSpawnModule(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 }

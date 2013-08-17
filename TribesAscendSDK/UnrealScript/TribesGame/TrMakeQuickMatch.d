@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrMakeQuickMatch;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -13,9 +14,9 @@ extern(C++) interface TrMakeQuickMatch : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMakeQuickMatch")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMakeQuickMatch")()); }
 	private static __gshared TrMakeQuickMatch mDefaultProperties;
-	@property final static TrMakeQuickMatch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMakeQuickMatch)("TrMakeQuickMatch TribesGame.Default__TrMakeQuickMatch")); }
+	@property final static TrMakeQuickMatch DefaultProperties() { mixin(MGDPC!(TrMakeQuickMatch, "TrMakeQuickMatch TribesGame.Default__TrMakeQuickMatch")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,17 +35,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.Init")); }
-			ScriptFunction Launch() { return mLaunch ? mLaunch : (mLaunch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.Launch")); }
-			ScriptFunction Cleanup() { return mCleanup ? mCleanup : (mCleanup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.Cleanup")); }
-			ScriptFunction SubmitGameSearch() { return mSubmitGameSearch ? mSubmitGameSearch : (mSubmitGameSearch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.SubmitGameSearch")); }
-			ScriptFunction GetLP() { return mGetLP ? mGetLP : (mGetLP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.GetLP")); }
-			ScriptFunction GetPC() { return mGetPC ? mGetPC : (mGetPC = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.GetPC")); }
-			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.ConsoleCommand")); }
-			ScriptFunction BuildJoinURL() { return mBuildJoinURL ? mBuildJoinURL : (mBuildJoinURL = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.BuildJoinURL")); }
-			ScriptFunction RequestJoin() { return mRequestJoin ? mRequestJoin : (mRequestJoin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.RequestJoin")); }
-			ScriptFunction OnSearchComplete() { return mOnSearchComplete ? mOnSearchComplete : (mOnSearchComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.OnSearchComplete")); }
-			ScriptFunction OnJoinGameComplete() { return mOnJoinGameComplete ? mOnJoinGameComplete : (mOnJoinGameComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.OnJoinGameComplete")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrMakeQuickMatch.Init")()); }
+			ScriptFunction Launch() { mixin(MGF!("mLaunch", "Function TribesGame.TrMakeQuickMatch.Launch")()); }
+			ScriptFunction Cleanup() { mixin(MGF!("mCleanup", "Function TribesGame.TrMakeQuickMatch.Cleanup")()); }
+			ScriptFunction SubmitGameSearch() { mixin(MGF!("mSubmitGameSearch", "Function TribesGame.TrMakeQuickMatch.SubmitGameSearch")()); }
+			ScriptFunction GetLP() { mixin(MGF!("mGetLP", "Function TribesGame.TrMakeQuickMatch.GetLP")()); }
+			ScriptFunction GetPC() { mixin(MGF!("mGetPC", "Function TribesGame.TrMakeQuickMatch.GetPC")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function TribesGame.TrMakeQuickMatch.ConsoleCommand")()); }
+			ScriptFunction BuildJoinURL() { mixin(MGF!("mBuildJoinURL", "Function TribesGame.TrMakeQuickMatch.BuildJoinURL")()); }
+			ScriptFunction RequestJoin() { mixin(MGF!("mRequestJoin", "Function TribesGame.TrMakeQuickMatch.RequestJoin")()); }
+			ScriptFunction OnSearchComplete() { mixin(MGF!("mOnSearchComplete", "Function TribesGame.TrMakeQuickMatch.OnSearchComplete")()); }
+			ScriptFunction OnJoinGameComplete() { mixin(MGF!("mOnJoinGameComplete", "Function TribesGame.TrMakeQuickMatch.OnJoinGameComplete")()); }
 		}
 	}
 	static struct Constants
@@ -1430,16 +1431,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrGameSettingsCommon GameSettings() { return *cast(TrGameSettingsCommon*)(cast(size_t)cast(void*)this + 84); }
-			TrGameSearchCommon SearchSettings() { return *cast(TrGameSearchCommon*)(cast(size_t)cast(void*)this + 80); }
-			OnlineSubsystem OnlineSub() { return *cast(OnlineSubsystem*)(cast(size_t)cast(void*)this + 68); }
-			float SearchStarted() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
-			ubyte ControllerId() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 60); }
+			TrGameSettingsCommon GameSettings() { mixin(MGPC!(TrGameSettingsCommon, 84)()); }
+			TrGameSearchCommon SearchSettings() { mixin(MGPC!(TrGameSearchCommon, 80)()); }
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
+			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 68)()); }
+			float SearchStarted() { mixin(MGPC!(float, 64)()); }
+			ubyte ControllerId() { mixin(MGPC!(ubyte, 60)()); }
 		}
-		bool bProcessingJoin() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x2) != 0; }
-		bool bProcessingJoin(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x2; } return val; }
-		bool bIssuedInitialQuery() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bIssuedInitialQuery(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bProcessingJoin() { mixin(MGBPC!(88, 0x2)()); }
+		bool bProcessingJoin(bool val) { mixin(MSBPC!(88, 0x2)()); }
+		bool bIssuedInitialQuery() { mixin(MGBPC!(88, 0x1)()); }
+		bool bIssuedInitialQuery(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 final:
 	bool Init(ubyte ControllerIndex, int GameMode)

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.dsWebAdmin;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.IpDrv.WebRequest;
 import UnrealScript.IpDrv.WebResponse;
 import UnrealScript.IpDrv.WebApplication;
@@ -9,9 +10,9 @@ extern(C++) interface dsWebAdmin : WebApplication
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.dsWebAdmin")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.dsWebAdmin")()); }
 	private static __gshared dsWebAdmin mDefaultProperties;
-	@property final static dsWebAdmin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(dsWebAdmin)("dsWebAdmin TribesGame.Default__dsWebAdmin")); }
+	@property final static dsWebAdmin DefaultProperties() { mixin(MGDPC!(dsWebAdmin, "dsWebAdmin TribesGame.Default__dsWebAdmin")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.dsWebAdmin.Init")); }
-			ScriptFunction Query() { return mQuery ? mQuery : (mQuery = ScriptObject.Find!(ScriptFunction)("Function TribesGame.dsWebAdmin.Query")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.dsWebAdmin.Init")()); }
+			ScriptFunction Query() { mixin(MGF!("mQuery", "Function TribesGame.dsWebAdmin.Query")()); }
 		}
 	}
 final:

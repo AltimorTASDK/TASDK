@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTGFxHudWrapper;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTHUDBase;
 import UnrealScript.UTGame.GFxProjectedUI;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface UTGFxHudWrapper : UTHUDBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGFxHudWrapper")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGFxHudWrapper")()); }
 	private static __gshared UTGFxHudWrapper mDefaultProperties;
-	@property final static UTGFxHudWrapper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGFxHudWrapper)("UTGFxHudWrapper UTGame.Default__UTGFxHudWrapper")); }
+	@property final static UTGFxHudWrapper DefaultProperties() { mixin(MGDPC!(UTGFxHudWrapper, "UTGFxHudWrapper UTGame.Default__UTGFxHudWrapper")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,28 +37,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.Destroyed")); }
-			ScriptFunction RemoveMovies() { return mRemoveMovies ? mRemoveMovies : (mRemoveMovies = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.RemoveMovies")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.PostBeginPlay")); }
-			ScriptFunction CreateHUDMovie() { return mCreateHUDMovie ? mCreateHUDMovie : (mCreateHUDMovie = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.CreateHUDMovie")); }
-			ScriptFunction GetLocalPlayerOwnerIndex() { return mGetLocalPlayerOwnerIndex ? mGetLocalPlayerOwnerIndex : (mGetLocalPlayerOwnerIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.GetLocalPlayerOwnerIndex")); }
-			ScriptFunction SetVisible() { return mSetVisible ? mSetVisible : (mSetVisible = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.SetVisible")); }
-			ScriptFunction DisplayHit() { return mDisplayHit ? mDisplayHit : (mDisplayHit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.DisplayHit")); }
-			ScriptFunction CloseOtherMenus() { return mCloseOtherMenus ? mCloseOtherMenus : (mCloseOtherMenus = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.CloseOtherMenus")); }
-			ScriptFunction ResolutionChanged() { return mResolutionChanged ? mResolutionChanged : (mResolutionChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.ResolutionChanged")); }
-			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.PostRender")); }
-			ScriptFunction DrawHUD() { return mDrawHUD ? mDrawHUD : (mDrawHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.DrawHUD")); }
-			ScriptFunction LocalizedMessage() { return mLocalizedMessage ? mLocalizedMessage : (mLocalizedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.LocalizedMessage")); }
-			ScriptFunction AddConsoleMessage() { return mAddConsoleMessage ? mAddConsoleMessage : (mAddConsoleMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.AddConsoleMessage")); }
-			ScriptFunction CompleteCloseInventory() { return mCompleteCloseInventory ? mCompleteCloseInventory : (mCompleteCloseInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.CompleteCloseInventory")); }
-			ScriptFunction CompleteCloseTimer() { return mCompleteCloseTimer ? mCompleteCloseTimer : (mCompleteCloseTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxHudWrapper.CompleteCloseTimer")); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTGFxHudWrapper.Destroyed")()); }
+			ScriptFunction RemoveMovies() { mixin(MGF!("mRemoveMovies", "Function UTGame.UTGFxHudWrapper.RemoveMovies")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTGFxHudWrapper.PostBeginPlay")()); }
+			ScriptFunction CreateHUDMovie() { mixin(MGF!("mCreateHUDMovie", "Function UTGame.UTGFxHudWrapper.CreateHUDMovie")()); }
+			ScriptFunction GetLocalPlayerOwnerIndex() { mixin(MGF!("mGetLocalPlayerOwnerIndex", "Function UTGame.UTGFxHudWrapper.GetLocalPlayerOwnerIndex")()); }
+			ScriptFunction SetVisible() { mixin(MGF!("mSetVisible", "Function UTGame.UTGFxHudWrapper.SetVisible")()); }
+			ScriptFunction DisplayHit() { mixin(MGF!("mDisplayHit", "Function UTGame.UTGFxHudWrapper.DisplayHit")()); }
+			ScriptFunction CloseOtherMenus() { mixin(MGF!("mCloseOtherMenus", "Function UTGame.UTGFxHudWrapper.CloseOtherMenus")()); }
+			ScriptFunction ResolutionChanged() { mixin(MGF!("mResolutionChanged", "Function UTGame.UTGFxHudWrapper.ResolutionChanged")()); }
+			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function UTGame.UTGFxHudWrapper.PostRender")()); }
+			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function UTGame.UTGFxHudWrapper.DrawHUD")()); }
+			ScriptFunction LocalizedMessage() { mixin(MGF!("mLocalizedMessage", "Function UTGame.UTGFxHudWrapper.LocalizedMessage")()); }
+			ScriptFunction AddConsoleMessage() { mixin(MGF!("mAddConsoleMessage", "Function UTGame.UTGFxHudWrapper.AddConsoleMessage")()); }
+			ScriptFunction CompleteCloseInventory() { mixin(MGF!("mCompleteCloseInventory", "Function UTGame.UTGFxHudWrapper.CompleteCloseInventory")()); }
+			ScriptFunction CompleteCloseTimer() { mixin(MGF!("mCompleteCloseTimer", "Function UTGame.UTGFxHudWrapper.CompleteCloseTimer")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptClass MinimapHUDClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1532); }
-		GFxProjectedUI InventoryMovie() { return *cast(GFxProjectedUI*)(cast(size_t)cast(void*)this + 1528); }
-		GFxMinimapHud HudMovie() { return *cast(GFxMinimapHud*)(cast(size_t)cast(void*)this + 1524); }
+		ScriptClass MinimapHUDClass() { mixin(MGPC!(ScriptClass, 1532)()); }
+		GFxProjectedUI InventoryMovie() { mixin(MGPC!(GFxProjectedUI, 1528)()); }
+		GFxMinimapHud HudMovie() { mixin(MGPC!(GFxMinimapHud, 1524)()); }
 	}
 final:
 	void Destroyed()

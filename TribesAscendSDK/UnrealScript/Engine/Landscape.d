@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Landscape;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Info;
@@ -11,25 +12,25 @@ extern(C++) interface Landscape : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Landscape")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Landscape")()); }
 	private static __gshared Landscape mDefaultProperties;
-	@property final static Landscape DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Landscape)("Landscape Engine.Default__Landscape")); }
+	@property final static Landscape DefaultProperties() { mixin(MGDPC!(Landscape, "Landscape Engine.Default__Landscape")()); }
 	struct LandscapeLayerInfo
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Landscape.LandscapeLayerInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Landscape.LandscapeLayerInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				MaterialInstanceConstant ThumbnailMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)&this + 16); }
-				float Hardness() { return *cast(float*)(cast(size_t)&this + 8); }
-				ScriptName LayerName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				MaterialInstanceConstant ThumbnailMIC() { mixin(MGPS!(MaterialInstanceConstant, 16)()); }
+				float Hardness() { mixin(MGPS!(float, 8)()); }
+				ScriptName LayerName() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bNoWeightBlend() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bNoWeightBlend(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bNoWeightBlend() { mixin(MGBPS!(12, 0x1)()); }
+			bool bNoWeightBlend(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
 	}
 	struct LandscapeWeightmapUsage
@@ -37,30 +38,35 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Landscape.LandscapeWeightmapUsage")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Landscape.LandscapeWeightmapUsage")()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ChannelUsage'!
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptName) LayerNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 484); }
-		ScriptArray!(Landscape.LandscapeLayerInfo) LayerInfos() { return *cast(ScriptArray!(Landscape.LandscapeLayerInfo)*)(cast(size_t)cast(void*)this + 496); }
+		ScriptArray!(ScriptName) LayerNames() { mixin(MGPC!(ScriptArray!(ScriptName), 484)()); }
+		ScriptArray!(Landscape.LandscapeLayerInfo) LayerInfos() { mixin(MGPC!(ScriptArray!(Landscape.LandscapeLayerInfo), 496)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) LandscapeComponents() { return *cast(ScriptArray!(
+void*) LandscapeComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 604); }
+void*), 604)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) CollisionComponents() { return *cast(ScriptArray!(
+void*) CollisionComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 616); }
-		int NumSubsections() { return *cast(int*)(cast(size_t)cast(void*)this + 820); }
-		int SubsectionSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 816); }
-		int ComponentSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 812); }
-		UObject.Pointer DataInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 808); }
-		float StreamingDistanceMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 600); }
-		int StaticLightingResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 596); }
-		EngineTypes.LightmassPrimitiveSettings LightmassSettings() { return *cast(EngineTypes.LightmassPrimitiveSettings*)(cast(size_t)cast(void*)this + 568); }
-		int MaxLODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 480); }
-		Material LandscapeMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 476); }
+void*), 616)()); }
+		int NumSubsections() { mixin(MGPC!(int, 820)()); }
+		int SubsectionSizeQuads() { mixin(MGPC!(int, 816)()); }
+		int ComponentSizeQuads() { mixin(MGPC!(int, 812)()); }
+		UObject.Pointer DataInterface() { mixin(MGPC!(UObject.Pointer, 808)()); }
+		// ERROR: Unsupported object class 'MapProperty' for the property named 'WeightmapUsageMap'!
+		// ERROR: Unsupported object class 'MapProperty' for the property named 'XYtoCollisionComponentMap'!
+		// ERROR: Unsupported object class 'MapProperty' for the property named 'XYtoComponentMap'!
+		float StreamingDistanceMultiplier() { mixin(MGPC!(float, 600)()); }
+		int StaticLightingResolution() { mixin(MGPC!(int, 596)()); }
+		EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 568)()); }
+		// ERROR: Unsupported object class 'MapProperty' for the property named 'MaterialInstanceConstantMap'!
+		int MaxLODLevel() { mixin(MGPC!(int, 480)()); }
+		Material LandscapeMaterial() { mixin(MGPC!(Material, 476)()); }
 	}
 }

@@ -1,376 +1,377 @@
 module UnrealScript.TribesGame.TrStrings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrStrings : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStrings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStrings")()); }
 	private static __gshared TrStrings mDefaultProperties;
-	@property final static TrStrings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStrings)("TrStrings TribesGame.Default__TrStrings")); }
+	@property final static TrStrings DefaultProperties() { mixin(MGDPC!(TrStrings, "TrStrings TribesGame.Default__TrStrings")()); }
 	@property final auto ref
 	{
-		ScriptString KilledBy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4284); }
-		ScriptString UsingWeapon() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4296); }
-		ScriptString UsingPerks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4308); }
-		ScriptString Loading() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 60); }
-		ScriptString Quit() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 72); }
-		ScriptString Game() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1176); }
-		ScriptString QuitGameBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
-		ScriptString BACK() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 96); }
-		ScriptString Leave() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 108); }
-		ScriptString Match() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3180); }
-		ScriptString LeaveMatchBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 120); }
-		ScriptString Cancel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-		ScriptString FailedToJoin() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString OK() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-		ScriptString EULAAgreement() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4128); }
-		ScriptString Accept() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1752); }
-		ScriptString Decline() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3864); }
-		ScriptString Status() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 192); }
-		ScriptString Active() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
-		ScriptString TrClass() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 216); }
-		ScriptString NoBoost() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 228); }
-		ScriptString OneDayleft() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 240); }
-		ScriptString DaysLeft() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 252); }
-		ScriptString TrHour() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1188); }
-		ScriptString Left() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 816); }
-		ScriptString Unlocked() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 276); }
-		ScriptString Acquired() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 288); }
-		ScriptString Complete() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 300); }
-		ScriptString VIP() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 804); }
-		ScriptString TrServer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 744); }
-		ScriptString Time() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 792); }
-		ScriptString Added() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 636); }
-		ScriptString ClanTag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3996); }
-		ScriptString Removed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4044); }
-		ScriptString FWOTD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 780); }
-		ScriptString Redeemed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 768); }
-		ScriptString TrServers() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 756); }
-		ScriptString Full() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 948); }
-		ScriptString PleaseWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 936); }
-		ScriptString Estimated() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1020); }
-		ScriptString Wait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1032); }
-		ScriptString OverAnHour() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1128); }
-		ScriptString TrMinutes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1224); }
-		ScriptString TrSeconds() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1272); }
-		ScriptString BecomeAVIP() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1308); }
-		ScriptString BecomeVIP() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 312); }
-		ScriptString Visit() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1080); }
-		ScriptString Store() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1092); }
-		ScriptString LostConn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-		ScriptString LostConnBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 180); }
-		ScriptString YouWereKicked() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 732); }
-		ScriptString YouWereKickedBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 324); }
-		ScriptString Login() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 720); }
-		ScriptString Failed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 612); }
-		ScriptString Purchasing() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 684); }
-		ScriptString Item() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 696); }
-		ScriptString Password() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 648); }
-		ScriptString Required() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 660); }
-		ScriptString ServerPasswordBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 672); }
-		ScriptString Friend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 624); }
-		ScriptString YouAdded() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 924); }
-		ScriptString AsAFriend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1008); }
-		ScriptString Already() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1104); }
-		ScriptString Friends() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1116); }
-		ScriptString AlreadyFriendsBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 336); }
-		ScriptString Transaction() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 600); }
-		ScriptString NotEnough() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 888); }
-		ScriptString Gold() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 900); }
-		ScriptString NotEnoughGoldBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 996); }
-		ScriptString XP() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 912); }
-		ScriptString VIPMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 360); }
-		ScriptString BoostMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 372); }
-		ScriptString EarnMoreXP() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 384); }
-		ScriptString CodeNotAccepted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 588); }
-		ScriptString Failure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 576); }
-		ScriptString NameAlreadyTaken() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 564); }
-		ScriptString NameNotAllowed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 876); }
-		ScriptString EnterGamerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 984); }
-		ScriptString Enter() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1068); }
-		ScriptString Welcome() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3756); }
-		ScriptString STEAMTransaction() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3672); }
-		ScriptString STEAMPendingTransaction() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3684); }
-		ScriptString STEAMCompletingTransaction() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3708); }
-		ScriptString STEAMDeclinedTransaction() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3696); }
-		ScriptString STEAMBadUserData() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3720); }
-		ScriptString Warning() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4320); }
-		ScriptString VideoWarning() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4332); }
-		ScriptString Convert() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4356); }
-		ScriptString ConvertPortalToGold() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4368); }
-		ScriptString Error() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 840); }
-		ScriptString BackToGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 864); }
-		ScriptString Teammate() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 852); }
-		ScriptString Limit() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 960); }
-		ScriptString Reached() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 972); }
-		ScriptString TrClassBanned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 432); }
-		ScriptString Mastered() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1056); }
-		ScriptString Locked() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1152); }
-		ScriptString TrNew() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 828); }
-		ScriptString Items() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 708); }
-		ScriptString Unlock() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1044); }
-		ScriptString Available() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1140); }
-		ScriptString Upgrade() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1296); }
-		ScriptString Accolades() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1320); }
-		ScriptString Earned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1740); }
-		ScriptString Page() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1932); }
-		ScriptString Category() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2172); }
-		ScriptString Enabled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1368); }
-		ScriptString Disabled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1776); }
-		ScriptString Off() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1344); }
-		ScriptString SetAudioLevel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1332); }
-		ScriptString Badges() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1392); }
-		ScriptString Completed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1380); }
-		ScriptString NotEarned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1788); }
-		ScriptString Buy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1428); }
-		ScriptString BundlePack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1416); }
-		ScriptString Bundle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1800); }
-		ScriptString Requires() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1404); }
-		ScriptString AllItemsOwned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2196); }
-		ScriptString BundleRequiresBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 396); }
-		ScriptString VisitClassPage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3612); }
-		ScriptString Owned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1968); }
-		ScriptString BundleOwnedBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 408); }
-		ScriptString Purchase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1812); }
-		ScriptString TrFor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2184); }
-		ScriptString Or() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1464); }
-		ScriptString Remove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1440); }
-		ScriptString Map() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1824); }
-		ScriptString SelectTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2208); }
-		ScriptString AddClanTag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4020); }
-		ScriptString Use() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1896); }
-		ScriptString Confirm() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2472); }
-		ScriptString ChangeClanTagTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3984); }
-		ScriptString RenameLoadout() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4104); }
-		ScriptString SelectToRenameThisLoadout() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4116); }
-		ScriptString Loadout() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1452); }
-		ScriptString Primary() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1836); }
-		ScriptString Secondary() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1848); }
-		ScriptString Belt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1860); }
-		ScriptString Pack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1872); }
-		ScriptString Perk() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1884); }
-		ScriptString NoInfoFound() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1476); }
-		ScriptString AreYouSureYouWantTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2220); }
-		ScriptString SpawnLimitReached() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 420); }
-		ScriptString Denied() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1488); }
-		ScriptString No() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2928); }
-		ScriptString Videos() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3528); }
-		ScriptString Viewers() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3588); }
-		ScriptString Video() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3516); }
-		ScriptString Change() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1512); }
-		ScriptString FOV() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1908); }
-		ScriptString Sensitivity() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2232); }
-		ScriptString JoiningServer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1548); }
-		ScriptString AttemptingToJoin() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1944); }
-		ScriptString SetMapName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2256); }
-		ScriptString Filter() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2508); }
-		ScriptString Set() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1680); }
-		ScriptString TrName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2400); }
-		ScriptString CustomServerBrowser() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1536); }
-		ScriptString FavoriteInitial() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2244); }
-		ScriptString PasswordInitial() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2496); }
-		ScriptString Slots() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2676); }
-		ScriptString Ping() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2892); }
-		ScriptString Type() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3048); }
-		ScriptString Rules() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3108); }
-		ScriptString Lvl() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1608); }
-		ScriptString All() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1524); }
-		ScriptString MeAndFriends() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1920); }
-		ScriptString CustomReticule() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3744); }
-		ScriptString Base() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1980); }
-		ScriptString Upgrades() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1584); }
-		ScriptString UpgradeDesc() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1596); }
-		ScriptString Mastery() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3660); }
-		ScriptString Ratings() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1572); }
-		ScriptString Damage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1956); }
-		ScriptString FireRate() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2520); }
-		ScriptString Radius() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2268); }
-		ScriptString Range() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3624); }
-		ScriptString ClipSize() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2688); }
-		ScriptString Ammo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3636); }
-		ScriptString AreYouSureYouWantToUnlockAllUpgradesForXX() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3648); }
-		ScriptString EnterCode() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1632); }
-		ScriptString CodeAccepted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1620); }
-		ScriptString Message() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1560); }
-		ScriptString Offline() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1992); }
-		ScriptString Team() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1644); }
-		ScriptString Select() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2016); }
-		ScriptString ChooseYourTeam() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2280); }
-		ScriptString ToSpawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2700); }
-		ScriptString Unlocks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2292); }
-		ScriptString Modify() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1500); }
-		ScriptString TrClasses() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2040); }
-		ScriptString Online() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2004); }
-		ScriptString Follower() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2544); }
-		ScriptString Followers() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2712); }
-		ScriptString Shown() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1656); }
-		ScriptString Hidden() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2028); }
-		ScriptString Visible() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1668); }
-		ScriptString ChangeBindingBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 444); }
-		ScriptString ResetAllToDefault() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4092); }
-		ScriptString Streams() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3552); }
-		ScriptString Not() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2736); }
-		ScriptString CreateParty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3780); }
-		ScriptString LearnMore() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4140); }
-		ScriptString Your() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3492); }
-		ScriptString DealoftheDay() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3504); }
-		ScriptString TrHours() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1200); }
-		ScriptString TrMinute() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1212); }
-		ScriptString TrSecond() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1260); }
-		ScriptString Recommended() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2448); }
-		ScriptString ClanTags() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4008); }
-		ScriptString Party() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3768); }
-		ScriptString Queue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2904); }
-		ScriptString SearchingForAMatch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3060); }
-		ScriptString SelectToManage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2304); }
-		ScriptString CreateNewServer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1704); }
-		ScriptString CreateNewServerBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 456); }
-		ScriptString SelectToAddMap() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1716); }
-		ScriptString ChangeNameTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2640); }
-		ScriptString InGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3960); }
-		ScriptString InQueue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2916); }
-		ScriptString LeaderOnly() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3876); }
-		ScriptString Add() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2124); }
-		ScriptString SendMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3792); }
-		ScriptString KickFromParty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3804); }
-		ScriptString AddedNewFriend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3948); }
-		ScriptString InviteByName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3912); }
-		ScriptString InviteSent() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3924); }
-		ScriptString InvitationSentTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3816); }
-		ScriptString InviteFailed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3936); }
-		ScriptString CouldNotFindPlayer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3828); }
-		ScriptString PendingInvite() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3888); }
-		ScriptString Actions() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3900); }
-		ScriptString FlagsMoveEveryCap() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4056); }
-		ScriptString Featured() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3564); }
-		ScriptString AvailableAtLevel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1728); }
+		ScriptString KilledBy() { mixin(MGPC!(ScriptString, 4284)()); }
+		ScriptString UsingWeapon() { mixin(MGPC!(ScriptString, 4296)()); }
+		ScriptString UsingPerks() { mixin(MGPC!(ScriptString, 4308)()); }
+		ScriptString Loading() { mixin(MGPC!(ScriptString, 60)()); }
+		ScriptString Quit() { mixin(MGPC!(ScriptString, 72)()); }
+		ScriptString Game() { mixin(MGPC!(ScriptString, 1176)()); }
+		ScriptString QuitGameBody() { mixin(MGPC!(ScriptString, 84)()); }
+		ScriptString BACK() { mixin(MGPC!(ScriptString, 96)()); }
+		ScriptString Leave() { mixin(MGPC!(ScriptString, 108)()); }
+		ScriptString Match() { mixin(MGPC!(ScriptString, 3180)()); }
+		ScriptString LeaveMatchBody() { mixin(MGPC!(ScriptString, 120)()); }
+		ScriptString Cancel() { mixin(MGPC!(ScriptString, 132)()); }
+		ScriptString FailedToJoin() { mixin(MGPC!(ScriptString, 144)()); }
+		ScriptString OK() { mixin(MGPC!(ScriptString, 156)()); }
+		ScriptString EULAAgreement() { mixin(MGPC!(ScriptString, 4128)()); }
+		ScriptString Accept() { mixin(MGPC!(ScriptString, 1752)()); }
+		ScriptString Decline() { mixin(MGPC!(ScriptString, 3864)()); }
+		ScriptString Status() { mixin(MGPC!(ScriptString, 192)()); }
+		ScriptString Active() { mixin(MGPC!(ScriptString, 204)()); }
+		ScriptString TrClass() { mixin(MGPC!(ScriptString, 216)()); }
+		ScriptString NoBoost() { mixin(MGPC!(ScriptString, 228)()); }
+		ScriptString OneDayleft() { mixin(MGPC!(ScriptString, 240)()); }
+		ScriptString DaysLeft() { mixin(MGPC!(ScriptString, 252)()); }
+		ScriptString TrHour() { mixin(MGPC!(ScriptString, 1188)()); }
+		ScriptString Left() { mixin(MGPC!(ScriptString, 816)()); }
+		ScriptString Unlocked() { mixin(MGPC!(ScriptString, 276)()); }
+		ScriptString Acquired() { mixin(MGPC!(ScriptString, 288)()); }
+		ScriptString Complete() { mixin(MGPC!(ScriptString, 300)()); }
+		ScriptString VIP() { mixin(MGPC!(ScriptString, 804)()); }
+		ScriptString TrServer() { mixin(MGPC!(ScriptString, 744)()); }
+		ScriptString Time() { mixin(MGPC!(ScriptString, 792)()); }
+		ScriptString Added() { mixin(MGPC!(ScriptString, 636)()); }
+		ScriptString ClanTag() { mixin(MGPC!(ScriptString, 3996)()); }
+		ScriptString Removed() { mixin(MGPC!(ScriptString, 4044)()); }
+		ScriptString FWOTD() { mixin(MGPC!(ScriptString, 780)()); }
+		ScriptString Redeemed() { mixin(MGPC!(ScriptString, 768)()); }
+		ScriptString TrServers() { mixin(MGPC!(ScriptString, 756)()); }
+		ScriptString Full() { mixin(MGPC!(ScriptString, 948)()); }
+		ScriptString PleaseWait() { mixin(MGPC!(ScriptString, 936)()); }
+		ScriptString Estimated() { mixin(MGPC!(ScriptString, 1020)()); }
+		ScriptString Wait() { mixin(MGPC!(ScriptString, 1032)()); }
+		ScriptString OverAnHour() { mixin(MGPC!(ScriptString, 1128)()); }
+		ScriptString TrMinutes() { mixin(MGPC!(ScriptString, 1224)()); }
+		ScriptString TrSeconds() { mixin(MGPC!(ScriptString, 1272)()); }
+		ScriptString BecomeAVIP() { mixin(MGPC!(ScriptString, 1308)()); }
+		ScriptString BecomeVIP() { mixin(MGPC!(ScriptString, 312)()); }
+		ScriptString Visit() { mixin(MGPC!(ScriptString, 1080)()); }
+		ScriptString Store() { mixin(MGPC!(ScriptString, 1092)()); }
+		ScriptString LostConn() { mixin(MGPC!(ScriptString, 168)()); }
+		ScriptString LostConnBody() { mixin(MGPC!(ScriptString, 180)()); }
+		ScriptString YouWereKicked() { mixin(MGPC!(ScriptString, 732)()); }
+		ScriptString YouWereKickedBody() { mixin(MGPC!(ScriptString, 324)()); }
+		ScriptString Login() { mixin(MGPC!(ScriptString, 720)()); }
+		ScriptString Failed() { mixin(MGPC!(ScriptString, 612)()); }
+		ScriptString Purchasing() { mixin(MGPC!(ScriptString, 684)()); }
+		ScriptString Item() { mixin(MGPC!(ScriptString, 696)()); }
+		ScriptString Password() { mixin(MGPC!(ScriptString, 648)()); }
+		ScriptString Required() { mixin(MGPC!(ScriptString, 660)()); }
+		ScriptString ServerPasswordBody() { mixin(MGPC!(ScriptString, 672)()); }
+		ScriptString Friend() { mixin(MGPC!(ScriptString, 624)()); }
+		ScriptString YouAdded() { mixin(MGPC!(ScriptString, 924)()); }
+		ScriptString AsAFriend() { mixin(MGPC!(ScriptString, 1008)()); }
+		ScriptString Already() { mixin(MGPC!(ScriptString, 1104)()); }
+		ScriptString Friends() { mixin(MGPC!(ScriptString, 1116)()); }
+		ScriptString AlreadyFriendsBody() { mixin(MGPC!(ScriptString, 336)()); }
+		ScriptString Transaction() { mixin(MGPC!(ScriptString, 600)()); }
+		ScriptString NotEnough() { mixin(MGPC!(ScriptString, 888)()); }
+		ScriptString Gold() { mixin(MGPC!(ScriptString, 900)()); }
+		ScriptString NotEnoughGoldBody() { mixin(MGPC!(ScriptString, 996)()); }
+		ScriptString XP() { mixin(MGPC!(ScriptString, 912)()); }
+		ScriptString VIPMessage() { mixin(MGPC!(ScriptString, 360)()); }
+		ScriptString BoostMessage() { mixin(MGPC!(ScriptString, 372)()); }
+		ScriptString EarnMoreXP() { mixin(MGPC!(ScriptString, 384)()); }
+		ScriptString CodeNotAccepted() { mixin(MGPC!(ScriptString, 588)()); }
+		ScriptString Failure() { mixin(MGPC!(ScriptString, 576)()); }
+		ScriptString NameAlreadyTaken() { mixin(MGPC!(ScriptString, 564)()); }
+		ScriptString NameNotAllowed() { mixin(MGPC!(ScriptString, 876)()); }
+		ScriptString EnterGamerName() { mixin(MGPC!(ScriptString, 984)()); }
+		ScriptString Enter() { mixin(MGPC!(ScriptString, 1068)()); }
+		ScriptString Welcome() { mixin(MGPC!(ScriptString, 3756)()); }
+		ScriptString STEAMTransaction() { mixin(MGPC!(ScriptString, 3672)()); }
+		ScriptString STEAMPendingTransaction() { mixin(MGPC!(ScriptString, 3684)()); }
+		ScriptString STEAMCompletingTransaction() { mixin(MGPC!(ScriptString, 3708)()); }
+		ScriptString STEAMDeclinedTransaction() { mixin(MGPC!(ScriptString, 3696)()); }
+		ScriptString STEAMBadUserData() { mixin(MGPC!(ScriptString, 3720)()); }
+		ScriptString Warning() { mixin(MGPC!(ScriptString, 4320)()); }
+		ScriptString VideoWarning() { mixin(MGPC!(ScriptString, 4332)()); }
+		ScriptString Convert() { mixin(MGPC!(ScriptString, 4356)()); }
+		ScriptString ConvertPortalToGold() { mixin(MGPC!(ScriptString, 4368)()); }
+		ScriptString Error() { mixin(MGPC!(ScriptString, 840)()); }
+		ScriptString BackToGame() { mixin(MGPC!(ScriptString, 864)()); }
+		ScriptString Teammate() { mixin(MGPC!(ScriptString, 852)()); }
+		ScriptString Limit() { mixin(MGPC!(ScriptString, 960)()); }
+		ScriptString Reached() { mixin(MGPC!(ScriptString, 972)()); }
+		ScriptString TrClassBanned() { mixin(MGPC!(ScriptString, 432)()); }
+		ScriptString Mastered() { mixin(MGPC!(ScriptString, 1056)()); }
+		ScriptString Locked() { mixin(MGPC!(ScriptString, 1152)()); }
+		ScriptString TrNew() { mixin(MGPC!(ScriptString, 828)()); }
+		ScriptString Items() { mixin(MGPC!(ScriptString, 708)()); }
+		ScriptString Unlock() { mixin(MGPC!(ScriptString, 1044)()); }
+		ScriptString Available() { mixin(MGPC!(ScriptString, 1140)()); }
+		ScriptString Upgrade() { mixin(MGPC!(ScriptString, 1296)()); }
+		ScriptString Accolades() { mixin(MGPC!(ScriptString, 1320)()); }
+		ScriptString Earned() { mixin(MGPC!(ScriptString, 1740)()); }
+		ScriptString Page() { mixin(MGPC!(ScriptString, 1932)()); }
+		ScriptString Category() { mixin(MGPC!(ScriptString, 2172)()); }
+		ScriptString Enabled() { mixin(MGPC!(ScriptString, 1368)()); }
+		ScriptString Disabled() { mixin(MGPC!(ScriptString, 1776)()); }
+		ScriptString Off() { mixin(MGPC!(ScriptString, 1344)()); }
+		ScriptString SetAudioLevel() { mixin(MGPC!(ScriptString, 1332)()); }
+		ScriptString Badges() { mixin(MGPC!(ScriptString, 1392)()); }
+		ScriptString Completed() { mixin(MGPC!(ScriptString, 1380)()); }
+		ScriptString NotEarned() { mixin(MGPC!(ScriptString, 1788)()); }
+		ScriptString Buy() { mixin(MGPC!(ScriptString, 1428)()); }
+		ScriptString BundlePack() { mixin(MGPC!(ScriptString, 1416)()); }
+		ScriptString Bundle() { mixin(MGPC!(ScriptString, 1800)()); }
+		ScriptString Requires() { mixin(MGPC!(ScriptString, 1404)()); }
+		ScriptString AllItemsOwned() { mixin(MGPC!(ScriptString, 2196)()); }
+		ScriptString BundleRequiresBody() { mixin(MGPC!(ScriptString, 396)()); }
+		ScriptString VisitClassPage() { mixin(MGPC!(ScriptString, 3612)()); }
+		ScriptString Owned() { mixin(MGPC!(ScriptString, 1968)()); }
+		ScriptString BundleOwnedBody() { mixin(MGPC!(ScriptString, 408)()); }
+		ScriptString Purchase() { mixin(MGPC!(ScriptString, 1812)()); }
+		ScriptString TrFor() { mixin(MGPC!(ScriptString, 2184)()); }
+		ScriptString Or() { mixin(MGPC!(ScriptString, 1464)()); }
+		ScriptString Remove() { mixin(MGPC!(ScriptString, 1440)()); }
+		ScriptString Map() { mixin(MGPC!(ScriptString, 1824)()); }
+		ScriptString SelectTo() { mixin(MGPC!(ScriptString, 2208)()); }
+		ScriptString AddClanTag() { mixin(MGPC!(ScriptString, 4020)()); }
+		ScriptString Use() { mixin(MGPC!(ScriptString, 1896)()); }
+		ScriptString Confirm() { mixin(MGPC!(ScriptString, 2472)()); }
+		ScriptString ChangeClanTagTo() { mixin(MGPC!(ScriptString, 3984)()); }
+		ScriptString RenameLoadout() { mixin(MGPC!(ScriptString, 4104)()); }
+		ScriptString SelectToRenameThisLoadout() { mixin(MGPC!(ScriptString, 4116)()); }
+		ScriptString Loadout() { mixin(MGPC!(ScriptString, 1452)()); }
+		ScriptString Primary() { mixin(MGPC!(ScriptString, 1836)()); }
+		ScriptString Secondary() { mixin(MGPC!(ScriptString, 1848)()); }
+		ScriptString Belt() { mixin(MGPC!(ScriptString, 1860)()); }
+		ScriptString Pack() { mixin(MGPC!(ScriptString, 1872)()); }
+		ScriptString Perk() { mixin(MGPC!(ScriptString, 1884)()); }
+		ScriptString NoInfoFound() { mixin(MGPC!(ScriptString, 1476)()); }
+		ScriptString AreYouSureYouWantTo() { mixin(MGPC!(ScriptString, 2220)()); }
+		ScriptString SpawnLimitReached() { mixin(MGPC!(ScriptString, 420)()); }
+		ScriptString Denied() { mixin(MGPC!(ScriptString, 1488)()); }
+		ScriptString No() { mixin(MGPC!(ScriptString, 2928)()); }
+		ScriptString Videos() { mixin(MGPC!(ScriptString, 3528)()); }
+		ScriptString Viewers() { mixin(MGPC!(ScriptString, 3588)()); }
+		ScriptString Video() { mixin(MGPC!(ScriptString, 3516)()); }
+		ScriptString Change() { mixin(MGPC!(ScriptString, 1512)()); }
+		ScriptString FOV() { mixin(MGPC!(ScriptString, 1908)()); }
+		ScriptString Sensitivity() { mixin(MGPC!(ScriptString, 2232)()); }
+		ScriptString JoiningServer() { mixin(MGPC!(ScriptString, 1548)()); }
+		ScriptString AttemptingToJoin() { mixin(MGPC!(ScriptString, 1944)()); }
+		ScriptString SetMapName() { mixin(MGPC!(ScriptString, 2256)()); }
+		ScriptString Filter() { mixin(MGPC!(ScriptString, 2508)()); }
+		ScriptString Set() { mixin(MGPC!(ScriptString, 1680)()); }
+		ScriptString TrName() { mixin(MGPC!(ScriptString, 2400)()); }
+		ScriptString CustomServerBrowser() { mixin(MGPC!(ScriptString, 1536)()); }
+		ScriptString FavoriteInitial() { mixin(MGPC!(ScriptString, 2244)()); }
+		ScriptString PasswordInitial() { mixin(MGPC!(ScriptString, 2496)()); }
+		ScriptString Slots() { mixin(MGPC!(ScriptString, 2676)()); }
+		ScriptString Ping() { mixin(MGPC!(ScriptString, 2892)()); }
+		ScriptString Type() { mixin(MGPC!(ScriptString, 3048)()); }
+		ScriptString Rules() { mixin(MGPC!(ScriptString, 3108)()); }
+		ScriptString Lvl() { mixin(MGPC!(ScriptString, 1608)()); }
+		ScriptString All() { mixin(MGPC!(ScriptString, 1524)()); }
+		ScriptString MeAndFriends() { mixin(MGPC!(ScriptString, 1920)()); }
+		ScriptString CustomReticule() { mixin(MGPC!(ScriptString, 3744)()); }
+		ScriptString Base() { mixin(MGPC!(ScriptString, 1980)()); }
+		ScriptString Upgrades() { mixin(MGPC!(ScriptString, 1584)()); }
+		ScriptString UpgradeDesc() { mixin(MGPC!(ScriptString, 1596)()); }
+		ScriptString Mastery() { mixin(MGPC!(ScriptString, 3660)()); }
+		ScriptString Ratings() { mixin(MGPC!(ScriptString, 1572)()); }
+		ScriptString Damage() { mixin(MGPC!(ScriptString, 1956)()); }
+		ScriptString FireRate() { mixin(MGPC!(ScriptString, 2520)()); }
+		ScriptString Radius() { mixin(MGPC!(ScriptString, 2268)()); }
+		ScriptString Range() { mixin(MGPC!(ScriptString, 3624)()); }
+		ScriptString ClipSize() { mixin(MGPC!(ScriptString, 2688)()); }
+		ScriptString Ammo() { mixin(MGPC!(ScriptString, 3636)()); }
+		ScriptString AreYouSureYouWantToUnlockAllUpgradesForXX() { mixin(MGPC!(ScriptString, 3648)()); }
+		ScriptString EnterCode() { mixin(MGPC!(ScriptString, 1632)()); }
+		ScriptString CodeAccepted() { mixin(MGPC!(ScriptString, 1620)()); }
+		ScriptString Message() { mixin(MGPC!(ScriptString, 1560)()); }
+		ScriptString Offline() { mixin(MGPC!(ScriptString, 1992)()); }
+		ScriptString Team() { mixin(MGPC!(ScriptString, 1644)()); }
+		ScriptString Select() { mixin(MGPC!(ScriptString, 2016)()); }
+		ScriptString ChooseYourTeam() { mixin(MGPC!(ScriptString, 2280)()); }
+		ScriptString ToSpawn() { mixin(MGPC!(ScriptString, 2700)()); }
+		ScriptString Unlocks() { mixin(MGPC!(ScriptString, 2292)()); }
+		ScriptString Modify() { mixin(MGPC!(ScriptString, 1500)()); }
+		ScriptString TrClasses() { mixin(MGPC!(ScriptString, 2040)()); }
+		ScriptString Online() { mixin(MGPC!(ScriptString, 2004)()); }
+		ScriptString Follower() { mixin(MGPC!(ScriptString, 2544)()); }
+		ScriptString Followers() { mixin(MGPC!(ScriptString, 2712)()); }
+		ScriptString Shown() { mixin(MGPC!(ScriptString, 1656)()); }
+		ScriptString Hidden() { mixin(MGPC!(ScriptString, 2028)()); }
+		ScriptString Visible() { mixin(MGPC!(ScriptString, 1668)()); }
+		ScriptString ChangeBindingBody() { mixin(MGPC!(ScriptString, 444)()); }
+		ScriptString ResetAllToDefault() { mixin(MGPC!(ScriptString, 4092)()); }
+		ScriptString Streams() { mixin(MGPC!(ScriptString, 3552)()); }
+		ScriptString Not() { mixin(MGPC!(ScriptString, 2736)()); }
+		ScriptString CreateParty() { mixin(MGPC!(ScriptString, 3780)()); }
+		ScriptString LearnMore() { mixin(MGPC!(ScriptString, 4140)()); }
+		ScriptString Your() { mixin(MGPC!(ScriptString, 3492)()); }
+		ScriptString DealoftheDay() { mixin(MGPC!(ScriptString, 3504)()); }
+		ScriptString TrHours() { mixin(MGPC!(ScriptString, 1200)()); }
+		ScriptString TrMinute() { mixin(MGPC!(ScriptString, 1212)()); }
+		ScriptString TrSecond() { mixin(MGPC!(ScriptString, 1260)()); }
+		ScriptString Recommended() { mixin(MGPC!(ScriptString, 2448)()); }
+		ScriptString ClanTags() { mixin(MGPC!(ScriptString, 4008)()); }
+		ScriptString Party() { mixin(MGPC!(ScriptString, 3768)()); }
+		ScriptString Queue() { mixin(MGPC!(ScriptString, 2904)()); }
+		ScriptString SearchingForAMatch() { mixin(MGPC!(ScriptString, 3060)()); }
+		ScriptString SelectToManage() { mixin(MGPC!(ScriptString, 2304)()); }
+		ScriptString CreateNewServer() { mixin(MGPC!(ScriptString, 1704)()); }
+		ScriptString CreateNewServerBody() { mixin(MGPC!(ScriptString, 456)()); }
+		ScriptString SelectToAddMap() { mixin(MGPC!(ScriptString, 1716)()); }
+		ScriptString ChangeNameTo() { mixin(MGPC!(ScriptString, 2640)()); }
+		ScriptString InGame() { mixin(MGPC!(ScriptString, 3960)()); }
+		ScriptString InQueue() { mixin(MGPC!(ScriptString, 2916)()); }
+		ScriptString LeaderOnly() { mixin(MGPC!(ScriptString, 3876)()); }
+		ScriptString Add() { mixin(MGPC!(ScriptString, 2124)()); }
+		ScriptString SendMessage() { mixin(MGPC!(ScriptString, 3792)()); }
+		ScriptString KickFromParty() { mixin(MGPC!(ScriptString, 3804)()); }
+		ScriptString AddedNewFriend() { mixin(MGPC!(ScriptString, 3948)()); }
+		ScriptString InviteByName() { mixin(MGPC!(ScriptString, 3912)()); }
+		ScriptString InviteSent() { mixin(MGPC!(ScriptString, 3924)()); }
+		ScriptString InvitationSentTo() { mixin(MGPC!(ScriptString, 3816)()); }
+		ScriptString InviteFailed() { mixin(MGPC!(ScriptString, 3936)()); }
+		ScriptString CouldNotFindPlayer() { mixin(MGPC!(ScriptString, 3828)()); }
+		ScriptString PendingInvite() { mixin(MGPC!(ScriptString, 3888)()); }
+		ScriptString Actions() { mixin(MGPC!(ScriptString, 3900)()); }
+		ScriptString FlagsMoveEveryCap() { mixin(MGPC!(ScriptString, 4056)()); }
+		ScriptString Featured() { mixin(MGPC!(ScriptString, 3564)()); }
+		ScriptString AvailableAtLevel() { mixin(MGPC!(ScriptString, 1728)()); }
 		// WARNING: Property 'Player' has the same name as a defined type!
-		ScriptString Overview() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2076); }
+		ScriptString Overview() { mixin(MGPC!(ScriptString, 2076)()); }
 		// WARNING: Property 'Level' has the same name as a defined type!
-		ScriptString Account() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2556); }
-		ScriptString Boosted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2940); }
-		ScriptString TrClassUsage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3120); }
-		ScriptString Most() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3156); }
-		ScriptString Played() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2724); }
-		ScriptString Stats() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3168); }
-		ScriptString Matches() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3192); }
-		ScriptString Score() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2808); }
-		ScriptString Total() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2772); }
-		ScriptString PerHour() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3204); }
-		ScriptString Won() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3216); }
-		ScriptString Lost() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3240); }
-		ScriptString Win() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3228); }
-		ScriptString Loss() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3252); }
-		ScriptString Combat() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3264); }
-		ScriptString Kills() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3276); }
-		ScriptString Assists() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3288); }
-		ScriptString Midairs() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3300); }
-		ScriptString FastestSki() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3312); }
-		ScriptString Objective() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3324); }
-		ScriptString Flag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3336); }
-		ScriptString Defense() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3348); }
-		ScriptString Caps() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3360); }
-		ScriptString Gens() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3372); }
-		ScriptString Destroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3396); }
-		ScriptString DestroyedAbb() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3408); }
-		ScriptString Objs() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3384); }
-		ScriptString MostRecentAwards() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3420); }
-		ScriptString TrNone() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2064); }
-		ScriptString TrSecondsAbb() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1284); }
-		ScriptString TrMinutesAbb() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1236); }
-		ScriptString TrHoursInitial() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2052); }
-		ScriptString TrMinutesInitial() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1248); }
-		ScriptString Join() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2100); }
-		ScriptString TeamDeathmatch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2328); }
-		ScriptString CaptureTheFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2568); }
-		ScriptString Rabbit() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2748); }
-		ScriptString Arena() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2952); }
-		ScriptString Enable() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1356); }
-		ScriptString EnableServerBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 468); }
-		ScriptString ServerExpiredBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 480); }
-		ScriptString Disable() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1764); }
-		ScriptString DisableServerBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 492); }
-		ScriptString Kill() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2112); }
-		ScriptString KillServerBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 504); }
-		ScriptString GoToNextMap() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2340); }
-		ScriptString GoToNextMapBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 516); }
-		ScriptString Kick() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2580); }
-		ScriptString KickPlayerBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 528); }
-		ScriptString Ban() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2760); }
-		ScriptString BanPlayerBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 540); }
-		ScriptString AddRentalTimeToThisServer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2136); }
-		ScriptString Edit() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1692); }
-		ScriptString Banned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2160); }
-		ScriptString Only() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2364); }
-		ScriptString OutOfBounds() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2148); }
-		ScriptString ValueMustBeWithin() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2352); }
-		ScriptString And() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2592); }
-		ScriptString Allowed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2964); }
-		ScriptString Free() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2376); }
-		ScriptString Credits() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2460); }
-		ScriptString Price() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2784); }
-		ScriptString Cooldown() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2976); }
-		ScriptString Buildup() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3072); }
-		ScriptString Value() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2796); }
-		ScriptString KPH() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4344); }
-		ScriptString ToWin() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2988); }
-		ScriptString TrLocal() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2388); }
-		ScriptString Display() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2820); }
-		ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3000); }
+		ScriptString Account() { mixin(MGPC!(ScriptString, 2556)()); }
+		ScriptString Boosted() { mixin(MGPC!(ScriptString, 2940)()); }
+		ScriptString TrClassUsage() { mixin(MGPC!(ScriptString, 3120)()); }
+		ScriptString Most() { mixin(MGPC!(ScriptString, 3156)()); }
+		ScriptString Played() { mixin(MGPC!(ScriptString, 2724)()); }
+		ScriptString Stats() { mixin(MGPC!(ScriptString, 3168)()); }
+		ScriptString Matches() { mixin(MGPC!(ScriptString, 3192)()); }
+		ScriptString Score() { mixin(MGPC!(ScriptString, 2808)()); }
+		ScriptString Total() { mixin(MGPC!(ScriptString, 2772)()); }
+		ScriptString PerHour() { mixin(MGPC!(ScriptString, 3204)()); }
+		ScriptString Won() { mixin(MGPC!(ScriptString, 3216)()); }
+		ScriptString Lost() { mixin(MGPC!(ScriptString, 3240)()); }
+		ScriptString Win() { mixin(MGPC!(ScriptString, 3228)()); }
+		ScriptString Loss() { mixin(MGPC!(ScriptString, 3252)()); }
+		ScriptString Combat() { mixin(MGPC!(ScriptString, 3264)()); }
+		ScriptString Kills() { mixin(MGPC!(ScriptString, 3276)()); }
+		ScriptString Assists() { mixin(MGPC!(ScriptString, 3288)()); }
+		ScriptString Midairs() { mixin(MGPC!(ScriptString, 3300)()); }
+		ScriptString FastestSki() { mixin(MGPC!(ScriptString, 3312)()); }
+		ScriptString Objective() { mixin(MGPC!(ScriptString, 3324)()); }
+		ScriptString Flag() { mixin(MGPC!(ScriptString, 3336)()); }
+		ScriptString Defense() { mixin(MGPC!(ScriptString, 3348)()); }
+		ScriptString Caps() { mixin(MGPC!(ScriptString, 3360)()); }
+		ScriptString Gens() { mixin(MGPC!(ScriptString, 3372)()); }
+		ScriptString Destroyed() { mixin(MGPC!(ScriptString, 3396)()); }
+		ScriptString DestroyedAbb() { mixin(MGPC!(ScriptString, 3408)()); }
+		ScriptString Objs() { mixin(MGPC!(ScriptString, 3384)()); }
+		ScriptString MostRecentAwards() { mixin(MGPC!(ScriptString, 3420)()); }
+		ScriptString TrNone() { mixin(MGPC!(ScriptString, 2064)()); }
+		ScriptString TrSecondsAbb() { mixin(MGPC!(ScriptString, 1284)()); }
+		ScriptString TrMinutesAbb() { mixin(MGPC!(ScriptString, 1236)()); }
+		ScriptString TrHoursInitial() { mixin(MGPC!(ScriptString, 2052)()); }
+		ScriptString TrMinutesInitial() { mixin(MGPC!(ScriptString, 1248)()); }
+		ScriptString Join() { mixin(MGPC!(ScriptString, 2100)()); }
+		ScriptString TeamDeathmatch() { mixin(MGPC!(ScriptString, 2328)()); }
+		ScriptString CaptureTheFlag() { mixin(MGPC!(ScriptString, 2568)()); }
+		ScriptString Rabbit() { mixin(MGPC!(ScriptString, 2748)()); }
+		ScriptString Arena() { mixin(MGPC!(ScriptString, 2952)()); }
+		ScriptString Enable() { mixin(MGPC!(ScriptString, 1356)()); }
+		ScriptString EnableServerBody() { mixin(MGPC!(ScriptString, 468)()); }
+		ScriptString ServerExpiredBody() { mixin(MGPC!(ScriptString, 480)()); }
+		ScriptString Disable() { mixin(MGPC!(ScriptString, 1764)()); }
+		ScriptString DisableServerBody() { mixin(MGPC!(ScriptString, 492)()); }
+		ScriptString Kill() { mixin(MGPC!(ScriptString, 2112)()); }
+		ScriptString KillServerBody() { mixin(MGPC!(ScriptString, 504)()); }
+		ScriptString GoToNextMap() { mixin(MGPC!(ScriptString, 2340)()); }
+		ScriptString GoToNextMapBody() { mixin(MGPC!(ScriptString, 516)()); }
+		ScriptString Kick() { mixin(MGPC!(ScriptString, 2580)()); }
+		ScriptString KickPlayerBody() { mixin(MGPC!(ScriptString, 528)()); }
+		ScriptString Ban() { mixin(MGPC!(ScriptString, 2760)()); }
+		ScriptString BanPlayerBody() { mixin(MGPC!(ScriptString, 540)()); }
+		ScriptString AddRentalTimeToThisServer() { mixin(MGPC!(ScriptString, 2136)()); }
+		ScriptString Edit() { mixin(MGPC!(ScriptString, 1692)()); }
+		ScriptString Banned() { mixin(MGPC!(ScriptString, 2160)()); }
+		ScriptString Only() { mixin(MGPC!(ScriptString, 2364)()); }
+		ScriptString OutOfBounds() { mixin(MGPC!(ScriptString, 2148)()); }
+		ScriptString ValueMustBeWithin() { mixin(MGPC!(ScriptString, 2352)()); }
+		ScriptString And() { mixin(MGPC!(ScriptString, 2592)()); }
+		ScriptString Allowed() { mixin(MGPC!(ScriptString, 2964)()); }
+		ScriptString Free() { mixin(MGPC!(ScriptString, 2376)()); }
+		ScriptString Credits() { mixin(MGPC!(ScriptString, 2460)()); }
+		ScriptString Price() { mixin(MGPC!(ScriptString, 2784)()); }
+		ScriptString Cooldown() { mixin(MGPC!(ScriptString, 2976)()); }
+		ScriptString Buildup() { mixin(MGPC!(ScriptString, 3072)()); }
+		ScriptString Value() { mixin(MGPC!(ScriptString, 2796)()); }
+		ScriptString KPH() { mixin(MGPC!(ScriptString, 4344)()); }
+		ScriptString ToWin() { mixin(MGPC!(ScriptString, 2988)()); }
+		ScriptString TrLocal() { mixin(MGPC!(ScriptString, 2388)()); }
+		ScriptString Display() { mixin(MGPC!(ScriptString, 2820)()); }
+		ScriptString Description() { mixin(MGPC!(ScriptString, 3000)()); }
 		// WARNING: Property 'Admin' has the same name as a defined type!
-		ScriptString TrPublic() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3132); }
-		ScriptString TrDefault() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2604); }
-		ScriptString Max() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3732); }
-		ScriptString Players() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2412); }
-		ScriptString BaseDestReq() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2844); }
-		ScriptString Balanced() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2616); }
-		ScriptString Unbalanced() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2832); }
-		ScriptString AutoAssign() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3012); }
-		ScriptString Warmup() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2856); }
-		ScriptString Gametime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3024); }
-		ScriptString Overtime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3096); }
-		ScriptString Respawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3144); }
-		ScriptString Health() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2868); }
-		ScriptString Multiplier() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3036); }
-		ScriptString PerTeam() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2424); }
-		ScriptString Bundles() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2436); }
-		ScriptString Of() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2628); }
-		ScriptString Resolution() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2652); }
-		ScriptString ResolutionChangeBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 552); }
-		ScriptString Revert() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2880); }
-		ScriptString Resolutions() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2484); }
-		ScriptString Other() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2664); }
-		ScriptString ComingSoon() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3600); }
-		ScriptString Stream() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3540); }
-		ScriptString Spectate() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4272); }
-		ScriptString FireToSpectate() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4200); }
-		ScriptString FireToRespawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4212); }
-		ScriptString OutOfRespawns() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4224); }
-		ScriptString OutOfTeamRespawns() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4236); }
-		ScriptString TimeUntilRespawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4248); }
-		ScriptString Testing() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4068); }
-		ScriptString SpawningAs() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4080); }
-		ScriptString Pending() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3444); }
-		ScriptString TeamScoreBoard() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4260); }
-		ScriptString NextMap() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4152); }
-		ScriptString GameType() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4164); }
-		ScriptString GameRules() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4176); }
-		ScriptString GameTip() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4188); }
-		ScriptString LoggingIn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3432); }
-		ScriptString PartyInvite() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3840); }
-		ScriptString InvitesYouToJoinAParty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3852); }
-		ScriptString Block() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3972); }
-		ScriptString ChangeClanTag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4032); }
-		ScriptString SelectToGoBack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3576); }
-		ScriptString NewBundleDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3480); }
-		ScriptString NewBundleTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3468); }
-		ScriptString CustomServer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3456); }
-		ScriptString TrSpawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 2532); }
-		ScriptString Exit() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1164); }
-		ScriptString NotEnoguhGoldBody() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 348); }
-		ScriptString HoursLeft() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 264); }
+		ScriptString TrPublic() { mixin(MGPC!(ScriptString, 3132)()); }
+		ScriptString TrDefault() { mixin(MGPC!(ScriptString, 2604)()); }
+		ScriptString Max() { mixin(MGPC!(ScriptString, 3732)()); }
+		ScriptString Players() { mixin(MGPC!(ScriptString, 2412)()); }
+		ScriptString BaseDestReq() { mixin(MGPC!(ScriptString, 2844)()); }
+		ScriptString Balanced() { mixin(MGPC!(ScriptString, 2616)()); }
+		ScriptString Unbalanced() { mixin(MGPC!(ScriptString, 2832)()); }
+		ScriptString AutoAssign() { mixin(MGPC!(ScriptString, 3012)()); }
+		ScriptString Warmup() { mixin(MGPC!(ScriptString, 2856)()); }
+		ScriptString Gametime() { mixin(MGPC!(ScriptString, 3024)()); }
+		ScriptString Overtime() { mixin(MGPC!(ScriptString, 3096)()); }
+		ScriptString Respawn() { mixin(MGPC!(ScriptString, 3144)()); }
+		ScriptString Health() { mixin(MGPC!(ScriptString, 2868)()); }
+		ScriptString Multiplier() { mixin(MGPC!(ScriptString, 3036)()); }
+		ScriptString PerTeam() { mixin(MGPC!(ScriptString, 2424)()); }
+		ScriptString Bundles() { mixin(MGPC!(ScriptString, 2436)()); }
+		ScriptString Of() { mixin(MGPC!(ScriptString, 2628)()); }
+		ScriptString Resolution() { mixin(MGPC!(ScriptString, 2652)()); }
+		ScriptString ResolutionChangeBody() { mixin(MGPC!(ScriptString, 552)()); }
+		ScriptString Revert() { mixin(MGPC!(ScriptString, 2880)()); }
+		ScriptString Resolutions() { mixin(MGPC!(ScriptString, 2484)()); }
+		ScriptString Other() { mixin(MGPC!(ScriptString, 2664)()); }
+		ScriptString ComingSoon() { mixin(MGPC!(ScriptString, 3600)()); }
+		ScriptString Stream() { mixin(MGPC!(ScriptString, 3540)()); }
+		ScriptString Spectate() { mixin(MGPC!(ScriptString, 4272)()); }
+		ScriptString FireToSpectate() { mixin(MGPC!(ScriptString, 4200)()); }
+		ScriptString FireToRespawn() { mixin(MGPC!(ScriptString, 4212)()); }
+		ScriptString OutOfRespawns() { mixin(MGPC!(ScriptString, 4224)()); }
+		ScriptString OutOfTeamRespawns() { mixin(MGPC!(ScriptString, 4236)()); }
+		ScriptString TimeUntilRespawn() { mixin(MGPC!(ScriptString, 4248)()); }
+		ScriptString Testing() { mixin(MGPC!(ScriptString, 4068)()); }
+		ScriptString SpawningAs() { mixin(MGPC!(ScriptString, 4080)()); }
+		ScriptString Pending() { mixin(MGPC!(ScriptString, 3444)()); }
+		ScriptString TeamScoreBoard() { mixin(MGPC!(ScriptString, 4260)()); }
+		ScriptString NextMap() { mixin(MGPC!(ScriptString, 4152)()); }
+		ScriptString GameType() { mixin(MGPC!(ScriptString, 4164)()); }
+		ScriptString GameRules() { mixin(MGPC!(ScriptString, 4176)()); }
+		ScriptString GameTip() { mixin(MGPC!(ScriptString, 4188)()); }
+		ScriptString LoggingIn() { mixin(MGPC!(ScriptString, 3432)()); }
+		ScriptString PartyInvite() { mixin(MGPC!(ScriptString, 3840)()); }
+		ScriptString InvitesYouToJoinAParty() { mixin(MGPC!(ScriptString, 3852)()); }
+		ScriptString Block() { mixin(MGPC!(ScriptString, 3972)()); }
+		ScriptString ChangeClanTag() { mixin(MGPC!(ScriptString, 4032)()); }
+		ScriptString SelectToGoBack() { mixin(MGPC!(ScriptString, 3576)()); }
+		ScriptString NewBundleDescription() { mixin(MGPC!(ScriptString, 3480)()); }
+		ScriptString NewBundleTitle() { mixin(MGPC!(ScriptString, 3468)()); }
+		ScriptString CustomServer() { mixin(MGPC!(ScriptString, 3456)()); }
+		ScriptString TrSpawn() { mixin(MGPC!(ScriptString, 2532)()); }
+		ScriptString Exit() { mixin(MGPC!(ScriptString, 1164)()); }
+		ScriptString NotEnoguhGoldBody() { mixin(MGPC!(ScriptString, 348)()); }
+		ScriptString HoursLeft() { mixin(MGPC!(ScriptString, 264)()); }
 	}
 }

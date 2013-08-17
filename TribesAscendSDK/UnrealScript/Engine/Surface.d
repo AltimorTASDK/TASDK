@@ -1,15 +1,16 @@
 module UnrealScript.Engine.Surface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface Surface : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Surface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Surface")()); }
 	private static __gshared Surface mDefaultProperties;
-	@property final static Surface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Surface)("Surface Engine.Default__Surface")); }
+	@property final static Surface DefaultProperties() { mixin(MGDPC!(Surface, "Surface Engine.Default__Surface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetSurfaceWidth() { return mGetSurfaceWidth ? mGetSurfaceWidth : (mGetSurfaceWidth = ScriptObject.Find!(ScriptFunction)("Function Engine.Surface.GetSurfaceWidth")); }
-			ScriptFunction GetSurfaceHeight() { return mGetSurfaceHeight ? mGetSurfaceHeight : (mGetSurfaceHeight = ScriptObject.Find!(ScriptFunction)("Function Engine.Surface.GetSurfaceHeight")); }
+			ScriptFunction GetSurfaceWidth() { mixin(MGF!("mGetSurfaceWidth", "Function Engine.Surface.GetSurfaceWidth")()); }
+			ScriptFunction GetSurfaceHeight() { mixin(MGF!("mGetSurfaceHeight", "Function Engine.Surface.GetSurfaceHeight")()); }
 		}
 	}
 final:

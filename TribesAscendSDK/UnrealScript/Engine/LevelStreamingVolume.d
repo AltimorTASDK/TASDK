@@ -1,6 +1,7 @@
 module UnrealScript.Engine.LevelStreamingVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Volume;
 import UnrealScript.Engine.LevelStreaming;
@@ -9,9 +10,9 @@ extern(C++) interface LevelStreamingVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LevelStreamingVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LevelStreamingVolume")()); }
 	private static __gshared LevelStreamingVolume mDefaultProperties;
-	@property final static LevelStreamingVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LevelStreamingVolume)("LevelStreamingVolume Engine.Default__LevelStreamingVolume")); }
+	@property final static LevelStreamingVolume DefaultProperties() { mixin(MGDPC!(LevelStreamingVolume, "LevelStreamingVolume Engine.Default__LevelStreamingVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,9 +23,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.LevelStreamingVolume.OnToggle")); }
-			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.LevelStreamingVolume.CreateCheckpointRecord")); }
-			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.LevelStreamingVolume.ApplyCheckpointRecord")); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.LevelStreamingVolume.OnToggle")()); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.LevelStreamingVolume.CreateCheckpointRecord")()); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.LevelStreamingVolume.ApplyCheckpointRecord")()); }
 		}
 	}
 	enum EStreamingVolumeUsage : ubyte
@@ -41,28 +42,28 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LevelStreamingVolume.CheckpointRecord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LevelStreamingVolume.CheckpointRecord")()); }
 		@property final
 		{
-			bool bDisabled() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bDisabled() { mixin(MGBPS!(0, 0x1)()); }
+			bool bDisabled(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(LevelStreaming) StreamingLevels() { return *cast(ScriptArray!(LevelStreaming)*)(cast(size_t)cast(void*)this + 520); }
-			float TestVolumeDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
-			LevelStreamingVolume.EStreamingVolumeUsage Usage() { return *cast(LevelStreamingVolume.EStreamingVolumeUsage*)(cast(size_t)cast(void*)this + 537); }
-			LevelStreamingVolume.EStreamingVolumeUsage StreamingUsage() { return *cast(LevelStreamingVolume.EStreamingVolumeUsage*)(cast(size_t)cast(void*)this + 536); }
+			ScriptArray!(LevelStreaming) StreamingLevels() { mixin(MGPC!(ScriptArray!(LevelStreaming), 520)()); }
+			float TestVolumeDistance() { mixin(MGPC!(float, 540)()); }
+			LevelStreamingVolume.EStreamingVolumeUsage Usage() { mixin(MGPC!(LevelStreamingVolume.EStreamingVolumeUsage, 537)()); }
+			LevelStreamingVolume.EStreamingVolumeUsage StreamingUsage() { mixin(MGPC!(LevelStreamingVolume.EStreamingVolumeUsage, 536)()); }
 		}
-		bool bTestDistanceToVolume() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
-		bool bTestDistanceToVolume(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
-		bool bDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
-		bool bDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
-		bool bEditorPreVisOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool bEditorPreVisOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		bool bTestDistanceToVolume() { mixin(MGBPC!(532, 0x4)()); }
+		bool bTestDistanceToVolume(bool val) { mixin(MSBPC!(532, 0x4)()); }
+		bool bDisabled() { mixin(MGBPC!(532, 0x2)()); }
+		bool bDisabled(bool val) { mixin(MSBPC!(532, 0x2)()); }
+		bool bEditorPreVisOnly() { mixin(MGBPC!(532, 0x1)()); }
+		bool bEditorPreVisOnly(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	void OnToggle(SeqAct_Toggle Action)
@@ -72,19 +73,19 @@ final:
 		*cast(SeqAct_Toggle*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
-	void CreateCheckpointRecord(LevelStreamingVolume.CheckpointRecord* Record)
+	void CreateCheckpointRecord(ref LevelStreamingVolume.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LevelStreamingVolume.CheckpointRecord*)params.ptr = *Record;
+		*cast(LevelStreamingVolume.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(LevelStreamingVolume.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(LevelStreamingVolume.CheckpointRecord* Record)
+	void ApplyCheckpointRecord(ref const LevelStreamingVolume.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LevelStreamingVolume.CheckpointRecord*)params.ptr = *Record;
+		*cast(LevelStreamingVolume.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(LevelStreamingVolume.CheckpointRecord*)params.ptr;
 	}

@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.MobileMenuButton;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Texture2D;
@@ -12,9 +13,9 @@ extern(C++) interface MobileMenuButton : MobileMenuObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileMenuButton")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.MobileMenuButton")()); }
 	private static __gshared MobileMenuButton mDefaultProperties;
-	@property final static MobileMenuButton DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileMenuButton)("MobileMenuButton GameFramework.Default__MobileMenuButton")); }
+	@property final static MobileMenuButton DefaultProperties() { mixin(MGDPC!(MobileMenuButton, "MobileMenuButton GameFramework.Default__MobileMenuButton")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitMenuObject() { return mInitMenuObject ? mInitMenuObject : (mInitMenuObject = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileMenuButton.InitMenuObject")); }
-			ScriptFunction RenderObject() { return mRenderObject ? mRenderObject : (mRenderObject = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileMenuButton.RenderObject")); }
-			ScriptFunction RenderCaption() { return mRenderCaption ? mRenderCaption : (mRenderCaption = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileMenuButton.RenderCaption")); }
+			ScriptFunction InitMenuObject() { mixin(MGF!("mInitMenuObject", "Function GameFramework.MobileMenuButton.InitMenuObject")()); }
+			ScriptFunction RenderObject() { mixin(MGF!("mRenderObject", "Function GameFramework.MobileMenuButton.RenderObject")()); }
+			ScriptFunction RenderCaption() { mixin(MGF!("mRenderCaption", "Function GameFramework.MobileMenuButton.RenderCaption")()); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject.LinearColor CaptionColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 208); }
-		ScriptString Caption() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-		UObject.LinearColor ImageColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 180); }
-		MobileMenuObject.UVCoords ImagesUVs() { return *cast(MobileMenuObject.UVCoords*)(cast(size_t)cast(void*)this + 140); }
-		Texture2D Images() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 132); }
+		UObject.LinearColor CaptionColor() { mixin(MGPC!(UObject.LinearColor, 208)()); }
+		ScriptString Caption() { mixin(MGPC!(ScriptString, 196)()); }
+		UObject.LinearColor ImageColor() { mixin(MGPC!(UObject.LinearColor, 180)()); }
+		MobileMenuObject.UVCoords ImagesUVs() { mixin(MGPC!(MobileMenuObject.UVCoords, 140)()); }
+		Texture2D Images() { mixin(MGPC!(Texture2D, 132)()); }
 	}
 final:
 	void InitMenuObject(MobilePlayerInput pPlayerInput, MobileMenuScene pScene, int ScreenWidth, int ScreenHeight)

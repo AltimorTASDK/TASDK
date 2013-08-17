@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrDevice_LightAssaultRifle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrDevice_AssaultRifle;
 
 extern(C++) interface TrDevice_LightAssaultRifle : TrDevice_AssaultRifle
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_LightAssaultRifle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_LightAssaultRifle")()); }
 	private static __gshared TrDevice_LightAssaultRifle mDefaultProperties;
-	@property final static TrDevice_LightAssaultRifle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_LightAssaultRifle)("TrDevice_LightAssaultRifle TribesGame.Default__TrDevice_LightAssaultRifle")); }
+	@property final static TrDevice_LightAssaultRifle DefaultProperties() { mixin(MGDPC!(TrDevice_LightAssaultRifle, "TrDevice_LightAssaultRifle TribesGame.Default__TrDevice_LightAssaultRifle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,26 +26,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReloadComplete() { return mOnReloadComplete ? mOnReloadComplete : (mOnReloadComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.OnReloadComplete")); }
-			ScriptFunction StopFire() { return mStopFire ? mStopFire : (mStopFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.StopFire")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.StartFire")); }
-			ScriptFunction RefireTimer() { return mRefireTimer ? mRefireTimer : (mRefireTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.RefireTimer")); }
-			ScriptFunction EndFire() { return mEndFire ? mEndFire : (mEndFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.EndFire")); }
-			ScriptFunction FireAmmunition() { return mFireAmmunition ? mFireAmmunition : (mFireAmmunition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.FireAmmunition")); }
-			ScriptFunction PlayFiringSound() { return mPlayFiringSound ? mPlayFiringSound : (mPlayFiringSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.PlayFiringSound")); }
-			ScriptFunction ServerStopFire() { return mServerStopFire ? mServerStopFire : (mServerStopFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LightAssaultRifle.ServerStopFire")); }
+			ScriptFunction OnReloadComplete() { mixin(MGF!("mOnReloadComplete", "Function TribesGame.TrDevice_LightAssaultRifle.OnReloadComplete")()); }
+			ScriptFunction StopFire() { mixin(MGF!("mStopFire", "Function TribesGame.TrDevice_LightAssaultRifle.StopFire")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_LightAssaultRifle.StartFire")()); }
+			ScriptFunction RefireTimer() { mixin(MGF!("mRefireTimer", "Function TribesGame.TrDevice_LightAssaultRifle.RefireTimer")()); }
+			ScriptFunction EndFire() { mixin(MGF!("mEndFire", "Function TribesGame.TrDevice_LightAssaultRifle.EndFire")()); }
+			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_LightAssaultRifle.FireAmmunition")()); }
+			ScriptFunction PlayFiringSound() { mixin(MGF!("mPlayFiringSound", "Function TribesGame.TrDevice_LightAssaultRifle.PlayFiringSound")()); }
+			ScriptFunction ServerStopFire() { mixin(MGF!("mServerStopFire", "Function TribesGame.TrDevice_LightAssaultRifle.ServerStopFire")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float m_fBurtShotRefireTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2184); }
-			int m_nShotsSoFar() { return *cast(int*)(cast(size_t)cast(void*)this + 2176); }
-			int m_nShotBurstCount() { return *cast(int*)(cast(size_t)cast(void*)this + 2172); }
+			float m_fBurtShotRefireTime() { mixin(MGPC!(float, 2184)()); }
+			int m_nShotsSoFar() { mixin(MGPC!(int, 2176)()); }
+			int m_nShotBurstCount() { mixin(MGPC!(int, 2172)()); }
 		}
-		bool m_bHoldingFire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2180) & 0x1) != 0; }
-		bool m_bHoldingFire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2180) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2180) &= ~0x1; } return val; }
+		bool m_bHoldingFire() { mixin(MGBPC!(2180, 0x1)()); }
+		bool m_bHoldingFire(bool val) { mixin(MSBPC!(2180, 0x1)()); }
 	}
 final:
 	void OnReloadComplete()

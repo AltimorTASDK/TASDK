@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrTDMScoreMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -10,9 +11,9 @@ extern(C++) interface TrTDMScoreMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTDMScoreMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTDMScoreMessage")()); }
 	private static __gshared TrTDMScoreMessage mDefaultProperties;
-	@property final static TrTDMScoreMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTDMScoreMessage)("TrTDMScoreMessage TribesGame.Default__TrTDMScoreMessage")); }
+	@property final static TrTDMScoreMessage DefaultProperties() { mixin(MGDPC!(TrTDMScoreMessage, "TrTDMScoreMessage TribesGame.Default__TrTDMScoreMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTDMScoreMessage.AnnouncementLevel")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTDMScoreMessage.ClientReceive")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function TribesGame.TrTDMScoreMessage.AnnouncementLevel")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrTDMScoreMessage.ClientReceive")()); }
 		}
 	}
 final:

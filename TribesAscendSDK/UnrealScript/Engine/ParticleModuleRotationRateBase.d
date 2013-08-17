@@ -1,13 +1,14 @@
 module UnrealScript.Engine.ParticleModuleRotationRateBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModule;
 
 extern(C++) interface ParticleModuleRotationRateBase : ParticleModule
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleRotationRateBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleRotationRateBase")()); }
 	private static __gshared ParticleModuleRotationRateBase mDefaultProperties;
-	@property final static ParticleModuleRotationRateBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleRotationRateBase)("ParticleModuleRotationRateBase Engine.Default__ParticleModuleRotationRateBase")); }
+	@property final static ParticleModuleRotationRateBase DefaultProperties() { mixin(MGDPC!(ParticleModuleRotationRateBase, "ParticleModuleRotationRateBase Engine.Default__ParticleModuleRotationRateBase")()); }
 }

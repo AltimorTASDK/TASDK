@@ -1,15 +1,16 @@
 module UnrealScript.UDKBase.UDKAnimBlendBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendList;
 
 extern(C++) interface UDKAnimBlendBase : AnimNodeBlendList
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendBase")()); }
 	private static __gshared UDKAnimBlendBase mDefaultProperties;
-	@property final static UDKAnimBlendBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendBase)("UDKAnimBlendBase UDKBase.Default__UDKAnimBlendBase")); }
+	@property final static UDKAnimBlendBase DefaultProperties() { mixin(MGDPC!(UDKAnimBlendBase, "UDKAnimBlendBase UDKBase.Default__UDKAnimBlendBase")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,20 +21,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBlendTime() { return mGetBlendTime ? mGetBlendTime : (mGetBlendTime = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendBase.GetBlendTime")); }
-			ScriptFunction GetAnimDuration() { return mGetAnimDuration ? mGetAnimDuration : (mGetAnimDuration = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendBase.GetAnimDuration")); }
-			ScriptFunction TickAnim() { return mTickAnim ? mTickAnim : (mTickAnim = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendBase.TickAnim")); }
+			ScriptFunction GetBlendTime() { mixin(MGF!("mGetBlendTime", "Function UDKBase.UDKAnimBlendBase.GetBlendTime")()); }
+			ScriptFunction GetAnimDuration() { mixin(MGF!("mGetAnimDuration", "Function UDKBase.UDKAnimBlendBase.GetAnimDuration")()); }
+			ScriptFunction TickAnim() { mixin(MGF!("mTickAnim", "Function UDKBase.UDKAnimBlendBase.TickAnim")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(float) ChildBlendTimes() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 280); }
-			float BlendTime() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
+			ScriptArray!(float) ChildBlendTimes() { mixin(MGPC!(ScriptArray!(float), 280)()); }
+			float BlendTime() { mixin(MGPC!(float, 276)()); }
 		}
-		bool bTickAnimInScript() { return (*cast(uint*)(cast(size_t)cast(void*)this + 292) & 0x1) != 0; }
-		bool bTickAnimInScript(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 292) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 292) &= ~0x1; } return val; }
+		bool bTickAnimInScript() { mixin(MGBPC!(292, 0x1)()); }
+		bool bTickAnimInScript(bool val) { mixin(MSBPC!(292, 0x1)()); }
 	}
 final:
 	float GetBlendTime(int ChildIndex, bool bGetDefault)

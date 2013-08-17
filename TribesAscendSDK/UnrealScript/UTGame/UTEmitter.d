@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTEmitter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.WorldInfo;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.Emitter;
@@ -10,9 +11,9 @@ extern(C++) interface UTEmitter : Emitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTEmitter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTEmitter")()); }
 	private static __gshared UTEmitter mDefaultProperties;
-	@property final static UTEmitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTEmitter)("UTEmitter UTGame.Default__UTEmitter")); }
+	@property final static UTEmitter DefaultProperties() { mixin(MGDPC!(UTEmitter, "UTEmitter UTGame.Default__UTEmitter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetTemplateForDistance() { return mGetTemplateForDistance ? mGetTemplateForDistance : (mGetTemplateForDistance = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTEmitter.GetTemplateForDistance")); }
-			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTEmitter.SetTemplate")); }
-			ScriptFunction SetLightEnvironment() { return mSetLightEnvironment ? mSetLightEnvironment : (mSetLightEnvironment = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTEmitter.SetLightEnvironment")); }
+			ScriptFunction GetTemplateForDistance() { mixin(MGF!("mGetTemplateForDistance", "Function UTGame.UTEmitter.GetTemplateForDistance")()); }
+			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function UTGame.UTEmitter.SetTemplate")()); }
+			ScriptFunction SetLightEnvironment() { mixin(MGF!("mSetLightEnvironment", "Function UTGame.UTEmitter.SetLightEnvironment")()); }
 		}
 	}
 final:
-	static ParticleSystem GetTemplateForDistance(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate)* TemplateList, Vector SpawnLocation, WorldInfo WI)
+	static ParticleSystem GetTemplateForDistance(ref const ScriptArray!(UDKPawn.DistanceBasedParticleTemplate) TemplateList, Vector SpawnLocation, WorldInfo WI)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate)*)params.ptr = *TemplateList;
+		*cast(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate)*)params.ptr = TemplateList;
 		*cast(Vector*)&params[12] = SpawnLocation;
 		*cast(WorldInfo*)&params[24] = WI;
 		StaticClass.ProcessEvent(Functions.GetTemplateForDistance, params.ptr, cast(void*)0);

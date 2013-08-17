@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SplineActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface SplineActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SplineActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SplineActor")()); }
 	private static __gshared SplineActor mDefaultProperties;
-	@property final static SplineActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SplineActor)("SplineActor Engine.Default__SplineActor")); }
+	@property final static SplineActor DefaultProperties() { mixin(MGDPC!(SplineActor, "SplineActor Engine.Default__SplineActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,22 +37,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetWorldSpaceTangent() { return mGetWorldSpaceTangent ? mGetWorldSpaceTangent : (mGetWorldSpaceTangent = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.GetWorldSpaceTangent")); }
-			ScriptFunction UpdateSplineComponents() { return mUpdateSplineComponents ? mUpdateSplineComponents : (mUpdateSplineComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.UpdateSplineComponents")); }
-			ScriptFunction UpdateConnectedSplineComponents() { return mUpdateConnectedSplineComponents ? mUpdateConnectedSplineComponents : (mUpdateConnectedSplineComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.UpdateConnectedSplineComponents")); }
-			ScriptFunction AddConnectionTo() { return mAddConnectionTo ? mAddConnectionTo : (mAddConnectionTo = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.AddConnectionTo")); }
-			ScriptFunction IsConnectedTo() { return mIsConnectedTo ? mIsConnectedTo : (mIsConnectedTo = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.IsConnectedTo")); }
-			ScriptFunction FindSplineComponentTo() { return mFindSplineComponentTo ? mFindSplineComponentTo : (mFindSplineComponentTo = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.FindSplineComponentTo")); }
-			ScriptFunction FindTargetForComponent() { return mFindTargetForComponent ? mFindTargetForComponent : (mFindTargetForComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.FindTargetForComponent")); }
-			ScriptFunction BreakConnectionTo() { return mBreakConnectionTo ? mBreakConnectionTo : (mBreakConnectionTo = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.BreakConnectionTo")); }
-			ScriptFunction BreakAllConnections() { return mBreakAllConnections ? mBreakAllConnections : (mBreakAllConnections = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.BreakAllConnections")); }
-			ScriptFunction BreakAllConnectionsFrom() { return mBreakAllConnectionsFrom ? mBreakAllConnectionsFrom : (mBreakAllConnectionsFrom = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.BreakAllConnectionsFrom")); }
-			ScriptFunction GetRandomConnection() { return mGetRandomConnection ? mGetRandomConnection : (mGetRandomConnection = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.GetRandomConnection")); }
-			ScriptFunction GetBestConnectionInDirection() { return mGetBestConnectionInDirection ? mGetBestConnectionInDirection : (mGetBestConnectionInDirection = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.GetBestConnectionInDirection")); }
-			ScriptFunction FindSplinePathTo() { return mFindSplinePathTo ? mFindSplinePathTo : (mFindSplinePathTo = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.FindSplinePathTo")); }
-			ScriptFunction GetAllConnectedSplineActors() { return mGetAllConnectedSplineActors ? mGetAllConnectedSplineActors : (mGetAllConnectedSplineActors = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.GetAllConnectedSplineActors")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.OnToggle")); }
-			ScriptFunction OnToggleHidden() { return mOnToggleHidden ? mOnToggleHidden : (mOnToggleHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineActor.OnToggleHidden")); }
+			ScriptFunction GetWorldSpaceTangent() { mixin(MGF!("mGetWorldSpaceTangent", "Function Engine.SplineActor.GetWorldSpaceTangent")()); }
+			ScriptFunction UpdateSplineComponents() { mixin(MGF!("mUpdateSplineComponents", "Function Engine.SplineActor.UpdateSplineComponents")()); }
+			ScriptFunction UpdateConnectedSplineComponents() { mixin(MGF!("mUpdateConnectedSplineComponents", "Function Engine.SplineActor.UpdateConnectedSplineComponents")()); }
+			ScriptFunction AddConnectionTo() { mixin(MGF!("mAddConnectionTo", "Function Engine.SplineActor.AddConnectionTo")()); }
+			ScriptFunction IsConnectedTo() { mixin(MGF!("mIsConnectedTo", "Function Engine.SplineActor.IsConnectedTo")()); }
+			ScriptFunction FindSplineComponentTo() { mixin(MGF!("mFindSplineComponentTo", "Function Engine.SplineActor.FindSplineComponentTo")()); }
+			ScriptFunction FindTargetForComponent() { mixin(MGF!("mFindTargetForComponent", "Function Engine.SplineActor.FindTargetForComponent")()); }
+			ScriptFunction BreakConnectionTo() { mixin(MGF!("mBreakConnectionTo", "Function Engine.SplineActor.BreakConnectionTo")()); }
+			ScriptFunction BreakAllConnections() { mixin(MGF!("mBreakAllConnections", "Function Engine.SplineActor.BreakAllConnections")()); }
+			ScriptFunction BreakAllConnectionsFrom() { mixin(MGF!("mBreakAllConnectionsFrom", "Function Engine.SplineActor.BreakAllConnectionsFrom")()); }
+			ScriptFunction GetRandomConnection() { mixin(MGF!("mGetRandomConnection", "Function Engine.SplineActor.GetRandomConnection")()); }
+			ScriptFunction GetBestConnectionInDirection() { mixin(MGF!("mGetBestConnectionInDirection", "Function Engine.SplineActor.GetBestConnectionInDirection")()); }
+			ScriptFunction FindSplinePathTo() { mixin(MGF!("mFindSplinePathTo", "Function Engine.SplineActor.FindSplinePathTo")()); }
+			ScriptFunction GetAllConnectedSplineActors() { mixin(MGF!("mGetAllConnectedSplineActors", "Function Engine.SplineActor.GetAllConnectedSplineActors")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.SplineActor.OnToggle")()); }
+			ScriptFunction OnToggleHidden() { mixin(MGF!("mOnToggleHidden", "Function Engine.SplineActor.OnToggleHidden")()); }
 		}
 	}
 	struct SplineConnection
@@ -59,28 +60,32 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SplineActor.SplineConnection")); }
-		@property final auto ref SplineActor ConnectTo() { return *cast(SplineActor*)(cast(size_t)&this + 4); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SplineActor.SplineConnection")()); }
+		@property final auto ref
+		{
+			SplineActor ConnectTo() { mixin(MGPS!(SplineActor, 4)()); }
+			// WARNING: Property 'SplineComponent' has the same name as a defined type!
+		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SplineActor.SplineConnection) Connections() { return *cast(ScriptArray!(SplineActor.SplineConnection)*)(cast(size_t)cast(void*)this + 476); }
-			ScriptArray!(SplineActor) LinksFrom() { return *cast(ScriptArray!(SplineActor)*)(cast(size_t)cast(void*)this + 508); }
-			UObject.InterpCurveFloat SplineVelocityOverTime() { return *cast(UObject.InterpCurveFloat*)(cast(size_t)cast(void*)this + 540); }
-			int visitedWeight() { return *cast(int*)(cast(size_t)cast(void*)this + 536); }
-			int bestPathWeight() { return *cast(int*)(cast(size_t)cast(void*)this + 532); }
-			SplineActor previousPath() { return *cast(SplineActor*)(cast(size_t)cast(void*)this + 528); }
-			SplineActor prevOrdered() { return *cast(SplineActor*)(cast(size_t)cast(void*)this + 524); }
-			SplineActor nextOrdered() { return *cast(SplineActor*)(cast(size_t)cast(void*)this + 520); }
-			UObject.Color SplineColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 500); }
-			Vector SplineActorTangent() { return *cast(Vector*)(cast(size_t)cast(void*)this + 488); }
+			ScriptArray!(SplineActor.SplineConnection) Connections() { mixin(MGPC!(ScriptArray!(SplineActor.SplineConnection), 476)()); }
+			ScriptArray!(SplineActor) LinksFrom() { mixin(MGPC!(ScriptArray!(SplineActor), 508)()); }
+			UObject.InterpCurveFloat SplineVelocityOverTime() { mixin(MGPC!(UObject.InterpCurveFloat, 540)()); }
+			int visitedWeight() { mixin(MGPC!(int, 536)()); }
+			int bestPathWeight() { mixin(MGPC!(int, 532)()); }
+			SplineActor previousPath() { mixin(MGPC!(SplineActor, 528)()); }
+			SplineActor prevOrdered() { mixin(MGPC!(SplineActor, 524)()); }
+			SplineActor nextOrdered() { mixin(MGPC!(SplineActor, 520)()); }
+			UObject.Color SplineColor() { mixin(MGPC!(UObject.Color, 500)()); }
+			Vector SplineActorTangent() { mixin(MGPC!(Vector, 488)()); }
 		}
-		bool bAlreadyVisited() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x2) != 0; }
-		bool bAlreadyVisited(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x2; } return val; }
-		bool bDisableDestination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x1) != 0; }
-		bool bDisableDestination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x1; } return val; }
+		bool bAlreadyVisited() { mixin(MGBPC!(504, 0x2)()); }
+		bool bAlreadyVisited(bool val) { mixin(MSBPC!(504, 0x2)()); }
+		bool bDisableDestination() { mixin(MGBPC!(504, 0x1)()); }
+		bool bDisableDestination(bool val) { mixin(MSBPC!(504, 0x1)()); }
 	}
 final:
 	Vector GetWorldSpaceTangent()
@@ -173,21 +178,21 @@ void**)params.ptr = SplineComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBestConnectionInDirection, params.ptr, cast(void*)0);
 		return *cast(SplineActor*)&params[16];
 	}
-	bool FindSplinePathTo(SplineActor Goal, ScriptArray!(SplineActor)* OutRoute)
+	bool FindSplinePathTo(SplineActor Goal, ref ScriptArray!(SplineActor) OutRoute)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(SplineActor*)params.ptr = Goal;
-		*cast(ScriptArray!(SplineActor)*)&params[4] = *OutRoute;
+		*cast(ScriptArray!(SplineActor)*)&params[4] = OutRoute;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSplinePathTo, params.ptr, cast(void*)0);
 		*OutRoute = *cast(ScriptArray!(SplineActor)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	void GetAllConnectedSplineActors(ScriptArray!(SplineActor)* OutSet)
+	void GetAllConnectedSplineActors(ref ScriptArray!(SplineActor) OutSet)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(SplineActor)*)params.ptr = *OutSet;
+		*cast(ScriptArray!(SplineActor)*)params.ptr = OutSet;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAllConnectedSplineActors, params.ptr, cast(void*)0);
 		*OutSet = *cast(ScriptArray!(SplineActor)*)params.ptr;
 	}

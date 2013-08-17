@@ -1,13 +1,14 @@
 module UnrealScript.UTGame.UTStingerMuzzleFlashLight;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKExplosionLight;
 
 extern(C++) interface UTStingerMuzzleFlashLight : UDKExplosionLight
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTStingerMuzzleFlashLight")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTStingerMuzzleFlashLight")()); }
 	private static __gshared UTStingerMuzzleFlashLight mDefaultProperties;
-	@property final static UTStingerMuzzleFlashLight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTStingerMuzzleFlashLight)("UTStingerMuzzleFlashLight UTGame.Default__UTStingerMuzzleFlashLight")); }
+	@property final static UTStingerMuzzleFlashLight DefaultProperties() { mixin(MGDPC!(UTStingerMuzzleFlashLight, "UTStingerMuzzleFlashLight UTGame.Default__UTStingerMuzzleFlashLight")()); }
 }

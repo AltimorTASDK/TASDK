@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUIFrontEnd_TitleScreen;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GFxUI.GFxMoviePlayer;
 import UnrealScript.Core.UObject;
 import UnrealScript.GFxUI.GFxClikWidget;
@@ -10,9 +11,9 @@ extern(C++) interface GFxUIFrontEnd_TitleScreen : GFxMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUIFrontEnd_TitleScreen")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUIFrontEnd_TitleScreen")()); }
 	private static __gshared GFxUIFrontEnd_TitleScreen mDefaultProperties;
-	@property final static GFxUIFrontEnd_TitleScreen DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUIFrontEnd_TitleScreen)("GFxUIFrontEnd_TitleScreen UTGame.Default__GFxUIFrontEnd_TitleScreen")); }
+	@property final static GFxUIFrontEnd_TitleScreen DefaultProperties() { mixin(MGDPC!(GFxUIFrontEnd_TitleScreen, "GFxUIFrontEnd_TitleScreen UTGame.Default__GFxUIFrontEnd_TitleScreen")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,12 +27,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.Start")); }
-			ScriptFunction FilterButtonInput() { return mFilterButtonInput ? mFilterButtonInput : (mFilterButtonInput = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.FilterButtonInput")); }
-			ScriptFunction OnMenuButtonPress() { return mOnMenuButtonPress ? mOnMenuButtonPress : (mOnMenuButtonPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.OnMenuButtonPress")); }
-			ScriptFunction PlayCloseAnimation() { return mPlayCloseAnimation ? mPlayCloseAnimation : (mPlayCloseAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.PlayCloseAnimation")); }
-			ScriptFunction OnCloseAnimationComplete() { return mOnCloseAnimationComplete ? mOnCloseAnimationComplete : (mOnCloseAnimationComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.OnCloseAnimationComplete")); }
-			ScriptFunction UT_ConsoleCommand() { return mUT_ConsoleCommand ? mUT_ConsoleCommand : (mUT_ConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.UT_ConsoleCommand")); }
+			ScriptFunction Start() { mixin(MGF!("mStart", "Function UTGame.GFxUIFrontEnd_TitleScreen.Start")()); }
+			ScriptFunction FilterButtonInput() { mixin(MGF!("mFilterButtonInput", "Function UTGame.GFxUIFrontEnd_TitleScreen.FilterButtonInput")()); }
+			ScriptFunction OnMenuButtonPress() { mixin(MGF!("mOnMenuButtonPress", "Function UTGame.GFxUIFrontEnd_TitleScreen.OnMenuButtonPress")()); }
+			ScriptFunction PlayCloseAnimation() { mixin(MGF!("mPlayCloseAnimation", "Function UTGame.GFxUIFrontEnd_TitleScreen.PlayCloseAnimation")()); }
+			ScriptFunction OnCloseAnimationComplete() { mixin(MGF!("mOnCloseAnimationComplete", "Function UTGame.GFxUIFrontEnd_TitleScreen.OnCloseAnimationComplete")()); }
+			ScriptFunction UT_ConsoleCommand() { mixin(MGF!("mUT_ConsoleCommand", "Function UTGame.GFxUIFrontEnd_TitleScreen.UT_ConsoleCommand")()); }
 		}
 	}
 	enum MenuButtonsType : ubyte
@@ -49,18 +50,18 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'Selection' has the same name as a defined type!
-		ScriptString CampaignMap() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 432); }
-		ScriptString InstantActionMap() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 420); }
-		GFxClikWidget MenuBtn6MC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 416); }
-		GFxClikWidget MenuBtn5MC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 412); }
-		GFxClikWidget MenuBtn4MC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 408); }
-		GFxClikWidget MenuBtn3MC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 404); }
-		GFxClikWidget MenuBtn2MC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 400); }
-		GFxClikWidget MenuBtn1MC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 396); }
-		GFxObject BlackMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 392); }
-		GFxObject MenuButtonsMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 388); }
-		GFxObject MainMenuMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 384); }
-		GFxObject TitleScreenMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 380); }
+		ScriptString CampaignMap() { mixin(MGPC!(ScriptString, 432)()); }
+		ScriptString InstantActionMap() { mixin(MGPC!(ScriptString, 420)()); }
+		GFxClikWidget MenuBtn6MC() { mixin(MGPC!(GFxClikWidget, 416)()); }
+		GFxClikWidget MenuBtn5MC() { mixin(MGPC!(GFxClikWidget, 412)()); }
+		GFxClikWidget MenuBtn4MC() { mixin(MGPC!(GFxClikWidget, 408)()); }
+		GFxClikWidget MenuBtn3MC() { mixin(MGPC!(GFxClikWidget, 404)()); }
+		GFxClikWidget MenuBtn2MC() { mixin(MGPC!(GFxClikWidget, 400)()); }
+		GFxClikWidget MenuBtn1MC() { mixin(MGPC!(GFxClikWidget, 396)()); }
+		GFxObject BlackMC() { mixin(MGPC!(GFxObject, 392)()); }
+		GFxObject MenuButtonsMC() { mixin(MGPC!(GFxObject, 388)()); }
+		GFxObject MainMenuMC() { mixin(MGPC!(GFxObject, 384)()); }
+		GFxObject TitleScreenMC() { mixin(MGPC!(GFxObject, 380)()); }
 	}
 final:
 	bool Start(bool StartPaused)

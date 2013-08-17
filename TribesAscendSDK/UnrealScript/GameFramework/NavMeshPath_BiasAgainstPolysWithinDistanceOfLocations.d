@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationHandle;
 import UnrealScript.Engine.NavMeshPathConstraint;
 
@@ -8,9 +9,9 @@ extern(C++) interface NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations : Na
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")()); }
 	private static __gshared NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations mDefaultProperties;
-	@property final static NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations)("NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations GameFramework.Default__NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")); }
+	@property final static NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations DefaultProperties() { mixin(MGDPC!(NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations, "NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations GameFramework.Default__NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,19 +21,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BiasAgainstPolysWithinDistanceOfLocations() { return mBiasAgainstPolysWithinDistanceOfLocations ? mBiasAgainstPolysWithinDistanceOfLocations : (mBiasAgainstPolysWithinDistanceOfLocations = ScriptObject.Find!(ScriptFunction)("Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.BiasAgainstPolysWithinDistanceOfLocations")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.Recycle")); }
+			ScriptFunction BiasAgainstPolysWithinDistanceOfLocations() { mixin(MGF!("mBiasAgainstPolysWithinDistanceOfLocations", "Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.BiasAgainstPolysWithinDistanceOfLocations")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.Recycle")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Vector) LocationsToCheck() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 108); }
-		float DistanceToCheck() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-		Vector Rotation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 92); }
-		Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 80); }
+		ScriptArray!(Vector) LocationsToCheck() { mixin(MGPC!(ScriptArray!(Vector), 108)()); }
+		float DistanceToCheck() { mixin(MGPC!(float, 104)()); }
+		Vector Rotation() { mixin(MGPC!(Vector, 92)()); }
+		Vector Location() { mixin(MGPC!(Vector, 80)()); }
 	}
 final:
-	static bool BiasAgainstPolysWithinDistanceOfLocations(NavigationHandle NavHandle, Vector InLocation, Rotator InRotation, float InDistanceToCheck, ScriptArray!(Vector) InLocationsToCheck)
+	static bool BiasAgainstPolysWithinDistanceOfLocations(NavigationHandle NavHandle, const Vector InLocation, const Rotator InRotation, const float InDistanceToCheck, const ScriptArray!(Vector) InLocationsToCheck)
 	{
 		ubyte params[48];
 		params[] = 0;

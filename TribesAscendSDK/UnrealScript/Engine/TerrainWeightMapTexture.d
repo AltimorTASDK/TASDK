@@ -1,6 +1,7 @@
 module UnrealScript.Engine.TerrainWeightMapTexture;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Terrain;
@@ -9,19 +10,19 @@ extern(C++) interface TerrainWeightMapTexture : Texture2D
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainWeightMapTexture")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TerrainWeightMapTexture")()); }
 	private static __gshared TerrainWeightMapTexture mDefaultProperties;
-	@property final static TerrainWeightMapTexture DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TerrainWeightMapTexture)("TerrainWeightMapTexture Engine.Default__TerrainWeightMapTexture")); }
+	@property final static TerrainWeightMapTexture DefaultProperties() { mixin(MGDPC!(TerrainWeightMapTexture, "TerrainWeightMapTexture Engine.Default__TerrainWeightMapTexture")()); }
 	struct TerrainWeightedMaterial
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.TerrainWeightMapTexture.TerrainWeightedMaterial")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.TerrainWeightMapTexture.TerrainWeightedMaterial")()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) WeightedMaterials() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 372); }
-		Terrain ParentTerrain() { return *cast(Terrain*)(cast(size_t)cast(void*)this + 368); }
+		ScriptArray!(UObject.Pointer) WeightedMaterials() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 372)()); }
+		Terrain ParentTerrain() { mixin(MGPC!(Terrain, 368)()); }
 	}
 }

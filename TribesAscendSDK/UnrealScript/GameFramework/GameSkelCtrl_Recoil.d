@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameSkelCtrl_Recoil;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SkelControlBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface GameSkelCtrl_Recoil : SkelControlBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameSkelCtrl_Recoil")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameSkelCtrl_Recoil")()); }
 	private static __gshared GameSkelCtrl_Recoil mDefaultProperties;
-	@property final static GameSkelCtrl_Recoil DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameSkelCtrl_Recoil)("GameSkelCtrl_Recoil GameFramework.Default__GameSkelCtrl_Recoil")); }
+	@property final static GameSkelCtrl_Recoil DefaultProperties() { mixin(MGDPC!(GameSkelCtrl_Recoil, "GameSkelCtrl_Recoil GameFramework.Default__GameSkelCtrl_Recoil")()); }
 	enum ERecoilStart : ubyte
 	{
 		ERS_Zero = 0,
@@ -22,13 +23,13 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilParams")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilParams")()); }
 		@property final auto ref
 		{
-			ubyte Padding() { return *cast(ubyte*)(cast(size_t)&this + 3); }
-			GameSkelCtrl_Recoil.ERecoilStart Z() { return *cast(GameSkelCtrl_Recoil.ERecoilStart*)(cast(size_t)&this + 2); }
-			GameSkelCtrl_Recoil.ERecoilStart Y() { return *cast(GameSkelCtrl_Recoil.ERecoilStart*)(cast(size_t)&this + 1); }
-			GameSkelCtrl_Recoil.ERecoilStart X() { return *cast(GameSkelCtrl_Recoil.ERecoilStart*)(cast(size_t)&this + 0); }
+			ubyte Padding() { mixin(MGPS!(ubyte, 3)()); }
+			GameSkelCtrl_Recoil.ERecoilStart Z() { mixin(MGPS!(GameSkelCtrl_Recoil.ERecoilStart, 2)()); }
+			GameSkelCtrl_Recoil.ERecoilStart Y() { mixin(MGPS!(GameSkelCtrl_Recoil.ERecoilStart, 1)()); }
+			GameSkelCtrl_Recoil.ERecoilStart X() { mixin(MGPS!(GameSkelCtrl_Recoil.ERecoilStart, 0)()); }
 		}
 	}
 	struct RecoilDef
@@ -36,37 +37,37 @@ public extern(D):
 		private ubyte __buffer__[112];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilDef")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilDef")()); }
 		@property final auto ref
 		{
-			Vector LocOffset() { return *cast(Vector*)(cast(size_t)&this + 100); }
-			GameSkelCtrl_Recoil.RecoilParams LocParams() { return *cast(GameSkelCtrl_Recoil.RecoilParams*)(cast(size_t)&this + 96); }
-			Vector LocSinOffset() { return *cast(Vector*)(cast(size_t)&this + 84); }
-			Vector LocFrequency() { return *cast(Vector*)(cast(size_t)&this + 72); }
-			Vector LocAmplitude() { return *cast(Vector*)(cast(size_t)&this + 60); }
-			Rotator RotOffset() { return *cast(Rotator*)(cast(size_t)&this + 48); }
-			GameSkelCtrl_Recoil.RecoilParams RotParams() { return *cast(GameSkelCtrl_Recoil.RecoilParams*)(cast(size_t)&this + 44); }
-			Vector RotSinOffset() { return *cast(Vector*)(cast(size_t)&this + 32); }
-			Vector RotFrequency() { return *cast(Vector*)(cast(size_t)&this + 20); }
-			Vector RotAmplitude() { return *cast(Vector*)(cast(size_t)&this + 8); }
-			float TimeDuration() { return *cast(float*)(cast(size_t)&this + 4); }
-			float TimeToGo() { return *cast(float*)(cast(size_t)&this + 0); }
+			Vector LocOffset() { mixin(MGPS!(Vector, 100)()); }
+			GameSkelCtrl_Recoil.RecoilParams LocParams() { mixin(MGPS!(GameSkelCtrl_Recoil.RecoilParams, 96)()); }
+			Vector LocSinOffset() { mixin(MGPS!(Vector, 84)()); }
+			Vector LocFrequency() { mixin(MGPS!(Vector, 72)()); }
+			Vector LocAmplitude() { mixin(MGPS!(Vector, 60)()); }
+			Rotator RotOffset() { mixin(MGPS!(Rotator, 48)()); }
+			GameSkelCtrl_Recoil.RecoilParams RotParams() { mixin(MGPS!(GameSkelCtrl_Recoil.RecoilParams, 44)()); }
+			Vector RotSinOffset() { mixin(MGPS!(Vector, 32)()); }
+			Vector RotFrequency() { mixin(MGPS!(Vector, 20)()); }
+			Vector RotAmplitude() { mixin(MGPS!(Vector, 8)()); }
+			float TimeDuration() { mixin(MGPS!(float, 4)()); }
+			float TimeToGo() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Vector2D Aim() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 304); }
-			GameSkelCtrl_Recoil.RecoilDef Recoil() { return *cast(GameSkelCtrl_Recoil.RecoilDef*)(cast(size_t)cast(void*)this + 192); }
+			UObject.Vector2D Aim() { mixin(MGPC!(UObject.Vector2D, 304)()); }
+			GameSkelCtrl_Recoil.RecoilDef Recoil() { mixin(MGPC!(GameSkelCtrl_Recoil.RecoilDef, 192)()); }
 		}
-		bool bApplyControl() { return (*cast(uint*)(cast(size_t)cast(void*)this + 188) & 0x8) != 0; }
-		bool bApplyControl(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 188) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 188) &= ~0x8; } return val; }
-		bool bOldPlayRecoil() { return (*cast(uint*)(cast(size_t)cast(void*)this + 188) & 0x4) != 0; }
-		bool bOldPlayRecoil(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 188) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 188) &= ~0x4; } return val; }
-		bool bPlayRecoil() { return (*cast(uint*)(cast(size_t)cast(void*)this + 188) & 0x2) != 0; }
-		bool bPlayRecoil(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 188) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 188) &= ~0x2; } return val; }
-		bool bBoneSpaceRecoil() { return (*cast(uint*)(cast(size_t)cast(void*)this + 188) & 0x1) != 0; }
-		bool bBoneSpaceRecoil(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 188) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 188) &= ~0x1; } return val; }
+		bool bApplyControl() { mixin(MGBPC!(188, 0x8)()); }
+		bool bApplyControl(bool val) { mixin(MSBPC!(188, 0x8)()); }
+		bool bOldPlayRecoil() { mixin(MGBPC!(188, 0x4)()); }
+		bool bOldPlayRecoil(bool val) { mixin(MSBPC!(188, 0x4)()); }
+		bool bPlayRecoil() { mixin(MGBPC!(188, 0x2)()); }
+		bool bPlayRecoil(bool val) { mixin(MSBPC!(188, 0x2)()); }
+		bool bBoneSpaceRecoil() { mixin(MGBPC!(188, 0x1)()); }
+		bool bBoneSpaceRecoil(bool val) { mixin(MSBPC!(188, 0x1)()); }
 	}
 }

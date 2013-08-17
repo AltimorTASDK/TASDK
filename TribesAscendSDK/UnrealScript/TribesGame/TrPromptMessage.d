@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrPromptMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrPromptMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPromptMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPromptMessage")()); }
 	private static __gshared TrPromptMessage mDefaultProperties;
-	@property final static TrPromptMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPromptMessage)("TrPromptMessage TribesGame.Default__TrPromptMessage")); }
+	@property final static TrPromptMessage DefaultProperties() { mixin(MGDPC!(TrPromptMessage, "TrPromptMessage TribesGame.Default__TrPromptMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,20 +24,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPromptMessage.GetString")); }
-			ScriptFunction FormatText() { return mFormatText ? mFormatText : (mFormatText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPromptMessage.FormatText")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrPromptMessage.GetString")()); }
+			ScriptFunction FormatText() { mixin(MGF!("mFormatText", "Function TribesGame.TrPromptMessage.FormatText")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString YourJackalGrenadesHaveBeenDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 176); }
-		ScriptString EnterVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 164); }
-		ScriptString ObjectiveUpgradeDeniedMaxLevel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 152); }
-		ScriptString ObjectiveUpgradeDeniedNoCredits() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 140); }
-		ScriptString KickWarning() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 128); }
-		ScriptString UpgradeObjective() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 116); }
-		ScriptString EquipRepairGun() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 104); }
-		SoundCue UpgradeDeniedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString YourJackalGrenadesHaveBeenDestroyed() { mixin(MGPC!(ScriptString, 176)()); }
+		ScriptString EnterVehicle() { mixin(MGPC!(ScriptString, 164)()); }
+		ScriptString ObjectiveUpgradeDeniedMaxLevel() { mixin(MGPC!(ScriptString, 152)()); }
+		ScriptString ObjectiveUpgradeDeniedNoCredits() { mixin(MGPC!(ScriptString, 140)()); }
+		ScriptString KickWarning() { mixin(MGPC!(ScriptString, 128)()); }
+		ScriptString UpgradeObjective() { mixin(MGPC!(ScriptString, 116)()); }
+		ScriptString EquipRepairGun() { mixin(MGPC!(ScriptString, 104)()); }
+		SoundCue UpgradeDeniedSound() { mixin(MGPC!(SoundCue, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

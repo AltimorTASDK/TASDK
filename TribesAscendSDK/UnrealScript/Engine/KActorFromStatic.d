@@ -1,6 +1,7 @@
 module UnrealScript.Engine.KActorFromStatic;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface KActorFromStatic : KActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KActorFromStatic")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KActorFromStatic")()); }
 	private static __gshared KActorFromStatic mDefaultProperties;
-	@property final static KActorFromStatic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(KActorFromStatic)("KActorFromStatic Engine.Default__KActorFromStatic")); }
+	@property final static KActorFromStatic DefaultProperties() { mixin(MGDPC!(KActorFromStatic, "KActorFromStatic Engine.Default__KActorFromStatic")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,23 +32,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction MakeDynamic() { return mMakeDynamic ? mMakeDynamic : (mMakeDynamic = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.MakeDynamic")); }
-			ScriptFunction DisablePrecomputedLighting() { return mDisablePrecomputedLighting ? mDisablePrecomputedLighting : (mDisablePrecomputedLighting = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.DisablePrecomputedLighting")); }
-			ScriptFunction OnSleepRBPhysics() { return mOnSleepRBPhysics ? mOnSleepRBPhysics : (mOnSleepRBPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.OnSleepRBPhysics")); }
-			ScriptFunction OnWakeRBPhysics() { return mOnWakeRBPhysics ? mOnWakeRBPhysics : (mOnWakeRBPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.OnWakeRBPhysics")); }
-			ScriptFunction BecomeStatic() { return mBecomeStatic ? mBecomeStatic : (mBecomeStatic = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.BecomeStatic")); }
-			ScriptFunction MakeStatic() { return mMakeStatic ? mMakeStatic : (mMakeStatic = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.MakeStatic")); }
-			ScriptFunction ApplyImpulse() { return mApplyImpulse ? mApplyImpulse : (mApplyImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.ApplyImpulse")); }
-			ScriptFunction ReceiveImpulse() { return mReceiveImpulse ? mReceiveImpulse : (mReceiveImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.ReceiveImpulse")); }
-			ScriptFunction Bump() { return mBump ? mBump : (mBump = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.Bump")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.Touch")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.KActorFromStatic.TakeRadiusDamage")); }
+			ScriptFunction MakeDynamic() { mixin(MGF!("mMakeDynamic", "Function Engine.KActorFromStatic.MakeDynamic")()); }
+			ScriptFunction DisablePrecomputedLighting() { mixin(MGF!("mDisablePrecomputedLighting", "Function Engine.KActorFromStatic.DisablePrecomputedLighting")()); }
+			ScriptFunction OnSleepRBPhysics() { mixin(MGF!("mOnSleepRBPhysics", "Function Engine.KActorFromStatic.OnSleepRBPhysics")()); }
+			ScriptFunction OnWakeRBPhysics() { mixin(MGF!("mOnWakeRBPhysics", "Function Engine.KActorFromStatic.OnWakeRBPhysics")()); }
+			ScriptFunction BecomeStatic() { mixin(MGF!("mBecomeStatic", "Function Engine.KActorFromStatic.BecomeStatic")()); }
+			ScriptFunction MakeStatic() { mixin(MGF!("mMakeStatic", "Function Engine.KActorFromStatic.MakeStatic")()); }
+			ScriptFunction ApplyImpulse() { mixin(MGF!("mApplyImpulse", "Function Engine.KActorFromStatic.ApplyImpulse")()); }
+			ScriptFunction ReceiveImpulse() { mixin(MGF!("mReceiveImpulse", "Function Engine.KActorFromStatic.ReceiveImpulse")()); }
+			ScriptFunction Bump() { mixin(MGF!("mBump", "Function Engine.KActorFromStatic.Bump")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.KActorFromStatic.Touch")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.KActorFromStatic.TakeRadiusDamage")()); }
 		}
+	}
+	static struct Initializing
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.KActorFromStatic.Initializing")()); }
 	}
 	@property final auto ref
 	{
-		float MaxImpulseSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
-		Actor MyStaticMeshActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 712); }
+		float MaxImpulseSpeed() { mixin(MGPC!(float, 716)()); }
+		Actor MyStaticMeshActor() { mixin(MGPC!(Actor, 712)()); }
 	}
 final:
 	static KActorFromStatic MakeDynamic(

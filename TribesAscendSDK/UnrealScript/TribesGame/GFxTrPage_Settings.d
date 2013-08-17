@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_Settings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_Settings : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Settings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Settings")()); }
 	private static __gshared GFxTrPage_Settings mDefaultProperties;
-	@property final static GFxTrPage_Settings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Settings)("GFxTrPage_Settings TribesGame.Default__GFxTrPage_Settings")); }
+	@property final static GFxTrPage_Settings DefaultProperties() { mixin(MGDPC!(GFxTrPage_Settings, "GFxTrPage_Settings TribesGame.Default__GFxTrPage_Settings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,26 +27,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Settings.Initialize")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Settings.TakeAction")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Settings.FillData")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Settings.SpecialAction")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Settings.ShowModel")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Settings.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Settings.PopupComplete")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Settings.Initialize")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Settings.TakeAction")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Settings.FillData")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Settings.SpecialAction")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Settings.ShowModel")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_Settings.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_Settings.PopupComplete")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString C1P3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 388); }
-			ScriptString C1P2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 376); }
-			ScriptString C1P1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 364); }
-			int CheatCodeAction() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			ScriptString C1P3() { mixin(MGPC!(ScriptString, 388)()); }
+			ScriptString C1P2() { mixin(MGPC!(ScriptString, 376)()); }
+			ScriptString C1P1() { mixin(MGPC!(ScriptString, 364)()); }
+			int CheatCodeAction() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bWaitingForCheatCodePopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
-		bool bWaitingForCheatCodePopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
+		bool bWaitingForCheatCodePopup() { mixin(MGBPC!(360, 0x1)()); }
+		bool bWaitingForCheatCodePopup(bool val) { mixin(MSBPC!(360, 0x1)()); }
 	}
 final:
 	void Initialize()

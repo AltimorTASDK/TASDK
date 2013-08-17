@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrSettingsManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrRegionSettings;
 import UnrealScript.TribesGame.TrAudioSettings;
 import UnrealScript.TribesGame.TrKeyBindings;
@@ -14,23 +15,23 @@ extern(C++) interface TrSettingsManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSettingsManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSettingsManager")()); }
 	private static __gshared TrSettingsManager mDefaultProperties;
-	@property final static TrSettingsManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSettingsManager)("TrSettingsManager TribesGame.Default__TrSettingsManager")); }
+	@property final static TrSettingsManager DefaultProperties() { mixin(MGDPC!(TrSettingsManager, "TrSettingsManager TribesGame.Default__TrSettingsManager")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;
-		public @property static final ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSettingsManager.Initialize")); }
+		public @property static final ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrSettingsManager.Initialize")()); }
 	}
 	@property final auto ref
 	{
-		TrRegionSettings RegionSettings() { return *cast(TrRegionSettings*)(cast(size_t)cast(void*)this + 76); }
-		TrAudioSettings AudioSettings() { return *cast(TrAudioSettings*)(cast(size_t)cast(void*)this + 68); }
-		TrControlSettings ControlSettings() { return *cast(TrControlSettings*)(cast(size_t)cast(void*)this + 80); }
-		TrKeyBindings KeyBindings() { return *cast(TrKeyBindings*)(cast(size_t)cast(void*)this + 64); }
-		TrHUDSettings HUDSettings() { return *cast(TrHUDSettings*)(cast(size_t)cast(void*)this + 60); }
-		TrVideoSettings VideoSettings() { return *cast(TrVideoSettings*)(cast(size_t)cast(void*)this + 72); }
-		GFxTrMenuMoviePlayer MP() { return *cast(GFxTrMenuMoviePlayer*)(cast(size_t)cast(void*)this + 84); }
+		TrRegionSettings RegionSettings() { mixin(MGPC!(TrRegionSettings, 76)()); }
+		TrAudioSettings AudioSettings() { mixin(MGPC!(TrAudioSettings, 68)()); }
+		TrControlSettings ControlSettings() { mixin(MGPC!(TrControlSettings, 80)()); }
+		TrKeyBindings KeyBindings() { mixin(MGPC!(TrKeyBindings, 64)()); }
+		TrHUDSettings HUDSettings() { mixin(MGPC!(TrHUDSettings, 60)()); }
+		TrVideoSettings VideoSettings() { mixin(MGPC!(TrVideoSettings, 72)()); }
+		GFxTrMenuMoviePlayer MP() { mixin(MGPC!(GFxTrMenuMoviePlayer, 84)()); }
 	}
 	final void Initialize()
 	{

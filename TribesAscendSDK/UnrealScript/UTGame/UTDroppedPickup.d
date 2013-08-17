@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDroppedPickup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.DroppedPickup;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTDroppedPickup : DroppedPickup
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDroppedPickup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDroppedPickup")()); }
 	private static __gshared UTDroppedPickup mDefaultProperties;
-	@property final static UTDroppedPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDroppedPickup)("UTDroppedPickup UTGame.Default__UTDroppedPickup")); }
+	@property final static UTDroppedPickup DefaultProperties() { mixin(MGDPC!(UTDroppedPickup, "UTDroppedPickup UTGame.Default__UTDroppedPickup")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +23,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDroppedPickup.PreBeginPlay")); }
-			ScriptFunction SetPickupMesh() { return mSetPickupMesh ? mSetPickupMesh : (mSetPickupMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDroppedPickup.SetPickupMesh")); }
-			ScriptFunction SetPickupParticles() { return mSetPickupParticles ? mSetPickupParticles : (mSetPickupParticles = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDroppedPickup.SetPickupParticles")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDroppedPickup.Landed")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTDroppedPickup.PreBeginPlay")()); }
+			ScriptFunction SetPickupMesh() { mixin(MGF!("mSetPickupMesh", "Function UTGame.UTDroppedPickup.SetPickupMesh")()); }
+			ScriptFunction SetPickupParticles() { mixin(MGF!("mSetPickupParticles", "Function UTGame.UTDroppedPickup.SetPickupParticles")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function UTGame.UTDroppedPickup.Landed")()); }
 		}
+	}
+	static struct Pickup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTDroppedPickup.Pickup")()); }
+	}
+	static struct FadeOut
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTDroppedPickup.FadeOut")()); }
 	}
 	@property final
 	{
-		@property final auto ref float StartScale() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-		bool bPickupable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x1) != 0; }
-		bool bPickupable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x1; } return val; }
+		auto ref
+		{
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MyLightEnvironment'!
+			float StartScale() { mixin(MGPC!(float, 500)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupParticles'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupMesh'!
+		}
+		bool bPickupable() { mixin(MGBPC!(504, 0x1)()); }
+		bool bPickupable(bool val) { mixin(MSBPC!(504, 0x1)()); }
 	}
 final:
 	void PreBeginPlay()

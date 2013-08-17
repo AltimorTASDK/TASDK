@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTItemPickupFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
@@ -11,9 +12,9 @@ extern(C++) interface UTItemPickupFactory : UTPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTItemPickupFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTItemPickupFactory")()); }
 	private static __gshared UTItemPickupFactory mDefaultProperties;
-	@property final static UTItemPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTItemPickupFactory)("UTItemPickupFactory UTGame.Default__UTItemPickupFactory")); }
+	@property final static UTItemPickupFactory DefaultProperties() { mixin(MGDPC!(UTItemPickupFactory, "UTItemPickupFactory UTGame.Default__UTItemPickupFactory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,20 +28,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitializePickup() { return mInitializePickup ? mInitializePickup : (mInitializePickup = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTItemPickupFactory.InitializePickup")); }
-			ScriptFunction GetLocalString() { return mGetLocalString ? mGetLocalString : (mGetLocalString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTItemPickupFactory.GetLocalString")); }
-			ScriptFunction SpawnCopyFor() { return mSpawnCopyFor ? mSpawnCopyFor : (mSpawnCopyFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTItemPickupFactory.SpawnCopyFor")); }
-			ScriptFunction SetRespawn() { return mSetRespawn ? mSetRespawn : (mSetRespawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTItemPickupFactory.SetRespawn")); }
-			ScriptFunction GetRespawnTime() { return mGetRespawnTime ? mGetRespawnTime : (mGetRespawnTime = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTItemPickupFactory.GetRespawnTime")); }
-			ScriptFunction BotDesireability() { return mBotDesireability ? mBotDesireability : (mBotDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTItemPickupFactory.BotDesireability")); }
+			ScriptFunction InitializePickup() { mixin(MGF!("mInitializePickup", "Function UTGame.UTItemPickupFactory.InitializePickup")()); }
+			ScriptFunction GetLocalString() { mixin(MGF!("mGetLocalString", "Function UTGame.UTItemPickupFactory.GetLocalString")()); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTItemPickupFactory.SpawnCopyFor")()); }
+			ScriptFunction SetRespawn() { mixin(MGF!("mSetRespawn", "Function UTGame.UTItemPickupFactory.SetRespawn")()); }
+			ScriptFunction GetRespawnTime() { mixin(MGF!("mGetRespawnTime", "Function UTGame.UTItemPickupFactory.GetRespawnTime")()); }
+			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTItemPickupFactory.BotDesireability")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString PickupMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 948); }
-		ScriptString UseHintMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 964); }
-		float RespawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 960); }
-		SoundCue PickupSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 944); }
+		ScriptString PickupMessage() { mixin(MGPC!(ScriptString, 948)()); }
+		ScriptString UseHintMessage() { mixin(MGPC!(ScriptString, 964)()); }
+		float RespawnTime() { mixin(MGPC!(float, 960)()); }
+		SoundCue PickupSound() { mixin(MGPC!(SoundCue, 944)()); }
 	}
 final:
 	void InitializePickup()

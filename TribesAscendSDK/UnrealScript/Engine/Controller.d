@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Controller;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.FaceFXAnimSet;
 import UnrealScript.Engine.NavigationPoint;
@@ -33,9 +34,9 @@ extern(C++) interface Controller : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Controller")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Controller")()); }
 	private static __gshared Controller mDefaultProperties;
-	@property final static Controller DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Controller)("Controller Engine.Default__Controller")); }
+	@property final static Controller DefaultProperties() { mixin(MGDPC!(Controller, "Controller Engine.Default__Controller")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -170,133 +171,133 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsLocalPlayerController() { return mIsLocalPlayerController ? mIsLocalPlayerController : (mIsLocalPlayerController = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.IsLocalPlayerController")); }
-			ScriptFunction RouteCache_Empty() { return mRouteCache_Empty ? mRouteCache_Empty : (mRouteCache_Empty = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.RouteCache_Empty")); }
-			ScriptFunction RouteCache_AddItem() { return mRouteCache_AddItem ? mRouteCache_AddItem : (mRouteCache_AddItem = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.RouteCache_AddItem")); }
-			ScriptFunction RouteCache_InsertItem() { return mRouteCache_InsertItem ? mRouteCache_InsertItem : (mRouteCache_InsertItem = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.RouteCache_InsertItem")); }
-			ScriptFunction RouteCache_RemoveItem() { return mRouteCache_RemoveItem ? mRouteCache_RemoveItem : (mRouteCache_RemoveItem = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.RouteCache_RemoveItem")); }
-			ScriptFunction RouteCache_RemoveIndex() { return mRouteCache_RemoveIndex ? mRouteCache_RemoveIndex : (mRouteCache_RemoveIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.RouteCache_RemoveIndex")); }
-			ScriptFunction SetFocalPoint() { return mSetFocalPoint ? mSetFocalPoint : (mSetFocalPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetFocalPoint")); }
-			ScriptFunction GetFocalPoint() { return mGetFocalPoint ? mGetFocalPoint : (mGetFocalPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetFocalPoint")); }
-			ScriptFunction SetDestinationPosition() { return mSetDestinationPosition ? mSetDestinationPosition : (mSetDestinationPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetDestinationPosition")); }
-			ScriptFunction GetDestinationPosition() { return mGetDestinationPosition ? mGetDestinationPosition : (mGetDestinationPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetDestinationPosition")); }
-			ScriptFunction SetAdjustLocation() { return mSetAdjustLocation ? mSetAdjustLocation : (mSetAdjustLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetAdjustLocation")); }
-			ScriptFunction GetAdjustLocation() { return mGetAdjustLocation ? mGetAdjustLocation : (mGetAdjustLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetAdjustLocation")); }
-			ScriptFunction NotifyPathChanged() { return mNotifyPathChanged ? mNotifyPathChanged : (mNotifyPathChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyPathChanged")); }
-			ScriptFunction BeginAnimControl() { return mBeginAnimControl ? mBeginAnimControl : (mBeginAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.BeginAnimControl")); }
-			ScriptFunction SetAnimPosition() { return mSetAnimPosition ? mSetAnimPosition : (mSetAnimPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetAnimPosition")); }
-			ScriptFunction FinishAnimControl() { return mFinishAnimControl ? mFinishAnimControl : (mFinishAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FinishAnimControl")); }
-			ScriptFunction PlayActorFaceFXAnim() { return mPlayActorFaceFXAnim ? mPlayActorFaceFXAnim : (mPlayActorFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.PlayActorFaceFXAnim")); }
-			ScriptFunction StopActorFaceFXAnim() { return mStopActorFaceFXAnim ? mStopActorFaceFXAnim : (mStopActorFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.StopActorFaceFXAnim")); }
-			ScriptFunction SetMorphWeight() { return mSetMorphWeight ? mSetMorphWeight : (mSetMorphWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetMorphWeight")); }
-			ScriptFunction SetSkelControlScale() { return mSetSkelControlScale ? mSetSkelControlScale : (mSetSkelControlScale = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetSkelControlScale")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.PostBeginPlay")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.Reset")); }
-			ScriptFunction ClientSetLocation() { return mClientSetLocation ? mClientSetLocation : (mClientSetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ClientSetLocation")); }
-			ScriptFunction ClientSetRotation() { return mClientSetRotation ? mClientSetRotation : (mClientSetRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ClientSetRotation")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ReplicatedEvent")); }
-			ScriptFunction OnPossess() { return mOnPossess ? mOnPossess : (mOnPossess = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.OnPossess")); }
-			ScriptFunction Possess() { return mPossess ? mPossess : (mPossess = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.Possess")); }
-			ScriptFunction UnPossess() { return mUnPossess ? mUnPossess : (mUnPossess = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.UnPossess")); }
-			ScriptFunction PawnDied() { return mPawnDied ? mPawnDied : (mPawnDied = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.PawnDied")); }
-			ScriptFunction GamePlayEndedState() { return mGamePlayEndedState ? mGamePlayEndedState : (mGamePlayEndedState = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GamePlayEndedState")); }
-			ScriptFunction NotifyPostLanded() { return mNotifyPostLanded ? mNotifyPostLanded : (mNotifyPostLanded = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyPostLanded")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.Destroyed")); }
-			ScriptFunction CleanupPRI() { return mCleanupPRI ? mCleanupPRI : (mCleanupPRI = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.CleanupPRI")); }
-			ScriptFunction Restart() { return mRestart ? mRestart : (mRestart = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.Restart")); }
-			ScriptFunction BeyondFogDistance() { return mBeyondFogDistance ? mBeyondFogDistance : (mBeyondFogDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.BeyondFogDistance")); }
-			ScriptFunction EnemyJustTeleported() { return mEnemyJustTeleported ? mEnemyJustTeleported : (mEnemyJustTeleported = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.EnemyJustTeleported")); }
-			ScriptFunction NotifyTakeHit() { return mNotifyTakeHit ? mNotifyTakeHit : (mNotifyTakeHit = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyTakeHit")); }
-			ScriptFunction InitPlayerReplicationInfo() { return mInitPlayerReplicationInfo ? mInitPlayerReplicationInfo : (mInitPlayerReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.InitPlayerReplicationInfo")); }
-			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetTeamNum")); }
-			ScriptFunction ServerRestartPlayer() { return mServerRestartPlayer ? mServerRestartPlayer : (mServerRestartPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ServerRestartPlayer")); }
-			ScriptFunction ServerGivePawn() { return mServerGivePawn ? mServerGivePawn : (mServerGivePawn = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ServerGivePawn")); }
-			ScriptFunction SetCharacter() { return mSetCharacter ? mSetCharacter : (mSetCharacter = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetCharacter")); }
-			ScriptFunction GameHasEnded() { return mGameHasEnded ? mGameHasEnded : (mGameHasEnded = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GameHasEnded")); }
-			ScriptFunction NotifyKilled() { return mNotifyKilled ? mNotifyKilled : (mNotifyKilled = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyKilled")); }
-			ScriptFunction NotifyProjLanded() { return mNotifyProjLanded ? mNotifyProjLanded : (mNotifyProjLanded = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyProjLanded")); }
-			ScriptFunction WarnProjExplode() { return mWarnProjExplode ? mWarnProjExplode : (mWarnProjExplode = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.WarnProjExplode")); }
-			ScriptFunction RatePickup() { return mRatePickup ? mRatePickup : (mRatePickup = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.RatePickup")); }
-			ScriptFunction FireWeaponAt() { return mFireWeaponAt ? mFireWeaponAt : (mFireWeaponAt = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FireWeaponAt")); }
-			ScriptFunction StopFiring() { return mStopFiring ? mStopFiring : (mStopFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.StopFiring")); }
-			ScriptFunction RoundHasEnded() { return mRoundHasEnded ? mRoundHasEnded : (mRoundHasEnded = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.RoundHasEnded")); }
-			ScriptFunction HandlePickup() { return mHandlePickup ? mHandlePickup : (mHandlePickup = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.HandlePickup")); }
-			ScriptFunction GetAdjustedAimFor() { return mGetAdjustedAimFor ? mGetAdjustedAimFor : (mGetAdjustedAimFor = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetAdjustedAimFor")); }
-			ScriptFunction InstantWarnTarget() { return mInstantWarnTarget ? mInstantWarnTarget : (mInstantWarnTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.InstantWarnTarget")); }
-			ScriptFunction ReceiveWarning() { return mReceiveWarning ? mReceiveWarning : (mReceiveWarning = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ReceiveWarning")); }
-			ScriptFunction ReceiveProjectileWarning() { return mReceiveProjectileWarning ? mReceiveProjectileWarning : (mReceiveProjectileWarning = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ReceiveProjectileWarning")); }
-			ScriptFunction SwitchToBestWeapon() { return mSwitchToBestWeapon ? mSwitchToBestWeapon : (mSwitchToBestWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SwitchToBestWeapon")); }
-			ScriptFunction ClientSwitchToBestWeapon() { return mClientSwitchToBestWeapon ? mClientSwitchToBestWeapon : (mClientSwitchToBestWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ClientSwitchToBestWeapon")); }
-			ScriptFunction NotifyChangedWeapon() { return mNotifyChangedWeapon ? mNotifyChangedWeapon : (mNotifyChangedWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyChangedWeapon")); }
-			ScriptFunction LineOfSightTo() { return mLineOfSightTo ? mLineOfSightTo : (mLineOfSightTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.LineOfSightTo")); }
-			ScriptFunction CanSee() { return mCanSee ? mCanSee : (mCanSee = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.CanSee")); }
-			ScriptFunction CanSeeByPoints() { return mCanSeeByPoints ? mCanSeeByPoints : (mCanSeeByPoints = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.CanSeeByPoints")); }
-			ScriptFunction PickTarget() { return mPickTarget ? mPickTarget : (mPickTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.PickTarget")); }
-			ScriptFunction HearNoise() { return mHearNoise ? mHearNoise : (mHearNoise = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.HearNoise")); }
-			ScriptFunction SeePlayer() { return mSeePlayer ? mSeePlayer : (mSeePlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SeePlayer")); }
-			ScriptFunction SeeMonster() { return mSeeMonster ? mSeeMonster : (mSeeMonster = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SeeMonster")); }
-			ScriptFunction EnemyNotVisible() { return mEnemyNotVisible ? mEnemyNotVisible : (mEnemyNotVisible = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.EnemyNotVisible")); }
-			ScriptFunction MoveTo() { return mMoveTo ? mMoveTo : (mMoveTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.MoveTo")); }
-			ScriptFunction MoveToDirectNonPathPos() { return mMoveToDirectNonPathPos ? mMoveToDirectNonPathPos : (mMoveToDirectNonPathPos = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.MoveToDirectNonPathPos")); }
-			ScriptFunction MoveToward() { return mMoveToward ? mMoveToward : (mMoveToward = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.MoveToward")); }
-			ScriptFunction SetupSpecialPathAbilities() { return mSetupSpecialPathAbilities ? mSetupSpecialPathAbilities : (mSetupSpecialPathAbilities = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SetupSpecialPathAbilities")); }
-			ScriptFunction FinishRotation() { return mFinishRotation ? mFinishRotation : (mFinishRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FinishRotation")); }
-			ScriptFunction FindPathTo() { return mFindPathTo ? mFindPathTo : (mFindPathTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FindPathTo")); }
-			ScriptFunction FindPathToward() { return mFindPathToward ? mFindPathToward : (mFindPathToward = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FindPathToward")); }
-			ScriptFunction FindPathTowardNearest() { return mFindPathTowardNearest ? mFindPathTowardNearest : (mFindPathTowardNearest = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FindPathTowardNearest")); }
-			ScriptFunction FindRandomDest() { return mFindRandomDest ? mFindRandomDest : (mFindRandomDest = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FindRandomDest")); }
-			ScriptFunction FindPathToIntercept() { return mFindPathToIntercept ? mFindPathToIntercept : (mFindPathToIntercept = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.FindPathToIntercept")); }
-			ScriptFunction PointReachable() { return mPointReachable ? mPointReachable : (mPointReachable = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.PointReachable")); }
-			ScriptFunction ActorReachable() { return mActorReachable ? mActorReachable : (mActorReachable = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ActorReachable")); }
-			ScriptFunction MoveUnreachable() { return mMoveUnreachable ? mMoveUnreachable : (mMoveUnreachable = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.MoveUnreachable")); }
-			ScriptFunction PickWallAdjust() { return mPickWallAdjust ? mPickWallAdjust : (mPickWallAdjust = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.PickWallAdjust")); }
-			ScriptFunction WaitForLanding() { return mWaitForLanding ? mWaitForLanding : (mWaitForLanding = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.WaitForLanding")); }
-			ScriptFunction LongFall() { return mLongFall ? mLongFall : (mLongFall = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.LongFall")); }
-			ScriptFunction EndClimbLadder() { return mEndClimbLadder ? mEndClimbLadder : (mEndClimbLadder = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.EndClimbLadder")); }
-			ScriptFunction MayFall() { return mMayFall ? mMayFall : (mMayFall = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.MayFall")); }
-			ScriptFunction AllowDetourTo() { return mAllowDetourTo ? mAllowDetourTo : (mAllowDetourTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.AllowDetourTo")); }
-			ScriptFunction WaitForMover() { return mWaitForMover ? mWaitForMover : (mWaitForMover = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.WaitForMover")); }
-			ScriptFunction MoverFinished() { return mMoverFinished ? mMoverFinished : (mMoverFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.MoverFinished")); }
-			ScriptFunction UnderLift() { return mUnderLift ? mUnderLift : (mUnderLift = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.UnderLift")); }
-			ScriptFunction HandlePathObstruction() { return mHandlePathObstruction ? mHandlePathObstruction : (mHandlePathObstruction = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.HandlePathObstruction")); }
-			ScriptFunction GetPlayerViewPoint() { return mGetPlayerViewPoint ? mGetPlayerViewPoint : (mGetPlayerViewPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetPlayerViewPoint")); }
-			ScriptFunction GetActorEyesViewPoint() { return mGetActorEyesViewPoint ? mGetActorEyesViewPoint : (mGetActorEyesViewPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetActorEyesViewPoint")); }
-			ScriptFunction IsAimingAt() { return mIsAimingAt ? mIsAimingAt : (mIsAimingAt = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.IsAimingAt")); }
-			ScriptFunction LandingShake() { return mLandingShake ? mLandingShake : (mLandingShake = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.LandingShake")); }
-			ScriptFunction NotifyPhysicsVolumeChange() { return mNotifyPhysicsVolumeChange ? mNotifyPhysicsVolumeChange : (mNotifyPhysicsVolumeChange = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyPhysicsVolumeChange")); }
-			ScriptFunction NotifyHeadVolumeChange() { return mNotifyHeadVolumeChange ? mNotifyHeadVolumeChange : (mNotifyHeadVolumeChange = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyHeadVolumeChange")); }
-			ScriptFunction NotifyLanded() { return mNotifyLanded ? mNotifyLanded : (mNotifyLanded = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyLanded")); }
-			ScriptFunction NotifyHitWall() { return mNotifyHitWall ? mNotifyHitWall : (mNotifyHitWall = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyHitWall")); }
-			ScriptFunction NotifyFallingHitWall() { return mNotifyFallingHitWall ? mNotifyFallingHitWall : (mNotifyFallingHitWall = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyFallingHitWall")); }
-			ScriptFunction NotifyBump() { return mNotifyBump ? mNotifyBump : (mNotifyBump = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyBump")); }
-			ScriptFunction NotifyJumpApex() { return mNotifyJumpApex ? mNotifyJumpApex : (mNotifyJumpApex = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyJumpApex")); }
-			ScriptFunction NotifyMissedJump() { return mNotifyMissedJump ? mNotifyMissedJump : (mNotifyMissedJump = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyMissedJump")); }
-			ScriptFunction ReachedPreciseDestination() { return mReachedPreciseDestination ? mReachedPreciseDestination : (mReachedPreciseDestination = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ReachedPreciseDestination")); }
-			ScriptFunction InLatentExecution() { return mInLatentExecution ? mInLatentExecution : (mInLatentExecution = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.InLatentExecution")); }
-			ScriptFunction StopLatentExecution() { return mStopLatentExecution ? mStopLatentExecution : (mStopLatentExecution = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.StopLatentExecution")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.DisplayDebug")); }
-			ScriptFunction GetHumanReadableName() { return mGetHumanReadableName ? mGetHumanReadableName : (mGetHumanReadableName = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GetHumanReadableName")); }
-			ScriptFunction IsDead() { return mIsDead ? mIsDead : (mIsDead = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.IsDead")); }
-			ScriptFunction OnTeleport() { return mOnTeleport ? mOnTeleport : (mOnTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.OnTeleport")); }
-			ScriptFunction OnToggleGodMode() { return mOnToggleGodMode ? mOnToggleGodMode : (mOnToggleGodMode = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.OnToggleGodMode")); }
-			ScriptFunction OnSetPhysics() { return mOnSetPhysics ? mOnSetPhysics : (mOnSetPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.OnSetPhysics")); }
-			ScriptFunction OnSetVelocity() { return mOnSetVelocity ? mOnSetVelocity : (mOnSetVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.OnSetVelocity")); }
-			ScriptFunction NotifyCoverDisabled() { return mNotifyCoverDisabled ? mNotifyCoverDisabled : (mNotifyCoverDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyCoverDisabled")); }
-			ScriptFunction NotifyCoverAdjusted() { return mNotifyCoverAdjusted ? mNotifyCoverAdjusted : (mNotifyCoverAdjusted = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyCoverAdjusted")); }
-			ScriptFunction NotifyCoverClaimViolation() { return mNotifyCoverClaimViolation ? mNotifyCoverClaimViolation : (mNotifyCoverClaimViolation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyCoverClaimViolation")); }
-			ScriptFunction OnModifyHealth() { return mOnModifyHealth ? mOnModifyHealth : (mOnModifyHealth = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.OnModifyHealth")); }
-			ScriptFunction NotifyAddInventory() { return mNotifyAddInventory ? mNotifyAddInventory : (mNotifyAddInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.NotifyAddInventory")); }
-			ScriptFunction OnToggleHidden() { return mOnToggleHidden ? mOnToggleHidden : (mOnToggleHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.OnToggleHidden")); }
-			ScriptFunction IsSpectating() { return mIsSpectating ? mIsSpectating : (mIsSpectating = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.IsSpectating")); }
-			ScriptFunction IsInCombat() { return mIsInCombat ? mIsInCombat : (mIsInCombat = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.IsInCombat")); }
-			ScriptFunction CurrentLevelUnloaded() { return mCurrentLevelUnloaded ? mCurrentLevelUnloaded : (mCurrentLevelUnloaded = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.CurrentLevelUnloaded")); }
-			ScriptFunction SendMessage() { return mSendMessage ? mSendMessage : (mSendMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.SendMessage")); }
-			ScriptFunction ReadyForLift() { return mReadyForLift ? mReadyForLift : (mReadyForLift = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.ReadyForLift")); }
-			ScriptFunction InitNavigationHandle() { return mInitNavigationHandle ? mInitNavigationHandle : (mInitNavigationHandle = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.InitNavigationHandle")); }
-			ScriptFunction InterpolationStarted() { return mInterpolationStarted ? mInterpolationStarted : (mInterpolationStarted = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.InterpolationStarted")); }
-			ScriptFunction InterpolationFinished() { return mInterpolationFinished ? mInterpolationFinished : (mInterpolationFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.InterpolationFinished")); }
-			ScriptFunction GeneratePathToActor() { return mGeneratePathToActor ? mGeneratePathToActor : (mGeneratePathToActor = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GeneratePathToActor")); }
-			ScriptFunction GeneratePathToLocation() { return mGeneratePathToLocation ? mGeneratePathToLocation : (mGeneratePathToLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GeneratePathToLocation")); }
+			ScriptFunction IsLocalPlayerController() { mixin(MGF!("mIsLocalPlayerController", "Function Engine.Controller.IsLocalPlayerController")()); }
+			ScriptFunction RouteCache_Empty() { mixin(MGF!("mRouteCache_Empty", "Function Engine.Controller.RouteCache_Empty")()); }
+			ScriptFunction RouteCache_AddItem() { mixin(MGF!("mRouteCache_AddItem", "Function Engine.Controller.RouteCache_AddItem")()); }
+			ScriptFunction RouteCache_InsertItem() { mixin(MGF!("mRouteCache_InsertItem", "Function Engine.Controller.RouteCache_InsertItem")()); }
+			ScriptFunction RouteCache_RemoveItem() { mixin(MGF!("mRouteCache_RemoveItem", "Function Engine.Controller.RouteCache_RemoveItem")()); }
+			ScriptFunction RouteCache_RemoveIndex() { mixin(MGF!("mRouteCache_RemoveIndex", "Function Engine.Controller.RouteCache_RemoveIndex")()); }
+			ScriptFunction SetFocalPoint() { mixin(MGF!("mSetFocalPoint", "Function Engine.Controller.SetFocalPoint")()); }
+			ScriptFunction GetFocalPoint() { mixin(MGF!("mGetFocalPoint", "Function Engine.Controller.GetFocalPoint")()); }
+			ScriptFunction SetDestinationPosition() { mixin(MGF!("mSetDestinationPosition", "Function Engine.Controller.SetDestinationPosition")()); }
+			ScriptFunction GetDestinationPosition() { mixin(MGF!("mGetDestinationPosition", "Function Engine.Controller.GetDestinationPosition")()); }
+			ScriptFunction SetAdjustLocation() { mixin(MGF!("mSetAdjustLocation", "Function Engine.Controller.SetAdjustLocation")()); }
+			ScriptFunction GetAdjustLocation() { mixin(MGF!("mGetAdjustLocation", "Function Engine.Controller.GetAdjustLocation")()); }
+			ScriptFunction NotifyPathChanged() { mixin(MGF!("mNotifyPathChanged", "Function Engine.Controller.NotifyPathChanged")()); }
+			ScriptFunction BeginAnimControl() { mixin(MGF!("mBeginAnimControl", "Function Engine.Controller.BeginAnimControl")()); }
+			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function Engine.Controller.SetAnimPosition")()); }
+			ScriptFunction FinishAnimControl() { mixin(MGF!("mFinishAnimControl", "Function Engine.Controller.FinishAnimControl")()); }
+			ScriptFunction PlayActorFaceFXAnim() { mixin(MGF!("mPlayActorFaceFXAnim", "Function Engine.Controller.PlayActorFaceFXAnim")()); }
+			ScriptFunction StopActorFaceFXAnim() { mixin(MGF!("mStopActorFaceFXAnim", "Function Engine.Controller.StopActorFaceFXAnim")()); }
+			ScriptFunction SetMorphWeight() { mixin(MGF!("mSetMorphWeight", "Function Engine.Controller.SetMorphWeight")()); }
+			ScriptFunction SetSkelControlScale() { mixin(MGF!("mSetSkelControlScale", "Function Engine.Controller.SetSkelControlScale")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Controller.PostBeginPlay")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.Controller.Reset")()); }
+			ScriptFunction ClientSetLocation() { mixin(MGF!("mClientSetLocation", "Function Engine.Controller.ClientSetLocation")()); }
+			ScriptFunction ClientSetRotation() { mixin(MGF!("mClientSetRotation", "Function Engine.Controller.ClientSetRotation")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.Controller.ReplicatedEvent")()); }
+			ScriptFunction OnPossess() { mixin(MGF!("mOnPossess", "Function Engine.Controller.OnPossess")()); }
+			ScriptFunction Possess() { mixin(MGF!("mPossess", "Function Engine.Controller.Possess")()); }
+			ScriptFunction UnPossess() { mixin(MGF!("mUnPossess", "Function Engine.Controller.UnPossess")()); }
+			ScriptFunction PawnDied() { mixin(MGF!("mPawnDied", "Function Engine.Controller.PawnDied")()); }
+			ScriptFunction GamePlayEndedState() { mixin(MGF!("mGamePlayEndedState", "Function Engine.Controller.GamePlayEndedState")()); }
+			ScriptFunction NotifyPostLanded() { mixin(MGF!("mNotifyPostLanded", "Function Engine.Controller.NotifyPostLanded")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Controller.Destroyed")()); }
+			ScriptFunction CleanupPRI() { mixin(MGF!("mCleanupPRI", "Function Engine.Controller.CleanupPRI")()); }
+			ScriptFunction Restart() { mixin(MGF!("mRestart", "Function Engine.Controller.Restart")()); }
+			ScriptFunction BeyondFogDistance() { mixin(MGF!("mBeyondFogDistance", "Function Engine.Controller.BeyondFogDistance")()); }
+			ScriptFunction EnemyJustTeleported() { mixin(MGF!("mEnemyJustTeleported", "Function Engine.Controller.EnemyJustTeleported")()); }
+			ScriptFunction NotifyTakeHit() { mixin(MGF!("mNotifyTakeHit", "Function Engine.Controller.NotifyTakeHit")()); }
+			ScriptFunction InitPlayerReplicationInfo() { mixin(MGF!("mInitPlayerReplicationInfo", "Function Engine.Controller.InitPlayerReplicationInfo")()); }
+			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.Controller.GetTeamNum")()); }
+			ScriptFunction ServerRestartPlayer() { mixin(MGF!("mServerRestartPlayer", "Function Engine.Controller.ServerRestartPlayer")()); }
+			ScriptFunction ServerGivePawn() { mixin(MGF!("mServerGivePawn", "Function Engine.Controller.ServerGivePawn")()); }
+			ScriptFunction SetCharacter() { mixin(MGF!("mSetCharacter", "Function Engine.Controller.SetCharacter")()); }
+			ScriptFunction GameHasEnded() { mixin(MGF!("mGameHasEnded", "Function Engine.Controller.GameHasEnded")()); }
+			ScriptFunction NotifyKilled() { mixin(MGF!("mNotifyKilled", "Function Engine.Controller.NotifyKilled")()); }
+			ScriptFunction NotifyProjLanded() { mixin(MGF!("mNotifyProjLanded", "Function Engine.Controller.NotifyProjLanded")()); }
+			ScriptFunction WarnProjExplode() { mixin(MGF!("mWarnProjExplode", "Function Engine.Controller.WarnProjExplode")()); }
+			ScriptFunction RatePickup() { mixin(MGF!("mRatePickup", "Function Engine.Controller.RatePickup")()); }
+			ScriptFunction FireWeaponAt() { mixin(MGF!("mFireWeaponAt", "Function Engine.Controller.FireWeaponAt")()); }
+			ScriptFunction StopFiring() { mixin(MGF!("mStopFiring", "Function Engine.Controller.StopFiring")()); }
+			ScriptFunction RoundHasEnded() { mixin(MGF!("mRoundHasEnded", "Function Engine.Controller.RoundHasEnded")()); }
+			ScriptFunction HandlePickup() { mixin(MGF!("mHandlePickup", "Function Engine.Controller.HandlePickup")()); }
+			ScriptFunction GetAdjustedAimFor() { mixin(MGF!("mGetAdjustedAimFor", "Function Engine.Controller.GetAdjustedAimFor")()); }
+			ScriptFunction InstantWarnTarget() { mixin(MGF!("mInstantWarnTarget", "Function Engine.Controller.InstantWarnTarget")()); }
+			ScriptFunction ReceiveWarning() { mixin(MGF!("mReceiveWarning", "Function Engine.Controller.ReceiveWarning")()); }
+			ScriptFunction ReceiveProjectileWarning() { mixin(MGF!("mReceiveProjectileWarning", "Function Engine.Controller.ReceiveProjectileWarning")()); }
+			ScriptFunction SwitchToBestWeapon() { mixin(MGF!("mSwitchToBestWeapon", "Function Engine.Controller.SwitchToBestWeapon")()); }
+			ScriptFunction ClientSwitchToBestWeapon() { mixin(MGF!("mClientSwitchToBestWeapon", "Function Engine.Controller.ClientSwitchToBestWeapon")()); }
+			ScriptFunction NotifyChangedWeapon() { mixin(MGF!("mNotifyChangedWeapon", "Function Engine.Controller.NotifyChangedWeapon")()); }
+			ScriptFunction LineOfSightTo() { mixin(MGF!("mLineOfSightTo", "Function Engine.Controller.LineOfSightTo")()); }
+			ScriptFunction CanSee() { mixin(MGF!("mCanSee", "Function Engine.Controller.CanSee")()); }
+			ScriptFunction CanSeeByPoints() { mixin(MGF!("mCanSeeByPoints", "Function Engine.Controller.CanSeeByPoints")()); }
+			ScriptFunction PickTarget() { mixin(MGF!("mPickTarget", "Function Engine.Controller.PickTarget")()); }
+			ScriptFunction HearNoise() { mixin(MGF!("mHearNoise", "Function Engine.Controller.HearNoise")()); }
+			ScriptFunction SeePlayer() { mixin(MGF!("mSeePlayer", "Function Engine.Controller.SeePlayer")()); }
+			ScriptFunction SeeMonster() { mixin(MGF!("mSeeMonster", "Function Engine.Controller.SeeMonster")()); }
+			ScriptFunction EnemyNotVisible() { mixin(MGF!("mEnemyNotVisible", "Function Engine.Controller.EnemyNotVisible")()); }
+			ScriptFunction MoveTo() { mixin(MGF!("mMoveTo", "Function Engine.Controller.MoveTo")()); }
+			ScriptFunction MoveToDirectNonPathPos() { mixin(MGF!("mMoveToDirectNonPathPos", "Function Engine.Controller.MoveToDirectNonPathPos")()); }
+			ScriptFunction MoveToward() { mixin(MGF!("mMoveToward", "Function Engine.Controller.MoveToward")()); }
+			ScriptFunction SetupSpecialPathAbilities() { mixin(MGF!("mSetupSpecialPathAbilities", "Function Engine.Controller.SetupSpecialPathAbilities")()); }
+			ScriptFunction FinishRotation() { mixin(MGF!("mFinishRotation", "Function Engine.Controller.FinishRotation")()); }
+			ScriptFunction FindPathTo() { mixin(MGF!("mFindPathTo", "Function Engine.Controller.FindPathTo")()); }
+			ScriptFunction FindPathToward() { mixin(MGF!("mFindPathToward", "Function Engine.Controller.FindPathToward")()); }
+			ScriptFunction FindPathTowardNearest() { mixin(MGF!("mFindPathTowardNearest", "Function Engine.Controller.FindPathTowardNearest")()); }
+			ScriptFunction FindRandomDest() { mixin(MGF!("mFindRandomDest", "Function Engine.Controller.FindRandomDest")()); }
+			ScriptFunction FindPathToIntercept() { mixin(MGF!("mFindPathToIntercept", "Function Engine.Controller.FindPathToIntercept")()); }
+			ScriptFunction PointReachable() { mixin(MGF!("mPointReachable", "Function Engine.Controller.PointReachable")()); }
+			ScriptFunction ActorReachable() { mixin(MGF!("mActorReachable", "Function Engine.Controller.ActorReachable")()); }
+			ScriptFunction MoveUnreachable() { mixin(MGF!("mMoveUnreachable", "Function Engine.Controller.MoveUnreachable")()); }
+			ScriptFunction PickWallAdjust() { mixin(MGF!("mPickWallAdjust", "Function Engine.Controller.PickWallAdjust")()); }
+			ScriptFunction WaitForLanding() { mixin(MGF!("mWaitForLanding", "Function Engine.Controller.WaitForLanding")()); }
+			ScriptFunction LongFall() { mixin(MGF!("mLongFall", "Function Engine.Controller.LongFall")()); }
+			ScriptFunction EndClimbLadder() { mixin(MGF!("mEndClimbLadder", "Function Engine.Controller.EndClimbLadder")()); }
+			ScriptFunction MayFall() { mixin(MGF!("mMayFall", "Function Engine.Controller.MayFall")()); }
+			ScriptFunction AllowDetourTo() { mixin(MGF!("mAllowDetourTo", "Function Engine.Controller.AllowDetourTo")()); }
+			ScriptFunction WaitForMover() { mixin(MGF!("mWaitForMover", "Function Engine.Controller.WaitForMover")()); }
+			ScriptFunction MoverFinished() { mixin(MGF!("mMoverFinished", "Function Engine.Controller.MoverFinished")()); }
+			ScriptFunction UnderLift() { mixin(MGF!("mUnderLift", "Function Engine.Controller.UnderLift")()); }
+			ScriptFunction HandlePathObstruction() { mixin(MGF!("mHandlePathObstruction", "Function Engine.Controller.HandlePathObstruction")()); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function Engine.Controller.GetPlayerViewPoint")()); }
+			ScriptFunction GetActorEyesViewPoint() { mixin(MGF!("mGetActorEyesViewPoint", "Function Engine.Controller.GetActorEyesViewPoint")()); }
+			ScriptFunction IsAimingAt() { mixin(MGF!("mIsAimingAt", "Function Engine.Controller.IsAimingAt")()); }
+			ScriptFunction LandingShake() { mixin(MGF!("mLandingShake", "Function Engine.Controller.LandingShake")()); }
+			ScriptFunction NotifyPhysicsVolumeChange() { mixin(MGF!("mNotifyPhysicsVolumeChange", "Function Engine.Controller.NotifyPhysicsVolumeChange")()); }
+			ScriptFunction NotifyHeadVolumeChange() { mixin(MGF!("mNotifyHeadVolumeChange", "Function Engine.Controller.NotifyHeadVolumeChange")()); }
+			ScriptFunction NotifyLanded() { mixin(MGF!("mNotifyLanded", "Function Engine.Controller.NotifyLanded")()); }
+			ScriptFunction NotifyHitWall() { mixin(MGF!("mNotifyHitWall", "Function Engine.Controller.NotifyHitWall")()); }
+			ScriptFunction NotifyFallingHitWall() { mixin(MGF!("mNotifyFallingHitWall", "Function Engine.Controller.NotifyFallingHitWall")()); }
+			ScriptFunction NotifyBump() { mixin(MGF!("mNotifyBump", "Function Engine.Controller.NotifyBump")()); }
+			ScriptFunction NotifyJumpApex() { mixin(MGF!("mNotifyJumpApex", "Function Engine.Controller.NotifyJumpApex")()); }
+			ScriptFunction NotifyMissedJump() { mixin(MGF!("mNotifyMissedJump", "Function Engine.Controller.NotifyMissedJump")()); }
+			ScriptFunction ReachedPreciseDestination() { mixin(MGF!("mReachedPreciseDestination", "Function Engine.Controller.ReachedPreciseDestination")()); }
+			ScriptFunction InLatentExecution() { mixin(MGF!("mInLatentExecution", "Function Engine.Controller.InLatentExecution")()); }
+			ScriptFunction StopLatentExecution() { mixin(MGF!("mStopLatentExecution", "Function Engine.Controller.StopLatentExecution")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Controller.DisplayDebug")()); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function Engine.Controller.GetHumanReadableName")()); }
+			ScriptFunction IsDead() { mixin(MGF!("mIsDead", "Function Engine.Controller.IsDead")()); }
+			ScriptFunction OnTeleport() { mixin(MGF!("mOnTeleport", "Function Engine.Controller.OnTeleport")()); }
+			ScriptFunction OnToggleGodMode() { mixin(MGF!("mOnToggleGodMode", "Function Engine.Controller.OnToggleGodMode")()); }
+			ScriptFunction OnSetPhysics() { mixin(MGF!("mOnSetPhysics", "Function Engine.Controller.OnSetPhysics")()); }
+			ScriptFunction OnSetVelocity() { mixin(MGF!("mOnSetVelocity", "Function Engine.Controller.OnSetVelocity")()); }
+			ScriptFunction NotifyCoverDisabled() { mixin(MGF!("mNotifyCoverDisabled", "Function Engine.Controller.NotifyCoverDisabled")()); }
+			ScriptFunction NotifyCoverAdjusted() { mixin(MGF!("mNotifyCoverAdjusted", "Function Engine.Controller.NotifyCoverAdjusted")()); }
+			ScriptFunction NotifyCoverClaimViolation() { mixin(MGF!("mNotifyCoverClaimViolation", "Function Engine.Controller.NotifyCoverClaimViolation")()); }
+			ScriptFunction OnModifyHealth() { mixin(MGF!("mOnModifyHealth", "Function Engine.Controller.OnModifyHealth")()); }
+			ScriptFunction NotifyAddInventory() { mixin(MGF!("mNotifyAddInventory", "Function Engine.Controller.NotifyAddInventory")()); }
+			ScriptFunction OnToggleHidden() { mixin(MGF!("mOnToggleHidden", "Function Engine.Controller.OnToggleHidden")()); }
+			ScriptFunction IsSpectating() { mixin(MGF!("mIsSpectating", "Function Engine.Controller.IsSpectating")()); }
+			ScriptFunction IsInCombat() { mixin(MGF!("mIsInCombat", "Function Engine.Controller.IsInCombat")()); }
+			ScriptFunction CurrentLevelUnloaded() { mixin(MGF!("mCurrentLevelUnloaded", "Function Engine.Controller.CurrentLevelUnloaded")()); }
+			ScriptFunction SendMessage() { mixin(MGF!("mSendMessage", "Function Engine.Controller.SendMessage")()); }
+			ScriptFunction ReadyForLift() { mixin(MGF!("mReadyForLift", "Function Engine.Controller.ReadyForLift")()); }
+			ScriptFunction InitNavigationHandle() { mixin(MGF!("mInitNavigationHandle", "Function Engine.Controller.InitNavigationHandle")()); }
+			ScriptFunction InterpolationStarted() { mixin(MGF!("mInterpolationStarted", "Function Engine.Controller.InterpolationStarted")()); }
+			ScriptFunction InterpolationFinished() { mixin(MGF!("mInterpolationFinished", "Function Engine.Controller.InterpolationFinished")()); }
+			ScriptFunction GeneratePathToActor() { mixin(MGF!("mGeneratePathToActor", "Function Engine.Controller.GeneratePathToActor")()); }
+			ScriptFunction GeneratePathToLocation() { mixin(MGF!("mGeneratePathToLocation", "Function Engine.Controller.GeneratePathToLocation")()); }
 		}
 	}
 	static struct Constants
@@ -308,12 +309,22 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Controller.VisiblePortalInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Controller.VisiblePortalInfo")()); }
 		@property final auto ref
 		{
-			Actor Destination() { return *cast(Actor*)(cast(size_t)&this + 4); }
-			Actor Source() { return *cast(Actor*)(cast(size_t)&this + 0); }
+			Actor Destination() { mixin(MGPS!(Actor, 4)()); }
+			Actor Source() { mixin(MGPS!(Actor, 0)()); }
 		}
+	}
+	static struct Dead
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Controller.Dead")()); }
+	}
+	static struct RoundEnded
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Controller.RoundEnded")()); }
 	}
 	@property final
 	{
@@ -321,88 +332,88 @@ public extern(D):
 		{
 			// WARNING: Property 'Pawn' has the same name as a defined type!
 			// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
-			ScriptArray!(NavigationPoint) RouteCache() { return *cast(ScriptArray!(NavigationPoint)*)(cast(size_t)cast(void*)this + 716); }
-			ScriptArray!(Controller.VisiblePortalInfo) VisiblePortals() { return *cast(ScriptArray!(Controller.VisiblePortalInfo)*)(cast(size_t)cast(void*)this + 860); }
-			Vector NavMeshPath_SearchExtent_Modifier() { return *cast(Vector*)(cast(size_t)cast(void*)this + 888); }
-			Rotator OldBasedRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 876); }
-			float LaneOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 872); }
-			Pawn Enemy() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 856); }
-			float MaxMoveTowardPawnTargetTime() { return *cast(float*)(cast(size_t)cast(void*)this + 852); }
-			int HighJumpNodeCostModifier() { return *cast(int*)(cast(size_t)cast(void*)this + 848); }
-			float InUseNodeCostMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 844); }
-			float SightCounterInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 840); }
-			float SightCounter() { return *cast(float*)(cast(size_t)cast(void*)this + 836); }
-			Vector FailedReachLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 824); }
-			float FailedReachTime() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
-			Actor LastFailedReach() { return *cast(Actor*)(cast(size_t)cast(void*)this + 816); }
-			Pawn ShotTarget() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 812); }
-			Vector ViewZ() { return *cast(Vector*)(cast(size_t)cast(void*)this + 800); }
-			Vector ViewY() { return *cast(Vector*)(cast(size_t)cast(void*)this + 788); }
-			Vector ViewX() { return *cast(Vector*)(cast(size_t)cast(void*)this + 776); }
-			float GroundPitchTime() { return *cast(float*)(cast(size_t)cast(void*)this + 772); }
-			int MoveFailureCount() { return *cast(int*)(cast(size_t)cast(void*)this + 768); }
-			Actor FailedMoveTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 764); }
-			InterpActor PendingMover() { return *cast(InterpActor*)(cast(size_t)cast(void*)this + 760); }
-			float LastRouteFind() { return *cast(float*)(cast(size_t)cast(void*)this + 756); }
-			float RouteDist() { return *cast(float*)(cast(size_t)cast(void*)this + 752); }
-			Actor RouteGoal() { return *cast(Actor*)(cast(size_t)cast(void*)this + 748); }
-			Vector CurrentPathDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 736); }
-			ReachSpec NextRoutePath() { return *cast(ReachSpec*)(cast(size_t)cast(void*)this + 732); }
-			ReachSpec CurrentPath() { return *cast(ReachSpec*)(cast(size_t)cast(void*)this + 728); }
-			NavigationPoint StartSpot() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 712); }
-			Actor.BasedPosition AdjustPosition() { return *cast(Actor.BasedPosition*)(cast(size_t)cast(void*)this + 660); }
-			Actor GoalList() { return *cast(Actor*)(cast(size_t)cast(void*)this + 644); }
-			Actor Focus() { return *cast(Actor*)(cast(size_t)cast(void*)this + 640); }
-			Actor.BasedPosition FocalPosition() { return *cast(Actor.BasedPosition*)(cast(size_t)cast(void*)this + 588); }
-			Actor.BasedPosition DestinationPosition() { return *cast(Actor.BasedPosition*)(cast(size_t)cast(void*)this + 536); }
-			Actor MoveTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 532); }
-			float MoveTimer() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			Vector OverrideSearchStart() { return *cast(Vector*)(cast(size_t)cast(void*)this + 516); }
+			ScriptArray!(NavigationPoint) RouteCache() { mixin(MGPC!(ScriptArray!(NavigationPoint), 716)()); }
+			ScriptArray!(Controller.VisiblePortalInfo) VisiblePortals() { mixin(MGPC!(ScriptArray!(Controller.VisiblePortalInfo), 860)()); }
+			Vector NavMeshPath_SearchExtent_Modifier() { mixin(MGPC!(Vector, 888)()); }
+			Rotator OldBasedRotation() { mixin(MGPC!(Rotator, 876)()); }
+			float LaneOffset() { mixin(MGPC!(float, 872)()); }
+			Pawn Enemy() { mixin(MGPC!(Pawn, 856)()); }
+			float MaxMoveTowardPawnTargetTime() { mixin(MGPC!(float, 852)()); }
+			int HighJumpNodeCostModifier() { mixin(MGPC!(int, 848)()); }
+			float InUseNodeCostMultiplier() { mixin(MGPC!(float, 844)()); }
+			float SightCounterInterval() { mixin(MGPC!(float, 840)()); }
+			float SightCounter() { mixin(MGPC!(float, 836)()); }
+			Vector FailedReachLocation() { mixin(MGPC!(Vector, 824)()); }
+			float FailedReachTime() { mixin(MGPC!(float, 820)()); }
+			Actor LastFailedReach() { mixin(MGPC!(Actor, 816)()); }
+			Pawn ShotTarget() { mixin(MGPC!(Pawn, 812)()); }
+			Vector ViewZ() { mixin(MGPC!(Vector, 800)()); }
+			Vector ViewY() { mixin(MGPC!(Vector, 788)()); }
+			Vector ViewX() { mixin(MGPC!(Vector, 776)()); }
+			float GroundPitchTime() { mixin(MGPC!(float, 772)()); }
+			int MoveFailureCount() { mixin(MGPC!(int, 768)()); }
+			Actor FailedMoveTarget() { mixin(MGPC!(Actor, 764)()); }
+			InterpActor PendingMover() { mixin(MGPC!(InterpActor, 760)()); }
+			float LastRouteFind() { mixin(MGPC!(float, 756)()); }
+			float RouteDist() { mixin(MGPC!(float, 752)()); }
+			Actor RouteGoal() { mixin(MGPC!(Actor, 748)()); }
+			Vector CurrentPathDir() { mixin(MGPC!(Vector, 736)()); }
+			ReachSpec NextRoutePath() { mixin(MGPC!(ReachSpec, 732)()); }
+			ReachSpec CurrentPath() { mixin(MGPC!(ReachSpec, 728)()); }
+			NavigationPoint StartSpot() { mixin(MGPC!(NavigationPoint, 712)()); }
+			Actor.BasedPosition AdjustPosition() { mixin(MGPC!(Actor.BasedPosition, 660)()); }
+			Actor GoalList() { mixin(MGPC!(Actor, 644)()); }
+			Actor Focus() { mixin(MGPC!(Actor, 640)()); }
+			Actor.BasedPosition FocalPosition() { mixin(MGPC!(Actor.BasedPosition, 588)()); }
+			Actor.BasedPosition DestinationPosition() { mixin(MGPC!(Actor.BasedPosition, 536)()); }
+			Actor MoveTarget() { mixin(MGPC!(Actor, 532)()); }
+			float MoveTimer() { mixin(MGPC!(float, 528)()); }
+			Vector OverrideSearchStart() { mixin(MGPC!(Vector, 516)()); }
 			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
-			ScriptClass NavigationHandleClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 508); }
-			float MinHitWall() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			ubyte bAltFire() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 501); }
-			ubyte bFire() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 500); }
-			Controller NextController() { return *cast(Controller*)(cast(size_t)cast(void*)this + 492); }
-			int PlayerNum() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
-			UObject.Pointer VfTable_IInterface_NavigationHandle() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 476); }
+			ScriptClass NavigationHandleClass() { mixin(MGPC!(ScriptClass, 508)()); }
+			float MinHitWall() { mixin(MGPC!(float, 504)()); }
+			ubyte bAltFire() { mixin(MGPC!(ubyte, 501)()); }
+			ubyte bFire() { mixin(MGPC!(ubyte, 500)()); }
+			Controller NextController() { mixin(MGPC!(Controller, 492)()); }
+			int PlayerNum() { mixin(MGPC!(int, 488)()); }
+			UObject.Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC!(UObject.Pointer, 476)()); }
 		}
-		bool bGodMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x2) != 0; }
-		bool bGodMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x2; } return val; }
-		bool bUsingPathLanes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x20000) != 0; }
-		bool bUsingPathLanes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x20000; } return val; }
-		bool bSeeFriendly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x10000) != 0; }
-		bool bSeeFriendly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x10000; } return val; }
-		bool bPreciseDestination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x8000) != 0; }
-		bool bPreciseDestination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x8000; } return val; }
-		bool bNotifyFallingHitWall() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x4000) != 0; }
-		bool bNotifyFallingHitWall(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x4000; } return val; }
-		bool bSkipExtraLOSChecks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x2000) != 0; }
-		bool bSkipExtraLOSChecks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x2000; } return val; }
-		bool bLOSflag() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x1000) != 0; }
-		bool bLOSflag(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x1000; } return val; }
-		bool bForceStrafe() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x800) != 0; }
-		bool bForceStrafe(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x800; } return val; }
-		bool bPreparingMove() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x400) != 0; }
-		bool bPreparingMove(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x400; } return val; }
-		bool bAdjusting() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x200) != 0; }
-		bool bAdjusting(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x200; } return val; }
-		bool bCanDoSpecial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x100) != 0; }
-		bool bCanDoSpecial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x100; } return val; }
-		bool bAdvancedTactics() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x80) != 0; }
-		bool bAdvancedTactics(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x80; } return val; }
-		bool bOverrideSearchStart() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x40) != 0; }
-		bool bOverrideSearchStart(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x40; } return val; }
-		bool bNotifyApex() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x20) != 0; }
-		bool bNotifyApex(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x20; } return val; }
-		bool bNotifyPostLanded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x10) != 0; }
-		bool bNotifyPostLanded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x10; } return val; }
-		bool bSlowerZAcquire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x8) != 0; }
-		bool bSlowerZAcquire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x8; } return val; }
-		bool bSoaking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x4) != 0; }
-		bool bSoaking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x4; } return val; }
-		bool bIsPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x1) != 0; }
-		bool bIsPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x1; } return val; }
+		bool bGodMode() { mixin(MGBPC!(496, 0x2)()); }
+		bool bGodMode(bool val) { mixin(MSBPC!(496, 0x2)()); }
+		bool bUsingPathLanes() { mixin(MGBPC!(496, 0x20000)()); }
+		bool bUsingPathLanes(bool val) { mixin(MSBPC!(496, 0x20000)()); }
+		bool bSeeFriendly() { mixin(MGBPC!(496, 0x10000)()); }
+		bool bSeeFriendly(bool val) { mixin(MSBPC!(496, 0x10000)()); }
+		bool bPreciseDestination() { mixin(MGBPC!(496, 0x8000)()); }
+		bool bPreciseDestination(bool val) { mixin(MSBPC!(496, 0x8000)()); }
+		bool bNotifyFallingHitWall() { mixin(MGBPC!(496, 0x4000)()); }
+		bool bNotifyFallingHitWall(bool val) { mixin(MSBPC!(496, 0x4000)()); }
+		bool bSkipExtraLOSChecks() { mixin(MGBPC!(496, 0x2000)()); }
+		bool bSkipExtraLOSChecks(bool val) { mixin(MSBPC!(496, 0x2000)()); }
+		bool bLOSflag() { mixin(MGBPC!(496, 0x1000)()); }
+		bool bLOSflag(bool val) { mixin(MSBPC!(496, 0x1000)()); }
+		bool bForceStrafe() { mixin(MGBPC!(496, 0x800)()); }
+		bool bForceStrafe(bool val) { mixin(MSBPC!(496, 0x800)()); }
+		bool bPreparingMove() { mixin(MGBPC!(496, 0x400)()); }
+		bool bPreparingMove(bool val) { mixin(MSBPC!(496, 0x400)()); }
+		bool bAdjusting() { mixin(MGBPC!(496, 0x200)()); }
+		bool bAdjusting(bool val) { mixin(MSBPC!(496, 0x200)()); }
+		bool bCanDoSpecial() { mixin(MGBPC!(496, 0x100)()); }
+		bool bCanDoSpecial(bool val) { mixin(MSBPC!(496, 0x100)()); }
+		bool bAdvancedTactics() { mixin(MGBPC!(496, 0x80)()); }
+		bool bAdvancedTactics(bool val) { mixin(MSBPC!(496, 0x80)()); }
+		bool bOverrideSearchStart() { mixin(MGBPC!(496, 0x40)()); }
+		bool bOverrideSearchStart(bool val) { mixin(MSBPC!(496, 0x40)()); }
+		bool bNotifyApex() { mixin(MGBPC!(496, 0x20)()); }
+		bool bNotifyApex(bool val) { mixin(MSBPC!(496, 0x20)()); }
+		bool bNotifyPostLanded() { mixin(MGBPC!(496, 0x10)()); }
+		bool bNotifyPostLanded(bool val) { mixin(MSBPC!(496, 0x10)()); }
+		bool bSlowerZAcquire() { mixin(MGBPC!(496, 0x8)()); }
+		bool bSlowerZAcquire(bool val) { mixin(MSBPC!(496, 0x8)()); }
+		bool bSoaking() { mixin(MGBPC!(496, 0x4)()); }
+		bool bSoaking(bool val) { mixin(MSBPC!(496, 0x4)()); }
+		bool bIsPlayer() { mixin(MGBPC!(496, 0x1)()); }
+		bool bIsPlayer(bool val) { mixin(MSBPC!(496, 0x1)()); }
 	}
 final:
 	bool IsLocalPlayerController()
@@ -838,13 +849,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanSeeByPoints, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
-	Pawn PickTarget(ScriptClass TargetClass, float* bestAim, float* bestDist, Vector FireDir, Vector projStart, float MaxRange)
+	Pawn PickTarget(ScriptClass TargetClass, ref float bestAim, ref float bestDist, Vector FireDir, Vector projStart, float MaxRange)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = TargetClass;
-		*cast(float*)&params[4] = *bestAim;
-		*cast(float*)&params[8] = *bestDist;
+		*cast(float*)&params[4] = bestAim;
+		*cast(float*)&params[8] = bestDist;
 		*cast(Vector*)&params[12] = FireDir;
 		*cast(Vector*)&params[24] = projStart;
 		*cast(float*)&params[36] = MaxRange;
@@ -1062,22 +1073,22 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandlePathObstruction, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void GetPlayerViewPoint(Vector* out_Location, Rotator* out_Rotation)
+	void GetPlayerViewPoint(ref Vector out_Location, ref Rotator out_Rotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *out_Location;
-		*cast(Rotator*)&params[12] = *out_Rotation;
+		*cast(Vector*)params.ptr = out_Location;
+		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
 		*out_Location = *cast(Vector*)params.ptr;
 		*out_Rotation = *cast(Rotator*)&params[12];
 	}
-	void GetActorEyesViewPoint(Vector* out_Location, Rotator* out_Rotation)
+	void GetActorEyesViewPoint(ref Vector out_Location, ref Rotator out_Rotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *out_Location;
-		*cast(Rotator*)&params[12] = *out_Rotation;
+		*cast(Vector*)params.ptr = out_Location;
+		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorEyesViewPoint, params.ptr, cast(void*)0);
 		*out_Location = *cast(Vector*)params.ptr;
 		*out_Rotation = *cast(Rotator*)&params[12];
@@ -1172,13 +1183,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopLatentExecution, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];

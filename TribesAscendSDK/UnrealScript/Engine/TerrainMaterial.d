@@ -1,6 +1,7 @@
 module UnrealScript.Engine.TerrainMaterial;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Engine.MaterialInterface;
@@ -9,9 +10,9 @@ extern(C++) interface TerrainMaterial : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainMaterial")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TerrainMaterial")()); }
 	private static __gshared TerrainMaterial mDefaultProperties;
-	@property final static TerrainMaterial DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TerrainMaterial)("TerrainMaterial Engine.Default__TerrainMaterial")); }
+	@property final static TerrainMaterial DefaultProperties() { mixin(MGDPC!(TerrainMaterial, "TerrainMaterial Engine.Default__TerrainMaterial")()); }
 	enum ETerrainMappingType : ubyte
 	{
 		TMT_Auto = 0,
@@ -22,14 +23,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float DisplacementScale() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-		Texture2D DisplacementMap() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 152); }
+		float DisplacementScale() { mixin(MGPC!(float, 156)()); }
+		Texture2D DisplacementMap() { mixin(MGPC!(Texture2D, 152)()); }
 		// WARNING: Property 'Material' has the same name as a defined type!
-		float MappingPanV() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
-		float MappingPanU() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-		float MappingRotation() { return *cast(float*)(cast(size_t)cast(void*)this + 136); }
-		float MappingScale() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-		TerrainMaterial.ETerrainMappingType MappingType() { return *cast(TerrainMaterial.ETerrainMappingType*)(cast(size_t)cast(void*)this + 128); }
-		UObject.Matrix LocalToMapping() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 64); }
+		float MappingPanV() { mixin(MGPC!(float, 144)()); }
+		float MappingPanU() { mixin(MGPC!(float, 140)()); }
+		float MappingRotation() { mixin(MGPC!(float, 136)()); }
+		float MappingScale() { mixin(MGPC!(float, 132)()); }
+		TerrainMaterial.ETerrainMappingType MappingType() { mixin(MGPC!(TerrainMaterial.ETerrainMappingType, 128)()); }
+		UObject.Matrix LocalToMapping() { mixin(MGPC!(UObject.Matrix, 64)()); }
 	}
 }

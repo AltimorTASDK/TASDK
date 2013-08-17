@@ -1,6 +1,7 @@
 module UnrealScript.Engine.CoverLink;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.SeqAct_Toggle;
@@ -14,9 +15,9 @@ extern(C++) interface CoverLink : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverLink")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CoverLink")()); }
 	private static __gshared CoverLink mDefaultProperties;
-	@property final static CoverLink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CoverLink)("CoverLink Engine.Default__CoverLink")); }
+	@property final static CoverLink DefaultProperties() { mixin(MGDPC!(CoverLink, "CoverLink Engine.Default__CoverLink")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -65,47 +66,47 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFireLinkTargetCoverInfo() { return mGetFireLinkTargetCoverInfo ? mGetFireLinkTargetCoverInfo : (mGetFireLinkTargetCoverInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetFireLinkTargetCoverInfo")); }
-			ScriptFunction PackFireLinkInteractionInfo() { return mPackFireLinkInteractionInfo ? mPackFireLinkInteractionInfo : (mPackFireLinkInteractionInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.PackFireLinkInteractionInfo")); }
-			ScriptFunction UnPackFireLinkInteractionInfo() { return mUnPackFireLinkInteractionInfo ? mUnPackFireLinkInteractionInfo : (mUnPackFireLinkInteractionInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.UnPackFireLinkInteractionInfo")); }
-			ScriptFunction GetSlotLocation() { return mGetSlotLocation ? mGetSlotLocation : (mGetSlotLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotLocation")); }
-			ScriptFunction GetSlotRotation() { return mGetSlotRotation ? mGetSlotRotation : (mGetSlotRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotRotation")); }
-			ScriptFunction GetSlotViewPoint() { return mGetSlotViewPoint ? mGetSlotViewPoint : (mGetSlotViewPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotViewPoint")); }
-			ScriptFunction IsExposedTo() { return mIsExposedTo ? mIsExposedTo : (mIsExposedTo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsExposedTo")); }
-			ScriptFunction SetInvalidUntil() { return mSetInvalidUntil ? mSetInvalidUntil : (mSetInvalidUntil = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetInvalidUntil")); }
-			ScriptFunction Claim() { return mClaim ? mClaim : (mClaim = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.Claim")); }
-			ScriptFunction UnClaim() { return mUnClaim ? mUnClaim : (mUnClaim = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.UnClaim")); }
-			ScriptFunction IsValidClaim() { return mIsValidClaim ? mIsValidClaim : (mIsValidClaim = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsValidClaim")); }
-			ScriptFunction IsValidClaimBetween() { return mIsValidClaimBetween ? mIsValidClaimBetween : (mIsValidClaimBetween = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsValidClaimBetween")); }
-			ScriptFunction IsStationarySlot() { return mIsStationarySlot ? mIsStationarySlot : (mIsStationarySlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsStationarySlot")); }
-			ScriptFunction IsEdgeSlot() { return mIsEdgeSlot ? mIsEdgeSlot : (mIsEdgeSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsEdgeSlot")); }
-			ScriptFunction FindSlots() { return mFindSlots ? mFindSlots : (mFindSlots = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.FindSlots")); }
-			ScriptFunction IsLeftEdgeSlot() { return mIsLeftEdgeSlot ? mIsLeftEdgeSlot : (mIsLeftEdgeSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsLeftEdgeSlot")); }
-			ScriptFunction IsRightEdgeSlot() { return mIsRightEdgeSlot ? mIsRightEdgeSlot : (mIsRightEdgeSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsRightEdgeSlot")); }
-			ScriptFunction GetSlotIdxToLeft() { return mGetSlotIdxToLeft ? mGetSlotIdxToLeft : (mGetSlotIdxToLeft = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotIdxToLeft")); }
-			ScriptFunction GetSlotIdxToRight() { return mGetSlotIdxToRight ? mGetSlotIdxToRight : (mGetSlotIdxToRight = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotIdxToRight")); }
-			ScriptFunction AllowRightTransition() { return mAllowRightTransition ? mAllowRightTransition : (mAllowRightTransition = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AllowRightTransition")); }
-			ScriptFunction AllowLeftTransition() { return mAllowLeftTransition ? mAllowLeftTransition : (mAllowLeftTransition = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AllowLeftTransition")); }
-			ScriptFunction GetFireLinkTo() { return mGetFireLinkTo ? mGetFireLinkTo : (mGetFireLinkTo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetFireLinkTo")); }
-			ScriptFunction HasFireLinkTo() { return mHasFireLinkTo ? mHasFireLinkTo : (mHasFireLinkTo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.HasFireLinkTo")); }
-			ScriptFunction GetSlotActions() { return mGetSlotActions ? mGetSlotActions : (mGetSlotActions = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotActions")); }
-			ScriptFunction SetDisabled() { return mSetDisabled ? mSetDisabled : (mSetDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetDisabled")); }
-			ScriptFunction SetSlotEnabled() { return mSetSlotEnabled ? mSetSlotEnabled : (mSetSlotEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetSlotEnabled")); }
-			ScriptFunction NotifySlotOwnerCoverDisabled() { return mNotifySlotOwnerCoverDisabled ? mNotifySlotOwnerCoverDisabled : (mNotifySlotOwnerCoverDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.NotifySlotOwnerCoverDisabled")); }
-			ScriptFunction SetSlotPlayerOnly() { return mSetSlotPlayerOnly ? mSetSlotPlayerOnly : (mSetSlotPlayerOnly = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetSlotPlayerOnly")); }
-			ScriptFunction OnModifyCover() { return mOnModifyCover ? mOnModifyCover : (mOnModifyCover = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.OnModifyCover")); }
-			ScriptFunction AutoAdjustSlot() { return mAutoAdjustSlot ? mAutoAdjustSlot : (mAutoAdjustSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AutoAdjustSlot")); }
-			ScriptFunction IsEnabled() { return mIsEnabled ? mIsEnabled : (mIsEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsEnabled")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.OnToggle")); }
-			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.CreateCheckpointRecord")); }
-			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.ApplyCheckpointRecord")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.ShutDown")); }
-			ScriptFunction GetSwatTurnTarget() { return mGetSwatTurnTarget ? mGetSwatTurnTarget : (mGetSwatTurnTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSwatTurnTarget")); }
-			ScriptFunction BreakFracturedMeshes() { return mBreakFracturedMeshes ? mBreakFracturedMeshes : (mBreakFracturedMeshes = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.BreakFracturedMeshes")); }
-			ScriptFunction AddCoverSlot() { return mAddCoverSlot ? mAddCoverSlot : (mAddCoverSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AddCoverSlot")); }
-			ScriptFunction GetDebugString() { return mGetDebugString ? mGetDebugString : (mGetDebugString = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetDebugString")); }
-			ScriptFunction GetLocationDescription() { return mGetLocationDescription ? mGetLocationDescription : (mGetLocationDescription = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetLocationDescription")); }
-			ScriptFunction GetDebugAbbrev() { return mGetDebugAbbrev ? mGetDebugAbbrev : (mGetDebugAbbrev = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetDebugAbbrev")); }
+			ScriptFunction GetFireLinkTargetCoverInfo() { mixin(MGF!("mGetFireLinkTargetCoverInfo", "Function Engine.CoverLink.GetFireLinkTargetCoverInfo")()); }
+			ScriptFunction PackFireLinkInteractionInfo() { mixin(MGF!("mPackFireLinkInteractionInfo", "Function Engine.CoverLink.PackFireLinkInteractionInfo")()); }
+			ScriptFunction UnPackFireLinkInteractionInfo() { mixin(MGF!("mUnPackFireLinkInteractionInfo", "Function Engine.CoverLink.UnPackFireLinkInteractionInfo")()); }
+			ScriptFunction GetSlotLocation() { mixin(MGF!("mGetSlotLocation", "Function Engine.CoverLink.GetSlotLocation")()); }
+			ScriptFunction GetSlotRotation() { mixin(MGF!("mGetSlotRotation", "Function Engine.CoverLink.GetSlotRotation")()); }
+			ScriptFunction GetSlotViewPoint() { mixin(MGF!("mGetSlotViewPoint", "Function Engine.CoverLink.GetSlotViewPoint")()); }
+			ScriptFunction IsExposedTo() { mixin(MGF!("mIsExposedTo", "Function Engine.CoverLink.IsExposedTo")()); }
+			ScriptFunction SetInvalidUntil() { mixin(MGF!("mSetInvalidUntil", "Function Engine.CoverLink.SetInvalidUntil")()); }
+			ScriptFunction Claim() { mixin(MGF!("mClaim", "Function Engine.CoverLink.Claim")()); }
+			ScriptFunction UnClaim() { mixin(MGF!("mUnClaim", "Function Engine.CoverLink.UnClaim")()); }
+			ScriptFunction IsValidClaim() { mixin(MGF!("mIsValidClaim", "Function Engine.CoverLink.IsValidClaim")()); }
+			ScriptFunction IsValidClaimBetween() { mixin(MGF!("mIsValidClaimBetween", "Function Engine.CoverLink.IsValidClaimBetween")()); }
+			ScriptFunction IsStationarySlot() { mixin(MGF!("mIsStationarySlot", "Function Engine.CoverLink.IsStationarySlot")()); }
+			ScriptFunction IsEdgeSlot() { mixin(MGF!("mIsEdgeSlot", "Function Engine.CoverLink.IsEdgeSlot")()); }
+			ScriptFunction FindSlots() { mixin(MGF!("mFindSlots", "Function Engine.CoverLink.FindSlots")()); }
+			ScriptFunction IsLeftEdgeSlot() { mixin(MGF!("mIsLeftEdgeSlot", "Function Engine.CoverLink.IsLeftEdgeSlot")()); }
+			ScriptFunction IsRightEdgeSlot() { mixin(MGF!("mIsRightEdgeSlot", "Function Engine.CoverLink.IsRightEdgeSlot")()); }
+			ScriptFunction GetSlotIdxToLeft() { mixin(MGF!("mGetSlotIdxToLeft", "Function Engine.CoverLink.GetSlotIdxToLeft")()); }
+			ScriptFunction GetSlotIdxToRight() { mixin(MGF!("mGetSlotIdxToRight", "Function Engine.CoverLink.GetSlotIdxToRight")()); }
+			ScriptFunction AllowRightTransition() { mixin(MGF!("mAllowRightTransition", "Function Engine.CoverLink.AllowRightTransition")()); }
+			ScriptFunction AllowLeftTransition() { mixin(MGF!("mAllowLeftTransition", "Function Engine.CoverLink.AllowLeftTransition")()); }
+			ScriptFunction GetFireLinkTo() { mixin(MGF!("mGetFireLinkTo", "Function Engine.CoverLink.GetFireLinkTo")()); }
+			ScriptFunction HasFireLinkTo() { mixin(MGF!("mHasFireLinkTo", "Function Engine.CoverLink.HasFireLinkTo")()); }
+			ScriptFunction GetSlotActions() { mixin(MGF!("mGetSlotActions", "Function Engine.CoverLink.GetSlotActions")()); }
+			ScriptFunction SetDisabled() { mixin(MGF!("mSetDisabled", "Function Engine.CoverLink.SetDisabled")()); }
+			ScriptFunction SetSlotEnabled() { mixin(MGF!("mSetSlotEnabled", "Function Engine.CoverLink.SetSlotEnabled")()); }
+			ScriptFunction NotifySlotOwnerCoverDisabled() { mixin(MGF!("mNotifySlotOwnerCoverDisabled", "Function Engine.CoverLink.NotifySlotOwnerCoverDisabled")()); }
+			ScriptFunction SetSlotPlayerOnly() { mixin(MGF!("mSetSlotPlayerOnly", "Function Engine.CoverLink.SetSlotPlayerOnly")()); }
+			ScriptFunction OnModifyCover() { mixin(MGF!("mOnModifyCover", "Function Engine.CoverLink.OnModifyCover")()); }
+			ScriptFunction AutoAdjustSlot() { mixin(MGF!("mAutoAdjustSlot", "Function Engine.CoverLink.AutoAdjustSlot")()); }
+			ScriptFunction IsEnabled() { mixin(MGF!("mIsEnabled", "Function Engine.CoverLink.IsEnabled")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.CoverLink.OnToggle")()); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.CoverLink.CreateCheckpointRecord")()); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.CoverLink.ApplyCheckpointRecord")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.CoverLink.ShutDown")()); }
+			ScriptFunction GetSwatTurnTarget() { mixin(MGF!("mGetSwatTurnTarget", "Function Engine.CoverLink.GetSwatTurnTarget")()); }
+			ScriptFunction BreakFracturedMeshes() { mixin(MGF!("mBreakFracturedMeshes", "Function Engine.CoverLink.BreakFracturedMeshes")()); }
+			ScriptFunction AddCoverSlot() { mixin(MGF!("mAddCoverSlot", "Function Engine.CoverLink.AddCoverSlot")()); }
+			ScriptFunction GetDebugString() { mixin(MGF!("mGetDebugString", "Function Engine.CoverLink.GetDebugString")()); }
+			ScriptFunction GetLocationDescription() { mixin(MGF!("mGetLocationDescription", "Function Engine.CoverLink.GetLocationDescription")()); }
+			ScriptFunction GetDebugAbbrev() { mixin(MGF!("mGetDebugAbbrev", "Function Engine.CoverLink.GetDebugAbbrev")()); }
 		}
 	}
 	static struct Constants
@@ -174,16 +175,16 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CovPosInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CovPosInfo")()); }
 		@property final auto ref
 		{
-			CoverLink Link() { return *cast(CoverLink*)(cast(size_t)&this + 0); }
-			int LtSlotIdx() { return *cast(int*)(cast(size_t)&this + 4); }
-			int RtSlotIdx() { return *cast(int*)(cast(size_t)&this + 8); }
-			float LtToRtPct() { return *cast(float*)(cast(size_t)&this + 12); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			Vector Normal() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			Vector Tangent() { return *cast(Vector*)(cast(size_t)&this + 40); }
+			CoverLink Link() { mixin(MGPS!(CoverLink, 0)()); }
+			int LtSlotIdx() { mixin(MGPS!(int, 4)()); }
+			int RtSlotIdx() { mixin(MGPS!(int, 8)()); }
+			float LtToRtPct() { mixin(MGPS!(float, 12)()); }
+			Vector Location() { mixin(MGPS!(Vector, 16)()); }
+			Vector Normal() { mixin(MGPS!(Vector, 28)()); }
+			Vector Tangent() { mixin(MGPS!(Vector, 40)()); }
 		}
 	}
 	struct FireLinkItem
@@ -191,13 +192,13 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.FireLinkItem")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.FireLinkItem")()); }
 		@property final auto ref
 		{
-			CoverLink.ECoverAction DestAction() { return *cast(CoverLink.ECoverAction*)(cast(size_t)&this + 3); }
-			CoverLink.ECoverType DestType() { return *cast(CoverLink.ECoverType*)(cast(size_t)&this + 2); }
-			CoverLink.ECoverAction SrcAction() { return *cast(CoverLink.ECoverAction*)(cast(size_t)&this + 1); }
-			CoverLink.ECoverType SrcType() { return *cast(CoverLink.ECoverType*)(cast(size_t)&this + 0); }
+			CoverLink.ECoverAction DestAction() { mixin(MGPS!(CoverLink.ECoverAction, 3)()); }
+			CoverLink.ECoverType DestType() { mixin(MGPS!(CoverLink.ECoverType, 2)()); }
+			CoverLink.ECoverAction SrcAction() { mixin(MGPS!(CoverLink.ECoverAction, 1)()); }
+			CoverLink.ECoverType SrcType() { mixin(MGPS!(CoverLink.ECoverType, 0)()); }
 		}
 	}
 	struct FireLink
@@ -205,18 +206,18 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.FireLink")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.FireLink")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(ubyte) Interactions() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 0); }
-				int PackedProperties_CoverPairRefAndDynamicInfo() { return *cast(int*)(cast(size_t)&this + 12); }
+				ScriptArray!(ubyte) Interactions() { mixin(MGPS!(ScriptArray!(ubyte), 0)()); }
+				int PackedProperties_CoverPairRefAndDynamicInfo() { mixin(MGPS!(int, 12)()); }
 			}
-			bool bDynamicIndexInited() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x2) != 0; }
-			bool bDynamicIndexInited(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x2; } return val; }
-			bool bFallbackLink() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-			bool bFallbackLink(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
+			bool bDynamicIndexInited() { mixin(MGBPS!(16, 0x2)()); }
+			bool bDynamicIndexInited(bool val) { mixin(MSBPS!(16, 0x2)()); }
+			bool bFallbackLink() { mixin(MGBPS!(16, 0x1)()); }
+			bool bFallbackLink(bool val) { mixin(MSBPS!(16, 0x1)()); }
 		}
 	}
 	struct DynamicLinkInfo
@@ -224,11 +225,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.DynamicLinkInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.DynamicLinkInfo")()); }
 		@property final auto ref
 		{
-			Vector LastSrcLocation() { return *cast(Vector*)(cast(size_t)&this + 12); }
-			Vector LastTargetLocation() { return *cast(Vector*)(cast(size_t)&this + 0); }
+			Vector LastSrcLocation() { mixin(MGPS!(Vector, 12)()); }
+			Vector LastTargetLocation() { mixin(MGPS!(Vector, 0)()); }
 		}
 	}
 	struct ExposedLink
@@ -236,11 +237,11 @@ public extern(D):
 		private ubyte __buffer__[25];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.ExposedLink")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.ExposedLink")()); }
 		@property final auto ref
 		{
-			ubyte ExposedScale() { return *cast(ubyte*)(cast(size_t)&this + 24); }
-			CoverLink.CoverReference TargetActor() { return *cast(CoverLink.CoverReference*)(cast(size_t)&this + 0); }
+			ubyte ExposedScale() { mixin(MGPS!(ubyte, 24)()); }
+			CoverLink.CoverReference TargetActor() { mixin(MGPS!(CoverLink.CoverReference, 0)()); }
 		}
 	}
 	struct CoverReference
@@ -248,25 +249,25 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CoverReference")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CoverReference")()); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
 			// WARNING: Property 'Actor' has the same name as a defined type!
 		}
-		@property final auto ref int SlotIdx() { return *cast(int*)(cast(size_t)&this + 20); }
+		@property final auto ref int SlotIdx() { mixin(MGPS!(int, 20)()); }
 	}
 	struct SlotMoveRef
 	{
 		private ubyte __buffer__[80];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.SlotMoveRef")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.SlotMoveRef")()); }
 		@property final auto ref
 		{
-			int Direction() { return *cast(int*)(cast(size_t)&this + 76); }
-			Actor.BasedPosition Dest() { return *cast(Actor.BasedPosition*)(cast(size_t)&this + 24); }
-			Pylon.PolyReference Poly() { return *cast(Pylon.PolyReference*)(cast(size_t)&this + 0); }
+			int Direction() { mixin(MGPS!(int, 76)()); }
+			Actor.BasedPosition Dest() { mixin(MGPS!(Actor.BasedPosition, 24)()); }
+			Pylon.PolyReference Poly() { mixin(MGPS!(Pylon.PolyReference, 0)()); }
 		}
 	}
 	struct CoverSlot
@@ -274,70 +275,70 @@ public extern(D):
 		private ubyte __buffer__[116];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CoverSlot")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CoverSlot")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(CoverLink.ECoverAction) Actions() { return *cast(ScriptArray!(CoverLink.ECoverAction)*)(cast(size_t)&this + 36); }
-				ScriptArray!(CoverLink.FireLink) FireLinks() { return *cast(ScriptArray!(CoverLink.FireLink)*)(cast(size_t)&this + 48); }
-				ScriptArray!(CoverLink.FireLink) RejectedFireLinks() { return *cast(ScriptArray!(CoverLink.FireLink)*)(cast(size_t)&this + 60); }
-				ScriptArray!(int) ExposedCoverPackedProperties() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 72); }
-				ScriptArray!(CoverLink.SlotMoveRef) SlipRefs() { return *cast(ScriptArray!(CoverLink.SlotMoveRef)*)(cast(size_t)&this + 88); }
-				ScriptArray!(CoverLink.CoverInfo) OverlapClaimsList() { return *cast(ScriptArray!(CoverLink.CoverInfo)*)(cast(size_t)&this + 100); }
-				int TurnTargetPackedProperties() { return *cast(int*)(cast(size_t)&this + 84); }
-				Rotator RotationOffset() { return *cast(Rotator*)(cast(size_t)&this + 24); }
-				Vector LocationOffset() { return *cast(Vector*)(cast(size_t)&this + 12); }
-				CoverLink.ECoverLocationDescription LocationDescription() { return *cast(CoverLink.ECoverLocationDescription*)(cast(size_t)&this + 10); }
-				CoverLink.ECoverType CoverType() { return *cast(CoverLink.ECoverType*)(cast(size_t)&this + 9); }
-				CoverLink.ECoverType ForceCoverType() { return *cast(CoverLink.ECoverType*)(cast(size_t)&this + 8); }
-				float SlotValidAfterTime() { return *cast(float*)(cast(size_t)&this + 4); }
-				Pawn SlotOwner() { return *cast(Pawn*)(cast(size_t)&this + 0); }
+				ScriptArray!(CoverLink.ECoverAction) Actions() { mixin(MGPS!(ScriptArray!(CoverLink.ECoverAction), 36)()); }
+				ScriptArray!(CoverLink.FireLink) FireLinks() { mixin(MGPS!(ScriptArray!(CoverLink.FireLink), 48)()); }
+				ScriptArray!(CoverLink.FireLink) RejectedFireLinks() { mixin(MGPS!(ScriptArray!(CoverLink.FireLink), 60)()); }
+				ScriptArray!(int) ExposedCoverPackedProperties() { mixin(MGPS!(ScriptArray!(int), 72)()); }
+				ScriptArray!(CoverLink.SlotMoveRef) SlipRefs() { mixin(MGPS!(ScriptArray!(CoverLink.SlotMoveRef), 88)()); }
+				ScriptArray!(CoverLink.CoverInfo) OverlapClaimsList() { mixin(MGPS!(ScriptArray!(CoverLink.CoverInfo), 100)()); }
+				int TurnTargetPackedProperties() { mixin(MGPS!(int, 84)()); }
+				Rotator RotationOffset() { mixin(MGPS!(Rotator, 24)()); }
+				Vector LocationOffset() { mixin(MGPS!(Vector, 12)()); }
+				CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPS!(CoverLink.ECoverLocationDescription, 10)()); }
+				CoverLink.ECoverType CoverType() { mixin(MGPS!(CoverLink.ECoverType, 9)()); }
+				CoverLink.ECoverType ForceCoverType() { mixin(MGPS!(CoverLink.ECoverType, 8)()); }
+				float SlotValidAfterTime() { mixin(MGPS!(float, 4)()); }
+				Pawn SlotOwner() { mixin(MGPS!(Pawn, 0)()); }
 			}
-			bool bFailedToFindSurface() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x200000) != 0; }
-			bool bFailedToFindSurface(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x200000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x200000; } return val; }
-			bool bSelected() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x100000) != 0; }
-			bool bSelected(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x100000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x100000; } return val; }
-			bool bPlayerOnly() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x80000) != 0; }
-			bool bPlayerOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x80000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x80000; } return val; }
-			bool bForceNoGroundAdjust() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x40000) != 0; }
-			bool bForceNoGroundAdjust(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x40000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x40000; } return val; }
-			bool bAllowSwatTurn() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x20000) != 0; }
-			bool bAllowSwatTurn(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x20000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x20000; } return val; }
-			bool bAllowClimbUp() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x10000) != 0; }
-			bool bAllowClimbUp(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x10000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x10000; } return val; }
-			bool bAllowCoverSlip() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x8000) != 0; }
-			bool bAllowCoverSlip(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x8000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x8000; } return val; }
-			bool bAllowMantle() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x4000) != 0; }
-			bool bAllowMantle(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x4000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x4000; } return val; }
-			bool bAllowPopup() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x2000) != 0; }
-			bool bAllowPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x2000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x2000; } return val; }
-			bool bEnabled() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x1000) != 0; }
-			bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x1000; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x1000; } return val; }
-			bool bCanSwatTurn_Right() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x800) != 0; }
-			bool bCanSwatTurn_Right(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x800; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x800; } return val; }
-			bool bCanSwatTurn_Left() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x400) != 0; }
-			bool bCanSwatTurn_Left(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x400; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x400; } return val; }
-			bool bCanCoverSlip_Right() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x200) != 0; }
-			bool bCanCoverSlip_Right(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x200; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x200; } return val; }
-			bool bCanCoverSlip_Left() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x100) != 0; }
-			bool bCanCoverSlip_Left(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x100; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x100; } return val; }
-			bool bForceCanCoverSlip_Right() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x80) != 0; }
-			bool bForceCanCoverSlip_Right(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x80; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x80; } return val; }
-			bool bForceCanCoverSlip_Left() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x40) != 0; }
-			bool bForceCanCoverSlip_Left(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x40; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x40; } return val; }
-			bool bCanClimbUp() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x20) != 0; }
-			bool bCanClimbUp(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x20; } return val; }
-			bool bCanMantle() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x10) != 0; }
-			bool bCanMantle(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x10; } return val; }
-			bool bCanPopUp() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x8) != 0; }
-			bool bCanPopUp(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x8; } return val; }
-			bool bForceCanPopUp() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x4) != 0; }
-			bool bForceCanPopUp(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x4; } return val; }
-			bool bLeanRight() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x2) != 0; }
-			bool bLeanRight(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x2; } return val; }
-			bool bLeanLeft() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x1) != 0; }
-			bool bLeanLeft(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x1; } return val; }
+			bool bFailedToFindSurface() { mixin(MGBPS!(112, 0x200000)()); }
+			bool bFailedToFindSurface(bool val) { mixin(MSBPS!(112, 0x200000)()); }
+			bool bSelected() { mixin(MGBPS!(112, 0x100000)()); }
+			bool bSelected(bool val) { mixin(MSBPS!(112, 0x100000)()); }
+			bool bPlayerOnly() { mixin(MGBPS!(112, 0x80000)()); }
+			bool bPlayerOnly(bool val) { mixin(MSBPS!(112, 0x80000)()); }
+			bool bForceNoGroundAdjust() { mixin(MGBPS!(112, 0x40000)()); }
+			bool bForceNoGroundAdjust(bool val) { mixin(MSBPS!(112, 0x40000)()); }
+			bool bAllowSwatTurn() { mixin(MGBPS!(112, 0x20000)()); }
+			bool bAllowSwatTurn(bool val) { mixin(MSBPS!(112, 0x20000)()); }
+			bool bAllowClimbUp() { mixin(MGBPS!(112, 0x10000)()); }
+			bool bAllowClimbUp(bool val) { mixin(MSBPS!(112, 0x10000)()); }
+			bool bAllowCoverSlip() { mixin(MGBPS!(112, 0x8000)()); }
+			bool bAllowCoverSlip(bool val) { mixin(MSBPS!(112, 0x8000)()); }
+			bool bAllowMantle() { mixin(MGBPS!(112, 0x4000)()); }
+			bool bAllowMantle(bool val) { mixin(MSBPS!(112, 0x4000)()); }
+			bool bAllowPopup() { mixin(MGBPS!(112, 0x2000)()); }
+			bool bAllowPopup(bool val) { mixin(MSBPS!(112, 0x2000)()); }
+			bool bEnabled() { mixin(MGBPS!(112, 0x1000)()); }
+			bool bEnabled(bool val) { mixin(MSBPS!(112, 0x1000)()); }
+			bool bCanSwatTurn_Right() { mixin(MGBPS!(112, 0x800)()); }
+			bool bCanSwatTurn_Right(bool val) { mixin(MSBPS!(112, 0x800)()); }
+			bool bCanSwatTurn_Left() { mixin(MGBPS!(112, 0x400)()); }
+			bool bCanSwatTurn_Left(bool val) { mixin(MSBPS!(112, 0x400)()); }
+			bool bCanCoverSlip_Right() { mixin(MGBPS!(112, 0x200)()); }
+			bool bCanCoverSlip_Right(bool val) { mixin(MSBPS!(112, 0x200)()); }
+			bool bCanCoverSlip_Left() { mixin(MGBPS!(112, 0x100)()); }
+			bool bCanCoverSlip_Left(bool val) { mixin(MSBPS!(112, 0x100)()); }
+			bool bForceCanCoverSlip_Right() { mixin(MGBPS!(112, 0x80)()); }
+			bool bForceCanCoverSlip_Right(bool val) { mixin(MSBPS!(112, 0x80)()); }
+			bool bForceCanCoverSlip_Left() { mixin(MGBPS!(112, 0x40)()); }
+			bool bForceCanCoverSlip_Left(bool val) { mixin(MSBPS!(112, 0x40)()); }
+			bool bCanClimbUp() { mixin(MGBPS!(112, 0x20)()); }
+			bool bCanClimbUp(bool val) { mixin(MSBPS!(112, 0x20)()); }
+			bool bCanMantle() { mixin(MGBPS!(112, 0x10)()); }
+			bool bCanMantle(bool val) { mixin(MSBPS!(112, 0x10)()); }
+			bool bCanPopUp() { mixin(MGBPS!(112, 0x8)()); }
+			bool bCanPopUp(bool val) { mixin(MSBPS!(112, 0x8)()); }
+			bool bForceCanPopUp() { mixin(MGBPS!(112, 0x4)()); }
+			bool bForceCanPopUp(bool val) { mixin(MSBPS!(112, 0x4)()); }
+			bool bLeanRight() { mixin(MGBPS!(112, 0x2)()); }
+			bool bLeanRight(bool val) { mixin(MSBPS!(112, 0x2)()); }
+			bool bLeanLeft() { mixin(MGBPS!(112, 0x1)()); }
+			bool bLeanLeft(bool val) { mixin(MSBPS!(112, 0x1)()); }
 		}
 	}
 	struct CoverInfo
@@ -345,75 +346,75 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CoverInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CoverInfo")()); }
 		@property final auto ref
 		{
-			CoverLink Link() { return *cast(CoverLink*)(cast(size_t)&this + 0); }
-			int SlotIdx() { return *cast(int*)(cast(size_t)&this + 4); }
+			CoverLink Link() { mixin(MGPS!(CoverLink, 0)()); }
+			int SlotIdx() { mixin(MGPS!(int, 4)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(CoverLink.CoverSlot) Slots() { return *cast(ScriptArray!(CoverLink.CoverSlot)*)(cast(size_t)cast(void*)this + 700); }
-			ScriptArray!(Pawn) Claims() { return *cast(ScriptArray!(Pawn)*)(cast(size_t)cast(void*)this + 724); }
-			float LeanTraceDist() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-			ScriptArray!(CoverLink.DynamicLinkInfo) DynamicLinkInfos() { return *cast(ScriptArray!(CoverLink.DynamicLinkInfo)*)(cast(size_t)cast(void*)this + 712); }
-			float InvalidateDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 736); }
-			float MaxFireLinkDist() { return *cast(float*)(cast(size_t)cast(void*)this + 740); }
-			Vector CircularOrigin() { return *cast(Vector*)(cast(size_t)cast(void*)this + 744); }
-			float CircularRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 756); }
-			float AlignDist() { return *cast(float*)(cast(size_t)cast(void*)this + 760); }
-			float AutoCoverSlotInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 764); }
-			float StandHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 768); }
-			float MidHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 772); }
-			Vector StandingLeanOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 776); }
-			Vector CrouchLeanOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 788); }
-			Vector PopupOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 800); }
-			float SlipDist() { return *cast(float*)(cast(size_t)cast(void*)this + 812); }
-			float TurnDist() { return *cast(float*)(cast(size_t)cast(void*)this + 816); }
-			float DangerScale() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
-			CoverLink NextCoverLink() { return *cast(CoverLink*)(cast(size_t)cast(void*)this + 824); }
-			CoverLink.ECoverLocationDescription LocationDescription() { return *cast(CoverLink.ECoverLocationDescription*)(cast(size_t)cast(void*)this + 828); }
+			ScriptArray!(CoverLink.CoverSlot) Slots() { mixin(MGPC!(ScriptArray!(CoverLink.CoverSlot), 700)()); }
+			ScriptArray!(Pawn) Claims() { mixin(MGPC!(ScriptArray!(Pawn), 724)()); }
+			float LeanTraceDist() { mixin(MGPC!(float, 696)()); }
+			ScriptArray!(CoverLink.DynamicLinkInfo) DynamicLinkInfos() { mixin(MGPC!(ScriptArray!(CoverLink.DynamicLinkInfo), 712)()); }
+			float InvalidateDistance() { mixin(MGPC!(float, 736)()); }
+			float MaxFireLinkDist() { mixin(MGPC!(float, 740)()); }
+			Vector CircularOrigin() { mixin(MGPC!(Vector, 744)()); }
+			float CircularRadius() { mixin(MGPC!(float, 756)()); }
+			float AlignDist() { mixin(MGPC!(float, 760)()); }
+			float AutoCoverSlotInterval() { mixin(MGPC!(float, 764)()); }
+			float StandHeight() { mixin(MGPC!(float, 768)()); }
+			float MidHeight() { mixin(MGPC!(float, 772)()); }
+			Vector StandingLeanOffset() { mixin(MGPC!(Vector, 776)()); }
+			Vector CrouchLeanOffset() { mixin(MGPC!(Vector, 788)()); }
+			Vector PopupOffset() { mixin(MGPC!(Vector, 800)()); }
+			float SlipDist() { mixin(MGPC!(float, 812)()); }
+			float TurnDist() { mixin(MGPC!(float, 816)()); }
+			float DangerScale() { mixin(MGPC!(float, 820)()); }
+			CoverLink NextCoverLink() { mixin(MGPC!(CoverLink, 824)()); }
+			CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPC!(CoverLink.ECoverLocationDescription, 828)()); }
 		}
-		bool bClaimAllSlots() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x4) != 0; }
-		bool bClaimAllSlots(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x4; } return val; }
-		bool bCircular() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x20) != 0; }
-		bool bCircular(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x20; } return val; }
-		bool bDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x2) != 0; }
-		bool bDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x2; } return val; }
-		bool bFractureOnTouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x200) != 0; }
-		bool bFractureOnTouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x200; } return val; }
-		bool GLOBAL_bUseSlotMarkers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x1) != 0; }
-		bool GLOBAL_bUseSlotMarkers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x1; } return val; }
-		bool bAutoSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x8) != 0; }
-		bool bAutoSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x8; } return val; }
-		bool bAutoAdjust() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x10) != 0; }
-		bool bAutoAdjust(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x10; } return val; }
-		bool bLooped() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x40) != 0; }
-		bool bLooped(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x40; } return val; }
-		bool bPlayerOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x80) != 0; }
-		bool bPlayerOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x80; } return val; }
-		bool bDynamicCover() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x100) != 0; }
-		bool bDynamicCover(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x100; } return val; }
-		bool bDebug_FireLinks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x400) != 0; }
-		bool bDebug_FireLinks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x400; } return val; }
-		bool bDebug_ExposedLinks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x800) != 0; }
-		bool bDebug_ExposedLinks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x800; } return val; }
-		bool bDebug_CoverGen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x1000) != 0; }
-		bool bDebug_CoverGen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x1000; } return val; }
-		bool bDoAutoSlotDensityFixup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x2000) != 0; }
-		bool bDoAutoSlotDensityFixup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x2000; } return val; }
+		bool bClaimAllSlots() { mixin(MGBPC!(692, 0x4)()); }
+		bool bClaimAllSlots(bool val) { mixin(MSBPC!(692, 0x4)()); }
+		bool bCircular() { mixin(MGBPC!(692, 0x20)()); }
+		bool bCircular(bool val) { mixin(MSBPC!(692, 0x20)()); }
+		bool bDisabled() { mixin(MGBPC!(692, 0x2)()); }
+		bool bDisabled(bool val) { mixin(MSBPC!(692, 0x2)()); }
+		bool bFractureOnTouch() { mixin(MGBPC!(692, 0x200)()); }
+		bool bFractureOnTouch(bool val) { mixin(MSBPC!(692, 0x200)()); }
+		bool GLOBAL_bUseSlotMarkers() { mixin(MGBPC!(692, 0x1)()); }
+		bool GLOBAL_bUseSlotMarkers(bool val) { mixin(MSBPC!(692, 0x1)()); }
+		bool bAutoSort() { mixin(MGBPC!(692, 0x8)()); }
+		bool bAutoSort(bool val) { mixin(MSBPC!(692, 0x8)()); }
+		bool bAutoAdjust() { mixin(MGBPC!(692, 0x10)()); }
+		bool bAutoAdjust(bool val) { mixin(MSBPC!(692, 0x10)()); }
+		bool bLooped() { mixin(MGBPC!(692, 0x40)()); }
+		bool bLooped(bool val) { mixin(MSBPC!(692, 0x40)()); }
+		bool bPlayerOnly() { mixin(MGBPC!(692, 0x80)()); }
+		bool bPlayerOnly(bool val) { mixin(MSBPC!(692, 0x80)()); }
+		bool bDynamicCover() { mixin(MGBPC!(692, 0x100)()); }
+		bool bDynamicCover(bool val) { mixin(MSBPC!(692, 0x100)()); }
+		bool bDebug_FireLinks() { mixin(MGBPC!(692, 0x400)()); }
+		bool bDebug_FireLinks(bool val) { mixin(MSBPC!(692, 0x400)()); }
+		bool bDebug_ExposedLinks() { mixin(MGBPC!(692, 0x800)()); }
+		bool bDebug_ExposedLinks(bool val) { mixin(MSBPC!(692, 0x800)()); }
+		bool bDebug_CoverGen() { mixin(MGBPC!(692, 0x1000)()); }
+		bool bDebug_CoverGen(bool val) { mixin(MSBPC!(692, 0x1000)()); }
+		bool bDoAutoSlotDensityFixup() { mixin(MGBPC!(692, 0x2000)()); }
+		bool bDoAutoSlotDensityFixup(bool val) { mixin(MSBPC!(692, 0x2000)()); }
 	}
 final:
-	bool GetFireLinkTargetCoverInfo(int SlotIdx, int FireLinkIdx, CoverLink.CoverInfo* out_Info, CoverLink.EFireLinkID ArrayID)
+	bool GetFireLinkTargetCoverInfo(int SlotIdx, int FireLinkIdx, ref CoverLink.CoverInfo out_Info, CoverLink.EFireLinkID ArrayID)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(int*)&params[4] = FireLinkIdx;
-		*cast(CoverLink.CoverInfo*)&params[8] = *out_Info;
+		*cast(CoverLink.CoverInfo*)&params[8] = out_Info;
 		*cast(CoverLink.EFireLinkID*)&params[16] = ArrayID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireLinkTargetCoverInfo, params.ptr, cast(void*)0);
 		*out_Info = *cast(CoverLink.CoverInfo*)&params[8];
@@ -430,15 +431,15 @@ final:
 		StaticClass.ProcessEvent(Functions.PackFireLinkInteractionInfo, params.ptr, cast(void*)0);
 		return params[4];
 	}
-	static void UnPackFireLinkInteractionInfo(ubyte PackedByte, CoverLink.ECoverType* SrcType, CoverLink.ECoverAction* SrcAction, CoverLink.ECoverType* DestType, CoverLink.ECoverAction* DestAction)
+	static void UnPackFireLinkInteractionInfo(const ubyte PackedByte, ref CoverLink.ECoverType SrcType, ref CoverLink.ECoverAction SrcAction, ref CoverLink.ECoverType DestType, ref CoverLink.ECoverAction DestAction)
 	{
 		ubyte params[5];
 		params[] = 0;
 		params[0] = PackedByte;
-		*cast(CoverLink.ECoverType*)&params[1] = *SrcType;
-		*cast(CoverLink.ECoverAction*)&params[2] = *SrcAction;
-		*cast(CoverLink.ECoverType*)&params[3] = *DestType;
-		*cast(CoverLink.ECoverAction*)&params[4] = *DestAction;
+		*cast(CoverLink.ECoverType*)&params[1] = SrcType;
+		*cast(CoverLink.ECoverAction*)&params[2] = SrcAction;
+		*cast(CoverLink.ECoverType*)&params[3] = DestType;
+		*cast(CoverLink.ECoverAction*)&params[4] = DestAction;
 		StaticClass.ProcessEvent(Functions.UnPackFireLinkInteractionInfo, params.ptr, cast(void*)0);
 		*SrcType = *cast(CoverLink.ECoverType*)&params[1];
 		*SrcAction = *cast(CoverLink.ECoverAction*)&params[2];
@@ -473,13 +474,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotViewPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
-	bool IsExposedTo(int SlotIdx, CoverLink.CoverInfo ChkSlot, float* out_ExposedScale)
+	bool IsExposedTo(int SlotIdx, CoverLink.CoverInfo ChkSlot, ref float out_ExposedScale)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(CoverLink.CoverInfo*)&params[4] = ChkSlot;
-		*cast(float*)&params[12] = *out_ExposedScale;
+		*cast(float*)&params[12] = out_ExposedScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsExposedTo, params.ptr, cast(void*)0);
 		*out_ExposedScale = *cast(float*)&params[12];
 		return *cast(bool*)&params[16];
@@ -551,14 +552,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsEdgeSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool FindSlots(Vector CheckLocation, float MaxDistance, int* LeftSlotIdx, int* RightSlotIdx)
+	bool FindSlots(Vector CheckLocation, float MaxDistance, ref int LeftSlotIdx, ref int RightSlotIdx)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Vector*)params.ptr = CheckLocation;
 		*cast(float*)&params[12] = MaxDistance;
-		*cast(int*)&params[16] = *LeftSlotIdx;
-		*cast(int*)&params[20] = *RightSlotIdx;
+		*cast(int*)&params[16] = LeftSlotIdx;
+		*cast(int*)&params[20] = RightSlotIdx;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSlots, params.ptr, cast(void*)0);
 		*LeftSlotIdx = *cast(int*)&params[16];
 		*RightSlotIdx = *cast(int*)&params[20];
@@ -616,7 +617,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowLeftTransition, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool GetFireLinkTo(int SlotIdx, CoverLink.CoverInfo ChkCover, CoverLink.ECoverAction ChkAction, CoverLink.ECoverType ChkType, int* out_FireLinkIdx, ScriptArray!(int)* out_Items)
+	bool GetFireLinkTo(int SlotIdx, CoverLink.CoverInfo ChkCover, CoverLink.ECoverAction ChkAction, CoverLink.ECoverType ChkType, ref int out_FireLinkIdx, ref ScriptArray!(int) out_Items)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -624,8 +625,8 @@ final:
 		*cast(CoverLink.CoverInfo*)&params[4] = ChkCover;
 		*cast(CoverLink.ECoverAction*)&params[12] = ChkAction;
 		*cast(CoverLink.ECoverType*)&params[13] = ChkType;
-		*cast(int*)&params[16] = *out_FireLinkIdx;
-		*cast(ScriptArray!(int)*)&params[20] = *out_Items;
+		*cast(int*)&params[16] = out_FireLinkIdx;
+		*cast(ScriptArray!(int)*)&params[20] = out_Items;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireLinkTo, params.ptr, cast(void*)0);
 		*out_FireLinkIdx = *cast(int*)&params[16];
 		*out_Items = *cast(ScriptArray!(int)*)&params[20];
@@ -641,12 +642,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasFireLinkTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	void GetSlotActions(int SlotIdx, ScriptArray!(CoverLink.ECoverAction)* Actions)
+	void GetSlotActions(int SlotIdx, ref ScriptArray!(CoverLink.ECoverAction) Actions)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4] = *Actions;
+		*cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4] = Actions;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotActions, params.ptr, cast(void*)0);
 		*Actions = *cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4];
 	}
@@ -711,19 +712,19 @@ final:
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
-	void CreateCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
+	void CreateCheckpointRecord(ref NavigationPoint.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
+		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
+	void ApplyCheckpointRecord(ref const NavigationPoint.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
+		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
@@ -731,13 +732,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShutDown, cast(void*)0, cast(void*)0);
 	}
-	bool GetSwatTurnTarget(int SlotIdx, int Direction, CoverLink.CoverInfo* out_Info)
+	bool GetSwatTurnTarget(int SlotIdx, int Direction, ref CoverLink.CoverInfo out_Info)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(int*)&params[4] = Direction;
-		*cast(CoverLink.CoverInfo*)&params[8] = *out_Info;
+		*cast(CoverLink.CoverInfo*)&params[8] = out_Info;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSwatTurnTarget, params.ptr, cast(void*)0);
 		*out_Info = *cast(CoverLink.CoverInfo*)&params[8];
 		return *cast(bool*)&params[16];

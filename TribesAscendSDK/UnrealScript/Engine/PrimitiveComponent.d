@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PrimitiveComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorComponent;
 import UnrealScript.Engine.Scene;
 import UnrealScript.Core.UObject;
@@ -12,9 +13,9 @@ extern(C++) interface PrimitiveComponent : ActorComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrimitiveComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PrimitiveComponent")()); }
 	private static __gshared PrimitiveComponent mDefaultProperties;
-	@property final static PrimitiveComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PrimitiveComponent)("PrimitiveComponent Engine.Default__PrimitiveComponent")); }
+	@property final static PrimitiveComponent DefaultProperties() { mixin(MGDPC!(PrimitiveComponent, "PrimitiveComponent Engine.Default__PrimitiveComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -66,50 +67,50 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetBlockRigidBody() { return mSetBlockRigidBody ? mSetBlockRigidBody : (mSetBlockRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetBlockRigidBody")); }
-			ScriptFunction SetRBLinearVelocity() { return mSetRBLinearVelocity ? mSetRBLinearVelocity : (mSetRBLinearVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBLinearVelocity")); }
-			ScriptFunction AddImpulse() { return mAddImpulse ? mAddImpulse : (mAddImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddImpulse")); }
-			ScriptFunction AddRadialImpulse() { return mAddRadialImpulse ? mAddRadialImpulse : (mAddRadialImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddRadialImpulse")); }
-			ScriptFunction AddForce() { return mAddForce ? mAddForce : (mAddForce = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddForce")); }
-			ScriptFunction AddRadialForce() { return mAddRadialForce ? mAddRadialForce : (mAddRadialForce = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddRadialForce")); }
-			ScriptFunction AddTorque() { return mAddTorque ? mAddTorque : (mAddTorque = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddTorque")); }
-			ScriptFunction SetRBAngularVelocity() { return mSetRBAngularVelocity ? mSetRBAngularVelocity : (mSetRBAngularVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBAngularVelocity")); }
-			ScriptFunction RetardRBLinearVelocity() { return mRetardRBLinearVelocity ? mRetardRBLinearVelocity : (mRetardRBLinearVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.RetardRBLinearVelocity")); }
-			ScriptFunction SetRBPosition() { return mSetRBPosition ? mSetRBPosition : (mSetRBPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBPosition")); }
-			ScriptFunction SetRBRotation() { return mSetRBRotation ? mSetRBRotation : (mSetRBRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBRotation")); }
-			ScriptFunction WakeRigidBody() { return mWakeRigidBody ? mWakeRigidBody : (mWakeRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.WakeRigidBody")); }
-			ScriptFunction PutRigidBodyToSleep() { return mPutRigidBodyToSleep ? mPutRigidBodyToSleep : (mPutRigidBodyToSleep = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.PutRigidBodyToSleep")); }
-			ScriptFunction RigidBodyIsAwake() { return mRigidBodyIsAwake ? mRigidBodyIsAwake : (mRigidBodyIsAwake = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.RigidBodyIsAwake")); }
-			ScriptFunction SetRBCollidesWithChannel() { return mSetRBCollidesWithChannel ? mSetRBCollidesWithChannel : (mSetRBCollidesWithChannel = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBCollidesWithChannel")); }
-			ScriptFunction SetRBCollisionChannels() { return mSetRBCollisionChannels ? mSetRBCollisionChannels : (mSetRBCollisionChannels = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBCollisionChannels")); }
-			ScriptFunction SetRBChannel() { return mSetRBChannel ? mSetRBChannel : (mSetRBChannel = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBChannel")); }
-			ScriptFunction SetNotifyRigidBodyCollision() { return mSetNotifyRigidBodyCollision ? mSetNotifyRigidBodyCollision : (mSetNotifyRigidBodyCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetNotifyRigidBodyCollision")); }
-			ScriptFunction InitRBPhys() { return mInitRBPhys ? mInitRBPhys : (mInitRBPhys = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.InitRBPhys")); }
-			ScriptFunction SetPhysMaterialOverride() { return mSetPhysMaterialOverride ? mSetPhysMaterialOverride : (mSetPhysMaterialOverride = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetPhysMaterialOverride")); }
-			ScriptFunction GetRootBodyInstance() { return mGetRootBodyInstance ? mGetRootBodyInstance : (mGetRootBodyInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.GetRootBodyInstance")); }
-			ScriptFunction SetRBDominanceGroup() { return mSetRBDominanceGroup ? mSetRBDominanceGroup : (mSetRBDominanceGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBDominanceGroup")); }
-			ScriptFunction ShouldComponentAddToScene() { return mShouldComponentAddToScene ? mShouldComponentAddToScene : (mShouldComponentAddToScene = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.ShouldComponentAddToScene")); }
-			ScriptFunction SetHidden() { return mSetHidden ? mSetHidden : (mSetHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetHidden")); }
-			ScriptFunction SetOwnerNoSee() { return mSetOwnerNoSee ? mSetOwnerNoSee : (mSetOwnerNoSee = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetOwnerNoSee")); }
-			ScriptFunction SetOnlyOwnerSee() { return mSetOnlyOwnerSee ? mSetOnlyOwnerSee : (mSetOnlyOwnerSee = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetOnlyOwnerSee")); }
-			ScriptFunction SetIgnoreOwnerHidden() { return mSetIgnoreOwnerHidden ? mSetIgnoreOwnerHidden : (mSetIgnoreOwnerHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetIgnoreOwnerHidden")); }
-			ScriptFunction SetShadowParent() { return mSetShadowParent ? mSetShadowParent : (mSetShadowParent = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetShadowParent")); }
-			ScriptFunction SetLightEnvironment() { return mSetLightEnvironment ? mSetLightEnvironment : (mSetLightEnvironment = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetLightEnvironment")); }
-			ScriptFunction SetCullDistance() { return mSetCullDistance ? mSetCullDistance : (mSetCullDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetCullDistance")); }
-			ScriptFunction SetLightingChannels() { return mSetLightingChannels ? mSetLightingChannels : (mSetLightingChannels = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetLightingChannels")); }
-			ScriptFunction SetDepthPriorityGroup() { return mSetDepthPriorityGroup ? mSetDepthPriorityGroup : (mSetDepthPriorityGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetDepthPriorityGroup")); }
-			ScriptFunction SetViewOwnerDepthPriorityGroup() { return mSetViewOwnerDepthPriorityGroup ? mSetViewOwnerDepthPriorityGroup : (mSetViewOwnerDepthPriorityGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetViewOwnerDepthPriorityGroup")); }
-			ScriptFunction SetTraceBlocking() { return mSetTraceBlocking ? mSetTraceBlocking : (mSetTraceBlocking = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetTraceBlocking")); }
-			ScriptFunction SetActorCollision() { return mSetActorCollision ? mSetActorCollision : (mSetActorCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetActorCollision")); }
-			ScriptFunction SetTranslation() { return mSetTranslation ? mSetTranslation : (mSetTranslation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetTranslation")); }
-			ScriptFunction SetRotation() { return mSetRotation ? mSetRotation : (mSetRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRotation")); }
-			ScriptFunction SetScale() { return mSetScale ? mSetScale : (mSetScale = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetScale")); }
-			ScriptFunction SetScale3D() { return mSetScale3D ? mSetScale3D : (mSetScale3D = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetScale3D")); }
-			ScriptFunction SetAbsolute() { return mSetAbsolute ? mSetAbsolute : (mSetAbsolute = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetAbsolute")); }
-			ScriptFunction GetPosition() { return mGetPosition ? mGetPosition : (mGetPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.GetPosition")); }
-			ScriptFunction GetRotation() { return mGetRotation ? mGetRotation : (mGetRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.GetRotation")); }
-			ScriptFunction ClosestPointOnComponentToPoint() { return mClosestPointOnComponentToPoint ? mClosestPointOnComponentToPoint : (mClosestPointOnComponentToPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.ClosestPointOnComponentToPoint")); }
-			ScriptFunction ClosestPointOnComponentToComponent() { return mClosestPointOnComponentToComponent ? mClosestPointOnComponentToComponent : (mClosestPointOnComponentToComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.ClosestPointOnComponentToComponent")); }
+			ScriptFunction SetBlockRigidBody() { mixin(MGF!("mSetBlockRigidBody", "Function Engine.PrimitiveComponent.SetBlockRigidBody")()); }
+			ScriptFunction SetRBLinearVelocity() { mixin(MGF!("mSetRBLinearVelocity", "Function Engine.PrimitiveComponent.SetRBLinearVelocity")()); }
+			ScriptFunction AddImpulse() { mixin(MGF!("mAddImpulse", "Function Engine.PrimitiveComponent.AddImpulse")()); }
+			ScriptFunction AddRadialImpulse() { mixin(MGF!("mAddRadialImpulse", "Function Engine.PrimitiveComponent.AddRadialImpulse")()); }
+			ScriptFunction AddForce() { mixin(MGF!("mAddForce", "Function Engine.PrimitiveComponent.AddForce")()); }
+			ScriptFunction AddRadialForce() { mixin(MGF!("mAddRadialForce", "Function Engine.PrimitiveComponent.AddRadialForce")()); }
+			ScriptFunction AddTorque() { mixin(MGF!("mAddTorque", "Function Engine.PrimitiveComponent.AddTorque")()); }
+			ScriptFunction SetRBAngularVelocity() { mixin(MGF!("mSetRBAngularVelocity", "Function Engine.PrimitiveComponent.SetRBAngularVelocity")()); }
+			ScriptFunction RetardRBLinearVelocity() { mixin(MGF!("mRetardRBLinearVelocity", "Function Engine.PrimitiveComponent.RetardRBLinearVelocity")()); }
+			ScriptFunction SetRBPosition() { mixin(MGF!("mSetRBPosition", "Function Engine.PrimitiveComponent.SetRBPosition")()); }
+			ScriptFunction SetRBRotation() { mixin(MGF!("mSetRBRotation", "Function Engine.PrimitiveComponent.SetRBRotation")()); }
+			ScriptFunction WakeRigidBody() { mixin(MGF!("mWakeRigidBody", "Function Engine.PrimitiveComponent.WakeRigidBody")()); }
+			ScriptFunction PutRigidBodyToSleep() { mixin(MGF!("mPutRigidBodyToSleep", "Function Engine.PrimitiveComponent.PutRigidBodyToSleep")()); }
+			ScriptFunction RigidBodyIsAwake() { mixin(MGF!("mRigidBodyIsAwake", "Function Engine.PrimitiveComponent.RigidBodyIsAwake")()); }
+			ScriptFunction SetRBCollidesWithChannel() { mixin(MGF!("mSetRBCollidesWithChannel", "Function Engine.PrimitiveComponent.SetRBCollidesWithChannel")()); }
+			ScriptFunction SetRBCollisionChannels() { mixin(MGF!("mSetRBCollisionChannels", "Function Engine.PrimitiveComponent.SetRBCollisionChannels")()); }
+			ScriptFunction SetRBChannel() { mixin(MGF!("mSetRBChannel", "Function Engine.PrimitiveComponent.SetRBChannel")()); }
+			ScriptFunction SetNotifyRigidBodyCollision() { mixin(MGF!("mSetNotifyRigidBodyCollision", "Function Engine.PrimitiveComponent.SetNotifyRigidBodyCollision")()); }
+			ScriptFunction InitRBPhys() { mixin(MGF!("mInitRBPhys", "Function Engine.PrimitiveComponent.InitRBPhys")()); }
+			ScriptFunction SetPhysMaterialOverride() { mixin(MGF!("mSetPhysMaterialOverride", "Function Engine.PrimitiveComponent.SetPhysMaterialOverride")()); }
+			ScriptFunction GetRootBodyInstance() { mixin(MGF!("mGetRootBodyInstance", "Function Engine.PrimitiveComponent.GetRootBodyInstance")()); }
+			ScriptFunction SetRBDominanceGroup() { mixin(MGF!("mSetRBDominanceGroup", "Function Engine.PrimitiveComponent.SetRBDominanceGroup")()); }
+			ScriptFunction ShouldComponentAddToScene() { mixin(MGF!("mShouldComponentAddToScene", "Function Engine.PrimitiveComponent.ShouldComponentAddToScene")()); }
+			ScriptFunction SetHidden() { mixin(MGF!("mSetHidden", "Function Engine.PrimitiveComponent.SetHidden")()); }
+			ScriptFunction SetOwnerNoSee() { mixin(MGF!("mSetOwnerNoSee", "Function Engine.PrimitiveComponent.SetOwnerNoSee")()); }
+			ScriptFunction SetOnlyOwnerSee() { mixin(MGF!("mSetOnlyOwnerSee", "Function Engine.PrimitiveComponent.SetOnlyOwnerSee")()); }
+			ScriptFunction SetIgnoreOwnerHidden() { mixin(MGF!("mSetIgnoreOwnerHidden", "Function Engine.PrimitiveComponent.SetIgnoreOwnerHidden")()); }
+			ScriptFunction SetShadowParent() { mixin(MGF!("mSetShadowParent", "Function Engine.PrimitiveComponent.SetShadowParent")()); }
+			ScriptFunction SetLightEnvironment() { mixin(MGF!("mSetLightEnvironment", "Function Engine.PrimitiveComponent.SetLightEnvironment")()); }
+			ScriptFunction SetCullDistance() { mixin(MGF!("mSetCullDistance", "Function Engine.PrimitiveComponent.SetCullDistance")()); }
+			ScriptFunction SetLightingChannels() { mixin(MGF!("mSetLightingChannels", "Function Engine.PrimitiveComponent.SetLightingChannels")()); }
+			ScriptFunction SetDepthPriorityGroup() { mixin(MGF!("mSetDepthPriorityGroup", "Function Engine.PrimitiveComponent.SetDepthPriorityGroup")()); }
+			ScriptFunction SetViewOwnerDepthPriorityGroup() { mixin(MGF!("mSetViewOwnerDepthPriorityGroup", "Function Engine.PrimitiveComponent.SetViewOwnerDepthPriorityGroup")()); }
+			ScriptFunction SetTraceBlocking() { mixin(MGF!("mSetTraceBlocking", "Function Engine.PrimitiveComponent.SetTraceBlocking")()); }
+			ScriptFunction SetActorCollision() { mixin(MGF!("mSetActorCollision", "Function Engine.PrimitiveComponent.SetActorCollision")()); }
+			ScriptFunction SetTranslation() { mixin(MGF!("mSetTranslation", "Function Engine.PrimitiveComponent.SetTranslation")()); }
+			ScriptFunction SetRotation() { mixin(MGF!("mSetRotation", "Function Engine.PrimitiveComponent.SetRotation")()); }
+			ScriptFunction SetScale() { mixin(MGF!("mSetScale", "Function Engine.PrimitiveComponent.SetScale")()); }
+			ScriptFunction SetScale3D() { mixin(MGF!("mSetScale3D", "Function Engine.PrimitiveComponent.SetScale3D")()); }
+			ScriptFunction SetAbsolute() { mixin(MGF!("mSetAbsolute", "Function Engine.PrimitiveComponent.SetAbsolute")()); }
+			ScriptFunction GetPosition() { mixin(MGF!("mGetPosition", "Function Engine.PrimitiveComponent.GetPosition")()); }
+			ScriptFunction GetRotation() { mixin(MGF!("mGetRotation", "Function Engine.PrimitiveComponent.GetRotation")()); }
+			ScriptFunction ClosestPointOnComponentToPoint() { mixin(MGF!("mClosestPointOnComponentToPoint", "Function Engine.PrimitiveComponent.ClosestPointOnComponentToPoint")()); }
+			ScriptFunction ClosestPointOnComponentToComponent() { mixin(MGF!("mClosestPointOnComponentToComponent", "Function Engine.PrimitiveComponent.ClosestPointOnComponentToComponent")()); }
 		}
 	}
 	enum GJKResult : ubyte
@@ -153,44 +154,44 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PrimitiveComponent.RBCollisionChannelContainer")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PrimitiveComponent.RBCollisionChannelContainer")()); }
 		@property final
 		{
-			bool Default() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool Default(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
-			bool Nothing() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool Nothing(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
+			bool Default() { mixin(MGBPS!(0, 0x1)()); }
+			bool Default(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool Nothing() { mixin(MGBPS!(0, 0x2)()); }
+			bool Nothing(bool val) { mixin(MSBPS!(0, 0x2)()); }
 			// WARNING: Property 'Pawn' has the same name as a defined type!
 			// WARNING: Property 'Vehicle' has the same name as a defined type!
-			bool Water() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x10) != 0; }
-			bool Water(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x10; } return val; }
-			bool GameplayPhysics() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x20) != 0; }
-			bool GameplayPhysics(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x20; } return val; }
-			bool EffectPhysics() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x40) != 0; }
-			bool EffectPhysics(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x40; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x40; } return val; }
-			bool Untitled1() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x80) != 0; }
-			bool Untitled1(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x80; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x80; } return val; }
-			bool Untitled2() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x100) != 0; }
-			bool Untitled2(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x100; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x100; } return val; }
-			bool Untitled3() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x200) != 0; }
-			bool Untitled3(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x200; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x200; } return val; }
-			bool Untitled4() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x400) != 0; }
-			bool Untitled4(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x400; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x400; } return val; }
-			bool Cloth() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x800) != 0; }
-			bool Cloth(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x800; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x800; } return val; }
-			bool FluidDrain() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1000) != 0; }
-			bool FluidDrain(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1000; } return val; }
-			bool SoftBody() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2000) != 0; }
-			bool SoftBody(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2000; } return val; }
-			bool FracturedMeshPart() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4000) != 0; }
-			bool FracturedMeshPart(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4000; } return val; }
+			bool Water() { mixin(MGBPS!(0, 0x10)()); }
+			bool Water(bool val) { mixin(MSBPS!(0, 0x10)()); }
+			bool GameplayPhysics() { mixin(MGBPS!(0, 0x20)()); }
+			bool GameplayPhysics(bool val) { mixin(MSBPS!(0, 0x20)()); }
+			bool EffectPhysics() { mixin(MGBPS!(0, 0x40)()); }
+			bool EffectPhysics(bool val) { mixin(MSBPS!(0, 0x40)()); }
+			bool Untitled1() { mixin(MGBPS!(0, 0x80)()); }
+			bool Untitled1(bool val) { mixin(MSBPS!(0, 0x80)()); }
+			bool Untitled2() { mixin(MGBPS!(0, 0x100)()); }
+			bool Untitled2(bool val) { mixin(MSBPS!(0, 0x100)()); }
+			bool Untitled3() { mixin(MGBPS!(0, 0x200)()); }
+			bool Untitled3(bool val) { mixin(MSBPS!(0, 0x200)()); }
+			bool Untitled4() { mixin(MGBPS!(0, 0x400)()); }
+			bool Untitled4(bool val) { mixin(MSBPS!(0, 0x400)()); }
+			bool Cloth() { mixin(MGBPS!(0, 0x800)()); }
+			bool Cloth(bool val) { mixin(MSBPS!(0, 0x800)()); }
+			bool FluidDrain() { mixin(MGBPS!(0, 0x1000)()); }
+			bool FluidDrain(bool val) { mixin(MSBPS!(0, 0x1000)()); }
+			bool SoftBody() { mixin(MGBPS!(0, 0x2000)()); }
+			bool SoftBody(bool val) { mixin(MSBPS!(0, 0x2000)()); }
+			bool FracturedMeshPart() { mixin(MGBPS!(0, 0x4000)()); }
+			bool FracturedMeshPart(bool val) { mixin(MSBPS!(0, 0x4000)()); }
 			// WARNING: Property 'BlockingVolume' has the same name as a defined type!
-			bool DeadPawn() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x10000) != 0; }
-			bool DeadPawn(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x10000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x10000; } return val; }
-			bool Clothing() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x20000) != 0; }
-			bool Clothing(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x20000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x20000; } return val; }
-			bool ClothingCollision() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x40000) != 0; }
-			bool ClothingCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x40000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x40000; } return val; }
+			bool DeadPawn() { mixin(MGBPS!(0, 0x10000)()); }
+			bool DeadPawn(bool val) { mixin(MSBPS!(0, 0x10000)()); }
+			bool Clothing() { mixin(MGBPS!(0, 0x20000)()); }
+			bool Clothing(bool val) { mixin(MSBPS!(0, 0x20000)()); }
+			bool ClothingCollision() { mixin(MGBPS!(0, 0x40000)()); }
+			bool ClothingCollision(bool val) { mixin(MSBPS!(0, 0x40000)()); }
 		}
 	}
 	struct MaterialViewRelevance
@@ -198,189 +199,195 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PrimitiveComponent.MaterialViewRelevance")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PrimitiveComponent.MaterialViewRelevance")()); }
 		@property final
 		{
-			bool bOpaque() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bOpaque(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
-			bool bTranslucent() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bTranslucent(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bDistortion() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-			bool bDistortion(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-			bool bOneLayerDistortionRelevance() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x8) != 0; }
-			bool bOneLayerDistortionRelevance(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x8; } return val; }
-			bool bLit() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x10) != 0; }
-			bool bLit(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x10; } return val; }
-			bool bUsesSceneColor() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x20) != 0; }
-			bool bUsesSceneColor(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x20; } return val; }
+			bool bOpaque() { mixin(MGBPS!(0, 0x1)()); }
+			bool bOpaque(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bTranslucent() { mixin(MGBPS!(0, 0x2)()); }
+			bool bTranslucent(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bDistortion() { mixin(MGBPS!(0, 0x4)()); }
+			bool bDistortion(bool val) { mixin(MSBPS!(0, 0x4)()); }
+			bool bOneLayerDistortionRelevance() { mixin(MGBPS!(0, 0x8)()); }
+			bool bOneLayerDistortionRelevance(bool val) { mixin(MSBPS!(0, 0x8)()); }
+			bool bLit() { mixin(MGBPS!(0, 0x10)()); }
+			bool bLit(bool val) { mixin(MSBPS!(0, 0x10)()); }
+			bool bUsesSceneColor() { mixin(MGBPS!(0, 0x20)()); }
+			bool bUsesSceneColor(bool val) { mixin(MSBPS!(0, 0x20)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int Tag() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			UObject.Matrix LocalToWorld() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 160); }
-			int ThreadTag() { return *cast(int*)(cast(size_t)cast(void*)this + 92); }
-			UObject.BoxSphereBounds Bounds() { return *cast(UObject.BoxSphereBounds*)(cast(size_t)cast(void*)this + 120); }
-			UObject.Pointer SceneInfo() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 148); }
-			int DetachFence() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
-			float LocalToWorldDeterminant() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-			int MotionBlurInfoIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 224); }
-			ScriptArray!(UObject.Pointer) DecalList() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 228); }
+			int Tag() { mixin(MGPC!(int, 88)()); }
+			UObject.Matrix LocalToWorld() { mixin(MGPC!(UObject.Matrix, 160)()); }
+			int ThreadTag() { mixin(MGPC!(int, 92)()); }
+			UObject.BoxSphereBounds Bounds() { mixin(MGPC!(UObject.BoxSphereBounds, 120)()); }
+			UObject.Pointer SceneInfo() { mixin(MGPC!(UObject.Pointer, 148)()); }
+			int DetachFence() { mixin(MGPC!(int, 152)()); }
+			float LocalToWorldDeterminant() { mixin(MGPC!(float, 156)()); }
+			int MotionBlurInfoIndex() { mixin(MGPC!(int, 224)()); }
+			ScriptArray!(UObject.Pointer) DecalList() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 228)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) DecalsToReattach() { return *cast(ScriptArray!(
+void*) DecalsToReattach() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 240); }
-			float MinDrawDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
-			float MassiveLODDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 280); }
-			float MaxDrawDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
-			float CachedMaxDrawDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			float CullDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 292); }
-			float CachedCullDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 296); }
-			Scene.ESceneDepthPriorityGroup DepthPriorityGroup() { return *cast(Scene.ESceneDepthPriorityGroup*)(cast(size_t)cast(void*)this + 300); }
-			Scene.ESceneDepthPriorityGroup ViewOwnerDepthPriorityGroup() { return *cast(Scene.ESceneDepthPriorityGroup*)(cast(size_t)cast(void*)this + 301); }
-			Scene.EDetailMode DetailMode() { return *cast(Scene.EDetailMode*)(cast(size_t)cast(void*)this + 302); }
-			PrimitiveComponent.ERBCollisionChannel RBChannel() { return *cast(PrimitiveComponent.ERBCollisionChannel*)(cast(size_t)cast(void*)this + 303); }
-			ubyte RBDominanceGroup() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 304); }
-			ubyte PreviewEnvironmentShadowing() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 305); }
-			float MotionBlurScale() { return *cast(float*)(cast(size_t)cast(void*)this + 308); }
-			ScriptArray!(int) OctreeNodes() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 320); }
-			int TranslucencySortPriority() { return *cast(int*)(cast(size_t)cast(void*)this + 332); }
-			int VisibilityId() { return *cast(int*)(cast(size_t)cast(void*)this + 336); }
-			LightComponent.LightingChannelContainer LightingChannels() { return *cast(LightComponent.LightingChannelContainer*)(cast(size_t)cast(void*)this + 340); }
-			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 344); }
-			PhysicalMaterial PhysMaterialOverride() { return *cast(PhysicalMaterial*)(cast(size_t)cast(void*)this + 348); }
-			RB_BodyInstance BodyInstance() { return *cast(RB_BodyInstance*)(cast(size_t)cast(void*)this + 352); }
-			UObject.Matrix CachedParentToWorld() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 368); }
-			Vector Translation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 432); }
-			Rotator Rotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 444); }
-			float Scale() { return *cast(float*)(cast(size_t)cast(void*)this + 456); }
-			Vector Scale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 460); }
-			float BoundsScale() { return *cast(float*)(cast(size_t)cast(void*)this + 472); }
-			float LastSubmitTime() { return *cast(float*)(cast(size_t)cast(void*)this + 476); }
-			float LastRenderTime() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
-			float ScriptRigidBodyCollisionThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
+void*), 240)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ShadowParent'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ReplacementPrimitive'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FogVolumeComponent'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OverrideLightComponent'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviousLightEnvironment'!
+			float MinDrawDistance() { mixin(MGPC!(float, 276)()); }
+			float MassiveLODDistance() { mixin(MGPC!(float, 280)()); }
+			float MaxDrawDistance() { mixin(MGPC!(float, 284)()); }
+			float CachedMaxDrawDistance() { mixin(MGPC!(float, 288)()); }
+			float CullDistance() { mixin(MGPC!(float, 292)()); }
+			float CachedCullDistance() { mixin(MGPC!(float, 296)()); }
+			Scene.ESceneDepthPriorityGroup DepthPriorityGroup() { mixin(MGPC!(Scene.ESceneDepthPriorityGroup, 300)()); }
+			Scene.ESceneDepthPriorityGroup ViewOwnerDepthPriorityGroup() { mixin(MGPC!(Scene.ESceneDepthPriorityGroup, 301)()); }
+			Scene.EDetailMode DetailMode() { mixin(MGPC!(Scene.EDetailMode, 302)()); }
+			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 303)()); }
+			ubyte RBDominanceGroup() { mixin(MGPC!(ubyte, 304)()); }
+			ubyte PreviewEnvironmentShadowing() { mixin(MGPC!(ubyte, 305)()); }
+			float MotionBlurScale() { mixin(MGPC!(float, 308)()); }
+			ScriptArray!(int) OctreeNodes() { mixin(MGPC!(ScriptArray!(int), 320)()); }
+			int TranslucencySortPriority() { mixin(MGPC!(int, 332)()); }
+			int VisibilityId() { mixin(MGPC!(int, 336)()); }
+			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC!(LightComponent.LightingChannelContainer, 340)()); }
+			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 344)()); }
+			PhysicalMaterial PhysMaterialOverride() { mixin(MGPC!(PhysicalMaterial, 348)()); }
+			RB_BodyInstance BodyInstance() { mixin(MGPC!(RB_BodyInstance, 352)()); }
+			UObject.Matrix CachedParentToWorld() { mixin(MGPC!(UObject.Matrix, 368)()); }
+			Vector Translation() { mixin(MGPC!(Vector, 432)()); }
+			Rotator Rotation() { mixin(MGPC!(Rotator, 444)()); }
+			float Scale() { mixin(MGPC!(float, 456)()); }
+			Vector Scale3D() { mixin(MGPC!(Vector, 460)()); }
+			float BoundsScale() { mixin(MGPC!(float, 472)()); }
+			float LastSubmitTime() { mixin(MGPC!(float, 476)()); }
+			float LastRenderTime() { mixin(MGPC!(float, 480)()); }
+			float ScriptRigidBodyCollisionThreshold() { mixin(MGPC!(float, 484)()); }
 		}
-		bool bUseViewOwnerDepthPriorityGroup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x1) != 0; }
-		bool bUseViewOwnerDepthPriorityGroup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x1; } return val; }
-		bool bAllowCullDistanceVolume() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x2) != 0; }
-		bool bAllowCullDistanceVolume(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x2; } return val; }
-		bool HiddenGame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x4) != 0; }
-		bool HiddenGame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x4; } return val; }
-		bool HiddenEditor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x8) != 0; }
-		bool HiddenEditor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x8; } return val; }
-		bool bOwnerNoSee() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x10) != 0; }
-		bool bOwnerNoSee(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x10; } return val; }
-		bool bOnlyOwnerSee() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x20) != 0; }
-		bool bOnlyOwnerSee(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x20; } return val; }
-		bool bIgnoreOwnerHidden() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x40) != 0; }
-		bool bIgnoreOwnerHidden(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x40; } return val; }
-		bool bUseAsOccluder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x80) != 0; }
-		bool bUseAsOccluder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x80; } return val; }
-		bool bAllowApproximateOcclusion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x100) != 0; }
-		bool bAllowApproximateOcclusion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x100; } return val; }
-		bool bFirstFrameOcclusion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x200) != 0; }
-		bool bFirstFrameOcclusion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x200; } return val; }
-		bool bIgnoreNearPlaneIntersection() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x400) != 0; }
-		bool bIgnoreNearPlaneIntersection(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x400; } return val; }
-		bool bSelectable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x800) != 0; }
-		bool bSelectable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x800; } return val; }
-		bool bForceMipStreaming() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x1000) != 0; }
-		bool bForceMipStreaming(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x1000; } return val; }
-		bool bAcceptsDecals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x2000) != 0; }
-		bool bAcceptsDecals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x2000; } return val; }
-		bool bAcceptsDecalsDuringGameplay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x4000) != 0; }
-		bool bAcceptsDecalsDuringGameplay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x4000; } return val; }
-		bool bAcceptsStaticDecals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x8000) != 0; }
-		bool bAcceptsStaticDecals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x8000; } return val; }
-		bool bAcceptsDynamicDecals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x10000) != 0; }
-		bool bAcceptsDynamicDecals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x10000; } return val; }
-		bool bIsRefreshingDecals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x20000) != 0; }
-		bool bIsRefreshingDecals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x20000; } return val; }
-		bool bAllowDecalAutomaticReAttach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x40000) != 0; }
-		bool bAllowDecalAutomaticReAttach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x40000; } return val; }
-		bool CastShadow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x80000) != 0; }
-		bool CastShadow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x80000; } return val; }
-		bool bForceDirectLightMap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x100000) != 0; }
-		bool bForceDirectLightMap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x100000; } return val; }
-		bool bCastDynamicShadow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x200000) != 0; }
-		bool bCastDynamicShadow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x200000; } return val; }
-		bool bUsesPlayerShadowFadeResolution() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x400000) != 0; }
-		bool bUsesPlayerShadowFadeResolution(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x400000; } return val; }
-		bool bSelfShadowOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x800000) != 0; }
-		bool bSelfShadowOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x800000; } return val; }
-		bool bAcceptsDynamicDominantLightShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x1000000) != 0; }
-		bool bAcceptsDynamicDominantLightShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x1000000; } return val; }
-		bool bCastHiddenShadow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x2000000) != 0; }
-		bool bCastHiddenShadow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x2000000; } return val; }
-		bool bCastShadowAsTwoSided() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x4000000) != 0; }
-		bool bCastShadowAsTwoSided(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x4000000; } return val; }
-		bool bAcceptsLights() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x8000000) != 0; }
-		bool bAcceptsLights(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x8000000; } return val; }
-		bool bAcceptsDynamicLights() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x10000000) != 0; }
-		bool bAcceptsDynamicLights(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x10000000; } return val; }
-		bool bUseOnePassLightingOnTranslucency() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x20000000) != 0; }
-		bool bUseOnePassLightingOnTranslucency(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x20000000; } return val; }
-		bool bUsePrecomputedShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x40000000) != 0; }
-		bool bUsePrecomputedShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x40000000; } return val; }
-		bool bHasExplicitShadowParent() { return (*cast(uint*)(cast(size_t)cast(void*)this + 312) & 0x80000000) != 0; }
-		bool bHasExplicitShadowParent(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 312) |= 0x80000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 312) &= ~0x80000000; } return val; }
-		bool bCullModulatedShadowOnBackfaces() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x1) != 0; }
-		bool bCullModulatedShadowOnBackfaces(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x1; } return val; }
-		bool bCullModulatedShadowOnEmissive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x2) != 0; }
-		bool bCullModulatedShadowOnEmissive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x2; } return val; }
-		bool bAllowAmbientOcclusion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x4) != 0; }
-		bool bAllowAmbientOcclusion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x4; } return val; }
-		bool CollideActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x8) != 0; }
-		bool CollideActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x8; } return val; }
-		bool AlwaysCheckCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x10) != 0; }
-		bool AlwaysCheckCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x10; } return val; }
-		bool BlockActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x20) != 0; }
-		bool BlockActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x20; } return val; }
-		bool BlockZeroExtent() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x40) != 0; }
-		bool BlockZeroExtent(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x40; } return val; }
-		bool BlockNonZeroExtent() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x80) != 0; }
-		bool BlockNonZeroExtent(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x80; } return val; }
-		bool CanBlockCamera() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x100) != 0; }
-		bool CanBlockCamera(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x100; } return val; }
-		bool BlockRigidBody() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x200) != 0; }
-		bool BlockRigidBody(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x200; } return val; }
-		bool bDisableAllRigidBody() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x400) != 0; }
-		bool bDisableAllRigidBody(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x400; } return val; }
-		bool bSkipRBGeomCreation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x800) != 0; }
-		bool bSkipRBGeomCreation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x800; } return val; }
-		bool bNotifyRigidBodyCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x1000) != 0; }
-		bool bNotifyRigidBodyCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x1000; } return val; }
-		bool bFluidDrain() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x2000) != 0; }
-		bool bFluidDrain(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x2000; } return val; }
-		bool bFluidTwoWay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x4000) != 0; }
-		bool bFluidTwoWay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x4000; } return val; }
-		bool bIgnoreRadialImpulse() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x8000) != 0; }
-		bool bIgnoreRadialImpulse(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x8000; } return val; }
-		bool bIgnoreRadialForce() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x10000) != 0; }
-		bool bIgnoreRadialForce(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x10000; } return val; }
-		bool bIgnoreForceField() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x20000) != 0; }
-		bool bIgnoreForceField(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x20000; } return val; }
-		bool bUseCompartment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x40000) != 0; }
-		bool bUseCompartment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x40000; } return val; }
-		bool AlwaysLoadOnClient() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x80000) != 0; }
-		bool AlwaysLoadOnClient(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x80000; } return val; }
-		bool AlwaysLoadOnServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x100000) != 0; }
-		bool AlwaysLoadOnServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x100000; } return val; }
-		bool bIgnoreHiddenActorsMembership() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x200000) != 0; }
-		bool bIgnoreHiddenActorsMembership(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x200000; } return val; }
-		bool AbsoluteTranslation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x400000) != 0; }
-		bool AbsoluteTranslation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x400000; } return val; }
-		bool AbsoluteRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x800000) != 0; }
-		bool AbsoluteRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x800000; } return val; }
-		bool AbsoluteScale() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x1000000) != 0; }
-		bool AbsoluteScale(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x1000000; } return val; }
-		bool bAllowShadowFade() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x2000000) != 0; }
-		bool bAllowShadowFade(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x2000000; } return val; }
-		bool bWasSNFiltered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 316) & 0x4000000) != 0; }
-		bool bWasSNFiltered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 316) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 316) &= ~0x4000000; } return val; }
+		bool bUseViewOwnerDepthPriorityGroup() { mixin(MGBPC!(312, 0x1)()); }
+		bool bUseViewOwnerDepthPriorityGroup(bool val) { mixin(MSBPC!(312, 0x1)()); }
+		bool bAllowCullDistanceVolume() { mixin(MGBPC!(312, 0x2)()); }
+		bool bAllowCullDistanceVolume(bool val) { mixin(MSBPC!(312, 0x2)()); }
+		bool HiddenGame() { mixin(MGBPC!(312, 0x4)()); }
+		bool HiddenGame(bool val) { mixin(MSBPC!(312, 0x4)()); }
+		bool HiddenEditor() { mixin(MGBPC!(312, 0x8)()); }
+		bool HiddenEditor(bool val) { mixin(MSBPC!(312, 0x8)()); }
+		bool bOwnerNoSee() { mixin(MGBPC!(312, 0x10)()); }
+		bool bOwnerNoSee(bool val) { mixin(MSBPC!(312, 0x10)()); }
+		bool bOnlyOwnerSee() { mixin(MGBPC!(312, 0x20)()); }
+		bool bOnlyOwnerSee(bool val) { mixin(MSBPC!(312, 0x20)()); }
+		bool bIgnoreOwnerHidden() { mixin(MGBPC!(312, 0x40)()); }
+		bool bIgnoreOwnerHidden(bool val) { mixin(MSBPC!(312, 0x40)()); }
+		bool bUseAsOccluder() { mixin(MGBPC!(312, 0x80)()); }
+		bool bUseAsOccluder(bool val) { mixin(MSBPC!(312, 0x80)()); }
+		bool bAllowApproximateOcclusion() { mixin(MGBPC!(312, 0x100)()); }
+		bool bAllowApproximateOcclusion(bool val) { mixin(MSBPC!(312, 0x100)()); }
+		bool bFirstFrameOcclusion() { mixin(MGBPC!(312, 0x200)()); }
+		bool bFirstFrameOcclusion(bool val) { mixin(MSBPC!(312, 0x200)()); }
+		bool bIgnoreNearPlaneIntersection() { mixin(MGBPC!(312, 0x400)()); }
+		bool bIgnoreNearPlaneIntersection(bool val) { mixin(MSBPC!(312, 0x400)()); }
+		bool bSelectable() { mixin(MGBPC!(312, 0x800)()); }
+		bool bSelectable(bool val) { mixin(MSBPC!(312, 0x800)()); }
+		bool bForceMipStreaming() { mixin(MGBPC!(312, 0x1000)()); }
+		bool bForceMipStreaming(bool val) { mixin(MSBPC!(312, 0x1000)()); }
+		bool bAcceptsDecals() { mixin(MGBPC!(312, 0x2000)()); }
+		bool bAcceptsDecals(bool val) { mixin(MSBPC!(312, 0x2000)()); }
+		bool bAcceptsDecalsDuringGameplay() { mixin(MGBPC!(312, 0x4000)()); }
+		bool bAcceptsDecalsDuringGameplay(bool val) { mixin(MSBPC!(312, 0x4000)()); }
+		bool bAcceptsStaticDecals() { mixin(MGBPC!(312, 0x8000)()); }
+		bool bAcceptsStaticDecals(bool val) { mixin(MSBPC!(312, 0x8000)()); }
+		bool bAcceptsDynamicDecals() { mixin(MGBPC!(312, 0x10000)()); }
+		bool bAcceptsDynamicDecals(bool val) { mixin(MSBPC!(312, 0x10000)()); }
+		bool bIsRefreshingDecals() { mixin(MGBPC!(312, 0x20000)()); }
+		bool bIsRefreshingDecals(bool val) { mixin(MSBPC!(312, 0x20000)()); }
+		bool bAllowDecalAutomaticReAttach() { mixin(MGBPC!(312, 0x40000)()); }
+		bool bAllowDecalAutomaticReAttach(bool val) { mixin(MSBPC!(312, 0x40000)()); }
+		bool CastShadow() { mixin(MGBPC!(312, 0x80000)()); }
+		bool CastShadow(bool val) { mixin(MSBPC!(312, 0x80000)()); }
+		bool bForceDirectLightMap() { mixin(MGBPC!(312, 0x100000)()); }
+		bool bForceDirectLightMap(bool val) { mixin(MSBPC!(312, 0x100000)()); }
+		bool bCastDynamicShadow() { mixin(MGBPC!(312, 0x200000)()); }
+		bool bCastDynamicShadow(bool val) { mixin(MSBPC!(312, 0x200000)()); }
+		bool bUsesPlayerShadowFadeResolution() { mixin(MGBPC!(312, 0x400000)()); }
+		bool bUsesPlayerShadowFadeResolution(bool val) { mixin(MSBPC!(312, 0x400000)()); }
+		bool bSelfShadowOnly() { mixin(MGBPC!(312, 0x800000)()); }
+		bool bSelfShadowOnly(bool val) { mixin(MSBPC!(312, 0x800000)()); }
+		bool bAcceptsDynamicDominantLightShadows() { mixin(MGBPC!(312, 0x1000000)()); }
+		bool bAcceptsDynamicDominantLightShadows(bool val) { mixin(MSBPC!(312, 0x1000000)()); }
+		bool bCastHiddenShadow() { mixin(MGBPC!(312, 0x2000000)()); }
+		bool bCastHiddenShadow(bool val) { mixin(MSBPC!(312, 0x2000000)()); }
+		bool bCastShadowAsTwoSided() { mixin(MGBPC!(312, 0x4000000)()); }
+		bool bCastShadowAsTwoSided(bool val) { mixin(MSBPC!(312, 0x4000000)()); }
+		bool bAcceptsLights() { mixin(MGBPC!(312, 0x8000000)()); }
+		bool bAcceptsLights(bool val) { mixin(MSBPC!(312, 0x8000000)()); }
+		bool bAcceptsDynamicLights() { mixin(MGBPC!(312, 0x10000000)()); }
+		bool bAcceptsDynamicLights(bool val) { mixin(MSBPC!(312, 0x10000000)()); }
+		bool bUseOnePassLightingOnTranslucency() { mixin(MGBPC!(312, 0x20000000)()); }
+		bool bUseOnePassLightingOnTranslucency(bool val) { mixin(MSBPC!(312, 0x20000000)()); }
+		bool bUsePrecomputedShadows() { mixin(MGBPC!(312, 0x40000000)()); }
+		bool bUsePrecomputedShadows(bool val) { mixin(MSBPC!(312, 0x40000000)()); }
+		bool bHasExplicitShadowParent() { mixin(MGBPC!(312, 0x80000000)()); }
+		bool bHasExplicitShadowParent(bool val) { mixin(MSBPC!(312, 0x80000000)()); }
+		bool bCullModulatedShadowOnBackfaces() { mixin(MGBPC!(316, 0x1)()); }
+		bool bCullModulatedShadowOnBackfaces(bool val) { mixin(MSBPC!(316, 0x1)()); }
+		bool bCullModulatedShadowOnEmissive() { mixin(MGBPC!(316, 0x2)()); }
+		bool bCullModulatedShadowOnEmissive(bool val) { mixin(MSBPC!(316, 0x2)()); }
+		bool bAllowAmbientOcclusion() { mixin(MGBPC!(316, 0x4)()); }
+		bool bAllowAmbientOcclusion(bool val) { mixin(MSBPC!(316, 0x4)()); }
+		bool CollideActors() { mixin(MGBPC!(316, 0x8)()); }
+		bool CollideActors(bool val) { mixin(MSBPC!(316, 0x8)()); }
+		bool AlwaysCheckCollision() { mixin(MGBPC!(316, 0x10)()); }
+		bool AlwaysCheckCollision(bool val) { mixin(MSBPC!(316, 0x10)()); }
+		bool BlockActors() { mixin(MGBPC!(316, 0x20)()); }
+		bool BlockActors(bool val) { mixin(MSBPC!(316, 0x20)()); }
+		bool BlockZeroExtent() { mixin(MGBPC!(316, 0x40)()); }
+		bool BlockZeroExtent(bool val) { mixin(MSBPC!(316, 0x40)()); }
+		bool BlockNonZeroExtent() { mixin(MGBPC!(316, 0x80)()); }
+		bool BlockNonZeroExtent(bool val) { mixin(MSBPC!(316, 0x80)()); }
+		bool CanBlockCamera() { mixin(MGBPC!(316, 0x100)()); }
+		bool CanBlockCamera(bool val) { mixin(MSBPC!(316, 0x100)()); }
+		bool BlockRigidBody() { mixin(MGBPC!(316, 0x200)()); }
+		bool BlockRigidBody(bool val) { mixin(MSBPC!(316, 0x200)()); }
+		bool bDisableAllRigidBody() { mixin(MGBPC!(316, 0x400)()); }
+		bool bDisableAllRigidBody(bool val) { mixin(MSBPC!(316, 0x400)()); }
+		bool bSkipRBGeomCreation() { mixin(MGBPC!(316, 0x800)()); }
+		bool bSkipRBGeomCreation(bool val) { mixin(MSBPC!(316, 0x800)()); }
+		bool bNotifyRigidBodyCollision() { mixin(MGBPC!(316, 0x1000)()); }
+		bool bNotifyRigidBodyCollision(bool val) { mixin(MSBPC!(316, 0x1000)()); }
+		bool bFluidDrain() { mixin(MGBPC!(316, 0x2000)()); }
+		bool bFluidDrain(bool val) { mixin(MSBPC!(316, 0x2000)()); }
+		bool bFluidTwoWay() { mixin(MGBPC!(316, 0x4000)()); }
+		bool bFluidTwoWay(bool val) { mixin(MSBPC!(316, 0x4000)()); }
+		bool bIgnoreRadialImpulse() { mixin(MGBPC!(316, 0x8000)()); }
+		bool bIgnoreRadialImpulse(bool val) { mixin(MSBPC!(316, 0x8000)()); }
+		bool bIgnoreRadialForce() { mixin(MGBPC!(316, 0x10000)()); }
+		bool bIgnoreRadialForce(bool val) { mixin(MSBPC!(316, 0x10000)()); }
+		bool bIgnoreForceField() { mixin(MGBPC!(316, 0x20000)()); }
+		bool bIgnoreForceField(bool val) { mixin(MSBPC!(316, 0x20000)()); }
+		bool bUseCompartment() { mixin(MGBPC!(316, 0x40000)()); }
+		bool bUseCompartment(bool val) { mixin(MSBPC!(316, 0x40000)()); }
+		bool AlwaysLoadOnClient() { mixin(MGBPC!(316, 0x80000)()); }
+		bool AlwaysLoadOnClient(bool val) { mixin(MSBPC!(316, 0x80000)()); }
+		bool AlwaysLoadOnServer() { mixin(MGBPC!(316, 0x100000)()); }
+		bool AlwaysLoadOnServer(bool val) { mixin(MSBPC!(316, 0x100000)()); }
+		bool bIgnoreHiddenActorsMembership() { mixin(MGBPC!(316, 0x200000)()); }
+		bool bIgnoreHiddenActorsMembership(bool val) { mixin(MSBPC!(316, 0x200000)()); }
+		bool AbsoluteTranslation() { mixin(MGBPC!(316, 0x400000)()); }
+		bool AbsoluteTranslation(bool val) { mixin(MSBPC!(316, 0x400000)()); }
+		bool AbsoluteRotation() { mixin(MGBPC!(316, 0x800000)()); }
+		bool AbsoluteRotation(bool val) { mixin(MSBPC!(316, 0x800000)()); }
+		bool AbsoluteScale() { mixin(MGBPC!(316, 0x1000000)()); }
+		bool AbsoluteScale(bool val) { mixin(MSBPC!(316, 0x1000000)()); }
+		bool bAllowShadowFade() { mixin(MGBPC!(316, 0x2000000)()); }
+		bool bAllowShadowFade(bool val) { mixin(MSBPC!(316, 0x2000000)()); }
+		bool bWasSNFiltered() { mixin(MGBPC!(316, 0x4000000)()); }
+		bool bWasSNFiltered(bool val) { mixin(MSBPC!(316, 0x4000000)()); }
 	}
 final:
 	void SetBlockRigidBody(bool bNewBlockRigidBody)
@@ -708,14 +715,14 @@ void**)params.ptr = NewLightEnvironment;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRotation, params.ptr, cast(void*)0);
 		return *cast(Rotator*)params.ptr;
 	}
-	PrimitiveComponent.GJKResult ClosestPointOnComponentToPoint(Vector* POI, Vector* Extent, Vector* OutPointA, Vector* OutPointB)
+	PrimitiveComponent.GJKResult ClosestPointOnComponentToPoint(ref Vector POI, ref Vector Extent, ref Vector OutPointA, ref Vector OutPointB)
 	{
 		ubyte params[49];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *POI;
-		*cast(Vector*)&params[12] = *Extent;
-		*cast(Vector*)&params[24] = *OutPointA;
-		*cast(Vector*)&params[36] = *OutPointB;
+		*cast(Vector*)params.ptr = POI;
+		*cast(Vector*)&params[12] = Extent;
+		*cast(Vector*)&params[24] = OutPointA;
+		*cast(Vector*)&params[36] = OutPointB;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClosestPointOnComponentToPoint, params.ptr, cast(void*)0);
 		*POI = *cast(Vector*)params.ptr;
 		*Extent = *cast(Vector*)&params[12];
@@ -723,17 +730,17 @@ void**)params.ptr = NewLightEnvironment;
 		*OutPointB = *cast(Vector*)&params[36];
 		return *cast(PrimitiveComponent.GJKResult*)&params[48];
 	}
-	PrimitiveComponent.GJKResult ClosestPointOnComponentToComponent(
+	PrimitiveComponent.GJKResult ClosestPointOnComponentToComponent(ref 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void** OtherComponent, Vector* PointOnComponentA, Vector* PointOnComponentB)
+void* OtherComponent, ref Vector PointOnComponentA, ref Vector PointOnComponentB)
 	{
 		ubyte params[29];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)params.ptr = *OtherComponent;
-		*cast(Vector*)&params[4] = *PointOnComponentA;
-		*cast(Vector*)&params[16] = *PointOnComponentB;
+void**)params.ptr = OtherComponent;
+		*cast(Vector*)&params[4] = PointOnComponentA;
+		*cast(Vector*)&params[16] = PointOnComponentB;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClosestPointOnComponentToComponent, params.ptr, cast(void*)0);
 		*OtherComponent = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

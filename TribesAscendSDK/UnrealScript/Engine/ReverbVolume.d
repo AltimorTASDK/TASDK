@@ -1,15 +1,16 @@
 module UnrealScript.Engine.ReverbVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Volume;
 
 extern(C++) interface ReverbVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ReverbVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ReverbVolume")()); }
 	private static __gshared ReverbVolume mDefaultProperties;
-	@property final static ReverbVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ReverbVolume)("ReverbVolume Engine.Default__ReverbVolume")); }
+	@property final static ReverbVolume DefaultProperties() { mixin(MGDPC!(ReverbVolume, "ReverbVolume Engine.Default__ReverbVolume")()); }
 	enum ReverbPreset : ubyte
 	{
 		REVERB_Default = 0,
@@ -42,22 +43,22 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ReverbVolume.InteriorSettings")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ReverbVolume.InteriorSettings")()); }
 		@property final
 		{
 			auto ref
 			{
-				float ExteriorVolume() { return *cast(float*)(cast(size_t)&this + 4); }
-				float ExteriorTime() { return *cast(float*)(cast(size_t)&this + 8); }
-				float ExteriorLPF() { return *cast(float*)(cast(size_t)&this + 12); }
-				float ExteriorLPFTime() { return *cast(float*)(cast(size_t)&this + 16); }
-				float InteriorVolume() { return *cast(float*)(cast(size_t)&this + 20); }
-				float InteriorTime() { return *cast(float*)(cast(size_t)&this + 24); }
-				float InteriorLPF() { return *cast(float*)(cast(size_t)&this + 28); }
-				float InteriorLPFTime() { return *cast(float*)(cast(size_t)&this + 32); }
+				float ExteriorVolume() { mixin(MGPS!(float, 4)()); }
+				float ExteriorTime() { mixin(MGPS!(float, 8)()); }
+				float ExteriorLPF() { mixin(MGPS!(float, 12)()); }
+				float ExteriorLPFTime() { mixin(MGPS!(float, 16)()); }
+				float InteriorVolume() { mixin(MGPS!(float, 20)()); }
+				float InteriorTime() { mixin(MGPS!(float, 24)()); }
+				float InteriorLPF() { mixin(MGPS!(float, 28)()); }
+				float InteriorLPFTime() { mixin(MGPS!(float, 32)()); }
 			}
-			bool bIsWorldInfo() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bIsWorldInfo(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bIsWorldInfo() { mixin(MGBPS!(0, 0x1)()); }
+			bool bIsWorldInfo(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	struct ReverbSettings
@@ -65,29 +66,29 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ReverbVolume.ReverbSettings")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ReverbVolume.ReverbSettings")()); }
 		@property final
 		{
 			auto ref
 			{
-				ReverbVolume.ReverbPreset ReverbType() { return *cast(ReverbVolume.ReverbPreset*)(cast(size_t)&this + 4); }
+				ReverbVolume.ReverbPreset ReverbType() { mixin(MGPS!(ReverbVolume.ReverbPreset, 4)()); }
 				// WARNING: Property 'Volume' has the same name as a defined type!
-				float FadeTime() { return *cast(float*)(cast(size_t)&this + 12); }
+				float FadeTime() { mixin(MGPS!(float, 12)()); }
 			}
-			bool bApplyReverb() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bApplyReverb(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bApplyReverb() { mixin(MGBPS!(0, 0x1)()); }
+			bool bApplyReverb(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ReverbVolume NextLowerPriorityVolume() { return *cast(ReverbVolume*)(cast(size_t)cast(void*)this + 580); }
-			ReverbVolume.InteriorSettings AmbientZoneSettings() { return *cast(ReverbVolume.InteriorSettings*)(cast(size_t)cast(void*)this + 544); }
+			ReverbVolume NextLowerPriorityVolume() { mixin(MGPC!(ReverbVolume, 580)()); }
+			ReverbVolume.InteriorSettings AmbientZoneSettings() { mixin(MGPC!(ReverbVolume.InteriorSettings, 544)()); }
 			// WARNING: Property 'Settings' has the same name as a defined type!
-			float Priority() { return *cast(float*)(cast(size_t)cast(void*)this + 520); }
+			float Priority() { mixin(MGPC!(float, 520)()); }
 		}
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x1; } return val; }
+		bool bEnabled() { mixin(MGBPC!(524, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(524, 0x1)()); }
 	}
 }

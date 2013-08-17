@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialInstanceActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.Actor;
 
@@ -8,8 +9,8 @@ extern(C++) interface MaterialInstanceActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstanceActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialInstanceActor")()); }
 	private static __gshared MaterialInstanceActor mDefaultProperties;
-	@property final static MaterialInstanceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialInstanceActor)("MaterialInstanceActor Engine.Default__MaterialInstanceActor")); }
-	@property final auto ref MaterialInstanceConstant MatInst() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 476); }
+	@property final static MaterialInstanceActor DefaultProperties() { mixin(MGDPC!(MaterialInstanceActor, "MaterialInstanceActor Engine.Default__MaterialInstanceActor")()); }
+	@property final auto ref MaterialInstanceConstant MatInst() { mixin(MGPC!(MaterialInstanceConstant, 476)()); }
 }

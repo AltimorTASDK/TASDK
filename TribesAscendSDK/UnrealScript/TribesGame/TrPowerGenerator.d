@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrPowerGenerator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Texture2D;
@@ -15,9 +16,9 @@ extern(C++) interface TrPowerGenerator : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPowerGenerator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPowerGenerator")()); }
 	private static __gshared TrPowerGenerator mDefaultProperties;
-	@property final static TrPowerGenerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPowerGenerator)("TrPowerGenerator TribesGame.Default__TrPowerGenerator")); }
+	@property final static TrPowerGenerator DefaultProperties() { mixin(MGDPC!(TrPowerGenerator, "TrPowerGenerator TribesGame.Default__TrPowerGenerator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,45 +45,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsGeneratingPower() { return mIsGeneratingPower ? mIsGeneratingPower : (mIsGeneratingPower = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.IsGeneratingPower")); }
-			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.ApplyServerSettings")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.ReplicatedEvent")); }
-			ScriptFunction ShouldShowHelpText() { return mShouldShowHelpText ? mShouldShowHelpText : (mShouldShowHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.ShouldShowHelpText")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.PostBeginPlay")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.PostInitAnimTree")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.Tick")); }
-			ScriptFunction PlayDamageHealthEffects() { return mPlayDamageHealthEffects ? mPlayDamageHealthEffects : (mPlayDamageHealthEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.PlayDamageHealthEffects")); }
-			ScriptFunction DoRepairs() { return mDoRepairs ? mDoRepairs : (mDoRepairs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.DoRepairs")); }
-			ScriptFunction DamageAllMorphs() { return mDamageAllMorphs ? mDamageAllMorphs : (mDamageAllMorphs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.DamageAllMorphs")); }
-			ScriptFunction PlayRestoreHealthEffects() { return mPlayRestoreHealthEffects ? mPlayRestoreHealthEffects : (mPlayRestoreHealthEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.PlayRestoreHealthEffects")); }
-			ScriptFunction UpdateGeneratorDowntime() { return mUpdateGeneratorDowntime ? mUpdateGeneratorDowntime : (mUpdateGeneratorDowntime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.UpdateGeneratorDowntime")); }
-			ScriptFunction UpdateGeneratorPower() { return mUpdateGeneratorPower ? mUpdateGeneratorPower : (mUpdateGeneratorPower = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.UpdateGeneratorPower")); }
-			ScriptFunction AutoRestoreHealth() { return mAutoRestoreHealth ? mAutoRestoreHealth : (mAutoRestoreHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.AutoRestoreHealth")); }
-			ScriptFunction AddToPoweredObjectives() { return mAddToPoweredObjectives ? mAddToPoweredObjectives : (mAddToPoweredObjectives = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.AddToPoweredObjectives")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.TakeDamage")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.GetMarker")); }
-			ScriptFunction GiveDestroyAccolade() { return mGiveDestroyAccolade ? mGiveDestroyAccolade : (mGiveDestroyAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.GiveDestroyAccolade")); }
-			ScriptFunction AwardUpgradeAssists() { return mAwardUpgradeAssists ? mAwardUpgradeAssists : (mAwardUpgradeAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPowerGenerator.AwardUpgradeAssists")); }
+			ScriptFunction IsGeneratingPower() { mixin(MGF!("mIsGeneratingPower", "Function TribesGame.TrPowerGenerator.IsGeneratingPower")()); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrPowerGenerator.ApplyServerSettings")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrPowerGenerator.ReplicatedEvent")()); }
+			ScriptFunction ShouldShowHelpText() { mixin(MGF!("mShouldShowHelpText", "Function TribesGame.TrPowerGenerator.ShouldShowHelpText")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrPowerGenerator.PostBeginPlay")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrPowerGenerator.PostInitAnimTree")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrPowerGenerator.Tick")()); }
+			ScriptFunction PlayDamageHealthEffects() { mixin(MGF!("mPlayDamageHealthEffects", "Function TribesGame.TrPowerGenerator.PlayDamageHealthEffects")()); }
+			ScriptFunction DoRepairs() { mixin(MGF!("mDoRepairs", "Function TribesGame.TrPowerGenerator.DoRepairs")()); }
+			ScriptFunction DamageAllMorphs() { mixin(MGF!("mDamageAllMorphs", "Function TribesGame.TrPowerGenerator.DamageAllMorphs")()); }
+			ScriptFunction PlayRestoreHealthEffects() { mixin(MGF!("mPlayRestoreHealthEffects", "Function TribesGame.TrPowerGenerator.PlayRestoreHealthEffects")()); }
+			ScriptFunction UpdateGeneratorDowntime() { mixin(MGF!("mUpdateGeneratorDowntime", "Function TribesGame.TrPowerGenerator.UpdateGeneratorDowntime")()); }
+			ScriptFunction UpdateGeneratorPower() { mixin(MGF!("mUpdateGeneratorPower", "Function TribesGame.TrPowerGenerator.UpdateGeneratorPower")()); }
+			ScriptFunction AutoRestoreHealth() { mixin(MGF!("mAutoRestoreHealth", "Function TribesGame.TrPowerGenerator.AutoRestoreHealth")()); }
+			ScriptFunction AddToPoweredObjectives() { mixin(MGF!("mAddToPoweredObjectives", "Function TribesGame.TrPowerGenerator.AddToPoweredObjectives")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrPowerGenerator.TakeDamage")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrPowerGenerator.GetMarker")()); }
+			ScriptFunction GiveDestroyAccolade() { mixin(MGF!("mGiveDestroyAccolade", "Function TribesGame.TrPowerGenerator.GiveDestroyAccolade")()); }
+			ScriptFunction AwardUpgradeAssists() { mixin(MGF!("mAwardUpgradeAssists", "Function TribesGame.TrPowerGenerator.AwardUpgradeAssists")()); }
 		}
+	}
+	static struct Critical
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrPowerGenerator.Critical")()); }
+	}
+	static struct BlownUp
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrPowerGenerator.BlownUp")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrGameObjective) m_PoweredObjectives() { return *cast(ScriptArray!(TrGameObjective)*)(cast(size_t)cast(void*)this + 1384); }
-			ScriptArray!(TrTeamBlockerStaticMeshActor) m_PoweredTeamBlockers() { return *cast(ScriptArray!(TrTeamBlockerStaticMeshActor)*)(cast(size_t)cast(void*)this + 1404); }
-			float m_fAnimInterpSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1400); }
-			AnimNodeScalePlayRate m_AnimNodeScale() { return *cast(AnimNodeScalePlayRate*)(cast(size_t)cast(void*)this + 1396); }
-			float m_fAutoRestoreHealthEffectsInterpSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1380); }
-			float m_fAutoRestoreHealthTimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 1376); }
-			int r_nDowntimeRemaining() { return *cast(int*)(cast(size_t)cast(void*)this + 1372); }
-			float m_fAutoRestoreHealthTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1364); }
-			float m_fMaxMorphDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 1360); }
+			ScriptArray!(TrGameObjective) m_PoweredObjectives() { mixin(MGPC!(ScriptArray!(TrGameObjective), 1384)()); }
+			ScriptArray!(TrTeamBlockerStaticMeshActor) m_PoweredTeamBlockers() { mixin(MGPC!(ScriptArray!(TrTeamBlockerStaticMeshActor), 1404)()); }
+			float m_fAnimInterpSpeed() { mixin(MGPC!(float, 1400)()); }
+			AnimNodeScalePlayRate m_AnimNodeScale() { mixin(MGPC!(AnimNodeScalePlayRate, 1396)()); }
+			float m_fAutoRestoreHealthEffectsInterpSpeed() { mixin(MGPC!(float, 1380)()); }
+			float m_fAutoRestoreHealthTimeStamp() { mixin(MGPC!(float, 1376)()); }
+			int r_nDowntimeRemaining() { mixin(MGPC!(int, 1372)()); }
+			float m_fAutoRestoreHealthTime() { mixin(MGPC!(float, 1364)()); }
+			float m_fMaxMorphDamage() { mixin(MGPC!(float, 1360)()); }
 		}
-		bool m_bFullyRestoringHealthEffects() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1368) & 0x2) != 0; }
-		bool m_bFullyRestoringHealthEffects(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1368) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1368) &= ~0x2; } return val; }
-		bool m_bAutoRestoreHealthEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1368) & 0x1) != 0; }
-		bool m_bAutoRestoreHealthEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1368) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1368) &= ~0x1; } return val; }
+		bool m_bFullyRestoringHealthEffects() { mixin(MGBPC!(1368, 0x2)()); }
+		bool m_bFullyRestoringHealthEffects(bool val) { mixin(MSBPC!(1368, 0x2)()); }
+		bool m_bAutoRestoreHealthEnabled() { mixin(MGBPC!(1368, 0x1)()); }
+		bool m_bAutoRestoreHealthEnabled(bool val) { mixin(MSBPC!(1368, 0x1)()); }
 	}
 final:
 	bool IsGeneratingPower()

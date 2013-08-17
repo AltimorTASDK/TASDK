@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrQueueManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.OnlineSubsystemMcts.OnlineGameInterfaceMcts;
 import UnrealScript.Core.UObject;
 import UnrealScript.PlatformCommon.TgPlayerProfile;
@@ -10,9 +11,9 @@ extern(C++) interface TrQueueManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrQueueManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrQueueManager")()); }
 	private static __gshared TrQueueManager mDefaultProperties;
-	@property final static TrQueueManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrQueueManager)("TrQueueManager TribesGame.Default__TrQueueManager")); }
+	@property final static TrQueueManager DefaultProperties() { mixin(MGDPC!(TrQueueManager, "TrQueueManager TribesGame.Default__TrQueueManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -104,90 +105,90 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetStatus() { return mGetStatus ? mGetStatus : (mGetStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetStatus")); }
-			ScriptFunction SetPropNumber() { return mSetPropNumber ? mSetPropNumber : (mSetPropNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetPropNumber")); }
-			ScriptFunction GetNextMapId() { return mGetNextMapId ? mGetNextMapId : (mGetNextMapId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetNextMapId")); }
-			ScriptFunction GetMapName() { return mGetMapName ? mGetMapName : (mGetMapName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetMapName")); }
-			ScriptFunction GetProfileName() { return mGetProfileName ? mGetProfileName : (mGetProfileName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileName")); }
-			ScriptFunction GetProfileDesc() { return mGetProfileDesc ? mGetProfileDesc : (mGetProfileDesc = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileDesc")); }
-			ScriptFunction GetServerGameTypeName() { return mGetServerGameTypeName ? mGetServerGameTypeName : (mGetServerGameTypeName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerGameTypeName")); }
-			ScriptFunction GetProfileGameType() { return mGetProfileGameType ? mGetProfileGameType : (mGetProfileGameType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileGameType")); }
-			ScriptFunction GetServerRotationName() { return mGetServerRotationName ? mGetServerRotationName : (mGetServerRotationName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerRotationName")); }
-			ScriptFunction IsGameTypeFiltered() { return mIsGameTypeFiltered ? mIsGameTypeFiltered : (mIsGameTypeFiltered = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.IsGameTypeFiltered")); }
-			ScriptFunction AmServerOwner() { return mAmServerOwner ? mAmServerOwner : (mAmServerOwner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AmServerOwner")); }
-			ScriptFunction GetPropNumber() { return mGetPropNumber ? mGetPropNumber : (mGetPropNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropNumber")); }
-			ScriptFunction GetServerTimeFormat() { return mGetServerTimeFormat ? mGetServerTimeFormat : (mGetServerTimeFormat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerTimeFormat")); }
-			ScriptFunction GetQueueCaseId() { return mGetQueueCaseId ? mGetQueueCaseId : (mGetQueueCaseId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetQueueCaseId")); }
-			ScriptFunction GetServerOnline() { return mGetServerOnline ? mGetServerOnline : (mGetServerOnline = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerOnline")); }
-			ScriptFunction GetServerName() { return mGetServerName ? mGetServerName : (mGetServerName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerName")); }
-			ScriptFunction AddCustomServer() { return mAddCustomServer ? mAddCustomServer : (mAddCustomServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddCustomServer")); }
-			ScriptFunction GetProfileRotation() { return mGetProfileRotation ? mGetProfileRotation : (mGetProfileRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileRotation")); }
-			ScriptFunction GetServerExpired() { return mGetServerExpired ? mGetServerExpired : (mGetServerExpired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerExpired")); }
-			ScriptFunction GetServerTime() { return mGetServerTime ? mGetServerTime : (mGetServerTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerTime")); }
-			ScriptFunction CustomStart() { return mCustomStart ? mCustomStart : (mCustomStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomStart")); }
-			ScriptFunction CustomStop() { return mCustomStop ? mCustomStop : (mCustomStop = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomStop")); }
-			ScriptFunction CustomShutdown() { return mCustomShutdown ? mCustomShutdown : (mCustomShutdown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomShutdown")); }
-			ScriptFunction CustomNextMap() { return mCustomNextMap ? mCustomNextMap : (mCustomNextMap = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomNextMap")); }
-			ScriptFunction CustomKick() { return mCustomKick ? mCustomKick : (mCustomKick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomKick")); }
-			ScriptFunction CustomBan() { return mCustomBan ? mCustomBan : (mCustomBan = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomBan")); }
-			ScriptFunction AddCustomServerTime() { return mAddCustomServerTime ? mAddCustomServerTime : (mAddCustomServerTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddCustomServerTime")); }
-			ScriptFunction GetPropMin() { return mGetPropMin ? mGetPropMin : (mGetPropMin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropMin")); }
-			ScriptFunction GetPropMax() { return mGetPropMax ? mGetPropMax : (mGetPropMax = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropMax")); }
-			ScriptFunction GetAdminPassword() { return mGetAdminPassword ? mGetAdminPassword : (mGetAdminPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetAdminPassword")); }
-			ScriptFunction GetPublicPassword() { return mGetPublicPassword ? mGetPublicPassword : (mGetPublicPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPublicPassword")); }
-			ScriptFunction CustomSetName() { return mCustomSetName ? mCustomSetName : (mCustomSetName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomSetName")); }
-			ScriptFunction SetPropString() { return mSetPropString ? mSetPropString : (mSetPropString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetPropString")); }
-			ScriptFunction GetProfileRegion() { return mGetProfileRegion ? mGetProfileRegion : (mGetProfileRegion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileRegion")); }
-			ScriptFunction CustomLogin() { return mCustomLogin ? mCustomLogin : (mCustomLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomLogin")); }
-			ScriptFunction FavoriteSortB() { return mFavoriteSortB ? mFavoriteSortB : (mFavoriteSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FavoriteSortB")); }
-			ScriptFunction PasswordSortB() { return mPasswordSortB ? mPasswordSortB : (mPasswordSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PasswordSortB")); }
-			ScriptFunction SlotsSortB() { return mSlotsSortB ? mSlotsSortB : (mSlotsSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SlotsSortB")); }
-			ScriptFunction RangeSortB() { return mRangeSortB ? mRangeSortB : (mRangeSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RangeSortB")); }
-			ScriptFunction RulesSortB() { return mRulesSortB ? mRulesSortB : (mRulesSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RulesSortB")); }
-			ScriptFunction TypeSortB() { return mTypeSortB ? mTypeSortB : (mTypeSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.TypeSortB")); }
-			ScriptFunction PingSortB() { return mPingSortB ? mPingSortB : (mPingSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PingSortB")); }
-			ScriptFunction NameSortB() { return mNameSortB ? mNameSortB : (mNameSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.NameSortB")); }
-			ScriptFunction MapSortB() { return mMapSortB ? mMapSortB : (mMapSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MapSortB")); }
-			ScriptFunction FavoriteSortA() { return mFavoriteSortA ? mFavoriteSortA : (mFavoriteSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FavoriteSortA")); }
-			ScriptFunction PasswordSortA() { return mPasswordSortA ? mPasswordSortA : (mPasswordSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PasswordSortA")); }
-			ScriptFunction SlotsSortA() { return mSlotsSortA ? mSlotsSortA : (mSlotsSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SlotsSortA")); }
-			ScriptFunction RangeSortA() { return mRangeSortA ? mRangeSortA : (mRangeSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RangeSortA")); }
-			ScriptFunction RulesSortA() { return mRulesSortA ? mRulesSortA : (mRulesSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RulesSortA")); }
-			ScriptFunction TypeSortA() { return mTypeSortA ? mTypeSortA : (mTypeSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.TypeSortA")); }
-			ScriptFunction PingSortA() { return mPingSortA ? mPingSortA : (mPingSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PingSortA")); }
-			ScriptFunction NameSortA() { return mNameSortA ? mNameSortA : (mNameSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.NameSortA")); }
-			ScriptFunction MapSortA() { return mMapSortA ? mMapSortA : (mMapSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MapSortA")); }
-			ScriptFunction ForceGoHome() { return mForceGoHome ? mForceGoHome : (mForceGoHome = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ForceGoHome")); }
-			ScriptFunction OpenLocal() { return mOpenLocal ? mOpenLocal : (mOpenLocal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.OpenLocal")); }
-			ScriptFunction GetCustomServers() { return mGetCustomServers ? mGetCustomServers : (mGetCustomServers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetCustomServers")); }
-			ScriptFunction RequestCustomServers() { return mRequestCustomServers ? mRequestCustomServers : (mRequestCustomServers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RequestCustomServers")); }
-			ScriptFunction RefreshRentedServers() { return mRefreshRentedServers ? mRefreshRentedServers : (mRefreshRentedServers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RefreshRentedServers")); }
-			ScriptFunction GetPropString() { return mGetPropString ? mGetPropString : (mGetPropString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropString")); }
-			ScriptFunction SetLocalName() { return mSetLocalName ? mSetLocalName : (mSetLocalName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetLocalName")); }
-			ScriptFunction MatchQueueJoin() { return mMatchQueueJoin ? mMatchQueueJoin : (mMatchQueueJoin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MatchQueueJoin")); }
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.Initialize")); }
-			ScriptFunction LeaveMatchmaking() { return mLeaveMatchmaking ? mLeaveMatchmaking : (mLeaveMatchmaking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.LeaveMatchmaking")); }
-			ScriptFunction JoinQueue() { return mJoinQueue ? mJoinQueue : (mJoinQueue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinQueue")); }
-			ScriptFunction SetPlayerQueued() { return mSetPlayerQueued ? mSetPlayerQueued : (mSetPlayerQueued = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetPlayerQueued")); }
-			ScriptFunction JoinFriend() { return mJoinFriend ? mJoinFriend : (mJoinFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinFriend")); }
-			ScriptFunction ExitGameInProgress() { return mExitGameInProgress ? mExitGameInProgress : (mExitGameInProgress = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ExitGameInProgress")); }
-			ScriptFunction ServerInfoLoaded() { return mServerInfoLoaded ? mServerInfoLoaded : (mServerInfoLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ServerInfoLoaded")); }
-			ScriptFunction JoinCustomServer() { return mJoinCustomServer ? mJoinCustomServer : (mJoinCustomServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinCustomServer")); }
-			ScriptFunction JoinProtectedServer() { return mJoinProtectedServer ? mJoinProtectedServer : (mJoinProtectedServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinProtectedServer")); }
-			ScriptFunction FavoriteServer() { return mFavoriteServer ? mFavoriteServer : (mFavoriteServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FavoriteServer")); }
-			ScriptFunction PasswordServer() { return mPasswordServer ? mPasswordServer : (mPasswordServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PasswordServer")); }
-			ScriptFunction SetActiveServer() { return mSetActiveServer ? mSetActiveServer : (mSetActiveServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetActiveServer")); }
-			ScriptFunction ServerPage() { return mServerPage ? mServerPage : (mServerPage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ServerPage")); }
-			ScriptFunction ServerSort() { return mServerSort ? mServerSort : (mServerSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ServerSort")); }
-			ScriptFunction SortOn() { return mSortOn ? mSortOn : (mSortOn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SortOn")); }
-			ScriptFunction GetSlots() { return mGetSlots ? mGetSlots : (mGetSlots = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetSlots")); }
-			ScriptFunction GetGameCaseId() { return mGetGameCaseId ? mGetGameCaseId : (mGetGameCaseId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetGameCaseId")); }
-			ScriptFunction AddServerConfig() { return mAddServerConfig ? mAddServerConfig : (mAddServerConfig = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddServerConfig")); }
-			ScriptFunction AddProfileConfig() { return mAddProfileConfig ? mAddProfileConfig : (mAddProfileConfig = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddProfileConfig")); }
-			ScriptFunction ResetRotation() { return mResetRotation ? mResetRotation : (mResetRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ResetRotation")); }
-			ScriptFunction GetDefaultMapId() { return mGetDefaultMapId ? mGetDefaultMapId : (mGetDefaultMapId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetDefaultMapId")); }
-			ScriptFunction MarkFavorite() { return mMarkFavorite ? mMarkFavorite : (mMarkFavorite = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MarkFavorite")); }
-			ScriptFunction FilterGameType() { return mFilterGameType ? mFilterGameType : (mFilterGameType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FilterGameType")); }
+			ScriptFunction GetStatus() { mixin(MGF!("mGetStatus", "Function TribesGame.TrQueueManager.GetStatus")()); }
+			ScriptFunction SetPropNumber() { mixin(MGF!("mSetPropNumber", "Function TribesGame.TrQueueManager.SetPropNumber")()); }
+			ScriptFunction GetNextMapId() { mixin(MGF!("mGetNextMapId", "Function TribesGame.TrQueueManager.GetNextMapId")()); }
+			ScriptFunction GetMapName() { mixin(MGF!("mGetMapName", "Function TribesGame.TrQueueManager.GetMapName")()); }
+			ScriptFunction GetProfileName() { mixin(MGF!("mGetProfileName", "Function TribesGame.TrQueueManager.GetProfileName")()); }
+			ScriptFunction GetProfileDesc() { mixin(MGF!("mGetProfileDesc", "Function TribesGame.TrQueueManager.GetProfileDesc")()); }
+			ScriptFunction GetServerGameTypeName() { mixin(MGF!("mGetServerGameTypeName", "Function TribesGame.TrQueueManager.GetServerGameTypeName")()); }
+			ScriptFunction GetProfileGameType() { mixin(MGF!("mGetProfileGameType", "Function TribesGame.TrQueueManager.GetProfileGameType")()); }
+			ScriptFunction GetServerRotationName() { mixin(MGF!("mGetServerRotationName", "Function TribesGame.TrQueueManager.GetServerRotationName")()); }
+			ScriptFunction IsGameTypeFiltered() { mixin(MGF!("mIsGameTypeFiltered", "Function TribesGame.TrQueueManager.IsGameTypeFiltered")()); }
+			ScriptFunction AmServerOwner() { mixin(MGF!("mAmServerOwner", "Function TribesGame.TrQueueManager.AmServerOwner")()); }
+			ScriptFunction GetPropNumber() { mixin(MGF!("mGetPropNumber", "Function TribesGame.TrQueueManager.GetPropNumber")()); }
+			ScriptFunction GetServerTimeFormat() { mixin(MGF!("mGetServerTimeFormat", "Function TribesGame.TrQueueManager.GetServerTimeFormat")()); }
+			ScriptFunction GetQueueCaseId() { mixin(MGF!("mGetQueueCaseId", "Function TribesGame.TrQueueManager.GetQueueCaseId")()); }
+			ScriptFunction GetServerOnline() { mixin(MGF!("mGetServerOnline", "Function TribesGame.TrQueueManager.GetServerOnline")()); }
+			ScriptFunction GetServerName() { mixin(MGF!("mGetServerName", "Function TribesGame.TrQueueManager.GetServerName")()); }
+			ScriptFunction AddCustomServer() { mixin(MGF!("mAddCustomServer", "Function TribesGame.TrQueueManager.AddCustomServer")()); }
+			ScriptFunction GetProfileRotation() { mixin(MGF!("mGetProfileRotation", "Function TribesGame.TrQueueManager.GetProfileRotation")()); }
+			ScriptFunction GetServerExpired() { mixin(MGF!("mGetServerExpired", "Function TribesGame.TrQueueManager.GetServerExpired")()); }
+			ScriptFunction GetServerTime() { mixin(MGF!("mGetServerTime", "Function TribesGame.TrQueueManager.GetServerTime")()); }
+			ScriptFunction CustomStart() { mixin(MGF!("mCustomStart", "Function TribesGame.TrQueueManager.CustomStart")()); }
+			ScriptFunction CustomStop() { mixin(MGF!("mCustomStop", "Function TribesGame.TrQueueManager.CustomStop")()); }
+			ScriptFunction CustomShutdown() { mixin(MGF!("mCustomShutdown", "Function TribesGame.TrQueueManager.CustomShutdown")()); }
+			ScriptFunction CustomNextMap() { mixin(MGF!("mCustomNextMap", "Function TribesGame.TrQueueManager.CustomNextMap")()); }
+			ScriptFunction CustomKick() { mixin(MGF!("mCustomKick", "Function TribesGame.TrQueueManager.CustomKick")()); }
+			ScriptFunction CustomBan() { mixin(MGF!("mCustomBan", "Function TribesGame.TrQueueManager.CustomBan")()); }
+			ScriptFunction AddCustomServerTime() { mixin(MGF!("mAddCustomServerTime", "Function TribesGame.TrQueueManager.AddCustomServerTime")()); }
+			ScriptFunction GetPropMin() { mixin(MGF!("mGetPropMin", "Function TribesGame.TrQueueManager.GetPropMin")()); }
+			ScriptFunction GetPropMax() { mixin(MGF!("mGetPropMax", "Function TribesGame.TrQueueManager.GetPropMax")()); }
+			ScriptFunction GetAdminPassword() { mixin(MGF!("mGetAdminPassword", "Function TribesGame.TrQueueManager.GetAdminPassword")()); }
+			ScriptFunction GetPublicPassword() { mixin(MGF!("mGetPublicPassword", "Function TribesGame.TrQueueManager.GetPublicPassword")()); }
+			ScriptFunction CustomSetName() { mixin(MGF!("mCustomSetName", "Function TribesGame.TrQueueManager.CustomSetName")()); }
+			ScriptFunction SetPropString() { mixin(MGF!("mSetPropString", "Function TribesGame.TrQueueManager.SetPropString")()); }
+			ScriptFunction GetProfileRegion() { mixin(MGF!("mGetProfileRegion", "Function TribesGame.TrQueueManager.GetProfileRegion")()); }
+			ScriptFunction CustomLogin() { mixin(MGF!("mCustomLogin", "Function TribesGame.TrQueueManager.CustomLogin")()); }
+			ScriptFunction FavoriteSortB() { mixin(MGF!("mFavoriteSortB", "Function TribesGame.TrQueueManager.FavoriteSortB")()); }
+			ScriptFunction PasswordSortB() { mixin(MGF!("mPasswordSortB", "Function TribesGame.TrQueueManager.PasswordSortB")()); }
+			ScriptFunction SlotsSortB() { mixin(MGF!("mSlotsSortB", "Function TribesGame.TrQueueManager.SlotsSortB")()); }
+			ScriptFunction RangeSortB() { mixin(MGF!("mRangeSortB", "Function TribesGame.TrQueueManager.RangeSortB")()); }
+			ScriptFunction RulesSortB() { mixin(MGF!("mRulesSortB", "Function TribesGame.TrQueueManager.RulesSortB")()); }
+			ScriptFunction TypeSortB() { mixin(MGF!("mTypeSortB", "Function TribesGame.TrQueueManager.TypeSortB")()); }
+			ScriptFunction PingSortB() { mixin(MGF!("mPingSortB", "Function TribesGame.TrQueueManager.PingSortB")()); }
+			ScriptFunction NameSortB() { mixin(MGF!("mNameSortB", "Function TribesGame.TrQueueManager.NameSortB")()); }
+			ScriptFunction MapSortB() { mixin(MGF!("mMapSortB", "Function TribesGame.TrQueueManager.MapSortB")()); }
+			ScriptFunction FavoriteSortA() { mixin(MGF!("mFavoriteSortA", "Function TribesGame.TrQueueManager.FavoriteSortA")()); }
+			ScriptFunction PasswordSortA() { mixin(MGF!("mPasswordSortA", "Function TribesGame.TrQueueManager.PasswordSortA")()); }
+			ScriptFunction SlotsSortA() { mixin(MGF!("mSlotsSortA", "Function TribesGame.TrQueueManager.SlotsSortA")()); }
+			ScriptFunction RangeSortA() { mixin(MGF!("mRangeSortA", "Function TribesGame.TrQueueManager.RangeSortA")()); }
+			ScriptFunction RulesSortA() { mixin(MGF!("mRulesSortA", "Function TribesGame.TrQueueManager.RulesSortA")()); }
+			ScriptFunction TypeSortA() { mixin(MGF!("mTypeSortA", "Function TribesGame.TrQueueManager.TypeSortA")()); }
+			ScriptFunction PingSortA() { mixin(MGF!("mPingSortA", "Function TribesGame.TrQueueManager.PingSortA")()); }
+			ScriptFunction NameSortA() { mixin(MGF!("mNameSortA", "Function TribesGame.TrQueueManager.NameSortA")()); }
+			ScriptFunction MapSortA() { mixin(MGF!("mMapSortA", "Function TribesGame.TrQueueManager.MapSortA")()); }
+			ScriptFunction ForceGoHome() { mixin(MGF!("mForceGoHome", "Function TribesGame.TrQueueManager.ForceGoHome")()); }
+			ScriptFunction OpenLocal() { mixin(MGF!("mOpenLocal", "Function TribesGame.TrQueueManager.OpenLocal")()); }
+			ScriptFunction GetCustomServers() { mixin(MGF!("mGetCustomServers", "Function TribesGame.TrQueueManager.GetCustomServers")()); }
+			ScriptFunction RequestCustomServers() { mixin(MGF!("mRequestCustomServers", "Function TribesGame.TrQueueManager.RequestCustomServers")()); }
+			ScriptFunction RefreshRentedServers() { mixin(MGF!("mRefreshRentedServers", "Function TribesGame.TrQueueManager.RefreshRentedServers")()); }
+			ScriptFunction GetPropString() { mixin(MGF!("mGetPropString", "Function TribesGame.TrQueueManager.GetPropString")()); }
+			ScriptFunction SetLocalName() { mixin(MGF!("mSetLocalName", "Function TribesGame.TrQueueManager.SetLocalName")()); }
+			ScriptFunction MatchQueueJoin() { mixin(MGF!("mMatchQueueJoin", "Function TribesGame.TrQueueManager.MatchQueueJoin")()); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrQueueManager.Initialize")()); }
+			ScriptFunction LeaveMatchmaking() { mixin(MGF!("mLeaveMatchmaking", "Function TribesGame.TrQueueManager.LeaveMatchmaking")()); }
+			ScriptFunction JoinQueue() { mixin(MGF!("mJoinQueue", "Function TribesGame.TrQueueManager.JoinQueue")()); }
+			ScriptFunction SetPlayerQueued() { mixin(MGF!("mSetPlayerQueued", "Function TribesGame.TrQueueManager.SetPlayerQueued")()); }
+			ScriptFunction JoinFriend() { mixin(MGF!("mJoinFriend", "Function TribesGame.TrQueueManager.JoinFriend")()); }
+			ScriptFunction ExitGameInProgress() { mixin(MGF!("mExitGameInProgress", "Function TribesGame.TrQueueManager.ExitGameInProgress")()); }
+			ScriptFunction ServerInfoLoaded() { mixin(MGF!("mServerInfoLoaded", "Function TribesGame.TrQueueManager.ServerInfoLoaded")()); }
+			ScriptFunction JoinCustomServer() { mixin(MGF!("mJoinCustomServer", "Function TribesGame.TrQueueManager.JoinCustomServer")()); }
+			ScriptFunction JoinProtectedServer() { mixin(MGF!("mJoinProtectedServer", "Function TribesGame.TrQueueManager.JoinProtectedServer")()); }
+			ScriptFunction FavoriteServer() { mixin(MGF!("mFavoriteServer", "Function TribesGame.TrQueueManager.FavoriteServer")()); }
+			ScriptFunction PasswordServer() { mixin(MGF!("mPasswordServer", "Function TribesGame.TrQueueManager.PasswordServer")()); }
+			ScriptFunction SetActiveServer() { mixin(MGF!("mSetActiveServer", "Function TribesGame.TrQueueManager.SetActiveServer")()); }
+			ScriptFunction ServerPage() { mixin(MGF!("mServerPage", "Function TribesGame.TrQueueManager.ServerPage")()); }
+			ScriptFunction ServerSort() { mixin(MGF!("mServerSort", "Function TribesGame.TrQueueManager.ServerSort")()); }
+			ScriptFunction SortOn() { mixin(MGF!("mSortOn", "Function TribesGame.TrQueueManager.SortOn")()); }
+			ScriptFunction GetSlots() { mixin(MGF!("mGetSlots", "Function TribesGame.TrQueueManager.GetSlots")()); }
+			ScriptFunction GetGameCaseId() { mixin(MGF!("mGetGameCaseId", "Function TribesGame.TrQueueManager.GetGameCaseId")()); }
+			ScriptFunction AddServerConfig() { mixin(MGF!("mAddServerConfig", "Function TribesGame.TrQueueManager.AddServerConfig")()); }
+			ScriptFunction AddProfileConfig() { mixin(MGF!("mAddProfileConfig", "Function TribesGame.TrQueueManager.AddProfileConfig")()); }
+			ScriptFunction ResetRotation() { mixin(MGF!("mResetRotation", "Function TribesGame.TrQueueManager.ResetRotation")()); }
+			ScriptFunction GetDefaultMapId() { mixin(MGF!("mGetDefaultMapId", "Function TribesGame.TrQueueManager.GetDefaultMapId")()); }
+			ScriptFunction MarkFavorite() { mixin(MGF!("mMarkFavorite", "Function TribesGame.TrQueueManager.MarkFavorite")()); }
+			ScriptFunction FilterGameType() { mixin(MGF!("mFilterGameType", "Function TribesGame.TrQueueManager.FilterGameType")()); }
 		}
 	}
 	struct ServerInfo
@@ -195,27 +196,27 @@ public extern(D):
 		private ubyte __buffer__[80];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.ServerInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrQueueManager.ServerInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				int PlayerCount() { return *cast(int*)(cast(size_t)&this + 20); }
-				int PlayerMax() { return *cast(int*)(cast(size_t)&this + 16); }
-				ScriptString MapName() { return *cast(ScriptString*)(cast(size_t)&this + 56); }
-				ScriptString ServerName() { return *cast(ScriptString*)(cast(size_t)&this + 32); }
-				int queueId() { return *cast(int*)(cast(size_t)&this + 4); }
-				int Ping() { return *cast(int*)(cast(size_t)&this + 0); }
-				ScriptString Ruleset() { return *cast(ScriptString*)(cast(size_t)&this + 68); }
-				int MinLevel() { return *cast(int*)(cast(size_t)&this + 8); }
-				int MaxLevel() { return *cast(int*)(cast(size_t)&this + 12); }
-				ScriptString ServerDesc() { return *cast(ScriptString*)(cast(size_t)&this + 44); }
-				int GameType() { return *cast(int*)(cast(size_t)&this + 28); }
+				int PlayerCount() { mixin(MGPS!(int, 20)()); }
+				int PlayerMax() { mixin(MGPS!(int, 16)()); }
+				ScriptString MapName() { mixin(MGPS!(ScriptString, 56)()); }
+				ScriptString ServerName() { mixin(MGPS!(ScriptString, 32)()); }
+				int queueId() { mixin(MGPS!(int, 4)()); }
+				int Ping() { mixin(MGPS!(int, 0)()); }
+				ScriptString Ruleset() { mixin(MGPS!(ScriptString, 68)()); }
+				int MinLevel() { mixin(MGPS!(int, 8)()); }
+				int MaxLevel() { mixin(MGPS!(int, 12)()); }
+				ScriptString ServerDesc() { mixin(MGPS!(ScriptString, 44)()); }
+				int GameType() { mixin(MGPS!(int, 28)()); }
 			}
-			bool bFavorite() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x2) != 0; }
-			bool bFavorite(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x2; } return val; }
-			bool bPrivate() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
-			bool bPrivate(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
+			bool bFavorite() { mixin(MGBPS!(24, 0x2)()); }
+			bool bFavorite(bool val) { mixin(MSBPS!(24, 0x2)()); }
+			bool bPrivate() { mixin(MGBPS!(24, 0x1)()); }
+			bool bPrivate(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
 	struct RentalItem
@@ -223,13 +224,13 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.RentalItem")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrQueueManager.RentalItem")()); }
 		@property final auto ref
 		{
-			ScriptString RentalName() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			int Price() { return *cast(int*)(cast(size_t)&this + 0); }
-			int LootId() { return *cast(int*)(cast(size_t)&this + 4); }
-			int SortOrder() { return *cast(int*)(cast(size_t)&this + 8); }
+			ScriptString RentalName() { mixin(MGPS!(ScriptString, 12)()); }
+			int Price() { mixin(MGPS!(int, 0)()); }
+			int LootId() { mixin(MGPS!(int, 4)()); }
+			int SortOrder() { mixin(MGPS!(int, 8)()); }
 		}
 	}
 	struct ServerConfig
@@ -237,25 +238,25 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.ServerConfig")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrQueueManager.ServerConfig")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(TrQueueManager.ProfileConfig) Profiles() { return *cast(ScriptArray!(TrQueueManager.ProfileConfig)*)(cast(size_t)&this + 28); }
-				ScriptString ServerName() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-				int MinutesRented() { return *cast(int*)(cast(size_t)&this + 8); }
-				int MatchQueueId() { return *cast(int*)(cast(size_t)&this + 4); }
-				int ActiveConfig() { return *cast(int*)(cast(size_t)&this + 0); }
+				ScriptArray!(TrQueueManager.ProfileConfig) Profiles() { mixin(MGPS!(ScriptArray!(TrQueueManager.ProfileConfig), 28)()); }
+				ScriptString ServerName() { mixin(MGPS!(ScriptString, 16)()); }
+				int MinutesRented() { mixin(MGPS!(int, 8)()); }
+				int MatchQueueId() { mixin(MGPS!(int, 4)()); }
+				int ActiveConfig() { mixin(MGPS!(int, 0)()); }
 			}
-			bool bCanExpire() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x8) != 0; }
-			bool bCanExpire(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x8; } return val; }
-			bool bActive() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x4) != 0; }
-			bool bActive(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x4; } return val; }
-			bool bOwner() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x2) != 0; }
-			bool bOwner(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x2; } return val; }
-			bool bOpen() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bCanExpire() { mixin(MGBPS!(12, 0x8)()); }
+			bool bCanExpire(bool val) { mixin(MSBPS!(12, 0x8)()); }
+			bool bActive() { mixin(MGBPS!(12, 0x4)()); }
+			bool bActive(bool val) { mixin(MSBPS!(12, 0x4)()); }
+			bool bOwner() { mixin(MGBPS!(12, 0x2)()); }
+			bool bOwner(bool val) { mixin(MSBPS!(12, 0x2)()); }
+			bool bOpen() { mixin(MGBPS!(12, 0x1)()); }
+			bool bOpen(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
 	}
 	struct ProfileConfig
@@ -263,64 +264,82 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.ProfileConfig")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrQueueManager.ProfileConfig")()); }
 		@property final auto ref
 		{
-			ScriptString PasswordPublic() { return *cast(ScriptString*)(cast(size_t)&this + 48); }
-			ScriptString PasswordAdmin() { return *cast(ScriptString*)(cast(size_t)&this + 36); }
-			ScriptString ProfileDesc() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
-			ScriptString ProfileName() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			int QueueCaseId() { return *cast(int*)(cast(size_t)&this + 8); }
-			int GameCaseId() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Slots() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptString PasswordPublic() { mixin(MGPS!(ScriptString, 48)()); }
+			ScriptString PasswordAdmin() { mixin(MGPS!(ScriptString, 36)()); }
+			ScriptString ProfileDesc() { mixin(MGPS!(ScriptString, 24)()); }
+			ScriptString ProfileName() { mixin(MGPS!(ScriptString, 12)()); }
+			int QueueCaseId() { mixin(MGPS!(int, 8)()); }
+			int GameCaseId() { mixin(MGPS!(int, 4)()); }
+			int Slots() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(int) RegionFilter() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 116); }
-			ScriptString QueueFriend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-			ScriptArray!(TrQueueManager.ServerInfo) ServerInfoList() { return *cast(ScriptArray!(TrQueueManager.ServerInfo)*)(cast(size_t)cast(void*)this + 152); }
-			int GameTypeId() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-			ScriptArray!(TrQueueManager.ServerConfig) RentedServers() { return *cast(ScriptArray!(TrQueueManager.ServerConfig)*)(cast(size_t)cast(void*)this + 164); }
-			int ServerIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 104); }
-			int MapSlots() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			ScriptArray!(TrQueueManager.RentalItem) RentalItems() { return *cast(ScriptArray!(TrQueueManager.RentalItem)*)(cast(size_t)cast(void*)this + 176); }
-			ScriptArray!(TgPlayerProfile.PropertyPair) FilteredGameTypes() { return *cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)(cast(size_t)cast(void*)this + 188); }
-			GFxTrMenuMoviePlayer TrOuter() { return *cast(GFxTrMenuMoviePlayer*)(cast(size_t)cast(void*)this + 148); }
-			OnlineGameInterfaceMcts OnlineGameMcts() { return *cast(OnlineGameInterfaceMcts*)(cast(size_t)cast(void*)this + 144); }
-			int PasswordQueue() { return *cast(int*)(cast(size_t)cast(void*)this + 112); }
-			int PasswordIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
-			int ProfileIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
-			int queueId() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(int) RegionFilter() { mixin(MGPC!(ScriptArray!(int), 116)()); }
+			ScriptString QueueFriend() { mixin(MGPC!(ScriptString, 132)()); }
+			ScriptArray!(TrQueueManager.ServerInfo) ServerInfoList() { mixin(MGPC!(ScriptArray!(TrQueueManager.ServerInfo), 152)()); }
+			int GameTypeId() { mixin(MGPC!(int, 96)()); }
+			ScriptArray!(TrQueueManager.ServerConfig) RentedServers() { mixin(MGPC!(ScriptArray!(TrQueueManager.ServerConfig), 164)()); }
+			int ServerIndex() { mixin(MGPC!(int, 104)()); }
+			int MapSlots() { mixin(MGPC!(int, 64)()); }
+			ScriptArray!(TrQueueManager.RentalItem) RentalItems() { mixin(MGPC!(ScriptArray!(TrQueueManager.RentalItem), 176)()); }
+			ScriptArray!(TgPlayerProfile.PropertyPair) FilteredGameTypes() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.PropertyPair), 188)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__FavoriteSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__PasswordSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__SlotsSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__RangeSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__RulesSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__TypeSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__PingSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__NameSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__MapSortB__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__FavoriteSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__PasswordSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__SlotsSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__RangeSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__RulesSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__TypeSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__PingSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__NameSortA__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__MapSortA__Delegate'!
+			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC!(GFxTrMenuMoviePlayer, 148)()); }
+			OnlineGameInterfaceMcts OnlineGameMcts() { mixin(MGPC!(OnlineGameInterfaceMcts, 144)()); }
+			int PasswordQueue() { mixin(MGPC!(int, 112)()); }
+			int PasswordIndex() { mixin(MGPC!(int, 108)()); }
+			int ProfileIndex() { mixin(MGPC!(int, 100)()); }
+			int queueId() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bQueued() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1) != 0; }
-		bool bQueued(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1; } return val; }
-		bool bJoiningCustom() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x4) != 0; }
-		bool bJoiningCustom(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x4; } return val; }
-		bool bFilterOwner() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x8) != 0; }
-		bool bFilterOwner(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x8; } return val; }
-		bool bNeedPassword() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x2) != 0; }
-		bool bNeedPassword(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x2; } return val; }
-		bool bFavoriteSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1000) != 0; }
-		bool bFavoriteSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1000; } return val; }
-		bool bPasswordSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x800) != 0; }
-		bool bPasswordSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x800; } return val; }
-		bool bSlotsSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x400) != 0; }
-		bool bSlotsSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x400; } return val; }
-		bool bRangeSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x200) != 0; }
-		bool bRangeSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x200; } return val; }
-		bool bRulesSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x100) != 0; }
-		bool bRulesSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x100; } return val; }
-		bool bTypeSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x80) != 0; }
-		bool bTypeSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x80; } return val; }
-		bool bPingSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x40) != 0; }
-		bool bPingSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x40; } return val; }
-		bool bNameSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x20) != 0; }
-		bool bNameSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x20; } return val; }
-		bool bMapSort() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x10) != 0; }
-		bool bMapSort(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x10; } return val; }
+		bool bQueued() { mixin(MGBPC!(128, 0x1)()); }
+		bool bQueued(bool val) { mixin(MSBPC!(128, 0x1)()); }
+		bool bJoiningCustom() { mixin(MGBPC!(128, 0x4)()); }
+		bool bJoiningCustom(bool val) { mixin(MSBPC!(128, 0x4)()); }
+		bool bFilterOwner() { mixin(MGBPC!(128, 0x8)()); }
+		bool bFilterOwner(bool val) { mixin(MSBPC!(128, 0x8)()); }
+		bool bNeedPassword() { mixin(MGBPC!(128, 0x2)()); }
+		bool bNeedPassword(bool val) { mixin(MSBPC!(128, 0x2)()); }
+		bool bFavoriteSort() { mixin(MGBPC!(128, 0x1000)()); }
+		bool bFavoriteSort(bool val) { mixin(MSBPC!(128, 0x1000)()); }
+		bool bPasswordSort() { mixin(MGBPC!(128, 0x800)()); }
+		bool bPasswordSort(bool val) { mixin(MSBPC!(128, 0x800)()); }
+		bool bSlotsSort() { mixin(MGBPC!(128, 0x400)()); }
+		bool bSlotsSort(bool val) { mixin(MSBPC!(128, 0x400)()); }
+		bool bRangeSort() { mixin(MGBPC!(128, 0x200)()); }
+		bool bRangeSort(bool val) { mixin(MSBPC!(128, 0x200)()); }
+		bool bRulesSort() { mixin(MGBPC!(128, 0x100)()); }
+		bool bRulesSort(bool val) { mixin(MSBPC!(128, 0x100)()); }
+		bool bTypeSort() { mixin(MGBPC!(128, 0x80)()); }
+		bool bTypeSort(bool val) { mixin(MSBPC!(128, 0x80)()); }
+		bool bPingSort() { mixin(MGBPC!(128, 0x40)()); }
+		bool bPingSort(bool val) { mixin(MSBPC!(128, 0x40)()); }
+		bool bNameSort() { mixin(MGBPC!(128, 0x20)()); }
+		bool bNameSort(bool val) { mixin(MSBPC!(128, 0x20)()); }
+		bool bMapSort() { mixin(MGBPC!(128, 0x10)()); }
+		bool bMapSort(bool val) { mixin(MSBPC!(128, 0x10)()); }
 	}
 final:
 	ScriptString GetStatus()
@@ -340,12 +359,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPropNumber, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool GetNextMapId(bool bStart, int* MapId)
+	bool GetNextMapId(bool bStart, ref int MapId)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(bool*)params.ptr = bStart;
-		*cast(int*)&params[4] = *MapId;
+		*cast(int*)&params[4] = MapId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextMapId, params.ptr, cast(void*)0);
 		*MapId = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
@@ -529,24 +548,24 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddCustomServerTime, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool GetPropMin(int PropId, int PropType, int* val)
+	bool GetPropMin(int PropId, int PropType, ref int val)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = PropType;
-		*cast(int*)&params[8] = *val;
+		*cast(int*)&params[8] = val;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropMin, params.ptr, cast(void*)0);
 		*val = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetPropMax(int PropId, int PropType, int* val)
+	bool GetPropMax(int PropId, int PropType, ref int val)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = PropType;
-		*cast(int*)&params[8] = *val;
+		*cast(int*)&params[8] = val;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropMax, params.ptr, cast(void*)0);
 		*val = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCallIn_SupportItemPlatform;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrGameObjective;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrCallIn_SupportItemPlatform : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_SupportItemPlatform")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallIn_SupportItemPlatform")()); }
 	private static __gshared TrCallIn_SupportItemPlatform mDefaultProperties;
-	@property final static TrCallIn_SupportItemPlatform DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_SupportItemPlatform)("TrCallIn_SupportItemPlatform TribesGame.Default__TrCallIn_SupportItemPlatform")); }
+	@property final static TrCallIn_SupportItemPlatform DefaultProperties() { mixin(MGDPC!(TrCallIn_SupportItemPlatform, "TrCallIn_SupportItemPlatform TribesGame.Default__TrCallIn_SupportItemPlatform")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,26 +24,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBoundingCylinder() { return mGetBoundingCylinder ? mGetBoundingCylinder : (mGetBoundingCylinder = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_SupportItemPlatform.GetBoundingCylinder")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_SupportItemPlatform.Init")); }
-			ScriptFunction ScriptGetTeamNum() { return mScriptGetTeamNum ? mScriptGetTeamNum : (mScriptGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_SupportItemPlatform.ScriptGetTeamNum")); }
-			ScriptFunction HideMesh() { return mHideMesh ? mHideMesh : (mHideMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_SupportItemPlatform.HideMesh")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_SupportItemPlatform.Tick")); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function TribesGame.TrCallIn_SupportItemPlatform.GetBoundingCylinder")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrCallIn_SupportItemPlatform.Init")()); }
+			ScriptFunction ScriptGetTeamNum() { mixin(MGF!("mScriptGetTeamNum", "Function TribesGame.TrCallIn_SupportItemPlatform.ScriptGetTeamNum")()); }
+			ScriptFunction HideMesh() { mixin(MGF!("mHideMesh", "Function TribesGame.TrCallIn_SupportItemPlatform.HideMesh")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrCallIn_SupportItemPlatform.Tick")()); }
 		}
 	}
 	@property final auto ref
 	{
-		TrGameObjective r_DeployedItem() { return *cast(TrGameObjective*)(cast(size_t)cast(void*)this + 476); }
-		ubyte DefenderTeamIndex() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 496); }
-		ScriptName ItemAttachPointName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 488); }
+		TrGameObjective r_DeployedItem() { mixin(MGPC!(TrGameObjective, 476)()); }
+		ubyte DefenderTeamIndex() { mixin(MGPC!(ubyte, 496)()); }
+		ScriptName ItemAttachPointName() { mixin(MGPC!(ScriptName, 488)()); }
+		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
 	}
 final:
-	void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight)
+	void GetBoundingCylinder(ref float CollisionRadius, ref float CollisionHeight)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = *CollisionRadius;
-		*cast(float*)&params[4] = *CollisionHeight;
+		*cast(float*)params.ptr = CollisionRadius;
+		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
 		*CollisionRadius = *cast(float*)params.ptr;
 		*CollisionHeight = *cast(float*)&params[4];

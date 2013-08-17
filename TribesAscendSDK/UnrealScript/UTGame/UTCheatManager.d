@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCheatManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SpeechRecognition;
 import UnrealScript.Engine.CheatManager;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTCheatManager : CheatManager
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCheatManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCheatManager")()); }
 	private static __gshared UTCheatManager mDefaultProperties;
-	@property final static UTCheatManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCheatManager)("UTCheatManager UTGame.Default__UTCheatManager")); }
+	@property final static UTCheatManager DefaultProperties() { mixin(MGDPC!(UTCheatManager, "UTCheatManager UTGame.Default__UTCheatManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,36 +43,36 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ViewFlag() { return mViewFlag ? mViewFlag : (mViewFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.ViewFlag")); }
-			ScriptFunction Glow() { return mGlow ? mGlow : (mGlow = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.Glow")); }
-			ScriptFunction LM() { return mLM ? mLM : (mLM = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.LM")); }
-			ScriptFunction LMS() { return mLMS ? mLMS : (mLMS = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.LMS")); }
-			ScriptFunction SummonV() { return mSummonV ? mSummonV : (mSummonV = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.SummonV")); }
-			ScriptFunction AllWeapons() { return mAllWeapons ? mAllWeapons : (mAllWeapons = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.AllWeapons")); }
-			ScriptFunction DoubleUp() { return mDoubleUp ? mDoubleUp : (mDoubleUp = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.DoubleUp")); }
-			ScriptFunction ChainGun() { return mChainGun ? mChainGun : (mChainGun = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.ChainGun")); }
-			ScriptFunction AllAmmo() { return mAllAmmo ? mAllAmmo : (mAllAmmo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.AllAmmo")); }
-			ScriptFunction Invisible() { return mInvisible ? mInvisible : (mInvisible = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.Invisible")); }
-			ScriptFunction FreeCamera() { return mFreeCamera ? mFreeCamera : (mFreeCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.FreeCamera")); }
-			ScriptFunction ViewBot() { return mViewBot ? mViewBot : (mViewBot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.ViewBot")); }
-			ScriptFunction KillBadGuys() { return mKillBadGuys ? mKillBadGuys : (mKillBadGuys = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.KillBadGuys")); }
-			ScriptFunction RBGrav() { return mRBGrav ? mRBGrav : (mRBGrav = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.RBGrav")); }
-			ScriptFunction SuicideBy() { return mSuicideBy ? mSuicideBy : (mSuicideBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.SuicideBy")); }
-			ScriptFunction EditWeapon() { return mEditWeapon ? mEditWeapon : (mEditWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.EditWeapon")); }
-			ScriptFunction KillOtherBots() { return mKillOtherBots ? mKillOtherBots : (mKillOtherBots = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.KillOtherBots")); }
-			ScriptFunction SpawnABloodDecal() { return mSpawnABloodDecal ? mSpawnABloodDecal : (mSpawnABloodDecal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.SpawnABloodDecal")); }
-			ScriptFunction LeaveADecal() { return mLeaveADecal ? mLeaveADecal : (mLeaveADecal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.LeaveADecal")); }
-			ScriptFunction TiltIt() { return mTiltIt ? mTiltIt : (mTiltIt = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.TiltIt")); }
-			ScriptFunction ShowStickBindings() { return mShowStickBindings ? mShowStickBindings : (mShowStickBindings = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.ShowStickBindings")); }
-			ScriptFunction SetStickBind() { return mSetStickBind ? mSetStickBind : (mSetStickBind = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.SetStickBind")); }
-			ScriptFunction KillAll() { return mKillAll ? mKillAll : (mKillAll = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.KillAll")); }
-			ScriptFunction KillAllPawns() { return mKillAllPawns ? mKillAllPawns : (mKillAllPawns = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCheatManager.KillAllPawns")); }
+			ScriptFunction ViewFlag() { mixin(MGF!("mViewFlag", "Function UTGame.UTCheatManager.ViewFlag")()); }
+			ScriptFunction Glow() { mixin(MGF!("mGlow", "Function UTGame.UTCheatManager.Glow")()); }
+			ScriptFunction LM() { mixin(MGF!("mLM", "Function UTGame.UTCheatManager.LM")()); }
+			ScriptFunction LMS() { mixin(MGF!("mLMS", "Function UTGame.UTCheatManager.LMS")()); }
+			ScriptFunction SummonV() { mixin(MGF!("mSummonV", "Function UTGame.UTCheatManager.SummonV")()); }
+			ScriptFunction AllWeapons() { mixin(MGF!("mAllWeapons", "Function UTGame.UTCheatManager.AllWeapons")()); }
+			ScriptFunction DoubleUp() { mixin(MGF!("mDoubleUp", "Function UTGame.UTCheatManager.DoubleUp")()); }
+			ScriptFunction ChainGun() { mixin(MGF!("mChainGun", "Function UTGame.UTCheatManager.ChainGun")()); }
+			ScriptFunction AllAmmo() { mixin(MGF!("mAllAmmo", "Function UTGame.UTCheatManager.AllAmmo")()); }
+			ScriptFunction Invisible() { mixin(MGF!("mInvisible", "Function UTGame.UTCheatManager.Invisible")()); }
+			ScriptFunction FreeCamera() { mixin(MGF!("mFreeCamera", "Function UTGame.UTCheatManager.FreeCamera")()); }
+			ScriptFunction ViewBot() { mixin(MGF!("mViewBot", "Function UTGame.UTCheatManager.ViewBot")()); }
+			ScriptFunction KillBadGuys() { mixin(MGF!("mKillBadGuys", "Function UTGame.UTCheatManager.KillBadGuys")()); }
+			ScriptFunction RBGrav() { mixin(MGF!("mRBGrav", "Function UTGame.UTCheatManager.RBGrav")()); }
+			ScriptFunction SuicideBy() { mixin(MGF!("mSuicideBy", "Function UTGame.UTCheatManager.SuicideBy")()); }
+			ScriptFunction EditWeapon() { mixin(MGF!("mEditWeapon", "Function UTGame.UTCheatManager.EditWeapon")()); }
+			ScriptFunction KillOtherBots() { mixin(MGF!("mKillOtherBots", "Function UTGame.UTCheatManager.KillOtherBots")()); }
+			ScriptFunction SpawnABloodDecal() { mixin(MGF!("mSpawnABloodDecal", "Function UTGame.UTCheatManager.SpawnABloodDecal")()); }
+			ScriptFunction LeaveADecal() { mixin(MGF!("mLeaveADecal", "Function UTGame.UTCheatManager.LeaveADecal")()); }
+			ScriptFunction TiltIt() { mixin(MGF!("mTiltIt", "Function UTGame.UTCheatManager.TiltIt")()); }
+			ScriptFunction ShowStickBindings() { mixin(MGF!("mShowStickBindings", "Function UTGame.UTCheatManager.ShowStickBindings")()); }
+			ScriptFunction SetStickBind() { mixin(MGF!("mSetStickBind", "Function UTGame.UTCheatManager.SetStickBind")()); }
+			ScriptFunction KillAll() { mixin(MGF!("mKillAll", "Function UTGame.UTCheatManager.KillAll")()); }
+			ScriptFunction KillAllPawns() { mixin(MGF!("mKillAllPawns", "Function UTGame.UTCheatManager.KillAllPawns")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SpeechRecognition RecogObject() { return *cast(SpeechRecognition*)(cast(size_t)cast(void*)this + 96); }
-		ScriptClass LMC() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
+		SpeechRecognition RecogObject() { mixin(MGPC!(SpeechRecognition, 96)()); }
+		ScriptClass LMC() { mixin(MGPC!(ScriptClass, 92)()); }
 	}
 final:
 	void ViewFlag()

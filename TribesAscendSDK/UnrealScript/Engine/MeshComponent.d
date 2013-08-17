@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MeshComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.MaterialInterface;
@@ -10,9 +11,9 @@ extern(C++) interface MeshComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MeshComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MeshComponent")()); }
 	private static __gshared MeshComponent mDefaultProperties;
-	@property final static MeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MeshComponent)("MeshComponent Engine.Default__MeshComponent")); }
+	@property final static MeshComponent DefaultProperties() { mixin(MGDPC!(MeshComponent, "MeshComponent Engine.Default__MeshComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,15 +27,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetMaterial() { return mGetMaterial ? mGetMaterial : (mGetMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.MeshComponent.GetMaterial")); }
-			ScriptFunction SetMaterial() { return mSetMaterial ? mSetMaterial : (mSetMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.MeshComponent.SetMaterial")); }
-			ScriptFunction GetNumElements() { return mGetNumElements ? mGetNumElements : (mGetNumElements = ScriptObject.Find!(ScriptFunction)("Function Engine.MeshComponent.GetNumElements")); }
-			ScriptFunction PrestreamTextures() { return mPrestreamTextures ? mPrestreamTextures : (mPrestreamTextures = ScriptObject.Find!(ScriptFunction)("Function Engine.MeshComponent.PrestreamTextures")); }
-			ScriptFunction CreateAndSetMaterialInstanceConstant() { return mCreateAndSetMaterialInstanceConstant ? mCreateAndSetMaterialInstanceConstant : (mCreateAndSetMaterialInstanceConstant = ScriptObject.Find!(ScriptFunction)("Function Engine.MeshComponent.CreateAndSetMaterialInstanceConstant")); }
-			ScriptFunction CreateAndSetMaterialInstanceTimeVarying() { return mCreateAndSetMaterialInstanceTimeVarying ? mCreateAndSetMaterialInstanceTimeVarying : (mCreateAndSetMaterialInstanceTimeVarying = ScriptObject.Find!(ScriptFunction)("Function Engine.MeshComponent.CreateAndSetMaterialInstanceTimeVarying")); }
+			ScriptFunction GetMaterial() { mixin(MGF!("mGetMaterial", "Function Engine.MeshComponent.GetMaterial")()); }
+			ScriptFunction SetMaterial() { mixin(MGF!("mSetMaterial", "Function Engine.MeshComponent.SetMaterial")()); }
+			ScriptFunction GetNumElements() { mixin(MGF!("mGetNumElements", "Function Engine.MeshComponent.GetNumElements")()); }
+			ScriptFunction PrestreamTextures() { mixin(MGF!("mPrestreamTextures", "Function Engine.MeshComponent.PrestreamTextures")()); }
+			ScriptFunction CreateAndSetMaterialInstanceConstant() { mixin(MGF!("mCreateAndSetMaterialInstanceConstant", "Function Engine.MeshComponent.CreateAndSetMaterialInstanceConstant")()); }
+			ScriptFunction CreateAndSetMaterialInstanceTimeVarying() { mixin(MGF!("mCreateAndSetMaterialInstanceTimeVarying", "Function Engine.MeshComponent.CreateAndSetMaterialInstanceTimeVarying")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(MaterialInterface) Materials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 488); }
+	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 488)()); }
 final:
 	MaterialInterface GetMaterial(int ElementIndex)
 	{

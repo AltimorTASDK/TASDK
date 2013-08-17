@@ -1,15 +1,16 @@
 module UnrealScript.Engine.InterpTrackToggle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.InterpTrack;
 
 extern(C++) interface InterpTrackToggle : InterpTrack
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackToggle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackToggle")()); }
 	private static __gshared InterpTrackToggle mDefaultProperties;
-	@property final static InterpTrackToggle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackToggle)("InterpTrackToggle Engine.Default__InterpTrackToggle")); }
+	@property final static InterpTrackToggle DefaultProperties() { mixin(MGDPC!(InterpTrackToggle, "InterpTrackToggle Engine.Default__InterpTrackToggle")()); }
 	enum ETrackToggleAction : ubyte
 	{
 		ETTA_Off = 0,
@@ -23,25 +24,25 @@ public extern(D):
 		private ubyte __buffer__[5];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackToggle.ToggleTrackKey")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackToggle.ToggleTrackKey")()); }
 		@property final auto ref
 		{
-			InterpTrackToggle.ETrackToggleAction ToggleAction() { return *cast(InterpTrackToggle.ETrackToggleAction*)(cast(size_t)&this + 4); }
-			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
+			InterpTrackToggle.ETrackToggleAction ToggleAction() { mixin(MGPS!(InterpTrackToggle.ETrackToggleAction, 4)()); }
+			float Time() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(InterpTrackToggle.ToggleTrackKey) ToggleTrack() { return *cast(ScriptArray!(InterpTrackToggle.ToggleTrackKey)*)(cast(size_t)cast(void*)this + 128); }
-		bool bFireEventsWhenJumpingForwards() { return (*cast(uint*)(cast(size_t)cast(void*)this + 140) & 0x10) != 0; }
-		bool bFireEventsWhenJumpingForwards(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 140) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 140) &= ~0x10; } return val; }
-		bool bFireEventsWhenBackwards() { return (*cast(uint*)(cast(size_t)cast(void*)this + 140) & 0x8) != 0; }
-		bool bFireEventsWhenBackwards(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 140) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 140) &= ~0x8; } return val; }
-		bool bFireEventsWhenForwards() { return (*cast(uint*)(cast(size_t)cast(void*)this + 140) & 0x4) != 0; }
-		bool bFireEventsWhenForwards(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 140) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 140) &= ~0x4; } return val; }
-		bool bActivateWithJustAttachedFlag() { return (*cast(uint*)(cast(size_t)cast(void*)this + 140) & 0x2) != 0; }
-		bool bActivateWithJustAttachedFlag(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 140) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 140) &= ~0x2; } return val; }
-		bool bActivateSystemEachUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 140) & 0x1) != 0; }
-		bool bActivateSystemEachUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 140) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 140) &= ~0x1; } return val; }
+		@property final auto ref ScriptArray!(InterpTrackToggle.ToggleTrackKey) ToggleTrack() { mixin(MGPC!(ScriptArray!(InterpTrackToggle.ToggleTrackKey), 128)()); }
+		bool bFireEventsWhenJumpingForwards() { mixin(MGBPC!(140, 0x10)()); }
+		bool bFireEventsWhenJumpingForwards(bool val) { mixin(MSBPC!(140, 0x10)()); }
+		bool bFireEventsWhenBackwards() { mixin(MGBPC!(140, 0x8)()); }
+		bool bFireEventsWhenBackwards(bool val) { mixin(MSBPC!(140, 0x8)()); }
+		bool bFireEventsWhenForwards() { mixin(MGBPC!(140, 0x4)()); }
+		bool bFireEventsWhenForwards(bool val) { mixin(MSBPC!(140, 0x4)()); }
+		bool bActivateWithJustAttachedFlag() { mixin(MGBPC!(140, 0x2)()); }
+		bool bActivateWithJustAttachedFlag(bool val) { mixin(MSBPC!(140, 0x2)()); }
+		bool bActivateSystemEachUpdate() { mixin(MGBPC!(140, 0x1)()); }
+		bool bActivateSystemEachUpdate(bool val) { mixin(MSBPC!(140, 0x1)()); }
 	}
 }

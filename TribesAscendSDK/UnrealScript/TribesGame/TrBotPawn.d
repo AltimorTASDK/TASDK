@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrBotPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrPlayerPawn;
 
 extern(C++) interface TrBotPawn : TrPlayerPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrBotPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrBotPawn")()); }
 	private static __gshared TrBotPawn mDefaultProperties;
-	@property final static TrBotPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrBotPawn)("TrBotPawn TribesGame.Default__TrBotPawn")); }
+	@property final static TrBotPawn DefaultProperties() { mixin(MGDPC!(TrBotPawn, "TrBotPawn TribesGame.Default__TrBotPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,10 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetMovementPhysics() { return mSetMovementPhysics ? mSetMovementPhysics : (mSetMovementPhysics = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBotPawn.SetMovementPhysics")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBotPawn.Tick")); }
-			ScriptFunction RechargeHealthPool() { return mRechargeHealthPool ? mRechargeHealthPool : (mRechargeHealthPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBotPawn.RechargeHealthPool")); }
+			ScriptFunction SetMovementPhysics() { mixin(MGF!("mSetMovementPhysics", "Function TribesGame.TrBotPawn.SetMovementPhysics")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrBotPawn.Tick")()); }
+			ScriptFunction RechargeHealthPool() { mixin(MGF!("mRechargeHealthPool", "Function TribesGame.TrBotPawn.RechargeHealthPool")()); }
 		}
+	}
+	static struct Dying
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrBotPawn.Dying")()); }
 	}
 final:
 	void SetMovementPhysics()

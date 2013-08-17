@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrEffect_Managed;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrEffect;
@@ -9,9 +10,9 @@ extern(C++) interface TrEffect_Managed : TrEffect
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_Managed")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_Managed")()); }
 	private static __gshared TrEffect_Managed mDefaultProperties;
-	@property final static TrEffect_Managed DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_Managed)("TrEffect_Managed TribesGame.Default__TrEffect_Managed")); }
+	@property final static TrEffect_Managed DefaultProperties() { mixin(MGDPC!(TrEffect_Managed, "TrEffect_Managed TribesGame.Default__TrEffect_Managed")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,15 +23,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { return mApply ? mApply : (mApply = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect_Managed.Apply")); }
-			ScriptFunction RemoveEffect() { return mRemoveEffect ? mRemoveEffect : (mRemoveEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect_Managed.RemoveEffect")); }
-			ScriptFunction Remove() { return mRemove ? mRemove : (mRemove = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect_Managed.Remove")); }
+			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_Managed.Apply")()); }
+			ScriptFunction RemoveEffect() { mixin(MGF!("mRemoveEffect", "Function TribesGame.TrEffect_Managed.RemoveEffect")()); }
+			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_Managed.Remove")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fLifeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-		TrPawn m_PawnTarget() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 80); }
+		float m_fLifeTime() { mixin(MGPC!(float, 84)()); }
+		TrPawn m_PawnTarget() { mixin(MGPC!(TrPawn, 80)()); }
 	}
 final:
 	void Apply(Actor Target, Actor.ImpactInfo Impact)

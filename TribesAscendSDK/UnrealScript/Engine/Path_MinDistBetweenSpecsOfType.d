@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Path_MinDistBetweenSpecsOfType;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.PathConstraint;
 
@@ -8,9 +9,9 @@ extern(C++) interface Path_MinDistBetweenSpecsOfType : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_MinDistBetweenSpecsOfType")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_MinDistBetweenSpecsOfType")()); }
 	private static __gshared Path_MinDistBetweenSpecsOfType mDefaultProperties;
-	@property final static Path_MinDistBetweenSpecsOfType DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_MinDistBetweenSpecsOfType)("Path_MinDistBetweenSpecsOfType Engine.Default__Path_MinDistBetweenSpecsOfType")); }
+	@property final static Path_MinDistBetweenSpecsOfType DefaultProperties() { mixin(MGDPC!(Path_MinDistBetweenSpecsOfType, "Path_MinDistBetweenSpecsOfType Engine.Default__Path_MinDistBetweenSpecsOfType")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EnforceMinDist() { return mEnforceMinDist ? mEnforceMinDist : (mEnforceMinDist = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_MinDistBetweenSpecsOfType.EnforceMinDist")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_MinDistBetweenSpecsOfType.Recycle")); }
+			ScriptFunction EnforceMinDist() { mixin(MGF!("mEnforceMinDist", "Function Engine.Path_MinDistBetweenSpecsOfType.EnforceMinDist")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_MinDistBetweenSpecsOfType.Recycle")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptClass ReachSpecClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 84); }
-		Vector InitLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 72); }
-		float MinDistBetweenSpecTypes() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
+		ScriptClass ReachSpecClass() { mixin(MGPC!(ScriptClass, 84)()); }
+		Vector InitLocation() { mixin(MGPC!(Vector, 72)()); }
+		float MinDistBetweenSpecTypes() { mixin(MGPC!(float, 68)()); }
 	}
 final:
 	static bool EnforceMinDist(Pawn P, float InMinDist, ScriptClass InSpecClass, Vector LastLocation)

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDefensePoint;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKGameObjective;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Texture2D;
@@ -12,9 +13,9 @@ extern(C++) interface UTDefensePoint : UDKScriptedNavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDefensePoint")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDefensePoint")()); }
 	private static __gshared UTDefensePoint mDefaultProperties;
-	@property final static UTDefensePoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDefensePoint)("UTDefensePoint UTGame.Default__UTDefensePoint")); }
+	@property final static UTDefensePoint DefaultProperties() { mixin(MGDPC!(UTDefensePoint, "UTDefensePoint UTGame.Default__UTDefensePoint")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,12 +29,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetMoveTarget() { return mGetMoveTarget ? mGetMoveTarget : (mGetMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.GetMoveTarget")); }
-			ScriptFunction HigherPriorityThan() { return mHigherPriorityThan ? mHigherPriorityThan : (mHigherPriorityThan = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.HigherPriorityThan")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.Reset")); }
-			ScriptFunction FreePoint() { return mFreePoint ? mFreePoint : (mFreePoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.FreePoint")); }
-			ScriptFunction CheckForErrors() { return mCheckForErrors ? mCheckForErrors : (mCheckForErrors = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.CheckForErrors")); }
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.PreBeginPlay")); }
+			ScriptFunction GetMoveTarget() { mixin(MGF!("mGetMoveTarget", "Function UTGame.UTDefensePoint.GetMoveTarget")()); }
+			ScriptFunction HigherPriorityThan() { mixin(MGF!("mHigherPriorityThan", "Function UTGame.UTDefensePoint.HigherPriorityThan")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTDefensePoint.Reset")()); }
+			ScriptFunction FreePoint() { mixin(MGF!("mFreePoint", "Function UTGame.UTDefensePoint.FreePoint")()); }
+			ScriptFunction CheckForErrors() { mixin(MGF!("mCheckForErrors", "Function UTGame.UTDefensePoint.CheckForErrors")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTDefensePoint.PreBeginPlay")()); }
 		}
 	}
 	enum EDefensePriority : ubyte
@@ -46,22 +47,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass WeaponPreference() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 712); }
-			UDKGameObjective DefendedObjective() { return *cast(UDKGameObjective*)(cast(size_t)cast(void*)this + 704); }
-			ScriptName DefenseGroup() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 716); }
-			UTDefensePoint NextDefensePoint() { return *cast(UTDefensePoint*)(cast(size_t)cast(void*)this + 700); }
-			Controller CurrentUser() { return *cast(Controller*)(cast(size_t)cast(void*)this + 696); }
-			ScriptArray!(Texture2D) TeamSprites() { return *cast(ScriptArray!(Texture2D)*)(cast(size_t)cast(void*)this + 728); }
-			UTDefensePoint.EDefensePriority DefensePriority() { return *cast(UTDefensePoint.EDefensePriority*)(cast(size_t)cast(void*)this + 724); }
+			ScriptClass WeaponPreference() { mixin(MGPC!(ScriptClass, 712)()); }
+			UDKGameObjective DefendedObjective() { mixin(MGPC!(UDKGameObjective, 704)()); }
+			ScriptName DefenseGroup() { mixin(MGPC!(ScriptName, 716)()); }
+			UTDefensePoint NextDefensePoint() { mixin(MGPC!(UTDefensePoint, 700)()); }
+			Controller CurrentUser() { mixin(MGPC!(Controller, 696)()); }
+			ScriptArray!(Texture2D) TeamSprites() { mixin(MGPC!(ScriptArray!(Texture2D), 728)()); }
+			UTDefensePoint.EDefensePriority DefensePriority() { mixin(MGPC!(UTDefensePoint.EDefensePriority, 724)()); }
 		}
-		bool bSniping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 708) & 0x2) != 0; }
-		bool bSniping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 708) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 708) &= ~0x2; } return val; }
-		bool bFirstScript() { return (*cast(uint*)(cast(size_t)cast(void*)this + 708) & 0x1) != 0; }
-		bool bFirstScript(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 708) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 708) &= ~0x1; } return val; }
-		bool bOnlyOnFoot() { return (*cast(uint*)(cast(size_t)cast(void*)this + 708) & 0x4) != 0; }
-		bool bOnlyOnFoot(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 708) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 708) &= ~0x4; } return val; }
-		bool bOnlySkilled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 708) & 0x8) != 0; }
-		bool bOnlySkilled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 708) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 708) &= ~0x8; } return val; }
+		bool bSniping() { mixin(MGBPC!(708, 0x2)()); }
+		bool bSniping(bool val) { mixin(MSBPC!(708, 0x2)()); }
+		bool bFirstScript() { mixin(MGBPC!(708, 0x1)()); }
+		bool bFirstScript(bool val) { mixin(MSBPC!(708, 0x1)()); }
+		bool bOnlyOnFoot() { mixin(MGBPC!(708, 0x4)()); }
+		bool bOnlyOnFoot(bool val) { mixin(MSBPC!(708, 0x4)()); }
+		bool bOnlySkilled() { mixin(MGBPC!(708, 0x8)()); }
+		bool bOnlySkilled(bool val) { mixin(MSBPC!(708, 0x8)()); }
 	}
 final:
 	Actor GetMoveTarget()
@@ -71,7 +72,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMoveTarget, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
-	bool HigherPriorityThan(UTDefensePoint S, UTBot B, bool bAutoPointsInUse, bool bPrioritizeSameGroup, int* NumChecked)
+	bool HigherPriorityThan(UTDefensePoint S, UTBot B, bool bAutoPointsInUse, bool bPrioritizeSameGroup, ref int NumChecked)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -79,7 +80,7 @@ final:
 		*cast(UTBot*)&params[4] = B;
 		*cast(bool*)&params[8] = bAutoPointsInUse;
 		*cast(bool*)&params[12] = bPrioritizeSameGroup;
-		*cast(int*)&params[16] = *NumChecked;
+		*cast(int*)&params[16] = NumChecked;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HigherPriorityThan, params.ptr, cast(void*)0);
 		*NumChecked = *cast(int*)&params[16];
 		return *cast(bool*)&params[20];

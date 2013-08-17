@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrEntryHUD;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.HUD;
 
 extern(C++) interface TrEntryHUD : HUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEntryHUD")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEntryHUD")()); }
 	private static __gshared TrEntryHUD mDefaultProperties;
-	@property final static TrEntryHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEntryHUD)("TrEntryHUD TribesGame.Default__TrEntryHUD")); }
+	@property final static TrEntryHUD DefaultProperties() { mixin(MGDPC!(TrEntryHUD, "TrEntryHUD TribesGame.Default__TrEntryHUD")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateMainMenu() { return mCreateMainMenu ? mCreateMainMenu : (mCreateMainMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryHUD.CreateMainMenu")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryHUD.PostBeginPlay")); }
+			ScriptFunction CreateMainMenu() { mixin(MGF!("mCreateMainMenu", "Function TribesGame.TrEntryHUD.CreateMainMenu")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrEntryHUD.PostBeginPlay")()); }
 		}
 	}
 final:

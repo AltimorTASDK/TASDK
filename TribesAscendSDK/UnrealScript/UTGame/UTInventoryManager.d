@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTInventoryManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTWeapon;
 import UnrealScript.Engine.Weapon;
 import UnrealScript.Engine.Inventory;
@@ -11,9 +12,9 @@ extern(C++) interface UTInventoryManager : InventoryManager
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTInventoryManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTInventoryManager")()); }
 	private static __gshared UTInventoryManager mDefaultProperties;
-	@property final static UTInventoryManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTInventoryManager)("UTInventoryManager UTGame.Default__UTInventoryManager")); }
+	@property final static UTInventoryManager DefaultProperties() { mixin(MGDPC!(UTInventoryManager, "UTInventoryManager UTGame.Default__UTInventoryManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -48,33 +49,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction NeedsAmmo() { return mNeedsAmmo ? mNeedsAmmo : (mNeedsAmmo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.NeedsAmmo")); }
-			ScriptFunction ClientSyncWeapon() { return mClientSyncWeapon ? mClientSyncWeapon : (mClientSyncWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.ClientSyncWeapon")); }
-			ScriptFunction OwnerEvent() { return mOwnerEvent ? mOwnerEvent : (mOwnerEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.OwnerEvent")); }
-			ScriptFunction GetWeaponList() { return mGetWeaponList ? mGetWeaponList : (mGetWeaponList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.GetWeaponList")); }
-			ScriptFunction SwitchWeapon() { return mSwitchWeapon ? mSwitchWeapon : (mSwitchWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.SwitchWeapon")); }
-			ScriptFunction AdjustWeapon() { return mAdjustWeapon ? mAdjustWeapon : (mAdjustWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.AdjustWeapon")); }
-			ScriptFunction PrevWeapon() { return mPrevWeapon ? mPrevWeapon : (mPrevWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.PrevWeapon")); }
-			ScriptFunction NextWeapon() { return mNextWeapon ? mNextWeapon : (mNextWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.NextWeapon")); }
-			ScriptFunction AllAmmo() { return mAllAmmo ? mAllAmmo : (mAllAmmo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.AllAmmo")); }
-			ScriptFunction SetCurrentWeapon() { return mSetCurrentWeapon ? mSetCurrentWeapon : (mSetCurrentWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.SetCurrentWeapon")); }
-			ScriptFunction ClientSetCurrentWeapon() { return mClientSetCurrentWeapon ? mClientSetCurrentWeapon : (mClientSetCurrentWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.ClientSetCurrentWeapon")); }
-			ScriptFunction ServerSetCurrentWeapon() { return mServerSetCurrentWeapon ? mServerSetCurrentWeapon : (mServerSetCurrentWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.ServerSetCurrentWeapon")); }
-			ScriptFunction SetPendingWeapon() { return mSetPendingWeapon ? mSetPendingWeapon : (mSetPendingWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.SetPendingWeapon")); }
-			ScriptFunction ClientWeaponSet() { return mClientWeaponSet ? mClientWeaponSet : (mClientWeaponSet = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.ClientWeaponSet")); }
-			ScriptFunction CreateInventory() { return mCreateInventory ? mCreateInventory : (mCreateInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.CreateInventory")); }
-			ScriptFunction ProcessRetrySwitch() { return mProcessRetrySwitch ? mProcessRetrySwitch : (mProcessRetrySwitch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.ProcessRetrySwitch")); }
-			ScriptFunction RetrySwitchTo() { return mRetrySwitchTo ? mRetrySwitchTo : (mRetrySwitchTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.RetrySwitchTo")); }
-			ScriptFunction CheckSwitchTo() { return mCheckSwitchTo ? mCheckSwitchTo : (mCheckSwitchTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.CheckSwitchTo")); }
-			ScriptFunction AddInventory() { return mAddInventory ? mAddInventory : (mAddInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.AddInventory")); }
-			ScriptFunction DiscardInventory() { return mDiscardInventory ? mDiscardInventory : (mDiscardInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.DiscardInventory")); }
-			ScriptFunction RemoveFromInventory() { return mRemoveFromInventory ? mRemoveFromInventory : (mRemoveFromInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.RemoveFromInventory")); }
-			ScriptFunction AddAmmoToWeapon() { return mAddAmmoToWeapon ? mAddAmmoToWeapon : (mAddAmmoToWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.AddAmmoToWeapon")); }
-			ScriptFunction HasInventoryOfClass() { return mHasInventoryOfClass ? mHasInventoryOfClass : (mHasInventoryOfClass = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.HasInventoryOfClass")); }
-			ScriptFunction ChangedWeapon() { return mChangedWeapon ? mChangedWeapon : (mChangedWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.ChangedWeapon")); }
-			ScriptFunction SwitchToPreviousWeapon() { return mSwitchToPreviousWeapon ? mSwitchToPreviousWeapon : (mSwitchToPreviousWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.SwitchToPreviousWeapon")); }
-			ScriptFunction DrawHUD() { return mDrawHUD ? mDrawHUD : (mDrawHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.DrawHUD")); }
-			ScriptFunction SwitchToBestWeapon() { return mSwitchToBestWeapon ? mSwitchToBestWeapon : (mSwitchToBestWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventoryManager.SwitchToBestWeapon")); }
+			ScriptFunction NeedsAmmo() { mixin(MGF!("mNeedsAmmo", "Function UTGame.UTInventoryManager.NeedsAmmo")()); }
+			ScriptFunction ClientSyncWeapon() { mixin(MGF!("mClientSyncWeapon", "Function UTGame.UTInventoryManager.ClientSyncWeapon")()); }
+			ScriptFunction OwnerEvent() { mixin(MGF!("mOwnerEvent", "Function UTGame.UTInventoryManager.OwnerEvent")()); }
+			ScriptFunction GetWeaponList() { mixin(MGF!("mGetWeaponList", "Function UTGame.UTInventoryManager.GetWeaponList")()); }
+			ScriptFunction SwitchWeapon() { mixin(MGF!("mSwitchWeapon", "Function UTGame.UTInventoryManager.SwitchWeapon")()); }
+			ScriptFunction AdjustWeapon() { mixin(MGF!("mAdjustWeapon", "Function UTGame.UTInventoryManager.AdjustWeapon")()); }
+			ScriptFunction PrevWeapon() { mixin(MGF!("mPrevWeapon", "Function UTGame.UTInventoryManager.PrevWeapon")()); }
+			ScriptFunction NextWeapon() { mixin(MGF!("mNextWeapon", "Function UTGame.UTInventoryManager.NextWeapon")()); }
+			ScriptFunction AllAmmo() { mixin(MGF!("mAllAmmo", "Function UTGame.UTInventoryManager.AllAmmo")()); }
+			ScriptFunction SetCurrentWeapon() { mixin(MGF!("mSetCurrentWeapon", "Function UTGame.UTInventoryManager.SetCurrentWeapon")()); }
+			ScriptFunction ClientSetCurrentWeapon() { mixin(MGF!("mClientSetCurrentWeapon", "Function UTGame.UTInventoryManager.ClientSetCurrentWeapon")()); }
+			ScriptFunction ServerSetCurrentWeapon() { mixin(MGF!("mServerSetCurrentWeapon", "Function UTGame.UTInventoryManager.ServerSetCurrentWeapon")()); }
+			ScriptFunction SetPendingWeapon() { mixin(MGF!("mSetPendingWeapon", "Function UTGame.UTInventoryManager.SetPendingWeapon")()); }
+			ScriptFunction ClientWeaponSet() { mixin(MGF!("mClientWeaponSet", "Function UTGame.UTInventoryManager.ClientWeaponSet")()); }
+			ScriptFunction CreateInventory() { mixin(MGF!("mCreateInventory", "Function UTGame.UTInventoryManager.CreateInventory")()); }
+			ScriptFunction ProcessRetrySwitch() { mixin(MGF!("mProcessRetrySwitch", "Function UTGame.UTInventoryManager.ProcessRetrySwitch")()); }
+			ScriptFunction RetrySwitchTo() { mixin(MGF!("mRetrySwitchTo", "Function UTGame.UTInventoryManager.RetrySwitchTo")()); }
+			ScriptFunction CheckSwitchTo() { mixin(MGF!("mCheckSwitchTo", "Function UTGame.UTInventoryManager.CheckSwitchTo")()); }
+			ScriptFunction AddInventory() { mixin(MGF!("mAddInventory", "Function UTGame.UTInventoryManager.AddInventory")()); }
+			ScriptFunction DiscardInventory() { mixin(MGF!("mDiscardInventory", "Function UTGame.UTInventoryManager.DiscardInventory")()); }
+			ScriptFunction RemoveFromInventory() { mixin(MGF!("mRemoveFromInventory", "Function UTGame.UTInventoryManager.RemoveFromInventory")()); }
+			ScriptFunction AddAmmoToWeapon() { mixin(MGF!("mAddAmmoToWeapon", "Function UTGame.UTInventoryManager.AddAmmoToWeapon")()); }
+			ScriptFunction HasInventoryOfClass() { mixin(MGF!("mHasInventoryOfClass", "Function UTGame.UTInventoryManager.HasInventoryOfClass")()); }
+			ScriptFunction ChangedWeapon() { mixin(MGF!("mChangedWeapon", "Function UTGame.UTInventoryManager.ChangedWeapon")()); }
+			ScriptFunction SwitchToPreviousWeapon() { mixin(MGF!("mSwitchToPreviousWeapon", "Function UTGame.UTInventoryManager.SwitchToPreviousWeapon")()); }
+			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function UTGame.UTInventoryManager.DrawHUD")()); }
+			ScriptFunction SwitchToBestWeapon() { mixin(MGF!("mSwitchToBestWeapon", "Function UTGame.UTInventoryManager.SwitchToBestWeapon")()); }
 		}
 	}
 	struct AmmoStore
@@ -82,24 +83,24 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTInventoryManager.AmmoStore")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTInventoryManager.AmmoStore")()); }
 		@property final auto ref
 		{
-			ScriptClass WeaponClass() { return *cast(ScriptClass*)(cast(size_t)&this + 4); }
-			int Amount() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptClass WeaponClass() { mixin(MGPS!(ScriptClass, 4)()); }
+			int Amount() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UTInventoryManager.AmmoStore) AmmoStorage() { return *cast(ScriptArray!(UTInventoryManager.AmmoStore)*)(cast(size_t)cast(void*)this + 508); }
-			float LastAdjustWeaponTime() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			UTWeapon PendingSwitchWeapon() { return *cast(UTWeapon*)(cast(size_t)cast(void*)this + 524); }
-			Weapon PreviousWeapon() { return *cast(Weapon*)(cast(size_t)cast(void*)this + 520); }
+			ScriptArray!(UTInventoryManager.AmmoStore) AmmoStorage() { mixin(MGPC!(ScriptArray!(UTInventoryManager.AmmoStore), 508)()); }
+			float LastAdjustWeaponTime() { mixin(MGPC!(float, 528)()); }
+			UTWeapon PendingSwitchWeapon() { mixin(MGPC!(UTWeapon, 524)()); }
+			Weapon PreviousWeapon() { mixin(MGPC!(Weapon, 520)()); }
 		}
-		bool bInfiniteAmmo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x1) != 0; }
-		bool bInfiniteAmmo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x1; } return val; }
+		bool bInfiniteAmmo() { mixin(MGBPC!(504, 0x1)()); }
+		bool bInfiniteAmmo(bool val) { mixin(MSBPC!(504, 0x1)()); }
 	}
 final:
 	bool NeedsAmmo(ScriptClass TestWeapon)
@@ -124,11 +125,11 @@ final:
 		*cast(ScriptName*)params.ptr = EventName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OwnerEvent, params.ptr, cast(void*)0);
 	}
-	void GetWeaponList(ScriptArray!(UTWeapon)* WeaponList, bool bFilter, int GroupFilter, bool bNoEmpty)
+	void GetWeaponList(ref ScriptArray!(UTWeapon) WeaponList, bool bFilter, int GroupFilter, bool bNoEmpty)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptArray!(UTWeapon)*)params.ptr = *WeaponList;
+		*cast(ScriptArray!(UTWeapon)*)params.ptr = WeaponList;
 		*cast(bool*)&params[12] = bFilter;
 		*cast(int*)&params[16] = GroupFilter;
 		*cast(bool*)&params[20] = bNoEmpty;

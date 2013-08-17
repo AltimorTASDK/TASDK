@@ -1,18 +1,19 @@
 module UnrealScript.Engine.MaterialExpressionDistance;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionDistance : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionDistance")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionDistance")()); }
 	private static __gshared MaterialExpressionDistance mDefaultProperties;
-	@property final static MaterialExpressionDistance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionDistance)("MaterialExpressionDistance Engine.Default__MaterialExpressionDistance")); }
+	@property final static MaterialExpressionDistance DefaultProperties() { mixin(MGDPC!(MaterialExpressionDistance, "MaterialExpressionDistance Engine.Default__MaterialExpressionDistance")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput B() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 136); }
-		MaterialExpression.ExpressionInput A() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 108); }
+		MaterialExpression.ExpressionInput B() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
+		MaterialExpression.ExpressionInput A() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
 	}
 }

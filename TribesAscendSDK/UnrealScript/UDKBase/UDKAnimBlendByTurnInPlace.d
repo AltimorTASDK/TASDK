@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKAnimBlendByTurnInPlace;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKAnimBlendBase;
 import UnrealScript.UDKBase.UDKPawn;
 
@@ -8,13 +9,13 @@ extern(C++) interface UDKAnimBlendByTurnInPlace : UDKAnimBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByTurnInPlace")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByTurnInPlace")()); }
 	private static __gshared UDKAnimBlendByTurnInPlace mDefaultProperties;
-	@property final static UDKAnimBlendByTurnInPlace DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByTurnInPlace)("UDKAnimBlendByTurnInPlace UDKBase.Default__UDKAnimBlendByTurnInPlace")); }
+	@property final static UDKAnimBlendByTurnInPlace DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByTurnInPlace, "UDKAnimBlendByTurnInPlace UDKBase.Default__UDKAnimBlendByTurnInPlace")()); }
 	@property final auto ref
 	{
-		UDKPawn OwnerUTP() { return *cast(UDKPawn*)(cast(size_t)cast(void*)this + 304); }
-		float TurnInPlaceBlendSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 300); }
-		float RootYawSpeedThresh() { return *cast(float*)(cast(size_t)cast(void*)this + 296); }
+		UDKPawn OwnerUTP() { mixin(MGPC!(UDKPawn, 304)()); }
+		float TurnInPlaceBlendSpeed() { mixin(MGPC!(float, 300)()); }
+		float RootYawSpeedThresh() { mixin(MGPC!(float, 296)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrStationMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrStationMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStationMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStationMessage")()); }
 	private static __gshared TrStationMessage mDefaultProperties;
-	@property final static TrStationMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStationMessage)("TrStationMessage TribesGame.Default__TrStationMessage")); }
+	@property final static TrStationMessage DefaultProperties() { mixin(MGDPC!(TrStationMessage, "TrStationMessage TribesGame.Default__TrStationMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,19 +24,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrStationMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrStationMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue EnemyStationSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 164); }
-		SoundCue StationNotPoweredSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString MustBeHeld() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString ControlPoint() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString NeutralStation() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString EnemyStation() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString StationNotPowered() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundCue EnemyStationSound() { mixin(MGPC!(SoundCue, 164)()); }
+		SoundCue StationNotPoweredSound() { mixin(MGPC!(SoundCue, 160)()); }
+		ScriptString MustBeHeld() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString ControlPoint() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString NeutralStation() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString EnemyStation() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString StationNotPowered() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

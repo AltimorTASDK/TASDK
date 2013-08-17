@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SequenceEvent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.SequenceOp;
 
@@ -8,9 +9,9 @@ extern(C++) interface SequenceEvent : SequenceOp
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceEvent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SequenceEvent")()); }
 	private static __gshared SequenceEvent mDefaultProperties;
-	@property final static SequenceEvent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SequenceEvent)("SequenceEvent Engine.Default__SequenceEvent")); }
+	@property final static SequenceEvent DefaultProperties() { mixin(MGDPC!(SequenceEvent, "SequenceEvent Engine.Default__SequenceEvent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,44 +23,44 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckActivate() { return mCheckActivate ? mCheckActivate : (mCheckActivate = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.CheckActivate")); }
-			ScriptFunction RegisterEvent() { return mRegisterEvent ? mRegisterEvent : (mRegisterEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.RegisterEvent")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.Reset")); }
-			ScriptFunction Toggled() { return mToggled ? mToggled : (mToggled = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.Toggled")); }
+			ScriptFunction CheckActivate() { mixin(MGF!("mCheckActivate", "Function Engine.SequenceEvent.CheckActivate")()); }
+			ScriptFunction RegisterEvent() { mixin(MGF!("mRegisterEvent", "Function Engine.SequenceEvent.RegisterEvent")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.SequenceEvent.Reset")()); }
+			ScriptFunction Toggled() { mixin(MGF!("mToggled", "Function Engine.SequenceEvent.Toggled")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxTriggerCount() { return *cast(int*)(cast(size_t)cast(void*)this + 236); }
-			int TriggerCount() { return *cast(int*)(cast(size_t)cast(void*)this + 232); }
-			ScriptArray!(SequenceEvent) DuplicateEvts() { return *cast(ScriptArray!(SequenceEvent)*)(cast(size_t)cast(void*)this + 208); }
-			int MaxWidth() { return *cast(int*)(cast(size_t)cast(void*)this + 252); }
-			ubyte Priority() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 248); }
-			float ReTriggerDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-			float ActivationTime() { return *cast(float*)(cast(size_t)cast(void*)this + 228); }
-			Actor Instigator() { return *cast(Actor*)(cast(size_t)cast(void*)this + 224); }
-			Actor Originator() { return *cast(Actor*)(cast(size_t)cast(void*)this + 220); }
+			int MaxTriggerCount() { mixin(MGPC!(int, 236)()); }
+			int TriggerCount() { mixin(MGPC!(int, 232)()); }
+			ScriptArray!(SequenceEvent) DuplicateEvts() { mixin(MGPC!(ScriptArray!(SequenceEvent), 208)()); }
+			int MaxWidth() { mixin(MGPC!(int, 252)()); }
+			ubyte Priority() { mixin(MGPC!(ubyte, 248)()); }
+			float ReTriggerDelay() { mixin(MGPC!(float, 240)()); }
+			float ActivationTime() { mixin(MGPC!(float, 228)()); }
+			Actor Instigator() { mixin(MGPC!(Actor, 224)()); }
+			Actor Originator() { mixin(MGPC!(Actor, 220)()); }
 		}
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x1; } return val; }
-		bool bPlayerOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x2) != 0; }
-		bool bPlayerOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x2; } return val; }
-		bool bClientSideOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x8) != 0; }
-		bool bClientSideOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x8; } return val; }
-		bool bRegistered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x4) != 0; }
-		bool bRegistered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x4; } return val; }
+		bool bEnabled() { mixin(MGBPC!(244, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(244, 0x1)()); }
+		bool bPlayerOnly() { mixin(MGBPC!(244, 0x2)()); }
+		bool bPlayerOnly(bool val) { mixin(MSBPC!(244, 0x2)()); }
+		bool bClientSideOnly() { mixin(MGBPC!(244, 0x8)()); }
+		bool bClientSideOnly(bool val) { mixin(MSBPC!(244, 0x8)()); }
+		bool bRegistered() { mixin(MGBPC!(244, 0x4)()); }
+		bool bRegistered(bool val) { mixin(MSBPC!(244, 0x4)()); }
 	}
 final:
-	bool CheckActivate(Actor InOriginator, Actor InInstigator, bool bTest, ScriptArray!(int)* ActivateIndices, bool bPushTop)
+	bool CheckActivate(Actor InOriginator, Actor InInstigator, bool bTest, const ScriptArray!(int)* ActivateIndices, bool bPushTop)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Actor*)params.ptr = InOriginator;
 		*cast(Actor*)&params[4] = InInstigator;
 		*cast(bool*)&params[8] = bTest;
-		*cast(ScriptArray!(int)*)&params[12] = *ActivateIndices;
+		*cast(ScriptArray!(int)*)&params[12] = ActivateIndices;
 		*cast(bool*)&params[24] = bPushTop;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckActivate, params.ptr, cast(void*)0);
 		*ActivateIndices = *cast(ScriptArray!(int)*)&params[12];

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrPlayerReplicationInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.UTGame.UTPlayerReplicationInfo;
 import UnrealScript.Engine.Actor;
@@ -17,9 +18,9 @@ extern(C++) interface TrPlayerReplicationInfo : UTPlayerReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPlayerReplicationInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPlayerReplicationInfo")()); }
 	private static __gshared TrPlayerReplicationInfo mDefaultProperties;
-	@property final static TrPlayerReplicationInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPlayerReplicationInfo)("TrPlayerReplicationInfo TribesGame.Default__TrPlayerReplicationInfo")); }
+	@property final static TrPlayerReplicationInfo DefaultProperties() { mixin(MGDPC!(TrPlayerReplicationInfo, "TrPlayerReplicationInfo TribesGame.Default__TrPlayerReplicationInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -88,67 +89,67 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPlayerRank() { return mGetPlayerRank ? mGetPlayerRank : (mGetPlayerRank = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetPlayerRank")); }
-			ScriptFunction GetCurrentClass() { return mGetCurrentClass ? mGetCurrentClass : (mGetCurrentClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetCurrentClass")); }
-			ScriptFunction GetEquipDevice() { return mGetEquipDevice ? mGetEquipDevice : (mGetEquipDevice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetEquipDevice")); }
-			ScriptFunction GetRankIcon() { return mGetRankIcon ? mGetRankIcon : (mGetRankIcon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetRankIcon")); }
-			ScriptFunction GetCurrentValueModifier() { return mGetCurrentValueModifier ? mGetCurrentValueModifier : (mGetCurrentValueModifier = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetCurrentValueModifier")); }
-			ScriptFunction GetEquipPointByWeaponId() { return mGetEquipPointByWeaponId ? mGetEquipPointByWeaponId : (mGetEquipPointByWeaponId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetEquipPointByWeaponId")); }
-			ScriptFunction GetArmorType() { return mGetArmorType ? mGetArmorType : (mGetArmorType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetArmorType")); }
-			ScriptFunction GetCurrentSkinClass() { return mGetCurrentSkinClass ? mGetCurrentSkinClass : (mGetCurrentSkinClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetCurrentSkinClass")); }
-			ScriptFunction GetGibMesh() { return mGetGibMesh ? mGetGibMesh : (mGetGibMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetGibMesh")); }
-			ScriptFunction Get3PSkin() { return mGet3PSkin ? mGet3PSkin : (mGet3PSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.Get3PSkin")); }
-			ScriptFunction GetBodyMesh() { return mGetBodyMesh ? mGetBodyMesh : (mGetBodyMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetBodyMesh")); }
-			ScriptFunction GetHandsMesh() { return mGetHandsMesh ? mGetHandsMesh : (mGetHandsMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetHandsMesh")); }
-			ScriptFunction GetSkiThrust() { return mGetSkiThrust ? mGetSkiThrust : (mGetSkiThrust = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetSkiThrust")); }
-			ScriptFunction GetJetpackSocketCount() { return mGetJetpackSocketCount ? mGetJetpackSocketCount : (mGetJetpackSocketCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetJetpackSocketCount")); }
-			ScriptFunction GetJetpackThrust() { return mGetJetpackThrust ? mGetJetpackThrust : (mGetJetpackThrust = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetJetpackThrust")); }
-			ScriptFunction GetJetpackSocket() { return mGetJetpackSocket ? mGetJetpackSocket : (mGetJetpackSocket = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetJetpackSocket")); }
-			ScriptFunction GetJetpackTrail() { return mGetJetpackTrail ? mGetJetpackTrail : (mGetJetpackTrail = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetJetpackTrail")); }
-			ScriptFunction RequestLoadoutChange() { return mRequestLoadoutChange ? mRequestLoadoutChange : (mRequestLoadoutChange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.RequestLoadoutChange")); }
-			ScriptFunction VerifyCharacter() { return mVerifyCharacter ? mVerifyCharacter : (mVerifyCharacter = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.VerifyCharacter")); }
-			ScriptFunction GetCharacterEquip() { return mGetCharacterEquip ? mGetCharacterEquip : (mGetCharacterEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetCharacterEquip")); }
-			ScriptFunction GetCharacterEquipLocal() { return mGetCharacterEquipLocal ? mGetCharacterEquipLocal : (mGetCharacterEquipLocal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetCharacterEquipLocal")); }
-			ScriptFunction GetUpgradeLevel() { return mGetUpgradeLevel ? mGetUpgradeLevel : (mGetUpgradeLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetUpgradeLevel")); }
-			ScriptFunction GetUpgradeLevelLocal() { return mGetUpgradeLevelLocal ? mGetUpgradeLevelLocal : (mGetUpgradeLevelLocal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetUpgradeLevelLocal")); }
-			ScriptFunction UpdatePing() { return mUpdatePing ? mUpdatePing : (mUpdatePing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.UpdatePing")); }
-			ScriptFunction RegisterBuddy() { return mRegisterBuddy ? mRegisterBuddy : (mRegisterBuddy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.RegisterBuddy")); }
-			ScriptFunction Load1PData() { return mLoad1PData ? mLoad1PData : (mLoad1PData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.Load1PData")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.ReplicatedEvent")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.PostBeginPlay")); }
-			ScriptFunction RegisterPlayerWithSession() { return mRegisterPlayerWithSession ? mRegisterPlayerWithSession : (mRegisterPlayerWithSession = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.RegisterPlayerWithSession")); }
-			ScriptFunction UpdateValueModifier() { return mUpdateValueModifier ? mUpdateValueModifier : (mUpdateValueModifier = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.UpdateValueModifier")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.Reset")); }
-			ScriptFunction SetPlayerTeam() { return mSetPlayerTeam ? mSetPlayerTeam : (mSetPlayerTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.SetPlayerTeam")); }
-			ScriptFunction SwapToPendingCharClass() { return mSwapToPendingCharClass ? mSwapToPendingCharClass : (mSwapToPendingCharClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.SwapToPendingCharClass")); }
-			ScriptFunction VerifyAndLoadCharacter() { return mVerifyAndLoadCharacter ? mVerifyAndLoadCharacter : (mVerifyAndLoadCharacter = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.VerifyAndLoadCharacter")); }
-			ScriptFunction GetSelectedLoadout() { return mGetSelectedLoadout ? mGetSelectedLoadout : (mGetSelectedLoadout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetSelectedLoadout")); }
-			ScriptFunction ShouldVisitStation() { return mShouldVisitStation ? mShouldVisitStation : (mShouldVisitStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.ShouldVisitStation")); }
-			ScriptFunction ResolveDefaultEquip() { return mResolveDefaultEquip ? mResolveDefaultEquip : (mResolveDefaultEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.ResolveDefaultEquip")); }
-			ScriptFunction SetActiveEquip() { return mSetActiveEquip ? mSetActiveEquip : (mSetActiveEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.SetActiveEquip")); }
-			ScriptFunction IncrementKills() { return mIncrementKills ? mIncrementKills : (mIncrementKills = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.IncrementKills")); }
-			ScriptFunction CheckMultiKill() { return mCheckMultiKill ? mCheckMultiKill : (mCheckMultiKill = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.CheckMultiKill")); }
-			ScriptFunction GetPlayerClassId() { return mGetPlayerClassId ? mGetPlayerClassId : (mGetPlayerClassId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetPlayerClassId")); }
-			ScriptFunction GetPendingClass() { return mGetPendingClass ? mGetPendingClass : (mGetPendingClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetPendingClass")); }
-			ScriptFunction GetCurrentClassAbb() { return mGetCurrentClassAbb ? mGetCurrentClassAbb : (mGetCurrentClassAbb = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetCurrentClassAbb")); }
-			ScriptFunction GetPlayerRankNum() { return mGetPlayerRankNum ? mGetPlayerRankNum : (mGetPlayerRankNum = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetPlayerRankNum")); }
-			ScriptFunction GetBaseGP() { return mGetBaseGP ? mGetBaseGP : (mGetBaseGP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetBaseGP")); }
-			ScriptFunction GetBaseXP() { return mGetBaseXP ? mGetBaseXP : (mGetBaseXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetBaseXP")); }
-			ScriptFunction SetPlayerGP() { return mSetPlayerGP ? mSetPlayerGP : (mSetPlayerGP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.SetPlayerGP")); }
-			ScriptFunction SetPlayerXP() { return mSetPlayerXP ? mSetPlayerXP : (mSetPlayerXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.SetPlayerXP")); }
-			ScriptFunction GetRankFromXP() { return mGetRankFromXP ? mGetRankFromXP : (mGetRankFromXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetRankFromXP")); }
-			ScriptFunction GetPerkFromId() { return mGetPerkFromId ? mGetPerkFromId : (mGetPerkFromId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetPerkFromId")); }
-			ScriptFunction SetFlag() { return mSetFlag ? mSetFlag : (mSetFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.SetFlag")); }
-			ScriptFunction Duplicate() { return mDuplicate ? mDuplicate : (mDuplicate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.Duplicate")); }
-			ScriptFunction CopyProperties() { return mCopyProperties ? mCopyProperties : (mCopyProperties = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.CopyProperties")); }
-			ScriptFunction SetCached3PSkin() { return mSetCached3PSkin ? mSetCached3PSkin : (mSetCached3PSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.SetCached3PSkin")); }
-			ScriptFunction GetCurrentVoiceClass() { return mGetCurrentVoiceClass ? mGetCurrentVoiceClass : (mGetCurrentVoiceClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.GetCurrentVoiceClass")); }
-			ScriptFunction UpdateCachedSkin() { return mUpdateCachedSkin ? mUpdateCachedSkin : (mUpdateCachedSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.UpdateCachedSkin")); }
-			ScriptFunction On3PSkinContentLoaded() { return mOn3PSkinContentLoaded ? mOn3PSkinContentLoaded : (mOn3PSkinContentLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.On3PSkinContentLoaded")); }
-			ScriptFunction On1PSkinContentLoaded() { return mOn1PSkinContentLoaded ? mOn1PSkinContentLoaded : (mOn1PSkinContentLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.On1PSkinContentLoaded")); }
-			ScriptFunction Update1PMesh() { return mUpdate1PMesh ? mUpdate1PMesh : (mUpdate1PMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.Update1PMesh")); }
-			ScriptFunction OnPingRedFlagged() { return mOnPingRedFlagged ? mOnPingRedFlagged : (mOnPingRedFlagged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.OnPingRedFlagged")); }
-			ScriptFunction ServerPingRedFlag() { return mServerPingRedFlag ? mServerPingRedFlag : (mServerPingRedFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerReplicationInfo.ServerPingRedFlag")); }
+			ScriptFunction GetPlayerRank() { mixin(MGF!("mGetPlayerRank", "Function TribesGame.TrPlayerReplicationInfo.GetPlayerRank")()); }
+			ScriptFunction GetCurrentClass() { mixin(MGF!("mGetCurrentClass", "Function TribesGame.TrPlayerReplicationInfo.GetCurrentClass")()); }
+			ScriptFunction GetEquipDevice() { mixin(MGF!("mGetEquipDevice", "Function TribesGame.TrPlayerReplicationInfo.GetEquipDevice")()); }
+			ScriptFunction GetRankIcon() { mixin(MGF!("mGetRankIcon", "Function TribesGame.TrPlayerReplicationInfo.GetRankIcon")()); }
+			ScriptFunction GetCurrentValueModifier() { mixin(MGF!("mGetCurrentValueModifier", "Function TribesGame.TrPlayerReplicationInfo.GetCurrentValueModifier")()); }
+			ScriptFunction GetEquipPointByWeaponId() { mixin(MGF!("mGetEquipPointByWeaponId", "Function TribesGame.TrPlayerReplicationInfo.GetEquipPointByWeaponId")()); }
+			ScriptFunction GetArmorType() { mixin(MGF!("mGetArmorType", "Function TribesGame.TrPlayerReplicationInfo.GetArmorType")()); }
+			ScriptFunction GetCurrentSkinClass() { mixin(MGF!("mGetCurrentSkinClass", "Function TribesGame.TrPlayerReplicationInfo.GetCurrentSkinClass")()); }
+			ScriptFunction GetGibMesh() { mixin(MGF!("mGetGibMesh", "Function TribesGame.TrPlayerReplicationInfo.GetGibMesh")()); }
+			ScriptFunction Get3PSkin() { mixin(MGF!("mGet3PSkin", "Function TribesGame.TrPlayerReplicationInfo.Get3PSkin")()); }
+			ScriptFunction GetBodyMesh() { mixin(MGF!("mGetBodyMesh", "Function TribesGame.TrPlayerReplicationInfo.GetBodyMesh")()); }
+			ScriptFunction GetHandsMesh() { mixin(MGF!("mGetHandsMesh", "Function TribesGame.TrPlayerReplicationInfo.GetHandsMesh")()); }
+			ScriptFunction GetSkiThrust() { mixin(MGF!("mGetSkiThrust", "Function TribesGame.TrPlayerReplicationInfo.GetSkiThrust")()); }
+			ScriptFunction GetJetpackSocketCount() { mixin(MGF!("mGetJetpackSocketCount", "Function TribesGame.TrPlayerReplicationInfo.GetJetpackSocketCount")()); }
+			ScriptFunction GetJetpackThrust() { mixin(MGF!("mGetJetpackThrust", "Function TribesGame.TrPlayerReplicationInfo.GetJetpackThrust")()); }
+			ScriptFunction GetJetpackSocket() { mixin(MGF!("mGetJetpackSocket", "Function TribesGame.TrPlayerReplicationInfo.GetJetpackSocket")()); }
+			ScriptFunction GetJetpackTrail() { mixin(MGF!("mGetJetpackTrail", "Function TribesGame.TrPlayerReplicationInfo.GetJetpackTrail")()); }
+			ScriptFunction RequestLoadoutChange() { mixin(MGF!("mRequestLoadoutChange", "Function TribesGame.TrPlayerReplicationInfo.RequestLoadoutChange")()); }
+			ScriptFunction VerifyCharacter() { mixin(MGF!("mVerifyCharacter", "Function TribesGame.TrPlayerReplicationInfo.VerifyCharacter")()); }
+			ScriptFunction GetCharacterEquip() { mixin(MGF!("mGetCharacterEquip", "Function TribesGame.TrPlayerReplicationInfo.GetCharacterEquip")()); }
+			ScriptFunction GetCharacterEquipLocal() { mixin(MGF!("mGetCharacterEquipLocal", "Function TribesGame.TrPlayerReplicationInfo.GetCharacterEquipLocal")()); }
+			ScriptFunction GetUpgradeLevel() { mixin(MGF!("mGetUpgradeLevel", "Function TribesGame.TrPlayerReplicationInfo.GetUpgradeLevel")()); }
+			ScriptFunction GetUpgradeLevelLocal() { mixin(MGF!("mGetUpgradeLevelLocal", "Function TribesGame.TrPlayerReplicationInfo.GetUpgradeLevelLocal")()); }
+			ScriptFunction UpdatePing() { mixin(MGF!("mUpdatePing", "Function TribesGame.TrPlayerReplicationInfo.UpdatePing")()); }
+			ScriptFunction RegisterBuddy() { mixin(MGF!("mRegisterBuddy", "Function TribesGame.TrPlayerReplicationInfo.RegisterBuddy")()); }
+			ScriptFunction Load1PData() { mixin(MGF!("mLoad1PData", "Function TribesGame.TrPlayerReplicationInfo.Load1PData")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrPlayerReplicationInfo.ReplicatedEvent")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrPlayerReplicationInfo.PostBeginPlay")()); }
+			ScriptFunction RegisterPlayerWithSession() { mixin(MGF!("mRegisterPlayerWithSession", "Function TribesGame.TrPlayerReplicationInfo.RegisterPlayerWithSession")()); }
+			ScriptFunction UpdateValueModifier() { mixin(MGF!("mUpdateValueModifier", "Function TribesGame.TrPlayerReplicationInfo.UpdateValueModifier")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrPlayerReplicationInfo.Reset")()); }
+			ScriptFunction SetPlayerTeam() { mixin(MGF!("mSetPlayerTeam", "Function TribesGame.TrPlayerReplicationInfo.SetPlayerTeam")()); }
+			ScriptFunction SwapToPendingCharClass() { mixin(MGF!("mSwapToPendingCharClass", "Function TribesGame.TrPlayerReplicationInfo.SwapToPendingCharClass")()); }
+			ScriptFunction VerifyAndLoadCharacter() { mixin(MGF!("mVerifyAndLoadCharacter", "Function TribesGame.TrPlayerReplicationInfo.VerifyAndLoadCharacter")()); }
+			ScriptFunction GetSelectedLoadout() { mixin(MGF!("mGetSelectedLoadout", "Function TribesGame.TrPlayerReplicationInfo.GetSelectedLoadout")()); }
+			ScriptFunction ShouldVisitStation() { mixin(MGF!("mShouldVisitStation", "Function TribesGame.TrPlayerReplicationInfo.ShouldVisitStation")()); }
+			ScriptFunction ResolveDefaultEquip() { mixin(MGF!("mResolveDefaultEquip", "Function TribesGame.TrPlayerReplicationInfo.ResolveDefaultEquip")()); }
+			ScriptFunction SetActiveEquip() { mixin(MGF!("mSetActiveEquip", "Function TribesGame.TrPlayerReplicationInfo.SetActiveEquip")()); }
+			ScriptFunction IncrementKills() { mixin(MGF!("mIncrementKills", "Function TribesGame.TrPlayerReplicationInfo.IncrementKills")()); }
+			ScriptFunction CheckMultiKill() { mixin(MGF!("mCheckMultiKill", "Function TribesGame.TrPlayerReplicationInfo.CheckMultiKill")()); }
+			ScriptFunction GetPlayerClassId() { mixin(MGF!("mGetPlayerClassId", "Function TribesGame.TrPlayerReplicationInfo.GetPlayerClassId")()); }
+			ScriptFunction GetPendingClass() { mixin(MGF!("mGetPendingClass", "Function TribesGame.TrPlayerReplicationInfo.GetPendingClass")()); }
+			ScriptFunction GetCurrentClassAbb() { mixin(MGF!("mGetCurrentClassAbb", "Function TribesGame.TrPlayerReplicationInfo.GetCurrentClassAbb")()); }
+			ScriptFunction GetPlayerRankNum() { mixin(MGF!("mGetPlayerRankNum", "Function TribesGame.TrPlayerReplicationInfo.GetPlayerRankNum")()); }
+			ScriptFunction GetBaseGP() { mixin(MGF!("mGetBaseGP", "Function TribesGame.TrPlayerReplicationInfo.GetBaseGP")()); }
+			ScriptFunction GetBaseXP() { mixin(MGF!("mGetBaseXP", "Function TribesGame.TrPlayerReplicationInfo.GetBaseXP")()); }
+			ScriptFunction SetPlayerGP() { mixin(MGF!("mSetPlayerGP", "Function TribesGame.TrPlayerReplicationInfo.SetPlayerGP")()); }
+			ScriptFunction SetPlayerXP() { mixin(MGF!("mSetPlayerXP", "Function TribesGame.TrPlayerReplicationInfo.SetPlayerXP")()); }
+			ScriptFunction GetRankFromXP() { mixin(MGF!("mGetRankFromXP", "Function TribesGame.TrPlayerReplicationInfo.GetRankFromXP")()); }
+			ScriptFunction GetPerkFromId() { mixin(MGF!("mGetPerkFromId", "Function TribesGame.TrPlayerReplicationInfo.GetPerkFromId")()); }
+			ScriptFunction SetFlag() { mixin(MGF!("mSetFlag", "Function TribesGame.TrPlayerReplicationInfo.SetFlag")()); }
+			ScriptFunction Duplicate() { mixin(MGF!("mDuplicate", "Function TribesGame.TrPlayerReplicationInfo.Duplicate")()); }
+			ScriptFunction CopyProperties() { mixin(MGF!("mCopyProperties", "Function TribesGame.TrPlayerReplicationInfo.CopyProperties")()); }
+			ScriptFunction SetCached3PSkin() { mixin(MGF!("mSetCached3PSkin", "Function TribesGame.TrPlayerReplicationInfo.SetCached3PSkin")()); }
+			ScriptFunction GetCurrentVoiceClass() { mixin(MGF!("mGetCurrentVoiceClass", "Function TribesGame.TrPlayerReplicationInfo.GetCurrentVoiceClass")()); }
+			ScriptFunction UpdateCachedSkin() { mixin(MGF!("mUpdateCachedSkin", "Function TribesGame.TrPlayerReplicationInfo.UpdateCachedSkin")()); }
+			ScriptFunction On3PSkinContentLoaded() { mixin(MGF!("mOn3PSkinContentLoaded", "Function TribesGame.TrPlayerReplicationInfo.On3PSkinContentLoaded")()); }
+			ScriptFunction On1PSkinContentLoaded() { mixin(MGF!("mOn1PSkinContentLoaded", "Function TribesGame.TrPlayerReplicationInfo.On1PSkinContentLoaded")()); }
+			ScriptFunction Update1PMesh() { mixin(MGF!("mUpdate1PMesh", "Function TribesGame.TrPlayerReplicationInfo.Update1PMesh")()); }
+			ScriptFunction OnPingRedFlagged() { mixin(MGF!("mOnPingRedFlagged", "Function TribesGame.TrPlayerReplicationInfo.OnPingRedFlagged")()); }
+			ScriptFunction ServerPingRedFlag() { mixin(MGF!("mServerPingRedFlag", "Function TribesGame.TrPlayerReplicationInfo.ServerPingRedFlag")()); }
 		}
 	}
 	static struct Constants
@@ -662,60 +663,60 @@ public extern(D):
 		private ubyte __buffer__[5];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrPlayerReplicationInfo.EquipLevel")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPlayerReplicationInfo.EquipLevel")()); }
 		@property final auto ref
 		{
-			ubyte UpgradeLevel() { return *cast(ubyte*)(cast(size_t)&this + 4); }
-			int EquipId() { return *cast(int*)(cast(size_t)&this + 0); }
+			ubyte UpgradeLevel() { mixin(MGPS!(ubyte, 4)()); }
+			int EquipId() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int m_nCreditsEarned() { return *cast(int*)(cast(size_t)cast(void*)this + 948); }
-			int m_nKills() { return *cast(int*)(cast(size_t)cast(void*)this + 940); }
-			int m_nAssists() { return *cast(int*)(cast(size_t)cast(void*)this + 944); }
-			int r_nArenaSpawnsLeft() { return *cast(int*)(cast(size_t)cast(void*)this + 1128); }
-			Actor m_LockedTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 976); }
-			int m_nFreeCredits() { return *cast(int*)(cast(size_t)cast(void*)this + 964); }
-			int m_nCurrentCredits() { return *cast(int*)(cast(size_t)cast(void*)this + 968); }
-			ScriptClass r_VoiceClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 984); }
-			int m_nRabbitRank() { return *cast(int*)(cast(size_t)cast(void*)this + 924); }
-			int m_nPlayerIconIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 936); }
-			int r_bSkinId() { return *cast(int*)(cast(size_t)cast(void*)this + 1132); }
-			ScriptClass c_Cached1PSkin() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1124); }
-			ScriptClass c_Cached3PSkin() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1120); }
-			TrValueModifier m_ValueModifier() { return *cast(TrValueModifier*)(cast(size_t)cast(void*)this + 1116); }
-			TrPlayerReplicationInfo.EquipLevel r_EquipLevels() { return *cast(TrPlayerReplicationInfo.EquipLevel*)(cast(size_t)cast(void*)this + 1012); }
-			float c_fRedFlagTimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 1008); }
-			float c_fRedFlagPingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1004); }
-			float c_fRedFlagPingThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1000); }
-			float c_fCurrentPingMS() { return *cast(float*)(cast(size_t)cast(void*)this + 996); }
-			TrInventoryHelper InvHelper() { return *cast(TrInventoryHelper*)(cast(size_t)cast(void*)this + 992); }
-			TrStatsInterface Stats() { return *cast(TrStatsInterface*)(cast(size_t)cast(void*)this + 988); }
-			TrObject.EArmorType m_ArmorType() { return *cast(TrObject.EArmorType*)(cast(size_t)cast(void*)this + 980); }
-			int m_nPlayerClassId() { return *cast(int*)(cast(size_t)cast(void*)this + 960); }
-			int m_nBaseXP() { return *cast(int*)(cast(size_t)cast(void*)this + 956); }
-			int m_nBaseGP() { return *cast(int*)(cast(size_t)cast(void*)this + 952); }
-			int m_nRankIconIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 932); }
-			int m_nRankNum() { return *cast(int*)(cast(size_t)cast(void*)this + 928); }
-			ScriptClass m_PendingBaseClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 920); }
-			ScriptClass m_CurrentBaseClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 916); }
-			ScriptClass m_Rank() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 912); }
-			int m_PendingLoadout() { return *cast(int*)(cast(size_t)cast(void*)this + 908); }
-			int m_CurrentLoadout() { return *cast(int*)(cast(size_t)cast(void*)this + 904); }
+			int m_nCreditsEarned() { mixin(MGPC!(int, 948)()); }
+			int m_nKills() { mixin(MGPC!(int, 940)()); }
+			int m_nAssists() { mixin(MGPC!(int, 944)()); }
+			int r_nArenaSpawnsLeft() { mixin(MGPC!(int, 1128)()); }
+			Actor m_LockedTarget() { mixin(MGPC!(Actor, 976)()); }
+			int m_nFreeCredits() { mixin(MGPC!(int, 964)()); }
+			int m_nCurrentCredits() { mixin(MGPC!(int, 968)()); }
+			ScriptClass r_VoiceClass() { mixin(MGPC!(ScriptClass, 984)()); }
+			int m_nRabbitRank() { mixin(MGPC!(int, 924)()); }
+			int m_nPlayerIconIndex() { mixin(MGPC!(int, 936)()); }
+			int r_bSkinId() { mixin(MGPC!(int, 1132)()); }
+			ScriptClass c_Cached1PSkin() { mixin(MGPC!(ScriptClass, 1124)()); }
+			ScriptClass c_Cached3PSkin() { mixin(MGPC!(ScriptClass, 1120)()); }
+			TrValueModifier m_ValueModifier() { mixin(MGPC!(TrValueModifier, 1116)()); }
+			TrPlayerReplicationInfo.EquipLevel r_EquipLevels() { mixin(MGPC!(TrPlayerReplicationInfo.EquipLevel, 1012)()); }
+			float c_fRedFlagTimeStamp() { mixin(MGPC!(float, 1008)()); }
+			float c_fRedFlagPingTime() { mixin(MGPC!(float, 1004)()); }
+			float c_fRedFlagPingThreshold() { mixin(MGPC!(float, 1000)()); }
+			float c_fCurrentPingMS() { mixin(MGPC!(float, 996)()); }
+			TrInventoryHelper InvHelper() { mixin(MGPC!(TrInventoryHelper, 992)()); }
+			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 988)()); }
+			TrObject.EArmorType m_ArmorType() { mixin(MGPC!(TrObject.EArmorType, 980)()); }
+			int m_nPlayerClassId() { mixin(MGPC!(int, 960)()); }
+			int m_nBaseXP() { mixin(MGPC!(int, 956)()); }
+			int m_nBaseGP() { mixin(MGPC!(int, 952)()); }
+			int m_nRankIconIndex() { mixin(MGPC!(int, 932)()); }
+			int m_nRankNum() { mixin(MGPC!(int, 928)()); }
+			ScriptClass m_PendingBaseClass() { mixin(MGPC!(ScriptClass, 920)()); }
+			ScriptClass m_CurrentBaseClass() { mixin(MGPC!(ScriptClass, 916)()); }
+			ScriptClass m_Rank() { mixin(MGPC!(ScriptClass, 912)()); }
+			int m_PendingLoadout() { mixin(MGPC!(int, 908)()); }
+			int m_CurrentLoadout() { mixin(MGPC!(int, 904)()); }
 		}
-		bool r_bIsCrossedOffArenaList() { return (*cast(uint*)(cast(size_t)cast(void*)this + 972) & 0x8) != 0; }
-		bool r_bIsCrossedOffArenaList(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 972) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 972) &= ~0x8; } return val; }
-		bool c_bIsBuddyToLocalPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 972) & 0x2) != 0; }
-		bool c_bIsBuddyToLocalPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 972) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 972) &= ~0x2; } return val; }
-		bool c_bIsMutualBuddiesWithLocalPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 972) & 0x4) != 0; }
-		bool c_bIsMutualBuddiesWithLocalPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 972) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 972) &= ~0x4; } return val; }
-		bool r_bIsLastManStanding() { return (*cast(uint*)(cast(size_t)cast(void*)this + 972) & 0x10) != 0; }
-		bool r_bIsLastManStanding(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 972) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 972) &= ~0x10; } return val; }
-		bool bDevUpgrades() { return (*cast(uint*)(cast(size_t)cast(void*)this + 972) & 0x1) != 0; }
-		bool bDevUpgrades(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 972) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 972) &= ~0x1; } return val; }
+		bool r_bIsCrossedOffArenaList() { mixin(MGBPC!(972, 0x8)()); }
+		bool r_bIsCrossedOffArenaList(bool val) { mixin(MSBPC!(972, 0x8)()); }
+		bool c_bIsBuddyToLocalPlayer() { mixin(MGBPC!(972, 0x2)()); }
+		bool c_bIsBuddyToLocalPlayer(bool val) { mixin(MSBPC!(972, 0x2)()); }
+		bool c_bIsMutualBuddiesWithLocalPlayer() { mixin(MGBPC!(972, 0x4)()); }
+		bool c_bIsMutualBuddiesWithLocalPlayer(bool val) { mixin(MSBPC!(972, 0x4)()); }
+		bool r_bIsLastManStanding() { mixin(MGBPC!(972, 0x10)()); }
+		bool r_bIsLastManStanding(bool val) { mixin(MSBPC!(972, 0x10)()); }
+		bool bDevUpgrades() { mixin(MGBPC!(972, 0x1)()); }
+		bool bDevUpgrades(bool val) { mixin(MSBPC!(972, 0x1)()); }
 	}
 final:
 	ScriptClass GetPlayerRank()

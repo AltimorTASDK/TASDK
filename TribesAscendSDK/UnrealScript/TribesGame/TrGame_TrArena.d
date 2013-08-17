@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGame_TrArena;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.TribesGame.TrPlayerController;
@@ -11,9 +12,9 @@ extern(C++) interface TrGame_TrArena : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrArena")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TrArena")()); }
 	private static __gshared TrGame_TrArena mDefaultProperties;
-	@property final static TrGame_TrArena DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TrArena)("TrGame_TrArena TribesGame.Default__TrGame_TrArena")); }
+	@property final static TrGame_TrArena DefaultProperties() { mixin(MGDPC!(TrGame_TrArena, "TrGame_TrArena TribesGame.Default__TrGame_TrArena")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,42 +47,52 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.ApplyServerSettings")); }
-			ScriptFunction ResetScores() { return mResetScores ? mResetScores : (mResetScores = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.ResetScores")); }
-			ScriptFunction RepopulatePlayerLists() { return mRepopulatePlayerLists ? mRepopulatePlayerLists : (mRepopulatePlayerLists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.RepopulatePlayerLists")); }
-			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.SetTeam")); }
-			ScriptFunction Logout() { return mLogout ? mLogout : (mLogout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.Logout")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.PostBeginPlay")); }
-			ScriptFunction ResetLevel() { return mResetLevel ? mResetLevel : (mResetLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.ResetLevel")); }
-			ScriptFunction RespawnPlayers() { return mRespawnPlayers ? mRespawnPlayers : (mRespawnPlayers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.RespawnPlayers")); }
-			ScriptFunction ResetRound() { return mResetRound ? mResetRound : (mResetRound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.ResetRound")); }
-			ScriptFunction ScoreKill() { return mScoreKill ? mScoreKill : (mScoreKill = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.ScoreKill")); }
-			ScriptFunction CheckScore() { return mCheckScore ? mCheckScore : (mCheckScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.CheckScore")); }
-			ScriptFunction DetermineWinningTeam() { return mDetermineWinningTeam ? mDetermineWinningTeam : (mDetermineWinningTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.DetermineWinningTeam")); }
-			ScriptFunction GetRoundWinningTeam() { return mGetRoundWinningTeam ? mGetRoundWinningTeam : (mGetRoundWinningTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.GetRoundWinningTeam")); }
-			ScriptFunction EndTheRound() { return mEndTheRound ? mEndTheRound : (mEndTheRound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.EndTheRound")); }
-			ScriptFunction GotoPendingRoundStartTimer() { return mGotoPendingRoundStartTimer ? mGotoPendingRoundStartTimer : (mGotoPendingRoundStartTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.GotoPendingRoundStartTimer")); }
-			ScriptFunction GetNumRemainingAlivePlayers() { return mGetNumRemainingAlivePlayers ? mGetNumRemainingAlivePlayers : (mGetNumRemainingAlivePlayers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.GetNumRemainingAlivePlayers")); }
-			ScriptFunction IsBloodEagleOutOfLives() { return mIsBloodEagleOutOfLives ? mIsBloodEagleOutOfLives : (mIsBloodEagleOutOfLives = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.IsBloodEagleOutOfLives")); }
-			ScriptFunction IsDiamondSwordOutOfLives() { return mIsDiamondSwordOutOfLives ? mIsDiamondSwordOutOfLives : (mIsDiamondSwordOutOfLives = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.IsDiamondSwordOutOfLives")); }
-			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.CheckEndGame")); }
-			ScriptFunction CheckForAutoBalance() { return mCheckForAutoBalance ? mCheckForAutoBalance : (mCheckForAutoBalance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.CheckForAutoBalance")); }
-			ScriptFunction SendMatchCountdown() { return mSendMatchCountdown ? mSendMatchCountdown : (mSendMatchCountdown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.SendMatchCountdown")); }
-			ScriptFunction AllowRespawn() { return mAllowRespawn ? mAllowRespawn : (mAllowRespawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.AllowRespawn")); }
-			ScriptFunction OnServerSpawnedPlayer() { return mOnServerSpawnedPlayer ? mOnServerSpawnedPlayer : (mOnServerSpawnedPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.OnServerSpawnedPlayer")); }
-			ScriptFunction GetGameTypeId() { return mGetGameTypeId ? mGetGameTypeId : (mGetGameTypeId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.GetGameTypeId")); }
-			ScriptFunction SendMatchOver() { return mSendMatchOver ? mSendMatchOver : (mSendMatchOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.SendMatchOver")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrGame_TrArena.ApplyServerSettings")()); }
+			ScriptFunction ResetScores() { mixin(MGF!("mResetScores", "Function TribesGame.TrGame_TrArena.ResetScores")()); }
+			ScriptFunction RepopulatePlayerLists() { mixin(MGF!("mRepopulatePlayerLists", "Function TribesGame.TrGame_TrArena.RepopulatePlayerLists")()); }
+			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function TribesGame.TrGame_TrArena.SetTeam")()); }
+			ScriptFunction Logout() { mixin(MGF!("mLogout", "Function TribesGame.TrGame_TrArena.Logout")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrGame_TrArena.PostBeginPlay")()); }
+			ScriptFunction ResetLevel() { mixin(MGF!("mResetLevel", "Function TribesGame.TrGame_TrArena.ResetLevel")()); }
+			ScriptFunction RespawnPlayers() { mixin(MGF!("mRespawnPlayers", "Function TribesGame.TrGame_TrArena.RespawnPlayers")()); }
+			ScriptFunction ResetRound() { mixin(MGF!("mResetRound", "Function TribesGame.TrGame_TrArena.ResetRound")()); }
+			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function TribesGame.TrGame_TrArena.ScoreKill")()); }
+			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TrArena.CheckScore")()); }
+			ScriptFunction DetermineWinningTeam() { mixin(MGF!("mDetermineWinningTeam", "Function TribesGame.TrGame_TrArena.DetermineWinningTeam")()); }
+			ScriptFunction GetRoundWinningTeam() { mixin(MGF!("mGetRoundWinningTeam", "Function TribesGame.TrGame_TrArena.GetRoundWinningTeam")()); }
+			ScriptFunction EndTheRound() { mixin(MGF!("mEndTheRound", "Function TribesGame.TrGame_TrArena.EndTheRound")()); }
+			ScriptFunction GotoPendingRoundStartTimer() { mixin(MGF!("mGotoPendingRoundStartTimer", "Function TribesGame.TrGame_TrArena.GotoPendingRoundStartTimer")()); }
+			ScriptFunction GetNumRemainingAlivePlayers() { mixin(MGF!("mGetNumRemainingAlivePlayers", "Function TribesGame.TrGame_TrArena.GetNumRemainingAlivePlayers")()); }
+			ScriptFunction IsBloodEagleOutOfLives() { mixin(MGF!("mIsBloodEagleOutOfLives", "Function TribesGame.TrGame_TrArena.IsBloodEagleOutOfLives")()); }
+			ScriptFunction IsDiamondSwordOutOfLives() { mixin(MGF!("mIsDiamondSwordOutOfLives", "Function TribesGame.TrGame_TrArena.IsDiamondSwordOutOfLives")()); }
+			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function TribesGame.TrGame_TrArena.CheckEndGame")()); }
+			ScriptFunction CheckForAutoBalance() { mixin(MGF!("mCheckForAutoBalance", "Function TribesGame.TrGame_TrArena.CheckForAutoBalance")()); }
+			ScriptFunction SendMatchCountdown() { mixin(MGF!("mSendMatchCountdown", "Function TribesGame.TrGame_TrArena.SendMatchCountdown")()); }
+			ScriptFunction AllowRespawn() { mixin(MGF!("mAllowRespawn", "Function TribesGame.TrGame_TrArena.AllowRespawn")()); }
+			ScriptFunction OnServerSpawnedPlayer() { mixin(MGF!("mOnServerSpawnedPlayer", "Function TribesGame.TrGame_TrArena.OnServerSpawnedPlayer")()); }
+			ScriptFunction GetGameTypeId() { mixin(MGF!("mGetGameTypeId", "Function TribesGame.TrGame_TrArena.GetGameTypeId")()); }
+			ScriptFunction SendMatchOver() { mixin(MGF!("mSendMatchOver", "Function TribesGame.TrGame_TrArena.SendMatchOver")()); }
 		}
 	}
 	static struct Constants
 	{
 		enum MAX_NUM_ARENA_PLAYERS_PER_TEAM = 8;
 	}
+	static struct MatchInProgress
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TrArena.MatchInProgress")()); }
+	}
+	static struct PendingRoundStart
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TrArena.PendingRoundStart")()); }
+	}
 	@property final auto ref
 	{
-		int m_nGoalWonRounds() { return *cast(int*)(cast(size_t)cast(void*)this + 1468); }
-		ubyte m_bHasTeamBenchedAPlayer() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1464); }
-		int m_nNumEnemiesAliveAtLastManStanding() { return *cast(int*)(cast(size_t)cast(void*)this + 1456); }
+		int m_nGoalWonRounds() { mixin(MGPC!(int, 1468)()); }
+		ubyte m_bHasTeamBenchedAPlayer() { mixin(MGPC!(ubyte, 1464)()); }
+		int m_nNumEnemiesAliveAtLastManStanding() { mixin(MGPC!(int, 1456)()); }
 	}
 final:
 	void ApplyServerSettings()

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_ManageServers;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_ManageServers : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ManageServers")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ManageServers")()); }
 	private static __gshared GFxTrPage_ManageServers mDefaultProperties;
-	@property final static GFxTrPage_ManageServers DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ManageServers)("GFxTrPage_ManageServers TribesGame.Default__GFxTrPage_ManageServers")); }
+	@property final static GFxTrPage_ManageServers DefaultProperties() { mixin(MGDPC!(GFxTrPage_ManageServers, "GFxTrPage_ManageServers TribesGame.Default__GFxTrPage_ManageServers")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,22 +29,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.SpecialAction")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.TakeFocus")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.FillOption")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.ShowModel")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.PopupComplete")); }
-			ScriptFunction CheckDescription() { return mCheckDescription ? mCheckDescription : (mCheckDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.CheckDescription")); }
-			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ManageServers.FillDescription")); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ManageServers.SpecialAction")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_ManageServers.TakeFocus")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ManageServers.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ManageServers.FillOption")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ManageServers.ShowModel")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ManageServers.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ManageServers.PopupComplete")()); }
+			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ManageServers.CheckDescription")()); }
+			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ManageServers.FillDescription")()); }
 		}
 	}
 	@property final auto ref
 	{
-		int PopupNum() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-		int AddServerNum() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-		int Offset() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+		int PopupNum() { mixin(MGPC!(int, 364)()); }
+		int AddServerNum() { mixin(MGPC!(int, 360)()); }
+		int Offset() { mixin(MGPC!(int, 356)()); }
 	}
 final:
 	void SpecialAction(GFxTrAction Action)

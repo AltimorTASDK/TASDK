@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NavigationHandle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
@@ -14,9 +15,9 @@ extern(C++) interface NavigationHandle : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavigationHandle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavigationHandle")()); }
 	private static __gshared NavigationHandle mDefaultProperties;
-	@property final static NavigationHandle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavigationHandle)("NavigationHandle Engine.Default__NavigationHandle")); }
+	@property final static NavigationHandle DefaultProperties() { mixin(MGDPC!(NavigationHandle, "NavigationHandle Engine.Default__NavigationHandle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -60,42 +61,42 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClearConstraints() { return mClearConstraints ? mClearConstraints : (mClearConstraints = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.ClearConstraints")); }
-			ScriptFunction AddPathConstraint() { return mAddPathConstraint ? mAddPathConstraint : (mAddPathConstraint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.AddPathConstraint")); }
-			ScriptFunction AddGoalEvaluator() { return mAddGoalEvaluator ? mAddGoalEvaluator : (mAddGoalEvaluator = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.AddGoalEvaluator")); }
-			ScriptFunction CreatePathConstraint() { return mCreatePathConstraint ? mCreatePathConstraint : (mCreatePathConstraint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.CreatePathConstraint")); }
-			ScriptFunction CreatePathGoalEvaluator() { return mCreatePathGoalEvaluator ? mCreatePathGoalEvaluator : (mCreatePathGoalEvaluator = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.CreatePathGoalEvaluator")); }
-			ScriptFunction GetPathCacheLength() { return mGetPathCacheLength ? mGetPathCacheLength : (mGetPathCacheLength = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetPathCacheLength")); }
-			ScriptFunction PathCache_Empty() { return mPathCache_Empty ? mPathCache_Empty : (mPathCache_Empty = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.PathCache_Empty")); }
-			ScriptFunction PathCache_GetGoalPoint() { return mPathCache_GetGoalPoint ? mPathCache_GetGoalPoint : (mPathCache_GetGoalPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.PathCache_GetGoalPoint")); }
-			ScriptFunction PathCache_RemoveIndex() { return mPathCache_RemoveIndex ? mPathCache_RemoveIndex : (mPathCache_RemoveIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.PathCache_RemoveIndex")); }
-			ScriptFunction GetBestUnfinishedPathPoint() { return mGetBestUnfinishedPathPoint ? mGetBestUnfinishedPathPoint : (mGetBestUnfinishedPathPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetBestUnfinishedPathPoint")); }
-			ScriptFunction FindPylon() { return mFindPylon ? mFindPylon : (mFindPylon = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.FindPylon")); }
-			ScriptFunction GetPylonFromPos() { return mGetPylonFromPos ? mGetPylonFromPos : (mGetPylonFromPos = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetPylonFromPos")); }
-			ScriptFunction GetNextMoveLocation() { return mGetNextMoveLocation ? mGetNextMoveLocation : (mGetNextMoveLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetNextMoveLocation")); }
-			ScriptFunction SetFinalDestination() { return mSetFinalDestination ? mSetFinalDestination : (mSetFinalDestination = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.SetFinalDestination")); }
-			ScriptFunction ComputeValidFinalDestination() { return mComputeValidFinalDestination ? mComputeValidFinalDestination : (mComputeValidFinalDestination = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.ComputeValidFinalDestination")); }
-			ScriptFunction FindPath() { return mFindPath ? mFindPath : (mFindPath = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.FindPath")); }
-			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.SuggestMovePreparation")); }
-			ScriptFunction ObstacleLineCheck() { return mObstacleLineCheck ? mObstacleLineCheck : (mObstacleLineCheck = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.ObstacleLineCheck")); }
-			ScriptFunction ObstaclePointCheck() { return mObstaclePointCheck ? mObstaclePointCheck : (mObstaclePointCheck = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.ObstaclePointCheck")); }
-			ScriptFunction LineCheck() { return mLineCheck ? mLineCheck : (mLineCheck = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.LineCheck")); }
-			ScriptFunction PointCheck() { return mPointCheck ? mPointCheck : (mPointCheck = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.PointCheck")); }
-			ScriptFunction PointReachable() { return mPointReachable ? mPointReachable : (mPointReachable = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.PointReachable")); }
-			ScriptFunction ActorReachable() { return mActorReachable ? mActorReachable : (mActorReachable = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.ActorReachable")); }
-			ScriptFunction DrawPathCache() { return mDrawPathCache ? mDrawPathCache : (mDrawPathCache = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.DrawPathCache")); }
-			ScriptFunction GetCurrentEdgeDebugText() { return mGetCurrentEdgeDebugText ? mGetCurrentEdgeDebugText : (mGetCurrentEdgeDebugText = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetCurrentEdgeDebugText")); }
-			ScriptFunction ClearCurrentEdge() { return mClearCurrentEdge ? mClearCurrentEdge : (mClearCurrentEdge = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.ClearCurrentEdge")); }
-			ScriptFunction GetCurrentEdgeType() { return mGetCurrentEdgeType ? mGetCurrentEdgeType : (mGetCurrentEdgeType = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetCurrentEdgeType")); }
-			ScriptFunction GetAllPolyCentersWithinBounds() { return mGetAllPolyCentersWithinBounds ? mGetAllPolyCentersWithinBounds : (mGetAllPolyCentersWithinBounds = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetAllPolyCentersWithinBounds")); }
-			ScriptFunction GetValidPositionsForBox() { return mGetValidPositionsForBox ? mGetValidPositionsForBox : (mGetValidPositionsForBox = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetValidPositionsForBox")); }
-			ScriptFunction LimitPathCacheDistance() { return mLimitPathCacheDistance ? mLimitPathCacheDistance : (mLimitPathCacheDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.LimitPathCacheDistance")); }
-			ScriptFunction IsAnchorInescapable() { return mIsAnchorInescapable ? mIsAnchorInescapable : (mIsAnchorInescapable = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.IsAnchorInescapable")); }
-			ScriptFunction GetFirstMoveLocation() { return mGetFirstMoveLocation ? mGetFirstMoveLocation : (mGetFirstMoveLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetFirstMoveLocation")); }
-			ScriptFunction CalculatePathDistance() { return mCalculatePathDistance ? mCalculatePathDistance : (mCalculatePathDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.CalculatePathDistance")); }
-			ScriptFunction MoveToDesiredHeightAboveMesh() { return mMoveToDesiredHeightAboveMesh ? mMoveToDesiredHeightAboveMesh : (mMoveToDesiredHeightAboveMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.MoveToDesiredHeightAboveMesh")); }
-			ScriptFunction PopulatePathfindingParamCache() { return mPopulatePathfindingParamCache ? mPopulatePathfindingParamCache : (mPopulatePathfindingParamCache = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.PopulatePathfindingParamCache")); }
-			ScriptFunction GetAllCoverSlotsInRadius() { return mGetAllCoverSlotsInRadius ? mGetAllCoverSlotsInRadius : (mGetAllCoverSlotsInRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetAllCoverSlotsInRadius")); }
+			ScriptFunction ClearConstraints() { mixin(MGF!("mClearConstraints", "Function Engine.NavigationHandle.ClearConstraints")()); }
+			ScriptFunction AddPathConstraint() { mixin(MGF!("mAddPathConstraint", "Function Engine.NavigationHandle.AddPathConstraint")()); }
+			ScriptFunction AddGoalEvaluator() { mixin(MGF!("mAddGoalEvaluator", "Function Engine.NavigationHandle.AddGoalEvaluator")()); }
+			ScriptFunction CreatePathConstraint() { mixin(MGF!("mCreatePathConstraint", "Function Engine.NavigationHandle.CreatePathConstraint")()); }
+			ScriptFunction CreatePathGoalEvaluator() { mixin(MGF!("mCreatePathGoalEvaluator", "Function Engine.NavigationHandle.CreatePathGoalEvaluator")()); }
+			ScriptFunction GetPathCacheLength() { mixin(MGF!("mGetPathCacheLength", "Function Engine.NavigationHandle.GetPathCacheLength")()); }
+			ScriptFunction PathCache_Empty() { mixin(MGF!("mPathCache_Empty", "Function Engine.NavigationHandle.PathCache_Empty")()); }
+			ScriptFunction PathCache_GetGoalPoint() { mixin(MGF!("mPathCache_GetGoalPoint", "Function Engine.NavigationHandle.PathCache_GetGoalPoint")()); }
+			ScriptFunction PathCache_RemoveIndex() { mixin(MGF!("mPathCache_RemoveIndex", "Function Engine.NavigationHandle.PathCache_RemoveIndex")()); }
+			ScriptFunction GetBestUnfinishedPathPoint() { mixin(MGF!("mGetBestUnfinishedPathPoint", "Function Engine.NavigationHandle.GetBestUnfinishedPathPoint")()); }
+			ScriptFunction FindPylon() { mixin(MGF!("mFindPylon", "Function Engine.NavigationHandle.FindPylon")()); }
+			ScriptFunction GetPylonFromPos() { mixin(MGF!("mGetPylonFromPos", "Function Engine.NavigationHandle.GetPylonFromPos")()); }
+			ScriptFunction GetNextMoveLocation() { mixin(MGF!("mGetNextMoveLocation", "Function Engine.NavigationHandle.GetNextMoveLocation")()); }
+			ScriptFunction SetFinalDestination() { mixin(MGF!("mSetFinalDestination", "Function Engine.NavigationHandle.SetFinalDestination")()); }
+			ScriptFunction ComputeValidFinalDestination() { mixin(MGF!("mComputeValidFinalDestination", "Function Engine.NavigationHandle.ComputeValidFinalDestination")()); }
+			ScriptFunction FindPath() { mixin(MGF!("mFindPath", "Function Engine.NavigationHandle.FindPath")()); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.NavigationHandle.SuggestMovePreparation")()); }
+			ScriptFunction ObstacleLineCheck() { mixin(MGF!("mObstacleLineCheck", "Function Engine.NavigationHandle.ObstacleLineCheck")()); }
+			ScriptFunction ObstaclePointCheck() { mixin(MGF!("mObstaclePointCheck", "Function Engine.NavigationHandle.ObstaclePointCheck")()); }
+			ScriptFunction LineCheck() { mixin(MGF!("mLineCheck", "Function Engine.NavigationHandle.LineCheck")()); }
+			ScriptFunction PointCheck() { mixin(MGF!("mPointCheck", "Function Engine.NavigationHandle.PointCheck")()); }
+			ScriptFunction PointReachable() { mixin(MGF!("mPointReachable", "Function Engine.NavigationHandle.PointReachable")()); }
+			ScriptFunction ActorReachable() { mixin(MGF!("mActorReachable", "Function Engine.NavigationHandle.ActorReachable")()); }
+			ScriptFunction DrawPathCache() { mixin(MGF!("mDrawPathCache", "Function Engine.NavigationHandle.DrawPathCache")()); }
+			ScriptFunction GetCurrentEdgeDebugText() { mixin(MGF!("mGetCurrentEdgeDebugText", "Function Engine.NavigationHandle.GetCurrentEdgeDebugText")()); }
+			ScriptFunction ClearCurrentEdge() { mixin(MGF!("mClearCurrentEdge", "Function Engine.NavigationHandle.ClearCurrentEdge")()); }
+			ScriptFunction GetCurrentEdgeType() { mixin(MGF!("mGetCurrentEdgeType", "Function Engine.NavigationHandle.GetCurrentEdgeType")()); }
+			ScriptFunction GetAllPolyCentersWithinBounds() { mixin(MGF!("mGetAllPolyCentersWithinBounds", "Function Engine.NavigationHandle.GetAllPolyCentersWithinBounds")()); }
+			ScriptFunction GetValidPositionsForBox() { mixin(MGF!("mGetValidPositionsForBox", "Function Engine.NavigationHandle.GetValidPositionsForBox")()); }
+			ScriptFunction LimitPathCacheDistance() { mixin(MGF!("mLimitPathCacheDistance", "Function Engine.NavigationHandle.LimitPathCacheDistance")()); }
+			ScriptFunction IsAnchorInescapable() { mixin(MGF!("mIsAnchorInescapable", "Function Engine.NavigationHandle.IsAnchorInescapable")()); }
+			ScriptFunction GetFirstMoveLocation() { mixin(MGF!("mGetFirstMoveLocation", "Function Engine.NavigationHandle.GetFirstMoveLocation")()); }
+			ScriptFunction CalculatePathDistance() { mixin(MGF!("mCalculatePathDistance", "Function Engine.NavigationHandle.CalculatePathDistance")()); }
+			ScriptFunction MoveToDesiredHeightAboveMesh() { mixin(MGF!("mMoveToDesiredHeightAboveMesh", "Function Engine.NavigationHandle.MoveToDesiredHeightAboveMesh")()); }
+			ScriptFunction PopulatePathfindingParamCache() { mixin(MGF!("mPopulatePathfindingParamCache", "Function Engine.NavigationHandle.PopulatePathfindingParamCache")()); }
+			ScriptFunction GetAllCoverSlotsInRadius() { mixin(MGF!("mGetAllCoverSlotsInRadius", "Function Engine.NavigationHandle.GetAllCoverSlotsInRadius")()); }
 		}
 	}
 	static struct Constants
@@ -111,12 +112,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationHandle.PolySegmentSpan")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.PolySegmentSpan")()); }
 		@property final auto ref
 		{
-			Vector P2() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			Vector P1() { return *cast(Vector*)(cast(size_t)&this + 4); }
-			UObject.Pointer Poly() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
+			Vector P2() { mixin(MGPS!(Vector, 16)()); }
+			Vector P1() { mixin(MGPS!(Vector, 4)()); }
+			UObject.Pointer Poly() { mixin(MGPS!(UObject.Pointer, 0)()); }
 		}
 	}
 	struct NavMeshPathParams
@@ -124,25 +125,25 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationHandle.NavMeshPathParams")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.NavMeshPathParams")()); }
 		@property final
 		{
 			auto ref
 			{
-				float MaxHoverDistance() { return *cast(float*)(cast(size_t)&this + 44); }
-				float MinWalkableZ() { return *cast(float*)(cast(size_t)&this + 40); }
-				float MaxDropHeight() { return *cast(float*)(cast(size_t)&this + 36); }
-				Vector SearchStart() { return *cast(Vector*)(cast(size_t)&this + 24); }
-				float SearchLaneMultiplier() { return *cast(float*)(cast(size_t)&this + 20); }
-				Vector SearchExtent() { return *cast(Vector*)(cast(size_t)&this + 8); }
+				float MaxHoverDistance() { mixin(MGPS!(float, 44)()); }
+				float MinWalkableZ() { mixin(MGPS!(float, 40)()); }
+				float MaxDropHeight() { mixin(MGPS!(float, 36)()); }
+				Vector SearchStart() { mixin(MGPS!(Vector, 24)()); }
+				float SearchLaneMultiplier() { mixin(MGPS!(float, 20)()); }
+				Vector SearchExtent() { mixin(MGPS!(Vector, 8)()); }
 				// WARNING: Property 'Interface' has the same name as a defined type!
 			}
-			bool bAbleToSearch() { return (*cast(uint*)(cast(size_t)&this + 4) & 0x4) != 0; }
-			bool bAbleToSearch(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 4) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 4) &= ~0x4; } return val; }
-			bool bNeedsMantleValidityTest() { return (*cast(uint*)(cast(size_t)&this + 4) & 0x2) != 0; }
-			bool bNeedsMantleValidityTest(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 4) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 4) &= ~0x2; } return val; }
-			bool bCanMantle() { return (*cast(uint*)(cast(size_t)&this + 4) & 0x1) != 0; }
-			bool bCanMantle(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 4) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 4) &= ~0x1; } return val; }
+			bool bAbleToSearch() { mixin(MGBPS!(4, 0x4)()); }
+			bool bAbleToSearch(bool val) { mixin(MSBPS!(4, 0x4)()); }
+			bool bNeedsMantleValidityTest() { mixin(MGBPS!(4, 0x2)()); }
+			bool bNeedsMantleValidityTest(bool val) { mixin(MSBPS!(4, 0x2)()); }
+			bool bCanMantle() { mixin(MGBPS!(4, 0x1)()); }
+			bool bCanMantle(bool val) { mixin(MSBPS!(4, 0x1)()); }
 		}
 	}
 	struct PathStore
@@ -150,42 +151,42 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationHandle.PathStore")); }
-		@property final auto ref ScriptArray!(NavigationHandle.EdgePointer) EdgeList() { return *cast(ScriptArray!(NavigationHandle.EdgePointer)*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.PathStore")()); }
+		@property final auto ref ScriptArray!(NavigationHandle.EdgePointer) EdgeList() { mixin(MGPS!(ScriptArray!(NavigationHandle.EdgePointer), 0)()); }
 	}
 	struct EdgePointer
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationHandle.EdgePointer")); }
-		@property final auto ref UObject.Pointer Dummy() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.EdgePointer")()); }
+		@property final auto ref UObject.Pointer Dummy() { mixin(MGPS!(UObject.Pointer, 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float LastPathFailTime() { return *cast(float*)(cast(size_t)cast(void*)this + 208); }
-			EngineTypes.EPathFindingError LastPathError() { return *cast(EngineTypes.EPathFindingError*)(cast(size_t)cast(void*)this + 204); }
-			NavigationHandle.NavMeshPathParams CachedPathParams() { return *cast(NavigationHandle.NavMeshPathParams*)(cast(size_t)cast(void*)this + 156); }
-			NavMeshPathGoalEvaluator PathGoalList() { return *cast(NavMeshPathGoalEvaluator*)(cast(size_t)cast(void*)this + 152); }
-			NavMeshPathConstraint PathConstraintList() { return *cast(NavMeshPathConstraint*)(cast(size_t)cast(void*)this + 148); }
-			Actor.BasedPosition FinalDestination() { return *cast(Actor.BasedPosition*)(cast(size_t)cast(void*)this + 92); }
-			UObject.Pointer SubGoal_DestPoly() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 88); }
-			UObject.Pointer CurrentEdge() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 84); }
-			UObject.Pointer BestUnfinishedPathPoint() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 80); }
-			NavigationHandle.PathStore PathCache() { return *cast(NavigationHandle.PathStore*)(cast(size_t)cast(void*)this + 68); }
-			UObject.Pointer AnchorPoly() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 64); }
-			Pylon AnchorPylon() { return *cast(Pylon*)(cast(size_t)cast(void*)this + 60); }
+			float LastPathFailTime() { mixin(MGPC!(float, 208)()); }
+			EngineTypes.EPathFindingError LastPathError() { mixin(MGPC!(EngineTypes.EPathFindingError, 204)()); }
+			NavigationHandle.NavMeshPathParams CachedPathParams() { mixin(MGPC!(NavigationHandle.NavMeshPathParams, 156)()); }
+			NavMeshPathGoalEvaluator PathGoalList() { mixin(MGPC!(NavMeshPathGoalEvaluator, 152)()); }
+			NavMeshPathConstraint PathConstraintList() { mixin(MGPC!(NavMeshPathConstraint, 148)()); }
+			Actor.BasedPosition FinalDestination() { mixin(MGPC!(Actor.BasedPosition, 92)()); }
+			UObject.Pointer SubGoal_DestPoly() { mixin(MGPC!(UObject.Pointer, 88)()); }
+			UObject.Pointer CurrentEdge() { mixin(MGPC!(UObject.Pointer, 84)()); }
+			UObject.Pointer BestUnfinishedPathPoint() { mixin(MGPC!(UObject.Pointer, 80)()); }
+			NavigationHandle.PathStore PathCache() { mixin(MGPC!(NavigationHandle.PathStore, 68)()); }
+			UObject.Pointer AnchorPoly() { mixin(MGPC!(UObject.Pointer, 64)()); }
+			Pylon AnchorPylon() { mixin(MGPC!(Pylon, 60)()); }
 		}
-		bool bUltraVerbosePathDebugging() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x8) != 0; }
-		bool bUltraVerbosePathDebugging(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x8; } return val; }
-		bool bDebugConstraintsAndGoalEvals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x4) != 0; }
-		bool bDebugConstraintsAndGoalEvals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x4; } return val; }
-		bool bUseORforEvaluateGoal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x2) != 0; }
-		bool bUseORforEvaluateGoal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x2; } return val; }
-		bool bSkipRouteCacheUpdates() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x1) != 0; }
-		bool bSkipRouteCacheUpdates(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x1; } return val; }
+		bool bUltraVerbosePathDebugging() { mixin(MGBPC!(144, 0x8)()); }
+		bool bUltraVerbosePathDebugging(bool val) { mixin(MSBPC!(144, 0x8)()); }
+		bool bDebugConstraintsAndGoalEvals() { mixin(MGBPC!(144, 0x4)()); }
+		bool bDebugConstraintsAndGoalEvals(bool val) { mixin(MSBPC!(144, 0x4)()); }
+		bool bUseORforEvaluateGoal() { mixin(MGBPC!(144, 0x2)()); }
+		bool bUseORforEvaluateGoal(bool val) { mixin(MSBPC!(144, 0x2)()); }
+		bool bSkipRouteCacheUpdates() { mixin(MGBPC!(144, 0x1)()); }
+		bool bSkipRouteCacheUpdates(bool val) { mixin(MSBPC!(144, 0x1)()); }
 	}
 final:
 	void ClearConstraints()
@@ -270,11 +271,11 @@ final:
 		StaticClass.ProcessEvent(Functions.GetPylonFromPos, params.ptr, cast(void*)0);
 		return *cast(Pylon*)&params[12];
 	}
-	bool GetNextMoveLocation(Vector* out_MoveDest, float ArrivalDistance)
+	bool GetNextMoveLocation(ref Vector out_MoveDest, float ArrivalDistance)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *out_MoveDest;
+		*cast(Vector*)params.ptr = out_MoveDest;
 		*cast(float*)&params[12] = ArrivalDistance;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextMoveLocation, params.ptr, cast(void*)0);
 		*out_MoveDest = *cast(Vector*)params.ptr;
@@ -288,11 +289,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFinalDestination, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool ComputeValidFinalDestination(Vector* out_ComputedPosition)
+	bool ComputeValidFinalDestination(ref Vector out_ComputedPosition)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *out_ComputedPosition;
+		*cast(Vector*)params.ptr = out_ComputedPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ComputeValidFinalDestination, params.ptr, cast(void*)0);
 		*out_ComputedPosition = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[12];
@@ -301,18 +302,18 @@ final:
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(Actor*)params.ptr = *out_DestActor;
-		*cast(int*)&params[4] = *out_DestItem;
+		*cast(Actor*)params.ptr = out_DestActor;
+		*cast(int*)&params[4] = out_DestItem;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPath, params.ptr, cast(void*)0);
 		*out_DestActor = *cast(Actor*)params.ptr;
 		*out_DestItem = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	bool SuggestMovePreparation(Vector* MovePt, Controller C)
+	bool SuggestMovePreparation(ref Vector MovePt, Controller C)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *MovePt;
+		*cast(Vector*)params.ptr = MovePt;
 		*cast(Controller*)&params[12] = C;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestMovePreparation, params.ptr, cast(void*)0);
 		*MovePt = *cast(Vector*)params.ptr;
@@ -325,8 +326,8 @@ final:
 		*cast(Vector*)params.ptr = Start;
 		*cast(Vector*)&params[12] = End;
 		*cast(Vector*)&params[24] = Extent;
-		*cast(Vector*)&params[36] = *out_HitLoc;
-		*cast(Vector*)&params[48] = *out_HitNorm;
+		*cast(Vector*)&params[36] = out_HitLoc;
+		*cast(Vector*)&params[48] = out_HitNorm;
 		StaticClass.ProcessEvent(Functions.ObstacleLineCheck, params.ptr, cast(void*)0);
 		*out_HitLoc = *cast(Vector*)&params[36];
 		*out_HitNorm = *cast(Vector*)&params[48];
@@ -348,8 +349,8 @@ final:
 		*cast(Vector*)params.ptr = Start;
 		*cast(Vector*)&params[12] = End;
 		*cast(Vector*)&params[24] = Extent;
-		*cast(Vector*)&params[36] = *out_HitLocation;
-		*cast(Vector*)&params[48] = *out_HitNormal;
+		*cast(Vector*)&params[36] = out_HitLocation;
+		*cast(Vector*)&params[48] = out_HitNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LineCheck, params.ptr, cast(void*)0);
 		*out_HitLocation = *cast(Vector*)&params[36];
 		*out_HitNormal = *cast(Vector*)&params[48];
@@ -409,17 +410,17 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentEdgeType, params.ptr, cast(void*)0);
 		return *cast(Pylon.ENavMeshEdgeType*)params.ptr;
 	}
-	static void GetAllPolyCentersWithinBounds(Vector pos, Vector Extent, ScriptArray!(Vector)* out_PolyCtrs)
+	static void GetAllPolyCentersWithinBounds(Vector pos, Vector Extent, ref ScriptArray!(Vector) out_PolyCtrs)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Vector*)params.ptr = pos;
 		*cast(Vector*)&params[12] = Extent;
-		*cast(ScriptArray!(Vector)*)&params[24] = *out_PolyCtrs;
+		*cast(ScriptArray!(Vector)*)&params[24] = out_PolyCtrs;
 		StaticClass.ProcessEvent(Functions.GetAllPolyCentersWithinBounds, params.ptr, cast(void*)0);
 		*out_PolyCtrs = *cast(ScriptArray!(Vector)*)&params[24];
 	}
-	static void GetValidPositionsForBox(Vector pos, float Radius, Vector Extent, bool bMustBeReachableFromStartPos, ScriptArray!(Vector)* out_ValidPositions, int MaxPositions, float MinRadius, Vector ValidBoxAroundStartPos)
+	static void GetValidPositionsForBox(Vector pos, float Radius, Vector Extent, bool bMustBeReachableFromStartPos, ref ScriptArray!(Vector) out_ValidPositions, int MaxPositions, float MinRadius, Vector ValidBoxAroundStartPos)
 	{
 		ubyte params[64];
 		params[] = 0;
@@ -427,7 +428,7 @@ final:
 		*cast(float*)&params[12] = Radius;
 		*cast(Vector*)&params[16] = Extent;
 		*cast(bool*)&params[28] = bMustBeReachableFromStartPos;
-		*cast(ScriptArray!(Vector)*)&params[32] = *out_ValidPositions;
+		*cast(ScriptArray!(Vector)*)&params[32] = out_ValidPositions;
 		*cast(int*)&params[44] = MaxPositions;
 		*cast(float*)&params[48] = MinRadius;
 		*cast(Vector*)&params[52] = ValidBoxAroundStartPos;
@@ -479,13 +480,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.PopulatePathfindingParamCache, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	static bool GetAllCoverSlotsInRadius(Vector FromLoc, float Radius, ScriptArray!(CoverLink.CoverInfo)* out_CoverList)
+	static bool GetAllCoverSlotsInRadius(Vector FromLoc, float Radius, ref ScriptArray!(CoverLink.CoverInfo) out_CoverList)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = FromLoc;
 		*cast(float*)&params[12] = Radius;
-		*cast(ScriptArray!(CoverLink.CoverInfo)*)&params[16] = *out_CoverList;
+		*cast(ScriptArray!(CoverLink.CoverInfo)*)&params[16] = out_CoverList;
 		StaticClass.ProcessEvent(Functions.GetAllCoverSlotsInRadius, params.ptr, cast(void*)0);
 		*out_CoverList = *cast(ScriptArray!(CoverLink.CoverInfo)*)&params[16];
 		return *cast(bool*)&params[28];

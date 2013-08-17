@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTLockWarningMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -9,9 +10,9 @@ extern(C++) interface UTLockWarningMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLockWarningMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTLockWarningMessage")()); }
 	private static __gshared UTLockWarningMessage mDefaultProperties;
-	@property final static UTLockWarningMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTLockWarningMessage)("UTLockWarningMessage UTGame.Default__UTLockWarningMessage")); }
+	@property final static UTLockWarningMessage DefaultProperties() { mixin(MGDPC!(UTLockWarningMessage, "UTLockWarningMessage UTGame.Default__UTLockWarningMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +23,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLockWarningMessage.AnnouncementLevel")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLockWarningMessage.GetString")); }
-			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLockWarningMessage.GetColor")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTLockWarningMessage.AnnouncementLevel")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTLockWarningMessage.GetString")()); }
+			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function UTGame.UTLockWarningMessage.GetColor")()); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 128); }
-		UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString RadarLockString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString MissileLockOnString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		UObject.Color YellowColor() { mixin(MGPC!(UObject.Color, 128)()); }
+		UObject.Color RedColor() { mixin(MGPC!(UObject.Color, 124)()); }
+		ScriptString RadarLockString() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString MissileLockOnString() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ubyte AnnouncementLevel(ubyte MessageIndex)

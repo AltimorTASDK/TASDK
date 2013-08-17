@@ -1,15 +1,16 @@
 module UnrealScript.Engine.SoundNodeWaveStreaming;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundNodeWave;
 
 extern(C++) interface SoundNodeWaveStreaming : SoundNodeWave
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeWaveStreaming")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SoundNodeWaveStreaming")()); }
 	private static __gshared SoundNodeWaveStreaming mDefaultProperties;
-	@property final static SoundNodeWaveStreaming DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeWaveStreaming)("SoundNodeWaveStreaming Engine.Default__SoundNodeWaveStreaming")); }
+	@property final static SoundNodeWaveStreaming DefaultProperties() { mixin(MGDPC!(SoundNodeWaveStreaming, "SoundNodeWaveStreaming Engine.Default__SoundNodeWaveStreaming")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,13 +22,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction QueueAudio() { return mQueueAudio ? mQueueAudio : (mQueueAudio = ScriptObject.Find!(ScriptFunction)("Function Engine.SoundNodeWaveStreaming.QueueAudio")); }
-			ScriptFunction ResetAudio() { return mResetAudio ? mResetAudio : (mResetAudio = ScriptObject.Find!(ScriptFunction)("Function Engine.SoundNodeWaveStreaming.ResetAudio")); }
-			ScriptFunction AvailableAudioBytes() { return mAvailableAudioBytes ? mAvailableAudioBytes : (mAvailableAudioBytes = ScriptObject.Find!(ScriptFunction)("Function Engine.SoundNodeWaveStreaming.AvailableAudioBytes")); }
-			ScriptFunction GeneratePCMData() { return mGeneratePCMData ? mGeneratePCMData : (mGeneratePCMData = ScriptObject.Find!(ScriptFunction)("Function Engine.SoundNodeWaveStreaming.GeneratePCMData")); }
+			ScriptFunction QueueAudio() { mixin(MGF!("mQueueAudio", "Function Engine.SoundNodeWaveStreaming.QueueAudio")()); }
+			ScriptFunction ResetAudio() { mixin(MGF!("mResetAudio", "Function Engine.SoundNodeWaveStreaming.ResetAudio")()); }
+			ScriptFunction AvailableAudioBytes() { mixin(MGF!("mAvailableAudioBytes", "Function Engine.SoundNodeWaveStreaming.AvailableAudioBytes")()); }
+			ScriptFunction GeneratePCMData() { mixin(MGF!("mGeneratePCMData", "Function Engine.SoundNodeWaveStreaming.GeneratePCMData")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(ubyte) QueuedAudio() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 436); }
+	@property final auto ref ScriptArray!(ubyte) QueuedAudio() { mixin(MGPC!(ScriptArray!(ubyte), 436)()); }
 final:
 	void QueueAudio(ScriptArray!(ubyte) Data)
 	{
@@ -47,11 +48,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AvailableAudioBytes, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	void GeneratePCMData(ScriptArray!(ubyte)* Buffer, int SamplesNeeded)
+	void GeneratePCMData(ref ScriptArray!(ubyte) Buffer, int SamplesNeeded)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(ubyte)*)params.ptr = *Buffer;
+		*cast(ScriptArray!(ubyte)*)params.ptr = Buffer;
 		*cast(int*)&params[12] = SamplesNeeded;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GeneratePCMData, params.ptr, cast(void*)0);
 		*Buffer = *cast(ScriptArray!(ubyte)*)params.ptr;

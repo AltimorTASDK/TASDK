@@ -1,21 +1,23 @@
 module UnrealScript.UDKBase.UDKVehicleMovementEffect;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 
 extern(C++) interface UDKVehicleMovementEffect : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleMovementEffect")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKVehicleMovementEffect")()); }
 	private static __gshared UDKVehicleMovementEffect mDefaultProperties;
-	@property final static UDKVehicleMovementEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleMovementEffect)("UDKVehicleMovementEffect UDKBase.Default__UDKVehicleMovementEffect")); }
+	@property final static UDKVehicleMovementEffect DefaultProperties() { mixin(MGDPC!(UDKVehicleMovementEffect, "UDKVehicleMovementEffect UDKBase.Default__UDKVehicleMovementEffect")()); }
 	@property final auto ref
 	{
-		float AirCurrentLevel() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-		float AirMaxDelta() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-		ScriptName AirEffectScalar() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 488); }
-		float MaxVelocityForAirEffect() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-		float MinVelocityForAirEffect() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
+		float AirCurrentLevel() { mixin(MGPC!(float, 500)()); }
+		float AirMaxDelta() { mixin(MGPC!(float, 496)()); }
+		ScriptName AirEffectScalar() { mixin(MGPC!(ScriptName, 488)()); }
+		float MaxVelocityForAirEffect() { mixin(MGPC!(float, 484)()); }
+		float MinVelocityForAirEffect() { mixin(MGPC!(float, 480)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AirEffect'!
 	}
 }

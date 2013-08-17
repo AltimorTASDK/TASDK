@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTHealthPickupFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
 import UnrealScript.UTGame.UTItemPickupFactory;
@@ -10,9 +11,9 @@ extern(C++) interface UTHealthPickupFactory : UTItemPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTHealthPickupFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTHealthPickupFactory")()); }
 	private static __gshared UTHealthPickupFactory mDefaultProperties;
-	@property final static UTHealthPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTHealthPickupFactory)("UTHealthPickupFactory UTGame.Default__UTHealthPickupFactory")); }
+	@property final static UTHealthPickupFactory DefaultProperties() { mixin(MGDPC!(UTHealthPickupFactory, "UTHealthPickupFactory UTGame.Default__UTHealthPickupFactory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,17 +25,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHealthPickupFactory.UpdateHUD")); }
-			ScriptFunction SpawnCopyFor() { return mSpawnCopyFor ? mSpawnCopyFor : (mSpawnCopyFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHealthPickupFactory.SpawnCopyFor")); }
-			ScriptFunction HealAmount() { return mHealAmount ? mHealAmount : (mHealAmount = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHealthPickupFactory.HealAmount")); }
-			ScriptFunction BotDesireability() { return mBotDesireability ? mBotDesireability : (mBotDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHealthPickupFactory.BotDesireability")); }
+			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function UTGame.UTHealthPickupFactory.UpdateHUD")()); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTHealthPickupFactory.SpawnCopyFor")()); }
+			ScriptFunction HealAmount() { mixin(MGF!("mHealAmount", "Function UTGame.UTHealthPickupFactory.HealAmount")()); }
+			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTHealthPickupFactory.BotDesireability")()); }
 		}
+	}
+	static struct Pickup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTHealthPickupFactory.Pickup")()); }
 	}
 	@property final
 	{
-		@property final auto ref int HealingAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 976); }
-		bool bSuperHeal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 980) & 0x1) != 0; }
-		bool bSuperHeal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 980) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 980) &= ~0x1; } return val; }
+		@property final auto ref int HealingAmount() { mixin(MGPC!(int, 976)()); }
+		bool bSuperHeal() { mixin(MGBPC!(980, 0x1)()); }
+		bool bSuperHeal(bool val) { mixin(MSBPC!(980, 0x1)()); }
 	}
 final:
 	static void UpdateHUD(UTHUD H)

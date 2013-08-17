@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineContentInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineContentInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineContentInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineContentInterface")()); }
 	private static __gshared OnlineContentInterface mDefaultProperties;
-	@property final static OnlineContentInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineContentInterface)("OnlineContentInterface Engine.Default__OnlineContentInterface")); }
+	@property final static OnlineContentInterface DefaultProperties() { mixin(MGDPC!(OnlineContentInterface, "OnlineContentInterface Engine.Default__OnlineContentInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -43,32 +44,40 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnContentChange() { return mOnContentChange ? mOnContentChange : (mOnContentChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.OnContentChange")); }
-			ScriptFunction OnWriteSaveGameDataComplete() { return mOnWriteSaveGameDataComplete ? mOnWriteSaveGameDataComplete : (mOnWriteSaveGameDataComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.OnWriteSaveGameDataComplete")); }
-			ScriptFunction OnReadSaveGameDataComplete() { return mOnReadSaveGameDataComplete ? mOnReadSaveGameDataComplete : (mOnReadSaveGameDataComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.OnReadSaveGameDataComplete")); }
-			ScriptFunction OnQueryAvailableDownloadsComplete() { return mOnQueryAvailableDownloadsComplete ? mOnQueryAvailableDownloadsComplete : (mOnQueryAvailableDownloadsComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.OnQueryAvailableDownloadsComplete")); }
-			ScriptFunction OnReadContentComplete() { return mOnReadContentComplete ? mOnReadContentComplete : (mOnReadContentComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.OnReadContentComplete")); }
-			ScriptFunction AddContentChangeDelegate() { return mAddContentChangeDelegate ? mAddContentChangeDelegate : (mAddContentChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.AddContentChangeDelegate")); }
-			ScriptFunction ClearContentChangeDelegate() { return mClearContentChangeDelegate ? mClearContentChangeDelegate : (mClearContentChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ClearContentChangeDelegate")); }
-			ScriptFunction AddReadContentComplete() { return mAddReadContentComplete ? mAddReadContentComplete : (mAddReadContentComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.AddReadContentComplete")); }
-			ScriptFunction ClearReadContentComplete() { return mClearReadContentComplete ? mClearReadContentComplete : (mClearReadContentComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ClearReadContentComplete")); }
-			ScriptFunction ReadContentList() { return mReadContentList ? mReadContentList : (mReadContentList = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ReadContentList")); }
-			ScriptFunction ClearContentList() { return mClearContentList ? mClearContentList : (mClearContentList = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ClearContentList")); }
-			ScriptFunction GetContentList() { return mGetContentList ? mGetContentList : (mGetContentList = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.GetContentList")); }
-			ScriptFunction QueryAvailableDownloads() { return mQueryAvailableDownloads ? mQueryAvailableDownloads : (mQueryAvailableDownloads = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.QueryAvailableDownloads")); }
-			ScriptFunction AddQueryAvailableDownloadsComplete() { return mAddQueryAvailableDownloadsComplete ? mAddQueryAvailableDownloadsComplete : (mAddQueryAvailableDownloadsComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.AddQueryAvailableDownloadsComplete")); }
-			ScriptFunction ClearQueryAvailableDownloadsComplete() { return mClearQueryAvailableDownloadsComplete ? mClearQueryAvailableDownloadsComplete : (mClearQueryAvailableDownloadsComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ClearQueryAvailableDownloadsComplete")); }
-			ScriptFunction GetAvailableDownloadCounts() { return mGetAvailableDownloadCounts ? mGetAvailableDownloadCounts : (mGetAvailableDownloadCounts = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.GetAvailableDownloadCounts")); }
-			ScriptFunction ReadSaveGameData() { return mReadSaveGameData ? mReadSaveGameData : (mReadSaveGameData = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ReadSaveGameData")); }
-			ScriptFunction GetSaveGameData() { return mGetSaveGameData ? mGetSaveGameData : (mGetSaveGameData = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.GetSaveGameData")); }
-			ScriptFunction AddReadSaveGameDataComplete() { return mAddReadSaveGameDataComplete ? mAddReadSaveGameDataComplete : (mAddReadSaveGameDataComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.AddReadSaveGameDataComplete")); }
-			ScriptFunction ClearReadSaveGameDataComplete() { return mClearReadSaveGameDataComplete ? mClearReadSaveGameDataComplete : (mClearReadSaveGameDataComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ClearReadSaveGameDataComplete")); }
-			ScriptFunction WriteSaveGameData() { return mWriteSaveGameData ? mWriteSaveGameData : (mWriteSaveGameData = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.WriteSaveGameData")); }
-			ScriptFunction AddWriteSaveGameDataComplete() { return mAddWriteSaveGameDataComplete ? mAddWriteSaveGameDataComplete : (mAddWriteSaveGameDataComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.AddWriteSaveGameDataComplete")); }
-			ScriptFunction ClearWriteSaveGameDataComplete() { return mClearWriteSaveGameDataComplete ? mClearWriteSaveGameDataComplete : (mClearWriteSaveGameDataComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ClearWriteSaveGameDataComplete")); }
-			ScriptFunction DeleteSaveGame() { return mDeleteSaveGame ? mDeleteSaveGame : (mDeleteSaveGame = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.DeleteSaveGame")); }
-			ScriptFunction ClearSaveGames() { return mClearSaveGames ? mClearSaveGames : (mClearSaveGames = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineContentInterface.ClearSaveGames")); }
+			ScriptFunction OnContentChange() { mixin(MGF!("mOnContentChange", "Function Engine.OnlineContentInterface.OnContentChange")()); }
+			ScriptFunction OnWriteSaveGameDataComplete() { mixin(MGF!("mOnWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.OnWriteSaveGameDataComplete")()); }
+			ScriptFunction OnReadSaveGameDataComplete() { mixin(MGF!("mOnReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.OnReadSaveGameDataComplete")()); }
+			ScriptFunction OnQueryAvailableDownloadsComplete() { mixin(MGF!("mOnQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.OnQueryAvailableDownloadsComplete")()); }
+			ScriptFunction OnReadContentComplete() { mixin(MGF!("mOnReadContentComplete", "Function Engine.OnlineContentInterface.OnReadContentComplete")()); }
+			ScriptFunction AddContentChangeDelegate() { mixin(MGF!("mAddContentChangeDelegate", "Function Engine.OnlineContentInterface.AddContentChangeDelegate")()); }
+			ScriptFunction ClearContentChangeDelegate() { mixin(MGF!("mClearContentChangeDelegate", "Function Engine.OnlineContentInterface.ClearContentChangeDelegate")()); }
+			ScriptFunction AddReadContentComplete() { mixin(MGF!("mAddReadContentComplete", "Function Engine.OnlineContentInterface.AddReadContentComplete")()); }
+			ScriptFunction ClearReadContentComplete() { mixin(MGF!("mClearReadContentComplete", "Function Engine.OnlineContentInterface.ClearReadContentComplete")()); }
+			ScriptFunction ReadContentList() { mixin(MGF!("mReadContentList", "Function Engine.OnlineContentInterface.ReadContentList")()); }
+			ScriptFunction ClearContentList() { mixin(MGF!("mClearContentList", "Function Engine.OnlineContentInterface.ClearContentList")()); }
+			ScriptFunction GetContentList() { mixin(MGF!("mGetContentList", "Function Engine.OnlineContentInterface.GetContentList")()); }
+			ScriptFunction QueryAvailableDownloads() { mixin(MGF!("mQueryAvailableDownloads", "Function Engine.OnlineContentInterface.QueryAvailableDownloads")()); }
+			ScriptFunction AddQueryAvailableDownloadsComplete() { mixin(MGF!("mAddQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.AddQueryAvailableDownloadsComplete")()); }
+			ScriptFunction ClearQueryAvailableDownloadsComplete() { mixin(MGF!("mClearQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.ClearQueryAvailableDownloadsComplete")()); }
+			ScriptFunction GetAvailableDownloadCounts() { mixin(MGF!("mGetAvailableDownloadCounts", "Function Engine.OnlineContentInterface.GetAvailableDownloadCounts")()); }
+			ScriptFunction ReadSaveGameData() { mixin(MGF!("mReadSaveGameData", "Function Engine.OnlineContentInterface.ReadSaveGameData")()); }
+			ScriptFunction GetSaveGameData() { mixin(MGF!("mGetSaveGameData", "Function Engine.OnlineContentInterface.GetSaveGameData")()); }
+			ScriptFunction AddReadSaveGameDataComplete() { mixin(MGF!("mAddReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.AddReadSaveGameDataComplete")()); }
+			ScriptFunction ClearReadSaveGameDataComplete() { mixin(MGF!("mClearReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.ClearReadSaveGameDataComplete")()); }
+			ScriptFunction WriteSaveGameData() { mixin(MGF!("mWriteSaveGameData", "Function Engine.OnlineContentInterface.WriteSaveGameData")()); }
+			ScriptFunction AddWriteSaveGameDataComplete() { mixin(MGF!("mAddWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.AddWriteSaveGameDataComplete")()); }
+			ScriptFunction ClearWriteSaveGameDataComplete() { mixin(MGF!("mClearWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.ClearWriteSaveGameDataComplete")()); }
+			ScriptFunction DeleteSaveGame() { mixin(MGF!("mDeleteSaveGame", "Function Engine.OnlineContentInterface.DeleteSaveGame")()); }
+			ScriptFunction ClearSaveGames() { mixin(MGF!("mClearSaveGames", "Function Engine.OnlineContentInterface.ClearSaveGames")()); }
 		}
+	}
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnWriteSaveGameDataComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadSaveGameDataComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnQueryAvailableDownloadsComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadContentComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnContentChange__Delegate'!
 	}
 final:
 	void OnContentChange()
@@ -181,13 +190,13 @@ void**)&params[4] = ReadContentCompleteDelegate;
 		*cast(OnlineSubsystem.EOnlineContentType*)&params[1] = ContentType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearContentList, params.ptr, cast(void*)0);
 	}
-	OnlineSubsystem.EOnlineEnumerationReadState GetContentList(ubyte LocalUserNum, OnlineSubsystem.EOnlineContentType ContentType, ScriptArray!(OnlineSubsystem.OnlineContent)* ContentList)
+	OnlineSubsystem.EOnlineEnumerationReadState GetContentList(ubyte LocalUserNum, OnlineSubsystem.EOnlineContentType ContentType, ref ScriptArray!(OnlineSubsystem.OnlineContent) ContentList)
 	{
 		ubyte params[17];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.EOnlineContentType*)&params[1] = ContentType;
-		*cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)&params[4] = *ContentList;
+		*cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)&params[4] = ContentList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetContentList, params.ptr, cast(void*)0);
 		*ContentList = *cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)&params[4];
 		return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)&params[16];
@@ -225,13 +234,13 @@ void* QueryDownloadsDelegate)
 void**)&params[4] = QueryDownloadsDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearQueryAvailableDownloadsComplete, params.ptr, cast(void*)0);
 	}
-	void GetAvailableDownloadCounts(ubyte LocalUserNum, int* NewDownloads, int* TotalDownloads)
+	void GetAvailableDownloadCounts(ubyte LocalUserNum, ref int NewDownloads, ref int TotalDownloads)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(int*)&params[4] = *NewDownloads;
-		*cast(int*)&params[8] = *TotalDownloads;
+		*cast(int*)&params[4] = NewDownloads;
+		*cast(int*)&params[8] = TotalDownloads;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAvailableDownloadCounts, params.ptr, cast(void*)0);
 		*NewDownloads = *cast(int*)&params[4];
 		*TotalDownloads = *cast(int*)&params[8];
@@ -248,7 +257,7 @@ void**)&params[4] = QueryDownloadsDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadSaveGameData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[44];
 	}
-	bool GetSaveGameData(ubyte LocalUserNum, int DeviceID, ScriptString FriendlyName, ScriptString Filename, ScriptString SaveFileName, ScriptArray!(ubyte)* SaveGameData)
+	bool GetSaveGameData(ubyte LocalUserNum, int DeviceID, ScriptString FriendlyName, ScriptString Filename, ScriptString SaveFileName, ref ScriptArray!(ubyte) SaveGameData)
 	{
 		ubyte params[60];
 		params[] = 0;
@@ -257,7 +266,7 @@ void**)&params[4] = QueryDownloadsDelegate;
 		*cast(ScriptString*)&params[8] = FriendlyName;
 		*cast(ScriptString*)&params[20] = Filename;
 		*cast(ScriptString*)&params[32] = SaveFileName;
-		*cast(ScriptArray!(ubyte)*)&params[44] = *SaveGameData;
+		*cast(ScriptArray!(ubyte)*)&params[44] = SaveGameData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSaveGameData, params.ptr, cast(void*)0);
 		*SaveGameData = *cast(ScriptArray!(ubyte)*)&params[44];
 		return *cast(bool*)&params[56];
@@ -286,7 +295,7 @@ void* ReadSaveGameDataCompleteDelegate)
 void**)&params[4] = ReadSaveGameDataCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadSaveGameDataComplete, params.ptr, cast(void*)0);
 	}
-	bool WriteSaveGameData(ubyte LocalUserNum, int DeviceID, ScriptString FriendlyName, ScriptString Filename, ScriptString SaveFileName, ScriptArray!(ubyte)* SaveGameData)
+	bool WriteSaveGameData(ubyte LocalUserNum, int DeviceID, ScriptString FriendlyName, ScriptString Filename, ScriptString SaveFileName, ref const ScriptArray!(ubyte) SaveGameData)
 	{
 		ubyte params[60];
 		params[] = 0;
@@ -295,7 +304,7 @@ void**)&params[4] = ReadSaveGameDataCompleteDelegate;
 		*cast(ScriptString*)&params[8] = FriendlyName;
 		*cast(ScriptString*)&params[20] = Filename;
 		*cast(ScriptString*)&params[32] = SaveFileName;
-		*cast(ScriptArray!(ubyte)*)&params[44] = *SaveGameData;
+		*cast(ScriptArray!(ubyte)*)&params[44] = SaveGameData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WriteSaveGameData, params.ptr, cast(void*)0);
 		*SaveGameData = *cast(ScriptArray!(ubyte)*)&params[44];
 		return *cast(bool*)&params[56];

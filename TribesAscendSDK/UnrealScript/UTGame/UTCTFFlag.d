@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCTFFlag;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.Controller;
 import UnrealScript.UTGame.UTCarriedObject;
@@ -12,9 +13,9 @@ extern(C++) interface UTCTFFlag : UTCarriedObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFFlag")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFFlag")()); }
 	private static __gshared UTCTFFlag mDefaultProperties;
-	@property final static UTCTFFlag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFFlag)("UTCTFFlag UTGame.Default__UTCTFFlag")); }
+	@property final static UTCTFFlag DefaultProperties() { mixin(MGDPC!(UTCTFFlag, "UTCTFFlag UTGame.Default__UTCTFFlag")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,43 +38,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ReplicatedEvent")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.PostBeginPlay")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.Tick")); }
-			ScriptFunction OnBaseChainChanged() { return mOnBaseChainChanged ? mOnBaseChainChanged : (mOnBaseChainChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.OnBaseChainChanged")); }
-			ScriptFunction ShouldMinimapRenderFor() { return mShouldMinimapRenderFor ? mShouldMinimapRenderFor : (mShouldMinimapRenderFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ShouldMinimapRenderFor")); }
-			ScriptFunction ClientReturnedHome() { return mClientReturnedHome ? mClientReturnedHome : (mClientReturnedHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ClientReturnedHome")); }
-			ScriptFunction SetHolder() { return mSetHolder ? mSetHolder : (mSetHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SetHolder")); }
-			ScriptFunction ValidHolder() { return mValidHolder ? mValidHolder : (mValidHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ValidHolder")); }
-			ScriptFunction SameTeamTouch() { return mSameTeamTouch ? mSameTeamTouch : (mSameTeamTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SameTeamTouch")); }
-			ScriptFunction CustomRespawnEffects() { return mCustomRespawnEffects ? mCustomRespawnEffects : (mCustomRespawnEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.CustomRespawnEffects")); }
-			ScriptFunction bringUpBrightOff() { return mbringUpBrightOff ? mbringUpBrightOff : (mbringUpBrightOff = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.bringUpBrightOff")); }
-			ScriptFunction CustomFadeOutEffects() { return mCustomFadeOutEffects ? mCustomFadeOutEffects : (mCustomFadeOutEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.CustomFadeOutEffects")); }
-			ScriptFunction Drop() { return mDrop ? mDrop : (mDrop = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.Drop")); }
-			ScriptFunction SetFlagPropertiesToStationaryFlagState() { return mSetFlagPropertiesToStationaryFlagState ? mSetFlagPropertiesToStationaryFlagState : (mSetFlagPropertiesToStationaryFlagState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SetFlagPropertiesToStationaryFlagState")); }
-			ScriptFunction SetFlagDynamicLightToNotBeDynamic() { return mSetFlagDynamicLightToNotBeDynamic ? mSetFlagDynamicLightToNotBeDynamic : (mSetFlagDynamicLightToNotBeDynamic = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SetFlagDynamicLightToNotBeDynamic")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTCTFFlag.ReplicatedEvent")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCTFFlag.PostBeginPlay")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTCTFFlag.Tick")()); }
+			ScriptFunction OnBaseChainChanged() { mixin(MGF!("mOnBaseChainChanged", "Function UTGame.UTCTFFlag.OnBaseChainChanged")()); }
+			ScriptFunction ShouldMinimapRenderFor() { mixin(MGF!("mShouldMinimapRenderFor", "Function UTGame.UTCTFFlag.ShouldMinimapRenderFor")()); }
+			ScriptFunction ClientReturnedHome() { mixin(MGF!("mClientReturnedHome", "Function UTGame.UTCTFFlag.ClientReturnedHome")()); }
+			ScriptFunction SetHolder() { mixin(MGF!("mSetHolder", "Function UTGame.UTCTFFlag.SetHolder")()); }
+			ScriptFunction ValidHolder() { mixin(MGF!("mValidHolder", "Function UTGame.UTCTFFlag.ValidHolder")()); }
+			ScriptFunction SameTeamTouch() { mixin(MGF!("mSameTeamTouch", "Function UTGame.UTCTFFlag.SameTeamTouch")()); }
+			ScriptFunction CustomRespawnEffects() { mixin(MGF!("mCustomRespawnEffects", "Function UTGame.UTCTFFlag.CustomRespawnEffects")()); }
+			ScriptFunction bringUpBrightOff() { mixin(MGF!("mbringUpBrightOff", "Function UTGame.UTCTFFlag.bringUpBrightOff")()); }
+			ScriptFunction CustomFadeOutEffects() { mixin(MGF!("mCustomFadeOutEffects", "Function UTGame.UTCTFFlag.CustomFadeOutEffects")()); }
+			ScriptFunction Drop() { mixin(MGF!("mDrop", "Function UTGame.UTCTFFlag.Drop")()); }
+			ScriptFunction SetFlagPropertiesToStationaryFlagState() { mixin(MGF!("mSetFlagPropertiesToStationaryFlagState", "Function UTGame.UTCTFFlag.SetFlagPropertiesToStationaryFlagState")()); }
+			ScriptFunction SetFlagDynamicLightToNotBeDynamic() { mixin(MGF!("mSetFlagDynamicLightToNotBeDynamic", "Function UTGame.UTCTFFlag.SetFlagDynamicLightToNotBeDynamic")()); }
 		}
+	}
+	static struct Home
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTCTFFlag.Home")()); }
+	}
+	static struct Dropped
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTCTFFlag.Dropped")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) MICArray() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 776); }
-			float LastLocationPingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
-			Vector HoverboardingClothVelClamp() { return *cast(Vector*)(cast(size_t)cast(void*)this + 800); }
-			Vector RunningClothVelClamp() { return *cast(Vector*)(cast(size_t)cast(void*)this + 788); }
-			ParticleSystem RespawnEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 768); }
+			ScriptArray!(MaterialInstanceConstant) MICArray() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 776)()); }
+			float LastLocationPingTime() { mixin(MGPC!(float, 820)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SuccessfulCaptureSystem'!
+			Vector HoverboardingClothVelClamp() { mixin(MGPC!(Vector, 800)()); }
+			Vector RunningClothVelClamp() { mixin(MGPC!(Vector, 788)()); }
+			ParticleSystem RespawnEffect() { mixin(MGPC!(ParticleSystem, 768)()); }
 		}
-		bool bWasClothEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x10) != 0; }
-		bool bWasClothEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x10; } return val; }
-		bool bRespawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x8) != 0; }
-		bool bRespawning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x8; } return val; }
-		bool bFadingOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x4) != 0; }
-		bool bFadingOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x4; } return val; }
-		bool bBringDownFromBright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x2) != 0; }
-		bool bBringDownFromBright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x2; } return val; }
-		bool bBringUpBright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x1) != 0; }
-		bool bBringUpBright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x1; } return val; }
+		bool bWasClothEnabled() { mixin(MGBPC!(772, 0x10)()); }
+		bool bWasClothEnabled(bool val) { mixin(MSBPC!(772, 0x10)()); }
+		bool bRespawning() { mixin(MGBPC!(772, 0x8)()); }
+		bool bRespawning(bool val) { mixin(MSBPC!(772, 0x8)()); }
+		bool bFadingOut() { mixin(MGBPC!(772, 0x4)()); }
+		bool bFadingOut(bool val) { mixin(MSBPC!(772, 0x4)()); }
+		bool bBringDownFromBright() { mixin(MGBPC!(772, 0x2)()); }
+		bool bBringDownFromBright(bool val) { mixin(MSBPC!(772, 0x2)()); }
+		bool bBringUpBright() { mixin(MGBPC!(772, 0x1)()); }
+		bool bBringUpBright(bool val) { mixin(MSBPC!(772, 0x1)()); }
 	}
 final:
 	void ReplicatedEvent(ScriptName VarName)

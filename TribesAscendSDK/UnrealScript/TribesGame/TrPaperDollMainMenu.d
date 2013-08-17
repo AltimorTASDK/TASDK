@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrPaperDollMainMenu;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.TribesGame.TrMainMenuMeshInfo;
 import UnrealScript.TribesGame.TrPaperDoll;
@@ -9,9 +10,9 @@ extern(C++) interface TrPaperDollMainMenu : TrPaperDoll
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPaperDollMainMenu")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPaperDollMainMenu")()); }
 	private static __gshared TrPaperDollMainMenu mDefaultProperties;
-	@property final static TrPaperDollMainMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPaperDollMainMenu)("TrPaperDollMainMenu TribesGame.Default__TrPaperDollMainMenu")); }
+	@property final static TrPaperDollMainMenu DefaultProperties() { mixin(MGDPC!(TrPaperDollMainMenu, "TrPaperDollMainMenu TribesGame.Default__TrPaperDollMainMenu")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,21 +35,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.PostBeginPlay")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.Tick")); }
-			ScriptFunction GetDevicePaperDollInfo() { return mGetDevicePaperDollInfo ? mGetDevicePaperDollInfo : (mGetDevicePaperDollInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.GetDevicePaperDollInfo")); }
-			ScriptFunction SetMainMesh() { return mSetMainMesh ? mSetMainMesh : (mSetMainMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.SetMainMesh")); }
-			ScriptFunction OnCharacterMeshContentDataClassLoaded() { return mOnCharacterMeshContentDataClassLoaded ? mOnCharacterMeshContentDataClassLoaded : (mOnCharacterMeshContentDataClassLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.OnCharacterMeshContentDataClassLoaded")); }
-			ScriptFunction OnDeviceContentDataClassLoaded() { return mOnDeviceContentDataClassLoaded ? mOnDeviceContentDataClassLoaded : (mOnDeviceContentDataClassLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.OnDeviceContentDataClassLoaded")); }
-			ScriptFunction TryUpdatingPaperDoll() { return mTryUpdatingPaperDoll ? mTryUpdatingPaperDoll : (mTryUpdatingPaperDoll = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.TryUpdatingPaperDoll")); }
-			ScriptFunction SetWeaponOnlyMesh() { return mSetWeaponOnlyMesh ? mSetWeaponOnlyMesh : (mSetWeaponOnlyMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.SetWeaponOnlyMesh")); }
-			ScriptFunction SetFamilyInfo() { return mSetFamilyInfo ? mSetFamilyInfo : (mSetFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.SetFamilyInfo")); }
-			ScriptFunction SetMainMeshInfo() { return mSetMainMeshInfo ? mSetMainMeshInfo : (mSetMainMeshInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.SetMainMeshInfo")); }
-			ScriptFunction CreateAndAttachParticleSystems() { return mCreateAndAttachParticleSystems ? mCreateAndAttachParticleSystems : (mCreateAndAttachParticleSystems = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.CreateAndAttachParticleSystems")); }
-			ScriptFunction DetachAndDestroyMeshAttachments() { return mDetachAndDestroyMeshAttachments ? mDetachAndDestroyMeshAttachments : (mDetachAndDestroyMeshAttachments = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.DetachAndDestroyMeshAttachments")); }
-			ScriptFunction SetSpinning() { return mSetSpinning ? mSetSpinning : (mSetSpinning = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.SetSpinning")); }
-			ScriptFunction EmptyChildrenMeshes() { return mEmptyChildrenMeshes ? mEmptyChildrenMeshes : (mEmptyChildrenMeshes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.EmptyChildrenMeshes")); }
-			ScriptFunction AddChildrenMeshes() { return mAddChildrenMeshes ? mAddChildrenMeshes : (mAddChildrenMeshes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollMainMenu.AddChildrenMeshes")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrPaperDollMainMenu.PostBeginPlay")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrPaperDollMainMenu.Tick")()); }
+			ScriptFunction GetDevicePaperDollInfo() { mixin(MGF!("mGetDevicePaperDollInfo", "Function TribesGame.TrPaperDollMainMenu.GetDevicePaperDollInfo")()); }
+			ScriptFunction SetMainMesh() { mixin(MGF!("mSetMainMesh", "Function TribesGame.TrPaperDollMainMenu.SetMainMesh")()); }
+			ScriptFunction OnCharacterMeshContentDataClassLoaded() { mixin(MGF!("mOnCharacterMeshContentDataClassLoaded", "Function TribesGame.TrPaperDollMainMenu.OnCharacterMeshContentDataClassLoaded")()); }
+			ScriptFunction OnDeviceContentDataClassLoaded() { mixin(MGF!("mOnDeviceContentDataClassLoaded", "Function TribesGame.TrPaperDollMainMenu.OnDeviceContentDataClassLoaded")()); }
+			ScriptFunction TryUpdatingPaperDoll() { mixin(MGF!("mTryUpdatingPaperDoll", "Function TribesGame.TrPaperDollMainMenu.TryUpdatingPaperDoll")()); }
+			ScriptFunction SetWeaponOnlyMesh() { mixin(MGF!("mSetWeaponOnlyMesh", "Function TribesGame.TrPaperDollMainMenu.SetWeaponOnlyMesh")()); }
+			ScriptFunction SetFamilyInfo() { mixin(MGF!("mSetFamilyInfo", "Function TribesGame.TrPaperDollMainMenu.SetFamilyInfo")()); }
+			ScriptFunction SetMainMeshInfo() { mixin(MGF!("mSetMainMeshInfo", "Function TribesGame.TrPaperDollMainMenu.SetMainMeshInfo")()); }
+			ScriptFunction CreateAndAttachParticleSystems() { mixin(MGF!("mCreateAndAttachParticleSystems", "Function TribesGame.TrPaperDollMainMenu.CreateAndAttachParticleSystems")()); }
+			ScriptFunction DetachAndDestroyMeshAttachments() { mixin(MGF!("mDetachAndDestroyMeshAttachments", "Function TribesGame.TrPaperDollMainMenu.DetachAndDestroyMeshAttachments")()); }
+			ScriptFunction SetSpinning() { mixin(MGF!("mSetSpinning", "Function TribesGame.TrPaperDollMainMenu.SetSpinning")()); }
+			ScriptFunction EmptyChildrenMeshes() { mixin(MGF!("mEmptyChildrenMeshes", "Function TribesGame.TrPaperDollMainMenu.EmptyChildrenMeshes")()); }
+			ScriptFunction AddChildrenMeshes() { mixin(MGF!("mAddChildrenMeshes", "Function TribesGame.TrPaperDollMainMenu.AddChildrenMeshes")()); }
 		}
 	}
 	@property final
@@ -57,17 +58,17 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) m_ChildSkeletalMeshComponents() { return *cast(ScriptArray!(
+void*) m_ChildSkeletalMeshComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 916); }
-			TrObject.EContentDataType m_OldContentDataType() { return *cast(TrObject.EContentDataType*)(cast(size_t)cast(void*)this + 940); }
-			Rotator m_rZeroedRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 928); }
-			float m_fFullCharacterLightingContrastFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 912); }
+void*), 916)()); }
+			TrObject.EContentDataType m_OldContentDataType() { mixin(MGPC!(TrObject.EContentDataType, 940)()); }
+			Rotator m_rZeroedRotation() { mixin(MGPC!(Rotator, 928)()); }
+			float m_fFullCharacterLightingContrastFactor() { mixin(MGPC!(float, 912)()); }
 		}
-		bool m_bWasLastMeshSwapRequestMainMenuContentScene() { return (*cast(uint*)(cast(size_t)cast(void*)this + 908) & 0x2) != 0; }
-		bool m_bWasLastMeshSwapRequestMainMenuContentScene(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 908) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 908) &= ~0x2; } return val; }
-		bool m_bEditorMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 908) & 0x1) != 0; }
-		bool m_bEditorMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 908) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 908) &= ~0x1; } return val; }
+		bool m_bWasLastMeshSwapRequestMainMenuContentScene() { mixin(MGBPC!(908, 0x2)()); }
+		bool m_bWasLastMeshSwapRequestMainMenuContentScene(bool val) { mixin(MSBPC!(908, 0x2)()); }
+		bool m_bEditorMode() { mixin(MGBPC!(908, 0x1)()); }
+		bool m_bEditorMode(bool val) { mixin(MSBPC!(908, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

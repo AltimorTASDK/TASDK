@@ -1,15 +1,16 @@
 module UnrealScript.Engine.PBRuleNodeEdgeAngle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PBRuleNodeBase;
 
 extern(C++) interface PBRuleNodeEdgeAngle : PBRuleNodeBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeEdgeAngle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PBRuleNodeEdgeAngle")()); }
 	private static __gshared PBRuleNodeEdgeAngle mDefaultProperties;
-	@property final static PBRuleNodeEdgeAngle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeEdgeAngle)("PBRuleNodeEdgeAngle Engine.Default__PBRuleNodeEdgeAngle")); }
+	@property final static PBRuleNodeEdgeAngle DefaultProperties() { mixin(MGDPC!(PBRuleNodeEdgeAngle, "PBRuleNodeEdgeAngle Engine.Default__PBRuleNodeEdgeAngle")()); }
 	enum EProcBuildingEdge : ubyte
 	{
 		EPBE_Top = 0,
@@ -23,12 +24,12 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PBRuleNodeEdgeAngle.RBEdgeAngleInfo")); }
-		@property final auto ref float Angle() { return *cast(float*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PBRuleNodeEdgeAngle.RBEdgeAngleInfo")()); }
+		@property final auto ref float Angle() { mixin(MGPS!(float, 0)()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo) Angles() { return *cast(ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo)*)(cast(size_t)cast(void*)this + 108); }
-		PBRuleNodeEdgeAngle.EProcBuildingEdge Edge() { return *cast(PBRuleNodeEdgeAngle.EProcBuildingEdge*)(cast(size_t)cast(void*)this + 104); }
+		ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo) Angles() { mixin(MGPC!(ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo), 108)()); }
+		PBRuleNodeEdgeAngle.EProcBuildingEdge Edge() { mixin(MGPC!(PBRuleNodeEdgeAngle.EProcBuildingEdge, 104)()); }
 	}
 }

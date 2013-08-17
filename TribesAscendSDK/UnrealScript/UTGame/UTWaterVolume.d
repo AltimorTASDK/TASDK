@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTWaterVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.WaterVolume;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface UTWaterVolume : WaterVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWaterVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWaterVolume")()); }
 	private static __gshared UTWaterVolume mDefaultProperties;
-	@property final static UTWaterVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWaterVolume)("UTWaterVolume UTGame.Default__UTWaterVolume")); }
+	@property final static UTWaterVolume DefaultProperties() { mixin(MGDPC!(UTWaterVolume, "UTWaterVolume UTGame.Default__UTWaterVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +22,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWaterVolume.Touch")); }
-			ScriptFunction PlayEntrySplash() { return mPlayEntrySplash ? mPlayEntrySplash : (mPlayEntrySplash = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWaterVolume.PlayEntrySplash")); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTWaterVolume.Touch")()); }
+			ScriptFunction PlayEntrySplash() { mixin(MGF!("mPlayEntrySplash", "Function UTGame.UTWaterVolume.PlayEntrySplash")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ParticleSystem ProjectileEntryEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 608); }
-		ParticleSystem PS_EnterWaterEffect_Vehicle() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 604); }
-		ParticleSystem PS_EnterWaterEffect_Pawn() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 600); }
+		ParticleSystem ProjectileEntryEffect() { mixin(MGPC!(ParticleSystem, 608)()); }
+		ParticleSystem PS_EnterWaterEffect_Vehicle() { mixin(MGPC!(ParticleSystem, 604)()); }
+		ParticleSystem PS_EnterWaterEffect_Pawn() { mixin(MGPC!(ParticleSystem, 600)()); }
 	}
 final:
 	void Touch(Actor Other, 

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCTFHUD;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTGameReplicationInfo;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
@@ -11,9 +12,9 @@ extern(C++) interface UTCTFHUD : UTTeamHUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFHUD")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFHUD")()); }
 	private static __gshared UTCTFHUD mDefaultProperties;
-	@property final static UTCTFHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFHUD)("UTCTFHUD UTGame.Default__UTCTFHUD")); }
+	@property final static UTCTFHUD DefaultProperties() { mixin(MGDPC!(UTCTFHUD, "UTCTFHUD UTGame.Default__UTCTFHUD")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,16 +26,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFHUD.PostBeginPlay")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFHUD.Timer")); }
-			ScriptFunction DisplayTeamLogos() { return mDisplayTeamLogos ? mDisplayTeamLogos : (mDisplayTeamLogos = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFHUD.DisplayTeamLogos")); }
-			ScriptFunction GetDirectionalDest() { return mGetDirectionalDest ? mGetDirectionalDest : (mGetDirectionalDest = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFHUD.GetDirectionalDest")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCTFHUD.PostBeginPlay")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTCTFHUD.Timer")()); }
+			ScriptFunction DisplayTeamLogos() { mixin(MGF!("mDisplayTeamLogos", "Function UTGame.UTCTFHUD.DisplayTeamLogos")()); }
+			ScriptFunction GetDirectionalDest() { mixin(MGF!("mGetDirectionalDest", "Function UTGame.UTCTFHUD.GetDirectionalDest")()); }
 		}
 	}
 	@property final auto ref
 	{
-		UTGameReplicationInfo.EFlagState FlagStates() { return *cast(UTGameReplicationInfo.EFlagState*)(cast(size_t)cast(void*)this + 2748); }
-		UTCTFBase FlagBases() { return *cast(UTCTFBase*)(cast(size_t)cast(void*)this + 2740); }
+		UTGameReplicationInfo.EFlagState FlagStates() { mixin(MGPC!(UTGameReplicationInfo.EFlagState, 2748)()); }
+		UTCTFBase FlagBases() { mixin(MGPC!(UTCTFBase, 2740)()); }
 	}
 final:
 	void PostBeginPlay()

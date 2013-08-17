@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGame_TrStorm;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrStormCarrierShield;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.TribesGame.TrGame;
@@ -11,9 +12,9 @@ extern(C++) interface TrGame_TrStorm : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrStorm")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TrStorm")()); }
 	private static __gshared TrGame_TrStorm mDefaultProperties;
-	@property final static TrGame_TrStorm DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TrStorm)("TrGame_TrStorm TribesGame.Default__TrGame_TrStorm")); }
+	@property final static TrGame_TrStorm DefaultProperties() { mixin(MGDPC!(TrGame_TrStorm, "TrGame_TrStorm TribesGame.Default__TrGame_TrStorm")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,16 +32,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.PostBeginPlay")); }
-			ScriptFunction MissileFired() { return mMissileFired ? mMissileFired : (mMissileFired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.MissileFired")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.Tick")); }
-			ScriptFunction ExplodeMissile() { return mExplodeMissile ? mExplodeMissile : (mExplodeMissile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.ExplodeMissile")); }
-			ScriptFunction TakeHealthDamage() { return mTakeHealthDamage ? mTakeHealthDamage : (mTakeHealthDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.TakeHealthDamage")); }
-			ScriptFunction CarrierDestroyed() { return mCarrierDestroyed ? mCarrierDestroyed : (mCarrierDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.CarrierDestroyed")); }
-			ScriptFunction TakeDamageFromCore() { return mTakeDamageFromCore ? mTakeDamageFromCore : (mTakeDamageFromCore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.TakeDamageFromCore")); }
-			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.CheckEndGame")); }
-			ScriptFunction EndGame() { return mEndGame ? mEndGame : (mEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.EndGame")); }
-			ScriptFunction DetermineWinningTeam() { return mDetermineWinningTeam ? mDetermineWinningTeam : (mDetermineWinningTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.DetermineWinningTeam")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrGame_TrStorm.PostBeginPlay")()); }
+			ScriptFunction MissileFired() { mixin(MGF!("mMissileFired", "Function TribesGame.TrGame_TrStorm.MissileFired")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrGame_TrStorm.Tick")()); }
+			ScriptFunction ExplodeMissile() { mixin(MGF!("mExplodeMissile", "Function TribesGame.TrGame_TrStorm.ExplodeMissile")()); }
+			ScriptFunction TakeHealthDamage() { mixin(MGF!("mTakeHealthDamage", "Function TribesGame.TrGame_TrStorm.TakeHealthDamage")()); }
+			ScriptFunction CarrierDestroyed() { mixin(MGF!("mCarrierDestroyed", "Function TribesGame.TrGame_TrStorm.CarrierDestroyed")()); }
+			ScriptFunction TakeDamageFromCore() { mixin(MGF!("mTakeDamageFromCore", "Function TribesGame.TrGame_TrStorm.TakeDamageFromCore")()); }
+			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function TribesGame.TrGame_TrStorm.CheckEndGame")()); }
+			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function TribesGame.TrGame_TrStorm.EndGame")()); }
+			ScriptFunction DetermineWinningTeam() { mixin(MGF!("mDetermineWinningTeam", "Function TribesGame.TrGame_TrStorm.DetermineWinningTeam")()); }
 		}
 	}
 	struct Missile
@@ -48,12 +49,12 @@ public extern(D):
 		private ubyte __buffer__[9];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrGame_TrStorm.Missile")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGame_TrStorm.Missile")()); }
 		@property final auto ref
 		{
-			ubyte TargetTeam() { return *cast(ubyte*)(cast(size_t)&this + 8); }
-			float RemainingFlightTime() { return *cast(float*)(cast(size_t)&this + 4); }
-			TrStormControlPoint FiredFrom() { return *cast(TrStormControlPoint*)(cast(size_t)&this + 0); }
+			ubyte TargetTeam() { mixin(MGPS!(ubyte, 8)()); }
+			float RemainingFlightTime() { mixin(MGPS!(float, 4)()); }
+			TrStormControlPoint FiredFrom() { mixin(MGPS!(TrStormControlPoint, 0)()); }
 		}
 	}
 	struct Carrier
@@ -61,24 +62,29 @@ public extern(D):
 		private ubyte __buffer__[9];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrGame_TrStorm.Carrier")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGame_TrStorm.Carrier")()); }
 		@property final auto ref
 		{
-			ubyte TeamNum() { return *cast(ubyte*)(cast(size_t)&this + 8); }
-			int CoreHealth() { return *cast(int*)(cast(size_t)&this + 4); }
-			int ShieldHealth() { return *cast(int*)(cast(size_t)&this + 0); }
+			ubyte TeamNum() { mixin(MGPS!(ubyte, 8)()); }
+			int CoreHealth() { mixin(MGPS!(int, 4)()); }
+			int ShieldHealth() { mixin(MGPS!(int, 0)()); }
 		}
+	}
+	static struct MatchEnding
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TrStorm.MatchEnding")()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrGame_TrStorm.Missile) m_fActiveMissiles() { return *cast(ScriptArray!(TrGame_TrStorm.Missile)*)(cast(size_t)cast(void*)this + 1480); }
-		float MatchEndingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1520); }
-		int m_nMaxCoreHealth() { return *cast(int*)(cast(size_t)cast(void*)this + 1516); }
-		int m_nMaxShieldHealth() { return *cast(int*)(cast(size_t)cast(void*)this + 1512); }
-		TrStormCore m_CarrierCore() { return *cast(TrStormCore*)(cast(size_t)cast(void*)this + 1504); }
-		TrStormCarrierShield m_CarrierShields() { return *cast(TrStormCarrierShield*)(cast(size_t)cast(void*)this + 1496); }
-		float m_fMissileDamageAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 1492); }
-		TrGame_TrStorm.Carrier m_Carriers() { return *cast(TrGame_TrStorm.Carrier*)(cast(size_t)cast(void*)this + 1456); }
+		ScriptArray!(TrGame_TrStorm.Missile) m_fActiveMissiles() { mixin(MGPC!(ScriptArray!(TrGame_TrStorm.Missile), 1480)()); }
+		float MatchEndingTime() { mixin(MGPC!(float, 1520)()); }
+		int m_nMaxCoreHealth() { mixin(MGPC!(int, 1516)()); }
+		int m_nMaxShieldHealth() { mixin(MGPC!(int, 1512)()); }
+		TrStormCore m_CarrierCore() { mixin(MGPC!(TrStormCore, 1504)()); }
+		TrStormCarrierShield m_CarrierShields() { mixin(MGPC!(TrStormCarrierShield, 1496)()); }
+		float m_fMissileDamageAmount() { mixin(MGPC!(float, 1492)()); }
+		TrGame_TrStorm.Carrier m_Carriers() { mixin(MGPC!(TrGame_TrStorm.Carrier, 1456)()); }
 	}
 final:
 	void PostBeginPlay()

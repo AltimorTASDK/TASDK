@@ -1,15 +1,16 @@
 module UnrealScript.Engine.OnlineChatInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UInterface;
 
 extern(C++) interface OnlineChatInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineChatInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineChatInterface")()); }
 	private static __gshared OnlineChatInterface mDefaultProperties;
-	@property final static OnlineChatInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineChatInterface)("OnlineChatInterface Engine.Default__OnlineChatInterface")); }
+	@property final static OnlineChatInterface DefaultProperties() { mixin(MGDPC!(OnlineChatInterface, "OnlineChatInterface Engine.Default__OnlineChatInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,14 +24,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnChatMessage() { return mOnChatMessage ? mOnChatMessage : (mOnChatMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineChatInterface.OnChatMessage")); }
-			ScriptFunction AddChatMessageDelegate() { return mAddChatMessageDelegate ? mAddChatMessageDelegate : (mAddChatMessageDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineChatInterface.AddChatMessageDelegate")); }
-			ScriptFunction ClearChatMessageDelegate() { return mClearChatMessageDelegate ? mClearChatMessageDelegate : (mClearChatMessageDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineChatInterface.ClearChatMessageDelegate")); }
-			ScriptFunction SendChatMessage() { return mSendChatMessage ? mSendChatMessage : (mSendChatMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineChatInterface.SendChatMessage")); }
-			ScriptFunction SendPrivateChatMessage() { return mSendPrivateChatMessage ? mSendPrivateChatMessage : (mSendPrivateChatMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineChatInterface.SendPrivateChatMessage")); }
-			ScriptFunction NotifyTeamChange() { return mNotifyTeamChange ? mNotifyTeamChange : (mNotifyTeamChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineChatInterface.NotifyTeamChange")); }
+			ScriptFunction OnChatMessage() { mixin(MGF!("mOnChatMessage", "Function Engine.OnlineChatInterface.OnChatMessage")()); }
+			ScriptFunction AddChatMessageDelegate() { mixin(MGF!("mAddChatMessageDelegate", "Function Engine.OnlineChatInterface.AddChatMessageDelegate")()); }
+			ScriptFunction ClearChatMessageDelegate() { mixin(MGF!("mClearChatMessageDelegate", "Function Engine.OnlineChatInterface.ClearChatMessageDelegate")()); }
+			ScriptFunction SendChatMessage() { mixin(MGF!("mSendChatMessage", "Function Engine.OnlineChatInterface.SendChatMessage")()); }
+			ScriptFunction SendPrivateChatMessage() { mixin(MGF!("mSendPrivateChatMessage", "Function Engine.OnlineChatInterface.SendPrivateChatMessage")()); }
+			ScriptFunction NotifyTeamChange() { mixin(MGF!("mNotifyTeamChange", "Function Engine.OnlineChatInterface.NotifyTeamChange")()); }
 		}
 	}
+	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnChatMessage__Delegate'!
 final:
 	void OnChatMessage(int pChannel, ScriptString Sender, ScriptString Message)
 	{

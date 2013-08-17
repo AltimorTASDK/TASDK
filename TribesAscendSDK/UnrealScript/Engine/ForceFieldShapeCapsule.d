@@ -1,15 +1,16 @@
 module UnrealScript.Engine.ForceFieldShapeCapsule;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ForceFieldShape;
 
 extern(C++) interface ForceFieldShapeCapsule : ForceFieldShape
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFieldShapeCapsule")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ForceFieldShapeCapsule")()); }
 	private static __gshared ForceFieldShapeCapsule mDefaultProperties;
-	@property final static ForceFieldShapeCapsule DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ForceFieldShapeCapsule)("ForceFieldShapeCapsule Engine.Default__ForceFieldShapeCapsule")); }
+	@property final static ForceFieldShapeCapsule DefaultProperties() { mixin(MGDPC!(ForceFieldShapeCapsule, "ForceFieldShapeCapsule Engine.Default__ForceFieldShapeCapsule")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,15 +25,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetHeight() { return mGetHeight ? mGetHeight : (mGetHeight = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShapeCapsule.GetHeight")); }
-			ScriptFunction GetRadius() { return mGetRadius ? mGetRadius : (mGetRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShapeCapsule.GetRadius")); }
-			ScriptFunction FillBySphere() { return mFillBySphere ? mFillBySphere : (mFillBySphere = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShapeCapsule.FillBySphere")); }
-			ScriptFunction FillByBox() { return mFillByBox ? mFillByBox : (mFillByBox = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShapeCapsule.FillByBox")); }
-			ScriptFunction FillByCapsule() { return mFillByCapsule ? mFillByCapsule : (mFillByCapsule = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShapeCapsule.FillByCapsule")); }
-			ScriptFunction FillByCylinder() { return mFillByCylinder ? mFillByCylinder : (mFillByCylinder = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShapeCapsule.FillByCylinder")); }
-			ScriptFunction GetDrawComponent() { return mGetDrawComponent ? mGetDrawComponent : (mGetDrawComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShapeCapsule.GetDrawComponent")); }
+			ScriptFunction GetHeight() { mixin(MGF!("mGetHeight", "Function Engine.ForceFieldShapeCapsule.GetHeight")()); }
+			ScriptFunction GetRadius() { mixin(MGF!("mGetRadius", "Function Engine.ForceFieldShapeCapsule.GetRadius")()); }
+			ScriptFunction FillBySphere() { mixin(MGF!("mFillBySphere", "Function Engine.ForceFieldShapeCapsule.FillBySphere")()); }
+			ScriptFunction FillByBox() { mixin(MGF!("mFillByBox", "Function Engine.ForceFieldShapeCapsule.FillByBox")()); }
+			ScriptFunction FillByCapsule() { mixin(MGF!("mFillByCapsule", "Function Engine.ForceFieldShapeCapsule.FillByCapsule")()); }
+			ScriptFunction FillByCylinder() { mixin(MGF!("mFillByCylinder", "Function Engine.ForceFieldShapeCapsule.FillByCylinder")()); }
+			ScriptFunction GetDrawComponent() { mixin(MGF!("mGetDrawComponent", "Function Engine.ForceFieldShapeCapsule.GetDrawComponent")()); }
 		}
 	}
+	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Shape'!
 final:
 	float GetHeight()
 	{

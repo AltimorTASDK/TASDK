@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeployable_BaseTurret;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.TribesGame.TrDeployable_Turret;
 import UnrealScript.Engine.Texture2D;
@@ -12,9 +13,9 @@ extern(C++) interface TrDeployable_BaseTurret : TrDeployable_Turret
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_BaseTurret")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_BaseTurret")()); }
 	private static __gshared TrDeployable_BaseTurret mDefaultProperties;
-	@property final static TrDeployable_BaseTurret DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_BaseTurret)("TrDeployable_BaseTurret TribesGame.Default__TrDeployable_BaseTurret")); }
+	@property final static TrDeployable_BaseTurret DefaultProperties() { mixin(MGDPC!(TrDeployable_BaseTurret, "TrDeployable_BaseTurret TribesGame.Default__TrDeployable_BaseTurret")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,15 +31,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.ApplyServerSettings")); }
-			ScriptFunction ReceivesPowerFromGenerator() { return mReceivesPowerFromGenerator ? mReceivesPowerFromGenerator : (mReceivesPowerFromGenerator = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.ReceivesPowerFromGenerator")); }
-			ScriptFunction ShouldShowHelpText() { return mShouldShowHelpText ? mShouldShowHelpText : (mShouldShowHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.ShouldShowHelpText")); }
-			ScriptFunction SpawnHelpTextCollisionProxy() { return mSpawnHelpTextCollisionProxy ? mSpawnHelpTextCollisionProxy : (mSpawnHelpTextCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.SpawnHelpTextCollisionProxy")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.GetMarker")); }
-			ScriptFunction GiveDestroyAccolade() { return mGiveDestroyAccolade ? mGiveDestroyAccolade : (mGiveDestroyAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.GiveDestroyAccolade")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.TakeDamage")); }
-			ScriptFunction RequiresLOSForRepairDeployable() { return mRequiresLOSForRepairDeployable ? mRequiresLOSForRepairDeployable : (mRequiresLOSForRepairDeployable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BaseTurret.RequiresLOSForRepairDeployable")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrDeployable_BaseTurret.ApplyServerSettings")()); }
+			ScriptFunction ReceivesPowerFromGenerator() { mixin(MGF!("mReceivesPowerFromGenerator", "Function TribesGame.TrDeployable_BaseTurret.ReceivesPowerFromGenerator")()); }
+			ScriptFunction ShouldShowHelpText() { mixin(MGF!("mShouldShowHelpText", "Function TribesGame.TrDeployable_BaseTurret.ShouldShowHelpText")()); }
+			ScriptFunction SpawnHelpTextCollisionProxy() { mixin(MGF!("mSpawnHelpTextCollisionProxy", "Function TribesGame.TrDeployable_BaseTurret.SpawnHelpTextCollisionProxy")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDeployable_BaseTurret.GetMarker")()); }
+			ScriptFunction GiveDestroyAccolade() { mixin(MGF!("mGiveDestroyAccolade", "Function TribesGame.TrDeployable_BaseTurret.GiveDestroyAccolade")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrDeployable_BaseTurret.TakeDamage")()); }
+			ScriptFunction RequiresLOSForRepairDeployable() { mixin(MGF!("mRequiresLOSForRepairDeployable", "Function TribesGame.TrDeployable_BaseTurret.RequiresLOSForRepairDeployable")()); }
 		}
+	}
+	static struct BlownUp
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable_BaseTurret.BlownUp")()); }
 	}
 final:
 	void ApplyServerSettings()

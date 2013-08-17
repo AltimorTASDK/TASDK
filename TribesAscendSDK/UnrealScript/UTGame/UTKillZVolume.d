@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTKillZVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.PhysicsVolume;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface UTKillZVolume : PhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKillZVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTKillZVolume")()); }
 	private static __gshared UTKillZVolume mDefaultProperties;
-	@property final static UTKillZVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKillZVolume)("UTKillZVolume UTGame.Default__UTKillZVolume")); }
+	@property final static UTKillZVolume DefaultProperties() { mixin(MGDPC!(UTKillZVolume, "UTKillZVolume UTGame.Default__UTKillZVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +24,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ActorEnteredVolume() { return mActorEnteredVolume ? mActorEnteredVolume : (mActorEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillZVolume.ActorEnteredVolume")); }
-			ScriptFunction PawnEnteredVolume() { return mPawnEnteredVolume ? mPawnEnteredVolume : (mPawnEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillZVolume.PawnEnteredVolume")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillZVolume.Touch")); }
-			ScriptFunction KillActor() { return mKillActor ? mKillActor : (mKillActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillZVolume.KillActor")); }
+			ScriptFunction ActorEnteredVolume() { mixin(MGF!("mActorEnteredVolume", "Function UTGame.UTKillZVolume.ActorEnteredVolume")()); }
+			ScriptFunction PawnEnteredVolume() { mixin(MGF!("mPawnEnteredVolume", "Function UTGame.UTKillZVolume.PawnEnteredVolume")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTKillZVolume.Touch")()); }
+			ScriptFunction KillActor() { mixin(MGF!("mKillActor", "Function UTGame.UTKillZVolume.KillActor")()); }
 		}
 	}
 	// WARNING: Property 'KillZDamageType' has the same name as a defined type!

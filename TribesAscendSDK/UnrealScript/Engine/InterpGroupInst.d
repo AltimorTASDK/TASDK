@@ -1,6 +1,7 @@
 module UnrealScript.Engine.InterpGroupInst;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.InterpTrackInst;
 import UnrealScript.Engine.Actor;
@@ -10,13 +11,13 @@ extern(C++) interface InterpGroupInst : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpGroupInst")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpGroupInst")()); }
 	private static __gshared InterpGroupInst mDefaultProperties;
-	@property final static InterpGroupInst DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpGroupInst)("InterpGroupInst Engine.Default__InterpGroupInst")); }
+	@property final static InterpGroupInst DefaultProperties() { mixin(MGDPC!(InterpGroupInst, "InterpGroupInst Engine.Default__InterpGroupInst")()); }
 	@property final auto ref
 	{
-		ScriptArray!(InterpTrackInst) TrackInst() { return *cast(ScriptArray!(InterpTrackInst)*)(cast(size_t)cast(void*)this + 68); }
-		Actor GroupActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 64); }
-		InterpGroup Group() { return *cast(InterpGroup*)(cast(size_t)cast(void*)this + 60); }
+		ScriptArray!(InterpTrackInst) TrackInst() { mixin(MGPC!(ScriptArray!(InterpTrackInst), 68)()); }
+		Actor GroupActor() { mixin(MGPC!(Actor, 64)()); }
+		InterpGroup Group() { mixin(MGPC!(InterpGroup, 60)()); }
 	}
 }

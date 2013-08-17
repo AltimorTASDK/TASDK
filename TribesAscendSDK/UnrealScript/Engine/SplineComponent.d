@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SplineComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 
@@ -8,9 +9,9 @@ extern(C++) interface SplineComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SplineComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SplineComponent")()); }
 	private static __gshared SplineComponent mDefaultProperties;
-	@property final static SplineComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SplineComponent)("SplineComponent Engine.Default__SplineComponent")); }
+	@property final static SplineComponent DefaultProperties() { mixin(MGDPC!(SplineComponent, "SplineComponent Engine.Default__SplineComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,26 +24,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateSplineCurviness() { return mUpdateSplineCurviness ? mUpdateSplineCurviness : (mUpdateSplineCurviness = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineComponent.UpdateSplineCurviness")); }
-			ScriptFunction UpdateSplineReparamTable() { return mUpdateSplineReparamTable ? mUpdateSplineReparamTable : (mUpdateSplineReparamTable = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineComponent.UpdateSplineReparamTable")); }
-			ScriptFunction GetSplineLength() { return mGetSplineLength ? mGetSplineLength : (mGetSplineLength = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineComponent.GetSplineLength")); }
-			ScriptFunction GetLocationAtDistanceAlongSpline() { return mGetLocationAtDistanceAlongSpline ? mGetLocationAtDistanceAlongSpline : (mGetLocationAtDistanceAlongSpline = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineComponent.GetLocationAtDistanceAlongSpline")); }
-			ScriptFunction GetTangentAtDistanceAlongSpline() { return mGetTangentAtDistanceAlongSpline ? mGetTangentAtDistanceAlongSpline : (mGetTangentAtDistanceAlongSpline = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineComponent.GetTangentAtDistanceAlongSpline")); }
+			ScriptFunction UpdateSplineCurviness() { mixin(MGF!("mUpdateSplineCurviness", "Function Engine.SplineComponent.UpdateSplineCurviness")()); }
+			ScriptFunction UpdateSplineReparamTable() { mixin(MGF!("mUpdateSplineReparamTable", "Function Engine.SplineComponent.UpdateSplineReparamTable")()); }
+			ScriptFunction GetSplineLength() { mixin(MGF!("mGetSplineLength", "Function Engine.SplineComponent.GetSplineLength")()); }
+			ScriptFunction GetLocationAtDistanceAlongSpline() { mixin(MGF!("mGetLocationAtDistanceAlongSpline", "Function Engine.SplineComponent.GetLocationAtDistanceAlongSpline")()); }
+			ScriptFunction GetTangentAtDistanceAlongSpline() { mixin(MGF!("mGetTangentAtDistanceAlongSpline", "Function Engine.SplineComponent.GetTangentAtDistanceAlongSpline")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.InterpCurveFloat SplineReparamTable() { return *cast(UObject.InterpCurveFloat*)(cast(size_t)cast(void*)this + 524); }
-			float SplineArrowSize() { return *cast(float*)(cast(size_t)cast(void*)this + 516); }
-			float SplineDrawRes() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
-			UObject.Color SplineColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 508); }
-			float SplineCurviness() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			UObject.InterpCurveVector SplineInfo() { return *cast(UObject.InterpCurveVector*)(cast(size_t)cast(void*)this + 488); }
+			UObject.InterpCurveFloat SplineReparamTable() { mixin(MGPC!(UObject.InterpCurveFloat, 524)()); }
+			float SplineArrowSize() { mixin(MGPC!(float, 516)()); }
+			float SplineDrawRes() { mixin(MGPC!(float, 512)()); }
+			UObject.Color SplineColor() { mixin(MGPC!(UObject.Color, 508)()); }
+			float SplineCurviness() { mixin(MGPC!(float, 504)()); }
+			UObject.InterpCurveVector SplineInfo() { mixin(MGPC!(UObject.InterpCurveVector, 488)()); }
 		}
-		bool bSplineDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 520) & 0x1) != 0; }
-		bool bSplineDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 520) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 520) &= ~0x1; } return val; }
+		bool bSplineDisabled() { mixin(MGBPC!(520, 0x1)()); }
+		bool bSplineDisabled(bool val) { mixin(MSBPC!(520, 0x1)()); }
 	}
 final:
 	void UpdateSplineCurviness()

@@ -1,13 +1,14 @@
 module UnrealScript.UTGame.UTSeqEvent_ObjectiveCompleted;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 
 extern(C++) interface UTSeqEvent_ObjectiveCompleted : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqEvent_ObjectiveCompleted")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSeqEvent_ObjectiveCompleted")()); }
 	private static __gshared UTSeqEvent_ObjectiveCompleted mDefaultProperties;
-	@property final static UTSeqEvent_ObjectiveCompleted DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqEvent_ObjectiveCompleted)("UTSeqEvent_ObjectiveCompleted UTGame.Default__UTSeqEvent_ObjectiveCompleted")); }
+	@property final static UTSeqEvent_ObjectiveCompleted DefaultProperties() { mixin(MGDPC!(UTSeqEvent_ObjectiveCompleted, "UTSeqEvent_ObjectiveCompleted UTGame.Default__UTSeqEvent_ObjectiveCompleted")()); }
 }

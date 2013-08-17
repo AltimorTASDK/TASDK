@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqAct_SetCameraTarget;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Camera;
 import UnrealScript.Engine.SequenceAction;
@@ -9,18 +10,18 @@ extern(C++) interface SeqAct_SetCameraTarget : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetCameraTarget")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_SetCameraTarget")()); }
 	private static __gshared SeqAct_SetCameraTarget mDefaultProperties;
-	@property final static SeqAct_SetCameraTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetCameraTarget)("SeqAct_SetCameraTarget Engine.Default__SeqAct_SetCameraTarget")); }
+	@property final static SeqAct_SetCameraTarget DefaultProperties() { mixin(MGDPC!(SeqAct_SetCameraTarget, "SeqAct_SetCameraTarget Engine.Default__SeqAct_SetCameraTarget")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_SetCameraTarget.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_SetCameraTarget.GetObjClassVersion")()); }
 	}
 	@property final auto ref
 	{
-		Actor CameraTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 232); }
-		Camera.ViewTargetTransitionParams TransitionParams() { return *cast(Camera.ViewTargetTransitionParams*)(cast(size_t)cast(void*)this + 236); }
+		Actor CameraTarget() { mixin(MGPC!(Actor, 232)()); }
+		Camera.ViewTargetTransitionParams TransitionParams() { mixin(MGPC!(Camera.ViewTargetTransitionParams, 236)()); }
 	}
 	final static int GetObjClassVersion()
 	{

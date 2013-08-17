@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrStationCollision;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrPawn;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrStationCollision : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStationCollision")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStationCollision")()); }
 	private static __gshared TrStationCollision mDefaultProperties;
-	@property final static TrStationCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStationCollision)("TrStationCollision TribesGame.Default__TrStationCollision")); }
+	@property final static TrStationCollision DefaultProperties() { mixin(MGDPC!(TrStationCollision, "TrStationCollision TribesGame.Default__TrStationCollision")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,19 +23,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPawnsInStation() { return mGetPawnsInStation ? mGetPawnsInStation : (mGetPawnsInStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.GetPawnsInStation")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.Touch")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.UnTouch")); }
-			ScriptFunction CheckCanPawnUseStationNow() { return mCheckCanPawnUseStationNow ? mCheckCanPawnUseStationNow : (mCheckCanPawnUseStationNow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.CheckCanPawnUseStationNow")); }
+			ScriptFunction GetPawnsInStation() { mixin(MGF!("mGetPawnsInStation", "Function TribesGame.TrStationCollision.GetPawnsInStation")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrStationCollision.Touch")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrStationCollision.UnTouch")()); }
+			ScriptFunction CheckCanPawnUseStationNow() { mixin(MGF!("mCheckCanPawnUseStationNow", "Function TribesGame.TrStationCollision.CheckCanPawnUseStationNow")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref TrPawn m_OccupiedPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 480); }
-		bool m_bCanBeUsedDuringWarmupRound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
-		bool m_bCanBeUsedDuringWarmupRound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
-		bool m_bOccupied() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-		bool m_bOccupied(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
+		@property final auto ref TrPawn m_OccupiedPawn() { mixin(MGPC!(TrPawn, 480)()); }
+		bool m_bCanBeUsedDuringWarmupRound() { mixin(MGBPC!(476, 0x2)()); }
+		bool m_bCanBeUsedDuringWarmupRound(bool val) { mixin(MSBPC!(476, 0x2)()); }
+		bool m_bOccupied() { mixin(MGBPC!(476, 0x1)()); }
+		bool m_bOccupied(bool val) { mixin(MSBPC!(476, 0x1)()); }
 	}
 final:
 	int GetPawnsInStation()

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGame_TRCTF;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrFlagCTF;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
@@ -17,9 +18,9 @@ extern(C++) interface TrGame_TRCTF : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TRCTF")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TRCTF")()); }
 	private static __gshared TrGame_TRCTF mDefaultProperties;
-	@property final static TrGame_TRCTF DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TRCTF)("TrGame_TRCTF TribesGame.Default__TrGame_TRCTF")); }
+	@property final static TrGame_TRCTF DefaultProperties() { mixin(MGDPC!(TrGame_TRCTF, "TrGame_TRCTF TribesGame.Default__TrGame_TRCTF")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,26 +42,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.PostBeginPlay")); }
-			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.ApplyServerSettings")); }
-			ScriptFunction GetHandicapNeed() { return mGetHandicapNeed ? mGetHandicapNeed : (mGetHandicapNeed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.GetHandicapNeed")); }
-			ScriptFunction GetLocationFor() { return mGetLocationFor ? mGetLocationFor : (mGetLocationFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.GetLocationFor")); }
-			ScriptFunction RegisterFlag() { return mRegisterFlag ? mRegisterFlag : (mRegisterFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.RegisterFlag")); }
-			ScriptFunction NearGoal() { return mNearGoal ? mNearGoal : (mNearGoal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.NearGoal")); }
-			ScriptFunction WantFastSpawnFor() { return mWantFastSpawnFor ? mWantFastSpawnFor : (mWantFastSpawnFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.WantFastSpawnFor")); }
-			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.CheckEndGame")); }
-			ScriptFunction ScoreFlag() { return mScoreFlag ? mScoreFlag : (mScoreFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.ScoreFlag")); }
-			ScriptFunction ViewObjective() { return mViewObjective ? mViewObjective : (mViewObjective = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.ViewObjective")); }
-			ScriptFunction GetAutoObjectiveFor() { return mGetAutoObjectiveFor ? mGetAutoObjectiveFor : (mGetAutoObjectiveFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.GetAutoObjectiveFor")); }
-			ScriptFunction AnnounceScore() { return mAnnounceScore ? mAnnounceScore : (mAnnounceScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.AnnounceScore")); }
-			ScriptFunction CheckScore() { return mCheckScore ? mCheckScore : (mCheckScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.CheckScore")); }
-			ScriptFunction GetGameTypeId() { return mGetGameTypeId ? mGetGameTypeId : (mGetGameTypeId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRCTF.GetGameTypeId")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrGame_TRCTF.PostBeginPlay")()); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrGame_TRCTF.ApplyServerSettings")()); }
+			ScriptFunction GetHandicapNeed() { mixin(MGF!("mGetHandicapNeed", "Function TribesGame.TrGame_TRCTF.GetHandicapNeed")()); }
+			ScriptFunction GetLocationFor() { mixin(MGF!("mGetLocationFor", "Function TribesGame.TrGame_TRCTF.GetLocationFor")()); }
+			ScriptFunction RegisterFlag() { mixin(MGF!("mRegisterFlag", "Function TribesGame.TrGame_TRCTF.RegisterFlag")()); }
+			ScriptFunction NearGoal() { mixin(MGF!("mNearGoal", "Function TribesGame.TrGame_TRCTF.NearGoal")()); }
+			ScriptFunction WantFastSpawnFor() { mixin(MGF!("mWantFastSpawnFor", "Function TribesGame.TrGame_TRCTF.WantFastSpawnFor")()); }
+			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function TribesGame.TrGame_TRCTF.CheckEndGame")()); }
+			ScriptFunction ScoreFlag() { mixin(MGF!("mScoreFlag", "Function TribesGame.TrGame_TRCTF.ScoreFlag")()); }
+			ScriptFunction ViewObjective() { mixin(MGF!("mViewObjective", "Function TribesGame.TrGame_TRCTF.ViewObjective")()); }
+			ScriptFunction GetAutoObjectiveFor() { mixin(MGF!("mGetAutoObjectiveFor", "Function TribesGame.TrGame_TRCTF.GetAutoObjectiveFor")()); }
+			ScriptFunction AnnounceScore() { mixin(MGF!("mAnnounceScore", "Function TribesGame.TrGame_TRCTF.AnnounceScore")()); }
+			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TRCTF.CheckScore")()); }
+			ScriptFunction GetGameTypeId() { mixin(MGF!("mGetGameTypeId", "Function TribesGame.TrGame_TRCTF.GetGameTypeId")()); }
 		}
+	}
+	static struct MatchOver
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TRCTF.MatchOver")()); }
 	}
 	@property final auto ref
 	{
-		TrFlagCTF m_Flags() { return *cast(TrFlagCTF*)(cast(size_t)cast(void*)this + 1456); }
-		ScriptClass AnnouncerMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1464); }
+		TrFlagCTF m_Flags() { mixin(MGPC!(TrFlagCTF, 1456)()); }
+		ScriptClass AnnouncerMessageClass() { mixin(MGPC!(ScriptClass, 1464)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -79,13 +85,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHandicapNeed, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	bool GetLocationFor(Pawn StatusPawn, Actor* LocationObject, int* MessageIndex, int LocationSpeechOffset)
+	bool GetLocationFor(Pawn StatusPawn, ref Actor LocationObject, ref int MessageIndex, int LocationSpeechOffset)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = StatusPawn;
-		*cast(Actor*)&params[4] = *LocationObject;
-		*cast(int*)&params[8] = *MessageIndex;
+		*cast(Actor*)&params[4] = LocationObject;
+		*cast(int*)&params[8] = MessageIndex;
 		*cast(int*)&params[12] = LocationSpeechOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationFor, params.ptr, cast(void*)0);
 		*LocationObject = *cast(Actor*)&params[4];

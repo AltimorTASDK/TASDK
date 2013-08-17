@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrUI_TeamSelectionMenu;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameReplicationInfo;
 import UnrealScript.GFxUI.GFxMoviePlayer;
 import UnrealScript.TribesGame.TrPlayerController;
@@ -10,9 +11,9 @@ extern(C++) interface GFxTrUI_TeamSelectionMenu : GFxMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrUI_TeamSelectionMenu")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrUI_TeamSelectionMenu")()); }
 	private static __gshared GFxTrUI_TeamSelectionMenu mDefaultProperties;
-	@property final static GFxTrUI_TeamSelectionMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrUI_TeamSelectionMenu)("GFxTrUI_TeamSelectionMenu TribesGame.Default__GFxTrUI_TeamSelectionMenu")); }
+	@property final static GFxTrUI_TeamSelectionMenu DefaultProperties() { mixin(MGDPC!(GFxTrUI_TeamSelectionMenu, "GFxTrUI_TeamSelectionMenu TribesGame.Default__GFxTrUI_TeamSelectionMenu")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,47 +35,47 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Initialize")); }
-			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Start")); }
-			ScriptFunction SetFontIndex() { return mSetFontIndex ? mSetFontIndex : (mSetFontIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.SetFontIndex")); }
-			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Show")); }
-			ScriptFunction SetLabels() { return mSetLabels ? mSetLabels : (mSetLabels = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.SetLabels")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Tick")); }
-			ScriptFunction EnableBloodEagle() { return mEnableBloodEagle ? mEnableBloodEagle : (mEnableBloodEagle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableBloodEagle")); }
-			ScriptFunction AsTeamChooseEnableButton() { return mAsTeamChooseEnableButton ? mAsTeamChooseEnableButton : (mAsTeamChooseEnableButton = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.AsTeamChooseEnableButton")); }
-			ScriptFunction EnableDiamondSword() { return mEnableDiamondSword ? mEnableDiamondSword : (mEnableDiamondSword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableDiamondSword")); }
-			ScriptFunction EnableSpectate() { return mEnableSpectate ? mEnableSpectate : (mEnableSpectate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableSpectate")); }
-			ScriptFunction choseTeamBE() { return mchoseTeamBE ? mchoseTeamBE : (mchoseTeamBE = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamBE")); }
-			ScriptFunction choseTeamDS() { return mchoseTeamDS ? mchoseTeamDS : (mchoseTeamDS = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamDS")); }
-			ScriptFunction choseTeamSpectate() { return mchoseTeamSpectate ? mchoseTeamSpectate : (mchoseTeamSpectate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamSpectate")); }
-			ScriptFunction CompleteMovie() { return mCompleteMovie ? mCompleteMovie : (mCompleteMovie = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.CompleteMovie")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrUI_TeamSelectionMenu.Initialize")()); }
+			ScriptFunction Start() { mixin(MGF!("mStart", "Function TribesGame.GFxTrUI_TeamSelectionMenu.Start")()); }
+			ScriptFunction SetFontIndex() { mixin(MGF!("mSetFontIndex", "Function TribesGame.GFxTrUI_TeamSelectionMenu.SetFontIndex")()); }
+			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.GFxTrUI_TeamSelectionMenu.Show")()); }
+			ScriptFunction SetLabels() { mixin(MGF!("mSetLabels", "Function TribesGame.GFxTrUI_TeamSelectionMenu.SetLabels")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.GFxTrUI_TeamSelectionMenu.Tick")()); }
+			ScriptFunction EnableBloodEagle() { mixin(MGF!("mEnableBloodEagle", "Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableBloodEagle")()); }
+			ScriptFunction AsTeamChooseEnableButton() { mixin(MGF!("mAsTeamChooseEnableButton", "Function TribesGame.GFxTrUI_TeamSelectionMenu.AsTeamChooseEnableButton")()); }
+			ScriptFunction EnableDiamondSword() { mixin(MGF!("mEnableDiamondSword", "Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableDiamondSword")()); }
+			ScriptFunction EnableSpectate() { mixin(MGF!("mEnableSpectate", "Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableSpectate")()); }
+			ScriptFunction choseTeamBE() { mixin(MGF!("mchoseTeamBE", "Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamBE")()); }
+			ScriptFunction choseTeamDS() { mixin(MGF!("mchoseTeamDS", "Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamDS")()); }
+			ScriptFunction choseTeamSpectate() { mixin(MGF!("mchoseTeamSpectate", "Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamSpectate")()); }
+			ScriptFunction CompleteMovie() { mixin(MGF!("mCompleteMovie", "Function TribesGame.GFxTrUI_TeamSelectionMenu.CompleteMovie")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GFxObject MovieClip() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 404); }
-			GFxObject DiamondSwordCountTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 420); }
-			GFxObject BloodEagleCountTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 416); }
-			GFxObject DiamondSwordButton() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 412); }
-			GFxObject BloodEagleButton() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 408); }
-			TrPlayerController TrPC() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 400); }
-			int PrevDiamondSwordCount() { return *cast(int*)(cast(size_t)cast(void*)this + 392); }
-			int PrevBloodEagleCount() { return *cast(int*)(cast(size_t)cast(void*)this + 388); }
-			int AllowedTeamDiscrepancyOnTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 384); }
-			int AllowedTeamDiscrepancyNoTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 380); }
+			GFxObject MovieClip() { mixin(MGPC!(GFxObject, 404)()); }
+			GFxObject DiamondSwordCountTF() { mixin(MGPC!(GFxObject, 420)()); }
+			GFxObject BloodEagleCountTF() { mixin(MGPC!(GFxObject, 416)()); }
+			GFxObject DiamondSwordButton() { mixin(MGPC!(GFxObject, 412)()); }
+			GFxObject BloodEagleButton() { mixin(MGPC!(GFxObject, 408)()); }
+			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 400)()); }
+			int PrevDiamondSwordCount() { mixin(MGPC!(int, 392)()); }
+			int PrevBloodEagleCount() { mixin(MGPC!(int, 388)()); }
+			int AllowedTeamDiscrepancyOnTeam() { mixin(MGPC!(int, 384)()); }
+			int AllowedTeamDiscrepancyNoTeam() { mixin(MGPC!(int, 380)()); }
 		}
-		bool bCompleted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 396) & 0x4) != 0; }
-		bool bCompleted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 396) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 396) &= ~0x4; } return val; }
-		bool JoinDiamondSwordAllowed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 396) & 0x10) != 0; }
-		bool JoinDiamondSwordAllowed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 396) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 396) &= ~0x10; } return val; }
-		bool JoinBloodEagleAllowed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 396) & 0x8) != 0; }
-		bool JoinBloodEagleAllowed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 396) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 396) &= ~0x8; } return val; }
-		bool bJustJoined() { return (*cast(uint*)(cast(size_t)cast(void*)this + 396) & 0x2) != 0; }
-		bool bJustJoined(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 396) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 396) &= ~0x2; } return val; }
-		bool bInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 396) & 0x1) != 0; }
-		bool bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 396) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 396) &= ~0x1; } return val; }
+		bool bCompleted() { mixin(MGBPC!(396, 0x4)()); }
+		bool bCompleted(bool val) { mixin(MSBPC!(396, 0x4)()); }
+		bool JoinDiamondSwordAllowed() { mixin(MGBPC!(396, 0x10)()); }
+		bool JoinDiamondSwordAllowed(bool val) { mixin(MSBPC!(396, 0x10)()); }
+		bool JoinBloodEagleAllowed() { mixin(MGBPC!(396, 0x8)()); }
+		bool JoinBloodEagleAllowed(bool val) { mixin(MSBPC!(396, 0x8)()); }
+		bool bJustJoined() { mixin(MGBPC!(396, 0x2)()); }
+		bool bJustJoined(bool val) { mixin(MSBPC!(396, 0x2)()); }
+		bool bInitialized() { mixin(MGBPC!(396, 0x1)()); }
+		bool bInitialized(bool val) { mixin(MSBPC!(396, 0x1)()); }
 	}
 final:
 	void Initialize()

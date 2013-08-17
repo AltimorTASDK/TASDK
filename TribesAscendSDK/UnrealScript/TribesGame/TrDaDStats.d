@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDaDStats;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrPlayerController;
 import UnrealScript.TribesGame.GfxTrHud;
@@ -10,9 +11,9 @@ extern(C++) interface TrDaDStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDStats")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDStats")()); }
 	private static __gshared TrDaDStats mDefaultProperties;
-	@property final static TrDaDStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDaDStats)("TrDaDStats TribesGame.Default__TrDaDStats")); }
+	@property final static TrDaDStats DefaultProperties() { mixin(MGDPC!(TrDaDStats, "TrDaDStats TribesGame.Default__TrDaDStats")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,15 +30,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.Initialize")); }
-			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.Show")); }
-			ScriptFunction Hide() { return mHide ? mHide : (mHide = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.Hide")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.Tick")); }
-			ScriptFunction UpdateTeam() { return mUpdateTeam ? mUpdateTeam : (mUpdateTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.UpdateTeam")); }
-			ScriptFunction UpdateTeamScore() { return mUpdateTeamScore ? mUpdateTeamScore : (mUpdateTeamScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.UpdateTeamScore")); }
-			ScriptFunction UpdateTime() { return mUpdateTime ? mUpdateTime : (mUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.UpdateTime")); }
-			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.FormatTime")); }
-			ScriptFunction ForceUpdate() { return mForceUpdate ? mForceUpdate : (mForceUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDStats.ForceUpdate")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrDaDStats.Initialize")()); }
+			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrDaDStats.Show")()); }
+			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrDaDStats.Hide")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDaDStats.Tick")()); }
+			ScriptFunction UpdateTeam() { mixin(MGF!("mUpdateTeam", "Function TribesGame.TrDaDStats.UpdateTeam")()); }
+			ScriptFunction UpdateTeamScore() { mixin(MGF!("mUpdateTeamScore", "Function TribesGame.TrDaDStats.UpdateTeamScore")()); }
+			ScriptFunction UpdateTime() { mixin(MGF!("mUpdateTime", "Function TribesGame.TrDaDStats.UpdateTime")()); }
+			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrDaDStats.FormatTime")()); }
+			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrDaDStats.ForceUpdate")()); }
 		}
 	}
 	struct DaDScoreInfo
@@ -45,42 +46,42 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrDaDStats.DaDScoreInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDaDStats.DaDScoreInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				int CoreHealthPct() { return *cast(int*)(cast(size_t)&this + 12); }
-				int GeneratorRemainingTime() { return *cast(int*)(cast(size_t)&this + 4); }
+				int CoreHealthPct() { mixin(MGPS!(int, 12)()); }
+				int GeneratorRemainingTime() { mixin(MGPS!(int, 4)()); }
 			}
-			bool bCapacitorCOnline() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x4) != 0; }
-			bool bCapacitorCOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x4; } return val; }
-			bool bCapacitorBOnline() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x2) != 0; }
-			bool bCapacitorBOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x2; } return val; }
-			bool bCapacitorAOnline() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bCapacitorAOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
-			bool bGeneratorOnline() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bGeneratorOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bCapacitorCOnline() { mixin(MGBPS!(8, 0x4)()); }
+			bool bCapacitorCOnline(bool val) { mixin(MSBPS!(8, 0x4)()); }
+			bool bCapacitorBOnline() { mixin(MGBPS!(8, 0x2)()); }
+			bool bCapacitorBOnline(bool val) { mixin(MSBPS!(8, 0x2)()); }
+			bool bCapacitorAOnline() { mixin(MGBPS!(8, 0x1)()); }
+			bool bCapacitorAOnline(bool val) { mixin(MSBPS!(8, 0x1)()); }
+			bool bGeneratorOnline() { mixin(MGBPS!(0, 0x1)()); }
+			bool bGeneratorOnline(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrDaDStats.DaDScoreInfo EnemyDaDScore() { return *cast(TrDaDStats.DaDScoreInfo*)(cast(size_t)cast(void*)this + 116); }
-			TrDaDStats.DaDScoreInfo FriendlyDaDScore() { return *cast(TrDaDStats.DaDScoreInfo*)(cast(size_t)cast(void*)this + 100); }
-			TrPlayerController TrPC() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 96); }
-			GfxTrHud m_MoviePlayer() { return *cast(GfxTrHud*)(cast(size_t)cast(void*)this + 92); }
-			int RoundNum() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int RoundScore() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
-			int TeamScore() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			int RemainingTime() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			int MyTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			TrDaDStats.DaDScoreInfo EnemyDaDScore() { mixin(MGPC!(TrDaDStats.DaDScoreInfo, 116)()); }
+			TrDaDStats.DaDScoreInfo FriendlyDaDScore() { mixin(MGPC!(TrDaDStats.DaDScoreInfo, 100)()); }
+			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 96)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 92)()); }
+			int RoundNum() { mixin(MGPC!(int, 88)()); }
+			int RoundScore() { mixin(MGPC!(int, 80)()); }
+			int TeamScore() { mixin(MGPC!(int, 72)()); }
+			int RemainingTime() { mixin(MGPC!(int, 64)()); }
+			int MyTeam() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bForcingUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x2) != 0; }
-		bool bForcingUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x2; } return val; }
-		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x1) != 0; }
-		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x1; } return val; }
+		bool bForcingUpdate() { mixin(MGBPC!(68, 0x2)()); }
+		bool bForcingUpdate(bool val) { mixin(MSBPC!(68, 0x2)()); }
+		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
+		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }
 	}
 final:
 	void Initialize(TrPlayerController PC, GfxTrHud MP)

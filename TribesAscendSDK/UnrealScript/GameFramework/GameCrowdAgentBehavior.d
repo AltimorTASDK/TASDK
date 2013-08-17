@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdAgentBehavior;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface GameCrowdAgentBehavior : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdAgentBehavior")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdAgentBehavior")()); }
 	private static __gshared GameCrowdAgentBehavior mDefaultProperties;
-	@property final static GameCrowdAgentBehavior DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdAgentBehavior)("GameCrowdAgentBehavior GameFramework.Default__GameCrowdAgentBehavior")); }
+	@property final static GameCrowdAgentBehavior DefaultProperties() { mixin(MGDPC!(GameCrowdAgentBehavior, "GameCrowdAgentBehavior GameFramework.Default__GameCrowdAgentBehavior")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,43 +37,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AllowBehaviorAt() { return mAllowBehaviorAt ? mAllowBehaviorAt : (mAllowBehaviorAt = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.AllowBehaviorAt")); }
-			ScriptFunction AllowThisDestination() { return mAllowThisDestination ? mAllowThisDestination : (mAllowThisDestination = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.AllowThisDestination")); }
-			ScriptFunction CanBeUsedBy() { return mCanBeUsedBy ? mCanBeUsedBy : (mCanBeUsedBy = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.CanBeUsedBy")); }
-			ScriptFunction GetDestinationActor() { return mGetDestinationActor ? mGetDestinationActor : (mGetDestinationActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.GetDestinationActor")); }
-			ScriptFunction GetBehaviorString() { return mGetBehaviorString ? mGetBehaviorString : (mGetBehaviorString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.GetBehaviorString")); }
-			ScriptFunction ShouldEndIdle() { return mShouldEndIdle ? mShouldEndIdle : (mShouldEndIdle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.ShouldEndIdle")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.Tick")); }
-			ScriptFunction FinishedTargetRotation() { return mFinishedTargetRotation ? mFinishedTargetRotation : (mFinishedTargetRotation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.FinishedTargetRotation")); }
-			ScriptFunction HandleMovement() { return mHandleMovement ? mHandleMovement : (mHandleMovement = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.HandleMovement")); }
-			ScriptFunction InitBehavior() { return mInitBehavior ? mInitBehavior : (mInitBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.InitBehavior")); }
-			ScriptFunction StopBehavior() { return mStopBehavior ? mStopBehavior : (mStopBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.StopBehavior")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.OnAnimEnd")); }
-			ScriptFunction ChangingDestination() { return mChangingDestination ? mChangingDestination : (mChangingDestination = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.ChangingDestination")); }
-			ScriptFunction ActivatedBy() { return mActivatedBy ? mActivatedBy : (mActivatedBy = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.ActivatedBy")); }
-			ScriptFunction PropagateViralBehaviorTo() { return mPropagateViralBehaviorTo ? mPropagateViralBehaviorTo : (mPropagateViralBehaviorTo = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentBehavior.PropagateViralBehaviorTo")); }
+			ScriptFunction AllowBehaviorAt() { mixin(MGF!("mAllowBehaviorAt", "Function GameFramework.GameCrowdAgentBehavior.AllowBehaviorAt")()); }
+			ScriptFunction AllowThisDestination() { mixin(MGF!("mAllowThisDestination", "Function GameFramework.GameCrowdAgentBehavior.AllowThisDestination")()); }
+			ScriptFunction CanBeUsedBy() { mixin(MGF!("mCanBeUsedBy", "Function GameFramework.GameCrowdAgentBehavior.CanBeUsedBy")()); }
+			ScriptFunction GetDestinationActor() { mixin(MGF!("mGetDestinationActor", "Function GameFramework.GameCrowdAgentBehavior.GetDestinationActor")()); }
+			ScriptFunction GetBehaviorString() { mixin(MGF!("mGetBehaviorString", "Function GameFramework.GameCrowdAgentBehavior.GetBehaviorString")()); }
+			ScriptFunction ShouldEndIdle() { mixin(MGF!("mShouldEndIdle", "Function GameFramework.GameCrowdAgentBehavior.ShouldEndIdle")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function GameFramework.GameCrowdAgentBehavior.Tick")()); }
+			ScriptFunction FinishedTargetRotation() { mixin(MGF!("mFinishedTargetRotation", "Function GameFramework.GameCrowdAgentBehavior.FinishedTargetRotation")()); }
+			ScriptFunction HandleMovement() { mixin(MGF!("mHandleMovement", "Function GameFramework.GameCrowdAgentBehavior.HandleMovement")()); }
+			ScriptFunction InitBehavior() { mixin(MGF!("mInitBehavior", "Function GameFramework.GameCrowdAgentBehavior.InitBehavior")()); }
+			ScriptFunction StopBehavior() { mixin(MGF!("mStopBehavior", "Function GameFramework.GameCrowdAgentBehavior.StopBehavior")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function GameFramework.GameCrowdAgentBehavior.OnAnimEnd")()); }
+			ScriptFunction ChangingDestination() { mixin(MGF!("mChangingDestination", "Function GameFramework.GameCrowdAgentBehavior.ChangingDestination")()); }
+			ScriptFunction ActivatedBy() { mixin(MGF!("mActivatedBy", "Function GameFramework.GameCrowdAgentBehavior.ActivatedBy")()); }
+			ScriptFunction PropagateViralBehaviorTo() { mixin(MGF!("mPropagateViralBehaviorTo", "Function GameFramework.GameCrowdAgentBehavior.PropagateViralBehaviorTo")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Actor ActionTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 64); }
-			float MaxPlayerDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			GameCrowdAgent MyAgent() { return *cast(GameCrowdAgent*)(cast(size_t)cast(void*)this + 80); }
-			float TimeToStopPropagatingViralBehavior() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			float DurationOfViralBehaviorPropagation() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
+			Actor ActionTarget() { mixin(MGPC!(Actor, 64)()); }
+			float MaxPlayerDistance() { mixin(MGPC!(float, 68)()); }
+			GameCrowdAgent MyAgent() { mixin(MGPC!(GameCrowdAgent, 80)()); }
+			float TimeToStopPropagatingViralBehavior() { mixin(MGPC!(float, 76)()); }
+			float DurationOfViralBehaviorPropagation() { mixin(MGPC!(float, 72)()); }
 		}
-		bool bIsPanicked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x10) != 0; }
-		bool bIsPanicked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x10; } return val; }
-		bool bPassOnIsViralBehaviorFlag() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x8) != 0; }
-		bool bPassOnIsViralBehaviorFlag(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x8; } return val; }
-		bool bIsViralBehavior() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x4) != 0; }
-		bool bIsViralBehavior(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x4; } return val; }
-		bool bFaceActionTargetFirst() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2) != 0; }
-		bool bFaceActionTargetFirst(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2; } return val; }
-		bool bIdleBehavior() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bIdleBehavior(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bIsPanicked() { mixin(MGBPC!(60, 0x10)()); }
+		bool bIsPanicked(bool val) { mixin(MSBPC!(60, 0x10)()); }
+		bool bPassOnIsViralBehaviorFlag() { mixin(MGBPC!(60, 0x8)()); }
+		bool bPassOnIsViralBehaviorFlag(bool val) { mixin(MSBPC!(60, 0x8)()); }
+		bool bIsViralBehavior() { mixin(MGBPC!(60, 0x4)()); }
+		bool bIsViralBehavior(bool val) { mixin(MSBPC!(60, 0x4)()); }
+		bool bFaceActionTargetFirst() { mixin(MGBPC!(60, 0x2)()); }
+		bool bFaceActionTargetFirst(bool val) { mixin(MSBPC!(60, 0x2)()); }
+		bool bIdleBehavior() { mixin(MGBPC!(60, 0x1)()); }
+		bool bIdleBehavior(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 final:
 	bool AllowBehaviorAt(GameCrowdDestination Destination)

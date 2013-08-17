@@ -1,20 +1,21 @@
 module UnrealScript.Engine.Client;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface Client : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Client")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Client")()); }
 	private static __gshared Client mDefaultProperties;
-	@property final static Client DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Client)("Client Engine.Default__Client")); }
+	@property final static Client DefaultProperties() { mixin(MGDPC!(Client, "Client Engine.Default__Client")()); }
 	@property final auto ref
 	{
-		float DisplayGamma() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-		float MinDesiredFrameRate() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
-		float InitialButtonRepeatDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-		float ButtonRepeatDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
+		float DisplayGamma() { mixin(MGPC!(float, 68)()); }
+		float MinDesiredFrameRate() { mixin(MGPC!(float, 64)()); }
+		float InitialButtonRepeatDelay() { mixin(MGPC!(float, 72)()); }
+		float ButtonRepeatDelay() { mixin(MGPC!(float, 76)()); }
 	}
 }

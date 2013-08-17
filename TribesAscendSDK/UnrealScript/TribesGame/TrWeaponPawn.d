@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrWeaponPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTWeaponPawn;
 import UnrealScript.Engine.SoundCue;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrWeaponPawn : UTWeaponPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrWeaponPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrWeaponPawn")()); }
 	private static __gshared TrWeaponPawn mDefaultProperties;
-	@property final static TrWeaponPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrWeaponPawn)("TrWeaponPawn TribesGame.Default__TrWeaponPawn")); }
+	@property final static TrWeaponPawn DefaultProperties() { mixin(MGDPC!(TrWeaponPawn, "TrWeaponPawn TribesGame.Default__TrWeaponPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,23 +24,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWeaponPawn.ReplicatedEvent")); }
-			ScriptFunction PlayReload() { return mPlayReload ? mPlayReload : (mPlayReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWeaponPawn.PlayReload")); }
-			ScriptFunction ProcessViewRotation() { return mProcessViewRotation ? mProcessViewRotation : (mProcessViewRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWeaponPawn.ProcessViewRotation")); }
-			ScriptFunction ClientPlayLoopSound() { return mClientPlayLoopSound ? mClientPlayLoopSound : (mClientPlayLoopSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWeaponPawn.ClientPlayLoopSound")); }
-			ScriptFunction PlayLoopingSound() { return mPlayLoopingSound ? mPlayLoopingSound : (mPlayLoopingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWeaponPawn.PlayLoopingSound")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrWeaponPawn.ReplicatedEvent")()); }
+			ScriptFunction PlayReload() { mixin(MGF!("mPlayReload", "Function TribesGame.TrWeaponPawn.PlayReload")()); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function TribesGame.TrWeaponPawn.ProcessViewRotation")()); }
+			ScriptFunction ClientPlayLoopSound() { mixin(MGF!("mClientPlayLoopSound", "Function TribesGame.TrWeaponPawn.ClientPlayLoopSound")()); }
+			ScriptFunction PlayLoopingSound() { mixin(MGF!("mPlayLoopingSound", "Function TribesGame.TrWeaponPawn.PlayLoopingSound")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float m_fCurrentAccuracy() { return *cast(float*)(cast(size_t)cast(void*)this + 1560); }
-			ubyte r_nFlashReload() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1564); }
-			SoundCue r_scFiringLoop() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1576); }
+			float m_fCurrentAccuracy() { mixin(MGPC!(float, 1560)()); }
+			ubyte r_nFlashReload() { mixin(MGPC!(ubyte, 1564)()); }
+			SoundCue r_scFiringLoop() { mixin(MGPC!(SoundCue, 1576)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FiringLoopAudio'!
 		}
-		bool r_bFiringLoopSound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1572) & 0x1) != 0; }
-		bool r_bFiringLoopSound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1572) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1572) &= ~0x1; } return val; }
+		bool r_bFiringLoopSound() { mixin(MGBPC!(1572, 0x1)()); }
+		bool r_bFiringLoopSound(bool val) { mixin(MSBPC!(1572, 0x1)()); }
 	}
 final:
 	void ReplicatedEvent(ScriptName VarName)
@@ -53,13 +55,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayReload, cast(void*)0, cast(void*)0);
 	}
-	void ProcessViewRotation(float DeltaTime, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
+	void ProcessViewRotation(float DeltaTime, ref Rotator out_ViewRotation, ref Rotator out_DeltaRot)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		*cast(Rotator*)&params[4] = *out_ViewRotation;
-		*cast(Rotator*)&params[16] = *out_DeltaRot;
+		*cast(Rotator*)&params[4] = out_ViewRotation;
+		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
 		*out_ViewRotation = *cast(Rotator*)&params[4];
 		*out_DeltaRot = *cast(Rotator*)&params[16];

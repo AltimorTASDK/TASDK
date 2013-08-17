@@ -1,6 +1,7 @@
 module UnrealScript.Engine.InterpTrackInstVisibility;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.InterpTrackInst;
 import UnrealScript.Engine.InterpTrackVisibility;
 
@@ -8,12 +9,12 @@ extern(C++) interface InterpTrackInstVisibility : InterpTrackInst
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstVisibility")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackInstVisibility")()); }
 	private static __gshared InterpTrackInstVisibility mDefaultProperties;
-	@property final static InterpTrackInstVisibility DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackInstVisibility)("InterpTrackInstVisibility Engine.Default__InterpTrackInstVisibility")); }
+	@property final static InterpTrackInstVisibility DefaultProperties() { mixin(MGDPC!(InterpTrackInstVisibility, "InterpTrackInstVisibility Engine.Default__InterpTrackInstVisibility")()); }
 	@property final auto ref
 	{
-		float LastUpdatePosition() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
-		InterpTrackVisibility.EVisibilityTrackAction Action() { return *cast(InterpTrackVisibility.EVisibilityTrackAction*)(cast(size_t)cast(void*)this + 60); }
+		float LastUpdatePosition() { mixin(MGPC!(float, 64)()); }
+		InterpTrackVisibility.EVisibilityTrackAction Action() { mixin(MGPC!(InterpTrackVisibility.EVisibilityTrackAction, 60)()); }
 	}
 }

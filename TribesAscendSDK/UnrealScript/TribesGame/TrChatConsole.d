@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrChatConsole;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrPlayerController;
@@ -11,9 +12,9 @@ extern(C++) interface TrChatConsole : UTConsole
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrChatConsole")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrChatConsole")()); }
 	private static __gshared TrChatConsole mDefaultProperties;
-	@property final static TrChatConsole DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrChatConsole)("TrChatConsole TribesGame.Default__TrChatConsole")); }
+	@property final static TrChatConsole DefaultProperties() { mixin(MGDPC!(TrChatConsole, "TrChatConsole TribesGame.Default__TrChatConsole")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,29 +32,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialized() { return mInitialized ? mInitialized : (mInitialized = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.Initialized")); }
-			ScriptFunction GetPlayerController() { return mGetPlayerController ? mGetPlayerController : (mGetPlayerController = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.GetPlayerController")); }
-			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.ConsoleCommand")); }
-			ScriptFunction StartTypingChat() { return mStartTypingChat ? mStartTypingChat : (mStartTypingChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.StartTypingChat")); }
-			ScriptFunction StartTyping() { return mStartTyping ? mStartTyping : (mStartTyping = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.StartTyping")); }
-			ScriptFunction IsSlashCommand() { return mIsSlashCommand ? mIsSlashCommand : (mIsSlashCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.IsSlashCommand")); }
-			ScriptFunction IsPlayerTell() { return mIsPlayerTell ? mIsPlayerTell : (mIsPlayerTell = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.IsPlayerTell")); }
-			ScriptFunction PostRender_Console() { return mPostRender_Console ? mPostRender_Console : (mPostRender_Console = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.PostRender_Console")); }
-			ScriptFunction InputKey() { return mInputKey ? mInputKey : (mInputKey = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.InputKey")); }
-			ScriptFunction AddOnlineFriendHelp() { return mAddOnlineFriendHelp ? mAddOnlineFriendHelp : (mAddOnlineFriendHelp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.AddOnlineFriendHelp")); }
+			ScriptFunction Initialized() { mixin(MGF!("mInitialized", "Function TribesGame.TrChatConsole.Initialized")()); }
+			ScriptFunction GetPlayerController() { mixin(MGF!("mGetPlayerController", "Function TribesGame.TrChatConsole.GetPlayerController")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function TribesGame.TrChatConsole.ConsoleCommand")()); }
+			ScriptFunction StartTypingChat() { mixin(MGF!("mStartTypingChat", "Function TribesGame.TrChatConsole.StartTypingChat")()); }
+			ScriptFunction StartTyping() { mixin(MGF!("mStartTyping", "Function TribesGame.TrChatConsole.StartTyping")()); }
+			ScriptFunction IsSlashCommand() { mixin(MGF!("mIsSlashCommand", "Function TribesGame.TrChatConsole.IsSlashCommand")()); }
+			ScriptFunction IsPlayerTell() { mixin(MGF!("mIsPlayerTell", "Function TribesGame.TrChatConsole.IsPlayerTell")()); }
+			ScriptFunction PostRender_Console() { mixin(MGF!("mPostRender_Console", "Function TribesGame.TrChatConsole.PostRender_Console")()); }
+			ScriptFunction InputKey() { mixin(MGF!("mInputKey", "Function TribesGame.TrChatConsole.InputKey")()); }
+			ScriptFunction AddOnlineFriendHelp() { mixin(MGF!("mAddOnlineFriendHelp", "Function TribesGame.TrChatConsole.AddOnlineFriendHelp")()); }
 		}
+	}
+	static struct Open
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrChatConsole.Open")()); }
+	}
+	static struct Typing
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrChatConsole.Typing")()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Console.AutoCompleteCommand) TribesAutoCompleteList() { return *cast(ScriptArray!(Console.AutoCompleteCommand)*)(cast(size_t)cast(void*)this + 468); }
-		TrPlayerController m_TrPC() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 536); }
-		float m_fTypingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 532); }
-		ScriptString EscHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 520); }
-		ScriptString TabHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 508); }
-		ScriptString TellHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 496); }
-		ScriptString SlashHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 484); }
-		int LastFriendCount() { return *cast(int*)(cast(size_t)cast(void*)this + 480); }
-		ScriptString ChannelStr() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 456); }
+		ScriptArray!(Console.AutoCompleteCommand) TribesAutoCompleteList() { mixin(MGPC!(ScriptArray!(Console.AutoCompleteCommand), 468)()); }
+		TrPlayerController m_TrPC() { mixin(MGPC!(TrPlayerController, 536)()); }
+		float m_fTypingTime() { mixin(MGPC!(float, 532)()); }
+		ScriptString EscHelp() { mixin(MGPC!(ScriptString, 520)()); }
+		ScriptString TabHelp() { mixin(MGPC!(ScriptString, 508)()); }
+		ScriptString TellHelp() { mixin(MGPC!(ScriptString, 496)()); }
+		ScriptString SlashHelp() { mixin(MGPC!(ScriptString, 484)()); }
+		int LastFriendCount() { mixin(MGPC!(int, 480)()); }
+		ScriptString ChannelStr() { mixin(MGPC!(ScriptString, 456)()); }
 	}
 final:
 	void Initialized()

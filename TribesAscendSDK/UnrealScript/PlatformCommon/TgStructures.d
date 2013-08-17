@@ -1,15 +1,16 @@
 module UnrealScript.PlatformCommon.TgStructures;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TgStructures : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgStructures")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class PlatformCommon.TgStructures")()); }
 	private static __gshared TgStructures mDefaultProperties;
-	@property final static TgStructures DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TgStructures)("TgStructures PlatformCommon.Default__TgStructures")); }
+	@property final static TgStructures DefaultProperties() { mixin(MGDPC!(TgStructures, "TgStructures PlatformCommon.Default__TgStructures")()); }
 	enum CMTargetType : ubyte
 	{
 		CMTT_Pawn = 0,
@@ -21,18 +22,18 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct PlatformCommon.TgStructures.CombatMessageInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct PlatformCommon.TgStructures.CombatMessageInfo")()); }
 		@property final auto ref
 		{
-			int nSourceItemId() { return *cast(int*)(cast(size_t)&this + 32); }
-			int nAmount2() { return *cast(int*)(cast(size_t)&this + 28); }
-			int nAmount1() { return *cast(int*)(cast(size_t)&this + 24); }
-			TgStructures.CMTargetType eTargetType() { return *cast(TgStructures.CMTargetType*)(cast(size_t)&this + 20); }
-			int nTargetId() { return *cast(int*)(cast(size_t)&this + 16); }
-			int nSourceOwnerId() { return *cast(int*)(cast(size_t)&this + 12); }
-			TgStructures.CMTargetType eSourceType() { return *cast(TgStructures.CMTargetType*)(cast(size_t)&this + 8); }
-			int nSourceId() { return *cast(int*)(cast(size_t)&this + 4); }
-			int nMsgId() { return *cast(int*)(cast(size_t)&this + 0); }
+			int nSourceItemId() { mixin(MGPS!(int, 32)()); }
+			int nAmount2() { mixin(MGPS!(int, 28)()); }
+			int nAmount1() { mixin(MGPS!(int, 24)()); }
+			TgStructures.CMTargetType eTargetType() { mixin(MGPS!(TgStructures.CMTargetType, 20)()); }
+			int nTargetId() { mixin(MGPS!(int, 16)()); }
+			int nSourceOwnerId() { mixin(MGPS!(int, 12)()); }
+			TgStructures.CMTargetType eSourceType() { mixin(MGPS!(TgStructures.CMTargetType, 8)()); }
+			int nSourceId() { mixin(MGPS!(int, 4)()); }
+			int nMsgId() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 }

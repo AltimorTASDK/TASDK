@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKProfileSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Engine.OnlineProfileSettings;
 
@@ -8,9 +9,9 @@ extern(C++) interface UDKProfileSettings : OnlineProfileSettings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKProfileSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKProfileSettings")()); }
 	private static __gshared UDKProfileSettings mDefaultProperties;
-	@property final static UDKProfileSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKProfileSettings)("UDKProfileSettings UDKBase.Default__UDKProfileSettings")); }
+	@property final static UDKProfileSettings DefaultProperties() { mixin(MGDPC!(UDKProfileSettings, "UDKProfileSettings UDKBase.Default__UDKProfileSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ResetToDefault() { return mResetToDefault ? mResetToDefault : (mResetToDefault = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProfileSettings.ResetToDefault")); }
-			ScriptFunction ResetKeysToDefault() { return mResetKeysToDefault ? mResetKeysToDefault : (mResetKeysToDefault = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProfileSettings.ResetKeysToDefault")); }
+			ScriptFunction ResetToDefault() { mixin(MGF!("mResetToDefault", "Function UDKBase.UDKProfileSettings.ResetToDefault")()); }
+			ScriptFunction ResetKeysToDefault() { mixin(MGF!("mResetKeysToDefault", "Function UDKBase.UDKProfileSettings.ResetKeysToDefault")()); }
 		}
 	}
 final:

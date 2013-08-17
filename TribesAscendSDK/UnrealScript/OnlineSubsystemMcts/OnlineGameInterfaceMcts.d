@@ -1,6 +1,7 @@
 module UnrealScript.OnlineSubsystemMcts.OnlineGameInterfaceMcts;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.OnlineSubsystemMcts.OnlineVoiceInterfaceMcts;
 import UnrealScript.OnlineSubsystemMcts.MctsOnlineSettings;
 import UnrealScript.Engine.OnlineSubsystem;
@@ -12,9 +13,9 @@ extern(C++) interface OnlineGameInterfaceMcts : OnlineGameInterfaceImpl
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class OnlineSubsystemMcts.OnlineGameInterfaceMcts")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class OnlineSubsystemMcts.OnlineGameInterfaceMcts")()); }
 	private static __gshared OnlineGameInterfaceMcts mDefaultProperties;
-	@property final static OnlineGameInterfaceMcts DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineGameInterfaceMcts)("OnlineGameInterfaceMcts OnlineSubsystemMcts.Default__OnlineGameInterfaceMcts")); }
+	@property final static OnlineGameInterfaceMcts DefaultProperties() { mixin(MGDPC!(OnlineGameInterfaceMcts, "OnlineGameInterfaceMcts OnlineSubsystemMcts.Default__OnlineGameInterfaceMcts")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -47,31 +48,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnGameInviteAccepted() { return mOnGameInviteAccepted ? mOnGameInviteAccepted : (mOnGameInviteAccepted = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.OnGameInviteAccepted")); }
-			ScriptFunction OnRegisterPlayerComplete() { return mOnRegisterPlayerComplete ? mOnRegisterPlayerComplete : (mOnRegisterPlayerComplete = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.OnRegisterPlayerComplete")); }
-			ScriptFunction OnUnregisterPlayerComplete() { return mOnUnregisterPlayerComplete ? mOnUnregisterPlayerComplete : (mOnUnregisterPlayerComplete = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.OnUnregisterPlayerComplete")); }
-			ScriptFunction SealMatch() { return mSealMatch ? mSealMatch : (mSealMatch = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.SealMatch")); }
-			ScriptFunction HoldInvites() { return mHoldInvites ? mHoldInvites : (mHoldInvites = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.HoldInvites")); }
-			ScriptFunction EndGame() { return mEndGame ? mEndGame : (mEndGame = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.EndGame")); }
-			ScriptFunction MatchQueueJoin() { return mMatchQueueJoin ? mMatchQueueJoin : (mMatchQueueJoin = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchQueueJoin")); }
-			ScriptFunction MatchQueueLeave() { return mMatchQueueLeave ? mMatchQueueLeave : (mMatchQueueLeave = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchQueueLeave")); }
-			ScriptFunction MatchChooseClass() { return mMatchChooseClass ? mMatchChooseClass : (mMatchChooseClass = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchChooseClass")); }
-			ScriptFunction MatchChooseSkin() { return mMatchChooseSkin ? mMatchChooseSkin : (mMatchChooseSkin = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchChooseSkin")); }
-			ScriptFunction MatchAcceptInvite() { return mMatchAcceptInvite ? mMatchAcceptInvite : (mMatchAcceptInvite = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchAcceptInvite")); }
-			ScriptFunction MatchLockIn() { return mMatchLockIn ? mMatchLockIn : (mMatchLockIn = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchLockIn")); }
-			ScriptFunction MatchLobbyEquipItems() { return mMatchLobbyEquipItems ? mMatchLobbyEquipItems : (mMatchLobbyEquipItems = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchLobbyEquipItems")); }
-			ScriptFunction UpdateOnlineGame() { return mUpdateOnlineGame ? mUpdateOnlineGame : (mUpdateOnlineGame = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.UpdateOnlineGame")); }
-			ScriptFunction GetGameSettings() { return mGetGameSettings ? mGetGameSettings : (mGetGameSettings = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.GetGameSettings")); }
-			ScriptFunction AddGameInviteAcceptedDelegate() { return mAddGameInviteAcceptedDelegate ? mAddGameInviteAcceptedDelegate : (mAddGameInviteAcceptedDelegate = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AddGameInviteAcceptedDelegate")); }
-			ScriptFunction ClearGameInviteAcceptedDelegate() { return mClearGameInviteAcceptedDelegate ? mClearGameInviteAcceptedDelegate : (mClearGameInviteAcceptedDelegate = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.ClearGameInviteAcceptedDelegate")); }
-			ScriptFunction AcceptGameInvite() { return mAcceptGameInvite ? mAcceptGameInvite : (mAcceptGameInvite = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AcceptGameInvite")); }
-			ScriptFunction RegisterPlayer() { return mRegisterPlayer ? mRegisterPlayer : (mRegisterPlayer = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.RegisterPlayer")); }
-			ScriptFunction AddRegisterPlayerCompleteDelegate() { return mAddRegisterPlayerCompleteDelegate ? mAddRegisterPlayerCompleteDelegate : (mAddRegisterPlayerCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AddRegisterPlayerCompleteDelegate")); }
-			ScriptFunction ClearRegisterPlayerCompleteDelegate() { return mClearRegisterPlayerCompleteDelegate ? mClearRegisterPlayerCompleteDelegate : (mClearRegisterPlayerCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.ClearRegisterPlayerCompleteDelegate")); }
-			ScriptFunction UnregisterPlayer() { return mUnregisterPlayer ? mUnregisterPlayer : (mUnregisterPlayer = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.UnregisterPlayer")); }
-			ScriptFunction AddUnregisterPlayerCompleteDelegate() { return mAddUnregisterPlayerCompleteDelegate ? mAddUnregisterPlayerCompleteDelegate : (mAddUnregisterPlayerCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AddUnregisterPlayerCompleteDelegate")); }
-			ScriptFunction ClearUnregisterPlayerCompleteDelegate() { return mClearUnregisterPlayerCompleteDelegate ? mClearUnregisterPlayerCompleteDelegate : (mClearUnregisterPlayerCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.ClearUnregisterPlayerCompleteDelegate")); }
-			ScriptFunction QueryNonAdvertisedData() { return mQueryNonAdvertisedData ? mQueryNonAdvertisedData : (mQueryNonAdvertisedData = ScriptObject.Find!(ScriptFunction)("Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.QueryNonAdvertisedData")); }
+			ScriptFunction OnGameInviteAccepted() { mixin(MGF!("mOnGameInviteAccepted", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.OnGameInviteAccepted")()); }
+			ScriptFunction OnRegisterPlayerComplete() { mixin(MGF!("mOnRegisterPlayerComplete", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.OnRegisterPlayerComplete")()); }
+			ScriptFunction OnUnregisterPlayerComplete() { mixin(MGF!("mOnUnregisterPlayerComplete", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.OnUnregisterPlayerComplete")()); }
+			ScriptFunction SealMatch() { mixin(MGF!("mSealMatch", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.SealMatch")()); }
+			ScriptFunction HoldInvites() { mixin(MGF!("mHoldInvites", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.HoldInvites")()); }
+			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.EndGame")()); }
+			ScriptFunction MatchQueueJoin() { mixin(MGF!("mMatchQueueJoin", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchQueueJoin")()); }
+			ScriptFunction MatchQueueLeave() { mixin(MGF!("mMatchQueueLeave", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchQueueLeave")()); }
+			ScriptFunction MatchChooseClass() { mixin(MGF!("mMatchChooseClass", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchChooseClass")()); }
+			ScriptFunction MatchChooseSkin() { mixin(MGF!("mMatchChooseSkin", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchChooseSkin")()); }
+			ScriptFunction MatchAcceptInvite() { mixin(MGF!("mMatchAcceptInvite", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchAcceptInvite")()); }
+			ScriptFunction MatchLockIn() { mixin(MGF!("mMatchLockIn", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchLockIn")()); }
+			ScriptFunction MatchLobbyEquipItems() { mixin(MGF!("mMatchLobbyEquipItems", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.MatchLobbyEquipItems")()); }
+			ScriptFunction UpdateOnlineGame() { mixin(MGF!("mUpdateOnlineGame", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.UpdateOnlineGame")()); }
+			ScriptFunction GetGameSettings() { mixin(MGF!("mGetGameSettings", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.GetGameSettings")()); }
+			ScriptFunction AddGameInviteAcceptedDelegate() { mixin(MGF!("mAddGameInviteAcceptedDelegate", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AddGameInviteAcceptedDelegate")()); }
+			ScriptFunction ClearGameInviteAcceptedDelegate() { mixin(MGF!("mClearGameInviteAcceptedDelegate", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.ClearGameInviteAcceptedDelegate")()); }
+			ScriptFunction AcceptGameInvite() { mixin(MGF!("mAcceptGameInvite", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AcceptGameInvite")()); }
+			ScriptFunction RegisterPlayer() { mixin(MGF!("mRegisterPlayer", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.RegisterPlayer")()); }
+			ScriptFunction AddRegisterPlayerCompleteDelegate() { mixin(MGF!("mAddRegisterPlayerCompleteDelegate", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AddRegisterPlayerCompleteDelegate")()); }
+			ScriptFunction ClearRegisterPlayerCompleteDelegate() { mixin(MGF!("mClearRegisterPlayerCompleteDelegate", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.ClearRegisterPlayerCompleteDelegate")()); }
+			ScriptFunction UnregisterPlayer() { mixin(MGF!("mUnregisterPlayer", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.UnregisterPlayer")()); }
+			ScriptFunction AddUnregisterPlayerCompleteDelegate() { mixin(MGF!("mAddUnregisterPlayerCompleteDelegate", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.AddUnregisterPlayerCompleteDelegate")()); }
+			ScriptFunction ClearUnregisterPlayerCompleteDelegate() { mixin(MGF!("mClearUnregisterPlayerCompleteDelegate", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.ClearUnregisterPlayerCompleteDelegate")()); }
+			ScriptFunction QueryNonAdvertisedData() { mixin(MGF!("mQueryNonAdvertisedData", "Function OnlineSubsystemMcts.OnlineGameInterfaceMcts.QueryNonAdvertisedData")()); }
 		}
 	}
 	enum EMctsMatchmakingType : ubyte
@@ -85,29 +86,32 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) GameInviteAcceptedDelegates() { return *cast(ScriptArray!(
+void*) GameInviteAcceptedDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 444); }
+void*), 444)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) RegisterPlayerCompleteDelegates() { return *cast(ScriptArray!(
+void*) RegisterPlayerCompleteDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 460); }
+void*), 460)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) UnregisterPlayerCompleteDelegates() { return *cast(ScriptArray!(
+void*) UnregisterPlayerCompleteDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 472); }
-		OnlineGameSearch InviteGameSearch() { return *cast(OnlineGameSearch*)(cast(size_t)cast(void*)this + 456); }
-		OnlineVoiceInterfaceMcts MctsVoiceInt() { return *cast(OnlineVoiceInterfaceMcts*)(cast(size_t)cast(void*)this + 440); }
-		MctsOnlineSettings MctsSettings() { return *cast(MctsOnlineSettings*)(cast(size_t)cast(void*)this + 436); }
+void*), 472)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUnregisterPlayerComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnRegisterPlayerComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnGameInviteAccepted__Delegate'!
+		OnlineGameSearch InviteGameSearch() { mixin(MGPC!(OnlineGameSearch, 456)()); }
+		OnlineVoiceInterfaceMcts MctsVoiceInt() { mixin(MGPC!(OnlineVoiceInterfaceMcts, 440)()); }
+		MctsOnlineSettings MctsSettings() { mixin(MGPC!(MctsOnlineSettings, 436)()); }
 	}
 final:
-	void OnGameInviteAccepted(OnlineGameSearch.OnlineGameSearchResult* InviteResult)
+	void OnGameInviteAccepted(ref const OnlineGameSearch.OnlineGameSearchResult InviteResult)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = *InviteResult;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = InviteResult;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameInviteAccepted, params.ptr, cast(void*)0);
 		*InviteResult = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
 	}

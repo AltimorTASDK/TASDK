@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIPropertyDataProvider;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.Property;
 import UnrealScript.Engine.UIRoot;
 import UnrealScript.Engine.UIDataProvider;
@@ -9,9 +10,9 @@ extern(C++) interface UIPropertyDataProvider : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIPropertyDataProvider")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIPropertyDataProvider")()); }
 	private static __gshared UIPropertyDataProvider mDefaultProperties;
-	@property final static UIPropertyDataProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIPropertyDataProvider)("UIPropertyDataProvider Engine.Default__UIPropertyDataProvider")); }
+	@property final static UIPropertyDataProvider DefaultProperties() { mixin(MGDPC!(UIPropertyDataProvider, "UIPropertyDataProvider Engine.Default__UIPropertyDataProvider")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +22,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanSupportComplexPropertyType() { return mCanSupportComplexPropertyType ? mCanSupportComplexPropertyType : (mCanSupportComplexPropertyType = ScriptObject.Find!(ScriptFunction)("Function Engine.UIPropertyDataProvider.CanSupportComplexPropertyType")); }
-			ScriptFunction GetCustomPropertyValue() { return mGetCustomPropertyValue ? mGetCustomPropertyValue : (mGetCustomPropertyValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIPropertyDataProvider.GetCustomPropertyValue")); }
+			ScriptFunction CanSupportComplexPropertyType() { mixin(MGF!("mCanSupportComplexPropertyType", "Function Engine.UIPropertyDataProvider.CanSupportComplexPropertyType")()); }
+			ScriptFunction GetCustomPropertyValue() { mixin(MGF!("mGetCustomPropertyValue", "Function Engine.UIPropertyDataProvider.GetCustomPropertyValue")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(ScriptClass) ComplexPropertyTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 88); }
+	@property final auto ref
+	{
+		ScriptArray!(ScriptClass) ComplexPropertyTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 88)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CanSupportComplexPropertyType__Delegate'!
+	}
 final:
 	bool CanSupportComplexPropertyType(Property UnsupportedProperty)
 	{
@@ -35,11 +40,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanSupportComplexPropertyType, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool GetCustomPropertyValue(UIRoot.UIProviderScriptFieldValue* PropertyValue, int ArrayIndex)
+	bool GetCustomPropertyValue(ref UIRoot.UIProviderScriptFieldValue PropertyValue, int ArrayIndex)
 	{
 		ubyte params[92];
 		params[] = 0;
-		*cast(UIRoot.UIProviderScriptFieldValue*)params.ptr = *PropertyValue;
+		*cast(UIRoot.UIProviderScriptFieldValue*)params.ptr = PropertyValue;
 		*cast(int*)&params[84] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCustomPropertyValue, params.ptr, cast(void*)0);
 		*PropertyValue = *cast(UIRoot.UIProviderScriptFieldValue*)params.ptr;

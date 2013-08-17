@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNodeSynch;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface AnimNodeSynch : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSynch")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeSynch")()); }
 	private static __gshared AnimNodeSynch mDefaultProperties;
-	@property final static AnimNodeSynch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeSynch)("AnimNodeSynch Engine.Default__AnimNodeSynch")); }
+	@property final static AnimNodeSynch DefaultProperties() { mixin(MGDPC!(AnimNodeSynch, "AnimNodeSynch Engine.Default__AnimNodeSynch")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,12 +25,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddNodeToGroup() { return mAddNodeToGroup ? mAddNodeToGroup : (mAddNodeToGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSynch.AddNodeToGroup")); }
-			ScriptFunction RemoveNodeFromGroup() { return mRemoveNodeFromGroup ? mRemoveNodeFromGroup : (mRemoveNodeFromGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSynch.RemoveNodeFromGroup")); }
-			ScriptFunction GetMasterNodeOfGroup() { return mGetMasterNodeOfGroup ? mGetMasterNodeOfGroup : (mGetMasterNodeOfGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSynch.GetMasterNodeOfGroup")); }
-			ScriptFunction ForceRelativePosition() { return mForceRelativePosition ? mForceRelativePosition : (mForceRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSynch.ForceRelativePosition")); }
-			ScriptFunction GetRelativePosition() { return mGetRelativePosition ? mGetRelativePosition : (mGetRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSynch.GetRelativePosition")); }
-			ScriptFunction SetGroupRateScale() { return mSetGroupRateScale ? mSetGroupRateScale : (mSetGroupRateScale = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSynch.SetGroupRateScale")); }
+			ScriptFunction AddNodeToGroup() { mixin(MGF!("mAddNodeToGroup", "Function Engine.AnimNodeSynch.AddNodeToGroup")()); }
+			ScriptFunction RemoveNodeFromGroup() { mixin(MGF!("mRemoveNodeFromGroup", "Function Engine.AnimNodeSynch.RemoveNodeFromGroup")()); }
+			ScriptFunction GetMasterNodeOfGroup() { mixin(MGF!("mGetMasterNodeOfGroup", "Function Engine.AnimNodeSynch.GetMasterNodeOfGroup")()); }
+			ScriptFunction ForceRelativePosition() { mixin(MGF!("mForceRelativePosition", "Function Engine.AnimNodeSynch.ForceRelativePosition")()); }
+			ScriptFunction GetRelativePosition() { mixin(MGF!("mGetRelativePosition", "Function Engine.AnimNodeSynch.GetRelativePosition")()); }
+			ScriptFunction SetGroupRateScale() { mixin(MGF!("mSetGroupRateScale", "Function Engine.AnimNodeSynch.SetGroupRateScale")()); }
 		}
 	}
 	struct SynchGroup
@@ -37,21 +38,21 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeSynch.SynchGroup")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeSynch.SynchGroup")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(AnimNodeSequence) SeqNodes() { return *cast(ScriptArray!(AnimNodeSequence)*)(cast(size_t)&this + 0); }
-				float RateScale() { return *cast(float*)(cast(size_t)&this + 28); }
-				ScriptName GroupName() { return *cast(ScriptName*)(cast(size_t)&this + 16); }
-				AnimNodeSequence MasterNode() { return *cast(AnimNodeSequence*)(cast(size_t)&this + 12); }
+				ScriptArray!(AnimNodeSequence) SeqNodes() { mixin(MGPS!(ScriptArray!(AnimNodeSequence), 0)()); }
+				float RateScale() { mixin(MGPS!(float, 28)()); }
+				ScriptName GroupName() { mixin(MGPS!(ScriptName, 16)()); }
+				AnimNodeSequence MasterNode() { mixin(MGPS!(AnimNodeSequence, 12)()); }
 			}
-			bool bFireSlaveNotifies() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
-			bool bFireSlaveNotifies(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
+			bool bFireSlaveNotifies() { mixin(MGBPS!(24, 0x1)()); }
+			bool bFireSlaveNotifies(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(AnimNodeSynch.SynchGroup) Groups() { return *cast(ScriptArray!(AnimNodeSynch.SynchGroup)*)(cast(size_t)cast(void*)this + 244); }
+	@property final auto ref ScriptArray!(AnimNodeSynch.SynchGroup) Groups() { mixin(MGPC!(ScriptArray!(AnimNodeSynch.SynchGroup), 244)()); }
 final:
 	void AddNodeToGroup(AnimNodeSequence SeqNode, ScriptName GroupName)
 	{

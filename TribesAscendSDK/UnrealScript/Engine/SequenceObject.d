@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SequenceObject;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.WorldInfo;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Sequence;
@@ -9,9 +10,9 @@ extern(C++) interface SequenceObject : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceObject")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SequenceObject")()); }
 	private static __gshared SequenceObject mDefaultProperties;
-	@property final static SequenceObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SequenceObject)("SequenceObject Engine.Default__SequenceObject")); }
+	@property final static SequenceObject DefaultProperties() { mixin(MGDPC!(SequenceObject, "SequenceObject Engine.Default__SequenceObject")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,39 +25,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.GetObjClassVersion")); }
-			ScriptFunction ScriptLog() { return mScriptLog ? mScriptLog : (mScriptLog = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.ScriptLog")); }
-			ScriptFunction GetWorldInfo() { return mGetWorldInfo ? mGetWorldInfo : (mGetWorldInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.GetWorldInfo")); }
-			ScriptFunction IsValidLevelSequenceObject() { return mIsValidLevelSequenceObject ? mIsValidLevelSequenceObject : (mIsValidLevelSequenceObject = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.IsValidLevelSequenceObject")); }
-			ScriptFunction IsPastingIntoLevelSequenceAllowed() { return mIsPastingIntoLevelSequenceAllowed ? mIsPastingIntoLevelSequenceAllowed : (mIsPastingIntoLevelSequenceAllowed = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.IsPastingIntoLevelSequenceAllowed")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SequenceObject.GetObjClassVersion")()); }
+			ScriptFunction ScriptLog() { mixin(MGF!("mScriptLog", "Function Engine.SequenceObject.ScriptLog")()); }
+			ScriptFunction GetWorldInfo() { mixin(MGF!("mGetWorldInfo", "Function Engine.SequenceObject.GetWorldInfo")()); }
+			ScriptFunction IsValidLevelSequenceObject() { mixin(MGF!("mIsValidLevelSequenceObject", "Function Engine.SequenceObject.IsValidLevelSequenceObject")()); }
+			ScriptFunction IsPastingIntoLevelSequenceAllowed() { mixin(MGF!("mIsPastingIntoLevelSequenceAllowed", "Function Engine.SequenceObject.IsPastingIntoLevelSequenceAllowed")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int ObjInstanceVersion() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
-			ScriptArray!(ScriptString) ObjRemoveInProject() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 100); }
-			int DrawHeight() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-			int DrawWidth() { return *cast(int*)(cast(size_t)cast(void*)this + 132); }
-			ScriptString ObjComment() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 116); }
-			UObject.Color ObjColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 112); }
-			ScriptString ObjCategory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 88); }
-			ScriptString ObjName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 76); }
-			int ObjPosY() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			int ObjPosX() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-			Sequence ParentSequence() { return *cast(Sequence*)(cast(size_t)cast(void*)this + 64); }
+			int ObjInstanceVersion() { mixin(MGPC!(int, 60)()); }
+			ScriptArray!(ScriptString) ObjRemoveInProject() { mixin(MGPC!(ScriptArray!(ScriptString), 100)()); }
+			int DrawHeight() { mixin(MGPC!(int, 136)()); }
+			int DrawWidth() { mixin(MGPC!(int, 132)()); }
+			ScriptString ObjComment() { mixin(MGPC!(ScriptString, 116)()); }
+			UObject.Color ObjColor() { mixin(MGPC!(UObject.Color, 112)()); }
+			ScriptString ObjCategory() { mixin(MGPC!(ScriptString, 88)()); }
+			ScriptString ObjName() { mixin(MGPC!(ScriptString, 76)()); }
+			int ObjPosY() { mixin(MGPC!(int, 72)()); }
+			int ObjPosX() { mixin(MGPC!(int, 68)()); }
+			Sequence ParentSequence() { mixin(MGPC!(Sequence, 64)()); }
 		}
-		bool bSuppressAutoComment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x10) != 0; }
-		bool bSuppressAutoComment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x10; } return val; }
-		bool bOutputObjCommentToScreen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x8) != 0; }
-		bool bOutputObjCommentToScreen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x8; } return val; }
-		bool bDrawLast() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x4) != 0; }
-		bool bDrawLast(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x4; } return val; }
-		bool bDrawFirst() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x2) != 0; }
-		bool bDrawFirst(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x2; } return val; }
-		bool bDeletable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1) != 0; }
-		bool bDeletable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1; } return val; }
+		bool bSuppressAutoComment() { mixin(MGBPC!(128, 0x10)()); }
+		bool bSuppressAutoComment(bool val) { mixin(MSBPC!(128, 0x10)()); }
+		bool bOutputObjCommentToScreen() { mixin(MGBPC!(128, 0x8)()); }
+		bool bOutputObjCommentToScreen(bool val) { mixin(MSBPC!(128, 0x8)()); }
+		bool bDrawLast() { mixin(MGBPC!(128, 0x4)()); }
+		bool bDrawLast(bool val) { mixin(MSBPC!(128, 0x4)()); }
+		bool bDrawFirst() { mixin(MGBPC!(128, 0x2)()); }
+		bool bDrawFirst(bool val) { mixin(MSBPC!(128, 0x2)()); }
+		bool bDeletable() { mixin(MGBPC!(128, 0x1)()); }
+		bool bDeletable(bool val) { mixin(MSBPC!(128, 0x1)()); }
 	}
 final:
 	static int GetObjClassVersion()

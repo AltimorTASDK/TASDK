@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PrefabSequence;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Sequence;
 import UnrealScript.Engine.PrefabInstance;
 
@@ -8,9 +9,9 @@ extern(C++) interface PrefabSequence : Sequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrefabSequence")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PrefabSequence")()); }
 	private static __gshared PrefabSequence mDefaultProperties;
-	@property final static PrefabSequence DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PrefabSequence)("PrefabSequence Engine.Default__PrefabSequence")); }
+	@property final static PrefabSequence DefaultProperties() { mixin(MGDPC!(PrefabSequence, "PrefabSequence Engine.Default__PrefabSequence")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetOwnerPrefab() { return mSetOwnerPrefab ? mSetOwnerPrefab : (mSetOwnerPrefab = ScriptObject.Find!(ScriptFunction)("Function Engine.PrefabSequence.SetOwnerPrefab")); }
-			ScriptFunction GetOwnerPrefab() { return mGetOwnerPrefab ? mGetOwnerPrefab : (mGetOwnerPrefab = ScriptObject.Find!(ScriptFunction)("Function Engine.PrefabSequence.GetOwnerPrefab")); }
+			ScriptFunction SetOwnerPrefab() { mixin(MGF!("mSetOwnerPrefab", "Function Engine.PrefabSequence.SetOwnerPrefab")()); }
+			ScriptFunction GetOwnerPrefab() { mixin(MGF!("mGetOwnerPrefab", "Function Engine.PrefabSequence.GetOwnerPrefab")()); }
 		}
 	}
-	@property final auto ref PrefabInstance OwnerPrefab() { return *cast(PrefabInstance*)(cast(size_t)cast(void*)this + 300); }
+	@property final auto ref PrefabInstance OwnerPrefab() { mixin(MGPC!(PrefabInstance, 300)()); }
 final:
 	void SetOwnerPrefab(PrefabInstance InOwner)
 	{

@@ -1,13 +1,14 @@
 module UnrealScript.Engine.MaterialExpressionCameraVector;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionCameraVector : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionCameraVector")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionCameraVector")()); }
 	private static __gshared MaterialExpressionCameraVector mDefaultProperties;
-	@property final static MaterialExpressionCameraVector DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionCameraVector)("MaterialExpressionCameraVector Engine.Default__MaterialExpressionCameraVector")); }
+	@property final static MaterialExpressionCameraVector DefaultProperties() { mixin(MGDPC!(MaterialExpressionCameraVector, "MaterialExpressionCameraVector Engine.Default__MaterialExpressionCameraVector")()); }
 }

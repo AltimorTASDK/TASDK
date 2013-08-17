@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SequenceFrame;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceObject;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
@@ -10,26 +11,26 @@ extern(C++) interface SequenceFrame : SequenceObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceFrame")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SequenceFrame")()); }
 	private static __gshared SequenceFrame mDefaultProperties;
-	@property final static SequenceFrame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SequenceFrame)("SequenceFrame Engine.Default__SequenceFrame")); }
+	@property final static SequenceFrame DefaultProperties() { mixin(MGDPC!(SequenceFrame, "SequenceFrame Engine.Default__SequenceFrame")()); }
 	@property final
 	{
 		auto ref
 		{
-			Material FillMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 168); }
-			Texture2D FillTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 164); }
-			UObject.Color FillColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 160); }
-			UObject.Color BorderColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 156); }
-			int BorderWidth() { return *cast(int*)(cast(size_t)cast(void*)this + 148); }
-			int SizeY() { return *cast(int*)(cast(size_t)cast(void*)this + 144); }
-			int SizeX() { return *cast(int*)(cast(size_t)cast(void*)this + 140); }
+			Material FillMaterial() { mixin(MGPC!(Material, 168)()); }
+			Texture2D FillTexture() { mixin(MGPC!(Texture2D, 164)()); }
+			UObject.Color FillColor() { mixin(MGPC!(UObject.Color, 160)()); }
+			UObject.Color BorderColor() { mixin(MGPC!(UObject.Color, 156)()); }
+			int BorderWidth() { mixin(MGPC!(int, 148)()); }
+			int SizeY() { mixin(MGPC!(int, 144)()); }
+			int SizeX() { mixin(MGPC!(int, 140)()); }
 		}
-		bool bTileFill() { return (*cast(uint*)(cast(size_t)cast(void*)this + 152) & 0x4) != 0; }
-		bool bTileFill(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 152) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 152) &= ~0x4; } return val; }
-		bool bFilled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 152) & 0x2) != 0; }
-		bool bFilled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 152) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 152) &= ~0x2; } return val; }
-		bool bDrawBox() { return (*cast(uint*)(cast(size_t)cast(void*)this + 152) & 0x1) != 0; }
-		bool bDrawBox(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 152) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 152) &= ~0x1; } return val; }
+		bool bTileFill() { mixin(MGBPC!(152, 0x4)()); }
+		bool bTileFill(bool val) { mixin(MSBPC!(152, 0x4)()); }
+		bool bFilled() { mixin(MGBPC!(152, 0x2)()); }
+		bool bFilled(bool val) { mixin(MSBPC!(152, 0x2)()); }
+		bool bDrawBox() { mixin(MGBPC!(152, 0x1)()); }
+		bool bDrawBox(bool val) { mixin(MSBPC!(152, 0x1)()); }
 	}
 }

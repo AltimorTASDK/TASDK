@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataStore_OnlineGameSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineGameSettings;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Engine.UIDataStore_Settings;
@@ -11,9 +12,9 @@ extern(C++) interface UIDataStore_OnlineGameSettings : UIDataStore_Settings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlineGameSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_OnlineGameSettings")()); }
 	private static __gshared UIDataStore_OnlineGameSettings mDefaultProperties;
-	@property final static UIDataStore_OnlineGameSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_OnlineGameSettings)("UIDataStore_OnlineGameSettings Engine.Default__UIDataStore_OnlineGameSettings")); }
+	@property final static UIDataStore_OnlineGameSettings DefaultProperties() { mixin(MGDPC!(UIDataStore_OnlineGameSettings, "UIDataStore_OnlineGameSettings Engine.Default__UIDataStore_OnlineGameSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,16 +32,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnSettingProviderChanged() { return mOnSettingProviderChanged ? mOnSettingProviderChanged : (mOnSettingProviderChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.OnSettingProviderChanged")); }
-			ScriptFunction CreateGame() { return mCreateGame ? mCreateGame : (mCreateGame = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.CreateGame")); }
-			ScriptFunction GetCurrentGameSettings() { return mGetCurrentGameSettings ? mGetCurrentGameSettings : (mGetCurrentGameSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.GetCurrentGameSettings")); }
-			ScriptFunction GetCurrentProvider() { return mGetCurrentProvider ? mGetCurrentProvider : (mGetCurrentProvider = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.GetCurrentProvider")); }
-			ScriptFunction SetCurrentByIndex() { return mSetCurrentByIndex ? mSetCurrentByIndex : (mSetCurrentByIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.SetCurrentByIndex")); }
-			ScriptFunction SetCurrentByName() { return mSetCurrentByName ? mSetCurrentByName : (mSetCurrentByName = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.SetCurrentByName")); }
-			ScriptFunction MoveToNext() { return mMoveToNext ? mMoveToNext : (mMoveToNext = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.MoveToNext")); }
-			ScriptFunction MoveToPrevious() { return mMoveToPrevious ? mMoveToPrevious : (mMoveToPrevious = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.MoveToPrevious")); }
-			ScriptFunction Registered() { return mRegistered ? mRegistered : (mRegistered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.Registered")); }
-			ScriptFunction Unregistered() { return mUnregistered ? mUnregistered : (mUnregistered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSettings.Unregistered")); }
+			ScriptFunction OnSettingProviderChanged() { mixin(MGF!("mOnSettingProviderChanged", "Function Engine.UIDataStore_OnlineGameSettings.OnSettingProviderChanged")()); }
+			ScriptFunction CreateGame() { mixin(MGF!("mCreateGame", "Function Engine.UIDataStore_OnlineGameSettings.CreateGame")()); }
+			ScriptFunction GetCurrentGameSettings() { mixin(MGF!("mGetCurrentGameSettings", "Function Engine.UIDataStore_OnlineGameSettings.GetCurrentGameSettings")()); }
+			ScriptFunction GetCurrentProvider() { mixin(MGF!("mGetCurrentProvider", "Function Engine.UIDataStore_OnlineGameSettings.GetCurrentProvider")()); }
+			ScriptFunction SetCurrentByIndex() { mixin(MGF!("mSetCurrentByIndex", "Function Engine.UIDataStore_OnlineGameSettings.SetCurrentByIndex")()); }
+			ScriptFunction SetCurrentByName() { mixin(MGF!("mSetCurrentByName", "Function Engine.UIDataStore_OnlineGameSettings.SetCurrentByName")()); }
+			ScriptFunction MoveToNext() { mixin(MGF!("mMoveToNext", "Function Engine.UIDataStore_OnlineGameSettings.MoveToNext")()); }
+			ScriptFunction MoveToPrevious() { mixin(MGF!("mMoveToPrevious", "Function Engine.UIDataStore_OnlineGameSettings.MoveToPrevious")()); }
+			ScriptFunction Registered() { mixin(MGF!("mRegistered", "Function Engine.UIDataStore_OnlineGameSettings.Registered")()); }
+			ScriptFunction Unregistered() { mixin(MGF!("mUnregistered", "Function Engine.UIDataStore_OnlineGameSettings.Unregistered")()); }
 		}
 	}
 	struct GameSettingsCfg
@@ -48,20 +49,20 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_OnlineGameSettings.GameSettingsCfg")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineGameSettings.GameSettingsCfg")()); }
 		@property final auto ref
 		{
-			ScriptName SettingsName() { return *cast(ScriptName*)(cast(size_t)&this + 12); }
-			OnlineGameSettings GameSettings() { return *cast(OnlineGameSettings*)(cast(size_t)&this + 8); }
-			UIDataProvider_Settings Provider() { return *cast(UIDataProvider_Settings*)(cast(size_t)&this + 4); }
-			ScriptClass GameSettingsClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
+			ScriptName SettingsName() { mixin(MGPS!(ScriptName, 12)()); }
+			OnlineGameSettings GameSettings() { mixin(MGPS!(OnlineGameSettings, 8)()); }
+			UIDataProvider_Settings Provider() { mixin(MGPS!(UIDataProvider_Settings, 4)()); }
+			ScriptClass GameSettingsClass() { mixin(MGPS!(ScriptClass, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg) GameSettingsCfgList() { return *cast(ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg)*)(cast(size_t)cast(void*)this + 120); }
-		int SelectedIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-		ScriptClass SettingsProviderClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 132); }
+		ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg) GameSettingsCfgList() { mixin(MGPC!(ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg), 120)()); }
+		int SelectedIndex() { mixin(MGPC!(int, 136)()); }
+		ScriptClass SettingsProviderClass() { mixin(MGPC!(ScriptClass, 132)()); }
 	}
 final:
 	void OnSettingProviderChanged(UIDataProvider SourceProvider, ScriptName SettingsName)

@@ -1,15 +1,16 @@
 module UnrealScript.Engine.InGameAdManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface InGameAdManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InGameAdManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InGameAdManager")()); }
 	private static __gshared InGameAdManager mDefaultProperties;
-	@property final static InGameAdManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InGameAdManager)("InGameAdManager Engine.Default__InGameAdManager")); }
+	@property final static InGameAdManager DefaultProperties() { mixin(MGDPC!(InGameAdManager, "InGameAdManager Engine.Default__InGameAdManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,17 +29,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnUserClickedBanner() { return mOnUserClickedBanner ? mOnUserClickedBanner : (mOnUserClickedBanner = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.OnUserClickedBanner")); }
-			ScriptFunction OnUserClosedAdvertisement() { return mOnUserClosedAdvertisement ? mOnUserClosedAdvertisement : (mOnUserClosedAdvertisement = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.OnUserClosedAdvertisement")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.Init")); }
-			ScriptFunction ShowBanner() { return mShowBanner ? mShowBanner : (mShowBanner = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.ShowBanner")); }
-			ScriptFunction HideBanner() { return mHideBanner ? mHideBanner : (mHideBanner = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.HideBanner")); }
-			ScriptFunction ForceCloseAd() { return mForceCloseAd ? mForceCloseAd : (mForceCloseAd = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.ForceCloseAd")); }
-			ScriptFunction SetPauseWhileAdOpen() { return mSetPauseWhileAdOpen ? mSetPauseWhileAdOpen : (mSetPauseWhileAdOpen = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.SetPauseWhileAdOpen")); }
-			ScriptFunction AddClickedBannerDelegate() { return mAddClickedBannerDelegate ? mAddClickedBannerDelegate : (mAddClickedBannerDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.AddClickedBannerDelegate")); }
-			ScriptFunction ClearClickedBannerDelegate() { return mClearClickedBannerDelegate ? mClearClickedBannerDelegate : (mClearClickedBannerDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.ClearClickedBannerDelegate")); }
-			ScriptFunction AddClosedAdDelegate() { return mAddClosedAdDelegate ? mAddClosedAdDelegate : (mAddClosedAdDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.AddClosedAdDelegate")); }
-			ScriptFunction ClearClosedAdDelegate() { return mClearClosedAdDelegate ? mClearClosedAdDelegate : (mClearClosedAdDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.InGameAdManager.ClearClosedAdDelegate")); }
+			ScriptFunction OnUserClickedBanner() { mixin(MGF!("mOnUserClickedBanner", "Function Engine.InGameAdManager.OnUserClickedBanner")()); }
+			ScriptFunction OnUserClosedAdvertisement() { mixin(MGF!("mOnUserClosedAdvertisement", "Function Engine.InGameAdManager.OnUserClosedAdvertisement")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.InGameAdManager.Init")()); }
+			ScriptFunction ShowBanner() { mixin(MGF!("mShowBanner", "Function Engine.InGameAdManager.ShowBanner")()); }
+			ScriptFunction HideBanner() { mixin(MGF!("mHideBanner", "Function Engine.InGameAdManager.HideBanner")()); }
+			ScriptFunction ForceCloseAd() { mixin(MGF!("mForceCloseAd", "Function Engine.InGameAdManager.ForceCloseAd")()); }
+			ScriptFunction SetPauseWhileAdOpen() { mixin(MGF!("mSetPauseWhileAdOpen", "Function Engine.InGameAdManager.SetPauseWhileAdOpen")()); }
+			ScriptFunction AddClickedBannerDelegate() { mixin(MGF!("mAddClickedBannerDelegate", "Function Engine.InGameAdManager.AddClickedBannerDelegate")()); }
+			ScriptFunction ClearClickedBannerDelegate() { mixin(MGF!("mClearClickedBannerDelegate", "Function Engine.InGameAdManager.ClearClickedBannerDelegate")()); }
+			ScriptFunction AddClosedAdDelegate() { mixin(MGF!("mAddClosedAdDelegate", "Function Engine.InGameAdManager.AddClosedAdDelegate")()); }
+			ScriptFunction ClearClosedAdDelegate() { mixin(MGF!("mClearClosedAdDelegate", "Function Engine.InGameAdManager.ClearClosedAdDelegate")()); }
 		}
 	}
 	@property final
@@ -47,17 +48,19 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ClickedBannerDelegates() { return *cast(ScriptArray!(
+void*) ClickedBannerDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 64); }
+void*), 64)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ClosedAdDelegates() { return *cast(ScriptArray!(
+void*) ClosedAdDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 76); }
+void*), 76)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUserClosedAdvertisement__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUserClickedBanner__Delegate'!
 		}
-		bool bShouldPauseWhileAdOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bShouldPauseWhileAdOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bShouldPauseWhileAdOpen() { mixin(MGBPC!(60, 0x1)()); }
+		bool bShouldPauseWhileAdOpen(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 final:
 	void OnUserClickedBanner()

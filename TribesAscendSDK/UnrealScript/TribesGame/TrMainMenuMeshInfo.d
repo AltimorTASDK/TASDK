@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrMainMenuMeshInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleSystem;
@@ -9,32 +10,32 @@ extern(C++) interface TrMainMenuMeshInfo : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMainMenuMeshInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMainMenuMeshInfo")()); }
 	private static __gshared TrMainMenuMeshInfo mDefaultProperties;
-	@property final static TrMainMenuMeshInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMainMenuMeshInfo)("TrMainMenuMeshInfo TribesGame.Default__TrMainMenuMeshInfo")); }
+	@property final static TrMainMenuMeshInfo DefaultProperties() { mixin(MGDPC!(TrMainMenuMeshInfo, "TrMainMenuMeshInfo TribesGame.Default__TrMainMenuMeshInfo")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPreloadTextures;
-		public @property static final ScriptFunction PreloadTextures() { return mPreloadTextures ? mPreloadTextures : (mPreloadTextures = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMainMenuMeshInfo.PreloadTextures")); }
+		public @property static final ScriptFunction PreloadTextures() { mixin(MGF!("mPreloadTextures", "Function TribesGame.TrMainMenuMeshInfo.PreloadTextures")()); }
 	}
 	struct ParticleSystemInfo
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrMainMenuMeshInfo.ParticleSystemInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrMainMenuMeshInfo.ParticleSystemInfo")()); }
 		@property final auto ref
 		{
-			ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			ScriptName SocketName() { mixin(MGPS!(ScriptName, 4)()); }
 			// WARNING: Property 'ParticleSystem' has the same name as a defined type!
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrMainMenuMeshInfo) Children() { return *cast(ScriptArray!(TrMainMenuMeshInfo)*)(cast(size_t)cast(void*)this + 116); }
-		ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo) AttachedParticleSystems() { return *cast(ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo)*)(cast(size_t)cast(void*)this + 136); }
-		ScriptName ParentSocketName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 128); }
-		TrObject.PaperDollInfo MeshInfo() { return *cast(TrObject.PaperDollInfo*)(cast(size_t)cast(void*)this + 60); }
+		ScriptArray!(TrMainMenuMeshInfo) Children() { mixin(MGPC!(ScriptArray!(TrMainMenuMeshInfo), 116)()); }
+		ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo) AttachedParticleSystems() { mixin(MGPC!(ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo), 136)()); }
+		ScriptName ParentSocketName() { mixin(MGPC!(ScriptName, 128)()); }
+		TrObject.PaperDollInfo MeshInfo() { mixin(MGPC!(TrObject.PaperDollInfo, 60)()); }
 	}
 	final void PreloadTextures(float ForceDuration)
 	{

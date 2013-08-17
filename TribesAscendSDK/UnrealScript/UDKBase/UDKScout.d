@@ -1,36 +1,37 @@
 module UnrealScript.UDKBase.UDKScout;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Scout;
 
 extern(C++) interface UDKScout : Scout
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKScout")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKScout")()); }
 	private static __gshared UDKScout mDefaultProperties;
-	@property final static UDKScout DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKScout)("UDKScout UDKBase.Default__UDKScout")); }
+	@property final static UDKScout DefaultProperties() { mixin(MGDPC!(UDKScout, "UDKScout UDKBase.Default__UDKScout")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSuggestJumpVelocity;
-		public @property static final ScriptFunction SuggestJumpVelocity() { return mSuggestJumpVelocity ? mSuggestJumpVelocity : (mSuggestJumpVelocity = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKScout.SuggestJumpVelocity")); }
+		public @property static final ScriptFunction SuggestJumpVelocity() { mixin(MGF!("mSuggestJumpVelocity", "Function UDKBase.UDKScout.SuggestJumpVelocity")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptName SizePersonFindName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1296); }
-			ScriptClass PrototypePawnClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1292); }
-			float MaxDoubleJumpHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1288); }
+			ScriptName SizePersonFindName() { mixin(MGPC!(ScriptName, 1296)()); }
+			ScriptClass PrototypePawnClass() { mixin(MGPC!(ScriptClass, 1292)()); }
+			float MaxDoubleJumpHeight() { mixin(MGPC!(float, 1288)()); }
 		}
-		bool bRequiresDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1284) & 0x1) != 0; }
-		bool bRequiresDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1284) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1284) &= ~0x1; } return val; }
+		bool bRequiresDoubleJump() { mixin(MGBPC!(1284, 0x1)()); }
+		bool bRequiresDoubleJump(bool val) { mixin(MSBPC!(1284, 0x1)()); }
 	}
-	final bool SuggestJumpVelocity(Vector* JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
+	final bool SuggestJumpVelocity(ref Vector JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *JumpVelocity;
+		*cast(Vector*)params.ptr = JumpVelocity;
 		*cast(Vector*)&params[12] = Destination;
 		*cast(Vector*)&params[24] = Start;
 		*cast(bool*)&params[36] = bRequireFallLanding;

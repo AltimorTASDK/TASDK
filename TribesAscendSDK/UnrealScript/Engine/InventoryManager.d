@@ -1,6 +1,7 @@
 module UnrealScript.Engine.InventoryManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Weapon;
 import UnrealScript.Engine.Inventory;
 import UnrealScript.Engine.Pawn;
@@ -11,9 +12,9 @@ extern(C++) interface InventoryManager : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InventoryManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InventoryManager")()); }
 	private static __gshared InventoryManager mDefaultProperties;
-	@property final static InventoryManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InventoryManager)("InventoryManager Engine.Default__InventoryManager")); }
+	@property final static InventoryManager DefaultProperties() { mixin(MGDPC!(InventoryManager, "InventoryManager Engine.Default__InventoryManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -52,50 +53,50 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HandlePickupQuery() { return mHandlePickupQuery ? mHandlePickupQuery : (mHandlePickupQuery = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.HandlePickupQuery")); }
-			ScriptFunction AddInventory() { return mAddInventory ? mAddInventory : (mAddInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.AddInventory")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.PostBeginPlay")); }
-			ScriptFunction GetPendingFireLength() { return mGetPendingFireLength ? mGetPendingFireLength : (mGetPendingFireLength = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.GetPendingFireLength")); }
-			ScriptFunction SetPendingFire() { return mSetPendingFire ? mSetPendingFire : (mSetPendingFire = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.SetPendingFire")); }
-			ScriptFunction ClearPendingFire() { return mClearPendingFire ? mClearPendingFire : (mClearPendingFire = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.ClearPendingFire")); }
-			ScriptFunction IsPendingFire() { return mIsPendingFire ? mIsPendingFire : (mIsPendingFire = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.IsPendingFire")); }
-			ScriptFunction ClearAllPendingFire() { return mClearAllPendingFire ? mClearAllPendingFire : (mClearAllPendingFire = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.ClearAllPendingFire")); }
-			ScriptFunction InventoryActors() { return mInventoryActors ? mInventoryActors : (mInventoryActors = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.InventoryActors")); }
-			ScriptFunction SetupFor() { return mSetupFor ? mSetupFor : (mSetupFor = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.SetupFor")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.Destroyed")); }
-			ScriptFunction FindInventoryType() { return mFindInventoryType ? mFindInventoryType : (mFindInventoryType = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.FindInventoryType")); }
-			ScriptFunction CreateInventory() { return mCreateInventory ? mCreateInventory : (mCreateInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.CreateInventory")); }
-			ScriptFunction RemoveFromInventory() { return mRemoveFromInventory ? mRemoveFromInventory : (mRemoveFromInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.RemoveFromInventory")); }
-			ScriptFunction DiscardInventory() { return mDiscardInventory ? mDiscardInventory : (mDiscardInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.DiscardInventory")); }
-			ScriptFunction OwnerDied() { return mOwnerDied ? mOwnerDied : (mOwnerDied = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.OwnerDied")); }
-			ScriptFunction DrawHUD() { return mDrawHUD ? mDrawHUD : (mDrawHUD = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.DrawHUD")); }
-			ScriptFunction GetWeaponRatingFor() { return mGetWeaponRatingFor ? mGetWeaponRatingFor : (mGetWeaponRatingFor = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.GetWeaponRatingFor")); }
-			ScriptFunction GetBestWeapon() { return mGetBestWeapon ? mGetBestWeapon : (mGetBestWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.GetBestWeapon")); }
-			ScriptFunction SwitchToBestWeapon() { return mSwitchToBestWeapon ? mSwitchToBestWeapon : (mSwitchToBestWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.SwitchToBestWeapon")); }
-			ScriptFunction PrevWeapon() { return mPrevWeapon ? mPrevWeapon : (mPrevWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.PrevWeapon")); }
-			ScriptFunction NextWeapon() { return mNextWeapon ? mNextWeapon : (mNextWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.NextWeapon")); }
-			ScriptFunction SetCurrentWeapon() { return mSetCurrentWeapon ? mSetCurrentWeapon : (mSetCurrentWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.SetCurrentWeapon")); }
-			ScriptFunction InternalSetCurrentWeapon() { return mInternalSetCurrentWeapon ? mInternalSetCurrentWeapon : (mInternalSetCurrentWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.InternalSetCurrentWeapon")); }
-			ScriptFunction ServerSetCurrentWeapon() { return mServerSetCurrentWeapon ? mServerSetCurrentWeapon : (mServerSetCurrentWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.ServerSetCurrentWeapon")); }
-			ScriptFunction SetPendingWeapon() { return mSetPendingWeapon ? mSetPendingWeapon : (mSetPendingWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.SetPendingWeapon")); }
-			ScriptFunction CancelWeaponChange() { return mCancelWeaponChange ? mCancelWeaponChange : (mCancelWeaponChange = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.CancelWeaponChange")); }
-			ScriptFunction ClearPendingWeapon() { return mClearPendingWeapon ? mClearPendingWeapon : (mClearPendingWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.ClearPendingWeapon")); }
-			ScriptFunction ChangedWeapon() { return mChangedWeapon ? mChangedWeapon : (mChangedWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.ChangedWeapon")); }
-			ScriptFunction ClientWeaponSet() { return mClientWeaponSet ? mClientWeaponSet : (mClientWeaponSet = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.ClientWeaponSet")); }
-			ScriptFunction UpdateController() { return mUpdateController ? mUpdateController : (mUpdateController = ScriptObject.Find!(ScriptFunction)("Function Engine.InventoryManager.UpdateController")); }
+			ScriptFunction HandlePickupQuery() { mixin(MGF!("mHandlePickupQuery", "Function Engine.InventoryManager.HandlePickupQuery")()); }
+			ScriptFunction AddInventory() { mixin(MGF!("mAddInventory", "Function Engine.InventoryManager.AddInventory")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.InventoryManager.PostBeginPlay")()); }
+			ScriptFunction GetPendingFireLength() { mixin(MGF!("mGetPendingFireLength", "Function Engine.InventoryManager.GetPendingFireLength")()); }
+			ScriptFunction SetPendingFire() { mixin(MGF!("mSetPendingFire", "Function Engine.InventoryManager.SetPendingFire")()); }
+			ScriptFunction ClearPendingFire() { mixin(MGF!("mClearPendingFire", "Function Engine.InventoryManager.ClearPendingFire")()); }
+			ScriptFunction IsPendingFire() { mixin(MGF!("mIsPendingFire", "Function Engine.InventoryManager.IsPendingFire")()); }
+			ScriptFunction ClearAllPendingFire() { mixin(MGF!("mClearAllPendingFire", "Function Engine.InventoryManager.ClearAllPendingFire")()); }
+			ScriptFunction InventoryActors() { mixin(MGF!("mInventoryActors", "Function Engine.InventoryManager.InventoryActors")()); }
+			ScriptFunction SetupFor() { mixin(MGF!("mSetupFor", "Function Engine.InventoryManager.SetupFor")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.InventoryManager.Destroyed")()); }
+			ScriptFunction FindInventoryType() { mixin(MGF!("mFindInventoryType", "Function Engine.InventoryManager.FindInventoryType")()); }
+			ScriptFunction CreateInventory() { mixin(MGF!("mCreateInventory", "Function Engine.InventoryManager.CreateInventory")()); }
+			ScriptFunction RemoveFromInventory() { mixin(MGF!("mRemoveFromInventory", "Function Engine.InventoryManager.RemoveFromInventory")()); }
+			ScriptFunction DiscardInventory() { mixin(MGF!("mDiscardInventory", "Function Engine.InventoryManager.DiscardInventory")()); }
+			ScriptFunction OwnerDied() { mixin(MGF!("mOwnerDied", "Function Engine.InventoryManager.OwnerDied")()); }
+			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function Engine.InventoryManager.DrawHUD")()); }
+			ScriptFunction GetWeaponRatingFor() { mixin(MGF!("mGetWeaponRatingFor", "Function Engine.InventoryManager.GetWeaponRatingFor")()); }
+			ScriptFunction GetBestWeapon() { mixin(MGF!("mGetBestWeapon", "Function Engine.InventoryManager.GetBestWeapon")()); }
+			ScriptFunction SwitchToBestWeapon() { mixin(MGF!("mSwitchToBestWeapon", "Function Engine.InventoryManager.SwitchToBestWeapon")()); }
+			ScriptFunction PrevWeapon() { mixin(MGF!("mPrevWeapon", "Function Engine.InventoryManager.PrevWeapon")()); }
+			ScriptFunction NextWeapon() { mixin(MGF!("mNextWeapon", "Function Engine.InventoryManager.NextWeapon")()); }
+			ScriptFunction SetCurrentWeapon() { mixin(MGF!("mSetCurrentWeapon", "Function Engine.InventoryManager.SetCurrentWeapon")()); }
+			ScriptFunction InternalSetCurrentWeapon() { mixin(MGF!("mInternalSetCurrentWeapon", "Function Engine.InventoryManager.InternalSetCurrentWeapon")()); }
+			ScriptFunction ServerSetCurrentWeapon() { mixin(MGF!("mServerSetCurrentWeapon", "Function Engine.InventoryManager.ServerSetCurrentWeapon")()); }
+			ScriptFunction SetPendingWeapon() { mixin(MGF!("mSetPendingWeapon", "Function Engine.InventoryManager.SetPendingWeapon")()); }
+			ScriptFunction CancelWeaponChange() { mixin(MGF!("mCancelWeaponChange", "Function Engine.InventoryManager.CancelWeaponChange")()); }
+			ScriptFunction ClearPendingWeapon() { mixin(MGF!("mClearPendingWeapon", "Function Engine.InventoryManager.ClearPendingWeapon")()); }
+			ScriptFunction ChangedWeapon() { mixin(MGF!("mChangedWeapon", "Function Engine.InventoryManager.ChangedWeapon")()); }
+			ScriptFunction ClientWeaponSet() { mixin(MGF!("mClientWeaponSet", "Function Engine.InventoryManager.ClientWeaponSet")()); }
+			ScriptFunction UpdateController() { mixin(MGF!("mUpdateController", "Function Engine.InventoryManager.UpdateController")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(int) PendingFire() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 492); }
-			Weapon LastAttemptedSwitchToWeapon() { return *cast(Weapon*)(cast(size_t)cast(void*)this + 484); }
-			Weapon PendingWeapon() { return *cast(Weapon*)(cast(size_t)cast(void*)this + 480); }
-			Inventory InventoryChain() { return *cast(Inventory*)(cast(size_t)cast(void*)this + 476); }
+			ScriptArray!(int) PendingFire() { mixin(MGPC!(ScriptArray!(int), 492)()); }
+			Weapon LastAttemptedSwitchToWeapon() { mixin(MGPC!(Weapon, 484)()); }
+			Weapon PendingWeapon() { mixin(MGPC!(Weapon, 480)()); }
+			Inventory InventoryChain() { mixin(MGPC!(Inventory, 476)()); }
 		}
-		bool bMustHoldWeapon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-		bool bMustHoldWeapon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
+		bool bMustHoldWeapon() { mixin(MGBPC!(488, 0x1)()); }
+		bool bMustHoldWeapon(bool val) { mixin(MSBPC!(488, 0x1)()); }
 	}
 final:
 	bool HandlePickupQuery(ScriptClass ItemClass, Actor Pickup)
@@ -160,12 +161,12 @@ final:
 		*cast(Weapon*)params.ptr = InWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearAllPendingFire, params.ptr, cast(void*)0);
 	}
-	void InventoryActors(ScriptClass BaseClass, Inventory* Inv)
+	void InventoryActors(ScriptClass BaseClass, ref Inventory Inv)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Inventory*)&params[4] = *Inv;
+		*cast(Inventory*)&params[4] = Inv;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InventoryActors, params.ptr, cast(void*)0);
 		*Inv = *cast(Inventory*)&params[4];
 	}

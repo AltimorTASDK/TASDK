@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCollisionProxy_Rage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrCollisionProxy;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrCollisionProxy_Rage : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCollisionProxy_Rage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCollisionProxy_Rage")()); }
 	private static __gshared TrCollisionProxy_Rage mDefaultProperties;
-	@property final static TrCollisionProxy_Rage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCollisionProxy_Rage)("TrCollisionProxy_Rage TribesGame.Default__TrCollisionProxy_Rage")); }
+	@property final static TrCollisionProxy_Rage DefaultProperties() { mixin(MGDPC!(TrCollisionProxy_Rage, "TrCollisionProxy_Rage TribesGame.Default__TrCollisionProxy_Rage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,9 +22,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_Rage.Touch")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_Rage.UnTouch")); }
-			ScriptFunction ForceProximityScan() { return mForceProximityScan ? mForceProximityScan : (mForceProximityScan = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_Rage.ForceProximityScan")); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrCollisionProxy_Rage.Touch")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrCollisionProxy_Rage.UnTouch")()); }
+			ScriptFunction ForceProximityScan() { mixin(MGF!("mForceProximityScan", "Function TribesGame.TrCollisionProxy_Rage.ForceProximityScan")()); }
 		}
 	}
 final:

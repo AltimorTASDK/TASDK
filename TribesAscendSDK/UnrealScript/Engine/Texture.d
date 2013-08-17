@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Texture;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Surface;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface Texture : Surface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Texture")()); }
 	private static __gshared Texture mDefaultProperties;
-	@property final static Texture DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Texture)("Texture Engine.Default__Texture")); }
+	@property final static Texture DefaultProperties() { mixin(MGDPC!(Texture, "Texture Engine.Default__Texture")()); }
 	enum TextureCompressionSettings : ubyte
 	{
 		TC_Default = 0,
@@ -131,126 +132,126 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Texture.TextureGroupContainer")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Texture.TextureGroupContainer")()); }
 		@property final
 		{
-			bool TEXTUREGROUP_ImageBasedReflection() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4000000) != 0; }
-			bool TEXTUREGROUP_ImageBasedReflection(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4000000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4000000; } return val; }
-			bool TEXTUREGROUP_Terrain_Weightmap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2000000) != 0; }
-			bool TEXTUREGROUP_Terrain_Weightmap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2000000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2000000; } return val; }
-			bool TEXTUREGROUP_Terrain_Heightmap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1000000) != 0; }
-			bool TEXTUREGROUP_Terrain_Heightmap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1000000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1000000; } return val; }
-			bool TEXTUREGROUP_ColorLookupTable() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x800000) != 0; }
-			bool TEXTUREGROUP_ColorLookupTable(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x800000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x800000; } return val; }
-			bool TEXTUREGROUP_Shadowmap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x400000) != 0; }
-			bool TEXTUREGROUP_Shadowmap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x400000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x400000; } return val; }
-			bool TEXTUREGROUP_ProcBuilding_LightMap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x200000) != 0; }
-			bool TEXTUREGROUP_ProcBuilding_LightMap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x200000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x200000; } return val; }
-			bool TEXTUREGROUP_ProcBuilding_Face() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x100000) != 0; }
-			bool TEXTUREGROUP_ProcBuilding_Face(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x100000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x100000; } return val; }
-			bool TEXTUREGROUP_MobileFlattened() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x80000) != 0; }
-			bool TEXTUREGROUP_MobileFlattened(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x80000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x80000; } return val; }
-			bool TEXTUREGROUP_RenderTarget() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x40000) != 0; }
-			bool TEXTUREGROUP_RenderTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x40000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x40000; } return val; }
-			bool TEXTUREGROUP_Lightmap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x20000) != 0; }
-			bool TEXTUREGROUP_Lightmap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x20000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x20000; } return val; }
-			bool TEXTUREGROUP_UI() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x10000) != 0; }
-			bool TEXTUREGROUP_UI(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x10000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x10000; } return val; }
-			bool TEXTUREGROUP_Skybox() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x8000) != 0; }
-			bool TEXTUREGROUP_Skybox(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x8000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x8000; } return val; }
-			bool TEXTUREGROUP_EffectsNotFiltered() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4000) != 0; }
-			bool TEXTUREGROUP_EffectsNotFiltered(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4000; } return val; }
-			bool TEXTUREGROUP_Effects() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2000) != 0; }
-			bool TEXTUREGROUP_Effects(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2000; } return val; }
-			bool TEXTUREGROUP_Cinematic() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1000) != 0; }
-			bool TEXTUREGROUP_Cinematic(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1000; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1000; } return val; }
-			bool TEXTUREGROUP_VehicleSpecular() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x800) != 0; }
-			bool TEXTUREGROUP_VehicleSpecular(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x800; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x800; } return val; }
-			bool TEXTUREGROUP_VehicleNormalMap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x400) != 0; }
-			bool TEXTUREGROUP_VehicleNormalMap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x400; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x400; } return val; }
-			bool TEXTUREGROUP_Vehicle() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x200) != 0; }
-			bool TEXTUREGROUP_Vehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x200; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x200; } return val; }
-			bool TEXTUREGROUP_WeaponSpecular() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x100) != 0; }
-			bool TEXTUREGROUP_WeaponSpecular(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x100; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x100; } return val; }
-			bool TEXTUREGROUP_WeaponNormalMap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x80) != 0; }
-			bool TEXTUREGROUP_WeaponNormalMap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x80; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x80; } return val; }
-			bool TEXTUREGROUP_Weapon() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x40) != 0; }
-			bool TEXTUREGROUP_Weapon(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x40; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x40; } return val; }
-			bool TEXTUREGROUP_CharacterSpecular() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x20) != 0; }
-			bool TEXTUREGROUP_CharacterSpecular(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x20; } return val; }
-			bool TEXTUREGROUP_CharacterNormalMap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x10) != 0; }
-			bool TEXTUREGROUP_CharacterNormalMap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x10; } return val; }
-			bool TEXTUREGROUP_Character() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x8) != 0; }
-			bool TEXTUREGROUP_Character(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x8; } return val; }
-			bool TEXTUREGROUP_WorldSpecular() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-			bool TEXTUREGROUP_WorldSpecular(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-			bool TEXTUREGROUP_WorldNormalMap() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool TEXTUREGROUP_WorldNormalMap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool TEXTUREGROUP_World() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool TEXTUREGROUP_World(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool TEXTUREGROUP_ImageBasedReflection() { mixin(MGBPS!(0, 0x4000000)()); }
+			bool TEXTUREGROUP_ImageBasedReflection(bool val) { mixin(MSBPS!(0, 0x4000000)()); }
+			bool TEXTUREGROUP_Terrain_Weightmap() { mixin(MGBPS!(0, 0x2000000)()); }
+			bool TEXTUREGROUP_Terrain_Weightmap(bool val) { mixin(MSBPS!(0, 0x2000000)()); }
+			bool TEXTUREGROUP_Terrain_Heightmap() { mixin(MGBPS!(0, 0x1000000)()); }
+			bool TEXTUREGROUP_Terrain_Heightmap(bool val) { mixin(MSBPS!(0, 0x1000000)()); }
+			bool TEXTUREGROUP_ColorLookupTable() { mixin(MGBPS!(0, 0x800000)()); }
+			bool TEXTUREGROUP_ColorLookupTable(bool val) { mixin(MSBPS!(0, 0x800000)()); }
+			bool TEXTUREGROUP_Shadowmap() { mixin(MGBPS!(0, 0x400000)()); }
+			bool TEXTUREGROUP_Shadowmap(bool val) { mixin(MSBPS!(0, 0x400000)()); }
+			bool TEXTUREGROUP_ProcBuilding_LightMap() { mixin(MGBPS!(0, 0x200000)()); }
+			bool TEXTUREGROUP_ProcBuilding_LightMap(bool val) { mixin(MSBPS!(0, 0x200000)()); }
+			bool TEXTUREGROUP_ProcBuilding_Face() { mixin(MGBPS!(0, 0x100000)()); }
+			bool TEXTUREGROUP_ProcBuilding_Face(bool val) { mixin(MSBPS!(0, 0x100000)()); }
+			bool TEXTUREGROUP_MobileFlattened() { mixin(MGBPS!(0, 0x80000)()); }
+			bool TEXTUREGROUP_MobileFlattened(bool val) { mixin(MSBPS!(0, 0x80000)()); }
+			bool TEXTUREGROUP_RenderTarget() { mixin(MGBPS!(0, 0x40000)()); }
+			bool TEXTUREGROUP_RenderTarget(bool val) { mixin(MSBPS!(0, 0x40000)()); }
+			bool TEXTUREGROUP_Lightmap() { mixin(MGBPS!(0, 0x20000)()); }
+			bool TEXTUREGROUP_Lightmap(bool val) { mixin(MSBPS!(0, 0x20000)()); }
+			bool TEXTUREGROUP_UI() { mixin(MGBPS!(0, 0x10000)()); }
+			bool TEXTUREGROUP_UI(bool val) { mixin(MSBPS!(0, 0x10000)()); }
+			bool TEXTUREGROUP_Skybox() { mixin(MGBPS!(0, 0x8000)()); }
+			bool TEXTUREGROUP_Skybox(bool val) { mixin(MSBPS!(0, 0x8000)()); }
+			bool TEXTUREGROUP_EffectsNotFiltered() { mixin(MGBPS!(0, 0x4000)()); }
+			bool TEXTUREGROUP_EffectsNotFiltered(bool val) { mixin(MSBPS!(0, 0x4000)()); }
+			bool TEXTUREGROUP_Effects() { mixin(MGBPS!(0, 0x2000)()); }
+			bool TEXTUREGROUP_Effects(bool val) { mixin(MSBPS!(0, 0x2000)()); }
+			bool TEXTUREGROUP_Cinematic() { mixin(MGBPS!(0, 0x1000)()); }
+			bool TEXTUREGROUP_Cinematic(bool val) { mixin(MSBPS!(0, 0x1000)()); }
+			bool TEXTUREGROUP_VehicleSpecular() { mixin(MGBPS!(0, 0x800)()); }
+			bool TEXTUREGROUP_VehicleSpecular(bool val) { mixin(MSBPS!(0, 0x800)()); }
+			bool TEXTUREGROUP_VehicleNormalMap() { mixin(MGBPS!(0, 0x400)()); }
+			bool TEXTUREGROUP_VehicleNormalMap(bool val) { mixin(MSBPS!(0, 0x400)()); }
+			bool TEXTUREGROUP_Vehicle() { mixin(MGBPS!(0, 0x200)()); }
+			bool TEXTUREGROUP_Vehicle(bool val) { mixin(MSBPS!(0, 0x200)()); }
+			bool TEXTUREGROUP_WeaponSpecular() { mixin(MGBPS!(0, 0x100)()); }
+			bool TEXTUREGROUP_WeaponSpecular(bool val) { mixin(MSBPS!(0, 0x100)()); }
+			bool TEXTUREGROUP_WeaponNormalMap() { mixin(MGBPS!(0, 0x80)()); }
+			bool TEXTUREGROUP_WeaponNormalMap(bool val) { mixin(MSBPS!(0, 0x80)()); }
+			bool TEXTUREGROUP_Weapon() { mixin(MGBPS!(0, 0x40)()); }
+			bool TEXTUREGROUP_Weapon(bool val) { mixin(MSBPS!(0, 0x40)()); }
+			bool TEXTUREGROUP_CharacterSpecular() { mixin(MGBPS!(0, 0x20)()); }
+			bool TEXTUREGROUP_CharacterSpecular(bool val) { mixin(MSBPS!(0, 0x20)()); }
+			bool TEXTUREGROUP_CharacterNormalMap() { mixin(MGBPS!(0, 0x10)()); }
+			bool TEXTUREGROUP_CharacterNormalMap(bool val) { mixin(MSBPS!(0, 0x10)()); }
+			bool TEXTUREGROUP_Character() { mixin(MGBPS!(0, 0x8)()); }
+			bool TEXTUREGROUP_Character(bool val) { mixin(MSBPS!(0, 0x8)()); }
+			bool TEXTUREGROUP_WorldSpecular() { mixin(MGBPS!(0, 0x4)()); }
+			bool TEXTUREGROUP_WorldSpecular(bool val) { mixin(MSBPS!(0, 0x4)()); }
+			bool TEXTUREGROUP_WorldNormalMap() { mixin(MGBPS!(0, 0x2)()); }
+			bool TEXTUREGROUP_WorldNormalMap(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool TEXTUREGROUP_World() { mixin(MGBPS!(0, 0x1)()); }
+			bool TEXTUREGROUP_World(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int InternalFormatLODBias() { return *cast(int*)(cast(size_t)cast(void*)this + 232); }
-			float AdjustHue() { return *cast(float*)(cast(size_t)cast(void*)this + 228); }
-			float AdjustRGBCurve() { return *cast(float*)(cast(size_t)cast(void*)this + 224); }
-			float AdjustSaturation() { return *cast(float*)(cast(size_t)cast(void*)this + 220); }
-			float AdjustVibrance() { return *cast(float*)(cast(size_t)cast(void*)this + 216); }
-			float AdjustBrightnessCurve() { return *cast(float*)(cast(size_t)cast(void*)this + 212); }
-			float AdjustBrightness() { return *cast(float*)(cast(size_t)cast(void*)this + 208); }
-			UObject.Guid LightingGuid() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 192); }
-			UObject.Pointer Resource() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 188); }
-			ScriptString SourceFileTimestamp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 176); }
-			ScriptString SourceFilePath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 164); }
-			int NumCinematicMipLevels() { return *cast(int*)(cast(size_t)cast(void*)this + 160); }
-			int CachedCombinedLODBias() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			int LODBias() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
-			Texture.TextureMipGenSettings MipGenSettings() { return *cast(Texture.TextureMipGenSettings*)(cast(size_t)cast(void*)this + 151); }
+			int InternalFormatLODBias() { mixin(MGPC!(int, 232)()); }
+			float AdjustHue() { mixin(MGPC!(float, 228)()); }
+			float AdjustRGBCurve() { mixin(MGPC!(float, 224)()); }
+			float AdjustSaturation() { mixin(MGPC!(float, 220)()); }
+			float AdjustVibrance() { mixin(MGPC!(float, 216)()); }
+			float AdjustBrightnessCurve() { mixin(MGPC!(float, 212)()); }
+			float AdjustBrightness() { mixin(MGPC!(float, 208)()); }
+			UObject.Guid LightingGuid() { mixin(MGPC!(UObject.Guid, 192)()); }
+			UObject.Pointer Resource() { mixin(MGPC!(UObject.Pointer, 188)()); }
+			ScriptString SourceFileTimestamp() { mixin(MGPC!(ScriptString, 176)()); }
+			ScriptString SourceFilePath() { mixin(MGPC!(ScriptString, 164)()); }
+			int NumCinematicMipLevels() { mixin(MGPC!(int, 160)()); }
+			int CachedCombinedLODBias() { mixin(MGPC!(int, 156)()); }
+			int LODBias() { mixin(MGPC!(int, 152)()); }
+			Texture.TextureMipGenSettings MipGenSettings() { mixin(MGPC!(Texture.TextureMipGenSettings, 151)()); }
 			// WARNING: Property 'LODGroup' has the same name as a defined type!
-			Texture.TextureFilter Filter() { return *cast(Texture.TextureFilter*)(cast(size_t)cast(void*)this + 149); }
-			Texture.TextureCompressionSettings CompressionSettings() { return *cast(Texture.TextureCompressionSettings*)(cast(size_t)cast(void*)this + 148); }
-			UObject.UntypedBulkData_Mirror SourceArt() { return *cast(UObject.UntypedBulkData_Mirror*)(cast(size_t)cast(void*)this + 96); }
-			float UnpackMax() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float UnpackMin() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
+			Texture.TextureFilter Filter() { mixin(MGPC!(Texture.TextureFilter, 149)()); }
+			Texture.TextureCompressionSettings CompressionSettings() { mixin(MGPC!(Texture.TextureCompressionSettings, 148)()); }
+			UObject.UntypedBulkData_Mirror SourceArt() { mixin(MGPC!(UObject.UntypedBulkData_Mirror, 96)()); }
+			float UnpackMax() { mixin(MGPC!(float, 80)()); }
+			float UnpackMin() { mixin(MGPC!(float, 64)()); }
 		}
-		bool bUseCinematicMipLevels() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x20000) != 0; }
-		bool bUseCinematicMipLevels(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x20000; } return val; }
-		bool bAsyncResourceReleaseHasBeenStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x10000) != 0; }
-		bool bAsyncResourceReleaseHasBeenStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x10000; } return val; }
-		bool bForcePVRTC4() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x8000) != 0; }
-		bool bForcePVRTC4(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x8000; } return val; }
-		bool bNoTiling() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x4000) != 0; }
-		bool bNoTiling(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x4000; } return val; }
-		bool bPreserveBorderA() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2000) != 0; }
-		bool bPreserveBorderA(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2000; } return val; }
-		bool bPreserveBorderB() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1000) != 0; }
-		bool bPreserveBorderB(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1000; } return val; }
-		bool bPreserveBorderG() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x800) != 0; }
-		bool bPreserveBorderG(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x800; } return val; }
-		bool bPreserveBorderR() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x400) != 0; }
-		bool bPreserveBorderR(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x400; } return val; }
-		bool bDitherMipMapAlpha() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x200) != 0; }
-		bool bDitherMipMapAlpha(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x200; } return val; }
-		bool NeverStream() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x100) != 0; }
-		bool NeverStream(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x100; } return val; }
-		bool DeferCompression() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x80) != 0; }
-		bool DeferCompression(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x80; } return val; }
-		bool CompressionFullDynamicRange() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x40) != 0; }
-		bool CompressionFullDynamicRange(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x40; } return val; }
-		bool CompressionNoMipmaps() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x20) != 0; }
-		bool CompressionNoMipmaps(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x20; } return val; }
-		bool CompressionNone() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x10) != 0; }
-		bool CompressionNone(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x10; } return val; }
-		bool CompressionNoAlpha() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x8) != 0; }
-		bool CompressionNoAlpha(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x8; } return val; }
-		bool bIsSourceArtUncompressed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x4) != 0; }
-		bool bIsSourceArtUncompressed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x4; } return val; }
-		bool RGBE() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2) != 0; }
-		bool RGBE(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2; } return val; }
-		bool SRGB() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool SRGB(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bUseCinematicMipLevels() { mixin(MGBPC!(60, 0x20000)()); }
+		bool bUseCinematicMipLevels(bool val) { mixin(MSBPC!(60, 0x20000)()); }
+		bool bAsyncResourceReleaseHasBeenStarted() { mixin(MGBPC!(60, 0x10000)()); }
+		bool bAsyncResourceReleaseHasBeenStarted(bool val) { mixin(MSBPC!(60, 0x10000)()); }
+		bool bForcePVRTC4() { mixin(MGBPC!(60, 0x8000)()); }
+		bool bForcePVRTC4(bool val) { mixin(MSBPC!(60, 0x8000)()); }
+		bool bNoTiling() { mixin(MGBPC!(60, 0x4000)()); }
+		bool bNoTiling(bool val) { mixin(MSBPC!(60, 0x4000)()); }
+		bool bPreserveBorderA() { mixin(MGBPC!(60, 0x2000)()); }
+		bool bPreserveBorderA(bool val) { mixin(MSBPC!(60, 0x2000)()); }
+		bool bPreserveBorderB() { mixin(MGBPC!(60, 0x1000)()); }
+		bool bPreserveBorderB(bool val) { mixin(MSBPC!(60, 0x1000)()); }
+		bool bPreserveBorderG() { mixin(MGBPC!(60, 0x800)()); }
+		bool bPreserveBorderG(bool val) { mixin(MSBPC!(60, 0x800)()); }
+		bool bPreserveBorderR() { mixin(MGBPC!(60, 0x400)()); }
+		bool bPreserveBorderR(bool val) { mixin(MSBPC!(60, 0x400)()); }
+		bool bDitherMipMapAlpha() { mixin(MGBPC!(60, 0x200)()); }
+		bool bDitherMipMapAlpha(bool val) { mixin(MSBPC!(60, 0x200)()); }
+		bool NeverStream() { mixin(MGBPC!(60, 0x100)()); }
+		bool NeverStream(bool val) { mixin(MSBPC!(60, 0x100)()); }
+		bool DeferCompression() { mixin(MGBPC!(60, 0x80)()); }
+		bool DeferCompression(bool val) { mixin(MSBPC!(60, 0x80)()); }
+		bool CompressionFullDynamicRange() { mixin(MGBPC!(60, 0x40)()); }
+		bool CompressionFullDynamicRange(bool val) { mixin(MSBPC!(60, 0x40)()); }
+		bool CompressionNoMipmaps() { mixin(MGBPC!(60, 0x20)()); }
+		bool CompressionNoMipmaps(bool val) { mixin(MSBPC!(60, 0x20)()); }
+		bool CompressionNone() { mixin(MGBPC!(60, 0x10)()); }
+		bool CompressionNone(bool val) { mixin(MSBPC!(60, 0x10)()); }
+		bool CompressionNoAlpha() { mixin(MGBPC!(60, 0x8)()); }
+		bool CompressionNoAlpha(bool val) { mixin(MSBPC!(60, 0x8)()); }
+		bool bIsSourceArtUncompressed() { mixin(MGBPC!(60, 0x4)()); }
+		bool bIsSourceArtUncompressed(bool val) { mixin(MSBPC!(60, 0x4)()); }
+		bool RGBE() { mixin(MGBPC!(60, 0x2)()); }
+		bool RGBE(bool val) { mixin(MSBPC!(60, 0x2)()); }
+		bool SRGB() { mixin(MGBPC!(60, 0x1)()); }
+		bool SRGB(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 }

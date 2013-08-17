@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTBot;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.InterpActor;
@@ -29,9 +30,9 @@ extern(C++) interface UTBot : UDKBot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTBot")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTBot")()); }
 	private static __gshared UTBot mDefaultProperties;
-	@property final static UTBot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTBot)("UTBot UTGame.Default__UTBot")); }
+	@property final static UTBot DefaultProperties() { mixin(MGDPC!(UTBot, "UTBot UTGame.Default__UTBot")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -189,156 +190,156 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetDirectionHint() { return mGetDirectionHint ? mGetDirectionHint : (mGetDirectionHint = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.GetDirectionHint")); }
-			ScriptFunction RatePickup() { return mRatePickup ? mRatePickup : (mRatePickup = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.RatePickup")); }
-			ScriptFunction PriorityObjective() { return mPriorityObjective ? mPriorityObjective : (mPriorityObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.PriorityObjective")); }
-			ScriptFunction RateWeapon() { return mRateWeapon ? mRateWeapon : (mRateWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.RateWeapon")); }
-			ScriptFunction WeaponFireAgain() { return mWeaponFireAgain ? mWeaponFireAgain : (mWeaponFireAgain = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.WeaponFireAgain")); }
-			ScriptFunction NeedWeapon() { return mNeedWeapon ? mNeedWeapon : (mNeedWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NeedWeapon")); }
-			ScriptFunction DoWaitForLanding() { return mDoWaitForLanding ? mDoWaitForLanding : (mDoWaitForLanding = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DoWaitForLanding")); }
-			ScriptFunction DelayedLeaveVehicle() { return mDelayedLeaveVehicle ? mDelayedLeaveVehicle : (mDelayedLeaveVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DelayedLeaveVehicle")); }
-			ScriptFunction NotifyLanded() { return mNotifyLanded ? mNotifyLanded : (mNotifyLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyLanded")); }
-			ScriptFunction SetFall() { return mSetFall ? mSetFall : (mSetFall = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetFall")); }
-			ScriptFunction CustomActionFunc() { return mCustomActionFunc ? mCustomActionFunc : (mCustomActionFunc = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CustomActionFunc")); }
-			ScriptFunction EnemyJustTeleported() { return mEnemyJustTeleported ? mEnemyJustTeleported : (mEnemyJustTeleported = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.EnemyJustTeleported")); }
-			ScriptFunction WasKilledBy() { return mWasKilledBy ? mWasKilledBy : (mWasKilledBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.WasKilledBy")); }
-			ScriptFunction StartMonitoring() { return mStartMonitoring ? mStartMonitoring : (mStartMonitoring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.StartMonitoring")); }
-			ScriptFunction PawnDied() { return mPawnDied ? mPawnDied : (mPawnDied = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.PawnDied")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Destroyed")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.PostBeginPlay")); }
-			ScriptFunction SpawnedByKismet() { return mSpawnedByKismet ? mSpawnedByKismet : (mSpawnedByKismet = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SpawnedByKismet")); }
-			ScriptFunction LandingShake() { return mLandingShake ? mLandingShake : (mLandingShake = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.LandingShake")); }
-			ScriptFunction HasTimedPowerup() { return mHasTimedPowerup ? mHasTimedPowerup : (mHasTimedPowerup = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.HasTimedPowerup")); }
-			ScriptFunction NotifyAddInventory() { return mNotifyAddInventory ? mNotifyAddInventory : (mNotifyAddInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyAddInventory")); }
-			ScriptFunction SetupSpecialPathAbilities() { return mSetupSpecialPathAbilities ? mSetupSpecialPathAbilities : (mSetupSpecialPathAbilities = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetupSpecialPathAbilities")); }
-			ScriptFunction NotifyHitWall() { return mNotifyHitWall ? mNotifyHitWall : (mNotifyHitWall = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyHitWall")); }
-			ScriptFunction FearThisSpot() { return mFearThisSpot ? mFearThisSpot : (mFearThisSpot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FearThisSpot")); }
-			ScriptFunction Startle() { return mStartle ? mStartle : (mStartle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Startle")); }
-			ScriptFunction SetCombatTimer() { return mSetCombatTimer ? mSetCombatTimer : (mSetCombatTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetCombatTimer")); }
-			ScriptFunction CanImpactJump() { return mCanImpactJump ? mCanImpactJump : (mCanImpactJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CanImpactJump")); }
-			ScriptFunction TimeDJReset() { return mTimeDJReset ? mTimeDJReset : (mTimeDJReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TimeDJReset")); }
-			ScriptFunction ResetDoubleJump() { return mResetDoubleJump ? mResetDoubleJump : (mResetDoubleJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ResetDoubleJump")); }
-			ScriptFunction WaitForMover() { return mWaitForMover ? mWaitForMover : (mWaitForMover = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.WaitForMover")); }
-			ScriptFunction ReadyForLift() { return mReadyForLift ? mReadyForLift : (mReadyForLift = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ReadyForLift")); }
-			ScriptFunction ShouldFireAgain() { return mShouldFireAgain ? mShouldFireAgain : (mShouldFireAgain = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ShouldFireAgain")); }
-			ScriptFunction TimedFireWeaponAtEnemy() { return mTimedFireWeaponAtEnemy ? mTimedFireWeaponAtEnemy : (mTimedFireWeaponAtEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TimedFireWeaponAtEnemy")); }
-			ScriptFunction FireWeaponAt() { return mFireWeaponAt ? mFireWeaponAt : (mFireWeaponAt = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FireWeaponAt")); }
-			ScriptFunction CanAttack() { return mCanAttack ? mCanAttack : (mCanAttack = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CanAttack")); }
-			ScriptFunction OnAIStartFireAt() { return mOnAIStartFireAt ? mOnAIStartFireAt : (mOnAIStartFireAt = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.OnAIStartFireAt")); }
-			ScriptFunction TimedFireWeaponAtScriptedTarget() { return mTimedFireWeaponAtScriptedTarget ? mTimedFireWeaponAtScriptedTarget : (mTimedFireWeaponAtScriptedTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TimedFireWeaponAtScriptedTarget")); }
-			ScriptFunction StopFiring() { return mStopFiring ? mStopFiring : (mStopFiring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.StopFiring")); }
-			ScriptFunction OnAIStopFire() { return mOnAIStopFire ? mOnAIStopFire : (mOnAIStopFire = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.OnAIStopFire")); }
-			ScriptFunction WeaponPreference() { return mWeaponPreference ? mWeaponPreference : (mWeaponPreference = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.WeaponPreference")); }
-			ScriptFunction ProficientWithWeapon() { return mProficientWithWeapon ? mProficientWithWeapon : (mProficientWithWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ProficientWithWeapon")); }
-			ScriptFunction CanComboMoving() { return mCanComboMoving ? mCanComboMoving : (mCanComboMoving = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CanComboMoving")); }
-			ScriptFunction CanCombo() { return mCanCombo ? mCanCombo : (mCanCombo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CanCombo")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DisplayDebug")); }
-			ScriptFunction GetOrders() { return mGetOrders ? mGetOrders : (mGetOrders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.GetOrders")); }
-			ScriptFunction YellAt() { return mYellAt ? mYellAt : (mYellAt = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.YellAt")); }
-			ScriptFunction SendMessage() { return mSendMessage ? mSendMessage : (mSendMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SendMessage")); }
-			ScriptFunction SetBotOrders() { return mSetBotOrders ? mSetBotOrders : (mSetBotOrders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetBotOrders")); }
-			ScriptFunction SetTemporaryOrders() { return mSetTemporaryOrders ? mSetTemporaryOrders : (mSetTemporaryOrders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetTemporaryOrders")); }
-			ScriptFunction ClearTemporaryOrders() { return mClearTemporaryOrders ? mClearTemporaryOrders : (mClearTemporaryOrders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ClearTemporaryOrders")); }
-			ScriptFunction HearNoise() { return mHearNoise ? mHearNoise : (mHearNoise = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.HearNoise")); }
-			ScriptFunction SeePlayer() { return mSeePlayer ? mSeePlayer : (mSeePlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SeePlayer")); }
-			ScriptFunction SetAttractionState() { return mSetAttractionState ? mSetAttractionState : (mSetAttractionState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetAttractionState")); }
-			ScriptFunction ClearShot() { return mClearShot ? mClearShot : (mClearShot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ClearShot")); }
-			ScriptFunction CanStakeOut() { return mCanStakeOut ? mCanStakeOut : (mCanStakeOut = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CanStakeOut")); }
-			ScriptFunction CheckIfShouldCrouch() { return mCheckIfShouldCrouch ? mCheckIfShouldCrouch : (mCheckIfShouldCrouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CheckIfShouldCrouch")); }
-			ScriptFunction IsSniping() { return mIsSniping ? mIsSniping : (mIsSniping = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.IsSniping")); }
-			ScriptFunction FreePoint() { return mFreePoint ? mFreePoint : (mFreePoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FreePoint")); }
-			ScriptFunction AssignSquadResponsibility() { return mAssignSquadResponsibility ? mAssignSquadResponsibility : (mAssignSquadResponsibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.AssignSquadResponsibility")); }
-			ScriptFunction RelativeStrength() { return mRelativeStrength ? mRelativeStrength : (mRelativeStrength = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.RelativeStrength")); }
-			ScriptFunction SetEnemyInfo() { return mSetEnemyInfo ? mSetEnemyInfo : (mSetEnemyInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetEnemyInfo")); }
-			ScriptFunction EnemyChanged() { return mEnemyChanged ? mEnemyChanged : (mEnemyChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.EnemyChanged")); }
-			ScriptFunction StrafeFromDamage() { return mStrafeFromDamage ? mStrafeFromDamage : (mStrafeFromDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.StrafeFromDamage")); }
-			ScriptFunction NotifyPhysicsVolumeChange() { return mNotifyPhysicsVolumeChange ? mNotifyPhysicsVolumeChange : (mNotifyPhysicsVolumeChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyPhysicsVolumeChange")); }
-			ScriptFunction MayDodgeToMoveTarget() { return mMayDodgeToMoveTarget ? mMayDodgeToMoveTarget : (mMayDodgeToMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.MayDodgeToMoveTarget")); }
-			ScriptFunction NotifyJumpApex() { return mNotifyJumpApex ? mNotifyJumpApex : (mNotifyJumpApex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyJumpApex")); }
-			ScriptFunction NotifyMissedJump() { return mNotifyMissedJump ? mNotifyMissedJump : (mNotifyMissedJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyMissedJump")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Reset")); }
-			ScriptFunction Possess() { return mPossess ? mPossess : (mPossess = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Possess")); }
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Initialize")); }
-			ScriptFunction ResetSkill() { return mResetSkill ? mResetSkill : (mResetSkill = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ResetSkill")); }
-			ScriptFunction SetMaxDesiredSpeed() { return mSetMaxDesiredSpeed ? mSetMaxDesiredSpeed : (mSetMaxDesiredSpeed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetMaxDesiredSpeed")); }
-			ScriptFunction SetPeripheralVision() { return mSetPeripheralVision ? mSetPeripheralVision : (mSetPeripheralVision = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetPeripheralVision")); }
-			ScriptFunction SetAlertness() { return mSetAlertness ? mSetAlertness : (mSetAlertness = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetAlertness")); }
-			ScriptFunction WhatToDoNext() { return mWhatToDoNext ? mWhatToDoNext : (mWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.WhatToDoNext")); }
-			ScriptFunction ExecuteWhatToDoNext() { return mExecuteWhatToDoNext ? mExecuteWhatToDoNext : (mExecuteWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ExecuteWhatToDoNext")); }
-			ScriptFunction EnterVehicle() { return mEnterVehicle ? mEnterVehicle : (mEnterVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.EnterVehicle")); }
-			ScriptFunction LeaveVehicle() { return mLeaveVehicle ? mLeaveVehicle : (mLeaveVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.LeaveVehicle")); }
-			ScriptFunction VehicleFightEnemy() { return mVehicleFightEnemy ? mVehicleFightEnemy : (mVehicleFightEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.VehicleFightEnemy")); }
-			ScriptFunction FightEnemy() { return mFightEnemy ? mFightEnemy : (mFightEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FightEnemy")); }
-			ScriptFunction DoRangedAttackOn() { return mDoRangedAttackOn ? mDoRangedAttackOn : (mDoRangedAttackOn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DoRangedAttackOn")); }
-			ScriptFunction ChooseAttackMode() { return mChooseAttackMode ? mChooseAttackMode : (mChooseAttackMode = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ChooseAttackMode")); }
-			ScriptFunction FindSuperPickup() { return mFindSuperPickup ? mFindSuperPickup : (mFindSuperPickup = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FindSuperPickup")); }
-			ScriptFunction FindInventoryGoal() { return mFindInventoryGoal ? mFindInventoryGoal : (mFindInventoryGoal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FindInventoryGoal")); }
-			ScriptFunction TossFlagToPlayer() { return mTossFlagToPlayer ? mTossFlagToPlayer : (mTossFlagToPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TossFlagToPlayer")); }
-			ScriptFunction PickRetreatDestination() { return mPickRetreatDestination ? mPickRetreatDestination : (mPickRetreatDestination = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.PickRetreatDestination")); }
-			ScriptFunction SoakStop() { return mSoakStop ? mSoakStop : (mSoakStop = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SoakStop")); }
-			ScriptFunction FindRoamDest() { return mFindRoamDest ? mFindRoamDest : (mFindRoamDest = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FindRoamDest")); }
-			ScriptFunction Restart() { return mRestart ? mRestart : (mRestart = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Restart")); }
-			ScriptFunction CheckPathToGoalAround() { return mCheckPathToGoalAround ? mCheckPathToGoalAround : (mCheckPathToGoalAround = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CheckPathToGoalAround")); }
-			ScriptFunction ClearPathFor() { return mClearPathFor ? mClearPathFor : (mClearPathFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ClearPathFor")); }
-			ScriptFunction AdjustAround() { return mAdjustAround ? mAdjustAround : (mAdjustAround = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.AdjustAround")); }
-			ScriptFunction NotifyBump() { return mNotifyBump ? mNotifyBump : (mNotifyBump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyBump")); }
-			ScriptFunction NotifyPostLanded() { return mNotifyPostLanded ? mNotifyPostLanded : (mNotifyPostLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyPostLanded")); }
-			ScriptFunction TimedDodgeToMoveTarget() { return mTimedDodgeToMoveTarget ? mTimedDodgeToMoveTarget : (mTimedDodgeToMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TimedDodgeToMoveTarget")); }
-			ScriptFunction StartMoveToward() { return mStartMoveToward ? mStartMoveToward : (mStartMoveToward = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.StartMoveToward")); }
-			ScriptFunction SetRouteToGoal() { return mSetRouteToGoal ? mSetRouteToGoal : (mSetRouteToGoal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SetRouteToGoal")); }
-			ScriptFunction AllowDetourTo() { return mAllowDetourTo ? mAllowDetourTo : (mAllowDetourTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.AllowDetourTo")); }
-			ScriptFunction FindBestPathToward() { return mFindBestPathToward ? mFindBestPathToward : (mFindBestPathToward = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FindBestPathToward")); }
-			ScriptFunction CheckFutureSight() { return mCheckFutureSight ? mCheckFutureSight : (mCheckFutureSight = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.CheckFutureSight")); }
-			ScriptFunction AdjustAimError() { return mAdjustAimError ? mAdjustAimError : (mAdjustAimError = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.AdjustAimError")); }
-			ScriptFunction GetAdjustedAimFor() { return mGetAdjustedAimFor ? mGetAdjustedAimFor : (mGetAdjustedAimFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.GetAdjustedAimFor")); }
-			ScriptFunction TryDuckTowardsMoveTarget() { return mTryDuckTowardsMoveTarget ? mTryDuckTowardsMoveTarget : (mTryDuckTowardsMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TryDuckTowardsMoveTarget")); }
-			ScriptFunction DelayedWarning() { return mDelayedWarning ? mDelayedWarning : (mDelayedWarning = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DelayedWarning")); }
-			ScriptFunction ReceiveProjectileWarning() { return mReceiveProjectileWarning ? mReceiveProjectileWarning : (mReceiveProjectileWarning = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ReceiveProjectileWarning")); }
-			ScriptFunction NotifyTakeHit() { return mNotifyTakeHit ? mNotifyTakeHit : (mNotifyTakeHit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyTakeHit")); }
-			ScriptFunction DelayedInstantWarning() { return mDelayedInstantWarning ? mDelayedInstantWarning : (mDelayedInstantWarning = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DelayedInstantWarning")); }
-			ScriptFunction ReceiveWarning() { return mReceiveWarning ? mReceiveWarning : (mReceiveWarning = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ReceiveWarning")); }
-			ScriptFunction ReceiveRunOverWarning() { return mReceiveRunOverWarning ? mReceiveRunOverWarning : (mReceiveRunOverWarning = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ReceiveRunOverWarning")); }
-			ScriptFunction NotifyFallingHitWall() { return mNotifyFallingHitWall ? mNotifyFallingHitWall : (mNotifyFallingHitWall = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyFallingHitWall")); }
-			ScriptFunction MissedDodge() { return mMissedDodge ? mMissedDodge : (mMissedDodge = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.MissedDodge")); }
-			ScriptFunction TryWallDodge() { return mTryWallDodge ? mTryWallDodge : (mTryWallDodge = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TryWallDodge")); }
-			ScriptFunction ChangeStrafe() { return mChangeStrafe ? mChangeStrafe : (mChangeStrafe = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ChangeStrafe")); }
-			ScriptFunction TryToDuck() { return mTryToDuck ? mTryToDuck : (mTryToDuck = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.TryToDuck")); }
-			ScriptFunction NotifyKilled() { return mNotifyKilled ? mNotifyKilled : (mNotifyKilled = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.NotifyKilled")); }
-			ScriptFunction FaceMoveTarget() { return mFaceMoveTarget ? mFaceMoveTarget : (mFaceMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FaceMoveTarget")); }
-			ScriptFunction ShouldStrafeTo() { return mShouldStrafeTo ? mShouldStrafeTo : (mShouldStrafeTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ShouldStrafeTo")); }
-			ScriptFunction FaceActor() { return mFaceActor ? mFaceActor : (mFaceActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FaceActor")); }
-			ScriptFunction SuperDesireability() { return mSuperDesireability ? mSuperDesireability : (mSuperDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SuperDesireability")); }
-			ScriptFunction SuperPickupNotSpokenFor() { return mSuperPickupNotSpokenFor ? mSuperPickupNotSpokenFor : (mSuperPickupNotSpokenFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.SuperPickupNotSpokenFor")); }
-			ScriptFunction DamageAttitudeTo() { return mDamageAttitudeTo ? mDamageAttitudeTo : (mDamageAttitudeTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DamageAttitudeTo")); }
-			ScriptFunction IsRetreating() { return mIsRetreating ? mIsRetreating : (mIsRetreating = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.IsRetreating")); }
-			ScriptFunction OnAIFreeze() { return mOnAIFreeze ? mOnAIFreeze : (mOnAIFreeze = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.OnAIFreeze")); }
-			ScriptFunction IsDefending() { return mIsDefending ? mIsDefending : (mIsDefending = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.IsDefending")); }
-			ScriptFunction ShouldDefendPosition() { return mShouldDefendPosition ? mShouldDefendPosition : (mShouldDefendPosition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ShouldDefendPosition")); }
-			ScriptFunction MoveToDefensePoint() { return mMoveToDefensePoint ? mMoveToDefensePoint : (mMoveToDefensePoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.MoveToDefensePoint")); }
-			ScriptFunction MoveAwayFrom() { return mMoveAwayFrom ? mMoveAwayFrom : (mMoveAwayFrom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.MoveAwayFrom")); }
-			ScriptFunction WanderOrCamp() { return mWanderOrCamp ? mWanderOrCamp : (mWanderOrCamp = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.WanderOrCamp")); }
-			ScriptFunction EnableBumps() { return mEnableBumps ? mEnableBumps : (mEnableBumps = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.EnableBumps")); }
-			ScriptFunction Celebrate() { return mCelebrate ? mCelebrate : (mCelebrate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Celebrate")); }
-			ScriptFunction ForceGiveWeapon() { return mForceGiveWeapon ? mForceGiveWeapon : (mForceGiveWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.ForceGiveWeapon")); }
-			ScriptFunction GetDesiredOffset() { return mGetDesiredOffset ? mGetDesiredOffset : (mGetDesiredOffset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.GetDesiredOffset")); }
-			ScriptFunction LostContact() { return mLostContact ? mLostContact : (mLostContact = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.LostContact")); }
-			ScriptFunction LoseEnemy() { return mLoseEnemy ? mLoseEnemy : (mLoseEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.LoseEnemy")); }
-			ScriptFunction DoStakeOut() { return mDoStakeOut ? mDoStakeOut : (mDoStakeOut = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DoStakeOut")); }
-			ScriptFunction DoCharge() { return mDoCharge ? mDoCharge : (mDoCharge = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DoCharge")); }
-			ScriptFunction DoTacticalMove() { return mDoTacticalMove ? mDoTacticalMove : (mDoTacticalMove = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DoTacticalMove")); }
-			ScriptFunction DoRetreat() { return mDoRetreat ? mDoRetreat : (mDoRetreat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DoRetreat")); }
-			ScriptFunction DefendMelee() { return mDefendMelee ? mDefendMelee : (mDefendMelee = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.DefendMelee")); }
-			ScriptFunction IsStrafing() { return mIsStrafing ? mIsStrafing : (mIsStrafing = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.IsStrafing")); }
-			ScriptFunction EngageDirection() { return mEngageDirection ? mEngageDirection : (mEngageDirection = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.EngageDirection")); }
-			ScriptFunction IsHunting() { return mIsHunting ? mIsHunting : (mIsHunting = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.IsHunting")); }
-			ScriptFunction FindViewSpot() { return mFindViewSpot ? mFindViewSpot : (mFindViewSpot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FindViewSpot")); }
-			ScriptFunction Stopped() { return mStopped ? mStopped : (mStopped = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.Stopped")); }
-			ScriptFunction IsShootingObjective() { return mIsShootingObjective ? mIsShootingObjective : (mIsShootingObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.IsShootingObjective")); }
-			ScriptFunction FocusOnLeader() { return mFocusOnLeader ? mFocusOnLeader : (mFocusOnLeader = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.FocusOnLeader")); }
-			ScriptFunction StopMovement() { return mStopMovement ? mStopMovement : (mStopMovement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.StopMovement")); }
-			ScriptFunction PerformCustomAction() { return mPerformCustomAction ? mPerformCustomAction : (mPerformCustomAction = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.PerformCustomAction")); }
-			ScriptFunction UnderLift() { return mUnderLift ? mUnderLift : (mUnderLift = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.UnderLift")); }
-			ScriptFunction HandlePathObstruction() { return mHandlePathObstruction ? mHandlePathObstruction : (mHandlePathObstruction = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.HandlePathObstruction")); }
+			ScriptFunction GetDirectionHint() { mixin(MGF!("mGetDirectionHint", "Function UTGame.UTBot.GetDirectionHint")()); }
+			ScriptFunction RatePickup() { mixin(MGF!("mRatePickup", "Function UTGame.UTBot.RatePickup")()); }
+			ScriptFunction PriorityObjective() { mixin(MGF!("mPriorityObjective", "Function UTGame.UTBot.PriorityObjective")()); }
+			ScriptFunction RateWeapon() { mixin(MGF!("mRateWeapon", "Function UTGame.UTBot.RateWeapon")()); }
+			ScriptFunction WeaponFireAgain() { mixin(MGF!("mWeaponFireAgain", "Function UTGame.UTBot.WeaponFireAgain")()); }
+			ScriptFunction NeedWeapon() { mixin(MGF!("mNeedWeapon", "Function UTGame.UTBot.NeedWeapon")()); }
+			ScriptFunction DoWaitForLanding() { mixin(MGF!("mDoWaitForLanding", "Function UTGame.UTBot.DoWaitForLanding")()); }
+			ScriptFunction DelayedLeaveVehicle() { mixin(MGF!("mDelayedLeaveVehicle", "Function UTGame.UTBot.DelayedLeaveVehicle")()); }
+			ScriptFunction NotifyLanded() { mixin(MGF!("mNotifyLanded", "Function UTGame.UTBot.NotifyLanded")()); }
+			ScriptFunction SetFall() { mixin(MGF!("mSetFall", "Function UTGame.UTBot.SetFall")()); }
+			ScriptFunction CustomActionFunc() { mixin(MGF!("mCustomActionFunc", "Function UTGame.UTBot.CustomActionFunc")()); }
+			ScriptFunction EnemyJustTeleported() { mixin(MGF!("mEnemyJustTeleported", "Function UTGame.UTBot.EnemyJustTeleported")()); }
+			ScriptFunction WasKilledBy() { mixin(MGF!("mWasKilledBy", "Function UTGame.UTBot.WasKilledBy")()); }
+			ScriptFunction StartMonitoring() { mixin(MGF!("mStartMonitoring", "Function UTGame.UTBot.StartMonitoring")()); }
+			ScriptFunction PawnDied() { mixin(MGF!("mPawnDied", "Function UTGame.UTBot.PawnDied")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTBot.Destroyed")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTBot.PostBeginPlay")()); }
+			ScriptFunction SpawnedByKismet() { mixin(MGF!("mSpawnedByKismet", "Function UTGame.UTBot.SpawnedByKismet")()); }
+			ScriptFunction LandingShake() { mixin(MGF!("mLandingShake", "Function UTGame.UTBot.LandingShake")()); }
+			ScriptFunction HasTimedPowerup() { mixin(MGF!("mHasTimedPowerup", "Function UTGame.UTBot.HasTimedPowerup")()); }
+			ScriptFunction NotifyAddInventory() { mixin(MGF!("mNotifyAddInventory", "Function UTGame.UTBot.NotifyAddInventory")()); }
+			ScriptFunction SetupSpecialPathAbilities() { mixin(MGF!("mSetupSpecialPathAbilities", "Function UTGame.UTBot.SetupSpecialPathAbilities")()); }
+			ScriptFunction NotifyHitWall() { mixin(MGF!("mNotifyHitWall", "Function UTGame.UTBot.NotifyHitWall")()); }
+			ScriptFunction FearThisSpot() { mixin(MGF!("mFearThisSpot", "Function UTGame.UTBot.FearThisSpot")()); }
+			ScriptFunction Startle() { mixin(MGF!("mStartle", "Function UTGame.UTBot.Startle")()); }
+			ScriptFunction SetCombatTimer() { mixin(MGF!("mSetCombatTimer", "Function UTGame.UTBot.SetCombatTimer")()); }
+			ScriptFunction CanImpactJump() { mixin(MGF!("mCanImpactJump", "Function UTGame.UTBot.CanImpactJump")()); }
+			ScriptFunction TimeDJReset() { mixin(MGF!("mTimeDJReset", "Function UTGame.UTBot.TimeDJReset")()); }
+			ScriptFunction ResetDoubleJump() { mixin(MGF!("mResetDoubleJump", "Function UTGame.UTBot.ResetDoubleJump")()); }
+			ScriptFunction WaitForMover() { mixin(MGF!("mWaitForMover", "Function UTGame.UTBot.WaitForMover")()); }
+			ScriptFunction ReadyForLift() { mixin(MGF!("mReadyForLift", "Function UTGame.UTBot.ReadyForLift")()); }
+			ScriptFunction ShouldFireAgain() { mixin(MGF!("mShouldFireAgain", "Function UTGame.UTBot.ShouldFireAgain")()); }
+			ScriptFunction TimedFireWeaponAtEnemy() { mixin(MGF!("mTimedFireWeaponAtEnemy", "Function UTGame.UTBot.TimedFireWeaponAtEnemy")()); }
+			ScriptFunction FireWeaponAt() { mixin(MGF!("mFireWeaponAt", "Function UTGame.UTBot.FireWeaponAt")()); }
+			ScriptFunction CanAttack() { mixin(MGF!("mCanAttack", "Function UTGame.UTBot.CanAttack")()); }
+			ScriptFunction OnAIStartFireAt() { mixin(MGF!("mOnAIStartFireAt", "Function UTGame.UTBot.OnAIStartFireAt")()); }
+			ScriptFunction TimedFireWeaponAtScriptedTarget() { mixin(MGF!("mTimedFireWeaponAtScriptedTarget", "Function UTGame.UTBot.TimedFireWeaponAtScriptedTarget")()); }
+			ScriptFunction StopFiring() { mixin(MGF!("mStopFiring", "Function UTGame.UTBot.StopFiring")()); }
+			ScriptFunction OnAIStopFire() { mixin(MGF!("mOnAIStopFire", "Function UTGame.UTBot.OnAIStopFire")()); }
+			ScriptFunction WeaponPreference() { mixin(MGF!("mWeaponPreference", "Function UTGame.UTBot.WeaponPreference")()); }
+			ScriptFunction ProficientWithWeapon() { mixin(MGF!("mProficientWithWeapon", "Function UTGame.UTBot.ProficientWithWeapon")()); }
+			ScriptFunction CanComboMoving() { mixin(MGF!("mCanComboMoving", "Function UTGame.UTBot.CanComboMoving")()); }
+			ScriptFunction CanCombo() { mixin(MGF!("mCanCombo", "Function UTGame.UTBot.CanCombo")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTBot.DisplayDebug")()); }
+			ScriptFunction GetOrders() { mixin(MGF!("mGetOrders", "Function UTGame.UTBot.GetOrders")()); }
+			ScriptFunction YellAt() { mixin(MGF!("mYellAt", "Function UTGame.UTBot.YellAt")()); }
+			ScriptFunction SendMessage() { mixin(MGF!("mSendMessage", "Function UTGame.UTBot.SendMessage")()); }
+			ScriptFunction SetBotOrders() { mixin(MGF!("mSetBotOrders", "Function UTGame.UTBot.SetBotOrders")()); }
+			ScriptFunction SetTemporaryOrders() { mixin(MGF!("mSetTemporaryOrders", "Function UTGame.UTBot.SetTemporaryOrders")()); }
+			ScriptFunction ClearTemporaryOrders() { mixin(MGF!("mClearTemporaryOrders", "Function UTGame.UTBot.ClearTemporaryOrders")()); }
+			ScriptFunction HearNoise() { mixin(MGF!("mHearNoise", "Function UTGame.UTBot.HearNoise")()); }
+			ScriptFunction SeePlayer() { mixin(MGF!("mSeePlayer", "Function UTGame.UTBot.SeePlayer")()); }
+			ScriptFunction SetAttractionState() { mixin(MGF!("mSetAttractionState", "Function UTGame.UTBot.SetAttractionState")()); }
+			ScriptFunction ClearShot() { mixin(MGF!("mClearShot", "Function UTGame.UTBot.ClearShot")()); }
+			ScriptFunction CanStakeOut() { mixin(MGF!("mCanStakeOut", "Function UTGame.UTBot.CanStakeOut")()); }
+			ScriptFunction CheckIfShouldCrouch() { mixin(MGF!("mCheckIfShouldCrouch", "Function UTGame.UTBot.CheckIfShouldCrouch")()); }
+			ScriptFunction IsSniping() { mixin(MGF!("mIsSniping", "Function UTGame.UTBot.IsSniping")()); }
+			ScriptFunction FreePoint() { mixin(MGF!("mFreePoint", "Function UTGame.UTBot.FreePoint")()); }
+			ScriptFunction AssignSquadResponsibility() { mixin(MGF!("mAssignSquadResponsibility", "Function UTGame.UTBot.AssignSquadResponsibility")()); }
+			ScriptFunction RelativeStrength() { mixin(MGF!("mRelativeStrength", "Function UTGame.UTBot.RelativeStrength")()); }
+			ScriptFunction SetEnemyInfo() { mixin(MGF!("mSetEnemyInfo", "Function UTGame.UTBot.SetEnemyInfo")()); }
+			ScriptFunction EnemyChanged() { mixin(MGF!("mEnemyChanged", "Function UTGame.UTBot.EnemyChanged")()); }
+			ScriptFunction StrafeFromDamage() { mixin(MGF!("mStrafeFromDamage", "Function UTGame.UTBot.StrafeFromDamage")()); }
+			ScriptFunction NotifyPhysicsVolumeChange() { mixin(MGF!("mNotifyPhysicsVolumeChange", "Function UTGame.UTBot.NotifyPhysicsVolumeChange")()); }
+			ScriptFunction MayDodgeToMoveTarget() { mixin(MGF!("mMayDodgeToMoveTarget", "Function UTGame.UTBot.MayDodgeToMoveTarget")()); }
+			ScriptFunction NotifyJumpApex() { mixin(MGF!("mNotifyJumpApex", "Function UTGame.UTBot.NotifyJumpApex")()); }
+			ScriptFunction NotifyMissedJump() { mixin(MGF!("mNotifyMissedJump", "Function UTGame.UTBot.NotifyMissedJump")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTBot.Reset")()); }
+			ScriptFunction Possess() { mixin(MGF!("mPossess", "Function UTGame.UTBot.Possess")()); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function UTGame.UTBot.Initialize")()); }
+			ScriptFunction ResetSkill() { mixin(MGF!("mResetSkill", "Function UTGame.UTBot.ResetSkill")()); }
+			ScriptFunction SetMaxDesiredSpeed() { mixin(MGF!("mSetMaxDesiredSpeed", "Function UTGame.UTBot.SetMaxDesiredSpeed")()); }
+			ScriptFunction SetPeripheralVision() { mixin(MGF!("mSetPeripheralVision", "Function UTGame.UTBot.SetPeripheralVision")()); }
+			ScriptFunction SetAlertness() { mixin(MGF!("mSetAlertness", "Function UTGame.UTBot.SetAlertness")()); }
+			ScriptFunction WhatToDoNext() { mixin(MGF!("mWhatToDoNext", "Function UTGame.UTBot.WhatToDoNext")()); }
+			ScriptFunction ExecuteWhatToDoNext() { mixin(MGF!("mExecuteWhatToDoNext", "Function UTGame.UTBot.ExecuteWhatToDoNext")()); }
+			ScriptFunction EnterVehicle() { mixin(MGF!("mEnterVehicle", "Function UTGame.UTBot.EnterVehicle")()); }
+			ScriptFunction LeaveVehicle() { mixin(MGF!("mLeaveVehicle", "Function UTGame.UTBot.LeaveVehicle")()); }
+			ScriptFunction VehicleFightEnemy() { mixin(MGF!("mVehicleFightEnemy", "Function UTGame.UTBot.VehicleFightEnemy")()); }
+			ScriptFunction FightEnemy() { mixin(MGF!("mFightEnemy", "Function UTGame.UTBot.FightEnemy")()); }
+			ScriptFunction DoRangedAttackOn() { mixin(MGF!("mDoRangedAttackOn", "Function UTGame.UTBot.DoRangedAttackOn")()); }
+			ScriptFunction ChooseAttackMode() { mixin(MGF!("mChooseAttackMode", "Function UTGame.UTBot.ChooseAttackMode")()); }
+			ScriptFunction FindSuperPickup() { mixin(MGF!("mFindSuperPickup", "Function UTGame.UTBot.FindSuperPickup")()); }
+			ScriptFunction FindInventoryGoal() { mixin(MGF!("mFindInventoryGoal", "Function UTGame.UTBot.FindInventoryGoal")()); }
+			ScriptFunction TossFlagToPlayer() { mixin(MGF!("mTossFlagToPlayer", "Function UTGame.UTBot.TossFlagToPlayer")()); }
+			ScriptFunction PickRetreatDestination() { mixin(MGF!("mPickRetreatDestination", "Function UTGame.UTBot.PickRetreatDestination")()); }
+			ScriptFunction SoakStop() { mixin(MGF!("mSoakStop", "Function UTGame.UTBot.SoakStop")()); }
+			ScriptFunction FindRoamDest() { mixin(MGF!("mFindRoamDest", "Function UTGame.UTBot.FindRoamDest")()); }
+			ScriptFunction Restart() { mixin(MGF!("mRestart", "Function UTGame.UTBot.Restart")()); }
+			ScriptFunction CheckPathToGoalAround() { mixin(MGF!("mCheckPathToGoalAround", "Function UTGame.UTBot.CheckPathToGoalAround")()); }
+			ScriptFunction ClearPathFor() { mixin(MGF!("mClearPathFor", "Function UTGame.UTBot.ClearPathFor")()); }
+			ScriptFunction AdjustAround() { mixin(MGF!("mAdjustAround", "Function UTGame.UTBot.AdjustAround")()); }
+			ScriptFunction NotifyBump() { mixin(MGF!("mNotifyBump", "Function UTGame.UTBot.NotifyBump")()); }
+			ScriptFunction NotifyPostLanded() { mixin(MGF!("mNotifyPostLanded", "Function UTGame.UTBot.NotifyPostLanded")()); }
+			ScriptFunction TimedDodgeToMoveTarget() { mixin(MGF!("mTimedDodgeToMoveTarget", "Function UTGame.UTBot.TimedDodgeToMoveTarget")()); }
+			ScriptFunction StartMoveToward() { mixin(MGF!("mStartMoveToward", "Function UTGame.UTBot.StartMoveToward")()); }
+			ScriptFunction SetRouteToGoal() { mixin(MGF!("mSetRouteToGoal", "Function UTGame.UTBot.SetRouteToGoal")()); }
+			ScriptFunction AllowDetourTo() { mixin(MGF!("mAllowDetourTo", "Function UTGame.UTBot.AllowDetourTo")()); }
+			ScriptFunction FindBestPathToward() { mixin(MGF!("mFindBestPathToward", "Function UTGame.UTBot.FindBestPathToward")()); }
+			ScriptFunction CheckFutureSight() { mixin(MGF!("mCheckFutureSight", "Function UTGame.UTBot.CheckFutureSight")()); }
+			ScriptFunction AdjustAimError() { mixin(MGF!("mAdjustAimError", "Function UTGame.UTBot.AdjustAimError")()); }
+			ScriptFunction GetAdjustedAimFor() { mixin(MGF!("mGetAdjustedAimFor", "Function UTGame.UTBot.GetAdjustedAimFor")()); }
+			ScriptFunction TryDuckTowardsMoveTarget() { mixin(MGF!("mTryDuckTowardsMoveTarget", "Function UTGame.UTBot.TryDuckTowardsMoveTarget")()); }
+			ScriptFunction DelayedWarning() { mixin(MGF!("mDelayedWarning", "Function UTGame.UTBot.DelayedWarning")()); }
+			ScriptFunction ReceiveProjectileWarning() { mixin(MGF!("mReceiveProjectileWarning", "Function UTGame.UTBot.ReceiveProjectileWarning")()); }
+			ScriptFunction NotifyTakeHit() { mixin(MGF!("mNotifyTakeHit", "Function UTGame.UTBot.NotifyTakeHit")()); }
+			ScriptFunction DelayedInstantWarning() { mixin(MGF!("mDelayedInstantWarning", "Function UTGame.UTBot.DelayedInstantWarning")()); }
+			ScriptFunction ReceiveWarning() { mixin(MGF!("mReceiveWarning", "Function UTGame.UTBot.ReceiveWarning")()); }
+			ScriptFunction ReceiveRunOverWarning() { mixin(MGF!("mReceiveRunOverWarning", "Function UTGame.UTBot.ReceiveRunOverWarning")()); }
+			ScriptFunction NotifyFallingHitWall() { mixin(MGF!("mNotifyFallingHitWall", "Function UTGame.UTBot.NotifyFallingHitWall")()); }
+			ScriptFunction MissedDodge() { mixin(MGF!("mMissedDodge", "Function UTGame.UTBot.MissedDodge")()); }
+			ScriptFunction TryWallDodge() { mixin(MGF!("mTryWallDodge", "Function UTGame.UTBot.TryWallDodge")()); }
+			ScriptFunction ChangeStrafe() { mixin(MGF!("mChangeStrafe", "Function UTGame.UTBot.ChangeStrafe")()); }
+			ScriptFunction TryToDuck() { mixin(MGF!("mTryToDuck", "Function UTGame.UTBot.TryToDuck")()); }
+			ScriptFunction NotifyKilled() { mixin(MGF!("mNotifyKilled", "Function UTGame.UTBot.NotifyKilled")()); }
+			ScriptFunction FaceMoveTarget() { mixin(MGF!("mFaceMoveTarget", "Function UTGame.UTBot.FaceMoveTarget")()); }
+			ScriptFunction ShouldStrafeTo() { mixin(MGF!("mShouldStrafeTo", "Function UTGame.UTBot.ShouldStrafeTo")()); }
+			ScriptFunction FaceActor() { mixin(MGF!("mFaceActor", "Function UTGame.UTBot.FaceActor")()); }
+			ScriptFunction SuperDesireability() { mixin(MGF!("mSuperDesireability", "Function UTGame.UTBot.SuperDesireability")()); }
+			ScriptFunction SuperPickupNotSpokenFor() { mixin(MGF!("mSuperPickupNotSpokenFor", "Function UTGame.UTBot.SuperPickupNotSpokenFor")()); }
+			ScriptFunction DamageAttitudeTo() { mixin(MGF!("mDamageAttitudeTo", "Function UTGame.UTBot.DamageAttitudeTo")()); }
+			ScriptFunction IsRetreating() { mixin(MGF!("mIsRetreating", "Function UTGame.UTBot.IsRetreating")()); }
+			ScriptFunction OnAIFreeze() { mixin(MGF!("mOnAIFreeze", "Function UTGame.UTBot.OnAIFreeze")()); }
+			ScriptFunction IsDefending() { mixin(MGF!("mIsDefending", "Function UTGame.UTBot.IsDefending")()); }
+			ScriptFunction ShouldDefendPosition() { mixin(MGF!("mShouldDefendPosition", "Function UTGame.UTBot.ShouldDefendPosition")()); }
+			ScriptFunction MoveToDefensePoint() { mixin(MGF!("mMoveToDefensePoint", "Function UTGame.UTBot.MoveToDefensePoint")()); }
+			ScriptFunction MoveAwayFrom() { mixin(MGF!("mMoveAwayFrom", "Function UTGame.UTBot.MoveAwayFrom")()); }
+			ScriptFunction WanderOrCamp() { mixin(MGF!("mWanderOrCamp", "Function UTGame.UTBot.WanderOrCamp")()); }
+			ScriptFunction EnableBumps() { mixin(MGF!("mEnableBumps", "Function UTGame.UTBot.EnableBumps")()); }
+			ScriptFunction Celebrate() { mixin(MGF!("mCelebrate", "Function UTGame.UTBot.Celebrate")()); }
+			ScriptFunction ForceGiveWeapon() { mixin(MGF!("mForceGiveWeapon", "Function UTGame.UTBot.ForceGiveWeapon")()); }
+			ScriptFunction GetDesiredOffset() { mixin(MGF!("mGetDesiredOffset", "Function UTGame.UTBot.GetDesiredOffset")()); }
+			ScriptFunction LostContact() { mixin(MGF!("mLostContact", "Function UTGame.UTBot.LostContact")()); }
+			ScriptFunction LoseEnemy() { mixin(MGF!("mLoseEnemy", "Function UTGame.UTBot.LoseEnemy")()); }
+			ScriptFunction DoStakeOut() { mixin(MGF!("mDoStakeOut", "Function UTGame.UTBot.DoStakeOut")()); }
+			ScriptFunction DoCharge() { mixin(MGF!("mDoCharge", "Function UTGame.UTBot.DoCharge")()); }
+			ScriptFunction DoTacticalMove() { mixin(MGF!("mDoTacticalMove", "Function UTGame.UTBot.DoTacticalMove")()); }
+			ScriptFunction DoRetreat() { mixin(MGF!("mDoRetreat", "Function UTGame.UTBot.DoRetreat")()); }
+			ScriptFunction DefendMelee() { mixin(MGF!("mDefendMelee", "Function UTGame.UTBot.DefendMelee")()); }
+			ScriptFunction IsStrafing() { mixin(MGF!("mIsStrafing", "Function UTGame.UTBot.IsStrafing")()); }
+			ScriptFunction EngageDirection() { mixin(MGF!("mEngageDirection", "Function UTGame.UTBot.EngageDirection")()); }
+			ScriptFunction IsHunting() { mixin(MGF!("mIsHunting", "Function UTGame.UTBot.IsHunting")()); }
+			ScriptFunction FindViewSpot() { mixin(MGF!("mFindViewSpot", "Function UTGame.UTBot.FindViewSpot")()); }
+			ScriptFunction Stopped() { mixin(MGF!("mStopped", "Function UTGame.UTBot.Stopped")()); }
+			ScriptFunction IsShootingObjective() { mixin(MGF!("mIsShootingObjective", "Function UTGame.UTBot.IsShootingObjective")()); }
+			ScriptFunction FocusOnLeader() { mixin(MGF!("mFocusOnLeader", "Function UTGame.UTBot.FocusOnLeader")()); }
+			ScriptFunction StopMovement() { mixin(MGF!("mStopMovement", "Function UTGame.UTBot.StopMovement")()); }
+			ScriptFunction PerformCustomAction() { mixin(MGF!("mPerformCustomAction", "Function UTGame.UTBot.PerformCustomAction")()); }
+			ScriptFunction UnderLift() { mixin(MGF!("mUnderLift", "Function UTGame.UTBot.UnderLift")()); }
+			ScriptFunction HandlePathObstruction() { mixin(MGF!("mHandlePathObstruction", "Function UTGame.UTBot.HandlePathObstruction")()); }
 		}
 	}
 	static struct Constants
@@ -353,133 +354,259 @@ public extern(D):
 			AngleConvert = 0.0000958738,
 		}
 	}
+	static struct WaitingForLanding
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.WaitingForLanding")()); }
+	}
+	static struct RoundEnded
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.RoundEnded")()); }
+	}
+	static struct EnteringVehicle
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.EnteringVehicle")()); }
+	}
+	static struct LeavingVehicle
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.LeavingVehicle")()); }
+	}
+	static struct Defending
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Defending")()); }
+	}
+	static struct Startled
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Startled")()); }
+	}
+	static struct MoveToGoal
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.MoveToGoal")()); }
+	}
+	static struct MoveToGoalNoEnemy
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.MoveToGoalNoEnemy")()); }
+	}
+	static struct MoveToGoalWithEnemy
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.MoveToGoalWithEnemy")()); }
+	}
+	static struct Roaming
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Roaming")()); }
+	}
+	static struct Fallback
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Fallback")()); }
+	}
+	static struct Retreating
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Retreating")()); }
+	}
+	static struct Charging
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Charging")()); }
+	}
+	static struct VehicleCharging
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.VehicleCharging")()); }
+	}
+	static struct TacticalMove
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.TacticalMove")()); }
+	}
+	static struct Hunting
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Hunting")()); }
+	}
+	static struct StakeOut
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.StakeOut")()); }
+	}
+	static struct RangedAttack
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.RangedAttack")()); }
+	}
+	static struct Dead
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Dead")()); }
+	}
+	static struct FindAir
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.FindAir")()); }
+	}
+	static struct CustomAction
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.CustomAction")()); }
+	}
+	static struct InQueue
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.InQueue")()); }
+	}
+	static struct ScriptedMove
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.ScriptedMove")()); }
+	}
+	static struct Frozen
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.Frozen")()); }
+	}
+	static struct FrozenMovement
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBot.FrozenMovement")()); }
+	}
 	@property final
 	{
 		auto ref
 		{
-			Actor NoVehicleGoal() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1304); }
-			Vector DirectionHint() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1308); }
-			ScriptClass KilledVehicleClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1164); }
-			ScriptClass FavoriteWeapon() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1256); }
-			UTDefensePoint DefensePoint() { return *cast(UTDefensePoint*)(cast(size_t)cast(void*)this + 1296); }
-			ScriptString GoalString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1264); }
-			float LastInjuredVoiceMessageTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1544); }
-			float LastCanAttackCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1540); }
-			Actor LastFireTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1536); }
-			float LastTryHoverboardTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1532); }
-			float LastActionMusicUpdate() { return *cast(float*)(cast(size_t)cast(void*)this + 1528); }
-			Actor ScriptedTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1524); }
-			Vector LastKillerPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1512); }
-			Vector LastKnownPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1500); }
-			Controller OldOrderGiver() { return *cast(Controller*)(cast(size_t)cast(void*)this + 1496); }
-			ScriptName OldOrders() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1488); }
-			ScriptName OrderNames() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1360); }
-			float GatherTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1356); }
-			float LastFireAttempt() { return *cast(float*)(cast(size_t)cast(void*)this + 1352); }
-			int NumRandomJumps() { return *cast(int*)(cast(size_t)cast(void*)this + 1348); }
-			float CampTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1344); }
-			float LastSearchWeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1340); }
-			float LastSearchTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1336); }
-			Pawn FailedHuntEnemy() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 1332); }
-			float FailedHuntTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1328); }
-			float LastRespawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1324); }
-			float StopStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1320); }
-			NavigationPoint DefensivePosition() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 1300); }
-			float ReTaskTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1292); }
-			UTBot NextSquadMember() { return *cast(UTBot*)(cast(size_t)cast(void*)this + 1288); }
-			ScriptString SoakString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1276); }
-			float OldMessageTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1260); }
-			float Jumpiness() { return *cast(float*)(cast(size_t)cast(void*)this + 1252); }
-			float ReactionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1248); }
-			float Tactics() { return *cast(float*)(cast(size_t)cast(void*)this + 1244); }
-			float CombatStyle() { return *cast(float*)(cast(size_t)cast(void*)this + 1240); }
-			float StrafingAbility() { return *cast(float*)(cast(size_t)cast(void*)this + 1236); }
-			float BaseAggressiveness() { return *cast(float*)(cast(size_t)cast(void*)this + 1232); }
-			float Accuracy() { return *cast(float*)(cast(size_t)cast(void*)this + 1228); }
-			float BaseAlertness() { return *cast(float*)(cast(size_t)cast(void*)this + 1224); }
-			float ForcedFlagDropTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1220); }
-			float RetreatStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1216); }
-			float LastUnderFire() { return *cast(float*)(cast(size_t)cast(void*)this + 1212); }
-			float StartTacticalTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1208); }
-			Actor StartleActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1204); }
-			float LoseEnemyCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1200); }
-			float Aggression() { return *cast(float*)(cast(size_t)cast(void*)this + 1196); }
-			float AcquireTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1192); }
-			NavigationPoint BlockedPath() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 1188); }
-			float LastAttractCheck() { return *cast(float*)(cast(size_t)cast(void*)this + 1184); }
-			float Aggressiveness() { return *cast(float*)(cast(size_t)cast(void*)this + 1180); }
-			Vector HidingSpot() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1168); }
-			int LastTauntIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 1160); }
-			int OldMessageID() { return *cast(int*)(cast(size_t)cast(void*)this + 1156); }
-			ScriptName OldMessageType() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1148); }
-			float MaxSpecialJumpZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1144); }
-			float ImpactJumpZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1140); }
-			Actor ImpactTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1136); }
-			float LastWarningTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1128); }
-			Pawn InstantWarningShooter() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 1124); }
+			Actor NoVehicleGoal() { mixin(MGPC!(Actor, 1304)()); }
+			Vector DirectionHint() { mixin(MGPC!(Vector, 1308)()); }
+			ScriptClass KilledVehicleClass() { mixin(MGPC!(ScriptClass, 1164)()); }
+			ScriptClass FavoriteWeapon() { mixin(MGPC!(ScriptClass, 1256)()); }
+			UTDefensePoint DefensePoint() { mixin(MGPC!(UTDefensePoint, 1296)()); }
+			ScriptString GoalString() { mixin(MGPC!(ScriptString, 1264)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CustomActionFunc__Delegate'!
+			float LastInjuredVoiceMessageTime() { mixin(MGPC!(float, 1544)()); }
+			float LastCanAttackCheckTime() { mixin(MGPC!(float, 1540)()); }
+			Actor LastFireTarget() { mixin(MGPC!(Actor, 1536)()); }
+			float LastTryHoverboardTime() { mixin(MGPC!(float, 1532)()); }
+			float LastActionMusicUpdate() { mixin(MGPC!(float, 1528)()); }
+			Actor ScriptedTarget() { mixin(MGPC!(Actor, 1524)()); }
+			Vector LastKillerPosition() { mixin(MGPC!(Vector, 1512)()); }
+			Vector LastKnownPosition() { mixin(MGPC!(Vector, 1500)()); }
+			Controller OldOrderGiver() { mixin(MGPC!(Controller, 1496)()); }
+			ScriptName OldOrders() { mixin(MGPC!(ScriptName, 1488)()); }
+			ScriptName OrderNames() { mixin(MGPC!(ScriptName, 1360)()); }
+			float GatherTime() { mixin(MGPC!(float, 1356)()); }
+			float LastFireAttempt() { mixin(MGPC!(float, 1352)()); }
+			int NumRandomJumps() { mixin(MGPC!(int, 1348)()); }
+			float CampTime() { mixin(MGPC!(float, 1344)()); }
+			float LastSearchWeight() { mixin(MGPC!(float, 1340)()); }
+			float LastSearchTime() { mixin(MGPC!(float, 1336)()); }
+			Pawn FailedHuntEnemy() { mixin(MGPC!(Pawn, 1332)()); }
+			float FailedHuntTime() { mixin(MGPC!(float, 1328)()); }
+			float LastRespawnTime() { mixin(MGPC!(float, 1324)()); }
+			float StopStartTime() { mixin(MGPC!(float, 1320)()); }
+			NavigationPoint DefensivePosition() { mixin(MGPC!(NavigationPoint, 1300)()); }
+			float ReTaskTime() { mixin(MGPC!(float, 1292)()); }
+			UTBot NextSquadMember() { mixin(MGPC!(UTBot, 1288)()); }
+			ScriptString SoakString() { mixin(MGPC!(ScriptString, 1276)()); }
+			float OldMessageTime() { mixin(MGPC!(float, 1260)()); }
+			float Jumpiness() { mixin(MGPC!(float, 1252)()); }
+			float ReactionTime() { mixin(MGPC!(float, 1248)()); }
+			float Tactics() { mixin(MGPC!(float, 1244)()); }
+			float CombatStyle() { mixin(MGPC!(float, 1240)()); }
+			float StrafingAbility() { mixin(MGPC!(float, 1236)()); }
+			float BaseAggressiveness() { mixin(MGPC!(float, 1232)()); }
+			float Accuracy() { mixin(MGPC!(float, 1228)()); }
+			float BaseAlertness() { mixin(MGPC!(float, 1224)()); }
+			float ForcedFlagDropTime() { mixin(MGPC!(float, 1220)()); }
+			float RetreatStartTime() { mixin(MGPC!(float, 1216)()); }
+			float LastUnderFire() { mixin(MGPC!(float, 1212)()); }
+			float StartTacticalTime() { mixin(MGPC!(float, 1208)()); }
+			Actor StartleActor() { mixin(MGPC!(Actor, 1204)()); }
+			float LoseEnemyCheckTime() { mixin(MGPC!(float, 1200)()); }
+			float Aggression() { mixin(MGPC!(float, 1196)()); }
+			float AcquireTime() { mixin(MGPC!(float, 1192)()); }
+			NavigationPoint BlockedPath() { mixin(MGPC!(NavigationPoint, 1188)()); }
+			float LastAttractCheck() { mixin(MGPC!(float, 1184)()); }
+			float Aggressiveness() { mixin(MGPC!(float, 1180)()); }
+			Vector HidingSpot() { mixin(MGPC!(Vector, 1168)()); }
+			int LastTauntIndex() { mixin(MGPC!(int, 1160)()); }
+			int OldMessageID() { mixin(MGPC!(int, 1156)()); }
+			ScriptName OldMessageType() { mixin(MGPC!(ScriptName, 1148)()); }
+			float MaxSpecialJumpZ() { mixin(MGPC!(float, 1144)()); }
+			float ImpactJumpZ() { mixin(MGPC!(float, 1140)()); }
+			Actor ImpactTarget() { mixin(MGPC!(Actor, 1136)()); }
+			float LastWarningTime() { mixin(MGPC!(float, 1128)()); }
+			Pawn InstantWarningShooter() { mixin(MGPC!(Pawn, 1124)()); }
 		}
-		bool bHuntPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x1) != 0; }
-		bool bHuntPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x1; } return val; }
-		bool bJustLanded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x8000) != 0; }
-		bool bJustLanded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x8000; } return val; }
-		bool bResetCombatTimer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x40000000) != 0; }
-		bool bResetCombatTimer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x40000000; } return val; }
-		bool bCheckDriverPickups() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x20000000) != 0; }
-		bool bCheckDriverPickups(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x20000000; } return val; }
-		bool bDirectHunt() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x10000000) != 0; }
-		bool bDirectHunt(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x10000000; } return val; }
-		bool bFinalStretch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x8000000) != 0; }
-		bool bFinalStretch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x8000000; } return val; }
-		bool bSpawnedByKismet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x4000000) != 0; }
-		bool bSpawnedByKismet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x4000000; } return val; }
-		bool bBetrayTeam() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x2000000) != 0; }
-		bool bBetrayTeam(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x2000000; } return val; }
-		bool bShortCamp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x1000000) != 0; }
-		bool bShortCamp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x1000000; } return val; }
-		bool bForceNoDetours() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x800000) != 0; }
-		bool bForceNoDetours(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x800000; } return val; }
-		bool bSendFlagMessage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x400000) != 0; }
-		bool bSendFlagMessage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x400000; } return val; }
-		bool bScriptedFrozen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x200000) != 0; }
-		bool bScriptedFrozen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x200000; } return val; }
-		bool bAllowedToImpactJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x100000) != 0; }
-		bool bAllowedToImpactJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x100000; } return val; }
-		bool bPendingDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x80000) != 0; }
-		bool bPendingDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x80000; } return val; }
-		bool bHasSuperWeapon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x40000) != 0; }
-		bool bHasSuperWeapon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x40000; } return val; }
-		bool bIgnoreEnemyChange() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x20000) != 0; }
-		bool bIgnoreEnemyChange(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x20000; } return val; }
-		bool bRecommendFastMove() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x10000) != 0; }
-		bool bRecommendFastMove(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x10000; } return val; }
-		bool bPursuingFlag() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x4000) != 0; }
-		bool bPursuingFlag(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x4000; } return val; }
-		bool bMustCharge() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x2000) != 0; }
-		bool bMustCharge(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x2000; } return val; }
-		bool bStoppedFiring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x1000) != 0; }
-		bool bStoppedFiring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x1000; } return val; }
-		bool bFireSuccess() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x800) != 0; }
-		bool bFireSuccess(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x800; } return val; }
-		bool bForcedDirection() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x400) != 0; }
-		bool bForcedDirection(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x400; } return val; }
-		bool bHasFired() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x200) != 0; }
-		bool bHasFired(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x200; } return val; }
-		bool bWasNearObjective() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x100) != 0; }
-		bool bWasNearObjective(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x100; } return val; }
-		bool bTacticalDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x80) != 0; }
-		bool bTacticalDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x80; } return val; }
-		bool bReachedGatherPoint() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x40) != 0; }
-		bool bReachedGatherPoint(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x40; } return val; }
-		bool bInitLifeMessage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x20) != 0; }
-		bool bInitLifeMessage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x20; } return val; }
-		bool bFrustrated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x10) != 0; }
-		bool bFrustrated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x10; } return val; }
-		bool bChangeDir() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x8) != 0; }
-		bool bChangeDir(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x8; } return val; }
-		bool bStrafeDir() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x4) != 0; }
-		bool bStrafeDir(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x4; } return val; }
-		bool bCanFire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1132) & 0x2) != 0; }
-		bool bCanFire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1132) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1132) &= ~0x2; } return val; }
+		bool bHuntPlayer() { mixin(MGBPC!(1132, 0x1)()); }
+		bool bHuntPlayer(bool val) { mixin(MSBPC!(1132, 0x1)()); }
+		bool bJustLanded() { mixin(MGBPC!(1132, 0x8000)()); }
+		bool bJustLanded(bool val) { mixin(MSBPC!(1132, 0x8000)()); }
+		bool bResetCombatTimer() { mixin(MGBPC!(1132, 0x40000000)()); }
+		bool bResetCombatTimer(bool val) { mixin(MSBPC!(1132, 0x40000000)()); }
+		bool bCheckDriverPickups() { mixin(MGBPC!(1132, 0x20000000)()); }
+		bool bCheckDriverPickups(bool val) { mixin(MSBPC!(1132, 0x20000000)()); }
+		bool bDirectHunt() { mixin(MGBPC!(1132, 0x10000000)()); }
+		bool bDirectHunt(bool val) { mixin(MSBPC!(1132, 0x10000000)()); }
+		bool bFinalStretch() { mixin(MGBPC!(1132, 0x8000000)()); }
+		bool bFinalStretch(bool val) { mixin(MSBPC!(1132, 0x8000000)()); }
+		bool bSpawnedByKismet() { mixin(MGBPC!(1132, 0x4000000)()); }
+		bool bSpawnedByKismet(bool val) { mixin(MSBPC!(1132, 0x4000000)()); }
+		bool bBetrayTeam() { mixin(MGBPC!(1132, 0x2000000)()); }
+		bool bBetrayTeam(bool val) { mixin(MSBPC!(1132, 0x2000000)()); }
+		bool bShortCamp() { mixin(MGBPC!(1132, 0x1000000)()); }
+		bool bShortCamp(bool val) { mixin(MSBPC!(1132, 0x1000000)()); }
+		bool bForceNoDetours() { mixin(MGBPC!(1132, 0x800000)()); }
+		bool bForceNoDetours(bool val) { mixin(MSBPC!(1132, 0x800000)()); }
+		bool bSendFlagMessage() { mixin(MGBPC!(1132, 0x400000)()); }
+		bool bSendFlagMessage(bool val) { mixin(MSBPC!(1132, 0x400000)()); }
+		bool bScriptedFrozen() { mixin(MGBPC!(1132, 0x200000)()); }
+		bool bScriptedFrozen(bool val) { mixin(MSBPC!(1132, 0x200000)()); }
+		bool bAllowedToImpactJump() { mixin(MGBPC!(1132, 0x100000)()); }
+		bool bAllowedToImpactJump(bool val) { mixin(MSBPC!(1132, 0x100000)()); }
+		bool bPendingDoubleJump() { mixin(MGBPC!(1132, 0x80000)()); }
+		bool bPendingDoubleJump(bool val) { mixin(MSBPC!(1132, 0x80000)()); }
+		bool bHasSuperWeapon() { mixin(MGBPC!(1132, 0x40000)()); }
+		bool bHasSuperWeapon(bool val) { mixin(MSBPC!(1132, 0x40000)()); }
+		bool bIgnoreEnemyChange() { mixin(MGBPC!(1132, 0x20000)()); }
+		bool bIgnoreEnemyChange(bool val) { mixin(MSBPC!(1132, 0x20000)()); }
+		bool bRecommendFastMove() { mixin(MGBPC!(1132, 0x10000)()); }
+		bool bRecommendFastMove(bool val) { mixin(MSBPC!(1132, 0x10000)()); }
+		bool bPursuingFlag() { mixin(MGBPC!(1132, 0x4000)()); }
+		bool bPursuingFlag(bool val) { mixin(MSBPC!(1132, 0x4000)()); }
+		bool bMustCharge() { mixin(MGBPC!(1132, 0x2000)()); }
+		bool bMustCharge(bool val) { mixin(MSBPC!(1132, 0x2000)()); }
+		bool bStoppedFiring() { mixin(MGBPC!(1132, 0x1000)()); }
+		bool bStoppedFiring(bool val) { mixin(MSBPC!(1132, 0x1000)()); }
+		bool bFireSuccess() { mixin(MGBPC!(1132, 0x800)()); }
+		bool bFireSuccess(bool val) { mixin(MSBPC!(1132, 0x800)()); }
+		bool bForcedDirection() { mixin(MGBPC!(1132, 0x400)()); }
+		bool bForcedDirection(bool val) { mixin(MSBPC!(1132, 0x400)()); }
+		bool bHasFired() { mixin(MGBPC!(1132, 0x200)()); }
+		bool bHasFired(bool val) { mixin(MSBPC!(1132, 0x200)()); }
+		bool bWasNearObjective() { mixin(MGBPC!(1132, 0x100)()); }
+		bool bWasNearObjective(bool val) { mixin(MSBPC!(1132, 0x100)()); }
+		bool bTacticalDoubleJump() { mixin(MGBPC!(1132, 0x80)()); }
+		bool bTacticalDoubleJump(bool val) { mixin(MSBPC!(1132, 0x80)()); }
+		bool bReachedGatherPoint() { mixin(MGBPC!(1132, 0x40)()); }
+		bool bReachedGatherPoint(bool val) { mixin(MSBPC!(1132, 0x40)()); }
+		bool bInitLifeMessage() { mixin(MGBPC!(1132, 0x20)()); }
+		bool bInitLifeMessage(bool val) { mixin(MSBPC!(1132, 0x20)()); }
+		bool bFrustrated() { mixin(MGBPC!(1132, 0x10)()); }
+		bool bFrustrated(bool val) { mixin(MSBPC!(1132, 0x10)()); }
+		bool bChangeDir() { mixin(MGBPC!(1132, 0x8)()); }
+		bool bChangeDir(bool val) { mixin(MSBPC!(1132, 0x8)()); }
+		bool bStrafeDir() { mixin(MGBPC!(1132, 0x4)()); }
+		bool bStrafeDir(bool val) { mixin(MSBPC!(1132, 0x4)()); }
+		bool bCanFire() { mixin(MGBPC!(1132, 0x2)()); }
+		bool bCanFire(bool val) { mixin(MSBPC!(1132, 0x2)()); }
 	}
 final:
 	Vector GetDirectionHint()
@@ -754,13 +881,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanCombo, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void DisplayDebug(HUD pHUD, float* YL, float* YPos)
+	void DisplayDebug(HUD pHUD, ref float YL, ref float YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *YL;
-		*cast(float*)&params[8] = *YPos;
+		*cast(float*)&params[4] = YL;
+		*cast(float*)&params[8] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*YL = *cast(float*)&params[4];
 		*YPos = *cast(float*)&params[8];
@@ -936,12 +1063,12 @@ final:
 		*cast(bool*)&params[4] = bVehicleTransition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Possess, params.ptr, cast(void*)0);
 	}
-	void Initialize(float InSkill, UTCharInfo.CharacterInfo* BotInfo)
+	void Initialize(float InSkill, ref const UTCharInfo.CharacterInfo BotInfo)
 	{
 		ubyte params[116];
 		params[] = 0;
 		*cast(float*)params.ptr = InSkill;
-		*cast(UTCharInfo.CharacterInfo*)&params[4] = *BotInfo;
+		*cast(UTCharInfo.CharacterInfo*)&params[4] = BotInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, params.ptr, cast(void*)0);
 		*BotInfo = *cast(UTCharInfo.CharacterInfo*)&params[4];
 	}

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_ServerTeam;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_ServerTeam : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ServerTeam")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ServerTeam")()); }
 	private static __gshared GFxTrPage_ServerTeam mDefaultProperties;
-	@property final static GFxTrPage_ServerTeam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ServerTeam)("GFxTrPage_ServerTeam TribesGame.Default__GFxTrPage_ServerTeam")); }
+	@property final static GFxTrPage_ServerTeam DefaultProperties() { mixin(MGDPC!(GFxTrPage_ServerTeam, "GFxTrPage_ServerTeam TribesGame.Default__GFxTrPage_ServerTeam")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,34 +31,34 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.SpecialAction")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.PopupComplete")); }
-			ScriptFunction ShowBoundsError() { return mShowBoundsError ? mShowBoundsError : (mShowBoundsError = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.ShowBoundsError")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.FillOption")); }
-			ScriptFunction SetSubTitle() { return mSetSubTitle ? mSetSubTitle : (mSetSubTitle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.SetSubTitle")); }
-			ScriptFunction CheckDescription() { return mCheckDescription ? mCheckDescription : (mCheckDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.CheckDescription")); }
-			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.FillDescription")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerTeam.ShowModel")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_ServerTeam.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ServerTeam.SpecialAction")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ServerTeam.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ServerTeam.PopupComplete")()); }
+			ScriptFunction ShowBoundsError() { mixin(MGF!("mShowBoundsError", "Function TribesGame.GFxTrPage_ServerTeam.ShowBoundsError")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ServerTeam.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ServerTeam.FillOption")()); }
+			ScriptFunction SetSubTitle() { mixin(MGF!("mSetSubTitle", "Function TribesGame.GFxTrPage_ServerTeam.SetSubTitle")()); }
+			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ServerTeam.CheckDescription")()); }
+			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ServerTeam.FillDescription")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ServerTeam.ShowModel")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxBOunds() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int MinBounds() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			int MaxBOunds() { mixin(MGPC!(int, 360)()); }
+			int MinBounds() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bBoundsPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x8) != 0; }
-		bool bBoundsPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x8; } return val; }
-		bool bPopupBaseDestPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x4) != 0; }
-		bool bPopupBaseDestPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x4; } return val; }
-		bool bDisparityPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x2) != 0; }
-		bool bDisparityPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x2; } return val; }
-		bool bMaxPlayerPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x1) != 0; }
-		bool bMaxPlayerPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x1; } return val; }
+		bool bBoundsPopup() { mixin(MGBPC!(364, 0x8)()); }
+		bool bBoundsPopup(bool val) { mixin(MSBPC!(364, 0x8)()); }
+		bool bPopupBaseDestPopup() { mixin(MGBPC!(364, 0x4)()); }
+		bool bPopupBaseDestPopup(bool val) { mixin(MSBPC!(364, 0x4)()); }
+		bool bDisparityPopup() { mixin(MGBPC!(364, 0x2)()); }
+		bool bDisparityPopup(bool val) { mixin(MSBPC!(364, 0x2)()); }
+		bool bMaxPlayerPopup() { mixin(MGBPC!(364, 0x1)()); }
+		bool bMaxPlayerPopup(bool val) { mixin(MSBPC!(364, 0x1)()); }
 	}
 final:
 	void Initialize()

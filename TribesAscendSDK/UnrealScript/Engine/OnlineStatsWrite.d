@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineStatsWrite;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineStats;
 import UnrealScript.Engine.Settings;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineStatsWrite : OnlineStats
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineStatsWrite")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineStatsWrite")()); }
 	private static __gshared OnlineStatsWrite mDefaultProperties;
-	@property final static OnlineStatsWrite DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineStatsWrite)("OnlineStatsWrite Engine.Default__OnlineStatsWrite")); }
+	@property final static OnlineStatsWrite DefaultProperties() { mixin(MGDPC!(OnlineStatsWrite, "OnlineStatsWrite Engine.Default__OnlineStatsWrite")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,36 +28,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnStatsWriteComplete() { return mOnStatsWriteComplete ? mOnStatsWriteComplete : (mOnStatsWriteComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.OnStatsWriteComplete")); }
-			ScriptFunction GetStatId() { return mGetStatId ? mGetStatId : (mGetStatId = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.GetStatId")); }
-			ScriptFunction GetStatName() { return mGetStatName ? mGetStatName : (mGetStatName = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.GetStatName")); }
-			ScriptFunction SetFloatStat() { return mSetFloatStat ? mSetFloatStat : (mSetFloatStat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.SetFloatStat")); }
-			ScriptFunction SetIntStat() { return mSetIntStat ? mSetIntStat : (mSetIntStat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.SetIntStat")); }
-			ScriptFunction IncrementFloatStat() { return mIncrementFloatStat ? mIncrementFloatStat : (mIncrementFloatStat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.IncrementFloatStat")); }
-			ScriptFunction IncrementIntStat() { return mIncrementIntStat ? mIncrementIntStat : (mIncrementIntStat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.IncrementIntStat")); }
-			ScriptFunction DecrementFloatStat() { return mDecrementFloatStat ? mDecrementFloatStat : (mDecrementFloatStat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.DecrementFloatStat")); }
-			ScriptFunction DecrementIntStat() { return mDecrementIntStat ? mDecrementIntStat : (mDecrementIntStat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsWrite.DecrementIntStat")); }
+			ScriptFunction OnStatsWriteComplete() { mixin(MGF!("mOnStatsWriteComplete", "Function Engine.OnlineStatsWrite.OnStatsWriteComplete")()); }
+			ScriptFunction GetStatId() { mixin(MGF!("mGetStatId", "Function Engine.OnlineStatsWrite.GetStatId")()); }
+			ScriptFunction GetStatName() { mixin(MGF!("mGetStatName", "Function Engine.OnlineStatsWrite.GetStatName")()); }
+			ScriptFunction SetFloatStat() { mixin(MGF!("mSetFloatStat", "Function Engine.OnlineStatsWrite.SetFloatStat")()); }
+			ScriptFunction SetIntStat() { mixin(MGF!("mSetIntStat", "Function Engine.OnlineStatsWrite.SetIntStat")()); }
+			ScriptFunction IncrementFloatStat() { mixin(MGF!("mIncrementFloatStat", "Function Engine.OnlineStatsWrite.IncrementFloatStat")()); }
+			ScriptFunction IncrementIntStat() { mixin(MGF!("mIncrementIntStat", "Function Engine.OnlineStatsWrite.IncrementIntStat")()); }
+			ScriptFunction DecrementFloatStat() { mixin(MGF!("mDecrementFloatStat", "Function Engine.OnlineStatsWrite.DecrementFloatStat")()); }
+			ScriptFunction DecrementIntStat() { mixin(MGF!("mDecrementIntStat", "Function Engine.OnlineStatsWrite.DecrementIntStat")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Settings.StringIdToStringMapping) StatMappings() { return *cast(ScriptArray!(Settings.StringIdToStringMapping)*)(cast(size_t)cast(void*)this + 72); }
-		ScriptArray!(Settings.SettingsProperty) Properties() { return *cast(ScriptArray!(Settings.SettingsProperty)*)(cast(size_t)cast(void*)this + 84); }
-		ScriptArray!(int) ViewIds() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 96); }
-		ScriptArray!(int) ArbitratedViewIds() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 108); }
-		int RatingId() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
+		ScriptArray!(Settings.StringIdToStringMapping) StatMappings() { mixin(MGPC!(ScriptArray!(Settings.StringIdToStringMapping), 72)()); }
+		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!(ScriptArray!(Settings.SettingsProperty), 84)()); }
+		ScriptArray!(int) ViewIds() { mixin(MGPC!(ScriptArray!(int), 96)()); }
+		ScriptArray!(int) ArbitratedViewIds() { mixin(MGPC!(ScriptArray!(int), 108)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnStatsWriteComplete__Delegate'!
+		int RatingId() { mixin(MGPC!(int, 120)()); }
 	}
 final:
 	void OnStatsWriteComplete()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnStatsWriteComplete, cast(void*)0, cast(void*)0);
 	}
-	bool GetStatId(ScriptName StatName, int* StatId)
+	bool GetStatId(ScriptName StatName, ref int StatId)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = StatName;
-		*cast(int*)&params[8] = *StatId;
+		*cast(int*)&params[8] = StatId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStatId, params.ptr, cast(void*)0);
 		*StatId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];

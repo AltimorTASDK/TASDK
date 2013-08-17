@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Teleporter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface Teleporter : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Teleporter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Teleporter")()); }
 	private static __gshared Teleporter mDefaultProperties;
-	@property final static Teleporter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Teleporter)("Teleporter Engine.Default__Teleporter")); }
+	@property final static Teleporter DefaultProperties() { mixin(MGDPC!(Teleporter, "Teleporter Engine.Default__Teleporter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,37 +26,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanTeleport() { return mCanTeleport ? mCanTeleport : (mCanTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.CanTeleport")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.PostBeginPlay")); }
-			ScriptFunction Accept() { return mAccept ? mAccept : (mAccept = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.Accept")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.Touch")); }
-			ScriptFunction PostTouch() { return mPostTouch ? mPostTouch : (mPostTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.PostTouch")); }
-			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.SpecialHandling")); }
+			ScriptFunction CanTeleport() { mixin(MGF!("mCanTeleport", "Function Engine.Teleporter.CanTeleport")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Teleporter.PostBeginPlay")()); }
+			ScriptFunction Accept() { mixin(MGF!("mAccept", "Function Engine.Teleporter.Accept")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.Teleporter.Touch")()); }
+			ScriptFunction PostTouch() { mixin(MGF!("mPostTouch", "Function Engine.Teleporter.PostTouch")()); }
+			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.Teleporter.SpecialHandling")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float LastFired() { return *cast(float*)(cast(size_t)cast(void*)this + 728); }
-			Vector TargetVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 716); }
-			ScriptName ProductRequired() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 704); }
+			float LastFired() { mixin(MGPC!(float, 728)()); }
+			Vector TargetVelocity() { mixin(MGPC!(Vector, 716)()); }
+			ScriptName ProductRequired() { mixin(MGPC!(ScriptName, 704)()); }
 			// WARNING: Property 'URL' has the same name as a defined type!
 		}
-		bool bCanTeleportVehicles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x40) != 0; }
-		bool bCanTeleportVehicles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x40; } return val; }
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x20) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x20; } return val; }
-		bool bReversesZ() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x10) != 0; }
-		bool bReversesZ(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x10; } return val; }
-		bool bReversesY() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x8) != 0; }
-		bool bReversesY(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x8; } return val; }
-		bool bReversesX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x4) != 0; }
-		bool bReversesX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x4; } return val; }
-		bool bChangesYaw() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x2) != 0; }
-		bool bChangesYaw(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x2; } return val; }
-		bool bChangesVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x1) != 0; }
-		bool bChangesVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x1; } return val; }
+		bool bCanTeleportVehicles() { mixin(MGBPC!(712, 0x40)()); }
+		bool bCanTeleportVehicles(bool val) { mixin(MSBPC!(712, 0x40)()); }
+		bool bEnabled() { mixin(MGBPC!(712, 0x20)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(712, 0x20)()); }
+		bool bReversesZ() { mixin(MGBPC!(712, 0x10)()); }
+		bool bReversesZ(bool val) { mixin(MSBPC!(712, 0x10)()); }
+		bool bReversesY() { mixin(MGBPC!(712, 0x8)()); }
+		bool bReversesY(bool val) { mixin(MSBPC!(712, 0x8)()); }
+		bool bReversesX() { mixin(MGBPC!(712, 0x4)()); }
+		bool bReversesX(bool val) { mixin(MSBPC!(712, 0x4)()); }
+		bool bChangesYaw() { mixin(MGBPC!(712, 0x2)()); }
+		bool bChangesYaw(bool val) { mixin(MSBPC!(712, 0x2)()); }
+		bool bChangesVelocity() { mixin(MGBPC!(712, 0x1)()); }
+		bool bChangesVelocity(bool val) { mixin(MSBPC!(712, 0x1)()); }
 	}
 final:
 	bool CanTeleport(Actor A)

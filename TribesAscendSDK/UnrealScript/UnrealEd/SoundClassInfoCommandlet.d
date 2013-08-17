@@ -1,13 +1,14 @@
 module UnrealScript.UnrealEd.SoundClassInfoCommandlet;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.Commandlet;
 
 extern(C++) interface SoundClassInfoCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.SoundClassInfoCommandlet")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.SoundClassInfoCommandlet")()); }
 	private static __gshared SoundClassInfoCommandlet mDefaultProperties;
-	@property final static SoundClassInfoCommandlet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundClassInfoCommandlet)("SoundClassInfoCommandlet UnrealEd.Default__SoundClassInfoCommandlet")); }
+	@property final static SoundClassInfoCommandlet DefaultProperties() { mixin(MGDPC!(SoundClassInfoCommandlet, "SoundClassInfoCommandlet UnrealEd.Default__SoundClassInfoCommandlet")()); }
 }

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_RegionSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxTrPage_RegionSettings : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_RegionSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_RegionSettings")()); }
 	private static __gshared GFxTrPage_RegionSettings mDefaultProperties;
-	@property final static GFxTrPage_RegionSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_RegionSettings)("GFxTrPage_RegionSettings TribesGame.Default__GFxTrPage_RegionSettings")); }
+	@property final static GFxTrPage_RegionSettings DefaultProperties() { mixin(MGDPC!(GFxTrPage_RegionSettings, "GFxTrPage_RegionSettings TribesGame.Default__GFxTrPage_RegionSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,26 +23,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RegionSettings.Initialize")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RegionSettings.FillData")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RegionSettings.TakeAction")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RegionSettings.FillOption")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_RegionSettings.Initialize")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_RegionSettings.FillData")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_RegionSettings.TakeAction")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_RegionSettings.FillOption")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int CurrFilterIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-			int CurrFilterSite() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int CurrRegion() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			int CurrFilterIndex() { mixin(MGPC!(int, 364)()); }
+			int CurrFilterSite() { mixin(MGPC!(int, 360)()); }
+			int CurrRegion() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bFilter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 368) & 0x1) != 0; }
-		bool bFilter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 368) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 368) &= ~0x1; } return val; }
-		bool bForceChoose() { return (*cast(uint*)(cast(size_t)cast(void*)this + 368) & 0x4) != 0; }
-		bool bForceChoose(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 368) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 368) &= ~0x4; } return val; }
-		bool bServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 368) & 0x2) != 0; }
-		bool bServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 368) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 368) &= ~0x2; } return val; }
+		bool bFilter() { mixin(MGBPC!(368, 0x1)()); }
+		bool bFilter(bool val) { mixin(MSBPC!(368, 0x1)()); }
+		bool bForceChoose() { mixin(MGBPC!(368, 0x4)()); }
+		bool bForceChoose(bool val) { mixin(MSBPC!(368, 0x4)()); }
+		bool bServer() { mixin(MGBPC!(368, 0x2)()); }
+		bool bServer(bool val) { mixin(MSBPC!(368, 0x2)()); }
 	}
 final:
 	void Initialize()

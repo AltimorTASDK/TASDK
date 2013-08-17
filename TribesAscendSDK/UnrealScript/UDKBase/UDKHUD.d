@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKHUD;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.GameFramework.MobileHUD;
 import UnrealScript.Engine.Font;
@@ -9,9 +10,9 @@ extern(C++) interface UDKHUD : MobileHUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKHUD")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKHUD")()); }
 	private static __gshared UDKHUD mDefaultProperties;
-	@property final static UDKHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKHUD)("UDKHUD UDKBase.Default__UDKHUD")); }
+	@property final static UDKHUD DefaultProperties() { mixin(MGDPC!(UDKHUD, "UDKHUD UDKBase.Default__UDKHUD")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,19 +22,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DrawGlowText() { return mDrawGlowText ? mDrawGlowText : (mDrawGlowText = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKHUD.DrawGlowText")); }
-			ScriptFunction TranslateBindToFont() { return mTranslateBindToFont ? mTranslateBindToFont : (mTranslateBindToFont = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKHUD.TranslateBindToFont")); }
+			ScriptFunction DrawGlowText() { mixin(MGF!("mDrawGlowText", "Function UDKBase.UDKHUD.DrawGlowText")()); }
+			ScriptFunction TranslateBindToFont() { mixin(MGF!("mTranslateBindToFont", "Function UDKBase.UDKHUD.TranslateBindToFont")()); }
 		}
 	}
 	@property final auto ref
 	{
-		Font BindTextFont() { return *cast(Font*)(cast(size_t)cast(void*)this + 1424); }
-		Font ConsoleIconFont() { return *cast(Font*)(cast(size_t)cast(void*)this + 1420); }
-		Canvas.FontRenderInfo TextRenderInfo() { return *cast(Canvas.FontRenderInfo*)(cast(size_t)cast(void*)this + 1380); }
-		float PulseMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1376); }
-		float PulseSplit() { return *cast(float*)(cast(size_t)cast(void*)this + 1372); }
-		float PulseDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 1368); }
-		Font GlowFonts() { return *cast(Font*)(cast(size_t)cast(void*)this + 1360); }
+		Font BindTextFont() { mixin(MGPC!(Font, 1424)()); }
+		Font ConsoleIconFont() { mixin(MGPC!(Font, 1420)()); }
+		Canvas.FontRenderInfo TextRenderInfo() { mixin(MGPC!(Canvas.FontRenderInfo, 1380)()); }
+		float PulseMultiplier() { mixin(MGPC!(float, 1376)()); }
+		float PulseSplit() { mixin(MGPC!(float, 1372)()); }
+		float PulseDuration() { mixin(MGPC!(float, 1368)()); }
+		Font GlowFonts() { mixin(MGPC!(Font, 1360)()); }
 	}
 final:
 	void DrawGlowText(ScriptString Text, float X, float Y, float MaxHeightInPixels, float PulseTime, bool bRightJustified)
@@ -48,13 +49,13 @@ final:
 		*cast(bool*)&params[28] = bRightJustified;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawGlowText, params.ptr, cast(void*)0);
 	}
-	static void TranslateBindToFont(ScriptString InBindStr, Font* DrawFont, ScriptString* OutBindStr)
+	static void TranslateBindToFont(ScriptString InBindStr, ref Font DrawFont, ref ScriptString OutBindStr)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InBindStr;
-		*cast(Font*)&params[12] = *DrawFont;
-		*cast(ScriptString*)&params[16] = *OutBindStr;
+		*cast(Font*)&params[12] = DrawFont;
+		*cast(ScriptString*)&params[16] = OutBindStr;
 		StaticClass.ProcessEvent(Functions.TranslateBindToFont, params.ptr, cast(void*)0);
 		*DrawFont = *cast(Font*)&params[12];
 		*OutBindStr = *cast(ScriptString*)&params[16];

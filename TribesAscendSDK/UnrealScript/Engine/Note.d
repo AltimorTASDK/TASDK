@@ -1,14 +1,15 @@
 module UnrealScript.Engine.Note;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 
 extern(C++) interface Note : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Note")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Note")()); }
 	private static __gshared Note mDefaultProperties;
-	@property final static Note DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Note)("Note Engine.Default__Note")); }
-	@property final auto ref ScriptString Text() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 476); }
+	@property final static Note DefaultProperties() { mixin(MGDPC!(Note, "Note Engine.Default__Note")()); }
+	@property final auto ref ScriptString Text() { mixin(MGPC!(ScriptString, 476)()); }
 }

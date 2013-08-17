@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKVehicleSimHoverboard;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Core.UObject;
 import UnrealScript.UDKBase.UDKVehicle;
@@ -11,9 +12,9 @@ extern(C++) interface UDKVehicleSimHoverboard : SVehicleSimBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimHoverboard")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKVehicleSimHoverboard")()); }
 	private static __gshared UDKVehicleSimHoverboard mDefaultProperties;
-	@property final static UDKVehicleSimHoverboard DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleSimHoverboard)("UDKVehicleSimHoverboard UDKBase.Default__UDKVehicleSimHoverboard")); }
+	@property final static UDKVehicleSimHoverboard DefaultProperties() { mixin(MGDPC!(UDKVehicleSimHoverboard, "UDKVehicleSimHoverboard UDKBase.Default__UDKVehicleSimHoverboard")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,46 +24,46 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitWheels() { return mInitWheels ? mInitWheels : (mInitWheels = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleSimHoverboard.InitWheels")); }
-			ScriptFunction UpdateLeanConstraint() { return mUpdateLeanConstraint ? mUpdateLeanConstraint : (mUpdateLeanConstraint = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleSimHoverboard.UpdateLeanConstraint")); }
+			ScriptFunction InitWheels() { mixin(MGF!("mInitWheels", "Function UDKBase.UDKVehicleSimHoverboard.InitWheels")()); }
+			ScriptFunction UpdateLeanConstraint() { mixin(MGF!("mUpdateLeanConstraint", "Function UDKBase.UDKVehicleSimHoverboard.UpdateLeanConstraint")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float CurrentLookYaw() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			float SlalomSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-			float HoverboardSlalomMaxAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-			float CurrentSteerOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float LandedCountdown() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float SpinSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			float AutoSpin() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-			float SpinHeadingOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
-			float TrickJumpWarmup() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			float TakeoffYaw() { return *cast(float*)(cast(size_t)cast(void*)this + 228); }
-			Vector GroundNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 216); }
-			SoundCue OverWaterSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 212); }
-			float WaterCheckLevel() { return *cast(float*)(cast(size_t)cast(void*)this + 208); }
-			float StopThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 204); }
-			UObject.InterpCurveFloat TurnDampingSpeedFunc() { return *cast(UObject.InterpCurveFloat*)(cast(size_t)cast(void*)this + 184); }
-			float MaxTurnTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			float SpinTurnTorqueScale() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
-			float TurnTorqueFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 172); }
-			float MaxRiseForce() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float LatDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float MaxStrafeForce() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			float LongDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-			float MaxReverseVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			float MaxReverseForce() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			float MaxThrustForce() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
+			float CurrentLookYaw() { mixin(MGPC!(float, 264)()); }
+			float SlalomSpeed() { mixin(MGPC!(float, 260)()); }
+			float HoverboardSlalomMaxAngle() { mixin(MGPC!(float, 256)()); }
+			float CurrentSteerOffset() { mixin(MGPC!(float, 252)()); }
+			float LandedCountdown() { mixin(MGPC!(float, 248)()); }
+			float SpinSpeed() { mixin(MGPC!(float, 244)()); }
+			float AutoSpin() { mixin(MGPC!(float, 240)()); }
+			float SpinHeadingOffset() { mixin(MGPC!(float, 236)()); }
+			float TrickJumpWarmup() { mixin(MGPC!(float, 232)()); }
+			float TakeoffYaw() { mixin(MGPC!(float, 228)()); }
+			Vector GroundNormal() { mixin(MGPC!(Vector, 216)()); }
+			SoundCue OverWaterSound() { mixin(MGPC!(SoundCue, 212)()); }
+			float WaterCheckLevel() { mixin(MGPC!(float, 208)()); }
+			float StopThreshold() { mixin(MGPC!(float, 204)()); }
+			UObject.InterpCurveFloat TurnDampingSpeedFunc() { mixin(MGPC!(UObject.InterpCurveFloat, 184)()); }
+			float MaxTurnTorque() { mixin(MGPC!(float, 180)()); }
+			float SpinTurnTorqueScale() { mixin(MGPC!(float, 176)()); }
+			float TurnTorqueFactor() { mixin(MGPC!(float, 172)()); }
+			float MaxRiseForce() { mixin(MGPC!(float, 168)()); }
+			float LatDamping() { mixin(MGPC!(float, 164)()); }
+			float MaxStrafeForce() { mixin(MGPC!(float, 160)()); }
+			float LongDamping() { mixin(MGPC!(float, 156)()); }
+			float MaxReverseVelocity() { mixin(MGPC!(float, 152)()); }
+			float MaxReverseForce() { mixin(MGPC!(float, 148)()); }
+			float MaxThrustForce() { mixin(MGPC!(float, 144)()); }
 		}
-		bool bLeftGround() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x4) != 0; }
-		bool bLeftGround(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x4; } return val; }
-		bool bInAJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x2) != 0; }
-		bool bInAJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x2; } return val; }
-		bool bIsOverDeepWater() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x1) != 0; }
-		bool bIsOverDeepWater(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x1; } return val; }
+		bool bLeftGround() { mixin(MGBPC!(200, 0x4)()); }
+		bool bLeftGround(bool val) { mixin(MSBPC!(200, 0x4)()); }
+		bool bInAJump() { mixin(MGBPC!(200, 0x2)()); }
+		bool bInAJump(bool val) { mixin(MSBPC!(200, 0x2)()); }
+		bool bIsOverDeepWater() { mixin(MGBPC!(200, 0x1)()); }
+		bool bIsOverDeepWater(bool val) { mixin(MSBPC!(200, 0x1)()); }
 	}
 final:
 	void InitWheels(UDKVehicle pVehicle)

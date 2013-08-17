@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlinePartyChatInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlinePartyChatInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlinePartyChatInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlinePartyChatInterface")()); }
 	private static __gshared OnlinePartyChatInterface mDefaultProperties;
-	@property final static OnlinePartyChatInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlinePartyChatInterface)("OnlinePartyChatInterface Engine.Default__OnlinePartyChatInterface")); }
+	@property final static OnlinePartyChatInterface DefaultProperties() { mixin(MGDPC!(OnlinePartyChatInterface, "OnlinePartyChatInterface Engine.Default__OnlinePartyChatInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,25 +37,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SendPartyGameInvites() { return mSendPartyGameInvites ? mSendPartyGameInvites : (mSendPartyGameInvites = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.SendPartyGameInvites")); }
-			ScriptFunction OnSendPartyGameInvitesComplete() { return mOnSendPartyGameInvitesComplete ? mOnSendPartyGameInvitesComplete : (mOnSendPartyGameInvitesComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.OnSendPartyGameInvitesComplete")); }
-			ScriptFunction OnPartyMembersInfoChanged() { return mOnPartyMembersInfoChanged ? mOnPartyMembersInfoChanged : (mOnPartyMembersInfoChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.OnPartyMembersInfoChanged")); }
-			ScriptFunction OnPartyMemberListChanged() { return mOnPartyMemberListChanged ? mOnPartyMemberListChanged : (mOnPartyMemberListChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.OnPartyMemberListChanged")); }
-			ScriptFunction AddSendPartyGameInvitesCompleteDelegate() { return mAddSendPartyGameInvitesCompleteDelegate ? mAddSendPartyGameInvitesCompleteDelegate : (mAddSendPartyGameInvitesCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.AddSendPartyGameInvitesCompleteDelegate")); }
-			ScriptFunction ClearSendPartyGameInvitesCompleteDelegate() { return mClearSendPartyGameInvitesCompleteDelegate ? mClearSendPartyGameInvitesCompleteDelegate : (mClearSendPartyGameInvitesCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.ClearSendPartyGameInvitesCompleteDelegate")); }
-			ScriptFunction GetPartyMembersInformation() { return mGetPartyMembersInformation ? mGetPartyMembersInformation : (mGetPartyMembersInformation = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.GetPartyMembersInformation")); }
-			ScriptFunction GetPartyMemberInformation() { return mGetPartyMemberInformation ? mGetPartyMemberInformation : (mGetPartyMemberInformation = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.GetPartyMemberInformation")); }
-			ScriptFunction AddPartyMemberListChangedDelegate() { return mAddPartyMemberListChangedDelegate ? mAddPartyMemberListChangedDelegate : (mAddPartyMemberListChangedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.AddPartyMemberListChangedDelegate")); }
-			ScriptFunction ClearPartyMemberListChangedDelegate() { return mClearPartyMemberListChangedDelegate ? mClearPartyMemberListChangedDelegate : (mClearPartyMemberListChangedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.ClearPartyMemberListChangedDelegate")); }
-			ScriptFunction AddPartyMembersInfoChangedDelegate() { return mAddPartyMembersInfoChangedDelegate ? mAddPartyMembersInfoChangedDelegate : (mAddPartyMembersInfoChangedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.AddPartyMembersInfoChangedDelegate")); }
-			ScriptFunction ClearPartyMembersInfoChangedDelegate() { return mClearPartyMembersInfoChangedDelegate ? mClearPartyMembersInfoChangedDelegate : (mClearPartyMembersInfoChangedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.ClearPartyMembersInfoChangedDelegate")); }
-			ScriptFunction SetPartyMemberCustomData() { return mSetPartyMemberCustomData ? mSetPartyMemberCustomData : (mSetPartyMemberCustomData = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.SetPartyMemberCustomData")); }
-			ScriptFunction GetPartyBandwidth() { return mGetPartyBandwidth ? mGetPartyBandwidth : (mGetPartyBandwidth = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.GetPartyBandwidth")); }
-			ScriptFunction ShowPartyUI() { return mShowPartyUI ? mShowPartyUI : (mShowPartyUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.ShowPartyUI")); }
-			ScriptFunction ShowVoiceChannelUI() { return mShowVoiceChannelUI ? mShowVoiceChannelUI : (mShowVoiceChannelUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.ShowVoiceChannelUI")); }
-			ScriptFunction ShowCommunitySessionsUI() { return mShowCommunitySessionsUI ? mShowCommunitySessionsUI : (mShowCommunitySessionsUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.ShowCommunitySessionsUI")); }
-			ScriptFunction IsInPartyChat() { return mIsInPartyChat ? mIsInPartyChat : (mIsInPartyChat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePartyChatInterface.IsInPartyChat")); }
+			ScriptFunction SendPartyGameInvites() { mixin(MGF!("mSendPartyGameInvites", "Function Engine.OnlinePartyChatInterface.SendPartyGameInvites")()); }
+			ScriptFunction OnSendPartyGameInvitesComplete() { mixin(MGF!("mOnSendPartyGameInvitesComplete", "Function Engine.OnlinePartyChatInterface.OnSendPartyGameInvitesComplete")()); }
+			ScriptFunction OnPartyMembersInfoChanged() { mixin(MGF!("mOnPartyMembersInfoChanged", "Function Engine.OnlinePartyChatInterface.OnPartyMembersInfoChanged")()); }
+			ScriptFunction OnPartyMemberListChanged() { mixin(MGF!("mOnPartyMemberListChanged", "Function Engine.OnlinePartyChatInterface.OnPartyMemberListChanged")()); }
+			ScriptFunction AddSendPartyGameInvitesCompleteDelegate() { mixin(MGF!("mAddSendPartyGameInvitesCompleteDelegate", "Function Engine.OnlinePartyChatInterface.AddSendPartyGameInvitesCompleteDelegate")()); }
+			ScriptFunction ClearSendPartyGameInvitesCompleteDelegate() { mixin(MGF!("mClearSendPartyGameInvitesCompleteDelegate", "Function Engine.OnlinePartyChatInterface.ClearSendPartyGameInvitesCompleteDelegate")()); }
+			ScriptFunction GetPartyMembersInformation() { mixin(MGF!("mGetPartyMembersInformation", "Function Engine.OnlinePartyChatInterface.GetPartyMembersInformation")()); }
+			ScriptFunction GetPartyMemberInformation() { mixin(MGF!("mGetPartyMemberInformation", "Function Engine.OnlinePartyChatInterface.GetPartyMemberInformation")()); }
+			ScriptFunction AddPartyMemberListChangedDelegate() { mixin(MGF!("mAddPartyMemberListChangedDelegate", "Function Engine.OnlinePartyChatInterface.AddPartyMemberListChangedDelegate")()); }
+			ScriptFunction ClearPartyMemberListChangedDelegate() { mixin(MGF!("mClearPartyMemberListChangedDelegate", "Function Engine.OnlinePartyChatInterface.ClearPartyMemberListChangedDelegate")()); }
+			ScriptFunction AddPartyMembersInfoChangedDelegate() { mixin(MGF!("mAddPartyMembersInfoChangedDelegate", "Function Engine.OnlinePartyChatInterface.AddPartyMembersInfoChangedDelegate")()); }
+			ScriptFunction ClearPartyMembersInfoChangedDelegate() { mixin(MGF!("mClearPartyMembersInfoChangedDelegate", "Function Engine.OnlinePartyChatInterface.ClearPartyMembersInfoChangedDelegate")()); }
+			ScriptFunction SetPartyMemberCustomData() { mixin(MGF!("mSetPartyMemberCustomData", "Function Engine.OnlinePartyChatInterface.SetPartyMemberCustomData")()); }
+			ScriptFunction GetPartyBandwidth() { mixin(MGF!("mGetPartyBandwidth", "Function Engine.OnlinePartyChatInterface.GetPartyBandwidth")()); }
+			ScriptFunction ShowPartyUI() { mixin(MGF!("mShowPartyUI", "Function Engine.OnlinePartyChatInterface.ShowPartyUI")()); }
+			ScriptFunction ShowVoiceChannelUI() { mixin(MGF!("mShowVoiceChannelUI", "Function Engine.OnlinePartyChatInterface.ShowVoiceChannelUI")()); }
+			ScriptFunction ShowCommunitySessionsUI() { mixin(MGF!("mShowCommunitySessionsUI", "Function Engine.OnlinePartyChatInterface.ShowCommunitySessionsUI")()); }
+			ScriptFunction IsInPartyChat() { mixin(MGF!("mIsInPartyChat", "Function Engine.OnlinePartyChatInterface.IsInPartyChat")()); }
 		}
+	}
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPartyMembersInfoChanged__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPartyMemberListChanged__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnSendPartyGameInvitesComplete__Delegate'!
 	}
 final:
 	bool SendPartyGameInvites(ubyte LocalUserNum)
@@ -117,21 +124,21 @@ void* SendPartyGameInvitesCompleteDelegate)
 void**)&params[4] = SendPartyGameInvitesCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSendPartyGameInvitesCompleteDelegate, params.ptr, cast(void*)0);
 	}
-	bool GetPartyMembersInformation(ScriptArray!(OnlineSubsystem.OnlinePartyMember)* PartyMembers)
+	bool GetPartyMembersInformation(ref ScriptArray!(OnlineSubsystem.OnlinePartyMember) PartyMembers)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)params.ptr = *PartyMembers;
+		*cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)params.ptr = PartyMembers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPartyMembersInformation, params.ptr, cast(void*)0);
 		*PartyMembers = *cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
-	bool GetPartyMemberInformation(OnlineSubsystem.UniqueNetId MemberId, OnlineSubsystem.OnlinePartyMember* PartyMember)
+	bool GetPartyMemberInformation(OnlineSubsystem.UniqueNetId MemberId, ref OnlineSubsystem.OnlinePartyMember PartyMember)
 	{
 		ubyte params[68];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = MemberId;
-		*cast(OnlineSubsystem.OnlinePartyMember*)&params[8] = *PartyMember;
+		*cast(OnlineSubsystem.OnlinePartyMember*)&params[8] = PartyMember;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPartyMemberInformation, params.ptr, cast(void*)0);
 		*PartyMember = *cast(OnlineSubsystem.OnlinePartyMember*)&params[8];
 		return *cast(bool*)&params[64];

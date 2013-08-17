@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DecalComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.PrimitiveComponent;
@@ -10,9 +11,9 @@ extern(C++) interface DecalComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DecalComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DecalComponent")()); }
 	private static __gshared DecalComponent mDefaultProperties;
-	@property final static DecalComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DecalComponent)("DecalComponent Engine.Default__DecalComponent")); }
+	@property final static DecalComponent DefaultProperties() { mixin(MGDPC!(DecalComponent, "DecalComponent Engine.Default__DecalComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,10 +25,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ResetToDefaults() { return mResetToDefaults ? mResetToDefaults : (mResetToDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.ResetToDefaults")); }
-			ScriptFunction SetDecalMaterial() { return mSetDecalMaterial ? mSetDecalMaterial : (mSetDecalMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.SetDecalMaterial")); }
-			ScriptFunction GetDecalMaterial() { return mGetDecalMaterial ? mGetDecalMaterial : (mGetDecalMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.GetDecalMaterial")); }
-			ScriptFunction SetGameplayRequired() { return mSetGameplayRequired ? mSetGameplayRequired : (mSetGameplayRequired = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.SetGameplayRequired")); }
+			ScriptFunction ResetToDefaults() { mixin(MGF!("mResetToDefaults", "Function Engine.DecalComponent.ResetToDefaults")()); }
+			ScriptFunction SetDecalMaterial() { mixin(MGF!("mSetDecalMaterial", "Function Engine.DecalComponent.SetDecalMaterial")()); }
+			ScriptFunction GetDecalMaterial() { mixin(MGF!("mGetDecalMaterial", "Function Engine.DecalComponent.GetDecalMaterial")()); }
+			ScriptFunction SetGameplayRequired() { mixin(MGF!("mSetGameplayRequired", "Function Engine.DecalComponent.SetGameplayRequired")()); }
 		}
 	}
 	enum EFilterMode : ubyte
@@ -49,81 +50,86 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.DecalComponent.DecalReceiver")); }
-		@property final auto ref UObject.Pointer RenderData() { return *cast(UObject.Pointer*)(cast(size_t)&this + 4); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.DecalComponent.DecalReceiver")()); }
+		@property final auto ref
+		{
+			UObject.Pointer RenderData() { mixin(MGPS!(UObject.Pointer, 4)()); }
+			// WARNING: Property 'Component' has the same name as a defined type!
+		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(int) HitNodeIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 632); }
-			ScriptArray!(DecalComponent.DecalReceiver) DecalReceivers() { return *cast(ScriptArray!(DecalComponent.DecalReceiver)*)(cast(size_t)cast(void*)this + 644); }
-			ScriptArray!(UObject.Pointer) StaticReceivers() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 656); }
-			ScriptArray!(UObject.Plane) Planes() { return *cast(ScriptArray!(UObject.Plane)*)(cast(size_t)cast(void*)this + 672); }
-			ScriptArray!(Actor) Filter() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 712); }
+			ScriptArray!(int) HitNodeIndices() { mixin(MGPC!(ScriptArray!(int), 632)()); }
+			ScriptArray!(DecalComponent.DecalReceiver) DecalReceivers() { mixin(MGPC!(ScriptArray!(DecalComponent.DecalReceiver), 644)()); }
+			ScriptArray!(UObject.Pointer) StaticReceivers() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 656)()); }
+			ScriptArray!(UObject.Plane) Planes() { mixin(MGPC!(ScriptArray!(UObject.Plane), 672)()); }
+			ScriptArray!(Actor) Filter() { mixin(MGPC!(ScriptArray!(Actor), 712)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) ReceiverImages() { return *cast(ScriptArray!(
+void*) ReceiverImages() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 724); }
-			Vector OriginalParentRelativeOrientationVec() { return *cast(Vector*)(cast(size_t)cast(void*)this + 772); }
-			Vector OriginalParentRelativeLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 760); }
-			Rotator ParentRelativeOrientation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 748); }
-			Vector ParentRelativeLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 736); }
-			DecalComponent.EFilterMode FilterMode() { return *cast(DecalComponent.EFilterMode*)(cast(size_t)cast(void*)this + 709); }
-			DecalComponent.EDecalTransform DecalTransform() { return *cast(DecalComponent.EDecalTransform*)(cast(size_t)cast(void*)this + 708); }
-			UObject.Vector2D BlendRange() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 700); }
-			float BackfaceAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-			int SortOrder() { return *cast(int*)(cast(size_t)cast(void*)this + 692); }
-			float SlopeScaleDepthBias() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
-			float DepthBias() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
-			UObject.Pointer ReleaseResourcesFence() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 668); }
-			int FracturedStaticMeshComponentIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 628); }
-			int HitLevelIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 624); }
-			int HitNodeIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 620); }
-			ScriptName HitBone() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 612); }
-			Vector HitBinormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 592); }
-			Vector HitTangent() { return *cast(Vector*)(cast(size_t)cast(void*)this + 580); }
-			Vector HitNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 568); }
-			Vector HitLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 556); }
-			Rotator Orientation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 544); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 532); }
-			float FarPlane() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			float NearPlane() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			float FieldOfView() { return *cast(float*)(cast(size_t)cast(void*)this + 520); }
-			float DecalRotation() { return *cast(float*)(cast(size_t)cast(void*)this + 516); }
-			float OffsetY() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
-			float OffsetX() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-			float TileY() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			float TileX() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-			float Height() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			float Width() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
+void*), 724)()); }
+			Vector OriginalParentRelativeOrientationVec() { mixin(MGPC!(Vector, 772)()); }
+			Vector OriginalParentRelativeLocation() { mixin(MGPC!(Vector, 760)()); }
+			Rotator ParentRelativeOrientation() { mixin(MGPC!(Rotator, 748)()); }
+			Vector ParentRelativeLocation() { mixin(MGPC!(Vector, 736)()); }
+			DecalComponent.EFilterMode FilterMode() { mixin(MGPC!(DecalComponent.EFilterMode, 709)()); }
+			DecalComponent.EDecalTransform DecalTransform() { mixin(MGPC!(DecalComponent.EDecalTransform, 708)()); }
+			UObject.Vector2D BlendRange() { mixin(MGPC!(UObject.Vector2D, 700)()); }
+			float BackfaceAngle() { mixin(MGPC!(float, 696)()); }
+			int SortOrder() { mixin(MGPC!(int, 692)()); }
+			float SlopeScaleDepthBias() { mixin(MGPC!(float, 688)()); }
+			float DepthBias() { mixin(MGPC!(float, 684)()); }
+			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!(UObject.Pointer, 668)()); }
+			int FracturedStaticMeshComponentIndex() { mixin(MGPC!(int, 628)()); }
+			int HitLevelIndex() { mixin(MGPC!(int, 624)()); }
+			int HitNodeIndex() { mixin(MGPC!(int, 620)()); }
+			ScriptName HitBone() { mixin(MGPC!(ScriptName, 612)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'HitComponent'!
+			Vector HitBinormal() { mixin(MGPC!(Vector, 592)()); }
+			Vector HitTangent() { mixin(MGPC!(Vector, 580)()); }
+			Vector HitNormal() { mixin(MGPC!(Vector, 568)()); }
+			Vector HitLocation() { mixin(MGPC!(Vector, 556)()); }
+			Rotator Orientation() { mixin(MGPC!(Rotator, 544)()); }
+			Vector Location() { mixin(MGPC!(Vector, 532)()); }
+			float FarPlane() { mixin(MGPC!(float, 528)()); }
+			float NearPlane() { mixin(MGPC!(float, 524)()); }
+			float FieldOfView() { mixin(MGPC!(float, 520)()); }
+			float DecalRotation() { mixin(MGPC!(float, 516)()); }
+			float OffsetY() { mixin(MGPC!(float, 512)()); }
+			float OffsetX() { mixin(MGPC!(float, 508)()); }
+			float TileY() { mixin(MGPC!(float, 504)()); }
+			float TileX() { mixin(MGPC!(float, 500)()); }
+			float Height() { mixin(MGPC!(float, 496)()); }
+			float Width() { mixin(MGPC!(float, 492)()); }
 			// WARNING: Property 'DecalMaterial' has the same name as a defined type!
 		}
-		bool bHasBeenAttached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x800) != 0; }
-		bool bHasBeenAttached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x800; } return val; }
-		bool bMovableDecal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x400) != 0; }
-		bool bMovableDecal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x400; } return val; }
-		bool bFlipBackfaceDirection() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x200) != 0; }
-		bool bFlipBackfaceDirection(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x200; } return val; }
-		bool bProjectOnTerrain() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x100) != 0; }
-		bool bProjectOnTerrain(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x100; } return val; }
-		bool bProjectOnSkeletalMeshes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x80) != 0; }
-		bool bProjectOnSkeletalMeshes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x80; } return val; }
-		bool bProjectOnStaticMeshes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x40) != 0; }
-		bool bProjectOnStaticMeshes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x40; } return val; }
-		bool bProjectOnBSP() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x20) != 0; }
-		bool bProjectOnBSP(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x20; } return val; }
-		bool bProjectOnHidden() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x10) != 0; }
-		bool bProjectOnHidden(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x10; } return val; }
-		bool bProjectOnBackfaces() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x8) != 0; }
-		bool bProjectOnBackfaces(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x8; } return val; }
-		bool m_bGameplayRequired() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x4) != 0; }
-		bool m_bGameplayRequired(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x4; } return val; }
-		bool bStaticDecal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x2) != 0; }
-		bool bStaticDecal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x2; } return val; }
-		bool bNoClip() { return (*cast(uint*)(cast(size_t)cast(void*)this + 604) & 0x1) != 0; }
-		bool bNoClip(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 604) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 604) &= ~0x1; } return val; }
+		bool bHasBeenAttached() { mixin(MGBPC!(604, 0x800)()); }
+		bool bHasBeenAttached(bool val) { mixin(MSBPC!(604, 0x800)()); }
+		bool bMovableDecal() { mixin(MGBPC!(604, 0x400)()); }
+		bool bMovableDecal(bool val) { mixin(MSBPC!(604, 0x400)()); }
+		bool bFlipBackfaceDirection() { mixin(MGBPC!(604, 0x200)()); }
+		bool bFlipBackfaceDirection(bool val) { mixin(MSBPC!(604, 0x200)()); }
+		bool bProjectOnTerrain() { mixin(MGBPC!(604, 0x100)()); }
+		bool bProjectOnTerrain(bool val) { mixin(MSBPC!(604, 0x100)()); }
+		bool bProjectOnSkeletalMeshes() { mixin(MGBPC!(604, 0x80)()); }
+		bool bProjectOnSkeletalMeshes(bool val) { mixin(MSBPC!(604, 0x80)()); }
+		bool bProjectOnStaticMeshes() { mixin(MGBPC!(604, 0x40)()); }
+		bool bProjectOnStaticMeshes(bool val) { mixin(MSBPC!(604, 0x40)()); }
+		bool bProjectOnBSP() { mixin(MGBPC!(604, 0x20)()); }
+		bool bProjectOnBSP(bool val) { mixin(MSBPC!(604, 0x20)()); }
+		bool bProjectOnHidden() { mixin(MGBPC!(604, 0x10)()); }
+		bool bProjectOnHidden(bool val) { mixin(MSBPC!(604, 0x10)()); }
+		bool bProjectOnBackfaces() { mixin(MGBPC!(604, 0x8)()); }
+		bool bProjectOnBackfaces(bool val) { mixin(MSBPC!(604, 0x8)()); }
+		bool m_bGameplayRequired() { mixin(MGBPC!(604, 0x4)()); }
+		bool m_bGameplayRequired(bool val) { mixin(MSBPC!(604, 0x4)()); }
+		bool bStaticDecal() { mixin(MGBPC!(604, 0x2)()); }
+		bool bStaticDecal(bool val) { mixin(MSBPC!(604, 0x2)()); }
+		bool bNoClip() { mixin(MGBPC!(604, 0x1)()); }
+		bool bNoClip(bool val) { mixin(MSBPC!(604, 0x1)()); }
 	}
 final:
 	void ResetToDefaults()

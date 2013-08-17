@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_AutoFire;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.TribesGame.TrDevice;
@@ -9,9 +10,9 @@ extern(C++) interface TrDevice_AutoFire : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_AutoFire")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_AutoFire")()); }
 	private static __gshared TrDevice_AutoFire mDefaultProperties;
-	@property final static TrDevice_AutoFire DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_AutoFire)("TrDevice_AutoFire TribesGame.Default__TrDevice_AutoFire")); }
+	@property final static TrDevice_AutoFire DefaultProperties() { mixin(MGDPC!(TrDevice_AutoFire, "TrDevice_AutoFire TribesGame.Default__TrDevice_AutoFire")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,45 +47,70 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBuildUpTime() { return mGetBuildUpTime ? mGetBuildUpTime : (mGetBuildUpTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.GetBuildUpTime")); }
-			ScriptFunction GetEquipTime() { return mGetEquipTime ? mGetEquipTime : (mGetEquipTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.GetEquipTime")); }
-			ScriptFunction GetPutDownTime() { return mGetPutDownTime ? mGetPutDownTime : (mGetPutDownTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.GetPutDownTime")); }
-			ScriptFunction PlayFireAnimation() { return mPlayFireAnimation ? mPlayFireAnimation : (mPlayFireAnimation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.PlayFireAnimation")); }
-			ScriptFunction FireAmmunition() { return mFireAmmunition ? mFireAmmunition : (mFireAmmunition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.FireAmmunition")); }
-			ScriptFunction AddCarriedAmmo() { return mAddCarriedAmmo ? mAddCarriedAmmo : (mAddCarriedAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.AddCarriedAmmo")); }
-			ScriptFunction PerformInactiveReload() { return mPerformInactiveReload ? mPerformInactiveReload : (mPerformInactiveReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.PerformInactiveReload")); }
-			ScriptFunction HasAmmo() { return mHasAmmo ? mHasAmmo : (mHasAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.HasAmmo")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.StartFire")); }
-			ScriptFunction SetPostFireDevice() { return mSetPostFireDevice ? mSetPostFireDevice : (mSetPostFireDevice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.SetPostFireDevice")); }
-			ScriptFunction SwitchToPostFireDevice() { return mSwitchToPostFireDevice ? mSwitchToPostFireDevice : (mSwitchToPostFireDevice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.SwitchToPostFireDevice")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.OnAnimEnd")); }
-			ScriptFunction CanFireNow() { return mCanFireNow ? mCanFireNow : (mCanFireNow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.CanFireNow")); }
-			ScriptFunction DoOverrideNextWeapon() { return mDoOverrideNextWeapon ? mDoOverrideNextWeapon : (mDoOverrideNextWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.DoOverrideNextWeapon")); }
-			ScriptFunction DoOverridePrevWeapon() { return mDoOverridePrevWeapon ? mDoOverridePrevWeapon : (mDoOverridePrevWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.DoOverridePrevWeapon")); }
-			ScriptFunction CanAutoDeviceFireNow() { return mCanAutoDeviceFireNow ? mCanAutoDeviceFireNow : (mCanAutoDeviceFireNow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.CanAutoDeviceFireNow")); }
-			ScriptFunction RequestReload() { return mRequestReload ? mRequestReload : (mRequestReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.RequestReload")); }
-			ScriptFunction OnClientReloaded() { return mOnClientReloaded ? mOnClientReloaded : (mOnClientReloaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.OnClientReloaded")); }
-			ScriptFunction ClientFinishedReload() { return mClientFinishedReload ? mClientFinishedReload : (mClientFinishedReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.ClientFinishedReload")); }
-			ScriptFunction OnReloadComplete() { return mOnReloadComplete ? mOnReloadComplete : (mOnReloadComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.OnReloadComplete")); }
-			ScriptFunction IncrementFlashCount() { return mIncrementFlashCount ? mIncrementFlashCount : (mIncrementFlashCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.IncrementFlashCount")); }
-			ScriptFunction CanViewZoom() { return mCanViewZoom ? mCanViewZoom : (mCanViewZoom = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.CanViewZoom")); }
-			ScriptFunction ConsumeAmmo() { return mConsumeAmmo ? mConsumeAmmo : (mConsumeAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.ConsumeAmmo")); }
-			ScriptFunction ConsumeAmmo_Internal() { return mConsumeAmmo_Internal ? mConsumeAmmo_Internal : (mConsumeAmmo_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.ConsumeAmmo_Internal")); }
-			ScriptFunction ProjectileFire() { return mProjectileFire ? mProjectileFire : (mProjectileFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.ProjectileFire")); }
-			ScriptFunction OnSwitchAwayFromWeapon() { return mOnSwitchAwayFromWeapon ? mOnSwitchAwayFromWeapon : (mOnSwitchAwayFromWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.OnSwitchAwayFromWeapon")); }
-			ScriptFunction HolderEnteredVehicle() { return mHolderEnteredVehicle ? mHolderEnteredVehicle : (mHolderEnteredVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AutoFire.HolderEnteredVehicle")); }
+			ScriptFunction GetBuildUpTime() { mixin(MGF!("mGetBuildUpTime", "Function TribesGame.TrDevice_AutoFire.GetBuildUpTime")()); }
+			ScriptFunction GetEquipTime() { mixin(MGF!("mGetEquipTime", "Function TribesGame.TrDevice_AutoFire.GetEquipTime")()); }
+			ScriptFunction GetPutDownTime() { mixin(MGF!("mGetPutDownTime", "Function TribesGame.TrDevice_AutoFire.GetPutDownTime")()); }
+			ScriptFunction PlayFireAnimation() { mixin(MGF!("mPlayFireAnimation", "Function TribesGame.TrDevice_AutoFire.PlayFireAnimation")()); }
+			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_AutoFire.FireAmmunition")()); }
+			ScriptFunction AddCarriedAmmo() { mixin(MGF!("mAddCarriedAmmo", "Function TribesGame.TrDevice_AutoFire.AddCarriedAmmo")()); }
+			ScriptFunction PerformInactiveReload() { mixin(MGF!("mPerformInactiveReload", "Function TribesGame.TrDevice_AutoFire.PerformInactiveReload")()); }
+			ScriptFunction HasAmmo() { mixin(MGF!("mHasAmmo", "Function TribesGame.TrDevice_AutoFire.HasAmmo")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_AutoFire.StartFire")()); }
+			ScriptFunction SetPostFireDevice() { mixin(MGF!("mSetPostFireDevice", "Function TribesGame.TrDevice_AutoFire.SetPostFireDevice")()); }
+			ScriptFunction SwitchToPostFireDevice() { mixin(MGF!("mSwitchToPostFireDevice", "Function TribesGame.TrDevice_AutoFire.SwitchToPostFireDevice")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_AutoFire.OnAnimEnd")()); }
+			ScriptFunction CanFireNow() { mixin(MGF!("mCanFireNow", "Function TribesGame.TrDevice_AutoFire.CanFireNow")()); }
+			ScriptFunction DoOverrideNextWeapon() { mixin(MGF!("mDoOverrideNextWeapon", "Function TribesGame.TrDevice_AutoFire.DoOverrideNextWeapon")()); }
+			ScriptFunction DoOverridePrevWeapon() { mixin(MGF!("mDoOverridePrevWeapon", "Function TribesGame.TrDevice_AutoFire.DoOverridePrevWeapon")()); }
+			ScriptFunction CanAutoDeviceFireNow() { mixin(MGF!("mCanAutoDeviceFireNow", "Function TribesGame.TrDevice_AutoFire.CanAutoDeviceFireNow")()); }
+			ScriptFunction RequestReload() { mixin(MGF!("mRequestReload", "Function TribesGame.TrDevice_AutoFire.RequestReload")()); }
+			ScriptFunction OnClientReloaded() { mixin(MGF!("mOnClientReloaded", "Function TribesGame.TrDevice_AutoFire.OnClientReloaded")()); }
+			ScriptFunction ClientFinishedReload() { mixin(MGF!("mClientFinishedReload", "Function TribesGame.TrDevice_AutoFire.ClientFinishedReload")()); }
+			ScriptFunction OnReloadComplete() { mixin(MGF!("mOnReloadComplete", "Function TribesGame.TrDevice_AutoFire.OnReloadComplete")()); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function TribesGame.TrDevice_AutoFire.IncrementFlashCount")()); }
+			ScriptFunction CanViewZoom() { mixin(MGF!("mCanViewZoom", "Function TribesGame.TrDevice_AutoFire.CanViewZoom")()); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function TribesGame.TrDevice_AutoFire.ConsumeAmmo")()); }
+			ScriptFunction ConsumeAmmo_Internal() { mixin(MGF!("mConsumeAmmo_Internal", "Function TribesGame.TrDevice_AutoFire.ConsumeAmmo_Internal")()); }
+			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function TribesGame.TrDevice_AutoFire.ProjectileFire")()); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_AutoFire.OnSwitchAwayFromWeapon")()); }
+			ScriptFunction HolderEnteredVehicle() { mixin(MGF!("mHolderEnteredVehicle", "Function TribesGame.TrDevice_AutoFire.HolderEnteredVehicle")()); }
 		}
+	}
+	static struct WeaponEquipping
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_AutoFire.WeaponEquipping")()); }
+	}
+	static struct WeaponFiring
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_AutoFire.WeaponFiring")()); }
+	}
+	static struct Active
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_AutoFire.Active")()); }
+	}
+	static struct Buildup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_AutoFire.Buildup")()); }
+	}
+	static struct DeviceReloading
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_AutoFire.DeviceReloading")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float m_fPullPinTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2156); }
-			TrDevice m_PostFireDevice() { return *cast(TrDevice*)(cast(size_t)cast(void*)this + 2152); }
-			float m_fBuildupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2148); }
+			float m_fPullPinTime() { mixin(MGPC!(float, 2156)()); }
+			TrDevice m_PostFireDevice() { mixin(MGPC!(TrDevice, 2152)()); }
+			float m_fBuildupTime() { mixin(MGPC!(float, 2148)()); }
 		}
-		bool m_bPullPinFire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2160) & 0x1) != 0; }
-		bool m_bPullPinFire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2160) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2160) &= ~0x1; } return val; }
+		bool m_bPullPinFire() { mixin(MGBPC!(2160, 0x1)()); }
+		bool m_bPullPinFire(bool val) { mixin(MSBPC!(2160, 0x1)()); }
 	}
 final:
 	float GetBuildUpTime()

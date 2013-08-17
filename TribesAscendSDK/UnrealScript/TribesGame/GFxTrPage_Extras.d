@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_Extras;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_Extras : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Extras")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Extras")()); }
 	private static __gshared GFxTrPage_Extras mDefaultProperties;
-	@property final static GFxTrPage_Extras DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Extras)("GFxTrPage_Extras TribesGame.Default__GFxTrPage_Extras")); }
+	@property final static GFxTrPage_Extras DefaultProperties() { mixin(MGDPC!(GFxTrPage_Extras, "GFxTrPage_Extras TribesGame.Default__GFxTrPage_Extras")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,28 +25,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Extras.Initialize")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Extras.ShowModel")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Extras.SpecialAction")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Extras.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Extras.PopupComplete")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Extras.Initialize")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Extras.ShowModel")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Extras.SpecialAction")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_Extras.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_Extras.PopupComplete")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString PromoPopupTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 404); }
-			ScriptString C1P3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 392); }
-			ScriptString C1P2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 380); }
-			ScriptString C1P1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 368); }
-			int CheatCodeAction() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int ClaimPromotionAction() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			ScriptString PromoPopupTitle() { mixin(MGPC!(ScriptString, 404)()); }
+			ScriptString C1P3() { mixin(MGPC!(ScriptString, 392)()); }
+			ScriptString C1P2() { mixin(MGPC!(ScriptString, 380)()); }
+			ScriptString C1P1() { mixin(MGPC!(ScriptString, 368)()); }
+			int CheatCodeAction() { mixin(MGPC!(int, 360)()); }
+			int ClaimPromotionAction() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bWaitingForClaimPromoPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x2) != 0; }
-		bool bWaitingForClaimPromoPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x2; } return val; }
-		bool bWaitingForCheatCodePopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x1) != 0; }
-		bool bWaitingForCheatCodePopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x1; } return val; }
+		bool bWaitingForClaimPromoPopup() { mixin(MGBPC!(364, 0x2)()); }
+		bool bWaitingForClaimPromoPopup(bool val) { mixin(MSBPC!(364, 0x2)()); }
+		bool bWaitingForCheatCodePopup() { mixin(MGBPC!(364, 0x1)()); }
+		bool bWaitingForCheatCodePopup(bool val) { mixin(MSBPC!(364, 0x1)()); }
 	}
 final:
 	void Initialize()

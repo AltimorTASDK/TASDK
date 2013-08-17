@@ -1,15 +1,16 @@
 module UnrealScript.UDKBase.UDKAnimNodeFramePlayer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 
 extern(C++) interface UDKAnimNodeFramePlayer : AnimNodeSequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeFramePlayer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimNodeFramePlayer")()); }
 	private static __gshared UDKAnimNodeFramePlayer mDefaultProperties;
-	@property final static UDKAnimNodeFramePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimNodeFramePlayer)("UDKAnimNodeFramePlayer UDKBase.Default__UDKAnimNodeFramePlayer")); }
+	@property final static UDKAnimNodeFramePlayer DefaultProperties() { mixin(MGDPC!(UDKAnimNodeFramePlayer, "UDKAnimNodeFramePlayer UDKBase.Default__UDKAnimNodeFramePlayer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetAnimation() { return mSetAnimation ? mSetAnimation : (mSetAnimation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimNodeFramePlayer.SetAnimation")); }
-			ScriptFunction SetAnimPosition() { return mSetAnimPosition ? mSetAnimPosition : (mSetAnimPosition = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimNodeFramePlayer.SetAnimPosition")); }
+			ScriptFunction SetAnimation() { mixin(MGF!("mSetAnimation", "Function UDKBase.UDKAnimNodeFramePlayer.SetAnimation")()); }
+			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function UDKBase.UDKAnimNodeFramePlayer.SetAnimPosition")()); }
 		}
 	}
 final:

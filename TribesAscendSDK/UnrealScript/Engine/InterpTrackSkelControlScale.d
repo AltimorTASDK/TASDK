@@ -1,14 +1,15 @@
 module UnrealScript.Engine.InterpTrackSkelControlScale;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.InterpTrackFloatBase;
 
 extern(C++) interface InterpTrackSkelControlScale : InterpTrackFloatBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackSkelControlScale")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackSkelControlScale")()); }
 	private static __gshared InterpTrackSkelControlScale mDefaultProperties;
-	@property final static InterpTrackSkelControlScale DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackSkelControlScale)("InterpTrackSkelControlScale Engine.Default__InterpTrackSkelControlScale")); }
-	@property final auto ref ScriptName SkelControlName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 148); }
+	@property final static InterpTrackSkelControlScale DefaultProperties() { mixin(MGDPC!(InterpTrackSkelControlScale, "InterpTrackSkelControlScale Engine.Default__InterpTrackSkelControlScale")()); }
+	@property final auto ref ScriptName SkelControlName() { mixin(MGPC!(ScriptName, 148)()); }
 }

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrTeamBlockerStaticMeshActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.StaticMeshActor;
@@ -10,9 +11,9 @@ extern(C++) interface TrTeamBlockerStaticMeshActor : StaticMeshActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTeamBlockerStaticMeshActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTeamBlockerStaticMeshActor")()); }
 	private static __gshared TrTeamBlockerStaticMeshActor mDefaultProperties;
-	@property final static TrTeamBlockerStaticMeshActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTeamBlockerStaticMeshActor)("TrTeamBlockerStaticMeshActor TribesGame.Default__TrTeamBlockerStaticMeshActor")); }
+	@property final static TrTeamBlockerStaticMeshActor DefaultProperties() { mixin(MGDPC!(TrTeamBlockerStaticMeshActor, "TrTeamBlockerStaticMeshActor TribesGame.Default__TrTeamBlockerStaticMeshActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,23 +26,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTeamBlockerStaticMeshActor.PostBeginPlay")); }
-			ScriptFunction DisableBlocking() { return mDisableBlocking ? mDisableBlocking : (mDisableBlocking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTeamBlockerStaticMeshActor.DisableBlocking")); }
-			ScriptFunction EnableBlocking() { return mEnableBlocking ? mEnableBlocking : (mEnableBlocking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTeamBlockerStaticMeshActor.EnableBlocking")); }
-			ScriptFunction UpdateMaterialForPawn() { return mUpdateMaterialForPawn ? mUpdateMaterialForPawn : (mUpdateMaterialForPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTeamBlockerStaticMeshActor.UpdateMaterialForPawn")); }
-			ScriptFunction CreateMICs() { return mCreateMICs ? mCreateMICs : (mCreateMICs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTeamBlockerStaticMeshActor.CreateMICs")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrTeamBlockerStaticMeshActor.PostBeginPlay")()); }
+			ScriptFunction DisableBlocking() { mixin(MGF!("mDisableBlocking", "Function TribesGame.TrTeamBlockerStaticMeshActor.DisableBlocking")()); }
+			ScriptFunction EnableBlocking() { mixin(MGF!("mEnableBlocking", "Function TribesGame.TrTeamBlockerStaticMeshActor.EnableBlocking")()); }
+			ScriptFunction UpdateMaterialForPawn() { mixin(MGF!("mUpdateMaterialForPawn", "Function TribesGame.TrTeamBlockerStaticMeshActor.UpdateMaterialForPawn")()); }
+			ScriptFunction CreateMICs() { mixin(MGF!("mCreateMICs", "Function TribesGame.TrTeamBlockerStaticMeshActor.CreateMICs")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) m_MICs() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 492); }
-			Material m_BaseMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 504); }
-			ubyte m_DefenderTeamIndex() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 484); }
+			ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 492)()); }
+			Material m_BaseMaterial() { mixin(MGPC!(Material, 504)()); }
+			ubyte m_DefenderTeamIndex() { mixin(MGPC!(ubyte, 484)()); }
 		}
-		bool m_bDisableBlockingOnSiegePhase0Ends() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-		bool m_bDisableBlockingOnSiegePhase0Ends(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
+		bool m_bDisableBlockingOnSiegePhase0Ends() { mixin(MGBPC!(488, 0x1)()); }
+		bool m_bDisableBlockingOnSiegePhase0Ends(bool val) { mixin(MSBPC!(488, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

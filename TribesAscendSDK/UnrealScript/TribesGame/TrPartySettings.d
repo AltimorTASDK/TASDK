@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrPartySettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineGameSettings;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.LocalPlayer;
@@ -9,9 +10,9 @@ extern(C++) interface TrPartySettings : OnlineGameSettings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPartySettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPartySettings")()); }
 	private static __gshared TrPartySettings mDefaultProperties;
-	@property final static TrPartySettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPartySettings)("TrPartySettings TribesGame.Default__TrPartySettings")); }
+	@property final static TrPartySettings DefaultProperties() { mixin(MGDPC!(TrPartySettings, "TrPartySettings TribesGame.Default__TrPartySettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPartySettings.Init")); }
-			ScriptFunction Close() { return mClose ? mClose : (mClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPartySettings.Close")); }
-			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPartySettings.OnLoginChange")); }
-			ScriptFunction RefreshMembersList() { return mRefreshMembersList ? mRefreshMembersList : (mRefreshMembersList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPartySettings.RefreshMembersList")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrPartySettings.Init")()); }
+			ScriptFunction Close() { mixin(MGF!("mClose", "Function TribesGame.TrPartySettings.Close")()); }
+			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function TribesGame.TrPartySettings.OnLoginChange")()); }
+			ScriptFunction RefreshMembersList() { mixin(MGF!("mRefreshMembersList", "Function TribesGame.TrPartySettings.RefreshMembersList")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlinePartyMember) MemberList() { return *cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)(cast(size_t)cast(void*)this + 184); }
-		OnlineSubsystem OnlineSub() { return *cast(OnlineSubsystem*)(cast(size_t)cast(void*)this + 172); }
+		ScriptArray!(OnlineSubsystem.OnlinePartyMember) MemberList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlinePartyMember), 184)()); }
+		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterface'!
+		OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 172)()); }
 	}
 final:
 	void Init(LocalPlayer InPlayer)

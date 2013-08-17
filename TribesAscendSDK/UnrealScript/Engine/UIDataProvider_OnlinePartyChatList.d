@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataProvider_OnlinePartyChatList;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface UIDataProvider_OnlinePartyChatList : UIDataProvider_Online
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlinePartyChatList")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_OnlinePartyChatList")()); }
 	private static __gshared UIDataProvider_OnlinePartyChatList mDefaultProperties;
-	@property final static UIDataProvider_OnlinePartyChatList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlinePartyChatList)("UIDataProvider_OnlinePartyChatList Engine.Default__UIDataProvider_OnlinePartyChatList")); }
+	@property final static UIDataProvider_OnlinePartyChatList DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlinePartyChatList, "UIDataProvider_OnlinePartyChatList Engine.Default__UIDataProvider_OnlinePartyChatList")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,24 +25,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.OnRegister")); }
-			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.OnUnregister")); }
-			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.OnLoginChange")); }
-			ScriptFunction RefreshMembersList() { return mRefreshMembersList ? mRefreshMembersList : (mRefreshMembersList = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.RefreshMembersList")); }
+			ScriptFunction OnRegister() { mixin(MGF!("mOnRegister", "Function Engine.UIDataProvider_OnlinePartyChatList.OnRegister")()); }
+			ScriptFunction OnUnregister() { mixin(MGF!("mOnUnregister", "Function Engine.UIDataProvider_OnlinePartyChatList.OnUnregister")()); }
+			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.UIDataProvider_OnlinePartyChatList.OnLoginChange")()); }
+			ScriptFunction RefreshMembersList() { mixin(MGF!("mRefreshMembersList", "Function Engine.UIDataProvider_OnlinePartyChatList.RefreshMembersList")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlinePartyMember) PartyMembersList() { return *cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)(cast(size_t)cast(void*)this + 96); }
-		ScriptArray!(ScriptString) NatTypes() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 108); }
-		ScriptString IsPlayingThisGameCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 192); }
-		ScriptString IsInGameSessionCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 180); }
-		ScriptString IsTalkingCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-		ScriptString IsInPartyVoiceCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-		ScriptString IsLocalCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString NatTypeCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-		ScriptString NickNameCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 120); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 92); }
+		ScriptArray!(OnlineSubsystem.OnlinePartyMember) PartyMembersList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlinePartyMember), 96)()); }
+		ScriptArray!(ScriptString) NatTypes() { mixin(MGPC!(ScriptArray!(ScriptString), 108)()); }
+		ScriptString IsPlayingThisGameCol() { mixin(MGPC!(ScriptString, 192)()); }
+		ScriptString IsInGameSessionCol() { mixin(MGPC!(ScriptString, 180)()); }
+		ScriptString IsTalkingCol() { mixin(MGPC!(ScriptString, 168)()); }
+		ScriptString IsInPartyVoiceCol() { mixin(MGPC!(ScriptString, 156)()); }
+		ScriptString IsLocalCol() { mixin(MGPC!(ScriptString, 144)()); }
+		ScriptString NatTypeCol() { mixin(MGPC!(ScriptString, 132)()); }
+		ScriptString NickNameCol() { mixin(MGPC!(ScriptString, 120)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

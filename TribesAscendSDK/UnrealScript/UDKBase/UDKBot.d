@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKBot;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AIController;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.NavigationPoint;
@@ -15,9 +16,9 @@ extern(C++) interface UDKBot : AIController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKBot")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKBot")()); }
 	private static __gshared UDKBot mDefaultProperties;
-	@property final static UDKBot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKBot)("UDKBot UDKBase.Default__UDKBot")); }
+	@property final static UDKBot DefaultProperties() { mixin(MGDPC!(UDKBot, "UDKBot UDKBase.Default__UDKBot")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,26 +46,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FaceActor() { return mFaceActor ? mFaceActor : (mFaceActor = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FaceActor")); }
-			ScriptFunction ExecuteWhatToDoNext() { return mExecuteWhatToDoNext ? mExecuteWhatToDoNext : (mExecuteWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.ExecuteWhatToDoNext")); }
-			ScriptFunction ReceiveRunOverWarning() { return mReceiveRunOverWarning ? mReceiveRunOverWarning : (mReceiveRunOverWarning = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.ReceiveRunOverWarning")); }
-			ScriptFunction WaitToSeeEnemy() { return mWaitToSeeEnemy ? mWaitToSeeEnemy : (mWaitToSeeEnemy = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.WaitToSeeEnemy")); }
-			ScriptFunction LatentWhatToDoNext() { return mLatentWhatToDoNext ? mLatentWhatToDoNext : (mLatentWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.LatentWhatToDoNext")); }
-			ScriptFunction CanMakePathTo() { return mCanMakePathTo ? mCanMakePathTo : (mCanMakePathTo = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.CanMakePathTo")); }
-			ScriptFunction FindBestInventoryPath() { return mFindBestInventoryPath ? mFindBestInventoryPath : (mFindBestInventoryPath = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FindBestInventoryPath")); }
-			ScriptFunction FindPathToSquadRoute() { return mFindPathToSquadRoute ? mFindPathToSquadRoute : (mFindPathToSquadRoute = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FindPathToSquadRoute")); }
-			ScriptFunction BuildSquadRoute() { return mBuildSquadRoute ? mBuildSquadRoute : (mBuildSquadRoute = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.BuildSquadRoute")); }
-			ScriptFunction FindBestSuperPickup() { return mFindBestSuperPickup ? mFindBestSuperPickup : (mFindBestSuperPickup = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FindBestSuperPickup")); }
-			ScriptFunction WhatToDoNext() { return mWhatToDoNext ? mWhatToDoNext : (mWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.WhatToDoNext")); }
-			ScriptFunction MonitoredPawnAlert() { return mMonitoredPawnAlert ? mMonitoredPawnAlert : (mMonitoredPawnAlert = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.MonitoredPawnAlert")); }
-			ScriptFunction TimeDJReset() { return mTimeDJReset ? mTimeDJReset : (mTimeDJReset = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.TimeDJReset")); }
-			ScriptFunction MayDodgeToMoveTarget() { return mMayDodgeToMoveTarget ? mMayDodgeToMoveTarget : (mMayDodgeToMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.MayDodgeToMoveTarget")); }
-			ScriptFunction SpecialJumpCost() { return mSpecialJumpCost ? mSpecialJumpCost : (mSpecialJumpCost = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.SpecialJumpCost")); }
-			ScriptFunction SuperDesireability() { return mSuperDesireability ? mSuperDesireability : (mSuperDesireability = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.SuperDesireability")); }
-			ScriptFunction AdjustAimError() { return mAdjustAimError ? mAdjustAimError : (mAdjustAimError = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.AdjustAimError")); }
-			ScriptFunction MissedDodge() { return mMissedDodge ? mMissedDodge : (mMissedDodge = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.MissedDodge")); }
-			ScriptFunction DelayedWarning() { return mDelayedWarning ? mDelayedWarning : (mDelayedWarning = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.DelayedWarning")); }
-			ScriptFunction DelayedLeaveVehicle() { return mDelayedLeaveVehicle ? mDelayedLeaveVehicle : (mDelayedLeaveVehicle = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.DelayedLeaveVehicle")); }
+			ScriptFunction FaceActor() { mixin(MGF!("mFaceActor", "Function UDKBase.UDKBot.FaceActor")()); }
+			ScriptFunction ExecuteWhatToDoNext() { mixin(MGF!("mExecuteWhatToDoNext", "Function UDKBase.UDKBot.ExecuteWhatToDoNext")()); }
+			ScriptFunction ReceiveRunOverWarning() { mixin(MGF!("mReceiveRunOverWarning", "Function UDKBase.UDKBot.ReceiveRunOverWarning")()); }
+			ScriptFunction WaitToSeeEnemy() { mixin(MGF!("mWaitToSeeEnemy", "Function UDKBase.UDKBot.WaitToSeeEnemy")()); }
+			ScriptFunction LatentWhatToDoNext() { mixin(MGF!("mLatentWhatToDoNext", "Function UDKBase.UDKBot.LatentWhatToDoNext")()); }
+			ScriptFunction CanMakePathTo() { mixin(MGF!("mCanMakePathTo", "Function UDKBase.UDKBot.CanMakePathTo")()); }
+			ScriptFunction FindBestInventoryPath() { mixin(MGF!("mFindBestInventoryPath", "Function UDKBase.UDKBot.FindBestInventoryPath")()); }
+			ScriptFunction FindPathToSquadRoute() { mixin(MGF!("mFindPathToSquadRoute", "Function UDKBase.UDKBot.FindPathToSquadRoute")()); }
+			ScriptFunction BuildSquadRoute() { mixin(MGF!("mBuildSquadRoute", "Function UDKBase.UDKBot.BuildSquadRoute")()); }
+			ScriptFunction FindBestSuperPickup() { mixin(MGF!("mFindBestSuperPickup", "Function UDKBase.UDKBot.FindBestSuperPickup")()); }
+			ScriptFunction WhatToDoNext() { mixin(MGF!("mWhatToDoNext", "Function UDKBase.UDKBot.WhatToDoNext")()); }
+			ScriptFunction MonitoredPawnAlert() { mixin(MGF!("mMonitoredPawnAlert", "Function UDKBase.UDKBot.MonitoredPawnAlert")()); }
+			ScriptFunction TimeDJReset() { mixin(MGF!("mTimeDJReset", "Function UDKBase.UDKBot.TimeDJReset")()); }
+			ScriptFunction MayDodgeToMoveTarget() { mixin(MGF!("mMayDodgeToMoveTarget", "Function UDKBase.UDKBot.MayDodgeToMoveTarget")()); }
+			ScriptFunction SpecialJumpCost() { mixin(MGF!("mSpecialJumpCost", "Function UDKBase.UDKBot.SpecialJumpCost")()); }
+			ScriptFunction SuperDesireability() { mixin(MGF!("mSuperDesireability", "Function UDKBase.UDKBot.SuperDesireability")()); }
+			ScriptFunction AdjustAimError() { mixin(MGF!("mAdjustAimError", "Function UDKBase.UDKBot.AdjustAimError")()); }
+			ScriptFunction MissedDodge() { mixin(MGF!("mMissedDodge", "Function UDKBase.UDKBot.MissedDodge")()); }
+			ScriptFunction DelayedWarning() { mixin(MGF!("mDelayedWarning", "Function UDKBase.UDKBot.DelayedWarning")()); }
+			ScriptFunction DelayedLeaveVehicle() { mixin(MGF!("mDelayedLeaveVehicle", "Function UDKBase.UDKBot.DelayedLeaveVehicle")()); }
 		}
 	}
 	struct EnemyPosition
@@ -72,84 +73,85 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKBot.EnemyPosition")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKBot.EnemyPosition")()); }
 		@property final auto ref
 		{
-			float Time() { return *cast(float*)(cast(size_t)&this + 24); }
-			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 12); }
-			Vector Position() { return *cast(Vector*)(cast(size_t)&this + 0); }
+			float Time() { mixin(MGPS!(float, 24)()); }
+			Vector Velocity() { mixin(MGPS!(Vector, 12)()); }
+			Vector Position() { mixin(MGPS!(Vector, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UDKBot.EnemyPosition) SavedPositions() { return *cast(ScriptArray!(UDKBot.EnemyPosition)*)(cast(size_t)cast(void*)this + 960); }
-			float MultiJumpZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1120); }
-			float DodgeToGoalPct() { return *cast(float*)(cast(size_t)cast(void*)this + 1116); }
-			Actor FearSpots() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1108); }
-			float DodgeLandZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1104); }
-			float CurrentAimError() { return *cast(float*)(cast(size_t)cast(void*)this + 1100); }
-			float LastErrorUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1096); }
-			float ErrorUpdateFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 1092); }
-			float LastAimUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1088); }
-			float AimUpdateFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 1084); }
-			float LastIterativeCheck() { return *cast(float*)(cast(size_t)cast(void*)this + 1080); }
-			Pawn BlockedAimTarget() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 1076); }
-			NavigationPoint SquadRouteGoal() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 1072); }
-			Vector TrackedVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1060); }
-			float BaseTrackingReactionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1056); }
-			float TrackingReactionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1052); }
-			float LastSeenTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1048); }
-			Vector LastSeeingPos() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1036); }
-			Vector LastSeenPos() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1024); }
-			float MonitorMaxDistSq() { return *cast(float*)(cast(size_t)cast(void*)this + 1020); }
-			Pawn MonitoredPawn() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 1016); }
-			Vector MonitorStartLoc() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1004); }
-			Projectile WarningProjectile() { return *cast(Projectile*)(cast(size_t)cast(void*)this + 1000); }
-			float WarningDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 996); }
-			float RespawnPredictionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 992); }
-			float HearingThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 988); }
-			int AcquisitionYawRate() { return *cast(int*)(cast(size_t)cast(void*)this + 984); }
-			Vector ImpactVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 972); }
-			Pawn CurrentlyTrackedEnemy() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 956); }
-			Vehicle LastBlockingVehicle() { return *cast(Vehicle*)(cast(size_t)cast(void*)this + 952); }
-			Pawn VisibleEnemy() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 948); }
-			float EnemyVisibilityTime() { return *cast(float*)(cast(size_t)cast(void*)this + 944); }
-			ubyte ScriptedFireMode() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 940); }
-			Actor TemporaryFocus() { return *cast(Actor*)(cast(size_t)cast(void*)this + 932); }
-			UDKSquadAI Squad() { return *cast(UDKSquadAI*)(cast(size_t)cast(void*)this + 924); }
+			ScriptArray!(UDKBot.EnemyPosition) SavedPositions() { mixin(MGPC!(ScriptArray!(UDKBot.EnemyPosition), 960)()); }
+			float MultiJumpZ() { mixin(MGPC!(float, 1120)()); }
+			float DodgeToGoalPct() { mixin(MGPC!(float, 1116)()); }
+			Actor FearSpots() { mixin(MGPC!(Actor, 1108)()); }
+			float DodgeLandZ() { mixin(MGPC!(float, 1104)()); }
+			float CurrentAimError() { mixin(MGPC!(float, 1100)()); }
+			float LastErrorUpdateTime() { mixin(MGPC!(float, 1096)()); }
+			float ErrorUpdateFrequency() { mixin(MGPC!(float, 1092)()); }
+			float LastAimUpdateTime() { mixin(MGPC!(float, 1088)()); }
+			float AimUpdateFrequency() { mixin(MGPC!(float, 1084)()); }
+			float LastIterativeCheck() { mixin(MGPC!(float, 1080)()); }
+			Pawn BlockedAimTarget() { mixin(MGPC!(Pawn, 1076)()); }
+			NavigationPoint SquadRouteGoal() { mixin(MGPC!(NavigationPoint, 1072)()); }
+			Vector TrackedVelocity() { mixin(MGPC!(Vector, 1060)()); }
+			float BaseTrackingReactionTime() { mixin(MGPC!(float, 1056)()); }
+			float TrackingReactionTime() { mixin(MGPC!(float, 1052)()); }
+			float LastSeenTime() { mixin(MGPC!(float, 1048)()); }
+			Vector LastSeeingPos() { mixin(MGPC!(Vector, 1036)()); }
+			Vector LastSeenPos() { mixin(MGPC!(Vector, 1024)()); }
+			float MonitorMaxDistSq() { mixin(MGPC!(float, 1020)()); }
+			Pawn MonitoredPawn() { mixin(MGPC!(Pawn, 1016)()); }
+			Vector MonitorStartLoc() { mixin(MGPC!(Vector, 1004)()); }
+			Projectile WarningProjectile() { mixin(MGPC!(Projectile, 1000)()); }
+			float WarningDelay() { mixin(MGPC!(float, 996)()); }
+			float RespawnPredictionTime() { mixin(MGPC!(float, 992)()); }
+			float HearingThreshold() { mixin(MGPC!(float, 988)()); }
+			int AcquisitionYawRate() { mixin(MGPC!(int, 984)()); }
+			Vector ImpactVelocity() { mixin(MGPC!(Vector, 972)()); }
+			Pawn CurrentlyTrackedEnemy() { mixin(MGPC!(Pawn, 956)()); }
+			Vehicle LastBlockingVehicle() { mixin(MGPC!(Vehicle, 952)()); }
+			Pawn VisibleEnemy() { mixin(MGPC!(Pawn, 948)()); }
+			float EnemyVisibilityTime() { mixin(MGPC!(float, 944)()); }
+			ubyte ScriptedFireMode() { mixin(MGPC!(ubyte, 940)()); }
+			Actor TemporaryFocus() { mixin(MGPC!(Actor, 932)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DecisionComponent'!
+			UDKSquadAI Squad() { mixin(MGPC!(UDKSquadAI, 924)()); }
 		}
-		bool bUsePreviousSquadRoute() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x4000) != 0; }
-		bool bUsePreviousSquadRoute(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x4000; } return val; }
-		bool bUsingSquadRoute() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x2000) != 0; }
-		bool bUsingSquadRoute(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x2000; } return val; }
-		bool bAllowRouteReuse() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x1000) != 0; }
-		bool bAllowRouteReuse(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x1000; } return val; }
-		bool bNeedDelayedLeaveVehicle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x800) != 0; }
-		bool bNeedDelayedLeaveVehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x800; } return val; }
-		bool bEnemyAcquired() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x400) != 0; }
-		bool bEnemyAcquired(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x400; } return val; }
-		bool bInDodgeMove() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x200) != 0; }
-		bool bInDodgeMove(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x200; } return val; }
-		bool bPlannedJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x100) != 0; }
-		bool bPlannedJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x100; } return val; }
-		bool bJumpOverWall() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x80) != 0; }
-		bool bJumpOverWall(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x80; } return val; }
-		bool bLeadTarget() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x40) != 0; }
-		bool bLeadTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x40; } return val; }
-		bool bEnemyIsVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x20) != 0; }
-		bool bEnemyIsVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x20; } return val; }
-		bool bEnemyInfoValid() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x10) != 0; }
-		bool bEnemyInfoValid(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x10; } return val; }
-		bool bTargetAlternateLoc() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x8) != 0; }
-		bool bTargetAlternateLoc(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x8; } return val; }
-		bool bForceRefreshRoute() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x4) != 0; }
-		bool bForceRefreshRoute(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x4; } return val; }
-		bool bScriptSpecialJumpCost() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x2) != 0; }
-		bool bScriptSpecialJumpCost(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x2; } return val; }
-		bool bExecutingWhatToDoNext() { return (*cast(uint*)(cast(size_t)cast(void*)this + 936) & 0x1) != 0; }
-		bool bExecutingWhatToDoNext(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 936) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 936) &= ~0x1; } return val; }
+		bool bUsePreviousSquadRoute() { mixin(MGBPC!(936, 0x4000)()); }
+		bool bUsePreviousSquadRoute(bool val) { mixin(MSBPC!(936, 0x4000)()); }
+		bool bUsingSquadRoute() { mixin(MGBPC!(936, 0x2000)()); }
+		bool bUsingSquadRoute(bool val) { mixin(MSBPC!(936, 0x2000)()); }
+		bool bAllowRouteReuse() { mixin(MGBPC!(936, 0x1000)()); }
+		bool bAllowRouteReuse(bool val) { mixin(MSBPC!(936, 0x1000)()); }
+		bool bNeedDelayedLeaveVehicle() { mixin(MGBPC!(936, 0x800)()); }
+		bool bNeedDelayedLeaveVehicle(bool val) { mixin(MSBPC!(936, 0x800)()); }
+		bool bEnemyAcquired() { mixin(MGBPC!(936, 0x400)()); }
+		bool bEnemyAcquired(bool val) { mixin(MSBPC!(936, 0x400)()); }
+		bool bInDodgeMove() { mixin(MGBPC!(936, 0x200)()); }
+		bool bInDodgeMove(bool val) { mixin(MSBPC!(936, 0x200)()); }
+		bool bPlannedJump() { mixin(MGBPC!(936, 0x100)()); }
+		bool bPlannedJump(bool val) { mixin(MSBPC!(936, 0x100)()); }
+		bool bJumpOverWall() { mixin(MGBPC!(936, 0x80)()); }
+		bool bJumpOverWall(bool val) { mixin(MSBPC!(936, 0x80)()); }
+		bool bLeadTarget() { mixin(MGBPC!(936, 0x40)()); }
+		bool bLeadTarget(bool val) { mixin(MSBPC!(936, 0x40)()); }
+		bool bEnemyIsVisible() { mixin(MGBPC!(936, 0x20)()); }
+		bool bEnemyIsVisible(bool val) { mixin(MSBPC!(936, 0x20)()); }
+		bool bEnemyInfoValid() { mixin(MGBPC!(936, 0x10)()); }
+		bool bEnemyInfoValid(bool val) { mixin(MSBPC!(936, 0x10)()); }
+		bool bTargetAlternateLoc() { mixin(MGBPC!(936, 0x8)()); }
+		bool bTargetAlternateLoc(bool val) { mixin(MSBPC!(936, 0x8)()); }
+		bool bForceRefreshRoute() { mixin(MGBPC!(936, 0x4)()); }
+		bool bForceRefreshRoute(bool val) { mixin(MSBPC!(936, 0x4)()); }
+		bool bScriptSpecialJumpCost() { mixin(MGBPC!(936, 0x2)()); }
+		bool bScriptSpecialJumpCost(bool val) { mixin(MSBPC!(936, 0x2)()); }
+		bool bExecutingWhatToDoNext() { mixin(MGBPC!(936, 0x1)()); }
+		bool bExecutingWhatToDoNext(bool val) { mixin(MSBPC!(936, 0x1)()); }
 	}
 final:
 	Actor FaceActor(float StrafingModifier)
@@ -189,11 +191,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanMakePathTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	Actor FindBestInventoryPath(float* MinWeight)
+	Actor FindBestInventoryPath(ref float MinWeight)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = *MinWeight;
+		*cast(float*)params.ptr = MinWeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindBestInventoryPath, params.ptr, cast(void*)0);
 		*MinWeight = *cast(float*)params.ptr;
 		return *cast(Actor*)&params[4];
@@ -234,12 +236,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.MayDodgeToMoveTarget, cast(void*)0, cast(void*)0);
 	}
-	bool SpecialJumpCost(float RequiredJumpZ, float* Cost)
+	bool SpecialJumpCost(float RequiredJumpZ, ref float Cost)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(float*)params.ptr = RequiredJumpZ;
-		*cast(float*)&params[4] = *Cost;
+		*cast(float*)&params[4] = Cost;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialJumpCost, params.ptr, cast(void*)0);
 		*Cost = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];

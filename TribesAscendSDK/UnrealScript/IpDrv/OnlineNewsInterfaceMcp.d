@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.OnlineNewsInterfaceMcp;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
 import UnrealScript.IpDrv.MCPBase;
@@ -9,9 +10,9 @@ extern(C++) interface OnlineNewsInterfaceMcp : MCPBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineNewsInterfaceMcp")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.OnlineNewsInterfaceMcp")()); }
 	private static __gshared OnlineNewsInterfaceMcp mDefaultProperties;
-	@property final static OnlineNewsInterfaceMcp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineNewsInterfaceMcp)("OnlineNewsInterfaceMcp IpDrv.Default__OnlineNewsInterfaceMcp")); }
+	@property final static OnlineNewsInterfaceMcp DefaultProperties() { mixin(MGDPC!(OnlineNewsInterfaceMcp, "OnlineNewsInterfaceMcp IpDrv.Default__OnlineNewsInterfaceMcp")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,11 +25,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReadNewsCompleted() { return mOnReadNewsCompleted ? mOnReadNewsCompleted : (mOnReadNewsCompleted = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.OnReadNewsCompleted")); }
-			ScriptFunction ReadNews() { return mReadNews ? mReadNews : (mReadNews = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.ReadNews")); }
-			ScriptFunction AddReadNewsCompletedDelegate() { return mAddReadNewsCompletedDelegate ? mAddReadNewsCompletedDelegate : (mAddReadNewsCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.AddReadNewsCompletedDelegate")); }
-			ScriptFunction ClearReadNewsCompletedDelegate() { return mClearReadNewsCompletedDelegate ? mClearReadNewsCompletedDelegate : (mClearReadNewsCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.ClearReadNewsCompletedDelegate")); }
-			ScriptFunction GetNews() { return mGetNews ? mGetNews : (mGetNews = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.GetNews")); }
+			ScriptFunction OnReadNewsCompleted() { mixin(MGF!("mOnReadNewsCompleted", "Function IpDrv.OnlineNewsInterfaceMcp.OnReadNewsCompleted")()); }
+			ScriptFunction ReadNews() { mixin(MGF!("mReadNews", "Function IpDrv.OnlineNewsInterfaceMcp.ReadNews")()); }
+			ScriptFunction AddReadNewsCompletedDelegate() { mixin(MGF!("mAddReadNewsCompletedDelegate", "Function IpDrv.OnlineNewsInterfaceMcp.AddReadNewsCompletedDelegate")()); }
+			ScriptFunction ClearReadNewsCompletedDelegate() { mixin(MGF!("mClearReadNewsCompletedDelegate", "Function IpDrv.OnlineNewsInterfaceMcp.ClearReadNewsCompletedDelegate")()); }
+			ScriptFunction GetNews() { mixin(MGF!("mGetNews", "Function IpDrv.OnlineNewsInterfaceMcp.GetNews")()); }
 		}
 	}
 	struct NewsCacheEntry
@@ -36,35 +37,36 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineNewsInterfaceMcp.NewsCacheEntry")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlineNewsInterfaceMcp.NewsCacheEntry")()); }
 		@property final
 		{
 			auto ref
 			{
-				UObject.Pointer HttpDownloader() { return *cast(UObject.Pointer*)(cast(size_t)&this + 36); }
-				float TimeOut() { return *cast(float*)(cast(size_t)&this + 28); }
-				ScriptString NewsItem() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-				OnlineSubsystem.EOnlineNewsType NewsType() { return *cast(OnlineSubsystem.EOnlineNewsType*)(cast(size_t)&this + 13); }
-				OnlineSubsystem.EOnlineEnumerationReadState ReadState() { return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)(cast(size_t)&this + 12); }
-				ScriptString NewsUrl() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+				UObject.Pointer HttpDownloader() { mixin(MGPS!(UObject.Pointer, 36)()); }
+				float TimeOut() { mixin(MGPS!(float, 28)()); }
+				ScriptString NewsItem() { mixin(MGPS!(ScriptString, 16)()); }
+				OnlineSubsystem.EOnlineNewsType NewsType() { mixin(MGPS!(OnlineSubsystem.EOnlineNewsType, 13)()); }
+				OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS!(OnlineSubsystem.EOnlineEnumerationReadState, 12)()); }
+				ScriptString NewsUrl() { mixin(MGPS!(ScriptString, 0)()); }
 			}
-			bool bIsUnicode() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x1) != 0; }
-			bool bIsUnicode(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x1; } return val; }
+			bool bIsUnicode() { mixin(MGBPS!(32, 0x1)()); }
+			bool bIsUnicode(bool val) { mixin(MSBPS!(32, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry) NewsItems() { return *cast(ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry)*)(cast(size_t)cast(void*)this + 64); }
+			ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry) NewsItems() { mixin(MGPC!(ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry), 64)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ReadNewsDelegates() { return *cast(ScriptArray!(
+void*) ReadNewsDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 76); }
+void*), 76)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadNewsCompleted__Delegate'!
 		}
-		bool bNeedsTicking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bNeedsTicking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bNeedsTicking() { mixin(MGBPC!(88, 0x1)()); }
+		bool bNeedsTicking(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 final:
 	void OnReadNewsCompleted(bool bWasSuccessful, OnlineSubsystem.EOnlineNewsType NewsType)

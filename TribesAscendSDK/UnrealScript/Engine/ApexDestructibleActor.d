@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ApexDestructibleActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Actor;
@@ -11,9 +12,9 @@ extern(C++) interface ApexDestructibleActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexDestructibleActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ApexDestructibleActor")()); }
 	private static __gshared ApexDestructibleActor mDefaultProperties;
-	@property final static ApexDestructibleActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexDestructibleActor)("ApexDestructibleActor Engine.Default__ApexDestructibleActor")); }
+	@property final static ApexDestructibleActor DefaultProperties() { mixin(MGDPC!(ApexDestructibleActor, "ApexDestructibleActor Engine.Default__ApexDestructibleActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,24 +27,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnFractureEmitter() { return mSpawnFractureEmitter ? mSpawnFractureEmitter : (mSpawnFractureEmitter = ScriptObject.Find!(ScriptFunction)("Function Engine.ApexDestructibleActor.SpawnFractureEmitter")); }
-			ScriptFunction CacheFractureEffects() { return mCacheFractureEffects ? mCacheFractureEffects : (mCacheFractureEffects = ScriptObject.Find!(ScriptFunction)("Function Engine.ApexDestructibleActor.CacheFractureEffects")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.ApexDestructibleActor.PostBeginPlay")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.ApexDestructibleActor.TakeDamage")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.ApexDestructibleActor.TakeRadiusDamage")); }
+			ScriptFunction SpawnFractureEmitter() { mixin(MGF!("mSpawnFractureEmitter", "Function Engine.ApexDestructibleActor.SpawnFractureEmitter")()); }
+			ScriptFunction CacheFractureEffects() { mixin(MGF!("mCacheFractureEffects", "Function Engine.ApexDestructibleActor.CacheFractureEffects")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.ApexDestructibleActor.PostBeginPlay")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.ApexDestructibleActor.TakeDamage")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.ApexDestructibleActor.TakeRadiusDamage")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(FractureMaterial) FractureMaterials() { return *cast(ScriptArray!(FractureMaterial)*)(cast(size_t)cast(void*)this + 484); }
-			ScriptArray!(ubyte) VisibilityFactors() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 500); }
-			ScriptArray!(SoundCue) FractureSounds() { return *cast(ScriptArray!(SoundCue)*)(cast(size_t)cast(void*)this + 512); }
-			ScriptArray!(ParticleSystem) FractureParticleEffects() { return *cast(ScriptArray!(ParticleSystem)*)(cast(size_t)cast(void*)this + 524); }
+			ScriptArray!(FractureMaterial) FractureMaterials() { mixin(MGPC!(ScriptArray!(FractureMaterial), 484)()); }
+			ScriptArray!(ubyte) VisibilityFactors() { mixin(MGPC!(ScriptArray!(ubyte), 500)()); }
+			ScriptArray!(SoundCue) FractureSounds() { mixin(MGPC!(ScriptArray!(SoundCue), 512)()); }
+			ScriptArray!(ParticleSystem) FractureParticleEffects() { mixin(MGPC!(ScriptArray!(ParticleSystem), 524)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticDestructibleComponent'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 		}
-		bool bFractureMaterialOverride() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bFractureMaterialOverride(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		bool bFractureMaterialOverride() { mixin(MGBPC!(480, 0x1)()); }
+		bool bFractureMaterialOverride(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	void SpawnFractureEmitter(ParticleSystem EmitterTemplate, Vector SpawnLocation, Vector SpawnDirection)

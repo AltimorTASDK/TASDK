@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrAward;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrAward : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAward")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAward")()); }
 	private static __gshared TrAward mDefaultProperties;
-	@property final static TrAward DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAward)("TrAward TribesGame.Default__TrAward")); }
+	@property final static TrAward DefaultProperties() { mixin(MGDPC!(TrAward, "TrAward TribesGame.Default__TrAward")()); }
 	static struct Constants
 	{
 		enum
@@ -778,12 +779,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString Units() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 116); }
-		ScriptString TitleTier3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 104); }
-		ScriptString TitleTier2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 92); }
-		ScriptString TitleTier1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
-		float Weight() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-		int TierLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-		int DatabaseId() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+		ScriptString Units() { mixin(MGPC!(ScriptString, 116)()); }
+		ScriptString TitleTier3() { mixin(MGPC!(ScriptString, 104)()); }
+		ScriptString TitleTier2() { mixin(MGPC!(ScriptString, 92)()); }
+		ScriptString TitleTier1() { mixin(MGPC!(ScriptString, 80)()); }
+		float Weight() { mixin(MGPC!(float, 76)()); }
+		int TierLimit() { mixin(MGPC!(int, 64)()); }
+		int DatabaseId() { mixin(MGPC!(int, 60)()); }
 	}
 }

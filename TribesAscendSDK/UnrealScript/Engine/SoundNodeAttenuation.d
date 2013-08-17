@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SoundNodeAttenuation;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundNode;
 import UnrealScript.Core.DistributionFloat;
 
@@ -8,9 +9,9 @@ extern(C++) interface SoundNodeAttenuation : SoundNode
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeAttenuation")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SoundNodeAttenuation")()); }
 	private static __gshared SoundNodeAttenuation mDefaultProperties;
-	@property final static SoundNodeAttenuation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeAttenuation)("SoundNodeAttenuation Engine.Default__SoundNodeAttenuation")); }
+	@property final static SoundNodeAttenuation DefaultProperties() { mixin(MGDPC!(SoundNodeAttenuation, "SoundNodeAttenuation Engine.Default__SoundNodeAttenuation")()); }
 	enum ESoundDistanceCalc : ubyte
 	{
 		SOUNDDISTANCE_Normal = 0,
@@ -32,26 +33,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat LPFMaxRadius() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 188); }
-			DistributionFloat.RawDistributionFloat LPFMinRadius() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 160); }
-			DistributionFloat.RawDistributionFloat MaxRadius() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 132); }
-			DistributionFloat.RawDistributionFloat MinRadius() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 104); }
-			float LPFRadiusMax() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float LPFRadiusMin() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float RadiusMax() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float RadiusMin() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-			SoundNodeAttenuation.SoundDistanceModel DistanceModel() { return *cast(SoundNodeAttenuation.SoundDistanceModel*)(cast(size_t)cast(void*)this + 86); }
-			SoundNodeAttenuation.ESoundDistanceCalc DistanceType() { return *cast(SoundNodeAttenuation.ESoundDistanceCalc*)(cast(size_t)cast(void*)this + 85); }
-			SoundNodeAttenuation.SoundDistanceModel DistanceAlgorithm() { return *cast(SoundNodeAttenuation.SoundDistanceModel*)(cast(size_t)cast(void*)this + 84); }
-			float dBAttenuationAtMax() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
+			DistributionFloat.RawDistributionFloat LPFMaxRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 188)()); }
+			DistributionFloat.RawDistributionFloat LPFMinRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 160)()); }
+			DistributionFloat.RawDistributionFloat MaxRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 132)()); }
+			DistributionFloat.RawDistributionFloat MinRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 104)()); }
+			float LPFRadiusMax() { mixin(MGPC!(float, 100)()); }
+			float LPFRadiusMin() { mixin(MGPC!(float, 96)()); }
+			float RadiusMax() { mixin(MGPC!(float, 92)()); }
+			float RadiusMin() { mixin(MGPC!(float, 88)()); }
+			SoundNodeAttenuation.SoundDistanceModel DistanceModel() { mixin(MGPC!(SoundNodeAttenuation.SoundDistanceModel, 86)()); }
+			SoundNodeAttenuation.ESoundDistanceCalc DistanceType() { mixin(MGPC!(SoundNodeAttenuation.ESoundDistanceCalc, 85)()); }
+			SoundNodeAttenuation.SoundDistanceModel DistanceAlgorithm() { mixin(MGPC!(SoundNodeAttenuation.SoundDistanceModel, 84)()); }
+			float dBAttenuationAtMax() { mixin(MGPC!(float, 80)()); }
 		}
-		bool bAttenuateWithLowPassFilter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x8) != 0; }
-		bool bAttenuateWithLowPassFilter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x8; } return val; }
-		bool bAttenuateWithLPF() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x4) != 0; }
-		bool bAttenuateWithLPF(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x4; } return val; }
-		bool bSpatialize() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x2) != 0; }
-		bool bSpatialize(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x2; } return val; }
-		bool bAttenuate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x1) != 0; }
-		bool bAttenuate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x1; } return val; }
+		bool bAttenuateWithLowPassFilter() { mixin(MGBPC!(76, 0x8)()); }
+		bool bAttenuateWithLowPassFilter(bool val) { mixin(MSBPC!(76, 0x8)()); }
+		bool bAttenuateWithLPF() { mixin(MGBPC!(76, 0x4)()); }
+		bool bAttenuateWithLPF(bool val) { mixin(MSBPC!(76, 0x4)()); }
+		bool bSpatialize() { mixin(MGBPC!(76, 0x2)()); }
+		bool bSpatialize(bool val) { mixin(MSBPC!(76, 0x2)()); }
+		bool bAttenuate() { mixin(MGBPC!(76, 0x1)()); }
+		bool bAttenuate(bool val) { mixin(MSBPC!(76, 0x1)()); }
 	}
 }

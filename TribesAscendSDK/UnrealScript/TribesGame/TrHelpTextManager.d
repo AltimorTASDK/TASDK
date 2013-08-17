@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrHelpTextManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 
 extern(C++) interface TrHelpTextManager : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHelpTextManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrHelpTextManager")()); }
 	private static __gshared TrHelpTextManager mDefaultProperties;
-	@property final static TrHelpTextManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHelpTextManager)("TrHelpTextManager TribesGame.Default__TrHelpTextManager")); }
+	@property final static TrHelpTextManager DefaultProperties() { mixin(MGDPC!(TrHelpTextManager, "TrHelpTextManager TribesGame.Default__TrHelpTextManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,26 +38,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RequestHelpText() { return mRequestHelpText ? mRequestHelpText : (mRequestHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.RequestHelpText")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.PostBeginPlay")); }
-			ScriptFunction InitHelpTextManager() { return mInitHelpTextManager ? mInitHelpTextManager : (mInitHelpTextManager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.InitHelpTextManager")); }
-			ScriptFunction LevelLoadCompleted() { return mLevelLoadCompleted ? mLevelLoadCompleted : (mLevelLoadCompleted = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.LevelLoadCompleted")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.Tick")); }
-			ScriptFunction CheckDestroy() { return mCheckDestroy ? mCheckDestroy : (mCheckDestroy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.CheckDestroy")); }
-			ScriptFunction IsSuppressed() { return mIsSuppressed ? mIsSuppressed : (mIsSuppressed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.IsSuppressed")); }
-			ScriptFunction RemoveHelpText() { return mRemoveHelpText ? mRemoveHelpText : (mRemoveHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.RemoveHelpText")); }
-			ScriptFunction SuppressHelpText() { return mSuppressHelpText ? mSuppressHelpText : (mSuppressHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.SuppressHelpText")); }
-			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.UpdateHUD")); }
-			ScriptFunction FormatText() { return mFormatText ? mFormatText : (mFormatText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.FormatText")); }
-			ScriptFunction HelpTextQueueSort() { return mHelpTextQueueSort ? mHelpTextQueueSort : (mHelpTextQueueSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.HelpTextQueueSort")); }
-			ScriptFunction UnsuppressedHelpTextsExist() { return mUnsuppressedHelpTextsExist ? mUnsuppressedHelpTextsExist : (mUnsuppressedHelpTextsExist = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.UnsuppressedHelpTextsExist")); }
-			ScriptFunction OffhandReminderTimer() { return mOffhandReminderTimer ? mOffhandReminderTimer : (mOffhandReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.OffhandReminderTimer")); }
-			ScriptFunction ClearOffhandReminderTimer() { return mClearOffhandReminderTimer ? mClearOffhandReminderTimer : (mClearOffhandReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.ClearOffhandReminderTimer")); }
-			ScriptFunction SpotTargetReminderTimer() { return mSpotTargetReminderTimer ? mSpotTargetReminderTimer : (mSpotTargetReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.SpotTargetReminderTimer")); }
-			ScriptFunction ClearSpotTargetReminderTimer() { return mClearSpotTargetReminderTimer ? mClearSpotTargetReminderTimer : (mClearSpotTargetReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.ClearSpotTargetReminderTimer")); }
-			ScriptFunction UpdateTypesToRemoveOnTimers() { return mUpdateTypesToRemoveOnTimers ? mUpdateTypesToRemoveOnTimers : (mUpdateTypesToRemoveOnTimers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.UpdateTypesToRemoveOnTimers")); }
-			ScriptFunction ResetConfig() { return mResetConfig ? mResetConfig : (mResetConfig = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.ResetConfig")); }
-			ScriptFunction EnableHelpText() { return mEnableHelpText ? mEnableHelpText : (mEnableHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.EnableHelpText")); }
+			ScriptFunction RequestHelpText() { mixin(MGF!("mRequestHelpText", "Function TribesGame.TrHelpTextManager.RequestHelpText")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrHelpTextManager.PostBeginPlay")()); }
+			ScriptFunction InitHelpTextManager() { mixin(MGF!("mInitHelpTextManager", "Function TribesGame.TrHelpTextManager.InitHelpTextManager")()); }
+			ScriptFunction LevelLoadCompleted() { mixin(MGF!("mLevelLoadCompleted", "Function TribesGame.TrHelpTextManager.LevelLoadCompleted")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrHelpTextManager.Tick")()); }
+			ScriptFunction CheckDestroy() { mixin(MGF!("mCheckDestroy", "Function TribesGame.TrHelpTextManager.CheckDestroy")()); }
+			ScriptFunction IsSuppressed() { mixin(MGF!("mIsSuppressed", "Function TribesGame.TrHelpTextManager.IsSuppressed")()); }
+			ScriptFunction RemoveHelpText() { mixin(MGF!("mRemoveHelpText", "Function TribesGame.TrHelpTextManager.RemoveHelpText")()); }
+			ScriptFunction SuppressHelpText() { mixin(MGF!("mSuppressHelpText", "Function TribesGame.TrHelpTextManager.SuppressHelpText")()); }
+			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function TribesGame.TrHelpTextManager.UpdateHUD")()); }
+			ScriptFunction FormatText() { mixin(MGF!("mFormatText", "Function TribesGame.TrHelpTextManager.FormatText")()); }
+			ScriptFunction HelpTextQueueSort() { mixin(MGF!("mHelpTextQueueSort", "Function TribesGame.TrHelpTextManager.HelpTextQueueSort")()); }
+			ScriptFunction UnsuppressedHelpTextsExist() { mixin(MGF!("mUnsuppressedHelpTextsExist", "Function TribesGame.TrHelpTextManager.UnsuppressedHelpTextsExist")()); }
+			ScriptFunction OffhandReminderTimer() { mixin(MGF!("mOffhandReminderTimer", "Function TribesGame.TrHelpTextManager.OffhandReminderTimer")()); }
+			ScriptFunction ClearOffhandReminderTimer() { mixin(MGF!("mClearOffhandReminderTimer", "Function TribesGame.TrHelpTextManager.ClearOffhandReminderTimer")()); }
+			ScriptFunction SpotTargetReminderTimer() { mixin(MGF!("mSpotTargetReminderTimer", "Function TribesGame.TrHelpTextManager.SpotTargetReminderTimer")()); }
+			ScriptFunction ClearSpotTargetReminderTimer() { mixin(MGF!("mClearSpotTargetReminderTimer", "Function TribesGame.TrHelpTextManager.ClearSpotTargetReminderTimer")()); }
+			ScriptFunction UpdateTypesToRemoveOnTimers() { mixin(MGF!("mUpdateTypesToRemoveOnTimers", "Function TribesGame.TrHelpTextManager.UpdateTypesToRemoveOnTimers")()); }
+			ScriptFunction ResetConfig() { mixin(MGF!("mResetConfig", "Function TribesGame.TrHelpTextManager.ResetConfig")()); }
+			ScriptFunction EnableHelpText() { mixin(MGF!("mEnableHelpText", "Function TribesGame.TrHelpTextManager.EnableHelpText")()); }
 		}
 	}
 	enum EHelpTextType : ubyte
@@ -98,16 +99,16 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHelpTextManager.HelpTextInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrHelpTextManager.HelpTextInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				int Priority() { return *cast(int*)(cast(size_t)&this + 4); }
-				TrHelpTextManager.EHelpTextType HelpTextType() { return *cast(TrHelpTextManager.EHelpTextType*)(cast(size_t)&this + 0); }
+				int Priority() { mixin(MGPS!(int, 4)()); }
+				TrHelpTextManager.EHelpTextType HelpTextType() { mixin(MGPS!(TrHelpTextManager.EHelpTextType, 0)()); }
 			}
-			bool bSelfSuppress() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bSelfSuppress(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
+			bool bSelfSuppress() { mixin(MGBPS!(8, 0x1)()); }
+			bool bSelfSuppress(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
 	}
 	struct HelpTextTypeRemovalTimerInfo
@@ -115,153 +116,153 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHelpTextManager.HelpTextTypeRemovalTimerInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrHelpTextManager.HelpTextTypeRemovalTimerInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				float RemainingTime() { return *cast(float*)(cast(size_t)&this + 4); }
-				TrHelpTextManager.EHelpTextType HelpTextTypeToRemove() { return *cast(TrHelpTextManager.EHelpTextType*)(cast(size_t)&this + 0); }
+				float RemainingTime() { mixin(MGPS!(float, 4)()); }
+				TrHelpTextManager.EHelpTextType HelpTextTypeToRemove() { mixin(MGPS!(TrHelpTextManager.EHelpTextType, 0)()); }
 			}
-			bool bSuppress() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bSuppress(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
+			bool bSuppress() { mixin(MGBPS!(8, 0x1)()); }
+			bool bSuppress(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrHelpTextManager.EHelpTextType) m_HelpTextQueue() { return *cast(ScriptArray!(TrHelpTextManager.EHelpTextType)*)(cast(size_t)cast(void*)this + 1240); }
-			ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo) m_HelpTextTypesToRemoveOnTimers() { return *cast(ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo)*)(cast(size_t)cast(void*)this + 1252); }
-			ScriptArray!(TrHelpTextManager.HelpTextInfo) m_HelpTextConfig() { return *cast(ScriptArray!(TrHelpTextManager.HelpTextInfo)*)(cast(size_t)cast(void*)this + 1228); }
-			ScriptString m_HelpTextSkiingHowTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 480); }
-			ScriptString m_HelpTextSkiingHowToMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 840); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 492); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 852); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 504); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 864); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 516); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 876); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 528); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 888); }
-			ScriptString m_HelpTextJetpackHowTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 540); }
-			ScriptString m_HelpTextJetpackHowToMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 900); }
-			ScriptString m_HelpTextOutOfAmmoNotifier() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 552); }
-			ScriptString m_HelpTextOutOfAmmoNotifierMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 912); }
-			ScriptString m_HelpTextOffhandReminder() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 564); }
-			ScriptString m_HelpTextOffhandReminderMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 924); }
-			ScriptString m_HelpTextCTFFlagDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 576); }
-			ScriptString m_HelpTextCTFFlagDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 936); }
-			ScriptString m_HelpTextHoldingEnemyFlagDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 588); }
-			ScriptString m_HelpTextHoldingEnemyFlagDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 948); }
-			ScriptString m_HelpTextRabbitFlagDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 600); }
-			ScriptString m_HelpTextRabbitFlagDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 960); }
-			ScriptString m_HelpTextHoldingRabbitFlagDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 612); }
-			ScriptString m_HelpTextHoldingRabbitFlagDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 972); }
-			ScriptString m_HelpTextInventoryStationDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 624); }
-			ScriptString m_HelpTextInventoryStationDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 984); }
-			ScriptString m_HelpTextVehicleStationDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 636); }
-			ScriptString m_HelpTextVehicleStationDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 996); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 648); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1008); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 660); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1020); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 672); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1032); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 684); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1044); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 696); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1056); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 708); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1068); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 720); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1080); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 732); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1092); }
-			ScriptString m_HelpTextRepairStationDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 744); }
-			ScriptString m_HelpTextRepairStationDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1104); }
-			ScriptString m_HelpTextArmoredTargetDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 756); }
-			ScriptString m_HelpTextArmoredTargetDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1116); }
-			ScriptString m_HelpTextCreditsDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 768); }
-			ScriptString m_HelpTextCreditsDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1128); }
-			ScriptString m_HelpTextYouCanPickupPassengerReminder() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 780); }
-			ScriptString m_HelpTextYouCanPickupPassengerReminderMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1140); }
-			ScriptString m_HelpTextConduitDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 792); }
-			ScriptString m_HelpTextConduitDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1152); }
-			ScriptString m_HelpTextSpotTargetReminder() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 804); }
-			ScriptString m_HelpTextSpotTargetReminderMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1164); }
-			ScriptString m_HelpTextChangingClassDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 816); }
-			ScriptString m_HelpTextChangingClassDescriptionMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1176); }
-			ScriptString m_HelpTextChangingClassHowTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 828); }
-			ScriptString m_HelpTextChangingClassHowToMenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1188); }
-			ScriptString m_LocalizedSuppressString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1200); }
-			float m_OffhandReminderRecursiveTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1216); }
-			float m_SpotTargetReminderRecursiveTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1224); }
-			float m_OffhandReminderInitialTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1212); }
-			float m_SpotTargetReminderInitialTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1220); }
+			ScriptArray!(TrHelpTextManager.EHelpTextType) m_HelpTextQueue() { mixin(MGPC!(ScriptArray!(TrHelpTextManager.EHelpTextType), 1240)()); }
+			ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo) m_HelpTextTypesToRemoveOnTimers() { mixin(MGPC!(ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo), 1252)()); }
+			ScriptArray!(TrHelpTextManager.HelpTextInfo) m_HelpTextConfig() { mixin(MGPC!(ScriptArray!(TrHelpTextManager.HelpTextInfo), 1228)()); }
+			ScriptString m_HelpTextSkiingHowTo() { mixin(MGPC!(ScriptString, 480)()); }
+			ScriptString m_HelpTextSkiingHowToMenuTitle() { mixin(MGPC!(ScriptString, 840)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel1() { mixin(MGPC!(ScriptString, 492)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel1() { mixin(MGPC!(ScriptString, 852)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel2() { mixin(MGPC!(ScriptString, 504)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel2() { mixin(MGPC!(ScriptString, 864)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel3() { mixin(MGPC!(ScriptString, 516)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel3() { mixin(MGPC!(ScriptString, 876)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel4() { mixin(MGPC!(ScriptString, 528)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel4() { mixin(MGPC!(ScriptString, 888)()); }
+			ScriptString m_HelpTextJetpackHowTo() { mixin(MGPC!(ScriptString, 540)()); }
+			ScriptString m_HelpTextJetpackHowToMenuTitle() { mixin(MGPC!(ScriptString, 900)()); }
+			ScriptString m_HelpTextOutOfAmmoNotifier() { mixin(MGPC!(ScriptString, 552)()); }
+			ScriptString m_HelpTextOutOfAmmoNotifierMenuTitle() { mixin(MGPC!(ScriptString, 912)()); }
+			ScriptString m_HelpTextOffhandReminder() { mixin(MGPC!(ScriptString, 564)()); }
+			ScriptString m_HelpTextOffhandReminderMenuTitle() { mixin(MGPC!(ScriptString, 924)()); }
+			ScriptString m_HelpTextCTFFlagDescription() { mixin(MGPC!(ScriptString, 576)()); }
+			ScriptString m_HelpTextCTFFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 936)()); }
+			ScriptString m_HelpTextHoldingEnemyFlagDescription() { mixin(MGPC!(ScriptString, 588)()); }
+			ScriptString m_HelpTextHoldingEnemyFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 948)()); }
+			ScriptString m_HelpTextRabbitFlagDescription() { mixin(MGPC!(ScriptString, 600)()); }
+			ScriptString m_HelpTextRabbitFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 960)()); }
+			ScriptString m_HelpTextHoldingRabbitFlagDescription() { mixin(MGPC!(ScriptString, 612)()); }
+			ScriptString m_HelpTextHoldingRabbitFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 972)()); }
+			ScriptString m_HelpTextInventoryStationDescription() { mixin(MGPC!(ScriptString, 624)()); }
+			ScriptString m_HelpTextInventoryStationDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 984)()); }
+			ScriptString m_HelpTextVehicleStationDescription() { mixin(MGPC!(ScriptString, 636)()); }
+			ScriptString m_HelpTextVehicleStationDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 996)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel1() { mixin(MGPC!(ScriptString, 648)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel1() { mixin(MGPC!(ScriptString, 1008)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel2() { mixin(MGPC!(ScriptString, 660)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel2() { mixin(MGPC!(ScriptString, 1020)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel3() { mixin(MGPC!(ScriptString, 672)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel3() { mixin(MGPC!(ScriptString, 1032)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel4() { mixin(MGPC!(ScriptString, 684)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel4() { mixin(MGPC!(ScriptString, 1044)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel1() { mixin(MGPC!(ScriptString, 696)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel1() { mixin(MGPC!(ScriptString, 1056)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel2() { mixin(MGPC!(ScriptString, 708)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel2() { mixin(MGPC!(ScriptString, 1068)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel3() { mixin(MGPC!(ScriptString, 720)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel3() { mixin(MGPC!(ScriptString, 1080)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel4() { mixin(MGPC!(ScriptString, 732)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel4() { mixin(MGPC!(ScriptString, 1092)()); }
+			ScriptString m_HelpTextRepairStationDescription() { mixin(MGPC!(ScriptString, 744)()); }
+			ScriptString m_HelpTextRepairStationDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1104)()); }
+			ScriptString m_HelpTextArmoredTargetDescription() { mixin(MGPC!(ScriptString, 756)()); }
+			ScriptString m_HelpTextArmoredTargetDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1116)()); }
+			ScriptString m_HelpTextCreditsDescription() { mixin(MGPC!(ScriptString, 768)()); }
+			ScriptString m_HelpTextCreditsDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1128)()); }
+			ScriptString m_HelpTextYouCanPickupPassengerReminder() { mixin(MGPC!(ScriptString, 780)()); }
+			ScriptString m_HelpTextYouCanPickupPassengerReminderMenuTitle() { mixin(MGPC!(ScriptString, 1140)()); }
+			ScriptString m_HelpTextConduitDescription() { mixin(MGPC!(ScriptString, 792)()); }
+			ScriptString m_HelpTextConduitDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1152)()); }
+			ScriptString m_HelpTextSpotTargetReminder() { mixin(MGPC!(ScriptString, 804)()); }
+			ScriptString m_HelpTextSpotTargetReminderMenuTitle() { mixin(MGPC!(ScriptString, 1164)()); }
+			ScriptString m_HelpTextChangingClassDescription() { mixin(MGPC!(ScriptString, 816)()); }
+			ScriptString m_HelpTextChangingClassDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1176)()); }
+			ScriptString m_HelpTextChangingClassHowTo() { mixin(MGPC!(ScriptString, 828)()); }
+			ScriptString m_HelpTextChangingClassHowToMenuTitle() { mixin(MGPC!(ScriptString, 1188)()); }
+			ScriptString m_LocalizedSuppressString() { mixin(MGPC!(ScriptString, 1200)()); }
+			float m_OffhandReminderRecursiveTime() { mixin(MGPC!(float, 1216)()); }
+			float m_SpotTargetReminderRecursiveTime() { mixin(MGPC!(float, 1224)()); }
+			float m_OffhandReminderInitialTime() { mixin(MGPC!(float, 1212)()); }
+			float m_SpotTargetReminderInitialTime() { mixin(MGPC!(float, 1220)()); }
 		}
-		bool m_bShowHelpTexts() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-		bool m_bShowHelpTexts(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
-		bool m_bSuppressOffhandReminder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x100) != 0; }
-		bool m_bSuppressOffhandReminder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x100; } return val; }
-		bool m_bSuppressSpotTargetReminder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10000000) != 0; }
-		bool m_bSuppressSpotTargetReminder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10000000; } return val; }
-		bool m_bSuppressGeneratorDescriptionLevel1() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4) != 0; }
-		bool m_bSuppressGeneratorDescriptionLevel1(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4; } return val; }
-		bool m_bSuppressGeneratorDescriptionLevel2() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8) != 0; }
-		bool m_bSuppressGeneratorDescriptionLevel2(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8; } return val; }
-		bool m_bSuppressGeneratorDescriptionLevel3() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10) != 0; }
-		bool m_bSuppressGeneratorDescriptionLevel3(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10; } return val; }
-		bool m_bSuppressGeneratorDescriptionLevel4() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20) != 0; }
-		bool m_bSuppressGeneratorDescriptionLevel4(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20; } return val; }
-		bool m_bSuppressCTFFlagDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x200) != 0; }
-		bool m_bSuppressCTFFlagDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x200; } return val; }
-		bool m_bSuppressRabbitFlagDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x800) != 0; }
-		bool m_bSuppressRabbitFlagDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x800; } return val; }
-		bool m_bSuppressInventoryStationDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2000) != 0; }
-		bool m_bSuppressInventoryStationDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2000; } return val; }
-		bool m_bSuppressVehicleStationDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4000) != 0; }
-		bool m_bSuppressVehicleStationDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4000; } return val; }
-		bool m_bSuppressBaseTurretDescriptionLevel1() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8000) != 0; }
-		bool m_bSuppressBaseTurretDescriptionLevel1(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8000; } return val; }
-		bool m_bSuppressBaseTurretDescriptionLevel2() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10000) != 0; }
-		bool m_bSuppressBaseTurretDescriptionLevel2(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10000; } return val; }
-		bool m_bSuppressBaseTurretDescriptionLevel3() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20000) != 0; }
-		bool m_bSuppressBaseTurretDescriptionLevel3(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20000; } return val; }
-		bool m_bSuppressBaseTurretDescriptionLevel4() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40000) != 0; }
-		bool m_bSuppressBaseTurretDescriptionLevel4(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40000; } return val; }
-		bool m_bSuppressRadarSensorDescriptionLevel1() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x80000) != 0; }
-		bool m_bSuppressRadarSensorDescriptionLevel1(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x80000; } return val; }
-		bool m_bSuppressRadarSensorDescriptionLevel2() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x100000) != 0; }
-		bool m_bSuppressRadarSensorDescriptionLevel2(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x100000; } return val; }
-		bool m_bSuppressRadarSensorDescriptionLevel3() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x200000) != 0; }
-		bool m_bSuppressRadarSensorDescriptionLevel3(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x200000; } return val; }
-		bool m_bSuppressRadarSensorDescriptionLevel4() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x400000) != 0; }
-		bool m_bSuppressRadarSensorDescriptionLevel4(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x400000; } return val; }
-		bool m_bSuppressRepairStationDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x800000) != 0; }
-		bool m_bSuppressRepairStationDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x800000; } return val; }
-		bool m_bSuppressSkiingHowTo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
-		bool m_bSuppressSkiingHowTo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
-		bool m_bSuppressJetpackHowTo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40) != 0; }
-		bool m_bSuppressJetpackHowTo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40; } return val; }
-		bool m_bSuppressOutOfAmmoNotifier() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x80) != 0; }
-		bool m_bSuppressOutOfAmmoNotifier(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x80; } return val; }
-		bool m_bSuppressHoldingEnemyFlagDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x400) != 0; }
-		bool m_bSuppressHoldingEnemyFlagDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x400; } return val; }
-		bool m_bSuppressHoldingRabbitFlagDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1000) != 0; }
-		bool m_bSuppressHoldingRabbitFlagDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1000; } return val; }
-		bool m_bSuppressArmoredTargetDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1000000) != 0; }
-		bool m_bSuppressArmoredTargetDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1000000; } return val; }
-		bool m_bSuppressCreditsDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2000000) != 0; }
-		bool m_bSuppressCreditsDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2000000; } return val; }
-		bool m_bSuppressYouCanPickupPassengerReminder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4000000) != 0; }
-		bool m_bSuppressYouCanPickupPassengerReminder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4000000; } return val; }
-		bool m_bSuppressConduitDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8000000) != 0; }
-		bool m_bSuppressConduitDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8000000; } return val; }
-		bool m_bSuppressChangingClassDescription() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20000000) != 0; }
-		bool m_bSuppressChangingClassDescription(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20000000; } return val; }
-		bool m_bSuppressChangingClassHowTo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40000000) != 0; }
-		bool m_bSuppressChangingClassHowTo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40000000; } return val; }
+		bool m_bShowHelpTexts() { mixin(MGBPC!(476, 0x1)()); }
+		bool m_bShowHelpTexts(bool val) { mixin(MSBPC!(476, 0x1)()); }
+		bool m_bSuppressOffhandReminder() { mixin(MGBPC!(476, 0x100)()); }
+		bool m_bSuppressOffhandReminder(bool val) { mixin(MSBPC!(476, 0x100)()); }
+		bool m_bSuppressSpotTargetReminder() { mixin(MGBPC!(476, 0x10000000)()); }
+		bool m_bSuppressSpotTargetReminder(bool val) { mixin(MSBPC!(476, 0x10000000)()); }
+		bool m_bSuppressGeneratorDescriptionLevel1() { mixin(MGBPC!(476, 0x4)()); }
+		bool m_bSuppressGeneratorDescriptionLevel1(bool val) { mixin(MSBPC!(476, 0x4)()); }
+		bool m_bSuppressGeneratorDescriptionLevel2() { mixin(MGBPC!(476, 0x8)()); }
+		bool m_bSuppressGeneratorDescriptionLevel2(bool val) { mixin(MSBPC!(476, 0x8)()); }
+		bool m_bSuppressGeneratorDescriptionLevel3() { mixin(MGBPC!(476, 0x10)()); }
+		bool m_bSuppressGeneratorDescriptionLevel3(bool val) { mixin(MSBPC!(476, 0x10)()); }
+		bool m_bSuppressGeneratorDescriptionLevel4() { mixin(MGBPC!(476, 0x20)()); }
+		bool m_bSuppressGeneratorDescriptionLevel4(bool val) { mixin(MSBPC!(476, 0x20)()); }
+		bool m_bSuppressCTFFlagDescription() { mixin(MGBPC!(476, 0x200)()); }
+		bool m_bSuppressCTFFlagDescription(bool val) { mixin(MSBPC!(476, 0x200)()); }
+		bool m_bSuppressRabbitFlagDescription() { mixin(MGBPC!(476, 0x800)()); }
+		bool m_bSuppressRabbitFlagDescription(bool val) { mixin(MSBPC!(476, 0x800)()); }
+		bool m_bSuppressInventoryStationDescription() { mixin(MGBPC!(476, 0x2000)()); }
+		bool m_bSuppressInventoryStationDescription(bool val) { mixin(MSBPC!(476, 0x2000)()); }
+		bool m_bSuppressVehicleStationDescription() { mixin(MGBPC!(476, 0x4000)()); }
+		bool m_bSuppressVehicleStationDescription(bool val) { mixin(MSBPC!(476, 0x4000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel1() { mixin(MGBPC!(476, 0x8000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel1(bool val) { mixin(MSBPC!(476, 0x8000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel2() { mixin(MGBPC!(476, 0x10000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel2(bool val) { mixin(MSBPC!(476, 0x10000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel3() { mixin(MGBPC!(476, 0x20000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel3(bool val) { mixin(MSBPC!(476, 0x20000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel4() { mixin(MGBPC!(476, 0x40000)()); }
+		bool m_bSuppressBaseTurretDescriptionLevel4(bool val) { mixin(MSBPC!(476, 0x40000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel1() { mixin(MGBPC!(476, 0x80000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel1(bool val) { mixin(MSBPC!(476, 0x80000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel2() { mixin(MGBPC!(476, 0x100000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel2(bool val) { mixin(MSBPC!(476, 0x100000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel3() { mixin(MGBPC!(476, 0x200000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel3(bool val) { mixin(MSBPC!(476, 0x200000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel4() { mixin(MGBPC!(476, 0x400000)()); }
+		bool m_bSuppressRadarSensorDescriptionLevel4(bool val) { mixin(MSBPC!(476, 0x400000)()); }
+		bool m_bSuppressRepairStationDescription() { mixin(MGBPC!(476, 0x800000)()); }
+		bool m_bSuppressRepairStationDescription(bool val) { mixin(MSBPC!(476, 0x800000)()); }
+		bool m_bSuppressSkiingHowTo() { mixin(MGBPC!(476, 0x2)()); }
+		bool m_bSuppressSkiingHowTo(bool val) { mixin(MSBPC!(476, 0x2)()); }
+		bool m_bSuppressJetpackHowTo() { mixin(MGBPC!(476, 0x40)()); }
+		bool m_bSuppressJetpackHowTo(bool val) { mixin(MSBPC!(476, 0x40)()); }
+		bool m_bSuppressOutOfAmmoNotifier() { mixin(MGBPC!(476, 0x80)()); }
+		bool m_bSuppressOutOfAmmoNotifier(bool val) { mixin(MSBPC!(476, 0x80)()); }
+		bool m_bSuppressHoldingEnemyFlagDescription() { mixin(MGBPC!(476, 0x400)()); }
+		bool m_bSuppressHoldingEnemyFlagDescription(bool val) { mixin(MSBPC!(476, 0x400)()); }
+		bool m_bSuppressHoldingRabbitFlagDescription() { mixin(MGBPC!(476, 0x1000)()); }
+		bool m_bSuppressHoldingRabbitFlagDescription(bool val) { mixin(MSBPC!(476, 0x1000)()); }
+		bool m_bSuppressArmoredTargetDescription() { mixin(MGBPC!(476, 0x1000000)()); }
+		bool m_bSuppressArmoredTargetDescription(bool val) { mixin(MSBPC!(476, 0x1000000)()); }
+		bool m_bSuppressCreditsDescription() { mixin(MGBPC!(476, 0x2000000)()); }
+		bool m_bSuppressCreditsDescription(bool val) { mixin(MSBPC!(476, 0x2000000)()); }
+		bool m_bSuppressYouCanPickupPassengerReminder() { mixin(MGBPC!(476, 0x4000000)()); }
+		bool m_bSuppressYouCanPickupPassengerReminder(bool val) { mixin(MSBPC!(476, 0x4000000)()); }
+		bool m_bSuppressConduitDescription() { mixin(MGBPC!(476, 0x8000000)()); }
+		bool m_bSuppressConduitDescription(bool val) { mixin(MSBPC!(476, 0x8000000)()); }
+		bool m_bSuppressChangingClassDescription() { mixin(MGBPC!(476, 0x20000000)()); }
+		bool m_bSuppressChangingClassDescription(bool val) { mixin(MSBPC!(476, 0x20000000)()); }
+		bool m_bSuppressChangingClassHowTo() { mixin(MGBPC!(476, 0x40000000)()); }
+		bool m_bSuppressChangingClassHowTo(bool val) { mixin(MSBPC!(476, 0x40000000)()); }
 	}
 final:
 	bool RequestHelpText(TrHelpTextManager.EHelpTextType RequestedType)

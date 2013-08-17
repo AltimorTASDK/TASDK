@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimSequence;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimMetaData;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.AnimationCompressionAlgorithm;
@@ -10,13 +11,13 @@ extern(C++) interface AnimSequence : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimSequence")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimSequence")()); }
 	private static __gshared AnimSequence mDefaultProperties;
-	@property final static AnimSequence DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimSequence)("AnimSequence Engine.Default__AnimSequence")); }
+	@property final static AnimSequence DefaultProperties() { mixin(MGDPC!(AnimSequence, "AnimSequence Engine.Default__AnimSequence")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetNotifyTimeByClass;
-		public @property static final ScriptFunction GetNotifyTimeByClass() { return mGetNotifyTimeByClass ? mGetNotifyTimeByClass : (mGetNotifyTimeByClass = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimSequence.GetNotifyTimeByClass")); }
+		public @property static final ScriptFunction GetNotifyTimeByClass() { mixin(MGF!("mGetNotifyTimeByClass", "Function Engine.AnimSequence.GetNotifyTimeByClass")()); }
 	}
 	enum AnimationCompressionFormat : ubyte
 	{
@@ -41,13 +42,13 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.CompressedTrack")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.CompressedTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ubyte) ByteStream() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 0); }
-			ScriptArray!(float) Times() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 12); }
-			float Ranges() { return *cast(float*)(cast(size_t)&this + 36); }
-			float Mins() { return *cast(float*)(cast(size_t)&this + 24); }
+			ScriptArray!(ubyte) ByteStream() { mixin(MGPS!(ScriptArray!(ubyte), 0)()); }
+			ScriptArray!(float) Times() { mixin(MGPS!(ScriptArray!(float), 12)()); }
+			float Ranges() { mixin(MGPS!(float, 36)()); }
+			float Mins() { mixin(MGPS!(float, 24)()); }
 		}
 	}
 	struct AnimTag
@@ -55,11 +56,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.AnimTag")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.AnimTag")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) Contains() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 12); }
-			ScriptString Tag() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			ScriptArray!(ScriptString) Contains() { mixin(MGPS!(ScriptArray!(ScriptString), 12)()); }
+			ScriptString Tag() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct CurveTrack
@@ -67,11 +68,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.CurveTrack")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.CurveTrack")()); }
 		@property final auto ref
 		{
-			ScriptName CurveName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptArray!(float) CurveWeights() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 8); }
+			ScriptName CurveName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(float) CurveWeights() { mixin(MGPS!(ScriptArray!(float), 8)()); }
 		}
 	}
 	struct RotationTrack
@@ -79,11 +80,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.RotationTrack")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.RotationTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.Quat) RotKeys() { return *cast(ScriptArray!(UObject.Quat)*)(cast(size_t)&this + 0); }
-			ScriptArray!(float) Times() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 12); }
+			ScriptArray!(UObject.Quat) RotKeys() { mixin(MGPS!(ScriptArray!(UObject.Quat), 0)()); }
+			ScriptArray!(float) Times() { mixin(MGPS!(ScriptArray!(float), 12)()); }
 		}
 	}
 	struct TranslationTrack
@@ -91,11 +92,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.TranslationTrack")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.TranslationTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Vector) PosKeys() { return *cast(ScriptArray!(Vector)*)(cast(size_t)&this + 0); }
-			ScriptArray!(float) Times() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 12); }
+			ScriptArray!(Vector) PosKeys() { mixin(MGPS!(ScriptArray!(Vector), 0)()); }
+			ScriptArray!(float) Times() { mixin(MGPS!(ScriptArray!(float), 12)()); }
 		}
 	}
 	struct SkelControlModifier
@@ -103,11 +104,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.SkelControlModifier")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.SkelControlModifier")()); }
 		@property final auto ref
 		{
-			ScriptName SkelControlName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptArray!(AnimSequence.TimeModifier) Modifiers() { return *cast(ScriptArray!(AnimSequence.TimeModifier)*)(cast(size_t)&this + 8); }
+			ScriptName SkelControlName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(AnimSequence.TimeModifier) Modifiers() { mixin(MGPS!(ScriptArray!(AnimSequence.TimeModifier), 8)()); }
 		}
 	}
 	struct TimeModifier
@@ -115,11 +116,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.TimeModifier")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.TimeModifier")()); }
 		@property final auto ref
 		{
-			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
-			float TargetStrength() { return *cast(float*)(cast(size_t)&this + 4); }
+			float Time() { mixin(MGPS!(float, 0)()); }
+			float TargetStrength() { mixin(MGPS!(float, 4)()); }
 		}
 	}
 	struct AnimNotifyEvent
@@ -127,13 +128,13 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.AnimNotifyEvent")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.AnimNotifyEvent")()); }
 		@property final auto ref
 		{
-			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
-			AnimNotify Notify() { return *cast(AnimNotify*)(cast(size_t)&this + 4); }
-			ScriptName Comment() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-			float Duration() { return *cast(float*)(cast(size_t)&this + 16); }
+			float Time() { mixin(MGPS!(float, 0)()); }
+			AnimNotify Notify() { mixin(MGPS!(AnimNotify, 4)()); }
+			ScriptName Comment() { mixin(MGPS!(ScriptName, 8)()); }
+			float Duration() { mixin(MGPS!(float, 16)()); }
 		}
 	}
 	struct RawAnimSequenceTrack
@@ -141,58 +142,58 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.RawAnimSequenceTrack")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.RawAnimSequenceTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Vector) PosKeys() { return *cast(ScriptArray!(Vector)*)(cast(size_t)&this + 0); }
-			ScriptArray!(UObject.Quat) RotKeys() { return *cast(ScriptArray!(UObject.Quat)*)(cast(size_t)&this + 12); }
+			ScriptArray!(Vector) PosKeys() { mixin(MGPS!(ScriptArray!(Vector), 0)()); }
+			ScriptArray!(UObject.Quat) RotKeys() { mixin(MGPS!(ScriptArray!(UObject.Quat), 12)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float SequenceLength() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float RateScale() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			ScriptName SequenceName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
-			ScriptArray!(AnimSequence.AnimNotifyEvent) Notifies() { return *cast(ScriptArray!(AnimSequence.AnimNotifyEvent)*)(cast(size_t)cast(void*)this + 68); }
+			float SequenceLength() { mixin(MGPC!(float, 104)()); }
+			float RateScale() { mixin(MGPC!(float, 112)()); }
+			ScriptName SequenceName() { mixin(MGPC!(ScriptName, 60)()); }
+			ScriptArray!(AnimSequence.AnimNotifyEvent) Notifies() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimNotifyEvent), 68)()); }
 			// WARNING: Property 'MetaData' has the same name as a defined type!
-			ScriptArray!(AnimSequence.SkelControlModifier) BoneControlModifiers() { return *cast(ScriptArray!(AnimSequence.SkelControlModifier)*)(cast(size_t)cast(void*)this + 92); }
-			int NumFrames() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
-			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimData() { return *cast(ScriptArray!(AnimSequence.RawAnimSequenceTrack)*)(cast(size_t)cast(void*)this + 120); }
-			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimationData() { return *cast(ScriptArray!(AnimSequence.RawAnimSequenceTrack)*)(cast(size_t)cast(void*)this + 132); }
-			ScriptArray!(AnimSequence.TranslationTrack) TranslationData() { return *cast(ScriptArray!(AnimSequence.TranslationTrack)*)(cast(size_t)cast(void*)this + 144); }
-			ScriptArray!(AnimSequence.RotationTrack) RotationData() { return *cast(ScriptArray!(AnimSequence.RotationTrack)*)(cast(size_t)cast(void*)this + 156); }
-			ScriptArray!(AnimSequence.CurveTrack) CurveData() { return *cast(ScriptArray!(AnimSequence.CurveTrack)*)(cast(size_t)cast(void*)this + 168); }
-			AnimationCompressionAlgorithm CompressionScheme() { return *cast(AnimationCompressionAlgorithm*)(cast(size_t)cast(void*)this + 180); }
-			AnimSequence.AnimationCompressionFormat TranslationCompressionFormat() { return *cast(AnimSequence.AnimationCompressionFormat*)(cast(size_t)cast(void*)this + 184); }
-			AnimSequence.AnimationCompressionFormat RotationCompressionFormat() { return *cast(AnimSequence.AnimationCompressionFormat*)(cast(size_t)cast(void*)this + 185); }
-			AnimSequence.AnimationKeyFormat KeyEncodingFormat() { return *cast(AnimSequence.AnimationKeyFormat*)(cast(size_t)cast(void*)this + 186); }
-			ScriptArray!(int) CompressedTrackOffsets() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 188); }
-			ScriptArray!(ubyte) CompressedByteStream() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 200); }
-			UObject.Pointer TranslationCodec() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 212); }
-			UObject.Pointer RotationCodec() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 216); }
-			ScriptArray!(UObject.BoneAtom) AdditiveRefPose() { return *cast(ScriptArray!(UObject.BoneAtom)*)(cast(size_t)cast(void*)this + 220); }
-			ScriptArray!(AnimSequence.RawAnimSequenceTrack) AdditiveBasePose() { return *cast(ScriptArray!(AnimSequence.RawAnimSequenceTrack)*)(cast(size_t)cast(void*)this + 232); }
-			ScriptName AdditiveRefName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 244); }
-			ScriptArray!(AnimSequence) AdditiveBasePoseAnimSeq() { return *cast(ScriptArray!(AnimSequence)*)(cast(size_t)cast(void*)this + 252); }
-			ScriptArray!(AnimSequence) AdditiveTargetPoseAnimSeq() { return *cast(ScriptArray!(AnimSequence)*)(cast(size_t)cast(void*)this + 264); }
-			ScriptArray!(AnimSequence) RelatedAdditiveAnimSeqs() { return *cast(ScriptArray!(AnimSequence)*)(cast(size_t)cast(void*)this + 276); }
-			int EncodingPkgVersion() { return *cast(int*)(cast(size_t)cast(void*)this + 288); }
-			int CompressCommandletVersion() { return *cast(int*)(cast(size_t)cast(void*)this + 292); }
-			float UseScore() { return *cast(float*)(cast(size_t)cast(void*)this + 296); }
-			ScriptArray!(AnimSequence.AnimTag) AnimTags() { return *cast(ScriptArray!(AnimSequence.AnimTag)*)(cast(size_t)cast(void*)this + 300); }
+			ScriptArray!(AnimSequence.SkelControlModifier) BoneControlModifiers() { mixin(MGPC!(ScriptArray!(AnimSequence.SkelControlModifier), 92)()); }
+			int NumFrames() { mixin(MGPC!(int, 108)()); }
+			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimData() { mixin(MGPC!(ScriptArray!(AnimSequence.RawAnimSequenceTrack), 120)()); }
+			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimationData() { mixin(MGPC!(ScriptArray!(AnimSequence.RawAnimSequenceTrack), 132)()); }
+			ScriptArray!(AnimSequence.TranslationTrack) TranslationData() { mixin(MGPC!(ScriptArray!(AnimSequence.TranslationTrack), 144)()); }
+			ScriptArray!(AnimSequence.RotationTrack) RotationData() { mixin(MGPC!(ScriptArray!(AnimSequence.RotationTrack), 156)()); }
+			ScriptArray!(AnimSequence.CurveTrack) CurveData() { mixin(MGPC!(ScriptArray!(AnimSequence.CurveTrack), 168)()); }
+			AnimationCompressionAlgorithm CompressionScheme() { mixin(MGPC!(AnimationCompressionAlgorithm, 180)()); }
+			AnimSequence.AnimationCompressionFormat TranslationCompressionFormat() { mixin(MGPC!(AnimSequence.AnimationCompressionFormat, 184)()); }
+			AnimSequence.AnimationCompressionFormat RotationCompressionFormat() { mixin(MGPC!(AnimSequence.AnimationCompressionFormat, 185)()); }
+			AnimSequence.AnimationKeyFormat KeyEncodingFormat() { mixin(MGPC!(AnimSequence.AnimationKeyFormat, 186)()); }
+			ScriptArray!(int) CompressedTrackOffsets() { mixin(MGPC!(ScriptArray!(int), 188)()); }
+			ScriptArray!(ubyte) CompressedByteStream() { mixin(MGPC!(ScriptArray!(ubyte), 200)()); }
+			UObject.Pointer TranslationCodec() { mixin(MGPC!(UObject.Pointer, 212)()); }
+			UObject.Pointer RotationCodec() { mixin(MGPC!(UObject.Pointer, 216)()); }
+			ScriptArray!(UObject.BoneAtom) AdditiveRefPose() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 220)()); }
+			ScriptArray!(AnimSequence.RawAnimSequenceTrack) AdditiveBasePose() { mixin(MGPC!(ScriptArray!(AnimSequence.RawAnimSequenceTrack), 232)()); }
+			ScriptName AdditiveRefName() { mixin(MGPC!(ScriptName, 244)()); }
+			ScriptArray!(AnimSequence) AdditiveBasePoseAnimSeq() { mixin(MGPC!(ScriptArray!(AnimSequence), 252)()); }
+			ScriptArray!(AnimSequence) AdditiveTargetPoseAnimSeq() { mixin(MGPC!(ScriptArray!(AnimSequence), 264)()); }
+			ScriptArray!(AnimSequence) RelatedAdditiveAnimSeqs() { mixin(MGPC!(ScriptArray!(AnimSequence), 276)()); }
+			int EncodingPkgVersion() { mixin(MGPC!(int, 288)()); }
+			int CompressCommandletVersion() { mixin(MGPC!(int, 292)()); }
+			float UseScore() { mixin(MGPC!(float, 296)()); }
+			ScriptArray!(AnimSequence.AnimTag) AnimTags() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimTag), 300)()); }
 		}
-		bool bNoLoopingInterpolation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x1) != 0; }
-		bool bNoLoopingInterpolation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x1; } return val; }
-		bool bIsAdditive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x2) != 0; }
-		bool bIsAdditive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x2; } return val; }
-		bool bAdditiveBuiltLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x4) != 0; }
-		bool bAdditiveBuiltLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x4; } return val; }
-		bool bDoNotOverrideCompression() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x8) != 0; }
-		bool bDoNotOverrideCompression(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x8; } return val; }
-		bool bHasBeenUsed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x10) != 0; }
-		bool bHasBeenUsed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x10; } return val; }
+		bool bNoLoopingInterpolation() { mixin(MGBPC!(116, 0x1)()); }
+		bool bNoLoopingInterpolation(bool val) { mixin(MSBPC!(116, 0x1)()); }
+		bool bIsAdditive() { mixin(MGBPC!(116, 0x2)()); }
+		bool bIsAdditive(bool val) { mixin(MSBPC!(116, 0x2)()); }
+		bool bAdditiveBuiltLooping() { mixin(MGBPC!(116, 0x4)()); }
+		bool bAdditiveBuiltLooping(bool val) { mixin(MSBPC!(116, 0x4)()); }
+		bool bDoNotOverrideCompression() { mixin(MGBPC!(116, 0x8)()); }
+		bool bDoNotOverrideCompression(bool val) { mixin(MSBPC!(116, 0x8)()); }
+		bool bHasBeenUsed() { mixin(MGBPC!(116, 0x10)()); }
+		bool bHasBeenUsed(bool val) { mixin(MSBPC!(116, 0x10)()); }
 	}
 	final float GetNotifyTimeByClass(ScriptClass NotifyClass, float PlayRate, float StartPosition, AnimNotify* out_Notify, float* out_Duration)
 	{
@@ -201,8 +202,8 @@ public extern(D):
 		*cast(ScriptClass*)params.ptr = NotifyClass;
 		*cast(float*)&params[4] = PlayRate;
 		*cast(float*)&params[8] = StartPosition;
-		*cast(AnimNotify*)&params[12] = *out_Notify;
-		*cast(float*)&params[16] = *out_Duration;
+		*cast(AnimNotify*)&params[12] = out_Notify;
+		*cast(float*)&params[16] = out_Duration;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNotifyTimeByClass, params.ptr, cast(void*)0);
 		*out_Notify = *cast(AnimNotify*)&params[12];
 		*out_Duration = *cast(float*)&params[16];

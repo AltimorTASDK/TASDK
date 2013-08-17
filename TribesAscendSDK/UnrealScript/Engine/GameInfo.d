@@ -1,6 +1,7 @@
 module UnrealScript.Engine.GameInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameReplicationInfo;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.OnlineSubsystem;
@@ -25,9 +26,9 @@ extern(C++) interface GameInfo : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameInfo")()); }
 	private static __gshared GameInfo mDefaultProperties;
-	@property final static GameInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameInfo)("GameInfo Engine.Default__GameInfo")); }
+	@property final static GameInfo DefaultProperties() { mixin(MGDPC!(GameInfo, "GameInfo Engine.Default__GameInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -192,163 +193,163 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckRelevance() { return mCheckRelevance ? mCheckRelevance : (mCheckRelevance = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CheckRelevance")); }
-			ScriptFunction ParseOption() { return mParseOption ? mParseOption : (mParseOption = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ParseOption")); }
-			ScriptFunction AtCapacity() { return mAtCapacity ? mAtCapacity : (mAtCapacity = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AtCapacity")); }
-			ScriptFunction ForceClearUnpauseDelegates() { return mForceClearUnpauseDelegates ? mForceClearUnpauseDelegates : (mForceClearUnpauseDelegates = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ForceClearUnpauseDelegates")); }
-			ScriptFunction IsAutomatedPerfTesting() { return mIsAutomatedPerfTesting ? mIsAutomatedPerfTesting : (mIsAutomatedPerfTesting = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.IsAutomatedPerfTesting")); }
-			ScriptFunction SetPause() { return mSetPause ? mSetPause : (mSetPause = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SetPause")); }
-			ScriptFunction ChangeTeam() { return mChangeTeam ? mChangeTeam : (mChangeTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ChangeTeam")); }
-			ScriptFunction CanSpectate() { return mCanSpectate ? mCanSpectate : (mCanSpectate = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CanSpectate")); }
-			ScriptFunction PlayerCanRestartGame() { return mPlayerCanRestartGame ? mPlayerCanRestartGame : (mPlayerCanRestartGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PlayerCanRestartGame")); }
-			ScriptFunction PlayerCanRestart() { return mPlayerCanRestart ? mPlayerCanRestart : (mPlayerCanRestart = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PlayerCanRestart")); }
-			ScriptFunction IsDoingASentinelRun() { return mIsDoingASentinelRun ? mIsDoingASentinelRun : (mIsDoingASentinelRun = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.IsDoingASentinelRun")); }
-			ScriptFunction GetCoverReplicator() { return mGetCoverReplicator ? mGetCoverReplicator : (mGetCoverReplicator = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetCoverReplicator")); }
-			ScriptFunction PickupQuery() { return mPickupQuery ? mPickupQuery : (mPickupQuery = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PickupQuery")); }
-			ScriptFunction GetSupportedGameTypes() { return mGetSupportedGameTypes ? mGetSupportedGameTypes : (mGetSupportedGameTypes = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetSupportedGameTypes")); }
-			ScriptFunction GetMapCommonPackageName() { return mGetMapCommonPackageName ? mGetMapCommonPackageName : (mGetMapCommonPackageName = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetMapCommonPackageName")); }
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PreBeginPlay")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PostBeginPlay")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.DisplayDebug")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Reset")); }
-			ScriptFunction ShouldReset() { return mShouldReset ? mShouldReset : (mShouldReset = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ShouldReset")); }
-			ScriptFunction ResetLevel() { return mResetLevel ? mResetLevel : (mResetLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ResetLevel")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Timer")); }
-			ScriptFunction DoNavFearCostFallOff() { return mDoNavFearCostFallOff ? mDoNavFearCostFallOff : (mDoNavFearCostFallOff = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.DoNavFearCostFallOff")); }
-			ScriptFunction NotifyNavigationChanged() { return mNotifyNavigationChanged ? mNotifyNavigationChanged : (mNotifyNavigationChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.NotifyNavigationChanged")); }
-			ScriptFunction GameEnding() { return mGameEnding ? mGameEnding : (mGameEnding = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GameEnding")); }
-			ScriptFunction KickIdler() { return mKickIdler ? mKickIdler : (mKickIdler = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.KickIdler")); }
-			ScriptFunction ForceKickPlayer() { return mForceKickPlayer ? mForceKickPlayer : (mForceKickPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ForceKickPlayer")); }
-			ScriptFunction InitGameReplicationInfo() { return mInitGameReplicationInfo ? mInitGameReplicationInfo : (mInitGameReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.InitGameReplicationInfo")); }
-			ScriptFunction GetNetworkNumber() { return mGetNetworkNumber ? mGetNetworkNumber : (mGetNetworkNumber = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetNetworkNumber")); }
-			ScriptFunction GetNumPlayers() { return mGetNumPlayers ? mGetNumPlayers : (mGetNumPlayers = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetNumPlayers")); }
-			ScriptFunction CanUnpause() { return mCanUnpause ? mCanUnpause : (mCanUnpause = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CanUnpause")); }
-			ScriptFunction ClearPause() { return mClearPause ? mClearPause : (mClearPause = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ClearPause")); }
-			ScriptFunction DebugPause() { return mDebugPause ? mDebugPause : (mDebugPause = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.DebugPause")); }
-			ScriptFunction SetGameSpeed() { return mSetGameSpeed ? mSetGameSpeed : (mSetGameSpeed = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SetGameSpeed")); }
-			ScriptFunction GrabOption() { return mGrabOption ? mGrabOption : (mGrabOption = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GrabOption")); }
-			ScriptFunction GetKeyValue() { return mGetKeyValue ? mGetKeyValue : (mGetKeyValue = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetKeyValue")); }
-			ScriptFunction HasOption() { return mHasOption ? mHasOption : (mHasOption = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.HasOption")); }
-			ScriptFunction GetIntOption() { return mGetIntOption ? mGetIntOption : (mGetIntOption = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetIntOption")); }
-			ScriptFunction GetDefaultGameClassPath() { return mGetDefaultGameClassPath ? mGetDefaultGameClassPath : (mGetDefaultGameClassPath = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetDefaultGameClassPath")); }
-			ScriptFunction SetGameType() { return mSetGameType ? mSetGameType : (mSetGameType = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SetGameType")); }
-			ScriptFunction InitGame() { return mInitGame ? mInitGame : (mInitGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.InitGame")); }
-			ScriptFunction NotifyPendingConnectionLost() { return mNotifyPendingConnectionLost ? mNotifyPendingConnectionLost : (mNotifyPendingConnectionLost = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.NotifyPendingConnectionLost")); }
-			ScriptFunction AddMutator() { return mAddMutator ? mAddMutator : (mAddMutator = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AddMutator")); }
-			ScriptFunction RemoveMutator() { return mRemoveMutator ? mRemoveMutator : (mRemoveMutator = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RemoveMutator")); }
-			ScriptFunction ProcessServerTravel() { return mProcessServerTravel ? mProcessServerTravel : (mProcessServerTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ProcessServerTravel")); }
-			ScriptFunction ProcessClientTravel() { return mProcessClientTravel ? mProcessClientTravel : (mProcessClientTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ProcessClientTravel")); }
-			ScriptFunction RequiresPassword() { return mRequiresPassword ? mRequiresPassword : (mRequiresPassword = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RequiresPassword")); }
-			ScriptFunction PreLogin() { return mPreLogin ? mPreLogin : (mPreLogin = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PreLogin")); }
-			ScriptFunction GetNextPlayerID() { return mGetNextPlayerID ? mGetNextPlayerID : (mGetNextPlayerID = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetNextPlayerID")); }
-			ScriptFunction SpawnPlayerController() { return mSpawnPlayerController ? mSpawnPlayerController : (mSpawnPlayerController = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SpawnPlayerController")); }
-			ScriptFunction Login() { return mLogin ? mLogin : (mLogin = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Login")); }
-			ScriptFunction StartMatch() { return mStartMatch ? mStartMatch : (mStartMatch = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.StartMatch")); }
-			ScriptFunction StartOnlineGame() { return mStartOnlineGame ? mStartOnlineGame : (mStartOnlineGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.StartOnlineGame")); }
-			ScriptFunction OnStartOnlineGameComplete() { return mOnStartOnlineGameComplete ? mOnStartOnlineGameComplete : (mOnStartOnlineGameComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.OnStartOnlineGameComplete")); }
-			ScriptFunction StartHumans() { return mStartHumans ? mStartHumans : (mStartHumans = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.StartHumans")); }
-			ScriptFunction StartBots() { return mStartBots ? mStartBots : (mStartBots = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.StartBots")); }
-			ScriptFunction RestartPlayer() { return mRestartPlayer ? mRestartPlayer : (mRestartPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RestartPlayer")); }
-			ScriptFunction SpawnDefaultPawnFor() { return mSpawnDefaultPawnFor ? mSpawnDefaultPawnFor : (mSpawnDefaultPawnFor = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SpawnDefaultPawnFor")); }
-			ScriptFunction GetDefaultPlayerClass() { return mGetDefaultPlayerClass ? mGetDefaultPlayerClass : (mGetDefaultPlayerClass = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetDefaultPlayerClass")); }
-			ScriptFunction ReplicateStreamingStatus() { return mReplicateStreamingStatus ? mReplicateStreamingStatus : (mReplicateStreamingStatus = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ReplicateStreamingStatus")); }
-			ScriptFunction GenericPlayerInitialization() { return mGenericPlayerInitialization ? mGenericPlayerInitialization : (mGenericPlayerInitialization = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GenericPlayerInitialization")); }
-			ScriptFunction BestNextHostSort() { return mBestNextHostSort ? mBestNextHostSort : (mBestNextHostSort = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.BestNextHostSort")); }
-			ScriptFunction UpdateBestNextHosts() { return mUpdateBestNextHosts ? mUpdateBestNextHosts : (mUpdateBestNextHosts = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.UpdateBestNextHosts")); }
-			ScriptFunction PostLogin() { return mPostLogin ? mPostLogin : (mPostLogin = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PostLogin")); }
-			ScriptFunction UpdateNetSpeeds() { return mUpdateNetSpeeds ? mUpdateNetSpeeds : (mUpdateNetSpeeds = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.UpdateNetSpeeds")); }
-			ScriptFunction CalculatedNetSpeed() { return mCalculatedNetSpeed ? mCalculatedNetSpeed : (mCalculatedNetSpeed = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CalculatedNetSpeed")); }
-			ScriptFunction PreExit() { return mPreExit ? mPreExit : (mPreExit = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PreExit")); }
-			ScriptFunction Logout() { return mLogout ? mLogout : (mLogout = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Logout")); }
-			ScriptFunction UnregisterPlayer() { return mUnregisterPlayer ? mUnregisterPlayer : (mUnregisterPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.UnregisterPlayer")); }
-			ScriptFunction AcceptInventory() { return mAcceptInventory ? mAcceptInventory : (mAcceptInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AcceptInventory")); }
-			ScriptFunction AddDefaultInventory() { return mAddDefaultInventory ? mAddDefaultInventory : (mAddDefaultInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AddDefaultInventory")); }
-			ScriptFunction Mutate() { return mMutate ? mMutate : (mMutate = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Mutate")); }
-			ScriptFunction SetPlayerDefaults() { return mSetPlayerDefaults ? mSetPlayerDefaults : (mSetPlayerDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SetPlayerDefaults")); }
-			ScriptFunction NotifyKilled() { return mNotifyKilled ? mNotifyKilled : (mNotifyKilled = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.NotifyKilled")); }
-			ScriptFunction Killed() { return mKilled ? mKilled : (mKilled = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Killed")); }
-			ScriptFunction PreventDeath() { return mPreventDeath ? mPreventDeath : (mPreventDeath = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PreventDeath")); }
-			ScriptFunction BroadcastDeathMessage() { return mBroadcastDeathMessage ? mBroadcastDeathMessage : (mBroadcastDeathMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.BroadcastDeathMessage")); }
-			ScriptFunction Kick() { return mKick ? mKick : (mKick = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Kick")); }
-			ScriptFunction KickBan() { return mKickBan ? mKickBan : (mKickBan = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.KickBan")); }
-			ScriptFunction ReduceDamage() { return mReduceDamage ? mReduceDamage : (mReduceDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ReduceDamage")); }
-			ScriptFunction ShouldRespawn() { return mShouldRespawn ? mShouldRespawn : (mShouldRespawn = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ShouldRespawn")); }
-			ScriptFunction DiscardInventory() { return mDiscardInventory ? mDiscardInventory : (mDiscardInventory = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.DiscardInventory")); }
-			ScriptFunction ChangeName() { return mChangeName ? mChangeName : (mChangeName = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ChangeName")); }
-			ScriptFunction PickTeam() { return mPickTeam ? mPickTeam : (mPickTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PickTeam")); }
-			ScriptFunction SendPlayer() { return mSendPlayer ? mSendPlayer : (mSendPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SendPlayer")); }
-			ScriptFunction GetNextMap() { return mGetNextMap ? mGetNextMap : (mGetNextMap = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetNextMap")); }
-			ScriptFunction GetTravelType() { return mGetTravelType ? mGetTravelType : (mGetTravelType = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetTravelType")); }
-			ScriptFunction RestartGame() { return mRestartGame ? mRestartGame : (mRestartGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RestartGame")); }
-			ScriptFunction Broadcast() { return mBroadcast ? mBroadcast : (mBroadcast = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.Broadcast")); }
-			ScriptFunction BroadcastTeam() { return mBroadcastTeam ? mBroadcastTeam : (mBroadcastTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.BroadcastTeam")); }
-			ScriptFunction BroadcastLocalized() { return mBroadcastLocalized ? mBroadcastLocalized : (mBroadcastLocalized = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.BroadcastLocalized")); }
-			ScriptFunction BroadcastLocalizedTeam() { return mBroadcastLocalizedTeam ? mBroadcastLocalizedTeam : (mBroadcastLocalizedTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.BroadcastLocalizedTeam")); }
-			ScriptFunction CheckModifiedEndGame() { return mCheckModifiedEndGame ? mCheckModifiedEndGame : (mCheckModifiedEndGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CheckModifiedEndGame")); }
-			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CheckEndGame")); }
-			ScriptFunction WriteOnlineStats() { return mWriteOnlineStats ? mWriteOnlineStats : (mWriteOnlineStats = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.WriteOnlineStats")); }
-			ScriptFunction WriteOnlinePlayerScores() { return mWriteOnlinePlayerScores ? mWriteOnlinePlayerScores : (mWriteOnlinePlayerScores = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.WriteOnlinePlayerScores")); }
-			ScriptFunction ForceRoundStart() { return mForceRoundStart ? mForceRoundStart : (mForceRoundStart = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ForceRoundStart")); }
-			ScriptFunction EndGame() { return mEndGame ? mEndGame : (mEndGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.EndGame")); }
-			ScriptFunction PerformEndGameHandling() { return mPerformEndGameHandling ? mPerformEndGameHandling : (mPerformEndGameHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PerformEndGameHandling")); }
-			ScriptFunction EndOnlineGame() { return mEndOnlineGame ? mEndOnlineGame : (mEndOnlineGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.EndOnlineGame")); }
-			ScriptFunction GameEventsPoll() { return mGameEventsPoll ? mGameEventsPoll : (mGameEventsPoll = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GameEventsPoll")); }
-			ScriptFunction EndLogging() { return mEndLogging ? mEndLogging : (mEndLogging = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.EndLogging")); }
-			ScriptFunction ShouldSpawnAtStartSpot() { return mShouldSpawnAtStartSpot ? mShouldSpawnAtStartSpot : (mShouldSpawnAtStartSpot = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ShouldSpawnAtStartSpot")); }
-			ScriptFunction FindPlayerStart() { return mFindPlayerStart ? mFindPlayerStart : (mFindPlayerStart = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.FindPlayerStart")); }
-			ScriptFunction ChoosePlayerStart() { return mChoosePlayerStart ? mChoosePlayerStart : (mChoosePlayerStart = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ChoosePlayerStart")); }
-			ScriptFunction RatePlayerStart() { return mRatePlayerStart ? mRatePlayerStart : (mRatePlayerStart = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RatePlayerStart")); }
-			ScriptFunction AddObjectiveScore() { return mAddObjectiveScore ? mAddObjectiveScore : (mAddObjectiveScore = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AddObjectiveScore")); }
-			ScriptFunction ScoreObjective() { return mScoreObjective ? mScoreObjective : (mScoreObjective = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ScoreObjective")); }
-			ScriptFunction CheckScore() { return mCheckScore ? mCheckScore : (mCheckScore = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CheckScore")); }
-			ScriptFunction ScoreKill() { return mScoreKill ? mScoreKill : (mScoreKill = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ScoreKill")); }
-			ScriptFunction ModifyScoreKill() { return mModifyScoreKill ? mModifyScoreKill : (mModifyScoreKill = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ModifyScoreKill")); }
-			ScriptFunction DriverEnteredVehicle() { return mDriverEnteredVehicle ? mDriverEnteredVehicle : (mDriverEnteredVehicle = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.DriverEnteredVehicle")); }
-			ScriptFunction CanLeaveVehicle() { return mCanLeaveVehicle ? mCanLeaveVehicle : (mCanLeaveVehicle = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CanLeaveVehicle")); }
-			ScriptFunction DriverLeftVehicle() { return mDriverLeftVehicle ? mDriverLeftVehicle : (mDriverLeftVehicle = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.DriverLeftVehicle")); }
-			ScriptFunction AllowMutator() { return mAllowMutator ? mAllowMutator : (mAllowMutator = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AllowMutator")); }
-			ScriptFunction AllowCheats() { return mAllowCheats ? mAllowCheats : (mAllowCheats = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AllowCheats")); }
-			ScriptFunction AllowPausing() { return mAllowPausing ? mAllowPausing : (mAllowPausing = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AllowPausing")); }
-			ScriptFunction PreCommitMapChange() { return mPreCommitMapChange ? mPreCommitMapChange : (mPreCommitMapChange = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PreCommitMapChange")); }
-			ScriptFunction PostCommitMapChange() { return mPostCommitMapChange ? mPostCommitMapChange : (mPostCommitMapChange = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PostCommitMapChange")); }
-			ScriptFunction AddInactivePRI() { return mAddInactivePRI ? mAddInactivePRI : (mAddInactivePRI = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.AddInactivePRI")); }
-			ScriptFunction FindInactivePRI() { return mFindInactivePRI ? mFindInactivePRI : (mFindInactivePRI = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.FindInactivePRI")); }
-			ScriptFunction SetPRI() { return mSetPRI ? mSetPRI : (mSetPRI = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SetPRI")); }
-			ScriptFunction OverridePRI() { return mOverridePRI ? mOverridePRI : (mOverridePRI = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.OverridePRI")); }
-			ScriptFunction GetSeamlessTravelActorList() { return mGetSeamlessTravelActorList ? mGetSeamlessTravelActorList : (mGetSeamlessTravelActorList = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.GetSeamlessTravelActorList")); }
-			ScriptFunction SwapPlayerControllers() { return mSwapPlayerControllers ? mSwapPlayerControllers : (mSwapPlayerControllers = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SwapPlayerControllers")); }
-			ScriptFunction PostSeamlessTravel() { return mPostSeamlessTravel ? mPostSeamlessTravel : (mPostSeamlessTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.PostSeamlessTravel")); }
-			ScriptFunction UpdateGameSettings() { return mUpdateGameSettings ? mUpdateGameSettings : (mUpdateGameSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.UpdateGameSettings")); }
-			ScriptFunction HandleSeamlessTravelPlayer() { return mHandleSeamlessTravelPlayer ? mHandleSeamlessTravelPlayer : (mHandleSeamlessTravelPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.HandleSeamlessTravelPlayer")); }
-			ScriptFunction SetSeamlessTravelViewTarget() { return mSetSeamlessTravelViewTarget ? mSetSeamlessTravelViewTarget : (mSetSeamlessTravelViewTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.SetSeamlessTravelViewTarget")); }
-			ScriptFunction UpdateGameSettingsCounts() { return mUpdateGameSettingsCounts ? mUpdateGameSettingsCounts : (mUpdateGameSettingsCounts = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.UpdateGameSettingsCounts")); }
-			ScriptFunction ProcessClientRegistrationCompletion() { return mProcessClientRegistrationCompletion ? mProcessClientRegistrationCompletion : (mProcessClientRegistrationCompletion = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ProcessClientRegistrationCompletion")); }
-			ScriptFunction StartArbitrationRegistration() { return mStartArbitrationRegistration ? mStartArbitrationRegistration : (mStartArbitrationRegistration = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.StartArbitrationRegistration")); }
-			ScriptFunction StartArbitratedMatch() { return mStartArbitratedMatch ? mStartArbitratedMatch : (mStartArbitratedMatch = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.StartArbitratedMatch")); }
-			ScriptFunction RegisterServerForArbitration() { return mRegisterServerForArbitration ? mRegisterServerForArbitration : (mRegisterServerForArbitration = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RegisterServerForArbitration")); }
-			ScriptFunction ArbitrationRegistrationComplete() { return mArbitrationRegistrationComplete ? mArbitrationRegistrationComplete : (mArbitrationRegistrationComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ArbitrationRegistrationComplete")); }
-			ScriptFunction MatchIsInProgress() { return mMatchIsInProgress ? mMatchIsInProgress : (mMatchIsInProgress = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.MatchIsInProgress")); }
-			ScriptFunction NotifyArbitratedMatchEnd() { return mNotifyArbitratedMatchEnd ? mNotifyArbitratedMatchEnd : (mNotifyArbitratedMatchEnd = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.NotifyArbitratedMatchEnd")); }
-			ScriptFunction UpdateGameplayMuteList() { return mUpdateGameplayMuteList ? mUpdateGameplayMuteList : (mUpdateGameplayMuteList = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.UpdateGameplayMuteList")); }
-			ScriptFunction RecalculateSkillRating() { return mRecalculateSkillRating ? mRecalculateSkillRating : (mRecalculateSkillRating = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RecalculateSkillRating")); }
-			ScriptFunction MatineeCancelled() { return mMatineeCancelled ? mMatineeCancelled : (mMatineeCancelled = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.MatineeCancelled")); }
-			ScriptFunction ProcessServerLogin() { return mProcessServerLogin ? mProcessServerLogin : (mProcessServerLogin = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ProcessServerLogin")); }
-			ScriptFunction ClearAutoLoginDelegates() { return mClearAutoLoginDelegates ? mClearAutoLoginDelegates : (mClearAutoLoginDelegates = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ClearAutoLoginDelegates")); }
-			ScriptFunction OnLoginFailed() { return mOnLoginFailed ? mOnLoginFailed : (mOnLoginFailed = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.OnLoginFailed")); }
-			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.OnLoginChange")); }
-			ScriptFunction RegisterServer() { return mRegisterServer ? mRegisterServer : (mRegisterServer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.RegisterServer")); }
-			ScriptFunction OnServerCreateComplete() { return mOnServerCreateComplete ? mOnServerCreateComplete : (mOnServerCreateComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.OnServerCreateComplete")); }
-			ScriptFunction TellClientsToReturnToPartyHost() { return mTellClientsToReturnToPartyHost ? mTellClientsToReturnToPartyHost : (mTellClientsToReturnToPartyHost = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.TellClientsToReturnToPartyHost")); }
-			ScriptFunction TellClientsToTravelToSession() { return mTellClientsToTravelToSession ? mTellClientsToTravelToSession : (mTellClientsToTravelToSession = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.TellClientsToTravelToSession")); }
-			ScriptFunction DoTravelTheWorld() { return mDoTravelTheWorld ? mDoTravelTheWorld : (mDoTravelTheWorld = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.DoTravelTheWorld")); }
-			ScriptFunction IsCheckingForFragmentation() { return mIsCheckingForFragmentation ? mIsCheckingForFragmentation : (mIsCheckingForFragmentation = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.IsCheckingForFragmentation")); }
-			ScriptFunction IsCheckingForMemLeaks() { return mIsCheckingForMemLeaks ? mIsCheckingForMemLeaks : (mIsCheckingForMemLeaks = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.IsCheckingForMemLeaks")); }
-			ScriptFunction ShouldAutoContinueToNextRound() { return mShouldAutoContinueToNextRound ? mShouldAutoContinueToNextRound : (mShouldAutoContinueToNextRound = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.ShouldAutoContinueToNextRound")); }
-			ScriptFunction CheckForSentinelRun() { return mCheckForSentinelRun ? mCheckForSentinelRun : (mCheckForSentinelRun = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.CheckForSentinelRun")); }
-			ScriptFunction BeginBVT() { return mBeginBVT ? mBeginBVT : (mBeginBVT = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.BeginBVT")); }
-			ScriptFunction EnableStandbyCheatDetection() { return mEnableStandbyCheatDetection ? mEnableStandbyCheatDetection : (mEnableStandbyCheatDetection = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.EnableStandbyCheatDetection")); }
-			ScriptFunction StandbyCheatDetected() { return mStandbyCheatDetected ? mStandbyCheatDetected : (mStandbyCheatDetected = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.StandbyCheatDetected")); }
-			ScriptFunction OnEngineHasLoaded() { return mOnEngineHasLoaded ? mOnEngineHasLoaded : (mOnEngineHasLoaded = ScriptObject.Find!(ScriptFunction)("Function Engine.GameInfo.OnEngineHasLoaded")); }
+			ScriptFunction CheckRelevance() { mixin(MGF!("mCheckRelevance", "Function Engine.GameInfo.CheckRelevance")()); }
+			ScriptFunction ParseOption() { mixin(MGF!("mParseOption", "Function Engine.GameInfo.ParseOption")()); }
+			ScriptFunction AtCapacity() { mixin(MGF!("mAtCapacity", "Function Engine.GameInfo.AtCapacity")()); }
+			ScriptFunction ForceClearUnpauseDelegates() { mixin(MGF!("mForceClearUnpauseDelegates", "Function Engine.GameInfo.ForceClearUnpauseDelegates")()); }
+			ScriptFunction IsAutomatedPerfTesting() { mixin(MGF!("mIsAutomatedPerfTesting", "Function Engine.GameInfo.IsAutomatedPerfTesting")()); }
+			ScriptFunction SetPause() { mixin(MGF!("mSetPause", "Function Engine.GameInfo.SetPause")()); }
+			ScriptFunction ChangeTeam() { mixin(MGF!("mChangeTeam", "Function Engine.GameInfo.ChangeTeam")()); }
+			ScriptFunction CanSpectate() { mixin(MGF!("mCanSpectate", "Function Engine.GameInfo.CanSpectate")()); }
+			ScriptFunction PlayerCanRestartGame() { mixin(MGF!("mPlayerCanRestartGame", "Function Engine.GameInfo.PlayerCanRestartGame")()); }
+			ScriptFunction PlayerCanRestart() { mixin(MGF!("mPlayerCanRestart", "Function Engine.GameInfo.PlayerCanRestart")()); }
+			ScriptFunction IsDoingASentinelRun() { mixin(MGF!("mIsDoingASentinelRun", "Function Engine.GameInfo.IsDoingASentinelRun")()); }
+			ScriptFunction GetCoverReplicator() { mixin(MGF!("mGetCoverReplicator", "Function Engine.GameInfo.GetCoverReplicator")()); }
+			ScriptFunction PickupQuery() { mixin(MGF!("mPickupQuery", "Function Engine.GameInfo.PickupQuery")()); }
+			ScriptFunction GetSupportedGameTypes() { mixin(MGF!("mGetSupportedGameTypes", "Function Engine.GameInfo.GetSupportedGameTypes")()); }
+			ScriptFunction GetMapCommonPackageName() { mixin(MGF!("mGetMapCommonPackageName", "Function Engine.GameInfo.GetMapCommonPackageName")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.GameInfo.PreBeginPlay")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.GameInfo.PostBeginPlay")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.GameInfo.DisplayDebug")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.GameInfo.Reset")()); }
+			ScriptFunction ShouldReset() { mixin(MGF!("mShouldReset", "Function Engine.GameInfo.ShouldReset")()); }
+			ScriptFunction ResetLevel() { mixin(MGF!("mResetLevel", "Function Engine.GameInfo.ResetLevel")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.GameInfo.Timer")()); }
+			ScriptFunction DoNavFearCostFallOff() { mixin(MGF!("mDoNavFearCostFallOff", "Function Engine.GameInfo.DoNavFearCostFallOff")()); }
+			ScriptFunction NotifyNavigationChanged() { mixin(MGF!("mNotifyNavigationChanged", "Function Engine.GameInfo.NotifyNavigationChanged")()); }
+			ScriptFunction GameEnding() { mixin(MGF!("mGameEnding", "Function Engine.GameInfo.GameEnding")()); }
+			ScriptFunction KickIdler() { mixin(MGF!("mKickIdler", "Function Engine.GameInfo.KickIdler")()); }
+			ScriptFunction ForceKickPlayer() { mixin(MGF!("mForceKickPlayer", "Function Engine.GameInfo.ForceKickPlayer")()); }
+			ScriptFunction InitGameReplicationInfo() { mixin(MGF!("mInitGameReplicationInfo", "Function Engine.GameInfo.InitGameReplicationInfo")()); }
+			ScriptFunction GetNetworkNumber() { mixin(MGF!("mGetNetworkNumber", "Function Engine.GameInfo.GetNetworkNumber")()); }
+			ScriptFunction GetNumPlayers() { mixin(MGF!("mGetNumPlayers", "Function Engine.GameInfo.GetNumPlayers")()); }
+			ScriptFunction CanUnpause() { mixin(MGF!("mCanUnpause", "Function Engine.GameInfo.CanUnpause")()); }
+			ScriptFunction ClearPause() { mixin(MGF!("mClearPause", "Function Engine.GameInfo.ClearPause")()); }
+			ScriptFunction DebugPause() { mixin(MGF!("mDebugPause", "Function Engine.GameInfo.DebugPause")()); }
+			ScriptFunction SetGameSpeed() { mixin(MGF!("mSetGameSpeed", "Function Engine.GameInfo.SetGameSpeed")()); }
+			ScriptFunction GrabOption() { mixin(MGF!("mGrabOption", "Function Engine.GameInfo.GrabOption")()); }
+			ScriptFunction GetKeyValue() { mixin(MGF!("mGetKeyValue", "Function Engine.GameInfo.GetKeyValue")()); }
+			ScriptFunction HasOption() { mixin(MGF!("mHasOption", "Function Engine.GameInfo.HasOption")()); }
+			ScriptFunction GetIntOption() { mixin(MGF!("mGetIntOption", "Function Engine.GameInfo.GetIntOption")()); }
+			ScriptFunction GetDefaultGameClassPath() { mixin(MGF!("mGetDefaultGameClassPath", "Function Engine.GameInfo.GetDefaultGameClassPath")()); }
+			ScriptFunction SetGameType() { mixin(MGF!("mSetGameType", "Function Engine.GameInfo.SetGameType")()); }
+			ScriptFunction InitGame() { mixin(MGF!("mInitGame", "Function Engine.GameInfo.InitGame")()); }
+			ScriptFunction NotifyPendingConnectionLost() { mixin(MGF!("mNotifyPendingConnectionLost", "Function Engine.GameInfo.NotifyPendingConnectionLost")()); }
+			ScriptFunction AddMutator() { mixin(MGF!("mAddMutator", "Function Engine.GameInfo.AddMutator")()); }
+			ScriptFunction RemoveMutator() { mixin(MGF!("mRemoveMutator", "Function Engine.GameInfo.RemoveMutator")()); }
+			ScriptFunction ProcessServerTravel() { mixin(MGF!("mProcessServerTravel", "Function Engine.GameInfo.ProcessServerTravel")()); }
+			ScriptFunction ProcessClientTravel() { mixin(MGF!("mProcessClientTravel", "Function Engine.GameInfo.ProcessClientTravel")()); }
+			ScriptFunction RequiresPassword() { mixin(MGF!("mRequiresPassword", "Function Engine.GameInfo.RequiresPassword")()); }
+			ScriptFunction PreLogin() { mixin(MGF!("mPreLogin", "Function Engine.GameInfo.PreLogin")()); }
+			ScriptFunction GetNextPlayerID() { mixin(MGF!("mGetNextPlayerID", "Function Engine.GameInfo.GetNextPlayerID")()); }
+			ScriptFunction SpawnPlayerController() { mixin(MGF!("mSpawnPlayerController", "Function Engine.GameInfo.SpawnPlayerController")()); }
+			ScriptFunction Login() { mixin(MGF!("mLogin", "Function Engine.GameInfo.Login")()); }
+			ScriptFunction StartMatch() { mixin(MGF!("mStartMatch", "Function Engine.GameInfo.StartMatch")()); }
+			ScriptFunction StartOnlineGame() { mixin(MGF!("mStartOnlineGame", "Function Engine.GameInfo.StartOnlineGame")()); }
+			ScriptFunction OnStartOnlineGameComplete() { mixin(MGF!("mOnStartOnlineGameComplete", "Function Engine.GameInfo.OnStartOnlineGameComplete")()); }
+			ScriptFunction StartHumans() { mixin(MGF!("mStartHumans", "Function Engine.GameInfo.StartHumans")()); }
+			ScriptFunction StartBots() { mixin(MGF!("mStartBots", "Function Engine.GameInfo.StartBots")()); }
+			ScriptFunction RestartPlayer() { mixin(MGF!("mRestartPlayer", "Function Engine.GameInfo.RestartPlayer")()); }
+			ScriptFunction SpawnDefaultPawnFor() { mixin(MGF!("mSpawnDefaultPawnFor", "Function Engine.GameInfo.SpawnDefaultPawnFor")()); }
+			ScriptFunction GetDefaultPlayerClass() { mixin(MGF!("mGetDefaultPlayerClass", "Function Engine.GameInfo.GetDefaultPlayerClass")()); }
+			ScriptFunction ReplicateStreamingStatus() { mixin(MGF!("mReplicateStreamingStatus", "Function Engine.GameInfo.ReplicateStreamingStatus")()); }
+			ScriptFunction GenericPlayerInitialization() { mixin(MGF!("mGenericPlayerInitialization", "Function Engine.GameInfo.GenericPlayerInitialization")()); }
+			ScriptFunction BestNextHostSort() { mixin(MGF!("mBestNextHostSort", "Function Engine.GameInfo.BestNextHostSort")()); }
+			ScriptFunction UpdateBestNextHosts() { mixin(MGF!("mUpdateBestNextHosts", "Function Engine.GameInfo.UpdateBestNextHosts")()); }
+			ScriptFunction PostLogin() { mixin(MGF!("mPostLogin", "Function Engine.GameInfo.PostLogin")()); }
+			ScriptFunction UpdateNetSpeeds() { mixin(MGF!("mUpdateNetSpeeds", "Function Engine.GameInfo.UpdateNetSpeeds")()); }
+			ScriptFunction CalculatedNetSpeed() { mixin(MGF!("mCalculatedNetSpeed", "Function Engine.GameInfo.CalculatedNetSpeed")()); }
+			ScriptFunction PreExit() { mixin(MGF!("mPreExit", "Function Engine.GameInfo.PreExit")()); }
+			ScriptFunction Logout() { mixin(MGF!("mLogout", "Function Engine.GameInfo.Logout")()); }
+			ScriptFunction UnregisterPlayer() { mixin(MGF!("mUnregisterPlayer", "Function Engine.GameInfo.UnregisterPlayer")()); }
+			ScriptFunction AcceptInventory() { mixin(MGF!("mAcceptInventory", "Function Engine.GameInfo.AcceptInventory")()); }
+			ScriptFunction AddDefaultInventory() { mixin(MGF!("mAddDefaultInventory", "Function Engine.GameInfo.AddDefaultInventory")()); }
+			ScriptFunction Mutate() { mixin(MGF!("mMutate", "Function Engine.GameInfo.Mutate")()); }
+			ScriptFunction SetPlayerDefaults() { mixin(MGF!("mSetPlayerDefaults", "Function Engine.GameInfo.SetPlayerDefaults")()); }
+			ScriptFunction NotifyKilled() { mixin(MGF!("mNotifyKilled", "Function Engine.GameInfo.NotifyKilled")()); }
+			ScriptFunction Killed() { mixin(MGF!("mKilled", "Function Engine.GameInfo.Killed")()); }
+			ScriptFunction PreventDeath() { mixin(MGF!("mPreventDeath", "Function Engine.GameInfo.PreventDeath")()); }
+			ScriptFunction BroadcastDeathMessage() { mixin(MGF!("mBroadcastDeathMessage", "Function Engine.GameInfo.BroadcastDeathMessage")()); }
+			ScriptFunction Kick() { mixin(MGF!("mKick", "Function Engine.GameInfo.Kick")()); }
+			ScriptFunction KickBan() { mixin(MGF!("mKickBan", "Function Engine.GameInfo.KickBan")()); }
+			ScriptFunction ReduceDamage() { mixin(MGF!("mReduceDamage", "Function Engine.GameInfo.ReduceDamage")()); }
+			ScriptFunction ShouldRespawn() { mixin(MGF!("mShouldRespawn", "Function Engine.GameInfo.ShouldRespawn")()); }
+			ScriptFunction DiscardInventory() { mixin(MGF!("mDiscardInventory", "Function Engine.GameInfo.DiscardInventory")()); }
+			ScriptFunction ChangeName() { mixin(MGF!("mChangeName", "Function Engine.GameInfo.ChangeName")()); }
+			ScriptFunction PickTeam() { mixin(MGF!("mPickTeam", "Function Engine.GameInfo.PickTeam")()); }
+			ScriptFunction SendPlayer() { mixin(MGF!("mSendPlayer", "Function Engine.GameInfo.SendPlayer")()); }
+			ScriptFunction GetNextMap() { mixin(MGF!("mGetNextMap", "Function Engine.GameInfo.GetNextMap")()); }
+			ScriptFunction GetTravelType() { mixin(MGF!("mGetTravelType", "Function Engine.GameInfo.GetTravelType")()); }
+			ScriptFunction RestartGame() { mixin(MGF!("mRestartGame", "Function Engine.GameInfo.RestartGame")()); }
+			ScriptFunction Broadcast() { mixin(MGF!("mBroadcast", "Function Engine.GameInfo.Broadcast")()); }
+			ScriptFunction BroadcastTeam() { mixin(MGF!("mBroadcastTeam", "Function Engine.GameInfo.BroadcastTeam")()); }
+			ScriptFunction BroadcastLocalized() { mixin(MGF!("mBroadcastLocalized", "Function Engine.GameInfo.BroadcastLocalized")()); }
+			ScriptFunction BroadcastLocalizedTeam() { mixin(MGF!("mBroadcastLocalizedTeam", "Function Engine.GameInfo.BroadcastLocalizedTeam")()); }
+			ScriptFunction CheckModifiedEndGame() { mixin(MGF!("mCheckModifiedEndGame", "Function Engine.GameInfo.CheckModifiedEndGame")()); }
+			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function Engine.GameInfo.CheckEndGame")()); }
+			ScriptFunction WriteOnlineStats() { mixin(MGF!("mWriteOnlineStats", "Function Engine.GameInfo.WriteOnlineStats")()); }
+			ScriptFunction WriteOnlinePlayerScores() { mixin(MGF!("mWriteOnlinePlayerScores", "Function Engine.GameInfo.WriteOnlinePlayerScores")()); }
+			ScriptFunction ForceRoundStart() { mixin(MGF!("mForceRoundStart", "Function Engine.GameInfo.ForceRoundStart")()); }
+			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function Engine.GameInfo.EndGame")()); }
+			ScriptFunction PerformEndGameHandling() { mixin(MGF!("mPerformEndGameHandling", "Function Engine.GameInfo.PerformEndGameHandling")()); }
+			ScriptFunction EndOnlineGame() { mixin(MGF!("mEndOnlineGame", "Function Engine.GameInfo.EndOnlineGame")()); }
+			ScriptFunction GameEventsPoll() { mixin(MGF!("mGameEventsPoll", "Function Engine.GameInfo.GameEventsPoll")()); }
+			ScriptFunction EndLogging() { mixin(MGF!("mEndLogging", "Function Engine.GameInfo.EndLogging")()); }
+			ScriptFunction ShouldSpawnAtStartSpot() { mixin(MGF!("mShouldSpawnAtStartSpot", "Function Engine.GameInfo.ShouldSpawnAtStartSpot")()); }
+			ScriptFunction FindPlayerStart() { mixin(MGF!("mFindPlayerStart", "Function Engine.GameInfo.FindPlayerStart")()); }
+			ScriptFunction ChoosePlayerStart() { mixin(MGF!("mChoosePlayerStart", "Function Engine.GameInfo.ChoosePlayerStart")()); }
+			ScriptFunction RatePlayerStart() { mixin(MGF!("mRatePlayerStart", "Function Engine.GameInfo.RatePlayerStart")()); }
+			ScriptFunction AddObjectiveScore() { mixin(MGF!("mAddObjectiveScore", "Function Engine.GameInfo.AddObjectiveScore")()); }
+			ScriptFunction ScoreObjective() { mixin(MGF!("mScoreObjective", "Function Engine.GameInfo.ScoreObjective")()); }
+			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function Engine.GameInfo.CheckScore")()); }
+			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function Engine.GameInfo.ScoreKill")()); }
+			ScriptFunction ModifyScoreKill() { mixin(MGF!("mModifyScoreKill", "Function Engine.GameInfo.ModifyScoreKill")()); }
+			ScriptFunction DriverEnteredVehicle() { mixin(MGF!("mDriverEnteredVehicle", "Function Engine.GameInfo.DriverEnteredVehicle")()); }
+			ScriptFunction CanLeaveVehicle() { mixin(MGF!("mCanLeaveVehicle", "Function Engine.GameInfo.CanLeaveVehicle")()); }
+			ScriptFunction DriverLeftVehicle() { mixin(MGF!("mDriverLeftVehicle", "Function Engine.GameInfo.DriverLeftVehicle")()); }
+			ScriptFunction AllowMutator() { mixin(MGF!("mAllowMutator", "Function Engine.GameInfo.AllowMutator")()); }
+			ScriptFunction AllowCheats() { mixin(MGF!("mAllowCheats", "Function Engine.GameInfo.AllowCheats")()); }
+			ScriptFunction AllowPausing() { mixin(MGF!("mAllowPausing", "Function Engine.GameInfo.AllowPausing")()); }
+			ScriptFunction PreCommitMapChange() { mixin(MGF!("mPreCommitMapChange", "Function Engine.GameInfo.PreCommitMapChange")()); }
+			ScriptFunction PostCommitMapChange() { mixin(MGF!("mPostCommitMapChange", "Function Engine.GameInfo.PostCommitMapChange")()); }
+			ScriptFunction AddInactivePRI() { mixin(MGF!("mAddInactivePRI", "Function Engine.GameInfo.AddInactivePRI")()); }
+			ScriptFunction FindInactivePRI() { mixin(MGF!("mFindInactivePRI", "Function Engine.GameInfo.FindInactivePRI")()); }
+			ScriptFunction SetPRI() { mixin(MGF!("mSetPRI", "Function Engine.GameInfo.SetPRI")()); }
+			ScriptFunction OverridePRI() { mixin(MGF!("mOverridePRI", "Function Engine.GameInfo.OverridePRI")()); }
+			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF!("mGetSeamlessTravelActorList", "Function Engine.GameInfo.GetSeamlessTravelActorList")()); }
+			ScriptFunction SwapPlayerControllers() { mixin(MGF!("mSwapPlayerControllers", "Function Engine.GameInfo.SwapPlayerControllers")()); }
+			ScriptFunction PostSeamlessTravel() { mixin(MGF!("mPostSeamlessTravel", "Function Engine.GameInfo.PostSeamlessTravel")()); }
+			ScriptFunction UpdateGameSettings() { mixin(MGF!("mUpdateGameSettings", "Function Engine.GameInfo.UpdateGameSettings")()); }
+			ScriptFunction HandleSeamlessTravelPlayer() { mixin(MGF!("mHandleSeamlessTravelPlayer", "Function Engine.GameInfo.HandleSeamlessTravelPlayer")()); }
+			ScriptFunction SetSeamlessTravelViewTarget() { mixin(MGF!("mSetSeamlessTravelViewTarget", "Function Engine.GameInfo.SetSeamlessTravelViewTarget")()); }
+			ScriptFunction UpdateGameSettingsCounts() { mixin(MGF!("mUpdateGameSettingsCounts", "Function Engine.GameInfo.UpdateGameSettingsCounts")()); }
+			ScriptFunction ProcessClientRegistrationCompletion() { mixin(MGF!("mProcessClientRegistrationCompletion", "Function Engine.GameInfo.ProcessClientRegistrationCompletion")()); }
+			ScriptFunction StartArbitrationRegistration() { mixin(MGF!("mStartArbitrationRegistration", "Function Engine.GameInfo.StartArbitrationRegistration")()); }
+			ScriptFunction StartArbitratedMatch() { mixin(MGF!("mStartArbitratedMatch", "Function Engine.GameInfo.StartArbitratedMatch")()); }
+			ScriptFunction RegisterServerForArbitration() { mixin(MGF!("mRegisterServerForArbitration", "Function Engine.GameInfo.RegisterServerForArbitration")()); }
+			ScriptFunction ArbitrationRegistrationComplete() { mixin(MGF!("mArbitrationRegistrationComplete", "Function Engine.GameInfo.ArbitrationRegistrationComplete")()); }
+			ScriptFunction MatchIsInProgress() { mixin(MGF!("mMatchIsInProgress", "Function Engine.GameInfo.MatchIsInProgress")()); }
+			ScriptFunction NotifyArbitratedMatchEnd() { mixin(MGF!("mNotifyArbitratedMatchEnd", "Function Engine.GameInfo.NotifyArbitratedMatchEnd")()); }
+			ScriptFunction UpdateGameplayMuteList() { mixin(MGF!("mUpdateGameplayMuteList", "Function Engine.GameInfo.UpdateGameplayMuteList")()); }
+			ScriptFunction RecalculateSkillRating() { mixin(MGF!("mRecalculateSkillRating", "Function Engine.GameInfo.RecalculateSkillRating")()); }
+			ScriptFunction MatineeCancelled() { mixin(MGF!("mMatineeCancelled", "Function Engine.GameInfo.MatineeCancelled")()); }
+			ScriptFunction ProcessServerLogin() { mixin(MGF!("mProcessServerLogin", "Function Engine.GameInfo.ProcessServerLogin")()); }
+			ScriptFunction ClearAutoLoginDelegates() { mixin(MGF!("mClearAutoLoginDelegates", "Function Engine.GameInfo.ClearAutoLoginDelegates")()); }
+			ScriptFunction OnLoginFailed() { mixin(MGF!("mOnLoginFailed", "Function Engine.GameInfo.OnLoginFailed")()); }
+			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.GameInfo.OnLoginChange")()); }
+			ScriptFunction RegisterServer() { mixin(MGF!("mRegisterServer", "Function Engine.GameInfo.RegisterServer")()); }
+			ScriptFunction OnServerCreateComplete() { mixin(MGF!("mOnServerCreateComplete", "Function Engine.GameInfo.OnServerCreateComplete")()); }
+			ScriptFunction TellClientsToReturnToPartyHost() { mixin(MGF!("mTellClientsToReturnToPartyHost", "Function Engine.GameInfo.TellClientsToReturnToPartyHost")()); }
+			ScriptFunction TellClientsToTravelToSession() { mixin(MGF!("mTellClientsToTravelToSession", "Function Engine.GameInfo.TellClientsToTravelToSession")()); }
+			ScriptFunction DoTravelTheWorld() { mixin(MGF!("mDoTravelTheWorld", "Function Engine.GameInfo.DoTravelTheWorld")()); }
+			ScriptFunction IsCheckingForFragmentation() { mixin(MGF!("mIsCheckingForFragmentation", "Function Engine.GameInfo.IsCheckingForFragmentation")()); }
+			ScriptFunction IsCheckingForMemLeaks() { mixin(MGF!("mIsCheckingForMemLeaks", "Function Engine.GameInfo.IsCheckingForMemLeaks")()); }
+			ScriptFunction ShouldAutoContinueToNextRound() { mixin(MGF!("mShouldAutoContinueToNextRound", "Function Engine.GameInfo.ShouldAutoContinueToNextRound")()); }
+			ScriptFunction CheckForSentinelRun() { mixin(MGF!("mCheckForSentinelRun", "Function Engine.GameInfo.CheckForSentinelRun")()); }
+			ScriptFunction BeginBVT() { mixin(MGF!("mBeginBVT", "Function Engine.GameInfo.BeginBVT")()); }
+			ScriptFunction EnableStandbyCheatDetection() { mixin(MGF!("mEnableStandbyCheatDetection", "Function Engine.GameInfo.EnableStandbyCheatDetection")()); }
+			ScriptFunction StandbyCheatDetected() { mixin(MGF!("mStandbyCheatDetected", "Function Engine.GameInfo.StandbyCheatDetected")()); }
+			ScriptFunction OnEngineHasLoaded() { mixin(MGF!("mOnEngineHasLoaded", "Function Engine.GameInfo.OnEngineHasLoaded")()); }
 		}
 	}
 	enum EStandbyType : ubyte
@@ -363,11 +364,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameInfo.GameClassShortName")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameInfo.GameClassShortName")()); }
 		@property final auto ref
 		{
-			ScriptString GameClassName() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			ScriptString ShortName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			ScriptString GameClassName() { mixin(MGPS!(ScriptString, 12)()); }
+			ScriptString ShortName() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct GameTypePrefix
@@ -375,149 +376,161 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameInfo.GameTypePrefix")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameInfo.GameTypePrefix")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(ScriptString) AdditionalGameTypes() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 28); }
-				ScriptArray!(ScriptString) ForcedObjects() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 40); }
-				ScriptString GameType() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-				ScriptString Prefix() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+				ScriptArray!(ScriptString) AdditionalGameTypes() { mixin(MGPS!(ScriptArray!(ScriptString), 28)()); }
+				ScriptArray!(ScriptString) ForcedObjects() { mixin(MGPS!(ScriptArray!(ScriptString), 40)()); }
+				ScriptString GameType() { mixin(MGPS!(ScriptString, 16)()); }
+				ScriptString Prefix() { mixin(MGPS!(ScriptString, 0)()); }
 			}
-			bool bUsesCommonPackage() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bUsesCommonPackage(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bUsesCommonPackage() { mixin(MGBPS!(12, 0x1)()); }
+			bool bUsesCommonPackage(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
+	}
+	static struct PendingMatch
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.GameInfo.PendingMatch")()); }
+	}
+	static struct TravelTheWorld
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.GameInfo.TravelTheWorld")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			int NumPlayers() { return *cast(int*)(cast(size_t)cast(void*)this + 584); }
-			ScriptClass GameMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 644); }
-			ScriptClass PlayerReplicationInfoClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 680); }
-			ScriptString DefaultPlayerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 600); }
-			float MaxTimeMargin() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-			int ArbitratedLeaderboardId() { return *cast(int*)(cast(size_t)cast(void*)this + 752); }
-			float GameDifficulty() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
-			int TimeLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 636); }
-			ScriptString CauseEventCommand() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 480); }
-			int AdjustedNetSpeed() { return *cast(int*)(cast(size_t)cast(void*)this + 776); }
-			int MaxDynamicBandwidth() { return *cast(int*)(cast(size_t)cast(void*)this + 792); }
-			float GameSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
+			int NumPlayers() { mixin(MGPC!(int, 584)()); }
+			ScriptClass GameMessageClass() { mixin(MGPC!(ScriptClass, 644)()); }
+			ScriptClass PlayerReplicationInfoClass() { mixin(MGPC!(ScriptClass, 680)()); }
+			ScriptString DefaultPlayerName() { mixin(MGPC!(ScriptString, 600)()); }
+			float MaxTimeMargin() { mixin(MGPC!(float, 696)()); }
+			int ArbitratedLeaderboardId() { mixin(MGPC!(int, 752)()); }
+			float GameDifficulty() { mixin(MGPC!(float, 544)()); }
+			int TimeLimit() { mixin(MGPC!(int, 636)()); }
+			ScriptString CauseEventCommand() { mixin(MGPC!(ScriptString, 480)()); }
+			int AdjustedNetSpeed() { mixin(MGPC!(int, 776)()); }
+			int MaxDynamicBandwidth() { mixin(MGPC!(int, 792)()); }
+			float GameSpeed() { mixin(MGPC!(float, 552)()); }
 			// WARNING: Property 'GameReplicationInfo' has the same name as a defined type!
-			ScriptClass GameReplicationInfoClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 684); }
-			CoverReplicator CoverReplicatorBase() { return *cast(CoverReplicator*)(cast(size_t)cast(void*)this + 756); }
-			ScriptString GameName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 612); }
+			ScriptClass GameReplicationInfoClass() { mixin(MGPC!(ScriptClass, 684)()); }
+			CoverReplicator CoverReplicatorBase() { mixin(MGPC!(CoverReplicator, 756)()); }
+			ScriptString GameName() { mixin(MGPC!(ScriptString, 612)()); }
 			// WARNING: Property 'BroadcastHandler' has the same name as a defined type!
 			// WARNING: Property 'AccessControl' has the same name as a defined type!
-			int NumTravellingPlayers() { return *cast(int*)(cast(size_t)cast(void*)this + 592); }
+			int NumTravellingPlayers() { mixin(MGPC!(int, 592)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CanUnpause__Delegate'!
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) Pausers() { return *cast(ScriptArray!(
+void*) Pausers() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 720); }
-			int MaxPlayers() { return *cast(int*)(cast(size_t)cast(void*)this + 576); }
-			int MaxPlayersAllowed() { return *cast(int*)(cast(size_t)cast(void*)this + 580); }
-			int MaxSpectators() { return *cast(int*)(cast(size_t)cast(void*)this + 564); }
-			int MaxSpectatorsAllowed() { return *cast(int*)(cast(size_t)cast(void*)this + 568); }
-			ScriptClass BroadcastHandlerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 660); }
-			ScriptClass AccessControlClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 652); }
-			AutoTestManager MyAutoTestManager() { return *cast(AutoTestManager*)(cast(size_t)cast(void*)this + 672); }
-			ScriptClass AutoTestManagerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 668); }
-			ScriptString BugLocString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 492); }
-			ScriptString BugRotString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 504); }
-			Mutator BaseMutator() { return *cast(Mutator*)(cast(size_t)cast(void*)this + 648); }
-			OnlineSubsystem OnlineSub() { return *cast(OnlineSubsystem*)(cast(size_t)cast(void*)this + 732); }
-			ScriptString ServerOptions() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 764); }
-			int NumSpectators() { return *cast(int*)(cast(size_t)cast(void*)this + 572); }
-			ScriptClass PlayerControllerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 676); }
-			ScriptClass DefaultPawnClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 556); }
-			ScriptClass HUDType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 560); }
-			float LastNetSpeedUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 780); }
-			int TotalNetBandwidth() { return *cast(int*)(cast(size_t)cast(void*)this + 784); }
-			int MinDynamicBandwidth() { return *cast(int*)(cast(size_t)cast(void*)this + 788); }
-			ScriptArray!(PlayerController) ArbitrationPCs() { return *cast(ScriptArray!(PlayerController)*)(cast(size_t)cast(void*)this + 528); }
-			ScriptClass DeathMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 640); }
-			ScriptClass OnlineStatsWriteClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 744); }
-			int LeaderboardId() { return *cast(int*)(cast(size_t)cast(void*)this + 748); }
-			ScriptArray!(PlayerController) PendingArbitrationPCs() { return *cast(ScriptArray!(PlayerController)*)(cast(size_t)cast(void*)this + 516); }
-			int MaxLives() { return *cast(int*)(cast(size_t)cast(void*)this + 632); }
-			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { return *cast(ScriptArray!(PlayerReplicationInfo)*)(cast(size_t)cast(void*)this + 708); }
-			int NumBots() { return *cast(int*)(cast(size_t)cast(void*)this + 588); }
-			float ArbitrationHandshakeTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
-			ScriptClass OnlineGameSettingsClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 760); }
-			int GoreLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 548); }
-			int CurrentID() { return *cast(int*)(cast(size_t)cast(void*)this + 596); }
-			float FearCostFallOff() { return *cast(float*)(cast(size_t)cast(void*)this + 624); }
-			int GoalScore() { return *cast(int*)(cast(size_t)cast(void*)this + 628); }
-			float MaxIdleTime() { return *cast(float*)(cast(size_t)cast(void*)this + 692); }
-			float TimeMarginSlack() { return *cast(float*)(cast(size_t)cast(void*)this + 700); }
-			float MinTimeMargin() { return *cast(float*)(cast(size_t)cast(void*)this + 704); }
-			float StandbyRxCheatTime() { return *cast(float*)(cast(size_t)cast(void*)this + 796); }
-			float StandbyTxCheatTime() { return *cast(float*)(cast(size_t)cast(void*)this + 800); }
-			int BadPingThreshold() { return *cast(int*)(cast(size_t)cast(void*)this + 804); }
-			float PercentMissingForRxStandby() { return *cast(float*)(cast(size_t)cast(void*)this + 808); }
-			float PercentMissingForTxStandby() { return *cast(float*)(cast(size_t)cast(void*)this + 812); }
-			float PercentForBadPing() { return *cast(float*)(cast(size_t)cast(void*)this + 816); }
-			float JoinInProgressStandbyWaitTime() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
-			ScriptArray!(GameInfo.GameClassShortName) GameInfoClassAliases() { return *cast(ScriptArray!(GameInfo.GameClassShortName)*)(cast(size_t)cast(void*)this + 824); }
-			ScriptString DefaultGameType() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 836); }
-			ScriptArray!(GameInfo.GameTypePrefix) DefaultMapPrefixes() { return *cast(ScriptArray!(GameInfo.GameTypePrefix)*)(cast(size_t)cast(void*)this + 848); }
-			ScriptArray!(GameInfo.GameTypePrefix) CustomMapPrefixes() { return *cast(ScriptArray!(GameInfo.GameTypePrefix)*)(cast(size_t)cast(void*)this + 860); }
+void*), 720)()); }
+			int MaxPlayers() { mixin(MGPC!(int, 576)()); }
+			int MaxPlayersAllowed() { mixin(MGPC!(int, 580)()); }
+			int MaxSpectators() { mixin(MGPC!(int, 564)()); }
+			int MaxSpectatorsAllowed() { mixin(MGPC!(int, 568)()); }
+			ScriptClass BroadcastHandlerClass() { mixin(MGPC!(ScriptClass, 660)()); }
+			ScriptClass AccessControlClass() { mixin(MGPC!(ScriptClass, 652)()); }
+			AutoTestManager MyAutoTestManager() { mixin(MGPC!(AutoTestManager, 672)()); }
+			ScriptClass AutoTestManagerClass() { mixin(MGPC!(ScriptClass, 668)()); }
+			ScriptString BugLocString() { mixin(MGPC!(ScriptString, 492)()); }
+			ScriptString BugRotString() { mixin(MGPC!(ScriptString, 504)()); }
+			Mutator BaseMutator() { mixin(MGPC!(Mutator, 648)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 732)()); }
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
+			ScriptString ServerOptions() { mixin(MGPC!(ScriptString, 764)()); }
+			int NumSpectators() { mixin(MGPC!(int, 572)()); }
+			ScriptClass PlayerControllerClass() { mixin(MGPC!(ScriptClass, 676)()); }
+			ScriptClass DefaultPawnClass() { mixin(MGPC!(ScriptClass, 556)()); }
+			ScriptClass HUDType() { mixin(MGPC!(ScriptClass, 560)()); }
+			float LastNetSpeedUpdateTime() { mixin(MGPC!(float, 780)()); }
+			int TotalNetBandwidth() { mixin(MGPC!(int, 784)()); }
+			int MinDynamicBandwidth() { mixin(MGPC!(int, 788)()); }
+			ScriptArray!(PlayerController) ArbitrationPCs() { mixin(MGPC!(ScriptArray!(PlayerController), 528)()); }
+			ScriptClass DeathMessageClass() { mixin(MGPC!(ScriptClass, 640)()); }
+			ScriptClass OnlineStatsWriteClass() { mixin(MGPC!(ScriptClass, 744)()); }
+			int LeaderboardId() { mixin(MGPC!(int, 748)()); }
+			ScriptArray!(PlayerController) PendingArbitrationPCs() { mixin(MGPC!(ScriptArray!(PlayerController), 516)()); }
+			int MaxLives() { mixin(MGPC!(int, 632)()); }
+			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { mixin(MGPC!(ScriptArray!(PlayerReplicationInfo), 708)()); }
+			int NumBots() { mixin(MGPC!(int, 588)()); }
+			float ArbitrationHandshakeTimeout() { mixin(MGPC!(float, 540)()); }
+			ScriptClass OnlineGameSettingsClass() { mixin(MGPC!(ScriptClass, 760)()); }
+			int GoreLevel() { mixin(MGPC!(int, 548)()); }
+			int CurrentID() { mixin(MGPC!(int, 596)()); }
+			float FearCostFallOff() { mixin(MGPC!(float, 624)()); }
+			int GoalScore() { mixin(MGPC!(int, 628)()); }
+			float MaxIdleTime() { mixin(MGPC!(float, 692)()); }
+			float TimeMarginSlack() { mixin(MGPC!(float, 700)()); }
+			float MinTimeMargin() { mixin(MGPC!(float, 704)()); }
+			float StandbyRxCheatTime() { mixin(MGPC!(float, 796)()); }
+			float StandbyTxCheatTime() { mixin(MGPC!(float, 800)()); }
+			int BadPingThreshold() { mixin(MGPC!(int, 804)()); }
+			float PercentMissingForRxStandby() { mixin(MGPC!(float, 808)()); }
+			float PercentMissingForTxStandby() { mixin(MGPC!(float, 812)()); }
+			float PercentForBadPing() { mixin(MGPC!(float, 816)()); }
+			float JoinInProgressStandbyWaitTime() { mixin(MGPC!(float, 820)()); }
+			ScriptArray!(GameInfo.GameClassShortName) GameInfoClassAliases() { mixin(MGPC!(ScriptArray!(GameInfo.GameClassShortName), 824)()); }
+			ScriptString DefaultGameType() { mixin(MGPC!(ScriptString, 836)()); }
+			ScriptArray!(GameInfo.GameTypePrefix) DefaultMapPrefixes() { mixin(MGPC!(ScriptArray!(GameInfo.GameTypePrefix), 848)()); }
+			ScriptArray!(GameInfo.GameTypePrefix) CustomMapPrefixes() { mixin(MGPC!(ScriptArray!(GameInfo.GameTypePrefix), 860)()); }
 		}
-		bool bRequiresPushToTalk() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x400000) != 0; }
-		bool bRequiresPushToTalk(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x400000; } return val; }
-		bool bTeamGame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4) != 0; }
-		bool bTeamGame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4; } return val; }
-		bool bWaitingToStartMatch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40) != 0; }
-		bool bWaitingToStartMatch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40; } return val; }
-		bool bHasNetworkError() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x200000) != 0; }
-		bool bHasNetworkError(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x200000; } return val; }
-		bool bRestartLevel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-		bool bRestartLevel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
-		bool bGameEnded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8) != 0; }
-		bool bGameEnded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8; } return val; }
-		bool bOverTime() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10) != 0; }
-		bool bOverTime(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10; } return val; }
-		bool bDoFearCostFallOff() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x80000) != 0; }
-		bool bDoFearCostFallOff(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x80000; } return val; }
-		bool bFixedPlayerStart() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40000) != 0; }
-		bool bFixedPlayerStart(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40000; } return val; }
-		bool bUsingArbitration() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2000) != 0; }
-		bool bUsingArbitration(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2000; } return val; }
-		bool bLevelChange() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x800) != 0; }
-		bool bLevelChange(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x800; } return val; }
-		bool bUseSeamlessTravel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x100000) != 0; }
-		bool bUseSeamlessTravel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x100000; } return val; }
-		bool bHasArbitratedHandshakeBegun() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4000) != 0; }
-		bool bHasArbitratedHandshakeBegun(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4000; } return val; }
-		bool bDelayedStart() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20) != 0; }
-		bool bDelayedStart(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20; } return val; }
-		bool bHasEndGameHandshakeBegun() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20000) != 0; }
-		bool bHasEndGameHandshakeBegun(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20000; } return val; }
-		bool bIsEndGameHandshakeComplete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10000) != 0; }
-		bool bIsEndGameHandshakeComplete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10000; } return val; }
-		bool bGameRestarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x400) != 0; }
-		bool bGameRestarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x400; } return val; }
-		bool bChangeLevels() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x80) != 0; }
-		bool bChangeLevels(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x80; } return val; }
-		bool bAlreadyChanged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x100) != 0; }
-		bool bAlreadyChanged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x100; } return val; }
-		bool bPauseable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
-		bool bPauseable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
-		bool bAdminCanPause() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x200) != 0; }
-		bool bAdminCanPause(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x200; } return val; }
-		bool bNeedsEndGameHandshake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8000) != 0; }
-		bool bNeedsEndGameHandshake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8000; } return val; }
-		bool bKickLiveIdlers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1000) != 0; }
-		bool bKickLiveIdlers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1000; } return val; }
-		bool bIsStandbyCheckingEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x800000) != 0; }
-		bool bIsStandbyCheckingEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x800000; } return val; }
-		bool bIsStandbyCheckingOn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1000000) != 0; }
-		bool bIsStandbyCheckingOn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1000000; } return val; }
-		bool bHasStandbyCheatTriggered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2000000) != 0; }
-		bool bHasStandbyCheatTriggered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2000000; } return val; }
+		bool bRequiresPushToTalk() { mixin(MGBPC!(476, 0x400000)()); }
+		bool bRequiresPushToTalk(bool val) { mixin(MSBPC!(476, 0x400000)()); }
+		bool bTeamGame() { mixin(MGBPC!(476, 0x4)()); }
+		bool bTeamGame(bool val) { mixin(MSBPC!(476, 0x4)()); }
+		bool bWaitingToStartMatch() { mixin(MGBPC!(476, 0x40)()); }
+		bool bWaitingToStartMatch(bool val) { mixin(MSBPC!(476, 0x40)()); }
+		bool bHasNetworkError() { mixin(MGBPC!(476, 0x200000)()); }
+		bool bHasNetworkError(bool val) { mixin(MSBPC!(476, 0x200000)()); }
+		bool bRestartLevel() { mixin(MGBPC!(476, 0x1)()); }
+		bool bRestartLevel(bool val) { mixin(MSBPC!(476, 0x1)()); }
+		bool bGameEnded() { mixin(MGBPC!(476, 0x8)()); }
+		bool bGameEnded(bool val) { mixin(MSBPC!(476, 0x8)()); }
+		bool bOverTime() { mixin(MGBPC!(476, 0x10)()); }
+		bool bOverTime(bool val) { mixin(MSBPC!(476, 0x10)()); }
+		bool bDoFearCostFallOff() { mixin(MGBPC!(476, 0x80000)()); }
+		bool bDoFearCostFallOff(bool val) { mixin(MSBPC!(476, 0x80000)()); }
+		bool bFixedPlayerStart() { mixin(MGBPC!(476, 0x40000)()); }
+		bool bFixedPlayerStart(bool val) { mixin(MSBPC!(476, 0x40000)()); }
+		bool bUsingArbitration() { mixin(MGBPC!(476, 0x2000)()); }
+		bool bUsingArbitration(bool val) { mixin(MSBPC!(476, 0x2000)()); }
+		bool bLevelChange() { mixin(MGBPC!(476, 0x800)()); }
+		bool bLevelChange(bool val) { mixin(MSBPC!(476, 0x800)()); }
+		bool bUseSeamlessTravel() { mixin(MGBPC!(476, 0x100000)()); }
+		bool bUseSeamlessTravel(bool val) { mixin(MSBPC!(476, 0x100000)()); }
+		bool bHasArbitratedHandshakeBegun() { mixin(MGBPC!(476, 0x4000)()); }
+		bool bHasArbitratedHandshakeBegun(bool val) { mixin(MSBPC!(476, 0x4000)()); }
+		bool bDelayedStart() { mixin(MGBPC!(476, 0x20)()); }
+		bool bDelayedStart(bool val) { mixin(MSBPC!(476, 0x20)()); }
+		bool bHasEndGameHandshakeBegun() { mixin(MGBPC!(476, 0x20000)()); }
+		bool bHasEndGameHandshakeBegun(bool val) { mixin(MSBPC!(476, 0x20000)()); }
+		bool bIsEndGameHandshakeComplete() { mixin(MGBPC!(476, 0x10000)()); }
+		bool bIsEndGameHandshakeComplete(bool val) { mixin(MSBPC!(476, 0x10000)()); }
+		bool bGameRestarted() { mixin(MGBPC!(476, 0x400)()); }
+		bool bGameRestarted(bool val) { mixin(MSBPC!(476, 0x400)()); }
+		bool bChangeLevels() { mixin(MGBPC!(476, 0x80)()); }
+		bool bChangeLevels(bool val) { mixin(MSBPC!(476, 0x80)()); }
+		bool bAlreadyChanged() { mixin(MGBPC!(476, 0x100)()); }
+		bool bAlreadyChanged(bool val) { mixin(MSBPC!(476, 0x100)()); }
+		bool bPauseable() { mixin(MGBPC!(476, 0x2)()); }
+		bool bPauseable(bool val) { mixin(MSBPC!(476, 0x2)()); }
+		bool bAdminCanPause() { mixin(MGBPC!(476, 0x200)()); }
+		bool bAdminCanPause(bool val) { mixin(MSBPC!(476, 0x200)()); }
+		bool bNeedsEndGameHandshake() { mixin(MGBPC!(476, 0x8000)()); }
+		bool bNeedsEndGameHandshake(bool val) { mixin(MSBPC!(476, 0x8000)()); }
+		bool bKickLiveIdlers() { mixin(MGBPC!(476, 0x1000)()); }
+		bool bKickLiveIdlers(bool val) { mixin(MSBPC!(476, 0x1000)()); }
+		bool bIsStandbyCheckingEnabled() { mixin(MGBPC!(476, 0x800000)()); }
+		bool bIsStandbyCheckingEnabled(bool val) { mixin(MSBPC!(476, 0x800000)()); }
+		bool bIsStandbyCheckingOn() { mixin(MGBPC!(476, 0x1000000)()); }
+		bool bIsStandbyCheckingOn(bool val) { mixin(MSBPC!(476, 0x1000000)()); }
+		bool bHasStandbyCheatTriggered() { mixin(MGBPC!(476, 0x2000000)()); }
+		bool bHasStandbyCheatTriggered(bool val) { mixin(MSBPC!(476, 0x2000000)()); }
 	}
 final:
 	bool CheckRelevance(Actor Other)
@@ -631,24 +644,24 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PickupQuery, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool GetSupportedGameTypes(ScriptString* InFilename, GameInfo.GameTypePrefix* OutGameType, bool bCheckExt)
+	bool GetSupportedGameTypes(ref const ScriptString InFilename, ref GameInfo.GameTypePrefix OutGameType, bool bCheckExt)
 	{
 		ubyte params[72];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *InFilename;
-		*cast(GameInfo.GameTypePrefix*)&params[12] = *OutGameType;
+		*cast(ScriptString*)params.ptr = InFilename;
+		*cast(GameInfo.GameTypePrefix*)&params[12] = OutGameType;
 		*cast(bool*)&params[64] = bCheckExt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSupportedGameTypes, params.ptr, cast(void*)0);
 		*InFilename = *cast(ScriptString*)params.ptr;
 		*OutGameType = *cast(GameInfo.GameTypePrefix*)&params[12];
 		return *cast(bool*)&params[68];
 	}
-	bool GetMapCommonPackageName(ScriptString* InFilename, ScriptString* OutCommonPackageName)
+	bool GetMapCommonPackageName(ref const ScriptString InFilename, ref ScriptString OutCommonPackageName)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *InFilename;
-		*cast(ScriptString*)&params[12] = *OutCommonPackageName;
+		*cast(ScriptString*)params.ptr = InFilename;
+		*cast(ScriptString*)&params[12] = OutCommonPackageName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMapCommonPackageName, params.ptr, cast(void*)0);
 		*InFilename = *cast(ScriptString*)params.ptr;
 		*OutCommonPackageName = *cast(ScriptString*)&params[12];
@@ -662,13 +675,13 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -763,24 +776,24 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(float*)params.ptr = T;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetGameSpeed, params.ptr, cast(void*)0);
 	}
-	static bool GrabOption(ScriptString* Options, ScriptString* Result)
+	static bool GrabOption(ref ScriptString Options, ref ScriptString Result)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *Options;
-		*cast(ScriptString*)&params[12] = *Result;
+		*cast(ScriptString*)params.ptr = Options;
+		*cast(ScriptString*)&params[12] = Result;
 		StaticClass.ProcessEvent(Functions.GrabOption, params.ptr, cast(void*)0);
 		*Options = *cast(ScriptString*)params.ptr;
 		*Result = *cast(ScriptString*)&params[12];
 		return *cast(bool*)&params[24];
 	}
-	static void GetKeyValue(ScriptString Pair, ScriptString* Key, ScriptString* Value)
+	static void GetKeyValue(ScriptString Pair, ref ScriptString Key, ref ScriptString Value)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Pair;
-		*cast(ScriptString*)&params[12] = *Key;
-		*cast(ScriptString*)&params[24] = *Value;
+		*cast(ScriptString*)&params[12] = Key;
+		*cast(ScriptString*)&params[24] = Value;
 		StaticClass.ProcessEvent(Functions.GetKeyValue, params.ptr, cast(void*)0);
 		*Key = *cast(ScriptString*)&params[12];
 		*Value = *cast(ScriptString*)&params[24];
@@ -824,12 +837,12 @@ void**)&params[4] = CanUnpauseDelegate;
 		StaticClass.ProcessEvent(Functions.SetGameType, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[36];
 	}
-	void InitGame(ScriptString Options, ScriptString* ErrorMessage)
+	void InitGame(ScriptString Options, ref ScriptString ErrorMessage)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Options;
-		*cast(ScriptString*)&params[12] = *ErrorMessage;
+		*cast(ScriptString*)&params[12] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitGame, params.ptr, cast(void*)0);
 		*ErrorMessage = *cast(ScriptString*)&params[12];
 	}
@@ -860,11 +873,11 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(bool*)&params[12] = bAbsolute;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessServerTravel, params.ptr, cast(void*)0);
 	}
-	PlayerController ProcessClientTravel(ScriptString* pURL, UObject.Guid NextMapGuid, bool bSeamless, bool bAbsolute)
+	PlayerController ProcessClientTravel(ref ScriptString pURL, UObject.Guid NextMapGuid, bool bSeamless, bool bAbsolute)
 	{
 		ubyte params[40];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		*cast(UObject.Guid*)&params[12] = NextMapGuid;
 		*cast(bool*)&params[28] = bSeamless;
 		*cast(bool*)&params[32] = bAbsolute;
@@ -879,13 +892,13 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RequiresPassword, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void PreLogin(ScriptString Options, ScriptString Address, ScriptString* ErrorMessage)
+	void PreLogin(ScriptString Options, ScriptString Address, ref ScriptString ErrorMessage)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = Address;
-		*cast(ScriptString*)&params[24] = *ErrorMessage;
+		*cast(ScriptString*)&params[24] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PreLogin, params.ptr, cast(void*)0);
 		*ErrorMessage = *cast(ScriptString*)&params[24];
 	}
@@ -905,14 +918,14 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnPlayerController, params.ptr, cast(void*)0);
 		return *cast(PlayerController*)&params[24];
 	}
-	PlayerController Login(ScriptString Portal, ScriptString Options, OnlineSubsystem.UniqueNetId UniqueId, ScriptString* ErrorMessage)
+	PlayerController Login(ScriptString Portal, ScriptString Options, const OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Portal;
 		*cast(ScriptString*)&params[12] = Options;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = UniqueId;
-		*cast(ScriptString*)&params[32] = *ErrorMessage;
+		*cast(ScriptString*)&params[32] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Login, params.ptr, cast(void*)0);
 		*ErrorMessage = *cast(ScriptString*)&params[32];
 		return *cast(PlayerController*)&params[44];
@@ -1111,15 +1124,15 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(ScriptString*)params.ptr = S;
 		(cast(ScriptObject)this).ProcessEvent(Functions.KickBan, params.ptr, cast(void*)0);
 	}
-	void ReduceDamage(int* Damage, Pawn injured, Controller InstigatedBy, Vector HitLocation, Vector* Momentum, ScriptClass pDamageType, Actor DamageCauser)
+	void ReduceDamage(ref int Damage, Pawn injured, Controller InstigatedBy, Vector HitLocation, ref Vector Momentum, ScriptClass pDamageType, Actor DamageCauser)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(int*)params.ptr = *Damage;
+		*cast(int*)params.ptr = Damage;
 		*cast(Pawn*)&params[4] = injured;
 		*cast(Controller*)&params[8] = InstigatedBy;
 		*cast(Vector*)&params[12] = HitLocation;
-		*cast(Vector*)&params[24] = *Momentum;
+		*cast(Vector*)&params[24] = Momentum;
 		*cast(ScriptClass*)&params[36] = pDamageType;
 		*cast(Actor*)&params[40] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReduceDamage, params.ptr, cast(void*)0);
@@ -1456,12 +1469,12 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(PlayerReplicationInfo*)&params[4] = OldPRI;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OverridePRI, params.ptr, cast(void*)0);
 	}
-	void GetSeamlessTravelActorList(bool bToEntry, ScriptArray!(Actor)* ActorList)
+	void GetSeamlessTravelActorList(bool bToEntry, ref ScriptArray!(Actor) ActorList)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(bool*)params.ptr = bToEntry;
-		*cast(ScriptArray!(Actor)*)&params[4] = *ActorList;
+		*cast(ScriptArray!(Actor)*)&params[4] = ActorList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeamlessTravelActorList, params.ptr, cast(void*)0);
 		*ActorList = *cast(ScriptArray!(Actor)*)&params[4];
 	}
@@ -1481,11 +1494,11 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateGameSettings, cast(void*)0, cast(void*)0);
 	}
-	void HandleSeamlessTravelPlayer(Controller* C)
+	void HandleSeamlessTravelPlayer(ref Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Controller*)params.ptr = *C;
+		*cast(Controller*)params.ptr = C;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandleSeamlessTravelPlayer, params.ptr, cast(void*)0);
 		*C = *cast(Controller*)params.ptr;
 	}

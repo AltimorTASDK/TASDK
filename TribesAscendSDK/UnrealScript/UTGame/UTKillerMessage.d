@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTKillerMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTWeaponKillMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,23 +10,23 @@ extern(C++) interface UTKillerMessage : UTWeaponKillMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKillerMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTKillerMessage")()); }
 	private static __gshared UTKillerMessage mDefaultProperties;
-	@property final static UTKillerMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKillerMessage)("UTKillerMessage UTGame.Default__UTKillerMessage")); }
+	@property final static UTKillerMessage DefaultProperties() { mixin(MGDPC!(UTKillerMessage, "UTKillerMessage UTGame.Default__UTKillerMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillerMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTKillerMessage.GetString")()); }
 	}
 	@property final auto ref
 	{
-		ScriptString OtherKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-		ScriptString OtherKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString OtherKilledPrefix() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString YouTeamKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString YouTeamKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString YouKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString YouKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString OtherKilledTrailer() { mixin(MGPC!(ScriptString, 172)()); }
+		ScriptString OtherKilled() { mixin(MGPC!(ScriptString, 160)()); }
+		ScriptString OtherKilledPrefix() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString YouTeamKilledTrailer() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString YouTeamKilled() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString YouKilledTrailer() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString YouKilled() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

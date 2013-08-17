@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrAccolade;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrAccolade : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAccolade")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAccolade")()); }
 	private static __gshared TrAccolade mDefaultProperties;
-	@property final static TrAccolade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAccolade)("TrAccolade TribesGame.Default__TrAccolade")); }
+	@property final static TrAccolade DefaultProperties() { mixin(MGDPC!(TrAccolade, "TrAccolade TribesGame.Default__TrAccolade")()); }
 	static struct Constants
 	{
 		enum
@@ -780,18 +781,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			int DatabaseId() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-			int ActivityId() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			int Type() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int IconIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 104); }
-			ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 116); }
-			ScriptString HUDMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 92); }
-			float Weight() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			int MessageSwitch() { return *cast(int*)(cast(size_t)cast(void*)this + 76); }
-			int CreditsAwarded() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			int DatabaseId() { mixin(MGPC!(int, 68)()); }
+			int ActivityId() { mixin(MGPC!(int, 72)()); }
+			int Type() { mixin(MGPC!(int, 88)()); }
+			int IconIndex() { mixin(MGPC!(int, 64)()); }
+			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 104)()); }
+			ScriptString Description() { mixin(MGPC!(ScriptString, 116)()); }
+			ScriptString HUDMessage() { mixin(MGPC!(ScriptString, 92)()); }
+			float Weight() { mixin(MGPC!(float, 84)()); }
+			int MessageSwitch() { mixin(MGPC!(int, 76)()); }
+			int CreditsAwarded() { mixin(MGPC!(int, 60)()); }
 		}
-		bool Broadcast() { return (*cast(uint*)(cast(size_t)cast(void*)this + 80) & 0x1) != 0; }
-		bool Broadcast(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 80) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 80) &= ~0x1; } return val; }
+		bool Broadcast() { mixin(MGBPC!(80, 0x1)()); }
+		bool Broadcast(bool val) { mixin(MSBPC!(80, 0x1)()); }
 	}
 }

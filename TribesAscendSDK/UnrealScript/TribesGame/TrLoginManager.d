@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrLoginManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface TrLoginManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLoginManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLoginManager")()); }
 	private static __gshared TrLoginManager mDefaultProperties;
-	@property final static TrLoginManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLoginManager)("TrLoginManager TribesGame.Default__TrLoginManager")); }
+	@property final static TrLoginManager DefaultProperties() { mixin(MGDPC!(TrLoginManager, "TrLoginManager TribesGame.Default__TrLoginManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,27 +28,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.Initialize")); }
-			ScriptFunction Login() { return mLogin ? mLogin : (mLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.Login")); }
-			ScriptFunction OnUserLoginFailed() { return mOnUserLoginFailed ? mOnUserLoginFailed : (mOnUserLoginFailed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.OnUserLoginFailed")); }
-			ScriptFunction RetryLogin() { return mRetryLogin ? mRetryLogin : (mRetryLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.RetryLogin")); }
-			ScriptFunction Logout() { return mLogout ? mLogout : (mLogout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.Logout")); }
-			ScriptFunction SubmitPlayerName() { return mSubmitPlayerName ? mSubmitPlayerName : (mSubmitPlayerName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.SubmitPlayerName")); }
-			ScriptFunction LoginWaitPopup() { return mLoginWaitPopup ? mLoginWaitPopup : (mLoginWaitPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.LoginWaitPopup")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoginManager.PopupData")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrLoginManager.Initialize")()); }
+			ScriptFunction Login() { mixin(MGF!("mLogin", "Function TribesGame.TrLoginManager.Login")()); }
+			ScriptFunction OnUserLoginFailed() { mixin(MGF!("mOnUserLoginFailed", "Function TribesGame.TrLoginManager.OnUserLoginFailed")()); }
+			ScriptFunction RetryLogin() { mixin(MGF!("mRetryLogin", "Function TribesGame.TrLoginManager.RetryLogin")()); }
+			ScriptFunction Logout() { mixin(MGF!("mLogout", "Function TribesGame.TrLoginManager.Logout")()); }
+			ScriptFunction SubmitPlayerName() { mixin(MGF!("mSubmitPlayerName", "Function TribesGame.TrLoginManager.SubmitPlayerName")()); }
+			ScriptFunction LoginWaitPopup() { mixin(MGF!("mLoginWaitPopup", "Function TribesGame.TrLoginManager.LoginWaitPopup")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.TrLoginManager.PopupData")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString LoginName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 64); }
-			ScriptString LoginPassword() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 76); }
+			ScriptString LoginName() { mixin(MGPC!(ScriptString, 64)()); }
+			ScriptString LoginPassword() { mixin(MGPC!(ScriptString, 76)()); }
 		}
-		bool bRemember() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bRemember(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
-		bool bWaitingForLoginWaitPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2) != 0; }
-		bool bWaitingForLoginWaitPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2; } return val; }
+		bool bRemember() { mixin(MGBPC!(60, 0x1)()); }
+		bool bRemember(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		bool bWaitingForLoginWaitPopup() { mixin(MGBPC!(60, 0x2)()); }
+		bool bWaitingForLoginWaitPopup(bool val) { mixin(MSBPC!(60, 0x2)()); }
 	}
 final:
 	void Initialize()

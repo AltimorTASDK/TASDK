@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataProvider_OnlineFriendMessages;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface UIDataProvider_OnlineFriendMessages : UIDataProvider_Onlin
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlineFriendMessages")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_OnlineFriendMessages")()); }
 	private static __gshared UIDataProvider_OnlineFriendMessages mDefaultProperties;
-	@property final static UIDataProvider_OnlineFriendMessages DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlineFriendMessages)("UIDataProvider_OnlineFriendMessages Engine.Default__UIDataProvider_OnlineFriendMessages")); }
+	@property final static UIDataProvider_OnlineFriendMessages DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlineFriendMessages, "UIDataProvider_OnlineFriendMessages Engine.Default__UIDataProvider_OnlineFriendMessages")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,25 +28,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriendMessages.OnRegister")); }
-			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriendMessages.OnUnregister")); }
-			ScriptFunction ReadMessages() { return mReadMessages ? mReadMessages : (mReadMessages = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriendMessages.ReadMessages")); }
-			ScriptFunction OnFriendInviteReceived() { return mOnFriendInviteReceived ? mOnFriendInviteReceived : (mOnFriendInviteReceived = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriendMessages.OnFriendInviteReceived")); }
-			ScriptFunction OnFriendMessageReceived() { return mOnFriendMessageReceived ? mOnFriendMessageReceived : (mOnFriendMessageReceived = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriendMessages.OnFriendMessageReceived")); }
-			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriendMessages.OnLoginChange")); }
-			ScriptFunction OnGameInviteReceived() { return mOnGameInviteReceived ? mOnGameInviteReceived : (mOnGameInviteReceived = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriendMessages.OnGameInviteReceived")); }
+			ScriptFunction OnRegister() { mixin(MGF!("mOnRegister", "Function Engine.UIDataProvider_OnlineFriendMessages.OnRegister")()); }
+			ScriptFunction OnUnregister() { mixin(MGF!("mOnUnregister", "Function Engine.UIDataProvider_OnlineFriendMessages.OnUnregister")()); }
+			ScriptFunction ReadMessages() { mixin(MGF!("mReadMessages", "Function Engine.UIDataProvider_OnlineFriendMessages.ReadMessages")()); }
+			ScriptFunction OnFriendInviteReceived() { mixin(MGF!("mOnFriendInviteReceived", "Function Engine.UIDataProvider_OnlineFriendMessages.OnFriendInviteReceived")()); }
+			ScriptFunction OnFriendMessageReceived() { mixin(MGF!("mOnFriendMessageReceived", "Function Engine.UIDataProvider_OnlineFriendMessages.OnFriendMessageReceived")()); }
+			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.UIDataProvider_OnlineFriendMessages.OnLoginChange")()); }
+			ScriptFunction OnGameInviteReceived() { mixin(MGF!("mOnGameInviteReceived", "Function Engine.UIDataProvider_OnlineFriendMessages.OnGameInviteReceived")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlineFriendMessage) Messages() { return *cast(ScriptArray!(OnlineSubsystem.OnlineFriendMessage)*)(cast(size_t)cast(void*)this + 96); }
-		ScriptString LastInviteFrom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-		ScriptString MessageCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-		ScriptString bWasDeniedCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString bWasAcceptedCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-		ScriptString bIsFriendInviteCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 120); }
-		ScriptString SendingPlayerNameCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 108); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 92); }
+		ScriptArray!(OnlineSubsystem.OnlineFriendMessage) Messages() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlineFriendMessage), 96)()); }
+		ScriptString LastInviteFrom() { mixin(MGPC!(ScriptString, 168)()); }
+		ScriptString MessageCol() { mixin(MGPC!(ScriptString, 156)()); }
+		ScriptString bWasDeniedCol() { mixin(MGPC!(ScriptString, 144)()); }
+		ScriptString bWasAcceptedCol() { mixin(MGPC!(ScriptString, 132)()); }
+		ScriptString bIsFriendInviteCol() { mixin(MGPC!(ScriptString, 120)()); }
+		ScriptString SendingPlayerNameCol() { mixin(MGPC!(ScriptString, 108)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

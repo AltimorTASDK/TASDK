@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_Screen;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.GFxUDKFrontEnd_View;
 import UnrealScript.GFxUI.GFxObject;
 import UnrealScript.GFxUI.GFxClikWidget;
@@ -9,9 +10,9 @@ extern(C++) interface GFxUDKFrontEnd_Screen : GFxUDKFrontEnd_View
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_Screen")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_Screen")()); }
 	private static __gshared GFxUDKFrontEnd_Screen mDefaultProperties;
-	@property final static GFxUDKFrontEnd_Screen DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_Screen)("GFxUDKFrontEnd_Screen UTGame.Default__GFxUDKFrontEnd_Screen")); }
+	@property final static GFxUDKFrontEnd_Screen DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_Screen, "GFxUDKFrontEnd_Screen UTGame.Default__GFxUDKFrontEnd_Screen")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,24 +23,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FocusIn_BackButton() { return mFocusIn_BackButton ? mFocusIn_BackButton : (mFocusIn_BackButton = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Screen.FocusIn_BackButton")); }
-			ScriptFunction UpdateHelpButtonImages() { return mUpdateHelpButtonImages ? mUpdateHelpButtonImages : (mUpdateHelpButtonImages = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Screen.UpdateHelpButtonImages")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Screen.WidgetInitialized")); }
+			ScriptFunction FocusIn_BackButton() { mixin(MGF!("mFocusIn_BackButton", "Function UTGame.GFxUDKFrontEnd_Screen.FocusIn_BackButton")()); }
+			ScriptFunction UpdateHelpButtonImages() { mixin(MGF!("mUpdateHelpButtonImages", "Function UTGame.GFxUDKFrontEnd_Screen.UpdateHelpButtonImages")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_Screen.WidgetInitialized")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString CancelButtonImage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 208); }
-		ScriptString AcceptButtonImage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-		ScriptString CancelButtonHelpText() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-		ScriptString AcceptButtonHelpText() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-		GFxObject InfoTxt() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 168); }
-		GFxObject HelpTxt() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 164); }
-		GFxObject LogoMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 160); }
-		GFxObject FooterMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 156); }
-		GFxObject TitleMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 152); }
-		GFxClikWidget BackBtn() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString ViewTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString CancelButtonImage() { mixin(MGPC!(ScriptString, 208)()); }
+		ScriptString AcceptButtonImage() { mixin(MGPC!(ScriptString, 196)()); }
+		ScriptString CancelButtonHelpText() { mixin(MGPC!(ScriptString, 184)()); }
+		ScriptString AcceptButtonHelpText() { mixin(MGPC!(ScriptString, 172)()); }
+		GFxObject InfoTxt() { mixin(MGPC!(GFxObject, 168)()); }
+		GFxObject HelpTxt() { mixin(MGPC!(GFxObject, 164)()); }
+		GFxObject LogoMC() { mixin(MGPC!(GFxObject, 160)()); }
+		GFxObject FooterMC() { mixin(MGPC!(GFxObject, 156)()); }
+		GFxObject TitleMC() { mixin(MGPC!(GFxObject, 152)()); }
+		GFxClikWidget BackBtn() { mixin(MGPC!(GFxClikWidget, 148)()); }
+		ScriptString ViewTitle() { mixin(MGPC!(ScriptString, 136)()); }
 	}
 final:
 	void FocusIn_BackButton(GFxClikWidget.EventData ev)

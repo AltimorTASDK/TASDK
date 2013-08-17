@@ -1,15 +1,16 @@
 module UnrealScript.GameFramework.GameKActorSpawnableEffect;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.KActor;
 
 extern(C++) interface GameKActorSpawnableEffect : KActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameKActorSpawnableEffect")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameKActorSpawnableEffect")()); }
 	private static __gshared GameKActorSpawnableEffect mDefaultProperties;
-	@property final static GameKActorSpawnableEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameKActorSpawnableEffect)("GameKActorSpawnableEffect GameFramework.Default__GameKActorSpawnableEffect")); }
+	@property final static GameKActorSpawnableEffect DefaultProperties() { mixin(MGDPC!(GameKActorSpawnableEffect, "GameKActorSpawnableEffect GameFramework.Default__GameKActorSpawnableEffect")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,10 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameKActorSpawnableEffect.PostBeginPlay")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameKActorSpawnableEffect.FellOutOfWorld")); }
-			ScriptFunction StartScalingDown() { return mStartScalingDown ? mStartScalingDown : (mStartScalingDown = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameKActorSpawnableEffect.StartScalingDown")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function GameFramework.GameKActorSpawnableEffect.PostBeginPlay")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function GameFramework.GameKActorSpawnableEffect.FellOutOfWorld")()); }
+			ScriptFunction StartScalingDown() { mixin(MGF!("mStartScalingDown", "Function GameFramework.GameKActorSpawnableEffect.StartScalingDown")()); }
 		}
+	}
+	static struct ScalingDown
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameKActorSpawnableEffect.ScalingDown")()); }
 	}
 final:
 	void PostBeginPlay()

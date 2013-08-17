@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTWeaponKillRewardMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface UTWeaponKillRewardMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponKillRewardMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponKillRewardMessage")()); }
 	private static __gshared UTWeaponKillRewardMessage mDefaultProperties;
-	@property final static UTWeaponKillRewardMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponKillRewardMessage)("UTWeaponKillRewardMessage UTGame.Default__UTWeaponKillRewardMessage")); }
+	@property final static UTWeaponKillRewardMessage DefaultProperties() { mixin(MGDPC!(UTWeaponKillRewardMessage, "UTWeaponKillRewardMessage UTGame.Default__UTWeaponKillRewardMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,15 +25,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponKillRewardMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponKillRewardMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponKillRewardMessage.AnnouncementSound")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTWeaponKillRewardMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTWeaponKillRewardMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTWeaponKillRewardMessage.AnnouncementSound")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave RewardSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString RewardString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundNodeWave RewardSounds() { mixin(MGPC!(SoundNodeWave, 124)()); }
+		ScriptString RewardString() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

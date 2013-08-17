@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTClientSideWeaponPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTWeaponPawn;
 import UnrealScript.Engine.Pawn;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTClientSideWeaponPawn : UTWeaponPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTClientSideWeaponPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTClientSideWeaponPawn")()); }
 	private static __gshared UTClientSideWeaponPawn mDefaultProperties;
-	@property final static UTClientSideWeaponPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTClientSideWeaponPawn)("UTClientSideWeaponPawn UTGame.Default__UTClientSideWeaponPawn")); }
+	@property final static UTClientSideWeaponPawn DefaultProperties() { mixin(MGDPC!(UTClientSideWeaponPawn, "UTClientSideWeaponPawn UTGame.Default__UTClientSideWeaponPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTClientSideWeaponPawn.PreBeginPlay")); }
-			ScriptFunction AttachDriver() { return mAttachDriver ? mAttachDriver : (mAttachDriver = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTClientSideWeaponPawn.AttachDriver")); }
-			ScriptFunction DetachDriver() { return mDetachDriver ? mDetachDriver : (mDetachDriver = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTClientSideWeaponPawn.DetachDriver")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTClientSideWeaponPawn.Tick")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTClientSideWeaponPawn.PreBeginPlay")()); }
+			ScriptFunction AttachDriver() { mixin(MGF!("mAttachDriver", "Function UTGame.UTClientSideWeaponPawn.AttachDriver")()); }
+			ScriptFunction DetachDriver() { mixin(MGF!("mDetachDriver", "Function UTGame.UTClientSideWeaponPawn.DetachDriver")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTClientSideWeaponPawn.Tick")()); }
 		}
 	}
 final:

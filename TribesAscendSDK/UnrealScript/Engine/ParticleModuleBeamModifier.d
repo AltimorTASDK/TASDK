@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleBeamModifier;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Engine.ParticleModuleBeamBase;
 import UnrealScript.Core.DistributionVector;
@@ -9,9 +10,9 @@ extern(C++) interface ParticleModuleBeamModifier : ParticleModuleBeamBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleBeamModifier")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleBeamModifier")()); }
 	private static __gshared ParticleModuleBeamModifier mDefaultProperties;
-	@property final static ParticleModuleBeamModifier DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleBeamModifier)("ParticleModuleBeamModifier Engine.Default__ParticleModuleBeamModifier")); }
+	@property final static ParticleModuleBeamModifier DefaultProperties() { mixin(MGDPC!(ParticleModuleBeamModifier, "ParticleModuleBeamModifier Engine.Default__ParticleModuleBeamModifier")()); }
 	enum BeamModifierType : ubyte
 	{
 		PEB2MT_Source = 0,
@@ -23,30 +24,30 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleBeamModifier.BeamModifierOptions")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModuleBeamModifier.BeamModifierOptions")()); }
 		@property final
 		{
-			bool Block() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-			bool Block(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-			bool bScale() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bScale(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bModify() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bModify(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool Block() { mixin(MGBPS!(0, 0x4)()); }
+			bool Block(bool val) { mixin(MSBPS!(0, 0x4)()); }
+			bool bScale() { mixin(MGBPS!(0, 0x2)()); }
+			bool bScale(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bModify() { mixin(MGBPS!(0, 0x1)()); }
+			bool bModify(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat Strength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 148); }
-			ParticleModuleBeamModifier.BeamModifierOptions StrengthOptions() { return *cast(ParticleModuleBeamModifier.BeamModifierOptions*)(cast(size_t)cast(void*)this + 144); }
-			DistributionVector.RawDistributionVector Tangent() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 112); }
-			ParticleModuleBeamModifier.BeamModifierOptions TangentOptions() { return *cast(ParticleModuleBeamModifier.BeamModifierOptions*)(cast(size_t)cast(void*)this + 108); }
-			DistributionVector.RawDistributionVector Position() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 80); }
-			ParticleModuleBeamModifier.BeamModifierOptions PositionOptions() { return *cast(ParticleModuleBeamModifier.BeamModifierOptions*)(cast(size_t)cast(void*)this + 76); }
-			ParticleModuleBeamModifier.BeamModifierType ModifierType() { return *cast(ParticleModuleBeamModifier.BeamModifierType*)(cast(size_t)cast(void*)this + 72); }
+			DistributionFloat.RawDistributionFloat Strength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 148)()); }
+			ParticleModuleBeamModifier.BeamModifierOptions StrengthOptions() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierOptions, 144)()); }
+			DistributionVector.RawDistributionVector Tangent() { mixin(MGPC!(DistributionVector.RawDistributionVector, 112)()); }
+			ParticleModuleBeamModifier.BeamModifierOptions TangentOptions() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierOptions, 108)()); }
+			DistributionVector.RawDistributionVector Position() { mixin(MGPC!(DistributionVector.RawDistributionVector, 80)()); }
+			ParticleModuleBeamModifier.BeamModifierOptions PositionOptions() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierOptions, 76)()); }
+			ParticleModuleBeamModifier.BeamModifierType ModifierType() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierType, 72)()); }
 		}
-		bool bAbsoluteTangent() { return (*cast(uint*)(cast(size_t)cast(void*)this + 140) & 0x1) != 0; }
-		bool bAbsoluteTangent(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 140) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 140) &= ~0x1; } return val; }
+		bool bAbsoluteTangent() { mixin(MGBPC!(140, 0x1)()); }
+		bool bAbsoluteTangent(bool val) { mixin(MSBPC!(140, 0x1)()); }
 	}
 }

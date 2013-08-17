@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTVehicleCantCarryFlagMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface UTVehicleCantCarryFlagMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleCantCarryFlagMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleCantCarryFlagMessage")()); }
 	private static __gshared UTVehicleCantCarryFlagMessage mDefaultProperties;
-	@property final static UTVehicleCantCarryFlagMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleCantCarryFlagMessage)("UTVehicleCantCarryFlagMessage UTGame.Default__UTVehicleCantCarryFlagMessage")); }
+	@property final static UTVehicleCantCarryFlagMessage DefaultProperties() { mixin(MGDPC!(UTVehicleCantCarryFlagMessage, "UTVehicleCantCarryFlagMessage UTGame.Default__UTVehicleCantCarryFlagMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,16 +26,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleCantCarryFlagMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementSound")); }
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementLevel")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleCantCarryFlagMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVehicleCantCarryFlagMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementSound")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementLevel")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVehicleCantCarryFlagMessage.GetString")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave FlagAnnouncement() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString FlagMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundNodeWave FlagAnnouncement() { mixin(MGPC!(SoundNodeWave, 112)()); }
+		ScriptString FlagMessage() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

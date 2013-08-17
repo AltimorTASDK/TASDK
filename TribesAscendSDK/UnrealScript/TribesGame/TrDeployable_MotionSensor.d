@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeployable_MotionSensor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.TribesGame.TrPawn;
@@ -12,9 +13,9 @@ extern(C++) interface TrDeployable_MotionSensor : TrDeployable_Sensor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_MotionSensor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_MotionSensor")()); }
 	private static __gshared TrDeployable_MotionSensor mDefaultProperties;
-	@property final static TrDeployable_MotionSensor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_MotionSensor)("TrDeployable_MotionSensor TribesGame.Default__TrDeployable_MotionSensor")); }
+	@property final static TrDeployable_MotionSensor DefaultProperties() { mixin(MGDPC!(TrDeployable_MotionSensor, "TrDeployable_MotionSensor TribesGame.Default__TrDeployable_MotionSensor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,17 +34,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DeployComplete() { return mDeployComplete ? mDeployComplete : (mDeployComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.DeployComplete")); }
-			ScriptFunction OnPawnDetectedByCollisionProxy() { return mOnPawnDetectedByCollisionProxy ? mOnPawnDetectedByCollisionProxy : (mOnPawnDetectedByCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.OnPawnDetectedByCollisionProxy")); }
-			ScriptFunction OnPawnExitedCollisionProxy() { return mOnPawnExitedCollisionProxy ? mOnPawnExitedCollisionProxy : (mOnPawnExitedCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.OnPawnExitedCollisionProxy")); }
-			ScriptFunction UpdateInRangeEnemyPawns() { return mUpdateInRangeEnemyPawns ? mUpdateInRangeEnemyPawns : (mUpdateInRangeEnemyPawns = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.UpdateInRangeEnemyPawns")); }
-			ScriptFunction CanSetOffAlarm() { return mCanSetOffAlarm ? mCanSetOffAlarm : (mCanSetOffAlarm = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.CanSetOffAlarm")); }
-			ScriptFunction ModifyDetectedPawn() { return mModifyDetectedPawn ? mModifyDetectedPawn : (mModifyDetectedPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.ModifyDetectedPawn")); }
-			ScriptFunction PlayAlarm() { return mPlayAlarm ? mPlayAlarm : (mPlayAlarm = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.PlayAlarm")); }
-			ScriptFunction TriggerHUDAlarm() { return mTriggerHUDAlarm ? mTriggerHUDAlarm : (mTriggerHUDAlarm = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.TriggerHUDAlarm")); }
-			ScriptFunction HideHUDAlarm() { return mHideHUDAlarm ? mHideHUDAlarm : (mHideHUDAlarm = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.HideHUDAlarm")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.PostRenderFor")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_MotionSensor.GetMarker")); }
+			ScriptFunction DeployComplete() { mixin(MGF!("mDeployComplete", "Function TribesGame.TrDeployable_MotionSensor.DeployComplete")()); }
+			ScriptFunction OnPawnDetectedByCollisionProxy() { mixin(MGF!("mOnPawnDetectedByCollisionProxy", "Function TribesGame.TrDeployable_MotionSensor.OnPawnDetectedByCollisionProxy")()); }
+			ScriptFunction OnPawnExitedCollisionProxy() { mixin(MGF!("mOnPawnExitedCollisionProxy", "Function TribesGame.TrDeployable_MotionSensor.OnPawnExitedCollisionProxy")()); }
+			ScriptFunction UpdateInRangeEnemyPawns() { mixin(MGF!("mUpdateInRangeEnemyPawns", "Function TribesGame.TrDeployable_MotionSensor.UpdateInRangeEnemyPawns")()); }
+			ScriptFunction CanSetOffAlarm() { mixin(MGF!("mCanSetOffAlarm", "Function TribesGame.TrDeployable_MotionSensor.CanSetOffAlarm")()); }
+			ScriptFunction ModifyDetectedPawn() { mixin(MGF!("mModifyDetectedPawn", "Function TribesGame.TrDeployable_MotionSensor.ModifyDetectedPawn")()); }
+			ScriptFunction PlayAlarm() { mixin(MGF!("mPlayAlarm", "Function TribesGame.TrDeployable_MotionSensor.PlayAlarm")()); }
+			ScriptFunction TriggerHUDAlarm() { mixin(MGF!("mTriggerHUDAlarm", "Function TribesGame.TrDeployable_MotionSensor.TriggerHUDAlarm")()); }
+			ScriptFunction HideHUDAlarm() { mixin(MGF!("mHideHUDAlarm", "Function TribesGame.TrDeployable_MotionSensor.HideHUDAlarm")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrDeployable_MotionSensor.PostRenderFor")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDeployable_MotionSensor.GetMarker")()); }
 		}
 	}
 	struct MotionSensorEnemyInfo
@@ -51,31 +52,37 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrDeployable_MotionSensor.MotionSensorEnemyInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDeployable_MotionSensor.MotionSensorEnemyInfo")()); }
 		@property final auto ref
 		{
-			float LastDetectedTimeStamp() { return *cast(float*)(cast(size_t)&this + 16); }
-			Vector LastLocation() { return *cast(Vector*)(cast(size_t)&this + 4); }
-			TrPawn SensedPawn() { return *cast(TrPawn*)(cast(size_t)&this + 0); }
+			float LastDetectedTimeStamp() { mixin(MGPS!(float, 16)()); }
+			Vector LastLocation() { mixin(MGPS!(Vector, 4)()); }
+			TrPawn SensedPawn() { mixin(MGPS!(TrPawn, 0)()); }
 		}
+	}
+	static struct BlownUp
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable_MotionSensor.BlownUp")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo) m_EnemyPawnsInRange() { return *cast(ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo)*)(cast(size_t)cast(void*)this + 1540); }
-			Texture2D m_AlarmIcon() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1616); }
-			Vector LastCameraPos() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1604); }
-			Vector LastCameraDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1592); }
-			Vector LastScreenLoc() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1580); }
-			float m_IconAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 1576); }
-			float m_fHUDAlarmTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1572); }
-			float m_fLastAlarmTimestamp() { return *cast(float*)(cast(size_t)cast(void*)this + 1564); }
-			float m_fTimeBetweenAlarms() { return *cast(float*)(cast(size_t)cast(void*)this + 1560); }
-			float m_fMotionSenseExpireTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1556); }
+			ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo) m_EnemyPawnsInRange() { mixin(MGPC!(ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo), 1540)()); }
+			Texture2D m_AlarmIcon() { mixin(MGPC!(Texture2D, 1616)()); }
+			Vector LastCameraPos() { mixin(MGPC!(Vector, 1604)()); }
+			Vector LastCameraDir() { mixin(MGPC!(Vector, 1592)()); }
+			Vector LastScreenLoc() { mixin(MGPC!(Vector, 1580)()); }
+			float m_IconAlpha() { mixin(MGPC!(float, 1576)()); }
+			float m_fHUDAlarmTime() { mixin(MGPC!(float, 1572)()); }
+			float m_fLastAlarmTimestamp() { mixin(MGPC!(float, 1564)()); }
+			float m_fTimeBetweenAlarms() { mixin(MGPC!(float, 1560)()); }
+			float m_fMotionSenseExpireTime() { mixin(MGPC!(float, 1556)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AlarmSound'!
 		}
-		bool m_bDrawHUDAlarm() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1568) & 0x1) != 0; }
-		bool m_bDrawHUDAlarm(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1568) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1568) &= ~0x1; } return val; }
+		bool m_bDrawHUDAlarm() { mixin(MGBPC!(1568, 0x1)()); }
+		bool m_bDrawHUDAlarm(bool val) { mixin(MSBPC!(1568, 0x1)()); }
 	}
 final:
 	void DeployComplete()

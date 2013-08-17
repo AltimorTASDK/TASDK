@@ -1,19 +1,20 @@
 module UnrealScript.Engine.SeqEvent_ParticleEvent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 
 extern(C++) interface SeqEvent_ParticleEvent : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_ParticleEvent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_ParticleEvent")()); }
 	private static __gshared SeqEvent_ParticleEvent mDefaultProperties;
-	@property final static SeqEvent_ParticleEvent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_ParticleEvent)("SeqEvent_ParticleEvent Engine.Default__SeqEvent_ParticleEvent")); }
+	@property final static SeqEvent_ParticleEvent DefaultProperties() { mixin(MGDPC!(SeqEvent_ParticleEvent, "SeqEvent_ParticleEvent Engine.Default__SeqEvent_ParticleEvent")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_ParticleEvent.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqEvent_ParticleEvent.GetObjClassVersion")()); }
 	}
 	enum EParticleEventOutputType : ubyte
 	{
@@ -27,15 +28,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector EventNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 292); }
-			float EventParticleTime() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			Vector EventVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 276); }
-			float EventEmitterTime() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-			Vector EventPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 260); }
-			SeqEvent_ParticleEvent.EParticleEventOutputType EventType() { return *cast(SeqEvent_ParticleEvent.EParticleEventOutputType*)(cast(size_t)cast(void*)this + 256); }
+			Vector EventNormal() { mixin(MGPC!(Vector, 292)()); }
+			float EventParticleTime() { mixin(MGPC!(float, 288)()); }
+			Vector EventVelocity() { mixin(MGPC!(Vector, 276)()); }
+			float EventEmitterTime() { mixin(MGPC!(float, 272)()); }
+			Vector EventPosition() { mixin(MGPC!(Vector, 260)()); }
+			SeqEvent_ParticleEvent.EParticleEventOutputType EventType() { mixin(MGPC!(SeqEvent_ParticleEvent.EParticleEventOutputType, 256)()); }
 		}
-		bool UseRelfectedImpactVector() { return (*cast(uint*)(cast(size_t)cast(void*)this + 304) & 0x1) != 0; }
-		bool UseRelfectedImpactVector(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 304) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 304) &= ~0x1; } return val; }
+		bool UseRelfectedImpactVector() { mixin(MGBPC!(304, 0x1)()); }
+		bool UseRelfectedImpactVector(bool val) { mixin(MSBPC!(304, 0x1)()); }
 	}
 	final static int GetObjClassVersion()
 	{

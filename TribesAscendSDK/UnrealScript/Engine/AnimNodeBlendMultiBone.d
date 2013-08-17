@@ -1,40 +1,41 @@
 module UnrealScript.Engine.AnimNodeBlendMultiBone;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface AnimNodeBlendMultiBone : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendMultiBone")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeBlendMultiBone")()); }
 	private static __gshared AnimNodeBlendMultiBone mDefaultProperties;
-	@property final static AnimNodeBlendMultiBone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlendMultiBone)("AnimNodeBlendMultiBone Engine.Default__AnimNodeBlendMultiBone")); }
+	@property final static AnimNodeBlendMultiBone DefaultProperties() { mixin(MGDPC!(AnimNodeBlendMultiBone, "AnimNodeBlendMultiBone Engine.Default__AnimNodeBlendMultiBone")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetTargetStartBone;
-		public @property static final ScriptFunction SetTargetStartBone() { return mSetTargetStartBone ? mSetTargetStartBone : (mSetTargetStartBone = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlendMultiBone.SetTargetStartBone")); }
+		public @property static final ScriptFunction SetTargetStartBone() { mixin(MGF!("mSetTargetStartBone", "Function Engine.AnimNodeBlendMultiBone.SetTargetStartBone")()); }
 	}
 	struct ChildBoneBlendInfo
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeBlendMultiBone.ChildBoneBlendInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeBlendMultiBone.ChildBoneBlendInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(float) TargetPerBoneWeight() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 0); }
-			ScriptArray!(ubyte) TargetRequiredBones() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 36); }
-			float OldBoneIncrease() { return *cast(float*)(cast(size_t)&this + 32); }
-			ScriptName OldStartBone() { return *cast(ScriptName*)(cast(size_t)&this + 24); }
-			float InitPerBoneIncrease() { return *cast(float*)(cast(size_t)&this + 20); }
-			ScriptName InitTargetStartBone() { return *cast(ScriptName*)(cast(size_t)&this + 12); }
+			ScriptArray!(float) TargetPerBoneWeight() { mixin(MGPS!(ScriptArray!(float), 0)()); }
+			ScriptArray!(ubyte) TargetRequiredBones() { mixin(MGPS!(ScriptArray!(ubyte), 36)()); }
+			float OldBoneIncrease() { mixin(MGPS!(float, 32)()); }
+			ScriptName OldStartBone() { mixin(MGPS!(ScriptName, 24)()); }
+			float InitPerBoneIncrease() { mixin(MGPS!(float, 20)()); }
+			ScriptName InitTargetStartBone() { mixin(MGPS!(ScriptName, 12)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(AnimNodeBlendMultiBone.ChildBoneBlendInfo) BlendTargetList() { return *cast(ScriptArray!(AnimNodeBlendMultiBone.ChildBoneBlendInfo)*)(cast(size_t)cast(void*)this + 244); }
-		ScriptArray!(ubyte) SourceRequiredBones() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 256); }
+		ScriptArray!(AnimNodeBlendMultiBone.ChildBoneBlendInfo) BlendTargetList() { mixin(MGPC!(ScriptArray!(AnimNodeBlendMultiBone.ChildBoneBlendInfo), 244)()); }
+		ScriptArray!(ubyte) SourceRequiredBones() { mixin(MGPC!(ScriptArray!(ubyte), 256)()); }
 	}
 	final void SetTargetStartBone(int TargetIdx, ScriptName StartBoneName, float PerBoneIncrease)
 	{

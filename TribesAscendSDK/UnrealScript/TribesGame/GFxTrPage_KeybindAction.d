@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_KeybindAction;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxTrPage_KeybindAction : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_KeybindAction")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_KeybindAction")()); }
 	private static __gshared GFxTrPage_KeybindAction mDefaultProperties;
-	@property final static GFxTrPage_KeybindAction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_KeybindAction)("GFxTrPage_KeybindAction TribesGame.Default__GFxTrPage_KeybindAction")); }
+	@property final static GFxTrPage_KeybindAction DefaultProperties() { mixin(MGDPC!(GFxTrPage_KeybindAction, "GFxTrPage_KeybindAction TribesGame.Default__GFxTrPage_KeybindAction")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,22 +24,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_KeybindAction.FillOption")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_KeybindAction.TakeAction")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_KeybindAction.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_KeybindAction.PopupComplete")); }
-			ScriptFunction KeyEvent() { return mKeyEvent ? mKeyEvent : (mKeyEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_KeybindAction.KeyEvent")); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_KeybindAction.FillOption")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_KeybindAction.TakeAction")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_KeybindAction.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_KeybindAction.PopupComplete")()); }
+			ScriptFunction KeyEvent() { mixin(MGF!("mKeyEvent", "Function TribesGame.GFxTrPage_KeybindAction.KeyEvent")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int SelectedCommand() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int SelectedIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			int SelectedCommand() { mixin(MGPC!(int, 360)()); }
+			int SelectedIndex() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bWaitingForKeybind() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x1) != 0; }
-		bool bWaitingForKeybind(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x1; } return val; }
+		bool bWaitingForKeybind() { mixin(MGBPC!(364, 0x1)()); }
+		bool bWaitingForKeybind(bool val) { mixin(MSBPC!(364, 0x1)()); }
 	}
 final:
 	GFxObject FillOption(int ActionIndex)

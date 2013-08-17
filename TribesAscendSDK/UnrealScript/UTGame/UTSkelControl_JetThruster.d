@@ -1,25 +1,26 @@
 module UnrealScript.UTGame.UTSkelControl_JetThruster;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface UTSkelControl_JetThruster : SkelControlSingleBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_JetThruster")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_JetThruster")()); }
 	private static __gshared UTSkelControl_JetThruster mDefaultProperties;
-	@property final static UTSkelControl_JetThruster DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_JetThruster)("UTSkelControl_JetThruster UTGame.Default__UTSkelControl_JetThruster")); }
+	@property final static UTSkelControl_JetThruster DefaultProperties() { mixin(MGDPC!(UTSkelControl_JetThruster, "UTSkelControl_JetThruster UTGame.Default__UTSkelControl_JetThruster")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;
-		public @property static final ScriptFunction TickSkelControl() { return mTickSkelControl ? mTickSkelControl : (mTickSkelControl = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSkelControl_JetThruster.TickSkelControl")); }
+		public @property static final ScriptFunction TickSkelControl() { mixin(MGF!("mTickSkelControl", "Function UTGame.UTSkelControl_JetThruster.TickSkelControl")()); }
 	}
 	@property final auto ref
 	{
-		float DesiredStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-		float BlendRate() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-		float MaxForwardVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
+		float DesiredStrength() { mixin(MGPC!(float, 244)()); }
+		float BlendRate() { mixin(MGPC!(float, 240)()); }
+		float MaxForwardVelocity() { mixin(MGPC!(float, 236)()); }
 	}
 	final void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

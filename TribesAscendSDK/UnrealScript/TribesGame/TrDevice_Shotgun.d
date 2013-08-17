@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_Shotgun;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.AnimNodePlayCustomAnim;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface TrDevice_Shotgun : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Shotgun")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Shotgun")()); }
 	private static __gshared TrDevice_Shotgun mDefaultProperties;
-	@property final static TrDevice_Shotgun DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Shotgun)("TrDevice_Shotgun TribesGame.Default__TrDevice_Shotgun")); }
+	@property final static TrDevice_Shotgun DefaultProperties() { mixin(MGDPC!(TrDevice_Shotgun, "TrDevice_Shotgun TribesGame.Default__TrDevice_Shotgun")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,27 +31,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.PostInitAnimTree")); }
-			ScriptFunction SetFlashLocation() { return mSetFlashLocation ? mSetFlashLocation : (mSetFlashLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.SetFlashLocation")); }
-			ScriptFunction PerformInactiveReload() { return mPerformInactiveReload ? mPerformInactiveReload : (mPerformInactiveReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.PerformInactiveReload")); }
-			ScriptFunction CustomFire() { return mCustomFire ? mCustomFire : (mCustomFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.CustomFire")); }
-			ScriptFunction FireAmmunition() { return mFireAmmunition ? mFireAmmunition : (mFireAmmunition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.FireAmmunition")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.StartFire")); }
-			ScriptFunction ConsumeAmmo() { return mConsumeAmmo ? mConsumeAmmo : (mConsumeAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.ConsumeAmmo")); }
-			ScriptFunction ConsumeAmmo_Internal() { return mConsumeAmmo_Internal ? mConsumeAmmo_Internal : (mConsumeAmmo_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.ConsumeAmmo_Internal")); }
-			ScriptFunction ProcessInstantHit_Internal() { return mProcessInstantHit_Internal ? mProcessInstantHit_Internal : (mProcessInstantHit_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.ProcessInstantHit_Internal")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Shotgun.OnAnimEnd")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_Shotgun.PostInitAnimTree")()); }
+			ScriptFunction SetFlashLocation() { mixin(MGF!("mSetFlashLocation", "Function TribesGame.TrDevice_Shotgun.SetFlashLocation")()); }
+			ScriptFunction PerformInactiveReload() { mixin(MGF!("mPerformInactiveReload", "Function TribesGame.TrDevice_Shotgun.PerformInactiveReload")()); }
+			ScriptFunction CustomFire() { mixin(MGF!("mCustomFire", "Function TribesGame.TrDevice_Shotgun.CustomFire")()); }
+			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_Shotgun.FireAmmunition")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_Shotgun.StartFire")()); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function TribesGame.TrDevice_Shotgun.ConsumeAmmo")()); }
+			ScriptFunction ConsumeAmmo_Internal() { mixin(MGF!("mConsumeAmmo_Internal", "Function TribesGame.TrDevice_Shotgun.ConsumeAmmo_Internal")()); }
+			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF!("mProcessInstantHit_Internal", "Function TribesGame.TrDevice_Shotgun.ProcessInstantHit_Internal")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_Shotgun.OnAnimEnd")()); }
 		}
+	}
+	static struct WeaponFiring
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_Shotgun.WeaponFiring")()); }
+	}
+	static struct DeviceReloading
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_Shotgun.DeviceReloading")()); }
 	}
 	@property final auto ref
 	{
-		AnimNodePlayCustomAnim ReloadCustomAnimNode() { return *cast(AnimNodePlayCustomAnim*)(cast(size_t)cast(void*)this + 2172); }
-		int m_nConsumeShotsFired() { return *cast(int*)(cast(size_t)cast(void*)this + 2168); }
-		int m_nShotsFired() { return *cast(int*)(cast(size_t)cast(void*)this + 2164); }
-		float m_fInnerDefaultAccuracy() { return *cast(float*)(cast(size_t)cast(void*)this + 2160); }
-		float m_fConsumeAmmoTimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 2156); }
-		int m_nImpactCounter() { return *cast(int*)(cast(size_t)cast(void*)this + 2152); }
-		int m_nMinShotCount() { return *cast(int*)(cast(size_t)cast(void*)this + 2148); }
+		AnimNodePlayCustomAnim ReloadCustomAnimNode() { mixin(MGPC!(AnimNodePlayCustomAnim, 2172)()); }
+		int m_nConsumeShotsFired() { mixin(MGPC!(int, 2168)()); }
+		int m_nShotsFired() { mixin(MGPC!(int, 2164)()); }
+		float m_fInnerDefaultAccuracy() { mixin(MGPC!(float, 2160)()); }
+		float m_fConsumeAmmoTimeStamp() { mixin(MGPC!(float, 2156)()); }
+		int m_nImpactCounter() { mixin(MGPC!(int, 2152)()); }
+		int m_nMinShotCount() { mixin(MGPC!(int, 2148)()); }
 	}
 final:
 	void PostInitAnimTree(

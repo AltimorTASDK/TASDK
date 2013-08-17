@@ -1,15 +1,16 @@
 module UnrealScript.Engine.PathConstraint;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface PathConstraint : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PathConstraint")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PathConstraint")()); }
 	private static __gshared PathConstraint mDefaultProperties;
-	@property final static PathConstraint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PathConstraint)("PathConstraint Engine.Default__PathConstraint")); }
+	@property final static PathConstraint DefaultProperties() { mixin(MGDPC!(PathConstraint, "PathConstraint Engine.Default__PathConstraint")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,14 +20,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.PathConstraint.Recycle")); }
-			ScriptFunction GetDumpString() { return mGetDumpString ? mGetDumpString : (mGetDumpString = ScriptObject.Find!(ScriptFunction)("Function Engine.PathConstraint.GetDumpString")); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.PathConstraint.Recycle")()); }
+			ScriptFunction GetDumpString() { mixin(MGF!("mGetDumpString", "Function Engine.PathConstraint.GetDumpString")()); }
 		}
 	}
 	@property final auto ref
 	{
-		PathConstraint NextConstraint() { return *cast(PathConstraint*)(cast(size_t)cast(void*)this + 64); }
-		int CacheIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+		PathConstraint NextConstraint() { mixin(MGPC!(PathConstraint, 64)()); }
+		int CacheIdx() { mixin(MGPC!(int, 60)()); }
 	}
 final:
 	void Recycle()

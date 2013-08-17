@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialExpressionStaticComponentMaskParameter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpressionParameter;
 import UnrealScript.Engine.MaterialExpression;
@@ -9,23 +10,23 @@ extern(C++) interface MaterialExpressionStaticComponentMaskParameter : MaterialE
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionStaticComponentMaskParameter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionStaticComponentMaskParameter")()); }
 	private static __gshared MaterialExpressionStaticComponentMaskParameter mDefaultProperties;
-	@property final static MaterialExpressionStaticComponentMaskParameter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionStaticComponentMaskParameter)("MaterialExpressionStaticComponentMaskParameter Engine.Default__MaterialExpressionStaticComponentMaskParameter")); }
+	@property final static MaterialExpressionStaticComponentMaskParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionStaticComponentMaskParameter, "MaterialExpressionStaticComponentMaskParameter Engine.Default__MaterialExpressionStaticComponentMaskParameter")()); }
 	@property final
 	{
 		auto ref
 		{
-			UObject.Pointer InstanceOverride() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 164); }
+			UObject.Pointer InstanceOverride() { mixin(MGPC!(UObject.Pointer, 164)()); }
 			// WARNING: Property 'Input' has the same name as a defined type!
 		}
-		bool DefaultA() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x8) != 0; }
-		bool DefaultA(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x8; } return val; }
-		bool DefaultB() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x4) != 0; }
-		bool DefaultB(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x4; } return val; }
-		bool DefaultG() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x2) != 0; }
-		bool DefaultG(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x2; } return val; }
-		bool DefaultR() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x1) != 0; }
-		bool DefaultR(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x1; } return val; }
+		bool DefaultA() { mixin(MGBPC!(160, 0x8)()); }
+		bool DefaultA(bool val) { mixin(MSBPC!(160, 0x8)()); }
+		bool DefaultB() { mixin(MGBPC!(160, 0x4)()); }
+		bool DefaultB(bool val) { mixin(MSBPC!(160, 0x4)()); }
+		bool DefaultG() { mixin(MGBPC!(160, 0x2)()); }
+		bool DefaultG(bool val) { mixin(MSBPC!(160, 0x2)()); }
+		bool DefaultR() { mixin(MGBPC!(160, 0x1)()); }
+		bool DefaultR(bool val) { mixin(MSBPC!(160, 0x1)()); }
 	}
 }

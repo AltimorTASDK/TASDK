@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_BuyGoldSteam;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_BuyGoldSteam : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_BuyGoldSteam")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_BuyGoldSteam")()); }
 	private static __gshared GFxTrPage_BuyGoldSteam mDefaultProperties;
-	@property final static GFxTrPage_BuyGoldSteam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_BuyGoldSteam)("GFxTrPage_BuyGoldSteam TribesGame.Default__GFxTrPage_BuyGoldSteam")); }
+	@property final static GFxTrPage_BuyGoldSteam DefaultProperties() { mixin(MGDPC!(GFxTrPage_BuyGoldSteam, "GFxTrPage_BuyGoldSteam TribesGame.Default__GFxTrPage_BuyGoldSteam")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +24,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_BuyGoldSteam.SpecialAction")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_BuyGoldSteam.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_BuyGoldSteam.FillOption")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_BuyGoldSteam.ShowModel")); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_BuyGoldSteam.SpecialAction")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_BuyGoldSteam.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_BuyGoldSteam.FillOption")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_BuyGoldSteam.ShowModel")()); }
 		}
 	}
 final:

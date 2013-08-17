@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineVoiceInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.SpeechRecognition;
 import UnrealScript.Core.UInterface;
@@ -9,9 +10,9 @@ extern(C++) interface OnlineVoiceInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineVoiceInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineVoiceInterface")()); }
 	private static __gshared OnlineVoiceInterface mDefaultProperties;
-	@property final static OnlineVoiceInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineVoiceInterface)("OnlineVoiceInterface Engine.Default__OnlineVoiceInterface")); }
+	@property final static OnlineVoiceInterface DefaultProperties() { mixin(MGDPC!(OnlineVoiceInterface, "OnlineVoiceInterface Engine.Default__OnlineVoiceInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,32 +45,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction MuteRemoteTalker() { return mMuteRemoteTalker ? mMuteRemoteTalker : (mMuteRemoteTalker = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.MuteRemoteTalker")); }
-			ScriptFunction UnmuteRemoteTalker() { return mUnmuteRemoteTalker ? mUnmuteRemoteTalker : (mUnmuteRemoteTalker = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.UnmuteRemoteTalker")); }
-			ScriptFunction RegisterLocalTalker() { return mRegisterLocalTalker ? mRegisterLocalTalker : (mRegisterLocalTalker = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.RegisterLocalTalker")); }
-			ScriptFunction UnregisterLocalTalker() { return mUnregisterLocalTalker ? mUnregisterLocalTalker : (mUnregisterLocalTalker = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.UnregisterLocalTalker")); }
-			ScriptFunction RegisterRemoteTalker() { return mRegisterRemoteTalker ? mRegisterRemoteTalker : (mRegisterRemoteTalker = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.RegisterRemoteTalker")); }
-			ScriptFunction UnregisterRemoteTalker() { return mUnregisterRemoteTalker ? mUnregisterRemoteTalker : (mUnregisterRemoteTalker = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.UnregisterRemoteTalker")); }
-			ScriptFunction IsLocalPlayerTalking() { return mIsLocalPlayerTalking ? mIsLocalPlayerTalking : (mIsLocalPlayerTalking = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.IsLocalPlayerTalking")); }
-			ScriptFunction IsRemotePlayerTalking() { return mIsRemotePlayerTalking ? mIsRemotePlayerTalking : (mIsRemotePlayerTalking = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.IsRemotePlayerTalking")); }
-			ScriptFunction IsHeadsetPresent() { return mIsHeadsetPresent ? mIsHeadsetPresent : (mIsHeadsetPresent = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.IsHeadsetPresent")); }
-			ScriptFunction SetRemoteTalkerPriority() { return mSetRemoteTalkerPriority ? mSetRemoteTalkerPriority : (mSetRemoteTalkerPriority = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.SetRemoteTalkerPriority")); }
-			ScriptFunction OnPlayerTalkingStateChange() { return mOnPlayerTalkingStateChange ? mOnPlayerTalkingStateChange : (mOnPlayerTalkingStateChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.OnPlayerTalkingStateChange")); }
-			ScriptFunction OnRecognitionComplete() { return mOnRecognitionComplete ? mOnRecognitionComplete : (mOnRecognitionComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.OnRecognitionComplete")); }
-			ScriptFunction AddPlayerTalkingDelegate() { return mAddPlayerTalkingDelegate ? mAddPlayerTalkingDelegate : (mAddPlayerTalkingDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.AddPlayerTalkingDelegate")); }
-			ScriptFunction ClearPlayerTalkingDelegate() { return mClearPlayerTalkingDelegate ? mClearPlayerTalkingDelegate : (mClearPlayerTalkingDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.ClearPlayerTalkingDelegate")); }
-			ScriptFunction StartNetworkedVoice() { return mStartNetworkedVoice ? mStartNetworkedVoice : (mStartNetworkedVoice = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.StartNetworkedVoice")); }
-			ScriptFunction StopNetworkedVoice() { return mStopNetworkedVoice ? mStopNetworkedVoice : (mStopNetworkedVoice = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.StopNetworkedVoice")); }
-			ScriptFunction StartSpeechRecognition() { return mStartSpeechRecognition ? mStartSpeechRecognition : (mStartSpeechRecognition = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.StartSpeechRecognition")); }
-			ScriptFunction StopSpeechRecognition() { return mStopSpeechRecognition ? mStopSpeechRecognition : (mStopSpeechRecognition = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.StopSpeechRecognition")); }
-			ScriptFunction GetRecognitionResults() { return mGetRecognitionResults ? mGetRecognitionResults : (mGetRecognitionResults = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.GetRecognitionResults")); }
-			ScriptFunction AddRecognitionCompleteDelegate() { return mAddRecognitionCompleteDelegate ? mAddRecognitionCompleteDelegate : (mAddRecognitionCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.AddRecognitionCompleteDelegate")); }
-			ScriptFunction ClearRecognitionCompleteDelegate() { return mClearRecognitionCompleteDelegate ? mClearRecognitionCompleteDelegate : (mClearRecognitionCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.ClearRecognitionCompleteDelegate")); }
-			ScriptFunction SelectVocabulary() { return mSelectVocabulary ? mSelectVocabulary : (mSelectVocabulary = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.SelectVocabulary")); }
-			ScriptFunction SetSpeechRecognitionObject() { return mSetSpeechRecognitionObject ? mSetSpeechRecognitionObject : (mSetSpeechRecognitionObject = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.SetSpeechRecognitionObject")); }
-			ScriptFunction MuteAll() { return mMuteAll ? mMuteAll : (mMuteAll = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.MuteAll")); }
-			ScriptFunction UnmuteAll() { return mUnmuteAll ? mUnmuteAll : (mUnmuteAll = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineVoiceInterface.UnmuteAll")); }
+			ScriptFunction MuteRemoteTalker() { mixin(MGF!("mMuteRemoteTalker", "Function Engine.OnlineVoiceInterface.MuteRemoteTalker")()); }
+			ScriptFunction UnmuteRemoteTalker() { mixin(MGF!("mUnmuteRemoteTalker", "Function Engine.OnlineVoiceInterface.UnmuteRemoteTalker")()); }
+			ScriptFunction RegisterLocalTalker() { mixin(MGF!("mRegisterLocalTalker", "Function Engine.OnlineVoiceInterface.RegisterLocalTalker")()); }
+			ScriptFunction UnregisterLocalTalker() { mixin(MGF!("mUnregisterLocalTalker", "Function Engine.OnlineVoiceInterface.UnregisterLocalTalker")()); }
+			ScriptFunction RegisterRemoteTalker() { mixin(MGF!("mRegisterRemoteTalker", "Function Engine.OnlineVoiceInterface.RegisterRemoteTalker")()); }
+			ScriptFunction UnregisterRemoteTalker() { mixin(MGF!("mUnregisterRemoteTalker", "Function Engine.OnlineVoiceInterface.UnregisterRemoteTalker")()); }
+			ScriptFunction IsLocalPlayerTalking() { mixin(MGF!("mIsLocalPlayerTalking", "Function Engine.OnlineVoiceInterface.IsLocalPlayerTalking")()); }
+			ScriptFunction IsRemotePlayerTalking() { mixin(MGF!("mIsRemotePlayerTalking", "Function Engine.OnlineVoiceInterface.IsRemotePlayerTalking")()); }
+			ScriptFunction IsHeadsetPresent() { mixin(MGF!("mIsHeadsetPresent", "Function Engine.OnlineVoiceInterface.IsHeadsetPresent")()); }
+			ScriptFunction SetRemoteTalkerPriority() { mixin(MGF!("mSetRemoteTalkerPriority", "Function Engine.OnlineVoiceInterface.SetRemoteTalkerPriority")()); }
+			ScriptFunction OnPlayerTalkingStateChange() { mixin(MGF!("mOnPlayerTalkingStateChange", "Function Engine.OnlineVoiceInterface.OnPlayerTalkingStateChange")()); }
+			ScriptFunction OnRecognitionComplete() { mixin(MGF!("mOnRecognitionComplete", "Function Engine.OnlineVoiceInterface.OnRecognitionComplete")()); }
+			ScriptFunction AddPlayerTalkingDelegate() { mixin(MGF!("mAddPlayerTalkingDelegate", "Function Engine.OnlineVoiceInterface.AddPlayerTalkingDelegate")()); }
+			ScriptFunction ClearPlayerTalkingDelegate() { mixin(MGF!("mClearPlayerTalkingDelegate", "Function Engine.OnlineVoiceInterface.ClearPlayerTalkingDelegate")()); }
+			ScriptFunction StartNetworkedVoice() { mixin(MGF!("mStartNetworkedVoice", "Function Engine.OnlineVoiceInterface.StartNetworkedVoice")()); }
+			ScriptFunction StopNetworkedVoice() { mixin(MGF!("mStopNetworkedVoice", "Function Engine.OnlineVoiceInterface.StopNetworkedVoice")()); }
+			ScriptFunction StartSpeechRecognition() { mixin(MGF!("mStartSpeechRecognition", "Function Engine.OnlineVoiceInterface.StartSpeechRecognition")()); }
+			ScriptFunction StopSpeechRecognition() { mixin(MGF!("mStopSpeechRecognition", "Function Engine.OnlineVoiceInterface.StopSpeechRecognition")()); }
+			ScriptFunction GetRecognitionResults() { mixin(MGF!("mGetRecognitionResults", "Function Engine.OnlineVoiceInterface.GetRecognitionResults")()); }
+			ScriptFunction AddRecognitionCompleteDelegate() { mixin(MGF!("mAddRecognitionCompleteDelegate", "Function Engine.OnlineVoiceInterface.AddRecognitionCompleteDelegate")()); }
+			ScriptFunction ClearRecognitionCompleteDelegate() { mixin(MGF!("mClearRecognitionCompleteDelegate", "Function Engine.OnlineVoiceInterface.ClearRecognitionCompleteDelegate")()); }
+			ScriptFunction SelectVocabulary() { mixin(MGF!("mSelectVocabulary", "Function Engine.OnlineVoiceInterface.SelectVocabulary")()); }
+			ScriptFunction SetSpeechRecognitionObject() { mixin(MGF!("mSetSpeechRecognitionObject", "Function Engine.OnlineVoiceInterface.SetSpeechRecognitionObject")()); }
+			ScriptFunction MuteAll() { mixin(MGF!("mMuteAll", "Function Engine.OnlineVoiceInterface.MuteAll")()); }
+			ScriptFunction UnmuteAll() { mixin(MGF!("mUnmuteAll", "Function Engine.OnlineVoiceInterface.UnmuteAll")()); }
 		}
+	}
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnRecognitionComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPlayerTalkingStateChange__Delegate'!
 	}
 final:
 	bool MuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool bIsSystemWide)
@@ -222,12 +228,12 @@ void**)params.ptr = TalkerDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopSpeechRecognition, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool GetRecognitionResults(ubyte LocalUserNum, ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)* Words)
+	bool GetRecognitionResults(ubyte LocalUserNum, ref ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = *Words;
+		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRecognitionResults, params.ptr, cast(void*)0);
 		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 		return *cast(bool*)&params[16];

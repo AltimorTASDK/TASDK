@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrVehicle_Havoc;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrVehicle_BaseFlying;
 import UnrealScript.UTGame.UTVehicleWeapon;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrVehicle_Havoc : TrVehicle_BaseFlying
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicle_Havoc")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicle_Havoc")()); }
 	private static __gshared TrVehicle_Havoc mDefaultProperties;
-	@property final static TrVehicle_Havoc DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicle_Havoc)("TrVehicle_Havoc TribesGame.Default__TrVehicle_Havoc")); }
+	@property final static TrVehicle_Havoc DefaultProperties() { mixin(MGDPC!(TrVehicle_Havoc, "TrVehicle_Havoc TribesGame.Default__TrVehicle_Havoc")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,14 +21,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_Havoc.PostBeginPlay")); }
-			ScriptFunction GetWeaponAim() { return mGetWeaponAim ? mGetWeaponAim : (mGetWeaponAim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_Havoc.GetWeaponAim")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrVehicle_Havoc.PostBeginPlay")()); }
+			ScriptFunction GetWeaponAim() { mixin(MGF!("mGetWeaponAim", "Function TribesGame.TrVehicle_Havoc.GetWeaponAim")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fPitchAimAngleRotation() { return *cast(float*)(cast(size_t)cast(void*)this + 3296); }
-		float m_fPitchAimAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 3292); }
+		float m_fPitchAimAngleRotation() { mixin(MGPC!(float, 3296)()); }
+		float m_fPitchAimAngle() { mixin(MGPC!(float, 3292)()); }
 	}
 final:
 	void PostBeginPlay()

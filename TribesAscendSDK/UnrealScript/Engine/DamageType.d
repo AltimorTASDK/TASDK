@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DamageType;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Vehicle;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ForceFeedbackWaveform;
@@ -9,38 +10,38 @@ extern(C++) interface DamageType : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DamageType")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DamageType")()); }
 	private static __gshared DamageType mDefaultProperties;
-	@property final static DamageType DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DamageType)("DamageType Engine.Default__DamageType")); }
+	@property final static DamageType DefaultProperties() { mixin(MGDPC!(DamageType, "DamageType Engine.Default__DamageType")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mVehicleDamageScalingFor;
-		public @property static final ScriptFunction VehicleDamageScalingFor() { return mVehicleDamageScalingFor ? mVehicleDamageScalingFor : (mVehicleDamageScalingFor = ScriptObject.Find!(ScriptFunction)("Function Engine.DamageType.VehicleDamageScalingFor")); }
+		public @property static final ScriptFunction VehicleDamageScalingFor() { mixin(MGF!("mVehicleDamageScalingFor", "Function Engine.DamageType.VehicleDamageScalingFor")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ForceFeedbackWaveform DamagedFFWaveform() { return *cast(ForceFeedbackWaveform*)(cast(size_t)cast(void*)this + 88); }
-			float FracturedMeshDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			ForceFeedbackWaveform KilledFFWaveform() { return *cast(ForceFeedbackWaveform*)(cast(size_t)cast(void*)this + 92); }
-			float VehicleMomentumScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			float VehicleDamageScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float RadialDamageImpulse() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			float KDeathUpKick() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-			float KDeathVel() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			float KDamageImpulse() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
+			ForceFeedbackWaveform DamagedFFWaveform() { mixin(MGPC!(ForceFeedbackWaveform, 88)()); }
+			float FracturedMeshDamage() { mixin(MGPC!(float, 96)()); }
+			ForceFeedbackWaveform KilledFFWaveform() { mixin(MGPC!(ForceFeedbackWaveform, 92)()); }
+			float VehicleMomentumScaling() { mixin(MGPC!(float, 84)()); }
+			float VehicleDamageScaling() { mixin(MGPC!(float, 80)()); }
+			float RadialDamageImpulse() { mixin(MGPC!(float, 76)()); }
+			float KDeathUpKick() { mixin(MGPC!(float, 72)()); }
+			float KDeathVel() { mixin(MGPC!(float, 68)()); }
+			float KDamageImpulse() { mixin(MGPC!(float, 64)()); }
 		}
-		bool bRadialDamageVelChange() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x10) != 0; }
-		bool bRadialDamageVelChange(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x10; } return val; }
-		bool bCausesFracture() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x8) != 0; }
-		bool bCausesFracture(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x8; } return val; }
-		bool bExtraMomentumZ() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x4) != 0; }
-		bool bExtraMomentumZ(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x4; } return val; }
-		bool bCausedByWorld() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2) != 0; }
-		bool bCausedByWorld(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2; } return val; }
-		bool bArmorStops() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bArmorStops(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bRadialDamageVelChange() { mixin(MGBPC!(60, 0x10)()); }
+		bool bRadialDamageVelChange(bool val) { mixin(MSBPC!(60, 0x10)()); }
+		bool bCausesFracture() { mixin(MGBPC!(60, 0x8)()); }
+		bool bCausesFracture(bool val) { mixin(MSBPC!(60, 0x8)()); }
+		bool bExtraMomentumZ() { mixin(MGBPC!(60, 0x4)()); }
+		bool bExtraMomentumZ(bool val) { mixin(MSBPC!(60, 0x4)()); }
+		bool bCausedByWorld() { mixin(MGBPC!(60, 0x2)()); }
+		bool bCausedByWorld(bool val) { mixin(MSBPC!(60, 0x2)()); }
+		bool bArmorStops() { mixin(MGBPC!(60, 0x1)()); }
+		bool bArmorStops(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 	final static float VehicleDamageScalingFor(Vehicle V)
 	{

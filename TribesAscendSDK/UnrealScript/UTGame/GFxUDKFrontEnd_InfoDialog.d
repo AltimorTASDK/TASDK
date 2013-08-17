@@ -1,15 +1,16 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_InfoDialog;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.GFxUDKFrontEnd_Dialog;
 
 extern(C++) interface GFxUDKFrontEnd_InfoDialog : GFxUDKFrontEnd_Dialog
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_InfoDialog")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_InfoDialog")()); }
 	private static __gshared GFxUDKFrontEnd_InfoDialog mDefaultProperties;
-	@property final static GFxUDKFrontEnd_InfoDialog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_InfoDialog)("GFxUDKFrontEnd_InfoDialog UTGame.Default__GFxUDKFrontEnd_InfoDialog")); }
+	@property final static GFxUDKFrontEnd_InfoDialog DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_InfoDialog, "GFxUDKFrontEnd_InfoDialog UTGame.Default__GFxUDKFrontEnd_InfoDialog")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,14 +26,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnViewClosed() { return mOnViewClosed ? mOnViewClosed : (mOnViewClosed = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.OnViewClosed")); }
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.OnTopMostView")); }
-			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.DisableSubComponents")); }
-			ScriptFunction SetTitle() { return mSetTitle ? mSetTitle : (mSetTitle = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.SetTitle")); }
-			ScriptFunction SetInfo() { return mSetInfo ? mSetInfo : (mSetInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.SetInfo")); }
-			ScriptFunction SetAcceptButtonLabel() { return mSetAcceptButtonLabel ? mSetAcceptButtonLabel : (mSetAcceptButtonLabel = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.SetAcceptButtonLabel")); }
-			ScriptFunction SetBackButtonLabel() { return mSetBackButtonLabel ? mSetBackButtonLabel : (mSetBackButtonLabel = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.SetBackButtonLabel")); }
-			ScriptFunction SetAcceptButton_OnPress() { return mSetAcceptButton_OnPress ? mSetAcceptButton_OnPress : (mSetAcceptButton_OnPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_InfoDialog.SetAcceptButton_OnPress")); }
+			ScriptFunction OnViewClosed() { mixin(MGF!("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_InfoDialog.OnViewClosed")()); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_InfoDialog.OnTopMostView")()); }
+			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_InfoDialog.DisableSubComponents")()); }
+			ScriptFunction SetTitle() { mixin(MGF!("mSetTitle", "Function UTGame.GFxUDKFrontEnd_InfoDialog.SetTitle")()); }
+			ScriptFunction SetInfo() { mixin(MGF!("mSetInfo", "Function UTGame.GFxUDKFrontEnd_InfoDialog.SetInfo")()); }
+			ScriptFunction SetAcceptButtonLabel() { mixin(MGF!("mSetAcceptButtonLabel", "Function UTGame.GFxUDKFrontEnd_InfoDialog.SetAcceptButtonLabel")()); }
+			ScriptFunction SetBackButtonLabel() { mixin(MGF!("mSetBackButtonLabel", "Function UTGame.GFxUDKFrontEnd_InfoDialog.SetBackButtonLabel")()); }
+			ScriptFunction SetAcceptButton_OnPress() { mixin(MGF!("mSetAcceptButton_OnPress", "Function UTGame.GFxUDKFrontEnd_InfoDialog.SetAcceptButton_OnPress")()); }
 		}
 	}
 final:

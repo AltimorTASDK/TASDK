@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrEffect;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface TrEffect : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect")()); }
 	private static __gshared TrEffect mDefaultProperties;
-	@property final static TrEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect)("TrEffect TribesGame.Default__TrEffect")); }
+	@property final static TrEffect DefaultProperties() { mixin(MGDPC!(TrEffect, "TrEffect TribesGame.Default__TrEffect")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,22 +23,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { return mApply ? mApply : (mApply = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect.Apply")); }
-			ScriptFunction Remove() { return mRemove ? mRemove : (mRemove = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect.Remove")); }
-			ScriptFunction CanBeApplied() { return mCanBeApplied ? mCanBeApplied : (mCanBeApplied = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect.CanBeApplied")); }
+			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect.Apply")()); }
+			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect.Remove")()); }
+			ScriptFunction CanBeApplied() { mixin(MGF!("mCanBeApplied", "Function TribesGame.TrEffect.CanBeApplied")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptClass m_EffectFormClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 76); }
-			float m_fValue() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-			TrObject.EffectCalcMethod m_eCalcMethodCode() { return *cast(TrObject.EffectCalcMethod*)(cast(size_t)cast(void*)this + 64); }
-			int m_nEffectInstanceId() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			ScriptClass m_EffectFormClass() { mixin(MGPC!(ScriptClass, 76)()); }
+			float m_fValue() { mixin(MGPC!(float, 72)()); }
+			TrObject.EffectCalcMethod m_eCalcMethodCode() { mixin(MGPC!(TrObject.EffectCalcMethod, 64)()); }
+			int m_nEffectInstanceId() { mixin(MGPC!(int, 60)()); }
 		}
-		bool m_bRemovable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x1) != 0; }
-		bool m_bRemovable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x1; } return val; }
+		bool m_bRemovable() { mixin(MGBPC!(68, 0x1)()); }
+		bool m_bRemovable(bool val) { mixin(MSBPC!(68, 0x1)()); }
 	}
 final:
 	void Apply(Actor Target, Actor.ImpactInfo Impact)

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrAccoladeManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Core.UObject;
 import UnrealScript.UTGame.UTPlayerReplicationInfo;
@@ -13,9 +14,9 @@ extern(C++) interface TrAccoladeManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAccoladeManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAccoladeManager")()); }
 	private static __gshared TrAccoladeManager mDefaultProperties;
-	@property final static TrAccoladeManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAccoladeManager)("TrAccoladeManager TribesGame.Default__TrAccoladeManager")); }
+	@property final static TrAccoladeManager DefaultProperties() { mixin(MGDPC!(TrAccoladeManager, "TrAccoladeManager TribesGame.Default__TrAccoladeManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -51,52 +52,52 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFlagDistance() { return mGetFlagDistance ? mGetFlagDistance : (mGetFlagDistance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.GetFlagDistance")); }
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.Initialize")); }
-			ScriptFunction ResetStreaks() { return mResetStreaks ? mResetStreaks : (mResetStreaks = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.ResetStreaks")); }
-			ScriptFunction GiveAssist() { return mGiveAssist ? mGiveAssist : (mGiveAssist = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.GiveAssist")); }
-			ScriptFunction GiveVehicleAssist() { return mGiveVehicleAssist ? mGiveVehicleAssist : (mGiveVehicleAssist = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.GiveVehicleAssist")); }
-			ScriptFunction KillAsRabbit() { return mKillAsRabbit ? mKillAsRabbit : (mKillAsRabbit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.KillAsRabbit")); }
-			ScriptFunction KilledTheRabbit() { return mKilledTheRabbit ? mKilledTheRabbit : (mKilledTheRabbit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.KilledTheRabbit")); }
-			ScriptFunction KilledTheFlagHolder() { return mKilledTheFlagHolder ? mKilledTheFlagHolder : (mKilledTheFlagHolder = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.KilledTheFlagHolder")); }
-			ScriptFunction UpdateStandardKillingSpree() { return mUpdateStandardKillingSpree ? mUpdateStandardKillingSpree : (mUpdateStandardKillingSpree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.UpdateStandardKillingSpree")); }
-			ScriptFunction KilledGenerator() { return mKilledGenerator ? mKilledGenerator : (mKilledGenerator = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.KilledGenerator")); }
-			ScriptFunction RepairedBase() { return mRepairedBase ? mRepairedBase : (mRepairedBase = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.RepairedBase")); }
-			ScriptFunction KilledBaseTurret() { return mKilledBaseTurret ? mKilledBaseTurret : (mKilledBaseTurret = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.KilledBaseTurret")); }
-			ScriptFunction KilledBaseRadar() { return mKilledBaseRadar ? mKilledBaseRadar : (mKilledBaseRadar = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.KilledBaseRadar")); }
-			ScriptFunction FlagGrab() { return mFlagGrab ? mFlagGrab : (mFlagGrab = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.FlagGrab")); }
-			ScriptFunction FlagGrabDeathmatch() { return mFlagGrabDeathmatch ? mFlagGrabDeathmatch : (mFlagGrabDeathmatch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.FlagGrabDeathmatch")); }
-			ScriptFunction FlagHeld() { return mFlagHeld ? mFlagHeld : (mFlagHeld = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.FlagHeld")); }
-			ScriptFunction FlagAssist() { return mFlagAssist ? mFlagAssist : (mFlagAssist = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.FlagAssist")); }
-			ScriptFunction FlagCapture() { return mFlagCapture ? mFlagCapture : (mFlagCapture = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.FlagCapture")); }
-			ScriptFunction FlagReturn() { return mFlagReturn ? mFlagReturn : (mFlagReturn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.FlagReturn")); }
-			ScriptFunction NoJoy() { return mNoJoy ? mNoJoy : (mNoJoy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.NoJoy")); }
-			ScriptFunction GameCompleted() { return mGameCompleted ? mGameCompleted : (mGameCompleted = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.GameCompleted")); }
-			ScriptFunction GameWon() { return mGameWon ? mGameWon : (mGameWon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.GameWon")); }
-			ScriptFunction UpdateMultiKills() { return mUpdateMultiKills ? mUpdateMultiKills : (mUpdateMultiKills = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.UpdateMultiKills")); }
-			ScriptFunction VehicleDestroyed() { return mVehicleDestroyed ? mVehicleDestroyed : (mVehicleDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.VehicleDestroyed")); }
-			ScriptFunction UpdateSpecialAccolades() { return mUpdateSpecialAccolades ? mUpdateSpecialAccolades : (mUpdateSpecialAccolades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.UpdateSpecialAccolades")); }
-			ScriptFunction QueueAccolade() { return mQueueAccolade ? mQueueAccolade : (mQueueAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.QueueAccolade")); }
-			ScriptFunction CreditsGiven() { return mCreditsGiven ? mCreditsGiven : (mCreditsGiven = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.CreditsGiven")); }
-			ScriptFunction BroadcastAccolade() { return mBroadcastAccolade ? mBroadcastAccolade : (mBroadcastAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAccoladeManager.BroadcastAccolade")); }
+			ScriptFunction GetFlagDistance() { mixin(MGF!("mGetFlagDistance", "Function TribesGame.TrAccoladeManager.GetFlagDistance")()); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrAccoladeManager.Initialize")()); }
+			ScriptFunction ResetStreaks() { mixin(MGF!("mResetStreaks", "Function TribesGame.TrAccoladeManager.ResetStreaks")()); }
+			ScriptFunction GiveAssist() { mixin(MGF!("mGiveAssist", "Function TribesGame.TrAccoladeManager.GiveAssist")()); }
+			ScriptFunction GiveVehicleAssist() { mixin(MGF!("mGiveVehicleAssist", "Function TribesGame.TrAccoladeManager.GiveVehicleAssist")()); }
+			ScriptFunction KillAsRabbit() { mixin(MGF!("mKillAsRabbit", "Function TribesGame.TrAccoladeManager.KillAsRabbit")()); }
+			ScriptFunction KilledTheRabbit() { mixin(MGF!("mKilledTheRabbit", "Function TribesGame.TrAccoladeManager.KilledTheRabbit")()); }
+			ScriptFunction KilledTheFlagHolder() { mixin(MGF!("mKilledTheFlagHolder", "Function TribesGame.TrAccoladeManager.KilledTheFlagHolder")()); }
+			ScriptFunction UpdateStandardKillingSpree() { mixin(MGF!("mUpdateStandardKillingSpree", "Function TribesGame.TrAccoladeManager.UpdateStandardKillingSpree")()); }
+			ScriptFunction KilledGenerator() { mixin(MGF!("mKilledGenerator", "Function TribesGame.TrAccoladeManager.KilledGenerator")()); }
+			ScriptFunction RepairedBase() { mixin(MGF!("mRepairedBase", "Function TribesGame.TrAccoladeManager.RepairedBase")()); }
+			ScriptFunction KilledBaseTurret() { mixin(MGF!("mKilledBaseTurret", "Function TribesGame.TrAccoladeManager.KilledBaseTurret")()); }
+			ScriptFunction KilledBaseRadar() { mixin(MGF!("mKilledBaseRadar", "Function TribesGame.TrAccoladeManager.KilledBaseRadar")()); }
+			ScriptFunction FlagGrab() { mixin(MGF!("mFlagGrab", "Function TribesGame.TrAccoladeManager.FlagGrab")()); }
+			ScriptFunction FlagGrabDeathmatch() { mixin(MGF!("mFlagGrabDeathmatch", "Function TribesGame.TrAccoladeManager.FlagGrabDeathmatch")()); }
+			ScriptFunction FlagHeld() { mixin(MGF!("mFlagHeld", "Function TribesGame.TrAccoladeManager.FlagHeld")()); }
+			ScriptFunction FlagAssist() { mixin(MGF!("mFlagAssist", "Function TribesGame.TrAccoladeManager.FlagAssist")()); }
+			ScriptFunction FlagCapture() { mixin(MGF!("mFlagCapture", "Function TribesGame.TrAccoladeManager.FlagCapture")()); }
+			ScriptFunction FlagReturn() { mixin(MGF!("mFlagReturn", "Function TribesGame.TrAccoladeManager.FlagReturn")()); }
+			ScriptFunction NoJoy() { mixin(MGF!("mNoJoy", "Function TribesGame.TrAccoladeManager.NoJoy")()); }
+			ScriptFunction GameCompleted() { mixin(MGF!("mGameCompleted", "Function TribesGame.TrAccoladeManager.GameCompleted")()); }
+			ScriptFunction GameWon() { mixin(MGF!("mGameWon", "Function TribesGame.TrAccoladeManager.GameWon")()); }
+			ScriptFunction UpdateMultiKills() { mixin(MGF!("mUpdateMultiKills", "Function TribesGame.TrAccoladeManager.UpdateMultiKills")()); }
+			ScriptFunction VehicleDestroyed() { mixin(MGF!("mVehicleDestroyed", "Function TribesGame.TrAccoladeManager.VehicleDestroyed")()); }
+			ScriptFunction UpdateSpecialAccolades() { mixin(MGF!("mUpdateSpecialAccolades", "Function TribesGame.TrAccoladeManager.UpdateSpecialAccolades")()); }
+			ScriptFunction QueueAccolade() { mixin(MGF!("mQueueAccolade", "Function TribesGame.TrAccoladeManager.QueueAccolade")()); }
+			ScriptFunction CreditsGiven() { mixin(MGF!("mCreditsGiven", "Function TribesGame.TrAccoladeManager.CreditsGiven")()); }
+			ScriptFunction BroadcastAccolade() { mixin(MGF!("mBroadcastAccolade", "Function TribesGame.TrAccoladeManager.BroadcastAccolade")()); }
 		}
 	}
 	@property final auto ref
 	{
-		int m_nLastFlagReturnTime() { return *cast(int*)(cast(size_t)cast(void*)this + 112); }
-		int m_nLastFlagGrabTime() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
-		int MAXIMUM_EMERGENCY_GRAB_DISTANCE() { return *cast(int*)(cast(size_t)cast(void*)this + 104); }
-		int MAXIMUM_FLAG_DEFENSE_DISTANCE() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
-		int MINIMUM_ULTRA_GRAB_SPEED() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-		int MINIMUM_FAST_GRAB_SPEED() { return *cast(int*)(cast(size_t)cast(void*)this + 92); }
-		int MAXIMUM_LLAMA_GRAB_SPEED() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-		int MINIMUM_TIME_FLAG_CREDITS() { return *cast(int*)(cast(size_t)cast(void*)this + 84); }
-		int m_nCurrSpinfusorKillStreak() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
-		int m_nCurrExplosiveKillStreak() { return *cast(int*)(cast(size_t)cast(void*)this + 76); }
-		int m_nCurrSnipingKillStreak() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-		TrStatsInterface Stats() { return *cast(TrStatsInterface*)(cast(size_t)cast(void*)this + 68); }
-		TrPlayerController m_TrPC() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 64); }
-		TrGame m_TrG() { return *cast(TrGame*)(cast(size_t)cast(void*)this + 60); }
+		int m_nLastFlagReturnTime() { mixin(MGPC!(int, 112)()); }
+		int m_nLastFlagGrabTime() { mixin(MGPC!(int, 108)()); }
+		int MAXIMUM_EMERGENCY_GRAB_DISTANCE() { mixin(MGPC!(int, 104)()); }
+		int MAXIMUM_FLAG_DEFENSE_DISTANCE() { mixin(MGPC!(int, 100)()); }
+		int MINIMUM_ULTRA_GRAB_SPEED() { mixin(MGPC!(int, 96)()); }
+		int MINIMUM_FAST_GRAB_SPEED() { mixin(MGPC!(int, 92)()); }
+		int MAXIMUM_LLAMA_GRAB_SPEED() { mixin(MGPC!(int, 88)()); }
+		int MINIMUM_TIME_FLAG_CREDITS() { mixin(MGPC!(int, 84)()); }
+		int m_nCurrSpinfusorKillStreak() { mixin(MGPC!(int, 80)()); }
+		int m_nCurrExplosiveKillStreak() { mixin(MGPC!(int, 76)()); }
+		int m_nCurrSnipingKillStreak() { mixin(MGPC!(int, 72)()); }
+		TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 68)()); }
+		TrPlayerController m_TrPC() { mixin(MGPC!(TrPlayerController, 64)()); }
+		TrGame m_TrG() { mixin(MGPC!(TrGame, 60)()); }
 	}
 final:
 	int GetFlagDistance(Vector Loc1, Vector Loc2)

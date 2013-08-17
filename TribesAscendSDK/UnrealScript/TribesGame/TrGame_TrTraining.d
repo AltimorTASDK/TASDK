@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGame_TrTraining;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.TribesGame.TrGame;
@@ -9,9 +10,9 @@ extern(C++) interface TrGame_TrTraining : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrTraining")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TrTraining")()); }
 	private static __gshared TrGame_TrTraining mDefaultProperties;
-	@property final static TrGame_TrTraining DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TrTraining)("TrGame_TrTraining TribesGame.Default__TrGame_TrTraining")); }
+	@property final static TrGame_TrTraining DefaultProperties() { mixin(MGDPC!(TrGame_TrTraining, "TrGame_TrTraining TribesGame.Default__TrGame_TrTraining")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,13 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckScore() { return mCheckScore ? mCheckScore : (mCheckScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrTraining.CheckScore")); }
-			ScriptFunction PickTeam() { return mPickTeam ? mPickTeam : (mPickTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrTraining.PickTeam")); }
-			ScriptFunction PickTeamForMigration() { return mPickTeamForMigration ? mPickTeamForMigration : (mPickTeamForMigration = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrTraining.PickTeamForMigration")); }
-			ScriptFunction EndGame() { return mEndGame ? mEndGame : (mEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrTraining.EndGame")); }
-			ScriptFunction AutoEndGame() { return mAutoEndGame ? mAutoEndGame : (mAutoEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrTraining.AutoEndGame")); }
-			ScriptFunction PlayEndOfMatchMessage() { return mPlayEndOfMatchMessage ? mPlayEndOfMatchMessage : (mPlayEndOfMatchMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrTraining.PlayEndOfMatchMessage")); }
+			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TrTraining.CheckScore")()); }
+			ScriptFunction PickTeam() { mixin(MGF!("mPickTeam", "Function TribesGame.TrGame_TrTraining.PickTeam")()); }
+			ScriptFunction PickTeamForMigration() { mixin(MGF!("mPickTeamForMigration", "Function TribesGame.TrGame_TrTraining.PickTeamForMigration")()); }
+			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function TribesGame.TrGame_TrTraining.EndGame")()); }
+			ScriptFunction AutoEndGame() { mixin(MGF!("mAutoEndGame", "Function TribesGame.TrGame_TrTraining.AutoEndGame")()); }
+			ScriptFunction PlayEndOfMatchMessage() { mixin(MGF!("mPlayEndOfMatchMessage", "Function TribesGame.TrGame_TrTraining.PlayEndOfMatchMessage")()); }
 		}
+	}
+	static struct MatchOver
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TrTraining.MatchOver")()); }
 	}
 final:
 	bool CheckScore(PlayerReplicationInfo Scorer)

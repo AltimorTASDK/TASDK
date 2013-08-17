@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_AudioSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_AudioSettings : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_AudioSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_AudioSettings")()); }
 	private static __gshared GFxTrPage_AudioSettings mDefaultProperties;
-	@property final static GFxTrPage_AudioSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_AudioSettings)("GFxTrPage_AudioSettings TribesGame.Default__GFxTrPage_AudioSettings")); }
+	@property final static GFxTrPage_AudioSettings DefaultProperties() { mixin(MGDPC!(GFxTrPage_AudioSettings, "GFxTrPage_AudioSettings TribesGame.Default__GFxTrPage_AudioSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,19 +26,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_AudioSettings.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_AudioSettings.SpecialAction")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_AudioSettings.FillOption")); }
-			ScriptFunction SetSubTitle() { return mSetSubTitle ? mSetSubTitle : (mSetSubTitle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_AudioSettings.SetSubTitle")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_AudioSettings.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_AudioSettings.PopupComplete")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_AudioSettings.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_AudioSettings.SpecialAction")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_AudioSettings.FillOption")()); }
+			ScriptFunction SetSubTitle() { mixin(MGF!("mSetSubTitle", "Function TribesGame.GFxTrPage_AudioSettings.SetSubTitle")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_AudioSettings.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_AudioSettings.PopupComplete")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref int AudioIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-		bool bWaitingForAudioEntry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
-		bool bWaitingForAudioEntry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
+		@property final auto ref int AudioIndex() { mixin(MGPC!(int, 356)()); }
+		bool bWaitingForAudioEntry() { mixin(MGBPC!(360, 0x1)()); }
+		bool bWaitingForAudioEntry(bool val) { mixin(MSBPC!(360, 0x1)()); }
 	}
 final:
 	void Initialize()

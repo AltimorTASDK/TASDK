@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ExponentialHeightFogComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorComponent;
 import UnrealScript.Core.UObject;
 
@@ -8,31 +9,31 @@ extern(C++) interface ExponentialHeightFogComponent : ActorComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ExponentialHeightFogComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ExponentialHeightFogComponent")()); }
 	private static __gshared ExponentialHeightFogComponent mDefaultProperties;
-	@property final static ExponentialHeightFogComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ExponentialHeightFogComponent)("ExponentialHeightFogComponent Engine.Default__ExponentialHeightFogComponent")); }
+	@property final static ExponentialHeightFogComponent DefaultProperties() { mixin(MGDPC!(ExponentialHeightFogComponent, "ExponentialHeightFogComponent Engine.Default__ExponentialHeightFogComponent")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetEnabled;
-		public @property static final ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.ExponentialHeightFogComponent.SetEnabled")); }
+		public @property static final ScriptFunction SetEnabled() { mixin(MGF!("mSetEnabled", "Function Engine.ExponentialHeightFogComponent.SetEnabled")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Color LightInscatteringColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 128); }
-			float LightInscatteringBrightness() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-			UObject.Color OppositeLightColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 120); }
-			float OppositeLightBrightness() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float LightTerminatorAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			float StartDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			float FogMaxOpacity() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float FogHeightFalloff() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float FogDensity() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float FogHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
+			UObject.Color LightInscatteringColor() { mixin(MGPC!(UObject.Color, 128)()); }
+			float LightInscatteringBrightness() { mixin(MGPC!(float, 124)()); }
+			UObject.Color OppositeLightColor() { mixin(MGPC!(UObject.Color, 120)()); }
+			float OppositeLightBrightness() { mixin(MGPC!(float, 116)()); }
+			float LightTerminatorAngle() { mixin(MGPC!(float, 112)()); }
+			float StartDistance() { mixin(MGPC!(float, 108)()); }
+			float FogMaxOpacity() { mixin(MGPC!(float, 104)()); }
+			float FogHeightFalloff() { mixin(MGPC!(float, 100)()); }
+			float FogDensity() { mixin(MGPC!(float, 96)()); }
+			float FogHeight() { mixin(MGPC!(float, 92)()); }
 		}
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bEnabled() { mixin(MGBPC!(88, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 	final void SetEnabled(bool bSetEnabled)
 	{

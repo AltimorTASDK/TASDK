@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCTFSquadAI;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
@@ -15,9 +16,9 @@ extern(C++) interface UTCTFSquadAI : UTSquadAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFSquadAI")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFSquadAI")()); }
 	private static __gshared UTCTFSquadAI mDefaultProperties;
-	@property final static UTCTFSquadAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFSquadAI)("UTCTFSquadAI UTGame.Default__UTCTFSquadAI")); }
+	@property final static UTCTFSquadAI DefaultProperties() { mixin(MGDPC!(UTCTFSquadAI, "UTCTFSquadAI UTGame.Default__UTCTFSquadAI")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -50,41 +51,41 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.PostBeginPlay")); }
-			ScriptFunction AllowDetourTo() { return mAllowDetourTo ? mAllowDetourTo : (mAllowDetourTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.AllowDetourTo")); }
-			ScriptFunction ShouldUseAlternatePaths() { return mShouldUseAlternatePaths ? mShouldUseAlternatePaths : (mShouldUseAlternatePaths = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.ShouldUseAlternatePaths")); }
-			ScriptFunction SetAlternatePathTo() { return mSetAlternatePathTo ? mSetAlternatePathTo : (mSetAlternatePathTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.SetAlternatePathTo")); }
-			ScriptFunction BeDevious() { return mBeDevious ? mBeDevious : (mBeDevious = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.BeDevious")); }
-			ScriptFunction FindPathToObjective() { return mFindPathToObjective ? mFindPathToObjective : (mFindPathToObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.FindPathToObjective")); }
-			ScriptFunction GoPickupFlag() { return mGoPickupFlag ? mGoPickupFlag : (mGoPickupFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.GoPickupFlag")); }
-			ScriptFunction FormationCenter() { return mFormationCenter ? mFormationCenter : (mFormationCenter = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.FormationCenter")); }
-			ScriptFunction VisibleToEnemiesOf() { return mVisibleToEnemiesOf ? mVisibleToEnemiesOf : (mVisibleToEnemiesOf = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.VisibleToEnemiesOf")); }
-			ScriptFunction FindHidePathFor() { return mFindHidePathFor ? mFindHidePathFor : (mFindHidePathFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.FindHidePathFor")); }
-			ScriptFunction CheckVehicle() { return mCheckVehicle ? mCheckVehicle : (mCheckVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.CheckVehicle")); }
-			ScriptFunction OrdersForFlagCarrier() { return mOrdersForFlagCarrier ? mOrdersForFlagCarrier : (mOrdersForFlagCarrier = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.OrdersForFlagCarrier")); }
-			ScriptFunction MustKeepEnemy() { return mMustKeepEnemy ? mMustKeepEnemy : (mMustKeepEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.MustKeepEnemy")); }
-			ScriptFunction NearEnemyBase() { return mNearEnemyBase ? mNearEnemyBase : (mNearEnemyBase = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.NearEnemyBase")); }
-			ScriptFunction NearHomeBase() { return mNearHomeBase ? mNearHomeBase : (mNearHomeBase = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.NearHomeBase")); }
-			ScriptFunction FlagNearBase() { return mFlagNearBase ? mFlagNearBase : (mFlagNearBase = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.FlagNearBase")); }
-			ScriptFunction OverrideFollowPlayer() { return mOverrideFollowPlayer ? mOverrideFollowPlayer : (mOverrideFollowPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.OverrideFollowPlayer")); }
-			ScriptFunction CheckSquadObjectives() { return mCheckSquadObjectives ? mCheckSquadObjectives : (mCheckSquadObjectives = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.CheckSquadObjectives")); }
-			ScriptFunction EnemyFlagTakenBy() { return mEnemyFlagTakenBy ? mEnemyFlagTakenBy : (mEnemyFlagTakenBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.EnemyFlagTakenBy")); }
-			ScriptFunction AllowTaunt() { return mAllowTaunt ? mAllowTaunt : (mAllowTaunt = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.AllowTaunt")); }
-			ScriptFunction ShouldDeferTo() { return mShouldDeferTo ? mShouldDeferTo : (mShouldDeferTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.ShouldDeferTo")); }
-			ScriptFunction PriorityObjective() { return mPriorityObjective ? mPriorityObjective : (mPriorityObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.PriorityObjective")); }
-			ScriptFunction ModifyThreat() { return mModifyThreat ? mModifyThreat : (mModifyThreat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.ModifyThreat")); }
-			ScriptFunction AllowContinueOnFoot() { return mAllowContinueOnFoot ? mAllowContinueOnFoot : (mAllowContinueOnFoot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.AllowContinueOnFoot")); }
-			ScriptFunction ModifyAggression() { return mModifyAggression ? mModifyAggression : (mModifyAggression = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFSquadAI.ModifyAggression")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCTFSquadAI.PostBeginPlay")()); }
+			ScriptFunction AllowDetourTo() { mixin(MGF!("mAllowDetourTo", "Function UTGame.UTCTFSquadAI.AllowDetourTo")()); }
+			ScriptFunction ShouldUseAlternatePaths() { mixin(MGF!("mShouldUseAlternatePaths", "Function UTGame.UTCTFSquadAI.ShouldUseAlternatePaths")()); }
+			ScriptFunction SetAlternatePathTo() { mixin(MGF!("mSetAlternatePathTo", "Function UTGame.UTCTFSquadAI.SetAlternatePathTo")()); }
+			ScriptFunction BeDevious() { mixin(MGF!("mBeDevious", "Function UTGame.UTCTFSquadAI.BeDevious")()); }
+			ScriptFunction FindPathToObjective() { mixin(MGF!("mFindPathToObjective", "Function UTGame.UTCTFSquadAI.FindPathToObjective")()); }
+			ScriptFunction GoPickupFlag() { mixin(MGF!("mGoPickupFlag", "Function UTGame.UTCTFSquadAI.GoPickupFlag")()); }
+			ScriptFunction FormationCenter() { mixin(MGF!("mFormationCenter", "Function UTGame.UTCTFSquadAI.FormationCenter")()); }
+			ScriptFunction VisibleToEnemiesOf() { mixin(MGF!("mVisibleToEnemiesOf", "Function UTGame.UTCTFSquadAI.VisibleToEnemiesOf")()); }
+			ScriptFunction FindHidePathFor() { mixin(MGF!("mFindHidePathFor", "Function UTGame.UTCTFSquadAI.FindHidePathFor")()); }
+			ScriptFunction CheckVehicle() { mixin(MGF!("mCheckVehicle", "Function UTGame.UTCTFSquadAI.CheckVehicle")()); }
+			ScriptFunction OrdersForFlagCarrier() { mixin(MGF!("mOrdersForFlagCarrier", "Function UTGame.UTCTFSquadAI.OrdersForFlagCarrier")()); }
+			ScriptFunction MustKeepEnemy() { mixin(MGF!("mMustKeepEnemy", "Function UTGame.UTCTFSquadAI.MustKeepEnemy")()); }
+			ScriptFunction NearEnemyBase() { mixin(MGF!("mNearEnemyBase", "Function UTGame.UTCTFSquadAI.NearEnemyBase")()); }
+			ScriptFunction NearHomeBase() { mixin(MGF!("mNearHomeBase", "Function UTGame.UTCTFSquadAI.NearHomeBase")()); }
+			ScriptFunction FlagNearBase() { mixin(MGF!("mFlagNearBase", "Function UTGame.UTCTFSquadAI.FlagNearBase")()); }
+			ScriptFunction OverrideFollowPlayer() { mixin(MGF!("mOverrideFollowPlayer", "Function UTGame.UTCTFSquadAI.OverrideFollowPlayer")()); }
+			ScriptFunction CheckSquadObjectives() { mixin(MGF!("mCheckSquadObjectives", "Function UTGame.UTCTFSquadAI.CheckSquadObjectives")()); }
+			ScriptFunction EnemyFlagTakenBy() { mixin(MGF!("mEnemyFlagTakenBy", "Function UTGame.UTCTFSquadAI.EnemyFlagTakenBy")()); }
+			ScriptFunction AllowTaunt() { mixin(MGF!("mAllowTaunt", "Function UTGame.UTCTFSquadAI.AllowTaunt")()); }
+			ScriptFunction ShouldDeferTo() { mixin(MGF!("mShouldDeferTo", "Function UTGame.UTCTFSquadAI.ShouldDeferTo")()); }
+			ScriptFunction PriorityObjective() { mixin(MGF!("mPriorityObjective", "Function UTGame.UTCTFSquadAI.PriorityObjective")()); }
+			ScriptFunction ModifyThreat() { mixin(MGF!("mModifyThreat", "Function UTGame.UTCTFSquadAI.ModifyThreat")()); }
+			ScriptFunction AllowContinueOnFoot() { mixin(MGF!("mAllowContinueOnFoot", "Function UTGame.UTCTFSquadAI.AllowContinueOnFoot")()); }
+			ScriptFunction ModifyAggression() { mixin(MGF!("mModifyAggression", "Function UTGame.UTCTFSquadAI.ModifyAggression")()); }
 		}
 	}
 	@property final auto ref
 	{
-		UTCTFFlag EnemyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 688); }
-		UTCTFFlag FriendlyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 684); }
-		ScriptArray!(UDKSquadAI.AlternateRoute) EnemyFlagRoutes() { return *cast(ScriptArray!(UDKSquadAI.AlternateRoute)*)(cast(size_t)cast(void*)this + 696); }
-		ScriptArray!(UDKSquadAI.AlternateRoute) FriendlyFlagRoutes() { return *cast(ScriptArray!(UDKSquadAI.AlternateRoute)*)(cast(size_t)cast(void*)this + 708); }
-		NavigationPoint HidePath() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 692); }
-		float LastSeeFlagCarrier() { return *cast(float*)(cast(size_t)cast(void*)this + 680); }
+		UTCTFFlag EnemyFlag() { mixin(MGPC!(UTCTFFlag, 688)()); }
+		UTCTFFlag FriendlyFlag() { mixin(MGPC!(UTCTFFlag, 684)()); }
+		ScriptArray!(UDKSquadAI.AlternateRoute) EnemyFlagRoutes() { mixin(MGPC!(ScriptArray!(UDKSquadAI.AlternateRoute), 696)()); }
+		ScriptArray!(UDKSquadAI.AlternateRoute) FriendlyFlagRoutes() { mixin(MGPC!(ScriptArray!(UDKSquadAI.AlternateRoute), 708)()); }
+		NavigationPoint HidePath() { mixin(MGPC!(NavigationPoint, 692)()); }
+		float LastSeeFlagCarrier() { mixin(MGPC!(float, 680)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -279,12 +280,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowContinueOnFoot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	void ModifyAggression(UTBot B, float* Aggression)
+	void ModifyAggression(UTBot B, ref float Aggression)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTBot*)params.ptr = B;
-		*cast(float*)&params[4] = *Aggression;
+		*cast(float*)&params[4] = Aggression;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyAggression, params.ptr, cast(void*)0);
 		*Aggression = *cast(float*)&params[4];
 	}

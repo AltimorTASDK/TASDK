@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrEntryGame;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTEntryGame;
 
 extern(C++) interface TrEntryGame : UTEntryGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEntryGame")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEntryGame")()); }
 	private static __gshared TrEntryGame mDefaultProperties;
-	@property final static TrEntryGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEntryGame)("TrEntryGame TribesGame.Default__TrEntryGame")); }
+	@property final static TrEntryGame DefaultProperties() { mixin(MGDPC!(TrEntryGame, "TrEntryGame TribesGame.Default__TrEntryGame")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,9 +21,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SendMenuEngineLoaded() { return mSendMenuEngineLoaded ? mSendMenuEngineLoaded : (mSendMenuEngineLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryGame.SendMenuEngineLoaded")); }
-			ScriptFunction SetGameType() { return mSetGameType ? mSetGameType : (mSetGameType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryGame.SetGameType")); }
-			ScriptFunction OnEngineHasLoaded() { return mOnEngineHasLoaded ? mOnEngineHasLoaded : (mOnEngineHasLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryGame.OnEngineHasLoaded")); }
+			ScriptFunction SendMenuEngineLoaded() { mixin(MGF!("mSendMenuEngineLoaded", "Function TribesGame.TrEntryGame.SendMenuEngineLoaded")()); }
+			ScriptFunction SetGameType() { mixin(MGF!("mSetGameType", "Function TribesGame.TrEntryGame.SetGameType")()); }
+			ScriptFunction OnEngineHasLoaded() { mixin(MGF!("mOnEngineHasLoaded", "Function TribesGame.TrEntryGame.OnEngineHasLoaded")()); }
 		}
 	}
 final:

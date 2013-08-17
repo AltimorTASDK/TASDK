@@ -1,13 +1,14 @@
 module UnrealScript.Engine.MaterialExpressionFlipBookSample;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpressionTextureSample;
 
 extern(C++) interface MaterialExpressionFlipBookSample : MaterialExpressionTextureSample
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionFlipBookSample")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionFlipBookSample")()); }
 	private static __gshared MaterialExpressionFlipBookSample mDefaultProperties;
-	@property final static MaterialExpressionFlipBookSample DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionFlipBookSample)("MaterialExpressionFlipBookSample Engine.Default__MaterialExpressionFlipBookSample")); }
+	@property final static MaterialExpressionFlipBookSample DefaultProperties() { mixin(MGDPC!(MaterialExpressionFlipBookSample, "MaterialExpressionFlipBookSample Engine.Default__MaterialExpressionFlipBookSample")()); }
 }

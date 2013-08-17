@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleTypeDataBeam;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
@@ -9,9 +10,9 @@ extern(C++) interface ParticleModuleTypeDataBeam : ParticleModuleTypeDataBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataBeam")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleTypeDataBeam")()); }
 	private static __gshared ParticleModuleTypeDataBeam mDefaultProperties;
-	@property final static ParticleModuleTypeDataBeam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataBeam)("ParticleModuleTypeDataBeam Engine.Default__ParticleModuleTypeDataBeam")); }
+	@property final static ParticleModuleTypeDataBeam DefaultProperties() { mixin(MGDPC!(ParticleModuleTypeDataBeam, "ParticleModuleTypeDataBeam Engine.Default__ParticleModuleTypeDataBeam")()); }
 	enum EBeamMethod : ubyte
 	{
 		PEBM_Distance = 0,
@@ -32,23 +33,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			int TextureTile() { return *cast(int*)(cast(size_t)cast(void*)this + 220); }
-			DistributionVector.RawDistributionVector EndPointDirection() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 192); }
-			DistributionFloat.RawDistributionFloat TargetStrength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 164); }
-			DistributionFloat.RawDistributionFloat EmitterStrength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 136); }
-			int TessellationFactor() { return *cast(int*)(cast(size_t)cast(void*)this + 132); }
-			DistributionVector.RawDistributionVector EndPoint() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 104); }
-			DistributionFloat.RawDistributionFloat Distance() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 76); }
-			ParticleModuleTypeDataBeam.EBeamEndPointMethod EndPointMethod() { return *cast(ParticleModuleTypeDataBeam.EBeamEndPointMethod*)(cast(size_t)cast(void*)this + 73); }
-			ParticleModuleTypeDataBeam.EBeamMethod BeamMethod() { return *cast(ParticleModuleTypeDataBeam.EBeamMethod*)(cast(size_t)cast(void*)this + 72); }
+			int TextureTile() { mixin(MGPC!(int, 220)()); }
+			DistributionVector.RawDistributionVector EndPointDirection() { mixin(MGPC!(DistributionVector.RawDistributionVector, 192)()); }
+			DistributionFloat.RawDistributionFloat TargetStrength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 164)()); }
+			DistributionFloat.RawDistributionFloat EmitterStrength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 136)()); }
+			int TessellationFactor() { mixin(MGPC!(int, 132)()); }
+			DistributionVector.RawDistributionVector EndPoint() { mixin(MGPC!(DistributionVector.RawDistributionVector, 104)()); }
+			DistributionFloat.RawDistributionFloat Distance() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 76)()); }
+			ParticleModuleTypeDataBeam.EBeamEndPointMethod EndPointMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam.EBeamEndPointMethod, 73)()); }
+			ParticleModuleTypeDataBeam.EBeamMethod BeamMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam.EBeamMethod, 72)()); }
 		}
-		bool RenderTessellation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x8) != 0; }
-		bool RenderTessellation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x8; } return val; }
-		bool RenderLines() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x4) != 0; }
-		bool RenderLines(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x4; } return val; }
-		bool RenderDirectLine() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x2) != 0; }
-		bool RenderDirectLine(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x2; } return val; }
-		bool RenderGeometry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x1) != 0; }
-		bool RenderGeometry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x1; } return val; }
+		bool RenderTessellation() { mixin(MGBPC!(224, 0x8)()); }
+		bool RenderTessellation(bool val) { mixin(MSBPC!(224, 0x8)()); }
+		bool RenderLines() { mixin(MGBPC!(224, 0x4)()); }
+		bool RenderLines(bool val) { mixin(MSBPC!(224, 0x4)()); }
+		bool RenderDirectLine() { mixin(MGBPC!(224, 0x2)()); }
+		bool RenderDirectLine(bool val) { mixin(MSBPC!(224, 0x2)()); }
+		bool RenderGeometry() { mixin(MGBPC!(224, 0x1)()); }
+		bool RenderGeometry(bool val) { mixin(MSBPC!(224, 0x1)()); }
 	}
 }

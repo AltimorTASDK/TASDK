@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_Profile;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_Profile : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Profile")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Profile")()); }
 	private static __gshared GFxTrPage_Profile mDefaultProperties;
-	@property final static GFxTrPage_Profile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Profile)("GFxTrPage_Profile TribesGame.Default__GFxTrPage_Profile")); }
+	@property final static GFxTrPage_Profile DefaultProperties() { mixin(MGDPC!(GFxTrPage_Profile, "GFxTrPage_Profile TribesGame.Default__GFxTrPage_Profile")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -50,37 +51,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.SpecialAction")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.ShowModel")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.TakeFocus")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.FillData")); }
-			ScriptFunction FillProfile() { return mFillProfile ? mFillProfile : (mFillProfile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.FillProfile")); }
-			ScriptFunction GetKDR() { return mGetKDR ? mGetKDR : (mGetKDR = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetKDR")); }
-			ScriptFunction GetPlayedPercent() { return mGetPlayedPercent ? mGetPlayedPercent : (mGetPlayedPercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetPlayedPercent")); }
-			ScriptFunction GetMostPlayed() { return mGetMostPlayed ? mGetMostPlayed : (mGetMostPlayed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetMostPlayed")); }
-			ScriptFunction GetTimePlayed() { return mGetTimePlayed ? mGetTimePlayed : (mGetTimePlayed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTimePlayed")); }
-			ScriptFunction GetGamesPlayed() { return mGetGamesPlayed ? mGetGamesPlayed : (mGetGamesPlayed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGamesPlayed")); }
-			ScriptFunction GetTotalScore() { return mGetTotalScore ? mGetTotalScore : (mGetTotalScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTotalScore")); }
-			ScriptFunction GetScorePerHour() { return mGetScorePerHour ? mGetScorePerHour : (mGetScorePerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetScorePerHour")); }
-			ScriptFunction GetTotalAccolades() { return mGetTotalAccolades ? mGetTotalAccolades : (mGetTotalAccolades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTotalAccolades")); }
-			ScriptFunction GetAccoladesPerHour() { return mGetAccoladesPerHour ? mGetAccoladesPerHour : (mGetAccoladesPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetAccoladesPerHour")); }
-			ScriptFunction GetGamesWon() { return mGetGamesWon ? mGetGamesWon : (mGetGamesWon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGamesWon")); }
-			ScriptFunction GetGamesLost() { return mGetGamesLost ? mGetGamesLost : (mGetGamesLost = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGamesLost")); }
-			ScriptFunction GetWinLossRatio() { return mGetWinLossRatio ? mGetWinLossRatio : (mGetWinLossRatio = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetWinLossRatio")); }
-			ScriptFunction GetAccoladeCount() { return mGetAccoladeCount ? mGetAccoladeCount : (mGetAccoladeCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetAccoladeCount")); }
-			ScriptFunction GetTopBadgeIcon() { return mGetTopBadgeIcon ? mGetTopBadgeIcon : (mGetTopBadgeIcon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTopBadgeIcon")); }
-			ScriptFunction GetFlagDefenses() { return mGetFlagDefenses ? mGetFlagDefenses : (mGetFlagDefenses = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagDefenses")); }
-			ScriptFunction GetFlagDefensesPerHour() { return mGetFlagDefensesPerHour ? mGetFlagDefensesPerHour : (mGetFlagDefensesPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagDefensesPerHour")); }
-			ScriptFunction GetFlagCaps() { return mGetFlagCaps ? mGetFlagCaps : (mGetFlagCaps = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagCaps")); }
-			ScriptFunction GetFlagCapsHour() { return mGetFlagCapsHour ? mGetFlagCapsHour : (mGetFlagCapsHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagCapsHour")); }
-			ScriptFunction GetGensDestroyed() { return mGetGensDestroyed ? mGetGensDestroyed : (mGetGensDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGensDestroyed")); }
-			ScriptFunction GetGensDestroyedPerHour() { return mGetGensDestroyedPerHour ? mGetGensDestroyedPerHour : (mGetGensDestroyedPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGensDestroyedPerHour")); }
-			ScriptFunction GetObjsDestroyed() { return mGetObjsDestroyed ? mGetObjsDestroyed : (mGetObjsDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetObjsDestroyed")); }
-			ScriptFunction GetObjsDestroyedPerHour() { return mGetObjsDestroyedPerHour ? mGetObjsDestroyedPerHour : (mGetObjsDestroyedPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetObjsDestroyedPerHour")); }
-			ScriptFunction GetAssists() { return mGetAssists ? mGetAssists : (mGetAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetAssists")); }
-			ScriptFunction GetMidairCount() { return mGetMidairCount ? mGetMidairCount : (mGetMidairCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetMidairCount")); }
-			ScriptFunction GetFastestSki() { return mGetFastestSki ? mGetFastestSki : (mGetFastestSki = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFastestSki")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Profile.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Profile.SpecialAction")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Profile.ShowModel")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_Profile.TakeFocus")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Profile.FillData")()); }
+			ScriptFunction FillProfile() { mixin(MGF!("mFillProfile", "Function TribesGame.GFxTrPage_Profile.FillProfile")()); }
+			ScriptFunction GetKDR() { mixin(MGF!("mGetKDR", "Function TribesGame.GFxTrPage_Profile.GetKDR")()); }
+			ScriptFunction GetPlayedPercent() { mixin(MGF!("mGetPlayedPercent", "Function TribesGame.GFxTrPage_Profile.GetPlayedPercent")()); }
+			ScriptFunction GetMostPlayed() { mixin(MGF!("mGetMostPlayed", "Function TribesGame.GFxTrPage_Profile.GetMostPlayed")()); }
+			ScriptFunction GetTimePlayed() { mixin(MGF!("mGetTimePlayed", "Function TribesGame.GFxTrPage_Profile.GetTimePlayed")()); }
+			ScriptFunction GetGamesPlayed() { mixin(MGF!("mGetGamesPlayed", "Function TribesGame.GFxTrPage_Profile.GetGamesPlayed")()); }
+			ScriptFunction GetTotalScore() { mixin(MGF!("mGetTotalScore", "Function TribesGame.GFxTrPage_Profile.GetTotalScore")()); }
+			ScriptFunction GetScorePerHour() { mixin(MGF!("mGetScorePerHour", "Function TribesGame.GFxTrPage_Profile.GetScorePerHour")()); }
+			ScriptFunction GetTotalAccolades() { mixin(MGF!("mGetTotalAccolades", "Function TribesGame.GFxTrPage_Profile.GetTotalAccolades")()); }
+			ScriptFunction GetAccoladesPerHour() { mixin(MGF!("mGetAccoladesPerHour", "Function TribesGame.GFxTrPage_Profile.GetAccoladesPerHour")()); }
+			ScriptFunction GetGamesWon() { mixin(MGF!("mGetGamesWon", "Function TribesGame.GFxTrPage_Profile.GetGamesWon")()); }
+			ScriptFunction GetGamesLost() { mixin(MGF!("mGetGamesLost", "Function TribesGame.GFxTrPage_Profile.GetGamesLost")()); }
+			ScriptFunction GetWinLossRatio() { mixin(MGF!("mGetWinLossRatio", "Function TribesGame.GFxTrPage_Profile.GetWinLossRatio")()); }
+			ScriptFunction GetAccoladeCount() { mixin(MGF!("mGetAccoladeCount", "Function TribesGame.GFxTrPage_Profile.GetAccoladeCount")()); }
+			ScriptFunction GetTopBadgeIcon() { mixin(MGF!("mGetTopBadgeIcon", "Function TribesGame.GFxTrPage_Profile.GetTopBadgeIcon")()); }
+			ScriptFunction GetFlagDefenses() { mixin(MGF!("mGetFlagDefenses", "Function TribesGame.GFxTrPage_Profile.GetFlagDefenses")()); }
+			ScriptFunction GetFlagDefensesPerHour() { mixin(MGF!("mGetFlagDefensesPerHour", "Function TribesGame.GFxTrPage_Profile.GetFlagDefensesPerHour")()); }
+			ScriptFunction GetFlagCaps() { mixin(MGF!("mGetFlagCaps", "Function TribesGame.GFxTrPage_Profile.GetFlagCaps")()); }
+			ScriptFunction GetFlagCapsHour() { mixin(MGF!("mGetFlagCapsHour", "Function TribesGame.GFxTrPage_Profile.GetFlagCapsHour")()); }
+			ScriptFunction GetGensDestroyed() { mixin(MGF!("mGetGensDestroyed", "Function TribesGame.GFxTrPage_Profile.GetGensDestroyed")()); }
+			ScriptFunction GetGensDestroyedPerHour() { mixin(MGF!("mGetGensDestroyedPerHour", "Function TribesGame.GFxTrPage_Profile.GetGensDestroyedPerHour")()); }
+			ScriptFunction GetObjsDestroyed() { mixin(MGF!("mGetObjsDestroyed", "Function TribesGame.GFxTrPage_Profile.GetObjsDestroyed")()); }
+			ScriptFunction GetObjsDestroyedPerHour() { mixin(MGF!("mGetObjsDestroyedPerHour", "Function TribesGame.GFxTrPage_Profile.GetObjsDestroyedPerHour")()); }
+			ScriptFunction GetAssists() { mixin(MGF!("mGetAssists", "Function TribesGame.GFxTrPage_Profile.GetAssists")()); }
+			ScriptFunction GetMidairCount() { mixin(MGF!("mGetMidairCount", "Function TribesGame.GFxTrPage_Profile.GetMidairCount")()); }
+			ScriptFunction GetFastestSki() { mixin(MGF!("mGetFastestSki", "Function TribesGame.GFxTrPage_Profile.GetFastestSki")()); }
 		}
 	}
 	static struct Constants

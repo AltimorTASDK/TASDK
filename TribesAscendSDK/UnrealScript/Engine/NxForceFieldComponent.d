@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NxForceFieldComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.ForceFieldShape;
@@ -9,34 +10,36 @@ extern(C++) interface NxForceFieldComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NxForceFieldComponent")()); }
 	private static __gshared NxForceFieldComponent mDefaultProperties;
-	@property final static NxForceFieldComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldComponent)("NxForceFieldComponent Engine.Default__NxForceFieldComponent")); }
+	@property final static NxForceFieldComponent DefaultProperties() { mixin(MGDPC!(NxForceFieldComponent, "NxForceFieldComponent Engine.Default__NxForceFieldComponent")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDoInitRBPhys;
-		public @property static final ScriptFunction DoInitRBPhys() { return mDoInitRBPhys ? mDoInitRBPhys : (mDoInitRBPhys = ScriptObject.Find!(ScriptFunction)("Function Engine.NxForceFieldComponent.DoInitRBPhys")); }
+		public @property static final ScriptFunction DoInitRBPhys() { mixin(MGF!("mDoInitRBPhys", "Function Engine.NxForceFieldComponent.DoInitRBPhys")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) ConvexMeshes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 516); }
-			ScriptArray!(UObject.Pointer) ExclusionShapes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 528); }
-			ScriptArray!(UObject.Pointer) ExclusionShapePoses() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 540); }
-			UObject.Pointer RBPhysScene() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 564); }
-			float ElapsedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			int SceneIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 552); }
-			UObject.Pointer ForceField() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 512); }
-			float Duration() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 504); }
-			int ExcludeChannel() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-			ForceFieldShape Shape() { return *cast(ForceFieldShape*)(cast(size_t)cast(void*)this + 488); }
+			ScriptArray!(UObject.Pointer) ConvexMeshes() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 516)()); }
+			ScriptArray!(UObject.Pointer) ExclusionShapes() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 528)()); }
+			ScriptArray!(UObject.Pointer) ExclusionShapePoses() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 540)()); }
+			UObject.Pointer RBPhysScene() { mixin(MGPC!(UObject.Pointer, 564)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
+			float ElapsedTime() { mixin(MGPC!(float, 556)()); }
+			int SceneIndex() { mixin(MGPC!(int, 552)()); }
+			UObject.Pointer ForceField() { mixin(MGPC!(UObject.Pointer, 512)()); }
+			float Duration() { mixin(MGPC!(float, 508)()); }
+			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 504)()); }
+			int ExcludeChannel() { mixin(MGPC!(int, 496)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DrawComponent'!
+			ForceFieldShape Shape() { mixin(MGPC!(ForceFieldShape, 488)()); }
 		}
-		bool bDestroyWhenInactive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x2) != 0; }
-		bool bDestroyWhenInactive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x2; } return val; }
-		bool bForceActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x1) != 0; }
-		bool bForceActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x1; } return val; }
+		bool bDestroyWhenInactive() { mixin(MGBPC!(500, 0x2)()); }
+		bool bDestroyWhenInactive(bool val) { mixin(MSBPC!(500, 0x2)()); }
+		bool bForceActive() { mixin(MGBPC!(500, 0x1)()); }
+		bool bForceActive(bool val) { mixin(MSBPC!(500, 0x1)()); }
 	}
 	final void DoInitRBPhys()
 	{

@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKUIDataStore_MenuItems;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataStore_GameResource;
 import UnrealScript.UDKBase.UDKUIResourceDataProvider;
 import UnrealScript.Core.UObject;
@@ -9,9 +10,9 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataStore_MenuItems")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKUIDataStore_MenuItems")()); }
 	private static __gshared UDKUIDataStore_MenuItems mDefaultProperties;
-	@property final static UDKUIDataStore_MenuItems DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataStore_MenuItems)("UDKUIDataStore_MenuItems UDKBase.Default__UDKUIDataStore_MenuItems")); }
+	@property final static UDKUIDataStore_MenuItems DefaultProperties() { mixin(MGDPC!(UDKUIDataStore_MenuItems, "UDKUIDataStore_MenuItems UDKBase.Default__UDKUIDataStore_MenuItems")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,25 +29,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetProviderCount() { return mGetProviderCount ? mGetProviderCount : (mGetProviderCount = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.GetProviderCount")); }
-			ScriptFunction IsProviderFiltered() { return mIsProviderFiltered ? mIsProviderFiltered : (mIsProviderFiltered = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.IsProviderFiltered")); }
-			ScriptFunction GetAllResourceDataProviders() { return mGetAllResourceDataProviders ? mGetAllResourceDataProviders : (mGetAllResourceDataProviders = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.GetAllResourceDataProviders")); }
-			ScriptFunction FindValueInProviderSet() { return mFindValueInProviderSet ? mFindValueInProviderSet : (mFindValueInProviderSet = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.FindValueInProviderSet")); }
-			ScriptFunction GetValueFromProviderSet() { return mGetValueFromProviderSet ? mGetValueFromProviderSet : (mGetValueFromProviderSet = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.GetValueFromProviderSet")); }
-			ScriptFunction GetProviderSet() { return mGetProviderSet ? mGetProviderSet : (mGetProviderSet = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.GetProviderSet")); }
-			ScriptFunction InitializeListElementProviders() { return mInitializeListElementProviders ? mInitializeListElementProviders : (mInitializeListElementProviders = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.InitializeListElementProviders")); }
-			ScriptFunction RemoveListElementProvidersKey() { return mRemoveListElementProvidersKey ? mRemoveListElementProvidersKey : (mRemoveListElementProvidersKey = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.RemoveListElementProvidersKey")); }
-			ScriptFunction AddListElementProvidersKey() { return mAddListElementProvidersKey ? mAddListElementProvidersKey : (mAddListElementProvidersKey = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_MenuItems.AddListElementProvidersKey")); }
+			ScriptFunction GetProviderCount() { mixin(MGF!("mGetProviderCount", "Function UDKBase.UDKUIDataStore_MenuItems.GetProviderCount")()); }
+			ScriptFunction IsProviderFiltered() { mixin(MGF!("mIsProviderFiltered", "Function UDKBase.UDKUIDataStore_MenuItems.IsProviderFiltered")()); }
+			ScriptFunction GetAllResourceDataProviders() { mixin(MGF!("mGetAllResourceDataProviders", "Function UDKBase.UDKUIDataStore_MenuItems.GetAllResourceDataProviders")()); }
+			ScriptFunction FindValueInProviderSet() { mixin(MGF!("mFindValueInProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.FindValueInProviderSet")()); }
+			ScriptFunction GetValueFromProviderSet() { mixin(MGF!("mGetValueFromProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.GetValueFromProviderSet")()); }
+			ScriptFunction GetProviderSet() { mixin(MGF!("mGetProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.GetProviderSet")()); }
+			ScriptFunction InitializeListElementProviders() { mixin(MGF!("mInitializeListElementProviders", "Function UDKBase.UDKUIDataStore_MenuItems.InitializeListElementProviders")()); }
+			ScriptFunction RemoveListElementProvidersKey() { mixin(MGF!("mRemoveListElementProvidersKey", "Function UDKBase.UDKUIDataStore_MenuItems.RemoveListElementProvidersKey")()); }
+			ScriptFunction AddListElementProvidersKey() { mixin(MGF!("mAddListElementProvidersKey", "Function UDKBase.UDKUIDataStore_MenuItems.AddListElementProvidersKey")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) EnabledMutators() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 204); }
-		ScriptArray!(int) MapCycle() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 216); }
-		ScriptArray!(int) WeaponPriority() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 228); }
-		int GameModeFilter() { return *cast(int*)(cast(size_t)cast(void*)this + 240); }
-		ScriptClass MapInfoDataProviderClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 200); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 196); }
+		ScriptArray!(int) EnabledMutators() { mixin(MGPC!(ScriptArray!(int), 204)()); }
+		ScriptArray!(int) MapCycle() { mixin(MGPC!(ScriptArray!(int), 216)()); }
+		ScriptArray!(int) WeaponPriority() { mixin(MGPC!(ScriptArray!(int), 228)()); }
+		int GameModeFilter() { mixin(MGPC!(int, 240)()); }
+		ScriptClass MapInfoDataProviderClass() { mixin(MGPC!(ScriptClass, 200)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 196)()); }
 	}
 final:
 	int GetProviderCount(ScriptName FieldName)
@@ -66,12 +67,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsProviderFiltered, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	static void GetAllResourceDataProviders(ScriptClass ProviderClass, ScriptArray!(UDKUIResourceDataProvider)* Providers)
+	static void GetAllResourceDataProviders(ScriptClass ProviderClass, ref ScriptArray!(UDKUIResourceDataProvider) Providers)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = ProviderClass;
-		*cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[4] = *Providers;
+		*cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[4] = Providers;
 		StaticClass.ProcessEvent(Functions.GetAllResourceDataProviders, params.ptr, cast(void*)0);
 		*Providers = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[4];
 	}
@@ -85,24 +86,24 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindValueInProviderSet, params.ptr, cast(void*)0);
 		return *cast(int*)&params[28];
 	}
-	bool GetValueFromProviderSet(ScriptName ProviderFieldName, ScriptName SearchTag, int ListIndex, ScriptString* OutValue)
+	bool GetValueFromProviderSet(ScriptName ProviderFieldName, ScriptName SearchTag, int ListIndex, ref ScriptString OutValue)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderFieldName;
 		*cast(ScriptName*)&params[8] = SearchTag;
 		*cast(int*)&params[16] = ListIndex;
-		*cast(ScriptString*)&params[20] = *OutValue;
+		*cast(ScriptString*)&params[20] = OutValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetValueFromProviderSet, params.ptr, cast(void*)0);
 		*OutValue = *cast(ScriptString*)&params[20];
 		return *cast(bool*)&params[32];
 	}
-	bool GetProviderSet(ScriptName ProviderFieldName, ScriptArray!(UDKUIResourceDataProvider)* OutProviders)
+	bool GetProviderSet(ScriptName ProviderFieldName, ref ScriptArray!(UDKUIResourceDataProvider) OutProviders)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderFieldName;
-		*cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8] = *OutProviders;
+		*cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8] = OutProviders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProviderSet, params.ptr, cast(void*)0);
 		*OutProviders = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8];
 		return *cast(bool*)&params[20];

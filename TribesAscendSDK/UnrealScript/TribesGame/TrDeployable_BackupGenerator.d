@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeployable_BackupGenerator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrDeployable;
 import UnrealScript.TribesGame.TrGameObjective;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrDeployable_BackupGenerator : TrDeployable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_BackupGenerator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_BackupGenerator")()); }
 	private static __gshared TrDeployable_BackupGenerator mDefaultProperties;
-	@property final static TrDeployable_BackupGenerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_BackupGenerator)("TrDeployable_BackupGenerator TribesGame.Default__TrDeployable_BackupGenerator")); }
+	@property final static TrDeployable_BackupGenerator DefaultProperties() { mixin(MGDPC!(TrDeployable_BackupGenerator, "TrDeployable_BackupGenerator TribesGame.Default__TrDeployable_BackupGenerator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,20 +30,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DeployComplete() { return mDeployComplete ? mDeployComplete : (mDeployComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.DeployComplete")); }
-			ScriptFunction MainGeneratorIsOnline() { return mMainGeneratorIsOnline ? mMainGeneratorIsOnline : (mMainGeneratorIsOnline = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.MainGeneratorIsOnline")); }
-			ScriptFunction PowerNearestFriend() { return mPowerNearestFriend ? mPowerNearestFriend : (mPowerNearestFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.PowerNearestFriend")); }
-			ScriptFunction ReleasePoweredFriend() { return mReleasePoweredFriend ? mReleasePoweredFriend : (mReleasePoweredFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.ReleasePoweredFriend")); }
-			ScriptFunction PulseBackupGenerators() { return mPulseBackupGenerators ? mPulseBackupGenerators : (mPulseBackupGenerators = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.PulseBackupGenerators")); }
-			ScriptFunction AsynchPowerCheck() { return mAsynchPowerCheck ? mAsynchPowerCheck : (mAsynchPowerCheck = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.AsynchPowerCheck")); }
-			ScriptFunction DoPowerCheck() { return mDoPowerCheck ? mDoPowerCheck : (mDoPowerCheck = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.DoPowerCheck")); }
-			ScriptFunction OnPowerStatusChanged() { return mOnPowerStatusChanged ? mOnPowerStatusChanged : (mOnPowerStatusChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.OnPowerStatusChanged")); }
-			ScriptFunction DoPowerUpdate() { return mDoPowerUpdate ? mDoPowerUpdate : (mDoPowerUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.DoPowerUpdate")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.Destroyed")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_BackupGenerator.PostBeginPlay")); }
+			ScriptFunction DeployComplete() { mixin(MGF!("mDeployComplete", "Function TribesGame.TrDeployable_BackupGenerator.DeployComplete")()); }
+			ScriptFunction MainGeneratorIsOnline() { mixin(MGF!("mMainGeneratorIsOnline", "Function TribesGame.TrDeployable_BackupGenerator.MainGeneratorIsOnline")()); }
+			ScriptFunction PowerNearestFriend() { mixin(MGF!("mPowerNearestFriend", "Function TribesGame.TrDeployable_BackupGenerator.PowerNearestFriend")()); }
+			ScriptFunction ReleasePoweredFriend() { mixin(MGF!("mReleasePoweredFriend", "Function TribesGame.TrDeployable_BackupGenerator.ReleasePoweredFriend")()); }
+			ScriptFunction PulseBackupGenerators() { mixin(MGF!("mPulseBackupGenerators", "Function TribesGame.TrDeployable_BackupGenerator.PulseBackupGenerators")()); }
+			ScriptFunction AsynchPowerCheck() { mixin(MGF!("mAsynchPowerCheck", "Function TribesGame.TrDeployable_BackupGenerator.AsynchPowerCheck")()); }
+			ScriptFunction DoPowerCheck() { mixin(MGF!("mDoPowerCheck", "Function TribesGame.TrDeployable_BackupGenerator.DoPowerCheck")()); }
+			ScriptFunction OnPowerStatusChanged() { mixin(MGF!("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_BackupGenerator.OnPowerStatusChanged")()); }
+			ScriptFunction DoPowerUpdate() { mixin(MGF!("mDoPowerUpdate", "Function TribesGame.TrDeployable_BackupGenerator.DoPowerUpdate")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDeployable_BackupGenerator.Destroyed")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDeployable_BackupGenerator.PostBeginPlay")()); }
 		}
 	}
-	@property final auto ref TrGameObjective m_PoweredFriend() { return *cast(TrGameObjective*)(cast(size_t)cast(void*)this + 1524); }
+	@property final auto ref TrGameObjective m_PoweredFriend() { mixin(MGPC!(TrGameObjective, 1524)()); }
 final:
 	void DeployComplete()
 	{

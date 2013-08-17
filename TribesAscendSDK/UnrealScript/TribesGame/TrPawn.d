@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrAnimNodeBlendByRidingPassenger;
 import UnrealScript.TribesGame.TrProjectile;
 import UnrealScript.Engine.Actor;
@@ -41,9 +42,9 @@ extern(C++) interface TrPawn : UTPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPawn")()); }
 	private static __gshared TrPawn mDefaultProperties;
-	@property final static TrPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPawn)("TrPawn TribesGame.Default__TrPawn")); }
+	@property final static TrPawn DefaultProperties() { mixin(MGDPC!(TrPawn, "TrPawn TribesGame.Default__TrPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -235,190 +236,190 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentPowerPool() { return mGetCurrentPowerPool ? mGetCurrentPowerPool : (mGetCurrentPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrentPowerPool")); }
-			ScriptFunction GetMaxPowerPool() { return mGetMaxPowerPool ? mGetMaxPowerPool : (mGetMaxPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetMaxPowerPool")); }
-			ScriptFunction CalculatePawnSpeed() { return mCalculatePawnSpeed ? mCalculatePawnSpeed : (mCalculatePawnSpeed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CalculatePawnSpeed")); }
-			ScriptFunction GetCurrCharClassInfo() { return mGetCurrCharClassInfo ? mGetCurrCharClassInfo : (mGetCurrCharClassInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrCharClassInfo")); }
-			ScriptFunction IsFirstPerson() { return mIsFirstPerson ? mIsFirstPerson : (mIsFirstPerson = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsFirstPerson")); }
-			ScriptFunction GetHandsMesh() { return mGetHandsMesh ? mGetHandsMesh : (mGetHandsMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetHandsMesh")); }
-			ScriptFunction GetTribesReplicationInfo() { return mGetTribesReplicationInfo ? mGetTribesReplicationInfo : (mGetTribesReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetTribesReplicationInfo")); }
-			ScriptFunction CheckHeadShot() { return mCheckHeadShot ? mCheckHeadShot : (mCheckHeadShot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckHeadShot")); }
-			ScriptFunction GetPawnViewLocation() { return mGetPawnViewLocation ? mGetPawnViewLocation : (mGetPawnViewLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetPawnViewLocation")); }
-			ScriptFunction GetTrHud() { return mGetTrHud ? mGetTrHud : (mGetTrHud = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetTrHud")); }
-			ScriptFunction IsPulseStealthed() { return mIsPulseStealthed ? mIsPulseStealthed : (mIsPulseStealthed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsPulseStealthed")); }
-			ScriptFunction IsJammedByFriendOrSelf() { return mIsJammedByFriendOrSelf ? mIsJammedByFriendOrSelf : (mIsJammedByFriendOrSelf = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsJammedByFriendOrSelf")); }
-			ScriptFunction CheckGrabSpeed() { return mCheckGrabSpeed ? mCheckGrabSpeed : (mCheckGrabSpeed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckGrabSpeed")); }
-			ScriptFunction NativeGetCollisionHeight() { return mNativeGetCollisionHeight ? mNativeGetCollisionHeight : (mNativeGetCollisionHeight = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NativeGetCollisionHeight")); }
-			ScriptFunction NativeGetCollisionRadius() { return mNativeGetCollisionRadius ? mNativeGetCollisionRadius : (mNativeGetCollisionRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NativeGetCollisionRadius")); }
-			ScriptFunction SyncClientCurrentPowerPool() { return mSyncClientCurrentPowerPool ? mSyncClientCurrentPowerPool : (mSyncClientCurrentPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SyncClientCurrentPowerPool")); }
-			ScriptFunction ConsumePowerPool() { return mConsumePowerPool ? mConsumePowerPool : (mConsumePowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ConsumePowerPool")); }
-			ScriptFunction RegainPowerPool() { return mRegainPowerPool ? mRegainPowerPool : (mRegainPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RegainPowerPool")); }
-			ScriptFunction GetPowerPoolPercent() { return mGetPowerPoolPercent ? mGetPowerPoolPercent : (mGetPowerPoolPercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetPowerPoolPercent")); }
-			ScriptFunction GetCurrentDeviceAccuracyInfo() { return mGetCurrentDeviceAccuracyInfo ? mGetCurrentDeviceAccuracyInfo : (mGetCurrentDeviceAccuracyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrentDeviceAccuracyInfo")); }
-			ScriptFunction SetOverlayMaterial() { return mSetOverlayMaterial ? mSetOverlayMaterial : (mSetOverlayMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetOverlayMaterial")); }
-			ScriptFunction ServerUpdateLockedTarget() { return mServerUpdateLockedTarget ? mServerUpdateLockedTarget : (mServerUpdateLockedTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ServerUpdateLockedTarget")); }
-			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NativePostRenderFor")); }
-			ScriptFunction GetTargetLocation() { return mGetTargetLocation ? mGetTargetLocation : (mGetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetTargetLocation")); }
-			ScriptFunction SetFlashNormal() { return mSetFlashNormal ? mSetFlashNormal : (mSetFlashNormal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetFlashNormal")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PostBeginPlay")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PostInitAnimTree")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Tick")); }
-			ScriptFunction GetCurrentCredits() { return mGetCurrentCredits ? mGetCurrentCredits : (mGetCurrentCredits = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrentCredits")); }
-			ScriptFunction ClientRestart() { return mClientRestart ? mClientRestart : (mClientRestart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClientRestart")); }
-			ScriptFunction CurrentDeployedCount() { return mCurrentDeployedCount ? mCurrentDeployedCount : (mCurrentDeployedCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CurrentDeployedCount")); }
-			ScriptFunction ExitDeployMode() { return mExitDeployMode ? mExitDeployMode : (mExitDeployMode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ExitDeployMode")); }
-			ScriptFunction GetArmorType() { return mGetArmorType ? mGetArmorType : (mGetArmorType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetArmorType")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ReplicatedEvent")); }
-			ScriptFunction ReplicateMultiFlashLocation() { return mReplicateMultiFlashLocation ? mReplicateMultiFlashLocation : (mReplicateMultiFlashLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ReplicateMultiFlashLocation")); }
-			ScriptFunction EquipBestPossibleDevice() { return mEquipBestPossibleDevice ? mEquipBestPossibleDevice : (mEquipBestPossibleDevice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EquipBestPossibleDevice")); }
-			ScriptFunction InitDefaultAnims() { return mInitDefaultAnims ? mInitDefaultAnims : (mInitDefaultAnims = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.InitDefaultAnims")); }
-			ScriptFunction SetCharacterClassFromInfo() { return mSetCharacterClassFromInfo ? mSetCharacterClassFromInfo : (mSetCharacterClassFromInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetCharacterClassFromInfo")); }
-			ScriptFunction ActivatePendingClass() { return mActivatePendingClass ? mActivatePendingClass : (mActivatePendingClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ActivatePendingClass")); }
-			ScriptFunction RefreshInventoryTimer() { return mRefreshInventoryTimer ? mRefreshInventoryTimer : (mRefreshInventoryTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RefreshInventoryTimer")); }
-			ScriptFunction SetValuesFromCurrentFamilyInfo() { return mSetValuesFromCurrentFamilyInfo ? mSetValuesFromCurrentFamilyInfo : (mSetValuesFromCurrentFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetValuesFromCurrentFamilyInfo")); }
-			ScriptFunction RefreshInventory() { return mRefreshInventory ? mRefreshInventory : (mRefreshInventory = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RefreshInventory")); }
-			ScriptFunction ActivateSelectedDeployable() { return mActivateSelectedDeployable ? mActivateSelectedDeployable : (mActivateSelectedDeployable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ActivateSelectedDeployable")); }
-			ScriptFunction RemoveEffectByClass() { return mRemoveEffectByClass ? mRemoveEffectByClass : (mRemoveEffectByClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RemoveEffectByClass")); }
-			ScriptFunction ProcessEffectForm() { return mProcessEffectForm ? mProcessEffectForm : (mProcessEffectForm = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ProcessEffectForm")); }
-			ScriptFunction GetShieldStrength() { return mGetShieldStrength ? mGetShieldStrength : (mGetShieldStrength = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetShieldStrength")); }
-			ScriptFunction AdjustAmmoPool() { return mAdjustAmmoPool ? mAdjustAmmoPool : (mAdjustAmmoPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AdjustAmmoPool")); }
-			ScriptFunction AdjustMaxPowerPool() { return mAdjustMaxPowerPool ? mAdjustMaxPowerPool : (mAdjustMaxPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AdjustMaxPowerPool")); }
-			ScriptFunction SetMaxPowerPool() { return mSetMaxPowerPool ? mSetMaxPowerPool : (mSetMaxPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMaxPowerPool")); }
-			ScriptFunction SetMaxHealthPool() { return mSetMaxHealthPool ? mSetMaxHealthPool : (mSetMaxHealthPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMaxHealthPool")); }
-			ScriptFunction ClientUpdateHUDHealth() { return mClientUpdateHUDHealth ? mClientUpdateHUDHealth : (mClientUpdateHUDHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClientUpdateHUDHealth")); }
-			ScriptFunction ShouldRechargePowerPool() { return mShouldRechargePowerPool ? mShouldRechargePowerPool : (mShouldRechargePowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ShouldRechargePowerPool")); }
-			ScriptFunction ForceHealthRegen() { return mForceHealthRegen ? mForceHealthRegen : (mForceHealthRegen = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ForceHealthRegen")); }
-			ScriptFunction RechargeHealthPool() { return mRechargeHealthPool ? mRechargeHealthPool : (mRechargeHealthPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RechargeHealthPool")); }
-			ScriptFunction GetJetpackAirControl() { return mGetJetpackAirControl ? mGetJetpackAirControl : (mGetJetpackAirControl = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetJetpackAirControl")); }
-			ScriptFunction UpdateSkiEffects() { return mUpdateSkiEffects ? mUpdateSkiEffects : (mUpdateSkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateSkiEffects")); }
-			ScriptFunction PlayJetpackEffects() { return mPlayJetpackEffects ? mPlayJetpackEffects : (mPlayJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJetpackEffects")); }
-			ScriptFunction UpdateJetpackEffects() { return mUpdateJetpackEffects ? mUpdateJetpackEffects : (mUpdateJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateJetpackEffects")); }
-			ScriptFunction StopJetpackEffects() { return mStopJetpackEffects ? mStopJetpackEffects : (mStopJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopJetpackEffects")); }
-			ScriptFunction PlayLandingSound() { return mPlayLandingSound ? mPlayLandingSound : (mPlayLandingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayLandingSound")); }
-			ScriptFunction PlayJumpingSound() { return mPlayJumpingSound ? mPlayJumpingSound : (mPlayJumpingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJumpingSound")); }
-			ScriptFunction RememberLastDamager() { return mRememberLastDamager ? mRememberLastDamager : (mRememberLastDamager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RememberLastDamager")); }
-			ScriptFunction GetHealthPct() { return mGetHealthPct ? mGetHealthPct : (mGetHealthPct = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetHealthPct")); }
-			ScriptFunction CreateAssistRecord() { return mCreateAssistRecord ? mCreateAssistRecord : (mCreateAssistRecord = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CreateAssistRecord")); }
-			ScriptFunction GetLastDamager() { return mGetLastDamager ? mGetLastDamager : (mGetLastDamager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetLastDamager")); }
-			ScriptFunction ProcessKillAssists() { return mProcessKillAssists ? mProcessKillAssists : (mProcessKillAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ProcessKillAssists")); }
-			ScriptFunction GetUnshieldedDamage() { return mGetUnshieldedDamage ? mGetUnshieldedDamage : (mGetUnshieldedDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetUnshieldedDamage")); }
-			ScriptFunction GetPawnCausingDamage() { return mGetPawnCausingDamage ? mGetPawnCausingDamage : (mGetPawnCausingDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetPawnCausingDamage")); }
-			ScriptFunction GetDamageScale() { return mGetDamageScale ? mGetDamageScale : (mGetDamageScale = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetDamageScale")); }
-			ScriptFunction DoRepairs() { return mDoRepairs ? mDoRepairs : (mDoRepairs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DoRepairs")); }
-			ScriptFunction CheckTribesTurretInstigator() { return mCheckTribesTurretInstigator ? mCheckTribesTurretInstigator : (mCheckTribesTurretInstigator = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckTribesTurretInstigator")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeDamage")); }
-			ScriptFunction PlayWhiteoutEffect() { return mPlayWhiteoutEffect ? mPlayWhiteoutEffect : (mPlayWhiteoutEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayWhiteoutEffect")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeRadiusDamage")); }
-			ScriptFunction RecentlyGrabbedFlag() { return mRecentlyGrabbedFlag ? mRecentlyGrabbedFlag : (mRecentlyGrabbedFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RecentlyGrabbedFlag")); }
-			ScriptFunction GetShowDistanceThreshold() { return mGetShowDistanceThreshold ? mGetShowDistanceThreshold : (mGetShowDistanceThreshold = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetShowDistanceThreshold")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PostRenderFor")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DisplayDebug")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Landed")); }
-			ScriptFunction TakeFallingDamage() { return mTakeFallingDamage ? mTakeFallingDamage : (mTakeFallingDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeFallingDamage")); }
-			ScriptFunction PlayHardLandingEffect() { return mPlayHardLandingEffect ? mPlayHardLandingEffect : (mPlayHardLandingEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayHardLandingEffect")); }
-			ScriptFunction PlaySonicPunchEffect() { return mPlaySonicPunchEffect ? mPlaySonicPunchEffect : (mPlaySonicPunchEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlaySonicPunchEffect")); }
-			ScriptFunction TakeFallDamage() { return mTakeFallDamage ? mTakeFallDamage : (mTakeFallDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeFallDamage")); }
-			ScriptFunction ProcessCreditEvent() { return mProcessCreditEvent ? mProcessCreditEvent : (mProcessCreditEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ProcessCreditEvent")); }
-			ScriptFunction FlashLocationUpdated() { return mFlashLocationUpdated ? mFlashLocationUpdated : (mFlashLocationUpdated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FlashLocationUpdated")); }
-			ScriptFunction WeaponFired() { return mWeaponFired ? mWeaponFired : (mWeaponFired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.WeaponFired")); }
-			ScriptFunction Dodge() { return mDodge ? mDodge : (mDodge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Dodge")); }
-			ScriptFunction PerformDodge() { return mPerformDodge ? mPerformDodge : (mPerformDodge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PerformDodge")); }
-			ScriptFunction gibbedBy() { return mgibbedBy ? mgibbedBy : (mgibbedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.gibbedBy")); }
-			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EncroachedBy")); }
-			ScriptFunction ShouldGib() { return mShouldGib ? mShouldGib : (mShouldGib = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ShouldGib")); }
-			ScriptFunction SetHandIKEnabled() { return mSetHandIKEnabled ? mSetHandIKEnabled : (mSetHandIKEnabled = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetHandIKEnabled")); }
-			ScriptFunction PlayDamageCameraShake() { return mPlayDamageCameraShake ? mPlayDamageCameraShake : (mPlayDamageCameraShake = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayDamageCameraShake")); }
-			ScriptFunction IsLastHitFromNinjaSmoke() { return mIsLastHitFromNinjaSmoke ? mIsLastHitFromNinjaSmoke : (mIsLastHitFromNinjaSmoke = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsLastHitFromNinjaSmoke")); }
-			ScriptFunction PlayTakeHitEffects() { return mPlayTakeHitEffects ? mPlayTakeHitEffects : (mPlayTakeHitEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayTakeHitEffects")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FellOutOfWorld")); }
-			ScriptFunction Died() { return mDied ? mDied : (mDied = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Died")); }
-			ScriptFunction StopLocalEffectsAndSounds() { return mStopLocalEffectsAndSounds ? mStopLocalEffectsAndSounds : (mStopLocalEffectsAndSounds = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopLocalEffectsAndSounds")); }
-			ScriptFunction SetOverlayMeshHidden() { return mSetOverlayMeshHidden ? mSetOverlayMeshHidden : (mSetOverlayMeshHidden = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetOverlayMeshHidden")); }
-			ScriptFunction PlayDying() { return mPlayDying ? mPlayDying : (mPlayDying = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayDying")); }
-			ScriptFunction NotifyTeamChanged() { return mNotifyTeamChanged ? mNotifyTeamChanged : (mNotifyTeamChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NotifyTeamChanged")); }
-			ScriptFunction UpdateTeamBlockerMaterials() { return mUpdateTeamBlockerMaterials ? mUpdateTeamBlockerMaterials : (mUpdateTeamBlockerMaterials = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateTeamBlockerMaterials")); }
-			ScriptFunction PossessedBy() { return mPossessedBy ? mPossessedBy : (mPossessedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PossessedBy")); }
-			ScriptFunction ResetSkin() { return mResetSkin ? mResetSkin : (mResetSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ResetSkin")); }
-			ScriptFunction SetSkin() { return mSetSkin ? mSetSkin : (mSetSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetSkin")); }
-			ScriptFunction InitializeOverlayMaterials() { return mInitializeOverlayMaterials ? mInitializeOverlayMaterials : (mInitializeOverlayMaterials = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.InitializeOverlayMaterials")); }
-			ScriptFunction ClientPlayHealthRegenEffect() { return mClientPlayHealthRegenEffect ? mClientPlayHealthRegenEffect : (mClientPlayHealthRegenEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClientPlayHealthRegenEffect")); }
-			ScriptFunction SetShieldPackActive() { return mSetShieldPackActive ? mSetShieldPackActive : (mSetShieldPackActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetShieldPackActive")); }
-			ScriptFunction PlayShieldPackEffect() { return mPlayShieldPackEffect ? mPlayShieldPackEffect : (mPlayShieldPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayShieldPackEffect")); }
-			ScriptFunction SetStealthPackActive() { return mSetStealthPackActive ? mSetStealthPackActive : (mSetStealthPackActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetStealthPackActive")); }
-			ScriptFunction PlayStealthPackEffect() { return mPlayStealthPackEffect ? mPlayStealthPackEffect : (mPlayStealthPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayStealthPackEffect")); }
-			ScriptFunction PulseStealth() { return mPulseStealth ? mPulseStealth : (mPulseStealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PulseStealth")); }
-			ScriptFunction SetRagePerkActive() { return mSetRagePerkActive ? mSetRagePerkActive : (mSetRagePerkActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetRagePerkActive")); }
-			ScriptFunction ClearRagePerk() { return mClearRagePerk ? mClearRagePerk : (mClearRagePerk = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearRagePerk")); }
-			ScriptFunction PlayRageEffect() { return mPlayRageEffect ? mPlayRageEffect : (mPlayRageEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayRageEffect")); }
-			ScriptFunction PlayInvulnerabilityEffect() { return mPlayInvulnerabilityEffect ? mPlayInvulnerabilityEffect : (mPlayInvulnerabilityEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayInvulnerabilityEffect")); }
-			ScriptFunction StartRidingInVehicle() { return mStartRidingInVehicle ? mStartRidingInVehicle : (mStartRidingInVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StartRidingInVehicle")); }
-			ScriptFunction StopRidingInVehicle() { return mStopRidingInVehicle ? mStopRidingInVehicle : (mStopRidingInVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopRidingInVehicle")); }
-			ScriptFunction StartDriving() { return mStartDriving ? mStartDriving : (mStartDriving = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StartDriving")); }
-			ScriptFunction StopDriving() { return mStopDriving ? mStopDriving : (mStopDriving = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopDriving")); }
-			ScriptFunction OnRanOver() { return mOnRanOver ? mOnRanOver : (mOnRanOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnRanOver")); }
-			ScriptFunction EnableJamming() { return mEnableJamming ? mEnableJamming : (mEnableJamming = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EnableJamming")); }
-			ScriptFunction DisableJamming() { return mDisableJamming ? mDisableJamming : (mDisableJamming = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DisableJamming")); }
-			ScriptFunction DisableJammingOtherPawns() { return mDisableJammingOtherPawns ? mDisableJammingOtherPawns : (mDisableJammingOtherPawns = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DisableJammingOtherPawns")); }
-			ScriptFunction EnteredFriendJammingRadius() { return mEnteredFriendJammingRadius ? mEnteredFriendJammingRadius : (mEnteredFriendJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EnteredFriendJammingRadius")); }
-			ScriptFunction ExitFriendJammingRadius() { return mExitFriendJammingRadius ? mExitFriendJammingRadius : (mExitFriendJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ExitFriendJammingRadius")); }
-			ScriptFunction EnteredEnemyJammingRadius() { return mEnteredEnemyJammingRadius ? mEnteredEnemyJammingRadius : (mEnteredEnemyJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EnteredEnemyJammingRadius")); }
-			ScriptFunction ExitEnemyJammingRadius() { return mExitEnemyJammingRadius ? mExitEnemyJammingRadius : (mExitEnemyJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ExitEnemyJammingRadius")); }
-			ScriptFunction IsJammedByEnemy() { return mIsJammedByEnemy ? mIsJammedByEnemy : (mIsJammedByEnemy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsJammedByEnemy")); }
-			ScriptFunction PlayJammerPackEffect() { return mPlayJammerPackEffect ? mPlayJammerPackEffect : (mPlayJammerPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammerPackEffect")); }
-			ScriptFunction PlayJammingByFriendEffect() { return mPlayJammingByFriendEffect ? mPlayJammingByFriendEffect : (mPlayJammingByFriendEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammingByFriendEffect")); }
-			ScriptFunction PlayEnemyJammerPackEffect() { return mPlayEnemyJammerPackEffect ? mPlayEnemyJammerPackEffect : (mPlayEnemyJammerPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayEnemyJammerPackEffect")); }
-			ScriptFunction OnPawnDetectedByCollisionProxy() { return mOnPawnDetectedByCollisionProxy ? mOnPawnDetectedByCollisionProxy : (mOnPawnDetectedByCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnPawnDetectedByCollisionProxy")); }
-			ScriptFunction OnPawnExitedCollisionProxy() { return mOnPawnExitedCollisionProxy ? mOnPawnExitedCollisionProxy : (mOnPawnExitedCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnPawnExitedCollisionProxy")); }
-			ScriptFunction OnEnteredDropJammer() { return mOnEnteredDropJammer ? mOnEnteredDropJammer : (mOnEnteredDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnEnteredDropJammer")); }
-			ScriptFunction OnExitedDropJammer() { return mOnExitedDropJammer ? mOnExitedDropJammer : (mOnExitedDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnExitedDropJammer")); }
-			ScriptFunction UpdateEnemyDropJammer() { return mUpdateEnemyDropJammer ? mUpdateEnemyDropJammer : (mUpdateEnemyDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateEnemyDropJammer")); }
-			ScriptFunction UpdateFriendlyDropJammer() { return mUpdateFriendlyDropJammer ? mUpdateFriendlyDropJammer : (mUpdateFriendlyDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateFriendlyDropJammer")); }
-			ScriptFunction PlayJammingByEnemyDropJammerEffect() { return mPlayJammingByEnemyDropJammerEffect ? mPlayJammingByEnemyDropJammerEffect : (mPlayJammingByEnemyDropJammerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammingByEnemyDropJammerEffect")); }
-			ScriptFunction PlayJammingByFriendlyDropJammerEffect() { return mPlayJammingByFriendlyDropJammerEffect ? mPlayJammingByFriendlyDropJammerEffect : (mPlayJammingByFriendlyDropJammerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammingByFriendlyDropJammerEffect")); }
-			ScriptFunction OnChangeJammingTeam() { return mOnChangeJammingTeam ? mOnChangeJammingTeam : (mOnChangeJammingTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnChangeJammingTeam")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Destroyed")); }
-			ScriptFunction SetMeshVisibility() { return mSetMeshVisibility ? mSetMeshVisibility : (mSetMeshVisibility = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMeshVisibility")); }
-			ScriptFunction SetFirstPersonBodyVisibility() { return mSetFirstPersonBodyVisibility ? mSetFirstPersonBodyVisibility : (mSetFirstPersonBodyVisibility = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetFirstPersonBodyVisibility")); }
-			ScriptFunction WeaponAttachmentChanged() { return mWeaponAttachmentChanged ? mWeaponAttachmentChanged : (mWeaponAttachmentChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.WeaponAttachmentChanged")); }
-			ScriptFunction ForceCrouch() { return mForceCrouch ? mForceCrouch : (mForceCrouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ForceCrouch")); }
-			ScriptFunction FindClosestStickyGrenadeSocketIndex() { return mFindClosestStickyGrenadeSocketIndex ? mFindClosestStickyGrenadeSocketIndex : (mFindClosestStickyGrenadeSocketIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FindClosestStickyGrenadeSocketIndex")); }
-			ScriptFunction StickGrenadeToPawn() { return mStickGrenadeToPawn ? mStickGrenadeToPawn : (mStickGrenadeToPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StickGrenadeToPawn")); }
-			ScriptFunction UpdateStickyGrenades() { return mUpdateStickyGrenades ? mUpdateStickyGrenades : (mUpdateStickyGrenades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateStickyGrenades")); }
-			ScriptFunction SetSkiing() { return mSetSkiing ? mSetSkiing : (mSetSkiing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetSkiing")); }
-			ScriptFunction PlaySkiEffects() { return mPlaySkiEffects ? mPlaySkiEffects : (mPlaySkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlaySkiEffects")); }
-			ScriptFunction StopSkiEffects() { return mStopSkiEffects ? mStopSkiEffects : (mStopSkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopSkiEffects")); }
-			ScriptFunction PlaySkiEffectsSound() { return mPlaySkiEffectsSound ? mPlaySkiEffectsSound : (mPlaySkiEffectsSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlaySkiEffectsSound")); }
-			ScriptFunction StopSkiEffectsSound() { return mStopSkiEffectsSound ? mStopSkiEffectsSound : (mStopSkiEffectsSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopSkiEffectsSound")); }
-			ScriptFunction FaceRotation() { return mFaceRotation ? mFaceRotation : (mFaceRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FaceRotation")); }
-			ScriptFunction PlayDyingSound() { return mPlayDyingSound ? mPlayDyingSound : (mPlayDyingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayDyingSound")); }
-			ScriptFunction HoldGameObject() { return mHoldGameObject ? mHoldGameObject : (mHoldGameObject = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.HoldGameObject")); }
-			ScriptFunction AdjustDamage() { return mAdjustDamage ? mAdjustDamage : (mAdjustDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AdjustDamage")); }
-			ScriptFunction GoInvulnerable() { return mGoInvulnerable ? mGoInvulnerable : (mGoInvulnerable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GoInvulnerable")); }
-			ScriptFunction ClearInvulnerability() { return mClearInvulnerability ? mClearInvulnerability : (mClearInvulnerability = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearInvulnerability")); }
-			ScriptFunction SetMovementPhysics() { return mSetMovementPhysics ? mSetMovementPhysics : (mSetMovementPhysics = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMovementPhysics")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnAnimEnd")); }
-			ScriptFunction PlayTeleportEffect() { return mPlayTeleportEffect ? mPlayTeleportEffect : (mPlayTeleportEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayTeleportEffect")); }
-			ScriptFunction TurnOff() { return mTurnOff ? mTurnOff : (mTurnOff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TurnOff")); }
-			ScriptFunction SetDetectedByEnemyScanner() { return mSetDetectedByEnemyScanner ? mSetDetectedByEnemyScanner : (mSetDetectedByEnemyScanner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetDetectedByEnemyScanner")); }
-			ScriptFunction GetDetectedByEnemyScanner() { return mGetDetectedByEnemyScanner ? mGetDetectedByEnemyScanner : (mGetDetectedByEnemyScanner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetDetectedByEnemyScanner")); }
-			ScriptFunction SetScannerDetect() { return mSetScannerDetect ? mSetScannerDetect : (mSetScannerDetect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetScannerDetect")); }
-			ScriptFunction GetFamilyInfo() { return mGetFamilyInfo ? mGetFamilyInfo : (mGetFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetFamilyInfo")); }
-			ScriptFunction LockedOutFromFlagPickupTimer() { return mLockedOutFromFlagPickupTimer ? mLockedOutFromFlagPickupTimer : (mLockedOutFromFlagPickupTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.LockedOutFromFlagPickupTimer")); }
-			ScriptFunction LockFromFlagPickup() { return mLockFromFlagPickup ? mLockFromFlagPickup : (mLockFromFlagPickup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.LockFromFlagPickup")); }
-			ScriptFunction Blink() { return mBlink ? mBlink : (mBlink = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Blink")); }
-			ScriptFunction PlayBlinkPackEffect() { return mPlayBlinkPackEffect ? mPlayBlinkPackEffect : (mPlayBlinkPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayBlinkPackEffect")); }
-			ScriptFunction DoJump() { return mDoJump ? mDoJump : (mDoJump = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DoJump")); }
-			ScriptFunction CheckClotheslineDamage() { return mCheckClotheslineDamage ? mCheckClotheslineDamage : (mCheckClotheslineDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckClotheslineDamage")); }
-			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetSpectatorName")); }
-			ScriptFunction CrushedBy() { return mCrushedBy ? mCrushedBy : (mCrushedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CrushedBy")); }
-			ScriptFunction StuckOnPawn() { return mStuckOnPawn ? mStuckOnPawn : (mStuckOnPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StuckOnPawn")); }
-			ScriptFunction SetPending3PSkin() { return mSetPending3PSkin ? mSetPending3PSkin : (mSetPending3PSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetPending3PSkin")); }
-			ScriptFunction CheckApplyPending3PSkin() { return mCheckApplyPending3PSkin ? mCheckApplyPending3PSkin : (mCheckApplyPending3PSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckApplyPending3PSkin")); }
-			ScriptFunction ThrowActiveWeapon() { return mThrowActiveWeapon ? mThrowActiveWeapon : (mThrowActiveWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ThrowActiveWeapon")); }
-			ScriptFunction ThrowWeaponOnDeath() { return mThrowWeaponOnDeath ? mThrowWeaponOnDeath : (mThrowWeaponOnDeath = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ThrowWeaponOnDeath")); }
-			ScriptFunction ClearSkiParticleEffects() { return mClearSkiParticleEffects ? mClearSkiParticleEffects : (mClearSkiParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearSkiParticleEffects")); }
-			ScriptFunction ClearJetpackParticleEffects() { return mClearJetpackParticleEffects ? mClearJetpackParticleEffects : (mClearJetpackParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearJetpackParticleEffects")); }
-			ScriptFunction AlienFXOverlay() { return mAlienFXOverlay ? mAlienFXOverlay : (mAlienFXOverlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AlienFXOverlay")); }
+			ScriptFunction GetCurrentPowerPool() { mixin(MGF!("mGetCurrentPowerPool", "Function TribesGame.TrPawn.GetCurrentPowerPool")()); }
+			ScriptFunction GetMaxPowerPool() { mixin(MGF!("mGetMaxPowerPool", "Function TribesGame.TrPawn.GetMaxPowerPool")()); }
+			ScriptFunction CalculatePawnSpeed() { mixin(MGF!("mCalculatePawnSpeed", "Function TribesGame.TrPawn.CalculatePawnSpeed")()); }
+			ScriptFunction GetCurrCharClassInfo() { mixin(MGF!("mGetCurrCharClassInfo", "Function TribesGame.TrPawn.GetCurrCharClassInfo")()); }
+			ScriptFunction IsFirstPerson() { mixin(MGF!("mIsFirstPerson", "Function TribesGame.TrPawn.IsFirstPerson")()); }
+			ScriptFunction GetHandsMesh() { mixin(MGF!("mGetHandsMesh", "Function TribesGame.TrPawn.GetHandsMesh")()); }
+			ScriptFunction GetTribesReplicationInfo() { mixin(MGF!("mGetTribesReplicationInfo", "Function TribesGame.TrPawn.GetTribesReplicationInfo")()); }
+			ScriptFunction CheckHeadShot() { mixin(MGF!("mCheckHeadShot", "Function TribesGame.TrPawn.CheckHeadShot")()); }
+			ScriptFunction GetPawnViewLocation() { mixin(MGF!("mGetPawnViewLocation", "Function TribesGame.TrPawn.GetPawnViewLocation")()); }
+			ScriptFunction GetTrHud() { mixin(MGF!("mGetTrHud", "Function TribesGame.TrPawn.GetTrHud")()); }
+			ScriptFunction IsPulseStealthed() { mixin(MGF!("mIsPulseStealthed", "Function TribesGame.TrPawn.IsPulseStealthed")()); }
+			ScriptFunction IsJammedByFriendOrSelf() { mixin(MGF!("mIsJammedByFriendOrSelf", "Function TribesGame.TrPawn.IsJammedByFriendOrSelf")()); }
+			ScriptFunction CheckGrabSpeed() { mixin(MGF!("mCheckGrabSpeed", "Function TribesGame.TrPawn.CheckGrabSpeed")()); }
+			ScriptFunction NativeGetCollisionHeight() { mixin(MGF!("mNativeGetCollisionHeight", "Function TribesGame.TrPawn.NativeGetCollisionHeight")()); }
+			ScriptFunction NativeGetCollisionRadius() { mixin(MGF!("mNativeGetCollisionRadius", "Function TribesGame.TrPawn.NativeGetCollisionRadius")()); }
+			ScriptFunction SyncClientCurrentPowerPool() { mixin(MGF!("mSyncClientCurrentPowerPool", "Function TribesGame.TrPawn.SyncClientCurrentPowerPool")()); }
+			ScriptFunction ConsumePowerPool() { mixin(MGF!("mConsumePowerPool", "Function TribesGame.TrPawn.ConsumePowerPool")()); }
+			ScriptFunction RegainPowerPool() { mixin(MGF!("mRegainPowerPool", "Function TribesGame.TrPawn.RegainPowerPool")()); }
+			ScriptFunction GetPowerPoolPercent() { mixin(MGF!("mGetPowerPoolPercent", "Function TribesGame.TrPawn.GetPowerPoolPercent")()); }
+			ScriptFunction GetCurrentDeviceAccuracyInfo() { mixin(MGF!("mGetCurrentDeviceAccuracyInfo", "Function TribesGame.TrPawn.GetCurrentDeviceAccuracyInfo")()); }
+			ScriptFunction SetOverlayMaterial() { mixin(MGF!("mSetOverlayMaterial", "Function TribesGame.TrPawn.SetOverlayMaterial")()); }
+			ScriptFunction ServerUpdateLockedTarget() { mixin(MGF!("mServerUpdateLockedTarget", "Function TribesGame.TrPawn.ServerUpdateLockedTarget")()); }
+			ScriptFunction NativePostRenderFor() { mixin(MGF!("mNativePostRenderFor", "Function TribesGame.TrPawn.NativePostRenderFor")()); }
+			ScriptFunction GetTargetLocation() { mixin(MGF!("mGetTargetLocation", "Function TribesGame.TrPawn.GetTargetLocation")()); }
+			ScriptFunction SetFlashNormal() { mixin(MGF!("mSetFlashNormal", "Function TribesGame.TrPawn.SetFlashNormal")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrPawn.PostBeginPlay")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrPawn.PostInitAnimTree")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrPawn.Tick")()); }
+			ScriptFunction GetCurrentCredits() { mixin(MGF!("mGetCurrentCredits", "Function TribesGame.TrPawn.GetCurrentCredits")()); }
+			ScriptFunction ClientRestart() { mixin(MGF!("mClientRestart", "Function TribesGame.TrPawn.ClientRestart")()); }
+			ScriptFunction CurrentDeployedCount() { mixin(MGF!("mCurrentDeployedCount", "Function TribesGame.TrPawn.CurrentDeployedCount")()); }
+			ScriptFunction ExitDeployMode() { mixin(MGF!("mExitDeployMode", "Function TribesGame.TrPawn.ExitDeployMode")()); }
+			ScriptFunction GetArmorType() { mixin(MGF!("mGetArmorType", "Function TribesGame.TrPawn.GetArmorType")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrPawn.ReplicatedEvent")()); }
+			ScriptFunction ReplicateMultiFlashLocation() { mixin(MGF!("mReplicateMultiFlashLocation", "Function TribesGame.TrPawn.ReplicateMultiFlashLocation")()); }
+			ScriptFunction EquipBestPossibleDevice() { mixin(MGF!("mEquipBestPossibleDevice", "Function TribesGame.TrPawn.EquipBestPossibleDevice")()); }
+			ScriptFunction InitDefaultAnims() { mixin(MGF!("mInitDefaultAnims", "Function TribesGame.TrPawn.InitDefaultAnims")()); }
+			ScriptFunction SetCharacterClassFromInfo() { mixin(MGF!("mSetCharacterClassFromInfo", "Function TribesGame.TrPawn.SetCharacterClassFromInfo")()); }
+			ScriptFunction ActivatePendingClass() { mixin(MGF!("mActivatePendingClass", "Function TribesGame.TrPawn.ActivatePendingClass")()); }
+			ScriptFunction RefreshInventoryTimer() { mixin(MGF!("mRefreshInventoryTimer", "Function TribesGame.TrPawn.RefreshInventoryTimer")()); }
+			ScriptFunction SetValuesFromCurrentFamilyInfo() { mixin(MGF!("mSetValuesFromCurrentFamilyInfo", "Function TribesGame.TrPawn.SetValuesFromCurrentFamilyInfo")()); }
+			ScriptFunction RefreshInventory() { mixin(MGF!("mRefreshInventory", "Function TribesGame.TrPawn.RefreshInventory")()); }
+			ScriptFunction ActivateSelectedDeployable() { mixin(MGF!("mActivateSelectedDeployable", "Function TribesGame.TrPawn.ActivateSelectedDeployable")()); }
+			ScriptFunction RemoveEffectByClass() { mixin(MGF!("mRemoveEffectByClass", "Function TribesGame.TrPawn.RemoveEffectByClass")()); }
+			ScriptFunction ProcessEffectForm() { mixin(MGF!("mProcessEffectForm", "Function TribesGame.TrPawn.ProcessEffectForm")()); }
+			ScriptFunction GetShieldStrength() { mixin(MGF!("mGetShieldStrength", "Function TribesGame.TrPawn.GetShieldStrength")()); }
+			ScriptFunction AdjustAmmoPool() { mixin(MGF!("mAdjustAmmoPool", "Function TribesGame.TrPawn.AdjustAmmoPool")()); }
+			ScriptFunction AdjustMaxPowerPool() { mixin(MGF!("mAdjustMaxPowerPool", "Function TribesGame.TrPawn.AdjustMaxPowerPool")()); }
+			ScriptFunction SetMaxPowerPool() { mixin(MGF!("mSetMaxPowerPool", "Function TribesGame.TrPawn.SetMaxPowerPool")()); }
+			ScriptFunction SetMaxHealthPool() { mixin(MGF!("mSetMaxHealthPool", "Function TribesGame.TrPawn.SetMaxHealthPool")()); }
+			ScriptFunction ClientUpdateHUDHealth() { mixin(MGF!("mClientUpdateHUDHealth", "Function TribesGame.TrPawn.ClientUpdateHUDHealth")()); }
+			ScriptFunction ShouldRechargePowerPool() { mixin(MGF!("mShouldRechargePowerPool", "Function TribesGame.TrPawn.ShouldRechargePowerPool")()); }
+			ScriptFunction ForceHealthRegen() { mixin(MGF!("mForceHealthRegen", "Function TribesGame.TrPawn.ForceHealthRegen")()); }
+			ScriptFunction RechargeHealthPool() { mixin(MGF!("mRechargeHealthPool", "Function TribesGame.TrPawn.RechargeHealthPool")()); }
+			ScriptFunction GetJetpackAirControl() { mixin(MGF!("mGetJetpackAirControl", "Function TribesGame.TrPawn.GetJetpackAirControl")()); }
+			ScriptFunction UpdateSkiEffects() { mixin(MGF!("mUpdateSkiEffects", "Function TribesGame.TrPawn.UpdateSkiEffects")()); }
+			ScriptFunction PlayJetpackEffects() { mixin(MGF!("mPlayJetpackEffects", "Function TribesGame.TrPawn.PlayJetpackEffects")()); }
+			ScriptFunction UpdateJetpackEffects() { mixin(MGF!("mUpdateJetpackEffects", "Function TribesGame.TrPawn.UpdateJetpackEffects")()); }
+			ScriptFunction StopJetpackEffects() { mixin(MGF!("mStopJetpackEffects", "Function TribesGame.TrPawn.StopJetpackEffects")()); }
+			ScriptFunction PlayLandingSound() { mixin(MGF!("mPlayLandingSound", "Function TribesGame.TrPawn.PlayLandingSound")()); }
+			ScriptFunction PlayJumpingSound() { mixin(MGF!("mPlayJumpingSound", "Function TribesGame.TrPawn.PlayJumpingSound")()); }
+			ScriptFunction RememberLastDamager() { mixin(MGF!("mRememberLastDamager", "Function TribesGame.TrPawn.RememberLastDamager")()); }
+			ScriptFunction GetHealthPct() { mixin(MGF!("mGetHealthPct", "Function TribesGame.TrPawn.GetHealthPct")()); }
+			ScriptFunction CreateAssistRecord() { mixin(MGF!("mCreateAssistRecord", "Function TribesGame.TrPawn.CreateAssistRecord")()); }
+			ScriptFunction GetLastDamager() { mixin(MGF!("mGetLastDamager", "Function TribesGame.TrPawn.GetLastDamager")()); }
+			ScriptFunction ProcessKillAssists() { mixin(MGF!("mProcessKillAssists", "Function TribesGame.TrPawn.ProcessKillAssists")()); }
+			ScriptFunction GetUnshieldedDamage() { mixin(MGF!("mGetUnshieldedDamage", "Function TribesGame.TrPawn.GetUnshieldedDamage")()); }
+			ScriptFunction GetPawnCausingDamage() { mixin(MGF!("mGetPawnCausingDamage", "Function TribesGame.TrPawn.GetPawnCausingDamage")()); }
+			ScriptFunction GetDamageScale() { mixin(MGF!("mGetDamageScale", "Function TribesGame.TrPawn.GetDamageScale")()); }
+			ScriptFunction DoRepairs() { mixin(MGF!("mDoRepairs", "Function TribesGame.TrPawn.DoRepairs")()); }
+			ScriptFunction CheckTribesTurretInstigator() { mixin(MGF!("mCheckTribesTurretInstigator", "Function TribesGame.TrPawn.CheckTribesTurretInstigator")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrPawn.TakeDamage")()); }
+			ScriptFunction PlayWhiteoutEffect() { mixin(MGF!("mPlayWhiteoutEffect", "Function TribesGame.TrPawn.PlayWhiteoutEffect")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function TribesGame.TrPawn.TakeRadiusDamage")()); }
+			ScriptFunction RecentlyGrabbedFlag() { mixin(MGF!("mRecentlyGrabbedFlag", "Function TribesGame.TrPawn.RecentlyGrabbedFlag")()); }
+			ScriptFunction GetShowDistanceThreshold() { mixin(MGF!("mGetShowDistanceThreshold", "Function TribesGame.TrPawn.GetShowDistanceThreshold")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrPawn.PostRenderFor")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function TribesGame.TrPawn.DisplayDebug")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function TribesGame.TrPawn.Landed")()); }
+			ScriptFunction TakeFallingDamage() { mixin(MGF!("mTakeFallingDamage", "Function TribesGame.TrPawn.TakeFallingDamage")()); }
+			ScriptFunction PlayHardLandingEffect() { mixin(MGF!("mPlayHardLandingEffect", "Function TribesGame.TrPawn.PlayHardLandingEffect")()); }
+			ScriptFunction PlaySonicPunchEffect() { mixin(MGF!("mPlaySonicPunchEffect", "Function TribesGame.TrPawn.PlaySonicPunchEffect")()); }
+			ScriptFunction TakeFallDamage() { mixin(MGF!("mTakeFallDamage", "Function TribesGame.TrPawn.TakeFallDamage")()); }
+			ScriptFunction ProcessCreditEvent() { mixin(MGF!("mProcessCreditEvent", "Function TribesGame.TrPawn.ProcessCreditEvent")()); }
+			ScriptFunction FlashLocationUpdated() { mixin(MGF!("mFlashLocationUpdated", "Function TribesGame.TrPawn.FlashLocationUpdated")()); }
+			ScriptFunction WeaponFired() { mixin(MGF!("mWeaponFired", "Function TribesGame.TrPawn.WeaponFired")()); }
+			ScriptFunction Dodge() { mixin(MGF!("mDodge", "Function TribesGame.TrPawn.Dodge")()); }
+			ScriptFunction PerformDodge() { mixin(MGF!("mPerformDodge", "Function TribesGame.TrPawn.PerformDodge")()); }
+			ScriptFunction gibbedBy() { mixin(MGF!("mgibbedBy", "Function TribesGame.TrPawn.gibbedBy")()); }
+			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function TribesGame.TrPawn.EncroachedBy")()); }
+			ScriptFunction ShouldGib() { mixin(MGF!("mShouldGib", "Function TribesGame.TrPawn.ShouldGib")()); }
+			ScriptFunction SetHandIKEnabled() { mixin(MGF!("mSetHandIKEnabled", "Function TribesGame.TrPawn.SetHandIKEnabled")()); }
+			ScriptFunction PlayDamageCameraShake() { mixin(MGF!("mPlayDamageCameraShake", "Function TribesGame.TrPawn.PlayDamageCameraShake")()); }
+			ScriptFunction IsLastHitFromNinjaSmoke() { mixin(MGF!("mIsLastHitFromNinjaSmoke", "Function TribesGame.TrPawn.IsLastHitFromNinjaSmoke")()); }
+			ScriptFunction PlayTakeHitEffects() { mixin(MGF!("mPlayTakeHitEffects", "Function TribesGame.TrPawn.PlayTakeHitEffects")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function TribesGame.TrPawn.FellOutOfWorld")()); }
+			ScriptFunction Died() { mixin(MGF!("mDied", "Function TribesGame.TrPawn.Died")()); }
+			ScriptFunction StopLocalEffectsAndSounds() { mixin(MGF!("mStopLocalEffectsAndSounds", "Function TribesGame.TrPawn.StopLocalEffectsAndSounds")()); }
+			ScriptFunction SetOverlayMeshHidden() { mixin(MGF!("mSetOverlayMeshHidden", "Function TribesGame.TrPawn.SetOverlayMeshHidden")()); }
+			ScriptFunction PlayDying() { mixin(MGF!("mPlayDying", "Function TribesGame.TrPawn.PlayDying")()); }
+			ScriptFunction NotifyTeamChanged() { mixin(MGF!("mNotifyTeamChanged", "Function TribesGame.TrPawn.NotifyTeamChanged")()); }
+			ScriptFunction UpdateTeamBlockerMaterials() { mixin(MGF!("mUpdateTeamBlockerMaterials", "Function TribesGame.TrPawn.UpdateTeamBlockerMaterials")()); }
+			ScriptFunction PossessedBy() { mixin(MGF!("mPossessedBy", "Function TribesGame.TrPawn.PossessedBy")()); }
+			ScriptFunction ResetSkin() { mixin(MGF!("mResetSkin", "Function TribesGame.TrPawn.ResetSkin")()); }
+			ScriptFunction SetSkin() { mixin(MGF!("mSetSkin", "Function TribesGame.TrPawn.SetSkin")()); }
+			ScriptFunction InitializeOverlayMaterials() { mixin(MGF!("mInitializeOverlayMaterials", "Function TribesGame.TrPawn.InitializeOverlayMaterials")()); }
+			ScriptFunction ClientPlayHealthRegenEffect() { mixin(MGF!("mClientPlayHealthRegenEffect", "Function TribesGame.TrPawn.ClientPlayHealthRegenEffect")()); }
+			ScriptFunction SetShieldPackActive() { mixin(MGF!("mSetShieldPackActive", "Function TribesGame.TrPawn.SetShieldPackActive")()); }
+			ScriptFunction PlayShieldPackEffect() { mixin(MGF!("mPlayShieldPackEffect", "Function TribesGame.TrPawn.PlayShieldPackEffect")()); }
+			ScriptFunction SetStealthPackActive() { mixin(MGF!("mSetStealthPackActive", "Function TribesGame.TrPawn.SetStealthPackActive")()); }
+			ScriptFunction PlayStealthPackEffect() { mixin(MGF!("mPlayStealthPackEffect", "Function TribesGame.TrPawn.PlayStealthPackEffect")()); }
+			ScriptFunction PulseStealth() { mixin(MGF!("mPulseStealth", "Function TribesGame.TrPawn.PulseStealth")()); }
+			ScriptFunction SetRagePerkActive() { mixin(MGF!("mSetRagePerkActive", "Function TribesGame.TrPawn.SetRagePerkActive")()); }
+			ScriptFunction ClearRagePerk() { mixin(MGF!("mClearRagePerk", "Function TribesGame.TrPawn.ClearRagePerk")()); }
+			ScriptFunction PlayRageEffect() { mixin(MGF!("mPlayRageEffect", "Function TribesGame.TrPawn.PlayRageEffect")()); }
+			ScriptFunction PlayInvulnerabilityEffect() { mixin(MGF!("mPlayInvulnerabilityEffect", "Function TribesGame.TrPawn.PlayInvulnerabilityEffect")()); }
+			ScriptFunction StartRidingInVehicle() { mixin(MGF!("mStartRidingInVehicle", "Function TribesGame.TrPawn.StartRidingInVehicle")()); }
+			ScriptFunction StopRidingInVehicle() { mixin(MGF!("mStopRidingInVehicle", "Function TribesGame.TrPawn.StopRidingInVehicle")()); }
+			ScriptFunction StartDriving() { mixin(MGF!("mStartDriving", "Function TribesGame.TrPawn.StartDriving")()); }
+			ScriptFunction StopDriving() { mixin(MGF!("mStopDriving", "Function TribesGame.TrPawn.StopDriving")()); }
+			ScriptFunction OnRanOver() { mixin(MGF!("mOnRanOver", "Function TribesGame.TrPawn.OnRanOver")()); }
+			ScriptFunction EnableJamming() { mixin(MGF!("mEnableJamming", "Function TribesGame.TrPawn.EnableJamming")()); }
+			ScriptFunction DisableJamming() { mixin(MGF!("mDisableJamming", "Function TribesGame.TrPawn.DisableJamming")()); }
+			ScriptFunction DisableJammingOtherPawns() { mixin(MGF!("mDisableJammingOtherPawns", "Function TribesGame.TrPawn.DisableJammingOtherPawns")()); }
+			ScriptFunction EnteredFriendJammingRadius() { mixin(MGF!("mEnteredFriendJammingRadius", "Function TribesGame.TrPawn.EnteredFriendJammingRadius")()); }
+			ScriptFunction ExitFriendJammingRadius() { mixin(MGF!("mExitFriendJammingRadius", "Function TribesGame.TrPawn.ExitFriendJammingRadius")()); }
+			ScriptFunction EnteredEnemyJammingRadius() { mixin(MGF!("mEnteredEnemyJammingRadius", "Function TribesGame.TrPawn.EnteredEnemyJammingRadius")()); }
+			ScriptFunction ExitEnemyJammingRadius() { mixin(MGF!("mExitEnemyJammingRadius", "Function TribesGame.TrPawn.ExitEnemyJammingRadius")()); }
+			ScriptFunction IsJammedByEnemy() { mixin(MGF!("mIsJammedByEnemy", "Function TribesGame.TrPawn.IsJammedByEnemy")()); }
+			ScriptFunction PlayJammerPackEffect() { mixin(MGF!("mPlayJammerPackEffect", "Function TribesGame.TrPawn.PlayJammerPackEffect")()); }
+			ScriptFunction PlayJammingByFriendEffect() { mixin(MGF!("mPlayJammingByFriendEffect", "Function TribesGame.TrPawn.PlayJammingByFriendEffect")()); }
+			ScriptFunction PlayEnemyJammerPackEffect() { mixin(MGF!("mPlayEnemyJammerPackEffect", "Function TribesGame.TrPawn.PlayEnemyJammerPackEffect")()); }
+			ScriptFunction OnPawnDetectedByCollisionProxy() { mixin(MGF!("mOnPawnDetectedByCollisionProxy", "Function TribesGame.TrPawn.OnPawnDetectedByCollisionProxy")()); }
+			ScriptFunction OnPawnExitedCollisionProxy() { mixin(MGF!("mOnPawnExitedCollisionProxy", "Function TribesGame.TrPawn.OnPawnExitedCollisionProxy")()); }
+			ScriptFunction OnEnteredDropJammer() { mixin(MGF!("mOnEnteredDropJammer", "Function TribesGame.TrPawn.OnEnteredDropJammer")()); }
+			ScriptFunction OnExitedDropJammer() { mixin(MGF!("mOnExitedDropJammer", "Function TribesGame.TrPawn.OnExitedDropJammer")()); }
+			ScriptFunction UpdateEnemyDropJammer() { mixin(MGF!("mUpdateEnemyDropJammer", "Function TribesGame.TrPawn.UpdateEnemyDropJammer")()); }
+			ScriptFunction UpdateFriendlyDropJammer() { mixin(MGF!("mUpdateFriendlyDropJammer", "Function TribesGame.TrPawn.UpdateFriendlyDropJammer")()); }
+			ScriptFunction PlayJammingByEnemyDropJammerEffect() { mixin(MGF!("mPlayJammingByEnemyDropJammerEffect", "Function TribesGame.TrPawn.PlayJammingByEnemyDropJammerEffect")()); }
+			ScriptFunction PlayJammingByFriendlyDropJammerEffect() { mixin(MGF!("mPlayJammingByFriendlyDropJammerEffect", "Function TribesGame.TrPawn.PlayJammingByFriendlyDropJammerEffect")()); }
+			ScriptFunction OnChangeJammingTeam() { mixin(MGF!("mOnChangeJammingTeam", "Function TribesGame.TrPawn.OnChangeJammingTeam")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrPawn.Destroyed")()); }
+			ScriptFunction SetMeshVisibility() { mixin(MGF!("mSetMeshVisibility", "Function TribesGame.TrPawn.SetMeshVisibility")()); }
+			ScriptFunction SetFirstPersonBodyVisibility() { mixin(MGF!("mSetFirstPersonBodyVisibility", "Function TribesGame.TrPawn.SetFirstPersonBodyVisibility")()); }
+			ScriptFunction WeaponAttachmentChanged() { mixin(MGF!("mWeaponAttachmentChanged", "Function TribesGame.TrPawn.WeaponAttachmentChanged")()); }
+			ScriptFunction ForceCrouch() { mixin(MGF!("mForceCrouch", "Function TribesGame.TrPawn.ForceCrouch")()); }
+			ScriptFunction FindClosestStickyGrenadeSocketIndex() { mixin(MGF!("mFindClosestStickyGrenadeSocketIndex", "Function TribesGame.TrPawn.FindClosestStickyGrenadeSocketIndex")()); }
+			ScriptFunction StickGrenadeToPawn() { mixin(MGF!("mStickGrenadeToPawn", "Function TribesGame.TrPawn.StickGrenadeToPawn")()); }
+			ScriptFunction UpdateStickyGrenades() { mixin(MGF!("mUpdateStickyGrenades", "Function TribesGame.TrPawn.UpdateStickyGrenades")()); }
+			ScriptFunction SetSkiing() { mixin(MGF!("mSetSkiing", "Function TribesGame.TrPawn.SetSkiing")()); }
+			ScriptFunction PlaySkiEffects() { mixin(MGF!("mPlaySkiEffects", "Function TribesGame.TrPawn.PlaySkiEffects")()); }
+			ScriptFunction StopSkiEffects() { mixin(MGF!("mStopSkiEffects", "Function TribesGame.TrPawn.StopSkiEffects")()); }
+			ScriptFunction PlaySkiEffectsSound() { mixin(MGF!("mPlaySkiEffectsSound", "Function TribesGame.TrPawn.PlaySkiEffectsSound")()); }
+			ScriptFunction StopSkiEffectsSound() { mixin(MGF!("mStopSkiEffectsSound", "Function TribesGame.TrPawn.StopSkiEffectsSound")()); }
+			ScriptFunction FaceRotation() { mixin(MGF!("mFaceRotation", "Function TribesGame.TrPawn.FaceRotation")()); }
+			ScriptFunction PlayDyingSound() { mixin(MGF!("mPlayDyingSound", "Function TribesGame.TrPawn.PlayDyingSound")()); }
+			ScriptFunction HoldGameObject() { mixin(MGF!("mHoldGameObject", "Function TribesGame.TrPawn.HoldGameObject")()); }
+			ScriptFunction AdjustDamage() { mixin(MGF!("mAdjustDamage", "Function TribesGame.TrPawn.AdjustDamage")()); }
+			ScriptFunction GoInvulnerable() { mixin(MGF!("mGoInvulnerable", "Function TribesGame.TrPawn.GoInvulnerable")()); }
+			ScriptFunction ClearInvulnerability() { mixin(MGF!("mClearInvulnerability", "Function TribesGame.TrPawn.ClearInvulnerability")()); }
+			ScriptFunction SetMovementPhysics() { mixin(MGF!("mSetMovementPhysics", "Function TribesGame.TrPawn.SetMovementPhysics")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrPawn.OnAnimEnd")()); }
+			ScriptFunction PlayTeleportEffect() { mixin(MGF!("mPlayTeleportEffect", "Function TribesGame.TrPawn.PlayTeleportEffect")()); }
+			ScriptFunction TurnOff() { mixin(MGF!("mTurnOff", "Function TribesGame.TrPawn.TurnOff")()); }
+			ScriptFunction SetDetectedByEnemyScanner() { mixin(MGF!("mSetDetectedByEnemyScanner", "Function TribesGame.TrPawn.SetDetectedByEnemyScanner")()); }
+			ScriptFunction GetDetectedByEnemyScanner() { mixin(MGF!("mGetDetectedByEnemyScanner", "Function TribesGame.TrPawn.GetDetectedByEnemyScanner")()); }
+			ScriptFunction SetScannerDetect() { mixin(MGF!("mSetScannerDetect", "Function TribesGame.TrPawn.SetScannerDetect")()); }
+			ScriptFunction GetFamilyInfo() { mixin(MGF!("mGetFamilyInfo", "Function TribesGame.TrPawn.GetFamilyInfo")()); }
+			ScriptFunction LockedOutFromFlagPickupTimer() { mixin(MGF!("mLockedOutFromFlagPickupTimer", "Function TribesGame.TrPawn.LockedOutFromFlagPickupTimer")()); }
+			ScriptFunction LockFromFlagPickup() { mixin(MGF!("mLockFromFlagPickup", "Function TribesGame.TrPawn.LockFromFlagPickup")()); }
+			ScriptFunction Blink() { mixin(MGF!("mBlink", "Function TribesGame.TrPawn.Blink")()); }
+			ScriptFunction PlayBlinkPackEffect() { mixin(MGF!("mPlayBlinkPackEffect", "Function TribesGame.TrPawn.PlayBlinkPackEffect")()); }
+			ScriptFunction DoJump() { mixin(MGF!("mDoJump", "Function TribesGame.TrPawn.DoJump")()); }
+			ScriptFunction CheckClotheslineDamage() { mixin(MGF!("mCheckClotheslineDamage", "Function TribesGame.TrPawn.CheckClotheslineDamage")()); }
+			ScriptFunction GetSpectatorName() { mixin(MGF!("mGetSpectatorName", "Function TribesGame.TrPawn.GetSpectatorName")()); }
+			ScriptFunction CrushedBy() { mixin(MGF!("mCrushedBy", "Function TribesGame.TrPawn.CrushedBy")()); }
+			ScriptFunction StuckOnPawn() { mixin(MGF!("mStuckOnPawn", "Function TribesGame.TrPawn.StuckOnPawn")()); }
+			ScriptFunction SetPending3PSkin() { mixin(MGF!("mSetPending3PSkin", "Function TribesGame.TrPawn.SetPending3PSkin")()); }
+			ScriptFunction CheckApplyPending3PSkin() { mixin(MGF!("mCheckApplyPending3PSkin", "Function TribesGame.TrPawn.CheckApplyPending3PSkin")()); }
+			ScriptFunction ThrowActiveWeapon() { mixin(MGF!("mThrowActiveWeapon", "Function TribesGame.TrPawn.ThrowActiveWeapon")()); }
+			ScriptFunction ThrowWeaponOnDeath() { mixin(MGF!("mThrowWeaponOnDeath", "Function TribesGame.TrPawn.ThrowWeaponOnDeath")()); }
+			ScriptFunction ClearSkiParticleEffects() { mixin(MGF!("mClearSkiParticleEffects", "Function TribesGame.TrPawn.ClearSkiParticleEffects")()); }
+			ScriptFunction ClearJetpackParticleEffects() { mixin(MGF!("mClearJetpackParticleEffects", "Function TribesGame.TrPawn.ClearJetpackParticleEffects")()); }
+			ScriptFunction AlienFXOverlay() { mixin(MGF!("mAlienFXOverlay", "Function TribesGame.TrPawn.AlienFXOverlay")()); }
 		}
 	}
 	static struct Constants
@@ -453,12 +454,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrPawn.AssistInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPawn.AssistInfo")()); }
 		@property final auto ref
 		{
-			float m_fDamagerTime() { return *cast(float*)(cast(size_t)&this + 8); }
-			int m_AccumulatedDamage() { return *cast(int*)(cast(size_t)&this + 4); }
-			TrPlayerController m_Damager() { return *cast(TrPlayerController*)(cast(size_t)&this + 0); }
+			float m_fDamagerTime() { mixin(MGPS!(float, 8)()); }
+			int m_AccumulatedDamage() { mixin(MGPS!(int, 4)()); }
+			TrPlayerController m_Damager() { mixin(MGPS!(TrPlayerController, 0)()); }
 		}
 	}
 	struct FootstepParticleInfo
@@ -466,11 +467,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrPawn.FootstepParticleInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPawn.FootstepParticleInfo")()); }
 		@property final auto ref
 		{
-			ParticleSystem FootParticle() { return *cast(ParticleSystem*)(cast(size_t)&this + 8); }
-			ScriptName MaterialType() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ParticleSystem FootParticle() { mixin(MGPS!(ParticleSystem, 8)()); }
+			ScriptName MaterialType() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct StickyGrenadeSocketInfo
@@ -478,227 +479,247 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrPawn.StickyGrenadeSocketInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPawn.StickyGrenadeSocketInfo")()); }
 		@property final auto ref
 		{
-			Vector ViewOffset() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			Vector ViewOffset() { mixin(MGPS!(Vector, 16)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FirstPersonMesh'!
 			// WARNING: Property 'Projectile' has the same name as a defined type!
-			ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptName SocketName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
+	}
+	static struct Dying
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrPawn.Dying")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrVehicle m_RidingVehicle() { return *cast(TrVehicle*)(cast(size_t)cast(void*)this + 3096); }
-			float m_fCurrentPowerPool() { return *cast(float*)(cast(size_t)cast(void*)this + 2320); }
-			float m_fHeadShotDamageMultiple() { return *cast(float*)(cast(size_t)cast(void*)this + 2348); }
-			float m_fCurrentAccuracy() { return *cast(float*)(cast(size_t)cast(void*)this + 2540); }
-			float m_fPawnViewForwardAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 2964); }
-			TrAnimNodeBlendByRidingPassenger m_RidingPassengerBlendNode() { return *cast(TrAnimNodeBlendByRidingPassenger*)(cast(size_t)cast(void*)this + 2600); }
-			TrAnimNodeAimOffset m_AimOffsetNode() { return *cast(TrAnimNodeAimOffset*)(cast(size_t)cast(void*)this + 2588); }
-			TrAnimNodeAimOffset m_1pBodyAimOffsetNode() { return *cast(TrAnimNodeAimOffset*)(cast(size_t)cast(void*)this + 2592); }
-			Vector r_FlashNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2228); }
-			float m_fShowObjectThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2616); }
-			ScriptArray!(TrEffect) m_AppliedEffects() { return *cast(ScriptArray!(TrEffect)*)(cast(size_t)cast(void*)this + 2476); }
-			ScriptArray!(TrEffectForm) m_AppliedEffectForms() { return *cast(ScriptArray!(TrEffectForm)*)(cast(size_t)cast(void*)this + 2488); }
-			ScriptArray!(TrPawn.AssistInfo) m_KillAssisters() { return *cast(ScriptArray!(TrPawn.AssistInfo)*)(cast(size_t)cast(void*)this + 2572); }
-			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { return *cast(ScriptArray!(TrObject.EffectFormOverwrite)*)(cast(size_t)cast(void*)this + 2752); }
-			ScriptArray!(TrPawn) m_JammedFriends() { return *cast(ScriptArray!(TrPawn)*)(cast(size_t)cast(void*)this + 2776); }
-			ScriptArray!(TrPawn) m_JammedEnemies() { return *cast(ScriptArray!(TrPawn)*)(cast(size_t)cast(void*)this + 2788); }
-			ScriptArray!(TrPlayerReplicationInfo) m_FriendJammingList() { return *cast(ScriptArray!(TrPlayerReplicationInfo)*)(cast(size_t)cast(void*)this + 2808); }
-			ScriptArray!(TrDeployable_DropJammer) m_FriendlyDropJammerList() { return *cast(ScriptArray!(TrDeployable_DropJammer)*)(cast(size_t)cast(void*)this + 2832); }
-			ScriptArray!(TrDeployable_DropJammer) m_EnemyDropJammerList() { return *cast(ScriptArray!(TrDeployable_DropJammer)*)(cast(size_t)cast(void*)this + 2844); }
-			ScriptArray!(TrPawn.FootstepParticleInfo) m_SkiParticles() { return *cast(ScriptArray!(TrPawn.FootstepParticleInfo)*)(cast(size_t)cast(void*)this + 2944); }
-			ScriptArray!(TrPawn.StickyGrenadeSocketInfo) m_StickyGrenadeSocketList() { return *cast(ScriptArray!(TrPawn.StickyGrenadeSocketInfo)*)(cast(size_t)cast(void*)this + 2968); }
-			ScriptArray!(Vector) m_aPreviousVelocities() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 3048); }
-			ScriptArray!(Vector) m_aPreviousLocations() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 3060); }
-			ScriptArray!(float) m_aPreviousTickTimes() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 3072); }
-			float m_TerrainWalkableFloorZ() { return *cast(float*)(cast(size_t)cast(void*)this + 3188); }
-			float m_fSwapSkinDistSq() { return *cast(float*)(cast(size_t)cast(void*)this + 3184); }
-			ScriptClass c_Pending1PSkin() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 3180); }
-			ScriptClass c_Pending3PSkin() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 3176); }
-			int m_nNetViewPitchCount() { return *cast(int*)(cast(size_t)cast(void*)this + 3172); }
-			float m_PitchInterpRate() { return *cast(float*)(cast(size_t)cast(void*)this + 3168); }
-			int m_nTargetRemoteViewPitch() { return *cast(int*)(cast(size_t)cast(void*)this + 3164); }
-			int m_nPreviousReceivedRemoteViewPitch() { return *cast(int*)(cast(size_t)cast(void*)this + 3160); }
-			int m_nSmoothedRemoteViewPitch() { return *cast(int*)(cast(size_t)cast(void*)this + 3156); }
-			int m_nNetRotationCount() { return *cast(int*)(cast(size_t)cast(void*)this + 3152); }
-			float m_RotationInterpRate() { return *cast(float*)(cast(size_t)cast(void*)this + 3148); }
-			Rotator m_TargetNetReceiveRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 3136); }
-			Rotator m_PreviousNetReceiveRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 3124); }
-			SkeletalMesh m_GibMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 3120); }
-			TrStatsInterface Stats() { return *cast(TrStatsInterface*)(cast(size_t)cast(void*)this + 3116); }
-			float m_fInventoryStationLockoutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 3112); }
-			float m_fLastInventoryStationVisitTime() { return *cast(float*)(cast(size_t)cast(void*)this + 3108); }
-			int m_nDetectedByEnemyScannerCount() { return *cast(int*)(cast(size_t)cast(void*)this + 3104); }
-			UDKCarriedObject m_GameObjCheckTimer() { return *cast(UDKCarriedObject*)(cast(size_t)cast(void*)this + 3100); }
-			MaterialInstanceConstant m_MarkerMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 3092); }
-			MaterialInstanceConstant m_HealthBarMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 3088); }
-			UTWeaponAttachment m_InHandWeaponAttachmentFromAutoFire() { return *cast(UTWeaponAttachment*)(cast(size_t)cast(void*)this + 3084); }
-			float m_fLastTakeClotheslineDamageTimestamp() { return *cast(float*)(cast(size_t)cast(void*)this + 3044); }
-			float m_fClotheslineSpeedDifferenceMax() { return *cast(float*)(cast(size_t)cast(void*)this + 3040); }
-			float m_fClotheslineSpeedDifferenceMin() { return *cast(float*)(cast(size_t)cast(void*)this + 3036); }
-			float m_fClotheslineDamageMax() { return *cast(float*)(cast(size_t)cast(void*)this + 3032); }
-			float m_fClotheslineDamageMin() { return *cast(float*)(cast(size_t)cast(void*)this + 3028); }
-			float m_fSplatSpeedMax() { return *cast(float*)(cast(size_t)cast(void*)this + 3024); }
-			float m_fSplatSpeedMin() { return *cast(float*)(cast(size_t)cast(void*)this + 3020); }
-			float m_fSplatDamageFromWallMax() { return *cast(float*)(cast(size_t)cast(void*)this + 3016); }
-			float m_fSplatDamageFromWallMin() { return *cast(float*)(cast(size_t)cast(void*)this + 3012); }
-			float m_fSplatDamageFromLandMax() { return *cast(float*)(cast(size_t)cast(void*)this + 3008); }
-			float m_fSplatDamageFromLandMin() { return *cast(float*)(cast(size_t)cast(void*)this + 3004); }
-			float m_bJustLandedSpeedSq() { return *cast(float*)(cast(size_t)cast(void*)this + 3000); }
-			float m_fRemainingSeekingTargetHUDZoomTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2996); }
-			Rotator m_rPotentialSeekingTargetHUDRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 2984); }
-			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2980); }
-			float m_fGroundSkiEffectDist() { return *cast(float*)(cast(size_t)cast(void*)this + 2956); }
-			MaterialInstanceConstant m_InvulnerableOverlayMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2920); }
-			Material m_InvulnerableOverlayMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 2916); }
-			MaterialInstanceConstant m_RageOverlayMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2912); }
-			Material m_RageOverlayMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 2908); }
-			MaterialInstanceConstant m_JammerPackOverlayMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2904); }
-			Material m_JammerPackOverlayMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 2900); }
-			MaterialInstanceConstant m_RegenPackPackOverlayMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2896); }
-			Material m_RegenPackOverlayMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 2892); }
-			MaterialInstanceConstant m_RegenOverlayMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2888); }
-			Material m_RegenOverlayMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 2884); }
-			float m_fShieldPackMaterialHitRampDownSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2880); }
-			float m_fOverlayMaterialDeactivateSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2876); }
-			float m_fOverlayMaterialActivateSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2872); }
-			MaterialInstanceConstant m_ShieldPackOverlayMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2868); }
-			Material m_ShieldPackOverlayMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 2864); }
-			float m_fForwardJettingPct() { return *cast(float*)(cast(size_t)cast(void*)this + 2860); }
-			float m_fMaxJetpackBoostGroundspeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2856); }
-			int r_nEnemyDropJammerCount() { return *cast(int*)(cast(size_t)cast(void*)this + 2828); }
-			int r_nFriendlyDropJammerCount() { return *cast(int*)(cast(size_t)cast(void*)this + 2824); }
-			int r_nEnemyJamCount() { return *cast(int*)(cast(size_t)cast(void*)this + 2820); }
-			TrPlayerReplicationInfo r_FriendJammingPRI() { return *cast(TrPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 2804); }
-			int m_JammingFriendTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 2800); }
-			float m_fJamEffectRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 2772); }
-			TrPawnCollisionProxy m_JammingCollisionProxy() { return *cast(TrPawnCollisionProxy*)(cast(size_t)cast(void*)this + 2768); }
-			Material r_ReplicatedWeaponAttachmentMat() { return *cast(Material*)(cast(size_t)cast(void*)this + 2764); }
-			float m_OldSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2748); }
-			Vector r_avMultiShotLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2620); }
-			float m_fEnemyShowDistanceThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2612); }
-			float m_fFriendlyShowDistanceThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2608); }
-			MorphNodeWeight m_OverlayMorphNode() { return *cast(MorphNodeWeight*)(cast(size_t)cast(void*)this + 2604); }
-			TrAnimNodeBlendByVehicle m_VehicleBlendNode() { return *cast(TrAnimNodeBlendByVehicle*)(cast(size_t)cast(void*)this + 2596); }
-			float m_fFallVelocityTransfer() { return *cast(float*)(cast(size_t)cast(void*)this + 2584); }
-			float m_fLastDamagerTimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 2568); }
-			float m_fLastVehicleDamagerTimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 2564); }
-			float m_AssistDamagePercentQualifier() { return *cast(float*)(cast(size_t)cast(void*)this + 2560); }
-			float m_fSkiAccelPct() { return *cast(float*)(cast(size_t)cast(void*)this + 2556); }
-			float m_fSkiAccelCapSpeedThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2552); }
-			float m_fAirAccelSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2548); }
-			float m_fAirAccelCapSpeedThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2544); }
-			float m_fTerminalSkiSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2536); }
-			float m_fMaxSkiSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2532); }
-			float m_fSkiSlopeGravityBoost() { return *cast(float*)(cast(size_t)cast(void*)this + 2528); }
-			float m_fMaxSkiControlPct() { return *cast(float*)(cast(size_t)cast(void*)this + 2524); }
-			float m_fSkiControlSigmaSquare() { return *cast(float*)(cast(size_t)cast(void*)this + 2520); }
-			float m_fPeakSkiControlSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2516); }
-			TrObject.TrTakeEffectInfo r_LastTakeEffectInfo() { return *cast(TrObject.TrTakeEffectInfo*)(cast(size_t)cast(void*)this + 2500); }
-			float ShowHeaderUntil() { return *cast(float*)(cast(size_t)cast(void*)this + 2472); }
-			TrObject.TR_HUD_INFO m_HudInfo() { return *cast(TrObject.TR_HUD_INFO*)(cast(size_t)cast(void*)this + 2404); }
-			int r_nSensorAlertLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 2400); }
-			float m_fDecelerationRateWithFlag() { return *cast(float*)(cast(size_t)cast(void*)this + 2396); }
-			float m_fMaxSpeedWithFlag() { return *cast(float*)(cast(size_t)cast(void*)this + 2392); }
-			float m_fPreserveVelocityZNormalThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2388); }
-			float m_fPreserveVelocityThresholdMin() { return *cast(float*)(cast(size_t)cast(void*)this + 2384); }
-			float m_fPreserveVelocityThresholdMax() { return *cast(float*)(cast(size_t)cast(void*)this + 2380); }
-			float m_fMaxSpeedDecelerationRate() { return *cast(float*)(cast(size_t)cast(void*)this + 2376); }
-			float m_fTerminalJettingSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2372); }
-			float m_fMaxJettingSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2368); }
-			float m_fAccelRateAtMaxThrustSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2364); }
-			float m_fMaxJetpackThrustSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2360); }
-			float m_fMaxStoppingDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 2356); }
-			float m_fStoppingDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 2352); }
-			float m_fHeadShotFudge() { return *cast(float*)(cast(size_t)cast(void*)this + 2344); }
-			float m_fTickedRegenDecimal() { return *cast(float*)(cast(size_t)cast(void*)this + 2340); }
-			float m_fSecondsBeforeAutoHeal() { return *cast(float*)(cast(size_t)cast(void*)this + 2336); }
-			float r_fPowerPoolRechargeRate() { return *cast(float*)(cast(size_t)cast(void*)this + 2332); }
-			float r_fMaxPowerPool() { return *cast(float*)(cast(size_t)cast(void*)this + 2328); }
-			float r_fCurrentPowerPool() { return *cast(float*)(cast(size_t)cast(void*)this + 2324); }
-			float m_fTimeLastUntargetByLocalPlayer() { return *cast(float*)(cast(size_t)cast(void*)this + 2316); }
-			float m_fTimeLastTargetByLocalPlayer() { return *cast(float*)(cast(size_t)cast(void*)this + 2312); }
-			float m_fTimeLastUnseenByLocalPlayer() { return *cast(float*)(cast(size_t)cast(void*)this + 2308); }
-			float m_fTimeLastSeenByLocalPlayer() { return *cast(float*)(cast(size_t)cast(void*)this + 2304); }
-			float s_fVE() { return *cast(float*)(cast(size_t)cast(void*)this + 2300); }
-			float m_fShieldMultiple() { return *cast(float*)(cast(size_t)cast(void*)this + 2296); }
-			float r_fFasterWeaponSwitchMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 2292); }
-			float m_fPulseStealthIgnoreTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2288); }
-			float m_fPulseStealthIgnoreTimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 2284); }
-			float r_fPulseStealthSpeedThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2280); }
-			float m_fPulseStealthFadeInInterpSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2276); }
-			float m_fPulseStealthVisibleTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2272); }
-			float m_fPulseStealthVisibleTimestamp() { return *cast(float*)(cast(size_t)cast(void*)this + 2268); }
-			MaterialInstanceConstant m_StealthMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2264); }
-			Material m_StealthMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 2260); }
-			float m_fMinStealthVisibilityParamValue() { return *cast(float*)(cast(size_t)cast(void*)this + 2256); }
-			float m_fDisableStealthVisibilityInterpSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2252); }
-			float m_fEnableStealthVisibilityInterpSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2248); }
-			AlienFXManager.FXOverlay LastFXOverlay() { return *cast(AlienFXManager.FXOverlay*)(cast(size_t)cast(void*)this + 2247); }
-			ubyte r_nWhiteOut() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 2246); }
-			TrObject.EMissileLock m_MissileLockStatus() { return *cast(TrObject.EMissileLock*)(cast(size_t)cast(void*)this + 2245); }
-			ubyte r_RemoteViewYaw() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 2244); }
-			TrPawn.PhysicsType PhysType() { return *cast(TrPawn.PhysicsType*)(cast(size_t)cast(void*)this + 2243); }
-			int r_nFactionId() { return *cast(int*)(cast(size_t)cast(void*)this + 2208); }
-			ubyte r_nBlinked() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 2242); }
-			ubyte r_nPulseStealth() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 2241); }
-			TrObject.EMissileLock r_MissileLock() { return *cast(TrObject.EMissileLock*)(cast(size_t)cast(void*)this + 2240); }
-			Actor r_LockedTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 2224); }
-			ScriptName m_nmMakeVisible() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 2212); }
+			TrVehicle m_RidingVehicle() { mixin(MGPC!(TrVehicle, 3096)()); }
+			float m_fCurrentPowerPool() { mixin(MGPC!(float, 2320)()); }
+			float m_fHeadShotDamageMultiple() { mixin(MGPC!(float, 2348)()); }
+			float m_fCurrentAccuracy() { mixin(MGPC!(float, 2540)()); }
+			float m_fPawnViewForwardAmount() { mixin(MGPC!(float, 2964)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonWeaponShadowMesh'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonBodyMesh'!
+			TrAnimNodeBlendByRidingPassenger m_RidingPassengerBlendNode() { mixin(MGPC!(TrAnimNodeBlendByRidingPassenger, 2600)()); }
+			TrAnimNodeAimOffset m_AimOffsetNode() { mixin(MGPC!(TrAnimNodeAimOffset, 2588)()); }
+			TrAnimNodeAimOffset m_1pBodyAimOffsetNode() { mixin(MGPC!(TrAnimNodeAimOffset, 2592)()); }
+			Vector r_FlashNormal() { mixin(MGPC!(Vector, 2228)()); }
+			float m_fShowObjectThreshold() { mixin(MGPC!(float, 2616)()); }
+			ScriptArray!(TrEffect) m_AppliedEffects() { mixin(MGPC!(ScriptArray!(TrEffect), 2476)()); }
+			ScriptArray!(TrEffectForm) m_AppliedEffectForms() { mixin(MGPC!(ScriptArray!(TrEffectForm), 2488)()); }
+			ScriptArray!(TrPawn.AssistInfo) m_KillAssisters() { mixin(MGPC!(ScriptArray!(TrPawn.AssistInfo), 2572)()); }
+			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!(ScriptArray!(TrObject.EffectFormOverwrite), 2752)()); }
+			ScriptArray!(TrPawn) m_JammedFriends() { mixin(MGPC!(ScriptArray!(TrPawn), 2776)()); }
+			ScriptArray!(TrPawn) m_JammedEnemies() { mixin(MGPC!(ScriptArray!(TrPawn), 2788)()); }
+			ScriptArray!(TrPlayerReplicationInfo) m_FriendJammingList() { mixin(MGPC!(ScriptArray!(TrPlayerReplicationInfo), 2808)()); }
+			ScriptArray!(TrDeployable_DropJammer) m_FriendlyDropJammerList() { mixin(MGPC!(ScriptArray!(TrDeployable_DropJammer), 2832)()); }
+			ScriptArray!(TrDeployable_DropJammer) m_EnemyDropJammerList() { mixin(MGPC!(ScriptArray!(TrDeployable_DropJammer), 2844)()); }
+			ScriptArray!(TrPawn.FootstepParticleInfo) m_SkiParticles() { mixin(MGPC!(ScriptArray!(TrPawn.FootstepParticleInfo), 2944)()); }
+			ScriptArray!(TrPawn.StickyGrenadeSocketInfo) m_StickyGrenadeSocketList() { mixin(MGPC!(ScriptArray!(TrPawn.StickyGrenadeSocketInfo), 2968)()); }
+			ScriptArray!(Vector) m_aPreviousVelocities() { mixin(MGPC!(ScriptArray!(Vector), 3048)()); }
+			ScriptArray!(Vector) m_aPreviousLocations() { mixin(MGPC!(ScriptArray!(Vector), 3060)()); }
+			ScriptArray!(float) m_aPreviousTickTimes() { mixin(MGPC!(ScriptArray!(float), 3072)()); }
+			float m_TerrainWalkableFloorZ() { mixin(MGPC!(float, 3188)()); }
+			float m_fSwapSkinDistSq() { mixin(MGPC!(float, 3184)()); }
+			ScriptClass c_Pending1PSkin() { mixin(MGPC!(ScriptClass, 3180)()); }
+			ScriptClass c_Pending3PSkin() { mixin(MGPC!(ScriptClass, 3176)()); }
+			int m_nNetViewPitchCount() { mixin(MGPC!(int, 3172)()); }
+			float m_PitchInterpRate() { mixin(MGPC!(float, 3168)()); }
+			int m_nTargetRemoteViewPitch() { mixin(MGPC!(int, 3164)()); }
+			int m_nPreviousReceivedRemoteViewPitch() { mixin(MGPC!(int, 3160)()); }
+			int m_nSmoothedRemoteViewPitch() { mixin(MGPC!(int, 3156)()); }
+			int m_nNetRotationCount() { mixin(MGPC!(int, 3152)()); }
+			float m_RotationInterpRate() { mixin(MGPC!(float, 3148)()); }
+			Rotator m_TargetNetReceiveRotation() { mixin(MGPC!(Rotator, 3136)()); }
+			Rotator m_PreviousNetReceiveRotation() { mixin(MGPC!(Rotator, 3124)()); }
+			SkeletalMesh m_GibMesh() { mixin(MGPC!(SkeletalMesh, 3120)()); }
+			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 3116)()); }
+			float m_fInventoryStationLockoutTime() { mixin(MGPC!(float, 3112)()); }
+			float m_fLastInventoryStationVisitTime() { mixin(MGPC!(float, 3108)()); }
+			int m_nDetectedByEnemyScannerCount() { mixin(MGPC!(int, 3104)()); }
+			UDKCarriedObject m_GameObjCheckTimer() { mixin(MGPC!(UDKCarriedObject, 3100)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 3092)()); }
+			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3088)()); }
+			UTWeaponAttachment m_InHandWeaponAttachmentFromAutoFire() { mixin(MGPC!(UTWeaponAttachment, 3084)()); }
+			float m_fLastTakeClotheslineDamageTimestamp() { mixin(MGPC!(float, 3044)()); }
+			float m_fClotheslineSpeedDifferenceMax() { mixin(MGPC!(float, 3040)()); }
+			float m_fClotheslineSpeedDifferenceMin() { mixin(MGPC!(float, 3036)()); }
+			float m_fClotheslineDamageMax() { mixin(MGPC!(float, 3032)()); }
+			float m_fClotheslineDamageMin() { mixin(MGPC!(float, 3028)()); }
+			float m_fSplatSpeedMax() { mixin(MGPC!(float, 3024)()); }
+			float m_fSplatSpeedMin() { mixin(MGPC!(float, 3020)()); }
+			float m_fSplatDamageFromWallMax() { mixin(MGPC!(float, 3016)()); }
+			float m_fSplatDamageFromWallMin() { mixin(MGPC!(float, 3012)()); }
+			float m_fSplatDamageFromLandMax() { mixin(MGPC!(float, 3008)()); }
+			float m_fSplatDamageFromLandMin() { mixin(MGPC!(float, 3004)()); }
+			float m_bJustLandedSpeedSq() { mixin(MGPC!(float, 3000)()); }
+			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 2996)()); }
+			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!(Rotator, 2984)()); }
+			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 2980)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_GroundSkiPSC'!
+			float m_fGroundSkiEffectDist() { mixin(MGPC!(float, 2956)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonFlagShadowMesh'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonBodyShadowMesh'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonBodyOverlayMesh'!
+			MaterialInstanceConstant m_InvulnerableOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2920)()); }
+			Material m_InvulnerableOverlayMaterial() { mixin(MGPC!(Material, 2916)()); }
+			MaterialInstanceConstant m_RageOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2912)()); }
+			Material m_RageOverlayMaterial() { mixin(MGPC!(Material, 2908)()); }
+			MaterialInstanceConstant m_JammerPackOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2904)()); }
+			Material m_JammerPackOverlayMaterial() { mixin(MGPC!(Material, 2900)()); }
+			MaterialInstanceConstant m_RegenPackPackOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2896)()); }
+			Material m_RegenPackOverlayMaterial() { mixin(MGPC!(Material, 2892)()); }
+			MaterialInstanceConstant m_RegenOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2888)()); }
+			Material m_RegenOverlayMaterial() { mixin(MGPC!(Material, 2884)()); }
+			float m_fShieldPackMaterialHitRampDownSpeed() { mixin(MGPC!(float, 2880)()); }
+			float m_fOverlayMaterialDeactivateSpeed() { mixin(MGPC!(float, 2876)()); }
+			float m_fOverlayMaterialActivateSpeed() { mixin(MGPC!(float, 2872)()); }
+			MaterialInstanceConstant m_ShieldPackOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2868)()); }
+			Material m_ShieldPackOverlayMaterial() { mixin(MGPC!(Material, 2864)()); }
+			float m_fForwardJettingPct() { mixin(MGPC!(float, 2860)()); }
+			float m_fMaxJetpackBoostGroundspeed() { mixin(MGPC!(float, 2856)()); }
+			int r_nEnemyDropJammerCount() { mixin(MGPC!(int, 2828)()); }
+			int r_nFriendlyDropJammerCount() { mixin(MGPC!(int, 2824)()); }
+			int r_nEnemyJamCount() { mixin(MGPC!(int, 2820)()); }
+			TrPlayerReplicationInfo r_FriendJammingPRI() { mixin(MGPC!(TrPlayerReplicationInfo, 2804)()); }
+			int m_JammingFriendTeam() { mixin(MGPC!(int, 2800)()); }
+			float m_fJamEffectRadius() { mixin(MGPC!(float, 2772)()); }
+			TrPawnCollisionProxy m_JammingCollisionProxy() { mixin(MGPC!(TrPawnCollisionProxy, 2768)()); }
+			Material r_ReplicatedWeaponAttachmentMat() { mixin(MGPC!(Material, 2764)()); }
+			float m_OldSpeed() { mixin(MGPC!(float, 2748)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentRageLoop'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentHealthRechargeLoop'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentJetpackLoop'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentSpeedSound'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentJammerPackLoop'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentStealthPackLoop'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentShieldPackLoop'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentSkiLoop'!
+			Vector r_avMultiShotLocation() { mixin(MGPC!(Vector, 2620)()); }
+			float m_fEnemyShowDistanceThreshold() { mixin(MGPC!(float, 2612)()); }
+			float m_fFriendlyShowDistanceThreshold() { mixin(MGPC!(float, 2608)()); }
+			MorphNodeWeight m_OverlayMorphNode() { mixin(MGPC!(MorphNodeWeight, 2604)()); }
+			TrAnimNodeBlendByVehicle m_VehicleBlendNode() { mixin(MGPC!(TrAnimNodeBlendByVehicle, 2596)()); }
+			float m_fFallVelocityTransfer() { mixin(MGPC!(float, 2584)()); }
+			float m_fLastDamagerTimeStamp() { mixin(MGPC!(float, 2568)()); }
+			float m_fLastVehicleDamagerTimeStamp() { mixin(MGPC!(float, 2564)()); }
+			float m_AssistDamagePercentQualifier() { mixin(MGPC!(float, 2560)()); }
+			float m_fSkiAccelPct() { mixin(MGPC!(float, 2556)()); }
+			float m_fSkiAccelCapSpeedThreshold() { mixin(MGPC!(float, 2552)()); }
+			float m_fAirAccelSpeed() { mixin(MGPC!(float, 2548)()); }
+			float m_fAirAccelCapSpeedThreshold() { mixin(MGPC!(float, 2544)()); }
+			float m_fTerminalSkiSpeed() { mixin(MGPC!(float, 2536)()); }
+			float m_fMaxSkiSpeed() { mixin(MGPC!(float, 2532)()); }
+			float m_fSkiSlopeGravityBoost() { mixin(MGPC!(float, 2528)()); }
+			float m_fMaxSkiControlPct() { mixin(MGPC!(float, 2524)()); }
+			float m_fSkiControlSigmaSquare() { mixin(MGPC!(float, 2520)()); }
+			float m_fPeakSkiControlSpeed() { mixin(MGPC!(float, 2516)()); }
+			TrObject.TrTakeEffectInfo r_LastTakeEffectInfo() { mixin(MGPC!(TrObject.TrTakeEffectInfo, 2500)()); }
+			float ShowHeaderUntil() { mixin(MGPC!(float, 2472)()); }
+			TrObject.TR_HUD_INFO m_HudInfo() { mixin(MGPC!(TrObject.TR_HUD_INFO, 2404)()); }
+			int r_nSensorAlertLevel() { mixin(MGPC!(int, 2400)()); }
+			float m_fDecelerationRateWithFlag() { mixin(MGPC!(float, 2396)()); }
+			float m_fMaxSpeedWithFlag() { mixin(MGPC!(float, 2392)()); }
+			float m_fPreserveVelocityZNormalThreshold() { mixin(MGPC!(float, 2388)()); }
+			float m_fPreserveVelocityThresholdMin() { mixin(MGPC!(float, 2384)()); }
+			float m_fPreserveVelocityThresholdMax() { mixin(MGPC!(float, 2380)()); }
+			float m_fMaxSpeedDecelerationRate() { mixin(MGPC!(float, 2376)()); }
+			float m_fTerminalJettingSpeed() { mixin(MGPC!(float, 2372)()); }
+			float m_fMaxJettingSpeed() { mixin(MGPC!(float, 2368)()); }
+			float m_fAccelRateAtMaxThrustSpeed() { mixin(MGPC!(float, 2364)()); }
+			float m_fMaxJetpackThrustSpeed() { mixin(MGPC!(float, 2360)()); }
+			float m_fMaxStoppingDistance() { mixin(MGPC!(float, 2356)()); }
+			float m_fStoppingDistance() { mixin(MGPC!(float, 2352)()); }
+			float m_fHeadShotFudge() { mixin(MGPC!(float, 2344)()); }
+			float m_fTickedRegenDecimal() { mixin(MGPC!(float, 2340)()); }
+			float m_fSecondsBeforeAutoHeal() { mixin(MGPC!(float, 2336)()); }
+			float r_fPowerPoolRechargeRate() { mixin(MGPC!(float, 2332)()); }
+			float r_fMaxPowerPool() { mixin(MGPC!(float, 2328)()); }
+			float r_fCurrentPowerPool() { mixin(MGPC!(float, 2324)()); }
+			float m_fTimeLastUntargetByLocalPlayer() { mixin(MGPC!(float, 2316)()); }
+			float m_fTimeLastTargetByLocalPlayer() { mixin(MGPC!(float, 2312)()); }
+			float m_fTimeLastUnseenByLocalPlayer() { mixin(MGPC!(float, 2308)()); }
+			float m_fTimeLastSeenByLocalPlayer() { mixin(MGPC!(float, 2304)()); }
+			float s_fVE() { mixin(MGPC!(float, 2300)()); }
+			float m_fShieldMultiple() { mixin(MGPC!(float, 2296)()); }
+			float r_fFasterWeaponSwitchMultiplier() { mixin(MGPC!(float, 2292)()); }
+			float m_fPulseStealthIgnoreTime() { mixin(MGPC!(float, 2288)()); }
+			float m_fPulseStealthIgnoreTimeStamp() { mixin(MGPC!(float, 2284)()); }
+			float r_fPulseStealthSpeedThreshold() { mixin(MGPC!(float, 2280)()); }
+			float m_fPulseStealthFadeInInterpSpeed() { mixin(MGPC!(float, 2276)()); }
+			float m_fPulseStealthVisibleTime() { mixin(MGPC!(float, 2272)()); }
+			float m_fPulseStealthVisibleTimestamp() { mixin(MGPC!(float, 2268)()); }
+			MaterialInstanceConstant m_StealthMIC() { mixin(MGPC!(MaterialInstanceConstant, 2264)()); }
+			Material m_StealthMaterial() { mixin(MGPC!(Material, 2260)()); }
+			float m_fMinStealthVisibilityParamValue() { mixin(MGPC!(float, 2256)()); }
+			float m_fDisableStealthVisibilityInterpSpeed() { mixin(MGPC!(float, 2252)()); }
+			float m_fEnableStealthVisibilityInterpSpeed() { mixin(MGPC!(float, 2248)()); }
+			AlienFXManager.FXOverlay LastFXOverlay() { mixin(MGPC!(AlienFXManager.FXOverlay, 2247)()); }
+			ubyte r_nWhiteOut() { mixin(MGPC!(ubyte, 2246)()); }
+			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!(TrObject.EMissileLock, 2245)()); }
+			ubyte r_RemoteViewYaw() { mixin(MGPC!(ubyte, 2244)()); }
+			TrPawn.PhysicsType PhysType() { mixin(MGPC!(TrPawn.PhysicsType, 2243)()); }
+			int r_nFactionId() { mixin(MGPC!(int, 2208)()); }
+			ubyte r_nBlinked() { mixin(MGPC!(ubyte, 2242)()); }
+			ubyte r_nPulseStealth() { mixin(MGPC!(ubyte, 2241)()); }
+			TrObject.EMissileLock r_MissileLock() { mixin(MGPC!(TrObject.EMissileLock, 2240)()); }
+			Actor r_LockedTarget() { mixin(MGPC!(Actor, 2224)()); }
+			ScriptName m_nmMakeVisible() { mixin(MGPC!(ScriptName, 2212)()); }
 		}
-		bool r_bIsStealthed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x4) != 0; }
-		bool r_bIsStealthed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x4; } return val; }
-		bool r_bIsInvulnerable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x100000) != 0; }
-		bool r_bIsInvulnerable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x100000; } return val; }
-		bool r_bIsSkiing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x800) != 0; }
-		bool r_bIsSkiing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x800; } return val; }
-		bool r_bIsJetting() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x8000) != 0; }
-		bool r_bIsJetting(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x8000; } return val; }
-		bool m_bUseSmoothNetReceiveRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x1000000) != 0; }
-		bool m_bUseSmoothNetReceiveRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x1000000; } return val; }
-		bool r_bDetectedByEnemyScanner() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x800000) != 0; }
-		bool r_bDetectedByEnemyScanner(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x800000; } return val; }
-		bool m_bSplattedAgainstWall() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x400000) != 0; }
-		bool m_bSplattedAgainstWall(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x400000; } return val; }
-		bool m_bIsInConduit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x200000) != 0; }
-		bool m_bIsInConduit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x200000; } return val; }
-		bool m_bUpdateStickyGrenades() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x80000) != 0; }
-		bool m_bUpdateStickyGrenades(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x80000; } return val; }
-		bool m_bLoadoutReset() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x40000) != 0; }
-		bool m_bLoadoutReset(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x40000; } return val; }
-		bool r_bIsJamming() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x20000) != 0; }
-		bool r_bIsJamming(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x20000; } return val; }
-		bool m_bIsJetEffectsPlaying() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x10000) != 0; }
-		bool m_bIsJetEffectsPlaying(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x10000; } return val; }
-		bool r_bAimingMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x4000) != 0; }
-		bool r_bAimingMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x4000; } return val; }
-		bool m_bIsPlayingSkiEffectsSounds() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x2000) != 0; }
-		bool m_bIsPlayingSkiEffectsSounds(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x2000; } return val; }
-		bool m_bIsPlayingSkiEffects() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x1000) != 0; }
-		bool m_bIsPlayingSkiEffects(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x1000; } return val; }
-		bool bInDeployModeClient() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x400) != 0; }
-		bool bInDeployModeClient(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x400; } return val; }
-		bool r_bInDeployMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x200) != 0; }
-		bool r_bInDeployMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x200; } return val; }
-		bool bInFireLockClient() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x100) != 0; }
-		bool bInFireLockClient(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x100; } return val; }
-		bool r_bInFireLock() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x80) != 0; }
-		bool r_bInFireLock(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x80; } return val; }
-		bool r_bIsHealthRecharging() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x40) != 0; }
-		bool r_bIsHealthRecharging(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x40; } return val; }
-		bool r_bIsShielded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x20) != 0; }
-		bool r_bIsShielded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x20; } return val; }
-		bool r_bIsRaged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x10) != 0; }
-		bool r_bIsRaged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x10; } return val; }
-		bool m_bStealthVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x8) != 0; }
-		bool m_bStealthVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x8; } return val; }
-		bool m_bRefreshInventoryWasRespawn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x2) != 0; }
-		bool m_bRefreshInventoryWasRespawn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x2; } return val; }
-		bool m_bInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2220) & 0x1) != 0; }
-		bool m_bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2220) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2220) &= ~0x1; } return val; }
+		bool r_bIsStealthed() { mixin(MGBPC!(2220, 0x4)()); }
+		bool r_bIsStealthed(bool val) { mixin(MSBPC!(2220, 0x4)()); }
+		bool r_bIsInvulnerable() { mixin(MGBPC!(2220, 0x100000)()); }
+		bool r_bIsInvulnerable(bool val) { mixin(MSBPC!(2220, 0x100000)()); }
+		bool r_bIsSkiing() { mixin(MGBPC!(2220, 0x800)()); }
+		bool r_bIsSkiing(bool val) { mixin(MSBPC!(2220, 0x800)()); }
+		bool r_bIsJetting() { mixin(MGBPC!(2220, 0x8000)()); }
+		bool r_bIsJetting(bool val) { mixin(MSBPC!(2220, 0x8000)()); }
+		bool m_bUseSmoothNetReceiveRotation() { mixin(MGBPC!(2220, 0x1000000)()); }
+		bool m_bUseSmoothNetReceiveRotation(bool val) { mixin(MSBPC!(2220, 0x1000000)()); }
+		bool r_bDetectedByEnemyScanner() { mixin(MGBPC!(2220, 0x800000)()); }
+		bool r_bDetectedByEnemyScanner(bool val) { mixin(MSBPC!(2220, 0x800000)()); }
+		bool m_bSplattedAgainstWall() { mixin(MGBPC!(2220, 0x400000)()); }
+		bool m_bSplattedAgainstWall(bool val) { mixin(MSBPC!(2220, 0x400000)()); }
+		bool m_bIsInConduit() { mixin(MGBPC!(2220, 0x200000)()); }
+		bool m_bIsInConduit(bool val) { mixin(MSBPC!(2220, 0x200000)()); }
+		bool m_bUpdateStickyGrenades() { mixin(MGBPC!(2220, 0x80000)()); }
+		bool m_bUpdateStickyGrenades(bool val) { mixin(MSBPC!(2220, 0x80000)()); }
+		bool m_bLoadoutReset() { mixin(MGBPC!(2220, 0x40000)()); }
+		bool m_bLoadoutReset(bool val) { mixin(MSBPC!(2220, 0x40000)()); }
+		bool r_bIsJamming() { mixin(MGBPC!(2220, 0x20000)()); }
+		bool r_bIsJamming(bool val) { mixin(MSBPC!(2220, 0x20000)()); }
+		bool m_bIsJetEffectsPlaying() { mixin(MGBPC!(2220, 0x10000)()); }
+		bool m_bIsJetEffectsPlaying(bool val) { mixin(MSBPC!(2220, 0x10000)()); }
+		bool r_bAimingMode() { mixin(MGBPC!(2220, 0x4000)()); }
+		bool r_bAimingMode(bool val) { mixin(MSBPC!(2220, 0x4000)()); }
+		bool m_bIsPlayingSkiEffectsSounds() { mixin(MGBPC!(2220, 0x2000)()); }
+		bool m_bIsPlayingSkiEffectsSounds(bool val) { mixin(MSBPC!(2220, 0x2000)()); }
+		bool m_bIsPlayingSkiEffects() { mixin(MGBPC!(2220, 0x1000)()); }
+		bool m_bIsPlayingSkiEffects(bool val) { mixin(MSBPC!(2220, 0x1000)()); }
+		bool bInDeployModeClient() { mixin(MGBPC!(2220, 0x400)()); }
+		bool bInDeployModeClient(bool val) { mixin(MSBPC!(2220, 0x400)()); }
+		bool r_bInDeployMode() { mixin(MGBPC!(2220, 0x200)()); }
+		bool r_bInDeployMode(bool val) { mixin(MSBPC!(2220, 0x200)()); }
+		bool bInFireLockClient() { mixin(MGBPC!(2220, 0x100)()); }
+		bool bInFireLockClient(bool val) { mixin(MSBPC!(2220, 0x100)()); }
+		bool r_bInFireLock() { mixin(MGBPC!(2220, 0x80)()); }
+		bool r_bInFireLock(bool val) { mixin(MSBPC!(2220, 0x80)()); }
+		bool r_bIsHealthRecharging() { mixin(MGBPC!(2220, 0x40)()); }
+		bool r_bIsHealthRecharging(bool val) { mixin(MSBPC!(2220, 0x40)()); }
+		bool r_bIsShielded() { mixin(MGBPC!(2220, 0x20)()); }
+		bool r_bIsShielded(bool val) { mixin(MSBPC!(2220, 0x20)()); }
+		bool r_bIsRaged() { mixin(MGBPC!(2220, 0x10)()); }
+		bool r_bIsRaged(bool val) { mixin(MSBPC!(2220, 0x10)()); }
+		bool m_bStealthVisible() { mixin(MGBPC!(2220, 0x8)()); }
+		bool m_bStealthVisible(bool val) { mixin(MSBPC!(2220, 0x8)()); }
+		bool m_bRefreshInventoryWasRespawn() { mixin(MGBPC!(2220, 0x2)()); }
+		bool m_bRefreshInventoryWasRespawn(bool val) { mixin(MSBPC!(2220, 0x2)()); }
+		bool m_bInitialized() { mixin(MGBPC!(2220, 0x1)()); }
+		bool m_bInitialized(bool val) { mixin(MSBPC!(2220, 0x1)()); }
 	}
 final:
 	float GetCurrentPowerPool()
@@ -751,11 +772,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTribesReplicationInfo, params.ptr, cast(void*)0);
 		return *cast(TrPlayerReplicationInfo*)params.ptr;
 	}
-	bool CheckHeadShot(Actor.ImpactInfo* Impact)
+	bool CheckHeadShot(ref const Actor.ImpactInfo Impact)
 	{
 		ubyte params[84];
 		params[] = 0;
-		*cast(Actor.ImpactInfo*)params.ptr = *Impact;
+		*cast(Actor.ImpactInfo*)params.ptr = Impact;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckHeadShot, params.ptr, cast(void*)0);
 		*Impact = *cast(Actor.ImpactInfo*)params.ptr;
 		return *cast(bool*)&params[80];
@@ -831,12 +852,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPowerPoolPercent, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	void GetCurrentDeviceAccuracyInfo(float* fAccuracy, float* fAmountCurrentlyOffOfTargetAccuray)
+	void GetCurrentDeviceAccuracyInfo(ref float fAccuracy, ref float fAmountCurrentlyOffOfTargetAccuray)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = *fAccuracy;
-		*cast(float*)&params[4] = *fAmountCurrentlyOffOfTargetAccuray;
+		*cast(float*)params.ptr = fAccuracy;
+		*cast(float*)&params[4] = fAmountCurrentlyOffOfTargetAccuray;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentDeviceAccuracyInfo, params.ptr, cast(void*)0);
 		*fAccuracy = *cast(float*)params.ptr;
 		*fAmountCurrentlyOffOfTargetAccuray = *cast(float*)&params[4];
@@ -1075,7 +1096,7 @@ void**)params.ptr = SkelComp;
 		*cast(float*)params.ptr = DeltaSeconds;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RechargeHealthPool, params.ptr, cast(void*)0);
 	}
-	Vector GetJetpackAirControl(Vector InAcceleration, Vector ZAxis)
+	Vector GetJetpackAirControl(const Vector InAcceleration, const Vector ZAxis)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -1173,7 +1194,7 @@ void**)params.ptr = SkelComp;
 		*cast(ScriptClass*)&params[8] = dmgType;
 		*cast(Controller*)&params[12] = EventInstigator;
 		*cast(TrValueModifier*)&params[16] = VM;
-		*cast(float*)&params[20] = *DamageScaleWithoutNewPlayerAssist;
+		*cast(float*)&params[20] = DamageScaleWithoutNewPlayerAssist;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDamageScale, params.ptr, cast(void*)0);
 		*DamageScaleWithoutNewPlayerAssist = *cast(float*)&params[20];
 		return *cast(float*)&params[24];
@@ -1254,13 +1275,13 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[20] = CameraDir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -1737,12 +1758,12 @@ void**)&params[4] = RunOverComponent;
 		*cast(UDKCarriedObject*)params.ptr = GameObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HoldGameObject, params.ptr, cast(void*)0);
 	}
-	void AdjustDamage(int* InDamage, Vector* Momentum, Controller InstigatedBy, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void AdjustDamage(ref int InDamage, ref Vector Momentum, Controller InstigatedBy, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
 		ubyte params[68];
 		params[] = 0;
-		*cast(int*)params.ptr = *InDamage;
-		*cast(Vector*)&params[4] = *Momentum;
+		*cast(int*)params.ptr = InDamage;
+		*cast(Vector*)&params[4] = Momentum;
 		*cast(Controller*)&params[16] = InstigatedBy;
 		*cast(Vector*)&params[20] = HitLocation;
 		*cast(ScriptClass*)&params[32] = pDamageType;

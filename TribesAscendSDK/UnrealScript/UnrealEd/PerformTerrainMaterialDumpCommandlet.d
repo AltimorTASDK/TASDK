@@ -1,13 +1,14 @@
 module UnrealScript.UnrealEd.PerformTerrainMaterialDumpCommandlet;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.Commandlet;
 
 extern(C++) interface PerformTerrainMaterialDumpCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.PerformTerrainMaterialDumpCommandlet")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.PerformTerrainMaterialDumpCommandlet")()); }
 	private static __gshared PerformTerrainMaterialDumpCommandlet mDefaultProperties;
-	@property final static PerformTerrainMaterialDumpCommandlet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PerformTerrainMaterialDumpCommandlet)("PerformTerrainMaterialDumpCommandlet UnrealEd.Default__PerformTerrainMaterialDumpCommandlet")); }
+	@property final static PerformTerrainMaterialDumpCommandlet DefaultProperties() { mixin(MGDPC!(PerformTerrainMaterialDumpCommandlet, "PerformTerrainMaterialDumpCommandlet UnrealEd.Default__PerformTerrainMaterialDumpCommandlet")()); }
 }

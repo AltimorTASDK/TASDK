@@ -1,21 +1,22 @@
 module UnrealScript.UDKBase.UDKGameViewportClient;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameViewportClient;
 
 extern(C++) interface UDKGameViewportClient : GameViewportClient
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKGameViewportClient")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKGameViewportClient")()); }
 	private static __gshared UDKGameViewportClient mDefaultProperties;
-	@property final static UDKGameViewportClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKGameViewportClient)("UDKGameViewportClient UDKBase.Default__UDKGameViewportClient")); }
+	@property final static UDKGameViewportClient DefaultProperties() { mixin(MGDPC!(UDKGameViewportClient, "UDKGameViewportClient UDKBase.Default__UDKGameViewportClient")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mLoadRandomLocalizedHintMessage;
-		public @property static final ScriptFunction LoadRandomLocalizedHintMessage() { return mLoadRandomLocalizedHintMessage ? mLoadRandomLocalizedHintMessage : (mLoadRandomLocalizedHintMessage = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKGameViewportClient.LoadRandomLocalizedHintMessage")); }
+		public @property static final ScriptFunction LoadRandomLocalizedHintMessage() { mixin(MGF!("mLoadRandomLocalizedHintMessage", "Function UDKBase.UDKGameViewportClient.LoadRandomLocalizedHintMessage")()); }
 	}
-	@property final auto ref ScriptString HintLocFileName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 288); }
+	@property final auto ref ScriptString HintLocFileName() { mixin(MGPC!(ScriptString, 288)()); }
 	final ScriptString LoadRandomLocalizedHintMessage(ScriptString Category1Name, ScriptString Category2Name)
 	{
 		ubyte params[36];

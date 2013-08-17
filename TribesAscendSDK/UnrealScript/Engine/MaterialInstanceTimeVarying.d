@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialInstanceTimeVarying;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstance;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialInterface;
@@ -11,9 +12,9 @@ extern(C++) interface MaterialInstanceTimeVarying : MaterialInstance
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstanceTimeVarying")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialInstanceTimeVarying")()); }
 	private static __gshared MaterialInstanceTimeVarying mDefaultProperties;
-	@property final static MaterialInstanceTimeVarying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialInstanceTimeVarying)("MaterialInstanceTimeVarying Engine.Default__MaterialInstanceTimeVarying")); }
+	@property final static MaterialInstanceTimeVarying DefaultProperties() { mixin(MGDPC!(MaterialInstanceTimeVarying, "MaterialInstanceTimeVarying Engine.Default__MaterialInstanceTimeVarying")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,18 +34,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetParent() { return mSetParent ? mSetParent : (mSetParent = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetParent")); }
-			ScriptFunction SetScalarParameterValue() { return mSetScalarParameterValue ? mSetScalarParameterValue : (mSetScalarParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetScalarParameterValue")); }
-			ScriptFunction SetScalarCurveParameterValue() { return mSetScalarCurveParameterValue ? mSetScalarCurveParameterValue : (mSetScalarCurveParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetScalarCurveParameterValue")); }
-			ScriptFunction SetScalarStartTime() { return mSetScalarStartTime ? mSetScalarStartTime : (mSetScalarStartTime = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetScalarStartTime")); }
-			ScriptFunction SetDuration() { return mSetDuration ? mSetDuration : (mSetDuration = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetDuration")); }
-			ScriptFunction SetTextureParameterValue() { return mSetTextureParameterValue ? mSetTextureParameterValue : (mSetTextureParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetTextureParameterValue")); }
-			ScriptFunction SetVectorParameterValue() { return mSetVectorParameterValue ? mSetVectorParameterValue : (mSetVectorParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetVectorParameterValue")); }
-			ScriptFunction SetVectorCurveParameterValue() { return mSetVectorCurveParameterValue ? mSetVectorCurveParameterValue : (mSetVectorCurveParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetVectorCurveParameterValue")); }
-			ScriptFunction SetVectorStartTime() { return mSetVectorStartTime ? mSetVectorStartTime : (mSetVectorStartTime = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetVectorStartTime")); }
-			ScriptFunction SetFontParameterValue() { return mSetFontParameterValue ? mSetFontParameterValue : (mSetFontParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.SetFontParameterValue")); }
-			ScriptFunction ClearParameterValues() { return mClearParameterValues ? mClearParameterValues : (mClearParameterValues = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.ClearParameterValues")); }
-			ScriptFunction GetMaxDurationFromAllParameters() { return mGetMaxDurationFromAllParameters ? mGetMaxDurationFromAllParameters : (mGetMaxDurationFromAllParameters = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceTimeVarying.GetMaxDurationFromAllParameters")); }
+			ScriptFunction SetParent() { mixin(MGF!("mSetParent", "Function Engine.MaterialInstanceTimeVarying.SetParent")()); }
+			ScriptFunction SetScalarParameterValue() { mixin(MGF!("mSetScalarParameterValue", "Function Engine.MaterialInstanceTimeVarying.SetScalarParameterValue")()); }
+			ScriptFunction SetScalarCurveParameterValue() { mixin(MGF!("mSetScalarCurveParameterValue", "Function Engine.MaterialInstanceTimeVarying.SetScalarCurveParameterValue")()); }
+			ScriptFunction SetScalarStartTime() { mixin(MGF!("mSetScalarStartTime", "Function Engine.MaterialInstanceTimeVarying.SetScalarStartTime")()); }
+			ScriptFunction SetDuration() { mixin(MGF!("mSetDuration", "Function Engine.MaterialInstanceTimeVarying.SetDuration")()); }
+			ScriptFunction SetTextureParameterValue() { mixin(MGF!("mSetTextureParameterValue", "Function Engine.MaterialInstanceTimeVarying.SetTextureParameterValue")()); }
+			ScriptFunction SetVectorParameterValue() { mixin(MGF!("mSetVectorParameterValue", "Function Engine.MaterialInstanceTimeVarying.SetVectorParameterValue")()); }
+			ScriptFunction SetVectorCurveParameterValue() { mixin(MGF!("mSetVectorCurveParameterValue", "Function Engine.MaterialInstanceTimeVarying.SetVectorCurveParameterValue")()); }
+			ScriptFunction SetVectorStartTime() { mixin(MGF!("mSetVectorStartTime", "Function Engine.MaterialInstanceTimeVarying.SetVectorStartTime")()); }
+			ScriptFunction SetFontParameterValue() { mixin(MGF!("mSetFontParameterValue", "Function Engine.MaterialInstanceTimeVarying.SetFontParameterValue")()); }
+			ScriptFunction ClearParameterValues() { mixin(MGF!("mClearParameterValues", "Function Engine.MaterialInstanceTimeVarying.ClearParameterValues")()); }
+			ScriptFunction GetMaxDurationFromAllParameters() { mixin(MGF!("mGetMaxDurationFromAllParameters", "Function Engine.MaterialInstanceTimeVarying.GetMaxDurationFromAllParameters")()); }
 		}
 	}
 	struct ParameterValueOverTime
@@ -52,25 +53,25 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceTimeVarying.ParameterValueOverTime")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceTimeVarying.ParameterValueOverTime")()); }
 		@property final
 		{
 			auto ref
 			{
-				float OffsetTime() { return *cast(float*)(cast(size_t)&this + 40); }
-				float CycleTime() { return *cast(float*)(cast(size_t)&this + 32); }
-				ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 20); }
-				float StartTime() { return *cast(float*)(cast(size_t)&this + 16); }
-				UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 0); }
+				float OffsetTime() { mixin(MGPS!(float, 40)()); }
+				float CycleTime() { mixin(MGPS!(float, 32)()); }
+				ScriptName ParameterName() { mixin(MGPS!(ScriptName, 20)()); }
+				float StartTime() { mixin(MGPS!(float, 16)()); }
+				UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 0)()); }
 			}
-			bool bOffsetFromEnd() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-			bool bOffsetFromEnd(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
-			bool bNormalizeTime() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x1) != 0; }
-			bool bNormalizeTime(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x1; } return val; }
-			bool bAutoActivate() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bLoop() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bLoop(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bOffsetFromEnd() { mixin(MGBPS!(44, 0x1)()); }
+			bool bOffsetFromEnd(bool val) { mixin(MSBPS!(44, 0x1)()); }
+			bool bNormalizeTime() { mixin(MGBPS!(36, 0x1)()); }
+			bool bNormalizeTime(bool val) { mixin(MSBPS!(36, 0x1)()); }
+			bool bAutoActivate() { mixin(MGBPS!(28, 0x2)()); }
+			bool bAutoActivate(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bLoop() { mixin(MGBPS!(28, 0x1)()); }
+			bool bLoop(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
 	}
 	struct FontParameterValueOverTime
@@ -78,30 +79,30 @@ public extern(D):
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceTimeVarying.FontParameterValueOverTime")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceTimeVarying.FontParameterValueOverTime")()); }
 		@property final
 		{
 			auto ref
 			{
-				float OffsetTime() { return *cast(float*)(cast(size_t)&this + 40); }
-				float CycleTime() { return *cast(float*)(cast(size_t)&this + 32); }
-				ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 20); }
-				float StartTime() { return *cast(float*)(cast(size_t)&this + 16); }
-				UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 0); }
+				float OffsetTime() { mixin(MGPS!(float, 40)()); }
+				float CycleTime() { mixin(MGPS!(float, 32)()); }
+				ScriptName ParameterName() { mixin(MGPS!(ScriptName, 20)()); }
+				float StartTime() { mixin(MGPS!(float, 16)()); }
+				UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 0)()); }
 			}
-			bool bOffsetFromEnd() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-			bool bOffsetFromEnd(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
-			bool bNormalizeTime() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x1) != 0; }
-			bool bNormalizeTime(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x1; } return val; }
-			bool bAutoActivate() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bLoop() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bLoop(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bOffsetFromEnd() { mixin(MGBPS!(44, 0x1)()); }
+			bool bOffsetFromEnd(bool val) { mixin(MSBPS!(44, 0x1)()); }
+			bool bNormalizeTime() { mixin(MGBPS!(36, 0x1)()); }
+			bool bNormalizeTime(bool val) { mixin(MSBPS!(36, 0x1)()); }
+			bool bAutoActivate() { mixin(MGBPS!(28, 0x2)()); }
+			bool bAutoActivate(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bLoop() { mixin(MGBPS!(28, 0x1)()); }
+			bool bLoop(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
 		@property final auto ref
 		{
-			int FontPage() { return *cast(int*)(cast(size_t)&this + 52); }
-			Font FontValue() { return *cast(Font*)(cast(size_t)&this + 48); }
+			int FontPage() { mixin(MGPS!(int, 52)()); }
+			Font FontValue() { mixin(MGPS!(Font, 48)()); }
 		}
 	}
 	struct ScalarParameterValueOverTime
@@ -109,30 +110,30 @@ public extern(D):
 		private ubyte __buffer__[68];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceTimeVarying.ScalarParameterValueOverTime")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceTimeVarying.ScalarParameterValueOverTime")()); }
 		@property final
 		{
 			auto ref
 			{
-				float OffsetTime() { return *cast(float*)(cast(size_t)&this + 40); }
-				float CycleTime() { return *cast(float*)(cast(size_t)&this + 32); }
-				ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 20); }
-				float StartTime() { return *cast(float*)(cast(size_t)&this + 16); }
-				UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 0); }
+				float OffsetTime() { mixin(MGPS!(float, 40)()); }
+				float CycleTime() { mixin(MGPS!(float, 32)()); }
+				ScriptName ParameterName() { mixin(MGPS!(ScriptName, 20)()); }
+				float StartTime() { mixin(MGPS!(float, 16)()); }
+				UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 0)()); }
 			}
-			bool bOffsetFromEnd() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-			bool bOffsetFromEnd(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
-			bool bNormalizeTime() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x1) != 0; }
-			bool bNormalizeTime(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x1; } return val; }
-			bool bAutoActivate() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bLoop() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bLoop(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bOffsetFromEnd() { mixin(MGBPS!(44, 0x1)()); }
+			bool bOffsetFromEnd(bool val) { mixin(MSBPS!(44, 0x1)()); }
+			bool bNormalizeTime() { mixin(MGBPS!(36, 0x1)()); }
+			bool bNormalizeTime(bool val) { mixin(MSBPS!(36, 0x1)()); }
+			bool bAutoActivate() { mixin(MGBPS!(28, 0x2)()); }
+			bool bAutoActivate(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bLoop() { mixin(MGBPS!(28, 0x1)()); }
+			bool bLoop(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
 		@property final auto ref
 		{
-			UObject.InterpCurveFloat ParameterValueCurve() { return *cast(UObject.InterpCurveFloat*)(cast(size_t)&this + 52); }
-			float ParameterValue() { return *cast(float*)(cast(size_t)&this + 48); }
+			UObject.InterpCurveFloat ParameterValueCurve() { mixin(MGPS!(UObject.InterpCurveFloat, 52)()); }
+			float ParameterValue() { mixin(MGPS!(float, 48)()); }
 		}
 	}
 	struct TextureParameterValueOverTime
@@ -140,71 +141,71 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceTimeVarying.TextureParameterValueOverTime")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceTimeVarying.TextureParameterValueOverTime")()); }
 		@property final
 		{
 			auto ref
 			{
-				float OffsetTime() { return *cast(float*)(cast(size_t)&this + 40); }
-				float CycleTime() { return *cast(float*)(cast(size_t)&this + 32); }
-				ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 20); }
-				float StartTime() { return *cast(float*)(cast(size_t)&this + 16); }
-				UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 0); }
+				float OffsetTime() { mixin(MGPS!(float, 40)()); }
+				float CycleTime() { mixin(MGPS!(float, 32)()); }
+				ScriptName ParameterName() { mixin(MGPS!(ScriptName, 20)()); }
+				float StartTime() { mixin(MGPS!(float, 16)()); }
+				UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 0)()); }
 			}
-			bool bOffsetFromEnd() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-			bool bOffsetFromEnd(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
-			bool bNormalizeTime() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x1) != 0; }
-			bool bNormalizeTime(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x1; } return val; }
-			bool bAutoActivate() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bLoop() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bLoop(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bOffsetFromEnd() { mixin(MGBPS!(44, 0x1)()); }
+			bool bOffsetFromEnd(bool val) { mixin(MSBPS!(44, 0x1)()); }
+			bool bNormalizeTime() { mixin(MGBPS!(36, 0x1)()); }
+			bool bNormalizeTime(bool val) { mixin(MSBPS!(36, 0x1)()); }
+			bool bAutoActivate() { mixin(MGBPS!(28, 0x2)()); }
+			bool bAutoActivate(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bLoop() { mixin(MGBPS!(28, 0x1)()); }
+			bool bLoop(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
-		@property final auto ref Texture ParameterValue() { return *cast(Texture*)(cast(size_t)&this + 48); }
+		@property final auto ref Texture ParameterValue() { mixin(MGPS!(Texture, 48)()); }
 	}
 	struct VectorParameterValueOverTime
 	{
 		private ubyte __buffer__[80];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceTimeVarying.VectorParameterValueOverTime")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceTimeVarying.VectorParameterValueOverTime")()); }
 		@property final
 		{
 			auto ref
 			{
-				float OffsetTime() { return *cast(float*)(cast(size_t)&this + 40); }
-				float CycleTime() { return *cast(float*)(cast(size_t)&this + 32); }
-				ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 20); }
-				float StartTime() { return *cast(float*)(cast(size_t)&this + 16); }
-				UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 0); }
+				float OffsetTime() { mixin(MGPS!(float, 40)()); }
+				float CycleTime() { mixin(MGPS!(float, 32)()); }
+				ScriptName ParameterName() { mixin(MGPS!(ScriptName, 20)()); }
+				float StartTime() { mixin(MGPS!(float, 16)()); }
+				UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 0)()); }
 			}
-			bool bOffsetFromEnd() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-			bool bOffsetFromEnd(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
-			bool bNormalizeTime() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x1) != 0; }
-			bool bNormalizeTime(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x1; } return val; }
-			bool bAutoActivate() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bLoop() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bLoop(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bOffsetFromEnd() { mixin(MGBPS!(44, 0x1)()); }
+			bool bOffsetFromEnd(bool val) { mixin(MSBPS!(44, 0x1)()); }
+			bool bNormalizeTime() { mixin(MGBPS!(36, 0x1)()); }
+			bool bNormalizeTime(bool val) { mixin(MSBPS!(36, 0x1)()); }
+			bool bAutoActivate() { mixin(MGBPS!(28, 0x2)()); }
+			bool bAutoActivate(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bLoop() { mixin(MGBPS!(28, 0x1)()); }
+			bool bLoop(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
 		@property final auto ref
 		{
-			UObject.InterpCurveVector ParameterValueCurve() { return *cast(UObject.InterpCurveVector*)(cast(size_t)&this + 64); }
-			UObject.LinearColor ParameterValue() { return *cast(UObject.LinearColor*)(cast(size_t)&this + 48); }
+			UObject.InterpCurveVector ParameterValueCurve() { mixin(MGPS!(UObject.InterpCurveVector, 64)()); }
+			UObject.LinearColor ParameterValue() { mixin(MGPS!(UObject.LinearColor, 48)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceTimeVarying.FontParameterValueOverTime) FontParameterValues() { return *cast(ScriptArray!(MaterialInstanceTimeVarying.FontParameterValueOverTime)*)(cast(size_t)cast(void*)this + 440); }
-			ScriptArray!(MaterialInstanceTimeVarying.ScalarParameterValueOverTime) ScalarParameterValues() { return *cast(ScriptArray!(MaterialInstanceTimeVarying.ScalarParameterValueOverTime)*)(cast(size_t)cast(void*)this + 452); }
-			ScriptArray!(MaterialInstanceTimeVarying.TextureParameterValueOverTime) TextureParameterValues() { return *cast(ScriptArray!(MaterialInstanceTimeVarying.TextureParameterValueOverTime)*)(cast(size_t)cast(void*)this + 464); }
-			ScriptArray!(MaterialInstanceTimeVarying.VectorParameterValueOverTime) VectorParameterValues() { return *cast(ScriptArray!(MaterialInstanceTimeVarying.VectorParameterValueOverTime)*)(cast(size_t)cast(void*)this + 476); }
-			float Duration() { return *cast(float*)(cast(size_t)cast(void*)this + 436); }
+			ScriptArray!(MaterialInstanceTimeVarying.FontParameterValueOverTime) FontParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceTimeVarying.FontParameterValueOverTime), 440)()); }
+			ScriptArray!(MaterialInstanceTimeVarying.ScalarParameterValueOverTime) ScalarParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceTimeVarying.ScalarParameterValueOverTime), 452)()); }
+			ScriptArray!(MaterialInstanceTimeVarying.TextureParameterValueOverTime) TextureParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceTimeVarying.TextureParameterValueOverTime), 464)()); }
+			ScriptArray!(MaterialInstanceTimeVarying.VectorParameterValueOverTime) VectorParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceTimeVarying.VectorParameterValueOverTime), 476)()); }
+			float Duration() { mixin(MGPC!(float, 436)()); }
 		}
-		bool bAutoActivateAll() { return (*cast(uint*)(cast(size_t)cast(void*)this + 432) & 0x1) != 0; }
-		bool bAutoActivateAll(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 432) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 432) &= ~0x1; } return val; }
+		bool bAutoActivateAll() { mixin(MGBPC!(432, 0x1)()); }
+		bool bAutoActivateAll(bool val) { mixin(MSBPC!(432, 0x1)()); }
 	}
 final:
 	void SetParent(MaterialInterface NewParent)
@@ -222,12 +223,12 @@ final:
 		*cast(float*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarParameterValue, params.ptr, cast(void*)0);
 	}
-	void SetScalarCurveParameterValue(ScriptName ParameterName, UObject.InterpCurveFloat* Value)
+	void SetScalarCurveParameterValue(ScriptName ParameterName, ref const UObject.InterpCurveFloat Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.InterpCurveFloat*)&params[8] = *Value;
+		*cast(UObject.InterpCurveFloat*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarCurveParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.InterpCurveFloat*)&params[8];
 	}
@@ -254,21 +255,21 @@ final:
 		*cast(Texture*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTextureParameterValue, params.ptr, cast(void*)0);
 	}
-	void SetVectorParameterValue(ScriptName ParameterName, UObject.LinearColor* Value)
+	void SetVectorParameterValue(ScriptName ParameterName, ref const UObject.LinearColor Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.LinearColor*)&params[8] = *Value;
+		*cast(UObject.LinearColor*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.LinearColor*)&params[8];
 	}
-	void SetVectorCurveParameterValue(ScriptName ParameterName, UObject.InterpCurveVector* Value)
+	void SetVectorCurveParameterValue(ScriptName ParameterName, ref const UObject.InterpCurveVector Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.InterpCurveVector*)&params[8] = *Value;
+		*cast(UObject.InterpCurveVector*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorCurveParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.InterpCurveVector*)&params[8];
 	}

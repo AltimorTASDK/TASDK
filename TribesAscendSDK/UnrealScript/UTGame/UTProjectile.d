@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTProjectile;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKProjectile;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Controller;
@@ -14,9 +15,9 @@ extern(C++) interface UTProjectile : UDKProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTProjectile")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTProjectile")()); }
 	private static __gshared UTProjectile mDefaultProperties;
-	@property final static UTProjectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTProjectile)("UTProjectile UTGame.Default__UTProjectile")); }
+	@property final static UTProjectile DefaultProperties() { mixin(MGDPC!(UTProjectile, "UTProjectile UTGame.Default__UTProjectile")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -50,68 +51,76 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateProjectileLight() { return mCreateProjectileLight ? mCreateProjectileLight : (mCreateProjectileLight = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.CreateProjectileLight")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.Landed")); }
-			ScriptFunction CanSplash() { return mCanSplash ? mCanSplash : (mCanSplash = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.CanSplash")); }
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.PreBeginPlay")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.PostBeginPlay")); }
-			ScriptFunction SetInitialState() { return mSetInitialState ? mSetInitialState : (mSetInitialState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.SetInitialState")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.Init")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.ProcessTouch")); }
-			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.Explode")); }
-			ScriptFunction SpawnFlightEffects() { return mSpawnFlightEffects ? mSpawnFlightEffects : (mSpawnFlightEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.SpawnFlightEffects")); }
-			ScriptFunction SetExplosionEffectParameters() { return mSetExplosionEffectParameters ? mSetExplosionEffectParameters : (mSetExplosionEffectParameters = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.SetExplosionEffectParameters")); }
-			ScriptFunction GetExplosionSound() { return mGetExplosionSound ? mGetExplosionSound : (mGetExplosionSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.GetExplosionSound")); }
-			ScriptFunction SpawnExplosionEffects() { return mSpawnExplosionEffects ? mSpawnExplosionEffects : (mSpawnExplosionEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.SpawnExplosionEffects")); }
-			ScriptFunction ShouldSpawnExplosionLight() { return mShouldSpawnExplosionLight ? mShouldSpawnExplosionLight : (mShouldSpawnExplosionLight = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.ShouldSpawnExplosionLight")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.ShutDown")); }
-			ScriptFunction TornOff() { return mTornOff ? mTornOff : (mTornOff = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.TornOff")); }
-			ScriptFunction HideProjectile() { return mHideProjectile ? mHideProjectile : (mHideProjectile = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.HideProjectile")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.Destroyed")); }
-			ScriptFunction MyOnParticleSystemFinished() { return mMyOnParticleSystemFinished ? mMyOnParticleSystemFinished : (mMyOnParticleSystemFinished = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.MyOnParticleSystemFinished")); }
-			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.CalcCamera")); }
-			ScriptFunction GetHomingTarget() { return mGetHomingTarget ? mGetHomingTarget : (mGetHomingTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.GetHomingTarget")); }
-			ScriptFunction GetPawnOwner() { return mGetPawnOwner ? mGetPawnOwner : (mGetPawnOwner = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.GetPawnOwner")); }
-			ScriptFunction CalculateTravelTime() { return mCalculateTravelTime ? mCalculateTravelTime : (mCalculateTravelTime = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.CalculateTravelTime")); }
-			ScriptFunction StaticGetTimeToLocation() { return mStaticGetTimeToLocation ? mStaticGetTimeToLocation : (mStaticGetTimeToLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.StaticGetTimeToLocation")); }
-			ScriptFunction GetTimeToLocation() { return mGetTimeToLocation ? mGetTimeToLocation : (mGetTimeToLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.GetTimeToLocation")); }
-			ScriptFunction GetRange() { return mGetRange ? mGetRange : (mGetRange = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTProjectile.GetRange")); }
+			ScriptFunction CreateProjectileLight() { mixin(MGF!("mCreateProjectileLight", "Function UTGame.UTProjectile.CreateProjectileLight")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function UTGame.UTProjectile.Landed")()); }
+			ScriptFunction CanSplash() { mixin(MGF!("mCanSplash", "Function UTGame.UTProjectile.CanSplash")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTProjectile.PreBeginPlay")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTProjectile.PostBeginPlay")()); }
+			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function UTGame.UTProjectile.SetInitialState")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function UTGame.UTProjectile.Init")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function UTGame.UTProjectile.ProcessTouch")()); }
+			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function UTGame.UTProjectile.Explode")()); }
+			ScriptFunction SpawnFlightEffects() { mixin(MGF!("mSpawnFlightEffects", "Function UTGame.UTProjectile.SpawnFlightEffects")()); }
+			ScriptFunction SetExplosionEffectParameters() { mixin(MGF!("mSetExplosionEffectParameters", "Function UTGame.UTProjectile.SetExplosionEffectParameters")()); }
+			ScriptFunction GetExplosionSound() { mixin(MGF!("mGetExplosionSound", "Function UTGame.UTProjectile.GetExplosionSound")()); }
+			ScriptFunction SpawnExplosionEffects() { mixin(MGF!("mSpawnExplosionEffects", "Function UTGame.UTProjectile.SpawnExplosionEffects")()); }
+			ScriptFunction ShouldSpawnExplosionLight() { mixin(MGF!("mShouldSpawnExplosionLight", "Function UTGame.UTProjectile.ShouldSpawnExplosionLight")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function UTGame.UTProjectile.ShutDown")()); }
+			ScriptFunction TornOff() { mixin(MGF!("mTornOff", "Function UTGame.UTProjectile.TornOff")()); }
+			ScriptFunction HideProjectile() { mixin(MGF!("mHideProjectile", "Function UTGame.UTProjectile.HideProjectile")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTProjectile.Destroyed")()); }
+			ScriptFunction MyOnParticleSystemFinished() { mixin(MGF!("mMyOnParticleSystemFinished", "Function UTGame.UTProjectile.MyOnParticleSystemFinished")()); }
+			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function UTGame.UTProjectile.CalcCamera")()); }
+			ScriptFunction GetHomingTarget() { mixin(MGF!("mGetHomingTarget", "Function UTGame.UTProjectile.GetHomingTarget")()); }
+			ScriptFunction GetPawnOwner() { mixin(MGF!("mGetPawnOwner", "Function UTGame.UTProjectile.GetPawnOwner")()); }
+			ScriptFunction CalculateTravelTime() { mixin(MGF!("mCalculateTravelTime", "Function UTGame.UTProjectile.CalculateTravelTime")()); }
+			ScriptFunction StaticGetTimeToLocation() { mixin(MGF!("mStaticGetTimeToLocation", "Function UTGame.UTProjectile.StaticGetTimeToLocation")()); }
+			ScriptFunction GetTimeToLocation() { mixin(MGF!("mGetTimeToLocation", "Function UTGame.UTProjectile.GetTimeToLocation")()); }
+			ScriptFunction GetRange() { mixin(MGF!("mGetRange", "Function UTGame.UTProjectile.GetRange")()); }
 		}
+	}
+	static struct WaitingForVelocity
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTProjectile.WaitingForVelocity")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float GlobalCheckRadiusTweak() { return *cast(float*)(cast(size_t)cast(void*)this + 656); }
-			float TossZ() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
-			float MaxExplosionLightDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
-			ScriptClass ExplosionLightClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 668); }
-			ScriptClass ProjectileLightClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 660); }
-			float MaxEffectDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 648); }
-			ScriptName DecalDissolveParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 640); }
-			float DurationOfDecal() { return *cast(float*)(cast(size_t)cast(void*)this + 636); }
-			float DecalHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 632); }
-			float DecalWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 628); }
-			MaterialInterface ExplosionDecal() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 624); }
-			ParticleSystem ProjExplosionTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 620); }
-			ParticleSystem ProjFlightTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 616); }
-			SoundCue ExplosionSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 604); }
+			float GlobalCheckRadiusTweak() { mixin(MGPC!(float, 656)()); }
+			float TossZ() { mixin(MGPC!(float, 652)()); }
+			float MaxExplosionLightDistance() { mixin(MGPC!(float, 672)()); }
+			ScriptClass ExplosionLightClass() { mixin(MGPC!(ScriptClass, 668)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ProjectileLight'!
+			ScriptClass ProjectileLightClass() { mixin(MGPC!(ScriptClass, 660)()); }
+			float MaxEffectDistance() { mixin(MGPC!(float, 648)()); }
+			ScriptName DecalDissolveParamName() { mixin(MGPC!(ScriptName, 640)()); }
+			float DurationOfDecal() { mixin(MGPC!(float, 636)()); }
+			float DecalHeight() { mixin(MGPC!(float, 632)()); }
+			float DecalWidth() { mixin(MGPC!(float, 628)()); }
+			MaterialInterface ExplosionDecal() { mixin(MGPC!(MaterialInterface, 624)()); }
+			ParticleSystem ProjExplosionTemplate() { mixin(MGPC!(ParticleSystem, 620)()); }
+			ParticleSystem ProjFlightTemplate() { mixin(MGPC!(ParticleSystem, 616)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ProjEffects'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientComponent'!
+			SoundCue ExplosionSound() { mixin(MGPC!(SoundCue, 604)()); }
 			// WARNING: Property 'AmbientSound' has the same name as a defined type!
 		}
-		bool bAttachExplosionToVehicles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 596) & 0x40) != 0; }
-		bool bAttachExplosionToVehicles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 596) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 596) &= ~0x40; } return val; }
-		bool bWaitForEffects() { return (*cast(uint*)(cast(size_t)cast(void*)this + 596) & 0x20) != 0; }
-		bool bWaitForEffects(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 596) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 596) &= ~0x20; } return val; }
-		bool bSuppressExplosionFX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 596) & 0x10) != 0; }
-		bool bSuppressExplosionFX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 596) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 596) &= ~0x10; } return val; }
-		bool bAdvanceExplosionEffect() { return (*cast(uint*)(cast(size_t)cast(void*)this + 596) & 0x8) != 0; }
-		bool bAdvanceExplosionEffect(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 596) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 596) &= ~0x8; } return val; }
-		bool m_bDestroyProjEffects() { return (*cast(uint*)(cast(size_t)cast(void*)this + 596) & 0x4) != 0; }
-		bool m_bDestroyProjEffects(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 596) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 596) &= ~0x4; } return val; }
-		bool bImportantAmbientSound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 596) & 0x2) != 0; }
-		bool bImportantAmbientSound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 596) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 596) &= ~0x2; } return val; }
-		bool bSuppressSounds() { return (*cast(uint*)(cast(size_t)cast(void*)this + 596) & 0x1) != 0; }
-		bool bSuppressSounds(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 596) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 596) &= ~0x1; } return val; }
+		bool bAttachExplosionToVehicles() { mixin(MGBPC!(596, 0x40)()); }
+		bool bAttachExplosionToVehicles(bool val) { mixin(MSBPC!(596, 0x40)()); }
+		bool bWaitForEffects() { mixin(MGBPC!(596, 0x20)()); }
+		bool bWaitForEffects(bool val) { mixin(MSBPC!(596, 0x20)()); }
+		bool bSuppressExplosionFX() { mixin(MGBPC!(596, 0x10)()); }
+		bool bSuppressExplosionFX(bool val) { mixin(MSBPC!(596, 0x10)()); }
+		bool bAdvanceExplosionEffect() { mixin(MGBPC!(596, 0x8)()); }
+		bool bAdvanceExplosionEffect(bool val) { mixin(MSBPC!(596, 0x8)()); }
+		bool m_bDestroyProjEffects() { mixin(MGBPC!(596, 0x4)()); }
+		bool m_bDestroyProjEffects(bool val) { mixin(MSBPC!(596, 0x4)()); }
+		bool bImportantAmbientSound() { mixin(MGBPC!(596, 0x2)()); }
+		bool bImportantAmbientSound(bool val) { mixin(MSBPC!(596, 0x2)()); }
+		bool bSuppressSounds() { mixin(MGBPC!(596, 0x1)()); }
+		bool bSuppressSounds(bool val) { mixin(MSBPC!(596, 0x1)()); }
 	}
 final:
 	void CreateProjectileLight()
@@ -237,14 +246,14 @@ void* PSC)
 void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MyOnParticleSystemFinished, params.ptr, cast(void*)0);
 	}
-	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];

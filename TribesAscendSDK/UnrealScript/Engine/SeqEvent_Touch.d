@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqEvent_Touch;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.SequenceEvent;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface SeqEvent_Touch : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_Touch")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_Touch")()); }
 	private static __gshared SeqEvent_Touch mDefaultProperties;
-	@property final static SeqEvent_Touch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_Touch)("SeqEvent_Touch Engine.Default__SeqEvent_Touch")); }
+	@property final static SeqEvent_Touch DefaultProperties() { mixin(MGDPC!(SeqEvent_Touch, "SeqEvent_Touch Engine.Default__SeqEvent_Touch")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,27 +25,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckTouchActivate() { return mCheckTouchActivate ? mCheckTouchActivate : (mCheckTouchActivate = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Touch.CheckTouchActivate")); }
-			ScriptFunction CheckUnTouchActivate() { return mCheckUnTouchActivate ? mCheckUnTouchActivate : (mCheckUnTouchActivate = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Touch.CheckUnTouchActivate")); }
-			ScriptFunction Toggled() { return mToggled ? mToggled : (mToggled = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Touch.Toggled")); }
-			ScriptFunction NotifyTouchingPawnDied() { return mNotifyTouchingPawnDied ? mNotifyTouchingPawnDied : (mNotifyTouchingPawnDied = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Touch.NotifyTouchingPawnDied")); }
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Touch.GetObjClassVersion")); }
+			ScriptFunction CheckTouchActivate() { mixin(MGF!("mCheckTouchActivate", "Function Engine.SeqEvent_Touch.CheckTouchActivate")()); }
+			ScriptFunction CheckUnTouchActivate() { mixin(MGF!("mCheckUnTouchActivate", "Function Engine.SeqEvent_Touch.CheckUnTouchActivate")()); }
+			ScriptFunction Toggled() { mixin(MGF!("mToggled", "Function Engine.SeqEvent_Touch.Toggled")()); }
+			ScriptFunction NotifyTouchingPawnDied() { mixin(MGF!("mNotifyTouchingPawnDied", "Function Engine.SeqEvent_Touch.NotifyTouchingPawnDied")()); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqEvent_Touch.GetObjClassVersion")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) ClassProximityTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 256); }
-			ScriptArray!(ScriptClass) IgnoredClassProximityTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 268); }
-			ScriptArray!(Actor) TouchedList() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 284); }
+			ScriptArray!(ScriptClass) ClassProximityTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 256)()); }
+			ScriptArray!(ScriptClass) IgnoredClassProximityTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 268)()); }
+			ScriptArray!(Actor) TouchedList() { mixin(MGPC!(ScriptArray!(Actor), 284)()); }
 		}
-		bool bAllowDeadPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 280) & 0x4) != 0; }
-		bool bAllowDeadPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 280) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 280) &= ~0x4; } return val; }
-		bool bUseInstigator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 280) & 0x2) != 0; }
-		bool bUseInstigator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 280) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 280) &= ~0x2; } return val; }
-		bool bForceOverlapping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 280) & 0x1) != 0; }
-		bool bForceOverlapping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 280) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 280) &= ~0x1; } return val; }
+		bool bAllowDeadPawns() { mixin(MGBPC!(280, 0x4)()); }
+		bool bAllowDeadPawns(bool val) { mixin(MSBPC!(280, 0x4)()); }
+		bool bUseInstigator() { mixin(MGBPC!(280, 0x2)()); }
+		bool bUseInstigator(bool val) { mixin(MSBPC!(280, 0x2)()); }
+		bool bForceOverlapping() { mixin(MGBPC!(280, 0x1)()); }
+		bool bForceOverlapping(bool val) { mixin(MSBPC!(280, 0x1)()); }
 	}
 final:
 	bool CheckTouchActivate(Actor InOriginator, Actor InInstigator, bool bTest)

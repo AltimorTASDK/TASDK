@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataProvider_PlayerAchievements;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface UIDataProvider_PlayerAchievements : UIDataProvider_OnlineP
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_PlayerAchievements")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_PlayerAchievements")()); }
 	private static __gshared UIDataProvider_PlayerAchievements mDefaultProperties;
-	@property final static UIDataProvider_PlayerAchievements DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_PlayerAchievements)("UIDataProvider_PlayerAchievements Engine.Default__UIDataProvider_PlayerAchievements")); }
+	@property final static UIDataProvider_PlayerAchievements DefaultProperties() { mixin(MGDPC!(UIDataProvider_PlayerAchievements, "UIDataProvider_PlayerAchievements Engine.Default__UIDataProvider_PlayerAchievements")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,23 +32,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetTotalGamerScore() { return mGetTotalGamerScore ? mGetTotalGamerScore : (mGetTotalGamerScore = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.GetTotalGamerScore")); }
-			ScriptFunction GetMaxTotalGamerScore() { return mGetMaxTotalGamerScore ? mGetMaxTotalGamerScore : (mGetMaxTotalGamerScore = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.GetMaxTotalGamerScore")); }
-			ScriptFunction PopulateAchievementIcons() { return mPopulateAchievementIcons ? mPopulateAchievementIcons : (mPopulateAchievementIcons = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.PopulateAchievementIcons")); }
-			ScriptFunction GetAchievementIconPathName() { return mGetAchievementIconPathName ? mGetAchievementIconPathName : (mGetAchievementIconPathName = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.GetAchievementIconPathName")); }
-			ScriptFunction GetAchievementDetails() { return mGetAchievementDetails ? mGetAchievementDetails : (mGetAchievementDetails = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.GetAchievementDetails")); }
-			ScriptFunction OnPlayerAchievementsChanged() { return mOnPlayerAchievementsChanged ? mOnPlayerAchievementsChanged : (mOnPlayerAchievementsChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementsChanged")); }
-			ScriptFunction OnPlayerAchievementUnlocked() { return mOnPlayerAchievementUnlocked ? mOnPlayerAchievementUnlocked : (mOnPlayerAchievementUnlocked = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementUnlocked")); }
-			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.OnRegister")); }
-			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.OnUnregister")); }
-			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.OnLoginChange")); }
-			ScriptFunction UpdateAchievements() { return mUpdateAchievements ? mUpdateAchievements : (mUpdateAchievements = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_PlayerAchievements.UpdateAchievements")); }
+			ScriptFunction GetTotalGamerScore() { mixin(MGF!("mGetTotalGamerScore", "Function Engine.UIDataProvider_PlayerAchievements.GetTotalGamerScore")()); }
+			ScriptFunction GetMaxTotalGamerScore() { mixin(MGF!("mGetMaxTotalGamerScore", "Function Engine.UIDataProvider_PlayerAchievements.GetMaxTotalGamerScore")()); }
+			ScriptFunction PopulateAchievementIcons() { mixin(MGF!("mPopulateAchievementIcons", "Function Engine.UIDataProvider_PlayerAchievements.PopulateAchievementIcons")()); }
+			ScriptFunction GetAchievementIconPathName() { mixin(MGF!("mGetAchievementIconPathName", "Function Engine.UIDataProvider_PlayerAchievements.GetAchievementIconPathName")()); }
+			ScriptFunction GetAchievementDetails() { mixin(MGF!("mGetAchievementDetails", "Function Engine.UIDataProvider_PlayerAchievements.GetAchievementDetails")()); }
+			ScriptFunction OnPlayerAchievementsChanged() { mixin(MGF!("mOnPlayerAchievementsChanged", "Function Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementsChanged")()); }
+			ScriptFunction OnPlayerAchievementUnlocked() { mixin(MGF!("mOnPlayerAchievementUnlocked", "Function Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementUnlocked")()); }
+			ScriptFunction OnRegister() { mixin(MGF!("mOnRegister", "Function Engine.UIDataProvider_PlayerAchievements.OnRegister")()); }
+			ScriptFunction OnUnregister() { mixin(MGF!("mOnUnregister", "Function Engine.UIDataProvider_PlayerAchievements.OnUnregister")()); }
+			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.UIDataProvider_PlayerAchievements.OnLoginChange")()); }
+			ScriptFunction UpdateAchievements() { mixin(MGF!("mUpdateAchievements", "Function Engine.UIDataProvider_PlayerAchievements.UpdateAchievements")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.AchievementDetails) Achievements() { return *cast(ScriptArray!(OnlineSubsystem.AchievementDetails)*)(cast(size_t)cast(void*)this + 96); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 92); }
+		ScriptArray!(OnlineSubsystem.AchievementDetails) Achievements() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.AchievementDetails), 96)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
 	}
 final:
 	int GetTotalGamerScore()
@@ -77,12 +78,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAchievementIconPathName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
-	void GetAchievementDetails(int AchievementId, OnlineSubsystem.AchievementDetails* OutAchievementDetails)
+	void GetAchievementDetails(const int AchievementId, ref OnlineSubsystem.AchievementDetails OutAchievementDetails)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(int*)params.ptr = AchievementId;
-		*cast(OnlineSubsystem.AchievementDetails*)&params[4] = *OutAchievementDetails;
+		*cast(OnlineSubsystem.AchievementDetails*)&params[4] = OutAchievementDetails;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAchievementDetails, params.ptr, cast(void*)0);
 		*OutAchievementDetails = *cast(OnlineSubsystem.AchievementDetails*)&params[4];
 	}

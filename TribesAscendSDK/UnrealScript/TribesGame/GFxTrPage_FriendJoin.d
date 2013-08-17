@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_FriendJoin;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrFriendManager;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
@@ -10,9 +11,9 @@ extern(C++) interface GFxTrPage_FriendJoin : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_FriendJoin")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_FriendJoin")()); }
 	private static __gshared GFxTrPage_FriendJoin mDefaultProperties;
-	@property final static GFxTrPage_FriendJoin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_FriendJoin)("GFxTrPage_FriendJoin TribesGame.Default__GFxTrPage_FriendJoin")); }
+	@property final static GFxTrPage_FriendJoin DefaultProperties() { mixin(MGDPC!(GFxTrPage_FriendJoin, "GFxTrPage_FriendJoin TribesGame.Default__GFxTrPage_FriendJoin")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,39 +34,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.Initialize")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.FillData")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.SpecialAction")); }
-			ScriptFunction CheckPricing() { return mCheckPricing ? mCheckPricing : (mCheckPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.CheckPricing")); }
-			ScriptFunction FillPricing() { return mFillPricing ? mFillPricing : (mFillPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.FillPricing")); }
-			ScriptFunction ModifyFocus() { return mModifyFocus ? mModifyFocus : (mModifyFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.ModifyFocus")); }
-			ScriptFunction ModifyAction() { return mModifyAction ? mModifyAction : (mModifyAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.ModifyAction")); }
-			ScriptFunction RefreshButtons() { return mRefreshButtons ? mRefreshButtons : (mRefreshButtons = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.RefreshButtons")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.TakeFocus")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.FillOption")); }
-			ScriptFunction FindNextFriend() { return mFindNextFriend ? mFindNextFriend : (mFindNextFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.FindNextFriend")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_FriendJoin.PopupComplete")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_FriendJoin.Initialize")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_FriendJoin.FillData")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_FriendJoin.SpecialAction")()); }
+			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_FriendJoin.CheckPricing")()); }
+			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage_FriendJoin.FillPricing")()); }
+			ScriptFunction ModifyFocus() { mixin(MGF!("mModifyFocus", "Function TribesGame.GFxTrPage_FriendJoin.ModifyFocus")()); }
+			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_FriendJoin.ModifyAction")()); }
+			ScriptFunction RefreshButtons() { mixin(MGF!("mRefreshButtons", "Function TribesGame.GFxTrPage_FriendJoin.RefreshButtons")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_FriendJoin.TakeFocus")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_FriendJoin.FillOption")()); }
+			ScriptFunction FindNextFriend() { mixin(MGF!("mFindNextFriend", "Function TribesGame.GFxTrPage_FriendJoin.FindNextFriend")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_FriendJoin.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_FriendJoin.PopupComplete")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { return *cast(ScriptArray!(TrFriendManager.FriendStruct)*)(cast(size_t)cast(void*)this + 424); }
-			ScriptString NotInAGameSubtext() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 412); }
-			ScriptString SocialSubtext() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 400); }
-			ScriptString SocialTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 388); }
-			ScriptString SelectPromptSubtext() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 376); }
-			int SpecActionIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
-			int PrevPlayerId() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-			int FocusedIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int Criteria() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 424)()); }
+			ScriptString NotInAGameSubtext() { mixin(MGPC!(ScriptString, 412)()); }
+			ScriptString SocialSubtext() { mixin(MGPC!(ScriptString, 400)()); }
+			ScriptString SocialTitle() { mixin(MGPC!(ScriptString, 388)()); }
+			ScriptString SelectPromptSubtext() { mixin(MGPC!(ScriptString, 376)()); }
+			int SpecActionIndex() { mixin(MGPC!(int, 368)()); }
+			int PrevPlayerId() { mixin(MGPC!(int, 364)()); }
+			int FocusedIndex() { mixin(MGPC!(int, 360)()); }
+			int Criteria() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bWaitingForMessagePopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 372) & 0x2) != 0; }
-		bool bWaitingForMessagePopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 372) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 372) &= ~0x2; } return val; }
-		bool bWaitingForFriendAddPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 372) & 0x1) != 0; }
-		bool bWaitingForFriendAddPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 372) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 372) &= ~0x1; } return val; }
+		bool bWaitingForMessagePopup() { mixin(MGBPC!(372, 0x2)()); }
+		bool bWaitingForMessagePopup(bool val) { mixin(MSBPC!(372, 0x2)()); }
+		bool bWaitingForFriendAddPopup() { mixin(MGBPC!(372, 0x1)()); }
+		bool bWaitingForFriendAddPopup(bool val) { mixin(MSBPC!(372, 0x1)()); }
 	}
 final:
 	void Initialize()

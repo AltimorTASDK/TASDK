@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleSystem;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleEmitter;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Texture2D;
@@ -10,9 +11,9 @@ extern(C++) interface ParticleSystem : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleSystem")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleSystem")()); }
 	private static __gshared ParticleSystem mDefaultProperties;
-	@property final static ParticleSystem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleSystem)("ParticleSystem Engine.Default__ParticleSystem")); }
+	@property final static ParticleSystem DefaultProperties() { mixin(MGDPC!(ParticleSystem, "ParticleSystem Engine.Default__ParticleSystem")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,11 +26,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentLODMethod() { return mGetCurrentLODMethod ? mGetCurrentLODMethod : (mGetCurrentLODMethod = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.GetCurrentLODMethod")); }
-			ScriptFunction GetLODLevelCount() { return mGetLODLevelCount ? mGetLODLevelCount : (mGetLODLevelCount = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.GetLODLevelCount")); }
-			ScriptFunction GetLODDistance() { return mGetLODDistance ? mGetLODDistance : (mGetLODDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.GetLODDistance")); }
-			ScriptFunction SetCurrentLODMethod() { return mSetCurrentLODMethod ? mSetCurrentLODMethod : (mSetCurrentLODMethod = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.SetCurrentLODMethod")); }
-			ScriptFunction SetLODDistance() { return mSetLODDistance ? mSetLODDistance : (mSetLODDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.SetLODDistance")); }
+			ScriptFunction GetCurrentLODMethod() { mixin(MGF!("mGetCurrentLODMethod", "Function Engine.ParticleSystem.GetCurrentLODMethod")()); }
+			ScriptFunction GetLODLevelCount() { mixin(MGF!("mGetLODLevelCount", "Function Engine.ParticleSystem.GetLODLevelCount")()); }
+			ScriptFunction GetLODDistance() { mixin(MGF!("mGetLODDistance", "Function Engine.ParticleSystem.GetLODDistance")()); }
+			ScriptFunction SetCurrentLODMethod() { mixin(MGF!("mSetCurrentLODMethod", "Function Engine.ParticleSystem.SetCurrentLODMethod")()); }
+			ScriptFunction SetLODDistance() { mixin(MGF!("mSetLODDistance", "Function Engine.ParticleSystem.SetLODDistance")()); }
 		}
 	}
 	enum ParticleSystemLODMethod : ubyte
@@ -57,11 +58,11 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystem.ParticleSystemLOD")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystem.ParticleSystemLOD")()); }
 		@property final
 		{
-			bool bLit() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bLit(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bLit() { mixin(MGBPS!(0, 0x1)()); }
+			bool bLit(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	struct LODSoloTrack
@@ -69,66 +70,67 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystem.LODSoloTrack")); }
-		@property final auto ref ScriptArray!(ubyte) SoloEnableSetting() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystem.LODSoloTrack")()); }
+		@property final auto ref ScriptArray!(ubyte) SoloEnableSetting() { mixin(MGPS!(ScriptArray!(ubyte), 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ParticleSystem.EParticleSystemUpdateMode SystemUpdateMode() { return *cast(ParticleSystem.EParticleSystemUpdateMode*)(cast(size_t)cast(void*)this + 60); }
-			ParticleSystem.ParticleSystemLODMethod LODMethod() { return *cast(ParticleSystem.ParticleSystemLODMethod*)(cast(size_t)cast(void*)this + 61); }
-			ParticleSystem.EParticleSystemOcclusionBoundsMethod OcclusionBoundsMethod() { return *cast(ParticleSystem.EParticleSystemOcclusionBoundsMethod*)(cast(size_t)cast(void*)this + 62); }
-			float UpdateTime_FPS() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
-			float UpdateTime_Delta() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			float WarmupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-			ScriptArray!(ParticleEmitter) Emitters() { return *cast(ScriptArray!(ParticleEmitter)*)(cast(size_t)cast(void*)this + 76); }
-			Rotator ThumbnailAngle() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 92); }
-			float ThumbnailDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float ThumbnailWarmup() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			InterpCurveEdSetup CurveEdSetup() { return *cast(InterpCurveEdSetup*)(cast(size_t)cast(void*)this + 116); }
-			float LODDistanceCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			ScriptArray!(float) LODDistances() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 124); }
-			int EditorLODSetting() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-			ScriptArray!(ParticleSystem.ParticleSystemLOD) LODSettings() { return *cast(ScriptArray!(ParticleSystem.ParticleSystemLOD)*)(cast(size_t)cast(void*)this + 140); }
-			UObject.Box FixedRelativeBoundingBox() { return *cast(UObject.Box*)(cast(size_t)cast(void*)this + 152); }
-			float SecondsBeforeInactive() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			ScriptString FloorMesh() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-			Vector FloorPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 196); }
-			Rotator FloorRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 208); }
-			float FloorScale() { return *cast(float*)(cast(size_t)cast(void*)this + 220); }
-			Vector FloorScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 224); }
-			UObject.Color BackgroundColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 236); }
-			Texture2D ThumbnailImage() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 240); }
-			float Delay() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			float DelayLow() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			Vector MacroUVPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 252); }
-			float MacroUVRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			UObject.Box CustomOcclusionBounds() { return *cast(UObject.Box*)(cast(size_t)cast(void*)this + 268); }
-			ScriptArray!(ParticleSystem.LODSoloTrack) SoloTracking() { return *cast(ScriptArray!(ParticleSystem.LODSoloTrack)*)(cast(size_t)cast(void*)this + 296); }
+			ParticleSystem.EParticleSystemUpdateMode SystemUpdateMode() { mixin(MGPC!(ParticleSystem.EParticleSystemUpdateMode, 60)()); }
+			ParticleSystem.ParticleSystemLODMethod LODMethod() { mixin(MGPC!(ParticleSystem.ParticleSystemLODMethod, 61)()); }
+			ParticleSystem.EParticleSystemOcclusionBoundsMethod OcclusionBoundsMethod() { mixin(MGPC!(ParticleSystem.EParticleSystemOcclusionBoundsMethod, 62)()); }
+			float UpdateTime_FPS() { mixin(MGPC!(float, 64)()); }
+			float UpdateTime_Delta() { mixin(MGPC!(float, 68)()); }
+			float WarmupTime() { mixin(MGPC!(float, 72)()); }
+			ScriptArray!(ParticleEmitter) Emitters() { mixin(MGPC!(ScriptArray!(ParticleEmitter), 76)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewComponent'!
+			Rotator ThumbnailAngle() { mixin(MGPC!(Rotator, 92)()); }
+			float ThumbnailDistance() { mixin(MGPC!(float, 104)()); }
+			float ThumbnailWarmup() { mixin(MGPC!(float, 108)()); }
+			InterpCurveEdSetup CurveEdSetup() { mixin(MGPC!(InterpCurveEdSetup, 116)()); }
+			float LODDistanceCheckTime() { mixin(MGPC!(float, 120)()); }
+			ScriptArray!(float) LODDistances() { mixin(MGPC!(ScriptArray!(float), 124)()); }
+			int EditorLODSetting() { mixin(MGPC!(int, 136)()); }
+			ScriptArray!(ParticleSystem.ParticleSystemLOD) LODSettings() { mixin(MGPC!(ScriptArray!(ParticleSystem.ParticleSystemLOD), 140)()); }
+			UObject.Box FixedRelativeBoundingBox() { mixin(MGPC!(UObject.Box, 152)()); }
+			float SecondsBeforeInactive() { mixin(MGPC!(float, 180)()); }
+			ScriptString FloorMesh() { mixin(MGPC!(ScriptString, 184)()); }
+			Vector FloorPosition() { mixin(MGPC!(Vector, 196)()); }
+			Rotator FloorRotation() { mixin(MGPC!(Rotator, 208)()); }
+			float FloorScale() { mixin(MGPC!(float, 220)()); }
+			Vector FloorScale3D() { mixin(MGPC!(Vector, 224)()); }
+			UObject.Color BackgroundColor() { mixin(MGPC!(UObject.Color, 236)()); }
+			Texture2D ThumbnailImage() { mixin(MGPC!(Texture2D, 240)()); }
+			float Delay() { mixin(MGPC!(float, 244)()); }
+			float DelayLow() { mixin(MGPC!(float, 248)()); }
+			Vector MacroUVPosition() { mixin(MGPC!(Vector, 252)()); }
+			float MacroUVRadius() { mixin(MGPC!(float, 264)()); }
+			UObject.Box CustomOcclusionBounds() { mixin(MGPC!(UObject.Box, 268)()); }
+			ScriptArray!(ParticleSystem.LODSoloTrack) SoloTracking() { mixin(MGPC!(ScriptArray!(ParticleSystem.LODSoloTrack), 296)()); }
 		}
-		bool bLit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x1) != 0; }
-		bool bLit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x1; } return val; }
-		bool bOrientZAxisTowardCamera() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x2) != 0; }
-		bool bOrientZAxisTowardCamera(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x2; } return val; }
-		bool bRegenerateLODDuplicate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x4) != 0; }
-		bool bRegenerateLODDuplicate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x4; } return val; }
-		bool bUseFixedRelativeBoundingBox() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x8) != 0; }
-		bool bUseFixedRelativeBoundingBox(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x8; } return val; }
-		bool bShouldResetPeakCounts() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x10) != 0; }
-		bool bShouldResetPeakCounts(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x10; } return val; }
-		bool bHasPhysics() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x20) != 0; }
-		bool bHasPhysics(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x20; } return val; }
-		bool bUseRealtimeThumbnail() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x40) != 0; }
-		bool bUseRealtimeThumbnail(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x40; } return val; }
-		bool ThumbnailImageOutOfDate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x80) != 0; }
-		bool ThumbnailImageOutOfDate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x80; } return val; }
-		bool bSkipSpawnCountCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x100) != 0; }
-		bool bSkipSpawnCountCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x100; } return val; }
-		bool bUseDelayRange() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x200) != 0; }
-		bool bUseDelayRange(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x200; } return val; }
-		bool bUseMobilePointSprites() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x400) != 0; }
-		bool bUseMobilePointSprites(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x400; } return val; }
+		bool bLit() { mixin(MGBPC!(112, 0x1)()); }
+		bool bLit(bool val) { mixin(MSBPC!(112, 0x1)()); }
+		bool bOrientZAxisTowardCamera() { mixin(MGBPC!(112, 0x2)()); }
+		bool bOrientZAxisTowardCamera(bool val) { mixin(MSBPC!(112, 0x2)()); }
+		bool bRegenerateLODDuplicate() { mixin(MGBPC!(112, 0x4)()); }
+		bool bRegenerateLODDuplicate(bool val) { mixin(MSBPC!(112, 0x4)()); }
+		bool bUseFixedRelativeBoundingBox() { mixin(MGBPC!(112, 0x8)()); }
+		bool bUseFixedRelativeBoundingBox(bool val) { mixin(MSBPC!(112, 0x8)()); }
+		bool bShouldResetPeakCounts() { mixin(MGBPC!(112, 0x10)()); }
+		bool bShouldResetPeakCounts(bool val) { mixin(MSBPC!(112, 0x10)()); }
+		bool bHasPhysics() { mixin(MGBPC!(112, 0x20)()); }
+		bool bHasPhysics(bool val) { mixin(MSBPC!(112, 0x20)()); }
+		bool bUseRealtimeThumbnail() { mixin(MGBPC!(112, 0x40)()); }
+		bool bUseRealtimeThumbnail(bool val) { mixin(MSBPC!(112, 0x40)()); }
+		bool ThumbnailImageOutOfDate() { mixin(MGBPC!(112, 0x80)()); }
+		bool ThumbnailImageOutOfDate(bool val) { mixin(MSBPC!(112, 0x80)()); }
+		bool bSkipSpawnCountCheck() { mixin(MGBPC!(112, 0x100)()); }
+		bool bSkipSpawnCountCheck(bool val) { mixin(MSBPC!(112, 0x100)()); }
+		bool bUseDelayRange() { mixin(MGBPC!(112, 0x200)()); }
+		bool bUseDelayRange(bool val) { mixin(MSBPC!(112, 0x200)()); }
+		bool bUseMobilePointSprites() { mixin(MGBPC!(112, 0x400)()); }
+		bool bUseMobilePointSprites(bool val) { mixin(MSBPC!(112, 0x400)()); }
 	}
 final:
 	ParticleSystem.ParticleSystemLODMethod GetCurrentLODMethod()

@@ -1,15 +1,16 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_HostGame;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.GFxUDKFrontEnd_LaunchGame;
 
 extern(C++) interface GFxUDKFrontEnd_HostGame : GFxUDKFrontEnd_LaunchGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_HostGame")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_HostGame")()); }
 	private static __gshared GFxUDKFrontEnd_HostGame mDefaultProperties;
-	@property final static GFxUDKFrontEnd_HostGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_HostGame)("GFxUDKFrontEnd_HostGame UTGame.Default__GFxUDKFrontEnd_HostGame")); }
+	@property final static GFxUDKFrontEnd_HostGame DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_HostGame, "GFxUDKFrontEnd_HostGame UTGame.Default__GFxUDKFrontEnd_HostGame")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,16 +28,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnViewActivated() { return mOnViewActivated ? mOnViewActivated : (mOnViewActivated = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.OnViewActivated")); }
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.OnTopMostView")); }
-			ScriptFunction StripInvalidPasswordCharacters() { return mStripInvalidPasswordCharacters ? mStripInvalidPasswordCharacters : (mStripInvalidPasswordCharacters = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.StripInvalidPasswordCharacters")); }
-			ScriptFunction ValidateServerType() { return mValidateServerType ? mValidateServerType : (mValidateServerType = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.ValidateServerType")); }
-			ScriptFunction GenerateMutatorURLString() { return mGenerateMutatorURLString ? mGenerateMutatorURLString : (mGenerateMutatorURLString = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.GenerateMutatorURLString")); }
-			ScriptFunction SetupGameSettings() { return mSetupGameSettings ? mSetupGameSettings : (mSetupGameSettings = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.SetupGameSettings")); }
-			ScriptFunction CreateOnlineGame() { return mCreateOnlineGame ? mCreateOnlineGame : (mCreateOnlineGame = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.CreateOnlineGame")); }
-			ScriptFunction OnGameCreated() { return mOnGameCreated ? mOnGameCreated : (mOnGameCreated = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.OnGameCreated")); }
-			ScriptFunction FinishStartDedicated() { return mFinishStartDedicated ? mFinishStartDedicated : (mFinishStartDedicated = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.FinishStartDedicated")); }
-			ScriptFunction OnStartGame_Confirm() { return mOnStartGame_Confirm ? mOnStartGame_Confirm : (mOnStartGame_Confirm = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.OnStartGame_Confirm")); }
+			ScriptFunction OnViewActivated() { mixin(MGF!("mOnViewActivated", "Function UTGame.GFxUDKFrontEnd_HostGame.OnViewActivated")()); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_HostGame.OnTopMostView")()); }
+			ScriptFunction StripInvalidPasswordCharacters() { mixin(MGF!("mStripInvalidPasswordCharacters", "Function UTGame.GFxUDKFrontEnd_HostGame.StripInvalidPasswordCharacters")()); }
+			ScriptFunction ValidateServerType() { mixin(MGF!("mValidateServerType", "Function UTGame.GFxUDKFrontEnd_HostGame.ValidateServerType")()); }
+			ScriptFunction GenerateMutatorURLString() { mixin(MGF!("mGenerateMutatorURLString", "Function UTGame.GFxUDKFrontEnd_HostGame.GenerateMutatorURLString")()); }
+			ScriptFunction SetupGameSettings() { mixin(MGF!("mSetupGameSettings", "Function UTGame.GFxUDKFrontEnd_HostGame.SetupGameSettings")()); }
+			ScriptFunction CreateOnlineGame() { mixin(MGF!("mCreateOnlineGame", "Function UTGame.GFxUDKFrontEnd_HostGame.CreateOnlineGame")()); }
+			ScriptFunction OnGameCreated() { mixin(MGF!("mOnGameCreated", "Function UTGame.GFxUDKFrontEnd_HostGame.OnGameCreated")()); }
+			ScriptFunction FinishStartDedicated() { mixin(MGF!("mFinishStartDedicated", "Function UTGame.GFxUDKFrontEnd_HostGame.FinishStartDedicated")()); }
+			ScriptFunction OnStartGame_Confirm() { mixin(MGF!("mOnStartGame_Confirm", "Function UTGame.GFxUDKFrontEnd_HostGame.OnStartGame_Confirm")()); }
 		}
 	}
 	static struct Constants

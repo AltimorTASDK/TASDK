@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_Spinfusor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.TribesGame.TrSkelControl_SpinControl;
@@ -11,9 +12,9 @@ extern(C++) interface TrDevice_Spinfusor : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Spinfusor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Spinfusor")()); }
 	private static __gshared TrDevice_Spinfusor mDefaultProperties;
-	@property final static TrDevice_Spinfusor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Spinfusor)("TrDevice_Spinfusor TribesGame.Default__TrDevice_Spinfusor")); }
+	@property final static TrDevice_Spinfusor DefaultProperties() { mixin(MGDPC!(TrDevice_Spinfusor, "TrDevice_Spinfusor TribesGame.Default__TrDevice_Spinfusor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,24 +33,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateReplicatedCarriedAmmo() { return mUpdateReplicatedCarriedAmmo ? mUpdateReplicatedCarriedAmmo : (mUpdateReplicatedCarriedAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.UpdateReplicatedCarriedAmmo")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.PostInitAnimTree")); }
-			ScriptFunction OnAnimPlay() { return mOnAnimPlay ? mOnAnimPlay : (mOnAnimPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.OnAnimPlay")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.OnAnimEnd")); }
-			ScriptFunction PlayFireEffects() { return mPlayFireEffects ? mPlayFireEffects : (mPlayFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.PlayFireEffects")); }
-			ScriptFunction PlayWeaponEquip() { return mPlayWeaponEquip ? mPlayWeaponEquip : (mPlayWeaponEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.PlayWeaponEquip")); }
-			ScriptFunction SetDiscVisibility() { return mSetDiscVisibility ? mSetDiscVisibility : (mSetDiscVisibility = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.SetDiscVisibility")); }
-			ScriptFunction SetDiscSpinning() { return mSetDiscSpinning ? mSetDiscSpinning : (mSetDiscSpinning = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.SetDiscSpinning")); }
-			ScriptFunction PlayWeaponPutDown() { return mPlayWeaponPutDown ? mPlayWeaponPutDown : (mPlayWeaponPutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.PlayWeaponPutDown")); }
-			ScriptFunction PutDownFast() { return mPutDownFast ? mPutDownFast : (mPutDownFast = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.PutDownFast")); }
-			ScriptFunction OnSwitchAwayFromWeapon() { return mOnSwitchAwayFromWeapon ? mOnSwitchAwayFromWeapon : (mOnSwitchAwayFromWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Spinfusor.OnSwitchAwayFromWeapon")); }
+			ScriptFunction UpdateReplicatedCarriedAmmo() { mixin(MGF!("mUpdateReplicatedCarriedAmmo", "Function TribesGame.TrDevice_Spinfusor.UpdateReplicatedCarriedAmmo")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_Spinfusor.PostInitAnimTree")()); }
+			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function TribesGame.TrDevice_Spinfusor.OnAnimPlay")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_Spinfusor.OnAnimEnd")()); }
+			ScriptFunction PlayFireEffects() { mixin(MGF!("mPlayFireEffects", "Function TribesGame.TrDevice_Spinfusor.PlayFireEffects")()); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_Spinfusor.PlayWeaponEquip")()); }
+			ScriptFunction SetDiscVisibility() { mixin(MGF!("mSetDiscVisibility", "Function TribesGame.TrDevice_Spinfusor.SetDiscVisibility")()); }
+			ScriptFunction SetDiscSpinning() { mixin(MGF!("mSetDiscSpinning", "Function TribesGame.TrDevice_Spinfusor.SetDiscSpinning")()); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice_Spinfusor.PlayWeaponPutDown")()); }
+			ScriptFunction PutDownFast() { mixin(MGF!("mPutDownFast", "Function TribesGame.TrDevice_Spinfusor.PutDownFast")()); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Spinfusor.OnSwitchAwayFromWeapon")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue m_SpinfusorIdleSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 2156); }
-		SkelControlSingleBone m_DiscVisibilityControl() { return *cast(SkelControlSingleBone*)(cast(size_t)cast(void*)this + 2152); }
-		TrSkelControl_SpinControl m_DiscSpinControl() { return *cast(TrSkelControl_SpinControl*)(cast(size_t)cast(void*)this + 2148); }
+		SoundCue m_SpinfusorIdleSound() { mixin(MGPC!(SoundCue, 2156)()); }
+		SkelControlSingleBone m_DiscVisibilityControl() { mixin(MGPC!(SkelControlSingleBone, 2152)()); }
+		TrSkelControl_SpinControl m_DiscSpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 2148)()); }
 	}
 final:
 	void UpdateReplicatedCarriedAmmo()

@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKEmitterPool;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.EmitterPool;
@@ -9,9 +10,9 @@ extern(C++) interface UDKEmitterPool : EmitterPool
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKEmitterPool")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKEmitterPool")()); }
 	private static __gshared UDKEmitterPool mDefaultProperties;
-	@property final static UDKEmitterPool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKEmitterPool)("UDKEmitterPool UDKBase.Default__UDKEmitterPool")); }
+	@property final static UDKEmitterPool DefaultProperties() { mixin(MGDPC!(UDKEmitterPool, "UDKEmitterPool UDKBase.Default__UDKEmitterPool")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,9 +23,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnEmitter() { return mSpawnEmitter ? mSpawnEmitter : (mSpawnEmitter = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKEmitterPool.SpawnEmitter")); }
-			ScriptFunction OnExplosionLightFinished() { return mOnExplosionLightFinished ? mOnExplosionLightFinished : (mOnExplosionLightFinished = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKEmitterPool.OnExplosionLightFinished")); }
-			ScriptFunction SpawnExplosionLight() { return mSpawnExplosionLight ? mSpawnExplosionLight : (mSpawnExplosionLight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKEmitterPool.SpawnExplosionLight")); }
+			ScriptFunction SpawnEmitter() { mixin(MGF!("mSpawnEmitter", "Function UDKBase.UDKEmitterPool.SpawnEmitter")()); }
+			ScriptFunction OnExplosionLightFinished() { mixin(MGF!("mOnExplosionLightFinished", "Function UDKBase.UDKEmitterPool.OnExplosionLightFinished")()); }
+			ScriptFunction SpawnExplosionLight() { mixin(MGF!("mSpawnExplosionLight", "Function UDKBase.UDKEmitterPool.SpawnExplosionLight")()); }
 		}
 	}
 	struct AttachedExplosionLight
@@ -32,14 +33,15 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKEmitterPool.AttachedExplosionLight")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKEmitterPool.AttachedExplosionLight")()); }
 		@property final auto ref
 		{
-			Vector RelativeLocation() { return *cast(Vector*)(cast(size_t)&this + 8); }
-			Actor Base() { return *cast(Actor*)(cast(size_t)&this + 4); }
+			Vector RelativeLocation() { mixin(MGPS!(Vector, 8)()); }
+			Actor Base() { mixin(MGPS!(Actor, 4)()); }
+			// WARNING: Property 'Light' has the same name as a defined type!
 		}
 	}
-	@property final auto ref ScriptArray!(UDKEmitterPool.AttachedExplosionLight) RelativeExplosionLights() { return *cast(ScriptArray!(UDKEmitterPool.AttachedExplosionLight)*)(cast(size_t)cast(void*)this + 564); }
+	@property final auto ref ScriptArray!(UDKEmitterPool.AttachedExplosionLight) RelativeExplosionLights() { mixin(MGPC!(ScriptArray!(UDKEmitterPool.AttachedExplosionLight), 564)()); }
 final:
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

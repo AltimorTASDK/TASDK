@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrPaperDollTransient;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.TribesGame.TrPaperDoll;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrPaperDollTransient : TrPaperDoll
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPaperDollTransient")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPaperDollTransient")()); }
 	private static __gshared TrPaperDollTransient mDefaultProperties;
-	@property final static TrPaperDollTransient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPaperDollTransient)("TrPaperDollTransient TribesGame.Default__TrPaperDollTransient")); }
+	@property final static TrPaperDollTransient DefaultProperties() { mixin(MGDPC!(TrPaperDollTransient, "TrPaperDollTransient TribesGame.Default__TrPaperDollTransient")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +23,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollTransient.PostBeginPlay")); }
-			ScriptFunction FadeInBackdrop() { return mFadeInBackdrop ? mFadeInBackdrop : (mFadeInBackdrop = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollTransient.FadeInBackdrop")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollTransient.Tick")); }
-			ScriptFunction SetPosition() { return mSetPosition ? mSetPosition : (mSetPosition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDollTransient.SetPosition")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrPaperDollTransient.PostBeginPlay")()); }
+			ScriptFunction FadeInBackdrop() { mixin(MGF!("mFadeInBackdrop", "Function TribesGame.TrPaperDollTransient.FadeInBackdrop")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrPaperDollTransient.Tick")()); }
+			ScriptFunction SetPosition() { mixin(MGF!("mSetPosition", "Function TribesGame.TrPaperDollTransient.SetPosition")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fBackdropFadeRemainingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 916); }
-		float m_fBackdropFadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 912); }
-		MaterialInstanceConstant m_BackdropMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 908); }
+		float m_fBackdropFadeRemainingTime() { mixin(MGPC!(float, 916)()); }
+		float m_fBackdropFadeTime() { mixin(MGPC!(float, 912)()); }
+		MaterialInstanceConstant m_BackdropMIC() { mixin(MGPC!(MaterialInstanceConstant, 908)()); }
 	}
 final:
 	void PostBeginPlay()

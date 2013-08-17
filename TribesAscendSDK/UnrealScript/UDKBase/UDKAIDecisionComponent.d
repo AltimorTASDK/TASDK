@@ -1,18 +1,19 @@
 module UnrealScript.UDKBase.UDKAIDecisionComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorComponent;
 
 extern(C++) interface UDKAIDecisionComponent : ActorComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAIDecisionComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAIDecisionComponent")()); }
 	private static __gshared UDKAIDecisionComponent mDefaultProperties;
-	@property final static UDKAIDecisionComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAIDecisionComponent)("UDKAIDecisionComponent UDKBase.Default__UDKAIDecisionComponent")); }
+	@property final static UDKAIDecisionComponent DefaultProperties() { mixin(MGDPC!(UDKAIDecisionComponent, "UDKAIDecisionComponent UDKBase.Default__UDKAIDecisionComponent")()); }
 	@property final
 	{
-		bool bTriggered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bTriggered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bTriggered() { mixin(MGBPC!(88, 0x1)()); }
+		bool bTriggered(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 }

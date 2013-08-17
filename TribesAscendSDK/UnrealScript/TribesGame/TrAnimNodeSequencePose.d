@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrAnimNodeSequencePose;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrPawn;
@@ -9,15 +10,15 @@ extern(C++) interface TrAnimNodeSequencePose : AnimNodeSequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeSequencePose")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeSequencePose")()); }
 	private static __gshared TrAnimNodeSequencePose mDefaultProperties;
-	@property final static TrAnimNodeSequencePose DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeSequencePose)("TrAnimNodeSequencePose TribesGame.Default__TrAnimNodeSequencePose")); }
+	@property final static TrAnimNodeSequencePose DefaultProperties() { mixin(MGDPC!(TrAnimNodeSequencePose, "TrAnimNodeSequencePose TribesGame.Default__TrAnimNodeSequencePose")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFillWithPose;
-		public @property static final ScriptFunction FillWithPose() { return mFillWithPose ? mFillWithPose : (mFillWithPose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeSequencePose.FillWithPose")); }
+		public @property static final ScriptFunction FillWithPose() { mixin(MGF!("mFillWithPose", "Function TribesGame.TrAnimNodeSequencePose.FillWithPose")()); }
 	}
-	@property final auto ref ScriptArray!(UObject.BoneAtom) m_PoseSpaceBases() { return *cast(ScriptArray!(UObject.BoneAtom)*)(cast(size_t)cast(void*)this + 320); }
+	@property final auto ref ScriptArray!(UObject.BoneAtom) m_PoseSpaceBases() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 320)()); }
 	final void FillWithPose(TrPawn P)
 	{
 		ubyte params[4];

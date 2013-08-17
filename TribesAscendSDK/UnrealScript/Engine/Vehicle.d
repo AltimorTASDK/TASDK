@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Vehicle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Actor;
@@ -11,9 +12,9 @@ extern(C++) interface Vehicle : Pawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Vehicle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Vehicle")()); }
 	private static __gshared Vehicle mDefaultProperties;
-	@property final static Vehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Vehicle)("Vehicle Engine.Default__Vehicle")); }
+	@property final static Vehicle DefaultProperties() { mixin(MGDPC!(Vehicle, "Vehicle Engine.Default__Vehicle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -73,113 +74,113 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DriverLeave() { return mDriverLeave ? mDriverLeave : (mDriverLeave = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DriverLeave")); }
-			ScriptFunction TryToDrive() { return mTryToDrive ? mTryToDrive : (mTryToDrive = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.TryToDrive")); }
-			ScriptFunction NotifyTeamChanged() { return mNotifyTeamChanged ? mNotifyTeamChanged : (mNotifyTeamChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.NotifyTeamChanged")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DisplayDebug")); }
-			ScriptFunction Suicide() { return mSuicide ? mSuicide : (mSuicide = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.Suicide")); }
-			ScriptFunction GetMaxRiseForce() { return mGetMaxRiseForce ? mGetMaxRiseForce : (mGetMaxRiseForce = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.GetMaxRiseForce")); }
-			ScriptFunction GetTargetLocation() { return mGetTargetLocation ? mGetTargetLocation : (mGetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.GetTargetLocation")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.TakeRadiusDamage")); }
-			ScriptFunction DriverRadiusDamage() { return mDriverRadiusDamage ? mDriverRadiusDamage : (mDriverRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DriverRadiusDamage")); }
-			ScriptFunction PlayerChangedTeam() { return mPlayerChangedTeam ? mPlayerChangedTeam : (mPlayerChangedTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.PlayerChangedTeam")); }
-			ScriptFunction SetBaseEyeheight() { return mSetBaseEyeheight ? mSetBaseEyeheight : (mSetBaseEyeheight = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.SetBaseEyeheight")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.PostBeginPlay")); }
-			ScriptFunction CheatWalk() { return mCheatWalk ? mCheatWalk : (mCheatWalk = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.CheatWalk")); }
-			ScriptFunction CheatGhost() { return mCheatGhost ? mCheatGhost : (mCheatGhost = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.CheatGhost")); }
-			ScriptFunction CheatFly() { return mCheatFly ? mCheatFly : (mCheatFly = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.CheatFly")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.Destroyed")); }
-			ScriptFunction Destroyed_HandleDriver() { return mDestroyed_HandleDriver ? mDestroyed_HandleDriver : (mDestroyed_HandleDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.Destroyed_HandleDriver")); }
-			ScriptFunction CanEnterVehicle() { return mCanEnterVehicle ? mCanEnterVehicle : (mCanEnterVehicle = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.CanEnterVehicle")); }
-			ScriptFunction AnySeatAvailable() { return mAnySeatAvailable ? mAnySeatAvailable : (mAnySeatAvailable = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.AnySeatAvailable")); }
-			ScriptFunction DriverEnter() { return mDriverEnter ? mDriverEnter : (mDriverEnter = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DriverEnter")); }
-			ScriptFunction PossessedBy() { return mPossessedBy ? mPossessedBy : (mPossessedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.PossessedBy")); }
-			ScriptFunction EntryAnnouncement() { return mEntryAnnouncement ? mEntryAnnouncement : (mEntryAnnouncement = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.EntryAnnouncement")); }
-			ScriptFunction AttachDriver() { return mAttachDriver ? mAttachDriver : (mAttachDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.AttachDriver")); }
-			ScriptFunction DetachDriver() { return mDetachDriver ? mDetachDriver : (mDetachDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DetachDriver")); }
-			ScriptFunction ContinueOnFoot() { return mContinueOnFoot ? mContinueOnFoot : (mContinueOnFoot = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.ContinueOnFoot")); }
-			ScriptFunction GetExitRotation() { return mGetExitRotation ? mGetExitRotation : (mGetExitRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.GetExitRotation")); }
-			ScriptFunction SetInputs() { return mSetInputs ? mSetInputs : (mSetInputs = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.SetInputs")); }
-			ScriptFunction DriverLeft() { return mDriverLeft ? mDriverLeft : (mDriverLeft = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DriverLeft")); }
-			ScriptFunction PlaceExitingDriver() { return mPlaceExitingDriver ? mPlaceExitingDriver : (mPlaceExitingDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.PlaceExitingDriver")); }
-			ScriptFunction FindAutoExit() { return mFindAutoExit ? mFindAutoExit : (mFindAutoExit = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.FindAutoExit")); }
-			ScriptFunction TryExitPos() { return mTryExitPos ? mTryExitPos : (mTryExitPos = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.TryExitPos")); }
-			ScriptFunction UnPossessed() { return mUnPossessed ? mUnPossessed : (mUnPossessed = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.UnPossessed")); }
-			ScriptFunction SetKillInstigator() { return mSetKillInstigator ? mSetKillInstigator : (mSetKillInstigator = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.SetKillInstigator")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.TakeDamage")); }
-			ScriptFunction AdjustDriverDamage() { return mAdjustDriverDamage ? mAdjustDriverDamage : (mAdjustDriverDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.AdjustDriverDamage")); }
-			ScriptFunction ThrowActiveWeapon() { return mThrowActiveWeapon ? mThrowActiveWeapon : (mThrowActiveWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.ThrowActiveWeapon")); }
-			ScriptFunction Died() { return mDied ? mDied : (mDied = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.Died")); }
-			ScriptFunction DriverDied() { return mDriverDied ? mDriverDied : (mDriverDied = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DriverDied")); }
-			ScriptFunction PlayDying() { return mPlayDying ? mPlayDying : (mPlayDying = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.PlayDying")); }
-			ScriptFunction GetDefaultCameraMode() { return mGetDefaultCameraMode ? mGetDefaultCameraMode : (mGetDefaultCameraMode = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.GetDefaultCameraMode")); }
-			ScriptFunction FaceRotation() { return mFaceRotation ? mFaceRotation : (mFaceRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.FaceRotation")); }
-			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.EncroachedBy")); }
-			ScriptFunction GetCollisionDamageInstigator() { return mGetCollisionDamageInstigator ? mGetCollisionDamageInstigator : (mGetCollisionDamageInstigator = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.GetCollisionDamageInstigator")); }
-			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.EncroachingOn")); }
-			ScriptFunction PancakeOther() { return mPancakeOther ? mPancakeOther : (mPancakeOther = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.PancakeOther")); }
-			ScriptFunction CrushedBy() { return mCrushedBy ? mCrushedBy : (mCrushedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.CrushedBy")); }
-			ScriptFunction GetEntryLocation() { return mGetEntryLocation ? mGetEntryLocation : (mGetEntryLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.GetEntryLocation")); }
-			ScriptFunction SetDriving() { return mSetDriving ? mSetDriving : (mSetDriving = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.SetDriving")); }
-			ScriptFunction DrivingStatusChanged() { return mDrivingStatusChanged ? mDrivingStatusChanged : (mDrivingStatusChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.DrivingStatusChanged")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.ReplicatedEvent")); }
-			ScriptFunction NotifyDriverTakeHit() { return mNotifyDriverTakeHit ? mNotifyDriverTakeHit : (mNotifyDriverTakeHit = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.NotifyDriverTakeHit")); }
-			ScriptFunction ZeroMovementVariables() { return mZeroMovementVariables ? mZeroMovementVariables : (mZeroMovementVariables = ScriptObject.Find!(ScriptFunction)("Function Engine.Vehicle.ZeroMovementVariables")); }
+			ScriptFunction DriverLeave() { mixin(MGF!("mDriverLeave", "Function Engine.Vehicle.DriverLeave")()); }
+			ScriptFunction TryToDrive() { mixin(MGF!("mTryToDrive", "Function Engine.Vehicle.TryToDrive")()); }
+			ScriptFunction NotifyTeamChanged() { mixin(MGF!("mNotifyTeamChanged", "Function Engine.Vehicle.NotifyTeamChanged")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Vehicle.DisplayDebug")()); }
+			ScriptFunction Suicide() { mixin(MGF!("mSuicide", "Function Engine.Vehicle.Suicide")()); }
+			ScriptFunction GetMaxRiseForce() { mixin(MGF!("mGetMaxRiseForce", "Function Engine.Vehicle.GetMaxRiseForce")()); }
+			ScriptFunction GetTargetLocation() { mixin(MGF!("mGetTargetLocation", "Function Engine.Vehicle.GetTargetLocation")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.Vehicle.TakeRadiusDamage")()); }
+			ScriptFunction DriverRadiusDamage() { mixin(MGF!("mDriverRadiusDamage", "Function Engine.Vehicle.DriverRadiusDamage")()); }
+			ScriptFunction PlayerChangedTeam() { mixin(MGF!("mPlayerChangedTeam", "Function Engine.Vehicle.PlayerChangedTeam")()); }
+			ScriptFunction SetBaseEyeheight() { mixin(MGF!("mSetBaseEyeheight", "Function Engine.Vehicle.SetBaseEyeheight")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Vehicle.PostBeginPlay")()); }
+			ScriptFunction CheatWalk() { mixin(MGF!("mCheatWalk", "Function Engine.Vehicle.CheatWalk")()); }
+			ScriptFunction CheatGhost() { mixin(MGF!("mCheatGhost", "Function Engine.Vehicle.CheatGhost")()); }
+			ScriptFunction CheatFly() { mixin(MGF!("mCheatFly", "Function Engine.Vehicle.CheatFly")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Vehicle.Destroyed")()); }
+			ScriptFunction Destroyed_HandleDriver() { mixin(MGF!("mDestroyed_HandleDriver", "Function Engine.Vehicle.Destroyed_HandleDriver")()); }
+			ScriptFunction CanEnterVehicle() { mixin(MGF!("mCanEnterVehicle", "Function Engine.Vehicle.CanEnterVehicle")()); }
+			ScriptFunction AnySeatAvailable() { mixin(MGF!("mAnySeatAvailable", "Function Engine.Vehicle.AnySeatAvailable")()); }
+			ScriptFunction DriverEnter() { mixin(MGF!("mDriverEnter", "Function Engine.Vehicle.DriverEnter")()); }
+			ScriptFunction PossessedBy() { mixin(MGF!("mPossessedBy", "Function Engine.Vehicle.PossessedBy")()); }
+			ScriptFunction EntryAnnouncement() { mixin(MGF!("mEntryAnnouncement", "Function Engine.Vehicle.EntryAnnouncement")()); }
+			ScriptFunction AttachDriver() { mixin(MGF!("mAttachDriver", "Function Engine.Vehicle.AttachDriver")()); }
+			ScriptFunction DetachDriver() { mixin(MGF!("mDetachDriver", "Function Engine.Vehicle.DetachDriver")()); }
+			ScriptFunction ContinueOnFoot() { mixin(MGF!("mContinueOnFoot", "Function Engine.Vehicle.ContinueOnFoot")()); }
+			ScriptFunction GetExitRotation() { mixin(MGF!("mGetExitRotation", "Function Engine.Vehicle.GetExitRotation")()); }
+			ScriptFunction SetInputs() { mixin(MGF!("mSetInputs", "Function Engine.Vehicle.SetInputs")()); }
+			ScriptFunction DriverLeft() { mixin(MGF!("mDriverLeft", "Function Engine.Vehicle.DriverLeft")()); }
+			ScriptFunction PlaceExitingDriver() { mixin(MGF!("mPlaceExitingDriver", "Function Engine.Vehicle.PlaceExitingDriver")()); }
+			ScriptFunction FindAutoExit() { mixin(MGF!("mFindAutoExit", "Function Engine.Vehicle.FindAutoExit")()); }
+			ScriptFunction TryExitPos() { mixin(MGF!("mTryExitPos", "Function Engine.Vehicle.TryExitPos")()); }
+			ScriptFunction UnPossessed() { mixin(MGF!("mUnPossessed", "Function Engine.Vehicle.UnPossessed")()); }
+			ScriptFunction SetKillInstigator() { mixin(MGF!("mSetKillInstigator", "Function Engine.Vehicle.SetKillInstigator")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.Vehicle.TakeDamage")()); }
+			ScriptFunction AdjustDriverDamage() { mixin(MGF!("mAdjustDriverDamage", "Function Engine.Vehicle.AdjustDriverDamage")()); }
+			ScriptFunction ThrowActiveWeapon() { mixin(MGF!("mThrowActiveWeapon", "Function Engine.Vehicle.ThrowActiveWeapon")()); }
+			ScriptFunction Died() { mixin(MGF!("mDied", "Function Engine.Vehicle.Died")()); }
+			ScriptFunction DriverDied() { mixin(MGF!("mDriverDied", "Function Engine.Vehicle.DriverDied")()); }
+			ScriptFunction PlayDying() { mixin(MGF!("mPlayDying", "Function Engine.Vehicle.PlayDying")()); }
+			ScriptFunction GetDefaultCameraMode() { mixin(MGF!("mGetDefaultCameraMode", "Function Engine.Vehicle.GetDefaultCameraMode")()); }
+			ScriptFunction FaceRotation() { mixin(MGF!("mFaceRotation", "Function Engine.Vehicle.FaceRotation")()); }
+			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.Vehicle.EncroachedBy")()); }
+			ScriptFunction GetCollisionDamageInstigator() { mixin(MGF!("mGetCollisionDamageInstigator", "Function Engine.Vehicle.GetCollisionDamageInstigator")()); }
+			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.Vehicle.EncroachingOn")()); }
+			ScriptFunction PancakeOther() { mixin(MGF!("mPancakeOther", "Function Engine.Vehicle.PancakeOther")()); }
+			ScriptFunction CrushedBy() { mixin(MGF!("mCrushedBy", "Function Engine.Vehicle.CrushedBy")()); }
+			ScriptFunction GetEntryLocation() { mixin(MGF!("mGetEntryLocation", "Function Engine.Vehicle.GetEntryLocation")()); }
+			ScriptFunction SetDriving() { mixin(MGF!("mSetDriving", "Function Engine.Vehicle.SetDriving")()); }
+			ScriptFunction DrivingStatusChanged() { mixin(MGF!("mDrivingStatusChanged", "Function Engine.Vehicle.DrivingStatusChanged")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.Vehicle.ReplicatedEvent")()); }
+			ScriptFunction NotifyDriverTakeHit() { mixin(MGF!("mNotifyDriverTakeHit", "Function Engine.Vehicle.NotifyDriverTakeHit")()); }
+			ScriptFunction ZeroMovementVariables() { mixin(MGF!("mZeroMovementVariables", "Function Engine.Vehicle.ZeroMovementVariables")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Pawn Driver() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 1144); }
-			ScriptArray!(Vector) ExitPositions() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 1152); }
-			float TurnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1256); }
-			float VehicleMovingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1252); }
-			float AIMoveCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1248); }
-			float OldThrottle() { return *cast(float*)(cast(size_t)cast(void*)this + 1244); }
-			float OnlySteeringStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1240); }
-			float OldSteering() { return *cast(float*)(cast(size_t)cast(void*)this + 1236); }
-			float StuckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1232); }
-			float ThrottleTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1228); }
-			ubyte StuckCount() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1224); }
-			float ForceCrushPenetration() { return *cast(float*)(cast(size_t)cast(void*)this + 1220); }
-			float MinCrushSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1216); }
-			ScriptClass CrushedDamageType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1212); }
-			float MomentumMult() { return *cast(float*)(cast(size_t)cast(void*)this + 1208); }
-			float DriverDamageMult() { return *cast(float*)(cast(size_t)cast(void*)this + 1204); }
-			Vector TargetLocationAdjustment() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1192); }
-			float Rise() { return *cast(float*)(cast(size_t)cast(void*)this + 1188); }
-			float Throttle() { return *cast(float*)(cast(size_t)cast(void*)this + 1184); }
-			float Steering() { return *cast(float*)(cast(size_t)cast(void*)this + 1180); }
-			Vector ExitOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1168); }
-			float ExitRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 1164); }
+			Pawn Driver() { mixin(MGPC!(Pawn, 1144)()); }
+			ScriptArray!(Vector) ExitPositions() { mixin(MGPC!(ScriptArray!(Vector), 1152)()); }
+			float TurnTime() { mixin(MGPC!(float, 1256)()); }
+			float VehicleMovingTime() { mixin(MGPC!(float, 1252)()); }
+			float AIMoveCheckTime() { mixin(MGPC!(float, 1248)()); }
+			float OldThrottle() { mixin(MGPC!(float, 1244)()); }
+			float OnlySteeringStartTime() { mixin(MGPC!(float, 1240)()); }
+			float OldSteering() { mixin(MGPC!(float, 1236)()); }
+			float StuckTime() { mixin(MGPC!(float, 1232)()); }
+			float ThrottleTime() { mixin(MGPC!(float, 1228)()); }
+			ubyte StuckCount() { mixin(MGPC!(ubyte, 1224)()); }
+			float ForceCrushPenetration() { mixin(MGPC!(float, 1220)()); }
+			float MinCrushSpeed() { mixin(MGPC!(float, 1216)()); }
+			ScriptClass CrushedDamageType() { mixin(MGPC!(ScriptClass, 1212)()); }
+			float MomentumMult() { mixin(MGPC!(float, 1208)()); }
+			float DriverDamageMult() { mixin(MGPC!(float, 1204)()); }
+			Vector TargetLocationAdjustment() { mixin(MGPC!(Vector, 1192)()); }
+			float Rise() { mixin(MGPC!(float, 1188)()); }
+			float Throttle() { mixin(MGPC!(float, 1184)()); }
+			float Steering() { mixin(MGPC!(float, 1180)()); }
+			Vector ExitOffset() { mixin(MGPC!(Vector, 1168)()); }
+			float ExitRadius() { mixin(MGPC!(float, 1164)()); }
 		}
-		bool bDoExtraNetRelevancyTraces() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x1000) != 0; }
-		bool bDoExtraNetRelevancyTraces(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x1000; } return val; }
-		bool bIgnoreStallZ() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x800) != 0; }
-		bool bIgnoreStallZ(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x800; } return val; }
-		bool bRetryPathfindingWithDriver() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x400) != 0; }
-		bool bRetryPathfindingWithDriver(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x400; } return val; }
-		bool bAvoidReversing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x200) != 0; }
-		bool bAvoidReversing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x200; } return val; }
-		bool bDuckObstacles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x100) != 0; }
-		bool bDuckObstacles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x100; } return val; }
-		bool bScriptedRise() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x80) != 0; }
-		bool bScriptedRise(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x80; } return val; }
-		bool bHasHandbrake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x40) != 0; }
-		bool bHasHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x40; } return val; }
-		bool bFollowLookDir() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x20) != 0; }
-		bool bFollowLookDir(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x20; } return val; }
-		bool bSeparateTurretFocus() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x10) != 0; }
-		bool bSeparateTurretFocus(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x10; } return val; }
-		bool bTurnInPlace() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x8) != 0; }
-		bool bTurnInPlace(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x8; } return val; }
-		bool bAttachDriver() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x4) != 0; }
-		bool bAttachDriver(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x4; } return val; }
-		bool bDriverIsVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x2) != 0; }
-		bool bDriverIsVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x2; } return val; }
-		bool bDriving() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x1) != 0; }
-		bool bDriving(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x1; } return val; }
+		bool bDoExtraNetRelevancyTraces() { mixin(MGBPC!(1148, 0x1000)()); }
+		bool bDoExtraNetRelevancyTraces(bool val) { mixin(MSBPC!(1148, 0x1000)()); }
+		bool bIgnoreStallZ() { mixin(MGBPC!(1148, 0x800)()); }
+		bool bIgnoreStallZ(bool val) { mixin(MSBPC!(1148, 0x800)()); }
+		bool bRetryPathfindingWithDriver() { mixin(MGBPC!(1148, 0x400)()); }
+		bool bRetryPathfindingWithDriver(bool val) { mixin(MSBPC!(1148, 0x400)()); }
+		bool bAvoidReversing() { mixin(MGBPC!(1148, 0x200)()); }
+		bool bAvoidReversing(bool val) { mixin(MSBPC!(1148, 0x200)()); }
+		bool bDuckObstacles() { mixin(MGBPC!(1148, 0x100)()); }
+		bool bDuckObstacles(bool val) { mixin(MSBPC!(1148, 0x100)()); }
+		bool bScriptedRise() { mixin(MGBPC!(1148, 0x80)()); }
+		bool bScriptedRise(bool val) { mixin(MSBPC!(1148, 0x80)()); }
+		bool bHasHandbrake() { mixin(MGBPC!(1148, 0x40)()); }
+		bool bHasHandbrake(bool val) { mixin(MSBPC!(1148, 0x40)()); }
+		bool bFollowLookDir() { mixin(MGBPC!(1148, 0x20)()); }
+		bool bFollowLookDir(bool val) { mixin(MSBPC!(1148, 0x20)()); }
+		bool bSeparateTurretFocus() { mixin(MGBPC!(1148, 0x10)()); }
+		bool bSeparateTurretFocus(bool val) { mixin(MSBPC!(1148, 0x10)()); }
+		bool bTurnInPlace() { mixin(MGBPC!(1148, 0x8)()); }
+		bool bTurnInPlace(bool val) { mixin(MSBPC!(1148, 0x8)()); }
+		bool bAttachDriver() { mixin(MGBPC!(1148, 0x4)()); }
+		bool bAttachDriver(bool val) { mixin(MSBPC!(1148, 0x4)()); }
+		bool bDriverIsVisible() { mixin(MGBPC!(1148, 0x2)()); }
+		bool bDriverIsVisible(bool val) { mixin(MSBPC!(1148, 0x2)()); }
+		bool bDriving() { mixin(MGBPC!(1148, 0x1)()); }
+		bool bDriving(bool val) { mixin(MSBPC!(1148, 0x1)()); }
 	}
 final:
 	bool DriverLeave(bool bForceLeave)
@@ -202,13 +203,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyTeamChanged, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -435,14 +436,14 @@ final:
 		*cast(Actor*)&params[64] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
-	void AdjustDriverDamage(int* Damage, Controller InstigatedBy, Vector HitLocation, Vector* Momentum, ScriptClass pDamageType)
+	void AdjustDriverDamage(ref int Damage, Controller InstigatedBy, Vector HitLocation, ref Vector Momentum, ScriptClass pDamageType)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(int*)params.ptr = *Damage;
+		*cast(int*)params.ptr = Damage;
 		*cast(Controller*)&params[4] = InstigatedBy;
 		*cast(Vector*)&params[8] = HitLocation;
-		*cast(Vector*)&params[20] = *Momentum;
+		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustDriverDamage, params.ptr, cast(void*)0);
 		*Damage = *cast(int*)params.ptr;

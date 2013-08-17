@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNodeSequence;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.CameraAnimInst;
 import UnrealScript.Engine.AnimSequence;
 import UnrealScript.Engine.CameraAnim;
@@ -11,9 +12,9 @@ extern(C++) interface AnimNodeSequence : AnimNode
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSequence")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeSequence")()); }
 	private static __gshared AnimNodeSequence mDefaultProperties;
-	@property final static AnimNodeSequence DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeSequence)("AnimNodeSequence Engine.Default__AnimNodeSequence")); }
+	@property final static AnimNodeSequence DefaultProperties() { mixin(MGDPC!(AnimNodeSequence, "AnimNodeSequence Engine.Default__AnimNodeSequence")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,20 +36,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetAnim() { return mSetAnim ? mSetAnim : (mSetAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetAnim")); }
-			ScriptFunction PlayAnim() { return mPlayAnim ? mPlayAnim : (mPlayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.PlayAnim")); }
-			ScriptFunction StopAnim() { return mStopAnim ? mStopAnim : (mStopAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.StopAnim")); }
-			ScriptFunction ReplayAnim() { return mReplayAnim ? mReplayAnim : (mReplayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.ReplayAnim")); }
-			ScriptFunction SetPosition() { return mSetPosition ? mSetPosition : (mSetPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetPosition")); }
-			ScriptFunction GetNormalizedPosition() { return mGetNormalizedPosition ? mGetNormalizedPosition : (mGetNormalizedPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetNormalizedPosition")); }
-			ScriptFunction FindGroupRelativePosition() { return mFindGroupRelativePosition ? mFindGroupRelativePosition : (mFindGroupRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.FindGroupRelativePosition")); }
-			ScriptFunction FindGroupPosition() { return mFindGroupPosition ? mFindGroupPosition : (mFindGroupPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.FindGroupPosition")); }
-			ScriptFunction GetGroupRelativePosition() { return mGetGroupRelativePosition ? mGetGroupRelativePosition : (mGetGroupRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetGroupRelativePosition")); }
-			ScriptFunction GetGlobalPlayRate() { return mGetGlobalPlayRate ? mGetGlobalPlayRate : (mGetGlobalPlayRate = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetGlobalPlayRate")); }
-			ScriptFunction GetAnimPlaybackLength() { return mGetAnimPlaybackLength ? mGetAnimPlaybackLength : (mGetAnimPlaybackLength = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetAnimPlaybackLength")); }
-			ScriptFunction GetTimeLeft() { return mGetTimeLeft ? mGetTimeLeft : (mGetTimeLeft = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetTimeLeft")); }
-			ScriptFunction SetRootBoneAxisOption() { return mSetRootBoneAxisOption ? mSetRootBoneAxisOption : (mSetRootBoneAxisOption = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetRootBoneAxisOption")); }
-			ScriptFunction SetRootBoneRotationOption() { return mSetRootBoneRotationOption ? mSetRootBoneRotationOption : (mSetRootBoneRotationOption = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetRootBoneRotationOption")); }
+			ScriptFunction SetAnim() { mixin(MGF!("mSetAnim", "Function Engine.AnimNodeSequence.SetAnim")()); }
+			ScriptFunction PlayAnim() { mixin(MGF!("mPlayAnim", "Function Engine.AnimNodeSequence.PlayAnim")()); }
+			ScriptFunction StopAnim() { mixin(MGF!("mStopAnim", "Function Engine.AnimNodeSequence.StopAnim")()); }
+			ScriptFunction ReplayAnim() { mixin(MGF!("mReplayAnim", "Function Engine.AnimNodeSequence.ReplayAnim")()); }
+			ScriptFunction SetPosition() { mixin(MGF!("mSetPosition", "Function Engine.AnimNodeSequence.SetPosition")()); }
+			ScriptFunction GetNormalizedPosition() { mixin(MGF!("mGetNormalizedPosition", "Function Engine.AnimNodeSequence.GetNormalizedPosition")()); }
+			ScriptFunction FindGroupRelativePosition() { mixin(MGF!("mFindGroupRelativePosition", "Function Engine.AnimNodeSequence.FindGroupRelativePosition")()); }
+			ScriptFunction FindGroupPosition() { mixin(MGF!("mFindGroupPosition", "Function Engine.AnimNodeSequence.FindGroupPosition")()); }
+			ScriptFunction GetGroupRelativePosition() { mixin(MGF!("mGetGroupRelativePosition", "Function Engine.AnimNodeSequence.GetGroupRelativePosition")()); }
+			ScriptFunction GetGlobalPlayRate() { mixin(MGF!("mGetGlobalPlayRate", "Function Engine.AnimNodeSequence.GetGlobalPlayRate")()); }
+			ScriptFunction GetAnimPlaybackLength() { mixin(MGF!("mGetAnimPlaybackLength", "Function Engine.AnimNodeSequence.GetAnimPlaybackLength")()); }
+			ScriptFunction GetTimeLeft() { mixin(MGF!("mGetTimeLeft", "Function Engine.AnimNodeSequence.GetTimeLeft")()); }
+			ScriptFunction SetRootBoneAxisOption() { mixin(MGF!("mSetRootBoneAxisOption", "Function Engine.AnimNodeSequence.SetRootBoneAxisOption")()); }
+			ScriptFunction SetRootBoneRotationOption() { mixin(MGF!("mSetRootBoneRotationOption", "Function Engine.AnimNodeSequence.SetRootBoneRotationOption")()); }
 		}
 	}
 	enum ERootRotationOption : ubyte
@@ -69,62 +70,62 @@ public extern(D):
 	{
 		auto ref
 		{
-			AnimSequence AnimSeq() { return *cast(AnimSequence*)(cast(size_t)cast(void*)this + 252); }
-			float Rate() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			ScriptName AnimSeqName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 224); }
-			float CurrentTime() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-			float PreviousTime() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			float EndTime() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			int AnimLinkupIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 256); }
-			float NotifyWeightThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-			ScriptName SynchGroupName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 264); }
-			float SynchPosOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
+			AnimSequence AnimSeq() { mixin(MGPC!(AnimSequence, 252)()); }
+			float Rate() { mixin(MGPC!(float, 232)()); }
+			ScriptName AnimSeqName() { mixin(MGPC!(ScriptName, 224)()); }
+			float CurrentTime() { mixin(MGPC!(float, 240)()); }
+			float PreviousTime() { mixin(MGPC!(float, 244)()); }
+			float EndTime() { mixin(MGPC!(float, 248)()); }
+			int AnimLinkupIndex() { mixin(MGPC!(int, 256)()); }
+			float NotifyWeightThreshold() { mixin(MGPC!(float, 260)()); }
+			ScriptName SynchGroupName() { mixin(MGPC!(ScriptName, 264)()); }
+			float SynchPosOffset() { mixin(MGPC!(float, 272)()); }
 			// WARNING: Property 'CameraAnim' has the same name as a defined type!
-			CameraAnimInst ActiveCameraAnimInstance() { return *cast(CameraAnimInst*)(cast(size_t)cast(void*)this + 280); }
-			float CameraAnimScale() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
-			float CameraAnimPlayRate() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			float CameraAnimBlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 292); }
-			float CameraAnimBlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 296); }
-			AnimNodeSequence.ERootBoneAxis RootBoneOption() { return *cast(AnimNodeSequence.ERootBoneAxis*)(cast(size_t)cast(void*)this + 300); }
-			AnimNodeSequence.ERootRotationOption RootRotationOption() { return *cast(AnimNodeSequence.ERootRotationOption*)(cast(size_t)cast(void*)this + 303); }
-			ScriptArray!(SkelControlBase) MetaDataSkelControlList() { return *cast(ScriptArray!(SkelControlBase)*)(cast(size_t)cast(void*)this + 308); }
+			CameraAnimInst ActiveCameraAnimInstance() { mixin(MGPC!(CameraAnimInst, 280)()); }
+			float CameraAnimScale() { mixin(MGPC!(float, 284)()); }
+			float CameraAnimPlayRate() { mixin(MGPC!(float, 288)()); }
+			float CameraAnimBlendInTime() { mixin(MGPC!(float, 292)()); }
+			float CameraAnimBlendOutTime() { mixin(MGPC!(float, 296)()); }
+			AnimNodeSequence.ERootBoneAxis RootBoneOption() { mixin(MGPC!(AnimNodeSequence.ERootBoneAxis, 300)()); }
+			AnimNodeSequence.ERootRotationOption RootRotationOption() { mixin(MGPC!(AnimNodeSequence.ERootRotationOption, 303)()); }
+			ScriptArray!(SkelControlBase) MetaDataSkelControlList() { mixin(MGPC!(ScriptArray!(SkelControlBase), 308)()); }
 		}
-		bool bPlaying() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x1) != 0; }
-		bool bPlaying(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x1; } return val; }
-		bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x2) != 0; }
-		bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x2; } return val; }
-		bool bCauseActorAnimEnd() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x4) != 0; }
-		bool bCauseActorAnimEnd(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x4; } return val; }
-		bool bCauseActorAnimPlay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x8) != 0; }
-		bool bCauseActorAnimPlay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x8; } return val; }
-		bool bZeroRootRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x10) != 0; }
-		bool bZeroRootRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x10; } return val; }
-		bool bZeroRootTranslation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x20) != 0; }
-		bool bZeroRootTranslation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x20; } return val; }
-		bool bDisableWarningWhenAnimNotFound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x40) != 0; }
-		bool bDisableWarningWhenAnimNotFound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x40; } return val; }
-		bool bNoNotifies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x80) != 0; }
-		bool bNoNotifies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x80; } return val; }
-		bool bForceRefposeWhenNotPlaying() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x100) != 0; }
-		bool bForceRefposeWhenNotPlaying(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x100; } return val; }
-		bool bIsIssuingNotifies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x200) != 0; }
-		bool bIsIssuingNotifies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x200; } return val; }
-		bool m_bSuppressNotifies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x400) != 0; }
-		bool m_bSuppressNotifies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x400; } return val; }
-		bool bForceAlwaysSlave() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x800) != 0; }
-		bool bForceAlwaysSlave(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x800; } return val; }
-		bool bSynchronize() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x1000) != 0; }
-		bool bSynchronize(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x1000; } return val; }
-		bool bReverseSync() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x2000) != 0; }
-		bool bReverseSync(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x2000; } return val; }
-		bool bShowTimeLineSlider() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x4000) != 0; }
-		bool bShowTimeLineSlider(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x4000; } return val; }
-		bool bLoopCameraAnim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x8000) != 0; }
-		bool bLoopCameraAnim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x8000; } return val; }
-		bool bRandomizeCameraAnimLoopStartTime() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x10000) != 0; }
-		bool bRandomizeCameraAnimLoopStartTime(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x10000; } return val; }
-		bool bEditorOnlyAddRefPoseToAdditiveAnimation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x20000) != 0; }
-		bool bEditorOnlyAddRefPoseToAdditiveAnimation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x20000; } return val; }
+		bool bPlaying() { mixin(MGBPC!(236, 0x1)()); }
+		bool bPlaying(bool val) { mixin(MSBPC!(236, 0x1)()); }
+		bool bLooping() { mixin(MGBPC!(236, 0x2)()); }
+		bool bLooping(bool val) { mixin(MSBPC!(236, 0x2)()); }
+		bool bCauseActorAnimEnd() { mixin(MGBPC!(236, 0x4)()); }
+		bool bCauseActorAnimEnd(bool val) { mixin(MSBPC!(236, 0x4)()); }
+		bool bCauseActorAnimPlay() { mixin(MGBPC!(236, 0x8)()); }
+		bool bCauseActorAnimPlay(bool val) { mixin(MSBPC!(236, 0x8)()); }
+		bool bZeroRootRotation() { mixin(MGBPC!(236, 0x10)()); }
+		bool bZeroRootRotation(bool val) { mixin(MSBPC!(236, 0x10)()); }
+		bool bZeroRootTranslation() { mixin(MGBPC!(236, 0x20)()); }
+		bool bZeroRootTranslation(bool val) { mixin(MSBPC!(236, 0x20)()); }
+		bool bDisableWarningWhenAnimNotFound() { mixin(MGBPC!(236, 0x40)()); }
+		bool bDisableWarningWhenAnimNotFound(bool val) { mixin(MSBPC!(236, 0x40)()); }
+		bool bNoNotifies() { mixin(MGBPC!(236, 0x80)()); }
+		bool bNoNotifies(bool val) { mixin(MSBPC!(236, 0x80)()); }
+		bool bForceRefposeWhenNotPlaying() { mixin(MGBPC!(236, 0x100)()); }
+		bool bForceRefposeWhenNotPlaying(bool val) { mixin(MSBPC!(236, 0x100)()); }
+		bool bIsIssuingNotifies() { mixin(MGBPC!(236, 0x200)()); }
+		bool bIsIssuingNotifies(bool val) { mixin(MSBPC!(236, 0x200)()); }
+		bool m_bSuppressNotifies() { mixin(MGBPC!(236, 0x400)()); }
+		bool m_bSuppressNotifies(bool val) { mixin(MSBPC!(236, 0x400)()); }
+		bool bForceAlwaysSlave() { mixin(MGBPC!(236, 0x800)()); }
+		bool bForceAlwaysSlave(bool val) { mixin(MSBPC!(236, 0x800)()); }
+		bool bSynchronize() { mixin(MGBPC!(236, 0x1000)()); }
+		bool bSynchronize(bool val) { mixin(MSBPC!(236, 0x1000)()); }
+		bool bReverseSync() { mixin(MGBPC!(236, 0x2000)()); }
+		bool bReverseSync(bool val) { mixin(MSBPC!(236, 0x2000)()); }
+		bool bShowTimeLineSlider() { mixin(MGBPC!(236, 0x4000)()); }
+		bool bShowTimeLineSlider(bool val) { mixin(MSBPC!(236, 0x4000)()); }
+		bool bLoopCameraAnim() { mixin(MGBPC!(236, 0x8000)()); }
+		bool bLoopCameraAnim(bool val) { mixin(MSBPC!(236, 0x8000)()); }
+		bool bRandomizeCameraAnimLoopStartTime() { mixin(MGBPC!(236, 0x10000)()); }
+		bool bRandomizeCameraAnimLoopStartTime(bool val) { mixin(MSBPC!(236, 0x10000)()); }
+		bool bEditorOnlyAddRefPoseToAdditiveAnimation() { mixin(MGBPC!(236, 0x20000)()); }
+		bool bEditorOnlyAddRefPoseToAdditiveAnimation(bool val) { mixin(MSBPC!(236, 0x20000)()); }
 	}
 final:
 	void SetAnim(ScriptName pSequence)

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTConsole;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Console;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTConsole : Console
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTConsole")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTConsole")()); }
 	private static __gshared UTConsole mDefaultProperties;
-	@property final static UTConsole DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTConsole)("UTConsole UTGame.Default__UTConsole")); }
+	@property final static UTConsole DefaultProperties() { mixin(MGDPC!(UTConsole, "UTConsole UTGame.Default__UTConsole")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,12 +22,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnyBrowserOpen() { return mAnyBrowserOpen ? mAnyBrowserOpen : (mAnyBrowserOpen = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsole.AnyBrowserOpen")); }
-			ScriptFunction InputKey() { return mInputKey ? mInputKey : (mInputKey = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsole.InputKey")); }
-			ScriptFunction OutputTextLine() { return mOutputTextLine ? mOutputTextLine : (mOutputTextLine = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsole.OutputTextLine")); }
+			ScriptFunction AnyBrowserOpen() { mixin(MGF!("mAnyBrowserOpen", "Function UTGame.UTConsole.AnyBrowserOpen")()); }
+			ScriptFunction InputKey() { mixin(MGF!("mInputKey", "Function UTGame.UTConsole.InputKey")()); }
+			ScriptFunction OutputTextLine() { mixin(MGF!("mOutputTextLine", "Function UTGame.UTConsole.OutputTextLine")()); }
 		}
 	}
-	@property final auto ref int TextCount() { return *cast(int*)(cast(size_t)cast(void*)this + 452); }
+	static struct Typing
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTConsole.Typing")()); }
+	}
+	@property final auto ref int TextCount() { mixin(MGPC!(int, 452)()); }
 final:
 	bool AnyBrowserOpen()
 	{

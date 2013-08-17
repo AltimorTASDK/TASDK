@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FracturedSkinnedMeshComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.FracturedBaseComponent;
 
@@ -8,24 +9,24 @@ extern(C++) interface FracturedSkinnedMeshComponent : FracturedBaseComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedSkinnedMeshComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FracturedSkinnedMeshComponent")()); }
 	private static __gshared FracturedSkinnedMeshComponent mDefaultProperties;
-	@property final static FracturedSkinnedMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FracturedSkinnedMeshComponent)("FracturedSkinnedMeshComponent Engine.Default__FracturedSkinnedMeshComponent")); }
+	@property final static FracturedSkinnedMeshComponent DefaultProperties() { mixin(MGDPC!(FracturedSkinnedMeshComponent, "FracturedSkinnedMeshComponent Engine.Default__FracturedSkinnedMeshComponent")()); }
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Matrix) FragmentTransforms() { return *cast(ScriptArray!(UObject.Matrix)*)(cast(size_t)cast(void*)this + 644); }
+			ScriptArray!(UObject.Matrix) FragmentTransforms() { mixin(MGPC!(ScriptArray!(UObject.Matrix), 644)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) DependentComponents() { return *cast(ScriptArray!(
+void*) DependentComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 656); }
-			UObject.Pointer ComponentSkinResources() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 640); }
+void*), 656)()); }
+			UObject.Pointer ComponentSkinResources() { mixin(MGPC!(UObject.Pointer, 640)()); }
 		}
-		bool bFragmentTransformsChanged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 668) & 0x2) != 0; }
-		bool bFragmentTransformsChanged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 668) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 668) &= ~0x2; } return val; }
-		bool bBecameVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 668) & 0x1) != 0; }
-		bool bBecameVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 668) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 668) &= ~0x1; } return val; }
+		bool bFragmentTransformsChanged() { mixin(MGBPC!(668, 0x2)()); }
+		bool bFragmentTransformsChanged(bool val) { mixin(MSBPC!(668, 0x2)()); }
+		bool bBecameVisible() { mixin(MGBPC!(668, 0x1)()); }
+		bool bBecameVisible(bool val) { mixin(MSBPC!(668, 0x1)()); }
 	}
 }

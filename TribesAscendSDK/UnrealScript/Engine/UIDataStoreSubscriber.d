@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataStoreSubscriber;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UInterface;
 import UnrealScript.Engine.UIDataStore;
 import UnrealScript.Engine.UIDataProvider;
@@ -9,9 +10,9 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStoreSubscriber")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStoreSubscriber")()); }
 	private static __gshared UIDataStoreSubscriber mDefaultProperties;
-	@property final static UIDataStoreSubscriber DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStoreSubscriber)("UIDataStoreSubscriber Engine.Default__UIDataStoreSubscriber")); }
+	@property final static UIDataStoreSubscriber DefaultProperties() { mixin(MGDPC!(UIDataStoreSubscriber, "UIDataStoreSubscriber Engine.Default__UIDataStoreSubscriber")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,12 +26,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetDataStoreBinding() { return mSetDataStoreBinding ? mSetDataStoreBinding : (mSetDataStoreBinding = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStoreSubscriber.SetDataStoreBinding")); }
-			ScriptFunction GetDataStoreBinding() { return mGetDataStoreBinding ? mGetDataStoreBinding : (mGetDataStoreBinding = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStoreSubscriber.GetDataStoreBinding")); }
-			ScriptFunction RefreshSubscriberValue() { return mRefreshSubscriberValue ? mRefreshSubscriberValue : (mRefreshSubscriberValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStoreSubscriber.RefreshSubscriberValue")); }
-			ScriptFunction NotifyDataStoreValueUpdated() { return mNotifyDataStoreValueUpdated ? mNotifyDataStoreValueUpdated : (mNotifyDataStoreValueUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStoreSubscriber.NotifyDataStoreValueUpdated")); }
-			ScriptFunction GetBoundDataStores() { return mGetBoundDataStores ? mGetBoundDataStores : (mGetBoundDataStores = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStoreSubscriber.GetBoundDataStores")); }
-			ScriptFunction ClearBoundDataStores() { return mClearBoundDataStores ? mClearBoundDataStores : (mClearBoundDataStores = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStoreSubscriber.ClearBoundDataStores")); }
+			ScriptFunction SetDataStoreBinding() { mixin(MGF!("mSetDataStoreBinding", "Function Engine.UIDataStoreSubscriber.SetDataStoreBinding")()); }
+			ScriptFunction GetDataStoreBinding() { mixin(MGF!("mGetDataStoreBinding", "Function Engine.UIDataStoreSubscriber.GetDataStoreBinding")()); }
+			ScriptFunction RefreshSubscriberValue() { mixin(MGF!("mRefreshSubscriberValue", "Function Engine.UIDataStoreSubscriber.RefreshSubscriberValue")()); }
+			ScriptFunction NotifyDataStoreValueUpdated() { mixin(MGF!("mNotifyDataStoreValueUpdated", "Function Engine.UIDataStoreSubscriber.NotifyDataStoreValueUpdated")()); }
+			ScriptFunction GetBoundDataStores() { mixin(MGF!("mGetBoundDataStores", "Function Engine.UIDataStoreSubscriber.GetBoundDataStores")()); }
+			ScriptFunction ClearBoundDataStores() { mixin(MGF!("mClearBoundDataStores", "Function Engine.UIDataStoreSubscriber.ClearBoundDataStores")()); }
 		}
 	}
 final:
@@ -69,11 +70,11 @@ final:
 		*cast(int*)&params[20] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyDataStoreValueUpdated, params.ptr, cast(void*)0);
 	}
-	void GetBoundDataStores(ScriptArray!(UIDataStore)* out_BoundDataStores)
+	void GetBoundDataStores(ref ScriptArray!(UIDataStore) out_BoundDataStores)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(UIDataStore)*)params.ptr = *out_BoundDataStores;
+		*cast(ScriptArray!(UIDataStore)*)params.ptr = out_BoundDataStores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundDataStores, params.ptr, cast(void*)0);
 		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
 	}

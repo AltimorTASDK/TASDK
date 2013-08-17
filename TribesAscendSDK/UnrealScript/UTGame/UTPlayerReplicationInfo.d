@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTPlayerReplicationInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -13,9 +14,9 @@ extern(C++) interface UTPlayerReplicationInfo : PlayerReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPlayerReplicationInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPlayerReplicationInfo")()); }
 	private static __gshared UTPlayerReplicationInfo mDefaultProperties;
-	@property final static UTPlayerReplicationInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPlayerReplicationInfo)("UTPlayerReplicationInfo UTGame.Default__UTPlayerReplicationInfo")); }
+	@property final static UTPlayerReplicationInfo DefaultProperties() { mixin(MGDPC!(UTPlayerReplicationInfo, "UTPlayerReplicationInfo UTGame.Default__UTPlayerReplicationInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -48,31 +49,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IncrementEventStat() { return mIncrementEventStat ? mIncrementEventStat : (mIncrementEventStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IncrementEventStat")); }
-			ScriptFunction GetFlag() { return mGetFlag ? mGetFlag : (mGetFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.GetFlag")); }
-			ScriptFunction IncrementPickupStat() { return mIncrementPickupStat ? mIncrementPickupStat : (mIncrementPickupStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IncrementPickupStat")); }
-			ScriptFunction IncrementVehicleKillStat() { return mIncrementVehicleKillStat ? mIncrementVehicleKillStat : (mIncrementVehicleKillStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IncrementVehicleKillStat")); }
-			ScriptFunction IncrementSuicideStat() { return mIncrementSuicideStat ? mIncrementSuicideStat : (mIncrementSuicideStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IncrementSuicideStat")); }
-			ScriptFunction IncrementKillStat() { return mIncrementKillStat ? mIncrementKillStat : (mIncrementKillStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IncrementKillStat")); }
-			ScriptFunction IncrementDeathStat() { return mIncrementDeathStat ? mIncrementDeathStat : (mIncrementDeathStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IncrementDeathStat")); }
-			ScriptFunction GetCallSign() { return mGetCallSign ? mGetCallSign : (mGetCallSign = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.GetCallSign")); }
-			ScriptFunction IsLocalPlayerPRI() { return mIsLocalPlayerPRI ? mIsLocalPlayerPRI : (mIsLocalPlayerPRI = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IsLocalPlayerPRI")); }
-			ScriptFunction ShouldBroadCastWelcomeMessage() { return mShouldBroadCastWelcomeMessage ? mShouldBroadCastWelcomeMessage : (mShouldBroadCastWelcomeMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.ShouldBroadCastWelcomeMessage")); }
-			ScriptFunction StartDrivingStat() { return mStartDrivingStat ? mStartDrivingStat : (mStartDrivingStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.StartDrivingStat")); }
-			ScriptFunction StopDrivingStat() { return mStopDrivingStat ? mStopDrivingStat : (mStopDrivingStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.StopDrivingStat")); }
-			ScriptFunction StartPowerupTimeStat() { return mStartPowerupTimeStat ? mStartPowerupTimeStat : (mStartPowerupTimeStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.StartPowerupTimeStat")); }
-			ScriptFunction StopPowerupTimeStat() { return mStopPowerupTimeStat ? mStopPowerupTimeStat : (mStopPowerupTimeStat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.StopPowerupTimeStat")); }
-			ScriptFunction SetFlag() { return mSetFlag ? mSetFlag : (mSetFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.SetFlag")); }
-			ScriptFunction IncrementKills() { return mIncrementKills ? mIncrementKills : (mIncrementKills = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.IncrementKills")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.Reset")); }
-			ScriptFunction OverrideWith() { return mOverrideWith ? mOverrideWith : (mOverrideWith = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.OverrideWith")); }
-			ScriptFunction CopyProperties() { return mCopyProperties ? mCopyProperties : (mCopyProperties = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.CopyProperties")); }
-			ScriptFunction SeamlessTravelTo() { return mSeamlessTravelTo ? mSeamlessTravelTo : (mSeamlessTravelTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.SeamlessTravelTo")); }
-			ScriptFunction AllowClientToTeleport() { return mAllowClientToTeleport ? mAllowClientToTeleport : (mAllowClientToTeleport = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.AllowClientToTeleport")); }
-			ScriptFunction ServerTeleportToActor() { return mServerTeleportToActor ? mServerTeleportToActor : (mServerTeleportToActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.ServerTeleportToActor")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.ReplicatedEvent")); }
-			ScriptFunction ShowMidGameMenu() { return mShowMidGameMenu ? mShowMidGameMenu : (mShowMidGameMenu = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.ShowMidGameMenu")); }
-			ScriptFunction AttemptMidGameMenu() { return mAttemptMidGameMenu ? mAttemptMidGameMenu : (mAttemptMidGameMenu = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPlayerReplicationInfo.AttemptMidGameMenu")); }
+			ScriptFunction IncrementEventStat() { mixin(MGF!("mIncrementEventStat", "Function UTGame.UTPlayerReplicationInfo.IncrementEventStat")()); }
+			ScriptFunction GetFlag() { mixin(MGF!("mGetFlag", "Function UTGame.UTPlayerReplicationInfo.GetFlag")()); }
+			ScriptFunction IncrementPickupStat() { mixin(MGF!("mIncrementPickupStat", "Function UTGame.UTPlayerReplicationInfo.IncrementPickupStat")()); }
+			ScriptFunction IncrementVehicleKillStat() { mixin(MGF!("mIncrementVehicleKillStat", "Function UTGame.UTPlayerReplicationInfo.IncrementVehicleKillStat")()); }
+			ScriptFunction IncrementSuicideStat() { mixin(MGF!("mIncrementSuicideStat", "Function UTGame.UTPlayerReplicationInfo.IncrementSuicideStat")()); }
+			ScriptFunction IncrementKillStat() { mixin(MGF!("mIncrementKillStat", "Function UTGame.UTPlayerReplicationInfo.IncrementKillStat")()); }
+			ScriptFunction IncrementDeathStat() { mixin(MGF!("mIncrementDeathStat", "Function UTGame.UTPlayerReplicationInfo.IncrementDeathStat")()); }
+			ScriptFunction GetCallSign() { mixin(MGF!("mGetCallSign", "Function UTGame.UTPlayerReplicationInfo.GetCallSign")()); }
+			ScriptFunction IsLocalPlayerPRI() { mixin(MGF!("mIsLocalPlayerPRI", "Function UTGame.UTPlayerReplicationInfo.IsLocalPlayerPRI")()); }
+			ScriptFunction ShouldBroadCastWelcomeMessage() { mixin(MGF!("mShouldBroadCastWelcomeMessage", "Function UTGame.UTPlayerReplicationInfo.ShouldBroadCastWelcomeMessage")()); }
+			ScriptFunction StartDrivingStat() { mixin(MGF!("mStartDrivingStat", "Function UTGame.UTPlayerReplicationInfo.StartDrivingStat")()); }
+			ScriptFunction StopDrivingStat() { mixin(MGF!("mStopDrivingStat", "Function UTGame.UTPlayerReplicationInfo.StopDrivingStat")()); }
+			ScriptFunction StartPowerupTimeStat() { mixin(MGF!("mStartPowerupTimeStat", "Function UTGame.UTPlayerReplicationInfo.StartPowerupTimeStat")()); }
+			ScriptFunction StopPowerupTimeStat() { mixin(MGF!("mStopPowerupTimeStat", "Function UTGame.UTPlayerReplicationInfo.StopPowerupTimeStat")()); }
+			ScriptFunction SetFlag() { mixin(MGF!("mSetFlag", "Function UTGame.UTPlayerReplicationInfo.SetFlag")()); }
+			ScriptFunction IncrementKills() { mixin(MGF!("mIncrementKills", "Function UTGame.UTPlayerReplicationInfo.IncrementKills")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTPlayerReplicationInfo.Reset")()); }
+			ScriptFunction OverrideWith() { mixin(MGF!("mOverrideWith", "Function UTGame.UTPlayerReplicationInfo.OverrideWith")()); }
+			ScriptFunction CopyProperties() { mixin(MGF!("mCopyProperties", "Function UTGame.UTPlayerReplicationInfo.CopyProperties")()); }
+			ScriptFunction SeamlessTravelTo() { mixin(MGF!("mSeamlessTravelTo", "Function UTGame.UTPlayerReplicationInfo.SeamlessTravelTo")()); }
+			ScriptFunction AllowClientToTeleport() { mixin(MGF!("mAllowClientToTeleport", "Function UTGame.UTPlayerReplicationInfo.AllowClientToTeleport")()); }
+			ScriptFunction ServerTeleportToActor() { mixin(MGF!("mServerTeleportToActor", "Function UTGame.UTPlayerReplicationInfo.ServerTeleportToActor")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTPlayerReplicationInfo.ReplicatedEvent")()); }
+			ScriptFunction ShowMidGameMenu() { mixin(MGF!("mShowMidGameMenu", "Function UTGame.UTPlayerReplicationInfo.ShowMidGameMenu")()); }
+			ScriptFunction AttemptMidGameMenu() { mixin(MGF!("mAttemptMidGameMenu", "Function UTGame.UTPlayerReplicationInfo.AttemptMidGameMenu")()); }
 		}
 	}
 	struct IntStat
@@ -80,11 +81,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTPlayerReplicationInfo.IntStat")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTPlayerReplicationInfo.IntStat")()); }
 		@property final auto ref
 		{
-			int StatValue() { return *cast(int*)(cast(size_t)&this + 8); }
-			ScriptName StatName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			int StatValue() { mixin(MGPS!(int, 8)()); }
+			ScriptName StatName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct TimeStat
@@ -92,46 +93,46 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTPlayerReplicationInfo.TimeStat")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTPlayerReplicationInfo.TimeStat")()); }
 		@property final auto ref
 		{
-			float CurrentStart() { return *cast(float*)(cast(size_t)&this + 12); }
-			float TotalTime() { return *cast(float*)(cast(size_t)&this + 8); }
-			ScriptName StatName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			float CurrentStart() { mixin(MGPS!(float, 12)()); }
+			float TotalTime() { mixin(MGPS!(float, 8)()); }
+			ScriptName StatName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptClass CharClassInfo() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 700); }
-			ScriptClass VoiceClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 676); }
-			Texture CharPortrait() { return *cast(Texture*)(cast(size_t)cast(void*)this + 704); }
-			UTPlayerReplicationInfo LastKillerPRI() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 680); }
-			int spree() { return *cast(int*)(cast(size_t)cast(void*)this + 656); }
-			UTSquadAI Squad() { return *cast(UTSquadAI*)(cast(size_t)cast(void*)this + 668); }
-			int MultiKillLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 660); }
-			float LastKillTime() { return *cast(float*)(cast(size_t)cast(void*)this + 664); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) KillStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.IntStat)*)(cast(size_t)cast(void*)this + 708); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) DeathStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.IntStat)*)(cast(size_t)cast(void*)this + 720); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) SuicideStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.IntStat)*)(cast(size_t)cast(void*)this + 732); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) EventStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.IntStat)*)(cast(size_t)cast(void*)this + 744); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) VehicleKillStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.IntStat)*)(cast(size_t)cast(void*)this + 756); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) PickupStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.IntStat)*)(cast(size_t)cast(void*)this + 768); }
-			ScriptArray!(UTPlayerReplicationInfo.TimeStat) DrivingStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.TimeStat)*)(cast(size_t)cast(void*)this + 780); }
-			ScriptArray!(UTPlayerReplicationInfo.TimeStat) PowerupTimeStats() { return *cast(ScriptArray!(UTPlayerReplicationInfo.TimeStat)*)(cast(size_t)cast(void*)this + 792); }
-			ubyte OrdersIndex() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 900); }
-			ScriptString OrdersString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 804); }
-			Vector HUDLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 688); }
-			UObject.Color DefaultHudColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 684); }
-			UTCarriedObject HasFlag() { return *cast(UTCarriedObject*)(cast(size_t)cast(void*)this + 672); }
+			ScriptClass CharClassInfo() { mixin(MGPC!(ScriptClass, 700)()); }
+			ScriptClass VoiceClass() { mixin(MGPC!(ScriptClass, 676)()); }
+			Texture CharPortrait() { mixin(MGPC!(Texture, 704)()); }
+			UTPlayerReplicationInfo LastKillerPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 680)()); }
+			int spree() { mixin(MGPC!(int, 656)()); }
+			UTSquadAI Squad() { mixin(MGPC!(UTSquadAI, 668)()); }
+			int MultiKillLevel() { mixin(MGPC!(int, 660)()); }
+			float LastKillTime() { mixin(MGPC!(float, 664)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) KillStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 708)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) DeathStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 720)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) SuicideStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 732)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) EventStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 744)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) VehicleKillStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 756)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) PickupStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 768)()); }
+			ScriptArray!(UTPlayerReplicationInfo.TimeStat) DrivingStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.TimeStat), 780)()); }
+			ScriptArray!(UTPlayerReplicationInfo.TimeStat) PowerupTimeStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.TimeStat), 792)()); }
+			ubyte OrdersIndex() { mixin(MGPC!(ubyte, 900)()); }
+			ScriptString OrdersString() { mixin(MGPC!(ScriptString, 804)()); }
+			Vector HUDLocation() { mixin(MGPC!(Vector, 688)()); }
+			UObject.Color DefaultHudColor() { mixin(MGPC!(UObject.Color, 684)()); }
+			UTCarriedObject HasFlag() { mixin(MGPC!(UTCarriedObject, 672)()); }
 		}
-		bool bHasFlag() { return (*cast(uint*)(cast(size_t)cast(void*)this + 652) & 0x1) != 0; }
-		bool bHasFlag(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 652) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 652) &= ~0x1; } return val; }
-		bool bIsFemale() { return (*cast(uint*)(cast(size_t)cast(void*)this + 652) & 0x4) != 0; }
-		bool bIsFemale(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 652) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 652) &= ~0x4; } return val; }
-		bool bHolding() { return (*cast(uint*)(cast(size_t)cast(void*)this + 652) & 0x2) != 0; }
-		bool bHolding(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 652) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 652) &= ~0x2; } return val; }
+		bool bHasFlag() { mixin(MGBPC!(652, 0x1)()); }
+		bool bHasFlag(bool val) { mixin(MSBPC!(652, 0x1)()); }
+		bool bIsFemale() { mixin(MGBPC!(652, 0x4)()); }
+		bool bIsFemale(bool val) { mixin(MSBPC!(652, 0x4)()); }
+		bool bHolding() { mixin(MGBPC!(652, 0x2)()); }
+		bool bHolding(bool val) { mixin(MSBPC!(652, 0x2)()); }
 	}
 final:
 	int IncrementEventStat(ScriptName NewStatName)
@@ -278,12 +279,12 @@ final:
 		*cast(PlayerReplicationInfo*)params.ptr = NewPRI;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SeamlessTravelTo, params.ptr, cast(void*)0);
 	}
-	bool AllowClientToTeleport(Actor DestinationActor, UTPawn* OwnerPawn)
+	bool AllowClientToTeleport(Actor DestinationActor, ref UTPawn OwnerPawn)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Actor*)params.ptr = DestinationActor;
-		*cast(UTPawn*)&params[4] = *OwnerPawn;
+		*cast(UTPawn*)&params[4] = OwnerPawn;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowClientToTeleport, params.ptr, cast(void*)0);
 		*OwnerPawn = *cast(UTPawn*)&params[4];
 		return *cast(bool*)&params[8];

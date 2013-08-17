@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNodeAimOffset;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface AnimNodeAimOffset : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeAimOffset")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeAimOffset")()); }
 	private static __gshared AnimNodeAimOffset mDefaultProperties;
-	@property final static AnimNodeAimOffset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeAimOffset)("AnimNodeAimOffset Engine.Default__AnimNodeAimOffset")); }
+	@property final static AnimNodeAimOffset DefaultProperties() { mixin(MGDPC!(AnimNodeAimOffset, "AnimNodeAimOffset Engine.Default__AnimNodeAimOffset")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetActiveProfileByName() { return mSetActiveProfileByName ? mSetActiveProfileByName : (mSetActiveProfileByName = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeAimOffset.SetActiveProfileByName")); }
-			ScriptFunction SetActiveProfileByIndex() { return mSetActiveProfileByIndex ? mSetActiveProfileByIndex : (mSetActiveProfileByIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeAimOffset.SetActiveProfileByIndex")); }
+			ScriptFunction SetActiveProfileByName() { mixin(MGF!("mSetActiveProfileByName", "Function Engine.AnimNodeAimOffset.SetActiveProfileByName")()); }
+			ScriptFunction SetActiveProfileByIndex() { mixin(MGF!("mSetActiveProfileByIndex", "Function Engine.AnimNodeAimOffset.SetActiveProfileByIndex")()); }
 		}
 	}
 	enum EAnimAimDir : ubyte
@@ -63,11 +64,11 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeAimOffset.AimTransform")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeAimOffset.AimTransform")()); }
 		@property final auto ref
 		{
-			Vector Translation() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			UObject.Quat Quaternion() { return *cast(UObject.Quat*)(cast(size_t)&this + 0); }
+			Vector Translation() { mixin(MGPS!(Vector, 16)()); }
+			UObject.Quat Quaternion() { mixin(MGPS!(UObject.Quat, 0)()); }
 		}
 	}
 	struct AimComponent
@@ -75,19 +76,19 @@ public extern(D):
 		private ubyte __buffer__[304];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeAimOffset.AimComponent")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeAimOffset.AimComponent")()); }
 		@property final auto ref
 		{
-			AnimNodeAimOffset.AimTransform RD() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 272); }
-			AnimNodeAimOffset.AimTransform RC() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 240); }
-			AnimNodeAimOffset.AimTransform RU() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 208); }
-			AnimNodeAimOffset.AimTransform CD() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 176); }
-			AnimNodeAimOffset.AimTransform CC() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 144); }
-			AnimNodeAimOffset.AimTransform CU() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 112); }
-			AnimNodeAimOffset.AimTransform LD() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 80); }
-			AnimNodeAimOffset.AimTransform LC() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 48); }
-			AnimNodeAimOffset.AimTransform LU() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 16); }
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			AnimNodeAimOffset.AimTransform RD() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 272)()); }
+			AnimNodeAimOffset.AimTransform RC() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 240)()); }
+			AnimNodeAimOffset.AimTransform RU() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 208)()); }
+			AnimNodeAimOffset.AimTransform CD() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 176)()); }
+			AnimNodeAimOffset.AimTransform CC() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 144)()); }
+			AnimNodeAimOffset.AimTransform CU() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 112)()); }
+			AnimNodeAimOffset.AimTransform LD() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 80)()); }
+			AnimNodeAimOffset.AimTransform LC() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 48)()); }
+			AnimNodeAimOffset.AimTransform LU() { mixin(MGPS!(AnimNodeAimOffset.AimTransform, 16)()); }
+			ScriptName BoneName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct AimOffsetProfile
@@ -95,46 +96,46 @@ public extern(D):
 		private ubyte __buffer__[108];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeAimOffset.AimOffsetProfile")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeAimOffset.AimOffsetProfile")()); }
 		@property final auto ref
 		{
-			ScriptArray!(AnimNodeAimOffset.AimComponent) AimComponents() { return *cast(ScriptArray!(AnimNodeAimOffset.AimComponent)*)(cast(size_t)&this + 24); }
-			ScriptName AnimName_RD() { return *cast(ScriptName*)(cast(size_t)&this + 100); }
-			ScriptName AnimName_RC() { return *cast(ScriptName*)(cast(size_t)&this + 92); }
-			ScriptName AnimName_RU() { return *cast(ScriptName*)(cast(size_t)&this + 84); }
-			ScriptName AnimName_CD() { return *cast(ScriptName*)(cast(size_t)&this + 76); }
-			ScriptName AnimName_CC() { return *cast(ScriptName*)(cast(size_t)&this + 68); }
-			ScriptName AnimName_CU() { return *cast(ScriptName*)(cast(size_t)&this + 60); }
-			ScriptName AnimName_LD() { return *cast(ScriptName*)(cast(size_t)&this + 52); }
-			ScriptName AnimName_LC() { return *cast(ScriptName*)(cast(size_t)&this + 44); }
-			ScriptName AnimName_LU() { return *cast(ScriptName*)(cast(size_t)&this + 36); }
-			UObject.Vector2D VerticalRange() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 16); }
-			UObject.Vector2D HorizontalRange() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 8); }
-			ScriptName ProfileName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(AnimNodeAimOffset.AimComponent) AimComponents() { mixin(MGPS!(ScriptArray!(AnimNodeAimOffset.AimComponent), 24)()); }
+			ScriptName AnimName_RD() { mixin(MGPS!(ScriptName, 100)()); }
+			ScriptName AnimName_RC() { mixin(MGPS!(ScriptName, 92)()); }
+			ScriptName AnimName_RU() { mixin(MGPS!(ScriptName, 84)()); }
+			ScriptName AnimName_CD() { mixin(MGPS!(ScriptName, 76)()); }
+			ScriptName AnimName_CC() { mixin(MGPS!(ScriptName, 68)()); }
+			ScriptName AnimName_CU() { mixin(MGPS!(ScriptName, 60)()); }
+			ScriptName AnimName_LD() { mixin(MGPS!(ScriptName, 52)()); }
+			ScriptName AnimName_LC() { mixin(MGPS!(ScriptName, 44)()); }
+			ScriptName AnimName_LU() { mixin(MGPS!(ScriptName, 36)()); }
+			UObject.Vector2D VerticalRange() { mixin(MGPS!(UObject.Vector2D, 16)()); }
+			UObject.Vector2D HorizontalRange() { mixin(MGPS!(UObject.Vector2D, 8)()); }
+			ScriptName ProfileName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ubyte) RequiredBones() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 272); }
-			ScriptArray!(ubyte) AimCpntIndexLUT() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 284); }
-			ScriptArray!(AnimNodeAimOffset.AimOffsetProfile) Profiles() { return *cast(ScriptArray!(AnimNodeAimOffset.AimOffsetProfile)*)(cast(size_t)cast(void*)this + 300); }
-			int CurrentProfileIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 312); }
-			AnimNodeAimOffset TemplateNode() { return *cast(AnimNodeAimOffset*)(cast(size_t)cast(void*)this + 296); }
-			AnimNodeAimOffset.EAnimAimDir ForcedAimDir() { return *cast(AnimNodeAimOffset.EAnimAimDir*)(cast(size_t)cast(void*)this + 268); }
-			int PassThroughAtOrAboveLOD() { return *cast(int*)(cast(size_t)cast(void*)this + 264); }
-			UObject.Vector2D AngleOffset() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 252); }
-			UObject.Vector2D Aim() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 244); }
+			ScriptArray!(ubyte) RequiredBones() { mixin(MGPC!(ScriptArray!(ubyte), 272)()); }
+			ScriptArray!(ubyte) AimCpntIndexLUT() { mixin(MGPC!(ScriptArray!(ubyte), 284)()); }
+			ScriptArray!(AnimNodeAimOffset.AimOffsetProfile) Profiles() { mixin(MGPC!(ScriptArray!(AnimNodeAimOffset.AimOffsetProfile), 300)()); }
+			int CurrentProfileIndex() { mixin(MGPC!(int, 312)()); }
+			AnimNodeAimOffset TemplateNode() { mixin(MGPC!(AnimNodeAimOffset, 296)()); }
+			AnimNodeAimOffset.EAnimAimDir ForcedAimDir() { mixin(MGPC!(AnimNodeAimOffset.EAnimAimDir, 268)()); }
+			int PassThroughAtOrAboveLOD() { mixin(MGPC!(int, 264)()); }
+			UObject.Vector2D AngleOffset() { mixin(MGPC!(UObject.Vector2D, 252)()); }
+			UObject.Vector2D Aim() { mixin(MGPC!(UObject.Vector2D, 244)()); }
 		}
-		bool bSynchronizeNodesInEditor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x8) != 0; }
-		bool bSynchronizeNodesInEditor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x8; } return val; }
-		bool bPassThroughWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x4) != 0; }
-		bool bPassThroughWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x4; } return val; }
-		bool bBakeFromAnimations() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x2) != 0; }
-		bool bBakeFromAnimations(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x2; } return val; }
-		bool bForceAimDir() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
-		bool bForceAimDir(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+		bool bSynchronizeNodesInEditor() { mixin(MGBPC!(260, 0x8)()); }
+		bool bSynchronizeNodesInEditor(bool val) { mixin(MSBPC!(260, 0x8)()); }
+		bool bPassThroughWhenNotRendered() { mixin(MGBPC!(260, 0x4)()); }
+		bool bPassThroughWhenNotRendered(bool val) { mixin(MSBPC!(260, 0x4)()); }
+		bool bBakeFromAnimations() { mixin(MGBPC!(260, 0x2)()); }
+		bool bBakeFromAnimations(bool val) { mixin(MSBPC!(260, 0x2)()); }
+		bool bForceAimDir() { mixin(MGBPC!(260, 0x1)()); }
+		bool bForceAimDir(bool val) { mixin(MSBPC!(260, 0x1)()); }
 	}
 final:
 	void SetActiveProfileByName(ScriptName ProfileName)

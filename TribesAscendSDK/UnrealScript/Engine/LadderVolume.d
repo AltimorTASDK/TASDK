@@ -1,6 +1,7 @@
 module UnrealScript.Engine.LadderVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.PhysicsVolume;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface LadderVolume : PhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LadderVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LadderVolume")()); }
 	private static __gshared LadderVolume mDefaultProperties;
-	@property final static LadderVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LadderVolume)("LadderVolume Engine.Default__LadderVolume")); }
+	@property final static LadderVolume DefaultProperties() { mixin(MGDPC!(LadderVolume, "LadderVolume Engine.Default__LadderVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,29 +26,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InUse() { return mInUse ? mInUse : (mInUse = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.InUse")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PostBeginPlay")); }
-			ScriptFunction PawnEnteredVolume() { return mPawnEnteredVolume ? mPawnEnteredVolume : (mPawnEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PawnEnteredVolume")); }
-			ScriptFunction PawnLeavingVolume() { return mPawnLeavingVolume ? mPawnLeavingVolume : (mPawnLeavingVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PawnLeavingVolume")); }
-			ScriptFunction PhysicsChangedFor() { return mPhysicsChangedFor ? mPhysicsChangedFor : (mPhysicsChangedFor = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PhysicsChangedFor")); }
+			ScriptFunction InUse() { mixin(MGF!("mInUse", "Function Engine.LadderVolume.InUse")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.LadderVolume.PostBeginPlay")()); }
+			ScriptFunction PawnEnteredVolume() { mixin(MGF!("mPawnEnteredVolume", "Function Engine.LadderVolume.PawnEnteredVolume")()); }
+			ScriptFunction PawnLeavingVolume() { mixin(MGF!("mPawnLeavingVolume", "Function Engine.LadderVolume.PawnLeavingVolume")()); }
+			ScriptFunction PhysicsChangedFor() { mixin(MGF!("mPhysicsChangedFor", "Function Engine.LadderVolume.PhysicsChangedFor")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector ClimbDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 608); }
-			Pawn PendingClimber() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 628); }
-			Ladder LadderList() { return *cast(Ladder*)(cast(size_t)cast(void*)this + 620); }
-			Vector LookDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 596); }
-			Rotator WallDir() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 584); }
+			Vector ClimbDir() { mixin(MGPC!(Vector, 608)()); }
+			Pawn PendingClimber() { mixin(MGPC!(Pawn, 628)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'WallDirArrow'!
+			Ladder LadderList() { mixin(MGPC!(Ladder, 620)()); }
+			Vector LookDir() { mixin(MGPC!(Vector, 596)()); }
+			Rotator WallDir() { mixin(MGPC!(Rotator, 584)()); }
 		}
-		bool bAllowLadderStrafing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 624) & 0x4) != 0; }
-		bool bAllowLadderStrafing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 624) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 624) &= ~0x4; } return val; }
-		bool bAutoPath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 624) & 0x2) != 0; }
-		bool bAutoPath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 624) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 624) &= ~0x2; } return val; }
-		bool bNoPhysicalLadder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 624) & 0x1) != 0; }
-		bool bNoPhysicalLadder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 624) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 624) &= ~0x1; } return val; }
+		bool bAllowLadderStrafing() { mixin(MGBPC!(624, 0x4)()); }
+		bool bAllowLadderStrafing(bool val) { mixin(MSBPC!(624, 0x4)()); }
+		bool bAutoPath() { mixin(MGBPC!(624, 0x2)()); }
+		bool bAutoPath(bool val) { mixin(MSBPC!(624, 0x2)()); }
+		bool bNoPhysicalLadder() { mixin(MGBPC!(624, 0x1)()); }
+		bool bNoPhysicalLadder(bool val) { mixin(MSBPC!(624, 0x1)()); }
 	}
 final:
 	bool InUse(Pawn Ignored)

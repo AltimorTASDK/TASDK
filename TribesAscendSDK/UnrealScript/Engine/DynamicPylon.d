@@ -1,15 +1,16 @@
 module UnrealScript.Engine.DynamicPylon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pylon;
 
 extern(C++) interface DynamicPylon : Pylon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicPylon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DynamicPylon")()); }
 	private static __gshared DynamicPylon mDefaultProperties;
-	@property final static DynamicPylon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicPylon)("DynamicPylon Engine.Default__DynamicPylon")); }
+	@property final static DynamicPylon DefaultProperties() { mixin(MGDPC!(DynamicPylon, "DynamicPylon Engine.Default__DynamicPylon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +23,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicPylon.PostBeginPlay")); }
-			ScriptFunction RebuildDynamicEdges() { return mRebuildDynamicEdges ? mRebuildDynamicEdges : (mRebuildDynamicEdges = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicPylon.RebuildDynamicEdges")); }
-			ScriptFunction FlushDynamicEdges() { return mFlushDynamicEdges ? mFlushDynamicEdges : (mFlushDynamicEdges = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicPylon.FlushDynamicEdges")); }
-			ScriptFunction StartedMoving() { return mStartedMoving ? mStartedMoving : (mStartedMoving = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicPylon.StartedMoving")); }
-			ScriptFunction StoppedMoving() { return mStoppedMoving ? mStoppedMoving : (mStoppedMoving = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicPylon.StoppedMoving")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.DynamicPylon.PostBeginPlay")()); }
+			ScriptFunction RebuildDynamicEdges() { mixin(MGF!("mRebuildDynamicEdges", "Function Engine.DynamicPylon.RebuildDynamicEdges")()); }
+			ScriptFunction FlushDynamicEdges() { mixin(MGF!("mFlushDynamicEdges", "Function Engine.DynamicPylon.FlushDynamicEdges")()); }
+			ScriptFunction StartedMoving() { mixin(MGF!("mStartedMoving", "Function Engine.DynamicPylon.StartedMoving")()); }
+			ScriptFunction StoppedMoving() { mixin(MGF!("mStoppedMoving", "Function Engine.DynamicPylon.StoppedMoving")()); }
 		}
 	}
 	@property final
 	{
-		bool bMoving() { return (*cast(uint*)(cast(size_t)cast(void*)this + 832) & 0x1) != 0; }
-		bool bMoving(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 832) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 832) &= ~0x1; } return val; }
+		bool bMoving() { mixin(MGBPC!(832, 0x1)()); }
+		bool bMoving(bool val) { mixin(MSBPC!(832, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

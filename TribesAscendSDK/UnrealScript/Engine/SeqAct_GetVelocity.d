@@ -1,24 +1,25 @@
 module UnrealScript.Engine.SeqAct_GetVelocity;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_GetVelocity : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_GetVelocity")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_GetVelocity")()); }
 	private static __gshared SeqAct_GetVelocity mDefaultProperties;
-	@property final static SeqAct_GetVelocity DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_GetVelocity)("SeqAct_GetVelocity Engine.Default__SeqAct_GetVelocity")); }
+	@property final static SeqAct_GetVelocity DefaultProperties() { mixin(MGDPC!(SeqAct_GetVelocity, "SeqAct_GetVelocity Engine.Default__SeqAct_GetVelocity")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_GetVelocity.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_GetVelocity.GetObjClassVersion")()); }
 	}
 	@property final auto ref
 	{
-		Vector VelocityVect() { return *cast(Vector*)(cast(size_t)cast(void*)this + 236); }
-		float VelocityMag() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
+		Vector VelocityVect() { mixin(MGPC!(Vector, 236)()); }
+		float VelocityMag() { mixin(MGPC!(float, 232)()); }
 	}
 	final static int GetObjClassVersion()
 	{

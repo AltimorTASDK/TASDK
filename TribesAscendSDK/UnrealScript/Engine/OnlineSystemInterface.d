@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineSystemInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineSystemInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineSystemInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineSystemInterface")()); }
 	private static __gshared OnlineSystemInterface mDefaultProperties;
-	@property final static OnlineSystemInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineSystemInterface)("OnlineSystemInterface Engine.Default__OnlineSystemInterface")); }
+	@property final static OnlineSystemInterface DefaultProperties() { mixin(MGDPC!(OnlineSystemInterface, "OnlineSystemInterface Engine.Default__OnlineSystemInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,27 +39,35 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HasLinkConnection() { return mHasLinkConnection ? mHasLinkConnection : (mHasLinkConnection = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.HasLinkConnection")); }
-			ScriptFunction OnLinkStatusChange() { return mOnLinkStatusChange ? mOnLinkStatusChange : (mOnLinkStatusChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.OnLinkStatusChange")); }
-			ScriptFunction OnStorageDeviceChange() { return mOnStorageDeviceChange ? mOnStorageDeviceChange : (mOnStorageDeviceChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.OnStorageDeviceChange")); }
-			ScriptFunction OnConnectionStatusChange() { return mOnConnectionStatusChange ? mOnConnectionStatusChange : (mOnConnectionStatusChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.OnConnectionStatusChange")); }
-			ScriptFunction OnControllerChange() { return mOnControllerChange ? mOnControllerChange : (mOnControllerChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.OnControllerChange")); }
-			ScriptFunction OnExternalUIChange() { return mOnExternalUIChange ? mOnExternalUIChange : (mOnExternalUIChange = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.OnExternalUIChange")); }
-			ScriptFunction AddLinkStatusChangeDelegate() { return mAddLinkStatusChangeDelegate ? mAddLinkStatusChangeDelegate : (mAddLinkStatusChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.AddLinkStatusChangeDelegate")); }
-			ScriptFunction ClearLinkStatusChangeDelegate() { return mClearLinkStatusChangeDelegate ? mClearLinkStatusChangeDelegate : (mClearLinkStatusChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.ClearLinkStatusChangeDelegate")); }
-			ScriptFunction AddExternalUIChangeDelegate() { return mAddExternalUIChangeDelegate ? mAddExternalUIChangeDelegate : (mAddExternalUIChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.AddExternalUIChangeDelegate")); }
-			ScriptFunction ClearExternalUIChangeDelegate() { return mClearExternalUIChangeDelegate ? mClearExternalUIChangeDelegate : (mClearExternalUIChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.ClearExternalUIChangeDelegate")); }
-			ScriptFunction GetNetworkNotificationPosition() { return mGetNetworkNotificationPosition ? mGetNetworkNotificationPosition : (mGetNetworkNotificationPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.GetNetworkNotificationPosition")); }
-			ScriptFunction SetNetworkNotificationPosition() { return mSetNetworkNotificationPosition ? mSetNetworkNotificationPosition : (mSetNetworkNotificationPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.SetNetworkNotificationPosition")); }
-			ScriptFunction AddControllerChangeDelegate() { return mAddControllerChangeDelegate ? mAddControllerChangeDelegate : (mAddControllerChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.AddControllerChangeDelegate")); }
-			ScriptFunction ClearControllerChangeDelegate() { return mClearControllerChangeDelegate ? mClearControllerChangeDelegate : (mClearControllerChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.ClearControllerChangeDelegate")); }
-			ScriptFunction IsControllerConnected() { return mIsControllerConnected ? mIsControllerConnected : (mIsControllerConnected = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.IsControllerConnected")); }
-			ScriptFunction AddConnectionStatusChangeDelegate() { return mAddConnectionStatusChangeDelegate ? mAddConnectionStatusChangeDelegate : (mAddConnectionStatusChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.AddConnectionStatusChangeDelegate")); }
-			ScriptFunction ClearConnectionStatusChangeDelegate() { return mClearConnectionStatusChangeDelegate ? mClearConnectionStatusChangeDelegate : (mClearConnectionStatusChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.ClearConnectionStatusChangeDelegate")); }
-			ScriptFunction GetNATType() { return mGetNATType ? mGetNATType : (mGetNATType = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.GetNATType")); }
-			ScriptFunction AddStorageDeviceChangeDelegate() { return mAddStorageDeviceChangeDelegate ? mAddStorageDeviceChangeDelegate : (mAddStorageDeviceChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.AddStorageDeviceChangeDelegate")); }
-			ScriptFunction ClearStorageDeviceChangeDelegate() { return mClearStorageDeviceChangeDelegate ? mClearStorageDeviceChangeDelegate : (mClearStorageDeviceChangeDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSystemInterface.ClearStorageDeviceChangeDelegate")); }
+			ScriptFunction HasLinkConnection() { mixin(MGF!("mHasLinkConnection", "Function Engine.OnlineSystemInterface.HasLinkConnection")()); }
+			ScriptFunction OnLinkStatusChange() { mixin(MGF!("mOnLinkStatusChange", "Function Engine.OnlineSystemInterface.OnLinkStatusChange")()); }
+			ScriptFunction OnStorageDeviceChange() { mixin(MGF!("mOnStorageDeviceChange", "Function Engine.OnlineSystemInterface.OnStorageDeviceChange")()); }
+			ScriptFunction OnConnectionStatusChange() { mixin(MGF!("mOnConnectionStatusChange", "Function Engine.OnlineSystemInterface.OnConnectionStatusChange")()); }
+			ScriptFunction OnControllerChange() { mixin(MGF!("mOnControllerChange", "Function Engine.OnlineSystemInterface.OnControllerChange")()); }
+			ScriptFunction OnExternalUIChange() { mixin(MGF!("mOnExternalUIChange", "Function Engine.OnlineSystemInterface.OnExternalUIChange")()); }
+			ScriptFunction AddLinkStatusChangeDelegate() { mixin(MGF!("mAddLinkStatusChangeDelegate", "Function Engine.OnlineSystemInterface.AddLinkStatusChangeDelegate")()); }
+			ScriptFunction ClearLinkStatusChangeDelegate() { mixin(MGF!("mClearLinkStatusChangeDelegate", "Function Engine.OnlineSystemInterface.ClearLinkStatusChangeDelegate")()); }
+			ScriptFunction AddExternalUIChangeDelegate() { mixin(MGF!("mAddExternalUIChangeDelegate", "Function Engine.OnlineSystemInterface.AddExternalUIChangeDelegate")()); }
+			ScriptFunction ClearExternalUIChangeDelegate() { mixin(MGF!("mClearExternalUIChangeDelegate", "Function Engine.OnlineSystemInterface.ClearExternalUIChangeDelegate")()); }
+			ScriptFunction GetNetworkNotificationPosition() { mixin(MGF!("mGetNetworkNotificationPosition", "Function Engine.OnlineSystemInterface.GetNetworkNotificationPosition")()); }
+			ScriptFunction SetNetworkNotificationPosition() { mixin(MGF!("mSetNetworkNotificationPosition", "Function Engine.OnlineSystemInterface.SetNetworkNotificationPosition")()); }
+			ScriptFunction AddControllerChangeDelegate() { mixin(MGF!("mAddControllerChangeDelegate", "Function Engine.OnlineSystemInterface.AddControllerChangeDelegate")()); }
+			ScriptFunction ClearControllerChangeDelegate() { mixin(MGF!("mClearControllerChangeDelegate", "Function Engine.OnlineSystemInterface.ClearControllerChangeDelegate")()); }
+			ScriptFunction IsControllerConnected() { mixin(MGF!("mIsControllerConnected", "Function Engine.OnlineSystemInterface.IsControllerConnected")()); }
+			ScriptFunction AddConnectionStatusChangeDelegate() { mixin(MGF!("mAddConnectionStatusChangeDelegate", "Function Engine.OnlineSystemInterface.AddConnectionStatusChangeDelegate")()); }
+			ScriptFunction ClearConnectionStatusChangeDelegate() { mixin(MGF!("mClearConnectionStatusChangeDelegate", "Function Engine.OnlineSystemInterface.ClearConnectionStatusChangeDelegate")()); }
+			ScriptFunction GetNATType() { mixin(MGF!("mGetNATType", "Function Engine.OnlineSystemInterface.GetNATType")()); }
+			ScriptFunction AddStorageDeviceChangeDelegate() { mixin(MGF!("mAddStorageDeviceChangeDelegate", "Function Engine.OnlineSystemInterface.AddStorageDeviceChangeDelegate")()); }
+			ScriptFunction ClearStorageDeviceChangeDelegate() { mixin(MGF!("mClearStorageDeviceChangeDelegate", "Function Engine.OnlineSystemInterface.ClearStorageDeviceChangeDelegate")()); }
 		}
+	}
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnStorageDeviceChange__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnConnectionStatusChange__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnControllerChange__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnExternalUIChange__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLinkStatusChange__Delegate'!
 	}
 final:
 	bool HasLinkConnection()

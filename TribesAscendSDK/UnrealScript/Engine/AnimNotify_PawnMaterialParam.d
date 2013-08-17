@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNotify_PawnMaterialParam;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.Actor;
@@ -10,15 +11,15 @@ extern(C++) interface AnimNotify_PawnMaterialParam : AnimNotify_Scripted
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_PawnMaterialParam")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNotify_PawnMaterialParam")()); }
 	private static __gshared AnimNotify_PawnMaterialParam mDefaultProperties;
-	@property final static AnimNotify_PawnMaterialParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_PawnMaterialParam)("AnimNotify_PawnMaterialParam Engine.Default__AnimNotify_PawnMaterialParam")); }
+	@property final static AnimNotify_PawnMaterialParam DefaultProperties() { mixin(MGDPC!(AnimNotify_PawnMaterialParam, "AnimNotify_PawnMaterialParam Engine.Default__AnimNotify_PawnMaterialParam")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mNotify;
-		public @property static final ScriptFunction Notify() { return mNotify ? mNotify : (mNotify = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNotify_PawnMaterialParam.Notify")); }
+		public @property static final ScriptFunction Notify() { mixin(MGF!("mNotify", "Function Engine.AnimNotify_PawnMaterialParam.Notify")()); }
 	}
-	@property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { return *cast(ScriptArray!(Pawn.ScalarParameterInterpStruct)*)(cast(size_t)cast(void*)this + 64); }
+	@property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { mixin(MGPC!(ScriptArray!(Pawn.ScalarParameterInterpStruct), 64)()); }
 	final void Notify(Actor Owner, AnimNodeSequence AnimSeqInstigator)
 	{
 		ubyte params[8];

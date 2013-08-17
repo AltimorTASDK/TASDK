@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.MobileInputZone;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Texture2D;
@@ -11,9 +12,9 @@ extern(C++) interface MobileInputZone : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileInputZone")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.MobileInputZone")()); }
 	private static __gshared MobileInputZone mDefaultProperties;
-	@property final static MobileInputZone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileInputZone)("MobileInputZone GameFramework.Default__MobileInputZone")); }
+	@property final static MobileInputZone DefaultProperties() { mixin(MGDPC!(MobileInputZone, "MobileInputZone GameFramework.Default__MobileInputZone")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,15 +31,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPreDrawZone() { return mOnPreDrawZone ? mOnPreDrawZone : (mOnPreDrawZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnPreDrawZone")); }
-			ScriptFunction OnPostDrawZone() { return mOnPostDrawZone ? mOnPostDrawZone : (mOnPostDrawZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnPostDrawZone")); }
-			ScriptFunction OnProcessSlide() { return mOnProcessSlide ? mOnProcessSlide : (mOnProcessSlide = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnProcessSlide")); }
-			ScriptFunction OnDoubleTapDelegate() { return mOnDoubleTapDelegate ? mOnDoubleTapDelegate : (mOnDoubleTapDelegate = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnDoubleTapDelegate")); }
-			ScriptFunction OnTapDelegate() { return mOnTapDelegate ? mOnTapDelegate : (mOnTapDelegate = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnTapDelegate")); }
-			ScriptFunction OnProcessInputDelegate() { return mOnProcessInputDelegate ? mOnProcessInputDelegate : (mOnProcessInputDelegate = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnProcessInputDelegate")); }
-			ScriptFunction ActivateZone() { return mActivateZone ? mActivateZone : (mActivateZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.ActivateZone")); }
-			ScriptFunction DeactivateZone() { return mDeactivateZone ? mDeactivateZone : (mDeactivateZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.DeactivateZone")); }
-			ScriptFunction AddKismetEventHandler() { return mAddKismetEventHandler ? mAddKismetEventHandler : (mAddKismetEventHandler = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.AddKismetEventHandler")); }
+			ScriptFunction OnPreDrawZone() { mixin(MGF!("mOnPreDrawZone", "Function GameFramework.MobileInputZone.OnPreDrawZone")()); }
+			ScriptFunction OnPostDrawZone() { mixin(MGF!("mOnPostDrawZone", "Function GameFramework.MobileInputZone.OnPostDrawZone")()); }
+			ScriptFunction OnProcessSlide() { mixin(MGF!("mOnProcessSlide", "Function GameFramework.MobileInputZone.OnProcessSlide")()); }
+			ScriptFunction OnDoubleTapDelegate() { mixin(MGF!("mOnDoubleTapDelegate", "Function GameFramework.MobileInputZone.OnDoubleTapDelegate")()); }
+			ScriptFunction OnTapDelegate() { mixin(MGF!("mOnTapDelegate", "Function GameFramework.MobileInputZone.OnTapDelegate")()); }
+			ScriptFunction OnProcessInputDelegate() { mixin(MGF!("mOnProcessInputDelegate", "Function GameFramework.MobileInputZone.OnProcessInputDelegate")()); }
+			ScriptFunction ActivateZone() { mixin(MGF!("mActivateZone", "Function GameFramework.MobileInputZone.ActivateZone")()); }
+			ScriptFunction DeactivateZone() { mixin(MGF!("mDeactivateZone", "Function GameFramework.MobileInputZone.DeactivateZone")()); }
+			ScriptFunction AddKismetEventHandler() { mixin(MGF!("mAddKismetEventHandler", "Function GameFramework.MobileInputZone.AddKismetEventHandler")()); }
 		}
 	}
 	enum EZoneType : ubyte
@@ -77,106 +78,112 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.MobileInputZone.TextureUVs")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.MobileInputZone.TextureUVs")()); }
 		@property final auto ref
 		{
-			float U() { return *cast(float*)(cast(size_t)&this + 0); }
-			float V() { return *cast(float*)(cast(size_t)&this + 4); }
-			float UL() { return *cast(float*)(cast(size_t)&this + 8); }
-			float VL() { return *cast(float*)(cast(size_t)&this + 12); }
+			float U() { mixin(MGPS!(float, 0)()); }
+			float V() { mixin(MGPS!(float, 4)()); }
+			float UL() { mixin(MGPS!(float, 8)()); }
+			float VL() { mixin(MGPS!(float, 12)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Color RenderColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 180); }
-			float AnimatingFadeOpacity() { return *cast(float*)(cast(size_t)cast(void*)this + 376); }
+			UObject.Color RenderColor() { mixin(MGPC!(UObject.Color, 180)()); }
+			float AnimatingFadeOpacity() { mixin(MGPC!(float, 376)()); }
 			// WARNING: Property 'State' has the same name as a defined type!
-			float InactiveAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 184); }
-			float TransitionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 384); }
-			float ActivateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 172); }
-			float DeactivateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
-			MobileInputZone.EZoneType Type() { return *cast(MobileInputZone.EZoneType*)(cast(size_t)cast(void*)this + 60); }
-			float X() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-			float Y() { return *cast(float*)(cast(size_t)cast(void*)this + 136); }
-			float SizeX() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-			float SizeY() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
-			Texture2D OverrideTexture1() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 196); }
-			MobileInputZone.TextureUVs OverrideUVs1() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 212); }
-			Texture2D OverrideTexture2() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 228); }
-			MobileInputZone.TextureUVs OverrideUVs2() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 244); }
-			float ActiveSizeX() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			float ActiveSizeY() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			ScriptString Caption() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 64); }
-			float CaptionXAdjustment() { return *cast(float*)(cast(size_t)cast(void*)this + 188); }
-			float CaptionYAdjustment() { return *cast(float*)(cast(size_t)cast(void*)this + 192); }
-			UObject.Vector2D CurrentCenter() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 276); }
-			UObject.Vector2D CurrentLocation() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 268); }
-			MobileInputZone.EZoneSlideType SlideType() { return *cast(MobileInputZone.EZoneSlideType*)(cast(size_t)cast(void*)this + 62); }
-			ScriptArray!(SeqEvent_MobileZoneBase) MobileSeqEventHandlers() { return *cast(ScriptArray!(SeqEvent_MobileZoneBase)*)(cast(size_t)cast(void*)this + 396); }
-			float LastWentActiveTime() { return *cast(float*)(cast(size_t)cast(void*)this + 420); }
-			float TotalActiveTime() { return *cast(float*)(cast(size_t)cast(void*)this + 416); }
-			UObject.Vector2D LastAxisValues() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 408); }
-			UObject.Vector2D EscapeVelocity() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 388); }
-			MobilePlayerInput InputOwner() { return *cast(MobilePlayerInput*)(cast(size_t)cast(void*)this + 380); }
-			float TimeSinceLastTapRepeat() { return *cast(float*)(cast(size_t)cast(void*)this + 372); }
-			float LastTouchTime() { return *cast(float*)(cast(size_t)cast(void*)this + 368); }
-			int PreviousLocationCount() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-			float PreviousMoveDeltaTimes() { return *cast(float*)(cast(size_t)cast(void*)this + 340); }
-			UObject.Vector2D PreviousLocations() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 292); }
-			UObject.Vector2D InitialCenter() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 284); }
-			UObject.Vector2D InitialLocation() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 260); }
-			ScriptString OverrideTexture2Name() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 232); }
-			ScriptString OverrideTexture1Name() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 200); }
-			float TapDistanceConstraint() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float ResetCenterAfterInactivityTime() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float Border() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			float AuthoredGlobalScale() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-			float EscapeVelocityStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-			float Smoothing() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			float Acceleration() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float HorizMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			float VertMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			ScriptName DoubleTapInputKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 100); }
-			ScriptName TapInputKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 92); }
-			ScriptName HorizontalInputKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 84); }
-			ScriptName InputKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 76); }
+			float InactiveAlpha() { mixin(MGPC!(float, 184)()); }
+			float TransitionTime() { mixin(MGPC!(float, 384)()); }
+			float ActivateTime() { mixin(MGPC!(float, 172)()); }
+			float DeactivateTime() { mixin(MGPC!(float, 176)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPreDrawZone__Delegate'!
+			MobileInputZone.EZoneType Type() { mixin(MGPC!(MobileInputZone.EZoneType, 60)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPostDrawZone__Delegate'!
+			float X() { mixin(MGPC!(float, 132)()); }
+			float Y() { mixin(MGPC!(float, 136)()); }
+			float SizeX() { mixin(MGPC!(float, 140)()); }
+			float SizeY() { mixin(MGPC!(float, 144)()); }
+			Texture2D OverrideTexture1() { mixin(MGPC!(Texture2D, 196)()); }
+			MobileInputZone.TextureUVs OverrideUVs1() { mixin(MGPC!(MobileInputZone.TextureUVs, 212)()); }
+			Texture2D OverrideTexture2() { mixin(MGPC!(Texture2D, 228)()); }
+			MobileInputZone.TextureUVs OverrideUVs2() { mixin(MGPC!(MobileInputZone.TextureUVs, 244)()); }
+			float ActiveSizeX() { mixin(MGPC!(float, 148)()); }
+			float ActiveSizeY() { mixin(MGPC!(float, 152)()); }
+			ScriptString Caption() { mixin(MGPC!(ScriptString, 64)()); }
+			float CaptionXAdjustment() { mixin(MGPC!(float, 188)()); }
+			float CaptionYAdjustment() { mixin(MGPC!(float, 192)()); }
+			UObject.Vector2D CurrentCenter() { mixin(MGPC!(UObject.Vector2D, 276)()); }
+			UObject.Vector2D CurrentLocation() { mixin(MGPC!(UObject.Vector2D, 268)()); }
+			MobileInputZone.EZoneSlideType SlideType() { mixin(MGPC!(MobileInputZone.EZoneSlideType, 62)()); }
+			ScriptArray!(SeqEvent_MobileZoneBase) MobileSeqEventHandlers() { mixin(MGPC!(ScriptArray!(SeqEvent_MobileZoneBase), 396)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnProcessSlide__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDoubleTapDelegate__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnTapDelegate__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnProcessInputDelegate__Delegate'!
+			float LastWentActiveTime() { mixin(MGPC!(float, 420)()); }
+			float TotalActiveTime() { mixin(MGPC!(float, 416)()); }
+			UObject.Vector2D LastAxisValues() { mixin(MGPC!(UObject.Vector2D, 408)()); }
+			UObject.Vector2D EscapeVelocity() { mixin(MGPC!(UObject.Vector2D, 388)()); }
+			MobilePlayerInput InputOwner() { mixin(MGPC!(MobilePlayerInput, 380)()); }
+			float TimeSinceLastTapRepeat() { mixin(MGPC!(float, 372)()); }
+			float LastTouchTime() { mixin(MGPC!(float, 368)()); }
+			int PreviousLocationCount() { mixin(MGPC!(int, 364)()); }
+			float PreviousMoveDeltaTimes() { mixin(MGPC!(float, 340)()); }
+			UObject.Vector2D PreviousLocations() { mixin(MGPC!(UObject.Vector2D, 292)()); }
+			UObject.Vector2D InitialCenter() { mixin(MGPC!(UObject.Vector2D, 284)()); }
+			UObject.Vector2D InitialLocation() { mixin(MGPC!(UObject.Vector2D, 260)()); }
+			ScriptString OverrideTexture2Name() { mixin(MGPC!(ScriptString, 232)()); }
+			ScriptString OverrideTexture1Name() { mixin(MGPC!(ScriptString, 200)()); }
+			float TapDistanceConstraint() { mixin(MGPC!(float, 168)()); }
+			float ResetCenterAfterInactivityTime() { mixin(MGPC!(float, 164)()); }
+			float Border() { mixin(MGPC!(float, 160)()); }
+			float AuthoredGlobalScale() { mixin(MGPC!(float, 156)()); }
+			float EscapeVelocityStrength() { mixin(MGPC!(float, 124)()); }
+			float Smoothing() { mixin(MGPC!(float, 120)()); }
+			float Acceleration() { mixin(MGPC!(float, 116)()); }
+			float HorizMultiplier() { mixin(MGPC!(float, 112)()); }
+			float VertMultiplier() { mixin(MGPC!(float, 108)()); }
+			ScriptName DoubleTapInputKey() { mixin(MGPC!(ScriptName, 100)()); }
+			ScriptName TapInputKey() { mixin(MGPC!(ScriptName, 92)()); }
+			ScriptName HorizontalInputKey() { mixin(MGPC!(ScriptName, 84)()); }
+			ScriptName InputKey() { mixin(MGPC!(ScriptName, 76)()); }
 		}
-		bool bIsInvisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x200) != 0; }
-		bool bIsInvisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x200; } return val; }
-		bool bRenderGuides() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x8000) != 0; }
-		bool bRenderGuides(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x8000; } return val; }
-		bool bIsDoubleTapAndHold() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x10000) != 0; }
-		bool bIsDoubleTapAndHold(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x10000; } return val; }
-		bool bAllowFirstDeltaForTrackballZone() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x4000) != 0; }
-		bool bAllowFirstDeltaForTrackballZone(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x4000; } return val; }
-		bool bUseGentleTransitions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x2000) != 0; }
-		bool bUseGentleTransitions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x2000; } return val; }
-		bool bFloatingTiltZone() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1000) != 0; }
-		bool bFloatingTiltZone(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1000; } return val; }
-		bool bCenterOnEvent() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x800) != 0; }
-		bool bCenterOnEvent(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x800; } return val; }
-		bool bQuickDoubleTap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x400) != 0; }
-		bool bQuickDoubleTap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x400; } return val; }
-		bool bCenterY() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x100) != 0; }
-		bool bCenterY(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x100; } return val; }
-		bool bCenterX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x80) != 0; }
-		bool bCenterX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x80; } return val; }
-		bool bSizeYFromSizeX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x40) != 0; }
-		bool bSizeYFromSizeX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x40; } return val; }
-		bool bActiveSizeYFromX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x20) != 0; }
-		bool bActiveSizeYFromX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x20; } return val; }
-		bool bRelativeSizeY() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x10) != 0; }
-		bool bRelativeSizeY(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x10; } return val; }
-		bool bRelativeSizeX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x8) != 0; }
-		bool bRelativeSizeX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x8; } return val; }
-		bool bRelativeY() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x4) != 0; }
-		bool bRelativeY(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x4; } return val; }
-		bool bRelativeX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x2) != 0; }
-		bool bRelativeX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x2; } return val; }
-		bool bScalePawnMovement() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1) != 0; }
-		bool bScalePawnMovement(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1; } return val; }
+		bool bIsInvisible() { mixin(MGBPC!(128, 0x200)()); }
+		bool bIsInvisible(bool val) { mixin(MSBPC!(128, 0x200)()); }
+		bool bRenderGuides() { mixin(MGBPC!(128, 0x8000)()); }
+		bool bRenderGuides(bool val) { mixin(MSBPC!(128, 0x8000)()); }
+		bool bIsDoubleTapAndHold() { mixin(MGBPC!(128, 0x10000)()); }
+		bool bIsDoubleTapAndHold(bool val) { mixin(MSBPC!(128, 0x10000)()); }
+		bool bAllowFirstDeltaForTrackballZone() { mixin(MGBPC!(128, 0x4000)()); }
+		bool bAllowFirstDeltaForTrackballZone(bool val) { mixin(MSBPC!(128, 0x4000)()); }
+		bool bUseGentleTransitions() { mixin(MGBPC!(128, 0x2000)()); }
+		bool bUseGentleTransitions(bool val) { mixin(MSBPC!(128, 0x2000)()); }
+		bool bFloatingTiltZone() { mixin(MGBPC!(128, 0x1000)()); }
+		bool bFloatingTiltZone(bool val) { mixin(MSBPC!(128, 0x1000)()); }
+		bool bCenterOnEvent() { mixin(MGBPC!(128, 0x800)()); }
+		bool bCenterOnEvent(bool val) { mixin(MSBPC!(128, 0x800)()); }
+		bool bQuickDoubleTap() { mixin(MGBPC!(128, 0x400)()); }
+		bool bQuickDoubleTap(bool val) { mixin(MSBPC!(128, 0x400)()); }
+		bool bCenterY() { mixin(MGBPC!(128, 0x100)()); }
+		bool bCenterY(bool val) { mixin(MSBPC!(128, 0x100)()); }
+		bool bCenterX() { mixin(MGBPC!(128, 0x80)()); }
+		bool bCenterX(bool val) { mixin(MSBPC!(128, 0x80)()); }
+		bool bSizeYFromSizeX() { mixin(MGBPC!(128, 0x40)()); }
+		bool bSizeYFromSizeX(bool val) { mixin(MSBPC!(128, 0x40)()); }
+		bool bActiveSizeYFromX() { mixin(MGBPC!(128, 0x20)()); }
+		bool bActiveSizeYFromX(bool val) { mixin(MSBPC!(128, 0x20)()); }
+		bool bRelativeSizeY() { mixin(MGBPC!(128, 0x10)()); }
+		bool bRelativeSizeY(bool val) { mixin(MSBPC!(128, 0x10)()); }
+		bool bRelativeSizeX() { mixin(MGBPC!(128, 0x8)()); }
+		bool bRelativeSizeX(bool val) { mixin(MSBPC!(128, 0x8)()); }
+		bool bRelativeY() { mixin(MGBPC!(128, 0x4)()); }
+		bool bRelativeY(bool val) { mixin(MSBPC!(128, 0x4)()); }
+		bool bRelativeX() { mixin(MGBPC!(128, 0x2)()); }
+		bool bRelativeX(bool val) { mixin(MSBPC!(128, 0x2)()); }
+		bool bScalePawnMovement() { mixin(MGBPC!(128, 0x1)()); }
+		bool bScalePawnMovement(bool val) { mixin(MSBPC!(128, 0x1)()); }
 	}
 final:
 	bool OnPreDrawZone(MobileInputZone Zone, Canvas pCanvas)

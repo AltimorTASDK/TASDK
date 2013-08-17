@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdAgent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.NavigationHandle;
 import UnrealScript.Engine.Controller;
@@ -22,9 +23,9 @@ extern(C++) interface GameCrowdAgent : CrowdAgentBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdAgent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdAgent")()); }
 	private static __gshared GameCrowdAgent mDefaultProperties;
-	@property final static GameCrowdAgent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdAgent)("GameCrowdAgent GameFramework.Default__GameCrowdAgent")); }
+	@property final static GameCrowdAgent DefaultProperties() { mixin(MGDPC!(GameCrowdAgent, "GameCrowdAgent GameFramework.Default__GameCrowdAgent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -71,45 +72,45 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PickBehaviorFrom() { return mPickBehaviorFrom ? mPickBehaviorFrom : (mPickBehaviorFrom = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PickBehaviorFrom")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.FellOutOfWorld")); }
-			ScriptFunction IsPanicked() { return mIsPanicked ? mIsPanicked : (mIsPanicked = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.IsPanicked")); }
-			ScriptFunction SetPanic() { return mSetPanic ? mSetPanic : (mSetPanic = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetPanic")); }
-			ScriptFunction WaitForGroupMembers() { return mWaitForGroupMembers ? mWaitForGroupMembers : (mWaitForGroupMembers = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.WaitForGroupMembers")); }
-			ScriptFunction SetCurrentDestination() { return mSetCurrentDestination ? mSetCurrentDestination : (mSetCurrentDestination = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetCurrentDestination")); }
-			ScriptFunction SetMaxSpeed() { return mSetMaxSpeed ? mSetMaxSpeed : (mSetMaxSpeed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetMaxSpeed")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PostBeginPlay")); }
-			ScriptFunction KillAgent() { return mKillAgent ? mKillAgent : (mKillAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.KillAgent")); }
-			ScriptFunction ResetPooledAgent() { return mResetPooledAgent ? mResetPooledAgent : (mResetPooledAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ResetPooledAgent")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.Destroyed")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.DisplayDebug")); }
-			ScriptFunction SetLighting() { return mSetLighting ? mSetLighting : (mSetLighting = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetLighting")); }
-			ScriptFunction InitializeAgent() { return mInitializeAgent ? mInitializeAgent : (mInitializeAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.InitializeAgent")); }
-			ScriptFunction OnPlayAgentAnimation() { return mOnPlayAgentAnimation ? mOnPlayAgentAnimation : (mOnPlayAgentAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.OnPlayAgentAnimation")); }
-			ScriptFunction PlayIdleAnimation() { return mPlayIdleAnimation ? mPlayIdleAnimation : (mPlayIdleAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PlayIdleAnimation")); }
-			ScriptFunction StopIdleAnimation() { return mStopIdleAnimation ? mStopIdleAnimation : (mStopIdleAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.StopIdleAnimation")); }
-			ScriptFunction HandlePotentialAgentEncounter() { return mHandlePotentialAgentEncounter ? mHandlePotentialAgentEncounter : (mHandlePotentialAgentEncounter = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.HandlePotentialAgentEncounter")); }
-			ScriptFunction PlaySpawnBehavior() { return mPlaySpawnBehavior ? mPlaySpawnBehavior : (mPlaySpawnBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PlaySpawnBehavior")); }
-			ScriptFunction NotifySeePlayer() { return mNotifySeePlayer ? mNotifySeePlayer : (mNotifySeePlayer = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.NotifySeePlayer")); }
-			ScriptFunction TryRandomBehavior() { return mTryRandomBehavior ? mTryRandomBehavior : (mTryRandomBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.TryRandomBehavior")); }
-			ScriptFunction ResetSeePlayer() { return mResetSeePlayer ? mResetSeePlayer : (mResetSeePlayer = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ResetSeePlayer")); }
-			ScriptFunction ActivateBehavior() { return mActivateBehavior ? mActivateBehavior : (mActivateBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ActivateBehavior")); }
-			ScriptFunction SetCurrentBehavior() { return mSetCurrentBehavior ? mSetCurrentBehavior : (mSetCurrentBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetCurrentBehavior")); }
-			ScriptFunction ActivateInstancedBehavior() { return mActivateInstancedBehavior ? mActivateInstancedBehavior : (mActivateInstancedBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ActivateInstancedBehavior")); }
-			ScriptFunction StopBehavior() { return mStopBehavior ? mStopBehavior : (mStopBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.StopBehavior")); }
-			ScriptFunction IsIdle() { return mIsIdle ? mIsIdle : (mIsIdle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.IsIdle")); }
-			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.CalcCamera")); }
-			ScriptFunction UpdateIntermediatePoint() { return mUpdateIntermediatePoint ? mUpdateIntermediatePoint : (mUpdateIntermediatePoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.UpdateIntermediatePoint")); }
-			ScriptFunction PlayDeath() { return mPlayDeath ? mPlayDeath : (mPlayDeath = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PlayDeath")); }
-			ScriptFunction FireDeathEvent() { return mFireDeathEvent ? mFireDeathEvent : (mFireDeathEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.FireDeathEvent")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.TakeDamage")); }
-			ScriptFunction OverlappedActorEvent() { return mOverlappedActorEvent ? mOverlappedActorEvent : (mOverlappedActorEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.OverlappedActorEvent")); }
-			ScriptFunction InitNavigationHandle() { return mInitNavigationHandle ? mInitNavigationHandle : (mInitNavigationHandle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.InitNavigationHandle")); }
-			ScriptFunction GeneratePathToActor() { return mGeneratePathToActor ? mGeneratePathToActor : (mGeneratePathToActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.GeneratePathToActor")); }
-			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.NativePostRenderFor")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PostRenderFor")); }
-			ScriptFunction GetDestString() { return mGetDestString ? mGetDestString : (mGetDestString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.GetDestString")); }
-			ScriptFunction GetBehaviorString() { return mGetBehaviorString ? mGetBehaviorString : (mGetBehaviorString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.GetBehaviorString")); }
+			ScriptFunction PickBehaviorFrom() { mixin(MGF!("mPickBehaviorFrom", "Function GameFramework.GameCrowdAgent.PickBehaviorFrom")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function GameFramework.GameCrowdAgent.FellOutOfWorld")()); }
+			ScriptFunction IsPanicked() { mixin(MGF!("mIsPanicked", "Function GameFramework.GameCrowdAgent.IsPanicked")()); }
+			ScriptFunction SetPanic() { mixin(MGF!("mSetPanic", "Function GameFramework.GameCrowdAgent.SetPanic")()); }
+			ScriptFunction WaitForGroupMembers() { mixin(MGF!("mWaitForGroupMembers", "Function GameFramework.GameCrowdAgent.WaitForGroupMembers")()); }
+			ScriptFunction SetCurrentDestination() { mixin(MGF!("mSetCurrentDestination", "Function GameFramework.GameCrowdAgent.SetCurrentDestination")()); }
+			ScriptFunction SetMaxSpeed() { mixin(MGF!("mSetMaxSpeed", "Function GameFramework.GameCrowdAgent.SetMaxSpeed")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function GameFramework.GameCrowdAgent.PostBeginPlay")()); }
+			ScriptFunction KillAgent() { mixin(MGF!("mKillAgent", "Function GameFramework.GameCrowdAgent.KillAgent")()); }
+			ScriptFunction ResetPooledAgent() { mixin(MGF!("mResetPooledAgent", "Function GameFramework.GameCrowdAgent.ResetPooledAgent")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function GameFramework.GameCrowdAgent.Destroyed")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function GameFramework.GameCrowdAgent.DisplayDebug")()); }
+			ScriptFunction SetLighting() { mixin(MGF!("mSetLighting", "Function GameFramework.GameCrowdAgent.SetLighting")()); }
+			ScriptFunction InitializeAgent() { mixin(MGF!("mInitializeAgent", "Function GameFramework.GameCrowdAgent.InitializeAgent")()); }
+			ScriptFunction OnPlayAgentAnimation() { mixin(MGF!("mOnPlayAgentAnimation", "Function GameFramework.GameCrowdAgent.OnPlayAgentAnimation")()); }
+			ScriptFunction PlayIdleAnimation() { mixin(MGF!("mPlayIdleAnimation", "Function GameFramework.GameCrowdAgent.PlayIdleAnimation")()); }
+			ScriptFunction StopIdleAnimation() { mixin(MGF!("mStopIdleAnimation", "Function GameFramework.GameCrowdAgent.StopIdleAnimation")()); }
+			ScriptFunction HandlePotentialAgentEncounter() { mixin(MGF!("mHandlePotentialAgentEncounter", "Function GameFramework.GameCrowdAgent.HandlePotentialAgentEncounter")()); }
+			ScriptFunction PlaySpawnBehavior() { mixin(MGF!("mPlaySpawnBehavior", "Function GameFramework.GameCrowdAgent.PlaySpawnBehavior")()); }
+			ScriptFunction NotifySeePlayer() { mixin(MGF!("mNotifySeePlayer", "Function GameFramework.GameCrowdAgent.NotifySeePlayer")()); }
+			ScriptFunction TryRandomBehavior() { mixin(MGF!("mTryRandomBehavior", "Function GameFramework.GameCrowdAgent.TryRandomBehavior")()); }
+			ScriptFunction ResetSeePlayer() { mixin(MGF!("mResetSeePlayer", "Function GameFramework.GameCrowdAgent.ResetSeePlayer")()); }
+			ScriptFunction ActivateBehavior() { mixin(MGF!("mActivateBehavior", "Function GameFramework.GameCrowdAgent.ActivateBehavior")()); }
+			ScriptFunction SetCurrentBehavior() { mixin(MGF!("mSetCurrentBehavior", "Function GameFramework.GameCrowdAgent.SetCurrentBehavior")()); }
+			ScriptFunction ActivateInstancedBehavior() { mixin(MGF!("mActivateInstancedBehavior", "Function GameFramework.GameCrowdAgent.ActivateInstancedBehavior")()); }
+			ScriptFunction StopBehavior() { mixin(MGF!("mStopBehavior", "Function GameFramework.GameCrowdAgent.StopBehavior")()); }
+			ScriptFunction IsIdle() { mixin(MGF!("mIsIdle", "Function GameFramework.GameCrowdAgent.IsIdle")()); }
+			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function GameFramework.GameCrowdAgent.CalcCamera")()); }
+			ScriptFunction UpdateIntermediatePoint() { mixin(MGF!("mUpdateIntermediatePoint", "Function GameFramework.GameCrowdAgent.UpdateIntermediatePoint")()); }
+			ScriptFunction PlayDeath() { mixin(MGF!("mPlayDeath", "Function GameFramework.GameCrowdAgent.PlayDeath")()); }
+			ScriptFunction FireDeathEvent() { mixin(MGF!("mFireDeathEvent", "Function GameFramework.GameCrowdAgent.FireDeathEvent")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function GameFramework.GameCrowdAgent.TakeDamage")()); }
+			ScriptFunction OverlappedActorEvent() { mixin(MGF!("mOverlappedActorEvent", "Function GameFramework.GameCrowdAgent.OverlappedActorEvent")()); }
+			ScriptFunction InitNavigationHandle() { mixin(MGF!("mInitNavigationHandle", "Function GameFramework.GameCrowdAgent.InitNavigationHandle")()); }
+			ScriptFunction GeneratePathToActor() { mixin(MGF!("mGeneratePathToActor", "Function GameFramework.GameCrowdAgent.GeneratePathToActor")()); }
+			ScriptFunction NativePostRenderFor() { mixin(MGF!("mNativePostRenderFor", "Function GameFramework.GameCrowdAgent.NativePostRenderFor")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function GameFramework.GameCrowdAgent.PostRenderFor")()); }
+			ScriptFunction GetDestString() { mixin(MGF!("mGetDestString", "Function GameFramework.GameCrowdAgent.GetDestString")()); }
+			ScriptFunction GetBehaviorString() { mixin(MGF!("mGetBehaviorString", "Function GameFramework.GameCrowdAgent.GetBehaviorString")()); }
 		}
 	}
 	enum EConformType : ubyte
@@ -125,11 +126,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameCrowdAgent.RecentInteraction")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameCrowdAgent.RecentInteraction")()); }
 		@property final auto ref
 		{
-			float InteractionDelay() { return *cast(float*)(cast(size_t)&this + 8); }
-			ScriptName InteractionTag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			float InteractionDelay() { mixin(MGPS!(float, 8)()); }
+			ScriptName InteractionTag() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct BehaviorEntry
@@ -137,135 +138,138 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameCrowdAgent.BehaviorEntry")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameCrowdAgent.BehaviorEntry")()); }
 		@property final
 		{
 			auto ref
 			{
-				float BehaviorFrequency() { return *cast(float*)(cast(size_t)&this + 8); }
-				Actor LookAtActor() { return *cast(Actor*)(cast(size_t)&this + 4); }
-				GameCrowdAgentBehavior BehaviorArchetype() { return *cast(GameCrowdAgentBehavior*)(cast(size_t)&this + 0); }
+				float BehaviorFrequency() { mixin(MGPS!(float, 8)()); }
+				Actor LookAtActor() { mixin(MGPS!(Actor, 4)()); }
+				GameCrowdAgentBehavior BehaviorArchetype() { mixin(MGPS!(GameCrowdAgentBehavior, 0)()); }
 			}
-			bool bCanBeUsed() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x4) != 0; }
-			bool bCanBeUsed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x4; } return val; }
-			bool bHasBeenUsed() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x2) != 0; }
-			bool bHasBeenUsed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x2; } return val; }
-			bool bNeverRepeat() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bNeverRepeat(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bCanBeUsed() { mixin(MGBPS!(12, 0x4)()); }
+			bool bCanBeUsed(bool val) { mixin(MSBPS!(12, 0x4)()); }
+			bool bHasBeenUsed() { mixin(MGBPS!(12, 0x2)()); }
+			bool bHasBeenUsed(bool val) { mixin(MSBPS!(12, 0x2)()); }
+			bool bNeverRepeat() { mixin(MGBPS!(12, 0x1)()); }
+			bool bNeverRepeat(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) NearbyDynamics() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 548); }
-			ScriptArray!(GameCrowdForcePoint) RelevantAttractors() { return *cast(ScriptArray!(GameCrowdForcePoint)*)(cast(size_t)cast(void*)this + 560); }
-			ScriptArray!(GameCrowdAgent.RecentInteraction) RecentInteractions() { return *cast(ScriptArray!(GameCrowdAgent.RecentInteraction)*)(cast(size_t)cast(void*)this + 764); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) EncounterAgentBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 824); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) SeePlayerBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 836); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) SpawnBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 856); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) PanicBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 868); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) RandomBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 880); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) TakeDamageBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 892); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) GroupWaitingBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 916); }
-			float InitialLastRenderTime() { return *cast(float*)(cast(size_t)cast(void*)this + 960); }
-			Vector SpawnOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 948); }
-			float MaxLOSLifeDistanceSq() { return *cast(float*)(cast(size_t)cast(void*)this + 936); }
-			float DesiredGroupRadiusSq() { return *cast(float*)(cast(size_t)cast(void*)this + 932); }
-			float DesiredGroupRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 928); }
-			float ReachThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 912); }
-			float ForceUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 908); }
-			float RandomBehaviorInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 904); }
-			float SeePlayerInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 852); }
-			float MaxSeePlayerDistSq() { return *cast(float*)(cast(size_t)cast(void*)this + 848); }
-			GameCrowdAgentBehavior CurrentBehavior() { return *cast(GameCrowdAgentBehavior*)(cast(size_t)cast(void*)this + 820); }
-			SoundCue AmbientSoundCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 812); }
-			UObject.LinearColor BeaconColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 796); }
-			Texture2D BeaconTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 792); }
-			Vector BeaconOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 780); }
-			float BeaconMaxDist() { return *cast(float*)(cast(size_t)cast(void*)this + 776); }
-			float MaxSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 760); }
-			float MaxRunningSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 756); }
-			float MaxWalkingSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 752); }
-			GameCrowdAgent MyArchetype() { return *cast(GameCrowdAgent*)(cast(size_t)cast(void*)this + 748); }
-			float NotVisibleTickScalingFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 744); }
-			float NotVisibleLifeSpan() { return *cast(float*)(cast(size_t)cast(void*)this + 740); }
-			float LastUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 736); }
-			float LastPathingAttempt() { return *cast(float*)(cast(size_t)cast(void*)this + 732); }
-			float WalkableFloorZ() { return *cast(float*)(cast(size_t)cast(void*)this + 728); }
-			int ObstacleCheckCount() { return *cast(int*)(cast(size_t)cast(void*)this + 724); }
+			ScriptArray!(Actor) NearbyDynamics() { mixin(MGPC!(ScriptArray!(Actor), 548)()); }
+			ScriptArray!(GameCrowdForcePoint) RelevantAttractors() { mixin(MGPC!(ScriptArray!(GameCrowdForcePoint), 560)()); }
+			ScriptArray!(GameCrowdAgent.RecentInteraction) RecentInteractions() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.RecentInteraction), 764)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) EncounterAgentBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 824)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) SeePlayerBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 836)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) SpawnBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 856)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) PanicBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 868)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) RandomBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 880)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) TakeDamageBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 892)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) GroupWaitingBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 916)()); }
+			float InitialLastRenderTime() { mixin(MGPC!(float, 960)()); }
+			Vector SpawnOffset() { mixin(MGPC!(Vector, 948)()); }
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'MySpawner'!
+			float MaxLOSLifeDistanceSq() { mixin(MGPC!(float, 936)()); }
+			float DesiredGroupRadiusSq() { mixin(MGPC!(float, 932)()); }
+			float DesiredGroupRadius() { mixin(MGPC!(float, 928)()); }
+			float ReachThreshold() { mixin(MGPC!(float, 912)()); }
+			float ForceUpdateTime() { mixin(MGPC!(float, 908)()); }
+			float RandomBehaviorInterval() { mixin(MGPC!(float, 904)()); }
+			float SeePlayerInterval() { mixin(MGPC!(float, 852)()); }
+			float MaxSeePlayerDistSq() { mixin(MGPC!(float, 848)()); }
+			GameCrowdAgentBehavior CurrentBehavior() { mixin(MGPC!(GameCrowdAgentBehavior, 820)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientSoundComponent'!
+			SoundCue AmbientSoundCue() { mixin(MGPC!(SoundCue, 812)()); }
+			UObject.LinearColor BeaconColor() { mixin(MGPC!(UObject.LinearColor, 796)()); }
+			Texture2D BeaconTexture() { mixin(MGPC!(Texture2D, 792)()); }
+			Vector BeaconOffset() { mixin(MGPC!(Vector, 780)()); }
+			float BeaconMaxDist() { mixin(MGPC!(float, 776)()); }
+			float MaxSpeed() { mixin(MGPC!(float, 760)()); }
+			float MaxRunningSpeed() { mixin(MGPC!(float, 756)()); }
+			float MaxWalkingSpeed() { mixin(MGPC!(float, 752)()); }
+			GameCrowdAgent MyArchetype() { mixin(MGPC!(GameCrowdAgent, 748)()); }
+			float NotVisibleTickScalingFactor() { mixin(MGPC!(float, 744)()); }
+			float NotVisibleLifeSpan() { mixin(MGPC!(float, 740)()); }
+			float LastUpdateTime() { mixin(MGPC!(float, 736)()); }
+			float LastPathingAttempt() { mixin(MGPC!(float, 732)()); }
+			float WalkableFloorZ() { mixin(MGPC!(float, 728)()); }
+			int ObstacleCheckCount() { mixin(MGPC!(int, 724)()); }
 			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
-			ScriptClass NavigationHandleClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 716); }
-			Vector SearchExtent() { return *cast(Vector*)(cast(size_t)cast(void*)this + 704); }
-			Vector IntermediatePoint() { return *cast(Vector*)(cast(size_t)cast(void*)this + 692); }
-			float GroundOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
-			Vector LastKnownGoodPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 676); }
-			float VisibleProximityLODDist() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
-			float ProximityLODDist() { return *cast(float*)(cast(size_t)cast(void*)this + 668); }
-			float EyeZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 664); }
-			Vector MeshMaxScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 652); }
-			Vector MeshMinScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 640); }
-			float MaxYawRate() { return *cast(float*)(cast(size_t)cast(void*)this + 636); }
-			float RotateToTargetSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 632); }
-			float VelocityDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 628); }
-			float FollowPathStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 624); }
-			float MatchVelStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 620); }
-			float GroupAttractionStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 616); }
-			float AvoidOtherRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 612); }
-			float AvoidPlayerStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-			float AvoidOtherStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
-			int AwareUpdateInterval() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
-			float AwareRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
-			float LastGroundZ() { return *cast(float*)(cast(size_t)cast(void*)this + 592); }
-			int CurrentConformTraceInterval() { return *cast(int*)(cast(size_t)cast(void*)this + 588); }
-			int ConformTraceInterval() { return *cast(int*)(cast(size_t)cast(void*)this + 584); }
-			float ConformTraceDist() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-			GameCrowdAgent.EConformType ConformType() { return *cast(GameCrowdAgent.EConformType*)(cast(size_t)cast(void*)this + 576); }
-			GameCrowdGroup MyGroup() { return *cast(GameCrowdGroup*)(cast(size_t)cast(void*)this + 480); }
-			int AwareUpdateFrameCount() { return *cast(int*)(cast(size_t)cast(void*)this + 544); }
-			int ConformTraceFrameCount() { return *cast(int*)(cast(size_t)cast(void*)this + 540); }
-			float DeadBodyDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 532); }
-			int Health() { return *cast(int*)(cast(size_t)cast(void*)this + 528); }
-			float InterpZTranslation() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			Vector ExternalForce() { return *cast(Vector*)(cast(size_t)cast(void*)this + 512); }
-			GameCrowdDestination PreviousDestination() { return *cast(GameCrowdDestination*)(cast(size_t)cast(void*)this + 508); }
-			GameCrowdDestination BehaviorDestination() { return *cast(GameCrowdDestination*)(cast(size_t)cast(void*)this + 504); }
-			GameCrowdDestination CurrentDestination() { return *cast(GameCrowdDestination*)(cast(size_t)cast(void*)this + 500); }
-			float AvoidanceShare() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			Vector PreferredVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 484); }
+			ScriptClass NavigationHandleClass() { mixin(MGPC!(ScriptClass, 716)()); }
+			Vector SearchExtent() { mixin(MGPC!(Vector, 704)()); }
+			Vector IntermediatePoint() { mixin(MGPC!(Vector, 692)()); }
+			float GroundOffset() { mixin(MGPC!(float, 688)()); }
+			Vector LastKnownGoodPosition() { mixin(MGPC!(Vector, 676)()); }
+			float VisibleProximityLODDist() { mixin(MGPC!(float, 672)()); }
+			float ProximityLODDist() { mixin(MGPC!(float, 668)()); }
+			float EyeZOffset() { mixin(MGPC!(float, 664)()); }
+			Vector MeshMaxScale3D() { mixin(MGPC!(Vector, 652)()); }
+			Vector MeshMinScale3D() { mixin(MGPC!(Vector, 640)()); }
+			float MaxYawRate() { mixin(MGPC!(float, 636)()); }
+			float RotateToTargetSpeed() { mixin(MGPC!(float, 632)()); }
+			float VelocityDamping() { mixin(MGPC!(float, 628)()); }
+			float FollowPathStrength() { mixin(MGPC!(float, 624)()); }
+			float MatchVelStrength() { mixin(MGPC!(float, 620)()); }
+			float GroupAttractionStrength() { mixin(MGPC!(float, 616)()); }
+			float AvoidOtherRadius() { mixin(MGPC!(float, 612)()); }
+			float AvoidPlayerStrength() { mixin(MGPC!(float, 608)()); }
+			float AvoidOtherStrength() { mixin(MGPC!(float, 604)()); }
+			int AwareUpdateInterval() { mixin(MGPC!(int, 600)()); }
+			float AwareRadius() { mixin(MGPC!(float, 596)()); }
+			float LastGroundZ() { mixin(MGPC!(float, 592)()); }
+			int CurrentConformTraceInterval() { mixin(MGPC!(int, 588)()); }
+			int ConformTraceInterval() { mixin(MGPC!(int, 584)()); }
+			float ConformTraceDist() { mixin(MGPC!(float, 580)()); }
+			GameCrowdAgent.EConformType ConformType() { mixin(MGPC!(GameCrowdAgent.EConformType, 576)()); }
+			GameCrowdGroup MyGroup() { mixin(MGPC!(GameCrowdGroup, 480)()); }
+			int AwareUpdateFrameCount() { mixin(MGPC!(int, 544)()); }
+			int ConformTraceFrameCount() { mixin(MGPC!(int, 540)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
+			float DeadBodyDuration() { mixin(MGPC!(float, 532)()); }
+			int Health() { mixin(MGPC!(int, 528)()); }
+			float InterpZTranslation() { mixin(MGPC!(float, 524)()); }
+			Vector ExternalForce() { mixin(MGPC!(Vector, 512)()); }
+			GameCrowdDestination PreviousDestination() { mixin(MGPC!(GameCrowdDestination, 508)()); }
+			GameCrowdDestination BehaviorDestination() { mixin(MGPC!(GameCrowdDestination, 504)()); }
+			GameCrowdDestination CurrentDestination() { mixin(MGPC!(GameCrowdDestination, 500)()); }
+			float AvoidanceShare() { mixin(MGPC!(float, 496)()); }
+			Vector PreferredVelocity() { mixin(MGPC!(Vector, 484)()); }
 		}
-		bool bIsInSpawnPool() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x8000) != 0; }
-		bool bIsInSpawnPool(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x8000; } return val; }
-		bool bHasNotifiedSpawner() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x4000) != 0; }
-		bool bHasNotifiedSpawner(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x4000; } return val; }
-		bool bPreferVisibleDestinationOnSpawn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x2000) != 0; }
-		bool bPreferVisibleDestinationOnSpawn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x2000; } return val; }
-		bool bPreferVisibleDestination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x1000) != 0; }
-		bool bPreferVisibleDestination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x1000; } return val; }
-		bool bWantsGroupIdle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x800) != 0; }
-		bool bWantsGroupIdle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x800; } return val; }
-		bool bIsPanicked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x400) != 0; }
-		bool bIsPanicked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x400; } return val; }
-		bool bPotentialEncounter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x200) != 0; }
-		bool bPotentialEncounter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x200; } return val; }
-		bool bClampMovementSpeed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x100) != 0; }
-		bool bClampMovementSpeed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x100; } return val; }
-		bool bSimulateThisTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x80) != 0; }
-		bool bSimulateThisTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x80; } return val; }
-		bool bBadHitNormal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x40) != 0; }
-		bool bBadHitNormal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x40; } return val; }
-		bool bHitObstacle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x20) != 0; }
-		bool bHitObstacle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x20; } return val; }
-		bool bAllowPitching() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x10) != 0; }
-		bool bAllowPitching(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x10; } return val; }
-		bool bWantsSeePlayerNotification() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x8) != 0; }
-		bool bWantsSeePlayerNotification(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x8; } return val; }
-		bool bUseNavMeshPathing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x4) != 0; }
-		bool bUseNavMeshPathing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x4; } return val; }
-		bool bCheckForObstacles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x2) != 0; }
-		bool bCheckForObstacles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x2; } return val; }
-		bool bUniformScale() { return (*cast(uint*)(cast(size_t)cast(void*)this + 572) & 0x1) != 0; }
-		bool bUniformScale(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 572) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 572) &= ~0x1; } return val; }
+		bool bIsInSpawnPool() { mixin(MGBPC!(572, 0x8000)()); }
+		bool bIsInSpawnPool(bool val) { mixin(MSBPC!(572, 0x8000)()); }
+		bool bHasNotifiedSpawner() { mixin(MGBPC!(572, 0x4000)()); }
+		bool bHasNotifiedSpawner(bool val) { mixin(MSBPC!(572, 0x4000)()); }
+		bool bPreferVisibleDestinationOnSpawn() { mixin(MGBPC!(572, 0x2000)()); }
+		bool bPreferVisibleDestinationOnSpawn(bool val) { mixin(MSBPC!(572, 0x2000)()); }
+		bool bPreferVisibleDestination() { mixin(MGBPC!(572, 0x1000)()); }
+		bool bPreferVisibleDestination(bool val) { mixin(MSBPC!(572, 0x1000)()); }
+		bool bWantsGroupIdle() { mixin(MGBPC!(572, 0x800)()); }
+		bool bWantsGroupIdle(bool val) { mixin(MSBPC!(572, 0x800)()); }
+		bool bIsPanicked() { mixin(MGBPC!(572, 0x400)()); }
+		bool bIsPanicked(bool val) { mixin(MSBPC!(572, 0x400)()); }
+		bool bPotentialEncounter() { mixin(MGBPC!(572, 0x200)()); }
+		bool bPotentialEncounter(bool val) { mixin(MSBPC!(572, 0x200)()); }
+		bool bClampMovementSpeed() { mixin(MGBPC!(572, 0x100)()); }
+		bool bClampMovementSpeed(bool val) { mixin(MSBPC!(572, 0x100)()); }
+		bool bSimulateThisTick() { mixin(MGBPC!(572, 0x80)()); }
+		bool bSimulateThisTick(bool val) { mixin(MSBPC!(572, 0x80)()); }
+		bool bBadHitNormal() { mixin(MGBPC!(572, 0x40)()); }
+		bool bBadHitNormal(bool val) { mixin(MSBPC!(572, 0x40)()); }
+		bool bHitObstacle() { mixin(MGBPC!(572, 0x20)()); }
+		bool bHitObstacle(bool val) { mixin(MSBPC!(572, 0x20)()); }
+		bool bAllowPitching() { mixin(MGBPC!(572, 0x10)()); }
+		bool bAllowPitching(bool val) { mixin(MSBPC!(572, 0x10)()); }
+		bool bWantsSeePlayerNotification() { mixin(MGBPC!(572, 0x8)()); }
+		bool bWantsSeePlayerNotification(bool val) { mixin(MSBPC!(572, 0x8)()); }
+		bool bUseNavMeshPathing() { mixin(MGBPC!(572, 0x4)()); }
+		bool bUseNavMeshPathing(bool val) { mixin(MSBPC!(572, 0x4)()); }
+		bool bCheckForObstacles() { mixin(MGBPC!(572, 0x2)()); }
+		bool bCheckForObstacles(bool val) { mixin(MSBPC!(572, 0x2)()); }
+		bool bUniformScale() { mixin(MGBPC!(572, 0x1)()); }
+		bool bUniformScale(bool val) { mixin(MSBPC!(572, 0x1)()); }
 	}
 final:
 	bool PickBehaviorFrom(ScriptArray!(GameCrowdAgent.BehaviorEntry) BehaviorList, Vector BestCameraLoc)
@@ -330,13 +334,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -433,14 +437,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsIdle, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];

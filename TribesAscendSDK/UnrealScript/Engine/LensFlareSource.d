@@ -1,6 +1,7 @@
 module UnrealScript.Engine.LensFlareSource;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LensFlare;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface LensFlareSource : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LensFlareSource")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LensFlareSource")()); }
 	private static __gshared LensFlareSource mDefaultProperties;
-	@property final static LensFlareSource DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LensFlareSource)("LensFlareSource Engine.Default__LensFlareSource")); }
+	@property final static LensFlareSource DefaultProperties() { mixin(MGDPC!(LensFlareSource, "LensFlareSource Engine.Default__LensFlareSource")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,21 +30,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.SetTemplate")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.PostBeginPlay")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.OnToggle")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.ReplicatedEvent")); }
-			ScriptFunction SetFloatParameter() { return mSetFloatParameter ? mSetFloatParameter : (mSetFloatParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.SetFloatParameter")); }
-			ScriptFunction SetVectorParameter() { return mSetVectorParameter ? mSetVectorParameter : (mSetVectorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.SetVectorParameter")); }
-			ScriptFunction SetColorParameter() { return mSetColorParameter ? mSetColorParameter : (mSetColorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.SetColorParameter")); }
-			ScriptFunction SetExtColorParameter() { return mSetExtColorParameter ? mSetExtColorParameter : (mSetExtColorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.SetExtColorParameter")); }
-			ScriptFunction SetActorParameter() { return mSetActorParameter ? mSetActorParameter : (mSetActorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareSource.SetActorParameter")); }
+			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function Engine.LensFlareSource.SetTemplate")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.LensFlareSource.PostBeginPlay")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.LensFlareSource.OnToggle")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.LensFlareSource.ReplicatedEvent")()); }
+			ScriptFunction SetFloatParameter() { mixin(MGF!("mSetFloatParameter", "Function Engine.LensFlareSource.SetFloatParameter")()); }
+			ScriptFunction SetVectorParameter() { mixin(MGF!("mSetVectorParameter", "Function Engine.LensFlareSource.SetVectorParameter")()); }
+			ScriptFunction SetColorParameter() { mixin(MGF!("mSetColorParameter", "Function Engine.LensFlareSource.SetColorParameter")()); }
+			ScriptFunction SetExtColorParameter() { mixin(MGF!("mSetExtColorParameter", "Function Engine.LensFlareSource.SetExtColorParameter")()); }
+			ScriptFunction SetActorParameter() { mixin(MGF!("mSetActorParameter", "Function Engine.LensFlareSource.SetActorParameter")()); }
 		}
 	}
 	@property final
 	{
-		bool bCurrentlyActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bCurrentlyActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LensFlareComp'!
+		bool bCurrentlyActive() { mixin(MGBPC!(480, 0x1)()); }
+		bool bCurrentlyActive(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	void SetTemplate(LensFlare NewTemplate)

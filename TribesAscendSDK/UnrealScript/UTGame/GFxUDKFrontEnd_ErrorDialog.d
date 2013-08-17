@@ -1,15 +1,16 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_ErrorDialog;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.GFxUDKFrontEnd_Dialog;
 
 extern(C++) interface GFxUDKFrontEnd_ErrorDialog : GFxUDKFrontEnd_Dialog
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_ErrorDialog")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_ErrorDialog")()); }
 	private static __gshared GFxUDKFrontEnd_ErrorDialog mDefaultProperties;
-	@property final static GFxUDKFrontEnd_ErrorDialog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_ErrorDialog)("GFxUDKFrontEnd_ErrorDialog UTGame.Default__GFxUDKFrontEnd_ErrorDialog")); }
+	@property final static GFxUDKFrontEnd_ErrorDialog DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_ErrorDialog, "GFxUDKFrontEnd_ErrorDialog UTGame.Default__GFxUDKFrontEnd_ErrorDialog")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,12 +24,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_ErrorDialog.OnTopMostView")); }
-			ScriptFunction SetTitle() { return mSetTitle ? mSetTitle : (mSetTitle = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_ErrorDialog.SetTitle")); }
-			ScriptFunction SetInfo() { return mSetInfo ? mSetInfo : (mSetInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_ErrorDialog.SetInfo")); }
-			ScriptFunction SetButtonLabel() { return mSetButtonLabel ? mSetButtonLabel : (mSetButtonLabel = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_ErrorDialog.SetButtonLabel")); }
-			ScriptFunction OnViewClosed() { return mOnViewClosed ? mOnViewClosed : (mOnViewClosed = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_ErrorDialog.OnViewClosed")); }
-			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_ErrorDialog.DisableSubComponents")); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_ErrorDialog.OnTopMostView")()); }
+			ScriptFunction SetTitle() { mixin(MGF!("mSetTitle", "Function UTGame.GFxUDKFrontEnd_ErrorDialog.SetTitle")()); }
+			ScriptFunction SetInfo() { mixin(MGF!("mSetInfo", "Function UTGame.GFxUDKFrontEnd_ErrorDialog.SetInfo")()); }
+			ScriptFunction SetButtonLabel() { mixin(MGF!("mSetButtonLabel", "Function UTGame.GFxUDKFrontEnd_ErrorDialog.SetButtonLabel")()); }
+			ScriptFunction OnViewClosed() { mixin(MGF!("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_ErrorDialog.OnViewClosed")()); }
+			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_ErrorDialog.DisableSubComponents")()); }
 		}
 	}
 final:

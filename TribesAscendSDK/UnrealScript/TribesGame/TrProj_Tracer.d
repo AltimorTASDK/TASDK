@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_Tracer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrProjectile;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrProj_Tracer : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Tracer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Tracer")()); }
 	private static __gshared TrProj_Tracer mDefaultProperties;
-	@property final static TrProj_Tracer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Tracer)("TrProj_Tracer TribesGame.Default__TrProj_Tracer")); }
+	@property final static TrProj_Tracer DefaultProperties() { mixin(MGDPC!(TrProj_Tracer, "TrProj_Tracer TribesGame.Default__TrProj_Tracer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,38 +33,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.PostBeginPlay")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.ReplicatedEvent")); }
-			ScriptFunction CalcTracerAccel() { return mCalcTracerAccel ? mCalcTracerAccel : (mCalcTracerAccel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.CalcTracerAccel")); }
-			ScriptFunction InitTracer() { return mInitTracer ? mInitTracer : (mInitTracer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.InitTracer")); }
-			ScriptFunction KillProjectile() { return mKillProjectile ? mKillProjectile : (mKillProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.KillProjectile")); }
-			ScriptFunction ScaleDownFinishedNotify() { return mScaleDownFinishedNotify ? mScaleDownFinishedNotify : (mScaleDownFinishedNotify = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.ScaleDownFinishedNotify")); }
-			ScriptFunction ScaleUpFinishedNotify() { return mScaleUpFinishedNotify ? mScaleUpFinishedNotify : (mScaleUpFinishedNotify = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.ScaleUpFinishedNotify")); }
-			ScriptFunction OutsideWorldBounds() { return mOutsideWorldBounds ? mOutsideWorldBounds : (mOutsideWorldBounds = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.OutsideWorldBounds")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.Tick")); }
-			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.Explode")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.Recycle")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.Reset")); }
-			ScriptFunction WakeProjectile() { return mWakeProjectile ? mWakeProjectile : (mWakeProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.WakeProjectile")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Tracer.ProcessTouch")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_Tracer.PostBeginPlay")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrProj_Tracer.ReplicatedEvent")()); }
+			ScriptFunction CalcTracerAccel() { mixin(MGF!("mCalcTracerAccel", "Function TribesGame.TrProj_Tracer.CalcTracerAccel")()); }
+			ScriptFunction InitTracer() { mixin(MGF!("mInitTracer", "Function TribesGame.TrProj_Tracer.InitTracer")()); }
+			ScriptFunction KillProjectile() { mixin(MGF!("mKillProjectile", "Function TribesGame.TrProj_Tracer.KillProjectile")()); }
+			ScriptFunction ScaleDownFinishedNotify() { mixin(MGF!("mScaleDownFinishedNotify", "Function TribesGame.TrProj_Tracer.ScaleDownFinishedNotify")()); }
+			ScriptFunction ScaleUpFinishedNotify() { mixin(MGF!("mScaleUpFinishedNotify", "Function TribesGame.TrProj_Tracer.ScaleUpFinishedNotify")()); }
+			ScriptFunction OutsideWorldBounds() { mixin(MGF!("mOutsideWorldBounds", "Function TribesGame.TrProj_Tracer.OutsideWorldBounds")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrProj_Tracer.Tick")()); }
+			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_Tracer.Explode")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function TribesGame.TrProj_Tracer.Recycle")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrProj_Tracer.Reset")()); }
+			ScriptFunction WakeProjectile() { mixin(MGF!("mWakeProjectile", "Function TribesGame.TrProj_Tracer.WakeProjectile")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_Tracer.ProcessTouch")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector m_vTracerDrawScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 824); }
-			Vector m_vInitialFrameOfRefVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 864); }
-			Vector m_vDestinationLoc() { return *cast(Vector*)(cast(size_t)cast(void*)this + 852); }
-			float m_fMeshScaleDownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 848); }
-			float m_fCurScale() { return *cast(float*)(cast(size_t)cast(void*)this + 844); }
-			float m_fMeshScaleUpTime() { return *cast(float*)(cast(size_t)cast(void*)this + 836); }
-			float m_fAccelRate() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
+			Vector m_vTracerDrawScale3D() { mixin(MGPC!(Vector, 824)()); }
+			Vector m_vInitialFrameOfRefVelocity() { mixin(MGPC!(Vector, 864)()); }
+			Vector m_vDestinationLoc() { mixin(MGPC!(Vector, 852)()); }
+			float m_fMeshScaleDownTime() { mixin(MGPC!(float, 848)()); }
+			float m_fCurScale() { mixin(MGPC!(float, 844)()); }
+			float m_fMeshScaleUpTime() { mixin(MGPC!(float, 836)()); }
+			float m_fAccelRate() { mixin(MGPC!(float, 820)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TracerPSC'!
 		}
-		bool m_bScalingDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 840) & 0x2) != 0; }
-		bool m_bScalingDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 840) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 840) &= ~0x2; } return val; }
-		bool m_bScaledUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 840) & 0x1) != 0; }
-		bool m_bScaledUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 840) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 840) &= ~0x1; } return val; }
+		bool m_bScalingDown() { mixin(MGBPC!(840, 0x2)()); }
+		bool m_bScalingDown(bool val) { mixin(MSBPC!(840, 0x2)()); }
+		bool m_bScaledUp() { mixin(MGBPC!(840, 0x1)()); }
+		bool m_bScaledUp(bool val) { mixin(MSBPC!(840, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

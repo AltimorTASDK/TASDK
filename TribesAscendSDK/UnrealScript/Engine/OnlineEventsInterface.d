@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineEventsInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineProfileSettings;
 import UnrealScript.Core.UInterface;
@@ -10,9 +11,9 @@ extern(C++) interface OnlineEventsInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineEventsInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineEventsInterface")()); }
 	private static __gshared OnlineEventsInterface mDefaultProperties;
-	@property final static OnlineEventsInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineEventsInterface)("OnlineEventsInterface Engine.Default__OnlineEventsInterface")); }
+	@property final static OnlineEventsInterface DefaultProperties() { mixin(MGDPC!(OnlineEventsInterface, "OnlineEventsInterface Engine.Default__OnlineEventsInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,9 +24,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UploadPlayerData() { return mUploadPlayerData ? mUploadPlayerData : (mUploadPlayerData = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineEventsInterface.UploadPlayerData")); }
-			ScriptFunction UploadGameplayEventsData() { return mUploadGameplayEventsData ? mUploadGameplayEventsData : (mUploadGameplayEventsData = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineEventsInterface.UploadGameplayEventsData")); }
-			ScriptFunction UpdatePlaylistPopulation() { return mUpdatePlaylistPopulation ? mUpdatePlaylistPopulation : (mUpdatePlaylistPopulation = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineEventsInterface.UpdatePlaylistPopulation")); }
+			ScriptFunction UploadPlayerData() { mixin(MGF!("mUploadPlayerData", "Function Engine.OnlineEventsInterface.UploadPlayerData")()); }
+			ScriptFunction UploadGameplayEventsData() { mixin(MGF!("mUploadGameplayEventsData", "Function Engine.OnlineEventsInterface.UploadGameplayEventsData")()); }
+			ScriptFunction UpdatePlaylistPopulation() { mixin(MGF!("mUpdatePlaylistPopulation", "Function Engine.OnlineEventsInterface.UpdatePlaylistPopulation")()); }
 		}
 	}
 final:
@@ -40,12 +41,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadPlayerData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ScriptArray!(ubyte)* Payload)
+	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ref const ScriptArray!(ubyte) Payload)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = UniqueId;
-		*cast(ScriptArray!(ubyte)*)&params[8] = *Payload;
+		*cast(ScriptArray!(ubyte)*)&params[8] = Payload;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadGameplayEventsData, params.ptr, cast(void*)0);
 		*Payload = *cast(ScriptArray!(ubyte)*)&params[8];
 		return *cast(bool*)&params[20];

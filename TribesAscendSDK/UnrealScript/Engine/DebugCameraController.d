@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DebugCameraController;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Engine.Player;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface DebugCameraController : PlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DebugCameraController")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DebugCameraController")()); }
 	private static __gshared DebugCameraController mDefaultProperties;
-	@property final static DebugCameraController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DebugCameraController)("DebugCameraController Engine.Default__DebugCameraController")); }
+	@property final static DebugCameraController DefaultProperties() { mixin(MGDPC!(DebugCameraController, "DebugCameraController Engine.Default__DebugCameraController")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,32 +30,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PrimarySelect() { return mPrimarySelect ? mPrimarySelect : (mPrimarySelect = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.PrimarySelect")); }
-			ScriptFunction SecondarySelect() { return mSecondarySelect ? mSecondarySelect : (mSecondarySelect = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.SecondarySelect")); }
-			ScriptFunction Unselect() { return mUnselect ? mUnselect : (mUnselect = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.Unselect")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.PostBeginPlay")); }
-			ScriptFunction OnActivate() { return mOnActivate ? mOnActivate : (mOnActivate = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.OnActivate")); }
-			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.ConsoleCommand")); }
-			ScriptFunction OnDeactivate() { return mOnDeactivate ? mOnDeactivate : (mOnDeactivate = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.OnDeactivate")); }
-			ScriptFunction DisableDebugCamera() { return mDisableDebugCamera ? mDisableDebugCamera : (mDisableDebugCamera = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.DisableDebugCamera")); }
-			ScriptFunction NativeInputKey() { return mNativeInputKey ? mNativeInputKey : (mNativeInputKey = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraController.NativeInputKey")); }
+			ScriptFunction PrimarySelect() { mixin(MGF!("mPrimarySelect", "Function Engine.DebugCameraController.PrimarySelect")()); }
+			ScriptFunction SecondarySelect() { mixin(MGF!("mSecondarySelect", "Function Engine.DebugCameraController.SecondarySelect")()); }
+			ScriptFunction Unselect() { mixin(MGF!("mUnselect", "Function Engine.DebugCameraController.Unselect")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.DebugCameraController.PostBeginPlay")()); }
+			ScriptFunction OnActivate() { mixin(MGF!("mOnActivate", "Function Engine.DebugCameraController.OnActivate")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function Engine.DebugCameraController.ConsoleCommand")()); }
+			ScriptFunction OnDeactivate() { mixin(MGF!("mOnDeactivate", "Function Engine.DebugCameraController.OnDeactivate")()); }
+			ScriptFunction DisableDebugCamera() { mixin(MGF!("mDisableDebugCamera", "Function Engine.DebugCameraController.DisableDebugCamera")()); }
+			ScriptFunction NativeInputKey() { mixin(MGF!("mNativeInputKey", "Function Engine.DebugCameraController.NativeInputKey")()); }
 		}
+	}
+	static struct PlayerWaiting
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.DebugCameraController.PlayerWaiting")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Player OryginalPlayer() { return *cast(Player*)(cast(size_t)cast(void*)this + 1480); }
-			PlayerController OryginalControllerRef() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 1476); }
-			Actor SelectedActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1488); }
-			ScriptName UnselectKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1464); }
-			ScriptName SecondaryKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1456); }
-			ScriptName PrimaryKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1448); }
+			Player OryginalPlayer() { mixin(MGPC!(Player, 1480)()); }
+			PlayerController OryginalControllerRef() { mixin(MGPC!(PlayerController, 1476)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SelectedComponent'!
+			Actor SelectedActor() { mixin(MGPC!(Actor, 1488)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DrawFrustum'!
+			ScriptName UnselectKey() { mixin(MGPC!(ScriptName, 1464)()); }
+			ScriptName SecondaryKey() { mixin(MGPC!(ScriptName, 1456)()); }
+			ScriptName PrimaryKey() { mixin(MGPC!(ScriptName, 1448)()); }
 		}
-		bool bIsFrozenRendering() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x2) != 0; }
-		bool bIsFrozenRendering(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x2; } return val; }
-		bool bShowSelectedInfo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x1) != 0; }
-		bool bShowSelectedInfo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x1; } return val; }
+		bool bIsFrozenRendering() { mixin(MGBPC!(1472, 0x2)()); }
+		bool bIsFrozenRendering(bool val) { mixin(MSBPC!(1472, 0x2)()); }
+		bool bShowSelectedInfo() { mixin(MGBPC!(1472, 0x1)()); }
+		bool bShowSelectedInfo(bool val) { mixin(MSBPC!(1472, 0x1)()); }
 	}
 final:
 	void PrimarySelect(Vector HitLoc, Vector HitNormal, Actor.TraceHitInfo HitInfo)

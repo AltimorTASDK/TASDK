@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTMultiKillMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -13,9 +14,9 @@ extern(C++) interface UTMultiKillMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMultiKillMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMultiKillMessage")()); }
 	private static __gshared UTMultiKillMessage mDefaultProperties;
-	@property final static UTMultiKillMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMultiKillMessage)("UTMultiKillMessage UTGame.Default__UTMultiKillMessage")); }
+	@property final static UTMultiKillMessage DefaultProperties() { mixin(MGDPC!(UTMultiKillMessage, "UTMultiKillMessage UTGame.Default__UTMultiKillMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,18 +30,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMultiKillMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMultiKillMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMultiKillMessage.AnnouncementSound")); }
-			ScriptFunction GetFontSize() { return mGetFontSize ? mGetFontSize : (mGetFontSize = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMultiKillMessage.GetFontSize")); }
-			ScriptFunction ShouldBeRemoved() { return mShouldBeRemoved ? mShouldBeRemoved : (mShouldBeRemoved = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMultiKillMessage.ShouldBeRemoved")); }
-			ScriptFunction AddAnnouncement() { return mAddAnnouncement ? mAddAnnouncement : (mAddAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMultiKillMessage.AddAnnouncement")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTMultiKillMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTMultiKillMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTMultiKillMessage.AnnouncementSound")()); }
+			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function UTGame.UTMultiKillMessage.GetFontSize")()); }
+			ScriptFunction ShouldBeRemoved() { mixin(MGF!("mShouldBeRemoved", "Function UTGame.UTMultiKillMessage.ShouldBeRemoved")()); }
+			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTMultiKillMessage.AddAnnouncement")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave KillSound() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString KillString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundNodeWave KillSound() { mixin(MGPC!(SoundNodeWave, 160)()); }
+		ScriptString KillString() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

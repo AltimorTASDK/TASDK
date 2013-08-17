@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FracturedStaticMesh;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.MaterialInterface;
 import UnrealScript.Engine.StaticMesh;
@@ -9,47 +10,47 @@ extern(C++) interface FracturedStaticMesh : StaticMesh
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedStaticMesh")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FracturedStaticMesh")()); }
 	private static __gshared FracturedStaticMesh mDefaultProperties;
-	@property final static FracturedStaticMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FracturedStaticMesh)("FracturedStaticMesh Engine.Default__FracturedStaticMesh")); }
+	@property final static FracturedStaticMesh DefaultProperties() { mixin(MGDPC!(FracturedStaticMesh, "FracturedStaticMesh Engine.Default__FracturedStaticMesh")()); }
 	@property final
 	{
 		auto ref
 		{
-			ParticleSystem FragmentDestroyEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 436); }
-			ScriptArray!(ParticleSystem) FragmentDestroyEffects() { return *cast(ScriptArray!(ParticleSystem)*)(cast(size_t)cast(void*)this + 440); }
-			float FragmentDestroyEffectScale() { return *cast(float*)(cast(size_t)cast(void*)this + 452); }
-			float FragmentHealthScale() { return *cast(float*)(cast(size_t)cast(void*)this + 456); }
-			float FragmentMinHealth() { return *cast(float*)(cast(size_t)cast(void*)this + 460); }
-			float FragmentMaxHealth() { return *cast(float*)(cast(size_t)cast(void*)this + 464); }
-			StaticMesh SourceCoreMesh() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 376); }
-			float CoreMeshScale() { return *cast(float*)(cast(size_t)cast(void*)this + 380); }
-			float ChunkLinVel() { return *cast(float*)(cast(size_t)cast(void*)this + 472); }
-			float ChunkAngVel() { return *cast(float*)(cast(size_t)cast(void*)this + 476); }
-			float ChunkLinHorizontalScale() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
-			float ExplosionVelScale() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-			float ChanceOfPhysicsChunk() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			float ExplosionChanceOfPhysicsChunk() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-			float NormalPhysicsChunkScaleMin() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
-			float NormalPhysicsChunkScaleMax() { return *cast(float*)(cast(size_t)cast(void*)this + 516); }
-			float ExplosionPhysicsChunkScaleMin() { return *cast(float*)(cast(size_t)cast(void*)this + 520); }
-			float ExplosionPhysicsChunkScaleMax() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			float MinConnectionSupportArea() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			MaterialInterface DynamicOutsideMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 532); }
-			MaterialInterface LoseChunkOutsideMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 536); }
-			int OutsideMaterialIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 540); }
+			ParticleSystem FragmentDestroyEffect() { mixin(MGPC!(ParticleSystem, 436)()); }
+			ScriptArray!(ParticleSystem) FragmentDestroyEffects() { mixin(MGPC!(ScriptArray!(ParticleSystem), 440)()); }
+			float FragmentDestroyEffectScale() { mixin(MGPC!(float, 452)()); }
+			float FragmentHealthScale() { mixin(MGPC!(float, 456)()); }
+			float FragmentMinHealth() { mixin(MGPC!(float, 460)()); }
+			float FragmentMaxHealth() { mixin(MGPC!(float, 464)()); }
+			StaticMesh SourceCoreMesh() { mixin(MGPC!(StaticMesh, 376)()); }
+			float CoreMeshScale() { mixin(MGPC!(float, 380)()); }
+			float ChunkLinVel() { mixin(MGPC!(float, 472)()); }
+			float ChunkAngVel() { mixin(MGPC!(float, 476)()); }
+			float ChunkLinHorizontalScale() { mixin(MGPC!(float, 480)()); }
+			float ExplosionVelScale() { mixin(MGPC!(float, 484)()); }
+			float ChanceOfPhysicsChunk() { mixin(MGPC!(float, 504)()); }
+			float ExplosionChanceOfPhysicsChunk() { mixin(MGPC!(float, 508)()); }
+			float NormalPhysicsChunkScaleMin() { mixin(MGPC!(float, 512)()); }
+			float NormalPhysicsChunkScaleMax() { mixin(MGPC!(float, 516)()); }
+			float ExplosionPhysicsChunkScaleMin() { mixin(MGPC!(float, 520)()); }
+			float ExplosionPhysicsChunkScaleMax() { mixin(MGPC!(float, 524)()); }
+			float MinConnectionSupportArea() { mixin(MGPC!(float, 528)()); }
+			MaterialInterface DynamicOutsideMaterial() { mixin(MGPC!(MaterialInterface, 532)()); }
+			MaterialInterface LoseChunkOutsideMaterial() { mixin(MGPC!(MaterialInterface, 536)()); }
+			int OutsideMaterialIndex() { mixin(MGPC!(int, 540)()); }
 		}
-		bool bUniformFragmentHealth() { return (*cast(uint*)(cast(size_t)cast(void*)this + 468) & 0x1) != 0; }
-		bool bUniformFragmentHealth(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 468) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 468) &= ~0x1; } return val; }
-		bool bSliceUsingCoreCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 432) & 0x1) != 0; }
-		bool bSliceUsingCoreCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 432) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 432) &= ~0x1; } return val; }
-		bool bCompositeChunksExplodeOnImpact() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-		bool bCompositeChunksExplodeOnImpact(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
-		bool bFixIsolatedChunks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 492) & 0x1) != 0; }
-		bool bFixIsolatedChunks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 492) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 492) &= ~0x1; } return val; }
-		bool bAlwaysBreakOffIsolatedIslands() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x1) != 0; }
-		bool bAlwaysBreakOffIsolatedIslands(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x1; } return val; }
-		bool bSpawnPhysicsChunks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x1) != 0; }
-		bool bSpawnPhysicsChunks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x1; } return val; }
+		bool bUniformFragmentHealth() { mixin(MGBPC!(468, 0x1)()); }
+		bool bUniformFragmentHealth(bool val) { mixin(MSBPC!(468, 0x1)()); }
+		bool bSliceUsingCoreCollision() { mixin(MGBPC!(432, 0x1)()); }
+		bool bSliceUsingCoreCollision(bool val) { mixin(MSBPC!(432, 0x1)()); }
+		bool bCompositeChunksExplodeOnImpact() { mixin(MGBPC!(488, 0x1)()); }
+		bool bCompositeChunksExplodeOnImpact(bool val) { mixin(MSBPC!(488, 0x1)()); }
+		bool bFixIsolatedChunks() { mixin(MGBPC!(492, 0x1)()); }
+		bool bFixIsolatedChunks(bool val) { mixin(MSBPC!(492, 0x1)()); }
+		bool bAlwaysBreakOffIsolatedIslands() { mixin(MGBPC!(496, 0x1)()); }
+		bool bAlwaysBreakOffIsolatedIslands(bool val) { mixin(MSBPC!(496, 0x1)()); }
+		bool bSpawnPhysicsChunks() { mixin(MGBPC!(500, 0x1)()); }
+		bool bSpawnPhysicsChunks(bool val) { mixin(MSBPC!(500, 0x1)()); }
 	}
 }

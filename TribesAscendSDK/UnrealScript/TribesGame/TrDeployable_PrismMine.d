@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeployable_PrismMine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.ParticleSystem;
@@ -12,9 +13,9 @@ extern(C++) interface TrDeployable_PrismMine : TrDeployable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_PrismMine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_PrismMine")()); }
 	private static __gshared TrDeployable_PrismMine mDefaultProperties;
-	@property final static TrDeployable_PrismMine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_PrismMine)("TrDeployable_PrismMine TribesGame.Default__TrDeployable_PrismMine")); }
+	@property final static TrDeployable_PrismMine DefaultProperties() { mixin(MGDPC!(TrDeployable_PrismMine, "TrDeployable_PrismMine TribesGame.Default__TrDeployable_PrismMine")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,33 +35,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateTripActor() { return mCreateTripActor ? mCreateTripActor : (mCreateTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.CreateTripActor")); }
-			ScriptFunction DestroyTripActor() { return mDestroyTripActor ? mDestroyTripActor : (mDestroyTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.DestroyTripActor")); }
-			ScriptFunction AddTripActor() { return mAddTripActor ? mAddTripActor : (mAddTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.AddTripActor")); }
-			ScriptFunction RemoveTripActor() { return mRemoveTripActor ? mRemoveTripActor : (mRemoveTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.RemoveTripActor")); }
-			ScriptFunction TripActivated() { return mTripActivated ? mTripActivated : (mTripActivated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.TripActivated")); }
-			ScriptFunction GetParticleSystemName() { return mGetParticleSystemName ? mGetParticleSystemName : (mGetParticleSystemName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.GetParticleSystemName")); }
-			ScriptFunction GetTripSocketPosition() { return mGetTripSocketPosition ? mGetTripSocketPosition : (mGetTripSocketPosition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.GetTripSocketPosition")); }
-			ScriptFunction OnTripAwake() { return mOnTripAwake ? mOnTripAwake : (mOnTripAwake = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.OnTripAwake")); }
-			ScriptFunction OnTripSleep() { return mOnTripSleep ? mOnTripSleep : (mOnTripSleep = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.OnTripSleep")); }
-			ScriptFunction DeployComplete() { return mDeployComplete ? mDeployComplete : (mDeployComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.DeployComplete")); }
-			ScriptFunction NoConnectionExists() { return mNoConnectionExists ? mNoConnectionExists : (mNoConnectionExists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.NoConnectionExists")); }
-			ScriptFunction OnPowerStatusChanged() { return mOnPowerStatusChanged ? mOnPowerStatusChanged : (mOnPowerStatusChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_PrismMine.OnPowerStatusChanged")); }
+			ScriptFunction CreateTripActor() { mixin(MGF!("mCreateTripActor", "Function TribesGame.TrDeployable_PrismMine.CreateTripActor")()); }
+			ScriptFunction DestroyTripActor() { mixin(MGF!("mDestroyTripActor", "Function TribesGame.TrDeployable_PrismMine.DestroyTripActor")()); }
+			ScriptFunction AddTripActor() { mixin(MGF!("mAddTripActor", "Function TribesGame.TrDeployable_PrismMine.AddTripActor")()); }
+			ScriptFunction RemoveTripActor() { mixin(MGF!("mRemoveTripActor", "Function TribesGame.TrDeployable_PrismMine.RemoveTripActor")()); }
+			ScriptFunction TripActivated() { mixin(MGF!("mTripActivated", "Function TribesGame.TrDeployable_PrismMine.TripActivated")()); }
+			ScriptFunction GetParticleSystemName() { mixin(MGF!("mGetParticleSystemName", "Function TribesGame.TrDeployable_PrismMine.GetParticleSystemName")()); }
+			ScriptFunction GetTripSocketPosition() { mixin(MGF!("mGetTripSocketPosition", "Function TribesGame.TrDeployable_PrismMine.GetTripSocketPosition")()); }
+			ScriptFunction OnTripAwake() { mixin(MGF!("mOnTripAwake", "Function TribesGame.TrDeployable_PrismMine.OnTripAwake")()); }
+			ScriptFunction OnTripSleep() { mixin(MGF!("mOnTripSleep", "Function TribesGame.TrDeployable_PrismMine.OnTripSleep")()); }
+			ScriptFunction DeployComplete() { mixin(MGF!("mDeployComplete", "Function TribesGame.TrDeployable_PrismMine.DeployComplete")()); }
+			ScriptFunction NoConnectionExists() { mixin(MGF!("mNoConnectionExists", "Function TribesGame.TrDeployable_PrismMine.NoConnectionExists")()); }
+			ScriptFunction OnPowerStatusChanged() { mixin(MGF!("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_PrismMine.OnPowerStatusChanged")()); }
 		}
+	}
+	static struct BlownUp
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable_PrismMine.BlownUp")()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrTripActor) m_aTripActors() { return *cast(ScriptArray!(TrTripActor)*)(cast(size_t)cast(void*)this + 1528); }
-		SoundCue m_HitSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1576); }
-		SoundCue m_DeactivateSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1572); }
-		SoundCue m_ActivateSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1568); }
-		ParticleSystem m_LaserTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 1564); }
-		int m_DamageAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 1560); }
-		float m_fSleepTimeAfterHit() { return *cast(float*)(cast(size_t)cast(void*)this + 1556); }
-		ScriptClass m_DamageType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1552); }
-		ScriptName m_nSocketTraceName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1544); }
-		float m_fPrismRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 1540); }
-		UObject.Pointer VfTable_IInterface_TrTripNotifier() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 1524); }
+		ScriptArray!(TrTripActor) m_aTripActors() { mixin(MGPC!(ScriptArray!(TrTripActor), 1528)()); }
+		SoundCue m_HitSound() { mixin(MGPC!(SoundCue, 1576)()); }
+		SoundCue m_DeactivateSound() { mixin(MGPC!(SoundCue, 1572)()); }
+		SoundCue m_ActivateSound() { mixin(MGPC!(SoundCue, 1568)()); }
+		ParticleSystem m_LaserTemplate() { mixin(MGPC!(ParticleSystem, 1564)()); }
+		int m_DamageAmount() { mixin(MGPC!(int, 1560)()); }
+		float m_fSleepTimeAfterHit() { mixin(MGPC!(float, 1556)()); }
+		ScriptClass m_DamageType() { mixin(MGPC!(ScriptClass, 1552)()); }
+		ScriptName m_nSocketTraceName() { mixin(MGPC!(ScriptName, 1544)()); }
+		float m_fPrismRadius() { mixin(MGPC!(float, 1540)()); }
+		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!(UObject.Pointer, 1524)()); }
 	}
 final:
 	void CreateTripActor(TrDeployable_PrismMine Right, Vector LeftLocation, Vector RightLocation)
@@ -109,12 +115,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetParticleSystemName, params.ptr, cast(void*)0);
 		return *cast(ParticleSystem*)params.ptr;
 	}
-	bool GetTripSocketPosition(bool bIsLeft, Vector* SocketPosition)
+	bool GetTripSocketPosition(bool bIsLeft, ref Vector SocketPosition)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsLeft;
-		*cast(Vector*)&params[4] = *SocketPosition;
+		*cast(Vector*)&params[4] = SocketPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTripSocketPosition, params.ptr, cast(void*)0);
 		*SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];

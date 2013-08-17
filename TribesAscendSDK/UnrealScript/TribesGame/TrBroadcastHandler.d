@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrBroadcastHandler;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrVGSCommandList;
 import UnrealScript.Engine.BroadcastHandler;
 import UnrealScript.TribesGame.TrSpottedTarget;
@@ -11,9 +12,9 @@ extern(C++) interface TrBroadcastHandler : BroadcastHandler
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrBroadcastHandler")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrBroadcastHandler")()); }
 	private static __gshared TrBroadcastHandler mDefaultProperties;
-	@property final static TrBroadcastHandler DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrBroadcastHandler)("TrBroadcastHandler TribesGame.Default__TrBroadcastHandler")); }
+	@property final static TrBroadcastHandler DefaultProperties() { mixin(MGDPC!(TrBroadcastHandler, "TrBroadcastHandler TribesGame.Default__TrBroadcastHandler")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,17 +27,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TeamBroadcastVGSCommand() { return mTeamBroadcastVGSCommand ? mTeamBroadcastVGSCommand : (mTeamBroadcastVGSCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBroadcastHandler.TeamBroadcastVGSCommand")); }
-			ScriptFunction GlobalBroadcastVGSCommand() { return mGlobalBroadcastVGSCommand ? mGlobalBroadcastVGSCommand : (mGlobalBroadcastVGSCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBroadcastHandler.GlobalBroadcastVGSCommand")); }
-			ScriptFunction TeamBroadcastVGSContextCommand() { return mTeamBroadcastVGSContextCommand ? mTeamBroadcastVGSContextCommand : (mTeamBroadcastVGSContextCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBroadcastHandler.TeamBroadcastVGSContextCommand")); }
-			ScriptFunction OnActorSpotted() { return mOnActorSpotted ? mOnActorSpotted : (mOnActorSpotted = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBroadcastHandler.OnActorSpotted")); }
-			ScriptFunction UpdateSpottedActorsTimer() { return mUpdateSpottedActorsTimer ? mUpdateSpottedActorsTimer : (mUpdateSpottedActorsTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBroadcastHandler.UpdateSpottedActorsTimer")); }
+			ScriptFunction TeamBroadcastVGSCommand() { mixin(MGF!("mTeamBroadcastVGSCommand", "Function TribesGame.TrBroadcastHandler.TeamBroadcastVGSCommand")()); }
+			ScriptFunction GlobalBroadcastVGSCommand() { mixin(MGF!("mGlobalBroadcastVGSCommand", "Function TribesGame.TrBroadcastHandler.GlobalBroadcastVGSCommand")()); }
+			ScriptFunction TeamBroadcastVGSContextCommand() { mixin(MGF!("mTeamBroadcastVGSContextCommand", "Function TribesGame.TrBroadcastHandler.TeamBroadcastVGSContextCommand")()); }
+			ScriptFunction OnActorSpotted() { mixin(MGF!("mOnActorSpotted", "Function TribesGame.TrBroadcastHandler.OnActorSpotted")()); }
+			ScriptFunction UpdateSpottedActorsTimer() { mixin(MGF!("mUpdateSpottedActorsTimer", "Function TribesGame.TrBroadcastHandler.UpdateSpottedActorsTimer")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrSpottedTarget) m_SpottedTargets() { return *cast(ScriptArray!(TrSpottedTarget)*)(cast(size_t)cast(void*)this + 484); }
-		float m_fSpottedActorsUpdateFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
+		ScriptArray!(TrSpottedTarget) m_SpottedTargets() { mixin(MGPC!(ScriptArray!(TrSpottedTarget), 484)()); }
+		float m_fSpottedActorsUpdateFrequency() { mixin(MGPC!(float, 496)()); }
 	}
 final:
 	void TeamBroadcastVGSCommand(PlayerReplicationInfo SenderPRI, TrVGSCommandList.VGSCommandType VGSCommandIndex)

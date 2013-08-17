@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProjectile;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Controller;
@@ -14,9 +15,9 @@ extern(C++) interface TrProjectile : UTProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProjectile")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProjectile")()); }
 	private static __gshared TrProjectile mDefaultProperties;
-	@property final static TrProjectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProjectile)("TrProjectile TribesGame.Default__TrProjectile")); }
+	@property final static TrProjectile DefaultProperties() { mixin(MGDPC!(TrProjectile, "TrProjectile TribesGame.Default__TrProjectile")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -50,83 +51,90 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsBlockedByBlocker() { return mIsBlockedByBlocker ? mIsBlockedByBlocker : (mIsBlockedByBlocker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.IsBlockedByBlocker")); }
-			ScriptFunction OrientToSlope() { return mOrientToSlope ? mOrientToSlope : (mOrientToSlope = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.OrientToSlope")); }
-			ScriptFunction CalculateHitLocation() { return mCalculateHitLocation ? mCalculateHitLocation : (mCalculateHitLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.CalculateHitLocation")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ReplicatedEvent")); }
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.PreBeginPlay")); }
-			ScriptFunction ExplodeFromTimeLimit() { return mExplodeFromTimeLimit ? mExplodeFromTimeLimit : (mExplodeFromTimeLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ExplodeFromTimeLimit")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.PostBeginPlay")); }
-			ScriptFunction ClientReceivedProjectileToTether() { return mClientReceivedProjectileToTether ? mClientReceivedProjectileToTether : (mClientReceivedProjectileToTether = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ClientReceivedProjectileToTether")); }
-			ScriptFunction CreateProjectileLight() { return mCreateProjectileLight ? mCreateProjectileLight : (mCreateProjectileLight = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.CreateProjectileLight")); }
-			ScriptFunction DetonateObsolete() { return mDetonateObsolete ? mDetonateObsolete : (mDetonateObsolete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.DetonateObsolete")); }
-			ScriptFunction DestroyOldestOverLimit() { return mDestroyOldestOverLimit ? mDestroyOldestOverLimit : (mDestroyOldestOverLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.DestroyOldestOverLimit")); }
-			ScriptFunction GetMaxDeployedLimit() { return mGetMaxDeployedLimit ? mGetMaxDeployedLimit : (mGetMaxDeployedLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.GetMaxDeployedLimit")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Init")); }
-			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.InitProjectile")); }
-			ScriptFunction ApplyInheritance() { return mApplyInheritance ? mApplyInheritance : (mApplyInheritance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ApplyInheritance")); }
-			ScriptFunction ClientCheckFastSpawnExplode() { return mClientCheckFastSpawnExplode ? mClientCheckFastSpawnExplode : (mClientCheckFastSpawnExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ClientCheckFastSpawnExplode")); }
-			ScriptFunction SpawnExplosionEffects() { return mSpawnExplosionEffects ? mSpawnExplosionEffects : (mSpawnExplosionEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.SpawnExplosionEffects")); }
-			ScriptFunction GetExplosionSound() { return mGetExplosionSound ? mGetExplosionSound : (mGetExplosionSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.GetExplosionSound")); }
-			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Explode")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ShutDown")); }
-			ScriptFunction Bounce() { return mBounce ? mBounce : (mBounce = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Bounce")); }
-			ScriptFunction ProjectileHurtRadius() { return mProjectileHurtRadius ? mProjectileHurtRadius : (mProjectileHurtRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ProjectileHurtRadius")); }
-			ScriptFunction HurtRadius_Internal() { return mHurtRadius_Internal ? mHurtRadius_Internal : (mHurtRadius_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.HurtRadius_Internal")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.HitWall")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Touch")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ProcessTouch")); }
+			ScriptFunction IsBlockedByBlocker() { mixin(MGF!("mIsBlockedByBlocker", "Function TribesGame.TrProjectile.IsBlockedByBlocker")()); }
+			ScriptFunction OrientToSlope() { mixin(MGF!("mOrientToSlope", "Function TribesGame.TrProjectile.OrientToSlope")()); }
+			ScriptFunction CalculateHitLocation() { mixin(MGF!("mCalculateHitLocation", "Function TribesGame.TrProjectile.CalculateHitLocation")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrProjectile.ReplicatedEvent")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function TribesGame.TrProjectile.PreBeginPlay")()); }
+			ScriptFunction ExplodeFromTimeLimit() { mixin(MGF!("mExplodeFromTimeLimit", "Function TribesGame.TrProjectile.ExplodeFromTimeLimit")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProjectile.PostBeginPlay")()); }
+			ScriptFunction ClientReceivedProjectileToTether() { mixin(MGF!("mClientReceivedProjectileToTether", "Function TribesGame.TrProjectile.ClientReceivedProjectileToTether")()); }
+			ScriptFunction CreateProjectileLight() { mixin(MGF!("mCreateProjectileLight", "Function TribesGame.TrProjectile.CreateProjectileLight")()); }
+			ScriptFunction DetonateObsolete() { mixin(MGF!("mDetonateObsolete", "Function TribesGame.TrProjectile.DetonateObsolete")()); }
+			ScriptFunction DestroyOldestOverLimit() { mixin(MGF!("mDestroyOldestOverLimit", "Function TribesGame.TrProjectile.DestroyOldestOverLimit")()); }
+			ScriptFunction GetMaxDeployedLimit() { mixin(MGF!("mGetMaxDeployedLimit", "Function TribesGame.TrProjectile.GetMaxDeployedLimit")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrProjectile.Init")()); }
+			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProjectile.InitProjectile")()); }
+			ScriptFunction ApplyInheritance() { mixin(MGF!("mApplyInheritance", "Function TribesGame.TrProjectile.ApplyInheritance")()); }
+			ScriptFunction ClientCheckFastSpawnExplode() { mixin(MGF!("mClientCheckFastSpawnExplode", "Function TribesGame.TrProjectile.ClientCheckFastSpawnExplode")()); }
+			ScriptFunction SpawnExplosionEffects() { mixin(MGF!("mSpawnExplosionEffects", "Function TribesGame.TrProjectile.SpawnExplosionEffects")()); }
+			ScriptFunction GetExplosionSound() { mixin(MGF!("mGetExplosionSound", "Function TribesGame.TrProjectile.GetExplosionSound")()); }
+			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProjectile.Explode")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function TribesGame.TrProjectile.ShutDown")()); }
+			ScriptFunction Bounce() { mixin(MGF!("mBounce", "Function TribesGame.TrProjectile.Bounce")()); }
+			ScriptFunction ProjectileHurtRadius() { mixin(MGF!("mProjectileHurtRadius", "Function TribesGame.TrProjectile.ProjectileHurtRadius")()); }
+			ScriptFunction HurtRadius_Internal() { mixin(MGF!("mHurtRadius_Internal", "Function TribesGame.TrProjectile.HurtRadius_Internal")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProjectile.HitWall")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrProjectile.Touch")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProjectile.ProcessTouch")()); }
 		}
+	}
+	static struct WaitingForVelocity
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrProjectile.WaitingForVelocity")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrObject.TR_EQUIP_POINT m_SpawnedEquipPoint() { return *cast(TrObject.TR_EQUIP_POINT*)(cast(size_t)cast(void*)this + 756); }
-			int r_nTetherId() { return *cast(int*)(cast(size_t)cast(void*)this + 736); }
-			Vector r_vSpawnLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 776); }
-			float m_fInstigatorExtraZMomentum() { return *cast(float*)(cast(size_t)cast(void*)this + 732); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { return *cast(ScriptArray!(UDKPawn.MaterialImpactEffect)*)(cast(size_t)cast(void*)this + 788); }
-			TrDevice SpawnedFromDevice() { return *cast(TrDevice*)(cast(size_t)cast(void*)this + 812); }
-			float m_fAlwaysRelevantDistanceSquared() { return *cast(float*)(cast(size_t)cast(void*)this + 808); }
-			float m_fMinLifespan() { return *cast(float*)(cast(size_t)cast(void*)this + 804); }
-			float m_fMaxLifespan() { return *cast(float*)(cast(size_t)cast(void*)this + 800); }
-			Vector m_vAccelDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 764); }
-			float m_fClientSimulatedSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 760); }
-			float m_fTweenSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 752); }
-			float m_fCurrentTetherTweenAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 748); }
-			TrProjectile c_ChildTetheredProjectile() { return *cast(TrProjectile*)(cast(size_t)cast(void*)this + 744); }
-			TrProjectile c_ParentTetheredProjectile() { return *cast(TrProjectile*)(cast(size_t)cast(void*)this + 740); }
-			float m_fInstigatorMomentumTransferMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 728); }
-			float m_fAmbientSoundFadeOut() { return *cast(float*)(cast(size_t)cast(void*)this + 724); }
-			float m_fAmbientSoundFadeIn() { return *cast(float*)(cast(size_t)cast(void*)this + 720); }
-			float m_fDirectHitMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
-			float m_fBounceDampingPercent() { return *cast(float*)(cast(size_t)cast(void*)this + 712); }
-			int m_nPerPlayerMaxDeployed() { return *cast(int*)(cast(size_t)cast(void*)this + 708); }
-			float m_fMaxProjInheritPct() { return *cast(float*)(cast(size_t)cast(void*)this + 700); }
-			float m_fProjInheritVelocityPctZ() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-			float m_fProjInheritVelocityPct() { return *cast(float*)(cast(size_t)cast(void*)this + 692); }
-			float m_fXYDamageRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
-			ScriptClass m_SpawnedDeployableClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 680); }
+			TrObject.TR_EQUIP_POINT m_SpawnedEquipPoint() { mixin(MGPC!(TrObject.TR_EQUIP_POINT, 756)()); }
+			int r_nTetherId() { mixin(MGPC!(int, 736)()); }
+			Vector r_vSpawnLocation() { mixin(MGPC!(Vector, 776)()); }
+			float m_fInstigatorExtraZMomentum() { mixin(MGPC!(float, 732)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ProjMesh'!
+			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 788)()); }
+			TrDevice SpawnedFromDevice() { mixin(MGPC!(TrDevice, 812)()); }
+			float m_fAlwaysRelevantDistanceSquared() { mixin(MGPC!(float, 808)()); }
+			float m_fMinLifespan() { mixin(MGPC!(float, 804)()); }
+			float m_fMaxLifespan() { mixin(MGPC!(float, 800)()); }
+			Vector m_vAccelDirection() { mixin(MGPC!(Vector, 764)()); }
+			float m_fClientSimulatedSpeed() { mixin(MGPC!(float, 760)()); }
+			float m_fTweenSpeed() { mixin(MGPC!(float, 752)()); }
+			float m_fCurrentTetherTweenAmount() { mixin(MGPC!(float, 748)()); }
+			TrProjectile c_ChildTetheredProjectile() { mixin(MGPC!(TrProjectile, 744)()); }
+			TrProjectile c_ParentTetheredProjectile() { mixin(MGPC!(TrProjectile, 740)()); }
+			float m_fInstigatorMomentumTransferMultiplier() { mixin(MGPC!(float, 728)()); }
+			float m_fAmbientSoundFadeOut() { mixin(MGPC!(float, 724)()); }
+			float m_fAmbientSoundFadeIn() { mixin(MGPC!(float, 720)()); }
+			float m_fDirectHitMultiplier() { mixin(MGPC!(float, 716)()); }
+			float m_fBounceDampingPercent() { mixin(MGPC!(float, 712)()); }
+			int m_nPerPlayerMaxDeployed() { mixin(MGPC!(int, 708)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ProjLightEnvironment'!
+			float m_fMaxProjInheritPct() { mixin(MGPC!(float, 700)()); }
+			float m_fProjInheritVelocityPctZ() { mixin(MGPC!(float, 696)()); }
+			float m_fProjInheritVelocityPct() { mixin(MGPC!(float, 692)()); }
+			float m_fXYDamageRadius() { mixin(MGPC!(float, 688)()); }
+			ScriptClass m_SpawnedDeployableClass() { mixin(MGPC!(ScriptClass, 680)()); }
 		}
-		bool m_bTether() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x40) != 0; }
-		bool m_bTether(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x40; } return val; }
-		bool m_bSimulateAutonomousProjectiles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x80) != 0; }
-		bool m_bSimulateAutonomousProjectiles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x80; } return val; }
-		bool m_bIsBullet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x100) != 0; }
-		bool m_bIsBullet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x100; } return val; }
-		bool m_bAuthoritativeExploding() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x20) != 0; }
-		bool m_bAuthoritativeExploding(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x20; } return val; }
-		bool m_bOrientToWall() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x10) != 0; }
-		bool m_bOrientToWall(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x10; } return val; }
-		bool m_bHasBounced() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x8) != 0; }
-		bool m_bHasBounced(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x8; } return val; }
-		bool m_bFastProjectile() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x4) != 0; }
-		bool m_bFastProjectile(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x4; } return val; }
-		bool m_bDebugProjectileRadius() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x2) != 0; }
-		bool m_bDebugProjectileRadius(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x2; } return val; }
-		bool m_bLimitXYDamageCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 684) & 0x1) != 0; }
-		bool m_bLimitXYDamageCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 684) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 684) &= ~0x1; } return val; }
+		bool m_bTether() { mixin(MGBPC!(684, 0x40)()); }
+		bool m_bTether(bool val) { mixin(MSBPC!(684, 0x40)()); }
+		bool m_bSimulateAutonomousProjectiles() { mixin(MGBPC!(684, 0x80)()); }
+		bool m_bSimulateAutonomousProjectiles(bool val) { mixin(MSBPC!(684, 0x80)()); }
+		bool m_bIsBullet() { mixin(MGBPC!(684, 0x100)()); }
+		bool m_bIsBullet(bool val) { mixin(MSBPC!(684, 0x100)()); }
+		bool m_bAuthoritativeExploding() { mixin(MGBPC!(684, 0x20)()); }
+		bool m_bAuthoritativeExploding(bool val) { mixin(MSBPC!(684, 0x20)()); }
+		bool m_bOrientToWall() { mixin(MGBPC!(684, 0x10)()); }
+		bool m_bOrientToWall(bool val) { mixin(MSBPC!(684, 0x10)()); }
+		bool m_bHasBounced() { mixin(MGBPC!(684, 0x8)()); }
+		bool m_bHasBounced(bool val) { mixin(MSBPC!(684, 0x8)()); }
+		bool m_bFastProjectile() { mixin(MGBPC!(684, 0x4)()); }
+		bool m_bFastProjectile(bool val) { mixin(MSBPC!(684, 0x4)()); }
+		bool m_bDebugProjectileRadius() { mixin(MGBPC!(684, 0x2)()); }
+		bool m_bDebugProjectileRadius(bool val) { mixin(MSBPC!(684, 0x2)()); }
+		bool m_bLimitXYDamageCheck() { mixin(MGBPC!(684, 0x1)()); }
+		bool m_bLimitXYDamageCheck(bool val) { mixin(MSBPC!(684, 0x1)()); }
 	}
 final:
 	bool IsBlockedByBlocker(Actor DamageInstigator, Actor Target, Actor OriginActor, bool CheckWorldGeometry, Vector AltOriginLocation)

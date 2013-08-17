@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineGameSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.Settings;
 
@@ -8,50 +9,50 @@ extern(C++) interface OnlineGameSettings : Settings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineGameSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineGameSettings")()); }
 	private static __gshared OnlineGameSettings mDefaultProperties;
-	@property final static OnlineGameSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineGameSettings)("OnlineGameSettings Engine.Default__OnlineGameSettings")); }
+	@property final static OnlineGameSettings DefaultProperties() { mixin(MGDPC!(OnlineGameSettings, "OnlineGameSettings Engine.Default__OnlineGameSettings")()); }
 	@property final
 	{
 		auto ref
 		{
-			int NumOpenPrivateConnections() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
-			int NumOpenPublicConnections() { return *cast(int*)(cast(size_t)cast(void*)this + 116); }
-			OnlineSubsystem.EOnlineGameState GameState() { return *cast(OnlineSubsystem.EOnlineGameState*)(cast(size_t)cast(void*)this + 164); }
-			OnlineSubsystem.UniqueNetId OwningPlayerId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)cast(void*)this + 148); }
-			int NumPublicConnections() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
-			int BuildUniqueId() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
-			float MatchQuality() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			int PingInMs() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			ScriptString OwningPlayerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-			QWord ServerNonce() { return *cast(QWord*)(cast(size_t)cast(void*)this + 124); }
-			int NumPrivateConnections() { return *cast(int*)(cast(size_t)cast(void*)this + 112); }
+			int NumOpenPrivateConnections() { mixin(MGPC!(int, 120)()); }
+			int NumOpenPublicConnections() { mixin(MGPC!(int, 116)()); }
+			OnlineSubsystem.EOnlineGameState GameState() { mixin(MGPC!(OnlineSubsystem.EOnlineGameState, 164)()); }
+			OnlineSubsystem.UniqueNetId OwningPlayerId() { mixin(MGPC!(OnlineSubsystem.UniqueNetId, 148)()); }
+			int NumPublicConnections() { mixin(MGPC!(int, 108)()); }
+			int BuildUniqueId() { mixin(MGPC!(int, 168)()); }
+			float MatchQuality() { mixin(MGPC!(float, 160)()); }
+			int PingInMs() { mixin(MGPC!(int, 156)()); }
+			ScriptString OwningPlayerName() { mixin(MGPC!(ScriptString, 136)()); }
+			QWord ServerNonce() { mixin(MGPC!(QWord, 124)()); }
+			int NumPrivateConnections() { mixin(MGPC!(int, 112)()); }
 		}
-		bool bUsesArbitration() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x100) != 0; }
-		bool bUsesArbitration(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x100; } return val; }
-		bool bIsLanMatch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x2) != 0; }
-		bool bIsLanMatch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x2; } return val; }
-		bool bUsesStats() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x4) != 0; }
-		bool bUsesStats(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x4; } return val; }
-		bool bHasSkillUpdateInProgress() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x1000) != 0; }
-		bool bHasSkillUpdateInProgress(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x1000; } return val; }
-		bool bIsDedicated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x800) != 0; }
-		bool bIsDedicated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x800; } return val; }
-		bool bWasFromInvite() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x400) != 0; }
-		bool bWasFromInvite(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x400; } return val; }
-		bool bAntiCheatProtected() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x200) != 0; }
-		bool bAntiCheatProtected(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x200; } return val; }
-		bool bAllowJoinViaPresenceFriendsOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x80) != 0; }
-		bool bAllowJoinViaPresenceFriendsOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x80; } return val; }
-		bool bAllowJoinViaPresence() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x40) != 0; }
-		bool bAllowJoinViaPresence(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x40; } return val; }
-		bool bUsesPresence() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x20) != 0; }
-		bool bUsesPresence(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x20; } return val; }
-		bool bAllowInvites() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x10) != 0; }
-		bool bAllowInvites(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x10; } return val; }
-		bool bAllowJoinInProgress() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x8) != 0; }
-		bool bAllowJoinInProgress(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x8; } return val; }
-		bool bShouldAdvertise() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x1) != 0; }
-		bool bShouldAdvertise(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x1; } return val; }
+		bool bUsesArbitration() { mixin(MGBPC!(132, 0x100)()); }
+		bool bUsesArbitration(bool val) { mixin(MSBPC!(132, 0x100)()); }
+		bool bIsLanMatch() { mixin(MGBPC!(132, 0x2)()); }
+		bool bIsLanMatch(bool val) { mixin(MSBPC!(132, 0x2)()); }
+		bool bUsesStats() { mixin(MGBPC!(132, 0x4)()); }
+		bool bUsesStats(bool val) { mixin(MSBPC!(132, 0x4)()); }
+		bool bHasSkillUpdateInProgress() { mixin(MGBPC!(132, 0x1000)()); }
+		bool bHasSkillUpdateInProgress(bool val) { mixin(MSBPC!(132, 0x1000)()); }
+		bool bIsDedicated() { mixin(MGBPC!(132, 0x800)()); }
+		bool bIsDedicated(bool val) { mixin(MSBPC!(132, 0x800)()); }
+		bool bWasFromInvite() { mixin(MGBPC!(132, 0x400)()); }
+		bool bWasFromInvite(bool val) { mixin(MSBPC!(132, 0x400)()); }
+		bool bAntiCheatProtected() { mixin(MGBPC!(132, 0x200)()); }
+		bool bAntiCheatProtected(bool val) { mixin(MSBPC!(132, 0x200)()); }
+		bool bAllowJoinViaPresenceFriendsOnly() { mixin(MGBPC!(132, 0x80)()); }
+		bool bAllowJoinViaPresenceFriendsOnly(bool val) { mixin(MSBPC!(132, 0x80)()); }
+		bool bAllowJoinViaPresence() { mixin(MGBPC!(132, 0x40)()); }
+		bool bAllowJoinViaPresence(bool val) { mixin(MSBPC!(132, 0x40)()); }
+		bool bUsesPresence() { mixin(MGBPC!(132, 0x20)()); }
+		bool bUsesPresence(bool val) { mixin(MSBPC!(132, 0x20)()); }
+		bool bAllowInvites() { mixin(MGBPC!(132, 0x10)()); }
+		bool bAllowInvites(bool val) { mixin(MSBPC!(132, 0x10)()); }
+		bool bAllowJoinInProgress() { mixin(MGBPC!(132, 0x8)()); }
+		bool bAllowJoinInProgress(bool val) { mixin(MSBPC!(132, 0x8)()); }
+		bool bShouldAdvertise() { mixin(MGBPC!(132, 0x1)()); }
+		bool bShouldAdvertise(bool val) { mixin(MSBPC!(132, 0x1)()); }
 	}
 }

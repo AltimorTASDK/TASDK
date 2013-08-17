@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrStormCarrierShield;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.DynamicSMActor;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrStormCore;
@@ -9,9 +10,9 @@ extern(C++) interface TrStormCarrierShield : DynamicSMActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStormCarrierShield")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStormCarrierShield")()); }
 	private static __gshared TrStormCarrierShield mDefaultProperties;
-	@property final static TrStormCarrierShield DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStormCarrierShield)("TrStormCarrierShield TribesGame.Default__TrStormCarrierShield")); }
+	@property final static TrStormCarrierShield DefaultProperties() { mixin(MGDPC!(TrStormCarrierShield, "TrStormCarrierShield TribesGame.Default__TrStormCarrierShield")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +22,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnShieldsDestroyed() { return mOnShieldsDestroyed ? mOnShieldsDestroyed : (mOnShieldsDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormCarrierShield.OnShieldsDestroyed")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormCarrierShield.Touch")); }
+			ScriptFunction OnShieldsDestroyed() { mixin(MGF!("mOnShieldsDestroyed", "Function TribesGame.TrStormCarrierShield.OnShieldsDestroyed")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrStormCarrierShield.Touch")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref TrStormCore m_AssociatedCarrierCore() { return *cast(TrStormCore*)(cast(size_t)cast(void*)this + 536); }
-		bool m_bAreShieldsUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool m_bAreShieldsUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		@property final auto ref TrStormCore m_AssociatedCarrierCore() { mixin(MGPC!(TrStormCore, 536)()); }
+		bool m_bAreShieldsUp() { mixin(MGBPC!(532, 0x1)()); }
+		bool m_bAreShieldsUp(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	void OnShieldsDestroyed()

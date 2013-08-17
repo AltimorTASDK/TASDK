@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdBehavior_WaitForGroup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.GameFramework.GameCrowdAgentBehavior;
 
@@ -8,9 +9,9 @@ extern(C++) interface GameCrowdBehavior_WaitForGroup : GameCrowdAgentBehavior
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdBehavior_WaitForGroup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdBehavior_WaitForGroup")()); }
 	private static __gshared GameCrowdBehavior_WaitForGroup mDefaultProperties;
-	@property final static GameCrowdBehavior_WaitForGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdBehavior_WaitForGroup)("GameCrowdBehavior_WaitForGroup GameFramework.Default__GameCrowdBehavior_WaitForGroup")); }
+	@property final static GameCrowdBehavior_WaitForGroup DefaultProperties() { mixin(MGDPC!(GameCrowdBehavior_WaitForGroup, "GameCrowdBehavior_WaitForGroup GameFramework.Default__GameCrowdBehavior_WaitForGroup")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitBehavior() { return mInitBehavior ? mInitBehavior : (mInitBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_WaitForGroup.InitBehavior")); }
-			ScriptFunction GetBehaviorString() { return mGetBehaviorString ? mGetBehaviorString : (mGetBehaviorString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_WaitForGroup.GetBehaviorString")); }
-			ScriptFunction ShouldEndIdle() { return mShouldEndIdle ? mShouldEndIdle : (mShouldEndIdle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_WaitForGroup.ShouldEndIdle")); }
-			ScriptFunction StopBehavior() { return mStopBehavior ? mStopBehavior : (mStopBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_WaitForGroup.StopBehavior")); }
+			ScriptFunction InitBehavior() { mixin(MGF!("mInitBehavior", "Function GameFramework.GameCrowdBehavior_WaitForGroup.InitBehavior")()); }
+			ScriptFunction GetBehaviorString() { mixin(MGF!("mGetBehaviorString", "Function GameFramework.GameCrowdBehavior_WaitForGroup.GetBehaviorString")()); }
+			ScriptFunction ShouldEndIdle() { mixin(MGF!("mShouldEndIdle", "Function GameFramework.GameCrowdBehavior_WaitForGroup.ShouldEndIdle")()); }
+			ScriptFunction StopBehavior() { mixin(MGF!("mStopBehavior", "Function GameFramework.GameCrowdBehavior_WaitForGroup.StopBehavior")()); }
 		}
 	}
 final:

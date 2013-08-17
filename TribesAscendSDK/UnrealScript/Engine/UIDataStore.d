@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataStore;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Engine.DataStoreClient;
 import UnrealScript.Engine.UIDataProvider;
@@ -9,9 +10,9 @@ extern(C++) interface UIDataStore : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore")()); }
 	private static __gshared UIDataStore mDefaultProperties;
-	@property final static UIDataStore DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore)("UIDataStore Engine.Default__UIDataStore")); }
+	@property final static UIDataStore DefaultProperties() { mixin(MGDPC!(UIDataStore, "UIDataStore Engine.Default__UIDataStore")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,25 +29,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction NotifyGameSessionEnded() { return mNotifyGameSessionEnded ? mNotifyGameSessionEnded : (mNotifyGameSessionEnded = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.NotifyGameSessionEnded")); }
-			ScriptFunction OnDataStoreValueUpdated() { return mOnDataStoreValueUpdated ? mOnDataStoreValueUpdated : (mOnDataStoreValueUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.OnDataStoreValueUpdated")); }
-			ScriptFunction Registered() { return mRegistered ? mRegistered : (mRegistered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.Registered")); }
-			ScriptFunction Unregistered() { return mUnregistered ? mUnregistered : (mUnregistered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.Unregistered")); }
-			ScriptFunction SubscriberAttached() { return mSubscriberAttached ? mSubscriberAttached : (mSubscriberAttached = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.SubscriberAttached")); }
-			ScriptFunction SubscriberDetached() { return mSubscriberDetached ? mSubscriberDetached : (mSubscriberDetached = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.SubscriberDetached")); }
-			ScriptFunction RefreshSubscribers() { return mRefreshSubscribers ? mRefreshSubscribers : (mRefreshSubscribers = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.RefreshSubscribers")); }
-			ScriptFunction OnCommit() { return mOnCommit ? mOnCommit : (mOnCommit = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.OnCommit")); }
-			ScriptFunction GetDataStoreClient() { return mGetDataStoreClient ? mGetDataStoreClient : (mGetDataStoreClient = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore.GetDataStoreClient")); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function Engine.UIDataStore.NotifyGameSessionEnded")()); }
+			ScriptFunction OnDataStoreValueUpdated() { mixin(MGF!("mOnDataStoreValueUpdated", "Function Engine.UIDataStore.OnDataStoreValueUpdated")()); }
+			ScriptFunction Registered() { mixin(MGF!("mRegistered", "Function Engine.UIDataStore.Registered")()); }
+			ScriptFunction Unregistered() { mixin(MGF!("mUnregistered", "Function Engine.UIDataStore.Unregistered")()); }
+			ScriptFunction SubscriberAttached() { mixin(MGF!("mSubscriberAttached", "Function Engine.UIDataStore.SubscriberAttached")()); }
+			ScriptFunction SubscriberDetached() { mixin(MGF!("mSubscriberDetached", "Function Engine.UIDataStore.SubscriberDetached")()); }
+			ScriptFunction RefreshSubscribers() { mixin(MGF!("mRefreshSubscribers", "Function Engine.UIDataStore.RefreshSubscribers")()); }
+			ScriptFunction OnCommit() { mixin(MGF!("mOnCommit", "Function Engine.UIDataStore.OnCommit")()); }
+			ScriptFunction GetDataStoreClient() { mixin(MGF!("mGetDataStoreClient", "Function Engine.UIDataStore.GetDataStoreClient")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 88); }
+		ScriptName Tag() { mixin(MGPC!(ScriptName, 88)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) RefreshSubscriberNotifies() { return *cast(ScriptArray!(
+void*) RefreshSubscriberNotifies() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 96); }
+void*), 96)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDataStoreValueUpdated__Delegate'!
 	}
 final:
 	bool NotifyGameSessionEnded()

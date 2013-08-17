@@ -1,19 +1,20 @@
 module UnrealScript.TribesGame.TrEmitCameraEffect_Rain;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrEmitCameraEffect_Speed;
 
 extern(C++) interface TrEmitCameraEffect_Rain : TrEmitCameraEffect_Speed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEmitCameraEffect_Rain")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEmitCameraEffect_Rain")()); }
 	private static __gshared TrEmitCameraEffect_Rain mDefaultProperties;
-	@property final static TrEmitCameraEffect_Rain DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEmitCameraEffect_Rain)("TrEmitCameraEffect_Rain TribesGame.Default__TrEmitCameraEffect_Rain")); }
+	@property final static TrEmitCameraEffect_Rain DefaultProperties() { mixin(MGDPC!(TrEmitCameraEffect_Rain, "TrEmitCameraEffect_Rain TribesGame.Default__TrEmitCameraEffect_Rain")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;
-		public @property static final ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEmitCameraEffect_Rain.PostBeginPlay")); }
+		public @property static final ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrEmitCameraEffect_Rain.PostBeginPlay")()); }
 	}
 	final void PostBeginPlay()
 	{

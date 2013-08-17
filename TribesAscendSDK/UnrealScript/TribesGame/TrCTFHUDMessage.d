@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCTFHUDMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerController;
@@ -11,9 +12,9 @@ extern(C++) interface TrCTFHUDMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCTFHUDMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCTFHUDMessage")()); }
 	private static __gshared TrCTFHUDMessage mDefaultProperties;
-	@property final static TrCTFHUDMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCTFHUDMessage)("TrCTFHUDMessage TribesGame.Default__TrCTFHUDMessage")); }
+	@property final static TrCTFHUDMessage DefaultProperties() { mixin(MGDPC!(TrCTFHUDMessage, "TrCTFHUDMessage TribesGame.Default__TrCTFHUDMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,10 +26,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFHUDMessage.ClientReceive")); }
-			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFHUDMessage.GetColor")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFHUDMessage.GetString")); }
-			ScriptFunction AddAnnouncement() { return mAddAnnouncement ? mAddAnnouncement : (mAddAnnouncement = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFHUDMessage.AddAnnouncement")); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrCTFHUDMessage.ClientReceive")()); }
+			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function TribesGame.TrCTFHUDMessage.GetColor")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrCTFHUDMessage.GetString")()); }
+			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function TribesGame.TrCTFHUDMessage.AddAnnouncement")()); }
 		}
 	}
 	enum CTF_HUD_MESSAGE : ubyte
@@ -40,12 +41,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 152); }
-		UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString YouHaveFlagReminderString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString BothFlagsString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString EnemyHasFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString YouHaveFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		UObject.Color YellowColor() { mixin(MGPC!(UObject.Color, 152)()); }
+		UObject.Color RedColor() { mixin(MGPC!(UObject.Color, 148)()); }
+		ScriptString YouHaveFlagReminderString() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString BothFlagsString() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString EnemyHasFlagString() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString YouHaveFlagString() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

@@ -1,15 +1,16 @@
 module UnrealScript.UDKBase.UDKAnimBlendByWeapon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendPerBone;
 
 extern(C++) interface UDKAnimBlendByWeapon : AnimNodeBlendPerBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByWeapon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByWeapon")()); }
 	private static __gshared UDKAnimBlendByWeapon mDefaultProperties;
-	@property final static UDKAnimBlendByWeapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByWeapon)("UDKAnimBlendByWeapon UDKBase.Default__UDKAnimBlendByWeapon")); }
+	@property final static UDKAnimBlendByWeapon DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByWeapon, "UDKAnimBlendByWeapon UDKBase.Default__UDKAnimBlendByWeapon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,19 +20,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnimFire() { return mAnimFire ? mAnimFire : (mAnimFire = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendByWeapon.AnimFire")); }
-			ScriptFunction AnimStopFire() { return mAnimStopFire ? mAnimStopFire : (mAnimStopFire = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendByWeapon.AnimStopFire")); }
+			ScriptFunction AnimFire() { mixin(MGF!("mAnimFire", "Function UDKBase.UDKAnimBlendByWeapon.AnimFire")()); }
+			ScriptFunction AnimStopFire() { mixin(MGF!("mAnimStopFire", "Function UDKBase.UDKAnimBlendByWeapon.AnimStopFire")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float BlendTime() { return *cast(float*)(cast(size_t)cast(void*)this + 312); }
-			ScriptName LoopingAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 304); }
+			float BlendTime() { mixin(MGPC!(float, 312)()); }
+			ScriptName LoopingAnim() { mixin(MGPC!(ScriptName, 304)()); }
 		}
-		bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 300) & 0x1) != 0; }
-		bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 300) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 300) &= ~0x1; } return val; }
+		bool bLooping() { mixin(MGBPC!(300, 0x1)()); }
+		bool bLooping(bool val) { mixin(MSBPC!(300, 0x1)()); }
 	}
 final:
 	void AnimFire(ScriptName FireSequence, bool bAutoFire, float AnimRate, float SpecialBlendTime, ScriptName LoopSequence)

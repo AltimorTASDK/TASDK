@@ -1,19 +1,20 @@
 module UnrealScript.Engine.SeqCond_IsBenchmarking;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceCondition;
 
 extern(C++) interface SeqCond_IsBenchmarking : SequenceCondition
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_IsBenchmarking")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqCond_IsBenchmarking")()); }
 	private static __gshared SeqCond_IsBenchmarking mDefaultProperties;
-	@property final static SeqCond_IsBenchmarking DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_IsBenchmarking)("SeqCond_IsBenchmarking Engine.Default__SeqCond_IsBenchmarking")); }
+	@property final static SeqCond_IsBenchmarking DefaultProperties() { mixin(MGDPC!(SeqCond_IsBenchmarking, "SeqCond_IsBenchmarking Engine.Default__SeqCond_IsBenchmarking")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqCond_IsBenchmarking.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqCond_IsBenchmarking.GetObjClassVersion")()); }
 	}
 	final static int GetObjClassVersion()
 	{

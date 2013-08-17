@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDemoRecSpectator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Camera;
@@ -10,9 +11,9 @@ extern(C++) interface TrDemoRecSpectator : TrPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDemoRecSpectator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDemoRecSpectator")()); }
 	private static __gshared TrDemoRecSpectator mDefaultProperties;
-	@property final static TrDemoRecSpectator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDemoRecSpectator)("TrDemoRecSpectator TribesGame.Default__TrDemoRecSpectator")); }
+	@property final static TrDemoRecSpectator DefaultProperties() { mixin(MGDPC!(TrDemoRecSpectator, "TrDemoRecSpectator TribesGame.Default__TrDemoRecSpectator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,34 +34,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.PostBeginPlay")); }
-			ScriptFunction ReceivedPlayer() { return mReceivedPlayer ? mReceivedPlayer : (mReceivedPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.ReceivedPlayer")); }
-			ScriptFunction InitPlayerReplicationInfo() { return mInitPlayerReplicationInfo ? mInitPlayerReplicationInfo : (mInitPlayerReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.InitPlayerReplicationInfo")); }
-			ScriptFunction Slomo() { return mSlomo ? mSlomo : (mSlomo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.Slomo")); }
-			ScriptFunction ViewClass() { return mViewClass ? mViewClass : (mViewClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.ViewClass")); }
-			ScriptFunction DemoViewNextPlayer() { return mDemoViewNextPlayer ? mDemoViewNextPlayer : (mDemoViewNextPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.DemoViewNextPlayer")); }
-			ScriptFunction SetViewTarget() { return mSetViewTarget ? mSetViewTarget : (mSetViewTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.SetViewTarget")); }
-			ScriptFunction ServerViewSelf() { return mServerViewSelf ? mServerViewSelf : (mServerViewSelf = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.ServerViewSelf")); }
-			ScriptFunction ClientSetRealViewTarget() { return mClientSetRealViewTarget ? mClientSetRealViewTarget : (mClientSetRealViewTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.ClientSetRealViewTarget")); }
-			ScriptFunction SetPause() { return mSetPause ? mSetPause : (mSetPause = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.SetPause")); }
-			ScriptFunction Pause() { return mPause ? mPause : (mPause = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.Pause")); }
-			ScriptFunction GetPlayerViewPoint() { return mGetPlayerViewPoint ? mGetPlayerViewPoint : (mGetPlayerViewPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.GetPlayerViewPoint")); }
-			ScriptFunction UpdateRotation() { return mUpdateRotation ? mUpdateRotation : (mUpdateRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDemoRecSpectator.UpdateRotation")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDemoRecSpectator.PostBeginPlay")()); }
+			ScriptFunction ReceivedPlayer() { mixin(MGF!("mReceivedPlayer", "Function TribesGame.TrDemoRecSpectator.ReceivedPlayer")()); }
+			ScriptFunction InitPlayerReplicationInfo() { mixin(MGF!("mInitPlayerReplicationInfo", "Function TribesGame.TrDemoRecSpectator.InitPlayerReplicationInfo")()); }
+			ScriptFunction Slomo() { mixin(MGF!("mSlomo", "Function TribesGame.TrDemoRecSpectator.Slomo")()); }
+			ScriptFunction ViewClass() { mixin(MGF!("mViewClass", "Function TribesGame.TrDemoRecSpectator.ViewClass")()); }
+			ScriptFunction DemoViewNextPlayer() { mixin(MGF!("mDemoViewNextPlayer", "Function TribesGame.TrDemoRecSpectator.DemoViewNextPlayer")()); }
+			ScriptFunction SetViewTarget() { mixin(MGF!("mSetViewTarget", "Function TribesGame.TrDemoRecSpectator.SetViewTarget")()); }
+			ScriptFunction ServerViewSelf() { mixin(MGF!("mServerViewSelf", "Function TribesGame.TrDemoRecSpectator.ServerViewSelf")()); }
+			ScriptFunction ClientSetRealViewTarget() { mixin(MGF!("mClientSetRealViewTarget", "Function TribesGame.TrDemoRecSpectator.ClientSetRealViewTarget")()); }
+			ScriptFunction SetPause() { mixin(MGF!("mSetPause", "Function TribesGame.TrDemoRecSpectator.SetPause")()); }
+			ScriptFunction Pause() { mixin(MGF!("mPause", "Function TribesGame.TrDemoRecSpectator.Pause")()); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function TribesGame.TrDemoRecSpectator.GetPlayerViewPoint")()); }
+			ScriptFunction UpdateRotation() { mixin(MGF!("mUpdateRotation", "Function TribesGame.TrDemoRecSpectator.UpdateRotation")()); }
 		}
+	}
+	static struct NeutralRovingSpectateTimer
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDemoRecSpectator.NeutralRovingSpectateTimer")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float AutoSwitchPlayerInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 3440); }
-			PlayerReplicationInfo MyRealViewTarget() { return *cast(PlayerReplicationInfo*)(cast(size_t)cast(void*)this + 3436); }
+			float AutoSwitchPlayerInterval() { mixin(MGPC!(float, 3440)()); }
+			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC!(PlayerReplicationInfo, 3436)()); }
 		}
-		bool bAutoSwitchPlayers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 3432) & 0x4) != 0; }
-		bool bAutoSwitchPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 3432) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 3432) &= ~0x4; } return val; }
-		bool bLockRotationToViewTarget() { return (*cast(uint*)(cast(size_t)cast(void*)this + 3432) & 0x2) != 0; }
-		bool bLockRotationToViewTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 3432) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 3432) &= ~0x2; } return val; }
-		bool bFindPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 3432) & 0x1) != 0; }
-		bool bFindPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 3432) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 3432) &= ~0x1; } return val; }
+		bool bAutoSwitchPlayers() { mixin(MGBPC!(3432, 0x4)()); }
+		bool bAutoSwitchPlayers(bool val) { mixin(MSBPC!(3432, 0x4)()); }
+		bool bLockRotationToViewTarget() { mixin(MGBPC!(3432, 0x2)()); }
+		bool bLockRotationToViewTarget(bool val) { mixin(MSBPC!(3432, 0x2)()); }
+		bool bFindPlayer() { mixin(MGBPC!(3432, 0x1)()); }
+		bool bFindPlayer(bool val) { mixin(MSBPC!(3432, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -134,12 +140,12 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Pause, cast(void*)0, cast(void*)0);
 	}
-	void GetPlayerViewPoint(Vector* CameraLocation, Rotator* CameraRotation)
+	void GetPlayerViewPoint(ref Vector CameraLocation, ref Rotator CameraRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *CameraLocation;
-		*cast(Rotator*)&params[12] = *CameraRotation;
+		*cast(Vector*)params.ptr = CameraLocation;
+		*cast(Rotator*)&params[12] = CameraRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
 		*CameraLocation = *cast(Vector*)params.ptr;
 		*CameraRotation = *cast(Rotator*)&params[12];

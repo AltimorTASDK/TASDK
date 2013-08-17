@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCamera_Spectator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Camera;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.PlayerController;
@@ -10,9 +11,9 @@ extern(C++) interface TrCamera_Spectator : Camera
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCamera_Spectator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCamera_Spectator")()); }
 	private static __gshared TrCamera_Spectator mDefaultProperties;
-	@property final static TrCamera_Spectator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCamera_Spectator)("TrCamera_Spectator TribesGame.Default__TrCamera_Spectator")); }
+	@property final static TrCamera_Spectator DefaultProperties() { mixin(MGDPC!(TrCamera_Spectator, "TrCamera_Spectator TribesGame.Default__TrCamera_Spectator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,43 +26,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitializeFor() { return mInitializeFor ? mInitializeFor : (mInitializeFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCamera_Spectator.InitializeFor")); }
-			ScriptFunction UpdateCamera() { return mUpdateCamera ? mUpdateCamera : (mUpdateCamera = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCamera_Spectator.UpdateCamera")); }
-			ScriptFunction UpdateViewTarget() { return mUpdateViewTarget ? mUpdateViewTarget : (mUpdateViewTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCamera_Spectator.UpdateViewTarget")); }
-			ScriptFunction ShowHiddenPawn() { return mShowHiddenPawn ? mShowHiddenPawn : (mShowHiddenPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCamera_Spectator.ShowHiddenPawn")); }
-			ScriptFunction SetFOV() { return mSetFOV ? mSetFOV : (mSetFOV = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCamera_Spectator.SetFOV")); }
+			ScriptFunction InitializeFor() { mixin(MGF!("mInitializeFor", "Function TribesGame.TrCamera_Spectator.InitializeFor")()); }
+			ScriptFunction UpdateCamera() { mixin(MGF!("mUpdateCamera", "Function TribesGame.TrCamera_Spectator.UpdateCamera")()); }
+			ScriptFunction UpdateViewTarget() { mixin(MGF!("mUpdateViewTarget", "Function TribesGame.TrCamera_Spectator.UpdateViewTarget")()); }
+			ScriptFunction ShowHiddenPawn() { mixin(MGF!("mShowHiddenPawn", "Function TribesGame.TrCamera_Spectator.ShowHiddenPawn")()); }
+			ScriptFunction SetFOV() { mixin(MGF!("mSetFOV", "Function TribesGame.TrCamera_Spectator.SetFOV")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrFlagBase m_HiddenFlag() { return *cast(TrFlagBase*)(cast(size_t)cast(void*)this + 1124); }
-			TrPawn m_HiddenViewTargetPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 1120); }
-			float m_fMaxFixedViewCamDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 1112); }
-			float m_MinCamDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 1108); }
-			float m_MaxCamDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 1104); }
-			float m_fMaxSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1100); }
-			float m_fPawnZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1096); }
-			float m_fCameraDistanceInterpSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1092); }
-			float m_fInterpedCameraDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 1088); }
+			TrFlagBase m_HiddenFlag() { mixin(MGPC!(TrFlagBase, 1124)()); }
+			TrPawn m_HiddenViewTargetPawn() { mixin(MGPC!(TrPawn, 1120)()); }
+			float m_fMaxFixedViewCamDistance() { mixin(MGPC!(float, 1112)()); }
+			float m_MinCamDistance() { mixin(MGPC!(float, 1108)()); }
+			float m_MaxCamDistance() { mixin(MGPC!(float, 1104)()); }
+			float m_fMaxSpeed() { mixin(MGPC!(float, 1100)()); }
+			float m_fPawnZOffset() { mixin(MGPC!(float, 1096)()); }
+			float m_fCameraDistanceInterpSpeed() { mixin(MGPC!(float, 1092)()); }
+			float m_fInterpedCameraDistance() { mixin(MGPC!(float, 1088)()); }
 		}
-		bool m_bViewFixed3p() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x80) != 0; }
-		bool m_bViewFixed3p(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x80; } return val; }
-		bool m_bViewTargetEyes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x40) != 0; }
-		bool m_bViewTargetEyes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x40; } return val; }
-		bool m_bFastestPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x20) != 0; }
-		bool m_bFastestPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x20; } return val; }
-		bool m_bViewVehicles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x10) != 0; }
-		bool m_bViewVehicles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x10; } return val; }
-		bool m_bViewFlags() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x8) != 0; }
-		bool m_bViewFlags(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x8; } return val; }
-		bool m_bViewFlagStands() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x4) != 0; }
-		bool m_bViewFlagStands(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x4; } return val; }
-		bool m_bViewGenerators() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x2) != 0; }
-		bool m_bViewGenerators(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x2; } return val; }
-		bool m_bViewCameraBookmarks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1116) & 0x1) != 0; }
-		bool m_bViewCameraBookmarks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1116) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1116) &= ~0x1; } return val; }
+		bool m_bViewFixed3p() { mixin(MGBPC!(1116, 0x80)()); }
+		bool m_bViewFixed3p(bool val) { mixin(MSBPC!(1116, 0x80)()); }
+		bool m_bViewTargetEyes() { mixin(MGBPC!(1116, 0x40)()); }
+		bool m_bViewTargetEyes(bool val) { mixin(MSBPC!(1116, 0x40)()); }
+		bool m_bFastestPlayer() { mixin(MGBPC!(1116, 0x20)()); }
+		bool m_bFastestPlayer(bool val) { mixin(MSBPC!(1116, 0x20)()); }
+		bool m_bViewVehicles() { mixin(MGBPC!(1116, 0x10)()); }
+		bool m_bViewVehicles(bool val) { mixin(MSBPC!(1116, 0x10)()); }
+		bool m_bViewFlags() { mixin(MGBPC!(1116, 0x8)()); }
+		bool m_bViewFlags(bool val) { mixin(MSBPC!(1116, 0x8)()); }
+		bool m_bViewFlagStands() { mixin(MGBPC!(1116, 0x4)()); }
+		bool m_bViewFlagStands(bool val) { mixin(MSBPC!(1116, 0x4)()); }
+		bool m_bViewGenerators() { mixin(MGBPC!(1116, 0x2)()); }
+		bool m_bViewGenerators(bool val) { mixin(MSBPC!(1116, 0x2)()); }
+		bool m_bViewCameraBookmarks() { mixin(MGBPC!(1116, 0x1)()); }
+		bool m_bViewCameraBookmarks(bool val) { mixin(MSBPC!(1116, 0x1)()); }
 	}
 final:
 	void InitializeFor(PlayerController PC)
@@ -78,11 +79,11 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCamera, params.ptr, cast(void*)0);
 	}
-	void UpdateViewTarget(Camera.TViewTarget* OutVT, float DeltaTime)
+	void UpdateViewTarget(ref Camera.TViewTarget OutVT, float DeltaTime)
 	{
 		ubyte params[48];
 		params[] = 0;
-		*cast(Camera.TViewTarget*)params.ptr = *OutVT;
+		*cast(Camera.TViewTarget*)params.ptr = OutVT;
 		*cast(float*)&params[44] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateViewTarget, params.ptr, cast(void*)0);
 		*OutVT = *cast(Camera.TViewTarget*)params.ptr;

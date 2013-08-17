@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AutoTestManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Info;
@@ -9,9 +10,9 @@ extern(C++) interface AutoTestManager : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AutoTestManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AutoTestManager")()); }
 	private static __gshared AutoTestManager mDefaultProperties;
-	@property final static AutoTestManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AutoTestManager)("AutoTestManager Engine.Default__AutoTestManager")); }
+	@property final static AutoTestManager DefaultProperties() { mixin(MGDPC!(AutoTestManager, "AutoTestManager Engine.Default__AutoTestManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,74 +43,84 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.PostBeginPlay")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.Timer")); }
-			ScriptFunction InitializeOptions() { return mInitializeOptions ? mInitializeOptions : (mInitializeOptions = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.InitializeOptions")); }
-			ScriptFunction BeginSentinelRun() { return mBeginSentinelRun ? mBeginSentinelRun : (mBeginSentinelRun = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.BeginSentinelRun")); }
-			ScriptFunction AddSentinelPerTimePeriodStats() { return mAddSentinelPerTimePeriodStats ? mAddSentinelPerTimePeriodStats : (mAddSentinelPerTimePeriodStats = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.AddSentinelPerTimePeriodStats")); }
-			ScriptFunction EndSentinelRun() { return mEndSentinelRun ? mEndSentinelRun : (mEndSentinelRun = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.EndSentinelRun")); }
-			ScriptFunction DoTravelTheWorld() { return mDoTravelTheWorld ? mDoTravelTheWorld : (mDoTravelTheWorld = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.DoTravelTheWorld")); }
-			ScriptFunction DoSentinelActionPerLoadedMap() { return mDoSentinelActionPerLoadedMap ? mDoSentinelActionPerLoadedMap : (mDoSentinelActionPerLoadedMap = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.DoSentinelActionPerLoadedMap")); }
-			ScriptFunction HandlePerLoadedMapAudioStats() { return mHandlePerLoadedMapAudioStats ? mHandlePerLoadedMapAudioStats : (mHandlePerLoadedMapAudioStats = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.HandlePerLoadedMapAudioStats")); }
-			ScriptFunction GetTravelLocations() { return mGetTravelLocations ? mGetTravelLocations : (mGetTravelLocations = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.GetTravelLocations")); }
-			ScriptFunction DoSentinel_MemoryAtSpecificLocation() { return mDoSentinel_MemoryAtSpecificLocation ? mDoSentinel_MemoryAtSpecificLocation : (mDoSentinel_MemoryAtSpecificLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.DoSentinel_MemoryAtSpecificLocation")); }
-			ScriptFunction DoSentinel_PerfAtSpecificLocation() { return mDoSentinel_PerfAtSpecificLocation ? mDoSentinel_PerfAtSpecificLocation : (mDoSentinel_PerfAtSpecificLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.DoSentinel_PerfAtSpecificLocation")); }
-			ScriptFunction DoSentinel_ViewDependentMemoryAtSpecificLocation() { return mDoSentinel_ViewDependentMemoryAtSpecificLocation ? mDoSentinel_ViewDependentMemoryAtSpecificLocation : (mDoSentinel_ViewDependentMemoryAtSpecificLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.DoSentinel_ViewDependentMemoryAtSpecificLocation")); }
-			ScriptFunction DoTimeBasedSentinelStatGathering() { return mDoTimeBasedSentinelStatGathering ? mDoTimeBasedSentinelStatGathering : (mDoTimeBasedSentinelStatGathering = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.DoTimeBasedSentinelStatGathering")); }
-			ScriptFunction DoMemoryTracking() { return mDoMemoryTracking ? mDoMemoryTracking : (mDoMemoryTracking = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.DoMemoryTracking")); }
-			ScriptFunction StartAutomatedMapTestTimer() { return mStartAutomatedMapTestTimer ? mStartAutomatedMapTestTimer : (mStartAutomatedMapTestTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.StartAutomatedMapTestTimer")); }
-			ScriptFunction StartAutomatedMapTestTimerWorker() { return mStartAutomatedMapTestTimerWorker ? mStartAutomatedMapTestTimerWorker : (mStartAutomatedMapTestTimerWorker = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.StartAutomatedMapTestTimerWorker")); }
-			ScriptFunction CloseAutomatedMapTestTimer() { return mCloseAutomatedMapTestTimer ? mCloseAutomatedMapTestTimer : (mCloseAutomatedMapTestTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.CloseAutomatedMapTestTimer")); }
-			ScriptFunction IncrementAutomatedTestingMapIndex() { return mIncrementAutomatedTestingMapIndex ? mIncrementAutomatedTestingMapIndex : (mIncrementAutomatedTestingMapIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.IncrementAutomatedTestingMapIndex")); }
-			ScriptFunction IncrementNumberOfMatchesPlayed() { return mIncrementNumberOfMatchesPlayed ? mIncrementNumberOfMatchesPlayed : (mIncrementNumberOfMatchesPlayed = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.IncrementNumberOfMatchesPlayed")); }
-			ScriptFunction GetNextAutomatedTestingMap() { return mGetNextAutomatedTestingMap ? mGetNextAutomatedTestingMap : (mGetNextAutomatedTestingMap = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.GetNextAutomatedTestingMap")); }
-			ScriptFunction StartMatch() { return mStartMatch ? mStartMatch : (mStartMatch = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.StartMatch")); }
-			ScriptFunction CheckForSentinelRun() { return mCheckForSentinelRun ? mCheckForSentinelRun : (mCheckForSentinelRun = ScriptObject.Find!(ScriptFunction)("Function Engine.AutoTestManager.CheckForSentinelRun")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.AutoTestManager.PostBeginPlay")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.AutoTestManager.Timer")()); }
+			ScriptFunction InitializeOptions() { mixin(MGF!("mInitializeOptions", "Function Engine.AutoTestManager.InitializeOptions")()); }
+			ScriptFunction BeginSentinelRun() { mixin(MGF!("mBeginSentinelRun", "Function Engine.AutoTestManager.BeginSentinelRun")()); }
+			ScriptFunction AddSentinelPerTimePeriodStats() { mixin(MGF!("mAddSentinelPerTimePeriodStats", "Function Engine.AutoTestManager.AddSentinelPerTimePeriodStats")()); }
+			ScriptFunction EndSentinelRun() { mixin(MGF!("mEndSentinelRun", "Function Engine.AutoTestManager.EndSentinelRun")()); }
+			ScriptFunction DoTravelTheWorld() { mixin(MGF!("mDoTravelTheWorld", "Function Engine.AutoTestManager.DoTravelTheWorld")()); }
+			ScriptFunction DoSentinelActionPerLoadedMap() { mixin(MGF!("mDoSentinelActionPerLoadedMap", "Function Engine.AutoTestManager.DoSentinelActionPerLoadedMap")()); }
+			ScriptFunction HandlePerLoadedMapAudioStats() { mixin(MGF!("mHandlePerLoadedMapAudioStats", "Function Engine.AutoTestManager.HandlePerLoadedMapAudioStats")()); }
+			ScriptFunction GetTravelLocations() { mixin(MGF!("mGetTravelLocations", "Function Engine.AutoTestManager.GetTravelLocations")()); }
+			ScriptFunction DoSentinel_MemoryAtSpecificLocation() { mixin(MGF!("mDoSentinel_MemoryAtSpecificLocation", "Function Engine.AutoTestManager.DoSentinel_MemoryAtSpecificLocation")()); }
+			ScriptFunction DoSentinel_PerfAtSpecificLocation() { mixin(MGF!("mDoSentinel_PerfAtSpecificLocation", "Function Engine.AutoTestManager.DoSentinel_PerfAtSpecificLocation")()); }
+			ScriptFunction DoSentinel_ViewDependentMemoryAtSpecificLocation() { mixin(MGF!("mDoSentinel_ViewDependentMemoryAtSpecificLocation", "Function Engine.AutoTestManager.DoSentinel_ViewDependentMemoryAtSpecificLocation")()); }
+			ScriptFunction DoTimeBasedSentinelStatGathering() { mixin(MGF!("mDoTimeBasedSentinelStatGathering", "Function Engine.AutoTestManager.DoTimeBasedSentinelStatGathering")()); }
+			ScriptFunction DoMemoryTracking() { mixin(MGF!("mDoMemoryTracking", "Function Engine.AutoTestManager.DoMemoryTracking")()); }
+			ScriptFunction StartAutomatedMapTestTimer() { mixin(MGF!("mStartAutomatedMapTestTimer", "Function Engine.AutoTestManager.StartAutomatedMapTestTimer")()); }
+			ScriptFunction StartAutomatedMapTestTimerWorker() { mixin(MGF!("mStartAutomatedMapTestTimerWorker", "Function Engine.AutoTestManager.StartAutomatedMapTestTimerWorker")()); }
+			ScriptFunction CloseAutomatedMapTestTimer() { mixin(MGF!("mCloseAutomatedMapTestTimer", "Function Engine.AutoTestManager.CloseAutomatedMapTestTimer")()); }
+			ScriptFunction IncrementAutomatedTestingMapIndex() { mixin(MGF!("mIncrementAutomatedTestingMapIndex", "Function Engine.AutoTestManager.IncrementAutomatedTestingMapIndex")()); }
+			ScriptFunction IncrementNumberOfMatchesPlayed() { mixin(MGF!("mIncrementNumberOfMatchesPlayed", "Function Engine.AutoTestManager.IncrementNumberOfMatchesPlayed")()); }
+			ScriptFunction GetNextAutomatedTestingMap() { mixin(MGF!("mGetNextAutomatedTestingMap", "Function Engine.AutoTestManager.GetNextAutomatedTestingMap")()); }
+			ScriptFunction StartMatch() { mixin(MGF!("mStartMatch", "Function Engine.AutoTestManager.StartMatch")()); }
+			ScriptFunction CheckForSentinelRun() { mixin(MGF!("mCheckForSentinelRun", "Function Engine.AutoTestManager.CheckForSentinelRun")()); }
 		}
+	}
+	static struct TravelTheWorld
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.AutoTestManager.TravelTheWorld")()); }
+	}
+	static struct SentinelHandleCauseEventCommand
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.AutoTestManager.SentinelHandleCauseEventCommand")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) AutomatedMapTestingList() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 488); }
-			ScriptArray!(Vector) SentinelTravelArray() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 576); }
-			ScriptArray!(ScriptString) CommandsToRunAtEachTravelTheWorldNode() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 608); }
-			ScriptString CommandStringToExec() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 620); }
-			int NumMinutesPerMap() { return *cast(int*)(cast(size_t)cast(void*)this + 604); }
-			int TravelPointsIncrement() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
-			int NumRotationsIncrement() { return *cast(int*)(cast(size_t)cast(void*)this + 596); }
-			int SentinelIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 592); }
-			int SentinelNavigationIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 588); }
-			PlayerController SentinelPC() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 572); }
-			ScriptString SentinelTagDesc() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 560); }
-			ScriptString SentinelTaskParameter() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 548); }
-			ScriptString SentinelTaskDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 536); }
-			ScriptString AutomatedMapTestingTransitionMap() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 524); }
-			ScriptString AutomatedTestingExecCommandToRunAtStartMatch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 512); }
-			int NumMapListCyclesDone() { return *cast(int*)(cast(size_t)cast(void*)this + 508); }
-			int NumberOfMatchesPlayed() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
-			int NumAutomatedMapTestingCycles() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-			int AutomatedTestingMapIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 484); }
-			int AutomatedPerfRemainingTime() { return *cast(int*)(cast(size_t)cast(void*)this + 480); }
+			ScriptArray!(ScriptString) AutomatedMapTestingList() { mixin(MGPC!(ScriptArray!(ScriptString), 488)()); }
+			ScriptArray!(Vector) SentinelTravelArray() { mixin(MGPC!(ScriptArray!(Vector), 576)()); }
+			ScriptArray!(ScriptString) CommandsToRunAtEachTravelTheWorldNode() { mixin(MGPC!(ScriptArray!(ScriptString), 608)()); }
+			ScriptString CommandStringToExec() { mixin(MGPC!(ScriptString, 620)()); }
+			int NumMinutesPerMap() { mixin(MGPC!(int, 604)()); }
+			int TravelPointsIncrement() { mixin(MGPC!(int, 600)()); }
+			int NumRotationsIncrement() { mixin(MGPC!(int, 596)()); }
+			int SentinelIdx() { mixin(MGPC!(int, 592)()); }
+			int SentinelNavigationIdx() { mixin(MGPC!(int, 588)()); }
+			PlayerController SentinelPC() { mixin(MGPC!(PlayerController, 572)()); }
+			ScriptString SentinelTagDesc() { mixin(MGPC!(ScriptString, 560)()); }
+			ScriptString SentinelTaskParameter() { mixin(MGPC!(ScriptString, 548)()); }
+			ScriptString SentinelTaskDescription() { mixin(MGPC!(ScriptString, 536)()); }
+			ScriptString AutomatedMapTestingTransitionMap() { mixin(MGPC!(ScriptString, 524)()); }
+			ScriptString AutomatedTestingExecCommandToRunAtStartMatch() { mixin(MGPC!(ScriptString, 512)()); }
+			int NumMapListCyclesDone() { mixin(MGPC!(int, 508)()); }
+			int NumberOfMatchesPlayed() { mixin(MGPC!(int, 504)()); }
+			int NumAutomatedMapTestingCycles() { mixin(MGPC!(int, 500)()); }
+			int AutomatedTestingMapIndex() { mixin(MGPC!(int, 484)()); }
+			int AutomatedPerfRemainingTime() { mixin(MGPC!(int, 480)()); }
 		}
-		bool bSentinelStreamingLevelStillLoading() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x100) != 0; }
-		bool bSentinelStreamingLevelStillLoading(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x100; } return val; }
-		bool bDoingASentinelRun() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x80) != 0; }
-		bool bDoingASentinelRun(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x80; } return val; }
-		bool bCheckingForMemLeaks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40) != 0; }
-		bool bCheckingForMemLeaks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40; } return val; }
-		bool bCheckingForFragmentation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20) != 0; }
-		bool bCheckingForFragmentation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20; } return val; }
-		bool bExitOnCyclesComplete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10) != 0; }
-		bool bExitOnCyclesComplete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10; } return val; }
-		bool bAutomatedTestingWithOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8) != 0; }
-		bool bAutomatedTestingWithOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8; } return val; }
-		bool bUsingAutomatedTestingMapList() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4) != 0; }
-		bool bUsingAutomatedTestingMapList(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4; } return val; }
-		bool bAutoContinueToNextRound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
-		bool bAutoContinueToNextRound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
-		bool bAutomatedPerfTesting() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-		bool bAutomatedPerfTesting(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
+		bool bSentinelStreamingLevelStillLoading() { mixin(MGBPC!(476, 0x100)()); }
+		bool bSentinelStreamingLevelStillLoading(bool val) { mixin(MSBPC!(476, 0x100)()); }
+		bool bDoingASentinelRun() { mixin(MGBPC!(476, 0x80)()); }
+		bool bDoingASentinelRun(bool val) { mixin(MSBPC!(476, 0x80)()); }
+		bool bCheckingForMemLeaks() { mixin(MGBPC!(476, 0x40)()); }
+		bool bCheckingForMemLeaks(bool val) { mixin(MSBPC!(476, 0x40)()); }
+		bool bCheckingForFragmentation() { mixin(MGBPC!(476, 0x20)()); }
+		bool bCheckingForFragmentation(bool val) { mixin(MSBPC!(476, 0x20)()); }
+		bool bExitOnCyclesComplete() { mixin(MGBPC!(476, 0x10)()); }
+		bool bExitOnCyclesComplete(bool val) { mixin(MSBPC!(476, 0x10)()); }
+		bool bAutomatedTestingWithOpen() { mixin(MGBPC!(476, 0x8)()); }
+		bool bAutomatedTestingWithOpen(bool val) { mixin(MSBPC!(476, 0x8)()); }
+		bool bUsingAutomatedTestingMapList() { mixin(MGBPC!(476, 0x4)()); }
+		bool bUsingAutomatedTestingMapList(bool val) { mixin(MSBPC!(476, 0x4)()); }
+		bool bAutoContinueToNextRound() { mixin(MGBPC!(476, 0x2)()); }
+		bool bAutoContinueToNextRound(bool val) { mixin(MSBPC!(476, 0x2)()); }
+		bool bAutomatedPerfTesting() { mixin(MGBPC!(476, 0x1)()); }
+		bool bAutomatedPerfTesting(bool val) { mixin(MSBPC!(476, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -127,7 +138,7 @@ final:
 		*cast(ScriptString*)params.ptr = Options;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeOptions, params.ptr, cast(void*)0);
 	}
-	void BeginSentinelRun(ScriptString TaskDescription, ScriptString TaskParameter, ScriptString TagDesc)
+	void BeginSentinelRun(const ScriptString TaskDescription, const ScriptString TaskParameter, const ScriptString TagDesc)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -136,7 +147,7 @@ final:
 		*cast(ScriptString*)&params[24] = TagDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BeginSentinelRun, params.ptr, cast(void*)0);
 	}
-	void AddSentinelPerTimePeriodStats(Vector InLocation, Rotator InRotation)
+	void AddSentinelPerTimePeriodStats(const Vector InLocation, const Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -163,17 +174,17 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandlePerLoadedMapAudioStats, cast(void*)0, cast(void*)0);
 	}
-	void GetTravelLocations(ScriptName LevelName, PlayerController PC, ScriptArray!(Vector)* TravelPoints)
+	void GetTravelLocations(ScriptName LevelName, PlayerController PC, ref ScriptArray!(Vector) TravelPoints)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = LevelName;
 		*cast(PlayerController*)&params[8] = PC;
-		*cast(ScriptArray!(Vector)*)&params[12] = *TravelPoints;
+		*cast(ScriptArray!(Vector)*)&params[12] = TravelPoints;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTravelLocations, params.ptr, cast(void*)0);
 		*TravelPoints = *cast(ScriptArray!(Vector)*)&params[12];
 	}
-	void DoSentinel_MemoryAtSpecificLocation(Vector InLocation, Rotator InRotation)
+	void DoSentinel_MemoryAtSpecificLocation(const Vector InLocation, const Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -181,22 +192,22 @@ final:
 		*cast(Rotator*)&params[12] = InRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoSentinel_MemoryAtSpecificLocation, params.ptr, cast(void*)0);
 	}
-	void DoSentinel_PerfAtSpecificLocation(Vector* InLocation, Rotator* InRotation)
+	void DoSentinel_PerfAtSpecificLocation(ref const Vector InLocation, ref const Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *InLocation;
-		*cast(Rotator*)&params[12] = *InRotation;
+		*cast(Vector*)params.ptr = InLocation;
+		*cast(Rotator*)&params[12] = InRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoSentinel_PerfAtSpecificLocation, params.ptr, cast(void*)0);
 		*InLocation = *cast(Vector*)params.ptr;
 		*InRotation = *cast(Rotator*)&params[12];
 	}
-	void DoSentinel_ViewDependentMemoryAtSpecificLocation(Vector* InLocation, Rotator* InRotation)
+	void DoSentinel_ViewDependentMemoryAtSpecificLocation(ref const Vector InLocation, ref const Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *InLocation;
-		*cast(Rotator*)&params[12] = *InRotation;
+		*cast(Vector*)params.ptr = InLocation;
+		*cast(Rotator*)&params[12] = InRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoSentinel_ViewDependentMemoryAtSpecificLocation, params.ptr, cast(void*)0);
 		*InLocation = *cast(Vector*)params.ptr;
 		*InRotation = *cast(Rotator*)&params[12];

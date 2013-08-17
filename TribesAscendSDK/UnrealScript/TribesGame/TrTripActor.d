@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrTripActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.ParticleSystem;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrTripActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTripActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTripActor")()); }
 	private static __gshared TrTripActor mDefaultProperties;
-	@property final static TrTripActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTripActor)("TrTripActor TribesGame.Default__TrTripActor")); }
+	@property final static TrTripActor DefaultProperties() { mixin(MGDPC!(TrTripActor, "TrTripActor TribesGame.Default__TrTripActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,33 +28,48 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.ReplicatedEvent")); }
-			ScriptFunction CreateTripComponent() { return mCreateTripComponent ? mCreateTripComponent : (mCreateTripComponent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.CreateTripComponent")); }
-			ScriptFunction ClientCreateVisualEffect() { return mClientCreateVisualEffect ? mClientCreateVisualEffect : (mClientCreateVisualEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.ClientCreateVisualEffect")); }
-			ScriptFunction DestroyNotify() { return mDestroyNotify ? mDestroyNotify : (mDestroyNotify = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.DestroyNotify")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.Destroyed")); }
-			ScriptFunction InitializeTripPhysics() { return mInitializeTripPhysics ? mInitializeTripPhysics : (mInitializeTripPhysics = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.InitializeTripPhysics")); }
-			ScriptFunction GoToSleep() { return mGoToSleep ? mGoToSleep : (mGoToSleep = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.GoToSleep")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.Tick")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.Touch")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrTripActor.ReplicatedEvent")()); }
+			ScriptFunction CreateTripComponent() { mixin(MGF!("mCreateTripComponent", "Function TribesGame.TrTripActor.CreateTripComponent")()); }
+			ScriptFunction ClientCreateVisualEffect() { mixin(MGF!("mClientCreateVisualEffect", "Function TribesGame.TrTripActor.ClientCreateVisualEffect")()); }
+			ScriptFunction DestroyNotify() { mixin(MGF!("mDestroyNotify", "Function TribesGame.TrTripActor.DestroyNotify")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrTripActor.Destroyed")()); }
+			ScriptFunction InitializeTripPhysics() { mixin(MGF!("mInitializeTripPhysics", "Function TribesGame.TrTripActor.InitializeTripPhysics")()); }
+			ScriptFunction GoToSleep() { mixin(MGF!("mGoToSleep", "Function TribesGame.TrTripActor.GoToSleep")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrTripActor.Tick")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrTripActor.Touch")()); }
 		}
+	}
+	static struct TripAwake
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrTripActor.TripAwake")()); }
+	}
+	static struct TripSleep
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrTripActor.TripSleep")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float m_fSleepTime() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-			Actor r_Left() { return *cast(Actor*)(cast(size_t)cast(void*)this + 476); }
-			Actor r_Right() { return *cast(Actor*)(cast(size_t)cast(void*)this + 480); }
-			ParticleSystem m_LaserTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 520); }
-			float r_fSleepEndTime() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+			float m_fSleepTime() { mixin(MGPC!(float, 492)()); }
+			Actor r_Left() { mixin(MGPC!(Actor, 476)()); }
+			Actor r_Right() { mixin(MGPC!(Actor, 480)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TripComponent'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscLaserEffect'!
+			ParticleSystem m_LaserTemplate() { mixin(MGPC!(ParticleSystem, 520)()); }
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_RightNotifier'!
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_LeftNotifier'!
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_DestroyNotifier'!
+			float r_fSleepEndTime() { mixin(MGPC!(float, 488)()); }
 		}
-		bool m_bRequiresTwoNotifiers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x4) != 0; }
-		bool m_bRequiresTwoNotifiers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x4; } return val; }
-		bool r_bIsInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x2) != 0; }
-		bool r_bIsInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x2; } return val; }
-		bool r_bIsPowered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x1) != 0; }
-		bool r_bIsPowered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x1; } return val; }
+		bool m_bRequiresTwoNotifiers() { mixin(MGBPC!(484, 0x4)()); }
+		bool m_bRequiresTwoNotifiers(bool val) { mixin(MSBPC!(484, 0x4)()); }
+		bool r_bIsInitialized() { mixin(MGBPC!(484, 0x2)()); }
+		bool r_bIsInitialized(bool val) { mixin(MSBPC!(484, 0x2)()); }
+		bool r_bIsPowered() { mixin(MGBPC!(484, 0x1)()); }
+		bool r_bIsPowered(bool val) { mixin(MSBPC!(484, 0x1)()); }
 	}
 final:
 	void ReplicatedEvent(ScriptName VarName)

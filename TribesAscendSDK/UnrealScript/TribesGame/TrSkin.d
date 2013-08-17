@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrSkin;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.AnimSet;
@@ -9,24 +10,24 @@ extern(C++) interface TrSkin : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkin")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSkin")()); }
 	private static __gshared TrSkin mDefaultProperties;
-	@property final static TrSkin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkin)("TrSkin TribesGame.Default__TrSkin")); }
+	@property final static TrSkin DefaultProperties() { mixin(MGDPC!(TrSkin, "TrSkin TribesGame.Default__TrSkin")()); }
 	struct SkinStruct
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrSkin.SkinStruct")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSkin.SkinStruct")()); }
 		@property final auto ref
 		{
-			int skinId() { return *cast(int*)(cast(size_t)&this + 0); }
-			ScriptString SkinContentPath3p() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-			ScriptString SkinContentPath1p() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-			ParticleSystem JetpackThrustTemplate() { return *cast(ParticleSystem*)(cast(size_t)&this + 36); }
-			ParticleSystem JetpackRibbonTemplate() { return *cast(ParticleSystem*)(cast(size_t)&this + 32); }
-			ParticleSystem SkiThrustTemplate() { return *cast(ParticleSystem*)(cast(size_t)&this + 28); }
-			ScriptArray!(ScriptName) JetpackThrustEffectSockets() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)&this + 40); }
+			int skinId() { mixin(MGPS!(int, 0)()); }
+			ScriptString SkinContentPath3p() { mixin(MGPS!(ScriptString, 16)()); }
+			ScriptString SkinContentPath1p() { mixin(MGPS!(ScriptString, 4)()); }
+			ParticleSystem JetpackThrustTemplate() { mixin(MGPS!(ParticleSystem, 36)()); }
+			ParticleSystem JetpackRibbonTemplate() { mixin(MGPS!(ParticleSystem, 32)()); }
+			ParticleSystem SkiThrustTemplate() { mixin(MGPS!(ParticleSystem, 28)()); }
+			ScriptArray!(ScriptName) JetpackThrustEffectSockets() { mixin(MGPS!(ScriptArray!(ScriptName), 40)()); }
 		}
 	}
 	struct VehicleSkinStruct
@@ -34,21 +35,21 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrSkin.VehicleSkinStruct")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSkin.VehicleSkinStruct")()); }
 		@property final auto ref
 		{
-			AnimSet SeatAnimSet() { return *cast(AnimSet*)(cast(size_t)&this + 4); }
-			ScriptClass VehicleClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
+			AnimSet SeatAnimSet() { mixin(MGPS!(AnimSet, 4)()); }
+			ScriptClass VehicleClass() { mixin(MGPS!(ScriptClass, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString ItemName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 64); }
-		ScriptString InfoPanelDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 76); }
-		int TranslucencySortPriority() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-		ScriptArray!(TrSkin.SkinStruct) Skins() { return *cast(ScriptArray!(TrSkin.SkinStruct)*)(cast(size_t)cast(void*)this + 96); }
-		int ItemId() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
-		ScriptClass SkinMeleeDevice() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
-		ScriptArray!(TrSkin.VehicleSkinStruct) VehicleSkins() { return *cast(ScriptArray!(TrSkin.VehicleSkinStruct)*)(cast(size_t)cast(void*)this + 108); }
+		ScriptString ItemName() { mixin(MGPC!(ScriptString, 64)()); }
+		ScriptString InfoPanelDescription() { mixin(MGPC!(ScriptString, 76)()); }
+		int TranslucencySortPriority() { mixin(MGPC!(int, 88)()); }
+		ScriptArray!(TrSkin.SkinStruct) Skins() { mixin(MGPC!(ScriptArray!(TrSkin.SkinStruct), 96)()); }
+		int ItemId() { mixin(MGPC!(int, 60)()); }
+		ScriptClass SkinMeleeDevice() { mixin(MGPC!(ScriptClass, 92)()); }
+		ScriptArray!(TrSkin.VehicleSkinStruct) VehicleSkins() { mixin(MGPC!(ScriptArray!(TrSkin.VehicleSkinStruct), 108)()); }
 	}
 }

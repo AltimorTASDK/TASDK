@@ -1,6 +1,7 @@
 module UnrealScript.Engine.CoverGroup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Info;
@@ -9,9 +10,9 @@ extern(C++) interface CoverGroup : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverGroup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CoverGroup")()); }
 	private static __gshared CoverGroup mDefaultProperties;
-	@property final static CoverGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CoverGroup)("CoverGroup Engine.Default__CoverGroup")); }
+	@property final static CoverGroup DefaultProperties() { mixin(MGDPC!(CoverGroup, "CoverGroup Engine.Default__CoverGroup")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +24,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EnableGroup() { return mEnableGroup ? mEnableGroup : (mEnableGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.EnableGroup")); }
-			ScriptFunction DisableGroup() { return mDisableGroup ? mDisableGroup : (mDisableGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.DisableGroup")); }
-			ScriptFunction ToggleGroup() { return mToggleGroup ? mToggleGroup : (mToggleGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.ToggleGroup")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.OnToggle")); }
+			ScriptFunction EnableGroup() { mixin(MGF!("mEnableGroup", "Function Engine.CoverGroup.EnableGroup")()); }
+			ScriptFunction DisableGroup() { mixin(MGF!("mDisableGroup", "Function Engine.CoverGroup.DisableGroup")()); }
+			ScriptFunction ToggleGroup() { mixin(MGF!("mToggleGroup", "Function Engine.CoverGroup.ToggleGroup")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.CoverGroup.OnToggle")()); }
 		}
 	}
 	enum ECoverGroupFillAction : ubyte
@@ -40,9 +41,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ActorReference) CoverLinkRefs() { return *cast(ScriptArray!(Actor.ActorReference)*)(cast(size_t)cast(void*)this + 476); }
-		float AutoSelectHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-		float AutoSelectRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+		ScriptArray!(Actor.ActorReference) CoverLinkRefs() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 476)()); }
+		float AutoSelectHeight() { mixin(MGPC!(float, 492)()); }
+		float AutoSelectRadius() { mixin(MGPC!(float, 488)()); }
 	}
 final:
 	void EnableGroup()

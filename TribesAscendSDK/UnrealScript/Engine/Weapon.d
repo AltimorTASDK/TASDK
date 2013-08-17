@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Weapon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Inventory;
 import UnrealScript.Engine.AIController;
 import UnrealScript.Engine.AnimNodeSequence;
@@ -13,9 +14,9 @@ extern(C++) interface Weapon : Inventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Weapon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Weapon")()); }
 	private static __gshared Weapon mDefaultProperties;
-	@property final static Weapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Weapon)("Weapon Engine.Default__Weapon")); }
+	@property final static Weapon DefaultProperties() { mixin(MGDPC!(Weapon, "Weapon Engine.Default__Weapon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -103,86 +104,86 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetTraceRange() { return mGetTraceRange ? mGetTraceRange : (mGetTraceRange = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetTraceRange")); }
-			ScriptFunction HasAnyAmmo() { return mHasAnyAmmo ? mHasAnyAmmo : (mHasAnyAmmo = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.HasAnyAmmo")); }
-			ScriptFunction GetAIRating() { return mGetAIRating ? mGetAIRating : (mGetAIRating = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetAIRating")); }
-			ScriptFunction GetWeaponRating() { return mGetWeaponRating ? mGetWeaponRating : (mGetWeaponRating = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetWeaponRating")); }
-			ScriptFunction TryPutDown() { return mTryPutDown ? mTryPutDown : (mTryPutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.TryPutDown")); }
-			ScriptFunction DenyClientWeaponSet() { return mDenyClientWeaponSet ? mDenyClientWeaponSet : (mDenyClientWeaponSet = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.DenyClientWeaponSet")); }
-			ScriptFunction CanAttack() { return mCanAttack ? mCanAttack : (mCanAttack = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.CanAttack")); }
-			ScriptFunction FireOnRelease() { return mFireOnRelease ? mFireOnRelease : (mFireOnRelease = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.FireOnRelease")); }
-			ScriptFunction IsFiring() { return mIsFiring ? mIsFiring : (mIsFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.IsFiring")); }
-			ScriptFunction CanThrow() { return mCanThrow ? mCanThrow : (mCanThrow = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.CanThrow")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.Destroyed")); }
-			ScriptFunction ItemRemovedFromInvManager() { return mItemRemovedFromInvManager ? mItemRemovedFromInvManager : (mItemRemovedFromInvManager = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ItemRemovedFromInvManager")); }
-			ScriptFunction HolderDied() { return mHolderDied ? mHolderDied : (mHolderDied = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.HolderDied")); }
-			ScriptFunction DoOverrideNextWeapon() { return mDoOverrideNextWeapon ? mDoOverrideNextWeapon : (mDoOverrideNextWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.DoOverrideNextWeapon")); }
-			ScriptFunction DoOverridePrevWeapon() { return mDoOverridePrevWeapon ? mDoOverridePrevWeapon : (mDoOverridePrevWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.DoOverridePrevWeapon")); }
-			ScriptFunction DropFrom() { return mDropFrom ? mDropFrom : (mDropFrom = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.DropFrom")); }
-			ScriptFunction ClientWeaponThrown() { return mClientWeaponThrown ? mClientWeaponThrown : (mClientWeaponThrown = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ClientWeaponThrown")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.DisplayDebug")); }
-			ScriptFunction GetWeaponDebug() { return mGetWeaponDebug ? mGetWeaponDebug : (mGetWeaponDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetWeaponDebug")); }
-			ScriptFunction GetPendingFireLength() { return mGetPendingFireLength ? mGetPendingFireLength : (mGetPendingFireLength = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetPendingFireLength")); }
-			ScriptFunction PendingFire() { return mPendingFire ? mPendingFire : (mPendingFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.PendingFire")); }
-			ScriptFunction ConsumeAmmo() { return mConsumeAmmo ? mConsumeAmmo : (mConsumeAmmo = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ConsumeAmmo")); }
-			ScriptFunction AddAmmo() { return mAddAmmo ? mAddAmmo : (mAddAmmo = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.AddAmmo")); }
-			ScriptFunction HasAmmo() { return mHasAmmo ? mHasAmmo : (mHasAmmo = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.HasAmmo")); }
-			ScriptFunction SetPendingFire() { return mSetPendingFire ? mSetPendingFire : (mSetPendingFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.SetPendingFire")); }
-			ScriptFunction ClearPendingFire() { return mClearPendingFire ? mClearPendingFire : (mClearPendingFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ClearPendingFire")); }
-			ScriptFunction GetProjectileClass() { return mGetProjectileClass ? mGetProjectileClass : (mGetProjectileClass = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetProjectileClass")); }
-			ScriptFunction AddSpread() { return mAddSpread ? mAddSpread : (mAddSpread = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.AddSpread")); }
-			ScriptFunction MaxRange() { return mMaxRange ? mMaxRange : (mMaxRange = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.MaxRange")); }
-			ScriptFunction GetWeaponAnimNodeSeq() { return mGetWeaponAnimNodeSeq ? mGetWeaponAnimNodeSeq : (mGetWeaponAnimNodeSeq = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetWeaponAnimNodeSeq")); }
-			ScriptFunction PlayWeaponAnimation() { return mPlayWeaponAnimation ? mPlayWeaponAnimation : (mPlayWeaponAnimation = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.PlayWeaponAnimation")); }
-			ScriptFunction StopWeaponAnimation() { return mStopWeaponAnimation ? mStopWeaponAnimation : (mStopWeaponAnimation = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.StopWeaponAnimation")); }
-			ScriptFunction PlayFireEffects() { return mPlayFireEffects ? mPlayFireEffects : (mPlayFireEffects = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.PlayFireEffects")); }
-			ScriptFunction StopFireEffects() { return mStopFireEffects ? mStopFireEffects : (mStopFireEffects = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.StopFireEffects")); }
-			ScriptFunction GetFireInterval() { return mGetFireInterval ? mGetFireInterval : (mGetFireInterval = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetFireInterval")); }
-			ScriptFunction TimeWeaponFiring() { return mTimeWeaponFiring ? mTimeWeaponFiring : (mTimeWeaponFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.TimeWeaponFiring")); }
-			ScriptFunction RefireCheckTimer() { return mRefireCheckTimer ? mRefireCheckTimer : (mRefireCheckTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.RefireCheckTimer")); }
-			ScriptFunction TimeWeaponPutDown() { return mTimeWeaponPutDown ? mTimeWeaponPutDown : (mTimeWeaponPutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.TimeWeaponPutDown")); }
-			ScriptFunction TimeWeaponEquipping() { return mTimeWeaponEquipping ? mTimeWeaponEquipping : (mTimeWeaponEquipping = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.TimeWeaponEquipping")); }
-			ScriptFunction Activate() { return mActivate ? mActivate : (mActivate = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.Activate")); }
-			ScriptFunction PutDownWeapon() { return mPutDownWeapon ? mPutDownWeapon : (mPutDownWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.PutDownWeapon")); }
-			ScriptFunction DenyPickupQuery() { return mDenyPickupQuery ? mDenyPickupQuery : (mDenyPickupQuery = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.DenyPickupQuery")); }
-			ScriptFunction WeaponEmpty() { return mWeaponEmpty ? mWeaponEmpty : (mWeaponEmpty = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.WeaponEmpty")); }
-			ScriptFunction IncrementFlashCount() { return mIncrementFlashCount ? mIncrementFlashCount : (mIncrementFlashCount = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.IncrementFlashCount")); }
-			ScriptFunction ClearFlashCount() { return mClearFlashCount ? mClearFlashCount : (mClearFlashCount = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ClearFlashCount")); }
-			ScriptFunction SetFlashLocation() { return mSetFlashLocation ? mSetFlashLocation : (mSetFlashLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.SetFlashLocation")); }
-			ScriptFunction ClearFlashLocation() { return mClearFlashLocation ? mClearFlashLocation : (mClearFlashLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ClearFlashLocation")); }
-			ScriptFunction AttachWeaponTo() { return mAttachWeaponTo ? mAttachWeaponTo : (mAttachWeaponTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.AttachWeaponTo")); }
-			ScriptFunction DetachWeapon() { return mDetachWeapon ? mDetachWeapon : (mDetachWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.DetachWeapon")); }
-			ScriptFunction ClientGivenTo() { return mClientGivenTo ? mClientGivenTo : (mClientGivenTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ClientGivenTo")); }
-			ScriptFunction ClientWeaponSet() { return mClientWeaponSet ? mClientWeaponSet : (mClientWeaponSet = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ClientWeaponSet")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.StartFire")); }
-			ScriptFunction ServerStartFire() { return mServerStartFire ? mServerStartFire : (mServerStartFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ServerStartFire")); }
-			ScriptFunction BeginFire() { return mBeginFire ? mBeginFire : (mBeginFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.BeginFire")); }
-			ScriptFunction StopFire() { return mStopFire ? mStopFire : (mStopFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.StopFire")); }
-			ScriptFunction ServerStopFire() { return mServerStopFire ? mServerStopFire : (mServerStopFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ServerStopFire")); }
-			ScriptFunction EndFire() { return mEndFire ? mEndFire : (mEndFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.EndFire")); }
-			ScriptFunction ForceEndFire() { return mForceEndFire ? mForceEndFire : (mForceEndFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ForceEndFire")); }
-			ScriptFunction SendToFiringState() { return mSendToFiringState ? mSendToFiringState : (mSendToFiringState = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.SendToFiringState")); }
-			ScriptFunction SetCurrentFireMode() { return mSetCurrentFireMode ? mSetCurrentFireMode : (mSetCurrentFireMode = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.SetCurrentFireMode")); }
-			ScriptFunction FireModeUpdated() { return mFireModeUpdated ? mFireModeUpdated : (mFireModeUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.FireModeUpdated")); }
-			ScriptFunction FireAmmunition() { return mFireAmmunition ? mFireAmmunition : (mFireAmmunition = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.FireAmmunition")); }
-			ScriptFunction GetAdjustedAim() { return mGetAdjustedAim ? mGetAdjustedAim : (mGetAdjustedAim = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetAdjustedAim")); }
-			ScriptFunction GetTraceOwner() { return mGetTraceOwner ? mGetTraceOwner : (mGetTraceOwner = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetTraceOwner")); }
-			ScriptFunction CalcWeaponFire() { return mCalcWeaponFire ? mCalcWeaponFire : (mCalcWeaponFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.CalcWeaponFire")); }
-			ScriptFunction PassThroughDamage() { return mPassThroughDamage ? mPassThroughDamage : (mPassThroughDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.PassThroughDamage")); }
-			ScriptFunction InstantFire() { return mInstantFire ? mInstantFire : (mInstantFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.InstantFire")); }
-			ScriptFunction ProcessInstantHit() { return mProcessInstantHit ? mProcessInstantHit : (mProcessInstantHit = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ProcessInstantHit")); }
-			ScriptFunction ProjectileFire() { return mProjectileFire ? mProjectileFire : (mProjectileFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ProjectileFire")); }
-			ScriptFunction CustomFire() { return mCustomFire ? mCustomFire : (mCustomFire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.CustomFire")); }
-			ScriptFunction GetMuzzleLoc() { return mGetMuzzleLoc ? mGetMuzzleLoc : (mGetMuzzleLoc = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetMuzzleLoc")); }
-			ScriptFunction GetPhysicalFireStartLoc() { return mGetPhysicalFireStartLoc ? mGetPhysicalFireStartLoc : (mGetPhysicalFireStartLoc = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetPhysicalFireStartLoc")); }
-			ScriptFunction HandleFinishedFiring() { return mHandleFinishedFiring ? mHandleFinishedFiring : (mHandleFinishedFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.HandleFinishedFiring")); }
-			ScriptFunction NotifyWeaponFired() { return mNotifyWeaponFired ? mNotifyWeaponFired : (mNotifyWeaponFired = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.NotifyWeaponFired")); }
-			ScriptFunction NotifyWeaponFinishedFiring() { return mNotifyWeaponFinishedFiring ? mNotifyWeaponFinishedFiring : (mNotifyWeaponFinishedFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.NotifyWeaponFinishedFiring")); }
-			ScriptFunction ShouldRefire() { return mShouldRefire ? mShouldRefire : (mShouldRefire = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.ShouldRefire")); }
-			ScriptFunction StillFiring() { return mStillFiring ? mStillFiring : (mStillFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.StillFiring")); }
-			ScriptFunction WeaponIsDown() { return mWeaponIsDown ? mWeaponIsDown : (mWeaponIsDown = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.WeaponIsDown")); }
-			ScriptFunction CacheAIController() { return mCacheAIController ? mCacheAIController : (mCacheAIController = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.CacheAIController")); }
-			ScriptFunction GetTargetDistance() { return mGetTargetDistance ? mGetTargetDistance : (mGetTargetDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.Weapon.GetTargetDistance")); }
+			ScriptFunction GetTraceRange() { mixin(MGF!("mGetTraceRange", "Function Engine.Weapon.GetTraceRange")()); }
+			ScriptFunction HasAnyAmmo() { mixin(MGF!("mHasAnyAmmo", "Function Engine.Weapon.HasAnyAmmo")()); }
+			ScriptFunction GetAIRating() { mixin(MGF!("mGetAIRating", "Function Engine.Weapon.GetAIRating")()); }
+			ScriptFunction GetWeaponRating() { mixin(MGF!("mGetWeaponRating", "Function Engine.Weapon.GetWeaponRating")()); }
+			ScriptFunction TryPutDown() { mixin(MGF!("mTryPutDown", "Function Engine.Weapon.TryPutDown")()); }
+			ScriptFunction DenyClientWeaponSet() { mixin(MGF!("mDenyClientWeaponSet", "Function Engine.Weapon.DenyClientWeaponSet")()); }
+			ScriptFunction CanAttack() { mixin(MGF!("mCanAttack", "Function Engine.Weapon.CanAttack")()); }
+			ScriptFunction FireOnRelease() { mixin(MGF!("mFireOnRelease", "Function Engine.Weapon.FireOnRelease")()); }
+			ScriptFunction IsFiring() { mixin(MGF!("mIsFiring", "Function Engine.Weapon.IsFiring")()); }
+			ScriptFunction CanThrow() { mixin(MGF!("mCanThrow", "Function Engine.Weapon.CanThrow")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Weapon.Destroyed")()); }
+			ScriptFunction ItemRemovedFromInvManager() { mixin(MGF!("mItemRemovedFromInvManager", "Function Engine.Weapon.ItemRemovedFromInvManager")()); }
+			ScriptFunction HolderDied() { mixin(MGF!("mHolderDied", "Function Engine.Weapon.HolderDied")()); }
+			ScriptFunction DoOverrideNextWeapon() { mixin(MGF!("mDoOverrideNextWeapon", "Function Engine.Weapon.DoOverrideNextWeapon")()); }
+			ScriptFunction DoOverridePrevWeapon() { mixin(MGF!("mDoOverridePrevWeapon", "Function Engine.Weapon.DoOverridePrevWeapon")()); }
+			ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function Engine.Weapon.DropFrom")()); }
+			ScriptFunction ClientWeaponThrown() { mixin(MGF!("mClientWeaponThrown", "Function Engine.Weapon.ClientWeaponThrown")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Weapon.DisplayDebug")()); }
+			ScriptFunction GetWeaponDebug() { mixin(MGF!("mGetWeaponDebug", "Function Engine.Weapon.GetWeaponDebug")()); }
+			ScriptFunction GetPendingFireLength() { mixin(MGF!("mGetPendingFireLength", "Function Engine.Weapon.GetPendingFireLength")()); }
+			ScriptFunction PendingFire() { mixin(MGF!("mPendingFire", "Function Engine.Weapon.PendingFire")()); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function Engine.Weapon.ConsumeAmmo")()); }
+			ScriptFunction AddAmmo() { mixin(MGF!("mAddAmmo", "Function Engine.Weapon.AddAmmo")()); }
+			ScriptFunction HasAmmo() { mixin(MGF!("mHasAmmo", "Function Engine.Weapon.HasAmmo")()); }
+			ScriptFunction SetPendingFire() { mixin(MGF!("mSetPendingFire", "Function Engine.Weapon.SetPendingFire")()); }
+			ScriptFunction ClearPendingFire() { mixin(MGF!("mClearPendingFire", "Function Engine.Weapon.ClearPendingFire")()); }
+			ScriptFunction GetProjectileClass() { mixin(MGF!("mGetProjectileClass", "Function Engine.Weapon.GetProjectileClass")()); }
+			ScriptFunction AddSpread() { mixin(MGF!("mAddSpread", "Function Engine.Weapon.AddSpread")()); }
+			ScriptFunction MaxRange() { mixin(MGF!("mMaxRange", "Function Engine.Weapon.MaxRange")()); }
+			ScriptFunction GetWeaponAnimNodeSeq() { mixin(MGF!("mGetWeaponAnimNodeSeq", "Function Engine.Weapon.GetWeaponAnimNodeSeq")()); }
+			ScriptFunction PlayWeaponAnimation() { mixin(MGF!("mPlayWeaponAnimation", "Function Engine.Weapon.PlayWeaponAnimation")()); }
+			ScriptFunction StopWeaponAnimation() { mixin(MGF!("mStopWeaponAnimation", "Function Engine.Weapon.StopWeaponAnimation")()); }
+			ScriptFunction PlayFireEffects() { mixin(MGF!("mPlayFireEffects", "Function Engine.Weapon.PlayFireEffects")()); }
+			ScriptFunction StopFireEffects() { mixin(MGF!("mStopFireEffects", "Function Engine.Weapon.StopFireEffects")()); }
+			ScriptFunction GetFireInterval() { mixin(MGF!("mGetFireInterval", "Function Engine.Weapon.GetFireInterval")()); }
+			ScriptFunction TimeWeaponFiring() { mixin(MGF!("mTimeWeaponFiring", "Function Engine.Weapon.TimeWeaponFiring")()); }
+			ScriptFunction RefireCheckTimer() { mixin(MGF!("mRefireCheckTimer", "Function Engine.Weapon.RefireCheckTimer")()); }
+			ScriptFunction TimeWeaponPutDown() { mixin(MGF!("mTimeWeaponPutDown", "Function Engine.Weapon.TimeWeaponPutDown")()); }
+			ScriptFunction TimeWeaponEquipping() { mixin(MGF!("mTimeWeaponEquipping", "Function Engine.Weapon.TimeWeaponEquipping")()); }
+			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function Engine.Weapon.Activate")()); }
+			ScriptFunction PutDownWeapon() { mixin(MGF!("mPutDownWeapon", "Function Engine.Weapon.PutDownWeapon")()); }
+			ScriptFunction DenyPickupQuery() { mixin(MGF!("mDenyPickupQuery", "Function Engine.Weapon.DenyPickupQuery")()); }
+			ScriptFunction WeaponEmpty() { mixin(MGF!("mWeaponEmpty", "Function Engine.Weapon.WeaponEmpty")()); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function Engine.Weapon.IncrementFlashCount")()); }
+			ScriptFunction ClearFlashCount() { mixin(MGF!("mClearFlashCount", "Function Engine.Weapon.ClearFlashCount")()); }
+			ScriptFunction SetFlashLocation() { mixin(MGF!("mSetFlashLocation", "Function Engine.Weapon.SetFlashLocation")()); }
+			ScriptFunction ClearFlashLocation() { mixin(MGF!("mClearFlashLocation", "Function Engine.Weapon.ClearFlashLocation")()); }
+			ScriptFunction AttachWeaponTo() { mixin(MGF!("mAttachWeaponTo", "Function Engine.Weapon.AttachWeaponTo")()); }
+			ScriptFunction DetachWeapon() { mixin(MGF!("mDetachWeapon", "Function Engine.Weapon.DetachWeapon")()); }
+			ScriptFunction ClientGivenTo() { mixin(MGF!("mClientGivenTo", "Function Engine.Weapon.ClientGivenTo")()); }
+			ScriptFunction ClientWeaponSet() { mixin(MGF!("mClientWeaponSet", "Function Engine.Weapon.ClientWeaponSet")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function Engine.Weapon.StartFire")()); }
+			ScriptFunction ServerStartFire() { mixin(MGF!("mServerStartFire", "Function Engine.Weapon.ServerStartFire")()); }
+			ScriptFunction BeginFire() { mixin(MGF!("mBeginFire", "Function Engine.Weapon.BeginFire")()); }
+			ScriptFunction StopFire() { mixin(MGF!("mStopFire", "Function Engine.Weapon.StopFire")()); }
+			ScriptFunction ServerStopFire() { mixin(MGF!("mServerStopFire", "Function Engine.Weapon.ServerStopFire")()); }
+			ScriptFunction EndFire() { mixin(MGF!("mEndFire", "Function Engine.Weapon.EndFire")()); }
+			ScriptFunction ForceEndFire() { mixin(MGF!("mForceEndFire", "Function Engine.Weapon.ForceEndFire")()); }
+			ScriptFunction SendToFiringState() { mixin(MGF!("mSendToFiringState", "Function Engine.Weapon.SendToFiringState")()); }
+			ScriptFunction SetCurrentFireMode() { mixin(MGF!("mSetCurrentFireMode", "Function Engine.Weapon.SetCurrentFireMode")()); }
+			ScriptFunction FireModeUpdated() { mixin(MGF!("mFireModeUpdated", "Function Engine.Weapon.FireModeUpdated")()); }
+			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function Engine.Weapon.FireAmmunition")()); }
+			ScriptFunction GetAdjustedAim() { mixin(MGF!("mGetAdjustedAim", "Function Engine.Weapon.GetAdjustedAim")()); }
+			ScriptFunction GetTraceOwner() { mixin(MGF!("mGetTraceOwner", "Function Engine.Weapon.GetTraceOwner")()); }
+			ScriptFunction CalcWeaponFire() { mixin(MGF!("mCalcWeaponFire", "Function Engine.Weapon.CalcWeaponFire")()); }
+			ScriptFunction PassThroughDamage() { mixin(MGF!("mPassThroughDamage", "Function Engine.Weapon.PassThroughDamage")()); }
+			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function Engine.Weapon.InstantFire")()); }
+			ScriptFunction ProcessInstantHit() { mixin(MGF!("mProcessInstantHit", "Function Engine.Weapon.ProcessInstantHit")()); }
+			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function Engine.Weapon.ProjectileFire")()); }
+			ScriptFunction CustomFire() { mixin(MGF!("mCustomFire", "Function Engine.Weapon.CustomFire")()); }
+			ScriptFunction GetMuzzleLoc() { mixin(MGF!("mGetMuzzleLoc", "Function Engine.Weapon.GetMuzzleLoc")()); }
+			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF!("mGetPhysicalFireStartLoc", "Function Engine.Weapon.GetPhysicalFireStartLoc")()); }
+			ScriptFunction HandleFinishedFiring() { mixin(MGF!("mHandleFinishedFiring", "Function Engine.Weapon.HandleFinishedFiring")()); }
+			ScriptFunction NotifyWeaponFired() { mixin(MGF!("mNotifyWeaponFired", "Function Engine.Weapon.NotifyWeaponFired")()); }
+			ScriptFunction NotifyWeaponFinishedFiring() { mixin(MGF!("mNotifyWeaponFinishedFiring", "Function Engine.Weapon.NotifyWeaponFinishedFiring")()); }
+			ScriptFunction ShouldRefire() { mixin(MGF!("mShouldRefire", "Function Engine.Weapon.ShouldRefire")()); }
+			ScriptFunction StillFiring() { mixin(MGF!("mStillFiring", "Function Engine.Weapon.StillFiring")()); }
+			ScriptFunction WeaponIsDown() { mixin(MGF!("mWeaponIsDown", "Function Engine.Weapon.WeaponIsDown")()); }
+			ScriptFunction CacheAIController() { mixin(MGF!("mCacheAIController", "Function Engine.Weapon.CacheAIController")()); }
+			ScriptFunction GetTargetDistance() { mixin(MGF!("mGetTargetDistance", "Function Engine.Weapon.GetTargetDistance")()); }
 		}
 	}
 	enum EWeaponFireType : ubyte
@@ -193,42 +194,73 @@ public extern(D):
 		EWFT_None = 3,
 		EWFT_MAX = 4,
 	}
+	static struct Inactive
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.Inactive")()); }
+	}
+	static struct Active
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.Active")()); }
+	}
+	static struct WeaponFiring
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.WeaponFiring")()); }
+	}
+	static struct WeaponEquipping
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.WeaponEquipping")()); }
+	}
+	static struct WeaponPuttingDown
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.WeaponPuttingDown")()); }
+	}
+	static struct PendingClientWeaponSet
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.PendingClientWeaponSet")()); }
+	}
 	@property final
 	{
 		auto ref
 		{
-			float WeaponRange() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-			ubyte CurrentFireMode() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 552); }
-			ScriptArray!(ScriptName) FiringStatesArray() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 556); }
-			ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { return *cast(ScriptArray!(Weapon.EWeaponFireType)*)(cast(size_t)cast(void*)this + 568); }
-			ScriptArray!(ScriptClass) WeaponProjectiles() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 580); }
-			ScriptArray!(float) FireInterval() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 592); }
-			ScriptArray!(float) Spread() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 604); }
-			ScriptArray!(float) InstantHitDamage() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 616); }
-			ScriptArray!(float) InstantHitMomentum() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 628); }
-			ScriptArray!(ScriptClass) InstantHitDamageTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 640); }
-			ScriptArray!(ubyte) ShouldFireOnRelease() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 696); }
-			float CachedMaxRange() { return *cast(float*)(cast(size_t)cast(void*)this + 712); }
-			float AIRating() { return *cast(float*)(cast(size_t)cast(void*)this + 708); }
+			float WeaponRange() { mixin(MGPC!(float, 676)()); }
+			ubyte CurrentFireMode() { mixin(MGPC!(ubyte, 552)()); }
+			ScriptArray!(ScriptName) FiringStatesArray() { mixin(MGPC!(ScriptArray!(ScriptName), 556)()); }
+			ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { mixin(MGPC!(ScriptArray!(Weapon.EWeaponFireType), 568)()); }
+			ScriptArray!(ScriptClass) WeaponProjectiles() { mixin(MGPC!(ScriptArray!(ScriptClass), 580)()); }
+			ScriptArray!(float) FireInterval() { mixin(MGPC!(ScriptArray!(float), 592)()); }
+			ScriptArray!(float) Spread() { mixin(MGPC!(ScriptArray!(float), 604)()); }
+			ScriptArray!(float) InstantHitDamage() { mixin(MGPC!(ScriptArray!(float), 616)()); }
+			ScriptArray!(float) InstantHitMomentum() { mixin(MGPC!(ScriptArray!(float), 628)()); }
+			ScriptArray!(ScriptClass) InstantHitDamageTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 640)()); }
+			ScriptArray!(ubyte) ShouldFireOnRelease() { mixin(MGPC!(ScriptArray!(ubyte), 696)()); }
+			float CachedMaxRange() { mixin(MGPC!(float, 712)()); }
+			float AIRating() { mixin(MGPC!(float, 708)()); }
 			// WARNING: Property 'AIController' has the same name as a defined type!
-			float Priority() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
-			float DefaultAnimSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
-			Vector FireOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 660); }
-			float PutDownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 656); }
-			float EquipTime() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
+			float Priority() { mixin(MGPC!(float, 688)()); }
+			float DefaultAnimSpeed() { mixin(MGPC!(float, 684)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
+			Vector FireOffset() { mixin(MGPC!(Vector, 660)()); }
+			float PutDownTime() { mixin(MGPC!(float, 656)()); }
+			float EquipTime() { mixin(MGPC!(float, 652)()); }
 		}
-		bool bInstantHit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x10) != 0; }
-		bool bInstantHit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x10; } return val; }
-		bool bMeleeWeapon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x20) != 0; }
-		bool bMeleeWeapon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x20; } return val; }
-		bool bWasDoNotActivate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x8) != 0; }
-		bool bWasDoNotActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x8; } return val; }
-		bool bWasOptionalSet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x4) != 0; }
-		bool bWasOptionalSet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x4; } return val; }
-		bool bCanThrow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x2) != 0; }
-		bool bCanThrow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x2; } return val; }
-		bool bWeaponPutDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x1) != 0; }
-		bool bWeaponPutDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x1; } return val; }
+		bool bInstantHit() { mixin(MGBPC!(672, 0x10)()); }
+		bool bInstantHit(bool val) { mixin(MSBPC!(672, 0x10)()); }
+		bool bMeleeWeapon() { mixin(MGBPC!(672, 0x20)()); }
+		bool bMeleeWeapon(bool val) { mixin(MSBPC!(672, 0x20)()); }
+		bool bWasDoNotActivate() { mixin(MGBPC!(672, 0x8)()); }
+		bool bWasDoNotActivate(bool val) { mixin(MSBPC!(672, 0x8)()); }
+		bool bWasOptionalSet() { mixin(MGBPC!(672, 0x4)()); }
+		bool bWasOptionalSet(bool val) { mixin(MSBPC!(672, 0x4)()); }
+		bool bCanThrow() { mixin(MGBPC!(672, 0x2)()); }
+		bool bCanThrow(bool val) { mixin(MSBPC!(672, 0x2)()); }
+		bool bWeaponPutDown() { mixin(MGBPC!(672, 0x1)()); }
+		bool bWeaponPutDown(bool val) { mixin(MSBPC!(672, 0x1)()); }
 	}
 final:
 	float GetTraceRange()
@@ -340,22 +372,22 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponThrown, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
-	void GetWeaponDebug(ScriptArray!(ScriptString)* DebugInfo)
+	void GetWeaponDebug(ref ScriptArray!(ScriptString) DebugInfo)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptString)*)params.ptr = *DebugInfo;
+		*cast(ScriptArray!(ScriptString)*)params.ptr = DebugInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponDebug, params.ptr, cast(void*)0);
 		*DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
@@ -666,7 +698,7 @@ void**)params.ptr = MeshCpnt;
 		params[] = 0;
 		*cast(Vector*)params.ptr = StartTrace;
 		*cast(Vector*)&params[12] = EndTrace;
-		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = *ImpactList;
+		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = ImpactList;
 		*cast(Vector*)&params[36] = Extent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcWeaponFire, params.ptr, cast(void*)0);
 		*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];

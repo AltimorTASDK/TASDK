@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_Login;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxTrPage_Login : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Login")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Login")()); }
 	private static __gshared GFxTrPage_Login mDefaultProperties;
-	@property final static GFxTrPage_Login DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Login)("GFxTrPage_Login TribesGame.Default__GFxTrPage_Login")); }
+	@property final static GFxTrPage_Login DefaultProperties() { mixin(MGDPC!(GFxTrPage_Login, "GFxTrPage_Login TribesGame.Default__GFxTrPage_Login")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Login.TakeAction")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Login.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Login.FillOption")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Login.ShowModel")); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Login.TakeAction")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Login.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Login.FillOption")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Login.ShowModel")()); }
 		}
 	}
 	enum MENU_ACTION_LOGIN : ubyte
@@ -42,16 +43,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString CreateAccountLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 464); }
-		ScriptString HelpPasswordLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 452); }
-		ScriptString HelpUsernameLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 440); }
-		ScriptString CheckboxLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 428); }
-		ScriptString PasswordLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 416); }
-		ScriptString UsernameLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 404); }
-		ScriptString BetaKeyLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 392); }
-		ScriptString AccountLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 380); }
-		ScriptString SubmitLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 368); }
-		ScriptString HelpLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 356); }
+		ScriptString CreateAccountLabel() { mixin(MGPC!(ScriptString, 464)()); }
+		ScriptString HelpPasswordLabel() { mixin(MGPC!(ScriptString, 452)()); }
+		ScriptString HelpUsernameLabel() { mixin(MGPC!(ScriptString, 440)()); }
+		ScriptString CheckboxLabel() { mixin(MGPC!(ScriptString, 428)()); }
+		ScriptString PasswordLabel() { mixin(MGPC!(ScriptString, 416)()); }
+		ScriptString UsernameLabel() { mixin(MGPC!(ScriptString, 404)()); }
+		ScriptString BetaKeyLabel() { mixin(MGPC!(ScriptString, 392)()); }
+		ScriptString AccountLabel() { mixin(MGPC!(ScriptString, 380)()); }
+		ScriptString SubmitLabel() { mixin(MGPC!(ScriptString, 368)()); }
+		ScriptString HelpLabel() { mixin(MGPC!(ScriptString, 356)()); }
 	}
 final:
 	int TakeAction(int ActionIndex, GFxObject DataList)

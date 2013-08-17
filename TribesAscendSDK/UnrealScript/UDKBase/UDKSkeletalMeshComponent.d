@@ -1,15 +1,16 @@
 module UnrealScript.UDKBase.UDKSkeletalMeshComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SkeletalMeshComponent;
 
 extern(C++) interface UDKSkeletalMeshComponent : SkeletalMeshComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkeletalMeshComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKSkeletalMeshComponent")()); }
 	private static __gshared UDKSkeletalMeshComponent mDefaultProperties;
-	@property final static UDKSkeletalMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkeletalMeshComponent)("UDKSkeletalMeshComponent UDKBase.Default__UDKSkeletalMeshComponent")); }
+	@property final static UDKSkeletalMeshComponent DefaultProperties() { mixin(MGDPC!(UDKSkeletalMeshComponent, "UDKSkeletalMeshComponent UDKBase.Default__UDKSkeletalMeshComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,19 +20,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreloadTextures() { return mPreloadTextures ? mPreloadTextures : (mPreloadTextures = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkeletalMeshComponent.PreloadTextures")); }
-			ScriptFunction SetFOV() { return mSetFOV ? mSetFOV : (mSetFOV = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkeletalMeshComponent.SetFOV")); }
+			ScriptFunction PreloadTextures() { mixin(MGF!("mPreloadTextures", "Function UDKBase.UDKSkeletalMeshComponent.PreloadTextures")()); }
+			ScriptFunction SetFOV() { mixin(MGF!("mSetFOV", "Function UDKBase.UDKSkeletalMeshComponent.SetFOV")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float ClearStreamingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1520); }
-			float FOV() { return *cast(float*)(cast(size_t)cast(void*)this + 1512); }
+			float ClearStreamingTime() { mixin(MGPC!(float, 1520)()); }
+			float FOV() { mixin(MGPC!(float, 1512)()); }
 		}
-		bool bForceLoadTextures() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1516) & 0x1) != 0; }
-		bool bForceLoadTextures(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1516) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1516) &= ~0x1; } return val; }
+		bool bForceLoadTextures() { mixin(MGBPC!(1516, 0x1)()); }
+		bool bForceLoadTextures(bool val) { mixin(MSBPC!(1516, 0x1)()); }
 	}
 final:
 	void PreloadTextures(bool bForcePreload, float ClearTime)

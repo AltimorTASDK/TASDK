@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDmgType_Burning;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTDamageType;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTDmgType_Burning : UTDamageType
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_Burning")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDmgType_Burning")()); }
 	private static __gshared UTDmgType_Burning mDefaultProperties;
-	@property final static UTDmgType_Burning DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDmgType_Burning)("UTDmgType_Burning UTGame.Default__UTDmgType_Burning")); }
+	@property final static UTDmgType_Burning DefaultProperties() { mixin(MGDPC!(UTDmgType_Burning, "UTDmgType_Burning UTGame.Default__UTDmgType_Burning")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnHitEffect() { return mSpawnHitEffect ? mSpawnHitEffect : (mSpawnHitEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_Burning.SpawnHitEffect")); }
-			ScriptFunction GetHitEffectDuration() { return mGetHitEffectDuration ? mGetHitEffectDuration : (mGetHitEffectDuration = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_Burning.GetHitEffectDuration")); }
+			ScriptFunction SpawnHitEffect() { mixin(MGF!("mSpawnHitEffect", "Function UTGame.UTDmgType_Burning.SpawnHitEffect")()); }
+			ScriptFunction GetHitEffectDuration() { mixin(MGF!("mGetHitEffectDuration", "Function UTGame.UTDmgType_Burning.GetHitEffectDuration")()); }
 		}
 	}
 final:

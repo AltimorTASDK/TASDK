@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDmgType_ScorpionSelfDestruct;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTDmgType_Burning;
 import UnrealScript.UTGame.UTPlayerReplicationInfo;
 
@@ -8,15 +9,15 @@ extern(C++) interface UTDmgType_ScorpionSelfDestruct : UTDmgType_Burning
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_ScorpionSelfDestruct")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDmgType_ScorpionSelfDestruct")()); }
 	private static __gshared UTDmgType_ScorpionSelfDestruct mDefaultProperties;
-	@property final static UTDmgType_ScorpionSelfDestruct DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDmgType_ScorpionSelfDestruct)("UTDmgType_ScorpionSelfDestruct UTGame.Default__UTDmgType_ScorpionSelfDestruct")); }
+	@property final static UTDmgType_ScorpionSelfDestruct DefaultProperties() { mixin(MGDPC!(UTDmgType_ScorpionSelfDestruct, "UTDmgType_ScorpionSelfDestruct UTGame.Default__UTDmgType_ScorpionSelfDestruct")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIncrementKills;
-		public @property static final ScriptFunction IncrementKills() { return mIncrementKills ? mIncrementKills : (mIncrementKills = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_ScorpionSelfDestruct.IncrementKills")); }
+		public @property static final ScriptFunction IncrementKills() { mixin(MGF!("mIncrementKills", "Function UTGame.UTDmgType_ScorpionSelfDestruct.IncrementKills")()); }
 	}
-	@property final auto ref int DamageGivenForSelfDestruct() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
+	@property final auto ref int DamageGivenForSelfDestruct() { mixin(MGPC!(int, 300)()); }
 	final static int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{
 		ubyte params[8];

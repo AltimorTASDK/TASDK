@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrStormControlPoint;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.PlayerController;
@@ -11,9 +12,9 @@ extern(C++) interface TrStormControlPoint : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStormControlPoint")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStormControlPoint")()); }
 	private static __gshared TrStormControlPoint mDefaultProperties;
-	@property final static TrStormControlPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStormControlPoint)("TrStormControlPoint TribesGame.Default__TrStormControlPoint")); }
+	@property final static TrStormControlPoint DefaultProperties() { mixin(MGDPC!(TrStormControlPoint, "TrStormControlPoint TribesGame.Default__TrStormControlPoint")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,14 +30,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPawnTouched() { return mOnPawnTouched ? mOnPawnTouched : (mOnPawnTouched = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.OnPawnTouched")); }
-			ScriptFunction GetControlPointState() { return mGetControlPointState ? mGetControlPointState : (mGetControlPointState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.GetControlPointState")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.Tick")); }
-			ScriptFunction FireMissile() { return mFireMissile ? mFireMissile : (mFireMissile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.FireMissile")); }
-			ScriptFunction BeginTransition() { return mBeginTransition ? mBeginTransition : (mBeginTransition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.BeginTransition")); }
-			ScriptFunction SetControlPointState() { return mSetControlPointState ? mSetControlPointState : (mSetControlPointState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.SetControlPointState")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.PostRenderFor")); }
-			ScriptFunction GetScreenName() { return mGetScreenName ? mGetScreenName : (mGetScreenName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPoint.GetScreenName")); }
+			ScriptFunction OnPawnTouched() { mixin(MGF!("mOnPawnTouched", "Function TribesGame.TrStormControlPoint.OnPawnTouched")()); }
+			ScriptFunction GetControlPointState() { mixin(MGF!("mGetControlPointState", "Function TribesGame.TrStormControlPoint.GetControlPointState")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrStormControlPoint.Tick")()); }
+			ScriptFunction FireMissile() { mixin(MGF!("mFireMissile", "Function TribesGame.TrStormControlPoint.FireMissile")()); }
+			ScriptFunction BeginTransition() { mixin(MGF!("mBeginTransition", "Function TribesGame.TrStormControlPoint.BeginTransition")()); }
+			ScriptFunction SetControlPointState() { mixin(MGF!("mSetControlPointState", "Function TribesGame.TrStormControlPoint.SetControlPointState")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrStormControlPoint.PostRenderFor")()); }
+			ScriptFunction GetScreenName() { mixin(MGF!("mGetScreenName", "Function TribesGame.TrStormControlPoint.GetScreenName")()); }
 		}
 	}
 	enum ControlPointState : ubyte
@@ -50,16 +51,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrInventoryStation_Storm) m_InventoryStations() { return *cast(ScriptArray!(TrInventoryStation_Storm)*)(cast(size_t)cast(void*)this + 1392); }
-		ScriptString m_sControlPointName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1404); }
-		float m_fLaunchTimeDescriptionPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1388); }
-		float m_fControlDescriptionPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1384); }
-		float m_fMissileFlightTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1380); }
-		float m_fMissileLaunchTrackerSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1376); }
-		float m_fMissileLaunchTracker() { return *cast(float*)(cast(size_t)cast(void*)this + 1372); }
-		float m_fCurrentTransitionAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 1368); }
-		float m_fTransitionSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1364); }
-		TrStormControlPoint.ControlPointState r_CurrentControlPointState() { return *cast(TrStormControlPoint.ControlPointState*)(cast(size_t)cast(void*)this + 1360); }
+		ScriptArray!(TrInventoryStation_Storm) m_InventoryStations() { mixin(MGPC!(ScriptArray!(TrInventoryStation_Storm), 1392)()); }
+		ScriptString m_sControlPointName() { mixin(MGPC!(ScriptString, 1404)()); }
+		float m_fLaunchTimeDescriptionPlacementY() { mixin(MGPC!(float, 1388)()); }
+		float m_fControlDescriptionPlacementY() { mixin(MGPC!(float, 1384)()); }
+		float m_fMissileFlightTime() { mixin(MGPC!(float, 1380)()); }
+		float m_fMissileLaunchTrackerSpeed() { mixin(MGPC!(float, 1376)()); }
+		float m_fMissileLaunchTracker() { mixin(MGPC!(float, 1372)()); }
+		float m_fCurrentTransitionAmount() { mixin(MGPC!(float, 1368)()); }
+		float m_fTransitionSpeed() { mixin(MGPC!(float, 1364)()); }
+		TrStormControlPoint.ControlPointState r_CurrentControlPointState() { mixin(MGPC!(TrStormControlPoint.ControlPointState, 1360)()); }
 	}
 final:
 	void OnPawnTouched(TrPawn TRP)

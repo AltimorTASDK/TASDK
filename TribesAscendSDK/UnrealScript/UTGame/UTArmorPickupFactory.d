@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTArmorPickupFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.Controller;
@@ -11,9 +12,9 @@ extern(C++) interface UTArmorPickupFactory : UTItemPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTArmorPickupFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTArmorPickupFactory")()); }
 	private static __gshared UTArmorPickupFactory mDefaultProperties;
-	@property final static UTArmorPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTArmorPickupFactory)("UTArmorPickupFactory UTGame.Default__UTArmorPickupFactory")); }
+	@property final static UTArmorPickupFactory DefaultProperties() { mixin(MGDPC!(UTArmorPickupFactory, "UTArmorPickupFactory UTGame.Default__UTArmorPickupFactory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,15 +28,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTArmorPickupFactory.UpdateHUD")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTArmorPickupFactory.PostBeginPlay")); }
-			ScriptFunction SpawnCopyFor() { return mSpawnCopyFor ? mSpawnCopyFor : (mSpawnCopyFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTArmorPickupFactory.SpawnCopyFor")); }
-			ScriptFunction CanUseShield() { return mCanUseShield ? mCanUseShield : (mCanUseShield = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTArmorPickupFactory.CanUseShield")); }
-			ScriptFunction AddShieldStrength() { return mAddShieldStrength ? mAddShieldStrength : (mAddShieldStrength = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTArmorPickupFactory.AddShieldStrength")); }
-			ScriptFunction BotDesireability() { return mBotDesireability ? mBotDesireability : (mBotDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTArmorPickupFactory.BotDesireability")); }
+			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function UTGame.UTArmorPickupFactory.UpdateHUD")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTArmorPickupFactory.PostBeginPlay")()); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTArmorPickupFactory.SpawnCopyFor")()); }
+			ScriptFunction CanUseShield() { mixin(MGF!("mCanUseShield", "Function UTGame.UTArmorPickupFactory.CanUseShield")()); }
+			ScriptFunction AddShieldStrength() { mixin(MGF!("mAddShieldStrength", "Function UTGame.UTArmorPickupFactory.AddShieldStrength")()); }
+			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTArmorPickupFactory.BotDesireability")()); }
 		}
 	}
-	@property final auto ref int ShieldAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 976); }
+	static struct Pickup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTArmorPickupFactory.Pickup")()); }
+	}
+	@property final auto ref int ShieldAmount() { mixin(MGPC!(int, 976)()); }
 final:
 	static void UpdateHUD(UTHUD H)
 	{

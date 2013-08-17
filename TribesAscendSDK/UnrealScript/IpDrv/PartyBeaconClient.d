@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.PartyBeaconClient;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.IpDrv.PartyBeacon;
 import UnrealScript.Engine.OnlineGameSearch;
@@ -10,9 +11,9 @@ extern(C++) interface PartyBeaconClient : PartyBeacon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.PartyBeaconClient")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.PartyBeaconClient")()); }
 	private static __gshared PartyBeaconClient mDefaultProperties;
-	@property final static PartyBeaconClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PartyBeaconClient)("PartyBeaconClient IpDrv.Default__PartyBeaconClient")); }
+	@property final static PartyBeaconClient DefaultProperties() { mixin(MGDPC!(PartyBeaconClient, "PartyBeaconClient IpDrv.Default__PartyBeaconClient")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,15 +30,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnHostHasCancelled() { return mOnHostHasCancelled ? mOnHostHasCancelled : (mOnHostHasCancelled = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.OnHostHasCancelled")); }
-			ScriptFunction OnHostIsReady() { return mOnHostIsReady ? mOnHostIsReady : (mOnHostIsReady = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.OnHostIsReady")); }
-			ScriptFunction OnTravelRequestReceived() { return mOnTravelRequestReceived ? mOnTravelRequestReceived : (mOnTravelRequestReceived = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.OnTravelRequestReceived")); }
-			ScriptFunction OnReservationCountUpdated() { return mOnReservationCountUpdated ? mOnReservationCountUpdated : (mOnReservationCountUpdated = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.OnReservationCountUpdated")); }
-			ScriptFunction OnReservationRequestComplete() { return mOnReservationRequestComplete ? mOnReservationRequestComplete : (mOnReservationRequestComplete = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.OnReservationRequestComplete")); }
-			ScriptFunction RequestReservation() { return mRequestReservation ? mRequestReservation : (mRequestReservation = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.RequestReservation")); }
-			ScriptFunction RequestReservationUpdate() { return mRequestReservationUpdate ? mRequestReservationUpdate : (mRequestReservationUpdate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.RequestReservationUpdate")); }
-			ScriptFunction CancelReservation() { return mCancelReservation ? mCancelReservation : (mCancelReservation = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.CancelReservation")); }
-			ScriptFunction DestroyBeacon() { return mDestroyBeacon ? mDestroyBeacon : (mDestroyBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconClient.DestroyBeacon")); }
+			ScriptFunction OnHostHasCancelled() { mixin(MGF!("mOnHostHasCancelled", "Function IpDrv.PartyBeaconClient.OnHostHasCancelled")()); }
+			ScriptFunction OnHostIsReady() { mixin(MGF!("mOnHostIsReady", "Function IpDrv.PartyBeaconClient.OnHostIsReady")()); }
+			ScriptFunction OnTravelRequestReceived() { mixin(MGF!("mOnTravelRequestReceived", "Function IpDrv.PartyBeaconClient.OnTravelRequestReceived")()); }
+			ScriptFunction OnReservationCountUpdated() { mixin(MGF!("mOnReservationCountUpdated", "Function IpDrv.PartyBeaconClient.OnReservationCountUpdated")()); }
+			ScriptFunction OnReservationRequestComplete() { mixin(MGF!("mOnReservationRequestComplete", "Function IpDrv.PartyBeaconClient.OnReservationRequestComplete")()); }
+			ScriptFunction RequestReservation() { mixin(MGF!("mRequestReservation", "Function IpDrv.PartyBeaconClient.RequestReservation")()); }
+			ScriptFunction RequestReservationUpdate() { mixin(MGF!("mRequestReservationUpdate", "Function IpDrv.PartyBeaconClient.RequestReservationUpdate")()); }
+			ScriptFunction CancelReservation() { mixin(MGF!("mCancelReservation", "Function IpDrv.PartyBeaconClient.CancelReservation")()); }
+			ScriptFunction DestroyBeacon() { mixin(MGF!("mDestroyBeacon", "Function IpDrv.PartyBeaconClient.DestroyBeacon")()); }
 		}
 	}
 	enum EPartyBeaconClientRequest : ubyte
@@ -58,15 +59,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ClientBeaconAddressResolver Resolver() { return *cast(ClientBeaconAddressResolver*)(cast(size_t)cast(void*)this + 164); }
-		ScriptClass ResolverClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString ResolverClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		float ReservationRequestElapsedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
-		float ReservationRequestTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-		PartyBeaconClient.EPartyBeaconClientRequest ClientBeaconRequestType() { return *cast(PartyBeaconClient.EPartyBeaconClientRequest*)(cast(size_t)cast(void*)this + 137); }
-		PartyBeaconClient.EPartyBeaconClientState ClientBeaconState() { return *cast(PartyBeaconClient.EPartyBeaconClientState*)(cast(size_t)cast(void*)this + 136); }
-		OnlineGameSearch.OnlineGameSearchResult HostPendingRequest() { return *cast(OnlineGameSearch.OnlineGameSearchResult*)(cast(size_t)cast(void*)this + 104); }
-		PartyBeacon.PartyReservation PendingRequest() { return *cast(PartyBeacon.PartyReservation*)(cast(size_t)cast(void*)this + 112); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnHostHasCancelled__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnHostIsReady__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnTravelRequestReceived__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationCountUpdated__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationRequestComplete__Delegate'!
+		ClientBeaconAddressResolver Resolver() { mixin(MGPC!(ClientBeaconAddressResolver, 164)()); }
+		ScriptClass ResolverClass() { mixin(MGPC!(ScriptClass, 160)()); }
+		ScriptString ResolverClassName() { mixin(MGPC!(ScriptString, 148)()); }
+		float ReservationRequestElapsedTime() { mixin(MGPC!(float, 144)()); }
+		float ReservationRequestTimeout() { mixin(MGPC!(float, 140)()); }
+		PartyBeaconClient.EPartyBeaconClientRequest ClientBeaconRequestType() { mixin(MGPC!(PartyBeaconClient.EPartyBeaconClientRequest, 137)()); }
+		PartyBeaconClient.EPartyBeaconClientState ClientBeaconState() { mixin(MGPC!(PartyBeaconClient.EPartyBeaconClientState, 136)()); }
+		OnlineGameSearch.OnlineGameSearchResult HostPendingRequest() { mixin(MGPC!(OnlineGameSearch.OnlineGameSearchResult, 104)()); }
+		PartyBeacon.PartyReservation PendingRequest() { mixin(MGPC!(PartyBeacon.PartyReservation, 112)()); }
 	}
 final:
 	void OnHostHasCancelled()
@@ -100,25 +106,25 @@ final:
 		*cast(PartyBeacon.EPartyReservationResult*)params.ptr = ReservationResult;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnReservationRequestComplete, params.ptr, cast(void*)0);
 	}
-	bool RequestReservation(OnlineGameSearch.OnlineGameSearchResult* DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* Players)
+	bool RequestReservation(ref const OnlineGameSearch.OnlineGameSearchResult DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) Players)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = *DesiredHost;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = DesiredHost;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[8] = RequestingPartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = *Players;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RequestReservation, params.ptr, cast(void*)0);
 		*DesiredHost = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
 		*Players = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	bool RequestReservationUpdate(OnlineGameSearch.OnlineGameSearchResult* DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* PlayersToAdd)
+	bool RequestReservationUpdate(ref const OnlineGameSearch.OnlineGameSearchResult DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) PlayersToAdd)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = *DesiredHost;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = DesiredHost;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[8] = RequestingPartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = *PlayersToAdd;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = PlayersToAdd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RequestReservationUpdate, params.ptr, cast(void*)0);
 		*DesiredHost = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
 		*PlayersToAdd = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16];

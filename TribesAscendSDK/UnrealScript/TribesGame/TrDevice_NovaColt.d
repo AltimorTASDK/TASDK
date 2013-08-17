@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrDevice_NovaColt;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrDevice;
 
 extern(C++) interface TrDevice_NovaColt : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_NovaColt")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_NovaColt")()); }
 	private static __gshared TrDevice_NovaColt mDefaultProperties;
-	@property final static TrDevice_NovaColt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_NovaColt)("TrDevice_NovaColt TribesGame.Default__TrDevice_NovaColt")); }
+	@property final static TrDevice_NovaColt DefaultProperties() { mixin(MGDPC!(TrDevice_NovaColt, "TrDevice_NovaColt TribesGame.Default__TrDevice_NovaColt")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,9 +21,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldRefire() { return mShouldRefire ? mShouldRefire : (mShouldRefire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_NovaColt.ShouldRefire")); }
-			ScriptFunction FireAmmunition() { return mFireAmmunition ? mFireAmmunition : (mFireAmmunition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_NovaColt.FireAmmunition")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_NovaColt.StartFire")); }
+			ScriptFunction ShouldRefire() { mixin(MGF!("mShouldRefire", "Function TribesGame.TrDevice_NovaColt.ShouldRefire")()); }
+			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_NovaColt.FireAmmunition")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_NovaColt.StartFire")()); }
 		}
 	}
 final:

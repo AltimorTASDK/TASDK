@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrStation;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.Actor;
@@ -12,9 +13,9 @@ extern(C++) interface TrStation : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStation")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStation")()); }
 	private static __gshared TrStation mDefaultProperties;
-	@property final static TrStation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStation)("TrStation TribesGame.Default__TrStation")); }
+	@property final static TrStation DefaultProperties() { mixin(MGDPC!(TrStation, "TrStation TribesGame.Default__TrStation")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,25 +31,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.PostBeginPlay")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.ReplicatedEvent")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.Destroyed")); }
-			ScriptFunction PawnEnteredStation() { return mPawnEnteredStation ? mPawnEnteredStation : (mPawnEnteredStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.PawnEnteredStation")); }
-			ScriptFunction PawnLeftStation() { return mPawnLeftStation ? mPawnLeftStation : (mPawnLeftStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.PawnLeftStation")); }
-			ScriptFunction PlayStationEnteredEffects() { return mPlayStationEnteredEffects ? mPlayStationEnteredEffects : (mPlayStationEnteredEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.PlayStationEnteredEffects")); }
-			ScriptFunction PlayStationLeftEffects() { return mPlayStationLeftEffects ? mPlayStationLeftEffects : (mPlayStationLeftEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.PlayStationLeftEffects")); }
-			ScriptFunction BlocksLineChecksFromSourceActor() { return mBlocksLineChecksFromSourceActor ? mBlocksLineChecksFromSourceActor : (mBlocksLineChecksFromSourceActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStation.BlocksLineChecksFromSourceActor")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrStation.PostBeginPlay")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrStation.ReplicatedEvent")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrStation.Destroyed")()); }
+			ScriptFunction PawnEnteredStation() { mixin(MGF!("mPawnEnteredStation", "Function TribesGame.TrStation.PawnEnteredStation")()); }
+			ScriptFunction PawnLeftStation() { mixin(MGF!("mPawnLeftStation", "Function TribesGame.TrStation.PawnLeftStation")()); }
+			ScriptFunction PlayStationEnteredEffects() { mixin(MGF!("mPlayStationEnteredEffects", "Function TribesGame.TrStation.PlayStationEnteredEffects")()); }
+			ScriptFunction PlayStationLeftEffects() { mixin(MGF!("mPlayStationLeftEffects", "Function TribesGame.TrStation.PlayStationLeftEffects")()); }
+			ScriptFunction BlocksLineChecksFromSourceActor() { mixin(MGF!("mBlocksLineChecksFromSourceActor", "Function TribesGame.TrStation.BlocksLineChecksFromSourceActor")()); }
 		}
 	}
 	@property final auto ref
 	{
-		TrCaHCapturePoint m_OwningCaHCapturePoint() { return *cast(TrCaHCapturePoint*)(cast(size_t)cast(void*)this + 1392); }
-		SoundCue m_StationLeftSoundCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1384); }
-		SoundCue m_StationEnteredSoundCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1376); }
-		ScriptClass StationCollisionClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1372); }
-		TrPawn r_CurrentPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 1368); }
-		TrStationCollision m_Collision() { return *cast(TrStationCollision*)(cast(size_t)cast(void*)this + 1364); }
-		float m_fStationZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1360); }
+		TrCaHCapturePoint m_OwningCaHCapturePoint() { mixin(MGPC!(TrCaHCapturePoint, 1392)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StationLeftAudioComponent'!
+		SoundCue m_StationLeftSoundCue() { mixin(MGPC!(SoundCue, 1384)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StationEnteredAudioComponent'!
+		SoundCue m_StationEnteredSoundCue() { mixin(MGPC!(SoundCue, 1376)()); }
+		ScriptClass StationCollisionClass() { mixin(MGPC!(ScriptClass, 1372)()); }
+		TrPawn r_CurrentPawn() { mixin(MGPC!(TrPawn, 1368)()); }
+		TrStationCollision m_Collision() { mixin(MGPC!(TrStationCollision, 1364)()); }
+		float m_fStationZOffset() { mixin(MGPC!(float, 1360)()); }
 	}
 final:
 	void PostBeginPlay()

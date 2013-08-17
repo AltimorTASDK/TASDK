@@ -1,15 +1,16 @@
 module UnrealScript.GameFramework.FrameworkGame;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameInfo;
 
 extern(C++) interface FrameworkGame : GameInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.FrameworkGame")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.FrameworkGame")()); }
 	private static __gshared FrameworkGame mDefaultProperties;
-	@property final static FrameworkGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FrameworkGame)("FrameworkGame GameFramework.Default__FrameworkGame")); }
+	@property final static FrameworkGame DefaultProperties() { mixin(MGDPC!(FrameworkGame, "FrameworkGame GameFramework.Default__FrameworkGame")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,12 +24,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TgStartGame() { return mTgStartGame ? mTgStartGame : (mTgStartGame = ScriptObject.Find!(ScriptFunction)("Function GameFramework.FrameworkGame.TgStartGame")); }
-			ScriptFunction TgEndGame() { return mTgEndGame ? mTgEndGame : (mTgEndGame = ScriptObject.Find!(ScriptFunction)("Function GameFramework.FrameworkGame.TgEndGame")); }
-			ScriptFunction TgTimer() { return mTgTimer ? mTgTimer : (mTgTimer = ScriptObject.Find!(ScriptFunction)("Function GameFramework.FrameworkGame.TgTimer")); }
-			ScriptFunction TgChangeScore() { return mTgChangeScore ? mTgChangeScore : (mTgChangeScore = ScriptObject.Find!(ScriptFunction)("Function GameFramework.FrameworkGame.TgChangeScore")); }
-			ScriptFunction TgChangeTime() { return mTgChangeTime ? mTgChangeTime : (mTgChangeTime = ScriptObject.Find!(ScriptFunction)("Function GameFramework.FrameworkGame.TgChangeTime")); }
-			ScriptFunction TgGetSpectators() { return mTgGetSpectators ? mTgGetSpectators : (mTgGetSpectators = ScriptObject.Find!(ScriptFunction)("Function GameFramework.FrameworkGame.TgGetSpectators")); }
+			ScriptFunction TgStartGame() { mixin(MGF!("mTgStartGame", "Function GameFramework.FrameworkGame.TgStartGame")()); }
+			ScriptFunction TgEndGame() { mixin(MGF!("mTgEndGame", "Function GameFramework.FrameworkGame.TgEndGame")()); }
+			ScriptFunction TgTimer() { mixin(MGF!("mTgTimer", "Function GameFramework.FrameworkGame.TgTimer")()); }
+			ScriptFunction TgChangeScore() { mixin(MGF!("mTgChangeScore", "Function GameFramework.FrameworkGame.TgChangeScore")()); }
+			ScriptFunction TgChangeTime() { mixin(MGF!("mTgChangeTime", "Function GameFramework.FrameworkGame.TgChangeTime")()); }
+			ScriptFunction TgGetSpectators() { mixin(MGF!("mTgGetSpectators", "Function GameFramework.FrameworkGame.TgGetSpectators")()); }
 		}
 	}
 	struct RequiredMobileInputConfig
@@ -36,41 +37,41 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.FrameworkGame.RequiredMobileInputConfig")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.FrameworkGame.RequiredMobileInputConfig")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(ScriptString) RequireZoneNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 12); }
-				ScriptString GroupName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+				ScriptArray!(ScriptString) RequireZoneNames() { mixin(MGPS!(ScriptArray!(ScriptString), 12)()); }
+				ScriptString GroupName() { mixin(MGPS!(ScriptString, 0)()); }
 			}
-			bool bIsAttractModeGroup() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
-			bool bIsAttractModeGroup(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
+			bool bIsAttractModeGroup() { mixin(MGBPS!(24, 0x1)()); }
+			bool bIsAttractModeGroup(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(FrameworkGame.RequiredMobileInputConfig) RequiredMobileInputConfigs() { return *cast(ScriptArray!(FrameworkGame.RequiredMobileInputConfig)*)(cast(size_t)cast(void*)this + 884); }
+	@property final auto ref ScriptArray!(FrameworkGame.RequiredMobileInputConfig) RequiredMobileInputConfigs() { mixin(MGPC!(ScriptArray!(FrameworkGame.RequiredMobileInputConfig), 884)()); }
 final:
-	void TgStartGame(ScriptString* Reason)
+	void TgStartGame(ref ScriptString Reason)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *Reason;
+		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgStartGame, params.ptr, cast(void*)0);
 		*Reason = *cast(ScriptString*)params.ptr;
 	}
-	void TgEndGame(ScriptString* Reason)
+	void TgEndGame(ref ScriptString Reason)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *Reason;
+		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgEndGame, params.ptr, cast(void*)0);
 		*Reason = *cast(ScriptString*)params.ptr;
 	}
-	void TgTimer(ScriptString* sTimerCommand)
+	void TgTimer(ref ScriptString sTimerCommand)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *sTimerCommand;
+		*cast(ScriptString*)params.ptr = sTimerCommand;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgTimer, params.ptr, cast(void*)0);
 		*sTimerCommand = *cast(ScriptString*)params.ptr;
 	}
@@ -89,11 +90,11 @@ final:
 		*cast(int*)params.ptr = nSeconds;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgChangeTime, params.ptr, cast(void*)0);
 	}
-	void TgGetSpectators(ScriptArray!(ScriptString)* List)
+	void TgGetSpectators(ref ScriptArray!(ScriptString) List)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptString)*)params.ptr = *List;
+		*cast(ScriptArray!(ScriptString)*)params.ptr = List;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgGetSpectators, params.ptr, cast(void*)0);
 		*List = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}

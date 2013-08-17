@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrFriendManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrFriendManager : TrObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFriendManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFriendManager")()); }
 	private static __gshared TrFriendManager mDefaultProperties;
-	@property final static TrFriendManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFriendManager)("TrFriendManager TribesGame.Default__TrFriendManager")); }
+	@property final static TrFriendManager DefaultProperties() { mixin(MGDPC!(TrFriendManager, "TrFriendManager TribesGame.Default__TrFriendManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,19 +32,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RequestFriendsList() { return mRequestFriendsList ? mRequestFriendsList : (mRequestFriendsList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.RequestFriendsList")); }
-			ScriptFunction AddFriend() { return mAddFriend ? mAddFriend : (mAddFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.AddFriend")); }
-			ScriptFunction JoinFriend() { return mJoinFriend ? mJoinFriend : (mJoinFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.JoinFriend")); }
-			ScriptFunction IgnoreFriend() { return mIgnoreFriend ? mIgnoreFriend : (mIgnoreFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.IgnoreFriend")); }
-			ScriptFunction RemoveFriend() { return mRemoveFriend ? mRemoveFriend : (mRemoveFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.RemoveFriend")); }
-			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.Update")); }
-			ScriptFunction RemoveFromList() { return mRemoveFromList ? mRemoveFromList : (mRemoveFromList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.RemoveFromList")); }
-			ScriptFunction GetOnlineFriendCount() { return mGetOnlineFriendCount ? mGetOnlineFriendCount : (mGetOnlineFriendCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetOnlineFriendCount")); }
-			ScriptFunction GetInGameFriendCount() { return mGetInGameFriendCount ? mGetInGameFriendCount : (mGetInGameFriendCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetInGameFriendCount")); }
-			ScriptFunction GetOnlineFollowerCount() { return mGetOnlineFollowerCount ? mGetOnlineFollowerCount : (mGetOnlineFollowerCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetOnlineFollowerCount")); }
-			ScriptFunction IsFriend() { return mIsFriend ? mIsFriend : (mIsFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.IsFriend")); }
-			ScriptFunction GetFriendListIndex() { return mGetFriendListIndex ? mGetFriendListIndex : (mGetFriendListIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetFriendListIndex")); }
-			ScriptFunction AddFriendScoreboard() { return mAddFriendScoreboard ? mAddFriendScoreboard : (mAddFriendScoreboard = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.AddFriendScoreboard")); }
+			ScriptFunction RequestFriendsList() { mixin(MGF!("mRequestFriendsList", "Function TribesGame.TrFriendManager.RequestFriendsList")()); }
+			ScriptFunction AddFriend() { mixin(MGF!("mAddFriend", "Function TribesGame.TrFriendManager.AddFriend")()); }
+			ScriptFunction JoinFriend() { mixin(MGF!("mJoinFriend", "Function TribesGame.TrFriendManager.JoinFriend")()); }
+			ScriptFunction IgnoreFriend() { mixin(MGF!("mIgnoreFriend", "Function TribesGame.TrFriendManager.IgnoreFriend")()); }
+			ScriptFunction RemoveFriend() { mixin(MGF!("mRemoveFriend", "Function TribesGame.TrFriendManager.RemoveFriend")()); }
+			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function TribesGame.TrFriendManager.Update")()); }
+			ScriptFunction RemoveFromList() { mixin(MGF!("mRemoveFromList", "Function TribesGame.TrFriendManager.RemoveFromList")()); }
+			ScriptFunction GetOnlineFriendCount() { mixin(MGF!("mGetOnlineFriendCount", "Function TribesGame.TrFriendManager.GetOnlineFriendCount")()); }
+			ScriptFunction GetInGameFriendCount() { mixin(MGF!("mGetInGameFriendCount", "Function TribesGame.TrFriendManager.GetInGameFriendCount")()); }
+			ScriptFunction GetOnlineFollowerCount() { mixin(MGF!("mGetOnlineFollowerCount", "Function TribesGame.TrFriendManager.GetOnlineFollowerCount")()); }
+			ScriptFunction IsFriend() { mixin(MGF!("mIsFriend", "Function TribesGame.TrFriendManager.IsFriend")()); }
+			ScriptFunction GetFriendListIndex() { mixin(MGF!("mGetFriendListIndex", "Function TribesGame.TrFriendManager.GetFriendListIndex")()); }
+			ScriptFunction AddFriendScoreboard() { mixin(MGF!("mAddFriendScoreboard", "Function TribesGame.TrFriendManager.AddFriendScoreboard")()); }
 		}
 	}
 	enum EOnlineState : ubyte
@@ -58,30 +59,30 @@ public extern(D):
 		private ubyte __buffer__[17];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrFriendManager.FriendStruct")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrFriendManager.FriendStruct")()); }
 		@property final auto ref
 		{
-			ScriptString PlayerName() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-			TrFriendManager.EOnlineState OnlineState() { return *cast(TrFriendManager.EOnlineState*)(cast(size_t)&this + 16); }
-			int PlayerID() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptString PlayerName() { mixin(MGPS!(ScriptString, 4)()); }
+			TrFriendManager.EOnlineState OnlineState() { mixin(MGPS!(TrFriendManager.EOnlineState, 16)()); }
+			int PlayerID() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString RecentlyAddedFriend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 76); }
-			ScriptArray!(TrFriendManager.FriendStruct) FriendsList() { return *cast(ScriptArray!(TrFriendManager.FriendStruct)*)(cast(size_t)cast(void*)this + 96); }
-			ScriptArray!(TrFriendManager.FriendStruct) FollowersList() { return *cast(ScriptArray!(TrFriendManager.FriendStruct)*)(cast(size_t)cast(void*)this + 108); }
-			ScriptArray!(TrFriendManager.FriendStruct) IgnoredList() { return *cast(ScriptArray!(TrFriendManager.FriendStruct)*)(cast(size_t)cast(void*)this + 120); }
-			GFxObject GFxList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 92); }
-			int GFxCount() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int PrevBlockedCount() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-			int PrevFollowerCount() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			int PrevFriendCount() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			ScriptString RecentlyAddedFriend() { mixin(MGPC!(ScriptString, 76)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) FriendsList() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 96)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) FollowersList() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 108)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) IgnoredList() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 120)()); }
+			GFxObject GFxList() { mixin(MGPC!(GFxObject, 92)()); }
+			int GFxCount() { mixin(MGPC!(int, 88)()); }
+			int PrevBlockedCount() { mixin(MGPC!(int, 68)()); }
+			int PrevFollowerCount() { mixin(MGPC!(int, 64)()); }
+			int PrevFriendCount() { mixin(MGPC!(int, 60)()); }
 		}
-		bool AddFriendSuccess() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-		bool AddFriendSuccess(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+		bool AddFriendSuccess() { mixin(MGBPC!(72, 0x1)()); }
+		bool AddFriendSuccess(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 final:
 	void RequestFriendsList()

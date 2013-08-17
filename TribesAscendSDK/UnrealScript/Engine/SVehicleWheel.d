@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SVehicleWheel;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SkelControlWheel;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleSystem;
@@ -10,9 +11,9 @@ extern(C++) interface SVehicleWheel : Component
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicleWheel")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SVehicleWheel")()); }
 	private static __gshared SVehicleWheel mDefaultProperties;
-	@property final static SVehicleWheel DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SVehicleWheel)("SVehicleWheel Engine.Default__SVehicleWheel")); }
+	@property final static SVehicleWheel DefaultProperties() { mixin(MGDPC!(SVehicleWheel, "SVehicleWheel Engine.Default__SVehicleWheel")()); }
 	enum EWheelSide : ubyte
 	{
 		SIDE_None = 0,
@@ -24,54 +25,55 @@ public extern(D):
 	{
 		auto ref
 		{
-			SkelControlWheel WheelControl() { return *cast(SkelControlWheel*)(cast(size_t)cast(void*)this + 104); }
-			ScriptName SkelControlName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 96); }
-			Vector WheelPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 168); }
-			float ContactForce() { return *cast(float*)(cast(size_t)cast(void*)this + 228); }
-			float LongSlipRatio() { return *cast(float*)(cast(size_t)cast(void*)this + 184); }
-			float LatSlipAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 188); }
-			float MotorTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			float SpinVel() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			float LongImpulse() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			Vector LongDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 204); }
-			float WheelRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 128); }
-			float LatImpulse() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
-			Vector LatDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 216); }
-			ScriptName SlipParticleParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 268); }
-			ScriptClass WheelPSCClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 260); }
-			int WheelMaterialIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 256); }
-			UObject.Pointer WheelShape() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 252); }
-			float CurrentRotation() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float SuspensionPosition() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			float DesiredSuspensionPosition() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-			Vector ContactNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 192); }
-			float ParkedSlipFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float HandbrakeLatSlipFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			float HandbrakeLongSlipFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-			float LatSlipFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			float LongSlipFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			SVehicleWheel.EWheelSide Side() { return *cast(SVehicleWheel.EWheelSide*)(cast(size_t)cast(void*)this + 144); }
-			ParticleSystem WheelParticleSystem() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 140); }
-			float SuspensionSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 136); }
-			float SuspensionTravel() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-			Vector BoneOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 116); }
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 108); }
-			float SteerFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float ChassisTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			float BrakeTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float Steer() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
+			SkelControlWheel WheelControl() { mixin(MGPC!(SkelControlWheel, 104)()); }
+			ScriptName SkelControlName() { mixin(MGPC!(ScriptName, 96)()); }
+			Vector WheelPosition() { mixin(MGPC!(Vector, 168)()); }
+			float ContactForce() { mixin(MGPC!(float, 228)()); }
+			float LongSlipRatio() { mixin(MGPC!(float, 184)()); }
+			float LatSlipAngle() { mixin(MGPC!(float, 188)()); }
+			float MotorTorque() { mixin(MGPC!(float, 76)()); }
+			float SpinVel() { mixin(MGPC!(float, 180)()); }
+			float LongImpulse() { mixin(MGPC!(float, 232)()); }
+			Vector LongDirection() { mixin(MGPC!(Vector, 204)()); }
+			float WheelRadius() { mixin(MGPC!(float, 128)()); }
+			float LatImpulse() { mixin(MGPC!(float, 236)()); }
+			Vector LatDirection() { mixin(MGPC!(Vector, 216)()); }
+			ScriptName SlipParticleParamName() { mixin(MGPC!(ScriptName, 268)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'WheelParticleComp'!
+			ScriptClass WheelPSCClass() { mixin(MGPC!(ScriptClass, 260)()); }
+			int WheelMaterialIndex() { mixin(MGPC!(int, 256)()); }
+			UObject.Pointer WheelShape() { mixin(MGPC!(UObject.Pointer, 252)()); }
+			float CurrentRotation() { mixin(MGPC!(float, 248)()); }
+			float SuspensionPosition() { mixin(MGPC!(float, 244)()); }
+			float DesiredSuspensionPosition() { mixin(MGPC!(float, 240)()); }
+			Vector ContactNormal() { mixin(MGPC!(Vector, 192)()); }
+			float ParkedSlipFactor() { mixin(MGPC!(float, 164)()); }
+			float HandbrakeLatSlipFactor() { mixin(MGPC!(float, 160)()); }
+			float HandbrakeLongSlipFactor() { mixin(MGPC!(float, 156)()); }
+			float LatSlipFactor() { mixin(MGPC!(float, 152)()); }
+			float LongSlipFactor() { mixin(MGPC!(float, 148)()); }
+			SVehicleWheel.EWheelSide Side() { mixin(MGPC!(SVehicleWheel.EWheelSide, 144)()); }
+			ParticleSystem WheelParticleSystem() { mixin(MGPC!(ParticleSystem, 140)()); }
+			float SuspensionSpeed() { mixin(MGPC!(float, 136)()); }
+			float SuspensionTravel() { mixin(MGPC!(float, 132)()); }
+			Vector BoneOffset() { mixin(MGPC!(Vector, 116)()); }
+			ScriptName BoneName() { mixin(MGPC!(ScriptName, 108)()); }
+			float SteerFactor() { mixin(MGPC!(float, 92)()); }
+			float ChassisTorque() { mixin(MGPC!(float, 84)()); }
+			float BrakeTorque() { mixin(MGPC!(float, 80)()); }
+			float Steer() { mixin(MGPC!(float, 72)()); }
 		}
-		bool bWheelOnGround() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x20) != 0; }
-		bool bWheelOnGround(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x20; } return val; }
-		bool bIsSquealing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x10) != 0; }
-		bool bIsSquealing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x10; } return val; }
-		bool bCollidesPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x8) != 0; }
-		bool bCollidesPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x8; } return val; }
-		bool bCollidesVehicles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x4) != 0; }
-		bool bCollidesVehicles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x4; } return val; }
-		bool bHoverWheel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x2) != 0; }
-		bool bHoverWheel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x2; } return val; }
-		bool bPoweredWheel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bPoweredWheel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bWheelOnGround() { mixin(MGBPC!(88, 0x20)()); }
+		bool bWheelOnGround(bool val) { mixin(MSBPC!(88, 0x20)()); }
+		bool bIsSquealing() { mixin(MGBPC!(88, 0x10)()); }
+		bool bIsSquealing(bool val) { mixin(MSBPC!(88, 0x10)()); }
+		bool bCollidesPawns() { mixin(MGBPC!(88, 0x8)()); }
+		bool bCollidesPawns(bool val) { mixin(MSBPC!(88, 0x8)()); }
+		bool bCollidesVehicles() { mixin(MGBPC!(88, 0x4)()); }
+		bool bCollidesVehicles(bool val) { mixin(MSBPC!(88, 0x4)()); }
+		bool bHoverWheel() { mixin(MGBPC!(88, 0x2)()); }
+		bool bHoverWheel(bool val) { mixin(MSBPC!(88, 0x2)()); }
+		bool bPoweredWheel() { mixin(MGBPC!(88, 0x1)()); }
+		bool bPoweredWheel(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 }

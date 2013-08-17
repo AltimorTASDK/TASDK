@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrStreamManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrStreamManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStreamManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStreamManager")()); }
 	private static __gshared TrStreamManager mDefaultProperties;
-	@property final static TrStreamManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStreamManager)("TrStreamManager TribesGame.Default__TrStreamManager")); }
+	@property final static TrStreamManager DefaultProperties() { mixin(MGDPC!(TrStreamManager, "TrStreamManager TribesGame.Default__TrStreamManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,28 +40,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetTitleAtIndex() { return mGetTitleAtIndex ? mGetTitleAtIndex : (mGetTitleAtIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetTitleAtIndex")); }
-			ScriptFunction IsLiveAtIndex() { return mIsLiveAtIndex ? mIsLiveAtIndex : (mIsLiveAtIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.IsLiveAtIndex")); }
-			ScriptFunction GetViewersAtIndex() { return mGetViewersAtIndex ? mGetViewersAtIndex : (mGetViewersAtIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetViewersAtIndex")); }
-			ScriptFunction GetDescriptionAtIndex() { return mGetDescriptionAtIndex ? mGetDescriptionAtIndex : (mGetDescriptionAtIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetDescriptionAtIndex")); }
-			ScriptFunction HaveFeature() { return mHaveFeature ? mHaveFeature : (mHaveFeature = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.HaveFeature")); }
-			ScriptFunction GetFeatureName() { return mGetFeatureName ? mGetFeatureName : (mGetFeatureName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetFeatureName")); }
-			ScriptFunction IsStream() { return mIsStream ? mIsStream : (mIsStream = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.IsStream")); }
-			ScriptFunction GetTypeCountWatching() { return mGetTypeCountWatching ? mGetTypeCountWatching : (mGetTypeCountWatching = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetTypeCountWatching")); }
-			ScriptFunction GetTypeCount() { return mGetTypeCount ? mGetTypeCount : (mGetTypeCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetTypeCount")); }
-			ScriptFunction GetFeatureDescription() { return mGetFeatureDescription ? mGetFeatureDescription : (mGetFeatureDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetFeatureDescription")); }
-			ScriptFunction ViewerSort() { return mViewerSort ? mViewerSort : (mViewerSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.ViewerSort")); }
-			ScriptFunction LoadStreams() { return mLoadStreams ? mLoadStreams : (mLoadStreams = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.LoadStreams")); }
-			ScriptFunction GetStreamData() { return mGetStreamData ? mGetStreamData : (mGetStreamData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetStreamData")); }
-			ScriptFunction OpenStream() { return mOpenStream ? mOpenStream : (mOpenStream = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.OpenStream")); }
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.Initialize")); }
-			ScriptFunction ViewStreamIndex() { return mViewStreamIndex ? mViewStreamIndex : (mViewStreamIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.ViewStreamIndex")); }
-			ScriptFunction ViewVideoIndex() { return mViewVideoIndex ? mViewVideoIndex : (mViewVideoIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.ViewVideoIndex")); }
-			ScriptFunction StartTVTimer() { return mStartTVTimer ? mStartTVTimer : (mStartTVTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.StartTVTimer")); }
-			ScriptFunction UpdateStreams() { return mUpdateStreams ? mUpdateStreams : (mUpdateStreams = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.UpdateStreams")); }
-			ScriptFunction CheckForUpdate() { return mCheckForUpdate ? mCheckForUpdate : (mCheckForUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.CheckForUpdate")); }
-			ScriptFunction GetLatestNews() { return mGetLatestNews ? mGetLatestNews : (mGetLatestNews = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.GetLatestNews")); }
-			ScriptFunction CompleteUpdate() { return mCompleteUpdate ? mCompleteUpdate : (mCompleteUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStreamManager.CompleteUpdate")); }
+			ScriptFunction GetTitleAtIndex() { mixin(MGF!("mGetTitleAtIndex", "Function TribesGame.TrStreamManager.GetTitleAtIndex")()); }
+			ScriptFunction IsLiveAtIndex() { mixin(MGF!("mIsLiveAtIndex", "Function TribesGame.TrStreamManager.IsLiveAtIndex")()); }
+			ScriptFunction GetViewersAtIndex() { mixin(MGF!("mGetViewersAtIndex", "Function TribesGame.TrStreamManager.GetViewersAtIndex")()); }
+			ScriptFunction GetDescriptionAtIndex() { mixin(MGF!("mGetDescriptionAtIndex", "Function TribesGame.TrStreamManager.GetDescriptionAtIndex")()); }
+			ScriptFunction HaveFeature() { mixin(MGF!("mHaveFeature", "Function TribesGame.TrStreamManager.HaveFeature")()); }
+			ScriptFunction GetFeatureName() { mixin(MGF!("mGetFeatureName", "Function TribesGame.TrStreamManager.GetFeatureName")()); }
+			ScriptFunction IsStream() { mixin(MGF!("mIsStream", "Function TribesGame.TrStreamManager.IsStream")()); }
+			ScriptFunction GetTypeCountWatching() { mixin(MGF!("mGetTypeCountWatching", "Function TribesGame.TrStreamManager.GetTypeCountWatching")()); }
+			ScriptFunction GetTypeCount() { mixin(MGF!("mGetTypeCount", "Function TribesGame.TrStreamManager.GetTypeCount")()); }
+			ScriptFunction GetFeatureDescription() { mixin(MGF!("mGetFeatureDescription", "Function TribesGame.TrStreamManager.GetFeatureDescription")()); }
+			ScriptFunction ViewerSort() { mixin(MGF!("mViewerSort", "Function TribesGame.TrStreamManager.ViewerSort")()); }
+			ScriptFunction LoadStreams() { mixin(MGF!("mLoadStreams", "Function TribesGame.TrStreamManager.LoadStreams")()); }
+			ScriptFunction GetStreamData() { mixin(MGF!("mGetStreamData", "Function TribesGame.TrStreamManager.GetStreamData")()); }
+			ScriptFunction OpenStream() { mixin(MGF!("mOpenStream", "Function TribesGame.TrStreamManager.OpenStream")()); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrStreamManager.Initialize")()); }
+			ScriptFunction ViewStreamIndex() { mixin(MGF!("mViewStreamIndex", "Function TribesGame.TrStreamManager.ViewStreamIndex")()); }
+			ScriptFunction ViewVideoIndex() { mixin(MGF!("mViewVideoIndex", "Function TribesGame.TrStreamManager.ViewVideoIndex")()); }
+			ScriptFunction StartTVTimer() { mixin(MGF!("mStartTVTimer", "Function TribesGame.TrStreamManager.StartTVTimer")()); }
+			ScriptFunction UpdateStreams() { mixin(MGF!("mUpdateStreams", "Function TribesGame.TrStreamManager.UpdateStreams")()); }
+			ScriptFunction CheckForUpdate() { mixin(MGF!("mCheckForUpdate", "Function TribesGame.TrStreamManager.CheckForUpdate")()); }
+			ScriptFunction GetLatestNews() { mixin(MGF!("mGetLatestNews", "Function TribesGame.TrStreamManager.GetLatestNews")()); }
+			ScriptFunction CompleteUpdate() { mixin(MGF!("mCompleteUpdate", "Function TribesGame.TrStreamManager.CompleteUpdate")()); }
 		}
 	}
 	enum STREAMTYPE : ubyte
@@ -78,41 +79,42 @@ public extern(D):
 		private ubyte __buffer__[68];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrStreamManager.GameStream")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrStreamManager.GameStream")()); }
 		@property final
 		{
 			auto ref
 			{
-				TrStreamManager.STREAMTYPE Type() { return *cast(TrStreamManager.STREAMTYPE*)(cast(size_t)&this + 4); }
-				ScriptString Title() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-				ScriptString Viewers() { return *cast(ScriptString*)(cast(size_t)&this + 32); }
-				ScriptString Description() { return *cast(ScriptString*)(cast(size_t)&this + 56); }
-				ScriptString ChannelName() { return *cast(ScriptString*)(cast(size_t)&this + 44); }
-				ScriptString Stream() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
+				TrStreamManager.STREAMTYPE Type() { mixin(MGPS!(TrStreamManager.STREAMTYPE, 4)()); }
+				ScriptString Title() { mixin(MGPS!(ScriptString, 8)()); }
+				ScriptString Viewers() { mixin(MGPS!(ScriptString, 32)()); }
+				ScriptString Description() { mixin(MGPS!(ScriptString, 56)()); }
+				ScriptString ChannelName() { mixin(MGPS!(ScriptString, 44)()); }
+				ScriptString Stream() { mixin(MGPS!(ScriptString, 20)()); }
 			}
-			bool bFeatured() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bFeatured(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bLive() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bLive(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bFeatured() { mixin(MGBPS!(0, 0x2)()); }
+			bool bFeatured(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bLive() { mixin(MGBPS!(0, 0x1)()); }
+			bool bLive(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrStreamManager.GameStream) Streams() { return *cast(ScriptArray!(TrStreamManager.GameStream)*)(cast(size_t)cast(void*)this + 164); }
-			ScriptString StreamServer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 152); }
-			ScriptString StreamPath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 140); }
-			ScriptString StreamURL() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 128); }
-			ScriptString WatchEnd() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 116); }
-			ScriptString WatchStart() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 104); }
-			ScriptString TokViewers() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 92); }
-			ScriptString TokTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
-			ScriptString TokName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 68); }
-			int NewsIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
+			ScriptArray!(TrStreamManager.GameStream) Streams() { mixin(MGPC!(ScriptArray!(TrStreamManager.GameStream), 164)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__ViewerSort__Delegate'!
+			ScriptString StreamServer() { mixin(MGPC!(ScriptString, 152)()); }
+			ScriptString StreamPath() { mixin(MGPC!(ScriptString, 140)()); }
+			ScriptString StreamURL() { mixin(MGPC!(ScriptString, 128)()); }
+			ScriptString WatchEnd() { mixin(MGPC!(ScriptString, 116)()); }
+			ScriptString WatchStart() { mixin(MGPC!(ScriptString, 104)()); }
+			ScriptString TokViewers() { mixin(MGPC!(ScriptString, 92)()); }
+			ScriptString TokTitle() { mixin(MGPC!(ScriptString, 80)()); }
+			ScriptString TokName() { mixin(MGPC!(ScriptString, 68)()); }
+			int NewsIndex() { mixin(MGPC!(int, 64)()); }
 		}
-		bool bUpdateReady() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bUpdateReady(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bUpdateReady() { mixin(MGBPC!(60, 0x1)()); }
+		bool bUpdateReady(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 final:
 	ScriptString GetTitleAtIndex(int Index)

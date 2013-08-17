@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNodeCrossfader;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.AnimNodeBlend;
 
@@ -8,9 +9,9 @@ extern(C++) interface AnimNodeCrossfader : AnimNodeBlend
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeCrossfader")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeCrossfader")()); }
 	private static __gshared AnimNodeCrossfader mDefaultProperties;
-	@property final static AnimNodeCrossfader DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeCrossfader)("AnimNodeCrossfader Engine.Default__AnimNodeCrossfader")); }
+	@property final static AnimNodeCrossfader DefaultProperties() { mixin(MGDPC!(AnimNodeCrossfader, "AnimNodeCrossfader Engine.Default__AnimNodeCrossfader")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,21 +23,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayOneShotAnim() { return mPlayOneShotAnim ? mPlayOneShotAnim : (mPlayOneShotAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeCrossfader.PlayOneShotAnim")); }
-			ScriptFunction BlendToLoopingAnim() { return mBlendToLoopingAnim ? mBlendToLoopingAnim : (mBlendToLoopingAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeCrossfader.BlendToLoopingAnim")); }
-			ScriptFunction GetAnimName() { return mGetAnimName ? mGetAnimName : (mGetAnimName = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeCrossfader.GetAnimName")); }
-			ScriptFunction GetActiveChild() { return mGetActiveChild ? mGetActiveChild : (mGetActiveChild = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeCrossfader.GetActiveChild")); }
+			ScriptFunction PlayOneShotAnim() { mixin(MGF!("mPlayOneShotAnim", "Function Engine.AnimNodeCrossfader.PlayOneShotAnim")()); }
+			ScriptFunction BlendToLoopingAnim() { mixin(MGF!("mBlendToLoopingAnim", "Function Engine.AnimNodeCrossfader.BlendToLoopingAnim")()); }
+			ScriptFunction GetAnimName() { mixin(MGF!("mGetAnimName", "Function Engine.AnimNodeCrossfader.GetAnimName")()); }
+			ScriptFunction GetActiveChild() { mixin(MGF!("mGetActiveChild", "Function Engine.AnimNodeCrossfader.GetActiveChild")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float PendingBlendOutTimeOneShot() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-			ScriptName DefaultAnimSeqName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 260); }
+			float PendingBlendOutTimeOneShot() { mixin(MGPC!(float, 272)()); }
+			ScriptName DefaultAnimSeqName() { mixin(MGPC!(ScriptName, 260)()); }
 		}
-		bool bDontBlendOutOneShot() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x1) != 0; }
-		bool bDontBlendOutOneShot(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x1; } return val; }
+		bool bDontBlendOutOneShot() { mixin(MGBPC!(268, 0x1)()); }
+		bool bDontBlendOutOneShot(bool val) { mixin(MSBPC!(268, 0x1)()); }
 	}
 final:
 	void PlayOneShotAnim(ScriptName AnimSeqName, float BlendInTime, float BlendOutTime, bool bDontBlendOut, float Rate)

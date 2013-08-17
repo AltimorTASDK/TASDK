@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTFirstBloodMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface UTFirstBloodMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTFirstBloodMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTFirstBloodMessage")()); }
 	private static __gshared UTFirstBloodMessage mDefaultProperties;
-	@property final static UTFirstBloodMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTFirstBloodMessage)("UTFirstBloodMessage UTGame.Default__UTFirstBloodMessage")); }
+	@property final static UTFirstBloodMessage DefaultProperties() { mixin(MGDPC!(UTFirstBloodMessage, "UTFirstBloodMessage UTGame.Default__UTFirstBloodMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFirstBloodMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFirstBloodMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTFirstBloodMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTFirstBloodMessage.ClientReceive")()); }
 		}
 	}
-	@property final auto ref ScriptString FirstBloodString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	@property final auto ref ScriptString FirstBloodString() { mixin(MGPC!(ScriptString, 100)()); }
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

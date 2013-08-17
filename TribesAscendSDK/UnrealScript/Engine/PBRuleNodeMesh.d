@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PBRuleNodeMesh;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PBRuleNodeBase;
 import UnrealScript.Engine.MaterialInterface;
 import UnrealScript.Engine.StaticMesh;
@@ -9,36 +10,38 @@ extern(C++) interface PBRuleNodeMesh : PBRuleNodeBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeMesh")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PBRuleNodeMesh")()); }
 	private static __gshared PBRuleNodeMesh mDefaultProperties;
-	@property final static PBRuleNodeMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeMesh)("PBRuleNodeMesh Engine.Default__PBRuleNodeMesh")); }
+	@property final static PBRuleNodeMesh DefaultProperties() { mixin(MGDPC!(PBRuleNodeMesh, "PBRuleNodeMesh Engine.Default__PBRuleNodeMesh")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPickRandomBuildingMesh;
-		public @property static final ScriptFunction PickRandomBuildingMesh() { return mPickRandomBuildingMesh ? mPickRandomBuildingMesh : (mPickRandomBuildingMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.PBRuleNodeMesh.PickRandomBuildingMesh")); }
+		public @property static final ScriptFunction PickRandomBuildingMesh() { mixin(MGF!("mPickRandomBuildingMesh", "Function Engine.PBRuleNodeMesh.PickRandomBuildingMesh")()); }
 	}
 	struct BuildingMeshInfo
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PBRuleNodeMesh.BuildingMeshInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PBRuleNodeMesh.BuildingMeshInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(MaterialInterface) MaterialOverrides() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)&this + 32); }
-				ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides) SectionOverrides() { return *cast(ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides)*)(cast(size_t)&this + 44); }
-				int OverriddenMeshLightMapRes() { return *cast(int*)(cast(size_t)&this + 28); }
-				float Chance() { return *cast(float*)(cast(size_t)&this + 12); }
-				float DimZ() { return *cast(float*)(cast(size_t)&this + 8); }
-				float DimX() { return *cast(float*)(cast(size_t)&this + 4); }
-				StaticMesh Mesh() { return *cast(StaticMesh*)(cast(size_t)&this + 0); }
+				ScriptArray!(MaterialInterface) MaterialOverrides() { mixin(MGPS!(ScriptArray!(MaterialInterface), 32)()); }
+				ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides) SectionOverrides() { mixin(MGPS!(ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides), 44)()); }
+				int OverriddenMeshLightMapRes() { mixin(MGPS!(int, 28)()); }
+				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Rotation'!
+				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Translation'!
+				float Chance() { mixin(MGPS!(float, 12)()); }
+				float DimZ() { mixin(MGPS!(float, 8)()); }
+				float DimX() { mixin(MGPS!(float, 4)()); }
+				StaticMesh Mesh() { mixin(MGPS!(StaticMesh, 0)()); }
 			}
-			bool bOverrideMeshLightMapRes() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x2) != 0; }
-			bool bOverrideMeshLightMapRes(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x2; } return val; }
-			bool bMeshScaleTranslation() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
-			bool bMeshScaleTranslation(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
+			bool bOverrideMeshLightMapRes() { mixin(MGBPS!(24, 0x2)()); }
+			bool bOverrideMeshLightMapRes(bool val) { mixin(MSBPS!(24, 0x2)()); }
+			bool bMeshScaleTranslation() { mixin(MGBPS!(24, 0x1)()); }
+			bool bMeshScaleTranslation(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
 	struct BuildingMatOverrides
@@ -46,20 +49,20 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PBRuleNodeMesh.BuildingMatOverrides")); }
-		@property final auto ref ScriptArray!(MaterialInterface) MaterialOptions() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PBRuleNodeMesh.BuildingMatOverrides")()); }
+		@property final auto ref ScriptArray!(MaterialInterface) MaterialOptions() { mixin(MGPS!(ScriptArray!(MaterialInterface), 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo) BuildingMeshes() { return *cast(ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo)*)(cast(size_t)cast(void*)this + 104); }
-			PBRuleNodeMesh.BuildingMeshInfo PartialOccludedBuildingMesh() { return *cast(PBRuleNodeMesh.BuildingMeshInfo*)(cast(size_t)cast(void*)this + 116); }
+			ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo) BuildingMeshes() { mixin(MGPC!(ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo), 104)()); }
+			PBRuleNodeMesh.BuildingMeshInfo PartialOccludedBuildingMesh() { mixin(MGPC!(PBRuleNodeMesh.BuildingMeshInfo, 116)()); }
 		}
-		bool bBlockAll() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x2) != 0; }
-		bool bBlockAll(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x2; } return val; }
-		bool bDoOcclusionTest() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x1) != 0; }
-		bool bDoOcclusionTest(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x1; } return val; }
+		bool bBlockAll() { mixin(MGBPC!(172, 0x2)()); }
+		bool bBlockAll(bool val) { mixin(MSBPC!(172, 0x2)()); }
+		bool bDoOcclusionTest() { mixin(MGBPC!(172, 0x1)()); }
+		bool bDoOcclusionTest(bool val) { mixin(MSBPC!(172, 0x1)()); }
 	}
 	final int PickRandomBuildingMesh()
 	{

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrAnimNodeBlendByFlying;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.TribesGame.TrAnimNodeBlendList;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrAnimNodeBlendByFlying : TrAnimNodeBlendList
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByFlying")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendByFlying")()); }
 	private static __gshared TrAnimNodeBlendByFlying mDefaultProperties;
-	@property final static TrAnimNodeBlendByFlying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByFlying)("TrAnimNodeBlendByFlying TribesGame.Default__TrAnimNodeBlendByFlying")); }
+	@property final static TrAnimNodeBlendByFlying DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByFlying, "TrAnimNodeBlendByFlying TribesGame.Default__TrAnimNodeBlendByFlying")()); }
 	enum EFlyDirTypes : ubyte
 	{
 		FLY_Forward = 0,
@@ -25,7 +26,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 296); }
-		TrAnimNodeBlendByFlying.EFlyDirTypes LastDirection() { return *cast(TrAnimNodeBlendByFlying.EFlyDirTypes*)(cast(size_t)cast(void*)this + 292); }
+		TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 296)()); }
+		TrAnimNodeBlendByFlying.EFlyDirTypes LastDirection() { mixin(MGPC!(TrAnimNodeBlendByFlying.EFlyDirTypes, 292)()); }
 	}
 }

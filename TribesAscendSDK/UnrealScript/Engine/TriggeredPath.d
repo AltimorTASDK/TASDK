@@ -1,6 +1,7 @@
 module UnrealScript.Engine.TriggeredPath;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Pawn;
@@ -10,9 +11,9 @@ extern(C++) interface TriggeredPath : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TriggeredPath")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TriggeredPath")()); }
 	private static __gshared TriggeredPath mDefaultProperties;
-	@property final static TriggeredPath DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TriggeredPath)("TriggeredPath Engine.Default__TriggeredPath")); }
+	@property final static TriggeredPath DefaultProperties() { mixin(MGDPC!(TriggeredPath, "TriggeredPath Engine.Default__TriggeredPath")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggeredPath.OnToggle")); }
-			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggeredPath.SpecialHandling")); }
-			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggeredPath.SuggestMovePreparation")); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.TriggeredPath.OnToggle")()); }
+			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.TriggeredPath.SpecialHandling")()); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.TriggeredPath.SuggestMovePreparation")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref Actor MyTrigger() { return *cast(Actor*)(cast(size_t)cast(void*)this + 696); }
-		bool bOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x1) != 0; }
-		bool bOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x1; } return val; }
+		@property final auto ref Actor MyTrigger() { mixin(MGPC!(Actor, 696)()); }
+		bool bOpen() { mixin(MGBPC!(692, 0x1)()); }
+		bool bOpen(bool val) { mixin(MSBPC!(692, 0x1)()); }
 	}
 final:
 	void OnToggle(SeqAct_Toggle inAction)

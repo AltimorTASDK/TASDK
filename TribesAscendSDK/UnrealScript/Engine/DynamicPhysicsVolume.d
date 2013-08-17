@@ -1,24 +1,25 @@
 module UnrealScript.Engine.DynamicPhysicsVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PhysicsVolume;
 
 extern(C++) interface DynamicPhysicsVolume : PhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicPhysicsVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DynamicPhysicsVolume")()); }
 	private static __gshared DynamicPhysicsVolume mDefaultProperties;
-	@property final static DynamicPhysicsVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicPhysicsVolume)("DynamicPhysicsVolume Engine.Default__DynamicPhysicsVolume")); }
+	@property final static DynamicPhysicsVolume DefaultProperties() { mixin(MGDPC!(DynamicPhysicsVolume, "DynamicPhysicsVolume Engine.Default__DynamicPhysicsVolume")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;
-		public @property static final ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicPhysicsVolume.PostBeginPlay")); }
+		public @property static final ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.DynamicPhysicsVolume.PostBeginPlay")()); }
 	}
 	@property final
 	{
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x1; } return val; }
+		bool bEnabled() { mixin(MGBPC!(584, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(584, 0x1)()); }
 	}
 	final void PostBeginPlay()
 	{

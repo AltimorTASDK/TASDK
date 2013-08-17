@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_ChainGun;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrSkelControl_SpinControl;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.TribesGame.TrDevice_ConstantFire;
@@ -9,9 +10,9 @@ extern(C++) interface TrDevice_ChainGun : TrDevice_ConstantFire
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_ChainGun")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_ChainGun")()); }
 	private static __gshared TrDevice_ChainGun mDefaultProperties;
-	@property final static TrDevice_ChainGun DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_ChainGun)("TrDevice_ChainGun TribesGame.Default__TrDevice_ChainGun")); }
+	@property final static TrDevice_ChainGun DefaultProperties() { mixin(MGDPC!(TrDevice_ChainGun, "TrDevice_ChainGun TribesGame.Default__TrDevice_ChainGun")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,30 +31,46 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBuildUpTime() { return mGetBuildUpTime ? mGetBuildUpTime : (mGetBuildUpTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.GetBuildUpTime")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.ReplicatedEvent")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.PostInitAnimTree")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.Tick")); }
-			ScriptFunction UpdateSoundModulation() { return mUpdateSoundModulation ? mUpdateSoundModulation : (mUpdateSoundModulation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.UpdateSoundModulation")); }
-			ScriptFunction PlayBuildupAnimation() { return mPlayBuildupAnimation ? mPlayBuildupAnimation : (mPlayBuildupAnimation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.PlayBuildupAnimation")); }
-			ScriptFunction OnSwitchToWeapon() { return mOnSwitchToWeapon ? mOnSwitchToWeapon : (mOnSwitchToWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.OnSwitchToWeapon")); }
-			ScriptFunction PlayWeaponPutDown() { return mPlayWeaponPutDown ? mPlayWeaponPutDown : (mPlayWeaponPutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.PlayWeaponPutDown")); }
-			ScriptFunction BuffMaxCarriedAmmo() { return mBuffMaxCarriedAmmo ? mBuffMaxCarriedAmmo : (mBuffMaxCarriedAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.BuffMaxCarriedAmmo")); }
-			ScriptFunction AddCarriedAmmo() { return mAddCarriedAmmo ? mAddCarriedAmmo : (mAddCarriedAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.AddCarriedAmmo")); }
-			ScriptFunction GetBasePickupAmmoAmount() { return mGetBasePickupAmmoAmount ? mGetBasePickupAmmoAmount : (mGetBasePickupAmmoAmount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ChainGun.GetBasePickupAmmoAmount")); }
+			ScriptFunction GetBuildUpTime() { mixin(MGF!("mGetBuildUpTime", "Function TribesGame.TrDevice_ChainGun.GetBuildUpTime")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrDevice_ChainGun.ReplicatedEvent")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_ChainGun.PostInitAnimTree")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDevice_ChainGun.Tick")()); }
+			ScriptFunction UpdateSoundModulation() { mixin(MGF!("mUpdateSoundModulation", "Function TribesGame.TrDevice_ChainGun.UpdateSoundModulation")()); }
+			ScriptFunction PlayBuildupAnimation() { mixin(MGF!("mPlayBuildupAnimation", "Function TribesGame.TrDevice_ChainGun.PlayBuildupAnimation")()); }
+			ScriptFunction OnSwitchToWeapon() { mixin(MGF!("mOnSwitchToWeapon", "Function TribesGame.TrDevice_ChainGun.OnSwitchToWeapon")()); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice_ChainGun.PlayWeaponPutDown")()); }
+			ScriptFunction BuffMaxCarriedAmmo() { mixin(MGF!("mBuffMaxCarriedAmmo", "Function TribesGame.TrDevice_ChainGun.BuffMaxCarriedAmmo")()); }
+			ScriptFunction AddCarriedAmmo() { mixin(MGF!("mAddCarriedAmmo", "Function TribesGame.TrDevice_ChainGun.AddCarriedAmmo")()); }
+			ScriptFunction GetBasePickupAmmoAmount() { mixin(MGF!("mGetBasePickupAmmoAmount", "Function TribesGame.TrDevice_ChainGun.GetBasePickupAmmoAmount")()); }
 		}
+	}
+	static struct WeaponFullAutoBuildup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_ChainGun.WeaponFullAutoBuildup")()); }
+	}
+	static struct WeaponConstantFiring
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_ChainGun.WeaponConstantFiring")()); }
+	}
+	static struct WeaponFullAutoCooldown
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_ChainGun.WeaponFullAutoCooldown")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			int r_BuffedMaxAmmo() { return *cast(int*)(cast(size_t)cast(void*)this + 2188); }
-			TrSkelControl_SpinControl m_BarrelSpinControl() { return *cast(TrSkelControl_SpinControl*)(cast(size_t)cast(void*)this + 2184); }
-			float m_fCurrSpinTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2176); }
-			float m_fBuildupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2172); }
+			int r_BuffedMaxAmmo() { mixin(MGPC!(int, 2188)()); }
+			TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 2184)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentWeaponSpin'!
+			float m_fCurrSpinTime() { mixin(MGPC!(float, 2176)()); }
+			float m_fBuildupTime() { mixin(MGPC!(float, 2172)()); }
 		}
-		bool m_bHasClip() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2192) & 0x1) != 0; }
-		bool m_bHasClip(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2192) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2192) &= ~0x1; } return val; }
+		bool m_bHasClip() { mixin(MGBPC!(2192, 0x1)()); }
+		bool m_bHasClip(bool val) { mixin(MSBPC!(2192, 0x1)()); }
 	}
 final:
 	static float GetBuildUpTime(PlayerReplicationInfo PRI, bool bForInterpSpeed)

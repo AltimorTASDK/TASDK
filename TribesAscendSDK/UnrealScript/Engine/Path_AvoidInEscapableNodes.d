@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Path_AvoidInEscapableNodes;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.PathConstraint;
 
@@ -8,9 +9,9 @@ extern(C++) interface Path_AvoidInEscapableNodes : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_AvoidInEscapableNodes")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_AvoidInEscapableNodes")()); }
 	private static __gshared Path_AvoidInEscapableNodes mDefaultProperties;
-	@property final static Path_AvoidInEscapableNodes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_AvoidInEscapableNodes)("Path_AvoidInEscapableNodes Engine.Default__Path_AvoidInEscapableNodes")); }
+	@property final static Path_AvoidInEscapableNodes DefaultProperties() { mixin(MGDPC!(Path_AvoidInEscapableNodes, "Path_AvoidInEscapableNodes Engine.Default__Path_AvoidInEscapableNodes")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,17 +22,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CachePawnReacFlags() { return mCachePawnReacFlags ? mCachePawnReacFlags : (mCachePawnReacFlags = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AvoidInEscapableNodes.CachePawnReacFlags")); }
-			ScriptFunction DontGetStuck() { return mDontGetStuck ? mDontGetStuck : (mDontGetStuck = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AvoidInEscapableNodes.DontGetStuck")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AvoidInEscapableNodes.Recycle")); }
+			ScriptFunction CachePawnReacFlags() { mixin(MGF!("mCachePawnReacFlags", "Function Engine.Path_AvoidInEscapableNodes.CachePawnReacFlags")()); }
+			ScriptFunction DontGetStuck() { mixin(MGF!("mDontGetStuck", "Function Engine.Path_AvoidInEscapableNodes.DontGetStuck")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_AvoidInEscapableNodes.Recycle")()); }
 		}
 	}
 	@property final auto ref
 	{
-		int MoveFlags() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
-		int MaxFallSpeed() { return *cast(int*)(cast(size_t)cast(void*)this + 76); }
-		int Height() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-		int Radius() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
+		int MoveFlags() { mixin(MGPC!(int, 80)()); }
+		int MaxFallSpeed() { mixin(MGPC!(int, 76)()); }
+		int Height() { mixin(MGPC!(int, 72)()); }
+		int Radius() { mixin(MGPC!(int, 68)()); }
 	}
 final:
 	void CachePawnReacFlags(Pawn P)

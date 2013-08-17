@@ -1,26 +1,27 @@
 module UnrealScript.Engine.MaterialExpressionTextureCoordinate;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionTextureCoordinate : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTextureCoordinate")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTextureCoordinate")()); }
 	private static __gshared MaterialExpressionTextureCoordinate mDefaultProperties;
-	@property final static MaterialExpressionTextureCoordinate DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTextureCoordinate)("MaterialExpressionTextureCoordinate Engine.Default__MaterialExpressionTextureCoordinate")); }
+	@property final static MaterialExpressionTextureCoordinate DefaultProperties() { mixin(MGDPC!(MaterialExpressionTextureCoordinate, "MaterialExpressionTextureCoordinate Engine.Default__MaterialExpressionTextureCoordinate")()); }
 	@property final
 	{
 		auto ref
 		{
-			float VTiling() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float UTiling() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			int CoordinateIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
+			float VTiling() { mixin(MGPC!(float, 116)()); }
+			float UTiling() { mixin(MGPC!(float, 112)()); }
+			int CoordinateIndex() { mixin(MGPC!(int, 108)()); }
 		}
-		bool UnMirrorV() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x2) != 0; }
-		bool UnMirrorV(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x2; } return val; }
-		bool UnMirrorU() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x1) != 0; }
-		bool UnMirrorU(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x1; } return val; }
+		bool UnMirrorV() { mixin(MGBPC!(120, 0x2)()); }
+		bool UnMirrorV(bool val) { mixin(MSBPC!(120, 0x2)()); }
+		bool UnMirrorU() { mixin(MGBPC!(120, 0x1)()); }
+		bool UnMirrorU(bool val) { mixin(MSBPC!(120, 0x1)()); }
 	}
 }

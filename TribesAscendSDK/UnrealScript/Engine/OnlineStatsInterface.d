@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineStatsInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineStatsRead;
 import UnrealScript.Core.UInterface;
@@ -10,9 +11,9 @@ extern(C++) interface OnlineStatsInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineStatsInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineStatsInterface")()); }
 	private static __gshared OnlineStatsInterface mDefaultProperties;
-	@property final static OnlineStatsInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineStatsInterface)("OnlineStatsInterface Engine.Default__OnlineStatsInterface")); }
+	@property final static OnlineStatsInterface DefaultProperties() { mixin(MGDPC!(OnlineStatsInterface, "OnlineStatsInterface Engine.Default__OnlineStatsInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,46 +42,52 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction WriteOnlinePlayerScores() { return mWriteOnlinePlayerScores ? mWriteOnlinePlayerScores : (mWriteOnlinePlayerScores = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.WriteOnlinePlayerScores")); }
-			ScriptFunction RegisterHostStatGuid() { return mRegisterHostStatGuid ? mRegisterHostStatGuid : (mRegisterHostStatGuid = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.RegisterHostStatGuid")); }
-			ScriptFunction GetClientStatGuid() { return mGetClientStatGuid ? mGetClientStatGuid : (mGetClientStatGuid = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.GetClientStatGuid")); }
-			ScriptFunction RegisterStatGuid() { return mRegisterStatGuid ? mRegisterStatGuid : (mRegisterStatGuid = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.RegisterStatGuid")); }
-			ScriptFunction GetHostStatGuid() { return mGetHostStatGuid ? mGetHostStatGuid : (mGetHostStatGuid = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.GetHostStatGuid")); }
-			ScriptFunction ReadOnlineStats() { return mReadOnlineStats ? mReadOnlineStats : (mReadOnlineStats = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.ReadOnlineStats")); }
-			ScriptFunction ReadOnlineStatsForFriends() { return mReadOnlineStatsForFriends ? mReadOnlineStatsForFriends : (mReadOnlineStatsForFriends = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.ReadOnlineStatsForFriends")); }
-			ScriptFunction ReadOnlineStatsByRank() { return mReadOnlineStatsByRank ? mReadOnlineStatsByRank : (mReadOnlineStatsByRank = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.ReadOnlineStatsByRank")); }
-			ScriptFunction ReadOnlineStatsByRankAroundPlayer() { return mReadOnlineStatsByRankAroundPlayer ? mReadOnlineStatsByRankAroundPlayer : (mReadOnlineStatsByRankAroundPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.ReadOnlineStatsByRankAroundPlayer")); }
-			ScriptFunction OnReadOnlineStatsComplete() { return mOnReadOnlineStatsComplete ? mOnReadOnlineStatsComplete : (mOnReadOnlineStatsComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.OnReadOnlineStatsComplete")); }
-			ScriptFunction OnRegisterHostStatGuidComplete() { return mOnRegisterHostStatGuidComplete ? mOnRegisterHostStatGuidComplete : (mOnRegisterHostStatGuidComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.OnRegisterHostStatGuidComplete")); }
-			ScriptFunction OnFlushOnlineStatsComplete() { return mOnFlushOnlineStatsComplete ? mOnFlushOnlineStatsComplete : (mOnFlushOnlineStatsComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.OnFlushOnlineStatsComplete")); }
-			ScriptFunction AddReadOnlineStatsCompleteDelegate() { return mAddReadOnlineStatsCompleteDelegate ? mAddReadOnlineStatsCompleteDelegate : (mAddReadOnlineStatsCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.AddReadOnlineStatsCompleteDelegate")); }
-			ScriptFunction ClearReadOnlineStatsCompleteDelegate() { return mClearReadOnlineStatsCompleteDelegate ? mClearReadOnlineStatsCompleteDelegate : (mClearReadOnlineStatsCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.ClearReadOnlineStatsCompleteDelegate")); }
-			ScriptFunction FreeStats() { return mFreeStats ? mFreeStats : (mFreeStats = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.FreeStats")); }
-			ScriptFunction WriteOnlineStats() { return mWriteOnlineStats ? mWriteOnlineStats : (mWriteOnlineStats = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.WriteOnlineStats")); }
-			ScriptFunction FlushOnlineStats() { return mFlushOnlineStats ? mFlushOnlineStats : (mFlushOnlineStats = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.FlushOnlineStats")); }
-			ScriptFunction AddFlushOnlineStatsCompleteDelegate() { return mAddFlushOnlineStatsCompleteDelegate ? mAddFlushOnlineStatsCompleteDelegate : (mAddFlushOnlineStatsCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.AddFlushOnlineStatsCompleteDelegate")); }
-			ScriptFunction ClearFlushOnlineStatsCompleteDelegate() { return mClearFlushOnlineStatsCompleteDelegate ? mClearFlushOnlineStatsCompleteDelegate : (mClearFlushOnlineStatsCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.ClearFlushOnlineStatsCompleteDelegate")); }
-			ScriptFunction AddRegisterHostStatGuidCompleteDelegate() { return mAddRegisterHostStatGuidCompleteDelegate ? mAddRegisterHostStatGuidCompleteDelegate : (mAddRegisterHostStatGuidCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.AddRegisterHostStatGuidCompleteDelegate")); }
-			ScriptFunction ClearRegisterHostStatGuidCompleteDelegateDelegate() { return mClearRegisterHostStatGuidCompleteDelegateDelegate ? mClearRegisterHostStatGuidCompleteDelegateDelegate : (mClearRegisterHostStatGuidCompleteDelegateDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStatsInterface.ClearRegisterHostStatGuidCompleteDelegateDelegate")); }
+			ScriptFunction WriteOnlinePlayerScores() { mixin(MGF!("mWriteOnlinePlayerScores", "Function Engine.OnlineStatsInterface.WriteOnlinePlayerScores")()); }
+			ScriptFunction RegisterHostStatGuid() { mixin(MGF!("mRegisterHostStatGuid", "Function Engine.OnlineStatsInterface.RegisterHostStatGuid")()); }
+			ScriptFunction GetClientStatGuid() { mixin(MGF!("mGetClientStatGuid", "Function Engine.OnlineStatsInterface.GetClientStatGuid")()); }
+			ScriptFunction RegisterStatGuid() { mixin(MGF!("mRegisterStatGuid", "Function Engine.OnlineStatsInterface.RegisterStatGuid")()); }
+			ScriptFunction GetHostStatGuid() { mixin(MGF!("mGetHostStatGuid", "Function Engine.OnlineStatsInterface.GetHostStatGuid")()); }
+			ScriptFunction ReadOnlineStats() { mixin(MGF!("mReadOnlineStats", "Function Engine.OnlineStatsInterface.ReadOnlineStats")()); }
+			ScriptFunction ReadOnlineStatsForFriends() { mixin(MGF!("mReadOnlineStatsForFriends", "Function Engine.OnlineStatsInterface.ReadOnlineStatsForFriends")()); }
+			ScriptFunction ReadOnlineStatsByRank() { mixin(MGF!("mReadOnlineStatsByRank", "Function Engine.OnlineStatsInterface.ReadOnlineStatsByRank")()); }
+			ScriptFunction ReadOnlineStatsByRankAroundPlayer() { mixin(MGF!("mReadOnlineStatsByRankAroundPlayer", "Function Engine.OnlineStatsInterface.ReadOnlineStatsByRankAroundPlayer")()); }
+			ScriptFunction OnReadOnlineStatsComplete() { mixin(MGF!("mOnReadOnlineStatsComplete", "Function Engine.OnlineStatsInterface.OnReadOnlineStatsComplete")()); }
+			ScriptFunction OnRegisterHostStatGuidComplete() { mixin(MGF!("mOnRegisterHostStatGuidComplete", "Function Engine.OnlineStatsInterface.OnRegisterHostStatGuidComplete")()); }
+			ScriptFunction OnFlushOnlineStatsComplete() { mixin(MGF!("mOnFlushOnlineStatsComplete", "Function Engine.OnlineStatsInterface.OnFlushOnlineStatsComplete")()); }
+			ScriptFunction AddReadOnlineStatsCompleteDelegate() { mixin(MGF!("mAddReadOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.AddReadOnlineStatsCompleteDelegate")()); }
+			ScriptFunction ClearReadOnlineStatsCompleteDelegate() { mixin(MGF!("mClearReadOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.ClearReadOnlineStatsCompleteDelegate")()); }
+			ScriptFunction FreeStats() { mixin(MGF!("mFreeStats", "Function Engine.OnlineStatsInterface.FreeStats")()); }
+			ScriptFunction WriteOnlineStats() { mixin(MGF!("mWriteOnlineStats", "Function Engine.OnlineStatsInterface.WriteOnlineStats")()); }
+			ScriptFunction FlushOnlineStats() { mixin(MGF!("mFlushOnlineStats", "Function Engine.OnlineStatsInterface.FlushOnlineStats")()); }
+			ScriptFunction AddFlushOnlineStatsCompleteDelegate() { mixin(MGF!("mAddFlushOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.AddFlushOnlineStatsCompleteDelegate")()); }
+			ScriptFunction ClearFlushOnlineStatsCompleteDelegate() { mixin(MGF!("mClearFlushOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.ClearFlushOnlineStatsCompleteDelegate")()); }
+			ScriptFunction AddRegisterHostStatGuidCompleteDelegate() { mixin(MGF!("mAddRegisterHostStatGuidCompleteDelegate", "Function Engine.OnlineStatsInterface.AddRegisterHostStatGuidCompleteDelegate")()); }
+			ScriptFunction ClearRegisterHostStatGuidCompleteDelegateDelegate() { mixin(MGF!("mClearRegisterHostStatGuidCompleteDelegateDelegate", "Function Engine.OnlineStatsInterface.ClearRegisterHostStatGuidCompleteDelegateDelegate")()); }
 		}
 	}
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnRegisterHostStatGuidComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFlushOnlineStatsComplete__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadOnlineStatsComplete__Delegate'!
+	}
 final:
-	bool WriteOnlinePlayerScores(ScriptName SessionName, int LeaderboardId, ScriptArray!(OnlineSubsystem.OnlinePlayerScore)* PlayerScores)
+	bool WriteOnlinePlayerScores(ScriptName SessionName, int LeaderboardId, ref const ScriptArray!(OnlineSubsystem.OnlinePlayerScore) PlayerScores)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(int*)&params[8] = LeaderboardId;
-		*cast(ScriptArray!(OnlineSubsystem.OnlinePlayerScore)*)&params[12] = *PlayerScores;
+		*cast(ScriptArray!(OnlineSubsystem.OnlinePlayerScore)*)&params[12] = PlayerScores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WriteOnlinePlayerScores, params.ptr, cast(void*)0);
 		*PlayerScores = *cast(ScriptArray!(OnlineSubsystem.OnlinePlayerScore)*)&params[12];
 		return *cast(bool*)&params[24];
 	}
-	bool RegisterHostStatGuid(ScriptString* HostStatGuid)
+	bool RegisterHostStatGuid(ref const ScriptString HostStatGuid)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *HostStatGuid;
+		*cast(ScriptString*)params.ptr = HostStatGuid;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterHostStatGuid, params.ptr, cast(void*)0);
 		*HostStatGuid = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
@@ -92,12 +99,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetClientStatGuid, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	bool RegisterStatGuid(OnlineSubsystem.UniqueNetId PlayerID, ScriptString* ClientStatGuid)
+	bool RegisterStatGuid(OnlineSubsystem.UniqueNetId PlayerID, ref const ScriptString ClientStatGuid)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PlayerID;
-		*cast(ScriptString*)&params[8] = *ClientStatGuid;
+		*cast(ScriptString*)&params[8] = ClientStatGuid;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterStatGuid, params.ptr, cast(void*)0);
 		*ClientStatGuid = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
@@ -109,11 +116,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHostStatGuid, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	bool ReadOnlineStats(ScriptArray!(OnlineSubsystem.UniqueNetId)* Players, OnlineStatsRead StatsRead)
+	bool ReadOnlineStats(ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players, OnlineStatsRead StatsRead)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
 		*cast(OnlineStatsRead*)&params[12] = StatsRead;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadOnlineStats, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;

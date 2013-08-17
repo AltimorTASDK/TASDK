@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NavMeshPath_Toward;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationHandle;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.NavMeshPathConstraint;
@@ -9,9 +10,9 @@ extern(C++) interface NavMeshPath_Toward : NavMeshPathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_Toward")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshPath_Toward")()); }
 	private static __gshared NavMeshPath_Toward mDefaultProperties;
-	@property final static NavMeshPath_Toward DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_Toward)("NavMeshPath_Toward Engine.Default__NavMeshPath_Toward")); }
+	@property final static NavMeshPath_Toward DefaultProperties() { mixin(MGDPC!(NavMeshPath_Toward, "NavMeshPath_Toward Engine.Default__NavMeshPath_Toward")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,15 +23,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TowardGoal() { return mTowardGoal ? mTowardGoal : (mTowardGoal = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPath_Toward.TowardGoal")); }
-			ScriptFunction TowardPoint() { return mTowardPoint ? mTowardPoint : (mTowardPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPath_Toward.TowardPoint")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPath_Toward.Recycle")); }
+			ScriptFunction TowardGoal() { mixin(MGF!("mTowardGoal", "Function Engine.NavMeshPath_Toward.TowardGoal")()); }
+			ScriptFunction TowardPoint() { mixin(MGF!("mTowardPoint", "Function Engine.NavMeshPath_Toward.TowardPoint")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPath_Toward.Recycle")()); }
 		}
 	}
 	@property final auto ref
 	{
-		Vector GoalPoint() { return *cast(Vector*)(cast(size_t)cast(void*)this + 84); }
-		Actor GoalActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 80); }
+		Vector GoalPoint() { mixin(MGPC!(Vector, 84)()); }
+		Actor GoalActor() { mixin(MGPC!(Actor, 80)()); }
 	}
 final:
 	static bool TowardGoal(NavigationHandle NavHandle, Actor Goal)

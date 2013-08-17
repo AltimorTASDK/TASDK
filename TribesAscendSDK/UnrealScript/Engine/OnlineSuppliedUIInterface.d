@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineSuppliedUIInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineGameSettings;
 import UnrealScript.Engine.OnlineGameSearch;
@@ -11,9 +12,9 @@ extern(C++) interface OnlineSuppliedUIInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineSuppliedUIInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineSuppliedUIInterface")()); }
 	private static __gshared OnlineSuppliedUIInterface mDefaultProperties;
-	@property final static OnlineSuppliedUIInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineSuppliedUIInterface)("OnlineSuppliedUIInterface Engine.Default__OnlineSuppliedUIInterface")); }
+	@property final static OnlineSuppliedUIInterface DefaultProperties() { mixin(MGDPC!(OnlineSuppliedUIInterface, "OnlineSuppliedUIInterface Engine.Default__OnlineSuppliedUIInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,23 +27,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnShowOnlineStatsUIComplete() { return mOnShowOnlineStatsUIComplete ? mOnShowOnlineStatsUIComplete : (mOnShowOnlineStatsUIComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSuppliedUIInterface.OnShowOnlineStatsUIComplete")); }
-			ScriptFunction ShowOnlineStatsUI() { return mShowOnlineStatsUI ? mShowOnlineStatsUI : (mShowOnlineStatsUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSuppliedUIInterface.ShowOnlineStatsUI")); }
-			ScriptFunction AddShowOnlineStatsUICompleteDelegate() { return mAddShowOnlineStatsUICompleteDelegate ? mAddShowOnlineStatsUICompleteDelegate : (mAddShowOnlineStatsUICompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSuppliedUIInterface.AddShowOnlineStatsUICompleteDelegate")); }
-			ScriptFunction ClearShowOnlineStatsUICompleteDelegate() { return mClearShowOnlineStatsUICompleteDelegate ? mClearShowOnlineStatsUICompleteDelegate : (mClearShowOnlineStatsUICompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSuppliedUIInterface.ClearShowOnlineStatsUICompleteDelegate")); }
-			ScriptFunction ShowMatchmakingUI() { return mShowMatchmakingUI ? mShowMatchmakingUI : (mShowMatchmakingUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSuppliedUIInterface.ShowMatchmakingUI")); }
+			ScriptFunction OnShowOnlineStatsUIComplete() { mixin(MGF!("mOnShowOnlineStatsUIComplete", "Function Engine.OnlineSuppliedUIInterface.OnShowOnlineStatsUIComplete")()); }
+			ScriptFunction ShowOnlineStatsUI() { mixin(MGF!("mShowOnlineStatsUI", "Function Engine.OnlineSuppliedUIInterface.ShowOnlineStatsUI")()); }
+			ScriptFunction AddShowOnlineStatsUICompleteDelegate() { mixin(MGF!("mAddShowOnlineStatsUICompleteDelegate", "Function Engine.OnlineSuppliedUIInterface.AddShowOnlineStatsUICompleteDelegate")()); }
+			ScriptFunction ClearShowOnlineStatsUICompleteDelegate() { mixin(MGF!("mClearShowOnlineStatsUICompleteDelegate", "Function Engine.OnlineSuppliedUIInterface.ClearShowOnlineStatsUICompleteDelegate")()); }
+			ScriptFunction ShowMatchmakingUI() { mixin(MGF!("mShowMatchmakingUI", "Function Engine.OnlineSuppliedUIInterface.ShowMatchmakingUI")()); }
 		}
 	}
+	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnShowOnlineStatsUIComplete__Delegate'!
 final:
 	void OnShowOnlineStatsUIComplete()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnShowOnlineStatsUIComplete, cast(void*)0, cast(void*)0);
 	}
-	bool ShowOnlineStatsUI(ScriptArray!(OnlineSubsystem.UniqueNetId)* Players, OnlineStatsRead StatsRead)
+	bool ShowOnlineStatsUI(ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players, OnlineStatsRead StatsRead)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
 		*cast(OnlineStatsRead*)&params[12] = StatsRead;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowOnlineStatsUI, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ForceFeedbackManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.ForceFeedbackWaveform;
@@ -9,9 +10,9 @@ extern(C++) interface ForceFeedbackManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFeedbackManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ForceFeedbackManager")()); }
 	private static __gshared ForceFeedbackManager mDefaultProperties;
-	@property final static ForceFeedbackManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ForceFeedbackManager)("ForceFeedbackManager Engine.Default__ForceFeedbackManager")); }
+	@property final static ForceFeedbackManager DefaultProperties() { mixin(MGDPC!(ForceFeedbackManager, "ForceFeedbackManager Engine.Default__ForceFeedbackManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,25 +23,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayForceFeedbackWaveform() { return mPlayForceFeedbackWaveform ? mPlayForceFeedbackWaveform : (mPlayForceFeedbackWaveform = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFeedbackManager.PlayForceFeedbackWaveform")); }
-			ScriptFunction StopForceFeedbackWaveform() { return mStopForceFeedbackWaveform ? mStopForceFeedbackWaveform : (mStopForceFeedbackWaveform = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFeedbackManager.StopForceFeedbackWaveform")); }
-			ScriptFunction PauseWaveform() { return mPauseWaveform ? mPauseWaveform : (mPauseWaveform = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFeedbackManager.PauseWaveform")); }
+			ScriptFunction PlayForceFeedbackWaveform() { mixin(MGF!("mPlayForceFeedbackWaveform", "Function Engine.ForceFeedbackManager.PlayForceFeedbackWaveform")()); }
+			ScriptFunction StopForceFeedbackWaveform() { mixin(MGF!("mStopForceFeedbackWaveform", "Function Engine.ForceFeedbackManager.StopForceFeedbackWaveform")()); }
+			ScriptFunction PauseWaveform() { mixin(MGF!("mPauseWaveform", "Function Engine.ForceFeedbackManager.PauseWaveform")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float ScaleAllWaveformsBy() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			Actor WaveformInstigator() { return *cast(Actor*)(cast(size_t)cast(void*)this + 80); }
-			float ElapsedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-			int CurrentSample() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-			ForceFeedbackWaveform FFWaveform() { return *cast(ForceFeedbackWaveform*)(cast(size_t)cast(void*)this + 64); }
+			float ScaleAllWaveformsBy() { mixin(MGPC!(float, 76)()); }
+			Actor WaveformInstigator() { mixin(MGPC!(Actor, 80)()); }
+			float ElapsedTime() { mixin(MGPC!(float, 72)()); }
+			int CurrentSample() { mixin(MGPC!(int, 68)()); }
+			ForceFeedbackWaveform FFWaveform() { mixin(MGPC!(ForceFeedbackWaveform, 64)()); }
 		}
-		bool bAllowsForceFeedback() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bAllowsForceFeedback(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
-		bool bIsPaused() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2) != 0; }
-		bool bIsPaused(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2; } return val; }
+		bool bAllowsForceFeedback() { mixin(MGBPC!(60, 0x1)()); }
+		bool bAllowsForceFeedback(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		bool bIsPaused() { mixin(MGBPC!(60, 0x2)()); }
+		bool bIsPaused(bool val) { mixin(MSBPC!(60, 0x2)()); }
 	}
 final:
 	void PlayForceFeedbackWaveform(ForceFeedbackWaveform WaveForm, Actor WaveInstigator)

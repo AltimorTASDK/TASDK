@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrLaserTarget;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.PlayerController;
@@ -9,9 +10,9 @@ extern(C++) interface TrLaserTarget : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLaserTarget")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLaserTarget")()); }
 	private static __gshared TrLaserTarget mDefaultProperties;
-	@property final static TrLaserTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLaserTarget)("TrLaserTarget TribesGame.Default__TrLaserTarget")); }
+	@property final static TrLaserTarget DefaultProperties() { mixin(MGDPC!(TrLaserTarget, "TrLaserTarget TribesGame.Default__TrLaserTarget")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,17 +28,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTeamNum() { return mSetTeamNum ? mSetTeamNum : (mSetTeamNum = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.SetTeamNum")); }
-			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.GetTeamNum")); }
-			ScriptFunction UpdateLocation() { return mUpdateLocation ? mUpdateLocation : (mUpdateLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.UpdateLocation")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.Destroyed")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.PostBeginPlay")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.PostRenderFor")); }
-			ScriptFunction RenderForOwner() { return mRenderForOwner ? mRenderForOwner : (mRenderForOwner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.RenderForOwner")); }
-			ScriptFunction RenderForTeammate() { return mRenderForTeammate ? mRenderForTeammate : (mRenderForTeammate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLaserTarget.RenderForTeammate")); }
+			ScriptFunction SetTeamNum() { mixin(MGF!("mSetTeamNum", "Function TribesGame.TrLaserTarget.SetTeamNum")()); }
+			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function TribesGame.TrLaserTarget.GetTeamNum")()); }
+			ScriptFunction UpdateLocation() { mixin(MGF!("mUpdateLocation", "Function TribesGame.TrLaserTarget.UpdateLocation")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrLaserTarget.Destroyed")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrLaserTarget.PostBeginPlay")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrLaserTarget.PostRenderFor")()); }
+			ScriptFunction RenderForOwner() { mixin(MGF!("mRenderForOwner", "Function TribesGame.TrLaserTarget.RenderForOwner")()); }
+			ScriptFunction RenderForTeammate() { mixin(MGF!("mRenderForTeammate", "Function TribesGame.TrLaserTarget.RenderForTeammate")()); }
 		}
 	}
-	@property final auto ref ubyte m_nTeamId() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 476); }
+	@property final auto ref ubyte m_nTeamId() { mixin(MGPC!(ubyte, 476)()); }
 final:
 	void SetTeamNum(ubyte TeamID)
 	{

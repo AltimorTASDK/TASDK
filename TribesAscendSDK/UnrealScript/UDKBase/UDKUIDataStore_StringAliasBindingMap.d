@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKUIDataStore_StringAliasBindingMap;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataStore_StringAliasMap;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface UDKUIDataStore_StringAliasBindingMap : UIDataStore_StringA
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataStore_StringAliasBindingMap")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKUIDataStore_StringAliasBindingMap")()); }
 	private static __gshared UDKUIDataStore_StringAliasBindingMap mDefaultProperties;
-	@property final static UDKUIDataStore_StringAliasBindingMap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataStore_StringAliasBindingMap)("UDKUIDataStore_StringAliasBindingMap UDKBase.Default__UDKUIDataStore_StringAliasBindingMap")); }
+	@property final static UDKUIDataStore_StringAliasBindingMap DefaultProperties() { mixin(MGDPC!(UDKUIDataStore_StringAliasBindingMap, "UDKUIDataStore_StringAliasBindingMap UDKBase.Default__UDKUIDataStore_StringAliasBindingMap")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetStringWithFieldName() { return mGetStringWithFieldName ? mGetStringWithFieldName : (mGetStringWithFieldName = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.GetStringWithFieldName")); }
-			ScriptFunction GetBoundStringWithFieldName() { return mGetBoundStringWithFieldName ? mGetBoundStringWithFieldName : (mGetBoundStringWithFieldName = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.GetBoundStringWithFieldName")); }
-			ScriptFunction FindMappingInBoundKeyCache() { return mFindMappingInBoundKeyCache ? mFindMappingInBoundKeyCache : (mFindMappingInBoundKeyCache = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.FindMappingInBoundKeyCache")); }
-			ScriptFunction AddMappingToBoundKeyCache() { return mAddMappingToBoundKeyCache ? mAddMappingToBoundKeyCache : (mAddMappingToBoundKeyCache = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.AddMappingToBoundKeyCache")); }
-			ScriptFunction ClearBoundKeyCache() { return mClearBoundKeyCache ? mClearBoundKeyCache : (mClearBoundKeyCache = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.ClearBoundKeyCache")); }
+			ScriptFunction GetStringWithFieldName() { mixin(MGF!("mGetStringWithFieldName", "Function UDKBase.UDKUIDataStore_StringAliasBindingMap.GetStringWithFieldName")()); }
+			ScriptFunction GetBoundStringWithFieldName() { mixin(MGF!("mGetBoundStringWithFieldName", "Function UDKBase.UDKUIDataStore_StringAliasBindingMap.GetBoundStringWithFieldName")()); }
+			ScriptFunction FindMappingInBoundKeyCache() { mixin(MGF!("mFindMappingInBoundKeyCache", "Function UDKBase.UDKUIDataStore_StringAliasBindingMap.FindMappingInBoundKeyCache")()); }
+			ScriptFunction AddMappingToBoundKeyCache() { mixin(MGF!("mAddMappingToBoundKeyCache", "Function UDKBase.UDKUIDataStore_StringAliasBindingMap.AddMappingToBoundKeyCache")()); }
+			ScriptFunction ClearBoundKeyCache() { mixin(MGF!("mClearBoundKeyCache", "Function UDKBase.UDKUIDataStore_StringAliasBindingMap.ClearBoundKeyCache")()); }
 		}
 	}
 	static struct Constants
@@ -39,12 +40,12 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKUIDataStore_StringAliasBindingMap.ControllerMap")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKUIDataStore_StringAliasBindingMap.ControllerMap")()); }
 		@property final auto ref
 		{
-			ScriptString PS3Mapping() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
-			ScriptString XBoxMapping() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-			ScriptName KeyName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptString PS3Mapping() { mixin(MGPS!(ScriptString, 20)()); }
+			ScriptString XBoxMapping() { mixin(MGPS!(ScriptString, 8)()); }
+			ScriptName KeyName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct BindCacheElement
@@ -52,52 +53,52 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKUIDataStore_StringAliasBindingMap.BindCacheElement")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKUIDataStore_StringAliasBindingMap.BindCacheElement")()); }
 		@property final auto ref
 		{
-			int FieldIndex() { return *cast(int*)(cast(size_t)&this + 20); }
-			ScriptString MappingString() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-			ScriptName KeyName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			int FieldIndex() { mixin(MGPS!(int, 20)()); }
+			ScriptString MappingString() { mixin(MGPS!(ScriptString, 8)()); }
+			ScriptName KeyName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKUIDataStore_StringAliasBindingMap.ControllerMap) ControllerMapArray() { return *cast(ScriptArray!(UDKUIDataStore_StringAliasBindingMap.ControllerMap)*)(cast(size_t)cast(void*)this + 260); }
-		UObject.Map_Mirror CommandToBindNames() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 200); }
-		int FakePlatform() { return *cast(int*)(cast(size_t)cast(void*)this + 196); }
+		ScriptArray!(UDKUIDataStore_StringAliasBindingMap.ControllerMap) ControllerMapArray() { mixin(MGPC!(ScriptArray!(UDKUIDataStore_StringAliasBindingMap.ControllerMap), 260)()); }
+		UObject.Map_Mirror CommandToBindNames() { mixin(MGPC!(UObject.Map_Mirror, 200)()); }
+		int FakePlatform() { mixin(MGPC!(int, 196)()); }
 	}
 final:
-	int GetStringWithFieldName(ScriptString FieldName, ScriptString* MappedString)
+	int GetStringWithFieldName(ScriptString FieldName, ref ScriptString MappedString)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
-		*cast(ScriptString*)&params[12] = *MappedString;
+		*cast(ScriptString*)&params[12] = MappedString;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringWithFieldName, params.ptr, cast(void*)0);
 		*MappedString = *cast(ScriptString*)&params[12];
 		return *cast(int*)&params[24];
 	}
-	int GetBoundStringWithFieldName(ScriptString FieldName, ScriptString* MappedString, int* StartIndex, ScriptString* BindString)
+	int GetBoundStringWithFieldName(ScriptString FieldName, ref ScriptString MappedString, int* StartIndex, ScriptString* BindString)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
-		*cast(ScriptString*)&params[12] = *MappedString;
-		*cast(int*)&params[24] = *StartIndex;
-		*cast(ScriptString*)&params[28] = *BindString;
+		*cast(ScriptString*)&params[12] = MappedString;
+		*cast(int*)&params[24] = StartIndex;
+		*cast(ScriptString*)&params[28] = BindString;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundStringWithFieldName, params.ptr, cast(void*)0);
 		*MappedString = *cast(ScriptString*)&params[12];
 		*StartIndex = *cast(int*)&params[24];
 		*BindString = *cast(ScriptString*)&params[28];
 		return *cast(int*)&params[40];
 	}
-	bool FindMappingInBoundKeyCache(ScriptString Command, ScriptString* MappingStr, int* FieldIndex)
+	bool FindMappingInBoundKeyCache(ScriptString Command, ref ScriptString MappingStr, ref int FieldIndex)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		*cast(ScriptString*)&params[12] = *MappingStr;
-		*cast(int*)&params[24] = *FieldIndex;
+		*cast(ScriptString*)&params[12] = MappingStr;
+		*cast(int*)&params[24] = FieldIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindMappingInBoundKeyCache, params.ptr, cast(void*)0);
 		*MappingStr = *cast(ScriptString*)&params[12];
 		*FieldIndex = *cast(int*)&params[24];

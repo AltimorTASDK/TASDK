@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialExpressionFontSampleParameter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpressionFontSample;
 import UnrealScript.Core.UObject;
 
@@ -8,12 +9,12 @@ extern(C++) interface MaterialExpressionFontSampleParameter : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionFontSampleParameter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionFontSampleParameter")()); }
 	private static __gshared MaterialExpressionFontSampleParameter mDefaultProperties;
-	@property final static MaterialExpressionFontSampleParameter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionFontSampleParameter)("MaterialExpressionFontSampleParameter Engine.Default__MaterialExpressionFontSampleParameter")); }
+	@property final static MaterialExpressionFontSampleParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionFontSampleParameter, "MaterialExpressionFontSampleParameter Engine.Default__MaterialExpressionFontSampleParameter")()); }
 	@property final auto ref
 	{
-		UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 124); }
-		ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 116); }
+		UObject.Guid ExpressionGUID() { mixin(MGPC!(UObject.Guid, 124)()); }
+		ScriptName ParameterName() { mixin(MGPC!(ScriptName, 116)()); }
 	}
 }

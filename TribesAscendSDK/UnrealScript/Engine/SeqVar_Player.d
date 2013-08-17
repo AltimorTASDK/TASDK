@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqVar_Player;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SeqVar_Object;
 
@@ -8,9 +9,9 @@ extern(C++) interface SeqVar_Player : SeqVar_Object
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqVar_Player")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqVar_Player")()); }
 	private static __gshared SeqVar_Player mDefaultProperties;
-	@property final static SeqVar_Player DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqVar_Player)("SeqVar_Player Engine.Default__SeqVar_Player")); }
+	@property final static SeqVar_Player DefaultProperties() { mixin(MGDPC!(SeqVar_Player, "SeqVar_Player Engine.Default__SeqVar_Player")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,19 +21,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdatePlayersList() { return mUpdatePlayersList ? mUpdatePlayersList : (mUpdatePlayersList = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqVar_Player.UpdatePlayersList")); }
-			ScriptFunction GetObjectValue() { return mGetObjectValue ? mGetObjectValue : (mGetObjectValue = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqVar_Player.GetObjectValue")); }
+			ScriptFunction UpdatePlayersList() { mixin(MGF!("mUpdatePlayersList", "Function Engine.SeqVar_Player.UpdatePlayersList")()); }
+			ScriptFunction GetObjectValue() { mixin(MGF!("mGetObjectValue", "Function Engine.SeqVar_Player.GetObjectValue")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) Players() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 176); }
-			int PlayerIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 192); }
+			ScriptArray!(UObject) Players() { mixin(MGPC!(ScriptArray!(UObject), 176)()); }
+			int PlayerIdx() { mixin(MGPC!(int, 192)()); }
 		}
-		bool bAllPlayers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 188) & 0x1) != 0; }
-		bool bAllPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 188) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 188) &= ~0x1; } return val; }
+		bool bAllPlayers() { mixin(MGBPC!(188, 0x1)()); }
+		bool bAllPlayers(bool val) { mixin(MSBPC!(188, 0x1)()); }
 	}
 final:
 	void UpdatePlayersList()

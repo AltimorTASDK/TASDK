@@ -1,6 +1,7 @@
 module UnrealScript.Engine.HeightFogComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorComponent;
 import UnrealScript.Core.UObject;
 
@@ -8,27 +9,27 @@ extern(C++) interface HeightFogComponent : ActorComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.HeightFogComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.HeightFogComponent")()); }
 	private static __gshared HeightFogComponent mDefaultProperties;
-	@property final static HeightFogComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(HeightFogComponent)("HeightFogComponent Engine.Default__HeightFogComponent")); }
+	@property final static HeightFogComponent DefaultProperties() { mixin(MGDPC!(HeightFogComponent, "HeightFogComponent Engine.Default__HeightFogComponent")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetEnabled;
-		public @property static final ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.HeightFogComponent.SetEnabled")); }
+		public @property static final ScriptFunction SetEnabled() { mixin(MGF!("mSetEnabled", "Function Engine.HeightFogComponent.SetEnabled")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float StartDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			float ExtinctionDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			UObject.Color LightColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 104); }
-			float LightBrightness() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float Density() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float Height() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
+			float StartDistance() { mixin(MGPC!(float, 112)()); }
+			float ExtinctionDistance() { mixin(MGPC!(float, 108)()); }
+			UObject.Color LightColor() { mixin(MGPC!(UObject.Color, 104)()); }
+			float LightBrightness() { mixin(MGPC!(float, 100)()); }
+			float Density() { mixin(MGPC!(float, 96)()); }
+			float Height() { mixin(MGPC!(float, 92)()); }
 		}
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bEnabled() { mixin(MGBPC!(88, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 	final void SetEnabled(bool bSetEnabled)
 	{

@@ -1,20 +1,22 @@
 module UnrealScript.UTGame.UTAvoidMarker;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 
 extern(C++) interface UTAvoidMarker : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAvoidMarker")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAvoidMarker")()); }
 	private static __gshared UTAvoidMarker mDefaultProperties;
-	@property final static UTAvoidMarker DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTAvoidMarker)("UTAvoidMarker UTGame.Default__UTAvoidMarker")); }
+	@property final static UTAvoidMarker DefaultProperties() { mixin(MGDPC!(UTAvoidMarker, "UTAvoidMarker UTGame.Default__UTAvoidMarker")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTouch;
-		public @property static final ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTAvoidMarker.Touch")); }
+		public @property static final ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTAvoidMarker.Touch")()); }
 	}
+	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CollisionCylinder'!
 	final void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* OtherComp, Vector HitLocation, Vector HitNormal)

@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.SeqEvent_HudRender;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Engine.SequenceEvent;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface SeqEvent_HudRender : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_HudRender")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.SeqEvent_HudRender")()); }
 	private static __gshared SeqEvent_HudRender mDefaultProperties;
-	@property final static SeqEvent_HudRender DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_HudRender)("SeqEvent_HudRender GameFramework.Default__SeqEvent_HudRender")); }
+	@property final static SeqEvent_HudRender DefaultProperties() { mixin(MGDPC!(SeqEvent_HudRender, "SeqEvent_HudRender GameFramework.Default__SeqEvent_HudRender")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,19 +23,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RegisterEvent() { return mRegisterEvent ? mRegisterEvent : (mRegisterEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_HudRender.RegisterEvent")); }
-			ScriptFunction Render() { return mRender ? mRender : (mRender = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_HudRender.Render")); }
+			ScriptFunction RegisterEvent() { mixin(MGF!("mRegisterEvent", "Function GameFramework.SeqEvent_HudRender.RegisterEvent")()); }
+			ScriptFunction Render() { mixin(MGF!("mRender", "Function GameFramework.SeqEvent_HudRender.Render")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) Targets() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 256); }
-			float AuthoredGlobalScale() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
+			ScriptArray!(UObject) Targets() { mixin(MGPC!(ScriptArray!(UObject), 256)()); }
+			float AuthoredGlobalScale() { mixin(MGPC!(float, 272)()); }
 		}
-		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x1) != 0; }
-		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x1; } return val; }
+		bool bIsActive() { mixin(MGBPC!(268, 0x1)()); }
+		bool bIsActive(bool val) { mixin(MSBPC!(268, 0x1)()); }
 	}
 final:
 	void RegisterEvent()

@@ -1,21 +1,22 @@
 module UnrealScript.TribesGame.TrInventory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTInventory;
 
 extern(C++) interface TrInventory : UTInventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrInventory")()); }
 	private static __gshared TrInventory mDefaultProperties;
-	@property final static TrInventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventory)("TrInventory TribesGame.Default__TrInventory")); }
+	@property final static TrInventory DefaultProperties() { mixin(MGDPC!(TrInventory, "TrInventory TribesGame.Default__TrInventory")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDropFrom;
-		public @property static final ScriptFunction DropFrom() { return mDropFrom ? mDropFrom : (mDropFrom = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventory.DropFrom")); }
+		public @property static final ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function TribesGame.TrInventory.DropFrom")()); }
 	}
-	@property final auto ref float m_fMaxPickupSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
+	@property final auto ref float m_fMaxPickupSpeed() { mixin(MGPC!(float, 556)()); }
 	final void DropFrom(Vector StartLocation, Vector StartVelocity)
 	{
 		ubyte params[24];

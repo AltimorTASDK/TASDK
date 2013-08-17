@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_Mutators;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.GFxUDKFrontEnd_Screen;
 import UnrealScript.UTGame.UTUIDataStore_MenuItems;
 import UnrealScript.UTGame.UTUIDataProvider_Mutator;
@@ -11,9 +12,9 @@ extern(C++) interface GFxUDKFrontEnd_Mutators : GFxUDKFrontEnd_Screen
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_Mutators")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_Mutators")()); }
 	private static __gshared GFxUDKFrontEnd_Mutators mDefaultProperties;
-	@property final static GFxUDKFrontEnd_Mutators DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_Mutators)("GFxUDKFrontEnd_Mutators UTGame.Default__GFxUDKFrontEnd_Mutators")); }
+	@property final static GFxUDKFrontEnd_Mutators DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_Mutators, "GFxUDKFrontEnd_Mutators UTGame.Default__GFxUDKFrontEnd_Mutators")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,45 +43,45 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetNumEnabledMutators() { return mGetNumEnabledMutators ? mGetNumEnabledMutators : (mGetNumEnabledMutators = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.GetNumEnabledMutators")); }
-			ScriptFunction GetEnabledMutators() { return mGetEnabledMutators ? mGetEnabledMutators : (mGetEnabledMutators = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.GetEnabledMutators")); }
-			ScriptFunction OnViewLoaded() { return mOnViewLoaded ? mOnViewLoaded : (mOnViewLoaded = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.OnViewLoaded")); }
-			ScriptFunction OnViewActivated() { return mOnViewActivated ? mOnViewActivated : (mOnViewActivated = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.OnViewActivated")); }
-			ScriptFunction SortAllMutatorsBasedOnOfficialArray() { return mSortAllMutatorsBasedOnOfficialArray ? mSortAllMutatorsBasedOnOfficialArray : (mSortAllMutatorsBasedOnOfficialArray = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.SortAllMutatorsBasedOnOfficialArray")); }
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.OnTopMostView")); }
-			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.DisableSubComponents")); }
-			ScriptFunction PlayOpenAnimation() { return mPlayOpenAnimation ? mPlayOpenAnimation : (mPlayOpenAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.PlayOpenAnimation")); }
-			ScriptFunction OnListItemPress() { return mOnListItemPress ? mOnListItemPress : (mOnListItemPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.OnListItemPress")); }
-			ScriptFunction FindMutatorIndexByClass() { return mFindMutatorIndexByClass ? mFindMutatorIndexByClass : (mFindMutatorIndexByClass = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.FindMutatorIndexByClass")); }
-			ScriptFunction OnListChange() { return mOnListChange ? mOnListChange : (mOnListChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.OnListChange")); }
-			ScriptFunction UpdateDescription() { return mUpdateDescription ? mUpdateDescription : (mUpdateDescription = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.UpdateDescription")); }
-			ScriptFunction UpdateListDataProvider() { return mUpdateListDataProvider ? mUpdateListDataProvider : (mUpdateListDataProvider = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.UpdateListDataProvider")); }
-			ScriptFunction UpdateConfigListDataProvider() { return mUpdateConfigListDataProvider ? mUpdateConfigListDataProvider : (mUpdateConfigListDataProvider = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.UpdateConfigListDataProvider")); }
-			ScriptFunction SetMutatorEnabled() { return mSetMutatorEnabled ? mSetMutatorEnabled : (mSetMutatorEnabled = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.SetMutatorEnabled")); }
-			ScriptFunction AddMutatorAndFilterList() { return mAddMutatorAndFilterList ? mAddMutatorAndFilterList : (mAddMutatorAndFilterList = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.AddMutatorAndFilterList")); }
-			ScriptFunction ApplyGameModeFilter() { return mApplyGameModeFilter ? mApplyGameModeFilter : (mApplyGameModeFilter = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.ApplyGameModeFilter")); }
-			ScriptFunction IsCurrentMutatorConfigurable() { return mIsCurrentMutatorConfigurable ? mIsCurrentMutatorConfigurable : (mIsCurrentMutatorConfigurable = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.IsCurrentMutatorConfigurable")); }
-			ScriptFunction SetList() { return mSetList ? mSetList : (mSetList = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.SetList")); }
-			ScriptFunction SetConfigList() { return mSetConfigList ? mSetConfigList : (mSetConfigList = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.SetConfigList")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_Mutators.WidgetInitialized")); }
+			ScriptFunction GetNumEnabledMutators() { mixin(MGF!("mGetNumEnabledMutators", "Function UTGame.GFxUDKFrontEnd_Mutators.GetNumEnabledMutators")()); }
+			ScriptFunction GetEnabledMutators() { mixin(MGF!("mGetEnabledMutators", "Function UTGame.GFxUDKFrontEnd_Mutators.GetEnabledMutators")()); }
+			ScriptFunction OnViewLoaded() { mixin(MGF!("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_Mutators.OnViewLoaded")()); }
+			ScriptFunction OnViewActivated() { mixin(MGF!("mOnViewActivated", "Function UTGame.GFxUDKFrontEnd_Mutators.OnViewActivated")()); }
+			ScriptFunction SortAllMutatorsBasedOnOfficialArray() { mixin(MGF!("mSortAllMutatorsBasedOnOfficialArray", "Function UTGame.GFxUDKFrontEnd_Mutators.SortAllMutatorsBasedOnOfficialArray")()); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_Mutators.OnTopMostView")()); }
+			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_Mutators.DisableSubComponents")()); }
+			ScriptFunction PlayOpenAnimation() { mixin(MGF!("mPlayOpenAnimation", "Function UTGame.GFxUDKFrontEnd_Mutators.PlayOpenAnimation")()); }
+			ScriptFunction OnListItemPress() { mixin(MGF!("mOnListItemPress", "Function UTGame.GFxUDKFrontEnd_Mutators.OnListItemPress")()); }
+			ScriptFunction FindMutatorIndexByClass() { mixin(MGF!("mFindMutatorIndexByClass", "Function UTGame.GFxUDKFrontEnd_Mutators.FindMutatorIndexByClass")()); }
+			ScriptFunction OnListChange() { mixin(MGF!("mOnListChange", "Function UTGame.GFxUDKFrontEnd_Mutators.OnListChange")()); }
+			ScriptFunction UpdateDescription() { mixin(MGF!("mUpdateDescription", "Function UTGame.GFxUDKFrontEnd_Mutators.UpdateDescription")()); }
+			ScriptFunction UpdateListDataProvider() { mixin(MGF!("mUpdateListDataProvider", "Function UTGame.GFxUDKFrontEnd_Mutators.UpdateListDataProvider")()); }
+			ScriptFunction UpdateConfigListDataProvider() { mixin(MGF!("mUpdateConfigListDataProvider", "Function UTGame.GFxUDKFrontEnd_Mutators.UpdateConfigListDataProvider")()); }
+			ScriptFunction SetMutatorEnabled() { mixin(MGF!("mSetMutatorEnabled", "Function UTGame.GFxUDKFrontEnd_Mutators.SetMutatorEnabled")()); }
+			ScriptFunction AddMutatorAndFilterList() { mixin(MGF!("mAddMutatorAndFilterList", "Function UTGame.GFxUDKFrontEnd_Mutators.AddMutatorAndFilterList")()); }
+			ScriptFunction ApplyGameModeFilter() { mixin(MGF!("mApplyGameModeFilter", "Function UTGame.GFxUDKFrontEnd_Mutators.ApplyGameModeFilter")()); }
+			ScriptFunction IsCurrentMutatorConfigurable() { mixin(MGF!("mIsCurrentMutatorConfigurable", "Function UTGame.GFxUDKFrontEnd_Mutators.IsCurrentMutatorConfigurable")()); }
+			ScriptFunction SetList() { mixin(MGF!("mSetList", "Function UTGame.GFxUDKFrontEnd_Mutators.SetList")()); }
+			ScriptFunction SetConfigList() { mixin(MGF!("mSetConfigList", "Function UTGame.GFxUDKFrontEnd_Mutators.SetConfigList")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_Mutators.WidgetInitialized")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UTUIDataProvider_Mutator) AllMutatorsList() { return *cast(ScriptArray!(UTUIDataProvider_Mutator)*)(cast(size_t)cast(void*)this + 220); }
-			ScriptArray!(UTUIDataProvider_Mutator) AvailableMutatorList() { return *cast(ScriptArray!(UTUIDataProvider_Mutator)*)(cast(size_t)cast(void*)this + 232); }
-			ScriptArray!(int) EnabledList() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 248); }
-			GFxObject ConfigListDataProvider() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 276); }
-			GFxClikWidget ConfigListMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 272); }
-			GFxObject ListDataProvider() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 268); }
-			GFxObject MenuMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 264); }
-			GFxClikWidget ListMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 260); }
-			UTUIDataStore_MenuItems MenuDataStore() { return *cast(UTUIDataStore_MenuItems*)(cast(size_t)cast(void*)this + 244); }
+			ScriptArray!(UTUIDataProvider_Mutator) AllMutatorsList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_Mutator), 220)()); }
+			ScriptArray!(UTUIDataProvider_Mutator) AvailableMutatorList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_Mutator), 232)()); }
+			ScriptArray!(int) EnabledList() { mixin(MGPC!(ScriptArray!(int), 248)()); }
+			GFxObject ConfigListDataProvider() { mixin(MGPC!(GFxObject, 276)()); }
+			GFxClikWidget ConfigListMC() { mixin(MGPC!(GFxClikWidget, 272)()); }
+			GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 268)()); }
+			GFxObject MenuMC() { mixin(MGPC!(GFxObject, 264)()); }
+			GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 260)()); }
+			UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!(UTUIDataStore_MenuItems, 244)()); }
 		}
-		bool bFirstUpdateAfterActivation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 280) & 0x1) != 0; }
-		bool bFirstUpdateAfterActivation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 280) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 280) &= ~0x1; } return val; }
+		bool bFirstUpdateAfterActivation() { mixin(MGBPC!(280, 0x1)()); }
+		bool bFirstUpdateAfterActivation(bool val) { mixin(MSBPC!(280, 0x1)()); }
 	}
 final:
 	static int GetNumEnabledMutators()

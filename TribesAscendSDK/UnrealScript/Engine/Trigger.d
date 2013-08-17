@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Trigger;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Projectile;
 
@@ -8,9 +9,9 @@ extern(C++) interface Trigger : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Trigger")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Trigger")()); }
 	private static __gshared Trigger mDefaultProperties;
-	@property final static Trigger DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Trigger)("Trigger Engine.Default__Trigger")); }
+	@property final static Trigger DefaultProperties() { mixin(MGDPC!(Trigger, "Trigger Engine.Default__Trigger")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,13 +26,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Trigger.Touch")); }
-			ScriptFunction NotifyTriggered() { return mNotifyTriggered ? mNotifyTriggered : (mNotifyTriggered = ScriptObject.Find!(ScriptFunction)("Function Engine.Trigger.NotifyTriggered")); }
-			ScriptFunction UnTrigger() { return mUnTrigger ? mUnTrigger : (mUnTrigger = ScriptObject.Find!(ScriptFunction)("Function Engine.Trigger.UnTrigger")); }
-			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function Engine.Trigger.StopsProjectile")); }
-			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Trigger.ShouldSaveForCheckpoint")); }
-			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.Trigger.CreateCheckpointRecord")); }
-			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.Trigger.ApplyCheckpointRecord")); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.Trigger.Touch")()); }
+			ScriptFunction NotifyTriggered() { mixin(MGF!("mNotifyTriggered", "Function Engine.Trigger.NotifyTriggered")()); }
+			ScriptFunction UnTrigger() { mixin(MGF!("mUnTrigger", "Function Engine.Trigger.UnTrigger")()); }
+			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function Engine.Trigger.StopsProjectile")()); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.Trigger.ShouldSaveForCheckpoint")()); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.Trigger.CreateCheckpointRecord")()); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.Trigger.ApplyCheckpointRecord")()); }
 		}
 	}
 	struct CheckpointRecord
@@ -39,18 +40,22 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Trigger.CheckpointRecord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Trigger.CheckpointRecord")()); }
 		@property final
 		{
-			bool bCollideActors() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bCollideActors(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bCollideActors() { mixin(MGBPS!(0, 0x1)()); }
+			bool bCollideActors(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref float AITriggerDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-		bool bRecentlyTriggered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bRecentlyTriggered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		auto ref
+		{
+			float AITriggerDelay() { mixin(MGPC!(float, 484)()); }
+			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+		}
+		bool bRecentlyTriggered() { mixin(MGBPC!(480, 0x1)()); }
+		bool bRecentlyTriggered(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	void Touch(Actor Other, 
@@ -90,19 +95,19 @@ void**)&params[4] = OtherComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void CreateCheckpointRecord(Trigger.CheckpointRecord* Record)
+	void CreateCheckpointRecord(ref Trigger.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Trigger.CheckpointRecord*)params.ptr = *Record;
+		*cast(Trigger.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(Trigger.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(Trigger.CheckpointRecord* Record)
+	void ApplyCheckpointRecord(ref const Trigger.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Trigger.CheckpointRecord*)params.ptr = *Record;
+		*cast(Trigger.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(Trigger.CheckpointRecord*)params.ptr;
 	}

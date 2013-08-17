@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDmgType_RanOver;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTDamageType;
 import UnrealScript.UTGame.UTPlayerReplicationInfo;
@@ -10,9 +11,9 @@ extern(C++) interface UTDmgType_RanOver : UTDamageType
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_RanOver")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDmgType_RanOver")()); }
 	private static __gshared UTDmgType_RanOver mDefaultProperties;
-	@property final static UTDmgType_RanOver DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDmgType_RanOver)("UTDmgType_RanOver UTGame.Default__UTDmgType_RanOver")); }
+	@property final static UTDmgType_RanOver DefaultProperties() { mixin(MGDPC!(UTDmgType_RanOver, "UTDmgType_RanOver UTGame.Default__UTDmgType_RanOver")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,12 +24,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IncrementKills() { return mIncrementKills ? mIncrementKills : (mIncrementKills = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_RanOver.IncrementKills")); }
-			ScriptFunction SmallReward() { return mSmallReward ? mSmallReward : (mSmallReward = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_RanOver.SmallReward")); }
-			ScriptFunction SpawnHitEffect() { return mSpawnHitEffect ? mSpawnHitEffect : (mSpawnHitEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_RanOver.SpawnHitEffect")); }
+			ScriptFunction IncrementKills() { mixin(MGF!("mIncrementKills", "Function UTGame.UTDmgType_RanOver.IncrementKills")()); }
+			ScriptFunction SmallReward() { mixin(MGF!("mSmallReward", "Function UTGame.UTDmgType_RanOver.SmallReward")()); }
+			ScriptFunction SpawnHitEffect() { mixin(MGF!("mSpawnHitEffect", "Function UTGame.UTDmgType_RanOver.SpawnHitEffect")()); }
 		}
 	}
-	@property final auto ref int NumMessages() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
+	@property final auto ref int NumMessages() { mixin(MGPC!(int, 300)()); }
 final:
 	static int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{

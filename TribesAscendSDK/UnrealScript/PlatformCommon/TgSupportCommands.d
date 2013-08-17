@@ -1,6 +1,7 @@
 module UnrealScript.PlatformCommon.TgSupportCommands;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.WorldInfo;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerController;
@@ -9,9 +10,9 @@ extern(C++) interface TgSupportCommands : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgSupportCommands")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class PlatformCommon.TgSupportCommands")()); }
 	private static __gshared TgSupportCommands mDefaultProperties;
-	@property final static TgSupportCommands DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TgSupportCommands)("TgSupportCommands PlatformCommon.Default__TgSupportCommands")); }
+	@property final static TgSupportCommands DefaultProperties() { mixin(MGDPC!(TgSupportCommands, "TgSupportCommands PlatformCommon.Default__TgSupportCommands")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,25 +39,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction gmMatchForce() { return mgmMatchForce ? mgmMatchForce : (mgmMatchForce = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.gmMatchForce")); }
-			ScriptFunction gmMatchNext() { return mgmMatchNext ? mgmMatchNext : (mgmMatchNext = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.gmMatchNext")); }
-			ScriptFunction gmCommand() { return mgmCommand ? mgmCommand : (mgmCommand = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.gmCommand")); }
-			ScriptFunction gmC() { return mgmC ? mgmC : (mgmC = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.gmC")); }
-			ScriptFunction GPerfDebugFeet() { return mGPerfDebugFeet ? mGPerfDebugFeet : (mGPerfDebugFeet = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.GPerfDebugFeet")); }
-			ScriptFunction GPerfDebugSkips() { return mGPerfDebugSkips ? mGPerfDebugSkips : (mGPerfDebugSkips = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.GPerfDebugSkips")); }
-			ScriptFunction GPerfDebugRelevMode() { return mGPerfDebugRelevMode ? mGPerfDebugRelevMode : (mGPerfDebugRelevMode = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.GPerfDebugRelevMode")); }
-			ScriptFunction scLog() { return mscLog ? mscLog : (mscLog = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scLog")); }
-			ScriptFunction scLogMark() { return mscLogMark ? mscLogMark : (mscLogMark = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scLogMark")); }
-			ScriptFunction scStartGame() { return mscStartGame ? mscStartGame : (mscStartGame = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scStartGame")); }
-			ScriptFunction scEndGame() { return mscEndGame ? mscEndGame : (mscEndGame = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scEndGame")); }
-			ScriptFunction scScore() { return mscScore ? mscScore : (mscScore = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scScore")); }
-			ScriptFunction scTime() { return mscTime ? mscTime : (mscTime = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scTime")); }
-			ScriptFunction scTimer() { return mscTimer ? mscTimer : (mscTimer = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scTimer")); }
-			ScriptFunction scDemoRec() { return mscDemoRec ? mscDemoRec : (mscDemoRec = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scDemoRec")); }
-			ScriptFunction scDemoStop() { return mscDemoStop ? mscDemoStop : (mscDemoStop = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scDemoStop")); }
-			ScriptFunction scPerfDebugFeet() { return mscPerfDebugFeet ? mscPerfDebugFeet : (mscPerfDebugFeet = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scPerfDebugFeet")); }
-			ScriptFunction scPerfDebugSkip() { return mscPerfDebugSkip ? mscPerfDebugSkip : (mscPerfDebugSkip = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scPerfDebugSkip")); }
-			ScriptFunction scPerfDebugRelevMode() { return mscPerfDebugRelevMode ? mscPerfDebugRelevMode : (mscPerfDebugRelevMode = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scPerfDebugRelevMode")); }
+			ScriptFunction gmMatchForce() { mixin(MGF!("mgmMatchForce", "Function PlatformCommon.TgSupportCommands.gmMatchForce")()); }
+			ScriptFunction gmMatchNext() { mixin(MGF!("mgmMatchNext", "Function PlatformCommon.TgSupportCommands.gmMatchNext")()); }
+			ScriptFunction gmCommand() { mixin(MGF!("mgmCommand", "Function PlatformCommon.TgSupportCommands.gmCommand")()); }
+			ScriptFunction gmC() { mixin(MGF!("mgmC", "Function PlatformCommon.TgSupportCommands.gmC")()); }
+			ScriptFunction GPerfDebugFeet() { mixin(MGF!("mGPerfDebugFeet", "Function PlatformCommon.TgSupportCommands.GPerfDebugFeet")()); }
+			ScriptFunction GPerfDebugSkips() { mixin(MGF!("mGPerfDebugSkips", "Function PlatformCommon.TgSupportCommands.GPerfDebugSkips")()); }
+			ScriptFunction GPerfDebugRelevMode() { mixin(MGF!("mGPerfDebugRelevMode", "Function PlatformCommon.TgSupportCommands.GPerfDebugRelevMode")()); }
+			ScriptFunction scLog() { mixin(MGF!("mscLog", "Function PlatformCommon.TgSupportCommands.scLog")()); }
+			ScriptFunction scLogMark() { mixin(MGF!("mscLogMark", "Function PlatformCommon.TgSupportCommands.scLogMark")()); }
+			ScriptFunction scStartGame() { mixin(MGF!("mscStartGame", "Function PlatformCommon.TgSupportCommands.scStartGame")()); }
+			ScriptFunction scEndGame() { mixin(MGF!("mscEndGame", "Function PlatformCommon.TgSupportCommands.scEndGame")()); }
+			ScriptFunction scScore() { mixin(MGF!("mscScore", "Function PlatformCommon.TgSupportCommands.scScore")()); }
+			ScriptFunction scTime() { mixin(MGF!("mscTime", "Function PlatformCommon.TgSupportCommands.scTime")()); }
+			ScriptFunction scTimer() { mixin(MGF!("mscTimer", "Function PlatformCommon.TgSupportCommands.scTimer")()); }
+			ScriptFunction scDemoRec() { mixin(MGF!("mscDemoRec", "Function PlatformCommon.TgSupportCommands.scDemoRec")()); }
+			ScriptFunction scDemoStop() { mixin(MGF!("mscDemoStop", "Function PlatformCommon.TgSupportCommands.scDemoStop")()); }
+			ScriptFunction scPerfDebugFeet() { mixin(MGF!("mscPerfDebugFeet", "Function PlatformCommon.TgSupportCommands.scPerfDebugFeet")()); }
+			ScriptFunction scPerfDebugSkip() { mixin(MGF!("mscPerfDebugSkip", "Function PlatformCommon.TgSupportCommands.scPerfDebugSkip")()); }
+			ScriptFunction scPerfDebugRelevMode() { mixin(MGF!("mscPerfDebugRelevMode", "Function PlatformCommon.TgSupportCommands.scPerfDebugRelevMode")()); }
 		}
 	}
 	static struct Constants
@@ -115,7 +116,7 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'WorldInfo' has the same name as a defined type!
-		PlayerController PC() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 60); }
+		PlayerController PC() { mixin(MGPC!(PlayerController, 60)()); }
 	}
 final:
 	void gmMatchForce(int nQueueId)

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTObjectiveSpecificMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.UDKBase.UDKPlayerController;
 import UnrealScript.Core.UObject;
@@ -12,9 +13,9 @@ extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTObjectiveSpecificMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTObjectiveSpecificMessage")()); }
 	private static __gshared UTObjectiveSpecificMessage mDefaultProperties;
-	@property final static UTObjectiveSpecificMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTObjectiveSpecificMessage)("UTObjectiveSpecificMessage UTGame.Default__UTObjectiveSpecificMessage")); }
+	@property final static UTObjectiveSpecificMessage DefaultProperties() { mixin(MGDPC!(UTObjectiveSpecificMessage, "UTObjectiveSpecificMessage UTGame.Default__UTObjectiveSpecificMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,11 +28,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjectiveAnnouncement() { return mGetObjectiveAnnouncement ? mGetObjectiveAnnouncement : (mGetObjectiveAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveSpecificMessage.GetObjectiveAnnouncement")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveSpecificMessage.AnnouncementSound")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveSpecificMessage.ClientReceive")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveSpecificMessage.GetString")); }
-			ScriptFunction SetHUDDisplay() { return mSetHUDDisplay ? mSetHUDDisplay : (mSetHUDDisplay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveSpecificMessage.SetHUDDisplay")); }
+			ScriptFunction GetObjectiveAnnouncement() { mixin(MGF!("mGetObjectiveAnnouncement", "Function UTGame.UTObjectiveSpecificMessage.GetObjectiveAnnouncement")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTObjectiveSpecificMessage.AnnouncementSound")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTObjectiveSpecificMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTObjectiveSpecificMessage.GetString")()); }
+			ScriptFunction SetHUDDisplay() { mixin(MGF!("mSetHUDDisplay", "Function UTGame.UTObjectiveSpecificMessage.SetHUDDisplay")()); }
 		}
 	}
 final:

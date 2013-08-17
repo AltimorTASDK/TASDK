@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCTFTeamAI;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.UTGame.UTTeamAI;
 import UnrealScript.UTGame.UTCTFFlag;
@@ -11,9 +12,9 @@ extern(C++) interface UTCTFTeamAI : UTTeamAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFTeamAI")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFTeamAI")()); }
 	private static __gshared UTCTFTeamAI mDefaultProperties;
-	@property final static UTCTFTeamAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFTeamAI)("UTCTFTeamAI UTGame.Default__UTCTFTeamAI")); }
+	@property final static UTCTFTeamAI DefaultProperties() { mixin(MGDPC!(UTCTFTeamAI, "UTCTFTeamAI UTGame.Default__UTCTFTeamAI")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,15 +24,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddSquadWithLeader() { return mAddSquadWithLeader ? mAddSquadWithLeader : (mAddSquadWithLeader = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFTeamAI.AddSquadWithLeader")); }
-			ScriptFunction GetPriorityFreelanceObjectiveFor() { return mGetPriorityFreelanceObjectiveFor ? mGetPriorityFreelanceObjectiveFor : (mGetPriorityFreelanceObjectiveFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFTeamAI.GetPriorityFreelanceObjectiveFor")); }
+			ScriptFunction AddSquadWithLeader() { mixin(MGF!("mAddSquadWithLeader", "Function UTGame.UTCTFTeamAI.AddSquadWithLeader")()); }
+			ScriptFunction GetPriorityFreelanceObjectiveFor() { mixin(MGF!("mGetPriorityFreelanceObjectiveFor", "Function UTGame.UTCTFTeamAI.GetPriorityFreelanceObjectiveFor")()); }
 		}
 	}
 	@property final auto ref
 	{
-		UTCTFFlag FriendlyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 668); }
-		UTCTFFlag EnemyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 672); }
-		float LastGotFlag() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
+		UTCTFFlag FriendlyFlag() { mixin(MGPC!(UTCTFFlag, 668)()); }
+		UTCTFFlag EnemyFlag() { mixin(MGPC!(UTCTFFlag, 672)()); }
+		float LastGotFlag() { mixin(MGPC!(float, 676)()); }
 	}
 final:
 	UTSquadAI AddSquadWithLeader(Controller C, UTGameObjective O)

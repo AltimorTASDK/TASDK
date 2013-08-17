@@ -1,6 +1,7 @@
 module UnrealScript.Engine.CheatManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.DebugCameraController;
 import UnrealScript.Engine.Weapon;
 import UnrealScript.Core.UObject;
@@ -9,9 +10,9 @@ extern(C++) interface CheatManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CheatManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CheatManager")()); }
 	private static __gshared CheatManager mDefaultProperties;
-	@property final static CheatManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CheatManager)("CheatManager Engine.Default__CheatManager")); }
+	@property final static CheatManager DefaultProperties() { mixin(MGDPC!(CheatManager, "CheatManager Engine.Default__CheatManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -68,63 +69,63 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FXPlay() { return mFXPlay ? mFXPlay : (mFXPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.FXPlay")); }
-			ScriptFunction FXStop() { return mFXStop ? mFXStop : (mFXStop = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.FXStop")); }
-			ScriptFunction DebugAI() { return mDebugAI ? mDebugAI : (mDebugAI = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.DebugAI")); }
-			ScriptFunction EditAIByTrace() { return mEditAIByTrace ? mEditAIByTrace : (mEditAIByTrace = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.EditAIByTrace")); }
-			ScriptFunction DebugPause() { return mDebugPause ? mDebugPause : (mDebugPause = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.DebugPause")); }
-			ScriptFunction ListDynamicActors() { return mListDynamicActors ? mListDynamicActors : (mListDynamicActors = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.ListDynamicActors")); }
-			ScriptFunction FreezeFrame() { return mFreezeFrame ? mFreezeFrame : (mFreezeFrame = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.FreezeFrame")); }
-			ScriptFunction WriteToLog() { return mWriteToLog ? mWriteToLog : (mWriteToLog = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.WriteToLog")); }
-			ScriptFunction KillViewedActor() { return mKillViewedActor ? mKillViewedActor : (mKillViewedActor = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.KillViewedActor")); }
-			ScriptFunction Teleport() { return mTeleport ? mTeleport : (mTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Teleport")); }
-			ScriptFunction ChangeSize() { return mChangeSize ? mChangeSize : (mChangeSize = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.ChangeSize")); }
-			ScriptFunction EndPath() { return mEndPath ? mEndPath : (mEndPath = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.EndPath")); }
-			ScriptFunction Amphibious() { return mAmphibious ? mAmphibious : (mAmphibious = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Amphibious")); }
-			ScriptFunction Fly() { return mFly ? mFly : (mFly = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Fly")); }
-			ScriptFunction Walk() { return mWalk ? mWalk : (mWalk = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Walk")); }
-			ScriptFunction Ghost() { return mGhost ? mGhost : (mGhost = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Ghost")); }
-			ScriptFunction AllAmmo() { return mAllAmmo ? mAllAmmo : (mAllAmmo = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.AllAmmo")); }
-			ScriptFunction God() { return mGod ? mGod : (mGod = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.God")); }
-			ScriptFunction Slomo() { return mSlomo ? mSlomo : (mSlomo = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Slomo")); }
-			ScriptFunction SetJumpZ() { return mSetJumpZ ? mSetJumpZ : (mSetJumpZ = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.SetJumpZ")); }
-			ScriptFunction SetGravity() { return mSetGravity ? mSetGravity : (mSetGravity = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.SetGravity")); }
-			ScriptFunction SetSpeed() { return mSetSpeed ? mSetSpeed : (mSetSpeed = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.SetSpeed")); }
-			ScriptFunction KillAll() { return mKillAll ? mKillAll : (mKillAll = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.KillAll")); }
-			ScriptFunction KillAllPawns() { return mKillAllPawns ? mKillAllPawns : (mKillAllPawns = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.KillAllPawns")); }
-			ScriptFunction KillPawns() { return mKillPawns ? mKillPawns : (mKillPawns = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.KillPawns")); }
-			ScriptFunction Avatar() { return mAvatar ? mAvatar : (mAvatar = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Avatar")); }
-			ScriptFunction Summon() { return mSummon ? mSummon : (mSummon = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Summon")); }
-			ScriptFunction GiveWeapon() { return mGiveWeapon ? mGiveWeapon : (mGiveWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.GiveWeapon")); }
-			ScriptFunction PlayersOnly() { return mPlayersOnly ? mPlayersOnly : (mPlayersOnly = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.PlayersOnly")); }
-			ScriptFunction DestroyFractures() { return mDestroyFractures ? mDestroyFractures : (mDestroyFractures = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.DestroyFractures")); }
-			ScriptFunction FractureAllMeshes() { return mFractureAllMeshes ? mFractureAllMeshes : (mFractureAllMeshes = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.FractureAllMeshes")); }
-			ScriptFunction FractureAllMeshesToMaximizeMemoryUsage() { return mFractureAllMeshesToMaximizeMemoryUsage ? mFractureAllMeshesToMaximizeMemoryUsage : (mFractureAllMeshesToMaximizeMemoryUsage = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.FractureAllMeshesToMaximizeMemoryUsage")); }
-			ScriptFunction RememberSpot() { return mRememberSpot ? mRememberSpot : (mRememberSpot = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.RememberSpot")); }
-			ScriptFunction ViewSelf() { return mViewSelf ? mViewSelf : (mViewSelf = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.ViewSelf")); }
-			ScriptFunction ViewPlayer() { return mViewPlayer ? mViewPlayer : (mViewPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.ViewPlayer")); }
-			ScriptFunction ViewActor() { return mViewActor ? mViewActor : (mViewActor = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.ViewActor")); }
-			ScriptFunction ViewBot() { return mViewBot ? mViewBot : (mViewBot = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.ViewBot")); }
-			ScriptFunction ViewClass() { return mViewClass ? mViewClass : (mViewClass = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.ViewClass")); }
-			ScriptFunction Loaded() { return mLoaded ? mLoaded : (mLoaded = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.Loaded")); }
-			ScriptFunction AllWeapons() { return mAllWeapons ? mAllWeapons : (mAllWeapons = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.AllWeapons")); }
-			ScriptFunction SetLevelStreamingStatus() { return mSetLevelStreamingStatus ? mSetLevelStreamingStatus : (mSetLevelStreamingStatus = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.SetLevelStreamingStatus")); }
-			ScriptFunction EnableDebugCamera() { return mEnableDebugCamera ? mEnableDebugCamera : (mEnableDebugCamera = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.EnableDebugCamera")); }
-			ScriptFunction InitCheatManager() { return mInitCheatManager ? mInitCheatManager : (mInitCheatManager = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.InitCheatManager")); }
-			ScriptFunction LogPlaySoundCalls() { return mLogPlaySoundCalls ? mLogPlaySoundCalls : (mLogPlaySoundCalls = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.LogPlaySoundCalls")); }
-			ScriptFunction LogParticleActivateSystemCalls() { return mLogParticleActivateSystemCalls ? mLogParticleActivateSystemCalls : (mLogParticleActivateSystemCalls = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.LogParticleActivateSystemCalls")); }
-			ScriptFunction VerifyNavMeshObjects() { return mVerifyNavMeshObjects ? mVerifyNavMeshObjects : (mVerifyNavMeshObjects = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.VerifyNavMeshObjects")); }
-			ScriptFunction DrawUnsupportingEdges() { return mDrawUnsupportingEdges ? mDrawUnsupportingEdges : (mDrawUnsupportingEdges = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.DrawUnsupportingEdges")); }
-			ScriptFunction PrintNavMeshObstacles() { return mPrintNavMeshObstacles ? mPrintNavMeshObstacles : (mPrintNavMeshObstacles = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.PrintNavMeshObstacles")); }
-			ScriptFunction DumpCoverStats() { return mDumpCoverStats ? mDumpCoverStats : (mDumpCoverStats = ScriptObject.Find!(ScriptFunction)("Function Engine.CheatManager.DumpCoverStats")); }
+			ScriptFunction FXPlay() { mixin(MGF!("mFXPlay", "Function Engine.CheatManager.FXPlay")()); }
+			ScriptFunction FXStop() { mixin(MGF!("mFXStop", "Function Engine.CheatManager.FXStop")()); }
+			ScriptFunction DebugAI() { mixin(MGF!("mDebugAI", "Function Engine.CheatManager.DebugAI")()); }
+			ScriptFunction EditAIByTrace() { mixin(MGF!("mEditAIByTrace", "Function Engine.CheatManager.EditAIByTrace")()); }
+			ScriptFunction DebugPause() { mixin(MGF!("mDebugPause", "Function Engine.CheatManager.DebugPause")()); }
+			ScriptFunction ListDynamicActors() { mixin(MGF!("mListDynamicActors", "Function Engine.CheatManager.ListDynamicActors")()); }
+			ScriptFunction FreezeFrame() { mixin(MGF!("mFreezeFrame", "Function Engine.CheatManager.FreezeFrame")()); }
+			ScriptFunction WriteToLog() { mixin(MGF!("mWriteToLog", "Function Engine.CheatManager.WriteToLog")()); }
+			ScriptFunction KillViewedActor() { mixin(MGF!("mKillViewedActor", "Function Engine.CheatManager.KillViewedActor")()); }
+			ScriptFunction Teleport() { mixin(MGF!("mTeleport", "Function Engine.CheatManager.Teleport")()); }
+			ScriptFunction ChangeSize() { mixin(MGF!("mChangeSize", "Function Engine.CheatManager.ChangeSize")()); }
+			ScriptFunction EndPath() { mixin(MGF!("mEndPath", "Function Engine.CheatManager.EndPath")()); }
+			ScriptFunction Amphibious() { mixin(MGF!("mAmphibious", "Function Engine.CheatManager.Amphibious")()); }
+			ScriptFunction Fly() { mixin(MGF!("mFly", "Function Engine.CheatManager.Fly")()); }
+			ScriptFunction Walk() { mixin(MGF!("mWalk", "Function Engine.CheatManager.Walk")()); }
+			ScriptFunction Ghost() { mixin(MGF!("mGhost", "Function Engine.CheatManager.Ghost")()); }
+			ScriptFunction AllAmmo() { mixin(MGF!("mAllAmmo", "Function Engine.CheatManager.AllAmmo")()); }
+			ScriptFunction God() { mixin(MGF!("mGod", "Function Engine.CheatManager.God")()); }
+			ScriptFunction Slomo() { mixin(MGF!("mSlomo", "Function Engine.CheatManager.Slomo")()); }
+			ScriptFunction SetJumpZ() { mixin(MGF!("mSetJumpZ", "Function Engine.CheatManager.SetJumpZ")()); }
+			ScriptFunction SetGravity() { mixin(MGF!("mSetGravity", "Function Engine.CheatManager.SetGravity")()); }
+			ScriptFunction SetSpeed() { mixin(MGF!("mSetSpeed", "Function Engine.CheatManager.SetSpeed")()); }
+			ScriptFunction KillAll() { mixin(MGF!("mKillAll", "Function Engine.CheatManager.KillAll")()); }
+			ScriptFunction KillAllPawns() { mixin(MGF!("mKillAllPawns", "Function Engine.CheatManager.KillAllPawns")()); }
+			ScriptFunction KillPawns() { mixin(MGF!("mKillPawns", "Function Engine.CheatManager.KillPawns")()); }
+			ScriptFunction Avatar() { mixin(MGF!("mAvatar", "Function Engine.CheatManager.Avatar")()); }
+			ScriptFunction Summon() { mixin(MGF!("mSummon", "Function Engine.CheatManager.Summon")()); }
+			ScriptFunction GiveWeapon() { mixin(MGF!("mGiveWeapon", "Function Engine.CheatManager.GiveWeapon")()); }
+			ScriptFunction PlayersOnly() { mixin(MGF!("mPlayersOnly", "Function Engine.CheatManager.PlayersOnly")()); }
+			ScriptFunction DestroyFractures() { mixin(MGF!("mDestroyFractures", "Function Engine.CheatManager.DestroyFractures")()); }
+			ScriptFunction FractureAllMeshes() { mixin(MGF!("mFractureAllMeshes", "Function Engine.CheatManager.FractureAllMeshes")()); }
+			ScriptFunction FractureAllMeshesToMaximizeMemoryUsage() { mixin(MGF!("mFractureAllMeshesToMaximizeMemoryUsage", "Function Engine.CheatManager.FractureAllMeshesToMaximizeMemoryUsage")()); }
+			ScriptFunction RememberSpot() { mixin(MGF!("mRememberSpot", "Function Engine.CheatManager.RememberSpot")()); }
+			ScriptFunction ViewSelf() { mixin(MGF!("mViewSelf", "Function Engine.CheatManager.ViewSelf")()); }
+			ScriptFunction ViewPlayer() { mixin(MGF!("mViewPlayer", "Function Engine.CheatManager.ViewPlayer")()); }
+			ScriptFunction ViewActor() { mixin(MGF!("mViewActor", "Function Engine.CheatManager.ViewActor")()); }
+			ScriptFunction ViewBot() { mixin(MGF!("mViewBot", "Function Engine.CheatManager.ViewBot")()); }
+			ScriptFunction ViewClass() { mixin(MGF!("mViewClass", "Function Engine.CheatManager.ViewClass")()); }
+			ScriptFunction Loaded() { mixin(MGF!("mLoaded", "Function Engine.CheatManager.Loaded")()); }
+			ScriptFunction AllWeapons() { mixin(MGF!("mAllWeapons", "Function Engine.CheatManager.AllWeapons")()); }
+			ScriptFunction SetLevelStreamingStatus() { mixin(MGF!("mSetLevelStreamingStatus", "Function Engine.CheatManager.SetLevelStreamingStatus")()); }
+			ScriptFunction EnableDebugCamera() { mixin(MGF!("mEnableDebugCamera", "Function Engine.CheatManager.EnableDebugCamera")()); }
+			ScriptFunction InitCheatManager() { mixin(MGF!("mInitCheatManager", "Function Engine.CheatManager.InitCheatManager")()); }
+			ScriptFunction LogPlaySoundCalls() { mixin(MGF!("mLogPlaySoundCalls", "Function Engine.CheatManager.LogPlaySoundCalls")()); }
+			ScriptFunction LogParticleActivateSystemCalls() { mixin(MGF!("mLogParticleActivateSystemCalls", "Function Engine.CheatManager.LogParticleActivateSystemCalls")()); }
+			ScriptFunction VerifyNavMeshObjects() { mixin(MGF!("mVerifyNavMeshObjects", "Function Engine.CheatManager.VerifyNavMeshObjects")()); }
+			ScriptFunction DrawUnsupportingEdges() { mixin(MGF!("mDrawUnsupportingEdges", "Function Engine.CheatManager.DrawUnsupportingEdges")()); }
+			ScriptFunction PrintNavMeshObstacles() { mixin(MGF!("mPrintNavMeshObstacles", "Function Engine.CheatManager.PrintNavMeshObstacles")()); }
+			ScriptFunction DumpCoverStats() { mixin(MGF!("mDumpCoverStats", "Function Engine.CheatManager.DumpCoverStats")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString OwnCamera() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
-		ScriptString ViewingFrom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 68); }
-		ScriptClass DebugCameraControllerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 64); }
-		DebugCameraController DebugCameraControllerRef() { return *cast(DebugCameraController*)(cast(size_t)cast(void*)this + 60); }
+		ScriptString OwnCamera() { mixin(MGPC!(ScriptString, 80)()); }
+		ScriptString ViewingFrom() { mixin(MGPC!(ScriptString, 68)()); }
+		ScriptClass DebugCameraControllerClass() { mixin(MGPC!(ScriptClass, 64)()); }
+		DebugCameraController DebugCameraControllerRef() { mixin(MGPC!(DebugCameraController, 60)()); }
 	}
 final:
 	void FXPlay(ScriptClass aClass, ScriptString FXAnimPath)

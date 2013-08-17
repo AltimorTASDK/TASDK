@@ -1,15 +1,16 @@
 module UnrealScript.GFxUI.SwfMovie;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GFxUI.GFxRawData;
 
 extern(C++) interface SwfMovie : GFxRawData
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.SwfMovie")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GFxUI.SwfMovie")()); }
 	private static __gshared SwfMovie mDefaultProperties;
-	@property final static SwfMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SwfMovie)("SwfMovie GFxUI.Default__SwfMovie")); }
+	@property final static SwfMovie DefaultProperties() { mixin(MGDPC!(SwfMovie, "SwfMovie GFxUI.Default__SwfMovie")()); }
 	enum FlashTextureRescale : ubyte
 	{
 		FlashTextureScale_High = 0,
@@ -22,20 +23,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			QWord ImportTimeStamp() { return *cast(QWord*)(cast(size_t)cast(void*)this + 164); }
-			int RTVideoTextures() { return *cast(int*)(cast(size_t)cast(void*)this + 160); }
-			int RTTextures() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			ScriptString SourceFileTimestamp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-			ScriptString TextureFormat() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-			SwfMovie.FlashTextureRescale TextureRescale() { return *cast(SwfMovie.FlashTextureRescale*)(cast(size_t)cast(void*)this + 128); }
-			int PackTextureSize() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
-			ScriptString SourceFile() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+			QWord ImportTimeStamp() { mixin(MGPC!(QWord, 164)()); }
+			int RTVideoTextures() { mixin(MGPC!(int, 160)()); }
+			int RTTextures() { mixin(MGPC!(int, 156)()); }
+			ScriptString SourceFileTimestamp() { mixin(MGPC!(ScriptString, 144)()); }
+			ScriptString TextureFormat() { mixin(MGPC!(ScriptString, 132)()); }
+			SwfMovie.FlashTextureRescale TextureRescale() { mixin(MGPC!(SwfMovie.FlashTextureRescale, 128)()); }
+			int PackTextureSize() { mixin(MGPC!(int, 124)()); }
+			ScriptString SourceFile() { mixin(MGPC!(ScriptString, 112)()); }
 		}
-		bool bPackTextures() { return (*cast(uint*)(cast(size_t)cast(void*)this + 108) & 0x4) != 0; }
-		bool bPackTextures(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 108) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 108) &= ~0x4; } return val; }
-		bool bSetSRGBOnImportedTextures() { return (*cast(uint*)(cast(size_t)cast(void*)this + 108) & 0x2) != 0; }
-		bool bSetSRGBOnImportedTextures(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 108) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 108) &= ~0x2; } return val; }
-		bool bUsesFontlib() { return (*cast(uint*)(cast(size_t)cast(void*)this + 108) & 0x1) != 0; }
-		bool bUsesFontlib(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 108) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 108) &= ~0x1; } return val; }
+		bool bPackTextures() { mixin(MGBPC!(108, 0x4)()); }
+		bool bPackTextures(bool val) { mixin(MSBPC!(108, 0x4)()); }
+		bool bSetSRGBOnImportedTextures() { mixin(MGBPC!(108, 0x2)()); }
+		bool bSetSRGBOnImportedTextures(bool val) { mixin(MSBPC!(108, 0x2)()); }
+		bool bUsesFontlib() { mixin(MGBPC!(108, 0x1)()); }
+		bool bUsesFontlib(bool val) { mixin(MSBPC!(108, 0x1)()); }
 	}
 }

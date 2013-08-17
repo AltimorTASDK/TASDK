@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataProvider_MenuItem;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIResourceDataProvider;
 import UnrealScript.Engine.UIRoot;
 
@@ -8,13 +9,13 @@ extern(C++) interface UIDataProvider_MenuItem : UIResourceDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_MenuItem")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_MenuItem")()); }
 	private static __gshared UIDataProvider_MenuItem mDefaultProperties;
-	@property final static UIDataProvider_MenuItem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_MenuItem)("UIDataProvider_MenuItem Engine.Default__UIDataProvider_MenuItem")); }
+	@property final static UIDataProvider_MenuItem DefaultProperties() { mixin(MGDPC!(UIDataProvider_MenuItem, "UIDataProvider_MenuItem Engine.Default__UIDataProvider_MenuItem")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsFiltered;
-		public @property static final ScriptFunction IsFiltered() { return mIsFiltered ? mIsFiltered : (mIsFiltered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_MenuItem.IsFiltered")); }
+		public @property static final ScriptFunction IsFiltered() { mixin(MGF!("mIsFiltered", "Function Engine.UIDataProvider_MenuItem.IsFiltered")()); }
 	}
 	enum EMenuOptionType : ubyte
 	{
@@ -32,37 +33,37 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) OptionSet() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 128); }
-			ScriptArray!(ScriptName) SchemaCellFields() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 236); }
-			ScriptString IniName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 248); }
-			UIRoot.UIRangeData RangeData() { return *cast(UIRoot.UIRangeData*)(cast(size_t)cast(void*)this + 216); }
-			int EditBoxMaxLength() { return *cast(int*)(cast(size_t)cast(void*)this + 212); }
-			ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-			ScriptString CustomFriendlyName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-			ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-			ScriptName RequiredGameMode() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 164); }
-			ScriptString DescriptionMarkup() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 152); }
-			ScriptString DataStoreMarkup() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 140); }
-			UIDataProvider_MenuItem.EMenuOptionType OptionType() { return *cast(UIDataProvider_MenuItem.EMenuOptionType*)(cast(size_t)cast(void*)this + 124); }
+			ScriptArray!(ScriptName) OptionSet() { mixin(MGPC!(ScriptArray!(ScriptName), 128)()); }
+			ScriptArray!(ScriptName) SchemaCellFields() { mixin(MGPC!(ScriptArray!(ScriptName), 236)()); }
+			ScriptString IniName() { mixin(MGPC!(ScriptString, 248)()); }
+			UIRoot.UIRangeData RangeData() { mixin(MGPC!(UIRoot.UIRangeData, 216)()); }
+			int EditBoxMaxLength() { mixin(MGPC!(int, 212)()); }
+			ScriptString Description() { mixin(MGPC!(ScriptString, 196)()); }
+			ScriptString CustomFriendlyName() { mixin(MGPC!(ScriptString, 184)()); }
+			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 172)()); }
+			ScriptName RequiredGameMode() { mixin(MGPC!(ScriptName, 164)()); }
+			ScriptString DescriptionMarkup() { mixin(MGPC!(ScriptString, 152)()); }
+			ScriptString DataStoreMarkup() { mixin(MGPC!(ScriptString, 140)()); }
+			UIDataProvider_MenuItem.EMenuOptionType OptionType() { mixin(MGPC!(UIDataProvider_MenuItem.EMenuOptionType, 124)()); }
 		}
-		bool bRemoveOnPS3() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x100) != 0; }
-		bool bRemoveOnPS3(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x100; } return val; }
-		bool bRemoveOnPC() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x80) != 0; }
-		bool bRemoveOnPC(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x80; } return val; }
-		bool bRemoveOn360() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x40) != 0; }
-		bool bRemoveOn360(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x40; } return val; }
-		bool bSearchAllInis() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x20) != 0; }
-		bool bSearchAllInis(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x20; } return val; }
-		bool bOfflineOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x10) != 0; }
-		bool bOfflineOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x10; } return val; }
-		bool bOnlineOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x8) != 0; }
-		bool bOnlineOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x8; } return val; }
-		bool bKeyboardOrMouseOption() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x4) != 0; }
-		bool bKeyboardOrMouseOption(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x4; } return val; }
-		bool bNumericCombo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x2) != 0; }
-		bool bNumericCombo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x2; } return val; }
-		bool bEditableCombo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x1) != 0; }
-		bool bEditableCombo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x1; } return val; }
+		bool bRemoveOnPS3() { mixin(MGBPC!(208, 0x100)()); }
+		bool bRemoveOnPS3(bool val) { mixin(MSBPC!(208, 0x100)()); }
+		bool bRemoveOnPC() { mixin(MGBPC!(208, 0x80)()); }
+		bool bRemoveOnPC(bool val) { mixin(MSBPC!(208, 0x80)()); }
+		bool bRemoveOn360() { mixin(MGBPC!(208, 0x40)()); }
+		bool bRemoveOn360(bool val) { mixin(MSBPC!(208, 0x40)()); }
+		bool bSearchAllInis() { mixin(MGBPC!(208, 0x20)()); }
+		bool bSearchAllInis(bool val) { mixin(MSBPC!(208, 0x20)()); }
+		bool bOfflineOnly() { mixin(MGBPC!(208, 0x10)()); }
+		bool bOfflineOnly(bool val) { mixin(MSBPC!(208, 0x10)()); }
+		bool bOnlineOnly() { mixin(MGBPC!(208, 0x8)()); }
+		bool bOnlineOnly(bool val) { mixin(MSBPC!(208, 0x8)()); }
+		bool bKeyboardOrMouseOption() { mixin(MGBPC!(208, 0x4)()); }
+		bool bKeyboardOrMouseOption(bool val) { mixin(MSBPC!(208, 0x4)()); }
+		bool bNumericCombo() { mixin(MGBPC!(208, 0x2)()); }
+		bool bNumericCombo(bool val) { mixin(MSBPC!(208, 0x2)()); }
+		bool bEditableCombo() { mixin(MGBPC!(208, 0x1)()); }
+		bool bEditableCombo(bool val) { mixin(MSBPC!(208, 0x1)()); }
 	}
 	final bool IsFiltered()
 	{

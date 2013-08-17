@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdAgentSkeletal;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.AnimNodeSlot;
@@ -14,9 +15,9 @@ extern(C++) interface GameCrowdAgentSkeletal : GameCrowdAgent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdAgentSkeletal")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdAgentSkeletal")()); }
 	private static __gshared GameCrowdAgentSkeletal mDefaultProperties;
-	@property final static GameCrowdAgentSkeletal DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdAgentSkeletal)("GameCrowdAgentSkeletal GameFramework.Default__GameCrowdAgentSkeletal")); }
+	@property final static GameCrowdAgentSkeletal DefaultProperties() { mixin(MGDPC!(GameCrowdAgentSkeletal, "GameCrowdAgentSkeletal GameFramework.Default__GameCrowdAgentSkeletal")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,16 +35,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.PostBeginPlay")); }
-			ScriptFunction SetLighting() { return mSetLighting ? mSetLighting : (mSetLighting = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.SetLighting")); }
-			ScriptFunction PlayDeath() { return mPlayDeath ? mPlayDeath : (mPlayDeath = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.PlayDeath")); }
-			ScriptFunction SetRootMotion() { return mSetRootMotion ? mSetRootMotion : (mSetRootMotion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.SetRootMotion")); }
-			ScriptFunction OnPlayAgentAnimation() { return mOnPlayAgentAnimation ? mOnPlayAgentAnimation : (mOnPlayAgentAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.OnPlayAgentAnimation")); }
-			ScriptFunction ClearLatentAnimation() { return mClearLatentAnimation ? mClearLatentAnimation : (mClearLatentAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.ClearLatentAnimation")); }
-			ScriptFunction PlayIdleAnimation() { return mPlayIdleAnimation ? mPlayIdleAnimation : (mPlayIdleAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.PlayIdleAnimation")); }
-			ScriptFunction StopIdleAnimation() { return mStopIdleAnimation ? mStopIdleAnimation : (mStopIdleAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.StopIdleAnimation")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.OnAnimEnd")); }
-			ScriptFunction CreateAttachments() { return mCreateAttachments ? mCreateAttachments : (mCreateAttachments = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgentSkeletal.CreateAttachments")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function GameFramework.GameCrowdAgentSkeletal.PostBeginPlay")()); }
+			ScriptFunction SetLighting() { mixin(MGF!("mSetLighting", "Function GameFramework.GameCrowdAgentSkeletal.SetLighting")()); }
+			ScriptFunction PlayDeath() { mixin(MGF!("mPlayDeath", "Function GameFramework.GameCrowdAgentSkeletal.PlayDeath")()); }
+			ScriptFunction SetRootMotion() { mixin(MGF!("mSetRootMotion", "Function GameFramework.GameCrowdAgentSkeletal.SetRootMotion")()); }
+			ScriptFunction OnPlayAgentAnimation() { mixin(MGF!("mOnPlayAgentAnimation", "Function GameFramework.GameCrowdAgentSkeletal.OnPlayAgentAnimation")()); }
+			ScriptFunction ClearLatentAnimation() { mixin(MGF!("mClearLatentAnimation", "Function GameFramework.GameCrowdAgentSkeletal.ClearLatentAnimation")()); }
+			ScriptFunction PlayIdleAnimation() { mixin(MGF!("mPlayIdleAnimation", "Function GameFramework.GameCrowdAgentSkeletal.PlayIdleAnimation")()); }
+			ScriptFunction StopIdleAnimation() { mixin(MGF!("mStopIdleAnimation", "Function GameFramework.GameCrowdAgentSkeletal.StopIdleAnimation")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function GameFramework.GameCrowdAgentSkeletal.OnAnimEnd")()); }
+			ScriptFunction CreateAttachments() { mixin(MGF!("mCreateAttachments", "Function GameFramework.GameCrowdAgentSkeletal.CreateAttachments")()); }
 		}
 	}
 	struct GameCrowdAttachmentList
@@ -51,11 +52,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameCrowdAgentSkeletal.GameCrowdAttachmentList")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameCrowdAgentSkeletal.GameCrowdAttachmentList")()); }
 		@property final auto ref
 		{
-			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo) List() { return *cast(ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo)*)(cast(size_t)&this + 8); }
-			ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo) List() { mixin(MGPS!(ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo), 8)()); }
+			ScriptName SocketName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct GameCrowdAttachmentInfo
@@ -63,11 +64,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameCrowdAgentSkeletal.GameCrowdAttachmentInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameCrowdAgentSkeletal.GameCrowdAttachmentInfo")()); }
 		@property final auto ref
 		{
-			Vector Scale3D() { return *cast(Vector*)(cast(size_t)&this + 8); }
-			float Chance() { return *cast(float*)(cast(size_t)&this + 4); }
+			Vector Scale3D() { mixin(MGPS!(Vector, 8)()); }
+			float Chance() { mixin(MGPS!(float, 4)()); }
 			// WARNING: Property 'StaticMesh' has the same name as a defined type!
 		}
 	}
@@ -75,34 +76,35 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) WalkAnimNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 992); }
-			ScriptArray!(ScriptName) RunAnimNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1004); }
-			ScriptArray!(ScriptName) IdleAnimNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1016); }
-			ScriptArray!(ScriptName) DeathAnimNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1028); }
-			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList) Attachments() { return *cast(ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList)*)(cast(size_t)cast(void*)this + 1064); }
-			float MaxAnimationDistanceSq() { return *cast(float*)(cast(size_t)cast(void*)this + 1088); }
-			float MaxAnimationDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 1084); }
-			float MaxTargetAcquireTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1076); }
-			ScriptName MoveSyncGroupName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1056); }
-			float MaxSpeedBlendChangeSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1052); }
-			float AnimVelRate() { return *cast(float*)(cast(size_t)cast(void*)this + 1048); }
-			float SpeedBlendEnd() { return *cast(float*)(cast(size_t)cast(void*)this + 1044); }
-			float SpeedBlendStart() { return *cast(float*)(cast(size_t)cast(void*)this + 1040); }
-			AnimTree AgentTree() { return *cast(AnimTree*)(cast(size_t)cast(void*)this + 988); }
-			AnimNodeSequence RunSeqNode() { return *cast(AnimNodeSequence*)(cast(size_t)cast(void*)this + 984); }
-			AnimNodeSequence WalkSeqNode() { return *cast(AnimNodeSequence*)(cast(size_t)cast(void*)this + 980); }
-			AnimNodeSequence ActionSeqNode() { return *cast(AnimNodeSequence*)(cast(size_t)cast(void*)this + 976); }
-			AnimNodeSlot FullBodySlot() { return *cast(AnimNodeSlot*)(cast(size_t)cast(void*)this + 972); }
-			AnimNodeBlend SpeedBlendNode() { return *cast(AnimNodeBlend*)(cast(size_t)cast(void*)this + 968); }
+			ScriptArray!(ScriptName) WalkAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 992)()); }
+			ScriptArray!(ScriptName) RunAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1004)()); }
+			ScriptArray!(ScriptName) IdleAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1016)()); }
+			ScriptArray!(ScriptName) DeathAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1028)()); }
+			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList) Attachments() { mixin(MGPC!(ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList), 1064)()); }
+			float MaxAnimationDistanceSq() { mixin(MGPC!(float, 1088)()); }
+			float MaxAnimationDistance() { mixin(MGPC!(float, 1084)()); }
+			float MaxTargetAcquireTime() { mixin(MGPC!(float, 1076)()); }
+			ScriptName MoveSyncGroupName() { mixin(MGPC!(ScriptName, 1056)()); }
+			float MaxSpeedBlendChangeSpeed() { mixin(MGPC!(float, 1052)()); }
+			float AnimVelRate() { mixin(MGPC!(float, 1048)()); }
+			float SpeedBlendEnd() { mixin(MGPC!(float, 1044)()); }
+			float SpeedBlendStart() { mixin(MGPC!(float, 1040)()); }
+			AnimTree AgentTree() { mixin(MGPC!(AnimTree, 988)()); }
+			AnimNodeSequence RunSeqNode() { mixin(MGPC!(AnimNodeSequence, 984)()); }
+			AnimNodeSequence WalkSeqNode() { mixin(MGPC!(AnimNodeSequence, 980)()); }
+			AnimNodeSequence ActionSeqNode() { mixin(MGPC!(AnimNodeSequence, 976)()); }
+			AnimNodeSlot FullBodySlot() { mixin(MGPC!(AnimNodeSlot, 972)()); }
+			AnimNodeBlend SpeedBlendNode() { mixin(MGPC!(AnimNodeBlend, 968)()); }
+			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
 		}
-		bool bAnimateThisTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1080) & 0x8) != 0; }
-		bool bAnimateThisTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1080) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1080) &= ~0x8; } return val; }
-		bool bIsPlayingDeathAnimation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1080) & 0x4) != 0; }
-		bool bIsPlayingDeathAnimation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1080) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1080) &= ~0x4; } return val; }
-		bool bIsPlayingIdleAnimation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1080) & 0x2) != 0; }
-		bool bIsPlayingIdleAnimation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1080) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1080) &= ~0x2; } return val; }
-		bool bUseRootMotionVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1080) & 0x1) != 0; }
-		bool bUseRootMotionVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1080) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1080) &= ~0x1; } return val; }
+		bool bAnimateThisTick() { mixin(MGBPC!(1080, 0x8)()); }
+		bool bAnimateThisTick(bool val) { mixin(MSBPC!(1080, 0x8)()); }
+		bool bIsPlayingDeathAnimation() { mixin(MGBPC!(1080, 0x4)()); }
+		bool bIsPlayingDeathAnimation(bool val) { mixin(MSBPC!(1080, 0x4)()); }
+		bool bIsPlayingIdleAnimation() { mixin(MGBPC!(1080, 0x2)()); }
+		bool bIsPlayingIdleAnimation(bool val) { mixin(MSBPC!(1080, 0x2)()); }
+		bool bUseRootMotionVelocity() { mixin(MGBPC!(1080, 0x1)()); }
+		bool bUseRootMotionVelocity(bool val) { mixin(MSBPC!(1080, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

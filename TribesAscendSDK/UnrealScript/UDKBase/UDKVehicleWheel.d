@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKVehicleWheel;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKVehicle;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.SVehicleWheel;
@@ -9,9 +10,9 @@ extern(C++) interface UDKVehicleWheel : SVehicleWheel
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleWheel")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKVehicleWheel")()); }
 	private static __gshared UDKVehicleWheel mDefaultProperties;
-	@property final static UDKVehicleWheel DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleWheel)("UDKVehicleWheel UDKBase.Default__UDKVehicleWheel")); }
+	@property final static UDKVehicleWheel DefaultProperties() { mixin(MGDPC!(UDKVehicleWheel, "UDKVehicleWheel UDKBase.Default__UDKVehicleWheel")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,17 +22,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetParticleEffect() { return mSetParticleEffect ? mSetParticleEffect : (mSetParticleEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleWheel.SetParticleEffect")); }
-			ScriptFunction OldEffectFinished() { return mOldEffectFinished ? mOldEffectFinished : (mOldEffectFinished = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleWheel.OldEffectFinished")); }
+			ScriptFunction SetParticleEffect() { mixin(MGF!("mSetParticleEffect", "Function UDKBase.UDKVehicleWheel.SetParticleEffect")()); }
+			ScriptFunction OldEffectFinished() { mixin(MGF!("mOldEffectFinished", "Function UDKBase.UDKVehicleWheel.OldEffectFinished")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref float EffectDesiredSpinDir() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
-		bool bDisableWheelOnDeath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 276) & 0x2) != 0; }
-		bool bDisableWheelOnDeath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 276) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 276) &= ~0x2; } return val; }
-		bool bUseMaterialSpecificEffects() { return (*cast(uint*)(cast(size_t)cast(void*)this + 276) & 0x1) != 0; }
-		bool bUseMaterialSpecificEffects(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 276) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 276) &= ~0x1; } return val; }
+		auto ref
+		{
+			float EffectDesiredSpinDir() { mixin(MGPC!(float, 284)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OldWheelParticleComp'!
+		}
+		bool bDisableWheelOnDeath() { mixin(MGBPC!(276, 0x2)()); }
+		bool bDisableWheelOnDeath(bool val) { mixin(MSBPC!(276, 0x2)()); }
+		bool bUseMaterialSpecificEffects() { mixin(MGBPC!(276, 0x1)()); }
+		bool bUseMaterialSpecificEffects(bool val) { mixin(MSBPC!(276, 0x1)()); }
 	}
 final:
 	void SetParticleEffect(UDKVehicle OwnerVehicle, ParticleSystem NewTemplate)

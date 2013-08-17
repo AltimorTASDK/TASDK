@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTVehicleFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.UTGame.UTVehicle;
 import UnrealScript.Engine.SeqAct_Toggle;
@@ -14,9 +15,9 @@ extern(C++) interface UTVehicleFactory : UDKVehicleFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleFactory")()); }
 	private static __gshared UTVehicleFactory mDefaultProperties;
-	@property final static UTVehicleFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleFactory)("UTVehicleFactory UTGame.Default__UTVehicleFactory")); }
+	@property final static UTVehicleFactory DefaultProperties() { mixin(MGDPC!(UTVehicleFactory, "UTVehicleFactory UTGame.Default__UTVehicleFactory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,37 +36,42 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.PostBeginPlay")); }
-			ScriptFunction AddToClosestObjective() { return mAddToClosestObjective ? mAddToClosestObjective : (mAddToClosestObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.AddToClosestObjective")); }
-			ScriptFunction SetInitialState() { return mSetInitialState ? mSetInitialState : (mSetInitialState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.SetInitialState")); }
-			ScriptFunction RenderMapIcon() { return mRenderMapIcon ? mRenderMapIcon : (mRenderMapIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.RenderMapIcon")); }
-			ScriptFunction Activate() { return mActivate ? mActivate : (mActivate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.Activate")); }
-			ScriptFunction Deactivate() { return mDeactivate ? mDeactivate : (mDeactivate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.Deactivate")); }
-			ScriptFunction VehicleTaken() { return mVehicleTaken ? mVehicleTaken : (mVehicleTaken = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.VehicleTaken")); }
-			ScriptFunction VehicleDestroyed() { return mVehicleDestroyed ? mVehicleDestroyed : (mVehicleDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.VehicleDestroyed")); }
-			ScriptFunction TriggerSpawnedEvent() { return mTriggerSpawnedEvent ? mTriggerSpawnedEvent : (mTriggerSpawnedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.TriggerSpawnedEvent")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.OnToggle")); }
-			ScriptFunction GetSpawnRotation() { return mGetSpawnRotation ? mGetSpawnRotation : (mGetSpawnRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleFactory.GetSpawnRotation")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTVehicleFactory.PostBeginPlay")()); }
+			ScriptFunction AddToClosestObjective() { mixin(MGF!("mAddToClosestObjective", "Function UTGame.UTVehicleFactory.AddToClosestObjective")()); }
+			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function UTGame.UTVehicleFactory.SetInitialState")()); }
+			ScriptFunction RenderMapIcon() { mixin(MGF!("mRenderMapIcon", "Function UTGame.UTVehicleFactory.RenderMapIcon")()); }
+			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function UTGame.UTVehicleFactory.Activate")()); }
+			ScriptFunction Deactivate() { mixin(MGF!("mDeactivate", "Function UTGame.UTVehicleFactory.Deactivate")()); }
+			ScriptFunction VehicleTaken() { mixin(MGF!("mVehicleTaken", "Function UTGame.UTVehicleFactory.VehicleTaken")()); }
+			ScriptFunction VehicleDestroyed() { mixin(MGF!("mVehicleDestroyed", "Function UTGame.UTVehicleFactory.VehicleDestroyed")()); }
+			ScriptFunction TriggerSpawnedEvent() { mixin(MGF!("mTriggerSpawnedEvent", "Function UTGame.UTVehicleFactory.TriggerSpawnedEvent")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function UTGame.UTVehicleFactory.OnToggle")()); }
+			ScriptFunction GetSpawnRotation() { mixin(MGF!("mGetSpawnRotation", "Function UTGame.UTVehicleFactory.GetSpawnRotation")()); }
 		}
+	}
+	static struct Active
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTVehicleFactory.Active")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Rotator) InitialGunRotations() { return *cast(ScriptArray!(Rotator)*)(cast(size_t)cast(void*)this + 748); }
-			UTGameObjective ReverseObjective() { return *cast(UTGameObjective*)(cast(size_t)cast(void*)this + 744); }
-			float SpawnZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 736); }
+			ScriptArray!(Rotator) InitialGunRotations() { mixin(MGPC!(ScriptArray!(Rotator), 748)()); }
+			UTGameObjective ReverseObjective() { mixin(MGPC!(UTGameObjective, 744)()); }
+			float SpawnZOffset() { mixin(MGPC!(float, 736)()); }
 		}
-		bool bStartNeutral() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x2) != 0; }
-		bool bStartNeutral(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x2; } return val; }
-		bool bKeyVehicle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x8) != 0; }
-		bool bKeyVehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x8; } return val; }
-		bool bForceAvoidReversing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x10) != 0; }
-		bool bForceAvoidReversing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x10; } return val; }
-		bool bDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x4) != 0; }
-		bool bDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x4; } return val; }
-		bool bMayReverseSpawnDirection() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x1) != 0; }
-		bool bMayReverseSpawnDirection(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x1; } return val; }
+		bool bStartNeutral() { mixin(MGBPC!(740, 0x2)()); }
+		bool bStartNeutral(bool val) { mixin(MSBPC!(740, 0x2)()); }
+		bool bKeyVehicle() { mixin(MGBPC!(740, 0x8)()); }
+		bool bKeyVehicle(bool val) { mixin(MSBPC!(740, 0x8)()); }
+		bool bForceAvoidReversing() { mixin(MGBPC!(740, 0x10)()); }
+		bool bForceAvoidReversing(bool val) { mixin(MSBPC!(740, 0x10)()); }
+		bool bDisabled() { mixin(MGBPC!(740, 0x4)()); }
+		bool bDisabled(bool val) { mixin(MSBPC!(740, 0x4)()); }
+		bool bMayReverseSpawnDirection() { mixin(MGBPC!(740, 0x1)()); }
+		bool bMayReverseSpawnDirection(bool val) { mixin(MSBPC!(740, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

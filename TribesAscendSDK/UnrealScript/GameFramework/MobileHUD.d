@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.MobileHUD;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
 import UnrealScript.GameFramework.MobilePlayerInput;
@@ -13,9 +14,9 @@ extern(C++) interface MobileHUD : HUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileHUD")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.MobileHUD")()); }
 	private static __gshared MobileHUD mDefaultProperties;
-	@property final static MobileHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileHUD)("MobileHUD GameFramework.Default__MobileHUD")); }
+	@property final static MobileHUD DefaultProperties() { mixin(MGDPC!(MobileHUD, "MobileHUD GameFramework.Default__MobileHUD")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,61 +38,61 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.PostBeginPlay")); }
-			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.PostRender")); }
-			ScriptFunction DrawMobileDebugString() { return mDrawMobileDebugString ? mDrawMobileDebugString : (mDrawMobileDebugString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileDebugString")); }
-			ScriptFunction ShowMobileHud() { return mShowMobileHud ? mShowMobileHud : (mShowMobileHud = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.ShowMobileHud")); }
-			ScriptFunction RenderMobileMenu() { return mRenderMobileMenu ? mRenderMobileMenu : (mRenderMobileMenu = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.RenderMobileMenu")); }
-			ScriptFunction DrawInputZoneOverlays() { return mDrawInputZoneOverlays ? mDrawInputZoneOverlays : (mDrawInputZoneOverlays = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawInputZoneOverlays")); }
-			ScriptFunction DrawMobileZone_Button() { return mDrawMobileZone_Button ? mDrawMobileZone_Button : (mDrawMobileZone_Button = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Button")); }
-			ScriptFunction DrawMobileZone_Joystick() { return mDrawMobileZone_Joystick ? mDrawMobileZone_Joystick : (mDrawMobileZone_Joystick = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Joystick")); }
-			ScriptFunction DrawMobileZone_Trackball() { return mDrawMobileZone_Trackball ? mDrawMobileZone_Trackball : (mDrawMobileZone_Trackball = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Trackball")); }
-			ScriptFunction DrawMobileTilt() { return mDrawMobileTilt ? mDrawMobileTilt : (mDrawMobileTilt = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileTilt")); }
-			ScriptFunction DrawMobileZone_Slider() { return mDrawMobileZone_Slider ? mDrawMobileZone_Slider : (mDrawMobileZone_Slider = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Slider")); }
-			ScriptFunction RefreshKismetLinks() { return mRefreshKismetLinks ? mRefreshKismetLinks : (mRefreshKismetLinks = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.RefreshKismetLinks")); }
-			ScriptFunction AddKismetRenderEvent() { return mAddKismetRenderEvent ? mAddKismetRenderEvent : (mAddKismetRenderEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.AddKismetRenderEvent")); }
-			ScriptFunction RenderKismetHud() { return mRenderKismetHud ? mRenderKismetHud : (mRenderKismetHud = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.RenderKismetHud")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function GameFramework.MobileHUD.PostBeginPlay")()); }
+			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function GameFramework.MobileHUD.PostRender")()); }
+			ScriptFunction DrawMobileDebugString() { mixin(MGF!("mDrawMobileDebugString", "Function GameFramework.MobileHUD.DrawMobileDebugString")()); }
+			ScriptFunction ShowMobileHud() { mixin(MGF!("mShowMobileHud", "Function GameFramework.MobileHUD.ShowMobileHud")()); }
+			ScriptFunction RenderMobileMenu() { mixin(MGF!("mRenderMobileMenu", "Function GameFramework.MobileHUD.RenderMobileMenu")()); }
+			ScriptFunction DrawInputZoneOverlays() { mixin(MGF!("mDrawInputZoneOverlays", "Function GameFramework.MobileHUD.DrawInputZoneOverlays")()); }
+			ScriptFunction DrawMobileZone_Button() { mixin(MGF!("mDrawMobileZone_Button", "Function GameFramework.MobileHUD.DrawMobileZone_Button")()); }
+			ScriptFunction DrawMobileZone_Joystick() { mixin(MGF!("mDrawMobileZone_Joystick", "Function GameFramework.MobileHUD.DrawMobileZone_Joystick")()); }
+			ScriptFunction DrawMobileZone_Trackball() { mixin(MGF!("mDrawMobileZone_Trackball", "Function GameFramework.MobileHUD.DrawMobileZone_Trackball")()); }
+			ScriptFunction DrawMobileTilt() { mixin(MGF!("mDrawMobileTilt", "Function GameFramework.MobileHUD.DrawMobileTilt")()); }
+			ScriptFunction DrawMobileZone_Slider() { mixin(MGF!("mDrawMobileZone_Slider", "Function GameFramework.MobileHUD.DrawMobileZone_Slider")()); }
+			ScriptFunction RefreshKismetLinks() { mixin(MGF!("mRefreshKismetLinks", "Function GameFramework.MobileHUD.RefreshKismetLinks")()); }
+			ScriptFunction AddKismetRenderEvent() { mixin(MGF!("mAddKismetRenderEvent", "Function GameFramework.MobileHUD.AddKismetRenderEvent")()); }
+			ScriptFunction RenderKismetHud() { mixin(MGF!("mRenderKismetHud", "Function GameFramework.MobileHUD.RenderKismetHud")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SeqEvent_HudRender) KismetRenderEvents() { return *cast(ScriptArray!(SeqEvent_HudRender)*)(cast(size_t)cast(void*)this + 1348); }
-			float MobileTiltSize() { return *cast(float*)(cast(size_t)cast(void*)this + 1344); }
-			float MobileTiltY() { return *cast(float*)(cast(size_t)cast(void*)this + 1340); }
-			float MobileTiltX() { return *cast(float*)(cast(size_t)cast(void*)this + 1336); }
-			MobileInputZone.TextureUVs SliderUVs() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 1272); }
-			Texture2D SliderImages() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1256); }
-			MobileInputZone.TextureUVs TrackballTouchIndicatorUVs() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 1240); }
-			Texture2D TrackballTouchIndicator() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1236); }
-			MobileInputZone.TextureUVs TrackballBackgroundUVs() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 1220); }
-			Texture2D TrackballBackground() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1216); }
-			UObject.Color ButtonCaptionColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 1212); }
-			Font ButtonFont() { return *cast(Font*)(cast(size_t)cast(void*)this + 1208); }
-			MobileInputZone.TextureUVs ButtonUVs() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 1176); }
-			Texture2D ButtonImages() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1168); }
-			MobileInputZone.TextureUVs JoystickHatUVs() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 1152); }
-			Texture2D JoystickHat() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1148); }
-			MobileInputZone.TextureUVs JoystickBackgroundUVs() { return *cast(MobileInputZone.TextureUVs*)(cast(size_t)cast(void*)this + 1132); }
-			Texture2D JoystickBackground() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1128); }
+			ScriptArray!(SeqEvent_HudRender) KismetRenderEvents() { mixin(MGPC!(ScriptArray!(SeqEvent_HudRender), 1348)()); }
+			float MobileTiltSize() { mixin(MGPC!(float, 1344)()); }
+			float MobileTiltY() { mixin(MGPC!(float, 1340)()); }
+			float MobileTiltX() { mixin(MGPC!(float, 1336)()); }
+			MobileInputZone.TextureUVs SliderUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1272)()); }
+			Texture2D SliderImages() { mixin(MGPC!(Texture2D, 1256)()); }
+			MobileInputZone.TextureUVs TrackballTouchIndicatorUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1240)()); }
+			Texture2D TrackballTouchIndicator() { mixin(MGPC!(Texture2D, 1236)()); }
+			MobileInputZone.TextureUVs TrackballBackgroundUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1220)()); }
+			Texture2D TrackballBackground() { mixin(MGPC!(Texture2D, 1216)()); }
+			UObject.Color ButtonCaptionColor() { mixin(MGPC!(UObject.Color, 1212)()); }
+			Font ButtonFont() { mixin(MGPC!(Font, 1208)()); }
+			MobileInputZone.TextureUVs ButtonUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1176)()); }
+			Texture2D ButtonImages() { mixin(MGPC!(Texture2D, 1168)()); }
+			MobileInputZone.TextureUVs JoystickHatUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1152)()); }
+			Texture2D JoystickHat() { mixin(MGPC!(Texture2D, 1148)()); }
+			MobileInputZone.TextureUVs JoystickBackgroundUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1132)()); }
+			Texture2D JoystickBackground() { mixin(MGPC!(Texture2D, 1128)()); }
 		}
-		bool bShowMotionDebug() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x80) != 0; }
-		bool bShowMotionDebug(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x80; } return val; }
-		bool bDebugZonePresses() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x40) != 0; }
-		bool bDebugZonePresses(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x40; } return val; }
-		bool bDebugZones() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x20) != 0; }
-		bool bDebugZones(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x20; } return val; }
-		bool bDebugTouches() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x10) != 0; }
-		bool bDebugTouches(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x10; } return val; }
-		bool bShowMobileTilt() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x8) != 0; }
-		bool bShowMobileTilt(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x8; } return val; }
-		bool bForceMobileHUD() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x4) != 0; }
-		bool bForceMobileHUD(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x4; } return val; }
-		bool bShowMobileHud() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x2) != 0; }
-		bool bShowMobileHud(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x2; } return val; }
-		bool bShowGameHud() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1124) & 0x1) != 0; }
-		bool bShowGameHud(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1124) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1124) &= ~0x1; } return val; }
+		bool bShowMotionDebug() { mixin(MGBPC!(1124, 0x80)()); }
+		bool bShowMotionDebug(bool val) { mixin(MSBPC!(1124, 0x80)()); }
+		bool bDebugZonePresses() { mixin(MGBPC!(1124, 0x40)()); }
+		bool bDebugZonePresses(bool val) { mixin(MSBPC!(1124, 0x40)()); }
+		bool bDebugZones() { mixin(MGBPC!(1124, 0x20)()); }
+		bool bDebugZones(bool val) { mixin(MSBPC!(1124, 0x20)()); }
+		bool bDebugTouches() { mixin(MGBPC!(1124, 0x10)()); }
+		bool bDebugTouches(bool val) { mixin(MSBPC!(1124, 0x10)()); }
+		bool bShowMobileTilt() { mixin(MGBPC!(1124, 0x8)()); }
+		bool bShowMobileTilt(bool val) { mixin(MSBPC!(1124, 0x8)()); }
+		bool bForceMobileHUD() { mixin(MGBPC!(1124, 0x4)()); }
+		bool bForceMobileHUD(bool val) { mixin(MSBPC!(1124, 0x4)()); }
+		bool bShowMobileHud() { mixin(MGBPC!(1124, 0x2)()); }
+		bool bShowMobileHud(bool val) { mixin(MSBPC!(1124, 0x2)()); }
+		bool bShowGameHud() { mixin(MGBPC!(1124, 0x1)()); }
+		bool bShowGameHud(bool val) { mixin(MSBPC!(1124, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

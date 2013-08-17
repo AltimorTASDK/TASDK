@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTVehicleMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerController;
@@ -11,9 +12,9 @@ extern(C++) interface UTVehicleMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleMessage")()); }
 	private static __gshared UTVehicleMessage mDefaultProperties;
-	@property final static UTVehicleMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleMessage)("UTVehicleMessage UTGame.Default__UTVehicleMessage")); }
+	@property final static UTVehicleMessage DefaultProperties() { mixin(MGDPC!(UTVehicleMessage, "UTVehicleMessage UTGame.Default__UTVehicleMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,19 +27,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleMessage.ClientReceive")); }
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleMessage.AnnouncementLevel")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleMessage.GetString")); }
-			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleMessage.GetColor")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleMessage.AnnouncementSound")); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVehicleMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTVehicleMessage.AnnouncementLevel")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVehicleMessage.GetString")()); }
+			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function UTGame.UTVehicleMessage.GetColor")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVehicleMessage.AnnouncementSound")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) MessageText() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 100); }
-		ScriptArray!(UObject.Color) DrawColors() { return *cast(ScriptArray!(UObject.Color)*)(cast(size_t)cast(void*)this + 112); }
-		ScriptArray!(SoundNodeWave) MessageAnnouncements() { return *cast(ScriptArray!(SoundNodeWave)*)(cast(size_t)cast(void*)this + 124); }
-		ScriptArray!(int) CustomMessageArea() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 136); }
+		ScriptArray!(ScriptString) MessageText() { mixin(MGPC!(ScriptArray!(ScriptString), 100)()); }
+		ScriptArray!(UObject.Color) DrawColors() { mixin(MGPC!(ScriptArray!(UObject.Color), 112)()); }
+		ScriptArray!(SoundNodeWave) MessageAnnouncements() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 124)()); }
+		ScriptArray!(int) CustomMessageArea() { mixin(MGPC!(ScriptArray!(int), 136)()); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

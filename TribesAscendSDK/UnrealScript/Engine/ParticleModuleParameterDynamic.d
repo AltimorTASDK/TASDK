@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleParameterDynamic;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleParameterBase;
 import UnrealScript.Core.DistributionFloat;
 
@@ -8,9 +9,9 @@ extern(C++) interface ParticleModuleParameterDynamic : ParticleModuleParameterBa
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleParameterDynamic")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleParameterDynamic")()); }
 	private static __gshared ParticleModuleParameterDynamic mDefaultProperties;
-	@property final static ParticleModuleParameterDynamic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleParameterDynamic)("ParticleModuleParameterDynamic Engine.Default__ParticleModuleParameterDynamic")); }
+	@property final static ParticleModuleParameterDynamic DefaultProperties() { mixin(MGDPC!(ParticleModuleParameterDynamic, "ParticleModuleParameterDynamic Engine.Default__ParticleModuleParameterDynamic")()); }
 	enum EEmitterDynamicParameterValue : ubyte
 	{
 		EDPV_UserSet = 0,
@@ -25,22 +26,22 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleParameterDynamic.EmitterDynamicParameter")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModuleParameterDynamic.EmitterDynamicParameter")()); }
 		@property final
 		{
 			auto ref
 			{
-				DistributionFloat.RawDistributionFloat ParamValue() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)&this + 20); }
-				ParticleModuleParameterDynamic.EEmitterDynamicParameterValue ValueMethod() { return *cast(ParticleModuleParameterDynamic.EEmitterDynamicParameterValue*)(cast(size_t)&this + 12); }
-				ScriptName ParamName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				DistributionFloat.RawDistributionFloat ParamValue() { mixin(MGPS!(DistributionFloat.RawDistributionFloat, 20)()); }
+				ParticleModuleParameterDynamic.EEmitterDynamicParameterValue ValueMethod() { mixin(MGPS!(ParticleModuleParameterDynamic.EEmitterDynamicParameterValue, 12)()); }
+				ScriptName ParamName() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bScaleVelocityByParamValue() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-			bool bScaleVelocityByParamValue(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
-			bool bSpawnTimeOnly() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x2) != 0; }
-			bool bSpawnTimeOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x2; } return val; }
-			bool bUseEmitterTime() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bUseEmitterTime(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
+			bool bScaleVelocityByParamValue() { mixin(MGBPS!(16, 0x1)()); }
+			bool bScaleVelocityByParamValue(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bSpawnTimeOnly() { mixin(MGBPS!(8, 0x2)()); }
+			bool bSpawnTimeOnly(bool val) { mixin(MSBPS!(8, 0x2)()); }
+			bool bUseEmitterTime() { mixin(MGBPS!(8, 0x1)()); }
+			bool bUseEmitterTime(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(ParticleModuleParameterDynamic.EmitterDynamicParameter) DynamicParams() { return *cast(ScriptArray!(ParticleModuleParameterDynamic.EmitterDynamicParameter)*)(cast(size_t)cast(void*)this + 72); }
+	@property final auto ref ScriptArray!(ParticleModuleParameterDynamic.EmitterDynamicParameter) DynamicParams() { mixin(MGPC!(ScriptArray!(ParticleModuleParameterDynamic.EmitterDynamicParameter), 72)()); }
 }

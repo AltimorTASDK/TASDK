@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_VideoResolution;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_VideoResolution : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_VideoResolution")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_VideoResolution")()); }
 	private static __gshared GFxTrPage_VideoResolution mDefaultProperties;
-	@property final static GFxTrPage_VideoResolution DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_VideoResolution)("GFxTrPage_VideoResolution TribesGame.Default__GFxTrPage_VideoResolution")); }
+	@property final static GFxTrPage_VideoResolution DefaultProperties() { mixin(MGDPC!(GFxTrPage_VideoResolution, "GFxTrPage_VideoResolution TribesGame.Default__GFxTrPage_VideoResolution")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,15 +26,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoResolution.SpecialAction")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoResolution.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoResolution.FillOption")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoResolution.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoResolution.PopupComplete")); }
-			ScriptFunction RevertSetting() { return mRevertSetting ? mRevertSetting : (mRevertSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoResolution.RevertSetting")); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_VideoResolution.SpecialAction")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_VideoResolution.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_VideoResolution.FillOption")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_VideoResolution.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_VideoResolution.PopupComplete")()); }
+			ScriptFunction RevertSetting() { mixin(MGF!("mRevertSetting", "Function TribesGame.GFxTrPage_VideoResolution.RevertSetting")()); }
 		}
 	}
-	@property final auto ref int CurrResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+	@property final auto ref int CurrResolution() { mixin(MGPC!(int, 356)()); }
 final:
 	void SpecialAction(GFxTrAction Action)
 	{

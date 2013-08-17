@@ -1,13 +1,14 @@
 module UnrealScript.UnrealEd.InterpTrackHelper;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface InterpTrackHelper : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.InterpTrackHelper")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.InterpTrackHelper")()); }
 	private static __gshared InterpTrackHelper mDefaultProperties;
-	@property final static InterpTrackHelper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackHelper)("InterpTrackHelper UnrealEd.Default__InterpTrackHelper")); }
+	@property final static InterpTrackHelper DefaultProperties() { mixin(MGDPC!(InterpTrackHelper, "InterpTrackHelper UnrealEd.Default__InterpTrackHelper")()); }
 }

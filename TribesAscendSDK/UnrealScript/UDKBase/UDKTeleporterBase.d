@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKTeleporterBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Teleporter;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.MaterialInstanceConstant;
@@ -12,9 +13,9 @@ extern(C++) interface UDKTeleporterBase : Teleporter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKTeleporterBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKTeleporterBase")()); }
 	private static __gshared UDKTeleporterBase mDefaultProperties;
-	@property final static UDKTeleporterBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKTeleporterBase)("UDKTeleporterBase UDKBase.Default__UDKTeleporterBase")); }
+	@property final static UDKTeleporterBase DefaultProperties() { mixin(MGDPC!(UDKTeleporterBase, "UDKTeleporterBase UDKBase.Default__UDKTeleporterBase")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,21 +26,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKTeleporterBase.PostBeginPlay")); }
-			ScriptFunction InitializePortalEffect() { return mInitializePortalEffect ? mInitializePortalEffect : (mInitializePortalEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKTeleporterBase.InitializePortalEffect")); }
-			ScriptFunction Accept() { return mAccept ? mAccept : (mAccept = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKTeleporterBase.Accept")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UDKBase.UDKTeleporterBase.PostBeginPlay")()); }
+			ScriptFunction InitializePortalEffect() { mixin(MGF!("mInitializePortalEffect", "Function UDKBase.UDKTeleporterBase.InitializePortalEffect")()); }
+			ScriptFunction Accept() { mixin(MGF!("mAccept", "Function UDKBase.UDKTeleporterBase.Accept")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue TeleportingSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 768); }
-		ScriptName PortalTextureParameter() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 760); }
-		MaterialInstanceConstant PortalMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 756); }
-		MaterialInterface PortalMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 752); }
-		Actor PortalViewTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 748); }
-		int TextureResolutionY() { return *cast(int*)(cast(size_t)cast(void*)this + 744); }
-		int TextureResolutionX() { return *cast(int*)(cast(size_t)cast(void*)this + 740); }
-		TextureRenderTarget2D TextureTarget() { return *cast(TextureRenderTarget2D*)(cast(size_t)cast(void*)this + 736); }
+		SoundCue TeleportingSound() { mixin(MGPC!(SoundCue, 768)()); }
+		ScriptName PortalTextureParameter() { mixin(MGPC!(ScriptName, 760)()); }
+		MaterialInstanceConstant PortalMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 756)()); }
+		MaterialInterface PortalMaterial() { mixin(MGPC!(MaterialInterface, 752)()); }
+		Actor PortalViewTarget() { mixin(MGPC!(Actor, 748)()); }
+		int TextureResolutionY() { mixin(MGPC!(int, 744)()); }
+		int TextureResolutionX() { mixin(MGPC!(int, 740)()); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC!(TextureRenderTarget2D, 736)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PortalCaptureComponent'!
 	}
 final:
 	void PostBeginPlay()

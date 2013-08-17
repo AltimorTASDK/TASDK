@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTVictimMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTWeaponKillMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,24 +10,24 @@ extern(C++) interface UTVictimMessage : UTWeaponKillMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVictimMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVictimMessage")()); }
 	private static __gshared UTVictimMessage mDefaultProperties;
-	@property final static UTVictimMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVictimMessage)("UTVictimMessage UTGame.Default__UTVictimMessage")); }
+	@property final static UTVictimMessage DefaultProperties() { mixin(MGDPC!(UTVictimMessage, "UTVictimMessage UTGame.Default__UTVictimMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVictimMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVictimMessage.GetString")()); }
 	}
 	@property final auto ref
 	{
-		ScriptString TelefragString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-		ScriptString ViperKamikazeString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-		ScriptString ScorpionKamikazeString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString SpiderMineString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString RunOverString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString OrbSuicideString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString KilledByTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString YouWereKilledBy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString TelefragString() { mixin(MGPC!(ScriptString, 184)()); }
+		ScriptString ViperKamikazeString() { mixin(MGPC!(ScriptString, 172)()); }
+		ScriptString ScorpionKamikazeString() { mixin(MGPC!(ScriptString, 160)()); }
+		ScriptString SpiderMineString() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString RunOverString() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString OrbSuicideString() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString KilledByTrailer() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString YouWereKilledBy() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

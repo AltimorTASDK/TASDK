@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrSeqEvent_TakeDamage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.SeqEvent_TakeDamage;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrSeqEvent_TakeDamage : SeqEvent_TakeDamage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeqEvent_TakeDamage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSeqEvent_TakeDamage")()); }
 	private static __gshared TrSeqEvent_TakeDamage mDefaultProperties;
-	@property final static TrSeqEvent_TakeDamage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeqEvent_TakeDamage)("TrSeqEvent_TakeDamage TribesGame.Default__TrSeqEvent_TakeDamage")); }
+	@property final static TrSeqEvent_TakeDamage DefaultProperties() { mixin(MGDPC!(TrSeqEvent_TakeDamage, "TrSeqEvent_TakeDamage TribesGame.Default__TrSeqEvent_TakeDamage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeqEvent_TakeDamage.GetObjClassVersion")); }
-			ScriptFunction HandleDamage() { return mHandleDamage ? mHandleDamage : (mHandleDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeqEvent_TakeDamage.HandleDamage")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function TribesGame.TrSeqEvent_TakeDamage.GetObjClassVersion")()); }
+			ScriptFunction HandleDamage() { mixin(MGF!("mHandleDamage", "Function TribesGame.TrSeqEvent_TakeDamage.HandleDamage")()); }
 		}
 	}
 final:

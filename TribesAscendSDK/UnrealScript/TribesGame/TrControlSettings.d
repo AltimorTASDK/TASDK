@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrControlSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.PlayerInput;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface TrControlSettings : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrControlSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrControlSettings")()); }
 	private static __gshared TrControlSettings mDefaultProperties;
-	@property final static TrControlSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrControlSettings)("TrControlSettings TribesGame.Default__TrControlSettings")); }
+	@property final static TrControlSettings DefaultProperties() { mixin(MGDPC!(TrControlSettings, "TrControlSettings TribesGame.Default__TrControlSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -49,42 +50,42 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentControlValue() { return mGetCurrentControlValue ? mGetCurrentControlValue : (mGetCurrentControlValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetCurrentControlValue")); }
-			ScriptFunction FlushSettings() { return mFlushSettings ? mFlushSettings : (mFlushSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.FlushSettings")); }
-			ScriptFunction StoreSetting() { return mStoreSetting ? mStoreSetting : (mStoreSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.StoreSetting")); }
-			ScriptFunction ReadSetting() { return mReadSetting ? mReadSetting : (mReadSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.ReadSetting")); }
-			ScriptFunction ReadSettings() { return mReadSettings ? mReadSettings : (mReadSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.ReadSettings")); }
-			ScriptFunction LoadControlSettings() { return mLoadControlSettings ? mLoadControlSettings : (mLoadControlSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.LoadControlSettings")); }
-			ScriptFunction AddControlSetting() { return mAddControlSetting ? mAddControlSetting : (mAddControlSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.AddControlSetting")); }
-			ScriptFunction SaveControlSetting() { return mSaveControlSetting ? mSaveControlSetting : (mSaveControlSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveControlSetting")); }
-			ScriptFunction GetControlTypeFromName() { return mGetControlTypeFromName ? mGetControlTypeFromName : (mGetControlTypeFromName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetControlTypeFromName")); }
-			ScriptFunction GetControlNameFromType() { return mGetControlNameFromType ? mGetControlNameFromType : (mGetControlNameFromType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetControlNameFromType")); }
-			ScriptFunction GetPlayerInput() { return mGetPlayerInput ? mGetPlayerInput : (mGetPlayerInput = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetPlayerInput")); }
-			ScriptFunction UpdateRuntimePlayer() { return mUpdateRuntimePlayer ? mUpdateRuntimePlayer : (mUpdateRuntimePlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.UpdateRuntimePlayer")); }
-			ScriptFunction SaveTinyWeaponValue() { return mSaveTinyWeaponValue ? mSaveTinyWeaponValue : (mSaveTinyWeaponValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveTinyWeaponValue")); }
-			ScriptFunction GetTinyWeaponValue() { return mGetTinyWeaponValue ? mGetTinyWeaponValue : (mGetTinyWeaponValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetTinyWeaponValue")); }
-			ScriptFunction GetAlienFXValue() { return mGetAlienFXValue ? mGetAlienFXValue : (mGetAlienFXValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetAlienFXValue")); }
-			ScriptFunction SaveAlienFXValue() { return mSaveAlienFXValue ? mSaveAlienFXValue : (mSaveAlienFXValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveAlienFXValue")); }
-			ScriptFunction SaveChatFilterValue() { return mSaveChatFilterValue ? mSaveChatFilterValue : (mSaveChatFilterValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveChatFilterValue")); }
-			ScriptFunction GetChatFilterValue() { return mGetChatFilterValue ? mGetChatFilterValue : (mGetChatFilterValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetChatFilterValue")); }
-			ScriptFunction SaveHUDFriendStateNotificationsValue() { return mSaveHUDFriendStateNotificationsValue ? mSaveHUDFriendStateNotificationsValue : (mSaveHUDFriendStateNotificationsValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveHUDFriendStateNotificationsValue")); }
-			ScriptFunction GetHUDFriendStateNotifications() { return mGetHUDFriendStateNotifications ? mGetHUDFriendStateNotifications : (mGetHUDFriendStateNotifications = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetHUDFriendStateNotifications")); }
-			ScriptFunction SaveWhisperNotificationsValue() { return mSaveWhisperNotificationsValue ? mSaveWhisperNotificationsValue : (mSaveWhisperNotificationsValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveWhisperNotificationsValue")); }
-			ScriptFunction GetWhisperNotificationsValue() { return mGetWhisperNotificationsValue ? mGetWhisperNotificationsValue : (mGetWhisperNotificationsValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetWhisperNotificationsValue")); }
-			ScriptFunction SaveHelpTextValue() { return mSaveHelpTextValue ? mSaveHelpTextValue : (mSaveHelpTextValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveHelpTextValue")); }
-			ScriptFunction GetHelpTextValue() { return mGetHelpTextValue ? mGetHelpTextValue : (mGetHelpTextValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetHelpTextValue")); }
-			ScriptFunction SaveSimulatedProjectilesValue() { return mSaveSimulatedProjectilesValue ? mSaveSimulatedProjectilesValue : (mSaveSimulatedProjectilesValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveSimulatedProjectilesValue")); }
-			ScriptFunction GetSimulatedProjectilesValue() { return mGetSimulatedProjectilesValue ? mGetSimulatedProjectilesValue : (mGetSimulatedProjectilesValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetSimulatedProjectilesValue")); }
-			ScriptFunction SaveDamageCounterValue() { return mSaveDamageCounterValue ? mSaveDamageCounterValue : (mSaveDamageCounterValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveDamageCounterValue")); }
-			ScriptFunction GetDamageCounterValue() { return mGetDamageCounterValue ? mGetDamageCounterValue : (mGetDamageCounterValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetDamageCounterValue")); }
-			ScriptFunction SaveHUDObjectivesValue() { return mSaveHUDObjectivesValue ? mSaveHUDObjectivesValue : (mSaveHUDObjectivesValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.SaveHUDObjectivesValue")); }
-			ScriptFunction GetHUDObjectivesValue() { return mGetHUDObjectivesValue ? mGetHUDObjectivesValue : (mGetHUDObjectivesValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrControlSettings.GetHUDObjectivesValue")); }
+			ScriptFunction GetCurrentControlValue() { mixin(MGF!("mGetCurrentControlValue", "Function TribesGame.TrControlSettings.GetCurrentControlValue")()); }
+			ScriptFunction FlushSettings() { mixin(MGF!("mFlushSettings", "Function TribesGame.TrControlSettings.FlushSettings")()); }
+			ScriptFunction StoreSetting() { mixin(MGF!("mStoreSetting", "Function TribesGame.TrControlSettings.StoreSetting")()); }
+			ScriptFunction ReadSetting() { mixin(MGF!("mReadSetting", "Function TribesGame.TrControlSettings.ReadSetting")()); }
+			ScriptFunction ReadSettings() { mixin(MGF!("mReadSettings", "Function TribesGame.TrControlSettings.ReadSettings")()); }
+			ScriptFunction LoadControlSettings() { mixin(MGF!("mLoadControlSettings", "Function TribesGame.TrControlSettings.LoadControlSettings")()); }
+			ScriptFunction AddControlSetting() { mixin(MGF!("mAddControlSetting", "Function TribesGame.TrControlSettings.AddControlSetting")()); }
+			ScriptFunction SaveControlSetting() { mixin(MGF!("mSaveControlSetting", "Function TribesGame.TrControlSettings.SaveControlSetting")()); }
+			ScriptFunction GetControlTypeFromName() { mixin(MGF!("mGetControlTypeFromName", "Function TribesGame.TrControlSettings.GetControlTypeFromName")()); }
+			ScriptFunction GetControlNameFromType() { mixin(MGF!("mGetControlNameFromType", "Function TribesGame.TrControlSettings.GetControlNameFromType")()); }
+			ScriptFunction GetPlayerInput() { mixin(MGF!("mGetPlayerInput", "Function TribesGame.TrControlSettings.GetPlayerInput")()); }
+			ScriptFunction UpdateRuntimePlayer() { mixin(MGF!("mUpdateRuntimePlayer", "Function TribesGame.TrControlSettings.UpdateRuntimePlayer")()); }
+			ScriptFunction SaveTinyWeaponValue() { mixin(MGF!("mSaveTinyWeaponValue", "Function TribesGame.TrControlSettings.SaveTinyWeaponValue")()); }
+			ScriptFunction GetTinyWeaponValue() { mixin(MGF!("mGetTinyWeaponValue", "Function TribesGame.TrControlSettings.GetTinyWeaponValue")()); }
+			ScriptFunction GetAlienFXValue() { mixin(MGF!("mGetAlienFXValue", "Function TribesGame.TrControlSettings.GetAlienFXValue")()); }
+			ScriptFunction SaveAlienFXValue() { mixin(MGF!("mSaveAlienFXValue", "Function TribesGame.TrControlSettings.SaveAlienFXValue")()); }
+			ScriptFunction SaveChatFilterValue() { mixin(MGF!("mSaveChatFilterValue", "Function TribesGame.TrControlSettings.SaveChatFilterValue")()); }
+			ScriptFunction GetChatFilterValue() { mixin(MGF!("mGetChatFilterValue", "Function TribesGame.TrControlSettings.GetChatFilterValue")()); }
+			ScriptFunction SaveHUDFriendStateNotificationsValue() { mixin(MGF!("mSaveHUDFriendStateNotificationsValue", "Function TribesGame.TrControlSettings.SaveHUDFriendStateNotificationsValue")()); }
+			ScriptFunction GetHUDFriendStateNotifications() { mixin(MGF!("mGetHUDFriendStateNotifications", "Function TribesGame.TrControlSettings.GetHUDFriendStateNotifications")()); }
+			ScriptFunction SaveWhisperNotificationsValue() { mixin(MGF!("mSaveWhisperNotificationsValue", "Function TribesGame.TrControlSettings.SaveWhisperNotificationsValue")()); }
+			ScriptFunction GetWhisperNotificationsValue() { mixin(MGF!("mGetWhisperNotificationsValue", "Function TribesGame.TrControlSettings.GetWhisperNotificationsValue")()); }
+			ScriptFunction SaveHelpTextValue() { mixin(MGF!("mSaveHelpTextValue", "Function TribesGame.TrControlSettings.SaveHelpTextValue")()); }
+			ScriptFunction GetHelpTextValue() { mixin(MGF!("mGetHelpTextValue", "Function TribesGame.TrControlSettings.GetHelpTextValue")()); }
+			ScriptFunction SaveSimulatedProjectilesValue() { mixin(MGF!("mSaveSimulatedProjectilesValue", "Function TribesGame.TrControlSettings.SaveSimulatedProjectilesValue")()); }
+			ScriptFunction GetSimulatedProjectilesValue() { mixin(MGF!("mGetSimulatedProjectilesValue", "Function TribesGame.TrControlSettings.GetSimulatedProjectilesValue")()); }
+			ScriptFunction SaveDamageCounterValue() { mixin(MGF!("mSaveDamageCounterValue", "Function TribesGame.TrControlSettings.SaveDamageCounterValue")()); }
+			ScriptFunction GetDamageCounterValue() { mixin(MGF!("mGetDamageCounterValue", "Function TribesGame.TrControlSettings.GetDamageCounterValue")()); }
+			ScriptFunction SaveHUDObjectivesValue() { mixin(MGF!("mSaveHUDObjectivesValue", "Function TribesGame.TrControlSettings.SaveHUDObjectivesValue")()); }
+			ScriptFunction GetHUDObjectivesValue() { mixin(MGF!("mGetHUDObjectivesValue", "Function TribesGame.TrControlSettings.GetHUDObjectivesValue")()); }
 		}
 	}
 	@property final auto ref
 	{
-		GFxObject m_ControlSettingsList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 124); }
-		int m_ControlSettingsCount() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
+		GFxObject m_ControlSettingsList() { mixin(MGPC!(GFxObject, 124)()); }
+		int m_ControlSettingsCount() { mixin(MGPC!(int, 120)()); }
 	}
 final:
 	float GetCurrentControlValue(TrObject.ESettingsList Index)

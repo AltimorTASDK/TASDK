@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Route;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface Route : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Route")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Route")()); }
 	private static __gshared Route mDefaultProperties;
-	@property final static Route DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Route)("Route Engine.Default__Route")); }
+	@property final static Route DefaultProperties() { mixin(MGDPC!(Route, "Route Engine.Default__Route")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ResolveRouteIndex() { return mResolveRouteIndex ? mResolveRouteIndex : (mResolveRouteIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.Route.ResolveRouteIndex")); }
-			ScriptFunction MoveOntoRoutePath() { return mMoveOntoRoutePath ? mMoveOntoRoutePath : (mMoveOntoRoutePath = ScriptObject.Find!(ScriptFunction)("Function Engine.Route.MoveOntoRoutePath")); }
+			ScriptFunction ResolveRouteIndex() { mixin(MGF!("mResolveRouteIndex", "Function Engine.Route.ResolveRouteIndex")()); }
+			ScriptFunction MoveOntoRoutePath() { mixin(MGF!("mMoveOntoRoutePath", "Function Engine.Route.MoveOntoRoutePath")()); }
 		}
 	}
 	enum ERouteDirection : ubyte
@@ -49,21 +50,21 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ActorReference) RouteList() { return *cast(ScriptArray!(Actor.ActorReference)*)(cast(size_t)cast(void*)this + 484); }
-		Route.ERouteType RouteType() { return *cast(Route.ERouteType*)(cast(size_t)cast(void*)this + 480); }
-		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 476); }
-		float FudgeFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-		int RouteIndexOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
+		ScriptArray!(Actor.ActorReference) RouteList() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 484)()); }
+		Route.ERouteType RouteType() { mixin(MGPC!(Route.ERouteType, 480)()); }
+		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!(UObject.Pointer, 476)()); }
+		float FudgeFactor() { mixin(MGPC!(float, 496)()); }
+		int RouteIndexOffset() { mixin(MGPC!(int, 500)()); }
 	}
 final:
-	int ResolveRouteIndex(int Idx, Route.ERouteDirection RouteDirection, ubyte* out_bComplete, ubyte* out_bReverse)
+	int ResolveRouteIndex(int Idx, Route.ERouteDirection RouteDirection, ref ubyte out_bComplete, ref ubyte out_bReverse)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Idx;
 		*cast(Route.ERouteDirection*)&params[4] = RouteDirection;
-		params[5] = *out_bComplete;
-		params[6] = *out_bReverse;
+		params[5] = out_bComplete;
+		params[6] = out_bReverse;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResolveRouteIndex, params.ptr, cast(void*)0);
 		*out_bComplete = params[5];
 		*out_bReverse = params[6];

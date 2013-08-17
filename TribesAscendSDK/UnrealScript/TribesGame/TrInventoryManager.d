@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrInventoryManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.Inventory;
 import UnrealScript.Engine.Weapon;
@@ -12,9 +13,9 @@ extern(C++) interface TrInventoryManager : UTInventoryManager
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrInventoryManager")()); }
 	private static __gshared TrInventoryManager mDefaultProperties;
-	@property final static TrInventoryManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventoryManager)("TrInventoryManager TribesGame.Default__TrInventoryManager")); }
+	@property final static TrInventoryManager DefaultProperties() { mixin(MGDPC!(TrInventoryManager, "TrInventoryManager TribesGame.Default__TrInventoryManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,33 +38,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetDeviceByEquipPoint() { return mGetDeviceByEquipPoint ? mGetDeviceByEquipPoint : (mGetDeviceByEquipPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.GetDeviceByEquipPoint")); }
-			ScriptFunction AddInventory() { return mAddInventory ? mAddInventory : (mAddInventory = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.AddInventory")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.PostBeginPlay")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.ReplicatedEvent")); }
-			ScriptFunction GetDeviceByWeaponClass() { return mGetDeviceByWeaponClass ? mGetDeviceByWeaponClass : (mGetDeviceByWeaponClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.GetDeviceByWeaponClass")); }
-			ScriptFunction GetDeviceByWeaponId() { return mGetDeviceByWeaponId ? mGetDeviceByWeaponId : (mGetDeviceByWeaponId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.GetDeviceByWeaponId")); }
-			ScriptFunction TrGetWeaponList() { return mTrGetWeaponList ? mTrGetWeaponList : (mTrGetWeaponList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.TrGetWeaponList")); }
-			ScriptFunction DiscardEquippedDeployable() { return mDiscardEquippedDeployable ? mDiscardEquippedDeployable : (mDiscardEquippedDeployable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.DiscardEquippedDeployable")); }
-			ScriptFunction AdjustWeapon() { return mAdjustWeapon ? mAdjustWeapon : (mAdjustWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.AdjustWeapon")); }
-			ScriptFunction SetPendingWeapon() { return mSetPendingWeapon ? mSetPendingWeapon : (mSetPendingWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.SetPendingWeapon")); }
-			ScriptFunction RemoveFromInventory() { return mRemoveFromInventory ? mRemoveFromInventory : (mRemoveFromInventory = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.RemoveFromInventory")); }
-			ScriptFunction AutoFireWeapon() { return mAutoFireWeapon ? mAutoFireWeapon : (mAutoFireWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.AutoFireWeapon")); }
-			ScriptFunction SwitchWeaponByEquipPoint() { return mSwitchWeaponByEquipPoint ? mSwitchWeaponByEquipPoint : (mSwitchWeaponByEquipPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.SwitchWeaponByEquipPoint")); }
-			ScriptFunction SwitchToPreviousWeapon() { return mSwitchToPreviousWeapon ? mSwitchToPreviousWeapon : (mSwitchToPreviousWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.SwitchToPreviousWeapon")); }
-			ScriptFunction ServerAutoFireWeapon() { return mServerAutoFireWeapon ? mServerAutoFireWeapon : (mServerAutoFireWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryManager.ServerAutoFireWeapon")); }
+			ScriptFunction GetDeviceByEquipPoint() { mixin(MGF!("mGetDeviceByEquipPoint", "Function TribesGame.TrInventoryManager.GetDeviceByEquipPoint")()); }
+			ScriptFunction AddInventory() { mixin(MGF!("mAddInventory", "Function TribesGame.TrInventoryManager.AddInventory")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrInventoryManager.PostBeginPlay")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrInventoryManager.ReplicatedEvent")()); }
+			ScriptFunction GetDeviceByWeaponClass() { mixin(MGF!("mGetDeviceByWeaponClass", "Function TribesGame.TrInventoryManager.GetDeviceByWeaponClass")()); }
+			ScriptFunction GetDeviceByWeaponId() { mixin(MGF!("mGetDeviceByWeaponId", "Function TribesGame.TrInventoryManager.GetDeviceByWeaponId")()); }
+			ScriptFunction TrGetWeaponList() { mixin(MGF!("mTrGetWeaponList", "Function TribesGame.TrInventoryManager.TrGetWeaponList")()); }
+			ScriptFunction DiscardEquippedDeployable() { mixin(MGF!("mDiscardEquippedDeployable", "Function TribesGame.TrInventoryManager.DiscardEquippedDeployable")()); }
+			ScriptFunction AdjustWeapon() { mixin(MGF!("mAdjustWeapon", "Function TribesGame.TrInventoryManager.AdjustWeapon")()); }
+			ScriptFunction SetPendingWeapon() { mixin(MGF!("mSetPendingWeapon", "Function TribesGame.TrInventoryManager.SetPendingWeapon")()); }
+			ScriptFunction RemoveFromInventory() { mixin(MGF!("mRemoveFromInventory", "Function TribesGame.TrInventoryManager.RemoveFromInventory")()); }
+			ScriptFunction AutoFireWeapon() { mixin(MGF!("mAutoFireWeapon", "Function TribesGame.TrInventoryManager.AutoFireWeapon")()); }
+			ScriptFunction SwitchWeaponByEquipPoint() { mixin(MGF!("mSwitchWeaponByEquipPoint", "Function TribesGame.TrInventoryManager.SwitchWeaponByEquipPoint")()); }
+			ScriptFunction SwitchToPreviousWeapon() { mixin(MGF!("mSwitchToPreviousWeapon", "Function TribesGame.TrInventoryManager.SwitchToPreviousWeapon")()); }
+			ScriptFunction ServerAutoFireWeapon() { mixin(MGF!("mServerAutoFireWeapon", "Function TribesGame.TrInventoryManager.ServerAutoFireWeapon")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrStatsInterface Stats() { return *cast(TrStatsInterface*)(cast(size_t)cast(void*)this + 540); }
-			TrObject.TR_EQUIP_POINT m_PreviousDeviceEquipPoint() { return *cast(TrObject.TR_EQUIP_POINT*)(cast(size_t)cast(void*)this + 536); }
-			TrDevice m_RealLastDevice() { return *cast(TrDevice*)(cast(size_t)cast(void*)this + 532); }
+			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 540)()); }
+			TrObject.TR_EQUIP_POINT m_PreviousDeviceEquipPoint() { mixin(MGPC!(TrObject.TR_EQUIP_POINT, 536)()); }
+			TrDevice m_RealLastDevice() { mixin(MGPC!(TrDevice, 532)()); }
 		}
-		bool c_bRetryEquippingPrimaryWeapon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 544) & 0x1) != 0; }
-		bool c_bRetryEquippingPrimaryWeapon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 544) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 544) &= ~0x1; } return val; }
+		bool c_bRetryEquippingPrimaryWeapon() { mixin(MGBPC!(544, 0x1)()); }
+		bool c_bRetryEquippingPrimaryWeapon(bool val) { mixin(MSBPC!(544, 0x1)()); }
 	}
 final:
 	TrDevice GetDeviceByEquipPoint(TrObject.TR_EQUIP_POINT EquipPoint)
@@ -110,11 +111,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDeviceByWeaponId, params.ptr, cast(void*)0);
 		return *cast(TrDevice*)&params[4];
 	}
-	void TrGetWeaponList(ScriptArray!(TrDevice)* WeaponList, bool bInhandOnly)
+	void TrGetWeaponList(ref ScriptArray!(TrDevice) WeaponList, bool bInhandOnly)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(TrDevice)*)params.ptr = *WeaponList;
+		*cast(ScriptArray!(TrDevice)*)params.ptr = WeaponList;
 		*cast(bool*)&params[12] = bInhandOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrGetWeaponList, params.ptr, cast(void*)0);
 		*WeaponList = *cast(ScriptArray!(TrDevice)*)params.ptr;

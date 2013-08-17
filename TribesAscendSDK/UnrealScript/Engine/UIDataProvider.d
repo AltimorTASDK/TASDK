@@ -1,15 +1,16 @@
 module UnrealScript.Engine.UIDataProvider;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIRoot;
 
 extern(C++) interface UIDataProvider : UIRoot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider")()); }
 	private static __gshared UIDataProvider mDefaultProperties;
-	@property final static UIDataProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider)("UIDataProvider Engine.Default__UIDataProvider")); }
+	@property final static UIDataProvider DefaultProperties() { mixin(MGDPC!(UIDataProvider, "UIDataProvider Engine.Default__UIDataProvider")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,21 +33,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnDataProviderPropertyChange() { return mOnDataProviderPropertyChange ? mOnDataProviderPropertyChange : (mOnDataProviderPropertyChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.OnDataProviderPropertyChange")); }
-			ScriptFunction GetProviderFieldType() { return mGetProviderFieldType ? mGetProviderFieldType : (mGetProviderFieldType = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.GetProviderFieldType")); }
-			ScriptFunction ParseArrayDelimiter() { return mParseArrayDelimiter ? mParseArrayDelimiter : (mParseArrayDelimiter = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.ParseArrayDelimiter")); }
-			ScriptFunction GetSupportedScriptFields() { return mGetSupportedScriptFields ? mGetSupportedScriptFields : (mGetSupportedScriptFields = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.GetSupportedScriptFields")); }
-			ScriptFunction AllowPublishingToField() { return mAllowPublishingToField ? mAllowPublishingToField : (mAllowPublishingToField = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.AllowPublishingToField")); }
-			ScriptFunction GetFieldValue() { return mGetFieldValue ? mGetFieldValue : (mGetFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.GetFieldValue")); }
-			ScriptFunction SetFieldValue() { return mSetFieldValue ? mSetFieldValue : (mSetFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.SetFieldValue")); }
-			ScriptFunction GenerateScriptMarkupString() { return mGenerateScriptMarkupString ? mGenerateScriptMarkupString : (mGenerateScriptMarkupString = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.GenerateScriptMarkupString")); }
-			ScriptFunction GenerateFillerData() { return mGenerateFillerData ? mGenerateFillerData : (mGenerateFillerData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.GenerateFillerData")); }
-			ScriptFunction IsProviderDisabled() { return mIsProviderDisabled ? mIsProviderDisabled : (mIsProviderDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.IsProviderDisabled")); }
-			ScriptFunction IsCollectionDataType() { return mIsCollectionDataType ? mIsCollectionDataType : (mIsCollectionDataType = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.IsCollectionDataType")); }
-			ScriptFunction NotifyPropertyChanged() { return mNotifyPropertyChanged ? mNotifyPropertyChanged : (mNotifyPropertyChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.NotifyPropertyChanged")); }
-			ScriptFunction AddPropertyNotificationChangeRequest() { return mAddPropertyNotificationChangeRequest ? mAddPropertyNotificationChangeRequest : (mAddPropertyNotificationChangeRequest = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.AddPropertyNotificationChangeRequest")); }
-			ScriptFunction RemovePropertyNotificationChangeRequest() { return mRemovePropertyNotificationChangeRequest ? mRemovePropertyNotificationChangeRequest : (mRemovePropertyNotificationChangeRequest = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.RemovePropertyNotificationChangeRequest")); }
-			ScriptFunction ParseTagArrayDelimiter() { return mParseTagArrayDelimiter ? mParseTagArrayDelimiter : (mParseTagArrayDelimiter = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider.ParseTagArrayDelimiter")); }
+			ScriptFunction OnDataProviderPropertyChange() { mixin(MGF!("mOnDataProviderPropertyChange", "Function Engine.UIDataProvider.OnDataProviderPropertyChange")()); }
+			ScriptFunction GetProviderFieldType() { mixin(MGF!("mGetProviderFieldType", "Function Engine.UIDataProvider.GetProviderFieldType")()); }
+			ScriptFunction ParseArrayDelimiter() { mixin(MGF!("mParseArrayDelimiter", "Function Engine.UIDataProvider.ParseArrayDelimiter")()); }
+			ScriptFunction GetSupportedScriptFields() { mixin(MGF!("mGetSupportedScriptFields", "Function Engine.UIDataProvider.GetSupportedScriptFields")()); }
+			ScriptFunction AllowPublishingToField() { mixin(MGF!("mAllowPublishingToField", "Function Engine.UIDataProvider.AllowPublishingToField")()); }
+			ScriptFunction GetFieldValue() { mixin(MGF!("mGetFieldValue", "Function Engine.UIDataProvider.GetFieldValue")()); }
+			ScriptFunction SetFieldValue() { mixin(MGF!("mSetFieldValue", "Function Engine.UIDataProvider.SetFieldValue")()); }
+			ScriptFunction GenerateScriptMarkupString() { mixin(MGF!("mGenerateScriptMarkupString", "Function Engine.UIDataProvider.GenerateScriptMarkupString")()); }
+			ScriptFunction GenerateFillerData() { mixin(MGF!("mGenerateFillerData", "Function Engine.UIDataProvider.GenerateFillerData")()); }
+			ScriptFunction IsProviderDisabled() { mixin(MGF!("mIsProviderDisabled", "Function Engine.UIDataProvider.IsProviderDisabled")()); }
+			ScriptFunction IsCollectionDataType() { mixin(MGF!("mIsCollectionDataType", "Function Engine.UIDataProvider.IsCollectionDataType")()); }
+			ScriptFunction NotifyPropertyChanged() { mixin(MGF!("mNotifyPropertyChanged", "Function Engine.UIDataProvider.NotifyPropertyChanged")()); }
+			ScriptFunction AddPropertyNotificationChangeRequest() { mixin(MGF!("mAddPropertyNotificationChangeRequest", "Function Engine.UIDataProvider.AddPropertyNotificationChangeRequest")()); }
+			ScriptFunction RemovePropertyNotificationChangeRequest() { mixin(MGF!("mRemovePropertyNotificationChangeRequest", "Function Engine.UIDataProvider.RemovePropertyNotificationChangeRequest")()); }
+			ScriptFunction ParseTagArrayDelimiter() { mixin(MGF!("mParseTagArrayDelimiter", "Function Engine.UIDataProvider.ParseTagArrayDelimiter")()); }
 		}
 	}
 	enum EProviderAccessType : ubyte
@@ -61,22 +62,23 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataProvider.UIDataProviderField")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataProvider.UIDataProviderField")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UIDataProvider) FieldProviders() { return *cast(ScriptArray!(UIDataProvider)*)(cast(size_t)&this + 12); }
-			UIRoot.EUIDataProviderFieldType FieldType() { return *cast(UIRoot.EUIDataProviderFieldType*)(cast(size_t)&this + 8); }
-			ScriptName FieldTag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(UIDataProvider) FieldProviders() { mixin(MGPS!(ScriptArray!(UIDataProvider), 12)()); }
+			UIRoot.EUIDataProviderFieldType FieldType() { mixin(MGPS!(UIRoot.EUIDataProviderFieldType, 8)()); }
+			ScriptName FieldTag() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ProviderChangedNotifies() { return *cast(ScriptArray!(
+void*) ProviderChangedNotifies() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 64); }
-		UIDataProvider.EProviderAccessType WriteAccessType() { return *cast(UIDataProvider.EProviderAccessType*)(cast(size_t)cast(void*)this + 60); }
+void*), 64)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDataProviderPropertyChange__Delegate'!
+		UIDataProvider.EProviderAccessType WriteAccessType() { mixin(MGPC!(UIDataProvider.EProviderAccessType, 60)()); }
 	}
 final:
 	void OnDataProviderPropertyChange(UIDataProvider SourceProvider, ScriptName PropTag)
@@ -87,30 +89,30 @@ final:
 		*cast(ScriptName*)&params[4] = PropTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnDataProviderPropertyChange, params.ptr, cast(void*)0);
 	}
-	bool GetProviderFieldType(ScriptString DataTag, UIRoot.EUIDataProviderFieldType* out_ProviderFieldType)
+	bool GetProviderFieldType(ScriptString DataTag, ref UIRoot.EUIDataProviderFieldType out_ProviderFieldType)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = DataTag;
-		*cast(UIRoot.EUIDataProviderFieldType*)&params[12] = *out_ProviderFieldType;
+		*cast(UIRoot.EUIDataProviderFieldType*)&params[12] = out_ProviderFieldType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProviderFieldType, params.ptr, cast(void*)0);
 		*out_ProviderFieldType = *cast(UIRoot.EUIDataProviderFieldType*)&params[12];
 		return *cast(bool*)&params[16];
 	}
-	int ParseArrayDelimiter(ScriptString* DataTag)
+	int ParseArrayDelimiter(ref ScriptString DataTag)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *DataTag;
+		*cast(ScriptString*)params.ptr = DataTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ParseArrayDelimiter, params.ptr, cast(void*)0);
 		*DataTag = *cast(ScriptString*)params.ptr;
 		return *cast(int*)&params[12];
 	}
-	void GetSupportedScriptFields(ScriptArray!(UIDataProvider.UIDataProviderField)* out_Fields)
+	void GetSupportedScriptFields(ref ScriptArray!(UIDataProvider.UIDataProviderField) out_Fields)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr = *out_Fields;
+		*cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr = out_Fields;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSupportedScriptFields, params.ptr, cast(void*)0);
 		*out_Fields = *cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr;
 	}
@@ -123,23 +125,23 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowPublishingToField, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool GetFieldValue(ScriptString FieldName, UIRoot.UIProviderScriptFieldValue* FieldValue, int ArrayIndex)
+	bool GetFieldValue(ScriptString FieldName, ref UIRoot.UIProviderScriptFieldValue FieldValue, int ArrayIndex)
 	{
 		ubyte params[104];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
-		*cast(UIRoot.UIProviderScriptFieldValue*)&params[12] = *FieldValue;
+		*cast(UIRoot.UIProviderScriptFieldValue*)&params[12] = FieldValue;
 		*cast(int*)&params[96] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldValue, params.ptr, cast(void*)0);
 		*FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[12];
 		return *cast(bool*)&params[100];
 	}
-	bool SetFieldValue(ScriptString FieldName, UIRoot.UIProviderScriptFieldValue* FieldValue, int ArrayIndex)
+	bool SetFieldValue(ScriptString FieldName, ref const UIRoot.UIProviderScriptFieldValue FieldValue, int ArrayIndex)
 	{
 		ubyte params[104];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
-		*cast(UIRoot.UIProviderScriptFieldValue*)&params[12] = *FieldValue;
+		*cast(UIRoot.UIProviderScriptFieldValue*)&params[12] = FieldValue;
 		*cast(int*)&params[96] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFieldValue, params.ptr, cast(void*)0);
 		*FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[12];
@@ -208,11 +210,11 @@ void**)params.ptr = InDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemovePropertyNotificationChangeRequest, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	int ParseTagArrayDelimiter(ScriptName* FieldName)
+	int ParseTagArrayDelimiter(ref ScriptName FieldName)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = *FieldName;
+		*cast(ScriptName*)params.ptr = FieldName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ParseTagArrayDelimiter, params.ptr, cast(void*)0);
 		*FieldName = *cast(ScriptName*)params.ptr;
 		return *cast(int*)&params[8];

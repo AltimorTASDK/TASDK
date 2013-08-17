@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrSubDevice_ForceField;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrSubDevice;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrSubDevice_ForceField : TrSubDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSubDevice_ForceField")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSubDevice_ForceField")()); }
 	private static __gshared TrSubDevice_ForceField mDefaultProperties;
-	@property final static TrSubDevice_ForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSubDevice_ForceField)("TrSubDevice_ForceField TribesGame.Default__TrSubDevice_ForceField")); }
+	@property final static TrSubDevice_ForceField DefaultProperties() { mixin(MGDPC!(TrSubDevice_ForceField, "TrSubDevice_ForceField TribesGame.Default__TrSubDevice_ForceField")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,16 +21,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InstantFire() { return mInstantFire ? mInstantFire : (mInstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSubDevice_ForceField.InstantFire")); }
-			ScriptFunction ModifyInstantHitDamage() { return mModifyInstantHitDamage ? mModifyInstantHitDamage : (mModifyInstantHitDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSubDevice_ForceField.ModifyInstantHitDamage")); }
+			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function TribesGame.TrSubDevice_ForceField.InstantFire")()); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrSubDevice_ForceField.ModifyInstantHitDamage")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_MinSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2160); }
-		float m_MaxSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2156); }
-		float m_MinDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 2152); }
-		float m_MaxDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 2148); }
+		float m_MinSpeed() { mixin(MGPC!(float, 2160)()); }
+		float m_MaxSpeed() { mixin(MGPC!(float, 2156)()); }
+		float m_MinDamage() { mixin(MGPC!(float, 2152)()); }
+		float m_MaxDamage() { mixin(MGPC!(float, 2148)()); }
 	}
 final:
 	void InstantFire()

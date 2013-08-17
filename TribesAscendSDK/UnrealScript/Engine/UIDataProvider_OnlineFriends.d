@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataProvider_OnlineFriends;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface UIDataProvider_OnlineFriends : UIDataProvider_OnlinePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlineFriends")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_OnlineFriends")()); }
 	private static __gshared UIDataProvider_OnlineFriends mDefaultProperties;
-	@property final static UIDataProvider_OnlineFriends DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlineFriends)("UIDataProvider_OnlineFriends Engine.Default__UIDataProvider_OnlineFriends")); }
+	@property final static UIDataProvider_OnlineFriends DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlineFriends, "UIDataProvider_OnlineFriends Engine.Default__UIDataProvider_OnlineFriends")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,31 +26,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnRegister")); }
-			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnUnregister")); }
-			ScriptFunction OnFriendsReadComplete() { return mOnFriendsReadComplete ? mOnFriendsReadComplete : (mOnFriendsReadComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnFriendsReadComplete")); }
-			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnLoginChange")); }
-			ScriptFunction RefreshFriendsList() { return mRefreshFriendsList ? mRefreshFriendsList : (mRefreshFriendsList = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.RefreshFriendsList")); }
+			ScriptFunction OnRegister() { mixin(MGF!("mOnRegister", "Function Engine.UIDataProvider_OnlineFriends.OnRegister")()); }
+			ScriptFunction OnUnregister() { mixin(MGF!("mOnUnregister", "Function Engine.UIDataProvider_OnlineFriends.OnUnregister")()); }
+			ScriptFunction OnFriendsReadComplete() { mixin(MGF!("mOnFriendsReadComplete", "Function Engine.UIDataProvider_OnlineFriends.OnFriendsReadComplete")()); }
+			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.UIDataProvider_OnlineFriends.OnLoginChange")()); }
+			ScriptFunction RefreshFriendsList() { mixin(MGF!("mRefreshFriendsList", "Function Engine.UIDataProvider_OnlineFriends.RefreshFriendsList")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlineFriend) FriendsList() { return *cast(ScriptArray!(OnlineSubsystem.OnlineFriend)*)(cast(size_t)cast(void*)this + 96); }
-		ScriptString BusyText() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 264); }
-		ScriptString AwayText() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 252); }
-		ScriptString OnlineText() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 240); }
-		ScriptString OfflineText() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 228); }
-		ScriptString bHasInvitedYouCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 216); }
-		ScriptString bHaveInvitedCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
-		ScriptString bHasVoiceSupportCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 192); }
-		ScriptString bIsJoinableCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 180); }
-		ScriptString bIsPlayingThisGameCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-		ScriptString bIsPlayingCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-		ScriptString bIsOnlineCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString FriendStateCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-		ScriptString PresenceInfoCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 120); }
-		ScriptString NickNameCol() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 108); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 92); }
+		ScriptArray!(OnlineSubsystem.OnlineFriend) FriendsList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlineFriend), 96)()); }
+		ScriptString BusyText() { mixin(MGPC!(ScriptString, 264)()); }
+		ScriptString AwayText() { mixin(MGPC!(ScriptString, 252)()); }
+		ScriptString OnlineText() { mixin(MGPC!(ScriptString, 240)()); }
+		ScriptString OfflineText() { mixin(MGPC!(ScriptString, 228)()); }
+		ScriptString bHasInvitedYouCol() { mixin(MGPC!(ScriptString, 216)()); }
+		ScriptString bHaveInvitedCol() { mixin(MGPC!(ScriptString, 204)()); }
+		ScriptString bHasVoiceSupportCol() { mixin(MGPC!(ScriptString, 192)()); }
+		ScriptString bIsJoinableCol() { mixin(MGPC!(ScriptString, 180)()); }
+		ScriptString bIsPlayingThisGameCol() { mixin(MGPC!(ScriptString, 168)()); }
+		ScriptString bIsPlayingCol() { mixin(MGPC!(ScriptString, 156)()); }
+		ScriptString bIsOnlineCol() { mixin(MGPC!(ScriptString, 144)()); }
+		ScriptString FriendStateCol() { mixin(MGPC!(ScriptString, 132)()); }
+		ScriptString PresenceInfoCol() { mixin(MGPC!(ScriptString, 120)()); }
+		ScriptString NickNameCol() { mixin(MGPC!(ScriptString, 108)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

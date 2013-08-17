@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.PartyBeacon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface PartyBeacon : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.PartyBeacon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.PartyBeacon")()); }
 	private static __gshared PartyBeacon mDefaultProperties;
-	@property final static PartyBeacon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PartyBeacon)("PartyBeacon IpDrv.Default__PartyBeacon")); }
+	@property final static PartyBeacon DefaultProperties() { mixin(MGDPC!(PartyBeacon, "PartyBeacon IpDrv.Default__PartyBeacon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnDestroyComplete() { return mOnDestroyComplete ? mOnDestroyComplete : (mOnDestroyComplete = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeacon.OnDestroyComplete")); }
-			ScriptFunction DestroyBeacon() { return mDestroyBeacon ? mDestroyBeacon : (mDestroyBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeacon.DestroyBeacon")); }
+			ScriptFunction OnDestroyComplete() { mixin(MGF!("mOnDestroyComplete", "Function IpDrv.PartyBeacon.OnDestroyComplete")()); }
+			ScriptFunction DestroyBeacon() { mixin(MGF!("mDestroyBeacon", "Function IpDrv.PartyBeacon.DestroyBeacon")()); }
 		}
 	}
 	enum EReservationPacketType : ubyte
@@ -55,15 +56,15 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.PartyBeacon.PlayerReservation")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeacon.PlayerReservation")()); }
 		@property final auto ref
 		{
-			float ElapsedSessionTime() { return *cast(float*)(cast(size_t)&this + 32); }
-			UObject.Double Sigma() { return *cast(UObject.Double*)(cast(size_t)&this + 24); }
-			UObject.Double Mu() { return *cast(UObject.Double*)(cast(size_t)&this + 16); }
-			int XpLevel() { return *cast(int*)(cast(size_t)&this + 12); }
-			int Skill() { return *cast(int*)(cast(size_t)&this + 8); }
-			OnlineSubsystem.UniqueNetId NetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+			float ElapsedSessionTime() { mixin(MGPS!(float, 32)()); }
+			UObject.Double Sigma() { mixin(MGPS!(UObject.Double, 24)()); }
+			UObject.Double Mu() { mixin(MGPS!(UObject.Double, 16)()); }
+			int XpLevel() { mixin(MGPS!(int, 12)()); }
+			int Skill() { mixin(MGPS!(int, 8)()); }
+			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 0)()); }
 		}
 	}
 	struct PartyReservation
@@ -71,31 +72,32 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.PartyBeacon.PartyReservation")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeacon.PartyReservation")()); }
 		@property final auto ref
 		{
-			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { return *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)(cast(size_t)&this + 12); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 4); }
-			int TeamNum() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { mixin(MGPS!(ScriptArray!(PartyBeacon.PlayerReservation), 12)()); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 4)()); }
+			int TeamNum() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptName BeaconName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 84); }
-			float ElapsedHeartbeatTime() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float HeartbeatTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			UObject.Pointer Socket() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }
-			int PartyBeaconPort() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDestroyComplete__Delegate'!
+			ScriptName BeaconName() { mixin(MGPC!(ScriptName, 84)()); }
+			float ElapsedHeartbeatTime() { mixin(MGPC!(float, 80)()); }
+			float HeartbeatTimeout() { mixin(MGPC!(float, 76)()); }
+			UObject.Pointer Socket() { mixin(MGPC!(UObject.Pointer, 68)()); }
+			int PartyBeaconPort() { mixin(MGPC!(int, 64)()); }
+			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!(UObject.Pointer, 60)()); }
 		}
-		bool bShouldTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
-		bool bShouldTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
-		bool bWantsDeferredDestroy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
-		bool bWantsDeferredDestroy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
-		bool bIsInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-		bool bIsInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+		bool bShouldTick() { mixin(MGBPC!(72, 0x4)()); }
+		bool bShouldTick(bool val) { mixin(MSBPC!(72, 0x4)()); }
+		bool bWantsDeferredDestroy() { mixin(MGBPC!(72, 0x2)()); }
+		bool bWantsDeferredDestroy(bool val) { mixin(MSBPC!(72, 0x2)()); }
+		bool bIsInTick() { mixin(MGBPC!(72, 0x1)()); }
+		bool bIsInTick(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 final:
 	void OnDestroyComplete()

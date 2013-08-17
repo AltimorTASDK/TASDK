@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DrawBoxComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.Material;
@@ -9,22 +10,22 @@ extern(C++) interface DrawBoxComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawBoxComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DrawBoxComponent")()); }
 	private static __gshared DrawBoxComponent mDefaultProperties;
-	@property final static DrawBoxComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawBoxComponent)("DrawBoxComponent Engine.Default__DrawBoxComponent")); }
+	@property final static DrawBoxComponent DefaultProperties() { mixin(MGDPC!(DrawBoxComponent, "DrawBoxComponent Engine.Default__DrawBoxComponent")()); }
 	@property final
 	{
 		auto ref
 		{
-			Vector BoxExtent() { return *cast(Vector*)(cast(size_t)cast(void*)this + 496); }
-			Material BoxMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 492); }
-			UObject.Color BoxColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 488); }
+			Vector BoxExtent() { mixin(MGPC!(Vector, 496)()); }
+			Material BoxMaterial() { mixin(MGPC!(Material, 492)()); }
+			UObject.Color BoxColor() { mixin(MGPC!(UObject.Color, 488)()); }
 		}
-		bool bDrawOnlyIfSelected() { return (*cast(uint*)(cast(size_t)cast(void*)this + 508) & 0x4) != 0; }
-		bool bDrawOnlyIfSelected(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 508) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 508) &= ~0x4; } return val; }
-		bool bDrawLitBox() { return (*cast(uint*)(cast(size_t)cast(void*)this + 508) & 0x2) != 0; }
-		bool bDrawLitBox(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 508) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 508) &= ~0x2; } return val; }
-		bool bDrawWireBox() { return (*cast(uint*)(cast(size_t)cast(void*)this + 508) & 0x1) != 0; }
-		bool bDrawWireBox(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 508) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 508) &= ~0x1; } return val; }
+		bool bDrawOnlyIfSelected() { mixin(MGBPC!(508, 0x4)()); }
+		bool bDrawOnlyIfSelected(bool val) { mixin(MSBPC!(508, 0x4)()); }
+		bool bDrawLitBox() { mixin(MGBPC!(508, 0x2)()); }
+		bool bDrawLitBox(bool val) { mixin(MSBPC!(508, 0x2)()); }
+		bool bDrawWireBox() { mixin(MGBPC!(508, 0x1)()); }
+		bool bDrawWireBox(bool val) { mixin(MSBPC!(508, 0x1)()); }
 	}
 }

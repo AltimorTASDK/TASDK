@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrUpgradeMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrUpgradeMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrUpgradeMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrUpgradeMessage")()); }
 	private static __gshared TrUpgradeMessage mDefaultProperties;
-	@property final static TrUpgradeMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrUpgradeMessage)("TrUpgradeMessage TribesGame.Default__TrUpgradeMessage")); }
+	@property final static TrUpgradeMessage DefaultProperties() { mixin(MGDPC!(TrUpgradeMessage, "TrUpgradeMessage TribesGame.Default__TrUpgradeMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,14 +24,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUpgradeMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUpgradeMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrUpgradeMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrUpgradeMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString ObjectiveUpgraded() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 104); }
-		SoundCue UpgradeSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString ObjectiveUpgraded() { mixin(MGPC!(ScriptString, 104)()); }
+		SoundCue UpgradeSound() { mixin(MGPC!(SoundCue, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

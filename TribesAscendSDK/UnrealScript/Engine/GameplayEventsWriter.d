@@ -1,6 +1,7 @@
 module UnrealScript.Engine.GameplayEventsWriter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameInfo;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.OnlineSubsystem;
@@ -13,9 +14,9 @@ extern(C++) interface GameplayEventsWriter : GameplayEvents
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameplayEventsWriter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameplayEventsWriter")()); }
 	private static __gshared GameplayEventsWriter mDefaultProperties;
-	@property final static GameplayEventsWriter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameplayEventsWriter)("GameplayEventsWriter Engine.Default__GameplayEventsWriter")); }
+	@property final static GameplayEventsWriter DefaultProperties() { mixin(MGDPC!(GameplayEventsWriter, "GameplayEventsWriter Engine.Default__GameplayEventsWriter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -56,39 +57,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ResolvePlayerIndex() { return mResolvePlayerIndex ? mResolvePlayerIndex : (mResolvePlayerIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.ResolvePlayerIndex")); }
-			ScriptFunction StartLogging() { return mStartLogging ? mStartLogging : (mStartLogging = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.StartLogging")); }
-			ScriptFunction ResetLogging() { return mResetLogging ? mResetLogging : (mResetLogging = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.ResetLogging")); }
-			ScriptFunction EndLogging() { return mEndLogging ? mEndLogging : (mEndLogging = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.EndLogging")); }
-			ScriptFunction IsSessionInProgress() { return mIsSessionInProgress ? mIsSessionInProgress : (mIsSessionInProgress = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.IsSessionInProgress")); }
-			ScriptFunction OpenStatsFile() { return mOpenStatsFile ? mOpenStatsFile : (mOpenStatsFile = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.OpenStatsFile")); }
-			ScriptFunction CloseStatsFile() { return mCloseStatsFile ? mCloseStatsFile : (mCloseStatsFile = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.CloseStatsFile")); }
-			ScriptFunction SerializeHeader() { return mSerializeHeader ? mSerializeHeader : (mSerializeHeader = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.SerializeHeader")); }
-			ScriptFunction SerializeFooter() { return mSerializeFooter ? mSerializeFooter : (mSerializeFooter = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.SerializeFooter")); }
-			ScriptFunction Poll() { return mPoll ? mPoll : (mPoll = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.Poll")); }
-			ScriptFunction GetGameTypeId() { return mGetGameTypeId ? mGetGameTypeId : (mGetGameTypeId = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.GetGameTypeId")); }
-			ScriptFunction LogGameIntEvent() { return mLogGameIntEvent ? mLogGameIntEvent : (mLogGameIntEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogGameIntEvent")); }
-			ScriptFunction LogGameStringEvent() { return mLogGameStringEvent ? mLogGameStringEvent : (mLogGameStringEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogGameStringEvent")); }
-			ScriptFunction LogGameFloatEvent() { return mLogGameFloatEvent ? mLogGameFloatEvent : (mLogGameFloatEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogGameFloatEvent")); }
-			ScriptFunction LogGamePositionEvent() { return mLogGamePositionEvent ? mLogGamePositionEvent : (mLogGamePositionEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogGamePositionEvent")); }
-			ScriptFunction LogTeamIntEvent() { return mLogTeamIntEvent ? mLogTeamIntEvent : (mLogTeamIntEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogTeamIntEvent")); }
-			ScriptFunction LogTeamFloatEvent() { return mLogTeamFloatEvent ? mLogTeamFloatEvent : (mLogTeamFloatEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogTeamFloatEvent")); }
-			ScriptFunction LogTeamStringEvent() { return mLogTeamStringEvent ? mLogTeamStringEvent : (mLogTeamStringEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogTeamStringEvent")); }
-			ScriptFunction LogPlayerIntEvent() { return mLogPlayerIntEvent ? mLogPlayerIntEvent : (mLogPlayerIntEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogPlayerIntEvent")); }
-			ScriptFunction LogPlayerFloatEvent() { return mLogPlayerFloatEvent ? mLogPlayerFloatEvent : (mLogPlayerFloatEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogPlayerFloatEvent")); }
-			ScriptFunction LogPlayerStringEvent() { return mLogPlayerStringEvent ? mLogPlayerStringEvent : (mLogPlayerStringEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogPlayerStringEvent")); }
-			ScriptFunction LogPlayerSpawnEvent() { return mLogPlayerSpawnEvent ? mLogPlayerSpawnEvent : (mLogPlayerSpawnEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogPlayerSpawnEvent")); }
-			ScriptFunction LogPlayerLoginChange() { return mLogPlayerLoginChange ? mLogPlayerLoginChange : (mLogPlayerLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogPlayerLoginChange")); }
-			ScriptFunction LogAllPlayerPositionsEvent() { return mLogAllPlayerPositionsEvent ? mLogAllPlayerPositionsEvent : (mLogAllPlayerPositionsEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogAllPlayerPositionsEvent")); }
-			ScriptFunction LogPlayerKillDeath() { return mLogPlayerKillDeath ? mLogPlayerKillDeath : (mLogPlayerKillDeath = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogPlayerKillDeath")); }
-			ScriptFunction LogPlayerPlayerEvent() { return mLogPlayerPlayerEvent ? mLogPlayerPlayerEvent : (mLogPlayerPlayerEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogPlayerPlayerEvent")); }
-			ScriptFunction LogWeaponIntEvent() { return mLogWeaponIntEvent ? mLogWeaponIntEvent : (mLogWeaponIntEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogWeaponIntEvent")); }
-			ScriptFunction LogDamageEvent() { return mLogDamageEvent ? mLogDamageEvent : (mLogDamageEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogDamageEvent")); }
-			ScriptFunction LogProjectileIntEvent() { return mLogProjectileIntEvent ? mLogProjectileIntEvent : (mLogProjectileIntEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogProjectileIntEvent")); }
-			ScriptFunction LogSystemPollEvents() { return mLogSystemPollEvents ? mLogSystemPollEvents : (mLogSystemPollEvents = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.LogSystemPollEvents")); }
-			ScriptFunction GetGenericParamListEntry() { return mGetGenericParamListEntry ? mGetGenericParamListEntry : (mGetGenericParamListEntry = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.GetGenericParamListEntry")); }
-			ScriptFunction RecordAIPathFail() { return mRecordAIPathFail ? mRecordAIPathFail : (mRecordAIPathFail = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.RecordAIPathFail")); }
-			ScriptFunction RecordCoverLinkFireLinks() { return mRecordCoverLinkFireLinks ? mRecordCoverLinkFireLinks : (mRecordCoverLinkFireLinks = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEventsWriter.RecordCoverLinkFireLinks")); }
+			ScriptFunction ResolvePlayerIndex() { mixin(MGF!("mResolvePlayerIndex", "Function Engine.GameplayEventsWriter.ResolvePlayerIndex")()); }
+			ScriptFunction StartLogging() { mixin(MGF!("mStartLogging", "Function Engine.GameplayEventsWriter.StartLogging")()); }
+			ScriptFunction ResetLogging() { mixin(MGF!("mResetLogging", "Function Engine.GameplayEventsWriter.ResetLogging")()); }
+			ScriptFunction EndLogging() { mixin(MGF!("mEndLogging", "Function Engine.GameplayEventsWriter.EndLogging")()); }
+			ScriptFunction IsSessionInProgress() { mixin(MGF!("mIsSessionInProgress", "Function Engine.GameplayEventsWriter.IsSessionInProgress")()); }
+			ScriptFunction OpenStatsFile() { mixin(MGF!("mOpenStatsFile", "Function Engine.GameplayEventsWriter.OpenStatsFile")()); }
+			ScriptFunction CloseStatsFile() { mixin(MGF!("mCloseStatsFile", "Function Engine.GameplayEventsWriter.CloseStatsFile")()); }
+			ScriptFunction SerializeHeader() { mixin(MGF!("mSerializeHeader", "Function Engine.GameplayEventsWriter.SerializeHeader")()); }
+			ScriptFunction SerializeFooter() { mixin(MGF!("mSerializeFooter", "Function Engine.GameplayEventsWriter.SerializeFooter")()); }
+			ScriptFunction Poll() { mixin(MGF!("mPoll", "Function Engine.GameplayEventsWriter.Poll")()); }
+			ScriptFunction GetGameTypeId() { mixin(MGF!("mGetGameTypeId", "Function Engine.GameplayEventsWriter.GetGameTypeId")()); }
+			ScriptFunction LogGameIntEvent() { mixin(MGF!("mLogGameIntEvent", "Function Engine.GameplayEventsWriter.LogGameIntEvent")()); }
+			ScriptFunction LogGameStringEvent() { mixin(MGF!("mLogGameStringEvent", "Function Engine.GameplayEventsWriter.LogGameStringEvent")()); }
+			ScriptFunction LogGameFloatEvent() { mixin(MGF!("mLogGameFloatEvent", "Function Engine.GameplayEventsWriter.LogGameFloatEvent")()); }
+			ScriptFunction LogGamePositionEvent() { mixin(MGF!("mLogGamePositionEvent", "Function Engine.GameplayEventsWriter.LogGamePositionEvent")()); }
+			ScriptFunction LogTeamIntEvent() { mixin(MGF!("mLogTeamIntEvent", "Function Engine.GameplayEventsWriter.LogTeamIntEvent")()); }
+			ScriptFunction LogTeamFloatEvent() { mixin(MGF!("mLogTeamFloatEvent", "Function Engine.GameplayEventsWriter.LogTeamFloatEvent")()); }
+			ScriptFunction LogTeamStringEvent() { mixin(MGF!("mLogTeamStringEvent", "Function Engine.GameplayEventsWriter.LogTeamStringEvent")()); }
+			ScriptFunction LogPlayerIntEvent() { mixin(MGF!("mLogPlayerIntEvent", "Function Engine.GameplayEventsWriter.LogPlayerIntEvent")()); }
+			ScriptFunction LogPlayerFloatEvent() { mixin(MGF!("mLogPlayerFloatEvent", "Function Engine.GameplayEventsWriter.LogPlayerFloatEvent")()); }
+			ScriptFunction LogPlayerStringEvent() { mixin(MGF!("mLogPlayerStringEvent", "Function Engine.GameplayEventsWriter.LogPlayerStringEvent")()); }
+			ScriptFunction LogPlayerSpawnEvent() { mixin(MGF!("mLogPlayerSpawnEvent", "Function Engine.GameplayEventsWriter.LogPlayerSpawnEvent")()); }
+			ScriptFunction LogPlayerLoginChange() { mixin(MGF!("mLogPlayerLoginChange", "Function Engine.GameplayEventsWriter.LogPlayerLoginChange")()); }
+			ScriptFunction LogAllPlayerPositionsEvent() { mixin(MGF!("mLogAllPlayerPositionsEvent", "Function Engine.GameplayEventsWriter.LogAllPlayerPositionsEvent")()); }
+			ScriptFunction LogPlayerKillDeath() { mixin(MGF!("mLogPlayerKillDeath", "Function Engine.GameplayEventsWriter.LogPlayerKillDeath")()); }
+			ScriptFunction LogPlayerPlayerEvent() { mixin(MGF!("mLogPlayerPlayerEvent", "Function Engine.GameplayEventsWriter.LogPlayerPlayerEvent")()); }
+			ScriptFunction LogWeaponIntEvent() { mixin(MGF!("mLogWeaponIntEvent", "Function Engine.GameplayEventsWriter.LogWeaponIntEvent")()); }
+			ScriptFunction LogDamageEvent() { mixin(MGF!("mLogDamageEvent", "Function Engine.GameplayEventsWriter.LogDamageEvent")()); }
+			ScriptFunction LogProjectileIntEvent() { mixin(MGF!("mLogProjectileIntEvent", "Function Engine.GameplayEventsWriter.LogProjectileIntEvent")()); }
+			ScriptFunction LogSystemPollEvents() { mixin(MGF!("mLogSystemPollEvents", "Function Engine.GameplayEventsWriter.LogSystemPollEvents")()); }
+			ScriptFunction GetGenericParamListEntry() { mixin(MGF!("mGetGenericParamListEntry", "Function Engine.GameplayEventsWriter.GetGenericParamListEntry")()); }
+			ScriptFunction RecordAIPathFail() { mixin(MGF!("mRecordAIPathFail", "Function Engine.GameplayEventsWriter.RecordAIPathFail")()); }
+			ScriptFunction RecordCoverLinkFireLinks() { mixin(MGF!("mRecordCoverLinkFireLinks", "Function Engine.GameplayEventsWriter.RecordCoverLinkFireLinks")()); }
 		}
 	}
 	static struct Constants
@@ -137,7 +138,7 @@ public extern(D):
 			GAMEEVENT_MAX_EVENTID = 0x0000FFFF,
 		}
 	}
-	@property final auto ref GameInfo Game() { return *cast(GameInfo*)(cast(size_t)cast(void*)this + 336); }
+	@property final auto ref GameInfo Game() { mixin(MGPC!(GameInfo, 336)()); }
 final:
 	int ResolvePlayerIndex(Controller pPlayer)
 	{
@@ -233,12 +234,12 @@ final:
 		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LogGameFloatEvent, params.ptr, cast(void*)0);
 	}
-	void LogGamePositionEvent(int EventID, Vector* Position, float Value)
+	void LogGamePositionEvent(int EventID, ref const Vector Position, float Value)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = EventID;
-		*cast(Vector*)&params[4] = *Position;
+		*cast(Vector*)&params[4] = Position;
 		*cast(float*)&params[16] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LogGamePositionEvent, params.ptr, cast(void*)0);
 		*Position = *cast(Vector*)&params[4];

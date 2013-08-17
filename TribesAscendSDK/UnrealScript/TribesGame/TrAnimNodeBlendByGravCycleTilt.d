@@ -1,20 +1,21 @@
 module UnrealScript.TribesGame.TrAnimNodeBlendByGravCycleTilt;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface TrAnimNodeBlendByGravCycleTilt : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByGravCycleTilt")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendByGravCycleTilt")()); }
 	private static __gshared TrAnimNodeBlendByGravCycleTilt mDefaultProperties;
-	@property final static TrAnimNodeBlendByGravCycleTilt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByGravCycleTilt)("TrAnimNodeBlendByGravCycleTilt TribesGame.Default__TrAnimNodeBlendByGravCycleTilt")); }
+	@property final static TrAnimNodeBlendByGravCycleTilt DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByGravCycleTilt, "TrAnimNodeBlendByGravCycleTilt TribesGame.Default__TrAnimNodeBlendByGravCycleTilt")()); }
 	@property final auto ref
 	{
-		float m_fDeadZone() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-		ScriptName m_RootBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 252); }
-		float m_fTiltScale() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-		float m_fTiltAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
+		float m_fDeadZone() { mixin(MGPC!(float, 260)()); }
+		ScriptName m_RootBoneName() { mixin(MGPC!(ScriptName, 252)()); }
+		float m_fTiltScale() { mixin(MGPC!(float, 248)()); }
+		float m_fTiltAmount() { mixin(MGPC!(float, 244)()); }
 	}
 }

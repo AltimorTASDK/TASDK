@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SkeletalMesh;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.FaceFXAsset;
 import UnrealScript.Engine.SkeletalMeshSocket;
@@ -13,9 +14,9 @@ extern(C++) interface SkeletalMesh : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMesh")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkeletalMesh")()); }
 	private static __gshared SkeletalMesh mDefaultProperties;
-	@property final static SkeletalMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMesh)("SkeletalMesh Engine.Default__SkeletalMesh")); }
+	@property final static SkeletalMesh DefaultProperties() { mixin(MGDPC!(SkeletalMesh, "SkeletalMesh Engine.Default__SkeletalMesh")()); }
 	enum SoftBodyBoneType : ubyte
 	{
 		SOFTBODYBONE_Fixed = 0,
@@ -67,11 +68,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.SoftBodyTetraLink")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMesh.SoftBodyTetraLink")()); }
 		@property final auto ref
 		{
-			int Index() { return *cast(int*)(cast(size_t)&this + 0); }
-			Vector Bary() { return *cast(Vector*)(cast(size_t)&this + 4); }
+			int Index() { mixin(MGPS!(int, 0)()); }
+			Vector Bary() { mixin(MGPS!(Vector, 4)()); }
 		}
 	}
 	struct SoftBodySpecialBoneInfo
@@ -79,12 +80,12 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.SoftBodySpecialBoneInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMesh.SoftBodySpecialBoneInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) AttachedVertexIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 12); }
-			SkeletalMesh.SoftBodyBoneType BoneType() { return *cast(SkeletalMesh.SoftBodyBoneType*)(cast(size_t)&this + 8); }
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(int) AttachedVertexIndices() { mixin(MGPS!(ScriptArray!(int), 12)()); }
+			SkeletalMesh.SoftBodyBoneType BoneType() { mixin(MGPS!(SkeletalMesh.SoftBodyBoneType, 8)()); }
+			ScriptName BoneName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct ClothSpecialBoneInfo
@@ -92,12 +93,12 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.ClothSpecialBoneInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMesh.ClothSpecialBoneInfo")()); }
 		@property final auto ref
 		{
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			SkeletalMesh.ClothBoneType BoneType() { return *cast(SkeletalMesh.ClothBoneType*)(cast(size_t)&this + 8); }
-			ScriptArray!(int) AttachedVertexIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 12); }
+			ScriptName BoneName() { mixin(MGPS!(ScriptName, 0)()); }
+			SkeletalMesh.ClothBoneType BoneType() { mixin(MGPS!(SkeletalMesh.ClothBoneType, 8)()); }
+			ScriptArray!(int) AttachedVertexIndices() { mixin(MGPS!(ScriptArray!(int), 12)()); }
 		}
 	}
 	struct SkeletalMeshLODInfo
@@ -105,14 +106,14 @@ public extern(D):
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.SkeletalMeshLODInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMesh.SkeletalMeshLODInfo")()); }
 		@property final auto ref
 		{
-			float DisplayFactor() { return *cast(float*)(cast(size_t)&this + 0); }
-			float LODHysteresis() { return *cast(float*)(cast(size_t)&this + 4); }
-			ScriptArray!(int) LODMaterialMap() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 8); }
-			ScriptArray!(bool) bEnableShadowCasting() { return *cast(ScriptArray!(bool)*)(cast(size_t)&this + 20); }
-			ScriptArray!(SkeletalMesh.TriangleSortOption) TriangleSorting() { return *cast(ScriptArray!(SkeletalMesh.TriangleSortOption)*)(cast(size_t)&this + 32); }
+			float DisplayFactor() { mixin(MGPS!(float, 0)()); }
+			float LODHysteresis() { mixin(MGPS!(float, 4)()); }
+			ScriptArray!(int) LODMaterialMap() { mixin(MGPS!(ScriptArray!(int), 8)()); }
+			ScriptArray!(bool) bEnableShadowCasting() { mixin(MGPS!(ScriptArray!(bool), 20)()); }
+			ScriptArray!(SkeletalMesh.TriangleSortOption) TriangleSorting() { mixin(MGPS!(ScriptArray!(SkeletalMesh.TriangleSortOption), 32)()); }
 			// WARNING: Property 'TriangleSortSettings' has the same name as a defined type!
 		}
 	}
@@ -121,12 +122,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.TriangleSortSettings")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMesh.TriangleSortSettings")()); }
 		@property final auto ref
 		{
-			SkeletalMesh.TriangleSortOption TriangleSorting() { return *cast(SkeletalMesh.TriangleSortOption*)(cast(size_t)&this + 0); }
-			SkeletalMesh.TriangleSortAxis CustomLeftRightAxis() { return *cast(SkeletalMesh.TriangleSortAxis*)(cast(size_t)&this + 1); }
-			ScriptName CustomLeftRightBoneName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			SkeletalMesh.TriangleSortOption TriangleSorting() { mixin(MGPS!(SkeletalMesh.TriangleSortOption, 0)()); }
+			SkeletalMesh.TriangleSortAxis CustomLeftRightAxis() { mixin(MGPS!(SkeletalMesh.TriangleSortAxis, 1)()); }
+			ScriptName CustomLeftRightBoneName() { mixin(MGPS!(ScriptName, 4)()); }
 		}
 	}
 	struct BoneMirrorExport
@@ -134,12 +135,12 @@ public extern(D):
 		private ubyte __buffer__[17];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.BoneMirrorExport")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMesh.BoneMirrorExport")()); }
 		@property final auto ref
 		{
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptName SourceBoneName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-			UObject.EAxis BoneFlipAxis() { return *cast(UObject.EAxis*)(cast(size_t)&this + 16); }
+			ScriptName BoneName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName SourceBoneName() { mixin(MGPS!(ScriptName, 8)()); }
+			UObject.EAxis BoneFlipAxis() { mixin(MGPS!(UObject.EAxis, 16)()); }
 		}
 	}
 	struct BoneMirrorInfo
@@ -147,11 +148,11 @@ public extern(D):
 		private ubyte __buffer__[5];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.BoneMirrorInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMesh.BoneMirrorInfo")()); }
 		@property final auto ref
 		{
-			int SourceIndex() { return *cast(int*)(cast(size_t)&this + 0); }
-			UObject.EAxis BoneFlipAxis() { return *cast(UObject.EAxis*)(cast(size_t)&this + 4); }
+			int SourceIndex() { mixin(MGPS!(int, 0)()); }
+			UObject.EAxis BoneFlipAxis() { mixin(MGPS!(UObject.EAxis, 4)()); }
 		}
 	}
 	@property final
@@ -159,152 +160,153 @@ public extern(D):
 		auto ref
 		{
 			// WARNING: Property 'FaceFXAsset' has the same name as a defined type!
-			UObject.BoxSphereBounds Bounds() { return *cast(UObject.BoxSphereBounds*)(cast(size_t)cast(void*)this + 60); }
-			ScriptArray!(MaterialInterface) Materials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 88); }
-			ScriptArray!(ApexClothingAsset) ClothingAssets() { return *cast(ScriptArray!(ApexClothingAsset)*)(cast(size_t)cast(void*)this + 100); }
-			Vector Origin() { return *cast(Vector*)(cast(size_t)cast(void*)this + 112); }
-			Rotator RotOrigin() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 124); }
-			ScriptArray!(int) RefSkeleton() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 136); }
-			int SkeletalDepth() { return *cast(int*)(cast(size_t)cast(void*)this + 148); }
-			UObject.IndirectArray_Mirror LODModels() { return *cast(UObject.IndirectArray_Mirror*)(cast(size_t)cast(void*)this + 212); }
-			ScriptArray!(UObject.BoneAtom) RefBasesInvMatrix() { return *cast(ScriptArray!(UObject.BoneAtom)*)(cast(size_t)cast(void*)this + 224); }
-			ScriptArray!(SkeletalMesh.BoneMirrorInfo) SkelMirrorTable() { return *cast(ScriptArray!(SkeletalMesh.BoneMirrorInfo)*)(cast(size_t)cast(void*)this + 236); }
-			UObject.EAxis SkelMirrorAxis() { return *cast(UObject.EAxis*)(cast(size_t)cast(void*)this + 248); }
-			UObject.EAxis SkelMirrorFlipAxis() { return *cast(UObject.EAxis*)(cast(size_t)cast(void*)this + 249); }
-			ScriptArray!(SkeletalMeshSocket) Sockets() { return *cast(ScriptArray!(SkeletalMeshSocket)*)(cast(size_t)cast(void*)this + 252); }
-			ScriptArray!(ScriptString) BoneBreakNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 264); }
-			ScriptArray!(SkeletalMesh.BoneBreakOption) BoneBreakOptions() { return *cast(ScriptArray!(SkeletalMesh.BoneBreakOption)*)(cast(size_t)cast(void*)this + 276); }
-			ScriptArray!(SkeletalMesh.SkeletalMeshLODInfo) LODInfo() { return *cast(ScriptArray!(SkeletalMesh.SkeletalMeshLODInfo)*)(cast(size_t)cast(void*)this + 288); }
-			ScriptArray!(ScriptName) PerPolyCollisionBones() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 300); }
-			ScriptArray!(ScriptName) AddToParentPerPolyCollisionBone() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 312); }
-			ScriptArray!(int) PerPolyBoneKDOPs() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 324); }
-			PhysicsAsset BoundsPreviewAsset() { return *cast(PhysicsAsset*)(cast(size_t)cast(void*)this + 344); }
-			ScriptArray!(MorphTargetSet) PreviewMorphSets() { return *cast(ScriptArray!(MorphTargetSet)*)(cast(size_t)cast(void*)this + 348); }
-			int LODBiasPC() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int LODBiasPS3() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-			int LODBiasXbox360() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
-			ScriptString SourceFilePath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 372); }
-			ScriptString SourceFileTimestamp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 384); }
-			ScriptArray!(UObject.Pointer) ClothMesh() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 396); }
-			ScriptArray!(float) ClothMeshScale() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 408); }
-			ScriptArray!(int) ClothToGraphicsVertMap() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 420); }
-			ScriptArray!(float) ClothMovementScale() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 432); }
-			SkeletalMesh.ClothMovementScaleGen ClothMovementScaleGenMode() { return *cast(SkeletalMesh.ClothMovementScaleGen*)(cast(size_t)cast(void*)this + 444); }
-			float ClothToAnimMeshMaxDist() { return *cast(float*)(cast(size_t)cast(void*)this + 448); }
-			ScriptArray!(int) ClothWeldingMap() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 456); }
-			int ClothWeldingDomain() { return *cast(int*)(cast(size_t)cast(void*)this + 468); }
-			ScriptArray!(int) ClothWeldedIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 472); }
-			int NumFreeClothVerts() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
-			ScriptArray!(int) ClothIndexBuffer() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 492); }
-			ScriptArray!(ScriptName) ClothBones() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 504); }
-			int ClothHierarchyLevels() { return *cast(int*)(cast(size_t)cast(void*)this + 516); }
-			float ClothStretchStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			float ClothBendStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			float ClothDensity() { return *cast(float*)(cast(size_t)cast(void*)this + 532); }
-			float ClothThickness() { return *cast(float*)(cast(size_t)cast(void*)this + 536); }
-			float ClothDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
-			int ClothIterations() { return *cast(int*)(cast(size_t)cast(void*)this + 544); }
-			int ClothHierarchicalIterations() { return *cast(int*)(cast(size_t)cast(void*)this + 548); }
-			float ClothFriction() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			float ClothRelativeGridSpacing() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			float ClothPressure() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-			float ClothCollisionResponseCoefficient() { return *cast(float*)(cast(size_t)cast(void*)this + 564); }
-			float ClothAttachmentResponseCoefficient() { return *cast(float*)(cast(size_t)cast(void*)this + 568); }
-			float ClothAttachmentTearFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-			float ClothSleepLinearVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
-			float HardStretchLimitFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-			ScriptArray!(SkeletalMesh.ClothSpecialBoneInfo) ClothSpecialBones() { return *cast(ScriptArray!(SkeletalMesh.ClothSpecialBoneInfo)*)(cast(size_t)cast(void*)this + 588); }
-			float ClothMetalImpulseThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
-			float ClothMetalPenetrationDepth() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-			float ClothMetalMaxDeformationDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 612); }
-			float ClothTearFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 620); }
-			int ClothTearReserve() { return *cast(int*)(cast(size_t)cast(void*)this + 624); }
-			Vector ValidBoundsMin() { return *cast(Vector*)(cast(size_t)cast(void*)this + 632); }
-			Vector ValidBoundsMax() { return *cast(Vector*)(cast(size_t)cast(void*)this + 644); }
-			UObject.Map_Mirror ClothTornTriMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 656); }
-			ScriptArray!(int) SoftBodySurfaceToGraphicsVertMap() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 716); }
-			ScriptArray!(int) SoftBodySurfaceIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 728); }
-			ScriptArray!(Vector) SoftBodyTetraVertsUnscaled() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 740); }
-			ScriptArray!(int) SoftBodyTetraIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 752); }
-			ScriptArray!(SkeletalMesh.SoftBodyTetraLink) SoftBodyTetraLinks() { return *cast(ScriptArray!(SkeletalMesh.SoftBodyTetraLink)*)(cast(size_t)cast(void*)this + 764); }
-			ScriptArray!(UObject.Pointer) CachedSoftBodyMeshes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 776); }
-			ScriptArray!(float) CachedSoftBodyMeshScales() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 788); }
-			ScriptArray!(ScriptName) SoftBodyBones() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 800); }
-			ScriptArray!(SkeletalMesh.SoftBodySpecialBoneInfo) SoftBodySpecialBones() { return *cast(ScriptArray!(SkeletalMesh.SoftBodySpecialBoneInfo)*)(cast(size_t)cast(void*)this + 812); }
-			float SoftBodyVolumeStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 824); }
-			float SoftBodyStretchingStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 828); }
-			float SoftBodyDensity() { return *cast(float*)(cast(size_t)cast(void*)this + 832); }
-			float SoftBodyParticleRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 836); }
-			float SoftBodyDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 840); }
-			int SoftBodySolverIterations() { return *cast(int*)(cast(size_t)cast(void*)this + 844); }
-			float SoftBodyFriction() { return *cast(float*)(cast(size_t)cast(void*)this + 848); }
-			float SoftBodyRelativeGridSpacing() { return *cast(float*)(cast(size_t)cast(void*)this + 852); }
-			float SoftBodySleepLinearVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 856); }
-			float SoftBodyAttachmentResponse() { return *cast(float*)(cast(size_t)cast(void*)this + 864); }
-			float SoftBodyCollisionResponse() { return *cast(float*)(cast(size_t)cast(void*)this + 868); }
-			float SoftBodyDetailLevel() { return *cast(float*)(cast(size_t)cast(void*)this + 872); }
-			int SoftBodySubdivisionLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 876); }
-			float SoftBodyAttachmentThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 884); }
-			float SoftBodyAttachmentTearFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 892); }
-			ScriptArray!(bool) GraphicsIndexIsCloth() { return *cast(ScriptArray!(bool)*)(cast(size_t)cast(void*)this + 900); }
-			ScriptArray!(float) CachedStreamingTextureFactors() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 912); }
-			float StreamingDistanceMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 924); }
-			int ReleaseResourcesFence() { return *cast(int*)(cast(size_t)cast(void*)this + 928); }
-			QWord SkelMeshRUID() { return *cast(QWord*)(cast(size_t)cast(void*)this + 932); }
+			UObject.BoxSphereBounds Bounds() { mixin(MGPC!(UObject.BoxSphereBounds, 60)()); }
+			ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 88)()); }
+			ScriptArray!(ApexClothingAsset) ClothingAssets() { mixin(MGPC!(ScriptArray!(ApexClothingAsset), 100)()); }
+			Vector Origin() { mixin(MGPC!(Vector, 112)()); }
+			Rotator RotOrigin() { mixin(MGPC!(Rotator, 124)()); }
+			ScriptArray!(int) RefSkeleton() { mixin(MGPC!(ScriptArray!(int), 136)()); }
+			int SkeletalDepth() { mixin(MGPC!(int, 148)()); }
+			// ERROR: Unsupported object class 'MapProperty' for the property named 'NameIndexMap'!
+			UObject.IndirectArray_Mirror LODModels() { mixin(MGPC!(UObject.IndirectArray_Mirror, 212)()); }
+			ScriptArray!(UObject.BoneAtom) RefBasesInvMatrix() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 224)()); }
+			ScriptArray!(SkeletalMesh.BoneMirrorInfo) SkelMirrorTable() { mixin(MGPC!(ScriptArray!(SkeletalMesh.BoneMirrorInfo), 236)()); }
+			UObject.EAxis SkelMirrorAxis() { mixin(MGPC!(UObject.EAxis, 248)()); }
+			UObject.EAxis SkelMirrorFlipAxis() { mixin(MGPC!(UObject.EAxis, 249)()); }
+			ScriptArray!(SkeletalMeshSocket) Sockets() { mixin(MGPC!(ScriptArray!(SkeletalMeshSocket), 252)()); }
+			ScriptArray!(ScriptString) BoneBreakNames() { mixin(MGPC!(ScriptArray!(ScriptString), 264)()); }
+			ScriptArray!(SkeletalMesh.BoneBreakOption) BoneBreakOptions() { mixin(MGPC!(ScriptArray!(SkeletalMesh.BoneBreakOption), 276)()); }
+			ScriptArray!(SkeletalMesh.SkeletalMeshLODInfo) LODInfo() { mixin(MGPC!(ScriptArray!(SkeletalMesh.SkeletalMeshLODInfo), 288)()); }
+			ScriptArray!(ScriptName) PerPolyCollisionBones() { mixin(MGPC!(ScriptArray!(ScriptName), 300)()); }
+			ScriptArray!(ScriptName) AddToParentPerPolyCollisionBone() { mixin(MGPC!(ScriptArray!(ScriptName), 312)()); }
+			ScriptArray!(int) PerPolyBoneKDOPs() { mixin(MGPC!(ScriptArray!(int), 324)()); }
+			PhysicsAsset BoundsPreviewAsset() { mixin(MGPC!(PhysicsAsset, 344)()); }
+			ScriptArray!(MorphTargetSet) PreviewMorphSets() { mixin(MGPC!(ScriptArray!(MorphTargetSet), 348)()); }
+			int LODBiasPC() { mixin(MGPC!(int, 360)()); }
+			int LODBiasPS3() { mixin(MGPC!(int, 364)()); }
+			int LODBiasXbox360() { mixin(MGPC!(int, 368)()); }
+			ScriptString SourceFilePath() { mixin(MGPC!(ScriptString, 372)()); }
+			ScriptString SourceFileTimestamp() { mixin(MGPC!(ScriptString, 384)()); }
+			ScriptArray!(UObject.Pointer) ClothMesh() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 396)()); }
+			ScriptArray!(float) ClothMeshScale() { mixin(MGPC!(ScriptArray!(float), 408)()); }
+			ScriptArray!(int) ClothToGraphicsVertMap() { mixin(MGPC!(ScriptArray!(int), 420)()); }
+			ScriptArray!(float) ClothMovementScale() { mixin(MGPC!(ScriptArray!(float), 432)()); }
+			SkeletalMesh.ClothMovementScaleGen ClothMovementScaleGenMode() { mixin(MGPC!(SkeletalMesh.ClothMovementScaleGen, 444)()); }
+			float ClothToAnimMeshMaxDist() { mixin(MGPC!(float, 448)()); }
+			ScriptArray!(int) ClothWeldingMap() { mixin(MGPC!(ScriptArray!(int), 456)()); }
+			int ClothWeldingDomain() { mixin(MGPC!(int, 468)()); }
+			ScriptArray!(int) ClothWeldedIndices() { mixin(MGPC!(ScriptArray!(int), 472)()); }
+			int NumFreeClothVerts() { mixin(MGPC!(int, 488)()); }
+			ScriptArray!(int) ClothIndexBuffer() { mixin(MGPC!(ScriptArray!(int), 492)()); }
+			ScriptArray!(ScriptName) ClothBones() { mixin(MGPC!(ScriptArray!(ScriptName), 504)()); }
+			int ClothHierarchyLevels() { mixin(MGPC!(int, 516)()); }
+			float ClothStretchStiffness() { mixin(MGPC!(float, 524)()); }
+			float ClothBendStiffness() { mixin(MGPC!(float, 528)()); }
+			float ClothDensity() { mixin(MGPC!(float, 532)()); }
+			float ClothThickness() { mixin(MGPC!(float, 536)()); }
+			float ClothDamping() { mixin(MGPC!(float, 540)()); }
+			int ClothIterations() { mixin(MGPC!(int, 544)()); }
+			int ClothHierarchicalIterations() { mixin(MGPC!(int, 548)()); }
+			float ClothFriction() { mixin(MGPC!(float, 552)()); }
+			float ClothRelativeGridSpacing() { mixin(MGPC!(float, 556)()); }
+			float ClothPressure() { mixin(MGPC!(float, 560)()); }
+			float ClothCollisionResponseCoefficient() { mixin(MGPC!(float, 564)()); }
+			float ClothAttachmentResponseCoefficient() { mixin(MGPC!(float, 568)()); }
+			float ClothAttachmentTearFactor() { mixin(MGPC!(float, 572)()); }
+			float ClothSleepLinearVelocity() { mixin(MGPC!(float, 576)()); }
+			float HardStretchLimitFactor() { mixin(MGPC!(float, 580)()); }
+			ScriptArray!(SkeletalMesh.ClothSpecialBoneInfo) ClothSpecialBones() { mixin(MGPC!(ScriptArray!(SkeletalMesh.ClothSpecialBoneInfo), 588)()); }
+			float ClothMetalImpulseThreshold() { mixin(MGPC!(float, 604)()); }
+			float ClothMetalPenetrationDepth() { mixin(MGPC!(float, 608)()); }
+			float ClothMetalMaxDeformationDistance() { mixin(MGPC!(float, 612)()); }
+			float ClothTearFactor() { mixin(MGPC!(float, 620)()); }
+			int ClothTearReserve() { mixin(MGPC!(int, 624)()); }
+			Vector ValidBoundsMin() { mixin(MGPC!(Vector, 632)()); }
+			Vector ValidBoundsMax() { mixin(MGPC!(Vector, 644)()); }
+			UObject.Map_Mirror ClothTornTriMap() { mixin(MGPC!(UObject.Map_Mirror, 656)()); }
+			ScriptArray!(int) SoftBodySurfaceToGraphicsVertMap() { mixin(MGPC!(ScriptArray!(int), 716)()); }
+			ScriptArray!(int) SoftBodySurfaceIndices() { mixin(MGPC!(ScriptArray!(int), 728)()); }
+			ScriptArray!(Vector) SoftBodyTetraVertsUnscaled() { mixin(MGPC!(ScriptArray!(Vector), 740)()); }
+			ScriptArray!(int) SoftBodyTetraIndices() { mixin(MGPC!(ScriptArray!(int), 752)()); }
+			ScriptArray!(SkeletalMesh.SoftBodyTetraLink) SoftBodyTetraLinks() { mixin(MGPC!(ScriptArray!(SkeletalMesh.SoftBodyTetraLink), 764)()); }
+			ScriptArray!(UObject.Pointer) CachedSoftBodyMeshes() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 776)()); }
+			ScriptArray!(float) CachedSoftBodyMeshScales() { mixin(MGPC!(ScriptArray!(float), 788)()); }
+			ScriptArray!(ScriptName) SoftBodyBones() { mixin(MGPC!(ScriptArray!(ScriptName), 800)()); }
+			ScriptArray!(SkeletalMesh.SoftBodySpecialBoneInfo) SoftBodySpecialBones() { mixin(MGPC!(ScriptArray!(SkeletalMesh.SoftBodySpecialBoneInfo), 812)()); }
+			float SoftBodyVolumeStiffness() { mixin(MGPC!(float, 824)()); }
+			float SoftBodyStretchingStiffness() { mixin(MGPC!(float, 828)()); }
+			float SoftBodyDensity() { mixin(MGPC!(float, 832)()); }
+			float SoftBodyParticleRadius() { mixin(MGPC!(float, 836)()); }
+			float SoftBodyDamping() { mixin(MGPC!(float, 840)()); }
+			int SoftBodySolverIterations() { mixin(MGPC!(int, 844)()); }
+			float SoftBodyFriction() { mixin(MGPC!(float, 848)()); }
+			float SoftBodyRelativeGridSpacing() { mixin(MGPC!(float, 852)()); }
+			float SoftBodySleepLinearVelocity() { mixin(MGPC!(float, 856)()); }
+			float SoftBodyAttachmentResponse() { mixin(MGPC!(float, 864)()); }
+			float SoftBodyCollisionResponse() { mixin(MGPC!(float, 868)()); }
+			float SoftBodyDetailLevel() { mixin(MGPC!(float, 872)()); }
+			int SoftBodySubdivisionLevel() { mixin(MGPC!(int, 876)()); }
+			float SoftBodyAttachmentThreshold() { mixin(MGPC!(float, 884)()); }
+			float SoftBodyAttachmentTearFactor() { mixin(MGPC!(float, 892)()); }
+			ScriptArray!(bool) GraphicsIndexIsCloth() { mixin(MGPC!(ScriptArray!(bool), 900)()); }
+			ScriptArray!(float) CachedStreamingTextureFactors() { mixin(MGPC!(ScriptArray!(float), 912)()); }
+			float StreamingDistanceMultiplier() { mixin(MGPC!(float, 924)()); }
+			int ReleaseResourcesFence() { mixin(MGPC!(int, 928)()); }
+			QWord SkelMeshRUID() { mixin(MGPC!(QWord, 932)()); }
 		}
-		bool bPerPolyUseSoftWeighting() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x1) != 0; }
-		bool bPerPolyUseSoftWeighting(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x1; } return val; }
-		bool bUseSimpleLineCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x2) != 0; }
-		bool bUseSimpleLineCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x2; } return val; }
-		bool bUseSimpleBoxCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x4) != 0; }
-		bool bUseSimpleBoxCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x4; } return val; }
-		bool bForceCPUSkinning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x8) != 0; }
-		bool bForceCPUSkinning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x8; } return val; }
-		bool bUseFullPrecisionUVs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x10) != 0; }
-		bool bUseFullPrecisionUVs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x10; } return val; }
-		bool bUsePackedPosition() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x20) != 0; }
-		bool bUsePackedPosition(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x20; } return val; }
-		bool bLimitClothToAnimMesh() { return (*cast(uint*)(cast(size_t)cast(void*)this + 452) & 0x1) != 0; }
-		bool bLimitClothToAnimMesh(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 452) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 452) &= ~0x1; } return val; }
-		bool bForceNoWelding() { return (*cast(uint*)(cast(size_t)cast(void*)this + 484) & 0x1) != 0; }
-		bool bForceNoWelding(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x1; } return val; }
-		bool bEnableClothBendConstraints() { return (*cast(uint*)(cast(size_t)cast(void*)this + 520) & 0x1) != 0; }
-		bool bEnableClothBendConstraints(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 520) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 520) &= ~0x1; } return val; }
-		bool bEnableClothDamping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 520) & 0x2) != 0; }
-		bool bEnableClothDamping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 520) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 520) &= ~0x2; } return val; }
-		bool bUseClothCOMDamping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 520) & 0x4) != 0; }
-		bool bUseClothCOMDamping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 520) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 520) &= ~0x4; } return val; }
-		bool bHardStretchLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x1) != 0; }
-		bool bHardStretchLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x1; } return val; }
-		bool bEnableClothOrthoBendConstraints() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x2) != 0; }
-		bool bEnableClothOrthoBendConstraints(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x2; } return val; }
-		bool bEnableClothSelfCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x4) != 0; }
-		bool bEnableClothSelfCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x4; } return val; }
-		bool bEnableClothPressure() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x8) != 0; }
-		bool bEnableClothPressure(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x8; } return val; }
-		bool bEnableClothTwoWayCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x10) != 0; }
-		bool bEnableClothTwoWayCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x10; } return val; }
-		bool bEnableClothLineChecks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 600) & 0x1) != 0; }
-		bool bEnableClothLineChecks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 600) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 600) &= ~0x1; } return val; }
-		bool bClothMetal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 600) & 0x2) != 0; }
-		bool bClothMetal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 600) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 600) &= ~0x2; } return val; }
-		bool bEnableClothTearing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 616) & 0x1) != 0; }
-		bool bEnableClothTearing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 616) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 616) &= ~0x1; } return val; }
-		bool bEnableValidBounds() { return (*cast(uint*)(cast(size_t)cast(void*)this + 628) & 0x1) != 0; }
-		bool bEnableValidBounds(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 628) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 628) &= ~0x1; } return val; }
-		bool bEnableSoftBodySelfCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 860) & 0x1) != 0; }
-		bool bEnableSoftBodySelfCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 860) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 860) &= ~0x1; } return val; }
-		bool bSoftBodyIsoSurface() { return (*cast(uint*)(cast(size_t)cast(void*)this + 880) & 0x1) != 0; }
-		bool bSoftBodyIsoSurface(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 880) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 880) &= ~0x1; } return val; }
-		bool bEnableSoftBodyDamping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 880) & 0x2) != 0; }
-		bool bEnableSoftBodyDamping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 880) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 880) &= ~0x2; } return val; }
-		bool bUseSoftBodyCOMDamping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 880) & 0x4) != 0; }
-		bool bUseSoftBodyCOMDamping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 880) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 880) &= ~0x4; } return val; }
-		bool bEnableSoftBodyTwoWayCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 888) & 0x1) != 0; }
-		bool bEnableSoftBodyTwoWayCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 888) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 888) &= ~0x1; } return val; }
-		bool bEnableSoftBodyLineChecks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 896) & 0x1) != 0; }
-		bool bEnableSoftBodyLineChecks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 896) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 896) &= ~0x1; } return val; }
-		bool bHasVertexColors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 896) & 0x2) != 0; }
-		bool bHasVertexColors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 896) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 896) &= ~0x2; } return val; }
+		bool bPerPolyUseSoftWeighting() { mixin(MGBPC!(336, 0x1)()); }
+		bool bPerPolyUseSoftWeighting(bool val) { mixin(MSBPC!(336, 0x1)()); }
+		bool bUseSimpleLineCollision() { mixin(MGBPC!(336, 0x2)()); }
+		bool bUseSimpleLineCollision(bool val) { mixin(MSBPC!(336, 0x2)()); }
+		bool bUseSimpleBoxCollision() { mixin(MGBPC!(336, 0x4)()); }
+		bool bUseSimpleBoxCollision(bool val) { mixin(MSBPC!(336, 0x4)()); }
+		bool bForceCPUSkinning() { mixin(MGBPC!(336, 0x8)()); }
+		bool bForceCPUSkinning(bool val) { mixin(MSBPC!(336, 0x8)()); }
+		bool bUseFullPrecisionUVs() { mixin(MGBPC!(336, 0x10)()); }
+		bool bUseFullPrecisionUVs(bool val) { mixin(MSBPC!(336, 0x10)()); }
+		bool bUsePackedPosition() { mixin(MGBPC!(336, 0x20)()); }
+		bool bUsePackedPosition(bool val) { mixin(MSBPC!(336, 0x20)()); }
+		bool bLimitClothToAnimMesh() { mixin(MGBPC!(452, 0x1)()); }
+		bool bLimitClothToAnimMesh(bool val) { mixin(MSBPC!(452, 0x1)()); }
+		bool bForceNoWelding() { mixin(MGBPC!(484, 0x1)()); }
+		bool bForceNoWelding(bool val) { mixin(MSBPC!(484, 0x1)()); }
+		bool bEnableClothBendConstraints() { mixin(MGBPC!(520, 0x1)()); }
+		bool bEnableClothBendConstraints(bool val) { mixin(MSBPC!(520, 0x1)()); }
+		bool bEnableClothDamping() { mixin(MGBPC!(520, 0x2)()); }
+		bool bEnableClothDamping(bool val) { mixin(MSBPC!(520, 0x2)()); }
+		bool bUseClothCOMDamping() { mixin(MGBPC!(520, 0x4)()); }
+		bool bUseClothCOMDamping(bool val) { mixin(MSBPC!(520, 0x4)()); }
+		bool bHardStretchLimit() { mixin(MGBPC!(584, 0x1)()); }
+		bool bHardStretchLimit(bool val) { mixin(MSBPC!(584, 0x1)()); }
+		bool bEnableClothOrthoBendConstraints() { mixin(MGBPC!(584, 0x2)()); }
+		bool bEnableClothOrthoBendConstraints(bool val) { mixin(MSBPC!(584, 0x2)()); }
+		bool bEnableClothSelfCollision() { mixin(MGBPC!(584, 0x4)()); }
+		bool bEnableClothSelfCollision(bool val) { mixin(MSBPC!(584, 0x4)()); }
+		bool bEnableClothPressure() { mixin(MGBPC!(584, 0x8)()); }
+		bool bEnableClothPressure(bool val) { mixin(MSBPC!(584, 0x8)()); }
+		bool bEnableClothTwoWayCollision() { mixin(MGBPC!(584, 0x10)()); }
+		bool bEnableClothTwoWayCollision(bool val) { mixin(MSBPC!(584, 0x10)()); }
+		bool bEnableClothLineChecks() { mixin(MGBPC!(600, 0x1)()); }
+		bool bEnableClothLineChecks(bool val) { mixin(MSBPC!(600, 0x1)()); }
+		bool bClothMetal() { mixin(MGBPC!(600, 0x2)()); }
+		bool bClothMetal(bool val) { mixin(MSBPC!(600, 0x2)()); }
+		bool bEnableClothTearing() { mixin(MGBPC!(616, 0x1)()); }
+		bool bEnableClothTearing(bool val) { mixin(MSBPC!(616, 0x1)()); }
+		bool bEnableValidBounds() { mixin(MGBPC!(628, 0x1)()); }
+		bool bEnableValidBounds(bool val) { mixin(MSBPC!(628, 0x1)()); }
+		bool bEnableSoftBodySelfCollision() { mixin(MGBPC!(860, 0x1)()); }
+		bool bEnableSoftBodySelfCollision(bool val) { mixin(MSBPC!(860, 0x1)()); }
+		bool bSoftBodyIsoSurface() { mixin(MGBPC!(880, 0x1)()); }
+		bool bSoftBodyIsoSurface(bool val) { mixin(MSBPC!(880, 0x1)()); }
+		bool bEnableSoftBodyDamping() { mixin(MGBPC!(880, 0x2)()); }
+		bool bEnableSoftBodyDamping(bool val) { mixin(MSBPC!(880, 0x2)()); }
+		bool bUseSoftBodyCOMDamping() { mixin(MGBPC!(880, 0x4)()); }
+		bool bUseSoftBodyCOMDamping(bool val) { mixin(MSBPC!(880, 0x4)()); }
+		bool bEnableSoftBodyTwoWayCollision() { mixin(MGBPC!(888, 0x1)()); }
+		bool bEnableSoftBodyTwoWayCollision(bool val) { mixin(MSBPC!(888, 0x1)()); }
+		bool bEnableSoftBodyLineChecks() { mixin(MGBPC!(896, 0x1)()); }
+		bool bEnableSoftBodyLineChecks(bool val) { mixin(MSBPC!(896, 0x1)()); }
+		bool bHasVertexColors() { mixin(MGBPC!(896, 0x2)()); }
+		bool bHasVertexColors(bool val) { mixin(MSBPC!(896, 0x2)()); }
 	}
 }

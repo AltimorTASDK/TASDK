@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrSeekingMissileManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.TribesGame.TrDevice_SaberLauncher;
@@ -13,9 +14,9 @@ extern(C++) interface TrSeekingMissileManager : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeekingMissileManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSeekingMissileManager")()); }
 	private static __gshared TrSeekingMissileManager mDefaultProperties;
-	@property final static TrSeekingMissileManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeekingMissileManager)("TrSeekingMissileManager TribesGame.Default__TrSeekingMissileManager")); }
+	@property final static TrSeekingMissileManager DefaultProperties() { mixin(MGDPC!(TrSeekingMissileManager, "TrSeekingMissileManager TribesGame.Default__TrSeekingMissileManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,23 +41,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.Tick")); }
-			ScriptFunction AddSaberLauncher() { return mAddSaberLauncher ? mAddSaberLauncher : (mAddSaberLauncher = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.AddSaberLauncher")); }
-			ScriptFunction RemoveSaberLauncher() { return mRemoveSaberLauncher ? mRemoveSaberLauncher : (mRemoveSaberLauncher = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.RemoveSaberLauncher")); }
-			ScriptFunction GetNumSaberLaunchersTargetingController() { return mGetNumSaberLaunchersTargetingController ? mGetNumSaberLaunchersTargetingController : (mGetNumSaberLaunchersTargetingController = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.GetNumSaberLaunchersTargetingController")); }
-			ScriptFunction GetNumSaberLaunchersTargetingVehicle() { return mGetNumSaberLaunchersTargetingVehicle ? mGetNumSaberLaunchersTargetingVehicle : (mGetNumSaberLaunchersTargetingVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.GetNumSaberLaunchersTargetingVehicle")); }
-			ScriptFunction AddMissile() { return mAddMissile ? mAddMissile : (mAddMissile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.AddMissile")); }
-			ScriptFunction RemoveMissile() { return mRemoveMissile ? mRemoveMissile : (mRemoveMissile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.RemoveMissile")); }
-			ScriptFunction GetNumMissilesTrackingController() { return mGetNumMissilesTrackingController ? mGetNumMissilesTrackingController : (mGetNumMissilesTrackingController = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.GetNumMissilesTrackingController")); }
-			ScriptFunction GetNumMissilesTrackingVehicle() { return mGetNumMissilesTrackingVehicle ? mGetNumMissilesTrackingVehicle : (mGetNumMissilesTrackingVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.GetNumMissilesTrackingVehicle")); }
-			ScriptFunction VictimControllerUpdated() { return mVictimControllerUpdated ? mVictimControllerUpdated : (mVictimControllerUpdated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.VictimControllerUpdated")); }
-			ScriptFunction TargetVehicleUpdated() { return mTargetVehicleUpdated ? mTargetVehicleUpdated : (mTargetVehicleUpdated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.TargetVehicleUpdated")); }
-			ScriptFunction BeginSaberLauncherTargeting() { return mBeginSaberLauncherTargeting ? mBeginSaberLauncherTargeting : (mBeginSaberLauncherTargeting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.BeginSaberLauncherTargeting")); }
-			ScriptFunction StopSaberLauncherTargeting() { return mStopSaberLauncherTargeting ? mStopSaberLauncherTargeting : (mStopSaberLauncherTargeting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.StopSaberLauncherTargeting")); }
-			ScriptFunction BeginMissileTracking() { return mBeginMissileTracking ? mBeginMissileTracking : (mBeginMissileTracking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.BeginMissileTracking")); }
-			ScriptFunction StopMissileTracking() { return mStopMissileTracking ? mStopMissileTracking : (mStopMissileTracking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.StopMissileTracking")); }
-			ScriptFunction PawnLeftVehicle() { return mPawnLeftVehicle ? mPawnLeftVehicle : (mPawnLeftVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.PawnLeftVehicle")); }
-			ScriptFunction PawnEnteredVehicle() { return mPawnEnteredVehicle ? mPawnEnteredVehicle : (mPawnEnteredVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeekingMissileManager.PawnEnteredVehicle")); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrSeekingMissileManager.Tick")()); }
+			ScriptFunction AddSaberLauncher() { mixin(MGF!("mAddSaberLauncher", "Function TribesGame.TrSeekingMissileManager.AddSaberLauncher")()); }
+			ScriptFunction RemoveSaberLauncher() { mixin(MGF!("mRemoveSaberLauncher", "Function TribesGame.TrSeekingMissileManager.RemoveSaberLauncher")()); }
+			ScriptFunction GetNumSaberLaunchersTargetingController() { mixin(MGF!("mGetNumSaberLaunchersTargetingController", "Function TribesGame.TrSeekingMissileManager.GetNumSaberLaunchersTargetingController")()); }
+			ScriptFunction GetNumSaberLaunchersTargetingVehicle() { mixin(MGF!("mGetNumSaberLaunchersTargetingVehicle", "Function TribesGame.TrSeekingMissileManager.GetNumSaberLaunchersTargetingVehicle")()); }
+			ScriptFunction AddMissile() { mixin(MGF!("mAddMissile", "Function TribesGame.TrSeekingMissileManager.AddMissile")()); }
+			ScriptFunction RemoveMissile() { mixin(MGF!("mRemoveMissile", "Function TribesGame.TrSeekingMissileManager.RemoveMissile")()); }
+			ScriptFunction GetNumMissilesTrackingController() { mixin(MGF!("mGetNumMissilesTrackingController", "Function TribesGame.TrSeekingMissileManager.GetNumMissilesTrackingController")()); }
+			ScriptFunction GetNumMissilesTrackingVehicle() { mixin(MGF!("mGetNumMissilesTrackingVehicle", "Function TribesGame.TrSeekingMissileManager.GetNumMissilesTrackingVehicle")()); }
+			ScriptFunction VictimControllerUpdated() { mixin(MGF!("mVictimControllerUpdated", "Function TribesGame.TrSeekingMissileManager.VictimControllerUpdated")()); }
+			ScriptFunction TargetVehicleUpdated() { mixin(MGF!("mTargetVehicleUpdated", "Function TribesGame.TrSeekingMissileManager.TargetVehicleUpdated")()); }
+			ScriptFunction BeginSaberLauncherTargeting() { mixin(MGF!("mBeginSaberLauncherTargeting", "Function TribesGame.TrSeekingMissileManager.BeginSaberLauncherTargeting")()); }
+			ScriptFunction StopSaberLauncherTargeting() { mixin(MGF!("mStopSaberLauncherTargeting", "Function TribesGame.TrSeekingMissileManager.StopSaberLauncherTargeting")()); }
+			ScriptFunction BeginMissileTracking() { mixin(MGF!("mBeginMissileTracking", "Function TribesGame.TrSeekingMissileManager.BeginMissileTracking")()); }
+			ScriptFunction StopMissileTracking() { mixin(MGF!("mStopMissileTracking", "Function TribesGame.TrSeekingMissileManager.StopMissileTracking")()); }
+			ScriptFunction PawnLeftVehicle() { mixin(MGF!("mPawnLeftVehicle", "Function TribesGame.TrSeekingMissileManager.PawnLeftVehicle")()); }
+			ScriptFunction PawnEnteredVehicle() { mixin(MGF!("mPawnEnteredVehicle", "Function TribesGame.TrSeekingMissileManager.PawnEnteredVehicle")()); }
 		}
 	}
 	enum ETrackingMissileEvent : ubyte
@@ -73,12 +74,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrSeekingMissileManager.TargetingSaberLauncherInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSeekingMissileManager.TargetingSaberLauncherInfo")()); }
 		@property final auto ref
 		{
-			TrDevice_SaberLauncher SaberLauncher() { return *cast(TrDevice_SaberLauncher*)(cast(size_t)&this + 0); }
-			float RemainingClientNotificationTime() { return *cast(float*)(cast(size_t)&this + 8); }
-			TrPlayerController VictimController() { return *cast(TrPlayerController*)(cast(size_t)&this + 4); }
+			TrDevice_SaberLauncher SaberLauncher() { mixin(MGPS!(TrDevice_SaberLauncher, 0)()); }
+			float RemainingClientNotificationTime() { mixin(MGPS!(float, 8)()); }
+			TrPlayerController VictimController() { mixin(MGPS!(TrPlayerController, 4)()); }
 		}
 	}
 	struct SeekingMissileInfo
@@ -86,18 +87,18 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrSeekingMissileManager.SeekingMissileInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSeekingMissileManager.SeekingMissileInfo")()); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Missile' has the same name as a defined type!
-			TrPlayerController VictimController() { return *cast(TrPlayerController*)(cast(size_t)&this + 4); }
+			TrPlayerController VictimController() { mixin(MGPS!(TrPlayerController, 4)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo) ActiveTargetingSaberLaunchers() { return *cast(ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo)*)(cast(size_t)cast(void*)this + 488); }
-		ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo) ActiveSeekingMissiles() { return *cast(ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo)*)(cast(size_t)cast(void*)this + 476); }
-		int RepCounter() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
+		ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo) ActiveTargetingSaberLaunchers() { mixin(MGPC!(ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo), 488)()); }
+		ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo) ActiveSeekingMissiles() { mixin(MGPC!(ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo), 476)()); }
+		int RepCounter() { mixin(MGPC!(int, 500)()); }
 	}
 final:
 	void Tick(float DeltaTime)

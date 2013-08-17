@@ -1,6 +1,7 @@
 module UnrealScript.Engine.WaterVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PhysicsVolume;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface WaterVolume : PhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.WaterVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.WaterVolume")()); }
 	private static __gshared WaterVolume mDefaultProperties;
-	@property final static WaterVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WaterVolume)("WaterVolume Engine.Default__WaterVolume")); }
+	@property final static WaterVolume DefaultProperties() { mixin(MGDPC!(WaterVolume, "WaterVolume Engine.Default__WaterVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.WaterVolume.Touch")); }
-			ScriptFunction PlayEntrySplash() { return mPlayEntrySplash ? mPlayEntrySplash : (mPlayEntrySplash = ScriptObject.Find!(ScriptFunction)("Function Engine.WaterVolume.PlayEntrySplash")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.WaterVolume.UnTouch")); }
-			ScriptFunction PlayExitSplash() { return mPlayExitSplash ? mPlayExitSplash : (mPlayExitSplash = ScriptObject.Find!(ScriptFunction)("Function Engine.WaterVolume.PlayExitSplash")); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.WaterVolume.Touch")()); }
+			ScriptFunction PlayEntrySplash() { mixin(MGF!("mPlayEntrySplash", "Function Engine.WaterVolume.PlayEntrySplash")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function Engine.WaterVolume.UnTouch")()); }
+			ScriptFunction PlayExitSplash() { mixin(MGF!("mPlayExitSplash", "Function Engine.WaterVolume.PlayExitSplash")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptClass ExitActor() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 596); }
-		SoundCue ExitSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 592); }
-		ScriptClass EntryActor() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 588); }
-		SoundCue EntrySound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 584); }
+		ScriptClass ExitActor() { mixin(MGPC!(ScriptClass, 596)()); }
+		SoundCue ExitSound() { mixin(MGPC!(SoundCue, 592)()); }
+		ScriptClass EntryActor() { mixin(MGPC!(ScriptClass, 588)()); }
+		SoundCue EntrySound() { mixin(MGPC!(SoundCue, 584)()); }
 	}
 final:
 	void Touch(Actor Other, 

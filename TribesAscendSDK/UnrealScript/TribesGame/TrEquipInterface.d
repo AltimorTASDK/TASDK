@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrEquipInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrEquipInterface : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEquipInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEquipInterface")()); }
 	private static __gshared TrEquipInterface mDefaultProperties;
-	@property final static TrEquipInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEquipInterface)("TrEquipInterface TribesGame.Default__TrEquipInterface")); }
+	@property final static TrEquipInterface DefaultProperties() { mixin(MGDPC!(TrEquipInterface, "TrEquipInterface TribesGame.Default__TrEquipInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -83,77 +84,78 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsClassOwned() { return mIsClassOwned ? mIsClassOwned : (mIsClassOwned = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.IsClassOwned")); }
-			ScriptFunction IsLoadoutOwned() { return mIsLoadoutOwned ? mIsLoadoutOwned : (mIsLoadoutOwned = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.IsLoadoutOwned")); }
-			ScriptFunction GetLoadoutName() { return mGetLoadoutName ? mGetLoadoutName : (mGetLoadoutName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetLoadoutName")); }
-			ScriptFunction GetClassUnlockPercent() { return mGetClassUnlockPercent ? mGetClassUnlockPercent : (mGetClassUnlockPercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetClassUnlockPercent")); }
-			ScriptFunction GetClassPrice() { return mGetClassPrice ? mGetClassPrice : (mGetClassPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetClassPrice")); }
-			ScriptFunction GetDailyDealItemId() { return mGetDailyDealItemId ? mGetDailyDealItemId : (mGetDailyDealItemId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealItemId")); }
-			ScriptFunction GetDailyDealPercentOff() { return mGetDailyDealPercentOff ? mGetDailyDealPercentOff : (mGetDailyDealPercentOff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealPercentOff")); }
-			ScriptFunction GetBundleParent() { return mGetBundleParent ? mGetBundleParent : (mGetBundleParent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetBundleParent")); }
-			ScriptFunction IsBundleOwned() { return mIsBundleOwned ? mIsBundleOwned : (mIsBundleOwned = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.IsBundleOwned")); }
-			ScriptFunction GetVendorSize() { return mGetVendorSize ? mGetVendorSize : (mGetVendorSize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetVendorSize")); }
-			ScriptFunction GetVendorItemId() { return mGetVendorItemId ? mGetVendorItemId : (mGetVendorItemId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetVendorItemId")); }
-			ScriptFunction GetVendorItemPrice() { return mGetVendorItemPrice ? mGetVendorItemPrice : (mGetVendorItemPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetVendorItemPrice")); }
-			ScriptFunction GetVendorItemInfo() { return mGetVendorItemInfo ? mGetVendorItemInfo : (mGetVendorItemInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetVendorItemInfo")); }
-			ScriptFunction RequestPurchaseGeneral() { return mRequestPurchaseGeneral ? mRequestPurchaseGeneral : (mRequestPurchaseGeneral = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseGeneral")); }
-			ScriptFunction GetActiveEquipId() { return mGetActiveEquipId ? mGetActiveEquipId : (mGetActiveEquipId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetActiveEquipId")); }
-			ScriptFunction GetEquipCount() { return mGetEquipCount ? mGetEquipCount : (mGetEquipCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetEquipCount")); }
-			ScriptFunction GetEquipId() { return mGetEquipId ? mGetEquipId : (mGetEquipId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetEquipId")); }
-			ScriptFunction SetLoadoutName() { return mSetLoadoutName ? mSetLoadoutName : (mSetLoadoutName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.SetLoadoutName")); }
-			ScriptFunction GetFirstClassId() { return mGetFirstClassId ? mGetFirstClassId : (mGetFirstClassId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetFirstClassId")); }
-			ScriptFunction GetNextClassId() { return mGetNextClassId ? mGetNextClassId : (mGetNextClassId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetNextClassId")); }
-			ScriptFunction GetClassId() { return mGetClassId ? mGetClassId : (mGetClassId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetClassId")); }
-			ScriptFunction RequestPurchaseClass() { return mRequestPurchaseClass ? mRequestPurchaseClass : (mRequestPurchaseClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseClass")); }
-			ScriptFunction GetReticuleValue() { return mGetReticuleValue ? mGetReticuleValue : (mGetReticuleValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetReticuleValue")); }
-			ScriptFunction GetReticuleString() { return mGetReticuleString ? mGetReticuleString : (mGetReticuleString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetReticuleString")); }
-			ScriptFunction SetActiveEquipId() { return mSetActiveEquipId ? mSetActiveEquipId : (mSetActiveEquipId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.SetActiveEquipId")); }
-			ScriptFunction IsEquipOwned() { return mIsEquipOwned ? mIsEquipOwned : (mIsEquipOwned = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.IsEquipOwned")); }
-			ScriptFunction IsEquipMaxed() { return mIsEquipMaxed ? mIsEquipMaxed : (mIsEquipMaxed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.IsEquipMaxed")); }
-			ScriptFunction GetEquipLevel() { return mGetEquipLevel ? mGetEquipLevel : (mGetEquipLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetEquipLevel")); }
-			ScriptFunction HasReticule() { return mHasReticule ? mHasReticule : (mHasReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.HasReticule")); }
-			ScriptFunction GetMasteryPrice() { return mGetMasteryPrice ? mGetMasteryPrice : (mGetMasteryPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetMasteryPrice")); }
-			ScriptFunction GetEquipPrice() { return mGetEquipPrice ? mGetEquipPrice : (mGetEquipPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetEquipPrice")); }
-			ScriptFunction RequestPurchaseMastery() { return mRequestPurchaseMastery ? mRequestPurchaseMastery : (mRequestPurchaseMastery = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseMastery")); }
-			ScriptFunction RequestPurchaseEquip() { return mRequestPurchaseEquip ? mRequestPurchaseEquip : (mRequestPurchaseEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseEquip")); }
-			ScriptFunction SetReticuleValue() { return mSetReticuleValue ? mSetReticuleValue : (mSetReticuleValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.SetReticuleValue")); }
-			ScriptFunction SetReticuleString() { return mSetReticuleString ? mSetReticuleString : (mSetReticuleString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.SetReticuleString")); }
-			ScriptFunction GetLoadoutPrice() { return mGetLoadoutPrice ? mGetLoadoutPrice : (mGetLoadoutPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetLoadoutPrice")); }
-			ScriptFunction RequestPurchaseLoadout() { return mRequestPurchaseLoadout ? mRequestPurchaseLoadout : (mRequestPurchaseLoadout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseLoadout")); }
-			ScriptFunction IsDailyDealOwned() { return mIsDailyDealOwned ? mIsDailyDealOwned : (mIsDailyDealOwned = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.IsDailyDealOwned")); }
-			ScriptFunction GetDailyDealOldPrice() { return mGetDailyDealOldPrice ? mGetDailyDealOldPrice : (mGetDailyDealOldPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealOldPrice")); }
-			ScriptFunction GetDailyDealNewPrice() { return mGetDailyDealNewPrice ? mGetDailyDealNewPrice : (mGetDailyDealNewPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealNewPrice")); }
-			ScriptFunction GetDailyDealClass() { return mGetDailyDealClass ? mGetDailyDealClass : (mGetDailyDealClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealClass")); }
-			ScriptFunction GetDailyDealType() { return mGetDailyDealType ? mGetDailyDealType : (mGetDailyDealType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealType")); }
-			ScriptFunction GetDailyDealSecsLeft() { return mGetDailyDealSecsLeft ? mGetDailyDealSecsLeft : (mGetDailyDealSecsLeft = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealSecsLeft")); }
-			ScriptFunction GetDailyDealXPPrice() { return mGetDailyDealXPPrice ? mGetDailyDealXPPrice : (mGetDailyDealXPPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealXPPrice")); }
-			ScriptFunction RequestPurchaseDeal() { return mRequestPurchaseDeal ? mRequestPurchaseDeal : (mRequestPurchaseDeal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseDeal")); }
-			ScriptFunction OwnsReticule() { return mOwnsReticule ? mOwnsReticule : (mOwnsReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.OwnsReticule")); }
-			ScriptFunction DelegateOnMarshalEvent() { return mDelegateOnMarshalEvent ? mDelegateOnMarshalEvent : (mDelegateOnMarshalEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.DelegateOnMarshalEvent")); }
-			ScriptFunction LoadInventory() { return mLoadInventory ? mLoadInventory : (mLoadInventory = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.LoadInventory")); }
-			ScriptFunction InitClass() { return mInitClass ? mInitClass : (mInitClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.InitClass")); }
-			ScriptFunction SetDefaultEquip() { return mSetDefaultEquip ? mSetDefaultEquip : (mSetDefaultEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.SetDefaultEquip")); }
-			ScriptFunction OnMarshalEvent() { return mOnMarshalEvent ? mOnMarshalEvent : (mOnMarshalEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.OnMarshalEvent")); }
-			ScriptFunction RegisterMarshalCallback() { return mRegisterMarshalCallback ? mRegisterMarshalCallback : (mRegisterMarshalCallback = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RegisterMarshalCallback")); }
-			ScriptFunction GetClassCount() { return mGetClassCount ? mGetClassCount : (mGetClassCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetClassCount")); }
-			ScriptFunction GetClassRibbon() { return mGetClassRibbon ? mGetClassRibbon : (mGetClassRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetClassRibbon")); }
-			ScriptFunction GetNextEquipId() { return mGetNextEquipId ? mGetNextEquipId : (mGetNextEquipId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetNextEquipId")); }
-			ScriptFunction GetEquipRibbon() { return mGetEquipRibbon ? mGetEquipRibbon : (mGetEquipRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetEquipRibbon")); }
-			ScriptFunction GetFirstEquipId() { return mGetFirstEquipId ? mGetFirstEquipId : (mGetFirstEquipId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetFirstEquipId")); }
-			ScriptFunction GetDailyDealLootId() { return mGetDailyDealLootId ? mGetDailyDealLootId : (mGetDailyDealLootId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetDailyDealLootId")); }
-			ScriptFunction RetrieveActives() { return mRetrieveActives ? mRetrieveActives : (mRetrieveActives = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RetrieveActives")); }
-			ScriptFunction GetUpgradePrice() { return mGetUpgradePrice ? mGetUpgradePrice : (mGetUpgradePrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.GetUpgradePrice")); }
-			ScriptFunction RequestPurchaseReticule() { return mRequestPurchaseReticule ? mRequestPurchaseReticule : (mRequestPurchaseReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseReticule")); }
-			ScriptFunction RequestPurchaseUpgrade() { return mRequestPurchaseUpgrade ? mRequestPurchaseUpgrade : (mRequestPurchaseUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.RequestPurchaseUpgrade")); }
-			ScriptFunction SaveProfile() { return mSaveProfile ? mSaveProfile : (mSaveProfile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.SaveProfile")); }
-			ScriptFunction InitEquipManager() { return mInitEquipManager ? mInitEquipManager : (mInitEquipManager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.InitEquipManager")); }
-			ScriptFunction InitClassList() { return mInitClassList ? mInitClassList : (mInitClassList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEquipInterface.InitClassList")); }
+			ScriptFunction IsClassOwned() { mixin(MGF!("mIsClassOwned", "Function TribesGame.TrEquipInterface.IsClassOwned")()); }
+			ScriptFunction IsLoadoutOwned() { mixin(MGF!("mIsLoadoutOwned", "Function TribesGame.TrEquipInterface.IsLoadoutOwned")()); }
+			ScriptFunction GetLoadoutName() { mixin(MGF!("mGetLoadoutName", "Function TribesGame.TrEquipInterface.GetLoadoutName")()); }
+			ScriptFunction GetClassUnlockPercent() { mixin(MGF!("mGetClassUnlockPercent", "Function TribesGame.TrEquipInterface.GetClassUnlockPercent")()); }
+			ScriptFunction GetClassPrice() { mixin(MGF!("mGetClassPrice", "Function TribesGame.TrEquipInterface.GetClassPrice")()); }
+			ScriptFunction GetDailyDealItemId() { mixin(MGF!("mGetDailyDealItemId", "Function TribesGame.TrEquipInterface.GetDailyDealItemId")()); }
+			ScriptFunction GetDailyDealPercentOff() { mixin(MGF!("mGetDailyDealPercentOff", "Function TribesGame.TrEquipInterface.GetDailyDealPercentOff")()); }
+			ScriptFunction GetBundleParent() { mixin(MGF!("mGetBundleParent", "Function TribesGame.TrEquipInterface.GetBundleParent")()); }
+			ScriptFunction IsBundleOwned() { mixin(MGF!("mIsBundleOwned", "Function TribesGame.TrEquipInterface.IsBundleOwned")()); }
+			ScriptFunction GetVendorSize() { mixin(MGF!("mGetVendorSize", "Function TribesGame.TrEquipInterface.GetVendorSize")()); }
+			ScriptFunction GetVendorItemId() { mixin(MGF!("mGetVendorItemId", "Function TribesGame.TrEquipInterface.GetVendorItemId")()); }
+			ScriptFunction GetVendorItemPrice() { mixin(MGF!("mGetVendorItemPrice", "Function TribesGame.TrEquipInterface.GetVendorItemPrice")()); }
+			ScriptFunction GetVendorItemInfo() { mixin(MGF!("mGetVendorItemInfo", "Function TribesGame.TrEquipInterface.GetVendorItemInfo")()); }
+			ScriptFunction RequestPurchaseGeneral() { mixin(MGF!("mRequestPurchaseGeneral", "Function TribesGame.TrEquipInterface.RequestPurchaseGeneral")()); }
+			ScriptFunction GetActiveEquipId() { mixin(MGF!("mGetActiveEquipId", "Function TribesGame.TrEquipInterface.GetActiveEquipId")()); }
+			ScriptFunction GetEquipCount() { mixin(MGF!("mGetEquipCount", "Function TribesGame.TrEquipInterface.GetEquipCount")()); }
+			ScriptFunction GetEquipId() { mixin(MGF!("mGetEquipId", "Function TribesGame.TrEquipInterface.GetEquipId")()); }
+			ScriptFunction SetLoadoutName() { mixin(MGF!("mSetLoadoutName", "Function TribesGame.TrEquipInterface.SetLoadoutName")()); }
+			ScriptFunction GetFirstClassId() { mixin(MGF!("mGetFirstClassId", "Function TribesGame.TrEquipInterface.GetFirstClassId")()); }
+			ScriptFunction GetNextClassId() { mixin(MGF!("mGetNextClassId", "Function TribesGame.TrEquipInterface.GetNextClassId")()); }
+			ScriptFunction GetClassId() { mixin(MGF!("mGetClassId", "Function TribesGame.TrEquipInterface.GetClassId")()); }
+			ScriptFunction RequestPurchaseClass() { mixin(MGF!("mRequestPurchaseClass", "Function TribesGame.TrEquipInterface.RequestPurchaseClass")()); }
+			ScriptFunction GetReticuleValue() { mixin(MGF!("mGetReticuleValue", "Function TribesGame.TrEquipInterface.GetReticuleValue")()); }
+			ScriptFunction GetReticuleString() { mixin(MGF!("mGetReticuleString", "Function TribesGame.TrEquipInterface.GetReticuleString")()); }
+			ScriptFunction SetActiveEquipId() { mixin(MGF!("mSetActiveEquipId", "Function TribesGame.TrEquipInterface.SetActiveEquipId")()); }
+			ScriptFunction IsEquipOwned() { mixin(MGF!("mIsEquipOwned", "Function TribesGame.TrEquipInterface.IsEquipOwned")()); }
+			ScriptFunction IsEquipMaxed() { mixin(MGF!("mIsEquipMaxed", "Function TribesGame.TrEquipInterface.IsEquipMaxed")()); }
+			ScriptFunction GetEquipLevel() { mixin(MGF!("mGetEquipLevel", "Function TribesGame.TrEquipInterface.GetEquipLevel")()); }
+			ScriptFunction HasReticule() { mixin(MGF!("mHasReticule", "Function TribesGame.TrEquipInterface.HasReticule")()); }
+			ScriptFunction GetMasteryPrice() { mixin(MGF!("mGetMasteryPrice", "Function TribesGame.TrEquipInterface.GetMasteryPrice")()); }
+			ScriptFunction GetEquipPrice() { mixin(MGF!("mGetEquipPrice", "Function TribesGame.TrEquipInterface.GetEquipPrice")()); }
+			ScriptFunction RequestPurchaseMastery() { mixin(MGF!("mRequestPurchaseMastery", "Function TribesGame.TrEquipInterface.RequestPurchaseMastery")()); }
+			ScriptFunction RequestPurchaseEquip() { mixin(MGF!("mRequestPurchaseEquip", "Function TribesGame.TrEquipInterface.RequestPurchaseEquip")()); }
+			ScriptFunction SetReticuleValue() { mixin(MGF!("mSetReticuleValue", "Function TribesGame.TrEquipInterface.SetReticuleValue")()); }
+			ScriptFunction SetReticuleString() { mixin(MGF!("mSetReticuleString", "Function TribesGame.TrEquipInterface.SetReticuleString")()); }
+			ScriptFunction GetLoadoutPrice() { mixin(MGF!("mGetLoadoutPrice", "Function TribesGame.TrEquipInterface.GetLoadoutPrice")()); }
+			ScriptFunction RequestPurchaseLoadout() { mixin(MGF!("mRequestPurchaseLoadout", "Function TribesGame.TrEquipInterface.RequestPurchaseLoadout")()); }
+			ScriptFunction IsDailyDealOwned() { mixin(MGF!("mIsDailyDealOwned", "Function TribesGame.TrEquipInterface.IsDailyDealOwned")()); }
+			ScriptFunction GetDailyDealOldPrice() { mixin(MGF!("mGetDailyDealOldPrice", "Function TribesGame.TrEquipInterface.GetDailyDealOldPrice")()); }
+			ScriptFunction GetDailyDealNewPrice() { mixin(MGF!("mGetDailyDealNewPrice", "Function TribesGame.TrEquipInterface.GetDailyDealNewPrice")()); }
+			ScriptFunction GetDailyDealClass() { mixin(MGF!("mGetDailyDealClass", "Function TribesGame.TrEquipInterface.GetDailyDealClass")()); }
+			ScriptFunction GetDailyDealType() { mixin(MGF!("mGetDailyDealType", "Function TribesGame.TrEquipInterface.GetDailyDealType")()); }
+			ScriptFunction GetDailyDealSecsLeft() { mixin(MGF!("mGetDailyDealSecsLeft", "Function TribesGame.TrEquipInterface.GetDailyDealSecsLeft")()); }
+			ScriptFunction GetDailyDealXPPrice() { mixin(MGF!("mGetDailyDealXPPrice", "Function TribesGame.TrEquipInterface.GetDailyDealXPPrice")()); }
+			ScriptFunction RequestPurchaseDeal() { mixin(MGF!("mRequestPurchaseDeal", "Function TribesGame.TrEquipInterface.RequestPurchaseDeal")()); }
+			ScriptFunction OwnsReticule() { mixin(MGF!("mOwnsReticule", "Function TribesGame.TrEquipInterface.OwnsReticule")()); }
+			ScriptFunction DelegateOnMarshalEvent() { mixin(MGF!("mDelegateOnMarshalEvent", "Function TribesGame.TrEquipInterface.DelegateOnMarshalEvent")()); }
+			ScriptFunction LoadInventory() { mixin(MGF!("mLoadInventory", "Function TribesGame.TrEquipInterface.LoadInventory")()); }
+			ScriptFunction InitClass() { mixin(MGF!("mInitClass", "Function TribesGame.TrEquipInterface.InitClass")()); }
+			ScriptFunction SetDefaultEquip() { mixin(MGF!("mSetDefaultEquip", "Function TribesGame.TrEquipInterface.SetDefaultEquip")()); }
+			ScriptFunction OnMarshalEvent() { mixin(MGF!("mOnMarshalEvent", "Function TribesGame.TrEquipInterface.OnMarshalEvent")()); }
+			ScriptFunction RegisterMarshalCallback() { mixin(MGF!("mRegisterMarshalCallback", "Function TribesGame.TrEquipInterface.RegisterMarshalCallback")()); }
+			ScriptFunction GetClassCount() { mixin(MGF!("mGetClassCount", "Function TribesGame.TrEquipInterface.GetClassCount")()); }
+			ScriptFunction GetClassRibbon() { mixin(MGF!("mGetClassRibbon", "Function TribesGame.TrEquipInterface.GetClassRibbon")()); }
+			ScriptFunction GetNextEquipId() { mixin(MGF!("mGetNextEquipId", "Function TribesGame.TrEquipInterface.GetNextEquipId")()); }
+			ScriptFunction GetEquipRibbon() { mixin(MGF!("mGetEquipRibbon", "Function TribesGame.TrEquipInterface.GetEquipRibbon")()); }
+			ScriptFunction GetFirstEquipId() { mixin(MGF!("mGetFirstEquipId", "Function TribesGame.TrEquipInterface.GetFirstEquipId")()); }
+			ScriptFunction GetDailyDealLootId() { mixin(MGF!("mGetDailyDealLootId", "Function TribesGame.TrEquipInterface.GetDailyDealLootId")()); }
+			ScriptFunction RetrieveActives() { mixin(MGF!("mRetrieveActives", "Function TribesGame.TrEquipInterface.RetrieveActives")()); }
+			ScriptFunction GetUpgradePrice() { mixin(MGF!("mGetUpgradePrice", "Function TribesGame.TrEquipInterface.GetUpgradePrice")()); }
+			ScriptFunction RequestPurchaseReticule() { mixin(MGF!("mRequestPurchaseReticule", "Function TribesGame.TrEquipInterface.RequestPurchaseReticule")()); }
+			ScriptFunction RequestPurchaseUpgrade() { mixin(MGF!("mRequestPurchaseUpgrade", "Function TribesGame.TrEquipInterface.RequestPurchaseUpgrade")()); }
+			ScriptFunction SaveProfile() { mixin(MGF!("mSaveProfile", "Function TribesGame.TrEquipInterface.SaveProfile")()); }
+			ScriptFunction InitEquipManager() { mixin(MGF!("mInitEquipManager", "Function TribesGame.TrEquipInterface.InitEquipManager")()); }
+			ScriptFunction InitClassList() { mixin(MGF!("mInitClassList", "Function TribesGame.TrEquipInterface.InitClassList")()); }
 		}
 	}
 	@property final
 	{
-		bool m_bLoadComplete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool m_bLoadComplete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateOnMarshalEvent__Delegate'!
+		bool m_bLoadComplete() { mixin(MGBPC!(60, 0x1)()); }
+		bool m_bLoadComplete(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 final:
 	bool IsClassOwned(int ClassId)
@@ -246,27 +248,27 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVendorItemId, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	bool GetVendorItemPrice(int VendorId, int VendorItemId, int Currency, int* Price)
+	bool GetVendorItemPrice(int VendorId, int VendorItemId, int Currency, ref int Price)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = VendorId;
 		*cast(int*)&params[4] = VendorItemId;
 		*cast(int*)&params[8] = Currency;
-		*cast(int*)&params[12] = *Price;
+		*cast(int*)&params[12] = Price;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVendorItemPrice, params.ptr, cast(void*)0);
 		*Price = *cast(int*)&params[12];
 		return *cast(bool*)&params[16];
 	}
-	bool GetVendorItemInfo(int VendorId, int VendorItemId, ScriptString* ItemName, ScriptString* itemDescr, ScriptString* ribbonDesc)
+	bool GetVendorItemInfo(int VendorId, int VendorItemId, ref ScriptString ItemName, ref ScriptString itemDescr, ref ScriptString ribbonDesc)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(int*)params.ptr = VendorId;
 		*cast(int*)&params[4] = VendorItemId;
-		*cast(ScriptString*)&params[8] = *ItemName;
-		*cast(ScriptString*)&params[20] = *itemDescr;
-		*cast(ScriptString*)&params[32] = *ribbonDesc;
+		*cast(ScriptString*)&params[8] = ItemName;
+		*cast(ScriptString*)&params[20] = itemDescr;
+		*cast(ScriptString*)&params[32] = ribbonDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVendorItemInfo, params.ptr, cast(void*)0);
 		*ItemName = *cast(ScriptString*)&params[8];
 		*itemDescr = *cast(ScriptString*)&params[20];

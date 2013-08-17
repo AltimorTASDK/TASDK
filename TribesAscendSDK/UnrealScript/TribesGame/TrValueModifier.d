@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrValueModifier;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrValueModifier : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrValueModifier")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrValueModifier")()); }
 	private static __gshared TrValueModifier mDefaultProperties;
-	@property final static TrValueModifier DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrValueModifier)("TrValueModifier TribesGame.Default__TrValueModifier")); }
+	@property final static TrValueModifier DefaultProperties() { mixin(MGDPC!(TrValueModifier, "TrValueModifier TribesGame.Default__TrValueModifier")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.Reset")); }
-			ScriptFunction Merge() { return mMerge ? mMerge : (mMerge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.Merge")); }
-			ScriptFunction MergeClass() { return mMergeClass ? mMergeClass : (mMergeClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.MergeClass")); }
-			ScriptFunction MergeModification() { return mMergeModification ? mMergeModification : (mMergeModification = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.MergeModification")); }
-			ScriptFunction LogModifiedValues() { return mLogModifiedValues ? mLogModifiedValues : (mLogModifiedValues = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.LogModifiedValues")); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrValueModifier.Reset")()); }
+			ScriptFunction Merge() { mixin(MGF!("mMerge", "Function TribesGame.TrValueModifier.Merge")()); }
+			ScriptFunction MergeClass() { mixin(MGF!("mMergeClass", "Function TribesGame.TrValueModifier.MergeClass")()); }
+			ScriptFunction MergeModification() { mixin(MGF!("mMergeModification", "Function TribesGame.TrValueModifier.MergeModification")()); }
+			ScriptFunction LogModifiedValues() { mixin(MGF!("mLogModifiedValues", "Function TribesGame.TrValueModifier.LogModifiedValues")()); }
 		}
 	}
 	static struct Constants
@@ -539,118 +540,118 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fWeaponSwitchPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 336); }
-			float m_fPrimaryWeaponReloadBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float m_fSecondaryWeaponReloadBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			int m_nPrimaryWeaponIncreasedClipSizeBuff() { return *cast(int*)(cast(size_t)cast(void*)this + 296); }
-			int m_nSecondaryWeaponIncreasedClipSizeBuff() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
-			float m_fUpgradeCostBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			float m_fPrimaryWeaponArmorPenetrationBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float m_fSecondaryWeaponArmorPenetrationBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			float m_fOffhandArmorPenetrationBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 304); }
-			float m_fDeployableHealthBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 280); }
-			float m_fDeployableRangeBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float m_fTurretAcquireTargetBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 224); }
-			float m_fAcquireTimeByEnemyTurretPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-			int m_nExtraOffhandAmmo() { return *cast(int*)(cast(size_t)cast(void*)this + 160); }
-			int m_nExtraGrenadesFromPickupBuff() { return *cast(int*)(cast(size_t)cast(void*)this + 216); }
-			int m_nExtraPrimaryAmmo() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
-			int m_nExtraSecondaryAmmo() { return *cast(int*)(cast(size_t)cast(void*)this + 172); }
-			float m_fMaxJettingSpeedBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			float m_fTerminalJettingSpeedBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float m_fMaxSkiSpeedBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			float m_fTerminalSkiSpeedBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-			float m_fPeakSkiControlSpeedBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			float m_fSkiControlSigmaSquareBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 184); }
-			float m_fMaxSkiControlBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 188); }
-			float m_fGroundSpeedPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 340); }
-			float m_fMaxStoppingDistancePctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 344); }
-			float m_fMassPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 348); }
-			float m_fExtraEnergyBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 136); }
-			float m_fHealthBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float m_fEnergyRegenRateBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			float m_fTimeToRegenHealthBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-			float m_fSplatDamageBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 200); }
-			float m_fStealthPackPulseTimeBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 292); }
-			float m_fHealthRegenRateBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 128); }
-			float m_fShieldPackEffectivenessBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			float m_fReceiveMeleeDamageBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float m_fSelfDamagePct() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
-			float m_fEnergyDrainPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 332); }
-			float m_fPotentialEnergyDamageTransferPct() { return *cast(float*)(cast(size_t)cast(void*)this + 356); }
-			float m_fWhiteOutInterpSpeedPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 324); }
-			float m_fIgnorePulseTime() { return *cast(float*)(cast(size_t)cast(void*)this + 392); }
-			float m_fRageEnergyRegenBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 376); }
-			float m_fRageHealthRestorationPct() { return *cast(float*)(cast(size_t)cast(void*)this + 384); }
-			float m_fRageMassPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 388); }
-			float m_fRageLength() { return *cast(float*)(cast(size_t)cast(void*)this + 380); }
-			float m_fJammerPackRadiusPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 328); }
-			int m_nFlagReachTier() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int m_nExtraCreditsFromBeltKills() { return *cast(int*)(cast(size_t)cast(void*)this + 308); }
-			int m_nCreditsFromKillsBuff() { return *cast(int*)(cast(size_t)cast(void*)this + 204); }
-			float m_fVehicleCostBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-			float m_fSensorDistancePctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }
-			float m_fPackEnergyCostBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 192); }
-			int m_nExtraDeployablesOutBuff() { return *cast(int*)(cast(size_t)cast(void*)this + 228); }
-			float m_fFasterThrowBeltBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 364); }
-			float m_fOffhandDamageRadiusBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float m_fBlinkPackPotencyBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 196); }
-			float m_fBuildupBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
-			float m_fSonicPunchDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 368); }
-			float m_fSonicPunchKnockback() { return *cast(float*)(cast(size_t)cast(void*)this + 372); }
-			float m_fBackstabMeleeDamagePctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 312); }
-			float m_fRepairRateBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
-			float m_fPrimaryWeaponRangeBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			float m_fSecondaryWeaponRangeBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
-			float m_fAmmoFromPickupBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 220); }
-			float m_fHealthFromPickupBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-			float m_fEnergyFromPickupBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
-			int m_nExtraMinesOutBuff() { return *cast(int*)(cast(size_t)cast(void*)this + 260); }
-			float m_fRepairDeployableRateBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-			float m_fPrimaryWeaponEnergyCostPctBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 352); }
-			float m_fDeployedTurretArmorPenetrationBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			float m_fMultiCrewedVehicleDamageProtectionPct() { return *cast(float*)(cast(size_t)cast(void*)this + 212); }
-			float m_fVehicleRunOverDamageProtectionPct() { return *cast(float*)(cast(size_t)cast(void*)this + 208); }
-			float m_fTimeToRegenEnergyBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			float m_fVehicleExtraEnergyBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
-			float m_fVehicleExtraHealthBuffPct() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-			int DatabaseItemId() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int IconId() { return *cast(int*)(cast(size_t)cast(void*)this + 84); }
-			ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 72); }
-			ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 60); }
+			float m_fWeaponSwitchPctBuff() { mixin(MGPC!(float, 336)()); }
+			float m_fPrimaryWeaponReloadBuffPct() { mixin(MGPC!(float, 96)()); }
+			float m_fSecondaryWeaponReloadBuffPct() { mixin(MGPC!(float, 100)()); }
+			int m_nPrimaryWeaponIncreasedClipSizeBuff() { mixin(MGPC!(int, 296)()); }
+			int m_nSecondaryWeaponIncreasedClipSizeBuff() { mixin(MGPC!(int, 300)()); }
+			float m_fUpgradeCostBuffPct() { mixin(MGPC!(float, 244)()); }
+			float m_fPrimaryWeaponArmorPenetrationBuffPct() { mixin(MGPC!(float, 104)()); }
+			float m_fSecondaryWeaponArmorPenetrationBuffPct() { mixin(MGPC!(float, 108)()); }
+			float m_fOffhandArmorPenetrationBuffPct() { mixin(MGPC!(float, 304)()); }
+			float m_fDeployableHealthBuff() { mixin(MGPC!(float, 280)()); }
+			float m_fDeployableRangeBuffPct() { mixin(MGPC!(float, 252)()); }
+			float m_fTurretAcquireTargetBuffPct() { mixin(MGPC!(float, 224)()); }
+			float m_fAcquireTimeByEnemyTurretPctBuff() { mixin(MGPC!(float, 316)()); }
+			int m_nExtraOffhandAmmo() { mixin(MGPC!(int, 160)()); }
+			int m_nExtraGrenadesFromPickupBuff() { mixin(MGPC!(int, 216)()); }
+			int m_nExtraPrimaryAmmo() { mixin(MGPC!(int, 168)()); }
+			int m_nExtraSecondaryAmmo() { mixin(MGPC!(int, 172)()); }
+			float m_fMaxJettingSpeedBuff() { mixin(MGPC!(float, 112)()); }
+			float m_fTerminalJettingSpeedBuff() { mixin(MGPC!(float, 116)()); }
+			float m_fMaxSkiSpeedBuff() { mixin(MGPC!(float, 120)()); }
+			float m_fTerminalSkiSpeedBuff() { mixin(MGPC!(float, 124)()); }
+			float m_fPeakSkiControlSpeedBuff() { mixin(MGPC!(float, 180)()); }
+			float m_fSkiControlSigmaSquareBuff() { mixin(MGPC!(float, 184)()); }
+			float m_fMaxSkiControlBuffPct() { mixin(MGPC!(float, 188)()); }
+			float m_fGroundSpeedPctBuff() { mixin(MGPC!(float, 340)()); }
+			float m_fMaxStoppingDistancePctBuff() { mixin(MGPC!(float, 344)()); }
+			float m_fMassPctBuff() { mixin(MGPC!(float, 348)()); }
+			float m_fExtraEnergyBuff() { mixin(MGPC!(float, 136)()); }
+			float m_fHealthBuff() { mixin(MGPC!(float, 92)()); }
+			float m_fEnergyRegenRateBuffPct() { mixin(MGPC!(float, 152)()); }
+			float m_fTimeToRegenHealthBuffPct() { mixin(MGPC!(float, 132)()); }
+			float m_fSplatDamageBuffPct() { mixin(MGPC!(float, 200)()); }
+			float m_fStealthPackPulseTimeBuffPct() { mixin(MGPC!(float, 292)()); }
+			float m_fHealthRegenRateBuffPct() { mixin(MGPC!(float, 128)()); }
+			float m_fShieldPackEffectivenessBuff() { mixin(MGPC!(float, 288)()); }
+			float m_fReceiveMeleeDamageBuffPct() { mixin(MGPC!(float, 248)()); }
+			float m_fSelfDamagePct() { mixin(MGPC!(float, 176)()); }
+			float m_fEnergyDrainPctBuff() { mixin(MGPC!(float, 332)()); }
+			float m_fPotentialEnergyDamageTransferPct() { mixin(MGPC!(float, 356)()); }
+			float m_fWhiteOutInterpSpeedPctBuff() { mixin(MGPC!(float, 324)()); }
+			float m_fIgnorePulseTime() { mixin(MGPC!(float, 392)()); }
+			float m_fRageEnergyRegenBuff() { mixin(MGPC!(float, 376)()); }
+			float m_fRageHealthRestorationPct() { mixin(MGPC!(float, 384)()); }
+			float m_fRageMassPctBuff() { mixin(MGPC!(float, 388)()); }
+			float m_fRageLength() { mixin(MGPC!(float, 380)()); }
+			float m_fJammerPackRadiusPctBuff() { mixin(MGPC!(float, 328)()); }
+			int m_nFlagReachTier() { mixin(MGPC!(int, 360)()); }
+			int m_nExtraCreditsFromBeltKills() { mixin(MGPC!(int, 308)()); }
+			int m_nCreditsFromKillsBuff() { mixin(MGPC!(int, 204)()); }
+			float m_fVehicleCostBuffPct() { mixin(MGPC!(float, 256)()); }
+			float m_fSensorDistancePctBuff() { mixin(MGPC!(float, 320)()); }
+			float m_fPackEnergyCostBuffPct() { mixin(MGPC!(float, 192)()); }
+			int m_nExtraDeployablesOutBuff() { mixin(MGPC!(int, 228)()); }
+			float m_fFasterThrowBeltBuffPct() { mixin(MGPC!(float, 364)()); }
+			float m_fOffhandDamageRadiusBuffPct() { mixin(MGPC!(float, 164)()); }
+			float m_fBlinkPackPotencyBuffPct() { mixin(MGPC!(float, 196)()); }
+			float m_fBuildupBuffPct() { mixin(MGPC!(float, 284)()); }
+			float m_fSonicPunchDistance() { mixin(MGPC!(float, 368)()); }
+			float m_fSonicPunchKnockback() { mixin(MGPC!(float, 372)()); }
+			float m_fBackstabMeleeDamagePctBuff() { mixin(MGPC!(float, 312)()); }
+			float m_fRepairRateBuffPct() { mixin(MGPC!(float, 236)()); }
+			float m_fPrimaryWeaponRangeBuffPct() { mixin(MGPC!(float, 264)()); }
+			float m_fSecondaryWeaponRangeBuffPct() { mixin(MGPC!(float, 268)()); }
+			float m_fAmmoFromPickupBuffPct() { mixin(MGPC!(float, 220)()); }
+			float m_fHealthFromPickupBuffPct() { mixin(MGPC!(float, 272)()); }
+			float m_fEnergyFromPickupBuffPct() { mixin(MGPC!(float, 276)()); }
+			int m_nExtraMinesOutBuff() { mixin(MGPC!(int, 260)()); }
+			float m_fRepairDeployableRateBuffPct() { mixin(MGPC!(float, 240)()); }
+			float m_fPrimaryWeaponEnergyCostPctBuff() { mixin(MGPC!(float, 352)()); }
+			float m_fDeployedTurretArmorPenetrationBuffPct() { mixin(MGPC!(float, 232)()); }
+			float m_fMultiCrewedVehicleDamageProtectionPct() { mixin(MGPC!(float, 212)()); }
+			float m_fVehicleRunOverDamageProtectionPct() { mixin(MGPC!(float, 208)()); }
+			float m_fTimeToRegenEnergyBuff() { mixin(MGPC!(float, 148)()); }
+			float m_fVehicleExtraEnergyBuffPct() { mixin(MGPC!(float, 144)()); }
+			float m_fVehicleExtraHealthBuffPct() { mixin(MGPC!(float, 140)()); }
+			int DatabaseItemId() { mixin(MGPC!(int, 88)()); }
+			int IconId() { mixin(MGPC!(int, 84)()); }
+			ScriptString Description() { mixin(MGPC!(ScriptString, 72)()); }
+			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 60)()); }
 		}
-		bool m_bHasDetermination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x10) != 0; }
-		bool m_bHasDetermination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x10; } return val; }
-		bool m_bIgnoreGrenadeSecondaryOnSelf() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x2000) != 0; }
-		bool m_bIgnoreGrenadeSecondaryOnSelf(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x2000; } return val; }
-		bool m_bPotentialEnergy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x100) != 0; }
-		bool m_bPotentialEnergy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x100; } return val; }
-		bool m_bPotentialEnergyFallDamage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x200) != 0; }
-		bool m_bPotentialEnergyFallDamage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x200; } return val; }
-		bool m_bStickyHands() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x1) != 0; }
-		bool m_bStickyHands(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x1; } return val; }
-		bool m_bRadarLink() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x400) != 0; }
-		bool m_bRadarLink(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x400; } return val; }
-		bool m_bRage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x8000) != 0; }
-		bool m_bRage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x8000; } return val; }
-		bool m_bClothesline() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x80) != 0; }
-		bool m_bClothesline(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x80; } return val; }
-		bool m_bFlagReach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x800) != 0; }
-		bool m_bFlagReach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x800; } return val; }
-		bool m_bSonicPunch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x4000) != 0; }
-		bool m_bSonicPunch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x4000; } return val; }
-		bool m_bVictimDropFlagOnMelee() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x20) != 0; }
-		bool m_bVictimDropFlagOnMelee(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x20; } return val; }
-		bool m_bCanDamageRepairEnemyObjectives() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x8) != 0; }
-		bool m_bCanDamageRepairEnemyObjectives(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x8; } return val; }
-		bool m_bAmmoPickupReach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x1000) != 0; }
-		bool m_bAmmoPickupReach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x1000; } return val; }
-		bool m_bCanDetectTraps() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x4) != 0; }
-		bool m_bCanDetectTraps(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x4; } return val; }
-		bool m_bEjectionSeat() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x40) != 0; }
-		bool m_bEjectionSeat(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x40; } return val; }
-		bool m_bCanCallInSupplyDrop() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x2) != 0; }
-		bool m_bCanCallInSupplyDrop(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x2; } return val; }
+		bool m_bHasDetermination() { mixin(MGBPC!(156, 0x10)()); }
+		bool m_bHasDetermination(bool val) { mixin(MSBPC!(156, 0x10)()); }
+		bool m_bIgnoreGrenadeSecondaryOnSelf() { mixin(MGBPC!(156, 0x2000)()); }
+		bool m_bIgnoreGrenadeSecondaryOnSelf(bool val) { mixin(MSBPC!(156, 0x2000)()); }
+		bool m_bPotentialEnergy() { mixin(MGBPC!(156, 0x100)()); }
+		bool m_bPotentialEnergy(bool val) { mixin(MSBPC!(156, 0x100)()); }
+		bool m_bPotentialEnergyFallDamage() { mixin(MGBPC!(156, 0x200)()); }
+		bool m_bPotentialEnergyFallDamage(bool val) { mixin(MSBPC!(156, 0x200)()); }
+		bool m_bStickyHands() { mixin(MGBPC!(156, 0x1)()); }
+		bool m_bStickyHands(bool val) { mixin(MSBPC!(156, 0x1)()); }
+		bool m_bRadarLink() { mixin(MGBPC!(156, 0x400)()); }
+		bool m_bRadarLink(bool val) { mixin(MSBPC!(156, 0x400)()); }
+		bool m_bRage() { mixin(MGBPC!(156, 0x8000)()); }
+		bool m_bRage(bool val) { mixin(MSBPC!(156, 0x8000)()); }
+		bool m_bClothesline() { mixin(MGBPC!(156, 0x80)()); }
+		bool m_bClothesline(bool val) { mixin(MSBPC!(156, 0x80)()); }
+		bool m_bFlagReach() { mixin(MGBPC!(156, 0x800)()); }
+		bool m_bFlagReach(bool val) { mixin(MSBPC!(156, 0x800)()); }
+		bool m_bSonicPunch() { mixin(MGBPC!(156, 0x4000)()); }
+		bool m_bSonicPunch(bool val) { mixin(MSBPC!(156, 0x4000)()); }
+		bool m_bVictimDropFlagOnMelee() { mixin(MGBPC!(156, 0x20)()); }
+		bool m_bVictimDropFlagOnMelee(bool val) { mixin(MSBPC!(156, 0x20)()); }
+		bool m_bCanDamageRepairEnemyObjectives() { mixin(MGBPC!(156, 0x8)()); }
+		bool m_bCanDamageRepairEnemyObjectives(bool val) { mixin(MSBPC!(156, 0x8)()); }
+		bool m_bAmmoPickupReach() { mixin(MGBPC!(156, 0x1000)()); }
+		bool m_bAmmoPickupReach(bool val) { mixin(MSBPC!(156, 0x1000)()); }
+		bool m_bCanDetectTraps() { mixin(MGBPC!(156, 0x4)()); }
+		bool m_bCanDetectTraps(bool val) { mixin(MSBPC!(156, 0x4)()); }
+		bool m_bEjectionSeat() { mixin(MGBPC!(156, 0x40)()); }
+		bool m_bEjectionSeat(bool val) { mixin(MSBPC!(156, 0x40)()); }
+		bool m_bCanCallInSupplyDrop() { mixin(MGBPC!(156, 0x2)()); }
+		bool m_bCanCallInSupplyDrop(bool val) { mixin(MSBPC!(156, 0x2)()); }
 	}
 final:
 	void Reset()

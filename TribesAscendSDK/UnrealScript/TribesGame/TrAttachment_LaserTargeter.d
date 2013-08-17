@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrAttachment_LaserTargeter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrDeviceAttachment;
 
 extern(C++) interface TrAttachment_LaserTargeter : TrDeviceAttachment
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAttachment_LaserTargeter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAttachment_LaserTargeter")()); }
 	private static __gshared TrAttachment_LaserTargeter mDefaultProperties;
-	@property final static TrAttachment_LaserTargeter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAttachment_LaserTargeter)("TrAttachment_LaserTargeter TribesGame.Default__TrAttachment_LaserTargeter")); }
+	@property final static TrAttachment_LaserTargeter DefaultProperties() { mixin(MGDPC!(TrAttachment_LaserTargeter, "TrAttachment_LaserTargeter TribesGame.Default__TrAttachment_LaserTargeter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +23,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction KillLaserEffect() { return mKillLaserEffect ? mKillLaserEffect : (mKillLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_LaserTargeter.KillLaserEffect")); }
-			ScriptFunction SpawnLaserEffect() { return mSpawnLaserEffect ? mSpawnLaserEffect : (mSpawnLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_LaserTargeter.SpawnLaserEffect")); }
-			ScriptFunction UpdateLaserEffect() { return mUpdateLaserEffect ? mUpdateLaserEffect : (mUpdateLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_LaserTargeter.UpdateLaserEffect")); }
-			ScriptFunction ThirdPersonFireEffects() { return mThirdPersonFireEffects ? mThirdPersonFireEffects : (mThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_LaserTargeter.ThirdPersonFireEffects")); }
-			ScriptFunction StopThirdPersonFireEffects() { return mStopThirdPersonFireEffects ? mStopThirdPersonFireEffects : (mStopThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_LaserTargeter.StopThirdPersonFireEffects")); }
+			ScriptFunction KillLaserEffect() { mixin(MGF!("mKillLaserEffect", "Function TribesGame.TrAttachment_LaserTargeter.KillLaserEffect")()); }
+			ScriptFunction SpawnLaserEffect() { mixin(MGF!("mSpawnLaserEffect", "Function TribesGame.TrAttachment_LaserTargeter.SpawnLaserEffect")()); }
+			ScriptFunction UpdateLaserEffect() { mixin(MGF!("mUpdateLaserEffect", "Function TribesGame.TrAttachment_LaserTargeter.UpdateLaserEffect")()); }
+			ScriptFunction ThirdPersonFireEffects() { mixin(MGF!("mThirdPersonFireEffects", "Function TribesGame.TrAttachment_LaserTargeter.ThirdPersonFireEffects")()); }
+			ScriptFunction StopThirdPersonFireEffects() { mixin(MGF!("mStopThirdPersonFireEffects", "Function TribesGame.TrAttachment_LaserTargeter.StopThirdPersonFireEffects")()); }
 		}
 	}
 	@property final
 	{
-		bool m_bIsTracerActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 784) & 0x1) != 0; }
-		bool m_bIsTracerActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 784) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 784) &= ~0x1; } return val; }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscLaserEffect'!
+		bool m_bIsTracerActive() { mixin(MGBPC!(784, 0x1)()); }
+		bool m_bIsTracerActive(bool val) { mixin(MSBPC!(784, 0x1)()); }
 	}
 final:
 	void KillLaserEffect()

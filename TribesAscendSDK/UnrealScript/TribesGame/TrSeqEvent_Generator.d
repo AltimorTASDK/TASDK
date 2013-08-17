@@ -1,19 +1,20 @@
 module UnrealScript.TribesGame.TrSeqEvent_Generator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 
 extern(C++) interface TrSeqEvent_Generator : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeqEvent_Generator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSeqEvent_Generator")()); }
 	private static __gshared TrSeqEvent_Generator mDefaultProperties;
-	@property final static TrSeqEvent_Generator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeqEvent_Generator)("TrSeqEvent_Generator TribesGame.Default__TrSeqEvent_Generator")); }
+	@property final static TrSeqEvent_Generator DefaultProperties() { mixin(MGDPC!(TrSeqEvent_Generator, "TrSeqEvent_Generator TribesGame.Default__TrSeqEvent_Generator")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSeqEvent_Generator.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function TribesGame.TrSeqEvent_Generator.GetObjClassVersion")()); }
 	}
 	final static int GetObjClassVersion()
 	{

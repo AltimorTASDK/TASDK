@@ -1,15 +1,16 @@
 module UnrealScript.UDKBase.UDKGameInteraction;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIInteraction;
 
 extern(C++) interface UDKGameInteraction : UIInteraction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKGameInteraction")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKGameInteraction")()); }
 	private static __gshared UDKGameInteraction mDefaultProperties;
-	@property final static UDKGameInteraction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKGameInteraction)("UDKGameInteraction UDKBase.Default__UDKGameInteraction")); }
+	@property final static UDKGameInteraction DefaultProperties() { mixin(MGDPC!(UDKGameInteraction, "UDKGameInteraction UDKBase.Default__UDKGameInteraction")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,13 +22,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldProcessUIInput() { return mShouldProcessUIInput ? mShouldProcessUIInput : (mShouldProcessUIInput = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKGameInteraction.ShouldProcessUIInput")); }
-			ScriptFunction ClearUIInputBlocks() { return mClearUIInputBlocks ? mClearUIInputBlocks : (mClearUIInputBlocks = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKGameInteraction.ClearUIInputBlocks")); }
-			ScriptFunction BlockUIInput() { return mBlockUIInput ? mBlockUIInput : (mBlockUIInput = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKGameInteraction.BlockUIInput")); }
-			ScriptFunction NotifyGameSessionEnded() { return mNotifyGameSessionEnded ? mNotifyGameSessionEnded : (mNotifyGameSessionEnded = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKGameInteraction.NotifyGameSessionEnded")); }
+			ScriptFunction ShouldProcessUIInput() { mixin(MGF!("mShouldProcessUIInput", "Function UDKBase.UDKGameInteraction.ShouldProcessUIInput")()); }
+			ScriptFunction ClearUIInputBlocks() { mixin(MGF!("mClearUIInputBlocks", "Function UDKBase.UDKGameInteraction.ClearUIInputBlocks")()); }
+			ScriptFunction BlockUIInput() { mixin(MGF!("mBlockUIInput", "Function UDKBase.UDKGameInteraction.BlockUIInput")()); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function UDKBase.UDKGameInteraction.NotifyGameSessionEnded")()); }
 		}
 	}
-	@property final auto ref int BlockUIInputSemaphore() { return *cast(int*)(cast(size_t)cast(void*)this + 348); }
+	@property final auto ref int BlockUIInputSemaphore() { mixin(MGPC!(int, 348)()); }
 final:
 	bool ShouldProcessUIInput()
 	{

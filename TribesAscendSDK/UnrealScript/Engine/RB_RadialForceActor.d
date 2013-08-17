@@ -1,6 +1,7 @@
 module UnrealScript.Engine.RB_RadialForceActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.RigidBodyBase;
 import UnrealScript.Engine.PrimitiveComponent;
@@ -9,13 +10,13 @@ extern(C++) interface RB_RadialForceActor : RigidBodyBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_RadialForceActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.RB_RadialForceActor")()); }
 	private static __gshared RB_RadialForceActor mDefaultProperties;
-	@property final static RB_RadialForceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_RadialForceActor)("RB_RadialForceActor Engine.Default__RB_RadialForceActor")); }
+	@property final static RB_RadialForceActor DefaultProperties() { mixin(MGDPC!(RB_RadialForceActor, "RB_RadialForceActor Engine.Default__RB_RadialForceActor")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;
-		public @property static final ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_RadialForceActor.OnToggle")); }
+		public @property static final ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.RB_RadialForceActor.OnToggle")()); }
 	}
 	enum ERadialForceType : ubyte
 	{
@@ -27,24 +28,25 @@ public extern(D):
 	{
 		auto ref
 		{
-			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 504); }
-			RB_RadialForceActor.ERadialForceType RadialForceMode() { return *cast(RB_RadialForceActor.ERadialForceType*)(cast(size_t)cast(void*)this + 497); }
-			PrimitiveComponent.ERadialImpulseFalloff ForceFalloff() { return *cast(PrimitiveComponent.ERadialImpulseFalloff*)(cast(size_t)cast(void*)this + 496); }
-			float SpinTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-			float SwirlStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-			float ForceRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-			float ForceStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
+			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 504)()); }
+			RB_RadialForceActor.ERadialForceType RadialForceMode() { mixin(MGPC!(RB_RadialForceActor.ERadialForceType, 497)()); }
+			PrimitiveComponent.ERadialImpulseFalloff ForceFalloff() { mixin(MGPC!(PrimitiveComponent.ERadialImpulseFalloff, 496)()); }
+			float SpinTorque() { mixin(MGPC!(float, 492)()); }
+			float SwirlStrength() { mixin(MGPC!(float, 488)()); }
+			float ForceRadius() { mixin(MGPC!(float, 484)()); }
+			float ForceStrength() { mixin(MGPC!(float, 480)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
 		}
-		bool bForceActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x1) != 0; }
-		bool bForceActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x1; } return val; }
-		bool bForceApplyToProjectiles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x10) != 0; }
-		bool bForceApplyToProjectiles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x10; } return val; }
-		bool bForceApplyToRigidBodies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x8) != 0; }
-		bool bForceApplyToRigidBodies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x8; } return val; }
-		bool bForceApplyToFluid() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x4) != 0; }
-		bool bForceApplyToFluid(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x4; } return val; }
-		bool bForceApplyToCloth() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x2) != 0; }
-		bool bForceApplyToCloth(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x2; } return val; }
+		bool bForceActive() { mixin(MGBPC!(500, 0x1)()); }
+		bool bForceActive(bool val) { mixin(MSBPC!(500, 0x1)()); }
+		bool bForceApplyToProjectiles() { mixin(MGBPC!(500, 0x10)()); }
+		bool bForceApplyToProjectiles(bool val) { mixin(MSBPC!(500, 0x10)()); }
+		bool bForceApplyToRigidBodies() { mixin(MGBPC!(500, 0x8)()); }
+		bool bForceApplyToRigidBodies(bool val) { mixin(MSBPC!(500, 0x8)()); }
+		bool bForceApplyToFluid() { mixin(MGBPC!(500, 0x4)()); }
+		bool bForceApplyToFluid(bool val) { mixin(MSBPC!(500, 0x4)()); }
+		bool bForceApplyToCloth() { mixin(MGBPC!(500, 0x2)()); }
+		bool bForceApplyToCloth(bool val) { mixin(MSBPC!(500, 0x2)()); }
 	}
 	final void OnToggle(SeqAct_Toggle inAction)
 	{

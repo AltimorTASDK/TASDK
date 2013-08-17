@@ -1,73 +1,74 @@
 module UnrealScript.TribesGame.TrSpectatorHUDCache;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrSpectatorHUDCache : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSpectatorHUDCache")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSpectatorHUDCache")()); }
 	private static __gshared TrSpectatorHUDCache mDefaultProperties;
-	@property final static TrSpectatorHUDCache DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSpectatorHUDCache)("TrSpectatorHUDCache TribesGame.Default__TrSpectatorHUDCache")); }
+	@property final static TrSpectatorHUDCache DefaultProperties() { mixin(MGDPC!(TrSpectatorHUDCache, "TrSpectatorHUDCache TribesGame.Default__TrSpectatorHUDCache")()); }
 	@property final
 	{
 		auto ref
 		{
-			ScriptString CachedPlayerPanelPlayerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 64); }
-			ScriptString CachedPlayerPanelClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 76); }
-			ScriptString CachedPlayerPanelNextRegen() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 88); }
-			int CachedPlayerPanelHealthBarFill() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
-			ScriptString CachedPlayerPanelHealth() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 104); }
-			int CachedPlayerPanelEnergyFillBar() { return *cast(int*)(cast(size_t)cast(void*)this + 116); }
-			ScriptString CachedPlayerPanelEnergy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 120); }
-			ScriptString CachedPlayerPanelPrimaryWeaponName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-			ScriptString CachedPlayerPanelPrimaryAmmoCount() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-			ScriptString CachedPlayerPanelSecondaryWeaponName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-			ScriptString CachedPlayerPanelSecondaryAmmoCount() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-			int CachedPlayerPanelOffhandIcon() { return *cast(int*)(cast(size_t)cast(void*)this + 180); }
-			ScriptString CachedPlayerPanelOffhandAmmo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-			ScriptString CachedPlayerPanelOffhandName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-			int CachedPlayerPanelPackIcon() { return *cast(int*)(cast(size_t)cast(void*)this + 208); }
-			ScriptString CachedPlayerPanelPackAmmo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 212); }
-			ScriptString CachedPlayerPanelPackName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 224); }
-			int CachedPlayerPanelPerk1Icon() { return *cast(int*)(cast(size_t)cast(void*)this + 236); }
-			ScriptString CachedPlayerPanelPerk1Name() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 240); }
-			int CachedPlayerPanelPerk2Icon() { return *cast(int*)(cast(size_t)cast(void*)this + 252); }
-			ScriptString CachedPlayerPanelPerk2Name() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 256); }
-			int CachedPlayerPanelSkiFillBar() { return *cast(int*)(cast(size_t)cast(void*)this + 268); }
-			ScriptString CachedPlayerPanelSkiSpeed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 272); }
-			int CachedPlayerPanelSelected() { return *cast(int*)(cast(size_t)cast(void*)this + 284); }
-			ScriptString CachedVehiclePanelVehicleName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 288); }
-			ScriptString CachedVehiclePanelDriverName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 300); }
-			ScriptString CachedVehiclePanelPassengerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 312); }
-			int CachedVehiclePanelHealthFillBar() { return *cast(int*)(cast(size_t)cast(void*)this + 324); }
-			ScriptString CachedVehiclePanelHealth() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 328); }
-			int CachedVehiclePanelEnergyFillBar() { return *cast(int*)(cast(size_t)cast(void*)this + 340); }
-			ScriptString CachedVehiclePanelEnergy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 344); }
-			ScriptString CachedVehiclePanelPrimaryWeaponName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 356); }
-			int CachedVehiclePanelPrimaryWeaponReady() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
-			ScriptString CachedVehiclePanelSecondaryWeaponName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 372); }
-			int CachedVehiclePanelSecondaryWeaponReady() { return *cast(int*)(cast(size_t)cast(void*)this + 384); }
-			int CachedVehiclePanelSkiFillBar() { return *cast(int*)(cast(size_t)cast(void*)this + 388); }
-			ScriptString CachedVehiclePanelSkiSpeed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 392); }
-			int CachedVehiclePanelSelected() { return *cast(int*)(cast(size_t)cast(void*)this + 404); }
-			ScriptString CachedBookmarkPanelTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 408); }
-			ScriptString CachedBookmarkPanelName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 420); }
-			ScriptString CachedObjectivePanelObjectiveName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 432); }
-			ScriptString CachedObjectivePanelObjectiveDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 444); }
-			int CachedObjectivePanelHealth() { return *cast(int*)(cast(size_t)cast(void*)this + 460); }
-			ScriptString CachedFloatCameraPanelName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 464); }
-			ScriptString CachedFloatCameraPanelDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 476); }
-			int CachedObjectivePanelHealthFillFrameIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 456); }
+			ScriptString CachedPlayerPanelPlayerName() { mixin(MGPC!(ScriptString, 64)()); }
+			ScriptString CachedPlayerPanelClassName() { mixin(MGPC!(ScriptString, 76)()); }
+			ScriptString CachedPlayerPanelNextRegen() { mixin(MGPC!(ScriptString, 88)()); }
+			int CachedPlayerPanelHealthBarFill() { mixin(MGPC!(int, 100)()); }
+			ScriptString CachedPlayerPanelHealth() { mixin(MGPC!(ScriptString, 104)()); }
+			int CachedPlayerPanelEnergyFillBar() { mixin(MGPC!(int, 116)()); }
+			ScriptString CachedPlayerPanelEnergy() { mixin(MGPC!(ScriptString, 120)()); }
+			ScriptString CachedPlayerPanelPrimaryWeaponName() { mixin(MGPC!(ScriptString, 132)()); }
+			ScriptString CachedPlayerPanelPrimaryAmmoCount() { mixin(MGPC!(ScriptString, 144)()); }
+			ScriptString CachedPlayerPanelSecondaryWeaponName() { mixin(MGPC!(ScriptString, 156)()); }
+			ScriptString CachedPlayerPanelSecondaryAmmoCount() { mixin(MGPC!(ScriptString, 168)()); }
+			int CachedPlayerPanelOffhandIcon() { mixin(MGPC!(int, 180)()); }
+			ScriptString CachedPlayerPanelOffhandAmmo() { mixin(MGPC!(ScriptString, 184)()); }
+			ScriptString CachedPlayerPanelOffhandName() { mixin(MGPC!(ScriptString, 196)()); }
+			int CachedPlayerPanelPackIcon() { mixin(MGPC!(int, 208)()); }
+			ScriptString CachedPlayerPanelPackAmmo() { mixin(MGPC!(ScriptString, 212)()); }
+			ScriptString CachedPlayerPanelPackName() { mixin(MGPC!(ScriptString, 224)()); }
+			int CachedPlayerPanelPerk1Icon() { mixin(MGPC!(int, 236)()); }
+			ScriptString CachedPlayerPanelPerk1Name() { mixin(MGPC!(ScriptString, 240)()); }
+			int CachedPlayerPanelPerk2Icon() { mixin(MGPC!(int, 252)()); }
+			ScriptString CachedPlayerPanelPerk2Name() { mixin(MGPC!(ScriptString, 256)()); }
+			int CachedPlayerPanelSkiFillBar() { mixin(MGPC!(int, 268)()); }
+			ScriptString CachedPlayerPanelSkiSpeed() { mixin(MGPC!(ScriptString, 272)()); }
+			int CachedPlayerPanelSelected() { mixin(MGPC!(int, 284)()); }
+			ScriptString CachedVehiclePanelVehicleName() { mixin(MGPC!(ScriptString, 288)()); }
+			ScriptString CachedVehiclePanelDriverName() { mixin(MGPC!(ScriptString, 300)()); }
+			ScriptString CachedVehiclePanelPassengerName() { mixin(MGPC!(ScriptString, 312)()); }
+			int CachedVehiclePanelHealthFillBar() { mixin(MGPC!(int, 324)()); }
+			ScriptString CachedVehiclePanelHealth() { mixin(MGPC!(ScriptString, 328)()); }
+			int CachedVehiclePanelEnergyFillBar() { mixin(MGPC!(int, 340)()); }
+			ScriptString CachedVehiclePanelEnergy() { mixin(MGPC!(ScriptString, 344)()); }
+			ScriptString CachedVehiclePanelPrimaryWeaponName() { mixin(MGPC!(ScriptString, 356)()); }
+			int CachedVehiclePanelPrimaryWeaponReady() { mixin(MGPC!(int, 368)()); }
+			ScriptString CachedVehiclePanelSecondaryWeaponName() { mixin(MGPC!(ScriptString, 372)()); }
+			int CachedVehiclePanelSecondaryWeaponReady() { mixin(MGPC!(int, 384)()); }
+			int CachedVehiclePanelSkiFillBar() { mixin(MGPC!(int, 388)()); }
+			ScriptString CachedVehiclePanelSkiSpeed() { mixin(MGPC!(ScriptString, 392)()); }
+			int CachedVehiclePanelSelected() { mixin(MGPC!(int, 404)()); }
+			ScriptString CachedBookmarkPanelTitle() { mixin(MGPC!(ScriptString, 408)()); }
+			ScriptString CachedBookmarkPanelName() { mixin(MGPC!(ScriptString, 420)()); }
+			ScriptString CachedObjectivePanelObjectiveName() { mixin(MGPC!(ScriptString, 432)()); }
+			ScriptString CachedObjectivePanelObjectiveDescription() { mixin(MGPC!(ScriptString, 444)()); }
+			int CachedObjectivePanelHealth() { mixin(MGPC!(int, 460)()); }
+			ScriptString CachedFloatCameraPanelName() { mixin(MGPC!(ScriptString, 464)()); }
+			ScriptString CachedFloatCameraPanelDescription() { mixin(MGPC!(ScriptString, 476)()); }
+			int CachedObjectivePanelHealthFillFrameIndex() { mixin(MGPC!(int, 456)()); }
 		}
-		bool CachedPlayerPanelFlagCarried() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool CachedPlayerPanelFlagCarried(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
-		bool CachedVehiclePanelFlagCarried() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x2) != 0; }
-		bool CachedVehiclePanelFlagCarried(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x2; } return val; }
-		bool CachedVehiclePanelPrimaryWeaponVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x4) != 0; }
-		bool CachedVehiclePanelPrimaryWeaponVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x4; } return val; }
-		bool CachedVehiclePanelSecondaryWeaponVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x8) != 0; }
-		bool CachedVehiclePanelSecondaryWeaponVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x8; } return val; }
+		bool CachedPlayerPanelFlagCarried() { mixin(MGBPC!(60, 0x1)()); }
+		bool CachedPlayerPanelFlagCarried(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		bool CachedVehiclePanelFlagCarried() { mixin(MGBPC!(60, 0x2)()); }
+		bool CachedVehiclePanelFlagCarried(bool val) { mixin(MSBPC!(60, 0x2)()); }
+		bool CachedVehiclePanelPrimaryWeaponVisible() { mixin(MGBPC!(60, 0x4)()); }
+		bool CachedVehiclePanelPrimaryWeaponVisible(bool val) { mixin(MSBPC!(60, 0x4)()); }
+		bool CachedVehiclePanelSecondaryWeaponVisible() { mixin(MGBPC!(60, 0x8)()); }
+		bool CachedVehiclePanelSecondaryWeaponVisible(bool val) { mixin(MSBPC!(60, 0x8)()); }
 	}
 }

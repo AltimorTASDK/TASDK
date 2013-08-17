@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameTypes;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GamePawn;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Core.UObject;
@@ -13,9 +14,9 @@ extern(C++) interface GameTypes : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameTypes")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameTypes")()); }
 	private static __gshared GameTypes mDefaultProperties;
-	@property final static GameTypes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameTypes)("GameTypes GameFramework.Default__GameTypes")); }
+	@property final static GameTypes DefaultProperties() { mixin(MGDPC!(GameTypes, "GameTypes GameFramework.Default__GameTypes")()); }
 	static struct Constants
 	{
 		enum LOADING_MOVIE = "LoadingMovie";
@@ -31,12 +32,12 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.AICmdHistoryItem")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameTypes.AICmdHistoryItem")()); }
 		@property final auto ref
 		{
-			ScriptClass CmdClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
-			float TimeStamp() { return *cast(float*)(cast(size_t)&this + 4); }
-			ScriptString VerboseString() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
+			ScriptClass CmdClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			float TimeStamp() { mixin(MGPS!(float, 4)()); }
+			ScriptString VerboseString() { mixin(MGPS!(ScriptString, 8)()); }
 		}
 	}
 	struct SpecialMoveStruct
@@ -44,13 +45,13 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.SpecialMoveStruct")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameTypes.SpecialMoveStruct")()); }
 		@property final auto ref
 		{
-			ScriptName SpecialMoveName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			GamePawn InteractionPawn() { return *cast(GamePawn*)(cast(size_t)&this + 8); }
-			Actor InteractionActor() { return *cast(Actor*)(cast(size_t)&this + 12); }
-			int Flags() { return *cast(int*)(cast(size_t)&this + 16); }
+			ScriptName SpecialMoveName() { mixin(MGPS!(ScriptName, 0)()); }
+			GamePawn InteractionPawn() { mixin(MGPS!(GamePawn, 8)()); }
+			Actor InteractionActor() { mixin(MGPS!(Actor, 12)()); }
+			int Flags() { mixin(MGPS!(int, 16)()); }
 		}
 	}
 	struct GameSpecialMoveInfo
@@ -58,12 +59,12 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.GameSpecialMoveInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameTypes.GameSpecialMoveInfo")()); }
 		@property final auto ref
 		{
-			ScriptName SpecialMoveName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptClass SpecialMoveClass() { return *cast(ScriptClass*)(cast(size_t)&this + 8); }
-			GameSpecialMove SpecialMoveInstance() { return *cast(GameSpecialMove*)(cast(size_t)&this + 12); }
+			ScriptName SpecialMoveName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptClass SpecialMoveClass() { mixin(MGPS!(ScriptClass, 8)()); }
+			GameSpecialMove SpecialMoveInstance() { mixin(MGPS!(GameSpecialMove, 12)()); }
 		}
 	}
 	struct TakeHitInfo
@@ -71,17 +72,17 @@ public extern(D):
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.TakeHitInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameTypes.TakeHitInfo")()); }
 		@property final auto ref
 		{
-			Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 0); }
-			Vector Momentum() { return *cast(Vector*)(cast(size_t)&this + 12); }
+			Vector HitLocation() { mixin(MGPS!(Vector, 0)()); }
+			Vector Momentum() { mixin(MGPS!(Vector, 12)()); }
 			// WARNING: Property 'DamageType' has the same name as a defined type!
-			Pawn InstigatedBy() { return *cast(Pawn*)(cast(size_t)&this + 28); }
-			ubyte HitBoneIndex() { return *cast(ubyte*)(cast(size_t)&this + 32); }
+			Pawn InstigatedBy() { mixin(MGPS!(Pawn, 28)()); }
+			ubyte HitBoneIndex() { mixin(MGPS!(ubyte, 32)()); }
 			// WARNING: Property 'PhysicalMaterial' has the same name as a defined type!
-			float Damage() { return *cast(float*)(cast(size_t)&this + 40); }
-			Vector RadialDamageOrigin() { return *cast(Vector*)(cast(size_t)&this + 44); }
+			float Damage() { mixin(MGPS!(float, 40)()); }
+			Vector RadialDamageOrigin() { mixin(MGPS!(Vector, 44)()); }
 		}
 	}
 	struct ScreenShakeStruct
@@ -89,30 +90,30 @@ public extern(D):
 		private ubyte __buffer__[120];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.ScreenShakeStruct")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameTypes.ScreenShakeStruct")()); }
 		@property final
 		{
 			auto ref
 			{
-				float TimeToGo() { return *cast(float*)(cast(size_t)&this + 0); }
-				float TimeDuration() { return *cast(float*)(cast(size_t)&this + 4); }
-				Vector RotAmplitude() { return *cast(Vector*)(cast(size_t)&this + 8); }
-				Vector RotFrequency() { return *cast(Vector*)(cast(size_t)&this + 20); }
-				Vector RotSinOffset() { return *cast(Vector*)(cast(size_t)&this + 32); }
-				GameTypes.ShakeParams RotParam() { return *cast(GameTypes.ShakeParams*)(cast(size_t)&this + 44); }
-				Vector LocAmplitude() { return *cast(Vector*)(cast(size_t)&this + 48); }
-				Vector LocFrequency() { return *cast(Vector*)(cast(size_t)&this + 60); }
-				Vector LocSinOffset() { return *cast(Vector*)(cast(size_t)&this + 72); }
-				GameTypes.ShakeParams LocParam() { return *cast(GameTypes.ShakeParams*)(cast(size_t)&this + 84); }
-				float FOVAmplitude() { return *cast(float*)(cast(size_t)&this + 88); }
-				float FOVFrequency() { return *cast(float*)(cast(size_t)&this + 92); }
-				float FOVSinOffset() { return *cast(float*)(cast(size_t)&this + 96); }
-				GameTypes.EShakeParam FOVParam() { return *cast(GameTypes.EShakeParam*)(cast(size_t)&this + 100); }
-				ScriptName ShakeName() { return *cast(ScriptName*)(cast(size_t)&this + 104); }
-				float TargetingDampening() { return *cast(float*)(cast(size_t)&this + 116); }
+				float TimeToGo() { mixin(MGPS!(float, 0)()); }
+				float TimeDuration() { mixin(MGPS!(float, 4)()); }
+				Vector RotAmplitude() { mixin(MGPS!(Vector, 8)()); }
+				Vector RotFrequency() { mixin(MGPS!(Vector, 20)()); }
+				Vector RotSinOffset() { mixin(MGPS!(Vector, 32)()); }
+				GameTypes.ShakeParams RotParam() { mixin(MGPS!(GameTypes.ShakeParams, 44)()); }
+				Vector LocAmplitude() { mixin(MGPS!(Vector, 48)()); }
+				Vector LocFrequency() { mixin(MGPS!(Vector, 60)()); }
+				Vector LocSinOffset() { mixin(MGPS!(Vector, 72)()); }
+				GameTypes.ShakeParams LocParam() { mixin(MGPS!(GameTypes.ShakeParams, 84)()); }
+				float FOVAmplitude() { mixin(MGPS!(float, 88)()); }
+				float FOVFrequency() { mixin(MGPS!(float, 92)()); }
+				float FOVSinOffset() { mixin(MGPS!(float, 96)()); }
+				GameTypes.EShakeParam FOVParam() { mixin(MGPS!(GameTypes.EShakeParam, 100)()); }
+				ScriptName ShakeName() { mixin(MGPS!(ScriptName, 104)()); }
+				float TargetingDampening() { mixin(MGPS!(float, 116)()); }
 			}
-			bool bOverrideTargetingDampening() { return (*cast(uint*)(cast(size_t)&this + 112) & 0x1) != 0; }
-			bool bOverrideTargetingDampening(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 112) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 112) &= ~0x1; } return val; }
+			bool bOverrideTargetingDampening() { mixin(MGBPS!(112, 0x1)()); }
+			bool bOverrideTargetingDampening(bool val) { mixin(MSBPS!(112, 0x1)()); }
 		}
 	}
 	struct ShakeParams
@@ -120,13 +121,13 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.ShakeParams")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameTypes.ShakeParams")()); }
 		@property final auto ref
 		{
-			GameTypes.EShakeParam X() { return *cast(GameTypes.EShakeParam*)(cast(size_t)&this + 0); }
-			GameTypes.EShakeParam Y() { return *cast(GameTypes.EShakeParam*)(cast(size_t)&this + 1); }
-			GameTypes.EShakeParam Z() { return *cast(GameTypes.EShakeParam*)(cast(size_t)&this + 2); }
-			ubyte Padding() { return *cast(ubyte*)(cast(size_t)&this + 3); }
+			GameTypes.EShakeParam X() { mixin(MGPS!(GameTypes.EShakeParam, 0)()); }
+			GameTypes.EShakeParam Y() { mixin(MGPS!(GameTypes.EShakeParam, 1)()); }
+			GameTypes.EShakeParam Z() { mixin(MGPS!(GameTypes.EShakeParam, 2)()); }
+			ubyte Padding() { mixin(MGPS!(ubyte, 3)()); }
 		}
 	}
 	struct ScreenShakeAnimStruct
@@ -134,27 +135,27 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.ScreenShakeAnimStruct")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameTypes.ScreenShakeAnimStruct")()); }
 		@property final
 		{
 			auto ref
 			{
-				CameraAnim Anim() { return *cast(CameraAnim*)(cast(size_t)&this + 0); }
-				CameraAnim Anim_Left() { return *cast(CameraAnim*)(cast(size_t)&this + 8); }
-				CameraAnim Anim_Right() { return *cast(CameraAnim*)(cast(size_t)&this + 12); }
-				CameraAnim Anim_Rear() { return *cast(CameraAnim*)(cast(size_t)&this + 16); }
-				float AnimPlayRate() { return *cast(float*)(cast(size_t)&this + 20); }
-				float AnimScale() { return *cast(float*)(cast(size_t)&this + 24); }
-				float AnimBlendInTime() { return *cast(float*)(cast(size_t)&this + 28); }
-				float AnimBlendOutTime() { return *cast(float*)(cast(size_t)&this + 32); }
-				float RandomSegmentDuration() { return *cast(float*)(cast(size_t)&this + 40); }
+				CameraAnim Anim() { mixin(MGPS!(CameraAnim, 0)()); }
+				CameraAnim Anim_Left() { mixin(MGPS!(CameraAnim, 8)()); }
+				CameraAnim Anim_Right() { mixin(MGPS!(CameraAnim, 12)()); }
+				CameraAnim Anim_Rear() { mixin(MGPS!(CameraAnim, 16)()); }
+				float AnimPlayRate() { mixin(MGPS!(float, 20)()); }
+				float AnimScale() { mixin(MGPS!(float, 24)()); }
+				float AnimBlendInTime() { mixin(MGPS!(float, 28)()); }
+				float AnimBlendOutTime() { mixin(MGPS!(float, 32)()); }
+				float RandomSegmentDuration() { mixin(MGPS!(float, 40)()); }
 			}
-			bool bUseDirectionalAnimVariants() { return (*cast(uint*)(cast(size_t)&this + 4) & 0x1) != 0; }
-			bool bUseDirectionalAnimVariants(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 4) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 4) &= ~0x1; } return val; }
-			bool bRandomSegment() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x1) != 0; }
-			bool bRandomSegment(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x1; } return val; }
-			bool bSingleInstance() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-			bool bSingleInstance(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
+			bool bUseDirectionalAnimVariants() { mixin(MGBPS!(4, 0x1)()); }
+			bool bUseDirectionalAnimVariants(bool val) { mixin(MSBPS!(4, 0x1)()); }
+			bool bRandomSegment() { mixin(MGBPS!(36, 0x1)()); }
+			bool bRandomSegment(bool val) { mixin(MSBPS!(36, 0x1)()); }
+			bool bSingleInstance() { mixin(MGBPS!(44, 0x1)()); }
+			bool bSingleInstance(bool val) { mixin(MSBPS!(44, 0x1)()); }
 		}
 	}
 }

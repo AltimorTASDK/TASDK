@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqAct_Latent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.SequenceAction;
 
@@ -8,9 +9,9 @@ extern(C++) interface SeqAct_Latent : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Latent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_Latent")()); }
 	private static __gshared SeqAct_Latent mDefaultProperties;
-	@property final static SeqAct_Latent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Latent)("SeqAct_Latent Engine.Default__SeqAct_Latent")); }
+	@property final static SeqAct_Latent DefaultProperties() { mixin(MGDPC!(SeqAct_Latent, "SeqAct_Latent Engine.Default__SeqAct_Latent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AbortFor() { return mAbortFor ? mAbortFor : (mAbortFor = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Latent.AbortFor")); }
-			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Latent.Update")); }
+			ScriptFunction AbortFor() { mixin(MGF!("mAbortFor", "Function Engine.SeqAct_Latent.AbortFor")()); }
+			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function Engine.SeqAct_Latent.Update")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(Actor) LatentActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 232); }
-		bool bAborted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x1) != 0; }
-		bool bAborted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x1; } return val; }
+		@property final auto ref ScriptArray!(Actor) LatentActors() { mixin(MGPC!(ScriptArray!(Actor), 232)()); }
+		bool bAborted() { mixin(MGBPC!(244, 0x1)()); }
+		bool bAborted(bool val) { mixin(MSBPC!(244, 0x1)()); }
 	}
 final:
 	void AbortFor(Actor latentActor)

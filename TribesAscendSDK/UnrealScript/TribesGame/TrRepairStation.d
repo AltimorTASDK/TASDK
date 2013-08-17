@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrRepairStation;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Engine.SkelControlSingleBone;
@@ -11,9 +12,9 @@ extern(C++) interface TrRepairStation : TrStation
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRepairStation")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRepairStation")()); }
 	private static __gshared TrRepairStation mDefaultProperties;
-	@property final static TrRepairStation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRepairStation)("TrRepairStation TribesGame.Default__TrRepairStation")); }
+	@property final static TrRepairStation DefaultProperties() { mixin(MGDPC!(TrRepairStation, "TrRepairStation TribesGame.Default__TrRepairStation")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,26 +30,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.PostBeginPlay")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.PostInitAnimTree")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.OnAnimEnd")); }
-			ScriptFunction PlayStationEnteredEffects() { return mPlayStationEnteredEffects ? mPlayStationEnteredEffects : (mPlayStationEnteredEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.PlayStationEnteredEffects")); }
-			ScriptFunction PlayStationLeftEffects() { return mPlayStationLeftEffects ? mPlayStationLeftEffects : (mPlayStationLeftEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.PlayStationLeftEffects")); }
-			ScriptFunction PawnGrabbedRepairTool() { return mPawnGrabbedRepairTool ? mPawnGrabbedRepairTool : (mPawnGrabbedRepairTool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.PawnGrabbedRepairTool")); }
-			ScriptFunction CloseStation() { return mCloseStation ? mCloseStation : (mCloseStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.CloseStation")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStation.GetMarker")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrRepairStation.PostBeginPlay")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrRepairStation.PostInitAnimTree")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrRepairStation.OnAnimEnd")()); }
+			ScriptFunction PlayStationEnteredEffects() { mixin(MGF!("mPlayStationEnteredEffects", "Function TribesGame.TrRepairStation.PlayStationEnteredEffects")()); }
+			ScriptFunction PlayStationLeftEffects() { mixin(MGF!("mPlayStationLeftEffects", "Function TribesGame.TrRepairStation.PlayStationLeftEffects")()); }
+			ScriptFunction PawnGrabbedRepairTool() { mixin(MGF!("mPawnGrabbedRepairTool", "Function TribesGame.TrRepairStation.PawnGrabbedRepairTool")()); }
+			ScriptFunction CloseStation() { mixin(MGF!("mCloseStation", "Function TribesGame.TrRepairStation.CloseStation")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrRepairStation.GetMarker")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			SkelControlSingleBone m_RepairGunControl() { return *cast(SkelControlSingleBone*)(cast(size_t)cast(void*)this + 1408); }
-			TrAnimNodeBlendList m_RepairStationBlendList() { return *cast(TrAnimNodeBlendList*)(cast(size_t)cast(void*)this + 1404); }
-			float m_fStationOpenDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 1400); }
+			SkelControlSingleBone m_RepairGunControl() { mixin(MGPC!(SkelControlSingleBone, 1408)()); }
+			TrAnimNodeBlendList m_RepairStationBlendList() { mixin(MGPC!(TrAnimNodeBlendList, 1404)()); }
+			float m_fStationOpenDelay() { mixin(MGPC!(float, 1400)()); }
 		}
-		bool m_bIsStationOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1396) & 0x1) != 0; }
-		bool m_bIsStationOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1396) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1396) &= ~0x1; } return val; }
+		bool m_bIsStationOpen() { mixin(MGBPC!(1396, 0x1)()); }
+		bool m_bIsStationOpen(bool val) { mixin(MSBPC!(1396, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

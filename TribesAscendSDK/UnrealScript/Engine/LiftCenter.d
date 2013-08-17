@@ -1,6 +1,7 @@
 module UnrealScript.Engine.LiftCenter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.Trigger;
 import UnrealScript.Engine.Pawn;
@@ -11,9 +12,9 @@ extern(C++) interface LiftCenter : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LiftCenter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LiftCenter")()); }
 	private static __gshared LiftCenter mDefaultProperties;
-	@property final static LiftCenter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LiftCenter)("LiftCenter Engine.Default__LiftCenter")); }
+	@property final static LiftCenter DefaultProperties() { mixin(MGDPC!(LiftCenter, "LiftCenter Engine.Default__LiftCenter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,24 +26,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.LiftCenter.PostBeginPlay")); }
-			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.LiftCenter.SpecialHandling")); }
-			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.LiftCenter.SuggestMovePreparation")); }
-			ScriptFunction ProceedWithMove() { return mProceedWithMove ? mProceedWithMove : (mProceedWithMove = ScriptObject.Find!(ScriptFunction)("Function Engine.LiftCenter.ProceedWithMove")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.LiftCenter.PostBeginPlay")()); }
+			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.LiftCenter.SpecialHandling")()); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.LiftCenter.SuggestMovePreparation")()); }
+			ScriptFunction ProceedWithMove() { mixin(MGF!("mProceedWithMove", "Function Engine.LiftCenter.ProceedWithMove")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Trigger LiftTrigger() { return *cast(Trigger*)(cast(size_t)cast(void*)this + 720); }
-			float CollisionHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
-			Vector LiftOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 700); }
-			float MaxDist2D() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-			InterpActor MyLift() { return *cast(InterpActor*)(cast(size_t)cast(void*)this + 692); }
+			Trigger LiftTrigger() { mixin(MGPC!(Trigger, 720)()); }
+			float CollisionHeight() { mixin(MGPC!(float, 716)()); }
+			Vector LiftOffset() { mixin(MGPC!(Vector, 700)()); }
+			float MaxDist2D() { mixin(MGPC!(float, 696)()); }
+			InterpActor MyLift() { mixin(MGPC!(InterpActor, 692)()); }
 		}
-		bool bJumpLift() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x1) != 0; }
-		bool bJumpLift(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x1; } return val; }
+		bool bJumpLift() { mixin(MGBPC!(712, 0x1)()); }
+		bool bJumpLift(bool val) { mixin(MSBPC!(712, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

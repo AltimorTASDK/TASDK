@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_RepairTool;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrDevice_ConstantFire;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrDevice_RepairTool : TrDevice_ConstantFire
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_RepairTool")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_RepairTool")()); }
 	private static __gshared TrDevice_RepairTool mDefaultProperties;
-	@property final static TrDevice_RepairTool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_RepairTool)("TrDevice_RepairTool TribesGame.Default__TrDevice_RepairTool")); }
+	@property final static TrDevice_RepairTool DefaultProperties() { mixin(MGDPC!(TrDevice_RepairTool, "TrDevice_RepairTool TribesGame.Default__TrDevice_RepairTool")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,37 +34,48 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanActorBeRepaired() { return mCanActorBeRepaired ? mCanActorBeRepaired : (mCanActorBeRepaired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.CanActorBeRepaired")); }
-			ScriptFunction GetActorHealth() { return mGetActorHealth ? mGetActorHealth : (mGetActorHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.GetActorHealth")); }
-			ScriptFunction GetAmmoCount() { return mGetAmmoCount ? mGetAmmoCount : (mGetAmmoCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.GetAmmoCount")); }
-			ScriptFunction OnEndConstantFire() { return mOnEndConstantFire ? mOnEndConstantFire : (mOnEndConstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.OnEndConstantFire")); }
-			ScriptFunction OnStartConstantFire() { return mOnStartConstantFire ? mOnStartConstantFire : (mOnStartConstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.OnStartConstantFire")); }
-			ScriptFunction InstantFire() { return mInstantFire ? mInstantFire : (mInstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.InstantFire")); }
-			ScriptFunction ProcessInstantHit_Internal() { return mProcessInstantHit_Internal ? mProcessInstantHit_Internal : (mProcessInstantHit_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.ProcessInstantHit_Internal")); }
-			ScriptFunction GetRepairEndAndTangent() { return mGetRepairEndAndTangent ? mGetRepairEndAndTangent : (mGetRepairEndAndTangent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.GetRepairEndAndTangent")); }
-			ScriptFunction KillRepairEffect() { return mKillRepairEffect ? mKillRepairEffect : (mKillRepairEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.KillRepairEffect")); }
-			ScriptFunction HasViewModeSwitched() { return mHasViewModeSwitched ? mHasViewModeSwitched : (mHasViewModeSwitched = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.HasViewModeSwitched")); }
-			ScriptFunction SpawnRepairEffect() { return mSpawnRepairEffect ? mSpawnRepairEffect : (mSpawnRepairEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.SpawnRepairEffect")); }
-			ScriptFunction UpdateRepairEffect() { return mUpdateRepairEffect ? mUpdateRepairEffect : (mUpdateRepairEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.UpdateRepairEffect")); }
-			ScriptFunction UpdateDamageMaterial() { return mUpdateDamageMaterial ? mUpdateDamageMaterial : (mUpdateDamageMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.UpdateDamageMaterial")); }
-			ScriptFunction ModifyInstantHitDamage() { return mModifyInstantHitDamage ? mModifyInstantHitDamage : (mModifyInstantHitDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.ModifyInstantHitDamage")); }
-			ScriptFunction HasAnyAmmo() { return mHasAnyAmmo ? mHasAnyAmmo : (mHasAnyAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_RepairTool.HasAnyAmmo")); }
+			ScriptFunction CanActorBeRepaired() { mixin(MGF!("mCanActorBeRepaired", "Function TribesGame.TrDevice_RepairTool.CanActorBeRepaired")()); }
+			ScriptFunction GetActorHealth() { mixin(MGF!("mGetActorHealth", "Function TribesGame.TrDevice_RepairTool.GetActorHealth")()); }
+			ScriptFunction GetAmmoCount() { mixin(MGF!("mGetAmmoCount", "Function TribesGame.TrDevice_RepairTool.GetAmmoCount")()); }
+			ScriptFunction OnEndConstantFire() { mixin(MGF!("mOnEndConstantFire", "Function TribesGame.TrDevice_RepairTool.OnEndConstantFire")()); }
+			ScriptFunction OnStartConstantFire() { mixin(MGF!("mOnStartConstantFire", "Function TribesGame.TrDevice_RepairTool.OnStartConstantFire")()); }
+			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function TribesGame.TrDevice_RepairTool.InstantFire")()); }
+			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF!("mProcessInstantHit_Internal", "Function TribesGame.TrDevice_RepairTool.ProcessInstantHit_Internal")()); }
+			ScriptFunction GetRepairEndAndTangent() { mixin(MGF!("mGetRepairEndAndTangent", "Function TribesGame.TrDevice_RepairTool.GetRepairEndAndTangent")()); }
+			ScriptFunction KillRepairEffect() { mixin(MGF!("mKillRepairEffect", "Function TribesGame.TrDevice_RepairTool.KillRepairEffect")()); }
+			ScriptFunction HasViewModeSwitched() { mixin(MGF!("mHasViewModeSwitched", "Function TribesGame.TrDevice_RepairTool.HasViewModeSwitched")()); }
+			ScriptFunction SpawnRepairEffect() { mixin(MGF!("mSpawnRepairEffect", "Function TribesGame.TrDevice_RepairTool.SpawnRepairEffect")()); }
+			ScriptFunction UpdateRepairEffect() { mixin(MGF!("mUpdateRepairEffect", "Function TribesGame.TrDevice_RepairTool.UpdateRepairEffect")()); }
+			ScriptFunction UpdateDamageMaterial() { mixin(MGF!("mUpdateDamageMaterial", "Function TribesGame.TrDevice_RepairTool.UpdateDamageMaterial")()); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrDevice_RepairTool.ModifyInstantHitDamage")()); }
+			ScriptFunction HasAnyAmmo() { mixin(MGF!("mHasAnyAmmo", "Function TribesGame.TrDevice_RepairTool.HasAnyAmmo")()); }
 		}
+	}
+	static struct Active
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_RepairTool.Active")()); }
+	}
+	static struct WeaponConstantFiring
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_RepairTool.WeaponConstantFiring")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector m_Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2212); }
-			Vector m_Tangent() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2200); }
-			float m_fTargetHealth() { return *cast(float*)(cast(size_t)cast(void*)this + 2196); }
-			float m_fDisplayOn() { return *cast(float*)(cast(size_t)cast(void*)this + 2192); }
-			float m_fVehicleRepairPercentage() { return *cast(float*)(cast(size_t)cast(void*)this + 2180); }
-			float m_fPawnRepairPercentage() { return *cast(float*)(cast(size_t)cast(void*)this + 2176); }
-			float m_fRepairPercentage() { return *cast(float*)(cast(size_t)cast(void*)this + 2172); }
+			Vector m_Location() { mixin(MGPC!(Vector, 2212)()); }
+			Vector m_Tangent() { mixin(MGPC!(Vector, 2200)()); }
+			float m_fTargetHealth() { mixin(MGPC!(float, 2196)()); }
+			float m_fDisplayOn() { mixin(MGPC!(float, 2192)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscRepairEffect'!
+			float m_fVehicleRepairPercentage() { mixin(MGPC!(float, 2180)()); }
+			float m_fPawnRepairPercentage() { mixin(MGPC!(float, 2176)()); }
+			float m_fRepairPercentage() { mixin(MGPC!(float, 2172)()); }
 		}
-		bool m_bIsBehindView() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2188) & 0x1) != 0; }
-		bool m_bIsBehindView(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2188) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2188) &= ~0x1; } return val; }
+		bool m_bIsBehindView() { mixin(MGBPC!(2188, 0x1)()); }
+		bool m_bIsBehindView(bool val) { mixin(MSBPC!(2188, 0x1)()); }
 	}
 final:
 	bool CanActorBeRepaired(Actor HitActor)
@@ -110,13 +122,13 @@ final:
 		*cast(bool*)&params[84] = bHeadShot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit_Internal, params.ptr, cast(void*)0);
 	}
-	bool GetRepairEndAndTangent(Vector* EndLocation, Vector* Tangent, Actor* HitActor)
+	bool GetRepairEndAndTangent(ref Vector EndLocation, ref Vector Tangent, Actor* HitActor)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *EndLocation;
-		*cast(Vector*)&params[12] = *Tangent;
-		*cast(Actor*)&params[24] = *HitActor;
+		*cast(Vector*)params.ptr = EndLocation;
+		*cast(Vector*)&params[12] = Tangent;
+		*cast(Actor*)&params[24] = HitActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRepairEndAndTangent, params.ptr, cast(void*)0);
 		*EndLocation = *cast(Vector*)params.ptr;
 		*Tangent = *cast(Vector*)&params[12];

@@ -1,15 +1,16 @@
 module UnrealScript.GameFramework.GamePawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 
 extern(C++) interface GamePawn : Pawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GamePawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GamePawn")()); }
 	private static __gshared GamePawn mDefaultProperties;
-	@property final static GamePawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GamePawn)("GamePawn GameFramework.Default__GamePawn")); }
+	@property final static GamePawn DefaultProperties() { mixin(MGDPC!(GamePawn, "GamePawn GameFramework.Default__GamePawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,17 +21,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateShadowSettings() { return mUpdateShadowSettings ? mUpdateShadowSettings : (mUpdateShadowSettings = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePawn.UpdateShadowSettings")); }
-			ScriptFunction ReattachMesh() { return mReattachMesh ? mReattachMesh : (mReattachMesh = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePawn.ReattachMesh")); }
-			ScriptFunction ReattachMeshWithoutBeingSeen() { return mReattachMeshWithoutBeingSeen ? mReattachMeshWithoutBeingSeen : (mReattachMeshWithoutBeingSeen = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePawn.ReattachMeshWithoutBeingSeen")); }
+			ScriptFunction UpdateShadowSettings() { mixin(MGF!("mUpdateShadowSettings", "Function GameFramework.GamePawn.UpdateShadowSettings")()); }
+			ScriptFunction ReattachMesh() { mixin(MGF!("mReattachMesh", "Function GameFramework.GamePawn.ReattachMesh")()); }
+			ScriptFunction ReattachMeshWithoutBeingSeen() { mixin(MGF!("mReattachMeshWithoutBeingSeen", "Function GameFramework.GamePawn.ReattachMeshWithoutBeingSeen")()); }
 		}
 	}
 	@property final
 	{
-		bool bRespondToExplosions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1144) & 0x2) != 0; }
-		bool bRespondToExplosions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1144) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1144) &= ~0x2; } return val; }
-		bool bLastHitWasHeadShot() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1144) & 0x1) != 0; }
-		bool bLastHitWasHeadShot(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1144) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1144) &= ~0x1; } return val; }
+		bool bRespondToExplosions() { mixin(MGBPC!(1144, 0x2)()); }
+		bool bRespondToExplosions(bool val) { mixin(MSBPC!(1144, 0x2)()); }
+		bool bLastHitWasHeadShot() { mixin(MGBPC!(1144, 0x1)()); }
+		bool bLastHitWasHeadShot(bool val) { mixin(MSBPC!(1144, 0x1)()); }
 	}
 final:
 	void UpdateShadowSettings(bool bInWantShadow)

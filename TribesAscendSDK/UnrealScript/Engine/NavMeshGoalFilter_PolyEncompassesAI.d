@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NavMeshGoalFilter_PolyEncompassesAI;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavMeshGoal_Filter;
 import UnrealScript.Engine.NavMeshGoal_GenericFilterContainer;
 
@@ -8,16 +9,16 @@ extern(C++) interface NavMeshGoalFilter_PolyEncompassesAI : NavMeshGoal_Filter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoalFilter_PolyEncompassesAI")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshGoalFilter_PolyEncompassesAI")()); }
 	private static __gshared NavMeshGoalFilter_PolyEncompassesAI mDefaultProperties;
-	@property final static NavMeshGoalFilter_PolyEncompassesAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoalFilter_PolyEncompassesAI)("NavMeshGoalFilter_PolyEncompassesAI Engine.Default__NavMeshGoalFilter_PolyEncompassesAI")); }
+	@property final static NavMeshGoalFilter_PolyEncompassesAI DefaultProperties() { mixin(MGDPC!(NavMeshGoalFilter_PolyEncompassesAI, "NavMeshGoalFilter_PolyEncompassesAI Engine.Default__NavMeshGoalFilter_PolyEncompassesAI")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMakeSureAIFits;
-		public @property static final ScriptFunction MakeSureAIFits() { return mMakeSureAIFits ? mMakeSureAIFits : (mMakeSureAIFits = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshGoalFilter_PolyEncompassesAI.MakeSureAIFits")); }
+		public @property static final ScriptFunction MakeSureAIFits() { mixin(MGF!("mMakeSureAIFits", "Function Engine.NavMeshGoalFilter_PolyEncompassesAI.MakeSureAIFits")()); }
 	}
-	@property final auto ref Vector OverrideExtentToCheck() { return *cast(Vector*)(cast(size_t)cast(void*)this + 72); }
-	final static bool MakeSureAIFits(NavMeshGoal_GenericFilterContainer FilterContainer, Vector InOverrideExtentToCheck)
+	@property final auto ref Vector OverrideExtentToCheck() { mixin(MGPC!(Vector, 72)()); }
+	final static bool MakeSureAIFits(NavMeshGoal_GenericFilterContainer FilterContainer, const Vector InOverrideExtentToCheck)
 	{
 		ubyte params[20];
 		params[] = 0;

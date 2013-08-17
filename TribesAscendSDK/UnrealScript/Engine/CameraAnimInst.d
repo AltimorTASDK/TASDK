@@ -1,6 +1,7 @@
 module UnrealScript.Engine.CameraAnimInst;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.InterpTrackMove;
 import UnrealScript.Core.UObject;
@@ -15,9 +16,9 @@ extern(C++) interface CameraAnimInst : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraAnimInst")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CameraAnimInst")()); }
 	private static __gshared CameraAnimInst mDefaultProperties;
-	@property final static CameraAnimInst DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CameraAnimInst)("CameraAnimInst Engine.Default__CameraAnimInst")); }
+	@property final static CameraAnimInst DefaultProperties() { mixin(MGDPC!(CameraAnimInst, "CameraAnimInst Engine.Default__CameraAnimInst")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,49 +32,49 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetPlaySpace() { return mSetPlaySpace ? mSetPlaySpace : (mSetPlaySpace = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.SetPlaySpace")); }
-			ScriptFunction Play() { return mPlay ? mPlay : (mPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.Play")); }
-			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.Update")); }
-			ScriptFunction AdvanceAnim() { return mAdvanceAnim ? mAdvanceAnim : (mAdvanceAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.AdvanceAnim")); }
-			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.Stop")); }
-			ScriptFunction ApplyTransientScaling() { return mApplyTransientScaling ? mApplyTransientScaling : (mApplyTransientScaling = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.ApplyTransientScaling")); }
+			ScriptFunction SetPlaySpace() { mixin(MGF!("mSetPlaySpace", "Function Engine.CameraAnimInst.SetPlaySpace")()); }
+			ScriptFunction Play() { mixin(MGF!("mPlay", "Function Engine.CameraAnimInst.Play")()); }
+			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function Engine.CameraAnimInst.Update")()); }
+			ScriptFunction AdvanceAnim() { mixin(MGF!("mAdvanceAnim", "Function Engine.CameraAnimInst.AdvanceAnim")()); }
+			ScriptFunction Stop() { mixin(MGF!("mStop", "Function Engine.CameraAnimInst.Stop")()); }
+			ScriptFunction ApplyTransientScaling() { mixin(MGF!("mApplyTransientScaling", "Function Engine.CameraAnimInst.ApplyTransientScaling")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector LastCameraLoc() { return *cast(Vector*)(cast(size_t)cast(void*)this + 416); }
-			float LastPPSettingsAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 412); }
-			PostProcessVolume.PostProcessSettings LastPPSettings() { return *cast(PostProcessVolume.PostProcessSettings*)(cast(size_t)cast(void*)this + 192); }
-			UObject.Matrix UserPlaySpaceMatrix() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 128); }
-			Camera.ECameraAnimPlaySpace PlaySpace() { return *cast(Camera.ECameraAnimPlaySpace*)(cast(size_t)cast(void*)this + 124); }
-			AnimNodeSequence SourceAnimNode() { return *cast(AnimNodeSequence*)(cast(size_t)cast(void*)this + 120); }
-			InterpTrackInstMove MoveInst() { return *cast(InterpTrackInstMove*)(cast(size_t)cast(void*)this + 116); }
-			InterpTrackMove MoveTrack() { return *cast(InterpTrackMove*)(cast(size_t)cast(void*)this + 112); }
-			float RemainingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			float CurrentBlendWeight() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float TransientScaleModifier() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float BasePlayScale() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float PlayRate() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float CurBlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-			float CurBlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			float BlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float BlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			float CurTime() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
+			Vector LastCameraLoc() { mixin(MGPC!(Vector, 416)()); }
+			float LastPPSettingsAlpha() { mixin(MGPC!(float, 412)()); }
+			PostProcessVolume.PostProcessSettings LastPPSettings() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 192)()); }
+			UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPC!(UObject.Matrix, 128)()); }
+			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!(Camera.ECameraAnimPlaySpace, 124)()); }
+			AnimNodeSequence SourceAnimNode() { mixin(MGPC!(AnimNodeSequence, 120)()); }
+			InterpTrackInstMove MoveInst() { mixin(MGPC!(InterpTrackInstMove, 116)()); }
+			InterpTrackMove MoveTrack() { mixin(MGPC!(InterpTrackMove, 112)()); }
+			float RemainingTime() { mixin(MGPC!(float, 108)()); }
+			float CurrentBlendWeight() { mixin(MGPC!(float, 104)()); }
+			float TransientScaleModifier() { mixin(MGPC!(float, 100)()); }
+			float BasePlayScale() { mixin(MGPC!(float, 96)()); }
+			float PlayRate() { mixin(MGPC!(float, 92)()); }
+			float CurBlendOutTime() { mixin(MGPC!(float, 88)()); }
+			float CurBlendInTime() { mixin(MGPC!(float, 84)()); }
+			float BlendOutTime() { mixin(MGPC!(float, 80)()); }
+			float BlendInTime() { mixin(MGPC!(float, 76)()); }
+			float CurTime() { mixin(MGPC!(float, 68)()); }
 			// WARNING: Property 'InterpGroupInst' has the same name as a defined type!
-			CameraAnim CamAnim() { return *cast(CameraAnim*)(cast(size_t)cast(void*)this + 60); }
+			CameraAnim CamAnim() { mixin(MGPC!(CameraAnim, 60)()); }
 		}
-		bool bBlendingOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x10) != 0; }
-		bool bBlendingOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x10; } return val; }
-		bool bBlendingIn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x8) != 0; }
-		bool bBlendingIn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x8; } return val; }
-		bool bAutoReleaseWhenFinished() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
-		bool bAutoReleaseWhenFinished(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
-		bool bFinished() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
-		bool bFinished(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
-		bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-		bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+		bool bBlendingOut() { mixin(MGBPC!(72, 0x10)()); }
+		bool bBlendingOut(bool val) { mixin(MSBPC!(72, 0x10)()); }
+		bool bBlendingIn() { mixin(MGBPC!(72, 0x8)()); }
+		bool bBlendingIn(bool val) { mixin(MSBPC!(72, 0x8)()); }
+		bool bAutoReleaseWhenFinished() { mixin(MGBPC!(72, 0x4)()); }
+		bool bAutoReleaseWhenFinished(bool val) { mixin(MSBPC!(72, 0x4)()); }
+		bool bFinished() { mixin(MGBPC!(72, 0x2)()); }
+		bool bFinished(bool val) { mixin(MSBPC!(72, 0x2)()); }
+		bool bLooping() { mixin(MGBPC!(72, 0x1)()); }
+		bool bLooping(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 final:
 	void SetPlaySpace(Camera.ECameraAnimPlaySpace NewSpace, Rotator UserPlaySpace)

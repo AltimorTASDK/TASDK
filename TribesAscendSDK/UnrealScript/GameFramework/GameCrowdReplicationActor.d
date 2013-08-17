@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdReplicationActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.GameFramework.SeqAct_GameCrowdSpawner;
 
@@ -8,23 +9,28 @@ extern(C++) interface GameCrowdReplicationActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdReplicationActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdReplicationActor")()); }
 	private static __gshared GameCrowdReplicationActor mDefaultProperties;
-	@property final static GameCrowdReplicationActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdReplicationActor)("GameCrowdReplicationActor GameFramework.Default__GameCrowdReplicationActor")); }
+	@property final static GameCrowdReplicationActor DefaultProperties() { mixin(MGDPC!(GameCrowdReplicationActor, "GameCrowdReplicationActor GameFramework.Default__GameCrowdReplicationActor")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mReplicatedEvent;
-		public @property static final ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdReplicationActor.ReplicatedEvent")); }
+		public @property static final ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function GameFramework.GameCrowdReplicationActor.ReplicatedEvent")()); }
+	}
+	static struct ReceivingReplication
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameCrowdReplicationActor.ReceivingReplication")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			int DestroyAllCount() { return *cast(int*)(cast(size_t)cast(void*)this + 484); }
-			SeqAct_GameCrowdSpawner Spawner() { return *cast(SeqAct_GameCrowdSpawner*)(cast(size_t)cast(void*)this + 476); }
+			int DestroyAllCount() { mixin(MGPC!(int, 484)()); }
+			SeqAct_GameCrowdSpawner Spawner() { mixin(MGPC!(SeqAct_GameCrowdSpawner, 476)()); }
 		}
-		bool bSpawningActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bSpawningActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		bool bSpawningActive() { mixin(MGBPC!(480, 0x1)()); }
+		bool bSpawningActive(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 	final void ReplicatedEvent(ScriptName VarName)
 	{

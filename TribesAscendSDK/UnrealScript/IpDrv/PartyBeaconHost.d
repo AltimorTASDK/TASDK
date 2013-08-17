@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.PartyBeaconHost;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.IpDrv.PartyBeacon;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface PartyBeaconHost : PartyBeacon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.PartyBeaconHost")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.PartyBeaconHost")()); }
 	private static __gshared PartyBeaconHost mDefaultProperties;
-	@property final static PartyBeaconHost DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PartyBeaconHost)("PartyBeaconHost IpDrv.Default__PartyBeaconHost")); }
+	@property final static PartyBeaconHost DefaultProperties() { mixin(MGDPC!(PartyBeaconHost, "PartyBeaconHost IpDrv.Default__PartyBeaconHost")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,27 +42,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnClientCancellationReceived() { return mOnClientCancellationReceived ? mOnClientCancellationReceived : (mOnClientCancellationReceived = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.OnClientCancellationReceived")); }
-			ScriptFunction OnReservationsFull() { return mOnReservationsFull ? mOnReservationsFull : (mOnReservationsFull = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.OnReservationsFull")); }
-			ScriptFunction OnReservationChange() { return mOnReservationChange ? mOnReservationChange : (mOnReservationChange = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.OnReservationChange")); }
-			ScriptFunction PauseReservationRequests() { return mPauseReservationRequests ? mPauseReservationRequests : (mPauseReservationRequests = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.PauseReservationRequests")); }
-			ScriptFunction InitHostBeacon() { return mInitHostBeacon ? mInitHostBeacon : (mInitHostBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.InitHostBeacon")); }
-			ScriptFunction AddPartyReservationEntry() { return mAddPartyReservationEntry ? mAddPartyReservationEntry : (mAddPartyReservationEntry = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.AddPartyReservationEntry")); }
-			ScriptFunction UpdatePartyReservationEntry() { return mUpdatePartyReservationEntry ? mUpdatePartyReservationEntry : (mUpdatePartyReservationEntry = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.UpdatePartyReservationEntry")); }
-			ScriptFunction GetExistingReservation() { return mGetExistingReservation ? mGetExistingReservation : (mGetExistingReservation = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.GetExistingReservation")); }
-			ScriptFunction HandlePlayerLogout() { return mHandlePlayerLogout ? mHandlePlayerLogout : (mHandlePlayerLogout = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.HandlePlayerLogout")); }
-			ScriptFunction DestroyBeacon() { return mDestroyBeacon ? mDestroyBeacon : (mDestroyBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.DestroyBeacon")); }
-			ScriptFunction TellClientsToTravel() { return mTellClientsToTravel ? mTellClientsToTravel : (mTellClientsToTravel = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.TellClientsToTravel")); }
-			ScriptFunction TellClientsHostIsReady() { return mTellClientsHostIsReady ? mTellClientsHostIsReady : (mTellClientsHostIsReady = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.TellClientsHostIsReady")); }
-			ScriptFunction TellClientsHostHasCancelled() { return mTellClientsHostHasCancelled ? mTellClientsHostHasCancelled : (mTellClientsHostHasCancelled = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.TellClientsHostHasCancelled")); }
-			ScriptFunction AreReservationsFull() { return mAreReservationsFull ? mAreReservationsFull : (mAreReservationsFull = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.AreReservationsFull")); }
-			ScriptFunction RegisterPartyMembers() { return mRegisterPartyMembers ? mRegisterPartyMembers : (mRegisterPartyMembers = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.RegisterPartyMembers")); }
-			ScriptFunction UnregisterPartyMembers() { return mUnregisterPartyMembers ? mUnregisterPartyMembers : (mUnregisterPartyMembers = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.UnregisterPartyMembers")); }
-			ScriptFunction UnregisterParty() { return mUnregisterParty ? mUnregisterParty : (mUnregisterParty = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.UnregisterParty")); }
-			ScriptFunction AppendReservationSkillsToSearch() { return mAppendReservationSkillsToSearch ? mAppendReservationSkillsToSearch : (mAppendReservationSkillsToSearch = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.AppendReservationSkillsToSearch")); }
-			ScriptFunction GetPlayers() { return mGetPlayers ? mGetPlayers : (mGetPlayers = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.GetPlayers")); }
-			ScriptFunction GetPartyLeaders() { return mGetPartyLeaders ? mGetPartyLeaders : (mGetPartyLeaders = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.GetPartyLeaders")); }
-			ScriptFunction GetMaxAvailableTeamSize() { return mGetMaxAvailableTeamSize ? mGetMaxAvailableTeamSize : (mGetMaxAvailableTeamSize = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeaconHost.GetMaxAvailableTeamSize")); }
+			ScriptFunction OnClientCancellationReceived() { mixin(MGF!("mOnClientCancellationReceived", "Function IpDrv.PartyBeaconHost.OnClientCancellationReceived")()); }
+			ScriptFunction OnReservationsFull() { mixin(MGF!("mOnReservationsFull", "Function IpDrv.PartyBeaconHost.OnReservationsFull")()); }
+			ScriptFunction OnReservationChange() { mixin(MGF!("mOnReservationChange", "Function IpDrv.PartyBeaconHost.OnReservationChange")()); }
+			ScriptFunction PauseReservationRequests() { mixin(MGF!("mPauseReservationRequests", "Function IpDrv.PartyBeaconHost.PauseReservationRequests")()); }
+			ScriptFunction InitHostBeacon() { mixin(MGF!("mInitHostBeacon", "Function IpDrv.PartyBeaconHost.InitHostBeacon")()); }
+			ScriptFunction AddPartyReservationEntry() { mixin(MGF!("mAddPartyReservationEntry", "Function IpDrv.PartyBeaconHost.AddPartyReservationEntry")()); }
+			ScriptFunction UpdatePartyReservationEntry() { mixin(MGF!("mUpdatePartyReservationEntry", "Function IpDrv.PartyBeaconHost.UpdatePartyReservationEntry")()); }
+			ScriptFunction GetExistingReservation() { mixin(MGF!("mGetExistingReservation", "Function IpDrv.PartyBeaconHost.GetExistingReservation")()); }
+			ScriptFunction HandlePlayerLogout() { mixin(MGF!("mHandlePlayerLogout", "Function IpDrv.PartyBeaconHost.HandlePlayerLogout")()); }
+			ScriptFunction DestroyBeacon() { mixin(MGF!("mDestroyBeacon", "Function IpDrv.PartyBeaconHost.DestroyBeacon")()); }
+			ScriptFunction TellClientsToTravel() { mixin(MGF!("mTellClientsToTravel", "Function IpDrv.PartyBeaconHost.TellClientsToTravel")()); }
+			ScriptFunction TellClientsHostIsReady() { mixin(MGF!("mTellClientsHostIsReady", "Function IpDrv.PartyBeaconHost.TellClientsHostIsReady")()); }
+			ScriptFunction TellClientsHostHasCancelled() { mixin(MGF!("mTellClientsHostHasCancelled", "Function IpDrv.PartyBeaconHost.TellClientsHostHasCancelled")()); }
+			ScriptFunction AreReservationsFull() { mixin(MGF!("mAreReservationsFull", "Function IpDrv.PartyBeaconHost.AreReservationsFull")()); }
+			ScriptFunction RegisterPartyMembers() { mixin(MGF!("mRegisterPartyMembers", "Function IpDrv.PartyBeaconHost.RegisterPartyMembers")()); }
+			ScriptFunction UnregisterPartyMembers() { mixin(MGF!("mUnregisterPartyMembers", "Function IpDrv.PartyBeaconHost.UnregisterPartyMembers")()); }
+			ScriptFunction UnregisterParty() { mixin(MGF!("mUnregisterParty", "Function IpDrv.PartyBeaconHost.UnregisterParty")()); }
+			ScriptFunction AppendReservationSkillsToSearch() { mixin(MGF!("mAppendReservationSkillsToSearch", "Function IpDrv.PartyBeaconHost.AppendReservationSkillsToSearch")()); }
+			ScriptFunction GetPlayers() { mixin(MGF!("mGetPlayers", "Function IpDrv.PartyBeaconHost.GetPlayers")()); }
+			ScriptFunction GetPartyLeaders() { mixin(MGF!("mGetPartyLeaders", "Function IpDrv.PartyBeaconHost.GetPartyLeaders")()); }
+			ScriptFunction GetMaxAvailableTeamSize() { mixin(MGF!("mGetMaxAvailableTeamSize", "Function IpDrv.PartyBeaconHost.GetMaxAvailableTeamSize")()); }
 		}
 	}
 	enum EPartyBeaconHostState : ubyte
@@ -75,32 +76,35 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.PartyBeaconHost.ClientBeaconConnection")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeaconHost.ClientBeaconConnection")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Socket() { return *cast(UObject.Pointer*)(cast(size_t)&this + 12); }
-			float ElapsedHeartbeatTime() { return *cast(float*)(cast(size_t)&this + 8); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+			UObject.Pointer Socket() { mixin(MGPS!(UObject.Pointer, 12)()); }
+			float ElapsedHeartbeatTime() { mixin(MGPS!(float, 8)()); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PartyBeaconHost.ClientBeaconConnection) Clients() { return *cast(ScriptArray!(PartyBeaconHost.ClientBeaconConnection)*)(cast(size_t)cast(void*)this + 104); }
-			ScriptArray!(PartyBeacon.PartyReservation) Reservations() { return *cast(ScriptArray!(PartyBeacon.PartyReservation)*)(cast(size_t)cast(void*)this + 132); }
-			PartyBeaconHost.EPartyBeaconHostState BeaconState() { return *cast(PartyBeaconHost.EPartyBeaconHostState*)(cast(size_t)cast(void*)this + 168); }
-			int ReservedHostTeamNum() { return *cast(int*)(cast(size_t)cast(void*)this + 160); }
-			int ForceTeamNum() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			int ConnectionBacklog() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
-			ScriptName OnlineSessionName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 144); }
-			int NumConsumedReservations() { return *cast(int*)(cast(size_t)cast(void*)this + 128); }
-			int NumReservations() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
-			int NumPlayersPerTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
-			int NumTeams() { return *cast(int*)(cast(size_t)cast(void*)this + 116); }
+			ScriptArray!(PartyBeaconHost.ClientBeaconConnection) Clients() { mixin(MGPC!(ScriptArray!(PartyBeaconHost.ClientBeaconConnection), 104)()); }
+			ScriptArray!(PartyBeacon.PartyReservation) Reservations() { mixin(MGPC!(ScriptArray!(PartyBeacon.PartyReservation), 132)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnClientCancellationReceived__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationsFull__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationChange__Delegate'!
+			PartyBeaconHost.EPartyBeaconHostState BeaconState() { mixin(MGPC!(PartyBeaconHost.EPartyBeaconHostState, 168)()); }
+			int ReservedHostTeamNum() { mixin(MGPC!(int, 160)()); }
+			int ForceTeamNum() { mixin(MGPC!(int, 156)()); }
+			int ConnectionBacklog() { mixin(MGPC!(int, 152)()); }
+			ScriptName OnlineSessionName() { mixin(MGPC!(ScriptName, 144)()); }
+			int NumConsumedReservations() { mixin(MGPC!(int, 128)()); }
+			int NumReservations() { mixin(MGPC!(int, 124)()); }
+			int NumPlayersPerTeam() { mixin(MGPC!(int, 120)()); }
+			int NumTeams() { mixin(MGPC!(int, 116)()); }
 		}
-		bool bBestFitTeamAssignment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x1) != 0; }
-		bool bBestFitTeamAssignment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x1; } return val; }
+		bool bBestFitTeamAssignment() { mixin(MGBPC!(164, 0x1)()); }
+		bool bBestFitTeamAssignment(bool val) { mixin(MSBPC!(164, 0x1)()); }
 	}
 final:
 	void OnClientCancellationReceived(OnlineSubsystem.UniqueNetId PartyLeader)
@@ -137,33 +141,33 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitHostBeacon, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	PartyBeacon.EPartyReservationResult AddPartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* PlayerMembers, int TeamNum, bool bIsHost)
+	PartyBeacon.EPartyReservationResult AddPartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) PlayerMembers, int TeamNum, bool bIsHost)
 	{
 		ubyte params[29];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = *PlayerMembers;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = PlayerMembers;
 		*cast(int*)&params[20] = TeamNum;
 		*cast(bool*)&params[24] = bIsHost;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddPartyReservationEntry, params.ptr, cast(void*)0);
 		*PlayerMembers = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8];
 		return *cast(PartyBeacon.EPartyReservationResult*)&params[28];
 	}
-	PartyBeacon.EPartyReservationResult UpdatePartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* PlayerMembers)
+	PartyBeacon.EPartyReservationResult UpdatePartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) PlayerMembers)
 	{
 		ubyte params[21];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = *PlayerMembers;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = PlayerMembers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePartyReservationEntry, params.ptr, cast(void*)0);
 		*PlayerMembers = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8];
 		return *cast(PartyBeacon.EPartyReservationResult*)&params[20];
 	}
-	int GetExistingReservation(OnlineSubsystem.UniqueNetId* PartyLeader)
+	int GetExistingReservation(ref const OnlineSubsystem.UniqueNetId PartyLeader)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = *PartyLeader;
+		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetExistingReservation, params.ptr, cast(void*)0);
 		*PartyLeader = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(int*)&params[8];
@@ -226,19 +230,19 @@ final:
 		*cast(OnlineGameSearch*)params.ptr = Search;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendReservationSkillsToSearch, params.ptr, cast(void*)0);
 	}
-	void GetPlayers(ScriptArray!(OnlineSubsystem.UniqueNetId)* Players)
+	void GetPlayers(ref ScriptArray!(OnlineSubsystem.UniqueNetId) Players)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayers, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
-	void GetPartyLeaders(ScriptArray!(OnlineSubsystem.UniqueNetId)* PartyLeaders)
+	void GetPartyLeaders(ref ScriptArray!(OnlineSubsystem.UniqueNetId) PartyLeaders)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *PartyLeaders;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = PartyLeaders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPartyLeaders, params.ptr, cast(void*)0);
 		*PartyLeaders = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataStore_MenuItems;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataStore_GameResource;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface UIDataStore_MenuItems : UIDataStore_GameResource
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_MenuItems")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_MenuItems")()); }
 	private static __gshared UIDataStore_MenuItems mDefaultProperties;
-	@property final static UIDataStore_MenuItems DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_MenuItems)("UIDataStore_MenuItems Engine.Default__UIDataStore_MenuItems")); }
+	@property final static UIDataStore_MenuItems DefaultProperties() { mixin(MGDPC!(UIDataStore_MenuItems, "UIDataStore_MenuItems Engine.Default__UIDataStore_MenuItems")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,19 +28,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClearSet() { return mClearSet ? mClearSet : (mClearSet = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_MenuItems.ClearSet")); }
-			ScriptFunction AppendToSet() { return mAppendToSet ? mAppendToSet : (mAppendToSet = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_MenuItems.AppendToSet")); }
-			ScriptFunction GetSet() { return mGetSet ? mGetSet : (mGetSet = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_MenuItems.GetSet")); }
-			ScriptFunction OnGameSettingsChanged() { return mOnGameSettingsChanged ? mOnGameSettingsChanged : (mOnGameSettingsChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_MenuItems.OnGameSettingsChanged")); }
-			ScriptFunction Registered() { return mRegistered ? mRegistered : (mRegistered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_MenuItems.Registered")); }
-			ScriptFunction Unregistered() { return mUnregistered ? mUnregistered : (mUnregistered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_MenuItems.Unregistered")); }
+			ScriptFunction ClearSet() { mixin(MGF!("mClearSet", "Function Engine.UIDataStore_MenuItems.ClearSet")()); }
+			ScriptFunction AppendToSet() { mixin(MGF!("mAppendToSet", "Function Engine.UIDataStore_MenuItems.AppendToSet")()); }
+			ScriptFunction GetSet() { mixin(MGF!("mGetSet", "Function Engine.UIDataStore_MenuItems.GetSet")()); }
+			ScriptFunction OnGameSettingsChanged() { mixin(MGF!("mOnGameSettingsChanged", "Function Engine.UIDataStore_MenuItems.OnGameSettingsChanged")()); }
+			ScriptFunction Registered() { mixin(MGF!("mRegistered", "Function Engine.UIDataStore_MenuItems.Registered")()); }
+			ScriptFunction Unregistered() { mixin(MGF!("mUnregistered", "Function Engine.UIDataStore_MenuItems.Unregistered")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataProvider_MenuItem) DynamicProviders() { return *cast(ScriptArray!(UIDataProvider_MenuItem)*)(cast(size_t)cast(void*)this + 264); }
-		UObject.MultiMap_Mirror OptionProviders() { return *cast(UObject.MultiMap_Mirror*)(cast(size_t)cast(void*)this + 204); }
-		ScriptName CurrentGameSettingsTag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 196); }
+		ScriptArray!(UIDataProvider_MenuItem) DynamicProviders() { mixin(MGPC!(ScriptArray!(UIDataProvider_MenuItem), 264)()); }
+		UObject.MultiMap_Mirror OptionProviders() { mixin(MGPC!(UObject.MultiMap_Mirror, 204)()); }
+		ScriptName CurrentGameSettingsTag() { mixin(MGPC!(ScriptName, 196)()); }
 	}
 final:
 	void ClearSet(ScriptName SetName)
@@ -57,12 +58,12 @@ final:
 		*cast(int*)&params[8] = NumOptions;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendToSet, params.ptr, cast(void*)0);
 	}
-	void GetSet(ScriptName SetName, ScriptArray!(UIDataProvider_MenuItem)* OutProviders)
+	void GetSet(ScriptName SetName, ref ScriptArray!(UIDataProvider_MenuItem) OutProviders)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SetName;
-		*cast(ScriptArray!(UIDataProvider_MenuItem)*)&params[8] = *OutProviders;
+		*cast(ScriptArray!(UIDataProvider_MenuItem)*)&params[8] = OutProviders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSet, params.ptr, cast(void*)0);
 		*OutProviders = *cast(ScriptArray!(UIDataProvider_MenuItem)*)&params[8];
 	}

@@ -1,34 +1,35 @@
 module UnrealScript.Engine.LightmassLevelSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface LightmassLevelSettings : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LightmassLevelSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LightmassLevelSettings")()); }
 	private static __gshared LightmassLevelSettings mDefaultProperties;
-	@property final static LightmassLevelSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LightmassLevelSettings)("LightmassLevelSettings Engine.Default__LightmassLevelSettings")); }
+	@property final static LightmassLevelSettings DefaultProperties() { mixin(MGDPC!(LightmassLevelSettings, "LightmassLevelSettings Engine.Default__LightmassLevelSettings")()); }
 	@property final
 	{
 		auto ref
 		{
-			float MaxOcclusionDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float FullyOccludedSamplesFraction() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float OcclusionExponent() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float IndirectIlluminationOcclusionFraction() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float DirectIlluminationOcclusionFraction() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-			float SpecularBoost() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float DiffuseBoost() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			float EmissiveBoost() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-			float EnvironmentIntensity() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			UObject.Color EnvironmentColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 64); }
-			int NumIndirectLightingBounces() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			float MaxOcclusionDistance() { mixin(MGPC!(float, 104)()); }
+			float FullyOccludedSamplesFraction() { mixin(MGPC!(float, 100)()); }
+			float OcclusionExponent() { mixin(MGPC!(float, 96)()); }
+			float IndirectIlluminationOcclusionFraction() { mixin(MGPC!(float, 92)()); }
+			float DirectIlluminationOcclusionFraction() { mixin(MGPC!(float, 88)()); }
+			float SpecularBoost() { mixin(MGPC!(float, 80)()); }
+			float DiffuseBoost() { mixin(MGPC!(float, 76)()); }
+			float EmissiveBoost() { mixin(MGPC!(float, 72)()); }
+			float EnvironmentIntensity() { mixin(MGPC!(float, 68)()); }
+			UObject.Color EnvironmentColor() { mixin(MGPC!(UObject.Color, 64)()); }
+			int NumIndirectLightingBounces() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bVisualizeAmbientOcclusion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x2) != 0; }
-		bool bVisualizeAmbientOcclusion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x2; } return val; }
-		bool bUseAmbientOcclusion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x1) != 0; }
-		bool bUseAmbientOcclusion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x1; } return val; }
+		bool bVisualizeAmbientOcclusion() { mixin(MGBPC!(84, 0x2)()); }
+		bool bVisualizeAmbientOcclusion(bool val) { mixin(MSBPC!(84, 0x2)()); }
+		bool bUseAmbientOcclusion() { mixin(MGBPC!(84, 0x1)()); }
+		bool bUseAmbientOcclusion(bool val) { mixin(MSBPC!(84, 0x1)()); }
 	}
 }

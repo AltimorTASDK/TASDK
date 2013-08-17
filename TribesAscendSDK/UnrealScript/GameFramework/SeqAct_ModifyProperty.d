@@ -1,31 +1,32 @@
 module UnrealScript.GameFramework.SeqAct_ModifyProperty;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_ModifyProperty : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_ModifyProperty")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.SeqAct_ModifyProperty")()); }
 	private static __gshared SeqAct_ModifyProperty mDefaultProperties;
-	@property final static SeqAct_ModifyProperty DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ModifyProperty)("SeqAct_ModifyProperty GameFramework.Default__SeqAct_ModifyProperty")); }
+	@property final static SeqAct_ModifyProperty DefaultProperties() { mixin(MGDPC!(SeqAct_ModifyProperty, "SeqAct_ModifyProperty GameFramework.Default__SeqAct_ModifyProperty")()); }
 	struct PropertyInfo
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.SeqAct_ModifyProperty.PropertyInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.SeqAct_ModifyProperty.PropertyInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptString PropertyValue() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-				ScriptName PropertyName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				ScriptString PropertyValue() { mixin(MGPS!(ScriptString, 12)()); }
+				ScriptName PropertyName() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bModifyProperty() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bModifyProperty(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
+			bool bModifyProperty() { mixin(MGBPS!(8, 0x1)()); }
+			bool bModifyProperty(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) Properties() { return *cast(ScriptArray!(SeqAct_ModifyProperty.PropertyInfo)*)(cast(size_t)cast(void*)this + 232); }
+	@property final auto ref ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) Properties() { mixin(MGPC!(ScriptArray!(SeqAct_ModifyProperty.PropertyInfo), 232)()); }
 }

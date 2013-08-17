@@ -1,6 +1,7 @@
 module UnrealScript.Engine.EmitterCameraLensEffectBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Camera;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.Emitter;
@@ -9,9 +10,9 @@ extern(C++) interface EmitterCameraLensEffectBase : Emitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EmitterCameraLensEffectBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.EmitterCameraLensEffectBase")()); }
 	private static __gshared EmitterCameraLensEffectBase mDefaultProperties;
-	@property final static EmitterCameraLensEffectBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EmitterCameraLensEffectBase)("EmitterCameraLensEffectBase Engine.Default__EmitterCameraLensEffectBase")); }
+	@property final static EmitterCameraLensEffectBase DefaultProperties() { mixin(MGDPC!(EmitterCameraLensEffectBase, "EmitterCameraLensEffectBase Engine.Default__EmitterCameraLensEffectBase")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,27 +26,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterCameraLensEffectBase.Destroyed")); }
-			ScriptFunction RegisterCamera() { return mRegisterCamera ? mRegisterCamera : (mRegisterCamera = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterCameraLensEffectBase.RegisterCamera")); }
-			ScriptFunction NotifyRetriggered() { return mNotifyRetriggered ? mNotifyRetriggered : (mNotifyRetriggered = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterCameraLensEffectBase.NotifyRetriggered")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterCameraLensEffectBase.PostBeginPlay")); }
-			ScriptFunction ActivateLensEffect() { return mActivateLensEffect ? mActivateLensEffect : (mActivateLensEffect = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterCameraLensEffectBase.ActivateLensEffect")); }
-			ScriptFunction UpdateLocation() { return mUpdateLocation ? mUpdateLocation : (mUpdateLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterCameraLensEffectBase.UpdateLocation")); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.EmitterCameraLensEffectBase.Destroyed")()); }
+			ScriptFunction RegisterCamera() { mixin(MGF!("mRegisterCamera", "Function Engine.EmitterCameraLensEffectBase.RegisterCamera")()); }
+			ScriptFunction NotifyRetriggered() { mixin(MGF!("mNotifyRetriggered", "Function Engine.EmitterCameraLensEffectBase.NotifyRetriggered")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.EmitterCameraLensEffectBase.PostBeginPlay")()); }
+			ScriptFunction ActivateLensEffect() { mixin(MGF!("mActivateLensEffect", "Function Engine.EmitterCameraLensEffectBase.ActivateLensEffect")()); }
+			ScriptFunction UpdateLocation() { mixin(MGF!("mUpdateLocation", "Function Engine.EmitterCameraLensEffectBase.UpdateLocation")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) EmittersToTreatAsSame() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 508); }
-			Camera BaseCamera() { return *cast(Camera*)(cast(size_t)cast(void*)this + 520); }
-			float DistFromCamera() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-			float BaseFOV() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			ParticleSystem PS_CameraEffectNonExtremeContent() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 492); }
-			ParticleSystem PS_CameraEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 488); }
+			ScriptArray!(ScriptClass) EmittersToTreatAsSame() { mixin(MGPC!(ScriptArray!(ScriptClass), 508)()); }
+			Camera BaseCamera() { mixin(MGPC!(Camera, 520)()); }
+			float DistFromCamera() { mixin(MGPC!(float, 500)()); }
+			float BaseFOV() { mixin(MGPC!(float, 496)()); }
+			ParticleSystem PS_CameraEffectNonExtremeContent() { mixin(MGPC!(ParticleSystem, 492)()); }
+			ParticleSystem PS_CameraEffect() { mixin(MGPC!(ParticleSystem, 488)()); }
 		}
-		bool bAllowMultipleInstances() { return (*cast(uint*)(cast(size_t)cast(void*)this + 504) & 0x1) != 0; }
-		bool bAllowMultipleInstances(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 504) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 504) &= ~0x1; } return val; }
+		bool bAllowMultipleInstances() { mixin(MGBPC!(504, 0x1)()); }
+		bool bAllowMultipleInstances(bool val) { mixin(MSBPC!(504, 0x1)()); }
 	}
 final:
 	void Destroyed()
@@ -71,12 +72,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateLensEffect, cast(void*)0, cast(void*)0);
 	}
-	void UpdateLocation(Vector* CamLoc, Rotator* CamRot, float CamFOVDeg)
+	void UpdateLocation(ref const Vector CamLoc, ref const Rotator CamRot, float CamFOVDeg)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *CamLoc;
-		*cast(Rotator*)&params[12] = *CamRot;
+		*cast(Vector*)params.ptr = CamLoc;
+		*cast(Rotator*)&params[12] = CamRot;
 		*cast(float*)&params[24] = CamFOVDeg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLocation, params.ptr, cast(void*)0);
 		*CamLoc = *cast(Vector*)params.ptr;

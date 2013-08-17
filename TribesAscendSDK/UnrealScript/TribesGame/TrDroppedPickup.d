@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDroppedPickup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTDroppedPickup;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Pawn;
@@ -14,9 +15,9 @@ extern(C++) interface TrDroppedPickup : UTDroppedPickup
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDroppedPickup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDroppedPickup")()); }
 	private static __gshared TrDroppedPickup mDefaultProperties;
-	@property final static TrDroppedPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDroppedPickup)("TrDroppedPickup TribesGame.Default__TrDroppedPickup")); }
+	@property final static TrDroppedPickup DefaultProperties() { mixin(MGDPC!(TrDroppedPickup, "TrDroppedPickup TribesGame.Default__TrDroppedPickup")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,32 +33,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.Destroyed")); }
-			ScriptFunction GiveTo() { return mGiveTo ? mGiveTo : (mGiveTo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.GiveTo")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.PostBeginPlay")); }
-			ScriptFunction DoBounce() { return mDoBounce ? mDoBounce : (mDoBounce = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.DoBounce")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.HitWall")); }
-			ScriptFunction OnCollisionProxyTouched() { return mOnCollisionProxyTouched ? mOnCollisionProxyTouched : (mOnCollisionProxyTouched = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.OnCollisionProxyTouched")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.Tick")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDroppedPickup.PostRenderFor")); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDroppedPickup.Destroyed")()); }
+			ScriptFunction GiveTo() { mixin(MGF!("mGiveTo", "Function TribesGame.TrDroppedPickup.GiveTo")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDroppedPickup.PostBeginPlay")()); }
+			ScriptFunction DoBounce() { mixin(MGF!("mDoBounce", "Function TribesGame.TrDroppedPickup.DoBounce")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrDroppedPickup.HitWall")()); }
+			ScriptFunction OnCollisionProxyTouched() { mixin(MGF!("mOnCollisionProxyTouched", "Function TribesGame.TrDroppedPickup.OnCollisionProxyTouched")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDroppedPickup.Tick")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrDroppedPickup.PostRenderFor")()); }
 		}
+	}
+	static struct Pickup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDroppedPickup.Pickup")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrCollisionProxy m_CollisionProxy() { return *cast(TrCollisionProxy*)(cast(size_t)cast(void*)this + 552); }
-			float m_fMarkerOpacity() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-			float m_fCurrentMarkerTime() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
-			Rotator m_rMarkerRot() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 532); }
-			float m_fMarkerBlinkSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			float m_fMarkerScale() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			float m_fMarkerZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 520); }
-			float m_PctAmmoToRefill() { return *cast(float*)(cast(size_t)cast(void*)this + 516); }
-			SoundCue m_AmmoPickupSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 512); }
+			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!(TrCollisionProxy, 552)()); }
+			float m_fMarkerOpacity() { mixin(MGPC!(float, 548)()); }
+			float m_fCurrentMarkerTime() { mixin(MGPC!(float, 544)()); }
+			Rotator m_rMarkerRot() { mixin(MGPC!(Rotator, 532)()); }
+			float m_fMarkerBlinkSpeed() { mixin(MGPC!(float, 528)()); }
+			float m_fMarkerScale() { mixin(MGPC!(float, 524)()); }
+			float m_fMarkerZOffset() { mixin(MGPC!(float, 520)()); }
+			float m_PctAmmoToRefill() { mixin(MGPC!(float, 516)()); }
+			SoundCue m_AmmoPickupSound() { mixin(MGPC!(SoundCue, 512)()); }
 		}
-		bool m_bHasHitObjective() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x1) != 0; }
-		bool m_bHasHitObjective(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x1; } return val; }
+		bool m_bHasHitObjective() { mixin(MGBPC!(556, 0x1)()); }
+		bool m_bHasHitObjective(bool val) { mixin(MSBPC!(556, 0x1)()); }
 	}
 final:
 	void Destroyed()

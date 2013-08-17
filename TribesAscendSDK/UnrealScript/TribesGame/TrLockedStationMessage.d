@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrLockedStationMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrLockedStationMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLockedStationMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLockedStationMessage")()); }
 	private static __gshared TrLockedStationMessage mDefaultProperties;
-	@property final static TrLockedStationMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLockedStationMessage)("TrLockedStationMessage TribesGame.Default__TrLockedStationMessage")); }
+	@property final static TrLockedStationMessage DefaultProperties() { mixin(MGDPC!(TrLockedStationMessage, "TrLockedStationMessage TribesGame.Default__TrLockedStationMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockedStationMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockedStationMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrLockedStationMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrLockedStationMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue DeniedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString Second() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString Seconds() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString StationLocked() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundCue DeniedSound() { mixin(MGPC!(SoundCue, 136)()); }
+		ScriptString Second() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString Seconds() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString StationLocked() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

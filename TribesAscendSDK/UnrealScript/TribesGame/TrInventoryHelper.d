@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrInventoryHelper;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrInventoryHelper : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryHelper")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrInventoryHelper")()); }
 	private static __gshared TrInventoryHelper mDefaultProperties;
-	@property final static TrInventoryHelper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventoryHelper)("TrInventoryHelper TribesGame.Default__TrInventoryHelper")); }
+	@property final static TrInventoryHelper DefaultProperties() { mixin(MGDPC!(TrInventoryHelper, "TrInventoryHelper TribesGame.Default__TrInventoryHelper")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,9 +21,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetEquipClass() { return mGetEquipClass ? mGetEquipClass : (mGetEquipClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryHelper.GetEquipClass")); }
-			ScriptFunction GetFamilyClass() { return mGetFamilyClass ? mGetFamilyClass : (mGetFamilyClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryHelper.GetFamilyClass")); }
-			ScriptFunction GetSkinClass() { return mGetSkinClass ? mGetSkinClass : (mGetSkinClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryHelper.GetSkinClass")); }
+			ScriptFunction GetEquipClass() { mixin(MGF!("mGetEquipClass", "Function TribesGame.TrInventoryHelper.GetEquipClass")()); }
+			ScriptFunction GetFamilyClass() { mixin(MGF!("mGetFamilyClass", "Function TribesGame.TrInventoryHelper.GetFamilyClass")()); }
+			ScriptFunction GetSkinClass() { mixin(MGF!("mGetSkinClass", "Function TribesGame.TrInventoryHelper.GetSkinClass")()); }
 		}
 	}
 	static struct Constants

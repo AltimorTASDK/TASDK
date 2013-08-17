@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SpriteComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Engine.PrimitiveComponent;
 
@@ -8,9 +9,9 @@ extern(C++) interface SpriteComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpriteComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SpriteComponent")()); }
 	private static __gshared SpriteComponent mDefaultProperties;
-	@property final static SpriteComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SpriteComponent)("SpriteComponent Engine.Default__SpriteComponent")); }
+	@property final static SpriteComponent DefaultProperties() { mixin(MGDPC!(SpriteComponent, "SpriteComponent Engine.Default__SpriteComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,24 +22,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetSprite() { return mSetSprite ? mSetSprite : (mSetSprite = ScriptObject.Find!(ScriptFunction)("Function Engine.SpriteComponent.SetSprite")); }
-			ScriptFunction SetUV() { return mSetUV ? mSetUV : (mSetUV = ScriptObject.Find!(ScriptFunction)("Function Engine.SpriteComponent.SetUV")); }
-			ScriptFunction SetSpriteAndUV() { return mSetSpriteAndUV ? mSetSpriteAndUV : (mSetSpriteAndUV = ScriptObject.Find!(ScriptFunction)("Function Engine.SpriteComponent.SetSpriteAndUV")); }
+			ScriptFunction SetSprite() { mixin(MGF!("mSetSprite", "Function Engine.SpriteComponent.SetSprite")()); }
+			ScriptFunction SetUV() { mixin(MGF!("mSetUV", "Function Engine.SpriteComponent.SetUV")()); }
+			ScriptFunction SetSpriteAndUV() { mixin(MGF!("mSetSpriteAndUV", "Function Engine.SpriteComponent.SetSpriteAndUV")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float VL() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
-			float V() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-			float UL() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			float U() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-			float ScreenSize() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			Texture2D Sprite() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 488); }
+			float VL() { mixin(MGPC!(float, 512)()); }
+			float V() { mixin(MGPC!(float, 508)()); }
+			float UL() { mixin(MGPC!(float, 504)()); }
+			float U() { mixin(MGPC!(float, 500)()); }
+			float ScreenSize() { mixin(MGPC!(float, 496)()); }
+			Texture2D Sprite() { mixin(MGPC!(Texture2D, 488)()); }
 		}
-		bool bIsScreenSizeScaled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 492) & 0x1) != 0; }
-		bool bIsScreenSizeScaled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 492) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 492) &= ~0x1; } return val; }
+		bool bIsScreenSizeScaled() { mixin(MGBPC!(492, 0x1)()); }
+		bool bIsScreenSizeScaled(bool val) { mixin(MSBPC!(492, 0x1)()); }
 	}
 final:
 	void SetSprite(Texture2D NewSprite)

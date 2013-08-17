@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_ThrowingKnives;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.SkelControlSingleBone;
 import UnrealScript.TribesGame.TrDevice;
@@ -9,9 +10,9 @@ extern(C++) interface TrDevice_ThrowingKnives : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_ThrowingKnives")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_ThrowingKnives")()); }
 	private static __gshared TrDevice_ThrowingKnives mDefaultProperties;
-	@property final static TrDevice_ThrowingKnives DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_ThrowingKnives)("TrDevice_ThrowingKnives TribesGame.Default__TrDevice_ThrowingKnives")); }
+	@property final static TrDevice_ThrowingKnives DefaultProperties() { mixin(MGDPC!(TrDevice_ThrowingKnives, "TrDevice_ThrowingKnives TribesGame.Default__TrDevice_ThrowingKnives")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,20 +28,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.PostInitAnimTree")); }
-			ScriptFunction UpdateSkelControlKnives() { return mUpdateSkelControlKnives ? mUpdateSkelControlKnives : (mUpdateSkelControlKnives = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.UpdateSkelControlKnives")); }
-			ScriptFunction OnFireSkelControlKnivesAnimNotify() { return mOnFireSkelControlKnivesAnimNotify ? mOnFireSkelControlKnivesAnimNotify : (mOnFireSkelControlKnivesAnimNotify = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.OnFireSkelControlKnivesAnimNotify")); }
-			ScriptFunction OnSkelControlKnivesAnimNotify() { return mOnSkelControlKnivesAnimNotify ? mOnSkelControlKnivesAnimNotify : (mOnSkelControlKnivesAnimNotify = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.OnSkelControlKnivesAnimNotify")); }
-			ScriptFunction PlayWeaponEquip() { return mPlayWeaponEquip ? mPlayWeaponEquip : (mPlayWeaponEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.PlayWeaponEquip")); }
-			ScriptFunction ProjectileFire() { return mProjectileFire ? mProjectileFire : (mProjectileFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.ProjectileFire")); }
-			ScriptFunction FireAmmunition() { return mFireAmmunition ? mFireAmmunition : (mFireAmmunition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.FireAmmunition")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_ThrowingKnives.StartFire")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_ThrowingKnives.PostInitAnimTree")()); }
+			ScriptFunction UpdateSkelControlKnives() { mixin(MGF!("mUpdateSkelControlKnives", "Function TribesGame.TrDevice_ThrowingKnives.UpdateSkelControlKnives")()); }
+			ScriptFunction OnFireSkelControlKnivesAnimNotify() { mixin(MGF!("mOnFireSkelControlKnivesAnimNotify", "Function TribesGame.TrDevice_ThrowingKnives.OnFireSkelControlKnivesAnimNotify")()); }
+			ScriptFunction OnSkelControlKnivesAnimNotify() { mixin(MGF!("mOnSkelControlKnivesAnimNotify", "Function TribesGame.TrDevice_ThrowingKnives.OnSkelControlKnivesAnimNotify")()); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_ThrowingKnives.PlayWeaponEquip")()); }
+			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function TribesGame.TrDevice_ThrowingKnives.ProjectileFire")()); }
+			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_ThrowingKnives.FireAmmunition")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_ThrowingKnives.StartFire")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SkelControlSingleBone m_KnifeVisibilityBottomControl() { return *cast(SkelControlSingleBone*)(cast(size_t)cast(void*)this + 2152); }
-		SkelControlSingleBone m_KnifeVisibilityTopControl() { return *cast(SkelControlSingleBone*)(cast(size_t)cast(void*)this + 2148); }
+		SkelControlSingleBone m_KnifeVisibilityBottomControl() { mixin(MGPC!(SkelControlSingleBone, 2152)()); }
+		SkelControlSingleBone m_KnifeVisibilityTopControl() { mixin(MGPC!(SkelControlSingleBone, 2148)()); }
 	}
 final:
 	void PostInitAnimTree(

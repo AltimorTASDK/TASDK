@@ -1,36 +1,37 @@
 module UnrealScript.Engine.InterpTrackParticleReplay;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.InterpTrack;
 
 extern(C++) interface InterpTrackParticleReplay : InterpTrack
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackParticleReplay")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackParticleReplay")()); }
 	private static __gshared InterpTrackParticleReplay mDefaultProperties;
-	@property final static InterpTrackParticleReplay DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackParticleReplay)("InterpTrackParticleReplay Engine.Default__InterpTrackParticleReplay")); }
+	@property final static InterpTrackParticleReplay DefaultProperties() { mixin(MGDPC!(InterpTrackParticleReplay, "InterpTrackParticleReplay Engine.Default__InterpTrackParticleReplay")()); }
 	struct ParticleReplayTrackKey
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackParticleReplay.ParticleReplayTrackKey")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackParticleReplay.ParticleReplayTrackKey")()); }
 		@property final auto ref
 		{
-			int ClipIDNumber() { return *cast(int*)(cast(size_t)&this + 8); }
-			float Duration() { return *cast(float*)(cast(size_t)&this + 4); }
-			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
+			int ClipIDNumber() { mixin(MGPS!(int, 8)()); }
+			float Duration() { mixin(MGPS!(float, 4)()); }
+			float Time() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey) TrackKeys() { return *cast(ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey)*)(cast(size_t)cast(void*)this + 128); }
-			float FixedTimeStep() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
+			ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey) TrackKeys() { mixin(MGPC!(ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey), 128)()); }
+			float FixedTimeStep() { mixin(MGPC!(float, 144)()); }
 		}
-		bool bIsCapturingReplay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 140) & 0x1) != 0; }
-		bool bIsCapturingReplay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 140) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 140) &= ~0x1; } return val; }
+		bool bIsCapturingReplay() { mixin(MGBPC!(140, 0x1)()); }
+		bool bIsCapturingReplay(bool val) { mixin(MSBPC!(140, 0x1)()); }
 	}
 }

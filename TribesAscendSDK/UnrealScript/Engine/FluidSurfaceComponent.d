@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FluidSurfaceComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.PrimitiveComponent;
@@ -12,9 +13,9 @@ extern(C++) interface FluidSurfaceComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidSurfaceComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FluidSurfaceComponent")()); }
 	private static __gshared FluidSurfaceComponent mDefaultProperties;
-	@property final static FluidSurfaceComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FluidSurfaceComponent)("FluidSurfaceComponent Engine.Default__FluidSurfaceComponent")); }
+	@property final static FluidSurfaceComponent DefaultProperties() { mixin(MGDPC!(FluidSurfaceComponent, "FluidSurfaceComponent Engine.Default__FluidSurfaceComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,80 +26,80 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ApplyForce() { return mApplyForce ? mApplyForce : (mApplyForce = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceComponent.ApplyForce")); }
-			ScriptFunction SetDetailPosition() { return mSetDetailPosition ? mSetDetailPosition : (mSetDetailPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceComponent.SetDetailPosition")); }
-			ScriptFunction SetSimulationPosition() { return mSetSimulationPosition ? mSetSimulationPosition : (mSetSimulationPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceComponent.SetSimulationPosition")); }
+			ScriptFunction ApplyForce() { mixin(MGF!("mApplyForce", "Function Engine.FluidSurfaceComponent.ApplyForce")()); }
+			ScriptFunction SetDetailPosition() { mixin(MGF!("mSetDetailPosition", "Function Engine.FluidSurfaceComponent.SetDetailPosition")()); }
+			ScriptFunction SetSimulationPosition() { mixin(MGF!("mSetSimulationPosition", "Function Engine.FluidSurfaceComponent.SetSimulationPosition")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float ForceImpact() { return *cast(float*)(cast(size_t)cast(void*)this + 568); }
-			ScriptArray!(ubyte) ClampMap() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 692); }
-			ScriptArray!(ShadowMap2D) ShadowMaps() { return *cast(ScriptArray!(ShadowMap2D)*)(cast(size_t)cast(void*)this + 704); }
-			UObject.Pointer FluidSimulation() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 720); }
-			EngineTypes.LightMapRef LightMap() { return *cast(EngineTypes.LightMapRef*)(cast(size_t)cast(void*)this + 716); }
-			Vector EditorViewPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 680); }
-			Vector DetailPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 668); }
-			Vector SimulationPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 656); }
-			float ViewDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
-			float DeactivationTimer() { return *cast(float*)(cast(size_t)cast(void*)this + 648); }
-			float TestRippleAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 644); }
-			float TestRippleTime() { return *cast(float*)(cast(size_t)cast(void*)this + 640); }
-			float FluidHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 636); }
-			float FluidWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 632); }
-			float TestRippleRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 628); }
-			float TestRippleFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 624); }
-			float TestRippleSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 620); }
-			float NormalLength() { return *cast(float*)(cast(size_t)cast(void*)this + 616); }
-			float DetailUpdateRate() { return *cast(float*)(cast(size_t)cast(void*)this + 612); }
-			float DetailHeightScale() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-			float DetailTransfer() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
-			float DetailTravelSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 600); }
-			float DetailDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
-			float DetailSize() { return *cast(float*)(cast(size_t)cast(void*)this + 592); }
-			int DetailResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 588); }
-			float DeactivationDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 584); }
-			Actor TargetDetail() { return *cast(Actor*)(cast(size_t)cast(void*)this + 580); }
-			float LightingContrast() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
-			float ForceContinuous() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-			float FluidUpdateRate() { return *cast(float*)(cast(size_t)cast(void*)this + 564); }
-			float FluidHeightScale() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-			float FluidTravelSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			float FluidDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			float GPUTessellationFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-			Actor TargetSimulation() { return *cast(Actor*)(cast(size_t)cast(void*)this + 544); }
-			float GridSpacingLowRes() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
-			float GridSpacing() { return *cast(float*)(cast(size_t)cast(void*)this + 536); }
-			int SimulationQuadsY() { return *cast(int*)(cast(size_t)cast(void*)this + 532); }
-			int SimulationQuadsX() { return *cast(int*)(cast(size_t)cast(void*)this + 528); }
-			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { return *cast(EngineTypes.LightmassPrimitiveSettings*)(cast(size_t)cast(void*)this + 496); }
-			int LightMapResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
-			MaterialInterface FluidMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 488); }
+			float ForceImpact() { mixin(MGPC!(float, 568)()); }
+			ScriptArray!(ubyte) ClampMap() { mixin(MGPC!(ScriptArray!(ubyte), 692)()); }
+			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPC!(ScriptArray!(ShadowMap2D), 704)()); }
+			UObject.Pointer FluidSimulation() { mixin(MGPC!(UObject.Pointer, 720)()); }
+			EngineTypes.LightMapRef LightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 716)()); }
+			Vector EditorViewPosition() { mixin(MGPC!(Vector, 680)()); }
+			Vector DetailPosition() { mixin(MGPC!(Vector, 668)()); }
+			Vector SimulationPosition() { mixin(MGPC!(Vector, 656)()); }
+			float ViewDistance() { mixin(MGPC!(float, 652)()); }
+			float DeactivationTimer() { mixin(MGPC!(float, 648)()); }
+			float TestRippleAngle() { mixin(MGPC!(float, 644)()); }
+			float TestRippleTime() { mixin(MGPC!(float, 640)()); }
+			float FluidHeight() { mixin(MGPC!(float, 636)()); }
+			float FluidWidth() { mixin(MGPC!(float, 632)()); }
+			float TestRippleRadius() { mixin(MGPC!(float, 628)()); }
+			float TestRippleFrequency() { mixin(MGPC!(float, 624)()); }
+			float TestRippleSpeed() { mixin(MGPC!(float, 620)()); }
+			float NormalLength() { mixin(MGPC!(float, 616)()); }
+			float DetailUpdateRate() { mixin(MGPC!(float, 612)()); }
+			float DetailHeightScale() { mixin(MGPC!(float, 608)()); }
+			float DetailTransfer() { mixin(MGPC!(float, 604)()); }
+			float DetailTravelSpeed() { mixin(MGPC!(float, 600)()); }
+			float DetailDamping() { mixin(MGPC!(float, 596)()); }
+			float DetailSize() { mixin(MGPC!(float, 592)()); }
+			int DetailResolution() { mixin(MGPC!(int, 588)()); }
+			float DeactivationDistance() { mixin(MGPC!(float, 584)()); }
+			Actor TargetDetail() { mixin(MGPC!(Actor, 580)()); }
+			float LightingContrast() { mixin(MGPC!(float, 576)()); }
+			float ForceContinuous() { mixin(MGPC!(float, 572)()); }
+			float FluidUpdateRate() { mixin(MGPC!(float, 564)()); }
+			float FluidHeightScale() { mixin(MGPC!(float, 560)()); }
+			float FluidTravelSpeed() { mixin(MGPC!(float, 556)()); }
+			float FluidDamping() { mixin(MGPC!(float, 552)()); }
+			float GPUTessellationFactor() { mixin(MGPC!(float, 548)()); }
+			Actor TargetSimulation() { mixin(MGPC!(Actor, 544)()); }
+			float GridSpacingLowRes() { mixin(MGPC!(float, 540)()); }
+			float GridSpacing() { mixin(MGPC!(float, 536)()); }
+			int SimulationQuadsY() { mixin(MGPC!(int, 532)()); }
+			int SimulationQuadsX() { mixin(MGPC!(int, 528)()); }
+			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 496)()); }
+			int LightMapResolution() { mixin(MGPC!(int, 492)()); }
+			MaterialInterface FluidMaterial() { mixin(MGPC!(MaterialInterface, 488)()); }
 		}
-		bool bTestRippleCenterOnDetail() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x400) != 0; }
-		bool bTestRippleCenterOnDetail(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x400; } return val; }
-		bool bTestRipple() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x200) != 0; }
-		bool bTestRipple(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x200; } return val; }
-		bool bShowFluidDetail() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x100) != 0; }
-		bool bShowFluidDetail(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x100; } return val; }
-		bool bShowFluidSimulation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x80) != 0; }
-		bool bShowFluidSimulation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x80; } return val; }
-		bool bShowDetailPosition() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x40) != 0; }
-		bool bShowDetailPosition(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x40; } return val; }
-		bool bShowDetailNormals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x20) != 0; }
-		bool bShowDetailNormals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x20; } return val; }
-		bool bShowSimulationPosition() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x10) != 0; }
-		bool bShowSimulationPosition(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x10; } return val; }
-		bool bShowSimulationNormals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x8) != 0; }
-		bool bShowSimulationNormals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x8; } return val; }
-		bool bPause() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x4) != 0; }
-		bool bPause(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x4; } return val; }
-		bool EnableDetail() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x2) != 0; }
-		bool EnableDetail(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x2; } return val; }
-		bool EnableSimulation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x1) != 0; }
-		bool EnableSimulation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x1; } return val; }
+		bool bTestRippleCenterOnDetail() { mixin(MGBPC!(524, 0x400)()); }
+		bool bTestRippleCenterOnDetail(bool val) { mixin(MSBPC!(524, 0x400)()); }
+		bool bTestRipple() { mixin(MGBPC!(524, 0x200)()); }
+		bool bTestRipple(bool val) { mixin(MSBPC!(524, 0x200)()); }
+		bool bShowFluidDetail() { mixin(MGBPC!(524, 0x100)()); }
+		bool bShowFluidDetail(bool val) { mixin(MSBPC!(524, 0x100)()); }
+		bool bShowFluidSimulation() { mixin(MGBPC!(524, 0x80)()); }
+		bool bShowFluidSimulation(bool val) { mixin(MSBPC!(524, 0x80)()); }
+		bool bShowDetailPosition() { mixin(MGBPC!(524, 0x40)()); }
+		bool bShowDetailPosition(bool val) { mixin(MSBPC!(524, 0x40)()); }
+		bool bShowDetailNormals() { mixin(MGBPC!(524, 0x20)()); }
+		bool bShowDetailNormals(bool val) { mixin(MSBPC!(524, 0x20)()); }
+		bool bShowSimulationPosition() { mixin(MGBPC!(524, 0x10)()); }
+		bool bShowSimulationPosition(bool val) { mixin(MSBPC!(524, 0x10)()); }
+		bool bShowSimulationNormals() { mixin(MGBPC!(524, 0x8)()); }
+		bool bShowSimulationNormals(bool val) { mixin(MSBPC!(524, 0x8)()); }
+		bool bPause() { mixin(MGBPC!(524, 0x4)()); }
+		bool bPause(bool val) { mixin(MSBPC!(524, 0x4)()); }
+		bool EnableDetail() { mixin(MGBPC!(524, 0x2)()); }
+		bool EnableDetail(bool val) { mixin(MSBPC!(524, 0x2)()); }
+		bool EnableSimulation() { mixin(MGBPC!(524, 0x1)()); }
+		bool EnableSimulation(bool val) { mixin(MSBPC!(524, 0x1)()); }
 	}
 final:
 	void ApplyForce(Vector WorldPos, float Strength, float Radius, bool bImpulse)

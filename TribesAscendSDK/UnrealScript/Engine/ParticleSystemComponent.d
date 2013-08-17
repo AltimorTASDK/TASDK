@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleSystemComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleSystemReplay;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
@@ -12,9 +13,9 @@ extern(C++) interface ParticleSystemComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleSystemComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleSystemComponent")()); }
 	private static __gshared ParticleSystemComponent mDefaultProperties;
-	@property final static ParticleSystemComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleSystemComponent)("ParticleSystemComponent Engine.Default__ParticleSystemComponent")); }
+	@property final static ParticleSystemComponent DefaultProperties() { mixin(MGDPC!(ParticleSystemComponent, "ParticleSystemComponent Engine.Default__ParticleSystemComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -65,49 +66,49 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetTemplate")); }
-			ScriptFunction ActivateSystem() { return mActivateSystem ? mActivateSystem : (mActivateSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.ActivateSystem")); }
-			ScriptFunction SetActive() { return mSetActive ? mSetActive : (mSetActive = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetActive")); }
-			ScriptFunction OnSystemFinished() { return mOnSystemFinished ? mOnSystemFinished : (mOnSystemFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.OnSystemFinished")); }
-			ScriptFunction DeactivateSystem() { return mDeactivateSystem ? mDeactivateSystem : (mDeactivateSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.DeactivateSystem")); }
-			ScriptFunction KillParticlesForced() { return mKillParticlesForced ? mKillParticlesForced : (mKillParticlesForced = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.KillParticlesForced")); }
-			ScriptFunction KillParticlesInEmitter() { return mKillParticlesInEmitter ? mKillParticlesInEmitter : (mKillParticlesInEmitter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.KillParticlesInEmitter")); }
-			ScriptFunction SetSkipUpdateDynamicDataDuringTick() { return mSetSkipUpdateDynamicDataDuringTick ? mSetSkipUpdateDynamicDataDuringTick : (mSetSkipUpdateDynamicDataDuringTick = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetSkipUpdateDynamicDataDuringTick")); }
-			ScriptFunction GetSkipUpdateDynamicDataDuringTick() { return mGetSkipUpdateDynamicDataDuringTick ? mGetSkipUpdateDynamicDataDuringTick : (mGetSkipUpdateDynamicDataDuringTick = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetSkipUpdateDynamicDataDuringTick")); }
-			ScriptFunction SetKillOnDeactivate() { return mSetKillOnDeactivate ? mSetKillOnDeactivate : (mSetKillOnDeactivate = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetKillOnDeactivate")); }
-			ScriptFunction SetKillOnCompleted() { return mSetKillOnCompleted ? mSetKillOnCompleted : (mSetKillOnCompleted = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetKillOnCompleted")); }
-			ScriptFunction RewindEmitterInstance() { return mRewindEmitterInstance ? mRewindEmitterInstance : (mRewindEmitterInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.RewindEmitterInstance")); }
-			ScriptFunction RewindEmitterInstances() { return mRewindEmitterInstances ? mRewindEmitterInstances : (mRewindEmitterInstances = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.RewindEmitterInstances")); }
-			ScriptFunction SetBeamType() { return mSetBeamType ? mSetBeamType : (mSetBeamType = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamType")); }
-			ScriptFunction SetBeamTessellationFactor() { return mSetBeamTessellationFactor ? mSetBeamTessellationFactor : (mSetBeamTessellationFactor = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTessellationFactor")); }
-			ScriptFunction SetBeamEndPoint() { return mSetBeamEndPoint ? mSetBeamEndPoint : (mSetBeamEndPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamEndPoint")); }
-			ScriptFunction SetBeamDistance() { return mSetBeamDistance ? mSetBeamDistance : (mSetBeamDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamDistance")); }
-			ScriptFunction SetBeamSourcePoint() { return mSetBeamSourcePoint ? mSetBeamSourcePoint : (mSetBeamSourcePoint = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamSourcePoint")); }
-			ScriptFunction SetBeamSourceTangent() { return mSetBeamSourceTangent ? mSetBeamSourceTangent : (mSetBeamSourceTangent = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamSourceTangent")); }
-			ScriptFunction SetBeamSourceStrength() { return mSetBeamSourceStrength ? mSetBeamSourceStrength : (mSetBeamSourceStrength = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamSourceStrength")); }
-			ScriptFunction SetBeamTargetPoint() { return mSetBeamTargetPoint ? mSetBeamTargetPoint : (mSetBeamTargetPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTargetPoint")); }
-			ScriptFunction SetBeamTargetTangent() { return mSetBeamTargetTangent ? mSetBeamTargetTangent : (mSetBeamTargetTangent = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTargetTangent")); }
-			ScriptFunction SetBeamTargetStrength() { return mSetBeamTargetStrength ? mSetBeamTargetStrength : (mSetBeamTargetStrength = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTargetStrength")); }
-			ScriptFunction DetermineLODLevelForLocation() { return mDetermineLODLevelForLocation ? mDetermineLODLevelForLocation : (mDetermineLODLevelForLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.DetermineLODLevelForLocation")); }
-			ScriptFunction SetLODLevel() { return mSetLODLevel ? mSetLODLevel : (mSetLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetLODLevel")); }
-			ScriptFunction SetEditorLODLevel() { return mSetEditorLODLevel ? mSetEditorLODLevel : (mSetEditorLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetEditorLODLevel")); }
-			ScriptFunction GetLODLevel() { return mGetLODLevel ? mGetLODLevel : (mGetLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetLODLevel")); }
-			ScriptFunction GetEditorLODLevel() { return mGetEditorLODLevel ? mGetEditorLODLevel : (mGetEditorLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetEditorLODLevel")); }
-			ScriptFunction SetFloatParameter() { return mSetFloatParameter ? mSetFloatParameter : (mSetFloatParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetFloatParameter")); }
-			ScriptFunction SetFloatRandParameter() { return mSetFloatRandParameter ? mSetFloatRandParameter : (mSetFloatRandParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetFloatRandParameter")); }
-			ScriptFunction SetVectorParameter() { return mSetVectorParameter ? mSetVectorParameter : (mSetVectorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetVectorParameter")); }
-			ScriptFunction SetVectorRandParameter() { return mSetVectorRandParameter ? mSetVectorRandParameter : (mSetVectorRandParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetVectorRandParameter")); }
-			ScriptFunction SetColorParameter() { return mSetColorParameter ? mSetColorParameter : (mSetColorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetColorParameter")); }
-			ScriptFunction SetActorParameter() { return mSetActorParameter ? mSetActorParameter : (mSetActorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetActorParameter")); }
-			ScriptFunction SetMaterialParameter() { return mSetMaterialParameter ? mSetMaterialParameter : (mSetMaterialParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetMaterialParameter")); }
-			ScriptFunction GetFloatParameter() { return mGetFloatParameter ? mGetFloatParameter : (mGetFloatParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetFloatParameter")); }
-			ScriptFunction GetVectorParameter() { return mGetVectorParameter ? mGetVectorParameter : (mGetVectorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetVectorParameter")); }
-			ScriptFunction GetColorParameter() { return mGetColorParameter ? mGetColorParameter : (mGetColorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetColorParameter")); }
-			ScriptFunction GetActorParameter() { return mGetActorParameter ? mGetActorParameter : (mGetActorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetActorParameter")); }
-			ScriptFunction GetMaterialParameter() { return mGetMaterialParameter ? mGetMaterialParameter : (mGetMaterialParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetMaterialParameter")); }
-			ScriptFunction ClearParameter() { return mClearParameter ? mClearParameter : (mClearParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.ClearParameter")); }
-			ScriptFunction ResetToDefaults() { return mResetToDefaults ? mResetToDefaults : (mResetToDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.ResetToDefaults")); }
-			ScriptFunction SetStopSpawning() { return mSetStopSpawning ? mSetStopSpawning : (mSetStopSpawning = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetStopSpawning")); }
+			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function Engine.ParticleSystemComponent.SetTemplate")()); }
+			ScriptFunction ActivateSystem() { mixin(MGF!("mActivateSystem", "Function Engine.ParticleSystemComponent.ActivateSystem")()); }
+			ScriptFunction SetActive() { mixin(MGF!("mSetActive", "Function Engine.ParticleSystemComponent.SetActive")()); }
+			ScriptFunction OnSystemFinished() { mixin(MGF!("mOnSystemFinished", "Function Engine.ParticleSystemComponent.OnSystemFinished")()); }
+			ScriptFunction DeactivateSystem() { mixin(MGF!("mDeactivateSystem", "Function Engine.ParticleSystemComponent.DeactivateSystem")()); }
+			ScriptFunction KillParticlesForced() { mixin(MGF!("mKillParticlesForced", "Function Engine.ParticleSystemComponent.KillParticlesForced")()); }
+			ScriptFunction KillParticlesInEmitter() { mixin(MGF!("mKillParticlesInEmitter", "Function Engine.ParticleSystemComponent.KillParticlesInEmitter")()); }
+			ScriptFunction SetSkipUpdateDynamicDataDuringTick() { mixin(MGF!("mSetSkipUpdateDynamicDataDuringTick", "Function Engine.ParticleSystemComponent.SetSkipUpdateDynamicDataDuringTick")()); }
+			ScriptFunction GetSkipUpdateDynamicDataDuringTick() { mixin(MGF!("mGetSkipUpdateDynamicDataDuringTick", "Function Engine.ParticleSystemComponent.GetSkipUpdateDynamicDataDuringTick")()); }
+			ScriptFunction SetKillOnDeactivate() { mixin(MGF!("mSetKillOnDeactivate", "Function Engine.ParticleSystemComponent.SetKillOnDeactivate")()); }
+			ScriptFunction SetKillOnCompleted() { mixin(MGF!("mSetKillOnCompleted", "Function Engine.ParticleSystemComponent.SetKillOnCompleted")()); }
+			ScriptFunction RewindEmitterInstance() { mixin(MGF!("mRewindEmitterInstance", "Function Engine.ParticleSystemComponent.RewindEmitterInstance")()); }
+			ScriptFunction RewindEmitterInstances() { mixin(MGF!("mRewindEmitterInstances", "Function Engine.ParticleSystemComponent.RewindEmitterInstances")()); }
+			ScriptFunction SetBeamType() { mixin(MGF!("mSetBeamType", "Function Engine.ParticleSystemComponent.SetBeamType")()); }
+			ScriptFunction SetBeamTessellationFactor() { mixin(MGF!("mSetBeamTessellationFactor", "Function Engine.ParticleSystemComponent.SetBeamTessellationFactor")()); }
+			ScriptFunction SetBeamEndPoint() { mixin(MGF!("mSetBeamEndPoint", "Function Engine.ParticleSystemComponent.SetBeamEndPoint")()); }
+			ScriptFunction SetBeamDistance() { mixin(MGF!("mSetBeamDistance", "Function Engine.ParticleSystemComponent.SetBeamDistance")()); }
+			ScriptFunction SetBeamSourcePoint() { mixin(MGF!("mSetBeamSourcePoint", "Function Engine.ParticleSystemComponent.SetBeamSourcePoint")()); }
+			ScriptFunction SetBeamSourceTangent() { mixin(MGF!("mSetBeamSourceTangent", "Function Engine.ParticleSystemComponent.SetBeamSourceTangent")()); }
+			ScriptFunction SetBeamSourceStrength() { mixin(MGF!("mSetBeamSourceStrength", "Function Engine.ParticleSystemComponent.SetBeamSourceStrength")()); }
+			ScriptFunction SetBeamTargetPoint() { mixin(MGF!("mSetBeamTargetPoint", "Function Engine.ParticleSystemComponent.SetBeamTargetPoint")()); }
+			ScriptFunction SetBeamTargetTangent() { mixin(MGF!("mSetBeamTargetTangent", "Function Engine.ParticleSystemComponent.SetBeamTargetTangent")()); }
+			ScriptFunction SetBeamTargetStrength() { mixin(MGF!("mSetBeamTargetStrength", "Function Engine.ParticleSystemComponent.SetBeamTargetStrength")()); }
+			ScriptFunction DetermineLODLevelForLocation() { mixin(MGF!("mDetermineLODLevelForLocation", "Function Engine.ParticleSystemComponent.DetermineLODLevelForLocation")()); }
+			ScriptFunction SetLODLevel() { mixin(MGF!("mSetLODLevel", "Function Engine.ParticleSystemComponent.SetLODLevel")()); }
+			ScriptFunction SetEditorLODLevel() { mixin(MGF!("mSetEditorLODLevel", "Function Engine.ParticleSystemComponent.SetEditorLODLevel")()); }
+			ScriptFunction GetLODLevel() { mixin(MGF!("mGetLODLevel", "Function Engine.ParticleSystemComponent.GetLODLevel")()); }
+			ScriptFunction GetEditorLODLevel() { mixin(MGF!("mGetEditorLODLevel", "Function Engine.ParticleSystemComponent.GetEditorLODLevel")()); }
+			ScriptFunction SetFloatParameter() { mixin(MGF!("mSetFloatParameter", "Function Engine.ParticleSystemComponent.SetFloatParameter")()); }
+			ScriptFunction SetFloatRandParameter() { mixin(MGF!("mSetFloatRandParameter", "Function Engine.ParticleSystemComponent.SetFloatRandParameter")()); }
+			ScriptFunction SetVectorParameter() { mixin(MGF!("mSetVectorParameter", "Function Engine.ParticleSystemComponent.SetVectorParameter")()); }
+			ScriptFunction SetVectorRandParameter() { mixin(MGF!("mSetVectorRandParameter", "Function Engine.ParticleSystemComponent.SetVectorRandParameter")()); }
+			ScriptFunction SetColorParameter() { mixin(MGF!("mSetColorParameter", "Function Engine.ParticleSystemComponent.SetColorParameter")()); }
+			ScriptFunction SetActorParameter() { mixin(MGF!("mSetActorParameter", "Function Engine.ParticleSystemComponent.SetActorParameter")()); }
+			ScriptFunction SetMaterialParameter() { mixin(MGF!("mSetMaterialParameter", "Function Engine.ParticleSystemComponent.SetMaterialParameter")()); }
+			ScriptFunction GetFloatParameter() { mixin(MGF!("mGetFloatParameter", "Function Engine.ParticleSystemComponent.GetFloatParameter")()); }
+			ScriptFunction GetVectorParameter() { mixin(MGF!("mGetVectorParameter", "Function Engine.ParticleSystemComponent.GetVectorParameter")()); }
+			ScriptFunction GetColorParameter() { mixin(MGF!("mGetColorParameter", "Function Engine.ParticleSystemComponent.GetColorParameter")()); }
+			ScriptFunction GetActorParameter() { mixin(MGF!("mGetActorParameter", "Function Engine.ParticleSystemComponent.GetActorParameter")()); }
+			ScriptFunction GetMaterialParameter() { mixin(MGF!("mGetMaterialParameter", "Function Engine.ParticleSystemComponent.GetMaterialParameter")()); }
+			ScriptFunction ClearParameter() { mixin(MGF!("mClearParameter", "Function Engine.ParticleSystemComponent.ClearParameter")()); }
+			ScriptFunction ResetToDefaults() { mixin(MGF!("mResetToDefaults", "Function Engine.ParticleSystemComponent.ResetToDefaults")()); }
+			ScriptFunction SetStopSpawning() { mixin(MGF!("mSetStopSpawning", "Function Engine.ParticleSystemComponent.SetStopSpawning")()); }
 		}
 	}
 	enum EParticleSysParamType : ubyte
@@ -143,26 +144,26 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo")); }
-		@property final auto ref UObject.Map_Mirror EmitterInstanceMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo")()); }
+		@property final auto ref UObject.Map_Mirror EmitterInstanceMBInfoMap() { mixin(MGPS!(UObject.Map_Mirror, 0)()); }
 	}
 	struct ParticleSysParam
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleSysParam")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleSysParam")()); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Material' has the same name as a defined type!
 			// WARNING: Property 'Actor' has the same name as a defined type!
 			// WARNING: Property 'Color' has the same name as a defined type!
-			Vector Vector_Low() { return *cast(Vector*)(cast(size_t)&this + 32); }
+			Vector Vector_Low() { mixin(MGPS!(Vector, 32)()); }
 			// WARNING: Property 'Vector' has the same name as a defined type!
-			float Scalar_Low() { return *cast(float*)(cast(size_t)&this + 16); }
-			float Scalar() { return *cast(float*)(cast(size_t)&this + 12); }
-			ParticleSystemComponent.EParticleSysParamType ParamType() { return *cast(ParticleSystemComponent.EParticleSysParamType*)(cast(size_t)&this + 8); }
-			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			float Scalar_Low() { mixin(MGPS!(float, 16)()); }
+			float Scalar() { mixin(MGPS!(float, 12)()); }
+			ParticleSystemComponent.EParticleSysParamType ParamType() { mixin(MGPS!(ParticleSystemComponent.EParticleSysParamType, 8)()); }
+			ScriptName Name() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct ParticleEventData
@@ -170,15 +171,15 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
+			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
+			Vector Location() { mixin(MGPS!(Vector, 16)()); }
+			float EmitterTime() { mixin(MGPS!(float, 12)()); }
+			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
+			int Type() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	struct ParticleEventSpawnData
@@ -186,15 +187,15 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventSpawnData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventSpawnData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
+			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
+			Vector Location() { mixin(MGPS!(Vector, 16)()); }
+			float EmitterTime() { mixin(MGPS!(float, 12)()); }
+			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
+			int Type() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	struct ParticleEventDeathData
@@ -202,40 +203,40 @@ public extern(D):
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventDeathData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventDeathData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
+			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
+			Vector Location() { mixin(MGPS!(Vector, 16)()); }
+			float EmitterTime() { mixin(MGPS!(float, 12)()); }
+			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
+			int Type() { mixin(MGPS!(int, 0)()); }
 		}
-		@property final auto ref float ParticleTime() { return *cast(float*)(cast(size_t)&this + 52); }
+		@property final auto ref float ParticleTime() { mixin(MGPS!(float, 52)()); }
 	}
 	struct ParticleEventCollideData
 	{
 		private ubyte __buffer__[84];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventCollideData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventCollideData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
+			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
+			Vector Location() { mixin(MGPS!(Vector, 16)()); }
+			float EmitterTime() { mixin(MGPS!(float, 12)()); }
+			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
+			int Type() { mixin(MGPS!(int, 0)()); }
 		}
 		@property final auto ref
 		{
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 76); }
-			int Item() { return *cast(int*)(cast(size_t)&this + 72); }
-			float Time() { return *cast(float*)(cast(size_t)&this + 68); }
-			Vector Normal() { return *cast(Vector*)(cast(size_t)&this + 56); }
-			float ParticleTime() { return *cast(float*)(cast(size_t)&this + 52); }
+			ScriptName BoneName() { mixin(MGPS!(ScriptName, 76)()); }
+			int Item() { mixin(MGPS!(int, 72)()); }
+			float Time() { mixin(MGPS!(float, 68)()); }
+			Vector Normal() { mixin(MGPS!(Vector, 56)()); }
+			float ParticleTime() { mixin(MGPS!(float, 52)()); }
 		}
 	}
 	struct ParticleEventKismetData
@@ -243,21 +244,21 @@ public extern(D):
 		private ubyte __buffer__[68];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventKismetData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventKismetData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
+			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
+			Vector Location() { mixin(MGPS!(Vector, 16)()); }
+			float EmitterTime() { mixin(MGPS!(float, 12)()); }
+			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
+			int Type() { mixin(MGPS!(int, 0)()); }
 		}
 		@property final
 		{
-			@property final auto ref Vector Normal() { return *cast(Vector*)(cast(size_t)&this + 56); }
-			bool UsePSysCompLocation() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x1) != 0; }
-			bool UsePSysCompLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x1; } return val; }
+			@property final auto ref Vector Normal() { mixin(MGPS!(Vector, 56)()); }
+			bool UsePSysCompLocation() { mixin(MGBPS!(52, 0x1)()); }
+			bool UsePSysCompLocation(bool val) { mixin(MSBPS!(52, 0x1)()); }
 		}
 	}
 	struct ParticleEmitterInstanceMotionBlurInfo
@@ -265,100 +266,101 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEmitterInstanceMotionBlurInfo")); }
-		@property final auto ref UObject.Map_Mirror ParticleMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEmitterInstanceMotionBlurInfo")()); }
+		@property final auto ref UObject.Map_Mirror ParticleMBInfoMap() { mixin(MGPS!(UObject.Map_Mirror, 0)()); }
 	}
 	struct ParticleEmitterInstance
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEmitterInstance")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEmitterInstance")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ParticleSystem Template() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 488); }
-			ScriptClass LightEnvironmentClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 492); }
-			ScriptArray!(UObject.Pointer) EmitterInstances() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 496); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnSystemFinished__Delegate'!
+			ParticleSystem Template() { mixin(MGPC!(ParticleSystem, 488)()); }
+			ScriptClass LightEnvironmentClass() { mixin(MGPC!(ScriptClass, 492)()); }
+			ScriptArray!(UObject.Pointer) EmitterInstances() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 496)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) SMComponents() { return *cast(ScriptArray!(
+void*) SMComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 508); }
-			ScriptArray!(MaterialInterface) SMMaterialInterfaces() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 520); }
+void*), 508)()); }
+			ScriptArray!(MaterialInterface) SMMaterialInterfaces() { mixin(MGPC!(ScriptArray!(MaterialInterface), 520)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) SkelMeshComponents() { return *cast(ScriptArray!(
+void*) SkelMeshComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 532); }
-			ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo) ViewMBInfoArray() { return *cast(ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo)*)(cast(size_t)cast(void*)this + 544); }
-			ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleSysParam)*)(cast(size_t)cast(void*)this + 560); }
-			Vector OldPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 572); }
-			Vector PartSysVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 584); }
-			float WarmupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
-			int LODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
-			float SecondsBeforeInactive() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
-			float TimeSinceLastForceUpdateTransform() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-			float MaxTimeBeforeForceUpdateTransform() { return *cast(float*)(cast(size_t)cast(void*)this + 612); }
-			int EditorLODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 616); }
-			float AccumTickTime() { return *cast(float*)(cast(size_t)cast(void*)this + 620); }
-			ParticleSystem.ParticleSystemLODMethod LODMethod() { return *cast(ParticleSystem.ParticleSystemLODMethod*)(cast(size_t)cast(void*)this + 624); }
-			ParticleSystemComponent.ParticleReplayState ReplayState() { return *cast(ParticleSystemComponent.ParticleReplayState*)(cast(size_t)cast(void*)this + 625); }
-			ScriptArray!(PrimitiveComponent.MaterialViewRelevance) CachedViewRelevanceFlags() { return *cast(ScriptArray!(PrimitiveComponent.MaterialViewRelevance)*)(cast(size_t)cast(void*)this + 628); }
-			ScriptArray!(ParticleSystemReplay) ReplayClips() { return *cast(ScriptArray!(ParticleSystemReplay)*)(cast(size_t)cast(void*)this + 640); }
-			int ReplayClipIDNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 652); }
-			int ReplayFrameIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 656); }
-			float AccumLODDistanceCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 660); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData) SpawnEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData)*)(cast(size_t)cast(void*)this + 664); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventDeathData) DeathEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventDeathData)*)(cast(size_t)cast(void*)this + 676); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventCollideData) CollisionEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventCollideData)*)(cast(size_t)cast(void*)this + 688); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventKismetData) KismetEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventKismetData)*)(cast(size_t)cast(void*)this + 700); }
-			UObject.Pointer ReleaseResourcesFence() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 712); }
-			float CustomTimeDilation() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
-			float EmitterDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 720); }
+void*), 532)()); }
+			ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo) ViewMBInfoArray() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo), 544)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleSysParam), 560)()); }
+			Vector OldPosition() { mixin(MGPC!(Vector, 572)()); }
+			Vector PartSysVelocity() { mixin(MGPC!(Vector, 584)()); }
+			float WarmupTime() { mixin(MGPC!(float, 596)()); }
+			int LODLevel() { mixin(MGPC!(int, 600)()); }
+			float SecondsBeforeInactive() { mixin(MGPC!(float, 604)()); }
+			float TimeSinceLastForceUpdateTransform() { mixin(MGPC!(float, 608)()); }
+			float MaxTimeBeforeForceUpdateTransform() { mixin(MGPC!(float, 612)()); }
+			int EditorLODLevel() { mixin(MGPC!(int, 616)()); }
+			float AccumTickTime() { mixin(MGPC!(float, 620)()); }
+			ParticleSystem.ParticleSystemLODMethod LODMethod() { mixin(MGPC!(ParticleSystem.ParticleSystemLODMethod, 624)()); }
+			ParticleSystemComponent.ParticleReplayState ReplayState() { mixin(MGPC!(ParticleSystemComponent.ParticleReplayState, 625)()); }
+			ScriptArray!(PrimitiveComponent.MaterialViewRelevance) CachedViewRelevanceFlags() { mixin(MGPC!(ScriptArray!(PrimitiveComponent.MaterialViewRelevance), 628)()); }
+			ScriptArray!(ParticleSystemReplay) ReplayClips() { mixin(MGPC!(ScriptArray!(ParticleSystemReplay), 640)()); }
+			int ReplayClipIDNumber() { mixin(MGPC!(int, 652)()); }
+			int ReplayFrameIndex() { mixin(MGPC!(int, 656)()); }
+			float AccumLODDistanceCheckTime() { mixin(MGPC!(float, 660)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData) SpawnEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData), 664)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventDeathData) DeathEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventDeathData), 676)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventCollideData) CollisionEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventCollideData), 688)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventKismetData) KismetEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventKismetData), 700)()); }
+			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!(UObject.Pointer, 712)()); }
+			float CustomTimeDilation() { mixin(MGPC!(float, 716)()); }
+			float EmitterDelay() { mixin(MGPC!(float, 720)()); }
 		}
-		bool bAutoActivate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x1) != 0; }
-		bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x1; } return val; }
-		bool bWasCompleted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x2) != 0; }
-		bool bWasCompleted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x2; } return val; }
-		bool bSuppressSpawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x4) != 0; }
-		bool bSuppressSpawning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x4; } return val; }
-		bool bWasDeactivated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x8) != 0; }
-		bool bWasDeactivated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x8; } return val; }
-		bool bResetOnDetach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x10) != 0; }
-		bool bResetOnDetach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x10; } return val; }
-		bool bUpdateOnDedicatedServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x20) != 0; }
-		bool bUpdateOnDedicatedServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x20; } return val; }
-		bool bJustAttached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x40) != 0; }
-		bool bJustAttached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x40; } return val; }
-		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x80) != 0; }
-		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x80; } return val; }
-		bool bWarmingUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x100) != 0; }
-		bool bWarmingUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x100; } return val; }
-		bool bIsCachedInPool() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x200) != 0; }
-		bool bIsCachedInPool(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x200; } return val; }
-		bool bOverrideLODMethod() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x400) != 0; }
-		bool bOverrideLODMethod(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x400; } return val; }
-		bool bSkipUpdateDynamicDataDuringTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x800) != 0; }
-		bool bSkipUpdateDynamicDataDuringTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x800; } return val; }
-		bool bUpdateComponentInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x1000) != 0; }
-		bool bUpdateComponentInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x1000; } return val; }
-		bool bDeferredBeamUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x2000) != 0; }
-		bool bDeferredBeamUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x2000; } return val; }
-		bool bForcedInActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x4000) != 0; }
-		bool bForcedInActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x4000; } return val; }
-		bool bIsWarmingUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x8000) != 0; }
-		bool bIsWarmingUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x8000; } return val; }
-		bool bIsViewRelevanceDirty() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x10000) != 0; }
-		bool bIsViewRelevanceDirty(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x10000; } return val; }
-		bool bRecacheViewRelevance() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x20000) != 0; }
-		bool bRecacheViewRelevance(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x20000; } return val; }
-		bool bLODUpdatePending() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x40000) != 0; }
-		bool bLODUpdatePending(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x40000; } return val; }
-		bool bSkipSpawnCountCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x80000) != 0; }
-		bool bSkipSpawnCountCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x80000; } return val; }
+		bool bAutoActivate() { mixin(MGBPC!(556, 0x1)()); }
+		bool bAutoActivate(bool val) { mixin(MSBPC!(556, 0x1)()); }
+		bool bWasCompleted() { mixin(MGBPC!(556, 0x2)()); }
+		bool bWasCompleted(bool val) { mixin(MSBPC!(556, 0x2)()); }
+		bool bSuppressSpawning() { mixin(MGBPC!(556, 0x4)()); }
+		bool bSuppressSpawning(bool val) { mixin(MSBPC!(556, 0x4)()); }
+		bool bWasDeactivated() { mixin(MGBPC!(556, 0x8)()); }
+		bool bWasDeactivated(bool val) { mixin(MSBPC!(556, 0x8)()); }
+		bool bResetOnDetach() { mixin(MGBPC!(556, 0x10)()); }
+		bool bResetOnDetach(bool val) { mixin(MSBPC!(556, 0x10)()); }
+		bool bUpdateOnDedicatedServer() { mixin(MGBPC!(556, 0x20)()); }
+		bool bUpdateOnDedicatedServer(bool val) { mixin(MSBPC!(556, 0x20)()); }
+		bool bJustAttached() { mixin(MGBPC!(556, 0x40)()); }
+		bool bJustAttached(bool val) { mixin(MSBPC!(556, 0x40)()); }
+		bool bIsActive() { mixin(MGBPC!(556, 0x80)()); }
+		bool bIsActive(bool val) { mixin(MSBPC!(556, 0x80)()); }
+		bool bWarmingUp() { mixin(MGBPC!(556, 0x100)()); }
+		bool bWarmingUp(bool val) { mixin(MSBPC!(556, 0x100)()); }
+		bool bIsCachedInPool() { mixin(MGBPC!(556, 0x200)()); }
+		bool bIsCachedInPool(bool val) { mixin(MSBPC!(556, 0x200)()); }
+		bool bOverrideLODMethod() { mixin(MGBPC!(556, 0x400)()); }
+		bool bOverrideLODMethod(bool val) { mixin(MSBPC!(556, 0x400)()); }
+		bool bSkipUpdateDynamicDataDuringTick() { mixin(MGBPC!(556, 0x800)()); }
+		bool bSkipUpdateDynamicDataDuringTick(bool val) { mixin(MSBPC!(556, 0x800)()); }
+		bool bUpdateComponentInTick() { mixin(MGBPC!(556, 0x1000)()); }
+		bool bUpdateComponentInTick(bool val) { mixin(MSBPC!(556, 0x1000)()); }
+		bool bDeferredBeamUpdate() { mixin(MGBPC!(556, 0x2000)()); }
+		bool bDeferredBeamUpdate(bool val) { mixin(MSBPC!(556, 0x2000)()); }
+		bool bForcedInActive() { mixin(MGBPC!(556, 0x4000)()); }
+		bool bForcedInActive(bool val) { mixin(MSBPC!(556, 0x4000)()); }
+		bool bIsWarmingUp() { mixin(MGBPC!(556, 0x8000)()); }
+		bool bIsWarmingUp(bool val) { mixin(MSBPC!(556, 0x8000)()); }
+		bool bIsViewRelevanceDirty() { mixin(MGBPC!(556, 0x10000)()); }
+		bool bIsViewRelevanceDirty(bool val) { mixin(MSBPC!(556, 0x10000)()); }
+		bool bRecacheViewRelevance() { mixin(MGBPC!(556, 0x20000)()); }
+		bool bRecacheViewRelevance(bool val) { mixin(MSBPC!(556, 0x20000)()); }
+		bool bLODUpdatePending() { mixin(MGBPC!(556, 0x40000)()); }
+		bool bLODUpdatePending(bool val) { mixin(MSBPC!(556, 0x40000)()); }
+		bool bSkipSpawnCountCheck() { mixin(MGBPC!(556, 0x80000)()); }
+		bool bSkipSpawnCountCheck(bool val) { mixin(MSBPC!(556, 0x80000)()); }
 	}
 final:
 	void SetTemplate(ParticleSystem NewTemplate)
@@ -536,11 +538,11 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[8] = TargetIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamTargetStrength, params.ptr, cast(void*)0);
 	}
-	int DetermineLODLevelForLocation(Vector* EffectLocation)
+	int DetermineLODLevelForLocation(ref const Vector EffectLocation)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *EffectLocation;
+		*cast(Vector*)params.ptr = EffectLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DetermineLODLevelForLocation, params.ptr, cast(void*)0);
 		*EffectLocation = *cast(Vector*)params.ptr;
 		return *cast(int*)&params[12];
@@ -598,13 +600,13 @@ void**)params.ptr = PSystem;
 		*cast(Vector*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameter, params.ptr, cast(void*)0);
 	}
-	void SetVectorRandParameter(ScriptName ParameterName, Vector* Param, Vector* ParamLow)
+	void SetVectorRandParameter(ScriptName ParameterName, ref const Vector Param, ref const Vector ParamLow)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(Vector*)&params[8] = *Param;
-		*cast(Vector*)&params[20] = *ParamLow;
+		*cast(Vector*)&params[8] = Param;
+		*cast(Vector*)&params[20] = ParamLow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorRandParameter, params.ptr, cast(void*)0);
 		*Param = *cast(Vector*)&params[8];
 		*ParamLow = *cast(Vector*)&params[20];
@@ -633,52 +635,52 @@ void**)params.ptr = PSystem;
 		*cast(MaterialInterface*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaterialParameter, params.ptr, cast(void*)0);
 	}
-	bool GetFloatParameter(ScriptName InName, float* OutFloat)
+	bool GetFloatParameter(const ScriptName InName, ref float OutFloat)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
-		*cast(float*)&params[8] = *OutFloat;
+		*cast(float*)&params[8] = OutFloat;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatParameter, params.ptr, cast(void*)0);
 		*OutFloat = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetVectorParameter(ScriptName InName, Vector* OutVector)
+	bool GetVectorParameter(const ScriptName InName, ref Vector OutVector)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
-		*cast(Vector*)&params[8] = *OutVector;
+		*cast(Vector*)&params[8] = OutVector;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVectorParameter, params.ptr, cast(void*)0);
 		*OutVector = *cast(Vector*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	bool GetColorParameter(ScriptName InName, UObject.Color* OutColor)
+	bool GetColorParameter(const ScriptName InName, ref UObject.Color OutColor)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
-		*cast(UObject.Color*)&params[8] = *OutColor;
+		*cast(UObject.Color*)&params[8] = OutColor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetColorParameter, params.ptr, cast(void*)0);
 		*OutColor = *cast(UObject.Color*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetActorParameter(ScriptName InName, Actor* OutActor)
+	bool GetActorParameter(const ScriptName InName, ref Actor OutActor)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
-		*cast(Actor*)&params[8] = *OutActor;
+		*cast(Actor*)&params[8] = OutActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorParameter, params.ptr, cast(void*)0);
 		*OutActor = *cast(Actor*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetMaterialParameter(ScriptName InName, MaterialInterface* OutMaterial)
+	bool GetMaterialParameter(const ScriptName InName, ref MaterialInterface OutMaterial)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
-		*cast(MaterialInterface*)&params[8] = *OutMaterial;
+		*cast(MaterialInterface*)&params[8] = OutMaterial;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaterialParameter, params.ptr, cast(void*)0);
 		*OutMaterial = *cast(MaterialInterface*)&params[8];
 		return *cast(bool*)&params[12];

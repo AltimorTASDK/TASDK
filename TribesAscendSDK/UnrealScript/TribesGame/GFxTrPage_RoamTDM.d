@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_RoamTDM;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxTrPage_RoamTDM : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_RoamTDM")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_RoamTDM")()); }
 	private static __gshared GFxTrPage_RoamTDM mDefaultProperties;
-	@property final static GFxTrPage_RoamTDM DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_RoamTDM)("GFxTrPage_RoamTDM TribesGame.Default__GFxTrPage_RoamTDM")); }
+	@property final static GFxTrPage_RoamTDM DefaultProperties() { mixin(MGDPC!(GFxTrPage_RoamTDM, "GFxTrPage_RoamTDM TribesGame.Default__GFxTrPage_RoamTDM")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RoamTDM.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RoamTDM.SpecialAction")); }
-			ScriptFunction JoinLocalGame() { return mJoinLocalGame ? mJoinLocalGame : (mJoinLocalGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RoamTDM.JoinLocalGame")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_RoamTDM.ShowModel")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_RoamTDM.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_RoamTDM.SpecialAction")()); }
+			ScriptFunction JoinLocalGame() { mixin(MGF!("mJoinLocalGame", "Function TribesGame.GFxTrPage_RoamTDM.JoinLocalGame")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_RoamTDM.ShowModel")()); }
 		}
 	}
 final:

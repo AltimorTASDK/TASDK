@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNodePlayCustomAnim;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.AnimNodeBlend;
 
@@ -8,9 +9,9 @@ extern(C++) interface AnimNodePlayCustomAnim : AnimNodeBlend
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodePlayCustomAnim")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodePlayCustomAnim")()); }
 	private static __gshared AnimNodePlayCustomAnim mDefaultProperties;
-	@property final static AnimNodePlayCustomAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodePlayCustomAnim)("AnimNodePlayCustomAnim Engine.Default__AnimNodePlayCustomAnim")); }
+	@property final static AnimNodePlayCustomAnim DefaultProperties() { mixin(MGDPC!(AnimNodePlayCustomAnim, "AnimNodePlayCustomAnim Engine.Default__AnimNodePlayCustomAnim")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,20 +26,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayCustomAnim() { return mPlayCustomAnim ? mPlayCustomAnim : (mPlayCustomAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.PlayCustomAnim")); }
-			ScriptFunction PlayCustomAnimByDuration() { return mPlayCustomAnimByDuration ? mPlayCustomAnimByDuration : (mPlayCustomAnimByDuration = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.PlayCustomAnimByDuration")); }
-			ScriptFunction StopCustomAnim() { return mStopCustomAnim ? mStopCustomAnim : (mStopCustomAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.StopCustomAnim")); }
-			ScriptFunction SetCustomAnim() { return mSetCustomAnim ? mSetCustomAnim : (mSetCustomAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.SetCustomAnim")); }
-			ScriptFunction SetActorAnimEndNotification() { return mSetActorAnimEndNotification ? mSetActorAnimEndNotification : (mSetActorAnimEndNotification = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.SetActorAnimEndNotification")); }
-			ScriptFunction GetCustomAnimNodeSeq() { return mGetCustomAnimNodeSeq ? mGetCustomAnimNodeSeq : (mGetCustomAnimNodeSeq = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.GetCustomAnimNodeSeq")); }
-			ScriptFunction SetRootBoneAxisOption() { return mSetRootBoneAxisOption ? mSetRootBoneAxisOption : (mSetRootBoneAxisOption = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.SetRootBoneAxisOption")); }
+			ScriptFunction PlayCustomAnim() { mixin(MGF!("mPlayCustomAnim", "Function Engine.AnimNodePlayCustomAnim.PlayCustomAnim")()); }
+			ScriptFunction PlayCustomAnimByDuration() { mixin(MGF!("mPlayCustomAnimByDuration", "Function Engine.AnimNodePlayCustomAnim.PlayCustomAnimByDuration")()); }
+			ScriptFunction StopCustomAnim() { mixin(MGF!("mStopCustomAnim", "Function Engine.AnimNodePlayCustomAnim.StopCustomAnim")()); }
+			ScriptFunction SetCustomAnim() { mixin(MGF!("mSetCustomAnim", "Function Engine.AnimNodePlayCustomAnim.SetCustomAnim")()); }
+			ScriptFunction SetActorAnimEndNotification() { mixin(MGF!("mSetActorAnimEndNotification", "Function Engine.AnimNodePlayCustomAnim.SetActorAnimEndNotification")()); }
+			ScriptFunction GetCustomAnimNodeSeq() { mixin(MGF!("mGetCustomAnimNodeSeq", "Function Engine.AnimNodePlayCustomAnim.GetCustomAnimNodeSeq")()); }
+			ScriptFunction SetRootBoneAxisOption() { mixin(MGF!("mSetRootBoneAxisOption", "Function Engine.AnimNodePlayCustomAnim.SetRootBoneAxisOption")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref float CustomPendingBlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-		bool bIsPlayingCustomAnim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
-		bool bIsPlayingCustomAnim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+		@property final auto ref float CustomPendingBlendOutTime() { mixin(MGPC!(float, 264)()); }
+		bool bIsPlayingCustomAnim() { mixin(MGBPC!(260, 0x1)()); }
+		bool bIsPlayingCustomAnim(bool val) { mixin(MSBPC!(260, 0x1)()); }
 	}
 final:
 	float PlayCustomAnim(ScriptName AnimName, float Rate, float BlendInTime, float BlendOutTime, bool bLooping, bool bOverride)

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlinePlayerInterfaceEx;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlinePlayerInterfaceEx : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlinePlayerInterfaceEx")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlinePlayerInterfaceEx")()); }
 	private static __gshared OnlinePlayerInterfaceEx mDefaultProperties;
-	@property final static OnlinePlayerInterfaceEx DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlinePlayerInterfaceEx)("OnlinePlayerInterfaceEx Engine.Default__OnlinePlayerInterfaceEx")); }
+	@property final static OnlinePlayerInterfaceEx DefaultProperties() { mixin(MGDPC!(OnlinePlayerInterfaceEx, "OnlinePlayerInterfaceEx Engine.Default__OnlinePlayerInterfaceEx")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,28 +40,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShowFeedbackUI() { return mShowFeedbackUI ? mShowFeedbackUI : (mShowFeedbackUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowFeedbackUI")); }
-			ScriptFunction ShowGamerCardUI() { return mShowGamerCardUI ? mShowGamerCardUI : (mShowGamerCardUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowGamerCardUI")); }
-			ScriptFunction ShowMessagesUI() { return mShowMessagesUI ? mShowMessagesUI : (mShowMessagesUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowMessagesUI")); }
-			ScriptFunction ShowAchievementsUI() { return mShowAchievementsUI ? mShowAchievementsUI : (mShowAchievementsUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowAchievementsUI")); }
-			ScriptFunction ShowInviteUI() { return mShowInviteUI ? mShowInviteUI : (mShowInviteUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowInviteUI")); }
-			ScriptFunction ShowContentMarketplaceUI() { return mShowContentMarketplaceUI ? mShowContentMarketplaceUI : (mShowContentMarketplaceUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowContentMarketplaceUI")); }
-			ScriptFunction ShowMembershipMarketplaceUI() { return mShowMembershipMarketplaceUI ? mShowMembershipMarketplaceUI : (mShowMembershipMarketplaceUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowMembershipMarketplaceUI")); }
-			ScriptFunction ShowDeviceSelectionUI() { return mShowDeviceSelectionUI ? mShowDeviceSelectionUI : (mShowDeviceSelectionUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowDeviceSelectionUI")); }
-			ScriptFunction OnDeviceSelectionComplete() { return mOnDeviceSelectionComplete ? mOnDeviceSelectionComplete : (mOnDeviceSelectionComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.OnDeviceSelectionComplete")); }
-			ScriptFunction OnProfileDataChanged() { return mOnProfileDataChanged ? mOnProfileDataChanged : (mOnProfileDataChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.OnProfileDataChanged")); }
-			ScriptFunction AddDeviceSelectionDoneDelegate() { return mAddDeviceSelectionDoneDelegate ? mAddDeviceSelectionDoneDelegate : (mAddDeviceSelectionDoneDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.AddDeviceSelectionDoneDelegate")); }
-			ScriptFunction ClearDeviceSelectionDoneDelegate() { return mClearDeviceSelectionDoneDelegate ? mClearDeviceSelectionDoneDelegate : (mClearDeviceSelectionDoneDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ClearDeviceSelectionDoneDelegate")); }
-			ScriptFunction GetDeviceSelectionResults() { return mGetDeviceSelectionResults ? mGetDeviceSelectionResults : (mGetDeviceSelectionResults = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.GetDeviceSelectionResults")); }
-			ScriptFunction IsDeviceValid() { return mIsDeviceValid ? mIsDeviceValid : (mIsDeviceValid = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.IsDeviceValid")); }
-			ScriptFunction UnlockGamerPicture() { return mUnlockGamerPicture ? mUnlockGamerPicture : (mUnlockGamerPicture = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.UnlockGamerPicture")); }
-			ScriptFunction AddProfileDataChangedDelegate() { return mAddProfileDataChangedDelegate ? mAddProfileDataChangedDelegate : (mAddProfileDataChangedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.AddProfileDataChangedDelegate")); }
-			ScriptFunction ClearProfileDataChangedDelegate() { return mClearProfileDataChangedDelegate ? mClearProfileDataChangedDelegate : (mClearProfileDataChangedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ClearProfileDataChangedDelegate")); }
-			ScriptFunction ShowFriendsInviteUI() { return mShowFriendsInviteUI ? mShowFriendsInviteUI : (mShowFriendsInviteUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowFriendsInviteUI")); }
-			ScriptFunction ShowPlayersUI() { return mShowPlayersUI ? mShowPlayersUI : (mShowPlayersUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowPlayersUI")); }
-			ScriptFunction ShowCustomPlayersUI() { return mShowCustomPlayersUI ? mShowCustomPlayersUI : (mShowCustomPlayersUI = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.ShowCustomPlayersUI")); }
-			ScriptFunction UnlockAvatarAward() { return mUnlockAvatarAward ? mUnlockAvatarAward : (mUnlockAvatarAward = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlinePlayerInterfaceEx.UnlockAvatarAward")); }
+			ScriptFunction ShowFeedbackUI() { mixin(MGF!("mShowFeedbackUI", "Function Engine.OnlinePlayerInterfaceEx.ShowFeedbackUI")()); }
+			ScriptFunction ShowGamerCardUI() { mixin(MGF!("mShowGamerCardUI", "Function Engine.OnlinePlayerInterfaceEx.ShowGamerCardUI")()); }
+			ScriptFunction ShowMessagesUI() { mixin(MGF!("mShowMessagesUI", "Function Engine.OnlinePlayerInterfaceEx.ShowMessagesUI")()); }
+			ScriptFunction ShowAchievementsUI() { mixin(MGF!("mShowAchievementsUI", "Function Engine.OnlinePlayerInterfaceEx.ShowAchievementsUI")()); }
+			ScriptFunction ShowInviteUI() { mixin(MGF!("mShowInviteUI", "Function Engine.OnlinePlayerInterfaceEx.ShowInviteUI")()); }
+			ScriptFunction ShowContentMarketplaceUI() { mixin(MGF!("mShowContentMarketplaceUI", "Function Engine.OnlinePlayerInterfaceEx.ShowContentMarketplaceUI")()); }
+			ScriptFunction ShowMembershipMarketplaceUI() { mixin(MGF!("mShowMembershipMarketplaceUI", "Function Engine.OnlinePlayerInterfaceEx.ShowMembershipMarketplaceUI")()); }
+			ScriptFunction ShowDeviceSelectionUI() { mixin(MGF!("mShowDeviceSelectionUI", "Function Engine.OnlinePlayerInterfaceEx.ShowDeviceSelectionUI")()); }
+			ScriptFunction OnDeviceSelectionComplete() { mixin(MGF!("mOnDeviceSelectionComplete", "Function Engine.OnlinePlayerInterfaceEx.OnDeviceSelectionComplete")()); }
+			ScriptFunction OnProfileDataChanged() { mixin(MGF!("mOnProfileDataChanged", "Function Engine.OnlinePlayerInterfaceEx.OnProfileDataChanged")()); }
+			ScriptFunction AddDeviceSelectionDoneDelegate() { mixin(MGF!("mAddDeviceSelectionDoneDelegate", "Function Engine.OnlinePlayerInterfaceEx.AddDeviceSelectionDoneDelegate")()); }
+			ScriptFunction ClearDeviceSelectionDoneDelegate() { mixin(MGF!("mClearDeviceSelectionDoneDelegate", "Function Engine.OnlinePlayerInterfaceEx.ClearDeviceSelectionDoneDelegate")()); }
+			ScriptFunction GetDeviceSelectionResults() { mixin(MGF!("mGetDeviceSelectionResults", "Function Engine.OnlinePlayerInterfaceEx.GetDeviceSelectionResults")()); }
+			ScriptFunction IsDeviceValid() { mixin(MGF!("mIsDeviceValid", "Function Engine.OnlinePlayerInterfaceEx.IsDeviceValid")()); }
+			ScriptFunction UnlockGamerPicture() { mixin(MGF!("mUnlockGamerPicture", "Function Engine.OnlinePlayerInterfaceEx.UnlockGamerPicture")()); }
+			ScriptFunction AddProfileDataChangedDelegate() { mixin(MGF!("mAddProfileDataChangedDelegate", "Function Engine.OnlinePlayerInterfaceEx.AddProfileDataChangedDelegate")()); }
+			ScriptFunction ClearProfileDataChangedDelegate() { mixin(MGF!("mClearProfileDataChangedDelegate", "Function Engine.OnlinePlayerInterfaceEx.ClearProfileDataChangedDelegate")()); }
+			ScriptFunction ShowFriendsInviteUI() { mixin(MGF!("mShowFriendsInviteUI", "Function Engine.OnlinePlayerInterfaceEx.ShowFriendsInviteUI")()); }
+			ScriptFunction ShowPlayersUI() { mixin(MGF!("mShowPlayersUI", "Function Engine.OnlinePlayerInterfaceEx.ShowPlayersUI")()); }
+			ScriptFunction ShowCustomPlayersUI() { mixin(MGF!("mShowCustomPlayersUI", "Function Engine.OnlinePlayerInterfaceEx.ShowCustomPlayersUI")()); }
+			ScriptFunction UnlockAvatarAward() { mixin(MGF!("mUnlockAvatarAward", "Function Engine.OnlinePlayerInterfaceEx.UnlockAvatarAward")()); }
 		}
+	}
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnProfileDataChanged__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDeviceSelectionComplete__Delegate'!
 	}
 final:
 	bool ShowFeedbackUI(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID)
@@ -169,12 +175,12 @@ void* DeviceDelegate)
 void**)&params[4] = DeviceDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearDeviceSelectionDoneDelegate, params.ptr, cast(void*)0);
 	}
-	int GetDeviceSelectionResults(ubyte LocalUserNum, ScriptString* DeviceName)
+	int GetDeviceSelectionResults(ubyte LocalUserNum, ref ScriptString DeviceName)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(ScriptString*)&params[4] = *DeviceName;
+		*cast(ScriptString*)&params[4] = DeviceName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDeviceSelectionResults, params.ptr, cast(void*)0);
 		*DeviceName = *cast(ScriptString*)&params[4];
 		return *cast(int*)&params[16];
@@ -238,12 +244,12 @@ void**)&params[4] = ProfileDataChangedDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowPlayersUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool ShowCustomPlayersUI(ubyte LocalUserNum, ScriptArray!(OnlineSubsystem.UniqueNetId)* Players, ScriptString Title, ScriptString Description)
+	bool ShowCustomPlayersUI(ubyte LocalUserNum, ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players, ScriptString Title, ScriptString Description)
 	{
 		ubyte params[44];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = *Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = Players;
 		*cast(ScriptString*)&params[16] = Title;
 		*cast(ScriptString*)&params[28] = Description;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowCustomPlayersUI, params.ptr, cast(void*)0);

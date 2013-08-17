@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PlayerReplicationInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.AudioDevice;
 import UnrealScript.Engine.Controller;
@@ -13,9 +14,9 @@ extern(C++) interface PlayerReplicationInfo : ReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerReplicationInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PlayerReplicationInfo")()); }
 	private static __gshared PlayerReplicationInfo mDefaultProperties;
-	@property final static PlayerReplicationInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PlayerReplicationInfo)("PlayerReplicationInfo Engine.Default__PlayerReplicationInfo")); }
+	@property final static PlayerReplicationInfo DefaultProperties() { mixin(MGDPC!(PlayerReplicationInfo, "PlayerReplicationInfo Engine.Default__PlayerReplicationInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,29 +47,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Duplicate() { return mDuplicate ? mDuplicate : (mDuplicate = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.Duplicate")); }
-			ScriptFunction UpdatePing() { return mUpdatePing ? mUpdatePing : (mUpdatePing = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.UpdatePing")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.PostBeginPlay")); }
-			ScriptFunction ClientInitialize() { return mClientInitialize ? mClientInitialize : (mClientInitialize = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.ClientInitialize")); }
-			ScriptFunction SetPlayerTeam() { return mSetPlayerTeam ? mSetPlayerTeam : (mSetPlayerTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetPlayerTeam")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.ReplicatedEvent")); }
-			ScriptFunction ShouldBroadCastWelcomeMessage() { return mShouldBroadCastWelcomeMessage ? mShouldBroadCastWelcomeMessage : (mShouldBroadCastWelcomeMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.ShouldBroadCastWelcomeMessage")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.Destroyed")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.Reset")); }
-			ScriptFunction GetHumanReadableName() { return mGetHumanReadableName ? mGetHumanReadableName : (mGetHumanReadableName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.GetHumanReadableName")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.DisplayDebug")); }
-			ScriptFunction SetPlayerName() { return mSetPlayerName ? mSetPlayerName : (mSetPlayerName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetPlayerName")); }
-			ScriptFunction SetWaitingPlayer() { return mSetWaitingPlayer ? mSetWaitingPlayer : (mSetWaitingPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetWaitingPlayer")); }
-			ScriptFunction OverrideWith() { return mOverrideWith ? mOverrideWith : (mOverrideWith = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.OverrideWith")); }
-			ScriptFunction CopyProperties() { return mCopyProperties ? mCopyProperties : (mCopyProperties = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.CopyProperties")); }
-			ScriptFunction IncrementDeaths() { return mIncrementDeaths ? mIncrementDeaths : (mIncrementDeaths = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.IncrementDeaths")); }
-			ScriptFunction SeamlessTravelTo() { return mSeamlessTravelTo ? mSeamlessTravelTo : (mSeamlessTravelTo = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SeamlessTravelTo")); }
-			ScriptFunction SetUniqueId() { return mSetUniqueId ? mSetUniqueId : (mSetUniqueId = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetUniqueId")); }
-			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.GetTeamNum")); }
-			ScriptFunction IsInvalidName() { return mIsInvalidName ? mIsInvalidName : (mIsInvalidName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.IsInvalidName")); }
-			ScriptFunction RegisterPlayerWithSession() { return mRegisterPlayerWithSession ? mRegisterPlayerWithSession : (mRegisterPlayerWithSession = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.RegisterPlayerWithSession")); }
-			ScriptFunction UnregisterPlayerFromSession() { return mUnregisterPlayerFromSession ? mUnregisterPlayerFromSession : (mUnregisterPlayerFromSession = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.UnregisterPlayerFromSession")); }
-			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.GetSpectatorName")); }
+			ScriptFunction Duplicate() { mixin(MGF!("mDuplicate", "Function Engine.PlayerReplicationInfo.Duplicate")()); }
+			ScriptFunction UpdatePing() { mixin(MGF!("mUpdatePing", "Function Engine.PlayerReplicationInfo.UpdatePing")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.PlayerReplicationInfo.PostBeginPlay")()); }
+			ScriptFunction ClientInitialize() { mixin(MGF!("mClientInitialize", "Function Engine.PlayerReplicationInfo.ClientInitialize")()); }
+			ScriptFunction SetPlayerTeam() { mixin(MGF!("mSetPlayerTeam", "Function Engine.PlayerReplicationInfo.SetPlayerTeam")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.PlayerReplicationInfo.ReplicatedEvent")()); }
+			ScriptFunction ShouldBroadCastWelcomeMessage() { mixin(MGF!("mShouldBroadCastWelcomeMessage", "Function Engine.PlayerReplicationInfo.ShouldBroadCastWelcomeMessage")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.PlayerReplicationInfo.Destroyed")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.PlayerReplicationInfo.Reset")()); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function Engine.PlayerReplicationInfo.GetHumanReadableName")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.PlayerReplicationInfo.DisplayDebug")()); }
+			ScriptFunction SetPlayerName() { mixin(MGF!("mSetPlayerName", "Function Engine.PlayerReplicationInfo.SetPlayerName")()); }
+			ScriptFunction SetWaitingPlayer() { mixin(MGF!("mSetWaitingPlayer", "Function Engine.PlayerReplicationInfo.SetWaitingPlayer")()); }
+			ScriptFunction OverrideWith() { mixin(MGF!("mOverrideWith", "Function Engine.PlayerReplicationInfo.OverrideWith")()); }
+			ScriptFunction CopyProperties() { mixin(MGF!("mCopyProperties", "Function Engine.PlayerReplicationInfo.CopyProperties")()); }
+			ScriptFunction IncrementDeaths() { mixin(MGF!("mIncrementDeaths", "Function Engine.PlayerReplicationInfo.IncrementDeaths")()); }
+			ScriptFunction SeamlessTravelTo() { mixin(MGF!("mSeamlessTravelTo", "Function Engine.PlayerReplicationInfo.SeamlessTravelTo")()); }
+			ScriptFunction SetUniqueId() { mixin(MGF!("mSetUniqueId", "Function Engine.PlayerReplicationInfo.SetUniqueId")()); }
+			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.PlayerReplicationInfo.GetTeamNum")()); }
+			ScriptFunction IsInvalidName() { mixin(MGF!("mIsInvalidName", "Function Engine.PlayerReplicationInfo.IsInvalidName")()); }
+			ScriptFunction RegisterPlayerWithSession() { mixin(MGF!("mRegisterPlayerWithSession", "Function Engine.PlayerReplicationInfo.RegisterPlayerWithSession")()); }
+			ScriptFunction UnregisterPlayerFromSession() { mixin(MGF!("mUnregisterPlayerFromSession", "Function Engine.PlayerReplicationInfo.UnregisterPlayerFromSession")()); }
+			ScriptFunction GetSpectatorName() { mixin(MGF!("mGetSpectatorName", "Function Engine.PlayerReplicationInfo.GetSpectatorName")()); }
 		}
 	}
 	struct AutomatedTestingDatum
@@ -76,69 +77,69 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PlayerReplicationInfo.AutomatedTestingDatum")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerReplicationInfo.AutomatedTestingDatum")()); }
 		@property final auto ref
 		{
-			int NumberOfMatchesPlayed() { return *cast(int*)(cast(size_t)&this + 0); }
-			int NumMapListCyclesDone() { return *cast(int*)(cast(size_t)&this + 4); }
+			int NumberOfMatchesPlayed() { mixin(MGPS!(int, 0)()); }
+			int NumMapListCyclesDone() { mixin(MGPS!(int, 4)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString PlayerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 492); }
-			int PlayerID() { return *cast(int*)(cast(size_t)cast(void*)this + 516); }
-			OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)cast(void*)this + 580); }
-			TeamInfo Team() { return *cast(TeamInfo*)(cast(size_t)cast(void*)this + 520); }
-			ScriptName SessionName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 588); }
-			float ExactPing() { return *cast(float*)(cast(size_t)cast(void*)this + 564); }
-			ubyte Ping() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 484); }
-			float Score() { return *cast(float*)(cast(size_t)cast(void*)this + 476); }
-			PlayerReplicationInfo.AutomatedTestingDatum AutomatedTestingData() { return *cast(PlayerReplicationInfo.AutomatedTestingDatum*)(cast(size_t)cast(void*)this + 596); }
-			int StartTime() { return *cast(int*)(cast(size_t)cast(void*)this + 528); }
-			ScriptString SavedNetworkAddress() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 568); }
-			int Kills() { return *cast(int*)(cast(size_t)cast(void*)this + 556); }
-			ScriptString OldName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 504); }
-			Texture2D Avatar() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 648); }
-			int StatAvgOutBPS() { return *cast(int*)(cast(size_t)cast(void*)this + 644); }
-			int StatMaxOutBPS() { return *cast(int*)(cast(size_t)cast(void*)this + 640); }
-			int StatAvgInBPS() { return *cast(int*)(cast(size_t)cast(void*)this + 636); }
-			int StatMaxInBPS() { return *cast(int*)(cast(size_t)cast(void*)this + 632); }
-			int StatPKLMax() { return *cast(int*)(cast(size_t)cast(void*)this + 628); }
-			int StatPKLMin() { return *cast(int*)(cast(size_t)cast(void*)this + 624); }
-			int StatPKLTotal() { return *cast(int*)(cast(size_t)cast(void*)this + 620); }
-			int StatPingMax() { return *cast(int*)(cast(size_t)cast(void*)this + 616); }
-			int StatPingMin() { return *cast(int*)(cast(size_t)cast(void*)this + 612); }
-			int StatPingTotals() { return *cast(int*)(cast(size_t)cast(void*)this + 608); }
-			int StatConnectionCounts() { return *cast(int*)(cast(size_t)cast(void*)this + 604); }
-			ScriptClass GameMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 560); }
-			ScriptString StringUnknown() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 544); }
-			ScriptString StringSpectating() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 532); }
-			int NumLives() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
-			AudioDevice.ETTSSpeaker TTSSpeaker() { return *cast(AudioDevice.ETTSSpeaker*)(cast(size_t)cast(void*)this + 485); }
-			int Deaths() { return *cast(int*)(cast(size_t)cast(void*)this + 480); }
+			ScriptString PlayerName() { mixin(MGPC!(ScriptString, 492)()); }
+			int PlayerID() { mixin(MGPC!(int, 516)()); }
+			OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPC!(OnlineSubsystem.UniqueNetId, 580)()); }
+			TeamInfo Team() { mixin(MGPC!(TeamInfo, 520)()); }
+			ScriptName SessionName() { mixin(MGPC!(ScriptName, 588)()); }
+			float ExactPing() { mixin(MGPC!(float, 564)()); }
+			ubyte Ping() { mixin(MGPC!(ubyte, 484)()); }
+			float Score() { mixin(MGPC!(float, 476)()); }
+			PlayerReplicationInfo.AutomatedTestingDatum AutomatedTestingData() { mixin(MGPC!(PlayerReplicationInfo.AutomatedTestingDatum, 596)()); }
+			int StartTime() { mixin(MGPC!(int, 528)()); }
+			ScriptString SavedNetworkAddress() { mixin(MGPC!(ScriptString, 568)()); }
+			int Kills() { mixin(MGPC!(int, 556)()); }
+			ScriptString OldName() { mixin(MGPC!(ScriptString, 504)()); }
+			Texture2D Avatar() { mixin(MGPC!(Texture2D, 648)()); }
+			int StatAvgOutBPS() { mixin(MGPC!(int, 644)()); }
+			int StatMaxOutBPS() { mixin(MGPC!(int, 640)()); }
+			int StatAvgInBPS() { mixin(MGPC!(int, 636)()); }
+			int StatMaxInBPS() { mixin(MGPC!(int, 632)()); }
+			int StatPKLMax() { mixin(MGPC!(int, 628)()); }
+			int StatPKLMin() { mixin(MGPC!(int, 624)()); }
+			int StatPKLTotal() { mixin(MGPC!(int, 620)()); }
+			int StatPingMax() { mixin(MGPC!(int, 616)()); }
+			int StatPingMin() { mixin(MGPC!(int, 612)()); }
+			int StatPingTotals() { mixin(MGPC!(int, 608)()); }
+			int StatConnectionCounts() { mixin(MGPC!(int, 604)()); }
+			ScriptClass GameMessageClass() { mixin(MGPC!(ScriptClass, 560)()); }
+			ScriptString StringUnknown() { mixin(MGPC!(ScriptString, 544)()); }
+			ScriptString StringSpectating() { mixin(MGPC!(ScriptString, 532)()); }
+			int NumLives() { mixin(MGPC!(int, 488)()); }
+			AudioDevice.ETTSSpeaker TTSSpeaker() { mixin(MGPC!(AudioDevice.ETTSSpeaker, 485)()); }
+			int Deaths() { mixin(MGPC!(int, 480)()); }
 		}
-		bool bAdmin() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x1) != 0; }
-		bool bAdmin(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x1; } return val; }
-		bool bOnlySpectator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x4) != 0; }
-		bool bOnlySpectator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x4; } return val; }
-		bool bIsSpectator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x2) != 0; }
-		bool bIsSpectator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x2; } return val; }
-		bool bReadyToPlay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x10) != 0; }
-		bool bReadyToPlay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x10; } return val; }
-		bool bOutOfLives() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x20) != 0; }
-		bool bOutOfLives(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x20; } return val; }
-		bool bWaitingPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x8) != 0; }
-		bool bWaitingPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x8; } return val; }
-		bool bFromPreviousLevel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x200) != 0; }
-		bool bFromPreviousLevel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x200; } return val; }
-		bool bIsInactive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x100) != 0; }
-		bool bIsInactive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x100; } return val; }
-		bool bHasBeenWelcomed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x80) != 0; }
-		bool bHasBeenWelcomed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x80; } return val; }
-		bool bBot() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x40) != 0; }
-		bool bBot(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x40; } return val; }
+		bool bAdmin() { mixin(MGBPC!(524, 0x1)()); }
+		bool bAdmin(bool val) { mixin(MSBPC!(524, 0x1)()); }
+		bool bOnlySpectator() { mixin(MGBPC!(524, 0x4)()); }
+		bool bOnlySpectator(bool val) { mixin(MSBPC!(524, 0x4)()); }
+		bool bIsSpectator() { mixin(MGBPC!(524, 0x2)()); }
+		bool bIsSpectator(bool val) { mixin(MSBPC!(524, 0x2)()); }
+		bool bReadyToPlay() { mixin(MGBPC!(524, 0x10)()); }
+		bool bReadyToPlay(bool val) { mixin(MSBPC!(524, 0x10)()); }
+		bool bOutOfLives() { mixin(MGBPC!(524, 0x20)()); }
+		bool bOutOfLives(bool val) { mixin(MSBPC!(524, 0x20)()); }
+		bool bWaitingPlayer() { mixin(MGBPC!(524, 0x8)()); }
+		bool bWaitingPlayer(bool val) { mixin(MSBPC!(524, 0x8)()); }
+		bool bFromPreviousLevel() { mixin(MGBPC!(524, 0x200)()); }
+		bool bFromPreviousLevel(bool val) { mixin(MSBPC!(524, 0x200)()); }
+		bool bIsInactive() { mixin(MGBPC!(524, 0x100)()); }
+		bool bIsInactive(bool val) { mixin(MSBPC!(524, 0x100)()); }
+		bool bHasBeenWelcomed() { mixin(MGBPC!(524, 0x80)()); }
+		bool bHasBeenWelcomed(bool val) { mixin(MSBPC!(524, 0x80)()); }
+		bool bBot() { mixin(MGBPC!(524, 0x40)()); }
+		bool bBot(bool val) { mixin(MSBPC!(524, 0x40)()); }
 	}
 final:
 	PlayerReplicationInfo Duplicate()
@@ -203,13 +204,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHumanReadableName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void DisplayDebug(HUD pHUD, float* YL, float* YPos)
+	void DisplayDebug(HUD pHUD, ref float YL, ref float YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *YL;
-		*cast(float*)&params[8] = *YPos;
+		*cast(float*)&params[4] = YL;
+		*cast(float*)&params[8] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*YL = *cast(float*)&params[4];
 		*YPos = *cast(float*)&params[8];

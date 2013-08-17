@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTAmmoPickupFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
 import UnrealScript.UTGame.UTItemPickupFactory;
@@ -10,9 +11,9 @@ extern(C++) interface UTAmmoPickupFactory : UTItemPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAmmoPickupFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAmmoPickupFactory")()); }
 	private static __gshared UTAmmoPickupFactory mDefaultProperties;
-	@property final static UTAmmoPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTAmmoPickupFactory)("UTAmmoPickupFactory UTGame.Default__UTAmmoPickupFactory")); }
+	@property final static UTAmmoPickupFactory DefaultProperties() { mixin(MGDPC!(UTAmmoPickupFactory, "UTAmmoPickupFactory UTGame.Default__UTAmmoPickupFactory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,15 +24,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnCopyFor() { return mSpawnCopyFor ? mSpawnCopyFor : (mSpawnCopyFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTAmmoPickupFactory.SpawnCopyFor")); }
-			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTAmmoPickupFactory.UpdateHUD")); }
-			ScriptFunction BotDesireability() { return mBotDesireability ? mBotDesireability : (mBotDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTAmmoPickupFactory.BotDesireability")); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTAmmoPickupFactory.SpawnCopyFor")()); }
+			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function UTGame.UTAmmoPickupFactory.UpdateHUD")()); }
+			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTAmmoPickupFactory.BotDesireability")()); }
 		}
+	}
+	static struct Pickup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTAmmoPickupFactory.Pickup")()); }
 	}
 	@property final auto ref
 	{
-		ScriptClass TargetWeapon() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 980); }
-		int AmmoAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 976); }
+		ScriptClass TargetWeapon() { mixin(MGPC!(ScriptClass, 980)()); }
+		int AmmoAmount() { mixin(MGPC!(int, 976)()); }
 	}
 final:
 	void SpawnCopyFor(Pawn Recipient)

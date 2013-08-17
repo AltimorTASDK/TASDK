@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PhysicsVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.SeqAct_Toggle;
@@ -15,9 +16,9 @@ extern(C++) interface PhysicsVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicsVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PhysicsVolume")()); }
 	private static __gshared PhysicsVolume mDefaultProperties;
-	@property final static PhysicsVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PhysicsVolume)("PhysicsVolume Engine.Default__PhysicsVolume")); }
+	@property final static PhysicsVolume DefaultProperties() { mixin(MGDPC!(PhysicsVolume, "PhysicsVolume Engine.Default__PhysicsVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,26 +46,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetGravityZ() { return mGetGravityZ ? mGetGravityZ : (mGetGravityZ = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.GetGravityZ")); }
-			ScriptFunction GetZoneVelocityForActor() { return mGetZoneVelocityForActor ? mGetZoneVelocityForActor : (mGetZoneVelocityForActor = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.GetZoneVelocityForActor")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PostBeginPlay")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.Reset")); }
-			ScriptFunction PhysicsChangedFor() { return mPhysicsChangedFor ? mPhysicsChangedFor : (mPhysicsChangedFor = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PhysicsChangedFor")); }
-			ScriptFunction ActorEnteredVolume() { return mActorEnteredVolume ? mActorEnteredVolume : (mActorEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ActorEnteredVolume")); }
-			ScriptFunction ActorLeavingVolume() { return mActorLeavingVolume ? mActorLeavingVolume : (mActorLeavingVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ActorLeavingVolume")); }
-			ScriptFunction PawnEnteredVolume() { return mPawnEnteredVolume ? mPawnEnteredVolume : (mPawnEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PawnEnteredVolume")); }
-			ScriptFunction PawnLeavingVolume() { return mPawnLeavingVolume ? mPawnLeavingVolume : (mPawnLeavingVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PawnLeavingVolume")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.OnToggle")); }
-			ScriptFunction CollisionChanged() { return mCollisionChanged ? mCollisionChanged : (mCollisionChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.CollisionChanged")); }
-			ScriptFunction TimerPop() { return mTimerPop ? mTimerPop : (mTimerPop = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.TimerPop")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.Touch")); }
-			ScriptFunction CausePainTo() { return mCausePainTo ? mCausePainTo : (mCausePainTo = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.CausePainTo")); }
-			ScriptFunction ModifyPlayer() { return mModifyPlayer ? mModifyPlayer : (mModifyPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ModifyPlayer")); }
-			ScriptFunction NotifyPawnBecameViewTarget() { return mNotifyPawnBecameViewTarget ? mNotifyPawnBecameViewTarget : (mNotifyPawnBecameViewTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.NotifyPawnBecameViewTarget")); }
-			ScriptFunction OnSetDamageInstigator() { return mOnSetDamageInstigator ? mOnSetDamageInstigator : (mOnSetDamageInstigator = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.OnSetDamageInstigator")); }
-			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ShouldSaveForCheckpoint")); }
-			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.CreateCheckpointRecord")); }
-			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ApplyCheckpointRecord")); }
+			ScriptFunction GetGravityZ() { mixin(MGF!("mGetGravityZ", "Function Engine.PhysicsVolume.GetGravityZ")()); }
+			ScriptFunction GetZoneVelocityForActor() { mixin(MGF!("mGetZoneVelocityForActor", "Function Engine.PhysicsVolume.GetZoneVelocityForActor")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.PhysicsVolume.PostBeginPlay")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.PhysicsVolume.Reset")()); }
+			ScriptFunction PhysicsChangedFor() { mixin(MGF!("mPhysicsChangedFor", "Function Engine.PhysicsVolume.PhysicsChangedFor")()); }
+			ScriptFunction ActorEnteredVolume() { mixin(MGF!("mActorEnteredVolume", "Function Engine.PhysicsVolume.ActorEnteredVolume")()); }
+			ScriptFunction ActorLeavingVolume() { mixin(MGF!("mActorLeavingVolume", "Function Engine.PhysicsVolume.ActorLeavingVolume")()); }
+			ScriptFunction PawnEnteredVolume() { mixin(MGF!("mPawnEnteredVolume", "Function Engine.PhysicsVolume.PawnEnteredVolume")()); }
+			ScriptFunction PawnLeavingVolume() { mixin(MGF!("mPawnLeavingVolume", "Function Engine.PhysicsVolume.PawnLeavingVolume")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.PhysicsVolume.OnToggle")()); }
+			ScriptFunction CollisionChanged() { mixin(MGF!("mCollisionChanged", "Function Engine.PhysicsVolume.CollisionChanged")()); }
+			ScriptFunction TimerPop() { mixin(MGF!("mTimerPop", "Function Engine.PhysicsVolume.TimerPop")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.PhysicsVolume.Touch")()); }
+			ScriptFunction CausePainTo() { mixin(MGF!("mCausePainTo", "Function Engine.PhysicsVolume.CausePainTo")()); }
+			ScriptFunction ModifyPlayer() { mixin(MGF!("mModifyPlayer", "Function Engine.PhysicsVolume.ModifyPlayer")()); }
+			ScriptFunction NotifyPawnBecameViewTarget() { mixin(MGF!("mNotifyPawnBecameViewTarget", "Function Engine.PhysicsVolume.NotifyPawnBecameViewTarget")()); }
+			ScriptFunction OnSetDamageInstigator() { mixin(MGF!("mOnSetDamageInstigator", "Function Engine.PhysicsVolume.OnSetDamageInstigator")()); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.PhysicsVolume.ShouldSaveForCheckpoint")()); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.PhysicsVolume.CreateCheckpointRecord")()); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.PhysicsVolume.ApplyCheckpointRecord")()); }
 		}
 	}
 	struct CheckpointRecord
@@ -72,59 +73,59 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PhysicsVolume.CheckpointRecord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PhysicsVolume.CheckpointRecord")()); }
 		@property final
 		{
-			bool bActive() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bActive(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bPainCausing() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bPainCausing(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bActive() { mixin(MGBPS!(0, 0x2)()); }
+			bool bActive(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bPainCausing() { mixin(MGBPS!(0, 0x1)()); }
+			bool bPainCausing(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float DamagePerSec() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
-			PhysicsVolume NextPhysicsVolume() { return *cast(PhysicsVolume*)(cast(size_t)cast(void*)this + 580); }
-			Controller DamageInstigator() { return *cast(Controller*)(cast(size_t)cast(void*)this + 576); }
-			Info PainTimer() { return *cast(Info*)(cast(size_t)cast(void*)this + 572); }
-			float MaxDampingForce() { return *cast(float*)(cast(size_t)cast(void*)this + 568); }
-			float RigidBodyDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 564); }
-			float PainInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-			float FluidFriction() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			int Priority() { return *cast(int*)(cast(size_t)cast(void*)this + 552); }
+			float DamagePerSec() { mixin(MGPC!(float, 544)()); }
+			PhysicsVolume NextPhysicsVolume() { mixin(MGPC!(PhysicsVolume, 580)()); }
+			Controller DamageInstigator() { mixin(MGPC!(Controller, 576)()); }
+			Info PainTimer() { mixin(MGPC!(Info, 572)()); }
+			float MaxDampingForce() { mixin(MGPC!(float, 568)()); }
+			float RigidBodyDamping() { mixin(MGPC!(float, 564)()); }
+			float PainInterval() { mixin(MGPC!(float, 560)()); }
+			float FluidFriction() { mixin(MGPC!(float, 556)()); }
+			int Priority() { mixin(MGPC!(int, 552)()); }
 			// WARNING: Property 'DamageType' has the same name as a defined type!
-			float TerminalVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
-			float GroundFriction() { return *cast(float*)(cast(size_t)cast(void*)this + 536); }
-			Vector ZoneVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 520); }
+			float TerminalVelocity() { mixin(MGPC!(float, 540)()); }
+			float GroundFriction() { mixin(MGPC!(float, 536)()); }
+			Vector ZoneVelocity() { mixin(MGPC!(Vector, 520)()); }
 		}
-		bool bPainCausing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
-		bool bPainCausing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
-		bool bWaterVolume() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1000) != 0; }
-		bool bWaterVolume(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1000; } return val; }
-		bool bPhysicsOnContact() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x800) != 0; }
-		bool bPhysicsOnContact(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x800; } return val; }
-		bool bCrowdAgentsPlayDeathAnim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x400) != 0; }
-		bool bCrowdAgentsPlayDeathAnim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x400; } return val; }
-		bool bNeutralZone() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x200) != 0; }
-		bool bNeutralZone(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x200; } return val; }
-		bool bBounceVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x100) != 0; }
-		bool bBounceVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x100; } return val; }
-		bool bMoveProjectiles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x80) != 0; }
-		bool bMoveProjectiles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x80; } return val; }
-		bool bNoInventory() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x40) != 0; }
-		bool bNoInventory(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x40; } return val; }
-		bool bDestructive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x20) != 0; }
-		bool bDestructive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x20; } return val; }
-		bool BACKUP_bPainCausing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10) != 0; }
-		bool BACKUP_bPainCausing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10; } return val; }
-		bool bEntryPain() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8) != 0; }
-		bool bEntryPain(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8; } return val; }
-		bool bAIShouldIgnorePain() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
-		bool bAIShouldIgnorePain(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
-		bool bVelocityAffectsWalking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool bVelocityAffectsWalking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		bool bPainCausing() { mixin(MGBPC!(532, 0x2)()); }
+		bool bPainCausing(bool val) { mixin(MSBPC!(532, 0x2)()); }
+		bool bWaterVolume() { mixin(MGBPC!(532, 0x1000)()); }
+		bool bWaterVolume(bool val) { mixin(MSBPC!(532, 0x1000)()); }
+		bool bPhysicsOnContact() { mixin(MGBPC!(532, 0x800)()); }
+		bool bPhysicsOnContact(bool val) { mixin(MSBPC!(532, 0x800)()); }
+		bool bCrowdAgentsPlayDeathAnim() { mixin(MGBPC!(532, 0x400)()); }
+		bool bCrowdAgentsPlayDeathAnim(bool val) { mixin(MSBPC!(532, 0x400)()); }
+		bool bNeutralZone() { mixin(MGBPC!(532, 0x200)()); }
+		bool bNeutralZone(bool val) { mixin(MSBPC!(532, 0x200)()); }
+		bool bBounceVelocity() { mixin(MGBPC!(532, 0x100)()); }
+		bool bBounceVelocity(bool val) { mixin(MSBPC!(532, 0x100)()); }
+		bool bMoveProjectiles() { mixin(MGBPC!(532, 0x80)()); }
+		bool bMoveProjectiles(bool val) { mixin(MSBPC!(532, 0x80)()); }
+		bool bNoInventory() { mixin(MGBPC!(532, 0x40)()); }
+		bool bNoInventory(bool val) { mixin(MSBPC!(532, 0x40)()); }
+		bool bDestructive() { mixin(MGBPC!(532, 0x20)()); }
+		bool bDestructive(bool val) { mixin(MSBPC!(532, 0x20)()); }
+		bool BACKUP_bPainCausing() { mixin(MGBPC!(532, 0x10)()); }
+		bool BACKUP_bPainCausing(bool val) { mixin(MSBPC!(532, 0x10)()); }
+		bool bEntryPain() { mixin(MGBPC!(532, 0x8)()); }
+		bool bEntryPain(bool val) { mixin(MSBPC!(532, 0x8)()); }
+		bool bAIShouldIgnorePain() { mixin(MGBPC!(532, 0x4)()); }
+		bool bAIShouldIgnorePain(bool val) { mixin(MSBPC!(532, 0x4)()); }
+		bool bVelocityAffectsWalking() { mixin(MGBPC!(532, 0x1)()); }
+		bool bVelocityAffectsWalking(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	float GetGravityZ()
@@ -253,19 +254,19 @@ void**)&params[4] = OtherComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void CreateCheckpointRecord(PhysicsVolume.CheckpointRecord* Record)
+	void CreateCheckpointRecord(ref PhysicsVolume.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = *Record;
+		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(PhysicsVolume.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(PhysicsVolume.CheckpointRecord* Record)
+	void ApplyCheckpointRecord(ref const PhysicsVolume.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = *Record;
+		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(PhysicsVolume.CheckpointRecord*)params.ptr;
 	}

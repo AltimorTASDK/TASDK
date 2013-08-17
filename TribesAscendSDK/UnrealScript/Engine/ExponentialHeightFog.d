@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ExponentialHeightFog;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Info;
 
@@ -8,9 +9,9 @@ extern(C++) interface ExponentialHeightFog : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ExponentialHeightFog")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ExponentialHeightFog")()); }
 	private static __gshared ExponentialHeightFog mDefaultProperties;
-	@property final static ExponentialHeightFog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ExponentialHeightFog)("ExponentialHeightFog Engine.Default__ExponentialHeightFog")); }
+	@property final static ExponentialHeightFog DefaultProperties() { mixin(MGDPC!(ExponentialHeightFog, "ExponentialHeightFog Engine.Default__ExponentialHeightFog")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +22,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.ExponentialHeightFog.PostBeginPlay")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.ExponentialHeightFog.ReplicatedEvent")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.ExponentialHeightFog.OnToggle")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.ExponentialHeightFog.PostBeginPlay")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.ExponentialHeightFog.ReplicatedEvent")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.ExponentialHeightFog.OnToggle")()); }
 		}
 	}
 	@property final
 	{
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		// WARNING: Property 'Component' has the same name as a defined type!
+		bool bEnabled() { mixin(MGBPC!(480, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

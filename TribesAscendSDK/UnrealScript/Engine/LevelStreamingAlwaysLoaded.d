@@ -1,18 +1,19 @@
 module UnrealScript.Engine.LevelStreamingAlwaysLoaded;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LevelStreaming;
 
 extern(C++) interface LevelStreamingAlwaysLoaded : LevelStreaming
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LevelStreamingAlwaysLoaded")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LevelStreamingAlwaysLoaded")()); }
 	private static __gshared LevelStreamingAlwaysLoaded mDefaultProperties;
-	@property final static LevelStreamingAlwaysLoaded DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LevelStreamingAlwaysLoaded)("LevelStreamingAlwaysLoaded Engine.Default__LevelStreamingAlwaysLoaded")); }
+	@property final static LevelStreamingAlwaysLoaded DefaultProperties() { mixin(MGDPC!(LevelStreamingAlwaysLoaded, "LevelStreamingAlwaysLoaded Engine.Default__LevelStreamingAlwaysLoaded")()); }
 	@property final
 	{
-		bool bIsProceduralBuildingLODLevel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 152) & 0x1) != 0; }
-		bool bIsProceduralBuildingLODLevel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 152) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 152) &= ~0x1; } return val; }
+		bool bIsProceduralBuildingLODLevel() { mixin(MGBPC!(152, 0x1)()); }
+		bool bIsProceduralBuildingLODLevel(bool val) { mixin(MSBPC!(152, 0x1)()); }
 	}
 }

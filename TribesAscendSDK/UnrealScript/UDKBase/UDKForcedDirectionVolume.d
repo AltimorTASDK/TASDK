@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKForcedDirectionVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PhysicsVolume;
 import UnrealScript.UDKBase.UDKVehicle;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface UDKForcedDirectionVolume : PhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKForcedDirectionVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKForcedDirectionVolume")()); }
 	private static __gshared UDKForcedDirectionVolume mDefaultProperties;
-	@property final static UDKForcedDirectionVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKForcedDirectionVolume)("UDKForcedDirectionVolume UDKBase.Default__UDKForcedDirectionVolume")); }
+	@property final static UDKForcedDirectionVolume DefaultProperties() { mixin(MGDPC!(UDKForcedDirectionVolume, "UDKForcedDirectionVolume UDKBase.Default__UDKForcedDirectionVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,29 +26,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.PostBeginPlay")); }
-			ScriptFunction ActorEnteredVolume() { return mActorEnteredVolume ? mActorEnteredVolume : (mActorEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.ActorEnteredVolume")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.Touch")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.UnTouch")); }
-			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.StopsProjectile")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UDKBase.UDKForcedDirectionVolume.PostBeginPlay")()); }
+			ScriptFunction ActorEnteredVolume() { mixin(MGF!("mActorEnteredVolume", "Function UDKBase.UDKForcedDirectionVolume.ActorEnteredVolume")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UDKBase.UDKForcedDirectionVolume.Touch")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function UDKBase.UDKForcedDirectionVolume.UnTouch")()); }
+			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function UDKBase.UDKForcedDirectionVolume.StopsProjectile")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UDKVehicle) TouchingVehicles() { return *cast(ScriptArray!(UDKVehicle)*)(cast(size_t)cast(void*)this + 608); }
-			Vector ArrowDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 596); }
-			ScriptClass TypeToForce() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 584); }
+			ScriptArray!(UDKVehicle) TouchingVehicles() { mixin(MGPC!(ScriptArray!(UDKVehicle), 608)()); }
+			Vector ArrowDirection() { mixin(MGPC!(Vector, 596)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Arrow'!
+			ScriptClass TypeToForce() { mixin(MGPC!(ScriptClass, 584)()); }
 		}
-		bool bBlockSpectators() { return (*cast(uint*)(cast(size_t)cast(void*)this + 588) & 0x8) != 0; }
-		bool bBlockSpectators(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 588) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 588) &= ~0x8; } return val; }
-		bool bBlockPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 588) & 0x4) != 0; }
-		bool bBlockPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 588) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 588) &= ~0x4; } return val; }
-		bool bDenyExit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 588) & 0x2) != 0; }
-		bool bDenyExit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 588) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 588) &= ~0x2; } return val; }
-		bool bIgnoreHoverboards() { return (*cast(uint*)(cast(size_t)cast(void*)this + 588) & 0x1) != 0; }
-		bool bIgnoreHoverboards(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 588) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 588) &= ~0x1; } return val; }
+		bool bBlockSpectators() { mixin(MGBPC!(588, 0x8)()); }
+		bool bBlockSpectators(bool val) { mixin(MSBPC!(588, 0x8)()); }
+		bool bBlockPawns() { mixin(MGBPC!(588, 0x4)()); }
+		bool bBlockPawns(bool val) { mixin(MSBPC!(588, 0x4)()); }
+		bool bDenyExit() { mixin(MGBPC!(588, 0x2)()); }
+		bool bDenyExit(bool val) { mixin(MSBPC!(588, 0x2)()); }
+		bool bIgnoreHoverboards() { mixin(MGBPC!(588, 0x1)()); }
+		bool bIgnoreHoverboards(bool val) { mixin(MSBPC!(588, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

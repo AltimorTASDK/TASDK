@@ -1,6 +1,7 @@
 module UnrealScript.Engine.VolumeTimer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PhysicsVolume;
 import UnrealScript.Engine.Info;
 
@@ -8,9 +9,9 @@ extern(C++) interface VolumeTimer : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.VolumeTimer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.VolumeTimer")()); }
 	private static __gshared VolumeTimer mDefaultProperties;
-	@property final static VolumeTimer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(VolumeTimer)("VolumeTimer Engine.Default__VolumeTimer")); }
+	@property final static VolumeTimer DefaultProperties() { mixin(MGDPC!(VolumeTimer, "VolumeTimer Engine.Default__VolumeTimer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.VolumeTimer.PostBeginPlay")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.VolumeTimer.Timer")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.VolumeTimer.PostBeginPlay")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.VolumeTimer.Timer")()); }
 		}
 	}
-	@property final auto ref PhysicsVolume V() { return *cast(PhysicsVolume*)(cast(size_t)cast(void*)this + 476); }
+	@property final auto ref PhysicsVolume V() { mixin(MGPC!(PhysicsVolume, 476)()); }
 final:
 	void PostBeginPlay()
 	{

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDestroyableTarget;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface TrDestroyableTarget : UTSimpleDestroyable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDestroyableTarget")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDestroyableTarget")()); }
 	private static __gshared TrDestroyableTarget mDefaultProperties;
-	@property final static TrDestroyableTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDestroyableTarget)("TrDestroyableTarget TribesGame.Default__TrDestroyableTarget")); }
+	@property final static TrDestroyableTarget DefaultProperties() { mixin(MGDPC!(TrDestroyableTarget, "TrDestroyableTarget TribesGame.Default__TrDestroyableTarget")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDestroyableTarget.TakeDamage")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDestroyableTarget.OnToggle")); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrDestroyableTarget.TakeDamage")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function TribesGame.TrDestroyableTarget.OnToggle")()); }
 		}
 	}
 final:

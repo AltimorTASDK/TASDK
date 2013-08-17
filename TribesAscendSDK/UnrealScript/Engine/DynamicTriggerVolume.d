@@ -1,24 +1,25 @@
 module UnrealScript.Engine.DynamicTriggerVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.TriggerVolume;
 
 extern(C++) interface DynamicTriggerVolume : TriggerVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicTriggerVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DynamicTriggerVolume")()); }
 	private static __gshared DynamicTriggerVolume mDefaultProperties;
-	@property final static DynamicTriggerVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicTriggerVolume)("DynamicTriggerVolume Engine.Default__DynamicTriggerVolume")); }
+	@property final static DynamicTriggerVolume DefaultProperties() { mixin(MGDPC!(DynamicTriggerVolume, "DynamicTriggerVolume Engine.Default__DynamicTriggerVolume")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;
-		public @property static final ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicTriggerVolume.PostBeginPlay")); }
+		public @property static final ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.DynamicTriggerVolume.PostBeginPlay")()); }
 	}
 	@property final
 	{
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 520) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 520) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 520) &= ~0x1; } return val; }
+		bool bEnabled() { mixin(MGBPC!(520, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(520, 0x1)()); }
 	}
 	final void PostBeginPlay()
 	{

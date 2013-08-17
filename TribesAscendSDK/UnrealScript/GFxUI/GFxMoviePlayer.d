@@ -1,6 +1,7 @@
 module UnrealScript.GFxUI.GFxMoviePlayer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.TextureRenderTarget2D;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -17,9 +18,9 @@ extern(C++) interface GFxMoviePlayer : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxMoviePlayer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GFxUI.GFxMoviePlayer")()); }
 	private static __gshared GFxMoviePlayer mDefaultProperties;
-	@property final static GFxMoviePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxMoviePlayer)("GFxMoviePlayer GFxUI.Default__GFxMoviePlayer")); }
+	@property final static GFxMoviePlayer DefaultProperties() { mixin(MGDPC!(GFxMoviePlayer, "GFxMoviePlayer GFxUI.Default__GFxMoviePlayer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -95,74 +96,74 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnFocusLost() { return mOnFocusLost ? mOnFocusLost : (mOnFocusLost = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.OnFocusLost")); }
-			ScriptFunction OnFocusGained() { return mOnFocusGained ? mOnFocusGained : (mOnFocusGained = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.OnFocusGained")); }
-			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ConsoleCommand")); }
-			ScriptFunction GetPC() { return mGetPC ? mGetPC : (mGetPC = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetPC")); }
-			ScriptFunction GetLP() { return mGetLP ? mGetLP : (mGetLP = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetLP")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.Init")); }
-			ScriptFunction SetWidgetPathBinding() { return mSetWidgetPathBinding ? mSetWidgetPathBinding : (mSetWidgetPathBinding = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetWidgetPathBinding")); }
-			ScriptFunction Advance() { return mAdvance ? mAdvance : (mAdvance = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.Advance")); }
-			ScriptFunction PostWidgetInit() { return mPostWidgetInit ? mPostWidgetInit : (mPostWidgetInit = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.PostWidgetInit")); }
-			ScriptFunction WidgetUnloaded() { return mWidgetUnloaded ? mWidgetUnloaded : (mWidgetUnloaded = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.WidgetUnloaded")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.WidgetInitialized")); }
-			ScriptFunction ActionScriptObject() { return mActionScriptObject ? mActionScriptObject : (mActionScriptObject = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ActionScriptObject")); }
-			ScriptFunction ActionScriptString() { return mActionScriptString ? mActionScriptString : (mActionScriptString = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ActionScriptString")); }
-			ScriptFunction ActionScriptFloat() { return mActionScriptFloat ? mActionScriptFloat : (mActionScriptFloat = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ActionScriptFloat")); }
-			ScriptFunction ActionScriptInt() { return mActionScriptInt ? mActionScriptInt : (mActionScriptInt = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ActionScriptInt")); }
-			ScriptFunction ActionScriptVoid() { return mActionScriptVoid ? mActionScriptVoid : (mActionScriptVoid = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ActionScriptVoid")); }
-			ScriptFunction Invoke() { return mInvoke ? mInvoke : (mInvoke = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.Invoke")); }
-			ScriptFunction ActionScriptSetFunction() { return mActionScriptSetFunction ? mActionScriptSetFunction : (mActionScriptSetFunction = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ActionScriptSetFunction")); }
-			ScriptFunction CreateArray() { return mCreateArray ? mCreateArray : (mCreateArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.CreateArray")); }
-			ScriptFunction CreateObject() { return mCreateObject ? mCreateObject : (mCreateObject = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.CreateObject")); }
-			ScriptFunction SetVariableStringArray() { return mSetVariableStringArray ? mSetVariableStringArray : (mSetVariableStringArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableStringArray")); }
-			ScriptFunction SetVariableFloatArray() { return mSetVariableFloatArray ? mSetVariableFloatArray : (mSetVariableFloatArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableFloatArray")); }
-			ScriptFunction SetVariableIntArray() { return mSetVariableIntArray ? mSetVariableIntArray : (mSetVariableIntArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableIntArray")); }
-			ScriptFunction SetVariableArray() { return mSetVariableArray ? mSetVariableArray : (mSetVariableArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableArray")); }
-			ScriptFunction GetVariableStringArray() { return mGetVariableStringArray ? mGetVariableStringArray : (mGetVariableStringArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableStringArray")); }
-			ScriptFunction GetVariableFloatArray() { return mGetVariableFloatArray ? mGetVariableFloatArray : (mGetVariableFloatArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableFloatArray")); }
-			ScriptFunction GetVariableIntArray() { return mGetVariableIntArray ? mGetVariableIntArray : (mGetVariableIntArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableIntArray")); }
-			ScriptFunction GetVariableArray() { return mGetVariableArray ? mGetVariableArray : (mGetVariableArray = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableArray")); }
-			ScriptFunction SetVariableObject() { return mSetVariableObject ? mSetVariableObject : (mSetVariableObject = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableObject")); }
-			ScriptFunction SetVariableString() { return mSetVariableString ? mSetVariableString : (mSetVariableString = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableString")); }
-			ScriptFunction SetVariableNumber() { return mSetVariableNumber ? mSetVariableNumber : (mSetVariableNumber = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableNumber")); }
-			ScriptFunction SetVariableBool() { return mSetVariableBool ? mSetVariableBool : (mSetVariableBool = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariableBool")); }
-			ScriptFunction SetVariable() { return mSetVariable ? mSetVariable : (mSetVariable = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetVariable")); }
-			ScriptFunction GetVariableObject() { return mGetVariableObject ? mGetVariableObject : (mGetVariableObject = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableObject")); }
-			ScriptFunction GetVariableString() { return mGetVariableString ? mGetVariableString : (mGetVariableString = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableString")); }
-			ScriptFunction GetVariableNumber() { return mGetVariableNumber ? mGetVariableNumber : (mGetVariableNumber = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableNumber")); }
-			ScriptFunction GetVariableBool() { return mGetVariableBool ? mGetVariableBool : (mGetVariableBool = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariableBool")); }
-			ScriptFunction GetVariable() { return mGetVariable ? mGetVariable : (mGetVariable = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVariable")); }
-			ScriptFunction FilterButtonInput() { return mFilterButtonInput ? mFilterButtonInput : (mFilterButtonInput = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.FilterButtonInput")); }
-			ScriptFunction FlushPlayerInput() { return mFlushPlayerInput ? mFlushPlayerInput : (mFlushPlayerInput = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.FlushPlayerInput")); }
-			ScriptFunction ClearFocusIgnoreKeys() { return mClearFocusIgnoreKeys ? mClearFocusIgnoreKeys : (mClearFocusIgnoreKeys = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ClearFocusIgnoreKeys")); }
-			ScriptFunction AddFocusIgnoreKey() { return mAddFocusIgnoreKey ? mAddFocusIgnoreKey : (mAddFocusIgnoreKey = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.AddFocusIgnoreKey")); }
-			ScriptFunction ClearCaptureKeys() { return mClearCaptureKeys ? mClearCaptureKeys : (mClearCaptureKeys = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ClearCaptureKeys")); }
-			ScriptFunction AddCaptureKey() { return mAddCaptureKey ? mAddCaptureKey : (mAddCaptureKey = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.AddCaptureKey")); }
-			ScriptFunction SetMovieCanReceiveInput() { return mSetMovieCanReceiveInput ? mSetMovieCanReceiveInput : (mSetMovieCanReceiveInput = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveInput")); }
-			ScriptFunction SetMovieCanReceiveFocus() { return mSetMovieCanReceiveFocus ? mSetMovieCanReceiveFocus : (mSetMovieCanReceiveFocus = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveFocus")); }
-			ScriptFunction SetPerspective3D() { return mSetPerspective3D ? mSetPerspective3D : (mSetPerspective3D = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetPerspective3D")); }
-			ScriptFunction SetView3D() { return mSetView3D ? mSetView3D : (mSetView3D = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetView3D")); }
-			ScriptFunction GetVisibleFrameRect() { return mGetVisibleFrameRect ? mGetVisibleFrameRect : (mGetVisibleFrameRect = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetVisibleFrameRect")); }
-			ScriptFunction SetAlignment() { return mSetAlignment ? mSetAlignment : (mSetAlignment = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetAlignment")); }
-			ScriptFunction SetViewScaleMode() { return mSetViewScaleMode ? mSetViewScaleMode : (mSetViewScaleMode = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetViewScaleMode")); }
-			ScriptFunction SetViewport() { return mSetViewport ? mSetViewport : (mSetViewport = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetViewport")); }
-			ScriptFunction GetGameViewportClient() { return mGetGameViewportClient ? mGetGameViewportClient : (mGetGameViewportClient = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.GetGameViewportClient")); }
-			ScriptFunction SetPriority() { return mSetPriority ? mSetPriority : (mSetPriority = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetPriority")); }
-			ScriptFunction PublishDataStoreValues() { return mPublishDataStoreValues ? mPublishDataStoreValues : (mPublishDataStoreValues = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.PublishDataStoreValues")); }
-			ScriptFunction RefreshDataStoreBindings() { return mRefreshDataStoreBindings ? mRefreshDataStoreBindings : (mRefreshDataStoreBindings = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.RefreshDataStoreBindings")); }
-			ScriptFunction SetExternalTexture() { return mSetExternalTexture ? mSetExternalTexture : (mSetExternalTexture = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetExternalTexture")); }
-			ScriptFunction SetExternalInterface() { return mSetExternalInterface ? mSetExternalInterface : (mSetExternalInterface = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetExternalInterface")); }
-			ScriptFunction SetForceSmoothAnimation() { return mSetForceSmoothAnimation ? mSetForceSmoothAnimation : (mSetForceSmoothAnimation = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetForceSmoothAnimation")); }
-			ScriptFunction SetTimingMode() { return mSetTimingMode ? mSetTimingMode : (mSetTimingMode = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetTimingMode")); }
-			ScriptFunction SetMovieInfo() { return mSetMovieInfo ? mSetMovieInfo : (mSetMovieInfo = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetMovieInfo")); }
-			ScriptFunction ConditionalClearPause() { return mConditionalClearPause ? mConditionalClearPause : (mConditionalClearPause = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.ConditionalClearPause")); }
-			ScriptFunction OnClose() { return mOnClose ? mOnClose : (mOnClose = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.OnClose")); }
-			ScriptFunction Close() { return mClose ? mClose : (mClose = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.Close")); }
-			ScriptFunction SetPause() { return mSetPause ? mSetPause : (mSetPause = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.SetPause")); }
-			ScriptFunction OnPostAdvance() { return mOnPostAdvance ? mOnPostAdvance : (mOnPostAdvance = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.OnPostAdvance")); }
-			ScriptFunction PostAdvance() { return mPostAdvance ? mPostAdvance : (mPostAdvance = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.PostAdvance")); }
-			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxMoviePlayer.Start")); }
+			ScriptFunction OnFocusLost() { mixin(MGF!("mOnFocusLost", "Function GFxUI.GFxMoviePlayer.OnFocusLost")()); }
+			ScriptFunction OnFocusGained() { mixin(MGF!("mOnFocusGained", "Function GFxUI.GFxMoviePlayer.OnFocusGained")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function GFxUI.GFxMoviePlayer.ConsoleCommand")()); }
+			ScriptFunction GetPC() { mixin(MGF!("mGetPC", "Function GFxUI.GFxMoviePlayer.GetPC")()); }
+			ScriptFunction GetLP() { mixin(MGF!("mGetLP", "Function GFxUI.GFxMoviePlayer.GetLP")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function GFxUI.GFxMoviePlayer.Init")()); }
+			ScriptFunction SetWidgetPathBinding() { mixin(MGF!("mSetWidgetPathBinding", "Function GFxUI.GFxMoviePlayer.SetWidgetPathBinding")()); }
+			ScriptFunction Advance() { mixin(MGF!("mAdvance", "Function GFxUI.GFxMoviePlayer.Advance")()); }
+			ScriptFunction PostWidgetInit() { mixin(MGF!("mPostWidgetInit", "Function GFxUI.GFxMoviePlayer.PostWidgetInit")()); }
+			ScriptFunction WidgetUnloaded() { mixin(MGF!("mWidgetUnloaded", "Function GFxUI.GFxMoviePlayer.WidgetUnloaded")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function GFxUI.GFxMoviePlayer.WidgetInitialized")()); }
+			ScriptFunction ActionScriptObject() { mixin(MGF!("mActionScriptObject", "Function GFxUI.GFxMoviePlayer.ActionScriptObject")()); }
+			ScriptFunction ActionScriptString() { mixin(MGF!("mActionScriptString", "Function GFxUI.GFxMoviePlayer.ActionScriptString")()); }
+			ScriptFunction ActionScriptFloat() { mixin(MGF!("mActionScriptFloat", "Function GFxUI.GFxMoviePlayer.ActionScriptFloat")()); }
+			ScriptFunction ActionScriptInt() { mixin(MGF!("mActionScriptInt", "Function GFxUI.GFxMoviePlayer.ActionScriptInt")()); }
+			ScriptFunction ActionScriptVoid() { mixin(MGF!("mActionScriptVoid", "Function GFxUI.GFxMoviePlayer.ActionScriptVoid")()); }
+			ScriptFunction Invoke() { mixin(MGF!("mInvoke", "Function GFxUI.GFxMoviePlayer.Invoke")()); }
+			ScriptFunction ActionScriptSetFunction() { mixin(MGF!("mActionScriptSetFunction", "Function GFxUI.GFxMoviePlayer.ActionScriptSetFunction")()); }
+			ScriptFunction CreateArray() { mixin(MGF!("mCreateArray", "Function GFxUI.GFxMoviePlayer.CreateArray")()); }
+			ScriptFunction CreateObject() { mixin(MGF!("mCreateObject", "Function GFxUI.GFxMoviePlayer.CreateObject")()); }
+			ScriptFunction SetVariableStringArray() { mixin(MGF!("mSetVariableStringArray", "Function GFxUI.GFxMoviePlayer.SetVariableStringArray")()); }
+			ScriptFunction SetVariableFloatArray() { mixin(MGF!("mSetVariableFloatArray", "Function GFxUI.GFxMoviePlayer.SetVariableFloatArray")()); }
+			ScriptFunction SetVariableIntArray() { mixin(MGF!("mSetVariableIntArray", "Function GFxUI.GFxMoviePlayer.SetVariableIntArray")()); }
+			ScriptFunction SetVariableArray() { mixin(MGF!("mSetVariableArray", "Function GFxUI.GFxMoviePlayer.SetVariableArray")()); }
+			ScriptFunction GetVariableStringArray() { mixin(MGF!("mGetVariableStringArray", "Function GFxUI.GFxMoviePlayer.GetVariableStringArray")()); }
+			ScriptFunction GetVariableFloatArray() { mixin(MGF!("mGetVariableFloatArray", "Function GFxUI.GFxMoviePlayer.GetVariableFloatArray")()); }
+			ScriptFunction GetVariableIntArray() { mixin(MGF!("mGetVariableIntArray", "Function GFxUI.GFxMoviePlayer.GetVariableIntArray")()); }
+			ScriptFunction GetVariableArray() { mixin(MGF!("mGetVariableArray", "Function GFxUI.GFxMoviePlayer.GetVariableArray")()); }
+			ScriptFunction SetVariableObject() { mixin(MGF!("mSetVariableObject", "Function GFxUI.GFxMoviePlayer.SetVariableObject")()); }
+			ScriptFunction SetVariableString() { mixin(MGF!("mSetVariableString", "Function GFxUI.GFxMoviePlayer.SetVariableString")()); }
+			ScriptFunction SetVariableNumber() { mixin(MGF!("mSetVariableNumber", "Function GFxUI.GFxMoviePlayer.SetVariableNumber")()); }
+			ScriptFunction SetVariableBool() { mixin(MGF!("mSetVariableBool", "Function GFxUI.GFxMoviePlayer.SetVariableBool")()); }
+			ScriptFunction SetVariable() { mixin(MGF!("mSetVariable", "Function GFxUI.GFxMoviePlayer.SetVariable")()); }
+			ScriptFunction GetVariableObject() { mixin(MGF!("mGetVariableObject", "Function GFxUI.GFxMoviePlayer.GetVariableObject")()); }
+			ScriptFunction GetVariableString() { mixin(MGF!("mGetVariableString", "Function GFxUI.GFxMoviePlayer.GetVariableString")()); }
+			ScriptFunction GetVariableNumber() { mixin(MGF!("mGetVariableNumber", "Function GFxUI.GFxMoviePlayer.GetVariableNumber")()); }
+			ScriptFunction GetVariableBool() { mixin(MGF!("mGetVariableBool", "Function GFxUI.GFxMoviePlayer.GetVariableBool")()); }
+			ScriptFunction GetVariable() { mixin(MGF!("mGetVariable", "Function GFxUI.GFxMoviePlayer.GetVariable")()); }
+			ScriptFunction FilterButtonInput() { mixin(MGF!("mFilterButtonInput", "Function GFxUI.GFxMoviePlayer.FilterButtonInput")()); }
+			ScriptFunction FlushPlayerInput() { mixin(MGF!("mFlushPlayerInput", "Function GFxUI.GFxMoviePlayer.FlushPlayerInput")()); }
+			ScriptFunction ClearFocusIgnoreKeys() { mixin(MGF!("mClearFocusIgnoreKeys", "Function GFxUI.GFxMoviePlayer.ClearFocusIgnoreKeys")()); }
+			ScriptFunction AddFocusIgnoreKey() { mixin(MGF!("mAddFocusIgnoreKey", "Function GFxUI.GFxMoviePlayer.AddFocusIgnoreKey")()); }
+			ScriptFunction ClearCaptureKeys() { mixin(MGF!("mClearCaptureKeys", "Function GFxUI.GFxMoviePlayer.ClearCaptureKeys")()); }
+			ScriptFunction AddCaptureKey() { mixin(MGF!("mAddCaptureKey", "Function GFxUI.GFxMoviePlayer.AddCaptureKey")()); }
+			ScriptFunction SetMovieCanReceiveInput() { mixin(MGF!("mSetMovieCanReceiveInput", "Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveInput")()); }
+			ScriptFunction SetMovieCanReceiveFocus() { mixin(MGF!("mSetMovieCanReceiveFocus", "Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveFocus")()); }
+			ScriptFunction SetPerspective3D() { mixin(MGF!("mSetPerspective3D", "Function GFxUI.GFxMoviePlayer.SetPerspective3D")()); }
+			ScriptFunction SetView3D() { mixin(MGF!("mSetView3D", "Function GFxUI.GFxMoviePlayer.SetView3D")()); }
+			ScriptFunction GetVisibleFrameRect() { mixin(MGF!("mGetVisibleFrameRect", "Function GFxUI.GFxMoviePlayer.GetVisibleFrameRect")()); }
+			ScriptFunction SetAlignment() { mixin(MGF!("mSetAlignment", "Function GFxUI.GFxMoviePlayer.SetAlignment")()); }
+			ScriptFunction SetViewScaleMode() { mixin(MGF!("mSetViewScaleMode", "Function GFxUI.GFxMoviePlayer.SetViewScaleMode")()); }
+			ScriptFunction SetViewport() { mixin(MGF!("mSetViewport", "Function GFxUI.GFxMoviePlayer.SetViewport")()); }
+			ScriptFunction GetGameViewportClient() { mixin(MGF!("mGetGameViewportClient", "Function GFxUI.GFxMoviePlayer.GetGameViewportClient")()); }
+			ScriptFunction SetPriority() { mixin(MGF!("mSetPriority", "Function GFxUI.GFxMoviePlayer.SetPriority")()); }
+			ScriptFunction PublishDataStoreValues() { mixin(MGF!("mPublishDataStoreValues", "Function GFxUI.GFxMoviePlayer.PublishDataStoreValues")()); }
+			ScriptFunction RefreshDataStoreBindings() { mixin(MGF!("mRefreshDataStoreBindings", "Function GFxUI.GFxMoviePlayer.RefreshDataStoreBindings")()); }
+			ScriptFunction SetExternalTexture() { mixin(MGF!("mSetExternalTexture", "Function GFxUI.GFxMoviePlayer.SetExternalTexture")()); }
+			ScriptFunction SetExternalInterface() { mixin(MGF!("mSetExternalInterface", "Function GFxUI.GFxMoviePlayer.SetExternalInterface")()); }
+			ScriptFunction SetForceSmoothAnimation() { mixin(MGF!("mSetForceSmoothAnimation", "Function GFxUI.GFxMoviePlayer.SetForceSmoothAnimation")()); }
+			ScriptFunction SetTimingMode() { mixin(MGF!("mSetTimingMode", "Function GFxUI.GFxMoviePlayer.SetTimingMode")()); }
+			ScriptFunction SetMovieInfo() { mixin(MGF!("mSetMovieInfo", "Function GFxUI.GFxMoviePlayer.SetMovieInfo")()); }
+			ScriptFunction ConditionalClearPause() { mixin(MGF!("mConditionalClearPause", "Function GFxUI.GFxMoviePlayer.ConditionalClearPause")()); }
+			ScriptFunction OnClose() { mixin(MGF!("mOnClose", "Function GFxUI.GFxMoviePlayer.OnClose")()); }
+			ScriptFunction Close() { mixin(MGF!("mClose", "Function GFxUI.GFxMoviePlayer.Close")()); }
+			ScriptFunction SetPause() { mixin(MGF!("mSetPause", "Function GFxUI.GFxMoviePlayer.SetPause")()); }
+			ScriptFunction OnPostAdvance() { mixin(MGF!("mOnPostAdvance", "Function GFxUI.GFxMoviePlayer.OnPostAdvance")()); }
+			ScriptFunction PostAdvance() { mixin(MGF!("mPostAdvance", "Function GFxUI.GFxMoviePlayer.PostAdvance")()); }
+			ScriptFunction Start() { mixin(MGF!("mStart", "Function GFxUI.GFxMoviePlayer.Start")()); }
 		}
 	}
 	enum ASType : ubyte
@@ -213,17 +214,17 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GFxUI.GFxMoviePlayer.ASValue")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.ASValue")()); }
 		@property final
 		{
 			auto ref
 			{
-				GFxMoviePlayer.ASType Type() { return *cast(GFxMoviePlayer.ASType*)(cast(size_t)&this + 0); }
-				float N() { return *cast(float*)(cast(size_t)&this + 8); }
-				ScriptString S() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
+				GFxMoviePlayer.ASType Type() { mixin(MGPS!(GFxMoviePlayer.ASType, 0)()); }
+				float N() { mixin(MGPS!(float, 8)()); }
+				ScriptString S() { mixin(MGPS!(ScriptString, 12)()); }
 			}
-			bool B() { return (*cast(uint*)(cast(size_t)&this + 4) & 0x1) != 0; }
-			bool B(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 4) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 4) &= ~0x1; } return val; }
+			bool B() { mixin(MGBPS!(4, 0x1)()); }
+			bool B(bool val) { mixin(MSBPS!(4, 0x1)()); }
 		}
 	}
 	struct GFxWidgetBinding
@@ -231,11 +232,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GFxUI.GFxMoviePlayer.GFxWidgetBinding")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.GFxWidgetBinding")()); }
 		@property final auto ref
 		{
-			ScriptName WidgetName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptClass WidgetClass() { return *cast(ScriptClass*)(cast(size_t)&this + 8); }
+			ScriptName WidgetName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptClass WidgetClass() { mixin(MGPS!(ScriptClass, 8)()); }
 		}
 	}
 	struct SoundThemeBinding
@@ -243,11 +244,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GFxUI.GFxMoviePlayer.SoundThemeBinding")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.SoundThemeBinding")()); }
 		@property final auto ref
 		{
-			ScriptName ThemeName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			UISoundTheme Theme() { return *cast(UISoundTheme*)(cast(size_t)&this + 8); }
+			ScriptName ThemeName() { mixin(MGPS!(ScriptName, 0)()); }
+			UISoundTheme Theme() { mixin(MGPS!(UISoundTheme, 8)()); }
 		}
 	}
 	struct GFxDataStoreBinding
@@ -255,24 +256,25 @@ public extern(D):
 		private ubyte __buffer__[152];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GFxUI.GFxMoviePlayer.GFxDataStoreBinding")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.GFxDataStoreBinding")()); }
 		@property final
 		{
 			auto ref
 			{
-				UIRoot.UIDataStoreBinding DataSource() { return *cast(UIRoot.UIDataStoreBinding*)(cast(size_t)&this + 0); }
-				ScriptString VarPath() { return *cast(ScriptString*)(cast(size_t)&this + 48); }
-				ScriptString ModelId() { return *cast(ScriptString*)(cast(size_t)&this + 60); }
-				ScriptString ControlId() { return *cast(ScriptString*)(cast(size_t)&this + 72); }
-				ScriptArray!(ScriptName) CellTags() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)&this + 88); }
-				ScriptArray!(ubyte) ModelIdUtf8() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 100); }
-				ScriptArray!(ubyte) ControlIdUtf8() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 112); }
-				ScriptArray!(ScriptName) FullCellTags() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)&this + 132); }
-				UObject.Pointer ModelRef() { return *cast(UObject.Pointer*)(cast(size_t)&this + 144); }
-				UObject.Pointer ControlRef() { return *cast(UObject.Pointer*)(cast(size_t)&this + 148); }
+				UIRoot.UIDataStoreBinding DataSource() { mixin(MGPS!(UIRoot.UIDataStoreBinding, 0)()); }
+				ScriptString VarPath() { mixin(MGPS!(ScriptString, 48)()); }
+				ScriptString ModelId() { mixin(MGPS!(ScriptString, 60)()); }
+				ScriptString ControlId() { mixin(MGPS!(ScriptString, 72)()); }
+				ScriptArray!(ScriptName) CellTags() { mixin(MGPS!(ScriptArray!(ScriptName), 88)()); }
+				ScriptArray!(ubyte) ModelIdUtf8() { mixin(MGPS!(ScriptArray!(ubyte), 100)()); }
+				ScriptArray!(ubyte) ControlIdUtf8() { mixin(MGPS!(ScriptArray!(ubyte), 112)()); }
+				// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'ListDataProvider'!
+				ScriptArray!(ScriptName) FullCellTags() { mixin(MGPS!(ScriptArray!(ScriptName), 132)()); }
+				UObject.Pointer ModelRef() { mixin(MGPS!(UObject.Pointer, 144)()); }
+				UObject.Pointer ControlRef() { mixin(MGPS!(UObject.Pointer, 148)()); }
 			}
-			bool bEditable() { return (*cast(uint*)(cast(size_t)&this + 84) & 0x1) != 0; }
-			bool bEditable(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 84) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 84) &= ~0x1; } return val; }
+			bool bEditable() { mixin(MGBPS!(84, 0x1)()); }
+			bool bEditable(bool val) { mixin(MSBPS!(84, 0x1)()); }
 		}
 	}
 	struct ExternalTexture
@@ -280,10 +282,10 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GFxUI.GFxMoviePlayer.ExternalTexture")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.ExternalTexture")()); }
 		@property final auto ref
 		{
-			ScriptString Resource() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			ScriptString Resource() { mixin(MGPS!(ScriptString, 0)()); }
 			// WARNING: Property 'Texture' has the same name as a defined type!
 		}
 	}
@@ -291,56 +293,60 @@ public extern(D):
 	{
 		auto ref
 		{
-			int LocalPlayerOwnerIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 208); }
-			SwfMovie MovieInfo() { return *cast(SwfMovie*)(cast(size_t)cast(void*)this + 196); }
-			UObject ExternalInterface() { return *cast(UObject*)(cast(size_t)cast(void*)this + 212); }
-			UObject.Pointer pMovie() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
-			UObject.Pointer pCaptureKeys() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 64); }
-			UObject.Pointer pFocusIgnoreKeys() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }
-			int NextASUObject() { return *cast(int*)(cast(size_t)cast(void*)this + 192); }
-			TextureRenderTarget2D RenderTexture() { return *cast(TextureRenderTarget2D*)(cast(size_t)cast(void*)this + 204); }
-			ScriptArray!(ScriptName) CaptureKeys() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 216); }
-			ScriptArray!(ScriptName) FocusIgnoreKeys() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 228); }
-			ScriptArray!(GFxMoviePlayer.ExternalTexture) ExternalTextures() { return *cast(ScriptArray!(GFxMoviePlayer.ExternalTexture)*)(cast(size_t)cast(void*)this + 240); }
-			ScriptArray!(GFxMoviePlayer.SoundThemeBinding) SoundThemes() { return *cast(ScriptArray!(GFxMoviePlayer.SoundThemeBinding)*)(cast(size_t)cast(void*)this + 252); }
-			GFxMoviePlayer.GFxTimingMode TimingMode() { return *cast(GFxMoviePlayer.GFxTimingMode*)(cast(size_t)cast(void*)this + 264); }
-			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { return *cast(GFxMoviePlayer.GFxRenderTextureMode*)(cast(size_t)cast(void*)this + 265); }
-			ubyte Priority() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 266); }
-			ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding) DataStoreBindings() { return *cast(ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding)*)(cast(size_t)cast(void*)this + 268); }
-			GFxDataStoreSubscriber DataStoreSubscriber() { return *cast(GFxDataStoreSubscriber*)(cast(size_t)cast(void*)this + 280); }
-			ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) WidgetBindings() { return *cast(ScriptArray!(GFxMoviePlayer.GFxWidgetBinding)*)(cast(size_t)cast(void*)this + 284); }
-			ScriptArray!(GFxObject) ObjectValues() { return *cast(ScriptArray!(GFxObject)*)(cast(size_t)cast(void*)this + 356); }
+			int LocalPlayerOwnerIndex() { mixin(MGPC!(int, 208)()); }
+			SwfMovie MovieInfo() { mixin(MGPC!(SwfMovie, 196)()); }
+			UObject ExternalInterface() { mixin(MGPC!(UObject, 212)()); }
+			UObject.Pointer pMovie() { mixin(MGPC!(UObject.Pointer, 60)()); }
+			UObject.Pointer pCaptureKeys() { mixin(MGPC!(UObject.Pointer, 64)()); }
+			UObject.Pointer pFocusIgnoreKeys() { mixin(MGPC!(UObject.Pointer, 68)()); }
+			// ERROR: Unsupported object class 'MapProperty' for the property named 'ASUClasses'!
+			// ERROR: Unsupported object class 'MapProperty' for the property named 'ASUObjects'!
+			int NextASUObject() { mixin(MGPC!(int, 192)()); }
+			TextureRenderTarget2D RenderTexture() { mixin(MGPC!(TextureRenderTarget2D, 204)()); }
+			ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 216)()); }
+			ScriptArray!(ScriptName) FocusIgnoreKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 228)()); }
+			ScriptArray!(GFxMoviePlayer.ExternalTexture) ExternalTextures() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.ExternalTexture), 240)()); }
+			ScriptArray!(GFxMoviePlayer.SoundThemeBinding) SoundThemes() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.SoundThemeBinding), 252)()); }
+			GFxMoviePlayer.GFxTimingMode TimingMode() { mixin(MGPC!(GFxMoviePlayer.GFxTimingMode, 264)()); }
+			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { mixin(MGPC!(GFxMoviePlayer.GFxRenderTextureMode, 265)()); }
+			ubyte Priority() { mixin(MGPC!(ubyte, 266)()); }
+			ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding) DataStoreBindings() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding), 268)()); }
+			GFxDataStoreSubscriber DataStoreSubscriber() { mixin(MGPC!(GFxDataStoreSubscriber, 280)()); }
+			ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) WidgetBindings() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.GFxWidgetBinding), 284)()); }
+			// ERROR: Unsupported object class 'MapProperty' for the property named 'WidgetPathBindings'!
+			ScriptArray!(GFxObject) ObjectValues() { mixin(MGPC!(ScriptArray!(GFxObject), 356)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPostAdvance__Delegate'!
 		}
-		bool bAutoPlay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x80) != 0; }
-		bool bAutoPlay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x80; } return val; }
-		bool bPauseGameWhileActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x100) != 0; }
-		bool bPauseGameWhileActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x100; } return val; }
-		bool bMovieIsOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x1) != 0; }
-		bool bMovieIsOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x1; } return val; }
-		bool bDisplayWithHudOff() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x2) != 0; }
-		bool bDisplayWithHudOff(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x2; } return val; }
-		bool bEnableGammaCorrection() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x4) != 0; }
-		bool bEnableGammaCorrection(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x4; } return val; }
-		bool bWidgetsInitializedThisFrame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x8) != 0; }
-		bool bWidgetsInitializedThisFrame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x8; } return val; }
-		bool bLogUnhandedWidgetInitializations() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x10) != 0; }
-		bool bLogUnhandedWidgetInitializations(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x10; } return val; }
-		bool bAllowInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x20) != 0; }
-		bool bAllowInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x20; } return val; }
-		bool bAllowFocus() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x40) != 0; }
-		bool bAllowFocus(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x40; } return val; }
-		bool bCloseOnLevelChange() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x200) != 0; }
-		bool bCloseOnLevelChange(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x200; } return val; }
-		bool bOnlyOwnerFocusable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x400) != 0; }
-		bool bOnlyOwnerFocusable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x400; } return val; }
-		bool bDiscardNonOwnerInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x800) != 0; }
-		bool bDiscardNonOwnerInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x800; } return val; }
-		bool bCaptureInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x1000) != 0; }
-		bool bCaptureInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x1000; } return val; }
-		bool bIgnoreMouseInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x2000) != 0; }
-		bool bIgnoreMouseInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x2000; } return val; }
-		bool bForceSmoothAnimation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 200) & 0x4000) != 0; }
-		bool bForceSmoothAnimation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 200) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 200) &= ~0x4000; } return val; }
+		bool bAutoPlay() { mixin(MGBPC!(200, 0x80)()); }
+		bool bAutoPlay(bool val) { mixin(MSBPC!(200, 0x80)()); }
+		bool bPauseGameWhileActive() { mixin(MGBPC!(200, 0x100)()); }
+		bool bPauseGameWhileActive(bool val) { mixin(MSBPC!(200, 0x100)()); }
+		bool bMovieIsOpen() { mixin(MGBPC!(200, 0x1)()); }
+		bool bMovieIsOpen(bool val) { mixin(MSBPC!(200, 0x1)()); }
+		bool bDisplayWithHudOff() { mixin(MGBPC!(200, 0x2)()); }
+		bool bDisplayWithHudOff(bool val) { mixin(MSBPC!(200, 0x2)()); }
+		bool bEnableGammaCorrection() { mixin(MGBPC!(200, 0x4)()); }
+		bool bEnableGammaCorrection(bool val) { mixin(MSBPC!(200, 0x4)()); }
+		bool bWidgetsInitializedThisFrame() { mixin(MGBPC!(200, 0x8)()); }
+		bool bWidgetsInitializedThisFrame(bool val) { mixin(MSBPC!(200, 0x8)()); }
+		bool bLogUnhandedWidgetInitializations() { mixin(MGBPC!(200, 0x10)()); }
+		bool bLogUnhandedWidgetInitializations(bool val) { mixin(MSBPC!(200, 0x10)()); }
+		bool bAllowInput() { mixin(MGBPC!(200, 0x20)()); }
+		bool bAllowInput(bool val) { mixin(MSBPC!(200, 0x20)()); }
+		bool bAllowFocus() { mixin(MGBPC!(200, 0x40)()); }
+		bool bAllowFocus(bool val) { mixin(MSBPC!(200, 0x40)()); }
+		bool bCloseOnLevelChange() { mixin(MGBPC!(200, 0x200)()); }
+		bool bCloseOnLevelChange(bool val) { mixin(MSBPC!(200, 0x200)()); }
+		bool bOnlyOwnerFocusable() { mixin(MGBPC!(200, 0x400)()); }
+		bool bOnlyOwnerFocusable(bool val) { mixin(MSBPC!(200, 0x400)()); }
+		bool bDiscardNonOwnerInput() { mixin(MGBPC!(200, 0x800)()); }
+		bool bDiscardNonOwnerInput(bool val) { mixin(MSBPC!(200, 0x800)()); }
+		bool bCaptureInput() { mixin(MGBPC!(200, 0x1000)()); }
+		bool bCaptureInput(bool val) { mixin(MSBPC!(200, 0x1000)()); }
+		bool bIgnoreMouseInput() { mixin(MGBPC!(200, 0x2000)()); }
+		bool bIgnoreMouseInput(bool val) { mixin(MSBPC!(200, 0x2000)()); }
+		bool bForceSmoothAnimation() { mixin(MGBPC!(200, 0x4000)()); }
+		bool bForceSmoothAnimation(bool val) { mixin(MSBPC!(200, 0x4000)()); }
 	}
 final:
 	void OnFocusLost(int LocalPlayerIndex)
@@ -536,46 +542,46 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVariableArray, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	bool GetVariableStringArray(ScriptString Path, int Index, ScriptArray!(ScriptString)* Arg)
+	bool GetVariableStringArray(ScriptString Path, int Index, ref ScriptArray!(ScriptString) Arg)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Path;
 		*cast(int*)&params[12] = Index;
-		*cast(ScriptArray!(ScriptString)*)&params[16] = *Arg;
+		*cast(ScriptArray!(ScriptString)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableStringArray, params.ptr, cast(void*)0);
 		*Arg = *cast(ScriptArray!(ScriptString)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	bool GetVariableFloatArray(ScriptString Path, int Index, ScriptArray!(float)* Arg)
+	bool GetVariableFloatArray(ScriptString Path, int Index, ref ScriptArray!(float) Arg)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Path;
 		*cast(int*)&params[12] = Index;
-		*cast(ScriptArray!(float)*)&params[16] = *Arg;
+		*cast(ScriptArray!(float)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableFloatArray, params.ptr, cast(void*)0);
 		*Arg = *cast(ScriptArray!(float)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	bool GetVariableIntArray(ScriptString Path, int Index, ScriptArray!(int)* Arg)
+	bool GetVariableIntArray(ScriptString Path, int Index, ref ScriptArray!(int) Arg)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Path;
 		*cast(int*)&params[12] = Index;
-		*cast(ScriptArray!(int)*)&params[16] = *Arg;
+		*cast(ScriptArray!(int)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableIntArray, params.ptr, cast(void*)0);
 		*Arg = *cast(ScriptArray!(int)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	bool GetVariableArray(ScriptString Path, int Index, ScriptArray!(GFxMoviePlayer.ASValue)* Arg)
+	bool GetVariableArray(ScriptString Path, int Index, ref ScriptArray!(GFxMoviePlayer.ASValue) Arg)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Path;
 		*cast(int*)&params[12] = Index;
-		*cast(ScriptArray!(GFxMoviePlayer.ASValue)*)&params[16] = *Arg;
+		*cast(ScriptArray!(GFxMoviePlayer.ASValue)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableArray, params.ptr, cast(void*)0);
 		*Arg = *cast(ScriptArray!(GFxMoviePlayer.ASValue)*)&params[16];
 		return *cast(bool*)&params[28];
@@ -714,30 +720,30 @@ final:
 		*cast(bool*)params.ptr = bCanReceiveFocus;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetMovieCanReceiveFocus, params.ptr, cast(void*)0);
 	}
-	void SetPerspective3D(UObject.Matrix* matPersp)
+	void SetPerspective3D(ref const UObject.Matrix matPersp)
 	{
 		ubyte params[64];
 		params[] = 0;
-		*cast(UObject.Matrix*)params.ptr = *matPersp;
+		*cast(UObject.Matrix*)params.ptr = matPersp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPerspective3D, params.ptr, cast(void*)0);
 		*matPersp = *cast(UObject.Matrix*)params.ptr;
 	}
-	void SetView3D(UObject.Matrix* matView)
+	void SetView3D(ref const UObject.Matrix matView)
 	{
 		ubyte params[64];
 		params[] = 0;
-		*cast(UObject.Matrix*)params.ptr = *matView;
+		*cast(UObject.Matrix*)params.ptr = matView;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetView3D, params.ptr, cast(void*)0);
 		*matView = *cast(UObject.Matrix*)params.ptr;
 	}
-	void GetVisibleFrameRect(float* x0, float* y0, float* X1, float* Y1)
+	void GetVisibleFrameRect(ref float x0, ref float y0, ref float X1, ref float Y1)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(float*)params.ptr = *x0;
-		*cast(float*)&params[4] = *y0;
-		*cast(float*)&params[8] = *X1;
-		*cast(float*)&params[12] = *Y1;
+		*cast(float*)params.ptr = x0;
+		*cast(float*)&params[4] = y0;
+		*cast(float*)&params[8] = X1;
+		*cast(float*)&params[12] = Y1;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVisibleFrameRect, params.ptr, cast(void*)0);
 		*x0 = *cast(float*)params.ptr;
 		*y0 = *cast(float*)&params[4];

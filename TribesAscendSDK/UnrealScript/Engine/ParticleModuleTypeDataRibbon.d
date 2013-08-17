@@ -1,15 +1,16 @@
 module UnrealScript.Engine.ParticleModuleTypeDataRibbon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
 
 extern(C++) interface ParticleModuleTypeDataRibbon : ParticleModuleTypeDataBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataRibbon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleTypeDataRibbon")()); }
 	private static __gshared ParticleModuleTypeDataRibbon mDefaultProperties;
-	@property final static ParticleModuleTypeDataRibbon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataRibbon)("ParticleModuleTypeDataRibbon Engine.Default__ParticleModuleTypeDataRibbon")); }
+	@property final static ParticleModuleTypeDataRibbon DefaultProperties() { mixin(MGDPC!(ParticleModuleTypeDataRibbon, "ParticleModuleTypeDataRibbon Engine.Default__ParticleModuleTypeDataRibbon")()); }
 	enum ETrailsRenderAxisOption : ubyte
 	{
 		Trails_CameraUp = 0,
@@ -21,33 +22,33 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TangentTessellationScalar() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			float DistanceTessellationStepSize() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float TilingDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float TangentSpawningScalar() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption RenderAxis() { return *cast(ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption*)(cast(size_t)cast(void*)this + 92); }
-			int MaxTessellationBetweenParticles() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			int MaxParticleInTrailCount() { return *cast(int*)(cast(size_t)cast(void*)this + 84); }
-			int MaxTrailCount() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
-			int SheetsPerTrail() { return *cast(int*)(cast(size_t)cast(void*)this + 76); }
+			float TangentTessellationScalar() { mixin(MGPC!(float, 108)()); }
+			float DistanceTessellationStepSize() { mixin(MGPC!(float, 104)()); }
+			float TilingDistance() { mixin(MGPC!(float, 100)()); }
+			float TangentSpawningScalar() { mixin(MGPC!(float, 96)()); }
+			ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption RenderAxis() { mixin(MGPC!(ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption, 92)()); }
+			int MaxTessellationBetweenParticles() { mixin(MGPC!(int, 72)()); }
+			int MaxParticleInTrailCount() { mixin(MGPC!(int, 84)()); }
+			int MaxTrailCount() { mixin(MGPC!(int, 80)()); }
+			int SheetsPerTrail() { mixin(MGPC!(int, 76)()); }
 		}
-		bool bRenderTessellation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x100) != 0; }
-		bool bRenderTessellation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x100; } return val; }
-		bool bRenderTangents() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x80) != 0; }
-		bool bRenderTangents(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x80; } return val; }
-		bool bRenderSpawnPoints() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x40) != 0; }
-		bool bRenderSpawnPoints(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x40; } return val; }
-		bool bRenderGeometry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x20) != 0; }
-		bool bRenderGeometry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x20; } return val; }
-		bool bTangentRecalculationEveryFrame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x10) != 0; }
-		bool bTangentRecalculationEveryFrame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x10; } return val; }
-		bool bEnablePreviousTangentRecalculation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x8) != 0; }
-		bool bEnablePreviousTangentRecalculation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x8; } return val; }
-		bool bClipSourceSegement() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x4) != 0; }
-		bool bClipSourceSegement(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x4; } return val; }
-		bool bDeadTrailsOnSourceLoss() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x2) != 0; }
-		bool bDeadTrailsOnSourceLoss(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x2; } return val; }
-		bool bDeadTrailsOnDeactivate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bDeadTrailsOnDeactivate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bRenderTessellation() { mixin(MGBPC!(88, 0x100)()); }
+		bool bRenderTessellation(bool val) { mixin(MSBPC!(88, 0x100)()); }
+		bool bRenderTangents() { mixin(MGBPC!(88, 0x80)()); }
+		bool bRenderTangents(bool val) { mixin(MSBPC!(88, 0x80)()); }
+		bool bRenderSpawnPoints() { mixin(MGBPC!(88, 0x40)()); }
+		bool bRenderSpawnPoints(bool val) { mixin(MSBPC!(88, 0x40)()); }
+		bool bRenderGeometry() { mixin(MGBPC!(88, 0x20)()); }
+		bool bRenderGeometry(bool val) { mixin(MSBPC!(88, 0x20)()); }
+		bool bTangentRecalculationEveryFrame() { mixin(MGBPC!(88, 0x10)()); }
+		bool bTangentRecalculationEveryFrame(bool val) { mixin(MSBPC!(88, 0x10)()); }
+		bool bEnablePreviousTangentRecalculation() { mixin(MGBPC!(88, 0x8)()); }
+		bool bEnablePreviousTangentRecalculation(bool val) { mixin(MSBPC!(88, 0x8)()); }
+		bool bClipSourceSegement() { mixin(MGBPC!(88, 0x4)()); }
+		bool bClipSourceSegement(bool val) { mixin(MSBPC!(88, 0x4)()); }
+		bool bDeadTrailsOnSourceLoss() { mixin(MGBPC!(88, 0x2)()); }
+		bool bDeadTrailsOnSourceLoss(bool val) { mixin(MSBPC!(88, 0x2)()); }
+		bool bDeadTrailsOnDeactivate() { mixin(MGBPC!(88, 0x1)()); }
+		bool bDeadTrailsOnDeactivate(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 }

@@ -77,7 +77,6 @@
     <Compile Include="Subsystem.d" />
     <Compile Include="System.d" />
     <Compile Include="TextBuffer.d" />
-    <Compile Include="TextBufferFactory.d" />
     <Compile Include="UObject.d" />
     <Compile Include="UInterface.d" />
   </ItemGroup>

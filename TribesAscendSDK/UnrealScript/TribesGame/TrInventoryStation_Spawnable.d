@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrInventoryStation_Spawnable;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.TribesGame.TrInventoryStation;
 import UnrealScript.Engine.Actor;
@@ -9,13 +10,13 @@ extern(C++) interface TrInventoryStation_Spawnable : TrInventoryStation
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryStation_Spawnable")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrInventoryStation_Spawnable")()); }
 	private static __gshared TrInventoryStation_Spawnable mDefaultProperties;
-	@property final static TrInventoryStation_Spawnable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventoryStation_Spawnable)("TrInventoryStation_Spawnable TribesGame.Default__TrInventoryStation_Spawnable")); }
+	@property final static TrInventoryStation_Spawnable DefaultProperties() { mixin(MGDPC!(TrInventoryStation_Spawnable, "TrInventoryStation_Spawnable TribesGame.Default__TrInventoryStation_Spawnable")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTakeDamage;
-		public @property static final ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryStation_Spawnable.TakeDamage")); }
+		public @property static final ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrInventoryStation_Spawnable.TakeDamage")()); }
 	}
 	final void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{

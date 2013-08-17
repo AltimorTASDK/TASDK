@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NxTornadoAngularForceField;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NxForceField;
 import UnrealScript.Core.UObject;
 
@@ -8,26 +9,26 @@ extern(C++) interface NxTornadoAngularForceField : NxForceField
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxTornadoAngularForceField")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NxTornadoAngularForceField")()); }
 	private static __gshared NxTornadoAngularForceField mDefaultProperties;
-	@property final static NxTornadoAngularForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxTornadoAngularForceField)("NxTornadoAngularForceField Engine.Default__NxTornadoAngularForceField")); }
+	@property final static NxTornadoAngularForceField DefaultProperties() { mixin(MGDPC!(NxTornadoAngularForceField, "NxTornadoAngularForceField Engine.Default__NxTornadoAngularForceField")()); }
 	@property final
 	{
 		auto ref
 		{
-			UObject.Pointer Kernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 584); }
-			float SelfRotationStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-			float HeightOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-			float ForceHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 568); }
-			float EscapeVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 564); }
-			float LiftFalloffHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-			float ForceTopRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			float ForceRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			float LiftStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-			float RotationalStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
-			float RadialStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
+			UObject.Pointer Kernel() { mixin(MGPC!(UObject.Pointer, 584)()); }
+			float SelfRotationStrength() { mixin(MGPC!(float, 580)()); }
+			float HeightOffset() { mixin(MGPC!(float, 572)()); }
+			float ForceHeight() { mixin(MGPC!(float, 568)()); }
+			float EscapeVelocity() { mixin(MGPC!(float, 564)()); }
+			float LiftFalloffHeight() { mixin(MGPC!(float, 560)()); }
+			float ForceTopRadius() { mixin(MGPC!(float, 556)()); }
+			float ForceRadius() { mixin(MGPC!(float, 552)()); }
+			float LiftStrength() { mixin(MGPC!(float, 548)()); }
+			float RotationalStrength() { mixin(MGPC!(float, 544)()); }
+			float RadialStrength() { mixin(MGPC!(float, 540)()); }
 		}
-		bool BSpecialRadialForceMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 576) & 0x1) != 0; }
-		bool BSpecialRadialForceMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 576) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 576) &= ~0x1; } return val; }
+		bool BSpecialRadialForceMode() { mixin(MGBPC!(576, 0x1)()); }
+		bool BSpecialRadialForceMode(bool val) { mixin(MSBPC!(576, 0x1)()); }
 	}
 }

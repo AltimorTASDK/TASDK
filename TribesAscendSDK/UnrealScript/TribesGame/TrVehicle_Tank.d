@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrVehicle_Tank;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.CameraShake;
 import UnrealScript.TribesGame.TrVehicle;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrVehicle_Tank : TrVehicle
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicle_Tank")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicle_Tank")()); }
 	private static __gshared TrVehicle_Tank mDefaultProperties;
-	@property final static TrVehicle_Tank DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicle_Tank)("TrVehicle_Tank TribesGame.Default__TrVehicle_Tank")); }
+	@property final static TrVehicle_Tank DefaultProperties() { mixin(MGDPC!(TrVehicle_Tank, "TrVehicle_Tank TribesGame.Default__TrVehicle_Tank")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,20 +23,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_Tank.PostInitAnimTree")); }
-			ScriptFunction VehicleWeaponFireEffects() { return mVehicleWeaponFireEffects ? mVehicleWeaponFireEffects : (mVehicleWeaponFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_Tank.VehicleWeaponFireEffects")); }
-			ScriptFunction ProcessViewRotationBasedOnSeat() { return mProcessViewRotationBasedOnSeat ? mProcessViewRotationBasedOnSeat : (mProcessViewRotationBasedOnSeat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_Tank.ProcessViewRotationBasedOnSeat")); }
-			ScriptFunction LimitViewRotation() { return mLimitViewRotation ? mLimitViewRotation : (mLimitViewRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_Tank.LimitViewRotation")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrVehicle_Tank.PostInitAnimTree")()); }
+			ScriptFunction VehicleWeaponFireEffects() { mixin(MGF!("mVehicleWeaponFireEffects", "Function TribesGame.TrVehicle_Tank.VehicleWeaponFireEffects")()); }
+			ScriptFunction ProcessViewRotationBasedOnSeat() { mixin(MGF!("mProcessViewRotationBasedOnSeat", "Function TribesGame.TrVehicle_Tank.ProcessViewRotationBasedOnSeat")()); }
+			ScriptFunction LimitViewRotation() { mixin(MGF!("mLimitViewRotation", "Function TribesGame.TrVehicle_Tank.LimitViewRotation")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_CameraShakeEffectiveRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 3244); }
-		CameraShake m_FireCameraShake() { return *cast(CameraShake*)(cast(size_t)cast(void*)this + 3240); }
-		ubyte GunnerFiringMode() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 3237); }
-		ubyte GunnerFlashCount() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 3236); }
-		Rotator GunnerWeaponRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 3224); }
-		Vector GunnerFlashLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 3212); }
+		float m_CameraShakeEffectiveRadius() { mixin(MGPC!(float, 3244)()); }
+		CameraShake m_FireCameraShake() { mixin(MGPC!(CameraShake, 3240)()); }
+		ubyte GunnerFiringMode() { mixin(MGPC!(ubyte, 3237)()); }
+		ubyte GunnerFlashCount() { mixin(MGPC!(ubyte, 3236)()); }
+		Rotator GunnerWeaponRotation() { mixin(MGPC!(Rotator, 3224)()); }
+		Vector GunnerFlashLocation() { mixin(MGPC!(Vector, 3212)()); }
 	}
 final:
 	void PostInitAnimTree(
@@ -57,14 +58,14 @@ void**)params.ptr = SkelComp;
 		*cast(int*)&params[12] = SeatIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VehicleWeaponFireEffects, params.ptr, cast(void*)0);
 	}
-	void ProcessViewRotationBasedOnSeat(int SeatIndex, float DeltaTime, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
+	void ProcessViewRotationBasedOnSeat(int SeatIndex, float DeltaTime, ref Rotator out_ViewRotation, ref Rotator out_DeltaRot)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
 		*cast(float*)&params[4] = DeltaTime;
-		*cast(Rotator*)&params[8] = *out_ViewRotation;
-		*cast(Rotator*)&params[20] = *out_DeltaRot;
+		*cast(Rotator*)&params[8] = out_ViewRotation;
+		*cast(Rotator*)&params[20] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotationBasedOnSeat, params.ptr, cast(void*)0);
 		*out_ViewRotation = *cast(Rotator*)&params[8];
 		*out_DeltaRot = *cast(Rotator*)&params[20];

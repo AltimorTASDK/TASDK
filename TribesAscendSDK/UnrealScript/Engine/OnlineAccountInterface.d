@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineAccountInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineAccountInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineAccountInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineAccountInterface")()); }
 	private static __gshared OnlineAccountInterface mDefaultProperties;
-	@property final static OnlineAccountInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineAccountInterface)("OnlineAccountInterface Engine.Default__OnlineAccountInterface")); }
+	@property final static OnlineAccountInterface DefaultProperties() { mixin(MGDPC!(OnlineAccountInterface, "OnlineAccountInterface Engine.Default__OnlineAccountInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,16 +27,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateOnlineAccount() { return mCreateOnlineAccount ? mCreateOnlineAccount : (mCreateOnlineAccount = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.CreateOnlineAccount")); }
-			ScriptFunction OnCreateOnlineAccountCompleted() { return mOnCreateOnlineAccountCompleted ? mOnCreateOnlineAccountCompleted : (mOnCreateOnlineAccountCompleted = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.OnCreateOnlineAccountCompleted")); }
-			ScriptFunction AddCreateOnlineAccountCompletedDelegate() { return mAddCreateOnlineAccountCompletedDelegate ? mAddCreateOnlineAccountCompletedDelegate : (mAddCreateOnlineAccountCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.AddCreateOnlineAccountCompletedDelegate")); }
-			ScriptFunction ClearCreateOnlineAccountCompletedDelegate() { return mClearCreateOnlineAccountCompletedDelegate ? mClearCreateOnlineAccountCompletedDelegate : (mClearCreateOnlineAccountCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.ClearCreateOnlineAccountCompletedDelegate")); }
-			ScriptFunction CreateLocalAccount() { return mCreateLocalAccount ? mCreateLocalAccount : (mCreateLocalAccount = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.CreateLocalAccount")); }
-			ScriptFunction RenameLocalAccount() { return mRenameLocalAccount ? mRenameLocalAccount : (mRenameLocalAccount = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.RenameLocalAccount")); }
-			ScriptFunction DeleteLocalAccount() { return mDeleteLocalAccount ? mDeleteLocalAccount : (mDeleteLocalAccount = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.DeleteLocalAccount")); }
-			ScriptFunction GetLocalAccountNames() { return mGetLocalAccountNames ? mGetLocalAccountNames : (mGetLocalAccountNames = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineAccountInterface.GetLocalAccountNames")); }
+			ScriptFunction CreateOnlineAccount() { mixin(MGF!("mCreateOnlineAccount", "Function Engine.OnlineAccountInterface.CreateOnlineAccount")()); }
+			ScriptFunction OnCreateOnlineAccountCompleted() { mixin(MGF!("mOnCreateOnlineAccountCompleted", "Function Engine.OnlineAccountInterface.OnCreateOnlineAccountCompleted")()); }
+			ScriptFunction AddCreateOnlineAccountCompletedDelegate() { mixin(MGF!("mAddCreateOnlineAccountCompletedDelegate", "Function Engine.OnlineAccountInterface.AddCreateOnlineAccountCompletedDelegate")()); }
+			ScriptFunction ClearCreateOnlineAccountCompletedDelegate() { mixin(MGF!("mClearCreateOnlineAccountCompletedDelegate", "Function Engine.OnlineAccountInterface.ClearCreateOnlineAccountCompletedDelegate")()); }
+			ScriptFunction CreateLocalAccount() { mixin(MGF!("mCreateLocalAccount", "Function Engine.OnlineAccountInterface.CreateLocalAccount")()); }
+			ScriptFunction RenameLocalAccount() { mixin(MGF!("mRenameLocalAccount", "Function Engine.OnlineAccountInterface.RenameLocalAccount")()); }
+			ScriptFunction DeleteLocalAccount() { mixin(MGF!("mDeleteLocalAccount", "Function Engine.OnlineAccountInterface.DeleteLocalAccount")()); }
+			ScriptFunction GetLocalAccountNames() { mixin(MGF!("mGetLocalAccountNames", "Function Engine.OnlineAccountInterface.GetLocalAccountNames")()); }
 		}
 	}
+	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnCreateOnlineAccountCompleted__Delegate'!
 final:
 	bool CreateOnlineAccount(ScriptString UserName, ScriptString Password, ScriptString EmailAddress, ScriptString ProductKey)
 	{
@@ -105,11 +107,11 @@ void**)params.ptr = AccountCreateDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DeleteLocalAccount, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool GetLocalAccountNames(ScriptArray!(ScriptString)* Accounts)
+	bool GetLocalAccountNames(ref ScriptArray!(ScriptString) Accounts)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptString)*)params.ptr = *Accounts;
+		*cast(ScriptArray!(ScriptString)*)params.ptr = Accounts;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocalAccountNames, params.ptr, cast(void*)0);
 		*Accounts = *cast(ScriptArray!(ScriptString)*)params.ptr;
 		return *cast(bool*)&params[12];

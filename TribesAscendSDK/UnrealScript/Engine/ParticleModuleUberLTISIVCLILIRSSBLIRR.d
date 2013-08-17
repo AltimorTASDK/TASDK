@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleUberLTISIVCLILIRSSBLIRR;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleUberBase;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
@@ -9,29 +10,29 @@ extern(C++) interface ParticleModuleUberLTISIVCLILIRSSBLIRR : ParticleModuleUber
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleUberLTISIVCLILIRSSBLIRR")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleUberLTISIVCLILIRSSBLIRR")()); }
 	private static __gshared ParticleModuleUberLTISIVCLILIRSSBLIRR mDefaultProperties;
-	@property final static ParticleModuleUberLTISIVCLILIRSSBLIRR DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleUberLTISIVCLILIRSSBLIRR)("ParticleModuleUberLTISIVCLILIRSSBLIRR Engine.Default__ParticleModuleUberLTISIVCLILIRSSBLIRR")); }
+	@property final static ParticleModuleUberLTISIVCLILIRSSBLIRR DefaultProperties() { mixin(MGDPC!(ParticleModuleUberLTISIVCLILIRSSBLIRR, "ParticleModuleUberLTISIVCLILIRSSBLIRR Engine.Default__ParticleModuleUberLTISIVCLILIRSSBLIRR")()); }
 	@property final
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat StartRotationRate() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 340); }
-			DistributionVector.RawDistributionVector SizeLifeMultiplier() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 308); }
-			DistributionFloat.RawDistributionFloat StartRotation() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 280); }
-			DistributionVector.RawDistributionVector StartLocation() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 252); }
-			DistributionFloat.RawDistributionFloat AlphaOverLife() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 224); }
-			DistributionVector.RawDistributionVector ColorOverLife() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 196); }
-			DistributionFloat.RawDistributionFloat StartVelocityRadial() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 168); }
-			DistributionVector.RawDistributionVector StartVelocity() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 140); }
-			DistributionVector.RawDistributionVector StartSize() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 112); }
-			DistributionFloat.RawDistributionFloat Lifetime() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 84); }
+			DistributionFloat.RawDistributionFloat StartRotationRate() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 340)()); }
+			DistributionVector.RawDistributionVector SizeLifeMultiplier() { mixin(MGPC!(DistributionVector.RawDistributionVector, 308)()); }
+			DistributionFloat.RawDistributionFloat StartRotation() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 280)()); }
+			DistributionVector.RawDistributionVector StartLocation() { mixin(MGPC!(DistributionVector.RawDistributionVector, 252)()); }
+			DistributionFloat.RawDistributionFloat AlphaOverLife() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 224)()); }
+			DistributionVector.RawDistributionVector ColorOverLife() { mixin(MGPC!(DistributionVector.RawDistributionVector, 196)()); }
+			DistributionFloat.RawDistributionFloat StartVelocityRadial() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 168)()); }
+			DistributionVector.RawDistributionVector StartVelocity() { mixin(MGPC!(DistributionVector.RawDistributionVector, 140)()); }
+			DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!(DistributionVector.RawDistributionVector, 112)()); }
+			DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 84)()); }
 		}
-		bool SizeMultiplyZ() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x4) != 0; }
-		bool SizeMultiplyZ(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x4; } return val; }
-		bool SizeMultiplyY() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x2) != 0; }
-		bool SizeMultiplyY(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x2; } return val; }
-		bool SizeMultiplyX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 336) & 0x1) != 0; }
-		bool SizeMultiplyX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 336) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 336) &= ~0x1; } return val; }
+		bool SizeMultiplyZ() { mixin(MGBPC!(336, 0x4)()); }
+		bool SizeMultiplyZ(bool val) { mixin(MSBPC!(336, 0x4)()); }
+		bool SizeMultiplyY() { mixin(MGBPC!(336, 0x2)()); }
+		bool SizeMultiplyY(bool val) { mixin(MSBPC!(336, 0x2)()); }
+		bool SizeMultiplyX() { mixin(MGBPC!(336, 0x1)()); }
+		bool SizeMultiplyX(bool val) { mixin(MSBPC!(336, 0x1)()); }
 	}
 }

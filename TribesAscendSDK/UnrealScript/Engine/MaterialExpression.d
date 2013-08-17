@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialExpression;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpressionCompound;
 
@@ -8,49 +9,49 @@ extern(C++) interface MaterialExpression : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpression")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpression")()); }
 	private static __gshared MaterialExpression mDefaultProperties;
-	@property final static MaterialExpression DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpression)("MaterialExpression Engine.Default__MaterialExpression")); }
+	@property final static MaterialExpression DefaultProperties() { mixin(MGDPC!(MaterialExpression, "MaterialExpression Engine.Default__MaterialExpression")()); }
 	struct ExpressionInput
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialExpression.ExpressionInput")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialExpression.ExpressionInput")()); }
 		@property final auto ref
 		{
-			int GCC64_Padding() { return *cast(int*)(cast(size_t)&this + 24); }
-			int MaskA() { return *cast(int*)(cast(size_t)&this + 20); }
-			int MaskB() { return *cast(int*)(cast(size_t)&this + 16); }
-			int MaskG() { return *cast(int*)(cast(size_t)&this + 12); }
-			int MaskR() { return *cast(int*)(cast(size_t)&this + 8); }
-			int Mask() { return *cast(int*)(cast(size_t)&this + 4); }
-			MaterialExpression Expression() { return *cast(MaterialExpression*)(cast(size_t)&this + 0); }
+			int GCC64_Padding() { mixin(MGPS!(int, 24)()); }
+			int MaskA() { mixin(MGPS!(int, 20)()); }
+			int MaskB() { mixin(MGPS!(int, 16)()); }
+			int MaskG() { mixin(MGPS!(int, 12)()); }
+			int MaskR() { mixin(MGPS!(int, 8)()); }
+			int Mask() { mixin(MGPS!(int, 4)()); }
+			MaterialExpression Expression() { mixin(MGPS!(MaterialExpression, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) MenuCategories() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 96); }
-			ScriptString Desc() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
-			MaterialExpressionCompound Compound() { return *cast(MaterialExpressionCompound*)(cast(size_t)cast(void*)this + 80); }
-			int MaterialExpressionEditorY() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			int MaterialExpressionEditorX() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-			int EditorY() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			int EditorX() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(ScriptName) MenuCategories() { mixin(MGPC!(ScriptArray!(ScriptName), 96)()); }
+			ScriptString Desc() { mixin(MGPC!(ScriptString, 84)()); }
+			MaterialExpressionCompound Compound() { mixin(MGPC!(MaterialExpressionCompound, 80)()); }
+			int MaterialExpressionEditorY() { mixin(MGPC!(int, 72)()); }
+			int MaterialExpressionEditorX() { mixin(MGPC!(int, 68)()); }
+			int EditorY() { mixin(MGPC!(int, 64)()); }
+			int EditorX() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bUsedByStaticParameterSet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x20) != 0; }
-		bool bUsedByStaticParameterSet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x20; } return val; }
-		bool bHidePreviewWindow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x10) != 0; }
-		bool bHidePreviewWindow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x10; } return val; }
-		bool bShowOutputNameOnPin() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x8) != 0; }
-		bool bShowOutputNameOnPin(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x8; } return val; }
-		bool bIsParameterExpression() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x4) != 0; }
-		bool bIsParameterExpression(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x4; } return val; }
-		bool bNeedToUpdatePreview() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x2) != 0; }
-		bool bNeedToUpdatePreview(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x2; } return val; }
-		bool bRealtimePreview() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x1) != 0; }
-		bool bRealtimePreview(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x1; } return val; }
+		bool bUsedByStaticParameterSet() { mixin(MGBPC!(76, 0x20)()); }
+		bool bUsedByStaticParameterSet(bool val) { mixin(MSBPC!(76, 0x20)()); }
+		bool bHidePreviewWindow() { mixin(MGBPC!(76, 0x10)()); }
+		bool bHidePreviewWindow(bool val) { mixin(MSBPC!(76, 0x10)()); }
+		bool bShowOutputNameOnPin() { mixin(MGBPC!(76, 0x8)()); }
+		bool bShowOutputNameOnPin(bool val) { mixin(MSBPC!(76, 0x8)()); }
+		bool bIsParameterExpression() { mixin(MGBPC!(76, 0x4)()); }
+		bool bIsParameterExpression(bool val) { mixin(MSBPC!(76, 0x4)()); }
+		bool bNeedToUpdatePreview() { mixin(MGBPC!(76, 0x2)()); }
+		bool bNeedToUpdatePreview(bool val) { mixin(MSBPC!(76, 0x2)()); }
+		bool bRealtimePreview() { mixin(MGBPC!(76, 0x1)()); }
+		bool bRealtimePreview(bool val) { mixin(MSBPC!(76, 0x1)()); }
 	}
 }

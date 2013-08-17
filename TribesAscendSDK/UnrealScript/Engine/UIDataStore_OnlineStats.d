@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataStore_OnlineStats;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataStore_Remote;
 import UnrealScript.Engine.OnlineStatsRead;
@@ -9,9 +10,9 @@ extern(C++) interface UIDataStore_OnlineStats : UIDataStore_Remote
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlineStats")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_OnlineStats")()); }
 	private static __gshared UIDataStore_OnlineStats mDefaultProperties;
-	@property final static UIDataStore_OnlineStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_OnlineStats)("UIDataStore_OnlineStats Engine.Default__UIDataStore_OnlineStats")); }
+	@property final static UIDataStore_OnlineStats DefaultProperties() { mixin(MGDPC!(UIDataStore_OnlineStats, "UIDataStore_OnlineStats Engine.Default__UIDataStore_OnlineStats")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,12 +26,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.Init")); }
-			ScriptFunction SetStatsReadInfo() { return mSetStatsReadInfo ? mSetStatsReadInfo : (mSetStatsReadInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.SetStatsReadInfo")); }
-			ScriptFunction RefreshStats() { return mRefreshStats ? mRefreshStats : (mRefreshStats = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.RefreshStats")); }
-			ScriptFunction ShowGamercard() { return mShowGamercard ? mShowGamercard : (mShowGamercard = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.ShowGamercard")); }
-			ScriptFunction OnReadComplete() { return mOnReadComplete ? mOnReadComplete : (mOnReadComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.OnReadComplete")); }
-			ScriptFunction SortResultsByRank() { return mSortResultsByRank ? mSortResultsByRank : (mSortResultsByRank = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.SortResultsByRank")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.UIDataStore_OnlineStats.Init")()); }
+			ScriptFunction SetStatsReadInfo() { mixin(MGF!("mSetStatsReadInfo", "Function Engine.UIDataStore_OnlineStats.SetStatsReadInfo")()); }
+			ScriptFunction RefreshStats() { mixin(MGF!("mRefreshStats", "Function Engine.UIDataStore_OnlineStats.RefreshStats")()); }
+			ScriptFunction ShowGamercard() { mixin(MGF!("mShowGamercard", "Function Engine.UIDataStore_OnlineStats.ShowGamercard")()); }
+			ScriptFunction OnReadComplete() { mixin(MGF!("mOnReadComplete", "Function Engine.UIDataStore_OnlineStats.OnReadComplete")()); }
+			ScriptFunction SortResultsByRank() { mixin(MGF!("mSortResultsByRank", "Function Engine.UIDataStore_OnlineStats.SortResultsByRank")()); }
 		}
 	}
 	enum EStatsFetchType : ubyte
@@ -46,11 +47,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_OnlineStats.RankMetaData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineStats.RankMetaData")()); }
 		@property final auto ref
 		{
-			ScriptString RankColumnName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-			ScriptName RankName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptString RankColumnName() { mixin(MGPS!(ScriptString, 8)()); }
+			ScriptName RankName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct PlayerNickMetaData
@@ -58,25 +59,27 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_OnlineStats.PlayerNickMetaData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineStats.PlayerNickMetaData")()); }
 		@property final auto ref
 		{
-			ScriptString PlayerNickColumnName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-			ScriptName PlayerNickName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptString PlayerNickColumnName() { mixin(MGPS!(ScriptString, 8)()); }
+			ScriptName PlayerNickName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptClass) StatsReadClasses() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 128); }
-		ScriptArray!(OnlineStatsRead) StatsReadObjects() { return *cast(ScriptArray!(OnlineStatsRead)*)(cast(size_t)cast(void*)this + 196); }
-		UIDataStore_OnlineStats.EStatsFetchType CurrentReadType() { return *cast(UIDataStore_OnlineStats.EStatsFetchType*)(cast(size_t)cast(void*)this + 212); }
-		OnlineStatsRead StatsRead() { return *cast(OnlineStatsRead*)(cast(size_t)cast(void*)this + 208); }
-		ScriptName TotalRowsName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 188); }
-		UIDataStore_OnlineStats.RankMetaData RankNameMetaData() { return *cast(UIDataStore_OnlineStats.RankMetaData*)(cast(size_t)cast(void*)this + 168); }
-		UIDataStore_OnlineStats.PlayerNickMetaData PlayerNickData() { return *cast(UIDataStore_OnlineStats.PlayerNickMetaData*)(cast(size_t)cast(void*)this + 148); }
-		ScriptName StatsReadName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 140); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 124); }
-		UObject.Pointer VfTable_IUIListElementProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
+		ScriptArray!(ScriptClass) StatsReadClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 128)()); }
+		ScriptArray!(OnlineStatsRead) StatsReadObjects() { mixin(MGPC!(ScriptArray!(OnlineStatsRead), 196)()); }
+		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterface'!
+		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'StatsInterface'!
+		UIDataStore_OnlineStats.EStatsFetchType CurrentReadType() { mixin(MGPC!(UIDataStore_OnlineStats.EStatsFetchType, 212)()); }
+		OnlineStatsRead StatsRead() { mixin(MGPC!(OnlineStatsRead, 208)()); }
+		ScriptName TotalRowsName() { mixin(MGPC!(ScriptName, 188)()); }
+		UIDataStore_OnlineStats.RankMetaData RankNameMetaData() { mixin(MGPC!(UIDataStore_OnlineStats.RankMetaData, 168)()); }
+		UIDataStore_OnlineStats.PlayerNickMetaData PlayerNickData() { mixin(MGPC!(UIDataStore_OnlineStats.PlayerNickMetaData, 148)()); }
+		ScriptName StatsReadName() { mixin(MGPC!(ScriptName, 140)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
 	}
 final:
 	void Init()

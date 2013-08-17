@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GamePlayerCamera;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Camera;
 import UnrealScript.Core.UObject;
@@ -12,9 +13,9 @@ extern(C++) interface GamePlayerCamera : Camera
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GamePlayerCamera")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GamePlayerCamera")()); }
 	private static __gshared GamePlayerCamera mDefaultProperties;
-	@property final static GamePlayerCamera DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GamePlayerCamera)("GamePlayerCamera GameFramework.Default__GamePlayerCamera")); }
+	@property final static GamePlayerCamera DefaultProperties() { mixin(MGDPC!(GamePlayerCamera, "GamePlayerCamera GameFramework.Default__GamePlayerCamera")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,42 +36,42 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateCamera() { return mCreateCamera ? mCreateCamera : (mCreateCamera = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.CreateCamera")); }
-			ScriptFunction CacheLastTargetBaseInfo() { return mCacheLastTargetBaseInfo ? mCacheLastTargetBaseInfo : (mCacheLastTargetBaseInfo = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.CacheLastTargetBaseInfo")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.PostBeginPlay")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.Reset")); }
-			ScriptFunction FindBestCameraType() { return mFindBestCameraType ? mFindBestCameraType : (mFindBestCameraType = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.FindBestCameraType")); }
-			ScriptFunction ShouldConstrainAspectRatio() { return mShouldConstrainAspectRatio ? mShouldConstrainAspectRatio : (mShouldConstrainAspectRatio = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.ShouldConstrainAspectRatio")); }
-			ScriptFunction UpdateViewTarget() { return mUpdateViewTarget ? mUpdateViewTarget : (mUpdateViewTarget = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.UpdateViewTarget")); }
-			ScriptFunction AdjustFOVForViewport() { return mAdjustFOVForViewport ? mAdjustFOVForViewport : (mAdjustFOVForViewport = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.AdjustFOVForViewport")); }
-			ScriptFunction UpdateCameraLensEffects() { return mUpdateCameraLensEffects ? mUpdateCameraLensEffects : (mUpdateCameraLensEffects = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.UpdateCameraLensEffects")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.DisplayDebug")); }
-			ScriptFunction SetColorScale() { return mSetColorScale ? mSetColorScale : (mSetColorScale = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.SetColorScale")); }
-			ScriptFunction ResetInterpolation() { return mResetInterpolation ? mResetInterpolation : (mResetInterpolation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.ResetInterpolation")); }
-			ScriptFunction ProcessViewRotation() { return mProcessViewRotation ? mProcessViewRotation : (mProcessViewRotation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePlayerCamera.ProcessViewRotation")); }
+			ScriptFunction CreateCamera() { mixin(MGF!("mCreateCamera", "Function GameFramework.GamePlayerCamera.CreateCamera")()); }
+			ScriptFunction CacheLastTargetBaseInfo() { mixin(MGF!("mCacheLastTargetBaseInfo", "Function GameFramework.GamePlayerCamera.CacheLastTargetBaseInfo")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function GameFramework.GamePlayerCamera.PostBeginPlay")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function GameFramework.GamePlayerCamera.Reset")()); }
+			ScriptFunction FindBestCameraType() { mixin(MGF!("mFindBestCameraType", "Function GameFramework.GamePlayerCamera.FindBestCameraType")()); }
+			ScriptFunction ShouldConstrainAspectRatio() { mixin(MGF!("mShouldConstrainAspectRatio", "Function GameFramework.GamePlayerCamera.ShouldConstrainAspectRatio")()); }
+			ScriptFunction UpdateViewTarget() { mixin(MGF!("mUpdateViewTarget", "Function GameFramework.GamePlayerCamera.UpdateViewTarget")()); }
+			ScriptFunction AdjustFOVForViewport() { mixin(MGF!("mAdjustFOVForViewport", "Function GameFramework.GamePlayerCamera.AdjustFOVForViewport")()); }
+			ScriptFunction UpdateCameraLensEffects() { mixin(MGF!("mUpdateCameraLensEffects", "Function GameFramework.GamePlayerCamera.UpdateCameraLensEffects")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function GameFramework.GamePlayerCamera.DisplayDebug")()); }
+			ScriptFunction SetColorScale() { mixin(MGF!("mSetColorScale", "Function GameFramework.GamePlayerCamera.SetColorScale")()); }
+			ScriptFunction ResetInterpolation() { mixin(MGF!("mResetInterpolation", "Function GameFramework.GamePlayerCamera.ResetInterpolation")()); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function GameFramework.GamePlayerCamera.ProcessViewRotation")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Matrix LastTargetBaseTM() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 1136); }
-			Actor LastTargetBase() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1124); }
-			float SplitScreenShakeScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1120); }
-			Actor LastViewTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1116); }
-			float ForcedCamFOV() { return *cast(float*)(cast(size_t)cast(void*)this + 1112); }
-			GameCameraBase CurrentCamera() { return *cast(GameCameraBase*)(cast(size_t)cast(void*)this + 1104); }
-			ScriptClass FixedCameraClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1100); }
-			GameCameraBase FixedCam() { return *cast(GameCameraBase*)(cast(size_t)cast(void*)this + 1096); }
-			ScriptClass ThirdPersonCameraClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1092); }
-			GameCameraBase ThirdPersonCam() { return *cast(GameCameraBase*)(cast(size_t)cast(void*)this + 1088); }
+			UObject.Matrix LastTargetBaseTM() { mixin(MGPC!(UObject.Matrix, 1136)()); }
+			Actor LastTargetBase() { mixin(MGPC!(Actor, 1124)()); }
+			float SplitScreenShakeScale() { mixin(MGPC!(float, 1120)()); }
+			Actor LastViewTarget() { mixin(MGPC!(Actor, 1116)()); }
+			float ForcedCamFOV() { mixin(MGPC!(float, 1112)()); }
+			GameCameraBase CurrentCamera() { mixin(MGPC!(GameCameraBase, 1104)()); }
+			ScriptClass FixedCameraClass() { mixin(MGPC!(ScriptClass, 1100)()); }
+			GameCameraBase FixedCam() { mixin(MGPC!(GameCameraBase, 1096)()); }
+			ScriptClass ThirdPersonCameraClass() { mixin(MGPC!(ScriptClass, 1092)()); }
+			GameCameraBase ThirdPersonCam() { mixin(MGPC!(GameCameraBase, 1088)()); }
 		}
-		bool bResetInterp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1108) & 0x4) != 0; }
-		bool bResetInterp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1108) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1108) &= ~0x4; } return val; }
-		bool bInterpolateCamChanges() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1108) & 0x2) != 0; }
-		bool bInterpolateCamChanges(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1108) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1108) &= ~0x2; } return val; }
-		bool bUseForcedCamFOV() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1108) & 0x1) != 0; }
-		bool bUseForcedCamFOV(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1108) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1108) &= ~0x1; } return val; }
+		bool bResetInterp() { mixin(MGBPC!(1108, 0x4)()); }
+		bool bResetInterp(bool val) { mixin(MSBPC!(1108, 0x4)()); }
+		bool bInterpolateCamChanges() { mixin(MGBPC!(1108, 0x2)()); }
+		bool bInterpolateCamChanges(bool val) { mixin(MSBPC!(1108, 0x2)()); }
+		bool bUseForcedCamFOV() { mixin(MGBPC!(1108, 0x1)()); }
+		bool bUseForcedCamFOV(bool val) { mixin(MSBPC!(1108, 0x1)()); }
 	}
 final:
 	GameCameraBase CreateCamera(ScriptClass CameraClass)
@@ -111,11 +112,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldConstrainAspectRatio, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void UpdateViewTarget(Camera.TViewTarget* OutVT, float DeltaTime)
+	void UpdateViewTarget(ref Camera.TViewTarget OutVT, float DeltaTime)
 	{
 		ubyte params[48];
 		params[] = 0;
-		*cast(Camera.TViewTarget*)params.ptr = *OutVT;
+		*cast(Camera.TViewTarget*)params.ptr = OutVT;
 		*cast(float*)&params[44] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateViewTarget, params.ptr, cast(void*)0);
 		*OutVT = *cast(Camera.TViewTarget*)params.ptr;
@@ -129,21 +130,21 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustFOVForViewport, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
-	void UpdateCameraLensEffects(Camera.TViewTarget* OutVT)
+	void UpdateCameraLensEffects(ref const Camera.TViewTarget OutVT)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(Camera.TViewTarget*)params.ptr = *OutVT;
+		*cast(Camera.TViewTarget*)params.ptr = OutVT;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCameraLensEffects, params.ptr, cast(void*)0);
 		*OutVT = *cast(Camera.TViewTarget*)params.ptr;
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -159,13 +160,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetInterpolation, cast(void*)0, cast(void*)0);
 	}
-	void ProcessViewRotation(float DeltaTime, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
+	void ProcessViewRotation(float DeltaTime, ref Rotator out_ViewRotation, ref Rotator out_DeltaRot)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		*cast(Rotator*)&params[4] = *out_ViewRotation;
-		*cast(Rotator*)&params[16] = *out_DeltaRot;
+		*cast(Rotator*)&params[4] = out_ViewRotation;
+		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
 		*out_ViewRotation = *cast(Rotator*)&params[4];
 		*out_DeltaRot = *cast(Rotator*)&params[16];

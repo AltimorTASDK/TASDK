@@ -1,6 +1,7 @@
 module UnrealScript.Engine.EngineTypes;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface EngineTypes : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EngineTypes")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.EngineTypes")()); }
 	private static __gshared EngineTypes mDefaultProperties;
-	@property final static EngineTypes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EngineTypes)("EngineTypes Engine.Default__EngineTypes")); }
+	@property final static EngineTypes DefaultProperties() { mixin(MGDPC!(EngineTypes, "EngineTypes Engine.Default__EngineTypes")()); }
 	enum EPathFindingError : ubyte
 	{
 		PATHERROR_STARTPOLYNOTFOUND = 0,
@@ -133,11 +134,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.SubtitleCue")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.SubtitleCue")()); }
 		@property final auto ref
 		{
-			float Time() { return *cast(float*)(cast(size_t)&this + 12); }
-			ScriptString Text() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			float Time() { mixin(MGPS!(float, 12)()); }
+			ScriptString Text() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct LocalizedSubtitle
@@ -145,18 +146,18 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LocalizedSubtitle")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LocalizedSubtitle")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(EngineTypes.SubtitleCue) Subtitles() { return *cast(ScriptArray!(EngineTypes.SubtitleCue)*)(cast(size_t)&this + 12); }
-				ScriptString LanguageExt() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+				ScriptArray!(EngineTypes.SubtitleCue) Subtitles() { mixin(MGPS!(ScriptArray!(EngineTypes.SubtitleCue), 12)()); }
+				ScriptString LanguageExt() { mixin(MGPS!(ScriptString, 0)()); }
 			}
-			bool bManualWordWrap() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x2) != 0; }
-			bool bManualWordWrap(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x2; } return val; }
-			bool bMature() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
-			bool bMature(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
+			bool bManualWordWrap() { mixin(MGBPS!(24, 0x2)()); }
+			bool bManualWordWrap(bool val) { mixin(MSBPS!(24, 0x2)()); }
+			bool bMature() { mixin(MGBPS!(24, 0x1)()); }
+			bool bMature(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
 	struct LightMapRef
@@ -164,22 +165,22 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightMapRef")); }
-		@property final auto ref UObject.Pointer Reference() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightMapRef")()); }
+		@property final auto ref UObject.Pointer Reference() { mixin(MGPS!(UObject.Pointer, 0)()); }
 	}
 	struct DominantShadowInfo
 	{
 		private ubyte __buffer__[164];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.DominantShadowInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.DominantShadowInfo")()); }
 		@property final auto ref
 		{
-			int ShadowMapSizeY() { return *cast(int*)(cast(size_t)&this + 160); }
-			int ShadowMapSizeX() { return *cast(int*)(cast(size_t)&this + 156); }
-			UObject.Box LightSpaceImportanceBounds() { return *cast(UObject.Box*)(cast(size_t)&this + 128); }
-			UObject.Matrix LightToWorld() { return *cast(UObject.Matrix*)(cast(size_t)&this + 64); }
-			UObject.Matrix WorldToLight() { return *cast(UObject.Matrix*)(cast(size_t)&this + 0); }
+			int ShadowMapSizeY() { mixin(MGPS!(int, 160)()); }
+			int ShadowMapSizeX() { mixin(MGPS!(int, 156)()); }
+			UObject.Box LightSpaceImportanceBounds() { mixin(MGPS!(UObject.Box, 128)()); }
+			UObject.Matrix LightToWorld() { mixin(MGPS!(UObject.Matrix, 64)()); }
+			UObject.Matrix WorldToLight() { mixin(MGPS!(UObject.Matrix, 0)()); }
 		}
 	}
 	struct LightmassLightSettings
@@ -187,12 +188,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassLightSettings")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassLightSettings")()); }
 		@property final auto ref
 		{
-			float ShadowExponent() { return *cast(float*)(cast(size_t)&this + 8); }
-			float IndirectLightingSaturation() { return *cast(float*)(cast(size_t)&this + 4); }
-			float IndirectLightingScale() { return *cast(float*)(cast(size_t)&this + 0); }
+			float ShadowExponent() { mixin(MGPS!(float, 8)()); }
+			float IndirectLightingSaturation() { mixin(MGPS!(float, 4)()); }
+			float IndirectLightingScale() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	struct LightmassPointLightSettings
@@ -200,52 +201,52 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassPointLightSettings")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassPointLightSettings")()); }
 		@property final auto ref
 		{
-			float ShadowExponent() { return *cast(float*)(cast(size_t)&this + 8); }
-			float IndirectLightingSaturation() { return *cast(float*)(cast(size_t)&this + 4); }
-			float IndirectLightingScale() { return *cast(float*)(cast(size_t)&this + 0); }
+			float ShadowExponent() { mixin(MGPS!(float, 8)()); }
+			float IndirectLightingSaturation() { mixin(MGPS!(float, 4)()); }
+			float IndirectLightingScale() { mixin(MGPS!(float, 0)()); }
 		}
-		@property final auto ref float LightSourceRadius() { return *cast(float*)(cast(size_t)&this + 12); }
+		@property final auto ref float LightSourceRadius() { mixin(MGPS!(float, 12)()); }
 	}
 	struct LightmassDirectionalLightSettings
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassDirectionalLightSettings")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassDirectionalLightSettings")()); }
 		@property final auto ref
 		{
-			float ShadowExponent() { return *cast(float*)(cast(size_t)&this + 8); }
-			float IndirectLightingSaturation() { return *cast(float*)(cast(size_t)&this + 4); }
-			float IndirectLightingScale() { return *cast(float*)(cast(size_t)&this + 0); }
+			float ShadowExponent() { mixin(MGPS!(float, 8)()); }
+			float IndirectLightingSaturation() { mixin(MGPS!(float, 4)()); }
+			float IndirectLightingScale() { mixin(MGPS!(float, 0)()); }
 		}
-		@property final auto ref float LightSourceAngle() { return *cast(float*)(cast(size_t)&this + 12); }
+		@property final auto ref float LightSourceAngle() { mixin(MGPS!(float, 12)()); }
 	}
 	struct LightmassPrimitiveSettings
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassPrimitiveSettings")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassPrimitiveSettings")()); }
 		@property final
 		{
 			auto ref
 			{
-				float FullyOccludedSamplesFraction() { return *cast(float*)(cast(size_t)&this + 24); }
-				float SpecularBoost() { return *cast(float*)(cast(size_t)&this + 20); }
-				float DiffuseBoost() { return *cast(float*)(cast(size_t)&this + 16); }
-				float EmissiveBoost() { return *cast(float*)(cast(size_t)&this + 12); }
-				float EmissiveLightExplicitInfluenceRadius() { return *cast(float*)(cast(size_t)&this + 8); }
-				float EmissiveLightFalloffExponent() { return *cast(float*)(cast(size_t)&this + 4); }
+				float FullyOccludedSamplesFraction() { mixin(MGPS!(float, 24)()); }
+				float SpecularBoost() { mixin(MGPS!(float, 20)()); }
+				float DiffuseBoost() { mixin(MGPS!(float, 16)()); }
+				float EmissiveBoost() { mixin(MGPS!(float, 12)()); }
+				float EmissiveLightExplicitInfluenceRadius() { mixin(MGPS!(float, 8)()); }
+				float EmissiveLightFalloffExponent() { mixin(MGPS!(float, 4)()); }
 			}
-			bool bUseEmissiveForStaticLighting() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-			bool bUseEmissiveForStaticLighting(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-			bool bShadowIndirectOnly() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bShadowIndirectOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bUseTwoSidedLighting() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bUseTwoSidedLighting(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bUseEmissiveForStaticLighting() { mixin(MGBPS!(0, 0x4)()); }
+			bool bUseEmissiveForStaticLighting(bool val) { mixin(MSBPS!(0, 0x4)()); }
+			bool bShadowIndirectOnly() { mixin(MGBPS!(0, 0x2)()); }
+			bool bShadowIndirectOnly(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bUseTwoSidedLighting() { mixin(MGBPS!(0, 0x1)()); }
+			bool bUseTwoSidedLighting(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	struct LightmassDebugOptions
@@ -253,46 +254,46 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassDebugOptions")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassDebugOptions")()); }
 		@property final
 		{
 			auto ref
 			{
-				float ExecutionTimeDivisor() { return *cast(float*)(cast(size_t)&this + 12); }
-				float CoplanarTolerance() { return *cast(float*)(cast(size_t)&this + 4); }
+				float ExecutionTimeDivisor() { mixin(MGPS!(float, 12)()); }
+				float CoplanarTolerance() { mixin(MGPS!(float, 4)()); }
 			}
-			bool bInitialized() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-			bool bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
-			bool bColorByExecutionTime() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x800) != 0; }
-			bool bColorByExecutionTime(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x800; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x800; } return val; }
-			bool bColorBordersGreen() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x400) != 0; }
-			bool bColorBordersGreen(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x400; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x400; } return val; }
-			bool bUseRandomColors() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x200) != 0; }
-			bool bUseRandomColors(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x200; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x200; } return val; }
-			bool bOnlyCalcDebugTexelMappings() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x100) != 0; }
-			bool bOnlyCalcDebugTexelMappings(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x100; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x100; } return val; }
-			bool bDebugPaddings() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x80) != 0; }
-			bool bDebugPaddings(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x80; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x80; } return val; }
-			bool bPadMappings() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x40) != 0; }
-			bool bPadMappings(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x40; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x40; } return val; }
-			bool bDebugMaterials() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x20) != 0; }
-			bool bDebugMaterials(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x20; } return val; }
-			bool bDumpBinaryFiles() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x10) != 0; }
-			bool bDumpBinaryFiles(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x10; } return val; }
-			bool bSortMappings() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x8) != 0; }
-			bool bSortMappings(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x8; } return val; }
-			bool bImmediateProcessMappings() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x4) != 0; }
-			bool bImmediateProcessMappings(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x4; } return val; }
-			bool bUseImmediateImport() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x2) != 0; }
-			bool bUseImmediateImport(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x2; } return val; }
-			bool bUseDeterministicLighting() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bUseDeterministicLighting(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
-			bool bGatherBSPSurfacesAcrossComponents() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-			bool bGatherBSPSurfacesAcrossComponents(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-			bool bStatsEnabled() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bStatsEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bDebugMode() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bDebugMode(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bInitialized() { mixin(MGBPS!(16, 0x1)()); }
+			bool bInitialized(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bColorByExecutionTime() { mixin(MGBPS!(8, 0x800)()); }
+			bool bColorByExecutionTime(bool val) { mixin(MSBPS!(8, 0x800)()); }
+			bool bColorBordersGreen() { mixin(MGBPS!(8, 0x400)()); }
+			bool bColorBordersGreen(bool val) { mixin(MSBPS!(8, 0x400)()); }
+			bool bUseRandomColors() { mixin(MGBPS!(8, 0x200)()); }
+			bool bUseRandomColors(bool val) { mixin(MSBPS!(8, 0x200)()); }
+			bool bOnlyCalcDebugTexelMappings() { mixin(MGBPS!(8, 0x100)()); }
+			bool bOnlyCalcDebugTexelMappings(bool val) { mixin(MSBPS!(8, 0x100)()); }
+			bool bDebugPaddings() { mixin(MGBPS!(8, 0x80)()); }
+			bool bDebugPaddings(bool val) { mixin(MSBPS!(8, 0x80)()); }
+			bool bPadMappings() { mixin(MGBPS!(8, 0x40)()); }
+			bool bPadMappings(bool val) { mixin(MSBPS!(8, 0x40)()); }
+			bool bDebugMaterials() { mixin(MGBPS!(8, 0x20)()); }
+			bool bDebugMaterials(bool val) { mixin(MSBPS!(8, 0x20)()); }
+			bool bDumpBinaryFiles() { mixin(MGBPS!(8, 0x10)()); }
+			bool bDumpBinaryFiles(bool val) { mixin(MSBPS!(8, 0x10)()); }
+			bool bSortMappings() { mixin(MGBPS!(8, 0x8)()); }
+			bool bSortMappings(bool val) { mixin(MSBPS!(8, 0x8)()); }
+			bool bImmediateProcessMappings() { mixin(MGBPS!(8, 0x4)()); }
+			bool bImmediateProcessMappings(bool val) { mixin(MSBPS!(8, 0x4)()); }
+			bool bUseImmediateImport() { mixin(MGBPS!(8, 0x2)()); }
+			bool bUseImmediateImport(bool val) { mixin(MSBPS!(8, 0x2)()); }
+			bool bUseDeterministicLighting() { mixin(MGBPS!(8, 0x1)()); }
+			bool bUseDeterministicLighting(bool val) { mixin(MSBPS!(8, 0x1)()); }
+			bool bGatherBSPSurfacesAcrossComponents() { mixin(MGBPS!(0, 0x4)()); }
+			bool bGatherBSPSurfacesAcrossComponents(bool val) { mixin(MSBPS!(0, 0x4)()); }
+			bool bStatsEnabled() { mixin(MGBPS!(0, 0x2)()); }
+			bool bStatsEnabled(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bDebugMode() { mixin(MGBPS!(0, 0x1)()); }
+			bool bDebugMode(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	struct SwarmDebugOptions
@@ -300,15 +301,15 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.SwarmDebugOptions")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.SwarmDebugOptions")()); }
 		@property final
 		{
-			bool bInitialized() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-			bool bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-			bool bForceContentExport() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bForceContentExport(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bDistributionEnabled() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bDistributionEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bInitialized() { mixin(MGBPS!(0, 0x4)()); }
+			bool bInitialized(bool val) { mixin(MSBPS!(0, 0x4)()); }
+			bool bForceContentExport() { mixin(MGBPS!(0, 0x2)()); }
+			bool bForceContentExport(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bDistributionEnabled() { mixin(MGBPS!(0, 0x1)()); }
+			bool bDistributionEnabled(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	struct RootMotionCurve
@@ -316,12 +317,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.RootMotionCurve")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.RootMotionCurve")()); }
 		@property final auto ref
 		{
-			float MaxCurveTime() { return *cast(float*)(cast(size_t)&this + 24); }
-			UObject.InterpCurveVector Curve() { return *cast(UObject.InterpCurveVector*)(cast(size_t)&this + 8); }
-			ScriptName AnimName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			float MaxCurveTime() { mixin(MGPS!(float, 24)()); }
+			UObject.InterpCurveVector Curve() { mixin(MGPS!(UObject.InterpCurveVector, 8)()); }
+			ScriptName AnimName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct PrimitiveMaterialRef
@@ -329,19 +330,23 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.PrimitiveMaterialRef")); }
-		@property final auto ref int MaterialIndex() { return *cast(int*)(cast(size_t)&this + 4); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.PrimitiveMaterialRef")()); }
+		@property final auto ref
+		{
+			int MaterialIndex() { mixin(MGPS!(int, 4)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Primitive'!
+		}
 	}
 	struct MaterialReferenceList
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.MaterialReferenceList")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.MaterialReferenceList")()); }
 		@property final auto ref
 		{
-			ScriptArray!(EngineTypes.PrimitiveMaterialRef) AffectedMaterialRefs() { return *cast(ScriptArray!(EngineTypes.PrimitiveMaterialRef)*)(cast(size_t)&this + 4); }
-			MaterialInterface TargetMaterial() { return *cast(MaterialInterface*)(cast(size_t)&this + 0); }
+			ScriptArray!(EngineTypes.PrimitiveMaterialRef) AffectedMaterialRefs() { mixin(MGPS!(ScriptArray!(EngineTypes.PrimitiveMaterialRef), 4)()); }
+			MaterialInterface TargetMaterial() { mixin(MGPS!(MaterialInterface, 0)()); }
 		}
 	}
 }

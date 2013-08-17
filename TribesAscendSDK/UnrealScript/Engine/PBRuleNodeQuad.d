@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PBRuleNodeQuad;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PBRuleNodeBase;
 import UnrealScript.Engine.MaterialInterface;
 
@@ -8,20 +9,20 @@ extern(C++) interface PBRuleNodeQuad : PBRuleNodeBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeQuad")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PBRuleNodeQuad")()); }
 	private static __gshared PBRuleNodeQuad mDefaultProperties;
-	@property final static PBRuleNodeQuad DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeQuad)("PBRuleNodeQuad Engine.Default__PBRuleNodeQuad")); }
+	@property final static PBRuleNodeQuad DefaultProperties() { mixin(MGDPC!(PBRuleNodeQuad, "PBRuleNodeQuad Engine.Default__PBRuleNodeQuad")()); }
 	@property final
 	{
 		auto ref
 		{
-			float YOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			int QuadLightmapRes() { return *cast(int*)(cast(size_t)cast(void*)this + 116); }
-			float RepeatMaxSizeZ() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			float RepeatMaxSizeX() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
+			float YOffset() { mixin(MGPC!(float, 120)()); }
+			int QuadLightmapRes() { mixin(MGPC!(int, 116)()); }
+			float RepeatMaxSizeZ() { mixin(MGPC!(float, 112)()); }
+			float RepeatMaxSizeX() { mixin(MGPC!(float, 108)()); }
 			// WARNING: Property 'Material' has the same name as a defined type!
 		}
-		bool bDisableMaterialRepeat() { return (*cast(uint*)(cast(size_t)cast(void*)this + 124) & 0x1) != 0; }
-		bool bDisableMaterialRepeat(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 124) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 124) &= ~0x1; } return val; }
+		bool bDisableMaterialRepeat() { mixin(MGBPC!(124, 0x1)()); }
+		bool bDisableMaterialRepeat(bool val) { mixin(MSBPC!(124, 0x1)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqAct_SetMatInstVectorParam;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SequenceAction;
@@ -9,19 +10,19 @@ extern(C++) interface SeqAct_SetMatInstVectorParam : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetMatInstVectorParam")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_SetMatInstVectorParam")()); }
 	private static __gshared SeqAct_SetMatInstVectorParam mDefaultProperties;
-	@property final static SeqAct_SetMatInstVectorParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetMatInstVectorParam)("SeqAct_SetMatInstVectorParam Engine.Default__SeqAct_SetMatInstVectorParam")); }
+	@property final static SeqAct_SetMatInstVectorParam DefaultProperties() { mixin(MGDPC!(SeqAct_SetMatInstVectorParam, "SeqAct_SetMatInstVectorParam Engine.Default__SeqAct_SetMatInstVectorParam")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_SetMatInstVectorParam.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_SetMatInstVectorParam.GetObjClassVersion")()); }
 	}
 	@property final auto ref
 	{
-		UObject.LinearColor VectorValue() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 244); }
-		ScriptName ParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 236); }
-		MaterialInstanceConstant MatInst() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 232); }
+		UObject.LinearColor VectorValue() { mixin(MGPC!(UObject.LinearColor, 244)()); }
+		ScriptName ParamName() { mixin(MGPC!(ScriptName, 236)()); }
+		MaterialInstanceConstant MatInst() { mixin(MGPC!(MaterialInstanceConstant, 232)()); }
 	}
 	final static int GetObjClassVersion()
 	{

@@ -1,21 +1,22 @@
 module UnrealScript.Engine.TranslatorTag;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TranslatorTag : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TranslatorTag")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TranslatorTag")()); }
 	private static __gshared TranslatorTag mDefaultProperties;
-	@property final static TranslatorTag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TranslatorTag)("TranslatorTag Engine.Default__TranslatorTag")); }
+	@property final static TranslatorTag DefaultProperties() { mixin(MGDPC!(TranslatorTag, "TranslatorTag Engine.Default__TranslatorTag")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTranslate;
-		public @property static final ScriptFunction Translate() { return mTranslate ? mTranslate : (mTranslate = ScriptObject.Find!(ScriptFunction)("Function Engine.TranslatorTag.Translate")); }
+		public @property static final ScriptFunction Translate() { mixin(MGF!("mTranslate", "Function Engine.TranslatorTag.Translate")()); }
 	}
-	@property final auto ref ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref ScriptName Tag() { mixin(MGPC!(ScriptName, 60)()); }
 	final ScriptString Translate(ScriptString InArgument)
 	{
 		ubyte params[24];

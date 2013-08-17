@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTActorFactoryPickup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorFactory;
 import UnrealScript.Engine.Actor;
 
@@ -8,15 +9,15 @@ extern(C++) interface UTActorFactoryPickup : ActorFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTActorFactoryPickup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTActorFactoryPickup")()); }
 	private static __gshared UTActorFactoryPickup mDefaultProperties;
-	@property final static UTActorFactoryPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTActorFactoryPickup)("UTActorFactoryPickup UTGame.Default__UTActorFactoryPickup")); }
+	@property final static UTActorFactoryPickup DefaultProperties() { mixin(MGDPC!(UTActorFactoryPickup, "UTActorFactoryPickup UTGame.Default__UTActorFactoryPickup")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;
-		public @property static final ScriptFunction PostCreateActor() { return mPostCreateActor ? mPostCreateActor : (mPostCreateActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTActorFactoryPickup.PostCreateActor")); }
+		public @property static final ScriptFunction PostCreateActor() { mixin(MGF!("mPostCreateActor", "Function UTGame.UTActorFactoryPickup.PostCreateActor")()); }
 	}
-	@property final auto ref ScriptClass InventoryClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
+	@property final auto ref ScriptClass InventoryClass() { mixin(MGPC!(ScriptClass, 92)()); }
 	final void PostCreateActor(Actor NewActor)
 	{
 		ubyte params[4];

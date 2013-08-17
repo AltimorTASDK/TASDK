@@ -1,15 +1,16 @@
 module UnrealScript.IpDrv.WebRequest;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface WebRequest : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebRequest")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.WebRequest")()); }
 	private static __gshared WebRequest mDefaultProperties;
-	@property final static WebRequest DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WebRequest)("WebRequest IpDrv.Default__WebRequest")); }
+	@property final static WebRequest DefaultProperties() { mixin(MGDPC!(WebRequest, "WebRequest IpDrv.Default__WebRequest")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,20 +32,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetVariable() { return mGetVariable ? mGetVariable : (mGetVariable = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.GetVariable")); }
-			ScriptFunction GetVariableCount() { return mGetVariableCount ? mGetVariableCount : (mGetVariableCount = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.GetVariableCount")); }
-			ScriptFunction GetVariableNumber() { return mGetVariableNumber ? mGetVariableNumber : (mGetVariableNumber = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.GetVariableNumber")); }
-			ScriptFunction DecodeBase64() { return mDecodeBase64 ? mDecodeBase64 : (mDecodeBase64 = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.DecodeBase64")); }
-			ScriptFunction EncodeBase64() { return mEncodeBase64 ? mEncodeBase64 : (mEncodeBase64 = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.EncodeBase64")); }
-			ScriptFunction AddHeader() { return mAddHeader ? mAddHeader : (mAddHeader = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.AddHeader")); }
-			ScriptFunction GetHeader() { return mGetHeader ? mGetHeader : (mGetHeader = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.GetHeader")); }
-			ScriptFunction GetHeaders() { return mGetHeaders ? mGetHeaders : (mGetHeaders = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.GetHeaders")); }
-			ScriptFunction AddVariable() { return mAddVariable ? mAddVariable : (mAddVariable = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.AddVariable")); }
-			ScriptFunction GetVariables() { return mGetVariables ? mGetVariables : (mGetVariables = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.GetVariables")); }
-			ScriptFunction Dump() { return mDump ? mDump : (mDump = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.Dump")); }
-			ScriptFunction ProcessHeaderString() { return mProcessHeaderString ? mProcessHeaderString : (mProcessHeaderString = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.ProcessHeaderString")); }
-			ScriptFunction DecodeFormData() { return mDecodeFormData ? mDecodeFormData : (mDecodeFormData = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.DecodeFormData")); }
-			ScriptFunction GetHexDigit() { return mGetHexDigit ? mGetHexDigit : (mGetHexDigit = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebRequest.GetHexDigit")); }
+			ScriptFunction GetVariable() { mixin(MGF!("mGetVariable", "Function IpDrv.WebRequest.GetVariable")()); }
+			ScriptFunction GetVariableCount() { mixin(MGF!("mGetVariableCount", "Function IpDrv.WebRequest.GetVariableCount")()); }
+			ScriptFunction GetVariableNumber() { mixin(MGF!("mGetVariableNumber", "Function IpDrv.WebRequest.GetVariableNumber")()); }
+			ScriptFunction DecodeBase64() { mixin(MGF!("mDecodeBase64", "Function IpDrv.WebRequest.DecodeBase64")()); }
+			ScriptFunction EncodeBase64() { mixin(MGF!("mEncodeBase64", "Function IpDrv.WebRequest.EncodeBase64")()); }
+			ScriptFunction AddHeader() { mixin(MGF!("mAddHeader", "Function IpDrv.WebRequest.AddHeader")()); }
+			ScriptFunction GetHeader() { mixin(MGF!("mGetHeader", "Function IpDrv.WebRequest.GetHeader")()); }
+			ScriptFunction GetHeaders() { mixin(MGF!("mGetHeaders", "Function IpDrv.WebRequest.GetHeaders")()); }
+			ScriptFunction AddVariable() { mixin(MGF!("mAddVariable", "Function IpDrv.WebRequest.AddVariable")()); }
+			ScriptFunction GetVariables() { mixin(MGF!("mGetVariables", "Function IpDrv.WebRequest.GetVariables")()); }
+			ScriptFunction Dump() { mixin(MGF!("mDump", "Function IpDrv.WebRequest.Dump")()); }
+			ScriptFunction ProcessHeaderString() { mixin(MGF!("mProcessHeaderString", "Function IpDrv.WebRequest.ProcessHeaderString")()); }
+			ScriptFunction DecodeFormData() { mixin(MGF!("mDecodeFormData", "Function IpDrv.WebRequest.DecodeFormData")()); }
+			ScriptFunction GetHexDigit() { mixin(MGF!("mGetHexDigit", "Function IpDrv.WebRequest.GetHexDigit")()); }
 		}
 	}
 	enum ERequestType : ubyte
@@ -55,15 +56,15 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString UserName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
-		ScriptString Password() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 96); }
-		ScriptString URI() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 72); }
-		WebRequest.ERequestType RequestType() { return *cast(WebRequest.ERequestType*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString RemoteAddr() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 60); }
-		int ContentLength() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
-		ScriptString ContentType() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		UObject.Map_Mirror VariableMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 188); }
-		UObject.Map_Mirror HeaderMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 128); }
+		ScriptString UserName() { mixin(MGPC!(ScriptString, 84)()); }
+		ScriptString Password() { mixin(MGPC!(ScriptString, 96)()); }
+		ScriptString URI() { mixin(MGPC!(ScriptString, 72)()); }
+		WebRequest.ERequestType RequestType() { mixin(MGPC!(WebRequest.ERequestType, 124)()); }
+		ScriptString RemoteAddr() { mixin(MGPC!(ScriptString, 60)()); }
+		int ContentLength() { mixin(MGPC!(int, 108)()); }
+		ScriptString ContentType() { mixin(MGPC!(ScriptString, 112)()); }
+		UObject.Map_Mirror VariableMap() { mixin(MGPC!(UObject.Map_Mirror, 188)()); }
+		UObject.Map_Mirror HeaderMap() { mixin(MGPC!(UObject.Map_Mirror, 128)()); }
 	}
 final:
 	ScriptString GetVariable(ScriptString VariableName, ScriptString DefaultValue)
@@ -126,11 +127,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHeader, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[24];
 	}
-	void GetHeaders(ScriptArray!(ScriptString)* headers)
+	void GetHeaders(ref ScriptArray!(ScriptString) headers)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptString)*)params.ptr = *headers;
+		*cast(ScriptArray!(ScriptString)*)params.ptr = headers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHeaders, params.ptr, cast(void*)0);
 		*headers = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
@@ -142,11 +143,11 @@ final:
 		*cast(ScriptString*)&params[12] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddVariable, params.ptr, cast(void*)0);
 	}
-	void GetVariables(ScriptArray!(ScriptString)* varNames)
+	void GetVariables(ref ScriptArray!(ScriptString) varNames)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptString)*)params.ptr = *varNames;
+		*cast(ScriptArray!(ScriptString)*)params.ptr = varNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariables, params.ptr, cast(void*)0);
 		*varNames = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}

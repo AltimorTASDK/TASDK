@@ -1,6 +1,7 @@
 module UnrealScript.Engine.RB_RadialImpulseActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.RigidBodyBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface RB_RadialImpulseActor : RigidBodyBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_RadialImpulseActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.RB_RadialImpulseActor")()); }
 	private static __gshared RB_RadialImpulseActor mDefaultProperties;
-	@property final static RB_RadialImpulseActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_RadialImpulseActor)("RB_RadialImpulseActor Engine.Default__RB_RadialImpulseActor")); }
+	@property final static RB_RadialImpulseActor DefaultProperties() { mixin(MGDPC!(RB_RadialImpulseActor, "RB_RadialImpulseActor Engine.Default__RB_RadialImpulseActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +21,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_RadialImpulseActor.OnToggle")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_RadialImpulseActor.ReplicatedEvent")); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.RB_RadialImpulseActor.OnToggle")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.RB_RadialImpulseActor.ReplicatedEvent")()); }
 		}
 	}
-	@property final auto ref ubyte ImpulseCount() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 484); }
+	@property final auto ref
+	{
+		ubyte ImpulseCount() { mixin(MGPC!(ubyte, 484)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpulseComponent'!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
+	}
 final:
 	void OnToggle(SeqAct_Toggle inAction)
 	{

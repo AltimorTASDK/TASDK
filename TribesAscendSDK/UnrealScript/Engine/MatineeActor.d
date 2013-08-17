@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MatineeActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.SeqAct_Interp;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface MatineeActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MatineeActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MatineeActor")()); }
 	private static __gshared MatineeActor mDefaultProperties;
-	@property final static MatineeActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MatineeActor)("MatineeActor Engine.Default__MatineeActor")); }
+	@property final static MatineeActor DefaultProperties() { mixin(MGDPC!(MatineeActor, "MatineeActor Engine.Default__MatineeActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,9 +24,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddAIGroupActor() { return mAddAIGroupActor ? mAddAIGroupActor : (mAddAIGroupActor = ScriptObject.Find!(ScriptFunction)("Function Engine.MatineeActor.AddAIGroupActor")); }
-			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.MatineeActor.Update")); }
-			ScriptFunction CheckPriorityRefresh() { return mCheckPriorityRefresh ? mCheckPriorityRefresh : (mCheckPriorityRefresh = ScriptObject.Find!(ScriptFunction)("Function Engine.MatineeActor.CheckPriorityRefresh")); }
+			ScriptFunction AddAIGroupActor() { mixin(MGF!("mAddAIGroupActor", "Function Engine.MatineeActor.AddAIGroupActor")()); }
+			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function Engine.MatineeActor.Update")()); }
+			ScriptFunction CheckPriorityRefresh() { mixin(MGF!("mCheckPriorityRefresh", "Function Engine.MatineeActor.CheckPriorityRefresh")()); }
 		}
 	}
 	static struct Constants
@@ -36,22 +37,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ClientSidePositionErrorTolerance() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
-			int AIGroupInitStage() { return *cast(int*)(cast(size_t)cast(void*)this + 612); }
-			Pawn AIGroupPawns() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 572); }
-			ScriptName AIGroupNames() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 492); }
-			float Position() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-			float PlayRate() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-			SeqAct_Interp InterpAction() { return *cast(SeqAct_Interp*)(cast(size_t)cast(void*)this + 476); }
+			float ClientSidePositionErrorTolerance() { mixin(MGPC!(float, 652)()); }
+			int AIGroupInitStage() { mixin(MGPC!(int, 612)()); }
+			Pawn AIGroupPawns() { mixin(MGPC!(Pawn, 572)()); }
+			ScriptName AIGroupNames() { mixin(MGPC!(ScriptName, 492)()); }
+			float Position() { mixin(MGPC!(float, 488)()); }
+			float PlayRate() { mixin(MGPC!(float, 484)()); }
+			SeqAct_Interp InterpAction() { mixin(MGPC!(SeqAct_Interp, 476)()); }
 		}
-		bool AllAIGroupsInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x8) != 0; }
-		bool AllAIGroupsInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x8; } return val; }
-		bool bPaused() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x4) != 0; }
-		bool bPaused(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x4; } return val; }
-		bool bReversePlayback() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x2) != 0; }
-		bool bReversePlayback(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x2; } return val; }
-		bool bIsPlaying() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bIsPlaying(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		bool AllAIGroupsInitialized() { mixin(MGBPC!(480, 0x8)()); }
+		bool AllAIGroupsInitialized(bool val) { mixin(MSBPC!(480, 0x8)()); }
+		bool bPaused() { mixin(MGBPC!(480, 0x4)()); }
+		bool bPaused(bool val) { mixin(MSBPC!(480, 0x4)()); }
+		bool bReversePlayback() { mixin(MGBPC!(480, 0x2)()); }
+		bool bReversePlayback(bool val) { mixin(MSBPC!(480, 0x2)()); }
+		bool bIsPlaying() { mixin(MGBPC!(480, 0x1)()); }
+		bool bIsPlaying(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	void AddAIGroupActor(InterpGroupInstAI AIGroupInst)

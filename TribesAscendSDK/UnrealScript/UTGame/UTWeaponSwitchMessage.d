@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTWeaponSwitchMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,13 +10,13 @@ extern(C++) interface UTWeaponSwitchMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponSwitchMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponSwitchMessage")()); }
 	private static __gshared UTWeaponSwitchMessage mDefaultProperties;
-	@property final static UTWeaponSwitchMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponSwitchMessage)("UTWeaponSwitchMessage UTGame.Default__UTWeaponSwitchMessage")); }
+	@property final static UTWeaponSwitchMessage DefaultProperties() { mixin(MGDPC!(UTWeaponSwitchMessage, "UTWeaponSwitchMessage UTGame.Default__UTWeaponSwitchMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponSwitchMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTWeaponSwitchMessage.GetString")()); }
 	}
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

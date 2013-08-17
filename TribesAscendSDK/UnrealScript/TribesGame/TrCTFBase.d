@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCTFBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Engine.PlayerController;
@@ -12,9 +13,9 @@ extern(C++) interface TrCTFBase : UTCTFBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCTFBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCTFBase")()); }
 	private static __gshared TrCTFBase mDefaultProperties;
-	@property final static TrCTFBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCTFBase)("TrCTFBase TribesGame.Default__TrCTFBase")); }
+	@property final static TrCTFBase DefaultProperties() { mixin(MGDPC!(TrCTFBase, "TrCTFBase TribesGame.Default__TrCTFBase")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,26 +31,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.ReplicatedEvent")); }
-			ScriptFunction SetBlitzStandActive() { return mSetBlitzStandActive ? mSetBlitzStandActive : (mSetBlitzStandActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.SetBlitzStandActive")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.PostBeginPlay")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.PostRenderFor")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.PostInitAnimTree")); }
-			ScriptFunction OnFlagComesHome() { return mOnFlagComesHome ? mOnFlagComesHome : (mOnFlagComesHome = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.OnFlagComesHome")); }
-			ScriptFunction OnFlagTaken() { return mOnFlagTaken ? mOnFlagTaken : (mOnFlagTaken = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.OnFlagTaken")); }
-			ScriptFunction SpawnHelpTextCollisionProxy() { return mSpawnHelpTextCollisionProxy ? mSpawnHelpTextCollisionProxy : (mSpawnHelpTextCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFBase.SpawnHelpTextCollisionProxy")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrCTFBase.ReplicatedEvent")()); }
+			ScriptFunction SetBlitzStandActive() { mixin(MGF!("mSetBlitzStandActive", "Function TribesGame.TrCTFBase.SetBlitzStandActive")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrCTFBase.PostBeginPlay")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrCTFBase.PostRenderFor")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrCTFBase.PostInitAnimTree")()); }
+			ScriptFunction OnFlagComesHome() { mixin(MGF!("mOnFlagComesHome", "Function TribesGame.TrCTFBase.OnFlagComesHome")()); }
+			ScriptFunction OnFlagTaken() { mixin(MGF!("mOnFlagTaken", "Function TribesGame.TrCTFBase.OnFlagTaken")()); }
+			ScriptFunction SpawnHelpTextCollisionProxy() { mixin(MGF!("mSpawnHelpTextCollisionProxy", "Function TribesGame.TrCTFBase.SpawnHelpTextCollisionProxy")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int CTFBlitzIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 1124); }
-			MaterialInstanceConstant m_MarkerMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1120); }
-			TrAnimNodeBlendList m_OpenCloseBlendList() { return *cast(TrAnimNodeBlendList*)(cast(size_t)cast(void*)this + 1116); }
+			int CTFBlitzIndex() { mixin(MGPC!(int, 1124)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 1120)()); }
+			TrAnimNodeBlendList m_OpenCloseBlendList() { mixin(MGPC!(TrAnimNodeBlendList, 1116)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FlagStandMesh'!
 		}
-		bool r_bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1128) & 0x1) != 0; }
-		bool r_bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1128) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1128) &= ~0x1; } return val; }
+		bool r_bIsActive() { mixin(MGBPC!(1128, 0x1)()); }
+		bool r_bIsActive(bool val) { mixin(MSBPC!(1128, 0x1)()); }
 	}
 final:
 	void ReplicatedEvent(ScriptName VarName)

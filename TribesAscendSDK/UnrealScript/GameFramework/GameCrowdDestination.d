@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdDestination;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.GameFramework.GameCrowdDestinationQueuePoint;
 import UnrealScript.Core.UObject;
@@ -12,9 +13,9 @@ extern(C++) interface GameCrowdDestination : GameCrowdInteractionPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdDestination")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdDestination")()); }
 	private static __gshared GameCrowdDestination mDefaultProperties;
-	@property final static GameCrowdDestination DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdDestination)("GameCrowdDestination GameFramework.Default__GameCrowdDestination")); }
+	@property final static GameCrowdDestination DefaultProperties() { mixin(MGDPC!(GameCrowdDestination, "GameCrowdDestination GameFramework.Default__GameCrowdDestination")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,78 +33,78 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReachedByAgent() { return mReachedByAgent ? mReachedByAgent : (mReachedByAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.ReachedByAgent")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.PostBeginPlay")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.Destroyed")); }
-			ScriptFunction ReachedDestination() { return mReachedDestination ? mReachedDestination : (mReachedDestination = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.ReachedDestination")); }
-			ScriptFunction PickNewDestinationFor() { return mPickNewDestinationFor ? mPickNewDestinationFor : (mPickNewDestinationFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.PickNewDestinationFor")); }
-			ScriptFunction AllowableDestinationFor() { return mAllowableDestinationFor ? mAllowableDestinationFor : (mAllowableDestinationFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.AllowableDestinationFor")); }
-			ScriptFunction DecrementCustomerCount() { return mDecrementCustomerCount ? mDecrementCustomerCount : (mDecrementCustomerCount = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.DecrementCustomerCount")); }
-			ScriptFunction IncrementCustomerCount() { return mIncrementCustomerCount ? mIncrementCustomerCount : (mIncrementCustomerCount = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.IncrementCustomerCount")); }
-			ScriptFunction AtCapacity() { return mAtCapacity ? mAtCapacity : (mAtCapacity = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.AtCapacity")); }
-			ScriptFunction GetSpawnPosition() { return mGetSpawnPosition ? mGetSpawnPosition : (mGetSpawnPosition = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.GetSpawnPosition")); }
+			ScriptFunction ReachedByAgent() { mixin(MGF!("mReachedByAgent", "Function GameFramework.GameCrowdDestination.ReachedByAgent")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function GameFramework.GameCrowdDestination.PostBeginPlay")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function GameFramework.GameCrowdDestination.Destroyed")()); }
+			ScriptFunction ReachedDestination() { mixin(MGF!("mReachedDestination", "Function GameFramework.GameCrowdDestination.ReachedDestination")()); }
+			ScriptFunction PickNewDestinationFor() { mixin(MGF!("mPickNewDestinationFor", "Function GameFramework.GameCrowdDestination.PickNewDestinationFor")()); }
+			ScriptFunction AllowableDestinationFor() { mixin(MGF!("mAllowableDestinationFor", "Function GameFramework.GameCrowdDestination.AllowableDestinationFor")()); }
+			ScriptFunction DecrementCustomerCount() { mixin(MGF!("mDecrementCustomerCount", "Function GameFramework.GameCrowdDestination.DecrementCustomerCount")()); }
+			ScriptFunction IncrementCustomerCount() { mixin(MGF!("mIncrementCustomerCount", "Function GameFramework.GameCrowdDestination.IncrementCustomerCount")()); }
+			ScriptFunction AtCapacity() { mixin(MGF!("mAtCapacity", "Function GameFramework.GameCrowdDestination.AtCapacity")()); }
+			ScriptFunction GetSpawnPosition() { mixin(MGF!("mGetSpawnPosition", "Function GameFramework.GameCrowdDestination.GetSpawnPosition")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GameCrowdDestination) NextDestinations() { return *cast(ScriptArray!(GameCrowdDestination)*)(cast(size_t)cast(void*)this + 492); }
-			ScriptArray!(ScriptClass) SupportedAgentClasses() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 520); }
-			ScriptArray!(UObject) SupportedArchetypes() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 532); }
-			ScriptArray!(ScriptClass) RestrictedAgentClasses() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 544); }
-			ScriptArray!(UObject) RestrictedArchetypes() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 556); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) ReachedBehaviors() { return *cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)(cast(size_t)cast(void*)this + 588); }
-			GameCrowdPopulationManager MyPopMgr() { return *cast(GameCrowdPopulationManager*)(cast(size_t)cast(void*)this + 612); }
-			float LastSpawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-			float Priority() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
-			GameCrowdAgent AgentEnRoute() { return *cast(GameCrowdAgent*)(cast(size_t)cast(void*)this + 600); }
-			float SpawnRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 584); }
-			float InteractionDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-			ScriptName InteractionTag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 572); }
-			float ExactReachTolerance() { return *cast(float*)(cast(size_t)cast(void*)this + 568); }
-			int CustomerCount() { return *cast(int*)(cast(size_t)cast(void*)this + 516); }
-			float Frequency() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
-			int Capacity() { return *cast(int*)(cast(size_t)cast(void*)this + 508); }
-			GameCrowdDestinationQueuePoint QueueHead() { return *cast(GameCrowdDestinationQueuePoint*)(cast(size_t)cast(void*)this + 504); }
-			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 484); }
+			ScriptArray!(GameCrowdDestination) NextDestinations() { mixin(MGPC!(ScriptArray!(GameCrowdDestination), 492)()); }
+			ScriptArray!(ScriptClass) SupportedAgentClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 520)()); }
+			ScriptArray!(UObject) SupportedArchetypes() { mixin(MGPC!(ScriptArray!(UObject), 532)()); }
+			ScriptArray!(ScriptClass) RestrictedAgentClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 544)()); }
+			ScriptArray!(UObject) RestrictedArchetypes() { mixin(MGPC!(ScriptArray!(UObject), 556)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) ReachedBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 588)()); }
+			GameCrowdPopulationManager MyPopMgr() { mixin(MGPC!(GameCrowdPopulationManager, 612)()); }
+			float LastSpawnTime() { mixin(MGPC!(float, 608)()); }
+			float Priority() { mixin(MGPC!(float, 604)()); }
+			GameCrowdAgent AgentEnRoute() { mixin(MGPC!(GameCrowdAgent, 600)()); }
+			float SpawnRadius() { mixin(MGPC!(float, 584)()); }
+			float InteractionDelay() { mixin(MGPC!(float, 580)()); }
+			ScriptName InteractionTag() { mixin(MGPC!(ScriptName, 572)()); }
+			float ExactReachTolerance() { mixin(MGPC!(float, 568)()); }
+			int CustomerCount() { mixin(MGPC!(int, 516)()); }
+			float Frequency() { mixin(MGPC!(float, 512)()); }
+			int Capacity() { mixin(MGPC!(int, 508)()); }
+			GameCrowdDestinationQueuePoint QueueHead() { mixin(MGPC!(GameCrowdDestinationQueuePoint, 504)()); }
+			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!(UObject.Pointer, 484)()); }
 		}
-		bool bHasNavigationMesh() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x20000) != 0; }
-		bool bHasNavigationMesh(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x20000; } return val; }
-		bool bAdjacentToVisibleNode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x10000) != 0; }
-		bool bAdjacentToVisibleNode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x10000; } return val; }
-		bool bIsBeyondSpawnDistance() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x8000) != 0; }
-		bool bIsBeyondSpawnDistance(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x8000; } return val; }
-		bool bCanSpawnHereNow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x4000) != 0; }
-		bool bCanSpawnHereNow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x4000; } return val; }
-		bool bWillBeVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x2000) != 0; }
-		bool bWillBeVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x2000; } return val; }
-		bool bIsVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1000) != 0; }
-		bool bIsVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1000; } return val; }
-		bool bSoftPerimeter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x800) != 0; }
-		bool bSoftPerimeter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x800; } return val; }
-		bool bSpawnAtEdge() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x400) != 0; }
-		bool bSpawnAtEdge(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x400; } return val; }
-		bool bLineSpawner() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x200) != 0; }
-		bool bLineSpawner(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x200; } return val; }
-		bool bAllowsSpawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x100) != 0; }
-		bool bAllowsSpawning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x100; } return val; }
-		bool bHasRestrictions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x80) != 0; }
-		bool bHasRestrictions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x80; } return val; }
-		bool bMustReachExactly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x40) != 0; }
-		bool bMustReachExactly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x40; } return val; }
-		bool bFleeDestination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x20) != 0; }
-		bool bFleeDestination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x20; } return val; }
-		bool bSkipBehaviorIfPanicked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x10) != 0; }
-		bool bSkipBehaviorIfPanicked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x10; } return val; }
-		bool bAvoidWhenPanicked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x8) != 0; }
-		bool bAvoidWhenPanicked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x8; } return val; }
-		bool bLastAllowableResult() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x4) != 0; }
-		bool bLastAllowableResult(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x4; } return val; }
-		bool bAllowAsPreviousDestination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x2) != 0; }
-		bool bAllowAsPreviousDestination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x2; } return val; }
-		bool bKillWhenReached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-		bool bKillWhenReached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
+		bool bHasNavigationMesh() { mixin(MGBPC!(488, 0x20000)()); }
+		bool bHasNavigationMesh(bool val) { mixin(MSBPC!(488, 0x20000)()); }
+		bool bAdjacentToVisibleNode() { mixin(MGBPC!(488, 0x10000)()); }
+		bool bAdjacentToVisibleNode(bool val) { mixin(MSBPC!(488, 0x10000)()); }
+		bool bIsBeyondSpawnDistance() { mixin(MGBPC!(488, 0x8000)()); }
+		bool bIsBeyondSpawnDistance(bool val) { mixin(MSBPC!(488, 0x8000)()); }
+		bool bCanSpawnHereNow() { mixin(MGBPC!(488, 0x4000)()); }
+		bool bCanSpawnHereNow(bool val) { mixin(MSBPC!(488, 0x4000)()); }
+		bool bWillBeVisible() { mixin(MGBPC!(488, 0x2000)()); }
+		bool bWillBeVisible(bool val) { mixin(MSBPC!(488, 0x2000)()); }
+		bool bIsVisible() { mixin(MGBPC!(488, 0x1000)()); }
+		bool bIsVisible(bool val) { mixin(MSBPC!(488, 0x1000)()); }
+		bool bSoftPerimeter() { mixin(MGBPC!(488, 0x800)()); }
+		bool bSoftPerimeter(bool val) { mixin(MSBPC!(488, 0x800)()); }
+		bool bSpawnAtEdge() { mixin(MGBPC!(488, 0x400)()); }
+		bool bSpawnAtEdge(bool val) { mixin(MSBPC!(488, 0x400)()); }
+		bool bLineSpawner() { mixin(MGBPC!(488, 0x200)()); }
+		bool bLineSpawner(bool val) { mixin(MSBPC!(488, 0x200)()); }
+		bool bAllowsSpawning() { mixin(MGBPC!(488, 0x100)()); }
+		bool bAllowsSpawning(bool val) { mixin(MSBPC!(488, 0x100)()); }
+		bool bHasRestrictions() { mixin(MGBPC!(488, 0x80)()); }
+		bool bHasRestrictions(bool val) { mixin(MSBPC!(488, 0x80)()); }
+		bool bMustReachExactly() { mixin(MGBPC!(488, 0x40)()); }
+		bool bMustReachExactly(bool val) { mixin(MSBPC!(488, 0x40)()); }
+		bool bFleeDestination() { mixin(MGBPC!(488, 0x20)()); }
+		bool bFleeDestination(bool val) { mixin(MSBPC!(488, 0x20)()); }
+		bool bSkipBehaviorIfPanicked() { mixin(MGBPC!(488, 0x10)()); }
+		bool bSkipBehaviorIfPanicked(bool val) { mixin(MSBPC!(488, 0x10)()); }
+		bool bAvoidWhenPanicked() { mixin(MGBPC!(488, 0x8)()); }
+		bool bAvoidWhenPanicked(bool val) { mixin(MSBPC!(488, 0x8)()); }
+		bool bLastAllowableResult() { mixin(MGBPC!(488, 0x4)()); }
+		bool bLastAllowableResult(bool val) { mixin(MSBPC!(488, 0x4)()); }
+		bool bAllowAsPreviousDestination() { mixin(MGBPC!(488, 0x2)()); }
+		bool bAllowAsPreviousDestination(bool val) { mixin(MSBPC!(488, 0x2)()); }
+		bool bKillWhenReached() { mixin(MGBPC!(488, 0x1)()); }
+		bool bKillWhenReached(bool val) { mixin(MSBPC!(488, 0x1)()); }
 	}
 final:
 	bool ReachedByAgent(GameCrowdAgent Agent, Vector TestPosition, bool bTestExactly)
@@ -168,13 +169,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AtCapacity, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void GetSpawnPosition(SeqAct_GameCrowdSpawner Spawner, Vector* SpawnPos, Rotator* SpawnRot)
+	void GetSpawnPosition(SeqAct_GameCrowdSpawner Spawner, ref Vector SpawnPos, ref Rotator SpawnRot)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(SeqAct_GameCrowdSpawner*)params.ptr = Spawner;
-		*cast(Vector*)&params[4] = *SpawnPos;
-		*cast(Rotator*)&params[16] = *SpawnRot;
+		*cast(Vector*)&params[4] = SpawnPos;
+		*cast(Rotator*)&params[16] = SpawnRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpawnPosition, params.ptr, cast(void*)0);
 		*SpawnPos = *cast(Vector*)&params[4];
 		*SpawnRot = *cast(Rotator*)&params[16];

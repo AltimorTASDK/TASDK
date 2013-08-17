@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NavMeshGoal_At;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationHandle;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface NavMeshGoal_At : NavMeshPathGoalEvaluator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoal_At")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshGoal_At")()); }
 	private static __gshared NavMeshGoal_At mDefaultProperties;
-	@property final static NavMeshGoal_At DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoal_At)("NavMeshGoal_At Engine.Default__NavMeshGoal_At")); }
+	@property final static NavMeshGoal_At DefaultProperties() { mixin(MGDPC!(NavMeshGoal_At, "NavMeshGoal_At Engine.Default__NavMeshGoal_At")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,23 +25,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RecycleNative() { return mRecycleNative ? mRecycleNative : (mRecycleNative = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshGoal_At.RecycleNative")); }
-			ScriptFunction AtActor() { return mAtActor ? mAtActor : (mAtActor = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshGoal_At.AtActor")); }
-			ScriptFunction AtLocation() { return mAtLocation ? mAtLocation : (mAtLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshGoal_At.AtLocation")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshGoal_At.Recycle")); }
+			ScriptFunction RecycleNative() { mixin(MGF!("mRecycleNative", "Function Engine.NavMeshGoal_At.RecycleNative")()); }
+			ScriptFunction AtActor() { mixin(MGF!("mAtActor", "Function Engine.NavMeshGoal_At.AtActor")()); }
+			ScriptFunction AtLocation() { mixin(MGF!("mAtLocation", "Function Engine.NavMeshGoal_At.AtLocation")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshGoal_At.Recycle")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Pointer PartialGoal() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 104); }
-			UObject.Pointer GoalPoly() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 100); }
-			float GoalDist() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			Vector Goal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 80); }
+			UObject.Pointer PartialGoal() { mixin(MGPC!(UObject.Pointer, 104)()); }
+			UObject.Pointer GoalPoly() { mixin(MGPC!(UObject.Pointer, 100)()); }
+			float GoalDist() { mixin(MGPC!(float, 92)()); }
+			Vector Goal() { mixin(MGPC!(Vector, 80)()); }
 		}
-		bool bKeepPartial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x1) != 0; }
-		bool bKeepPartial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x1; } return val; }
+		bool bKeepPartial() { mixin(MGBPC!(96, 0x1)()); }
+		bool bKeepPartial(bool val) { mixin(MSBPC!(96, 0x1)()); }
 	}
 final:
 	void RecycleNative()

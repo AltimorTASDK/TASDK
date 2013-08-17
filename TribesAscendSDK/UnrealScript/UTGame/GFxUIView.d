@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUIView;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.UDKBase.UDKPlayerController;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxUIView : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUIView")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUIView")()); }
 	private static __gshared GFxUIView mDefaultProperties;
-	@property final static GFxUIView DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUIView)("GFxUIView UTGame.Default__GFxUIView")); }
+	@property final static GFxUIView DefaultProperties() { mixin(MGDPC!(GFxUIView, "GFxUIView UTGame.Default__GFxUIView")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,15 +29,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HasLinkConnection() { return mHasLinkConnection ? mHasLinkConnection : (mHasLinkConnection = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.HasLinkConnection")); }
-			ScriptFunction GetPlayerOwner() { return mGetPlayerOwner ? mGetPlayerOwner : (mGetPlayerOwner = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerOwner")); }
-			ScriptFunction GetUDKPlayerOwner() { return mGetUDKPlayerOwner ? mGetUDKPlayerOwner : (mGetUDKPlayerOwner = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetUDKPlayerOwner")); }
-			ScriptFunction GetPlayerName() { return mGetPlayerName ? mGetPlayerName : (mGetPlayerName = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerName")); }
-			ScriptFunction IsLoggedIn() { return mIsLoggedIn ? mIsLoggedIn : (mIsLoggedIn = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.IsLoggedIn")); }
-			ScriptFunction GetCommonOptionsURL() { return mGetCommonOptionsURL ? mGetCommonOptionsURL : (mGetCommonOptionsURL = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetCommonOptionsURL")); }
-			ScriptFunction GetPlayerIndex() { return mGetPlayerIndex ? mGetPlayerIndex : (mGetPlayerIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerIndex")); }
-			ScriptFunction GetPlayerControllerId() { return mGetPlayerControllerId ? mGetPlayerControllerId : (mGetPlayerControllerId = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerControllerId")); }
-			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.ConsoleCommand")); }
+			ScriptFunction HasLinkConnection() { mixin(MGF!("mHasLinkConnection", "Function UTGame.GFxUIView.HasLinkConnection")()); }
+			ScriptFunction GetPlayerOwner() { mixin(MGF!("mGetPlayerOwner", "Function UTGame.GFxUIView.GetPlayerOwner")()); }
+			ScriptFunction GetUDKPlayerOwner() { mixin(MGF!("mGetUDKPlayerOwner", "Function UTGame.GFxUIView.GetUDKPlayerOwner")()); }
+			ScriptFunction GetPlayerName() { mixin(MGF!("mGetPlayerName", "Function UTGame.GFxUIView.GetPlayerName")()); }
+			ScriptFunction IsLoggedIn() { mixin(MGF!("mIsLoggedIn", "Function UTGame.GFxUIView.IsLoggedIn")()); }
+			ScriptFunction GetCommonOptionsURL() { mixin(MGF!("mGetCommonOptionsURL", "Function UTGame.GFxUIView.GetCommonOptionsURL")()); }
+			ScriptFunction GetPlayerIndex() { mixin(MGF!("mGetPlayerIndex", "Function UTGame.GFxUIView.GetPlayerIndex")()); }
+			ScriptFunction GetPlayerControllerId() { mixin(MGF!("mGetPlayerControllerId", "Function UTGame.GFxUIView.GetPlayerControllerId")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function UTGame.GFxUIView.ConsoleCommand")()); }
 		}
 	}
 	static struct Constants
@@ -150,8 +151,8 @@ public extern(D):
 	}
 	@property final
 	{
-		bool bRequiresNetwork() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x1) != 0; }
-		bool bRequiresNetwork(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x1; } return val; }
+		bool bRequiresNetwork() { mixin(MGBPC!(120, 0x1)()); }
+		bool bRequiresNetwork(bool val) { mixin(MSBPC!(120, 0x1)()); }
 	}
 final:
 	static bool HasLinkConnection()

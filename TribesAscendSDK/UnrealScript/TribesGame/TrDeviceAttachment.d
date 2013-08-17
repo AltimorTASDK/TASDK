@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeviceAttachment;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.Weapon;
@@ -18,9 +19,9 @@ extern(C++) interface TrDeviceAttachment : UTWeaponAttachment
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeviceAttachment")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeviceAttachment")()); }
 	private static __gshared TrDeviceAttachment mDefaultProperties;
-	@property final static TrDeviceAttachment DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeviceAttachment)("TrDeviceAttachment TribesGame.Default__TrDeviceAttachment")); }
+	@property final static TrDeviceAttachment DefaultProperties() { mixin(MGDPC!(TrDeviceAttachment, "TrDeviceAttachment TribesGame.Default__TrDeviceAttachment")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,44 +45,45 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AttachTo() { return mAttachTo ? mAttachTo : (mAttachTo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.AttachTo")); }
-			ScriptFunction InitAnims() { return mInitAnims ? mInitAnims : (mInitAnims = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.InitAnims")); }
-			ScriptFunction DetachFrom() { return mDetachFrom ? mDetachFrom : (mDetachFrom = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.DetachFrom")); }
-			ScriptFunction SetPuttingDownWeapon() { return mSetPuttingDownWeapon ? mSetPuttingDownWeapon : (mSetPuttingDownWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.SetPuttingDownWeapon")); }
-			ScriptFunction ShouldFireTracer() { return mShouldFireTracer ? mShouldFireTracer : (mShouldFireTracer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.ShouldFireTracer")); }
-			ScriptFunction ShouldFireTracerBeam() { return mShouldFireTracerBeam ? mShouldFireTracerBeam : (mShouldFireTracerBeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.ShouldFireTracerBeam")); }
-			ScriptFunction ThirdPersonFireEffects() { return mThirdPersonFireEffects ? mThirdPersonFireEffects : (mThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.ThirdPersonFireEffects")); }
-			ScriptFunction StopThirdPersonFireEffects() { return mStopThirdPersonFireEffects ? mStopThirdPersonFireEffects : (mStopThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.StopThirdPersonFireEffects")); }
-			ScriptFunction FirstPersonFireEffects() { return mFirstPersonFireEffects ? mFirstPersonFireEffects : (mFirstPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.FirstPersonFireEffects")); }
-			ScriptFunction SpawnTracerBeam() { return mSpawnTracerBeam ? mSpawnTracerBeam : (mSpawnTracerBeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.SpawnTracerBeam")); }
-			ScriptFunction SpawnTracerEffect() { return mSpawnTracerEffect ? mSpawnTracerEffect : (mSpawnTracerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.SpawnTracerEffect")); }
-			ScriptFunction GetTracer() { return mGetTracer ? mGetTracer : (mGetTracer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.GetTracer")); }
-			ScriptFunction PlayReload() { return mPlayReload ? mPlayReload : (mPlayReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.PlayReload")); }
-			ScriptFunction PlayImpactEffects() { return mPlayImpactEffects ? mPlayImpactEffects : (mPlayImpactEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.PlayImpactEffects")); }
-			ScriptFunction PlayImpactSound() { return mPlayImpactSound ? mPlayImpactSound : (mPlayImpactSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.PlayImpactSound")); }
-			ScriptFunction GetImpactEffect() { return mGetImpactEffect ? mGetImpactEffect : (mGetImpactEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeviceAttachment.GetImpactEffect")); }
+			ScriptFunction AttachTo() { mixin(MGF!("mAttachTo", "Function TribesGame.TrDeviceAttachment.AttachTo")()); }
+			ScriptFunction InitAnims() { mixin(MGF!("mInitAnims", "Function TribesGame.TrDeviceAttachment.InitAnims")()); }
+			ScriptFunction DetachFrom() { mixin(MGF!("mDetachFrom", "Function TribesGame.TrDeviceAttachment.DetachFrom")()); }
+			ScriptFunction SetPuttingDownWeapon() { mixin(MGF!("mSetPuttingDownWeapon", "Function TribesGame.TrDeviceAttachment.SetPuttingDownWeapon")()); }
+			ScriptFunction ShouldFireTracer() { mixin(MGF!("mShouldFireTracer", "Function TribesGame.TrDeviceAttachment.ShouldFireTracer")()); }
+			ScriptFunction ShouldFireTracerBeam() { mixin(MGF!("mShouldFireTracerBeam", "Function TribesGame.TrDeviceAttachment.ShouldFireTracerBeam")()); }
+			ScriptFunction ThirdPersonFireEffects() { mixin(MGF!("mThirdPersonFireEffects", "Function TribesGame.TrDeviceAttachment.ThirdPersonFireEffects")()); }
+			ScriptFunction StopThirdPersonFireEffects() { mixin(MGF!("mStopThirdPersonFireEffects", "Function TribesGame.TrDeviceAttachment.StopThirdPersonFireEffects")()); }
+			ScriptFunction FirstPersonFireEffects() { mixin(MGF!("mFirstPersonFireEffects", "Function TribesGame.TrDeviceAttachment.FirstPersonFireEffects")()); }
+			ScriptFunction SpawnTracerBeam() { mixin(MGF!("mSpawnTracerBeam", "Function TribesGame.TrDeviceAttachment.SpawnTracerBeam")()); }
+			ScriptFunction SpawnTracerEffect() { mixin(MGF!("mSpawnTracerEffect", "Function TribesGame.TrDeviceAttachment.SpawnTracerEffect")()); }
+			ScriptFunction GetTracer() { mixin(MGF!("mGetTracer", "Function TribesGame.TrDeviceAttachment.GetTracer")()); }
+			ScriptFunction PlayReload() { mixin(MGF!("mPlayReload", "Function TribesGame.TrDeviceAttachment.PlayReload")()); }
+			ScriptFunction PlayImpactEffects() { mixin(MGF!("mPlayImpactEffects", "Function TribesGame.TrDeviceAttachment.PlayImpactEffects")()); }
+			ScriptFunction PlayImpactSound() { mixin(MGF!("mPlayImpactSound", "Function TribesGame.TrDeviceAttachment.PlayImpactSound")()); }
+			ScriptFunction GetImpactEffect() { mixin(MGF!("mGetImpactEffect", "Function TribesGame.TrDeviceAttachment.GetImpactEffect")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(AnimSet) m_LightMed3pPawnAnimSets() { return *cast(ScriptArray!(AnimSet)*)(cast(size_t)cast(void*)this + 736); }
-			ScriptArray!(AnimSet) m_Heavy3pPawnAnimSets() { return *cast(ScriptArray!(AnimSet)*)(cast(size_t)cast(void*)this + 748); }
-			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { return *cast(ScriptArray!(TrObject.EffectFormOverwrite)*)(cast(size_t)cast(void*)this + 760); }
-			ScriptName m_nmRidingAsPassengerFireAnimName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 772); }
-			float m_fShowTracerDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 732); }
-			TrObject.EWeaponTracerType m_TracerType() { return *cast(TrObject.EWeaponTracerType*)(cast(size_t)cast(void*)this + 728); }
-			ParticleSystem m_TracerBeamTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 724); }
-			ScriptName m_nmHeavyAimProfileName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 712); }
-			ScriptName m_nmLightMedAimProfileName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 704); }
+			ScriptArray!(AnimSet) m_LightMed3pPawnAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 736)()); }
+			ScriptArray!(AnimSet) m_Heavy3pPawnAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 748)()); }
+			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!(ScriptArray!(TrObject.EffectFormOverwrite), 760)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentWeaponLoop'!
+			ScriptName m_nmRidingAsPassengerFireAnimName() { mixin(MGPC!(ScriptName, 772)()); }
+			float m_fShowTracerDistance() { mixin(MGPC!(float, 732)()); }
+			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!(TrObject.EWeaponTracerType, 728)()); }
+			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!(ParticleSystem, 724)()); }
+			ScriptName m_nmHeavyAimProfileName() { mixin(MGPC!(ScriptName, 712)()); }
+			ScriptName m_nmLightMedAimProfileName() { mixin(MGPC!(ScriptName, 704)()); }
 		}
-		bool m_bScaleFireAnimRate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 720) & 0x4) != 0; }
-		bool m_bScaleFireAnimRate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 720) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 720) &= ~0x4; } return val; }
-		bool m_bSpawnTracerBeams() { return (*cast(uint*)(cast(size_t)cast(void*)this + 720) & 0x2) != 0; }
-		bool m_bSpawnTracerBeams(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 720) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 720) &= ~0x2; } return val; }
-		bool m_bSpawnTracers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 720) & 0x1) != 0; }
-		bool m_bSpawnTracers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 720) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 720) &= ~0x1; } return val; }
+		bool m_bScaleFireAnimRate() { mixin(MGBPC!(720, 0x4)()); }
+		bool m_bScaleFireAnimRate(bool val) { mixin(MSBPC!(720, 0x4)()); }
+		bool m_bSpawnTracerBeams() { mixin(MGBPC!(720, 0x2)()); }
+		bool m_bSpawnTracerBeams(bool val) { mixin(MSBPC!(720, 0x2)()); }
+		bool m_bSpawnTracers() { mixin(MGBPC!(720, 0x1)()); }
+		bool m_bSpawnTracers(bool val) { mixin(MSBPC!(720, 0x1)()); }
 	}
 final:
 	void AttachTo(UTPawn OwnerPawn)

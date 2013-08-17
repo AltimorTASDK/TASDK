@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTMutator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.Actor;
 import UnrealScript.UTGame.UTPlayerController;
@@ -10,9 +11,9 @@ extern(C++) interface UTMutator : Mutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator")()); }
 	private static __gshared UTMutator mDefaultProperties;
-	@property final static UTMutator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator)("UTMutator UTGame.Default__UTMutator")); }
+	@property final static UTMutator DefaultProperties() { mixin(MGDPC!(UTMutator, "UTMutator UTGame.Default__UTMutator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,10 +25,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetNextUTMutator() { return mGetNextUTMutator ? mGetNextUTMutator : (mGetNextUTMutator = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator.GetNextUTMutator")); }
-			ScriptFunction MutatorIsAllowed() { return mMutatorIsAllowed ? mMutatorIsAllowed : (mMutatorIsAllowed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator.MutatorIsAllowed")); }
-			ScriptFunction ReplaceWith() { return mReplaceWith ? mReplaceWith : (mReplaceWith = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator.ReplaceWith")); }
-			ScriptFunction ProcessSpeechRecognition() { return mProcessSpeechRecognition ? mProcessSpeechRecognition : (mProcessSpeechRecognition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator.ProcessSpeechRecognition")); }
+			ScriptFunction GetNextUTMutator() { mixin(MGF!("mGetNextUTMutator", "Function UTGame.UTMutator.GetNextUTMutator")()); }
+			ScriptFunction MutatorIsAllowed() { mixin(MGF!("mMutatorIsAllowed", "Function UTGame.UTMutator.MutatorIsAllowed")()); }
+			ScriptFunction ReplaceWith() { mixin(MGF!("mReplaceWith", "Function UTGame.UTMutator.ReplaceWith")()); }
+			ScriptFunction ProcessSpeechRecognition() { mixin(MGF!("mProcessSpeechRecognition", "Function UTGame.UTMutator.ProcessSpeechRecognition")()); }
 		}
 	}
 final:
@@ -54,12 +55,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplaceWith, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	void ProcessSpeechRecognition(UTPlayerController Speaker, ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)* Words)
+	void ProcessSpeechRecognition(UTPlayerController Speaker, ref const ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Speaker;
-		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = *Words;
+		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessSpeechRecognition, params.ptr, cast(void*)0);
 		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 	}

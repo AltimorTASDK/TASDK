@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_PartyAction;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxTrPage_PartyAction : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_PartyAction")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_PartyAction")()); }
 	private static __gshared GFxTrPage_PartyAction mDefaultProperties;
-	@property final static GFxTrPage_PartyAction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_PartyAction)("GFxTrPage_PartyAction TribesGame.Default__GFxTrPage_PartyAction")); }
+	@property final static GFxTrPage_PartyAction DefaultProperties() { mixin(MGDPC!(GFxTrPage_PartyAction, "GFxTrPage_PartyAction TribesGame.Default__GFxTrPage_PartyAction")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyAction.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyAction.FillOption")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyAction.TakeAction")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyAction.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyAction.PopupComplete")); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_PartyAction.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_PartyAction.FillOption")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_PartyAction.TakeAction")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_PartyAction.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_PartyAction.PopupComplete")()); }
 		}
 	}
 	static struct Constants
@@ -41,8 +42,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString MemberName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 360); }
-		int PopupNum() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+		ScriptString MemberName() { mixin(MGPC!(ScriptString, 360)()); }
+		int PopupNum() { mixin(MGPC!(int, 356)()); }
 	}
 final:
 	void FillData(GFxObject DataList)

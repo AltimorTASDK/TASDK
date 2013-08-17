@@ -1,19 +1,20 @@
 module UnrealScript.Engine.SeqEvent_LevelLoaded;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 
 extern(C++) interface SeqEvent_LevelLoaded : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_LevelLoaded")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_LevelLoaded")()); }
 	private static __gshared SeqEvent_LevelLoaded mDefaultProperties;
-	@property final static SeqEvent_LevelLoaded DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_LevelLoaded)("SeqEvent_LevelLoaded Engine.Default__SeqEvent_LevelLoaded")); }
+	@property final static SeqEvent_LevelLoaded DefaultProperties() { mixin(MGDPC!(SeqEvent_LevelLoaded, "SeqEvent_LevelLoaded Engine.Default__SeqEvent_LevelLoaded")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_LevelLoaded.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqEvent_LevelLoaded.GetObjClassVersion")()); }
 	}
 	final static int GetObjClassVersion()
 	{

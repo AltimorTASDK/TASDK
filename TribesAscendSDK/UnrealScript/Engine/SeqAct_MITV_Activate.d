@@ -1,15 +1,16 @@
 module UnrealScript.Engine.SeqAct_MITV_Activate;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_MITV_Activate : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_MITV_Activate")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_MITV_Activate")()); }
 	private static __gshared SeqAct_MITV_Activate mDefaultProperties;
-	@property final static SeqAct_MITV_Activate DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_MITV_Activate)("SeqAct_MITV_Activate Engine.Default__SeqAct_MITV_Activate")); }
+	@property final static SeqAct_MITV_Activate DefaultProperties() { mixin(MGDPC!(SeqAct_MITV_Activate, "SeqAct_MITV_Activate Engine.Default__SeqAct_MITV_Activate")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,11 +20,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_MITV_Activate.GetObjClassVersion")); }
-			ScriptFunction Activated() { return mActivated ? mActivated : (mActivated = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_MITV_Activate.Activated")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_MITV_Activate.GetObjClassVersion")()); }
+			ScriptFunction Activated() { mixin(MGF!("mActivated", "Function Engine.SeqAct_MITV_Activate.Activated")()); }
 		}
 	}
-	@property final auto ref float DurationOfMITV() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
+	@property final auto ref float DurationOfMITV() { mixin(MGPC!(float, 232)()); }
 final:
 	static int GetObjClassVersion()
 	{

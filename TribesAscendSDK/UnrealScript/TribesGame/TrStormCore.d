@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrStormCore;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Canvas;
@@ -12,9 +13,9 @@ extern(C++) interface TrStormCore : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStormCore")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStormCore")()); }
 	private static __gshared TrStormCore mDefaultProperties;
-	@property final static TrStormCore DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStormCore)("TrStormCore TribesGame.Default__TrStormCore")); }
+	@property final static TrStormCore DefaultProperties() { mixin(MGDPC!(TrStormCore, "TrStormCore TribesGame.Default__TrStormCore")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,17 +28,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormCore.TakeDamage")); }
-			ScriptFunction GetHealthAmount() { return mGetHealthAmount ? mGetHealthAmount : (mGetHealthAmount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormCore.GetHealthAmount")); }
-			ScriptFunction GetShieldAmount() { return mGetShieldAmount ? mGetShieldAmount : (mGetShieldAmount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormCore.GetShieldAmount")); }
-			ScriptFunction OnCoreDestroyed() { return mOnCoreDestroyed ? mOnCoreDestroyed : (mOnCoreDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormCore.OnCoreDestroyed")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormCore.PostRenderFor")); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrStormCore.TakeDamage")()); }
+			ScriptFunction GetHealthAmount() { mixin(MGF!("mGetHealthAmount", "Function TribesGame.TrStormCore.GetHealthAmount")()); }
+			ScriptFunction GetShieldAmount() { mixin(MGF!("mGetShieldAmount", "Function TribesGame.TrStormCore.GetShieldAmount")()); }
+			ScriptFunction OnCoreDestroyed() { mixin(MGF!("mOnCoreDestroyed", "Function TribesGame.TrStormCore.OnCoreDestroyed")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrStormCore.PostRenderFor")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fShieldBarPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1364); }
-		MaterialInstanceConstant m_ShieldBarMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1360); }
+		float m_fShieldBarPlacementY() { mixin(MGPC!(float, 1364)()); }
+		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 1360)()); }
 	}
 final:
 	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)

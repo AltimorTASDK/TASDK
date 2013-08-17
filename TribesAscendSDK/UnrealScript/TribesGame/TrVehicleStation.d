@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrVehicleStation;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.TribesGame.TrVehiclePad;
 import UnrealScript.TribesGame.TrPawn;
@@ -13,9 +14,9 @@ extern(C++) interface TrVehicleStation : TrStation
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleStation")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicleStation")()); }
 	private static __gshared TrVehicleStation mDefaultProperties;
-	@property final static TrVehicleStation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleStation)("TrVehicleStation TribesGame.Default__TrVehicleStation")); }
+	@property final static TrVehicleStation DefaultProperties() { mixin(MGDPC!(TrVehicleStation, "TrVehicleStation TribesGame.Default__TrVehicleStation")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,25 +43,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RequestSpawnVehicle() { return mRequestSpawnVehicle ? mRequestSpawnVehicle : (mRequestSpawnVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.RequestSpawnVehicle")); }
-			ScriptFunction GetNumVehiclesSpawnedByType() { return mGetNumVehiclesSpawnedByType ? mGetNumVehiclesSpawnedByType : (mGetNumVehiclesSpawnedByType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.GetNumVehiclesSpawnedByType")); }
-			ScriptFunction GetMaxVehicleCountAllowed() { return mGetMaxVehicleCountAllowed ? mGetMaxVehicleCountAllowed : (mGetMaxVehicleCountAllowed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.GetMaxVehicleCountAllowed")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.ReplicatedEvent")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PostInitAnimTree")); }
-			ScriptFunction PawnEnteredStation() { return mPawnEnteredStation ? mPawnEnteredStation : (mPawnEnteredStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PawnEnteredStation")); }
-			ScriptFunction PawnLeftStation() { return mPawnLeftStation ? mPawnLeftStation : (mPawnLeftStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PawnLeftStation")); }
-			ScriptFunction PlayStationEnteredEffects() { return mPlayStationEnteredEffects ? mPlayStationEnteredEffects : (mPlayStationEnteredEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PlayStationEnteredEffects")); }
-			ScriptFunction PlayStationLeftEffects() { return mPlayStationLeftEffects ? mPlayStationLeftEffects : (mPlayStationLeftEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PlayStationLeftEffects")); }
-			ScriptFunction PlayRetractAnim() { return mPlayRetractAnim ? mPlayRetractAnim : (mPlayRetractAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PlayRetractAnim")); }
-			ScriptFunction PlayVehiclePadDeployAnim() { return mPlayVehiclePadDeployAnim ? mPlayVehiclePadDeployAnim : (mPlayVehiclePadDeployAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PlayVehiclePadDeployAnim")); }
-			ScriptFunction PlayVehiclePadCollapseAnim() { return mPlayVehiclePadCollapseAnim ? mPlayVehiclePadCollapseAnim : (mPlayVehiclePadCollapseAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.PlayVehiclePadCollapseAnim")); }
-			ScriptFunction SpawnVehicle() { return mSpawnVehicle ? mSpawnVehicle : (mSpawnVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.SpawnVehicle")); }
-			ScriptFunction TeleportDriverToVehicle() { return mTeleportDriverToVehicle ? mTeleportDriverToVehicle : (mTeleportDriverToVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.TeleportDriverToVehicle")); }
-			ScriptFunction Unlock() { return mUnlock ? mUnlock : (mUnlock = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.Unlock")); }
-			ScriptFunction AbleToSpawnVehicleType() { return mAbleToSpawnVehicleType ? mAbleToSpawnVehicleType : (mAbleToSpawnVehicleType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.AbleToSpawnVehicleType")); }
-			ScriptFunction AddVehicleToPackedList() { return mAddVehicleToPackedList ? mAddVehicleToPackedList : (mAddVehicleToPackedList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.AddVehicleToPackedList")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.GetMarker")); }
-			ScriptFunction ShouldPostRenderForCaH() { return mShouldPostRenderForCaH ? mShouldPostRenderForCaH : (mShouldPostRenderForCaH = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.ShouldPostRenderForCaH")); }
+			ScriptFunction RequestSpawnVehicle() { mixin(MGF!("mRequestSpawnVehicle", "Function TribesGame.TrVehicleStation.RequestSpawnVehicle")()); }
+			ScriptFunction GetNumVehiclesSpawnedByType() { mixin(MGF!("mGetNumVehiclesSpawnedByType", "Function TribesGame.TrVehicleStation.GetNumVehiclesSpawnedByType")()); }
+			ScriptFunction GetMaxVehicleCountAllowed() { mixin(MGF!("mGetMaxVehicleCountAllowed", "Function TribesGame.TrVehicleStation.GetMaxVehicleCountAllowed")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrVehicleStation.ReplicatedEvent")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrVehicleStation.PostInitAnimTree")()); }
+			ScriptFunction PawnEnteredStation() { mixin(MGF!("mPawnEnteredStation", "Function TribesGame.TrVehicleStation.PawnEnteredStation")()); }
+			ScriptFunction PawnLeftStation() { mixin(MGF!("mPawnLeftStation", "Function TribesGame.TrVehicleStation.PawnLeftStation")()); }
+			ScriptFunction PlayStationEnteredEffects() { mixin(MGF!("mPlayStationEnteredEffects", "Function TribesGame.TrVehicleStation.PlayStationEnteredEffects")()); }
+			ScriptFunction PlayStationLeftEffects() { mixin(MGF!("mPlayStationLeftEffects", "Function TribesGame.TrVehicleStation.PlayStationLeftEffects")()); }
+			ScriptFunction PlayRetractAnim() { mixin(MGF!("mPlayRetractAnim", "Function TribesGame.TrVehicleStation.PlayRetractAnim")()); }
+			ScriptFunction PlayVehiclePadDeployAnim() { mixin(MGF!("mPlayVehiclePadDeployAnim", "Function TribesGame.TrVehicleStation.PlayVehiclePadDeployAnim")()); }
+			ScriptFunction PlayVehiclePadCollapseAnim() { mixin(MGF!("mPlayVehiclePadCollapseAnim", "Function TribesGame.TrVehicleStation.PlayVehiclePadCollapseAnim")()); }
+			ScriptFunction SpawnVehicle() { mixin(MGF!("mSpawnVehicle", "Function TribesGame.TrVehicleStation.SpawnVehicle")()); }
+			ScriptFunction TeleportDriverToVehicle() { mixin(MGF!("mTeleportDriverToVehicle", "Function TribesGame.TrVehicleStation.TeleportDriverToVehicle")()); }
+			ScriptFunction Unlock() { mixin(MGF!("mUnlock", "Function TribesGame.TrVehicleStation.Unlock")()); }
+			ScriptFunction AbleToSpawnVehicleType() { mixin(MGF!("mAbleToSpawnVehicleType", "Function TribesGame.TrVehicleStation.AbleToSpawnVehicleType")()); }
+			ScriptFunction AddVehicleToPackedList() { mixin(MGF!("mAddVehicleToPackedList", "Function TribesGame.TrVehicleStation.AddVehicleToPackedList")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrVehicleStation.GetMarker")()); }
+			ScriptFunction ShouldPostRenderForCaH() { mixin(MGF!("mShouldPostRenderForCaH", "Function TribesGame.TrVehicleStation.ShouldPostRenderForCaH")()); }
 		}
 	}
 	static struct Constants
@@ -72,36 +73,36 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrVehicleStation.VehicleSpawnInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrVehicleStation.VehicleSpawnInfo")()); }
 		@property final auto ref
 		{
-			Rotator m_rSpawnRotOffset() { return *cast(Rotator*)(cast(size_t)&this + 20); }
-			Vector m_vSpawnLocOffset() { return *cast(Vector*)(cast(size_t)&this + 8); }
-			int m_nMaxCount() { return *cast(int*)(cast(size_t)&this + 4); }
-			ScriptClass m_VehicleClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
+			Rotator m_rSpawnRotOffset() { mixin(MGPS!(Rotator, 20)()); }
+			Vector m_vSpawnLocOffset() { mixin(MGPS!(Vector, 8)()); }
+			int m_nMaxCount() { mixin(MGPS!(int, 4)()); }
+			ScriptClass m_VehicleClass() { mixin(MGPS!(ScriptClass, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrAnimNodeBlendList m_VehicleStationBlendNode() { return *cast(TrAnimNodeBlendList*)(cast(size_t)cast(void*)this + 1596); }
-			float m_fTimeToSpawnVehicleAfterRequest() { return *cast(float*)(cast(size_t)cast(void*)this + 1592); }
-			float m_fInstigatorTeleportTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1588); }
-			TrPawn m_PawnRequestingVehicle() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 1584); }
-			TrVehicle m_LastSpawnedVehicle() { return *cast(TrVehicle*)(cast(size_t)cast(void*)this + 1580); }
-			float m_fSpawnTimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 1576); }
-			float m_fPostSpawnLockoutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1572); }
-			TrObject.EVehicleTypes m_LastRequestedVehicleType() { return *cast(TrObject.EVehicleTypes*)(cast(size_t)cast(void*)this + 1569); }
-			ubyte r_nSpawnSequenceEnded() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1568); }
-			int r_nSpawnedVehicles() { return *cast(int*)(cast(size_t)cast(void*)this + 1560); }
-			TrVehiclePad m_VehiclePad() { return *cast(TrVehiclePad*)(cast(size_t)cast(void*)this + 1556); }
-			TrVehicleStation.VehicleSpawnInfo m_SpawnList() { return *cast(TrVehicleStation.VehicleSpawnInfo*)(cast(size_t)cast(void*)this + 1396); }
+			TrAnimNodeBlendList m_VehicleStationBlendNode() { mixin(MGPC!(TrAnimNodeBlendList, 1596)()); }
+			float m_fTimeToSpawnVehicleAfterRequest() { mixin(MGPC!(float, 1592)()); }
+			float m_fInstigatorTeleportTime() { mixin(MGPC!(float, 1588)()); }
+			TrPawn m_PawnRequestingVehicle() { mixin(MGPC!(TrPawn, 1584)()); }
+			TrVehicle m_LastSpawnedVehicle() { mixin(MGPC!(TrVehicle, 1580)()); }
+			float m_fSpawnTimeStamp() { mixin(MGPC!(float, 1576)()); }
+			float m_fPostSpawnLockoutTime() { mixin(MGPC!(float, 1572)()); }
+			TrObject.EVehicleTypes m_LastRequestedVehicleType() { mixin(MGPC!(TrObject.EVehicleTypes, 1569)()); }
+			ubyte r_nSpawnSequenceEnded() { mixin(MGPC!(ubyte, 1568)()); }
+			int r_nSpawnedVehicles() { mixin(MGPC!(int, 1560)()); }
+			TrVehiclePad m_VehiclePad() { mixin(MGPC!(TrVehiclePad, 1556)()); }
+			TrVehicleStation.VehicleSpawnInfo m_SpawnList() { mixin(MGPC!(TrVehicleStation.VehicleSpawnInfo, 1396)()); }
 		}
-		bool r_bSpawnSequenceStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1564) & 0x2) != 0; }
-		bool r_bSpawnSequenceStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1564) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1564) &= ~0x2; } return val; }
-		bool r_bIsLocked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1564) & 0x1) != 0; }
-		bool r_bIsLocked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1564) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1564) &= ~0x1; } return val; }
+		bool r_bSpawnSequenceStarted() { mixin(MGBPC!(1564, 0x2)()); }
+		bool r_bSpawnSequenceStarted(bool val) { mixin(MSBPC!(1564, 0x2)()); }
+		bool r_bIsLocked() { mixin(MGBPC!(1564, 0x1)()); }
+		bool r_bIsLocked(bool val) { mixin(MSBPC!(1564, 0x1)()); }
 	}
 final:
 	bool RequestSpawnVehicle(TrObject.EVehicleTypes VehicleType)

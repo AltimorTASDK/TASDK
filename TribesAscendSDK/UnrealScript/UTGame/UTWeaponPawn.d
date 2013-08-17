@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTWeaponPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Weapon;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Pawn;
@@ -16,9 +17,9 @@ extern(C++) interface UTWeaponPawn : UDKWeaponPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponPawn")()); }
 	private static __gshared UTWeaponPawn mDefaultProperties;
-	@property final static UTWeaponPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponPawn)("UTWeaponPawn UTGame.Default__UTWeaponPawn")); }
+	@property final static UTWeaponPawn DefaultProperties() { mixin(MGDPC!(UTWeaponPawn, "UTWeaponPawn UTGame.Default__UTWeaponPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -58,38 +59,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetVehicleDrivingStatName() { return mGetVehicleDrivingStatName ? mGetVehicleDrivingStatName : (mGetVehicleDrivingStatName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.GetVehicleDrivingStatName")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.DisplayDebug")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.ReplicatedEvent")); }
-			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.CalcCamera")); }
-			ScriptFunction ProcessViewRotation() { return mProcessViewRotation ? mProcessViewRotation : (mProcessViewRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.ProcessViewRotation")); }
-			ScriptFunction SetFiringMode() { return mSetFiringMode ? mSetFiringMode : (mSetFiringMode = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.SetFiringMode")); }
-			ScriptFunction IncrementFlashCount() { return mIncrementFlashCount ? mIncrementFlashCount : (mIncrementFlashCount = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.IncrementFlashCount")); }
-			ScriptFunction ClearFlashCount() { return mClearFlashCount ? mClearFlashCount : (mClearFlashCount = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.ClearFlashCount")); }
-			ScriptFunction SetFlashLocation() { return mSetFlashLocation ? mSetFlashLocation : (mSetFlashLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.SetFlashLocation")); }
-			ScriptFunction ClearFlashLocation() { return mClearFlashLocation ? mClearFlashLocation : (mClearFlashLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.ClearFlashLocation")); }
-			ScriptFunction PossessedBy() { return mPossessedBy ? mPossessedBy : (mPossessedBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.PossessedBy")); }
-			ScriptFunction DriverLeft() { return mDriverLeft ? mDriverLeft : (mDriverLeft = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.DriverLeft")); }
-			ScriptFunction ServerAdjacentSeat() { return mServerAdjacentSeat ? mServerAdjacentSeat : (mServerAdjacentSeat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.ServerAdjacentSeat")); }
-			ScriptFunction ServerChangeSeat() { return mServerChangeSeat ? mServerChangeSeat : (mServerChangeSeat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.ServerChangeSeat")); }
-			ScriptFunction AdjustCameraScale() { return mAdjustCameraScale ? mAdjustCameraScale : (mAdjustCameraScale = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.AdjustCameraScale")); }
-			ScriptFunction PlaceExitingDriver() { return mPlaceExitingDriver ? mPlaceExitingDriver : (mPlaceExitingDriver = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.PlaceExitingDriver")); }
-			ScriptFunction DropToGround() { return mDropToGround ? mDropToGround : (mDropToGround = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.DropToGround")); }
-			ScriptFunction AddVelocity() { return mAddVelocity ? mAddVelocity : (mAddVelocity = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.AddVelocity")); }
-			ScriptFunction JumpOffPawn() { return mJumpOffPawn ? mJumpOffPawn : (mJumpOffPawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.JumpOffPawn")); }
-			ScriptFunction BaseChange() { return mBaseChange ? mBaseChange : (mBaseChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.BaseChange")); }
-			ScriptFunction SetMovementPhysics() { return mSetMovementPhysics ? mSetMovementPhysics : (mSetMovementPhysics = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.SetMovementPhysics")); }
-			ScriptFunction DoJump() { return mDoJump ? mDoJump : (mDoJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.DoJump")); }
-			ScriptFunction GetCollisionRadius() { return mGetCollisionRadius ? mGetCollisionRadius : (mGetCollisionRadius = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.GetCollisionRadius")); }
-			ScriptFunction SetBaseEyeheight() { return mSetBaseEyeheight ? mSetBaseEyeheight : (mSetBaseEyeheight = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.SetBaseEyeheight")); }
-			ScriptFunction AttachDriver() { return mAttachDriver ? mAttachDriver : (mAttachDriver = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.AttachDriver")); }
-			ScriptFunction HoldGameObject() { return mHoldGameObject ? mHoldGameObject : (mHoldGameObject = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.HoldGameObject")); }
-			ScriptFunction FaceRotation() { return mFaceRotation ? mFaceRotation : (mFaceRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.FaceRotation")); }
-			ScriptFunction DriverLeave() { return mDriverLeave ? mDriverLeave : (mDriverLeave = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.DriverLeave")); }
-			ScriptFunction Died() { return mDied ? mDied : (mDied = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.Died")); }
-			ScriptFunction TooCloseToAttack() { return mTooCloseToAttack ? mTooCloseToAttack : (mTooCloseToAttack = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.TooCloseToAttack")); }
-			ScriptFunction DisplayHud() { return mDisplayHud ? mDisplayHud : (mDisplayHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.DisplayHud")); }
-			ScriptFunction ApplyWeaponEffects() { return mApplyWeaponEffects ? mApplyWeaponEffects : (mApplyWeaponEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponPawn.ApplyWeaponEffects")); }
+			ScriptFunction GetVehicleDrivingStatName() { mixin(MGF!("mGetVehicleDrivingStatName", "Function UTGame.UTWeaponPawn.GetVehicleDrivingStatName")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTWeaponPawn.DisplayDebug")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTWeaponPawn.ReplicatedEvent")()); }
+			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function UTGame.UTWeaponPawn.CalcCamera")()); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function UTGame.UTWeaponPawn.ProcessViewRotation")()); }
+			ScriptFunction SetFiringMode() { mixin(MGF!("mSetFiringMode", "Function UTGame.UTWeaponPawn.SetFiringMode")()); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function UTGame.UTWeaponPawn.IncrementFlashCount")()); }
+			ScriptFunction ClearFlashCount() { mixin(MGF!("mClearFlashCount", "Function UTGame.UTWeaponPawn.ClearFlashCount")()); }
+			ScriptFunction SetFlashLocation() { mixin(MGF!("mSetFlashLocation", "Function UTGame.UTWeaponPawn.SetFlashLocation")()); }
+			ScriptFunction ClearFlashLocation() { mixin(MGF!("mClearFlashLocation", "Function UTGame.UTWeaponPawn.ClearFlashLocation")()); }
+			ScriptFunction PossessedBy() { mixin(MGF!("mPossessedBy", "Function UTGame.UTWeaponPawn.PossessedBy")()); }
+			ScriptFunction DriverLeft() { mixin(MGF!("mDriverLeft", "Function UTGame.UTWeaponPawn.DriverLeft")()); }
+			ScriptFunction ServerAdjacentSeat() { mixin(MGF!("mServerAdjacentSeat", "Function UTGame.UTWeaponPawn.ServerAdjacentSeat")()); }
+			ScriptFunction ServerChangeSeat() { mixin(MGF!("mServerChangeSeat", "Function UTGame.UTWeaponPawn.ServerChangeSeat")()); }
+			ScriptFunction AdjustCameraScale() { mixin(MGF!("mAdjustCameraScale", "Function UTGame.UTWeaponPawn.AdjustCameraScale")()); }
+			ScriptFunction PlaceExitingDriver() { mixin(MGF!("mPlaceExitingDriver", "Function UTGame.UTWeaponPawn.PlaceExitingDriver")()); }
+			ScriptFunction DropToGround() { mixin(MGF!("mDropToGround", "Function UTGame.UTWeaponPawn.DropToGround")()); }
+			ScriptFunction AddVelocity() { mixin(MGF!("mAddVelocity", "Function UTGame.UTWeaponPawn.AddVelocity")()); }
+			ScriptFunction JumpOffPawn() { mixin(MGF!("mJumpOffPawn", "Function UTGame.UTWeaponPawn.JumpOffPawn")()); }
+			ScriptFunction BaseChange() { mixin(MGF!("mBaseChange", "Function UTGame.UTWeaponPawn.BaseChange")()); }
+			ScriptFunction SetMovementPhysics() { mixin(MGF!("mSetMovementPhysics", "Function UTGame.UTWeaponPawn.SetMovementPhysics")()); }
+			ScriptFunction DoJump() { mixin(MGF!("mDoJump", "Function UTGame.UTWeaponPawn.DoJump")()); }
+			ScriptFunction GetCollisionRadius() { mixin(MGF!("mGetCollisionRadius", "Function UTGame.UTWeaponPawn.GetCollisionRadius")()); }
+			ScriptFunction SetBaseEyeheight() { mixin(MGF!("mSetBaseEyeheight", "Function UTGame.UTWeaponPawn.SetBaseEyeheight")()); }
+			ScriptFunction AttachDriver() { mixin(MGF!("mAttachDriver", "Function UTGame.UTWeaponPawn.AttachDriver")()); }
+			ScriptFunction HoldGameObject() { mixin(MGF!("mHoldGameObject", "Function UTGame.UTWeaponPawn.HoldGameObject")()); }
+			ScriptFunction FaceRotation() { mixin(MGF!("mFaceRotation", "Function UTGame.UTWeaponPawn.FaceRotation")()); }
+			ScriptFunction DriverLeave() { mixin(MGF!("mDriverLeave", "Function UTGame.UTWeaponPawn.DriverLeave")()); }
+			ScriptFunction Died() { mixin(MGF!("mDied", "Function UTGame.UTWeaponPawn.Died")()); }
+			ScriptFunction TooCloseToAttack() { mixin(MGF!("mTooCloseToAttack", "Function UTGame.UTWeaponPawn.TooCloseToAttack")()); }
+			ScriptFunction DisplayHud() { mixin(MGF!("mDisplayHud", "Function UTGame.UTWeaponPawn.DisplayHud")()); }
+			ScriptFunction ApplyWeaponEffects() { mixin(MGF!("mApplyWeaponEffects", "Function UTGame.UTWeaponPawn.ApplyWeaponEffects")()); }
 		}
 	}
 final:
@@ -100,13 +101,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVehicleDrivingStatName, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)params.ptr;
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -118,27 +119,27 @@ final:
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
-	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
-	void ProcessViewRotation(float DeltaTime, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
+	void ProcessViewRotation(float DeltaTime, ref Rotator out_ViewRotation, ref Rotator out_DeltaRot)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		*cast(Rotator*)&params[4] = *out_ViewRotation;
-		*cast(Rotator*)&params[16] = *out_DeltaRot;
+		*cast(Rotator*)&params[4] = out_ViewRotation;
+		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
 		*out_ViewRotation = *cast(Rotator*)&params[4];
 		*out_DeltaRot = *cast(Rotator*)&params[16];

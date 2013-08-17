@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PointLightComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.LightComponent;
 import UnrealScript.Engine.EngineTypes;
@@ -9,9 +10,9 @@ extern(C++) interface PointLightComponent : LightComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PointLightComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PointLightComponent")()); }
 	private static __gshared PointLightComponent mDefaultProperties;
-	@property final static PointLightComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PointLightComponent)("PointLightComponent Engine.Default__PointLightComponent")); }
+	@property final static PointLightComponent DefaultProperties() { mixin(MGDPC!(PointLightComponent, "PointLightComponent Engine.Default__PointLightComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,22 +23,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTranslation() { return mSetTranslation ? mSetTranslation : (mSetTranslation = ScriptObject.Find!(ScriptFunction)("Function Engine.PointLightComponent.SetTranslation")); }
-			ScriptFunction OnUpdatePropertyLightColor() { return mOnUpdatePropertyLightColor ? mOnUpdatePropertyLightColor : (mOnUpdatePropertyLightColor = ScriptObject.Find!(ScriptFunction)("Function Engine.PointLightComponent.OnUpdatePropertyLightColor")); }
-			ScriptFunction OnUpdatePropertyBrightness() { return mOnUpdatePropertyBrightness ? mOnUpdatePropertyBrightness : (mOnUpdatePropertyBrightness = ScriptObject.Find!(ScriptFunction)("Function Engine.PointLightComponent.OnUpdatePropertyBrightness")); }
+			ScriptFunction SetTranslation() { mixin(MGF!("mSetTranslation", "Function Engine.PointLightComponent.SetTranslation")()); }
+			ScriptFunction OnUpdatePropertyLightColor() { mixin(MGF!("mOnUpdatePropertyLightColor", "Function Engine.PointLightComponent.OnUpdatePropertyLightColor")()); }
+			ScriptFunction OnUpdatePropertyBrightness() { mixin(MGF!("mOnUpdatePropertyBrightness", "Function Engine.PointLightComponent.OnUpdatePropertyBrightness")()); }
 		}
 	}
 	@property final auto ref
 	{
-		EngineTypes.LightmassPointLightSettings LightmassSettings() { return *cast(EngineTypes.LightmassPointLightSettings*)(cast(size_t)cast(void*)this + 564); }
-		UObject.Plane ShadowPlane() { return *cast(UObject.Plane*)(cast(size_t)cast(void*)this + 544); }
-		Vector Translation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 528); }
-		UObject.Matrix CachedParentToWorld() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 464); }
-		float MinShadowFalloffRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 448); }
-		float ShadowFalloffExponent() { return *cast(float*)(cast(size_t)cast(void*)this + 444); }
-		float FalloffExponent() { return *cast(float*)(cast(size_t)cast(void*)this + 440); }
-		float Radius() { return *cast(float*)(cast(size_t)cast(void*)this + 436); }
-		float ShadowRadiusMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 432); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewLightSourceRadius'!
+		EngineTypes.LightmassPointLightSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPointLightSettings, 564)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewLightRadius'!
+		UObject.Plane ShadowPlane() { mixin(MGPC!(UObject.Plane, 544)()); }
+		Vector Translation() { mixin(MGPC!(Vector, 528)()); }
+		UObject.Matrix CachedParentToWorld() { mixin(MGPC!(UObject.Matrix, 464)()); }
+		float MinShadowFalloffRadius() { mixin(MGPC!(float, 448)()); }
+		float ShadowFalloffExponent() { mixin(MGPC!(float, 444)()); }
+		float FalloffExponent() { mixin(MGPC!(float, 440)()); }
+		float Radius() { mixin(MGPC!(float, 436)()); }
+		float ShadowRadiusMultiplier() { mixin(MGPC!(float, 432)()); }
 	}
 final:
 	void SetTranslation(Vector NewTranslation)

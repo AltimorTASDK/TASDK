@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCTFBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTCarriedObject;
@@ -14,9 +15,9 @@ extern(C++) interface UTCTFBase : UTGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFBase")()); }
 	private static __gshared UTCTFBase mDefaultProperties;
-	@property final static UTCTFBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFBase)("UTCTFBase UTGame.Default__UTCTFBase")); }
+	@property final static UTCTFBase DefaultProperties() { mixin(MGDPC!(UTCTFBase, "UTCTFBase UTGame.Default__UTCTFBase")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,31 +34,34 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.PostBeginPlay")); }
-			ScriptFunction GetBestViewTarget() { return mGetBestViewTarget ? mGetBestViewTarget : (mGetBestViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.GetBestViewTarget")); }
-			ScriptFunction GetLocationMessageIndex() { return mGetLocationMessageIndex ? mGetLocationMessageIndex : (mGetLocationMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.GetLocationMessageIndex")); }
-			ScriptFunction GetLocationSpeechFor() { return mGetLocationSpeechFor ? mGetLocationSpeechFor : (mGetLocationSpeechFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.GetLocationSpeechFor")); }
-			ScriptFunction ObjectiveChanged() { return mObjectiveChanged ? mObjectiveChanged : (mObjectiveChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.ObjectiveChanged")); }
-			ScriptFunction GetFlag() { return mGetFlag ? mGetFlag : (mGetFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.GetFlag")); }
-			ScriptFunction SetAlarm() { return mSetAlarm ? mSetAlarm : (mSetAlarm = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.SetAlarm")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.ReplicatedEvent")); }
-			ScriptFunction IsActive() { return mIsActive ? mIsActive : (mIsActive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFBase.IsActive")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCTFBase.PostBeginPlay")()); }
+			ScriptFunction GetBestViewTarget() { mixin(MGF!("mGetBestViewTarget", "Function UTGame.UTCTFBase.GetBestViewTarget")()); }
+			ScriptFunction GetLocationMessageIndex() { mixin(MGF!("mGetLocationMessageIndex", "Function UTGame.UTCTFBase.GetLocationMessageIndex")()); }
+			ScriptFunction GetLocationSpeechFor() { mixin(MGF!("mGetLocationSpeechFor", "Function UTGame.UTCTFBase.GetLocationSpeechFor")()); }
+			ScriptFunction ObjectiveChanged() { mixin(MGF!("mObjectiveChanged", "Function UTGame.UTCTFBase.ObjectiveChanged")()); }
+			ScriptFunction GetFlag() { mixin(MGF!("mGetFlag", "Function UTGame.UTCTFBase.GetFlag")()); }
+			ScriptFunction SetAlarm() { mixin(MGF!("mSetAlarm", "Function UTGame.UTCTFBase.SetAlarm")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTCTFBase.ReplicatedEvent")()); }
+			ScriptFunction IsActive() { mixin(MGF!("mIsActive", "Function UTGame.UTCTFBase.IsActive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundNodeWave) NearLocationSpeech() { return *cast(ScriptArray!(SoundNodeWave)*)(cast(size_t)cast(void*)this + 1076); }
-		ScriptArray!(SoundNodeWave) MidfieldHighSpeech() { return *cast(ScriptArray!(SoundNodeWave)*)(cast(size_t)cast(void*)this + 1088); }
-		ScriptArray!(SoundNodeWave) MidfieldLowSpeech() { return *cast(ScriptArray!(SoundNodeWave)*)(cast(size_t)cast(void*)this + 1100); }
-		ScriptClass CTFAnnouncerMessagesClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1072); }
-		MaterialInstanceConstant MIC_FlagBaseColor() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1064); }
-		MaterialInstanceConstant FlagBaseMaterial() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1060); }
-		float BaseExitTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1052); }
-		float NearBaseRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 1048); }
-		float MidFieldLowZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1044); }
-		float MidFieldHighZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1040); }
-		ScriptClass FlagType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1036); }
-		UTCarriedObject myFlag() { return *cast(UTCarriedObject*)(cast(size_t)cast(void*)this + 1032); }
+		ScriptArray!(SoundNodeWave) NearLocationSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1076)()); }
+		ScriptArray!(SoundNodeWave) MidfieldHighSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1088)()); }
+		ScriptArray!(SoundNodeWave) MidfieldLowSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1100)()); }
+		ScriptClass CTFAnnouncerMessagesClass() { mixin(MGPC!(ScriptClass, 1072)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagBaseMesh'!
+		MaterialInstanceConstant MIC_FlagBaseColor() { mixin(MGPC!(MaterialInstanceConstant, 1064)()); }
+		MaterialInstanceConstant FlagBaseMaterial() { mixin(MGPC!(MaterialInstanceConstant, 1060)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagEmptyParticles'!
+		float BaseExitTime() { mixin(MGPC!(float, 1052)()); }
+		float NearBaseRadius() { mixin(MGPC!(float, 1048)()); }
+		float MidFieldLowZOffset() { mixin(MGPC!(float, 1044)()); }
+		float MidFieldHighZOffset() { mixin(MGPC!(float, 1040)()); }
+		ScriptClass FlagType() { mixin(MGPC!(ScriptClass, 1036)()); }
+		UTCarriedObject myFlag() { mixin(MGPC!(UTCarriedObject, 1032)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'TakenSound'!
 	}
 final:
 	void PostBeginPlay()

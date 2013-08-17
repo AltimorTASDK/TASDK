@@ -1,19 +1,20 @@
 module UnrealScript.Engine.MaterialExpressionConstantBiasScale;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionConstantBiasScale : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionConstantBiasScale")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionConstantBiasScale")()); }
 	private static __gshared MaterialExpressionConstantBiasScale mDefaultProperties;
-	@property final static MaterialExpressionConstantBiasScale DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionConstantBiasScale)("MaterialExpressionConstantBiasScale Engine.Default__MaterialExpressionConstantBiasScale")); }
+	@property final static MaterialExpressionConstantBiasScale DefaultProperties() { mixin(MGDPC!(MaterialExpressionConstantBiasScale, "MaterialExpressionConstantBiasScale Engine.Default__MaterialExpressionConstantBiasScale")()); }
 	@property final auto ref
 	{
-		float Scale() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-		float Bias() { return *cast(float*)(cast(size_t)cast(void*)this + 136); }
+		float Scale() { mixin(MGPC!(float, 140)()); }
+		float Bias() { mixin(MGPC!(float, 136)()); }
 		// WARNING: Property 'Input' has the same name as a defined type!
 	}
 }

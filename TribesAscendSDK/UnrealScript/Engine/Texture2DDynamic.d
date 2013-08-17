@@ -1,15 +1,16 @@
 module UnrealScript.Engine.Texture2DDynamic;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Texture;
 
 extern(C++) interface Texture2DDynamic : Texture
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture2DDynamic")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Texture2DDynamic")()); }
 	private static __gshared Texture2DDynamic mDefaultProperties;
-	@property final static Texture2DDynamic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Texture2DDynamic)("Texture2DDynamic Engine.Default__Texture2DDynamic")); }
+	@property final static Texture2DDynamic DefaultProperties() { mixin(MGDPC!(Texture2DDynamic, "Texture2DDynamic Engine.Default__Texture2DDynamic")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,21 +20,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.Texture2DDynamic.Init")); }
-			ScriptFunction Create() { return mCreate ? mCreate : (mCreate = ScriptObject.Find!(ScriptFunction)("Function Engine.Texture2DDynamic.Create")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.Texture2DDynamic.Init")()); }
+			ScriptFunction Create() { mixin(MGF!("mCreate", "Function Engine.Texture2DDynamic.Create")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int NumMips() { return *cast(int*)(cast(size_t)cast(void*)this + 248); }
+			int NumMips() { mixin(MGPC!(int, 248)()); }
 			// WARNING: Property 'Format' has the same name as a defined type!
-			int SizeY() { return *cast(int*)(cast(size_t)cast(void*)this + 240); }
-			int SizeX() { return *cast(int*)(cast(size_t)cast(void*)this + 236); }
+			int SizeY() { mixin(MGPC!(int, 240)()); }
+			int SizeX() { mixin(MGPC!(int, 236)()); }
 		}
-		bool bIsResolveTarget() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x1) != 0; }
-		bool bIsResolveTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x1; } return val; }
+		bool bIsResolveTarget() { mixin(MGBPC!(252, 0x1)()); }
+		bool bIsResolveTarget(bool val) { mixin(MSBPC!(252, 0x1)()); }
 	}
 final:
 	void Init(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat, bool InIsResolveTarget)

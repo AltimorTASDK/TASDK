@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_LaserTargeter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrCallIn;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface TrDevice_LaserTargeter : TrDevice_ConstantFire
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_LaserTargeter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_LaserTargeter")()); }
 	private static __gshared TrDevice_LaserTargeter mDefaultProperties;
-	@property final static TrDevice_LaserTargeter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_LaserTargeter)("TrDevice_LaserTargeter TribesGame.Default__TrDevice_LaserTargeter")); }
+	@property final static TrDevice_LaserTargeter DefaultProperties() { mixin(MGDPC!(TrDevice_LaserTargeter, "TrDevice_LaserTargeter TribesGame.Default__TrDevice_LaserTargeter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,30 +45,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CalcHUDAimChargePercent() { return mCalcHUDAimChargePercent ? mCalcHUDAimChargePercent : (mCalcHUDAimChargePercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.CalcHUDAimChargePercent")); }
-			ScriptFunction IsValidCallIn() { return mIsValidCallIn ? mIsValidCallIn : (mIsValidCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.IsValidCallIn")); }
-			ScriptFunction IsValidTargetLocation() { return mIsValidTargetLocation ? mIsValidTargetLocation : (mIsValidTargetLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.IsValidTargetLocation")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.ReplicatedEvent")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.PostBeginPlay")); }
-			ScriptFunction UpdateCallins() { return mUpdateCallins ? mUpdateCallins : (mUpdateCallins = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateCallins")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.Destroyed")); }
-			ScriptFunction CanFireCallIn() { return mCanFireCallIn ? mCanFireCallIn : (mCanFireCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.CanFireCallIn")); }
-			ScriptFunction SetActiveCallIn() { return mSetActiveCallIn ? mSetActiveCallIn : (mSetActiveCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.SetActiveCallIn")); }
-			ScriptFunction OnEndConstantFire() { return mOnEndConstantFire ? mOnEndConstantFire : (mOnEndConstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.OnEndConstantFire")); }
-			ScriptFunction OnStartConstantFire() { return mOnStartConstantFire ? mOnStartConstantFire : (mOnStartConstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.OnStartConstantFire")); }
-			ScriptFunction GetLaserStartAndEnd() { return mGetLaserStartAndEnd ? mGetLaserStartAndEnd : (mGetLaserStartAndEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.GetLaserStartAndEnd")); }
-			ScriptFunction KillLaserEffect() { return mKillLaserEffect ? mKillLaserEffect : (mKillLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.KillLaserEffect")); }
-			ScriptFunction SpawnLaserEffect() { return mSpawnLaserEffect ? mSpawnLaserEffect : (mSpawnLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.SpawnLaserEffect")); }
-			ScriptFunction UpdateLaserEffect() { return mUpdateLaserEffect ? mUpdateLaserEffect : (mUpdateLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateLaserEffect")); }
-			ScriptFunction CallInConfirmed() { return mCallInConfirmed ? mCallInConfirmed : (mCallInConfirmed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.CallInConfirmed")); }
-			ScriptFunction ServerPerformCallIn() { return mServerPerformCallIn ? mServerPerformCallIn : (mServerPerformCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.ServerPerformCallIn")); }
-			ScriptFunction UpdateTarget() { return mUpdateTarget ? mUpdateTarget : (mUpdateTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateTarget")); }
-			ScriptFunction GetTraceOwner() { return mGetTraceOwner ? mGetTraceOwner : (mGetTraceOwner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.GetTraceOwner")); }
-			ScriptFunction GetAmmoCount() { return mGetAmmoCount ? mGetAmmoCount : (mGetAmmoCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.GetAmmoCount")); }
-			ScriptFunction UpdateCreditMaterial() { return mUpdateCreditMaterial ? mUpdateCreditMaterial : (mUpdateCreditMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateCreditMaterial")); }
-			ScriptFunction PlayWeaponEquip() { return mPlayWeaponEquip ? mPlayWeaponEquip : (mPlayWeaponEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.PlayWeaponEquip")); }
-			ScriptFunction UpdateCallInMaterial() { return mUpdateCallInMaterial ? mUpdateCallInMaterial : (mUpdateCallInMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateCallInMaterial")); }
-			ScriptFunction UpdateWeaponMICs() { return mUpdateWeaponMICs ? mUpdateWeaponMICs : (mUpdateWeaponMICs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateWeaponMICs")); }
+			ScriptFunction CalcHUDAimChargePercent() { mixin(MGF!("mCalcHUDAimChargePercent", "Function TribesGame.TrDevice_LaserTargeter.CalcHUDAimChargePercent")()); }
+			ScriptFunction IsValidCallIn() { mixin(MGF!("mIsValidCallIn", "Function TribesGame.TrDevice_LaserTargeter.IsValidCallIn")()); }
+			ScriptFunction IsValidTargetLocation() { mixin(MGF!("mIsValidTargetLocation", "Function TribesGame.TrDevice_LaserTargeter.IsValidTargetLocation")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrDevice_LaserTargeter.ReplicatedEvent")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDevice_LaserTargeter.PostBeginPlay")()); }
+			ScriptFunction UpdateCallins() { mixin(MGF!("mUpdateCallins", "Function TribesGame.TrDevice_LaserTargeter.UpdateCallins")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDevice_LaserTargeter.Destroyed")()); }
+			ScriptFunction CanFireCallIn() { mixin(MGF!("mCanFireCallIn", "Function TribesGame.TrDevice_LaserTargeter.CanFireCallIn")()); }
+			ScriptFunction SetActiveCallIn() { mixin(MGF!("mSetActiveCallIn", "Function TribesGame.TrDevice_LaserTargeter.SetActiveCallIn")()); }
+			ScriptFunction OnEndConstantFire() { mixin(MGF!("mOnEndConstantFire", "Function TribesGame.TrDevice_LaserTargeter.OnEndConstantFire")()); }
+			ScriptFunction OnStartConstantFire() { mixin(MGF!("mOnStartConstantFire", "Function TribesGame.TrDevice_LaserTargeter.OnStartConstantFire")()); }
+			ScriptFunction GetLaserStartAndEnd() { mixin(MGF!("mGetLaserStartAndEnd", "Function TribesGame.TrDevice_LaserTargeter.GetLaserStartAndEnd")()); }
+			ScriptFunction KillLaserEffect() { mixin(MGF!("mKillLaserEffect", "Function TribesGame.TrDevice_LaserTargeter.KillLaserEffect")()); }
+			ScriptFunction SpawnLaserEffect() { mixin(MGF!("mSpawnLaserEffect", "Function TribesGame.TrDevice_LaserTargeter.SpawnLaserEffect")()); }
+			ScriptFunction UpdateLaserEffect() { mixin(MGF!("mUpdateLaserEffect", "Function TribesGame.TrDevice_LaserTargeter.UpdateLaserEffect")()); }
+			ScriptFunction CallInConfirmed() { mixin(MGF!("mCallInConfirmed", "Function TribesGame.TrDevice_LaserTargeter.CallInConfirmed")()); }
+			ScriptFunction ServerPerformCallIn() { mixin(MGF!("mServerPerformCallIn", "Function TribesGame.TrDevice_LaserTargeter.ServerPerformCallIn")()); }
+			ScriptFunction UpdateTarget() { mixin(MGF!("mUpdateTarget", "Function TribesGame.TrDevice_LaserTargeter.UpdateTarget")()); }
+			ScriptFunction GetTraceOwner() { mixin(MGF!("mGetTraceOwner", "Function TribesGame.TrDevice_LaserTargeter.GetTraceOwner")()); }
+			ScriptFunction GetAmmoCount() { mixin(MGF!("mGetAmmoCount", "Function TribesGame.TrDevice_LaserTargeter.GetAmmoCount")()); }
+			ScriptFunction UpdateCreditMaterial() { mixin(MGF!("mUpdateCreditMaterial", "Function TribesGame.TrDevice_LaserTargeter.UpdateCreditMaterial")()); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_LaserTargeter.PlayWeaponEquip")()); }
+			ScriptFunction UpdateCallInMaterial() { mixin(MGF!("mUpdateCallInMaterial", "Function TribesGame.TrDevice_LaserTargeter.UpdateCallInMaterial")()); }
+			ScriptFunction UpdateWeaponMICs() { mixin(MGF!("mUpdateWeaponMICs", "Function TribesGame.TrDevice_LaserTargeter.UpdateWeaponMICs")()); }
 		}
 	}
 	static struct Constants
@@ -1449,15 +1450,26 @@ public extern(D):
 			ITEM_VOICE_T2BDERM03 = 8726,
 		}
 	}
+	static struct WeaponConstantFiring
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_LaserTargeter.WeaponConstantFiring")()); }
+	}
+	static struct Active
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_LaserTargeter.Active")()); }
+	}
 	@property final auto ref
 	{
-		ubyte r_ActiveCallin() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 2192); }
-		TrCallIn r_CallIns() { return *cast(TrCallIn*)(cast(size_t)cast(void*)this + 2180); }
-		Vector m_LastTargetPos() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2212); }
-		Rotator m_LastOwnerRot() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 2200); }
-		SoundCue m_CallInConfirmation() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 2196); }
-		ubyte m_PrevActiveCallin() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 2193); }
-		float m_fCallInEndTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2172); }
+		ubyte r_ActiveCallin() { mixin(MGPC!(ubyte, 2192)()); }
+		TrCallIn r_CallIns() { mixin(MGPC!(TrCallIn, 2180)()); }
+		Vector m_LastTargetPos() { mixin(MGPC!(Vector, 2212)()); }
+		Rotator m_LastOwnerRot() { mixin(MGPC!(Rotator, 2200)()); }
+		SoundCue m_CallInConfirmation() { mixin(MGPC!(SoundCue, 2196)()); }
+		ubyte m_PrevActiveCallin() { mixin(MGPC!(ubyte, 2193)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscLaserEffect'!
+		float m_fCallInEndTime() { mixin(MGPC!(float, 2172)()); }
 	}
 final:
 	float CalcHUDAimChargePercent()
@@ -1526,13 +1538,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnStartConstantFire, cast(void*)0, cast(void*)0);
 	}
-	bool GetLaserStartAndEnd(Vector* StartLocation, Vector* EndLocation, Vector* EndLocationNormal)
+	bool GetLaserStartAndEnd(ref Vector StartLocation, ref Vector EndLocation, ref Vector EndLocationNormal)
 	{
 		ubyte params[40];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *StartLocation;
-		*cast(Vector*)&params[12] = *EndLocation;
-		*cast(Vector*)&params[24] = *EndLocationNormal;
+		*cast(Vector*)params.ptr = StartLocation;
+		*cast(Vector*)&params[12] = EndLocation;
+		*cast(Vector*)&params[24] = EndLocationNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLaserStartAndEnd, params.ptr, cast(void*)0);
 		*StartLocation = *cast(Vector*)params.ptr;
 		*EndLocation = *cast(Vector*)&params[12];

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrKillingSpreeMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface TrKillingSpreeMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrKillingSpreeMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrKillingSpreeMessage")()); }
 	private static __gshared TrKillingSpreeMessage mDefaultProperties;
-	@property final static TrKillingSpreeMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrKillingSpreeMessage)("TrKillingSpreeMessage TribesGame.Default__TrKillingSpreeMessage")); }
+	@property final static TrKillingSpreeMessage DefaultProperties() { mixin(MGDPC!(TrKillingSpreeMessage, "TrKillingSpreeMessage TribesGame.Default__TrKillingSpreeMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,21 +26,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFontSize() { return mGetFontSize ? mGetFontSize : (mGetFontSize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrKillingSpreeMessage.GetFontSize")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrKillingSpreeMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrKillingSpreeMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrKillingSpreeMessage.AnnouncementSound")); }
+			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function TribesGame.TrKillingSpreeMessage.GetFontSize")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrKillingSpreeMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrKillingSpreeMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function TribesGame.TrKillingSpreeMessage.AnnouncementSound")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString EndSpreeNoteTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 276); }
-		SoundNodeWave SpreeSound() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 256); }
-		ScriptString SelfSpreeNote() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-		ScriptString SpreeNote() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString MultiKillString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString EndSelfSpree() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString EndSpreeNote() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString EndSpreeNoteTrailer() { mixin(MGPC!(ScriptString, 276)()); }
+		SoundNodeWave SpreeSound() { mixin(MGPC!(SoundNodeWave, 256)()); }
+		ScriptString SelfSpreeNote() { mixin(MGPC!(ScriptString, 196)()); }
+		ScriptString SpreeNote() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString MultiKillString() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString EndSelfSpree() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString EndSpreeNote() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)

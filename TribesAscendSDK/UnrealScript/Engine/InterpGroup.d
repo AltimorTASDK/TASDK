@@ -1,6 +1,7 @@
 module UnrealScript.Engine.InterpGroup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.AnimSet;
 import UnrealScript.Engine.InterpTrack;
@@ -9,42 +10,42 @@ extern(C++) interface InterpGroup : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpGroup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpGroup")()); }
 	private static __gshared InterpGroup mDefaultProperties;
-	@property final static InterpGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpGroup)("InterpGroup Engine.Default__InterpGroup")); }
+	@property final static InterpGroup DefaultProperties() { mixin(MGDPC!(InterpGroup, "InterpGroup Engine.Default__InterpGroup")()); }
 	struct InterpEdSelKey
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpGroup.InterpEdSelKey")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpGroup.InterpEdSelKey")()); }
 		@property final auto ref
 		{
-			float UnsnappedPosition() { return *cast(float*)(cast(size_t)&this + 12); }
-			int KeyIndex() { return *cast(int*)(cast(size_t)&this + 8); }
-			InterpTrack Track() { return *cast(InterpTrack*)(cast(size_t)&this + 4); }
-			InterpGroup Group() { return *cast(InterpGroup*)(cast(size_t)&this + 0); }
+			float UnsnappedPosition() { mixin(MGPS!(float, 12)()); }
+			int KeyIndex() { mixin(MGPS!(int, 8)()); }
+			InterpTrack Track() { mixin(MGPS!(InterpTrack, 4)()); }
+			InterpGroup Group() { mixin(MGPS!(InterpGroup, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(InterpTrack) InterpTracks() { return *cast(ScriptArray!(InterpTrack)*)(cast(size_t)cast(void*)this + 64); }
-			ScriptArray!(AnimSet) GroupAnimSets() { return *cast(ScriptArray!(AnimSet)*)(cast(size_t)cast(void*)this + 88); }
-			UObject.Color GroupColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 84); }
-			ScriptName GroupName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 76); }
-			UObject.Pointer VfTable_FInterpEdInputInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(InterpTrack) InterpTracks() { mixin(MGPC!(ScriptArray!(InterpTrack), 64)()); }
+			ScriptArray!(AnimSet) GroupAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 88)()); }
+			UObject.Color GroupColor() { mixin(MGPC!(UObject.Color, 84)()); }
+			ScriptName GroupName() { mixin(MGPC!(ScriptName, 76)()); }
+			UObject.Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC!(UObject.Pointer, 60)()); }
 		}
-		bool bIsSelected() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x10) != 0; }
-		bool bIsSelected(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x10; } return val; }
-		bool bIsParented() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x8) != 0; }
-		bool bIsParented(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x8; } return val; }
-		bool bIsFolder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x4) != 0; }
-		bool bIsFolder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x4; } return val; }
-		bool bVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x2) != 0; }
-		bool bVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x2; } return val; }
-		bool bCollapsed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x1) != 0; }
-		bool bCollapsed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x1; } return val; }
+		bool bIsSelected() { mixin(MGBPC!(100, 0x10)()); }
+		bool bIsSelected(bool val) { mixin(MSBPC!(100, 0x10)()); }
+		bool bIsParented() { mixin(MGBPC!(100, 0x8)()); }
+		bool bIsParented(bool val) { mixin(MSBPC!(100, 0x8)()); }
+		bool bIsFolder() { mixin(MGBPC!(100, 0x4)()); }
+		bool bIsFolder(bool val) { mixin(MSBPC!(100, 0x4)()); }
+		bool bVisible() { mixin(MGBPC!(100, 0x2)()); }
+		bool bVisible(bool val) { mixin(MSBPC!(100, 0x2)()); }
+		bool bCollapsed() { mixin(MGBPC!(100, 0x1)()); }
+		bool bCollapsed(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}
 }

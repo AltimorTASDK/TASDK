@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCTFHUDMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -10,9 +11,9 @@ extern(C++) interface UTCTFHUDMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFHUDMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFHUDMessage")()); }
 	private static __gshared UTCTFHUDMessage mDefaultProperties;
-	@property final static UTCTFHUDMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFHUDMessage)("UTCTFHUDMessage UTGame.Default__UTCTFHUDMessage")); }
+	@property final static UTCTFHUDMessage DefaultProperties() { mixin(MGDPC!(UTCTFHUDMessage, "UTCTFHUDMessage UTGame.Default__UTCTFHUDMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFHUDMessage.GetColor")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFHUDMessage.GetString")); }
-			ScriptFunction AddAnnouncement() { return mAddAnnouncement ? mAddAnnouncement : (mAddAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFHUDMessage.AddAnnouncement")); }
+			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function UTGame.UTCTFHUDMessage.GetColor")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTCTFHUDMessage.GetString")()); }
+			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTCTFHUDMessage.AddAnnouncement")()); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 140); }
-		UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString BothFlagsString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString EnemyHasFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString YouHaveFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		UObject.Color YellowColor() { mixin(MGPC!(UObject.Color, 140)()); }
+		UObject.Color RedColor() { mixin(MGPC!(UObject.Color, 136)()); }
+		ScriptString BothFlagsString() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString EnemyHasFlagString() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString YouHaveFlagString() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

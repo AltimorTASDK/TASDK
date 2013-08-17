@@ -1,23 +1,24 @@
 module UnrealScript.Engine.MaterialExpressionCompound;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionCompound : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionCompound")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionCompound")()); }
 	private static __gshared MaterialExpressionCompound mDefaultProperties;
-	@property final static MaterialExpressionCompound DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionCompound)("MaterialExpressionCompound Engine.Default__MaterialExpressionCompound")); }
+	@property final static MaterialExpressionCompound DefaultProperties() { mixin(MGDPC!(MaterialExpressionCompound, "MaterialExpressionCompound Engine.Default__MaterialExpressionCompound")()); }
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialExpression) MaterialExpressions() { return *cast(ScriptArray!(MaterialExpression)*)(cast(size_t)cast(void*)this + 108); }
-			ScriptString Caption() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 120); }
+			ScriptArray!(MaterialExpression) MaterialExpressions() { mixin(MGPC!(ScriptArray!(MaterialExpression), 108)()); }
+			ScriptString Caption() { mixin(MGPC!(ScriptString, 120)()); }
 		}
-		bool bExpanded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x1) != 0; }
-		bool bExpanded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x1; } return val; }
+		bool bExpanded() { mixin(MGBPC!(132, 0x1)()); }
+		bool bExpanded(bool val) { mixin(MSBPC!(132, 0x1)()); }
 	}
 }

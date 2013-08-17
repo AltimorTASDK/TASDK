@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrCallIn_Support;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrCallIn;
 
 extern(C++) interface TrCallIn_Support : TrCallIn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_Support")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallIn_Support")()); }
 	private static __gshared TrCallIn_Support mDefaultProperties;
-	@property final static TrCallIn_Support DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_Support)("TrCallIn_Support TribesGame.Default__TrCallIn_Support")); }
+	@property final static TrCallIn_Support DefaultProperties() { mixin(MGDPC!(TrCallIn_Support, "TrCallIn_Support TribesGame.Default__TrCallIn_Support")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,14 +20,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FireCompletedCallIn() { return mFireCompletedCallIn ? mFireCompletedCallIn : (mFireCompletedCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_Support.FireCompletedCallIn")); }
-			ScriptFunction DestroyOverLimit() { return mDestroyOverLimit ? mDestroyOverLimit : (mDestroyOverLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_Support.DestroyOverLimit")); }
+			ScriptFunction FireCompletedCallIn() { mixin(MGF!("mFireCompletedCallIn", "Function TribesGame.TrCallIn_Support.FireCompletedCallIn")()); }
+			ScriptFunction DestroyOverLimit() { mixin(MGF!("mDestroyOverLimit", "Function TribesGame.TrCallIn_Support.DestroyOverLimit")()); }
 		}
 	}
 	@property final auto ref
 	{
-		int MaxDeployedLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 548); }
-		ScriptClass ItemInDeliveryPod() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 544); }
+		int MaxDeployedLimit() { mixin(MGPC!(int, 548)()); }
+		ScriptClass ItemInDeliveryPod() { mixin(MGPC!(ScriptClass, 544)()); }
 	}
 final:
 	bool FireCompletedCallIn(int CallInOffs, Vector TargetLocation, Vector TargetNormal)

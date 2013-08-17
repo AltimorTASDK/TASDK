@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTSimpleDestroyable;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.DynamicSMActor;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Controller;
@@ -12,9 +13,9 @@ extern(C++) interface UTSimpleDestroyable : DynamicSMActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSimpleDestroyable")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSimpleDestroyable")()); }
 	private static __gshared UTSimpleDestroyable mDefaultProperties;
-	@property final static UTSimpleDestroyable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSimpleDestroyable)("UTSimpleDestroyable UTGame.Default__UTSimpleDestroyable")); }
+	@property final static UTSimpleDestroyable DefaultProperties() { mixin(MGDPC!(UTSimpleDestroyable, "UTSimpleDestroyable UTGame.Default__UTSimpleDestroyable")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,37 +29,42 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSimpleDestroyable.PostBeginPlay")); }
-			ScriptFunction GoBoom() { return mGoBoom ? mGoBoom : (mGoBoom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSimpleDestroyable.GoBoom")); }
-			ScriptFunction RespawnDestructible() { return mRespawnDestructible ? mRespawnDestructible : (mRespawnDestructible = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSimpleDestroyable.RespawnDestructible")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSimpleDestroyable.TakeDamage")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSimpleDestroyable.Touch")); }
-			ScriptFunction CheckRespawn() { return mCheckRespawn ? mCheckRespawn : (mCheckRespawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSimpleDestroyable.CheckRespawn")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTSimpleDestroyable.PostBeginPlay")()); }
+			ScriptFunction GoBoom() { mixin(MGF!("mGoBoom", "Function UTGame.UTSimpleDestroyable.GoBoom")()); }
+			ScriptFunction RespawnDestructible() { mixin(MGF!("mRespawnDestructible", "Function UTGame.UTSimpleDestroyable.RespawnDestructible")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function UTGame.UTSimpleDestroyable.TakeDamage")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTSimpleDestroyable.Touch")()); }
+			ScriptFunction CheckRespawn() { mixin(MGF!("mCheckRespawn", "Function UTGame.UTSimpleDestroyable.CheckRespawn")()); }
 		}
+	}
+	static struct IgnoreItAll
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTSimpleDestroyable.IgnoreItAll")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float TimeToRespawn() { return *cast(float*)(cast(size_t)cast(void*)this + 588); }
-			StaticMesh RespawnStaticMesh() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 584); }
-			float RespawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-			Vector SpawnPhysMeshAngularVel() { return *cast(Vector*)(cast(size_t)cast(void*)this + 568); }
-			Vector SpawnPhysMeshLinearVel() { return *cast(Vector*)(cast(size_t)cast(void*)this + 556); }
-			float SpawnPhysMeshLifeSpan() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			StaticMesh SpawnPhysMesh() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 548); }
-			ParticleSystem ParticlesOnDestroy() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 544); }
-			SoundCue SoundOnDestroy() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 540); }
-			StaticMesh MeshOnDestroy() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 536); }
+			float TimeToRespawn() { mixin(MGPC!(float, 588)()); }
+			StaticMesh RespawnStaticMesh() { mixin(MGPC!(StaticMesh, 584)()); }
+			float RespawnTime() { mixin(MGPC!(float, 580)()); }
+			Vector SpawnPhysMeshAngularVel() { mixin(MGPC!(Vector, 568)()); }
+			Vector SpawnPhysMeshLinearVel() { mixin(MGPC!(Vector, 556)()); }
+			float SpawnPhysMeshLifeSpan() { mixin(MGPC!(float, 552)()); }
+			StaticMesh SpawnPhysMesh() { mixin(MGPC!(StaticMesh, 548)()); }
+			ParticleSystem ParticlesOnDestroy() { mixin(MGPC!(ParticleSystem, 544)()); }
+			SoundCue SoundOnDestroy() { mixin(MGPC!(SoundCue, 540)()); }
+			StaticMesh MeshOnDestroy() { mixin(MGPC!(StaticMesh, 536)()); }
 		}
-		bool bDestroyed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8) != 0; }
-		bool bDestroyed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8; } return val; }
-		bool bDestroyOnVehicleTouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
-		bool bDestroyOnVehicleTouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
-		bool bDestroyOnPlayerTouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
-		bool bDestroyOnPlayerTouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
-		bool bDestroyOnDamage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool bDestroyOnDamage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		bool bDestroyed() { mixin(MGBPC!(532, 0x8)()); }
+		bool bDestroyed(bool val) { mixin(MSBPC!(532, 0x8)()); }
+		bool bDestroyOnVehicleTouch() { mixin(MGBPC!(532, 0x4)()); }
+		bool bDestroyOnVehicleTouch(bool val) { mixin(MSBPC!(532, 0x4)()); }
+		bool bDestroyOnPlayerTouch() { mixin(MGBPC!(532, 0x2)()); }
+		bool bDestroyOnPlayerTouch(bool val) { mixin(MSBPC!(532, 0x2)()); }
+		bool bDestroyOnDamage() { mixin(MGBPC!(532, 0x1)()); }
+		bool bDestroyOnDamage(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

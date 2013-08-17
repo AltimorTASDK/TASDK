@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SVehicleSimCar;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SVehicleSimBase;
 
@@ -8,24 +9,24 @@ extern(C++) interface SVehicleSimCar : SVehicleSimBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicleSimCar")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SVehicleSimCar")()); }
 	private static __gshared SVehicleSimCar mDefaultProperties;
-	@property final static SVehicleSimCar DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SVehicleSimCar)("SVehicleSimCar Engine.Default__SVehicleSimCar")); }
+	@property final static SVehicleSimCar DefaultProperties() { mixin(MGDPC!(SVehicleSimCar, "SVehicleSimCar Engine.Default__SVehicleSimCar")()); }
 	@property final
 	{
 		auto ref
 		{
-			float TimeSinceThrottle() { return *cast(float*)(cast(size_t)cast(void*)this + 192); }
-			float ActualSteering() { return *cast(float*)(cast(size_t)cast(void*)this + 188); }
-			float StopThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			float MaxBrakeTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
-			float EngineBrakeFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 172); }
-			float ReverseThrottle() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float SteerSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			UObject.InterpCurveFloat MaxSteerAngleCurve() { return *cast(UObject.InterpCurveFloat*)(cast(size_t)cast(void*)this + 148); }
-			float ChassisTorqueScale() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
+			float TimeSinceThrottle() { mixin(MGPC!(float, 192)()); }
+			float ActualSteering() { mixin(MGPC!(float, 188)()); }
+			float StopThreshold() { mixin(MGPC!(float, 180)()); }
+			float MaxBrakeTorque() { mixin(MGPC!(float, 176)()); }
+			float EngineBrakeFactor() { mixin(MGPC!(float, 172)()); }
+			float ReverseThrottle() { mixin(MGPC!(float, 168)()); }
+			float SteerSpeed() { mixin(MGPC!(float, 164)()); }
+			UObject.InterpCurveFloat MaxSteerAngleCurve() { mixin(MGPC!(UObject.InterpCurveFloat, 148)()); }
+			float ChassisTorqueScale() { mixin(MGPC!(float, 144)()); }
 		}
-		bool bIsDriving() { return (*cast(uint*)(cast(size_t)cast(void*)this + 184) & 0x1) != 0; }
-		bool bIsDriving(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 184) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 184) &= ~0x1; } return val; }
+		bool bIsDriving() { mixin(MGBPC!(184, 0x1)()); }
+		bool bIsDriving(bool val) { mixin(MSBPC!(184, 0x1)()); }
 	}
 }

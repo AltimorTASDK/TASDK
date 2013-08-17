@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleTypeDataBeam2;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface ParticleModuleTypeDataBeam2 : ParticleModuleTypeDataBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataBeam2")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleTypeDataBeam2")()); }
 	private static __gshared ParticleModuleTypeDataBeam2 mDefaultProperties;
-	@property final static ParticleModuleTypeDataBeam2 DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataBeam2)("ParticleModuleTypeDataBeam2 Engine.Default__ParticleModuleTypeDataBeam2")); }
+	@property final static ParticleModuleTypeDataBeam2 DefaultProperties() { mixin(MGDPC!(ParticleModuleTypeDataBeam2, "ParticleModuleTypeDataBeam2 Engine.Default__ParticleModuleTypeDataBeam2")()); }
 	enum EBeam2Method : ubyte
 	{
 		PEB2M_Distance = 0,
@@ -30,40 +31,40 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleTypeDataBeam2.BeamTargetData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModuleTypeDataBeam2.BeamTargetData")()); }
 		@property final auto ref
 		{
-			float TargetPercentage() { return *cast(float*)(cast(size_t)&this + 8); }
-			ScriptName TargetName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			float TargetPercentage() { mixin(MGPS!(float, 8)()); }
+			ScriptName TargetName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat TaperScale() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 172); }
-			DistributionFloat.RawDistributionFloat TaperFactor() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 144); }
-			DistributionFloat.RawDistributionFloat Distance() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 116); }
-			ScriptName BranchParentName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 108); }
-			int UpVectorStepSize() { return *cast(int*)(cast(size_t)cast(void*)this + 104); }
-			int InterpolationPoints() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-			float Speed() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			int MaxBeamCount() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int Sheets() { return *cast(int*)(cast(size_t)cast(void*)this + 84); }
-			float TextureTileDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			int TextureTile() { return *cast(int*)(cast(size_t)cast(void*)this + 76); }
-			ParticleModuleTypeDataBeam2.EBeamTaperMethod TaperMethod() { return *cast(ParticleModuleTypeDataBeam2.EBeamTaperMethod*)(cast(size_t)cast(void*)this + 73); }
-			ParticleModuleTypeDataBeam2.EBeam2Method BeamMethod() { return *cast(ParticleModuleTypeDataBeam2.EBeam2Method*)(cast(size_t)cast(void*)this + 72); }
+			DistributionFloat.RawDistributionFloat TaperScale() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 172)()); }
+			DistributionFloat.RawDistributionFloat TaperFactor() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 144)()); }
+			DistributionFloat.RawDistributionFloat Distance() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 116)()); }
+			ScriptName BranchParentName() { mixin(MGPC!(ScriptName, 108)()); }
+			int UpVectorStepSize() { mixin(MGPC!(int, 104)()); }
+			int InterpolationPoints() { mixin(MGPC!(int, 96)()); }
+			float Speed() { mixin(MGPC!(float, 92)()); }
+			int MaxBeamCount() { mixin(MGPC!(int, 88)()); }
+			int Sheets() { mixin(MGPC!(int, 84)()); }
+			float TextureTileDistance() { mixin(MGPC!(float, 80)()); }
+			int TextureTile() { mixin(MGPC!(int, 76)()); }
+			ParticleModuleTypeDataBeam2.EBeamTaperMethod TaperMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam2.EBeamTaperMethod, 73)()); }
+			ParticleModuleTypeDataBeam2.EBeam2Method BeamMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam2.EBeam2Method, 72)()); }
 		}
-		bool RenderTessellation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x10) != 0; }
-		bool RenderTessellation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x10; } return val; }
-		bool RenderLines() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x8) != 0; }
-		bool RenderLines(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x8; } return val; }
-		bool RenderDirectLine() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x4) != 0; }
-		bool RenderDirectLine(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x4; } return val; }
-		bool RenderGeometry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x2) != 0; }
-		bool RenderGeometry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x2; } return val; }
-		bool bAlwaysOn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x1) != 0; }
-		bool bAlwaysOn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x1; } return val; }
+		bool RenderTessellation() { mixin(MGBPC!(100, 0x10)()); }
+		bool RenderTessellation(bool val) { mixin(MSBPC!(100, 0x10)()); }
+		bool RenderLines() { mixin(MGBPC!(100, 0x8)()); }
+		bool RenderLines(bool val) { mixin(MSBPC!(100, 0x8)()); }
+		bool RenderDirectLine() { mixin(MGBPC!(100, 0x4)()); }
+		bool RenderDirectLine(bool val) { mixin(MSBPC!(100, 0x4)()); }
+		bool RenderGeometry() { mixin(MGBPC!(100, 0x2)()); }
+		bool RenderGeometry(bool val) { mixin(MSBPC!(100, 0x2)()); }
+		bool bAlwaysOn() { mixin(MGBPC!(100, 0x1)()); }
+		bool bAlwaysOn(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}
 }

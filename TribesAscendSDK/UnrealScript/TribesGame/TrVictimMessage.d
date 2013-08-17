@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrVictimMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,15 +10,15 @@ extern(C++) interface TrVictimMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVictimMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVictimMessage")()); }
 	private static __gshared TrVictimMessage mDefaultProperties;
-	@property final static TrVictimMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVictimMessage)("TrVictimMessage TribesGame.Default__TrVictimMessage")); }
+	@property final static TrVictimMessage DefaultProperties() { mixin(MGDPC!(TrVictimMessage, "TrVictimMessage TribesGame.Default__TrVictimMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVictimMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrVictimMessage.GetString")()); }
 	}
-	@property final auto ref ScriptString YouWereKilledBy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	@property final auto ref ScriptString YouWereKilledBy() { mixin(MGPC!(ScriptString, 100)()); }
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

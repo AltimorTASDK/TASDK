@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.SeqAct_GameCrowdPopulationManagerToggle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowd_ListOfAgents;
 import UnrealScript.Engine.SequenceAction;
 
@@ -8,9 +9,9 @@ extern(C++) interface SeqAct_GameCrowdPopulationManagerToggle : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_GameCrowdPopulationManagerToggle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.SeqAct_GameCrowdPopulationManagerToggle")()); }
 	private static __gshared SeqAct_GameCrowdPopulationManagerToggle mDefaultProperties;
-	@property final static SeqAct_GameCrowdPopulationManagerToggle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_GameCrowdPopulationManagerToggle)("SeqAct_GameCrowdPopulationManagerToggle GameFramework.Default__SeqAct_GameCrowdPopulationManagerToggle")); }
+	@property final static SeqAct_GameCrowdPopulationManagerToggle DefaultProperties() { mixin(MGDPC!(SeqAct_GameCrowdPopulationManagerToggle, "SeqAct_GameCrowdPopulationManagerToggle GameFramework.Default__SeqAct_GameCrowdPopulationManagerToggle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,29 +21,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FindPopMgrTarget() { return mFindPopMgrTarget ? mFindPopMgrTarget : (mFindPopMgrTarget = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdPopulationManagerToggle.FindPopMgrTarget")); }
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdPopulationManagerToggle.GetObjClassVersion")); }
+			ScriptFunction FindPopMgrTarget() { mixin(MGF!("mFindPopMgrTarget", "Function GameFramework.SeqAct_GameCrowdPopulationManagerToggle.FindPopMgrTarget")()); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function GameFramework.SeqAct_GameCrowdPopulationManagerToggle.GetObjClassVersion")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float WarmupPct() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			GameCrowd_ListOfAgents CrowdAgentList() { return *cast(GameCrowd_ListOfAgents*)(cast(size_t)cast(void*)this + 240); }
-			float MaxSimulationDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float SpawnRate() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			int MaxAgents() { return *cast(int*)(cast(size_t)cast(void*)this + 244); }
-			ScriptClass PopulationManagerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 256); }
+			float WarmupPct() { mixin(MGPC!(float, 232)()); }
+			GameCrowd_ListOfAgents CrowdAgentList() { mixin(MGPC!(GameCrowd_ListOfAgents, 240)()); }
+			float MaxSimulationDistance() { mixin(MGPC!(float, 252)()); }
+			float SpawnRate() { mixin(MGPC!(float, 248)()); }
+			int MaxAgents() { mixin(MGPC!(int, 244)()); }
+			ScriptClass PopulationManagerClass() { mixin(MGPC!(ScriptClass, 256)()); }
 		}
-		bool bClearOldArchetypes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x2) != 0; }
-		bool bClearOldArchetypes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x2; } return val; }
-		bool bCastShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x8) != 0; }
-		bool bCastShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x8; } return val; }
-		bool bEnableCrowdLightEnvironment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x4) != 0; }
-		bool bEnableCrowdLightEnvironment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x4; } return val; }
-		bool bKillAgentsInstantly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x1) != 0; }
-		bool bKillAgentsInstantly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x1; } return val; }
+		bool bClearOldArchetypes() { mixin(MGBPC!(236, 0x2)()); }
+		bool bClearOldArchetypes(bool val) { mixin(MSBPC!(236, 0x2)()); }
+		bool bCastShadows() { mixin(MGBPC!(236, 0x8)()); }
+		bool bCastShadows(bool val) { mixin(MSBPC!(236, 0x8)()); }
+		bool bEnableCrowdLightEnvironment() { mixin(MGBPC!(236, 0x4)()); }
+		bool bEnableCrowdLightEnvironment(bool val) { mixin(MSBPC!(236, 0x4)()); }
+		bool bKillAgentsInstantly() { mixin(MGBPC!(236, 0x1)()); }
+		bool bKillAgentsInstantly(bool val) { mixin(MSBPC!(236, 0x1)()); }
 	}
 final:
 	void FindPopMgrTarget()

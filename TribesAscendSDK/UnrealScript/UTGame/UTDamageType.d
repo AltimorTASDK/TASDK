@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDamageType;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTGib;
@@ -17,9 +18,9 @@ extern(C++) interface UTDamageType : DamageType
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDamageType")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDamageType")()); }
 	private static __gshared UTDamageType mDefaultProperties;
-	@property final static UTDamageType DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDamageType)("UTDamageType UTGame.Default__UTDamageType")); }
+	@property final static UTDamageType DefaultProperties() { mixin(MGDPC!(UTDamageType, "UTDamageType UTGame.Default__UTDamageType")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -48,108 +49,108 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetDeathCameraEffectInstigator() { return mGetDeathCameraEffectInstigator ? mGetDeathCameraEffectInstigator : (mGetDeathCameraEffectInstigator = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetDeathCameraEffectInstigator")); }
-			ScriptFunction GetHitEffectDuration() { return mGetHitEffectDuration ? mGetHitEffectDuration : (mGetHitEffectDuration = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetHitEffectDuration")); }
-			ScriptFunction ShouldGib() { return mShouldGib ? mShouldGib : (mShouldGib = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.ShouldGib")); }
-			ScriptFunction GetDeathCameraEffectVictim() { return mGetDeathCameraEffectVictim ? mGetDeathCameraEffectVictim : (mGetDeathCameraEffectVictim = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetDeathCameraEffectVictim")); }
-			ScriptFunction DeathMessage() { return mDeathMessage ? mDeathMessage : (mDeathMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.DeathMessage")); }
-			ScriptFunction SuicideMessage() { return mSuicideMessage ? mSuicideMessage : (mSuicideMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SuicideMessage")); }
-			ScriptFunction SpawnHitEffect() { return mSpawnHitEffect ? mSpawnHitEffect : (mSpawnHitEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SpawnHitEffect")); }
-			ScriptFunction IncrementKills() { return mIncrementKills ? mIncrementKills : (mIncrementKills = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.IncrementKills")); }
-			ScriptFunction IncrementDeaths() { return mIncrementDeaths ? mIncrementDeaths : (mIncrementDeaths = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.IncrementDeaths")); }
-			ScriptFunction IncrementSuicides() { return mIncrementSuicides ? mIncrementSuicides : (mIncrementSuicides = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.IncrementSuicides")); }
-			ScriptFunction GetStatsName() { return mGetStatsName ? mGetStatsName : (mGetStatsName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetStatsName")); }
-			ScriptFunction ScoreKill() { return mScoreKill ? mScoreKill : (mScoreKill = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.ScoreKill")); }
-			ScriptFunction PawnTornOff() { return mPawnTornOff ? mPawnTornOff : (mPawnTornOff = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.PawnTornOff")); }
-			ScriptFunction SpawnGibEffects() { return mSpawnGibEffects ? mSpawnGibEffects : (mSpawnGibEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SpawnGibEffects")); }
-			ScriptFunction DoCustomDamageEffects() { return mDoCustomDamageEffects ? mDoCustomDamageEffects : (mDoCustomDamageEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.DoCustomDamageEffects")); }
-			ScriptFunction CreateDeathSkeleton() { return mCreateDeathSkeleton ? mCreateDeathSkeleton : (mCreateDeathSkeleton = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.CreateDeathSkeleton")); }
-			ScriptFunction BoneBreaker() { return mBoneBreaker ? mBoneBreaker : (mBoneBreaker = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.BoneBreaker")); }
-			ScriptFunction CreateDeathGoreChunks() { return mCreateDeathGoreChunks ? mCreateDeathGoreChunks : (mCreateDeathGoreChunks = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.CreateDeathGoreChunks")); }
-			ScriptFunction SpawnExtraGibEffects() { return mSpawnExtraGibEffects ? mSpawnExtraGibEffects : (mSpawnExtraGibEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SpawnExtraGibEffects")); }
-			ScriptFunction DrawKillIcon() { return mDrawKillIcon ? mDrawKillIcon : (mDrawKillIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.DrawKillIcon")); }
-			ScriptFunction CalcDeathCamera() { return mCalcDeathCamera ? mCalcDeathCamera : (mCalcDeathCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.CalcDeathCamera")); }
+			ScriptFunction GetDeathCameraEffectInstigator() { mixin(MGF!("mGetDeathCameraEffectInstigator", "Function UTGame.UTDamageType.GetDeathCameraEffectInstigator")()); }
+			ScriptFunction GetHitEffectDuration() { mixin(MGF!("mGetHitEffectDuration", "Function UTGame.UTDamageType.GetHitEffectDuration")()); }
+			ScriptFunction ShouldGib() { mixin(MGF!("mShouldGib", "Function UTGame.UTDamageType.ShouldGib")()); }
+			ScriptFunction GetDeathCameraEffectVictim() { mixin(MGF!("mGetDeathCameraEffectVictim", "Function UTGame.UTDamageType.GetDeathCameraEffectVictim")()); }
+			ScriptFunction DeathMessage() { mixin(MGF!("mDeathMessage", "Function UTGame.UTDamageType.DeathMessage")()); }
+			ScriptFunction SuicideMessage() { mixin(MGF!("mSuicideMessage", "Function UTGame.UTDamageType.SuicideMessage")()); }
+			ScriptFunction SpawnHitEffect() { mixin(MGF!("mSpawnHitEffect", "Function UTGame.UTDamageType.SpawnHitEffect")()); }
+			ScriptFunction IncrementKills() { mixin(MGF!("mIncrementKills", "Function UTGame.UTDamageType.IncrementKills")()); }
+			ScriptFunction IncrementDeaths() { mixin(MGF!("mIncrementDeaths", "Function UTGame.UTDamageType.IncrementDeaths")()); }
+			ScriptFunction IncrementSuicides() { mixin(MGF!("mIncrementSuicides", "Function UTGame.UTDamageType.IncrementSuicides")()); }
+			ScriptFunction GetStatsName() { mixin(MGF!("mGetStatsName", "Function UTGame.UTDamageType.GetStatsName")()); }
+			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function UTGame.UTDamageType.ScoreKill")()); }
+			ScriptFunction PawnTornOff() { mixin(MGF!("mPawnTornOff", "Function UTGame.UTDamageType.PawnTornOff")()); }
+			ScriptFunction SpawnGibEffects() { mixin(MGF!("mSpawnGibEffects", "Function UTGame.UTDamageType.SpawnGibEffects")()); }
+			ScriptFunction DoCustomDamageEffects() { mixin(MGF!("mDoCustomDamageEffects", "Function UTGame.UTDamageType.DoCustomDamageEffects")()); }
+			ScriptFunction CreateDeathSkeleton() { mixin(MGF!("mCreateDeathSkeleton", "Function UTGame.UTDamageType.CreateDeathSkeleton")()); }
+			ScriptFunction BoneBreaker() { mixin(MGF!("mBoneBreaker", "Function UTGame.UTDamageType.BoneBreaker")()); }
+			ScriptFunction CreateDeathGoreChunks() { mixin(MGF!("mCreateDeathGoreChunks", "Function UTGame.UTDamageType.CreateDeathGoreChunks")()); }
+			ScriptFunction SpawnExtraGibEffects() { mixin(MGF!("mSpawnExtraGibEffects", "Function UTGame.UTDamageType.SpawnExtraGibEffects")()); }
+			ScriptFunction DrawKillIcon() { mixin(MGF!("mDrawKillIcon", "Function UTGame.UTDamageType.DrawKillIcon")()); }
+			ScriptFunction CalcDeathCamera() { mixin(MGF!("mCalcDeathCamera", "Function UTGame.UTDamageType.CalcDeathCamera")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			CameraAnim DamageCameraAnim() { return *cast(CameraAnim*)(cast(size_t)cast(void*)this + 192); }
-			ScriptClass DamageWeaponClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 152); }
-			float GibPerterbation() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-			ScriptName DeathAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 172); }
-			float DeathAnimRate() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			float MotorDecayTime() { return *cast(float*)(cast(size_t)cast(void*)this + 184); }
-			float StopAnimAfterDamageInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 188); }
-			float DamageOverlayTime() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float XRayEffectTime() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-			UObject.LinearColor DamageBodyMatColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 100); }
-			float PhysicsTakeHitMomentumThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			UObject.LinearColor HitEffectColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 248); }
-			ScriptString MaleSuicide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 288); }
-			ScriptString FemaleSuicide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 276); }
-			ScriptString DeathString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 264); }
-			int CustomTauntIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 244); }
-			ScriptName RewardEvent() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 236); }
-			int RewardAnnouncementSwitch() { return *cast(int*)(cast(size_t)cast(void*)this + 232); }
-			ScriptClass RewardAnnouncementClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 228); }
-			int RewardCount() { return *cast(int*)(cast(size_t)cast(void*)this + 224); }
-			ScriptName SuicideStatsName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 216); }
-			ScriptName DeathStatsName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 208); }
-			ScriptName KillStatsName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 200); }
-			float NodeDamageScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 196); }
-			ScriptClass DeathCameraEffectInstigator() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 168); }
-			ScriptClass DeathCameraEffectVictim() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 164); }
-			ParticleSystem GibTrail() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 160); }
-			int DamageWeaponFireMode() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			int AlwaysGibDamageThreshold() { return *cast(int*)(cast(size_t)cast(void*)this + 144); }
-			int MinAccumulateDamageThreshold() { return *cast(int*)(cast(size_t)cast(void*)this + 140); }
-			int GibThreshold() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-			float DeathOverlayTime() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
+			CameraAnim DamageCameraAnim() { mixin(MGPC!(CameraAnim, 192)()); }
+			ScriptClass DamageWeaponClass() { mixin(MGPC!(ScriptClass, 152)()); }
+			float GibPerterbation() { mixin(MGPC!(float, 132)()); }
+			ScriptName DeathAnim() { mixin(MGPC!(ScriptName, 172)()); }
+			float DeathAnimRate() { mixin(MGPC!(float, 180)()); }
+			float MotorDecayTime() { mixin(MGPC!(float, 184)()); }
+			float StopAnimAfterDamageInterval() { mixin(MGPC!(float, 188)()); }
+			float DamageOverlayTime() { mixin(MGPC!(float, 116)()); }
+			float XRayEffectTime() { mixin(MGPC!(float, 124)()); }
+			UObject.LinearColor DamageBodyMatColor() { mixin(MGPC!(UObject.LinearColor, 100)()); }
+			float PhysicsTakeHitMomentumThreshold() { mixin(MGPC!(float, 148)()); }
+			UObject.LinearColor HitEffectColor() { mixin(MGPC!(UObject.LinearColor, 248)()); }
+			ScriptString MaleSuicide() { mixin(MGPC!(ScriptString, 288)()); }
+			ScriptString FemaleSuicide() { mixin(MGPC!(ScriptString, 276)()); }
+			ScriptString DeathString() { mixin(MGPC!(ScriptString, 264)()); }
+			int CustomTauntIndex() { mixin(MGPC!(int, 244)()); }
+			ScriptName RewardEvent() { mixin(MGPC!(ScriptName, 236)()); }
+			int RewardAnnouncementSwitch() { mixin(MGPC!(int, 232)()); }
+			ScriptClass RewardAnnouncementClass() { mixin(MGPC!(ScriptClass, 228)()); }
+			int RewardCount() { mixin(MGPC!(int, 224)()); }
+			ScriptName SuicideStatsName() { mixin(MGPC!(ScriptName, 216)()); }
+			ScriptName DeathStatsName() { mixin(MGPC!(ScriptName, 208)()); }
+			ScriptName KillStatsName() { mixin(MGPC!(ScriptName, 200)()); }
+			float NodeDamageScaling() { mixin(MGPC!(float, 196)()); }
+			ScriptClass DeathCameraEffectInstigator() { mixin(MGPC!(ScriptClass, 168)()); }
+			ScriptClass DeathCameraEffectVictim() { mixin(MGPC!(ScriptClass, 164)()); }
+			ParticleSystem GibTrail() { mixin(MGPC!(ParticleSystem, 160)()); }
+			int DamageWeaponFireMode() { mixin(MGPC!(int, 156)()); }
+			int AlwaysGibDamageThreshold() { mixin(MGPC!(int, 144)()); }
+			int MinAccumulateDamageThreshold() { mixin(MGPC!(int, 140)()); }
+			int GibThreshold() { mixin(MGPC!(int, 136)()); }
+			float DeathOverlayTime() { mixin(MGPC!(float, 120)()); }
 		}
-		bool bLocationalHit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x2) != 0; }
-		bool bLocationalHit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x2; } return val; }
-		bool bDirectDamage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x10) != 0; }
-		bool bDirectDamage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x10; } return val; }
-		bool bHeadGibCamera() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x40000) != 0; }
-		bool bHeadGibCamera(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x40000; } return val; }
-		bool bUseDamageBasedDeathEffects() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x2000) != 0; }
-		bool bUseDamageBasedDeathEffects(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x2000; } return val; }
-		bool bAnimateHipsForDeathAnim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x8000) != 0; }
-		bool bAnimateHipsForDeathAnim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x8000; } return val; }
-		bool bSeversHead() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x20) != 0; }
-		bool bSeversHead(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x20; } return val; }
-		bool bCausesBloodSplatterDecals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x80000) != 0; }
-		bool bCausesBloodSplatterDecals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x80000; } return val; }
-		bool bCausesBlood() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1) != 0; }
-		bool bCausesBlood(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1; } return val; }
-		bool bSpecialDeathCamera() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x4000) != 0; }
-		bool bSpecialDeathCamera(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x4000; } return val; }
-		bool bThrowRagdoll() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x100) != 0; }
-		bool bThrowRagdoll(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x100; } return val; }
-		bool bOverrideHitEffectColor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x20000) != 0; }
-		bool bOverrideHitEffectColor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x20000; } return val; }
-		bool bDontHurtInstigator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x100000) != 0; }
-		bool bDontHurtInstigator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x100000; } return val; }
-		bool bComplainFriendlyFire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x10000) != 0; }
-		bool bComplainFriendlyFire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x10000; } return val; }
-		bool bSelfDestructDamage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1000) != 0; }
-		bool bSelfDestructDamage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1000; } return val; }
-		bool bVehicleHit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x800) != 0; }
-		bool bVehicleHit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x800; } return val; }
-		bool bBulletHit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x400) != 0; }
-		bool bBulletHit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x400; } return val; }
-		bool bLeaveBodyEffect() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x200) != 0; }
-		bool bLeaveBodyEffect(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x200; } return val; }
-		bool bUseTearOffMomentum() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x80) != 0; }
-		bool bUseTearOffMomentum(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x80; } return val; }
-		bool bCauseConvulsions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x40) != 0; }
-		bool bCauseConvulsions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x40; } return val; }
-		bool bNeverGibs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x8) != 0; }
-		bool bNeverGibs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x8; } return val; }
-		bool bAlwaysGibs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x4) != 0; }
-		bool bAlwaysGibs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x4; } return val; }
+		bool bLocationalHit() { mixin(MGBPC!(128, 0x2)()); }
+		bool bLocationalHit(bool val) { mixin(MSBPC!(128, 0x2)()); }
+		bool bDirectDamage() { mixin(MGBPC!(128, 0x10)()); }
+		bool bDirectDamage(bool val) { mixin(MSBPC!(128, 0x10)()); }
+		bool bHeadGibCamera() { mixin(MGBPC!(128, 0x40000)()); }
+		bool bHeadGibCamera(bool val) { mixin(MSBPC!(128, 0x40000)()); }
+		bool bUseDamageBasedDeathEffects() { mixin(MGBPC!(128, 0x2000)()); }
+		bool bUseDamageBasedDeathEffects(bool val) { mixin(MSBPC!(128, 0x2000)()); }
+		bool bAnimateHipsForDeathAnim() { mixin(MGBPC!(128, 0x8000)()); }
+		bool bAnimateHipsForDeathAnim(bool val) { mixin(MSBPC!(128, 0x8000)()); }
+		bool bSeversHead() { mixin(MGBPC!(128, 0x20)()); }
+		bool bSeversHead(bool val) { mixin(MSBPC!(128, 0x20)()); }
+		bool bCausesBloodSplatterDecals() { mixin(MGBPC!(128, 0x80000)()); }
+		bool bCausesBloodSplatterDecals(bool val) { mixin(MSBPC!(128, 0x80000)()); }
+		bool bCausesBlood() { mixin(MGBPC!(128, 0x1)()); }
+		bool bCausesBlood(bool val) { mixin(MSBPC!(128, 0x1)()); }
+		bool bSpecialDeathCamera() { mixin(MGBPC!(128, 0x4000)()); }
+		bool bSpecialDeathCamera(bool val) { mixin(MSBPC!(128, 0x4000)()); }
+		bool bThrowRagdoll() { mixin(MGBPC!(128, 0x100)()); }
+		bool bThrowRagdoll(bool val) { mixin(MSBPC!(128, 0x100)()); }
+		bool bOverrideHitEffectColor() { mixin(MGBPC!(128, 0x20000)()); }
+		bool bOverrideHitEffectColor(bool val) { mixin(MSBPC!(128, 0x20000)()); }
+		bool bDontHurtInstigator() { mixin(MGBPC!(128, 0x100000)()); }
+		bool bDontHurtInstigator(bool val) { mixin(MSBPC!(128, 0x100000)()); }
+		bool bComplainFriendlyFire() { mixin(MGBPC!(128, 0x10000)()); }
+		bool bComplainFriendlyFire(bool val) { mixin(MSBPC!(128, 0x10000)()); }
+		bool bSelfDestructDamage() { mixin(MGBPC!(128, 0x1000)()); }
+		bool bSelfDestructDamage(bool val) { mixin(MSBPC!(128, 0x1000)()); }
+		bool bVehicleHit() { mixin(MGBPC!(128, 0x800)()); }
+		bool bVehicleHit(bool val) { mixin(MSBPC!(128, 0x800)()); }
+		bool bBulletHit() { mixin(MGBPC!(128, 0x400)()); }
+		bool bBulletHit(bool val) { mixin(MSBPC!(128, 0x400)()); }
+		bool bLeaveBodyEffect() { mixin(MGBPC!(128, 0x200)()); }
+		bool bLeaveBodyEffect(bool val) { mixin(MSBPC!(128, 0x200)()); }
+		bool bUseTearOffMomentum() { mixin(MGBPC!(128, 0x80)()); }
+		bool bUseTearOffMomentum(bool val) { mixin(MSBPC!(128, 0x80)()); }
+		bool bCauseConvulsions() { mixin(MGBPC!(128, 0x40)()); }
+		bool bCauseConvulsions(bool val) { mixin(MSBPC!(128, 0x40)()); }
+		bool bNeverGibs() { mixin(MGBPC!(128, 0x8)()); }
+		bool bNeverGibs(bool val) { mixin(MSBPC!(128, 0x8)()); }
+		bool bAlwaysGibs() { mixin(MGBPC!(128, 0x4)()); }
+		bool bAlwaysGibs(bool val) { mixin(MSBPC!(128, 0x4)()); }
 	}
 final:
 	static ScriptClass GetDeathCameraEffectInstigator(UTPawn UTP)
@@ -266,24 +267,24 @@ final:
 		*cast(UTGib*)params.ptr = Gib;
 		StaticClass.ProcessEvent(Functions.SpawnGibEffects, params.ptr, cast(void*)0);
 	}
-	static void DoCustomDamageEffects(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
+	static void DoCustomDamageEffects(UTPawn ThePawn, ScriptClass TheDamageType, ref const Actor.TraceHitInfo HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = ThePawn;
 		*cast(ScriptClass*)&params[4] = TheDamageType;
-		*cast(Actor.TraceHitInfo*)&params[8] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[8] = HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
 		StaticClass.ProcessEvent(Functions.DoCustomDamageEffects, params.ptr, cast(void*)0);
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
 	}
-	static void CreateDeathSkeleton(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
+	static void CreateDeathSkeleton(UTPawn ThePawn, ScriptClass TheDamageType, ref const Actor.TraceHitInfo HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = ThePawn;
 		*cast(ScriptClass*)&params[4] = TheDamageType;
-		*cast(Actor.TraceHitInfo*)&params[8] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[8] = HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
 		StaticClass.ProcessEvent(Functions.CreateDeathSkeleton, params.ptr, cast(void*)0);
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
@@ -303,13 +304,13 @@ void**)&params[4] = TheMesh;
 		*cast(ScriptName*)&params[32] = BoneName;
 		StaticClass.ProcessEvent(Functions.BoneBreaker, params.ptr, cast(void*)0);
 	}
-	static void CreateDeathGoreChunks(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
+	static void CreateDeathGoreChunks(UTPawn ThePawn, ScriptClass TheDamageType, ref const Actor.TraceHitInfo HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = ThePawn;
 		*cast(ScriptClass*)&params[4] = TheDamageType;
-		*cast(Actor.TraceHitInfo*)&params[8] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[8] = HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
 		StaticClass.ProcessEvent(Functions.CreateDeathGoreChunks, params.ptr, cast(void*)0);
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
@@ -332,15 +333,15 @@ void**)&params[4] = TheMesh;
 		*cast(float*)&params[16] = HUDScaleY;
 		StaticClass.ProcessEvent(Functions.DrawKillIcon, params.ptr, cast(void*)0);
 	}
-	static void CalcDeathCamera(UTPawn P, float DeltaTime, Vector* CameraLocation, Rotator* CameraRotation, float* CameraFOV)
+	static void CalcDeathCamera(UTPawn P, float DeltaTime, ref Vector CameraLocation, ref Rotator CameraRotation, ref float CameraFOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = P;
 		*cast(float*)&params[4] = DeltaTime;
-		*cast(Vector*)&params[8] = *CameraLocation;
-		*cast(Rotator*)&params[20] = *CameraRotation;
-		*cast(float*)&params[32] = *CameraFOV;
+		*cast(Vector*)&params[8] = CameraLocation;
+		*cast(Rotator*)&params[20] = CameraRotation;
+		*cast(float*)&params[32] = CameraFOV;
 		StaticClass.ProcessEvent(Functions.CalcDeathCamera, params.ptr, cast(void*)0);
 		*CameraLocation = *cast(Vector*)&params[8];
 		*CameraRotation = *cast(Rotator*)&params[20];

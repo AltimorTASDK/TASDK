@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Path_WithinTraversalDist;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.PathConstraint;
 
@@ -8,9 +9,9 @@ extern(C++) interface Path_WithinTraversalDist : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_WithinTraversalDist")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_WithinTraversalDist")()); }
 	private static __gshared Path_WithinTraversalDist mDefaultProperties;
-	@property final static Path_WithinTraversalDist DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_WithinTraversalDist)("Path_WithinTraversalDist Engine.Default__Path_WithinTraversalDist")); }
+	@property final static Path_WithinTraversalDist DefaultProperties() { mixin(MGDPC!(Path_WithinTraversalDist, "Path_WithinTraversalDist Engine.Default__Path_WithinTraversalDist")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,19 +21,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DontExceedMaxDist() { return mDontExceedMaxDist ? mDontExceedMaxDist : (mDontExceedMaxDist = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_WithinTraversalDist.DontExceedMaxDist")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_WithinTraversalDist.Recycle")); }
+			ScriptFunction DontExceedMaxDist() { mixin(MGF!("mDontExceedMaxDist", "Function Engine.Path_WithinTraversalDist.DontExceedMaxDist")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_WithinTraversalDist.Recycle")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float SoftStartPenalty() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			float MaxTraversalDist() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
+			float SoftStartPenalty() { mixin(MGPC!(float, 76)()); }
+			float MaxTraversalDist() { mixin(MGPC!(float, 68)()); }
 		}
-		bool bSoft() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-		bool bSoft(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+		bool bSoft() { mixin(MGBPC!(72, 0x1)()); }
+		bool bSoft(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 final:
 	static bool DontExceedMaxDist(Pawn P, float InMaxTraversalDist, bool bInSoft)

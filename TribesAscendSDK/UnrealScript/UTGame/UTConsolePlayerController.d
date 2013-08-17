@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTConsolePlayerController;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTPlayerController;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTConsolePlayerController : UTPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTConsolePlayerController")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTConsolePlayerController")()); }
 	private static __gshared UTConsolePlayerController mDefaultProperties;
-	@property final static UTConsolePlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTConsolePlayerController)("UTConsolePlayerController UTGame.Default__UTConsolePlayerController")); }
+	@property final static UTConsolePlayerController DefaultProperties() { mixin(MGDPC!(UTConsolePlayerController, "UTConsolePlayerController UTGame.Default__UTConsolePlayerController")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,15 +28,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateRotation() { return mUpdateRotation ? mUpdateRotation : (mUpdateRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.UpdateRotation")); }
-			ScriptFunction AimingHelp() { return mAimingHelp ? mAimingHelp : (mAimingHelp = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.AimingHelp")); }
-			ScriptFunction AimHelpModifier() { return mAimHelpModifier ? mAimHelpModifier : (mAimHelpModifier = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.AimHelpModifier")); }
-			ScriptFunction PerformedUseAction() { return mPerformedUseAction ? mPerformedUseAction : (mPerformedUseAction = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.PerformedUseAction")); }
-			ScriptFunction ClientSmartUse() { return mClientSmartUse ? mClientSmartUse : (mClientSmartUse = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.ClientSmartUse")); }
-			ScriptFunction ClientRestart() { return mClientRestart ? mClientRestart : (mClientRestart = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.ClientRestart")); }
-			ScriptFunction PrevWeapon() { return mPrevWeapon ? mPrevWeapon : (mPrevWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.PrevWeapon")); }
-			ScriptFunction NextWeapon() { return mNextWeapon ? mNextWeapon : (mNextWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.NextWeapon")); }
-			ScriptFunction ResetPlayerMovementInput() { return mResetPlayerMovementInput ? mResetPlayerMovementInput : (mResetPlayerMovementInput = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerController.ResetPlayerMovementInput")); }
+			ScriptFunction UpdateRotation() { mixin(MGF!("mUpdateRotation", "Function UTGame.UTConsolePlayerController.UpdateRotation")()); }
+			ScriptFunction AimingHelp() { mixin(MGF!("mAimingHelp", "Function UTGame.UTConsolePlayerController.AimingHelp")()); }
+			ScriptFunction AimHelpModifier() { mixin(MGF!("mAimHelpModifier", "Function UTGame.UTConsolePlayerController.AimHelpModifier")()); }
+			ScriptFunction PerformedUseAction() { mixin(MGF!("mPerformedUseAction", "Function UTGame.UTConsolePlayerController.PerformedUseAction")()); }
+			ScriptFunction ClientSmartUse() { mixin(MGF!("mClientSmartUse", "Function UTGame.UTConsolePlayerController.ClientSmartUse")()); }
+			ScriptFunction ClientRestart() { mixin(MGF!("mClientRestart", "Function UTGame.UTConsolePlayerController.ClientRestart")()); }
+			ScriptFunction PrevWeapon() { mixin(MGF!("mPrevWeapon", "Function UTGame.UTConsolePlayerController.PrevWeapon")()); }
+			ScriptFunction NextWeapon() { mixin(MGF!("mNextWeapon", "Function UTGame.UTConsolePlayerController.NextWeapon")()); }
+			ScriptFunction ResetPlayerMovementInput() { mixin(MGF!("mResetPlayerMovementInput", "Function UTGame.UTConsolePlayerController.ResetPlayerMovementInput")()); }
 		}
 	}
 	struct ProfileSettingToUE3BindingDatum
@@ -43,24 +44,29 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTConsolePlayerController.ProfileSettingToUE3BindingDatum")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTConsolePlayerController.ProfileSettingToUE3BindingDatum")()); }
 		@property final auto ref
 		{
-			ScriptName UE3BindingName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-			ScriptName ProfileSettingName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptName UE3BindingName() { mixin(MGPS!(ScriptName, 8)()); }
+			ScriptName ProfileSettingName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
+	}
+	static struct PlayerWalking
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTConsolePlayerController.PlayerWalking")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMapping360() { return *cast(ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum)*)(cast(size_t)cast(void*)this + 2180); }
-			ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMappingPS3() { return *cast(ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum)*)(cast(size_t)cast(void*)this + 2192); }
+			ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMapping360() { mixin(MGPC!(ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum), 2180)()); }
+			ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMappingPS3() { mixin(MGPC!(ScriptArray!(UTConsolePlayerController.ProfileSettingToUE3BindingDatum), 2192)()); }
 		}
-		bool bDebugTargetAdhesion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2176) & 0x2) != 0; }
-		bool bDebugTargetAdhesion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2176) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2176) &= ~0x2; } return val; }
-		bool bTargetAdhesionEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2176) & 0x1) != 0; }
-		bool bTargetAdhesionEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2176) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2176) &= ~0x1; } return val; }
+		bool bDebugTargetAdhesion() { mixin(MGBPC!(2176, 0x2)()); }
+		bool bDebugTargetAdhesion(bool val) { mixin(MSBPC!(2176, 0x2)()); }
+		bool bTargetAdhesionEnabled() { mixin(MGBPC!(2176, 0x1)()); }
+		bool bTargetAdhesionEnabled(bool val) { mixin(MSBPC!(2176, 0x1)()); }
 	}
 final:
 	void UpdateRotation(float DeltaTime)

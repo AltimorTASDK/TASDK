@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKKActorBreakable;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface UDKKActorBreakable : KActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKKActorBreakable")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKKActorBreakable")()); }
 	private static __gshared UDKKActorBreakable mDefaultProperties;
-	@property final static UDKKActorBreakable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKKActorBreakable)("UDKKActorBreakable UDKBase.Default__UDKKActorBreakable")); }
+	@property final static UDKKActorBreakable DefaultProperties() { mixin(MGDPC!(UDKKActorBreakable, "UDKKActorBreakable UDKBase.Default__UDKKActorBreakable")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,38 +27,40 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnEncroach() { return mOnEncroach ? mOnEncroach : (mOnEncroach = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKKActorBreakable.OnEncroach")); }
-			ScriptFunction OnBreakApart() { return mOnBreakApart ? mOnBreakApart : (mOnBreakApart = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKKActorBreakable.OnBreakApart")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKKActorBreakable.TakeDamage")); }
-			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKKActorBreakable.EncroachingOn")); }
-			ScriptFunction BreakApart() { return mBreakApart ? mBreakApart : (mBreakApart = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKKActorBreakable.BreakApart")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKKActorBreakable.ReplicatedEvent")); }
+			ScriptFunction OnEncroach() { mixin(MGF!("mOnEncroach", "Function UDKBase.UDKKActorBreakable.OnEncroach")()); }
+			ScriptFunction OnBreakApart() { mixin(MGF!("mOnBreakApart", "Function UDKBase.UDKKActorBreakable.OnBreakApart")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function UDKBase.UDKKActorBreakable.TakeDamage")()); }
+			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function UDKBase.UDKKActorBreakable.EncroachingOn")()); }
+			ScriptFunction BreakApart() { mixin(MGF!("mBreakApart", "Function UDKBase.UDKKActorBreakable.BreakApart")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UDKBase.UDKKActorBreakable.ReplicatedEvent")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Controller InstigatorController() { return *cast(Controller*)(cast(size_t)cast(void*)this + 740); }
-			ParticleSystem BrokenTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 736); }
-			int DOEResetThreshold() { return *cast(int*)(cast(size_t)cast(void*)this + 732); }
-			ScriptClass DmgTypeClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 728); }
-			int EncroachDamage_Self() { return *cast(int*)(cast(size_t)cast(void*)this + 724); }
-			int EncroachDamage_Other() { return *cast(int*)(cast(size_t)cast(void*)this + 720); }
-			int Health() { return *cast(int*)(cast(size_t)cast(void*)this + 716); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnEncroach__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnBreakApart__Delegate'!
+			Controller InstigatorController() { mixin(MGPC!(Controller, 740)()); }
+			ParticleSystem BrokenTemplate() { mixin(MGPC!(ParticleSystem, 736)()); }
+			int DOEResetThreshold() { mixin(MGPC!(int, 732)()); }
+			ScriptClass DmgTypeClass() { mixin(MGPC!(ScriptClass, 728)()); }
+			int EncroachDamage_Self() { mixin(MGPC!(int, 724)()); }
+			int EncroachDamage_Other() { mixin(MGPC!(int, 720)()); }
+			int Health() { mixin(MGPC!(int, 716)()); }
 		}
-		bool bBroken() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x20) != 0; }
-		bool bBroken(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x20; } return val; }
-		bool bBreakWhenCausingDamage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x10) != 0; }
-		bool bBreakWhenCausingDamage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x10; } return val; }
-		bool bTakeDamageOnEncroachment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x8) != 0; }
-		bool bTakeDamageOnEncroachment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x8; } return val; }
-		bool bResetDOEWhenAsleep() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x4) != 0; }
-		bool bResetDOEWhenAsleep(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x4; } return val; }
-		bool bDamageOnEncroachment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x2) != 0; }
-		bool bDamageOnEncroachment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x2; } return val; }
-		bool bHasHealth() { return (*cast(uint*)(cast(size_t)cast(void*)this + 712) & 0x1) != 0; }
-		bool bHasHealth(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 712) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 712) &= ~0x1; } return val; }
+		bool bBroken() { mixin(MGBPC!(712, 0x20)()); }
+		bool bBroken(bool val) { mixin(MSBPC!(712, 0x20)()); }
+		bool bBreakWhenCausingDamage() { mixin(MGBPC!(712, 0x10)()); }
+		bool bBreakWhenCausingDamage(bool val) { mixin(MSBPC!(712, 0x10)()); }
+		bool bTakeDamageOnEncroachment() { mixin(MGBPC!(712, 0x8)()); }
+		bool bTakeDamageOnEncroachment(bool val) { mixin(MSBPC!(712, 0x8)()); }
+		bool bResetDOEWhenAsleep() { mixin(MGBPC!(712, 0x4)()); }
+		bool bResetDOEWhenAsleep(bool val) { mixin(MSBPC!(712, 0x4)()); }
+		bool bDamageOnEncroachment() { mixin(MGBPC!(712, 0x2)()); }
+		bool bDamageOnEncroachment(bool val) { mixin(MSBPC!(712, 0x2)()); }
+		bool bHasHealth() { mixin(MGBPC!(712, 0x1)()); }
+		bool bHasHealth(bool val) { mixin(MSBPC!(712, 0x1)()); }
 	}
 final:
 	bool OnEncroach(Actor Other)

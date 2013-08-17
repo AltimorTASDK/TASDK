@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.SeqAct_GameCrowdSpawner;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Latent;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.Core.UObject;
@@ -14,9 +15,9 @@ extern(C++) interface SeqAct_GameCrowdSpawner : SeqAct_Latent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_GameCrowdSpawner")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.SeqAct_GameCrowdSpawner")()); }
 	private static __gshared SeqAct_GameCrowdSpawner mDefaultProperties;
-	@property final static SeqAct_GameCrowdSpawner DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_GameCrowdSpawner)("SeqAct_GameCrowdSpawner GameFramework.Default__SeqAct_GameCrowdSpawner")); }
+	@property final static SeqAct_GameCrowdSpawner DefaultProperties() { mixin(MGDPC!(SeqAct_GameCrowdSpawner, "SeqAct_GameCrowdSpawner GameFramework.Default__SeqAct_GameCrowdSpawner")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,13 +32,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnedAgent() { return mSpawnedAgent ? mSpawnedAgent : (mSpawnedAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.SpawnedAgent")); }
-			ScriptFunction CacheSpawnerVars() { return mCacheSpawnerVars ? mCacheSpawnerVars : (mCacheSpawnerVars = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.CacheSpawnerVars")); }
-			ScriptFunction KillAgents() { return mKillAgents ? mKillAgents : (mKillAgents = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.KillAgents")); }
-			ScriptFunction UpdateSpawning() { return mUpdateSpawning ? mUpdateSpawning : (mUpdateSpawning = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.UpdateSpawning")); }
-			ScriptFunction SpawnAgent() { return mSpawnAgent ? mSpawnAgent : (mSpawnAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.SpawnAgent")); }
-			ScriptFunction CreateNewAgent() { return mCreateNewAgent ? mCreateNewAgent : (mCreateNewAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.CreateNewAgent")); }
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.GetObjClassVersion")); }
+			ScriptFunction SpawnedAgent() { mixin(MGF!("mSpawnedAgent", "Function GameFramework.SeqAct_GameCrowdSpawner.SpawnedAgent")()); }
+			ScriptFunction CacheSpawnerVars() { mixin(MGF!("mCacheSpawnerVars", "Function GameFramework.SeqAct_GameCrowdSpawner.CacheSpawnerVars")()); }
+			ScriptFunction KillAgents() { mixin(MGF!("mKillAgents", "Function GameFramework.SeqAct_GameCrowdSpawner.KillAgents")()); }
+			ScriptFunction UpdateSpawning() { mixin(MGF!("mUpdateSpawning", "Function GameFramework.SeqAct_GameCrowdSpawner.UpdateSpawning")()); }
+			ScriptFunction SpawnAgent() { mixin(MGF!("mSpawnAgent", "Function GameFramework.SeqAct_GameCrowdSpawner.SpawnAgent")()); }
+			ScriptFunction CreateNewAgent() { mixin(MGF!("mCreateNewAgent", "Function GameFramework.SeqAct_GameCrowdSpawner.CreateNewAgent")()); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function GameFramework.SeqAct_GameCrowdSpawner.GetObjClassVersion")()); }
 		}
 	}
 	struct AgentArchetypeInfo
@@ -45,56 +46,56 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.SeqAct_GameCrowdSpawner.AgentArchetypeInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.SeqAct_GameCrowdSpawner.AgentArchetypeInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject) GroupMembers() { return *cast(ScriptArray!(UObject)*)(cast(size_t)&this + 16); }
-			int CurrSpawned() { return *cast(int*)(cast(size_t)&this + 12); }
-			int MaxAllowed() { return *cast(int*)(cast(size_t)&this + 8); }
-			float FrequencyModifier() { return *cast(float*)(cast(size_t)&this + 4); }
-			UObject AgentArchetype() { return *cast(UObject*)(cast(size_t)&this + 0); }
+			ScriptArray!(UObject) GroupMembers() { mixin(MGPS!(ScriptArray!(UObject), 16)()); }
+			int CurrSpawned() { mixin(MGPS!(int, 12)()); }
+			int MaxAllowed() { mixin(MGPS!(int, 8)()); }
+			float FrequencyModifier() { mixin(MGPS!(float, 4)()); }
+			UObject AgentArchetype() { mixin(MGPS!(UObject, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) SpawnLocs() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 256); }
-			ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo) AgentArchetypes() { return *cast(ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo)*)(cast(size_t)cast(void*)this + 300); }
-			ScriptArray!(GameCrowdAgent) SpawnedList() { return *cast(ScriptArray!(GameCrowdAgent)*)(cast(size_t)cast(void*)this + 312); }
-			float AgentWarmupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 332); }
-			GameCrowdReplicationActor RepActor() { return *cast(GameCrowdReplicationActor*)(cast(size_t)cast(void*)this + 328); }
-			LightComponent.LightingChannelContainer AgentLightingChannel() { return *cast(LightComponent.LightingChannelContainer*)(cast(size_t)cast(void*)this + 324); }
-			GameCrowd_ListOfAgents CrowdAgentList() { return *cast(GameCrowd_ListOfAgents*)(cast(size_t)cast(void*)this + 296); }
-			float AgentFrequencySum() { return *cast(float*)(cast(size_t)cast(void*)this + 292); }
-			float Remainder() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			float SplitScreenNumReduction() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
-			float SpawnRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 280); }
-			int SpawnNum() { return *cast(int*)(cast(size_t)cast(void*)this + 276); }
-			float SpawnRate() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-			int LastSpawnLocIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 268); }
-			int NextDestinationIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 252); }
+			ScriptArray!(Actor) SpawnLocs() { mixin(MGPC!(ScriptArray!(Actor), 256)()); }
+			ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo) AgentArchetypes() { mixin(MGPC!(ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo), 300)()); }
+			ScriptArray!(GameCrowdAgent) SpawnedList() { mixin(MGPC!(ScriptArray!(GameCrowdAgent), 312)()); }
+			float AgentWarmupTime() { mixin(MGPC!(float, 332)()); }
+			GameCrowdReplicationActor RepActor() { mixin(MGPC!(GameCrowdReplicationActor, 328)()); }
+			LightComponent.LightingChannelContainer AgentLightingChannel() { mixin(MGPC!(LightComponent.LightingChannelContainer, 324)()); }
+			GameCrowd_ListOfAgents CrowdAgentList() { mixin(MGPC!(GameCrowd_ListOfAgents, 296)()); }
+			float AgentFrequencySum() { mixin(MGPC!(float, 292)()); }
+			float Remainder() { mixin(MGPC!(float, 288)()); }
+			float SplitScreenNumReduction() { mixin(MGPC!(float, 284)()); }
+			float SpawnRadius() { mixin(MGPC!(float, 280)()); }
+			int SpawnNum() { mixin(MGPC!(int, 276)()); }
+			float SpawnRate() { mixin(MGPC!(float, 272)()); }
+			int LastSpawnLocIndex() { mixin(MGPC!(int, 268)()); }
+			int NextDestinationIndex() { mixin(MGPC!(int, 252)()); }
 		}
-		bool bCastShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x200) != 0; }
-		bool bCastShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x200; } return val; }
-		bool bWarmupPosition() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x100) != 0; }
-		bool bWarmupPosition(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x100; } return val; }
-		bool bOnlySpawnHidden() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x80) != 0; }
-		bool bOnlySpawnHidden(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x80; } return val; }
-		bool bForceNavMeshPathing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x40) != 0; }
-		bool bForceNavMeshPathing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x40; } return val; }
-		bool bForceObstacleChecking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x20) != 0; }
-		bool bForceObstacleChecking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x20; } return val; }
-		bool bEnableCrowdLightEnvironment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x10) != 0; }
-		bool bEnableCrowdLightEnvironment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x10; } return val; }
-		bool bHasReducedNumberDueToSplitScreen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x8) != 0; }
-		bool bHasReducedNumberDueToSplitScreen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x8; } return val; }
-		bool bRespawnDeadAgents() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x4) != 0; }
-		bool bRespawnDeadAgents(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x4; } return val; }
-		bool bCycleSpawnLocs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x2) != 0; }
-		bool bCycleSpawnLocs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x2; } return val; }
-		bool bSpawningActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x1) != 0; }
-		bool bSpawningActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x1; } return val; }
+		bool bCastShadows() { mixin(MGBPC!(248, 0x200)()); }
+		bool bCastShadows(bool val) { mixin(MSBPC!(248, 0x200)()); }
+		bool bWarmupPosition() { mixin(MGBPC!(248, 0x100)()); }
+		bool bWarmupPosition(bool val) { mixin(MSBPC!(248, 0x100)()); }
+		bool bOnlySpawnHidden() { mixin(MGBPC!(248, 0x80)()); }
+		bool bOnlySpawnHidden(bool val) { mixin(MSBPC!(248, 0x80)()); }
+		bool bForceNavMeshPathing() { mixin(MGBPC!(248, 0x40)()); }
+		bool bForceNavMeshPathing(bool val) { mixin(MSBPC!(248, 0x40)()); }
+		bool bForceObstacleChecking() { mixin(MGBPC!(248, 0x20)()); }
+		bool bForceObstacleChecking(bool val) { mixin(MSBPC!(248, 0x20)()); }
+		bool bEnableCrowdLightEnvironment() { mixin(MGBPC!(248, 0x10)()); }
+		bool bEnableCrowdLightEnvironment(bool val) { mixin(MSBPC!(248, 0x10)()); }
+		bool bHasReducedNumberDueToSplitScreen() { mixin(MGBPC!(248, 0x8)()); }
+		bool bHasReducedNumberDueToSplitScreen(bool val) { mixin(MSBPC!(248, 0x8)()); }
+		bool bRespawnDeadAgents() { mixin(MGBPC!(248, 0x4)()); }
+		bool bRespawnDeadAgents(bool val) { mixin(MSBPC!(248, 0x4)()); }
+		bool bCycleSpawnLocs() { mixin(MGBPC!(248, 0x2)()); }
+		bool bCycleSpawnLocs(bool val) { mixin(MSBPC!(248, 0x2)()); }
+		bool bSpawningActive() { mixin(MGBPC!(248, 0x1)()); }
+		bool bSpawningActive(bool val) { mixin(MSBPC!(248, 0x1)()); }
 	}
 final:
 	void SpawnedAgent(GameCrowdAgent NewAgent)

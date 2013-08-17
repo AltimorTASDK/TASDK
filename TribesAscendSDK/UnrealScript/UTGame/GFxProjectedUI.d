@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxProjectedUI;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTGFxTweenableMoviePlayer;
 import UnrealScript.UTGame.GFxUI_InventoryButton;
 import UnrealScript.GFxUI.GFxObject;
@@ -10,9 +11,9 @@ extern(C++) interface GFxProjectedUI : UTGFxTweenableMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxProjectedUI")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxProjectedUI")()); }
 	private static __gshared GFxProjectedUI mDefaultProperties;
-	@property final static GFxProjectedUI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxProjectedUI)("GFxProjectedUI UTGame.Default__GFxProjectedUI")); }
+	@property final static GFxProjectedUI DefaultProperties() { mixin(MGDPC!(GFxProjectedUI, "GFxProjectedUI UTGame.Default__GFxProjectedUI")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -51,37 +52,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.Start")); }
-			ScriptFunction ConfigureInventory() { return mConfigureInventory ? mConfigureInventory : (mConfigureInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.ConfigureInventory")); }
-			ScriptFunction AddCaptureKeys() { return mAddCaptureKeys ? mAddCaptureKeys : (mAddCaptureKeys = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.AddCaptureKeys")); }
-			ScriptFunction StartCloseAnimation() { return mStartCloseAnimation ? mStartCloseAnimation : (mStartCloseAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.StartCloseAnimation")); }
-			ScriptFunction OnCloseAnimComplete() { return mOnCloseAnimComplete ? mOnCloseAnimComplete : (mOnCloseAnimComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnCloseAnimComplete")); }
-			ScriptFunction SetupBG() { return mSetupBG ? mSetupBG : (mSetupBG = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBG")); }
-			ScriptFunction SetupBorder() { return mSetupBorder ? mSetupBorder : (mSetupBorder = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBorder")); }
-			ScriptFunction SetupArsenal() { return mSetupArsenal ? mSetupArsenal : (mSetupArsenal = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupArsenal")); }
-			ScriptFunction SetupBackpack() { return mSetupBackpack ? mSetupBackpack : (mSetupBackpack = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBackpack")); }
-			ScriptFunction SetupInfo() { return mSetupInfo ? mSetupInfo : (mSetupInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupInfo")); }
-			ScriptFunction PopulateBackpackFake() { return mPopulateBackpackFake ? mPopulateBackpackFake : (mPopulateBackpackFake = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.PopulateBackpackFake")); }
-			ScriptFunction SetupArsenalButtons() { return mSetupArsenalButtons ? mSetupArsenalButtons : (mSetupArsenalButtons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupArsenalButtons")); }
-			ScriptFunction SetupBackpackButtons() { return mSetupBackpackButtons ? mSetupBackpackButtons : (mSetupBackpackButtons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBackpackButtons")); }
-			ScriptFunction SwitchWeapon() { return mSwitchWeapon ? mSwitchWeapon : (mSwitchWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SwitchWeapon")); }
-			ScriptFunction OnFocusInSelection() { return mOnFocusInSelection ? mOnFocusInSelection : (mOnFocusInSelection = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusInSelection")); }
-			ScriptFunction OnFocusOutSelection() { return mOnFocusOutSelection ? mOnFocusOutSelection : (mOnFocusOutSelection = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusOutSelection")); }
-			ScriptFunction OnClickWeaponButton() { return mOnClickWeaponButton ? mOnClickWeaponButton : (mOnClickWeaponButton = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnClickWeaponButton")); }
-			ScriptFunction OnFocusUpdateInfo() { return mOnFocusUpdateInfo ? mOnFocusUpdateInfo : (mOnFocusUpdateInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusUpdateInfo")); }
-			ScriptFunction OnFocusArsenalTab() { return mOnFocusArsenalTab ? mOnFocusArsenalTab : (mOnFocusArsenalTab = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusArsenalTab")); }
-			ScriptFunction OnFocusBackpackTab() { return mOnFocusBackpackTab ? mOnFocusBackpackTab : (mOnFocusBackpackTab = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusBackpackTab")); }
-			ScriptFunction OnClickFakeItem() { return mOnClickFakeItem ? mOnClickFakeItem : (mOnClickFakeItem = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnClickFakeItem")); }
-			ScriptFunction SetInfo() { return mSetInfo ? mSetInfo : (mSetInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetInfo")); }
-			ScriptFunction PopulateArsenal() { return mPopulateArsenal ? mPopulateArsenal : (mPopulateArsenal = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.PopulateArsenal")); }
-			ScriptFunction FakeUpdateEquippedWeapon() { return mFakeUpdateEquippedWeapon ? mFakeUpdateEquippedWeapon : (mFakeUpdateEquippedWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.FakeUpdateEquippedWeapon")); }
-			ScriptFunction UpdateEquippedWeapon() { return mUpdateEquippedWeapon ? mUpdateEquippedWeapon : (mUpdateEquippedWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.UpdateEquippedWeapon")); }
-			ScriptFunction ProcessTweenCallback() { return mProcessTweenCallback ? mProcessTweenCallback : (mProcessTweenCallback = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.ProcessTweenCallback")); }
-			ScriptFunction TweenTurbines() { return mTweenTurbines ? mTweenTurbines : (mTweenTurbines = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.TweenTurbines")); }
-			ScriptFunction FloatSelectionUp() { return mFloatSelectionUp ? mFloatSelectionUp : (mFloatSelectionUp = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.FloatSelectionUp")); }
-			ScriptFunction FloatSelectionDown() { return mFloatSelectionDown ? mFloatSelectionDown : (mFloatSelectionDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.FloatSelectionDown")); }
-			ScriptFunction UpdatePos() { return mUpdatePos ? mUpdatePos : (mUpdatePos = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.UpdatePos")); }
-			ScriptFunction CreateItemData() { return mCreateItemData ? mCreateItemData : (mCreateItemData = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.CreateItemData")); }
+			ScriptFunction Start() { mixin(MGF!("mStart", "Function UTGame.GFxProjectedUI.Start")()); }
+			ScriptFunction ConfigureInventory() { mixin(MGF!("mConfigureInventory", "Function UTGame.GFxProjectedUI.ConfigureInventory")()); }
+			ScriptFunction AddCaptureKeys() { mixin(MGF!("mAddCaptureKeys", "Function UTGame.GFxProjectedUI.AddCaptureKeys")()); }
+			ScriptFunction StartCloseAnimation() { mixin(MGF!("mStartCloseAnimation", "Function UTGame.GFxProjectedUI.StartCloseAnimation")()); }
+			ScriptFunction OnCloseAnimComplete() { mixin(MGF!("mOnCloseAnimComplete", "Function UTGame.GFxProjectedUI.OnCloseAnimComplete")()); }
+			ScriptFunction SetupBG() { mixin(MGF!("mSetupBG", "Function UTGame.GFxProjectedUI.SetupBG")()); }
+			ScriptFunction SetupBorder() { mixin(MGF!("mSetupBorder", "Function UTGame.GFxProjectedUI.SetupBorder")()); }
+			ScriptFunction SetupArsenal() { mixin(MGF!("mSetupArsenal", "Function UTGame.GFxProjectedUI.SetupArsenal")()); }
+			ScriptFunction SetupBackpack() { mixin(MGF!("mSetupBackpack", "Function UTGame.GFxProjectedUI.SetupBackpack")()); }
+			ScriptFunction SetupInfo() { mixin(MGF!("mSetupInfo", "Function UTGame.GFxProjectedUI.SetupInfo")()); }
+			ScriptFunction PopulateBackpackFake() { mixin(MGF!("mPopulateBackpackFake", "Function UTGame.GFxProjectedUI.PopulateBackpackFake")()); }
+			ScriptFunction SetupArsenalButtons() { mixin(MGF!("mSetupArsenalButtons", "Function UTGame.GFxProjectedUI.SetupArsenalButtons")()); }
+			ScriptFunction SetupBackpackButtons() { mixin(MGF!("mSetupBackpackButtons", "Function UTGame.GFxProjectedUI.SetupBackpackButtons")()); }
+			ScriptFunction SwitchWeapon() { mixin(MGF!("mSwitchWeapon", "Function UTGame.GFxProjectedUI.SwitchWeapon")()); }
+			ScriptFunction OnFocusInSelection() { mixin(MGF!("mOnFocusInSelection", "Function UTGame.GFxProjectedUI.OnFocusInSelection")()); }
+			ScriptFunction OnFocusOutSelection() { mixin(MGF!("mOnFocusOutSelection", "Function UTGame.GFxProjectedUI.OnFocusOutSelection")()); }
+			ScriptFunction OnClickWeaponButton() { mixin(MGF!("mOnClickWeaponButton", "Function UTGame.GFxProjectedUI.OnClickWeaponButton")()); }
+			ScriptFunction OnFocusUpdateInfo() { mixin(MGF!("mOnFocusUpdateInfo", "Function UTGame.GFxProjectedUI.OnFocusUpdateInfo")()); }
+			ScriptFunction OnFocusArsenalTab() { mixin(MGF!("mOnFocusArsenalTab", "Function UTGame.GFxProjectedUI.OnFocusArsenalTab")()); }
+			ScriptFunction OnFocusBackpackTab() { mixin(MGF!("mOnFocusBackpackTab", "Function UTGame.GFxProjectedUI.OnFocusBackpackTab")()); }
+			ScriptFunction OnClickFakeItem() { mixin(MGF!("mOnClickFakeItem", "Function UTGame.GFxProjectedUI.OnClickFakeItem")()); }
+			ScriptFunction SetInfo() { mixin(MGF!("mSetInfo", "Function UTGame.GFxProjectedUI.SetInfo")()); }
+			ScriptFunction PopulateArsenal() { mixin(MGF!("mPopulateArsenal", "Function UTGame.GFxProjectedUI.PopulateArsenal")()); }
+			ScriptFunction FakeUpdateEquippedWeapon() { mixin(MGF!("mFakeUpdateEquippedWeapon", "Function UTGame.GFxProjectedUI.FakeUpdateEquippedWeapon")()); }
+			ScriptFunction UpdateEquippedWeapon() { mixin(MGF!("mUpdateEquippedWeapon", "Function UTGame.GFxProjectedUI.UpdateEquippedWeapon")()); }
+			ScriptFunction ProcessTweenCallback() { mixin(MGF!("mProcessTweenCallback", "Function UTGame.GFxProjectedUI.ProcessTweenCallback")()); }
+			ScriptFunction TweenTurbines() { mixin(MGF!("mTweenTurbines", "Function UTGame.GFxProjectedUI.TweenTurbines")()); }
+			ScriptFunction FloatSelectionUp() { mixin(MGF!("mFloatSelectionUp", "Function UTGame.GFxProjectedUI.FloatSelectionUp")()); }
+			ScriptFunction FloatSelectionDown() { mixin(MGF!("mFloatSelectionDown", "Function UTGame.GFxProjectedUI.FloatSelectionDown")()); }
+			ScriptFunction UpdatePos() { mixin(MGF!("mUpdatePos", "Function UTGame.GFxProjectedUI.UpdatePos")()); }
+			ScriptFunction CreateItemData() { mixin(MGF!("mCreateItemData", "Function UTGame.GFxProjectedUI.CreateItemData")()); }
 		}
 	}
 	struct ItemData
@@ -89,68 +90,68 @@ public extern(D):
 		private ubyte __buffer__[25];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.GFxProjectedUI.ItemData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxProjectedUI.ItemData")()); }
 		@property final auto ref
 		{
-			ubyte ItemFrame() { return *cast(ubyte*)(cast(size_t)&this + 24); }
-			ScriptString ItemName() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			ScriptString ItemInfo() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			ubyte ItemFrame() { mixin(MGPS!(ubyte, 24)()); }
+			ScriptString ItemName() { mixin(MGPS!(ScriptString, 12)()); }
+			ScriptString ItemInfo() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxUI_InventoryButton) Buttons() { return *cast(ScriptArray!(GFxUI_InventoryButton)*)(cast(size_t)cast(void*)this + 412); }
-			ScriptArray!(GFxProjectedUI.ItemData) Items() { return *cast(ScriptArray!(GFxProjectedUI.ItemData)*)(cast(size_t)cast(void*)this + 424); }
-			ScriptString CancelString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 644); }
-			ScriptString AcceptString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 632); }
-			Rotator StartRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 620); }
-			ScriptClass WeaponClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 576); }
-			float leftThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-			float rightThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 568); }
-			float rotval() { return *cast(float*)(cast(size_t)cast(void*)this + 564); }
-			float Height() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-			float Width() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			float Scale() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			GFxObject InfoTitle() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 548); }
-			GFxObject InfoText() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 544); }
-			GFxObject InfoIconItem() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 540); }
-			GFxObject InfoIconWeap() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 536); }
-			GFxObject InfoMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 532); }
-			GFxObject BG_Edge_RightBottom() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 528); }
-			GFxObject BG_Edge_RightMiddle() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 524); }
-			GFxObject BG_Edge_RightTop() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 520); }
-			GFxObject BG_Edge_LeftTop() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 516); }
-			GFxObject BG_Edge_LeftMiddle() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 512); }
-			GFxObject BG_Edge_LeftBottom() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 508); }
-			GFxObject BG_Optic4MC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 504); }
-			GFxObject BG_Optic3MC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 500); }
-			GFxObject BG_Optic2MC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 496); }
-			GFxObject BG_Optic1MC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 492); }
-			GFxObject BG_ArrowMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 488); }
-			GFxObject BG_LineMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 484); }
-			GFxObject StartUpTextMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 480); }
-			GFxObject CPCLogoMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 476); }
-			GFxObject BackgroundMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 472); }
-			GFxObject LeftArrow01() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 468); }
-			GFxObject LeftArrow02() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 464); }
-			GFxObject ArsenalTabMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 460); }
-			GFxObject BackpackTabMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 456); }
-			GFxObject EquippedWeaponText2() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 448); }
-			GFxObject EquippedWeaponText1() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 444); }
-			GFxObject EquippedWeaponOutline() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 440); }
-			GFxObject EquippedWeapon() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 436); }
-			GFxObject ArsenalMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 408); }
-			GFxObject BackpackMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 404); }
-			GFxObject MainMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 400); }
-			GFxObject Window() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 396); }
-			GFxObject Root() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 392); }
+			ScriptArray!(GFxUI_InventoryButton) Buttons() { mixin(MGPC!(ScriptArray!(GFxUI_InventoryButton), 412)()); }
+			ScriptArray!(GFxProjectedUI.ItemData) Items() { mixin(MGPC!(ScriptArray!(GFxProjectedUI.ItemData), 424)()); }
+			ScriptString CancelString() { mixin(MGPC!(ScriptString, 644)()); }
+			ScriptString AcceptString() { mixin(MGPC!(ScriptString, 632)()); }
+			Rotator StartRotation() { mixin(MGPC!(Rotator, 620)()); }
+			ScriptClass WeaponClass() { mixin(MGPC!(ScriptClass, 576)()); }
+			float leftThreshold() { mixin(MGPC!(float, 572)()); }
+			float rightThreshold() { mixin(MGPC!(float, 568)()); }
+			float rotval() { mixin(MGPC!(float, 564)()); }
+			float Height() { mixin(MGPC!(float, 560)()); }
+			float Width() { mixin(MGPC!(float, 556)()); }
+			float Scale() { mixin(MGPC!(float, 552)()); }
+			GFxObject InfoTitle() { mixin(MGPC!(GFxObject, 548)()); }
+			GFxObject InfoText() { mixin(MGPC!(GFxObject, 544)()); }
+			GFxObject InfoIconItem() { mixin(MGPC!(GFxObject, 540)()); }
+			GFxObject InfoIconWeap() { mixin(MGPC!(GFxObject, 536)()); }
+			GFxObject InfoMC() { mixin(MGPC!(GFxObject, 532)()); }
+			GFxObject BG_Edge_RightBottom() { mixin(MGPC!(GFxObject, 528)()); }
+			GFxObject BG_Edge_RightMiddle() { mixin(MGPC!(GFxObject, 524)()); }
+			GFxObject BG_Edge_RightTop() { mixin(MGPC!(GFxObject, 520)()); }
+			GFxObject BG_Edge_LeftTop() { mixin(MGPC!(GFxObject, 516)()); }
+			GFxObject BG_Edge_LeftMiddle() { mixin(MGPC!(GFxObject, 512)()); }
+			GFxObject BG_Edge_LeftBottom() { mixin(MGPC!(GFxObject, 508)()); }
+			GFxObject BG_Optic4MC() { mixin(MGPC!(GFxObject, 504)()); }
+			GFxObject BG_Optic3MC() { mixin(MGPC!(GFxObject, 500)()); }
+			GFxObject BG_Optic2MC() { mixin(MGPC!(GFxObject, 496)()); }
+			GFxObject BG_Optic1MC() { mixin(MGPC!(GFxObject, 492)()); }
+			GFxObject BG_ArrowMC() { mixin(MGPC!(GFxObject, 488)()); }
+			GFxObject BG_LineMC() { mixin(MGPC!(GFxObject, 484)()); }
+			GFxObject StartUpTextMC() { mixin(MGPC!(GFxObject, 480)()); }
+			GFxObject CPCLogoMC() { mixin(MGPC!(GFxObject, 476)()); }
+			GFxObject BackgroundMC() { mixin(MGPC!(GFxObject, 472)()); }
+			GFxObject LeftArrow01() { mixin(MGPC!(GFxObject, 468)()); }
+			GFxObject LeftArrow02() { mixin(MGPC!(GFxObject, 464)()); }
+			GFxObject ArsenalTabMC() { mixin(MGPC!(GFxObject, 460)()); }
+			GFxObject BackpackTabMC() { mixin(MGPC!(GFxObject, 456)()); }
+			GFxObject EquippedWeaponText2() { mixin(MGPC!(GFxObject, 448)()); }
+			GFxObject EquippedWeaponText1() { mixin(MGPC!(GFxObject, 444)()); }
+			GFxObject EquippedWeaponOutline() { mixin(MGPC!(GFxObject, 440)()); }
+			GFxObject EquippedWeapon() { mixin(MGPC!(GFxObject, 436)()); }
+			GFxObject ArsenalMC() { mixin(MGPC!(GFxObject, 408)()); }
+			GFxObject BackpackMC() { mixin(MGPC!(GFxObject, 404)()); }
+			GFxObject MainMC() { mixin(MGPC!(GFxObject, 400)()); }
+			GFxObject Window() { mixin(MGPC!(GFxObject, 396)()); }
+			GFxObject Root() { mixin(MGPC!(GFxObject, 392)()); }
 		}
-		bool bInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 452) & 0x2) != 0; }
-		bool bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 452) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 452) &= ~0x2; } return val; }
-		bool bArsenalTabFocused() { return (*cast(uint*)(cast(size_t)cast(void*)this + 452) & 0x1) != 0; }
-		bool bArsenalTabFocused(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 452) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 452) &= ~0x1; } return val; }
+		bool bInitialized() { mixin(MGBPC!(452, 0x2)()); }
+		bool bInitialized(bool val) { mixin(MSBPC!(452, 0x2)()); }
+		bool bArsenalTabFocused() { mixin(MGBPC!(452, 0x1)()); }
+		bool bArsenalTabFocused(bool val) { mixin(MSBPC!(452, 0x1)()); }
 	}
 final:
 	bool Start(bool StartPaused)

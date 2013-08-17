@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_GameMode;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataStore_OnlineGameSettings;
 import UnrealScript.UTGame.GFxUDKFrontEnd_Screen;
 import UnrealScript.UTGame.UTUIDataProvider_GameModeInfo;
@@ -12,9 +13,9 @@ extern(C++) interface GFxUDKFrontEnd_GameMode : GFxUDKFrontEnd_Screen
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_GameMode")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_GameMode")()); }
 	private static __gshared GFxUDKFrontEnd_GameMode mDefaultProperties;
-	@property final static GFxUDKFrontEnd_GameMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_GameMode)("GFxUDKFrontEnd_GameMode UTGame.Default__GFxUDKFrontEnd_GameMode")); }
+	@property final static GFxUDKFrontEnd_GameMode DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_GameMode, "GFxUDKFrontEnd_GameMode UTGame.Default__GFxUDKFrontEnd_GameMode")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,31 +35,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnViewLoaded() { return mOnViewLoaded ? mOnViewLoaded : (mOnViewLoaded = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.OnViewLoaded")); }
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.OnTopMostView")); }
-			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.DisableSubComponents")); }
-			ScriptFunction OnGameModeSelected() { return mOnGameModeSelected ? mOnGameModeSelected : (mOnGameModeSelected = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.OnGameModeSelected")); }
-			ScriptFunction OnGameModeChange() { return mOnGameModeChange ? mOnGameModeChange : (mOnGameModeChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.OnGameModeChange")); }
-			ScriptFunction OnListItemPress() { return mOnListItemPress ? mOnListItemPress : (mOnListItemPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.OnListItemPress")); }
-			ScriptFunction OnListChange() { return mOnListChange ? mOnListChange : (mOnListChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.OnListChange")); }
-			ScriptFunction UpdateDescription() { return mUpdateDescription ? mUpdateDescription : (mUpdateDescription = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.UpdateDescription")); }
-			ScriptFunction UpdateListDataProvider() { return mUpdateListDataProvider ? mUpdateListDataProvider : (mUpdateListDataProvider = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.UpdateListDataProvider")); }
-			ScriptFunction SetImgScroller() { return mSetImgScroller ? mSetImgScroller : (mSetImgScroller = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.SetImgScroller")); }
-			ScriptFunction ASSetList() { return mASSetList ? mASSetList : (mASSetList = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.ASSetList")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_GameMode.WidgetInitialized")); }
+			ScriptFunction OnViewLoaded() { mixin(MGF!("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_GameMode.OnViewLoaded")()); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_GameMode.OnTopMostView")()); }
+			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_GameMode.DisableSubComponents")()); }
+			ScriptFunction OnGameModeSelected() { mixin(MGF!("mOnGameModeSelected", "Function UTGame.GFxUDKFrontEnd_GameMode.OnGameModeSelected")()); }
+			ScriptFunction OnGameModeChange() { mixin(MGF!("mOnGameModeChange", "Function UTGame.GFxUDKFrontEnd_GameMode.OnGameModeChange")()); }
+			ScriptFunction OnListItemPress() { mixin(MGF!("mOnListItemPress", "Function UTGame.GFxUDKFrontEnd_GameMode.OnListItemPress")()); }
+			ScriptFunction OnListChange() { mixin(MGF!("mOnListChange", "Function UTGame.GFxUDKFrontEnd_GameMode.OnListChange")()); }
+			ScriptFunction UpdateDescription() { mixin(MGF!("mUpdateDescription", "Function UTGame.GFxUDKFrontEnd_GameMode.UpdateDescription")()); }
+			ScriptFunction UpdateListDataProvider() { mixin(MGF!("mUpdateListDataProvider", "Function UTGame.GFxUDKFrontEnd_GameMode.UpdateListDataProvider")()); }
+			ScriptFunction SetImgScroller() { mixin(MGF!("mSetImgScroller", "Function UTGame.GFxUDKFrontEnd_GameMode.SetImgScroller")()); }
+			ScriptFunction ASSetList() { mixin(MGF!("mASSetList", "Function UTGame.GFxUDKFrontEnd_GameMode.ASSetList")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_GameMode.WidgetInitialized")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTUIDataProvider_GameModeInfo) GameModeList() { return *cast(ScriptArray!(UTUIDataProvider_GameModeInfo)*)(cast(size_t)cast(void*)this + 268); }
-		GFxClikWidget ImgScrollerMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 264); }
-		GFxObject MenuMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 260); }
-		GFxObject ListDataProvider() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 256); }
-		GFxClikWidget ListMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 252); }
-		ScriptString MapName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 240); }
-		ScriptString GameMode() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 228); }
-		UTUIDataStore_StringList StringListDataStore() { return *cast(UTUIDataStore_StringList*)(cast(size_t)cast(void*)this + 224); }
-		UIDataStore_OnlineGameSettings SettingsDataStore() { return *cast(UIDataStore_OnlineGameSettings*)(cast(size_t)cast(void*)this + 220); }
+		ScriptArray!(UTUIDataProvider_GameModeInfo) GameModeList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_GameModeInfo), 268)()); }
+		GFxClikWidget ImgScrollerMC() { mixin(MGPC!(GFxClikWidget, 264)()); }
+		GFxObject MenuMC() { mixin(MGPC!(GFxObject, 260)()); }
+		GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 256)()); }
+		GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 252)()); }
+		ScriptString MapName() { mixin(MGPC!(ScriptString, 240)()); }
+		ScriptString GameMode() { mixin(MGPC!(ScriptString, 228)()); }
+		UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!(UTUIDataStore_StringList, 224)()); }
+		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!(UIDataStore_OnlineGameSettings, 220)()); }
 	}
 final:
 	void OnViewLoaded()

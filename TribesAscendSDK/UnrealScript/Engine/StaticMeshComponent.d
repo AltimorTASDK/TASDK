@@ -1,6 +1,7 @@
 module UnrealScript.Engine.StaticMeshComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MeshComponent;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ShadowMap2D;
@@ -12,9 +13,9 @@ extern(C++) interface StaticMeshComponent : MeshComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.StaticMeshComponent")()); }
 	private static __gshared StaticMeshComponent mDefaultProperties;
-	@property final static StaticMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMeshComponent)("StaticMeshComponent Engine.Default__StaticMeshComponent")); }
+	@property final static StaticMeshComponent DefaultProperties() { mixin(MGDPC!(StaticMeshComponent, "StaticMeshComponent Engine.Default__StaticMeshComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,10 +27,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanBecomeDynamic() { return mCanBecomeDynamic ? mCanBecomeDynamic : (mCanBecomeDynamic = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.CanBecomeDynamic")); }
-			ScriptFunction SetStaticMesh() { return mSetStaticMesh ? mSetStaticMesh : (mSetStaticMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.SetStaticMesh")); }
-			ScriptFunction DisableRBCollisionWithSMC() { return mDisableRBCollisionWithSMC ? mDisableRBCollisionWithSMC : (mDisableRBCollisionWithSMC = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.DisableRBCollisionWithSMC")); }
-			ScriptFunction SetForceStaticDecals() { return mSetForceStaticDecals ? mSetForceStaticDecals : (mSetForceStaticDecals = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.SetForceStaticDecals")); }
+			ScriptFunction CanBecomeDynamic() { mixin(MGF!("mCanBecomeDynamic", "Function Engine.StaticMeshComponent.CanBecomeDynamic")()); }
+			ScriptFunction SetStaticMesh() { mixin(MGF!("mSetStaticMesh", "Function Engine.StaticMeshComponent.SetStaticMesh")()); }
+			ScriptFunction DisableRBCollisionWithSMC() { mixin(MGF!("mDisableRBCollisionWithSMC", "Function Engine.StaticMeshComponent.DisableRBCollisionWithSMC")()); }
+			ScriptFunction SetForceStaticDecals() { mixin(MGF!("mSetForceStaticDecals", "Function Engine.StaticMeshComponent.SetForceStaticDecals")()); }
 		}
 	}
 	enum ELightmapModificationFunction : ubyte
@@ -43,51 +44,51 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.StaticMeshComponent.StaticMeshComponentLODInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.StaticMeshComponent.StaticMeshComponentLODInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ShadowMap2D) ShadowMaps() { return *cast(ScriptArray!(ShadowMap2D)*)(cast(size_t)&this + 0); }
-			ScriptArray!(UObject) ShadowVertexBuffers() { return *cast(ScriptArray!(UObject)*)(cast(size_t)&this + 12); }
-			ScriptArray!(Vector) VertexColorPositions() { return *cast(ScriptArray!(Vector)*)(cast(size_t)&this + 32); }
-			UObject.Pointer OverrideVertexColors() { return *cast(UObject.Pointer*)(cast(size_t)&this + 28); }
-			UObject.Pointer LightMap() { return *cast(UObject.Pointer*)(cast(size_t)&this + 24); }
+			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPS!(ScriptArray!(ShadowMap2D), 0)()); }
+			ScriptArray!(UObject) ShadowVertexBuffers() { mixin(MGPS!(ScriptArray!(UObject), 12)()); }
+			ScriptArray!(Vector) VertexColorPositions() { mixin(MGPS!(ScriptArray!(Vector), 32)()); }
+			UObject.Pointer OverrideVertexColors() { mixin(MGPS!(UObject.Pointer, 28)()); }
+			UObject.Pointer LightMap() { mixin(MGPS!(UObject.Pointer, 24)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Guid) IrrelevantLights() { return *cast(ScriptArray!(UObject.Guid)*)(cast(size_t)cast(void*)this + 552); }
-			ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo) LODData() { return *cast(ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo)*)(cast(size_t)cast(void*)this + 564); }
-			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { return *cast(EngineTypes.LightmassPrimitiveSettings*)(cast(size_t)cast(void*)this + 580); }
-			int VertexPositionVersionNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 576); }
-			StaticMeshComponent.ELightmapModificationFunction SimpleLightmapModificationFunction() { return *cast(StaticMeshComponent.ELightmapModificationFunction*)(cast(size_t)cast(void*)this + 544); }
-			int ForcedLodModel() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-			Texture SimpleLightmapModificationTexture() { return *cast(Texture*)(cast(size_t)cast(void*)this + 540); }
-			int SubDivisionStepSize() { return *cast(int*)(cast(size_t)cast(void*)this + 532); }
-			float OverriddenLODMaxRange() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			int OverriddenLightMapRes() { return *cast(int*)(cast(size_t)cast(void*)this + 524); }
-			int OverriddenLightMapResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 520); }
-			UObject.Color WireframeColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 512); }
+			ScriptArray!(UObject.Guid) IrrelevantLights() { mixin(MGPC!(ScriptArray!(UObject.Guid), 552)()); }
+			ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo) LODData() { mixin(MGPC!(ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo), 564)()); }
+			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 580)()); }
+			int VertexPositionVersionNumber() { mixin(MGPC!(int, 576)()); }
+			StaticMeshComponent.ELightmapModificationFunction SimpleLightmapModificationFunction() { mixin(MGPC!(StaticMeshComponent.ELightmapModificationFunction, 544)()); }
+			int ForcedLodModel() { mixin(MGPC!(int, 500)()); }
+			Texture SimpleLightmapModificationTexture() { mixin(MGPC!(Texture, 540)()); }
+			int SubDivisionStepSize() { mixin(MGPC!(int, 532)()); }
+			float OverriddenLODMaxRange() { mixin(MGPC!(float, 528)()); }
+			int OverriddenLightMapRes() { mixin(MGPC!(int, 524)()); }
+			int OverriddenLightMapResolution() { mixin(MGPC!(int, 520)()); }
+			UObject.Color WireframeColor() { mixin(MGPC!(UObject.Color, 512)()); }
 			// WARNING: Property 'StaticMesh' has the same name as a defined type!
-			int PreviousLODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
+			int PreviousLODLevel() { mixin(MGPC!(int, 504)()); }
 		}
-		bool bNeverBecomeDynamic() { return (*cast(uint*)(cast(size_t)cast(void*)this + 548) & 0x1) != 0; }
-		bool bNeverBecomeDynamic(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 548) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 548) &= ~0x1; } return val; }
-		bool bUseSimpleLightmapModifications() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x8) != 0; }
-		bool bUseSimpleLightmapModifications(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x8; } return val; }
-		bool bCanHighlightSelectedSections() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x4) != 0; }
-		bool bCanHighlightSelectedSections(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x4; } return val; }
-		bool bForceStaticDecals() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x2) != 0; }
-		bool bForceStaticDecals(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x2; } return val; }
-		bool bUseSubDivisions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x1) != 0; }
-		bool bUseSubDivisions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x1; } return val; }
-		bool bOverrideLightMapRes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x4) != 0; }
-		bool bOverrideLightMapRes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x4; } return val; }
-		bool bOverrideLightMapResolution() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x2) != 0; }
-		bool bOverrideLightMapResolution(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x2; } return val; }
-		bool bIgnoreInstanceForTextureStreaming() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x1) != 0; }
-		bool bIgnoreInstanceForTextureStreaming(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x1; } return val; }
+		bool bNeverBecomeDynamic() { mixin(MGBPC!(548, 0x1)()); }
+		bool bNeverBecomeDynamic(bool val) { mixin(MSBPC!(548, 0x1)()); }
+		bool bUseSimpleLightmapModifications() { mixin(MGBPC!(536, 0x8)()); }
+		bool bUseSimpleLightmapModifications(bool val) { mixin(MSBPC!(536, 0x8)()); }
+		bool bCanHighlightSelectedSections() { mixin(MGBPC!(536, 0x4)()); }
+		bool bCanHighlightSelectedSections(bool val) { mixin(MSBPC!(536, 0x4)()); }
+		bool bForceStaticDecals() { mixin(MGBPC!(536, 0x2)()); }
+		bool bForceStaticDecals(bool val) { mixin(MSBPC!(536, 0x2)()); }
+		bool bUseSubDivisions() { mixin(MGBPC!(536, 0x1)()); }
+		bool bUseSubDivisions(bool val) { mixin(MSBPC!(536, 0x1)()); }
+		bool bOverrideLightMapRes() { mixin(MGBPC!(516, 0x4)()); }
+		bool bOverrideLightMapRes(bool val) { mixin(MSBPC!(516, 0x4)()); }
+		bool bOverrideLightMapResolution() { mixin(MGBPC!(516, 0x2)()); }
+		bool bOverrideLightMapResolution(bool val) { mixin(MSBPC!(516, 0x2)()); }
+		bool bIgnoreInstanceForTextureStreaming() { mixin(MGBPC!(516, 0x1)()); }
+		bool bIgnoreInstanceForTextureStreaming(bool val) { mixin(MSBPC!(516, 0x1)()); }
 	}
 final:
 	bool CanBecomeDynamic()

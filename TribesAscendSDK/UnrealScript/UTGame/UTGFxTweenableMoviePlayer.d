@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTGFxTweenableMoviePlayer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GFxUI.GFxMoviePlayer;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTGFxTweenableMoviePlayer : GFxMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGFxTweenableMoviePlayer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGFxTweenableMoviePlayer")()); }
 	private static __gshared UTGFxTweenableMoviePlayer mDefaultProperties;
-	@property final static UTGFxTweenableMoviePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGFxTweenableMoviePlayer)("UTGFxTweenableMoviePlayer UTGame.Default__UTGFxTweenableMoviePlayer")); }
+	@property final static UTGFxTweenableMoviePlayer DefaultProperties() { mixin(MGDPC!(UTGFxTweenableMoviePlayer, "UTGFxTweenableMoviePlayer UTGame.Default__UTGFxTweenableMoviePlayer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,12 +25,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TweenTo() { return mTweenTo ? mTweenTo : (mTweenTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.TweenTo")); }
-			ScriptFunction ProcessTweenCallback() { return mProcessTweenCallback ? mProcessTweenCallback : (mProcessTweenCallback = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.ProcessTweenCallback")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.Tick")); }
-			ScriptFunction ClearsTweensOnMovieClip() { return mClearsTweensOnMovieClip ? mClearsTweensOnMovieClip : (mClearsTweensOnMovieClip = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.ClearsTweensOnMovieClip")); }
-			ScriptFunction PrintTweensToLog() { return mPrintTweensToLog ? mPrintTweensToLog : (mPrintTweensToLog = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.PrintTweensToLog")); }
-			ScriptFunction TweenComplete() { return mTweenComplete ? mTweenComplete : (mTweenComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.TweenComplete")); }
+			ScriptFunction TweenTo() { mixin(MGF!("mTweenTo", "Function UTGame.UTGFxTweenableMoviePlayer.TweenTo")()); }
+			ScriptFunction ProcessTweenCallback() { mixin(MGF!("mProcessTweenCallback", "Function UTGame.UTGFxTweenableMoviePlayer.ProcessTweenCallback")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTGFxTweenableMoviePlayer.Tick")()); }
+			ScriptFunction ClearsTweensOnMovieClip() { mixin(MGF!("mClearsTweensOnMovieClip", "Function UTGame.UTGFxTweenableMoviePlayer.ClearsTweensOnMovieClip")()); }
+			ScriptFunction PrintTweensToLog() { mixin(MGF!("mPrintTweensToLog", "Function UTGame.UTGFxTweenableMoviePlayer.PrintTweensToLog")()); }
+			ScriptFunction TweenComplete() { mixin(MGF!("mTweenComplete", "Function UTGame.UTGFxTweenableMoviePlayer.TweenComplete")()); }
 		}
 	}
 	enum TweenType : ubyte
@@ -44,27 +45,27 @@ public extern(D):
 		private ubyte __buffer__[97];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGFxTweenableMoviePlayer.GFxTween")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGFxTweenableMoviePlayer.GFxTween")()); }
 		@property final
 		{
 			auto ref
 			{
-				UTGFxTweenableMoviePlayer.TweenType ThisTweenType() { return *cast(UTGFxTweenableMoviePlayer.TweenType*)(cast(size_t)&this + 96); }
-				GFxObject.ASDisplayInfo displayInfo() { return *cast(GFxObject.ASDisplayInfo*)(cast(size_t)&this + 48); }
-				ScriptString Callback() { return *cast(ScriptString*)(cast(size_t)&this + 36); }
-				ScriptString MemberName() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
-				float DesiredValue() { return *cast(float*)(cast(size_t)&this + 20); }
-				float Delta() { return *cast(float*)(cast(size_t)&this + 16); }
-				float StartValue() { return *cast(float*)(cast(size_t)&this + 12); }
-				float Duration() { return *cast(float*)(cast(size_t)&this + 8); }
-				float TweenTime() { return *cast(float*)(cast(size_t)&this + 4); }
-				GFxObject TargetMC() { return *cast(GFxObject*)(cast(size_t)&this + 0); }
+				UTGFxTweenableMoviePlayer.TweenType ThisTweenType() { mixin(MGPS!(UTGFxTweenableMoviePlayer.TweenType, 96)()); }
+				GFxObject.ASDisplayInfo displayInfo() { mixin(MGPS!(GFxObject.ASDisplayInfo, 48)()); }
+				ScriptString Callback() { mixin(MGPS!(ScriptString, 36)()); }
+				ScriptString MemberName() { mixin(MGPS!(ScriptString, 24)()); }
+				float DesiredValue() { mixin(MGPS!(float, 20)()); }
+				float Delta() { mixin(MGPS!(float, 16)()); }
+				float StartValue() { mixin(MGPS!(float, 12)()); }
+				float Duration() { mixin(MGPS!(float, 8)()); }
+				float TweenTime() { mixin(MGPS!(float, 4)()); }
+				GFxObject TargetMC() { mixin(MGPS!(GFxObject, 0)()); }
 			}
-			bool bFinished() { return (*cast(uint*)(cast(size_t)&this + 92) & 0x1) != 0; }
-			bool bFinished(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 92) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 92) &= ~0x1; } return val; }
+			bool bFinished() { mixin(MGBPS!(92, 0x1)()); }
+			bool bFinished(bool val) { mixin(MSBPS!(92, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween) TweenList() { return *cast(ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween)*)(cast(size_t)cast(void*)this + 380); }
+	@property final auto ref ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween) TweenList() { mixin(MGPC!(ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween), 380)()); }
 final:
 	void TweenTo(GFxObject MC, float Duration, ScriptString Member, float Target, UTGFxTweenableMoviePlayer.TweenType NewTweenType, ScriptString Callback)
 	{

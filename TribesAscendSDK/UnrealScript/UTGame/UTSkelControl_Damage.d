@@ -1,15 +1,16 @@
 module UnrealScript.UTGame.UTSkelControl_Damage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKSkelControl_Damage;
 
 extern(C++) interface UTSkelControl_Damage : UDKSkelControl_Damage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_Damage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_Damage")()); }
 	private static __gshared UTSkelControl_Damage mDefaultProperties;
-	@property final static UTSkelControl_Damage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_Damage)("UTSkelControl_Damage UTGame.Default__UTSkelControl_Damage")); }
+	@property final static UTSkelControl_Damage DefaultProperties() { mixin(MGDPC!(UTSkelControl_Damage, "UTSkelControl_Damage UTGame.Default__UTSkelControl_Damage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BreakApart() { return mBreakApart ? mBreakApart : (mBreakApart = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSkelControl_Damage.BreakApart")); }
-			ScriptFunction BreakApartOnDeath() { return mBreakApartOnDeath ? mBreakApartOnDeath : (mBreakApartOnDeath = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSkelControl_Damage.BreakApartOnDeath")); }
+			ScriptFunction BreakApart() { mixin(MGF!("mBreakApart", "Function UTGame.UTSkelControl_Damage.BreakApart")()); }
+			ScriptFunction BreakApartOnDeath() { mixin(MGF!("mBreakApartOnDeath", "Function UTGame.UTSkelControl_Damage.BreakApartOnDeath")()); }
 		}
 	}
 final:

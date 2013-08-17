@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrRabbitScoreMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrRabbitScoreMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRabbitScoreMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRabbitScoreMessage")()); }
 	private static __gshared TrRabbitScoreMessage mDefaultProperties;
-	@property final static TrRabbitScoreMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRabbitScoreMessage)("TrRabbitScoreMessage TribesGame.Default__TrRabbitScoreMessage")); }
+	@property final static TrRabbitScoreMessage DefaultProperties() { mixin(MGDPC!(TrRabbitScoreMessage, "TrRabbitScoreMessage TribesGame.Default__TrRabbitScoreMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,9 +25,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitScoreMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitScoreMessage.ClientReceive")); }
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitScoreMessage.AnnouncementLevel")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrRabbitScoreMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrRabbitScoreMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function TribesGame.TrRabbitScoreMessage.AnnouncementLevel")()); }
 		}
 	}
 	static struct Constants
@@ -537,18 +538,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SoundCue m_sFlagReturnedToStand() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 208); }
-		SoundCue m_sYouPickedUpFlag() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 204); }
-		SoundCue m_sOtherIsNewLeadeCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 200); }
-		SoundCue m_sYouAreNewLeadeCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 196); }
-		ScriptString GetToTheFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-		ScriptString KillTheRabbit() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-		ScriptString OtherDroppedFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString YouDroppedFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString OtherIsNewLeader() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString YouAreNewLeader() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString OtherScoreFlagTouch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString YouScoreFlagTouch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundCue m_sFlagReturnedToStand() { mixin(MGPC!(SoundCue, 208)()); }
+		SoundCue m_sYouPickedUpFlag() { mixin(MGPC!(SoundCue, 204)()); }
+		SoundCue m_sOtherIsNewLeadeCue() { mixin(MGPC!(SoundCue, 200)()); }
+		SoundCue m_sYouAreNewLeadeCue() { mixin(MGPC!(SoundCue, 196)()); }
+		ScriptString GetToTheFlag() { mixin(MGPC!(ScriptString, 184)()); }
+		ScriptString KillTheRabbit() { mixin(MGPC!(ScriptString, 172)()); }
+		ScriptString OtherDroppedFlag() { mixin(MGPC!(ScriptString, 160)()); }
+		ScriptString YouDroppedFlag() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString OtherIsNewLeader() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString YouAreNewLeader() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString OtherScoreFlagTouch() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString YouScoreFlagTouch() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.LevelGridVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.KMeshProps;
 import UnrealScript.Engine.Volume;
 
@@ -8,9 +9,9 @@ extern(C++) interface LevelGridVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LevelGridVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LevelGridVolume")()); }
 	private static __gshared LevelGridVolume mDefaultProperties;
-	@property final static LevelGridVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LevelGridVolume)("LevelGridVolume Engine.Default__LevelGridVolume")); }
+	@property final static LevelGridVolume DefaultProperties() { mixin(MGDPC!(LevelGridVolume, "LevelGridVolume Engine.Default__LevelGridVolume")()); }
 	enum LevelGridCellShape : ubyte
 	{
 		LGCS_Box = 0,
@@ -22,21 +23,21 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LevelGridVolume.LevelGridCellCoordinate")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LevelGridVolume.LevelGridCellCoordinate")()); }
 		@property final auto ref
 		{
-			int Z() { return *cast(int*)(cast(size_t)&this + 8); }
-			int Y() { return *cast(int*)(cast(size_t)&this + 4); }
-			int X() { return *cast(int*)(cast(size_t)&this + 0); }
+			int Z() { mixin(MGPS!(int, 8)()); }
+			int Y() { mixin(MGPS!(int, 4)()); }
+			int X() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		KMeshProps.KConvexElem CellConvexElem() { return *cast(KMeshProps.KConvexElem*)(cast(size_t)cast(void*)this + 556); }
-		float KeepLoadedRange() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-		float LoadingDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-		int Subdivisions() { return *cast(int*)(cast(size_t)cast(void*)this + 536); }
-		LevelGridVolume.LevelGridCellShape CellShape() { return *cast(LevelGridVolume.LevelGridCellShape*)(cast(size_t)cast(void*)this + 532); }
-		ScriptString LevelGridVolumeName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 520); }
+		KMeshProps.KConvexElem CellConvexElem() { mixin(MGPC!(KMeshProps.KConvexElem, 556)()); }
+		float KeepLoadedRange() { mixin(MGPC!(float, 552)()); }
+		float LoadingDistance() { mixin(MGPC!(float, 548)()); }
+		int Subdivisions() { mixin(MGPC!(int, 536)()); }
+		LevelGridVolume.LevelGridCellShape CellShape() { mixin(MGPC!(LevelGridVolume.LevelGridCellShape, 532)()); }
+		ScriptString LevelGridVolumeName() { mixin(MGPC!(ScriptString, 520)()); }
 	}
 }

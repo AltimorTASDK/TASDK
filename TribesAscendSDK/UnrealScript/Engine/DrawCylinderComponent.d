@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DrawCylinderComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.Material;
@@ -9,26 +10,26 @@ extern(C++) interface DrawCylinderComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawCylinderComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DrawCylinderComponent")()); }
 	private static __gshared DrawCylinderComponent mDefaultProperties;
-	@property final static DrawCylinderComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawCylinderComponent)("DrawCylinderComponent Engine.Default__DrawCylinderComponent")); }
+	@property final static DrawCylinderComponent DefaultProperties() { mixin(MGDPC!(DrawCylinderComponent, "DrawCylinderComponent Engine.Default__DrawCylinderComponent")()); }
 	@property final
 	{
 		auto ref
 		{
-			int CylinderSides() { return *cast(int*)(cast(size_t)cast(void*)this + 512); }
-			float CylinderHeightOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-			float CylinderHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			float CylinderTopRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-			float CylinderRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			Material CylinderMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 492); }
-			UObject.Color CylinderColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 488); }
+			int CylinderSides() { mixin(MGPC!(int, 512)()); }
+			float CylinderHeightOffset() { mixin(MGPC!(float, 508)()); }
+			float CylinderHeight() { mixin(MGPC!(float, 504)()); }
+			float CylinderTopRadius() { mixin(MGPC!(float, 500)()); }
+			float CylinderRadius() { mixin(MGPC!(float, 496)()); }
+			Material CylinderMaterial() { mixin(MGPC!(Material, 492)()); }
+			UObject.Color CylinderColor() { mixin(MGPC!(UObject.Color, 488)()); }
 		}
-		bool bDrawOnlyIfSelected() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x4) != 0; }
-		bool bDrawOnlyIfSelected(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x4; } return val; }
-		bool bDrawLitCylinder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x2) != 0; }
-		bool bDrawLitCylinder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x2; } return val; }
-		bool bDrawWireCylinder() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x1) != 0; }
-		bool bDrawWireCylinder(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x1; } return val; }
+		bool bDrawOnlyIfSelected() { mixin(MGBPC!(516, 0x4)()); }
+		bool bDrawOnlyIfSelected(bool val) { mixin(MSBPC!(516, 0x4)()); }
+		bool bDrawLitCylinder() { mixin(MGBPC!(516, 0x2)()); }
+		bool bDrawLitCylinder(bool val) { mixin(MSBPC!(516, 0x2)()); }
+		bool bDrawWireCylinder() { mixin(MGBPC!(516, 0x1)()); }
+		bool bDrawWireCylinder(bool val) { mixin(MSBPC!(516, 0x1)()); }
 	}
 }

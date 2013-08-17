@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUI_InventoryButton;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GFxUI.GFxClikWidget;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface GFxUI_InventoryButton : GFxClikWidget
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUI_InventoryButton")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUI_InventoryButton")()); }
 	private static __gshared GFxUI_InventoryButton mDefaultProperties;
-	@property final static GFxUI_InventoryButton DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUI_InventoryButton)("GFxUI_InventoryButton UTGame.Default__GFxUI_InventoryButton")); }
+	@property final static GFxUI_InventoryButton DefaultProperties() { mixin(MGDPC!(GFxUI_InventoryButton, "GFxUI_InventoryButton UTGame.Default__GFxUI_InventoryButton")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,14 +21,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetContent() { return mSetContent ? mSetContent : (mSetContent = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUI_InventoryButton.SetContent")); }
-			ScriptFunction SetIconMC() { return mSetIconMC ? mSetIconMC : (mSetIconMC = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUI_InventoryButton.SetIconMC")); }
+			ScriptFunction SetContent() { mixin(MGF!("mSetContent", "Function UTGame.GFxUI_InventoryButton.SetContent")()); }
+			ScriptFunction SetIconMC() { mixin(MGF!("mSetIconMC", "Function UTGame.GFxUI_InventoryButton.SetIconMC")()); }
 		}
 	}
 	@property final auto ref
 	{
-		GFxObject IconMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString Content() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
+		GFxObject IconMC() { mixin(MGPC!(GFxObject, 144)()); }
+		ScriptString Content() { mixin(MGPC!(ScriptString, 132)()); }
 	}
 final:
 	void SetContent(ScriptString newContent)

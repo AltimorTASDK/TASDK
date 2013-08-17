@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SoundMode;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AudioDevice;
 import UnrealScript.Core.UObject;
 
@@ -8,27 +9,27 @@ extern(C++) interface SoundMode : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundMode")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SoundMode")()); }
 	private static __gshared SoundMode mDefaultProperties;
-	@property final static SoundMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundMode)("SoundMode Engine.Default__SoundMode")); }
+	@property final static SoundMode DefaultProperties() { mixin(MGDPC!(SoundMode, "SoundMode Engine.Default__SoundMode")()); }
 	struct SoundClassAdjuster
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SoundMode.SoundClassAdjuster")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SoundMode.SoundClassAdjuster")()); }
 		@property final
 		{
 			auto ref
 			{
-				float VoiceCenterChannelVolumeAdjuster() { return *cast(float*)(cast(size_t)&this + 24); }
-				float PitchAdjuster() { return *cast(float*)(cast(size_t)&this + 16); }
-				float VolumeAdjuster() { return *cast(float*)(cast(size_t)&this + 12); }
+				float VoiceCenterChannelVolumeAdjuster() { mixin(MGPS!(float, 24)()); }
+				float PitchAdjuster() { mixin(MGPS!(float, 16)()); }
+				float VolumeAdjuster() { mixin(MGPS!(float, 12)()); }
 				// WARNING: Property 'SoundClass' has the same name as a defined type!
-				AudioDevice.ESoundClassName SoundClassName() { return *cast(AudioDevice.ESoundClassName*)(cast(size_t)&this + 0); }
+				AudioDevice.ESoundClassName SoundClassName() { mixin(MGPS!(AudioDevice.ESoundClassName, 0)()); }
 			}
-			bool bApplyToChildren() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x1) != 0; }
-			bool bApplyToChildren(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x1; } return val; }
+			bool bApplyToChildren() { mixin(MGBPS!(20, 0x1)()); }
+			bool bApplyToChildren(bool val) { mixin(MSBPS!(20, 0x1)()); }
 		}
 	}
 	struct AudioEQEffect
@@ -36,31 +37,31 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SoundMode.AudioEQEffect")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SoundMode.AudioEQEffect")()); }
 		@property final auto ref
 		{
-			float LFGain() { return *cast(float*)(cast(size_t)&this + 32); }
-			float LFFrequency() { return *cast(float*)(cast(size_t)&this + 28); }
-			float MFGain() { return *cast(float*)(cast(size_t)&this + 24); }
-			float MFBandwidth() { return *cast(float*)(cast(size_t)&this + 20); }
-			float MFCutoffFrequency() { return *cast(float*)(cast(size_t)&this + 16); }
-			float HFGain() { return *cast(float*)(cast(size_t)&this + 12); }
-			float HFFrequency() { return *cast(float*)(cast(size_t)&this + 8); }
-			UObject.Double RootTime() { return *cast(UObject.Double*)(cast(size_t)&this + 0); }
+			float LFGain() { mixin(MGPS!(float, 32)()); }
+			float LFFrequency() { mixin(MGPS!(float, 28)()); }
+			float MFGain() { mixin(MGPS!(float, 24)()); }
+			float MFBandwidth() { mixin(MGPS!(float, 20)()); }
+			float MFCutoffFrequency() { mixin(MGPS!(float, 16)()); }
+			float HFGain() { mixin(MGPS!(float, 12)()); }
+			float HFFrequency() { mixin(MGPS!(float, 8)()); }
+			UObject.Double RootTime() { mixin(MGPS!(UObject.Double, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SoundMode.SoundClassAdjuster) SoundClassEffects() { return *cast(ScriptArray!(SoundMode.SoundClassAdjuster)*)(cast(size_t)cast(void*)this + 100); }
-			float FadeOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-			float Duration() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			float FadeInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float InitialDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			SoundMode.AudioEQEffect EQSettings() { return *cast(SoundMode.AudioEQEffect*)(cast(size_t)cast(void*)this + 64); }
+			ScriptArray!(SoundMode.SoundClassAdjuster) SoundClassEffects() { mixin(MGPC!(ScriptArray!(SoundMode.SoundClassAdjuster), 100)()); }
+			float FadeOutTime() { mixin(MGPC!(float, 124)()); }
+			float Duration() { mixin(MGPC!(float, 120)()); }
+			float FadeInTime() { mixin(MGPC!(float, 116)()); }
+			float InitialDelay() { mixin(MGPC!(float, 112)()); }
+			SoundMode.AudioEQEffect EQSettings() { mixin(MGPC!(SoundMode.AudioEQEffect, 64)()); }
 		}
-		bool bApplyEQ() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bApplyEQ(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bApplyEQ() { mixin(MGBPC!(60, 0x1)()); }
+		bool bApplyEQ(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 }

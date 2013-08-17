@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SkeletalMeshActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.FaceFXAnimSet;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.SeqAct_AttachToActor;
@@ -23,9 +24,9 @@ extern(C++) interface SkeletalMeshActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMeshActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkeletalMeshActor")()); }
 	private static __gshared SkeletalMeshActor mDefaultProperties;
-	@property final static SkeletalMeshActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMeshActor)("SkeletalMeshActor Engine.Default__SkeletalMeshActor")); }
+	@property final static SkeletalMeshActor DefaultProperties() { mixin(MGDPC!(SkeletalMeshActor, "SkeletalMeshActor Engine.Default__SkeletalMeshActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -61,34 +62,34 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.PostBeginPlay")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.Destroyed")); }
-			ScriptFunction UpdateAnimSetList() { return mUpdateAnimSetList ? mUpdateAnimSetList : (mUpdateAnimSetList = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.UpdateAnimSetList")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.ReplicatedEvent")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.OnToggle")); }
-			ScriptFunction OnSetMaterial() { return mOnSetMaterial ? mOnSetMaterial : (mOnSetMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.OnSetMaterial")); }
-			ScriptFunction BeginAnimControl() { return mBeginAnimControl ? mBeginAnimControl : (mBeginAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.BeginAnimControl")); }
-			ScriptFunction MAT_BeginAnimControl() { return mMAT_BeginAnimControl ? mMAT_BeginAnimControl : (mMAT_BeginAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.MAT_BeginAnimControl")); }
-			ScriptFunction SetAnimPosition() { return mSetAnimPosition ? mSetAnimPosition : (mSetAnimPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.SetAnimPosition")); }
-			ScriptFunction FinishAnimControl() { return mFinishAnimControl ? mFinishAnimControl : (mFinishAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.FinishAnimControl")); }
-			ScriptFunction MAT_FinishAnimControl() { return mMAT_FinishAnimControl ? mMAT_FinishAnimControl : (mMAT_FinishAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.MAT_FinishAnimControl")); }
-			ScriptFunction PlayActorFaceFXAnim() { return mPlayActorFaceFXAnim ? mPlayActorFaceFXAnim : (mPlayActorFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.PlayActorFaceFXAnim")); }
-			ScriptFunction StopActorFaceFXAnim() { return mStopActorFaceFXAnim ? mStopActorFaceFXAnim : (mStopActorFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.StopActorFaceFXAnim")); }
-			ScriptFunction GetFaceFXAudioComponent() { return mGetFaceFXAudioComponent ? mGetFaceFXAudioComponent : (mGetFaceFXAudioComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.GetFaceFXAudioComponent")); }
-			ScriptFunction OnPlayFaceFXAnim() { return mOnPlayFaceFXAnim ? mOnPlayFaceFXAnim : (mOnPlayFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.OnPlayFaceFXAnim")); }
-			ScriptFunction GetActorFaceFXAsset() { return mGetActorFaceFXAsset ? mGetActorFaceFXAsset : (mGetActorFaceFXAsset = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.GetActorFaceFXAsset")); }
-			ScriptFunction IsActorPlayingFaceFXAnim() { return mIsActorPlayingFaceFXAnim ? mIsActorPlayingFaceFXAnim : (mIsActorPlayingFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.IsActorPlayingFaceFXAnim")); }
-			ScriptFunction OnSetMesh() { return mOnSetMesh ? mOnSetMesh : (mOnSetMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.OnSetMesh")); }
-			ScriptFunction OnUpdatePhysBonesFromAnim() { return mOnUpdatePhysBonesFromAnim ? mOnUpdatePhysBonesFromAnim : (mOnUpdatePhysBonesFromAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.OnUpdatePhysBonesFromAnim")); }
-			ScriptFunction OnSetSkelControlTarget() { return mOnSetSkelControlTarget ? mOnSetSkelControlTarget : (mOnSetSkelControlTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.OnSetSkelControlTarget")); }
-			ScriptFunction DoKismetAttachment() { return mDoKismetAttachment ? mDoKismetAttachment : (mDoKismetAttachment = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.DoKismetAttachment")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.TakeDamage")); }
-			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.ShouldSaveForCheckpoint")); }
-			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.CreateCheckpointRecord")); }
-			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.ApplyCheckpointRecord")); }
-			ScriptFunction PlayParticleEffect() { return mPlayParticleEffect ? mPlayParticleEffect : (mPlayParticleEffect = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.PlayParticleEffect")); }
-			ScriptFunction SkelMeshActorOnParticleSystemFinished() { return mSkelMeshActorOnParticleSystemFinished ? mSkelMeshActorOnParticleSystemFinished : (mSkelMeshActorOnParticleSystemFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.SkelMeshActorOnParticleSystemFinished")); }
-			ScriptFunction CreateForceField() { return mCreateForceField ? mCreateForceField : (mCreateForceField = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActor.CreateForceField")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.SkeletalMeshActor.PostBeginPlay")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.SkeletalMeshActor.Destroyed")()); }
+			ScriptFunction UpdateAnimSetList() { mixin(MGF!("mUpdateAnimSetList", "Function Engine.SkeletalMeshActor.UpdateAnimSetList")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.SkeletalMeshActor.ReplicatedEvent")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.SkeletalMeshActor.OnToggle")()); }
+			ScriptFunction OnSetMaterial() { mixin(MGF!("mOnSetMaterial", "Function Engine.SkeletalMeshActor.OnSetMaterial")()); }
+			ScriptFunction BeginAnimControl() { mixin(MGF!("mBeginAnimControl", "Function Engine.SkeletalMeshActor.BeginAnimControl")()); }
+			ScriptFunction MAT_BeginAnimControl() { mixin(MGF!("mMAT_BeginAnimControl", "Function Engine.SkeletalMeshActor.MAT_BeginAnimControl")()); }
+			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function Engine.SkeletalMeshActor.SetAnimPosition")()); }
+			ScriptFunction FinishAnimControl() { mixin(MGF!("mFinishAnimControl", "Function Engine.SkeletalMeshActor.FinishAnimControl")()); }
+			ScriptFunction MAT_FinishAnimControl() { mixin(MGF!("mMAT_FinishAnimControl", "Function Engine.SkeletalMeshActor.MAT_FinishAnimControl")()); }
+			ScriptFunction PlayActorFaceFXAnim() { mixin(MGF!("mPlayActorFaceFXAnim", "Function Engine.SkeletalMeshActor.PlayActorFaceFXAnim")()); }
+			ScriptFunction StopActorFaceFXAnim() { mixin(MGF!("mStopActorFaceFXAnim", "Function Engine.SkeletalMeshActor.StopActorFaceFXAnim")()); }
+			ScriptFunction GetFaceFXAudioComponent() { mixin(MGF!("mGetFaceFXAudioComponent", "Function Engine.SkeletalMeshActor.GetFaceFXAudioComponent")()); }
+			ScriptFunction OnPlayFaceFXAnim() { mixin(MGF!("mOnPlayFaceFXAnim", "Function Engine.SkeletalMeshActor.OnPlayFaceFXAnim")()); }
+			ScriptFunction GetActorFaceFXAsset() { mixin(MGF!("mGetActorFaceFXAsset", "Function Engine.SkeletalMeshActor.GetActorFaceFXAsset")()); }
+			ScriptFunction IsActorPlayingFaceFXAnim() { mixin(MGF!("mIsActorPlayingFaceFXAnim", "Function Engine.SkeletalMeshActor.IsActorPlayingFaceFXAnim")()); }
+			ScriptFunction OnSetMesh() { mixin(MGF!("mOnSetMesh", "Function Engine.SkeletalMeshActor.OnSetMesh")()); }
+			ScriptFunction OnUpdatePhysBonesFromAnim() { mixin(MGF!("mOnUpdatePhysBonesFromAnim", "Function Engine.SkeletalMeshActor.OnUpdatePhysBonesFromAnim")()); }
+			ScriptFunction OnSetSkelControlTarget() { mixin(MGF!("mOnSetSkelControlTarget", "Function Engine.SkeletalMeshActor.OnSetSkelControlTarget")()); }
+			ScriptFunction DoKismetAttachment() { mixin(MGF!("mDoKismetAttachment", "Function Engine.SkeletalMeshActor.DoKismetAttachment")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.SkeletalMeshActor.TakeDamage")()); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.SkeletalMeshActor.ShouldSaveForCheckpoint")()); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.SkeletalMeshActor.CreateCheckpointRecord")()); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.SkeletalMeshActor.ApplyCheckpointRecord")()); }
+			ScriptFunction PlayParticleEffect() { mixin(MGF!("mPlayParticleEffect", "Function Engine.SkeletalMeshActor.PlayParticleEffect")()); }
+			ScriptFunction SkelMeshActorOnParticleSystemFinished() { mixin(MGF!("mSkelMeshActorOnParticleSystemFinished", "Function Engine.SkeletalMeshActor.SkelMeshActorOnParticleSystemFinished")()); }
+			ScriptFunction CreateForceField() { mixin(MGF!("mCreateForceField", "Function Engine.SkeletalMeshActor.CreateForceField")()); }
 		}
 	}
 	struct SkelMeshActorControlTarget
@@ -96,11 +97,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMeshActor.SkelMeshActorControlTarget")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMeshActor.SkelMeshActorControlTarget")()); }
 		@property final auto ref
 		{
-			Actor TargetActor() { return *cast(Actor*)(cast(size_t)&this + 8); }
-			ScriptName ControlName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			Actor TargetActor() { mixin(MGPS!(Actor, 8)()); }
+			ScriptName ControlName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct CheckpointRecord
@@ -108,41 +109,44 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMeshActor.CheckpointRecord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMeshActor.CheckpointRecord")()); }
 		@property final
 		{
 			auto ref
 			{
-				Rotator Rotation() { return *cast(Rotator*)(cast(size_t)&this + 16); }
-				Vector Location() { return *cast(Vector*)(cast(size_t)&this + 4); }
+				Rotator Rotation() { mixin(MGPS!(Rotator, 16)()); }
+				Vector Location() { mixin(MGPS!(Vector, 4)()); }
 			}
-			bool bSavedPosition() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-			bool bSavedPosition(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-			bool bHidden() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bHidden(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bReplicated() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bReplicated(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bSavedPosition() { mixin(MGBPS!(0, 0x4)()); }
+			bool bSavedPosition(bool val) { mixin(MSBPS!(0, 0x4)()); }
+			bool bHidden() { mixin(MGBPS!(0, 0x2)()); }
+			bool bHidden(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bReplicated() { mixin(MGBPS!(0, 0x1)()); }
+			bool bReplicated(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget) ControlTargets() { return *cast(ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget)*)(cast(size_t)cast(void*)this + 500); }
-			ScriptArray!(InterpGroup) InterpGroupList() { return *cast(ScriptArray!(InterpGroup)*)(cast(size_t)cast(void*)this + 512); }
-			float SavedCurrentTime() { return *cast(float*)(cast(size_t)cast(void*)this + 532); }
-			ScriptName SavedAnimSeqName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 524); }
-			MaterialInterface ReplicatedMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 496); }
-			SkeletalMesh ReplicatedMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 492); }
+			ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget) ControlTargets() { mixin(MGPC!(ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget), 500)()); }
+			ScriptArray!(InterpGroup) InterpGroupList() { mixin(MGPC!(ScriptArray!(InterpGroup), 512)()); }
+			float SavedCurrentTime() { mixin(MGPC!(float, 532)()); }
+			ScriptName SavedAnimSeqName() { mixin(MGPC!(ScriptName, 524)()); }
+			MaterialInterface ReplicatedMaterial() { mixin(MGPC!(MaterialInterface, 496)()); }
+			SkeletalMesh ReplicatedMesh() { mixin(MGPC!(SkeletalMesh, 492)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FacialAudioComp'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
+			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
 		}
-		bool bCollideActors_OldValue() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8) != 0; }
-		bool bCollideActors_OldValue(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8; } return val; }
-		bool bForceSaveInCheckpoint() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4) != 0; }
-		bool bForceSaveInCheckpoint(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4; } return val; }
-		bool bShouldDoAnimNotifies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
-		bool bShouldDoAnimNotifies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
-		bool bDamageAppliesImpulse() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-		bool bDamageAppliesImpulse(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
+		bool bCollideActors_OldValue() { mixin(MGBPC!(476, 0x8)()); }
+		bool bCollideActors_OldValue(bool val) { mixin(MSBPC!(476, 0x8)()); }
+		bool bForceSaveInCheckpoint() { mixin(MGBPC!(476, 0x4)()); }
+		bool bForceSaveInCheckpoint(bool val) { mixin(MSBPC!(476, 0x4)()); }
+		bool bShouldDoAnimNotifies() { mixin(MGBPC!(476, 0x2)()); }
+		bool bShouldDoAnimNotifies(bool val) { mixin(MSBPC!(476, 0x2)()); }
+		bool bDamageAppliesImpulse() { mixin(MGBPC!(476, 0x1)()); }
+		bool bDamageAppliesImpulse(bool val) { mixin(MSBPC!(476, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -315,23 +319,23 @@ void**)params.ptr;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void CreateCheckpointRecord(SkeletalMeshActor.CheckpointRecord* Record)
+	void CreateCheckpointRecord(ref SkeletalMeshActor.CheckpointRecord Record)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(SkeletalMeshActor.CheckpointRecord*)params.ptr = *Record;
+		*cast(SkeletalMeshActor.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(SkeletalMeshActor.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(SkeletalMeshActor.CheckpointRecord* Record)
+	void ApplyCheckpointRecord(ref const SkeletalMeshActor.CheckpointRecord Record)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(SkeletalMeshActor.CheckpointRecord*)params.ptr = *Record;
+		*cast(SkeletalMeshActor.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(SkeletalMeshActor.CheckpointRecord*)params.ptr;
 	}
-	bool PlayParticleEffect(AnimNotify_PlayParticleEffect AnimNotifyData)
+	bool PlayParticleEffect(const AnimNotify_PlayParticleEffect AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -350,7 +354,7 @@ void* PSC)
 void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SkelMeshActorOnParticleSystemFinished, params.ptr, cast(void*)0);
 	}
-	bool CreateForceField(AnimNotify_ForceField AnimNotifyData)
+	bool CreateForceField(const AnimNotify_ForceField AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;

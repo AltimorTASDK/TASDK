@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineStats;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Settings;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineStats")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineStats")()); }
 	private static __gshared OnlineStats mDefaultProperties;
-	@property final static OnlineStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineStats)("OnlineStats Engine.Default__OnlineStats")); }
+	@property final static OnlineStats DefaultProperties() { mixin(MGDPC!(OnlineStats, "OnlineStats Engine.Default__OnlineStats")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,18 +21,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetViewId() { return mGetViewId ? mGetViewId : (mGetViewId = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStats.GetViewId")); }
-			ScriptFunction GetViewName() { return mGetViewName ? mGetViewName : (mGetViewName = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineStats.GetViewName")); }
+			ScriptFunction GetViewId() { mixin(MGF!("mGetViewId", "Function Engine.OnlineStats.GetViewId")()); }
+			ScriptFunction GetViewName() { mixin(MGF!("mGetViewName", "Function Engine.OnlineStats.GetViewName")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { return *cast(ScriptArray!(Settings.StringIdToStringMapping)*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { mixin(MGPC!(ScriptArray!(Settings.StringIdToStringMapping), 60)()); }
 final:
-	bool GetViewId(ScriptName ViewName, int* ViewId)
+	bool GetViewId(ScriptName ViewName, ref int ViewId)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ViewName;
-		*cast(int*)&params[8] = *ViewId;
+		*cast(int*)&params[8] = ViewId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetViewId, params.ptr, cast(void*)0);
 		*ViewId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];

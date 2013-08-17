@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NxForceFieldGeneric;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NxForceField;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ForceFieldShape;
@@ -9,13 +10,13 @@ extern(C++) interface NxForceFieldGeneric : NxForceField
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldGeneric")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NxForceFieldGeneric")()); }
 	private static __gshared NxForceFieldGeneric mDefaultProperties;
-	@property final static NxForceFieldGeneric DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldGeneric)("NxForceFieldGeneric Engine.Default__NxForceFieldGeneric")); }
+	@property final static NxForceFieldGeneric DefaultProperties() { mixin(MGDPC!(NxForceFieldGeneric, "NxForceFieldGeneric Engine.Default__NxForceFieldGeneric")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDoInitRBPhys;
-		public @property static final ScriptFunction DoInitRBPhys() { return mDoInitRBPhys ? mDoInitRBPhys : (mDoInitRBPhys = ScriptObject.Find!(ScriptFunction)("Function Engine.NxForceFieldGeneric.DoInitRBPhys")); }
+		public @property static final ScriptFunction DoInitRBPhys() { mixin(MGF!("mDoInitRBPhys", "Function Engine.NxForceFieldGeneric.DoInitRBPhys")()); }
 	}
 	enum FFG_ForceFieldCoordinates : ubyte
 	{
@@ -27,25 +28,26 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.Pointer LinearKernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 712); }
-		float TorusRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 708); }
-		Vector FalloffQuadratic() { return *cast(Vector*)(cast(size_t)cast(void*)this + 696); }
-		Vector FalloffLinear() { return *cast(Vector*)(cast(size_t)cast(void*)this + 684); }
-		Vector Noise() { return *cast(Vector*)(cast(size_t)cast(void*)this + 672); }
-		Vector VelocityTarget() { return *cast(Vector*)(cast(size_t)cast(void*)this + 660); }
-		Vector VelocityMultiplierZ() { return *cast(Vector*)(cast(size_t)cast(void*)this + 648); }
-		Vector VelocityMultiplierY() { return *cast(Vector*)(cast(size_t)cast(void*)this + 636); }
-		Vector VelocityMultiplierX() { return *cast(Vector*)(cast(size_t)cast(void*)this + 624); }
-		Vector PositionTarget() { return *cast(Vector*)(cast(size_t)cast(void*)this + 612); }
-		Vector PositionMultiplierZ() { return *cast(Vector*)(cast(size_t)cast(void*)this + 600); }
-		Vector PositionMultiplierY() { return *cast(Vector*)(cast(size_t)cast(void*)this + 588); }
-		Vector PositionMultiplierX() { return *cast(Vector*)(cast(size_t)cast(void*)this + 576); }
-		Vector Constant() { return *cast(Vector*)(cast(size_t)cast(void*)this + 564); }
-		NxForceFieldGeneric.FFG_ForceFieldCoordinates Coordinates() { return *cast(NxForceFieldGeneric.FFG_ForceFieldCoordinates*)(cast(size_t)cast(void*)this + 560); }
-		ForceFieldShape Shape() { return *cast(ForceFieldShape*)(cast(size_t)cast(void*)this + 540); }
-		float RoughExtentZ() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-		float RoughExtentY() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-		float RoughExtentX() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
+		UObject.Pointer LinearKernel() { mixin(MGPC!(UObject.Pointer, 712)()); }
+		float TorusRadius() { mixin(MGPC!(float, 708)()); }
+		Vector FalloffQuadratic() { mixin(MGPC!(Vector, 696)()); }
+		Vector FalloffLinear() { mixin(MGPC!(Vector, 684)()); }
+		Vector Noise() { mixin(MGPC!(Vector, 672)()); }
+		Vector VelocityTarget() { mixin(MGPC!(Vector, 660)()); }
+		Vector VelocityMultiplierZ() { mixin(MGPC!(Vector, 648)()); }
+		Vector VelocityMultiplierY() { mixin(MGPC!(Vector, 636)()); }
+		Vector VelocityMultiplierX() { mixin(MGPC!(Vector, 624)()); }
+		Vector PositionTarget() { mixin(MGPC!(Vector, 612)()); }
+		Vector PositionMultiplierZ() { mixin(MGPC!(Vector, 600)()); }
+		Vector PositionMultiplierY() { mixin(MGPC!(Vector, 588)()); }
+		Vector PositionMultiplierX() { mixin(MGPC!(Vector, 576)()); }
+		Vector Constant() { mixin(MGPC!(Vector, 564)()); }
+		NxForceFieldGeneric.FFG_ForceFieldCoordinates Coordinates() { mixin(MGPC!(NxForceFieldGeneric.FFG_ForceFieldCoordinates, 560)()); }
+		ForceFieldShape Shape() { mixin(MGPC!(ForceFieldShape, 540)()); }
+		float RoughExtentZ() { mixin(MGPC!(float, 556)()); }
+		float RoughExtentY() { mixin(MGPC!(float, 552)()); }
+		float RoughExtentX() { mixin(MGPC!(float, 548)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DrawComponent'!
 	}
 	final void DoInitRBPhys()
 	{

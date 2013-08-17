@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDevice_SniperRifle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrDevice;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrDevice_SniperRifle : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_SniperRifle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_SniperRifle")()); }
 	private static __gshared TrDevice_SniperRifle mDefaultProperties;
-	@property final static TrDevice_SniperRifle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_SniperRifle)("TrDevice_SniperRifle TribesGame.Default__TrDevice_SniperRifle")); }
+	@property final static TrDevice_SniperRifle DefaultProperties() { mixin(MGDPC!(TrDevice_SniperRifle, "TrDevice_SniperRifle TribesGame.Default__TrDevice_SniperRifle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,24 +28,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnSwitchToWeapon() { return mOnSwitchToWeapon ? mOnSwitchToWeapon : (mOnSwitchToWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.OnSwitchToWeapon")); }
-			ScriptFunction OnSwitchAwayFromWeapon() { return mOnSwitchAwayFromWeapon ? mOnSwitchAwayFromWeapon : (mOnSwitchAwayFromWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.OnSwitchAwayFromWeapon")); }
-			ScriptFunction InstantFire() { return mInstantFire ? mInstantFire : (mInstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.InstantFire")); }
-			ScriptFunction ModifyInstantHitDamage() { return mModifyInstantHitDamage ? mModifyInstantHitDamage : (mModifyInstantHitDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.ModifyInstantHitDamage")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.StartFire")); }
-			ScriptFunction CalcHUDAimChargePercent() { return mCalcHUDAimChargePercent ? mCalcHUDAimChargePercent : (mCalcHUDAimChargePercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.CalcHUDAimChargePercent")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.Tick")); }
-			ScriptFunction PlayScopeRechargeSound() { return mPlayScopeRechargeSound ? mPlayScopeRechargeSound : (mPlayScopeRechargeSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.PlayScopeRechargeSound")); }
-			ScriptFunction StopScopeRechargeSound() { return mStopScopeRechargeSound ? mStopScopeRechargeSound : (mStopScopeRechargeSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_SniperRifle.StopScopeRechargeSound")); }
+			ScriptFunction OnSwitchToWeapon() { mixin(MGF!("mOnSwitchToWeapon", "Function TribesGame.TrDevice_SniperRifle.OnSwitchToWeapon")()); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_SniperRifle.OnSwitchAwayFromWeapon")()); }
+			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function TribesGame.TrDevice_SniperRifle.InstantFire")()); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrDevice_SniperRifle.ModifyInstantHitDamage")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_SniperRifle.StartFire")()); }
+			ScriptFunction CalcHUDAimChargePercent() { mixin(MGF!("mCalcHUDAimChargePercent", "Function TribesGame.TrDevice_SniperRifle.CalcHUDAimChargePercent")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDevice_SniperRifle.Tick")()); }
+			ScriptFunction PlayScopeRechargeSound() { mixin(MGF!("mPlayScopeRechargeSound", "Function TribesGame.TrDevice_SniperRifle.PlayScopeRechargeSound")()); }
+			ScriptFunction StopScopeRechargeSound() { mixin(MGF!("mStopScopeRechargeSound", "Function TribesGame.TrDevice_SniperRifle.StopScopeRechargeSound")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fDivCoeff() { return *cast(float*)(cast(size_t)cast(void*)this + 2164); }
-		float m_fMultCoeff() { return *cast(float*)(cast(size_t)cast(void*)this + 2160); }
-		float r_fAimChargeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2156); }
-		float m_fAimChargeDeltaTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2152); }
-		float m_fMaxAimedDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 2148); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ScopeChargeSound'!
+		float m_fDivCoeff() { mixin(MGPC!(float, 2164)()); }
+		float m_fMultCoeff() { mixin(MGPC!(float, 2160)()); }
+		float r_fAimChargeTime() { mixin(MGPC!(float, 2156)()); }
+		float m_fAimChargeDeltaTime() { mixin(MGPC!(float, 2152)()); }
+		float m_fMaxAimedDamage() { mixin(MGPC!(float, 2148)()); }
 	}
 final:
 	void OnSwitchToWeapon()

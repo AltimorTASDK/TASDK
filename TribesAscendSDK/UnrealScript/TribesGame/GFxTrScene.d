@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrScene;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.TribesGame.GFxTrMenuMoviePlayer;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,13 +10,13 @@ extern(C++) interface GFxTrScene : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrScene")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrScene")()); }
 	private static __gshared GFxTrScene mDefaultProperties;
-	@property final static GFxTrScene DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrScene)("GFxTrScene TribesGame.Default__GFxTrScene")); }
+	@property final static GFxTrScene DefaultProperties() { mixin(MGDPC!(GFxTrScene, "GFxTrScene TribesGame.Default__GFxTrScene")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;
-		public @property static final ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene.Initialize")); }
+		public @property static final ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrScene.Initialize")()); }
 	}
 	static struct Constants
 	{
@@ -1660,11 +1661,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			GFxTrMenuMoviePlayer TrOuter() { return *cast(GFxTrMenuMoviePlayer*)(cast(size_t)cast(void*)this + 128); }
-			OnlineSubsystem OnlineSub() { return *cast(OnlineSubsystem*)(cast(size_t)cast(void*)this + 124); }
+			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC!(GFxTrMenuMoviePlayer, 128)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 124)()); }
 		}
-		bool bSceneCreated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x1) != 0; }
-		bool bSceneCreated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x1; } return val; }
+		bool bSceneCreated() { mixin(MGBPC!(120, 0x1)()); }
+		bool bSceneCreated(bool val) { mixin(MSBPC!(120, 0x1)()); }
 	}
 	final void Initialize()
 	{

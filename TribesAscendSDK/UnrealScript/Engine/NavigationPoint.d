@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NavigationPoint;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.DroppedPickup;
 import UnrealScript.Engine.SeqAct_Toggle;
@@ -12,9 +13,9 @@ extern(C++) interface NavigationPoint : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavigationPoint")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavigationPoint")()); }
 	private static __gshared NavigationPoint mDefaultProperties;
-	@property final static NavigationPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavigationPoint)("NavigationPoint Engine.Default__NavigationPoint")); }
+	@property final static NavigationPoint DefaultProperties() { mixin(MGDPC!(NavigationPoint, "NavigationPoint Engine.Default__NavigationPoint")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,25 +42,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ProceedWithMove() { return mProceedWithMove ? mProceedWithMove : (mProceedWithMove = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ProceedWithMove")); }
-			ScriptFunction GetBoundingCylinder() { return mGetBoundingCylinder ? mGetBoundingCylinder : (mGetBoundingCylinder = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetBoundingCylinder")); }
-			ScriptFunction GetReachSpecTo() { return mGetReachSpecTo ? mGetReachSpecTo : (mGetReachSpecTo = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetReachSpecTo")); }
-			ScriptFunction IsUsableAnchorFor() { return mIsUsableAnchorFor ? mIsUsableAnchorFor : (mIsUsableAnchorFor = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.IsUsableAnchorFor")); }
-			ScriptFunction CanTeleport() { return mCanTeleport ? mCanTeleport : (mCanTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.CanTeleport")); }
-			ScriptFunction SpecialCost() { return mSpecialCost ? mSpecialCost : (mSpecialCost = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.SpecialCost")); }
-			ScriptFunction Accept() { return mAccept ? mAccept : (mAccept = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.Accept")); }
-			ScriptFunction DetourWeight() { return mDetourWeight ? mDetourWeight : (mDetourWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.DetourWeight")); }
-			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.SuggestMovePreparation")); }
-			ScriptFunction GetNearestNavToActor() { return mGetNearestNavToActor ? mGetNearestNavToActor : (mGetNearestNavToActor = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetNearestNavToActor")); }
-			ScriptFunction GetNearestNavToPoint() { return mGetNearestNavToPoint ? mGetNearestNavToPoint : (mGetNearestNavToPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetNearestNavToPoint")); }
-			ScriptFunction GetAllNavInRadius() { return mGetAllNavInRadius ? mGetAllNavInRadius : (mGetAllNavInRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetAllNavInRadius")); }
-			ScriptFunction IsOnDifferentNetwork() { return mIsOnDifferentNetwork ? mIsOnDifferentNetwork : (mIsOnDifferentNetwork = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.IsOnDifferentNetwork")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.OnToggle")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ShutDown")); }
-			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ShouldSaveForCheckpoint")); }
-			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.CreateCheckpointRecord")); }
-			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ApplyCheckpointRecord")); }
-			ScriptFunction GetDebugAbbrev() { return mGetDebugAbbrev ? mGetDebugAbbrev : (mGetDebugAbbrev = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetDebugAbbrev")); }
+			ScriptFunction ProceedWithMove() { mixin(MGF!("mProceedWithMove", "Function Engine.NavigationPoint.ProceedWithMove")()); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function Engine.NavigationPoint.GetBoundingCylinder")()); }
+			ScriptFunction GetReachSpecTo() { mixin(MGF!("mGetReachSpecTo", "Function Engine.NavigationPoint.GetReachSpecTo")()); }
+			ScriptFunction IsUsableAnchorFor() { mixin(MGF!("mIsUsableAnchorFor", "Function Engine.NavigationPoint.IsUsableAnchorFor")()); }
+			ScriptFunction CanTeleport() { mixin(MGF!("mCanTeleport", "Function Engine.NavigationPoint.CanTeleport")()); }
+			ScriptFunction SpecialCost() { mixin(MGF!("mSpecialCost", "Function Engine.NavigationPoint.SpecialCost")()); }
+			ScriptFunction Accept() { mixin(MGF!("mAccept", "Function Engine.NavigationPoint.Accept")()); }
+			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function Engine.NavigationPoint.DetourWeight")()); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.NavigationPoint.SuggestMovePreparation")()); }
+			ScriptFunction GetNearestNavToActor() { mixin(MGF!("mGetNearestNavToActor", "Function Engine.NavigationPoint.GetNearestNavToActor")()); }
+			ScriptFunction GetNearestNavToPoint() { mixin(MGF!("mGetNearestNavToPoint", "Function Engine.NavigationPoint.GetNearestNavToPoint")()); }
+			ScriptFunction GetAllNavInRadius() { mixin(MGF!("mGetAllNavInRadius", "Function Engine.NavigationPoint.GetAllNavInRadius")()); }
+			ScriptFunction IsOnDifferentNetwork() { mixin(MGF!("mIsOnDifferentNetwork", "Function Engine.NavigationPoint.IsOnDifferentNetwork")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.NavigationPoint.OnToggle")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.NavigationPoint.ShutDown")()); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.NavigationPoint.ShouldSaveForCheckpoint")()); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.NavigationPoint.CreateCheckpointRecord")()); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.NavigationPoint.ApplyCheckpointRecord")()); }
+			ScriptFunction GetDebugAbbrev() { mixin(MGF!("mGetDebugAbbrev", "Function Engine.NavigationPoint.GetDebugAbbrev")()); }
 		}
 	}
 	static struct Constants
@@ -71,11 +72,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationPoint.DebugNavCost")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationPoint.DebugNavCost")()); }
 		@property final auto ref
 		{
-			int Cost() { return *cast(int*)(cast(size_t)&this + 12); }
-			ScriptString Desc() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			int Cost() { mixin(MGPS!(int, 12)()); }
+			ScriptString Desc() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct NavigationOctreeObject
@@ -83,14 +84,14 @@ public extern(D):
 		private ubyte __buffer__[49];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationPoint.NavigationOctreeObject")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationPoint.NavigationOctreeObject")()); }
 		@property final auto ref
 		{
-			ubyte OwnerType() { return *cast(ubyte*)(cast(size_t)&this + 48); }
-			UObject Owner() { return *cast(UObject*)(cast(size_t)&this + 44); }
-			UObject.Pointer OctreeNode() { return *cast(UObject.Pointer*)(cast(size_t)&this + 40); }
-			Vector BoxCenter() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			UObject.Box BoundingBox() { return *cast(UObject.Box*)(cast(size_t)&this + 0); }
+			ubyte OwnerType() { mixin(MGPS!(ubyte, 48)()); }
+			UObject Owner() { mixin(MGPS!(UObject, 44)()); }
+			UObject.Pointer OctreeNode() { mixin(MGPS!(UObject.Pointer, 40)()); }
+			Vector BoxCenter() { mixin(MGPS!(Vector, 28)()); }
+			UObject.Box BoundingBox() { mixin(MGPS!(UObject.Box, 0)()); }
 		}
 	}
 	struct CheckpointRecord
@@ -98,106 +99,109 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationPoint.CheckpointRecord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationPoint.CheckpointRecord")()); }
 		@property final
 		{
-			bool bBlocked() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bBlocked(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bDisabled() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bBlocked() { mixin(MGBPS!(0, 0x2)()); }
+			bool bBlocked(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bDisabled() { mixin(MGBPS!(0, 0x1)()); }
+			bool bDisabled(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ReachSpec) PathList() { return *cast(ScriptArray!(ReachSpec)*)(cast(size_t)cast(void*)this + 532); }
-			ScriptArray!(Actor.ActorReference) EditorProscribedPaths() { return *cast(ScriptArray!(Actor.ActorReference)*)(cast(size_t)cast(void*)this + 544); }
-			ScriptArray!(Actor.ActorReference) EditorForcedPaths() { return *cast(ScriptArray!(Actor.ActorReference)*)(cast(size_t)cast(void*)this + 556); }
-			ScriptArray!(Actor.ActorReference) Volumes() { return *cast(ScriptArray!(Actor.ActorReference)*)(cast(size_t)cast(void*)this + 568); }
-			ScriptArray!(NavigationPoint.DebugNavCost) CostArray() { return *cast(ScriptArray!(NavigationPoint.DebugNavCost)*)(cast(size_t)cast(void*)this + 620); }
-			float LastAnchoredPawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
-			Pawn AnchoredPawn() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 684); }
-			int NetworkID() { return *cast(int*)(cast(size_t)cast(void*)this + 680); }
-			UObject.Guid NavGuid() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 656); }
-			UObject.Cylinder MaxPathSize() { return *cast(UObject.Cylinder*)(cast(size_t)cast(void*)this + 648); }
-			float LastDetourWeight() { return *cast(float*)(cast(size_t)cast(void*)this + 640); }
-			float InventoryDist() { return *cast(float*)(cast(size_t)cast(void*)this + 636); }
-			DroppedPickup InventoryCache() { return *cast(DroppedPickup*)(cast(size_t)cast(void*)this + 632); }
-			int FearCost() { return *cast(int*)(cast(size_t)cast(void*)this + 616); }
-			int TransientCost() { return *cast(int*)(cast(size_t)cast(void*)this + 612); }
-			int ExtraCost() { return *cast(int*)(cast(size_t)cast(void*)this + 608); }
-			int Cost() { return *cast(int*)(cast(size_t)cast(void*)this + 604); }
-			NavigationPoint previousPath() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 600); }
-			NavigationPoint prevOrdered() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 596); }
-			NavigationPoint nextOrdered() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 592); }
-			NavigationPoint nextNavigationPoint() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 588); }
-			int bestPathWeight() { return *cast(int*)(cast(size_t)cast(void*)this + 584); }
-			int visitedWeight() { return *cast(int*)(cast(size_t)cast(void*)this + 580); }
-			NavigationPoint.NavigationOctreeObject NavOctreeObject() { return *cast(NavigationPoint.NavigationOctreeObject*)(cast(size_t)cast(void*)this + 480); }
+			ScriptArray!(ReachSpec) PathList() { mixin(MGPC!(ScriptArray!(ReachSpec), 532)()); }
+			ScriptArray!(Actor.ActorReference) EditorProscribedPaths() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 544)()); }
+			ScriptArray!(Actor.ActorReference) EditorForcedPaths() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 556)()); }
+			ScriptArray!(Actor.ActorReference) Volumes() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 568)()); }
+			ScriptArray!(NavigationPoint.DebugNavCost) CostArray() { mixin(MGPC!(ScriptArray!(NavigationPoint.DebugNavCost), 620)()); }
+			float LastAnchoredPawnTime() { mixin(MGPC!(float, 688)()); }
+			Pawn AnchoredPawn() { mixin(MGPC!(Pawn, 684)()); }
+			int NetworkID() { mixin(MGPC!(int, 680)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BadSprite'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GoodSprite'!
+			UObject.Guid NavGuid() { mixin(MGPC!(UObject.Guid, 656)()); }
+			UObject.Cylinder MaxPathSize() { mixin(MGPC!(UObject.Cylinder, 648)()); }
+			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+			float LastDetourWeight() { mixin(MGPC!(float, 640)()); }
+			float InventoryDist() { mixin(MGPC!(float, 636)()); }
+			DroppedPickup InventoryCache() { mixin(MGPC!(DroppedPickup, 632)()); }
+			int FearCost() { mixin(MGPC!(int, 616)()); }
+			int TransientCost() { mixin(MGPC!(int, 612)()); }
+			int ExtraCost() { mixin(MGPC!(int, 608)()); }
+			int Cost() { mixin(MGPC!(int, 604)()); }
+			NavigationPoint previousPath() { mixin(MGPC!(NavigationPoint, 600)()); }
+			NavigationPoint prevOrdered() { mixin(MGPC!(NavigationPoint, 596)()); }
+			NavigationPoint nextOrdered() { mixin(MGPC!(NavigationPoint, 592)()); }
+			NavigationPoint nextNavigationPoint() { mixin(MGPC!(NavigationPoint, 588)()); }
+			int bestPathWeight() { mixin(MGPC!(int, 584)()); }
+			int visitedWeight() { mixin(MGPC!(int, 580)()); }
+			NavigationPoint.NavigationOctreeObject NavOctreeObject() { mixin(MGPC!(NavigationPoint.NavigationOctreeObject, 480)()); }
 		}
-		bool bShouldSaveForCheckpoint() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40000000) != 0; }
-		bool bShouldSaveForCheckpoint(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40000000; } return val; }
-		bool bHasCrossLevelPaths() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20000000) != 0; }
-		bool bHasCrossLevelPaths(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20000000; } return val; }
-		bool bPreferredVehiclePath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10000000) != 0; }
-		bool bPreferredVehiclePath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10000000; } return val; }
-		bool bBlockedForVehicles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8000000) != 0; }
-		bool bBlockedForVehicles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8000000; } return val; }
-		bool bBuildLongPaths() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4000000) != 0; }
-		bool bBuildLongPaths(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4000000; } return val; }
-		bool bCanWalkOnToReach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2000000) != 0; }
-		bool bCanWalkOnToReach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2000000; } return val; }
-		bool bMustTouchToReach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1000000) != 0; }
-		bool bMustTouchToReach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1000000; } return val; }
-		bool bMakeSourceOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x800000) != 0; }
-		bool bMakeSourceOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x800000; } return val; }
-		bool bVehicleDestination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x400000) != 0; }
-		bool bVehicleDestination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x400000; } return val; }
-		bool bAlreadyVisited() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x200000) != 0; }
-		bool bAlreadyVisited(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x200000; } return val; }
-		bool bMayCausePain() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x100000) != 0; }
-		bool bMayCausePain(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x100000; } return val; }
-		bool bFlyingPreferred() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x80000) != 0; }
-		bool bFlyingPreferred(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x80000; } return val; }
-		bool bBlockable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40000) != 0; }
-		bool bBlockable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40000; } return val; }
-		bool bMustBeReachable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20000) != 0; }
-		bool bMustBeReachable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20000; } return val; }
-		bool bSpecialForced() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10000) != 0; }
-		bool bSpecialForced(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10000; } return val; }
-		bool bSourceOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8000) != 0; }
-		bool bSourceOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8000; } return val; }
-		bool bDestinationOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4000) != 0; }
-		bool bDestinationOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4000; } return val; }
-		bool bPathsChanged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2000) != 0; }
-		bool bPathsChanged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2000; } return val; }
-		bool bNotBased() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1000) != 0; }
-		bool bNotBased(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1000; } return val; }
-		bool bNoAutoConnect() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x800) != 0; }
-		bool bNoAutoConnect(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x800; } return val; }
-		bool bSpecialMove() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x400) != 0; }
-		bool bSpecialMove(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x400; } return val; }
-		bool bAutoBuilt() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x200) != 0; }
-		bool bAutoBuilt(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x200; } return val; }
-		bool bForceNoStrafing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x100) != 0; }
-		bool bForceNoStrafing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x100; } return val; }
-		bool bAlwaysUseStrafing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x80) != 0; }
-		bool bAlwaysUseStrafing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x80; } return val; }
-		bool bNeverUseStrafing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x40) != 0; }
-		bool bNeverUseStrafing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x40; } return val; }
-		bool bOneWayPath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x20) != 0; }
-		bool bOneWayPath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x20; } return val; }
-		bool bBlocked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x10) != 0; }
-		bool bBlocked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x10; } return val; }
-		bool bCanReach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x8) != 0; }
-		bool bCanReach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x8; } return val; }
-		bool bHideEditorPaths() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4) != 0; }
-		bool bHideEditorPaths(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4; } return val; }
-		bool bTransientEndPoint() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
-		bool bTransientEndPoint(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
-		bool bEndPoint() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-		bool bEndPoint(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
+		bool bShouldSaveForCheckpoint() { mixin(MGBPC!(476, 0x40000000)()); }
+		bool bShouldSaveForCheckpoint(bool val) { mixin(MSBPC!(476, 0x40000000)()); }
+		bool bHasCrossLevelPaths() { mixin(MGBPC!(476, 0x20000000)()); }
+		bool bHasCrossLevelPaths(bool val) { mixin(MSBPC!(476, 0x20000000)()); }
+		bool bPreferredVehiclePath() { mixin(MGBPC!(476, 0x10000000)()); }
+		bool bPreferredVehiclePath(bool val) { mixin(MSBPC!(476, 0x10000000)()); }
+		bool bBlockedForVehicles() { mixin(MGBPC!(476, 0x8000000)()); }
+		bool bBlockedForVehicles(bool val) { mixin(MSBPC!(476, 0x8000000)()); }
+		bool bBuildLongPaths() { mixin(MGBPC!(476, 0x4000000)()); }
+		bool bBuildLongPaths(bool val) { mixin(MSBPC!(476, 0x4000000)()); }
+		bool bCanWalkOnToReach() { mixin(MGBPC!(476, 0x2000000)()); }
+		bool bCanWalkOnToReach(bool val) { mixin(MSBPC!(476, 0x2000000)()); }
+		bool bMustTouchToReach() { mixin(MGBPC!(476, 0x1000000)()); }
+		bool bMustTouchToReach(bool val) { mixin(MSBPC!(476, 0x1000000)()); }
+		bool bMakeSourceOnly() { mixin(MGBPC!(476, 0x800000)()); }
+		bool bMakeSourceOnly(bool val) { mixin(MSBPC!(476, 0x800000)()); }
+		bool bVehicleDestination() { mixin(MGBPC!(476, 0x400000)()); }
+		bool bVehicleDestination(bool val) { mixin(MSBPC!(476, 0x400000)()); }
+		bool bAlreadyVisited() { mixin(MGBPC!(476, 0x200000)()); }
+		bool bAlreadyVisited(bool val) { mixin(MSBPC!(476, 0x200000)()); }
+		bool bMayCausePain() { mixin(MGBPC!(476, 0x100000)()); }
+		bool bMayCausePain(bool val) { mixin(MSBPC!(476, 0x100000)()); }
+		bool bFlyingPreferred() { mixin(MGBPC!(476, 0x80000)()); }
+		bool bFlyingPreferred(bool val) { mixin(MSBPC!(476, 0x80000)()); }
+		bool bBlockable() { mixin(MGBPC!(476, 0x40000)()); }
+		bool bBlockable(bool val) { mixin(MSBPC!(476, 0x40000)()); }
+		bool bMustBeReachable() { mixin(MGBPC!(476, 0x20000)()); }
+		bool bMustBeReachable(bool val) { mixin(MSBPC!(476, 0x20000)()); }
+		bool bSpecialForced() { mixin(MGBPC!(476, 0x10000)()); }
+		bool bSpecialForced(bool val) { mixin(MSBPC!(476, 0x10000)()); }
+		bool bSourceOnly() { mixin(MGBPC!(476, 0x8000)()); }
+		bool bSourceOnly(bool val) { mixin(MSBPC!(476, 0x8000)()); }
+		bool bDestinationOnly() { mixin(MGBPC!(476, 0x4000)()); }
+		bool bDestinationOnly(bool val) { mixin(MSBPC!(476, 0x4000)()); }
+		bool bPathsChanged() { mixin(MGBPC!(476, 0x2000)()); }
+		bool bPathsChanged(bool val) { mixin(MSBPC!(476, 0x2000)()); }
+		bool bNotBased() { mixin(MGBPC!(476, 0x1000)()); }
+		bool bNotBased(bool val) { mixin(MSBPC!(476, 0x1000)()); }
+		bool bNoAutoConnect() { mixin(MGBPC!(476, 0x800)()); }
+		bool bNoAutoConnect(bool val) { mixin(MSBPC!(476, 0x800)()); }
+		bool bSpecialMove() { mixin(MGBPC!(476, 0x400)()); }
+		bool bSpecialMove(bool val) { mixin(MSBPC!(476, 0x400)()); }
+		bool bAutoBuilt() { mixin(MGBPC!(476, 0x200)()); }
+		bool bAutoBuilt(bool val) { mixin(MSBPC!(476, 0x200)()); }
+		bool bForceNoStrafing() { mixin(MGBPC!(476, 0x100)()); }
+		bool bForceNoStrafing(bool val) { mixin(MSBPC!(476, 0x100)()); }
+		bool bAlwaysUseStrafing() { mixin(MGBPC!(476, 0x80)()); }
+		bool bAlwaysUseStrafing(bool val) { mixin(MSBPC!(476, 0x80)()); }
+		bool bNeverUseStrafing() { mixin(MGBPC!(476, 0x40)()); }
+		bool bNeverUseStrafing(bool val) { mixin(MSBPC!(476, 0x40)()); }
+		bool bOneWayPath() { mixin(MGBPC!(476, 0x20)()); }
+		bool bOneWayPath(bool val) { mixin(MSBPC!(476, 0x20)()); }
+		bool bBlocked() { mixin(MGBPC!(476, 0x10)()); }
+		bool bBlocked(bool val) { mixin(MSBPC!(476, 0x10)()); }
+		bool bCanReach() { mixin(MGBPC!(476, 0x8)()); }
+		bool bCanReach(bool val) { mixin(MSBPC!(476, 0x8)()); }
+		bool bHideEditorPaths() { mixin(MGBPC!(476, 0x4)()); }
+		bool bHideEditorPaths(bool val) { mixin(MSBPC!(476, 0x4)()); }
+		bool bTransientEndPoint() { mixin(MGBPC!(476, 0x2)()); }
+		bool bTransientEndPoint(bool val) { mixin(MSBPC!(476, 0x2)()); }
+		bool bEndPoint() { mixin(MGBPC!(476, 0x1)()); }
+		bool bEndPoint(bool val) { mixin(MSBPC!(476, 0x1)()); }
 	}
 final:
 	bool ProceedWithMove(Pawn Other)
@@ -208,12 +212,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProceedWithMove, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight)
+	void GetBoundingCylinder(ref float CollisionRadius, ref float CollisionHeight)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = *CollisionRadius;
-		*cast(float*)&params[4] = *CollisionHeight;
+		*cast(float*)params.ptr = CollisionRadius;
+		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
 		*CollisionRadius = *cast(float*)params.ptr;
 		*CollisionHeight = *cast(float*)&params[4];
@@ -300,14 +304,14 @@ final:
 		StaticClass.ProcessEvent(Functions.GetNearestNavToPoint, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[32];
 	}
-	static bool GetAllNavInRadius(Actor ChkActor, Vector ChkPoint, float Radius, ScriptArray!(NavigationPoint)* out_NavList, bool bSkipBlocked, int inNetworkID, UObject.Cylinder MinSize)
+	static bool GetAllNavInRadius(Actor ChkActor, Vector ChkPoint, float Radius, ref ScriptArray!(NavigationPoint) out_NavList, bool bSkipBlocked, int inNetworkID, UObject.Cylinder MinSize)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(Actor*)params.ptr = ChkActor;
 		*cast(Vector*)&params[4] = ChkPoint;
 		*cast(float*)&params[16] = Radius;
-		*cast(ScriptArray!(NavigationPoint)*)&params[20] = *out_NavList;
+		*cast(ScriptArray!(NavigationPoint)*)&params[20] = out_NavList;
 		*cast(bool*)&params[32] = bSkipBlocked;
 		*cast(int*)&params[36] = inNetworkID;
 		*cast(UObject.Cylinder*)&params[40] = MinSize;
@@ -341,19 +345,19 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void CreateCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
+	void CreateCheckpointRecord(ref NavigationPoint.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
+		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
+	void ApplyCheckpointRecord(ref const NavigationPoint.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
+		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}

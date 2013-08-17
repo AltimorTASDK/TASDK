@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTEmit_HitEffect;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTEmitter;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTEmit_HitEffect : UTEmitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTEmit_HitEffect")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTEmit_HitEffect")()); }
 	private static __gshared UTEmit_HitEffect mDefaultProperties;
-	@property final static UTEmit_HitEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTEmit_HitEffect)("UTEmit_HitEffect UTGame.Default__UTEmit_HitEffect")); }
+	@property final static UTEmit_HitEffect DefaultProperties() { mixin(MGDPC!(UTEmit_HitEffect, "UTEmit_HitEffect UTGame.Default__UTEmit_HitEffect")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AttachTo() { return mAttachTo ? mAttachTo : (mAttachTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTEmit_HitEffect.AttachTo")); }
-			ScriptFunction PawnBaseDied() { return mPawnBaseDied ? mPawnBaseDied : (mPawnBaseDied = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTEmit_HitEffect.PawnBaseDied")); }
+			ScriptFunction AttachTo() { mixin(MGF!("mAttachTo", "Function UTGame.UTEmit_HitEffect.AttachTo")()); }
+			ScriptFunction PawnBaseDied() { mixin(MGF!("mPawnBaseDied", "Function UTGame.UTEmit_HitEffect.PawnBaseDied")()); }
 		}
 	}
 final:

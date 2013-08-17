@@ -1,20 +1,21 @@
 module UnrealScript.Engine.MaterialExpressionPanner;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionPanner : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionPanner")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionPanner")()); }
 	private static __gshared MaterialExpressionPanner mDefaultProperties;
-	@property final static MaterialExpressionPanner DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionPanner)("MaterialExpressionPanner Engine.Default__MaterialExpressionPanner")); }
+	@property final static MaterialExpressionPanner DefaultProperties() { mixin(MGDPC!(MaterialExpressionPanner, "MaterialExpressionPanner Engine.Default__MaterialExpressionPanner")()); }
 	@property final auto ref
 	{
-		float SpeedY() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-		float SpeedX() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-		MaterialExpression.ExpressionInput Time() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 136); }
-		MaterialExpression.ExpressionInput Coordinate() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 108); }
+		float SpeedY() { mixin(MGPC!(float, 168)()); }
+		float SpeedX() { mixin(MGPC!(float, 164)()); }
+		MaterialExpression.ExpressionInput Time() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
+		MaterialExpression.ExpressionInput Coordinate() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
 	}
 }

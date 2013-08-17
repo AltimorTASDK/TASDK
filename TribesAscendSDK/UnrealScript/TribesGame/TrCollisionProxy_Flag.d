@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCollisionProxy_Flag;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrCollisionProxy;
 import UnrealScript.Engine.Actor;
 
@@ -8,15 +9,15 @@ extern(C++) interface TrCollisionProxy_Flag : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCollisionProxy_Flag")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCollisionProxy_Flag")()); }
 	private static __gshared TrCollisionProxy_Flag mDefaultProperties;
-	@property final static TrCollisionProxy_Flag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCollisionProxy_Flag)("TrCollisionProxy_Flag TribesGame.Default__TrCollisionProxy_Flag")); }
+	@property final static TrCollisionProxy_Flag DefaultProperties() { mixin(MGDPC!(TrCollisionProxy_Flag, "TrCollisionProxy_Flag TribesGame.Default__TrCollisionProxy_Flag")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTouch;
-		public @property static final ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_Flag.Touch")); }
+		public @property static final ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrCollisionProxy_Flag.Touch")()); }
 	}
-	@property final auto ref int m_nFlagReachLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
+	@property final auto ref int m_nFlagReachLevel() { mixin(MGPC!(int, 492)()); }
 	final void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* OtherComp, Vector HitLocation, Vector HitNormal)

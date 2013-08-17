@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrHUDSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface TrHUDSettings : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUDSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrHUDSettings")()); }
 	private static __gshared TrHUDSettings mDefaultProperties;
-	@property final static TrHUDSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHUDSettings)("TrHUDSettings TribesGame.Default__TrHUDSettings")); }
+	@property final static TrHUDSettings DefaultProperties() { mixin(MGDPC!(TrHUDSettings, "TrHUDSettings TribesGame.Default__TrHUDSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentValue() { return mGetCurrentValue ? mGetCurrentValue : (mGetCurrentValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDSettings.GetCurrentValue")); }
-			ScriptFunction SaveSetting() { return mSaveSetting ? mSaveSetting : (mSaveSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDSettings.SaveSetting")); }
+			ScriptFunction GetCurrentValue() { mixin(MGF!("mGetCurrentValue", "Function TribesGame.TrHUDSettings.GetCurrentValue")()); }
+			ScriptFunction SaveSetting() { mixin(MGF!("mSaveSetting", "Function TribesGame.TrHUDSettings.SaveSetting")()); }
 		}
 	}
 	enum EHUDSettingType : ubyte
@@ -46,8 +47,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int SettingsCount() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
-		GFxObject SettingsList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 124); }
+		int SettingsCount() { mixin(MGPC!(int, 120)()); }
+		GFxObject SettingsList() { mixin(MGPC!(GFxObject, 124)()); }
 	}
 final:
 	float GetCurrentValue(TrHUDSettings.EHUDSettingType Index)

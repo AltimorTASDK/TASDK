@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ActorComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Core.Component;
@@ -9,9 +10,9 @@ extern(C++) interface ActorComponent : Component
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorComponent")()); }
 	private static __gshared ActorComponent mDefaultProperties;
-	@property final static ActorComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorComponent)("ActorComponent Engine.Default__ActorComponent")); }
+	@property final static ActorComponent DefaultProperties() { mixin(MGDPC!(ActorComponent, "ActorComponent Engine.Default__ActorComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,28 +24,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTickGroup() { return mSetTickGroup ? mSetTickGroup : (mSetTickGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.ActorComponent.SetTickGroup")); }
-			ScriptFunction SetComponentRBFixed() { return mSetComponentRBFixed ? mSetComponentRBFixed : (mSetComponentRBFixed = ScriptObject.Find!(ScriptFunction)("Function Engine.ActorComponent.SetComponentRBFixed")); }
-			ScriptFunction ForceUpdate() { return mForceUpdate ? mForceUpdate : (mForceUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.ActorComponent.ForceUpdate")); }
-			ScriptFunction DetachFromAny() { return mDetachFromAny ? mDetachFromAny : (mDetachFromAny = ScriptObject.Find!(ScriptFunction)("Function Engine.ActorComponent.DetachFromAny")); }
+			ScriptFunction SetTickGroup() { mixin(MGF!("mSetTickGroup", "Function Engine.ActorComponent.SetTickGroup")()); }
+			ScriptFunction SetComponentRBFixed() { mixin(MGF!("mSetComponentRBFixed", "Function Engine.ActorComponent.SetComponentRBFixed")()); }
+			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function Engine.ActorComponent.ForceUpdate")()); }
+			ScriptFunction DetachFromAny() { mixin(MGF!("mDetachFromAny", "Function Engine.ActorComponent.DetachFromAny")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.ETickingGroup TickGroup() { return *cast(UObject.ETickingGroup*)(cast(size_t)cast(void*)this + 84); }
-			Actor Owner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 76); }
+			UObject.ETickingGroup TickGroup() { mixin(MGPC!(UObject.ETickingGroup, 84)()); }
+			Actor Owner() { mixin(MGPC!(Actor, 76)()); }
 			// WARNING: Property 'Scene' has the same name as a defined type!
 		}
-		bool bNeedsUpdateTransform() { return (*cast(uint*)(cast(size_t)cast(void*)this + 80) & 0x8) != 0; }
-		bool bNeedsUpdateTransform(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 80) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 80) &= ~0x8; } return val; }
-		bool bNeedsReattach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 80) & 0x4) != 0; }
-		bool bNeedsReattach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 80) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 80) &= ~0x4; } return val; }
-		bool bTickInEditor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 80) & 0x2) != 0; }
-		bool bTickInEditor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 80) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 80) &= ~0x2; } return val; }
-		bool bAttached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 80) & 0x1) != 0; }
-		bool bAttached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 80) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 80) &= ~0x1; } return val; }
+		bool bNeedsUpdateTransform() { mixin(MGBPC!(80, 0x8)()); }
+		bool bNeedsUpdateTransform(bool val) { mixin(MSBPC!(80, 0x8)()); }
+		bool bNeedsReattach() { mixin(MGBPC!(80, 0x4)()); }
+		bool bNeedsReattach(bool val) { mixin(MSBPC!(80, 0x4)()); }
+		bool bTickInEditor() { mixin(MGBPC!(80, 0x2)()); }
+		bool bTickInEditor(bool val) { mixin(MSBPC!(80, 0x2)()); }
+		bool bAttached() { mixin(MGBPC!(80, 0x1)()); }
+		bool bAttached(bool val) { mixin(MSBPC!(80, 0x1)()); }
 	}
 final:
 	void SetTickGroup(UObject.ETickingGroup NewTickGroup)

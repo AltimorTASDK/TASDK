@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTBeamWeaponAttachment;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.UTGame.UTWeaponAttachment;
@@ -9,9 +10,9 @@ extern(C++) interface UTBeamWeaponAttachment : UTWeaponAttachment
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTBeamWeaponAttachment")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTBeamWeaponAttachment")()); }
 	private static __gshared UTBeamWeaponAttachment mDefaultProperties;
-	@property final static UTBeamWeaponAttachment DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTBeamWeaponAttachment)("UTBeamWeaponAttachment UTGame.Default__UTBeamWeaponAttachment")); }
+	@property final static UTBeamWeaponAttachment DefaultProperties() { mixin(MGDPC!(UTBeamWeaponAttachment, "UTBeamWeaponAttachment UTGame.Default__UTBeamWeaponAttachment")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +23,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddBeamEmitter() { return mAddBeamEmitter ? mAddBeamEmitter : (mAddBeamEmitter = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBeamWeaponAttachment.AddBeamEmitter")); }
-			ScriptFunction HideEmitter() { return mHideEmitter ? mHideEmitter : (mHideEmitter = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBeamWeaponAttachment.HideEmitter")); }
-			ScriptFunction UpdateBeam() { return mUpdateBeam ? mUpdateBeam : (mUpdateBeam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBeamWeaponAttachment.UpdateBeam")); }
+			ScriptFunction AddBeamEmitter() { mixin(MGF!("mAddBeamEmitter", "Function UTGame.UTBeamWeaponAttachment.AddBeamEmitter")()); }
+			ScriptFunction HideEmitter() { mixin(MGF!("mHideEmitter", "Function UTGame.UTBeamWeaponAttachment.HideEmitter")()); }
+			ScriptFunction UpdateBeam() { mixin(MGF!("mUpdateBeam", "Function UTGame.UTBeamWeaponAttachment.UpdateBeam")()); }
 		}
+	}
+	static struct CurrentlyAttached
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBeamWeaponAttachment.CurrentlyAttached")()); }
 	}
 	@property final auto ref
 	{
-		ScriptName EndPointParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 740); }
-		UTPawn PawnOwner() { return *cast(UTPawn*)(cast(size_t)cast(void*)this + 736); }
-		ScriptName BeamSockets() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 720); }
-		ParticleSystem BeamTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 704); }
+		ScriptName EndPointParamName() { mixin(MGPC!(ScriptName, 740)()); }
+		UTPawn PawnOwner() { mixin(MGPC!(UTPawn, 736)()); }
+		ScriptName BeamSockets() { mixin(MGPC!(ScriptName, 720)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BeamEmitter'!
+		ParticleSystem BeamTemplate() { mixin(MGPC!(ParticleSystem, 704)()); }
 	}
 final:
 	void AddBeamEmitter()

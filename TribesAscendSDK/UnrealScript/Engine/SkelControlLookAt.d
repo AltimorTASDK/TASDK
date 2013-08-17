@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SkelControlLookAt;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SkelControlBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface SkelControlLookAt : SkelControlBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlLookAt")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkelControlLookAt")()); }
 	private static __gshared SkelControlLookAt mDefaultProperties;
-	@property final static SkelControlLookAt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlLookAt)("SkelControlLookAt Engine.Default__SkelControlLookAt")); }
+	@property final static SkelControlLookAt DefaultProperties() { mixin(MGDPC!(SkelControlLookAt, "SkelControlLookAt Engine.Default__SkelControlLookAt")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,60 +23,60 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTargetLocation() { return mSetTargetLocation ? mSetTargetLocation : (mSetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.SetTargetLocation")); }
-			ScriptFunction InterpolateTargetLocation() { return mInterpolateTargetLocation ? mInterpolateTargetLocation : (mInterpolateTargetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.InterpolateTargetLocation")); }
-			ScriptFunction SetLookAtAlpha() { return mSetLookAtAlpha ? mSetLookAtAlpha : (mSetLookAtAlpha = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.SetLookAtAlpha")); }
-			ScriptFunction CanLookAtPoint() { return mCanLookAtPoint ? mCanLookAtPoint : (mCanLookAtPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.CanLookAtPoint")); }
+			ScriptFunction SetTargetLocation() { mixin(MGF!("mSetTargetLocation", "Function Engine.SkelControlLookAt.SetTargetLocation")()); }
+			ScriptFunction InterpolateTargetLocation() { mixin(MGF!("mInterpolateTargetLocation", "Function Engine.SkelControlLookAt.InterpolateTargetLocation")()); }
+			ScriptFunction SetLookAtAlpha() { mixin(MGF!("mSetLookAtAlpha", "Function Engine.SkelControlLookAt.SetLookAtAlpha")()); }
+			ScriptFunction CanLookAtPoint() { mixin(MGF!("mCanLookAtPoint", "Function Engine.SkelControlLookAt.CanLookAtPoint")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int ControlBoneIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 316); }
-			float LastCalcTime() { return *cast(float*)(cast(size_t)cast(void*)this + 312); }
-			Vector BaseBonePos() { return *cast(Vector*)(cast(size_t)cast(void*)this + 300); }
-			Vector BaseLookDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 288); }
-			Vector LimitLookDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 276); }
-			float LookAtAlphaBlendTimeToGo() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-			float LookAtAlphaTarget() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
-			float LookAtAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			ScriptName AllowRotationOtherBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 256); }
-			float DeadZoneAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float OuterMaxAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float MaxAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			Vector ActorSpaceLookAtTarget() { return *cast(Vector*)(cast(size_t)cast(void*)this + 232); }
-			Vector DesiredTargetLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 220); }
-			float TargetLocationInterpSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 216); }
-			ScriptName TargetSpaceBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 204); }
-			SkelControlBase.EBoneControlSpace AllowRotationSpace() { return *cast(SkelControlBase.EBoneControlSpace*)(cast(size_t)cast(void*)this + 203); }
-			UObject.EAxis UpAxis() { return *cast(UObject.EAxis*)(cast(size_t)cast(void*)this + 202); }
-			UObject.EAxis LookAtAxis() { return *cast(UObject.EAxis*)(cast(size_t)cast(void*)this + 201); }
-			SkelControlBase.EBoneControlSpace TargetLocationSpace() { return *cast(SkelControlBase.EBoneControlSpace*)(cast(size_t)cast(void*)this + 200); }
-			Vector TargetLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 188); }
+			int ControlBoneIndex() { mixin(MGPC!(int, 316)()); }
+			float LastCalcTime() { mixin(MGPC!(float, 312)()); }
+			Vector BaseBonePos() { mixin(MGPC!(Vector, 300)()); }
+			Vector BaseLookDir() { mixin(MGPC!(Vector, 288)()); }
+			Vector LimitLookDir() { mixin(MGPC!(Vector, 276)()); }
+			float LookAtAlphaBlendTimeToGo() { mixin(MGPC!(float, 272)()); }
+			float LookAtAlphaTarget() { mixin(MGPC!(float, 268)()); }
+			float LookAtAlpha() { mixin(MGPC!(float, 264)()); }
+			ScriptName AllowRotationOtherBoneName() { mixin(MGPC!(ScriptName, 256)()); }
+			float DeadZoneAngle() { mixin(MGPC!(float, 252)()); }
+			float OuterMaxAngle() { mixin(MGPC!(float, 248)()); }
+			float MaxAngle() { mixin(MGPC!(float, 244)()); }
+			Vector ActorSpaceLookAtTarget() { mixin(MGPC!(Vector, 232)()); }
+			Vector DesiredTargetLocation() { mixin(MGPC!(Vector, 220)()); }
+			float TargetLocationInterpSpeed() { mixin(MGPC!(float, 216)()); }
+			ScriptName TargetSpaceBoneName() { mixin(MGPC!(ScriptName, 204)()); }
+			SkelControlBase.EBoneControlSpace AllowRotationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 203)()); }
+			UObject.EAxis UpAxis() { mixin(MGPC!(UObject.EAxis, 202)()); }
+			UObject.EAxis LookAtAxis() { mixin(MGPC!(UObject.EAxis, 201)()); }
+			SkelControlBase.EBoneControlSpace TargetLocationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 200)()); }
+			Vector TargetLocation() { mixin(MGPC!(Vector, 188)()); }
 		}
-		bool bAllowRotationZ() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x400) != 0; }
-		bool bAllowRotationZ(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x400; } return val; }
-		bool bAllowRotationY() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x200) != 0; }
-		bool bAllowRotationY(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x200; } return val; }
-		bool bAllowRotationX() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x100) != 0; }
-		bool bAllowRotationX(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x100; } return val; }
-		bool bShowLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x80) != 0; }
-		bool bShowLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x80; } return val; }
-		bool bNotifyBeyondLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x40) != 0; }
-		bool bNotifyBeyondLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x40; } return val; }
-		bool bDisableBeyondLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x20) != 0; }
-		bool bDisableBeyondLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x20; } return val; }
-		bool bLimitBasedOnRefPose() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x10) != 0; }
-		bool bLimitBasedOnRefPose(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x10; } return val; }
-		bool bEnableLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x8) != 0; }
-		bool bEnableLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x8; } return val; }
-		bool bInvertUpAxis() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x4) != 0; }
-		bool bInvertUpAxis(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x4; } return val; }
-		bool bDefineUpAxis() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x2) != 0; }
-		bool bDefineUpAxis(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x2; } return val; }
-		bool bInvertLookAtAxis() { return (*cast(uint*)(cast(size_t)cast(void*)this + 212) & 0x1) != 0; }
-		bool bInvertLookAtAxis(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 212) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 212) &= ~0x1; } return val; }
+		bool bAllowRotationZ() { mixin(MGBPC!(212, 0x400)()); }
+		bool bAllowRotationZ(bool val) { mixin(MSBPC!(212, 0x400)()); }
+		bool bAllowRotationY() { mixin(MGBPC!(212, 0x200)()); }
+		bool bAllowRotationY(bool val) { mixin(MSBPC!(212, 0x200)()); }
+		bool bAllowRotationX() { mixin(MGBPC!(212, 0x100)()); }
+		bool bAllowRotationX(bool val) { mixin(MSBPC!(212, 0x100)()); }
+		bool bShowLimit() { mixin(MGBPC!(212, 0x80)()); }
+		bool bShowLimit(bool val) { mixin(MSBPC!(212, 0x80)()); }
+		bool bNotifyBeyondLimit() { mixin(MGBPC!(212, 0x40)()); }
+		bool bNotifyBeyondLimit(bool val) { mixin(MSBPC!(212, 0x40)()); }
+		bool bDisableBeyondLimit() { mixin(MGBPC!(212, 0x20)()); }
+		bool bDisableBeyondLimit(bool val) { mixin(MSBPC!(212, 0x20)()); }
+		bool bLimitBasedOnRefPose() { mixin(MGBPC!(212, 0x10)()); }
+		bool bLimitBasedOnRefPose(bool val) { mixin(MSBPC!(212, 0x10)()); }
+		bool bEnableLimit() { mixin(MGBPC!(212, 0x8)()); }
+		bool bEnableLimit(bool val) { mixin(MSBPC!(212, 0x8)()); }
+		bool bInvertUpAxis() { mixin(MGBPC!(212, 0x4)()); }
+		bool bInvertUpAxis(bool val) { mixin(MSBPC!(212, 0x4)()); }
+		bool bDefineUpAxis() { mixin(MGBPC!(212, 0x2)()); }
+		bool bDefineUpAxis(bool val) { mixin(MSBPC!(212, 0x2)()); }
+		bool bInvertLookAtAxis() { mixin(MGBPC!(212, 0x1)()); }
+		bool bInvertLookAtAxis(bool val) { mixin(MSBPC!(212, 0x1)()); }
 	}
 final:
 	void SetTargetLocation(Vector NewTargetLocation)

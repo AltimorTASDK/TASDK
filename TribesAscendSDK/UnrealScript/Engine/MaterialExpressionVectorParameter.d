@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialExpressionVectorParameter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpressionParameter;
 
@@ -8,8 +9,8 @@ extern(C++) interface MaterialExpressionVectorParameter : MaterialExpressionPara
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionVectorParameter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionVectorParameter")()); }
 	private static __gshared MaterialExpressionVectorParameter mDefaultProperties;
-	@property final static MaterialExpressionVectorParameter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionVectorParameter)("MaterialExpressionVectorParameter Engine.Default__MaterialExpressionVectorParameter")); }
-	@property final auto ref UObject.LinearColor DefaultValue() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 132); }
+	@property final static MaterialExpressionVectorParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionVectorParameter, "MaterialExpressionVectorParameter Engine.Default__MaterialExpressionVectorParameter")()); }
+	@property final auto ref UObject.LinearColor DefaultValue() { mixin(MGPC!(UObject.LinearColor, 132)()); }
 }

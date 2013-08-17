@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTIdleKickWarningMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,13 +10,13 @@ extern(C++) interface UTIdleKickWarningMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTIdleKickWarningMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTIdleKickWarningMessage")()); }
 	private static __gshared UTIdleKickWarningMessage mDefaultProperties;
-	@property final static UTIdleKickWarningMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTIdleKickWarningMessage)("UTIdleKickWarningMessage UTGame.Default__UTIdleKickWarningMessage")); }
+	@property final static UTIdleKickWarningMessage DefaultProperties() { mixin(MGDPC!(UTIdleKickWarningMessage, "UTIdleKickWarningMessage UTGame.Default__UTIdleKickWarningMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTIdleKickWarningMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTIdleKickWarningMessage.GetString")()); }
 	}
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

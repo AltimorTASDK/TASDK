@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTPickupFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Pawn;
@@ -16,9 +17,9 @@ extern(C++) interface UTPickupFactory : UDKPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPickupFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPickupFactory")()); }
 	private static __gshared UTPickupFactory mDefaultProperties;
-	@property final static UTPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPickupFactory)("UTPickupFactory UTGame.Default__UTPickupFactory")); }
+	@property final static UTPickupFactory DefaultProperties() { mixin(MGDPC!(UTPickupFactory, "UTPickupFactory UTGame.Default__UTPickupFactory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -43,38 +44,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.PostBeginPlay")); }
-			ScriptFunction SetResOut() { return mSetResOut ? mSetResOut : (mSetResOut = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.SetResOut")); }
-			ScriptFunction DisablePickup() { return mDisablePickup ? mDisablePickup : (mDisablePickup = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.DisablePickup")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.ShutDown")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.ReplicatedEvent")); }
-			ScriptFunction ShouldCamp() { return mShouldCamp ? mShouldCamp : (mShouldCamp = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.ShouldCamp")); }
-			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.UpdateHUD")); }
-			ScriptFunction RespawnEffect() { return mRespawnEffect ? mRespawnEffect : (mRespawnEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.RespawnEffect")); }
-			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.StopsProjectile")); }
-			ScriptFunction StartPulse() { return mStartPulse ? mStartPulse : (mStartPulse = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.StartPulse")); }
-			ScriptFunction SetPickupMesh() { return mSetPickupMesh ? mSetPickupMesh : (mSetPickupMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.SetPickupMesh")); }
-			ScriptFunction GetPickupStatName() { return mGetPickupStatName ? mGetPickupStatName : (mGetPickupStatName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.GetPickupStatName")); }
-			ScriptFunction InitPickupMeshEffects() { return mInitPickupMeshEffects ? mInitPickupMeshEffects : (mInitPickupMeshEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.InitPickupMeshEffects")); }
-			ScriptFunction SetPickupVisible() { return mSetPickupVisible ? mSetPickupVisible : (mSetPickupVisible = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.SetPickupVisible")); }
-			ScriptFunction SetPickupHidden() { return mSetPickupHidden ? mSetPickupHidden : (mSetPickupHidden = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.SetPickupHidden")); }
-			ScriptFunction SetInitialState() { return mSetInitialState ? mSetInitialState : (mSetInitialState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.SetInitialState")); }
-			ScriptFunction PickedUpBy() { return mPickedUpBy ? mPickedUpBy : (mPickedUpBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPickupFactory.PickedUpBy")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTPickupFactory.PostBeginPlay")()); }
+			ScriptFunction SetResOut() { mixin(MGF!("mSetResOut", "Function UTGame.UTPickupFactory.SetResOut")()); }
+			ScriptFunction DisablePickup() { mixin(MGF!("mDisablePickup", "Function UTGame.UTPickupFactory.DisablePickup")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function UTGame.UTPickupFactory.ShutDown")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTPickupFactory.ReplicatedEvent")()); }
+			ScriptFunction ShouldCamp() { mixin(MGF!("mShouldCamp", "Function UTGame.UTPickupFactory.ShouldCamp")()); }
+			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function UTGame.UTPickupFactory.UpdateHUD")()); }
+			ScriptFunction RespawnEffect() { mixin(MGF!("mRespawnEffect", "Function UTGame.UTPickupFactory.RespawnEffect")()); }
+			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function UTGame.UTPickupFactory.StopsProjectile")()); }
+			ScriptFunction StartPulse() { mixin(MGF!("mStartPulse", "Function UTGame.UTPickupFactory.StartPulse")()); }
+			ScriptFunction SetPickupMesh() { mixin(MGF!("mSetPickupMesh", "Function UTGame.UTPickupFactory.SetPickupMesh")()); }
+			ScriptFunction GetPickupStatName() { mixin(MGF!("mGetPickupStatName", "Function UTGame.UTPickupFactory.GetPickupStatName")()); }
+			ScriptFunction InitPickupMeshEffects() { mixin(MGF!("mInitPickupMeshEffects", "Function UTGame.UTPickupFactory.InitPickupMeshEffects")()); }
+			ScriptFunction SetPickupVisible() { mixin(MGF!("mSetPickupVisible", "Function UTGame.UTPickupFactory.SetPickupVisible")()); }
+			ScriptFunction SetPickupHidden() { mixin(MGF!("mSetPickupHidden", "Function UTGame.UTPickupFactory.SetPickupHidden")()); }
+			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function UTGame.UTPickupFactory.SetInitialState")()); }
+			ScriptFunction PickedUpBy() { mixin(MGF!("mPickedUpBy", "Function UTGame.UTPickupFactory.PickedUpBy")()); }
 		}
+	}
+	static struct Pickup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPickupFactory.Pickup")()); }
+	}
+	static struct Sleeping
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPickupFactory.Sleeping")()); }
+	}
+	static struct Disabled
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPickupFactory.Disabled")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SoundNodeWave) LocationSpeech() { return *cast(ScriptArray!(SoundNodeWave)*)(cast(size_t)cast(void*)this + 924); }
-			ForceFeedbackWaveform PickUpWaveForm() { return *cast(ForceFeedbackWaveform*)(cast(size_t)cast(void*)this + 940); }
-			float LastSeekNotificationTime() { return *cast(float*)(cast(size_t)cast(void*)this + 936); }
-			ScriptName PickupStatName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 912); }
-			SoundCue RespawnSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 900); }
-			Controller TeamOwner() { return *cast(Controller*)(cast(size_t)cast(void*)this + 884); }
+			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 924)()); }
+			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 940)()); }
+			float LastSeekNotificationTime() { mixin(MGPC!(float, 936)()); }
+			ScriptName PickupStatName() { mixin(MGPC!(ScriptName, 912)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupReadySound'!
+			SoundCue RespawnSound() { mixin(MGPC!(SoundCue, 900)()); }
+			Controller TeamOwner() { mixin(MGPC!(Controller, 884)()); }
 		}
-		bool bHasLocationSpeech() { return (*cast(uint*)(cast(size_t)cast(void*)this + 920) & 0x1) != 0; }
-		bool bHasLocationSpeech(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 920) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 920) &= ~0x1; } return val; }
+		bool bHasLocationSpeech() { mixin(MGBPC!(920, 0x1)()); }
+		bool bHasLocationSpeech(bool val) { mixin(MSBPC!(920, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

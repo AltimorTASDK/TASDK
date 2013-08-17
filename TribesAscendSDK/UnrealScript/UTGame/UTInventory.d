@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTInventory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Inventory;
 import UnrealScript.UTGame.UTGameReplicationInfo;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTInventory : Inventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTInventory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTInventory")()); }
 	private static __gshared UTInventory mDefaultProperties;
-	@property final static UTInventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTInventory)("UTInventory UTGame.Default__UTInventory")); }
+	@property final static UTInventory DefaultProperties() { mixin(MGDPC!(UTInventory, "UTInventory UTGame.Default__UTInventory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddWeaponOverlay() { return mAddWeaponOverlay ? mAddWeaponOverlay : (mAddWeaponOverlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventory.AddWeaponOverlay")); }
-			ScriptFunction ClientLostItem() { return mClientLostItem ? mClientLostItem : (mClientLostItem = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventory.ClientLostItem")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventory.Destroyed")); }
-			ScriptFunction DropFrom() { return mDropFrom ? mDropFrom : (mDropFrom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventory.DropFrom")); }
-			ScriptFunction OwnerEvent() { return mOwnerEvent ? mOwnerEvent : (mOwnerEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTInventory.OwnerEvent")); }
+			ScriptFunction AddWeaponOverlay() { mixin(MGF!("mAddWeaponOverlay", "Function UTGame.UTInventory.AddWeaponOverlay")()); }
+			ScriptFunction ClientLostItem() { mixin(MGF!("mClientLostItem", "Function UTGame.UTInventory.ClientLostItem")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTInventory.Destroyed")()); }
+			ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function UTGame.UTInventory.DropFrom")()); }
+			ScriptFunction OwnerEvent() { mixin(MGF!("mOwnerEvent", "Function UTGame.UTInventory.OwnerEvent")()); }
 		}
 	}
 	@property final
 	{
-		bool bReceiveOwnerEvents() { return (*cast(uint*)(cast(size_t)cast(void*)this + 552) & 0x1) != 0; }
-		bool bReceiveOwnerEvents(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 552) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 552) &= ~0x1; } return val; }
+		bool bReceiveOwnerEvents() { mixin(MGBPC!(552, 0x1)()); }
+		bool bReceiveOwnerEvents(bool val) { mixin(MSBPC!(552, 0x1)()); }
 	}
 final:
 	static void AddWeaponOverlay(UTGameReplicationInfo GRI)

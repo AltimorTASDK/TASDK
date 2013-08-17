@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataStore_OnlineGameSearch;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineGameSearch;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface UIDataStore_OnlineGameSearch : UIDataStore_Remote
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlineGameSearch")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_OnlineGameSearch")()); }
 	private static __gshared UIDataStore_OnlineGameSearch mDefaultProperties;
-	@property final static UIDataStore_OnlineGameSearch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_OnlineGameSearch)("UIDataStore_OnlineGameSearch Engine.Default__UIDataStore_OnlineGameSearch")); }
+	@property final static UIDataStore_OnlineGameSearch DefaultProperties() { mixin(MGDPC!(UIDataStore_OnlineGameSearch, "UIDataStore_OnlineGameSearch Engine.Default__UIDataStore_OnlineGameSearch")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,22 +38,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.Init")); }
-			ScriptFunction InvalidateCurrentSearchResults() { return mInvalidateCurrentSearchResults ? mInvalidateCurrentSearchResults : (mInvalidateCurrentSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.InvalidateCurrentSearchResults")); }
-			ScriptFunction SubmitGameSearch() { return mSubmitGameSearch ? mSubmitGameSearch : (mSubmitGameSearch = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.SubmitGameSearch")); }
-			ScriptFunction OverrideQuerySubmission() { return mOverrideQuerySubmission ? mOverrideQuerySubmission : (mOverrideQuerySubmission = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.OverrideQuerySubmission")); }
-			ScriptFunction OnSearchComplete() { return mOnSearchComplete ? mOnSearchComplete : (mOnSearchComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.OnSearchComplete")); }
-			ScriptFunction GetSearchResultFromIndex() { return mGetSearchResultFromIndex ? mGetSearchResultFromIndex : (mGetSearchResultFromIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.GetSearchResultFromIndex")); }
-			ScriptFunction ShowHostGamercard() { return mShowHostGamercard ? mShowHostGamercard : (mShowHostGamercard = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.ShowHostGamercard")); }
-			ScriptFunction BuildSearchResults() { return mBuildSearchResults ? mBuildSearchResults : (mBuildSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.BuildSearchResults")); }
-			ScriptFunction GetCurrentGameSearch() { return mGetCurrentGameSearch ? mGetCurrentGameSearch : (mGetCurrentGameSearch = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.GetCurrentGameSearch")); }
-			ScriptFunction GetActiveGameSearch() { return mGetActiveGameSearch ? mGetActiveGameSearch : (mGetActiveGameSearch = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.GetActiveGameSearch")); }
-			ScriptFunction FindSearchConfigurationIndex() { return mFindSearchConfigurationIndex ? mFindSearchConfigurationIndex : (mFindSearchConfigurationIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.FindSearchConfigurationIndex")); }
-			ScriptFunction SetCurrentByIndex() { return mSetCurrentByIndex ? mSetCurrentByIndex : (mSetCurrentByIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.SetCurrentByIndex")); }
-			ScriptFunction SetCurrentByName() { return mSetCurrentByName ? mSetCurrentByName : (mSetCurrentByName = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.SetCurrentByName")); }
-			ScriptFunction MoveToNext() { return mMoveToNext ? mMoveToNext : (mMoveToNext = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.MoveToNext")); }
-			ScriptFunction MoveToPrevious() { return mMoveToPrevious ? mMoveToPrevious : (mMoveToPrevious = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.MoveToPrevious")); }
-			ScriptFunction ClearAllSearchResults() { return mClearAllSearchResults ? mClearAllSearchResults : (mClearAllSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.ClearAllSearchResults")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.UIDataStore_OnlineGameSearch.Init")()); }
+			ScriptFunction InvalidateCurrentSearchResults() { mixin(MGF!("mInvalidateCurrentSearchResults", "Function Engine.UIDataStore_OnlineGameSearch.InvalidateCurrentSearchResults")()); }
+			ScriptFunction SubmitGameSearch() { mixin(MGF!("mSubmitGameSearch", "Function Engine.UIDataStore_OnlineGameSearch.SubmitGameSearch")()); }
+			ScriptFunction OverrideQuerySubmission() { mixin(MGF!("mOverrideQuerySubmission", "Function Engine.UIDataStore_OnlineGameSearch.OverrideQuerySubmission")()); }
+			ScriptFunction OnSearchComplete() { mixin(MGF!("mOnSearchComplete", "Function Engine.UIDataStore_OnlineGameSearch.OnSearchComplete")()); }
+			ScriptFunction GetSearchResultFromIndex() { mixin(MGF!("mGetSearchResultFromIndex", "Function Engine.UIDataStore_OnlineGameSearch.GetSearchResultFromIndex")()); }
+			ScriptFunction ShowHostGamercard() { mixin(MGF!("mShowHostGamercard", "Function Engine.UIDataStore_OnlineGameSearch.ShowHostGamercard")()); }
+			ScriptFunction BuildSearchResults() { mixin(MGF!("mBuildSearchResults", "Function Engine.UIDataStore_OnlineGameSearch.BuildSearchResults")()); }
+			ScriptFunction GetCurrentGameSearch() { mixin(MGF!("mGetCurrentGameSearch", "Function Engine.UIDataStore_OnlineGameSearch.GetCurrentGameSearch")()); }
+			ScriptFunction GetActiveGameSearch() { mixin(MGF!("mGetActiveGameSearch", "Function Engine.UIDataStore_OnlineGameSearch.GetActiveGameSearch")()); }
+			ScriptFunction FindSearchConfigurationIndex() { mixin(MGF!("mFindSearchConfigurationIndex", "Function Engine.UIDataStore_OnlineGameSearch.FindSearchConfigurationIndex")()); }
+			ScriptFunction SetCurrentByIndex() { mixin(MGF!("mSetCurrentByIndex", "Function Engine.UIDataStore_OnlineGameSearch.SetCurrentByIndex")()); }
+			ScriptFunction SetCurrentByName() { mixin(MGF!("mSetCurrentByName", "Function Engine.UIDataStore_OnlineGameSearch.SetCurrentByName")()); }
+			ScriptFunction MoveToNext() { mixin(MGF!("mMoveToNext", "Function Engine.UIDataStore_OnlineGameSearch.MoveToNext")()); }
+			ScriptFunction MoveToPrevious() { mixin(MGF!("mMoveToPrevious", "Function Engine.UIDataStore_OnlineGameSearch.MoveToPrevious")()); }
+			ScriptFunction ClearAllSearchResults() { mixin(MGF!("mClearAllSearchResults", "Function Engine.UIDataStore_OnlineGameSearch.ClearAllSearchResults")()); }
 		}
 	}
 	struct GameSearchCfg
@@ -60,27 +61,28 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_OnlineGameSearch.GameSearchCfg")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineGameSearch.GameSearchCfg")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UIDataProvider_Settings) SearchResults() { return *cast(ScriptArray!(UIDataProvider_Settings)*)(cast(size_t)&this + 16); }
-			ScriptName SearchName() { return *cast(ScriptName*)(cast(size_t)&this + 32); }
-			OnlineGameSearch Search() { return *cast(OnlineGameSearch*)(cast(size_t)&this + 28); }
-			UIDataProvider_Settings DesiredSettingsProvider() { return *cast(UIDataProvider_Settings*)(cast(size_t)&this + 12); }
-			ScriptClass SearchResultsProviderClass() { return *cast(ScriptClass*)(cast(size_t)&this + 8); }
-			ScriptClass DefaultGameSettingsClass() { return *cast(ScriptClass*)(cast(size_t)&this + 4); }
-			ScriptClass GameSearchClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
+			ScriptArray!(UIDataProvider_Settings) SearchResults() { mixin(MGPS!(ScriptArray!(UIDataProvider_Settings), 16)()); }
+			ScriptName SearchName() { mixin(MGPS!(ScriptName, 32)()); }
+			OnlineGameSearch Search() { mixin(MGPS!(OnlineGameSearch, 28)()); }
+			UIDataProvider_Settings DesiredSettingsProvider() { mixin(MGPS!(UIDataProvider_Settings, 12)()); }
+			ScriptClass SearchResultsProviderClass() { mixin(MGPS!(ScriptClass, 8)()); }
+			ScriptClass DefaultGameSettingsClass() { mixin(MGPS!(ScriptClass, 4)()); }
+			ScriptClass GameSearchClass() { mixin(MGPS!(ScriptClass, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg) GameSearchCfgList() { return *cast(ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg)*)(cast(size_t)cast(void*)this + 148); }
-		int ActiveSearchIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 164); }
-		int SelectedIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 160); }
-		OnlineSubsystem OnlineSub() { return *cast(OnlineSubsystem*)(cast(size_t)cast(void*)this + 136); }
-		ScriptName SearchResultsName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 128); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 124); }
-		UObject.Pointer VfTable_IUIListElementProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
+		ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg) GameSearchCfgList() { mixin(MGPC!(ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg), 148)()); }
+		int ActiveSearchIndex() { mixin(MGPC!(int, 164)()); }
+		int SelectedIndex() { mixin(MGPC!(int, 160)()); }
+		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
+		OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 136)()); }
+		ScriptName SearchResultsName() { mixin(MGPC!(ScriptName, 128)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
 	}
 final:
 	void Init()
@@ -119,12 +121,12 @@ final:
 		*cast(bool*)params.ptr = bWasSuccessful;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSearchComplete, params.ptr, cast(void*)0);
 	}
-	bool GetSearchResultFromIndex(int ListIndex, OnlineGameSearch.OnlineGameSearchResult* Result)
+	bool GetSearchResultFromIndex(int ListIndex, ref OnlineGameSearch.OnlineGameSearchResult Result)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ListIndex;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4] = *Result;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4] = Result;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSearchResultFromIndex, params.ptr, cast(void*)0);
 		*Result = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4];
 		return *cast(bool*)&params[12];

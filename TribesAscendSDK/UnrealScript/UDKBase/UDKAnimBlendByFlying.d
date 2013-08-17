@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKAnimBlendByFlying;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeAimOffset;
 import UnrealScript.UDKBase.UDKAnimBlendBase;
 import UnrealScript.UDKBase.UDKPawn;
@@ -9,13 +10,13 @@ extern(C++) interface UDKAnimBlendByFlying : UDKAnimBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByFlying")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByFlying")()); }
 	private static __gshared UDKAnimBlendByFlying mDefaultProperties;
-	@property final static UDKAnimBlendByFlying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByFlying)("UDKAnimBlendByFlying UDKBase.Default__UDKAnimBlendByFlying")); }
+	@property final static UDKAnimBlendByFlying DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByFlying, "UDKAnimBlendByFlying UDKBase.Default__UDKAnimBlendByFlying")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mUpdateFlyingState;
-		public @property static final ScriptFunction UpdateFlyingState() { return mUpdateFlyingState ? mUpdateFlyingState : (mUpdateFlyingState = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendByFlying.UpdateFlyingState")); }
+		public @property static final ScriptFunction UpdateFlyingState() { mixin(MGF!("mUpdateFlyingState", "Function UDKBase.UDKAnimBlendByFlying.UpdateFlyingState")()); }
 	}
 	enum EFlyingState : ubyte
 	{
@@ -29,17 +30,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName EndingAnimName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 324); }
-			ScriptName StartingAnimName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 312); }
-			AnimNodeAimOffset FlyingDir() { return *cast(AnimNodeAimOffset*)(cast(size_t)cast(void*)this + 308); }
-			UDKAnimBlendBase FlyingMode() { return *cast(UDKAnimBlendBase*)(cast(size_t)cast(void*)this + 304); }
+			ScriptName EndingAnimName() { mixin(MGPC!(ScriptName, 324)()); }
+			ScriptName StartingAnimName() { mixin(MGPC!(ScriptName, 312)()); }
+			AnimNodeAimOffset FlyingDir() { mixin(MGPC!(AnimNodeAimOffset, 308)()); }
+			UDKAnimBlendBase FlyingMode() { mixin(MGPC!(UDKAnimBlendBase, 304)()); }
 			// WARNING: Property 'Pawn' has the same name as a defined type!
-			UDKAnimBlendByFlying.EFlyingState FlyingState() { return *cast(UDKAnimBlendByFlying.EFlyingState*)(cast(size_t)cast(void*)this + 296); }
+			UDKAnimBlendByFlying.EFlyingState FlyingState() { mixin(MGPC!(UDKAnimBlendByFlying.EFlyingState, 296)()); }
 		}
-		bool bHasEndingAnim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 320) & 0x2) != 0; }
-		bool bHasEndingAnim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 320) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 320) &= ~0x2; } return val; }
-		bool bHasStartingAnim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 320) & 0x1) != 0; }
-		bool bHasStartingAnim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 320) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 320) &= ~0x1; } return val; }
+		bool bHasEndingAnim() { mixin(MGBPC!(320, 0x2)()); }
+		bool bHasEndingAnim(bool val) { mixin(MSBPC!(320, 0x2)()); }
+		bool bHasStartingAnim() { mixin(MGBPC!(320, 0x1)()); }
+		bool bHasStartingAnim(bool val) { mixin(MSBPC!(320, 0x1)()); }
 	}
 	final void UpdateFlyingState()
 	{

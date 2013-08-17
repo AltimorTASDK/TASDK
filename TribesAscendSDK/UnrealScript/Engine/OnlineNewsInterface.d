@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineNewsInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineNewsInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineNewsInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineNewsInterface")()); }
 	private static __gshared OnlineNewsInterface mDefaultProperties;
-	@property final static OnlineNewsInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineNewsInterface)("OnlineNewsInterface Engine.Default__OnlineNewsInterface")); }
+	@property final static OnlineNewsInterface DefaultProperties() { mixin(MGDPC!(OnlineNewsInterface, "OnlineNewsInterface Engine.Default__OnlineNewsInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,13 +24,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReadNews() { return mReadNews ? mReadNews : (mReadNews = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineNewsInterface.ReadNews")); }
-			ScriptFunction OnReadNewsCompleted() { return mOnReadNewsCompleted ? mOnReadNewsCompleted : (mOnReadNewsCompleted = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineNewsInterface.OnReadNewsCompleted")); }
-			ScriptFunction AddReadNewsCompletedDelegate() { return mAddReadNewsCompletedDelegate ? mAddReadNewsCompletedDelegate : (mAddReadNewsCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineNewsInterface.AddReadNewsCompletedDelegate")); }
-			ScriptFunction ClearReadNewsCompletedDelegate() { return mClearReadNewsCompletedDelegate ? mClearReadNewsCompletedDelegate : (mClearReadNewsCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineNewsInterface.ClearReadNewsCompletedDelegate")); }
-			ScriptFunction GetNews() { return mGetNews ? mGetNews : (mGetNews = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineNewsInterface.GetNews")); }
+			ScriptFunction ReadNews() { mixin(MGF!("mReadNews", "Function Engine.OnlineNewsInterface.ReadNews")()); }
+			ScriptFunction OnReadNewsCompleted() { mixin(MGF!("mOnReadNewsCompleted", "Function Engine.OnlineNewsInterface.OnReadNewsCompleted")()); }
+			ScriptFunction AddReadNewsCompletedDelegate() { mixin(MGF!("mAddReadNewsCompletedDelegate", "Function Engine.OnlineNewsInterface.AddReadNewsCompletedDelegate")()); }
+			ScriptFunction ClearReadNewsCompletedDelegate() { mixin(MGF!("mClearReadNewsCompletedDelegate", "Function Engine.OnlineNewsInterface.ClearReadNewsCompletedDelegate")()); }
+			ScriptFunction GetNews() { mixin(MGF!("mGetNews", "Function Engine.OnlineNewsInterface.GetNews")()); }
 		}
 	}
+	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadNewsCompleted__Delegate'!
 final:
 	bool ReadNews(ubyte LocalUserNum, OnlineSubsystem.EOnlineNewsType NewsType)
 	{

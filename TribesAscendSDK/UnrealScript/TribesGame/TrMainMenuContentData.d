@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrMainMenuContentData;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrMainMenuMeshInfo;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface TrMainMenuContentData : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMainMenuContentData")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMainMenuContentData")()); }
 	private static __gshared TrMainMenuContentData mDefaultProperties;
-	@property final static TrMainMenuContentData DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMainMenuContentData)("TrMainMenuContentData TribesGame.Default__TrMainMenuContentData")); }
+	@property final static TrMainMenuContentData DefaultProperties() { mixin(MGDPC!(TrMainMenuContentData, "TrMainMenuContentData TribesGame.Default__TrMainMenuContentData")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SendPaperDollANewMesh() { return mSendPaperDollANewMesh ? mSendPaperDollANewMesh : (mSendPaperDollANewMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMainMenuContentData.SendPaperDollANewMesh")); }
-			ScriptFunction PreloadTextures() { return mPreloadTextures ? mPreloadTextures : (mPreloadTextures = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMainMenuContentData.PreloadTextures")); }
+			ScriptFunction SendPaperDollANewMesh() { mixin(MGF!("mSendPaperDollANewMesh", "Function TribesGame.TrMainMenuContentData.SendPaperDollANewMesh")()); }
+			ScriptFunction PreloadTextures() { mixin(MGF!("mPreloadTextures", "Function TribesGame.TrMainMenuContentData.PreloadTextures")()); }
 		}
 	}
 	struct MeshData
@@ -31,14 +32,14 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrMainMenuContentData.MeshData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrMainMenuContentData.MeshData")()); }
 		@property final auto ref
 		{
-			TrMainMenuMeshInfo MainMeshInfo() { return *cast(TrMainMenuMeshInfo*)(cast(size_t)&this + 4); }
-			TrObject.EContentDataType ContentDataType() { return *cast(TrObject.EContentDataType*)(cast(size_t)&this + 0); }
+			TrMainMenuMeshInfo MainMeshInfo() { mixin(MGPS!(TrMainMenuMeshInfo, 4)()); }
+			TrObject.EContentDataType ContentDataType() { mixin(MGPS!(TrObject.EContentDataType, 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(TrMainMenuContentData.MeshData) m_MeshData() { return *cast(ScriptArray!(TrMainMenuContentData.MeshData)*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref ScriptArray!(TrMainMenuContentData.MeshData) m_MeshData() { mixin(MGPC!(ScriptArray!(TrMainMenuContentData.MeshData), 60)()); }
 final:
 	void SendPaperDollANewMesh(TrPaperDollMainMenu MainMenuPaperDoll, TrObject.EContentDataType ContentDataType)
 	{

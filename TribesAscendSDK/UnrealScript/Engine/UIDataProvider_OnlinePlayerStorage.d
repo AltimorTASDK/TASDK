@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataProvider_OnlinePlayerStorage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Engine.UIDataProvider_OnlinePlayerStorageArray;
 import UnrealScript.Engine.UIDataProvider_OnlinePlayerDataBase;
@@ -11,9 +12,9 @@ extern(C++) interface UIDataProvider_OnlinePlayerStorage : UIDataProvider_Online
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlinePlayerStorage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_OnlinePlayerStorage")()); }
 	private static __gshared UIDataProvider_OnlinePlayerStorage mDefaultProperties;
-	@property final static UIDataProvider_OnlinePlayerStorage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlinePlayerStorage)("UIDataProvider_OnlinePlayerStorage Engine.Default__UIDataProvider_OnlinePlayerStorage")); }
+	@property final static UIDataProvider_OnlinePlayerStorage DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlinePlayerStorage, "UIDataProvider_OnlinePlayerStorage Engine.Default__UIDataProvider_OnlinePlayerStorage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,20 +36,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReadData() { return mReadData ? mReadData : (mReadData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.ReadData")); }
-			ScriptFunction WriteData() { return mWriteData ? mWriteData : (mWriteData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.WriteData")); }
-			ScriptFunction GetData() { return mGetData ? mGetData : (mGetData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.GetData")); }
-			ScriptFunction AddReadCompleteDelegate() { return mAddReadCompleteDelegate ? mAddReadCompleteDelegate : (mAddReadCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.AddReadCompleteDelegate")); }
-			ScriptFunction ClearReadCompleteDelegate() { return mClearReadCompleteDelegate ? mClearReadCompleteDelegate : (mClearReadCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.ClearReadCompleteDelegate")); }
-			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.OnRegister")); }
-			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.OnUnregister")); }
-			ScriptFunction OnReadStorageComplete() { return mOnReadStorageComplete ? mOnReadStorageComplete : (mOnReadStorageComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.OnReadStorageComplete")); }
-			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.OnLoginChange")); }
-			ScriptFunction RefreshStorageData() { return mRefreshStorageData ? mRefreshStorageData : (mRefreshStorageData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.RefreshStorageData")); }
-			ScriptFunction OnDeviceSelectionComplete() { return mOnDeviceSelectionComplete ? mOnDeviceSelectionComplete : (mOnDeviceSelectionComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.OnDeviceSelectionComplete")); }
-			ScriptFunction ArrayProviderPropertyChanged() { return mArrayProviderPropertyChanged ? mArrayProviderPropertyChanged : (mArrayProviderPropertyChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.ArrayProviderPropertyChanged")); }
-			ScriptFunction OnSettingValueUpdated() { return mOnSettingValueUpdated ? mOnSettingValueUpdated : (mOnSettingValueUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.OnSettingValueUpdated")); }
-			ScriptFunction OnStorageDeviceChange() { return mOnStorageDeviceChange ? mOnStorageDeviceChange : (mOnStorageDeviceChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePlayerStorage.OnStorageDeviceChange")); }
+			ScriptFunction ReadData() { mixin(MGF!("mReadData", "Function Engine.UIDataProvider_OnlinePlayerStorage.ReadData")()); }
+			ScriptFunction WriteData() { mixin(MGF!("mWriteData", "Function Engine.UIDataProvider_OnlinePlayerStorage.WriteData")()); }
+			ScriptFunction GetData() { mixin(MGF!("mGetData", "Function Engine.UIDataProvider_OnlinePlayerStorage.GetData")()); }
+			ScriptFunction AddReadCompleteDelegate() { mixin(MGF!("mAddReadCompleteDelegate", "Function Engine.UIDataProvider_OnlinePlayerStorage.AddReadCompleteDelegate")()); }
+			ScriptFunction ClearReadCompleteDelegate() { mixin(MGF!("mClearReadCompleteDelegate", "Function Engine.UIDataProvider_OnlinePlayerStorage.ClearReadCompleteDelegate")()); }
+			ScriptFunction OnRegister() { mixin(MGF!("mOnRegister", "Function Engine.UIDataProvider_OnlinePlayerStorage.OnRegister")()); }
+			ScriptFunction OnUnregister() { mixin(MGF!("mOnUnregister", "Function Engine.UIDataProvider_OnlinePlayerStorage.OnUnregister")()); }
+			ScriptFunction OnReadStorageComplete() { mixin(MGF!("mOnReadStorageComplete", "Function Engine.UIDataProvider_OnlinePlayerStorage.OnReadStorageComplete")()); }
+			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.UIDataProvider_OnlinePlayerStorage.OnLoginChange")()); }
+			ScriptFunction RefreshStorageData() { mixin(MGF!("mRefreshStorageData", "Function Engine.UIDataProvider_OnlinePlayerStorage.RefreshStorageData")()); }
+			ScriptFunction OnDeviceSelectionComplete() { mixin(MGF!("mOnDeviceSelectionComplete", "Function Engine.UIDataProvider_OnlinePlayerStorage.OnDeviceSelectionComplete")()); }
+			ScriptFunction ArrayProviderPropertyChanged() { mixin(MGF!("mArrayProviderPropertyChanged", "Function Engine.UIDataProvider_OnlinePlayerStorage.ArrayProviderPropertyChanged")()); }
+			ScriptFunction OnSettingValueUpdated() { mixin(MGF!("mOnSettingValueUpdated", "Function Engine.UIDataProvider_OnlinePlayerStorage.OnSettingValueUpdated")()); }
+			ScriptFunction OnStorageDeviceChange() { mixin(MGF!("mOnStorageDeviceChange", "Function Engine.UIDataProvider_OnlinePlayerStorage.OnStorageDeviceChange")()); }
 		}
 	}
 	struct PlayerStorageArrayProvider
@@ -56,25 +57,25 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider")()); }
 		@property final auto ref
 		{
-			UIDataProvider_OnlinePlayerStorageArray Provider() { return *cast(UIDataProvider_OnlinePlayerStorageArray*)(cast(size_t)&this + 12); }
-			ScriptName PlayerStorageName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			int PlayerStorageId() { return *cast(int*)(cast(size_t)&this + 0); }
+			UIDataProvider_OnlinePlayerStorageArray Provider() { mixin(MGPS!(UIDataProvider_OnlinePlayerStorageArray, 12)()); }
+			ScriptName PlayerStorageName() { mixin(MGPS!(ScriptName, 4)()); }
+			int PlayerStorageId() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider) PlayerStorageArrayProviders() { return *cast(ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider)*)(cast(size_t)cast(void*)this + 108); }
-			int DeviceStorageSizeNeeded() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
-			ScriptName ProviderName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 96); }
-			OnlinePlayerStorage Profile() { return *cast(OnlinePlayerStorage*)(cast(size_t)cast(void*)this + 92); }
+			ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider) PlayerStorageArrayProviders() { mixin(MGPC!(ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider), 108)()); }
+			int DeviceStorageSizeNeeded() { mixin(MGPC!(int, 120)()); }
+			ScriptName ProviderName() { mixin(MGPC!(ScriptName, 96)()); }
+			OnlinePlayerStorage Profile() { mixin(MGPC!(OnlinePlayerStorage, 92)()); }
 		}
-		bool bWasErrorLastRead() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x1) != 0; }
-		bool bWasErrorLastRead(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x1; } return val; }
+		bool bWasErrorLastRead() { mixin(MGBPC!(104, 0x1)()); }
+		bool bWasErrorLastRead(bool val) { mixin(MSBPC!(104, 0x1)()); }
 	}
 final:
 	bool ReadData(

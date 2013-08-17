@@ -1,24 +1,25 @@
 module UnrealScript.Engine.SeqCond_CompareBool;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceCondition;
 
 extern(C++) interface SeqCond_CompareBool : SequenceCondition
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_CompareBool")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqCond_CompareBool")()); }
 	private static __gshared SeqCond_CompareBool mDefaultProperties;
-	@property final static SeqCond_CompareBool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_CompareBool)("SeqCond_CompareBool Engine.Default__SeqCond_CompareBool")); }
+	@property final static SeqCond_CompareBool DefaultProperties() { mixin(MGDPC!(SeqCond_CompareBool, "SeqCond_CompareBool Engine.Default__SeqCond_CompareBool")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqCond_CompareBool.GetObjClassVersion")); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqCond_CompareBool.GetObjClassVersion")()); }
 	}
 	@property final
 	{
-		bool bResult() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x1) != 0; }
-		bool bResult(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x1; } return val; }
+		bool bResult() { mixin(MGBPC!(208, 0x1)()); }
+		bool bResult(bool val) { mixin(MSBPC!(208, 0x1)()); }
 	}
 	final static int GetObjClassVersion()
 	{

@@ -1,30 +1,31 @@
 module UnrealScript.Engine.AnimNodeBlend;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface AnimNodeBlend : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlend")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeBlend")()); }
 	private static __gshared AnimNodeBlend mDefaultProperties;
-	@property final static AnimNodeBlend DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlend)("AnimNodeBlend Engine.Default__AnimNodeBlend")); }
+	@property final static AnimNodeBlend DefaultProperties() { mixin(MGDPC!(AnimNodeBlend, "AnimNodeBlend Engine.Default__AnimNodeBlend")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetBlendTarget;
-		public @property static final ScriptFunction SetBlendTarget() { return mSetBlendTarget ? mSetBlendTarget : (mSetBlendTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlend.SetBlendTarget")); }
+		public @property static final ScriptFunction SetBlendTarget() { mixin(MGF!("mSetBlendTarget", "Function Engine.AnimNodeBlend.SetBlendTarget")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float BlendTimeToGo() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float Child2WeightTarget() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float Child2Weight() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
+			float BlendTimeToGo() { mixin(MGPC!(float, 252)()); }
+			float Child2WeightTarget() { mixin(MGPC!(float, 248)()); }
+			float Child2Weight() { mixin(MGPC!(float, 244)()); }
 		}
-		bool bSkipBlendWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x1) != 0; }
-		bool bSkipBlendWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x1; } return val; }
+		bool bSkipBlendWhenNotRendered() { mixin(MGBPC!(256, 0x1)()); }
+		bool bSkipBlendWhenNotRendered(bool val) { mixin(MSBPC!(256, 0x1)()); }
 	}
 	final void SetBlendTarget(float BlendTarget, float BlendTime)
 	{

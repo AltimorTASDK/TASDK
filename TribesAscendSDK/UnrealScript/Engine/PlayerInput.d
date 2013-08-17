@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PlayerInput;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Input;
 import UnrealScript.Engine.HUD;
@@ -9,9 +10,9 @@ extern(C++) interface PlayerInput : Input
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerInput")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PlayerInput")()); }
 	private static __gshared PlayerInput mDefaultProperties;
-	@property final static PlayerInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PlayerInput)("PlayerInput Engine.Default__PlayerInput")); }
+	@property final static PlayerInput DefaultProperties() { mixin(MGDPC!(PlayerInput, "PlayerInput Engine.Default__PlayerInput")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,103 +39,103 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckForDoubleClickMove() { return mCheckForDoubleClickMove ? mCheckForDoubleClickMove : (mCheckForDoubleClickMove = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.CheckForDoubleClickMove")); }
-			ScriptFunction InvertMouse() { return mInvertMouse ? mInvertMouse : (mInvertMouse = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.InvertMouse")); }
-			ScriptFunction InvertTurn() { return mInvertTurn ? mInvertTurn : (mInvertTurn = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.InvertTurn")); }
-			ScriptFunction SetSensitivity() { return mSetSensitivity ? mSetSensitivity : (mSetSensitivity = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.SetSensitivity")); }
-			ScriptFunction DrawHUD() { return mDrawHUD ? mDrawHUD : (mDrawHUD = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.DrawHUD")); }
-			ScriptFunction PreProcessInput() { return mPreProcessInput ? mPreProcessInput : (mPreProcessInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PreProcessInput")); }
-			ScriptFunction PostProcessInput() { return mPostProcessInput ? mPostProcessInput : (mPostProcessInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PostProcessInput")); }
-			ScriptFunction AdjustMouseSensitivity() { return mAdjustMouseSensitivity ? mAdjustMouseSensitivity : (mAdjustMouseSensitivity = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.AdjustMouseSensitivity")); }
-			ScriptFunction IsMouseSmoothEnabled() { return mIsMouseSmoothEnabled ? mIsMouseSmoothEnabled : (mIsMouseSmoothEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.IsMouseSmoothEnabled")); }
-			ScriptFunction PlayerInput() { return mPlayerInput ? mPlayerInput : (mPlayerInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PlayerInput")); }
-			ScriptFunction ProcessInputMatching() { return mProcessInputMatching ? mProcessInputMatching : (mProcessInputMatching = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.ProcessInputMatching")); }
-			ScriptFunction CatchDoubleClickInput() { return mCatchDoubleClickInput ? mCatchDoubleClickInput : (mCatchDoubleClickInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.CatchDoubleClickInput")); }
-			ScriptFunction Jump() { return mJump ? mJump : (mJump = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.Jump")); }
-			ScriptFunction SmartJump() { return mSmartJump ? mSmartJump : (mSmartJump = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.SmartJump")); }
-			ScriptFunction ClearSmoothing() { return mClearSmoothing ? mClearSmoothing : (mClearSmoothing = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.ClearSmoothing")); }
-			ScriptFunction SmoothMouse() { return mSmoothMouse ? mSmoothMouse : (mSmoothMouse = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.SmoothMouse")); }
-			ScriptFunction InitInputSystem() { return mInitInputSystem ? mInitInputSystem : (mInitInputSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.InitInputSystem")); }
-			ScriptFunction ClientInitInputSystem() { return mClientInitInputSystem ? mClientInitInputSystem : (mClientInitInputSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.ClientInitInputSystem")); }
-			ScriptFunction PreClientTravel() { return mPreClientTravel ? mPreClientTravel : (mPreClientTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PreClientTravel")); }
+			ScriptFunction CheckForDoubleClickMove() { mixin(MGF!("mCheckForDoubleClickMove", "Function Engine.PlayerInput.CheckForDoubleClickMove")()); }
+			ScriptFunction InvertMouse() { mixin(MGF!("mInvertMouse", "Function Engine.PlayerInput.InvertMouse")()); }
+			ScriptFunction InvertTurn() { mixin(MGF!("mInvertTurn", "Function Engine.PlayerInput.InvertTurn")()); }
+			ScriptFunction SetSensitivity() { mixin(MGF!("mSetSensitivity", "Function Engine.PlayerInput.SetSensitivity")()); }
+			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function Engine.PlayerInput.DrawHUD")()); }
+			ScriptFunction PreProcessInput() { mixin(MGF!("mPreProcessInput", "Function Engine.PlayerInput.PreProcessInput")()); }
+			ScriptFunction PostProcessInput() { mixin(MGF!("mPostProcessInput", "Function Engine.PlayerInput.PostProcessInput")()); }
+			ScriptFunction AdjustMouseSensitivity() { mixin(MGF!("mAdjustMouseSensitivity", "Function Engine.PlayerInput.AdjustMouseSensitivity")()); }
+			ScriptFunction IsMouseSmoothEnabled() { mixin(MGF!("mIsMouseSmoothEnabled", "Function Engine.PlayerInput.IsMouseSmoothEnabled")()); }
+			ScriptFunction PlayerInput() { mixin(MGF!("mPlayerInput", "Function Engine.PlayerInput.PlayerInput")()); }
+			ScriptFunction ProcessInputMatching() { mixin(MGF!("mProcessInputMatching", "Function Engine.PlayerInput.ProcessInputMatching")()); }
+			ScriptFunction CatchDoubleClickInput() { mixin(MGF!("mCatchDoubleClickInput", "Function Engine.PlayerInput.CatchDoubleClickInput")()); }
+			ScriptFunction Jump() { mixin(MGF!("mJump", "Function Engine.PlayerInput.Jump")()); }
+			ScriptFunction SmartJump() { mixin(MGF!("mSmartJump", "Function Engine.PlayerInput.SmartJump")()); }
+			ScriptFunction ClearSmoothing() { mixin(MGF!("mClearSmoothing", "Function Engine.PlayerInput.ClearSmoothing")()); }
+			ScriptFunction SmoothMouse() { mixin(MGF!("mSmoothMouse", "Function Engine.PlayerInput.SmoothMouse")()); }
+			ScriptFunction InitInputSystem() { mixin(MGF!("mInitInputSystem", "Function Engine.PlayerInput.InitInputSystem")()); }
+			ScriptFunction ClientInitInputSystem() { mixin(MGF!("mClientInitInputSystem", "Function Engine.PlayerInput.ClientInitInputSystem")()); }
+			ScriptFunction PreClientTravel() { mixin(MGF!("mPreClientTravel", "Function Engine.PlayerInput.PreClientTravel")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float aTurn() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-			float aLookUp() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
-			float aForward() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
-			float aStrafe() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
-			float RawJoyUp() { return *cast(float*)(cast(size_t)cast(void*)this + 312); }
-			float RawJoyRight() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-			float aUp() { return *cast(float*)(cast(size_t)cast(void*)this + 280); }
-			float AutoUnlockTurnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 376); }
-			float MouseSamplingTotal() { return *cast(float*)(cast(size_t)cast(void*)this + 372); }
-			int MouseSamples() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
-			float SmoothedMouse() { return *cast(float*)(cast(size_t)cast(void*)this + 360); }
-			float ZeroTime() { return *cast(float*)(cast(size_t)cast(void*)this + 352); }
-			int FOVSetting() { return *cast(int*)(cast(size_t)cast(void*)this + 348); }
-			ubyte bYAxis() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 346); }
-			ubyte bXAxis() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 345); }
-			ubyte bStrafe() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 344); }
-			float LookUpScale() { return *cast(float*)(cast(size_t)cast(void*)this + 340); }
-			float LookRightScale() { return *cast(float*)(cast(size_t)cast(void*)this + 336); }
-			float MoveStrafeSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 332); }
-			float MoveForwardSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 328); }
-			float RawJoyLookUp() { return *cast(float*)(cast(size_t)cast(void*)this + 324); }
-			float RawJoyLookRight() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }
-			float aPS3Gyro() { return *cast(float*)(cast(size_t)cast(void*)this + 308); }
-			float aPS3AccelZ() { return *cast(float*)(cast(size_t)cast(void*)this + 304); }
-			float aPS3AccelY() { return *cast(float*)(cast(size_t)cast(void*)this + 300); }
-			float aPS3AccelX() { return *cast(float*)(cast(size_t)cast(void*)this + 296); }
-			float aLeftAnalogTrigger() { return *cast(float*)(cast(size_t)cast(void*)this + 292); }
-			float aRightAnalogTrigger() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			float aMouseY() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			float aMouseX() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-			float aBaseZ() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-			float aBaseY() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float aBaseX() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float FlyingYawSensitivity() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			float FlyingPitchSensitivity() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-			float MouseSensitivity() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
-			float DoubleClickTime() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			float DoubleClickTimer() { return *cast(float*)(cast(size_t)cast(void*)this + 228); }
-			ScriptName LastAxisKeyName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 220); }
+			float aTurn() { mixin(MGPC!(float, 272)()); }
+			float aLookUp() { mixin(MGPC!(float, 284)()); }
+			float aForward() { mixin(MGPC!(float, 268)()); }
+			float aStrafe() { mixin(MGPC!(float, 276)()); }
+			float RawJoyUp() { mixin(MGPC!(float, 312)()); }
+			float RawJoyRight() { mixin(MGPC!(float, 316)()); }
+			float aUp() { mixin(MGPC!(float, 280)()); }
+			float AutoUnlockTurnTime() { mixin(MGPC!(float, 376)()); }
+			float MouseSamplingTotal() { mixin(MGPC!(float, 372)()); }
+			int MouseSamples() { mixin(MGPC!(int, 368)()); }
+			float SmoothedMouse() { mixin(MGPC!(float, 360)()); }
+			float ZeroTime() { mixin(MGPC!(float, 352)()); }
+			int FOVSetting() { mixin(MGPC!(int, 348)()); }
+			ubyte bYAxis() { mixin(MGPC!(ubyte, 346)()); }
+			ubyte bXAxis() { mixin(MGPC!(ubyte, 345)()); }
+			ubyte bStrafe() { mixin(MGPC!(ubyte, 344)()); }
+			float LookUpScale() { mixin(MGPC!(float, 340)()); }
+			float LookRightScale() { mixin(MGPC!(float, 336)()); }
+			float MoveStrafeSpeed() { mixin(MGPC!(float, 332)()); }
+			float MoveForwardSpeed() { mixin(MGPC!(float, 328)()); }
+			float RawJoyLookUp() { mixin(MGPC!(float, 324)()); }
+			float RawJoyLookRight() { mixin(MGPC!(float, 320)()); }
+			float aPS3Gyro() { mixin(MGPC!(float, 308)()); }
+			float aPS3AccelZ() { mixin(MGPC!(float, 304)()); }
+			float aPS3AccelY() { mixin(MGPC!(float, 300)()); }
+			float aPS3AccelX() { mixin(MGPC!(float, 296)()); }
+			float aLeftAnalogTrigger() { mixin(MGPC!(float, 292)()); }
+			float aRightAnalogTrigger() { mixin(MGPC!(float, 288)()); }
+			float aMouseY() { mixin(MGPC!(float, 264)()); }
+			float aMouseX() { mixin(MGPC!(float, 260)()); }
+			float aBaseZ() { mixin(MGPC!(float, 256)()); }
+			float aBaseY() { mixin(MGPC!(float, 252)()); }
+			float aBaseX() { mixin(MGPC!(float, 248)()); }
+			float FlyingYawSensitivity() { mixin(MGPC!(float, 244)()); }
+			float FlyingPitchSensitivity() { mixin(MGPC!(float, 240)()); }
+			float MouseSensitivity() { mixin(MGPC!(float, 236)()); }
+			float DoubleClickTime() { mixin(MGPC!(float, 232)()); }
+			float DoubleClickTimer() { mixin(MGPC!(float, 228)()); }
+			ScriptName LastAxisKeyName() { mixin(MGPC!(ScriptName, 220)()); }
 		}
-		bool bUsingGamepad() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x1) != 0; }
-		bool bUsingGamepad(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x1; } return val; }
-		bool bLockTurnUntilRelease() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x8000) != 0; }
-		bool bLockTurnUntilRelease(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x8000; } return val; }
-		bool bEnableFOVScaling() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x4000) != 0; }
-		bool bEnableFOVScaling(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x4000; } return val; }
-		bool bUseToggleZoom() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x2000) != 0; }
-		bool bUseToggleZoom(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x2000; } return val; }
-		bool bEnableMouseSmoothing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x1000) != 0; }
-		bool bEnableMouseSmoothing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x1000; } return val; }
-		bool bEdgeRight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x800) != 0; }
-		bool bEdgeRight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x800; } return val; }
-		bool bEdgeLeft() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x400) != 0; }
-		bool bEdgeLeft(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x400; } return val; }
-		bool bEdgeBack() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x200) != 0; }
-		bool bEdgeBack(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x200; } return val; }
-		bool bEdgeForward() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x100) != 0; }
-		bool bEdgeForward(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x100; } return val; }
-		bool bWasRight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x80) != 0; }
-		bool bWasRight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x80; } return val; }
-		bool bWasLeft() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x40) != 0; }
-		bool bWasLeft(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x40; } return val; }
-		bool bWasBack() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x20) != 0; }
-		bool bWasBack(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x20; } return val; }
-		bool bWasForward() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x10) != 0; }
-		bool bWasForward(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x10; } return val; }
-		bool bInvertAirVehicles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x8) != 0; }
-		bool bInvertAirVehicles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x8; } return val; }
-		bool bInvertTurn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x4) != 0; }
-		bool bInvertTurn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x4; } return val; }
-		bool bInvertMouse() { return (*cast(uint*)(cast(size_t)cast(void*)this + 216) & 0x2) != 0; }
-		bool bInvertMouse(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 216) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 216) &= ~0x2; } return val; }
+		bool bUsingGamepad() { mixin(MGBPC!(216, 0x1)()); }
+		bool bUsingGamepad(bool val) { mixin(MSBPC!(216, 0x1)()); }
+		bool bLockTurnUntilRelease() { mixin(MGBPC!(216, 0x8000)()); }
+		bool bLockTurnUntilRelease(bool val) { mixin(MSBPC!(216, 0x8000)()); }
+		bool bEnableFOVScaling() { mixin(MGBPC!(216, 0x4000)()); }
+		bool bEnableFOVScaling(bool val) { mixin(MSBPC!(216, 0x4000)()); }
+		bool bUseToggleZoom() { mixin(MGBPC!(216, 0x2000)()); }
+		bool bUseToggleZoom(bool val) { mixin(MSBPC!(216, 0x2000)()); }
+		bool bEnableMouseSmoothing() { mixin(MGBPC!(216, 0x1000)()); }
+		bool bEnableMouseSmoothing(bool val) { mixin(MSBPC!(216, 0x1000)()); }
+		bool bEdgeRight() { mixin(MGBPC!(216, 0x800)()); }
+		bool bEdgeRight(bool val) { mixin(MSBPC!(216, 0x800)()); }
+		bool bEdgeLeft() { mixin(MGBPC!(216, 0x400)()); }
+		bool bEdgeLeft(bool val) { mixin(MSBPC!(216, 0x400)()); }
+		bool bEdgeBack() { mixin(MGBPC!(216, 0x200)()); }
+		bool bEdgeBack(bool val) { mixin(MSBPC!(216, 0x200)()); }
+		bool bEdgeForward() { mixin(MGBPC!(216, 0x100)()); }
+		bool bEdgeForward(bool val) { mixin(MSBPC!(216, 0x100)()); }
+		bool bWasRight() { mixin(MGBPC!(216, 0x80)()); }
+		bool bWasRight(bool val) { mixin(MSBPC!(216, 0x80)()); }
+		bool bWasLeft() { mixin(MGBPC!(216, 0x40)()); }
+		bool bWasLeft(bool val) { mixin(MSBPC!(216, 0x40)()); }
+		bool bWasBack() { mixin(MGBPC!(216, 0x20)()); }
+		bool bWasBack(bool val) { mixin(MSBPC!(216, 0x20)()); }
+		bool bWasForward() { mixin(MGBPC!(216, 0x10)()); }
+		bool bWasForward(bool val) { mixin(MSBPC!(216, 0x10)()); }
+		bool bInvertAirVehicles() { mixin(MGBPC!(216, 0x8)()); }
+		bool bInvertAirVehicles(bool val) { mixin(MSBPC!(216, 0x8)()); }
+		bool bInvertTurn() { mixin(MGBPC!(216, 0x4)()); }
+		bool bInvertTurn(bool val) { mixin(MSBPC!(216, 0x4)()); }
+		bool bInvertMouse() { mixin(MGBPC!(216, 0x2)()); }
+		bool bInvertMouse(bool val) { mixin(MSBPC!(216, 0x2)()); }
 	}
 final:
 	Actor.EDoubleClickDir CheckForDoubleClickMove(float DeltaTime)
@@ -225,13 +226,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSmoothing, cast(void*)0, cast(void*)0);
 	}
-	float SmoothMouse(float aMouse, float DeltaTime, ubyte* SampleCount, int Index)
+	float SmoothMouse(float aMouse, float DeltaTime, ref ubyte SampleCount, int Index)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(float*)params.ptr = aMouse;
 		*cast(float*)&params[4] = DeltaTime;
-		params[8] = *SampleCount;
+		params[8] = SampleCount;
 		*cast(int*)&params[12] = Index;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SmoothMouse, params.ptr, cast(void*)0);
 		*SampleCount = params[8];

@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrHelpTextManager_Training;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrHelpTextManager;
 
 extern(C++) interface TrHelpTextManager_Training : TrHelpTextManager
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHelpTextManager_Training")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrHelpTextManager_Training")()); }
 	private static __gshared TrHelpTextManager_Training mDefaultProperties;
-	@property final static TrHelpTextManager_Training DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHelpTextManager_Training)("TrHelpTextManager_Training TribesGame.Default__TrHelpTextManager_Training")); }
+	@property final static TrHelpTextManager_Training DefaultProperties() { mixin(MGDPC!(TrHelpTextManager_Training, "TrHelpTextManager_Training TribesGame.Default__TrHelpTextManager_Training")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,13 +25,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitHelpTextManager() { return mInitHelpTextManager ? mInitHelpTextManager : (mInitHelpTextManager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.InitHelpTextManager")); }
-			ScriptFunction UpdateTypesToRemoveOnTimers() { return mUpdateTypesToRemoveOnTimers ? mUpdateTypesToRemoveOnTimers : (mUpdateTypesToRemoveOnTimers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.UpdateTypesToRemoveOnTimers")); }
-			ScriptFunction CheckDestroy() { return mCheckDestroy ? mCheckDestroy : (mCheckDestroy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.CheckDestroy")); }
-			ScriptFunction RequestHelpText() { return mRequestHelpText ? mRequestHelpText : (mRequestHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.RequestHelpText")); }
-			ScriptFunction RemoveHelpText() { return mRemoveHelpText ? mRemoveHelpText : (mRemoveHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.RemoveHelpText")); }
-			ScriptFunction RequestHelpText_Training() { return mRequestHelpText_Training ? mRequestHelpText_Training : (mRequestHelpText_Training = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.RequestHelpText_Training")); }
-			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.UpdateHUD")); }
+			ScriptFunction InitHelpTextManager() { mixin(MGF!("mInitHelpTextManager", "Function TribesGame.TrHelpTextManager_Training.InitHelpTextManager")()); }
+			ScriptFunction UpdateTypesToRemoveOnTimers() { mixin(MGF!("mUpdateTypesToRemoveOnTimers", "Function TribesGame.TrHelpTextManager_Training.UpdateTypesToRemoveOnTimers")()); }
+			ScriptFunction CheckDestroy() { mixin(MGF!("mCheckDestroy", "Function TribesGame.TrHelpTextManager_Training.CheckDestroy")()); }
+			ScriptFunction RequestHelpText() { mixin(MGF!("mRequestHelpText", "Function TribesGame.TrHelpTextManager_Training.RequestHelpText")()); }
+			ScriptFunction RemoveHelpText() { mixin(MGF!("mRemoveHelpText", "Function TribesGame.TrHelpTextManager_Training.RemoveHelpText")()); }
+			ScriptFunction RequestHelpText_Training() { mixin(MGF!("mRequestHelpText_Training", "Function TribesGame.TrHelpTextManager_Training.RequestHelpText_Training")()); }
+			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function TribesGame.TrHelpTextManager_Training.UpdateHUD")()); }
 		}
 	}
 	enum EHelpTextTrainingType : ubyte
@@ -52,31 +53,31 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString m_TrainingHelpTextExample1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1264); }
-		TrHelpTextManager_Training.EHelpTextTrainingType m_CurrentHelpTextTrainingType() { return *cast(TrHelpTextManager_Training.EHelpTextTrainingType*)(cast(size_t)cast(void*)this + 1552); }
-		ScriptString m_TrainingHelpTextExample1MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1408); }
-		ScriptString m_TrainingHelpTextExample2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1276); }
-		ScriptString m_TrainingHelpTextExample2MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1420); }
-		ScriptString m_TrainingHelpTextSkiMessage1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1288); }
-		ScriptString m_TrainingHelpTextSki1MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1432); }
-		ScriptString m_TrainingHelpTextSkiMessage2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1300); }
-		ScriptString m_TrainingHelpTextSki2MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1444); }
-		ScriptString m_TrainingHelpTextSkiMessage3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1312); }
-		ScriptString m_TrainingHelpTextSki3MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1456); }
-		ScriptString m_TrainingHelpTextSkiMessage4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1324); }
-		ScriptString m_TrainingHelpTextSki4MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1468); }
-		ScriptString m_TrainingHelpTextSkiMessage5() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1336); }
-		ScriptString m_TrainingHelpTextSki5MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1480); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage1() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1348); }
-		ScriptString m_TrainingHelpTextSkiAdv1MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1492); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1360); }
-		ScriptString m_TrainingHelpTextSkiAdv2MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1504); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage3() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1372); }
-		ScriptString m_TrainingHelpTextSkiAdv3MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1516); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage4() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1384); }
-		ScriptString m_TrainingHelpTextSkiAdv4MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1528); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage5() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1396); }
-		ScriptString m_TrainingHelpTextSkiAdv5MenuTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1540); }
+		ScriptString m_TrainingHelpTextExample1() { mixin(MGPC!(ScriptString, 1264)()); }
+		TrHelpTextManager_Training.EHelpTextTrainingType m_CurrentHelpTextTrainingType() { mixin(MGPC!(TrHelpTextManager_Training.EHelpTextTrainingType, 1552)()); }
+		ScriptString m_TrainingHelpTextExample1MenuTitle() { mixin(MGPC!(ScriptString, 1408)()); }
+		ScriptString m_TrainingHelpTextExample2() { mixin(MGPC!(ScriptString, 1276)()); }
+		ScriptString m_TrainingHelpTextExample2MenuTitle() { mixin(MGPC!(ScriptString, 1420)()); }
+		ScriptString m_TrainingHelpTextSkiMessage1() { mixin(MGPC!(ScriptString, 1288)()); }
+		ScriptString m_TrainingHelpTextSki1MenuTitle() { mixin(MGPC!(ScriptString, 1432)()); }
+		ScriptString m_TrainingHelpTextSkiMessage2() { mixin(MGPC!(ScriptString, 1300)()); }
+		ScriptString m_TrainingHelpTextSki2MenuTitle() { mixin(MGPC!(ScriptString, 1444)()); }
+		ScriptString m_TrainingHelpTextSkiMessage3() { mixin(MGPC!(ScriptString, 1312)()); }
+		ScriptString m_TrainingHelpTextSki3MenuTitle() { mixin(MGPC!(ScriptString, 1456)()); }
+		ScriptString m_TrainingHelpTextSkiMessage4() { mixin(MGPC!(ScriptString, 1324)()); }
+		ScriptString m_TrainingHelpTextSki4MenuTitle() { mixin(MGPC!(ScriptString, 1468)()); }
+		ScriptString m_TrainingHelpTextSkiMessage5() { mixin(MGPC!(ScriptString, 1336)()); }
+		ScriptString m_TrainingHelpTextSki5MenuTitle() { mixin(MGPC!(ScriptString, 1480)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage1() { mixin(MGPC!(ScriptString, 1348)()); }
+		ScriptString m_TrainingHelpTextSkiAdv1MenuTitle() { mixin(MGPC!(ScriptString, 1492)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage2() { mixin(MGPC!(ScriptString, 1360)()); }
+		ScriptString m_TrainingHelpTextSkiAdv2MenuTitle() { mixin(MGPC!(ScriptString, 1504)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage3() { mixin(MGPC!(ScriptString, 1372)()); }
+		ScriptString m_TrainingHelpTextSkiAdv3MenuTitle() { mixin(MGPC!(ScriptString, 1516)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage4() { mixin(MGPC!(ScriptString, 1384)()); }
+		ScriptString m_TrainingHelpTextSkiAdv4MenuTitle() { mixin(MGPC!(ScriptString, 1528)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage5() { mixin(MGPC!(ScriptString, 1396)()); }
+		ScriptString m_TrainingHelpTextSkiAdv5MenuTitle() { mixin(MGPC!(ScriptString, 1540)()); }
 	}
 final:
 	void InitHelpTextManager()

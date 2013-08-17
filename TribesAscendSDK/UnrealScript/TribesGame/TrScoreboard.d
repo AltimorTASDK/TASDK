@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrScoreboard;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrPlayerReplicationInfo;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -12,9 +13,9 @@ extern(C++) interface TrScoreboard : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrScoreboard")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrScoreboard")()); }
 	private static __gshared TrScoreboard mDefaultProperties;
-	@property final static TrScoreboard DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrScoreboard)("TrScoreboard TribesGame.Default__TrScoreboard")); }
+	@property final static TrScoreboard DefaultProperties() { mixin(MGDPC!(TrScoreboard, "TrScoreboard TribesGame.Default__TrScoreboard")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,22 +39,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreditsSort() { return mCreditsSort ? mCreditsSort : (mCreditsSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.CreditsSort")); }
-			ScriptFunction AssistsSort() { return mAssistsSort ? mAssistsSort : (mAssistsSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.AssistsSort")); }
-			ScriptFunction KillsSort() { return mKillsSort ? mKillsSort : (mKillsSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.KillsSort")); }
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Initialize")); }
-			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Show")); }
-			ScriptFunction Hide() { return mHide ? mHide : (mHide = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Hide")); }
-			ScriptFunction ConfigScoreboard() { return mConfigScoreboard ? mConfigScoreboard : (mConfigScoreboard = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.ConfigScoreboard")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Tick")); }
-			ScriptFunction UpdatePRILists() { return mUpdatePRILists ? mUpdatePRILists : (mUpdatePRILists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.UpdatePRILists")); }
-			ScriptFunction GetBestSortArray() { return mGetBestSortArray ? mGetBestSortArray : (mGetBestSortArray = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.GetBestSortArray")); }
-			ScriptFunction GetRank() { return mGetRank ? mGetRank : (mGetRank = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.GetRank")); }
-			ScriptFunction ClearSlot() { return mClearSlot ? mClearSlot : (mClearSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.ClearSlot")); }
-			ScriptFunction UpdateSlot() { return mUpdateSlot ? mUpdateSlot : (mUpdateSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.UpdateSlot")); }
-			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.FormatTime")); }
-			ScriptFunction UpdateHeaders() { return mUpdateHeaders ? mUpdateHeaders : (mUpdateHeaders = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.UpdateHeaders")); }
-			ScriptFunction IsValidScoreboardPlayer() { return mIsValidScoreboardPlayer ? mIsValidScoreboardPlayer : (mIsValidScoreboardPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.IsValidScoreboardPlayer")); }
+			ScriptFunction CreditsSort() { mixin(MGF!("mCreditsSort", "Function TribesGame.TrScoreboard.CreditsSort")()); }
+			ScriptFunction AssistsSort() { mixin(MGF!("mAssistsSort", "Function TribesGame.TrScoreboard.AssistsSort")()); }
+			ScriptFunction KillsSort() { mixin(MGF!("mKillsSort", "Function TribesGame.TrScoreboard.KillsSort")()); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrScoreboard.Initialize")()); }
+			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrScoreboard.Show")()); }
+			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrScoreboard.Hide")()); }
+			ScriptFunction ConfigScoreboard() { mixin(MGF!("mConfigScoreboard", "Function TribesGame.TrScoreboard.ConfigScoreboard")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrScoreboard.Tick")()); }
+			ScriptFunction UpdatePRILists() { mixin(MGF!("mUpdatePRILists", "Function TribesGame.TrScoreboard.UpdatePRILists")()); }
+			ScriptFunction GetBestSortArray() { mixin(MGF!("mGetBestSortArray", "Function TribesGame.TrScoreboard.GetBestSortArray")()); }
+			ScriptFunction GetRank() { mixin(MGF!("mGetRank", "Function TribesGame.TrScoreboard.GetRank")()); }
+			ScriptFunction ClearSlot() { mixin(MGF!("mClearSlot", "Function TribesGame.TrScoreboard.ClearSlot")()); }
+			ScriptFunction UpdateSlot() { mixin(MGF!("mUpdateSlot", "Function TribesGame.TrScoreboard.UpdateSlot")()); }
+			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrScoreboard.FormatTime")()); }
+			ScriptFunction UpdateHeaders() { mixin(MGF!("mUpdateHeaders", "Function TribesGame.TrScoreboard.UpdateHeaders")()); }
+			ScriptFunction IsValidScoreboardPlayer() { mixin(MGF!("mIsValidScoreboardPlayer", "Function TribesGame.TrScoreboard.IsValidScoreboardPlayer")()); }
 		}
 	}
 	struct TrScoreboardState
@@ -61,12 +62,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrScoreboard.TrScoreboardState")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrScoreboard.TrScoreboardState")()); }
 		@property final auto ref
 		{
-			int DiamondSwordScore() { return *cast(int*)(cast(size_t)&this + 8); }
-			int BloodEagleScore() { return *cast(int*)(cast(size_t)&this + 4); }
-			int RemainingTime() { return *cast(int*)(cast(size_t)&this + 0); }
+			int DiamondSwordScore() { mixin(MGPS!(int, 8)()); }
+			int BloodEagleScore() { mixin(MGPS!(int, 4)()); }
+			int RemainingTime() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	struct TrScoreSlot
@@ -74,47 +75,50 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrScoreboard.TrScoreSlot")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrScoreboard.TrScoreSlot")()); }
 		@property final auto ref
 		{
-			int RankIcon() { return *cast(int*)(cast(size_t)&this + 44); }
-			int Rank() { return *cast(int*)(cast(size_t)&this + 40); }
-			int Ping() { return *cast(int*)(cast(size_t)&this + 36); }
-			int Score() { return *cast(int*)(cast(size_t)&this + 32); }
-			int Assists() { return *cast(int*)(cast(size_t)&this + 28); }
-			int Kills() { return *cast(int*)(cast(size_t)&this + 24); }
-			ScriptString ClassAbb() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			ScriptString PlayerName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			int RankIcon() { mixin(MGPS!(int, 44)()); }
+			int Rank() { mixin(MGPS!(int, 40)()); }
+			int Ping() { mixin(MGPS!(int, 36)()); }
+			int Score() { mixin(MGPS!(int, 32)()); }
+			int Assists() { mixin(MGPS!(int, 28)()); }
+			int Kills() { mixin(MGPS!(int, 24)()); }
+			ScriptString ClassAbb() { mixin(MGPS!(ScriptString, 12)()); }
+			ScriptString PlayerName() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { return *cast(GfxTrHud*)(cast(size_t)cast(void*)this + 100); }
-			TrPlayerController TrPC() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 1652); }
-			TrScoreboard.TrScoreboardState PreviousState() { return *cast(TrScoreboard.TrScoreboardState*)(cast(size_t)cast(void*)this + 1640); }
-			TrScoreboard.TrScoreSlot ScoreboardSlots() { return *cast(TrScoreboard.TrScoreSlot*)(cast(size_t)cast(void*)this + 104); }
-			int DSIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 92); }
-			int BEIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int DSOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 84); }
-			int PrevActiveSlot() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
-			int PrevDSSLots() { return *cast(int*)(cast(size_t)cast(void*)this + 76); }
-			int PrevBESlots() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			int DSSlots() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-			int BESlots() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			int MAX_PLAYER_INDEX() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 100)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditsSort__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__AssistsSort__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__KillsSort__Delegate'!
+			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 1652)()); }
+			TrScoreboard.TrScoreboardState PreviousState() { mixin(MGPC!(TrScoreboard.TrScoreboardState, 1640)()); }
+			TrScoreboard.TrScoreSlot ScoreboardSlots() { mixin(MGPC!(TrScoreboard.TrScoreSlot, 104)()); }
+			int DSIndex() { mixin(MGPC!(int, 92)()); }
+			int BEIndex() { mixin(MGPC!(int, 88)()); }
+			int DSOffset() { mixin(MGPC!(int, 84)()); }
+			int PrevActiveSlot() { mixin(MGPC!(int, 80)()); }
+			int PrevDSSLots() { mixin(MGPC!(int, 76)()); }
+			int PrevBESlots() { mixin(MGPC!(int, 72)()); }
+			int DSSlots() { mixin(MGPC!(int, 68)()); }
+			int BESlots() { mixin(MGPC!(int, 64)()); }
+			int MAX_PLAYER_INDEX() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x8) != 0; }
-		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x8; } return val; }
-		bool bCheckPing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x10) != 0; }
-		bool bCheckPing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x10; } return val; }
-		bool bInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x4) != 0; }
-		bool bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x4; } return val; }
-		bool bUpdated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x2) != 0; }
-		bool bUpdated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x2; } return val; }
-		bool bTeamGame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x1) != 0; }
-		bool bTeamGame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x1; } return val; }
+		bool bIsActive() { mixin(MGBPC!(96, 0x8)()); }
+		bool bIsActive(bool val) { mixin(MSBPC!(96, 0x8)()); }
+		bool bCheckPing() { mixin(MGBPC!(96, 0x10)()); }
+		bool bCheckPing(bool val) { mixin(MSBPC!(96, 0x10)()); }
+		bool bInitialized() { mixin(MGBPC!(96, 0x4)()); }
+		bool bInitialized(bool val) { mixin(MSBPC!(96, 0x4)()); }
+		bool bUpdated() { mixin(MGBPC!(96, 0x2)()); }
+		bool bUpdated(bool val) { mixin(MSBPC!(96, 0x2)()); }
+		bool bTeamGame() { mixin(MGBPC!(96, 0x1)()); }
+		bool bTeamGame(bool val) { mixin(MSBPC!(96, 0x1)()); }
 	}
 final:
 	int CreditsSort(TrPlayerReplicationInfo A, TrPlayerReplicationInfo B)

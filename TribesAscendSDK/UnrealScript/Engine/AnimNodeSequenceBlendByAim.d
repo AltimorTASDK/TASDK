@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNodeSequenceBlendByAim;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.AnimNodeSequenceBlendBase;
 
@@ -8,30 +9,30 @@ extern(C++) interface AnimNodeSequenceBlendByAim : AnimNodeSequenceBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSequenceBlendByAim")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeSequenceBlendByAim")()); }
 	private static __gshared AnimNodeSequenceBlendByAim mDefaultProperties;
-	@property final static AnimNodeSequenceBlendByAim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeSequenceBlendByAim)("AnimNodeSequenceBlendByAim Engine.Default__AnimNodeSequenceBlendByAim")); }
+	@property final static AnimNodeSequenceBlendByAim DefaultProperties() { mixin(MGDPC!(AnimNodeSequenceBlendByAim, "AnimNodeSequenceBlendByAim Engine.Default__AnimNodeSequenceBlendByAim")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCheckAnimsUpToDate;
-		public @property static final ScriptFunction CheckAnimsUpToDate() { return mCheckAnimsUpToDate ? mCheckAnimsUpToDate : (mCheckAnimsUpToDate = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequenceBlendByAim.CheckAnimsUpToDate")); }
+		public @property static final ScriptFunction CheckAnimsUpToDate() { mixin(MGF!("mCheckAnimsUpToDate", "Function Engine.AnimNodeSequenceBlendByAim.CheckAnimsUpToDate")()); }
 	}
 	@property final auto ref
 	{
-		ScriptName AnimName_RD() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 436); }
-		ScriptName AnimName_RC() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 428); }
-		ScriptName AnimName_RU() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 420); }
-		ScriptName AnimName_CD() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 412); }
-		ScriptName AnimName_CC() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 404); }
-		ScriptName AnimName_CU() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 396); }
-		ScriptName AnimName_LD() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 388); }
-		ScriptName AnimName_LC() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 380); }
-		ScriptName AnimName_LU() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 372); }
-		UObject.Vector2D AngleOffset() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 364); }
-		UObject.Vector2D VerticalRange() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 356); }
-		UObject.Vector2D HorizontalRange() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 348); }
-		UObject.Vector2D PreviousAim() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 340); }
-		UObject.Vector2D Aim() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 332); }
+		ScriptName AnimName_RD() { mixin(MGPC!(ScriptName, 436)()); }
+		ScriptName AnimName_RC() { mixin(MGPC!(ScriptName, 428)()); }
+		ScriptName AnimName_RU() { mixin(MGPC!(ScriptName, 420)()); }
+		ScriptName AnimName_CD() { mixin(MGPC!(ScriptName, 412)()); }
+		ScriptName AnimName_CC() { mixin(MGPC!(ScriptName, 404)()); }
+		ScriptName AnimName_CU() { mixin(MGPC!(ScriptName, 396)()); }
+		ScriptName AnimName_LD() { mixin(MGPC!(ScriptName, 388)()); }
+		ScriptName AnimName_LC() { mixin(MGPC!(ScriptName, 380)()); }
+		ScriptName AnimName_LU() { mixin(MGPC!(ScriptName, 372)()); }
+		UObject.Vector2D AngleOffset() { mixin(MGPC!(UObject.Vector2D, 364)()); }
+		UObject.Vector2D VerticalRange() { mixin(MGPC!(UObject.Vector2D, 356)()); }
+		UObject.Vector2D HorizontalRange() { mixin(MGPC!(UObject.Vector2D, 348)()); }
+		UObject.Vector2D PreviousAim() { mixin(MGPC!(UObject.Vector2D, 340)()); }
+		UObject.Vector2D Aim() { mixin(MGPC!(UObject.Vector2D, 332)()); }
 	}
 	final void CheckAnimsUpToDate()
 	{

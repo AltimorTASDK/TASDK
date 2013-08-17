@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MorphTargetSet;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MorphTarget;
 import UnrealScript.Engine.SkeletalMesh;
@@ -9,19 +10,19 @@ extern(C++) interface MorphTargetSet : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphTargetSet")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MorphTargetSet")()); }
 	private static __gshared MorphTargetSet mDefaultProperties;
-	@property final static MorphTargetSet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MorphTargetSet)("MorphTargetSet Engine.Default__MorphTargetSet")); }
+	@property final static MorphTargetSet DefaultProperties() { mixin(MGDPC!(MorphTargetSet, "MorphTargetSet Engine.Default__MorphTargetSet")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFindMorphTarget;
-		public @property static final ScriptFunction FindMorphTarget() { return mFindMorphTarget ? mFindMorphTarget : (mFindMorphTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.MorphTargetSet.FindMorphTarget")); }
+		public @property static final ScriptFunction FindMorphTarget() { mixin(MGF!("mFindMorphTarget", "Function Engine.MorphTargetSet.FindMorphTarget")()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MorphTarget) Targets() { return *cast(ScriptArray!(MorphTarget)*)(cast(size_t)cast(void*)this + 60); }
-		UObject.Array_Mirror RawWedgePointIndices() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 76); }
-		SkeletalMesh BaseSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 72); }
+		ScriptArray!(MorphTarget) Targets() { mixin(MGPC!(ScriptArray!(MorphTarget), 60)()); }
+		UObject.Array_Mirror RawWedgePointIndices() { mixin(MGPC!(UObject.Array_Mirror, 76)()); }
+		SkeletalMesh BaseSkelMesh() { mixin(MGPC!(SkeletalMesh, 72)()); }
 	}
 	final MorphTarget FindMorphTarget(ScriptName MorphTargetName)
 	{

@@ -1,15 +1,16 @@
 module UnrealScript.Engine.SeqAct_ConsoleCommand;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_ConsoleCommand : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ConsoleCommand")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_ConsoleCommand")()); }
 	private static __gshared SeqAct_ConsoleCommand mDefaultProperties;
-	@property final static SeqAct_ConsoleCommand DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ConsoleCommand)("SeqAct_ConsoleCommand Engine.Default__SeqAct_ConsoleCommand")); }
+	@property final static SeqAct_ConsoleCommand DefaultProperties() { mixin(MGDPC!(SeqAct_ConsoleCommand, "SeqAct_ConsoleCommand Engine.Default__SeqAct_ConsoleCommand")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,14 +20,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction VersionUpdated() { return mVersionUpdated ? mVersionUpdated : (mVersionUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_ConsoleCommand.VersionUpdated")); }
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_ConsoleCommand.GetObjClassVersion")); }
+			ScriptFunction VersionUpdated() { mixin(MGF!("mVersionUpdated", "Function Engine.SeqAct_ConsoleCommand.VersionUpdated")()); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_ConsoleCommand.GetObjClassVersion")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) Commands() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 244); }
-		ScriptString Command() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 232); }
+		ScriptArray!(ScriptString) Commands() { mixin(MGPC!(ScriptArray!(ScriptString), 244)()); }
+		ScriptString Command() { mixin(MGPC!(ScriptString, 232)()); }
 	}
 final:
 	void VersionUpdated(int OldVersion, int NewVersion)

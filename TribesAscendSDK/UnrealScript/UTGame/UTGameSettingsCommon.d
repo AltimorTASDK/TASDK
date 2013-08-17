@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTGameSettingsCommon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameInfo;
 import UnrealScript.UTGame.UTUIDataStore_MenuItems;
 import UnrealScript.UDKBase.UDKGameSettingsCommon;
@@ -9,9 +10,9 @@ extern(C++) interface UTGameSettingsCommon : UDKGameSettingsCommon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameSettingsCommon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameSettingsCommon")()); }
 	private static __gshared UTGameSettingsCommon mDefaultProperties;
-	@property final static UTGameSettingsCommon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGameSettingsCommon)("UTGameSettingsCommon UTGame.Default__UTGameSettingsCommon")); }
+	@property final static UTGameSettingsCommon DefaultProperties() { mixin(MGDPC!(UTGameSettingsCommon, "UTGameSettingsCommon UTGame.Default__UTGameSettingsCommon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,13 +27,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetCustomMapName() { return mSetCustomMapName ? mSetCustomMapName : (mSetCustomMapName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameSettingsCommon.SetCustomMapName")); }
-			ScriptFunction SetOfficialMutatorBitmask() { return mSetOfficialMutatorBitmask ? mSetOfficialMutatorBitmask : (mSetOfficialMutatorBitmask = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameSettingsCommon.SetOfficialMutatorBitmask")); }
-			ScriptFunction BuildURL() { return mBuildURL ? mBuildURL : (mBuildURL = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameSettingsCommon.BuildURL")); }
-			ScriptFunction UpdateFromURL() { return mUpdateFromURL ? mUpdateFromURL : (mUpdateFromURL = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameSettingsCommon.UpdateFromURL")); }
-			ScriptFunction SetMutators() { return mSetMutators ? mSetMutators : (mSetMutators = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameSettingsCommon.SetMutators")); }
-			ScriptFunction GenerateMutatorBitmaskFromURL() { return mGenerateMutatorBitmaskFromURL ? mGenerateMutatorBitmaskFromURL : (mGenerateMutatorBitmaskFromURL = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameSettingsCommon.GenerateMutatorBitmaskFromURL")); }
-			ScriptFunction SetCustomMutators() { return mSetCustomMutators ? mSetCustomMutators : (mSetCustomMutators = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameSettingsCommon.SetCustomMutators")); }
+			ScriptFunction SetCustomMapName() { mixin(MGF!("mSetCustomMapName", "Function UTGame.UTGameSettingsCommon.SetCustomMapName")()); }
+			ScriptFunction SetOfficialMutatorBitmask() { mixin(MGF!("mSetOfficialMutatorBitmask", "Function UTGame.UTGameSettingsCommon.SetOfficialMutatorBitmask")()); }
+			ScriptFunction BuildURL() { mixin(MGF!("mBuildURL", "Function UTGame.UTGameSettingsCommon.BuildURL")()); }
+			ScriptFunction UpdateFromURL() { mixin(MGF!("mUpdateFromURL", "Function UTGame.UTGameSettingsCommon.UpdateFromURL")()); }
+			ScriptFunction SetMutators() { mixin(MGF!("mSetMutators", "Function UTGame.UTGameSettingsCommon.SetMutators")()); }
+			ScriptFunction GenerateMutatorBitmaskFromURL() { mixin(MGF!("mGenerateMutatorBitmaskFromURL", "Function UTGame.UTGameSettingsCommon.GenerateMutatorBitmaskFromURL")()); }
+			ScriptFunction SetCustomMutators() { mixin(MGF!("mSetCustomMutators", "Function UTGame.UTGameSettingsCommon.SetCustomMutators")()); }
 		}
 	}
 	static struct Constants
@@ -146,8 +147,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int MaxPlayers() { return *cast(int*)(cast(size_t)cast(void*)this + 172); }
-		int MinNetPlayers() { return *cast(int*)(cast(size_t)cast(void*)this + 176); }
+		int MaxPlayers() { mixin(MGPC!(int, 172)()); }
+		int MinNetPlayers() { mixin(MGPC!(int, 176)()); }
 	}
 final:
 	void SetCustomMapName(ScriptString MapName)
@@ -164,47 +165,47 @@ final:
 		*cast(int*)params.ptr = MutatorBitmask;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetOfficialMutatorBitmask, params.ptr, cast(void*)0);
 	}
-	void BuildURL(ScriptString* OutURL)
+	void BuildURL(ref ScriptString OutURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *OutURL;
+		*cast(ScriptString*)params.ptr = OutURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BuildURL, params.ptr, cast(void*)0);
 		*OutURL = *cast(ScriptString*)params.ptr;
 	}
-	void UpdateFromURL(ScriptString* pURL, GameInfo Game)
+	void UpdateFromURL(ref const ScriptString pURL, GameInfo Game)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		*cast(GameInfo*)&params[12] = Game;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFromURL, params.ptr, cast(void*)0);
 		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	void SetMutators(ScriptString* pURL)
+	void SetMutators(ref const ScriptString pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetMutators, params.ptr, cast(void*)0);
 		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	int GenerateMutatorBitmaskFromURL(UTUIDataStore_MenuItems MenuDataStore, ScriptArray!(ScriptString)* MutatorClassNames)
+	int GenerateMutatorBitmaskFromURL(UTUIDataStore_MenuItems MenuDataStore, ref ScriptArray!(ScriptString) MutatorClassNames)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(UTUIDataStore_MenuItems*)params.ptr = MenuDataStore;
-		*cast(ScriptArray!(ScriptString)*)&params[4] = *MutatorClassNames;
+		*cast(ScriptArray!(ScriptString)*)&params[4] = MutatorClassNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GenerateMutatorBitmaskFromURL, params.ptr, cast(void*)0);
 		*MutatorClassNames = *cast(ScriptArray!(ScriptString)*)&params[4];
 		return *cast(int*)&params[16];
 	}
-	void SetCustomMutators(UTUIDataStore_MenuItems MenuDataStore, ScriptArray!(ScriptString)* MutatorClassNames)
+	void SetCustomMutators(UTUIDataStore_MenuItems MenuDataStore, ref const ScriptArray!(ScriptString) MutatorClassNames)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTUIDataStore_MenuItems*)params.ptr = MenuDataStore;
-		*cast(ScriptArray!(ScriptString)*)&params[4] = *MutatorClassNames;
+		*cast(ScriptArray!(ScriptString)*)&params[4] = MutatorClassNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCustomMutators, params.ptr, cast(void*)0);
 		*MutatorClassNames = *cast(ScriptArray!(ScriptString)*)&params[4];
 	}

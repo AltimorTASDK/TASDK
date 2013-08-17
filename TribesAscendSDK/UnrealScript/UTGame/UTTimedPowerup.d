@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTTimedPowerup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTInventory;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Pawn;
@@ -14,9 +15,9 @@ extern(C++) interface UTTimedPowerup : UTInventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTimedPowerup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTimedPowerup")()); }
 	private static __gshared UTTimedPowerup mDefaultProperties;
-	@property final static UTTimedPowerup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTimedPowerup)("UTTimedPowerup UTGame.Default__UTTimedPowerup")); }
+	@property final static UTTimedPowerup DefaultProperties() { mixin(MGDPC!(UTTimedPowerup, "UTTimedPowerup UTGame.Default__UTTimedPowerup")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,33 +38,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.Tick")); }
-			ScriptFunction GivenTo() { return mGivenTo ? mGivenTo : (mGivenTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.GivenTo")); }
-			ScriptFunction ClientGivenTo() { return mClientGivenTo ? mClientGivenTo : (mClientGivenTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.ClientGivenTo")); }
-			ScriptFunction AdjustPPEffects() { return mAdjustPPEffects ? mAdjustPPEffects : (mAdjustPPEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.AdjustPPEffects")); }
-			ScriptFunction ClientLostItem() { return mClientLostItem ? mClientLostItem : (mClientLostItem = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.ClientLostItem")); }
-			ScriptFunction ClientSetTimeRemaining() { return mClientSetTimeRemaining ? mClientSetTimeRemaining : (mClientSetTimeRemaining = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.ClientSetTimeRemaining")); }
-			ScriptFunction TimeRemaingUpdated() { return mTimeRemaingUpdated ? mTimeRemaingUpdated : (mTimeRemaingUpdated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.TimeRemaingUpdated")); }
-			ScriptFunction DisplayPowerup() { return mDisplayPowerup ? mDisplayPowerup : (mDisplayPowerup = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.DisplayPowerup")); }
-			ScriptFunction DenyPickupQuery() { return mDenyPickupQuery ? mDenyPickupQuery : (mDenyPickupQuery = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.DenyPickupQuery")); }
-			ScriptFunction TimeExpired() { return mTimeExpired ? mTimeExpired : (mTimeExpired = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.TimeExpired")); }
-			ScriptFunction BotDesireability() { return mBotDesireability ? mBotDesireability : (mBotDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.BotDesireability")); }
-			ScriptFunction DetourWeight() { return mDetourWeight ? mDetourWeight : (mDetourWeight = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.DetourWeight")); }
-			ScriptFunction GetPowerupStatName() { return mGetPowerupStatName ? mGetPowerupStatName : (mGetPowerupStatName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTimedPowerup.GetPowerupStatName")); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTTimedPowerup.Tick")()); }
+			ScriptFunction GivenTo() { mixin(MGF!("mGivenTo", "Function UTGame.UTTimedPowerup.GivenTo")()); }
+			ScriptFunction ClientGivenTo() { mixin(MGF!("mClientGivenTo", "Function UTGame.UTTimedPowerup.ClientGivenTo")()); }
+			ScriptFunction AdjustPPEffects() { mixin(MGF!("mAdjustPPEffects", "Function UTGame.UTTimedPowerup.AdjustPPEffects")()); }
+			ScriptFunction ClientLostItem() { mixin(MGF!("mClientLostItem", "Function UTGame.UTTimedPowerup.ClientLostItem")()); }
+			ScriptFunction ClientSetTimeRemaining() { mixin(MGF!("mClientSetTimeRemaining", "Function UTGame.UTTimedPowerup.ClientSetTimeRemaining")()); }
+			ScriptFunction TimeRemaingUpdated() { mixin(MGF!("mTimeRemaingUpdated", "Function UTGame.UTTimedPowerup.TimeRemaingUpdated")()); }
+			ScriptFunction DisplayPowerup() { mixin(MGF!("mDisplayPowerup", "Function UTGame.UTTimedPowerup.DisplayPowerup")()); }
+			ScriptFunction DenyPickupQuery() { mixin(MGF!("mDenyPickupQuery", "Function UTGame.UTTimedPowerup.DenyPickupQuery")()); }
+			ScriptFunction TimeExpired() { mixin(MGF!("mTimeExpired", "Function UTGame.UTTimedPowerup.TimeExpired")()); }
+			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTTimedPowerup.BotDesireability")()); }
+			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function UTGame.UTTimedPowerup.DetourWeight")()); }
+			ScriptFunction GetPowerupStatName() { mixin(MGF!("mGetPowerupStatName", "Function UTGame.UTTimedPowerup.GetPowerupStatName")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float PP_Scene_Desaturation() { return *cast(float*)(cast(size_t)cast(void*)this + 616); }
-		Vector PP_Scene_HighLights() { return *cast(Vector*)(cast(size_t)cast(void*)this + 604); }
-		float WarningTime() { return *cast(float*)(cast(size_t)cast(void*)this + 600); }
-		float TransitionDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
-		float TransitionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 592); }
-		UIRoot.TextureCoordinates IconCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 576); }
-		ScriptName PowerupStatName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 568); }
-		SoundCue PowerupOverSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 564); }
-		int HudIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 560); }
-		float TimeRemaining() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
+		float PP_Scene_Desaturation() { mixin(MGPC!(float, 616)()); }
+		Vector PP_Scene_HighLights() { mixin(MGPC!(Vector, 604)()); }
+		float WarningTime() { mixin(MGPC!(float, 600)()); }
+		float TransitionDuration() { mixin(MGPC!(float, 596)()); }
+		float TransitionTime() { mixin(MGPC!(float, 592)()); }
+		UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 576)()); }
+		ScriptName PowerupStatName() { mixin(MGPC!(ScriptName, 568)()); }
+		SoundCue PowerupOverSound() { mixin(MGPC!(SoundCue, 564)()); }
+		int HudIndex() { mixin(MGPC!(int, 560)()); }
+		float TimeRemaining() { mixin(MGPC!(float, 556)()); }
 	}
 final:
 	void Tick(float DeltaTime)
@@ -112,14 +113,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.TimeRemaingUpdated, cast(void*)0, cast(void*)0);
 	}
-	void DisplayPowerup(Canvas pCanvas, UTHUD pHUD, float ResolutionScale, float* YPos)
+	void DisplayPowerup(Canvas pCanvas, UTHUD pHUD, float ResolutionScale, ref float YPos)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
 		*cast(UTHUD*)&params[4] = pHUD;
 		*cast(float*)&params[8] = ResolutionScale;
-		*cast(float*)&params[12] = *YPos;
+		*cast(float*)&params[12] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayPowerup, params.ptr, cast(void*)0);
 		*YPos = *cast(float*)&params[12];
 	}

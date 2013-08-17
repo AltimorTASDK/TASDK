@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_ArmoredClaymore;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrProj_Mine;
 import UnrealScript.Engine.Pawn;
 
@@ -8,15 +9,15 @@ extern(C++) interface TrProj_ArmoredClaymore : TrProj_Mine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_ArmoredClaymore")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_ArmoredClaymore")()); }
 	private static __gshared TrProj_ArmoredClaymore mDefaultProperties;
-	@property final static TrProj_ArmoredClaymore DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_ArmoredClaymore)("TrProj_ArmoredClaymore TribesGame.Default__TrProj_ArmoredClaymore")); }
+	@property final static TrProj_ArmoredClaymore DefaultProperties() { mixin(MGDPC!(TrProj_ArmoredClaymore, "TrProj_ArmoredClaymore TribesGame.Default__TrProj_ArmoredClaymore")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMeetsDetonationRequirements;
-		public @property static final ScriptFunction MeetsDetonationRequirements() { return mMeetsDetonationRequirements ? mMeetsDetonationRequirements : (mMeetsDetonationRequirements = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_ArmoredClaymore.MeetsDetonationRequirements")); }
+		public @property static final ScriptFunction MeetsDetonationRequirements() { mixin(MGF!("mMeetsDetonationRequirements", "Function TribesGame.TrProj_ArmoredClaymore.MeetsDetonationRequirements")()); }
 	}
-	@property final auto ref float DetonationSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 900); }
+	@property final auto ref float DetonationSpeed() { mixin(MGPC!(float, 900)()); }
 	final bool MeetsDetonationRequirements(Pawn Other)
 	{
 		ubyte params[8];

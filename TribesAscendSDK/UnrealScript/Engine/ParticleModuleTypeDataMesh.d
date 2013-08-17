@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleTypeDataMesh;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleOrientationAxisLock;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
 import UnrealScript.Engine.StaticMesh;
@@ -9,9 +10,9 @@ extern(C++) interface ParticleModuleTypeDataMesh : ParticleModuleTypeDataBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataMesh")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleTypeDataMesh")()); }
 	private static __gshared ParticleModuleTypeDataMesh mDefaultProperties;
-	@property final static ParticleModuleTypeDataMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataMesh)("ParticleModuleTypeDataMesh Engine.Default__ParticleModuleTypeDataMesh")); }
+	@property final static ParticleModuleTypeDataMesh DefaultProperties() { mixin(MGDPC!(ParticleModuleTypeDataMesh, "ParticleModuleTypeDataMesh Engine.Default__ParticleModuleTypeDataMesh")()); }
 	enum EMeshCameraFacingOptions : ubyte
 	{
 		XAxisFacing_NoUp = 0,
@@ -49,26 +50,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			float Yaw() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float Roll() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-			float Pitch() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			ParticleModuleTypeDataMesh.EMeshCameraFacingOptions CameraFacingOption() { return *cast(ParticleModuleTypeDataMesh.EMeshCameraFacingOptions*)(cast(size_t)cast(void*)this + 83); }
-			ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis CameraFacingUpAxisOption() { return *cast(ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis*)(cast(size_t)cast(void*)this + 82); }
-			ParticleModuleOrientationAxisLock.EParticleAxisLock AxisLockOption() { return *cast(ParticleModuleOrientationAxisLock.EParticleAxisLock*)(cast(size_t)cast(void*)this + 81); }
-			ParticleModuleTypeDataMesh.EMeshScreenAlignment MeshAlignment() { return *cast(ParticleModuleTypeDataMesh.EMeshScreenAlignment*)(cast(size_t)cast(void*)this + 80); }
-			StaticMesh Mesh() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 72); }
+			float Yaw() { mixin(MGPC!(float, 92)()); }
+			float Roll() { mixin(MGPC!(float, 88)()); }
+			float Pitch() { mixin(MGPC!(float, 84)()); }
+			ParticleModuleTypeDataMesh.EMeshCameraFacingOptions CameraFacingOption() { mixin(MGPC!(ParticleModuleTypeDataMesh.EMeshCameraFacingOptions, 83)()); }
+			ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis CameraFacingUpAxisOption() { mixin(MGPC!(ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis, 82)()); }
+			ParticleModuleOrientationAxisLock.EParticleAxisLock AxisLockOption() { mixin(MGPC!(ParticleModuleOrientationAxisLock.EParticleAxisLock, 81)()); }
+			ParticleModuleTypeDataMesh.EMeshScreenAlignment MeshAlignment() { mixin(MGPC!(ParticleModuleTypeDataMesh.EMeshScreenAlignment, 80)()); }
+			StaticMesh Mesh() { mixin(MGPC!(StaticMesh, 72)()); }
 		}
-		bool bApplyParticleRotationAsSpin() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x20) != 0; }
-		bool bApplyParticleRotationAsSpin(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x20; } return val; }
-		bool bCameraFacing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x10) != 0; }
-		bool bCameraFacing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x10; } return val; }
-		bool bOverrideMaterial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x8) != 0; }
-		bool bOverrideMaterial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x8; } return val; }
-		bool bAllowMotionBlur() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x4) != 0; }
-		bool bAllowMotionBlur(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x4; } return val; }
-		bool DoCollisions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x2) != 0; }
-		bool DoCollisions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x2; } return val; }
-		bool CastShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x1) != 0; }
-		bool CastShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x1; } return val; }
+		bool bApplyParticleRotationAsSpin() { mixin(MGBPC!(76, 0x20)()); }
+		bool bApplyParticleRotationAsSpin(bool val) { mixin(MSBPC!(76, 0x20)()); }
+		bool bCameraFacing() { mixin(MGBPC!(76, 0x10)()); }
+		bool bCameraFacing(bool val) { mixin(MSBPC!(76, 0x10)()); }
+		bool bOverrideMaterial() { mixin(MGBPC!(76, 0x8)()); }
+		bool bOverrideMaterial(bool val) { mixin(MSBPC!(76, 0x8)()); }
+		bool bAllowMotionBlur() { mixin(MGBPC!(76, 0x4)()); }
+		bool bAllowMotionBlur(bool val) { mixin(MSBPC!(76, 0x4)()); }
+		bool DoCollisions() { mixin(MGBPC!(76, 0x2)()); }
+		bool DoCollisions(bool val) { mixin(MSBPC!(76, 0x2)()); }
+		bool CastShadows() { mixin(MGBPC!(76, 0x1)()); }
+		bool CastShadows(bool val) { mixin(MSBPC!(76, 0x1)()); }
 	}
 }

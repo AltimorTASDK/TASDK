@@ -1,6 +1,7 @@
 module UnrealScript.Engine.LiftExit;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.LiftCenter;
 import UnrealScript.Engine.Pawn;
@@ -9,9 +10,9 @@ extern(C++) interface LiftExit : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LiftExit")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LiftExit")()); }
 	private static __gshared LiftExit mDefaultProperties;
-	@property final static LiftExit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LiftExit)("LiftExit Engine.Default__LiftExit")); }
+	@property final static LiftExit DefaultProperties() { mixin(MGDPC!(LiftExit, "LiftExit Engine.Default__LiftExit")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,16 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanBeReachedFromLiftBy() { return mCanBeReachedFromLiftBy ? mCanBeReachedFromLiftBy : (mCanBeReachedFromLiftBy = ScriptObject.Find!(ScriptFunction)("Function Engine.LiftExit.CanBeReachedFromLiftBy")); }
-			ScriptFunction WaitForLift() { return mWaitForLift ? mWaitForLift : (mWaitForLift = ScriptObject.Find!(ScriptFunction)("Function Engine.LiftExit.WaitForLift")); }
-			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.LiftExit.SuggestMovePreparation")); }
+			ScriptFunction CanBeReachedFromLiftBy() { mixin(MGF!("mCanBeReachedFromLiftBy", "Function Engine.LiftExit.CanBeReachedFromLiftBy")()); }
+			ScriptFunction WaitForLift() { mixin(MGF!("mWaitForLift", "Function Engine.LiftExit.WaitForLift")()); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.LiftExit.SuggestMovePreparation")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref LiftCenter MyLiftCenter() { return *cast(LiftCenter*)(cast(size_t)cast(void*)this + 692); }
-		bool bExitOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 696) & 0x1) != 0; }
-		bool bExitOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 696) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 696) &= ~0x1; } return val; }
+		@property final auto ref LiftCenter MyLiftCenter() { mixin(MGPC!(LiftCenter, 692)()); }
+		bool bExitOnly() { mixin(MGBPC!(696, 0x1)()); }
+		bool bExitOnly(bool val) { mixin(MSBPC!(696, 0x1)()); }
 	}
 final:
 	bool CanBeReachedFromLiftBy(Pawn Other)

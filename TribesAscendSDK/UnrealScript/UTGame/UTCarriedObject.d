@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCarriedObject;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPlayerController;
 import UnrealScript.Core.UObject;
 import UnrealScript.UTGame.UTMapInfo;
@@ -23,9 +24,9 @@ extern(C++) interface UTCarriedObject : UDKCarriedObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCarriedObject")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCarriedObject")()); }
 	private static __gshared UTCarriedObject mDefaultProperties;
-	@property final static UTCarriedObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCarriedObject)("UTCarriedObject UTGame.Default__UTCarriedObject")); }
+	@property final static UTCarriedObject DefaultProperties() { mixin(MGDPC!(UTCarriedObject, "UTCarriedObject UTGame.Default__UTCarriedObject")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -69,87 +70,103 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FlagUse() { return mFlagUse ? mFlagUse : (mFlagUse = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.FlagUse")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.PostBeginPlay")); }
-			ScriptFunction ShouldMinimapRenderFor() { return mShouldMinimapRenderFor ? mShouldMinimapRenderFor : (mShouldMinimapRenderFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ShouldMinimapRenderFor")); }
-			ScriptFunction HighlightOnMinimap() { return mHighlightOnMinimap ? mHighlightOnMinimap : (mHighlightOnMinimap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.HighlightOnMinimap")); }
-			ScriptFunction GetIconTexture() { return mGetIconTexture ? mGetIconTexture : (mGetIconTexture = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.GetIconTexture")); }
-			ScriptFunction DrawIcon() { return mDrawIcon ? mDrawIcon : (mDrawIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.DrawIcon")); }
-			ScriptFunction RenderMapIcon() { return mRenderMapIcon ? mRenderMapIcon : (mRenderMapIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.RenderMapIcon")); }
-			ScriptFunction RenderEnemyMapIcon() { return mRenderEnemyMapIcon ? mRenderEnemyMapIcon : (mRenderEnemyMapIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.RenderEnemyMapIcon")); }
-			ScriptFunction SetHolder() { return mSetHolder ? mSetHolder : (mSetHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.SetHolder")); }
-			ScriptFunction SendFlagMessage() { return mSendFlagMessage ? mSendFlagMessage : (mSendFlagMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.SendFlagMessage")); }
-			ScriptFunction Score() { return mScore ? mScore : (mScore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Score")); }
-			ScriptFunction Drop() { return mDrop ? mDrop : (mDrop = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Drop")); }
-			ScriptFunction SendHome() { return mSendHome ? mSendHome : (mSendHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.SendHome")); }
-			ScriptFunction KismetSendHome() { return mKismetSendHome ? mKismetSendHome : (mKismetSendHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.KismetSendHome")); }
-			ScriptFunction BroadcastReturnedMessage() { return mBroadcastReturnedMessage ? mBroadcastReturnedMessage : (mBroadcastReturnedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastReturnedMessage")); }
-			ScriptFunction BroadcastDroppedMessage() { return mBroadcastDroppedMessage ? mBroadcastDroppedMessage : (mBroadcastDroppedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastDroppedMessage")); }
-			ScriptFunction BroadcastTakenFromBaseMessage() { return mBroadcastTakenFromBaseMessage ? mBroadcastTakenFromBaseMessage : (mBroadcastTakenFromBaseMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastTakenFromBaseMessage")); }
-			ScriptFunction BroadcastTakenDroppedMessage() { return mBroadcastTakenDroppedMessage ? mBroadcastTakenDroppedMessage : (mBroadcastTakenDroppedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastTakenDroppedMessage")); }
-			ScriptFunction CalcSetHome() { return mCalcSetHome ? mCalcSetHome : (mCalcSetHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CalcSetHome")); }
-			ScriptFunction ClearHolder() { return mClearHolder ? mClearHolder : (mClearHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ClearHolder")); }
-			ScriptFunction Position() { return mPosition ? mPosition : (mPosition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Position")); }
-			ScriptFunction ValidHolder() { return mValidHolder ? mValidHolder : (mValidHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ValidHolder")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Touch")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.FellOutOfWorld")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ReplicatedEvent")); }
-			ScriptFunction ClientReturnedHome() { return mClientReturnedHome ? mClientReturnedHome : (mClientReturnedHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ClientReturnedHome")); }
-			ScriptFunction NotReachableBy() { return mNotReachableBy ? mNotReachableBy : (mNotReachableBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.NotReachableBy")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Landed")); }
-			ScriptFunction GetKismetEventObjective() { return mGetKismetEventObjective ? mGetKismetEventObjective : (mGetKismetEventObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.GetKismetEventObjective")); }
-			ScriptFunction LogTaken() { return mLogTaken ? mLogTaken : (mLogTaken = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.LogTaken")); }
-			ScriptFunction LogReturned() { return mLogReturned ? mLogReturned : (mLogReturned = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.LogReturned")); }
-			ScriptFunction LogDropped() { return mLogDropped ? mLogDropped : (mLogDropped = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.LogDropped")); }
-			ScriptFunction CheckTouching() { return mCheckTouching ? mCheckTouching : (mCheckTouching = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CheckTouching")); }
-			ScriptFunction AutoSendHome() { return mAutoSendHome ? mAutoSendHome : (mAutoSendHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.AutoSendHome")); }
-			ScriptFunction CheckFit() { return mCheckFit ? mCheckFit : (mCheckFit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CheckFit")); }
-			ScriptFunction CheckPain() { return mCheckPain ? mCheckPain : (mCheckPain = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CheckPain")); }
+			ScriptFunction FlagUse() { mixin(MGF!("mFlagUse", "Function UTGame.UTCarriedObject.FlagUse")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCarriedObject.PostBeginPlay")()); }
+			ScriptFunction ShouldMinimapRenderFor() { mixin(MGF!("mShouldMinimapRenderFor", "Function UTGame.UTCarriedObject.ShouldMinimapRenderFor")()); }
+			ScriptFunction HighlightOnMinimap() { mixin(MGF!("mHighlightOnMinimap", "Function UTGame.UTCarriedObject.HighlightOnMinimap")()); }
+			ScriptFunction GetIconTexture() { mixin(MGF!("mGetIconTexture", "Function UTGame.UTCarriedObject.GetIconTexture")()); }
+			ScriptFunction DrawIcon() { mixin(MGF!("mDrawIcon", "Function UTGame.UTCarriedObject.DrawIcon")()); }
+			ScriptFunction RenderMapIcon() { mixin(MGF!("mRenderMapIcon", "Function UTGame.UTCarriedObject.RenderMapIcon")()); }
+			ScriptFunction RenderEnemyMapIcon() { mixin(MGF!("mRenderEnemyMapIcon", "Function UTGame.UTCarriedObject.RenderEnemyMapIcon")()); }
+			ScriptFunction SetHolder() { mixin(MGF!("mSetHolder", "Function UTGame.UTCarriedObject.SetHolder")()); }
+			ScriptFunction SendFlagMessage() { mixin(MGF!("mSendFlagMessage", "Function UTGame.UTCarriedObject.SendFlagMessage")()); }
+			ScriptFunction Score() { mixin(MGF!("mScore", "Function UTGame.UTCarriedObject.Score")()); }
+			ScriptFunction Drop() { mixin(MGF!("mDrop", "Function UTGame.UTCarriedObject.Drop")()); }
+			ScriptFunction SendHome() { mixin(MGF!("mSendHome", "Function UTGame.UTCarriedObject.SendHome")()); }
+			ScriptFunction KismetSendHome() { mixin(MGF!("mKismetSendHome", "Function UTGame.UTCarriedObject.KismetSendHome")()); }
+			ScriptFunction BroadcastReturnedMessage() { mixin(MGF!("mBroadcastReturnedMessage", "Function UTGame.UTCarriedObject.BroadcastReturnedMessage")()); }
+			ScriptFunction BroadcastDroppedMessage() { mixin(MGF!("mBroadcastDroppedMessage", "Function UTGame.UTCarriedObject.BroadcastDroppedMessage")()); }
+			ScriptFunction BroadcastTakenFromBaseMessage() { mixin(MGF!("mBroadcastTakenFromBaseMessage", "Function UTGame.UTCarriedObject.BroadcastTakenFromBaseMessage")()); }
+			ScriptFunction BroadcastTakenDroppedMessage() { mixin(MGF!("mBroadcastTakenDroppedMessage", "Function UTGame.UTCarriedObject.BroadcastTakenDroppedMessage")()); }
+			ScriptFunction CalcSetHome() { mixin(MGF!("mCalcSetHome", "Function UTGame.UTCarriedObject.CalcSetHome")()); }
+			ScriptFunction ClearHolder() { mixin(MGF!("mClearHolder", "Function UTGame.UTCarriedObject.ClearHolder")()); }
+			ScriptFunction Position() { mixin(MGF!("mPosition", "Function UTGame.UTCarriedObject.Position")()); }
+			ScriptFunction ValidHolder() { mixin(MGF!("mValidHolder", "Function UTGame.UTCarriedObject.ValidHolder")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTCarriedObject.Touch")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function UTGame.UTCarriedObject.FellOutOfWorld")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTCarriedObject.ReplicatedEvent")()); }
+			ScriptFunction ClientReturnedHome() { mixin(MGF!("mClientReturnedHome", "Function UTGame.UTCarriedObject.ClientReturnedHome")()); }
+			ScriptFunction NotReachableBy() { mixin(MGF!("mNotReachableBy", "Function UTGame.UTCarriedObject.NotReachableBy")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function UTGame.UTCarriedObject.Landed")()); }
+			ScriptFunction GetKismetEventObjective() { mixin(MGF!("mGetKismetEventObjective", "Function UTGame.UTCarriedObject.GetKismetEventObjective")()); }
+			ScriptFunction LogTaken() { mixin(MGF!("mLogTaken", "Function UTGame.UTCarriedObject.LogTaken")()); }
+			ScriptFunction LogReturned() { mixin(MGF!("mLogReturned", "Function UTGame.UTCarriedObject.LogReturned")()); }
+			ScriptFunction LogDropped() { mixin(MGF!("mLogDropped", "Function UTGame.UTCarriedObject.LogDropped")()); }
+			ScriptFunction CheckTouching() { mixin(MGF!("mCheckTouching", "Function UTGame.UTCarriedObject.CheckTouching")()); }
+			ScriptFunction AutoSendHome() { mixin(MGF!("mAutoSendHome", "Function UTGame.UTCarriedObject.AutoSendHome")()); }
+			ScriptFunction CheckFit() { mixin(MGF!("mCheckFit", "Function UTGame.UTCarriedObject.CheckFit")()); }
+			ScriptFunction CheckPain() { mixin(MGF!("mCheckPain", "Function UTGame.UTCarriedObject.CheckPain")()); }
 		}
+	}
+	static struct Home
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTCarriedObject.Home")()); }
+	}
+	static struct Held
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTCarriedObject.Held")()); }
+	}
+	static struct Dropped
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTCarriedObject.Dropped")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptName GameObjBone3P() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 596); }
-			Rotator GameObjRot3P() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 616); }
-			Vector GameObjOffset3P() { return *cast(Vector*)(cast(size_t)cast(void*)this + 604); }
-			Rotator GameObjRot1P() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 640); }
-			Vector GameObjOffset1P() { return *cast(Vector*)(cast(size_t)cast(void*)this + 628); }
-			ScriptArray!(Controller) Assists() { return *cast(ScriptArray!(Controller)*)(cast(size_t)cast(void*)this + 560); }
-			ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo) NeedToPickUpAnnouncements() { return *cast(ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo)*)(cast(size_t)cast(void*)this + 680); }
-			ForceFeedbackWaveform PickUpWaveForm() { return *cast(ForceFeedbackWaveform*)(cast(size_t)cast(void*)this + 764); }
-			UObject.LinearColor GoldColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 748); }
-			UObject.LinearColor BlueColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 732); }
-			UObject.LinearColor RedColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 716); }
-			int LastSeeMessageIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 712); }
-			float LastFlagSeeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 708); }
-			float LastHighlightUpdate() { return *cast(float*)(cast(size_t)cast(void*)this + 704); }
-			float HighlightSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 700); }
-			float MaxHighlightScale() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-			float HighlightScale() { return *cast(float*)(cast(size_t)cast(void*)this + 692); }
-			float DefaultHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-			float DefaultRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
-			Pawn OldHolder() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 664); }
-			SoundCue ReturnedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 660); }
-			SoundCue DroppedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 656); }
-			SoundCue PickupSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 652); }
-			Texture2D IconTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 592); }
-			UIRoot.TextureCoordinates IconCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 576); }
-			float MapSize() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-			Controller FirstTouch() { return *cast(Controller*)(cast(size_t)cast(void*)this + 556); }
-			float MaxDropTime() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			float TakenTime() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-			Pawn Holder() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 544); }
-			UTPlayerReplicationInfo HolderPRI() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 540); }
-			float TossDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 536); }
+			ScriptName GameObjBone3P() { mixin(MGPC!(ScriptName, 596)()); }
+			Rotator GameObjRot3P() { mixin(MGPC!(Rotator, 616)()); }
+			Vector GameObjOffset3P() { mixin(MGPC!(Vector, 604)()); }
+			Rotator GameObjRot1P() { mixin(MGPC!(Rotator, 640)()); }
+			Vector GameObjOffset1P() { mixin(MGPC!(Vector, 628)()); }
+			ScriptArray!(Controller) Assists() { mixin(MGPC!(ScriptArray!(Controller), 560)()); }
+			ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo) NeedToPickUpAnnouncements() { mixin(MGPC!(ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo), 680)()); }
+			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 764)()); }
+			UObject.LinearColor GoldColor() { mixin(MGPC!(UObject.LinearColor, 748)()); }
+			UObject.LinearColor BlueColor() { mixin(MGPC!(UObject.LinearColor, 732)()); }
+			UObject.LinearColor RedColor() { mixin(MGPC!(UObject.LinearColor, 716)()); }
+			int LastSeeMessageIndex() { mixin(MGPC!(int, 712)()); }
+			float LastFlagSeeTime() { mixin(MGPC!(float, 708)()); }
+			float LastHighlightUpdate() { mixin(MGPC!(float, 704)()); }
+			float HighlightSpeed() { mixin(MGPC!(float, 700)()); }
+			float MaxHighlightScale() { mixin(MGPC!(float, 696)()); }
+			float HighlightScale() { mixin(MGPC!(float, 692)()); }
+			float DefaultHeight() { mixin(MGPC!(float, 676)()); }
+			float DefaultRadius() { mixin(MGPC!(float, 672)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagLight'!
+			Pawn OldHolder() { mixin(MGPC!(Pawn, 664)()); }
+			SoundCue ReturnedSound() { mixin(MGPC!(SoundCue, 660)()); }
+			SoundCue DroppedSound() { mixin(MGPC!(SoundCue, 656)()); }
+			SoundCue PickupSound() { mixin(MGPC!(SoundCue, 652)()); }
+			Texture2D IconTexture() { mixin(MGPC!(Texture2D, 592)()); }
+			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 576)()); }
+			float MapSize() { mixin(MGPC!(float, 572)()); }
+			Controller FirstTouch() { mixin(MGPC!(Controller, 556)()); }
+			float MaxDropTime() { mixin(MGPC!(float, 552)()); }
+			float TakenTime() { mixin(MGPC!(float, 548)()); }
+			Pawn Holder() { mixin(MGPC!(Pawn, 544)()); }
+			UTPlayerReplicationInfo HolderPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 540)()); }
+			float TossDistance() { mixin(MGPC!(float, 536)()); }
 		}
-		bool bUseTeamColorForIcon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
-		bool bUseTeamColorForIcon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
-		bool bLeavingDroppedState() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
-		bool bLeavingDroppedState(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
-		bool bLastSecondSave() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool bLastSecondSave(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		bool bUseTeamColorForIcon() { mixin(MGBPC!(532, 0x4)()); }
+		bool bUseTeamColorForIcon(bool val) { mixin(MSBPC!(532, 0x4)()); }
+		bool bLeavingDroppedState() { mixin(MGBPC!(532, 0x2)()); }
+		bool bLeavingDroppedState(bool val) { mixin(MSBPC!(532, 0x2)()); }
+		bool bLastSecondSave() { mixin(MGBPC!(532, 0x1)()); }
+		bool bLastSecondSave(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	bool FlagUse(Controller C)

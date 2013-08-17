@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_Vehicle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_Vehicle : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Vehicle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Vehicle")()); }
 	private static __gshared GFxTrPage_Vehicle mDefaultProperties;
-	@property final static GFxTrPage_Vehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Vehicle)("GFxTrPage_Vehicle TribesGame.Default__GFxTrPage_Vehicle")); }
+	@property final static GFxTrPage_Vehicle DefaultProperties() { mixin(MGDPC!(GFxTrPage_Vehicle, "GFxTrPage_Vehicle TribesGame.Default__GFxTrPage_Vehicle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,15 +29,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.SpecialAction")); }
-			ScriptFunction ClearActions() { return mClearActions ? mClearActions : (mClearActions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.ClearActions")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.TakeAction")); }
-			ScriptFunction AddOption() { return mAddOption ? mAddOption : (mAddOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.AddOption")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.FillData")); }
-			ScriptFunction FillOptions() { return mFillOptions ? mFillOptions : (mFillOptions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.FillOptions")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.FillOption")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Vehicle.ShowModel")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Vehicle.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Vehicle.SpecialAction")()); }
+			ScriptFunction ClearActions() { mixin(MGF!("mClearActions", "Function TribesGame.GFxTrPage_Vehicle.ClearActions")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Vehicle.TakeAction")()); }
+			ScriptFunction AddOption() { mixin(MGF!("mAddOption", "Function TribesGame.GFxTrPage_Vehicle.AddOption")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Vehicle.FillData")()); }
+			ScriptFunction FillOptions() { mixin(MGF!("mFillOptions", "Function TribesGame.GFxTrPage_Vehicle.FillOptions")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Vehicle.FillOption")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Vehicle.ShowModel")()); }
 		}
 	}
 	struct VehicleOption
@@ -44,21 +45,21 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.GFxTrPage_Vehicle.VehicleOption")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrPage_Vehicle.VehicleOption")()); }
 		@property final auto ref
 		{
-			ScriptString DisplayName() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
-			ScriptString ClassName() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-			int MaxCount() { return *cast(int*)(cast(size_t)&this + 12); }
-			int Count() { return *cast(int*)(cast(size_t)&this + 8); }
-			int Icon() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Cost() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptString DisplayName() { mixin(MGPS!(ScriptString, 28)()); }
+			ScriptString ClassName() { mixin(MGPS!(ScriptString, 16)()); }
+			int MaxCount() { mixin(MGPS!(int, 12)()); }
+			int Count() { mixin(MGPS!(int, 8)()); }
+			int Icon() { mixin(MGPS!(int, 4)()); }
+			int Cost() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		int PlayerCredits() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-		ScriptArray!(GFxTrPage_Vehicle.VehicleOption) VehicleOptions() { return *cast(ScriptArray!(GFxTrPage_Vehicle.VehicleOption)*)(cast(size_t)cast(void*)this + 360); }
+		int PlayerCredits() { mixin(MGPC!(int, 356)()); }
+		ScriptArray!(GFxTrPage_Vehicle.VehicleOption) VehicleOptions() { mixin(MGPC!(ScriptArray!(GFxTrPage_Vehicle.VehicleOption), 360)()); }
 	}
 final:
 	void Initialize()

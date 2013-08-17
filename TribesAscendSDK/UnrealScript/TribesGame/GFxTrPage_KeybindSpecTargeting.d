@@ -1,19 +1,20 @@
 module UnrealScript.TribesGame.GFxTrPage_KeybindSpecTargeting;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrPage_KeybindAction;
 
 extern(C++) interface GFxTrPage_KeybindSpecTargeting : GFxTrPage_KeybindAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_KeybindSpecTargeting")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_KeybindSpecTargeting")()); }
 	private static __gshared GFxTrPage_KeybindSpecTargeting mDefaultProperties;
-	@property final static GFxTrPage_KeybindSpecTargeting DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_KeybindSpecTargeting)("GFxTrPage_KeybindSpecTargeting TribesGame.Default__GFxTrPage_KeybindSpecTargeting")); }
+	@property final static GFxTrPage_KeybindSpecTargeting DefaultProperties() { mixin(MGDPC!(GFxTrPage_KeybindSpecTargeting, "GFxTrPage_KeybindSpecTargeting TribesGame.Default__GFxTrPage_KeybindSpecTargeting")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;
-		public @property static final ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_KeybindSpecTargeting.Initialize")); }
+		public @property static final ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_KeybindSpecTargeting.Initialize")()); }
 	}
 	final void Initialize()
 	{

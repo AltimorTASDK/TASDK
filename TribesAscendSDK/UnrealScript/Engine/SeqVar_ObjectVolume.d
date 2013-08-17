@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqVar_ObjectVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SeqVar_Object;
 
@@ -8,18 +9,18 @@ extern(C++) interface SeqVar_ObjectVolume : SeqVar_Object
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqVar_ObjectVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqVar_ObjectVolume")()); }
 	private static __gshared SeqVar_ObjectVolume mDefaultProperties;
-	@property final static SeqVar_ObjectVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqVar_ObjectVolume)("SeqVar_ObjectVolume Engine.Default__SeqVar_ObjectVolume")); }
+	@property final static SeqVar_ObjectVolume DefaultProperties() { mixin(MGDPC!(SeqVar_ObjectVolume, "SeqVar_ObjectVolume Engine.Default__SeqVar_ObjectVolume")()); }
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) ContainedObjects() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 180); }
-			ScriptArray!(ScriptClass) ExcludeClassList() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 192); }
-			float LastUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
+			ScriptArray!(UObject) ContainedObjects() { mixin(MGPC!(ScriptArray!(UObject), 180)()); }
+			ScriptArray!(ScriptClass) ExcludeClassList() { mixin(MGPC!(ScriptArray!(ScriptClass), 192)()); }
+			float LastUpdateTime() { mixin(MGPC!(float, 176)()); }
 		}
-		bool bCollidingOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 204) & 0x1) != 0; }
-		bool bCollidingOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 204) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 204) &= ~0x1; } return val; }
+		bool bCollidingOnly() { mixin(MGBPC!(204, 0x1)()); }
+		bool bCollidingOnly(bool val) { mixin(MSBPC!(204, 0x1)()); }
 	}
 }

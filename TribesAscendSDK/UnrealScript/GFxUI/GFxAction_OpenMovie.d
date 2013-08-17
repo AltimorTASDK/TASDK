@@ -1,6 +1,7 @@
 module UnrealScript.GFxUI.GFxAction_OpenMovie;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.TextureRenderTarget2D;
 import UnrealScript.GFxUI.GFxMoviePlayer;
 import UnrealScript.Engine.SequenceAction;
@@ -10,36 +11,36 @@ extern(C++) interface GFxAction_OpenMovie : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxAction_OpenMovie")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GFxUI.GFxAction_OpenMovie")()); }
 	private static __gshared GFxAction_OpenMovie mDefaultProperties;
-	@property final static GFxAction_OpenMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxAction_OpenMovie)("GFxAction_OpenMovie GFxUI.Default__GFxAction_OpenMovie")); }
+	@property final static GFxAction_OpenMovie DefaultProperties() { mixin(MGDPC!(GFxAction_OpenMovie, "GFxAction_OpenMovie GFxUI.Default__GFxAction_OpenMovie")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsValidLevelSequenceObject;
-		public @property static final ScriptFunction IsValidLevelSequenceObject() { return mIsValidLevelSequenceObject ? mIsValidLevelSequenceObject : (mIsValidLevelSequenceObject = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxAction_OpenMovie.IsValidLevelSequenceObject")); }
+		public @property static final ScriptFunction IsValidLevelSequenceObject() { mixin(MGF!("mIsValidLevelSequenceObject", "Function GFxUI.GFxAction_OpenMovie.IsValidLevelSequenceObject")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) CaptureKeys() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 256); }
-			ScriptArray!(ScriptName) FocusIgnoreKeys() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 268); }
-			TextureRenderTarget2D RenderTexture() { return *cast(TextureRenderTarget2D*)(cast(size_t)cast(void*)this + 252); }
-			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { return *cast(GFxMoviePlayer.GFxRenderTextureMode*)(cast(size_t)cast(void*)this + 248); }
-			GFxMoviePlayer MoviePlayer() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 240); }
-			ScriptClass MoviePlayerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 236); }
-			SwfMovie Movie() { return *cast(SwfMovie*)(cast(size_t)cast(void*)this + 232); }
+			ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 256)()); }
+			ScriptArray!(ScriptName) FocusIgnoreKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 268)()); }
+			TextureRenderTarget2D RenderTexture() { mixin(MGPC!(TextureRenderTarget2D, 252)()); }
+			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { mixin(MGPC!(GFxMoviePlayer.GFxRenderTextureMode, 248)()); }
+			GFxMoviePlayer MoviePlayer() { mixin(MGPC!(GFxMoviePlayer, 240)()); }
+			ScriptClass MoviePlayerClass() { mixin(MGPC!(ScriptClass, 236)()); }
+			SwfMovie Movie() { mixin(MGPC!(SwfMovie, 232)()); }
 		}
-		bool bDisplayWithHudOff() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x10) != 0; }
-		bool bDisplayWithHudOff(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x10; } return val; }
-		bool bEnableGammaCorrection() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x8) != 0; }
-		bool bEnableGammaCorrection(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x8; } return val; }
-		bool bStartPaused() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x4) != 0; }
-		bool bStartPaused(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x4; } return val; }
-		bool bCaptureInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x2) != 0; }
-		bool bCaptureInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x2; } return val; }
-		bool bTakeFocus() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x1) != 0; }
-		bool bTakeFocus(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x1; } return val; }
+		bool bDisplayWithHudOff() { mixin(MGBPC!(244, 0x10)()); }
+		bool bDisplayWithHudOff(bool val) { mixin(MSBPC!(244, 0x10)()); }
+		bool bEnableGammaCorrection() { mixin(MGBPC!(244, 0x8)()); }
+		bool bEnableGammaCorrection(bool val) { mixin(MSBPC!(244, 0x8)()); }
+		bool bStartPaused() { mixin(MGBPC!(244, 0x4)()); }
+		bool bStartPaused(bool val) { mixin(MSBPC!(244, 0x4)()); }
+		bool bCaptureInput() { mixin(MGBPC!(244, 0x2)()); }
+		bool bCaptureInput(bool val) { mixin(MSBPC!(244, 0x2)()); }
+		bool bTakeFocus() { mixin(MGBPC!(244, 0x1)()); }
+		bool bTakeFocus(bool val) { mixin(MSBPC!(244, 0x1)()); }
 	}
 	final bool IsValidLevelSequenceObject()
 	{

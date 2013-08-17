@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleTypeDataMeshPhysX;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleTypeDataPhysX;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleModuleTypeDataMesh;
@@ -10,9 +11,9 @@ extern(C++) interface ParticleModuleTypeDataMeshPhysX : ParticleModuleTypeDataMe
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataMeshPhysX")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleTypeDataMeshPhysX")()); }
 	private static __gshared ParticleModuleTypeDataMeshPhysX mDefaultProperties;
-	@property final static ParticleModuleTypeDataMeshPhysX DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataMeshPhysX)("ParticleModuleTypeDataMeshPhysX Engine.Default__ParticleModuleTypeDataMeshPhysX")); }
+	@property final static ParticleModuleTypeDataMeshPhysX DefaultProperties() { mixin(MGDPC!(ParticleModuleTypeDataMeshPhysX, "ParticleModuleTypeDataMeshPhysX Engine.Default__ParticleModuleTypeDataMeshPhysX")()); }
 	enum EPhysXMeshRotationMethod : ubyte
 	{
 		PMRM_Disabled = 0,
@@ -25,10 +26,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { return *cast(ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties*)(cast(size_t)cast(void*)this + 112); }
-		UObject.Pointer RenderInstance() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 108); }
-		float FluidRotationCoefficient() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-		ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod PhysXRotationMethod() { return *cast(ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod*)(cast(size_t)cast(void*)this + 100); }
-		PhysXParticleSystem PhysXParSys() { return *cast(PhysXParticleSystem*)(cast(size_t)cast(void*)this + 96); }
+		ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { mixin(MGPC!(ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties, 112)()); }
+		UObject.Pointer RenderInstance() { mixin(MGPC!(UObject.Pointer, 108)()); }
+		float FluidRotationCoefficient() { mixin(MGPC!(float, 104)()); }
+		ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod PhysXRotationMethod() { mixin(MGPC!(ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod, 100)()); }
+		PhysXParticleSystem PhysXParSys() { mixin(MGPC!(PhysXParticleSystem, 96)()); }
 	}
 }

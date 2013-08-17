@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NxForceFieldTornado;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NxForceField;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ForceFieldShape;
@@ -9,33 +10,34 @@ extern(C++) interface NxForceFieldTornado : NxForceField
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldTornado")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NxForceFieldTornado")()); }
 	private static __gshared NxForceFieldTornado mDefaultProperties;
-	@property final static NxForceFieldTornado DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldTornado)("NxForceFieldTornado Engine.Default__NxForceFieldTornado")); }
+	@property final static NxForceFieldTornado DefaultProperties() { mixin(MGDPC!(NxForceFieldTornado, "NxForceFieldTornado Engine.Default__NxForceFieldTornado")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDoInitRBPhys;
-		public @property static final ScriptFunction DoInitRBPhys() { return mDoInitRBPhys ? mDoInitRBPhys : (mDoInitRBPhys = ScriptObject.Find!(ScriptFunction)("Function Engine.NxForceFieldTornado.DoInitRBPhys")); }
+		public @property static final ScriptFunction DoInitRBPhys() { mixin(MGF!("mDoInitRBPhys", "Function Engine.NxForceFieldTornado.DoInitRBPhys")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Pointer Kernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 592); }
-			float SelfRotationStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 588); }
-			float HeightOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-			float ForceHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
-			float EscapeVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-			float LiftFalloffHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 568); }
-			float ForceTopRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 564); }
-			float ForceRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-			float LiftStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			float RotationalStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			float RadialStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-			ForceFieldShape Shape() { return *cast(ForceFieldShape*)(cast(size_t)cast(void*)this + 540); }
+			UObject.Pointer Kernel() { mixin(MGPC!(UObject.Pointer, 592)()); }
+			float SelfRotationStrength() { mixin(MGPC!(float, 588)()); }
+			float HeightOffset() { mixin(MGPC!(float, 580)()); }
+			float ForceHeight() { mixin(MGPC!(float, 576)()); }
+			float EscapeVelocity() { mixin(MGPC!(float, 572)()); }
+			float LiftFalloffHeight() { mixin(MGPC!(float, 568)()); }
+			float ForceTopRadius() { mixin(MGPC!(float, 564)()); }
+			float ForceRadius() { mixin(MGPC!(float, 560)()); }
+			float LiftStrength() { mixin(MGPC!(float, 556)()); }
+			float RotationalStrength() { mixin(MGPC!(float, 552)()); }
+			float RadialStrength() { mixin(MGPC!(float, 548)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DrawComponent'!
+			ForceFieldShape Shape() { mixin(MGPC!(ForceFieldShape, 540)()); }
 		}
-		bool BSpecialRadialForceMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x1) != 0; }
-		bool BSpecialRadialForceMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x1; } return val; }
+		bool BSpecialRadialForceMode() { mixin(MGBPC!(584, 0x1)()); }
+		bool BSpecialRadialForceMode(bool val) { mixin(MSBPC!(584, 0x1)()); }
 	}
 	final void DoInitRBPhys()
 	{

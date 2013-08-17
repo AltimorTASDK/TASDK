@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdSpawnerInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface GameCrowdSpawnerInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdSpawnerInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdSpawnerInterface")()); }
 	private static __gshared GameCrowdSpawnerInterface mDefaultProperties;
-	@property final static GameCrowdSpawnerInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdSpawnerInterface)("GameCrowdSpawnerInterface GameFramework.Default__GameCrowdSpawnerInterface")); }
+	@property final static GameCrowdSpawnerInterface DefaultProperties() { mixin(MGDPC!(GameCrowdSpawnerInterface, "GameCrowdSpawnerInterface GameFramework.Default__GameCrowdSpawnerInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,9 +22,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddToAgentPool() { return mAddToAgentPool ? mAddToAgentPool : (mAddToAgentPool = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdSpawnerInterface.AddToAgentPool")); }
-			ScriptFunction GetMaxSpawnDist() { return mGetMaxSpawnDist ? mGetMaxSpawnDist : (mGetMaxSpawnDist = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdSpawnerInterface.GetMaxSpawnDist")); }
-			ScriptFunction AgentDestroyed() { return mAgentDestroyed ? mAgentDestroyed : (mAgentDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdSpawnerInterface.AgentDestroyed")); }
+			ScriptFunction AddToAgentPool() { mixin(MGF!("mAddToAgentPool", "Function GameFramework.GameCrowdSpawnerInterface.AddToAgentPool")()); }
+			ScriptFunction GetMaxSpawnDist() { mixin(MGF!("mGetMaxSpawnDist", "Function GameFramework.GameCrowdSpawnerInterface.GetMaxSpawnDist")()); }
+			ScriptFunction AgentDestroyed() { mixin(MGF!("mAgentDestroyed", "Function GameFramework.GameCrowdSpawnerInterface.AgentDestroyed")()); }
 		}
 	}
 final:

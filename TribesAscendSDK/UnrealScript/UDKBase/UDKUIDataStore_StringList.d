@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKUIDataStore_StringList;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataStore_StringBase;
@@ -10,9 +11,9 @@ extern(C++) interface UDKUIDataStore_StringList : UIDataStore_StringBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataStore_StringList")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKUIDataStore_StringList")()); }
 	private static __gshared UDKUIDataStore_StringList mDefaultProperties;
-	@property final static UDKUIDataStore_StringList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataStore_StringList)("UDKUIDataStore_StringList UDKBase.Default__UDKUIDataStore_StringList")); }
+	@property final static UDKUIDataStore_StringList DefaultProperties() { mixin(MGDPC!(UDKUIDataStore_StringList, "UDKUIDataStore_StringList UDKBase.Default__UDKUIDataStore_StringList")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,20 +35,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Registered() { return mRegistered ? mRegistered : (mRegistered = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.Registered")); }
-			ScriptFunction GetFieldIndex() { return mGetFieldIndex ? mGetFieldIndex : (mGetFieldIndex = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.GetFieldIndex")); }
-			ScriptFunction AddStr() { return mAddStr ? mAddStr : (mAddStr = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.AddStr")); }
-			ScriptFunction InsertStr() { return mInsertStr ? mInsertStr : (mInsertStr = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.InsertStr")); }
-			ScriptFunction RemoveStr() { return mRemoveStr ? mRemoveStr : (mRemoveStr = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.RemoveStr")); }
-			ScriptFunction RemoveStrByIndex() { return mRemoveStrByIndex ? mRemoveStrByIndex : (mRemoveStrByIndex = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.RemoveStrByIndex")); }
-			ScriptFunction Empty() { return mEmpty ? mEmpty : (mEmpty = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.Empty")); }
-			ScriptFunction FindStr() { return mFindStr ? mFindStr : (mFindStr = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.FindStr")); }
-			ScriptFunction GetStr() { return mGetStr ? mGetStr : (mGetStr = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.GetStr")); }
-			ScriptFunction GetList() { return mGetList ? mGetList : (mGetList = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.GetList")); }
-			ScriptFunction GetCurrentValue() { return mGetCurrentValue ? mGetCurrentValue : (mGetCurrentValue = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.GetCurrentValue")); }
-			ScriptFunction GetCurrentValueIndex() { return mGetCurrentValueIndex ? mGetCurrentValueIndex : (mGetCurrentValueIndex = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.GetCurrentValueIndex")); }
-			ScriptFunction SetCurrentValueIndex() { return mSetCurrentValueIndex ? mSetCurrentValueIndex : (mSetCurrentValueIndex = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.SetCurrentValueIndex")); }
-			ScriptFunction Num() { return mNum ? mNum : (mNum = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.Num")); }
+			ScriptFunction Registered() { mixin(MGF!("mRegistered", "Function UDKBase.UDKUIDataStore_StringList.Registered")()); }
+			ScriptFunction GetFieldIndex() { mixin(MGF!("mGetFieldIndex", "Function UDKBase.UDKUIDataStore_StringList.GetFieldIndex")()); }
+			ScriptFunction AddStr() { mixin(MGF!("mAddStr", "Function UDKBase.UDKUIDataStore_StringList.AddStr")()); }
+			ScriptFunction InsertStr() { mixin(MGF!("mInsertStr", "Function UDKBase.UDKUIDataStore_StringList.InsertStr")()); }
+			ScriptFunction RemoveStr() { mixin(MGF!("mRemoveStr", "Function UDKBase.UDKUIDataStore_StringList.RemoveStr")()); }
+			ScriptFunction RemoveStrByIndex() { mixin(MGF!("mRemoveStrByIndex", "Function UDKBase.UDKUIDataStore_StringList.RemoveStrByIndex")()); }
+			ScriptFunction Empty() { mixin(MGF!("mEmpty", "Function UDKBase.UDKUIDataStore_StringList.Empty")()); }
+			ScriptFunction FindStr() { mixin(MGF!("mFindStr", "Function UDKBase.UDKUIDataStore_StringList.FindStr")()); }
+			ScriptFunction GetStr() { mixin(MGF!("mGetStr", "Function UDKBase.UDKUIDataStore_StringList.GetStr")()); }
+			ScriptFunction GetList() { mixin(MGF!("mGetList", "Function UDKBase.UDKUIDataStore_StringList.GetList")()); }
+			ScriptFunction GetCurrentValue() { mixin(MGF!("mGetCurrentValue", "Function UDKBase.UDKUIDataStore_StringList.GetCurrentValue")()); }
+			ScriptFunction GetCurrentValueIndex() { mixin(MGF!("mGetCurrentValueIndex", "Function UDKBase.UDKUIDataStore_StringList.GetCurrentValueIndex")()); }
+			ScriptFunction SetCurrentValueIndex() { mixin(MGF!("mSetCurrentValueIndex", "Function UDKBase.UDKUIDataStore_StringList.SetCurrentValueIndex")()); }
+			ScriptFunction Num() { mixin(MGF!("mNum", "Function UDKBase.UDKUIDataStore_StringList.Num")()); }
 		}
 	}
 	static struct Constants
@@ -59,22 +60,22 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKUIDataStore_StringList.EStringListData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKUIDataStore_StringList.EStringListData")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) Strings() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 36); }
-			UDKUIDataProvider_StringArray DataProvider() { return *cast(UDKUIDataProvider_StringArray*)(cast(size_t)&this + 48); }
-			int DefaultValueIndex() { return *cast(int*)(cast(size_t)&this + 32); }
-			ScriptString CurrentValue() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
-			ScriptString ColumnHeaderText() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-			ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(ScriptString) Strings() { mixin(MGPS!(ScriptArray!(ScriptString), 36)()); }
+			UDKUIDataProvider_StringArray DataProvider() { mixin(MGPS!(UDKUIDataProvider_StringArray, 48)()); }
+			int DefaultValueIndex() { mixin(MGPS!(int, 32)()); }
+			ScriptString CurrentValue() { mixin(MGPS!(ScriptString, 20)()); }
+			ScriptString ColumnHeaderText() { mixin(MGPS!(ScriptString, 8)()); }
+			ScriptName Tag() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKUIDataStore_StringList.EStringListData) StringData() { return *cast(ScriptArray!(UDKUIDataStore_StringList.EStringListData)*)(cast(size_t)cast(void*)this + 128); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 124); }
-		UObject.Pointer VfTable_IUIListElementProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
+		ScriptArray!(UDKUIDataStore_StringList.EStringListData) StringData() { mixin(MGPC!(ScriptArray!(UDKUIDataStore_StringList.EStringListData), 128)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
 	}
 final:
 	void Registered(LocalPlayer PlayerOwner)
@@ -164,12 +165,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetList, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(ScriptString)*)&params[8];
 	}
-	bool GetCurrentValue(ScriptName FieldName, ScriptString* out_Value)
+	bool GetCurrentValue(ScriptName FieldName, ref ScriptString out_Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptString*)&params[8] = *out_Value;
+		*cast(ScriptString*)&params[8] = out_Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentValue, params.ptr, cast(void*)0);
 		*out_Value = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];

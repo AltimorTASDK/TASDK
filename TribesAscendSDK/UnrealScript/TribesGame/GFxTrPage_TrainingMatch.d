@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_TrainingMatch;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_TrainingMatch : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_TrainingMatch")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_TrainingMatch")()); }
 	private static __gshared GFxTrPage_TrainingMatch mDefaultProperties;
-	@property final static GFxTrPage_TrainingMatch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_TrainingMatch)("GFxTrPage_TrainingMatch TribesGame.Default__GFxTrPage_TrainingMatch")); }
+	@property final static GFxTrPage_TrainingMatch DefaultProperties() { mixin(MGDPC!(GFxTrPage_TrainingMatch, "GFxTrPage_TrainingMatch TribesGame.Default__GFxTrPage_TrainingMatch")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,11 +25,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_TrainingMatch.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_TrainingMatch.SpecialAction")); }
-			ScriptFunction JoinLocalGame() { return mJoinLocalGame ? mJoinLocalGame : (mJoinLocalGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_TrainingMatch.JoinLocalGame")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_TrainingMatch.TakeFocus")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_TrainingMatch.FillOption")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_TrainingMatch.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_TrainingMatch.SpecialAction")()); }
+			ScriptFunction JoinLocalGame() { mixin(MGF!("mJoinLocalGame", "Function TribesGame.GFxTrPage_TrainingMatch.JoinLocalGame")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_TrainingMatch.TakeFocus")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_TrainingMatch.FillOption")()); }
 		}
 	}
 final:

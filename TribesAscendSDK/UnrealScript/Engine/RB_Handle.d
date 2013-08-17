@@ -1,6 +1,7 @@
 module UnrealScript.Engine.RB_Handle;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorComponent;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface RB_Handle : ActorComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_Handle")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.RB_Handle")()); }
 	private static __gshared RB_Handle mDefaultProperties;
-	@property final static RB_Handle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_Handle)("RB_Handle Engine.Default__RB_Handle")); }
+	@property final static RB_Handle DefaultProperties() { mixin(MGDPC!(RB_Handle, "RB_Handle Engine.Default__RB_Handle")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,39 +26,40 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GrabComponent() { return mGrabComponent ? mGrabComponent : (mGrabComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.GrabComponent")); }
-			ScriptFunction ReleaseComponent() { return mReleaseComponent ? mReleaseComponent : (mReleaseComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.ReleaseComponent")); }
-			ScriptFunction SetLocation() { return mSetLocation ? mSetLocation : (mSetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.SetLocation")); }
-			ScriptFunction SetSmoothLocation() { return mSetSmoothLocation ? mSetSmoothLocation : (mSetSmoothLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.SetSmoothLocation")); }
-			ScriptFunction UpdateSmoothLocation() { return mUpdateSmoothLocation ? mUpdateSmoothLocation : (mUpdateSmoothLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.UpdateSmoothLocation")); }
-			ScriptFunction SetOrientation() { return mSetOrientation ? mSetOrientation : (mSetOrientation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.SetOrientation")); }
-			ScriptFunction GetOrientation() { return mGetOrientation ? mGetOrientation : (mGetOrientation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.GetOrientation")); }
+			ScriptFunction GrabComponent() { mixin(MGF!("mGrabComponent", "Function Engine.RB_Handle.GrabComponent")()); }
+			ScriptFunction ReleaseComponent() { mixin(MGF!("mReleaseComponent", "Function Engine.RB_Handle.ReleaseComponent")()); }
+			ScriptFunction SetLocation() { mixin(MGF!("mSetLocation", "Function Engine.RB_Handle.SetLocation")()); }
+			ScriptFunction SetSmoothLocation() { mixin(MGF!("mSetSmoothLocation", "Function Engine.RB_Handle.SetSmoothLocation")()); }
+			ScriptFunction UpdateSmoothLocation() { mixin(MGF!("mUpdateSmoothLocation", "Function Engine.RB_Handle.UpdateSmoothLocation")()); }
+			ScriptFunction SetOrientation() { mixin(MGF!("mSetOrientation", "Function Engine.RB_Handle.SetOrientation")()); }
+			ScriptFunction GetOrientation() { mixin(MGF!("mGetOrientation", "Function Engine.RB_Handle.GetOrientation")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 180); }
-			Vector StepSize() { return *cast(Vector*)(cast(size_t)cast(void*)this + 168); }
-			Vector Destination() { return *cast(Vector*)(cast(size_t)cast(void*)this + 156); }
-			float AngularStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			float AngularDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			Vector LinearDampingScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 136); }
-			Vector LinearStiffnessScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 124); }
-			float LinearStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			float LinearDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			UObject.Pointer KinActorData() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 112); }
-			UObject.Pointer HandleData() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 108); }
-			int SceneIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
-			ScriptName GrabbedBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 92); }
+			Vector Location() { mixin(MGPC!(Vector, 180)()); }
+			Vector StepSize() { mixin(MGPC!(Vector, 168)()); }
+			Vector Destination() { mixin(MGPC!(Vector, 156)()); }
+			float AngularStiffness() { mixin(MGPC!(float, 152)()); }
+			float AngularDamping() { mixin(MGPC!(float, 148)()); }
+			Vector LinearDampingScale3D() { mixin(MGPC!(Vector, 136)()); }
+			Vector LinearStiffnessScale3D() { mixin(MGPC!(Vector, 124)()); }
+			float LinearStiffness() { mixin(MGPC!(float, 120)()); }
+			float LinearDamping() { mixin(MGPC!(float, 116)()); }
+			UObject.Pointer KinActorData() { mixin(MGPC!(UObject.Pointer, 112)()); }
+			UObject.Pointer HandleData() { mixin(MGPC!(UObject.Pointer, 108)()); }
+			int SceneIndex() { mixin(MGPC!(int, 100)()); }
+			ScriptName GrabbedBoneName() { mixin(MGPC!(ScriptName, 92)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GrabbedComponent'!
 		}
-		bool bInterpolating() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x4) != 0; }
-		bool bInterpolating(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x4; } return val; }
-		bool bRotationConstrained() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x2) != 0; }
-		bool bRotationConstrained(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x2; } return val; }
-		bool bInHardware() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x1) != 0; }
-		bool bInHardware(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x1; } return val; }
+		bool bInterpolating() { mixin(MGBPC!(104, 0x4)()); }
+		bool bInterpolating(bool val) { mixin(MSBPC!(104, 0x4)()); }
+		bool bRotationConstrained() { mixin(MGBPC!(104, 0x2)()); }
+		bool bRotationConstrained(bool val) { mixin(MSBPC!(104, 0x2)()); }
+		bool bInHardware() { mixin(MGBPC!(104, 0x1)()); }
+		bool bInHardware(bool val) { mixin(MSBPC!(104, 0x1)()); }
 	}
 final:
 	void GrabComponent(
@@ -93,19 +95,19 @@ void**)params.ptr = pComponent;
 		*cast(float*)&params[12] = MoveTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetSmoothLocation, params.ptr, cast(void*)0);
 	}
-	void UpdateSmoothLocation(Vector* NewLocation)
+	void UpdateSmoothLocation(ref const Vector NewLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *NewLocation;
+		*cast(Vector*)params.ptr = NewLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSmoothLocation, params.ptr, cast(void*)0);
 		*NewLocation = *cast(Vector*)params.ptr;
 	}
-	void SetOrientation(UObject.Quat* NewOrientation)
+	void SetOrientation(ref const UObject.Quat NewOrientation)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(UObject.Quat*)params.ptr = *NewOrientation;
+		*cast(UObject.Quat*)params.ptr = NewOrientation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetOrientation, params.ptr, cast(void*)0);
 		*NewOrientation = *cast(UObject.Quat*)params.ptr;
 	}

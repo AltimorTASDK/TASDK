@@ -1,6 +1,7 @@
 module UnrealScript.Engine.LandscapeComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
@@ -12,9 +13,9 @@ extern(C++) interface LandscapeComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LandscapeComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LandscapeComponent")()); }
 	private static __gshared LandscapeComponent mDefaultProperties;
-	@property final static LandscapeComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LandscapeComponent)("LandscapeComponent Engine.Default__LandscapeComponent")); }
+	@property final static LandscapeComponent DefaultProperties() { mixin(MGDPC!(LandscapeComponent, "LandscapeComponent Engine.Default__LandscapeComponent")()); }
 	enum ETerrainComponentNeighbors : ubyte
 	{
 		TCN_NW = 0,
@@ -32,11 +33,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LandscapeComponent.LandscapeComponentAlphaInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LandscapeComponent.LandscapeComponentAlphaInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ubyte) AlphaValues() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 4); }
-			int LayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptArray!(ubyte) AlphaValues() { mixin(MGPS!(ScriptArray!(ubyte), 4)()); }
+			int LayerIndex() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	struct WeightmapLayerAllocationInfo
@@ -44,39 +45,40 @@ public extern(D):
 		private ubyte __buffer__[10];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LandscapeComponent.WeightmapLayerAllocationInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LandscapeComponent.WeightmapLayerAllocationInfo")()); }
 		@property final auto ref
 		{
-			ubyte WeightmapTextureChannel() { return *cast(ubyte*)(cast(size_t)&this + 9); }
-			ubyte WeightmapTextureIndex() { return *cast(ubyte*)(cast(size_t)&this + 8); }
-			ScriptName LayerName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ubyte WeightmapTextureChannel() { mixin(MGPS!(ubyte, 9)()); }
+			ubyte WeightmapTextureIndex() { mixin(MGPS!(ubyte, 8)()); }
+			ScriptName LayerName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo) EditingAlphaLayerData() { return *cast(ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo)*)(cast(size_t)cast(void*)this + 512); }
-		ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo) WeightmapLayerAllocations() { return *cast(ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo)*)(cast(size_t)cast(void*)this + 532); }
-		ScriptArray!(Texture2D) WeightmapTextures() { return *cast(ScriptArray!(Texture2D)*)(cast(size_t)cast(void*)this + 544); }
-		ScriptArray!(ShadowMap2D) ShadowMaps() { return *cast(ScriptArray!(ShadowMap2D)*)(cast(size_t)cast(void*)this + 672); }
-		ScriptArray!(UObject.Guid) IrrelevantLights() { return *cast(ScriptArray!(UObject.Guid)*)(cast(size_t)cast(void*)this + 684); }
-		int CollisionMipLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 704); }
-		UObject.Pointer EditToolRenderData() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 700); }
-		EngineTypes.LightMapRef LightMap() { return *cast(EngineTypes.LightMapRef*)(cast(size_t)cast(void*)this + 696); }
-		UObject.Guid LightingGuid() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 656); }
-		int StaticLightingResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 652); }
-		UObject.BoxSphereBounds CachedBoxSphereBounds() { return *cast(UObject.BoxSphereBounds*)(cast(size_t)cast(void*)this + 624); }
-		Texture2D HeightmapTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 620); }
-		UObject.Vector2D LayerUVPan() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 612); }
-		float HeightmapSubsectionOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-		UObject.Vector4 HeightmapScaleBias() { return *cast(UObject.Vector4*)(cast(size_t)cast(void*)this + 592); }
-		float WeightmapSubsectionOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
-		UObject.Vector4 WeightmapScaleBias() { return *cast(UObject.Vector4*)(cast(size_t)cast(void*)this + 560); }
-		ScriptName EditingAlphaLayerName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 524); }
+		ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo) EditingAlphaLayerData() { mixin(MGPC!(ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo), 512)()); }
+		ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo) WeightmapLayerAllocations() { mixin(MGPC!(ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo), 532)()); }
+		ScriptArray!(Texture2D) WeightmapTextures() { mixin(MGPC!(ScriptArray!(Texture2D), 544)()); }
+		ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPC!(ScriptArray!(ShadowMap2D), 672)()); }
+		ScriptArray!(UObject.Guid) IrrelevantLights() { mixin(MGPC!(ScriptArray!(UObject.Guid), 684)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Neighbors'!
+		int CollisionMipLevel() { mixin(MGPC!(int, 704)()); }
+		UObject.Pointer EditToolRenderData() { mixin(MGPC!(UObject.Pointer, 700)()); }
+		EngineTypes.LightMapRef LightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 696)()); }
+		UObject.Guid LightingGuid() { mixin(MGPC!(UObject.Guid, 656)()); }
+		int StaticLightingResolution() { mixin(MGPC!(int, 652)()); }
+		UObject.BoxSphereBounds CachedBoxSphereBounds() { mixin(MGPC!(UObject.BoxSphereBounds, 624)()); }
+		Texture2D HeightmapTexture() { mixin(MGPC!(Texture2D, 620)()); }
+		UObject.Vector2D LayerUVPan() { mixin(MGPC!(UObject.Vector2D, 612)()); }
+		float HeightmapSubsectionOffset() { mixin(MGPC!(float, 608)()); }
+		UObject.Vector4 HeightmapScaleBias() { mixin(MGPC!(UObject.Vector4, 592)()); }
+		float WeightmapSubsectionOffset() { mixin(MGPC!(float, 576)()); }
+		UObject.Vector4 WeightmapScaleBias() { mixin(MGPC!(UObject.Vector4, 560)()); }
+		ScriptName EditingAlphaLayerName() { mixin(MGPC!(ScriptName, 524)()); }
 		// WARNING: Property 'MaterialInstance' has the same name as a defined type!
-		int NumSubsections() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
-		int SubsectionSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-		int ComponentSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-		int SectionBaseY() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
-		int SectionBaseX() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
+		int NumSubsections() { mixin(MGPC!(int, 504)()); }
+		int SubsectionSizeQuads() { mixin(MGPC!(int, 500)()); }
+		int ComponentSizeQuads() { mixin(MGPC!(int, 496)()); }
+		int SectionBaseY() { mixin(MGPC!(int, 492)()); }
+		int SectionBaseX() { mixin(MGPC!(int, 488)()); }
 	}
 }

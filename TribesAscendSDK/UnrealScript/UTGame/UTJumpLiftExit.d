@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTJumpLiftExit;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.LiftExit;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTJumpLiftExit : LiftExit
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTJumpLiftExit")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTJumpLiftExit")()); }
 	private static __gshared UTJumpLiftExit mDefaultProperties;
-	@property final static UTJumpLiftExit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTJumpLiftExit)("UTJumpLiftExit UTGame.Default__UTJumpLiftExit")); }
+	@property final static UTJumpLiftExit DefaultProperties() { mixin(MGDPC!(UTJumpLiftExit, "UTJumpLiftExit UTGame.Default__UTJumpLiftExit")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,9 +22,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTJumpLiftExit.PostBeginPlay")); }
-			ScriptFunction WaitForLift() { return mWaitForLift ? mWaitForLift : (mWaitForLift = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTJumpLiftExit.WaitForLift")); }
-			ScriptFunction CanBeReachedFromLiftBy() { return mCanBeReachedFromLiftBy ? mCanBeReachedFromLiftBy : (mCanBeReachedFromLiftBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTJumpLiftExit.CanBeReachedFromLiftBy")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTJumpLiftExit.PostBeginPlay")()); }
+			ScriptFunction WaitForLift() { mixin(MGF!("mWaitForLift", "Function UTGame.UTJumpLiftExit.WaitForLift")()); }
+			ScriptFunction CanBeReachedFromLiftBy() { mixin(MGF!("mCanBeReachedFromLiftBy", "Function UTGame.UTJumpLiftExit.CanBeReachedFromLiftBy")()); }
 		}
 	}
 final:

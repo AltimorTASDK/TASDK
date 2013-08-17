@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameAICommand;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AICommandBase;
 import UnrealScript.GameFramework.GameAIController;
 import UnrealScript.Engine.Actor;
@@ -11,9 +12,9 @@ extern(C++) interface GameAICommand : AICommandBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameAICommand")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameAICommand")()); }
 	private static __gshared GameAICommand mDefaultProperties;
-	@property final static GameAICommand DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameAICommand)("GameAICommand GameFramework.Default__GameAICommand")); }
+	@property final static GameAICommand DefaultProperties() { mixin(MGDPC!(GameAICommand, "GameAICommand GameFramework.Default__GameAICommand")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -43,51 +44,66 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitCommandUserActor() { return mInitCommandUserActor ? mInitCommandUserActor : (mInitCommandUserActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InitCommandUserActor")); }
-			ScriptFunction InitCommand() { return mInitCommand ? mInitCommand : (mInitCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InitCommand")); }
-			ScriptFunction InternalPrePushed() { return mInternalPrePushed ? mInternalPrePushed : (mInternalPrePushed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InternalPrePushed")); }
-			ScriptFunction InternalPushed() { return mInternalPushed ? mInternalPushed : (mInternalPushed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InternalPushed")); }
-			ScriptFunction InternalPopped() { return mInternalPopped ? mInternalPopped : (mInternalPopped = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InternalPopped")); }
-			ScriptFunction InternalPaused() { return mInternalPaused ? mInternalPaused : (mInternalPaused = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InternalPaused")); }
-			ScriptFunction InternalResumed() { return mInternalResumed ? mInternalResumed : (mInternalResumed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InternalResumed")); }
-			ScriptFunction InternalTick() { return mInternalTick ? mInternalTick : (mInternalTick = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.InternalTick")); }
-			ScriptFunction ShouldIgnoreNotifies() { return mShouldIgnoreNotifies ? mShouldIgnoreNotifies : (mShouldIgnoreNotifies = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.ShouldIgnoreNotifies")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.Tick")); }
-			ScriptFunction AllowTransitionTo() { return mAllowTransitionTo ? mAllowTransitionTo : (mAllowTransitionTo = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.AllowTransitionTo")); }
-			ScriptFunction AllowStateTransitionTo() { return mAllowStateTransitionTo ? mAllowStateTransitionTo : (mAllowStateTransitionTo = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.AllowStateTransitionTo")); }
-			ScriptFunction PrePushed() { return mPrePushed ? mPrePushed : (mPrePushed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.PrePushed")); }
-			ScriptFunction PostPopped() { return mPostPopped ? mPostPopped : (mPostPopped = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.PostPopped")); }
-			ScriptFunction Pushed() { return mPushed ? mPushed : (mPushed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.Pushed")); }
-			ScriptFunction Popped() { return mPopped ? mPopped : (mPopped = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.Popped")); }
-			ScriptFunction Paused() { return mPaused ? mPaused : (mPaused = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.Paused")); }
-			ScriptFunction Resumed() { return mResumed ? mResumed : (mResumed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.Resumed")); }
-			ScriptFunction GetDumpString() { return mGetDumpString ? mGetDumpString : (mGetDumpString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.GetDumpString")); }
-			ScriptFunction DrawDebug() { return mDrawDebug ? mDrawDebug : (mDrawDebug = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.DrawDebug")); }
-			ScriptFunction GetDebugOverheadText() { return mGetDebugOverheadText ? mGetDebugOverheadText : (mGetDebugOverheadText = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.GetDebugOverheadText")); }
-			ScriptFunction GetDebugVerboseText() { return mGetDebugVerboseText ? mGetDebugVerboseText : (mGetDebugVerboseText = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICommand.GetDebugVerboseText")); }
+			ScriptFunction InitCommandUserActor() { mixin(MGF!("mInitCommandUserActor", "Function GameFramework.GameAICommand.InitCommandUserActor")()); }
+			ScriptFunction InitCommand() { mixin(MGF!("mInitCommand", "Function GameFramework.GameAICommand.InitCommand")()); }
+			ScriptFunction InternalPrePushed() { mixin(MGF!("mInternalPrePushed", "Function GameFramework.GameAICommand.InternalPrePushed")()); }
+			ScriptFunction InternalPushed() { mixin(MGF!("mInternalPushed", "Function GameFramework.GameAICommand.InternalPushed")()); }
+			ScriptFunction InternalPopped() { mixin(MGF!("mInternalPopped", "Function GameFramework.GameAICommand.InternalPopped")()); }
+			ScriptFunction InternalPaused() { mixin(MGF!("mInternalPaused", "Function GameFramework.GameAICommand.InternalPaused")()); }
+			ScriptFunction InternalResumed() { mixin(MGF!("mInternalResumed", "Function GameFramework.GameAICommand.InternalResumed")()); }
+			ScriptFunction InternalTick() { mixin(MGF!("mInternalTick", "Function GameFramework.GameAICommand.InternalTick")()); }
+			ScriptFunction ShouldIgnoreNotifies() { mixin(MGF!("mShouldIgnoreNotifies", "Function GameFramework.GameAICommand.ShouldIgnoreNotifies")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function GameFramework.GameAICommand.Tick")()); }
+			ScriptFunction AllowTransitionTo() { mixin(MGF!("mAllowTransitionTo", "Function GameFramework.GameAICommand.AllowTransitionTo")()); }
+			ScriptFunction AllowStateTransitionTo() { mixin(MGF!("mAllowStateTransitionTo", "Function GameFramework.GameAICommand.AllowStateTransitionTo")()); }
+			ScriptFunction PrePushed() { mixin(MGF!("mPrePushed", "Function GameFramework.GameAICommand.PrePushed")()); }
+			ScriptFunction PostPopped() { mixin(MGF!("mPostPopped", "Function GameFramework.GameAICommand.PostPopped")()); }
+			ScriptFunction Pushed() { mixin(MGF!("mPushed", "Function GameFramework.GameAICommand.Pushed")()); }
+			ScriptFunction Popped() { mixin(MGF!("mPopped", "Function GameFramework.GameAICommand.Popped")()); }
+			ScriptFunction Paused() { mixin(MGF!("mPaused", "Function GameFramework.GameAICommand.Paused")()); }
+			ScriptFunction Resumed() { mixin(MGF!("mResumed", "Function GameFramework.GameAICommand.Resumed")()); }
+			ScriptFunction GetDumpString() { mixin(MGF!("mGetDumpString", "Function GameFramework.GameAICommand.GetDumpString")()); }
+			ScriptFunction DrawDebug() { mixin(MGF!("mDrawDebug", "Function GameFramework.GameAICommand.DrawDebug")()); }
+			ScriptFunction GetDebugOverheadText() { mixin(MGF!("mGetDebugOverheadText", "Function GameFramework.GameAICommand.GetDebugOverheadText")()); }
+			ScriptFunction GetDebugVerboseText() { mixin(MGF!("mGetDebugVerboseText", "Function GameFramework.GameAICommand.GetDebugVerboseText")()); }
 		}
+	}
+	static struct DebugState
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICommand.DebugState")()); }
+	}
+	static struct DelayFailure
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICommand.DelayFailure")()); }
+	}
+	static struct DelaySuccess
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICommand.DelaySuccess")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptName Status() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 76); }
-			GameAIController GameAIOwner() { return *cast(GameAIController*)(cast(size_t)cast(void*)this + 72); }
-			ScriptName ChildStatus() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 64); }
-			GameAICommand ChildCommand() { return *cast(GameAICommand*)(cast(size_t)cast(void*)this + 60); }
+			ScriptName Status() { mixin(MGPC!(ScriptName, 76)()); }
+			GameAIController GameAIOwner() { mixin(MGPC!(GameAIController, 72)()); }
+			ScriptName ChildStatus() { mixin(MGPC!(ScriptName, 64)()); }
+			GameAICommand ChildCommand() { mixin(MGPC!(GameAICommand, 60)()); }
 		}
-		bool bPendingPop() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x20) != 0; }
-		bool bPendingPop(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x20; } return val; }
-		bool bIgnoreStepAside() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x10) != 0; }
-		bool bIgnoreStepAside(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x10; } return val; }
-		bool bIgnoreNotifies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x8) != 0; }
-		bool bIgnoreNotifies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x8; } return val; }
-		bool bAborted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x4) != 0; }
-		bool bAborted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x4; } return val; }
-		bool bReplaceActiveSameClassInstance() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x2) != 0; }
-		bool bReplaceActiveSameClassInstance(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x2; } return val; }
-		bool bAllowNewSameClassInstance() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x1) != 0; }
-		bool bAllowNewSameClassInstance(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x1; } return val; }
+		bool bPendingPop() { mixin(MGBPC!(84, 0x20)()); }
+		bool bPendingPop(bool val) { mixin(MSBPC!(84, 0x20)()); }
+		bool bIgnoreStepAside() { mixin(MGBPC!(84, 0x10)()); }
+		bool bIgnoreStepAside(bool val) { mixin(MSBPC!(84, 0x10)()); }
+		bool bIgnoreNotifies() { mixin(MGBPC!(84, 0x8)()); }
+		bool bIgnoreNotifies(bool val) { mixin(MSBPC!(84, 0x8)()); }
+		bool bAborted() { mixin(MGBPC!(84, 0x4)()); }
+		bool bAborted(bool val) { mixin(MSBPC!(84, 0x4)()); }
+		bool bReplaceActiveSameClassInstance() { mixin(MGBPC!(84, 0x2)()); }
+		bool bReplaceActiveSameClassInstance(bool val) { mixin(MSBPC!(84, 0x2)()); }
+		bool bAllowNewSameClassInstance() { mixin(MGBPC!(84, 0x1)()); }
+		bool bAllowNewSameClassInstance(bool val) { mixin(MSBPC!(84, 0x1)()); }
 	}
 final:
 	static bool InitCommandUserActor(GameAIController AI, Actor UserActor)
@@ -221,12 +237,12 @@ final:
 		*cast(ScriptName*)&params[4] = Category;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawDebug, params.ptr, cast(void*)0);
 	}
-	void GetDebugOverheadText(PlayerController PC, ScriptArray!(ScriptString)* OutText)
+	void GetDebugOverheadText(PlayerController PC, ref ScriptArray!(ScriptString) OutText)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		*cast(ScriptArray!(ScriptString)*)&params[4] = *OutText;
+		*cast(ScriptArray!(ScriptString)*)&params[4] = OutText;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDebugOverheadText, params.ptr, cast(void*)0);
 		*OutText = *cast(ScriptArray!(ScriptString)*)&params[4];
 	}

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDataStore_GameSearchPersonal;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineGameSearch;
 import UnrealScript.UDKBase.UDKDataStore_GameSearchBase;
@@ -10,9 +11,9 @@ extern(C++) interface UTDataStore_GameSearchPersonal : UDKDataStore_GameSearchBa
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDataStore_GameSearchPersonal")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDataStore_GameSearchPersonal")()); }
 	private static __gshared UTDataStore_GameSearchPersonal mDefaultProperties;
-	@property final static UTDataStore_GameSearchPersonal DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDataStore_GameSearchPersonal)("UTDataStore_GameSearchPersonal UTGame.Default__UTDataStore_GameSearchPersonal")); }
+	@property final static UTDataStore_GameSearchPersonal DefaultProperties() { mixin(MGDPC!(UTDataStore_GameSearchPersonal, "UTDataStore_GameSearchPersonal UTGame.Default__UTDataStore_GameSearchPersonal")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,16 +31,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HasOutstandingQueries() { return mHasOutstandingQueries ? mHasOutstandingQueries : (mHasOutstandingQueries = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.HasOutstandingQueries")); }
-			ScriptFunction OverrideQuerySubmission() { return mOverrideQuerySubmission ? mOverrideQuerySubmission : (mOverrideQuerySubmission = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.OverrideQuerySubmission")); }
-			ScriptFunction GetPlayerName() { return mGetPlayerName ? mGetPlayerName : (mGetPlayerName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerName")); }
-			ScriptFunction GetPlayerNetId() { return mGetPlayerNetId ? mGetPlayerNetId : (mGetPlayerNetId = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerNetId")); }
-			ScriptFunction FindServerIndexByString() { return mFindServerIndexByString ? mFindServerIndexByString : (mFindServerIndexByString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexByString")); }
-			ScriptFunction FindServerIndexById() { return mFindServerIndexById ? mFindServerIndexById : (mFindServerIndexById = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexById")); }
-			ScriptFunction AddServer() { return mAddServer ? mAddServer : (mAddServer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.AddServer")); }
-			ScriptFunction RemoveServer() { return mRemoveServer ? mRemoveServer : (mRemoveServer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.RemoveServer")); }
-			ScriptFunction GetServerIdList() { return mGetServerIdList ? mGetServerIdList : (mGetServerIdList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetServerIdList")); }
-			ScriptFunction GetServerStringList() { return mGetServerStringList ? mGetServerStringList : (mGetServerStringList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetServerStringList")); }
+			ScriptFunction HasOutstandingQueries() { mixin(MGF!("mHasOutstandingQueries", "Function UTGame.UTDataStore_GameSearchPersonal.HasOutstandingQueries")()); }
+			ScriptFunction OverrideQuerySubmission() { mixin(MGF!("mOverrideQuerySubmission", "Function UTGame.UTDataStore_GameSearchPersonal.OverrideQuerySubmission")()); }
+			ScriptFunction GetPlayerName() { mixin(MGF!("mGetPlayerName", "Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerName")()); }
+			ScriptFunction GetPlayerNetId() { mixin(MGF!("mGetPlayerNetId", "Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerNetId")()); }
+			ScriptFunction FindServerIndexByString() { mixin(MGF!("mFindServerIndexByString", "Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexByString")()); }
+			ScriptFunction FindServerIndexById() { mixin(MGF!("mFindServerIndexById", "Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexById")()); }
+			ScriptFunction AddServer() { mixin(MGF!("mAddServer", "Function UTGame.UTDataStore_GameSearchPersonal.AddServer")()); }
+			ScriptFunction RemoveServer() { mixin(MGF!("mRemoveServer", "Function UTGame.UTDataStore_GameSearchPersonal.RemoveServer")()); }
+			ScriptFunction GetServerIdList() { mixin(MGF!("mGetServerIdList", "Function UTGame.UTDataStore_GameSearchPersonal.GetServerIdList")()); }
+			ScriptFunction GetServerStringList() { mixin(MGF!("mGetServerStringList", "Function UTGame.UTDataStore_GameSearchPersonal.GetServerStringList")()); }
 		}
 	}
 	static struct Constants
@@ -48,8 +49,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTDataStore_GameSearchDM PrimaryGameSearchDataStore() { return *cast(UTDataStore_GameSearchDM*)(cast(size_t)cast(void*)this + 172); }
-		ScriptString ServerUniqueId() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 176); }
+		UTDataStore_GameSearchDM PrimaryGameSearchDataStore() { mixin(MGPC!(UTDataStore_GameSearchDM, 172)()); }
+		ScriptString ServerUniqueId() { mixin(MGPC!(ScriptString, 176)()); }
 	}
 final:
 	bool HasOutstandingQueries(bool bRestrictCheckToSelf)
@@ -77,11 +78,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	bool GetPlayerNetId(OnlineSubsystem.UniqueNetId* out_PlayerId, int ControllerId)
+	bool GetPlayerNetId(ref OnlineSubsystem.UniqueNetId out_PlayerId, int ControllerId)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = *out_PlayerId;
+		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = out_PlayerId;
 		*cast(int*)&params[8] = ControllerId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerNetId, params.ptr, cast(void*)0);
 		*out_PlayerId = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
@@ -96,12 +97,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindServerIndexByString, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	int FindServerIndexById(int ControllerId, OnlineSubsystem.UniqueNetId* IdToFind)
+	int FindServerIndexById(int ControllerId, ref const OnlineSubsystem.UniqueNetId IdToFind)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
-		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = *IdToFind;
+		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = IdToFind;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindServerIndexById, params.ptr, cast(void*)0);
 		*IdToFind = *cast(OnlineSubsystem.UniqueNetId*)&params[4];
 		return *cast(int*)&params[12];
@@ -124,19 +125,19 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveServer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void GetServerIdList(ScriptArray!(OnlineSubsystem.UniqueNetId)* out_ServerList)
+	void GetServerIdList(ref ScriptArray!(OnlineSubsystem.UniqueNetId) out_ServerList)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *out_ServerList;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = out_ServerList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerIdList, params.ptr, cast(void*)0);
 		*out_ServerList = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
-	void GetServerStringList(ScriptArray!(ScriptString)* out_ServerList)
+	void GetServerStringList(ref ScriptArray!(ScriptString) out_ServerList)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptString)*)params.ptr = *out_ServerList;
+		*cast(ScriptArray!(ScriptString)*)params.ptr = out_ServerList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerStringList, params.ptr, cast(void*)0);
 		*out_ServerList = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}

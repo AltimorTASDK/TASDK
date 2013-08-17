@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNode_MultiBlendPerBone;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.AnimNodeSlot;
 import UnrealScript.Engine.AnimNodeBlendBase;
@@ -9,13 +10,13 @@ extern(C++) interface AnimNode_MultiBlendPerBone : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNode_MultiBlendPerBone")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNode_MultiBlendPerBone")()); }
 	private static __gshared AnimNode_MultiBlendPerBone mDefaultProperties;
-	@property final static AnimNode_MultiBlendPerBone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNode_MultiBlendPerBone)("AnimNode_MultiBlendPerBone Engine.Default__AnimNode_MultiBlendPerBone")); }
+	@property final static AnimNode_MultiBlendPerBone DefaultProperties() { mixin(MGDPC!(AnimNode_MultiBlendPerBone, "AnimNode_MultiBlendPerBone Engine.Default__AnimNode_MultiBlendPerBone")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetMaskWeight;
-		public @property static final ScriptFunction SetMaskWeight() { return mSetMaskWeight ? mSetMaskWeight : (mSetMaskWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode_MultiBlendPerBone.SetMaskWeight")); }
+		public @property static final ScriptFunction SetMaskWeight() { mixin(MGF!("mSetMaskWeight", "Function Engine.AnimNode_MultiBlendPerBone.SetMaskWeight")()); }
 	}
 	enum EWeightCheck : ubyte
 	{
@@ -33,14 +34,14 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.WeightNodeRule")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNode_MultiBlendPerBone.WeightNodeRule")()); }
 		@property final auto ref
 		{
-			int ChildIndex() { return *cast(int*)(cast(size_t)&this + 20); }
-			AnimNode_MultiBlendPerBone.EWeightCheck WeightCheck() { return *cast(AnimNode_MultiBlendPerBone.EWeightCheck*)(cast(size_t)&this + 16); }
-			AnimNodeSlot CachedSlotNode() { return *cast(AnimNodeSlot*)(cast(size_t)&this + 12); }
-			AnimNodeBlendBase CachedNode() { return *cast(AnimNodeBlendBase*)(cast(size_t)&this + 8); }
-			ScriptName NodeName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			int ChildIndex() { mixin(MGPS!(int, 20)()); }
+			AnimNode_MultiBlendPerBone.EWeightCheck WeightCheck() { mixin(MGPS!(AnimNode_MultiBlendPerBone.EWeightCheck, 16)()); }
+			AnimNodeSlot CachedSlotNode() { mixin(MGPS!(AnimNodeSlot, 12)()); }
+			AnimNodeBlendBase CachedNode() { mixin(MGPS!(AnimNodeBlendBase, 8)()); }
+			ScriptName NodeName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct WeightRule
@@ -48,11 +49,11 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.WeightRule")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNode_MultiBlendPerBone.WeightRule")()); }
 		@property final auto ref
 		{
-			AnimNode_MultiBlendPerBone.WeightNodeRule SecondNode() { return *cast(AnimNode_MultiBlendPerBone.WeightNodeRule*)(cast(size_t)&this + 24); }
-			AnimNode_MultiBlendPerBone.WeightNodeRule FirstNode() { return *cast(AnimNode_MultiBlendPerBone.WeightNodeRule*)(cast(size_t)&this + 0); }
+			AnimNode_MultiBlendPerBone.WeightNodeRule SecondNode() { mixin(MGPS!(AnimNode_MultiBlendPerBone.WeightNodeRule, 24)()); }
+			AnimNode_MultiBlendPerBone.WeightNodeRule FirstNode() { mixin(MGPS!(AnimNode_MultiBlendPerBone.WeightNodeRule, 0)()); }
 		}
 	}
 	struct BranchInfo
@@ -60,11 +61,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.BranchInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNode_MultiBlendPerBone.BranchInfo")()); }
 		@property final auto ref
 		{
-			float PerBoneWeightIncrease() { return *cast(float*)(cast(size_t)&this + 8); }
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			float PerBoneWeightIncrease() { mixin(MGPS!(float, 8)()); }
+			ScriptName BoneName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct PerBoneMaskInfo
@@ -72,32 +73,32 @@ public extern(D):
 		private ubyte __buffer__[64];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.PerBoneMaskInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNode_MultiBlendPerBone.PerBoneMaskInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo) BranchList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo)*)(cast(size_t)&this + 0); }
-				ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule) WeightRuleList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule)*)(cast(size_t)&this + 20); }
-				ScriptArray!(float) PerBoneWeights() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 36); }
-				ScriptArray!(ubyte) TransformReqBone() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 48); }
-				int TransformReqBoneIndex() { return *cast(int*)(cast(size_t)&this + 60); }
-				float BlendTimeToGo() { return *cast(float*)(cast(size_t)&this + 16); }
-				float DesiredWeight() { return *cast(float*)(cast(size_t)&this + 12); }
+				ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo) BranchList() { mixin(MGPS!(ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo), 0)()); }
+				ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule) WeightRuleList() { mixin(MGPS!(ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule), 20)()); }
+				ScriptArray!(float) PerBoneWeights() { mixin(MGPS!(ScriptArray!(float), 36)()); }
+				ScriptArray!(ubyte) TransformReqBone() { mixin(MGPS!(ScriptArray!(ubyte), 48)()); }
+				int TransformReqBoneIndex() { mixin(MGPS!(int, 60)()); }
+				float BlendTimeToGo() { mixin(MGPS!(float, 16)()); }
+				float DesiredWeight() { mixin(MGPS!(float, 12)()); }
 			}
-			bool bPendingBlend() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x4) != 0; }
-			bool bPendingBlend(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x4; } return val; }
-			bool bDisableForNonLocalHumanPlayers() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x2) != 0; }
-			bool bDisableForNonLocalHumanPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x2; } return val; }
-			bool bWeightBasedOnNodeRules() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x1) != 0; }
-			bool bWeightBasedOnNodeRules(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x1; } return val; }
+			bool bPendingBlend() { mixin(MGBPS!(32, 0x4)()); }
+			bool bPendingBlend(bool val) { mixin(MSBPS!(32, 0x4)()); }
+			bool bDisableForNonLocalHumanPlayers() { mixin(MGBPS!(32, 0x2)()); }
+			bool bDisableForNonLocalHumanPlayers(bool val) { mixin(MSBPS!(32, 0x2)()); }
+			bool bWeightBasedOnNodeRules() { mixin(MGBPS!(32, 0x1)()); }
+			bool bWeightBasedOnNodeRules(bool val) { mixin(MSBPS!(32, 0x1)()); }
 		}
 	}
 	@property final auto ref
 	{
-		Pawn PawnOwner() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 244); }
-		ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo) MaskList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo)*)(cast(size_t)cast(void*)this + 248); }
-		AnimNode_MultiBlendPerBone.EBlendType RotationBlendType() { return *cast(AnimNode_MultiBlendPerBone.EBlendType*)(cast(size_t)cast(void*)this + 260); }
+		Pawn PawnOwner() { mixin(MGPC!(Pawn, 244)()); }
+		ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo) MaskList() { mixin(MGPC!(ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo), 248)()); }
+		AnimNode_MultiBlendPerBone.EBlendType RotationBlendType() { mixin(MGPC!(AnimNode_MultiBlendPerBone.EBlendType, 260)()); }
 	}
 	final void SetMaskWeight(int MaskIndex, float DesiredWeight, float BlendTime)
 	{

@@ -1,20 +1,21 @@
 module UnrealScript.Engine.SeqAct_LevelStreamingBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Latent;
 
 extern(C++) interface SeqAct_LevelStreamingBase : SeqAct_Latent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_LevelStreamingBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_LevelStreamingBase")()); }
 	private static __gshared SeqAct_LevelStreamingBase mDefaultProperties;
-	@property final static SeqAct_LevelStreamingBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_LevelStreamingBase)("SeqAct_LevelStreamingBase Engine.Default__SeqAct_LevelStreamingBase")); }
+	@property final static SeqAct_LevelStreamingBase DefaultProperties() { mixin(MGDPC!(SeqAct_LevelStreamingBase, "SeqAct_LevelStreamingBase Engine.Default__SeqAct_LevelStreamingBase")()); }
 	@property final
 	{
-		bool bShouldBlockOnLoad() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x2) != 0; }
-		bool bShouldBlockOnLoad(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x2; } return val; }
-		bool bMakeVisibleAfterLoad() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x1) != 0; }
-		bool bMakeVisibleAfterLoad(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x1; } return val; }
+		bool bShouldBlockOnLoad() { mixin(MGBPC!(248, 0x2)()); }
+		bool bShouldBlockOnLoad(bool val) { mixin(MSBPC!(248, 0x2)()); }
+		bool bMakeVisibleAfterLoad() { mixin(MGBPC!(248, 0x1)()); }
+		bool bMakeVisibleAfterLoad(bool val) { mixin(MSBPC!(248, 0x1)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.EmitterSpawnable;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.Emitter;
 
@@ -8,9 +9,9 @@ extern(C++) interface EmitterSpawnable : Emitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EmitterSpawnable")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.EmitterSpawnable")()); }
 	private static __gshared EmitterSpawnable mDefaultProperties;
-	@property final static EmitterSpawnable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EmitterSpawnable)("EmitterSpawnable Engine.Default__EmitterSpawnable")); }
+	@property final static EmitterSpawnable DefaultProperties() { mixin(MGDPC!(EmitterSpawnable, "EmitterSpawnable Engine.Default__EmitterSpawnable")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterSpawnable.SetTemplate")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterSpawnable.ReplicatedEvent")); }
+			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function Engine.EmitterSpawnable.SetTemplate")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.EmitterSpawnable.ReplicatedEvent")()); }
 		}
 	}
-	@property final auto ref ParticleSystem ParticleTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 488); }
+	@property final auto ref ParticleSystem ParticleTemplate() { mixin(MGPC!(ParticleSystem, 488)()); }
 final:
 	void SetTemplate(ParticleSystem NewTemplate, bool bDestroyOnFinish)
 	{

@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrContentLoader;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrContentLoader : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrContentLoader")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrContentLoader")()); }
 	private static __gshared TrContentLoader mDefaultProperties;
-	@property final static TrContentLoader DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrContentLoader)("TrContentLoader TribesGame.Default__TrContentLoader")); }
+	@property final static TrContentLoader DefaultProperties() { mixin(MGDPC!(TrContentLoader, "TrContentLoader TribesGame.Default__TrContentLoader")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction StartLoadingDeviceContentPackage() { return mStartLoadingDeviceContentPackage ? mStartLoadingDeviceContentPackage : (mStartLoadingDeviceContentPackage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrContentLoader.StartLoadingDeviceContentPackage")); }
-			ScriptFunction StartLoadingPlayerSkin() { return mStartLoadingPlayerSkin ? mStartLoadingPlayerSkin : (mStartLoadingPlayerSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrContentLoader.StartLoadingPlayerSkin")); }
+			ScriptFunction StartLoadingDeviceContentPackage() { mixin(MGF!("mStartLoadingDeviceContentPackage", "Function TribesGame.TrContentLoader.StartLoadingDeviceContentPackage")()); }
+			ScriptFunction StartLoadingPlayerSkin() { mixin(MGF!("mStartLoadingPlayerSkin", "Function TribesGame.TrContentLoader.StartLoadingPlayerSkin")()); }
 		}
 	}
 final:

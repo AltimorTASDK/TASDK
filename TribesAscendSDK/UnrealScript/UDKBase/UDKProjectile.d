@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKProjectile;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Vehicle;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface UDKProjectile : Projectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKProjectile")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKProjectile")()); }
 	private static __gshared UDKProjectile mDefaultProperties;
-	@property final static UDKProjectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKProjectile)("UDKProjectile UDKBase.Default__UDKProjectile")); }
+	@property final static UDKProjectile DefaultProperties() { mixin(MGDPC!(UDKProjectile, "UDKProjectile UDKBase.Default__UDKProjectile")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,35 +22,35 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetTerminalVelocity() { return mGetTerminalVelocity ? mGetTerminalVelocity : (mGetTerminalVelocity = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProjectile.GetTerminalVelocity")); }
-			ScriptFunction CreateProjectileLight() { return mCreateProjectileLight ? mCreateProjectileLight : (mCreateProjectileLight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProjectile.CreateProjectileLight")); }
+			ScriptFunction GetTerminalVelocity() { mixin(MGF!("mGetTerminalVelocity", "Function UDKBase.UDKProjectile.GetTerminalVelocity")()); }
+			ScriptFunction CreateProjectileLight() { mixin(MGF!("mCreateProjectileLight", "Function UDKBase.UDKProjectile.CreateProjectileLight")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vehicle InstigatorBaseVehicle() { return *cast(Vehicle*)(cast(size_t)cast(void*)this + 592); }
-			float CustomGravityScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 588); }
-			float Buoyancy() { return *cast(float*)(cast(size_t)cast(void*)this + 584); }
-			float TerminalVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-			float LockWarningInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
-			float LastLockWarningTime() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-			Vector InitialDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 560); }
-			float HomingTrackingStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
-			float BaseTrackingStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-			Actor SeekTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 548); }
-			float AccelRate() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
-			float CheckRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 540); }
+			Vehicle InstigatorBaseVehicle() { mixin(MGPC!(Vehicle, 592)()); }
+			float CustomGravityScaling() { mixin(MGPC!(float, 588)()); }
+			float Buoyancy() { mixin(MGPC!(float, 584)()); }
+			float TerminalVelocity() { mixin(MGPC!(float, 580)()); }
+			float LockWarningInterval() { mixin(MGPC!(float, 576)()); }
+			float LastLockWarningTime() { mixin(MGPC!(float, 572)()); }
+			Vector InitialDir() { mixin(MGPC!(Vector, 560)()); }
+			float HomingTrackingStrength() { mixin(MGPC!(float, 556)()); }
+			float BaseTrackingStrength() { mixin(MGPC!(float, 552)()); }
+			Actor SeekTarget() { mixin(MGPC!(Actor, 548)()); }
+			float AccelRate() { mixin(MGPC!(float, 544)()); }
+			float CheckRadius() { mixin(MGPC!(float, 540)()); }
 		}
-		bool bNotBlockedByShield() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x8) != 0; }
-		bool bNotBlockedByShield(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x8; } return val; }
-		bool bCheckProjectileLight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x4) != 0; }
-		bool bCheckProjectileLight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x4; } return val; }
-		bool bShuttingDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x2) != 0; }
-		bool bShuttingDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x2; } return val; }
-		bool bWideCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 536) & 0x1) != 0; }
-		bool bWideCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 536) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 536) &= ~0x1; } return val; }
+		bool bNotBlockedByShield() { mixin(MGBPC!(536, 0x8)()); }
+		bool bNotBlockedByShield(bool val) { mixin(MSBPC!(536, 0x8)()); }
+		bool bCheckProjectileLight() { mixin(MGBPC!(536, 0x4)()); }
+		bool bCheckProjectileLight(bool val) { mixin(MSBPC!(536, 0x4)()); }
+		bool bShuttingDown() { mixin(MGBPC!(536, 0x2)()); }
+		bool bShuttingDown(bool val) { mixin(MSBPC!(536, 0x2)()); }
+		bool bWideCheck() { mixin(MGBPC!(536, 0x1)()); }
+		bool bWideCheck(bool val) { mixin(MSBPC!(536, 0x1)()); }
 	}
 final:
 	float GetTerminalVelocity()

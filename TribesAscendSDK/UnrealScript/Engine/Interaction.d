@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Interaction;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface Interaction : UIRoot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Interaction")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Interaction")()); }
 	private static __gshared Interaction mDefaultProperties;
-	@property final static Interaction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Interaction)("Interaction Engine.Default__Interaction")); }
+	@property final static Interaction DefaultProperties() { mixin(MGDPC!(Interaction, "Interaction Engine.Default__Interaction")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,18 +32,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReceivedNativeInputKey() { return mOnReceivedNativeInputKey ? mOnReceivedNativeInputKey : (mOnReceivedNativeInputKey = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.OnReceivedNativeInputKey")); }
-			ScriptFunction OnInitialize() { return mOnInitialize ? mOnInitialize : (mOnInitialize = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.OnInitialize")); }
-			ScriptFunction OnReceivedNativeInputChar() { return mOnReceivedNativeInputChar ? mOnReceivedNativeInputChar : (mOnReceivedNativeInputChar = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.OnReceivedNativeInputChar")); }
-			ScriptFunction OnReceivedNativeInputAxis() { return mOnReceivedNativeInputAxis ? mOnReceivedNativeInputAxis : (mOnReceivedNativeInputAxis = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.OnReceivedNativeInputAxis")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.Tick")); }
-			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.PostRender")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.Init")); }
-			ScriptFunction Initialized() { return mInitialized ? mInitialized : (mInitialized = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.Initialized")); }
-			ScriptFunction NotifyGameSessionEnded() { return mNotifyGameSessionEnded ? mNotifyGameSessionEnded : (mNotifyGameSessionEnded = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.NotifyGameSessionEnded")); }
-			ScriptFunction NotifyPlayerAdded() { return mNotifyPlayerAdded ? mNotifyPlayerAdded : (mNotifyPlayerAdded = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.NotifyPlayerAdded")); }
-			ScriptFunction NotifyPlayerRemoved() { return mNotifyPlayerRemoved ? mNotifyPlayerRemoved : (mNotifyPlayerRemoved = ScriptObject.Find!(ScriptFunction)("Function Engine.Interaction.NotifyPlayerRemoved")); }
+			ScriptFunction OnReceivedNativeInputKey() { mixin(MGF!("mOnReceivedNativeInputKey", "Function Engine.Interaction.OnReceivedNativeInputKey")()); }
+			ScriptFunction OnInitialize() { mixin(MGF!("mOnInitialize", "Function Engine.Interaction.OnInitialize")()); }
+			ScriptFunction OnReceivedNativeInputChar() { mixin(MGF!("mOnReceivedNativeInputChar", "Function Engine.Interaction.OnReceivedNativeInputChar")()); }
+			ScriptFunction OnReceivedNativeInputAxis() { mixin(MGF!("mOnReceivedNativeInputAxis", "Function Engine.Interaction.OnReceivedNativeInputAxis")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function Engine.Interaction.Tick")()); }
+			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function Engine.Interaction.PostRender")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.Interaction.Init")()); }
+			ScriptFunction Initialized() { mixin(MGF!("mInitialized", "Function Engine.Interaction.Initialized")()); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function Engine.Interaction.NotifyGameSessionEnded")()); }
+			ScriptFunction NotifyPlayerAdded() { mixin(MGF!("mNotifyPlayerAdded", "Function Engine.Interaction.NotifyPlayerAdded")()); }
+			ScriptFunction NotifyPlayerRemoved() { mixin(MGF!("mNotifyPlayerRemoved", "Function Engine.Interaction.NotifyPlayerRemoved")()); }
 		}
+	}
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnInitialize__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReceivedNativeInputChar__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReceivedNativeInputAxis__Delegate'!
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReceivedNativeInputKey__Delegate'!
 	}
 final:
 	bool OnReceivedNativeInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent EventType, float AmountDepressed, bool bGamepad)

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_View;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.GFxUIView;
 import UnrealScript.UTGame.GFxUDKFrontEnd;
 import UnrealScript.GFxUI.GFxClikWidget;
@@ -10,9 +11,9 @@ extern(C++) interface GFxUDKFrontEnd_View : GFxUIView
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_View")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_View")()); }
 	private static __gshared GFxUDKFrontEnd_View mDefaultProperties;
-	@property final static GFxUDKFrontEnd_View DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_View)("GFxUDKFrontEnd_View UTGame.Default__GFxUDKFrontEnd_View")); }
+	@property final static GFxUDKFrontEnd_View DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_View, "GFxUDKFrontEnd_View UTGame.Default__GFxUDKFrontEnd_View")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,17 +32,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnViewLoaded() { return mOnViewLoaded ? mOnViewLoaded : (mOnViewLoaded = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.OnViewLoaded")); }
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.OnTopMostView")); }
-			ScriptFunction OnViewActivated() { return mOnViewActivated ? mOnViewActivated : (mOnViewActivated = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.OnViewActivated")); }
-			ScriptFunction OnViewClosed() { return mOnViewClosed ? mOnViewClosed : (mOnViewClosed = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.OnViewClosed")); }
-			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.DisableSubComponents")); }
-			ScriptFunction PlayOpenAnimation() { return mPlayOpenAnimation ? mPlayOpenAnimation : (mPlayOpenAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.PlayOpenAnimation")); }
-			ScriptFunction PlayCloseAnimation() { return mPlayCloseAnimation ? mPlayCloseAnimation : (mPlayCloseAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.PlayCloseAnimation")); }
-			ScriptFunction Select_Back() { return mSelect_Back ? mSelect_Back : (mSelect_Back = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.Select_Back")); }
-			ScriptFunction MoveBackImpl() { return mMoveBackImpl ? mMoveBackImpl : (mMoveBackImpl = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.MoveBackImpl")); }
-			ScriptFunction OnEscapeKeyPress() { return mOnEscapeKeyPress ? mOnEscapeKeyPress : (mOnEscapeKeyPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.OnEscapeKeyPress")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.WidgetInitialized")); }
+			ScriptFunction OnViewLoaded() { mixin(MGF!("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_View.OnViewLoaded")()); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_View.OnTopMostView")()); }
+			ScriptFunction OnViewActivated() { mixin(MGF!("mOnViewActivated", "Function UTGame.GFxUDKFrontEnd_View.OnViewActivated")()); }
+			ScriptFunction OnViewClosed() { mixin(MGF!("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_View.OnViewClosed")()); }
+			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_View.DisableSubComponents")()); }
+			ScriptFunction PlayOpenAnimation() { mixin(MGF!("mPlayOpenAnimation", "Function UTGame.GFxUDKFrontEnd_View.PlayOpenAnimation")()); }
+			ScriptFunction PlayCloseAnimation() { mixin(MGF!("mPlayCloseAnimation", "Function UTGame.GFxUDKFrontEnd_View.PlayCloseAnimation")()); }
+			ScriptFunction Select_Back() { mixin(MGF!("mSelect_Back", "Function UTGame.GFxUDKFrontEnd_View.Select_Back")()); }
+			ScriptFunction MoveBackImpl() { mixin(MGF!("mMoveBackImpl", "Function UTGame.GFxUDKFrontEnd_View.MoveBackImpl")()); }
+			ScriptFunction OnEscapeKeyPress() { mixin(MGF!("mOnEscapeKeyPress", "Function UTGame.GFxUDKFrontEnd_View.OnEscapeKeyPress")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_View.WidgetInitialized")()); }
 		}
 	}
 	static struct Constants
@@ -50,8 +51,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName ViewName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 128); }
-		GFxUDKFrontEnd MenuManager() { return *cast(GFxUDKFrontEnd*)(cast(size_t)cast(void*)this + 124); }
+		ScriptName ViewName() { mixin(MGPC!(ScriptName, 128)()); }
+		GFxUDKFrontEnd MenuManager() { mixin(MGPC!(GFxUDKFrontEnd, 124)()); }
 	}
 final:
 	void OnViewLoaded()

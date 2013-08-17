@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrHUD;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrDeployable;
 import UnrealScript.PlatformCommon.TgSupportCommands;
 import UnrealScript.Core.UObject;
@@ -35,9 +36,9 @@ extern(C++) interface TrHUD : UTGFxHudWrapper
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUD")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrHUD")()); }
 	private static __gshared TrHUD mDefaultProperties;
-	@property final static TrHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHUD)("TrHUD TribesGame.Default__TrHUD")); }
+	@property final static TrHUD DefaultProperties() { mixin(MGDPC!(TrHUD, "TrHUD TribesGame.Default__TrHUD")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -168,129 +169,129 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DrawMarkerText() { return mDrawMarkerText ? mDrawMarkerText : (mDrawMarkerText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawMarkerText")); }
-			ScriptFunction DrawMICMarker() { return mDrawMICMarker ? mDrawMICMarker : (mDrawMICMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawMICMarker")); }
-			ScriptFunction GetEdgeScreenCoordinates() { return mGetEdgeScreenCoordinates ? mGetEdgeScreenCoordinates : (mGetEdgeScreenCoordinates = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.GetEdgeScreenCoordinates")); }
-			ScriptFunction DrawMarker() { return mDrawMarker ? mDrawMarker : (mDrawMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawMarker")); }
-			ScriptFunction DrawRotatedMarker() { return mDrawRotatedMarker ? mDrawRotatedMarker : (mDrawRotatedMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawRotatedMarker")); }
-			ScriptFunction ShowDebugInfo() { return mShowDebugInfo ? mShowDebugInfo : (mShowDebugInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowDebugInfo")); }
-			ScriptFunction CreateHUDMovie() { return mCreateHUDMovie ? mCreateHUDMovie : (mCreateHUDMovie = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CreateHUDMovie")); }
-			ScriptFunction ShowSpectatorControls() { return mShowSpectatorControls ? mShowSpectatorControls : (mShowSpectatorControls = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorControls")); }
-			ScriptFunction SetShowScores() { return mSetShowScores ? mSetShowScores : (mSetShowScores = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SetShowScores")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PostBeginPlay")); }
-			ScriptFunction InitializeGameHUD() { return mInitializeGameHUD ? mInitializeGameHUD : (mInitializeGameHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.InitializeGameHUD")); }
-			ScriptFunction FadeInTimer() { return mFadeInTimer ? mFadeInTimer : (mFadeInTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.FadeInTimer")); }
-			ScriptFunction Fade() { return mFade ? mFade : (mFade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.Fade")); }
-			ScriptFunction PlayRoundOver() { return mPlayRoundOver ? mPlayRoundOver : (mPlayRoundOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PlayRoundOver")); }
-			ScriptFunction ShowRoundEnding() { return mShowRoundEnding ? mShowRoundEnding : (mShowRoundEnding = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowRoundEnding")); }
-			ScriptFunction PlayMatchOver() { return mPlayMatchOver ? mPlayMatchOver : (mPlayMatchOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PlayMatchOver")); }
-			ScriptFunction ShowEnding() { return mShowEnding ? mShowEnding : (mShowEnding = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowEnding")); }
-			ScriptFunction FadeInSummary() { return mFadeInSummary ? mFadeInSummary : (mFadeInSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.FadeInSummary")); }
-			ScriptFunction ScaleformJoystickInputEvent() { return mScaleformJoystickInputEvent ? mScaleformJoystickInputEvent : (mScaleformJoystickInputEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ScaleformJoystickInputEvent")); }
-			ScriptFunction ToggleSkiEffect() { return mToggleSkiEffect ? mToggleSkiEffect : (mToggleSkiEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleSkiEffect")); }
-			ScriptFunction TogglePauseMenu() { return mTogglePauseMenu ? mTogglePauseMenu : (mTogglePauseMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TogglePauseMenu")); }
-			ScriptFunction ToggleMovieHUD() { return mToggleMovieHUD ? mToggleMovieHUD : (mToggleMovieHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleMovieHUD")); }
-			ScriptFunction ToggleVehicleMenu() { return mToggleVehicleMenu ? mToggleVehicleMenu : (mToggleVehicleMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleVehicleMenu")); }
-			ScriptFunction ToggleTeamSelectionMenu() { return mToggleTeamSelectionMenu ? mToggleTeamSelectionMenu : (mToggleTeamSelectionMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleTeamSelectionMenu")); }
-			ScriptFunction SetPowerOscillation() { return mSetPowerOscillation ? mSetPowerOscillation : (mSetPowerOscillation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SetPowerOscillation")); }
-			ScriptFunction AddUpdateToCombatLog() { return mAddUpdateToCombatLog ? mAddUpdateToCombatLog : (mAddUpdateToCombatLog = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddUpdateToCombatLog")); }
-			ScriptFunction AddToPromptPanel() { return mAddToPromptPanel ? mAddToPromptPanel : (mAddToPromptPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToPromptPanel")); }
-			ScriptFunction AddToPromptPanelTime() { return mAddToPromptPanelTime ? mAddToPromptPanelTime : (mAddToPromptPanelTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToPromptPanelTime")); }
-			ScriptFunction ClearPromptPanel() { return mClearPromptPanel ? mClearPromptPanel : (mClearPromptPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearPromptPanel")); }
-			ScriptFunction AddToHeroStatus() { return mAddToHeroStatus ? mAddToHeroStatus : (mAddToHeroStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToHeroStatus")); }
-			ScriptFunction ClearHeroStatus() { return mClearHeroStatus ? mClearHeroStatus : (mClearHeroStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearHeroStatus")); }
-			ScriptFunction ClearPromptPanelMessage() { return mClearPromptPanelMessage ? mClearPromptPanelMessage : (mClearPromptPanelMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearPromptPanelMessage")); }
-			ScriptFunction UpdateVGSMenu() { return mUpdateVGSMenu ? mUpdateVGSMenu : (mUpdateVGSMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateVGSMenu")); }
-			ScriptFunction HideVGSMenu() { return mHideVGSMenu ? mHideVGSMenu : (mHideVGSMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideVGSMenu")); }
-			ScriptFunction AddToHelpText() { return mAddToHelpText ? mAddToHelpText : (mAddToHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToHelpText")); }
-			ScriptFunction ClearHelpText() { return mClearHelpText ? mClearHelpText : (mClearHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearHelpText")); }
-			ScriptFunction AddUpdateToKillMessage() { return mAddUpdateToKillMessage ? mAddUpdateToKillMessage : (mAddUpdateToKillMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddUpdateToKillMessage")); }
-			ScriptFunction AddFlyingIcon() { return mAddFlyingIcon ? mAddFlyingIcon : (mAddFlyingIcon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddFlyingIcon")); }
-			ScriptFunction OnSpectate() { return mOnSpectate ? mOnSpectate : (mOnSpectate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.OnSpectate")); }
-			ScriptFunction CreateSpectatorHUDCache() { return mCreateSpectatorHUDCache ? mCreateSpectatorHUDCache : (mCreateSpectatorHUDCache = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CreateSpectatorHUDCache")); }
-			ScriptFunction ClearSpectatorHUDCache() { return mClearSpectatorHUDCache ? mClearSpectatorHUDCache : (mClearSpectatorHUDCache = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearSpectatorHUDCache")); }
-			ScriptFunction HideHUDElements() { return mHideHUDElements ? mHideHUDElements : (mHideHUDElements = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideHUDElements")); }
-			ScriptFunction ShowHUDPlayerSpawning() { return mShowHUDPlayerSpawning ? mShowHUDPlayerSpawning : (mShowHUDPlayerSpawning = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowHUDPlayerSpawning")); }
-			ScriptFunction ShowHUDPlayerAlive() { return mShowHUDPlayerAlive ? mShowHUDPlayerAlive : (mShowHUDPlayerAlive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowHUDPlayerAlive")); }
-			ScriptFunction ShowCenterHUDElements() { return mShowCenterHUDElements ? mShowCenterHUDElements : (mShowCenterHUDElements = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowCenterHUDElements")); }
-			ScriptFunction UpdateRespawnText() { return mUpdateRespawnText ? mUpdateRespawnText : (mUpdateRespawnText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateRespawnText")); }
-			ScriptFunction UpdateRespawnTimer() { return mUpdateRespawnTimer ? mUpdateRespawnTimer : (mUpdateRespawnTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateRespawnTimer")); }
-			ScriptFunction UpdateHUDCredits() { return mUpdateHUDCredits ? mUpdateHUDCredits : (mUpdateHUDCredits = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateHUDCredits")); }
-			ScriptFunction TeamScoreboardShow() { return mTeamScoreboardShow ? mTeamScoreboardShow : (mTeamScoreboardShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardShow")); }
-			ScriptFunction RabbitScoreboardShow() { return mRabbitScoreboardShow ? mRabbitScoreboardShow : (mRabbitScoreboardShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardShow")); }
-			ScriptFunction TeamScoreboardUpdateSlot() { return mTeamScoreboardUpdateSlot ? mTeamScoreboardUpdateSlot : (mTeamScoreboardUpdateSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardUpdateSlot")); }
-			ScriptFunction RabbitScoreboardUpdateSlot() { return mRabbitScoreboardUpdateSlot ? mRabbitScoreboardUpdateSlot : (mRabbitScoreboardUpdateSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardUpdateSlot")); }
-			ScriptFunction TeamScoreboardUpdateTeamScore() { return mTeamScoreboardUpdateTeamScore ? mTeamScoreboardUpdateTeamScore : (mTeamScoreboardUpdateTeamScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardUpdateTeamScore")); }
-			ScriptFunction TeamScoreboardUpdateTime() { return mTeamScoreboardUpdateTime ? mTeamScoreboardUpdateTime : (mTeamScoreboardUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardUpdateTime")); }
-			ScriptFunction RabbitScoreboardUpdateTime() { return mRabbitScoreboardUpdateTime ? mRabbitScoreboardUpdateTime : (mRabbitScoreboardUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardUpdateTime")); }
-			ScriptFunction TeamScoreboardActivePlayer() { return mTeamScoreboardActivePlayer ? mTeamScoreboardActivePlayer : (mTeamScoreboardActivePlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardActivePlayer")); }
-			ScriptFunction RabbitScoreboardActivePlayer() { return mRabbitScoreboardActivePlayer ? mRabbitScoreboardActivePlayer : (mRabbitScoreboardActivePlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardActivePlayer")); }
-			ScriptFunction ResolutionChanged() { return mResolutionChanged ? mResolutionChanged : (mResolutionChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ResolutionChanged")); }
-			ScriptFunction RestoreHUDState() { return mRestoreHUDState ? mRestoreHUDState : (mRestoreHUDState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RestoreHUDState")); }
-			ScriptFunction HideMenus() { return mHideMenus ? mHideMenus : (mHideMenus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideMenus")); }
-			ScriptFunction RemoveMovies() { return mRemoveMovies ? mRemoveMovies : (mRemoveMovies = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RemoveMovies")); }
-			ScriptFunction CompleteVehicleMenuClose() { return mCompleteVehicleMenuClose ? mCompleteVehicleMenuClose : (mCompleteVehicleMenuClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CompleteVehicleMenuClose")); }
-			ScriptFunction CompleteTeamSelectionMenuClose() { return mCompleteTeamSelectionMenuClose ? mCompleteTeamSelectionMenuClose : (mCompleteTeamSelectionMenuClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CompleteTeamSelectionMenuClose")); }
-			ScriptFunction ClearCrosshairOnFriendly() { return mClearCrosshairOnFriendly ? mClearCrosshairOnFriendly : (mClearCrosshairOnFriendly = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearCrosshairOnFriendly")); }
-			ScriptFunction CheckCrosshairOnFriendly() { return mCheckCrosshairOnFriendly ? mCheckCrosshairOnFriendly : (mCheckCrosshairOnFriendly = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CheckCrosshairOnFriendly")); }
-			ScriptFunction DrawColoredMarkerText() { return mDrawColoredMarkerText ? mDrawColoredMarkerText : (mDrawColoredMarkerText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawColoredMarkerText")); }
-			ScriptFunction DrawSmallText() { return mDrawSmallText ? mDrawSmallText : (mDrawSmallText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawSmallText")); }
-			ScriptFunction DrawHealthBar() { return mDrawHealthBar ? mDrawHealthBar : (mDrawHealthBar = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawHealthBar")); }
-			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PostRender")); }
-			ScriptFunction GetRemainingFriendlyGeneratorRestoreTime() { return mGetRemainingFriendlyGeneratorRestoreTime ? mGetRemainingFriendlyGeneratorRestoreTime : (mGetRemainingFriendlyGeneratorRestoreTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.GetRemainingFriendlyGeneratorRestoreTime")); }
-			ScriptFunction GetRemainingEnemyGeneratorRestoreTime() { return mGetRemainingEnemyGeneratorRestoreTime ? mGetRemainingEnemyGeneratorRestoreTime : (mGetRemainingEnemyGeneratorRestoreTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.GetRemainingEnemyGeneratorRestoreTime")); }
-			ScriptFunction UpdateSkiEffect() { return mUpdateSkiEffect ? mUpdateSkiEffect : (mUpdateSkiEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSkiEffect")); }
-			ScriptFunction UpdatePickupFlashEffect() { return mUpdatePickupFlashEffect ? mUpdatePickupFlashEffect : (mUpdatePickupFlashEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdatePickupFlashEffect")); }
-			ScriptFunction PulsePickupFlashEffect() { return mPulsePickupFlashEffect ? mPulsePickupFlashEffect : (mPulsePickupFlashEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PulsePickupFlashEffect")); }
-			ScriptFunction UpdateInvulnerableEfect() { return mUpdateInvulnerableEfect ? mUpdateInvulnerableEfect : (mUpdateInvulnerableEfect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateInvulnerableEfect")); }
-			ScriptFunction UpdateShieldEffect() { return mUpdateShieldEffect ? mUpdateShieldEffect : (mUpdateShieldEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateShieldEffect")); }
-			ScriptFunction PulseShieldEffect() { return mPulseShieldEffect ? mPulseShieldEffect : (mPulseShieldEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PulseShieldEffect")); }
-			ScriptFunction UpdateJammerEffect() { return mUpdateJammerEffect ? mUpdateJammerEffect : (mUpdateJammerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateJammerEffect")); }
-			ScriptFunction UpdateFadeEffect() { return mUpdateFadeEffect ? mUpdateFadeEffect : (mUpdateFadeEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateFadeEffect")); }
-			ScriptFunction FumbleFlag() { return mFumbleFlag ? mFumbleFlag : (mFumbleFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.FumbleFlag")); }
-			ScriptFunction UpdateFumbledFlagEffect() { return mUpdateFumbledFlagEffect ? mUpdateFumbledFlagEffect : (mUpdateFumbledFlagEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateFumbledFlagEffect")); }
-			ScriptFunction Whiteout() { return mWhiteout ? mWhiteout : (mWhiteout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.Whiteout")); }
-			ScriptFunction ClearWhiteout() { return mClearWhiteout ? mClearWhiteout : (mClearWhiteout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearWhiteout")); }
-			ScriptFunction UpdateWhiteoutEffect() { return mUpdateWhiteoutEffect ? mUpdateWhiteoutEffect : (mUpdateWhiteoutEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateWhiteoutEffect")); }
-			ScriptFunction LocalizedMessage() { return mLocalizedMessage ? mLocalizedMessage : (mLocalizedMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.LocalizedMessage")); }
-			ScriptFunction ChatMessageReceived() { return mChatMessageReceived ? mChatMessageReceived : (mChatMessageReceived = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ChatMessageReceived")); }
-			ScriptFunction StripTag() { return mStripTag ? mStripTag : (mStripTag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.StripTag")); }
-			ScriptFunction SendLocalMessageToGlobalAlert() { return mSendLocalMessageToGlobalAlert ? mSendLocalMessageToGlobalAlert : (mSendLocalMessageToGlobalAlert = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SendLocalMessageToGlobalAlert")); }
-			ScriptFunction SendLocalMessageToChat() { return mSendLocalMessageToChat ? mSendLocalMessageToChat : (mSendLocalMessageToChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SendLocalMessageToChat")); }
-			ScriptFunction SetPlayerClassObjects() { return mSetPlayerClassObjects ? mSetPlayerClassObjects : (mSetPlayerClassObjects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SetPlayerClassObjects")); }
-			ScriptFunction HideGlobalAlert() { return mHideGlobalAlert ? mHideGlobalAlert : (mHideGlobalAlert = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideGlobalAlert")); }
-			ScriptFunction KickVoteMessage() { return mKickVoteMessage ? mKickVoteMessage : (mKickVoteMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.KickVoteMessage")); }
-			ScriptFunction EnableGameTypeHUD() { return mEnableGameTypeHUD ? mEnableGameTypeHUD : (mEnableGameTypeHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.EnableGameTypeHUD")); }
-			ScriptFunction ShowSpectatorPlayer() { return mShowSpectatorPlayer ? mShowSpectatorPlayer : (mShowSpectatorPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorPlayer")); }
-			ScriptFunction HideSpectatorPlayer() { return mHideSpectatorPlayer ? mHideSpectatorPlayer : (mHideSpectatorPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorPlayer")); }
-			ScriptFunction UpdateSpectatorPlayerPanel() { return mUpdateSpectatorPlayerPanel ? mUpdateSpectatorPlayerPanel : (mUpdateSpectatorPlayerPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorPlayerPanel")); }
-			ScriptFunction ShowSpectatorVehicle() { return mShowSpectatorVehicle ? mShowSpectatorVehicle : (mShowSpectatorVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorVehicle")); }
-			ScriptFunction HideSpectatorVehicle() { return mHideSpectatorVehicle ? mHideSpectatorVehicle : (mHideSpectatorVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorVehicle")); }
-			ScriptFunction UpdateSpectatorVehiclePanel() { return mUpdateSpectatorVehiclePanel ? mUpdateSpectatorVehiclePanel : (mUpdateSpectatorVehiclePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorVehiclePanel")); }
-			ScriptFunction ShowSpectatorBookmark() { return mShowSpectatorBookmark ? mShowSpectatorBookmark : (mShowSpectatorBookmark = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorBookmark")); }
-			ScriptFunction HideSpectatorBookmark() { return mHideSpectatorBookmark ? mHideSpectatorBookmark : (mHideSpectatorBookmark = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorBookmark")); }
-			ScriptFunction UpdateSpectatorBookmarkPanel() { return mUpdateSpectatorBookmarkPanel ? mUpdateSpectatorBookmarkPanel : (mUpdateSpectatorBookmarkPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorBookmarkPanel")); }
-			ScriptFunction ShowSpectatorObjectivePanel() { return mShowSpectatorObjectivePanel ? mShowSpectatorObjectivePanel : (mShowSpectatorObjectivePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorObjectivePanel")); }
-			ScriptFunction HideSpectatorObjectivePanel() { return mHideSpectatorObjectivePanel ? mHideSpectatorObjectivePanel : (mHideSpectatorObjectivePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorObjectivePanel")); }
-			ScriptFunction UpdateSpectatorObjectivePanel() { return mUpdateSpectatorObjectivePanel ? mUpdateSpectatorObjectivePanel : (mUpdateSpectatorObjectivePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorObjectivePanel")); }
-			ScriptFunction ShowSpectatorFloatCameraPanel() { return mShowSpectatorFloatCameraPanel ? mShowSpectatorFloatCameraPanel : (mShowSpectatorFloatCameraPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorFloatCameraPanel")); }
-			ScriptFunction HideSpectatorFloatCameraPanel() { return mHideSpectatorFloatCameraPanel ? mHideSpectatorFloatCameraPanel : (mHideSpectatorFloatCameraPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorFloatCameraPanel")); }
-			ScriptFunction UpdateSpectatorFloatCameraPanel() { return mUpdateSpectatorFloatCameraPanel ? mUpdateSpectatorFloatCameraPanel : (mUpdateSpectatorFloatCameraPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorFloatCameraPanel")); }
-			ScriptFunction HideAllSpectatorPanels() { return mHideAllSpectatorPanels ? mHideAllSpectatorPanels : (mHideAllSpectatorPanels = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideAllSpectatorPanels")); }
-			ScriptFunction OnViewTargetChange() { return mOnViewTargetChange ? mOnViewTargetChange : (mOnViewTargetChange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.OnViewTargetChange")); }
-			ScriptFunction TestNumber() { return mTestNumber ? mTestNumber : (mTestNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TestNumber")); }
-			ScriptFunction AddOverheadNumber() { return mAddOverheadNumber ? mAddOverheadNumber : (mAddOverheadNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddOverheadNumber")); }
-			ScriptFunction UpdateOverheadNumbers() { return mUpdateOverheadNumbers ? mUpdateOverheadNumbers : (mUpdateOverheadNumbers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateOverheadNumbers")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.Tick")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PostRenderFor")); }
-			ScriptFunction PlayAward() { return mPlayAward ? mPlayAward : (mPlayAward = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PlayAward")); }
-			ScriptFunction QueueAccolade() { return mQueueAccolade ? mQueueAccolade : (mQueueAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.QueueAccolade")); }
-			ScriptFunction CheckQueuedAccolades() { return mCheckQueuedAccolades ? mCheckQueuedAccolades : (mCheckQueuedAccolades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CheckQueuedAccolades")); }
-			ScriptFunction RunQueuedAccoladesTimer() { return mRunQueuedAccoladesTimer ? mRunQueuedAccoladesTimer : (mRunQueuedAccoladesTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RunQueuedAccoladesTimer")); }
-			ScriptFunction ClearQueuedAccoladesTimer() { return mClearQueuedAccoladesTimer ? mClearQueuedAccoladesTimer : (mClearQueuedAccoladesTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearQueuedAccoladesTimer")); }
-			ScriptFunction DeployableReplicated() { return mDeployableReplicated ? mDeployableReplicated : (mDeployableReplicated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DeployableReplicated")); }
-			ScriptFunction MineReplicated() { return mMineReplicated ? mMineReplicated : (mMineReplicated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.MineReplicated")); }
-			ScriptFunction UpdateOwnedItems() { return mUpdateOwnedItems ? mUpdateOwnedItems : (mUpdateOwnedItems = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateOwnedItems")); }
+			ScriptFunction DrawMarkerText() { mixin(MGF!("mDrawMarkerText", "Function TribesGame.TrHUD.DrawMarkerText")()); }
+			ScriptFunction DrawMICMarker() { mixin(MGF!("mDrawMICMarker", "Function TribesGame.TrHUD.DrawMICMarker")()); }
+			ScriptFunction GetEdgeScreenCoordinates() { mixin(MGF!("mGetEdgeScreenCoordinates", "Function TribesGame.TrHUD.GetEdgeScreenCoordinates")()); }
+			ScriptFunction DrawMarker() { mixin(MGF!("mDrawMarker", "Function TribesGame.TrHUD.DrawMarker")()); }
+			ScriptFunction DrawRotatedMarker() { mixin(MGF!("mDrawRotatedMarker", "Function TribesGame.TrHUD.DrawRotatedMarker")()); }
+			ScriptFunction ShowDebugInfo() { mixin(MGF!("mShowDebugInfo", "Function TribesGame.TrHUD.ShowDebugInfo")()); }
+			ScriptFunction CreateHUDMovie() { mixin(MGF!("mCreateHUDMovie", "Function TribesGame.TrHUD.CreateHUDMovie")()); }
+			ScriptFunction ShowSpectatorControls() { mixin(MGF!("mShowSpectatorControls", "Function TribesGame.TrHUD.ShowSpectatorControls")()); }
+			ScriptFunction SetShowScores() { mixin(MGF!("mSetShowScores", "Function TribesGame.TrHUD.SetShowScores")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrHUD.PostBeginPlay")()); }
+			ScriptFunction InitializeGameHUD() { mixin(MGF!("mInitializeGameHUD", "Function TribesGame.TrHUD.InitializeGameHUD")()); }
+			ScriptFunction FadeInTimer() { mixin(MGF!("mFadeInTimer", "Function TribesGame.TrHUD.FadeInTimer")()); }
+			ScriptFunction Fade() { mixin(MGF!("mFade", "Function TribesGame.TrHUD.Fade")()); }
+			ScriptFunction PlayRoundOver() { mixin(MGF!("mPlayRoundOver", "Function TribesGame.TrHUD.PlayRoundOver")()); }
+			ScriptFunction ShowRoundEnding() { mixin(MGF!("mShowRoundEnding", "Function TribesGame.TrHUD.ShowRoundEnding")()); }
+			ScriptFunction PlayMatchOver() { mixin(MGF!("mPlayMatchOver", "Function TribesGame.TrHUD.PlayMatchOver")()); }
+			ScriptFunction ShowEnding() { mixin(MGF!("mShowEnding", "Function TribesGame.TrHUD.ShowEnding")()); }
+			ScriptFunction FadeInSummary() { mixin(MGF!("mFadeInSummary", "Function TribesGame.TrHUD.FadeInSummary")()); }
+			ScriptFunction ScaleformJoystickInputEvent() { mixin(MGF!("mScaleformJoystickInputEvent", "Function TribesGame.TrHUD.ScaleformJoystickInputEvent")()); }
+			ScriptFunction ToggleSkiEffect() { mixin(MGF!("mToggleSkiEffect", "Function TribesGame.TrHUD.ToggleSkiEffect")()); }
+			ScriptFunction TogglePauseMenu() { mixin(MGF!("mTogglePauseMenu", "Function TribesGame.TrHUD.TogglePauseMenu")()); }
+			ScriptFunction ToggleMovieHUD() { mixin(MGF!("mToggleMovieHUD", "Function TribesGame.TrHUD.ToggleMovieHUD")()); }
+			ScriptFunction ToggleVehicleMenu() { mixin(MGF!("mToggleVehicleMenu", "Function TribesGame.TrHUD.ToggleVehicleMenu")()); }
+			ScriptFunction ToggleTeamSelectionMenu() { mixin(MGF!("mToggleTeamSelectionMenu", "Function TribesGame.TrHUD.ToggleTeamSelectionMenu")()); }
+			ScriptFunction SetPowerOscillation() { mixin(MGF!("mSetPowerOscillation", "Function TribesGame.TrHUD.SetPowerOscillation")()); }
+			ScriptFunction AddUpdateToCombatLog() { mixin(MGF!("mAddUpdateToCombatLog", "Function TribesGame.TrHUD.AddUpdateToCombatLog")()); }
+			ScriptFunction AddToPromptPanel() { mixin(MGF!("mAddToPromptPanel", "Function TribesGame.TrHUD.AddToPromptPanel")()); }
+			ScriptFunction AddToPromptPanelTime() { mixin(MGF!("mAddToPromptPanelTime", "Function TribesGame.TrHUD.AddToPromptPanelTime")()); }
+			ScriptFunction ClearPromptPanel() { mixin(MGF!("mClearPromptPanel", "Function TribesGame.TrHUD.ClearPromptPanel")()); }
+			ScriptFunction AddToHeroStatus() { mixin(MGF!("mAddToHeroStatus", "Function TribesGame.TrHUD.AddToHeroStatus")()); }
+			ScriptFunction ClearHeroStatus() { mixin(MGF!("mClearHeroStatus", "Function TribesGame.TrHUD.ClearHeroStatus")()); }
+			ScriptFunction ClearPromptPanelMessage() { mixin(MGF!("mClearPromptPanelMessage", "Function TribesGame.TrHUD.ClearPromptPanelMessage")()); }
+			ScriptFunction UpdateVGSMenu() { mixin(MGF!("mUpdateVGSMenu", "Function TribesGame.TrHUD.UpdateVGSMenu")()); }
+			ScriptFunction HideVGSMenu() { mixin(MGF!("mHideVGSMenu", "Function TribesGame.TrHUD.HideVGSMenu")()); }
+			ScriptFunction AddToHelpText() { mixin(MGF!("mAddToHelpText", "Function TribesGame.TrHUD.AddToHelpText")()); }
+			ScriptFunction ClearHelpText() { mixin(MGF!("mClearHelpText", "Function TribesGame.TrHUD.ClearHelpText")()); }
+			ScriptFunction AddUpdateToKillMessage() { mixin(MGF!("mAddUpdateToKillMessage", "Function TribesGame.TrHUD.AddUpdateToKillMessage")()); }
+			ScriptFunction AddFlyingIcon() { mixin(MGF!("mAddFlyingIcon", "Function TribesGame.TrHUD.AddFlyingIcon")()); }
+			ScriptFunction OnSpectate() { mixin(MGF!("mOnSpectate", "Function TribesGame.TrHUD.OnSpectate")()); }
+			ScriptFunction CreateSpectatorHUDCache() { mixin(MGF!("mCreateSpectatorHUDCache", "Function TribesGame.TrHUD.CreateSpectatorHUDCache")()); }
+			ScriptFunction ClearSpectatorHUDCache() { mixin(MGF!("mClearSpectatorHUDCache", "Function TribesGame.TrHUD.ClearSpectatorHUDCache")()); }
+			ScriptFunction HideHUDElements() { mixin(MGF!("mHideHUDElements", "Function TribesGame.TrHUD.HideHUDElements")()); }
+			ScriptFunction ShowHUDPlayerSpawning() { mixin(MGF!("mShowHUDPlayerSpawning", "Function TribesGame.TrHUD.ShowHUDPlayerSpawning")()); }
+			ScriptFunction ShowHUDPlayerAlive() { mixin(MGF!("mShowHUDPlayerAlive", "Function TribesGame.TrHUD.ShowHUDPlayerAlive")()); }
+			ScriptFunction ShowCenterHUDElements() { mixin(MGF!("mShowCenterHUDElements", "Function TribesGame.TrHUD.ShowCenterHUDElements")()); }
+			ScriptFunction UpdateRespawnText() { mixin(MGF!("mUpdateRespawnText", "Function TribesGame.TrHUD.UpdateRespawnText")()); }
+			ScriptFunction UpdateRespawnTimer() { mixin(MGF!("mUpdateRespawnTimer", "Function TribesGame.TrHUD.UpdateRespawnTimer")()); }
+			ScriptFunction UpdateHUDCredits() { mixin(MGF!("mUpdateHUDCredits", "Function TribesGame.TrHUD.UpdateHUDCredits")()); }
+			ScriptFunction TeamScoreboardShow() { mixin(MGF!("mTeamScoreboardShow", "Function TribesGame.TrHUD.TeamScoreboardShow")()); }
+			ScriptFunction RabbitScoreboardShow() { mixin(MGF!("mRabbitScoreboardShow", "Function TribesGame.TrHUD.RabbitScoreboardShow")()); }
+			ScriptFunction TeamScoreboardUpdateSlot() { mixin(MGF!("mTeamScoreboardUpdateSlot", "Function TribesGame.TrHUD.TeamScoreboardUpdateSlot")()); }
+			ScriptFunction RabbitScoreboardUpdateSlot() { mixin(MGF!("mRabbitScoreboardUpdateSlot", "Function TribesGame.TrHUD.RabbitScoreboardUpdateSlot")()); }
+			ScriptFunction TeamScoreboardUpdateTeamScore() { mixin(MGF!("mTeamScoreboardUpdateTeamScore", "Function TribesGame.TrHUD.TeamScoreboardUpdateTeamScore")()); }
+			ScriptFunction TeamScoreboardUpdateTime() { mixin(MGF!("mTeamScoreboardUpdateTime", "Function TribesGame.TrHUD.TeamScoreboardUpdateTime")()); }
+			ScriptFunction RabbitScoreboardUpdateTime() { mixin(MGF!("mRabbitScoreboardUpdateTime", "Function TribesGame.TrHUD.RabbitScoreboardUpdateTime")()); }
+			ScriptFunction TeamScoreboardActivePlayer() { mixin(MGF!("mTeamScoreboardActivePlayer", "Function TribesGame.TrHUD.TeamScoreboardActivePlayer")()); }
+			ScriptFunction RabbitScoreboardActivePlayer() { mixin(MGF!("mRabbitScoreboardActivePlayer", "Function TribesGame.TrHUD.RabbitScoreboardActivePlayer")()); }
+			ScriptFunction ResolutionChanged() { mixin(MGF!("mResolutionChanged", "Function TribesGame.TrHUD.ResolutionChanged")()); }
+			ScriptFunction RestoreHUDState() { mixin(MGF!("mRestoreHUDState", "Function TribesGame.TrHUD.RestoreHUDState")()); }
+			ScriptFunction HideMenus() { mixin(MGF!("mHideMenus", "Function TribesGame.TrHUD.HideMenus")()); }
+			ScriptFunction RemoveMovies() { mixin(MGF!("mRemoveMovies", "Function TribesGame.TrHUD.RemoveMovies")()); }
+			ScriptFunction CompleteVehicleMenuClose() { mixin(MGF!("mCompleteVehicleMenuClose", "Function TribesGame.TrHUD.CompleteVehicleMenuClose")()); }
+			ScriptFunction CompleteTeamSelectionMenuClose() { mixin(MGF!("mCompleteTeamSelectionMenuClose", "Function TribesGame.TrHUD.CompleteTeamSelectionMenuClose")()); }
+			ScriptFunction ClearCrosshairOnFriendly() { mixin(MGF!("mClearCrosshairOnFriendly", "Function TribesGame.TrHUD.ClearCrosshairOnFriendly")()); }
+			ScriptFunction CheckCrosshairOnFriendly() { mixin(MGF!("mCheckCrosshairOnFriendly", "Function TribesGame.TrHUD.CheckCrosshairOnFriendly")()); }
+			ScriptFunction DrawColoredMarkerText() { mixin(MGF!("mDrawColoredMarkerText", "Function TribesGame.TrHUD.DrawColoredMarkerText")()); }
+			ScriptFunction DrawSmallText() { mixin(MGF!("mDrawSmallText", "Function TribesGame.TrHUD.DrawSmallText")()); }
+			ScriptFunction DrawHealthBar() { mixin(MGF!("mDrawHealthBar", "Function TribesGame.TrHUD.DrawHealthBar")()); }
+			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function TribesGame.TrHUD.PostRender")()); }
+			ScriptFunction GetRemainingFriendlyGeneratorRestoreTime() { mixin(MGF!("mGetRemainingFriendlyGeneratorRestoreTime", "Function TribesGame.TrHUD.GetRemainingFriendlyGeneratorRestoreTime")()); }
+			ScriptFunction GetRemainingEnemyGeneratorRestoreTime() { mixin(MGF!("mGetRemainingEnemyGeneratorRestoreTime", "Function TribesGame.TrHUD.GetRemainingEnemyGeneratorRestoreTime")()); }
+			ScriptFunction UpdateSkiEffect() { mixin(MGF!("mUpdateSkiEffect", "Function TribesGame.TrHUD.UpdateSkiEffect")()); }
+			ScriptFunction UpdatePickupFlashEffect() { mixin(MGF!("mUpdatePickupFlashEffect", "Function TribesGame.TrHUD.UpdatePickupFlashEffect")()); }
+			ScriptFunction PulsePickupFlashEffect() { mixin(MGF!("mPulsePickupFlashEffect", "Function TribesGame.TrHUD.PulsePickupFlashEffect")()); }
+			ScriptFunction UpdateInvulnerableEfect() { mixin(MGF!("mUpdateInvulnerableEfect", "Function TribesGame.TrHUD.UpdateInvulnerableEfect")()); }
+			ScriptFunction UpdateShieldEffect() { mixin(MGF!("mUpdateShieldEffect", "Function TribesGame.TrHUD.UpdateShieldEffect")()); }
+			ScriptFunction PulseShieldEffect() { mixin(MGF!("mPulseShieldEffect", "Function TribesGame.TrHUD.PulseShieldEffect")()); }
+			ScriptFunction UpdateJammerEffect() { mixin(MGF!("mUpdateJammerEffect", "Function TribesGame.TrHUD.UpdateJammerEffect")()); }
+			ScriptFunction UpdateFadeEffect() { mixin(MGF!("mUpdateFadeEffect", "Function TribesGame.TrHUD.UpdateFadeEffect")()); }
+			ScriptFunction FumbleFlag() { mixin(MGF!("mFumbleFlag", "Function TribesGame.TrHUD.FumbleFlag")()); }
+			ScriptFunction UpdateFumbledFlagEffect() { mixin(MGF!("mUpdateFumbledFlagEffect", "Function TribesGame.TrHUD.UpdateFumbledFlagEffect")()); }
+			ScriptFunction Whiteout() { mixin(MGF!("mWhiteout", "Function TribesGame.TrHUD.Whiteout")()); }
+			ScriptFunction ClearWhiteout() { mixin(MGF!("mClearWhiteout", "Function TribesGame.TrHUD.ClearWhiteout")()); }
+			ScriptFunction UpdateWhiteoutEffect() { mixin(MGF!("mUpdateWhiteoutEffect", "Function TribesGame.TrHUD.UpdateWhiteoutEffect")()); }
+			ScriptFunction LocalizedMessage() { mixin(MGF!("mLocalizedMessage", "Function TribesGame.TrHUD.LocalizedMessage")()); }
+			ScriptFunction ChatMessageReceived() { mixin(MGF!("mChatMessageReceived", "Function TribesGame.TrHUD.ChatMessageReceived")()); }
+			ScriptFunction StripTag() { mixin(MGF!("mStripTag", "Function TribesGame.TrHUD.StripTag")()); }
+			ScriptFunction SendLocalMessageToGlobalAlert() { mixin(MGF!("mSendLocalMessageToGlobalAlert", "Function TribesGame.TrHUD.SendLocalMessageToGlobalAlert")()); }
+			ScriptFunction SendLocalMessageToChat() { mixin(MGF!("mSendLocalMessageToChat", "Function TribesGame.TrHUD.SendLocalMessageToChat")()); }
+			ScriptFunction SetPlayerClassObjects() { mixin(MGF!("mSetPlayerClassObjects", "Function TribesGame.TrHUD.SetPlayerClassObjects")()); }
+			ScriptFunction HideGlobalAlert() { mixin(MGF!("mHideGlobalAlert", "Function TribesGame.TrHUD.HideGlobalAlert")()); }
+			ScriptFunction KickVoteMessage() { mixin(MGF!("mKickVoteMessage", "Function TribesGame.TrHUD.KickVoteMessage")()); }
+			ScriptFunction EnableGameTypeHUD() { mixin(MGF!("mEnableGameTypeHUD", "Function TribesGame.TrHUD.EnableGameTypeHUD")()); }
+			ScriptFunction ShowSpectatorPlayer() { mixin(MGF!("mShowSpectatorPlayer", "Function TribesGame.TrHUD.ShowSpectatorPlayer")()); }
+			ScriptFunction HideSpectatorPlayer() { mixin(MGF!("mHideSpectatorPlayer", "Function TribesGame.TrHUD.HideSpectatorPlayer")()); }
+			ScriptFunction UpdateSpectatorPlayerPanel() { mixin(MGF!("mUpdateSpectatorPlayerPanel", "Function TribesGame.TrHUD.UpdateSpectatorPlayerPanel")()); }
+			ScriptFunction ShowSpectatorVehicle() { mixin(MGF!("mShowSpectatorVehicle", "Function TribesGame.TrHUD.ShowSpectatorVehicle")()); }
+			ScriptFunction HideSpectatorVehicle() { mixin(MGF!("mHideSpectatorVehicle", "Function TribesGame.TrHUD.HideSpectatorVehicle")()); }
+			ScriptFunction UpdateSpectatorVehiclePanel() { mixin(MGF!("mUpdateSpectatorVehiclePanel", "Function TribesGame.TrHUD.UpdateSpectatorVehiclePanel")()); }
+			ScriptFunction ShowSpectatorBookmark() { mixin(MGF!("mShowSpectatorBookmark", "Function TribesGame.TrHUD.ShowSpectatorBookmark")()); }
+			ScriptFunction HideSpectatorBookmark() { mixin(MGF!("mHideSpectatorBookmark", "Function TribesGame.TrHUD.HideSpectatorBookmark")()); }
+			ScriptFunction UpdateSpectatorBookmarkPanel() { mixin(MGF!("mUpdateSpectatorBookmarkPanel", "Function TribesGame.TrHUD.UpdateSpectatorBookmarkPanel")()); }
+			ScriptFunction ShowSpectatorObjectivePanel() { mixin(MGF!("mShowSpectatorObjectivePanel", "Function TribesGame.TrHUD.ShowSpectatorObjectivePanel")()); }
+			ScriptFunction HideSpectatorObjectivePanel() { mixin(MGF!("mHideSpectatorObjectivePanel", "Function TribesGame.TrHUD.HideSpectatorObjectivePanel")()); }
+			ScriptFunction UpdateSpectatorObjectivePanel() { mixin(MGF!("mUpdateSpectatorObjectivePanel", "Function TribesGame.TrHUD.UpdateSpectatorObjectivePanel")()); }
+			ScriptFunction ShowSpectatorFloatCameraPanel() { mixin(MGF!("mShowSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.ShowSpectatorFloatCameraPanel")()); }
+			ScriptFunction HideSpectatorFloatCameraPanel() { mixin(MGF!("mHideSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.HideSpectatorFloatCameraPanel")()); }
+			ScriptFunction UpdateSpectatorFloatCameraPanel() { mixin(MGF!("mUpdateSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.UpdateSpectatorFloatCameraPanel")()); }
+			ScriptFunction HideAllSpectatorPanels() { mixin(MGF!("mHideAllSpectatorPanels", "Function TribesGame.TrHUD.HideAllSpectatorPanels")()); }
+			ScriptFunction OnViewTargetChange() { mixin(MGF!("mOnViewTargetChange", "Function TribesGame.TrHUD.OnViewTargetChange")()); }
+			ScriptFunction TestNumber() { mixin(MGF!("mTestNumber", "Function TribesGame.TrHUD.TestNumber")()); }
+			ScriptFunction AddOverheadNumber() { mixin(MGF!("mAddOverheadNumber", "Function TribesGame.TrHUD.AddOverheadNumber")()); }
+			ScriptFunction UpdateOverheadNumbers() { mixin(MGF!("mUpdateOverheadNumbers", "Function TribesGame.TrHUD.UpdateOverheadNumbers")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrHUD.Tick")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrHUD.PostRenderFor")()); }
+			ScriptFunction PlayAward() { mixin(MGF!("mPlayAward", "Function TribesGame.TrHUD.PlayAward")()); }
+			ScriptFunction QueueAccolade() { mixin(MGF!("mQueueAccolade", "Function TribesGame.TrHUD.QueueAccolade")()); }
+			ScriptFunction CheckQueuedAccolades() { mixin(MGF!("mCheckQueuedAccolades", "Function TribesGame.TrHUD.CheckQueuedAccolades")()); }
+			ScriptFunction RunQueuedAccoladesTimer() { mixin(MGF!("mRunQueuedAccoladesTimer", "Function TribesGame.TrHUD.RunQueuedAccoladesTimer")()); }
+			ScriptFunction ClearQueuedAccoladesTimer() { mixin(MGF!("mClearQueuedAccoladesTimer", "Function TribesGame.TrHUD.ClearQueuedAccoladesTimer")()); }
+			ScriptFunction DeployableReplicated() { mixin(MGF!("mDeployableReplicated", "Function TribesGame.TrHUD.DeployableReplicated")()); }
+			ScriptFunction MineReplicated() { mixin(MGF!("mMineReplicated", "Function TribesGame.TrHUD.MineReplicated")()); }
+			ScriptFunction UpdateOwnedItems() { mixin(MGF!("mUpdateOwnedItems", "Function TribesGame.TrHUD.UpdateOwnedItems")()); }
 		}
 	}
 	static struct Constants
@@ -804,17 +805,17 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHUD.QueuedAccolade")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrHUD.QueuedAccolade")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptString Subtitle() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
-				ScriptString Title() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-				int Icon() { return *cast(int*)(cast(size_t)&this + 0); }
+				ScriptString Subtitle() { mixin(MGPS!(ScriptString, 20)()); }
+				ScriptString Title() { mixin(MGPS!(ScriptString, 8)()); }
+				int Icon() { mixin(MGPS!(int, 0)()); }
 			}
-			bool bIsBadge() { return (*cast(uint*)(cast(size_t)&this + 4) & 0x1) != 0; }
-			bool bIsBadge(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 4) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 4) &= ~0x1; } return val; }
+			bool bIsBadge() { mixin(MGBPS!(4, 0x1)()); }
+			bool bIsBadge(bool val) { mixin(MSBPS!(4, 0x1)()); }
 		}
 	}
 	struct OverheadNumber
@@ -822,261 +823,261 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHUD.OverheadNumber")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrHUD.OverheadNumber")()); }
 		@property final auto ref
 		{
-			float CurrentScale() { return *cast(float*)(cast(size_t)&this + 36); }
-			UObject.Color CurrentColor() { return *cast(UObject.Color*)(cast(size_t)&this + 32); }
-			UObject.Vector4 WorldSpaceLocation() { return *cast(UObject.Vector4*)(cast(size_t)&this + 16); }
-			float RemainingTime() { return *cast(float*)(cast(size_t)&this + 4); }
-			int NumberValue() { return *cast(int*)(cast(size_t)&this + 0); }
+			float CurrentScale() { mixin(MGPS!(float, 36)()); }
+			UObject.Color CurrentColor() { mixin(MGPS!(UObject.Color, 32)()); }
+			UObject.Vector4 WorldSpaceLocation() { mixin(MGPS!(UObject.Vector4, 16)()); }
+			float RemainingTime() { mixin(MGPS!(float, 4)()); }
+			int NumberValue() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrSpectatorHUDCache m_SpectatorHUDCache() { return *cast(TrSpectatorHUDCache*)(cast(size_t)cast(void*)this + 2424); }
-			GFxTrUI_TeamSelectionMenu TeamSelectionMenuMovie() { return *cast(GFxTrUI_TeamSelectionMenu*)(cast(size_t)cast(void*)this + 2044); }
-			TrPlayerController TrPlayerOwner() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 2096); }
-			MaterialInstanceConstant MarkerBaseMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1632); }
-			UObject.LinearColor MarkerColorFriendly() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1668); }
-			UObject.LinearColor MarkerColorEnemy() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1636); }
-			Texture2D BaseDeployableLevel1() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1820); }
-			Texture2D BaseDeployableLevel2() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1824); }
-			Texture2D BaseDeployableLevel3() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1828); }
-			Texture2D BaseDeployableLevel4() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1832); }
-			Texture2D BaseDeployableLevel5() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1836); }
-			Texture2D BaseNoPower() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1816); }
-			Texture2D DeployableTurret() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1980); }
-			Texture2D BaseTurretLevel1() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1920); }
-			Texture2D BaseTurretLevel2() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1924); }
-			Texture2D BaseTurretLevel3() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1928); }
-			Texture2D BaseTurretLevel4() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1932); }
-			Texture2D BaseTurretLevel5() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1936); }
-			Texture2D BaseTurretLevel1_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1940); }
-			Texture2D BaseTurretLevel2_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1944); }
-			Texture2D BaseTurretLevel3_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1948); }
-			Texture2D BaseTurretLevel4_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1952); }
-			Texture2D BaseTurretLevel5_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1956); }
-			int m_nPotentialSeekingTargetHUDRotationRate() { return *cast(int*)(cast(size_t)cast(void*)this + 2276); }
-			float m_fPotentialSeekingTargetHUDZoomTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2280); }
-			float m_fSeekingTargetHUDZoomTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2300); }
-			Texture2D HUDMarkerMissileLocked() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1784); }
-			float m_fSeekingTargetHUDZoomEnd() { return *cast(float*)(cast(size_t)cast(void*)this + 2308); }
-			float m_fSeekingTargetHUDZoomOpacityStart() { return *cast(float*)(cast(size_t)cast(void*)this + 2312); }
-			float m_fSeekingTargetHUDZoomOpacityEnd() { return *cast(float*)(cast(size_t)cast(void*)this + 2316); }
-			float m_fSeekingTargetHUDZoomStart() { return *cast(float*)(cast(size_t)cast(void*)this + 2304); }
-			float m_fInitialSeekingTargetYaw() { return *cast(float*)(cast(size_t)cast(void*)this + 2320); }
-			Texture2D HUDMarkerMissileLocking() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1780); }
-			Texture2D HUDMarkerMissileTargetLocked() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1792); }
-			Texture2D HUDMarkerMissileTarget() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1788); }
-			float m_fPotentialSeekingTargetHUDZoomOpacityStart() { return *cast(float*)(cast(size_t)cast(void*)this + 2292); }
-			float m_fPotentialSeekingTargetHUDZoomOpacityEnd() { return *cast(float*)(cast(size_t)cast(void*)this + 2296); }
-			float m_fPotentialSeekingTargetHUDZoomStart() { return *cast(float*)(cast(size_t)cast(void*)this + 2284); }
-			float m_fPotentialSeekingTargetHUDZoomEnd() { return *cast(float*)(cast(size_t)cast(void*)this + 2288); }
-			float m_fCaratPlacementX() { return *cast(float*)(cast(size_t)cast(void*)this + 2348); }
-			float m_fCaratPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 2352); }
-			float m_fMarker2DDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 2488); }
-			float m_fCurrentWhiteoutValue() { return *cast(float*)(cast(size_t)cast(void*)this + 2232); }
-			float TeamPlayerInfoMaxDist() { return *cast(float*)(cast(size_t)cast(void*)this + 1576); }
-			Texture2D DeployableSensor() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1972); }
-			Texture2D MarkerLight() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1716); }
-			Texture2D MarkerMedium() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1720); }
-			Texture2D MarkerHeavy() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1724); }
-			Texture2D FlagHeldLight() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1756); }
-			Texture2D FlagHeldMedium() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1760); }
-			Texture2D FlagHeldHeavy() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1764); }
-			UObject.LinearColor MarkerColorEnemy_IsFriend() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1652); }
-			float m_fNamePlacementX() { return *cast(float*)(cast(size_t)cast(void*)this + 2340); }
-			float m_fNamePlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 2344); }
-			float m_fHealthBarPlacementX() { return *cast(float*)(cast(size_t)cast(void*)this + 2324); }
-			float m_fHealthBarPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 2328); }
-			float m_fHealthBarWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 2332); }
-			float m_fHealthBarHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2336); }
-			UObject.LinearColor MarkerColorFriendly_IsFriend() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1684); }
-			GfxTrHud m_GFxHud() { return *cast(GfxTrHud*)(cast(size_t)cast(void*)this + 2076); }
-			int FriendlyChatColorIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 2004); }
-			UObject.Color FriendlyChatColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 2016); }
-			int EnemyChatColorIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 2000); }
-			UObject.Color EnemyChatColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 2020); }
-			int WhisperChatColorIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 2012); }
-			UObject.Color WhisperChatColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 2028); }
-			int InfoChatColorIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 1996); }
-			Texture2D FlagEmptyBase() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1772); }
-			Texture2D BaseGeneratorLevel1() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1840); }
-			Texture2D BaseGeneratorLevel1_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1860); }
-			Texture2D DeployableJammer() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1964); }
-			Texture2D DeployableShield() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1976); }
-			Texture2D BaseSensorLevel1() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1880); }
-			Texture2D BaseSensorLevel2() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1884); }
-			Texture2D BaseSensorLevel3() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1888); }
-			Texture2D BaseSensorLevel4() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1892); }
-			Texture2D BaseSensorLevel5() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1896); }
-			Texture2D BaseSensorLevel1_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1900); }
-			Texture2D BaseSensorLevel2_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1904); }
-			Texture2D BaseSensorLevel3_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1908); }
-			Texture2D BaseSensorLevel4_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1912); }
-			Texture2D BaseSensorLevel5_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1916); }
-			Texture2D HUDMarkerLaserTargetAimPoint() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1800); }
-			Texture2D HUDMarkerLaserTarget() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1796); }
-			UObject.Color LaserTargetTracePossible() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 1592); }
-			UObject.Color LaserTargetTraceImprobable() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 1596); }
-			Texture2D AmmoDropPickup() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1984); }
-			Texture2D FlagAtBase() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1748); }
-			Texture2D FlagDropped() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1752); }
-			ScriptArray!(TrDeployable) m_OwnedDeployables() { return *cast(ScriptArray!(TrDeployable)*)(cast(size_t)cast(void*)this + 1600); }
-			ScriptArray!(TrProj_Mine) m_OwnedMines() { return *cast(ScriptArray!(TrProj_Mine)*)(cast(size_t)cast(void*)this + 1612); }
-			ScriptArray!(TrHUD.QueuedAccolade) QueuedAccolades() { return *cast(ScriptArray!(TrHUD.QueuedAccolade)*)(cast(size_t)cast(void*)this + 2428); }
-			ScriptArray!(TrHUD.OverheadNumber) m_OverheadNumbers() { return *cast(ScriptArray!(TrHUD.OverheadNumber)*)(cast(size_t)cast(void*)this + 2440); }
-			float m_fOverheadNumberColorizeTimeMax() { return *cast(float*)(cast(size_t)cast(void*)this + 2484); }
-			float m_fOverheadNumberColorizeTimeMin() { return *cast(float*)(cast(size_t)cast(void*)this + 2480); }
-			float m_fOverheadNumberMaxScaleAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 2476); }
-			float m_fOverheadNumberScaleTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2472); }
-			float m_fOverheadNumberFadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2468); }
-			float m_fOverheadNumberTotalTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2464); }
-			UObject.Color m_OverheadNumberColorMax() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 2460); }
-			UObject.Color m_OverheadNumberColorMin() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 2456); }
-			float m_fOverheadNumberZSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2452); }
-			UberPostProcessEffect m_UperPPEffect() { return *cast(UberPostProcessEffect*)(cast(size_t)cast(void*)this + 2420); }
-			Canvas.FontRenderInfo m_nNameFontRenderInfo() { return *cast(Canvas.FontRenderInfo*)(cast(size_t)cast(void*)this + 2380); }
-			float m_fMineDeployerNamePlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 2376); }
-			float m_fMineDeployerNamePlacementX() { return *cast(float*)(cast(size_t)cast(void*)this + 2372); }
-			float m_fMineNamePlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 2368); }
-			float m_fMineNamePlacementX() { return *cast(float*)(cast(size_t)cast(void*)this + 2364); }
-			float m_fVehicleNamePlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 2360); }
-			float m_fVehicleNamePlacementX() { return *cast(float*)(cast(size_t)cast(void*)this + 2356); }
-			MaterialInstanceConstant AwardMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2272); }
-			float AwardTimelineLoc() { return *cast(float*)(cast(size_t)cast(void*)this + 2268); }
-			float AwardFadeInScale() { return *cast(float*)(cast(size_t)cast(void*)this + 2264); }
-			float AwardTimelineLength() { return *cast(float*)(cast(size_t)cast(void*)this + 2260); }
-			float AwardBaseHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 2256); }
-			float AwardBaseSize() { return *cast(float*)(cast(size_t)cast(void*)this + 2252); }
-			float m_fCurrentFumbledFlagValue() { return *cast(float*)(cast(size_t)cast(void*)this + 2248); }
-			float m_FumbledFlagFadeOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2244); }
-			MaterialInstanceConstant m_FumbledFlagMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2240); }
-			MaterialEffect m_FumbledFlagMaterialEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2236); }
-			float m_WhiteoutFadeOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2228); }
-			MaterialInstanceConstant m_WhiteoutMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2224); }
-			MaterialEffect m_WhiteoutMaterialEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2220); }
-			float m_VignetteValueMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 2216); }
-			float m_VignetteFadeTarget() { return *cast(float*)(cast(size_t)cast(void*)this + 2212); }
-			float m_VignetteFadeSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2208); }
-			MaterialInstanceConstant m_VignetteMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2204); }
-			MaterialEffect m_VignetteMaterialEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2200); }
-			int LastChangeResCheckTime() { return *cast(int*)(cast(size_t)cast(void*)this + 2196); }
-			int LastChangeResTime() { return *cast(int*)(cast(size_t)cast(void*)this + 2192); }
-			int LastCreditTotal() { return *cast(int*)(cast(size_t)cast(void*)this + 2188); }
-			float m_JammerPackFadeOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2184); }
-			MaterialInstanceConstant m_JammerPackMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2180); }
-			MaterialEffect m_JammerPackMaterialEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2176); }
-			float m_ShieldHitFadeOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2172); }
-			float m_ShieldHitFadeInSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2168); }
-			float m_ShieldFadeOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2164); }
-			MaterialInstanceConstant m_ShieldMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2160); }
-			MaterialEffect m_ShieldMaterialEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2156); }
-			float m_InvulnerableFadeOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2152); }
-			MaterialInstanceConstant m_InvulnerableMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2148); }
-			MaterialEffect m_InvulnerableMaterialEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2144); }
-			float m_PickupFlashFadeOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2140); }
-			MaterialInstanceConstant m_PickupFlashMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2136); }
-			MaterialEffect m_PickupFlashMaterialEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2132); }
-			float m_fSkiEffectStrobeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2128); }
-			float m_fSkiEffectFadeOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2124); }
-			float m_fSkiEffectFadeInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2120); }
-			float m_fSkiEffectMinIntensity() { return *cast(float*)(cast(size_t)cast(void*)this + 2116); }
-			float m_fSkiEffectMaxIntensity() { return *cast(float*)(cast(size_t)cast(void*)this + 2112); }
-			float m_fControllerSkiSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2108); }
-			MaterialInstanceConstant m_SkiEffectMaterialInstance() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2104); }
-			MaterialEffect m_SkiEffect() { return *cast(MaterialEffect*)(cast(size_t)cast(void*)this + 2100); }
-			ScriptClass m_GameClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 2092); }
-			ScriptClass m_MusicManagerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 2088); }
-			float m_fEnemyGeneratorRestoreTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2084); }
-			float m_fFriendlyGeneratorRestoreTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2080); }
-			TrCaHStats CaHStats() { return *cast(TrCaHStats*)(cast(size_t)cast(void*)this + 2072); }
-			TrDaDStats DaDStats() { return *cast(TrDaDStats*)(cast(size_t)cast(void*)this + 2068); }
-			TrArenaStats ArenaStats() { return *cast(TrArenaStats*)(cast(size_t)cast(void*)this + 2064); }
-			TrTeamRabbitStats TeamRabbitStats() { return *cast(TrTeamRabbitStats*)(cast(size_t)cast(void*)this + 2060); }
-			TrHUDTeamCTFStats HUDTeamCTFStats() { return *cast(TrHUDTeamCTFStats*)(cast(size_t)cast(void*)this + 2056); }
-			TrRabbitLeaderboard RabbitLeaderboard() { return *cast(TrRabbitLeaderboard*)(cast(size_t)cast(void*)this + 2052); }
-			TrScoreboard Scoreboard() { return *cast(TrScoreboard*)(cast(size_t)cast(void*)this + 2048); }
-			GFxTrUI_VehicleMenu VehicleMenuMovie() { return *cast(GFxTrUI_VehicleMenu*)(cast(size_t)cast(void*)this + 2040); }
-			Material MapMaterialReference() { return *cast(Material*)(cast(size_t)cast(void*)this + 2036); }
-			MaterialInstanceConstant LowAmmoMic() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 2032); }
-			UObject.Color TeamChatColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 2024); }
-			int SelfChatColorIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 2008); }
-			Texture2D SpottedTarget_MotionMine() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1992); }
-			Texture2D SpottedTarget() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1988); }
-			Texture2D DeployableMine() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1968); }
-			Texture2D DeployableClaymore() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1960); }
-			Texture2D BaseGeneratorLevel5_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1876); }
-			Texture2D BaseGeneratorLevel4_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1872); }
-			Texture2D BaseGeneratorLevel3_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1868); }
-			Texture2D BaseGeneratorLevel2_Down() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1864); }
-			Texture2D BaseGeneratorLevel5() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1856); }
-			Texture2D BaseGeneratorLevel4() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1852); }
-			Texture2D BaseGeneratorLevel3() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1848); }
-			Texture2D BaseGeneratorLevel2() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1844); }
-			Texture2D BaseVehicleStation() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1812); }
-			Texture2D BaseRepairStation() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1808); }
-			Texture2D BaseInventoryStation() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1804); }
-			Texture2D HUDMarkerMissileIncoming() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1776); }
-			Texture2D FlagHeldVehicle() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1768); }
-			Texture2D VehicleMarkerNoDriver() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1744); }
-			Texture2D VehicleMarkerHeavy() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1740); }
-			Texture2D VehicleMarkerMedium() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1736); }
-			Texture2D VehicleMarkerLight() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1732); }
-			Texture2D VehicleMarker() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1728); }
-			UObject.LinearColor MarkerColorNone() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1700); }
-			int m_LastDeployableCount() { return *cast(int*)(cast(size_t)cast(void*)this + 1628); }
-			int m_LastMineCount() { return *cast(int*)(cast(size_t)cast(void*)this + 1624); }
-			UObject.Color ColorEnemy() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 1588); }
-			UObject.Color ColorFriend() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 1584); }
-			float ObjectiveInfoMaxDist() { return *cast(float*)(cast(size_t)cast(void*)this + 1580); }
-			ScriptString m_sLastClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1564); }
-			ScriptString m_sWinningPlayer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1552); }
-			int m_nLastPerk2Icon() { return *cast(int*)(cast(size_t)cast(void*)this + 1544); }
-			int m_nLastPerk1Icon() { return *cast(int*)(cast(size_t)cast(void*)this + 1540); }
-			int m_nWinningTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 1536); }
+			TrSpectatorHUDCache m_SpectatorHUDCache() { mixin(MGPC!(TrSpectatorHUDCache, 2424)()); }
+			GFxTrUI_TeamSelectionMenu TeamSelectionMenuMovie() { mixin(MGPC!(GFxTrUI_TeamSelectionMenu, 2044)()); }
+			TrPlayerController TrPlayerOwner() { mixin(MGPC!(TrPlayerController, 2096)()); }
+			MaterialInstanceConstant MarkerBaseMIC() { mixin(MGPC!(MaterialInstanceConstant, 1632)()); }
+			UObject.LinearColor MarkerColorFriendly() { mixin(MGPC!(UObject.LinearColor, 1668)()); }
+			UObject.LinearColor MarkerColorEnemy() { mixin(MGPC!(UObject.LinearColor, 1636)()); }
+			Texture2D BaseDeployableLevel1() { mixin(MGPC!(Texture2D, 1820)()); }
+			Texture2D BaseDeployableLevel2() { mixin(MGPC!(Texture2D, 1824)()); }
+			Texture2D BaseDeployableLevel3() { mixin(MGPC!(Texture2D, 1828)()); }
+			Texture2D BaseDeployableLevel4() { mixin(MGPC!(Texture2D, 1832)()); }
+			Texture2D BaseDeployableLevel5() { mixin(MGPC!(Texture2D, 1836)()); }
+			Texture2D BaseNoPower() { mixin(MGPC!(Texture2D, 1816)()); }
+			Texture2D DeployableTurret() { mixin(MGPC!(Texture2D, 1980)()); }
+			Texture2D BaseTurretLevel1() { mixin(MGPC!(Texture2D, 1920)()); }
+			Texture2D BaseTurretLevel2() { mixin(MGPC!(Texture2D, 1924)()); }
+			Texture2D BaseTurretLevel3() { mixin(MGPC!(Texture2D, 1928)()); }
+			Texture2D BaseTurretLevel4() { mixin(MGPC!(Texture2D, 1932)()); }
+			Texture2D BaseTurretLevel5() { mixin(MGPC!(Texture2D, 1936)()); }
+			Texture2D BaseTurretLevel1_Down() { mixin(MGPC!(Texture2D, 1940)()); }
+			Texture2D BaseTurretLevel2_Down() { mixin(MGPC!(Texture2D, 1944)()); }
+			Texture2D BaseTurretLevel3_Down() { mixin(MGPC!(Texture2D, 1948)()); }
+			Texture2D BaseTurretLevel4_Down() { mixin(MGPC!(Texture2D, 1952)()); }
+			Texture2D BaseTurretLevel5_Down() { mixin(MGPC!(Texture2D, 1956)()); }
+			int m_nPotentialSeekingTargetHUDRotationRate() { mixin(MGPC!(int, 2276)()); }
+			float m_fPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 2280)()); }
+			float m_fSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 2300)()); }
+			Texture2D HUDMarkerMissileLocked() { mixin(MGPC!(Texture2D, 1784)()); }
+			float m_fSeekingTargetHUDZoomEnd() { mixin(MGPC!(float, 2308)()); }
+			float m_fSeekingTargetHUDZoomOpacityStart() { mixin(MGPC!(float, 2312)()); }
+			float m_fSeekingTargetHUDZoomOpacityEnd() { mixin(MGPC!(float, 2316)()); }
+			float m_fSeekingTargetHUDZoomStart() { mixin(MGPC!(float, 2304)()); }
+			float m_fInitialSeekingTargetYaw() { mixin(MGPC!(float, 2320)()); }
+			Texture2D HUDMarkerMissileLocking() { mixin(MGPC!(Texture2D, 1780)()); }
+			Texture2D HUDMarkerMissileTargetLocked() { mixin(MGPC!(Texture2D, 1792)()); }
+			Texture2D HUDMarkerMissileTarget() { mixin(MGPC!(Texture2D, 1788)()); }
+			float m_fPotentialSeekingTargetHUDZoomOpacityStart() { mixin(MGPC!(float, 2292)()); }
+			float m_fPotentialSeekingTargetHUDZoomOpacityEnd() { mixin(MGPC!(float, 2296)()); }
+			float m_fPotentialSeekingTargetHUDZoomStart() { mixin(MGPC!(float, 2284)()); }
+			float m_fPotentialSeekingTargetHUDZoomEnd() { mixin(MGPC!(float, 2288)()); }
+			float m_fCaratPlacementX() { mixin(MGPC!(float, 2348)()); }
+			float m_fCaratPlacementY() { mixin(MGPC!(float, 2352)()); }
+			float m_fMarker2DDistance() { mixin(MGPC!(float, 2488)()); }
+			float m_fCurrentWhiteoutValue() { mixin(MGPC!(float, 2232)()); }
+			float TeamPlayerInfoMaxDist() { mixin(MGPC!(float, 1576)()); }
+			Texture2D DeployableSensor() { mixin(MGPC!(Texture2D, 1972)()); }
+			Texture2D MarkerLight() { mixin(MGPC!(Texture2D, 1716)()); }
+			Texture2D MarkerMedium() { mixin(MGPC!(Texture2D, 1720)()); }
+			Texture2D MarkerHeavy() { mixin(MGPC!(Texture2D, 1724)()); }
+			Texture2D FlagHeldLight() { mixin(MGPC!(Texture2D, 1756)()); }
+			Texture2D FlagHeldMedium() { mixin(MGPC!(Texture2D, 1760)()); }
+			Texture2D FlagHeldHeavy() { mixin(MGPC!(Texture2D, 1764)()); }
+			UObject.LinearColor MarkerColorEnemy_IsFriend() { mixin(MGPC!(UObject.LinearColor, 1652)()); }
+			float m_fNamePlacementX() { mixin(MGPC!(float, 2340)()); }
+			float m_fNamePlacementY() { mixin(MGPC!(float, 2344)()); }
+			float m_fHealthBarPlacementX() { mixin(MGPC!(float, 2324)()); }
+			float m_fHealthBarPlacementY() { mixin(MGPC!(float, 2328)()); }
+			float m_fHealthBarWidth() { mixin(MGPC!(float, 2332)()); }
+			float m_fHealthBarHeight() { mixin(MGPC!(float, 2336)()); }
+			UObject.LinearColor MarkerColorFriendly_IsFriend() { mixin(MGPC!(UObject.LinearColor, 1684)()); }
+			GfxTrHud m_GFxHud() { mixin(MGPC!(GfxTrHud, 2076)()); }
+			int FriendlyChatColorIdx() { mixin(MGPC!(int, 2004)()); }
+			UObject.Color FriendlyChatColor() { mixin(MGPC!(UObject.Color, 2016)()); }
+			int EnemyChatColorIdx() { mixin(MGPC!(int, 2000)()); }
+			UObject.Color EnemyChatColor() { mixin(MGPC!(UObject.Color, 2020)()); }
+			int WhisperChatColorIdx() { mixin(MGPC!(int, 2012)()); }
+			UObject.Color WhisperChatColor() { mixin(MGPC!(UObject.Color, 2028)()); }
+			int InfoChatColorIdx() { mixin(MGPC!(int, 1996)()); }
+			Texture2D FlagEmptyBase() { mixin(MGPC!(Texture2D, 1772)()); }
+			Texture2D BaseGeneratorLevel1() { mixin(MGPC!(Texture2D, 1840)()); }
+			Texture2D BaseGeneratorLevel1_Down() { mixin(MGPC!(Texture2D, 1860)()); }
+			Texture2D DeployableJammer() { mixin(MGPC!(Texture2D, 1964)()); }
+			Texture2D DeployableShield() { mixin(MGPC!(Texture2D, 1976)()); }
+			Texture2D BaseSensorLevel1() { mixin(MGPC!(Texture2D, 1880)()); }
+			Texture2D BaseSensorLevel2() { mixin(MGPC!(Texture2D, 1884)()); }
+			Texture2D BaseSensorLevel3() { mixin(MGPC!(Texture2D, 1888)()); }
+			Texture2D BaseSensorLevel4() { mixin(MGPC!(Texture2D, 1892)()); }
+			Texture2D BaseSensorLevel5() { mixin(MGPC!(Texture2D, 1896)()); }
+			Texture2D BaseSensorLevel1_Down() { mixin(MGPC!(Texture2D, 1900)()); }
+			Texture2D BaseSensorLevel2_Down() { mixin(MGPC!(Texture2D, 1904)()); }
+			Texture2D BaseSensorLevel3_Down() { mixin(MGPC!(Texture2D, 1908)()); }
+			Texture2D BaseSensorLevel4_Down() { mixin(MGPC!(Texture2D, 1912)()); }
+			Texture2D BaseSensorLevel5_Down() { mixin(MGPC!(Texture2D, 1916)()); }
+			Texture2D HUDMarkerLaserTargetAimPoint() { mixin(MGPC!(Texture2D, 1800)()); }
+			Texture2D HUDMarkerLaserTarget() { mixin(MGPC!(Texture2D, 1796)()); }
+			UObject.Color LaserTargetTracePossible() { mixin(MGPC!(UObject.Color, 1592)()); }
+			UObject.Color LaserTargetTraceImprobable() { mixin(MGPC!(UObject.Color, 1596)()); }
+			Texture2D AmmoDropPickup() { mixin(MGPC!(Texture2D, 1984)()); }
+			Texture2D FlagAtBase() { mixin(MGPC!(Texture2D, 1748)()); }
+			Texture2D FlagDropped() { mixin(MGPC!(Texture2D, 1752)()); }
+			ScriptArray!(TrDeployable) m_OwnedDeployables() { mixin(MGPC!(ScriptArray!(TrDeployable), 1600)()); }
+			ScriptArray!(TrProj_Mine) m_OwnedMines() { mixin(MGPC!(ScriptArray!(TrProj_Mine), 1612)()); }
+			ScriptArray!(TrHUD.QueuedAccolade) QueuedAccolades() { mixin(MGPC!(ScriptArray!(TrHUD.QueuedAccolade), 2428)()); }
+			ScriptArray!(TrHUD.OverheadNumber) m_OverheadNumbers() { mixin(MGPC!(ScriptArray!(TrHUD.OverheadNumber), 2440)()); }
+			float m_fOverheadNumberColorizeTimeMax() { mixin(MGPC!(float, 2484)()); }
+			float m_fOverheadNumberColorizeTimeMin() { mixin(MGPC!(float, 2480)()); }
+			float m_fOverheadNumberMaxScaleAmount() { mixin(MGPC!(float, 2476)()); }
+			float m_fOverheadNumberScaleTime() { mixin(MGPC!(float, 2472)()); }
+			float m_fOverheadNumberFadeTime() { mixin(MGPC!(float, 2468)()); }
+			float m_fOverheadNumberTotalTime() { mixin(MGPC!(float, 2464)()); }
+			UObject.Color m_OverheadNumberColorMax() { mixin(MGPC!(UObject.Color, 2460)()); }
+			UObject.Color m_OverheadNumberColorMin() { mixin(MGPC!(UObject.Color, 2456)()); }
+			float m_fOverheadNumberZSpeed() { mixin(MGPC!(float, 2452)()); }
+			UberPostProcessEffect m_UperPPEffect() { mixin(MGPC!(UberPostProcessEffect, 2420)()); }
+			Canvas.FontRenderInfo m_nNameFontRenderInfo() { mixin(MGPC!(Canvas.FontRenderInfo, 2380)()); }
+			float m_fMineDeployerNamePlacementY() { mixin(MGPC!(float, 2376)()); }
+			float m_fMineDeployerNamePlacementX() { mixin(MGPC!(float, 2372)()); }
+			float m_fMineNamePlacementY() { mixin(MGPC!(float, 2368)()); }
+			float m_fMineNamePlacementX() { mixin(MGPC!(float, 2364)()); }
+			float m_fVehicleNamePlacementY() { mixin(MGPC!(float, 2360)()); }
+			float m_fVehicleNamePlacementX() { mixin(MGPC!(float, 2356)()); }
+			MaterialInstanceConstant AwardMIC() { mixin(MGPC!(MaterialInstanceConstant, 2272)()); }
+			float AwardTimelineLoc() { mixin(MGPC!(float, 2268)()); }
+			float AwardFadeInScale() { mixin(MGPC!(float, 2264)()); }
+			float AwardTimelineLength() { mixin(MGPC!(float, 2260)()); }
+			float AwardBaseHeight() { mixin(MGPC!(float, 2256)()); }
+			float AwardBaseSize() { mixin(MGPC!(float, 2252)()); }
+			float m_fCurrentFumbledFlagValue() { mixin(MGPC!(float, 2248)()); }
+			float m_FumbledFlagFadeOutSpeed() { mixin(MGPC!(float, 2244)()); }
+			MaterialInstanceConstant m_FumbledFlagMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2240)()); }
+			MaterialEffect m_FumbledFlagMaterialEffect() { mixin(MGPC!(MaterialEffect, 2236)()); }
+			float m_WhiteoutFadeOutSpeed() { mixin(MGPC!(float, 2228)()); }
+			MaterialInstanceConstant m_WhiteoutMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2224)()); }
+			MaterialEffect m_WhiteoutMaterialEffect() { mixin(MGPC!(MaterialEffect, 2220)()); }
+			float m_VignetteValueMultiplier() { mixin(MGPC!(float, 2216)()); }
+			float m_VignetteFadeTarget() { mixin(MGPC!(float, 2212)()); }
+			float m_VignetteFadeSpeed() { mixin(MGPC!(float, 2208)()); }
+			MaterialInstanceConstant m_VignetteMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2204)()); }
+			MaterialEffect m_VignetteMaterialEffect() { mixin(MGPC!(MaterialEffect, 2200)()); }
+			int LastChangeResCheckTime() { mixin(MGPC!(int, 2196)()); }
+			int LastChangeResTime() { mixin(MGPC!(int, 2192)()); }
+			int LastCreditTotal() { mixin(MGPC!(int, 2188)()); }
+			float m_JammerPackFadeOutSpeed() { mixin(MGPC!(float, 2184)()); }
+			MaterialInstanceConstant m_JammerPackMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2180)()); }
+			MaterialEffect m_JammerPackMaterialEffect() { mixin(MGPC!(MaterialEffect, 2176)()); }
+			float m_ShieldHitFadeOutSpeed() { mixin(MGPC!(float, 2172)()); }
+			float m_ShieldHitFadeInSpeed() { mixin(MGPC!(float, 2168)()); }
+			float m_ShieldFadeOutSpeed() { mixin(MGPC!(float, 2164)()); }
+			MaterialInstanceConstant m_ShieldMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2160)()); }
+			MaterialEffect m_ShieldMaterialEffect() { mixin(MGPC!(MaterialEffect, 2156)()); }
+			float m_InvulnerableFadeOutSpeed() { mixin(MGPC!(float, 2152)()); }
+			MaterialInstanceConstant m_InvulnerableMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2148)()); }
+			MaterialEffect m_InvulnerableMaterialEffect() { mixin(MGPC!(MaterialEffect, 2144)()); }
+			float m_PickupFlashFadeOutSpeed() { mixin(MGPC!(float, 2140)()); }
+			MaterialInstanceConstant m_PickupFlashMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2136)()); }
+			MaterialEffect m_PickupFlashMaterialEffect() { mixin(MGPC!(MaterialEffect, 2132)()); }
+			float m_fSkiEffectStrobeTime() { mixin(MGPC!(float, 2128)()); }
+			float m_fSkiEffectFadeOutTime() { mixin(MGPC!(float, 2124)()); }
+			float m_fSkiEffectFadeInTime() { mixin(MGPC!(float, 2120)()); }
+			float m_fSkiEffectMinIntensity() { mixin(MGPC!(float, 2116)()); }
+			float m_fSkiEffectMaxIntensity() { mixin(MGPC!(float, 2112)()); }
+			float m_fControllerSkiSpeed() { mixin(MGPC!(float, 2108)()); }
+			MaterialInstanceConstant m_SkiEffectMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 2104)()); }
+			MaterialEffect m_SkiEffect() { mixin(MGPC!(MaterialEffect, 2100)()); }
+			ScriptClass m_GameClass() { mixin(MGPC!(ScriptClass, 2092)()); }
+			ScriptClass m_MusicManagerClass() { mixin(MGPC!(ScriptClass, 2088)()); }
+			float m_fEnemyGeneratorRestoreTime() { mixin(MGPC!(float, 2084)()); }
+			float m_fFriendlyGeneratorRestoreTime() { mixin(MGPC!(float, 2080)()); }
+			TrCaHStats CaHStats() { mixin(MGPC!(TrCaHStats, 2072)()); }
+			TrDaDStats DaDStats() { mixin(MGPC!(TrDaDStats, 2068)()); }
+			TrArenaStats ArenaStats() { mixin(MGPC!(TrArenaStats, 2064)()); }
+			TrTeamRabbitStats TeamRabbitStats() { mixin(MGPC!(TrTeamRabbitStats, 2060)()); }
+			TrHUDTeamCTFStats HUDTeamCTFStats() { mixin(MGPC!(TrHUDTeamCTFStats, 2056)()); }
+			TrRabbitLeaderboard RabbitLeaderboard() { mixin(MGPC!(TrRabbitLeaderboard, 2052)()); }
+			TrScoreboard Scoreboard() { mixin(MGPC!(TrScoreboard, 2048)()); }
+			GFxTrUI_VehicleMenu VehicleMenuMovie() { mixin(MGPC!(GFxTrUI_VehicleMenu, 2040)()); }
+			Material MapMaterialReference() { mixin(MGPC!(Material, 2036)()); }
+			MaterialInstanceConstant LowAmmoMic() { mixin(MGPC!(MaterialInstanceConstant, 2032)()); }
+			UObject.Color TeamChatColor() { mixin(MGPC!(UObject.Color, 2024)()); }
+			int SelfChatColorIdx() { mixin(MGPC!(int, 2008)()); }
+			Texture2D SpottedTarget_MotionMine() { mixin(MGPC!(Texture2D, 1992)()); }
+			Texture2D SpottedTarget() { mixin(MGPC!(Texture2D, 1988)()); }
+			Texture2D DeployableMine() { mixin(MGPC!(Texture2D, 1968)()); }
+			Texture2D DeployableClaymore() { mixin(MGPC!(Texture2D, 1960)()); }
+			Texture2D BaseGeneratorLevel5_Down() { mixin(MGPC!(Texture2D, 1876)()); }
+			Texture2D BaseGeneratorLevel4_Down() { mixin(MGPC!(Texture2D, 1872)()); }
+			Texture2D BaseGeneratorLevel3_Down() { mixin(MGPC!(Texture2D, 1868)()); }
+			Texture2D BaseGeneratorLevel2_Down() { mixin(MGPC!(Texture2D, 1864)()); }
+			Texture2D BaseGeneratorLevel5() { mixin(MGPC!(Texture2D, 1856)()); }
+			Texture2D BaseGeneratorLevel4() { mixin(MGPC!(Texture2D, 1852)()); }
+			Texture2D BaseGeneratorLevel3() { mixin(MGPC!(Texture2D, 1848)()); }
+			Texture2D BaseGeneratorLevel2() { mixin(MGPC!(Texture2D, 1844)()); }
+			Texture2D BaseVehicleStation() { mixin(MGPC!(Texture2D, 1812)()); }
+			Texture2D BaseRepairStation() { mixin(MGPC!(Texture2D, 1808)()); }
+			Texture2D BaseInventoryStation() { mixin(MGPC!(Texture2D, 1804)()); }
+			Texture2D HUDMarkerMissileIncoming() { mixin(MGPC!(Texture2D, 1776)()); }
+			Texture2D FlagHeldVehicle() { mixin(MGPC!(Texture2D, 1768)()); }
+			Texture2D VehicleMarkerNoDriver() { mixin(MGPC!(Texture2D, 1744)()); }
+			Texture2D VehicleMarkerHeavy() { mixin(MGPC!(Texture2D, 1740)()); }
+			Texture2D VehicleMarkerMedium() { mixin(MGPC!(Texture2D, 1736)()); }
+			Texture2D VehicleMarkerLight() { mixin(MGPC!(Texture2D, 1732)()); }
+			Texture2D VehicleMarker() { mixin(MGPC!(Texture2D, 1728)()); }
+			UObject.LinearColor MarkerColorNone() { mixin(MGPC!(UObject.LinearColor, 1700)()); }
+			int m_LastDeployableCount() { mixin(MGPC!(int, 1628)()); }
+			int m_LastMineCount() { mixin(MGPC!(int, 1624)()); }
+			UObject.Color ColorEnemy() { mixin(MGPC!(UObject.Color, 1588)()); }
+			UObject.Color ColorFriend() { mixin(MGPC!(UObject.Color, 1584)()); }
+			float ObjectiveInfoMaxDist() { mixin(MGPC!(float, 1580)()); }
+			ScriptString m_sLastClassName() { mixin(MGPC!(ScriptString, 1564)()); }
+			ScriptString m_sWinningPlayer() { mixin(MGPC!(ScriptString, 1552)()); }
+			int m_nLastPerk2Icon() { mixin(MGPC!(int, 1544)()); }
+			int m_nLastPerk1Icon() { mixin(MGPC!(int, 1540)()); }
+			int m_nWinningTeam() { mixin(MGPC!(int, 1536)()); }
 		}
-		bool m_bIsControllerSkiing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x8) != 0; }
-		bool m_bIsControllerSkiing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x8; } return val; }
-		bool bIsMainMenuOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x1000) != 0; }
-		bool bIsMainMenuOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x1000; } return val; }
-		bool bShowObjectives() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x4) != 0; }
-		bool bShowObjectives(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x4; } return val; }
-		bool bVotePending() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x800) != 0; }
-		bool bVotePending(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x800; } return val; }
-		bool bAccoladePlaying() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x40000) != 0; }
-		bool bAccoladePlaying(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x40000; } return val; }
-		bool m_bIsSpectatorFloatCameraPanelVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x20000) != 0; }
-		bool m_bIsSpectatorFloatCameraPanelVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x20000; } return val; }
-		bool m_bIsSpectatorObjectivePanelVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x10000) != 0; }
-		bool m_bIsSpectatorObjectivePanelVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x10000; } return val; }
-		bool m_bIsSpectatorBookmarkPanelVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x8000) != 0; }
-		bool m_bIsSpectatorBookmarkPanelVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x8000; } return val; }
-		bool m_bIsSpectatorVehiclePanelVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x4000) != 0; }
-		bool m_bIsSpectatorVehiclePanelVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x4000; } return val; }
-		bool m_bIsSpectatorPlayerPanelVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x2000) != 0; }
-		bool m_bIsSpectatorPlayerPanelVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x2000; } return val; }
-		bool bPlayAward() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x400) != 0; }
-		bool bPlayAward(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x400; } return val; }
-		bool m_bUpdateFumbledFlagEffect() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x200) != 0; }
-		bool m_bUpdateFumbledFlagEffect(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x200; } return val; }
-		bool m_bUpdateWhiteoutEffect() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x100) != 0; }
-		bool m_bUpdateWhiteoutEffect(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x100; } return val; }
-		bool bLoadSequenceComplete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x80) != 0; }
-		bool bLoadSequenceComplete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x80; } return val; }
-		bool bRestoreHUDState() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x40) != 0; }
-		bool bRestoreHUDState(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x40; } return val; }
-		bool m_bEffectFadingIn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x20) != 0; }
-		bool m_bEffectFadingIn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x20; } return val; }
-		bool m_bStrobeIn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x10) != 0; }
-		bool m_bStrobeIn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x10; } return val; }
-		bool HasGlobalChatAsAlert() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x2) != 0; }
-		bool HasGlobalChatAsAlert(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x2; } return val; }
-		bool m_bGameOver() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1548) & 0x1) != 0; }
-		bool m_bGameOver(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1548) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1548) &= ~0x1; } return val; }
+		bool m_bIsControllerSkiing() { mixin(MGBPC!(1548, 0x8)()); }
+		bool m_bIsControllerSkiing(bool val) { mixin(MSBPC!(1548, 0x8)()); }
+		bool bIsMainMenuOpen() { mixin(MGBPC!(1548, 0x1000)()); }
+		bool bIsMainMenuOpen(bool val) { mixin(MSBPC!(1548, 0x1000)()); }
+		bool bShowObjectives() { mixin(MGBPC!(1548, 0x4)()); }
+		bool bShowObjectives(bool val) { mixin(MSBPC!(1548, 0x4)()); }
+		bool bVotePending() { mixin(MGBPC!(1548, 0x800)()); }
+		bool bVotePending(bool val) { mixin(MSBPC!(1548, 0x800)()); }
+		bool bAccoladePlaying() { mixin(MGBPC!(1548, 0x40000)()); }
+		bool bAccoladePlaying(bool val) { mixin(MSBPC!(1548, 0x40000)()); }
+		bool m_bIsSpectatorFloatCameraPanelVisible() { mixin(MGBPC!(1548, 0x20000)()); }
+		bool m_bIsSpectatorFloatCameraPanelVisible(bool val) { mixin(MSBPC!(1548, 0x20000)()); }
+		bool m_bIsSpectatorObjectivePanelVisible() { mixin(MGBPC!(1548, 0x10000)()); }
+		bool m_bIsSpectatorObjectivePanelVisible(bool val) { mixin(MSBPC!(1548, 0x10000)()); }
+		bool m_bIsSpectatorBookmarkPanelVisible() { mixin(MGBPC!(1548, 0x8000)()); }
+		bool m_bIsSpectatorBookmarkPanelVisible(bool val) { mixin(MSBPC!(1548, 0x8000)()); }
+		bool m_bIsSpectatorVehiclePanelVisible() { mixin(MGBPC!(1548, 0x4000)()); }
+		bool m_bIsSpectatorVehiclePanelVisible(bool val) { mixin(MSBPC!(1548, 0x4000)()); }
+		bool m_bIsSpectatorPlayerPanelVisible() { mixin(MGBPC!(1548, 0x2000)()); }
+		bool m_bIsSpectatorPlayerPanelVisible(bool val) { mixin(MSBPC!(1548, 0x2000)()); }
+		bool bPlayAward() { mixin(MGBPC!(1548, 0x400)()); }
+		bool bPlayAward(bool val) { mixin(MSBPC!(1548, 0x400)()); }
+		bool m_bUpdateFumbledFlagEffect() { mixin(MGBPC!(1548, 0x200)()); }
+		bool m_bUpdateFumbledFlagEffect(bool val) { mixin(MSBPC!(1548, 0x200)()); }
+		bool m_bUpdateWhiteoutEffect() { mixin(MGBPC!(1548, 0x100)()); }
+		bool m_bUpdateWhiteoutEffect(bool val) { mixin(MSBPC!(1548, 0x100)()); }
+		bool bLoadSequenceComplete() { mixin(MGBPC!(1548, 0x80)()); }
+		bool bLoadSequenceComplete(bool val) { mixin(MSBPC!(1548, 0x80)()); }
+		bool bRestoreHUDState() { mixin(MGBPC!(1548, 0x40)()); }
+		bool bRestoreHUDState(bool val) { mixin(MSBPC!(1548, 0x40)()); }
+		bool m_bEffectFadingIn() { mixin(MGBPC!(1548, 0x20)()); }
+		bool m_bEffectFadingIn(bool val) { mixin(MSBPC!(1548, 0x20)()); }
+		bool m_bStrobeIn() { mixin(MGBPC!(1548, 0x10)()); }
+		bool m_bStrobeIn(bool val) { mixin(MSBPC!(1548, 0x10)()); }
+		bool HasGlobalChatAsAlert() { mixin(MGBPC!(1548, 0x2)()); }
+		bool HasGlobalChatAsAlert(bool val) { mixin(MSBPC!(1548, 0x2)()); }
+		bool m_bGameOver() { mixin(MGBPC!(1548, 0x1)()); }
+		bool m_bGameOver(bool val) { mixin(MSBPC!(1548, 0x1)()); }
 	}
 final:
 	Vector DrawMarkerText(ScriptString ShowText, bool bFriend, Vector Placement, Canvas DrawCanvas, bool bBuddy)
@@ -1105,7 +1106,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMICMarker, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[48];
 	}
-	static bool GetEdgeScreenCoordinates(Canvas inCanvas, Vector CameraPosition, Vector CameraDir, Vector ObjectLocation, Vector* ScreenLocation)
+	static bool GetEdgeScreenCoordinates(Canvas inCanvas, Vector CameraPosition, Vector CameraDir, Vector ObjectLocation, ref Vector ScreenLocation)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -1113,7 +1114,7 @@ final:
 		*cast(Vector*)&params[4] = CameraPosition;
 		*cast(Vector*)&params[16] = CameraDir;
 		*cast(Vector*)&params[28] = ObjectLocation;
-		*cast(Vector*)&params[40] = *ScreenLocation;
+		*cast(Vector*)&params[40] = ScreenLocation;
 		StaticClass.ProcessEvent(Functions.GetEdgeScreenCoordinates, params.ptr, cast(void*)0);
 		*ScreenLocation = *cast(Vector*)&params[40];
 		return *cast(bool*)&params[52];
@@ -1147,12 +1148,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawRotatedMarker, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[56];
 	}
-	void ShowDebugInfo(float* out_YL, float* out_YPos)
+	void ShowDebugInfo(ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = *out_YL;
-		*cast(float*)&params[4] = *out_YPos;
+		*cast(float*)params.ptr = out_YL;
+		*cast(float*)&params[4] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowDebugInfo, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)params.ptr;
 		*out_YPos = *cast(float*)&params[4];

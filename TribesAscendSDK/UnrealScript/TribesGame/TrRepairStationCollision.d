@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrRepairStationCollision;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface TrRepairStationCollision : TrStationCollision
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRepairStationCollision")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRepairStationCollision")()); }
 	private static __gshared TrRepairStationCollision mDefaultProperties;
-	@property final static TrRepairStationCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRepairStationCollision)("TrRepairStationCollision TribesGame.Default__TrRepairStationCollision")); }
+	@property final static TrRepairStationCollision DefaultProperties() { mixin(MGDPC!(TrRepairStationCollision, "TrRepairStationCollision TribesGame.Default__TrRepairStationCollision")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,13 +25,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPawnsInStation() { return mGetPawnsInStation ? mGetPawnsInStation : (mGetPawnsInStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStationCollision.GetPawnsInStation")); }
-			ScriptFunction CheckNearByPawns() { return mCheckNearByPawns ? mCheckNearByPawns : (mCheckNearByPawns = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStationCollision.CheckNearByPawns")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStationCollision.Touch")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRepairStationCollision.UnTouch")); }
+			ScriptFunction GetPawnsInStation() { mixin(MGF!("mGetPawnsInStation", "Function TribesGame.TrRepairStationCollision.GetPawnsInStation")()); }
+			ScriptFunction CheckNearByPawns() { mixin(MGF!("mCheckNearByPawns", "Function TribesGame.TrRepairStationCollision.CheckNearByPawns")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrRepairStationCollision.Touch")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrRepairStationCollision.UnTouch")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { return *cast(ScriptArray!(Pawn)*)(cast(size_t)cast(void*)this + 484); }
+	@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC!(ScriptArray!(Pawn), 484)()); }
 final:
 	int GetPawnsInStation()
 	{

@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.SeqAct_PlayAgentAnimation;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Latent;
 import UnrealScript.Engine.Actor;
 import UnrealScript.GameFramework.GameCrowdAgentSkeletal;
@@ -9,9 +10,9 @@ extern(C++) interface SeqAct_PlayAgentAnimation : SeqAct_Latent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_PlayAgentAnimation")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.SeqAct_PlayAgentAnimation")()); }
 	private static __gshared SeqAct_PlayAgentAnimation mDefaultProperties;
-	@property final static SeqAct_PlayAgentAnimation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_PlayAgentAnimation)("SeqAct_PlayAgentAnimation GameFramework.Default__SeqAct_PlayAgentAnimation")); }
+	@property final static SeqAct_PlayAgentAnimation DefaultProperties() { mixin(MGDPC!(SeqAct_PlayAgentAnimation, "SeqAct_PlayAgentAnimation GameFramework.Default__SeqAct_PlayAgentAnimation")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,29 +22,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_PlayAgentAnimation.GetObjClassVersion")); }
-			ScriptFunction SetCurrentAnimationActionFor() { return mSetCurrentAnimationActionFor ? mSetCurrentAnimationActionFor : (mSetCurrentAnimationActionFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_PlayAgentAnimation.SetCurrentAnimationActionFor")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function GameFramework.SeqAct_PlayAgentAnimation.GetObjClassVersion")()); }
+			ScriptFunction SetCurrentAnimationActionFor() { mixin(MGF!("mSetCurrentAnimationActionFor", "Function GameFramework.SeqAct_PlayAgentAnimation.SetCurrentAnimationActionFor")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) AnimationList() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 248); }
-			Actor ActionTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 280); }
-			float LoopTime() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
-			int LoopIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 272); }
-			float BlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			float BlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
+			ScriptArray!(ScriptName) AnimationList() { mixin(MGPC!(ScriptArray!(ScriptName), 248)()); }
+			Actor ActionTarget() { mixin(MGPC!(Actor, 280)()); }
+			float LoopTime() { mixin(MGPC!(float, 276)()); }
+			int LoopIndex() { mixin(MGPC!(int, 272)()); }
+			float BlendOutTime() { mixin(MGPC!(float, 264)()); }
+			float BlendInTime() { mixin(MGPC!(float, 260)()); }
 		}
-		bool bBlendBetweenAnims() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x8) != 0; }
-		bool bBlendBetweenAnims(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x8; } return val; }
-		bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x4) != 0; }
-		bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x4; } return val; }
-		bool bFaceActionTargetFirst() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x2) != 0; }
-		bool bFaceActionTargetFirst(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x2; } return val; }
-		bool bUseRootMotion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x1) != 0; }
-		bool bUseRootMotion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x1; } return val; }
+		bool bBlendBetweenAnims() { mixin(MGBPC!(268, 0x8)()); }
+		bool bBlendBetweenAnims(bool val) { mixin(MSBPC!(268, 0x8)()); }
+		bool bLooping() { mixin(MGBPC!(268, 0x4)()); }
+		bool bLooping(bool val) { mixin(MSBPC!(268, 0x4)()); }
+		bool bFaceActionTargetFirst() { mixin(MGBPC!(268, 0x2)()); }
+		bool bFaceActionTargetFirst(bool val) { mixin(MSBPC!(268, 0x2)()); }
+		bool bUseRootMotion() { mixin(MGBPC!(268, 0x1)()); }
+		bool bUseRootMotion(bool val) { mixin(MSBPC!(268, 0x1)()); }
 	}
 final:
 	static int GetObjClassVersion()

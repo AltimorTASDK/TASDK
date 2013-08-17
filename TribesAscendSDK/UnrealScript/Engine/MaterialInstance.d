@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialInstance;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Engine.MaterialInterface;
@@ -12,9 +13,9 @@ extern(C++) interface MaterialInstance : MaterialInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstance")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialInstance")()); }
 	private static __gshared MaterialInstance mDefaultProperties;
-	@property final static MaterialInstance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialInstance)("MaterialInstance Engine.Default__MaterialInstance")); }
+	@property final static MaterialInstance DefaultProperties() { mixin(MGDPC!(MaterialInstance, "MaterialInstance Engine.Default__MaterialInstance")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,41 +31,41 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetParent() { return mSetParent ? mSetParent : (mSetParent = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetParent")); }
-			ScriptFunction SetVectorParameterValue() { return mSetVectorParameterValue ? mSetVectorParameterValue : (mSetVectorParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetVectorParameterValue")); }
-			ScriptFunction SetScalarParameterValue() { return mSetScalarParameterValue ? mSetScalarParameterValue : (mSetScalarParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetScalarParameterValue")); }
-			ScriptFunction SetScalarCurveParameterValue() { return mSetScalarCurveParameterValue ? mSetScalarCurveParameterValue : (mSetScalarCurveParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetScalarCurveParameterValue")); }
-			ScriptFunction SetTextureParameterValue() { return mSetTextureParameterValue ? mSetTextureParameterValue : (mSetTextureParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetTextureParameterValue")); }
-			ScriptFunction SetFontParameterValue() { return mSetFontParameterValue ? mSetFontParameterValue : (mSetFontParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetFontParameterValue")); }
-			ScriptFunction ClearParameterValues() { return mClearParameterValues ? mClearParameterValues : (mClearParameterValues = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.ClearParameterValues")); }
-			ScriptFunction IsInMapOrTransientPackage() { return mIsInMapOrTransientPackage ? mIsInMapOrTransientPackage : (mIsInMapOrTransientPackage = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.IsInMapOrTransientPackage")); }
+			ScriptFunction SetParent() { mixin(MGF!("mSetParent", "Function Engine.MaterialInstance.SetParent")()); }
+			ScriptFunction SetVectorParameterValue() { mixin(MGF!("mSetVectorParameterValue", "Function Engine.MaterialInstance.SetVectorParameterValue")()); }
+			ScriptFunction SetScalarParameterValue() { mixin(MGF!("mSetScalarParameterValue", "Function Engine.MaterialInstance.SetScalarParameterValue")()); }
+			ScriptFunction SetScalarCurveParameterValue() { mixin(MGF!("mSetScalarCurveParameterValue", "Function Engine.MaterialInstance.SetScalarCurveParameterValue")()); }
+			ScriptFunction SetTextureParameterValue() { mixin(MGF!("mSetTextureParameterValue", "Function Engine.MaterialInstance.SetTextureParameterValue")()); }
+			ScriptFunction SetFontParameterValue() { mixin(MGF!("mSetFontParameterValue", "Function Engine.MaterialInstance.SetFontParameterValue")()); }
+			ScriptFunction ClearParameterValues() { mixin(MGF!("mClearParameterValues", "Function Engine.MaterialInstance.ClearParameterValues")()); }
+			ScriptFunction IsInMapOrTransientPackage() { mixin(MGF!("mIsInMapOrTransientPackage", "Function Engine.MaterialInstance.IsInMapOrTransientPackage")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Texture) ReferencedTextures() { return *cast(ScriptArray!(Texture)*)(cast(size_t)cast(void*)this + 392); }
-			ScriptArray!(UObject.Guid) ReferencedTextureGuids() { return *cast(ScriptArray!(UObject.Guid)*)(cast(size_t)cast(void*)this + 404); }
-			UObject.Guid ParentLightingGuid() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 416); }
-			UObject.Pointer Resources() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 380); }
-			UObject.Pointer StaticPermutationResources() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 372); }
-			UObject.Pointer StaticParameters() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 364); }
-			PhysicalMaterial WhitePhysicalMaterial() { return *cast(PhysicalMaterial*)(cast(size_t)cast(void*)this + 356); }
-			PhysicalMaterial BlackPhysicalMaterial() { return *cast(PhysicalMaterial*)(cast(size_t)cast(void*)this + 352); }
-			int PhysMaterialMaskUVChannel() { return *cast(int*)(cast(size_t)cast(void*)this + 348); }
-			Texture2D PhysMaterialMask() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 344); }
-			MaterialInterface Parent() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 340); }
-			PhysicalMaterial PhysMaterial() { return *cast(PhysicalMaterial*)(cast(size_t)cast(void*)this + 336); }
+			ScriptArray!(Texture) ReferencedTextures() { mixin(MGPC!(ScriptArray!(Texture), 392)()); }
+			ScriptArray!(UObject.Guid) ReferencedTextureGuids() { mixin(MGPC!(ScriptArray!(UObject.Guid), 404)()); }
+			UObject.Guid ParentLightingGuid() { mixin(MGPC!(UObject.Guid, 416)()); }
+			UObject.Pointer Resources() { mixin(MGPC!(UObject.Pointer, 380)()); }
+			UObject.Pointer StaticPermutationResources() { mixin(MGPC!(UObject.Pointer, 372)()); }
+			UObject.Pointer StaticParameters() { mixin(MGPC!(UObject.Pointer, 364)()); }
+			PhysicalMaterial WhitePhysicalMaterial() { mixin(MGPC!(PhysicalMaterial, 356)()); }
+			PhysicalMaterial BlackPhysicalMaterial() { mixin(MGPC!(PhysicalMaterial, 352)()); }
+			int PhysMaterialMaskUVChannel() { mixin(MGPC!(int, 348)()); }
+			Texture2D PhysMaterialMask() { mixin(MGPC!(Texture2D, 344)()); }
+			MaterialInterface Parent() { mixin(MGPC!(MaterialInterface, 340)()); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPC!(PhysicalMaterial, 336)()); }
 		}
-		bool bNeedsMaterialFlattening() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x8) != 0; }
-		bool bNeedsMaterialFlattening(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x8; } return val; }
-		bool ReentrantFlag() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x4) != 0; }
-		bool ReentrantFlag(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x4; } return val; }
-		bool bStaticPermutationDirty() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x2) != 0; }
-		bool bStaticPermutationDirty(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x2; } return val; }
-		bool bHasStaticPermutationResource() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
-		bool bHasStaticPermutationResource(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
+		bool bNeedsMaterialFlattening() { mixin(MGBPC!(360, 0x8)()); }
+		bool bNeedsMaterialFlattening(bool val) { mixin(MSBPC!(360, 0x8)()); }
+		bool ReentrantFlag() { mixin(MGBPC!(360, 0x4)()); }
+		bool ReentrantFlag(bool val) { mixin(MSBPC!(360, 0x4)()); }
+		bool bStaticPermutationDirty() { mixin(MGBPC!(360, 0x2)()); }
+		bool bStaticPermutationDirty(bool val) { mixin(MSBPC!(360, 0x2)()); }
+		bool bHasStaticPermutationResource() { mixin(MGBPC!(360, 0x1)()); }
+		bool bHasStaticPermutationResource(bool val) { mixin(MSBPC!(360, 0x1)()); }
 	}
 final:
 	void SetParent(MaterialInterface NewParent)
@@ -74,12 +75,12 @@ final:
 		*cast(MaterialInterface*)params.ptr = NewParent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetParent, params.ptr, cast(void*)0);
 	}
-	void SetVectorParameterValue(ScriptName ParameterName, UObject.LinearColor* Value)
+	void SetVectorParameterValue(ScriptName ParameterName, ref const UObject.LinearColor Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.LinearColor*)&params[8] = *Value;
+		*cast(UObject.LinearColor*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.LinearColor*)&params[8];
 	}
@@ -91,12 +92,12 @@ final:
 		*cast(float*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarParameterValue, params.ptr, cast(void*)0);
 	}
-	void SetScalarCurveParameterValue(ScriptName ParameterName, UObject.InterpCurveFloat* Value)
+	void SetScalarCurveParameterValue(ScriptName ParameterName, ref const UObject.InterpCurveFloat Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.InterpCurveFloat*)&params[8] = *Value;
+		*cast(UObject.InterpCurveFloat*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarCurveParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.InterpCurveFloat*)&params[8];
 	}

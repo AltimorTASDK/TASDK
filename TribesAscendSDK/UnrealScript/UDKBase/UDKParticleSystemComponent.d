@@ -1,29 +1,30 @@
 module UnrealScript.UDKBase.UDKParticleSystemComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleSystemComponent;
 
 extern(C++) interface UDKParticleSystemComponent : ParticleSystemComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKParticleSystemComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKParticleSystemComponent")()); }
 	private static __gshared UDKParticleSystemComponent mDefaultProperties;
-	@property final static UDKParticleSystemComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKParticleSystemComponent)("UDKParticleSystemComponent UDKBase.Default__UDKParticleSystemComponent")); }
+	@property final static UDKParticleSystemComponent DefaultProperties() { mixin(MGDPC!(UDKParticleSystemComponent, "UDKParticleSystemComponent UDKBase.Default__UDKParticleSystemComponent")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetFOV;
-		public @property static final ScriptFunction SetFOV() { return mSetFOV ? mSetFOV : (mSetFOV = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKParticleSystemComponent.SetFOV")); }
+		public @property static final ScriptFunction SetFOV() { mixin(MGF!("mSetFOV", "Function UDKBase.UDKParticleSystemComponent.SetFOV")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector SavedScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 744); }
-			float FOV() { return *cast(float*)(cast(size_t)cast(void*)this + 736); }
+			Vector SavedScale3D() { mixin(MGPC!(Vector, 744)()); }
+			float FOV() { mixin(MGPC!(float, 736)()); }
 		}
-		bool bHasSavedScale3D() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x1) != 0; }
-		bool bHasSavedScale3D(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x1; } return val; }
+		bool bHasSavedScale3D() { mixin(MGBPC!(740, 0x1)()); }
+		bool bHasSavedScale3D(bool val) { mixin(MSBPC!(740, 0x1)()); }
 	}
 	final void SetFOV(float NewFOV)
 	{

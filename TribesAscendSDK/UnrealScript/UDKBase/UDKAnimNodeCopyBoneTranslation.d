@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKAnimNodeCopyBoneTranslation;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeAimOffset;
 import UnrealScript.UDKBase.UDKAnimNodeSeqWeap;
 import UnrealScript.Engine.AnimNodeBlendBase;
@@ -10,32 +11,32 @@ extern(C++) interface UDKAnimNodeCopyBoneTranslation : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeCopyBoneTranslation")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimNodeCopyBoneTranslation")()); }
 	private static __gshared UDKAnimNodeCopyBoneTranslation mDefaultProperties;
-	@property final static UDKAnimNodeCopyBoneTranslation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimNodeCopyBoneTranslation)("UDKAnimNodeCopyBoneTranslation UDKBase.Default__UDKAnimNodeCopyBoneTranslation")); }
+	@property final static UDKAnimNodeCopyBoneTranslation DefaultProperties() { mixin(MGDPC!(UDKAnimNodeCopyBoneTranslation, "UDKAnimNodeCopyBoneTranslation UDKBase.Default__UDKAnimNodeCopyBoneTranslation")()); }
 	struct BoneCopyInfo
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKAnimNodeCopyBoneTranslation.BoneCopyInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKAnimNodeCopyBoneTranslation.BoneCopyInfo")()); }
 		@property final auto ref
 		{
-			int DstBoneIndex() { return *cast(int*)(cast(size_t)&this + 20); }
-			int SrcBoneIndex() { return *cast(int*)(cast(size_t)&this + 16); }
-			ScriptName DstBoneName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-			ScriptName SrcBoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			int DstBoneIndex() { mixin(MGPS!(int, 20)()); }
+			int SrcBoneIndex() { mixin(MGPS!(int, 16)()); }
+			ScriptName DstBoneName() { mixin(MGPS!(ScriptName, 8)()); }
+			ScriptName SrcBoneName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo) DefaultBoneCopyArray() { return *cast(ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo)*)(cast(size_t)cast(void*)this + 256); }
-		ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo) DualWieldBoneCopyArray() { return *cast(ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo)*)(cast(size_t)cast(void*)this + 268); }
-		ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo) ActiveBoneCopyArray() { return *cast(ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo)*)(cast(size_t)cast(void*)this + 280); }
-		ScriptArray!(ubyte) RequiredBones() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 292); }
-		ScriptArray!(UDKAnimNodeSeqWeap) SeqWeaps() { return *cast(ScriptArray!(UDKAnimNodeSeqWeap)*)(cast(size_t)cast(void*)this + 304); }
-		ScriptArray!(UDKAnimBlendByWeapType) WeapTypeBlends() { return *cast(ScriptArray!(UDKAnimBlendByWeapType)*)(cast(size_t)cast(void*)this + 316); }
-		ScriptName OldAimProfileName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 248); }
-		AnimNodeAimOffset CachedAimNode() { return *cast(AnimNodeAimOffset*)(cast(size_t)cast(void*)this + 244); }
+		ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo) DefaultBoneCopyArray() { mixin(MGPC!(ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo), 256)()); }
+		ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo) DualWieldBoneCopyArray() { mixin(MGPC!(ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo), 268)()); }
+		ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo) ActiveBoneCopyArray() { mixin(MGPC!(ScriptArray!(UDKAnimNodeCopyBoneTranslation.BoneCopyInfo), 280)()); }
+		ScriptArray!(ubyte) RequiredBones() { mixin(MGPC!(ScriptArray!(ubyte), 292)()); }
+		ScriptArray!(UDKAnimNodeSeqWeap) SeqWeaps() { mixin(MGPC!(ScriptArray!(UDKAnimNodeSeqWeap), 304)()); }
+		ScriptArray!(UDKAnimBlendByWeapType) WeapTypeBlends() { mixin(MGPC!(ScriptArray!(UDKAnimBlendByWeapType), 316)()); }
+		ScriptName OldAimProfileName() { mixin(MGPC!(ScriptName, 248)()); }
+		AnimNodeAimOffset CachedAimNode() { mixin(MGPC!(AnimNodeAimOffset, 244)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCaHStats;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrPlayerController;
@@ -12,9 +13,9 @@ extern(C++) interface TrCaHStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCaHStats")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCaHStats")()); }
 	private static __gshared TrCaHStats mDefaultProperties;
-	@property final static TrCaHStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCaHStats)("TrCaHStats TribesGame.Default__TrCaHStats")); }
+	@property final static TrCaHStats DefaultProperties() { mixin(MGDPC!(TrCaHStats, "TrCaHStats TribesGame.Default__TrCaHStats")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,16 +33,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReadyToPlay() { return mReadyToPlay ? mReadyToPlay : (mReadyToPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.ReadyToPlay")); }
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.Initialize")); }
-			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.Show")); }
-			ScriptFunction Hide() { return mHide ? mHide : (mHide = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.Hide")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.Tick")); }
-			ScriptFunction UpdateTeam() { return mUpdateTeam ? mUpdateTeam : (mUpdateTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.UpdateTeam")); }
-			ScriptFunction UpdateCapturePointData() { return mUpdateCapturePointData ? mUpdateCapturePointData : (mUpdateCapturePointData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.UpdateCapturePointData")); }
-			ScriptFunction UpdateTeamScore() { return mUpdateTeamScore ? mUpdateTeamScore : (mUpdateTeamScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.UpdateTeamScore")); }
-			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.FormatTime")); }
-			ScriptFunction ForceUpdate() { return mForceUpdate ? mForceUpdate : (mForceUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHStats.ForceUpdate")); }
+			ScriptFunction ReadyToPlay() { mixin(MGF!("mReadyToPlay", "Function TribesGame.TrCaHStats.ReadyToPlay")()); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrCaHStats.Initialize")()); }
+			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrCaHStats.Show")()); }
+			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrCaHStats.Hide")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrCaHStats.Tick")()); }
+			ScriptFunction UpdateTeam() { mixin(MGF!("mUpdateTeam", "Function TribesGame.TrCaHStats.UpdateTeam")()); }
+			ScriptFunction UpdateCapturePointData() { mixin(MGF!("mUpdateCapturePointData", "Function TribesGame.TrCaHStats.UpdateCapturePointData")()); }
+			ScriptFunction UpdateTeamScore() { mixin(MGF!("mUpdateTeamScore", "Function TribesGame.TrCaHStats.UpdateTeamScore")()); }
+			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrCaHStats.FormatTime")()); }
+			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrCaHStats.ForceUpdate")()); }
 		}
 	}
 	struct CapturePointInfo
@@ -49,37 +50,37 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrCaHStats.CapturePointInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrCaHStats.CapturePointInfo")()); }
 		@property final auto ref
 		{
-			float RemainingHeldTime() { return *cast(float*)(cast(size_t)&this + 24); }
-			int PctHeld() { return *cast(int*)(cast(size_t)&this + 20); }
-			int PointOwnershipType() { return *cast(int*)(cast(size_t)&this + 16); }
-			ScriptString LabelString() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-			TrObject.CaHCapturePointLabel PointLabel() { return *cast(TrObject.CaHCapturePointLabel*)(cast(size_t)&this + 0); }
+			float RemainingHeldTime() { mixin(MGPS!(float, 24)()); }
+			int PctHeld() { mixin(MGPS!(int, 20)()); }
+			int PointOwnershipType() { mixin(MGPS!(int, 16)()); }
+			ScriptString LabelString() { mixin(MGPS!(ScriptString, 4)()); }
+			TrObject.CaHCapturePointLabel PointLabel() { mixin(MGPS!(TrObject.CaHCapturePointLabel, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrCaHStats.CapturePointInfo) m_CapturePointData() { return *cast(ScriptArray!(TrCaHStats.CapturePointInfo)*)(cast(size_t)cast(void*)this + 108); }
-			ScriptArray!(TrCaHCapturePoint) m_CapturePoints() { return *cast(ScriptArray!(TrCaHCapturePoint)*)(cast(size_t)cast(void*)this + 120); }
-			TrPlayerController TrPC() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 104); }
-			GfxTrHud m_MoviePlayer() { return *cast(GfxTrHud*)(cast(size_t)cast(void*)this + 100); }
-			int RoundNum() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-			int NumCapturePointsHeld() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-			int RoundScore() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
-			int TeamScore() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-			int RemainingTime() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			int MyTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(TrCaHStats.CapturePointInfo) m_CapturePointData() { mixin(MGPC!(ScriptArray!(TrCaHStats.CapturePointInfo), 108)()); }
+			ScriptArray!(TrCaHCapturePoint) m_CapturePoints() { mixin(MGPC!(ScriptArray!(TrCaHCapturePoint), 120)()); }
+			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 104)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 100)()); }
+			int RoundNum() { mixin(MGPC!(int, 96)()); }
+			int NumCapturePointsHeld() { mixin(MGPC!(int, 88)()); }
+			int RoundScore() { mixin(MGPC!(int, 80)()); }
+			int TeamScore() { mixin(MGPC!(int, 72)()); }
+			int RemainingTime() { mixin(MGPC!(int, 64)()); }
+			int MyTeam() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bForceUpdateNextTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x4) != 0; }
-		bool bForceUpdateNextTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x4; } return val; }
-		bool bForcingUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x2) != 0; }
-		bool bForcingUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x2; } return val; }
-		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x1) != 0; }
-		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x1; } return val; }
+		bool bForceUpdateNextTick() { mixin(MGBPC!(68, 0x4)()); }
+		bool bForceUpdateNextTick(bool val) { mixin(MSBPC!(68, 0x4)()); }
+		bool bForcingUpdate() { mixin(MGBPC!(68, 0x2)()); }
+		bool bForcingUpdate(bool val) { mixin(MSBPC!(68, 0x2)()); }
+		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
+		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }
 	}
 final:
 	void ReadyToPlay()

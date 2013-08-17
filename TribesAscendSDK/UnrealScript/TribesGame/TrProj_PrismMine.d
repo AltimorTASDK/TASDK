@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_PrismMine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrProj_Mine;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.ParticleSystem;
@@ -11,9 +12,9 @@ extern(C++) interface TrProj_PrismMine : TrProj_Mine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_PrismMine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_PrismMine")()); }
 	private static __gshared TrProj_PrismMine mDefaultProperties;
-	@property final static TrProj_PrismMine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_PrismMine)("TrProj_PrismMine TribesGame.Default__TrProj_PrismMine")); }
+	@property final static TrProj_PrismMine DefaultProperties() { mixin(MGDPC!(TrProj_PrismMine, "TrProj_PrismMine TribesGame.Default__TrProj_PrismMine")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,29 +34,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PawnEnteredDetonationArea() { return mPawnEnteredDetonationArea ? mPawnEnteredDetonationArea : (mPawnEnteredDetonationArea = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.PawnEnteredDetonationArea")); }
-			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.InitProjectile")); }
-			ScriptFunction ArmedTimer() { return mArmedTimer ? mArmedTimer : (mArmedTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.ArmedTimer")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.ShutDown")); }
-			ScriptFunction CreateTripActor() { return mCreateTripActor ? mCreateTripActor : (mCreateTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.CreateTripActor")); }
-			ScriptFunction TripActivated() { return mTripActivated ? mTripActivated : (mTripActivated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.TripActivated")); }
-			ScriptFunction GetParticleSystemName() { return mGetParticleSystemName ? mGetParticleSystemName : (mGetParticleSystemName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.GetParticleSystemName")); }
-			ScriptFunction GetTripSocketPosition() { return mGetTripSocketPosition ? mGetTripSocketPosition : (mGetTripSocketPosition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.GetTripSocketPosition")); }
-			ScriptFunction OnTripAwake() { return mOnTripAwake ? mOnTripAwake : (mOnTripAwake = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.OnTripAwake")); }
-			ScriptFunction OnTripSleep() { return mOnTripSleep ? mOnTripSleep : (mOnTripSleep = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.OnTripSleep")); }
-			ScriptFunction AddTripActor() { return mAddTripActor ? mAddTripActor : (mAddTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.AddTripActor")); }
-			ScriptFunction RemoveTripActor() { return mRemoveTripActor ? mRemoveTripActor : (mRemoveTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_PrismMine.RemoveTripActor")); }
+			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF!("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_PrismMine.PawnEnteredDetonationArea")()); }
+			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_PrismMine.InitProjectile")()); }
+			ScriptFunction ArmedTimer() { mixin(MGF!("mArmedTimer", "Function TribesGame.TrProj_PrismMine.ArmedTimer")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function TribesGame.TrProj_PrismMine.ShutDown")()); }
+			ScriptFunction CreateTripActor() { mixin(MGF!("mCreateTripActor", "Function TribesGame.TrProj_PrismMine.CreateTripActor")()); }
+			ScriptFunction TripActivated() { mixin(MGF!("mTripActivated", "Function TribesGame.TrProj_PrismMine.TripActivated")()); }
+			ScriptFunction GetParticleSystemName() { mixin(MGF!("mGetParticleSystemName", "Function TribesGame.TrProj_PrismMine.GetParticleSystemName")()); }
+			ScriptFunction GetTripSocketPosition() { mixin(MGF!("mGetTripSocketPosition", "Function TribesGame.TrProj_PrismMine.GetTripSocketPosition")()); }
+			ScriptFunction OnTripAwake() { mixin(MGF!("mOnTripAwake", "Function TribesGame.TrProj_PrismMine.OnTripAwake")()); }
+			ScriptFunction OnTripSleep() { mixin(MGF!("mOnTripSleep", "Function TribesGame.TrProj_PrismMine.OnTripSleep")()); }
+			ScriptFunction AddTripActor() { mixin(MGF!("mAddTripActor", "Function TribesGame.TrProj_PrismMine.AddTripActor")()); }
+			ScriptFunction RemoveTripActor() { mixin(MGF!("mRemoveTripActor", "Function TribesGame.TrProj_PrismMine.RemoveTripActor")()); }
 		}
 	}
 	@property final auto ref
 	{
-		Vector r_vRightHit() { return *cast(Vector*)(cast(size_t)cast(void*)this + 936); }
-		Vector r_vLeftHit() { return *cast(Vector*)(cast(size_t)cast(void*)this + 924); }
-		ScriptName m_nSocketTraceName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 916); }
-		ParticleSystem m_LaserTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 912); }
-		float m_fTripDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 908); }
-		TrTripActor m_TripActor() { return *cast(TrTripActor*)(cast(size_t)cast(void*)this + 904); }
-		UObject.Pointer VfTable_IInterface_TrTripNotifier() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 900); }
+		Vector r_vRightHit() { mixin(MGPC!(Vector, 936)()); }
+		Vector r_vLeftHit() { mixin(MGPC!(Vector, 924)()); }
+		ScriptName m_nSocketTraceName() { mixin(MGPC!(ScriptName, 916)()); }
+		ParticleSystem m_LaserTemplate() { mixin(MGPC!(ParticleSystem, 912)()); }
+		float m_fTripDistance() { mixin(MGPC!(float, 908)()); }
+		TrTripActor m_TripActor() { mixin(MGPC!(TrTripActor, 904)()); }
+		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!(UObject.Pointer, 900)()); }
 	}
 final:
 	void PawnEnteredDetonationArea(Pawn Other)
@@ -101,12 +102,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetParticleSystemName, params.ptr, cast(void*)0);
 		return *cast(ParticleSystem*)params.ptr;
 	}
-	bool GetTripSocketPosition(bool bIsLeft, Vector* SocketPosition)
+	bool GetTripSocketPosition(bool bIsLeft, ref Vector SocketPosition)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsLeft;
-		*cast(Vector*)&params[4] = *SocketPosition;
+		*cast(Vector*)&params[4] = SocketPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTripSocketPosition, params.ptr, cast(void*)0);
 		*SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];

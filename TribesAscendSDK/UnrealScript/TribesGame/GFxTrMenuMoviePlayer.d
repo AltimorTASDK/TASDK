@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrMenuMoviePlayer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.PlatformCommon.TgPlayerProfile;
 import UnrealScript.TribesGame.TrBrowserManager;
 import UnrealScript.TribesGame.TrInventoryHelper;
@@ -30,9 +31,9 @@ extern(C++) interface GFxTrMenuMoviePlayer : GFxMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrMenuMoviePlayer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrMenuMoviePlayer")()); }
 	private static __gshared GFxTrMenuMoviePlayer mDefaultProperties;
-	@property final static GFxTrMenuMoviePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrMenuMoviePlayer)("GFxTrMenuMoviePlayer TribesGame.Default__GFxTrMenuMoviePlayer")); }
+	@property final static GFxTrMenuMoviePlayer DefaultProperties() { mixin(MGDPC!(GFxTrMenuMoviePlayer, "GFxTrMenuMoviePlayer TribesGame.Default__GFxTrMenuMoviePlayer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -312,278 +313,278 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DelegateNoParam() { return mDelegateNoParam ? mDelegateNoParam : (mDelegateNoParam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateNoParam")); }
-			ScriptFunction DelegateInt() { return mDelegateInt ? mDelegateInt : (mDelegateInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateInt")); }
-			ScriptFunction DelegateBool() { return mDelegateBool ? mDelegateBool : (mDelegateBool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateBool")); }
-			ScriptFunction DelegateString() { return mDelegateString ? mDelegateString : (mDelegateString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateString")); }
-			ScriptFunction DelegateGFxList() { return mDelegateGFxList ? mDelegateGFxList : (mDelegateGFxList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateGFxList")); }
-			ScriptFunction DelegateIntInt() { return mDelegateIntInt ? mDelegateIntInt : (mDelegateIntInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntInt")); }
-			ScriptFunction DelegateIntString() { return mDelegateIntString ? mDelegateIntString : (mDelegateIntString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntString")); }
-			ScriptFunction DelegateStringInt() { return mDelegateStringInt ? mDelegateStringInt : (mDelegateStringInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateStringInt")); }
-			ScriptFunction DelegateStringBool() { return mDelegateStringBool ? mDelegateStringBool : (mDelegateStringBool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateStringBool")); }
-			ScriptFunction DelegateIntGFxList() { return mDelegateIntGFxList ? mDelegateIntGFxList : (mDelegateIntGFxList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntGFxList")); }
-			ScriptFunction DelegateOnMarshalEvent() { return mDelegateOnMarshalEvent ? mDelegateOnMarshalEvent : (mDelegateOnMarshalEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateOnMarshalEvent")); }
-			ScriptFunction DelegateGetInt() { return mDelegateGetInt ? mDelegateGetInt : (mDelegateGetInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetInt")); }
-			ScriptFunction DelegateGetPrice() { return mDelegateGetPrice ? mDelegateGetPrice : (mDelegateGetPrice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetPrice")); }
-			ScriptFunction DelegateIntIntInt() { return mDelegateIntIntInt ? mDelegateIntIntInt : (mDelegateIntIntInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntIntInt")); }
-			ScriptFunction DelegateGetBoolIntInt() { return mDelegateGetBoolIntInt ? mDelegateGetBoolIntInt : (mDelegateGetBoolIntInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetBoolIntInt")); }
-			ScriptFunction DelegateLogin() { return mDelegateLogin ? mDelegateLogin : (mDelegateLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateLogin")); }
-			ScriptFunction DelegateBoolGetBool() { return mDelegateBoolGetBool ? mDelegateBoolGetBool : (mDelegateBoolGetBool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateBoolGetBool")); }
-			ScriptFunction DelegateGetString() { return mDelegateGetString ? mDelegateGetString : (mDelegateGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetString")); }
-			ScriptFunction DelegateOptions() { return mDelegateOptions ? mDelegateOptions : (mDelegateOptions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateOptions")); }
-			ScriptFunction DelegateAction() { return mDelegateAction ? mDelegateAction : (mDelegateAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DelegateAction")); }
-			ScriptFunction UseSteam() { return mUseSteam ? mUseSteam : (mUseSteam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UseSteam")); }
-			ScriptFunction RequestPurchaseSteamItem() { return mRequestPurchaseSteamItem ? mRequestPurchaseSteamItem : (mRequestPurchaseSteamItem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RequestPurchaseSteamItem")); }
-			ScriptFunction RequestSteamUserData() { return mRequestSteamUserData ? mRequestSteamUserData : (mRequestSteamUserData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RequestSteamUserData")); }
-			ScriptFunction GetGoldItemInfo() { return mGetGoldItemInfo ? mGetGoldItemInfo : (mGetGoldItemInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetGoldItemInfo")); }
-			ScriptFunction UsePortal() { return mUsePortal ? mUsePortal : (mUsePortal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UsePortal")); }
-			ScriptFunction GetPortalBalance() { return mGetPortalBalance ? mGetPortalBalance : (mGetPortalBalance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetPortalBalance")); }
-			ScriptFunction GetPortalCurrencyName() { return mGetPortalCurrencyName ? mGetPortalCurrencyName : (mGetPortalCurrencyName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetPortalCurrencyName")); }
-			ScriptFunction RequestPurchasePortalItem() { return mRequestPurchasePortalItem ? mRequestPurchasePortalItem : (mRequestPurchasePortalItem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RequestPurchasePortalItem")); }
-			ScriptFunction CheckAutoLoginStatus() { return mCheckAutoLoginStatus ? mCheckAutoLoginStatus : (mCheckAutoLoginStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.CheckAutoLoginStatus")); }
-			ScriptFunction PurchasedItem() { return mPurchasedItem ? mPurchasedItem : (mPurchasedItem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PurchasedItem")); }
-			ScriptFunction OnMarshalEvent() { return mOnMarshalEvent ? mOnMarshalEvent : (mOnMarshalEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.OnMarshalEvent")); }
-			ScriptFunction ReadPlayerProfileData() { return mReadPlayerProfileData ? mReadPlayerProfileData : (mReadPlayerProfileData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ReadPlayerProfileData")); }
-			ScriptFunction UserLoginChanged() { return mUserLoginChanged ? mUserLoginChanged : (mUserLoginChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UserLoginChanged")); }
-			ScriptFunction RegisterMarshalCallback() { return mRegisterMarshalCallback ? mRegisterMarshalCallback : (mRegisterMarshalCallback = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RegisterMarshalCallback")); }
-			ScriptFunction GetVersionString() { return mGetVersionString ? mGetVersionString : (mGetVersionString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetVersionString")); }
-			ScriptFunction ForceFocus() { return mForceFocus ? mForceFocus : (mForceFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ForceFocus")); }
-			ScriptFunction AddAcquisition() { return mAddAcquisition ? mAddAcquisition : (mAddAcquisition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.AddAcquisition")); }
-			ScriptFunction GetQueueUIInfo() { return mGetQueueUIInfo ? mGetQueueUIInfo : (mGetQueueUIInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetQueueUIInfo")); }
-			ScriptFunction GetLanguageFontIndex() { return mGetLanguageFontIndex ? mGetLanguageFontIndex : (mGetLanguageFontIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetLanguageFontIndex")); }
-			ScriptFunction RequestStreams() { return mRequestStreams ? mRequestStreams : (mRequestStreams = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RequestStreams")); }
-			ScriptFunction GetEquipmentXP() { return mGetEquipmentXP ? mGetEquipmentXP : (mGetEquipmentXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetEquipmentXP")); }
-			ScriptFunction GetEquipmentTierXP() { return mGetEquipmentTierXP ? mGetEquipmentTierXP : (mGetEquipmentTierXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetEquipmentTierXP")); }
-			ScriptFunction HaveClanTag() { return mHaveClanTag ? mHaveClanTag : (mHaveClanTag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HaveClanTag")); }
-			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.Start")); }
-			ScriptFunction SetLoginDelegate() { return mSetLoginDelegate ? mSetLoginDelegate : (mSetLoginDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoginDelegate")); }
-			ScriptFunction SetSubmitPlayerNameDelegate() { return mSetSubmitPlayerNameDelegate ? mSetSubmitPlayerNameDelegate : (mSetSubmitPlayerNameDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSubmitPlayerNameDelegate")); }
-			ScriptFunction SetLoadTeamMiscDataDelegate() { return mSetLoadTeamMiscDataDelegate ? mSetLoadTeamMiscDataDelegate : (mSetLoadTeamMiscDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamMiscDataDelegate")); }
-			ScriptFunction SetLoadTeamScoreboardDataDelegate() { return mSetLoadTeamScoreboardDataDelegate ? mSetLoadTeamScoreboardDataDelegate : (mSetLoadTeamScoreboardDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamScoreboardDataDelegate")); }
-			ScriptFunction SetLoadTeamStatsDataDelegate() { return mSetLoadTeamStatsDataDelegate ? mSetLoadTeamStatsDataDelegate : (mSetLoadTeamStatsDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamStatsDataDelegate")); }
-			ScriptFunction SetLoadTeamAccoladeDataDelegate() { return mSetLoadTeamAccoladeDataDelegate ? mSetLoadTeamAccoladeDataDelegate : (mSetLoadTeamAccoladeDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamAccoladeDataDelegate")); }
-			ScriptFunction SetLoadPlayerMiscDataDelegate() { return mSetLoadPlayerMiscDataDelegate ? mSetLoadPlayerMiscDataDelegate : (mSetLoadPlayerMiscDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadPlayerMiscDataDelegate")); }
-			ScriptFunction SetLoadPlayerStatsDataDelegate() { return mSetLoadPlayerStatsDataDelegate ? mSetLoadPlayerStatsDataDelegate : (mSetLoadPlayerStatsDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadPlayerStatsDataDelegate")); }
-			ScriptFunction SetLoadPlayerAccoladeDataDelegate() { return mSetLoadPlayerAccoladeDataDelegate ? mSetLoadPlayerAccoladeDataDelegate : (mSetLoadPlayerAccoladeDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadPlayerAccoladeDataDelegate")); }
-			ScriptFunction SetAcceptEULADelegate() { return mSetAcceptEULADelegate ? mSetAcceptEULADelegate : (mSetAcceptEULADelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetAcceptEULADelegate")); }
-			ScriptFunction SetSoundXPGain() { return mSetSoundXPGain ? mSetSoundXPGain : (mSetSoundXPGain = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSoundXPGain")); }
-			ScriptFunction SetSoundClassType() { return mSetSoundClassType ? mSetSoundClassType : (mSetSoundClassType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSoundClassType")); }
-			ScriptFunction SetSoundSkillType() { return mSetSoundSkillType ? mSetSoundSkillType : (mSetSoundSkillType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSoundSkillType")); }
-			ScriptFunction SetEscapeClass() { return mSetEscapeClass ? mSetEscapeClass : (mSetEscapeClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetEscapeClass")); }
-			ScriptFunction SetExitGameDelegate() { return mSetExitGameDelegate ? mSetExitGameDelegate : (mSetExitGameDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetExitGameDelegate")); }
-			ScriptFunction SetGetPlatformDelegate() { return mSetGetPlatformDelegate ? mSetGetPlatformDelegate : (mSetGetPlatformDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetGetPlatformDelegate")); }
-			ScriptFunction SetGetViewModeDelegate() { return mSetGetViewModeDelegate ? mSetGetViewModeDelegate : (mSetGetViewModeDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetGetViewModeDelegate")); }
-			ScriptFunction SetShowSummaryDelegate() { return mSetShowSummaryDelegate ? mSetShowSummaryDelegate : (mSetShowSummaryDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetShowSummaryDelegate")); }
-			ScriptFunction SetAlertDelegate() { return mSetAlertDelegate ? mSetAlertDelegate : (mSetAlertDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetAlertDelegate")); }
-			ScriptFunction SetBrowserGoldDelegate() { return mSetBrowserGoldDelegate ? mSetBrowserGoldDelegate : (mSetBrowserGoldDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserGoldDelegate")); }
-			ScriptFunction SetBrowserStoreDelegate() { return mSetBrowserStoreDelegate ? mSetBrowserStoreDelegate : (mSetBrowserStoreDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserStoreDelegate")); }
-			ScriptFunction SetBrowserSupportDelegate() { return mSetBrowserSupportDelegate ? mSetBrowserSupportDelegate : (mSetBrowserSupportDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserSupportDelegate")); }
-			ScriptFunction SetBrowserProfileDelegate() { return mSetBrowserProfileDelegate ? mSetBrowserProfileDelegate : (mSetBrowserProfileDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserProfileDelegate")); }
-			ScriptFunction SetBrowserBoosterDelegate() { return mSetBrowserBoosterDelegate ? mSetBrowserBoosterDelegate : (mSetBrowserBoosterDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserBoosterDelegate")); }
-			ScriptFunction SetBrowserClassVideoDelegate() { return mSetBrowserClassVideoDelegate ? mSetBrowserClassVideoDelegate : (mSetBrowserClassVideoDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserClassVideoDelegate")); }
-			ScriptFunction SetBrowserActivateKeyDelegate() { return mSetBrowserActivateKeyDelegate ? mSetBrowserActivateKeyDelegate : (mSetBrowserActivateKeyDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserActivateKeyDelegate")); }
-			ScriptFunction SetBrowserCreateAccountDelegate() { return mSetBrowserCreateAccountDelegate ? mSetBrowserCreateAccountDelegate : (mSetBrowserCreateAccountDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserCreateAccountDelegate")); }
-			ScriptFunction SetBrowserRecoverPasswordDelegate() { return mSetBrowserRecoverPasswordDelegate ? mSetBrowserRecoverPasswordDelegate : (mSetBrowserRecoverPasswordDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserRecoverPasswordDelegate")); }
-			ScriptFunction SetBrowserRecoverUsernameDelegate() { return mSetBrowserRecoverUsernameDelegate ? mSetBrowserRecoverUsernameDelegate : (mSetBrowserRecoverUsernameDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserRecoverUsernameDelegate")); }
-			ScriptFunction SetExitQueueDelegate() { return mSetExitQueueDelegate ? mSetExitQueueDelegate : (mSetExitQueueDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetExitQueueDelegate")); }
-			ScriptFunction SetJoinCustomServerDelegate() { return mSetJoinCustomServerDelegate ? mSetJoinCustomServerDelegate : (mSetJoinCustomServerDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetJoinCustomServerDelegate")); }
-			ScriptFunction SetFavoriteServerDelegate() { return mSetFavoriteServerDelegate ? mSetFavoriteServerDelegate : (mSetFavoriteServerDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetFavoriteServerDelegate")); }
-			ScriptFunction SetPasswordServerDelegate() { return mSetPasswordServerDelegate ? mSetPasswordServerDelegate : (mSetPasswordServerDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPasswordServerDelegate")); }
-			ScriptFunction SetServerPageDelegate() { return mSetServerPageDelegate ? mSetServerPageDelegate : (mSetServerPageDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetServerPageDelegate")); }
-			ScriptFunction SetServerSortDelegate() { return mSetServerSortDelegate ? mSetServerSortDelegate : (mSetServerSortDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetServerSortDelegate")); }
-			ScriptFunction SetReticuleActionDelegate() { return mSetReticuleActionDelegate ? mSetReticuleActionDelegate : (mSetReticuleActionDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetReticuleActionDelegate")); }
-			ScriptFunction SetSaveReticuleDelegate() { return mSetSaveReticuleDelegate ? mSetSaveReticuleDelegate : (mSetSaveReticuleDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSaveReticuleDelegate")); }
-			ScriptFunction SetRequestNewsDelegate() { return mSetRequestNewsDelegate ? mSetRequestNewsDelegate : (mSetRequestNewsDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetRequestNewsDelegate")); }
-			ScriptFunction SetStartLoginDelegate() { return mSetStartLoginDelegate ? mSetStartLoginDelegate : (mSetStartLoginDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetStartLoginDelegate")); }
-			ScriptFunction SetSmoothAnimDelegate() { return mSetSmoothAnimDelegate ? mSetSmoothAnimDelegate : (mSetSmoothAnimDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSmoothAnimDelegate")); }
-			ScriptFunction ASC_SetFontIndex() { return mASC_SetFontIndex ? mASC_SetFontIndex : (mASC_SetFontIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_SetFontIndex")); }
-			ScriptFunction ASC_Resize() { return mASC_Resize ? mASC_Resize : (mASC_Resize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_Resize")); }
-			ScriptFunction SetPopupDataDelegate() { return mSetPopupDataDelegate ? mSetPopupDataDelegate : (mSetPopupDataDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPopupDataDelegate")); }
-			ScriptFunction SetPopupCompleteDelegate() { return mSetPopupCompleteDelegate ? mSetPopupCompleteDelegate : (mSetPopupCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPopupCompleteDelegate")); }
-			ScriptFunction SetFocusedActionDelegate() { return mSetFocusedActionDelegate ? mSetFocusedActionDelegate : (mSetFocusedActionDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetFocusedActionDelegate")); }
-			ScriptFunction SetSelectedActionDelegate() { return mSetSelectedActionDelegate ? mSetSelectedActionDelegate : (mSetSelectedActionDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSelectedActionDelegate")); }
-			ScriptFunction SetModifiedActionDelegate() { return mSetModifiedActionDelegate ? mSetModifiedActionDelegate : (mSetModifiedActionDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetModifiedActionDelegate")); }
-			ScriptFunction SetModifyFocusDelegate() { return mSetModifyFocusDelegate ? mSetModifyFocusDelegate : (mSetModifyFocusDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetModifyFocusDelegate")); }
-			ScriptFunction SetActionUpDelegate() { return mSetActionUpDelegate ? mSetActionUpDelegate : (mSetActionUpDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetActionUpDelegate")); }
-			ScriptFunction SetActionDownDelegate() { return mSetActionDownDelegate ? mSetActionDownDelegate : (mSetActionDownDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetActionDownDelegate")); }
-			ScriptFunction SetHelpButtonDelegate() { return mSetHelpButtonDelegate ? mSetHelpButtonDelegate : (mSetHelpButtonDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetHelpButtonDelegate")); }
-			ScriptFunction SetProfilePageUpDelegate() { return mSetProfilePageUpDelegate ? mSetProfilePageUpDelegate : (mSetProfilePageUpDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetProfilePageUpDelegate")); }
-			ScriptFunction SetProfilePageDownDelegate() { return mSetProfilePageDownDelegate ? mSetProfilePageDownDelegate : (mSetProfilePageDownDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetProfilePageDownDelegate")); }
-			ScriptFunction SetMutePlayerDelegate() { return mSetMutePlayerDelegate ? mSetMutePlayerDelegate : (mSetMutePlayerDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetMutePlayerDelegate")); }
-			ScriptFunction SetSummaryActionDelegate() { return mSetSummaryActionDelegate ? mSetSummaryActionDelegate : (mSetSummaryActionDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSummaryActionDelegate")); }
-			ScriptFunction SetFriendPlayerDelegate() { return mSetFriendPlayerDelegate ? mSetFriendPlayerDelegate : (mSetFriendPlayerDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetFriendPlayerDelegate")); }
-			ScriptFunction SetLoadXPSummaryDelegate() { return mSetLoadXPSummaryDelegate ? mSetLoadXPSummaryDelegate : (mSetLoadXPSummaryDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetLoadXPSummaryDelegate")); }
-			ScriptFunction SetPromoActionDelegate() { return mSetPromoActionDelegate ? mSetPromoActionDelegate : (mSetPromoActionDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPromoActionDelegate")); }
-			ScriptFunction SetSelectedFeatureDelegate() { return mSetSelectedFeatureDelegate ? mSetSelectedFeatureDelegate : (mSetSelectedFeatureDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSelectedFeatureDelegate")); }
-			ScriptFunction CompleteStartup() { return mCompleteStartup ? mCompleteStartup : (mCompleteStartup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.CompleteStartup")); }
-			ScriptFunction SummaryAction() { return mSummaryAction ? mSummaryAction : (mSummaryAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SummaryAction")); }
-			ScriptFunction StartMainMenu() { return mStartMainMenu ? mStartMainMenu : (mStartMainMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.StartMainMenu")); }
-			ScriptFunction ToggleMutePlayer() { return mToggleMutePlayer ? mToggleMutePlayer : (mToggleMutePlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ToggleMutePlayer")); }
-			ScriptFunction StripTag() { return mStripTag ? mStripTag : (mStripTag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.StripTag")); }
-			ScriptFunction StartPeach() { return mStartPeach ? mStartPeach : (mStartPeach = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.StartPeach")); }
-			ScriptFunction StartLogin() { return mStartLogin ? mStartLogin : (mStartLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.StartLogin")); }
-			ScriptFunction ShowPeach() { return mShowPeach ? mShowPeach : (mShowPeach = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowPeach")); }
-			ScriptFunction ASC_ShowPeach() { return mASC_ShowPeach ? mASC_ShowPeach : (mASC_ShowPeach = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowPeach")); }
-			ScriptFunction EntryPlayerReady() { return mEntryPlayerReady ? mEntryPlayerReady : (mEntryPlayerReady = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.EntryPlayerReady")); }
-			ScriptFunction HaveEntry() { return mHaveEntry ? mHaveEntry : (mHaveEntry = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HaveEntry")); }
-			ScriptFunction SetPlayerMainMenu() { return mSetPlayerMainMenu ? mSetPlayerMainMenu : (mSetPlayerMainMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerMainMenu")); }
-			ScriptFunction ClosePopup() { return mClosePopup ? mClosePopup : (mClosePopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ClosePopup")); }
-			ScriptFunction SetPlayerInLogin() { return mSetPlayerInLogin ? mSetPlayerInLogin : (mSetPlayerInLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerInLogin")); }
-			ScriptFunction QueuePopup() { return mQueuePopup ? mQueuePopup : (mQueuePopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.QueuePopup")); }
-			ScriptFunction SetPlayerInLobby() { return mSetPlayerInLobby ? mSetPlayerInLobby : (mSetPlayerInLobby = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerInLobby")); }
-			ScriptFunction ASC_StopLoading() { return mASC_StopLoading ? mASC_StopLoading : (mASC_StopLoading = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_StopLoading")); }
-			ScriptFunction SetPlayerLoading() { return mSetPlayerLoading ? mSetPlayerLoading : (mSetPlayerLoading = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerLoading")); }
-			ScriptFunction ASC_GotoState() { return mASC_GotoState ? mASC_GotoState : (mASC_GotoState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_GotoState")); }
-			ScriptFunction SetPlayerInGame() { return mSetPlayerInGame ? mSetPlayerInGame : (mSetPlayerInGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerInGame")); }
-			ScriptFunction SetEndOfMatch() { return mSetEndOfMatch ? mSetEndOfMatch : (mSetEndOfMatch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetEndOfMatch")); }
-			ScriptFunction ShowSummary() { return mShowSummary ? mShowSummary : (mShowSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowSummary")); }
-			ScriptFunction Escape() { return mEscape ? mEscape : (mEscape = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.Escape")); }
-			ScriptFunction CloseClasses() { return mCloseClasses ? mCloseClasses : (mCloseClasses = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.CloseClasses")); }
-			ScriptFunction OpenMenu() { return mOpenMenu ? mOpenMenu : (mOpenMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.OpenMenu")); }
-			ScriptFunction OpenClasses() { return mOpenClasses ? mOpenClasses : (mOpenClasses = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.OpenClasses")); }
-			ScriptFunction OpenFriends() { return mOpenFriends ? mOpenFriends : (mOpenFriends = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.OpenFriends")); }
-			ScriptFunction OpenSettings() { return mOpenSettings ? mOpenSettings : (mOpenSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.OpenSettings")); }
-			ScriptFunction QuitGame() { return mQuitGame ? mQuitGame : (mQuitGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.QuitGame")); }
-			ScriptFunction LeaveMatch() { return mLeaveMatch ? mLeaveMatch : (mLeaveMatch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.LeaveMatch")); }
-			ScriptFunction QuitGamePopup() { return mQuitGamePopup ? mQuitGamePopup : (mQuitGamePopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.QuitGamePopup")); }
-			ScriptFunction LeaveMatchPopup() { return mLeaveMatchPopup ? mLeaveMatchPopup : (mLeaveMatchPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.LeaveMatchPopup")); }
-			ScriptFunction QuitGamePopupComplete() { return mQuitGamePopupComplete ? mQuitGamePopupComplete : (mQuitGamePopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.QuitGamePopupComplete")); }
-			ScriptFunction LeaveMatchPopupComplete() { return mLeaveMatchPopupComplete ? mLeaveMatchPopupComplete : (mLeaveMatchPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.LeaveMatchPopupComplete")); }
-			ScriptFunction Quit() { return mQuit ? mQuit : (mQuit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.Quit")); }
-			ScriptFunction SendPlayerLogin() { return mSendPlayerLogin ? mSendPlayerLogin : (mSendPlayerLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SendPlayerLogin")); }
-			ScriptFunction AlienMenu() { return mAlienMenu ? mAlienMenu : (mAlienMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.AlienMenu")); }
-			ScriptFunction OnProfileLoaded() { return mOnProfileLoaded ? mOnProfileLoaded : (mOnProfileLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.OnProfileLoaded")); }
-			ScriptFunction IsLoadComplete() { return mIsLoadComplete ? mIsLoadComplete : (mIsLoadComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.IsLoadComplete")); }
-			ScriptFunction SendBack() { return mSendBack ? mSendBack : (mSendBack = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SendBack")); }
-			ScriptFunction EquipmentLoaded() { return mEquipmentLoaded ? mEquipmentLoaded : (mEquipmentLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.EquipmentLoaded")); }
-			ScriptFunction EquipmentChanged() { return mEquipmentChanged ? mEquipmentChanged : (mEquipmentChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.EquipmentChanged")); }
-			ScriptFunction RefreshPage() { return mRefreshPage ? mRefreshPage : (mRefreshPage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RefreshPage")); }
-			ScriptFunction SwapModel() { return mSwapModel ? mSwapModel : (mSwapModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SwapModel")); }
-			ScriptFunction JoinFailed() { return mJoinFailed ? mJoinFailed : (mJoinFailed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.JoinFailed")); }
-			ScriptFunction DisplayJoinFailed() { return mDisplayJoinFailed ? mDisplayJoinFailed : (mDisplayJoinFailed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DisplayJoinFailed")); }
-			ScriptFunction JoinRequiresPassword() { return mJoinRequiresPassword ? mJoinRequiresPassword : (mJoinRequiresPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.JoinRequiresPassword")); }
-			ScriptFunction JoinRequiresPasswordComplete() { return mJoinRequiresPasswordComplete ? mJoinRequiresPasswordComplete : (mJoinRequiresPasswordComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.JoinRequiresPasswordComplete")); }
-			ScriptFunction CheckRibbons() { return mCheckRibbons ? mCheckRibbons : (mCheckRibbons = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.CheckRibbons")); }
-			ScriptFunction ProfileUpdated() { return mProfileUpdated ? mProfileUpdated : (mProfileUpdated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ProfileUpdated")); }
-			ScriptFunction ASC_ProfileUpdated() { return mASC_ProfileUpdated ? mASC_ProfileUpdated : (mASC_ProfileUpdated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_ProfileUpdated")); }
-			ScriptFunction ExitPopup() { return mExitPopup ? mExitPopup : (mExitPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ExitPopup")); }
-			ScriptFunction ASC_PopupError() { return mASC_PopupError ? mASC_PopupError : (mASC_PopupError = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_PopupError")); }
-			ScriptFunction DisplayEULA() { return mDisplayEULA ? mDisplayEULA : (mDisplayEULA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DisplayEULA")); }
-			ScriptFunction ASC_HideLogin() { return mASC_HideLogin ? mASC_HideLogin : (mASC_HideLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_HideLogin")); }
-			ScriptFunction ASC_FillEULAText() { return mASC_FillEULAText ? mASC_FillEULAText : (mASC_FillEULAText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_FillEULAText")); }
-			ScriptFunction CreateNewPlayer() { return mCreateNewPlayer ? mCreateNewPlayer : (mCreateNewPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.CreateNewPlayer")); }
-			ScriptFunction PlayerNameNotAllowed() { return mPlayerNameNotAllowed ? mPlayerNameNotAllowed : (mPlayerNameNotAllowed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PlayerNameNotAllowed")); }
-			ScriptFunction GetUserSelectedClass() { return mGetUserSelectedClass ? mGetUserSelectedClass : (mGetUserSelectedClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetUserSelectedClass")); }
-			ScriptFunction FillProfileData() { return mFillProfileData ? mFillProfileData : (mFillProfileData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.FillProfileData")); }
-			ScriptFunction SendProfileData() { return mSendProfileData ? mSendProfileData : (mSendProfileData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SendProfileData")); }
-			ScriptFunction ASC_FillProfile() { return mASC_FillProfile ? mASC_FillProfile : (mASC_FillProfile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_FillProfile")); }
-			ScriptFunction GetBoostLabel() { return mGetBoostLabel ? mGetBoostLabel : (mGetBoostLabel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetBoostLabel")); }
-			ScriptFunction GetRankFromXP() { return mGetRankFromXP ? mGetRankFromXP : (mGetRankFromXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetRankFromXP")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.WidgetInitialized")); }
-			ScriptFunction RestorePlayerHUD() { return mRestorePlayerHUD ? mRestorePlayerHUD : (mRestorePlayerHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RestorePlayerHUD")); }
-			ScriptFunction GetPlatform() { return mGetPlatform ? mGetPlatform : (mGetPlatform = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetPlatform")); }
-			ScriptFunction GetViewMode() { return mGetViewMode ? mGetViewMode : (mGetViewMode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetViewMode")); }
-			ScriptFunction ShowMovie() { return mShowMovie ? mShowMovie : (mShowMovie = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowMovie")); }
-			ScriptFunction HideMovie() { return mHideMovie ? mHideMovie : (mHideMovie = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HideMovie")); }
-			ScriptFunction ASC_HideMovie() { return mASC_HideMovie ? mASC_HideMovie : (mASC_HideMovie = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_HideMovie")); }
-			ScriptFunction ChatMessageReceived() { return mChatMessageReceived ? mChatMessageReceived : (mChatMessageReceived = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ChatMessageReceived")); }
-			ScriptFunction UpdateStatus() { return mUpdateStatus ? mUpdateStatus : (mUpdateStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UpdateStatus")); }
-			ScriptFunction SetCountdownTimer() { return mSetCountdownTimer ? mSetCountdownTimer : (mSetCountdownTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetCountdownTimer")); }
-			ScriptFunction LoadingTimer() { return mLoadingTimer ? mLoadingTimer : (mLoadingTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.LoadingTimer")); }
-			ScriptFunction RequestPaperDoll() { return mRequestPaperDoll ? mRequestPaperDoll : (mRequestPaperDoll = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RequestPaperDoll")); }
-			ScriptFunction KeyBindCaptured() { return mKeyBindCaptured ? mKeyBindCaptured : (mKeyBindCaptured = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.KeyBindCaptured")); }
-			ScriptFunction KeyPressCaptured() { return mKeyPressCaptured ? mKeyPressCaptured : (mKeyPressCaptured = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.KeyPressCaptured")); }
-			ScriptFunction TeamSelectActive() { return mTeamSelectActive ? mTeamSelectActive : (mTeamSelectActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.TeamSelectActive")); }
-			ScriptFunction TeamSelectOpen() { return mTeamSelectOpen ? mTeamSelectOpen : (mTeamSelectOpen = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.TeamSelectOpen")); }
-			ScriptFunction PlayerNeedsTeam() { return mPlayerNeedsTeam ? mPlayerNeedsTeam : (mPlayerNeedsTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PlayerNeedsTeam")); }
-			ScriptFunction PlayerNeedsClass() { return mPlayerNeedsClass ? mPlayerNeedsClass : (mPlayerNeedsClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PlayerNeedsClass")); }
-			ScriptFunction GetPlayerHUD() { return mGetPlayerHUD ? mGetPlayerHUD : (mGetPlayerHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GetPlayerHUD")); }
-			ScriptFunction StartHotkeyBlock() { return mStartHotkeyBlock ? mStartHotkeyBlock : (mStartHotkeyBlock = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.StartHotkeyBlock")); }
-			ScriptFunction EndHotkeyBlock() { return mEndHotkeyBlock ? mEndHotkeyBlock : (mEndHotkeyBlock = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.EndHotkeyBlock")); }
-			ScriptFunction UnlockedItem() { return mUnlockedItem ? mUnlockedItem : (mUnlockedItem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedItem")); }
-			ScriptFunction UnlockedGold() { return mUnlockedGold ? mUnlockedGold : (mUnlockedGold = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedGold")); }
-			ScriptFunction UnlockedXP() { return mUnlockedXP ? mUnlockedXP : (mUnlockedXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedXP")); }
-			ScriptFunction UnlockedBooster() { return mUnlockedBooster ? mUnlockedBooster : (mUnlockedBooster = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedBooster")); }
-			ScriptFunction UnlockedBadge() { return mUnlockedBadge ? mUnlockedBadge : (mUnlockedBadge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedBadge")); }
-			ScriptFunction UnlockedNameChange() { return mUnlockedNameChange ? mUnlockedNameChange : (mUnlockedNameChange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedNameChange")); }
-			ScriptFunction UnlockedVIP() { return mUnlockedVIP ? mUnlockedVIP : (mUnlockedVIP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedVIP")); }
-			ScriptFunction UnlockedServerTime() { return mUnlockedServerTime ? mUnlockedServerTime : (mUnlockedServerTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedServerTime")); }
-			ScriptFunction UnlockedClanTag() { return mUnlockedClanTag ? mUnlockedClanTag : (mUnlockedClanTag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedClanTag")); }
-			ScriptFunction UnlockedSkill() { return mUnlockedSkill ? mUnlockedSkill : (mUnlockedSkill = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedSkill")); }
-			ScriptFunction WinOfTheDay() { return mWinOfTheDay ? mWinOfTheDay : (mWinOfTheDay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.WinOfTheDay")); }
-			ScriptFunction ClaimedPromotion() { return mClaimedPromotion ? mClaimedPromotion : (mClaimedPromotion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ClaimedPromotion")); }
-			ScriptFunction CheckVIPForLogin() { return mCheckVIPForLogin ? mCheckVIPForLogin : (mCheckVIPForLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.CheckVIPForLogin")); }
-			ScriptFunction ReadyAcquisition() { return mReadyAcquisition ? mReadyAcquisition : (mReadyAcquisition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ReadyAcquisition")); }
-			ScriptFunction DisplayAcquisitions() { return mDisplayAcquisitions ? mDisplayAcquisitions : (mDisplayAcquisitions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DisplayAcquisitions")); }
-			ScriptFunction FireAcquisitions() { return mFireAcquisitions ? mFireAcquisitions : (mFireAcquisitions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.FireAcquisitions")); }
-			ScriptFunction ASC_UnlockedItem() { return mASC_UnlockedItem ? mASC_UnlockedItem : (mASC_UnlockedItem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_UnlockedItem")); }
-			ScriptFunction KickVoteFeedback() { return mKickVoteFeedback ? mKickVoteFeedback : (mKickVoteFeedback = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.KickVoteFeedback")); }
-			ScriptFunction PlayerInLoginQueue() { return mPlayerInLoginQueue ? mPlayerInLoginQueue : (mPlayerInLoginQueue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PlayerInLoginQueue")); }
-			ScriptFunction LoginQueuePopupData() { return mLoginQueuePopupData ? mLoginQueuePopupData : (mLoginQueuePopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.LoginQueuePopupData")); }
-			ScriptFunction LoginQueuePopupComplete() { return mLoginQueuePopupComplete ? mLoginQueuePopupComplete : (mLoginQueuePopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.LoginQueuePopupComplete")); }
-			ScriptFunction ServerDropPopupData() { return mServerDropPopupData ? mServerDropPopupData : (mServerDropPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ServerDropPopupData")); }
-			ScriptFunction AFKKickPopupData() { return mAFKKickPopupData ? mAFKKickPopupData : (mAFKKickPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.AFKKickPopupData")); }
-			ScriptFunction LoginFailedPopup() { return mLoginFailedPopup ? mLoginFailedPopup : (mLoginFailedPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.LoginFailedPopup")); }
-			ScriptFunction WaitingForPurchaseReturn() { return mWaitingForPurchaseReturn ? mWaitingForPurchaseReturn : (mWaitingForPurchaseReturn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.WaitingForPurchaseReturn")); }
-			ScriptFunction PasswordPopup() { return mPasswordPopup ? mPasswordPopup : (mPasswordPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PasswordPopup")); }
-			ScriptFunction AddFriendScoreboardPopup() { return mAddFriendScoreboardPopup ? mAddFriendScoreboardPopup : (mAddFriendScoreboardPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.AddFriendScoreboardPopup")); }
-			ScriptFunction PurchaseFailed() { return mPurchaseFailed ? mPurchaseFailed : (mPurchaseFailed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PurchaseFailed")); }
-			ScriptFunction PurchaseFailedPopup() { return mPurchaseFailedPopup ? mPurchaseFailedPopup : (mPurchaseFailedPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PurchaseFailedPopup")); }
-			ScriptFunction PromoCodeFailed() { return mPromoCodeFailed ? mPromoCodeFailed : (mPromoCodeFailed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PromoCodeFailed")); }
-			ScriptFunction PromoCodeFailedPopup() { return mPromoCodeFailedPopup ? mPromoCodeFailedPopup : (mPromoCodeFailedPopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PromoCodeFailedPopup")); }
-			ScriptFunction GenericFailure() { return mGenericFailure ? mGenericFailure : (mGenericFailure = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GenericFailure")); }
-			ScriptFunction GenericFailurePopup() { return mGenericFailurePopup ? mGenericFailurePopup : (mGenericFailurePopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.GenericFailurePopup")); }
-			ScriptFunction NewPlayerNamePopup() { return mNewPlayerNamePopup ? mNewPlayerNamePopup : (mNewPlayerNamePopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.NewPlayerNamePopup")); }
-			ScriptFunction RevertSetting() { return mRevertSetting ? mRevertSetting : (mRevertSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RevertSetting")); }
-			ScriptFunction DealTimer() { return mDealTimer ? mDealTimer : (mDealTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.DealTimer")); }
-			ScriptFunction RequestNews() { return mRequestNews ? mRequestNews : (mRequestNews = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.RequestNews")); }
-			ScriptFunction ASC_ShowNews() { return mASC_ShowNews ? mASC_ShowNews : (mASC_ShowNews = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowNews")); }
-			ScriptFunction QueueTimer() { return mQueueTimer ? mQueueTimer : (mQueueTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.QueueTimer")); }
-			ScriptFunction BeginExperienceTweens() { return mBeginExperienceTweens ? mBeginExperienceTweens : (mBeginExperienceTweens = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.BeginExperienceTweens")); }
-			ScriptFunction TweenExperienceSummary() { return mTweenExperienceSummary ? mTweenExperienceSummary : (mTweenExperienceSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.TweenExperienceSummary")); }
-			ScriptFunction TweenPlayerSummary() { return mTweenPlayerSummary ? mTweenPlayerSummary : (mTweenPlayerSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.TweenPlayerSummary")); }
-			ScriptFunction ToggleWorkingGraphic() { return mToggleWorkingGraphic ? mToggleWorkingGraphic : (mToggleWorkingGraphic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ToggleWorkingGraphic")); }
-			ScriptFunction ShowWorkingGraphic() { return mShowWorkingGraphic ? mShowWorkingGraphic : (mShowWorkingGraphic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowWorkingGraphic")); }
-			ScriptFunction HideWorkingGraphic() { return mHideWorkingGraphic ? mHideWorkingGraphic : (mHideWorkingGraphic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HideWorkingGraphic")); }
-			ScriptFunction UnlockedUnknown() { return mUnlockedUnknown ? mUnlockedUnknown : (mUnlockedUnknown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UnlockedUnknown")); }
-			ScriptFunction SeedAccolades() { return mSeedAccolades ? mSeedAccolades : (mSeedAccolades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SeedAccolades")); }
-			ScriptFunction UILoadSummary() { return mUILoadSummary ? mUILoadSummary : (mUILoadSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UILoadSummary")); }
-			ScriptFunction ASC_LoadPlayerSummary() { return mASC_LoadPlayerSummary ? mASC_LoadPlayerSummary : (mASC_LoadPlayerSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_LoadPlayerSummary")); }
-			ScriptFunction ClearVehicleMenu() { return mClearVehicleMenu ? mClearVehicleMenu : (mClearVehicleMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ClearVehicleMenu")); }
-			ScriptFunction ShowVehicleMenu() { return mShowVehicleMenu ? mShowVehicleMenu : (mShowVehicleMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowVehicleMenu")); }
-			ScriptFunction PullOpenMenu() { return mPullOpenMenu ? mPullOpenMenu : (mPullOpenMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PullOpenMenu")); }
-			ScriptFunction ASC_OpeningMenu() { return mASC_OpeningMenu ? mASC_OpeningMenu : (mASC_OpeningMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_OpeningMenu")); }
-			ScriptFunction ASC_ForceFocus() { return mASC_ForceFocus ? mASC_ForceFocus : (mASC_ForceFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_ForceFocus")); }
-			ScriptFunction AddVehicleMenuOption() { return mAddVehicleMenuOption ? mAddVehicleMenuOption : (mAddVehicleMenuOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.AddVehicleMenuOption")); }
-			ScriptFunction ShowChat() { return mShowChat ? mShowChat : (mShowChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowChat")); }
-			ScriptFunction HideChat() { return mHideChat ? mHideChat : (mHideChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HideChat")); }
-			ScriptFunction PushChat() { return mPushChat ? mPushChat : (mPushChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.PushChat")); }
-			ScriptFunction ToggleChat() { return mToggleChat ? mToggleChat : (mToggleChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ToggleChat")); }
-			ScriptFunction StartSteamTransaction() { return mStartSteamTransaction ? mStartSteamTransaction : (mStartSteamTransaction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.StartSteamTransaction")); }
-			ScriptFunction ShowSteamResponse() { return mShowSteamResponse ? mShowSteamResponse : (mShowSteamResponse = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowSteamResponse")); }
-			ScriptFunction HandlePopup() { return mHandlePopup ? mHandlePopup : (mHandlePopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HandlePopup")); }
-			ScriptFunction HandlePopupComplete() { return mHandlePopupComplete ? mHandlePopupComplete : (mHandlePopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HandlePopupComplete")); }
-			ScriptFunction NavigateSteamGold() { return mNavigateSteamGold ? mNavigateSteamGold : (mNavigateSteamGold = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.NavigateSteamGold")); }
-			ScriptFunction CreateAccount() { return mCreateAccount ? mCreateAccount : (mCreateAccount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.CreateAccount")); }
-			ScriptFunction ShowNotification() { return mShowNotification ? mShowNotification : (mShowNotification = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ShowNotification")); }
-			ScriptFunction HideNotification() { return mHideNotification ? mHideNotification : (mHideNotification = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HideNotification")); }
-			ScriptFunction UpdateButton() { return mUpdateButton ? mUpdateButton : (mUpdateButton = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.UpdateButton")); }
-			ScriptFunction HidePopup() { return mHidePopup ? mHidePopup : (mHidePopup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.HidePopup")); }
-			ScriptFunction ASC_ShowQueue() { return mASC_ShowQueue ? mASC_ShowQueue : (mASC_ShowQueue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowQueue")); }
-			ScriptFunction ASC_LeftGame() { return mASC_LeftGame ? mASC_LeftGame : (mASC_LeftGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_LeftGame")); }
-			ScriptFunction ASC_JoinGame() { return mASC_JoinGame ? mASC_JoinGame : (mASC_JoinGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_JoinGame")); }
-			ScriptFunction ASC_FocusLogin() { return mASC_FocusLogin ? mASC_FocusLogin : (mASC_FocusLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_FocusLogin")); }
-			ScriptFunction ASC_LoadMatchSummary() { return mASC_LoadMatchSummary ? mASC_LoadMatchSummary : (mASC_LoadMatchSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_LoadMatchSummary")); }
-			ScriptFunction ASC_GlobalAlert() { return mASC_GlobalAlert ? mASC_GlobalAlert : (mASC_GlobalAlert = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_GlobalAlert")); }
-			ScriptFunction ASC_KeyPressCaptured() { return mASC_KeyPressCaptured ? mASC_KeyPressCaptured : (mASC_KeyPressCaptured = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_KeyPressCaptured")); }
-			ScriptFunction ASC_PromptNewPlayerName() { return mASC_PromptNewPlayerName ? mASC_PromptNewPlayerName : (mASC_PromptNewPlayerName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_PromptNewPlayerName")); }
-			ScriptFunction ASC_PurchaseComplete() { return mASC_PurchaseComplete ? mASC_PurchaseComplete : (mASC_PurchaseComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_PurchaseComplete")); }
-			ScriptFunction ASC_ShowReticuleBuilder() { return mASC_ShowReticuleBuilder ? mASC_ShowReticuleBuilder : (mASC_ShowReticuleBuilder = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowReticuleBuilder")); }
-			ScriptFunction ASC_HideReticuleBuilder() { return mASC_HideReticuleBuilder ? mASC_HideReticuleBuilder : (mASC_HideReticuleBuilder = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_HideReticuleBuilder")); }
-			ScriptFunction ASC_SetMapLoadText() { return mASC_SetMapLoadText ? mASC_SetMapLoadText : (mASC_SetMapLoadText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.ASC_SetMapLoadText")); }
-			ScriptFunction SetSoundSkillBar() { return mSetSoundSkillBar ? mSetSoundSkillBar : (mSetSoundSkillBar = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSoundSkillBar")); }
-			ScriptFunction SetSoundPerkType() { return mSetSoundPerkType ? mSetSoundPerkType : (mSetSoundPerkType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetSoundPerkType")); }
-			ScriptFunction SetShowingPopupDelegate() { return mSetShowingPopupDelegate ? mSetShowingPopupDelegate : (mSetShowingPopupDelegate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrMenuMoviePlayer.SetShowingPopupDelegate")); }
+			ScriptFunction DelegateNoParam() { mixin(MGF!("mDelegateNoParam", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateNoParam")()); }
+			ScriptFunction DelegateInt() { mixin(MGF!("mDelegateInt", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateInt")()); }
+			ScriptFunction DelegateBool() { mixin(MGF!("mDelegateBool", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateBool")()); }
+			ScriptFunction DelegateString() { mixin(MGF!("mDelegateString", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateString")()); }
+			ScriptFunction DelegateGFxList() { mixin(MGF!("mDelegateGFxList", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateGFxList")()); }
+			ScriptFunction DelegateIntInt() { mixin(MGF!("mDelegateIntInt", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntInt")()); }
+			ScriptFunction DelegateIntString() { mixin(MGF!("mDelegateIntString", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntString")()); }
+			ScriptFunction DelegateStringInt() { mixin(MGF!("mDelegateStringInt", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateStringInt")()); }
+			ScriptFunction DelegateStringBool() { mixin(MGF!("mDelegateStringBool", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateStringBool")()); }
+			ScriptFunction DelegateIntGFxList() { mixin(MGF!("mDelegateIntGFxList", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntGFxList")()); }
+			ScriptFunction DelegateOnMarshalEvent() { mixin(MGF!("mDelegateOnMarshalEvent", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateOnMarshalEvent")()); }
+			ScriptFunction DelegateGetInt() { mixin(MGF!("mDelegateGetInt", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetInt")()); }
+			ScriptFunction DelegateGetPrice() { mixin(MGF!("mDelegateGetPrice", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetPrice")()); }
+			ScriptFunction DelegateIntIntInt() { mixin(MGF!("mDelegateIntIntInt", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateIntIntInt")()); }
+			ScriptFunction DelegateGetBoolIntInt() { mixin(MGF!("mDelegateGetBoolIntInt", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetBoolIntInt")()); }
+			ScriptFunction DelegateLogin() { mixin(MGF!("mDelegateLogin", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateLogin")()); }
+			ScriptFunction DelegateBoolGetBool() { mixin(MGF!("mDelegateBoolGetBool", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateBoolGetBool")()); }
+			ScriptFunction DelegateGetString() { mixin(MGF!("mDelegateGetString", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateGetString")()); }
+			ScriptFunction DelegateOptions() { mixin(MGF!("mDelegateOptions", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateOptions")()); }
+			ScriptFunction DelegateAction() { mixin(MGF!("mDelegateAction", "Function TribesGame.GFxTrMenuMoviePlayer.DelegateAction")()); }
+			ScriptFunction UseSteam() { mixin(MGF!("mUseSteam", "Function TribesGame.GFxTrMenuMoviePlayer.UseSteam")()); }
+			ScriptFunction RequestPurchaseSteamItem() { mixin(MGF!("mRequestPurchaseSteamItem", "Function TribesGame.GFxTrMenuMoviePlayer.RequestPurchaseSteamItem")()); }
+			ScriptFunction RequestSteamUserData() { mixin(MGF!("mRequestSteamUserData", "Function TribesGame.GFxTrMenuMoviePlayer.RequestSteamUserData")()); }
+			ScriptFunction GetGoldItemInfo() { mixin(MGF!("mGetGoldItemInfo", "Function TribesGame.GFxTrMenuMoviePlayer.GetGoldItemInfo")()); }
+			ScriptFunction UsePortal() { mixin(MGF!("mUsePortal", "Function TribesGame.GFxTrMenuMoviePlayer.UsePortal")()); }
+			ScriptFunction GetPortalBalance() { mixin(MGF!("mGetPortalBalance", "Function TribesGame.GFxTrMenuMoviePlayer.GetPortalBalance")()); }
+			ScriptFunction GetPortalCurrencyName() { mixin(MGF!("mGetPortalCurrencyName", "Function TribesGame.GFxTrMenuMoviePlayer.GetPortalCurrencyName")()); }
+			ScriptFunction RequestPurchasePortalItem() { mixin(MGF!("mRequestPurchasePortalItem", "Function TribesGame.GFxTrMenuMoviePlayer.RequestPurchasePortalItem")()); }
+			ScriptFunction CheckAutoLoginStatus() { mixin(MGF!("mCheckAutoLoginStatus", "Function TribesGame.GFxTrMenuMoviePlayer.CheckAutoLoginStatus")()); }
+			ScriptFunction PurchasedItem() { mixin(MGF!("mPurchasedItem", "Function TribesGame.GFxTrMenuMoviePlayer.PurchasedItem")()); }
+			ScriptFunction OnMarshalEvent() { mixin(MGF!("mOnMarshalEvent", "Function TribesGame.GFxTrMenuMoviePlayer.OnMarshalEvent")()); }
+			ScriptFunction ReadPlayerProfileData() { mixin(MGF!("mReadPlayerProfileData", "Function TribesGame.GFxTrMenuMoviePlayer.ReadPlayerProfileData")()); }
+			ScriptFunction UserLoginChanged() { mixin(MGF!("mUserLoginChanged", "Function TribesGame.GFxTrMenuMoviePlayer.UserLoginChanged")()); }
+			ScriptFunction RegisterMarshalCallback() { mixin(MGF!("mRegisterMarshalCallback", "Function TribesGame.GFxTrMenuMoviePlayer.RegisterMarshalCallback")()); }
+			ScriptFunction GetVersionString() { mixin(MGF!("mGetVersionString", "Function TribesGame.GFxTrMenuMoviePlayer.GetVersionString")()); }
+			ScriptFunction ForceFocus() { mixin(MGF!("mForceFocus", "Function TribesGame.GFxTrMenuMoviePlayer.ForceFocus")()); }
+			ScriptFunction AddAcquisition() { mixin(MGF!("mAddAcquisition", "Function TribesGame.GFxTrMenuMoviePlayer.AddAcquisition")()); }
+			ScriptFunction GetQueueUIInfo() { mixin(MGF!("mGetQueueUIInfo", "Function TribesGame.GFxTrMenuMoviePlayer.GetQueueUIInfo")()); }
+			ScriptFunction GetLanguageFontIndex() { mixin(MGF!("mGetLanguageFontIndex", "Function TribesGame.GFxTrMenuMoviePlayer.GetLanguageFontIndex")()); }
+			ScriptFunction RequestStreams() { mixin(MGF!("mRequestStreams", "Function TribesGame.GFxTrMenuMoviePlayer.RequestStreams")()); }
+			ScriptFunction GetEquipmentXP() { mixin(MGF!("mGetEquipmentXP", "Function TribesGame.GFxTrMenuMoviePlayer.GetEquipmentXP")()); }
+			ScriptFunction GetEquipmentTierXP() { mixin(MGF!("mGetEquipmentTierXP", "Function TribesGame.GFxTrMenuMoviePlayer.GetEquipmentTierXP")()); }
+			ScriptFunction HaveClanTag() { mixin(MGF!("mHaveClanTag", "Function TribesGame.GFxTrMenuMoviePlayer.HaveClanTag")()); }
+			ScriptFunction Start() { mixin(MGF!("mStart", "Function TribesGame.GFxTrMenuMoviePlayer.Start")()); }
+			ScriptFunction SetLoginDelegate() { mixin(MGF!("mSetLoginDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoginDelegate")()); }
+			ScriptFunction SetSubmitPlayerNameDelegate() { mixin(MGF!("mSetSubmitPlayerNameDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetSubmitPlayerNameDelegate")()); }
+			ScriptFunction SetLoadTeamMiscDataDelegate() { mixin(MGF!("mSetLoadTeamMiscDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamMiscDataDelegate")()); }
+			ScriptFunction SetLoadTeamScoreboardDataDelegate() { mixin(MGF!("mSetLoadTeamScoreboardDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamScoreboardDataDelegate")()); }
+			ScriptFunction SetLoadTeamStatsDataDelegate() { mixin(MGF!("mSetLoadTeamStatsDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamStatsDataDelegate")()); }
+			ScriptFunction SetLoadTeamAccoladeDataDelegate() { mixin(MGF!("mSetLoadTeamAccoladeDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadTeamAccoladeDataDelegate")()); }
+			ScriptFunction SetLoadPlayerMiscDataDelegate() { mixin(MGF!("mSetLoadPlayerMiscDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadPlayerMiscDataDelegate")()); }
+			ScriptFunction SetLoadPlayerStatsDataDelegate() { mixin(MGF!("mSetLoadPlayerStatsDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadPlayerStatsDataDelegate")()); }
+			ScriptFunction SetLoadPlayerAccoladeDataDelegate() { mixin(MGF!("mSetLoadPlayerAccoladeDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadPlayerAccoladeDataDelegate")()); }
+			ScriptFunction SetAcceptEULADelegate() { mixin(MGF!("mSetAcceptEULADelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetAcceptEULADelegate")()); }
+			ScriptFunction SetSoundXPGain() { mixin(MGF!("mSetSoundXPGain", "Function TribesGame.GFxTrMenuMoviePlayer.SetSoundXPGain")()); }
+			ScriptFunction SetSoundClassType() { mixin(MGF!("mSetSoundClassType", "Function TribesGame.GFxTrMenuMoviePlayer.SetSoundClassType")()); }
+			ScriptFunction SetSoundSkillType() { mixin(MGF!("mSetSoundSkillType", "Function TribesGame.GFxTrMenuMoviePlayer.SetSoundSkillType")()); }
+			ScriptFunction SetEscapeClass() { mixin(MGF!("mSetEscapeClass", "Function TribesGame.GFxTrMenuMoviePlayer.SetEscapeClass")()); }
+			ScriptFunction SetExitGameDelegate() { mixin(MGF!("mSetExitGameDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetExitGameDelegate")()); }
+			ScriptFunction SetGetPlatformDelegate() { mixin(MGF!("mSetGetPlatformDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetGetPlatformDelegate")()); }
+			ScriptFunction SetGetViewModeDelegate() { mixin(MGF!("mSetGetViewModeDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetGetViewModeDelegate")()); }
+			ScriptFunction SetShowSummaryDelegate() { mixin(MGF!("mSetShowSummaryDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetShowSummaryDelegate")()); }
+			ScriptFunction SetAlertDelegate() { mixin(MGF!("mSetAlertDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetAlertDelegate")()); }
+			ScriptFunction SetBrowserGoldDelegate() { mixin(MGF!("mSetBrowserGoldDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserGoldDelegate")()); }
+			ScriptFunction SetBrowserStoreDelegate() { mixin(MGF!("mSetBrowserStoreDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserStoreDelegate")()); }
+			ScriptFunction SetBrowserSupportDelegate() { mixin(MGF!("mSetBrowserSupportDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserSupportDelegate")()); }
+			ScriptFunction SetBrowserProfileDelegate() { mixin(MGF!("mSetBrowserProfileDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserProfileDelegate")()); }
+			ScriptFunction SetBrowserBoosterDelegate() { mixin(MGF!("mSetBrowserBoosterDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserBoosterDelegate")()); }
+			ScriptFunction SetBrowserClassVideoDelegate() { mixin(MGF!("mSetBrowserClassVideoDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserClassVideoDelegate")()); }
+			ScriptFunction SetBrowserActivateKeyDelegate() { mixin(MGF!("mSetBrowserActivateKeyDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserActivateKeyDelegate")()); }
+			ScriptFunction SetBrowserCreateAccountDelegate() { mixin(MGF!("mSetBrowserCreateAccountDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserCreateAccountDelegate")()); }
+			ScriptFunction SetBrowserRecoverPasswordDelegate() { mixin(MGF!("mSetBrowserRecoverPasswordDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserRecoverPasswordDelegate")()); }
+			ScriptFunction SetBrowserRecoverUsernameDelegate() { mixin(MGF!("mSetBrowserRecoverUsernameDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetBrowserRecoverUsernameDelegate")()); }
+			ScriptFunction SetExitQueueDelegate() { mixin(MGF!("mSetExitQueueDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetExitQueueDelegate")()); }
+			ScriptFunction SetJoinCustomServerDelegate() { mixin(MGF!("mSetJoinCustomServerDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetJoinCustomServerDelegate")()); }
+			ScriptFunction SetFavoriteServerDelegate() { mixin(MGF!("mSetFavoriteServerDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetFavoriteServerDelegate")()); }
+			ScriptFunction SetPasswordServerDelegate() { mixin(MGF!("mSetPasswordServerDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetPasswordServerDelegate")()); }
+			ScriptFunction SetServerPageDelegate() { mixin(MGF!("mSetServerPageDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetServerPageDelegate")()); }
+			ScriptFunction SetServerSortDelegate() { mixin(MGF!("mSetServerSortDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetServerSortDelegate")()); }
+			ScriptFunction SetReticuleActionDelegate() { mixin(MGF!("mSetReticuleActionDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetReticuleActionDelegate")()); }
+			ScriptFunction SetSaveReticuleDelegate() { mixin(MGF!("mSetSaveReticuleDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetSaveReticuleDelegate")()); }
+			ScriptFunction SetRequestNewsDelegate() { mixin(MGF!("mSetRequestNewsDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetRequestNewsDelegate")()); }
+			ScriptFunction SetStartLoginDelegate() { mixin(MGF!("mSetStartLoginDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetStartLoginDelegate")()); }
+			ScriptFunction SetSmoothAnimDelegate() { mixin(MGF!("mSetSmoothAnimDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetSmoothAnimDelegate")()); }
+			ScriptFunction ASC_SetFontIndex() { mixin(MGF!("mASC_SetFontIndex", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_SetFontIndex")()); }
+			ScriptFunction ASC_Resize() { mixin(MGF!("mASC_Resize", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_Resize")()); }
+			ScriptFunction SetPopupDataDelegate() { mixin(MGF!("mSetPopupDataDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetPopupDataDelegate")()); }
+			ScriptFunction SetPopupCompleteDelegate() { mixin(MGF!("mSetPopupCompleteDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetPopupCompleteDelegate")()); }
+			ScriptFunction SetFocusedActionDelegate() { mixin(MGF!("mSetFocusedActionDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetFocusedActionDelegate")()); }
+			ScriptFunction SetSelectedActionDelegate() { mixin(MGF!("mSetSelectedActionDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetSelectedActionDelegate")()); }
+			ScriptFunction SetModifiedActionDelegate() { mixin(MGF!("mSetModifiedActionDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetModifiedActionDelegate")()); }
+			ScriptFunction SetModifyFocusDelegate() { mixin(MGF!("mSetModifyFocusDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetModifyFocusDelegate")()); }
+			ScriptFunction SetActionUpDelegate() { mixin(MGF!("mSetActionUpDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetActionUpDelegate")()); }
+			ScriptFunction SetActionDownDelegate() { mixin(MGF!("mSetActionDownDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetActionDownDelegate")()); }
+			ScriptFunction SetHelpButtonDelegate() { mixin(MGF!("mSetHelpButtonDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetHelpButtonDelegate")()); }
+			ScriptFunction SetProfilePageUpDelegate() { mixin(MGF!("mSetProfilePageUpDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetProfilePageUpDelegate")()); }
+			ScriptFunction SetProfilePageDownDelegate() { mixin(MGF!("mSetProfilePageDownDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetProfilePageDownDelegate")()); }
+			ScriptFunction SetMutePlayerDelegate() { mixin(MGF!("mSetMutePlayerDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetMutePlayerDelegate")()); }
+			ScriptFunction SetSummaryActionDelegate() { mixin(MGF!("mSetSummaryActionDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetSummaryActionDelegate")()); }
+			ScriptFunction SetFriendPlayerDelegate() { mixin(MGF!("mSetFriendPlayerDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetFriendPlayerDelegate")()); }
+			ScriptFunction SetLoadXPSummaryDelegate() { mixin(MGF!("mSetLoadXPSummaryDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetLoadXPSummaryDelegate")()); }
+			ScriptFunction SetPromoActionDelegate() { mixin(MGF!("mSetPromoActionDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetPromoActionDelegate")()); }
+			ScriptFunction SetSelectedFeatureDelegate() { mixin(MGF!("mSetSelectedFeatureDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetSelectedFeatureDelegate")()); }
+			ScriptFunction CompleteStartup() { mixin(MGF!("mCompleteStartup", "Function TribesGame.GFxTrMenuMoviePlayer.CompleteStartup")()); }
+			ScriptFunction SummaryAction() { mixin(MGF!("mSummaryAction", "Function TribesGame.GFxTrMenuMoviePlayer.SummaryAction")()); }
+			ScriptFunction StartMainMenu() { mixin(MGF!("mStartMainMenu", "Function TribesGame.GFxTrMenuMoviePlayer.StartMainMenu")()); }
+			ScriptFunction ToggleMutePlayer() { mixin(MGF!("mToggleMutePlayer", "Function TribesGame.GFxTrMenuMoviePlayer.ToggleMutePlayer")()); }
+			ScriptFunction StripTag() { mixin(MGF!("mStripTag", "Function TribesGame.GFxTrMenuMoviePlayer.StripTag")()); }
+			ScriptFunction StartPeach() { mixin(MGF!("mStartPeach", "Function TribesGame.GFxTrMenuMoviePlayer.StartPeach")()); }
+			ScriptFunction StartLogin() { mixin(MGF!("mStartLogin", "Function TribesGame.GFxTrMenuMoviePlayer.StartLogin")()); }
+			ScriptFunction ShowPeach() { mixin(MGF!("mShowPeach", "Function TribesGame.GFxTrMenuMoviePlayer.ShowPeach")()); }
+			ScriptFunction ASC_ShowPeach() { mixin(MGF!("mASC_ShowPeach", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowPeach")()); }
+			ScriptFunction EntryPlayerReady() { mixin(MGF!("mEntryPlayerReady", "Function TribesGame.GFxTrMenuMoviePlayer.EntryPlayerReady")()); }
+			ScriptFunction HaveEntry() { mixin(MGF!("mHaveEntry", "Function TribesGame.GFxTrMenuMoviePlayer.HaveEntry")()); }
+			ScriptFunction SetPlayerMainMenu() { mixin(MGF!("mSetPlayerMainMenu", "Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerMainMenu")()); }
+			ScriptFunction ClosePopup() { mixin(MGF!("mClosePopup", "Function TribesGame.GFxTrMenuMoviePlayer.ClosePopup")()); }
+			ScriptFunction SetPlayerInLogin() { mixin(MGF!("mSetPlayerInLogin", "Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerInLogin")()); }
+			ScriptFunction QueuePopup() { mixin(MGF!("mQueuePopup", "Function TribesGame.GFxTrMenuMoviePlayer.QueuePopup")()); }
+			ScriptFunction SetPlayerInLobby() { mixin(MGF!("mSetPlayerInLobby", "Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerInLobby")()); }
+			ScriptFunction ASC_StopLoading() { mixin(MGF!("mASC_StopLoading", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_StopLoading")()); }
+			ScriptFunction SetPlayerLoading() { mixin(MGF!("mSetPlayerLoading", "Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerLoading")()); }
+			ScriptFunction ASC_GotoState() { mixin(MGF!("mASC_GotoState", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_GotoState")()); }
+			ScriptFunction SetPlayerInGame() { mixin(MGF!("mSetPlayerInGame", "Function TribesGame.GFxTrMenuMoviePlayer.SetPlayerInGame")()); }
+			ScriptFunction SetEndOfMatch() { mixin(MGF!("mSetEndOfMatch", "Function TribesGame.GFxTrMenuMoviePlayer.SetEndOfMatch")()); }
+			ScriptFunction ShowSummary() { mixin(MGF!("mShowSummary", "Function TribesGame.GFxTrMenuMoviePlayer.ShowSummary")()); }
+			ScriptFunction Escape() { mixin(MGF!("mEscape", "Function TribesGame.GFxTrMenuMoviePlayer.Escape")()); }
+			ScriptFunction CloseClasses() { mixin(MGF!("mCloseClasses", "Function TribesGame.GFxTrMenuMoviePlayer.CloseClasses")()); }
+			ScriptFunction OpenMenu() { mixin(MGF!("mOpenMenu", "Function TribesGame.GFxTrMenuMoviePlayer.OpenMenu")()); }
+			ScriptFunction OpenClasses() { mixin(MGF!("mOpenClasses", "Function TribesGame.GFxTrMenuMoviePlayer.OpenClasses")()); }
+			ScriptFunction OpenFriends() { mixin(MGF!("mOpenFriends", "Function TribesGame.GFxTrMenuMoviePlayer.OpenFriends")()); }
+			ScriptFunction OpenSettings() { mixin(MGF!("mOpenSettings", "Function TribesGame.GFxTrMenuMoviePlayer.OpenSettings")()); }
+			ScriptFunction QuitGame() { mixin(MGF!("mQuitGame", "Function TribesGame.GFxTrMenuMoviePlayer.QuitGame")()); }
+			ScriptFunction LeaveMatch() { mixin(MGF!("mLeaveMatch", "Function TribesGame.GFxTrMenuMoviePlayer.LeaveMatch")()); }
+			ScriptFunction QuitGamePopup() { mixin(MGF!("mQuitGamePopup", "Function TribesGame.GFxTrMenuMoviePlayer.QuitGamePopup")()); }
+			ScriptFunction LeaveMatchPopup() { mixin(MGF!("mLeaveMatchPopup", "Function TribesGame.GFxTrMenuMoviePlayer.LeaveMatchPopup")()); }
+			ScriptFunction QuitGamePopupComplete() { mixin(MGF!("mQuitGamePopupComplete", "Function TribesGame.GFxTrMenuMoviePlayer.QuitGamePopupComplete")()); }
+			ScriptFunction LeaveMatchPopupComplete() { mixin(MGF!("mLeaveMatchPopupComplete", "Function TribesGame.GFxTrMenuMoviePlayer.LeaveMatchPopupComplete")()); }
+			ScriptFunction Quit() { mixin(MGF!("mQuit", "Function TribesGame.GFxTrMenuMoviePlayer.Quit")()); }
+			ScriptFunction SendPlayerLogin() { mixin(MGF!("mSendPlayerLogin", "Function TribesGame.GFxTrMenuMoviePlayer.SendPlayerLogin")()); }
+			ScriptFunction AlienMenu() { mixin(MGF!("mAlienMenu", "Function TribesGame.GFxTrMenuMoviePlayer.AlienMenu")()); }
+			ScriptFunction OnProfileLoaded() { mixin(MGF!("mOnProfileLoaded", "Function TribesGame.GFxTrMenuMoviePlayer.OnProfileLoaded")()); }
+			ScriptFunction IsLoadComplete() { mixin(MGF!("mIsLoadComplete", "Function TribesGame.GFxTrMenuMoviePlayer.IsLoadComplete")()); }
+			ScriptFunction SendBack() { mixin(MGF!("mSendBack", "Function TribesGame.GFxTrMenuMoviePlayer.SendBack")()); }
+			ScriptFunction EquipmentLoaded() { mixin(MGF!("mEquipmentLoaded", "Function TribesGame.GFxTrMenuMoviePlayer.EquipmentLoaded")()); }
+			ScriptFunction EquipmentChanged() { mixin(MGF!("mEquipmentChanged", "Function TribesGame.GFxTrMenuMoviePlayer.EquipmentChanged")()); }
+			ScriptFunction RefreshPage() { mixin(MGF!("mRefreshPage", "Function TribesGame.GFxTrMenuMoviePlayer.RefreshPage")()); }
+			ScriptFunction SwapModel() { mixin(MGF!("mSwapModel", "Function TribesGame.GFxTrMenuMoviePlayer.SwapModel")()); }
+			ScriptFunction JoinFailed() { mixin(MGF!("mJoinFailed", "Function TribesGame.GFxTrMenuMoviePlayer.JoinFailed")()); }
+			ScriptFunction DisplayJoinFailed() { mixin(MGF!("mDisplayJoinFailed", "Function TribesGame.GFxTrMenuMoviePlayer.DisplayJoinFailed")()); }
+			ScriptFunction JoinRequiresPassword() { mixin(MGF!("mJoinRequiresPassword", "Function TribesGame.GFxTrMenuMoviePlayer.JoinRequiresPassword")()); }
+			ScriptFunction JoinRequiresPasswordComplete() { mixin(MGF!("mJoinRequiresPasswordComplete", "Function TribesGame.GFxTrMenuMoviePlayer.JoinRequiresPasswordComplete")()); }
+			ScriptFunction CheckRibbons() { mixin(MGF!("mCheckRibbons", "Function TribesGame.GFxTrMenuMoviePlayer.CheckRibbons")()); }
+			ScriptFunction ProfileUpdated() { mixin(MGF!("mProfileUpdated", "Function TribesGame.GFxTrMenuMoviePlayer.ProfileUpdated")()); }
+			ScriptFunction ASC_ProfileUpdated() { mixin(MGF!("mASC_ProfileUpdated", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_ProfileUpdated")()); }
+			ScriptFunction ExitPopup() { mixin(MGF!("mExitPopup", "Function TribesGame.GFxTrMenuMoviePlayer.ExitPopup")()); }
+			ScriptFunction ASC_PopupError() { mixin(MGF!("mASC_PopupError", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_PopupError")()); }
+			ScriptFunction DisplayEULA() { mixin(MGF!("mDisplayEULA", "Function TribesGame.GFxTrMenuMoviePlayer.DisplayEULA")()); }
+			ScriptFunction ASC_HideLogin() { mixin(MGF!("mASC_HideLogin", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_HideLogin")()); }
+			ScriptFunction ASC_FillEULAText() { mixin(MGF!("mASC_FillEULAText", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_FillEULAText")()); }
+			ScriptFunction CreateNewPlayer() { mixin(MGF!("mCreateNewPlayer", "Function TribesGame.GFxTrMenuMoviePlayer.CreateNewPlayer")()); }
+			ScriptFunction PlayerNameNotAllowed() { mixin(MGF!("mPlayerNameNotAllowed", "Function TribesGame.GFxTrMenuMoviePlayer.PlayerNameNotAllowed")()); }
+			ScriptFunction GetUserSelectedClass() { mixin(MGF!("mGetUserSelectedClass", "Function TribesGame.GFxTrMenuMoviePlayer.GetUserSelectedClass")()); }
+			ScriptFunction FillProfileData() { mixin(MGF!("mFillProfileData", "Function TribesGame.GFxTrMenuMoviePlayer.FillProfileData")()); }
+			ScriptFunction SendProfileData() { mixin(MGF!("mSendProfileData", "Function TribesGame.GFxTrMenuMoviePlayer.SendProfileData")()); }
+			ScriptFunction ASC_FillProfile() { mixin(MGF!("mASC_FillProfile", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_FillProfile")()); }
+			ScriptFunction GetBoostLabel() { mixin(MGF!("mGetBoostLabel", "Function TribesGame.GFxTrMenuMoviePlayer.GetBoostLabel")()); }
+			ScriptFunction GetRankFromXP() { mixin(MGF!("mGetRankFromXP", "Function TribesGame.GFxTrMenuMoviePlayer.GetRankFromXP")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function TribesGame.GFxTrMenuMoviePlayer.WidgetInitialized")()); }
+			ScriptFunction RestorePlayerHUD() { mixin(MGF!("mRestorePlayerHUD", "Function TribesGame.GFxTrMenuMoviePlayer.RestorePlayerHUD")()); }
+			ScriptFunction GetPlatform() { mixin(MGF!("mGetPlatform", "Function TribesGame.GFxTrMenuMoviePlayer.GetPlatform")()); }
+			ScriptFunction GetViewMode() { mixin(MGF!("mGetViewMode", "Function TribesGame.GFxTrMenuMoviePlayer.GetViewMode")()); }
+			ScriptFunction ShowMovie() { mixin(MGF!("mShowMovie", "Function TribesGame.GFxTrMenuMoviePlayer.ShowMovie")()); }
+			ScriptFunction HideMovie() { mixin(MGF!("mHideMovie", "Function TribesGame.GFxTrMenuMoviePlayer.HideMovie")()); }
+			ScriptFunction ASC_HideMovie() { mixin(MGF!("mASC_HideMovie", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_HideMovie")()); }
+			ScriptFunction ChatMessageReceived() { mixin(MGF!("mChatMessageReceived", "Function TribesGame.GFxTrMenuMoviePlayer.ChatMessageReceived")()); }
+			ScriptFunction UpdateStatus() { mixin(MGF!("mUpdateStatus", "Function TribesGame.GFxTrMenuMoviePlayer.UpdateStatus")()); }
+			ScriptFunction SetCountdownTimer() { mixin(MGF!("mSetCountdownTimer", "Function TribesGame.GFxTrMenuMoviePlayer.SetCountdownTimer")()); }
+			ScriptFunction LoadingTimer() { mixin(MGF!("mLoadingTimer", "Function TribesGame.GFxTrMenuMoviePlayer.LoadingTimer")()); }
+			ScriptFunction RequestPaperDoll() { mixin(MGF!("mRequestPaperDoll", "Function TribesGame.GFxTrMenuMoviePlayer.RequestPaperDoll")()); }
+			ScriptFunction KeyBindCaptured() { mixin(MGF!("mKeyBindCaptured", "Function TribesGame.GFxTrMenuMoviePlayer.KeyBindCaptured")()); }
+			ScriptFunction KeyPressCaptured() { mixin(MGF!("mKeyPressCaptured", "Function TribesGame.GFxTrMenuMoviePlayer.KeyPressCaptured")()); }
+			ScriptFunction TeamSelectActive() { mixin(MGF!("mTeamSelectActive", "Function TribesGame.GFxTrMenuMoviePlayer.TeamSelectActive")()); }
+			ScriptFunction TeamSelectOpen() { mixin(MGF!("mTeamSelectOpen", "Function TribesGame.GFxTrMenuMoviePlayer.TeamSelectOpen")()); }
+			ScriptFunction PlayerNeedsTeam() { mixin(MGF!("mPlayerNeedsTeam", "Function TribesGame.GFxTrMenuMoviePlayer.PlayerNeedsTeam")()); }
+			ScriptFunction PlayerNeedsClass() { mixin(MGF!("mPlayerNeedsClass", "Function TribesGame.GFxTrMenuMoviePlayer.PlayerNeedsClass")()); }
+			ScriptFunction GetPlayerHUD() { mixin(MGF!("mGetPlayerHUD", "Function TribesGame.GFxTrMenuMoviePlayer.GetPlayerHUD")()); }
+			ScriptFunction StartHotkeyBlock() { mixin(MGF!("mStartHotkeyBlock", "Function TribesGame.GFxTrMenuMoviePlayer.StartHotkeyBlock")()); }
+			ScriptFunction EndHotkeyBlock() { mixin(MGF!("mEndHotkeyBlock", "Function TribesGame.GFxTrMenuMoviePlayer.EndHotkeyBlock")()); }
+			ScriptFunction UnlockedItem() { mixin(MGF!("mUnlockedItem", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedItem")()); }
+			ScriptFunction UnlockedGold() { mixin(MGF!("mUnlockedGold", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedGold")()); }
+			ScriptFunction UnlockedXP() { mixin(MGF!("mUnlockedXP", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedXP")()); }
+			ScriptFunction UnlockedBooster() { mixin(MGF!("mUnlockedBooster", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedBooster")()); }
+			ScriptFunction UnlockedBadge() { mixin(MGF!("mUnlockedBadge", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedBadge")()); }
+			ScriptFunction UnlockedNameChange() { mixin(MGF!("mUnlockedNameChange", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedNameChange")()); }
+			ScriptFunction UnlockedVIP() { mixin(MGF!("mUnlockedVIP", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedVIP")()); }
+			ScriptFunction UnlockedServerTime() { mixin(MGF!("mUnlockedServerTime", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedServerTime")()); }
+			ScriptFunction UnlockedClanTag() { mixin(MGF!("mUnlockedClanTag", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedClanTag")()); }
+			ScriptFunction UnlockedSkill() { mixin(MGF!("mUnlockedSkill", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedSkill")()); }
+			ScriptFunction WinOfTheDay() { mixin(MGF!("mWinOfTheDay", "Function TribesGame.GFxTrMenuMoviePlayer.WinOfTheDay")()); }
+			ScriptFunction ClaimedPromotion() { mixin(MGF!("mClaimedPromotion", "Function TribesGame.GFxTrMenuMoviePlayer.ClaimedPromotion")()); }
+			ScriptFunction CheckVIPForLogin() { mixin(MGF!("mCheckVIPForLogin", "Function TribesGame.GFxTrMenuMoviePlayer.CheckVIPForLogin")()); }
+			ScriptFunction ReadyAcquisition() { mixin(MGF!("mReadyAcquisition", "Function TribesGame.GFxTrMenuMoviePlayer.ReadyAcquisition")()); }
+			ScriptFunction DisplayAcquisitions() { mixin(MGF!("mDisplayAcquisitions", "Function TribesGame.GFxTrMenuMoviePlayer.DisplayAcquisitions")()); }
+			ScriptFunction FireAcquisitions() { mixin(MGF!("mFireAcquisitions", "Function TribesGame.GFxTrMenuMoviePlayer.FireAcquisitions")()); }
+			ScriptFunction ASC_UnlockedItem() { mixin(MGF!("mASC_UnlockedItem", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_UnlockedItem")()); }
+			ScriptFunction KickVoteFeedback() { mixin(MGF!("mKickVoteFeedback", "Function TribesGame.GFxTrMenuMoviePlayer.KickVoteFeedback")()); }
+			ScriptFunction PlayerInLoginQueue() { mixin(MGF!("mPlayerInLoginQueue", "Function TribesGame.GFxTrMenuMoviePlayer.PlayerInLoginQueue")()); }
+			ScriptFunction LoginQueuePopupData() { mixin(MGF!("mLoginQueuePopupData", "Function TribesGame.GFxTrMenuMoviePlayer.LoginQueuePopupData")()); }
+			ScriptFunction LoginQueuePopupComplete() { mixin(MGF!("mLoginQueuePopupComplete", "Function TribesGame.GFxTrMenuMoviePlayer.LoginQueuePopupComplete")()); }
+			ScriptFunction ServerDropPopupData() { mixin(MGF!("mServerDropPopupData", "Function TribesGame.GFxTrMenuMoviePlayer.ServerDropPopupData")()); }
+			ScriptFunction AFKKickPopupData() { mixin(MGF!("mAFKKickPopupData", "Function TribesGame.GFxTrMenuMoviePlayer.AFKKickPopupData")()); }
+			ScriptFunction LoginFailedPopup() { mixin(MGF!("mLoginFailedPopup", "Function TribesGame.GFxTrMenuMoviePlayer.LoginFailedPopup")()); }
+			ScriptFunction WaitingForPurchaseReturn() { mixin(MGF!("mWaitingForPurchaseReturn", "Function TribesGame.GFxTrMenuMoviePlayer.WaitingForPurchaseReturn")()); }
+			ScriptFunction PasswordPopup() { mixin(MGF!("mPasswordPopup", "Function TribesGame.GFxTrMenuMoviePlayer.PasswordPopup")()); }
+			ScriptFunction AddFriendScoreboardPopup() { mixin(MGF!("mAddFriendScoreboardPopup", "Function TribesGame.GFxTrMenuMoviePlayer.AddFriendScoreboardPopup")()); }
+			ScriptFunction PurchaseFailed() { mixin(MGF!("mPurchaseFailed", "Function TribesGame.GFxTrMenuMoviePlayer.PurchaseFailed")()); }
+			ScriptFunction PurchaseFailedPopup() { mixin(MGF!("mPurchaseFailedPopup", "Function TribesGame.GFxTrMenuMoviePlayer.PurchaseFailedPopup")()); }
+			ScriptFunction PromoCodeFailed() { mixin(MGF!("mPromoCodeFailed", "Function TribesGame.GFxTrMenuMoviePlayer.PromoCodeFailed")()); }
+			ScriptFunction PromoCodeFailedPopup() { mixin(MGF!("mPromoCodeFailedPopup", "Function TribesGame.GFxTrMenuMoviePlayer.PromoCodeFailedPopup")()); }
+			ScriptFunction GenericFailure() { mixin(MGF!("mGenericFailure", "Function TribesGame.GFxTrMenuMoviePlayer.GenericFailure")()); }
+			ScriptFunction GenericFailurePopup() { mixin(MGF!("mGenericFailurePopup", "Function TribesGame.GFxTrMenuMoviePlayer.GenericFailurePopup")()); }
+			ScriptFunction NewPlayerNamePopup() { mixin(MGF!("mNewPlayerNamePopup", "Function TribesGame.GFxTrMenuMoviePlayer.NewPlayerNamePopup")()); }
+			ScriptFunction RevertSetting() { mixin(MGF!("mRevertSetting", "Function TribesGame.GFxTrMenuMoviePlayer.RevertSetting")()); }
+			ScriptFunction DealTimer() { mixin(MGF!("mDealTimer", "Function TribesGame.GFxTrMenuMoviePlayer.DealTimer")()); }
+			ScriptFunction RequestNews() { mixin(MGF!("mRequestNews", "Function TribesGame.GFxTrMenuMoviePlayer.RequestNews")()); }
+			ScriptFunction ASC_ShowNews() { mixin(MGF!("mASC_ShowNews", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowNews")()); }
+			ScriptFunction QueueTimer() { mixin(MGF!("mQueueTimer", "Function TribesGame.GFxTrMenuMoviePlayer.QueueTimer")()); }
+			ScriptFunction BeginExperienceTweens() { mixin(MGF!("mBeginExperienceTweens", "Function TribesGame.GFxTrMenuMoviePlayer.BeginExperienceTweens")()); }
+			ScriptFunction TweenExperienceSummary() { mixin(MGF!("mTweenExperienceSummary", "Function TribesGame.GFxTrMenuMoviePlayer.TweenExperienceSummary")()); }
+			ScriptFunction TweenPlayerSummary() { mixin(MGF!("mTweenPlayerSummary", "Function TribesGame.GFxTrMenuMoviePlayer.TweenPlayerSummary")()); }
+			ScriptFunction ToggleWorkingGraphic() { mixin(MGF!("mToggleWorkingGraphic", "Function TribesGame.GFxTrMenuMoviePlayer.ToggleWorkingGraphic")()); }
+			ScriptFunction ShowWorkingGraphic() { mixin(MGF!("mShowWorkingGraphic", "Function TribesGame.GFxTrMenuMoviePlayer.ShowWorkingGraphic")()); }
+			ScriptFunction HideWorkingGraphic() { mixin(MGF!("mHideWorkingGraphic", "Function TribesGame.GFxTrMenuMoviePlayer.HideWorkingGraphic")()); }
+			ScriptFunction UnlockedUnknown() { mixin(MGF!("mUnlockedUnknown", "Function TribesGame.GFxTrMenuMoviePlayer.UnlockedUnknown")()); }
+			ScriptFunction SeedAccolades() { mixin(MGF!("mSeedAccolades", "Function TribesGame.GFxTrMenuMoviePlayer.SeedAccolades")()); }
+			ScriptFunction UILoadSummary() { mixin(MGF!("mUILoadSummary", "Function TribesGame.GFxTrMenuMoviePlayer.UILoadSummary")()); }
+			ScriptFunction ASC_LoadPlayerSummary() { mixin(MGF!("mASC_LoadPlayerSummary", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_LoadPlayerSummary")()); }
+			ScriptFunction ClearVehicleMenu() { mixin(MGF!("mClearVehicleMenu", "Function TribesGame.GFxTrMenuMoviePlayer.ClearVehicleMenu")()); }
+			ScriptFunction ShowVehicleMenu() { mixin(MGF!("mShowVehicleMenu", "Function TribesGame.GFxTrMenuMoviePlayer.ShowVehicleMenu")()); }
+			ScriptFunction PullOpenMenu() { mixin(MGF!("mPullOpenMenu", "Function TribesGame.GFxTrMenuMoviePlayer.PullOpenMenu")()); }
+			ScriptFunction ASC_OpeningMenu() { mixin(MGF!("mASC_OpeningMenu", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_OpeningMenu")()); }
+			ScriptFunction ASC_ForceFocus() { mixin(MGF!("mASC_ForceFocus", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_ForceFocus")()); }
+			ScriptFunction AddVehicleMenuOption() { mixin(MGF!("mAddVehicleMenuOption", "Function TribesGame.GFxTrMenuMoviePlayer.AddVehicleMenuOption")()); }
+			ScriptFunction ShowChat() { mixin(MGF!("mShowChat", "Function TribesGame.GFxTrMenuMoviePlayer.ShowChat")()); }
+			ScriptFunction HideChat() { mixin(MGF!("mHideChat", "Function TribesGame.GFxTrMenuMoviePlayer.HideChat")()); }
+			ScriptFunction PushChat() { mixin(MGF!("mPushChat", "Function TribesGame.GFxTrMenuMoviePlayer.PushChat")()); }
+			ScriptFunction ToggleChat() { mixin(MGF!("mToggleChat", "Function TribesGame.GFxTrMenuMoviePlayer.ToggleChat")()); }
+			ScriptFunction StartSteamTransaction() { mixin(MGF!("mStartSteamTransaction", "Function TribesGame.GFxTrMenuMoviePlayer.StartSteamTransaction")()); }
+			ScriptFunction ShowSteamResponse() { mixin(MGF!("mShowSteamResponse", "Function TribesGame.GFxTrMenuMoviePlayer.ShowSteamResponse")()); }
+			ScriptFunction HandlePopup() { mixin(MGF!("mHandlePopup", "Function TribesGame.GFxTrMenuMoviePlayer.HandlePopup")()); }
+			ScriptFunction HandlePopupComplete() { mixin(MGF!("mHandlePopupComplete", "Function TribesGame.GFxTrMenuMoviePlayer.HandlePopupComplete")()); }
+			ScriptFunction NavigateSteamGold() { mixin(MGF!("mNavigateSteamGold", "Function TribesGame.GFxTrMenuMoviePlayer.NavigateSteamGold")()); }
+			ScriptFunction CreateAccount() { mixin(MGF!("mCreateAccount", "Function TribesGame.GFxTrMenuMoviePlayer.CreateAccount")()); }
+			ScriptFunction ShowNotification() { mixin(MGF!("mShowNotification", "Function TribesGame.GFxTrMenuMoviePlayer.ShowNotification")()); }
+			ScriptFunction HideNotification() { mixin(MGF!("mHideNotification", "Function TribesGame.GFxTrMenuMoviePlayer.HideNotification")()); }
+			ScriptFunction UpdateButton() { mixin(MGF!("mUpdateButton", "Function TribesGame.GFxTrMenuMoviePlayer.UpdateButton")()); }
+			ScriptFunction HidePopup() { mixin(MGF!("mHidePopup", "Function TribesGame.GFxTrMenuMoviePlayer.HidePopup")()); }
+			ScriptFunction ASC_ShowQueue() { mixin(MGF!("mASC_ShowQueue", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowQueue")()); }
+			ScriptFunction ASC_LeftGame() { mixin(MGF!("mASC_LeftGame", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_LeftGame")()); }
+			ScriptFunction ASC_JoinGame() { mixin(MGF!("mASC_JoinGame", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_JoinGame")()); }
+			ScriptFunction ASC_FocusLogin() { mixin(MGF!("mASC_FocusLogin", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_FocusLogin")()); }
+			ScriptFunction ASC_LoadMatchSummary() { mixin(MGF!("mASC_LoadMatchSummary", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_LoadMatchSummary")()); }
+			ScriptFunction ASC_GlobalAlert() { mixin(MGF!("mASC_GlobalAlert", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_GlobalAlert")()); }
+			ScriptFunction ASC_KeyPressCaptured() { mixin(MGF!("mASC_KeyPressCaptured", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_KeyPressCaptured")()); }
+			ScriptFunction ASC_PromptNewPlayerName() { mixin(MGF!("mASC_PromptNewPlayerName", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_PromptNewPlayerName")()); }
+			ScriptFunction ASC_PurchaseComplete() { mixin(MGF!("mASC_PurchaseComplete", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_PurchaseComplete")()); }
+			ScriptFunction ASC_ShowReticuleBuilder() { mixin(MGF!("mASC_ShowReticuleBuilder", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_ShowReticuleBuilder")()); }
+			ScriptFunction ASC_HideReticuleBuilder() { mixin(MGF!("mASC_HideReticuleBuilder", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_HideReticuleBuilder")()); }
+			ScriptFunction ASC_SetMapLoadText() { mixin(MGF!("mASC_SetMapLoadText", "Function TribesGame.GFxTrMenuMoviePlayer.ASC_SetMapLoadText")()); }
+			ScriptFunction SetSoundSkillBar() { mixin(MGF!("mSetSoundSkillBar", "Function TribesGame.GFxTrMenuMoviePlayer.SetSoundSkillBar")()); }
+			ScriptFunction SetSoundPerkType() { mixin(MGF!("mSetSoundPerkType", "Function TribesGame.GFxTrMenuMoviePlayer.SetSoundPerkType")()); }
+			ScriptFunction SetShowingPopupDelegate() { mixin(MGF!("mSetShowingPopupDelegate", "Function TribesGame.GFxTrMenuMoviePlayer.SetShowingPopupDelegate")()); }
 		}
 	}
 	static struct Constants
@@ -1994,13 +1995,13 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.VendorItemData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.VendorItemData")()); }
 		@property final auto ref
 		{
-			ScriptString Description() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
-			ScriptString Title() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-			int LootId() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Price() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptString Description() { mixin(MGPS!(ScriptString, 20)()); }
+			ScriptString Title() { mixin(MGPS!(ScriptString, 8)()); }
+			int LootId() { mixin(MGPS!(int, 4)()); }
+			int Price() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	struct AcquisitionData
@@ -2008,13 +2009,13 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.AcquisitionData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.AcquisitionData")()); }
 		@property final auto ref
 		{
-			int Icon() { return *cast(int*)(cast(size_t)&this + 36); }
-			ScriptString Type() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
-			ScriptString Text() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			ScriptString Title() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			int Icon() { mixin(MGPS!(int, 36)()); }
+			ScriptString Type() { mixin(MGPS!(ScriptString, 24)()); }
+			ScriptString Text() { mixin(MGPS!(ScriptString, 12)()); }
+			ScriptString Title() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct QueueUIData
@@ -2022,181 +2023,202 @@ public extern(D):
 		private ubyte __buffer__[64];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.QueueUIData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.QueueUIData")()); }
 		@property final
 		{
 			auto ref
 			{
-				int LevelMax() { return *cast(int*)(cast(size_t)&this + 60); }
-				int LevelMin() { return *cast(int*)(cast(size_t)&this + 56); }
-				int SortOrder() { return *cast(int*)(cast(size_t)&this + 52); }
-				int contentIndex() { return *cast(int*)(cast(size_t)&this + 48); }
-				ScriptString RibbonText() { return *cast(ScriptString*)(cast(size_t)&this + 36); }
-				int ribbonType() { return *cast(int*)(cast(size_t)&this + 32); }
-				ScriptString Subtitle() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-				ScriptString Title() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-				int queueId() { return *cast(int*)(cast(size_t)&this + 0); }
+				int LevelMax() { mixin(MGPS!(int, 60)()); }
+				int LevelMin() { mixin(MGPS!(int, 56)()); }
+				int SortOrder() { mixin(MGPS!(int, 52)()); }
+				int contentIndex() { mixin(MGPS!(int, 48)()); }
+				ScriptString RibbonText() { mixin(MGPS!(ScriptString, 36)()); }
+				int ribbonType() { mixin(MGPS!(int, 32)()); }
+				ScriptString Subtitle() { mixin(MGPS!(ScriptString, 16)()); }
+				ScriptString Title() { mixin(MGPS!(ScriptString, 4)()); }
+				int queueId() { mixin(MGPS!(int, 0)()); }
 			}
-			bool bShowRibbon() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bShowRibbon(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bAvailable() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bAvailable(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bShowRibbon() { mixin(MGBPS!(28, 0x2)()); }
+			bool bShowRibbon(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bAvailable() { mixin(MGBPS!(28, 0x1)()); }
+			bool bAvailable(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GFxTrMenuMoviePlayer.POPUPTYPE m_PopupType() { return *cast(GFxTrMenuMoviePlayer.POPUPTYPE*)(cast(size_t)cast(void*)this + 380); }
-			GFxObject _global() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 748); }
-			OnlineSubsystem OnlineSub() { return *cast(OnlineSubsystem*)(cast(size_t)cast(void*)this + 784); }
-			TrUser User() { return *cast(TrUser*)(cast(size_t)cast(void*)this + 752); }
-			TrStrings Strings() { return *cast(TrStrings*)(cast(size_t)cast(void*)this + 756); }
-			TrStreamManager StreamManager() { return *cast(TrStreamManager*)(cast(size_t)cast(void*)this + 780); }
-			TrInventoryHelper EquipHelper() { return *cast(TrInventoryHelper*)(cast(size_t)cast(void*)this + 804); }
-			TrEquipInterface EquipInterface() { return *cast(TrEquipInterface*)(cast(size_t)cast(void*)this + 800); }
-			TgPlayerProfile PlayerProfile() { return *cast(TgPlayerProfile*)(cast(size_t)cast(void*)this + 796); }
-			TrBrowserManager Browser() { return *cast(TrBrowserManager*)(cast(size_t)cast(void*)this + 792); }
-			TrLoginManager LoginManager() { return *cast(TrLoginManager*)(cast(size_t)cast(void*)this + 768); }
-			TrQueueManager QueueManager() { return *cast(TrQueueManager*)(cast(size_t)cast(void*)this + 772); }
-			TrPartyManager PartyManager() { return *cast(TrPartyManager*)(cast(size_t)cast(void*)this + 776); }
-			TrLoadingData LoadingData() { return *cast(TrLoadingData*)(cast(size_t)cast(void*)this + 764); }
-			TrPageManager Pages() { return *cast(TrPageManager*)(cast(size_t)cast(void*)this + 760); }
-			TrSettingsManager SettingsManager() { return *cast(TrSettingsManager*)(cast(size_t)cast(void*)this + 808); }
-			TrRibbonManager RibbonManager() { return *cast(TrRibbonManager*)(cast(size_t)cast(void*)this + 820); }
-			TrFriendManager Friends() { return *cast(TrFriendManager*)(cast(size_t)cast(void*)this + 788); }
-			GFxTrScene_EULA EULAScene() { return *cast(GFxTrScene_EULA*)(cast(size_t)cast(void*)this + 732); }
-			GFxTrScene_MatchSummary MatchSummaryScene() { return *cast(GFxTrScene_MatchSummary*)(cast(size_t)cast(void*)this + 736); }
-			GFxTrScene_PlayerSummary PlayerSummaryScene() { return *cast(GFxTrScene_PlayerSummary*)(cast(size_t)cast(void*)this + 740); }
-			GFxTrMenuSounds MenuSounds() { return *cast(GFxTrMenuSounds*)(cast(size_t)cast(void*)this + 744); }
-			int EstimatedWaitTime() { return *cast(int*)(cast(size_t)cast(void*)this + 540); }
-			ScriptString LoginFailure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 416); }
-			ScriptString LoginPlayer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 392); }
-			ScriptString LoginReason() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 404); }
-			ScriptString GenericFailReason() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 452); }
-			int PlayerNameFailType() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
-			int Progress() { return *cast(int*)(cast(size_t)cast(void*)this + 516); }
-			int RankIcon() { return *cast(int*)(cast(size_t)cast(void*)this + 524); }
-			int NextRank() { return *cast(int*)(cast(size_t)cast(void*)this + 520); }
-			int EndOfMatchTimer() { return *cast(int*)(cast(size_t)cast(void*)this + 508); }
-			ScriptString CapturedKey() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 428); }
-			ScriptString UnlockItemName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 480); }
-			ScriptString UnlockTypeName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 492); }
-			GFxTrMenuMoviePlayer.AcquisitionType UnlockIconType() { return *cast(GFxTrMenuMoviePlayer.AcquisitionType*)(cast(size_t)cast(void*)this + 381); }
-			int UnlockIconId() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
-			ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData) AcquisitionList() { return *cast(ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData)*)(cast(size_t)cast(void*)this + 708); }
-			ScriptArray!(TgPlayerProfile.PropertyPair) UnknownList() { return *cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)(cast(size_t)cast(void*)this + 696); }
-			ScriptString PurchaseFailedMsg() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 528); }
-			int PurchasingCurrency() { return *cast(int*)(cast(size_t)cast(void*)this + 512); }
-			ScriptString PromoFailReason() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 440); }
-			ScriptString NameRulesMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 544); }
-			GFxTrMenuMoviePlayer.VendorItemData PortalPurchase() { return *cast(GFxTrMenuMoviePlayer.VendorItemData*)(cast(size_t)cast(void*)this + 652); }
-			ScriptString NextMapName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 464); }
-			ScriptString FriendLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 556); }
-			ScriptString FollowerLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 568); }
-			ScriptString OfflineLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 580); }
-			ScriptString OnlineLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 592); }
-			ScriptString InGameLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 604); }
-			ScriptString InLobbyLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 616); }
-			ScriptString OKLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 628); }
-			ScriptString CancelLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 640); }
-			ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData) GoldItemList() { return *cast(ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData)*)(cast(size_t)cast(void*)this + 684); }
-			ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData) QueueUIList() { return *cast(ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData)*)(cast(size_t)cast(void*)this + 720); }
+			GFxTrMenuMoviePlayer.POPUPTYPE m_PopupType() { mixin(MGPC!(GFxTrMenuMoviePlayer.POPUPTYPE, 380)()); }
+			GFxObject _global() { mixin(MGPC!(GFxObject, 748)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 784)()); }
+			TrUser User() { mixin(MGPC!(TrUser, 752)()); }
+			TrStrings Strings() { mixin(MGPC!(TrStrings, 756)()); }
+			TrStreamManager StreamManager() { mixin(MGPC!(TrStreamManager, 780)()); }
+			TrInventoryHelper EquipHelper() { mixin(MGPC!(TrInventoryHelper, 804)()); }
+			TrEquipInterface EquipInterface() { mixin(MGPC!(TrEquipInterface, 800)()); }
+			TgPlayerProfile PlayerProfile() { mixin(MGPC!(TgPlayerProfile, 796)()); }
+			TrBrowserManager Browser() { mixin(MGPC!(TrBrowserManager, 792)()); }
+			TrLoginManager LoginManager() { mixin(MGPC!(TrLoginManager, 768)()); }
+			TrQueueManager QueueManager() { mixin(MGPC!(TrQueueManager, 772)()); }
+			TrPartyManager PartyManager() { mixin(MGPC!(TrPartyManager, 776)()); }
+			TrLoadingData LoadingData() { mixin(MGPC!(TrLoadingData, 764)()); }
+			TrPageManager Pages() { mixin(MGPC!(TrPageManager, 760)()); }
+			TrSettingsManager SettingsManager() { mixin(MGPC!(TrSettingsManager, 808)()); }
+			TrRibbonManager RibbonManager() { mixin(MGPC!(TrRibbonManager, 820)()); }
+			TrFriendManager Friends() { mixin(MGPC!(TrFriendManager, 788)()); }
+			GFxTrScene_EULA EULAScene() { mixin(MGPC!(GFxTrScene_EULA, 732)()); }
+			GFxTrScene_MatchSummary MatchSummaryScene() { mixin(MGPC!(GFxTrScene_MatchSummary, 736)()); }
+			GFxTrScene_PlayerSummary PlayerSummaryScene() { mixin(MGPC!(GFxTrScene_PlayerSummary, 740)()); }
+			GFxTrMenuSounds MenuSounds() { mixin(MGPC!(GFxTrMenuSounds, 744)()); }
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'ChatInterface'!
+			int EstimatedWaitTime() { mixin(MGPC!(int, 540)()); }
+			ScriptString LoginFailure() { mixin(MGPC!(ScriptString, 416)()); }
+			ScriptString LoginPlayer() { mixin(MGPC!(ScriptString, 392)()); }
+			ScriptString LoginReason() { mixin(MGPC!(ScriptString, 404)()); }
+			ScriptString GenericFailReason() { mixin(MGPC!(ScriptString, 452)()); }
+			int PlayerNameFailType() { mixin(MGPC!(int, 504)()); }
+			int Progress() { mixin(MGPC!(int, 516)()); }
+			int RankIcon() { mixin(MGPC!(int, 524)()); }
+			int NextRank() { mixin(MGPC!(int, 520)()); }
+			int EndOfMatchTimer() { mixin(MGPC!(int, 508)()); }
+			ScriptString CapturedKey() { mixin(MGPC!(ScriptString, 428)()); }
+			ScriptString UnlockItemName() { mixin(MGPC!(ScriptString, 480)()); }
+			ScriptString UnlockTypeName() { mixin(MGPC!(ScriptString, 492)()); }
+			GFxTrMenuMoviePlayer.AcquisitionType UnlockIconType() { mixin(MGPC!(GFxTrMenuMoviePlayer.AcquisitionType, 381)()); }
+			int UnlockIconId() { mixin(MGPC!(int, 476)()); }
+			ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData) AcquisitionList() { mixin(MGPC!(ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData), 708)()); }
+			ScriptArray!(TgPlayerProfile.PropertyPair) UnknownList() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.PropertyPair), 696)()); }
+			ScriptString PurchaseFailedMsg() { mixin(MGPC!(ScriptString, 528)()); }
+			int PurchasingCurrency() { mixin(MGPC!(int, 512)()); }
+			ScriptString PromoFailReason() { mixin(MGPC!(ScriptString, 440)()); }
+			ScriptString NameRulesMessage() { mixin(MGPC!(ScriptString, 544)()); }
+			GFxTrMenuMoviePlayer.VendorItemData PortalPurchase() { mixin(MGPC!(GFxTrMenuMoviePlayer.VendorItemData, 652)()); }
+			ScriptString NextMapName() { mixin(MGPC!(ScriptString, 464)()); }
+			ScriptString FriendLabel() { mixin(MGPC!(ScriptString, 556)()); }
+			ScriptString FollowerLabel() { mixin(MGPC!(ScriptString, 568)()); }
+			ScriptString OfflineLabel() { mixin(MGPC!(ScriptString, 580)()); }
+			ScriptString OnlineLabel() { mixin(MGPC!(ScriptString, 592)()); }
+			ScriptString InGameLabel() { mixin(MGPC!(ScriptString, 604)()); }
+			ScriptString InLobbyLabel() { mixin(MGPC!(ScriptString, 616)()); }
+			ScriptString OKLabel() { mixin(MGPC!(ScriptString, 628)()); }
+			ScriptString CancelLabel() { mixin(MGPC!(ScriptString, 640)()); }
+			ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData) GoldItemList() { mixin(MGPC!(ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData), 684)()); }
+			ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData) QueueUIList() { mixin(MGPC!(ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData), 720)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateNoParam__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateInt__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateBool__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateString__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateGFxList__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateIntInt__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateIntString__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateStringInt__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateStringBool__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateIntGFxList__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateOnMarshalEvent__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateGetInt__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateGetPrice__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateIntIntInt__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateGetBoolIntInt__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateLogin__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateBoolGetBool__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateGetString__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateOptions__Delegate'!
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateAction__Delegate'!
 		}
-		bool bInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x1000) != 0; }
-		bool bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x1000; } return val; }
-		bool bStartupCompleted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x2) != 0; }
-		bool bStartupCompleted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x2; } return val; }
-		bool bCreatingNewPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x8000) != 0; }
-		bool bCreatingNewPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x8000; } return val; }
-		bool bOpeningMenu() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x1000) != 0; }
-		bool bOpeningMenu(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x1000; } return val; }
-		bool bPeachy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x1) != 0; }
-		bool bPeachy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x1; } return val; }
-		bool bWaitingForEntry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x4000) != 0; }
-		bool bWaitingForEntry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x4000; } return val; }
-		bool bFullyLoaded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x800) != 0; }
-		bool bFullyLoaded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x800; } return val; }
-		bool bLoggedIn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x200) != 0; }
-		bool bLoggedIn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x200; } return val; }
-		bool bNeedsEULA() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x100) != 0; }
-		bool bNeedsEULA(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x100; } return val; }
-		bool bWaitingForServerDropPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x1) != 0; }
-		bool bWaitingForServerDropPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x1; } return val; }
-		bool bInGame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x8) != 0; }
-		bool bInGame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x8; } return val; }
-		bool bLoading() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x10) != 0; }
-		bool bLoading(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x10; } return val; }
-		bool bEndOfMatch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x80) != 0; }
-		bool bEndOfMatch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x80; } return val; }
-		bool bViewingSummary() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x10000000) != 0; }
-		bool bViewingSummary(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x10000000; } return val; }
-		bool bWelcomed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x4) != 0; }
-		bool bWelcomed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x4; } return val; }
-		bool bWaitingForQuitGameConfirm() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x20000000) != 0; }
-		bool bWaitingForQuitGameConfirm(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x20000000; } return val; }
-		bool bWaitingForLeaveMatchConfirm() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x40000000) != 0; }
-		bool bWaitingForLeaveMatchConfirm(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x40000000; } return val; }
-		bool bWaitingForLoginFailedPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x8) != 0; }
-		bool bWaitingForLoginFailedPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x8; } return val; }
-		bool LoginSuccess() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x20000) != 0; }
-		bool LoginSuccess(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x20000; } return val; }
-		bool bProfileLoaded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x4000) != 0; }
-		bool bProfileLoaded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x4000; } return val; }
-		bool bEquipmentLoaded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x40000) != 0; }
-		bool bEquipmentLoaded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x40000; } return val; }
-		bool bRefreshingMenu() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x2000) != 0; }
-		bool bRefreshingMenu(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x2000; } return val; }
-		bool bWaitingForJoinFailed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x20) != 0; }
-		bool bWaitingForJoinFailed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x20; } return val; }
-		bool bWaitingForJoinRequiresPassword() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x40) != 0; }
-		bool bWaitingForJoinRequiresPassword(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x40; } return val; }
-		bool bWaitingForPlayerNamePopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x4000000) != 0; }
-		bool bWaitingForPlayerNamePopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x4000000; } return val; }
-		bool bBlockRelease() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x2000) != 0; }
-		bool bBlockRelease(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x2000; } return val; }
-		bool bWaitingForPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x80) != 0; }
-		bool bWaitingForPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x80; } return val; }
-		bool bChatOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x200) != 0; }
-		bool bChatOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x200; } return val; }
-		bool bBlockHotkey() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x400) != 0; }
-		bool bBlockHotkey(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x400; } return val; }
-		bool bWaitingForLoginQueuePopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x80000000) != 0; }
-		bool bWaitingForLoginQueuePopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x80000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x80000000; } return val; }
-		bool bWaitingForAFKKickPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x2) != 0; }
-		bool bWaitingForAFKKickPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x2; } return val; }
-		bool bWaitingForPurchaseReturn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x10) != 0; }
-		bool bWaitingForPurchaseReturn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x10; } return val; }
-		bool bWaitingForAddFriendPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x4) != 0; }
-		bool bWaitingForAddFriendPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x4; } return val; }
-		bool bShowPurchaseFailed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x100000) != 0; }
-		bool bShowPurchaseFailed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x100000; } return val; }
-		bool bShowPromoCodeFailed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x1000000) != 0; }
-		bool bShowPromoCodeFailed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x1000000; } return val; }
-		bool bShowGenericFailure() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x2000000) != 0; }
-		bool bShowGenericFailure(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x2000000; } return val; }
-		bool bWaitingForPlayerNameInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x8000000) != 0; }
-		bool bWaitingForPlayerNameInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x8000000; } return val; }
-		bool bInQueue() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x20) != 0; }
-		bool bInQueue(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x20; } return val; }
-		bool bQueueListDirty() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x40) != 0; }
-		bool bQueueListDirty(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x40; } return val; }
-		bool bWebVendorLoaded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x10000) != 0; }
-		bool bWebVendorLoaded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x10000; } return val; }
-		bool bShowDiamondSword() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x80000) != 0; }
-		bool bShowDiamondSword(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x80000; } return val; }
-		bool bWaitingForSelectionPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x200000) != 0; }
-		bool bWaitingForSelectionPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x200000; } return val; }
-		bool bWaitingForCurrencyPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x400000) != 0; }
-		bool bWaitingForCurrencyPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x400000; } return val; }
-		bool bWaitingForConfirmationPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x800000) != 0; }
-		bool bWaitingForConfirmationPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x800000; } return val; }
-		bool bPasswordPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x100) != 0; }
-		bool bPasswordPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x100; } return val; }
-		bool bInvitationPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x400) != 0; }
-		bool bInvitationPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x400; } return val; }
-		bool bBadgeModification() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x800) != 0; }
-		bool bBadgeModification(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x800; } return val; }
+		bool bInitialized() { mixin(MGBPC!(384, 0x1000)()); }
+		bool bInitialized(bool val) { mixin(MSBPC!(384, 0x1000)()); }
+		bool bStartupCompleted() { mixin(MGBPC!(384, 0x2)()); }
+		bool bStartupCompleted(bool val) { mixin(MSBPC!(384, 0x2)()); }
+		bool bCreatingNewPlayer() { mixin(MGBPC!(384, 0x8000)()); }
+		bool bCreatingNewPlayer(bool val) { mixin(MSBPC!(384, 0x8000)()); }
+		bool bOpeningMenu() { mixin(MGBPC!(388, 0x1000)()); }
+		bool bOpeningMenu(bool val) { mixin(MSBPC!(388, 0x1000)()); }
+		bool bPeachy() { mixin(MGBPC!(384, 0x1)()); }
+		bool bPeachy(bool val) { mixin(MSBPC!(384, 0x1)()); }
+		bool bWaitingForEntry() { mixin(MGBPC!(388, 0x4000)()); }
+		bool bWaitingForEntry(bool val) { mixin(MSBPC!(388, 0x4000)()); }
+		bool bFullyLoaded() { mixin(MGBPC!(384, 0x800)()); }
+		bool bFullyLoaded(bool val) { mixin(MSBPC!(384, 0x800)()); }
+		bool bLoggedIn() { mixin(MGBPC!(384, 0x200)()); }
+		bool bLoggedIn(bool val) { mixin(MSBPC!(384, 0x200)()); }
+		bool bNeedsEULA() { mixin(MGBPC!(384, 0x100)()); }
+		bool bNeedsEULA(bool val) { mixin(MSBPC!(384, 0x100)()); }
+		bool bWaitingForServerDropPopup() { mixin(MGBPC!(388, 0x1)()); }
+		bool bWaitingForServerDropPopup(bool val) { mixin(MSBPC!(388, 0x1)()); }
+		bool bInGame() { mixin(MGBPC!(384, 0x8)()); }
+		bool bInGame(bool val) { mixin(MSBPC!(384, 0x8)()); }
+		bool bLoading() { mixin(MGBPC!(384, 0x10)()); }
+		bool bLoading(bool val) { mixin(MSBPC!(384, 0x10)()); }
+		bool bEndOfMatch() { mixin(MGBPC!(384, 0x80)()); }
+		bool bEndOfMatch(bool val) { mixin(MSBPC!(384, 0x80)()); }
+		bool bViewingSummary() { mixin(MGBPC!(384, 0x10000000)()); }
+		bool bViewingSummary(bool val) { mixin(MSBPC!(384, 0x10000000)()); }
+		bool bWelcomed() { mixin(MGBPC!(384, 0x4)()); }
+		bool bWelcomed(bool val) { mixin(MSBPC!(384, 0x4)()); }
+		bool bWaitingForQuitGameConfirm() { mixin(MGBPC!(384, 0x20000000)()); }
+		bool bWaitingForQuitGameConfirm(bool val) { mixin(MSBPC!(384, 0x20000000)()); }
+		bool bWaitingForLeaveMatchConfirm() { mixin(MGBPC!(384, 0x40000000)()); }
+		bool bWaitingForLeaveMatchConfirm(bool val) { mixin(MSBPC!(384, 0x40000000)()); }
+		bool bWaitingForLoginFailedPopup() { mixin(MGBPC!(388, 0x8)()); }
+		bool bWaitingForLoginFailedPopup(bool val) { mixin(MSBPC!(388, 0x8)()); }
+		bool LoginSuccess() { mixin(MGBPC!(384, 0x20000)()); }
+		bool LoginSuccess(bool val) { mixin(MSBPC!(384, 0x20000)()); }
+		bool bProfileLoaded() { mixin(MGBPC!(384, 0x4000)()); }
+		bool bProfileLoaded(bool val) { mixin(MSBPC!(384, 0x4000)()); }
+		bool bEquipmentLoaded() { mixin(MGBPC!(384, 0x40000)()); }
+		bool bEquipmentLoaded(bool val) { mixin(MSBPC!(384, 0x40000)()); }
+		bool bRefreshingMenu() { mixin(MGBPC!(388, 0x2000)()); }
+		bool bRefreshingMenu(bool val) { mixin(MSBPC!(388, 0x2000)()); }
+		bool bWaitingForJoinFailed() { mixin(MGBPC!(388, 0x20)()); }
+		bool bWaitingForJoinFailed(bool val) { mixin(MSBPC!(388, 0x20)()); }
+		bool bWaitingForJoinRequiresPassword() { mixin(MGBPC!(388, 0x40)()); }
+		bool bWaitingForJoinRequiresPassword(bool val) { mixin(MSBPC!(388, 0x40)()); }
+		bool bWaitingForPlayerNamePopup() { mixin(MGBPC!(384, 0x4000000)()); }
+		bool bWaitingForPlayerNamePopup(bool val) { mixin(MSBPC!(384, 0x4000000)()); }
+		bool bBlockRelease() { mixin(MGBPC!(384, 0x2000)()); }
+		bool bBlockRelease(bool val) { mixin(MSBPC!(384, 0x2000)()); }
+		bool bWaitingForPopup() { mixin(MGBPC!(388, 0x80)()); }
+		bool bWaitingForPopup(bool val) { mixin(MSBPC!(388, 0x80)()); }
+		bool bChatOpen() { mixin(MGBPC!(388, 0x200)()); }
+		bool bChatOpen(bool val) { mixin(MSBPC!(388, 0x200)()); }
+		bool bBlockHotkey() { mixin(MGBPC!(384, 0x400)()); }
+		bool bBlockHotkey(bool val) { mixin(MSBPC!(384, 0x400)()); }
+		bool bWaitingForLoginQueuePopup() { mixin(MGBPC!(384, 0x80000000)()); }
+		bool bWaitingForLoginQueuePopup(bool val) { mixin(MSBPC!(384, 0x80000000)()); }
+		bool bWaitingForAFKKickPopup() { mixin(MGBPC!(388, 0x2)()); }
+		bool bWaitingForAFKKickPopup(bool val) { mixin(MSBPC!(388, 0x2)()); }
+		bool bWaitingForPurchaseReturn() { mixin(MGBPC!(388, 0x10)()); }
+		bool bWaitingForPurchaseReturn(bool val) { mixin(MSBPC!(388, 0x10)()); }
+		bool bWaitingForAddFriendPopup() { mixin(MGBPC!(388, 0x4)()); }
+		bool bWaitingForAddFriendPopup(bool val) { mixin(MSBPC!(388, 0x4)()); }
+		bool bShowPurchaseFailed() { mixin(MGBPC!(384, 0x100000)()); }
+		bool bShowPurchaseFailed(bool val) { mixin(MSBPC!(384, 0x100000)()); }
+		bool bShowPromoCodeFailed() { mixin(MGBPC!(384, 0x1000000)()); }
+		bool bShowPromoCodeFailed(bool val) { mixin(MSBPC!(384, 0x1000000)()); }
+		bool bShowGenericFailure() { mixin(MGBPC!(384, 0x2000000)()); }
+		bool bShowGenericFailure(bool val) { mixin(MSBPC!(384, 0x2000000)()); }
+		bool bWaitingForPlayerNameInput() { mixin(MGBPC!(384, 0x8000000)()); }
+		bool bWaitingForPlayerNameInput(bool val) { mixin(MSBPC!(384, 0x8000000)()); }
+		bool bInQueue() { mixin(MGBPC!(384, 0x20)()); }
+		bool bInQueue(bool val) { mixin(MSBPC!(384, 0x20)()); }
+		bool bQueueListDirty() { mixin(MGBPC!(384, 0x40)()); }
+		bool bQueueListDirty(bool val) { mixin(MSBPC!(384, 0x40)()); }
+		bool bWebVendorLoaded() { mixin(MGBPC!(384, 0x10000)()); }
+		bool bWebVendorLoaded(bool val) { mixin(MSBPC!(384, 0x10000)()); }
+		bool bShowDiamondSword() { mixin(MGBPC!(384, 0x80000)()); }
+		bool bShowDiamondSword(bool val) { mixin(MSBPC!(384, 0x80000)()); }
+		bool bWaitingForSelectionPopup() { mixin(MGBPC!(384, 0x200000)()); }
+		bool bWaitingForSelectionPopup(bool val) { mixin(MSBPC!(384, 0x200000)()); }
+		bool bWaitingForCurrencyPopup() { mixin(MGBPC!(384, 0x400000)()); }
+		bool bWaitingForCurrencyPopup(bool val) { mixin(MSBPC!(384, 0x400000)()); }
+		bool bWaitingForConfirmationPopup() { mixin(MGBPC!(384, 0x800000)()); }
+		bool bWaitingForConfirmationPopup(bool val) { mixin(MSBPC!(384, 0x800000)()); }
+		bool bPasswordPopup() { mixin(MGBPC!(388, 0x100)()); }
+		bool bPasswordPopup(bool val) { mixin(MSBPC!(388, 0x100)()); }
+		bool bInvitationPopup() { mixin(MGBPC!(388, 0x400)()); }
+		bool bInvitationPopup(bool val) { mixin(MSBPC!(388, 0x400)()); }
+		bool bBadgeModification() { mixin(MGBPC!(388, 0x800)()); }
+		bool bBadgeModification(bool val) { mixin(MSBPC!(388, 0x800)()); }
 	}
 final:
 	void DelegateNoParam()

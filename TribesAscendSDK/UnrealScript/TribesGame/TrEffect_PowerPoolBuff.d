@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrEffect_PowerPoolBuff;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.TribesGame.TrEffect_Managed;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrEffect_PowerPoolBuff : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_PowerPoolBuff")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_PowerPoolBuff")()); }
 	private static __gshared TrEffect_PowerPoolBuff mDefaultProperties;
-	@property final static TrEffect_PowerPoolBuff DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_PowerPoolBuff)("TrEffect_PowerPoolBuff TribesGame.Default__TrEffect_PowerPoolBuff")); }
+	@property final static TrEffect_PowerPoolBuff DefaultProperties() { mixin(MGDPC!(TrEffect_PowerPoolBuff, "TrEffect_PowerPoolBuff TribesGame.Default__TrEffect_PowerPoolBuff")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { return mApply ? mApply : (mApply = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect_PowerPoolBuff.Apply")); }
-			ScriptFunction Remove() { return mRemove ? mRemove : (mRemove = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect_PowerPoolBuff.Remove")); }
+			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_PowerPoolBuff.Apply")()); }
+			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_PowerPoolBuff.Remove")()); }
 		}
 	}
 final:

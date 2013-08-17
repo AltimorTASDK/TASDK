@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrBrowserManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrBrowserManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrBrowserManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrBrowserManager")()); }
 	private static __gshared TrBrowserManager mDefaultProperties;
-	@property final static TrBrowserManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrBrowserManager)("TrBrowserManager TribesGame.Default__TrBrowserManager")); }
+	@property final static TrBrowserManager DefaultProperties() { mixin(MGDPC!(TrBrowserManager, "TrBrowserManager TribesGame.Default__TrBrowserManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,38 +33,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OpenURL() { return mOpenURL ? mOpenURL : (mOpenURL = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.OpenURL")); }
-			ScriptFunction OpenVideo() { return mOpenVideo ? mOpenVideo : (mOpenVideo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.OpenVideo")); }
-			ScriptFunction GetLanguageString() { return mGetLanguageString ? mGetLanguageString : (mGetLanguageString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.GetLanguageString")); }
-			ScriptFunction Alert() { return mAlert ? mAlert : (mAlert = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.Alert")); }
-			ScriptFunction Gold() { return mGold ? mGold : (mGold = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.Gold")); }
-			ScriptFunction Store() { return mStore ? mStore : (mStore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.Store")); }
-			ScriptFunction Booster() { return mBooster ? mBooster : (mBooster = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.Booster")); }
-			ScriptFunction Support() { return mSupport ? mSupport : (mSupport = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.Support")); }
-			ScriptFunction Profile() { return mProfile ? mProfile : (mProfile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.Profile")); }
-			ScriptFunction ActivateKey() { return mActivateKey ? mActivateKey : (mActivateKey = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.ActivateKey")); }
-			ScriptFunction RecoverPassword() { return mRecoverPassword ? mRecoverPassword : (mRecoverPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.RecoverPassword")); }
-			ScriptFunction RecoverUsername() { return mRecoverUsername ? mRecoverUsername : (mRecoverUsername = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.RecoverUsername")); }
-			ScriptFunction ClassVideo() { return mClassVideo ? mClassVideo : (mClassVideo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.ClassVideo")); }
-			ScriptFunction CreateAccount() { return mCreateAccount ? mCreateAccount : (mCreateAccount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.CreateAccount")); }
-			ScriptFunction GetLangParam() { return mGetLangParam ? mGetLangParam : (mGetLangParam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrBrowserManager.GetLangParam")); }
+			ScriptFunction OpenURL() { mixin(MGF!("mOpenURL", "Function TribesGame.TrBrowserManager.OpenURL")()); }
+			ScriptFunction OpenVideo() { mixin(MGF!("mOpenVideo", "Function TribesGame.TrBrowserManager.OpenVideo")()); }
+			ScriptFunction GetLanguageString() { mixin(MGF!("mGetLanguageString", "Function TribesGame.TrBrowserManager.GetLanguageString")()); }
+			ScriptFunction Alert() { mixin(MGF!("mAlert", "Function TribesGame.TrBrowserManager.Alert")()); }
+			ScriptFunction Gold() { mixin(MGF!("mGold", "Function TribesGame.TrBrowserManager.Gold")()); }
+			ScriptFunction Store() { mixin(MGF!("mStore", "Function TribesGame.TrBrowserManager.Store")()); }
+			ScriptFunction Booster() { mixin(MGF!("mBooster", "Function TribesGame.TrBrowserManager.Booster")()); }
+			ScriptFunction Support() { mixin(MGF!("mSupport", "Function TribesGame.TrBrowserManager.Support")()); }
+			ScriptFunction Profile() { mixin(MGF!("mProfile", "Function TribesGame.TrBrowserManager.Profile")()); }
+			ScriptFunction ActivateKey() { mixin(MGF!("mActivateKey", "Function TribesGame.TrBrowserManager.ActivateKey")()); }
+			ScriptFunction RecoverPassword() { mixin(MGF!("mRecoverPassword", "Function TribesGame.TrBrowserManager.RecoverPassword")()); }
+			ScriptFunction RecoverUsername() { mixin(MGF!("mRecoverUsername", "Function TribesGame.TrBrowserManager.RecoverUsername")()); }
+			ScriptFunction ClassVideo() { mixin(MGF!("mClassVideo", "Function TribesGame.TrBrowserManager.ClassVideo")()); }
+			ScriptFunction CreateAccount() { mixin(MGF!("mCreateAccount", "Function TribesGame.TrBrowserManager.CreateAccount")()); }
+			ScriptFunction GetLangParam() { mixin(MGF!("mGetLangParam", "Function TribesGame.TrBrowserManager.GetLangParam")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString URLCreateSteamAccount() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
-		ScriptString URLRecoverUsername() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 192); }
-		ScriptString URLRecoverPassword() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 180); }
-		ScriptString URLCreateAccount() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-		ScriptString URLActivateKey() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-		ScriptString URLClassVideo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString URLRedirect() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-		ScriptString URLProfile() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 120); }
-		ScriptString URLSupport() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 108); }
-		ScriptString URLBooster() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 96); }
-		ScriptString URLStore() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
-		ScriptString URLAlert() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 72); }
-		ScriptString URLGold() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 60); }
+		ScriptString URLCreateSteamAccount() { mixin(MGPC!(ScriptString, 204)()); }
+		ScriptString URLRecoverUsername() { mixin(MGPC!(ScriptString, 192)()); }
+		ScriptString URLRecoverPassword() { mixin(MGPC!(ScriptString, 180)()); }
+		ScriptString URLCreateAccount() { mixin(MGPC!(ScriptString, 168)()); }
+		ScriptString URLActivateKey() { mixin(MGPC!(ScriptString, 156)()); }
+		ScriptString URLClassVideo() { mixin(MGPC!(ScriptString, 144)()); }
+		ScriptString URLRedirect() { mixin(MGPC!(ScriptString, 132)()); }
+		ScriptString URLProfile() { mixin(MGPC!(ScriptString, 120)()); }
+		ScriptString URLSupport() { mixin(MGPC!(ScriptString, 108)()); }
+		ScriptString URLBooster() { mixin(MGPC!(ScriptString, 96)()); }
+		ScriptString URLStore() { mixin(MGPC!(ScriptString, 84)()); }
+		ScriptString URLAlert() { mixin(MGPC!(ScriptString, 72)()); }
+		ScriptString URLGold() { mixin(MGPC!(ScriptString, 60)()); }
 	}
 final:
 	void OpenURL(ScriptString pURL)

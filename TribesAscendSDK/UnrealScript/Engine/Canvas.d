@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Canvas;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Engine.MaterialInterface;
@@ -12,9 +13,9 @@ extern(C++) interface Canvas : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Canvas")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Canvas")()); }
 	private static __gshared Canvas mDefaultProperties;
-	@property final static Canvas DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Canvas)("Canvas Engine.Default__Canvas")); }
+	@property final static Canvas DefaultProperties() { mixin(MGDPC!(Canvas, "Canvas Engine.Default__Canvas")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -53,37 +54,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetPos() { return mSetPos ? mSetPos : (mSetPos = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.SetPos")); }
-			ScriptFunction SetDrawColor() { return mSetDrawColor ? mSetDrawColor : (mSetDrawColor = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.SetDrawColor")); }
-			ScriptFunction DrawText() { return mDrawText ? mDrawText : (mDrawText = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawText")); }
-			ScriptFunction Project() { return mProject ? mProject : (mProject = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.Project")); }
-			ScriptFunction StrLen() { return mStrLen ? mStrLen : (mStrLen = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.StrLen")); }
-			ScriptFunction DrawTile() { return mDrawTile ? mDrawTile : (mDrawTile = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawTile")); }
-			ScriptFunction PreOptimizeDrawTiles() { return mPreOptimizeDrawTiles ? mPreOptimizeDrawTiles : (mPreOptimizeDrawTiles = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.PreOptimizeDrawTiles")); }
-			ScriptFunction DrawMaterialTile() { return mDrawMaterialTile ? mDrawMaterialTile : (mDrawMaterialTile = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawMaterialTile")); }
-			ScriptFunction DrawRotatedTile() { return mDrawRotatedTile ? mDrawRotatedTile : (mDrawRotatedTile = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawRotatedTile")); }
-			ScriptFunction DrawRotatedMaterialTile() { return mDrawRotatedMaterialTile ? mDrawRotatedMaterialTile : (mDrawRotatedMaterialTile = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawRotatedMaterialTile")); }
-			ScriptFunction DrawTileStretched() { return mDrawTileStretched ? mDrawTileStretched : (mDrawTileStretched = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawTileStretched")); }
-			ScriptFunction DrawTris() { return mDrawTris ? mDrawTris : (mDrawTris = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawTris")); }
-			ScriptFunction CreateFontRenderInfo() { return mCreateFontRenderInfo ? mCreateFontRenderInfo : (mCreateFontRenderInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.CreateFontRenderInfo")); }
-			ScriptFunction TextSize() { return mTextSize ? mTextSize : (mTextSize = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.TextSize")); }
-			ScriptFunction DeProject() { return mDeProject ? mDeProject : (mDeProject = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DeProject")); }
-			ScriptFunction PushTranslationMatrix() { return mPushTranslationMatrix ? mPushTranslationMatrix : (mPushTranslationMatrix = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.PushTranslationMatrix")); }
-			ScriptFunction PopTransform() { return mPopTransform ? mPopTransform : (mPopTransform = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.PopTransform")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.Reset")); }
-			ScriptFunction SetOrigin() { return mSetOrigin ? mSetOrigin : (mSetOrigin = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.SetOrigin")); }
-			ScriptFunction SetClip() { return mSetClip ? mSetClip : (mSetClip = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.SetClip")); }
-			ScriptFunction DrawTexture() { return mDrawTexture ? mDrawTexture : (mDrawTexture = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawTexture")); }
-			ScriptFunction DrawTextureBlended() { return mDrawTextureBlended ? mDrawTextureBlended : (mDrawTextureBlended = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawTextureBlended")); }
-			ScriptFunction MakeIcon() { return mMakeIcon ? mMakeIcon : (mMakeIcon = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.MakeIcon")); }
-			ScriptFunction DrawIcon() { return mDrawIcon ? mDrawIcon : (mDrawIcon = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawIcon")); }
-			ScriptFunction DrawRect() { return mDrawRect ? mDrawRect : (mDrawRect = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawRect")); }
-			ScriptFunction DrawBox() { return mDrawBox ? mDrawBox : (mDrawBox = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawBox")); }
-			ScriptFunction SetDrawColorStruct() { return mSetDrawColorStruct ? mSetDrawColorStruct : (mSetDrawColorStruct = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.SetDrawColorStruct")); }
-			ScriptFunction Draw2DLine() { return mDraw2DLine ? mDraw2DLine : (mDraw2DLine = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.Draw2DLine")); }
-			ScriptFunction DrawTextureLine() { return mDrawTextureLine ? mDrawTextureLine : (mDrawTextureLine = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawTextureLine")); }
-			ScriptFunction DrawTextureDoubleLine() { return mDrawTextureDoubleLine ? mDrawTextureDoubleLine : (mDrawTextureDoubleLine = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawTextureDoubleLine")); }
-			ScriptFunction DrawDebugGraph() { return mDrawDebugGraph ? mDrawDebugGraph : (mDrawDebugGraph = ScriptObject.Find!(ScriptFunction)("Function Engine.Canvas.DrawDebugGraph")); }
+			ScriptFunction SetPos() { mixin(MGF!("mSetPos", "Function Engine.Canvas.SetPos")()); }
+			ScriptFunction SetDrawColor() { mixin(MGF!("mSetDrawColor", "Function Engine.Canvas.SetDrawColor")()); }
+			ScriptFunction DrawText() { mixin(MGF!("mDrawText", "Function Engine.Canvas.DrawText")()); }
+			ScriptFunction Project() { mixin(MGF!("mProject", "Function Engine.Canvas.Project")()); }
+			ScriptFunction StrLen() { mixin(MGF!("mStrLen", "Function Engine.Canvas.StrLen")()); }
+			ScriptFunction DrawTile() { mixin(MGF!("mDrawTile", "Function Engine.Canvas.DrawTile")()); }
+			ScriptFunction PreOptimizeDrawTiles() { mixin(MGF!("mPreOptimizeDrawTiles", "Function Engine.Canvas.PreOptimizeDrawTiles")()); }
+			ScriptFunction DrawMaterialTile() { mixin(MGF!("mDrawMaterialTile", "Function Engine.Canvas.DrawMaterialTile")()); }
+			ScriptFunction DrawRotatedTile() { mixin(MGF!("mDrawRotatedTile", "Function Engine.Canvas.DrawRotatedTile")()); }
+			ScriptFunction DrawRotatedMaterialTile() { mixin(MGF!("mDrawRotatedMaterialTile", "Function Engine.Canvas.DrawRotatedMaterialTile")()); }
+			ScriptFunction DrawTileStretched() { mixin(MGF!("mDrawTileStretched", "Function Engine.Canvas.DrawTileStretched")()); }
+			ScriptFunction DrawTris() { mixin(MGF!("mDrawTris", "Function Engine.Canvas.DrawTris")()); }
+			ScriptFunction CreateFontRenderInfo() { mixin(MGF!("mCreateFontRenderInfo", "Function Engine.Canvas.CreateFontRenderInfo")()); }
+			ScriptFunction TextSize() { mixin(MGF!("mTextSize", "Function Engine.Canvas.TextSize")()); }
+			ScriptFunction DeProject() { mixin(MGF!("mDeProject", "Function Engine.Canvas.DeProject")()); }
+			ScriptFunction PushTranslationMatrix() { mixin(MGF!("mPushTranslationMatrix", "Function Engine.Canvas.PushTranslationMatrix")()); }
+			ScriptFunction PopTransform() { mixin(MGF!("mPopTransform", "Function Engine.Canvas.PopTransform")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.Canvas.Reset")()); }
+			ScriptFunction SetOrigin() { mixin(MGF!("mSetOrigin", "Function Engine.Canvas.SetOrigin")()); }
+			ScriptFunction SetClip() { mixin(MGF!("mSetClip", "Function Engine.Canvas.SetClip")()); }
+			ScriptFunction DrawTexture() { mixin(MGF!("mDrawTexture", "Function Engine.Canvas.DrawTexture")()); }
+			ScriptFunction DrawTextureBlended() { mixin(MGF!("mDrawTextureBlended", "Function Engine.Canvas.DrawTextureBlended")()); }
+			ScriptFunction MakeIcon() { mixin(MGF!("mMakeIcon", "Function Engine.Canvas.MakeIcon")()); }
+			ScriptFunction DrawIcon() { mixin(MGF!("mDrawIcon", "Function Engine.Canvas.DrawIcon")()); }
+			ScriptFunction DrawRect() { mixin(MGF!("mDrawRect", "Function Engine.Canvas.DrawRect")()); }
+			ScriptFunction DrawBox() { mixin(MGF!("mDrawBox", "Function Engine.Canvas.DrawBox")()); }
+			ScriptFunction SetDrawColorStruct() { mixin(MGF!("mSetDrawColorStruct", "Function Engine.Canvas.SetDrawColorStruct")()); }
+			ScriptFunction Draw2DLine() { mixin(MGF!("mDraw2DLine", "Function Engine.Canvas.Draw2DLine")()); }
+			ScriptFunction DrawTextureLine() { mixin(MGF!("mDrawTextureLine", "Function Engine.Canvas.DrawTextureLine")()); }
+			ScriptFunction DrawTextureDoubleLine() { mixin(MGF!("mDrawTextureDoubleLine", "Function Engine.Canvas.DrawTextureDoubleLine")()); }
+			ScriptFunction DrawDebugGraph() { mixin(MGF!("mDrawDebugGraph", "Function Engine.Canvas.DrawDebugGraph")()); }
 		}
 	}
 	struct CanvasIcon
@@ -91,13 +92,13 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Canvas.CanvasIcon")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.CanvasIcon")()); }
 		@property final auto ref
 		{
-			float VL() { return *cast(float*)(cast(size_t)&this + 16); }
-			float UL() { return *cast(float*)(cast(size_t)&this + 12); }
-			float V() { return *cast(float*)(cast(size_t)&this + 8); }
-			float U() { return *cast(float*)(cast(size_t)&this + 4); }
+			float VL() { mixin(MGPS!(float, 16)()); }
+			float UL() { mixin(MGPS!(float, 12)()); }
+			float V() { mixin(MGPS!(float, 8)()); }
+			float U() { mixin(MGPS!(float, 4)()); }
 			// WARNING: Property 'Texture' has the same name as a defined type!
 		}
 	}
@@ -106,17 +107,17 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Canvas.DepthFieldGlowInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.DepthFieldGlowInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				UObject.Vector2D GlowInnerRadius() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 28); }
-				UObject.Vector2D GlowOuterRadius() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 20); }
-				UObject.LinearColor GlowColor() { return *cast(UObject.LinearColor*)(cast(size_t)&this + 4); }
+				UObject.Vector2D GlowInnerRadius() { mixin(MGPS!(UObject.Vector2D, 28)()); }
+				UObject.Vector2D GlowOuterRadius() { mixin(MGPS!(UObject.Vector2D, 20)()); }
+				UObject.LinearColor GlowColor() { mixin(MGPS!(UObject.LinearColor, 4)()); }
 			}
-			bool bEnableGlow() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bEnableGlow(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bEnableGlow() { mixin(MGBPS!(0, 0x1)()); }
+			bool bEnableGlow(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	struct FontRenderInfo
@@ -124,14 +125,14 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Canvas.FontRenderInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.FontRenderInfo")()); }
 		@property final
 		{
-			@property final auto ref Canvas.DepthFieldGlowInfo GlowInfo() { return *cast(Canvas.DepthFieldGlowInfo*)(cast(size_t)&this + 4); }
-			bool bEnableShadow() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bEnableShadow(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-			bool bClipText() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bClipText(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			@property final auto ref Canvas.DepthFieldGlowInfo GlowInfo() { mixin(MGPS!(Canvas.DepthFieldGlowInfo, 4)()); }
+			bool bEnableShadow() { mixin(MGBPS!(0, 0x2)()); }
+			bool bEnableShadow(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bClipText() { mixin(MGBPS!(0, 0x1)()); }
+			bool bClipText(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
 	struct CanvasUVTri
@@ -139,15 +140,15 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Canvas.CanvasUVTri")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.CanvasUVTri")()); }
 		@property final auto ref
 		{
-			UObject.Vector2D V2_UV() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 40); }
-			UObject.Vector2D V2_Pos() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 32); }
-			UObject.Vector2D V1_UV() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 24); }
-			UObject.Vector2D V1_Pos() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 16); }
-			UObject.Vector2D V0_UV() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 8); }
-			UObject.Vector2D V0_Pos() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 0); }
+			UObject.Vector2D V2_UV() { mixin(MGPS!(UObject.Vector2D, 40)()); }
+			UObject.Vector2D V2_Pos() { mixin(MGPS!(UObject.Vector2D, 32)()); }
+			UObject.Vector2D V1_UV() { mixin(MGPS!(UObject.Vector2D, 24)()); }
+			UObject.Vector2D V1_Pos() { mixin(MGPS!(UObject.Vector2D, 16)()); }
+			UObject.Vector2D V0_UV() { mixin(MGPS!(UObject.Vector2D, 8)()); }
+			UObject.Vector2D V0_Pos() { mixin(MGPS!(UObject.Vector2D, 0)()); }
 		}
 	}
 	struct TextSizingParameters
@@ -155,17 +156,17 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Canvas.TextSizingParameters")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.TextSizingParameters")()); }
 		@property final auto ref
 		{
-			float ViewportHeight() { return *cast(float*)(cast(size_t)&this + 36); }
-			UObject.Vector2D SpacingAdjust() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 28); }
-			Font DrawFont() { return *cast(Font*)(cast(size_t)&this + 24); }
-			UObject.Vector2D Scaling() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 16); }
-			float DrawYL() { return *cast(float*)(cast(size_t)&this + 12); }
-			float DrawXL() { return *cast(float*)(cast(size_t)&this + 8); }
-			float DrawY() { return *cast(float*)(cast(size_t)&this + 4); }
-			float DrawX() { return *cast(float*)(cast(size_t)&this + 0); }
+			float ViewportHeight() { mixin(MGPS!(float, 36)()); }
+			UObject.Vector2D SpacingAdjust() { mixin(MGPS!(UObject.Vector2D, 28)()); }
+			Font DrawFont() { mixin(MGPS!(Font, 24)()); }
+			UObject.Vector2D Scaling() { mixin(MGPS!(UObject.Vector2D, 16)()); }
+			float DrawYL() { mixin(MGPS!(float, 12)()); }
+			float DrawXL() { mixin(MGPS!(float, 8)()); }
+			float DrawY() { mixin(MGPS!(float, 4)()); }
+			float DrawX() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	struct WrappedStringElement
@@ -173,38 +174,38 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Canvas.WrappedStringElement")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.WrappedStringElement")()); }
 		@property final auto ref
 		{
-			UObject.Vector2D LineExtent() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 12); }
-			ScriptString Value() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			UObject.Vector2D LineExtent() { mixin(MGPS!(UObject.Vector2D, 12)()); }
+			ScriptString Value() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Color DrawColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 96); }
+			UObject.Color DrawColor() { mixin(MGPC!(UObject.Color, 96)()); }
 			// WARNING: Property 'Font' has the same name as a defined type!
-			Texture2D DefaultTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 144); }
-			UObject.Plane ColorModulate() { return *cast(UObject.Plane*)(cast(size_t)cast(void*)this + 128); }
-			UObject.Pointer SceneView() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 116); }
+			Texture2D DefaultTexture() { mixin(MGPC!(Texture2D, 144)()); }
+			UObject.Plane ColorModulate() { mixin(MGPC!(UObject.Plane, 128)()); }
+			UObject.Pointer SceneView() { mixin(MGPC!(UObject.Pointer, 116)()); }
 			// WARNING: Property 'Canvas' has the same name as a defined type!
-			int SizeY() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
-			int SizeX() { return *cast(int*)(cast(size_t)cast(void*)this + 104); }
-			float CurYL() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float CurZ() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-			float CurY() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			float CurX() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float ClipY() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			float ClipX() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-			float OrgY() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			float OrgX() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
+			int SizeY() { mixin(MGPC!(int, 108)()); }
+			int SizeX() { mixin(MGPC!(int, 104)()); }
+			float CurYL() { mixin(MGPC!(float, 92)()); }
+			float CurZ() { mixin(MGPC!(float, 88)()); }
+			float CurY() { mixin(MGPC!(float, 84)()); }
+			float CurX() { mixin(MGPC!(float, 80)()); }
+			float ClipY() { mixin(MGPC!(float, 76)()); }
+			float ClipX() { mixin(MGPC!(float, 72)()); }
+			float OrgY() { mixin(MGPC!(float, 68)()); }
+			float OrgX() { mixin(MGPC!(float, 64)()); }
 		}
-		bool bNoSmooth() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x2) != 0; }
-		bool bNoSmooth(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x2; } return val; }
-		bool bCenter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x1) != 0; }
-		bool bCenter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x1; } return val; }
+		bool bNoSmooth() { mixin(MGBPC!(100, 0x2)()); }
+		bool bNoSmooth(bool val) { mixin(MSBPC!(100, 0x2)()); }
+		bool bCenter() { mixin(MGBPC!(100, 0x1)()); }
+		bool bCenter(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}
 final:
 	void SetPos(float PosX, float PosY, float PosZ)
@@ -226,7 +227,7 @@ final:
 		params[3] = A;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDrawColor, params.ptr, cast(void*)0);
 	}
-	void DrawText(ScriptString Text, bool CR, float XScale, float YScale, Canvas.FontRenderInfo* RenderInfo)
+	void DrawText(ScriptString Text, bool CR, float XScale, float YScale, const Canvas.FontRenderInfo* RenderInfo)
 	{
 		ubyte params[64];
 		params[] = 0;
@@ -234,7 +235,7 @@ final:
 		*cast(bool*)&params[12] = CR;
 		*cast(float*)&params[16] = XScale;
 		*cast(float*)&params[20] = YScale;
-		*cast(Canvas.FontRenderInfo*)&params[24] = *RenderInfo;
+		*cast(Canvas.FontRenderInfo*)&params[24] = RenderInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawText, params.ptr, cast(void*)0);
 		*RenderInfo = *cast(Canvas.FontRenderInfo*)&params[24];
 	}
@@ -246,13 +247,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.Project, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
-	void StrLen(ScriptString String, float* XL, float* YL)
+	void StrLen(ScriptString String, ref float XL, ref float YL)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = String;
-		*cast(float*)&params[12] = *XL;
-		*cast(float*)&params[16] = *YL;
+		*cast(float*)&params[12] = XL;
+		*cast(float*)&params[16] = YL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StrLen, params.ptr, cast(void*)0);
 		*XL = *cast(float*)&params[12];
 		*YL = *cast(float*)&params[16];
@@ -365,24 +366,24 @@ final:
 		StaticClass.ProcessEvent(Functions.CreateFontRenderInfo, params.ptr, cast(void*)0);
 		return *cast(Canvas.FontRenderInfo*)&params[40];
 	}
-	void TextSize(ScriptString String, float* XL, float* YL)
+	void TextSize(ScriptString String, ref float XL, ref float YL)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = String;
-		*cast(float*)&params[12] = *XL;
-		*cast(float*)&params[16] = *YL;
+		*cast(float*)&params[12] = XL;
+		*cast(float*)&params[16] = YL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TextSize, params.ptr, cast(void*)0);
 		*XL = *cast(float*)&params[12];
 		*YL = *cast(float*)&params[16];
 	}
-	void DeProject(UObject.Vector2D ScreenPos, Vector* WorldOrigin, Vector* WorldDirection)
+	void DeProject(UObject.Vector2D ScreenPos, ref Vector WorldOrigin, ref Vector WorldDirection)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(UObject.Vector2D*)params.ptr = ScreenPos;
-		*cast(Vector*)&params[8] = *WorldOrigin;
-		*cast(Vector*)&params[20] = *WorldDirection;
+		*cast(Vector*)&params[8] = WorldOrigin;
+		*cast(Vector*)&params[20] = WorldDirection;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DeProject, params.ptr, cast(void*)0);
 		*WorldOrigin = *cast(Vector*)&params[8];
 		*WorldDirection = *cast(Vector*)&params[20];

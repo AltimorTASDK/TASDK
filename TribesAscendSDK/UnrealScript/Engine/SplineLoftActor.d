@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SplineLoftActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SplineActor;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialInterface;
@@ -10,9 +11,9 @@ extern(C++) interface SplineLoftActor : SplineActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SplineLoftActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SplineLoftActor")()); }
 	private static __gshared SplineLoftActor mDefaultProperties;
-	@property final static SplineLoftActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SplineLoftActor)("SplineLoftActor Engine.Default__SplineLoftActor")); }
+	@property final static SplineLoftActor DefaultProperties() { mixin(MGDPC!(SplineLoftActor, "SplineLoftActor Engine.Default__SplineLoftActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClearLoftMesh() { return mClearLoftMesh ? mClearLoftMesh : (mClearLoftMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineLoftActor.ClearLoftMesh")); }
-			ScriptFunction UpdateSplineParams() { return mUpdateSplineParams ? mUpdateSplineParams : (mUpdateSplineParams = ScriptObject.Find!(ScriptFunction)("Function Engine.SplineLoftActor.UpdateSplineParams")); }
+			ScriptFunction ClearLoftMesh() { mixin(MGF!("mClearLoftMesh", "Function Engine.SplineLoftActor.ClearLoftMesh")()); }
+			ScriptFunction UpdateSplineParams() { mixin(MGF!("mUpdateSplineParams", "Function Engine.SplineLoftActor.UpdateSplineParams")()); }
 		}
 	}
 	@property final
@@ -32,22 +33,23 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) SplineMeshComps() { return *cast(ScriptArray!(
+void*) SplineMeshComps() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 564); }
-			ScriptArray!(MaterialInterface) DeformMeshMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 580); }
-			float MeshMaxDrawDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 624); }
-			UObject.Vector2D Offset() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 608); }
-			Vector WorldXDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 596); }
-			float Roll() { return *cast(float*)(cast(size_t)cast(void*)this + 592); }
-			StaticMesh DeformMesh() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 576); }
-			float ScaleY() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-			float ScaleX() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
+void*), 564)()); }
+			ScriptArray!(MaterialInterface) DeformMeshMaterials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 580)()); }
+			float MeshMaxDrawDistance() { mixin(MGPC!(float, 624)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MeshLightEnvironment'!
+			UObject.Vector2D Offset() { mixin(MGPC!(UObject.Vector2D, 608)()); }
+			Vector WorldXDir() { mixin(MGPC!(Vector, 596)()); }
+			float Roll() { mixin(MGPC!(float, 592)()); }
+			StaticMesh DeformMesh() { mixin(MGPC!(StaticMesh, 576)()); }
+			float ScaleY() { mixin(MGPC!(float, 560)()); }
+			float ScaleX() { mixin(MGPC!(float, 556)()); }
 		}
-		bool bAcceptsLights() { return (*cast(uint*)(cast(size_t)cast(void*)this + 616) & 0x2) != 0; }
-		bool bAcceptsLights(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 616) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 616) &= ~0x2; } return val; }
-		bool bSmoothInterpRollAndScale() { return (*cast(uint*)(cast(size_t)cast(void*)this + 616) & 0x1) != 0; }
-		bool bSmoothInterpRollAndScale(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 616) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 616) &= ~0x1; } return val; }
+		bool bAcceptsLights() { mixin(MGBPC!(616, 0x2)()); }
+		bool bAcceptsLights(bool val) { mixin(MSBPC!(616, 0x2)()); }
+		bool bSmoothInterpRollAndScale() { mixin(MGBPC!(616, 0x1)()); }
+		bool bSmoothInterpRollAndScale(bool val) { mixin(MSBPC!(616, 0x1)()); }
 	}
 final:
 	void ClearLoftMesh()

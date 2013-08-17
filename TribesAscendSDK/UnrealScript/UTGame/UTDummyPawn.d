@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDummyPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.Weapon;
 import UnrealScript.Engine.SoundCue;
@@ -10,9 +11,9 @@ extern(C++) interface UTDummyPawn : UTPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDummyPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDummyPawn")()); }
 	private static __gshared UTDummyPawn mDefaultProperties;
-	@property final static UTDummyPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDummyPawn)("UTDummyPawn UTGame.Default__UTDummyPawn")); }
+	@property final static UTDummyPawn DefaultProperties() { mixin(MGDPC!(UTDummyPawn, "UTDummyPawn UTGame.Default__UTDummyPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,18 +30,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.PostBeginPlay")); }
-			ScriptFunction WeaponFired() { return mWeaponFired ? mWeaponFired : (mWeaponFired = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.WeaponFired")); }
-			ScriptFunction SetPawnAmbientSound() { return mSetPawnAmbientSound ? mSetPawnAmbientSound : (mSetPawnAmbientSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.SetPawnAmbientSound")); }
-			ScriptFunction SetWeaponAmbientSound() { return mSetWeaponAmbientSound ? mSetWeaponAmbientSound : (mSetWeaponAmbientSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.SetWeaponAmbientSound")); }
-			ScriptFunction GetAdjustedAimFor() { return mGetAdjustedAimFor ? mGetAdjustedAimFor : (mGetAdjustedAimFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.GetAdjustedAimFor")); }
-			ScriptFunction WeaponAttachmentChanged() { return mWeaponAttachmentChanged ? mWeaponAttachmentChanged : (mWeaponAttachmentChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.WeaponAttachmentChanged")); }
-			ScriptFunction GetWeaponStartTraceLocation() { return mGetWeaponStartTraceLocation ? mGetWeaponStartTraceLocation : (mGetWeaponStartTraceLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.GetWeaponStartTraceLocation")); }
-			ScriptFunction GetPawnViewLocation() { return mGetPawnViewLocation ? mGetPawnViewLocation : (mGetPawnViewLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.GetPawnViewLocation")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDummyPawn.Tick")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTDummyPawn.PostBeginPlay")()); }
+			ScriptFunction WeaponFired() { mixin(MGF!("mWeaponFired", "Function UTGame.UTDummyPawn.WeaponFired")()); }
+			ScriptFunction SetPawnAmbientSound() { mixin(MGF!("mSetPawnAmbientSound", "Function UTGame.UTDummyPawn.SetPawnAmbientSound")()); }
+			ScriptFunction SetWeaponAmbientSound() { mixin(MGF!("mSetWeaponAmbientSound", "Function UTGame.UTDummyPawn.SetWeaponAmbientSound")()); }
+			ScriptFunction GetAdjustedAimFor() { mixin(MGF!("mGetAdjustedAimFor", "Function UTGame.UTDummyPawn.GetAdjustedAimFor")()); }
+			ScriptFunction WeaponAttachmentChanged() { mixin(MGF!("mWeaponAttachmentChanged", "Function UTGame.UTDummyPawn.WeaponAttachmentChanged")()); }
+			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF!("mGetWeaponStartTraceLocation", "Function UTGame.UTDummyPawn.GetWeaponStartTraceLocation")()); }
+			ScriptFunction GetPawnViewLocation() { mixin(MGF!("mGetPawnViewLocation", "Function UTGame.UTDummyPawn.GetPawnViewLocation")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTDummyPawn.Tick")()); }
 		}
 	}
-	@property final auto ref UTSeqAct_DummyWeaponFire FireAction() { return *cast(UTSeqAct_DummyWeaponFire*)(cast(size_t)cast(void*)this + 2208); }
+	@property final auto ref UTSeqAct_DummyWeaponFire FireAction() { mixin(MGPC!(UTSeqAct_DummyWeaponFire, 2208)()); }
 final:
 	void PostBeginPlay()
 	{

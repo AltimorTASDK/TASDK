@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AIController;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Weapon;
 import UnrealScript.Engine.Actor;
@@ -12,9 +13,9 @@ extern(C++) interface AIController : Controller
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AIController")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AIController")()); }
 	private static __gshared AIController mDefaultProperties;
-	@property final static AIController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AIController)("AIController Engine.Default__AIController")); }
+	@property final static AIController DefaultProperties() { mixin(MGDPC!(AIController, "AIController Engine.Default__AIController")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,31 +32,41 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.PreBeginPlay")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.Reset")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.DisplayDebug")); }
-			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.SetTeam")); }
-			ScriptFunction GetPlayerViewPoint() { return mGetPlayerViewPoint ? mGetPlayerViewPoint : (mGetPlayerViewPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.GetPlayerViewPoint")); }
-			ScriptFunction OnAIMoveToActor() { return mOnAIMoveToActor ? mOnAIMoveToActor : (mOnAIMoveToActor = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.OnAIMoveToActor")); }
-			ScriptFunction NotifyWeaponFired() { return mNotifyWeaponFired ? mNotifyWeaponFired : (mNotifyWeaponFired = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.NotifyWeaponFired")); }
-			ScriptFunction NotifyWeaponFinishedFiring() { return mNotifyWeaponFinishedFiring ? mNotifyWeaponFinishedFiring : (mNotifyWeaponFinishedFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.NotifyWeaponFinishedFiring")); }
-			ScriptFunction CanFireWeapon() { return mCanFireWeapon ? mCanFireWeapon : (mCanFireWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.CanFireWeapon")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.AIController.PreBeginPlay")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.AIController.Reset")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.AIController.DisplayDebug")()); }
+			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function Engine.AIController.SetTeam")()); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function Engine.AIController.GetPlayerViewPoint")()); }
+			ScriptFunction OnAIMoveToActor() { mixin(MGF!("mOnAIMoveToActor", "Function Engine.AIController.OnAIMoveToActor")()); }
+			ScriptFunction NotifyWeaponFired() { mixin(MGF!("mNotifyWeaponFired", "Function Engine.AIController.NotifyWeaponFired")()); }
+			ScriptFunction NotifyWeaponFinishedFiring() { mixin(MGF!("mNotifyWeaponFinishedFiring", "Function Engine.AIController.NotifyWeaponFinishedFiring")()); }
+			ScriptFunction CanFireWeapon() { mixin(MGF!("mCanFireWeapon", "Function Engine.AIController.CanFireWeapon")()); }
 		}
+	}
+	static struct ScriptedMove
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.AIController.ScriptedMove")()); }
+	}
+	static struct ScriptedRouteMove
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.AIController.ScriptedRouteMove")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Actor ScriptedFocus() { return *cast(Actor*)(cast(size_t)cast(void*)this + 920); }
-			int ScriptedRouteIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 916); }
-			Route ScriptedRoute() { return *cast(Route*)(cast(size_t)cast(void*)this + 912); }
-			Actor ScriptedMoveTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 908); }
-			float Skill() { return *cast(float*)(cast(size_t)cast(void*)this + 904); }
+			Actor ScriptedFocus() { mixin(MGPC!(Actor, 920)()); }
+			int ScriptedRouteIndex() { mixin(MGPC!(int, 916)()); }
+			Route ScriptedRoute() { mixin(MGPC!(Route, 912)()); }
+			Actor ScriptedMoveTarget() { mixin(MGPC!(Actor, 908)()); }
+			float Skill() { mixin(MGPC!(float, 904)()); }
 		}
-		bool bReverseScriptedRoute() { return (*cast(uint*)(cast(size_t)cast(void*)this + 900) & 0x2) != 0; }
-		bool bReverseScriptedRoute(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 900) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 900) &= ~0x2; } return val; }
-		bool bAdjustFromWalls() { return (*cast(uint*)(cast(size_t)cast(void*)this + 900) & 0x1) != 0; }
-		bool bAdjustFromWalls(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 900) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 900) &= ~0x1; } return val; }
+		bool bReverseScriptedRoute() { mixin(MGBPC!(900, 0x2)()); }
+		bool bReverseScriptedRoute(bool val) { mixin(MSBPC!(900, 0x2)()); }
+		bool bAdjustFromWalls() { mixin(MGBPC!(900, 0x1)()); }
+		bool bAdjustFromWalls(bool val) { mixin(MSBPC!(900, 0x1)()); }
 	}
 final:
 	void PreBeginPlay()
@@ -66,13 +77,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -84,12 +95,12 @@ final:
 		*cast(int*)params.ptr = inTeamIdx;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTeam, params.ptr, cast(void*)0);
 	}
-	void GetPlayerViewPoint(Vector* out_Location, Rotator* out_Rotation)
+	void GetPlayerViewPoint(ref Vector out_Location, ref Rotator out_Rotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *out_Location;
-		*cast(Rotator*)&params[12] = *out_Rotation;
+		*cast(Vector*)params.ptr = out_Location;
+		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
 		*out_Location = *cast(Vector*)params.ptr;
 		*out_Rotation = *cast(Rotator*)&params[12];

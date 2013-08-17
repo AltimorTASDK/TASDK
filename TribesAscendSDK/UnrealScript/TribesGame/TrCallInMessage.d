@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCallInMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,19 +10,19 @@ extern(C++) interface TrCallInMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallInMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallInMessage")()); }
 	private static __gshared TrCallInMessage mDefaultProperties;
-	@property final static TrCallInMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallInMessage)("TrCallInMessage TribesGame.Default__TrCallInMessage")); }
+	@property final static TrCallInMessage DefaultProperties() { mixin(MGDPC!(TrCallInMessage, "TrCallInMessage TribesGame.Default__TrCallInMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallInMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrCallInMessage.GetString")()); }
 	}
 	@property final auto ref
 	{
-		ScriptString PlayerCalledInTacticalStrike() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString PlayerCalledInOrbitalStrike() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString PlayerCalledInSupportInventory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString PlayerCalledInTacticalStrike() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString PlayerCalledInOrbitalStrike() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString PlayerCalledInSupportInventory() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

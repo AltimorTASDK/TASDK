@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleTypeDataTrail;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
 
@@ -8,26 +9,26 @@ extern(C++) interface ParticleModuleTypeDataTrail : ParticleModuleTypeDataBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataTrail")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleTypeDataTrail")()); }
 	private static __gshared ParticleModuleTypeDataTrail mDefaultProperties;
-	@property final static ParticleModuleTypeDataTrail DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataTrail)("ParticleModuleTypeDataTrail Engine.Default__ParticleModuleTypeDataTrail")); }
+	@property final static ParticleModuleTypeDataTrail DefaultProperties() { mixin(MGDPC!(ParticleModuleTypeDataTrail, "ParticleModuleTypeDataTrail Engine.Default__ParticleModuleTypeDataTrail")()); }
 	@property final
 	{
 		auto ref
 		{
-			Vector SpawnDistance() { return *cast(Vector*)(cast(size_t)cast(void*)this + 108); }
-			DistributionFloat.RawDistributionFloat Tension() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 80); }
-			int TessellationFactor() { return *cast(int*)(cast(size_t)cast(void*)this + 76); }
+			Vector SpawnDistance() { mixin(MGPC!(Vector, 108)()); }
+			DistributionFloat.RawDistributionFloat Tension() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 80)()); }
+			int TessellationFactor() { mixin(MGPC!(int, 76)()); }
 		}
-		bool SpawnByDistance() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x10) != 0; }
-		bool SpawnByDistance(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x10; } return val; }
-		bool Tapered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x8) != 0; }
-		bool Tapered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x8; } return val; }
-		bool RenderTessellation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
-		bool RenderTessellation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
-		bool RenderLines() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
-		bool RenderLines(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
-		bool RenderGeometry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-		bool RenderGeometry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+		bool SpawnByDistance() { mixin(MGBPC!(72, 0x10)()); }
+		bool SpawnByDistance(bool val) { mixin(MSBPC!(72, 0x10)()); }
+		bool Tapered() { mixin(MGBPC!(72, 0x8)()); }
+		bool Tapered(bool val) { mixin(MSBPC!(72, 0x8)()); }
+		bool RenderTessellation() { mixin(MGBPC!(72, 0x4)()); }
+		bool RenderTessellation(bool val) { mixin(MSBPC!(72, 0x4)()); }
+		bool RenderLines() { mixin(MGBPC!(72, 0x2)()); }
+		bool RenderLines(bool val) { mixin(MSBPC!(72, 0x2)()); }
+		bool RenderGeometry() { mixin(MGBPC!(72, 0x1)()); }
+		bool RenderGeometry(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 }

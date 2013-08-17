@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PhysXParticleSystem;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 
@@ -8,9 +9,9 @@ extern(C++) interface PhysXParticleSystem : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysXParticleSystem")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PhysXParticleSystem")()); }
 	private static __gshared PhysXParticleSystem mDefaultProperties;
-	@property final static PhysXParticleSystem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PhysXParticleSystem)("PhysXParticleSystem Engine.Default__PhysXParticleSystem")); }
+	@property final static PhysXParticleSystem DefaultProperties() { mixin(MGDPC!(PhysXParticleSystem, "PhysXParticleSystem Engine.Default__PhysXParticleSystem")()); }
 	enum ESimulationMethod : ubyte
 	{
 		ESM_SPH = 0,
@@ -32,44 +33,44 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer PSys() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 156); }
-			UObject.Pointer CascadeScene() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 152); }
-			float CollisionResponseCoefficient() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			float Viscosity() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
-			float Stiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-			float KernelRadiusMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 136); }
-			float RestDensity() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-			float RestParticleDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 128); }
-			Vector ExternalAcceleration() { return *cast(Vector*)(cast(size_t)cast(void*)this + 116); }
-			float Damping() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			float MaxMotionDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			float StaticFrictionWithDynamicShapes() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float StaticFrictionWithStaticShapes() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float FrictionWithDynamicShapes() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float FrictionWithStaticShapes() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-			float RestitutionWithDynamicShapes() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			float RestitutionWithStaticShapes() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float CollisionDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 72); }
-			PhysXParticleSystem.EPacketSizeMultiplier PacketSizeMultiplier() { return *cast(PhysXParticleSystem.EPacketSizeMultiplier*)(cast(size_t)cast(void*)this + 70); }
-			PhysXParticleSystem.ESimulationMethod SimulationMethod() { return *cast(PhysXParticleSystem.ESimulationMethod*)(cast(size_t)cast(void*)this + 69); }
-			PrimitiveComponent.ERBCollisionChannel RBChannel() { return *cast(PrimitiveComponent.ERBCollisionChannel*)(cast(size_t)cast(void*)this + 68); }
-			int ParticleSpawnReserve() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			int MaxParticles() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			UObject.Pointer PSys() { mixin(MGPC!(UObject.Pointer, 156)()); }
+			UObject.Pointer CascadeScene() { mixin(MGPC!(UObject.Pointer, 152)()); }
+			float CollisionResponseCoefficient() { mixin(MGPC!(float, 148)()); }
+			float Viscosity() { mixin(MGPC!(float, 144)()); }
+			float Stiffness() { mixin(MGPC!(float, 140)()); }
+			float KernelRadiusMultiplier() { mixin(MGPC!(float, 136)()); }
+			float RestDensity() { mixin(MGPC!(float, 132)()); }
+			float RestParticleDistance() { mixin(MGPC!(float, 128)()); }
+			Vector ExternalAcceleration() { mixin(MGPC!(Vector, 116)()); }
+			float Damping() { mixin(MGPC!(float, 112)()); }
+			float MaxMotionDistance() { mixin(MGPC!(float, 108)()); }
+			float StaticFrictionWithDynamicShapes() { mixin(MGPC!(float, 100)()); }
+			float StaticFrictionWithStaticShapes() { mixin(MGPC!(float, 96)()); }
+			float FrictionWithDynamicShapes() { mixin(MGPC!(float, 92)()); }
+			float FrictionWithStaticShapes() { mixin(MGPC!(float, 88)()); }
+			float RestitutionWithDynamicShapes() { mixin(MGPC!(float, 84)()); }
+			float RestitutionWithStaticShapes() { mixin(MGPC!(float, 80)()); }
+			float CollisionDistance() { mixin(MGPC!(float, 76)()); }
+			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 72)()); }
+			PhysXParticleSystem.EPacketSizeMultiplier PacketSizeMultiplier() { mixin(MGPC!(PhysXParticleSystem.EPacketSizeMultiplier, 70)()); }
+			PhysXParticleSystem.ESimulationMethod SimulationMethod() { mixin(MGPC!(PhysXParticleSystem.ESimulationMethod, 69)()); }
+			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 68)()); }
+			int ParticleSpawnReserve() { mixin(MGPC!(int, 64)()); }
+			int MaxParticles() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bIsInGame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x40) != 0; }
-		bool bIsInGame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x40; } return val; }
-		bool bSyncFailed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x20) != 0; }
-		bool bSyncFailed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x20; } return val; }
-		bool bDestroy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x10) != 0; }
-		bool bDestroy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x10; } return val; }
-		bool bTwoWayCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x8) != 0; }
-		bool bTwoWayCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x8; } return val; }
-		bool bStaticCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x4) != 0; }
-		bool bStaticCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x4; } return val; }
-		bool bDisableGravity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x2) != 0; }
-		bool bDisableGravity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x2; } return val; }
-		bool bDynamicCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x1) != 0; }
-		bool bDynamicCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x1; } return val; }
+		bool bIsInGame() { mixin(MGBPC!(104, 0x40)()); }
+		bool bIsInGame(bool val) { mixin(MSBPC!(104, 0x40)()); }
+		bool bSyncFailed() { mixin(MGBPC!(104, 0x20)()); }
+		bool bSyncFailed(bool val) { mixin(MSBPC!(104, 0x20)()); }
+		bool bDestroy() { mixin(MGBPC!(104, 0x10)()); }
+		bool bDestroy(bool val) { mixin(MSBPC!(104, 0x10)()); }
+		bool bTwoWayCollision() { mixin(MGBPC!(104, 0x8)()); }
+		bool bTwoWayCollision(bool val) { mixin(MSBPC!(104, 0x8)()); }
+		bool bStaticCollision() { mixin(MGBPC!(104, 0x4)()); }
+		bool bStaticCollision(bool val) { mixin(MSBPC!(104, 0x4)()); }
+		bool bDisableGravity() { mixin(MGBPC!(104, 0x2)()); }
+		bool bDisableGravity(bool val) { mixin(MSBPC!(104, 0x2)()); }
+		bool bDynamicCollision() { mixin(MGBPC!(104, 0x1)()); }
+		bool bDynamicCollision(bool val) { mixin(MSBPC!(104, 0x1)()); }
 	}
 }

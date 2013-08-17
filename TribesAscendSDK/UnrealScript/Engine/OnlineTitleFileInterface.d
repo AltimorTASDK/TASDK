@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineTitleFileInterface;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineTitleFileInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineTitleFileInterface")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineTitleFileInterface")()); }
 	private static __gshared OnlineTitleFileInterface mDefaultProperties;
-	@property final static OnlineTitleFileInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineTitleFileInterface)("OnlineTitleFileInterface Engine.Default__OnlineTitleFileInterface")); }
+	@property final static OnlineTitleFileInterface DefaultProperties() { mixin(MGDPC!(OnlineTitleFileInterface, "OnlineTitleFileInterface Engine.Default__OnlineTitleFileInterface")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,16 +27,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReadTitleFile() { return mReadTitleFile ? mReadTitleFile : (mReadTitleFile = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.ReadTitleFile")); }
-			ScriptFunction GetTitleFileContents() { return mGetTitleFileContents ? mGetTitleFileContents : (mGetTitleFileContents = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.GetTitleFileContents")); }
-			ScriptFunction ClearDownloadedFiles() { return mClearDownloadedFiles ? mClearDownloadedFiles : (mClearDownloadedFiles = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.ClearDownloadedFiles")); }
-			ScriptFunction OnReadTitleFileComplete() { return mOnReadTitleFileComplete ? mOnReadTitleFileComplete : (mOnReadTitleFileComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.OnReadTitleFileComplete")); }
-			ScriptFunction AddReadTitleFileCompleteDelegate() { return mAddReadTitleFileCompleteDelegate ? mAddReadTitleFileCompleteDelegate : (mAddReadTitleFileCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.AddReadTitleFileCompleteDelegate")); }
-			ScriptFunction ClearReadTitleFileCompleteDelegate() { return mClearReadTitleFileCompleteDelegate ? mClearReadTitleFileCompleteDelegate : (mClearReadTitleFileCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.ClearReadTitleFileCompleteDelegate")); }
-			ScriptFunction GetTitleFileState() { return mGetTitleFileState ? mGetTitleFileState : (mGetTitleFileState = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.GetTitleFileState")); }
-			ScriptFunction ClearDownloadedFile() { return mClearDownloadedFile ? mClearDownloadedFile : (mClearDownloadedFile = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineTitleFileInterface.ClearDownloadedFile")); }
+			ScriptFunction ReadTitleFile() { mixin(MGF!("mReadTitleFile", "Function Engine.OnlineTitleFileInterface.ReadTitleFile")()); }
+			ScriptFunction GetTitleFileContents() { mixin(MGF!("mGetTitleFileContents", "Function Engine.OnlineTitleFileInterface.GetTitleFileContents")()); }
+			ScriptFunction ClearDownloadedFiles() { mixin(MGF!("mClearDownloadedFiles", "Function Engine.OnlineTitleFileInterface.ClearDownloadedFiles")()); }
+			ScriptFunction OnReadTitleFileComplete() { mixin(MGF!("mOnReadTitleFileComplete", "Function Engine.OnlineTitleFileInterface.OnReadTitleFileComplete")()); }
+			ScriptFunction AddReadTitleFileCompleteDelegate() { mixin(MGF!("mAddReadTitleFileCompleteDelegate", "Function Engine.OnlineTitleFileInterface.AddReadTitleFileCompleteDelegate")()); }
+			ScriptFunction ClearReadTitleFileCompleteDelegate() { mixin(MGF!("mClearReadTitleFileCompleteDelegate", "Function Engine.OnlineTitleFileInterface.ClearReadTitleFileCompleteDelegate")()); }
+			ScriptFunction GetTitleFileState() { mixin(MGF!("mGetTitleFileState", "Function Engine.OnlineTitleFileInterface.GetTitleFileState")()); }
+			ScriptFunction ClearDownloadedFile() { mixin(MGF!("mClearDownloadedFile", "Function Engine.OnlineTitleFileInterface.ClearDownloadedFile")()); }
 		}
 	}
+	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadTitleFileComplete__Delegate'!
 final:
 	bool ReadTitleFile(ScriptString FileToRead)
 	{
@@ -45,12 +47,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadTitleFile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool GetTitleFileContents(ScriptString Filename, ScriptArray!(ubyte)* FileContents)
+	bool GetTitleFileContents(ScriptString Filename, ref ScriptArray!(ubyte) FileContents)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		*cast(ScriptArray!(ubyte)*)&params[12] = *FileContents;
+		*cast(ScriptArray!(ubyte)*)&params[12] = FileContents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTitleFileContents, params.ptr, cast(void*)0);
 		*FileContents = *cast(ScriptArray!(ubyte)*)&params[12];
 		return *cast(bool*)&params[24];

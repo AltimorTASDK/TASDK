@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.OnlineTitleFileDownloadMcp;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
 import UnrealScript.IpDrv.MCPBase;
@@ -9,9 +10,9 @@ extern(C++) interface OnlineTitleFileDownloadMcp : MCPBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineTitleFileDownloadMcp")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.OnlineTitleFileDownloadMcp")()); }
 	private static __gshared OnlineTitleFileDownloadMcp mDefaultProperties;
-	@property final static OnlineTitleFileDownloadMcp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineTitleFileDownloadMcp)("OnlineTitleFileDownloadMcp IpDrv.Default__OnlineTitleFileDownloadMcp")); }
+	@property final static OnlineTitleFileDownloadMcp DefaultProperties() { mixin(MGDPC!(OnlineTitleFileDownloadMcp, "OnlineTitleFileDownloadMcp IpDrv.Default__OnlineTitleFileDownloadMcp")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,14 +28,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReadTitleFileComplete() { return mOnReadTitleFileComplete ? mOnReadTitleFileComplete : (mOnReadTitleFileComplete = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.OnReadTitleFileComplete")); }
-			ScriptFunction ReadTitleFile() { return mReadTitleFile ? mReadTitleFile : (mReadTitleFile = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ReadTitleFile")); }
-			ScriptFunction AddReadTitleFileCompleteDelegate() { return mAddReadTitleFileCompleteDelegate ? mAddReadTitleFileCompleteDelegate : (mAddReadTitleFileCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.AddReadTitleFileCompleteDelegate")); }
-			ScriptFunction ClearReadTitleFileCompleteDelegate() { return mClearReadTitleFileCompleteDelegate ? mClearReadTitleFileCompleteDelegate : (mClearReadTitleFileCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ClearReadTitleFileCompleteDelegate")); }
-			ScriptFunction GetTitleFileContents() { return mGetTitleFileContents ? mGetTitleFileContents : (mGetTitleFileContents = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileContents")); }
-			ScriptFunction GetTitleFileState() { return mGetTitleFileState ? mGetTitleFileState : (mGetTitleFileState = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileState")); }
-			ScriptFunction ClearDownloadedFiles() { return mClearDownloadedFiles ? mClearDownloadedFiles : (mClearDownloadedFiles = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFiles")); }
-			ScriptFunction ClearDownloadedFile() { return mClearDownloadedFile ? mClearDownloadedFile : (mClearDownloadedFile = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFile")); }
+			ScriptFunction OnReadTitleFileComplete() { mixin(MGF!("mOnReadTitleFileComplete", "Function IpDrv.OnlineTitleFileDownloadMcp.OnReadTitleFileComplete")()); }
+			ScriptFunction ReadTitleFile() { mixin(MGF!("mReadTitleFile", "Function IpDrv.OnlineTitleFileDownloadMcp.ReadTitleFile")()); }
+			ScriptFunction AddReadTitleFileCompleteDelegate() { mixin(MGF!("mAddReadTitleFileCompleteDelegate", "Function IpDrv.OnlineTitleFileDownloadMcp.AddReadTitleFileCompleteDelegate")()); }
+			ScriptFunction ClearReadTitleFileCompleteDelegate() { mixin(MGF!("mClearReadTitleFileCompleteDelegate", "Function IpDrv.OnlineTitleFileDownloadMcp.ClearReadTitleFileCompleteDelegate")()); }
+			ScriptFunction GetTitleFileContents() { mixin(MGF!("mGetTitleFileContents", "Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileContents")()); }
+			ScriptFunction GetTitleFileState() { mixin(MGF!("mGetTitleFileState", "Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileState")()); }
+			ScriptFunction ClearDownloadedFiles() { mixin(MGF!("mClearDownloadedFiles", "Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFiles")()); }
+			ScriptFunction ClearDownloadedFile() { mixin(MGF!("mClearDownloadedFile", "Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFile")()); }
 		}
 	}
 	struct TitleFileMcp
@@ -42,39 +43,40 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.TitleFileMcp")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.TitleFileMcp")()); }
 		@property final auto ref
 		{
-			ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
-			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)(cast(size_t)&this + 12); }
-			ScriptArray!(ubyte) Data() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 16); }
+			ScriptString Filename() { mixin(MGPS!(ScriptString, 0)()); }
+			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { mixin(MGPS!(OnlineSubsystem.EOnlineEnumerationReadState, 12)()); }
+			ScriptArray!(ubyte) Data() { mixin(MGPS!(ScriptArray!(ubyte), 16)()); }
 		}
-		@property final auto ref UObject.Pointer HttpDownloader() { return *cast(UObject.Pointer*)(cast(size_t)&this + 28); }
+		@property final auto ref UObject.Pointer HttpDownloader() { mixin(MGPS!(UObject.Pointer, 28)()); }
 	}
 	struct FileNameToURLMapping
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.FileNameToURLMapping")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.FileNameToURLMapping")()); }
 		@property final auto ref
 		{
-			ScriptName UrlMapping() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-			ScriptName Filename() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptName UrlMapping() { mixin(MGPS!(ScriptName, 8)()); }
+			ScriptName Filename() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ReadTitleFileCompleteDelegates() { return *cast(ScriptArray!(
+void*) ReadTitleFileCompleteDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 64); }
-		ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp) TitleFiles() { return *cast(ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp)*)(cast(size_t)cast(void*)this + 76); }
-		ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping) FilesToUrls() { return *cast(ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping)*)(cast(size_t)cast(void*)this + 108); }
-		float TimeOut() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-		ScriptString BaseUrl() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 92); }
-		int DownloadCount() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
+void*), 64)()); }
+		ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp) TitleFiles() { mixin(MGPC!(ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp), 76)()); }
+		ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping) FilesToUrls() { mixin(MGPC!(ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping), 108)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadTitleFileComplete__Delegate'!
+		float TimeOut() { mixin(MGPC!(float, 104)()); }
+		ScriptString BaseUrl() { mixin(MGPC!(ScriptString, 92)()); }
+		int DownloadCount() { mixin(MGPC!(int, 88)()); }
 	}
 final:
 	void OnReadTitleFileComplete(bool bWasSuccessful, ScriptString Filename)
@@ -115,12 +117,12 @@ void* ReadTitleFileCompleteDelegate)
 void**)params.ptr = ReadTitleFileCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadTitleFileCompleteDelegate, params.ptr, cast(void*)0);
 	}
-	bool GetTitleFileContents(ScriptString Filename, ScriptArray!(ubyte)* FileContents)
+	bool GetTitleFileContents(ScriptString Filename, ref ScriptArray!(ubyte) FileContents)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		*cast(ScriptArray!(ubyte)*)&params[12] = *FileContents;
+		*cast(ScriptArray!(ubyte)*)&params[12] = FileContents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTitleFileContents, params.ptr, cast(void*)0);
 		*FileContents = *cast(ScriptArray!(ubyte)*)&params[12];
 		return *cast(bool*)&params[24];

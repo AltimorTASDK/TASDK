@@ -1,15 +1,16 @@
 module UnrealScript.Engine.FileLog;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.FileWriter;
 
 extern(C++) interface FileLog : FileWriter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FileLog")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FileLog")()); }
 	private static __gshared FileLog mDefaultProperties;
-	@property final static FileLog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FileLog)("FileLog Engine.Default__FileLog")); }
+	@property final static FileLog DefaultProperties() { mixin(MGDPC!(FileLog, "FileLog Engine.Default__FileLog")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OpenLog() { return mOpenLog ? mOpenLog : (mOpenLog = ScriptObject.Find!(ScriptFunction)("Function Engine.FileLog.OpenLog")); }
-			ScriptFunction CloseLog() { return mCloseLog ? mCloseLog : (mCloseLog = ScriptObject.Find!(ScriptFunction)("Function Engine.FileLog.CloseLog")); }
+			ScriptFunction OpenLog() { mixin(MGF!("mOpenLog", "Function Engine.FileLog.OpenLog")()); }
+			ScriptFunction CloseLog() { mixin(MGF!("mCloseLog", "Function Engine.FileLog.CloseLog")()); }
 		}
 	}
 final:

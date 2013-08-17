@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPlayerController;
 import UnrealScript.UTGame.UTAnimBlendByHoverboarding;
 import UnrealScript.UTGame.UTClientSideWeaponPawn;
@@ -46,9 +47,9 @@ extern(C++) interface UTPawn : UDKPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPawn")()); }
 	private static __gshared UTPawn mDefaultProperties;
-	@property final static UTPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPawn)("UTPawn UTGame.Default__UTPawn")); }
+	@property final static UTPawn DefaultProperties() { mixin(MGDPC!(UTPawn, "UTPawn UTGame.Default__UTPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -226,176 +227,176 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanDoubleJump() { return mCanDoubleJump ? mCanDoubleJump : (mCanDoubleJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.CanDoubleJump")); }
-			ScriptFunction WeaponBob() { return mWeaponBob ? mWeaponBob : (mWeaponBob = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.WeaponBob")); }
-			ScriptFunction GetEyeHeight() { return mGetEyeHeight ? mGetEyeHeight : (mGetEyeHeight = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetEyeHeight")); }
-			ScriptFunction IsFirstPerson() { return mIsFirstPerson ? mIsFirstPerson : (mIsFirstPerson = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.IsFirstPerson")); }
-			ScriptFunction AdjustPPEffects() { return mAdjustPPEffects ? mAdjustPPEffects : (mAdjustPPEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.AdjustPPEffects")); }
-			ScriptFunction AdjustedStrength() { return mAdjustedStrength ? mAdjustedStrength : (mAdjustedStrength = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.AdjustedStrength")); }
-			ScriptFunction GetUTPlayerReplicationInfo() { return mGetUTPlayerReplicationInfo ? mGetUTPlayerReplicationInfo : (mGetUTPlayerReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetUTPlayerReplicationInfo")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.FellOutOfWorld")); }
-			ScriptFunction HeadVolumeChange() { return mHeadVolumeChange ? mHeadVolumeChange : (mHeadVolumeChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.HeadVolumeChange")); }
-			ScriptFunction PoweredUp() { return mPoweredUp ? mPoweredUp : (mPoweredUp = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PoweredUp")); }
-			ScriptFunction InCombat() { return mInCombat ? mInCombat : (mInCombat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.InCombat")); }
-			ScriptFunction RenderMapIcon() { return mRenderMapIcon ? mRenderMapIcon : (mRenderMapIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.RenderMapIcon")); }
-			ScriptFunction SetWalking() { return mSetWalking ? mSetWalking : (mSetWalking = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetWalking")); }
-			ScriptFunction ClearBodyMatColor() { return mClearBodyMatColor ? mClearBodyMatColor : (mClearBodyMatColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ClearBodyMatColor")); }
-			ScriptFunction SetBodyMatColor() { return mSetBodyMatColor ? mSetBodyMatColor : (mSetBodyMatColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetBodyMatColor")); }
-			ScriptFunction SetInvisible() { return mSetInvisible ? mSetInvisible : (mSetInvisible = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetInvisible")); }
-			ScriptFunction SetSkin() { return mSetSkin ? mSetSkin : (mSetSkin = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetSkin")); }
-			ScriptFunction SetArmsSkin() { return mSetArmsSkin ? mSetArmsSkin : (mSetArmsSkin = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetArmsSkin")); }
-			ScriptFunction VerifyBodyMaterialInstance() { return mVerifyBodyMaterialInstance ? mVerifyBodyMaterialInstance : (mVerifyBodyMaterialInstance = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.VerifyBodyMaterialInstance")); }
-			ScriptFunction SetCharacterClassFromInfo() { return mSetCharacterClassFromInfo ? mSetCharacterClassFromInfo : (mSetCharacterClassFromInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetCharacterClassFromInfo")); }
-			ScriptFunction SetCharacterMeshInfo() { return mSetCharacterMeshInfo ? mSetCharacterMeshInfo : (mSetCharacterMeshInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetCharacterMeshInfo")); }
-			ScriptFunction SetPawnRBChannels() { return mSetPawnRBChannels ? mSetPawnRBChannels : (mSetPawnRBChannels = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetPawnRBChannels")); }
-			ScriptFunction ResetCharPhysState() { return mResetCharPhysState ? mResetCharPhysState : (mResetCharPhysState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ResetCharPhysState")); }
-			ScriptFunction NotifyTeamChanged() { return mNotifyTeamChanged ? mNotifyTeamChanged : (mNotifyTeamChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.NotifyTeamChanged")); }
-			ScriptFunction SetFirstPersonArmsInfo() { return mSetFirstPersonArmsInfo ? mSetFirstPersonArmsInfo : (mSetFirstPersonArmsInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetFirstPersonArmsInfo")); }
-			ScriptFunction SetTeamColor() { return mSetTeamColor ? mSetTeamColor : (mSetTeamColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetTeamColor")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PostBeginPlay")); }
-			ScriptFunction UpdateShadowSettings() { return mUpdateShadowSettings ? mUpdateShadowSettings : (mUpdateShadowSettings = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.UpdateShadowSettings")); }
-			ScriptFunction ReattachMesh() { return mReattachMesh ? mReattachMesh : (mReattachMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ReattachMesh")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PostInitAnimTree")); }
-			ScriptFunction SetHandIKEnabled() { return mSetHandIKEnabled ? mSetHandIKEnabled : (mSetHandIKEnabled = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetHandIKEnabled")); }
-			ScriptFunction SetAnimRateScale() { return mSetAnimRateScale ? mSetAnimRateScale : (mSetAnimRateScale = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetAnimRateScale")); }
-			ScriptFunction SetWeapAnimType() { return mSetWeapAnimType ? mSetWeapAnimType : (mSetWeapAnimType = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetWeapAnimType")); }
-			ScriptFunction LeaveABloodSplatterDecal() { return mLeaveABloodSplatterDecal ? mLeaveABloodSplatterDecal : (mLeaveABloodSplatterDecal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.LeaveABloodSplatterDecal")); }
-			ScriptFunction PerformEmoteCommand() { return mPerformEmoteCommand ? mPerformEmoteCommand : (mPerformEmoteCommand = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PerformEmoteCommand")); }
-			ScriptFunction DoPlayEmote() { return mDoPlayEmote ? mDoPlayEmote : (mDoPlayEmote = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.DoPlayEmote")); }
-			ScriptFunction ServerPlayEmote() { return mServerPlayEmote ? mServerPlayEmote : (mServerPlayEmote = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ServerPlayEmote")); }
-			ScriptFunction PlayEmote() { return mPlayEmote ? mPlayEmote : (mPlayEmote = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayEmote")); }
-			ScriptFunction OnPlayAnim() { return mOnPlayAnim ? mOnPlayAnim : (mOnPlayAnim = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.OnPlayAnim")); }
-			ScriptFunction SpawnDefaultController() { return mSpawnDefaultController ? mSpawnDefaultController : (mSpawnDefaultController = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SpawnDefaultController")); }
-			ScriptFunction TurnOff() { return mTurnOff ? mTurnOff : (mTurnOff = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TurnOff")); }
-			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.EncroachingOn")); }
-			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.EncroachedBy")); }
-			ScriptFunction gibbedBy() { return mgibbedBy ? mgibbedBy : (mgibbedBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.gibbedBy")); }
-			ScriptFunction JumpOffPawn() { return mJumpOffPawn ? mJumpOffPawn : (mJumpOffPawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.JumpOffPawn")); }
-			ScriptFunction StuckOnPawn() { return mStuckOnPawn ? mStuckOnPawn : (mStuckOnPawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StuckOnPawn")); }
-			ScriptFunction Falling() { return mFalling ? mFalling : (mFalling = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.Falling")); }
-			ScriptFunction AddVelocity() { return mAddVelocity ? mAddVelocity : (mAddVelocity = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.AddVelocity")); }
-			ScriptFunction Died() { return mDied ? mDied : (mDied = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.Died")); }
-			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StartFire")); }
-			ScriptFunction StopFiring() { return mStopFiring ? mStopFiring : (mStopFiring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StopFiring")); }
-			ScriptFunction BotFire() { return mBotFire ? mBotFire : (mBotFire = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.BotFire")); }
-			ScriptFunction StopWeaponFiring() { return mStopWeaponFiring ? mStopWeaponFiring : (mStopWeaponFiring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StopWeaponFiring")); }
-			ScriptFunction ChooseFireMode() { return mChooseFireMode ? mChooseFireMode : (mChooseFireMode = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ChooseFireMode")); }
-			ScriptFunction RecommendLongRangedAttack() { return mRecommendLongRangedAttack ? mRecommendLongRangedAttack : (mRecommendLongRangedAttack = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.RecommendLongRangedAttack")); }
-			ScriptFunction RangedAttackTime() { return mRangedAttackTime ? mRangedAttackTime : (mRangedAttackTime = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.RangedAttackTime")); }
-			ScriptFunction PlayVictoryAnimation() { return mPlayVictoryAnimation ? mPlayVictoryAnimation : (mPlayVictoryAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayVictoryAnimation")); }
-			ScriptFunction OnModifyHealth() { return mOnModifyHealth ? mOnModifyHealth : (mOnModifyHealth = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.OnModifyHealth")); }
-			ScriptFunction GetScreenName() { return mGetScreenName ? mGetScreenName : (mGetScreenName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetScreenName")); }
-			ScriptFunction FaceRotation() { return mFaceRotation ? mFaceRotation : (mFaceRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.FaceRotation")); }
-			ScriptFunction UpdateEyeHeight() { return mUpdateEyeHeight ? mUpdateEyeHeight : (mUpdateEyeHeight = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.UpdateEyeHeight")); }
-			ScriptFunction GetPawnViewLocation() { return mGetPawnViewLocation ? mGetPawnViewLocation : (mGetPawnViewLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetPawnViewLocation")); }
-			ScriptFunction BecomeViewTarget() { return mBecomeViewTarget ? mBecomeViewTarget : (mBecomeViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.BecomeViewTarget")); }
-			ScriptFunction EndViewTarget() { return mEndViewTarget ? mEndViewTarget : (mEndViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.EndViewTarget")); }
-			ScriptFunction SetWeaponVisibility() { return mSetWeaponVisibility ? mSetWeaponVisibility : (mSetWeaponVisibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetWeaponVisibility")); }
-			ScriptFunction SetWeaponAttachmentVisibility() { return mSetWeaponAttachmentVisibility ? mSetWeaponAttachmentVisibility : (mSetWeaponAttachmentVisibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetWeaponAttachmentVisibility")); }
-			ScriptFunction SetMeshVisibility() { return mSetMeshVisibility ? mSetMeshVisibility : (mSetMeshVisibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetMeshVisibility")); }
-			ScriptFunction DeactivateSpawnProtection() { return mDeactivateSpawnProtection ? mDeactivateSpawnProtection : (mDeactivateSpawnProtection = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.DeactivateSpawnProtection")); }
-			ScriptFunction PlayTeleportEffect() { return mPlayTeleportEffect ? mPlayTeleportEffect : (mPlayTeleportEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayTeleportEffect")); }
-			ScriptFunction SpawnTransEffect() { return mSpawnTransEffect ? mSpawnTransEffect : (mSpawnTransEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SpawnTransEffect")); }
-			ScriptFunction StartDriving() { return mStartDriving ? mStartDriving : (mStartDriving = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StartDriving")); }
-			ScriptFunction StopDriving() { return mStopDriving ? mStopDriving : (mStopDriving = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StopDriving")); }
-			ScriptFunction ClientRestart() { return mClientRestart ? mClientRestart : (mClientRestart = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ClientRestart")); }
-			ScriptFunction GetShieldStrength() { return mGetShieldStrength ? mGetShieldStrength : (mGetShieldStrength = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetShieldStrength")); }
-			ScriptFunction AbsorbDamage() { return mAbsorbDamage ? mAbsorbDamage : (mAbsorbDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.AbsorbDamage")); }
-			ScriptFunction ShieldAbsorb() { return mShieldAbsorb ? mShieldAbsorb : (mShieldAbsorb = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ShieldAbsorb")); }
-			ScriptFunction AdjustDamage() { return mAdjustDamage ? mAdjustDamage : (mAdjustDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.AdjustDamage")); }
-			ScriptFunction DropFlag() { return mDropFlag ? mDropFlag : (mDropFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.DropFlag")); }
-			ScriptFunction EnableInventoryPickup() { return mEnableInventoryPickup ? mEnableInventoryPickup : (mEnableInventoryPickup = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.EnableInventoryPickup")); }
-			ScriptFunction HoldGameObject() { return mHoldGameObject ? mHoldGameObject : (mHoldGameObject = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.HoldGameObject")); }
-			ScriptFunction GiveHealth() { return mGiveHealth ? mGiveHealth : (mGiveHealth = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GiveHealth")); }
-			ScriptFunction GetDebugName() { return mGetDebugName ? mGetDebugName : (mGetDebugName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetDebugName")); }
-			ScriptFunction PlayFootStepSound() { return mPlayFootStepSound ? mPlayFootStepSound : (mPlayFootStepSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayFootStepSound")); }
-			ScriptFunction ActuallyPlayFootstepSound() { return mActuallyPlayFootstepSound ? mActuallyPlayFootstepSound : (mActuallyPlayFootstepSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ActuallyPlayFootstepSound")); }
-			ScriptFunction GetMaterialBelowFeet() { return mGetMaterialBelowFeet ? mGetMaterialBelowFeet : (mGetMaterialBelowFeet = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetMaterialBelowFeet")); }
-			ScriptFunction PlayLandingSound() { return mPlayLandingSound ? mPlayLandingSound : (mPlayLandingSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayLandingSound")); }
-			ScriptFunction PlayJumpingSound() { return mPlayJumpingSound ? mPlayJumpingSound : (mPlayJumpingSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayJumpingSound")); }
-			ScriptFunction ShouldGib() { return mShouldGib ? mShouldGib : (mShouldGib = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ShouldGib")); }
-			ScriptFunction SpawnHeadGib() { return mSpawnHeadGib ? mSpawnHeadGib : (mSpawnHeadGib = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SpawnHeadGib")); }
-			ScriptFunction SpawnGib() { return mSpawnGib ? mSpawnGib : (mSpawnGib = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SpawnGib")); }
-			ScriptFunction SpawnGibs() { return mSpawnGibs ? mSpawnGibs : (mSpawnGibs = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SpawnGibs")); }
-			ScriptFunction TurnOffPawn() { return mTurnOffPawn ? mTurnOffPawn : (mTurnOffPawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TurnOffPawn")); }
-			ScriptFunction PlayDying() { return mPlayDying ? mPlayDying : (mPlayDying = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayDying")); }
-			ScriptFunction DoingDeathAnim() { return mDoingDeathAnim ? mDoingDeathAnim : (mDoingDeathAnim = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.DoingDeathAnim")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.Destroyed")); }
-			ScriptFunction AddDefaultInventory() { return mAddDefaultInventory ? mAddDefaultInventory : (mAddDefaultInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.AddDefaultInventory")); }
-			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.CalcCamera")); }
-			ScriptFunction SetThirdPersonCamera() { return mSetThirdPersonCamera ? mSetThirdPersonCamera : (mSetThirdPersonCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetThirdPersonCamera")); }
-			ScriptFunction FindGoodEndView() { return mFindGoodEndView ? mFindGoodEndView : (mFindGoodEndView = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.FindGoodEndView")); }
-			ScriptFunction TryNewCamRot() { return mTryNewCamRot ? mTryNewCamRot : (mTryNewCamRot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TryNewCamRot")); }
-			ScriptFunction SetHeroCam() { return mSetHeroCam ? mSetHeroCam : (mSetHeroCam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetHeroCam")); }
-			ScriptFunction CalcThirdPersonCam() { return mCalcThirdPersonCam ? mCalcThirdPersonCam : (mCalcThirdPersonCam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.CalcThirdPersonCam")); }
-			ScriptFunction GetWeaponStartTraceLocation() { return mGetWeaponStartTraceLocation ? mGetWeaponStartTraceLocation : (mGetWeaponStartTraceLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetWeaponStartTraceLocation")); }
-			ScriptFunction Dodge() { return mDodge ? mDodge : (mDodge = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.Dodge")); }
-			ScriptFunction BotDodge() { return mBotDodge ? mBotDodge : (mBotDodge = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.BotDodge")); }
-			ScriptFunction PerformDodge() { return mPerformDodge ? mPerformDodge : (mPerformDodge = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PerformDodge")); }
-			ScriptFunction DoDoubleJump() { return mDoDoubleJump ? mDoDoubleJump : (mDoDoubleJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.DoDoubleJump")); }
-			ScriptFunction Gasp() { return mGasp ? mGasp : (mGasp = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.Gasp")); }
-			ScriptFunction StartFlying() { return mStartFlying ? mStartFlying : (mStartFlying = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StartFlying")); }
-			ScriptFunction StopFlying() { return mStopFlying ? mStopFlying : (mStopFlying = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StopFlying")); }
-			ScriptFunction DoJump() { return mDoJump ? mDoJump : (mDoJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.DoJump")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.Landed")); }
-			ScriptFunction JumpOutOfWater() { return mJumpOutOfWater ? mJumpOutOfWater : (mJumpOutOfWater = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.JumpOutOfWater")); }
-			ScriptFunction CanMultiJump() { return mCanMultiJump ? mCanMultiJump : (mCanMultiJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.CanMultiJump")); }
-			ScriptFunction PlayDyingSound() { return mPlayDyingSound ? mPlayDyingSound : (mPlayDyingSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayDyingSound")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.DisplayDebug")); }
-			ScriptFunction SetPawnAmbientSound() { return mSetPawnAmbientSound ? mSetPawnAmbientSound : (mSetPawnAmbientSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetPawnAmbientSound")); }
-			ScriptFunction GetPawnAmbientSound() { return mGetPawnAmbientSound ? mGetPawnAmbientSound : (mGetPawnAmbientSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetPawnAmbientSound")); }
-			ScriptFunction SetWeaponAmbientSound() { return mSetWeaponAmbientSound ? mSetWeaponAmbientSound : (mSetWeaponAmbientSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetWeaponAmbientSound")); }
-			ScriptFunction GetWeaponAmbientSound() { return mGetWeaponAmbientSound ? mGetWeaponAmbientSound : (mGetWeaponAmbientSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetWeaponAmbientSound")); }
-			ScriptFunction SetOverlayMaterial() { return mSetOverlayMaterial ? mSetOverlayMaterial : (mSetOverlayMaterial = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetOverlayMaterial")); }
-			ScriptFunction GetShieldMaterialInstance() { return mGetShieldMaterialInstance ? mGetShieldMaterialInstance : (mGetShieldMaterialInstance = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetShieldMaterialInstance")); }
-			ScriptFunction GetOverlayMaterial() { return mGetOverlayMaterial ? mGetOverlayMaterial : (mGetOverlayMaterial = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetOverlayMaterial")); }
-			ScriptFunction SetWeaponOverlayFlag() { return mSetWeaponOverlayFlag ? mSetWeaponOverlayFlag : (mSetWeaponOverlayFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetWeaponOverlayFlag")); }
-			ScriptFunction ClearWeaponOverlayFlag() { return mClearWeaponOverlayFlag ? mClearWeaponOverlayFlag : (mClearWeaponOverlayFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ClearWeaponOverlayFlag")); }
-			ScriptFunction ApplyWeaponOverlayFlags() { return mApplyWeaponOverlayFlags ? mApplyWeaponOverlayFlags : (mApplyWeaponOverlayFlags = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ApplyWeaponOverlayFlags")); }
-			ScriptFunction StartFeignDeathRecoveryAnim() { return mStartFeignDeathRecoveryAnim ? mStartFeignDeathRecoveryAnim : (mStartFeignDeathRecoveryAnim = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StartFeignDeathRecoveryAnim")); }
-			ScriptFunction FeignDeathDelayTimer() { return mFeignDeathDelayTimer ? mFeignDeathDelayTimer : (mFeignDeathDelayTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.FeignDeathDelayTimer")); }
-			ScriptFunction PlayFeignDeath() { return mPlayFeignDeath ? mPlayFeignDeath : (mPlayFeignDeath = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayFeignDeath")); }
-			ScriptFunction SetFeignEndLocation() { return mSetFeignEndLocation ? mSetFeignEndLocation : (mSetFeignEndLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetFeignEndLocation")); }
-			ScriptFunction CheckValidLocation() { return mCheckValidLocation ? mCheckValidLocation : (mCheckValidLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.CheckValidLocation")); }
-			ScriptFunction ServerFeignDeath() { return mServerFeignDeath ? mServerFeignDeath : (mServerFeignDeath = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ServerFeignDeath")); }
-			ScriptFunction FeignDeath() { return mFeignDeath ? mFeignDeath : (mFeignDeath = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.FeignDeath")); }
-			ScriptFunction ForceRagdoll() { return mForceRagdoll ? mForceRagdoll : (mForceRagdoll = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ForceRagdoll")); }
-			ScriptFunction FiringModeUpdated() { return mFiringModeUpdated ? mFiringModeUpdated : (mFiringModeUpdated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.FiringModeUpdated")); }
-			ScriptFunction SetBigHead() { return mSetBigHead ? mSetBigHead : (mSetBigHead = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetBigHead")); }
-			ScriptFunction FireRateChanged() { return mFireRateChanged ? mFireRateChanged : (mFireRateChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.FireRateChanged")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ReplicatedEvent")); }
-			ScriptFunction SetHeadScale() { return mSetHeadScale ? mSetHeadScale : (mSetHeadScale = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetHeadScale")); }
-			ScriptFunction SetPuttingDownWeapon() { return mSetPuttingDownWeapon ? mSetPuttingDownWeapon : (mSetPuttingDownWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetPuttingDownWeapon")); }
-			ScriptFunction GetPuttingDownWeapon() { return mGetPuttingDownWeapon ? mGetPuttingDownWeapon : (mGetPuttingDownWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetPuttingDownWeapon")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TakeDamage")); }
-			ScriptFunction WeaponFired() { return mWeaponFired ? mWeaponFired : (mWeaponFired = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.WeaponFired")); }
-			ScriptFunction WeaponStoppedFiring() { return mWeaponStoppedFiring ? mWeaponStoppedFiring : (mWeaponStoppedFiring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.WeaponStoppedFiring")); }
-			ScriptFunction WeaponChanged() { return mWeaponChanged ? mWeaponChanged : (mWeaponChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.WeaponChanged")); }
-			ScriptFunction WeaponAttachmentChanged() { return mWeaponAttachmentChanged ? mWeaponAttachmentChanged : (mWeaponAttachmentChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.WeaponAttachmentChanged")); }
-			ScriptFunction PlayHit() { return mPlayHit ? mPlayHit : (mPlayHit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayHit")); }
-			ScriptFunction PlayTakeHitEffects() { return mPlayTakeHitEffects ? mPlayTakeHitEffects : (mPlayTakeHitEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PlayTakeHitEffects")); }
-			ScriptFunction TakeHitBlendedOut() { return mTakeHitBlendedOut ? mTakeHitBlendedOut : (mTakeHitBlendedOut = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TakeHitBlendedOut")); }
-			ScriptFunction ServerHoverboard() { return mServerHoverboard ? mServerHoverboard : (mServerHoverboard = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ServerHoverboard")); }
-			ScriptFunction OnUseHoverboard() { return mOnUseHoverboard ? mOnUseHoverboard : (mOnUseHoverboard = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.OnUseHoverboard")); }
-			ScriptFunction SwitchWeapon() { return mSwitchWeapon ? mSwitchWeapon : (mSwitchWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SwitchWeapon")); }
-			ScriptFunction TakeDrowningDamage() { return mTakeDrowningDamage ? mTakeDrowningDamage : (mTakeDrowningDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TakeDrowningDamage")); }
-			ScriptFunction IsLocationOnHead() { return mIsLocationOnHead ? mIsLocationOnHead : (mIsLocationOnHead = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.IsLocationOnHead")); }
-			ScriptFunction ModifyRotForDebugFreeCam() { return mModifyRotForDebugFreeCam ? mModifyRotForDebugFreeCam : (mModifyRotForDebugFreeCam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.ModifyRotForDebugFreeCam")); }
-			ScriptFunction AdjustCameraScale() { return mAdjustCameraScale ? mAdjustCameraScale : (mAdjustCameraScale = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.AdjustCameraScale")); }
-			ScriptFunction GetViewRotation() { return mGetViewRotation ? mGetViewRotation : (mGetViewRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetViewRotation")); }
-			ScriptFunction TornOff() { return mTornOff ? mTornOff : (mTornOff = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TornOff")); }
-			ScriptFunction SetOverlayVisibility() { return mSetOverlayVisibility ? mSetOverlayVisibility : (mSetOverlayVisibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.SetOverlayVisibility")); }
-			ScriptFunction TakeFallingDamage() { return mTakeFallingDamage ? mTakeFallingDamage : (mTakeFallingDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.TakeFallingDamage")); }
-			ScriptFunction RigidBodyCollision() { return mRigidBodyCollision ? mRigidBodyCollision : (mRigidBodyCollision = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.RigidBodyCollision")); }
-			ScriptFunction OnRanOver() { return mOnRanOver ? mOnRanOver : (mOnRanOver = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.OnRanOver")); }
-			ScriptFunction StuckFalling() { return mStuckFalling ? mStuckFalling : (mStuckFalling = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.StuckFalling")); }
-			ScriptFunction OnExitVehicle() { return mOnExitVehicle ? mOnExitVehicle : (mOnExitVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.OnExitVehicle")); }
-			ScriptFunction OnInfiniteAmmo() { return mOnInfiniteAmmo ? mOnInfiniteAmmo : (mOnInfiniteAmmo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.OnInfiniteAmmo")); }
-			ScriptFunction PossessedBy() { return mPossessedBy ? mPossessedBy : (mPossessedBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PossessedBy")); }
-			ScriptFunction NeedToTurn() { return mNeedToTurn ? mNeedToTurn : (mNeedToTurn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.NeedToTurn")); }
-			ScriptFunction GetFamilyInfo() { return mGetFamilyInfo ? mGetFamilyInfo : (mGetFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.GetFamilyInfo")); }
-			ScriptFunction PostTeleport() { return mPostTeleport ? mPostTeleport : (mPostTeleport = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PostTeleport")); }
-			ScriptFunction PostBigTeleport() { return mPostBigTeleport ? mPostBigTeleport : (mPostBigTeleport = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PostBigTeleport")); }
+			ScriptFunction CanDoubleJump() { mixin(MGF!("mCanDoubleJump", "Function UTGame.UTPawn.CanDoubleJump")()); }
+			ScriptFunction WeaponBob() { mixin(MGF!("mWeaponBob", "Function UTGame.UTPawn.WeaponBob")()); }
+			ScriptFunction GetEyeHeight() { mixin(MGF!("mGetEyeHeight", "Function UTGame.UTPawn.GetEyeHeight")()); }
+			ScriptFunction IsFirstPerson() { mixin(MGF!("mIsFirstPerson", "Function UTGame.UTPawn.IsFirstPerson")()); }
+			ScriptFunction AdjustPPEffects() { mixin(MGF!("mAdjustPPEffects", "Function UTGame.UTPawn.AdjustPPEffects")()); }
+			ScriptFunction AdjustedStrength() { mixin(MGF!("mAdjustedStrength", "Function UTGame.UTPawn.AdjustedStrength")()); }
+			ScriptFunction GetUTPlayerReplicationInfo() { mixin(MGF!("mGetUTPlayerReplicationInfo", "Function UTGame.UTPawn.GetUTPlayerReplicationInfo")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function UTGame.UTPawn.FellOutOfWorld")()); }
+			ScriptFunction HeadVolumeChange() { mixin(MGF!("mHeadVolumeChange", "Function UTGame.UTPawn.HeadVolumeChange")()); }
+			ScriptFunction PoweredUp() { mixin(MGF!("mPoweredUp", "Function UTGame.UTPawn.PoweredUp")()); }
+			ScriptFunction InCombat() { mixin(MGF!("mInCombat", "Function UTGame.UTPawn.InCombat")()); }
+			ScriptFunction RenderMapIcon() { mixin(MGF!("mRenderMapIcon", "Function UTGame.UTPawn.RenderMapIcon")()); }
+			ScriptFunction SetWalking() { mixin(MGF!("mSetWalking", "Function UTGame.UTPawn.SetWalking")()); }
+			ScriptFunction ClearBodyMatColor() { mixin(MGF!("mClearBodyMatColor", "Function UTGame.UTPawn.ClearBodyMatColor")()); }
+			ScriptFunction SetBodyMatColor() { mixin(MGF!("mSetBodyMatColor", "Function UTGame.UTPawn.SetBodyMatColor")()); }
+			ScriptFunction SetInvisible() { mixin(MGF!("mSetInvisible", "Function UTGame.UTPawn.SetInvisible")()); }
+			ScriptFunction SetSkin() { mixin(MGF!("mSetSkin", "Function UTGame.UTPawn.SetSkin")()); }
+			ScriptFunction SetArmsSkin() { mixin(MGF!("mSetArmsSkin", "Function UTGame.UTPawn.SetArmsSkin")()); }
+			ScriptFunction VerifyBodyMaterialInstance() { mixin(MGF!("mVerifyBodyMaterialInstance", "Function UTGame.UTPawn.VerifyBodyMaterialInstance")()); }
+			ScriptFunction SetCharacterClassFromInfo() { mixin(MGF!("mSetCharacterClassFromInfo", "Function UTGame.UTPawn.SetCharacterClassFromInfo")()); }
+			ScriptFunction SetCharacterMeshInfo() { mixin(MGF!("mSetCharacterMeshInfo", "Function UTGame.UTPawn.SetCharacterMeshInfo")()); }
+			ScriptFunction SetPawnRBChannels() { mixin(MGF!("mSetPawnRBChannels", "Function UTGame.UTPawn.SetPawnRBChannels")()); }
+			ScriptFunction ResetCharPhysState() { mixin(MGF!("mResetCharPhysState", "Function UTGame.UTPawn.ResetCharPhysState")()); }
+			ScriptFunction NotifyTeamChanged() { mixin(MGF!("mNotifyTeamChanged", "Function UTGame.UTPawn.NotifyTeamChanged")()); }
+			ScriptFunction SetFirstPersonArmsInfo() { mixin(MGF!("mSetFirstPersonArmsInfo", "Function UTGame.UTPawn.SetFirstPersonArmsInfo")()); }
+			ScriptFunction SetTeamColor() { mixin(MGF!("mSetTeamColor", "Function UTGame.UTPawn.SetTeamColor")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTPawn.PostBeginPlay")()); }
+			ScriptFunction UpdateShadowSettings() { mixin(MGF!("mUpdateShadowSettings", "Function UTGame.UTPawn.UpdateShadowSettings")()); }
+			ScriptFunction ReattachMesh() { mixin(MGF!("mReattachMesh", "Function UTGame.UTPawn.ReattachMesh")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function UTGame.UTPawn.PostInitAnimTree")()); }
+			ScriptFunction SetHandIKEnabled() { mixin(MGF!("mSetHandIKEnabled", "Function UTGame.UTPawn.SetHandIKEnabled")()); }
+			ScriptFunction SetAnimRateScale() { mixin(MGF!("mSetAnimRateScale", "Function UTGame.UTPawn.SetAnimRateScale")()); }
+			ScriptFunction SetWeapAnimType() { mixin(MGF!("mSetWeapAnimType", "Function UTGame.UTPawn.SetWeapAnimType")()); }
+			ScriptFunction LeaveABloodSplatterDecal() { mixin(MGF!("mLeaveABloodSplatterDecal", "Function UTGame.UTPawn.LeaveABloodSplatterDecal")()); }
+			ScriptFunction PerformEmoteCommand() { mixin(MGF!("mPerformEmoteCommand", "Function UTGame.UTPawn.PerformEmoteCommand")()); }
+			ScriptFunction DoPlayEmote() { mixin(MGF!("mDoPlayEmote", "Function UTGame.UTPawn.DoPlayEmote")()); }
+			ScriptFunction ServerPlayEmote() { mixin(MGF!("mServerPlayEmote", "Function UTGame.UTPawn.ServerPlayEmote")()); }
+			ScriptFunction PlayEmote() { mixin(MGF!("mPlayEmote", "Function UTGame.UTPawn.PlayEmote")()); }
+			ScriptFunction OnPlayAnim() { mixin(MGF!("mOnPlayAnim", "Function UTGame.UTPawn.OnPlayAnim")()); }
+			ScriptFunction SpawnDefaultController() { mixin(MGF!("mSpawnDefaultController", "Function UTGame.UTPawn.SpawnDefaultController")()); }
+			ScriptFunction TurnOff() { mixin(MGF!("mTurnOff", "Function UTGame.UTPawn.TurnOff")()); }
+			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function UTGame.UTPawn.EncroachingOn")()); }
+			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function UTGame.UTPawn.EncroachedBy")()); }
+			ScriptFunction gibbedBy() { mixin(MGF!("mgibbedBy", "Function UTGame.UTPawn.gibbedBy")()); }
+			ScriptFunction JumpOffPawn() { mixin(MGF!("mJumpOffPawn", "Function UTGame.UTPawn.JumpOffPawn")()); }
+			ScriptFunction StuckOnPawn() { mixin(MGF!("mStuckOnPawn", "Function UTGame.UTPawn.StuckOnPawn")()); }
+			ScriptFunction Falling() { mixin(MGF!("mFalling", "Function UTGame.UTPawn.Falling")()); }
+			ScriptFunction AddVelocity() { mixin(MGF!("mAddVelocity", "Function UTGame.UTPawn.AddVelocity")()); }
+			ScriptFunction Died() { mixin(MGF!("mDied", "Function UTGame.UTPawn.Died")()); }
+			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function UTGame.UTPawn.StartFire")()); }
+			ScriptFunction StopFiring() { mixin(MGF!("mStopFiring", "Function UTGame.UTPawn.StopFiring")()); }
+			ScriptFunction BotFire() { mixin(MGF!("mBotFire", "Function UTGame.UTPawn.BotFire")()); }
+			ScriptFunction StopWeaponFiring() { mixin(MGF!("mStopWeaponFiring", "Function UTGame.UTPawn.StopWeaponFiring")()); }
+			ScriptFunction ChooseFireMode() { mixin(MGF!("mChooseFireMode", "Function UTGame.UTPawn.ChooseFireMode")()); }
+			ScriptFunction RecommendLongRangedAttack() { mixin(MGF!("mRecommendLongRangedAttack", "Function UTGame.UTPawn.RecommendLongRangedAttack")()); }
+			ScriptFunction RangedAttackTime() { mixin(MGF!("mRangedAttackTime", "Function UTGame.UTPawn.RangedAttackTime")()); }
+			ScriptFunction PlayVictoryAnimation() { mixin(MGF!("mPlayVictoryAnimation", "Function UTGame.UTPawn.PlayVictoryAnimation")()); }
+			ScriptFunction OnModifyHealth() { mixin(MGF!("mOnModifyHealth", "Function UTGame.UTPawn.OnModifyHealth")()); }
+			ScriptFunction GetScreenName() { mixin(MGF!("mGetScreenName", "Function UTGame.UTPawn.GetScreenName")()); }
+			ScriptFunction FaceRotation() { mixin(MGF!("mFaceRotation", "Function UTGame.UTPawn.FaceRotation")()); }
+			ScriptFunction UpdateEyeHeight() { mixin(MGF!("mUpdateEyeHeight", "Function UTGame.UTPawn.UpdateEyeHeight")()); }
+			ScriptFunction GetPawnViewLocation() { mixin(MGF!("mGetPawnViewLocation", "Function UTGame.UTPawn.GetPawnViewLocation")()); }
+			ScriptFunction BecomeViewTarget() { mixin(MGF!("mBecomeViewTarget", "Function UTGame.UTPawn.BecomeViewTarget")()); }
+			ScriptFunction EndViewTarget() { mixin(MGF!("mEndViewTarget", "Function UTGame.UTPawn.EndViewTarget")()); }
+			ScriptFunction SetWeaponVisibility() { mixin(MGF!("mSetWeaponVisibility", "Function UTGame.UTPawn.SetWeaponVisibility")()); }
+			ScriptFunction SetWeaponAttachmentVisibility() { mixin(MGF!("mSetWeaponAttachmentVisibility", "Function UTGame.UTPawn.SetWeaponAttachmentVisibility")()); }
+			ScriptFunction SetMeshVisibility() { mixin(MGF!("mSetMeshVisibility", "Function UTGame.UTPawn.SetMeshVisibility")()); }
+			ScriptFunction DeactivateSpawnProtection() { mixin(MGF!("mDeactivateSpawnProtection", "Function UTGame.UTPawn.DeactivateSpawnProtection")()); }
+			ScriptFunction PlayTeleportEffect() { mixin(MGF!("mPlayTeleportEffect", "Function UTGame.UTPawn.PlayTeleportEffect")()); }
+			ScriptFunction SpawnTransEffect() { mixin(MGF!("mSpawnTransEffect", "Function UTGame.UTPawn.SpawnTransEffect")()); }
+			ScriptFunction StartDriving() { mixin(MGF!("mStartDriving", "Function UTGame.UTPawn.StartDriving")()); }
+			ScriptFunction StopDriving() { mixin(MGF!("mStopDriving", "Function UTGame.UTPawn.StopDriving")()); }
+			ScriptFunction ClientRestart() { mixin(MGF!("mClientRestart", "Function UTGame.UTPawn.ClientRestart")()); }
+			ScriptFunction GetShieldStrength() { mixin(MGF!("mGetShieldStrength", "Function UTGame.UTPawn.GetShieldStrength")()); }
+			ScriptFunction AbsorbDamage() { mixin(MGF!("mAbsorbDamage", "Function UTGame.UTPawn.AbsorbDamage")()); }
+			ScriptFunction ShieldAbsorb() { mixin(MGF!("mShieldAbsorb", "Function UTGame.UTPawn.ShieldAbsorb")()); }
+			ScriptFunction AdjustDamage() { mixin(MGF!("mAdjustDamage", "Function UTGame.UTPawn.AdjustDamage")()); }
+			ScriptFunction DropFlag() { mixin(MGF!("mDropFlag", "Function UTGame.UTPawn.DropFlag")()); }
+			ScriptFunction EnableInventoryPickup() { mixin(MGF!("mEnableInventoryPickup", "Function UTGame.UTPawn.EnableInventoryPickup")()); }
+			ScriptFunction HoldGameObject() { mixin(MGF!("mHoldGameObject", "Function UTGame.UTPawn.HoldGameObject")()); }
+			ScriptFunction GiveHealth() { mixin(MGF!("mGiveHealth", "Function UTGame.UTPawn.GiveHealth")()); }
+			ScriptFunction GetDebugName() { mixin(MGF!("mGetDebugName", "Function UTGame.UTPawn.GetDebugName")()); }
+			ScriptFunction PlayFootStepSound() { mixin(MGF!("mPlayFootStepSound", "Function UTGame.UTPawn.PlayFootStepSound")()); }
+			ScriptFunction ActuallyPlayFootstepSound() { mixin(MGF!("mActuallyPlayFootstepSound", "Function UTGame.UTPawn.ActuallyPlayFootstepSound")()); }
+			ScriptFunction GetMaterialBelowFeet() { mixin(MGF!("mGetMaterialBelowFeet", "Function UTGame.UTPawn.GetMaterialBelowFeet")()); }
+			ScriptFunction PlayLandingSound() { mixin(MGF!("mPlayLandingSound", "Function UTGame.UTPawn.PlayLandingSound")()); }
+			ScriptFunction PlayJumpingSound() { mixin(MGF!("mPlayJumpingSound", "Function UTGame.UTPawn.PlayJumpingSound")()); }
+			ScriptFunction ShouldGib() { mixin(MGF!("mShouldGib", "Function UTGame.UTPawn.ShouldGib")()); }
+			ScriptFunction SpawnHeadGib() { mixin(MGF!("mSpawnHeadGib", "Function UTGame.UTPawn.SpawnHeadGib")()); }
+			ScriptFunction SpawnGib() { mixin(MGF!("mSpawnGib", "Function UTGame.UTPawn.SpawnGib")()); }
+			ScriptFunction SpawnGibs() { mixin(MGF!("mSpawnGibs", "Function UTGame.UTPawn.SpawnGibs")()); }
+			ScriptFunction TurnOffPawn() { mixin(MGF!("mTurnOffPawn", "Function UTGame.UTPawn.TurnOffPawn")()); }
+			ScriptFunction PlayDying() { mixin(MGF!("mPlayDying", "Function UTGame.UTPawn.PlayDying")()); }
+			ScriptFunction DoingDeathAnim() { mixin(MGF!("mDoingDeathAnim", "Function UTGame.UTPawn.DoingDeathAnim")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTPawn.Destroyed")()); }
+			ScriptFunction AddDefaultInventory() { mixin(MGF!("mAddDefaultInventory", "Function UTGame.UTPawn.AddDefaultInventory")()); }
+			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function UTGame.UTPawn.CalcCamera")()); }
+			ScriptFunction SetThirdPersonCamera() { mixin(MGF!("mSetThirdPersonCamera", "Function UTGame.UTPawn.SetThirdPersonCamera")()); }
+			ScriptFunction FindGoodEndView() { mixin(MGF!("mFindGoodEndView", "Function UTGame.UTPawn.FindGoodEndView")()); }
+			ScriptFunction TryNewCamRot() { mixin(MGF!("mTryNewCamRot", "Function UTGame.UTPawn.TryNewCamRot")()); }
+			ScriptFunction SetHeroCam() { mixin(MGF!("mSetHeroCam", "Function UTGame.UTPawn.SetHeroCam")()); }
+			ScriptFunction CalcThirdPersonCam() { mixin(MGF!("mCalcThirdPersonCam", "Function UTGame.UTPawn.CalcThirdPersonCam")()); }
+			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF!("mGetWeaponStartTraceLocation", "Function UTGame.UTPawn.GetWeaponStartTraceLocation")()); }
+			ScriptFunction Dodge() { mixin(MGF!("mDodge", "Function UTGame.UTPawn.Dodge")()); }
+			ScriptFunction BotDodge() { mixin(MGF!("mBotDodge", "Function UTGame.UTPawn.BotDodge")()); }
+			ScriptFunction PerformDodge() { mixin(MGF!("mPerformDodge", "Function UTGame.UTPawn.PerformDodge")()); }
+			ScriptFunction DoDoubleJump() { mixin(MGF!("mDoDoubleJump", "Function UTGame.UTPawn.DoDoubleJump")()); }
+			ScriptFunction Gasp() { mixin(MGF!("mGasp", "Function UTGame.UTPawn.Gasp")()); }
+			ScriptFunction StartFlying() { mixin(MGF!("mStartFlying", "Function UTGame.UTPawn.StartFlying")()); }
+			ScriptFunction StopFlying() { mixin(MGF!("mStopFlying", "Function UTGame.UTPawn.StopFlying")()); }
+			ScriptFunction DoJump() { mixin(MGF!("mDoJump", "Function UTGame.UTPawn.DoJump")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function UTGame.UTPawn.Landed")()); }
+			ScriptFunction JumpOutOfWater() { mixin(MGF!("mJumpOutOfWater", "Function UTGame.UTPawn.JumpOutOfWater")()); }
+			ScriptFunction CanMultiJump() { mixin(MGF!("mCanMultiJump", "Function UTGame.UTPawn.CanMultiJump")()); }
+			ScriptFunction PlayDyingSound() { mixin(MGF!("mPlayDyingSound", "Function UTGame.UTPawn.PlayDyingSound")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTPawn.DisplayDebug")()); }
+			ScriptFunction SetPawnAmbientSound() { mixin(MGF!("mSetPawnAmbientSound", "Function UTGame.UTPawn.SetPawnAmbientSound")()); }
+			ScriptFunction GetPawnAmbientSound() { mixin(MGF!("mGetPawnAmbientSound", "Function UTGame.UTPawn.GetPawnAmbientSound")()); }
+			ScriptFunction SetWeaponAmbientSound() { mixin(MGF!("mSetWeaponAmbientSound", "Function UTGame.UTPawn.SetWeaponAmbientSound")()); }
+			ScriptFunction GetWeaponAmbientSound() { mixin(MGF!("mGetWeaponAmbientSound", "Function UTGame.UTPawn.GetWeaponAmbientSound")()); }
+			ScriptFunction SetOverlayMaterial() { mixin(MGF!("mSetOverlayMaterial", "Function UTGame.UTPawn.SetOverlayMaterial")()); }
+			ScriptFunction GetShieldMaterialInstance() { mixin(MGF!("mGetShieldMaterialInstance", "Function UTGame.UTPawn.GetShieldMaterialInstance")()); }
+			ScriptFunction GetOverlayMaterial() { mixin(MGF!("mGetOverlayMaterial", "Function UTGame.UTPawn.GetOverlayMaterial")()); }
+			ScriptFunction SetWeaponOverlayFlag() { mixin(MGF!("mSetWeaponOverlayFlag", "Function UTGame.UTPawn.SetWeaponOverlayFlag")()); }
+			ScriptFunction ClearWeaponOverlayFlag() { mixin(MGF!("mClearWeaponOverlayFlag", "Function UTGame.UTPawn.ClearWeaponOverlayFlag")()); }
+			ScriptFunction ApplyWeaponOverlayFlags() { mixin(MGF!("mApplyWeaponOverlayFlags", "Function UTGame.UTPawn.ApplyWeaponOverlayFlags")()); }
+			ScriptFunction StartFeignDeathRecoveryAnim() { mixin(MGF!("mStartFeignDeathRecoveryAnim", "Function UTGame.UTPawn.StartFeignDeathRecoveryAnim")()); }
+			ScriptFunction FeignDeathDelayTimer() { mixin(MGF!("mFeignDeathDelayTimer", "Function UTGame.UTPawn.FeignDeathDelayTimer")()); }
+			ScriptFunction PlayFeignDeath() { mixin(MGF!("mPlayFeignDeath", "Function UTGame.UTPawn.PlayFeignDeath")()); }
+			ScriptFunction SetFeignEndLocation() { mixin(MGF!("mSetFeignEndLocation", "Function UTGame.UTPawn.SetFeignEndLocation")()); }
+			ScriptFunction CheckValidLocation() { mixin(MGF!("mCheckValidLocation", "Function UTGame.UTPawn.CheckValidLocation")()); }
+			ScriptFunction ServerFeignDeath() { mixin(MGF!("mServerFeignDeath", "Function UTGame.UTPawn.ServerFeignDeath")()); }
+			ScriptFunction FeignDeath() { mixin(MGF!("mFeignDeath", "Function UTGame.UTPawn.FeignDeath")()); }
+			ScriptFunction ForceRagdoll() { mixin(MGF!("mForceRagdoll", "Function UTGame.UTPawn.ForceRagdoll")()); }
+			ScriptFunction FiringModeUpdated() { mixin(MGF!("mFiringModeUpdated", "Function UTGame.UTPawn.FiringModeUpdated")()); }
+			ScriptFunction SetBigHead() { mixin(MGF!("mSetBigHead", "Function UTGame.UTPawn.SetBigHead")()); }
+			ScriptFunction FireRateChanged() { mixin(MGF!("mFireRateChanged", "Function UTGame.UTPawn.FireRateChanged")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTPawn.ReplicatedEvent")()); }
+			ScriptFunction SetHeadScale() { mixin(MGF!("mSetHeadScale", "Function UTGame.UTPawn.SetHeadScale")()); }
+			ScriptFunction SetPuttingDownWeapon() { mixin(MGF!("mSetPuttingDownWeapon", "Function UTGame.UTPawn.SetPuttingDownWeapon")()); }
+			ScriptFunction GetPuttingDownWeapon() { mixin(MGF!("mGetPuttingDownWeapon", "Function UTGame.UTPawn.GetPuttingDownWeapon")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function UTGame.UTPawn.TakeDamage")()); }
+			ScriptFunction WeaponFired() { mixin(MGF!("mWeaponFired", "Function UTGame.UTPawn.WeaponFired")()); }
+			ScriptFunction WeaponStoppedFiring() { mixin(MGF!("mWeaponStoppedFiring", "Function UTGame.UTPawn.WeaponStoppedFiring")()); }
+			ScriptFunction WeaponChanged() { mixin(MGF!("mWeaponChanged", "Function UTGame.UTPawn.WeaponChanged")()); }
+			ScriptFunction WeaponAttachmentChanged() { mixin(MGF!("mWeaponAttachmentChanged", "Function UTGame.UTPawn.WeaponAttachmentChanged")()); }
+			ScriptFunction PlayHit() { mixin(MGF!("mPlayHit", "Function UTGame.UTPawn.PlayHit")()); }
+			ScriptFunction PlayTakeHitEffects() { mixin(MGF!("mPlayTakeHitEffects", "Function UTGame.UTPawn.PlayTakeHitEffects")()); }
+			ScriptFunction TakeHitBlendedOut() { mixin(MGF!("mTakeHitBlendedOut", "Function UTGame.UTPawn.TakeHitBlendedOut")()); }
+			ScriptFunction ServerHoverboard() { mixin(MGF!("mServerHoverboard", "Function UTGame.UTPawn.ServerHoverboard")()); }
+			ScriptFunction OnUseHoverboard() { mixin(MGF!("mOnUseHoverboard", "Function UTGame.UTPawn.OnUseHoverboard")()); }
+			ScriptFunction SwitchWeapon() { mixin(MGF!("mSwitchWeapon", "Function UTGame.UTPawn.SwitchWeapon")()); }
+			ScriptFunction TakeDrowningDamage() { mixin(MGF!("mTakeDrowningDamage", "Function UTGame.UTPawn.TakeDrowningDamage")()); }
+			ScriptFunction IsLocationOnHead() { mixin(MGF!("mIsLocationOnHead", "Function UTGame.UTPawn.IsLocationOnHead")()); }
+			ScriptFunction ModifyRotForDebugFreeCam() { mixin(MGF!("mModifyRotForDebugFreeCam", "Function UTGame.UTPawn.ModifyRotForDebugFreeCam")()); }
+			ScriptFunction AdjustCameraScale() { mixin(MGF!("mAdjustCameraScale", "Function UTGame.UTPawn.AdjustCameraScale")()); }
+			ScriptFunction GetViewRotation() { mixin(MGF!("mGetViewRotation", "Function UTGame.UTPawn.GetViewRotation")()); }
+			ScriptFunction TornOff() { mixin(MGF!("mTornOff", "Function UTGame.UTPawn.TornOff")()); }
+			ScriptFunction SetOverlayVisibility() { mixin(MGF!("mSetOverlayVisibility", "Function UTGame.UTPawn.SetOverlayVisibility")()); }
+			ScriptFunction TakeFallingDamage() { mixin(MGF!("mTakeFallingDamage", "Function UTGame.UTPawn.TakeFallingDamage")()); }
+			ScriptFunction RigidBodyCollision() { mixin(MGF!("mRigidBodyCollision", "Function UTGame.UTPawn.RigidBodyCollision")()); }
+			ScriptFunction OnRanOver() { mixin(MGF!("mOnRanOver", "Function UTGame.UTPawn.OnRanOver")()); }
+			ScriptFunction StuckFalling() { mixin(MGF!("mStuckFalling", "Function UTGame.UTPawn.StuckFalling")()); }
+			ScriptFunction OnExitVehicle() { mixin(MGF!("mOnExitVehicle", "Function UTGame.UTPawn.OnExitVehicle")()); }
+			ScriptFunction OnInfiniteAmmo() { mixin(MGF!("mOnInfiniteAmmo", "Function UTGame.UTPawn.OnInfiniteAmmo")()); }
+			ScriptFunction PossessedBy() { mixin(MGF!("mPossessedBy", "Function UTGame.UTPawn.PossessedBy")()); }
+			ScriptFunction NeedToTurn() { mixin(MGF!("mNeedToTurn", "Function UTGame.UTPawn.NeedToTurn")()); }
+			ScriptFunction GetFamilyInfo() { mixin(MGF!("mGetFamilyInfo", "Function UTGame.UTPawn.GetFamilyInfo")()); }
+			ScriptFunction PostTeleport() { mixin(MGF!("mPostTeleport", "Function UTGame.UTPawn.PostTeleport")()); }
+			ScriptFunction PostBigTeleport() { mixin(MGF!("mPostBigTeleport", "Function UTGame.UTPawn.PostBigTeleport")()); }
 		}
 	}
 	static struct Constants
@@ -416,162 +417,175 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTPawn.GibInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTPawn.GibInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptClass GibClass() { return *cast(ScriptClass*)(cast(size_t)&this + 8); }
-				ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				ScriptClass GibClass() { mixin(MGPS!(ScriptClass, 8)()); }
+				ScriptName BoneName() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bHighDetailOnly() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bHighDetailOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bHighDetailOnly() { mixin(MGBPS!(12, 0x1)()); }
+			bool bHighDetailOnly(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
+	}
+	static struct FeigningDeath
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPawn.FeigningDeath")()); }
+	}
+	static struct Dying
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPawn.Dying")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float CurrentCameraScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1700); }
-			float CameraScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1696); }
-			Vector WalkBob() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1780); }
-			float VestArmor() { return *cast(float*)(cast(size_t)cast(void*)this + 1876); }
-			float ShieldBeltArmor() { return *cast(float*)(cast(size_t)cast(void*)this + 1872); }
-			ScriptClass HoverboardClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 2072); }
-			Vector FixedViewLoc() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1672); }
-			Rotator FixedViewRot() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 1684); }
-			float LandBob() { return *cast(float*)(cast(size_t)cast(void*)this + 1764); }
-			ScriptClass CurrentWeaponAttachmentClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1620); }
-			float LastPainSound() { return *cast(float*)(cast(size_t)cast(void*)this + 2052); }
-			float MapSize() { return *cast(float*)(cast(size_t)cast(void*)this + 2032); }
-			UIRoot.TextureCoordinates IconCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 2036); }
-			UTWeaponAttachment CurrentWeaponAttachment() { return *cast(UTWeaponAttachment*)(cast(size_t)cast(void*)this + 1884); }
-			ScriptClass CurrCharClassInfo() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1812); }
-			ScriptArray!(ScriptName) TakeHitPhysicsFixedBones() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1816); }
-			ScriptClass SoundGroupClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1808); }
-			float DefaultMeshScale() { return *cast(float*)(cast(size_t)cast(void*)this + 2116); }
-			ScriptArray!(ScriptName) NoDriveBodies() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1828); }
-			AnimNodeBlend FeignDeathBlend() { return *cast(AnimNodeBlend*)(cast(size_t)cast(void*)this + 1632); }
-			AnimNodeSlot FullBodyAnimSlot() { return *cast(AnimNodeSlot*)(cast(size_t)cast(void*)this + 1636); }
-			AnimNodeSlot TopHalfAnimSlot() { return *cast(AnimNodeSlot*)(cast(size_t)cast(void*)this + 1640); }
-			UTAnimBlendByDriving DrivingNode() { return *cast(UTAnimBlendByDriving*)(cast(size_t)cast(void*)this + 1860); }
-			UTAnimBlendByVehicle VehicleNode() { return *cast(UTAnimBlendByVehicle*)(cast(size_t)cast(void*)this + 1864); }
-			UTAnimBlendByHoverboarding HoverboardingNode() { return *cast(UTAnimBlendByHoverboarding*)(cast(size_t)cast(void*)this + 1868); }
-			float JumpBob() { return *cast(float*)(cast(size_t)cast(void*)this + 1768); }
-			ScriptName TauntNames() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 2120); }
-			float bobtime() { return *cast(float*)(cast(size_t)cast(void*)this + 1776); }
-			float Bob() { return *cast(float*)(cast(size_t)cast(void*)this + 1760); }
-			float AppliedBob() { return *cast(float*)(cast(size_t)cast(void*)this + 1772); }
-			UObject.LinearColor SpawnProtectionColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 2008); }
-			SoundCue SpawnSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 2000); }
-			UObject.LinearColor TranslocateColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1952); }
-			SoundCue TeleportSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 2004); }
-			CameraAnim TransCameraAnim() { return *cast(CameraAnim*)(cast(size_t)cast(void*)this + 1984); }
-			ScriptClass TransInEffects() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1944); }
-			UTClientSideWeaponPawn ClientSideWeaponPawn() { return *cast(UTClientSideWeaponPawn*)(cast(size_t)cast(void*)this + 2088); }
-			float ThighpadArmor() { return *cast(float*)(cast(size_t)cast(void*)this + 1880); }
-			SoundCue ArmorHitSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1996); }
-			float MaxFootstepDistSq() { return *cast(float*)(cast(size_t)cast(void*)this + 2064); }
-			float MaxJumpSoundDistSq() { return *cast(float*)(cast(size_t)cast(void*)this + 2068); }
-			float DeathTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2200); }
-			float DeathHipLinSpring() { return *cast(float*)(cast(size_t)cast(void*)this + 1644); }
-			float DeathHipLinDamp() { return *cast(float*)(cast(size_t)cast(void*)this + 1648); }
-			float DeathHipAngSpring() { return *cast(float*)(cast(size_t)cast(void*)this + 1652); }
-			float DeathHipAngDamp() { return *cast(float*)(cast(size_t)cast(void*)this + 1656); }
-			float StartDeathAnimTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1660); }
-			float TimeLastTookDeathAnimDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 1668); }
-			ScriptClass DeathAnimDamageType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1664); }
-			float CameraZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1724); }
-			int HeroCameraPitch() { return *cast(int*)(cast(size_t)cast(void*)this + 1732); }
-			float HeroCameraScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1728); }
-			Vector CamOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2172); }
-			float DodgeSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1736); }
-			float DodgeSpeedZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1740); }
-			int JumpBootCharge() { return *cast(int*)(cast(size_t)cast(void*)this + 2112); }
-			Actor.EDoubleClickDir CurrentDir() { return *cast(Actor.EDoubleClickDir*)(cast(size_t)cast(void*)this + 1744); }
-			float DoubleJumpEyeHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1748); }
-			float DoubleJumpThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1752); }
-			float DefaultAirControl() { return *cast(float*)(cast(size_t)cast(void*)this + 1756); }
-			MaterialInterface ShieldBeltTeamMaterialInstances() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 2096); }
-			MaterialInterface ShieldBeltMaterialInstance() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 2092); }
-			float FeignDeathStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1796); }
-			float FeignDeathBodyAtRestSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1792); }
-			int UnfeignFailedCount() { return *cast(int*)(cast(size_t)cast(void*)this + 1624); }
-			float FeignDeathRecoveryStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1800); }
-			ScriptName HeadBone() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1932); }
-			UDKPawn.DrivenWeaponPawnInfo LastDrivenWeaponPawn() { return *cast(UDKPawn.DrivenWeaponPawnInfo*)(cast(size_t)cast(void*)this + 2076); }
-			ScriptClass m_ClientSideWeaponPawnClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 2204); }
-			UTProjectile AttachedProj() { return *cast(UTProjectile*)(cast(size_t)cast(void*)this + 2060); }
-			float AccumulationTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1848); }
-			float AccumulateDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 1844); }
-			float LastHoverboardTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1852); }
-			float MinHoverboardInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 1856); }
-			float HeadHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1928); }
-			float HeadRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 1924); }
-			float CameraScaleMin() { return *cast(float*)(cast(size_t)cast(void*)this + 1704); }
-			float CameraScaleMax() { return *cast(float*)(cast(size_t)cast(void*)this + 1708); }
-			ForceFeedbackWaveform FallingDamageWaveForm() { return *cast(ForceFeedbackWaveform*)(cast(size_t)cast(void*)this + 1840); }
-			Vector OldCameraPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1712); }
-			float BioBurnAwayTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2188); }
-			ScriptName BioEffectName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 2192); }
-			float RagdollLifespan() { return *cast(float*)(cast(size_t)cast(void*)this + 2056); }
-			int SuperHealthMax() { return *cast(int*)(cast(size_t)cast(void*)this + 1804); }
-			ScriptName WeaponSocket() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1888); }
-			ScriptName WeaponSocket2() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1896); }
-			ScriptName PawnEffectSockets() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1904); }
-			float HeadOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1920); }
-			float TeamBeaconPlayerInfoMaxDist() { return *cast(float*)(cast(size_t)cast(void*)this + 2024); }
-			Texture SpeakingBeaconTexture() { return *cast(Texture*)(cast(size_t)cast(void*)this + 2028); }
-			float DesiredMeshScale() { return *cast(float*)(cast(size_t)cast(void*)this + 2168); }
+			float CurrentCameraScale() { mixin(MGPC!(float, 1700)()); }
+			float CameraScale() { mixin(MGPC!(float, 1696)()); }
+			Vector WalkBob() { mixin(MGPC!(Vector, 1780)()); }
+			float VestArmor() { mixin(MGPC!(float, 1876)()); }
+			float ShieldBeltArmor() { mixin(MGPC!(float, 1872)()); }
+			ScriptClass HoverboardClass() { mixin(MGPC!(ScriptClass, 2072)()); }
+			Vector FixedViewLoc() { mixin(MGPC!(Vector, 1672)()); }
+			Rotator FixedViewRot() { mixin(MGPC!(Rotator, 1684)()); }
+			float LandBob() { mixin(MGPC!(float, 1764)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
+			ScriptClass CurrentWeaponAttachmentClass() { mixin(MGPC!(ScriptClass, 1620)()); }
+			float LastPainSound() { mixin(MGPC!(float, 2052)()); }
+			float MapSize() { mixin(MGPC!(float, 2032)()); }
+			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 2036)()); }
+			UTWeaponAttachment CurrentWeaponAttachment() { mixin(MGPC!(UTWeaponAttachment, 1884)()); }
+			ScriptClass CurrCharClassInfo() { mixin(MGPC!(ScriptClass, 1812)()); }
+			ScriptArray!(ScriptName) TakeHitPhysicsFixedBones() { mixin(MGPC!(ScriptArray!(ScriptName), 1816)()); }
+			ScriptClass SoundGroupClass() { mixin(MGPC!(ScriptClass, 1808)()); }
+			float DefaultMeshScale() { mixin(MGPC!(float, 2116)()); }
+			ScriptArray!(ScriptName) NoDriveBodies() { mixin(MGPC!(ScriptArray!(ScriptName), 1828)()); }
+			AnimNodeBlend FeignDeathBlend() { mixin(MGPC!(AnimNodeBlend, 1632)()); }
+			AnimNodeSlot FullBodyAnimSlot() { mixin(MGPC!(AnimNodeSlot, 1636)()); }
+			AnimNodeSlot TopHalfAnimSlot() { mixin(MGPC!(AnimNodeSlot, 1640)()); }
+			UTAnimBlendByDriving DrivingNode() { mixin(MGPC!(UTAnimBlendByDriving, 1860)()); }
+			UTAnimBlendByVehicle VehicleNode() { mixin(MGPC!(UTAnimBlendByVehicle, 1864)()); }
+			UTAnimBlendByHoverboarding HoverboardingNode() { mixin(MGPC!(UTAnimBlendByHoverboarding, 1868)()); }
+			float JumpBob() { mixin(MGPC!(float, 1768)()); }
+			ScriptName TauntNames() { mixin(MGPC!(ScriptName, 2120)()); }
+			float bobtime() { mixin(MGPC!(float, 1776)()); }
+			float Bob() { mixin(MGPC!(float, 1760)()); }
+			float AppliedBob() { mixin(MGPC!(float, 1772)()); }
+			UObject.LinearColor SpawnProtectionColor() { mixin(MGPC!(UObject.LinearColor, 2008)()); }
+			SoundCue SpawnSound() { mixin(MGPC!(SoundCue, 2000)()); }
+			UObject.LinearColor TranslocateColor() { mixin(MGPC!(UObject.LinearColor, 1952)()); }
+			SoundCue TeleportSound() { mixin(MGPC!(SoundCue, 2004)()); }
+			CameraAnim TransCameraAnim() { mixin(MGPC!(CameraAnim, 1984)()); }
+			ScriptClass TransInEffects() { mixin(MGPC!(ScriptClass, 1944)()); }
+			UTClientSideWeaponPawn ClientSideWeaponPawn() { mixin(MGPC!(UTClientSideWeaponPawn, 2088)()); }
+			float ThighpadArmor() { mixin(MGPC!(float, 1880)()); }
+			SoundCue ArmorHitSound() { mixin(MGPC!(SoundCue, 1996)()); }
+			float MaxFootstepDistSq() { mixin(MGPC!(float, 2064)()); }
+			float MaxJumpSoundDistSq() { mixin(MGPC!(float, 2068)()); }
+			float DeathTime() { mixin(MGPC!(float, 2200)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'HeadshotNeckAttachment'!
+			float DeathHipLinSpring() { mixin(MGPC!(float, 1644)()); }
+			float DeathHipLinDamp() { mixin(MGPC!(float, 1648)()); }
+			float DeathHipAngSpring() { mixin(MGPC!(float, 1652)()); }
+			float DeathHipAngDamp() { mixin(MGPC!(float, 1656)()); }
+			float StartDeathAnimTime() { mixin(MGPC!(float, 1660)()); }
+			float TimeLastTookDeathAnimDamage() { mixin(MGPC!(float, 1668)()); }
+			ScriptClass DeathAnimDamageType() { mixin(MGPC!(ScriptClass, 1664)()); }
+			float CameraZOffset() { mixin(MGPC!(float, 1724)()); }
+			int HeroCameraPitch() { mixin(MGPC!(int, 1732)()); }
+			float HeroCameraScale() { mixin(MGPC!(float, 1728)()); }
+			Vector CamOffset() { mixin(MGPC!(Vector, 2172)()); }
+			float DodgeSpeed() { mixin(MGPC!(float, 1736)()); }
+			float DodgeSpeedZ() { mixin(MGPC!(float, 1740)()); }
+			int JumpBootCharge() { mixin(MGPC!(int, 2112)()); }
+			Actor.EDoubleClickDir CurrentDir() { mixin(MGPC!(Actor.EDoubleClickDir, 1744)()); }
+			float DoubleJumpEyeHeight() { mixin(MGPC!(float, 1748)()); }
+			float DoubleJumpThreshold() { mixin(MGPC!(float, 1752)()); }
+			float DefaultAirControl() { mixin(MGPC!(float, 1756)()); }
+			MaterialInterface ShieldBeltTeamMaterialInstances() { mixin(MGPC!(MaterialInterface, 2096)()); }
+			MaterialInterface ShieldBeltMaterialInstance() { mixin(MGPC!(MaterialInterface, 2092)()); }
+			float FeignDeathStartTime() { mixin(MGPC!(float, 1796)()); }
+			float FeignDeathBodyAtRestSpeed() { mixin(MGPC!(float, 1792)()); }
+			int UnfeignFailedCount() { mixin(MGPC!(int, 1624)()); }
+			float FeignDeathRecoveryStartTime() { mixin(MGPC!(float, 1800)()); }
+			ScriptName HeadBone() { mixin(MGPC!(ScriptName, 1932)()); }
+			UDKPawn.DrivenWeaponPawnInfo LastDrivenWeaponPawn() { mixin(MGPC!(UDKPawn.DrivenWeaponPawnInfo, 2076)()); }
+			ScriptClass m_ClientSideWeaponPawnClass() { mixin(MGPC!(ScriptClass, 2204)()); }
+			UTProjectile AttachedProj() { mixin(MGPC!(UTProjectile, 2060)()); }
+			float AccumulationTime() { mixin(MGPC!(float, 1848)()); }
+			float AccumulateDamage() { mixin(MGPC!(float, 1844)()); }
+			float LastHoverboardTime() { mixin(MGPC!(float, 1852)()); }
+			float MinHoverboardInterval() { mixin(MGPC!(float, 1856)()); }
+			float HeadHeight() { mixin(MGPC!(float, 1928)()); }
+			float HeadRadius() { mixin(MGPC!(float, 1924)()); }
+			float CameraScaleMin() { mixin(MGPC!(float, 1704)()); }
+			float CameraScaleMax() { mixin(MGPC!(float, 1708)()); }
+			ForceFeedbackWaveform FallingDamageWaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 1840)()); }
+			Vector OldCameraPosition() { mixin(MGPC!(Vector, 1712)()); }
+			float BioBurnAwayTime() { mixin(MGPC!(float, 2188)()); }
+			ScriptName BioEffectName() { mixin(MGPC!(ScriptName, 2192)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BioBurnAway'!
+			float RagdollLifespan() { mixin(MGPC!(float, 2056)()); }
+			int SuperHealthMax() { mixin(MGPC!(int, 1804)()); }
+			ScriptName WeaponSocket() { mixin(MGPC!(ScriptName, 1888)()); }
+			ScriptName WeaponSocket2() { mixin(MGPC!(ScriptName, 1896)()); }
+			ScriptName PawnEffectSockets() { mixin(MGPC!(ScriptName, 1904)()); }
+			float HeadOffset() { mixin(MGPC!(float, 1920)()); }
+			float TeamBeaconPlayerInfoMaxDist() { mixin(MGPC!(float, 2024)()); }
+			Texture SpeakingBeaconTexture() { mixin(MGPC!(Texture, 2028)()); }
+			float DesiredMeshScale() { mixin(MGPC!(float, 2168)()); }
 		}
-		bool bIsInvulnerable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x40) != 0; }
-		bool bIsInvulnerable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x40; } return val; }
-		bool bFixedView() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x1) != 0; }
-		bool bFixedView(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x1; } return val; }
-		bool bJustLanded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x400) != 0; }
-		bool bJustLanded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x400; } return val; }
-		bool bLandRecovery() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x800) != 0; }
-		bool bLandRecovery(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x800; } return val; }
-		bool bArmsAttached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x20000) != 0; }
-		bool bArmsAttached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x20000; } return val; }
-		bool bStopDeathCamera() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x2000) != 0; }
-		bool bStopDeathCamera(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x2000; } return val; }
-		bool bReceivedValidTeam() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x200000) != 0; }
-		bool bReceivedValidTeam(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x200000; } return val; }
-		bool bWeaponBob() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x200) != 0; }
-		bool bWeaponBob(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x200; } return val; }
-		bool bWeaponAttachmentVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x40000) != 0; }
-		bool bWeaponAttachmentVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x40000; } return val; }
-		bool bSpawnDone() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x2) != 0; }
-		bool bSpawnDone(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x2; } return val; }
-		bool bSpawnIn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x4) != 0; }
-		bool bSpawnIn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x4; } return val; }
-		bool bShieldAbsorb() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x8) != 0; }
-		bool bShieldAbsorb(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x8; } return val; }
-		bool bJustDroppedOrb() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x80) != 0; }
-		bool bJustDroppedOrb(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x80; } return val; }
-		bool bHeadGibbed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x10000) != 0; }
-		bool bHeadGibbed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x10000; } return val; }
-		bool bGibbed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x8000) != 0; }
-		bool bGibbed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x8000; } return val; }
-		bool bForcedFeignDeath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x100) != 0; }
-		bool bForcedFeignDeath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x100; } return val; }
-		bool bHideOnListenServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x80000) != 0; }
-		bool bHideOnListenServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x80000; } return val; }
-		bool bWinnerCam() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x4000) != 0; }
-		bool bWinnerCam(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x4000; } return val; }
-		bool bDodging() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x10) != 0; }
-		bool bDodging(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x10; } return val; }
-		bool bStopOnDoubleLanding() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x20) != 0; }
-		bool bStopOnDoubleLanding(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x20; } return val; }
-		bool bKillsAffectHead() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x400000) != 0; }
-		bool bKillsAffectHead(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x400000; } return val; }
-		bool bHasHoverboard() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x1000) != 0; }
-		bool bHasHoverboard(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x1000; } return val; }
-		bool bKilledByBio() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x800000) != 0; }
-		bool bKilledByBio(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x800000; } return val; }
-		bool bPostRenderTraceSucceeded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1616) & 0x100000) != 0; }
-		bool bPostRenderTraceSucceeded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1616) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1616) &= ~0x100000; } return val; }
+		bool bIsInvulnerable() { mixin(MGBPC!(1616, 0x40)()); }
+		bool bIsInvulnerable(bool val) { mixin(MSBPC!(1616, 0x40)()); }
+		bool bFixedView() { mixin(MGBPC!(1616, 0x1)()); }
+		bool bFixedView(bool val) { mixin(MSBPC!(1616, 0x1)()); }
+		bool bJustLanded() { mixin(MGBPC!(1616, 0x400)()); }
+		bool bJustLanded(bool val) { mixin(MSBPC!(1616, 0x400)()); }
+		bool bLandRecovery() { mixin(MGBPC!(1616, 0x800)()); }
+		bool bLandRecovery(bool val) { mixin(MSBPC!(1616, 0x800)()); }
+		bool bArmsAttached() { mixin(MGBPC!(1616, 0x20000)()); }
+		bool bArmsAttached(bool val) { mixin(MSBPC!(1616, 0x20000)()); }
+		bool bStopDeathCamera() { mixin(MGBPC!(1616, 0x2000)()); }
+		bool bStopDeathCamera(bool val) { mixin(MSBPC!(1616, 0x2000)()); }
+		bool bReceivedValidTeam() { mixin(MGBPC!(1616, 0x200000)()); }
+		bool bReceivedValidTeam(bool val) { mixin(MSBPC!(1616, 0x200000)()); }
+		bool bWeaponBob() { mixin(MGBPC!(1616, 0x200)()); }
+		bool bWeaponBob(bool val) { mixin(MSBPC!(1616, 0x200)()); }
+		bool bWeaponAttachmentVisible() { mixin(MGBPC!(1616, 0x40000)()); }
+		bool bWeaponAttachmentVisible(bool val) { mixin(MSBPC!(1616, 0x40000)()); }
+		bool bSpawnDone() { mixin(MGBPC!(1616, 0x2)()); }
+		bool bSpawnDone(bool val) { mixin(MSBPC!(1616, 0x2)()); }
+		bool bSpawnIn() { mixin(MGBPC!(1616, 0x4)()); }
+		bool bSpawnIn(bool val) { mixin(MSBPC!(1616, 0x4)()); }
+		bool bShieldAbsorb() { mixin(MGBPC!(1616, 0x8)()); }
+		bool bShieldAbsorb(bool val) { mixin(MSBPC!(1616, 0x8)()); }
+		bool bJustDroppedOrb() { mixin(MGBPC!(1616, 0x80)()); }
+		bool bJustDroppedOrb(bool val) { mixin(MSBPC!(1616, 0x80)()); }
+		bool bHeadGibbed() { mixin(MGBPC!(1616, 0x10000)()); }
+		bool bHeadGibbed(bool val) { mixin(MSBPC!(1616, 0x10000)()); }
+		bool bGibbed() { mixin(MGBPC!(1616, 0x8000)()); }
+		bool bGibbed(bool val) { mixin(MSBPC!(1616, 0x8000)()); }
+		bool bForcedFeignDeath() { mixin(MGBPC!(1616, 0x100)()); }
+		bool bForcedFeignDeath(bool val) { mixin(MSBPC!(1616, 0x100)()); }
+		bool bHideOnListenServer() { mixin(MGBPC!(1616, 0x80000)()); }
+		bool bHideOnListenServer(bool val) { mixin(MSBPC!(1616, 0x80000)()); }
+		bool bWinnerCam() { mixin(MGBPC!(1616, 0x4000)()); }
+		bool bWinnerCam(bool val) { mixin(MSBPC!(1616, 0x4000)()); }
+		bool bDodging() { mixin(MGBPC!(1616, 0x10)()); }
+		bool bDodging(bool val) { mixin(MSBPC!(1616, 0x10)()); }
+		bool bStopOnDoubleLanding() { mixin(MGBPC!(1616, 0x20)()); }
+		bool bStopOnDoubleLanding(bool val) { mixin(MSBPC!(1616, 0x20)()); }
+		bool bKillsAffectHead() { mixin(MGBPC!(1616, 0x400000)()); }
+		bool bKillsAffectHead(bool val) { mixin(MSBPC!(1616, 0x400000)()); }
+		bool bHasHoverboard() { mixin(MGBPC!(1616, 0x1000)()); }
+		bool bHasHoverboard(bool val) { mixin(MSBPC!(1616, 0x1000)()); }
+		bool bKilledByBio() { mixin(MGBPC!(1616, 0x800000)()); }
+		bool bKilledByBio(bool val) { mixin(MSBPC!(1616, 0x800000)()); }
+		bool bPostRenderTraceSucceeded() { mixin(MGBPC!(1616, 0x100000)()); }
+		bool bPostRenderTraceSucceeded(bool val) { mixin(MSBPC!(1616, 0x100000)()); }
 	}
 final:
 	bool CanDoubleJump()
@@ -1083,11 +1097,11 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetShieldStrength, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	int AbsorbDamage(int* Damage, int CurrentShieldStrength, float AbsorptionRate)
+	int AbsorbDamage(ref int Damage, int CurrentShieldStrength, float AbsorptionRate)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = *Damage;
+		*cast(int*)params.ptr = Damage;
 		*cast(int*)&params[4] = CurrentShieldStrength;
 		*cast(float*)&params[8] = AbsorptionRate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AbsorbDamage, params.ptr, cast(void*)0);
@@ -1102,12 +1116,12 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShieldAbsorb, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	void AdjustDamage(int* InDamage, Vector* Momentum, Controller InstigatedBy, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void AdjustDamage(ref int InDamage, ref Vector Momentum, Controller InstigatedBy, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
 		ubyte params[68];
 		params[] = 0;
-		*cast(int*)params.ptr = *InDamage;
-		*cast(Vector*)&params[4] = *Momentum;
+		*cast(int*)params.ptr = InDamage;
+		*cast(Vector*)&params[4] = Momentum;
 		*cast(Controller*)&params[16] = InstigatedBy;
 		*cast(Vector*)&params[20] = HitLocation;
 		*cast(ScriptClass*)&params[32] = pDamageType;
@@ -1240,14 +1254,14 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddDefaultInventory, cast(void*)0, cast(void*)0);
 	}
-	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
@@ -1261,42 +1275,42 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)params.ptr = bNewBehindView;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetThirdPersonCamera, params.ptr, cast(void*)0);
 	}
-	void FindGoodEndView(PlayerController InPC, Rotator* GoodRotation)
+	void FindGoodEndView(PlayerController InPC, ref Rotator GoodRotation)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = InPC;
-		*cast(Rotator*)&params[4] = *GoodRotation;
+		*cast(Rotator*)&params[4] = GoodRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindGoodEndView, params.ptr, cast(void*)0);
 		*GoodRotation = *cast(Rotator*)&params[4];
 	}
-	bool TryNewCamRot(UTPlayerController PC, Rotator ViewRotation, float* CamDist)
+	bool TryNewCamRot(UTPlayerController PC, Rotator ViewRotation, ref float CamDist)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
 		*cast(Rotator*)&params[4] = ViewRotation;
-		*cast(float*)&params[16] = *CamDist;
+		*cast(float*)&params[16] = CamDist;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TryNewCamRot, params.ptr, cast(void*)0);
 		*CamDist = *cast(float*)&params[16];
 		return *cast(bool*)&params[20];
 	}
-	void SetHeroCam(Rotator* out_CamRot)
+	void SetHeroCam(ref Rotator out_CamRot)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *out_CamRot;
+		*cast(Rotator*)params.ptr = out_CamRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetHeroCam, params.ptr, cast(void*)0);
 		*out_CamRot = *cast(Rotator*)params.ptr;
 	}
-	bool CalcThirdPersonCam(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcThirdPersonCam(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcThirdPersonCam, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
@@ -1390,13 +1404,13 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayDyingSound, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -1641,21 +1655,21 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDrowningDamage, cast(void*)0, cast(void*)0);
 	}
-	bool IsLocationOnHead(Actor.ImpactInfo* Impact, float AdditionalScale)
+	bool IsLocationOnHead(ref const Actor.ImpactInfo Impact, float AdditionalScale)
 	{
 		ubyte params[88];
 		params[] = 0;
-		*cast(Actor.ImpactInfo*)params.ptr = *Impact;
+		*cast(Actor.ImpactInfo*)params.ptr = Impact;
 		*cast(float*)&params[80] = AdditionalScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsLocationOnHead, params.ptr, cast(void*)0);
 		*Impact = *cast(Actor.ImpactInfo*)params.ptr;
 		return *cast(bool*)&params[84];
 	}
-	void ModifyRotForDebugFreeCam(Rotator* out_CamRot)
+	void ModifyRotForDebugFreeCam(ref Rotator out_CamRot)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *out_CamRot;
+		*cast(Rotator*)params.ptr = out_CamRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyRotForDebugFreeCam, params.ptr, cast(void*)0);
 		*out_CamRot = *cast(Rotator*)params.ptr;
 	}
@@ -1692,7 +1706,7 @@ void**)params.ptr = SkelComp;
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* OtherComponent, Actor.CollisionImpactData* RigidCollisionData, int ContactIndex)
+void* OtherComponent, ref const Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -1702,7 +1716,7 @@ void**)params.ptr = HitComponent;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
-		*cast(Actor.CollisionImpactData*)&params[8] = *RigidCollisionData;
+		*cast(Actor.CollisionImpactData*)&params[8] = RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
 		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];

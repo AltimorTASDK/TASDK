@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.WebServer;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.IpDrv.WebApplication;
 import UnrealScript.Engine.Actor;
 import UnrealScript.IpDrv.TcpLink;
@@ -9,9 +10,9 @@ extern(C++) interface WebServer : TcpLink
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebServer")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.WebServer")()); }
 	private static __gshared WebServer mDefaultProperties;
-	@property final static WebServer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WebServer)("WebServer IpDrv.Default__WebServer")); }
+	@property final static WebServer DefaultProperties() { mixin(MGDPC!(WebServer, "WebServer IpDrv.Default__WebServer")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,39 +25,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetApplication() { return mGetApplication ? mGetApplication : (mGetApplication = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.GetApplication")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.PostBeginPlay")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.Destroyed")); }
-			ScriptFunction GainedChild() { return mGainedChild ? mGainedChild : (mGainedChild = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.GainedChild")); }
-			ScriptFunction LostChild() { return mLostChild ? mLostChild : (mLostChild = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.LostChild")); }
+			ScriptFunction GetApplication() { mixin(MGF!("mGetApplication", "Function IpDrv.WebServer.GetApplication")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function IpDrv.WebServer.PostBeginPlay")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function IpDrv.WebServer.Destroyed")()); }
+			ScriptFunction GainedChild() { mixin(MGF!("mGainedChild", "Function IpDrv.WebServer.GainedChild")()); }
+			ScriptFunction LostChild() { mixin(MGF!("mLostChild", "Function IpDrv.WebServer.LostChild")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int ConnID() { return *cast(int*)(cast(size_t)cast(void*)this + 868); }
-			int DefaultApplication() { return *cast(int*)(cast(size_t)cast(void*)this + 804); }
-			ScriptString ApplicationPaths() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 672); }
-			int ExpirationSeconds() { return *cast(int*)(cast(size_t)cast(void*)this + 808); }
-			int ConnectionCount() { return *cast(int*)(cast(size_t)cast(void*)this + 864); }
-			WebApplication ApplicationObjects() { return *cast(WebApplication*)(cast(size_t)cast(void*)this + 824); }
-			ScriptString ServerURL() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 812); }
-			int MaxConnections() { return *cast(int*)(cast(size_t)cast(void*)this + 800); }
-			int ListenPort() { return *cast(int*)(cast(size_t)cast(void*)this + 796); }
-			ScriptString Applications() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 552); }
-			ScriptString ServerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 540); }
+			int ConnID() { mixin(MGPC!(int, 868)()); }
+			int DefaultApplication() { mixin(MGPC!(int, 804)()); }
+			ScriptString ApplicationPaths() { mixin(MGPC!(ScriptString, 672)()); }
+			int ExpirationSeconds() { mixin(MGPC!(int, 808)()); }
+			int ConnectionCount() { mixin(MGPC!(int, 864)()); }
+			WebApplication ApplicationObjects() { mixin(MGPC!(WebApplication, 824)()); }
+			ScriptString ServerURL() { mixin(MGPC!(ScriptString, 812)()); }
+			int MaxConnections() { mixin(MGPC!(int, 800)()); }
+			int ListenPort() { mixin(MGPC!(int, 796)()); }
+			ScriptString Applications() { mixin(MGPC!(ScriptString, 552)()); }
+			ScriptString ServerName() { mixin(MGPC!(ScriptString, 540)()); }
 		}
-		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 792) & 0x1) != 0; }
-		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 792) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 792) &= ~0x1; } return val; }
+		bool bEnabled() { mixin(MGBPC!(792, 0x1)()); }
+		bool bEnabled(bool val) { mixin(MSBPC!(792, 0x1)()); }
 	}
 final:
-	WebApplication GetApplication(ScriptString URI, ScriptString* SubURI)
+	WebApplication GetApplication(ScriptString URI, ref ScriptString SubURI)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = URI;
-		*cast(ScriptString*)&params[12] = *SubURI;
+		*cast(ScriptString*)&params[12] = SubURI;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetApplication, params.ptr, cast(void*)0);
 		*SubURI = *cast(ScriptString*)&params[12];
 		return *cast(WebApplication*)&params[24];

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxMinimapHud;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTGameReplicationInfo;
 import UnrealScript.UTGame.UTWeapon;
 import UnrealScript.UTGame.UTVehicle;
@@ -17,9 +18,9 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxMinimapHud")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxMinimapHud")()); }
 	private static __gshared GFxMinimapHud mDefaultProperties;
-	@property final static GFxMinimapHud DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxMinimapHud)("GFxMinimapHud UTGame.Default__GFxMinimapHud")); }
+	@property final static GFxMinimapHud DefaultProperties() { mixin(MGDPC!(GFxMinimapHud, "GFxMinimapHud UTGame.Default__GFxMinimapHud")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -49,28 +50,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction registerMiniMapView() { return mregisterMiniMapView ? mregisterMiniMapView : (mregisterMiniMapView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.registerMiniMapView")); }
-			ScriptFunction SetAmmoCountTF() { return mSetAmmoCountTF ? mSetAmmoCountTF : (mSetAmmoCountTF = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.SetAmmoCountTF")); }
-			ScriptFunction CreateMessageRow() { return mCreateMessageRow ? mCreateMessageRow : (mCreateMessageRow = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.CreateMessageRow")); }
-			ScriptFunction InitMessageRow() { return mInitMessageRow ? mInitMessageRow : (mInitMessageRow = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.InitMessageRow")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.Init")); }
-			ScriptFunction LoadHeEn() { return mLoadHeEn ? mLoadHeEn : (mLoadHeEn = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.LoadHeEn")); }
-			ScriptFunction UpdateHealth() { return mUpdateHealth ? mUpdateHealth : (mUpdateHealth = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.UpdateHealth")); }
-			ScriptFunction UpdateEnergy() { return mUpdateEnergy ? mUpdateEnergy : (mUpdateEnergy = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.UpdateEnergy")); }
-			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.FormatTime")); }
-			ScriptFunction ClearStats() { return mClearStats ? mClearStats : (mClearStats = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.ClearStats")); }
-			ScriptFunction RemoveMessage() { return mRemoveMessage ? mRemoveMessage : (mRemoveMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.RemoveMessage")); }
-			ScriptFunction AddMessage() { return mAddMessage ? mAddMessage : (mAddMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.AddMessage")); }
-			ScriptFunction UpdateGameHUD() { return mUpdateGameHUD ? mUpdateGameHUD : (mUpdateGameHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.UpdateGameHUD")); }
-			ScriptFunction TickHud() { return mTickHud ? mTickHud : (mTickHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.TickHud")); }
-			ScriptFunction ToggleCrosshair() { return mToggleCrosshair ? mToggleCrosshair : (mToggleCrosshair = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.ToggleCrosshair")); }
-			ScriptFunction MinimapZoomOut() { return mMinimapZoomOut ? mMinimapZoomOut : (mMinimapZoomOut = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.MinimapZoomOut")); }
-			ScriptFunction MinimapZoomIn() { return mMinimapZoomIn ? mMinimapZoomIn : (mMinimapZoomIn = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.MinimapZoomIn")); }
-			ScriptFunction DisplayHit() { return mDisplayHit ? mDisplayHit : (mDisplayHit = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.DisplayHit")); }
-			ScriptFunction ShowMultiKill() { return mShowMultiKill ? mShowMultiKill : (mShowMultiKill = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.ShowMultiKill")); }
-			ScriptFunction SetCenterText() { return mSetCenterText ? mSetCenterText : (mSetCenterText = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.SetCenterText")); }
-			ScriptFunction GetRank() { return mGetRank ? mGetRank : (mGetRank = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.GetRank")); }
-			ScriptFunction AddDeathMessage() { return mAddDeathMessage ? mAddDeathMessage : (mAddDeathMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimapHud.AddDeathMessage")); }
+			ScriptFunction registerMiniMapView() { mixin(MGF!("mregisterMiniMapView", "Function UTGame.GFxMinimapHud.registerMiniMapView")()); }
+			ScriptFunction SetAmmoCountTF() { mixin(MGF!("mSetAmmoCountTF", "Function UTGame.GFxMinimapHud.SetAmmoCountTF")()); }
+			ScriptFunction CreateMessageRow() { mixin(MGF!("mCreateMessageRow", "Function UTGame.GFxMinimapHud.CreateMessageRow")()); }
+			ScriptFunction InitMessageRow() { mixin(MGF!("mInitMessageRow", "Function UTGame.GFxMinimapHud.InitMessageRow")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function UTGame.GFxMinimapHud.Init")()); }
+			ScriptFunction LoadHeEn() { mixin(MGF!("mLoadHeEn", "Function UTGame.GFxMinimapHud.LoadHeEn")()); }
+			ScriptFunction UpdateHealth() { mixin(MGF!("mUpdateHealth", "Function UTGame.GFxMinimapHud.UpdateHealth")()); }
+			ScriptFunction UpdateEnergy() { mixin(MGF!("mUpdateEnergy", "Function UTGame.GFxMinimapHud.UpdateEnergy")()); }
+			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function UTGame.GFxMinimapHud.FormatTime")()); }
+			ScriptFunction ClearStats() { mixin(MGF!("mClearStats", "Function UTGame.GFxMinimapHud.ClearStats")()); }
+			ScriptFunction RemoveMessage() { mixin(MGF!("mRemoveMessage", "Function UTGame.GFxMinimapHud.RemoveMessage")()); }
+			ScriptFunction AddMessage() { mixin(MGF!("mAddMessage", "Function UTGame.GFxMinimapHud.AddMessage")()); }
+			ScriptFunction UpdateGameHUD() { mixin(MGF!("mUpdateGameHUD", "Function UTGame.GFxMinimapHud.UpdateGameHUD")()); }
+			ScriptFunction TickHud() { mixin(MGF!("mTickHud", "Function UTGame.GFxMinimapHud.TickHud")()); }
+			ScriptFunction ToggleCrosshair() { mixin(MGF!("mToggleCrosshair", "Function UTGame.GFxMinimapHud.ToggleCrosshair")()); }
+			ScriptFunction MinimapZoomOut() { mixin(MGF!("mMinimapZoomOut", "Function UTGame.GFxMinimapHud.MinimapZoomOut")()); }
+			ScriptFunction MinimapZoomIn() { mixin(MGF!("mMinimapZoomIn", "Function UTGame.GFxMinimapHud.MinimapZoomIn")()); }
+			ScriptFunction DisplayHit() { mixin(MGF!("mDisplayHit", "Function UTGame.GFxMinimapHud.DisplayHit")()); }
+			ScriptFunction ShowMultiKill() { mixin(MGF!("mShowMultiKill", "Function UTGame.GFxMinimapHud.ShowMultiKill")()); }
+			ScriptFunction SetCenterText() { mixin(MGF!("mSetCenterText", "Function UTGame.GFxMinimapHud.SetCenterText")()); }
+			ScriptFunction GetRank() { mixin(MGF!("mGetRank", "Function UTGame.GFxMinimapHud.GetRank")()); }
+			ScriptFunction AddDeathMessage() { mixin(MGF!("mAddDeathMessage", "Function UTGame.GFxMinimapHud.AddDeathMessage")()); }
 		}
 	}
 	struct MessageRow
@@ -78,13 +79,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.GFxMinimapHud.MessageRow")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxMinimapHud.MessageRow")()); }
 		@property final auto ref
 		{
-			int Y() { return *cast(int*)(cast(size_t)&this + 12); }
-			float StartFadeTime() { return *cast(float*)(cast(size_t)&this + 8); }
-			GFxObject TF() { return *cast(GFxObject*)(cast(size_t)&this + 4); }
-			GFxObject MC() { return *cast(GFxObject*)(cast(size_t)&this + 0); }
+			int Y() { mixin(MGPS!(int, 12)()); }
+			float StartFadeTime() { mixin(MGPS!(float, 8)()); }
+			GFxObject TF() { mixin(MGPS!(GFxObject, 4)()); }
+			GFxObject MC() { mixin(MGPS!(GFxObject, 0)()); }
 		}
 	}
 	struct HeEnDisplay
@@ -92,67 +93,67 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.GFxMinimapHud.HeEnDisplay")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxMinimapHud.HeEnDisplay")()); }
 		@property final
 		{
 			auto ref
 			{
-				GFxObject EnergyBarMC() { return *cast(GFxObject*)(cast(size_t)&this + 32); }
-				GFxObject EnergyTF() { return *cast(GFxObject*)(cast(size_t)&this + 28); }
-				GFxObject HealthCritMC() { return *cast(GFxObject*)(cast(size_t)&this + 20); }
-				GFxObject HealthNormMC() { return *cast(GFxObject*)(cast(size_t)&this + 16); }
-				GFxObject HealthBarMC() { return *cast(GFxObject*)(cast(size_t)&this + 12); }
-				GFxObject HealthTF() { return *cast(GFxObject*)(cast(size_t)&this + 8); }
-				float LastEnergy() { return *cast(float*)(cast(size_t)&this + 4); }
-				float LastHealth() { return *cast(float*)(cast(size_t)&this + 0); }
+				GFxObject EnergyBarMC() { mixin(MGPS!(GFxObject, 32)()); }
+				GFxObject EnergyTF() { mixin(MGPS!(GFxObject, 28)()); }
+				GFxObject HealthCritMC() { mixin(MGPS!(GFxObject, 20)()); }
+				GFxObject HealthNormMC() { mixin(MGPS!(GFxObject, 16)()); }
+				GFxObject HealthBarMC() { mixin(MGPS!(GFxObject, 12)()); }
+				GFxObject HealthTF() { mixin(MGPS!(GFxObject, 8)()); }
+				float LastEnergy() { mixin(MGPS!(float, 4)()); }
+				float LastHealth() { mixin(MGPS!(float, 0)()); }
 			}
-			bool HealthNormOn() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
-			bool HealthNormOn(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
+			bool HealthNormOn() { mixin(MGBPS!(24, 0x1)()); }
+			bool HealthNormOn(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float Radius() { return *cast(float*)(cast(size_t)cast(void*)this + 388); }
-			float NormalZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 396); }
-			float CurZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 392); }
-			ScriptArray!(GFxMinimapHud.MessageRow) Messages() { return *cast(ScriptArray!(GFxMinimapHud.MessageRow)*)(cast(size_t)cast(void*)this + 484); }
-			ScriptArray!(GFxMinimapHud.MessageRow) FreeMessages() { return *cast(ScriptArray!(GFxMinimapHud.MessageRow)*)(cast(size_t)cast(void*)this + 496); }
-			UTGameReplicationInfo GRI() { return *cast(UTGameReplicationInfo*)(cast(size_t)cast(void*)this + 628); }
-			UTPlayerReplicationInfo LastFlagCarrier() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 620); }
-			UTPlayerReplicationInfo LastEnemy() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 616); }
-			ubyte LastFlagHome() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 612); }
-			int LastScore() { return *cast(int*)(cast(size_t)cast(void*)this + 604); }
-			int LastAmmoCount() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
-			UTWeapon LastWeapon() { return *cast(UTWeapon*)(cast(size_t)cast(void*)this + 596); }
-			UTVehicle LastVehicle() { return *cast(UTVehicle*)(cast(size_t)cast(void*)this + 592); }
-			GFxObject MultiKillMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 588); }
-			GFxObject MultiKillMsg_TF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 584); }
-			GFxObject MultiKillN_TF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 580); }
-			GFxObject HitLocMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 548); }
-			GFxObject CreditsAndStreaksMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 544); }
-			GFxObject OffhandsAndFlagMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 540); }
-			GFxObject EnemyNameTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 536); }
-			GFxObject CenterTextTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 532); }
-			GFxObject CenterTextMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 528); }
-			GFxObject TimeTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 524); }
-			GFxObject TeamStatsMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 520); }
-			GFxObject PlayerStatsMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 516); }
-			int NumMessages() { return *cast(int*)(cast(size_t)cast(void*)this + 512); }
-			float MessageHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-			GFxObject LogMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 480); }
-			GFxMinimapHud.HeEnDisplay VehicleHE() { return *cast(GFxMinimapHud.HeEnDisplay*)(cast(size_t)cast(void*)this + 444); }
-			GFxMinimapHud.HeEnDisplay PlayerHE() { return *cast(GFxMinimapHud.HeEnDisplay*)(cast(size_t)cast(void*)this + 408); }
-			float MinZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 404); }
-			float MaxZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 400); }
-			GFxMinimap Minimap() { return *cast(GFxMinimap*)(cast(size_t)cast(void*)this + 384); }
-			WorldInfo ThisWorld() { return *cast(WorldInfo*)(cast(size_t)cast(void*)this + 380); }
+			float Radius() { mixin(MGPC!(float, 388)()); }
+			float NormalZoomf() { mixin(MGPC!(float, 396)()); }
+			float CurZoomf() { mixin(MGPC!(float, 392)()); }
+			ScriptArray!(GFxMinimapHud.MessageRow) Messages() { mixin(MGPC!(ScriptArray!(GFxMinimapHud.MessageRow), 484)()); }
+			ScriptArray!(GFxMinimapHud.MessageRow) FreeMessages() { mixin(MGPC!(ScriptArray!(GFxMinimapHud.MessageRow), 496)()); }
+			UTGameReplicationInfo GRI() { mixin(MGPC!(UTGameReplicationInfo, 628)()); }
+			UTPlayerReplicationInfo LastFlagCarrier() { mixin(MGPC!(UTPlayerReplicationInfo, 620)()); }
+			UTPlayerReplicationInfo LastEnemy() { mixin(MGPC!(UTPlayerReplicationInfo, 616)()); }
+			ubyte LastFlagHome() { mixin(MGPC!(ubyte, 612)()); }
+			int LastScore() { mixin(MGPC!(int, 604)()); }
+			int LastAmmoCount() { mixin(MGPC!(int, 600)()); }
+			UTWeapon LastWeapon() { mixin(MGPC!(UTWeapon, 596)()); }
+			UTVehicle LastVehicle() { mixin(MGPC!(UTVehicle, 592)()); }
+			GFxObject MultiKillMC() { mixin(MGPC!(GFxObject, 588)()); }
+			GFxObject MultiKillMsg_TF() { mixin(MGPC!(GFxObject, 584)()); }
+			GFxObject MultiKillN_TF() { mixin(MGPC!(GFxObject, 580)()); }
+			GFxObject HitLocMC() { mixin(MGPC!(GFxObject, 548)()); }
+			GFxObject CreditsAndStreaksMC() { mixin(MGPC!(GFxObject, 544)()); }
+			GFxObject OffhandsAndFlagMC() { mixin(MGPC!(GFxObject, 540)()); }
+			GFxObject EnemyNameTF() { mixin(MGPC!(GFxObject, 536)()); }
+			GFxObject CenterTextTF() { mixin(MGPC!(GFxObject, 532)()); }
+			GFxObject CenterTextMC() { mixin(MGPC!(GFxObject, 528)()); }
+			GFxObject TimeTF() { mixin(MGPC!(GFxObject, 524)()); }
+			GFxObject TeamStatsMC() { mixin(MGPC!(GFxObject, 520)()); }
+			GFxObject PlayerStatsMC() { mixin(MGPC!(GFxObject, 516)()); }
+			int NumMessages() { mixin(MGPC!(int, 512)()); }
+			float MessageHeight() { mixin(MGPC!(float, 508)()); }
+			GFxObject LogMC() { mixin(MGPC!(GFxObject, 480)()); }
+			GFxMinimapHud.HeEnDisplay VehicleHE() { mixin(MGPC!(GFxMinimapHud.HeEnDisplay, 444)()); }
+			GFxMinimapHud.HeEnDisplay PlayerHE() { mixin(MGPC!(GFxMinimapHud.HeEnDisplay, 408)()); }
+			float MinZoomf() { mixin(MGPC!(float, 404)()); }
+			float MaxZoomf() { mixin(MGPC!(float, 400)()); }
+			GFxMinimap Minimap() { mixin(MGPC!(GFxMinimap, 384)()); }
+			WorldInfo ThisWorld() { mixin(MGPC!(WorldInfo, 380)()); }
 		}
-		bool bIsTeamHUD() { return (*cast(uint*)(cast(size_t)cast(void*)this + 632) & 0x1) != 0; }
-		bool bIsTeamHUD(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 632) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 632) &= ~0x1; } return val; }
-		bool bDrawWeaponCrosshairs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 632) & 0x2) != 0; }
-		bool bDrawWeaponCrosshairs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 632) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 632) &= ~0x2; } return val; }
+		bool bIsTeamHUD() { mixin(MGBPC!(632, 0x1)()); }
+		bool bIsTeamHUD(bool val) { mixin(MSBPC!(632, 0x1)()); }
+		bool bDrawWeaponCrosshairs() { mixin(MGBPC!(632, 0x2)()); }
+		bool bDrawWeaponCrosshairs(bool val) { mixin(MSBPC!(632, 0x2)()); }
 	}
 final:
 	void registerMiniMapView(GFxMinimap MC, float R)
@@ -192,30 +193,30 @@ final:
 		*cast(LocalPlayer*)params.ptr = pPlayer;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
-	void LoadHeEn(GFxMinimapHud.HeEnDisplay* pInfo, ScriptString Base)
+	void LoadHeEn(ref GFxMinimapHud.HeEnDisplay pInfo, ScriptString Base)
 	{
 		ubyte params[48];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = pInfo;
 		*cast(ScriptString*)&params[36] = Base;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LoadHeEn, params.ptr, cast(void*)0);
 		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
-	void UpdateHealth(GFxMinimapHud.HeEnDisplay* pInfo, float NewHealth, float HealthMax)
+	void UpdateHealth(ref GFxMinimapHud.HeEnDisplay pInfo, float NewHealth, float HealthMax)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = pInfo;
 		*cast(float*)&params[36] = NewHealth;
 		*cast(float*)&params[40] = HealthMax;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHealth, params.ptr, cast(void*)0);
 		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
-	void UpdateEnergy(GFxMinimapHud.HeEnDisplay* pInfo, float NewEnergy, float EnergyMax)
+	void UpdateEnergy(ref GFxMinimapHud.HeEnDisplay pInfo, float NewEnergy, float EnergyMax)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = pInfo;
 		*cast(float*)&params[36] = NewEnergy;
 		*cast(float*)&params[40] = EnergyMax;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateEnergy, params.ptr, cast(void*)0);

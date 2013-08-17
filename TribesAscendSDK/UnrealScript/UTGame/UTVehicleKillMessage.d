@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTVehicleKillMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface UTVehicleKillMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleKillMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleKillMessage")()); }
 	private static __gshared UTVehicleKillMessage mDefaultProperties;
-	@property final static UTVehicleKillMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleKillMessage)("UTVehicleKillMessage UTGame.Default__UTVehicleKillMessage")); }
+	@property final static UTVehicleKillMessage DefaultProperties() { mixin(MGDPC!(UTVehicleKillMessage, "UTVehicleKillMessage UTGame.Default__UTVehicleKillMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,15 +25,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleKillMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleKillMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleKillMessage.AnnouncementSound")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVehicleKillMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVehicleKillMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVehicleKillMessage.AnnouncementSound")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave KillSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 196); }
-		ScriptString KillString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundNodeWave KillSounds() { mixin(MGPC!(SoundNodeWave, 196)()); }
+		ScriptString KillString() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

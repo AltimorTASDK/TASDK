@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTActorFactoryAI;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorFactoryAI;
 import UnrealScript.Engine.Actor;
 
@@ -8,20 +9,20 @@ extern(C++) interface UTActorFactoryAI : ActorFactoryAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTActorFactoryAI")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTActorFactoryAI")()); }
 	private static __gshared UTActorFactoryAI mDefaultProperties;
-	@property final static UTActorFactoryAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTActorFactoryAI)("UTActorFactoryAI UTGame.Default__UTActorFactoryAI")); }
+	@property final static UTActorFactoryAI DefaultProperties() { mixin(MGDPC!(UTActorFactoryAI, "UTActorFactoryAI UTGame.Default__UTActorFactoryAI")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;
-		public @property static final ScriptFunction PostCreateActor() { return mPostCreateActor ? mPostCreateActor : (mPostCreateActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTActorFactoryAI.PostCreateActor")); }
+		public @property static final ScriptFunction PostCreateActor() { mixin(MGF!("mPostCreateActor", "Function UTGame.UTActorFactoryAI.PostCreateActor")()); }
 	}
 	@property final
 	{
-		bool bUseCompartment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x2) != 0; }
-		bool bUseCompartment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x2; } return val; }
-		bool bForceDeathmatchAI() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x1) != 0; }
-		bool bForceDeathmatchAI(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 132) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 132) &= ~0x1; } return val; }
+		bool bUseCompartment() { mixin(MGBPC!(132, 0x2)()); }
+		bool bUseCompartment(bool val) { mixin(MSBPC!(132, 0x2)()); }
+		bool bForceDeathmatchAI() { mixin(MGBPC!(132, 0x1)()); }
+		bool bForceDeathmatchAI(bool val) { mixin(MSBPC!(132, 0x1)()); }
 	}
 	final void PostCreateActor(Actor NewActor)
 	{

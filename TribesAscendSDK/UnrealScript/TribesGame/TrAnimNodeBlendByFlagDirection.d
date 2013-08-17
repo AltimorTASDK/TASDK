@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrAnimNodeBlendByFlagDirection;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeAdditiveBlending;
 import UnrealScript.TribesGame.TrFlagBase;
 import UnrealScript.TribesGame.TrAnimNodeBlendList;
@@ -9,9 +10,9 @@ extern(C++) interface TrAnimNodeBlendByFlagDirection : TrAnimNodeBlendList
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByFlagDirection")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendByFlagDirection")()); }
 	private static __gshared TrAnimNodeBlendByFlagDirection mDefaultProperties;
-	@property final static TrAnimNodeBlendByFlagDirection DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByFlagDirection)("TrAnimNodeBlendByFlagDirection TribesGame.Default__TrAnimNodeBlendByFlagDirection")); }
+	@property final static TrAnimNodeBlendByFlagDirection DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByFlagDirection, "TrAnimNodeBlendByFlagDirection TribesGame.Default__TrAnimNodeBlendByFlagDirection")()); }
 	enum EFlagAnimTypes : ubyte
 	{
 		FlagAnim_Idle = 0,
@@ -26,12 +27,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fIdleBlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }
-		float m_fIdleBlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-		AnimNodeAdditiveBlending m_AdditiveBlendNode() { return *cast(AnimNodeAdditiveBlending*)(cast(size_t)cast(void*)this + 312); }
-		ScriptName m_nmAdditiveAnimNodeName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 304); }
-		float m_fIdleSpeedSizeSq() { return *cast(float*)(cast(size_t)cast(void*)this + 300); }
-		TrFlagBase m_TrFlagOwner() { return *cast(TrFlagBase*)(cast(size_t)cast(void*)this + 296); }
-		TrAnimNodeBlendByFlagDirection.EFlagAnimTypes LastDirection() { return *cast(TrAnimNodeBlendByFlagDirection.EFlagAnimTypes*)(cast(size_t)cast(void*)this + 292); }
+		float m_fIdleBlendOutTime() { mixin(MGPC!(float, 320)()); }
+		float m_fIdleBlendInTime() { mixin(MGPC!(float, 316)()); }
+		AnimNodeAdditiveBlending m_AdditiveBlendNode() { mixin(MGPC!(AnimNodeAdditiveBlending, 312)()); }
+		ScriptName m_nmAdditiveAnimNodeName() { mixin(MGPC!(ScriptName, 304)()); }
+		float m_fIdleSpeedSizeSq() { mixin(MGPC!(float, 300)()); }
+		TrFlagBase m_TrFlagOwner() { mixin(MGPC!(TrFlagBase, 296)()); }
+		TrAnimNodeBlendByFlagDirection.EFlagAnimTypes LastDirection() { mixin(MGPC!(TrAnimNodeBlendByFlagDirection.EFlagAnimTypes, 292)()); }
 	}
 }

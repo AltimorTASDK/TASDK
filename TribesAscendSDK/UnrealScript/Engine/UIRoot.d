@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIRoot;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Core.UObject;
@@ -14,9 +15,9 @@ extern(C++) interface UIRoot : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIRoot")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIRoot")()); }
 	private static __gshared UIRoot mDefaultProperties;
-	@property final static UIRoot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIRoot)("UIRoot Engine.Default__UIRoot")); }
+	@property final static UIRoot DefaultProperties() { mixin(MGDPC!(UIRoot, "UIRoot Engine.Default__UIRoot")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,17 +36,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetDataStoreStringValue() { return mGetDataStoreStringValue ? mGetDataStoreStringValue : (mGetDataStoreStringValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetDataStoreStringValue")); }
-			ScriptFunction SetDataStoreStringValue() { return mSetDataStoreStringValue ? mSetDataStoreStringValue : (mSetDataStoreStringValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.SetDataStoreStringValue")); }
-			ScriptFunction GetInputPlatformType() { return mGetInputPlatformType ? mGetInputPlatformType : (mGetInputPlatformType = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetInputPlatformType")); }
-			ScriptFunction GetCurrentUIController() { return mGetCurrentUIController ? mGetCurrentUIController : (mGetCurrentUIController = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetCurrentUIController")); }
-			ScriptFunction GetSceneClient() { return mGetSceneClient ? mGetSceneClient : (mGetSceneClient = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetSceneClient")); }
-			ScriptFunction StaticResolveDataStore() { return mStaticResolveDataStore ? mStaticResolveDataStore : (mStaticResolveDataStore = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.StaticResolveDataStore")); }
-			ScriptFunction SetDataStoreFieldValue() { return mSetDataStoreFieldValue ? mSetDataStoreFieldValue : (mSetDataStoreFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.SetDataStoreFieldValue")); }
-			ScriptFunction GetDataStoreFieldValue() { return mGetDataStoreFieldValue ? mGetDataStoreFieldValue : (mGetDataStoreFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetDataStoreFieldValue")); }
-			ScriptFunction GetOnlineGameInterface() { return mGetOnlineGameInterface ? mGetOnlineGameInterface : (mGetOnlineGameInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetOnlineGameInterface")); }
-			ScriptFunction GetOnlinePlayerInterface() { return mGetOnlinePlayerInterface ? mGetOnlinePlayerInterface : (mGetOnlinePlayerInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetOnlinePlayerInterface")); }
-			ScriptFunction GetOnlinePlayerInterfaceEx() { return mGetOnlinePlayerInterfaceEx ? mGetOnlinePlayerInterfaceEx : (mGetOnlinePlayerInterfaceEx = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetOnlinePlayerInterfaceEx")); }
+			ScriptFunction GetDataStoreStringValue() { mixin(MGF!("mGetDataStoreStringValue", "Function Engine.UIRoot.GetDataStoreStringValue")()); }
+			ScriptFunction SetDataStoreStringValue() { mixin(MGF!("mSetDataStoreStringValue", "Function Engine.UIRoot.SetDataStoreStringValue")()); }
+			ScriptFunction GetInputPlatformType() { mixin(MGF!("mGetInputPlatformType", "Function Engine.UIRoot.GetInputPlatformType")()); }
+			ScriptFunction GetCurrentUIController() { mixin(MGF!("mGetCurrentUIController", "Function Engine.UIRoot.GetCurrentUIController")()); }
+			ScriptFunction GetSceneClient() { mixin(MGF!("mGetSceneClient", "Function Engine.UIRoot.GetSceneClient")()); }
+			ScriptFunction StaticResolveDataStore() { mixin(MGF!("mStaticResolveDataStore", "Function Engine.UIRoot.StaticResolveDataStore")()); }
+			ScriptFunction SetDataStoreFieldValue() { mixin(MGF!("mSetDataStoreFieldValue", "Function Engine.UIRoot.SetDataStoreFieldValue")()); }
+			ScriptFunction GetDataStoreFieldValue() { mixin(MGF!("mGetDataStoreFieldValue", "Function Engine.UIRoot.GetDataStoreFieldValue")()); }
+			ScriptFunction GetOnlineGameInterface() { mixin(MGF!("mGetOnlineGameInterface", "Function Engine.UIRoot.GetOnlineGameInterface")()); }
+			ScriptFunction GetOnlinePlayerInterface() { mixin(MGF!("mGetOnlinePlayerInterface", "Function Engine.UIRoot.GetOnlinePlayerInterface")()); }
+			ScriptFunction GetOnlinePlayerInterfaceEx() { mixin(MGF!("mGetOnlinePlayerInterfaceEx", "Function Engine.UIRoot.GetOnlinePlayerInterfaceEx")()); }
 		}
 	}
 	static struct Constants
@@ -79,18 +80,18 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIRangeData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIRangeData")()); }
 		@property final
 		{
 			auto ref
 			{
-				float NudgeValue() { return *cast(float*)(cast(size_t)&this + 12); }
-				float MaxValue() { return *cast(float*)(cast(size_t)&this + 8); }
-				float MinValue() { return *cast(float*)(cast(size_t)&this + 4); }
-				float CurrentValue() { return *cast(float*)(cast(size_t)&this + 0); }
+				float NudgeValue() { mixin(MGPS!(float, 12)()); }
+				float MaxValue() { mixin(MGPS!(float, 8)()); }
+				float MinValue() { mixin(MGPS!(float, 4)()); }
+				float CurrentValue() { mixin(MGPS!(float, 0)()); }
 			}
-			bool bIntRange() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-			bool bIntRange(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
+			bool bIntRange() { mixin(MGBPS!(16, 0x1)()); }
+			bool bIntRange(bool val) { mixin(MSBPS!(16, 0x1)()); }
 		}
 	}
 	struct TextureCoordinates
@@ -98,13 +99,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.TextureCoordinates")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.TextureCoordinates")()); }
 		@property final auto ref
 		{
-			float VL() { return *cast(float*)(cast(size_t)&this + 12); }
-			float UL() { return *cast(float*)(cast(size_t)&this + 8); }
-			float V() { return *cast(float*)(cast(size_t)&this + 4); }
-			float U() { return *cast(float*)(cast(size_t)&this + 0); }
+			float VL() { mixin(MGPS!(float, 12)()); }
+			float UL() { mixin(MGPS!(float, 8)()); }
+			float V() { mixin(MGPS!(float, 4)()); }
+			float U() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	struct UIProviderScriptFieldValue
@@ -112,17 +113,17 @@ public extern(D):
 		private ubyte __buffer__[84];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIProviderScriptFieldValue")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIProviderScriptFieldValue")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) ArrayValue() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 28); }
-			UIRoot.TextureCoordinates AtlasCoordinates() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)&this + 68); }
-			OnlineSubsystem.UniqueNetId NetIdValue() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 60); }
-			UIRoot.UIRangeData RangeValue() { return *cast(UIRoot.UIRangeData*)(cast(size_t)&this + 40); }
-			Surface ImageValue() { return *cast(Surface*)(cast(size_t)&this + 24); }
-			ScriptString StringValue() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			UIRoot.EUIDataProviderFieldType PropertyType() { return *cast(UIRoot.EUIDataProviderFieldType*)(cast(size_t)&this + 8); }
-			ScriptName PropertyTag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(int) ArrayValue() { mixin(MGPS!(ScriptArray!(int), 28)()); }
+			UIRoot.TextureCoordinates AtlasCoordinates() { mixin(MGPS!(UIRoot.TextureCoordinates, 68)()); }
+			OnlineSubsystem.UniqueNetId NetIdValue() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 60)()); }
+			UIRoot.UIRangeData RangeValue() { mixin(MGPS!(UIRoot.UIRangeData, 40)()); }
+			Surface ImageValue() { mixin(MGPS!(Surface, 24)()); }
+			ScriptString StringValue() { mixin(MGPS!(ScriptString, 12)()); }
+			UIRoot.EUIDataProviderFieldType PropertyType() { mixin(MGPS!(UIRoot.EUIDataProviderFieldType, 8)()); }
+			ScriptName PropertyTag() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct UIProviderFieldValue
@@ -130,32 +131,32 @@ public extern(D):
 		private ubyte __buffer__[88];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIProviderFieldValue")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIProviderFieldValue")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) ArrayValue() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 28); }
-			UIRoot.TextureCoordinates AtlasCoordinates() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)&this + 68); }
-			OnlineSubsystem.UniqueNetId NetIdValue() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 60); }
-			UIRoot.UIRangeData RangeValue() { return *cast(UIRoot.UIRangeData*)(cast(size_t)&this + 40); }
-			Surface ImageValue() { return *cast(Surface*)(cast(size_t)&this + 24); }
-			ScriptString StringValue() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			UIRoot.EUIDataProviderFieldType PropertyType() { return *cast(UIRoot.EUIDataProviderFieldType*)(cast(size_t)&this + 8); }
-			ScriptName PropertyTag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(int) ArrayValue() { mixin(MGPS!(ScriptArray!(int), 28)()); }
+			UIRoot.TextureCoordinates AtlasCoordinates() { mixin(MGPS!(UIRoot.TextureCoordinates, 68)()); }
+			OnlineSubsystem.UniqueNetId NetIdValue() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 60)()); }
+			UIRoot.UIRangeData RangeValue() { mixin(MGPS!(UIRoot.UIRangeData, 40)()); }
+			Surface ImageValue() { mixin(MGPS!(Surface, 24)()); }
+			ScriptString StringValue() { mixin(MGPS!(ScriptString, 12)()); }
+			UIRoot.EUIDataProviderFieldType PropertyType() { mixin(MGPS!(UIRoot.EUIDataProviderFieldType, 8)()); }
+			ScriptName PropertyTag() { mixin(MGPS!(ScriptName, 0)()); }
 		}
-		@property final auto ref UObject.Pointer CustomStringNode() { return *cast(UObject.Pointer*)(cast(size_t)&this + 84); }
+		@property final auto ref UObject.Pointer CustomStringNode() { mixin(MGPS!(UObject.Pointer, 84)()); }
 	}
 	struct InputKeyAction
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.InputKeyAction")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.InputKeyAction")()); }
 		@property final auto ref
 		{
-			ScriptArray!(SequenceOp.SeqOpOutputInputLink) TriggeredOps() { return *cast(ScriptArray!(SequenceOp.SeqOpOutputInputLink)*)(cast(size_t)&this + 12); }
-			ScriptArray!(SequenceOp) ActionsToExecute() { return *cast(ScriptArray!(SequenceOp)*)(cast(size_t)&this + 24); }
-			UObject.EInputEvent InputKeyState() { return *cast(UObject.EInputEvent*)(cast(size_t)&this + 8); }
-			ScriptName InputKeyName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(SequenceOp.SeqOpOutputInputLink) TriggeredOps() { mixin(MGPS!(ScriptArray!(SequenceOp.SeqOpOutputInputLink), 12)()); }
+			ScriptArray!(SequenceOp) ActionsToExecute() { mixin(MGPS!(ScriptArray!(SequenceOp), 24)()); }
+			UObject.EInputEvent InputKeyState() { mixin(MGPS!(UObject.EInputEvent, 8)()); }
+			ScriptName InputKeyName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct UIDataStoreBinding
@@ -163,15 +164,16 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIDataStoreBinding")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIDataStoreBinding")()); }
 		@property final auto ref
 		{
-			UIDataStore ResolvedDataStore() { return *cast(UIDataStore*)(cast(size_t)&this + 44); }
-			ScriptName DataStoreField() { return *cast(ScriptName*)(cast(size_t)&this + 36); }
-			ScriptName DataStoreName() { return *cast(ScriptName*)(cast(size_t)&this + 28); }
-			int BindingIndex() { return *cast(int*)(cast(size_t)&this + 24); }
-			ScriptString MarkupString() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			UIRoot.EUIDataProviderFieldType RequiredFieldType() { return *cast(UIRoot.EUIDataProviderFieldType*)(cast(size_t)&this + 8); }
+			UIDataStore ResolvedDataStore() { mixin(MGPS!(UIDataStore, 44)()); }
+			ScriptName DataStoreField() { mixin(MGPS!(ScriptName, 36)()); }
+			ScriptName DataStoreName() { mixin(MGPS!(ScriptName, 28)()); }
+			int BindingIndex() { mixin(MGPS!(int, 24)()); }
+			ScriptString MarkupString() { mixin(MGPS!(ScriptString, 12)()); }
+			UIRoot.EUIDataProviderFieldType RequiredFieldType() { mixin(MGPS!(UIRoot.EUIDataProviderFieldType, 8)()); }
+			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'Subscriber'!
 		}
 	}
 	struct InputEventParameters
@@ -179,24 +181,24 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.InputEventParameters")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.InputEventParameters")()); }
 		@property final
 		{
 			auto ref
 			{
-				float DeltaTime() { return *cast(float*)(cast(size_t)&this + 24); }
-				float InputDelta() { return *cast(float*)(cast(size_t)&this + 20); }
-				UObject.EInputEvent EventType() { return *cast(UObject.EInputEvent*)(cast(size_t)&this + 16); }
-				ScriptName InputKeyName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-				int ControllerId() { return *cast(int*)(cast(size_t)&this + 4); }
-				int PlayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+				float DeltaTime() { mixin(MGPS!(float, 24)()); }
+				float InputDelta() { mixin(MGPS!(float, 20)()); }
+				UObject.EInputEvent EventType() { mixin(MGPS!(UObject.EInputEvent, 16)()); }
+				ScriptName InputKeyName() { mixin(MGPS!(ScriptName, 8)()); }
+				int ControllerId() { mixin(MGPS!(int, 4)()); }
+				int PlayerIndex() { mixin(MGPS!(int, 0)()); }
 			}
-			bool bShiftPressed() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x4) != 0; }
-			bool bShiftPressed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x4; } return val; }
-			bool bCtrlPressed() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bCtrlPressed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bAltPressed() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bAltPressed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bShiftPressed() { mixin(MGBPS!(28, 0x4)()); }
+			bool bShiftPressed(bool val) { mixin(MSBPS!(28, 0x4)()); }
+			bool bCtrlPressed() { mixin(MGBPS!(28, 0x2)()); }
+			bool bCtrlPressed(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bAltPressed() { mixin(MGBPS!(28, 0x1)()); }
+			bool bAltPressed(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
 	}
 	struct SubscribedInputEventParameters
@@ -204,43 +206,43 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.SubscribedInputEventParameters")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.SubscribedInputEventParameters")()); }
 		@property final
 		{
 			auto ref
 			{
-				float DeltaTime() { return *cast(float*)(cast(size_t)&this + 24); }
-				float InputDelta() { return *cast(float*)(cast(size_t)&this + 20); }
-				UObject.EInputEvent EventType() { return *cast(UObject.EInputEvent*)(cast(size_t)&this + 16); }
-				ScriptName InputKeyName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-				int ControllerId() { return *cast(int*)(cast(size_t)&this + 4); }
-				int PlayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+				float DeltaTime() { mixin(MGPS!(float, 24)()); }
+				float InputDelta() { mixin(MGPS!(float, 20)()); }
+				UObject.EInputEvent EventType() { mixin(MGPS!(UObject.EInputEvent, 16)()); }
+				ScriptName InputKeyName() { mixin(MGPS!(ScriptName, 8)()); }
+				int ControllerId() { mixin(MGPS!(int, 4)()); }
+				int PlayerIndex() { mixin(MGPS!(int, 0)()); }
 			}
-			bool bShiftPressed() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x4) != 0; }
-			bool bShiftPressed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x4; } return val; }
-			bool bCtrlPressed() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-			bool bCtrlPressed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-			bool bAltPressed() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-			bool bAltPressed(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bShiftPressed() { mixin(MGBPS!(28, 0x4)()); }
+			bool bShiftPressed(bool val) { mixin(MSBPS!(28, 0x4)()); }
+			bool bCtrlPressed() { mixin(MGBPS!(28, 0x2)()); }
+			bool bCtrlPressed(bool val) { mixin(MSBPS!(28, 0x2)()); }
+			bool bAltPressed() { mixin(MGBPS!(28, 0x1)()); }
+			bool bAltPressed(bool val) { mixin(MSBPS!(28, 0x1)()); }
 		}
-		@property final auto ref ScriptName InputAliasName() { return *cast(ScriptName*)(cast(size_t)&this + 32); }
+		@property final auto ref ScriptName InputAliasName() { mixin(MGPS!(ScriptName, 32)()); }
 	}
 	struct UIAxisEmulationDefinition
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIAxisEmulationDefinition")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIAxisEmulationDefinition")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName InputKeyToEmulate() { return *cast(ScriptName*)(cast(size_t)&this + 20); }
-				ScriptName AdjacentAxisInputKey() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-				ScriptName AxisInputKey() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				ScriptName InputKeyToEmulate() { mixin(MGPS!(ScriptName, 20)()); }
+				ScriptName AdjacentAxisInputKey() { mixin(MGPS!(ScriptName, 8)()); }
+				ScriptName AxisInputKey() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bEmulateButtonPress() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-			bool bEmulateButtonPress(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
+			bool bEmulateButtonPress() { mixin(MGBPS!(16, 0x1)()); }
+			bool bEmulateButtonPress(bool val) { mixin(MSBPS!(16, 0x1)()); }
 		}
 	}
 	struct RawInputKeyEventData
@@ -248,20 +250,20 @@ public extern(D):
 		private ubyte __buffer__[9];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.RawInputKeyEventData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.RawInputKeyEventData")()); }
 		@property final auto ref
 		{
-			ubyte ModifierKeyFlags() { return *cast(ubyte*)(cast(size_t)&this + 8); }
-			ScriptName InputKeyName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ubyte ModifierKeyFlags() { mixin(MGPS!(ubyte, 8)()); }
+			ScriptName InputKeyName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 final:
-	static bool GetDataStoreStringValue(ScriptString InDataStoreMarkup, ScriptString* OutStringValue, LocalPlayer OwnerPlayer)
+	static bool GetDataStoreStringValue(ScriptString InDataStoreMarkup, ref ScriptString OutStringValue, LocalPlayer OwnerPlayer)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InDataStoreMarkup;
-		*cast(ScriptString*)&params[12] = *OutStringValue;
+		*cast(ScriptString*)&params[12] = OutStringValue;
 		*cast(LocalPlayer*)&params[24] = OwnerPlayer;
 		StaticClass.ProcessEvent(Functions.GetDataStoreStringValue, params.ptr, cast(void*)0);
 		*OutStringValue = *cast(ScriptString*)&params[12];
@@ -308,23 +310,23 @@ final:
 		StaticClass.ProcessEvent(Functions.StaticResolveDataStore, params.ptr, cast(void*)0);
 		return *cast(UIDataStore*)&params[12];
 	}
-	static bool SetDataStoreFieldValue(ScriptString InDataStoreMarkup, UIRoot.UIProviderFieldValue* InFieldValue, LocalPlayer OwnerPlayer)
+	static bool SetDataStoreFieldValue(ScriptString InDataStoreMarkup, ref const UIRoot.UIProviderFieldValue InFieldValue, LocalPlayer OwnerPlayer)
 	{
 		ubyte params[108];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InDataStoreMarkup;
-		*cast(UIRoot.UIProviderFieldValue*)&params[12] = *InFieldValue;
+		*cast(UIRoot.UIProviderFieldValue*)&params[12] = InFieldValue;
 		*cast(LocalPlayer*)&params[100] = OwnerPlayer;
 		StaticClass.ProcessEvent(Functions.SetDataStoreFieldValue, params.ptr, cast(void*)0);
 		*InFieldValue = *cast(UIRoot.UIProviderFieldValue*)&params[12];
 		return *cast(bool*)&params[104];
 	}
-	static bool GetDataStoreFieldValue(ScriptString InDataStoreMarkup, UIRoot.UIProviderFieldValue* OutFieldValue, LocalPlayer OwnerPlayer)
+	static bool GetDataStoreFieldValue(ScriptString InDataStoreMarkup, ref UIRoot.UIProviderFieldValue OutFieldValue, LocalPlayer OwnerPlayer)
 	{
 		ubyte params[108];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InDataStoreMarkup;
-		*cast(UIRoot.UIProviderFieldValue*)&params[12] = *OutFieldValue;
+		*cast(UIRoot.UIProviderFieldValue*)&params[12] = OutFieldValue;
 		*cast(LocalPlayer*)&params[100] = OwnerPlayer;
 		StaticClass.ProcessEvent(Functions.GetDataStoreFieldValue, params.ptr, cast(void*)0);
 		*OutFieldValue = *cast(UIRoot.UIProviderFieldValue*)&params[12];

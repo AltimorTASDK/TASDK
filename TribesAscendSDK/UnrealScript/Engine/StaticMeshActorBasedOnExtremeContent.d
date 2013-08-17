@@ -1,6 +1,7 @@
 module UnrealScript.Engine.StaticMeshActorBasedOnExtremeContent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.MaterialInterface;
 
@@ -8,9 +9,9 @@ extern(C++) interface StaticMeshActorBasedOnExtremeContent : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshActorBasedOnExtremeContent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.StaticMeshActorBasedOnExtremeContent")()); }
 	private static __gshared StaticMeshActorBasedOnExtremeContent mDefaultProperties;
-	@property final static StaticMeshActorBasedOnExtremeContent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMeshActorBasedOnExtremeContent)("StaticMeshActorBasedOnExtremeContent Engine.Default__StaticMeshActorBasedOnExtremeContent")); }
+	@property final static StaticMeshActorBasedOnExtremeContent DefaultProperties() { mixin(MGDPC!(StaticMeshActorBasedOnExtremeContent, "StaticMeshActorBasedOnExtremeContent Engine.Default__StaticMeshActorBasedOnExtremeContent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshActorBasedOnExtremeContent.PostBeginPlay")); }
-			ScriptFunction SetMaterialBasedOnExtremeContent() { return mSetMaterialBasedOnExtremeContent ? mSetMaterialBasedOnExtremeContent : (mSetMaterialBasedOnExtremeContent = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshActorBasedOnExtremeContent.SetMaterialBasedOnExtremeContent")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.StaticMeshActorBasedOnExtremeContent.PostBeginPlay")()); }
+			ScriptFunction SetMaterialBasedOnExtremeContent() { mixin(MGF!("mSetMaterialBasedOnExtremeContent", "Function Engine.StaticMeshActorBasedOnExtremeContent.SetMaterialBasedOnExtremeContent")()); }
 		}
 	}
 	struct SMMaterialSetterDatum
@@ -29,17 +30,18 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum")()); }
 		@property final auto ref
 		{
-			MaterialInterface TheMaterial() { return *cast(MaterialInterface*)(cast(size_t)&this + 4); }
-			int MaterialIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+			MaterialInterface TheMaterial() { mixin(MGPS!(MaterialInterface, 4)()); }
+			int MaterialIndex() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) ExtremeContent() { return *cast(ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum)*)(cast(size_t)cast(void*)this + 480); }
-		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) NonExtremeContent() { return *cast(ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum)*)(cast(size_t)cast(void*)this + 492); }
+		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) ExtremeContent() { mixin(MGPC!(ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum), 480)()); }
+		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) NonExtremeContent() { mixin(MGPC!(ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum), 492)()); }
+		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
 	}
 final:
 	void PostBeginPlay()

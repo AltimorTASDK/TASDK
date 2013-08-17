@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FracturedBaseComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.StaticMeshComponent;
 import UnrealScript.Engine.StaticMesh;
@@ -9,9 +10,9 @@ extern(C++) interface FracturedBaseComponent : StaticMeshComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedBaseComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FracturedBaseComponent")()); }
 	private static __gshared FracturedBaseComponent mDefaultProperties;
-	@property final static FracturedBaseComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FracturedBaseComponent)("FracturedBaseComponent Engine.Default__FracturedBaseComponent")); }
+	@property final static FracturedBaseComponent DefaultProperties() { mixin(MGDPC!(FracturedBaseComponent, "FracturedBaseComponent Engine.Default__FracturedBaseComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,33 +25,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetStaticMesh() { return mSetStaticMesh ? mSetStaticMesh : (mSetStaticMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.SetStaticMesh")); }
-			ScriptFunction GetVisibleFragments() { return mGetVisibleFragments ? mGetVisibleFragments : (mGetVisibleFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.GetVisibleFragments")); }
-			ScriptFunction IsFragmentVisible() { return mIsFragmentVisible ? mIsFragmentVisible : (mIsFragmentVisible = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.IsFragmentVisible")); }
-			ScriptFunction GetNumFragments() { return mGetNumFragments ? mGetNumFragments : (mGetNumFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.GetNumFragments")); }
-			ScriptFunction GetNumVisibleFragments() { return mGetNumVisibleFragments ? mGetNumVisibleFragments : (mGetNumVisibleFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.GetNumVisibleFragments")); }
+			ScriptFunction SetStaticMesh() { mixin(MGF!("mSetStaticMesh", "Function Engine.FracturedBaseComponent.SetStaticMesh")()); }
+			ScriptFunction GetVisibleFragments() { mixin(MGF!("mGetVisibleFragments", "Function Engine.FracturedBaseComponent.GetVisibleFragments")()); }
+			ScriptFunction IsFragmentVisible() { mixin(MGF!("mIsFragmentVisible", "Function Engine.FracturedBaseComponent.IsFragmentVisible")()); }
+			ScriptFunction GetNumFragments() { mixin(MGF!("mGetNumFragments", "Function Engine.FracturedBaseComponent.GetNumFragments")()); }
+			ScriptFunction GetNumVisibleFragments() { mixin(MGF!("mGetNumVisibleFragments", "Function Engine.FracturedBaseComponent.GetNumVisibleFragments")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ubyte) VisibleFragments() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 616); }
-			int bResetStaticMesh() { return *cast(int*)(cast(size_t)cast(void*)this + 636); }
-			int NumResourceIndices() { return *cast(int*)(cast(size_t)cast(void*)this + 632); }
-			UObject.RenderCommandFence_Mirror ReleaseResourcesFence() { return *cast(UObject.RenderCommandFence_Mirror*)(cast(size_t)cast(void*)this + 612); }
-			UObject.Pointer ComponentBaseResources() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 608); }
+			ScriptArray!(ubyte) VisibleFragments() { mixin(MGPC!(ScriptArray!(ubyte), 616)()); }
+			int bResetStaticMesh() { mixin(MGPC!(int, 636)()); }
+			int NumResourceIndices() { mixin(MGPC!(int, 632)()); }
+			UObject.RenderCommandFence_Mirror ReleaseResourcesFence() { mixin(MGPC!(UObject.RenderCommandFence_Mirror, 612)()); }
+			UObject.Pointer ComponentBaseResources() { mixin(MGPC!(UObject.Pointer, 608)()); }
 		}
-		bool bUseDynamicIBWithHiddenFragments() { return (*cast(uint*)(cast(size_t)cast(void*)this + 628) & 0x10) != 0; }
-		bool bUseDynamicIBWithHiddenFragments(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 628) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 628) &= ~0x10; } return val; }
-		bool bUseDynamicIndexBuffer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 628) & 0x8) != 0; }
-		bool bUseDynamicIndexBuffer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 628) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 628) &= ~0x8; } return val; }
-		bool bInitialVisibilityValue() { return (*cast(uint*)(cast(size_t)cast(void*)this + 628) & 0x4) != 0; }
-		bool bInitialVisibilityValue(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 628) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 628) &= ~0x4; } return val; }
-		bool bVisibilityReset() { return (*cast(uint*)(cast(size_t)cast(void*)this + 628) & 0x2) != 0; }
-		bool bVisibilityReset(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 628) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 628) &= ~0x2; } return val; }
-		bool bVisibilityHasChanged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 628) & 0x1) != 0; }
-		bool bVisibilityHasChanged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 628) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 628) &= ~0x1; } return val; }
+		bool bUseDynamicIBWithHiddenFragments() { mixin(MGBPC!(628, 0x10)()); }
+		bool bUseDynamicIBWithHiddenFragments(bool val) { mixin(MSBPC!(628, 0x10)()); }
+		bool bUseDynamicIndexBuffer() { mixin(MGBPC!(628, 0x8)()); }
+		bool bUseDynamicIndexBuffer(bool val) { mixin(MSBPC!(628, 0x8)()); }
+		bool bInitialVisibilityValue() { mixin(MGBPC!(628, 0x4)()); }
+		bool bInitialVisibilityValue(bool val) { mixin(MSBPC!(628, 0x4)()); }
+		bool bVisibilityReset() { mixin(MGBPC!(628, 0x2)()); }
+		bool bVisibilityReset(bool val) { mixin(MSBPC!(628, 0x2)()); }
+		bool bVisibilityHasChanged() { mixin(MGBPC!(628, 0x1)()); }
+		bool bVisibilityHasChanged(bool val) { mixin(MSBPC!(628, 0x1)()); }
 	}
 final:
 	bool SetStaticMesh(StaticMesh NewMesh, bool bForce)

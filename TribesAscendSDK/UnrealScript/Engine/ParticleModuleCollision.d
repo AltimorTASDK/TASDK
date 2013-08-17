@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleCollision;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleCollisionBase;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
@@ -9,29 +10,29 @@ extern(C++) interface ParticleModuleCollision : ParticleModuleCollisionBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleCollision")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleCollision")()); }
 	private static __gshared ParticleModuleCollision mDefaultProperties;
-	@property final static ParticleModuleCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleCollision)("ParticleModuleCollision Engine.Default__ParticleModuleCollision")); }
+	@property final static ParticleModuleCollision DefaultProperties() { mixin(MGDPC!(ParticleModuleCollision, "ParticleModuleCollision Engine.Default__ParticleModuleCollision")()); }
 	@property final
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat DelayAmount() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 200); }
-			float VerticalFudgeFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 196); }
-			float DirScalar() { return *cast(float*)(cast(size_t)cast(void*)this + 192); }
-			DistributionFloat.RawDistributionFloat ParticleMass() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 164); }
-			ParticleModuleCollisionBase.EParticleCollisionComplete CollisionCompletionOption() { return *cast(ParticleModuleCollisionBase.EParticleCollisionComplete*)(cast(size_t)cast(void*)this + 156); }
-			DistributionFloat.RawDistributionFloat MaxCollisions() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 128); }
-			DistributionVector.RawDistributionVector DampingFactorRotation() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 100); }
-			DistributionVector.RawDistributionVector DampingFactor() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 72); }
+			DistributionFloat.RawDistributionFloat DelayAmount() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 200)()); }
+			float VerticalFudgeFactor() { mixin(MGPC!(float, 196)()); }
+			float DirScalar() { mixin(MGPC!(float, 192)()); }
+			DistributionFloat.RawDistributionFloat ParticleMass() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 164)()); }
+			ParticleModuleCollisionBase.EParticleCollisionComplete CollisionCompletionOption() { mixin(MGPC!(ParticleModuleCollisionBase.EParticleCollisionComplete, 156)()); }
+			DistributionFloat.RawDistributionFloat MaxCollisions() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 128)()); }
+			DistributionVector.RawDistributionVector DampingFactorRotation() { mixin(MGPC!(DistributionVector.RawDistributionVector, 100)()); }
+			DistributionVector.RawDistributionVector DampingFactor() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
 		}
-		bool bDropDetail() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x8) != 0; }
-		bool bDropDetail(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x8; } return val; }
-		bool bOnlyVerticalNormalsDecrementCount() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x4) != 0; }
-		bool bOnlyVerticalNormalsDecrementCount(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x4; } return val; }
-		bool bPawnsDoNotDecrementCount() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x2) != 0; }
-		bool bPawnsDoNotDecrementCount(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x2; } return val; }
-		bool bApplyPhysics() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x1) != 0; }
-		bool bApplyPhysics(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x1; } return val; }
+		bool bDropDetail() { mixin(MGBPC!(160, 0x8)()); }
+		bool bDropDetail(bool val) { mixin(MSBPC!(160, 0x8)()); }
+		bool bOnlyVerticalNormalsDecrementCount() { mixin(MGBPC!(160, 0x4)()); }
+		bool bOnlyVerticalNormalsDecrementCount(bool val) { mixin(MSBPC!(160, 0x4)()); }
+		bool bPawnsDoNotDecrementCount() { mixin(MGBPC!(160, 0x2)()); }
+		bool bPawnsDoNotDecrementCount(bool val) { mixin(MSBPC!(160, 0x2)()); }
+		bool bApplyPhysics() { mixin(MGBPC!(160, 0x1)()); }
+		bool bApplyPhysics(bool val) { mixin(MSBPC!(160, 0x1)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKExplosionLight;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PointLightComponent;
 
@@ -8,9 +9,9 @@ extern(C++) interface UDKExplosionLight : PointLightComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKExplosionLight")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKExplosionLight")()); }
 	private static __gshared UDKExplosionLight mDefaultProperties;
-	@property final static UDKExplosionLight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKExplosionLight)("UDKExplosionLight UDKBase.Default__UDKExplosionLight")); }
+	@property final static UDKExplosionLight DefaultProperties() { mixin(MGDPC!(UDKExplosionLight, "UDKExplosionLight UDKBase.Default__UDKExplosionLight")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnLightFinished() { return mOnLightFinished ? mOnLightFinished : (mOnLightFinished = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKExplosionLight.OnLightFinished")); }
-			ScriptFunction ResetLight() { return mResetLight ? mResetLight : (mResetLight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKExplosionLight.ResetLight")); }
+			ScriptFunction OnLightFinished() { mixin(MGF!("mOnLightFinished", "Function UDKBase.UDKExplosionLight.OnLightFinished")()); }
+			ScriptFunction ResetLight() { mixin(MGF!("mResetLight", "Function UDKBase.UDKExplosionLight.ResetLight")()); }
 		}
 	}
 	struct LightValues
@@ -29,28 +30,29 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKExplosionLight.LightValues")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKExplosionLight.LightValues")()); }
 		@property final auto ref
 		{
-			UObject.Color LightColor() { return *cast(UObject.Color*)(cast(size_t)&this + 12); }
-			float Brightness() { return *cast(float*)(cast(size_t)&this + 8); }
-			float Radius() { return *cast(float*)(cast(size_t)&this + 4); }
-			float StartTime() { return *cast(float*)(cast(size_t)&this + 0); }
+			UObject.Color LightColor() { mixin(MGPS!(UObject.Color, 12)()); }
+			float Brightness() { mixin(MGPS!(float, 8)()); }
+			float Radius() { mixin(MGPS!(float, 4)()); }
+			float StartTime() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UDKExplosionLight.LightValues) TimeShift() { return *cast(ScriptArray!(UDKExplosionLight.LightValues)*)(cast(size_t)cast(void*)this + 600); }
-			int TimeShiftIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 596); }
-			float Lifetime() { return *cast(float*)(cast(size_t)cast(void*)this + 592); }
-			float HighDetailFrameTime() { return *cast(float*)(cast(size_t)cast(void*)this + 588); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLightFinished__Delegate'!
+			ScriptArray!(UDKExplosionLight.LightValues) TimeShift() { mixin(MGPC!(ScriptArray!(UDKExplosionLight.LightValues), 600)()); }
+			int TimeShiftIndex() { mixin(MGPC!(int, 596)()); }
+			float Lifetime() { mixin(MGPC!(float, 592)()); }
+			float HighDetailFrameTime() { mixin(MGPC!(float, 588)()); }
 		}
-		bool bInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x2) != 0; }
-		bool bInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x2; } return val; }
-		bool bCheckFrameRate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 584) & 0x1) != 0; }
-		bool bCheckFrameRate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 584) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 584) &= ~0x1; } return val; }
+		bool bInitialized() { mixin(MGBPC!(584, 0x2)()); }
+		bool bInitialized(bool val) { mixin(MSBPC!(584, 0x2)()); }
+		bool bCheckFrameRate() { mixin(MGBPC!(584, 0x1)()); }
+		bool bCheckFrameRate(bool val) { mixin(MSBPC!(584, 0x1)()); }
 	}
 final:
 	void OnLightFinished(

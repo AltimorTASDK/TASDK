@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIInteraction;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
@@ -14,9 +15,9 @@ extern(C++) interface UIInteraction : Interaction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIInteraction")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIInteraction")()); }
 	private static __gshared UIInteraction mDefaultProperties;
-	@property final static UIInteraction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIInteraction)("UIInteraction Engine.Default__UIInteraction")); }
+	@property final static UIInteraction DefaultProperties() { mixin(MGDPC!(UIInteraction, "UIInteraction Engine.Default__UIInteraction")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,23 +42,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetDataStoreClient() { return mGetDataStoreClient ? mGetDataStoreClient : (mGetDataStoreClient = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetDataStoreClient")); }
-			ScriptFunction IsLoggedIn() { return mIsLoggedIn ? mIsLoggedIn : (mIsLoggedIn = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.IsLoggedIn")); }
-			ScriptFunction IsGamepadConnected() { return mIsGamepadConnected ? mIsGamepadConnected : (mIsGamepadConnected = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.IsGamepadConnected")); }
-			ScriptFunction GetPlayerCount() { return mGetPlayerCount ? mGetPlayerCount : (mGetPlayerCount = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetPlayerCount")); }
-			ScriptFunction GetPlayerIndex() { return mGetPlayerIndex ? mGetPlayerIndex : (mGetPlayerIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetPlayerIndex")); }
-			ScriptFunction GetPlayerControllerId() { return mGetPlayerControllerId ? mGetPlayerControllerId : (mGetPlayerControllerId = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetPlayerControllerId")); }
-			ScriptFunction GetLocalPlayer() { return mGetLocalPlayer ? mGetLocalPlayer : (mGetLocalPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetLocalPlayer")); }
-			ScriptFunction NotifyPlayerAdded() { return mNotifyPlayerAdded ? mNotifyPlayerAdded : (mNotifyPlayerAdded = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.NotifyPlayerAdded")); }
-			ScriptFunction NotifyPlayerRemoved() { return mNotifyPlayerRemoved ? mNotifyPlayerRemoved : (mNotifyPlayerRemoved = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.NotifyPlayerRemoved")); }
-			ScriptFunction GetLoginStatus() { return mGetLoginStatus ? mGetLoginStatus : (mGetLoginStatus = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetLoginStatus")); }
-			ScriptFunction GetLowestLoginStatusOfControllers() { return mGetLowestLoginStatusOfControllers ? mGetLowestLoginStatusOfControllers : (mGetLowestLoginStatusOfControllers = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetLowestLoginStatusOfControllers")); }
-			ScriptFunction HasLinkConnection() { return mHasLinkConnection ? mHasLinkConnection : (mHasLinkConnection = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.HasLinkConnection")); }
-			ScriptFunction GetLoggedInPlayerCount() { return mGetLoggedInPlayerCount ? mGetLoggedInPlayerCount : (mGetLoggedInPlayerCount = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetLoggedInPlayerCount")); }
-			ScriptFunction GetNumGuestsLoggedIn() { return mGetNumGuestsLoggedIn ? mGetNumGuestsLoggedIn : (mGetNumGuestsLoggedIn = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetNumGuestsLoggedIn")); }
-			ScriptFunction GetConnectedGamepadCount() { return mGetConnectedGamepadCount ? mGetConnectedGamepadCount : (mGetConnectedGamepadCount = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetConnectedGamepadCount")); }
-			ScriptFunction GetNATType() { return mGetNATType ? mGetNATType : (mGetNATType = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.GetNATType")); }
-			ScriptFunction NotifyGameSessionEnded() { return mNotifyGameSessionEnded ? mNotifyGameSessionEnded : (mNotifyGameSessionEnded = ScriptObject.Find!(ScriptFunction)("Function Engine.UIInteraction.NotifyGameSessionEnded")); }
+			ScriptFunction GetDataStoreClient() { mixin(MGF!("mGetDataStoreClient", "Function Engine.UIInteraction.GetDataStoreClient")()); }
+			ScriptFunction IsLoggedIn() { mixin(MGF!("mIsLoggedIn", "Function Engine.UIInteraction.IsLoggedIn")()); }
+			ScriptFunction IsGamepadConnected() { mixin(MGF!("mIsGamepadConnected", "Function Engine.UIInteraction.IsGamepadConnected")()); }
+			ScriptFunction GetPlayerCount() { mixin(MGF!("mGetPlayerCount", "Function Engine.UIInteraction.GetPlayerCount")()); }
+			ScriptFunction GetPlayerIndex() { mixin(MGF!("mGetPlayerIndex", "Function Engine.UIInteraction.GetPlayerIndex")()); }
+			ScriptFunction GetPlayerControllerId() { mixin(MGF!("mGetPlayerControllerId", "Function Engine.UIInteraction.GetPlayerControllerId")()); }
+			ScriptFunction GetLocalPlayer() { mixin(MGF!("mGetLocalPlayer", "Function Engine.UIInteraction.GetLocalPlayer")()); }
+			ScriptFunction NotifyPlayerAdded() { mixin(MGF!("mNotifyPlayerAdded", "Function Engine.UIInteraction.NotifyPlayerAdded")()); }
+			ScriptFunction NotifyPlayerRemoved() { mixin(MGF!("mNotifyPlayerRemoved", "Function Engine.UIInteraction.NotifyPlayerRemoved")()); }
+			ScriptFunction GetLoginStatus() { mixin(MGF!("mGetLoginStatus", "Function Engine.UIInteraction.GetLoginStatus")()); }
+			ScriptFunction GetLowestLoginStatusOfControllers() { mixin(MGF!("mGetLowestLoginStatusOfControllers", "Function Engine.UIInteraction.GetLowestLoginStatusOfControllers")()); }
+			ScriptFunction HasLinkConnection() { mixin(MGF!("mHasLinkConnection", "Function Engine.UIInteraction.HasLinkConnection")()); }
+			ScriptFunction GetLoggedInPlayerCount() { mixin(MGF!("mGetLoggedInPlayerCount", "Function Engine.UIInteraction.GetLoggedInPlayerCount")()); }
+			ScriptFunction GetNumGuestsLoggedIn() { mixin(MGF!("mGetNumGuestsLoggedIn", "Function Engine.UIInteraction.GetNumGuestsLoggedIn")()); }
+			ScriptFunction GetConnectedGamepadCount() { mixin(MGF!("mGetConnectedGamepadCount", "Function Engine.UIInteraction.GetConnectedGamepadCount")()); }
+			ScriptFunction GetNATType() { mixin(MGF!("mGetNATType", "Function Engine.UIInteraction.GetNATType")()); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function Engine.UIInteraction.NotifyGameSessionEnded")()); }
 		}
 	}
 	struct UIAxisEmulationData
@@ -65,16 +66,16 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIInteraction.UIAxisEmulationData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIInteraction.UIAxisEmulationData")()); }
 		@property final auto ref
 		{
-			UObject.Double NextRepeatTime() { return *cast(UObject.Double*)(cast(size_t)&this + 8); }
-			ScriptName CurrentRepeatKey() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			UObject.Double NextRepeatTime() { mixin(MGPS!(UObject.Double, 8)()); }
+			ScriptName CurrentRepeatKey() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 		@property final
 		{
-			bool bEnabled() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-			bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
+			bool bEnabled() { mixin(MGBPS!(16, 0x1)()); }
+			bool bEnabled(bool val) { mixin(MSBPS!(16, 0x1)()); }
 		}
 	}
 	struct UIKeyRepeatData
@@ -82,38 +83,39 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIInteraction.UIKeyRepeatData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIInteraction.UIKeyRepeatData")()); }
 		@property final auto ref
 		{
-			UObject.Double NextRepeatTime() { return *cast(UObject.Double*)(cast(size_t)&this + 8); }
-			ScriptName CurrentRepeatKey() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			UObject.Double NextRepeatTime() { mixin(MGPS!(UObject.Double, 8)()); }
+			ScriptName CurrentRepeatKey() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GameUISceneClient SceneClient() { return *cast(GameUISceneClient*)(cast(size_t)cast(void*)this + 132); }
-			ScriptArray!(ScriptName) SupportedDoubleClickKeys() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 136); }
-			ScriptArray!(UIRoot.UIAxisEmulationDefinition) ConfiguredAxisEmulationDefinitions() { return *cast(ScriptArray!(UIRoot.UIAxisEmulationDefinition)*)(cast(size_t)cast(void*)this + 196); }
-			UIInteraction.UIAxisEmulationData AxisInputEmulation() { return *cast(UIInteraction.UIAxisEmulationData*)(cast(size_t)cast(void*)this + 268); }
-			UIInteraction.UIKeyRepeatData MouseButtonRepeatInfo() { return *cast(UIInteraction.UIKeyRepeatData*)(cast(size_t)cast(void*)this + 180); }
-			int DoubleClickPixelTolerance() { return *cast(int*)(cast(size_t)cast(void*)this + 176); }
-			float DoubleClickTriggerSeconds() { return *cast(float*)(cast(size_t)cast(void*)this + 172); }
-			float MouseButtonRepeatDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float AxisRepeatDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float UIAxisMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			float UIJoystickDeadZone() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-			DataStoreClient DataStoreManager() { return *cast(DataStoreClient*)(cast(size_t)cast(void*)this + 148); }
-			ScriptClass SceneClientClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 128); }
-			ScriptClass UIManagerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 124); }
+			GameUISceneClient SceneClient() { mixin(MGPC!(GameUISceneClient, 132)()); }
+			ScriptArray!(ScriptName) SupportedDoubleClickKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 136)()); }
+			ScriptArray!(UIRoot.UIAxisEmulationDefinition) ConfiguredAxisEmulationDefinitions() { mixin(MGPC!(ScriptArray!(UIRoot.UIAxisEmulationDefinition), 196)()); }
+			UIInteraction.UIAxisEmulationData AxisInputEmulation() { mixin(MGPC!(UIInteraction.UIAxisEmulationData, 268)()); }
+			// ERROR: Unsupported object class 'MapProperty' for the property named 'AxisEmulationDefinitions'!
+			UIInteraction.UIKeyRepeatData MouseButtonRepeatInfo() { mixin(MGPC!(UIInteraction.UIKeyRepeatData, 180)()); }
+			int DoubleClickPixelTolerance() { mixin(MGPC!(int, 176)()); }
+			float DoubleClickTriggerSeconds() { mixin(MGPC!(float, 172)()); }
+			float MouseButtonRepeatDelay() { mixin(MGPC!(float, 168)()); }
+			float AxisRepeatDelay() { mixin(MGPC!(float, 164)()); }
+			float UIAxisMultiplier() { mixin(MGPC!(float, 160)()); }
+			float UIJoystickDeadZone() { mixin(MGPC!(float, 156)()); }
+			DataStoreClient DataStoreManager() { mixin(MGPC!(DataStoreClient, 148)()); }
+			ScriptClass SceneClientClass() { mixin(MGPC!(ScriptClass, 128)()); }
+			ScriptClass UIManagerClass() { mixin(MGPC!(ScriptClass, 124)()); }
 			// WARNING: Property 'UIManager' has the same name as a defined type!
-			UObject.Pointer VfTable_FCallbackEventDevice() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 116); }
-			UObject.Pointer VfTable_FGlobalDataStoreClientManager() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 112); }
-			UObject.Pointer VfTable_FExec() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 108); }
+			UObject.Pointer VfTable_FCallbackEventDevice() { mixin(MGPC!(UObject.Pointer, 116)()); }
+			UObject.Pointer VfTable_FGlobalDataStoreClientManager() { mixin(MGPC!(UObject.Pointer, 112)()); }
+			UObject.Pointer VfTable_FExec() { mixin(MGPC!(UObject.Pointer, 108)()); }
 		}
-		bool bProcessInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 152) & 0x1) != 0; }
-		bool bProcessInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 152) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 152) &= ~0x1; } return val; }
+		bool bProcessInput() { mixin(MGBPC!(152, 0x1)()); }
+		bool bProcessInput(bool val) { mixin(MSBPC!(152, 0x1)()); }
 	}
 final:
 	static DataStoreClient GetDataStoreClient()

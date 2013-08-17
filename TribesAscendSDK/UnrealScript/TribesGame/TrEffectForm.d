@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrEffectForm;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface TrEffectForm : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffectForm")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffectForm")()); }
 	private static __gshared TrEffectForm mDefaultProperties;
-	@property final static TrEffectForm DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffectForm)("TrEffectForm TribesGame.Default__TrEffectForm")); }
+	@property final static TrEffectForm DefaultProperties() { mixin(MGDPC!(TrEffectForm, "TrEffectForm TribesGame.Default__TrEffectForm")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,28 +26,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetOverwriteMat() { return mGetOverwriteMat ? mGetOverwriteMat : (mGetOverwriteMat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetOverwriteMat")); }
-			ScriptFunction GetMatApplyToPawn() { return mGetMatApplyToPawn ? mGetMatApplyToPawn : (mGetMatApplyToPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetMatApplyToPawn")); }
-			ScriptFunction GetMatApplyToWeapon() { return mGetMatApplyToWeapon ? mGetMatApplyToWeapon : (mGetMatApplyToWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetMatApplyToWeapon")); }
-			ScriptFunction GetMatApplyToAttachment() { return mGetMatApplyToAttachment ? mGetMatApplyToAttachment : (mGetMatApplyToAttachment = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetMatApplyToAttachment")); }
+			ScriptFunction GetOverwriteMat() { mixin(MGF!("mGetOverwriteMat", "Function TribesGame.TrEffectForm.GetOverwriteMat")()); }
+			ScriptFunction GetMatApplyToPawn() { mixin(MGF!("mGetMatApplyToPawn", "Function TribesGame.TrEffectForm.GetMatApplyToPawn")()); }
+			ScriptFunction GetMatApplyToWeapon() { mixin(MGF!("mGetMatApplyToWeapon", "Function TribesGame.TrEffectForm.GetMatApplyToWeapon")()); }
+			ScriptFunction GetMatApplyToAttachment() { mixin(MGF!("mGetMatApplyToAttachment", "Function TribesGame.TrEffectForm.GetMatApplyToAttachment")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Material m_BodyMat() { return *cast(Material*)(cast(size_t)cast(void*)this + 60); }
-			TrObject.EffectFormPriority m_ePriority() { return *cast(TrObject.EffectFormPriority*)(cast(size_t)cast(void*)this + 72); }
-			SoundCue m_SoundCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 84); }
-			ParticleSystem m_PSC() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 80); }
-			TrObject.EffectFormMatTypes m_eMatType() { return *cast(TrObject.EffectFormMatTypes*)(cast(size_t)cast(void*)this + 73); }
-			float m_fBodyMatFadeOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			float m_fBodyMatFadeInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
+			Material m_BodyMat() { mixin(MGPC!(Material, 60)()); }
+			TrObject.EffectFormPriority m_ePriority() { mixin(MGPC!(TrObject.EffectFormPriority, 72)()); }
+			SoundCue m_SoundCue() { mixin(MGPC!(SoundCue, 84)()); }
+			ParticleSystem m_PSC() { mixin(MGPC!(ParticleSystem, 80)()); }
+			TrObject.EffectFormMatTypes m_eMatType() { mixin(MGPC!(TrObject.EffectFormMatTypes, 73)()); }
+			float m_fBodyMatFadeOutTime() { mixin(MGPC!(float, 68)()); }
+			float m_fBodyMatFadeInTime() { mixin(MGPC!(float, 64)()); }
 		}
-		bool m_bIsManaged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x2) != 0; }
-		bool m_bIsManaged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x2; } return val; }
-		bool m_bApplied() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x1) != 0; }
-		bool m_bApplied(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x1; } return val; }
+		bool m_bIsManaged() { mixin(MGBPC!(76, 0x2)()); }
+		bool m_bIsManaged(bool val) { mixin(MSBPC!(76, 0x2)()); }
+		bool m_bApplied() { mixin(MGBPC!(76, 0x1)()); }
+		bool m_bApplied(bool val) { mixin(MSBPC!(76, 0x1)()); }
 	}
 final:
 	Material GetOverwriteMat(ScriptArray!(TrObject.EffectFormOverwrite) List)

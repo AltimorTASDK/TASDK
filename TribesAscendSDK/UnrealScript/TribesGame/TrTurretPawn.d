@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrTurretPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Weapon;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Canvas;
@@ -13,9 +14,9 @@ extern(C++) interface TrTurretPawn : TrPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTurretPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTurretPawn")()); }
 	private static __gshared TrTurretPawn mDefaultProperties;
-	@property final static TrTurretPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTurretPawn)("TrTurretPawn TribesGame.Default__TrTurretPawn")); }
+	@property final static TrTurretPawn DefaultProperties() { mixin(MGDPC!(TrTurretPawn, "TrTurretPawn TribesGame.Default__TrTurretPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,25 +40,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction LeadingAimLocation() { return mLeadingAimLocation ? mLeadingAimLocation : (mLeadingAimLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.LeadingAimLocation")); }
-			ScriptFunction GetValidAimTarget() { return mGetValidAimTarget ? mGetValidAimTarget : (mGetValidAimTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.GetValidAimTarget")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.PostBeginPlay")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.Destroyed")); }
-			ScriptFunction WeaponFired() { return mWeaponFired ? mWeaponFired : (mWeaponFired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.WeaponFired")); }
-			ScriptFunction GetAimVectorFor() { return mGetAimVectorFor ? mGetAimVectorFor : (mGetAimVectorFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.GetAimVectorFor")); }
-			ScriptFunction GetAdjustedAimFor() { return mGetAdjustedAimFor ? mGetAdjustedAimFor : (mGetAdjustedAimFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.GetAdjustedAimFor")); }
-			ScriptFunction GetWeaponStartTraceLocation() { return mGetWeaponStartTraceLocation ? mGetWeaponStartTraceLocation : (mGetWeaponStartTraceLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.GetWeaponStartTraceLocation")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.Reset")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.TakeDamage")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.TakeRadiusDamage")); }
-			ScriptFunction RefreshPlayer() { return mRefreshPlayer ? mRefreshPlayer : (mRefreshPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.RefreshPlayer")); }
-			ScriptFunction RefreshInventory() { return mRefreshInventory ? mRefreshInventory : (mRefreshInventory = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.RefreshInventory")); }
-			ScriptFunction SetCharacterClassFromInfo() { return mSetCharacterClassFromInfo ? mSetCharacterClassFromInfo : (mSetCharacterClassFromInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.SetCharacterClassFromInfo")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.PostRenderFor")); }
-			ScriptFunction IncrementFlashCount() { return mIncrementFlashCount ? mIncrementFlashCount : (mIncrementFlashCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTurretPawn.IncrementFlashCount")); }
+			ScriptFunction LeadingAimLocation() { mixin(MGF!("mLeadingAimLocation", "Function TribesGame.TrTurretPawn.LeadingAimLocation")()); }
+			ScriptFunction GetValidAimTarget() { mixin(MGF!("mGetValidAimTarget", "Function TribesGame.TrTurretPawn.GetValidAimTarget")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrTurretPawn.PostBeginPlay")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrTurretPawn.Destroyed")()); }
+			ScriptFunction WeaponFired() { mixin(MGF!("mWeaponFired", "Function TribesGame.TrTurretPawn.WeaponFired")()); }
+			ScriptFunction GetAimVectorFor() { mixin(MGF!("mGetAimVectorFor", "Function TribesGame.TrTurretPawn.GetAimVectorFor")()); }
+			ScriptFunction GetAdjustedAimFor() { mixin(MGF!("mGetAdjustedAimFor", "Function TribesGame.TrTurretPawn.GetAdjustedAimFor")()); }
+			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF!("mGetWeaponStartTraceLocation", "Function TribesGame.TrTurretPawn.GetWeaponStartTraceLocation")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrTurretPawn.Reset")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrTurretPawn.TakeDamage")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function TribesGame.TrTurretPawn.TakeRadiusDamage")()); }
+			ScriptFunction RefreshPlayer() { mixin(MGF!("mRefreshPlayer", "Function TribesGame.TrTurretPawn.RefreshPlayer")()); }
+			ScriptFunction RefreshInventory() { mixin(MGF!("mRefreshInventory", "Function TribesGame.TrTurretPawn.RefreshInventory")()); }
+			ScriptFunction SetCharacterClassFromInfo() { mixin(MGF!("mSetCharacterClassFromInfo", "Function TribesGame.TrTurretPawn.SetCharacterClassFromInfo")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrTurretPawn.PostRenderFor")()); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function TribesGame.TrTurretPawn.IncrementFlashCount")()); }
 		}
 	}
-	@property final auto ref TrDeployable m_OwnerDeployable() { return *cast(TrDeployable*)(cast(size_t)cast(void*)this + 3192); }
+	@property final auto ref TrDeployable m_OwnerDeployable() { mixin(MGPC!(TrDeployable, 3192)()); }
 final:
 	Vector LeadingAimLocation(Actor Enemy)
 	{

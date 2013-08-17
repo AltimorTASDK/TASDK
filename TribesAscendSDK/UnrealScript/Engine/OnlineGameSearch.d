@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineGameSearch;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineGameSettings;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface OnlineGameSearch : Settings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineGameSearch")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineGameSearch")()); }
 	private static __gshared OnlineGameSearch mDefaultProperties;
-	@property final static OnlineGameSearch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineGameSearch)("OnlineGameSearch Engine.Default__OnlineGameSearch")); }
+	@property final static OnlineGameSearch DefaultProperties() { mixin(MGDPC!(OnlineGameSearch, "OnlineGameSearch Engine.Default__OnlineGameSearch")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SortSearchResults() { return mSortSearchResults ? mSortSearchResults : (mSortSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineGameSearch.SortSearchResults")); }
-			ScriptFunction SetSkillOverride() { return mSetSkillOverride ? mSetSkillOverride : (mSetSkillOverride = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineGameSearch.SetSkillOverride")); }
+			ScriptFunction SortSearchResults() { mixin(MGF!("mSortSearchResults", "Function Engine.OnlineGameSearch.SortSearchResults")()); }
+			ScriptFunction SetSkillOverride() { mixin(MGF!("mSetSkillOverride", "Function Engine.OnlineGameSearch.SetSkillOverride")()); }
 		}
 	}
 	enum EOnlineGameSearchComparisonType : ubyte
@@ -54,11 +55,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchQuery")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchQuery")()); }
 		@property final auto ref
 		{
-			ScriptArray!(OnlineGameSearch.OnlineGameSearchORClause) OrClauses() { return *cast(ScriptArray!(OnlineGameSearch.OnlineGameSearchORClause)*)(cast(size_t)&this + 0); }
-			ScriptArray!(OnlineGameSearch.OnlineGameSearchSortClause) SortClauses() { return *cast(ScriptArray!(OnlineGameSearch.OnlineGameSearchSortClause)*)(cast(size_t)&this + 12); }
+			ScriptArray!(OnlineGameSearch.OnlineGameSearchORClause) OrClauses() { mixin(MGPS!(ScriptArray!(OnlineGameSearch.OnlineGameSearchORClause), 0)()); }
+			ScriptArray!(OnlineGameSearch.OnlineGameSearchSortClause) SortClauses() { mixin(MGPS!(ScriptArray!(OnlineGameSearch.OnlineGameSearchSortClause), 12)()); }
 		}
 	}
 	struct OverrideSkill
@@ -66,13 +67,13 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OverrideSkill")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineGameSearch.OverrideSkill")()); }
 		@property final auto ref
 		{
-			int LeaderboardId() { return *cast(int*)(cast(size_t)&this + 0); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) Players() { return *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)(cast(size_t)&this + 4); }
-			ScriptArray!(UObject.Double) Mus() { return *cast(ScriptArray!(UObject.Double)*)(cast(size_t)&this + 16); }
-			ScriptArray!(UObject.Double) Sigmas() { return *cast(ScriptArray!(UObject.Double)*)(cast(size_t)&this + 28); }
+			int LeaderboardId() { mixin(MGPS!(int, 0)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) Players() { mixin(MGPS!(ScriptArray!(OnlineSubsystem.UniqueNetId), 4)()); }
+			ScriptArray!(UObject.Double) Mus() { mixin(MGPS!(ScriptArray!(UObject.Double), 16)()); }
+			ScriptArray!(UObject.Double) Sigmas() { mixin(MGPS!(ScriptArray!(UObject.Double), 28)()); }
 		}
 	}
 	struct OnlineGameSearchORClause
@@ -80,21 +81,21 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchORClause")); }
-		@property final auto ref ScriptArray!(OnlineGameSearch.OnlineGameSearchParameter) OrParams() { return *cast(ScriptArray!(OnlineGameSearch.OnlineGameSearchParameter)*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchORClause")()); }
+		@property final auto ref ScriptArray!(OnlineGameSearch.OnlineGameSearchParameter) OrParams() { mixin(MGPS!(ScriptArray!(OnlineGameSearch.OnlineGameSearchParameter), 0)()); }
 	}
 	struct OnlineGameSearchSortClause
 	{
 		private ubyte __buffer__[14];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchSortClause")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchSortClause")()); }
 		@property final auto ref
 		{
-			int EntryId() { return *cast(int*)(cast(size_t)&this + 0); }
-			ScriptName ObjectPropertyName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			OnlineGameSearch.EOnlineGameSearchEntryType EntryType() { return *cast(OnlineGameSearch.EOnlineGameSearchEntryType*)(cast(size_t)&this + 12); }
-			OnlineGameSearch.EOnlineGameSearchSortType SortType() { return *cast(OnlineGameSearch.EOnlineGameSearchSortType*)(cast(size_t)&this + 13); }
+			int EntryId() { mixin(MGPS!(int, 0)()); }
+			ScriptName ObjectPropertyName() { mixin(MGPS!(ScriptName, 4)()); }
+			OnlineGameSearch.EOnlineGameSearchEntryType EntryType() { mixin(MGPS!(OnlineGameSearch.EOnlineGameSearchEntryType, 12)()); }
+			OnlineGameSearch.EOnlineGameSearchSortType SortType() { mixin(MGPS!(OnlineGameSearch.EOnlineGameSearchSortType, 13)()); }
 		}
 	}
 	struct OnlineGameSearchParameter
@@ -102,13 +103,13 @@ public extern(D):
 		private ubyte __buffer__[14];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchParameter")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchParameter")()); }
 		@property final auto ref
 		{
-			int EntryId() { return *cast(int*)(cast(size_t)&this + 0); }
-			ScriptName ObjectPropertyName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			OnlineGameSearch.EOnlineGameSearchEntryType EntryType() { return *cast(OnlineGameSearch.EOnlineGameSearchEntryType*)(cast(size_t)&this + 12); }
-			OnlineGameSearch.EOnlineGameSearchComparisonType ComparisonType() { return *cast(OnlineGameSearch.EOnlineGameSearchComparisonType*)(cast(size_t)&this + 13); }
+			int EntryId() { mixin(MGPS!(int, 0)()); }
+			ScriptName ObjectPropertyName() { mixin(MGPS!(ScriptName, 4)()); }
+			OnlineGameSearch.EOnlineGameSearchEntryType EntryType() { mixin(MGPS!(OnlineGameSearch.EOnlineGameSearchEntryType, 12)()); }
+			OnlineGameSearch.EOnlineGameSearchComparisonType ComparisonType() { mixin(MGPS!(OnlineGameSearch.EOnlineGameSearchComparisonType, 13)()); }
 		}
 	}
 	struct NamedObjectProperty
@@ -116,11 +117,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.NamedObjectProperty")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineGameSearch.NamedObjectProperty")()); }
 		@property final auto ref
 		{
-			ScriptName ObjectPropertyName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptString ObjectPropertyValue() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
+			ScriptName ObjectPropertyName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptString ObjectPropertyValue() { mixin(MGPS!(ScriptString, 8)()); }
 		}
 	}
 	struct OnlineGameSearchResult
@@ -128,45 +129,45 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchResult")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchResult")()); }
 		@property final auto ref
 		{
-			OnlineGameSettings GameSettings() { return *cast(OnlineGameSettings*)(cast(size_t)&this + 0); }
-			UObject.Pointer PlatformData() { return *cast(UObject.Pointer*)(cast(size_t)&this + 4); }
+			OnlineGameSettings GameSettings() { mixin(MGPS!(OnlineGameSettings, 0)()); }
+			UObject.Pointer PlatformData() { mixin(MGPS!(UObject.Pointer, 4)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			OnlineGameSearch.OverrideSkill ManualSkillOverride() { return *cast(OnlineGameSearch.OverrideSkill*)(cast(size_t)cast(void*)this + 144); }
-			int MaxSearchResults() { return *cast(int*)(cast(size_t)cast(void*)this + 108); }
-			Settings.LocalizedStringSetting Query() { return *cast(Settings.LocalizedStringSetting*)(cast(size_t)cast(void*)this + 112); }
-			ScriptClass GameSettingsClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 128); }
-			ScriptArray!(OnlineGameSearch.OnlineGameSearchResult) Results() { return *cast(ScriptArray!(OnlineGameSearch.OnlineGameSearchResult)*)(cast(size_t)cast(void*)this + 132); }
-			ScriptArray!(OnlineGameSearch.NamedObjectProperty) NamedProperties() { return *cast(ScriptArray!(OnlineGameSearch.NamedObjectProperty)*)(cast(size_t)cast(void*)this + 184); }
-			OnlineGameSearch.OnlineGameSearchQuery FilterQuery() { return *cast(OnlineGameSearch.OnlineGameSearchQuery*)(cast(size_t)cast(void*)this + 196); }
-			ScriptString AdditionalSearchCriteria() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 220); }
-			int PingBucketSize() { return *cast(int*)(cast(size_t)cast(void*)this + 232); }
+			OnlineGameSearch.OverrideSkill ManualSkillOverride() { mixin(MGPC!(OnlineGameSearch.OverrideSkill, 144)()); }
+			int MaxSearchResults() { mixin(MGPC!(int, 108)()); }
+			Settings.LocalizedStringSetting Query() { mixin(MGPC!(Settings.LocalizedStringSetting, 112)()); }
+			ScriptClass GameSettingsClass() { mixin(MGPC!(ScriptClass, 128)()); }
+			ScriptArray!(OnlineGameSearch.OnlineGameSearchResult) Results() { mixin(MGPC!(ScriptArray!(OnlineGameSearch.OnlineGameSearchResult), 132)()); }
+			ScriptArray!(OnlineGameSearch.NamedObjectProperty) NamedProperties() { mixin(MGPC!(ScriptArray!(OnlineGameSearch.NamedObjectProperty), 184)()); }
+			OnlineGameSearch.OnlineGameSearchQuery FilterQuery() { mixin(MGPC!(OnlineGameSearch.OnlineGameSearchQuery, 196)()); }
+			ScriptString AdditionalSearchCriteria() { mixin(MGPC!(ScriptString, 220)()); }
+			int PingBucketSize() { mixin(MGPC!(int, 232)()); }
 		}
-		bool bIsLanQuery() { return (*cast(uint*)(cast(size_t)cast(void*)this + 124) & 0x1) != 0; }
-		bool bIsLanQuery(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 124) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 124) &= ~0x1; } return val; }
-		bool bUsesArbitration() { return (*cast(uint*)(cast(size_t)cast(void*)this + 124) & 0x2) != 0; }
-		bool bUsesArbitration(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 124) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 124) &= ~0x2; } return val; }
-		bool bIsSearchInProgress() { return (*cast(uint*)(cast(size_t)cast(void*)this + 124) & 0x4) != 0; }
-		bool bIsSearchInProgress(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 124) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 124) &= ~0x4; } return val; }
+		bool bIsLanQuery() { mixin(MGBPC!(124, 0x1)()); }
+		bool bIsLanQuery(bool val) { mixin(MSBPC!(124, 0x1)()); }
+		bool bUsesArbitration() { mixin(MGBPC!(124, 0x2)()); }
+		bool bUsesArbitration(bool val) { mixin(MSBPC!(124, 0x2)()); }
+		bool bIsSearchInProgress() { mixin(MGBPC!(124, 0x4)()); }
+		bool bIsSearchInProgress(bool val) { mixin(MSBPC!(124, 0x4)()); }
 	}
 final:
 	void SortSearchResults()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SortSearchResults, cast(void*)0, cast(void*)0);
 	}
-	void SetSkillOverride(int LeaderboardId, ScriptArray!(OnlineSubsystem.UniqueNetId)* Players)
+	void SetSkillOverride(int LeaderboardId, ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = LeaderboardId;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = *Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkillOverride, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4];
 	}

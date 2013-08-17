@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.PlatformCommon.TgPlayerProfile;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage")()); }
 	private static __gshared GFxTrPage mDefaultProperties;
-	@property final static GFxTrPage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage)("GFxTrPage TribesGame.Default__GFxTrPage")); }
+	@property final static GFxTrPage DefaultProperties() { mixin(MGDPC!(GFxTrPage, "GFxTrPage TribesGame.Default__GFxTrPage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -68,55 +69,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.Initialize")); }
-			ScriptFunction AddAction() { return mAddAction ? mAddAction : (mAddAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddAction")); }
-			ScriptFunction AddActionNumber() { return mAddActionNumber ? mAddActionNumber : (mAddActionNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionNumber")); }
-			ScriptFunction AddActionString() { return mAddActionString ? mAddActionString : (mAddActionString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionString")); }
-			ScriptFunction AddActionPage() { return mAddActionPage ? mAddActionPage : (mAddActionPage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionPage")); }
-			ScriptFunction AddActionSet() { return mAddActionSet ? mAddActionSet : (mAddActionSet = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionSet")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.TakeFocus")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.TakeAction")); }
-			ScriptFunction ModifyAction() { return mModifyAction ? mModifyAction : (mModifyAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ModifyAction")); }
-			ScriptFunction ModifyFocus() { return mModifyFocus ? mModifyFocus : (mModifyFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ModifyFocus")); }
-			ScriptFunction HelpButton() { return mHelpButton ? mHelpButton : (mHelpButton = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.HelpButton")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.SpecialAction")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.PopupComplete")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillData")); }
-			ScriptFunction FillOptions() { return mFillOptions ? mFillOptions : (mFillOptions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillOptions")); }
-			ScriptFunction IsOwned() { return mIsOwned ? mIsOwned : (mIsOwned = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.IsOwned")); }
-			ScriptFunction CheckPurchasable() { return mCheckPurchasable ? mCheckPurchasable : (mCheckPurchasable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckPurchasable")); }
-			ScriptFunction IsEquipMaxed() { return mIsEquipMaxed ? mIsEquipMaxed : (mIsEquipMaxed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.IsEquipMaxed")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillOption")); }
-			ScriptFunction FillDefault() { return mFillDefault ? mFillDefault : (mFillDefault = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillDefault")); }
-			ScriptFunction CheckUpgrades() { return mCheckUpgrades ? mCheckUpgrades : (mCheckUpgrades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckUpgrades")); }
-			ScriptFunction CheckPricing() { return mCheckPricing ? mCheckPricing : (mCheckPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckPricing")); }
-			ScriptFunction FillUpgrades() { return mFillUpgrades ? mFillUpgrades : (mFillUpgrades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillUpgrades")); }
-			ScriptFunction FillPricing() { return mFillPricing ? mFillPricing : (mFillPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillPricing")); }
-			ScriptFunction CheckDescription() { return mCheckDescription ? mCheckDescription : (mCheckDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckDescription")); }
-			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillDescription")); }
-			ScriptFunction FillPage() { return mFillPage ? mFillPage : (mFillPage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillPage")); }
-			ScriptFunction ClearActions() { return mClearActions ? mClearActions : (mClearActions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ClearActions")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ShowModel")); }
-			ScriptFunction FillClass() { return mFillClass ? mFillClass : (mFillClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillClass")); }
-			ScriptFunction FillEquipTypes() { return mFillEquipTypes ? mFillEquipTypes : (mFillEquipTypes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillEquipTypes")); }
-			ScriptFunction NewClassEquip() { return mNewClassEquip ? mNewClassEquip : (mNewClassEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.NewClassEquip")); }
-			ScriptFunction NewClassUpgrade() { return mNewClassUpgrade ? mNewClassUpgrade : (mNewClassUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.NewClassUpgrade")); }
-			ScriptFunction NewEquipUpgrade() { return mNewEquipUpgrade ? mNewEquipUpgrade : (mNewEquipUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.NewEquipUpgrade")); }
-			ScriptFunction RevertSetting() { return mRevertSetting ? mRevertSetting : (mRevertSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.RevertSetting")); }
-			ScriptFunction OnPurchaseSuccess() { return mOnPurchaseSuccess ? mOnPurchaseSuccess : (mOnPurchaseSuccess = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.OnPurchaseSuccess")); }
-			ScriptFunction ActionUp() { return mActionUp ? mActionUp : (mActionUp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ActionUp")); }
-			ScriptFunction ActionDown() { return mActionDown ? mActionDown : (mActionDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ActionDown")); }
-			ScriptFunction RefreshButtons() { return mRefreshButtons ? mRefreshButtons : (mRefreshButtons = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.RefreshButtons")); }
-			ScriptFunction KeyEvent() { return mKeyEvent ? mKeyEvent : (mKeyEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.KeyEvent")); }
-			ScriptFunction UpdateDealTimer() { return mUpdateDealTimer ? mUpdateDealTimer : (mUpdateDealTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.UpdateDealTimer")); }
-			ScriptFunction UpdateQueueTimer() { return mUpdateQueueTimer ? mUpdateQueueTimer : (mUpdateQueueTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.UpdateQueueTimer")); }
-			ScriptFunction ProfileUp() { return mProfileUp ? mProfileUp : (mProfileUp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ProfileUp")); }
-			ScriptFunction ProfileDown() { return mProfileDown ? mProfileDown : (mProfileDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ProfileDown")); }
-			ScriptFunction ResetRunaway() { return mResetRunaway ? mResetRunaway : (mResetRunaway = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ResetRunaway")); }
-			ScriptFunction ShowReticule() { return mShowReticule ? mShowReticule : (mShowReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ShowReticule")); }
-			ScriptFunction SaveReticule() { return mSaveReticule ? mSaveReticule : (mSaveReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.SaveReticule")); }
-			ScriptFunction OnClose() { return mOnClose ? mOnClose : (mOnClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.OnClose")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage.Initialize")()); }
+			ScriptFunction AddAction() { mixin(MGF!("mAddAction", "Function TribesGame.GFxTrPage.AddAction")()); }
+			ScriptFunction AddActionNumber() { mixin(MGF!("mAddActionNumber", "Function TribesGame.GFxTrPage.AddActionNumber")()); }
+			ScriptFunction AddActionString() { mixin(MGF!("mAddActionString", "Function TribesGame.GFxTrPage.AddActionString")()); }
+			ScriptFunction AddActionPage() { mixin(MGF!("mAddActionPage", "Function TribesGame.GFxTrPage.AddActionPage")()); }
+			ScriptFunction AddActionSet() { mixin(MGF!("mAddActionSet", "Function TribesGame.GFxTrPage.AddActionSet")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage.TakeFocus")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage.TakeAction")()); }
+			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage.ModifyAction")()); }
+			ScriptFunction ModifyFocus() { mixin(MGF!("mModifyFocus", "Function TribesGame.GFxTrPage.ModifyFocus")()); }
+			ScriptFunction HelpButton() { mixin(MGF!("mHelpButton", "Function TribesGame.GFxTrPage.HelpButton")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage.SpecialAction")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage.PopupComplete")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage.FillData")()); }
+			ScriptFunction FillOptions() { mixin(MGF!("mFillOptions", "Function TribesGame.GFxTrPage.FillOptions")()); }
+			ScriptFunction IsOwned() { mixin(MGF!("mIsOwned", "Function TribesGame.GFxTrPage.IsOwned")()); }
+			ScriptFunction CheckPurchasable() { mixin(MGF!("mCheckPurchasable", "Function TribesGame.GFxTrPage.CheckPurchasable")()); }
+			ScriptFunction IsEquipMaxed() { mixin(MGF!("mIsEquipMaxed", "Function TribesGame.GFxTrPage.IsEquipMaxed")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage.FillOption")()); }
+			ScriptFunction FillDefault() { mixin(MGF!("mFillDefault", "Function TribesGame.GFxTrPage.FillDefault")()); }
+			ScriptFunction CheckUpgrades() { mixin(MGF!("mCheckUpgrades", "Function TribesGame.GFxTrPage.CheckUpgrades")()); }
+			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage.CheckPricing")()); }
+			ScriptFunction FillUpgrades() { mixin(MGF!("mFillUpgrades", "Function TribesGame.GFxTrPage.FillUpgrades")()); }
+			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage.FillPricing")()); }
+			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage.CheckDescription")()); }
+			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage.FillDescription")()); }
+			ScriptFunction FillPage() { mixin(MGF!("mFillPage", "Function TribesGame.GFxTrPage.FillPage")()); }
+			ScriptFunction ClearActions() { mixin(MGF!("mClearActions", "Function TribesGame.GFxTrPage.ClearActions")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage.ShowModel")()); }
+			ScriptFunction FillClass() { mixin(MGF!("mFillClass", "Function TribesGame.GFxTrPage.FillClass")()); }
+			ScriptFunction FillEquipTypes() { mixin(MGF!("mFillEquipTypes", "Function TribesGame.GFxTrPage.FillEquipTypes")()); }
+			ScriptFunction NewClassEquip() { mixin(MGF!("mNewClassEquip", "Function TribesGame.GFxTrPage.NewClassEquip")()); }
+			ScriptFunction NewClassUpgrade() { mixin(MGF!("mNewClassUpgrade", "Function TribesGame.GFxTrPage.NewClassUpgrade")()); }
+			ScriptFunction NewEquipUpgrade() { mixin(MGF!("mNewEquipUpgrade", "Function TribesGame.GFxTrPage.NewEquipUpgrade")()); }
+			ScriptFunction RevertSetting() { mixin(MGF!("mRevertSetting", "Function TribesGame.GFxTrPage.RevertSetting")()); }
+			ScriptFunction OnPurchaseSuccess() { mixin(MGF!("mOnPurchaseSuccess", "Function TribesGame.GFxTrPage.OnPurchaseSuccess")()); }
+			ScriptFunction ActionUp() { mixin(MGF!("mActionUp", "Function TribesGame.GFxTrPage.ActionUp")()); }
+			ScriptFunction ActionDown() { mixin(MGF!("mActionDown", "Function TribesGame.GFxTrPage.ActionDown")()); }
+			ScriptFunction RefreshButtons() { mixin(MGF!("mRefreshButtons", "Function TribesGame.GFxTrPage.RefreshButtons")()); }
+			ScriptFunction KeyEvent() { mixin(MGF!("mKeyEvent", "Function TribesGame.GFxTrPage.KeyEvent")()); }
+			ScriptFunction UpdateDealTimer() { mixin(MGF!("mUpdateDealTimer", "Function TribesGame.GFxTrPage.UpdateDealTimer")()); }
+			ScriptFunction UpdateQueueTimer() { mixin(MGF!("mUpdateQueueTimer", "Function TribesGame.GFxTrPage.UpdateQueueTimer")()); }
+			ScriptFunction ProfileUp() { mixin(MGF!("mProfileUp", "Function TribesGame.GFxTrPage.ProfileUp")()); }
+			ScriptFunction ProfileDown() { mixin(MGF!("mProfileDown", "Function TribesGame.GFxTrPage.ProfileDown")()); }
+			ScriptFunction ResetRunaway() { mixin(MGF!("mResetRunaway", "Function TribesGame.GFxTrPage.ResetRunaway")()); }
+			ScriptFunction ShowReticule() { mixin(MGF!("mShowReticule", "Function TribesGame.GFxTrPage.ShowReticule")()); }
+			ScriptFunction SaveReticule() { mixin(MGF!("mSaveReticule", "Function TribesGame.GFxTrPage.SaveReticule")()); }
+			ScriptFunction OnClose() { mixin(MGF!("mOnClose", "Function TribesGame.GFxTrPage.OnClose")()); }
 		}
 	}
 	static struct Constants
@@ -146,66 +147,66 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.GFxTrPage.ResolutionSet")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrPage.ResolutionSet")()); }
 		@property final auto ref
 		{
-			TgPlayerProfile.PropertyPair Res() { return *cast(TgPlayerProfile.PropertyPair*)(cast(size_t)&this + 4); }
-			int Index() { return *cast(int*)(cast(size_t)&this + 0); }
+			TgPlayerProfile.PropertyPair Res() { mixin(MGPS!(TgPlayerProfile.PropertyPair, 4)()); }
+			int Index() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) OptionTitlesOverride() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 188); }
-			ScriptArray!(ScriptString) OptionSubtextOverride() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 200); }
-			ScriptArray!(ScriptString) OptionTitles() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 320); }
-			ScriptArray!(ScriptString) OptionSubtext() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 332); }
-			ScriptArray!(GFxTrAction) PageActions() { return *cast(ScriptArray!(GFxTrAction)*)(cast(size_t)cast(void*)this + 344); }
-			ScriptString HelpButtonYLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 308); }
-			ScriptString HelpButtonXLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 296); }
-			ScriptString HelpButtonBLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 284); }
-			ScriptString HelpButtonALabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 272); }
-			ScriptString HelpButtonYKey() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 260); }
-			ScriptString HelpButtonXKey() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 248); }
-			ScriptString HelpButtonBKey() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 236); }
-			ScriptString HelpButtonAKey() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 224); }
-			ScriptString PageLabel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 212); }
-			ScriptString PageLabelOverride() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 176); }
-			int LoadoutEquipType() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
-			int LoadoutClassId() { return *cast(int*)(cast(size_t)cast(void*)this + 164); }
-			int NewAction() { return *cast(int*)(cast(size_t)cast(void*)this + 160); }
-			int OptionCount() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			int DataCount() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
-			int ActiveIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 148); }
-			int ScrollIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 144); }
-			int HelpButtonYNum() { return *cast(int*)(cast(size_t)cast(void*)this + 140); }
-			int HelpButtonXNum() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-			int HelpButtonBNum() { return *cast(int*)(cast(size_t)cast(void*)this + 132); }
-			int HelpButtonANum() { return *cast(int*)(cast(size_t)cast(void*)this + 128); }
-			int GoBack() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
-			int ActiveLoadout() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
+			ScriptArray!(ScriptString) OptionTitlesOverride() { mixin(MGPC!(ScriptArray!(ScriptString), 188)()); }
+			ScriptArray!(ScriptString) OptionSubtextOverride() { mixin(MGPC!(ScriptArray!(ScriptString), 200)()); }
+			ScriptArray!(ScriptString) OptionTitles() { mixin(MGPC!(ScriptArray!(ScriptString), 320)()); }
+			ScriptArray!(ScriptString) OptionSubtext() { mixin(MGPC!(ScriptArray!(ScriptString), 332)()); }
+			ScriptArray!(GFxTrAction) PageActions() { mixin(MGPC!(ScriptArray!(GFxTrAction), 344)()); }
+			ScriptString HelpButtonYLabel() { mixin(MGPC!(ScriptString, 308)()); }
+			ScriptString HelpButtonXLabel() { mixin(MGPC!(ScriptString, 296)()); }
+			ScriptString HelpButtonBLabel() { mixin(MGPC!(ScriptString, 284)()); }
+			ScriptString HelpButtonALabel() { mixin(MGPC!(ScriptString, 272)()); }
+			ScriptString HelpButtonYKey() { mixin(MGPC!(ScriptString, 260)()); }
+			ScriptString HelpButtonXKey() { mixin(MGPC!(ScriptString, 248)()); }
+			ScriptString HelpButtonBKey() { mixin(MGPC!(ScriptString, 236)()); }
+			ScriptString HelpButtonAKey() { mixin(MGPC!(ScriptString, 224)()); }
+			ScriptString PageLabel() { mixin(MGPC!(ScriptString, 212)()); }
+			ScriptString PageLabelOverride() { mixin(MGPC!(ScriptString, 176)()); }
+			int LoadoutEquipType() { mixin(MGPC!(int, 168)()); }
+			int LoadoutClassId() { mixin(MGPC!(int, 164)()); }
+			int NewAction() { mixin(MGPC!(int, 160)()); }
+			int OptionCount() { mixin(MGPC!(int, 156)()); }
+			int DataCount() { mixin(MGPC!(int, 152)()); }
+			int ActiveIndex() { mixin(MGPC!(int, 148)()); }
+			int ScrollIndex() { mixin(MGPC!(int, 144)()); }
+			int HelpButtonYNum() { mixin(MGPC!(int, 140)()); }
+			int HelpButtonXNum() { mixin(MGPC!(int, 136)()); }
+			int HelpButtonBNum() { mixin(MGPC!(int, 132)()); }
+			int HelpButtonANum() { mixin(MGPC!(int, 128)()); }
+			int GoBack() { mixin(MGPC!(int, 124)()); }
+			int ActiveLoadout() { mixin(MGPC!(int, 120)()); }
 		}
-		bool bShowTribesLogo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x200) != 0; }
-		bool bShowTribesLogo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x200; } return val; }
-		bool bParentLocked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x100) != 0; }
-		bool bParentLocked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x100; } return val; }
-		bool bHasModifiers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x80) != 0; }
-		bool bHasModifiers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x80; } return val; }
-		bool bCreated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x40) != 0; }
-		bool bCreated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x40; } return val; }
-		bool bActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x20) != 0; }
-		bool bActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x20; } return val; }
-		bool bAllowBack() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x10) != 0; }
-		bool bAllowBack(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x10; } return val; }
-		bool bEndOfLine() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x8) != 0; }
-		bool bEndOfLine(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x8; } return val; }
-		bool bRemoveOption() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x4) != 0; }
-		bool bRemoveOption(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x4; } return val; }
-		bool bModifyOption() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x2) != 0; }
-		bool bModifyOption(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x2; } return val; }
-		bool bFillingFocus() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x1) != 0; }
-		bool bFillingFocus(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x1; } return val; }
+		bool bShowTribesLogo() { mixin(MGBPC!(172, 0x200)()); }
+		bool bShowTribesLogo(bool val) { mixin(MSBPC!(172, 0x200)()); }
+		bool bParentLocked() { mixin(MGBPC!(172, 0x100)()); }
+		bool bParentLocked(bool val) { mixin(MSBPC!(172, 0x100)()); }
+		bool bHasModifiers() { mixin(MGBPC!(172, 0x80)()); }
+		bool bHasModifiers(bool val) { mixin(MSBPC!(172, 0x80)()); }
+		bool bCreated() { mixin(MGBPC!(172, 0x40)()); }
+		bool bCreated(bool val) { mixin(MSBPC!(172, 0x40)()); }
+		bool bActive() { mixin(MGBPC!(172, 0x20)()); }
+		bool bActive(bool val) { mixin(MSBPC!(172, 0x20)()); }
+		bool bAllowBack() { mixin(MGBPC!(172, 0x10)()); }
+		bool bAllowBack(bool val) { mixin(MSBPC!(172, 0x10)()); }
+		bool bEndOfLine() { mixin(MGBPC!(172, 0x8)()); }
+		bool bEndOfLine(bool val) { mixin(MSBPC!(172, 0x8)()); }
+		bool bRemoveOption() { mixin(MGBPC!(172, 0x4)()); }
+		bool bRemoveOption(bool val) { mixin(MSBPC!(172, 0x4)()); }
+		bool bModifyOption() { mixin(MGBPC!(172, 0x2)()); }
+		bool bModifyOption(bool val) { mixin(MSBPC!(172, 0x2)()); }
+		bool bFillingFocus() { mixin(MGBPC!(172, 0x1)()); }
+		bool bFillingFocus(bool val) { mixin(MSBPC!(172, 0x1)()); }
 	}
 final:
 	void Initialize()

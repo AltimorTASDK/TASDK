@@ -1,15 +1,16 @@
 module UnrealScript.Engine.AISwitchablePylon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pylon;
 
 extern(C++) interface AISwitchablePylon : Pylon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AISwitchablePylon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AISwitchablePylon")()); }
 	private static __gshared AISwitchablePylon mDefaultProperties;
-	@property final static AISwitchablePylon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AISwitchablePylon)("AISwitchablePylon Engine.Default__AISwitchablePylon")); }
+	@property final static AISwitchablePylon DefaultProperties() { mixin(MGDPC!(AISwitchablePylon, "AISwitchablePylon Engine.Default__AISwitchablePylon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.AISwitchablePylon.PostBeginPlay")); }
-			ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.AISwitchablePylon.SetEnabled")); }
-			ScriptFunction IsEnabled() { return mIsEnabled ? mIsEnabled : (mIsEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.AISwitchablePylon.IsEnabled")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.AISwitchablePylon.PostBeginPlay")()); }
+			ScriptFunction SetEnabled() { mixin(MGF!("mSetEnabled", "Function Engine.AISwitchablePylon.SetEnabled")()); }
+			ScriptFunction IsEnabled() { mixin(MGF!("mIsEnabled", "Function Engine.AISwitchablePylon.IsEnabled")()); }
 		}
 	}
 	@property final
 	{
-		bool bOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 832) & 0x1) != 0; }
-		bool bOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 832) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 832) &= ~0x1; } return val; }
+		bool bOpen() { mixin(MGBPC!(832, 0x1)()); }
+		bool bOpen(bool val) { mixin(MSBPC!(832, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

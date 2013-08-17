@@ -1,6 +1,7 @@
 module UnrealScript.IpDrv.OnlineEventsInterfaceMcp;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.OnlineProfileSettings;
@@ -12,9 +13,9 @@ extern(C++) interface OnlineEventsInterfaceMcp : MCPBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineEventsInterfaceMcp")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.OnlineEventsInterfaceMcp")()); }
 	private static __gshared OnlineEventsInterfaceMcp mDefaultProperties;
-	@property final static OnlineEventsInterfaceMcp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineEventsInterfaceMcp)("OnlineEventsInterfaceMcp IpDrv.Default__OnlineEventsInterfaceMcp")); }
+	@property final static OnlineEventsInterfaceMcp DefaultProperties() { mixin(MGDPC!(OnlineEventsInterfaceMcp, "OnlineEventsInterfaceMcp IpDrv.Default__OnlineEventsInterfaceMcp")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,10 +27,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UploadPlayerData() { return mUploadPlayerData ? mUploadPlayerData : (mUploadPlayerData = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData")); }
-			ScriptFunction UploadGameplayEventsData() { return mUploadGameplayEventsData ? mUploadGameplayEventsData : (mUploadGameplayEventsData = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData")); }
-			ScriptFunction UpdatePlaylistPopulation() { return mUpdatePlaylistPopulation ? mUpdatePlaylistPopulation : (mUpdatePlaylistPopulation = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation")); }
-			ScriptFunction UploadMatchmakingStats() { return mUploadMatchmakingStats ? mUploadMatchmakingStats : (mUploadMatchmakingStats = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats")); }
+			ScriptFunction UploadPlayerData() { mixin(MGF!("mUploadPlayerData", "Function IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData")()); }
+			ScriptFunction UploadGameplayEventsData() { mixin(MGF!("mUploadGameplayEventsData", "Function IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData")()); }
+			ScriptFunction UpdatePlaylistPopulation() { mixin(MGF!("mUpdatePlaylistPopulation", "Function IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation")()); }
+			ScriptFunction UploadMatchmakingStats() { mixin(MGF!("mUploadMatchmakingStats", "Function IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats")()); }
 		}
 	}
 	enum EEventUploadType : ubyte
@@ -45,29 +46,29 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineEventsInterfaceMcp.EventUploadConfig")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlineEventsInterfaceMcp.EventUploadConfig")()); }
 		@property final
 		{
 			auto ref
 			{
-				float TimeOut() { return *cast(float*)(cast(size_t)&this + 16); }
-				ScriptString UploadUrl() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-				OnlineEventsInterfaceMcp.EEventUploadType UploadType() { return *cast(OnlineEventsInterfaceMcp.EEventUploadType*)(cast(size_t)&this + 0); }
+				float TimeOut() { mixin(MGPS!(float, 16)()); }
+				ScriptString UploadUrl() { mixin(MGPS!(ScriptString, 4)()); }
+				OnlineEventsInterfaceMcp.EEventUploadType UploadType() { mixin(MGPS!(OnlineEventsInterfaceMcp.EEventUploadType, 0)()); }
 			}
-			bool bUseCompression() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x1) != 0; }
-			bool bUseCompression(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x1; } return val; }
+			bool bUseCompression() { mixin(MGBPS!(20, 0x1)()); }
+			bool bUseCompression(bool val) { mixin(MSBPS!(20, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig) EventUploadConfigs() { return *cast(ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig)*)(cast(size_t)cast(void*)this + 64); }
-			ScriptArray!(UObject.Pointer) HttpPostObjects() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 76); }
-			ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType) DisabledUploadTypes() { return *cast(ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType)*)(cast(size_t)cast(void*)this + 88); }
+			ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig) EventUploadConfigs() { mixin(MGPC!(ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig), 64)()); }
+			ScriptArray!(UObject.Pointer) HttpPostObjects() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 76)()); }
+			ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType) DisabledUploadTypes() { mixin(MGPC!(ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType), 88)()); }
 		}
-		bool bBinaryStats() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x1) != 0; }
-		bool bBinaryStats(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x1; } return val; }
+		bool bBinaryStats() { mixin(MGBPC!(100, 0x1)()); }
+		bool bBinaryStats(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}
 final:
 	bool UploadPlayerData(OnlineSubsystem.UniqueNetId UniqueId, ScriptString PlayerNick, OnlineProfileSettings ProfileSettings, OnlinePlayerStorage PlayerStorage)
@@ -81,12 +82,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadPlayerData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ScriptArray!(ubyte)* Payload)
+	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ref const ScriptArray!(ubyte) Payload)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = UniqueId;
-		*cast(ScriptArray!(ubyte)*)&params[8] = *Payload;
+		*cast(ScriptArray!(ubyte)*)&params[8] = Payload;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadGameplayEventsData, params.ptr, cast(void*)0);
 		*Payload = *cast(ScriptArray!(ubyte)*)&params[8];
 		return *cast(bool*)&params[20];

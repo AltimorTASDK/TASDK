@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SpeedTree;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialInterface;
 
@@ -8,26 +9,26 @@ extern(C++) interface SpeedTree : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpeedTree")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SpeedTree")()); }
 	private static __gshared SpeedTree mDefaultProperties;
-	@property final static SpeedTree DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SpeedTree)("SpeedTree Engine.Default__SpeedTree")); }
+	@property final static SpeedTree DefaultProperties() { mixin(MGDPC!(SpeedTree, "SpeedTree Engine.Default__SpeedTree")()); }
 	@property final
 	{
 		auto ref
 		{
-			UObject.Guid LightingGuid() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 112); }
-			Vector WindDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 100); }
-			float WindStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			MaterialInterface BillboardMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 92); }
-			MaterialInterface LeafMeshMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 88); }
-			MaterialInterface LeafCardMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 84); }
-			MaterialInterface FrondMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 80); }
-			MaterialInterface Branch2Material() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 76); }
-			MaterialInterface Branch1Material() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 72); }
-			float LeafStaticShadowOpacity() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			UObject.Pointer SRH() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 64); }
+			UObject.Guid LightingGuid() { mixin(MGPC!(UObject.Guid, 112)()); }
+			Vector WindDirection() { mixin(MGPC!(Vector, 100)()); }
+			float WindStrength() { mixin(MGPC!(float, 96)()); }
+			MaterialInterface BillboardMaterial() { mixin(MGPC!(MaterialInterface, 92)()); }
+			MaterialInterface LeafMeshMaterial() { mixin(MGPC!(MaterialInterface, 88)()); }
+			MaterialInterface LeafCardMaterial() { mixin(MGPC!(MaterialInterface, 84)()); }
+			MaterialInterface FrondMaterial() { mixin(MGPC!(MaterialInterface, 80)()); }
+			MaterialInterface Branch2Material() { mixin(MGPC!(MaterialInterface, 76)()); }
+			MaterialInterface Branch1Material() { mixin(MGPC!(MaterialInterface, 72)()); }
+			float LeafStaticShadowOpacity() { mixin(MGPC!(float, 68)()); }
+			UObject.Pointer SRH() { mixin(MGPC!(UObject.Pointer, 64)()); }
 		}
-		bool bLegacySpeedTree() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-		bool bLegacySpeedTree(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+		bool bLegacySpeedTree() { mixin(MGBPC!(60, 0x1)()); }
+		bool bLegacySpeedTree(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
 }

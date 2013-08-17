@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCollisionProxy_PromptText;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.TribesGame.TrCollisionProxy;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrCollisionProxy_PromptText : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCollisionProxy_PromptText")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCollisionProxy_PromptText")()); }
 	private static __gshared TrCollisionProxy_PromptText mDefaultProperties;
-	@property final static TrCollisionProxy_PromptText DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCollisionProxy_PromptText)("TrCollisionProxy_PromptText TribesGame.Default__TrCollisionProxy_PromptText")); }
+	@property final static TrCollisionProxy_PromptText DefaultProperties() { mixin(MGDPC!(TrCollisionProxy_PromptText, "TrCollisionProxy_PromptText TribesGame.Default__TrCollisionProxy_PromptText")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,20 +24,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPawnAdded() { return mOnPawnAdded ? mOnPawnAdded : (mOnPawnAdded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_PromptText.OnPawnAdded")); }
-			ScriptFunction RequestPromptText() { return mRequestPromptText ? mRequestPromptText : (mRequestPromptText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_PromptText.RequestPromptText")); }
-			ScriptFunction CheckForUpgradeLevel() { return mCheckForUpgradeLevel ? mCheckForUpgradeLevel : (mCheckForUpgradeLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_PromptText.CheckForUpgradeLevel")); }
-			ScriptFunction TryTraceAgainTimer() { return mTryTraceAgainTimer ? mTryTraceAgainTimer : (mTryTraceAgainTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_PromptText.TryTraceAgainTimer")); }
-			ScriptFunction OnPawnRemoved() { return mOnPawnRemoved ? mOnPawnRemoved : (mOnPawnRemoved = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy_PromptText.OnPawnRemoved")); }
+			ScriptFunction OnPawnAdded() { mixin(MGF!("mOnPawnAdded", "Function TribesGame.TrCollisionProxy_PromptText.OnPawnAdded")()); }
+			ScriptFunction RequestPromptText() { mixin(MGF!("mRequestPromptText", "Function TribesGame.TrCollisionProxy_PromptText.RequestPromptText")()); }
+			ScriptFunction CheckForUpgradeLevel() { mixin(MGF!("mCheckForUpgradeLevel", "Function TribesGame.TrCollisionProxy_PromptText.CheckForUpgradeLevel")()); }
+			ScriptFunction TryTraceAgainTimer() { mixin(MGF!("mTryTraceAgainTimer", "Function TribesGame.TrCollisionProxy_PromptText.TryTraceAgainTimer")()); }
+			ScriptFunction OnPawnRemoved() { mixin(MGF!("mOnPawnRemoved", "Function TribesGame.TrCollisionProxy_PromptText.OnPawnRemoved")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fPromptTextRemovalTime() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-		int m_nPromptMessageIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-		Pawn m_LocalPawn() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 520); }
-		ScriptString m_LastUpgradeMsg() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 508); }
-		int m_nLastUpgradeLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
+		float m_fPromptTextRemovalTime() { mixin(MGPC!(float, 496)()); }
+		int m_nPromptMessageIndex() { mixin(MGPC!(int, 500)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CylinderComponent'!
+		Pawn m_LocalPawn() { mixin(MGPC!(Pawn, 520)()); }
+		ScriptString m_LastUpgradeMsg() { mixin(MGPC!(ScriptString, 508)()); }
+		int m_nLastUpgradeLevel() { mixin(MGPC!(int, 504)()); }
 	}
 final:
 	void OnPawnAdded(Pawn aPawn)

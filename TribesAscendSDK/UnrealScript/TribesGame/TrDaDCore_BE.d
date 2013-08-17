@@ -1,19 +1,20 @@
 module UnrealScript.TribesGame.TrDaDCore_BE;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrDaDCore;
 
 extern(C++) interface TrDaDCore_BE : TrDaDCore
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDCore_BE")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDCore_BE")()); }
 	private static __gshared TrDaDCore_BE mDefaultProperties;
-	@property final static TrDaDCore_BE DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDaDCore_BE)("TrDaDCore_BE TribesGame.Default__TrDaDCore_BE")); }
+	@property final static TrDaDCore_BE DefaultProperties() { mixin(MGDPC!(TrDaDCore_BE, "TrDaDCore_BE TribesGame.Default__TrDaDCore_BE")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;
-		public @property static final ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCore_BE.PostBeginPlay")); }
+		public @property static final ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDaDCore_BE.PostBeginPlay")()); }
 	}
 	final void PostBeginPlay()
 	{

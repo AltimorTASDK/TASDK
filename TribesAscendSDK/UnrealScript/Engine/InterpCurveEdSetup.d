@@ -1,29 +1,30 @@
 module UnrealScript.Engine.InterpCurveEdSetup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface InterpCurveEdSetup : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpCurveEdSetup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpCurveEdSetup")()); }
 	private static __gshared InterpCurveEdSetup mDefaultProperties;
-	@property final static InterpCurveEdSetup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpCurveEdSetup)("InterpCurveEdSetup Engine.Default__InterpCurveEdSetup")); }
+	@property final static InterpCurveEdSetup DefaultProperties() { mixin(MGDPC!(InterpCurveEdSetup, "InterpCurveEdSetup Engine.Default__InterpCurveEdSetup")()); }
 	struct CurveEdTab
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpCurveEdSetup.CurveEdTab")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpCurveEdSetup.CurveEdTab")()); }
 		@property final auto ref
 		{
-			ScriptArray!(InterpCurveEdSetup.CurveEdEntry) Curves() { return *cast(ScriptArray!(InterpCurveEdSetup.CurveEdEntry)*)(cast(size_t)&this + 12); }
-			float ViewEndOutput() { return *cast(float*)(cast(size_t)&this + 36); }
-			float ViewStartOutput() { return *cast(float*)(cast(size_t)&this + 32); }
-			float ViewEndInput() { return *cast(float*)(cast(size_t)&this + 28); }
-			float ViewStartInput() { return *cast(float*)(cast(size_t)&this + 24); }
-			ScriptString TabName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			ScriptArray!(InterpCurveEdSetup.CurveEdEntry) Curves() { mixin(MGPS!(ScriptArray!(InterpCurveEdSetup.CurveEdEntry), 12)()); }
+			float ViewEndOutput() { mixin(MGPS!(float, 36)()); }
+			float ViewStartOutput() { mixin(MGPS!(float, 32)()); }
+			float ViewEndInput() { mixin(MGPS!(float, 28)()); }
+			float ViewStartInput() { mixin(MGPS!(float, 24)()); }
+			ScriptString TabName() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	struct CurveEdEntry
@@ -31,23 +32,23 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpCurveEdSetup.CurveEdEntry")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpCurveEdSetup.CurveEdEntry")()); }
 		@property final auto ref
 		{
-			float ClampHigh() { return *cast(float*)(cast(size_t)&this + 40); }
-			float ClampLow() { return *cast(float*)(cast(size_t)&this + 36); }
-			int bClamp() { return *cast(int*)(cast(size_t)&this + 32); }
-			int bFloatingPointColorCurve() { return *cast(int*)(cast(size_t)&this + 28); }
-			int bColorCurve() { return *cast(int*)(cast(size_t)&this + 24); }
-			int bHideCurve() { return *cast(int*)(cast(size_t)&this + 20); }
-			ScriptString CurveName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-			UObject.Color CurveColor() { return *cast(UObject.Color*)(cast(size_t)&this + 4); }
-			UObject CurveObject() { return *cast(UObject*)(cast(size_t)&this + 0); }
+			float ClampHigh() { mixin(MGPS!(float, 40)()); }
+			float ClampLow() { mixin(MGPS!(float, 36)()); }
+			int bClamp() { mixin(MGPS!(int, 32)()); }
+			int bFloatingPointColorCurve() { mixin(MGPS!(int, 28)()); }
+			int bColorCurve() { mixin(MGPS!(int, 24)()); }
+			int bHideCurve() { mixin(MGPS!(int, 20)()); }
+			ScriptString CurveName() { mixin(MGPS!(ScriptString, 8)()); }
+			UObject.Color CurveColor() { mixin(MGPS!(UObject.Color, 4)()); }
+			UObject CurveObject() { mixin(MGPS!(UObject, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(InterpCurveEdSetup.CurveEdTab) Tabs() { return *cast(ScriptArray!(InterpCurveEdSetup.CurveEdTab)*)(cast(size_t)cast(void*)this + 60); }
-		int ActiveTab() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
+		ScriptArray!(InterpCurveEdSetup.CurveEdTab) Tabs() { mixin(MGPC!(ScriptArray!(InterpCurveEdSetup.CurveEdTab), 60)()); }
+		int ActiveTab() { mixin(MGPC!(int, 72)()); }
 	}
 }

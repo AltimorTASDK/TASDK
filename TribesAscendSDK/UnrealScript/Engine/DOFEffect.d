@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DOFEffect;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PostProcessEffect;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface DOFEffect : PostProcessEffect
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DOFEffect")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DOFEffect")()); }
 	private static __gshared DOFEffect mDefaultProperties;
-	@property final static DOFEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DOFEffect)("DOFEffect Engine.Default__DOFEffect")); }
+	@property final static DOFEffect DefaultProperties() { mixin(MGDPC!(DOFEffect, "DOFEffect Engine.Default__DOFEffect")()); }
 	enum EFocusType : ubyte
 	{
 		FOCUS_Distance = 0,
@@ -19,15 +20,15 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float FalloffExponent() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-		float BlurKernelSize() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-		float MaxNearBlurAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-		float MinBlurAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-		float MaxFarBlurAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-		UObject.Color ModulateBlurColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 120); }
-		DOFEffect.EFocusType FocusType() { return *cast(DOFEffect.EFocusType*)(cast(size_t)cast(void*)this + 124); }
-		float FocusInnerRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 128); }
-		float FocusDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-		Vector FocusPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 136); }
+		float FalloffExponent() { mixin(MGPC!(float, 100)()); }
+		float BlurKernelSize() { mixin(MGPC!(float, 104)()); }
+		float MaxNearBlurAmount() { mixin(MGPC!(float, 108)()); }
+		float MinBlurAmount() { mixin(MGPC!(float, 112)()); }
+		float MaxFarBlurAmount() { mixin(MGPC!(float, 116)()); }
+		UObject.Color ModulateBlurColor() { mixin(MGPC!(UObject.Color, 120)()); }
+		DOFEffect.EFocusType FocusType() { mixin(MGPC!(DOFEffect.EFocusType, 124)()); }
+		float FocusInnerRadius() { mixin(MGPC!(float, 128)()); }
+		float FocusDistance() { mixin(MGPC!(float, 132)()); }
+		Vector FocusPosition() { mixin(MGPC!(Vector, 136)()); }
 	}
 }

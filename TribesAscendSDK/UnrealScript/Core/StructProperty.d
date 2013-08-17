@@ -1,13 +1,14 @@
 module UnrealScript.Core.StructProperty;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.Property;
 
 extern(C++) interface StructProperty : Property
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.StructProperty")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.StructProperty")()); }
 	private static __gshared StructProperty mDefaultProperties;
-	@property final static StructProperty DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StructProperty)("StructProperty Core.Default__StructProperty")); }
+	@property final static StructProperty DefaultProperties() { mixin(MGDPC!(StructProperty, "StructProperty Core.Default__StructProperty")()); }
 }

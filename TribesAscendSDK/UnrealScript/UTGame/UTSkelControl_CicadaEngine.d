@@ -1,31 +1,32 @@
 module UnrealScript.UTGame.UTSkelControl_CicadaEngine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface UTSkelControl_CicadaEngine : SkelControlSingleBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_CicadaEngine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_CicadaEngine")()); }
 	private static __gshared UTSkelControl_CicadaEngine mDefaultProperties;
-	@property final static UTSkelControl_CicadaEngine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_CicadaEngine)("UTSkelControl_CicadaEngine UTGame.Default__UTSkelControl_CicadaEngine")); }
+	@property final static UTSkelControl_CicadaEngine DefaultProperties() { mixin(MGDPC!(UTSkelControl_CicadaEngine, "UTSkelControl_CicadaEngine UTGame.Default__UTSkelControl_CicadaEngine")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;
-		public @property static final ScriptFunction TickSkelControl() { return mTickSkelControl ? mTickSkelControl : (mTickSkelControl = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSkelControl_CicadaEngine.TickSkelControl")); }
+		public @property static final ScriptFunction TickSkelControl() { mixin(MGF!("mTickSkelControl", "Function UTGame.UTSkelControl_CicadaEngine.TickSkelControl")()); }
 	}
 	@property final auto ref
 	{
-		int DesiredPitch() { return *cast(int*)(cast(size_t)cast(void*)this + 268); }
-		float LastThrust() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-		float PitchTime() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-		float MaxVelocityPitchRateMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-		float MinVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-		float MaxVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-		float PitchRate() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-		float BackPitch() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-		float ForwardPitch() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
+		int DesiredPitch() { mixin(MGPC!(int, 268)()); }
+		float LastThrust() { mixin(MGPC!(float, 264)()); }
+		float PitchTime() { mixin(MGPC!(float, 260)()); }
+		float MaxVelocityPitchRateMultiplier() { mixin(MGPC!(float, 256)()); }
+		float MinVelocity() { mixin(MGPC!(float, 252)()); }
+		float MaxVelocity() { mixin(MGPC!(float, 248)()); }
+		float PitchRate() { mixin(MGPC!(float, 244)()); }
+		float BackPitch() { mixin(MGPC!(float, 240)()); }
+		float ForwardPitch() { mixin(MGPC!(float, 236)()); }
 	}
 	final void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

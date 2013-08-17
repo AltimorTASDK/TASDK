@@ -1,25 +1,26 @@
 module UnrealScript.TribesGame.TrOrientedBoxComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PrimitiveComponent;
 
 extern(C++) interface TrOrientedBoxComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrOrientedBoxComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrOrientedBoxComponent")()); }
 	private static __gshared TrOrientedBoxComponent mDefaultProperties;
-	@property final static TrOrientedBoxComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrOrientedBoxComponent)("TrOrientedBoxComponent TribesGame.Default__TrOrientedBoxComponent")); }
+	@property final static TrOrientedBoxComponent DefaultProperties() { mixin(MGDPC!(TrOrientedBoxComponent, "TrOrientedBoxComponent TribesGame.Default__TrOrientedBoxComponent")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetBoxSize;
-		public @property static final ScriptFunction SetBoxSize() { return mSetBoxSize ? mSetBoxSize : (mSetBoxSize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrOrientedBoxComponent.SetBoxSize")); }
+		public @property static final ScriptFunction SetBoxSize() { mixin(MGF!("mSetBoxSize", "Function TribesGame.TrOrientedBoxComponent.SetBoxSize")()); }
 	}
 	@property final auto ref
 	{
-		float BoxLength() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-		float BoxWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-		float BoxHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+		float BoxLength() { mixin(MGPC!(float, 496)()); }
+		float BoxWidth() { mixin(MGPC!(float, 492)()); }
+		float BoxHeight() { mixin(MGPC!(float, 488)()); }
 	}
 	final void SetBoxSize(float NewHeight, float NewLength, float NewWidth, bool IsRadii)
 	{

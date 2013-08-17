@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_FlareGrenade;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrProj_Grenade;
 import UnrealScript.TribesGame.TrProj_TrackingMissile;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrProj_FlareGrenade : TrProj_Grenade
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_FlareGrenade")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_FlareGrenade")()); }
 	private static __gshared TrProj_FlareGrenade mDefaultProperties;
-	@property final static TrProj_FlareGrenade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_FlareGrenade)("TrProj_FlareGrenade TribesGame.Default__TrProj_FlareGrenade")); }
+	@property final static TrProj_FlareGrenade DefaultProperties() { mixin(MGDPC!(TrProj_FlareGrenade, "TrProj_FlareGrenade TribesGame.Default__TrProj_FlareGrenade")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CalculateHijackMetric() { return mCalculateHijackMetric ? mCalculateHijackMetric : (mCalculateHijackMetric = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_FlareGrenade.CalculateHijackMetric")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_FlareGrenade.PostBeginPlay")); }
-			ScriptFunction HijackMissileGuidance() { return mHijackMissileGuidance ? mHijackMissileGuidance : (mHijackMissileGuidance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_FlareGrenade.HijackMissileGuidance")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_FlareGrenade.Destroyed")); }
+			ScriptFunction CalculateHijackMetric() { mixin(MGF!("mCalculateHijackMetric", "Function TribesGame.TrProj_FlareGrenade.CalculateHijackMetric")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_FlareGrenade.PostBeginPlay")()); }
+			ScriptFunction HijackMissileGuidance() { mixin(MGF!("mHijackMissileGuidance", "Function TribesGame.TrProj_FlareGrenade.HijackMissileGuidance")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrProj_FlareGrenade.Destroyed")()); }
 		}
 	}
 final:

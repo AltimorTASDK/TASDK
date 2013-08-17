@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDynamicFieldProvider;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIRoot;
 import UnrealScript.Engine.UIDataProvider;
@@ -9,9 +10,9 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDynamicFieldProvider")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDynamicFieldProvider")()); }
 	private static __gshared UIDynamicFieldProvider mDefaultProperties;
-	@property final static UIDynamicFieldProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDynamicFieldProvider)("UIDynamicFieldProvider Engine.Default__UIDynamicFieldProvider")); }
+	@property final static UIDynamicFieldProvider DefaultProperties() { mixin(MGDPC!(UIDynamicFieldProvider, "UIDynamicFieldProvider Engine.Default__UIDynamicFieldProvider")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,33 +39,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitializeRuntimeFields() { return mInitializeRuntimeFields ? mInitializeRuntimeFields : (mInitializeRuntimeFields = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.InitializeRuntimeFields")); }
-			ScriptFunction AddField() { return mAddField ? mAddField : (mAddField = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.AddField")); }
-			ScriptFunction RemoveField() { return mRemoveField ? mRemoveField : (mRemoveField = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.RemoveField")); }
-			ScriptFunction FindFieldIndex() { return mFindFieldIndex ? mFindFieldIndex : (mFindFieldIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.FindFieldIndex")); }
-			ScriptFunction ClearFields() { return mClearFields ? mClearFields : (mClearFields = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.ClearFields")); }
-			ScriptFunction GetField() { return mGetField ? mGetField : (mGetField = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.GetField")); }
-			ScriptFunction SetField() { return mSetField ? mSetField : (mSetField = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.SetField")); }
-			ScriptFunction SavePersistentProviderData() { return mSavePersistentProviderData ? mSavePersistentProviderData : (mSavePersistentProviderData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.SavePersistentProviderData")); }
-			ScriptFunction GetCollectionValueSchema() { return mGetCollectionValueSchema ? mGetCollectionValueSchema : (mGetCollectionValueSchema = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.GetCollectionValueSchema")); }
-			ScriptFunction GetCollectionValueArray() { return mGetCollectionValueArray ? mGetCollectionValueArray : (mGetCollectionValueArray = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.GetCollectionValueArray")); }
-			ScriptFunction SetCollectionValueArray() { return mSetCollectionValueArray ? mSetCollectionValueArray : (mSetCollectionValueArray = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.SetCollectionValueArray")); }
-			ScriptFunction InsertCollectionValue() { return mInsertCollectionValue ? mInsertCollectionValue : (mInsertCollectionValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.InsertCollectionValue")); }
-			ScriptFunction RemoveCollectionValue() { return mRemoveCollectionValue ? mRemoveCollectionValue : (mRemoveCollectionValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.RemoveCollectionValue")); }
-			ScriptFunction RemoveCollectionValueByIndex() { return mRemoveCollectionValueByIndex ? mRemoveCollectionValueByIndex : (mRemoveCollectionValueByIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.RemoveCollectionValueByIndex")); }
-			ScriptFunction ReplaceCollectionValue() { return mReplaceCollectionValue ? mReplaceCollectionValue : (mReplaceCollectionValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.ReplaceCollectionValue")); }
-			ScriptFunction ReplaceCollectionValueByIndex() { return mReplaceCollectionValueByIndex ? mReplaceCollectionValueByIndex : (mReplaceCollectionValueByIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.ReplaceCollectionValueByIndex")); }
-			ScriptFunction ClearCollectionValueArray() { return mClearCollectionValueArray ? mClearCollectionValueArray : (mClearCollectionValueArray = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.ClearCollectionValueArray")); }
-			ScriptFunction GetCollectionValue() { return mGetCollectionValue ? mGetCollectionValue : (mGetCollectionValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.GetCollectionValue")); }
-			ScriptFunction FindCollectionValueIndex() { return mFindCollectionValueIndex ? mFindCollectionValueIndex : (mFindCollectionValueIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDynamicFieldProvider.FindCollectionValueIndex")); }
+			ScriptFunction InitializeRuntimeFields() { mixin(MGF!("mInitializeRuntimeFields", "Function Engine.UIDynamicFieldProvider.InitializeRuntimeFields")()); }
+			ScriptFunction AddField() { mixin(MGF!("mAddField", "Function Engine.UIDynamicFieldProvider.AddField")()); }
+			ScriptFunction RemoveField() { mixin(MGF!("mRemoveField", "Function Engine.UIDynamicFieldProvider.RemoveField")()); }
+			ScriptFunction FindFieldIndex() { mixin(MGF!("mFindFieldIndex", "Function Engine.UIDynamicFieldProvider.FindFieldIndex")()); }
+			ScriptFunction ClearFields() { mixin(MGF!("mClearFields", "Function Engine.UIDynamicFieldProvider.ClearFields")()); }
+			ScriptFunction GetField() { mixin(MGF!("mGetField", "Function Engine.UIDynamicFieldProvider.GetField")()); }
+			ScriptFunction SetField() { mixin(MGF!("mSetField", "Function Engine.UIDynamicFieldProvider.SetField")()); }
+			ScriptFunction SavePersistentProviderData() { mixin(MGF!("mSavePersistentProviderData", "Function Engine.UIDynamicFieldProvider.SavePersistentProviderData")()); }
+			ScriptFunction GetCollectionValueSchema() { mixin(MGF!("mGetCollectionValueSchema", "Function Engine.UIDynamicFieldProvider.GetCollectionValueSchema")()); }
+			ScriptFunction GetCollectionValueArray() { mixin(MGF!("mGetCollectionValueArray", "Function Engine.UIDynamicFieldProvider.GetCollectionValueArray")()); }
+			ScriptFunction SetCollectionValueArray() { mixin(MGF!("mSetCollectionValueArray", "Function Engine.UIDynamicFieldProvider.SetCollectionValueArray")()); }
+			ScriptFunction InsertCollectionValue() { mixin(MGF!("mInsertCollectionValue", "Function Engine.UIDynamicFieldProvider.InsertCollectionValue")()); }
+			ScriptFunction RemoveCollectionValue() { mixin(MGF!("mRemoveCollectionValue", "Function Engine.UIDynamicFieldProvider.RemoveCollectionValue")()); }
+			ScriptFunction RemoveCollectionValueByIndex() { mixin(MGF!("mRemoveCollectionValueByIndex", "Function Engine.UIDynamicFieldProvider.RemoveCollectionValueByIndex")()); }
+			ScriptFunction ReplaceCollectionValue() { mixin(MGF!("mReplaceCollectionValue", "Function Engine.UIDynamicFieldProvider.ReplaceCollectionValue")()); }
+			ScriptFunction ReplaceCollectionValueByIndex() { mixin(MGF!("mReplaceCollectionValueByIndex", "Function Engine.UIDynamicFieldProvider.ReplaceCollectionValueByIndex")()); }
+			ScriptFunction ClearCollectionValueArray() { mixin(MGF!("mClearCollectionValueArray", "Function Engine.UIDynamicFieldProvider.ClearCollectionValueArray")()); }
+			ScriptFunction GetCollectionValue() { mixin(MGF!("mGetCollectionValue", "Function Engine.UIDynamicFieldProvider.GetCollectionValue")()); }
+			ScriptFunction FindCollectionValueIndex() { mixin(MGF!("mFindCollectionValueIndex", "Function Engine.UIDynamicFieldProvider.FindCollectionValueIndex")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIRoot.UIProviderScriptFieldValue) PersistentDataFields() { return *cast(ScriptArray!(UIRoot.UIProviderScriptFieldValue)*)(cast(size_t)cast(void*)this + 88); }
-		ScriptArray!(UIRoot.UIProviderScriptFieldValue) RuntimeDataFields() { return *cast(ScriptArray!(UIRoot.UIProviderScriptFieldValue)*)(cast(size_t)cast(void*)this + 100); }
-		UObject.Map_Mirror RuntimeCollectionData() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 172); }
-		UObject.Map_Mirror PersistentCollectionData() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 112); }
+		ScriptArray!(UIRoot.UIProviderScriptFieldValue) PersistentDataFields() { mixin(MGPC!(ScriptArray!(UIRoot.UIProviderScriptFieldValue), 88)()); }
+		ScriptArray!(UIRoot.UIProviderScriptFieldValue) RuntimeDataFields() { mixin(MGPC!(ScriptArray!(UIRoot.UIProviderScriptFieldValue), 100)()); }
+		UObject.Map_Mirror RuntimeCollectionData() { mixin(MGPC!(UObject.Map_Mirror, 172)()); }
+		UObject.Map_Mirror PersistentCollectionData() { mixin(MGPC!(UObject.Map_Mirror, 112)()); }
 	}
 final:
 	void InitializeRuntimeFields()
@@ -78,7 +79,7 @@ final:
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(UIRoot.EUIDataProviderFieldType*)&params[8] = FieldType;
 		*cast(bool*)&params[12] = bPersistent;
-		*cast(int*)&params[16] = *out_InsertPosition;
+		*cast(int*)&params[16] = out_InsertPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddField, params.ptr, cast(void*)0);
 		*out_InsertPosition = *cast(int*)&params[16];
 		return *cast(bool*)&params[20];
@@ -108,22 +109,22 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearFields, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool GetField(ScriptName FieldName, UIRoot.UIProviderScriptFieldValue* out_Field)
+	bool GetField(ScriptName FieldName, ref UIRoot.UIProviderScriptFieldValue out_Field)
 	{
 		ubyte params[96];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(UIRoot.UIProviderScriptFieldValue*)&params[8] = *out_Field;
+		*cast(UIRoot.UIProviderScriptFieldValue*)&params[8] = out_Field;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetField, params.ptr, cast(void*)0);
 		*out_Field = *cast(UIRoot.UIProviderScriptFieldValue*)&params[8];
 		return *cast(bool*)&params[92];
 	}
-	bool SetField(ScriptName FieldName, UIRoot.UIProviderScriptFieldValue* FieldValue, bool bChangeExistingOnly)
+	bool SetField(ScriptName FieldName, ref const UIRoot.UIProviderScriptFieldValue FieldValue, bool bChangeExistingOnly)
 	{
 		ubyte params[100];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(UIRoot.UIProviderScriptFieldValue*)&params[8] = *FieldValue;
+		*cast(UIRoot.UIProviderScriptFieldValue*)&params[8] = FieldValue;
 		*cast(bool*)&params[92] = bChangeExistingOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetField, params.ptr, cast(void*)0);
 		*FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[8];
@@ -133,35 +134,35 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SavePersistentProviderData, cast(void*)0, cast(void*)0);
 	}
-	bool GetCollectionValueSchema(ScriptName FieldName, ScriptArray!(ScriptName)* out_CellTagArray, bool bPersistent)
+	bool GetCollectionValueSchema(ScriptName FieldName, ref ScriptArray!(ScriptName) out_CellTagArray, bool bPersistent)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptArray!(ScriptName)*)&params[8] = *out_CellTagArray;
+		*cast(ScriptArray!(ScriptName)*)&params[8] = out_CellTagArray;
 		*cast(bool*)&params[20] = bPersistent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCollectionValueSchema, params.ptr, cast(void*)0);
 		*out_CellTagArray = *cast(ScriptArray!(ScriptName)*)&params[8];
 		return *cast(bool*)&params[24];
 	}
-	bool GetCollectionValueArray(ScriptName FieldName, ScriptArray!(ScriptString)* out_DataValueArray, bool bPersistent, ScriptName CellTag)
+	bool GetCollectionValueArray(ScriptName FieldName, ref ScriptArray!(ScriptString) out_DataValueArray, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptArray!(ScriptString)*)&params[8] = *out_DataValueArray;
+		*cast(ScriptArray!(ScriptString)*)&params[8] = out_DataValueArray;
 		*cast(bool*)&params[20] = bPersistent;
 		*cast(ScriptName*)&params[24] = CellTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCollectionValueArray, params.ptr, cast(void*)0);
 		*out_DataValueArray = *cast(ScriptArray!(ScriptString)*)&params[8];
 		return *cast(bool*)&params[32];
 	}
-	bool SetCollectionValueArray(ScriptName FieldName, ScriptArray!(ScriptString)* CollectionValues, bool bClearExisting, int InsertIndex, bool bPersistent, ScriptName CellTag)
+	bool SetCollectionValueArray(ScriptName FieldName, ref const ScriptArray!(ScriptString) CollectionValues, bool bClearExisting, int InsertIndex, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptArray!(ScriptString)*)&params[8] = *CollectionValues;
+		*cast(ScriptArray!(ScriptString)*)&params[8] = CollectionValues;
 		*cast(bool*)&params[20] = bClearExisting;
 		*cast(int*)&params[24] = InsertIndex;
 		*cast(bool*)&params[28] = bPersistent;
@@ -170,12 +171,12 @@ final:
 		*CollectionValues = *cast(ScriptArray!(ScriptString)*)&params[8];
 		return *cast(bool*)&params[40];
 	}
-	bool InsertCollectionValue(ScriptName FieldName, ScriptString* NewValue, int InsertIndex, bool bPersistent, bool bAllowDuplicateValues, ScriptName CellTag)
+	bool InsertCollectionValue(ScriptName FieldName, ref const ScriptString NewValue, int InsertIndex, bool bPersistent, bool bAllowDuplicateValues, ScriptName CellTag)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptString*)&params[8] = *NewValue;
+		*cast(ScriptString*)&params[8] = NewValue;
 		*cast(int*)&params[20] = InsertIndex;
 		*cast(bool*)&params[24] = bPersistent;
 		*cast(bool*)&params[28] = bAllowDuplicateValues;
@@ -184,12 +185,12 @@ final:
 		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[40];
 	}
-	bool RemoveCollectionValue(ScriptName FieldName, ScriptString* ValueToRemove, bool bPersistent, ScriptName CellTag)
+	bool RemoveCollectionValue(ScriptName FieldName, ref const ScriptString ValueToRemove, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptString*)&params[8] = *ValueToRemove;
+		*cast(ScriptString*)&params[8] = ValueToRemove;
 		*cast(bool*)&params[20] = bPersistent;
 		*cast(ScriptName*)&params[24] = CellTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveCollectionValue, params.ptr, cast(void*)0);
@@ -207,13 +208,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveCollectionValueByIndex, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool ReplaceCollectionValue(ScriptName FieldName, ScriptString* CurrentValue, ScriptString* NewValue, bool bPersistent, ScriptName CellTag)
+	bool ReplaceCollectionValue(ScriptName FieldName, ref const ScriptString CurrentValue, ref const ScriptString NewValue, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptString*)&params[8] = *CurrentValue;
-		*cast(ScriptString*)&params[20] = *NewValue;
+		*cast(ScriptString*)&params[8] = CurrentValue;
+		*cast(ScriptString*)&params[20] = NewValue;
 		*cast(bool*)&params[32] = bPersistent;
 		*cast(ScriptName*)&params[36] = CellTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplaceCollectionValue, params.ptr, cast(void*)0);
@@ -221,13 +222,13 @@ final:
 		*NewValue = *cast(ScriptString*)&params[20];
 		return *cast(bool*)&params[44];
 	}
-	bool ReplaceCollectionValueByIndex(ScriptName FieldName, int ValueIndex, ScriptString* NewValue, bool bPersistent, ScriptName CellTag)
+	bool ReplaceCollectionValueByIndex(ScriptName FieldName, int ValueIndex, ref const ScriptString NewValue, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(int*)&params[8] = ValueIndex;
-		*cast(ScriptString*)&params[12] = *NewValue;
+		*cast(ScriptString*)&params[12] = NewValue;
 		*cast(bool*)&params[24] = bPersistent;
 		*cast(ScriptName*)&params[28] = CellTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplaceCollectionValueByIndex, params.ptr, cast(void*)0);
@@ -244,25 +245,25 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCollectionValueArray, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
-	bool GetCollectionValue(ScriptName FieldName, int ValueIndex, ScriptString* out_Value, bool bPersistent, ScriptName CellTag)
+	bool GetCollectionValue(ScriptName FieldName, int ValueIndex, ref ScriptString out_Value, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(int*)&params[8] = ValueIndex;
-		*cast(ScriptString*)&params[12] = *out_Value;
+		*cast(ScriptString*)&params[12] = out_Value;
 		*cast(bool*)&params[24] = bPersistent;
 		*cast(ScriptName*)&params[28] = CellTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCollectionValue, params.ptr, cast(void*)0);
 		*out_Value = *cast(ScriptString*)&params[12];
 		return *cast(bool*)&params[36];
 	}
-	int FindCollectionValueIndex(ScriptName FieldName, ScriptString* ValueToFind, bool bPersistent, ScriptName CellTag)
+	int FindCollectionValueIndex(ScriptName FieldName, ref const ScriptString ValueToFind, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(ScriptString*)&params[8] = *ValueToFind;
+		*cast(ScriptString*)&params[8] = ValueToFind;
 		*cast(bool*)&params[20] = bPersistent;
 		*cast(ScriptName*)&params[24] = CellTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindCollectionValueIndex, params.ptr, cast(void*)0);

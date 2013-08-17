@@ -1,22 +1,23 @@
 module UnrealScript.Engine.StaticMeshCollectionActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.StaticMeshActorBase;
 
 extern(C++) interface StaticMeshCollectionActor : StaticMeshActorBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshCollectionActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.StaticMeshCollectionActor")()); }
 	private static __gshared StaticMeshCollectionActor mDefaultProperties;
-	@property final static StaticMeshCollectionActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMeshCollectionActor)("StaticMeshCollectionActor Engine.Default__StaticMeshCollectionActor")); }
+	@property final static StaticMeshCollectionActor DefaultProperties() { mixin(MGDPC!(StaticMeshCollectionActor, "StaticMeshCollectionActor Engine.Default__StaticMeshCollectionActor")()); }
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) StaticMeshComponents() { return *cast(ScriptArray!(
+void*) StaticMeshComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 476); }
-		int MaxStaticMeshComponents() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
+void*), 476)()); }
+		int MaxStaticMeshComponents() { mixin(MGPC!(int, 488)()); }
 	}
 }

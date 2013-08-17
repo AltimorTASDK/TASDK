@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKVehicleFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.UDKBase.UDKVehicle;
 
@@ -8,9 +9,9 @@ extern(C++) interface UDKVehicleFactory : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKVehicleFactory")()); }
 	private static __gshared UDKVehicleFactory mDefaultProperties;
-	@property final static UDKVehicleFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleFactory)("UDKVehicleFactory UDKBase.Default__UDKVehicleFactory")); }
+	@property final static UDKVehicleFactory DefaultProperties() { mixin(MGDPC!(UDKVehicleFactory, "UDKVehicleFactory UDKBase.Default__UDKVehicleFactory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,26 +22,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnVehicle() { return mSpawnVehicle ? mSpawnVehicle : (mSpawnVehicle = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleFactory.SpawnVehicle")); }
-			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleFactory.SetHUDLocation")); }
-			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleFactory.GetTeamNum")); }
+			ScriptFunction SpawnVehicle() { mixin(MGF!("mSpawnVehicle", "Function UDKBase.UDKVehicleFactory.SpawnVehicle")()); }
+			ScriptFunction SetHUDLocation() { mixin(MGF!("mSetHUDLocation", "Function UDKBase.UDKVehicleFactory.SetHUDLocation")()); }
+			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function UDKBase.UDKVehicleFactory.GetTeamNum")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int TeamNum() { return *cast(int*)(cast(size_t)cast(void*)this + 732); }
-			Vector HUDLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 720); }
-			float RespawnProgress() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
-			UDKVehicle ChildVehicle() { return *cast(UDKVehicle*)(cast(size_t)cast(void*)this + 712); }
-			ScriptClass VehicleClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 708); }
-			ScriptString VehicleClassPath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 692); }
+			int TeamNum() { mixin(MGPC!(int, 732)()); }
+			Vector HUDLocation() { mixin(MGPC!(Vector, 720)()); }
+			float RespawnProgress() { mixin(MGPC!(float, 716)()); }
+			UDKVehicle ChildVehicle() { mixin(MGPC!(UDKVehicle, 712)()); }
+			ScriptClass VehicleClass() { mixin(MGPC!(ScriptClass, 708)()); }
+			ScriptString VehicleClassPath() { mixin(MGPC!(ScriptString, 692)()); }
 		}
-		bool bReplicateChildVehicle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 704) & 0x2) != 0; }
-		bool bReplicateChildVehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 704) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 704) &= ~0x2; } return val; }
-		bool bHasLockedVehicle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 704) & 0x1) != 0; }
-		bool bHasLockedVehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 704) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 704) &= ~0x1; } return val; }
+		bool bReplicateChildVehicle() { mixin(MGBPC!(704, 0x2)()); }
+		bool bReplicateChildVehicle(bool val) { mixin(MSBPC!(704, 0x2)()); }
+		bool bHasLockedVehicle() { mixin(MGBPC!(704, 0x1)()); }
+		bool bHasLockedVehicle(bool val) { mixin(MSBPC!(704, 0x1)()); }
 	}
 final:
 	void SpawnVehicle()

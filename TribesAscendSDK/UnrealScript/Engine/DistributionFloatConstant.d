@@ -1,14 +1,15 @@
 module UnrealScript.Engine.DistributionFloatConstant;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface DistributionFloatConstant : DistributionFloat
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionFloatConstant")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DistributionFloatConstant")()); }
 	private static __gshared DistributionFloatConstant mDefaultProperties;
-	@property final static DistributionFloatConstant DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DistributionFloatConstant)("DistributionFloatConstant Engine.Default__DistributionFloatConstant")); }
-	@property final auto ref float Constant() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
+	@property final static DistributionFloatConstant DefaultProperties() { mixin(MGDPC!(DistributionFloatConstant, "DistributionFloatConstant Engine.Default__DistributionFloatConstant")()); }
+	@property final auto ref float Constant() { mixin(MGPC!(float, 80)()); }
 }

@@ -1,15 +1,16 @@
 module UnrealScript.Engine.NavMeshPathConstraint;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface NavMeshPathConstraint : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPathConstraint")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshPathConstraint")()); }
 	private static __gshared NavMeshPathConstraint mDefaultProperties;
-	@property final static NavMeshPathConstraint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPathConstraint)("NavMeshPathConstraint Engine.Default__NavMeshPathConstraint")); }
+	@property final static NavMeshPathConstraint DefaultProperties() { mixin(MGDPC!(NavMeshPathConstraint, "NavMeshPathConstraint Engine.Default__NavMeshPathConstraint")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,17 +20,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPathConstraint.Recycle")); }
-			ScriptFunction GetDumpString() { return mGetDumpString ? mGetDumpString : (mGetDumpString = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPathConstraint.GetDumpString")); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPathConstraint.Recycle")()); }
+			ScriptFunction GetDumpString() { mixin(MGF!("mGetDumpString", "Function Engine.NavMeshPathConstraint.GetDumpString")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float AddedHeuristicCost() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-		float AddedDirectCost() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-		int NumThrownOutNodes() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-		int NumNodesProcessed() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-		NavMeshPathConstraint NextConstraint() { return *cast(NavMeshPathConstraint*)(cast(size_t)cast(void*)this + 60); }
+		float AddedHeuristicCost() { mixin(MGPC!(float, 76)()); }
+		float AddedDirectCost() { mixin(MGPC!(float, 72)()); }
+		int NumThrownOutNodes() { mixin(MGPC!(int, 68)()); }
+		int NumNodesProcessed() { mixin(MGPC!(int, 64)()); }
+		NavMeshPathConstraint NextConstraint() { mixin(MGPC!(NavMeshPathConstraint, 60)()); }
 	}
 final:
 	void Recycle()

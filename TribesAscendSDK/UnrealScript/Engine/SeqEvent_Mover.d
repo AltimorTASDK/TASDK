@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqEvent_Mover;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface SeqEvent_Mover : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_Mover")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_Mover")()); }
 	private static __gshared SeqEvent_Mover mDefaultProperties;
-	@property final static SeqEvent_Mover DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_Mover)("SeqEvent_Mover Engine.Default__SeqEvent_Mover")); }
+	@property final static SeqEvent_Mover DefaultProperties() { mixin(MGDPC!(SeqEvent_Mover, "SeqEvent_Mover Engine.Default__SeqEvent_Mover")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,14 +24,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RegisterEvent() { return mRegisterEvent ? mRegisterEvent : (mRegisterEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Mover.RegisterEvent")); }
-			ScriptFunction NotifyEncroachingOn() { return mNotifyEncroachingOn ? mNotifyEncroachingOn : (mNotifyEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Mover.NotifyEncroachingOn")); }
-			ScriptFunction NotifyAttached() { return mNotifyAttached ? mNotifyAttached : (mNotifyAttached = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Mover.NotifyAttached")); }
-			ScriptFunction NotifyDetached() { return mNotifyDetached ? mNotifyDetached : (mNotifyDetached = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Mover.NotifyDetached")); }
-			ScriptFunction NotifyFinishedOpen() { return mNotifyFinishedOpen ? mNotifyFinishedOpen : (mNotifyFinishedOpen = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_Mover.NotifyFinishedOpen")); }
+			ScriptFunction RegisterEvent() { mixin(MGF!("mRegisterEvent", "Function Engine.SeqEvent_Mover.RegisterEvent")()); }
+			ScriptFunction NotifyEncroachingOn() { mixin(MGF!("mNotifyEncroachingOn", "Function Engine.SeqEvent_Mover.NotifyEncroachingOn")()); }
+			ScriptFunction NotifyAttached() { mixin(MGF!("mNotifyAttached", "Function Engine.SeqEvent_Mover.NotifyAttached")()); }
+			ScriptFunction NotifyDetached() { mixin(MGF!("mNotifyDetached", "Function Engine.SeqEvent_Mover.NotifyDetached")()); }
+			ScriptFunction NotifyFinishedOpen() { mixin(MGF!("mNotifyFinishedOpen", "Function Engine.SeqEvent_Mover.NotifyFinishedOpen")()); }
 		}
 	}
-	@property final auto ref float StayOpenTime() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+	@property final auto ref float StayOpenTime() { mixin(MGPC!(float, 256)()); }
 final:
 	void RegisterEvent()
 	{

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_RepairDeployable;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrProj_Mine;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Actor;
@@ -9,9 +10,9 @@ extern(C++) interface TrProj_RepairDeployable : TrProj_Mine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_RepairDeployable")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_RepairDeployable")()); }
 	private static __gshared TrProj_RepairDeployable mDefaultProperties;
-	@property final static TrProj_RepairDeployable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_RepairDeployable)("TrProj_RepairDeployable TribesGame.Default__TrProj_RepairDeployable")); }
+	@property final static TrProj_RepairDeployable DefaultProperties() { mixin(MGDPC!(TrProj_RepairDeployable, "TrProj_RepairDeployable TribesGame.Default__TrProj_RepairDeployable")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,31 +27,32 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_RepairDeployable.PostBeginPlay")); }
-			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_RepairDeployable.InitProjectile")); }
-			ScriptFunction ArmedTimer() { return mArmedTimer ? mArmedTimer : (mArmedTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_RepairDeployable.ArmedTimer")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_RepairDeployable.HitWall")); }
-			ScriptFunction CheckRepair() { return mCheckRepair ? mCheckRepair : (mCheckRepair = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_RepairDeployable.CheckRepair")); }
-			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_RepairDeployable.Explode")); }
-			ScriptFunction DetonateObsolete() { return mDetonateObsolete ? mDetonateObsolete : (mDetonateObsolete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_RepairDeployable.DetonateObsolete")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_RepairDeployable.PostBeginPlay")()); }
+			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_RepairDeployable.InitProjectile")()); }
+			ScriptFunction ArmedTimer() { mixin(MGF!("mArmedTimer", "Function TribesGame.TrProj_RepairDeployable.ArmedTimer")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_RepairDeployable.HitWall")()); }
+			ScriptFunction CheckRepair() { mixin(MGF!("mCheckRepair", "Function TribesGame.TrProj_RepairDeployable.CheckRepair")()); }
+			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_RepairDeployable.Explode")()); }
+			ScriptFunction DetonateObsolete() { mixin(MGF!("mDetonateObsolete", "Function TribesGame.TrProj_RepairDeployable.DetonateObsolete")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor) ActorsToRepair() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 920); }
+		ScriptArray!(Actor) ActorsToRepair() { mixin(MGPC!(ScriptArray!(Actor), 920)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) RepairBeams() { return *cast(ScriptArray!(
+void*) RepairBeams() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 932); }
-		float m_fTickFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 956); }
-		float m_fTimeSinceLastTick() { return *cast(float*)(cast(size_t)cast(void*)this + 952); }
-		SoundCue RepairBeamSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 944); }
-		float m_fVehicleRepairPercentage() { return *cast(float*)(cast(size_t)cast(void*)this + 916); }
-		float m_fRepairPercentage() { return *cast(float*)(cast(size_t)cast(void*)this + 912); }
-		float m_fRepairBuff() { return *cast(float*)(cast(size_t)cast(void*)this + 908); }
-		float m_fRepairRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 904); }
-		float m_fCheckNearbyActorsFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 900); }
+void*), 932)()); }
+		float m_fTickFrequency() { mixin(MGPC!(float, 956)()); }
+		float m_fTimeSinceLastTick() { mixin(MGPC!(float, 952)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RepairBeamAC'!
+		SoundCue RepairBeamSound() { mixin(MGPC!(SoundCue, 944)()); }
+		float m_fVehicleRepairPercentage() { mixin(MGPC!(float, 916)()); }
+		float m_fRepairPercentage() { mixin(MGPC!(float, 912)()); }
+		float m_fRepairBuff() { mixin(MGPC!(float, 908)()); }
+		float m_fRepairRadius() { mixin(MGPC!(float, 904)()); }
+		float m_fCheckNearbyActorsFrequency() { mixin(MGPC!(float, 900)()); }
 	}
 final:
 	void PostBeginPlay()

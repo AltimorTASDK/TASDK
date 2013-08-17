@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Inventory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
@@ -12,9 +13,9 @@ extern(C++) interface Inventory : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Inventory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Inventory")()); }
 	private static __gshared Inventory mDefaultProperties;
-	@property final static Inventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Inventory)("Inventory Engine.Default__Inventory")); }
+	@property final static Inventory DefaultProperties() { mixin(MGDPC!(Inventory, "Inventory Engine.Default__Inventory")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,40 +35,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DetourWeight() { return mDetourWeight ? mDetourWeight : (mDetourWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.DetourWeight")); }
-			ScriptFunction GiveTo() { return mGiveTo ? mGiveTo : (mGiveTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.GiveTo")); }
-			ScriptFunction GetHumanReadableName() { return mGetHumanReadableName ? mGetHumanReadableName : (mGetHumanReadableName = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.GetHumanReadableName")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.Destroyed")); }
-			ScriptFunction BotDesireability() { return mBotDesireability ? mBotDesireability : (mBotDesireability = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.BotDesireability")); }
-			ScriptFunction AnnouncePickup() { return mAnnouncePickup ? mAnnouncePickup : (mAnnouncePickup = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.AnnouncePickup")); }
-			ScriptFunction GivenTo() { return mGivenTo ? mGivenTo : (mGivenTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.GivenTo")); }
-			ScriptFunction ClientGivenTo() { return mClientGivenTo ? mClientGivenTo : (mClientGivenTo = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.ClientGivenTo")); }
-			ScriptFunction ItemRemovedFromInvManager() { return mItemRemovedFromInvManager ? mItemRemovedFromInvManager : (mItemRemovedFromInvManager = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.ItemRemovedFromInvManager")); }
-			ScriptFunction DenyPickupQuery() { return mDenyPickupQuery ? mDenyPickupQuery : (mDenyPickupQuery = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.DenyPickupQuery")); }
-			ScriptFunction DropFrom() { return mDropFrom ? mDropFrom : (mDropFrom = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.DropFrom")); }
-			ScriptFunction GetLocalString() { return mGetLocalString ? mGetLocalString : (mGetLocalString = ScriptObject.Find!(ScriptFunction)("Function Engine.Inventory.GetLocalString")); }
+			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function Engine.Inventory.DetourWeight")()); }
+			ScriptFunction GiveTo() { mixin(MGF!("mGiveTo", "Function Engine.Inventory.GiveTo")()); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function Engine.Inventory.GetHumanReadableName")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Inventory.Destroyed")()); }
+			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function Engine.Inventory.BotDesireability")()); }
+			ScriptFunction AnnouncePickup() { mixin(MGF!("mAnnouncePickup", "Function Engine.Inventory.AnnouncePickup")()); }
+			ScriptFunction GivenTo() { mixin(MGF!("mGivenTo", "Function Engine.Inventory.GivenTo")()); }
+			ScriptFunction ClientGivenTo() { mixin(MGF!("mClientGivenTo", "Function Engine.Inventory.ClientGivenTo")()); }
+			ScriptFunction ItemRemovedFromInvManager() { mixin(MGF!("mItemRemovedFromInvManager", "Function Engine.Inventory.ItemRemovedFromInvManager")()); }
+			ScriptFunction DenyPickupQuery() { mixin(MGF!("mDenyPickupQuery", "Function Engine.Inventory.DenyPickupQuery")()); }
+			ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function Engine.Inventory.DropFrom")()); }
+			ScriptFunction GetLocalString() { mixin(MGF!("mGetLocalString", "Function Engine.Inventory.GetLocalString")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptClass DroppedPickupClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 536); }
-			ScriptString PickupForce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 524); }
-			SoundCue PickupSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 520); }
-			ScriptString PickupMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 508); }
-			float MaxDesireability() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-			float RespawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-			ScriptString ItemName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 484); }
-			InventoryManager InvManager() { return *cast(InventoryManager*)(cast(size_t)cast(void*)this + 480); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DroppedPickupMesh'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DroppedPickupParticles'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupFactoryMesh'!
+			ScriptClass DroppedPickupClass() { mixin(MGPC!(ScriptClass, 536)()); }
+			ScriptString PickupForce() { mixin(MGPC!(ScriptString, 524)()); }
+			SoundCue PickupSound() { mixin(MGPC!(SoundCue, 520)()); }
+			ScriptString PickupMessage() { mixin(MGPC!(ScriptString, 508)()); }
+			float MaxDesireability() { mixin(MGPC!(float, 504)()); }
+			float RespawnTime() { mixin(MGPC!(float, 500)()); }
+			ScriptString ItemName() { mixin(MGPC!(ScriptString, 484)()); }
+			InventoryManager InvManager() { mixin(MGPC!(InventoryManager, 480)()); }
 			// WARNING: Property 'Inventory' has the same name as a defined type!
 		}
-		bool bPredictRespawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x4) != 0; }
-		bool bPredictRespawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x4; } return val; }
-		bool bDelayedSpawn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x2) != 0; }
-		bool bDelayedSpawn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x2; } return val; }
-		bool bDropOnDeath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x1) != 0; }
-		bool bDropOnDeath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x1; } return val; }
+		bool bPredictRespawns() { mixin(MGBPC!(496, 0x4)()); }
+		bool bPredictRespawns(bool val) { mixin(MSBPC!(496, 0x4)()); }
+		bool bDelayedSpawn() { mixin(MGBPC!(496, 0x2)()); }
+		bool bDelayedSpawn(bool val) { mixin(MSBPC!(496, 0x2)()); }
+		bool bDropOnDeath() { mixin(MGBPC!(496, 0x1)()); }
+		bool bDropOnDeath(bool val) { mixin(MSBPC!(496, 0x1)()); }
 	}
 final:
 	static float DetourWeight(Pawn Other, float PathWeight)

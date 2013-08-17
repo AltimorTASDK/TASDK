@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTDMSquad;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTVehicle;
@@ -12,9 +13,9 @@ extern(C++) interface UTDMSquad : UTSquadAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDMSquad")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDMSquad")()); }
 	private static __gshared UTDMSquad mDefaultProperties;
-	@property final static UTDMSquad DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDMSquad)("UTDMSquad UTGame.Default__UTDMSquad")); }
+	@property final static UTDMSquad DefaultProperties() { mixin(MGDPC!(UTDMSquad, "UTDMSquad UTGame.Default__UTDMSquad")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,31 +38,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.DisplayDebug")); }
-			ScriptFunction IsDefending() { return mIsDefending ? mIsDefending : (mIsDefending = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.IsDefending")); }
-			ScriptFunction AddBot() { return mAddBot ? mAddBot : (mAddBot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.AddBot")); }
-			ScriptFunction RemoveBot() { return mRemoveBot ? mRemoveBot : (mRemoveBot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.RemoveBot")); }
-			ScriptFunction ShouldDeferTo() { return mShouldDeferTo ? mShouldDeferTo : (mShouldDeferTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.ShouldDeferTo")); }
-			ScriptFunction CheckSquadObjectives() { return mCheckSquadObjectives ? mCheckSquadObjectives : (mCheckSquadObjectives = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.CheckSquadObjectives")); }
-			ScriptFunction WaitAtThisPosition() { return mWaitAtThisPosition ? mWaitAtThisPosition : (mWaitAtThisPosition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.WaitAtThisPosition")); }
-			ScriptFunction NearFormationCenter() { return mNearFormationCenter ? mNearFormationCenter : (mNearFormationCenter = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.NearFormationCenter")); }
-			ScriptFunction BeDevious() { return mBeDevious ? mBeDevious : (mBeDevious = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.BeDevious")); }
-			ScriptFunction GetOrders() { return mGetOrders ? mGetOrders : (mGetOrders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.GetOrders")); }
-			ScriptFunction SetEnemy() { return mSetEnemy ? mSetEnemy : (mSetEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.SetEnemy")); }
-			ScriptFunction FriendlyToward() { return mFriendlyToward ? mFriendlyToward : (mFriendlyToward = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.FriendlyToward")); }
-			ScriptFunction AllowContinueOnFoot() { return mAllowContinueOnFoot ? mAllowContinueOnFoot : (mAllowContinueOnFoot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.AllowContinueOnFoot")); }
-			ScriptFunction VehicleDesireability() { return mVehicleDesireability ? mVehicleDesireability : (mVehicleDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.VehicleDesireability")); }
-			ScriptFunction AssignSquadResponsibility() { return mAssignSquadResponsibility ? mAssignSquadResponsibility : (mAssignSquadResponsibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMSquad.AssignSquadResponsibility")); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTDMSquad.DisplayDebug")()); }
+			ScriptFunction IsDefending() { mixin(MGF!("mIsDefending", "Function UTGame.UTDMSquad.IsDefending")()); }
+			ScriptFunction AddBot() { mixin(MGF!("mAddBot", "Function UTGame.UTDMSquad.AddBot")()); }
+			ScriptFunction RemoveBot() { mixin(MGF!("mRemoveBot", "Function UTGame.UTDMSquad.RemoveBot")()); }
+			ScriptFunction ShouldDeferTo() { mixin(MGF!("mShouldDeferTo", "Function UTGame.UTDMSquad.ShouldDeferTo")()); }
+			ScriptFunction CheckSquadObjectives() { mixin(MGF!("mCheckSquadObjectives", "Function UTGame.UTDMSquad.CheckSquadObjectives")()); }
+			ScriptFunction WaitAtThisPosition() { mixin(MGF!("mWaitAtThisPosition", "Function UTGame.UTDMSquad.WaitAtThisPosition")()); }
+			ScriptFunction NearFormationCenter() { mixin(MGF!("mNearFormationCenter", "Function UTGame.UTDMSquad.NearFormationCenter")()); }
+			ScriptFunction BeDevious() { mixin(MGF!("mBeDevious", "Function UTGame.UTDMSquad.BeDevious")()); }
+			ScriptFunction GetOrders() { mixin(MGF!("mGetOrders", "Function UTGame.UTDMSquad.GetOrders")()); }
+			ScriptFunction SetEnemy() { mixin(MGF!("mSetEnemy", "Function UTGame.UTDMSquad.SetEnemy")()); }
+			ScriptFunction FriendlyToward() { mixin(MGF!("mFriendlyToward", "Function UTGame.UTDMSquad.FriendlyToward")()); }
+			ScriptFunction AllowContinueOnFoot() { mixin(MGF!("mAllowContinueOnFoot", "Function UTGame.UTDMSquad.AllowContinueOnFoot")()); }
+			ScriptFunction VehicleDesireability() { mixin(MGF!("mVehicleDesireability", "Function UTGame.UTDMSquad.VehicleDesireability")()); }
+			ScriptFunction AssignSquadResponsibility() { mixin(MGF!("mAssignSquadResponsibility", "Function UTGame.UTDMSquad.AssignSquadResponsibility")()); }
 		}
 	}
 final:
-	void DisplayDebug(HUD pHUD, float* YL, float* YPos)
+	void DisplayDebug(HUD pHUD, ref float YL, ref float YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *YL;
-		*cast(float*)&params[8] = *YPos;
+		*cast(float*)&params[4] = YL;
+		*cast(float*)&params[8] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*YL = *cast(float*)&params[4];
 		*YPos = *cast(float*)&params[8];

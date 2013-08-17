@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTStartupMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -10,9 +11,9 @@ extern(C++) interface UTStartupMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTStartupMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTStartupMessage")()); }
 	private static __gshared UTStartupMessage mDefaultProperties;
-	@property final static UTStartupMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTStartupMessage)("UTStartupMessage UTGame.Default__UTStartupMessage")); }
+	@property final static UTStartupMessage DefaultProperties() { mixin(MGDPC!(UTStartupMessage, "UTStartupMessage UTGame.Default__UTStartupMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,15 +23,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTStartupMessage.ClientReceive")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTStartupMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTStartupMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTStartupMessage.GetString")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString SinglePlayer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-		ScriptString NotReady() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-		ScriptString Stage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString SinglePlayer() { mixin(MGPC!(ScriptString, 196)()); }
+		ScriptString NotReady() { mixin(MGPC!(ScriptString, 184)()); }
+		ScriptString Stage() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

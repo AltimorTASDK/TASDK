@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.GFxTrUI_VehicleMenu;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTGFxTweenableMoviePlayer;
 
 extern(C++) interface GFxTrUI_VehicleMenu : UTGFxTweenableMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrUI_VehicleMenu")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrUI_VehicleMenu")()); }
 	private static __gshared GFxTrUI_VehicleMenu mDefaultProperties;
-	@property final static GFxTrUI_VehicleMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrUI_VehicleMenu)("GFxTrUI_VehicleMenu TribesGame.Default__GFxTrUI_VehicleMenu")); }
+	@property final static GFxTrUI_VehicleMenu DefaultProperties() { mixin(MGDPC!(GFxTrUI_VehicleMenu, "GFxTrUI_VehicleMenu TribesGame.Default__GFxTrUI_VehicleMenu")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,13 +25,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_VehicleMenu.Start")); }
-			ScriptFunction ConfigureOptions() { return mConfigureOptions ? mConfigureOptions : (mConfigureOptions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_VehicleMenu.ConfigureOptions")); }
-			ScriptFunction VehicleOptionsComplete() { return mVehicleOptionsComplete ? mVehicleOptionsComplete : (mVehicleOptionsComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsComplete")); }
-			ScriptFunction VehicleOptionsClear() { return mVehicleOptionsClear ? mVehicleOptionsClear : (mVehicleOptionsClear = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsClear")); }
-			ScriptFunction SetVehicleOption() { return mSetVehicleOption ? mSetVehicleOption : (mSetVehicleOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_VehicleMenu.SetVehicleOption")); }
-			ScriptFunction GetSelectedVehicle() { return mGetSelectedVehicle ? mGetSelectedVehicle : (mGetSelectedVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_VehicleMenu.GetSelectedVehicle")); }
-			ScriptFunction OnVehicleScreenFinished() { return mOnVehicleScreenFinished ? mOnVehicleScreenFinished : (mOnVehicleScreenFinished = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_VehicleMenu.OnVehicleScreenFinished")); }
+			ScriptFunction Start() { mixin(MGF!("mStart", "Function TribesGame.GFxTrUI_VehicleMenu.Start")()); }
+			ScriptFunction ConfigureOptions() { mixin(MGF!("mConfigureOptions", "Function TribesGame.GFxTrUI_VehicleMenu.ConfigureOptions")()); }
+			ScriptFunction VehicleOptionsComplete() { mixin(MGF!("mVehicleOptionsComplete", "Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsComplete")()); }
+			ScriptFunction VehicleOptionsClear() { mixin(MGF!("mVehicleOptionsClear", "Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsClear")()); }
+			ScriptFunction SetVehicleOption() { mixin(MGF!("mSetVehicleOption", "Function TribesGame.GFxTrUI_VehicleMenu.SetVehicleOption")()); }
+			ScriptFunction GetSelectedVehicle() { mixin(MGF!("mGetSelectedVehicle", "Function TribesGame.GFxTrUI_VehicleMenu.GetSelectedVehicle")()); }
+			ScriptFunction OnVehicleScreenFinished() { mixin(MGF!("mOnVehicleScreenFinished", "Function TribesGame.GFxTrUI_VehicleMenu.OnVehicleScreenFinished")()); }
 		}
 	}
 final:

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTVehicleShield;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKWeaponShield;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Controller;
@@ -10,9 +11,9 @@ extern(C++) interface UTVehicleShield : UDKWeaponShield
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleShield")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleShield")()); }
 	private static __gshared UTVehicleShield mDefaultProperties;
-	@property final static UTVehicleShield DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleShield)("UTVehicleShield UTGame.Default__UTVehicleShield")); }
+	@property final static UTVehicleShield DefaultProperties() { mixin(MGDPC!(UTVehicleShield, "UTVehicleShield UTGame.Default__UTVehicleShield")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,21 +24,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetActive() { return mSetActive ? mSetActive : (mSetActive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleShield.SetActive")); }
-			ScriptFunction ShieldFullyOnline() { return mShieldFullyOnline ? mShieldFullyOnline : (mShieldFullyOnline = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleShield.ShieldFullyOnline")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleShield.TakeDamage")); }
+			ScriptFunction SetActive() { mixin(MGF!("mSetActive", "Function UTGame.UTVehicleShield.SetActive")()); }
+			ScriptFunction ShieldFullyOnline() { mixin(MGF!("mShieldFullyOnline", "Function UTGame.UTVehicleShield.ShieldFullyOnline")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function UTGame.UTVehicleShield.TakeDamage")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float ShieldActivatedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			SoundCue DeactivatedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 484); }
-			SoundCue ActivatedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 480); }
+			float ShieldActivatedTime() { mixin(MGPC!(float, 496)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ShieldEffectComponent'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientComponent'!
+			SoundCue DeactivatedSound() { mixin(MGPC!(SoundCue, 484)()); }
+			SoundCue ActivatedSound() { mixin(MGPC!(SoundCue, 480)()); }
 		}
-		bool bFullyActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 500) & 0x1) != 0; }
-		bool bFullyActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 500) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 500) &= ~0x1; } return val; }
+		bool bFullyActive() { mixin(MGBPC!(500, 0x1)()); }
+		bool bFullyActive(bool val) { mixin(MSBPC!(500, 0x1)()); }
 	}
 final:
 	void SetActive(bool bNowActive)

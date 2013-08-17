@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrMiscellaneousMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrMiscellaneousMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMiscellaneousMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMiscellaneousMessage")()); }
 	private static __gshared TrMiscellaneousMessage mDefaultProperties;
-	@property final static TrMiscellaneousMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMiscellaneousMessage)("TrMiscellaneousMessage TribesGame.Default__TrMiscellaneousMessage")); }
+	@property final static TrMiscellaneousMessage DefaultProperties() { mixin(MGDPC!(TrMiscellaneousMessage, "TrMiscellaneousMessage TribesGame.Default__TrMiscellaneousMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,22 +24,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMiscellaneousMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMiscellaneousMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrMiscellaneousMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrMiscellaneousMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString EnemyTeamBoughtHerc() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString OurTeamBoughtHerc() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-		SoundCue DiamondSwordCloseToLoss() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 128); }
-		SoundCue DiamondSwordCloseToWin() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 124); }
-		SoundCue BloodEagleCloseToLoss() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 120); }
-		SoundCue BloodEagleCloseToWin() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 116); }
-		SoundCue FriendDiamondSwordBoughtHerc() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 112); }
-		SoundCue FriendBloodEagleBoughtHerc() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 108); }
-		SoundCue EnemyDiamondSwordBoughtHerc() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 104); }
-		SoundCue EnemyBloodEagleBoughtHerc() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString EnemyTeamBoughtHerc() { mixin(MGPC!(ScriptString, 144)()); }
+		ScriptString OurTeamBoughtHerc() { mixin(MGPC!(ScriptString, 132)()); }
+		SoundCue DiamondSwordCloseToLoss() { mixin(MGPC!(SoundCue, 128)()); }
+		SoundCue DiamondSwordCloseToWin() { mixin(MGPC!(SoundCue, 124)()); }
+		SoundCue BloodEagleCloseToLoss() { mixin(MGPC!(SoundCue, 120)()); }
+		SoundCue BloodEagleCloseToWin() { mixin(MGPC!(SoundCue, 116)()); }
+		SoundCue FriendDiamondSwordBoughtHerc() { mixin(MGPC!(SoundCue, 112)()); }
+		SoundCue FriendBloodEagleBoughtHerc() { mixin(MGPC!(SoundCue, 108)()); }
+		SoundCue EnemyDiamondSwordBoughtHerc() { mixin(MGPC!(SoundCue, 104)()); }
+		SoundCue EnemyBloodEagleBoughtHerc() { mixin(MGPC!(SoundCue, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

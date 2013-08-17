@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCollisionProxy;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrCollisionProxy : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCollisionProxy")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCollisionProxy")()); }
 	private static __gshared TrCollisionProxy mDefaultProperties;
-	@property final static TrCollisionProxy DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCollisionProxy)("TrCollisionProxy TribesGame.Default__TrCollisionProxy")); }
+	@property final static TrCollisionProxy DefaultProperties() { mixin(MGDPC!(TrCollisionProxy, "TrCollisionProxy TribesGame.Default__TrCollisionProxy")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,35 +31,35 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TouchOther() { return mTouchOther ? mTouchOther : (mTouchOther = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.TouchOther")); }
-			ScriptFunction ForceProximityScan() { return mForceProximityScan ? mForceProximityScan : (mForceProximityScan = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.ForceProximityScan")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.Touch")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.UnTouch")); }
-			ScriptFunction ShouldIgnoreActor() { return mShouldIgnoreActor ? mShouldIgnoreActor : (mShouldIgnoreActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.ShouldIgnoreActor")); }
-			ScriptFunction ForceClearNearByPawnsList() { return mForceClearNearByPawnsList ? mForceClearNearByPawnsList : (mForceClearNearByPawnsList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.ForceClearNearByPawnsList")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.Destroyed")); }
-			ScriptFunction CheckNearByPawns() { return mCheckNearByPawns ? mCheckNearByPawns : (mCheckNearByPawns = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.CheckNearByPawns")); }
-			ScriptFunction OnPawnAdded() { return mOnPawnAdded ? mOnPawnAdded : (mOnPawnAdded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.OnPawnAdded")); }
-			ScriptFunction OnPawnRemoved() { return mOnPawnRemoved ? mOnPawnRemoved : (mOnPawnRemoved = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.OnPawnRemoved")); }
-			ScriptFunction GetNearByPawns() { return mGetNearByPawns ? mGetNearByPawns : (mGetNearByPawns = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.GetNearByPawns")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCollisionProxy.FellOutOfWorld")); }
+			ScriptFunction TouchOther() { mixin(MGF!("mTouchOther", "Function TribesGame.TrCollisionProxy.TouchOther")()); }
+			ScriptFunction ForceProximityScan() { mixin(MGF!("mForceProximityScan", "Function TribesGame.TrCollisionProxy.ForceProximityScan")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrCollisionProxy.Touch")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrCollisionProxy.UnTouch")()); }
+			ScriptFunction ShouldIgnoreActor() { mixin(MGF!("mShouldIgnoreActor", "Function TribesGame.TrCollisionProxy.ShouldIgnoreActor")()); }
+			ScriptFunction ForceClearNearByPawnsList() { mixin(MGF!("mForceClearNearByPawnsList", "Function TribesGame.TrCollisionProxy.ForceClearNearByPawnsList")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrCollisionProxy.Destroyed")()); }
+			ScriptFunction CheckNearByPawns() { mixin(MGF!("mCheckNearByPawns", "Function TribesGame.TrCollisionProxy.CheckNearByPawns")()); }
+			ScriptFunction OnPawnAdded() { mixin(MGF!("mOnPawnAdded", "Function TribesGame.TrCollisionProxy.OnPawnAdded")()); }
+			ScriptFunction OnPawnRemoved() { mixin(MGF!("mOnPawnRemoved", "Function TribesGame.TrCollisionProxy.OnPawnRemoved")()); }
+			ScriptFunction GetNearByPawns() { mixin(MGF!("mGetNearByPawns", "Function TribesGame.TrCollisionProxy.GetNearByPawns")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function TribesGame.TrCollisionProxy.FellOutOfWorld")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { return *cast(ScriptArray!(Pawn)*)(cast(size_t)cast(void*)this + 476); }
-		bool m_bTrackLocallyControlledPawnsOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x20) != 0; }
-		bool m_bTrackLocallyControlledPawnsOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x20; } return val; }
-		bool m_bForwardOwnerOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x10) != 0; }
-		bool m_bForwardOwnerOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x10; } return val; }
-		bool m_bIgnoreInvulnerablePlayers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x8) != 0; }
-		bool m_bIgnoreInvulnerablePlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x8; } return val; }
-		bool m_bIgnoreHackedPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x4) != 0; }
-		bool m_bIgnoreHackedPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x4; } return val; }
-		bool m_bIgnoreNonPlayers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x2) != 0; }
-		bool m_bIgnoreNonPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x2; } return val; }
-		bool m_bIgnoreStealthPlayers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-		bool m_bIgnoreStealthPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
+		@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC!(ScriptArray!(Pawn), 476)()); }
+		bool m_bTrackLocallyControlledPawnsOnly() { mixin(MGBPC!(488, 0x20)()); }
+		bool m_bTrackLocallyControlledPawnsOnly(bool val) { mixin(MSBPC!(488, 0x20)()); }
+		bool m_bForwardOwnerOnly() { mixin(MGBPC!(488, 0x10)()); }
+		bool m_bForwardOwnerOnly(bool val) { mixin(MSBPC!(488, 0x10)()); }
+		bool m_bIgnoreInvulnerablePlayers() { mixin(MGBPC!(488, 0x8)()); }
+		bool m_bIgnoreInvulnerablePlayers(bool val) { mixin(MSBPC!(488, 0x8)()); }
+		bool m_bIgnoreHackedPawns() { mixin(MGBPC!(488, 0x4)()); }
+		bool m_bIgnoreHackedPawns(bool val) { mixin(MSBPC!(488, 0x4)()); }
+		bool m_bIgnoreNonPlayers() { mixin(MGBPC!(488, 0x2)()); }
+		bool m_bIgnoreNonPlayers(bool val) { mixin(MSBPC!(488, 0x2)()); }
+		bool m_bIgnoreStealthPlayers() { mixin(MGBPC!(488, 0x1)()); }
+		bool m_bIgnoreStealthPlayers(bool val) { mixin(MSBPC!(488, 0x1)()); }
 	}
 final:
 	void TouchOther(Actor Other, 

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_SettingsBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTUIDataProvider_MenuOption;
 import UnrealScript.Engine.UIDataStore_OnlineGameSettings;
 import UnrealScript.UTGame.GFxUDKFrontEnd_Screen;
@@ -11,9 +12,9 @@ extern(C++) interface GFxUDKFrontEnd_SettingsBase : GFxUDKFrontEnd_Screen
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_SettingsBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_SettingsBase")()); }
 	private static __gshared GFxUDKFrontEnd_SettingsBase mDefaultProperties;
-	@property final static GFxUDKFrontEnd_SettingsBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_SettingsBase)("GFxUDKFrontEnd_SettingsBase UTGame.Default__GFxUDKFrontEnd_SettingsBase")); }
+	@property final static GFxUDKFrontEnd_SettingsBase DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_SettingsBase, "GFxUDKFrontEnd_SettingsBase UTGame.Default__GFxUDKFrontEnd_SettingsBase")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,34 +40,34 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnViewLoaded() { return mOnViewLoaded ? mOnViewLoaded : (mOnViewLoaded = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.OnViewLoaded")); }
-			ScriptFunction OnViewActivated() { return mOnViewActivated ? mOnViewActivated : (mOnViewActivated = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.OnViewActivated")); }
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.OnTopMostView")); }
-			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.DisableSubComponents")); }
-			ScriptFunction SetSelectedOptionSet() { return mSetSelectedOptionSet ? mSetSelectedOptionSet : (mSetSelectedOptionSet = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.SetSelectedOptionSet")); }
-			ScriptFunction LoadDataFromStore() { return mLoadDataFromStore ? mLoadDataFromStore : (mLoadDataFromStore = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.LoadDataFromStore")); }
-			ScriptFunction Select_Back() { return mSelect_Back ? mSelect_Back : (mSelect_Back = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.Select_Back")); }
-			ScriptFunction SaveState() { return mSaveState ? mSaveState : (mSaveState = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.SaveState")); }
-			ScriptFunction SetList() { return mSetList ? mSetList : (mSetList = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.SetList")); }
-			ScriptFunction OnListChange() { return mOnListChange ? mOnListChange : (mOnListChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.OnListChange")); }
-			ScriptFunction OnOptionChanged() { return mOnOptionChanged ? mOnOptionChanged : (mOnOptionChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.OnOptionChanged")); }
-			ScriptFunction UpdateDescription() { return mUpdateDescription ? mUpdateDescription : (mUpdateDescription = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.UpdateDescription")); }
-			ScriptFunction UpdateListDataProvider() { return mUpdateListDataProvider ? mUpdateListDataProvider : (mUpdateListDataProvider = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.UpdateListDataProvider")); }
-			ScriptFunction FindLocalizedSettingIndexByName() { return mFindLocalizedSettingIndexByName ? mFindLocalizedSettingIndexByName : (mFindLocalizedSettingIndexByName = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.FindLocalizedSettingIndexByName")); }
-			ScriptFunction OnEscapeKeyPress() { return mOnEscapeKeyPress ? mOnEscapeKeyPress : (mOnEscapeKeyPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.OnEscapeKeyPress")); }
-			ScriptFunction Select_BackImpl() { return mSelect_BackImpl ? mSelect_BackImpl : (mSelect_BackImpl = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.Select_BackImpl")); }
-			ScriptFunction FindPropertyIndexByName() { return mFindPropertyIndexByName ? mFindPropertyIndexByName : (mFindPropertyIndexByName = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.FindPropertyIndexByName")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_SettingsBase.WidgetInitialized")); }
+			ScriptFunction OnViewLoaded() { mixin(MGF!("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_SettingsBase.OnViewLoaded")()); }
+			ScriptFunction OnViewActivated() { mixin(MGF!("mOnViewActivated", "Function UTGame.GFxUDKFrontEnd_SettingsBase.OnViewActivated")()); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_SettingsBase.OnTopMostView")()); }
+			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_SettingsBase.DisableSubComponents")()); }
+			ScriptFunction SetSelectedOptionSet() { mixin(MGF!("mSetSelectedOptionSet", "Function UTGame.GFxUDKFrontEnd_SettingsBase.SetSelectedOptionSet")()); }
+			ScriptFunction LoadDataFromStore() { mixin(MGF!("mLoadDataFromStore", "Function UTGame.GFxUDKFrontEnd_SettingsBase.LoadDataFromStore")()); }
+			ScriptFunction Select_Back() { mixin(MGF!("mSelect_Back", "Function UTGame.GFxUDKFrontEnd_SettingsBase.Select_Back")()); }
+			ScriptFunction SaveState() { mixin(MGF!("mSaveState", "Function UTGame.GFxUDKFrontEnd_SettingsBase.SaveState")()); }
+			ScriptFunction SetList() { mixin(MGF!("mSetList", "Function UTGame.GFxUDKFrontEnd_SettingsBase.SetList")()); }
+			ScriptFunction OnListChange() { mixin(MGF!("mOnListChange", "Function UTGame.GFxUDKFrontEnd_SettingsBase.OnListChange")()); }
+			ScriptFunction OnOptionChanged() { mixin(MGF!("mOnOptionChanged", "Function UTGame.GFxUDKFrontEnd_SettingsBase.OnOptionChanged")()); }
+			ScriptFunction UpdateDescription() { mixin(MGF!("mUpdateDescription", "Function UTGame.GFxUDKFrontEnd_SettingsBase.UpdateDescription")()); }
+			ScriptFunction UpdateListDataProvider() { mixin(MGF!("mUpdateListDataProvider", "Function UTGame.GFxUDKFrontEnd_SettingsBase.UpdateListDataProvider")()); }
+			ScriptFunction FindLocalizedSettingIndexByName() { mixin(MGF!("mFindLocalizedSettingIndexByName", "Function UTGame.GFxUDKFrontEnd_SettingsBase.FindLocalizedSettingIndexByName")()); }
+			ScriptFunction OnEscapeKeyPress() { mixin(MGF!("mOnEscapeKeyPress", "Function UTGame.GFxUDKFrontEnd_SettingsBase.OnEscapeKeyPress")()); }
+			ScriptFunction Select_BackImpl() { mixin(MGF!("mSelect_BackImpl", "Function UTGame.GFxUDKFrontEnd_SettingsBase.Select_BackImpl")()); }
+			ScriptFunction FindPropertyIndexByName() { mixin(MGF!("mFindPropertyIndexByName", "Function UTGame.GFxUDKFrontEnd_SettingsBase.FindPropertyIndexByName")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_SettingsBase.WidgetInitialized")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTUIDataProvider_MenuOption) SettingsList() { return *cast(ScriptArray!(UTUIDataProvider_MenuOption)*)(cast(size_t)cast(void*)this + 244); }
-		UIDataStore_OnlineGameSettings SettingsDataStore() { return *cast(UIDataStore_OnlineGameSettings*)(cast(size_t)cast(void*)this + 256); }
-		GFxObject MenuMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 240); }
-		GFxObject ListDataProvider() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 236); }
-		ScriptString SelectedOptionSet() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 224); }
-		GFxClikWidget ListMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 220); }
+		ScriptArray!(UTUIDataProvider_MenuOption) SettingsList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_MenuOption), 244)()); }
+		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!(UIDataStore_OnlineGameSettings, 256)()); }
+		GFxObject MenuMC() { mixin(MGPC!(GFxObject, 240)()); }
+		GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 236)()); }
+		ScriptString SelectedOptionSet() { mixin(MGPC!(ScriptString, 224)()); }
+		GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 220)()); }
 	}
 final:
 	void OnViewLoaded()

@@ -1,20 +1,21 @@
 module UnrealScript.Engine.MaterialExpressionBumpOffset;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionBumpOffset : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionBumpOffset")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionBumpOffset")()); }
 	private static __gshared MaterialExpressionBumpOffset mDefaultProperties;
-	@property final static MaterialExpressionBumpOffset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionBumpOffset)("MaterialExpressionBumpOffset Engine.Default__MaterialExpressionBumpOffset")); }
+	@property final static MaterialExpressionBumpOffset DefaultProperties() { mixin(MGDPC!(MaterialExpressionBumpOffset, "MaterialExpressionBumpOffset Engine.Default__MaterialExpressionBumpOffset")()); }
 	@property final auto ref
 	{
-		float ReferencePlane() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-		float HeightRatio() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-		MaterialExpression.ExpressionInput Height() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 136); }
-		MaterialExpression.ExpressionInput Coordinate() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 108); }
+		float ReferencePlane() { mixin(MGPC!(float, 168)()); }
+		float HeightRatio() { mixin(MGPC!(float, 164)()); }
+		MaterialExpression.ExpressionInput Height() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
+		MaterialExpression.ExpressionInput Coordinate() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DMC_Base;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface DMC_Base : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DMC_Base")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DMC_Base")()); }
 	private static __gshared DMC_Base mDefaultProperties;
-	@property final static DMC_Base DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DMC_Base)("DMC_Base Engine.Default__DMC_Base")); }
+	@property final static DMC_Base DefaultProperties() { mixin(MGDPC!(DMC_Base, "DMC_Base Engine.Default__DMC_Base")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,29 +35,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PrintString() { return mPrintString ? mPrintString : (mPrintString = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.PrintString")); }
-			ScriptFunction GetWorldTime() { return mGetWorldTime ? mGetWorldTime : (mGetWorldTime = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.GetWorldTime")); }
-			ScriptFunction Conv_IntToFloat() { return mConv_IntToFloat ? mConv_IntToFloat : (mConv_IntToFloat = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.Conv_IntToFloat")); }
-			ScriptFunction Conv_FloatToString() { return mConv_FloatToString ? mConv_FloatToString : (mConv_FloatToString = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.Conv_FloatToString")); }
-			ScriptFunction Conv_IntToString() { return mConv_IntToString ? mConv_IntToString : (mConv_IntToString = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.Conv_IntToString")); }
-			ScriptFunction Conv_BoolToString() { return mConv_BoolToString ? mConv_BoolToString : (mConv_BoolToString = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.Conv_BoolToString")); }
-			ScriptFunction Conv_VectorToString() { return mConv_VectorToString ? mConv_VectorToString : (mConv_VectorToString = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.Conv_VectorToString")); }
-			ScriptFunction Conv_RotatorToString() { return mConv_RotatorToString ? mConv_RotatorToString : (mConv_RotatorToString = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.Conv_RotatorToString")); }
-			ScriptFunction MakeVector() { return mMakeVector ? mMakeVector : (mMakeVector = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.MakeVector")); }
-			ScriptFunction BreakVector() { return mBreakVector ? mBreakVector : (mBreakVector = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.BreakVector")); }
-			ScriptFunction MakeRot() { return mMakeRot ? mMakeRot : (mMakeRot = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.MakeRot")); }
-			ScriptFunction BreakRot() { return mBreakRot ? mBreakRot : (mBreakRot = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.BreakRot")); }
-			ScriptFunction AddComponent() { return mAddComponent ? mAddComponent : (mAddComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.AddComponent")); }
-			ScriptFunction DMCCreate() { return mDMCCreate ? mDMCCreate : (mDMCCreate = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.DMCCreate")); }
-			ScriptFunction DMCTakeDamage() { return mDMCTakeDamage ? mDMCTakeDamage : (mDMCTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.DMCTakeDamage")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.DMC_Base.TakeDamage")); }
+			ScriptFunction PrintString() { mixin(MGF!("mPrintString", "Function Engine.DMC_Base.PrintString")()); }
+			ScriptFunction GetWorldTime() { mixin(MGF!("mGetWorldTime", "Function Engine.DMC_Base.GetWorldTime")()); }
+			ScriptFunction Conv_IntToFloat() { mixin(MGF!("mConv_IntToFloat", "Function Engine.DMC_Base.Conv_IntToFloat")()); }
+			ScriptFunction Conv_FloatToString() { mixin(MGF!("mConv_FloatToString", "Function Engine.DMC_Base.Conv_FloatToString")()); }
+			ScriptFunction Conv_IntToString() { mixin(MGF!("mConv_IntToString", "Function Engine.DMC_Base.Conv_IntToString")()); }
+			ScriptFunction Conv_BoolToString() { mixin(MGF!("mConv_BoolToString", "Function Engine.DMC_Base.Conv_BoolToString")()); }
+			ScriptFunction Conv_VectorToString() { mixin(MGF!("mConv_VectorToString", "Function Engine.DMC_Base.Conv_VectorToString")()); }
+			ScriptFunction Conv_RotatorToString() { mixin(MGF!("mConv_RotatorToString", "Function Engine.DMC_Base.Conv_RotatorToString")()); }
+			ScriptFunction MakeVector() { mixin(MGF!("mMakeVector", "Function Engine.DMC_Base.MakeVector")()); }
+			ScriptFunction BreakVector() { mixin(MGF!("mBreakVector", "Function Engine.DMC_Base.BreakVector")()); }
+			ScriptFunction MakeRot() { mixin(MGF!("mMakeRot", "Function Engine.DMC_Base.MakeRot")()); }
+			ScriptFunction BreakRot() { mixin(MGF!("mBreakRot", "Function Engine.DMC_Base.BreakRot")()); }
+			ScriptFunction AddComponent() { mixin(MGF!("mAddComponent", "Function Engine.DMC_Base.AddComponent")()); }
+			ScriptFunction DMCCreate() { mixin(MGF!("mDMCCreate", "Function Engine.DMC_Base.DMCCreate")()); }
+			ScriptFunction DMCTakeDamage() { mixin(MGF!("mDMCTakeDamage", "Function Engine.DMC_Base.DMCTakeDamage")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.DMC_Base.TakeDamage")()); }
 		}
 	}
 	@property final auto ref ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) CreatedComponents() { return *cast(ScriptArray!(
+void*) CreatedComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 476); }
+void*), 476)()); }
 final:
 	void PrintString(ScriptString InString)
 	{
@@ -130,14 +131,14 @@ final:
 		StaticClass.ProcessEvent(Functions.MakeVector, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
-	static void BreakVector(Vector InVec, float* X, float* Y, float* Z)
+	static void BreakVector(Vector InVec, ref float X, ref float Y, ref float Z)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = InVec;
-		*cast(float*)&params[12] = *X;
-		*cast(float*)&params[16] = *Y;
-		*cast(float*)&params[20] = *Z;
+		*cast(float*)&params[12] = X;
+		*cast(float*)&params[16] = Y;
+		*cast(float*)&params[20] = Z;
 		StaticClass.ProcessEvent(Functions.BreakVector, params.ptr, cast(void*)0);
 		*X = *cast(float*)&params[12];
 		*Y = *cast(float*)&params[16];
@@ -153,14 +154,14 @@ final:
 		StaticClass.ProcessEvent(Functions.MakeRot, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[12];
 	}
-	static void BreakRot(Rotator InRot, float* Pitch, float* Yaw, float* Roll)
+	static void BreakRot(Rotator InRot, ref float Pitch, ref float Yaw, ref float Roll)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = InRot;
-		*cast(float*)&params[12] = *Pitch;
-		*cast(float*)&params[16] = *Yaw;
-		*cast(float*)&params[20] = *Roll;
+		*cast(float*)&params[12] = Pitch;
+		*cast(float*)&params[16] = Yaw;
+		*cast(float*)&params[20] = Roll;
 		StaticClass.ProcessEvent(Functions.BreakRot, params.ptr, cast(void*)0);
 		*Pitch = *cast(float*)&params[12];
 		*Yaw = *cast(float*)&params[16];

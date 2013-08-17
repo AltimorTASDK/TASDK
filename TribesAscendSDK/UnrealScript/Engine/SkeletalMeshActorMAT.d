@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SkeletalMeshActorMAT;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSlot;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.SkeletalMeshCinematicActor;
@@ -10,9 +11,9 @@ extern(C++) interface SkeletalMeshActorMAT : SkeletalMeshCinematicActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMeshActorMAT")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkeletalMeshActorMAT")()); }
 	private static __gshared SkeletalMeshActorMAT mDefaultProperties;
-	@property final static SkeletalMeshActorMAT DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMeshActorMAT)("SkeletalMeshActorMAT Engine.Default__SkeletalMeshActorMAT")); }
+	@property final static SkeletalMeshActorMAT DefaultProperties() { mixin(MGDPC!(SkeletalMeshActorMAT, "SkeletalMeshActorMAT Engine.Default__SkeletalMeshActorMAT")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,21 +33,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction MAT_SetAnimWeights() { return mMAT_SetAnimWeights ? mMAT_SetAnimWeights : (mMAT_SetAnimWeights = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.MAT_SetAnimWeights")); }
-			ScriptFunction MAT_SetMorphWeight() { return mMAT_SetMorphWeight ? mMAT_SetMorphWeight : (mMAT_SetMorphWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.MAT_SetMorphWeight")); }
-			ScriptFunction MAT_SetSkelControlScale() { return mMAT_SetSkelControlScale ? mMAT_SetSkelControlScale : (mMAT_SetSkelControlScale = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.MAT_SetSkelControlScale")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.Destroyed")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.PostInitAnimTree")); }
-			ScriptFunction CacheAnimNodes() { return mCacheAnimNodes ? mCacheAnimNodes : (mCacheAnimNodes = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.CacheAnimNodes")); }
-			ScriptFunction ClearAnimNodes() { return mClearAnimNodes ? mClearAnimNodes : (mClearAnimNodes = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.ClearAnimNodes")); }
-			ScriptFunction SetAnimPosition() { return mSetAnimPosition ? mSetAnimPosition : (mSetAnimPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.SetAnimPosition")); }
-			ScriptFunction MAT_SetAnimPosition() { return mMAT_SetAnimPosition ? mMAT_SetAnimPosition : (mMAT_SetAnimPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.MAT_SetAnimPosition")); }
-			ScriptFunction FinishAnimControl() { return mFinishAnimControl ? mFinishAnimControl : (mFinishAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.FinishAnimControl")); }
-			ScriptFunction SetMorphWeight() { return mSetMorphWeight ? mSetMorphWeight : (mSetMorphWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.SetMorphWeight")); }
-			ScriptFunction SetSkelControlScale() { return mSetSkelControlScale ? mSetSkelControlScale : (mSetSkelControlScale = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorMAT.SetSkelControlScale")); }
+			ScriptFunction MAT_SetAnimWeights() { mixin(MGF!("mMAT_SetAnimWeights", "Function Engine.SkeletalMeshActorMAT.MAT_SetAnimWeights")()); }
+			ScriptFunction MAT_SetMorphWeight() { mixin(MGF!("mMAT_SetMorphWeight", "Function Engine.SkeletalMeshActorMAT.MAT_SetMorphWeight")()); }
+			ScriptFunction MAT_SetSkelControlScale() { mixin(MGF!("mMAT_SetSkelControlScale", "Function Engine.SkeletalMeshActorMAT.MAT_SetSkelControlScale")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.SkeletalMeshActorMAT.Destroyed")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function Engine.SkeletalMeshActorMAT.PostInitAnimTree")()); }
+			ScriptFunction CacheAnimNodes() { mixin(MGF!("mCacheAnimNodes", "Function Engine.SkeletalMeshActorMAT.CacheAnimNodes")()); }
+			ScriptFunction ClearAnimNodes() { mixin(MGF!("mClearAnimNodes", "Function Engine.SkeletalMeshActorMAT.ClearAnimNodes")()); }
+			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function Engine.SkeletalMeshActorMAT.SetAnimPosition")()); }
+			ScriptFunction MAT_SetAnimPosition() { mixin(MGF!("mMAT_SetAnimPosition", "Function Engine.SkeletalMeshActorMAT.MAT_SetAnimPosition")()); }
+			ScriptFunction FinishAnimControl() { mixin(MGF!("mFinishAnimControl", "Function Engine.SkeletalMeshActorMAT.FinishAnimControl")()); }
+			ScriptFunction SetMorphWeight() { mixin(MGF!("mSetMorphWeight", "Function Engine.SkeletalMeshActorMAT.SetMorphWeight")()); }
+			ScriptFunction SetSkelControlScale() { mixin(MGF!("mSetSkelControlScale", "Function Engine.SkeletalMeshActorMAT.SetSkelControlScale")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(AnimNodeSlot) SlotNodes() { return *cast(ScriptArray!(AnimNodeSlot)*)(cast(size_t)cast(void*)this + 536); }
+	@property final auto ref ScriptArray!(AnimNodeSlot) SlotNodes() { mixin(MGPC!(ScriptArray!(AnimNodeSlot), 536)()); }
 final:
 	void MAT_SetAnimWeights(ScriptArray!(Actor.AnimSlotInfo) SlotInfos)
 	{

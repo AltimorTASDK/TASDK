@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrKillerMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface TrKillerMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrKillerMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrKillerMessage")()); }
 	private static __gshared TrKillerMessage mDefaultProperties;
-	@property final static TrKillerMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrKillerMessage)("TrKillerMessage TribesGame.Default__TrKillerMessage")); }
+	@property final static TrKillerMessage DefaultProperties() { mixin(MGDPC!(TrKillerMessage, "TrKillerMessage TribesGame.Default__TrKillerMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,14 +23,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrKillerMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrKillerMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrKillerMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrKillerMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString KillCreditFor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString YouKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString KillCreditFor() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString YouKilled() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

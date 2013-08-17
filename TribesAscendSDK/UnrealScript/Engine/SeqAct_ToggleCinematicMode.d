@@ -1,36 +1,37 @@
 module UnrealScript.Engine.SeqAct_ToggleCinematicMode;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_ToggleCinematicMode : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ToggleCinematicMode")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_ToggleCinematicMode")()); }
 	private static __gshared SeqAct_ToggleCinematicMode mDefaultProperties;
-	@property final static SeqAct_ToggleCinematicMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ToggleCinematicMode)("SeqAct_ToggleCinematicMode Engine.Default__SeqAct_ToggleCinematicMode")); }
+	@property final static SeqAct_ToggleCinematicMode DefaultProperties() { mixin(MGDPC!(SeqAct_ToggleCinematicMode, "SeqAct_ToggleCinematicMode Engine.Default__SeqAct_ToggleCinematicMode")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;
-		public @property static final ScriptFunction Activated() { return mActivated ? mActivated : (mActivated = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_ToggleCinematicMode.Activated")); }
+		public @property static final ScriptFunction Activated() { mixin(MGF!("mActivated", "Function Engine.SeqAct_ToggleCinematicMode.Activated")()); }
 	}
 	@property final
 	{
-		bool bHidePlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x4) != 0; }
-		bool bHidePlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x4; } return val; }
-		bool bHideHUD() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x10) != 0; }
-		bool bHideHUD(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x10; } return val; }
-		bool bDisableMovement() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x1) != 0; }
-		bool bDisableMovement(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x1; } return val; }
-		bool bDisableTurning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x2) != 0; }
-		bool bDisableTurning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x2; } return val; }
-		bool bDisableInput() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x8) != 0; }
-		bool bDisableInput(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x8; } return val; }
-		bool bDroppedPickups() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x40) != 0; }
-		bool bDroppedPickups(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x40; } return val; }
-		bool bDeadBodies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x20) != 0; }
-		bool bDeadBodies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x20; } return val; }
+		bool bHidePlayer() { mixin(MGBPC!(232, 0x4)()); }
+		bool bHidePlayer(bool val) { mixin(MSBPC!(232, 0x4)()); }
+		bool bHideHUD() { mixin(MGBPC!(232, 0x10)()); }
+		bool bHideHUD(bool val) { mixin(MSBPC!(232, 0x10)()); }
+		bool bDisableMovement() { mixin(MGBPC!(232, 0x1)()); }
+		bool bDisableMovement(bool val) { mixin(MSBPC!(232, 0x1)()); }
+		bool bDisableTurning() { mixin(MGBPC!(232, 0x2)()); }
+		bool bDisableTurning(bool val) { mixin(MSBPC!(232, 0x2)()); }
+		bool bDisableInput() { mixin(MGBPC!(232, 0x8)()); }
+		bool bDisableInput(bool val) { mixin(MSBPC!(232, 0x8)()); }
+		bool bDroppedPickups() { mixin(MGBPC!(232, 0x40)()); }
+		bool bDroppedPickups(bool val) { mixin(MSBPC!(232, 0x40)()); }
+		bool bDeadBodies() { mixin(MGBPC!(232, 0x20)()); }
+		bool bDeadBodies(bool val) { mixin(MSBPC!(232, 0x20)()); }
 	}
 	final void Activated()
 	{

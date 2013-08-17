@@ -1,15 +1,16 @@
 module UnrealScript.Engine.ForceFieldShape;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface ForceFieldShape : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFieldShape")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ForceFieldShape")()); }
 	private static __gshared ForceFieldShape mDefaultProperties;
-	@property final static ForceFieldShape DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ForceFieldShape)("ForceFieldShape Engine.Default__ForceFieldShape")); }
+	@property final static ForceFieldShape DefaultProperties() { mixin(MGDPC!(ForceFieldShape, "ForceFieldShape Engine.Default__ForceFieldShape")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillBySphere() { return mFillBySphere ? mFillBySphere : (mFillBySphere = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShape.FillBySphere")); }
-			ScriptFunction FillByBox() { return mFillByBox ? mFillByBox : (mFillByBox = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShape.FillByBox")); }
-			ScriptFunction FillByCapsule() { return mFillByCapsule ? mFillByCapsule : (mFillByCapsule = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShape.FillByCapsule")); }
-			ScriptFunction FillByCylinder() { return mFillByCylinder ? mFillByCylinder : (mFillByCylinder = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShape.FillByCylinder")); }
-			ScriptFunction GetDrawComponent() { return mGetDrawComponent ? mGetDrawComponent : (mGetDrawComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFieldShape.GetDrawComponent")); }
+			ScriptFunction FillBySphere() { mixin(MGF!("mFillBySphere", "Function Engine.ForceFieldShape.FillBySphere")()); }
+			ScriptFunction FillByBox() { mixin(MGF!("mFillByBox", "Function Engine.ForceFieldShape.FillByBox")()); }
+			ScriptFunction FillByCapsule() { mixin(MGF!("mFillByCapsule", "Function Engine.ForceFieldShape.FillByCapsule")()); }
+			ScriptFunction FillByCylinder() { mixin(MGF!("mFillByCylinder", "Function Engine.ForceFieldShape.FillByCylinder")()); }
+			ScriptFunction GetDrawComponent() { mixin(MGF!("mGetDrawComponent", "Function Engine.ForceFieldShape.GetDrawComponent")()); }
 		}
 	}
 final:

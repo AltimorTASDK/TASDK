@@ -1,6 +1,7 @@
 module UnrealScript.Engine.InterpTrackVectorMaterialParam;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInterface;
 import UnrealScript.Engine.InterpTrackVectorBase;
 import UnrealScript.Engine.EngineTypes;
@@ -9,18 +10,18 @@ extern(C++) interface InterpTrackVectorMaterialParam : InterpTrackVectorBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackVectorMaterialParam")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackVectorMaterialParam")()); }
 	private static __gshared InterpTrackVectorMaterialParam mDefaultProperties;
-	@property final static InterpTrackVectorMaterialParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackVectorMaterialParam)("InterpTrackVectorMaterialParam Engine.Default__InterpTrackVectorMaterialParam")); }
+	@property final static InterpTrackVectorMaterialParam DefaultProperties() { mixin(MGDPC!(InterpTrackVectorMaterialParam, "InterpTrackVectorMaterialParam Engine.Default__InterpTrackVectorMaterialParam")()); }
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(EngineTypes.MaterialReferenceList) Materials() { return *cast(ScriptArray!(EngineTypes.MaterialReferenceList)*)(cast(size_t)cast(void*)this + 148); }
-			ScriptName ParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 164); }
+			ScriptArray!(EngineTypes.MaterialReferenceList) Materials() { mixin(MGPC!(ScriptArray!(EngineTypes.MaterialReferenceList), 148)()); }
+			ScriptName ParamName() { mixin(MGPC!(ScriptName, 164)()); }
 			// WARNING: Property 'Material' has the same name as a defined type!
 		}
-		bool bNeedsMaterialRefsUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x1) != 0; }
-		bool bNeedsMaterialRefsUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x1; } return val; }
+		bool bNeedsMaterialRefsUpdate() { mixin(MGBPC!(172, 0x1)()); }
+		bool bNeedsMaterialRefsUpdate(bool val) { mixin(MSBPC!(172, 0x1)()); }
 	}
 }

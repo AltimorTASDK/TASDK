@@ -1,6 +1,7 @@
 module UnrealScript.Engine.CameraAnim;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PostProcessVolume;
 import UnrealScript.Engine.InterpGroup;
@@ -9,16 +10,16 @@ extern(C++) interface CameraAnim : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraAnim")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CameraAnim")()); }
 	private static __gshared CameraAnim mDefaultProperties;
-	@property final static CameraAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CameraAnim)("CameraAnim Engine.Default__CameraAnim")); }
+	@property final static CameraAnim DefaultProperties() { mixin(MGDPC!(CameraAnim, "CameraAnim Engine.Default__CameraAnim")()); }
 	@property final auto ref
 	{
-		float BaseFOV() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }
-		float BasePPSettingsAlpha() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-		PostProcessVolume.PostProcessSettings BasePPSettings() { return *cast(PostProcessVolume.PostProcessSettings*)(cast(size_t)cast(void*)this + 96); }
-		UObject.Box BoundingBox() { return *cast(UObject.Box*)(cast(size_t)cast(void*)this + 68); }
-		float AnimLength() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
-		InterpGroup CameraInterpGroup() { return *cast(InterpGroup*)(cast(size_t)cast(void*)this + 60); }
+		float BaseFOV() { mixin(MGPC!(float, 320)()); }
+		float BasePPSettingsAlpha() { mixin(MGPC!(float, 316)()); }
+		PostProcessVolume.PostProcessSettings BasePPSettings() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 96)()); }
+		UObject.Box BoundingBox() { mixin(MGPC!(UObject.Box, 68)()); }
+		float AnimLength() { mixin(MGPC!(float, 64)()); }
+		InterpGroup CameraInterpGroup() { mixin(MGPC!(InterpGroup, 60)()); }
 	}
 }

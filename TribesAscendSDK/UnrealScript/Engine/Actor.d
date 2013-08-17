@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Actor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.NavigationPoint;
@@ -50,9 +51,9 @@ extern(C++) interface Actor : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Actor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Actor")()); }
 	private static __gshared Actor mDefaultProperties;
-	@property final static Actor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Actor)("Actor Engine.Default__Actor")); }
+	@property final static Actor DefaultProperties() { mixin(MGDPC!(Actor, "Actor Engine.Default__Actor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -305,251 +306,251 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ForceUpdateComponents() { return mForceUpdateComponents ? mForceUpdateComponents : (mForceUpdateComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ForceUpdateComponents")); }
-			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ConsoleCommand")); }
-			ScriptFunction Sleep() { return mSleep ? mSleep : (mSleep = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Sleep")); }
-			ScriptFunction FinishAnim() { return mFinishAnim ? mFinishAnim : (mFinishAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FinishAnim")); }
-			ScriptFunction SetCollision() { return mSetCollision ? mSetCollision : (mSetCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetCollision")); }
-			ScriptFunction SetCollisionSize() { return mSetCollisionSize ? mSetCollisionSize : (mSetCollisionSize = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetCollisionSize")); }
-			ScriptFunction SetCollisionType() { return mSetCollisionType ? mSetCollisionType : (mSetCollisionType = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetCollisionType")); }
-			ScriptFunction SetDrawScale() { return mSetDrawScale ? mSetDrawScale : (mSetDrawScale = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetDrawScale")); }
-			ScriptFunction SetDrawScale3D() { return mSetDrawScale3D ? mSetDrawScale3D : (mSetDrawScale3D = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetDrawScale3D")); }
-			ScriptFunction Move() { return mMove ? mMove : (mMove = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Move")); }
-			ScriptFunction SetLocation() { return mSetLocation ? mSetLocation : (mSetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetLocation")); }
-			ScriptFunction SetRotation() { return mSetRotation ? mSetRotation : (mSetRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetRotation")); }
-			ScriptFunction MovingWhichWay() { return mMovingWhichWay ? mMovingWhichWay : (mMovingWhichWay = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.MovingWhichWay")); }
-			ScriptFunction SetZone() { return mSetZone ? mSetZone : (mSetZone = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetZone")); }
-			ScriptFunction SetRelativeRotation() { return mSetRelativeRotation ? mSetRelativeRotation : (mSetRelativeRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetRelativeRotation")); }
-			ScriptFunction SetRelativeLocation() { return mSetRelativeLocation ? mSetRelativeLocation : (mSetRelativeLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetRelativeLocation")); }
-			ScriptFunction SetHardAttach() { return mSetHardAttach ? mSetHardAttach : (mSetHardAttach = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetHardAttach")); }
-			ScriptFunction fixedTurn() { return mfixedTurn ? mfixedTurn : (mfixedTurn = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.fixedTurn")); }
-			ScriptFunction MoveSmooth() { return mMoveSmooth ? mMoveSmooth : (mMoveSmooth = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.MoveSmooth")); }
-			ScriptFunction AutonomousPhysics() { return mAutonomousPhysics ? mAutonomousPhysics : (mAutonomousPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.AutonomousPhysics")); }
-			ScriptFunction GetTerminalVelocity() { return mGetTerminalVelocity ? mGetTerminalVelocity : (mGetTerminalVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetTerminalVelocity")); }
-			ScriptFunction SetBase() { return mSetBase ? mSetBase : (mSetBase = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetBase")); }
-			ScriptFunction SetOwner() { return mSetOwner ? mSetOwner : (mSetOwner = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetOwner")); }
-			ScriptFunction FindBase() { return mFindBase ? mFindBase : (mFindBase = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FindBase")); }
-			ScriptFunction IsBasedOn() { return mIsBasedOn ? mIsBasedOn : (mIsBasedOn = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsBasedOn")); }
-			ScriptFunction GetBaseMost() { return mGetBaseMost ? mGetBaseMost : (mGetBaseMost = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetBaseMost")); }
-			ScriptFunction IsOwnedBy() { return mIsOwnedBy ? mIsOwnedBy : (mIsOwnedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsOwnedBy")); }
-			ScriptFunction GetAggregateBaseVelocity() { return mGetAggregateBaseVelocity ? mGetAggregateBaseVelocity : (mGetAggregateBaseVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetAggregateBaseVelocity")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ReplicatedEvent")); }
-			ScriptFunction SetForcedInitialReplicatedProperty() { return mSetForcedInitialReplicatedProperty ? mSetForcedInitialReplicatedProperty : (mSetForcedInitialReplicatedProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetForcedInitialReplicatedProperty")); }
-			ScriptFunction Vect2BP() { return mVect2BP ? mVect2BP : (mVect2BP = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Vect2BP")); }
-			ScriptFunction BP2Vect() { return mBP2Vect ? mBP2Vect : (mBP2Vect = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.BP2Vect")); }
-			ScriptFunction SetBasedPosition() { return mSetBasedPosition ? mSetBasedPosition : (mSetBasedPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetBasedPosition")); }
-			ScriptFunction GetBasedPosition() { return mGetBasedPosition ? mGetBasedPosition : (mGetBasedPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetBasedPosition")); }
-			ScriptFunction FlushPersistentDebugLines() { return mFlushPersistentDebugLines ? mFlushPersistentDebugLines : (mFlushPersistentDebugLines = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FlushPersistentDebugLines")); }
-			ScriptFunction DrawDebugLine() { return mDrawDebugLine ? mDrawDebugLine : (mDrawDebugLine = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugLine")); }
-			ScriptFunction DrawDebugPoint() { return mDrawDebugPoint ? mDrawDebugPoint : (mDrawDebugPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugPoint")); }
-			ScriptFunction DrawDebugBox() { return mDrawDebugBox ? mDrawDebugBox : (mDrawDebugBox = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugBox")); }
-			ScriptFunction DrawDebugStar() { return mDrawDebugStar ? mDrawDebugStar : (mDrawDebugStar = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugStar")); }
-			ScriptFunction DrawDebugCoordinateSystem() { return mDrawDebugCoordinateSystem ? mDrawDebugCoordinateSystem : (mDrawDebugCoordinateSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugCoordinateSystem")); }
-			ScriptFunction DrawDebugSphere() { return mDrawDebugSphere ? mDrawDebugSphere : (mDrawDebugSphere = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugSphere")); }
-			ScriptFunction DrawDebugCylinder() { return mDrawDebugCylinder ? mDrawDebugCylinder : (mDrawDebugCylinder = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugCylinder")); }
-			ScriptFunction DrawDebugCone() { return mDrawDebugCone ? mDrawDebugCone : (mDrawDebugCone = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugCone")); }
-			ScriptFunction DrawDebugString() { return mDrawDebugString ? mDrawDebugString : (mDrawDebugString = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugString")); }
-			ScriptFunction DrawDebugFrustrum() { return mDrawDebugFrustrum ? mDrawDebugFrustrum : (mDrawDebugFrustrum = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DrawDebugFrustrum")); }
-			ScriptFunction FlushDebugStrings() { return mFlushDebugStrings ? mFlushDebugStrings : (mFlushDebugStrings = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FlushDebugStrings")); }
-			ScriptFunction ChartData() { return mChartData ? mChartData : (mChartData = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ChartData")); }
-			ScriptFunction SetHidden() { return mSetHidden ? mSetHidden : (mSetHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetHidden")); }
-			ScriptFunction SetOnlyOwnerSee() { return mSetOnlyOwnerSee ? mSetOnlyOwnerSee : (mSetOnlyOwnerSee = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetOnlyOwnerSee")); }
-			ScriptFunction SetPhysics() { return mSetPhysics ? mSetPhysics : (mSetPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetPhysics")); }
-			ScriptFunction Clock() { return mClock ? mClock : (mClock = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Clock")); }
-			ScriptFunction UnClock() { return mUnClock ? mUnClock : (mUnClock = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.UnClock")); }
-			ScriptFunction AttachComponent() { return mAttachComponent ? mAttachComponent : (mAttachComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.AttachComponent")); }
-			ScriptFunction DetachComponent() { return mDetachComponent ? mDetachComponent : (mDetachComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DetachComponent")); }
-			ScriptFunction ReattachComponent() { return mReattachComponent ? mReattachComponent : (mReattachComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ReattachComponent")); }
-			ScriptFunction SetTickGroup() { return mSetTickGroup ? mSetTickGroup : (mSetTickGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetTickGroup")); }
-			ScriptFunction SetTickIsDisabled() { return mSetTickIsDisabled ? mSetTickIsDisabled : (mSetTickIsDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetTickIsDisabled")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Destroyed")); }
-			ScriptFunction GainedChild() { return mGainedChild ? mGainedChild : (mGainedChild = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GainedChild")); }
-			ScriptFunction LostChild() { return mLostChild ? mLostChild : (mLostChild = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.LostChild")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Tick")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Timer")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.HitWall")); }
-			ScriptFunction Falling() { return mFalling ? mFalling : (mFalling = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Falling")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Landed")); }
-			ScriptFunction PhysicsVolumeChange() { return mPhysicsVolumeChange ? mPhysicsVolumeChange : (mPhysicsVolumeChange = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PhysicsVolumeChange")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Touch")); }
-			ScriptFunction PostTouch() { return mPostTouch ? mPostTouch : (mPostTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PostTouch")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.UnTouch")); }
-			ScriptFunction Bump() { return mBump ? mBump : (mBump = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Bump")); }
-			ScriptFunction BaseChange() { return mBaseChange ? mBaseChange : (mBaseChange = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.BaseChange")); }
-			ScriptFunction Attach() { return mAttach ? mAttach : (mAttach = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Attach")); }
-			ScriptFunction Detach() { return mDetach ? mDetach : (mDetach = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Detach")); }
-			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SpecialHandling")); }
-			ScriptFunction CollisionChanged() { return mCollisionChanged ? mCollisionChanged : (mCollisionChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CollisionChanged")); }
-			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.EncroachingOn")); }
-			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.EncroachedBy")); }
-			ScriptFunction RanInto() { return mRanInto ? mRanInto : (mRanInto = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.RanInto")); }
-			ScriptFunction OnWakeRBPhysics() { return mOnWakeRBPhysics ? mOnWakeRBPhysics : (mOnWakeRBPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnWakeRBPhysics")); }
-			ScriptFunction OnSleepRBPhysics() { return mOnSleepRBPhysics ? mOnSleepRBPhysics : (mOnSleepRBPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnSleepRBPhysics")); }
-			ScriptFunction ClampRotation() { return mClampRotation ? mClampRotation : (mClampRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ClampRotation")); }
-			ScriptFunction OverRotated() { return mOverRotated ? mOverRotated : (mOverRotated = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OverRotated")); }
-			ScriptFunction UsedBy() { return mUsedBy ? mUsedBy : (mUsedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.UsedBy")); }
-			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FellOutOfWorld")); }
-			ScriptFunction OutsideWorldBounds() { return mOutsideWorldBounds ? mOutsideWorldBounds : (mOutsideWorldBounds = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OutsideWorldBounds")); }
-			ScriptFunction VolumeBasedDestroy() { return mVolumeBasedDestroy ? mVolumeBasedDestroy : (mVolumeBasedDestroy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.VolumeBasedDestroy")); }
-			ScriptFunction Trace() { return mTrace ? mTrace : (mTrace = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Trace")); }
-			ScriptFunction TraceComponent() { return mTraceComponent ? mTraceComponent : (mTraceComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TraceComponent")); }
-			ScriptFunction PointCheckComponent() { return mPointCheckComponent ? mPointCheckComponent : (mPointCheckComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PointCheckComponent")); }
-			ScriptFunction FastTrace() { return mFastTrace ? mFastTrace : (mFastTrace = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FastTrace")); }
-			ScriptFunction TraceAllPhysicsAssetInteractions() { return mTraceAllPhysicsAssetInteractions ? mTraceAllPhysicsAssetInteractions : (mTraceAllPhysicsAssetInteractions = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TraceAllPhysicsAssetInteractions")); }
-			ScriptFunction FindSpot() { return mFindSpot ? mFindSpot : (mFindSpot = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FindSpot")); }
-			ScriptFunction ContainsPoint() { return mContainsPoint ? mContainsPoint : (mContainsPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ContainsPoint")); }
-			ScriptFunction IsOverlapping() { return mIsOverlapping ? mIsOverlapping : (mIsOverlapping = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsOverlapping")); }
-			ScriptFunction GetComponentsBoundingBox() { return mGetComponentsBoundingBox ? mGetComponentsBoundingBox : (mGetComponentsBoundingBox = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetComponentsBoundingBox")); }
-			ScriptFunction GetBoundingCylinder() { return mGetBoundingCylinder ? mGetBoundingCylinder : (mGetBoundingCylinder = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetBoundingCylinder")); }
-			ScriptFunction IsBlockedBy() { return mIsBlockedBy ? mIsBlockedBy : (mIsBlockedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsBlockedBy")); }
-			ScriptFunction Spawn() { return mSpawn ? mSpawn : (mSpawn = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Spawn")); }
-			ScriptFunction Destroy() { return mDestroy ? mDestroy : (mDestroy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Destroy")); }
-			ScriptFunction TornOff() { return mTornOff ? mTornOff : (mTornOff = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TornOff")); }
-			ScriptFunction SetTimer() { return mSetTimer ? mSetTimer : (mSetTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetTimer")); }
-			ScriptFunction ClearTimer() { return mClearTimer ? mClearTimer : (mClearTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ClearTimer")); }
-			ScriptFunction ClearAllTimers() { return mClearAllTimers ? mClearAllTimers : (mClearAllTimers = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ClearAllTimers")); }
-			ScriptFunction PauseTimer() { return mPauseTimer ? mPauseTimer : (mPauseTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PauseTimer")); }
-			ScriptFunction IsTimerActive() { return mIsTimerActive ? mIsTimerActive : (mIsTimerActive = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsTimerActive")); }
-			ScriptFunction GetTimerCount() { return mGetTimerCount ? mGetTimerCount : (mGetTimerCount = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetTimerCount")); }
-			ScriptFunction GetTimerRate() { return mGetTimerRate ? mGetTimerRate : (mGetTimerRate = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetTimerRate")); }
-			ScriptFunction GetRemainingTimeForTimer() { return mGetRemainingTimeForTimer ? mGetRemainingTimeForTimer : (mGetRemainingTimeForTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetRemainingTimeForTimer")); }
-			ScriptFunction ModifyTimerTimeDilation() { return mModifyTimerTimeDilation ? mModifyTimerTimeDilation : (mModifyTimerTimeDilation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ModifyTimerTimeDilation")); }
-			ScriptFunction ResetTimerTimeDilation() { return mResetTimerTimeDilation ? mResetTimerTimeDilation : (mResetTimerTimeDilation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ResetTimerTimeDilation")); }
-			ScriptFunction CreateAudioComponent() { return mCreateAudioComponent ? mCreateAudioComponent : (mCreateAudioComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CreateAudioComponent")); }
-			ScriptFunction PlaySound() { return mPlaySound ? mPlaySound : (mPlaySound = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PlaySound")); }
-			ScriptFunction MakeNoise() { return mMakeNoise ? mMakeNoise : (mMakeNoise = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.MakeNoise")); }
-			ScriptFunction PlayerCanSeeMe() { return mPlayerCanSeeMe ? mPlayerCanSeeMe : (mPlayerCanSeeMe = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PlayerCanSeeMe")); }
-			ScriptFunction SuggestTossVelocity() { return mSuggestTossVelocity ? mSuggestTossVelocity : (mSuggestTossVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SuggestTossVelocity")); }
-			ScriptFunction CalculateMinSpeedTrajectory() { return mCalculateMinSpeedTrajectory ? mCalculateMinSpeedTrajectory : (mCalculateMinSpeedTrajectory = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CalculateMinSpeedTrajectory")); }
-			ScriptFunction GetDestination() { return mGetDestination ? mGetDestination : (mGetDestination = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetDestination")); }
-			ScriptFunction PreTeleport() { return mPreTeleport ? mPreTeleport : (mPreTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PreTeleport")); }
-			ScriptFunction PostTeleport() { return mPostTeleport ? mPostTeleport : (mPostTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PostTeleport")); }
-			ScriptFunction GetURLMap() { return mGetURLMap ? mGetURLMap : (mGetURLMap = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetURLMap")); }
-			ScriptFunction AllActors() { return mAllActors ? mAllActors : (mAllActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.AllActors")); }
-			ScriptFunction DynamicActors() { return mDynamicActors ? mDynamicActors : (mDynamicActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DynamicActors")); }
-			ScriptFunction ChildActors() { return mChildActors ? mChildActors : (mChildActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ChildActors")); }
-			ScriptFunction BasedActors() { return mBasedActors ? mBasedActors : (mBasedActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.BasedActors")); }
-			ScriptFunction TouchingActors() { return mTouchingActors ? mTouchingActors : (mTouchingActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TouchingActors")); }
-			ScriptFunction TraceActors() { return mTraceActors ? mTraceActors : (mTraceActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TraceActors")); }
-			ScriptFunction VisibleActors() { return mVisibleActors ? mVisibleActors : (mVisibleActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.VisibleActors")); }
-			ScriptFunction VisibleCollidingActors() { return mVisibleCollidingActors ? mVisibleCollidingActors : (mVisibleCollidingActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.VisibleCollidingActors")); }
-			ScriptFunction CollidingActors() { return mCollidingActors ? mCollidingActors : (mCollidingActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CollidingActors")); }
-			ScriptFunction VisibleCollidingExtentActors() { return mVisibleCollidingExtentActors ? mVisibleCollidingExtentActors : (mVisibleCollidingExtentActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.VisibleCollidingExtentActors")); }
-			ScriptFunction OverlappingActors() { return mOverlappingActors ? mOverlappingActors : (mOverlappingActors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OverlappingActors")); }
-			ScriptFunction ComponentList() { return mComponentList ? mComponentList : (mComponentList = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ComponentList")); }
-			ScriptFunction AllOwnedComponents() { return mAllOwnedComponents ? mAllOwnedComponents : (mAllOwnedComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.AllOwnedComponents")); }
-			ScriptFunction LocalPlayerControllers() { return mLocalPlayerControllers ? mLocalPlayerControllers : (mLocalPlayerControllers = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.LocalPlayerControllers")); }
-			ScriptFunction GetALocalPlayerController() { return mGetALocalPlayerController ? mGetALocalPlayerController : (mGetALocalPlayerController = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetALocalPlayerController")); }
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PreBeginPlay")); }
-			ScriptFunction BroadcastLocalizedMessage() { return mBroadcastLocalizedMessage ? mBroadcastLocalizedMessage : (mBroadcastLocalizedMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.BroadcastLocalizedMessage")); }
-			ScriptFunction BroadcastLocalizedTeamMessage() { return mBroadcastLocalizedTeamMessage ? mBroadcastLocalizedTeamMessage : (mBroadcastLocalizedTeamMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.BroadcastLocalizedTeamMessage")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PostBeginPlay")); }
-			ScriptFunction SetInitialState() { return mSetInitialState ? mSetInitialState : (mSetInitialState = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetInitialState")); }
-			ScriptFunction ConstraintBrokenNotify() { return mConstraintBrokenNotify ? mConstraintBrokenNotify : (mConstraintBrokenNotify = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ConstraintBrokenNotify")); }
-			ScriptFunction NotifySkelControlBeyondLimit() { return mNotifySkelControlBeyondLimit ? mNotifySkelControlBeyondLimit : (mNotifySkelControlBeyondLimit = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.NotifySkelControlBeyondLimit")); }
-			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.StopsProjectile")); }
-			ScriptFunction HurtRadius() { return mHurtRadius ? mHurtRadius : (mHurtRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.HurtRadius")); }
-			ScriptFunction KilledBy() { return mKilledBy ? mKilledBy : (mKilledBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.KilledBy")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TakeDamage")); }
-			ScriptFunction HealDamage() { return mHealDamage ? mHealDamage : (mHealDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.HealDamage")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TakeRadiusDamage")); }
-			ScriptFunction CheckHitInfo() { return mCheckHitInfo ? mCheckHitInfo : (mCheckHitInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CheckHitInfo")); }
-			ScriptFunction GetGravityZ() { return mGetGravityZ ? mGetGravityZ : (mGetGravityZ = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetGravityZ")); }
-			ScriptFunction DebugFreezeGame() { return mDebugFreezeGame ? mDebugFreezeGame : (mDebugFreezeGame = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DebugFreezeGame")); }
-			ScriptFunction CheckForErrors() { return mCheckForErrors ? mCheckForErrors : (mCheckForErrors = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CheckForErrors")); }
-			ScriptFunction BecomeViewTarget() { return mBecomeViewTarget ? mBecomeViewTarget : (mBecomeViewTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.BecomeViewTarget")); }
-			ScriptFunction EndViewTarget() { return mEndViewTarget ? mEndViewTarget : (mEndViewTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.EndViewTarget")); }
-			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CalcCamera")); }
-			ScriptFunction GetItemName() { return mGetItemName ? mGetItemName : (mGetItemName = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetItemName")); }
-			ScriptFunction GetHumanReadableName() { return mGetHumanReadableName ? mGetHumanReadableName : (mGetHumanReadableName = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetHumanReadableName")); }
-			ScriptFunction ReplaceText() { return mReplaceText ? mReplaceText : (mReplaceText = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ReplaceText")); }
-			ScriptFunction GetLocalString() { return mGetLocalString ? mGetLocalString : (mGetLocalString = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetLocalString")); }
-			ScriptFunction MatchStarting() { return mMatchStarting ? mMatchStarting : (mMatchStarting = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.MatchStarting")); }
-			ScriptFunction GetDebugName() { return mGetDebugName ? mGetDebugName : (mGetDebugName = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetDebugName")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DisplayDebug")); }
-			ScriptFunction GetPhysicsName() { return mGetPhysicsName ? mGetPhysicsName : (mGetPhysicsName = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetPhysicsName")); }
-			ScriptFunction ModifyHearSoundComponent() { return mModifyHearSoundComponent ? mModifyHearSoundComponent : (mModifyHearSoundComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ModifyHearSoundComponent")); }
-			ScriptFunction GetFaceFXAudioComponent() { return mGetFaceFXAudioComponent ? mGetFaceFXAudioComponent : (mGetFaceFXAudioComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetFaceFXAudioComponent")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.Reset")); }
-			ScriptFunction IsInPain() { return mIsInPain ? mIsInPain : (mIsInPain = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsInPain")); }
-			ScriptFunction PlayTeleportEffect() { return mPlayTeleportEffect ? mPlayTeleportEffect : (mPlayTeleportEffect = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PlayTeleportEffect")); }
-			ScriptFunction CanSplash() { return mCanSplash ? mCanSplash : (mCanSplash = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CanSplash")); }
-			ScriptFunction ApplyFluidSurfaceImpact() { return mApplyFluidSurfaceImpact ? mApplyFluidSurfaceImpact : (mApplyFluidSurfaceImpact = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ApplyFluidSurfaceImpact")); }
-			ScriptFunction EffectIsRelevant() { return mEffectIsRelevant ? mEffectIsRelevant : (mEffectIsRelevant = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.EffectIsRelevant")); }
-			ScriptFunction DebugMessagePlayer() { return mDebugMessagePlayer ? mDebugMessagePlayer : (mDebugMessagePlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DebugMessagePlayer")); }
-			ScriptFunction TriggerEventClass() { return mTriggerEventClass ? mTriggerEventClass : (mTriggerEventClass = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TriggerEventClass")); }
-			ScriptFunction ActivateEventClass() { return mActivateEventClass ? mActivateEventClass : (mActivateEventClass = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ActivateEventClass")); }
-			ScriptFunction ReceivedNewEvent() { return mReceivedNewEvent ? mReceivedNewEvent : (mReceivedNewEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ReceivedNewEvent")); }
-			ScriptFunction TriggerGlobalEventClass() { return mTriggerGlobalEventClass ? mTriggerGlobalEventClass : (mTriggerGlobalEventClass = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TriggerGlobalEventClass")); }
-			ScriptFunction FindEventsOfClass() { return mFindEventsOfClass ? mFindEventsOfClass : (mFindEventsOfClass = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FindEventsOfClass")); }
-			ScriptFunction ClearLatentAction() { return mClearLatentAction ? mClearLatentAction : (mClearLatentAction = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ClearLatentAction")); }
-			ScriptFunction OnDestroy() { return mOnDestroy ? mOnDestroy : (mOnDestroy = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnDestroy")); }
-			ScriptFunction ForceNetRelevant() { return mForceNetRelevant ? mForceNetRelevant : (mForceNetRelevant = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ForceNetRelevant")); }
-			ScriptFunction SetNetUpdateTime() { return mSetNetUpdateTime ? mSetNetUpdateTime : (mSetNetUpdateTime = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetNetUpdateTime")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ShutDown")); }
-			ScriptFunction PrestreamTextures() { return mPrestreamTextures ? mPrestreamTextures : (mPrestreamTextures = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PrestreamTextures")); }
-			ScriptFunction OnModifyHealth() { return mOnModifyHealth ? mOnModifyHealth : (mOnModifyHealth = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnModifyHealth")); }
-			ScriptFunction OnTeleport() { return mOnTeleport ? mOnTeleport : (mOnTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnTeleport")); }
-			ScriptFunction OnSetVelocity() { return mOnSetVelocity ? mOnSetVelocity : (mOnSetVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnSetVelocity")); }
-			ScriptFunction OnSetBlockRigidBody() { return mOnSetBlockRigidBody ? mOnSetBlockRigidBody : (mOnSetBlockRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnSetBlockRigidBody")); }
-			ScriptFunction OnSetPhysics() { return mOnSetPhysics ? mOnSetPhysics : (mOnSetPhysics = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnSetPhysics")); }
-			ScriptFunction OnChangeCollision() { return mOnChangeCollision ? mOnChangeCollision : (mOnChangeCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnChangeCollision")); }
-			ScriptFunction OnToggleHidden() { return mOnToggleHidden ? mOnToggleHidden : (mOnToggleHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnToggleHidden")); }
-			ScriptFunction OnAttachToActor() { return mOnAttachToActor ? mOnAttachToActor : (mOnAttachToActor = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnAttachToActor")); }
-			ScriptFunction DoKismetAttachment() { return mDoKismetAttachment ? mDoKismetAttachment : (mDoKismetAttachment = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.DoKismetAttachment")); }
-			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnAnimEnd")); }
-			ScriptFunction OnAnimPlay() { return mOnAnimPlay ? mOnAnimPlay : (mOnAnimPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnAnimPlay")); }
-			ScriptFunction BeginAnimControl() { return mBeginAnimControl ? mBeginAnimControl : (mBeginAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.BeginAnimControl")); }
-			ScriptFunction SetAnimPosition() { return mSetAnimPosition ? mSetAnimPosition : (mSetAnimPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetAnimPosition")); }
-			ScriptFunction FinishAnimControl() { return mFinishAnimControl ? mFinishAnimControl : (mFinishAnimControl = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FinishAnimControl")); }
-			ScriptFunction PlayActorFaceFXAnim() { return mPlayActorFaceFXAnim ? mPlayActorFaceFXAnim : (mPlayActorFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PlayActorFaceFXAnim")); }
-			ScriptFunction StopActorFaceFXAnim() { return mStopActorFaceFXAnim ? mStopActorFaceFXAnim : (mStopActorFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.StopActorFaceFXAnim")); }
-			ScriptFunction SetMorphWeight() { return mSetMorphWeight ? mSetMorphWeight : (mSetMorphWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetMorphWeight")); }
-			ScriptFunction SetSkelControlScale() { return mSetSkelControlScale ? mSetSkelControlScale : (mSetSkelControlScale = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetSkelControlScale")); }
-			ScriptFunction IsActorPlayingFaceFXAnim() { return mIsActorPlayingFaceFXAnim ? mIsActorPlayingFaceFXAnim : (mIsActorPlayingFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsActorPlayingFaceFXAnim")); }
-			ScriptFunction CanActorPlayFaceFXAnim() { return mCanActorPlayFaceFXAnim ? mCanActorPlayFaceFXAnim : (mCanActorPlayFaceFXAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CanActorPlayFaceFXAnim")); }
-			ScriptFunction GetActorFaceFXAsset() { return mGetActorFaceFXAsset ? mGetActorFaceFXAsset : (mGetActorFaceFXAsset = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetActorFaceFXAsset")); }
-			ScriptFunction IsStationary() { return mIsStationary ? mIsStationary : (mIsStationary = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsStationary")); }
-			ScriptFunction GetActorEyesViewPoint() { return mGetActorEyesViewPoint ? mGetActorEyesViewPoint : (mGetActorEyesViewPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetActorEyesViewPoint")); }
-			ScriptFunction IsPlayerOwned() { return mIsPlayerOwned ? mIsPlayerOwned : (mIsPlayerOwned = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsPlayerOwned")); }
-			ScriptFunction PawnBaseDied() { return mPawnBaseDied ? mPawnBaseDied : (mPawnBaseDied = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PawnBaseDied")); }
-			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetTeamNum")); }
-			ScriptFunction ScriptGetTeamNum() { return mScriptGetTeamNum ? mScriptGetTeamNum : (mScriptGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ScriptGetTeamNum")); }
-			ScriptFunction NotifyLocalPlayerTeamReceived() { return mNotifyLocalPlayerTeamReceived ? mNotifyLocalPlayerTeamReceived : (mNotifyLocalPlayerTeamReceived = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.NotifyLocalPlayerTeamReceived")); }
-			ScriptFunction FindGoodEndView() { return mFindGoodEndView ? mFindGoodEndView : (mFindGoodEndView = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.FindGoodEndView")); }
-			ScriptFunction GetTargetLocation() { return mGetTargetLocation ? mGetTargetLocation : (mGetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetTargetLocation")); }
-			ScriptFunction SpawnedByKismet() { return mSpawnedByKismet ? mSpawnedByKismet : (mSpawnedByKismet = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SpawnedByKismet")); }
-			ScriptFunction InterpolationStarted() { return mInterpolationStarted ? mInterpolationStarted : (mInterpolationStarted = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.InterpolationStarted")); }
-			ScriptFunction InterpolationFinished() { return mInterpolationFinished ? mInterpolationFinished : (mInterpolationFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.InterpolationFinished")); }
-			ScriptFunction InterpolationChanged() { return mInterpolationChanged ? mInterpolationChanged : (mInterpolationChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.InterpolationChanged")); }
-			ScriptFunction RigidBodyCollision() { return mRigidBodyCollision ? mRigidBodyCollision : (mRigidBodyCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.RigidBodyCollision")); }
-			ScriptFunction OnRanOver() { return mOnRanOver ? mOnRanOver : (mOnRanOver = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnRanOver")); }
-			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SetHUDLocation")); }
-			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.NativePostRenderFor")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PostRenderFor")); }
-			ScriptFunction RootMotionModeChanged() { return mRootMotionModeChanged ? mRootMotionModeChanged : (mRootMotionModeChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.RootMotionModeChanged")); }
-			ScriptFunction RootMotionExtracted() { return mRootMotionExtracted ? mRootMotionExtracted : (mRootMotionExtracted = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.RootMotionExtracted")); }
-			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PostInitAnimTree")); }
-			ScriptFunction GetPackageGuid() { return mGetPackageGuid ? mGetPackageGuid : (mGetPackageGuid = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetPackageGuid")); }
-			ScriptFunction OnRigidBodySpringOverextension() { return mOnRigidBodySpringOverextension ? mOnRigidBodySpringOverextension : (mOnRigidBodySpringOverextension = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.OnRigidBodySpringOverextension")); }
-			ScriptFunction IsInPersistentLevel() { return mIsInPersistentLevel ? mIsInPersistentLevel : (mIsInPersistentLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.IsInPersistentLevel")); }
-			ScriptFunction GetAimFrictionExtent() { return mGetAimFrictionExtent ? mGetAimFrictionExtent : (mGetAimFrictionExtent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetAimFrictionExtent")); }
-			ScriptFunction GetAimAdhesionExtent() { return mGetAimAdhesionExtent ? mGetAimAdhesionExtent : (mGetAimAdhesionExtent = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetAimAdhesionExtent")); }
-			ScriptFunction PlayParticleEffect() { return mPlayParticleEffect ? mPlayParticleEffect : (mPlayParticleEffect = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PlayParticleEffect")); }
-			ScriptFunction CreateForceField() { return mCreateForceField ? mCreateForceField : (mCreateForceField = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.CreateForceField")); }
-			ScriptFunction TrailsNotify() { return mTrailsNotify ? mTrailsNotify : (mTrailsNotify = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TrailsNotify")); }
-			ScriptFunction TrailsNotifyTick() { return mTrailsNotifyTick ? mTrailsNotifyTick : (mTrailsNotifyTick = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TrailsNotifyTick")); }
-			ScriptFunction TrailsNotifyEnd() { return mTrailsNotifyEnd ? mTrailsNotifyEnd : (mTrailsNotifyEnd = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.TrailsNotifyEnd")); }
-			ScriptFunction SupportsKismetModification() { return mSupportsKismetModification ? mSupportsKismetModification : (mSupportsKismetModification = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.SupportsKismetModification")); }
-			ScriptFunction AnimTreeUpdated() { return mAnimTreeUpdated ? mAnimTreeUpdated : (mAnimTreeUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.AnimTreeUpdated")); }
-			ScriptFunction PostDemoRewind() { return mPostDemoRewind ? mPostDemoRewind : (mPostDemoRewind = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.PostDemoRewind")); }
-			ScriptFunction ReplicationEnded() { return mReplicationEnded ? mReplicationEnded : (mReplicationEnded = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ReplicationEnded")); }
-			ScriptFunction GetAvoidanceVector() { return mGetAvoidanceVector ? mGetAvoidanceVector : (mGetAvoidanceVector = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetAvoidanceVector")); }
-			ScriptFunction WillOverlap() { return mWillOverlap ? mWillOverlap : (mWillOverlap = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.WillOverlap")); }
-			ScriptFunction ShouldBeHiddenBySHOW_NavigationNodes() { return mShouldBeHiddenBySHOW_NavigationNodes ? mShouldBeHiddenBySHOW_NavigationNodes : (mShouldBeHiddenBySHOW_NavigationNodes = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.ShouldBeHiddenBySHOW_NavigationNodes")); }
-			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetSpectatorName")); }
-			ScriptFunction GetSpectatorDescription() { return mGetSpectatorDescription ? mGetSpectatorDescription : (mGetSpectatorDescription = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetSpectatorDescription")); }
-			ScriptFunction GetSpectatorHealthInfo() { return mGetSpectatorHealthInfo ? mGetSpectatorHealthInfo : (mGetSpectatorHealthInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetSpectatorHealthInfo")); }
+			ScriptFunction ForceUpdateComponents() { mixin(MGF!("mForceUpdateComponents", "Function Engine.Actor.ForceUpdateComponents")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function Engine.Actor.ConsoleCommand")()); }
+			ScriptFunction Sleep() { mixin(MGF!("mSleep", "Function Engine.Actor.Sleep")()); }
+			ScriptFunction FinishAnim() { mixin(MGF!("mFinishAnim", "Function Engine.Actor.FinishAnim")()); }
+			ScriptFunction SetCollision() { mixin(MGF!("mSetCollision", "Function Engine.Actor.SetCollision")()); }
+			ScriptFunction SetCollisionSize() { mixin(MGF!("mSetCollisionSize", "Function Engine.Actor.SetCollisionSize")()); }
+			ScriptFunction SetCollisionType() { mixin(MGF!("mSetCollisionType", "Function Engine.Actor.SetCollisionType")()); }
+			ScriptFunction SetDrawScale() { mixin(MGF!("mSetDrawScale", "Function Engine.Actor.SetDrawScale")()); }
+			ScriptFunction SetDrawScale3D() { mixin(MGF!("mSetDrawScale3D", "Function Engine.Actor.SetDrawScale3D")()); }
+			ScriptFunction Move() { mixin(MGF!("mMove", "Function Engine.Actor.Move")()); }
+			ScriptFunction SetLocation() { mixin(MGF!("mSetLocation", "Function Engine.Actor.SetLocation")()); }
+			ScriptFunction SetRotation() { mixin(MGF!("mSetRotation", "Function Engine.Actor.SetRotation")()); }
+			ScriptFunction MovingWhichWay() { mixin(MGF!("mMovingWhichWay", "Function Engine.Actor.MovingWhichWay")()); }
+			ScriptFunction SetZone() { mixin(MGF!("mSetZone", "Function Engine.Actor.SetZone")()); }
+			ScriptFunction SetRelativeRotation() { mixin(MGF!("mSetRelativeRotation", "Function Engine.Actor.SetRelativeRotation")()); }
+			ScriptFunction SetRelativeLocation() { mixin(MGF!("mSetRelativeLocation", "Function Engine.Actor.SetRelativeLocation")()); }
+			ScriptFunction SetHardAttach() { mixin(MGF!("mSetHardAttach", "Function Engine.Actor.SetHardAttach")()); }
+			ScriptFunction fixedTurn() { mixin(MGF!("mfixedTurn", "Function Engine.Actor.fixedTurn")()); }
+			ScriptFunction MoveSmooth() { mixin(MGF!("mMoveSmooth", "Function Engine.Actor.MoveSmooth")()); }
+			ScriptFunction AutonomousPhysics() { mixin(MGF!("mAutonomousPhysics", "Function Engine.Actor.AutonomousPhysics")()); }
+			ScriptFunction GetTerminalVelocity() { mixin(MGF!("mGetTerminalVelocity", "Function Engine.Actor.GetTerminalVelocity")()); }
+			ScriptFunction SetBase() { mixin(MGF!("mSetBase", "Function Engine.Actor.SetBase")()); }
+			ScriptFunction SetOwner() { mixin(MGF!("mSetOwner", "Function Engine.Actor.SetOwner")()); }
+			ScriptFunction FindBase() { mixin(MGF!("mFindBase", "Function Engine.Actor.FindBase")()); }
+			ScriptFunction IsBasedOn() { mixin(MGF!("mIsBasedOn", "Function Engine.Actor.IsBasedOn")()); }
+			ScriptFunction GetBaseMost() { mixin(MGF!("mGetBaseMost", "Function Engine.Actor.GetBaseMost")()); }
+			ScriptFunction IsOwnedBy() { mixin(MGF!("mIsOwnedBy", "Function Engine.Actor.IsOwnedBy")()); }
+			ScriptFunction GetAggregateBaseVelocity() { mixin(MGF!("mGetAggregateBaseVelocity", "Function Engine.Actor.GetAggregateBaseVelocity")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.Actor.ReplicatedEvent")()); }
+			ScriptFunction SetForcedInitialReplicatedProperty() { mixin(MGF!("mSetForcedInitialReplicatedProperty", "Function Engine.Actor.SetForcedInitialReplicatedProperty")()); }
+			ScriptFunction Vect2BP() { mixin(MGF!("mVect2BP", "Function Engine.Actor.Vect2BP")()); }
+			ScriptFunction BP2Vect() { mixin(MGF!("mBP2Vect", "Function Engine.Actor.BP2Vect")()); }
+			ScriptFunction SetBasedPosition() { mixin(MGF!("mSetBasedPosition", "Function Engine.Actor.SetBasedPosition")()); }
+			ScriptFunction GetBasedPosition() { mixin(MGF!("mGetBasedPosition", "Function Engine.Actor.GetBasedPosition")()); }
+			ScriptFunction FlushPersistentDebugLines() { mixin(MGF!("mFlushPersistentDebugLines", "Function Engine.Actor.FlushPersistentDebugLines")()); }
+			ScriptFunction DrawDebugLine() { mixin(MGF!("mDrawDebugLine", "Function Engine.Actor.DrawDebugLine")()); }
+			ScriptFunction DrawDebugPoint() { mixin(MGF!("mDrawDebugPoint", "Function Engine.Actor.DrawDebugPoint")()); }
+			ScriptFunction DrawDebugBox() { mixin(MGF!("mDrawDebugBox", "Function Engine.Actor.DrawDebugBox")()); }
+			ScriptFunction DrawDebugStar() { mixin(MGF!("mDrawDebugStar", "Function Engine.Actor.DrawDebugStar")()); }
+			ScriptFunction DrawDebugCoordinateSystem() { mixin(MGF!("mDrawDebugCoordinateSystem", "Function Engine.Actor.DrawDebugCoordinateSystem")()); }
+			ScriptFunction DrawDebugSphere() { mixin(MGF!("mDrawDebugSphere", "Function Engine.Actor.DrawDebugSphere")()); }
+			ScriptFunction DrawDebugCylinder() { mixin(MGF!("mDrawDebugCylinder", "Function Engine.Actor.DrawDebugCylinder")()); }
+			ScriptFunction DrawDebugCone() { mixin(MGF!("mDrawDebugCone", "Function Engine.Actor.DrawDebugCone")()); }
+			ScriptFunction DrawDebugString() { mixin(MGF!("mDrawDebugString", "Function Engine.Actor.DrawDebugString")()); }
+			ScriptFunction DrawDebugFrustrum() { mixin(MGF!("mDrawDebugFrustrum", "Function Engine.Actor.DrawDebugFrustrum")()); }
+			ScriptFunction FlushDebugStrings() { mixin(MGF!("mFlushDebugStrings", "Function Engine.Actor.FlushDebugStrings")()); }
+			ScriptFunction ChartData() { mixin(MGF!("mChartData", "Function Engine.Actor.ChartData")()); }
+			ScriptFunction SetHidden() { mixin(MGF!("mSetHidden", "Function Engine.Actor.SetHidden")()); }
+			ScriptFunction SetOnlyOwnerSee() { mixin(MGF!("mSetOnlyOwnerSee", "Function Engine.Actor.SetOnlyOwnerSee")()); }
+			ScriptFunction SetPhysics() { mixin(MGF!("mSetPhysics", "Function Engine.Actor.SetPhysics")()); }
+			ScriptFunction Clock() { mixin(MGF!("mClock", "Function Engine.Actor.Clock")()); }
+			ScriptFunction UnClock() { mixin(MGF!("mUnClock", "Function Engine.Actor.UnClock")()); }
+			ScriptFunction AttachComponent() { mixin(MGF!("mAttachComponent", "Function Engine.Actor.AttachComponent")()); }
+			ScriptFunction DetachComponent() { mixin(MGF!("mDetachComponent", "Function Engine.Actor.DetachComponent")()); }
+			ScriptFunction ReattachComponent() { mixin(MGF!("mReattachComponent", "Function Engine.Actor.ReattachComponent")()); }
+			ScriptFunction SetTickGroup() { mixin(MGF!("mSetTickGroup", "Function Engine.Actor.SetTickGroup")()); }
+			ScriptFunction SetTickIsDisabled() { mixin(MGF!("mSetTickIsDisabled", "Function Engine.Actor.SetTickIsDisabled")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Actor.Destroyed")()); }
+			ScriptFunction GainedChild() { mixin(MGF!("mGainedChild", "Function Engine.Actor.GainedChild")()); }
+			ScriptFunction LostChild() { mixin(MGF!("mLostChild", "Function Engine.Actor.LostChild")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function Engine.Actor.Tick")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.Actor.Timer")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function Engine.Actor.HitWall")()); }
+			ScriptFunction Falling() { mixin(MGF!("mFalling", "Function Engine.Actor.Falling")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function Engine.Actor.Landed")()); }
+			ScriptFunction PhysicsVolumeChange() { mixin(MGF!("mPhysicsVolumeChange", "Function Engine.Actor.PhysicsVolumeChange")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.Actor.Touch")()); }
+			ScriptFunction PostTouch() { mixin(MGF!("mPostTouch", "Function Engine.Actor.PostTouch")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function Engine.Actor.UnTouch")()); }
+			ScriptFunction Bump() { mixin(MGF!("mBump", "Function Engine.Actor.Bump")()); }
+			ScriptFunction BaseChange() { mixin(MGF!("mBaseChange", "Function Engine.Actor.BaseChange")()); }
+			ScriptFunction Attach() { mixin(MGF!("mAttach", "Function Engine.Actor.Attach")()); }
+			ScriptFunction Detach() { mixin(MGF!("mDetach", "Function Engine.Actor.Detach")()); }
+			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.Actor.SpecialHandling")()); }
+			ScriptFunction CollisionChanged() { mixin(MGF!("mCollisionChanged", "Function Engine.Actor.CollisionChanged")()); }
+			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.Actor.EncroachingOn")()); }
+			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.Actor.EncroachedBy")()); }
+			ScriptFunction RanInto() { mixin(MGF!("mRanInto", "Function Engine.Actor.RanInto")()); }
+			ScriptFunction OnWakeRBPhysics() { mixin(MGF!("mOnWakeRBPhysics", "Function Engine.Actor.OnWakeRBPhysics")()); }
+			ScriptFunction OnSleepRBPhysics() { mixin(MGF!("mOnSleepRBPhysics", "Function Engine.Actor.OnSleepRBPhysics")()); }
+			ScriptFunction ClampRotation() { mixin(MGF!("mClampRotation", "Function Engine.Actor.ClampRotation")()); }
+			ScriptFunction OverRotated() { mixin(MGF!("mOverRotated", "Function Engine.Actor.OverRotated")()); }
+			ScriptFunction UsedBy() { mixin(MGF!("mUsedBy", "Function Engine.Actor.UsedBy")()); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.Actor.FellOutOfWorld")()); }
+			ScriptFunction OutsideWorldBounds() { mixin(MGF!("mOutsideWorldBounds", "Function Engine.Actor.OutsideWorldBounds")()); }
+			ScriptFunction VolumeBasedDestroy() { mixin(MGF!("mVolumeBasedDestroy", "Function Engine.Actor.VolumeBasedDestroy")()); }
+			ScriptFunction Trace() { mixin(MGF!("mTrace", "Function Engine.Actor.Trace")()); }
+			ScriptFunction TraceComponent() { mixin(MGF!("mTraceComponent", "Function Engine.Actor.TraceComponent")()); }
+			ScriptFunction PointCheckComponent() { mixin(MGF!("mPointCheckComponent", "Function Engine.Actor.PointCheckComponent")()); }
+			ScriptFunction FastTrace() { mixin(MGF!("mFastTrace", "Function Engine.Actor.FastTrace")()); }
+			ScriptFunction TraceAllPhysicsAssetInteractions() { mixin(MGF!("mTraceAllPhysicsAssetInteractions", "Function Engine.Actor.TraceAllPhysicsAssetInteractions")()); }
+			ScriptFunction FindSpot() { mixin(MGF!("mFindSpot", "Function Engine.Actor.FindSpot")()); }
+			ScriptFunction ContainsPoint() { mixin(MGF!("mContainsPoint", "Function Engine.Actor.ContainsPoint")()); }
+			ScriptFunction IsOverlapping() { mixin(MGF!("mIsOverlapping", "Function Engine.Actor.IsOverlapping")()); }
+			ScriptFunction GetComponentsBoundingBox() { mixin(MGF!("mGetComponentsBoundingBox", "Function Engine.Actor.GetComponentsBoundingBox")()); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function Engine.Actor.GetBoundingCylinder")()); }
+			ScriptFunction IsBlockedBy() { mixin(MGF!("mIsBlockedBy", "Function Engine.Actor.IsBlockedBy")()); }
+			ScriptFunction Spawn() { mixin(MGF!("mSpawn", "Function Engine.Actor.Spawn")()); }
+			ScriptFunction Destroy() { mixin(MGF!("mDestroy", "Function Engine.Actor.Destroy")()); }
+			ScriptFunction TornOff() { mixin(MGF!("mTornOff", "Function Engine.Actor.TornOff")()); }
+			ScriptFunction SetTimer() { mixin(MGF!("mSetTimer", "Function Engine.Actor.SetTimer")()); }
+			ScriptFunction ClearTimer() { mixin(MGF!("mClearTimer", "Function Engine.Actor.ClearTimer")()); }
+			ScriptFunction ClearAllTimers() { mixin(MGF!("mClearAllTimers", "Function Engine.Actor.ClearAllTimers")()); }
+			ScriptFunction PauseTimer() { mixin(MGF!("mPauseTimer", "Function Engine.Actor.PauseTimer")()); }
+			ScriptFunction IsTimerActive() { mixin(MGF!("mIsTimerActive", "Function Engine.Actor.IsTimerActive")()); }
+			ScriptFunction GetTimerCount() { mixin(MGF!("mGetTimerCount", "Function Engine.Actor.GetTimerCount")()); }
+			ScriptFunction GetTimerRate() { mixin(MGF!("mGetTimerRate", "Function Engine.Actor.GetTimerRate")()); }
+			ScriptFunction GetRemainingTimeForTimer() { mixin(MGF!("mGetRemainingTimeForTimer", "Function Engine.Actor.GetRemainingTimeForTimer")()); }
+			ScriptFunction ModifyTimerTimeDilation() { mixin(MGF!("mModifyTimerTimeDilation", "Function Engine.Actor.ModifyTimerTimeDilation")()); }
+			ScriptFunction ResetTimerTimeDilation() { mixin(MGF!("mResetTimerTimeDilation", "Function Engine.Actor.ResetTimerTimeDilation")()); }
+			ScriptFunction CreateAudioComponent() { mixin(MGF!("mCreateAudioComponent", "Function Engine.Actor.CreateAudioComponent")()); }
+			ScriptFunction PlaySound() { mixin(MGF!("mPlaySound", "Function Engine.Actor.PlaySound")()); }
+			ScriptFunction MakeNoise() { mixin(MGF!("mMakeNoise", "Function Engine.Actor.MakeNoise")()); }
+			ScriptFunction PlayerCanSeeMe() { mixin(MGF!("mPlayerCanSeeMe", "Function Engine.Actor.PlayerCanSeeMe")()); }
+			ScriptFunction SuggestTossVelocity() { mixin(MGF!("mSuggestTossVelocity", "Function Engine.Actor.SuggestTossVelocity")()); }
+			ScriptFunction CalculateMinSpeedTrajectory() { mixin(MGF!("mCalculateMinSpeedTrajectory", "Function Engine.Actor.CalculateMinSpeedTrajectory")()); }
+			ScriptFunction GetDestination() { mixin(MGF!("mGetDestination", "Function Engine.Actor.GetDestination")()); }
+			ScriptFunction PreTeleport() { mixin(MGF!("mPreTeleport", "Function Engine.Actor.PreTeleport")()); }
+			ScriptFunction PostTeleport() { mixin(MGF!("mPostTeleport", "Function Engine.Actor.PostTeleport")()); }
+			ScriptFunction GetURLMap() { mixin(MGF!("mGetURLMap", "Function Engine.Actor.GetURLMap")()); }
+			ScriptFunction AllActors() { mixin(MGF!("mAllActors", "Function Engine.Actor.AllActors")()); }
+			ScriptFunction DynamicActors() { mixin(MGF!("mDynamicActors", "Function Engine.Actor.DynamicActors")()); }
+			ScriptFunction ChildActors() { mixin(MGF!("mChildActors", "Function Engine.Actor.ChildActors")()); }
+			ScriptFunction BasedActors() { mixin(MGF!("mBasedActors", "Function Engine.Actor.BasedActors")()); }
+			ScriptFunction TouchingActors() { mixin(MGF!("mTouchingActors", "Function Engine.Actor.TouchingActors")()); }
+			ScriptFunction TraceActors() { mixin(MGF!("mTraceActors", "Function Engine.Actor.TraceActors")()); }
+			ScriptFunction VisibleActors() { mixin(MGF!("mVisibleActors", "Function Engine.Actor.VisibleActors")()); }
+			ScriptFunction VisibleCollidingActors() { mixin(MGF!("mVisibleCollidingActors", "Function Engine.Actor.VisibleCollidingActors")()); }
+			ScriptFunction CollidingActors() { mixin(MGF!("mCollidingActors", "Function Engine.Actor.CollidingActors")()); }
+			ScriptFunction VisibleCollidingExtentActors() { mixin(MGF!("mVisibleCollidingExtentActors", "Function Engine.Actor.VisibleCollidingExtentActors")()); }
+			ScriptFunction OverlappingActors() { mixin(MGF!("mOverlappingActors", "Function Engine.Actor.OverlappingActors")()); }
+			ScriptFunction ComponentList() { mixin(MGF!("mComponentList", "Function Engine.Actor.ComponentList")()); }
+			ScriptFunction AllOwnedComponents() { mixin(MGF!("mAllOwnedComponents", "Function Engine.Actor.AllOwnedComponents")()); }
+			ScriptFunction LocalPlayerControllers() { mixin(MGF!("mLocalPlayerControllers", "Function Engine.Actor.LocalPlayerControllers")()); }
+			ScriptFunction GetALocalPlayerController() { mixin(MGF!("mGetALocalPlayerController", "Function Engine.Actor.GetALocalPlayerController")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.Actor.PreBeginPlay")()); }
+			ScriptFunction BroadcastLocalizedMessage() { mixin(MGF!("mBroadcastLocalizedMessage", "Function Engine.Actor.BroadcastLocalizedMessage")()); }
+			ScriptFunction BroadcastLocalizedTeamMessage() { mixin(MGF!("mBroadcastLocalizedTeamMessage", "Function Engine.Actor.BroadcastLocalizedTeamMessage")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Actor.PostBeginPlay")()); }
+			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function Engine.Actor.SetInitialState")()); }
+			ScriptFunction ConstraintBrokenNotify() { mixin(MGF!("mConstraintBrokenNotify", "Function Engine.Actor.ConstraintBrokenNotify")()); }
+			ScriptFunction NotifySkelControlBeyondLimit() { mixin(MGF!("mNotifySkelControlBeyondLimit", "Function Engine.Actor.NotifySkelControlBeyondLimit")()); }
+			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function Engine.Actor.StopsProjectile")()); }
+			ScriptFunction HurtRadius() { mixin(MGF!("mHurtRadius", "Function Engine.Actor.HurtRadius")()); }
+			ScriptFunction KilledBy() { mixin(MGF!("mKilledBy", "Function Engine.Actor.KilledBy")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.Actor.TakeDamage")()); }
+			ScriptFunction HealDamage() { mixin(MGF!("mHealDamage", "Function Engine.Actor.HealDamage")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.Actor.TakeRadiusDamage")()); }
+			ScriptFunction CheckHitInfo() { mixin(MGF!("mCheckHitInfo", "Function Engine.Actor.CheckHitInfo")()); }
+			ScriptFunction GetGravityZ() { mixin(MGF!("mGetGravityZ", "Function Engine.Actor.GetGravityZ")()); }
+			ScriptFunction DebugFreezeGame() { mixin(MGF!("mDebugFreezeGame", "Function Engine.Actor.DebugFreezeGame")()); }
+			ScriptFunction CheckForErrors() { mixin(MGF!("mCheckForErrors", "Function Engine.Actor.CheckForErrors")()); }
+			ScriptFunction BecomeViewTarget() { mixin(MGF!("mBecomeViewTarget", "Function Engine.Actor.BecomeViewTarget")()); }
+			ScriptFunction EndViewTarget() { mixin(MGF!("mEndViewTarget", "Function Engine.Actor.EndViewTarget")()); }
+			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function Engine.Actor.CalcCamera")()); }
+			ScriptFunction GetItemName() { mixin(MGF!("mGetItemName", "Function Engine.Actor.GetItemName")()); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function Engine.Actor.GetHumanReadableName")()); }
+			ScriptFunction ReplaceText() { mixin(MGF!("mReplaceText", "Function Engine.Actor.ReplaceText")()); }
+			ScriptFunction GetLocalString() { mixin(MGF!("mGetLocalString", "Function Engine.Actor.GetLocalString")()); }
+			ScriptFunction MatchStarting() { mixin(MGF!("mMatchStarting", "Function Engine.Actor.MatchStarting")()); }
+			ScriptFunction GetDebugName() { mixin(MGF!("mGetDebugName", "Function Engine.Actor.GetDebugName")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Actor.DisplayDebug")()); }
+			ScriptFunction GetPhysicsName() { mixin(MGF!("mGetPhysicsName", "Function Engine.Actor.GetPhysicsName")()); }
+			ScriptFunction ModifyHearSoundComponent() { mixin(MGF!("mModifyHearSoundComponent", "Function Engine.Actor.ModifyHearSoundComponent")()); }
+			ScriptFunction GetFaceFXAudioComponent() { mixin(MGF!("mGetFaceFXAudioComponent", "Function Engine.Actor.GetFaceFXAudioComponent")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.Actor.Reset")()); }
+			ScriptFunction IsInPain() { mixin(MGF!("mIsInPain", "Function Engine.Actor.IsInPain")()); }
+			ScriptFunction PlayTeleportEffect() { mixin(MGF!("mPlayTeleportEffect", "Function Engine.Actor.PlayTeleportEffect")()); }
+			ScriptFunction CanSplash() { mixin(MGF!("mCanSplash", "Function Engine.Actor.CanSplash")()); }
+			ScriptFunction ApplyFluidSurfaceImpact() { mixin(MGF!("mApplyFluidSurfaceImpact", "Function Engine.Actor.ApplyFluidSurfaceImpact")()); }
+			ScriptFunction EffectIsRelevant() { mixin(MGF!("mEffectIsRelevant", "Function Engine.Actor.EffectIsRelevant")()); }
+			ScriptFunction DebugMessagePlayer() { mixin(MGF!("mDebugMessagePlayer", "Function Engine.Actor.DebugMessagePlayer")()); }
+			ScriptFunction TriggerEventClass() { mixin(MGF!("mTriggerEventClass", "Function Engine.Actor.TriggerEventClass")()); }
+			ScriptFunction ActivateEventClass() { mixin(MGF!("mActivateEventClass", "Function Engine.Actor.ActivateEventClass")()); }
+			ScriptFunction ReceivedNewEvent() { mixin(MGF!("mReceivedNewEvent", "Function Engine.Actor.ReceivedNewEvent")()); }
+			ScriptFunction TriggerGlobalEventClass() { mixin(MGF!("mTriggerGlobalEventClass", "Function Engine.Actor.TriggerGlobalEventClass")()); }
+			ScriptFunction FindEventsOfClass() { mixin(MGF!("mFindEventsOfClass", "Function Engine.Actor.FindEventsOfClass")()); }
+			ScriptFunction ClearLatentAction() { mixin(MGF!("mClearLatentAction", "Function Engine.Actor.ClearLatentAction")()); }
+			ScriptFunction OnDestroy() { mixin(MGF!("mOnDestroy", "Function Engine.Actor.OnDestroy")()); }
+			ScriptFunction ForceNetRelevant() { mixin(MGF!("mForceNetRelevant", "Function Engine.Actor.ForceNetRelevant")()); }
+			ScriptFunction SetNetUpdateTime() { mixin(MGF!("mSetNetUpdateTime", "Function Engine.Actor.SetNetUpdateTime")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.Actor.ShutDown")()); }
+			ScriptFunction PrestreamTextures() { mixin(MGF!("mPrestreamTextures", "Function Engine.Actor.PrestreamTextures")()); }
+			ScriptFunction OnModifyHealth() { mixin(MGF!("mOnModifyHealth", "Function Engine.Actor.OnModifyHealth")()); }
+			ScriptFunction OnTeleport() { mixin(MGF!("mOnTeleport", "Function Engine.Actor.OnTeleport")()); }
+			ScriptFunction OnSetVelocity() { mixin(MGF!("mOnSetVelocity", "Function Engine.Actor.OnSetVelocity")()); }
+			ScriptFunction OnSetBlockRigidBody() { mixin(MGF!("mOnSetBlockRigidBody", "Function Engine.Actor.OnSetBlockRigidBody")()); }
+			ScriptFunction OnSetPhysics() { mixin(MGF!("mOnSetPhysics", "Function Engine.Actor.OnSetPhysics")()); }
+			ScriptFunction OnChangeCollision() { mixin(MGF!("mOnChangeCollision", "Function Engine.Actor.OnChangeCollision")()); }
+			ScriptFunction OnToggleHidden() { mixin(MGF!("mOnToggleHidden", "Function Engine.Actor.OnToggleHidden")()); }
+			ScriptFunction OnAttachToActor() { mixin(MGF!("mOnAttachToActor", "Function Engine.Actor.OnAttachToActor")()); }
+			ScriptFunction DoKismetAttachment() { mixin(MGF!("mDoKismetAttachment", "Function Engine.Actor.DoKismetAttachment")()); }
+			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function Engine.Actor.OnAnimEnd")()); }
+			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function Engine.Actor.OnAnimPlay")()); }
+			ScriptFunction BeginAnimControl() { mixin(MGF!("mBeginAnimControl", "Function Engine.Actor.BeginAnimControl")()); }
+			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function Engine.Actor.SetAnimPosition")()); }
+			ScriptFunction FinishAnimControl() { mixin(MGF!("mFinishAnimControl", "Function Engine.Actor.FinishAnimControl")()); }
+			ScriptFunction PlayActorFaceFXAnim() { mixin(MGF!("mPlayActorFaceFXAnim", "Function Engine.Actor.PlayActorFaceFXAnim")()); }
+			ScriptFunction StopActorFaceFXAnim() { mixin(MGF!("mStopActorFaceFXAnim", "Function Engine.Actor.StopActorFaceFXAnim")()); }
+			ScriptFunction SetMorphWeight() { mixin(MGF!("mSetMorphWeight", "Function Engine.Actor.SetMorphWeight")()); }
+			ScriptFunction SetSkelControlScale() { mixin(MGF!("mSetSkelControlScale", "Function Engine.Actor.SetSkelControlScale")()); }
+			ScriptFunction IsActorPlayingFaceFXAnim() { mixin(MGF!("mIsActorPlayingFaceFXAnim", "Function Engine.Actor.IsActorPlayingFaceFXAnim")()); }
+			ScriptFunction CanActorPlayFaceFXAnim() { mixin(MGF!("mCanActorPlayFaceFXAnim", "Function Engine.Actor.CanActorPlayFaceFXAnim")()); }
+			ScriptFunction GetActorFaceFXAsset() { mixin(MGF!("mGetActorFaceFXAsset", "Function Engine.Actor.GetActorFaceFXAsset")()); }
+			ScriptFunction IsStationary() { mixin(MGF!("mIsStationary", "Function Engine.Actor.IsStationary")()); }
+			ScriptFunction GetActorEyesViewPoint() { mixin(MGF!("mGetActorEyesViewPoint", "Function Engine.Actor.GetActorEyesViewPoint")()); }
+			ScriptFunction IsPlayerOwned() { mixin(MGF!("mIsPlayerOwned", "Function Engine.Actor.IsPlayerOwned")()); }
+			ScriptFunction PawnBaseDied() { mixin(MGF!("mPawnBaseDied", "Function Engine.Actor.PawnBaseDied")()); }
+			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.Actor.GetTeamNum")()); }
+			ScriptFunction ScriptGetTeamNum() { mixin(MGF!("mScriptGetTeamNum", "Function Engine.Actor.ScriptGetTeamNum")()); }
+			ScriptFunction NotifyLocalPlayerTeamReceived() { mixin(MGF!("mNotifyLocalPlayerTeamReceived", "Function Engine.Actor.NotifyLocalPlayerTeamReceived")()); }
+			ScriptFunction FindGoodEndView() { mixin(MGF!("mFindGoodEndView", "Function Engine.Actor.FindGoodEndView")()); }
+			ScriptFunction GetTargetLocation() { mixin(MGF!("mGetTargetLocation", "Function Engine.Actor.GetTargetLocation")()); }
+			ScriptFunction SpawnedByKismet() { mixin(MGF!("mSpawnedByKismet", "Function Engine.Actor.SpawnedByKismet")()); }
+			ScriptFunction InterpolationStarted() { mixin(MGF!("mInterpolationStarted", "Function Engine.Actor.InterpolationStarted")()); }
+			ScriptFunction InterpolationFinished() { mixin(MGF!("mInterpolationFinished", "Function Engine.Actor.InterpolationFinished")()); }
+			ScriptFunction InterpolationChanged() { mixin(MGF!("mInterpolationChanged", "Function Engine.Actor.InterpolationChanged")()); }
+			ScriptFunction RigidBodyCollision() { mixin(MGF!("mRigidBodyCollision", "Function Engine.Actor.RigidBodyCollision")()); }
+			ScriptFunction OnRanOver() { mixin(MGF!("mOnRanOver", "Function Engine.Actor.OnRanOver")()); }
+			ScriptFunction SetHUDLocation() { mixin(MGF!("mSetHUDLocation", "Function Engine.Actor.SetHUDLocation")()); }
+			ScriptFunction NativePostRenderFor() { mixin(MGF!("mNativePostRenderFor", "Function Engine.Actor.NativePostRenderFor")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function Engine.Actor.PostRenderFor")()); }
+			ScriptFunction RootMotionModeChanged() { mixin(MGF!("mRootMotionModeChanged", "Function Engine.Actor.RootMotionModeChanged")()); }
+			ScriptFunction RootMotionExtracted() { mixin(MGF!("mRootMotionExtracted", "Function Engine.Actor.RootMotionExtracted")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function Engine.Actor.PostInitAnimTree")()); }
+			ScriptFunction GetPackageGuid() { mixin(MGF!("mGetPackageGuid", "Function Engine.Actor.GetPackageGuid")()); }
+			ScriptFunction OnRigidBodySpringOverextension() { mixin(MGF!("mOnRigidBodySpringOverextension", "Function Engine.Actor.OnRigidBodySpringOverextension")()); }
+			ScriptFunction IsInPersistentLevel() { mixin(MGF!("mIsInPersistentLevel", "Function Engine.Actor.IsInPersistentLevel")()); }
+			ScriptFunction GetAimFrictionExtent() { mixin(MGF!("mGetAimFrictionExtent", "Function Engine.Actor.GetAimFrictionExtent")()); }
+			ScriptFunction GetAimAdhesionExtent() { mixin(MGF!("mGetAimAdhesionExtent", "Function Engine.Actor.GetAimAdhesionExtent")()); }
+			ScriptFunction PlayParticleEffect() { mixin(MGF!("mPlayParticleEffect", "Function Engine.Actor.PlayParticleEffect")()); }
+			ScriptFunction CreateForceField() { mixin(MGF!("mCreateForceField", "Function Engine.Actor.CreateForceField")()); }
+			ScriptFunction TrailsNotify() { mixin(MGF!("mTrailsNotify", "Function Engine.Actor.TrailsNotify")()); }
+			ScriptFunction TrailsNotifyTick() { mixin(MGF!("mTrailsNotifyTick", "Function Engine.Actor.TrailsNotifyTick")()); }
+			ScriptFunction TrailsNotifyEnd() { mixin(MGF!("mTrailsNotifyEnd", "Function Engine.Actor.TrailsNotifyEnd")()); }
+			ScriptFunction SupportsKismetModification() { mixin(MGF!("mSupportsKismetModification", "Function Engine.Actor.SupportsKismetModification")()); }
+			ScriptFunction AnimTreeUpdated() { mixin(MGF!("mAnimTreeUpdated", "Function Engine.Actor.AnimTreeUpdated")()); }
+			ScriptFunction PostDemoRewind() { mixin(MGF!("mPostDemoRewind", "Function Engine.Actor.PostDemoRewind")()); }
+			ScriptFunction ReplicationEnded() { mixin(MGF!("mReplicationEnded", "Function Engine.Actor.ReplicationEnded")()); }
+			ScriptFunction GetAvoidanceVector() { mixin(MGF!("mGetAvoidanceVector", "Function Engine.Actor.GetAvoidanceVector")()); }
+			ScriptFunction WillOverlap() { mixin(MGF!("mWillOverlap", "Function Engine.Actor.WillOverlap")()); }
+			ScriptFunction ShouldBeHiddenBySHOW_NavigationNodes() { mixin(MGF!("mShouldBeHiddenBySHOW_NavigationNodes", "Function Engine.Actor.ShouldBeHiddenBySHOW_NavigationNodes")()); }
+			ScriptFunction GetSpectatorName() { mixin(MGF!("mGetSpectatorName", "Function Engine.Actor.GetSpectatorName")()); }
+			ScriptFunction GetSpectatorDescription() { mixin(MGF!("mGetSpectatorDescription", "Function Engine.Actor.GetSpectatorDescription")()); }
+			ScriptFunction GetSpectatorHealthInfo() { mixin(MGF!("mGetSpectatorHealthInfo", "Function Engine.Actor.GetSpectatorHealthInfo")()); }
 		}
 	}
 	static struct Constants
@@ -646,11 +647,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.AnimSlotDesc")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.AnimSlotDesc")()); }
 		@property final auto ref
 		{
-			ScriptName SlotName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			int NumChannels() { return *cast(int*)(cast(size_t)&this + 8); }
+			ScriptName SlotName() { mixin(MGPS!(ScriptName, 0)()); }
+			int NumChannels() { mixin(MGPS!(int, 8)()); }
 		}
 	}
 	struct RigidBodyState
@@ -658,14 +659,14 @@ public extern(D):
 		private ubyte __buffer__[57];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.RigidBodyState")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.RigidBodyState")()); }
 		@property final auto ref
 		{
-			ubyte bNewData() { return *cast(ubyte*)(cast(size_t)&this + 56); }
-			Vector AngVel() { return *cast(Vector*)(cast(size_t)&this + 44); }
-			Vector LinVel() { return *cast(Vector*)(cast(size_t)&this + 32); }
-			UObject.Quat Quaternion() { return *cast(UObject.Quat*)(cast(size_t)&this + 16); }
-			Vector Position() { return *cast(Vector*)(cast(size_t)&this + 0); }
+			ubyte bNewData() { mixin(MGPS!(ubyte, 56)()); }
+			Vector AngVel() { mixin(MGPS!(Vector, 44)()); }
+			Vector LinVel() { mixin(MGPS!(Vector, 32)()); }
+			UObject.Quat Quaternion() { mixin(MGPS!(UObject.Quat, 16)()); }
+			Vector Position() { mixin(MGPS!(Vector, 0)()); }
 		}
 	}
 	struct RigidBodyContactInfo
@@ -673,14 +674,14 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.RigidBodyContactInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.RigidBodyContactInfo")()); }
 		@property final auto ref
 		{
-			PhysicalMaterial PhysMaterial() { return *cast(PhysicalMaterial*)(cast(size_t)&this + 52); }
-			Vector ContactVelocity() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			float ContactPenetration() { return *cast(float*)(cast(size_t)&this + 24); }
-			Vector ContactNormal() { return *cast(Vector*)(cast(size_t)&this + 12); }
-			Vector ContactPosition() { return *cast(Vector*)(cast(size_t)&this + 0); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPS!(PhysicalMaterial, 52)()); }
+			Vector ContactVelocity() { mixin(MGPS!(Vector, 28)()); }
+			float ContactPenetration() { mixin(MGPS!(float, 24)()); }
+			Vector ContactNormal() { mixin(MGPS!(Vector, 12)()); }
+			Vector ContactPosition() { mixin(MGPS!(Vector, 0)()); }
 		}
 	}
 	struct CollisionImpactData
@@ -688,12 +689,12 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.CollisionImpactData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.CollisionImpactData")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Actor.RigidBodyContactInfo) ContactInfos() { return *cast(ScriptArray!(Actor.RigidBodyContactInfo)*)(cast(size_t)&this + 0); }
-			Vector TotalFrictionForceVector() { return *cast(Vector*)(cast(size_t)&this + 24); }
-			Vector TotalNormalForceVector() { return *cast(Vector*)(cast(size_t)&this + 12); }
+			ScriptArray!(Actor.RigidBodyContactInfo) ContactInfos() { mixin(MGPS!(ScriptArray!(Actor.RigidBodyContactInfo), 0)()); }
+			Vector TotalFrictionForceVector() { mixin(MGPS!(Vector, 24)()); }
+			Vector TotalNormalForceVector() { mixin(MGPS!(Vector, 12)()); }
 		}
 	}
 	struct PhysEffectInfo
@@ -701,13 +702,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.PhysEffectInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.PhysEffectInfo")()); }
 		@property final auto ref
 		{
-			SoundCue Sound() { return *cast(SoundCue*)(cast(size_t)&this + 12); }
-			ParticleSystem Effect() { return *cast(ParticleSystem*)(cast(size_t)&this + 8); }
-			float ReFireDelay() { return *cast(float*)(cast(size_t)&this + 4); }
-			float Threshold() { return *cast(float*)(cast(size_t)&this + 0); }
+			SoundCue Sound() { mixin(MGPS!(SoundCue, 12)()); }
+			ParticleSystem Effect() { mixin(MGPS!(ParticleSystem, 8)()); }
+			float ReFireDelay() { mixin(MGPS!(float, 4)()); }
+			float Threshold() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	struct ActorReference
@@ -715,7 +716,7 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.ActorReference")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.ActorReference")()); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
@@ -727,11 +728,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.NavReference")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.NavReference")()); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
-			NavigationPoint Nav() { return *cast(NavigationPoint*)(cast(size_t)&this + 0); }
+			NavigationPoint Nav() { mixin(MGPS!(NavigationPoint, 0)()); }
 		}
 	}
 	struct BasedPosition
@@ -739,14 +740,14 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.BasedPosition")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.BasedPosition")()); }
 		@property final auto ref
 		{
-			Vector CachedTransPosition() { return *cast(Vector*)(cast(size_t)&this + 40); }
-			Rotator CachedBaseRotation() { return *cast(Rotator*)(cast(size_t)&this + 28); }
-			Vector CachedBaseLocation() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			Vector Position() { return *cast(Vector*)(cast(size_t)&this + 4); }
-			Actor Base() { return *cast(Actor*)(cast(size_t)&this + 0); }
+			Vector CachedTransPosition() { mixin(MGPS!(Vector, 40)()); }
+			Rotator CachedBaseRotation() { mixin(MGPS!(Rotator, 28)()); }
+			Vector CachedBaseLocation() { mixin(MGPS!(Vector, 16)()); }
+			Vector Position() { mixin(MGPS!(Vector, 4)()); }
+			Actor Base() { mixin(MGPS!(Actor, 0)()); }
 		}
 	}
 	struct TraceHitInfo
@@ -754,14 +755,15 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.TraceHitInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.TraceHitInfo")()); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Material' has the same name as a defined type!
-			PhysicalMaterial PhysMaterial() { return *cast(PhysicalMaterial*)(cast(size_t)&this + 4); }
-			int Item() { return *cast(int*)(cast(size_t)&this + 8); }
-			int LevelIndex() { return *cast(int*)(cast(size_t)&this + 12); }
-			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 16); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPS!(PhysicalMaterial, 4)()); }
+			int Item() { mixin(MGPS!(int, 8)()); }
+			int LevelIndex() { mixin(MGPS!(int, 12)()); }
+			ScriptName BoneName() { mixin(MGPS!(ScriptName, 16)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'HitComponent'!
 		}
 	}
 	struct ImpactInfo
@@ -769,15 +771,15 @@ public extern(D):
 		private ubyte __buffer__[80];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.ImpactInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.ImpactInfo")()); }
 		@property final auto ref
 		{
-			Actor HitActor() { return *cast(Actor*)(cast(size_t)&this + 0); }
-			Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 4); }
-			Vector HitNormal() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			Vector RayDir() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			Vector StartTrace() { return *cast(Vector*)(cast(size_t)&this + 40); }
-			Actor.TraceHitInfo HitInfo() { return *cast(Actor.TraceHitInfo*)(cast(size_t)&this + 52); }
+			Actor HitActor() { mixin(MGPS!(Actor, 0)()); }
+			Vector HitLocation() { mixin(MGPS!(Vector, 4)()); }
+			Vector HitNormal() { mixin(MGPS!(Vector, 16)()); }
+			Vector RayDir() { mixin(MGPS!(Vector, 28)()); }
+			Vector StartTrace() { mixin(MGPS!(Vector, 40)()); }
+			Actor.TraceHitInfo HitInfo() { mixin(MGPS!(Actor.TraceHitInfo, 52)()); }
 		}
 	}
 	struct AnimSlotInfo
@@ -785,11 +787,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.AnimSlotInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.AnimSlotInfo")()); }
 		@property final auto ref
 		{
-			ScriptName SlotName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptArray!(float) ChannelWeights() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 8); }
+			ScriptName SlotName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(float) ChannelWeights() { mixin(MGPS!(ScriptArray!(float), 8)()); }
 		}
 	}
 	struct TimerData
@@ -797,21 +799,21 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Actor.TimerData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.TimerData")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName FuncName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-				float Rate() { return *cast(float*)(cast(size_t)&this + 12); }
-				float Count() { return *cast(float*)(cast(size_t)&this + 16); }
-				float TimerTimeDilation() { return *cast(float*)(cast(size_t)&this + 20); }
-				UObject TimerObj() { return *cast(UObject*)(cast(size_t)&this + 24); }
+				ScriptName FuncName() { mixin(MGPS!(ScriptName, 4)()); }
+				float Rate() { mixin(MGPS!(float, 12)()); }
+				float Count() { mixin(MGPS!(float, 16)()); }
+				float TimerTimeDilation() { mixin(MGPS!(float, 20)()); }
+				UObject TimerObj() { mixin(MGPS!(UObject, 24)()); }
 			}
-			bool bLoop() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-			bool bLoop(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
-			bool bPaused() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-			bool bPaused(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
+			bool bLoop() { mixin(MGBPS!(0, 0x1)()); }
+			bool bLoop(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bPaused() { mixin(MGBPS!(0, 0x2)()); }
+			bool bPaused(bool val) { mixin(MSBPS!(0, 0x2)()); }
 		}
 	}
 	@property final
@@ -820,257 +822,259 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) Components() { return *cast(ScriptArray!(
+void*) Components() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 60); }
+void*), 60)()); }
 			// WARNING: Property 'WorldInfo' has the same name as a defined type!
-			ScriptName InitialState() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 268); }
-			Pawn Instigator() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 240); }
-			ScriptArray!(SequenceEvent) GeneratedEvents() { return *cast(ScriptArray!(SequenceEvent)*)(cast(size_t)cast(void*)this + 452); }
-			Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 188); }
-			Rotator Rotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 84); }
-			Actor.ENetRole Role() { return *cast(Actor.ENetRole*)(cast(size_t)cast(void*)this + 138); }
-			Actor.ENetRole RemoteRole() { return *cast(Actor.ENetRole*)(cast(size_t)cast(void*)this + 137); }
+			ScriptName InitialState() { mixin(MGPC!(ScriptName, 268)()); }
+			Pawn Instigator() { mixin(MGPC!(Pawn, 240)()); }
+			ScriptArray!(SequenceEvent) GeneratedEvents() { mixin(MGPC!(ScriptArray!(SequenceEvent), 452)()); }
+			Vector Location() { mixin(MGPC!(Vector, 188)()); }
+			Rotator Rotation() { mixin(MGPC!(Rotator, 84)()); }
+			Actor.ENetRole Role() { mixin(MGPC!(Actor.ENetRole, 138)()); }
+			Actor.ENetRole RemoteRole() { mixin(MGPC!(Actor.ENetRole, 137)()); }
 			// WARNING: Property 'PhysicsVolume' has the same name as a defined type!
-			Actor Base() { return *cast(Actor*)(cast(size_t)cast(void*)this + 148); }
-			Vector RelativeLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 388); }
-			Rotator RelativeRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 400); }
-			ScriptName BaseBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 368); }
-			Vector Velocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 328); }
-			Vector Acceleration() { return *cast(Vector*)(cast(size_t)cast(void*)this + 340); }
-			Actor Owner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 144); }
-			Actor.EPhysics Physics() { return *cast(Actor.EPhysics*)(cast(size_t)cast(void*)this + 136); }
-			float LastRenderTime() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-			ScriptArray!(SeqAct_Latent) LatentActions() { return *cast(ScriptArray!(SeqAct_Latent)*)(cast(size_t)cast(void*)this + 464); }
-			ScriptArray!(Actor) Attached() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 376); }
-			float NetUpdateFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 204); }
+			Actor Base() { mixin(MGPC!(Actor, 148)()); }
+			Vector RelativeLocation() { mixin(MGPC!(Vector, 388)()); }
+			Rotator RelativeRotation() { mixin(MGPC!(Rotator, 400)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BaseSkelComponent'!
+			ScriptName BaseBoneName() { mixin(MGPC!(ScriptName, 368)()); }
+			Vector Velocity() { mixin(MGPC!(Vector, 328)()); }
+			Vector Acceleration() { mixin(MGPC!(Vector, 340)()); }
+			Actor Owner() { mixin(MGPC!(Actor, 144)()); }
+			Actor.EPhysics Physics() { mixin(MGPC!(Actor.EPhysics, 136)()); }
+			float LastRenderTime() { mixin(MGPC!(float, 256)()); }
+			ScriptArray!(SeqAct_Latent) LatentActions() { mixin(MGPC!(ScriptArray!(SeqAct_Latent), 464)()); }
+			ScriptArray!(Actor) Attached() { mixin(MGPC!(ScriptArray!(Actor), 376)()); }
+			float NetUpdateFrequency() { mixin(MGPC!(float, 204)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CollisionComponent'!
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) AllComponents() { return *cast(ScriptArray!(
+void*) AllComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 72); }
-			float DrawScale() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			Vector DrawScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 100); }
-			Vector PrePivot() { return *cast(Vector*)(cast(size_t)cast(void*)this + 112); }
-			UObject.Color EditorIconColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 124); }
-			UObject.RenderCommandFence DetachFence() { return *cast(UObject.RenderCommandFence*)(cast(size_t)cast(void*)this + 128); }
-			float CustomTimeDilation() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-			Actor.ECollisionType CollisionType() { return *cast(Actor.ECollisionType*)(cast(size_t)cast(void*)this + 139); }
-			Actor.ECollisionType ReplicatedCollisionType() { return *cast(Actor.ECollisionType*)(cast(size_t)cast(void*)this + 140); }
-			UObject.ETickingGroup TickGroup() { return *cast(UObject.ETickingGroup*)(cast(size_t)cast(void*)this + 141); }
-			ScriptArray!(Actor.TimerData) Timers() { return *cast(ScriptArray!(Actor.TimerData)*)(cast(size_t)cast(void*)this + 152); }
-			int NetTag() { return *cast(int*)(cast(size_t)cast(void*)this + 176); }
-			int IndexInTickList() { return *cast(int*)(cast(size_t)cast(void*)this + 180); }
-			float LastSlowRelevancyCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 184); }
-			float NetUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 200); }
-			float NetPriority() { return *cast(float*)(cast(size_t)cast(void*)this + 208); }
-			float LastNetUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 212); }
-			float TimeSinceLastTick() { return *cast(float*)(cast(size_t)cast(void*)this + 216); }
-			float TickFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 220); }
-			float TickFrequencyAtEndDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 224); }
-			float TickFrequencyDecreaseDistanceStart() { return *cast(float*)(cast(size_t)cast(void*)this + 228); }
-			float TickFrequencyDecreaseDistanceEnd() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			float TickFrequencyLastSeenTimeBeforeForcingMaxTickFrequency() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
-			float LifeSpan() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float CreationTime() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 260); }
-			ScriptName Group() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 276); }
-			QWord HiddenEditorViews() { return *cast(QWord*)(cast(size_t)cast(void*)this + 284); }
-			ScriptArray!(Actor) Touching() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 292); }
-			ScriptArray!(Actor) Children() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 304); }
-			float LatentFloat() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-			AnimNodeSequence LatentSeqNode() { return *cast(AnimNodeSequence*)(cast(size_t)cast(void*)this + 320); }
-			Vector AngularVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 352); }
-			int OverlapTag() { return *cast(int*)(cast(size_t)cast(void*)this + 416); }
-			Rotator RotationRate() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 420); }
-			Actor PendingTouch() { return *cast(Actor*)(cast(size_t)cast(void*)this + 432); }
-			ScriptClass MessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 436); }
-			ScriptArray!(ScriptClass) SupportedEvents() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 440); }
+void*), 72)()); }
+			float DrawScale() { mixin(MGPC!(float, 96)()); }
+			Vector DrawScale3D() { mixin(MGPC!(Vector, 100)()); }
+			Vector PrePivot() { mixin(MGPC!(Vector, 112)()); }
+			UObject.Color EditorIconColor() { mixin(MGPC!(UObject.Color, 124)()); }
+			UObject.RenderCommandFence DetachFence() { mixin(MGPC!(UObject.RenderCommandFence, 128)()); }
+			float CustomTimeDilation() { mixin(MGPC!(float, 132)()); }
+			Actor.ECollisionType CollisionType() { mixin(MGPC!(Actor.ECollisionType, 139)()); }
+			Actor.ECollisionType ReplicatedCollisionType() { mixin(MGPC!(Actor.ECollisionType, 140)()); }
+			UObject.ETickingGroup TickGroup() { mixin(MGPC!(UObject.ETickingGroup, 141)()); }
+			ScriptArray!(Actor.TimerData) Timers() { mixin(MGPC!(ScriptArray!(Actor.TimerData), 152)()); }
+			int NetTag() { mixin(MGPC!(int, 176)()); }
+			int IndexInTickList() { mixin(MGPC!(int, 180)()); }
+			float LastSlowRelevancyCheckTime() { mixin(MGPC!(float, 184)()); }
+			float NetUpdateTime() { mixin(MGPC!(float, 200)()); }
+			float NetPriority() { mixin(MGPC!(float, 208)()); }
+			float LastNetUpdateTime() { mixin(MGPC!(float, 212)()); }
+			float TimeSinceLastTick() { mixin(MGPC!(float, 216)()); }
+			float TickFrequency() { mixin(MGPC!(float, 220)()); }
+			float TickFrequencyAtEndDistance() { mixin(MGPC!(float, 224)()); }
+			float TickFrequencyDecreaseDistanceStart() { mixin(MGPC!(float, 228)()); }
+			float TickFrequencyDecreaseDistanceEnd() { mixin(MGPC!(float, 232)()); }
+			float TickFrequencyLastSeenTimeBeforeForcingMaxTickFrequency() { mixin(MGPC!(float, 236)()); }
+			float LifeSpan() { mixin(MGPC!(float, 248)()); }
+			float CreationTime() { mixin(MGPC!(float, 252)()); }
+			ScriptName Tag() { mixin(MGPC!(ScriptName, 260)()); }
+			ScriptName Group() { mixin(MGPC!(ScriptName, 276)()); }
+			QWord HiddenEditorViews() { mixin(MGPC!(QWord, 284)()); }
+			ScriptArray!(Actor) Touching() { mixin(MGPC!(ScriptArray!(Actor), 292)()); }
+			ScriptArray!(Actor) Children() { mixin(MGPC!(ScriptArray!(Actor), 304)()); }
+			float LatentFloat() { mixin(MGPC!(float, 316)()); }
+			AnimNodeSequence LatentSeqNode() { mixin(MGPC!(AnimNodeSequence, 320)()); }
+			Vector AngularVelocity() { mixin(MGPC!(Vector, 352)()); }
+			int OverlapTag() { mixin(MGPC!(int, 416)()); }
+			Rotator RotationRate() { mixin(MGPC!(Rotator, 420)()); }
+			Actor PendingTouch() { mixin(MGPC!(Actor, 432)()); }
+			ScriptClass MessageClass() { mixin(MGPC!(ScriptClass, 436)()); }
+			ScriptArray!(ScriptClass) SupportedEvents() { mixin(MGPC!(ScriptArray!(ScriptClass), 440)()); }
 		}
-		bool bGameRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x10000) != 0; }
-		bool bGameRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x10000; } return val; }
-		bool bStatic() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x1) != 0; }
-		bool bStatic(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x1; } return val; }
-		bool bNoDelete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x4) != 0; }
-		bool bNoDelete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x4; } return val; }
-		bool bScriptInitialized() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x800000) != 0; }
-		bool bScriptInitialized(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x800000; } return val; }
-		bool bProjTarget() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x80000000) != 0; }
-		bool bProjTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x80000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x80000000; } return val; }
-		bool bBlockActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x40000000) != 0; }
-		bool bBlockActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x40000000; } return val; }
-		bool bHurtEntry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x8000) != 0; }
-		bool bHurtEntry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x8000; } return val; }
-		bool bWorldGeometry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x80) != 0; }
-		bool bWorldGeometry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x80; } return val; }
-		bool bCanBeDamaged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x80000) != 0; }
-		bool bCanBeDamaged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x80000; } return val; }
-		bool bDeleteMe() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x8) != 0; }
-		bool bDeleteMe(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x8; } return val; }
-		bool bTearOff() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x4000000) != 0; }
-		bool bTearOff(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x4000000; } return val; }
-		bool bBounce() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x200) != 0; }
-		bool bBounce(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x200; } return val; }
-		bool bHardAttach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x400) != 0; }
-		bool bHardAttach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x400; } return val; }
-		bool bCollideActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x8000000) != 0; }
-		bool bCollideActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x8000000; } return val; }
-		bool bCollideWorld() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x10000000) != 0; }
-		bool bCollideWorld(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x10000000; } return val; }
-		bool bAllowFluidSurfaceInteraction() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x10000000) != 0; }
-		bool bAllowFluidSurfaceInteraction(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x10000000; } return val; }
-		bool bDebugEffectIsRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x8000000) != 0; }
-		bool bDebugEffectIsRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x8000000; } return val; }
-		bool bAlwaysRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x200000) != 0; }
-		bool bAlwaysRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x200000; } return val; }
-		bool bForceNetUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x100) != 0; }
-		bool bForceNetUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x100; } return val; }
-		bool bHidden() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x2) != 0; }
-		bool bHidden(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x2; } return val; }
-		bool bUpdateSimulatedPosition() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x2000000) != 0; }
-		bool bUpdateSimulatedPosition(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x2000000; } return val; }
-		bool bNetDirty() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x100000) != 0; }
-		bool bNetDirty(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x100000; } return val; }
-		bool bOnlyDirtyReplication() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x8000000) != 0; }
-		bool bOnlyDirtyReplication(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x8000000; } return val; }
-		bool bCanBeFrictionedTo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x4000) != 0; }
-		bool bCanBeFrictionedTo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x4000; } return val; }
-		bool bCanBeAdheredTo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x2000) != 0; }
-		bool bCanBeAdheredTo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x2000; } return val; }
-		bool bSkipActorPropertyReplication() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x1000000) != 0; }
-		bool bSkipActorPropertyReplication(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x1000000; } return val; }
-		bool bNetInitial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x800) != 0; }
-		bool bNetInitial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x800; } return val; }
-		bool bReplicateMovement() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x800000) != 0; }
-		bool bReplicateMovement(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x800000; } return val; }
-		bool bReplicateInstigator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x400000) != 0; }
-		bool bReplicateInstigator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x400000; } return val; }
-		bool bNetOwner() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x1000) != 0; }
-		bool bNetOwner(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x1000; } return val; }
-		bool bTicked() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x10) != 0; }
-		bool bTicked(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x10; } return val; }
-		bool bOnlyOwnerSee() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x20) != 0; }
-		bool bOnlyOwnerSee(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x20; } return val; }
-		bool bTickIsDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x40) != 0; }
-		bool bTickIsDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x40; } return val; }
-		bool bIgnoreRigidBodyPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x100) != 0; }
-		bool bIgnoreRigidBodyPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x100; } return val; }
-		bool bOrientOnSlope() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x200) != 0; }
-		bool bOrientOnSlope(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x200; } return val; }
-		bool bIgnoreEncroachers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x400) != 0; }
-		bool bIgnoreEncroachers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x400; } return val; }
-		bool bPushedByEncroachers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x800) != 0; }
-		bool bPushedByEncroachers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x800; } return val; }
-		bool bDestroyedByInterpActor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x1000) != 0; }
-		bool bDestroyedByInterpActor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x1000; } return val; }
-		bool bRouteBeginPlayEvenIfStatic() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x2000) != 0; }
-		bool bRouteBeginPlayEvenIfStatic(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x2000; } return val; }
-		bool bIsMoving() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x4000) != 0; }
-		bool bIsMoving(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x4000; } return val; }
-		bool bAlwaysEncroachCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x8000) != 0; }
-		bool bAlwaysEncroachCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x8000; } return val; }
-		bool bHasAlternateTargetLocation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x10000) != 0; }
-		bool bHasAlternateTargetLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x10000; } return val; }
-		bool bCanStepUpOn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x20000) != 0; }
-		bool bCanStepUpOn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x20000; } return val; }
-		bool bNetTemporary() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x40000) != 0; }
-		bool bNetTemporary(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x40000; } return val; }
-		bool bOnlyRelevantToOwner() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x80000) != 0; }
-		bool bOnlyRelevantToOwner(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x80000; } return val; }
-		bool bDemoRecording() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x20000000) != 0; }
-		bool bDemoRecording(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x20000000; } return val; }
-		bool bDemoOwner() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x40000000) != 0; }
-		bool bDemoOwner(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x40000000; } return val; }
-		bool bForceDemoRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 164) & 0x80000000) != 0; }
-		bool bForceDemoRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 164) |= 0x80000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 164) &= ~0x80000000; } return val; }
-		bool bNetInitialRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x1) != 0; }
-		bool bNetInitialRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x1; } return val; }
-		bool bReplicateRigidBodyLocation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x2) != 0; }
-		bool bReplicateRigidBodyLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x2; } return val; }
-		bool bKillDuringLevelTransition() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x4) != 0; }
-		bool bKillDuringLevelTransition(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x4; } return val; }
-		bool bExchangedRoles() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x8) != 0; }
-		bool bExchangedRoles(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x8; } return val; }
-		bool bConsiderAllStaticMeshComponentsForStreaming() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x10) != 0; }
-		bool bConsiderAllStaticMeshComponentsForStreaming(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x10; } return val; }
-		bool bDebug() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x20) != 0; }
-		bool bDebug(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x20; } return val; }
-		bool bPostRenderIfNotVisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x40) != 0; }
-		bool bPostRenderIfNotVisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x40; } return val; }
-		bool s_bThrottleNetRelevancy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x80) != 0; }
-		bool s_bThrottleNetRelevancy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x80; } return val; }
-		bool bPendingNetUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x200) != 0; }
-		bool bPendingNetUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x200; } return val; }
-		bool bIgnoreBaseRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x800) != 0; }
-		bool bIgnoreBaseRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x800; } return val; }
-		bool bShadowParented() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x1000) != 0; }
-		bool bShadowParented(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x1000; } return val; }
-		bool bMovable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x20000) != 0; }
-		bool bMovable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x20000; } return val; }
-		bool bDestroyInPainVolume() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x40000) != 0; }
-		bool bDestroyInPainVolume(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x40000; } return val; }
-		bool bShouldBaseAtStartup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x100000) != 0; }
-		bool bShouldBaseAtStartup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x100000; } return val; }
-		bool bPendingDelete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x200000) != 0; }
-		bool bPendingDelete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x200000; } return val; }
-		bool bCanTeleport() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x400000) != 0; }
-		bool bCanTeleport(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x400000; } return val; }
-		bool bAlwaysTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x800000) != 0; }
-		bool bAlwaysTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x800000; } return val; }
-		bool bBlocksNavigation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x1000000) != 0; }
-		bool bBlocksNavigation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x1000000; } return val; }
-		bool BlockRigidBody() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x2000000) != 0; }
-		bool BlockRigidBody(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x2000000; } return val; }
-		bool bCollideWhenPlacing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x4000000) != 0; }
-		bool bCollideWhenPlacing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x4000000; } return val; }
-		bool bCollideComplex() { return (*cast(uint*)(cast(size_t)cast(void*)this + 168) & 0x20000000) != 0; }
-		bool bCollideComplex(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 168) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 168) &= ~0x20000000; } return val; }
-		bool bBlocksTeleport() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x1) != 0; }
-		bool bBlocksTeleport(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x1; } return val; }
-		bool bMoveIgnoresDestruction() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x2) != 0; }
-		bool bMoveIgnoresDestruction(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x2; } return val; }
-		bool bNoEncroachCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x4) != 0; }
-		bool bNoEncroachCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x4; } return val; }
-		bool bCollideAsEncroacher() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x8) != 0; }
-		bool bCollideAsEncroacher(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x8; } return val; }
-		bool bPhysRigidBodyOutOfWorldCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x10) != 0; }
-		bool bPhysRigidBodyOutOfWorldCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x10; } return val; }
-		bool bComponentOutsideWorld() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x20) != 0; }
-		bool bComponentOutsideWorld(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x20; } return val; }
-		bool bForceOctreeSNFilter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x40) != 0; }
-		bool bForceOctreeSNFilter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x40; } return val; }
-		bool bRigidBodyWasAwake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x80) != 0; }
-		bool bRigidBodyWasAwake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x80; } return val; }
-		bool bCallRigidBodyWakeEvents() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x100) != 0; }
-		bool bCallRigidBodyWakeEvents(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x100; } return val; }
-		bool bJustTeleported() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x400) != 0; }
-		bool bJustTeleported(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x400; } return val; }
-		bool bHiddenEd() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x2000) != 0; }
-		bool bHiddenEd(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x2000; } return val; }
-		bool bEditable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x4000) != 0; }
-		bool bEditable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x4000; } return val; }
-		bool bHiddenEdGroup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x8000) != 0; }
-		bool bHiddenEdGroup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x8000; } return val; }
-		bool bHiddenEdCustom() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x10000) != 0; }
-		bool bHiddenEdCustom(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x10000; } return val; }
-		bool bHiddenEdTemporary() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x20000) != 0; }
-		bool bHiddenEdTemporary(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x20000; } return val; }
-		bool bHiddenEdLevel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x40000) != 0; }
-		bool bHiddenEdLevel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x40000; } return val; }
-		bool bEdShouldSnap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x80000) != 0; }
-		bool bEdShouldSnap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x80000; } return val; }
-		bool bTempEditor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x100000) != 0; }
-		bool bTempEditor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x100000; } return val; }
-		bool bPathColliding() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x200000) != 0; }
-		bool bPathColliding(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x200000; } return val; }
-		bool bPathTemp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x400000) != 0; }
-		bool bPathTemp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x400000; } return val; }
-		bool bLockLocation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x1000000) != 0; }
-		bool bLockLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x1000000; } return val; }
-		bool bForceAllowKismetModification() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x2000000) != 0; }
-		bool bForceAllowKismetModification(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x2000000; } return val; }
-		bool m_bPotentialSeekingTarget() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x4000000) != 0; }
-		bool m_bPotentialSeekingTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x4000000; } return val; }
+		bool bGameRelevant() { mixin(MGBPC!(168, 0x10000)()); }
+		bool bGameRelevant(bool val) { mixin(MSBPC!(168, 0x10000)()); }
+		bool bStatic() { mixin(MGBPC!(164, 0x1)()); }
+		bool bStatic(bool val) { mixin(MSBPC!(164, 0x1)()); }
+		bool bNoDelete() { mixin(MGBPC!(164, 0x4)()); }
+		bool bNoDelete(bool val) { mixin(MSBPC!(164, 0x4)()); }
+		bool bScriptInitialized() { mixin(MGBPC!(172, 0x800000)()); }
+		bool bScriptInitialized(bool val) { mixin(MSBPC!(172, 0x800000)()); }
+		bool bProjTarget() { mixin(MGBPC!(168, 0x80000000)()); }
+		bool bProjTarget(bool val) { mixin(MSBPC!(168, 0x80000000)()); }
+		bool bBlockActors() { mixin(MGBPC!(168, 0x40000000)()); }
+		bool bBlockActors(bool val) { mixin(MSBPC!(168, 0x40000000)()); }
+		bool bHurtEntry() { mixin(MGBPC!(168, 0x8000)()); }
+		bool bHurtEntry(bool val) { mixin(MSBPC!(168, 0x8000)()); }
+		bool bWorldGeometry() { mixin(MGBPC!(164, 0x80)()); }
+		bool bWorldGeometry(bool val) { mixin(MSBPC!(164, 0x80)()); }
+		bool bCanBeDamaged() { mixin(MGBPC!(168, 0x80000)()); }
+		bool bCanBeDamaged(bool val) { mixin(MSBPC!(168, 0x80000)()); }
+		bool bDeleteMe() { mixin(MGBPC!(164, 0x8)()); }
+		bool bDeleteMe(bool val) { mixin(MSBPC!(164, 0x8)()); }
+		bool bTearOff() { mixin(MGBPC!(164, 0x4000000)()); }
+		bool bTearOff(bool val) { mixin(MSBPC!(164, 0x4000000)()); }
+		bool bBounce() { mixin(MGBPC!(172, 0x200)()); }
+		bool bBounce(bool val) { mixin(MSBPC!(172, 0x200)()); }
+		bool bHardAttach() { mixin(MGBPC!(168, 0x400)()); }
+		bool bHardAttach(bool val) { mixin(MSBPC!(168, 0x400)()); }
+		bool bCollideActors() { mixin(MGBPC!(168, 0x8000000)()); }
+		bool bCollideActors(bool val) { mixin(MSBPC!(168, 0x8000000)()); }
+		bool bCollideWorld() { mixin(MGBPC!(168, 0x10000000)()); }
+		bool bCollideWorld(bool val) { mixin(MSBPC!(168, 0x10000000)()); }
+		bool bAllowFluidSurfaceInteraction() { mixin(MGBPC!(164, 0x10000000)()); }
+		bool bAllowFluidSurfaceInteraction(bool val) { mixin(MSBPC!(164, 0x10000000)()); }
+		bool bDebugEffectIsRelevant() { mixin(MGBPC!(172, 0x8000000)()); }
+		bool bDebugEffectIsRelevant(bool val) { mixin(MSBPC!(172, 0x8000000)()); }
+		bool bAlwaysRelevant() { mixin(MGBPC!(164, 0x200000)()); }
+		bool bAlwaysRelevant(bool val) { mixin(MSBPC!(164, 0x200000)()); }
+		bool bForceNetUpdate() { mixin(MGBPC!(168, 0x100)()); }
+		bool bForceNetUpdate(bool val) { mixin(MSBPC!(168, 0x100)()); }
+		bool bHidden() { mixin(MGBPC!(164, 0x2)()); }
+		bool bHidden(bool val) { mixin(MSBPC!(164, 0x2)()); }
+		bool bUpdateSimulatedPosition() { mixin(MGBPC!(164, 0x2000000)()); }
+		bool bUpdateSimulatedPosition(bool val) { mixin(MSBPC!(164, 0x2000000)()); }
+		bool bNetDirty() { mixin(MGBPC!(164, 0x100000)()); }
+		bool bNetDirty(bool val) { mixin(MSBPC!(164, 0x100000)()); }
+		bool bOnlyDirtyReplication() { mixin(MGBPC!(164, 0x8000000)()); }
+		bool bOnlyDirtyReplication(bool val) { mixin(MSBPC!(164, 0x8000000)()); }
+		bool bCanBeFrictionedTo() { mixin(MGBPC!(168, 0x4000)()); }
+		bool bCanBeFrictionedTo(bool val) { mixin(MSBPC!(168, 0x4000)()); }
+		bool bCanBeAdheredTo() { mixin(MGBPC!(168, 0x2000)()); }
+		bool bCanBeAdheredTo(bool val) { mixin(MSBPC!(168, 0x2000)()); }
+		bool bSkipActorPropertyReplication() { mixin(MGBPC!(164, 0x1000000)()); }
+		bool bSkipActorPropertyReplication(bool val) { mixin(MSBPC!(164, 0x1000000)()); }
+		bool bNetInitial() { mixin(MGBPC!(172, 0x800)()); }
+		bool bNetInitial(bool val) { mixin(MSBPC!(172, 0x800)()); }
+		bool bReplicateMovement() { mixin(MGBPC!(164, 0x800000)()); }
+		bool bReplicateMovement(bool val) { mixin(MSBPC!(164, 0x800000)()); }
+		bool bReplicateInstigator() { mixin(MGBPC!(164, 0x400000)()); }
+		bool bReplicateInstigator(bool val) { mixin(MSBPC!(164, 0x400000)()); }
+		bool bNetOwner() { mixin(MGBPC!(172, 0x1000)()); }
+		bool bNetOwner(bool val) { mixin(MSBPC!(172, 0x1000)()); }
+		bool bTicked() { mixin(MGBPC!(164, 0x10)()); }
+		bool bTicked(bool val) { mixin(MSBPC!(164, 0x10)()); }
+		bool bOnlyOwnerSee() { mixin(MGBPC!(164, 0x20)()); }
+		bool bOnlyOwnerSee(bool val) { mixin(MSBPC!(164, 0x20)()); }
+		bool bTickIsDisabled() { mixin(MGBPC!(164, 0x40)()); }
+		bool bTickIsDisabled(bool val) { mixin(MSBPC!(164, 0x40)()); }
+		bool bIgnoreRigidBodyPawns() { mixin(MGBPC!(164, 0x100)()); }
+		bool bIgnoreRigidBodyPawns(bool val) { mixin(MSBPC!(164, 0x100)()); }
+		bool bOrientOnSlope() { mixin(MGBPC!(164, 0x200)()); }
+		bool bOrientOnSlope(bool val) { mixin(MSBPC!(164, 0x200)()); }
+		bool bIgnoreEncroachers() { mixin(MGBPC!(164, 0x400)()); }
+		bool bIgnoreEncroachers(bool val) { mixin(MSBPC!(164, 0x400)()); }
+		bool bPushedByEncroachers() { mixin(MGBPC!(164, 0x800)()); }
+		bool bPushedByEncroachers(bool val) { mixin(MSBPC!(164, 0x800)()); }
+		bool bDestroyedByInterpActor() { mixin(MGBPC!(164, 0x1000)()); }
+		bool bDestroyedByInterpActor(bool val) { mixin(MSBPC!(164, 0x1000)()); }
+		bool bRouteBeginPlayEvenIfStatic() { mixin(MGBPC!(164, 0x2000)()); }
+		bool bRouteBeginPlayEvenIfStatic(bool val) { mixin(MSBPC!(164, 0x2000)()); }
+		bool bIsMoving() { mixin(MGBPC!(164, 0x4000)()); }
+		bool bIsMoving(bool val) { mixin(MSBPC!(164, 0x4000)()); }
+		bool bAlwaysEncroachCheck() { mixin(MGBPC!(164, 0x8000)()); }
+		bool bAlwaysEncroachCheck(bool val) { mixin(MSBPC!(164, 0x8000)()); }
+		bool bHasAlternateTargetLocation() { mixin(MGBPC!(164, 0x10000)()); }
+		bool bHasAlternateTargetLocation(bool val) { mixin(MSBPC!(164, 0x10000)()); }
+		bool bCanStepUpOn() { mixin(MGBPC!(164, 0x20000)()); }
+		bool bCanStepUpOn(bool val) { mixin(MSBPC!(164, 0x20000)()); }
+		bool bNetTemporary() { mixin(MGBPC!(164, 0x40000)()); }
+		bool bNetTemporary(bool val) { mixin(MSBPC!(164, 0x40000)()); }
+		bool bOnlyRelevantToOwner() { mixin(MGBPC!(164, 0x80000)()); }
+		bool bOnlyRelevantToOwner(bool val) { mixin(MSBPC!(164, 0x80000)()); }
+		bool bDemoRecording() { mixin(MGBPC!(164, 0x20000000)()); }
+		bool bDemoRecording(bool val) { mixin(MSBPC!(164, 0x20000000)()); }
+		bool bDemoOwner() { mixin(MGBPC!(164, 0x40000000)()); }
+		bool bDemoOwner(bool val) { mixin(MSBPC!(164, 0x40000000)()); }
+		bool bForceDemoRelevant() { mixin(MGBPC!(164, 0x80000000)()); }
+		bool bForceDemoRelevant(bool val) { mixin(MSBPC!(164, 0x80000000)()); }
+		bool bNetInitialRotation() { mixin(MGBPC!(168, 0x1)()); }
+		bool bNetInitialRotation(bool val) { mixin(MSBPC!(168, 0x1)()); }
+		bool bReplicateRigidBodyLocation() { mixin(MGBPC!(168, 0x2)()); }
+		bool bReplicateRigidBodyLocation(bool val) { mixin(MSBPC!(168, 0x2)()); }
+		bool bKillDuringLevelTransition() { mixin(MGBPC!(168, 0x4)()); }
+		bool bKillDuringLevelTransition(bool val) { mixin(MSBPC!(168, 0x4)()); }
+		bool bExchangedRoles() { mixin(MGBPC!(168, 0x8)()); }
+		bool bExchangedRoles(bool val) { mixin(MSBPC!(168, 0x8)()); }
+		bool bConsiderAllStaticMeshComponentsForStreaming() { mixin(MGBPC!(168, 0x10)()); }
+		bool bConsiderAllStaticMeshComponentsForStreaming(bool val) { mixin(MSBPC!(168, 0x10)()); }
+		bool bDebug() { mixin(MGBPC!(168, 0x20)()); }
+		bool bDebug(bool val) { mixin(MSBPC!(168, 0x20)()); }
+		bool bPostRenderIfNotVisible() { mixin(MGBPC!(168, 0x40)()); }
+		bool bPostRenderIfNotVisible(bool val) { mixin(MSBPC!(168, 0x40)()); }
+		bool s_bThrottleNetRelevancy() { mixin(MGBPC!(168, 0x80)()); }
+		bool s_bThrottleNetRelevancy(bool val) { mixin(MSBPC!(168, 0x80)()); }
+		bool bPendingNetUpdate() { mixin(MGBPC!(168, 0x200)()); }
+		bool bPendingNetUpdate(bool val) { mixin(MSBPC!(168, 0x200)()); }
+		bool bIgnoreBaseRotation() { mixin(MGBPC!(168, 0x800)()); }
+		bool bIgnoreBaseRotation(bool val) { mixin(MSBPC!(168, 0x800)()); }
+		bool bShadowParented() { mixin(MGBPC!(168, 0x1000)()); }
+		bool bShadowParented(bool val) { mixin(MSBPC!(168, 0x1000)()); }
+		bool bMovable() { mixin(MGBPC!(168, 0x20000)()); }
+		bool bMovable(bool val) { mixin(MSBPC!(168, 0x20000)()); }
+		bool bDestroyInPainVolume() { mixin(MGBPC!(168, 0x40000)()); }
+		bool bDestroyInPainVolume(bool val) { mixin(MSBPC!(168, 0x40000)()); }
+		bool bShouldBaseAtStartup() { mixin(MGBPC!(168, 0x100000)()); }
+		bool bShouldBaseAtStartup(bool val) { mixin(MSBPC!(168, 0x100000)()); }
+		bool bPendingDelete() { mixin(MGBPC!(168, 0x200000)()); }
+		bool bPendingDelete(bool val) { mixin(MSBPC!(168, 0x200000)()); }
+		bool bCanTeleport() { mixin(MGBPC!(168, 0x400000)()); }
+		bool bCanTeleport(bool val) { mixin(MSBPC!(168, 0x400000)()); }
+		bool bAlwaysTick() { mixin(MGBPC!(168, 0x800000)()); }
+		bool bAlwaysTick(bool val) { mixin(MSBPC!(168, 0x800000)()); }
+		bool bBlocksNavigation() { mixin(MGBPC!(168, 0x1000000)()); }
+		bool bBlocksNavigation(bool val) { mixin(MSBPC!(168, 0x1000000)()); }
+		bool BlockRigidBody() { mixin(MGBPC!(168, 0x2000000)()); }
+		bool BlockRigidBody(bool val) { mixin(MSBPC!(168, 0x2000000)()); }
+		bool bCollideWhenPlacing() { mixin(MGBPC!(168, 0x4000000)()); }
+		bool bCollideWhenPlacing(bool val) { mixin(MSBPC!(168, 0x4000000)()); }
+		bool bCollideComplex() { mixin(MGBPC!(168, 0x20000000)()); }
+		bool bCollideComplex(bool val) { mixin(MSBPC!(168, 0x20000000)()); }
+		bool bBlocksTeleport() { mixin(MGBPC!(172, 0x1)()); }
+		bool bBlocksTeleport(bool val) { mixin(MSBPC!(172, 0x1)()); }
+		bool bMoveIgnoresDestruction() { mixin(MGBPC!(172, 0x2)()); }
+		bool bMoveIgnoresDestruction(bool val) { mixin(MSBPC!(172, 0x2)()); }
+		bool bNoEncroachCheck() { mixin(MGBPC!(172, 0x4)()); }
+		bool bNoEncroachCheck(bool val) { mixin(MSBPC!(172, 0x4)()); }
+		bool bCollideAsEncroacher() { mixin(MGBPC!(172, 0x8)()); }
+		bool bCollideAsEncroacher(bool val) { mixin(MSBPC!(172, 0x8)()); }
+		bool bPhysRigidBodyOutOfWorldCheck() { mixin(MGBPC!(172, 0x10)()); }
+		bool bPhysRigidBodyOutOfWorldCheck(bool val) { mixin(MSBPC!(172, 0x10)()); }
+		bool bComponentOutsideWorld() { mixin(MGBPC!(172, 0x20)()); }
+		bool bComponentOutsideWorld(bool val) { mixin(MSBPC!(172, 0x20)()); }
+		bool bForceOctreeSNFilter() { mixin(MGBPC!(172, 0x40)()); }
+		bool bForceOctreeSNFilter(bool val) { mixin(MSBPC!(172, 0x40)()); }
+		bool bRigidBodyWasAwake() { mixin(MGBPC!(172, 0x80)()); }
+		bool bRigidBodyWasAwake(bool val) { mixin(MSBPC!(172, 0x80)()); }
+		bool bCallRigidBodyWakeEvents() { mixin(MGBPC!(172, 0x100)()); }
+		bool bCallRigidBodyWakeEvents(bool val) { mixin(MSBPC!(172, 0x100)()); }
+		bool bJustTeleported() { mixin(MGBPC!(172, 0x400)()); }
+		bool bJustTeleported(bool val) { mixin(MSBPC!(172, 0x400)()); }
+		bool bHiddenEd() { mixin(MGBPC!(172, 0x2000)()); }
+		bool bHiddenEd(bool val) { mixin(MSBPC!(172, 0x2000)()); }
+		bool bEditable() { mixin(MGBPC!(172, 0x4000)()); }
+		bool bEditable(bool val) { mixin(MSBPC!(172, 0x4000)()); }
+		bool bHiddenEdGroup() { mixin(MGBPC!(172, 0x8000)()); }
+		bool bHiddenEdGroup(bool val) { mixin(MSBPC!(172, 0x8000)()); }
+		bool bHiddenEdCustom() { mixin(MGBPC!(172, 0x10000)()); }
+		bool bHiddenEdCustom(bool val) { mixin(MSBPC!(172, 0x10000)()); }
+		bool bHiddenEdTemporary() { mixin(MGBPC!(172, 0x20000)()); }
+		bool bHiddenEdTemporary(bool val) { mixin(MSBPC!(172, 0x20000)()); }
+		bool bHiddenEdLevel() { mixin(MGBPC!(172, 0x40000)()); }
+		bool bHiddenEdLevel(bool val) { mixin(MSBPC!(172, 0x40000)()); }
+		bool bEdShouldSnap() { mixin(MGBPC!(172, 0x80000)()); }
+		bool bEdShouldSnap(bool val) { mixin(MSBPC!(172, 0x80000)()); }
+		bool bTempEditor() { mixin(MGBPC!(172, 0x100000)()); }
+		bool bTempEditor(bool val) { mixin(MSBPC!(172, 0x100000)()); }
+		bool bPathColliding() { mixin(MGBPC!(172, 0x200000)()); }
+		bool bPathColliding(bool val) { mixin(MSBPC!(172, 0x200000)()); }
+		bool bPathTemp() { mixin(MGBPC!(172, 0x400000)()); }
+		bool bPathTemp(bool val) { mixin(MSBPC!(172, 0x400000)()); }
+		bool bLockLocation() { mixin(MGBPC!(172, 0x1000000)()); }
+		bool bLockLocation(bool val) { mixin(MSBPC!(172, 0x1000000)()); }
+		bool bForceAllowKismetModification() { mixin(MGBPC!(172, 0x2000000)()); }
+		bool bForceAllowKismetModification(bool val) { mixin(MSBPC!(172, 0x2000000)()); }
+		bool m_bPotentialSeekingTarget() { mixin(MGBPC!(172, 0x4000000)()); }
+		bool m_bPotentialSeekingTarget(bool val) { mixin(MSBPC!(172, 0x4000000)()); }
 	}
 final:
 	void ForceUpdateComponents(bool bCollisionUpdate, bool bTransformOnly)
@@ -1166,11 +1170,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRotation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	Actor.EMoveDir MovingWhichWay(float* Amount)
+	Actor.EMoveDir MovingWhichWay(ref float Amount)
 	{
 		ubyte params[5];
 		params[] = 0;
-		*cast(float*)params.ptr = *Amount;
+		*cast(float*)params.ptr = Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MovingWhichWay, params.ptr, cast(void*)0);
 		*Amount = *cast(float*)params.ptr;
 		return *cast(Actor.EMoveDir*)&params[4];
@@ -1308,11 +1312,11 @@ void**)&params[16] = SkelComp;
 		*cast(bool*)&params[4] = bAdd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetForcedInitialReplicatedProperty, params.ptr, cast(void*)0);
 	}
-	static void Vect2BP(Actor.BasedPosition* BP, Vector pos, Actor ForcedBase)
+	static void Vect2BP(ref Actor.BasedPosition BP, Vector pos, Actor ForcedBase)
 	{
 		ubyte params[68];
 		params[] = 0;
-		*cast(Actor.BasedPosition*)params.ptr = *BP;
+		*cast(Actor.BasedPosition*)params.ptr = BP;
 		*cast(Vector*)&params[52] = pos;
 		*cast(Actor*)&params[64] = ForcedBase;
 		StaticClass.ProcessEvent(Functions.Vect2BP, params.ptr, cast(void*)0);
@@ -1326,11 +1330,11 @@ void**)&params[16] = SkelComp;
 		StaticClass.ProcessEvent(Functions.BP2Vect, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[52];
 	}
-	static void SetBasedPosition(Actor.BasedPosition* BP, Vector pos, Actor ForcedBase)
+	static void SetBasedPosition(ref Actor.BasedPosition BP, Vector pos, Actor ForcedBase)
 	{
 		ubyte params[68];
 		params[] = 0;
-		*cast(Actor.BasedPosition*)params.ptr = *BP;
+		*cast(Actor.BasedPosition*)params.ptr = BP;
 		*cast(Vector*)&params[52] = pos;
 		*cast(Actor*)&params[64] = ForcedBase;
 		StaticClass.ProcessEvent(Functions.SetBasedPosition, params.ptr, cast(void*)0);
@@ -1456,11 +1460,11 @@ void**)&params[16] = SkelComp;
 		*cast(float*)&params[32] = Duration;
 		StaticClass.ProcessEvent(Functions.DrawDebugString, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugFrustrum(UObject.Matrix* FrustumToWorld, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
+	static void DrawDebugFrustrum(ref const UObject.Matrix FrustumToWorld, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
 	{
 		ubyte params[72];
 		params[] = 0;
-		*cast(UObject.Matrix*)params.ptr = *FrustumToWorld;
+		*cast(UObject.Matrix*)params.ptr = FrustumToWorld;
 		params[64] = R;
 		params[65] = G;
 		params[66] = B;
@@ -1501,19 +1505,19 @@ void**)&params[16] = SkelComp;
 		*cast(Actor.EPhysics*)params.ptr = newPhysics;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPhysics, params.ptr, cast(void*)0);
 	}
-	void Clock(float* Time)
+	void Clock(ref float Time)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = *Time;
+		*cast(float*)params.ptr = Time;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Clock, params.ptr, cast(void*)0);
 		*Time = *cast(float*)params.ptr;
 	}
-	void UnClock(float* Time)
+	void UnClock(ref float Time)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = *Time;
+		*cast(float*)params.ptr = Time;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UnClock, params.ptr, cast(void*)0);
 		*Time = *cast(float*)params.ptr;
 	}
@@ -1726,11 +1730,11 @@ void**)&params[4] = OtherComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSleepRBPhysics, cast(void*)0, cast(void*)0);
 	}
-	bool ClampRotation(Rotator* out_Rot, Rotator rBase, Rotator rUpperLimits, Rotator rLowerLimits)
+	bool ClampRotation(ref Rotator out_Rot, Rotator rBase, Rotator rUpperLimits, Rotator rLowerLimits)
 	{
 		ubyte params[52];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *out_Rot;
+		*cast(Rotator*)params.ptr = out_Rot;
 		*cast(Rotator*)&params[12] = rBase;
 		*cast(Rotator*)&params[24] = rUpperLimits;
 		*cast(Rotator*)&params[36] = rLowerLimits;
@@ -1738,12 +1742,12 @@ void**)&params[4] = OtherComp;
 		*out_Rot = *cast(Rotator*)params.ptr;
 		return *cast(bool*)&params[48];
 	}
-	bool OverRotated(Rotator* out_Desired, Rotator* out_Actual)
+	bool OverRotated(ref Rotator out_Desired, ref Rotator out_Actual)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *out_Desired;
-		*cast(Rotator*)&params[12] = *out_Actual;
+		*cast(Rotator*)params.ptr = out_Desired;
+		*cast(Rotator*)&params[12] = out_Actual;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OverRotated, params.ptr, cast(void*)0);
 		*out_Desired = *cast(Rotator*)params.ptr;
 		*out_Actual = *cast(Rotator*)&params[12];
@@ -1775,17 +1779,17 @@ void**)&params[4] = OtherComp;
 		*cast(PhysicsVolume*)params.ptr = PV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VolumeBasedDestroy, params.ptr, cast(void*)0);
 	}
-	Actor Trace(Vector* HitLocation, Vector* HitNormal, Vector TraceEnd, Vector TraceStart, bool bTraceActors, Vector Extent, Actor.TraceHitInfo* HitInfo, int ExtraTraceFlags)
+	Actor Trace(ref Vector HitLocation, ref Vector HitNormal, Vector TraceEnd, Vector TraceStart, bool bTraceActors, Vector Extent, Actor.TraceHitInfo* HitInfo, int ExtraTraceFlags)
 	{
 		ubyte params[100];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *HitLocation;
-		*cast(Vector*)&params[12] = *HitNormal;
+		*cast(Vector*)params.ptr = HitLocation;
+		*cast(Vector*)&params[12] = HitNormal;
 		*cast(Vector*)&params[24] = TraceEnd;
 		*cast(Vector*)&params[36] = TraceStart;
 		*cast(bool*)&params[48] = bTraceActors;
 		*cast(Vector*)&params[52] = Extent;
-		*cast(Actor.TraceHitInfo*)&params[64] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[64] = HitInfo;
 		*cast(int*)&params[92] = ExtraTraceFlags;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Trace, params.ptr, cast(void*)0);
 		*HitLocation = *cast(Vector*)params.ptr;
@@ -1793,21 +1797,21 @@ void**)&params[4] = OtherComp;
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[64];
 		return *cast(Actor*)&params[96];
 	}
-	bool TraceComponent(Vector* HitLocation, Vector* HitNormal, 
+	bool TraceComponent(ref Vector HitLocation, ref Vector HitNormal, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* InComponent, Vector TraceEnd, Vector TraceStart, Vector Extent, Actor.TraceHitInfo* HitInfo, bool bComplexCollision)
 	{
 		ubyte params[100];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *HitLocation;
-		*cast(Vector*)&params[12] = *HitNormal;
+		*cast(Vector*)params.ptr = HitLocation;
+		*cast(Vector*)&params[12] = HitNormal;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[24] = InComponent;
 		*cast(Vector*)&params[28] = TraceEnd;
 		*cast(Vector*)&params[40] = TraceStart;
 		*cast(Vector*)&params[52] = Extent;
-		*cast(Actor.TraceHitInfo*)&params[64] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[64] = HitInfo;
 		*cast(bool*)&params[92] = bComplexCollision;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TraceComponent, params.ptr, cast(void*)0);
 		*HitLocation = *cast(Vector*)params.ptr;
@@ -1842,7 +1846,7 @@ void**)params.ptr = InComponent;
 	}
 	bool TraceAllPhysicsAssetInteractions(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMeshComp, Vector EndTrace, Vector StartTrace, ScriptArray!(Actor.ImpactInfo)* out_Hits, Vector Extent)
+void* SkelMeshComp, Vector EndTrace, Vector StartTrace, ref ScriptArray!(Actor.ImpactInfo) out_Hits, Vector Extent)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -1851,18 +1855,18 @@ void* SkelMeshComp, Vector EndTrace, Vector StartTrace, ScriptArray!(Actor.Impac
 void**)params.ptr = SkelMeshComp;
 		*cast(Vector*)&params[4] = EndTrace;
 		*cast(Vector*)&params[16] = StartTrace;
-		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[28] = *out_Hits;
+		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[28] = out_Hits;
 		*cast(Vector*)&params[40] = Extent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TraceAllPhysicsAssetInteractions, params.ptr, cast(void*)0);
 		*out_Hits = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[28];
 		return *cast(bool*)&params[52];
 	}
-	bool FindSpot(Vector BoxExtent, Vector* SpotLocation)
+	bool FindSpot(Vector BoxExtent, ref Vector SpotLocation)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Vector*)params.ptr = BoxExtent;
-		*cast(Vector*)&params[12] = *SpotLocation;
+		*cast(Vector*)&params[12] = SpotLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSpot, params.ptr, cast(void*)0);
 		*SpotLocation = *cast(Vector*)&params[12];
 		return *cast(bool*)&params[24];
@@ -1883,25 +1887,25 @@ void**)params.ptr = SkelMeshComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsOverlapping, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void GetComponentsBoundingBox(UObject.Box* ActorBox)
+	void GetComponentsBoundingBox(ref UObject.Box ActorBox)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(UObject.Box*)params.ptr = *ActorBox;
+		*cast(UObject.Box*)params.ptr = ActorBox;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetComponentsBoundingBox, params.ptr, cast(void*)0);
 		*ActorBox = *cast(UObject.Box*)params.ptr;
 	}
-	void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight)
+	void GetBoundingCylinder(ref float CollisionRadius, ref float CollisionHeight)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = *CollisionRadius;
-		*cast(float*)&params[4] = *CollisionHeight;
+		*cast(float*)params.ptr = CollisionRadius;
+		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
 		*CollisionRadius = *cast(float*)params.ptr;
 		*CollisionHeight = *cast(float*)&params[4];
 	}
-	bool IsBlockedBy(Actor Other)
+	bool IsBlockedBy(const Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -2004,7 +2008,7 @@ void**)params.ptr = SkelMeshComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRemainingTimeForTimer, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	void ModifyTimerTimeDilation(ScriptName TimerName, float InTimerTimeDilation, UObject inObj)
+	void ModifyTimerTimeDilation(const ScriptName TimerName, const float InTimerTimeDilation, UObject inObj)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -2013,7 +2017,7 @@ void**)params.ptr = SkelMeshComp;
 		*cast(UObject*)&params[12] = inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyTimerTimeDilation, params.ptr, cast(void*)0);
 	}
-	void ResetTimerTimeDilation(ScriptName TimerName, UObject inObj)
+	void ResetTimerTimeDilation(const ScriptName TimerName, UObject inObj)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -2066,11 +2070,11 @@ void**)&params[32];
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayerCanSeeMe, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool SuggestTossVelocity(Vector* TossVelocity, Vector Destination, Vector Start, float TossSpeed, float BaseTossZ, float DesiredZPct, Vector CollisionSize, float TerminalVelocity, float OverrideGravityZ, bool bOnlyTraceUp)
+	bool SuggestTossVelocity(ref Vector TossVelocity, Vector Destination, Vector Start, float TossSpeed, float BaseTossZ, float DesiredZPct, Vector CollisionSize, float TerminalVelocity, float OverrideGravityZ, bool bOnlyTraceUp)
 	{
 		ubyte params[76];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *TossVelocity;
+		*cast(Vector*)params.ptr = TossVelocity;
 		*cast(Vector*)&params[12] = Destination;
 		*cast(Vector*)&params[24] = Start;
 		*cast(float*)&params[36] = TossSpeed;
@@ -2084,11 +2088,11 @@ void**)&params[32];
 		*TossVelocity = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[72];
 	}
-	bool CalculateMinSpeedTrajectory(Vector* out_Velocity, Vector End, Vector Start, float MaxTossSpeed, float MinTossSpeed, Vector CollisionSize, float TerminalVelocity, float GravityZ, bool bOnlyTraceUp)
+	bool CalculateMinSpeedTrajectory(ref Vector out_Velocity, Vector End, Vector Start, float MaxTossSpeed, float MinTossSpeed, Vector CollisionSize, float TerminalVelocity, float GravityZ, bool bOnlyTraceUp)
 	{
 		ubyte params[72];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *out_Velocity;
+		*cast(Vector*)params.ptr = out_Velocity;
 		*cast(Vector*)&params[12] = End;
 		*cast(Vector*)&params[24] = Start;
 		*cast(float*)&params[36] = MaxTossSpeed;
@@ -2131,65 +2135,65 @@ void**)&params[32];
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetURLMap, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void AllActors(ScriptClass BaseClass, Actor* pActor, ScriptClass InterfaceClass)
+	void AllActors(ScriptClass BaseClass, ref Actor pActor, ScriptClass InterfaceClass)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		*cast(ScriptClass*)&params[8] = InterfaceClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 	}
-	void DynamicActors(ScriptClass BaseClass, Actor* pActor, ScriptClass InterfaceClass)
+	void DynamicActors(ScriptClass BaseClass, ref Actor pActor, ScriptClass InterfaceClass)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		*cast(ScriptClass*)&params[8] = InterfaceClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DynamicActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 	}
-	void ChildActors(ScriptClass BaseClass, Actor* pActor)
+	void ChildActors(ScriptClass BaseClass, ref Actor pActor)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChildActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 	}
-	void BasedActors(ScriptClass BaseClass, Actor* pActor)
+	void BasedActors(ScriptClass BaseClass, ref Actor pActor)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BasedActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 	}
-	void TouchingActors(ScriptClass BaseClass, Actor* pActor)
+	void TouchingActors(ScriptClass BaseClass, ref Actor pActor)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TouchingActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 	}
-	void TraceActors(ScriptClass BaseClass, Actor* pActor, Vector* HitLoc, Vector* HitNorm, Vector End, Vector Start, Vector Extent, Actor.TraceHitInfo* HitInfo, int ExtraTraceFlags)
+	void TraceActors(ScriptClass BaseClass, ref Actor pActor, ref Vector HitLoc, ref Vector HitNorm, Vector End, Vector Start, Vector Extent, Actor.TraceHitInfo* HitInfo, int ExtraTraceFlags)
 	{
 		ubyte params[100];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
-		*cast(Vector*)&params[8] = *HitLoc;
-		*cast(Vector*)&params[20] = *HitNorm;
+		*cast(Actor*)&params[4] = pActor;
+		*cast(Vector*)&params[8] = HitLoc;
+		*cast(Vector*)&params[20] = HitNorm;
 		*cast(Vector*)&params[32] = End;
 		*cast(Vector*)&params[44] = Start;
 		*cast(Vector*)&params[56] = Extent;
-		*cast(Actor.TraceHitInfo*)&params[68] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[68] = HitInfo;
 		*cast(int*)&params[96] = ExtraTraceFlags;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TraceActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
@@ -2197,55 +2201,55 @@ void**)&params[32];
 		*HitNorm = *cast(Vector*)&params[20];
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[68];
 	}
-	void VisibleActors(ScriptClass BaseClass, Actor* pActor, float Radius, Vector Loc)
+	void VisibleActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		*cast(float*)&params[8] = Radius;
 		*cast(Vector*)&params[12] = Loc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VisibleActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 	}
-	void VisibleCollidingActors(ScriptClass BaseClass, Actor* pActor, float Radius, Vector Loc, bool bIgnoreHidden, Vector Extent, bool bTraceActors, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo)
+	void VisibleCollidingActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc, bool bIgnoreHidden, Vector Extent, bool bTraceActors, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo)
 	{
 		ubyte params[76];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		*cast(float*)&params[8] = Radius;
 		*cast(Vector*)&params[12] = Loc;
 		*cast(bool*)&params[24] = bIgnoreHidden;
 		*cast(Vector*)&params[28] = Extent;
 		*cast(bool*)&params[40] = bTraceActors;
 		*cast(ScriptClass*)&params[44] = InterfaceClass;
-		*cast(Actor.TraceHitInfo*)&params[48] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[48] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VisibleCollidingActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[48];
 	}
-	void CollidingActors(ScriptClass BaseClass, Actor* pActor, float Radius, Vector Loc, bool bUseOverlapCheck, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo)
+	void CollidingActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc, bool bUseOverlapCheck, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo)
 	{
 		ubyte params[60];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		*cast(float*)&params[8] = Radius;
 		*cast(Vector*)&params[12] = Loc;
 		*cast(bool*)&params[24] = bUseOverlapCheck;
 		*cast(ScriptClass*)&params[28] = InterfaceClass;
-		*cast(Actor.TraceHitInfo*)&params[32] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[32] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CollidingActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[32];
 	}
-	void VisibleCollidingExtentActors(ScriptClass BaseClass, Actor* pActor, float Radius, Vector Loc, Vector AltLoc, bool bIgnoreHidden, Vector Extent, bool bTraceActors, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo, float XYCheckRadius)
+	void VisibleCollidingExtentActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc, Vector AltLoc, bool bIgnoreHidden, Vector Extent, bool bTraceActors, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo, float XYCheckRadius)
 	{
 		ubyte params[92];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *pActor;
+		*cast(Actor*)&params[4] = pActor;
 		*cast(float*)&params[8] = Radius;
 		*cast(Vector*)&params[12] = Loc;
 		*cast(Vector*)&params[24] = AltLoc;
@@ -2253,60 +2257,60 @@ void**)&params[32];
 		*cast(Vector*)&params[40] = Extent;
 		*cast(bool*)&params[52] = bTraceActors;
 		*cast(ScriptClass*)&params[56] = InterfaceClass;
-		*cast(Actor.TraceHitInfo*)&params[60] = *HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[60] = HitInfo;
 		*cast(float*)&params[88] = XYCheckRadius;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VisibleCollidingExtentActors, params.ptr, cast(void*)0);
 		*pActor = *cast(Actor*)&params[4];
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[60];
 	}
-	void OverlappingActors(ScriptClass BaseClass, Actor* out_Actor, float Radius, Vector Loc, bool bIgnoreHidden)
+	void OverlappingActors(ScriptClass BaseClass, ref Actor out_Actor, float Radius, Vector Loc, bool bIgnoreHidden)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(Actor*)&params[4] = *out_Actor;
+		*cast(Actor*)&params[4] = out_Actor;
 		*cast(float*)&params[8] = Radius;
 		*cast(Vector*)&params[12] = Loc;
 		*cast(bool*)&params[24] = bIgnoreHidden;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OverlappingActors, params.ptr, cast(void*)0);
 		*out_Actor = *cast(Actor*)&params[4];
 	}
-	void ComponentList(ScriptClass BaseClass, 
+	void ComponentList(ScriptClass BaseClass, ref 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void** out_Component)
+void* out_Component)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[4] = *out_Component;
+void**)&params[4] = out_Component;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ComponentList, params.ptr, cast(void*)0);
 		*out_Component = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
 	}
-	void AllOwnedComponents(ScriptClass BaseClass, 
+	void AllOwnedComponents(ScriptClass BaseClass, ref 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void** OutComponent)
+void* OutComponent)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[4] = *OutComponent;
+void**)&params[4] = OutComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllOwnedComponents, params.ptr, cast(void*)0);
 		*OutComponent = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
 	}
-	void LocalPlayerControllers(ScriptClass BaseClass, PlayerController* PC)
+	void LocalPlayerControllers(ScriptClass BaseClass, ref PlayerController PC)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
-		*cast(PlayerController*)&params[4] = *PC;
+		*cast(PlayerController*)&params[4] = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LocalPlayerControllers, params.ptr, cast(void*)0);
 		*PC = *cast(PlayerController*)&params[4];
 	}
@@ -2436,18 +2440,18 @@ void**)&params[4];
 		*cast(float*)&params[40] = DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
-	void CheckHitInfo(Actor.TraceHitInfo* HitInfo, 
+	void CheckHitInfo(ref Actor.TraceHitInfo HitInfo, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* FallBackComponent, Vector Dir, Vector* out_HitLocation)
+void* FallBackComponent, Vector Dir, ref Vector out_HitLocation)
 	{
 		ubyte params[56];
 		params[] = 0;
-		*cast(Actor.TraceHitInfo*)params.ptr = *HitInfo;
+		*cast(Actor.TraceHitInfo*)params.ptr = HitInfo;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[28] = FallBackComponent;
 		*cast(Vector*)&params[32] = Dir;
-		*cast(Vector*)&params[44] = *out_HitLocation;
+		*cast(Vector*)&params[44] = out_HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckHitInfo, params.ptr, cast(void*)0);
 		*HitInfo = *cast(Actor.TraceHitInfo*)params.ptr;
 		*out_HitLocation = *cast(Vector*)&params[44];
@@ -2487,14 +2491,14 @@ void**)&params[28] = FallBackComponent;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndViewTarget, params.ptr, cast(void*)0);
 	}
-	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
@@ -2516,11 +2520,11 @@ void**)&params[28] = FallBackComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHumanReadableName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	static void ReplaceText(ScriptString* Text, ScriptString Replace, ScriptString With)
+	static void ReplaceText(ref ScriptString Text, ScriptString Replace, ScriptString With)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *Text;
+		*cast(ScriptString*)params.ptr = Text;
 		*cast(ScriptString*)&params[12] = Replace;
 		*cast(ScriptString*)&params[24] = With;
 		StaticClass.ProcessEvent(Functions.ReplaceText, params.ptr, cast(void*)0);
@@ -2547,13 +2551,13 @@ void**)&params[28] = FallBackComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDebugName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -2647,21 +2651,21 @@ void**)params.ptr;
 		*cast(Actor*)&params[4] = InInstigator;
 		*cast(int*)&params[8] = ActivateIndex;
 		*cast(bool*)&params[12] = bTest;
-		*cast(ScriptArray!(SequenceEvent)*)&params[16] = *ActivatedEvents;
+		*cast(ScriptArray!(SequenceEvent)*)&params[16] = ActivatedEvents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TriggerEventClass, params.ptr, cast(void*)0);
 		*ActivatedEvents = *cast(ScriptArray!(SequenceEvent)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	bool ActivateEventClass(ScriptClass InClass, Actor InInstigator, ScriptArray!(SequenceEvent)* EventList, ScriptArray!(int)* ActivateIndices, bool bTest, ScriptArray!(SequenceEvent)* ActivatedEvents)
+	bool ActivateEventClass(ScriptClass InClass, Actor InInstigator, ref const ScriptArray!(SequenceEvent) EventList, const ScriptArray!(int)* ActivateIndices, bool bTest, ScriptArray!(SequenceEvent)* ActivatedEvents)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InClass;
 		*cast(Actor*)&params[4] = InInstigator;
-		*cast(ScriptArray!(SequenceEvent)*)&params[8] = *EventList;
-		*cast(ScriptArray!(int)*)&params[20] = *ActivateIndices;
+		*cast(ScriptArray!(SequenceEvent)*)&params[8] = EventList;
+		*cast(ScriptArray!(int)*)&params[20] = ActivateIndices;
 		*cast(bool*)&params[32] = bTest;
-		*cast(ScriptArray!(SequenceEvent)*)&params[36] = *ActivatedEvents;
+		*cast(ScriptArray!(SequenceEvent)*)&params[36] = ActivatedEvents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateEventClass, params.ptr, cast(void*)0);
 		*EventList = *cast(ScriptArray!(SequenceEvent)*)&params[8];
 		*ActivateIndices = *cast(ScriptArray!(int)*)&params[20];
@@ -2690,7 +2694,7 @@ void**)params.ptr;
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = EventClass;
-		*cast(ScriptArray!(SequenceEvent)*)&params[4] = *out_EventList;
+		*cast(ScriptArray!(SequenceEvent)*)&params[4] = out_EventList;
 		*cast(bool*)&params[16] = bIncludeDisabled;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindEventsOfClass, params.ptr, cast(void*)0);
 		*out_EventList = *cast(ScriptArray!(SequenceEvent)*)&params[4];
@@ -2902,12 +2906,12 @@ void**)params.ptr;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsStationary, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void GetActorEyesViewPoint(Vector* out_Location, Rotator* out_Rotation)
+	void GetActorEyesViewPoint(ref Vector out_Location, ref Rotator out_Rotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *out_Location;
-		*cast(Rotator*)&params[12] = *out_Rotation;
+		*cast(Vector*)params.ptr = out_Location;
+		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorEyesViewPoint, params.ptr, cast(void*)0);
 		*out_Location = *cast(Vector*)params.ptr;
 		*out_Rotation = *cast(Rotator*)&params[12];
@@ -2941,12 +2945,12 @@ void**)params.ptr;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyLocalPlayerTeamReceived, cast(void*)0, cast(void*)0);
 	}
-	void FindGoodEndView(PlayerController PC, Rotator* GoodRotation)
+	void FindGoodEndView(PlayerController PC, ref Rotator GoodRotation)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		*cast(Rotator*)&params[4] = *GoodRotation;
+		*cast(Rotator*)&params[4] = GoodRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindGoodEndView, params.ptr, cast(void*)0);
 		*GoodRotation = *cast(Rotator*)&params[4];
 	}
@@ -2989,7 +2993,7 @@ void**)params.ptr;
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* OtherComponent, Actor.CollisionImpactData* RigidCollisionData, int ContactIndex)
+void* OtherComponent, ref const Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -2999,7 +3003,7 @@ void**)params.ptr = HitComponent;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
-		*cast(Actor.CollisionImpactData*)&params[8] = *RigidCollisionData;
+		*cast(Actor.CollisionImpactData*)&params[8] = RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
 		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];
@@ -3057,14 +3061,14 @@ void**)params.ptr = SkelComp;
 	}
 	void RootMotionExtracted(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelComp, UObject.BoneAtom* ExtractedRootMotionDelta)
+void* SkelComp, ref UObject.BoneAtom ExtractedRootMotionDelta)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		*cast(UObject.BoneAtom*)&params[16] = *ExtractedRootMotionDelta;
+		*cast(UObject.BoneAtom*)&params[16] = ExtractedRootMotionDelta;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RootMotionExtracted, params.ptr, cast(void*)0);
 		*ExtractedRootMotionDelta = *cast(UObject.BoneAtom*)&params[16];
 	}
@@ -3102,31 +3106,31 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsInPersistentLevel, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void GetAimFrictionExtent(float* Width, float* Height, Vector* Center)
+	void GetAimFrictionExtent(ref float Width, ref float Height, ref Vector Center)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(float*)params.ptr = *Width;
-		*cast(float*)&params[4] = *Height;
-		*cast(Vector*)&params[8] = *Center;
+		*cast(float*)params.ptr = Width;
+		*cast(float*)&params[4] = Height;
+		*cast(Vector*)&params[8] = Center;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAimFrictionExtent, params.ptr, cast(void*)0);
 		*Width = *cast(float*)params.ptr;
 		*Height = *cast(float*)&params[4];
 		*Center = *cast(Vector*)&params[8];
 	}
-	void GetAimAdhesionExtent(float* Width, float* Height, Vector* Center)
+	void GetAimAdhesionExtent(ref float Width, ref float Height, ref Vector Center)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(float*)params.ptr = *Width;
-		*cast(float*)&params[4] = *Height;
-		*cast(Vector*)&params[8] = *Center;
+		*cast(float*)params.ptr = Width;
+		*cast(float*)&params[4] = Height;
+		*cast(Vector*)&params[8] = Center;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAimAdhesionExtent, params.ptr, cast(void*)0);
 		*Width = *cast(float*)params.ptr;
 		*Height = *cast(float*)&params[4];
 		*Center = *cast(Vector*)&params[8];
 	}
-	bool PlayParticleEffect(AnimNotify_PlayParticleEffect AnimNotifyData)
+	bool PlayParticleEffect(const AnimNotify_PlayParticleEffect AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -3134,7 +3138,7 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayParticleEffect, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool CreateForceField(AnimNotify_ForceField AnimNotifyData)
+	bool CreateForceField(const AnimNotify_ForceField AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -3142,33 +3146,33 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateForceField, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void TrailsNotify(AnimNotify_Trails AnimNotifyData)
+	void TrailsNotify(const AnimNotify_Trails AnimNotifyData)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(AnimNotify_Trails*)params.ptr = AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrailsNotify, params.ptr, cast(void*)0);
 	}
-	void TrailsNotifyTick(AnimNotify_Trails AnimNotifyData)
+	void TrailsNotifyTick(const AnimNotify_Trails AnimNotifyData)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(AnimNotify_Trails*)params.ptr = AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrailsNotifyTick, params.ptr, cast(void*)0);
 	}
-	void TrailsNotifyEnd(AnimNotify_Trails AnimNotifyData)
+	void TrailsNotifyEnd(const AnimNotify_Trails AnimNotifyData)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(AnimNotify_Trails*)params.ptr = AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrailsNotifyEnd, params.ptr, cast(void*)0);
 	}
-	bool SupportsKismetModification(SequenceOp AskingOp, ScriptString* Reason)
+	bool SupportsKismetModification(SequenceOp AskingOp, ref ScriptString Reason)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(SequenceOp*)params.ptr = AskingOp;
-		*cast(ScriptString*)&params[4] = *Reason;
+		*cast(ScriptString*)&params[4] = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SupportsKismetModification, params.ptr, cast(void*)0);
 		*Reason = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
@@ -3192,11 +3196,11 @@ void**)params.ptr = SkelMesh;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicationEnded, cast(void*)0, cast(void*)0);
 	}
-	Vector GetAvoidanceVector(ScriptArray!(Actor)* Obstacles, Vector GoalLocation, float CollisionRadius, float MaxSpeed, int NumSamples, float VelocityStepRate, float MaxTimeTilOverlap)
+	Vector GetAvoidanceVector(ref const ScriptArray!(Actor) Obstacles, Vector GoalLocation, float CollisionRadius, float MaxSpeed, int NumSamples, float VelocityStepRate, float MaxTimeTilOverlap)
 	{
 		ubyte params[56];
 		params[] = 0;
-		*cast(ScriptArray!(Actor)*)params.ptr = *Obstacles;
+		*cast(ScriptArray!(Actor)*)params.ptr = Obstacles;
 		*cast(Vector*)&params[12] = GoalLocation;
 		*cast(float*)&params[24] = CollisionRadius;
 		*cast(float*)&params[28] = MaxSpeed;
@@ -3207,7 +3211,7 @@ void**)params.ptr = SkelMesh;
 		*Obstacles = *cast(ScriptArray!(Actor)*)params.ptr;
 		return *cast(Vector*)&params[44];
 	}
-	bool WillOverlap(Vector PosA, Vector VelA, Vector PosB, Vector VelB, float StepSize, float Radius, float* Time)
+	bool WillOverlap(Vector PosA, Vector VelA, Vector PosB, Vector VelB, float StepSize, float Radius, ref float Time)
 	{
 		ubyte params[64];
 		params[] = 0;
@@ -3217,7 +3221,7 @@ void**)params.ptr = SkelMesh;
 		*cast(Vector*)&params[36] = VelB;
 		*cast(float*)&params[48] = StepSize;
 		*cast(float*)&params[52] = Radius;
-		*cast(float*)&params[56] = *Time;
+		*cast(float*)&params[56] = Time;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WillOverlap, params.ptr, cast(void*)0);
 		*Time = *cast(float*)&params[56];
 		return *cast(bool*)&params[60];
@@ -3243,12 +3247,12 @@ void**)params.ptr = SkelMesh;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorDescription, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void GetSpectatorHealthInfo(int* Health, int* MaxHealth)
+	void GetSpectatorHealthInfo(ref int Health, ref int MaxHealth)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = *Health;
-		*cast(int*)&params[4] = *MaxHealth;
+		*cast(int*)params.ptr = Health;
+		*cast(int*)&params[4] = MaxHealth;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorHealthInfo, params.ptr, cast(void*)0);
 		*Health = *cast(int*)params.ptr;
 		*MaxHealth = *cast(int*)&params[4];

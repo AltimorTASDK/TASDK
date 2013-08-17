@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKCarriedObject;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKGameObjective;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.Pawn;
@@ -11,9 +12,9 @@ extern(C++) interface UDKCarriedObject : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKCarriedObject")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKCarriedObject")()); }
 	private static __gshared UDKCarriedObject mDefaultProperties;
-	@property final static UDKCarriedObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKCarriedObject)("UDKCarriedObject UDKBase.Default__UDKCarriedObject")); }
+	@property final static UDKCarriedObject DefaultProperties() { mixin(MGDPC!(UDKCarriedObject, "UDKCarriedObject UDKBase.Default__UDKCarriedObject")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,27 +26,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.SetHUDLocation")); }
-			ScriptFunction NotReachableBy() { return mNotReachableBy ? mNotReachableBy : (mNotReachableBy = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.NotReachableBy")); }
-			ScriptFunction OnBaseChainChanged() { return mOnBaseChainChanged ? mOnBaseChainChanged : (mOnBaseChainChanged = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.OnBaseChainChanged")); }
-			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.GetTeamNum")); }
+			ScriptFunction SetHUDLocation() { mixin(MGF!("mSetHUDLocation", "Function UDKBase.UDKCarriedObject.SetHUDLocation")()); }
+			ScriptFunction NotReachableBy() { mixin(MGF!("mNotReachableBy", "Function UDKBase.UDKCarriedObject.NotReachableBy")()); }
+			ScriptFunction OnBaseChainChanged() { mixin(MGF!("mOnBaseChainChanged", "Function UDKBase.UDKCarriedObject.OnBaseChainChanged")()); }
+			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function UDKBase.UDKCarriedObject.GetTeamNum")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector HUDLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 520); }
-			Actor OldBaseBase() { return *cast(Actor*)(cast(size_t)cast(void*)this + 516); }
-			Actor OldBase() { return *cast(Actor*)(cast(size_t)cast(void*)this + 512); }
-			Vector HomeBaseOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 500); }
-			UDKGameObjective HomeBase() { return *cast(UDKGameObjective*)(cast(size_t)cast(void*)this + 496); }
-			float LastValidAnchorTime() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-			NavigationPoint LastAnchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 480); }
-			TeamInfo Team() { return *cast(TeamInfo*)(cast(size_t)cast(void*)this + 476); }
+			Vector HUDLocation() { mixin(MGPC!(Vector, 520)()); }
+			Actor OldBaseBase() { mixin(MGPC!(Actor, 516)()); }
+			Actor OldBase() { mixin(MGPC!(Actor, 512)()); }
+			Vector HomeBaseOffset() { mixin(MGPC!(Vector, 500)()); }
+			UDKGameObjective HomeBase() { mixin(MGPC!(UDKGameObjective, 496)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkelMesh'!
+			float LastValidAnchorTime() { mixin(MGPC!(float, 484)()); }
+			NavigationPoint LastAnchor() { mixin(MGPC!(NavigationPoint, 480)()); }
+			TeamInfo Team() { mixin(MGPC!(TeamInfo, 476)()); }
 		}
-		bool bHome() { return (*cast(uint*)(cast(size_t)cast(void*)this + 492) & 0x1) != 0; }
-		bool bHome(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 492) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 492) &= ~0x1; } return val; }
+		bool bHome() { mixin(MGBPC!(492, 0x1)()); }
+		bool bHome(bool val) { mixin(MSBPC!(492, 0x1)()); }
 	}
 final:
 	void SetHUDLocation(Vector NewHUDLocation)

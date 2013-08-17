@@ -1,6 +1,7 @@
 module UnrealScript.Engine.KAsset;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
@@ -13,9 +14,9 @@ extern(C++) interface KAsset : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KAsset")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KAsset")()); }
 	private static __gshared KAsset mDefaultProperties;
-	@property final static KAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(KAsset)("KAsset Engine.Default__KAsset")); }
+	@property final static KAsset DefaultProperties() { mixin(MGDPC!(KAsset, "KAsset Engine.Default__KAsset")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,29 +32,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.PostBeginPlay")); }
-			ScriptFunction SetMeshAndPhysAsset() { return mSetMeshAndPhysAsset ? mSetMeshAndPhysAsset : (mSetMeshAndPhysAsset = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.SetMeshAndPhysAsset")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.ReplicatedEvent")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.TakeDamage")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.TakeRadiusDamage")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.OnToggle")); }
-			ScriptFunction OnTeleport() { return mOnTeleport ? mOnTeleport : (mOnTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.OnTeleport")); }
-			ScriptFunction DoKismetAttachment() { return mDoKismetAttachment ? mDoKismetAttachment : (mDoKismetAttachment = ScriptObject.Find!(ScriptFunction)("Function Engine.KAsset.DoKismetAttachment")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.KAsset.PostBeginPlay")()); }
+			ScriptFunction SetMeshAndPhysAsset() { mixin(MGF!("mSetMeshAndPhysAsset", "Function Engine.KAsset.SetMeshAndPhysAsset")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.KAsset.ReplicatedEvent")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.KAsset.TakeDamage")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.KAsset.TakeRadiusDamage")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.KAsset.OnToggle")()); }
+			ScriptFunction OnTeleport() { mixin(MGF!("mOnTeleport", "Function Engine.KAsset.OnTeleport")()); }
+			ScriptFunction DoKismetAttachment() { mixin(MGF!("mDoKismetAttachment", "Function Engine.KAsset.DoKismetAttachment")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PhysicsAsset ReplicatedPhysAsset() { return *cast(PhysicsAsset*)(cast(size_t)cast(void*)this + 488); }
-			SkeletalMesh ReplicatedMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 484); }
+			PhysicsAsset ReplicatedPhysAsset() { mixin(MGPC!(PhysicsAsset, 488)()); }
+			SkeletalMesh ReplicatedMesh() { mixin(MGPC!(SkeletalMesh, 484)()); }
+			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
 		}
-		bool bBlockPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x4) != 0; }
-		bool bBlockPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x4; } return val; }
-		bool bWakeOnLevelStart() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x2) != 0; }
-		bool bWakeOnLevelStart(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x2; } return val; }
-		bool bDamageAppliesImpulse() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bDamageAppliesImpulse(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		bool bBlockPawns() { mixin(MGBPC!(480, 0x4)()); }
+		bool bBlockPawns(bool val) { mixin(MSBPC!(480, 0x4)()); }
+		bool bWakeOnLevelStart() { mixin(MGBPC!(480, 0x2)()); }
+		bool bWakeOnLevelStart(bool val) { mixin(MSBPC!(480, 0x2)()); }
+		bool bDamageAppliesImpulse() { mixin(MGBPC!(480, 0x1)()); }
+		bool bDamageAppliesImpulse(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -1,6 +1,7 @@
 module UnrealScript.GFxUI.GFxFSCmdHandler_Kismet;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GFxUI.GFxFSCmdHandler;
 import UnrealScript.GFxUI.GFxMoviePlayer;
 import UnrealScript.GFxUI.GFxEvent_FSCommand;
@@ -9,13 +10,13 @@ extern(C++) interface GFxFSCmdHandler_Kismet : GFxFSCmdHandler
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxFSCmdHandler_Kismet")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GFxUI.GFxFSCmdHandler_Kismet")()); }
 	private static __gshared GFxFSCmdHandler_Kismet mDefaultProperties;
-	@property final static GFxFSCmdHandler_Kismet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxFSCmdHandler_Kismet)("GFxFSCmdHandler_Kismet GFxUI.Default__GFxFSCmdHandler_Kismet")); }
+	@property final static GFxFSCmdHandler_Kismet DefaultProperties() { mixin(MGDPC!(GFxFSCmdHandler_Kismet, "GFxFSCmdHandler_Kismet GFxUI.Default__GFxFSCmdHandler_Kismet")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFSCommand;
-		public @property static final ScriptFunction FSCommand() { return mFSCommand ? mFSCommand : (mFSCommand = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxFSCmdHandler_Kismet.FSCommand")); }
+		public @property static final ScriptFunction FSCommand() { mixin(MGF!("mFSCommand", "Function GFxUI.GFxFSCmdHandler_Kismet.FSCommand")()); }
 	}
 	final bool FSCommand(GFxMoviePlayer Movie, GFxEvent_FSCommand Event, ScriptString Cmd, ScriptString Arg)
 	{

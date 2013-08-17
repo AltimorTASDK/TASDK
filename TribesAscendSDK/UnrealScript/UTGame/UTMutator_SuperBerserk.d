@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTMutator_SuperBerserk;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
 import UnrealScript.UTGame.UTMutator;
@@ -9,9 +10,9 @@ extern(C++) interface UTMutator_SuperBerserk : UTMutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_SuperBerserk")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator_SuperBerserk")()); }
 	private static __gshared UTMutator_SuperBerserk mDefaultProperties;
-	@property final static UTMutator_SuperBerserk DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_SuperBerserk)("UTMutator_SuperBerserk UTGame.Default__UTMutator_SuperBerserk")); }
+	@property final static UTMutator_SuperBerserk DefaultProperties() { mixin(MGDPC!(UTMutator_SuperBerserk, "UTMutator_SuperBerserk UTGame.Default__UTMutator_SuperBerserk")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ModifyPlayer() { return mModifyPlayer ? mModifyPlayer : (mModifyPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator_SuperBerserk.ModifyPlayer")); }
-			ScriptFunction CheckReplacement() { return mCheckReplacement ? mCheckReplacement : (mCheckReplacement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator_SuperBerserk.CheckReplacement")); }
+			ScriptFunction ModifyPlayer() { mixin(MGF!("mModifyPlayer", "Function UTGame.UTMutator_SuperBerserk.ModifyPlayer")()); }
+			ScriptFunction CheckReplacement() { mixin(MGF!("mCheckReplacement", "Function UTGame.UTMutator_SuperBerserk.CheckReplacement")()); }
 		}
 	}
 final:

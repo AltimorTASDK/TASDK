@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameStateObject;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.GameplayEventsHandler;
 
@@ -8,9 +9,9 @@ extern(C++) interface GameStateObject : GameplayEventsHandler
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameStateObject")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameStateObject")()); }
 	private static __gshared GameStateObject mDefaultProperties;
-	@property final static GameStateObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameStateObject)("GameStateObject GameFramework.Default__GameStateObject")); }
+	@property final static GameStateObject DefaultProperties() { mixin(MGDPC!(GameStateObject, "GameStateObject GameFramework.Default__GameStateObject")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreProcessStream() { return mPreProcessStream ? mPreProcessStream : (mPreProcessStream = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameStateObject.PreProcessStream")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameStateObject.Reset")); }
+			ScriptFunction PreProcessStream() { mixin(MGF!("mPreProcessStream", "Function GameFramework.GameStateObject.PreProcessStream")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function GameFramework.GameStateObject.Reset")()); }
 		}
 	}
 	enum GameSessionType : ubyte
@@ -37,11 +38,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStateObject.TeamState")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStateObject.TeamState")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) PlayerIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 4); }
-			int TeamIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptArray!(int) PlayerIndices() { mixin(MGPS!(ScriptArray!(int), 4)()); }
+			int TeamIndex() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	struct PlayerState
@@ -49,29 +50,29 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStateObject.PlayerState")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStateObject.PlayerState")()); }
 		@property final auto ref
 		{
-			float TimeAliveSinceLastDeath() { return *cast(float*)(cast(size_t)&this + 12); }
-			float TimeSpawned() { return *cast(float*)(cast(size_t)&this + 8); }
-			int CurrentTeamIndex() { return *cast(int*)(cast(size_t)&this + 4); }
-			int PlayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+			float TimeAliveSinceLastDeath() { mixin(MGPS!(float, 12)()); }
+			float TimeSpawned() { mixin(MGPS!(float, 8)()); }
+			int CurrentTeamIndex() { mixin(MGPS!(int, 4)()); }
+			int PlayerIndex() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxRoundNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
-			int RoundNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
-			GameStateObject.GameSessionType SessionType() { return *cast(GameStateObject.GameSessionType*)(cast(size_t)cast(void*)this + 112); }
-			UObject.Array_Mirror PlayerStates() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 100); }
-			UObject.Array_Mirror TeamStates() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 88); }
+			int MaxRoundNumber() { mixin(MGPC!(int, 124)()); }
+			int RoundNumber() { mixin(MGPC!(int, 120)()); }
+			GameStateObject.GameSessionType SessionType() { mixin(MGPC!(GameStateObject.GameSessionType, 112)()); }
+			UObject.Array_Mirror PlayerStates() { mixin(MGPC!(UObject.Array_Mirror, 100)()); }
+			UObject.Array_Mirror TeamStates() { mixin(MGPC!(UObject.Array_Mirror, 88)()); }
 		}
-		bool bIsRoundStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x2) != 0; }
-		bool bIsRoundStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x2; } return val; }
-		bool bIsMatchStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x1) != 0; }
-		bool bIsMatchStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x1; } return val; }
+		bool bIsRoundStarted() { mixin(MGBPC!(116, 0x2)()); }
+		bool bIsRoundStarted(bool val) { mixin(MSBPC!(116, 0x2)()); }
+		bool bIsMatchStarted() { mixin(MGBPC!(116, 0x1)()); }
+		bool bIsMatchStarted(bool val) { mixin(MSBPC!(116, 0x1)()); }
 	}
 final:
 	void PreProcessStream()

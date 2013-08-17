@@ -1,13 +1,14 @@
 module UnrealScript.TribesGame.TrGameSettingsTrTeamRabbit;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrGameSettingsCommon;
 
 extern(C++) interface TrGameSettingsTrTeamRabbit : TrGameSettingsCommon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameSettingsTrTeamRabbit")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameSettingsTrTeamRabbit")()); }
 	private static __gshared TrGameSettingsTrTeamRabbit mDefaultProperties;
-	@property final static TrGameSettingsTrTeamRabbit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameSettingsTrTeamRabbit)("TrGameSettingsTrTeamRabbit TribesGame.Default__TrGameSettingsTrTeamRabbit")); }
+	@property final static TrGameSettingsTrTeamRabbit DefaultProperties() { mixin(MGDPC!(TrGameSettingsTrTeamRabbit, "TrGameSettingsTrTeamRabbit TribesGame.Default__TrGameSettingsTrTeamRabbit")()); }
 }

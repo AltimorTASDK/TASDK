@@ -1,6 +1,7 @@
 module UnrealScript.Engine.NavMeshPath_WithinDistanceEnvelope;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationHandle;
 import UnrealScript.Engine.NavMeshPathConstraint;
 
@@ -8,9 +9,9 @@ extern(C++) interface NavMeshPath_WithinDistanceEnvelope : NavMeshPathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_WithinDistanceEnvelope")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshPath_WithinDistanceEnvelope")()); }
 	private static __gshared NavMeshPath_WithinDistanceEnvelope mDefaultProperties;
-	@property final static NavMeshPath_WithinDistanceEnvelope DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_WithinDistanceEnvelope)("NavMeshPath_WithinDistanceEnvelope Engine.Default__NavMeshPath_WithinDistanceEnvelope")); }
+	@property final static NavMeshPath_WithinDistanceEnvelope DefaultProperties() { mixin(MGDPC!(NavMeshPath_WithinDistanceEnvelope, "NavMeshPath_WithinDistanceEnvelope Engine.Default__NavMeshPath_WithinDistanceEnvelope")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,23 +21,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction StayWithinEnvelopeToLoc() { return mStayWithinEnvelopeToLoc ? mStayWithinEnvelopeToLoc : (mStayWithinEnvelopeToLoc = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPath_WithinDistanceEnvelope.StayWithinEnvelopeToLoc")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPath_WithinDistanceEnvelope.Recycle")); }
+			ScriptFunction StayWithinEnvelopeToLoc() { mixin(MGF!("mStayWithinEnvelopeToLoc", "Function Engine.NavMeshPath_WithinDistanceEnvelope.StayWithinEnvelopeToLoc")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPath_WithinDistanceEnvelope.Recycle")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector EnvelopeTestPoint() { return *cast(Vector*)(cast(size_t)cast(void*)this + 96); }
-			float SoftStartPenalty() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float MinDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			float MaxDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
+			Vector EnvelopeTestPoint() { mixin(MGPC!(Vector, 96)()); }
+			float SoftStartPenalty() { mixin(MGPC!(float, 92)()); }
+			float MinDistance() { mixin(MGPC!(float, 84)()); }
+			float MaxDistance() { mixin(MGPC!(float, 80)()); }
 		}
-		bool bOnlyThrowOutNodesThatLeaveEnvelope() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x2) != 0; }
-		bool bOnlyThrowOutNodesThatLeaveEnvelope(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x2; } return val; }
-		bool bSoft() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bSoft(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bOnlyThrowOutNodesThatLeaveEnvelope() { mixin(MGBPC!(88, 0x2)()); }
+		bool bOnlyThrowOutNodesThatLeaveEnvelope(bool val) { mixin(MSBPC!(88, 0x2)()); }
+		bool bSoft() { mixin(MGBPC!(88, 0x1)()); }
+		bool bSoft(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 final:
 	static bool StayWithinEnvelopeToLoc(NavigationHandle NavHandle, Vector InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool bInSoft, float InSoftStartPenalty, bool bOnlyTossOutSpecsThatLeave)

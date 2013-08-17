@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_TrackingMissile;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrSeekingMissileManager;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Canvas;
@@ -12,9 +13,9 @@ extern(C++) interface TrProj_TrackingMissile : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_TrackingMissile")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_TrackingMissile")()); }
 	private static __gshared TrProj_TrackingMissile mDefaultProperties;
-	@property final static TrProj_TrackingMissile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_TrackingMissile)("TrProj_TrackingMissile TribesGame.Default__TrProj_TrackingMissile")); }
+	@property final static TrProj_TrackingMissile DefaultProperties() { mixin(MGDPC!(TrProj_TrackingMissile, "TrProj_TrackingMissile TribesGame.Default__TrProj_TrackingMissile")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,21 +38,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.PostBeginPlay")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Init")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.ProcessTouch")); }
-			ScriptFunction EnableCollisionTimer() { return mEnableCollisionTimer ? mEnableCollisionTimer : (mEnableCollisionTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.EnableCollisionTimer")); }
-			ScriptFunction SetSeekTarget() { return mSetSeekTarget ? mSetSeekTarget : (mSetSeekTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.SetSeekTarget")); }
-			ScriptFunction NativeExplode() { return mNativeExplode ? mNativeExplode : (mNativeExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.NativeExplode")); }
-			ScriptFunction OnExploded() { return mOnExploded ? mOnExploded : (mOnExploded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.OnExploded")); }
-			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Explode")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Destroyed")); }
-			ScriptFunction GetSeekingMissileManager() { return mGetSeekingMissileManager ? mGetSeekingMissileManager : (mGetSeekingMissileManager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.GetSeekingMissileManager")); }
-			ScriptFunction SpawnFlightEffects() { return mSpawnFlightEffects ? mSpawnFlightEffects : (mSpawnFlightEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.SpawnFlightEffects")); }
-			ScriptFunction SpawnFlightEffectsTimer() { return mSpawnFlightEffectsTimer ? mSpawnFlightEffectsTimer : (mSpawnFlightEffectsTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.SpawnFlightEffectsTimer")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.TakeDamage")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Tick")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.PostRenderFor")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_TrackingMissile.PostBeginPlay")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrProj_TrackingMissile.Init")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_TrackingMissile.ProcessTouch")()); }
+			ScriptFunction EnableCollisionTimer() { mixin(MGF!("mEnableCollisionTimer", "Function TribesGame.TrProj_TrackingMissile.EnableCollisionTimer")()); }
+			ScriptFunction SetSeekTarget() { mixin(MGF!("mSetSeekTarget", "Function TribesGame.TrProj_TrackingMissile.SetSeekTarget")()); }
+			ScriptFunction NativeExplode() { mixin(MGF!("mNativeExplode", "Function TribesGame.TrProj_TrackingMissile.NativeExplode")()); }
+			ScriptFunction OnExploded() { mixin(MGF!("mOnExploded", "Function TribesGame.TrProj_TrackingMissile.OnExploded")()); }
+			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_TrackingMissile.Explode")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrProj_TrackingMissile.Destroyed")()); }
+			ScriptFunction GetSeekingMissileManager() { mixin(MGF!("mGetSeekingMissileManager", "Function TribesGame.TrProj_TrackingMissile.GetSeekingMissileManager")()); }
+			ScriptFunction SpawnFlightEffects() { mixin(MGF!("mSpawnFlightEffects", "Function TribesGame.TrProj_TrackingMissile.SpawnFlightEffects")()); }
+			ScriptFunction SpawnFlightEffectsTimer() { mixin(MGF!("mSpawnFlightEffectsTimer", "Function TribesGame.TrProj_TrackingMissile.SpawnFlightEffectsTimer")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrProj_TrackingMissile.TakeDamage")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrProj_TrackingMissile.Tick")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrProj_TrackingMissile.PostRenderFor")()); }
 		}
 	}
 	enum ETrackingMissileStage : ubyte
@@ -65,23 +66,24 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fLoseTightTrackingDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 884); }
-			Rotator m_MissileCaratRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 872); }
-			float m_fStage1MinGroundDist() { return *cast(float*)(cast(size_t)cast(void*)this + 868); }
-			Vector m_vLastKnownTargetLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 856); }
-			float m_fInitialLocationZ() { return *cast(float*)(cast(size_t)cast(void*)this + 852); }
-			float m_fMinHeightGainForGoodLOS() { return *cast(float*)(cast(size_t)cast(void*)this + 844); }
-			float m_fIdealHeightAboveTargetForGoodLOS() { return *cast(float*)(cast(size_t)cast(void*)this + 840); }
-			float m_fAdjustingForGoodLOSAccelRate() { return *cast(float*)(cast(size_t)cast(void*)this + 836); }
-			float m_fTrackingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 832); }
-			float m_fTrackingDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 828); }
-			float m_fLOSDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 824); }
-			TrProj_TrackingMissile.ETrackingMissileStage m_MissileStage() { return *cast(TrProj_TrackingMissile.ETrackingMissileStage*)(cast(size_t)cast(void*)this + 816); }
+			float m_fLoseTightTrackingDistance() { mixin(MGPC!(float, 884)()); }
+			Rotator m_MissileCaratRotation() { mixin(MGPC!(Rotator, 872)()); }
+			float m_fStage1MinGroundDist() { mixin(MGPC!(float, 868)()); }
+			Vector m_vLastKnownTargetLocation() { mixin(MGPC!(Vector, 856)()); }
+			float m_fInitialLocationZ() { mixin(MGPC!(float, 852)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ProjectileMesh'!
+			float m_fMinHeightGainForGoodLOS() { mixin(MGPC!(float, 844)()); }
+			float m_fIdealHeightAboveTargetForGoodLOS() { mixin(MGPC!(float, 840)()); }
+			float m_fAdjustingForGoodLOSAccelRate() { mixin(MGPC!(float, 836)()); }
+			float m_fTrackingTime() { mixin(MGPC!(float, 832)()); }
+			float m_fTrackingDelay() { mixin(MGPC!(float, 828)()); }
+			float m_fLOSDelay() { mixin(MGPC!(float, 824)()); }
+			TrProj_TrackingMissile.ETrackingMissileStage m_MissileStage() { mixin(MGPC!(TrProj_TrackingMissile.ETrackingMissileStage, 816)()); }
 		}
-		bool m_bLostTightHoming() { return (*cast(uint*)(cast(size_t)cast(void*)this + 820) & 0x2) != 0; }
-		bool m_bLostTightHoming(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 820) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 820) &= ~0x2; } return val; }
-		bool m_bHasBentToTarget() { return (*cast(uint*)(cast(size_t)cast(void*)this + 820) & 0x1) != 0; }
-		bool m_bHasBentToTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 820) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 820) &= ~0x1; } return val; }
+		bool m_bLostTightHoming() { mixin(MGBPC!(820, 0x2)()); }
+		bool m_bLostTightHoming(bool val) { mixin(MSBPC!(820, 0x2)()); }
+		bool m_bHasBentToTarget() { mixin(MGBPC!(820, 0x1)()); }
+		bool m_bHasBentToTarget(bool val) { mixin(MSBPC!(820, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

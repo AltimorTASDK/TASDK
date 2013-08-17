@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKVehicleSimCar;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SVehicleSimCar;
 
@@ -8,44 +9,44 @@ extern(C++) interface UDKVehicleSimCar : SVehicleSimCar
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimCar")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKVehicleSimCar")()); }
 	private static __gshared UDKVehicleSimCar mDefaultProperties;
-	@property final static UDKVehicleSimCar DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleSimCar)("UDKVehicleSimCar UDKBase.Default__UDKVehicleSimCar")); }
+	@property final static UDKVehicleSimCar DefaultProperties() { mixin(MGDPC!(UDKVehicleSimCar, "UDKVehicleSimCar UDKBase.Default__UDKVehicleSimCar")()); }
 	@property final
 	{
 		auto ref
 		{
-			float InAirUprightMaxTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 312); }
-			float InAirUprightTorqueFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 308); }
-			float AirControlTurnTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 304); }
-			float SpeedBasedTurnDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 300); }
-			float ConsoleHardTurnGripFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 296); }
-			float FrontalCollisionGripFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 292); }
-			float ActualHandbrake() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			float HandbrakeSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
-			float HardTurnMotorTorque() { return *cast(float*)(cast(size_t)cast(void*)this + 280); }
-			float MinHardTurnSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
-			float SteeringReductionMinSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-			float SteeringReductionSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
-			int NumWheelsForFullSteering() { return *cast(int*)(cast(size_t)cast(void*)this + 264); }
-			float CurrentSteeringReduction() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-			float SteeringReductionRampUpRate() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-			float SteeringReductionFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float ActualThrottle() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			float MaxRPM() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-			float MinRPM() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
-			float ThrottleSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
-			float LSDFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 228); }
-			UObject.InterpCurveFloat EngineRPMCurve() { return *cast(UObject.InterpCurveFloat*)(cast(size_t)cast(void*)this + 212); }
-			UObject.InterpCurveFloat TorqueVSpeedCurve() { return *cast(UObject.InterpCurveFloat*)(cast(size_t)cast(void*)this + 196); }
+			float InAirUprightMaxTorque() { mixin(MGPC!(float, 312)()); }
+			float InAirUprightTorqueFactor() { mixin(MGPC!(float, 308)()); }
+			float AirControlTurnTorque() { mixin(MGPC!(float, 304)()); }
+			float SpeedBasedTurnDamping() { mixin(MGPC!(float, 300)()); }
+			float ConsoleHardTurnGripFactor() { mixin(MGPC!(float, 296)()); }
+			float FrontalCollisionGripFactor() { mixin(MGPC!(float, 292)()); }
+			float ActualHandbrake() { mixin(MGPC!(float, 288)()); }
+			float HandbrakeSpeed() { mixin(MGPC!(float, 284)()); }
+			float HardTurnMotorTorque() { mixin(MGPC!(float, 280)()); }
+			float MinHardTurnSpeed() { mixin(MGPC!(float, 276)()); }
+			float SteeringReductionMinSpeed() { mixin(MGPC!(float, 272)()); }
+			float SteeringReductionSpeed() { mixin(MGPC!(float, 268)()); }
+			int NumWheelsForFullSteering() { mixin(MGPC!(int, 264)()); }
+			float CurrentSteeringReduction() { mixin(MGPC!(float, 260)()); }
+			float SteeringReductionRampUpRate() { mixin(MGPC!(float, 256)()); }
+			float SteeringReductionFactor() { mixin(MGPC!(float, 252)()); }
+			float ActualThrottle() { mixin(MGPC!(float, 244)()); }
+			float MaxRPM() { mixin(MGPC!(float, 240)()); }
+			float MinRPM() { mixin(MGPC!(float, 236)()); }
+			float ThrottleSpeed() { mixin(MGPC!(float, 232)()); }
+			float LSDFactor() { mixin(MGPC!(float, 228)()); }
+			UObject.InterpCurveFloat EngineRPMCurve() { mixin(MGPC!(UObject.InterpCurveFloat, 212)()); }
+			UObject.InterpCurveFloat TorqueVSpeedCurve() { mixin(MGPC!(UObject.InterpCurveFloat, 196)()); }
 		}
-		bool bAutoHandbrake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x8) != 0; }
-		bool bAutoHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x8; } return val; }
-		bool bDriverlessBraking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x4) != 0; }
-		bool bDriverlessBraking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x4; } return val; }
-		bool bHasForcedThrottle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x2) != 0; }
-		bool bHasForcedThrottle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x2; } return val; }
-		bool bForceThrottle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x1) != 0; }
-		bool bForceThrottle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x1; } return val; }
+		bool bAutoHandbrake() { mixin(MGBPC!(248, 0x8)()); }
+		bool bAutoHandbrake(bool val) { mixin(MSBPC!(248, 0x8)()); }
+		bool bDriverlessBraking() { mixin(MGBPC!(248, 0x4)()); }
+		bool bDriverlessBraking(bool val) { mixin(MSBPC!(248, 0x4)()); }
+		bool bHasForcedThrottle() { mixin(MGBPC!(248, 0x2)()); }
+		bool bHasForcedThrottle(bool val) { mixin(MSBPC!(248, 0x2)()); }
+		bool bForceThrottle() { mixin(MGBPC!(248, 0x1)()); }
+		bool bForceThrottle(bool val) { mixin(MSBPC!(248, 0x1)()); }
 	}
 }

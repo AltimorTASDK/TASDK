@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_Game;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_Game : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Game")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Game")()); }
 	private static __gshared GFxTrPage_Game mDefaultProperties;
-	@property final static GFxTrPage_Game DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Game)("GFxTrPage_Game TribesGame.Default__GFxTrPage_Game")); }
+	@property final static GFxTrPage_Game DefaultProperties() { mixin(MGDPC!(GFxTrPage_Game, "GFxTrPage_Game TribesGame.Default__GFxTrPage_Game")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,29 +27,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Game.Initialize")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Game.FillData")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Game.TakeAction")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Game.SpecialAction")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Game.FillOption")); }
-			ScriptFunction PushModel() { return mPushModel ? mPushModel : (mPushModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Game.PushModel")); }
-			ScriptFunction HelpButton() { return mHelpButton ? mHelpButton : (mHelpButton = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Game.HelpButton")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Game.Initialize")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Game.FillData")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Game.TakeAction")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Game.SpecialAction")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Game.FillOption")()); }
+			ScriptFunction PushModel() { mixin(MGF!("mPushModel", "Function TribesGame.GFxTrPage_Game.PushModel")()); }
+			ScriptFunction HelpButton() { mixin(MGF!("mHelpButton", "Function TribesGame.GFxTrPage_Game.HelpButton")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString strExitMatch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 424); }
-			ScriptString strManageServers() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 412); }
-			ScriptString strSettings() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 400); }
-			ScriptString strStore() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 388); }
-			ScriptString strSocial() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 376); }
-			ScriptString strParty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 364); }
-			int TeamLoadoutNum() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			ScriptString strExitMatch() { mixin(MGPC!(ScriptString, 424)()); }
+			ScriptString strManageServers() { mixin(MGPC!(ScriptString, 412)()); }
+			ScriptString strSettings() { mixin(MGPC!(ScriptString, 400)()); }
+			ScriptString strStore() { mixin(MGPC!(ScriptString, 388)()); }
+			ScriptString strSocial() { mixin(MGPC!(ScriptString, 376)()); }
+			ScriptString strParty() { mixin(MGPC!(ScriptString, 364)()); }
+			int TeamLoadoutNum() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bRemovePartyTemp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
-		bool bRemovePartyTemp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
+		bool bRemovePartyTemp() { mixin(MGBPC!(360, 0x1)()); }
+		bool bRemovePartyTemp(bool val) { mixin(MSBPC!(360, 0x1)()); }
 	}
 final:
 	void Initialize()

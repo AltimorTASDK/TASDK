@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTWeaponAttachment;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Weapon;
@@ -15,9 +16,9 @@ extern(C++) interface UTWeaponAttachment : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponAttachment")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponAttachment")()); }
 	private static __gshared UTWeaponAttachment mDefaultProperties;
-	@property final static UTWeaponAttachment DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponAttachment)("UTWeaponAttachment UTGame.Default__UTWeaponAttachment")); }
+	@property final static UTWeaponAttachment DefaultProperties() { mixin(MGDPC!(UTWeaponAttachment, "UTWeaponAttachment UTGame.Default__UTWeaponAttachment")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -49,66 +50,76 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.PostBeginPlay")); }
-			ScriptFunction CheckToForceRefPose() { return mCheckToForceRefPose ? mCheckToForceRefPose : (mCheckToForceRefPose = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CheckToForceRefPose")); }
-			ScriptFunction CreateOverlayMesh() { return mCreateOverlayMesh ? mCreateOverlayMesh : (mCreateOverlayMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CreateOverlayMesh")); }
-			ScriptFunction SetSkin() { return mSetSkin ? mSetSkin : (mSetSkin = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetSkin")); }
-			ScriptFunction SetMuzzleFlashParams() { return mSetMuzzleFlashParams ? mSetMuzzleFlashParams : (mSetMuzzleFlashParams = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetMuzzleFlashParams")); }
-			ScriptFunction AttachTo() { return mAttachTo ? mAttachTo : (mAttachTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.AttachTo")); }
-			ScriptFunction SetPuttingDownWeapon() { return mSetPuttingDownWeapon ? mSetPuttingDownWeapon : (mSetPuttingDownWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetPuttingDownWeapon")); }
-			ScriptFunction DetachFrom() { return mDetachFrom ? mDetachFrom : (mDetachFrom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.DetachFrom")); }
-			ScriptFunction MuzzleFlashTimer() { return mMuzzleFlashTimer ? mMuzzleFlashTimer : (mMuzzleFlashTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.MuzzleFlashTimer")); }
-			ScriptFunction CauseMuzzleFlash() { return mCauseMuzzleFlash ? mCauseMuzzleFlash : (mCauseMuzzleFlash = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CauseMuzzleFlash")); }
-			ScriptFunction StopMuzzleFlash() { return mStopMuzzleFlash ? mStopMuzzleFlash : (mStopMuzzleFlash = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.StopMuzzleFlash")); }
-			ScriptFunction FirstPersonFireEffects() { return mFirstPersonFireEffects ? mFirstPersonFireEffects : (mFirstPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.FirstPersonFireEffects")); }
-			ScriptFunction StopFirstPersonFireEffects() { return mStopFirstPersonFireEffects ? mStopFirstPersonFireEffects : (mStopFirstPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.StopFirstPersonFireEffects")); }
-			ScriptFunction ThirdPersonFireEffects() { return mThirdPersonFireEffects ? mThirdPersonFireEffects : (mThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.ThirdPersonFireEffects")); }
-			ScriptFunction StopThirdPersonFireEffects() { return mStopThirdPersonFireEffects ? mStopThirdPersonFireEffects : (mStopThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.StopThirdPersonFireEffects")); }
-			ScriptFunction GetImpactEffect() { return mGetImpactEffect ? mGetImpactEffect : (mGetImpactEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.GetImpactEffect")); }
-			ScriptFunction AllowImpactEffects() { return mAllowImpactEffects ? mAllowImpactEffects : (mAllowImpactEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.AllowImpactEffects")); }
-			ScriptFunction SetImpactedActor() { return mSetImpactedActor ? mSetImpactedActor : (mSetImpactedActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetImpactedActor")); }
-			ScriptFunction PlayImpactEffects() { return mPlayImpactEffects ? mPlayImpactEffects : (mPlayImpactEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.PlayImpactEffects")); }
-			ScriptFunction CheckBulletWhip() { return mCheckBulletWhip ? mCheckBulletWhip : (mCheckBulletWhip = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CheckBulletWhip")); }
-			ScriptFunction SetWeaponOverlayFlags() { return mSetWeaponOverlayFlags ? mSetWeaponOverlayFlags : (mSetWeaponOverlayFlags = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetWeaponOverlayFlags")); }
-			ScriptFunction ChangeVisibility() { return mChangeVisibility ? mChangeVisibility : (mChangeVisibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.ChangeVisibility")); }
-			ScriptFunction FireModeUpdated() { return mFireModeUpdated ? mFireModeUpdated : (mFireModeUpdated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.FireModeUpdated")); }
-			ScriptFunction GetEffectLocation() { return mGetEffectLocation ? mGetEffectLocation : (mGetEffectLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.GetEffectLocation")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTWeaponAttachment.PostBeginPlay")()); }
+			ScriptFunction CheckToForceRefPose() { mixin(MGF!("mCheckToForceRefPose", "Function UTGame.UTWeaponAttachment.CheckToForceRefPose")()); }
+			ScriptFunction CreateOverlayMesh() { mixin(MGF!("mCreateOverlayMesh", "Function UTGame.UTWeaponAttachment.CreateOverlayMesh")()); }
+			ScriptFunction SetSkin() { mixin(MGF!("mSetSkin", "Function UTGame.UTWeaponAttachment.SetSkin")()); }
+			ScriptFunction SetMuzzleFlashParams() { mixin(MGF!("mSetMuzzleFlashParams", "Function UTGame.UTWeaponAttachment.SetMuzzleFlashParams")()); }
+			ScriptFunction AttachTo() { mixin(MGF!("mAttachTo", "Function UTGame.UTWeaponAttachment.AttachTo")()); }
+			ScriptFunction SetPuttingDownWeapon() { mixin(MGF!("mSetPuttingDownWeapon", "Function UTGame.UTWeaponAttachment.SetPuttingDownWeapon")()); }
+			ScriptFunction DetachFrom() { mixin(MGF!("mDetachFrom", "Function UTGame.UTWeaponAttachment.DetachFrom")()); }
+			ScriptFunction MuzzleFlashTimer() { mixin(MGF!("mMuzzleFlashTimer", "Function UTGame.UTWeaponAttachment.MuzzleFlashTimer")()); }
+			ScriptFunction CauseMuzzleFlash() { mixin(MGF!("mCauseMuzzleFlash", "Function UTGame.UTWeaponAttachment.CauseMuzzleFlash")()); }
+			ScriptFunction StopMuzzleFlash() { mixin(MGF!("mStopMuzzleFlash", "Function UTGame.UTWeaponAttachment.StopMuzzleFlash")()); }
+			ScriptFunction FirstPersonFireEffects() { mixin(MGF!("mFirstPersonFireEffects", "Function UTGame.UTWeaponAttachment.FirstPersonFireEffects")()); }
+			ScriptFunction StopFirstPersonFireEffects() { mixin(MGF!("mStopFirstPersonFireEffects", "Function UTGame.UTWeaponAttachment.StopFirstPersonFireEffects")()); }
+			ScriptFunction ThirdPersonFireEffects() { mixin(MGF!("mThirdPersonFireEffects", "Function UTGame.UTWeaponAttachment.ThirdPersonFireEffects")()); }
+			ScriptFunction StopThirdPersonFireEffects() { mixin(MGF!("mStopThirdPersonFireEffects", "Function UTGame.UTWeaponAttachment.StopThirdPersonFireEffects")()); }
+			ScriptFunction GetImpactEffect() { mixin(MGF!("mGetImpactEffect", "Function UTGame.UTWeaponAttachment.GetImpactEffect")()); }
+			ScriptFunction AllowImpactEffects() { mixin(MGF!("mAllowImpactEffects", "Function UTGame.UTWeaponAttachment.AllowImpactEffects")()); }
+			ScriptFunction SetImpactedActor() { mixin(MGF!("mSetImpactedActor", "Function UTGame.UTWeaponAttachment.SetImpactedActor")()); }
+			ScriptFunction PlayImpactEffects() { mixin(MGF!("mPlayImpactEffects", "Function UTGame.UTWeaponAttachment.PlayImpactEffects")()); }
+			ScriptFunction CheckBulletWhip() { mixin(MGF!("mCheckBulletWhip", "Function UTGame.UTWeaponAttachment.CheckBulletWhip")()); }
+			ScriptFunction SetWeaponOverlayFlags() { mixin(MGF!("mSetWeaponOverlayFlags", "Function UTGame.UTWeaponAttachment.SetWeaponOverlayFlags")()); }
+			ScriptFunction ChangeVisibility() { mixin(MGF!("mChangeVisibility", "Function UTGame.UTWeaponAttachment.ChangeVisibility")()); }
+			ScriptFunction FireModeUpdated() { mixin(MGF!("mFireModeUpdated", "Function UTGame.UTWeaponAttachment.FireModeUpdated")()); }
+			ScriptFunction GetEffectLocation() { mixin(MGF!("mGetEffectLocation", "Function UTGame.UTWeaponAttachment.GetEffectLocation")()); }
 		}
+	}
+	static struct CurrentlyAttached
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeaponAttachment.CurrentlyAttached")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float MaxFireEffectDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 668); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { return *cast(ScriptArray!(UDKPawn.MaterialImpactEffect)*)(cast(size_t)cast(void*)this + 540); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { return *cast(ScriptArray!(UDKPawn.MaterialImpactEffect)*)(cast(size_t)cast(void*)this + 552); }
-			UTPawn.EWeapAnimType WeapAnimType() { return *cast(UTPawn.EWeapAnimType*)(cast(size_t)cast(void*)this + 700); }
-			ScriptName AltFireAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 692); }
-			ScriptName FireAnim() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 684); }
-			float DistFactorForRefPose() { return *cast(float*)(cast(size_t)cast(void*)this + 680); }
-			float MaxDecalRangeSq() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-			ScriptClass WeaponClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 672); }
-			float MaxImpactEffectDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 664); }
-			SoundCue BulletWhip() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 660); }
-			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { return *cast(UDKPawn.MaterialImpactEffect*)(cast(size_t)cast(void*)this + 612); }
-			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { return *cast(UDKPawn.MaterialImpactEffect*)(cast(size_t)cast(void*)this + 564); }
-			ScriptName AttachmentSocket() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 532); }
-			float MuzzleFlashDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			ScriptClass MuzzleFlashLightClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 516); }
-			UObject.Color MuzzleFlashColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 508); }
-			ParticleSystem MuzzleFlashAltPSCTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 504); }
-			ParticleSystem MuzzleFlashPSCTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 500); }
-			ScriptName MuzzleFlashSocket() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 488); }
-			ScriptClass SplashEffect() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 476); }
+			float MaxFireEffectDistance() { mixin(MGPC!(float, 668)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 540)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 552)()); }
+			UTPawn.EWeapAnimType WeapAnimType() { mixin(MGPC!(UTPawn.EWeapAnimType, 700)()); }
+			ScriptName AltFireAnim() { mixin(MGPC!(ScriptName, 692)()); }
+			ScriptName FireAnim() { mixin(MGPC!(ScriptName, 684)()); }
+			float DistFactorForRefPose() { mixin(MGPC!(float, 680)()); }
+			float MaxDecalRangeSq() { mixin(MGPC!(float, 676)()); }
+			ScriptClass WeaponClass() { mixin(MGPC!(ScriptClass, 672)()); }
+			float MaxImpactEffectDistance() { mixin(MGPC!(float, 664)()); }
+			SoundCue BulletWhip() { mixin(MGPC!(SoundCue, 660)()); }
+			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 612)()); }
+			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 564)()); }
+			ScriptName AttachmentSocket() { mixin(MGPC!(ScriptName, 532)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OwnerMesh'!
+			float MuzzleFlashDuration() { mixin(MGPC!(float, 524)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashLight'!
+			ScriptClass MuzzleFlashLightClass() { mixin(MGPC!(ScriptClass, 516)()); }
+			UObject.Color MuzzleFlashColor() { mixin(MGPC!(UObject.Color, 508)()); }
+			ParticleSystem MuzzleFlashAltPSCTemplate() { mixin(MGPC!(ParticleSystem, 504)()); }
+			ParticleSystem MuzzleFlashPSCTemplate() { mixin(MGPC!(ParticleSystem, 500)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashPSC'!
+			ScriptName MuzzleFlashSocket() { mixin(MGPC!(ScriptName, 488)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OverlayMesh'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
+			ScriptClass SplashEffect() { mixin(MGPC!(ScriptClass, 476)()); }
 		}
-		bool bMakeSplash() { return (*cast(uint*)(cast(size_t)cast(void*)this + 512) & 0x8) != 0; }
-		bool bMakeSplash(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 512) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 512) &= ~0x8; } return val; }
-		bool bSuppressSounds() { return (*cast(uint*)(cast(size_t)cast(void*)this + 512) & 0x4) != 0; }
-		bool bSuppressSounds(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 512) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 512) &= ~0x4; } return val; }
-		bool bAlignToSurfaceNormal() { return (*cast(uint*)(cast(size_t)cast(void*)this + 512) & 0x2) != 0; }
-		bool bAlignToSurfaceNormal(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 512) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 512) &= ~0x2; } return val; }
-		bool bMuzzleFlashPSCLoops() { return (*cast(uint*)(cast(size_t)cast(void*)this + 512) & 0x1) != 0; }
-		bool bMuzzleFlashPSCLoops(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 512) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 512) &= ~0x1; } return val; }
+		bool bMakeSplash() { mixin(MGBPC!(512, 0x8)()); }
+		bool bMakeSplash(bool val) { mixin(MSBPC!(512, 0x8)()); }
+		bool bSuppressSounds() { mixin(MGBPC!(512, 0x4)()); }
+		bool bSuppressSounds(bool val) { mixin(MSBPC!(512, 0x4)()); }
+		bool bAlignToSurfaceNormal() { mixin(MGBPC!(512, 0x2)()); }
+		bool bAlignToSurfaceNormal(bool val) { mixin(MSBPC!(512, 0x2)()); }
+		bool bMuzzleFlashPSCLoops() { mixin(MGBPC!(512, 0x1)()); }
+		bool bMuzzleFlashPSCLoops(bool val) { mixin(MSBPC!(512, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

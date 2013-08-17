@@ -1,6 +1,7 @@
 module UnrealScript.Engine.UIDataProvider_OnlineProfileSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataProvider_OnlinePlayerStorage;
 import UnrealScript.Engine.OnlinePlayerStorage;
 
@@ -8,9 +9,9 @@ extern(C++) interface UIDataProvider_OnlineProfileSettings : UIDataProvider_Onli
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlineProfileSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_OnlineProfileSettings")()); }
 	private static __gshared UIDataProvider_OnlineProfileSettings mDefaultProperties;
-	@property final static UIDataProvider_OnlineProfileSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlineProfileSettings)("UIDataProvider_OnlineProfileSettings Engine.Default__UIDataProvider_OnlineProfileSettings")); }
+	@property final static UIDataProvider_OnlineProfileSettings DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlineProfileSettings, "UIDataProvider_OnlineProfileSettings Engine.Default__UIDataProvider_OnlineProfileSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,12 +25,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReadData() { return mReadData ? mReadData : (mReadData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineProfileSettings.ReadData")); }
-			ScriptFunction WriteData() { return mWriteData ? mWriteData : (mWriteData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineProfileSettings.WriteData")); }
-			ScriptFunction GetData() { return mGetData ? mGetData : (mGetData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineProfileSettings.GetData")); }
-			ScriptFunction AddReadCompleteDelegate() { return mAddReadCompleteDelegate ? mAddReadCompleteDelegate : (mAddReadCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineProfileSettings.AddReadCompleteDelegate")); }
-			ScriptFunction ClearReadCompleteDelegate() { return mClearReadCompleteDelegate ? mClearReadCompleteDelegate : (mClearReadCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineProfileSettings.ClearReadCompleteDelegate")); }
-			ScriptFunction RefreshStorageData() { return mRefreshStorageData ? mRefreshStorageData : (mRefreshStorageData = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineProfileSettings.RefreshStorageData")); }
+			ScriptFunction ReadData() { mixin(MGF!("mReadData", "Function Engine.UIDataProvider_OnlineProfileSettings.ReadData")()); }
+			ScriptFunction WriteData() { mixin(MGF!("mWriteData", "Function Engine.UIDataProvider_OnlineProfileSettings.WriteData")()); }
+			ScriptFunction GetData() { mixin(MGF!("mGetData", "Function Engine.UIDataProvider_OnlineProfileSettings.GetData")()); }
+			ScriptFunction AddReadCompleteDelegate() { mixin(MGF!("mAddReadCompleteDelegate", "Function Engine.UIDataProvider_OnlineProfileSettings.AddReadCompleteDelegate")()); }
+			ScriptFunction ClearReadCompleteDelegate() { mixin(MGF!("mClearReadCompleteDelegate", "Function Engine.UIDataProvider_OnlineProfileSettings.ClearReadCompleteDelegate")()); }
+			ScriptFunction RefreshStorageData() { mixin(MGF!("mRefreshStorageData", "Function Engine.UIDataProvider_OnlineProfileSettings.RefreshStorageData")()); }
 		}
 	}
 final:

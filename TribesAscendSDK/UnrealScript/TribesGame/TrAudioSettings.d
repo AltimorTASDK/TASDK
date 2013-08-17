@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrAudioSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.GFxUI.GFxObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrAudioSettings : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAudioSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAudioSettings")()); }
 	private static __gshared TrAudioSettings mDefaultProperties;
-	@property final static TrAudioSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAudioSettings)("TrAudioSettings TribesGame.Default__TrAudioSettings")); }
+	@property final static TrAudioSettings DefaultProperties() { mixin(MGDPC!(TrAudioSettings, "TrAudioSettings TribesGame.Default__TrAudioSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,39 +36,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentSettingValue() { return mGetCurrentSettingValue ? mGetCurrentSettingValue : (mGetCurrentSettingValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.GetCurrentSettingValue")); }
-			ScriptFunction FlushSettings() { return mFlushSettings ? mFlushSettings : (mFlushSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.FlushSettings")); }
-			ScriptFunction StoreSetting() { return mStoreSetting ? mStoreSetting : (mStoreSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.StoreSetting")); }
-			ScriptFunction ReadSetting() { return mReadSetting ? mReadSetting : (mReadSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.ReadSetting")); }
-			ScriptFunction ReadSettings() { return mReadSettings ? mReadSettings : (mReadSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.ReadSettings")); }
-			ScriptFunction InitializeAudioVolumes() { return mInitializeAudioVolumes ? mInitializeAudioVolumes : (mInitializeAudioVolumes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.InitializeAudioVolumes")); }
-			ScriptFunction LoadAudioSettings() { return mLoadAudioSettings ? mLoadAudioSettings : (mLoadAudioSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.LoadAudioSettings")); }
-			ScriptFunction ApplyAudioSetting() { return mApplyAudioSetting ? mApplyAudioSetting : (mApplyAudioSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.ApplyAudioSetting")); }
-			ScriptFunction AddSettingToList() { return mAddSettingToList ? mAddSettingToList : (mAddSettingToList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.AddSettingToList")); }
-			ScriptFunction SetMasterVolume() { return mSetMasterVolume ? mSetMasterVolume : (mSetMasterVolume = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.SetMasterVolume")); }
-			ScriptFunction SetEffectsVolume() { return mSetEffectsVolume ? mSetEffectsVolume : (mSetEffectsVolume = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.SetEffectsVolume")); }
-			ScriptFunction SetMusicVolume() { return mSetMusicVolume ? mSetMusicVolume : (mSetMusicVolume = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.SetMusicVolume")); }
-			ScriptFunction SetVGSVolume() { return mSetVGSVolume ? mSetVGSVolume : (mSetVGSVolume = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.SetVGSVolume")); }
-			ScriptFunction SetVoiceVolume() { return mSetVoiceVolume ? mSetVoiceVolume : (mSetVoiceVolume = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.SetVoiceVolume")); }
-			ScriptFunction GetBassBoost() { return mGetBassBoost ? mGetBassBoost : (mGetBassBoost = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.GetBassBoost")); }
-			ScriptFunction SetBassBoost() { return mSetBassBoost ? mSetBassBoost : (mSetBassBoost = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.SetBassBoost")); }
-			ScriptFunction GetSettingNameFromType() { return mGetSettingNameFromType ? mGetSettingNameFromType : (mGetSettingNameFromType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAudioSettings.GetSettingNameFromType")); }
+			ScriptFunction GetCurrentSettingValue() { mixin(MGF!("mGetCurrentSettingValue", "Function TribesGame.TrAudioSettings.GetCurrentSettingValue")()); }
+			ScriptFunction FlushSettings() { mixin(MGF!("mFlushSettings", "Function TribesGame.TrAudioSettings.FlushSettings")()); }
+			ScriptFunction StoreSetting() { mixin(MGF!("mStoreSetting", "Function TribesGame.TrAudioSettings.StoreSetting")()); }
+			ScriptFunction ReadSetting() { mixin(MGF!("mReadSetting", "Function TribesGame.TrAudioSettings.ReadSetting")()); }
+			ScriptFunction ReadSettings() { mixin(MGF!("mReadSettings", "Function TribesGame.TrAudioSettings.ReadSettings")()); }
+			ScriptFunction InitializeAudioVolumes() { mixin(MGF!("mInitializeAudioVolumes", "Function TribesGame.TrAudioSettings.InitializeAudioVolumes")()); }
+			ScriptFunction LoadAudioSettings() { mixin(MGF!("mLoadAudioSettings", "Function TribesGame.TrAudioSettings.LoadAudioSettings")()); }
+			ScriptFunction ApplyAudioSetting() { mixin(MGF!("mApplyAudioSetting", "Function TribesGame.TrAudioSettings.ApplyAudioSetting")()); }
+			ScriptFunction AddSettingToList() { mixin(MGF!("mAddSettingToList", "Function TribesGame.TrAudioSettings.AddSettingToList")()); }
+			ScriptFunction SetMasterVolume() { mixin(MGF!("mSetMasterVolume", "Function TribesGame.TrAudioSettings.SetMasterVolume")()); }
+			ScriptFunction SetEffectsVolume() { mixin(MGF!("mSetEffectsVolume", "Function TribesGame.TrAudioSettings.SetEffectsVolume")()); }
+			ScriptFunction SetMusicVolume() { mixin(MGF!("mSetMusicVolume", "Function TribesGame.TrAudioSettings.SetMusicVolume")()); }
+			ScriptFunction SetVGSVolume() { mixin(MGF!("mSetVGSVolume", "Function TribesGame.TrAudioSettings.SetVGSVolume")()); }
+			ScriptFunction SetVoiceVolume() { mixin(MGF!("mSetVoiceVolume", "Function TribesGame.TrAudioSettings.SetVoiceVolume")()); }
+			ScriptFunction GetBassBoost() { mixin(MGF!("mGetBassBoost", "Function TribesGame.TrAudioSettings.GetBassBoost")()); }
+			ScriptFunction SetBassBoost() { mixin(MGF!("mSetBassBoost", "Function TribesGame.TrAudioSettings.SetBassBoost")()); }
+			ScriptFunction GetSettingNameFromType() { mixin(MGF!("mGetSettingNameFromType", "Function TribesGame.TrAudioSettings.GetSettingNameFromType")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) MasterSoundClassNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 148); }
-		ScriptArray!(ScriptString) EffectsSoundClassNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 160); }
-		ScriptArray!(ScriptString) MusicSoundClassNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 172); }
-		ScriptArray!(ScriptString) VGSSoundClassNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 184); }
-		ScriptArray!(ScriptString) VoiceSoundClassNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 196); }
-		int m_nVolumeMaster() { return *cast(int*)(cast(size_t)cast(void*)this + 144); }
-		int m_nVolumeMusic() { return *cast(int*)(cast(size_t)cast(void*)this + 140); }
-		int m_nVolumeVoice() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
-		int m_nVolumeVGS() { return *cast(int*)(cast(size_t)cast(void*)this + 132); }
-		int m_nVolumeEffects() { return *cast(int*)(cast(size_t)cast(void*)this + 128); }
-		GFxObject m_SettingsList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 124); }
-		int m_SettingsCount() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
+		ScriptArray!(ScriptString) MasterSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 148)()); }
+		ScriptArray!(ScriptString) EffectsSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 160)()); }
+		ScriptArray!(ScriptString) MusicSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 172)()); }
+		ScriptArray!(ScriptString) VGSSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 184)()); }
+		ScriptArray!(ScriptString) VoiceSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 196)()); }
+		int m_nVolumeMaster() { mixin(MGPC!(int, 144)()); }
+		int m_nVolumeMusic() { mixin(MGPC!(int, 140)()); }
+		int m_nVolumeVoice() { mixin(MGPC!(int, 136)()); }
+		int m_nVolumeVGS() { mixin(MGPC!(int, 132)()); }
+		int m_nVolumeEffects() { mixin(MGPC!(int, 128)()); }
+		GFxObject m_SettingsList() { mixin(MGPC!(GFxObject, 124)()); }
+		int m_SettingsCount() { mixin(MGPC!(int, 120)()); }
 	}
 final:
 	int GetCurrentSettingValue(TrObject.ESettingsList Type)

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.TextureFlipBook;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface TextureFlipBook : Texture2D
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureFlipBook")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TextureFlipBook")()); }
 	private static __gshared TextureFlipBook mDefaultProperties;
-	@property final static TextureFlipBook DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TextureFlipBook)("TextureFlipBook Engine.Default__TextureFlipBook")); }
+	@property final static TextureFlipBook DefaultProperties() { mixin(MGDPC!(TextureFlipBook, "TextureFlipBook Engine.Default__TextureFlipBook")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Play() { return mPlay ? mPlay : (mPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.Play")); }
-			ScriptFunction Pause() { return mPause ? mPause : (mPause = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.Pause")); }
-			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.Stop")); }
-			ScriptFunction SetCurrentFrame() { return mSetCurrentFrame ? mSetCurrentFrame : (mSetCurrentFrame = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.SetCurrentFrame")); }
+			ScriptFunction Play() { mixin(MGF!("mPlay", "Function Engine.TextureFlipBook.Play")()); }
+			ScriptFunction Pause() { mixin(MGF!("mPause", "Function Engine.TextureFlipBook.Pause")()); }
+			ScriptFunction Stop() { mixin(MGF!("mStop", "Function Engine.TextureFlipBook.Stop")()); }
+			ScriptFunction SetCurrentFrame() { mixin(MGF!("mSetCurrentFrame", "Function Engine.TextureFlipBook.SetCurrentFrame")()); }
 		}
 	}
 	enum TextureFlipBookMethod : ubyte
@@ -45,30 +46,30 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ReleaseResourcesFence() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 428); }
-			float RenderOffsetV() { return *cast(float*)(cast(size_t)cast(void*)this + 424); }
-			float RenderOffsetU() { return *cast(float*)(cast(size_t)cast(void*)this + 420); }
-			int CurrentColumn() { return *cast(int*)(cast(size_t)cast(void*)this + 416); }
-			int CurrentRow() { return *cast(int*)(cast(size_t)cast(void*)this + 412); }
-			float FrameTime() { return *cast(float*)(cast(size_t)cast(void*)this + 408); }
-			float FrameRate() { return *cast(float*)(cast(size_t)cast(void*)this + 404); }
-			TextureFlipBook.TextureFlipBookMethod FBMethod() { return *cast(TextureFlipBook.TextureFlipBookMethod*)(cast(size_t)cast(void*)this + 400); }
-			UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 368); }
-			int VerticalImages() { return *cast(int*)(cast(size_t)cast(void*)this + 396); }
-			int HorizontalImages() { return *cast(int*)(cast(size_t)cast(void*)this + 392); }
-			float VerticalScale() { return *cast(float*)(cast(size_t)cast(void*)this + 384); }
-			float HorizontalScale() { return *cast(float*)(cast(size_t)cast(void*)this + 380); }
-			float TimeSinceLastFrame() { return *cast(float*)(cast(size_t)cast(void*)this + 376); }
-			float TimeIntoMovie() { return *cast(float*)(cast(size_t)cast(void*)this + 372); }
+			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!(UObject.Pointer, 428)()); }
+			float RenderOffsetV() { mixin(MGPC!(float, 424)()); }
+			float RenderOffsetU() { mixin(MGPC!(float, 420)()); }
+			int CurrentColumn() { mixin(MGPC!(int, 416)()); }
+			int CurrentRow() { mixin(MGPC!(int, 412)()); }
+			float FrameTime() { mixin(MGPC!(float, 408)()); }
+			float FrameRate() { mixin(MGPC!(float, 404)()); }
+			TextureFlipBook.TextureFlipBookMethod FBMethod() { mixin(MGPC!(TextureFlipBook.TextureFlipBookMethod, 400)()); }
+			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!(UObject.Pointer, 368)()); }
+			int VerticalImages() { mixin(MGPC!(int, 396)()); }
+			int HorizontalImages() { mixin(MGPC!(int, 392)()); }
+			float VerticalScale() { mixin(MGPC!(float, 384)()); }
+			float HorizontalScale() { mixin(MGPC!(float, 380)()); }
+			float TimeSinceLastFrame() { mixin(MGPC!(float, 376)()); }
+			float TimeIntoMovie() { mixin(MGPC!(float, 372)()); }
 		}
-		bool bAutoPlay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x8) != 0; }
-		bool bAutoPlay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x8; } return val; }
-		bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x4) != 0; }
-		bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x4; } return val; }
-		bool bStopped() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x2) != 0; }
-		bool bStopped(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x2; } return val; }
-		bool bPaused() { return (*cast(uint*)(cast(size_t)cast(void*)this + 388) & 0x1) != 0; }
-		bool bPaused(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 388) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 388) &= ~0x1; } return val; }
+		bool bAutoPlay() { mixin(MGBPC!(388, 0x8)()); }
+		bool bAutoPlay(bool val) { mixin(MSBPC!(388, 0x8)()); }
+		bool bLooping() { mixin(MGBPC!(388, 0x4)()); }
+		bool bLooping(bool val) { mixin(MSBPC!(388, 0x4)()); }
+		bool bStopped() { mixin(MGBPC!(388, 0x2)()); }
+		bool bStopped(bool val) { mixin(MSBPC!(388, 0x2)()); }
+		bool bPaused() { mixin(MGBPC!(388, 0x1)()); }
+		bool bPaused(bool val) { mixin(MSBPC!(388, 0x1)()); }
 	}
 final:
 	void Play()

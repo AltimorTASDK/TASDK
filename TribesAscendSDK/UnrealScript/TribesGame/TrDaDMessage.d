@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDaDMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface TrDaDMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDMessage")()); }
 	private static __gshared TrDaDMessage mDefaultProperties;
-	@property final static TrDaDMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDaDMessage)("TrDaDMessage TribesGame.Default__TrDaDMessage")); }
+	@property final static TrDaDMessage DefaultProperties() { mixin(MGDPC!(TrDaDMessage, "TrDaDMessage TribesGame.Default__TrDaDMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,19 +23,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrDaDMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrDaDMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString CannotSwitchTeam() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-		ScriptString NoRespawnsRemain() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString Fight() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString YouAreLastManStanding() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString TeamRespawnsDepleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString FiveTeamRespawnsRemain() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString TenTeamRespawnsRemain() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString CannotSwitchTeam() { mixin(MGPC!(ScriptString, 172)()); }
+		ScriptString NoRespawnsRemain() { mixin(MGPC!(ScriptString, 160)()); }
+		ScriptString Fight() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString YouAreLastManStanding() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString TeamRespawnsDepleted() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString FiveTeamRespawnsRemain() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString TenTeamRespawnsRemain() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

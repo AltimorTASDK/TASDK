@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_Mine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.TribesGame.TrMineCollisionProxy;
@@ -17,9 +18,9 @@ extern(C++) interface TrProj_Mine : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Mine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Mine")()); }
 	private static __gshared TrProj_Mine mDefaultProperties;
-	@property final static TrProj_Mine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Mine)("TrProj_Mine TribesGame.Default__TrProj_Mine")); }
+	@property final static TrProj_Mine DefaultProperties() { mixin(MGDPC!(TrProj_Mine, "TrProj_Mine TribesGame.Default__TrProj_Mine")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,57 +46,57 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsAliveAndWell() { return mIsAliveAndWell ? mIsAliveAndWell : (mIsAliveAndWell = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.IsAliveAndWell")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.ReplicatedEvent")); }
-			ScriptFunction OnPRIReplicated() { return mOnPRIReplicated ? mOnPRIReplicated : (mOnPRIReplicated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.OnPRIReplicated")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.PostBeginPlay")); }
-			ScriptFunction ArmedTimer() { return mArmedTimer ? mArmedTimer : (mArmedTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.ArmedTimer")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.HitWall")); }
-			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.TakeRadiusDamage")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.TakeDamage")); }
-			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.InitProjectile")); }
-			ScriptFunction PawnEnteredDetonationArea() { return mPawnEnteredDetonationArea ? mPawnEnteredDetonationArea : (mPawnEnteredDetonationArea = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.PawnEnteredDetonationArea")); }
-			ScriptFunction MeetsDetonationRequirements() { return mMeetsDetonationRequirements ? mMeetsDetonationRequirements : (mMeetsDetonationRequirements = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.MeetsDetonationRequirements")); }
-			ScriptFunction PawnLeftDetonationArea() { return mPawnLeftDetonationArea ? mPawnLeftDetonationArea : (mPawnLeftDetonationArea = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.PawnLeftDetonationArea")); }
-			ScriptFunction NativeExplode() { return mNativeExplode ? mNativeExplode : (mNativeExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.NativeExplode")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.ProcessTouch")); }
-			ScriptFunction Bounce() { return mBounce ? mBounce : (mBounce = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.Bounce")); }
-			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.ShutDown")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.GetMarker")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Mine.PostRenderFor")); }
+			ScriptFunction IsAliveAndWell() { mixin(MGF!("mIsAliveAndWell", "Function TribesGame.TrProj_Mine.IsAliveAndWell")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrProj_Mine.ReplicatedEvent")()); }
+			ScriptFunction OnPRIReplicated() { mixin(MGF!("mOnPRIReplicated", "Function TribesGame.TrProj_Mine.OnPRIReplicated")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_Mine.PostBeginPlay")()); }
+			ScriptFunction ArmedTimer() { mixin(MGF!("mArmedTimer", "Function TribesGame.TrProj_Mine.ArmedTimer")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_Mine.HitWall")()); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function TribesGame.TrProj_Mine.TakeRadiusDamage")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrProj_Mine.TakeDamage")()); }
+			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_Mine.InitProjectile")()); }
+			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF!("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Mine.PawnEnteredDetonationArea")()); }
+			ScriptFunction MeetsDetonationRequirements() { mixin(MGF!("mMeetsDetonationRequirements", "Function TribesGame.TrProj_Mine.MeetsDetonationRequirements")()); }
+			ScriptFunction PawnLeftDetonationArea() { mixin(MGF!("mPawnLeftDetonationArea", "Function TribesGame.TrProj_Mine.PawnLeftDetonationArea")()); }
+			ScriptFunction NativeExplode() { mixin(MGF!("mNativeExplode", "Function TribesGame.TrProj_Mine.NativeExplode")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_Mine.ProcessTouch")()); }
+			ScriptFunction Bounce() { mixin(MGF!("mBounce", "Function TribesGame.TrProj_Mine.Bounce")()); }
+			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function TribesGame.TrProj_Mine.ShutDown")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrProj_Mine.GetMarker")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrProj_Mine.PostRenderFor")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PlayerReplicationInfo r_OwnerPRI() { return *cast(PlayerReplicationInfo*)(cast(size_t)cast(void*)this + 888); }
-			int m_nIconStackId() { return *cast(int*)(cast(size_t)cast(void*)this + 896); }
-			ScriptArray!(Pawn) m_PotentialTargets() { return *cast(ScriptArray!(Pawn)*)(cast(size_t)cast(void*)this + 840); }
-			MaterialInstanceConstant m_MarkerMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 892); }
-			int m_nMarkerOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 884); }
-			float m_fShowHeaderUntil() { return *cast(float*)(cast(size_t)cast(void*)this + 880); }
-			float LastPostRenderTraceTime() { return *cast(float*)(cast(size_t)cast(void*)this + 876); }
-			ScriptString m_sScreenName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 864); }
-			int m_nNumBouncesBeforeDetonateObsolete() { return *cast(int*)(cast(size_t)cast(void*)this + 860); }
-			int m_nNumBounces() { return *cast(int*)(cast(size_t)cast(void*)this + 856); }
-			float m_fMaxFloorZ() { return *cast(float*)(cast(size_t)cast(void*)this + 852); }
-			TrMineCollisionProxy m_CollisionProxy() { return *cast(TrMineCollisionProxy*)(cast(size_t)cast(void*)this + 836); }
-			float m_fDetonationHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 832); }
-			float m_fDetonationRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 828); }
-			float m_fDeploySeconds() { return *cast(float*)(cast(size_t)cast(void*)this + 824); }
-			SoundCue WallImpactSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 816); }
+			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC!(PlayerReplicationInfo, 888)()); }
+			int m_nIconStackId() { mixin(MGPC!(int, 896)()); }
+			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!(ScriptArray!(Pawn), 840)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 892)()); }
+			int m_nMarkerOffset() { mixin(MGPC!(int, 884)()); }
+			float m_fShowHeaderUntil() { mixin(MGPC!(float, 880)()); }
+			float LastPostRenderTraceTime() { mixin(MGPC!(float, 876)()); }
+			ScriptString m_sScreenName() { mixin(MGPC!(ScriptString, 864)()); }
+			int m_nNumBouncesBeforeDetonateObsolete() { mixin(MGPC!(int, 860)()); }
+			int m_nNumBounces() { mixin(MGPC!(int, 856)()); }
+			float m_fMaxFloorZ() { mixin(MGPC!(float, 852)()); }
+			TrMineCollisionProxy m_CollisionProxy() { mixin(MGPC!(TrMineCollisionProxy, 836)()); }
+			float m_fDetonationHeight() { mixin(MGPC!(float, 832)()); }
+			float m_fDetonationRadius() { mixin(MGPC!(float, 828)()); }
+			float m_fDeploySeconds() { mixin(MGPC!(float, 824)()); }
+			SoundCue WallImpactSound() { mixin(MGPC!(SoundCue, 816)()); }
 		}
-		bool m_bIsPostRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 820) & 0x10) != 0; }
-		bool m_bIsPostRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 820) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 820) &= ~0x10; } return val; }
-		bool bPostRenderTraceSucceeded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 820) & 0x8) != 0; }
-		bool bPostRenderTraceSucceeded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 820) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 820) &= ~0x8; } return val; }
-		bool m_bDrawOwnerName() { return (*cast(uint*)(cast(size_t)cast(void*)this + 820) & 0x4) != 0; }
-		bool m_bDrawOwnerName(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 820) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 820) &= ~0x4; } return val; }
-		bool m_bUsesDetonationProxy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 820) & 0x2) != 0; }
-		bool m_bUsesDetonationProxy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 820) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 820) &= ~0x2; } return val; }
-		bool m_bArmed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 820) & 0x1) != 0; }
-		bool m_bArmed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 820) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 820) &= ~0x1; } return val; }
+		bool m_bIsPostRendered() { mixin(MGBPC!(820, 0x10)()); }
+		bool m_bIsPostRendered(bool val) { mixin(MSBPC!(820, 0x10)()); }
+		bool bPostRenderTraceSucceeded() { mixin(MGBPC!(820, 0x8)()); }
+		bool bPostRenderTraceSucceeded(bool val) { mixin(MSBPC!(820, 0x8)()); }
+		bool m_bDrawOwnerName() { mixin(MGBPC!(820, 0x4)()); }
+		bool m_bDrawOwnerName(bool val) { mixin(MSBPC!(820, 0x4)()); }
+		bool m_bUsesDetonationProxy() { mixin(MGBPC!(820, 0x2)()); }
+		bool m_bUsesDetonationProxy(bool val) { mixin(MSBPC!(820, 0x2)()); }
+		bool m_bArmed() { mixin(MGBPC!(820, 0x1)()); }
+		bool m_bArmed(bool val) { mixin(MSBPC!(820, 0x1)()); }
 	}
 final:
 	bool IsAliveAndWell()

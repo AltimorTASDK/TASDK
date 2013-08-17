@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DownloadableContentEnumerator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface DownloadableContentEnumerator : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DownloadableContentEnumerator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DownloadableContentEnumerator")()); }
 	private static __gshared DownloadableContentEnumerator mDefaultProperties;
-	@property final static DownloadableContentEnumerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DownloadableContentEnumerator)("DownloadableContentEnumerator Engine.Default__DownloadableContentEnumerator")); }
+	@property final static DownloadableContentEnumerator DefaultProperties() { mixin(MGDPC!(DownloadableContentEnumerator, "DownloadableContentEnumerator Engine.Default__DownloadableContentEnumerator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,25 +27,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnFindDLCComplete() { return mOnFindDLCComplete ? mOnFindDLCComplete : (mOnFindDLCComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.OnFindDLCComplete")); }
-			ScriptFunction FindDLC() { return mFindDLC ? mFindDLC : (mFindDLC = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.FindDLC")); }
-			ScriptFunction AddFindDLCDelegate() { return mAddFindDLCDelegate ? mAddFindDLCDelegate : (mAddFindDLCDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.AddFindDLCDelegate")); }
-			ScriptFunction ClearFindDLCDelegate() { return mClearFindDLCDelegate ? mClearFindDLCDelegate : (mClearFindDLCDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.ClearFindDLCDelegate")); }
-			ScriptFunction DeleteDLC() { return mDeleteDLC ? mDeleteDLC : (mDeleteDLC = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.DeleteDLC")); }
-			ScriptFunction InstallAllDLC() { return mInstallAllDLC ? mInstallAllDLC : (mInstallAllDLC = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.InstallAllDLC")); }
-			ScriptFunction InstallDLC() { return mInstallDLC ? mInstallDLC : (mInstallDLC = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.InstallDLC")); }
-			ScriptFunction TriggerFindDLCDelegates() { return mTriggerFindDLCDelegates ? mTriggerFindDLCDelegates : (mTriggerFindDLCDelegates = ScriptObject.Find!(ScriptFunction)("Function Engine.DownloadableContentEnumerator.TriggerFindDLCDelegates")); }
+			ScriptFunction OnFindDLCComplete() { mixin(MGF!("mOnFindDLCComplete", "Function Engine.DownloadableContentEnumerator.OnFindDLCComplete")()); }
+			ScriptFunction FindDLC() { mixin(MGF!("mFindDLC", "Function Engine.DownloadableContentEnumerator.FindDLC")()); }
+			ScriptFunction AddFindDLCDelegate() { mixin(MGF!("mAddFindDLCDelegate", "Function Engine.DownloadableContentEnumerator.AddFindDLCDelegate")()); }
+			ScriptFunction ClearFindDLCDelegate() { mixin(MGF!("mClearFindDLCDelegate", "Function Engine.DownloadableContentEnumerator.ClearFindDLCDelegate")()); }
+			ScriptFunction DeleteDLC() { mixin(MGF!("mDeleteDLC", "Function Engine.DownloadableContentEnumerator.DeleteDLC")()); }
+			ScriptFunction InstallAllDLC() { mixin(MGF!("mInstallAllDLC", "Function Engine.DownloadableContentEnumerator.InstallAllDLC")()); }
+			ScriptFunction InstallDLC() { mixin(MGF!("mInstallDLC", "Function Engine.DownloadableContentEnumerator.InstallDLC")()); }
+			ScriptFunction TriggerFindDLCDelegates() { mixin(MGF!("mTriggerFindDLCDelegates", "Function Engine.DownloadableContentEnumerator.TriggerFindDLCDelegates")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlineContent) DLCBundles() { return *cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)(cast(size_t)cast(void*)this + 60); }
+		ScriptArray!(OnlineSubsystem.OnlineContent) DLCBundles() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlineContent), 60)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) FindDLCDelegates() { return *cast(ScriptArray!(
+void*) FindDLCDelegates() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)*)(cast(size_t)cast(void*)this + 84); }
-		ScriptString DLCRootDir() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 72); }
+void*), 84)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFindDLCComplete__Delegate'!
+		ScriptString DLCRootDir() { mixin(MGPC!(ScriptString, 72)()); }
 	}
 final:
 	void OnFindDLCComplete()

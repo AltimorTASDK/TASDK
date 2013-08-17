@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeployableCollisionProxy;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.TribesGame.TrCollisionProxy;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrDeployableCollisionProxy : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployableCollisionProxy")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployableCollisionProxy")()); }
 	private static __gshared TrDeployableCollisionProxy mDefaultProperties;
-	@property final static TrDeployableCollisionProxy DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployableCollisionProxy)("TrDeployableCollisionProxy TribesGame.Default__TrDeployableCollisionProxy")); }
+	@property final static TrDeployableCollisionProxy DefaultProperties() { mixin(MGDPC!(TrDeployableCollisionProxy, "TrDeployableCollisionProxy TribesGame.Default__TrDeployableCollisionProxy")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPawnAdded() { return mOnPawnAdded ? mOnPawnAdded : (mOnPawnAdded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployableCollisionProxy.OnPawnAdded")); }
-			ScriptFunction OnPawnRemoved() { return mOnPawnRemoved ? mOnPawnRemoved : (mOnPawnRemoved = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployableCollisionProxy.OnPawnRemoved")); }
+			ScriptFunction OnPawnAdded() { mixin(MGF!("mOnPawnAdded", "Function TribesGame.TrDeployableCollisionProxy.OnPawnAdded")()); }
+			ScriptFunction OnPawnRemoved() { mixin(MGF!("mOnPawnRemoved", "Function TribesGame.TrDeployableCollisionProxy.OnPawnRemoved")()); }
 		}
 	}
 final:

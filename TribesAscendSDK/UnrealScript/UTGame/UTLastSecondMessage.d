@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTLastSecondMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface UTLastSecondMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLastSecondMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTLastSecondMessage")()); }
 	private static __gshared UTLastSecondMessage mDefaultProperties;
-	@property final static UTLastSecondMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTLastSecondMessage)("UTLastSecondMessage UTGame.Default__UTLastSecondMessage")); }
+	@property final static UTLastSecondMessage DefaultProperties() { mixin(MGDPC!(UTLastSecondMessage, "UTLastSecondMessage UTGame.Default__UTLastSecondMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,14 +23,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLastSecondMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLastSecondMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTLastSecondMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTLastSecondMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString LastSecondBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString LastSecondRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString LastSecondBlue() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString LastSecondRed() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

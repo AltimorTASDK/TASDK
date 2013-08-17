@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTGameViewportClient;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.UDKBase.UDKGameViewportClient;
@@ -10,9 +11,9 @@ extern(C++) interface UTGameViewportClient : UDKGameViewportClient
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameViewportClient")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameViewportClient")()); }
 	private static __gshared UTGameViewportClient mDefaultProperties;
-	@property final static UTGameViewportClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGameViewportClient)("UTGameViewportClient UTGame.Default__UTGameViewportClient")); }
+	@property final static UTGameViewportClient DefaultProperties() { mixin(MGDPC!(UTGameViewportClient, "UTGameViewportClient UTGame.Default__UTGameViewportClient")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,22 +27,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.PostRender")); }
-			ScriptFunction DrawTransition() { return mDrawTransition ? mDrawTransition : (mDrawTransition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.DrawTransition")); }
-			ScriptFunction RenderHeader() { return mRenderHeader ? mRenderHeader : (mRenderHeader = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.RenderHeader")); }
-			ScriptFunction UpdateActiveSplitscreenType() { return mUpdateActiveSplitscreenType ? mUpdateActiveSplitscreenType : (mUpdateActiveSplitscreenType = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.UpdateActiveSplitscreenType")); }
-			ScriptFunction SetProgressMessage() { return mSetProgressMessage ? mSetProgressMessage : (mSetProgressMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.SetProgressMessage")); }
-			ScriptFunction NotifyConnectionError() { return mNotifyConnectionError ? mNotifyConnectionError : (mNotifyConnectionError = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.NotifyConnectionError")); }
+			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function UTGame.UTGameViewportClient.PostRender")()); }
+			ScriptFunction DrawTransition() { mixin(MGF!("mDrawTransition", "Function UTGame.UTGameViewportClient.DrawTransition")()); }
+			ScriptFunction RenderHeader() { mixin(MGF!("mRenderHeader", "Function UTGame.UTGameViewportClient.RenderHeader")()); }
+			ScriptFunction UpdateActiveSplitscreenType() { mixin(MGF!("mUpdateActiveSplitscreenType", "Function UTGame.UTGameViewportClient.UpdateActiveSplitscreenType")()); }
+			ScriptFunction SetProgressMessage() { mixin(MGF!("mSetProgressMessage", "Function UTGame.UTGameViewportClient.SetProgressMessage")()); }
+			ScriptFunction NotifyConnectionError() { mixin(MGF!("mNotifyConnectionError", "Function UTGame.UTGameViewportClient.NotifyConnectionError")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString LevelActionMessages() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 300); }
-		ScriptString ProgressMessageSceneClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 396); }
-		Font LoadingScreenHintMessageFont() { return *cast(Font*)(cast(size_t)cast(void*)this + 392); }
-		Font LoadingScreenGameTypeNameFont() { return *cast(Font*)(cast(size_t)cast(void*)this + 388); }
-		Font LoadingScreenMapNameFont() { return *cast(Font*)(cast(size_t)cast(void*)this + 384); }
-		ScriptString UTFrontEndString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 372); }
+		ScriptString LevelActionMessages() { mixin(MGPC!(ScriptString, 300)()); }
+		ScriptString ProgressMessageSceneClassName() { mixin(MGPC!(ScriptString, 396)()); }
+		Font LoadingScreenHintMessageFont() { mixin(MGPC!(Font, 392)()); }
+		Font LoadingScreenGameTypeNameFont() { mixin(MGPC!(Font, 388)()); }
+		Font LoadingScreenMapNameFont() { mixin(MGPC!(Font, 384)()); }
+		ScriptString UTFrontEndString() { mixin(MGPC!(ScriptString, 372)()); }
 	}
 final:
 	void PostRender(Canvas pCanvas)

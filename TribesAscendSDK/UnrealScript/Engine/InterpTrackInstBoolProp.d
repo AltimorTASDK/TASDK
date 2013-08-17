@@ -1,6 +1,7 @@
 module UnrealScript.Engine.InterpTrackInstBoolProp;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.InterpTrackInstProperty;
 
@@ -8,13 +9,13 @@ extern(C++) interface InterpTrackInstBoolProp : InterpTrackInstProperty
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstBoolProp")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackInstBoolProp")()); }
 	private static __gshared InterpTrackInstBoolProp mDefaultProperties;
-	@property final static InterpTrackInstBoolProp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackInstBoolProp)("InterpTrackInstBoolProp Engine.Default__InterpTrackInstBoolProp")); }
+	@property final static InterpTrackInstBoolProp DefaultProperties() { mixin(MGDPC!(InterpTrackInstBoolProp, "InterpTrackInstBoolProp Engine.Default__InterpTrackInstBoolProp")()); }
 	@property final
 	{
-		@property final auto ref UObject.Pointer BoolProp() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }
-		bool ResetBool() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-		bool ResetBool(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+		@property final auto ref UObject.Pointer BoolProp() { mixin(MGPC!(UObject.Pointer, 68)()); }
+		bool ResetBool() { mixin(MGBPC!(72, 0x1)()); }
+		bool ResetBool(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 }

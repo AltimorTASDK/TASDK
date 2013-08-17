@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_LightStickyGrenade;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrProj_Grenade;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrProj_LightStickyGrenade : TrProj_Grenade
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_LightStickyGrenade")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_LightStickyGrenade")()); }
 	private static __gshared TrProj_LightStickyGrenade mDefaultProperties;
-	@property final static TrProj_LightStickyGrenade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_LightStickyGrenade)("TrProj_LightStickyGrenade TribesGame.Default__TrProj_LightStickyGrenade")); }
+	@property final static TrProj_LightStickyGrenade DefaultProperties() { mixin(MGDPC!(TrProj_LightStickyGrenade, "TrProj_LightStickyGrenade TribesGame.Default__TrProj_LightStickyGrenade")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,9 +22,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_LightStickyGrenade.PostBeginPlay")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_LightStickyGrenade.HitWall")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_LightStickyGrenade.ProcessTouch")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_LightStickyGrenade.PostBeginPlay")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_LightStickyGrenade.HitWall")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_LightStickyGrenade.ProcessTouch")()); }
 		}
 	}
 final:

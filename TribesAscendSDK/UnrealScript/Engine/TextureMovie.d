@@ -1,6 +1,7 @@
 module UnrealScript.Engine.TextureMovie;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.CodecMovie;
 import UnrealScript.Engine.Texture;
@@ -9,9 +10,9 @@ extern(C++) interface TextureMovie : Texture
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureMovie")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TextureMovie")()); }
 	private static __gshared TextureMovie mDefaultProperties;
-	@property final static TextureMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TextureMovie)("TextureMovie Engine.Default__TextureMovie")); }
+	@property final static TextureMovie DefaultProperties() { mixin(MGDPC!(TextureMovie, "TextureMovie Engine.Default__TextureMovie")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,9 +23,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Play() { return mPlay ? mPlay : (mPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureMovie.Play")); }
-			ScriptFunction Pause() { return mPause ? mPause : (mPause = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureMovie.Pause")); }
-			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureMovie.Stop")); }
+			ScriptFunction Play() { mixin(MGF!("mPlay", "Function Engine.TextureMovie.Play")()); }
+			ScriptFunction Pause() { mixin(MGF!("mPause", "Function Engine.TextureMovie.Pause")()); }
+			ScriptFunction Stop() { mixin(MGF!("mStop", "Function Engine.TextureMovie.Stop")()); }
 		}
 	}
 	enum EMovieStreamSource : ubyte
@@ -37,25 +38,25 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ReleaseCodecFence() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 312); }
-			UObject.UntypedBulkData_Mirror Data() { return *cast(UObject.UntypedBulkData_Mirror*)(cast(size_t)cast(void*)this + 260); }
-			CodecMovie Decoder() { return *cast(CodecMovie*)(cast(size_t)cast(void*)this + 252); }
-			ScriptClass DecoderClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 248); }
+			UObject.Pointer ReleaseCodecFence() { mixin(MGPC!(UObject.Pointer, 312)()); }
+			UObject.UntypedBulkData_Mirror Data() { mixin(MGPC!(UObject.UntypedBulkData_Mirror, 260)()); }
+			CodecMovie Decoder() { mixin(MGPC!(CodecMovie, 252)()); }
+			ScriptClass DecoderClass() { mixin(MGPC!(ScriptClass, 248)()); }
 			// WARNING: Property 'MovieStreamSource' has the same name as a defined type!
-			int SizeX() { return *cast(int*)(cast(size_t)cast(void*)this + 236); }
-			Texture.TextureAddress AddressY() { return *cast(Texture.TextureAddress*)(cast(size_t)cast(void*)this + 246); }
-			Texture.TextureAddress AddressX() { return *cast(Texture.TextureAddress*)(cast(size_t)cast(void*)this + 245); }
+			int SizeX() { mixin(MGPC!(int, 236)()); }
+			Texture.TextureAddress AddressY() { mixin(MGPC!(Texture.TextureAddress, 246)()); }
+			Texture.TextureAddress AddressX() { mixin(MGPC!(Texture.TextureAddress, 245)()); }
 			// WARNING: Property 'Format' has the same name as a defined type!
-			int SizeY() { return *cast(int*)(cast(size_t)cast(void*)this + 240); }
+			int SizeY() { mixin(MGPC!(int, 240)()); }
 		}
-		bool AutoPlay() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x8) != 0; }
-		bool AutoPlay(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x8; } return val; }
-		bool Looping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x4) != 0; }
-		bool Looping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x4; } return val; }
-		bool Stopped() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x2) != 0; }
-		bool Stopped(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x2; } return val; }
-		bool Paused() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x1) != 0; }
-		bool Paused(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x1; } return val; }
+		bool AutoPlay() { mixin(MGBPC!(256, 0x8)()); }
+		bool AutoPlay(bool val) { mixin(MSBPC!(256, 0x8)()); }
+		bool Looping() { mixin(MGBPC!(256, 0x4)()); }
+		bool Looping(bool val) { mixin(MSBPC!(256, 0x4)()); }
+		bool Stopped() { mixin(MGBPC!(256, 0x2)()); }
+		bool Stopped(bool val) { mixin(MSBPC!(256, 0x2)()); }
+		bool Paused() { mixin(MGBPC!(256, 0x1)()); }
+		bool Paused(bool val) { mixin(MSBPC!(256, 0x1)()); }
 	}
 final:
 	void Play()

@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameCrowdGroup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.Core.UObject;
 import UnrealScript.GameFramework.GameCrowdDestination;
@@ -9,9 +10,9 @@ extern(C++) interface GameCrowdGroup : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdGroup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdGroup")()); }
 	private static __gshared GameCrowdGroup mDefaultProperties;
-	@property final static GameCrowdGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdGroup)("GameCrowdGroup GameFramework.Default__GameCrowdGroup")); }
+	@property final static GameCrowdGroup DefaultProperties() { mixin(MGDPC!(GameCrowdGroup, "GameCrowdGroup GameFramework.Default__GameCrowdGroup")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,12 +23,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddMember() { return mAddMember ? mAddMember : (mAddMember = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdGroup.AddMember")); }
-			ScriptFunction RemoveMember() { return mRemoveMember ? mRemoveMember : (mRemoveMember = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdGroup.RemoveMember")); }
-			ScriptFunction UpdateDestinations() { return mUpdateDestinations ? mUpdateDestinations : (mUpdateDestinations = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdGroup.UpdateDestinations")); }
+			ScriptFunction AddMember() { mixin(MGF!("mAddMember", "Function GameFramework.GameCrowdGroup.AddMember")()); }
+			ScriptFunction RemoveMember() { mixin(MGF!("mRemoveMember", "Function GameFramework.GameCrowdGroup.RemoveMember")()); }
+			ScriptFunction UpdateDestinations() { mixin(MGF!("mUpdateDestinations", "Function GameFramework.GameCrowdGroup.UpdateDestinations")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(GameCrowdAgent) Members() { return *cast(ScriptArray!(GameCrowdAgent)*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref ScriptArray!(GameCrowdAgent) Members() { mixin(MGPC!(ScriptArray!(GameCrowdAgent), 60)()); }
 final:
 	void AddMember(GameCrowdAgent Agent)
 	{

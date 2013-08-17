@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_Badges;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_Badges : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Badges")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Badges")()); }
 	private static __gshared GFxTrPage_Badges mDefaultProperties;
-	@property final static GFxTrPage_Badges DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Badges)("GFxTrPage_Badges TribesGame.Default__GFxTrPage_Badges")); }
+	@property final static GFxTrPage_Badges DefaultProperties() { mixin(MGDPC!(GFxTrPage_Badges, "GFxTrPage_Badges TribesGame.Default__GFxTrPage_Badges")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,24 +38,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.SpecialAction")); }
-			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.TakeAction")); }
-			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.ShowModel")); }
-			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.TakeFocus")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillData")); }
-			ScriptFunction FillProfile() { return mFillProfile ? mFillProfile : (mFillProfile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillProfile")); }
-			ScriptFunction FillCombatType() { return mFillCombatType ? mFillCombatType : (mFillCombatType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillCombatType")); }
-			ScriptFunction FillObjectiveType() { return mFillObjectiveType ? mFillObjectiveType : (mFillObjectiveType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillObjectiveType")); }
-			ScriptFunction FillVehicleType() { return mFillVehicleType ? mFillVehicleType : (mFillVehicleType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillVehicleType")); }
-			ScriptFunction FillTacticalType() { return mFillTacticalType ? mFillTacticalType : (mFillTacticalType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillTacticalType")); }
-			ScriptFunction FillSingleType() { return mFillSingleType ? mFillSingleType : (mFillSingleType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillSingleType")); }
-			ScriptFunction FillReferralType() { return mFillReferralType ? mFillReferralType : (mFillReferralType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillReferralType")); }
-			ScriptFunction FillBadge() { return mFillBadge ? mFillBadge : (mFillBadge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillBadge")); }
-			ScriptFunction GetHighestBadgeIndex() { return mGetHighestBadgeIndex ? mGetHighestBadgeIndex : (mGetHighestBadgeIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.GetHighestBadgeIndex")); }
-			ScriptFunction GetHighestSkiBadgeIndex() { return mGetHighestSkiBadgeIndex ? mGetHighestSkiBadgeIndex : (mGetHighestSkiBadgeIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.GetHighestSkiBadgeIndex")); }
-			ScriptFunction ProfileUp() { return mProfileUp ? mProfileUp : (mProfileUp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.ProfileUp")); }
-			ScriptFunction ProfileDown() { return mProfileDown ? mProfileDown : (mProfileDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.ProfileDown")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Badges.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Badges.SpecialAction")()); }
+			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Badges.TakeAction")()); }
+			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Badges.ShowModel")()); }
+			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_Badges.TakeFocus")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Badges.FillData")()); }
+			ScriptFunction FillProfile() { mixin(MGF!("mFillProfile", "Function TribesGame.GFxTrPage_Badges.FillProfile")()); }
+			ScriptFunction FillCombatType() { mixin(MGF!("mFillCombatType", "Function TribesGame.GFxTrPage_Badges.FillCombatType")()); }
+			ScriptFunction FillObjectiveType() { mixin(MGF!("mFillObjectiveType", "Function TribesGame.GFxTrPage_Badges.FillObjectiveType")()); }
+			ScriptFunction FillVehicleType() { mixin(MGF!("mFillVehicleType", "Function TribesGame.GFxTrPage_Badges.FillVehicleType")()); }
+			ScriptFunction FillTacticalType() { mixin(MGF!("mFillTacticalType", "Function TribesGame.GFxTrPage_Badges.FillTacticalType")()); }
+			ScriptFunction FillSingleType() { mixin(MGF!("mFillSingleType", "Function TribesGame.GFxTrPage_Badges.FillSingleType")()); }
+			ScriptFunction FillReferralType() { mixin(MGF!("mFillReferralType", "Function TribesGame.GFxTrPage_Badges.FillReferralType")()); }
+			ScriptFunction FillBadge() { mixin(MGF!("mFillBadge", "Function TribesGame.GFxTrPage_Badges.FillBadge")()); }
+			ScriptFunction GetHighestBadgeIndex() { mixin(MGF!("mGetHighestBadgeIndex", "Function TribesGame.GFxTrPage_Badges.GetHighestBadgeIndex")()); }
+			ScriptFunction GetHighestSkiBadgeIndex() { mixin(MGF!("mGetHighestSkiBadgeIndex", "Function TribesGame.GFxTrPage_Badges.GetHighestSkiBadgeIndex")()); }
+			ScriptFunction ProfileUp() { mixin(MGF!("mProfileUp", "Function TribesGame.GFxTrPage_Badges.ProfileUp")()); }
+			ScriptFunction ProfileDown() { mixin(MGF!("mProfileDown", "Function TribesGame.GFxTrPage_Badges.ProfileDown")()); }
 		}
 	}
 	static struct Constants
@@ -327,13 +328,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) CombatType() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 360); }
-		ScriptArray!(int) ObjectiveType() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 372); }
-		ScriptArray!(int) VehicleType() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 384); }
-		ScriptArray!(int) TacticalType() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 396); }
-		ScriptArray!(int) SingleType() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 408); }
-		ScriptArray!(int) ReferralType() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 420); }
-		int ActiveType() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+		ScriptArray!(int) CombatType() { mixin(MGPC!(ScriptArray!(int), 360)()); }
+		ScriptArray!(int) ObjectiveType() { mixin(MGPC!(ScriptArray!(int), 372)()); }
+		ScriptArray!(int) VehicleType() { mixin(MGPC!(ScriptArray!(int), 384)()); }
+		ScriptArray!(int) TacticalType() { mixin(MGPC!(ScriptArray!(int), 396)()); }
+		ScriptArray!(int) SingleType() { mixin(MGPC!(ScriptArray!(int), 408)()); }
+		ScriptArray!(int) ReferralType() { mixin(MGPC!(ScriptArray!(int), 420)()); }
+		int ActiveType() { mixin(MGPC!(int, 356)()); }
 	}
 final:
 	void Initialize()

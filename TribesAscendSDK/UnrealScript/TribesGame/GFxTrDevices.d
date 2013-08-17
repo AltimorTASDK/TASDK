@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrDevices;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.WorldInfo;
 import UnrealScript.UTGame.GFxMinimapHud;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrDevices : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrDevices")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrDevices")()); }
 	private static __gshared GFxTrDevices mDefaultProperties;
-	@property final static GFxTrDevices DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrDevices)("GFxTrDevices TribesGame.Default__GFxTrDevices")); }
+	@property final static GFxTrDevices DefaultProperties() { mixin(MGDPC!(GFxTrDevices, "GFxTrDevices TribesGame.Default__GFxTrDevices")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,22 +25,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrDevices.Init")); }
-			ScriptFunction GetAmmonClip() { return mGetAmmonClip ? mGetAmmonClip : (mGetAmmonClip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrDevices.GetAmmonClip")); }
-			ScriptFunction GetAmmonPool() { return mGetAmmonPool ? mGetAmmonPool : (mGetAmmonPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrDevices.GetAmmonPool")); }
-			ScriptFunction UpdateData() { return mUpdateData ? mUpdateData : (mUpdateData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrDevices.UpdateData")); }
-			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrDevices.Update")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.GFxTrDevices.Init")()); }
+			ScriptFunction GetAmmonClip() { mixin(MGF!("mGetAmmonClip", "Function TribesGame.GFxTrDevices.GetAmmonClip")()); }
+			ScriptFunction GetAmmonPool() { mixin(MGF!("mGetAmmonPool", "Function TribesGame.GFxTrDevices.GetAmmonPool")()); }
+			ScriptFunction UpdateData() { mixin(MGF!("mUpdateData", "Function TribesGame.GFxTrDevices.UpdateData")()); }
+			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function TribesGame.GFxTrDevices.Update")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			WorldInfo ThisWorld() { return *cast(WorldInfo*)(cast(size_t)cast(void*)this + 124); }
+			WorldInfo ThisWorld() { mixin(MGPC!(WorldInfo, 124)()); }
 			// WARNING: Property 'HUD' has the same name as a defined type!
 		}
-		bool bNeedsUpdateData() { return (*cast(uint*)(cast(size_t)cast(void*)this + 128) & 0x1) != 0; }
-		bool bNeedsUpdateData(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1; } return val; }
+		bool bNeedsUpdateData() { mixin(MGBPC!(128, 0x1)()); }
+		bool bNeedsUpdateData(bool val) { mixin(MSBPC!(128, 0x1)()); }
 	}
 final:
 	void Init(GFxMinimapHud H)

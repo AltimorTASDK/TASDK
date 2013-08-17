@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTConsolePlayerInput;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UTGame.UTWeapon;
 import UnrealScript.UTGame.UTPlayerInput;
@@ -10,9 +11,9 @@ extern(C++) interface UTConsolePlayerInput : UTPlayerInput
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTConsolePlayerInput")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTConsolePlayerInput")()); }
 	private static __gshared UTConsolePlayerInput mDefaultProperties;
-	@property final static UTConsolePlayerInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTConsolePlayerInput)("UTConsolePlayerInput UTGame.Default__UTConsolePlayerInput")); }
+	@property final static UTConsolePlayerInput DefaultProperties() { mixin(MGDPC!(UTConsolePlayerInput, "UTConsolePlayerInput UTGame.Default__UTConsolePlayerInput")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,84 +30,84 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.PostBeginPlay")); }
-			ScriptFunction PreProcessInput() { return mPreProcessInput ? mPreProcessInput : (mPreProcessInput = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.PreProcessInput")); }
-			ScriptFunction ApplyViewAutoPitchCentering() { return mApplyViewAutoPitchCentering ? mApplyViewAutoPitchCentering : (mApplyViewAutoPitchCentering = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.ApplyViewAutoPitchCentering")); }
-			ScriptFunction ApplyViewAutoVehiclePitchCentering() { return mApplyViewAutoVehiclePitchCentering ? mApplyViewAutoVehiclePitchCentering : (mApplyViewAutoVehiclePitchCentering = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.ApplyViewAutoVehiclePitchCentering")); }
-			ScriptFunction ApplyViewAcceleration() { return mApplyViewAcceleration ? mApplyViewAcceleration : (mApplyViewAcceleration = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.ApplyViewAcceleration")); }
-			ScriptFunction ApplyTargetAdhesion() { return mApplyTargetAdhesion ? mApplyTargetAdhesion : (mApplyTargetAdhesion = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.ApplyTargetAdhesion")); }
-			ScriptFunction AdjustMouseSensitivity() { return mAdjustMouseSensitivity ? mAdjustMouseSensitivity : (mAdjustMouseSensitivity = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.AdjustMouseSensitivity")); }
-			ScriptFunction ApplyTargetFriction() { return mApplyTargetFriction ? mApplyTargetFriction : (mApplyTargetFriction = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.ApplyTargetFriction")); }
-			ScriptFunction CheckForDoubleClickMove() { return mCheckForDoubleClickMove ? mCheckForDoubleClickMove : (mCheckForDoubleClickMove = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTConsolePlayerInput.CheckForDoubleClickMove")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTConsolePlayerInput.PostBeginPlay")()); }
+			ScriptFunction PreProcessInput() { mixin(MGF!("mPreProcessInput", "Function UTGame.UTConsolePlayerInput.PreProcessInput")()); }
+			ScriptFunction ApplyViewAutoPitchCentering() { mixin(MGF!("mApplyViewAutoPitchCentering", "Function UTGame.UTConsolePlayerInput.ApplyViewAutoPitchCentering")()); }
+			ScriptFunction ApplyViewAutoVehiclePitchCentering() { mixin(MGF!("mApplyViewAutoVehiclePitchCentering", "Function UTGame.UTConsolePlayerInput.ApplyViewAutoVehiclePitchCentering")()); }
+			ScriptFunction ApplyViewAcceleration() { mixin(MGF!("mApplyViewAcceleration", "Function UTGame.UTConsolePlayerInput.ApplyViewAcceleration")()); }
+			ScriptFunction ApplyTargetAdhesion() { mixin(MGF!("mApplyTargetAdhesion", "Function UTGame.UTConsolePlayerInput.ApplyTargetAdhesion")()); }
+			ScriptFunction AdjustMouseSensitivity() { mixin(MGF!("mAdjustMouseSensitivity", "Function UTGame.UTConsolePlayerInput.AdjustMouseSensitivity")()); }
+			ScriptFunction ApplyTargetFriction() { mixin(MGF!("mApplyTargetFriction", "Function UTGame.UTConsolePlayerInput.ApplyTargetFriction")()); }
+			ScriptFunction CheckForDoubleClickMove() { mixin(MGF!("mCheckForDoubleClickMove", "Function UTGame.UTConsolePlayerInput.CheckForDoubleClickMove")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float HoverBoardPitchMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1192); }
-			float AutoPitchStopAdjustingValue() { return *cast(float*)(cast(size_t)cast(void*)this + 1188); }
-			float AutoPitchCenterSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1184); }
-			float ViewAccel_BackToCenterSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1180); }
-			float ViewAccel_BackToCenterBoundary() { return *cast(float*)(cast(size_t)cast(void*)this + 1176); }
-			float ViewAccel_LookingUpOrDownBoundary() { return *cast(float*)(cast(size_t)cast(void*)this + 1172); }
-			float ViewAccel_PitchThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1168); }
-			float ViewAccel_MaxTurnSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1164); }
-			float ViewAccel_RampSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1160); }
-			float MagicScaleForSensitivityEdge() { return *cast(float*)(cast(size_t)cast(void*)this + 1156); }
-			float MagicScaleForSensitivityMiddle() { return *cast(float*)(cast(size_t)cast(void*)this + 1152); }
-			float RightThumbStickDeadZoneThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1148); }
-			float LeftThumbStickDeadZoneThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1144); }
-			Rotator LastDeltaRot() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 1132); }
-			Vector LastCamLoc() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1120); }
-			float LastAdjustZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1116); }
-			float LastAdjustY() { return *cast(float*)(cast(size_t)cast(void*)this + 1112); }
-			float LastDistFromAimZa() { return *cast(float*)(cast(size_t)cast(void*)this + 1108); }
-			float LastDistFromAimYa() { return *cast(float*)(cast(size_t)cast(void*)this + 1104); }
-			float LastTargetHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1100); }
-			float LastTargetRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 1096); }
-			float LastAdhesionAmtZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1092); }
-			float LastAdhesionAmtY() { return *cast(float*)(cast(size_t)cast(void*)this + 1088); }
-			float LastFrictionMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1084); }
-			float LastDistFromAimY() { return *cast(float*)(cast(size_t)cast(void*)this + 1080); }
-			float LastDistFromAimZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1076); }
-			float LastDistMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1072); }
-			float LastDistToTarget() { return *cast(float*)(cast(size_t)cast(void*)this + 1068); }
-			float LastFrictionTargetTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1064); }
-			Pawn LastFrictionTarget() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 1060); }
-			float Dodge_Threshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1056); }
-			float ViewAccel_Twitchy() { return *cast(float*)(cast(size_t)cast(void*)this + 1052); }
-			float ViewAccel_TimeHeld() { return *cast(float*)(cast(size_t)cast(void*)this + 1048); }
-			float ViewAccel_TimeToHoldBeforeFastAcceleration() { return *cast(float*)(cast(size_t)cast(void*)this + 1044); }
-			float ViewAccel_CurrMutliplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1040); }
-			float ViewAccel_BaseMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1036); }
-			float ViewAccel_DiagonalThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1032); }
-			float ViewAccel_YawThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1028); }
-			float SlowTurnScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 1024); }
-			float AutoVehicleCenterSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1020); }
-			float AutoCenterDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 1016); }
-			float LastTurnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1012); }
-			float TurningAccelerationMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1004); }
-			float SensitivityMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1000); }
+			float HoverBoardPitchMultiplier() { mixin(MGPC!(float, 1192)()); }
+			float AutoPitchStopAdjustingValue() { mixin(MGPC!(float, 1188)()); }
+			float AutoPitchCenterSpeed() { mixin(MGPC!(float, 1184)()); }
+			float ViewAccel_BackToCenterSpeed() { mixin(MGPC!(float, 1180)()); }
+			float ViewAccel_BackToCenterBoundary() { mixin(MGPC!(float, 1176)()); }
+			float ViewAccel_LookingUpOrDownBoundary() { mixin(MGPC!(float, 1172)()); }
+			float ViewAccel_PitchThreshold() { mixin(MGPC!(float, 1168)()); }
+			float ViewAccel_MaxTurnSpeed() { mixin(MGPC!(float, 1164)()); }
+			float ViewAccel_RampSpeed() { mixin(MGPC!(float, 1160)()); }
+			float MagicScaleForSensitivityEdge() { mixin(MGPC!(float, 1156)()); }
+			float MagicScaleForSensitivityMiddle() { mixin(MGPC!(float, 1152)()); }
+			float RightThumbStickDeadZoneThreshold() { mixin(MGPC!(float, 1148)()); }
+			float LeftThumbStickDeadZoneThreshold() { mixin(MGPC!(float, 1144)()); }
+			Rotator LastDeltaRot() { mixin(MGPC!(Rotator, 1132)()); }
+			Vector LastCamLoc() { mixin(MGPC!(Vector, 1120)()); }
+			float LastAdjustZ() { mixin(MGPC!(float, 1116)()); }
+			float LastAdjustY() { mixin(MGPC!(float, 1112)()); }
+			float LastDistFromAimZa() { mixin(MGPC!(float, 1108)()); }
+			float LastDistFromAimYa() { mixin(MGPC!(float, 1104)()); }
+			float LastTargetHeight() { mixin(MGPC!(float, 1100)()); }
+			float LastTargetRadius() { mixin(MGPC!(float, 1096)()); }
+			float LastAdhesionAmtZ() { mixin(MGPC!(float, 1092)()); }
+			float LastAdhesionAmtY() { mixin(MGPC!(float, 1088)()); }
+			float LastFrictionMultiplier() { mixin(MGPC!(float, 1084)()); }
+			float LastDistFromAimY() { mixin(MGPC!(float, 1080)()); }
+			float LastDistFromAimZ() { mixin(MGPC!(float, 1076)()); }
+			float LastDistMultiplier() { mixin(MGPC!(float, 1072)()); }
+			float LastDistToTarget() { mixin(MGPC!(float, 1068)()); }
+			float LastFrictionTargetTime() { mixin(MGPC!(float, 1064)()); }
+			Pawn LastFrictionTarget() { mixin(MGPC!(Pawn, 1060)()); }
+			float Dodge_Threshold() { mixin(MGPC!(float, 1056)()); }
+			float ViewAccel_Twitchy() { mixin(MGPC!(float, 1052)()); }
+			float ViewAccel_TimeHeld() { mixin(MGPC!(float, 1048)()); }
+			float ViewAccel_TimeToHoldBeforeFastAcceleration() { mixin(MGPC!(float, 1044)()); }
+			float ViewAccel_CurrMutliplier() { mixin(MGPC!(float, 1040)()); }
+			float ViewAccel_BaseMultiplier() { mixin(MGPC!(float, 1036)()); }
+			float ViewAccel_DiagonalThreshold() { mixin(MGPC!(float, 1032)()); }
+			float ViewAccel_YawThreshold() { mixin(MGPC!(float, 1028)()); }
+			float SlowTurnScaling() { mixin(MGPC!(float, 1024)()); }
+			float AutoVehicleCenterSpeed() { mixin(MGPC!(float, 1020)()); }
+			float AutoCenterDelay() { mixin(MGPC!(float, 1016)()); }
+			float LastTurnTime() { mixin(MGPC!(float, 1012)()); }
+			float TurningAccelerationMultiplier() { mixin(MGPC!(float, 1004)()); }
+			float SensitivityMultiplier() { mixin(MGPC!(float, 1000)()); }
 		}
-		bool bIsLookingDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x100) != 0; }
-		bool bIsLookingDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x100; } return val; }
-		bool bIsLookingUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x80) != 0; }
-		bool bIsLookingUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x80; } return val; }
-		bool bAppliedTargetFriction() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x40) != 0; }
-		bool bAppliedTargetFriction(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x40; } return val; }
-		bool bDebugTargetFriction() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x20) != 0; }
-		bool bDebugTargetFriction(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x20; } return val; }
-		bool bTargetFrictionEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x10) != 0; }
-		bool bTargetFrictionEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x10; } return val; }
-		bool bDebugViewAcceleration() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x8) != 0; }
-		bool bDebugViewAcceleration(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x8; } return val; }
-		bool bViewAccelerationEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x4) != 0; }
-		bool bViewAccelerationEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x4; } return val; }
-		bool bAutoCenterVehiclePitch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x2) != 0; }
-		bool bAutoCenterVehiclePitch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x2; } return val; }
-		bool bAutoCenterPitch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1008) & 0x1) != 0; }
-		bool bAutoCenterPitch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1008) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1008) &= ~0x1; } return val; }
+		bool bIsLookingDown() { mixin(MGBPC!(1008, 0x100)()); }
+		bool bIsLookingDown(bool val) { mixin(MSBPC!(1008, 0x100)()); }
+		bool bIsLookingUp() { mixin(MGBPC!(1008, 0x80)()); }
+		bool bIsLookingUp(bool val) { mixin(MSBPC!(1008, 0x80)()); }
+		bool bAppliedTargetFriction() { mixin(MGBPC!(1008, 0x40)()); }
+		bool bAppliedTargetFriction(bool val) { mixin(MSBPC!(1008, 0x40)()); }
+		bool bDebugTargetFriction() { mixin(MGBPC!(1008, 0x20)()); }
+		bool bDebugTargetFriction(bool val) { mixin(MSBPC!(1008, 0x20)()); }
+		bool bTargetFrictionEnabled() { mixin(MGBPC!(1008, 0x10)()); }
+		bool bTargetFrictionEnabled(bool val) { mixin(MSBPC!(1008, 0x10)()); }
+		bool bDebugViewAcceleration() { mixin(MGBPC!(1008, 0x8)()); }
+		bool bDebugViewAcceleration(bool val) { mixin(MSBPC!(1008, 0x8)()); }
+		bool bViewAccelerationEnabled() { mixin(MGBPC!(1008, 0x4)()); }
+		bool bViewAccelerationEnabled(bool val) { mixin(MSBPC!(1008, 0x4)()); }
+		bool bAutoCenterVehiclePitch() { mixin(MGBPC!(1008, 0x2)()); }
+		bool bAutoCenterVehiclePitch(bool val) { mixin(MSBPC!(1008, 0x2)()); }
+		bool bAutoCenterPitch() { mixin(MGBPC!(1008, 0x1)()); }
+		bool bAutoCenterPitch(bool val) { mixin(MSBPC!(1008, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -141,14 +142,14 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyViewAcceleration, params.ptr, cast(void*)0);
 	}
-	void ApplyTargetAdhesion(float DeltaTime, UTWeapon W, int* out_YawRot, int* out_PitchRot)
+	void ApplyTargetAdhesion(float DeltaTime, UTWeapon W, ref int out_YawRot, ref int out_PitchRot)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(UTWeapon*)&params[4] = W;
-		*cast(int*)&params[8] = *out_YawRot;
-		*cast(int*)&params[12] = *out_PitchRot;
+		*cast(int*)&params[8] = out_YawRot;
+		*cast(int*)&params[12] = out_PitchRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyTargetAdhesion, params.ptr, cast(void*)0);
 		*out_YawRot = *cast(int*)&params[8];
 		*out_PitchRot = *cast(int*)&params[12];

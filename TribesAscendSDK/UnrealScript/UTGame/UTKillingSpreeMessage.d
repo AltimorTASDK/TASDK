@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTKillingSpreeMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -11,9 +12,9 @@ extern(C++) interface UTKillingSpreeMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKillingSpreeMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTKillingSpreeMessage")()); }
 	private static __gshared UTKillingSpreeMessage mDefaultProperties;
-	@property final static UTKillingSpreeMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKillingSpreeMessage)("UTKillingSpreeMessage UTGame.Default__UTKillingSpreeMessage")); }
+	@property final static UTKillingSpreeMessage DefaultProperties() { mixin(MGDPC!(UTKillingSpreeMessage, "UTKillingSpreeMessage UTGame.Default__UTKillingSpreeMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,22 +26,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFontSize() { return mGetFontSize ? mGetFontSize : (mGetFontSize = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillingSpreeMessage.GetFontSize")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillingSpreeMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillingSpreeMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTKillingSpreeMessage.AnnouncementSound")); }
+			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function UTGame.UTKillingSpreeMessage.GetFontSize")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTKillingSpreeMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTKillingSpreeMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTKillingSpreeMessage.AnnouncementSound")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString EndSpreeNoteTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 316); }
-		SoundNodeWave SpreeSound() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 292); }
-		ScriptString SelfSpreeNote() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 220); }
-		ScriptString SpreeNote() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString MultiKillString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString EndFemaleSpree() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString EndSelfSpree() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString EndSpreeNote() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString EndSpreeNoteTrailer() { mixin(MGPC!(ScriptString, 316)()); }
+		SoundNodeWave SpreeSound() { mixin(MGPC!(SoundNodeWave, 292)()); }
+		ScriptString SelfSpreeNote() { mixin(MGPC!(ScriptString, 220)()); }
+		ScriptString SpreeNote() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString MultiKillString() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString EndFemaleSpree() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString EndSelfSpree() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString EndSpreeNote() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)

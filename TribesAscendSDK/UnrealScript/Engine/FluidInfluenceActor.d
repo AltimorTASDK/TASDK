@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FluidInfluenceActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface FluidInfluenceActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidInfluenceActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FluidInfluenceActor")()); }
 	private static __gshared FluidInfluenceActor mDefaultProperties;
-	@property final static FluidInfluenceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FluidInfluenceActor)("FluidInfluenceActor Engine.Default__FluidInfluenceActor")); }
+	@property final static FluidInfluenceActor DefaultProperties() { mixin(MGDPC!(FluidInfluenceActor, "FluidInfluenceActor Engine.Default__FluidInfluenceActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,16 +21,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidInfluenceActor.OnToggle")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidInfluenceActor.ReplicatedEvent")); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.FluidInfluenceActor.OnToggle")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.FluidInfluenceActor.ReplicatedEvent")()); }
 		}
 	}
 	@property final
 	{
-		bool bToggled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x2) != 0; }
-		bool bToggled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x2; } return val; }
-		bool bActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-		bool bActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
+		auto ref
+		{
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'InfluenceComponent'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Sprite'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlowDirection'!
+		}
+		bool bToggled() { mixin(MGBPC!(488, 0x2)()); }
+		bool bToggled(bool val) { mixin(MSBPC!(488, 0x2)()); }
+		bool bActive() { mixin(MGBPC!(488, 0x1)()); }
+		bool bActive(bool val) { mixin(MSBPC!(488, 0x1)()); }
 	}
 final:
 	void OnToggle(SeqAct_Toggle inAction)

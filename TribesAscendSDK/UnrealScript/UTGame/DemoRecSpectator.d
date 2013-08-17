@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.DemoRecSpectator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPlayerController;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface DemoRecSpectator : UTPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.DemoRecSpectator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.DemoRecSpectator")()); }
 	private static __gshared DemoRecSpectator mDefaultProperties;
-	@property final static DemoRecSpectator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DemoRecSpectator)("DemoRecSpectator UTGame.Default__DemoRecSpectator")); }
+	@property final static DemoRecSpectator DefaultProperties() { mixin(MGDPC!(DemoRecSpectator, "DemoRecSpectator UTGame.Default__DemoRecSpectator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,34 +34,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.PostBeginPlay")); }
-			ScriptFunction ReceivedPlayer() { return mReceivedPlayer ? mReceivedPlayer : (mReceivedPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ReceivedPlayer")); }
-			ScriptFunction InitPlayerReplicationInfo() { return mInitPlayerReplicationInfo ? mInitPlayerReplicationInfo : (mInitPlayerReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.InitPlayerReplicationInfo")); }
-			ScriptFunction Slomo() { return mSlomo ? mSlomo : (mSlomo = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.Slomo")); }
-			ScriptFunction ViewClass() { return mViewClass ? mViewClass : (mViewClass = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ViewClass")); }
-			ScriptFunction DemoViewNextPlayer() { return mDemoViewNextPlayer ? mDemoViewNextPlayer : (mDemoViewNextPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.DemoViewNextPlayer")); }
-			ScriptFunction SetViewTarget() { return mSetViewTarget ? mSetViewTarget : (mSetViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.SetViewTarget")); }
-			ScriptFunction ServerViewSelf() { return mServerViewSelf ? mServerViewSelf : (mServerViewSelf = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ServerViewSelf")); }
-			ScriptFunction ClientSetRealViewTarget() { return mClientSetRealViewTarget ? mClientSetRealViewTarget : (mClientSetRealViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ClientSetRealViewTarget")); }
-			ScriptFunction SetPause() { return mSetPause ? mSetPause : (mSetPause = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.SetPause")); }
-			ScriptFunction Pause() { return mPause ? mPause : (mPause = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.Pause")); }
-			ScriptFunction GetPlayerViewPoint() { return mGetPlayerViewPoint ? mGetPlayerViewPoint : (mGetPlayerViewPoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.GetPlayerViewPoint")); }
-			ScriptFunction UpdateRotation() { return mUpdateRotation ? mUpdateRotation : (mUpdateRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.UpdateRotation")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.DemoRecSpectator.PostBeginPlay")()); }
+			ScriptFunction ReceivedPlayer() { mixin(MGF!("mReceivedPlayer", "Function UTGame.DemoRecSpectator.ReceivedPlayer")()); }
+			ScriptFunction InitPlayerReplicationInfo() { mixin(MGF!("mInitPlayerReplicationInfo", "Function UTGame.DemoRecSpectator.InitPlayerReplicationInfo")()); }
+			ScriptFunction Slomo() { mixin(MGF!("mSlomo", "Function UTGame.DemoRecSpectator.Slomo")()); }
+			ScriptFunction ViewClass() { mixin(MGF!("mViewClass", "Function UTGame.DemoRecSpectator.ViewClass")()); }
+			ScriptFunction DemoViewNextPlayer() { mixin(MGF!("mDemoViewNextPlayer", "Function UTGame.DemoRecSpectator.DemoViewNextPlayer")()); }
+			ScriptFunction SetViewTarget() { mixin(MGF!("mSetViewTarget", "Function UTGame.DemoRecSpectator.SetViewTarget")()); }
+			ScriptFunction ServerViewSelf() { mixin(MGF!("mServerViewSelf", "Function UTGame.DemoRecSpectator.ServerViewSelf")()); }
+			ScriptFunction ClientSetRealViewTarget() { mixin(MGF!("mClientSetRealViewTarget", "Function UTGame.DemoRecSpectator.ClientSetRealViewTarget")()); }
+			ScriptFunction SetPause() { mixin(MGF!("mSetPause", "Function UTGame.DemoRecSpectator.SetPause")()); }
+			ScriptFunction Pause() { mixin(MGF!("mPause", "Function UTGame.DemoRecSpectator.Pause")()); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function UTGame.DemoRecSpectator.GetPlayerViewPoint")()); }
+			ScriptFunction UpdateRotation() { mixin(MGF!("mUpdateRotation", "Function UTGame.DemoRecSpectator.UpdateRotation")()); }
 		}
+	}
+	static struct Spectating
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.DemoRecSpectator.Spectating")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float AutoSwitchPlayerInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 2184); }
-			PlayerReplicationInfo MyRealViewTarget() { return *cast(PlayerReplicationInfo*)(cast(size_t)cast(void*)this + 2180); }
+			float AutoSwitchPlayerInterval() { mixin(MGPC!(float, 2184)()); }
+			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC!(PlayerReplicationInfo, 2180)()); }
 		}
-		bool bAutoSwitchPlayers() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2176) & 0x4) != 0; }
-		bool bAutoSwitchPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2176) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2176) &= ~0x4; } return val; }
-		bool bLockRotationToViewTarget() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2176) & 0x2) != 0; }
-		bool bLockRotationToViewTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2176) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2176) &= ~0x2; } return val; }
-		bool bFindPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 2176) & 0x1) != 0; }
-		bool bFindPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 2176) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 2176) &= ~0x1; } return val; }
+		bool bAutoSwitchPlayers() { mixin(MGBPC!(2176, 0x4)()); }
+		bool bAutoSwitchPlayers(bool val) { mixin(MSBPC!(2176, 0x4)()); }
+		bool bLockRotationToViewTarget() { mixin(MGBPC!(2176, 0x2)()); }
+		bool bLockRotationToViewTarget(bool val) { mixin(MSBPC!(2176, 0x2)()); }
+		bool bFindPlayer() { mixin(MGBPC!(2176, 0x1)()); }
+		bool bFindPlayer(bool val) { mixin(MSBPC!(2176, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -134,12 +140,12 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Pause, cast(void*)0, cast(void*)0);
 	}
-	void GetPlayerViewPoint(Vector* CameraLocation, Rotator* CameraRotation)
+	void GetPlayerViewPoint(ref Vector CameraLocation, ref Rotator CameraRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *CameraLocation;
-		*cast(Rotator*)&params[12] = *CameraRotation;
+		*cast(Vector*)params.ptr = CameraLocation;
+		*cast(Rotator*)&params[12] = CameraRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
 		*CameraLocation = *cast(Vector*)params.ptr;
 		*CameraRotation = *cast(Rotator*)&params[12];

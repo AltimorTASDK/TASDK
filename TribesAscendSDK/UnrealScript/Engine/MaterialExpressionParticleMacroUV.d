@@ -1,18 +1,19 @@
 module UnrealScript.Engine.MaterialExpressionParticleMacroUV;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionParticleMacroUV : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionParticleMacroUV")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionParticleMacroUV")()); }
 	private static __gshared MaterialExpressionParticleMacroUV mDefaultProperties;
-	@property final static MaterialExpressionParticleMacroUV DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionParticleMacroUV)("MaterialExpressionParticleMacroUV Engine.Default__MaterialExpressionParticleMacroUV")); }
+	@property final static MaterialExpressionParticleMacroUV DefaultProperties() { mixin(MGDPC!(MaterialExpressionParticleMacroUV, "MaterialExpressionParticleMacroUV Engine.Default__MaterialExpressionParticleMacroUV")()); }
 	@property final
 	{
-		bool bUseViewSpace() { return (*cast(uint*)(cast(size_t)cast(void*)this + 108) & 0x1) != 0; }
-		bool bUseViewSpace(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 108) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 108) &= ~0x1; } return val; }
+		bool bUseViewSpace() { mixin(MGBPC!(108, 0x1)()); }
+		bool bUseViewSpace(bool val) { mixin(MSBPC!(108, 0x1)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGameStartMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -10,9 +11,9 @@ extern(C++) interface TrGameStartMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameStartMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameStartMessage")()); }
 	private static __gshared TrGameStartMessage mDefaultProperties;
-	@property final static TrGameStartMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameStartMessage)("TrGameStartMessage TribesGame.Default__TrGameStartMessage")); }
+	@property final static TrGameStartMessage DefaultProperties() { mixin(MGDPC!(TrGameStartMessage, "TrGameStartMessage TribesGame.Default__TrGameStartMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameStartMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameStartMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrGameStartMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrGameStartMessage.ClientReceive")()); }
 		}
 	}
-	@property final auto ref ScriptString MatchAboutToStart() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	@property final auto ref ScriptString MatchAboutToStart() { mixin(MGPC!(ScriptString, 100)()); }
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

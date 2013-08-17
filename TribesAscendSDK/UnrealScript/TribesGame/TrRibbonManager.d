@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrRibbonManager;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface TrRibbonManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRibbonManager")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRibbonManager")()); }
 	private static __gshared TrRibbonManager mDefaultProperties;
-	@property final static TrRibbonManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRibbonManager)("TrRibbonManager TribesGame.Default__TrRibbonManager")); }
+	@property final static TrRibbonManager DefaultProperties() { mixin(MGDPC!(TrRibbonManager, "TrRibbonManager TribesGame.Default__TrRibbonManager")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,10 +22,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetClassRibbon() { return mGetClassRibbon ? mGetClassRibbon : (mGetClassRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.GetClassRibbon")); }
-			ScriptFunction GetTypeRibbon() { return mGetTypeRibbon ? mGetTypeRibbon : (mGetTypeRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.GetTypeRibbon")); }
-			ScriptFunction GetEquipRibbon() { return mGetEquipRibbon ? mGetEquipRibbon : (mGetEquipRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.GetEquipRibbon")); }
-			ScriptFunction CalculateRibbons() { return mCalculateRibbons ? mCalculateRibbons : (mCalculateRibbons = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.CalculateRibbons")); }
+			ScriptFunction GetClassRibbon() { mixin(MGF!("mGetClassRibbon", "Function TribesGame.TrRibbonManager.GetClassRibbon")()); }
+			ScriptFunction GetTypeRibbon() { mixin(MGF!("mGetTypeRibbon", "Function TribesGame.TrRibbonManager.GetTypeRibbon")()); }
+			ScriptFunction GetEquipRibbon() { mixin(MGF!("mGetEquipRibbon", "Function TribesGame.TrRibbonManager.GetEquipRibbon")()); }
+			ScriptFunction CalculateRibbons() { mixin(MGF!("mCalculateRibbons", "Function TribesGame.TrRibbonManager.CalculateRibbons")()); }
 		}
 	}
 	struct RibbonData
@@ -32,34 +33,34 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrRibbonManager.RibbonData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrRibbonManager.RibbonData")()); }
 		@property final auto ref
 		{
-			int Ribbon() { return *cast(int*)(cast(size_t)&this + 8); }
-			int Type() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
+			int Ribbon() { mixin(MGPS!(int, 8)()); }
+			int Type() { mixin(MGPS!(int, 4)()); }
+			int Id() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrRibbonManager.RibbonData) ClassRibbons() { return *cast(ScriptArray!(TrRibbonManager.RibbonData)*)(cast(size_t)cast(void*)this + 72); }
-			ScriptArray!(TrRibbonManager.RibbonData) TypeRibbons() { return *cast(ScriptArray!(TrRibbonManager.RibbonData)*)(cast(size_t)cast(void*)this + 84); }
-			ScriptArray!(TrRibbonManager.RibbonData) EquipRibbons() { return *cast(ScriptArray!(TrRibbonManager.RibbonData)*)(cast(size_t)cast(void*)this + 96); }
-			int PreviousGold() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			int PreviousXP() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(TrRibbonManager.RibbonData) ClassRibbons() { mixin(MGPC!(ScriptArray!(TrRibbonManager.RibbonData), 72)()); }
+			ScriptArray!(TrRibbonManager.RibbonData) TypeRibbons() { mixin(MGPC!(ScriptArray!(TrRibbonManager.RibbonData), 84)()); }
+			ScriptArray!(TrRibbonManager.RibbonData) EquipRibbons() { mixin(MGPC!(ScriptArray!(TrRibbonManager.RibbonData), 96)()); }
+			int PreviousGold() { mixin(MGPC!(int, 64)()); }
+			int PreviousXP() { mixin(MGPC!(int, 60)()); }
 		}
-		bool bDirty() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x1) != 0; }
-		bool bDirty(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x1; } return val; }
-		bool bHaveUnlocks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x2) != 0; }
-		bool bHaveUnlocks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x2; } return val; }
-		bool bOnlyUnlocks() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x4) != 0; }
-		bool bOnlyUnlocks(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x4; } return val; }
-		bool bHaveUpgrades() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x8) != 0; }
-		bool bHaveUpgrades(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x8; } return val; }
-		bool bOnlyUpgrades() { return (*cast(uint*)(cast(size_t)cast(void*)this + 68) & 0x10) != 0; }
-		bool bOnlyUpgrades(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 68) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 68) &= ~0x10; } return val; }
+		bool bDirty() { mixin(MGBPC!(68, 0x1)()); }
+		bool bDirty(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool bHaveUnlocks() { mixin(MGBPC!(68, 0x2)()); }
+		bool bHaveUnlocks(bool val) { mixin(MSBPC!(68, 0x2)()); }
+		bool bOnlyUnlocks() { mixin(MGBPC!(68, 0x4)()); }
+		bool bOnlyUnlocks(bool val) { mixin(MSBPC!(68, 0x4)()); }
+		bool bHaveUpgrades() { mixin(MGBPC!(68, 0x8)()); }
+		bool bHaveUpgrades(bool val) { mixin(MSBPC!(68, 0x8)()); }
+		bool bOnlyUpgrades() { mixin(MGBPC!(68, 0x10)()); }
+		bool bOnlyUpgrades(bool val) { mixin(MSBPC!(68, 0x10)()); }
 	}
 final:
 	int GetClassRibbon(int ClassId)

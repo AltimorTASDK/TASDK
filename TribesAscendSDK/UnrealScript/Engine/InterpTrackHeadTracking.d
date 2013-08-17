@@ -1,15 +1,16 @@
 module UnrealScript.Engine.InterpTrackHeadTracking;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.InterpTrack;
 
 extern(C++) interface InterpTrackHeadTracking : InterpTrack
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackHeadTracking")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackHeadTracking")()); }
 	private static __gshared InterpTrackHeadTracking mDefaultProperties;
-	@property final static InterpTrackHeadTracking DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackHeadTracking)("InterpTrackHeadTracking Engine.Default__InterpTrackHeadTracking")); }
+	@property final static InterpTrackHeadTracking DefaultProperties() { mixin(MGDPC!(InterpTrackHeadTracking, "InterpTrackHeadTracking Engine.Default__InterpTrackHeadTracking")()); }
 	enum EHeadTrackingAction : ubyte
 	{
 		EHTA_DisableHeadTracking = 0,
@@ -21,29 +22,29 @@ public extern(D):
 		private ubyte __buffer__[5];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackHeadTracking.HeadTrackingKey")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackHeadTracking.HeadTrackingKey")()); }
 		@property final auto ref
 		{
-			InterpTrackHeadTracking.EHeadTrackingAction Action() { return *cast(InterpTrackHeadTracking.EHeadTrackingAction*)(cast(size_t)&this + 4); }
-			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
+			InterpTrackHeadTracking.EHeadTrackingAction Action() { mixin(MGPS!(InterpTrackHeadTracking.EHeadTrackingAction, 4)()); }
+			float Time() { mixin(MGPS!(float, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey) HeadTrackingTrack() { return *cast(ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey)*)(cast(size_t)cast(void*)this + 128); }
-			ScriptArray!(ScriptName) TrackControllerName() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 140); }
-			ScriptArray!(ScriptClass) ActorClassesToLookAt() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 172); }
-			ScriptArray!(ScriptName) TargetBoneNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 184); }
-			float MaxInterestTime() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float MinLookAtTime() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float MaxLookAtTime() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			float LookAtActorRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
+			ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey) HeadTrackingTrack() { mixin(MGPC!(ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey), 128)()); }
+			ScriptArray!(ScriptName) TrackControllerName() { mixin(MGPC!(ScriptArray!(ScriptName), 140)()); }
+			ScriptArray!(ScriptClass) ActorClassesToLookAt() { mixin(MGPC!(ScriptArray!(ScriptClass), 172)()); }
+			ScriptArray!(ScriptName) TargetBoneNames() { mixin(MGPC!(ScriptArray!(ScriptName), 184)()); }
+			float MaxInterestTime() { mixin(MGPC!(float, 168)()); }
+			float MinLookAtTime() { mixin(MGPC!(float, 164)()); }
+			float MaxLookAtTime() { mixin(MGPC!(float, 160)()); }
+			float LookAtActorRadius() { mixin(MGPC!(float, 152)()); }
 		}
-		bool bLookAtPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x2) != 0; }
-		bool bLookAtPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x2; } return val; }
-		bool bDisableBeyondLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x1) != 0; }
-		bool bDisableBeyondLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x1; } return val; }
+		bool bLookAtPawns() { mixin(MGBPC!(156, 0x2)()); }
+		bool bLookAtPawns(bool val) { mixin(MSBPC!(156, 0x2)()); }
+		bool bDisableBeyondLimit() { mixin(MGBPC!(156, 0x1)()); }
+		bool bDisableBeyondLimit(bool val) { mixin(MSBPC!(156, 0x1)()); }
 	}
 }

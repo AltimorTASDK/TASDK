@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DOFAndBloomEffect;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.DOFEffect;
 import UnrealScript.Core.UObject;
 
@@ -8,25 +9,25 @@ extern(C++) interface DOFAndBloomEffect : DOFEffect
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DOFAndBloomEffect")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DOFAndBloomEffect")()); }
 	private static __gshared DOFAndBloomEffect mDefaultProperties;
-	@property final static DOFAndBloomEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DOFAndBloomEffect)("DOFAndBloomEffect Engine.Default__DOFAndBloomEffect")); }
+	@property final static DOFAndBloomEffect DefaultProperties() { mixin(MGDPC!(DOFAndBloomEffect, "DOFAndBloomEffect Engine.Default__DOFAndBloomEffect")()); }
 	@property final
 	{
 		auto ref
 		{
-			float BlurBloomKernelSize() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float SceneMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float BloomScreenBlendThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			UObject.Color BloomTint() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 156); }
-			float BloomThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			float BloomScale() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
+			float BlurBloomKernelSize() { mixin(MGPC!(float, 168)()); }
+			float SceneMultiplier() { mixin(MGPC!(float, 164)()); }
+			float BloomScreenBlendThreshold() { mixin(MGPC!(float, 160)()); }
+			UObject.Color BloomTint() { mixin(MGPC!(UObject.Color, 156)()); }
+			float BloomThreshold() { mixin(MGPC!(float, 152)()); }
+			float BloomScale() { mixin(MGPC!(float, 148)()); }
 		}
-		bool bEnableDepthOfFieldHQ() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x4) != 0; }
-		bool bEnableDepthOfFieldHQ(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x4; } return val; }
-		bool bEnableReferenceDOF() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x2) != 0; }
-		bool bEnableReferenceDOF(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x2; } return val; }
-		bool bEnableSeparateBloom() { return (*cast(uint*)(cast(size_t)cast(void*)this + 172) & 0x1) != 0; }
-		bool bEnableSeparateBloom(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 172) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 172) &= ~0x1; } return val; }
+		bool bEnableDepthOfFieldHQ() { mixin(MGBPC!(172, 0x4)()); }
+		bool bEnableDepthOfFieldHQ(bool val) { mixin(MSBPC!(172, 0x4)()); }
+		bool bEnableReferenceDOF() { mixin(MGBPC!(172, 0x2)()); }
+		bool bEnableReferenceDOF(bool val) { mixin(MSBPC!(172, 0x2)()); }
+		bool bEnableSeparateBloom() { mixin(MGBPC!(172, 0x1)()); }
+		bool bEnableSeparateBloom(bool val) { mixin(MSBPC!(172, 0x1)()); }
 	}
 }

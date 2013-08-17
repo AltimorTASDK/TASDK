@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDaDCoreShield;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.DynamicSMActor;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.TribesGame.TrDaDCore;
@@ -12,9 +13,9 @@ extern(C++) interface TrDaDCoreShield : DynamicSMActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDCoreShield")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDCoreShield")()); }
 	private static __gshared TrDaDCoreShield mDefaultProperties;
-	@property final static TrDaDCoreShield DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDaDCoreShield)("TrDaDCoreShield TribesGame.Default__TrDaDCoreShield")); }
+	@property final static TrDaDCoreShield DefaultProperties() { mixin(MGDPC!(TrDaDCoreShield, "TrDaDCoreShield TribesGame.Default__TrDaDCoreShield")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,22 +29,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.Init")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.PostBeginPlay")); }
-			ScriptFunction DisableBlocking() { return mDisableBlocking ? mDisableBlocking : (mDisableBlocking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.DisableBlocking")); }
-			ScriptFunction EnableBlocking() { return mEnableBlocking ? mEnableBlocking : (mEnableBlocking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.EnableBlocking")); }
-			ScriptFunction UpdateMaterialForPawn() { return mUpdateMaterialForPawn ? mUpdateMaterialForPawn : (mUpdateMaterialForPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.UpdateMaterialForPawn")); }
-			ScriptFunction CreateMICs() { return mCreateMICs ? mCreateMICs : (mCreateMICs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.CreateMICs")); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrDaDCoreShield.Init")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDaDCoreShield.PostBeginPlay")()); }
+			ScriptFunction DisableBlocking() { mixin(MGF!("mDisableBlocking", "Function TribesGame.TrDaDCoreShield.DisableBlocking")()); }
+			ScriptFunction EnableBlocking() { mixin(MGF!("mEnableBlocking", "Function TribesGame.TrDaDCoreShield.EnableBlocking")()); }
+			ScriptFunction UpdateMaterialForPawn() { mixin(MGF!("mUpdateMaterialForPawn", "Function TribesGame.TrDaDCoreShield.UpdateMaterialForPawn")()); }
+			ScriptFunction CreateMICs() { mixin(MGF!("mCreateMICs", "Function TribesGame.TrDaDCoreShield.CreateMICs")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MaterialInstanceConstant) m_MICs() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 536); }
-		TrDaDShell m_Shell() { return *cast(TrDaDShell*)(cast(size_t)cast(void*)this + 560); }
-		int m_nShieldIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 556); }
-		TrDaDCore m_Core() { return *cast(TrDaDCore*)(cast(size_t)cast(void*)this + 552); }
-		Material m_BaseMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 548); }
-		ubyte m_DefenderTeamIndex() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 532); }
+		ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 536)()); }
+		TrDaDShell m_Shell() { mixin(MGPC!(TrDaDShell, 560)()); }
+		int m_nShieldIndex() { mixin(MGPC!(int, 556)()); }
+		TrDaDCore m_Core() { mixin(MGPC!(TrDaDCore, 552)()); }
+		Material m_BaseMaterial() { mixin(MGPC!(Material, 548)()); }
+		ubyte m_DefenderTeamIndex() { mixin(MGPC!(ubyte, 532)()); }
 	}
 final:
 	void Init(int ShieldIndex, TrDaDCore Core, TrDaDShell Shell)

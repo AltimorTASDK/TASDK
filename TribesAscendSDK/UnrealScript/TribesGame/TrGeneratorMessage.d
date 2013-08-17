@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGeneratorMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrGeneratorMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGeneratorMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGeneratorMessage")()); }
 	private static __gshared TrGeneratorMessage mDefaultProperties;
-	@property final static TrGeneratorMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGeneratorMessage)("TrGeneratorMessage TribesGame.Default__TrGeneratorMessage")); }
+	@property final static TrGeneratorMessage DefaultProperties() { mixin(MGDPC!(TrGeneratorMessage, "TrGeneratorMessage TribesGame.Default__TrGeneratorMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGeneratorMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGeneratorMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrGeneratorMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrGeneratorMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString OurGeneratorRestored() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString EnemyGeneratorDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString OurGeneratorDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		SoundCue DiamondSwordSounds() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 112); }
-		SoundCue BloodEagleSounds() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString OurGeneratorRestored() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString EnemyGeneratorDestroyed() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString OurGeneratorDestroyed() { mixin(MGPC!(ScriptString, 124)()); }
+		SoundCue DiamondSwordSounds() { mixin(MGPC!(SoundCue, 112)()); }
+		SoundCue BloodEagleSounds() { mixin(MGPC!(SoundCue, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

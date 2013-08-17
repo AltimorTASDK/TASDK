@@ -1,24 +1,25 @@
 module UnrealScript.Engine.ApexAsset;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface ApexAsset : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexAsset")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ApexAsset")()); }
 	private static __gshared ApexAsset mDefaultProperties;
-	@property final static ApexAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexAsset)("ApexAsset Engine.Default__ApexAsset")); }
+	@property final static ApexAsset DefaultProperties() { mixin(MGDPC!(ApexAsset, "ApexAsset Engine.Default__ApexAsset")()); }
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) ApexComponents() { return *cast(ScriptArray!(
+void*) ApexComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 72); }
-		ScriptArray!(ApexAsset) NamedReferences() { return *cast(ScriptArray!(ApexAsset)*)(cast(size_t)cast(void*)this + 84); }
-		ScriptString SourceFilePath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 96); }
-		ScriptString OriginalApexName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 60); }
+void*), 72)()); }
+		ScriptArray!(ApexAsset) NamedReferences() { mixin(MGPC!(ScriptArray!(ApexAsset), 84)()); }
+		ScriptString SourceFilePath() { mixin(MGPC!(ScriptString, 96)()); }
+		ScriptString OriginalApexName() { mixin(MGPC!(ScriptString, 60)()); }
 	}
 }

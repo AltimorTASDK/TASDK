@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTObjectiveAnnouncement;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTObjectiveSpecificMessage;
 import UnrealScript.UDKBase.UDKPlayerController;
 import UnrealScript.Core.UObject;
@@ -12,9 +13,9 @@ extern(C++) interface UTObjectiveAnnouncement : UTObjectiveSpecificMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTObjectiveAnnouncement")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTObjectiveAnnouncement")()); }
 	private static __gshared UTObjectiveAnnouncement mDefaultProperties;
-	@property final static UTObjectiveAnnouncement DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTObjectiveAnnouncement)("UTObjectiveAnnouncement UTGame.Default__UTObjectiveAnnouncement")); }
+	@property final static UTObjectiveAnnouncement DefaultProperties() { mixin(MGDPC!(UTObjectiveAnnouncement, "UTObjectiveAnnouncement UTGame.Default__UTObjectiveAnnouncement")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,9 +26,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjectiveAnnouncement() { return mGetObjectiveAnnouncement ? mGetObjectiveAnnouncement : (mGetObjectiveAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveAnnouncement.GetObjectiveAnnouncement")); }
-			ScriptFunction ShouldBeRemoved() { return mShouldBeRemoved ? mShouldBeRemoved : (mShouldBeRemoved = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveAnnouncement.ShouldBeRemoved")); }
-			ScriptFunction SetHUDDisplay() { return mSetHUDDisplay ? mSetHUDDisplay : (mSetHUDDisplay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveAnnouncement.SetHUDDisplay")); }
+			ScriptFunction GetObjectiveAnnouncement() { mixin(MGF!("mGetObjectiveAnnouncement", "Function UTGame.UTObjectiveAnnouncement.GetObjectiveAnnouncement")()); }
+			ScriptFunction ShouldBeRemoved() { mixin(MGF!("mShouldBeRemoved", "Function UTGame.UTObjectiveAnnouncement.ShouldBeRemoved")()); }
+			ScriptFunction SetHUDDisplay() { mixin(MGF!("mSetHUDDisplay", "Function UTGame.UTObjectiveAnnouncement.SetHUDDisplay")()); }
 		}
 	}
 final:

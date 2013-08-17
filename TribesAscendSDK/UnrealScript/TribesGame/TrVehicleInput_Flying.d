@@ -1,19 +1,20 @@
 module UnrealScript.TribesGame.TrVehicleInput_Flying;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PlayerInput;
 
 extern(C++) interface TrVehicleInput_Flying : PlayerInput
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleInput_Flying")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicleInput_Flying")()); }
 	private static __gshared TrVehicleInput_Flying mDefaultProperties;
-	@property final static TrVehicleInput_Flying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleInput_Flying)("TrVehicleInput_Flying TribesGame.Default__TrVehicleInput_Flying")); }
+	@property final static TrVehicleInput_Flying DefaultProperties() { mixin(MGDPC!(TrVehicleInput_Flying, "TrVehicleInput_Flying TribesGame.Default__TrVehicleInput_Flying")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mAdjustMouseSensitivity;
-		public @property static final ScriptFunction AdjustMouseSensitivity() { return mAdjustMouseSensitivity ? mAdjustMouseSensitivity : (mAdjustMouseSensitivity = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleInput_Flying.AdjustMouseSensitivity")); }
+		public @property static final ScriptFunction AdjustMouseSensitivity() { mixin(MGF!("mAdjustMouseSensitivity", "Function TribesGame.TrVehicleInput_Flying.AdjustMouseSensitivity")()); }
 	}
 	final void AdjustMouseSensitivity(float FOVScale)
 	{

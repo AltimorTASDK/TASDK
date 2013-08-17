@@ -1,15 +1,16 @@
 module UnrealScript.IpDrv.TcpLink;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.IpDrv.InternetLink;
 
 extern(C++) interface TcpLink : InternetLink
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.TcpLink")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.TcpLink")()); }
 	private static __gshared TcpLink mDefaultProperties;
-	@property final static TcpLink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TcpLink)("TcpLink IpDrv.Default__TcpLink")); }
+	@property final static TcpLink DefaultProperties() { mixin(MGDPC!(TcpLink, "TcpLink IpDrv.Default__TcpLink")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,21 +33,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BindPort() { return mBindPort ? mBindPort : (mBindPort = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.BindPort")); }
-			ScriptFunction Listen() { return mListen ? mListen : (mListen = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.Listen")); }
-			ScriptFunction Open() { return mOpen ? mOpen : (mOpen = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.Open")); }
-			ScriptFunction Close() { return mClose ? mClose : (mClose = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.Close")); }
-			ScriptFunction IsConnected() { return mIsConnected ? mIsConnected : (mIsConnected = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.IsConnected")); }
-			ScriptFunction SendText() { return mSendText ? mSendText : (mSendText = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.SendText")); }
-			ScriptFunction SendBinary() { return mSendBinary ? mSendBinary : (mSendBinary = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.SendBinary")); }
-			ScriptFunction ReadText() { return mReadText ? mReadText : (mReadText = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.ReadText")); }
-			ScriptFunction ReadBinary() { return mReadBinary ? mReadBinary : (mReadBinary = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.ReadBinary")); }
-			ScriptFunction Accepted() { return mAccepted ? mAccepted : (mAccepted = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.Accepted")); }
-			ScriptFunction Opened() { return mOpened ? mOpened : (mOpened = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.Opened")); }
-			ScriptFunction Closed() { return mClosed ? mClosed : (mClosed = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.Closed")); }
-			ScriptFunction ReceivedText() { return mReceivedText ? mReceivedText : (mReceivedText = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.ReceivedText")); }
-			ScriptFunction ReceivedLine() { return mReceivedLine ? mReceivedLine : (mReceivedLine = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.ReceivedLine")); }
-			ScriptFunction ReceivedBinary() { return mReceivedBinary ? mReceivedBinary : (mReceivedBinary = ScriptObject.Find!(ScriptFunction)("Function IpDrv.TcpLink.ReceivedBinary")); }
+			ScriptFunction BindPort() { mixin(MGF!("mBindPort", "Function IpDrv.TcpLink.BindPort")()); }
+			ScriptFunction Listen() { mixin(MGF!("mListen", "Function IpDrv.TcpLink.Listen")()); }
+			ScriptFunction Open() { mixin(MGF!("mOpen", "Function IpDrv.TcpLink.Open")()); }
+			ScriptFunction Close() { mixin(MGF!("mClose", "Function IpDrv.TcpLink.Close")()); }
+			ScriptFunction IsConnected() { mixin(MGF!("mIsConnected", "Function IpDrv.TcpLink.IsConnected")()); }
+			ScriptFunction SendText() { mixin(MGF!("mSendText", "Function IpDrv.TcpLink.SendText")()); }
+			ScriptFunction SendBinary() { mixin(MGF!("mSendBinary", "Function IpDrv.TcpLink.SendBinary")()); }
+			ScriptFunction ReadText() { mixin(MGF!("mReadText", "Function IpDrv.TcpLink.ReadText")()); }
+			ScriptFunction ReadBinary() { mixin(MGF!("mReadBinary", "Function IpDrv.TcpLink.ReadBinary")()); }
+			ScriptFunction Accepted() { mixin(MGF!("mAccepted", "Function IpDrv.TcpLink.Accepted")()); }
+			ScriptFunction Opened() { mixin(MGF!("mOpened", "Function IpDrv.TcpLink.Opened")()); }
+			ScriptFunction Closed() { mixin(MGF!("mClosed", "Function IpDrv.TcpLink.Closed")()); }
+			ScriptFunction ReceivedText() { mixin(MGF!("mReceivedText", "Function IpDrv.TcpLink.ReceivedText")()); }
+			ScriptFunction ReceivedLine() { mixin(MGF!("mReceivedLine", "Function IpDrv.TcpLink.ReceivedLine")()); }
+			ScriptFunction ReceivedBinary() { mixin(MGF!("mReceivedBinary", "Function IpDrv.TcpLink.ReceivedBinary")()); }
 		}
 	}
 	enum ELinkState : ubyte
@@ -64,11 +65,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ubyte) SendFIFO() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 516); }
-		ScriptString RecvBuf() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 528); }
-		ScriptClass AcceptClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 512); }
-		InternetLink.IpAddr RemoteAddr() { return *cast(InternetLink.IpAddr*)(cast(size_t)cast(void*)this + 504); }
-		TcpLink.ELinkState LinkState() { return *cast(TcpLink.ELinkState*)(cast(size_t)cast(void*)this + 500); }
+		ScriptArray!(ubyte) SendFIFO() { mixin(MGPC!(ScriptArray!(ubyte), 516)()); }
+		ScriptString RecvBuf() { mixin(MGPC!(ScriptString, 528)()); }
+		ScriptClass AcceptClass() { mixin(MGPC!(ScriptClass, 512)()); }
+		InternetLink.IpAddr RemoteAddr() { mixin(MGPC!(InternetLink.IpAddr, 504)()); }
+		TcpLink.ELinkState LinkState() { mixin(MGPC!(TcpLink.ELinkState, 500)()); }
 	}
 final:
 	int BindPort(int PortNum, bool bUseNextAvailable)
@@ -126,21 +127,21 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendBinary, params.ptr, cast(void*)0);
 		return *cast(int*)&params[260];
 	}
-	int ReadText(ScriptString* Str)
+	int ReadText(ref ScriptString Str)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *Str;
+		*cast(ScriptString*)params.ptr = Str;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadText, params.ptr, cast(void*)0);
 		*Str = *cast(ScriptString*)params.ptr;
 		return *cast(int*)&params[12];
 	}
-	int ReadBinary(int Count, ubyte* B)
+	int ReadBinary(int Count, ref ubyte B)
 	{
 		ubyte params[264];
 		params[] = 0;
 		*cast(int*)params.ptr = Count;
-		params[4] = *B;
+		params[4] = B;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadBinary, params.ptr, cast(void*)0);
 		*B = params[4];
 		return *cast(int*)&params[260];

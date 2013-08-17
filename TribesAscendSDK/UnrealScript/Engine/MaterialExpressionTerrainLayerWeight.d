@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialExpressionTerrainLayerWeight;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpression;
 
@@ -8,16 +9,16 @@ extern(C++) interface MaterialExpressionTerrainLayerWeight : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTerrainLayerWeight")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTerrainLayerWeight")()); }
 	private static __gshared MaterialExpressionTerrainLayerWeight mDefaultProperties;
-	@property final static MaterialExpressionTerrainLayerWeight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTerrainLayerWeight)("MaterialExpressionTerrainLayerWeight Engine.Default__MaterialExpressionTerrainLayerWeight")); }
+	@property final static MaterialExpressionTerrainLayerWeight DefaultProperties() { mixin(MGDPC!(MaterialExpressionTerrainLayerWeight, "MaterialExpressionTerrainLayerWeight Engine.Default__MaterialExpressionTerrainLayerWeight")()); }
 	@property final auto ref
 	{
-		UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 180); }
-		float PreviewWeight() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
-		ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 168); }
-		MaterialExpression.ExpressionInput Layer() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 140); }
-		MaterialExpression.ExpressionInput Base() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 112); }
-		UObject.Pointer InstanceOverride() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 108); }
+		UObject.Guid ExpressionGUID() { mixin(MGPC!(UObject.Guid, 180)()); }
+		float PreviewWeight() { mixin(MGPC!(float, 176)()); }
+		ScriptName ParameterName() { mixin(MGPC!(ScriptName, 168)()); }
+		MaterialExpression.ExpressionInput Layer() { mixin(MGPC!(MaterialExpression.ExpressionInput, 140)()); }
+		MaterialExpression.ExpressionInput Base() { mixin(MGPC!(MaterialExpression.ExpressionInput, 112)()); }
+		UObject.Pointer InstanceOverride() { mixin(MGPC!(UObject.Pointer, 108)()); }
 	}
 }

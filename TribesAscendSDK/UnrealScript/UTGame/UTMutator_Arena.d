@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTMutator_Arena;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
 import UnrealScript.UTGame.UTMutator;
@@ -9,9 +10,9 @@ extern(C++) interface UTMutator_Arena : UTMutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_Arena")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator_Arena")()); }
 	private static __gshared UTMutator_Arena mDefaultProperties;
-	@property final static UTMutator_Arena DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_Arena)("UTMutator_Arena UTGame.Default__UTMutator_Arena")); }
+	@property final static UTMutator_Arena DefaultProperties() { mixin(MGDPC!(UTMutator_Arena, "UTMutator_Arena UTGame.Default__UTMutator_Arena")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,12 +23,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator_Arena.PostBeginPlay")); }
-			ScriptFunction CheckReplacement() { return mCheckReplacement ? mCheckReplacement : (mCheckReplacement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator_Arena.CheckReplacement")); }
-			ScriptFunction ModifyPlayer() { return mModifyPlayer ? mModifyPlayer : (mModifyPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator_Arena.ModifyPlayer")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTMutator_Arena.PostBeginPlay")()); }
+			ScriptFunction CheckReplacement() { mixin(MGF!("mCheckReplacement", "Function UTGame.UTMutator_Arena.CheckReplacement")()); }
+			ScriptFunction ModifyPlayer() { mixin(MGF!("mModifyPlayer", "Function UTGame.UTMutator_Arena.ModifyPlayer")()); }
 		}
 	}
-	@property final auto ref ScriptString ArenaWeaponClassPath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 496); }
+	@property final auto ref ScriptString ArenaWeaponClassPath() { mixin(MGPC!(ScriptString, 496)()); }
 final:
 	void PostBeginPlay()
 	{

@@ -1,6 +1,7 @@
 module UnrealScript.GFxUI.GFxDataStoreSubscriber;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.GFxUI.GFxMoviePlayer;
 import UnrealScript.Engine.UIDataStore;
@@ -10,9 +11,9 @@ extern(C++) interface GFxDataStoreSubscriber : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxDataStoreSubscriber")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GFxUI.GFxDataStoreSubscriber")()); }
 	private static __gshared GFxDataStoreSubscriber mDefaultProperties;
-	@property final static GFxDataStoreSubscriber DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxDataStoreSubscriber)("GFxDataStoreSubscriber GFxUI.Default__GFxDataStoreSubscriber")); }
+	@property final static GFxDataStoreSubscriber DefaultProperties() { mixin(MGDPC!(GFxDataStoreSubscriber, "GFxDataStoreSubscriber GFxUI.Default__GFxDataStoreSubscriber")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,20 +29,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PublishValues() { return mPublishValues ? mPublishValues : (mPublishValues = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.PublishValues")); }
-			ScriptFunction SetDataStoreBinding() { return mSetDataStoreBinding ? mSetDataStoreBinding : (mSetDataStoreBinding = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.SetDataStoreBinding")); }
-			ScriptFunction GetDataStoreBinding() { return mGetDataStoreBinding ? mGetDataStoreBinding : (mGetDataStoreBinding = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.GetDataStoreBinding")); }
-			ScriptFunction RefreshSubscriberValue() { return mRefreshSubscriberValue ? mRefreshSubscriberValue : (mRefreshSubscriberValue = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.RefreshSubscriberValue")); }
-			ScriptFunction NotifyDataStoreValueUpdated() { return mNotifyDataStoreValueUpdated ? mNotifyDataStoreValueUpdated : (mNotifyDataStoreValueUpdated = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.NotifyDataStoreValueUpdated")); }
-			ScriptFunction GetBoundDataStores() { return mGetBoundDataStores ? mGetBoundDataStores : (mGetBoundDataStores = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.GetBoundDataStores")); }
-			ScriptFunction ClearBoundDataStores() { return mClearBoundDataStores ? mClearBoundDataStores : (mClearBoundDataStores = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.ClearBoundDataStores")); }
-			ScriptFunction SaveSubscriberValue() { return mSaveSubscriberValue ? mSaveSubscriberValue : (mSaveSubscriberValue = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxDataStoreSubscriber.SaveSubscriberValue")); }
+			ScriptFunction PublishValues() { mixin(MGF!("mPublishValues", "Function GFxUI.GFxDataStoreSubscriber.PublishValues")()); }
+			ScriptFunction SetDataStoreBinding() { mixin(MGF!("mSetDataStoreBinding", "Function GFxUI.GFxDataStoreSubscriber.SetDataStoreBinding")()); }
+			ScriptFunction GetDataStoreBinding() { mixin(MGF!("mGetDataStoreBinding", "Function GFxUI.GFxDataStoreSubscriber.GetDataStoreBinding")()); }
+			ScriptFunction RefreshSubscriberValue() { mixin(MGF!("mRefreshSubscriberValue", "Function GFxUI.GFxDataStoreSubscriber.RefreshSubscriberValue")()); }
+			ScriptFunction NotifyDataStoreValueUpdated() { mixin(MGF!("mNotifyDataStoreValueUpdated", "Function GFxUI.GFxDataStoreSubscriber.NotifyDataStoreValueUpdated")()); }
+			ScriptFunction GetBoundDataStores() { mixin(MGF!("mGetBoundDataStores", "Function GFxUI.GFxDataStoreSubscriber.GetBoundDataStores")()); }
+			ScriptFunction ClearBoundDataStores() { mixin(MGF!("mClearBoundDataStores", "Function GFxUI.GFxDataStoreSubscriber.ClearBoundDataStores")()); }
+			ScriptFunction SaveSubscriberValue() { mixin(MGF!("mSaveSubscriberValue", "Function GFxUI.GFxDataStoreSubscriber.SaveSubscriberValue")()); }
 		}
 	}
 	@property final auto ref
 	{
-		GFxMoviePlayer Movie() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 64); }
-		UObject.Pointer VfTable_IUIDataStorePublisher() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+		GFxMoviePlayer Movie() { mixin(MGPC!(GFxMoviePlayer, 64)()); }
+		UObject.Pointer VfTable_IUIDataStorePublisher() { mixin(MGPC!(UObject.Pointer, 60)()); }
 	}
 final:
 	void PublishValues()
@@ -83,11 +84,11 @@ final:
 		*cast(int*)&params[20] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyDataStoreValueUpdated, params.ptr, cast(void*)0);
 	}
-	void GetBoundDataStores(ScriptArray!(UIDataStore)* out_BoundDataStores)
+	void GetBoundDataStores(ref ScriptArray!(UIDataStore) out_BoundDataStores)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(UIDataStore)*)params.ptr = *out_BoundDataStores;
+		*cast(ScriptArray!(UIDataStore)*)params.ptr = out_BoundDataStores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundDataStores, params.ptr, cast(void*)0);
 		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
 	}
@@ -95,11 +96,11 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearBoundDataStores, cast(void*)0, cast(void*)0);
 	}
-	bool SaveSubscriberValue(ScriptArray!(UIDataStore)* out_BoundDataStores, int BindingIndex)
+	bool SaveSubscriberValue(ref ScriptArray!(UIDataStore) out_BoundDataStores, int BindingIndex)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptArray!(UIDataStore)*)params.ptr = *out_BoundDataStores;
+		*cast(ScriptArray!(UIDataStore)*)params.ptr = out_BoundDataStores;
 		*cast(int*)&params[12] = BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SaveSubscriberValue, params.ptr, cast(void*)0);
 		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;

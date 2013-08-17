@@ -1,18 +1,19 @@
 module UnrealScript.Engine.SeqAct_SetApexClothingParam;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_SetApexClothingParam : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetApexClothingParam")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_SetApexClothingParam")()); }
 	private static __gshared SeqAct_SetApexClothingParam mDefaultProperties;
-	@property final static SeqAct_SetApexClothingParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetApexClothingParam)("SeqAct_SetApexClothingParam Engine.Default__SeqAct_SetApexClothingParam")); }
+	@property final static SeqAct_SetApexClothingParam DefaultProperties() { mixin(MGDPC!(SeqAct_SetApexClothingParam, "SeqAct_SetApexClothingParam Engine.Default__SeqAct_SetApexClothingParam")()); }
 	@property final
 	{
-		bool bEnableApexClothingSimulation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x1) != 0; }
-		bool bEnableApexClothingSimulation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 232) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 232) &= ~0x1; } return val; }
+		bool bEnableApexClothingSimulation() { mixin(MGBPC!(232, 0x1)()); }
+		bool bEnableApexClothingSimulation(bool val) { mixin(MSBPC!(232, 0x1)()); }
 	}
 }

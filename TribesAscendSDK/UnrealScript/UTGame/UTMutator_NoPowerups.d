@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTMutator_NoPowerups;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.UTGame.UTMutator;
 
@@ -8,13 +9,13 @@ extern(C++) interface UTMutator_NoPowerups : UTMutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_NoPowerups")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator_NoPowerups")()); }
 	private static __gshared UTMutator_NoPowerups mDefaultProperties;
-	@property final static UTMutator_NoPowerups DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_NoPowerups)("UTMutator_NoPowerups UTGame.Default__UTMutator_NoPowerups")); }
+	@property final static UTMutator_NoPowerups DefaultProperties() { mixin(MGDPC!(UTMutator_NoPowerups, "UTMutator_NoPowerups UTGame.Default__UTMutator_NoPowerups")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCheckReplacement;
-		public @property static final ScriptFunction CheckReplacement() { return mCheckReplacement ? mCheckReplacement : (mCheckReplacement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMutator_NoPowerups.CheckReplacement")); }
+		public @property static final ScriptFunction CheckReplacement() { mixin(MGF!("mCheckReplacement", "Function UTGame.UTMutator_NoPowerups.CheckReplacement")()); }
 	}
 	final bool CheckReplacement(Actor Other)
 	{

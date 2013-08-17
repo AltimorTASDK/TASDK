@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Path_AlongLine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.PathConstraint;
 
@@ -8,9 +9,9 @@ extern(C++) interface Path_AlongLine : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_AlongLine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_AlongLine")()); }
 	private static __gshared Path_AlongLine mDefaultProperties;
-	@property final static Path_AlongLine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_AlongLine)("Path_AlongLine Engine.Default__Path_AlongLine")); }
+	@property final static Path_AlongLine DefaultProperties() { mixin(MGDPC!(Path_AlongLine, "Path_AlongLine Engine.Default__Path_AlongLine")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AlongLine() { return mAlongLine ? mAlongLine : (mAlongLine = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AlongLine.AlongLine")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AlongLine.Recycle")); }
+			ScriptFunction AlongLine() { mixin(MGF!("mAlongLine", "Function Engine.Path_AlongLine.AlongLine")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_AlongLine.Recycle")()); }
 		}
 	}
-	@property final auto ref Vector Direction() { return *cast(Vector*)(cast(size_t)cast(void*)this + 68); }
+	@property final auto ref Vector Direction() { mixin(MGPC!(Vector, 68)()); }
 final:
 	static bool AlongLine(Pawn P, Vector Dir)
 	{

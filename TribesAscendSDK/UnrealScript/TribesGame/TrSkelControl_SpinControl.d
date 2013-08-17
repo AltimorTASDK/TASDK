@@ -1,15 +1,16 @@
 module UnrealScript.TribesGame.TrSkelControl_SpinControl;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface TrSkelControl_SpinControl : SkelControlSingleBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkelControl_SpinControl")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSkelControl_SpinControl")()); }
 	private static __gshared TrSkelControl_SpinControl mDefaultProperties;
-	@property final static TrSkelControl_SpinControl DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkelControl_SpinControl)("TrSkelControl_SpinControl TribesGame.Default__TrSkelControl_SpinControl")); }
+	@property final static TrSkelControl_SpinControl DefaultProperties() { mixin(MGDPC!(TrSkelControl_SpinControl, "TrSkelControl_SpinControl TribesGame.Default__TrSkelControl_SpinControl")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -19,32 +20,32 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Spin() { return mSpin ? mSpin : (mSpin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSkelControl_SpinControl.Spin")); }
-			ScriptFunction SpinToTargetRotation() { return mSpinToTargetRotation ? mSpinToTargetRotation : (mSpinToTargetRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSkelControl_SpinControl.SpinToTargetRotation")); }
+			ScriptFunction Spin() { mixin(MGF!("mSpin", "Function TribesGame.TrSkelControl_SpinControl.Spin")()); }
+			ScriptFunction SpinToTargetRotation() { mixin(MGF!("mSpinToTargetRotation", "Function TribesGame.TrSkelControl_SpinControl.SpinToTargetRotation")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float m_fSpinDownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-			float m_fSpinUpTime() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-			float m_TimeToInterpToTargetRotation() { return *cast(float*)(cast(size_t)cast(void*)this + 280); }
-			Rotator m_TargetRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 268); }
-			float m_fCurrentDegreesPerSecond() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-			Vector m_vAxis() { return *cast(Vector*)(cast(size_t)cast(void*)this + 240); }
-			float m_fDegreesPerSecond() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
+			float m_fSpinDownTime() { mixin(MGPC!(float, 260)()); }
+			float m_fSpinUpTime() { mixin(MGPC!(float, 256)()); }
+			float m_TimeToInterpToTargetRotation() { mixin(MGPC!(float, 280)()); }
+			Rotator m_TargetRotation() { mixin(MGPC!(Rotator, 268)()); }
+			float m_fCurrentDegreesPerSecond() { mixin(MGPC!(float, 264)()); }
+			Vector m_vAxis() { mixin(MGPC!(Vector, 240)()); }
+			float m_fDegreesPerSecond() { mixin(MGPC!(float, 236)()); }
 		}
-		bool m_bRotateToTargetRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x10) != 0; }
-		bool m_bRotateToTargetRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x10; } return val; }
-		bool m_bSpinningDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x8) != 0; }
-		bool m_bSpinningDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x8; } return val; }
-		bool m_bSpinningUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x4) != 0; }
-		bool m_bSpinningUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x4; } return val; }
-		bool m_bIsSpinning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x2) != 0; }
-		bool m_bIsSpinning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x2; } return val; }
-		bool m_PreviewStartStop() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x1) != 0; }
-		bool m_PreviewStartStop(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x1; } return val; }
+		bool m_bRotateToTargetRotation() { mixin(MGBPC!(252, 0x10)()); }
+		bool m_bRotateToTargetRotation(bool val) { mixin(MSBPC!(252, 0x10)()); }
+		bool m_bSpinningDown() { mixin(MGBPC!(252, 0x8)()); }
+		bool m_bSpinningDown(bool val) { mixin(MSBPC!(252, 0x8)()); }
+		bool m_bSpinningUp() { mixin(MGBPC!(252, 0x4)()); }
+		bool m_bSpinningUp(bool val) { mixin(MSBPC!(252, 0x4)()); }
+		bool m_bIsSpinning() { mixin(MGBPC!(252, 0x2)()); }
+		bool m_bIsSpinning(bool val) { mixin(MSBPC!(252, 0x2)()); }
+		bool m_PreviewStartStop() { mixin(MGBPC!(252, 0x1)()); }
+		bool m_PreviewStartStop(bool val) { mixin(MSBPC!(252, 0x1)()); }
 	}
 final:
 	void Spin(bool bEnabled)

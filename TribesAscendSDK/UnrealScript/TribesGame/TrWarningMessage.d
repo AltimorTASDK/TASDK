@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrWarningMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,24 +10,24 @@ extern(C++) interface TrWarningMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrWarningMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrWarningMessage")()); }
 	private static __gshared TrWarningMessage mDefaultProperties;
-	@property final static TrWarningMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrWarningMessage)("TrWarningMessage TribesGame.Default__TrWarningMessage")); }
+	@property final static TrWarningMessage DefaultProperties() { mixin(MGDPC!(TrWarningMessage, "TrWarningMessage TribesGame.Default__TrWarningMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWarningMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrWarningMessage.GetString")()); }
 	}
 	@property final auto ref
 	{
-		ScriptString RequiresPowerToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-		ScriptString RequiresCreditsToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-		ScriptString SuicidePenalty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-		ScriptString MissileIntercepted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-		ScriptString MissileTargetingYou() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-		ScriptString MissileLockedOnToYou() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-		ScriptString SaberLauncherNeedsTargetToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString FumbledFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString RequiresPowerToFire() { mixin(MGPC!(ScriptString, 184)()); }
+		ScriptString RequiresCreditsToFire() { mixin(MGPC!(ScriptString, 172)()); }
+		ScriptString SuicidePenalty() { mixin(MGPC!(ScriptString, 160)()); }
+		ScriptString MissileIntercepted() { mixin(MGPC!(ScriptString, 148)()); }
+		ScriptString MissileTargetingYou() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString MissileLockedOnToYou() { mixin(MGPC!(ScriptString, 124)()); }
+		ScriptString SaberLauncherNeedsTargetToFire() { mixin(MGPC!(ScriptString, 112)()); }
+		ScriptString FumbledFlag() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

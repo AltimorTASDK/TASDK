@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleEmitter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleLODLevel;
 
@@ -8,9 +9,9 @@ extern(C++) interface ParticleEmitter : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleEmitter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleEmitter")()); }
 	private static __gshared ParticleEmitter mDefaultProperties;
-	@property final static ParticleEmitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleEmitter)("ParticleEmitter Engine.Default__ParticleEmitter")); }
+	@property final static ParticleEmitter DefaultProperties() { mixin(MGDPC!(ParticleEmitter, "ParticleEmitter Engine.Default__ParticleEmitter")()); }
 	enum EEmitterRenderMode : ubyte
 	{
 		ERM_Normal = 0,
@@ -39,33 +40,33 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleEmitter.ParticleBurst")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleEmitter.ParticleBurst")()); }
 		@property final auto ref
 		{
-			float Time() { return *cast(float*)(cast(size_t)&this + 8); }
-			int CountLow() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Count() { return *cast(int*)(cast(size_t)&this + 0); }
+			float Time() { mixin(MGPS!(float, 8)()); }
+			int CountLow() { mixin(MGPS!(int, 4)()); }
+			int Count() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ParticleLODLevel) LODLevels() { return *cast(ScriptArray!(ParticleLODLevel)*)(cast(size_t)cast(void*)this + 80); }
-			int InitialAllocationCount() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
-			int PeakActiveParticles() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-			UObject.Color EmitterEditorColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 76); }
-			ParticleEmitter.EEmitterRenderMode EmitterRenderMode() { return *cast(ParticleEmitter.EEmitterRenderMode*)(cast(size_t)cast(void*)this + 72); }
-			int SubUVDataOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-			ScriptName EmitterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(ParticleLODLevel) LODLevels() { mixin(MGPC!(ScriptArray!(ParticleLODLevel), 80)()); }
+			int InitialAllocationCount() { mixin(MGPC!(int, 100)()); }
+			int PeakActiveParticles() { mixin(MGPC!(int, 96)()); }
+			UObject.Color EmitterEditorColor() { mixin(MGPC!(UObject.Color, 76)()); }
+			ParticleEmitter.EEmitterRenderMode EmitterRenderMode() { mixin(MGPC!(ParticleEmitter.EEmitterRenderMode, 72)()); }
+			int SubUVDataOffset() { mixin(MGPC!(int, 68)()); }
+			ScriptName EmitterName() { mixin(MGPC!(ScriptName, 60)()); }
 		}
-		bool bCookedOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x8) != 0; }
-		bool bCookedOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x8; } return val; }
-		bool bIsSoloing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x4) != 0; }
-		bool bIsSoloing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x4; } return val; }
-		bool bCollapsed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x2) != 0; }
-		bool bCollapsed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x2; } return val; }
-		bool ConvertedModules() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x1) != 0; }
-		bool ConvertedModules(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x1; } return val; }
+		bool bCookedOut() { mixin(MGBPC!(92, 0x8)()); }
+		bool bCookedOut(bool val) { mixin(MSBPC!(92, 0x8)()); }
+		bool bIsSoloing() { mixin(MGBPC!(92, 0x4)()); }
+		bool bIsSoloing(bool val) { mixin(MSBPC!(92, 0x4)()); }
+		bool bCollapsed() { mixin(MGBPC!(92, 0x2)()); }
+		bool bCollapsed(bool val) { mixin(MSBPC!(92, 0x2)()); }
+		bool ConvertedModules() { mixin(MGBPC!(92, 0x1)()); }
+		bool ConvertedModules(bool val) { mixin(MSBPC!(92, 0x1)()); }
 	}
 }

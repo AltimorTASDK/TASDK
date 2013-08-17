@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeployable_TripSensor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleSystem;
@@ -11,9 +12,9 @@ extern(C++) interface TrDeployable_TripSensor : TrDeployable_Sensor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_TripSensor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_TripSensor")()); }
 	private static __gshared TrDeployable_TripSensor mDefaultProperties;
-	@property final static TrDeployable_TripSensor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_TripSensor)("TrDeployable_TripSensor TribesGame.Default__TrDeployable_TripSensor")); }
+	@property final static TrDeployable_TripSensor DefaultProperties() { mixin(MGDPC!(TrDeployable_TripSensor, "TrDeployable_TripSensor TribesGame.Default__TrDeployable_TripSensor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,16 +29,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddTripActor() { return mAddTripActor ? mAddTripActor : (mAddTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TripSensor.AddTripActor")); }
-			ScriptFunction RemoveTripActor() { return mRemoveTripActor ? mRemoveTripActor : (mRemoveTripActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TripSensor.RemoveTripActor")); }
-			ScriptFunction TripActivated() { return mTripActivated ? mTripActivated : (mTripActivated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TripSensor.TripActivated")); }
-			ScriptFunction GetParticleSystemName() { return mGetParticleSystemName ? mGetParticleSystemName : (mGetParticleSystemName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TripSensor.GetParticleSystemName")); }
-			ScriptFunction GetTripSocketPosition() { return mGetTripSocketPosition ? mGetTripSocketPosition : (mGetTripSocketPosition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TripSensor.GetTripSocketPosition")); }
-			ScriptFunction OnTripAwake() { return mOnTripAwake ? mOnTripAwake : (mOnTripAwake = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TripSensor.OnTripAwake")); }
-			ScriptFunction OnTripSleep() { return mOnTripSleep ? mOnTripSleep : (mOnTripSleep = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TripSensor.OnTripSleep")); }
+			ScriptFunction AddTripActor() { mixin(MGF!("mAddTripActor", "Function TribesGame.TrDeployable_TripSensor.AddTripActor")()); }
+			ScriptFunction RemoveTripActor() { mixin(MGF!("mRemoveTripActor", "Function TribesGame.TrDeployable_TripSensor.RemoveTripActor")()); }
+			ScriptFunction TripActivated() { mixin(MGF!("mTripActivated", "Function TribesGame.TrDeployable_TripSensor.TripActivated")()); }
+			ScriptFunction GetParticleSystemName() { mixin(MGF!("mGetParticleSystemName", "Function TribesGame.TrDeployable_TripSensor.GetParticleSystemName")()); }
+			ScriptFunction GetTripSocketPosition() { mixin(MGF!("mGetTripSocketPosition", "Function TribesGame.TrDeployable_TripSensor.GetTripSocketPosition")()); }
+			ScriptFunction OnTripAwake() { mixin(MGF!("mOnTripAwake", "Function TribesGame.TrDeployable_TripSensor.OnTripAwake")()); }
+			ScriptFunction OnTripSleep() { mixin(MGF!("mOnTripSleep", "Function TribesGame.TrDeployable_TripSensor.OnTripSleep")()); }
 		}
 	}
-	@property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 1540); }
+	@property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!(UObject.Pointer, 1540)()); }
 final:
 	void AddTripActor(TrTripActor NewTrip)
 	{
@@ -69,12 +70,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetParticleSystemName, params.ptr, cast(void*)0);
 		return *cast(ParticleSystem*)params.ptr;
 	}
-	bool GetTripSocketPosition(bool bIsLeft, Vector* SocketPosition)
+	bool GetTripSocketPosition(bool bIsLeft, ref Vector SocketPosition)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsLeft;
-		*cast(Vector*)&params[4] = *SocketPosition;
+		*cast(Vector*)&params[4] = SocketPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTripSocketPosition, params.ptr, cast(void*)0);
 		*SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];

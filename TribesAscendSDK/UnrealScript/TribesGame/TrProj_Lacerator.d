@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrProj_Lacerator;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Engine.Actor;
@@ -12,9 +13,9 @@ extern(C++) interface TrProj_Lacerator : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Lacerator")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Lacerator")()); }
 	private static __gshared TrProj_Lacerator mDefaultProperties;
-	@property final static TrProj_Lacerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Lacerator)("TrProj_Lacerator TribesGame.Default__TrProj_Lacerator")); }
+	@property final static TrProj_Lacerator DefaultProperties() { mixin(MGDPC!(TrProj_Lacerator, "TrProj_Lacerator TribesGame.Default__TrProj_Lacerator")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,36 +34,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.InitProjectile")); }
-			ScriptFunction SpawnFlightEffects() { return mSpawnFlightEffects ? mSpawnFlightEffects : (mSpawnFlightEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.SpawnFlightEffects")); }
-			ScriptFunction InternalSpawnFlightEffects() { return mInternalSpawnFlightEffects ? mInternalSpawnFlightEffects : (mInternalSpawnFlightEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.InternalSpawnFlightEffects")); }
-			ScriptFunction GetDamage() { return mGetDamage ? mGetDamage : (mGetDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.GetDamage")); }
-			ScriptFunction GetMomentumTransfer() { return mGetMomentumTransfer ? mGetMomentumTransfer : (mGetMomentumTransfer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.GetMomentumTransfer")); }
-			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.ProcessTouch")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.Landed")); }
-			ScriptFunction SpawnImpactEffect() { return mSpawnImpactEffect ? mSpawnImpactEffect : (mSpawnImpactEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.SpawnImpactEffect")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.HitWall")); }
-			ScriptFunction StartToShrink() { return mStartToShrink ? mStartToShrink : (mStartToShrink = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.StartToShrink")); }
-			ScriptFunction MyOnParticleSystemFinished() { return mMyOnParticleSystemFinished ? mMyOnParticleSystemFinished : (mMyOnParticleSystemFinished = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_Lacerator.MyOnParticleSystemFinished")); }
+			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_Lacerator.InitProjectile")()); }
+			ScriptFunction SpawnFlightEffects() { mixin(MGF!("mSpawnFlightEffects", "Function TribesGame.TrProj_Lacerator.SpawnFlightEffects")()); }
+			ScriptFunction InternalSpawnFlightEffects() { mixin(MGF!("mInternalSpawnFlightEffects", "Function TribesGame.TrProj_Lacerator.InternalSpawnFlightEffects")()); }
+			ScriptFunction GetDamage() { mixin(MGF!("mGetDamage", "Function TribesGame.TrProj_Lacerator.GetDamage")()); }
+			ScriptFunction GetMomentumTransfer() { mixin(MGF!("mGetMomentumTransfer", "Function TribesGame.TrProj_Lacerator.GetMomentumTransfer")()); }
+			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_Lacerator.ProcessTouch")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function TribesGame.TrProj_Lacerator.Landed")()); }
+			ScriptFunction SpawnImpactEffect() { mixin(MGF!("mSpawnImpactEffect", "Function TribesGame.TrProj_Lacerator.SpawnImpactEffect")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_Lacerator.HitWall")()); }
+			ScriptFunction StartToShrink() { mixin(MGF!("mStartToShrink", "Function TribesGame.TrProj_Lacerator.StartToShrink")()); }
+			ScriptFunction MyOnParticleSystemFinished() { mixin(MGF!("mMyOnParticleSystemFinished", "Function TribesGame.TrProj_Lacerator.MyOnParticleSystemFinished")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			CameraAnim ShortRangeKillAnim() { return *cast(CameraAnim*)(cast(size_t)cast(void*)this + 860); }
-			SoundCue HitPawnSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 852); }
-			UDKPawn.MaterialSoundEffect DefaultHitSound() { return *cast(UDKPawn.MaterialSoundEffect*)(cast(size_t)cast(void*)this + 840); }
-			ParticleSystem RockSmokeTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 832); }
-			ParticleSystem BounceTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 828); }
-			float ShrinkTimer() { return *cast(float*)(cast(size_t)cast(void*)this + 824); }
-			float DamageAttenuation() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
-			int Bounces() { return *cast(int*)(cast(size_t)cast(void*)this + 816); }
+			CameraAnim ShortRangeKillAnim() { mixin(MGPC!(CameraAnim, 860)()); }
+			SoundCue HitPawnSound() { mixin(MGPC!(SoundCue, 852)()); }
+			UDKPawn.MaterialSoundEffect DefaultHitSound() { mixin(MGPC!(UDKPawn.MaterialSoundEffect, 840)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LastImpactEffect'!
+			ParticleSystem RockSmokeTemplate() { mixin(MGPC!(ParticleSystem, 832)()); }
+			ParticleSystem BounceTemplate() { mixin(MGPC!(ParticleSystem, 828)()); }
+			float ShrinkTimer() { mixin(MGPC!(float, 824)()); }
+			float DamageAttenuation() { mixin(MGPC!(float, 820)()); }
+			int Bounces() { mixin(MGPC!(int, 816)()); }
 		}
-		bool bShrinking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 856) & 0x2) != 0; }
-		bool bShrinking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 856) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 856) &= ~0x2; } return val; }
-		bool bCheckShortRangeKill() { return (*cast(uint*)(cast(size_t)cast(void*)this + 856) & 0x1) != 0; }
-		bool bCheckShortRangeKill(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 856) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 856) &= ~0x1; } return val; }
+		bool bShrinking() { mixin(MGBPC!(856, 0x2)()); }
+		bool bShrinking(bool val) { mixin(MSBPC!(856, 0x2)()); }
+		bool bCheckShortRangeKill() { mixin(MGBPC!(856, 0x1)()); }
+		bool bCheckShortRangeKill(bool val) { mixin(MSBPC!(856, 0x1)()); }
 	}
 final:
 	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)

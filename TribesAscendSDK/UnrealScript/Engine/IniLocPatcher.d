@@ -1,6 +1,7 @@
 module UnrealScript.Engine.IniLocPatcher;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface IniLocPatcher : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.IniLocPatcher")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.IniLocPatcher")()); }
 	private static __gshared IniLocPatcher mDefaultProperties;
-	@property final static IniLocPatcher DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(IniLocPatcher)("IniLocPatcher Engine.Default__IniLocPatcher")); }
+	@property final static IniLocPatcher DefaultProperties() { mixin(MGDPC!(IniLocPatcher, "IniLocPatcher Engine.Default__IniLocPatcher")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,16 +29,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReadTitleFileComplete() { return mOnReadTitleFileComplete ? mOnReadTitleFileComplete : (mOnReadTitleFileComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.OnReadTitleFileComplete")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.Init")); }
-			ScriptFunction DownloadFiles() { return mDownloadFiles ? mDownloadFiles : (mDownloadFiles = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.DownloadFiles")); }
-			ScriptFunction OnReadFileComplete() { return mOnReadFileComplete ? mOnReadFileComplete : (mOnReadFileComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.OnReadFileComplete")); }
-			ScriptFunction ProcessIniLocFile() { return mProcessIniLocFile ? mProcessIniLocFile : (mProcessIniLocFile = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.ProcessIniLocFile")); }
-			ScriptFunction AddFileToDownload() { return mAddFileToDownload ? mAddFileToDownload : (mAddFileToDownload = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.AddFileToDownload")); }
-			ScriptFunction AddReadFileDelegate() { return mAddReadFileDelegate ? mAddReadFileDelegate : (mAddReadFileDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.AddReadFileDelegate")); }
-			ScriptFunction ClearReadFileDelegate() { return mClearReadFileDelegate ? mClearReadFileDelegate : (mClearReadFileDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.ClearReadFileDelegate")); }
-			ScriptFunction ClearCachedFiles() { return mClearCachedFiles ? mClearCachedFiles : (mClearCachedFiles = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.ClearCachedFiles")); }
-			ScriptFunction UpdateLocFileName() { return mUpdateLocFileName ? mUpdateLocFileName : (mUpdateLocFileName = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.UpdateLocFileName")); }
+			ScriptFunction OnReadTitleFileComplete() { mixin(MGF!("mOnReadTitleFileComplete", "Function Engine.IniLocPatcher.OnReadTitleFileComplete")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.IniLocPatcher.Init")()); }
+			ScriptFunction DownloadFiles() { mixin(MGF!("mDownloadFiles", "Function Engine.IniLocPatcher.DownloadFiles")()); }
+			ScriptFunction OnReadFileComplete() { mixin(MGF!("mOnReadFileComplete", "Function Engine.IniLocPatcher.OnReadFileComplete")()); }
+			ScriptFunction ProcessIniLocFile() { mixin(MGF!("mProcessIniLocFile", "Function Engine.IniLocPatcher.ProcessIniLocFile")()); }
+			ScriptFunction AddFileToDownload() { mixin(MGF!("mAddFileToDownload", "Function Engine.IniLocPatcher.AddFileToDownload")()); }
+			ScriptFunction AddReadFileDelegate() { mixin(MGF!("mAddReadFileDelegate", "Function Engine.IniLocPatcher.AddReadFileDelegate")()); }
+			ScriptFunction ClearReadFileDelegate() { mixin(MGF!("mClearReadFileDelegate", "Function Engine.IniLocPatcher.ClearReadFileDelegate")()); }
+			ScriptFunction ClearCachedFiles() { mixin(MGF!("mClearCachedFiles", "Function Engine.IniLocPatcher.ClearCachedFiles")()); }
+			ScriptFunction UpdateLocFileName() { mixin(MGF!("mUpdateLocFileName", "Function Engine.IniLocPatcher.UpdateLocFileName")()); }
 		}
 	}
 	struct IniLocFileEntry
@@ -45,14 +46,19 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.IniLocPatcher.IniLocFileEntry")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.IniLocPatcher.IniLocFileEntry")()); }
 		@property final auto ref
 		{
-			OnlineSubsystem.EOnlineEnumerationReadState ReadState() { return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)(cast(size_t)&this + 12); }
-			ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS!(OnlineSubsystem.EOnlineEnumerationReadState, 12)()); }
+			ScriptString Filename() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(IniLocPatcher.IniLocFileEntry) Files() { return *cast(ScriptArray!(IniLocPatcher.IniLocFileEntry)*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref
+	{
+		ScriptArray!(IniLocPatcher.IniLocFileEntry) Files() { mixin(MGPC!(ScriptArray!(IniLocPatcher.IniLocFileEntry), 60)()); }
+		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadTitleFileComplete__Delegate'!
+		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'TitleFileInterface'!
+	}
 final:
 	void OnReadTitleFileComplete(bool bWasSuccessful, ScriptString Filename)
 	{
@@ -78,12 +84,12 @@ final:
 		*cast(ScriptString*)&params[4] = Filename;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadFileComplete, params.ptr, cast(void*)0);
 	}
-	void ProcessIniLocFile(ScriptString Filename, ScriptArray!(ubyte)* FileData)
+	void ProcessIniLocFile(ScriptString Filename, ref const ScriptArray!(ubyte) FileData)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		*cast(ScriptArray!(ubyte)*)&params[12] = *FileData;
+		*cast(ScriptArray!(ubyte)*)&params[12] = FileData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessIniLocFile, params.ptr, cast(void*)0);
 		*FileData = *cast(ScriptArray!(ubyte)*)&params[12];
 	}

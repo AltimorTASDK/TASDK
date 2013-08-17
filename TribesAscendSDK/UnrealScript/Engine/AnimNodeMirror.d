@@ -1,18 +1,19 @@
 module UnrealScript.Engine.AnimNodeMirror;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface AnimNodeMirror : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeMirror")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeMirror")()); }
 	private static __gshared AnimNodeMirror mDefaultProperties;
-	@property final static AnimNodeMirror DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeMirror)("AnimNodeMirror Engine.Default__AnimNodeMirror")); }
+	@property final static AnimNodeMirror DefaultProperties() { mixin(MGDPC!(AnimNodeMirror, "AnimNodeMirror Engine.Default__AnimNodeMirror")()); }
 	@property final
 	{
-		bool bEnableMirroring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x1) != 0; }
-		bool bEnableMirroring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 244) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 244) &= ~0x1; } return val; }
+		bool bEnableMirroring() { mixin(MGBPC!(244, 0x1)()); }
+		bool bEnableMirroring(bool val) { mixin(MSBPC!(244, 0x1)()); }
 	}
 }

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrActorFactoryPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTActorFactoryAI;
 import UnrealScript.Engine.Actor;
 
@@ -8,19 +9,19 @@ extern(C++) interface TrActorFactoryPawn : UTActorFactoryAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrActorFactoryPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrActorFactoryPawn")()); }
 	private static __gshared TrActorFactoryPawn mDefaultProperties;
-	@property final static TrActorFactoryPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrActorFactoryPawn)("TrActorFactoryPawn TribesGame.Default__TrActorFactoryPawn")); }
+	@property final static TrActorFactoryPawn DefaultProperties() { mixin(MGDPC!(TrActorFactoryPawn, "TrActorFactoryPawn TribesGame.Default__TrActorFactoryPawn")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;
-		public @property static final ScriptFunction PostCreateActor() { return mPostCreateActor ? mPostCreateActor : (mPostCreateActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrActorFactoryPawn.PostCreateActor")); }
+		public @property static final ScriptFunction PostCreateActor() { mixin(MGF!("mPostCreateActor", "Function TribesGame.TrActorFactoryPawn.PostCreateActor")()); }
 	}
 	@property final auto ref
 	{
-		ScriptClass FamilyInfo() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 144); }
-		float GroundSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-		int NextTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
+		ScriptClass FamilyInfo() { mixin(MGPC!(ScriptClass, 144)()); }
+		float GroundSpeed() { mixin(MGPC!(float, 140)()); }
+		int NextTeam() { mixin(MGPC!(int, 136)()); }
 	}
 	final void PostCreateActor(Actor NewActor)
 	{

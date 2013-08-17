@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ActorFactoryApexDestructible;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorFactory;
 import UnrealScript.Engine.ApexDestructibleAsset;
 import UnrealScript.Engine.PrimitiveComponent;
@@ -9,18 +10,18 @@ extern(C++) interface ActorFactoryApexDestructible : ActorFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryApexDestructible")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryApexDestructible")()); }
 	private static __gshared ActorFactoryApexDestructible mDefaultProperties;
-	@property final static ActorFactoryApexDestructible DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactoryApexDestructible)("ActorFactoryApexDestructible Engine.Default__ActorFactoryApexDestructible")); }
+	@property final static ActorFactoryApexDestructible DefaultProperties() { mixin(MGDPC!(ActorFactoryApexDestructible, "ActorFactoryApexDestructible Engine.Default__ActorFactoryApexDestructible")()); }
 	@property final
 	{
 		auto ref
 		{
-			ApexDestructibleAsset DestructibleAsset() { return *cast(ApexDestructibleAsset*)(cast(size_t)cast(void*)this + 104); }
-			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 100); }
-			PrimitiveComponent.ERBCollisionChannel RBChannel() { return *cast(PrimitiveComponent.ERBCollisionChannel*)(cast(size_t)cast(void*)this + 96); }
+			ApexDestructibleAsset DestructibleAsset() { mixin(MGPC!(ApexDestructibleAsset, 104)()); }
+			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 100)()); }
+			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 96)()); }
 		}
-		bool bStartAwake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x1) != 0; }
-		bool bStartAwake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x1; } return val; }
+		bool bStartAwake() { mixin(MGBPC!(92, 0x1)()); }
+		bool bStartAwake(bool val) { mixin(MSBPC!(92, 0x1)()); }
 	}
 }

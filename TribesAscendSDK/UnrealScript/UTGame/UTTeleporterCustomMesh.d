@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTTeleporterCustomMesh;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Teleporter;
 import UnrealScript.UTGame.UTPawn;
 import UnrealScript.Engine.SoundCue;
@@ -10,9 +11,9 @@ extern(C++) interface UTTeleporterCustomMesh : Teleporter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeleporterCustomMesh")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeleporterCustomMesh")()); }
 	private static __gshared UTTeleporterCustomMesh mDefaultProperties;
-	@property final static UTTeleporterCustomMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeleporterCustomMesh)("UTTeleporterCustomMesh UTGame.Default__UTTeleporterCustomMesh")); }
+	@property final static UTTeleporterCustomMesh DefaultProperties() { mixin(MGDPC!(UTTeleporterCustomMesh, "UTTeleporterCustomMesh UTGame.Default__UTTeleporterCustomMesh")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,15 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Accept() { return mAccept ? mAccept : (mAccept = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeleporterCustomMesh.Accept")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeleporterCustomMesh.Touch")); }
+			ScriptFunction Accept() { mixin(MGF!("mAccept", "Function UTGame.UTTeleporterCustomMesh.Accept")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTTeleporterCustomMesh.Touch")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float LastTime() { return *cast(float*)(cast(size_t)cast(void*)this + 744); }
-		UTPawn LastPawn() { return *cast(UTPawn*)(cast(size_t)cast(void*)this + 740); }
-		SoundCue TeleportingSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 736); }
+		float LastTime() { mixin(MGPC!(float, 744)()); }
+		UTPawn LastPawn() { mixin(MGPC!(UTPawn, 740)()); }
+		SoundCue TeleportingSound() { mixin(MGPC!(SoundCue, 736)()); }
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
 	}
 final:
 	bool Accept(Actor Incoming, Actor Source)

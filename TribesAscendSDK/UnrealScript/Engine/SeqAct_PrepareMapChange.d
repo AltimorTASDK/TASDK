@@ -1,25 +1,26 @@
 module UnrealScript.Engine.SeqAct_PrepareMapChange;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Latent;
 
 extern(C++) interface SeqAct_PrepareMapChange : SeqAct_Latent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_PrepareMapChange")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_PrepareMapChange")()); }
 	private static __gshared SeqAct_PrepareMapChange mDefaultProperties;
-	@property final static SeqAct_PrepareMapChange DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_PrepareMapChange)("SeqAct_PrepareMapChange Engine.Default__SeqAct_PrepareMapChange")); }
+	@property final static SeqAct_PrepareMapChange DefaultProperties() { mixin(MGDPC!(SeqAct_PrepareMapChange, "SeqAct_PrepareMapChange Engine.Default__SeqAct_PrepareMapChange")()); }
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) InitiallyLoadedSecondaryLevelNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 256); }
-			ScriptName MainLevelName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 248); }
+			ScriptArray!(ScriptName) InitiallyLoadedSecondaryLevelNames() { mixin(MGPC!(ScriptArray!(ScriptName), 256)()); }
+			ScriptName MainLevelName() { mixin(MGPC!(ScriptName, 248)()); }
 		}
-		bool bStatusIsOk() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x2) != 0; }
-		bool bStatusIsOk(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x2; } return val; }
-		bool bIsHighPriority() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x1) != 0; }
-		bool bIsHighPriority(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x1; } return val; }
+		bool bStatusIsOk() { mixin(MGBPC!(268, 0x2)()); }
+		bool bStatusIsOk(bool val) { mixin(MSBPC!(268, 0x2)()); }
+		bool bIsHighPriority() { mixin(MGBPC!(268, 0x1)()); }
+		bool bIsHighPriority(bool val) { mixin(MSBPC!(268, 0x1)()); }
 	}
 }

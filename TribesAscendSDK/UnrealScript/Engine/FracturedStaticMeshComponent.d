@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FracturedStaticMeshComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.FracturedBaseComponent;
 import UnrealScript.Engine.MaterialInterface;
@@ -10,9 +11,9 @@ extern(C++) interface FracturedStaticMeshComponent : FracturedBaseComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedStaticMeshComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FracturedStaticMeshComponent")()); }
 	private static __gshared FracturedStaticMeshComponent mDefaultProperties;
-	@property final static FracturedStaticMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FracturedStaticMeshComponent)("FracturedStaticMeshComponent Engine.Default__FracturedStaticMeshComponent")); }
+	@property final static FracturedStaticMeshComponent DefaultProperties() { mixin(MGDPC!(FracturedStaticMeshComponent, "FracturedStaticMeshComponent Engine.Default__FracturedStaticMeshComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,17 +32,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetVisibleFragments() { return mSetVisibleFragments ? mSetVisibleFragments : (mSetVisibleFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.SetVisibleFragments")); }
-			ScriptFunction IsFragmentDestroyable() { return mIsFragmentDestroyable ? mIsFragmentDestroyable : (mIsFragmentDestroyable = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.IsFragmentDestroyable")); }
-			ScriptFunction IsRootFragment() { return mIsRootFragment ? mIsRootFragment : (mIsRootFragment = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.IsRootFragment")); }
-			ScriptFunction IsNoPhysFragment() { return mIsNoPhysFragment ? mIsNoPhysFragment : (mIsNoPhysFragment = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.IsNoPhysFragment")); }
-			ScriptFunction GetFragmentBox() { return mGetFragmentBox ? mGetFragmentBox : (mGetFragmentBox = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.GetFragmentBox")); }
-			ScriptFunction GetFragmentAverageExteriorNormal() { return mGetFragmentAverageExteriorNormal ? mGetFragmentAverageExteriorNormal : (mGetFragmentAverageExteriorNormal = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.GetFragmentAverageExteriorNormal")); }
-			ScriptFunction GetCoreFragmentIndex() { return mGetCoreFragmentIndex ? mGetCoreFragmentIndex : (mGetCoreFragmentIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.GetCoreFragmentIndex")); }
-			ScriptFunction GetFragmentGroups() { return mGetFragmentGroups ? mGetFragmentGroups : (mGetFragmentGroups = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.GetFragmentGroups")); }
-			ScriptFunction GetBoundaryHiddenFragments() { return mGetBoundaryHiddenFragments ? mGetBoundaryHiddenFragments : (mGetBoundaryHiddenFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.GetBoundaryHiddenFragments")); }
-			ScriptFunction RecreatePhysState() { return mRecreatePhysState ? mRecreatePhysState : (mRecreatePhysState = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.RecreatePhysState")); }
-			ScriptFunction GetFracturedMeshPhysMaterial() { return mGetFracturedMeshPhysMaterial ? mGetFracturedMeshPhysMaterial : (mGetFracturedMeshPhysMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedStaticMeshComponent.GetFracturedMeshPhysMaterial")); }
+			ScriptFunction SetVisibleFragments() { mixin(MGF!("mSetVisibleFragments", "Function Engine.FracturedStaticMeshComponent.SetVisibleFragments")()); }
+			ScriptFunction IsFragmentDestroyable() { mixin(MGF!("mIsFragmentDestroyable", "Function Engine.FracturedStaticMeshComponent.IsFragmentDestroyable")()); }
+			ScriptFunction IsRootFragment() { mixin(MGF!("mIsRootFragment", "Function Engine.FracturedStaticMeshComponent.IsRootFragment")()); }
+			ScriptFunction IsNoPhysFragment() { mixin(MGF!("mIsNoPhysFragment", "Function Engine.FracturedStaticMeshComponent.IsNoPhysFragment")()); }
+			ScriptFunction GetFragmentBox() { mixin(MGF!("mGetFragmentBox", "Function Engine.FracturedStaticMeshComponent.GetFragmentBox")()); }
+			ScriptFunction GetFragmentAverageExteriorNormal() { mixin(MGF!("mGetFragmentAverageExteriorNormal", "Function Engine.FracturedStaticMeshComponent.GetFragmentAverageExteriorNormal")()); }
+			ScriptFunction GetCoreFragmentIndex() { mixin(MGF!("mGetCoreFragmentIndex", "Function Engine.FracturedStaticMeshComponent.GetCoreFragmentIndex")()); }
+			ScriptFunction GetFragmentGroups() { mixin(MGF!("mGetFragmentGroups", "Function Engine.FracturedStaticMeshComponent.GetFragmentGroups")()); }
+			ScriptFunction GetBoundaryHiddenFragments() { mixin(MGF!("mGetBoundaryHiddenFragments", "Function Engine.FracturedStaticMeshComponent.GetBoundaryHiddenFragments")()); }
+			ScriptFunction RecreatePhysState() { mixin(MGF!("mRecreatePhysState", "Function Engine.FracturedStaticMeshComponent.RecreatePhysState")()); }
+			ScriptFunction GetFracturedMeshPhysMaterial() { mixin(MGF!("mGetFracturedMeshPhysMaterial", "Function Engine.FracturedStaticMeshComponent.GetFracturedMeshPhysMaterial")()); }
 		}
 	}
 	struct FragmentGroup
@@ -49,33 +50,34 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.FracturedStaticMeshComponent.FragmentGroup")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.FracturedStaticMeshComponent.FragmentGroup")()); }
 		@property final
 		{
-			@property final auto ref ScriptArray!(int) FragmentIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 0); }
-			bool bGroupIsRooted() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bGroupIsRooted(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			@property final auto ref ScriptArray!(int) FragmentIndices() { mixin(MGPS!(ScriptArray!(int), 0)()); }
+			bool bGroupIsRooted() { mixin(MGBPS!(12, 0x1)()); }
+			bool bGroupIsRooted(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ubyte) FragmentNeighborsVisible() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 640); }
-			float FragmentBoundsMinZ() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-			float FragmentBoundsMaxZ() { return *cast(float*)(cast(size_t)cast(void*)this + 692); }
-			MaterialInterface LoseChunkOutsideMaterialOverride() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 688); }
-			float TopBottomFragmentDistThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
-			UObject.Box VisibleBox() { return *cast(UObject.Box*)(cast(size_t)cast(void*)this + 652); }
+			ScriptArray!(ubyte) FragmentNeighborsVisible() { mixin(MGPC!(ScriptArray!(ubyte), 640)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkinnedComponent'!
+			float FragmentBoundsMinZ() { mixin(MGPC!(float, 696)()); }
+			float FragmentBoundsMaxZ() { mixin(MGPC!(float, 692)()); }
+			MaterialInterface LoseChunkOutsideMaterialOverride() { mixin(MGPC!(MaterialInterface, 688)()); }
+			float TopBottomFragmentDistThreshold() { mixin(MGPC!(float, 684)()); }
+			UObject.Box VisibleBox() { mixin(MGPC!(UObject.Box, 652)()); }
 		}
-		bool bBottomFragmentsRootNonDestroyable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 680) & 0x8) != 0; }
-		bool bBottomFragmentsRootNonDestroyable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 680) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 680) &= ~0x8; } return val; }
-		bool bTopFragmentsRootNonDestroyable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 680) & 0x4) != 0; }
-		bool bTopFragmentsRootNonDestroyable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 680) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 680) &= ~0x4; } return val; }
-		bool bUseVisibleVertsForBounds() { return (*cast(uint*)(cast(size_t)cast(void*)this + 680) & 0x2) != 0; }
-		bool bUseVisibleVertsForBounds(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 680) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 680) &= ~0x2; } return val; }
-		bool bUseSkinnedRendering() { return (*cast(uint*)(cast(size_t)cast(void*)this + 680) & 0x1) != 0; }
-		bool bUseSkinnedRendering(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 680) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 680) &= ~0x1; } return val; }
+		bool bBottomFragmentsRootNonDestroyable() { mixin(MGBPC!(680, 0x8)()); }
+		bool bBottomFragmentsRootNonDestroyable(bool val) { mixin(MSBPC!(680, 0x8)()); }
+		bool bTopFragmentsRootNonDestroyable() { mixin(MGBPC!(680, 0x4)()); }
+		bool bTopFragmentsRootNonDestroyable(bool val) { mixin(MSBPC!(680, 0x4)()); }
+		bool bUseVisibleVertsForBounds() { mixin(MGBPC!(680, 0x2)()); }
+		bool bUseVisibleVertsForBounds(bool val) { mixin(MSBPC!(680, 0x2)()); }
+		bool bUseSkinnedRendering() { mixin(MGBPC!(680, 0x1)()); }
+		bool bUseSkinnedRendering(bool val) { mixin(MSBPC!(680, 0x1)()); }
 	}
 final:
 	void SetVisibleFragments(ScriptArray!(ubyte) VisibilityFactors)

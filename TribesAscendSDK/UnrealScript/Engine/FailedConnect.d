@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FailedConnect;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,9 +10,9 @@ extern(C++) interface FailedConnect : LocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FailedConnect")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FailedConnect")()); }
 	private static __gshared FailedConnect mDefaultProperties;
-	@property final static FailedConnect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FailedConnect)("FailedConnect Engine.Default__FailedConnect")); }
+	@property final static FailedConnect DefaultProperties() { mixin(MGDPC!(FailedConnect, "FailedConnect Engine.Default__FailedConnect")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +22,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFailSwitch() { return mGetFailSwitch ? mGetFailSwitch : (mGetFailSwitch = ScriptObject.Find!(ScriptFunction)("Function Engine.FailedConnect.GetFailSwitch")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function Engine.FailedConnect.GetString")); }
+			ScriptFunction GetFailSwitch() { mixin(MGF!("mGetFailSwitch", "Function Engine.FailedConnect.GetFailSwitch")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function Engine.FailedConnect.GetString")()); }
 		}
 	}
-	@property final auto ref ScriptString FailMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
+	@property final auto ref ScriptString FailMessage() { mixin(MGPC!(ScriptString, 80)()); }
 final:
 	static int GetFailSwitch(ScriptString FailString)
 	{

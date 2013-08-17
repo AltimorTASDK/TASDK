@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCallIn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface TrCallIn : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallIn")()); }
 	private static __gshared TrCallIn mDefaultProperties;
-	@property final static TrCallIn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn)("TrCallIn TribesGame.Default__TrCallIn")); }
+	@property final static TrCallIn DefaultProperties() { mixin(MGDPC!(TrCallIn, "TrCallIn TribesGame.Default__TrCallIn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,39 +27,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.Initialize")); }
-			ScriptFunction GetCreditCost() { return mGetCreditCost ? mGetCreditCost : (mGetCreditCost = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.GetCreditCost")); }
-			ScriptFunction VerifyCredits() { return mVerifyCredits ? mVerifyCredits : (mVerifyCredits = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.VerifyCredits")); }
-			ScriptFunction VerifyPower() { return mVerifyPower ? mVerifyPower : (mVerifyPower = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.VerifyPower")); }
-			ScriptFunction FireCompletedCallIn() { return mFireCompletedCallIn ? mFireCompletedCallIn : (mFireCompletedCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.FireCompletedCallIn")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.Tick")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrCallIn.Initialize")()); }
+			ScriptFunction GetCreditCost() { mixin(MGF!("mGetCreditCost", "Function TribesGame.TrCallIn.GetCreditCost")()); }
+			ScriptFunction VerifyCredits() { mixin(MGF!("mVerifyCredits", "Function TribesGame.TrCallIn.VerifyCredits")()); }
+			ScriptFunction VerifyPower() { mixin(MGF!("mVerifyPower", "Function TribesGame.TrCallIn.VerifyPower")()); }
+			ScriptFunction FireCompletedCallIn() { mixin(MGF!("mFireCompletedCallIn", "Function TribesGame.TrCallIn.FireCompletedCallIn")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrCallIn.Tick")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrPlayerController OwningController() { return *cast(TrPlayerController*)(cast(size_t)cast(void*)this + 540); }
-			ScriptClass ExtentTemplateClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 536); }
-			float VehicleDist() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			float GameObjectiveDist() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			float FlagStationDist() { return *cast(float*)(cast(size_t)cast(void*)this + 520); }
-			ScriptString DisplayName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 508); }
-			MaterialInstanceConstant MICDisplay() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 504); }
-			int CreditCost() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-			float DegreeOfMovement() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-			float CooldownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-			float CallTime() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-			float BuildupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-			int DatabaseId() { return *cast(int*)(cast(size_t)cast(void*)this + 480); }
-			TrObject.ETrPlayerCallIns CallInId() { return *cast(TrObject.ETrPlayerCallIns*)(cast(size_t)cast(void*)this + 476); }
+			TrPlayerController OwningController() { mixin(MGPC!(TrPlayerController, 540)()); }
+			ScriptClass ExtentTemplateClass() { mixin(MGPC!(ScriptClass, 536)()); }
+			float VehicleDist() { mixin(MGPC!(float, 528)()); }
+			float GameObjectiveDist() { mixin(MGPC!(float, 524)()); }
+			float FlagStationDist() { mixin(MGPC!(float, 520)()); }
+			ScriptString DisplayName() { mixin(MGPC!(ScriptString, 508)()); }
+			MaterialInstanceConstant MICDisplay() { mixin(MGPC!(MaterialInstanceConstant, 504)()); }
+			int CreditCost() { mixin(MGPC!(int, 500)()); }
+			float DegreeOfMovement() { mixin(MGPC!(float, 496)()); }
+			float CooldownTime() { mixin(MGPC!(float, 492)()); }
+			float CallTime() { mixin(MGPC!(float, 488)()); }
+			float BuildupTime() { mixin(MGPC!(float, 484)()); }
+			int DatabaseId() { mixin(MGPC!(int, 480)()); }
+			TrObject.ETrPlayerCallIns CallInId() { mixin(MGPC!(TrObject.ETrPlayerCallIns, 476)()); }
 		}
-		bool IsInProgress() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
-		bool IsInProgress(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
-		bool PendingDelete() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
-		bool PendingDelete(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
-		bool CheckExtentsOnSpawn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool CheckExtentsOnSpawn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		bool IsInProgress() { mixin(MGBPC!(532, 0x4)()); }
+		bool IsInProgress(bool val) { mixin(MSBPC!(532, 0x4)()); }
+		bool PendingDelete() { mixin(MGBPC!(532, 0x2)()); }
+		bool PendingDelete(bool val) { mixin(MSBPC!(532, 0x2)()); }
+		bool CheckExtentsOnSpawn() { mixin(MGBPC!(532, 0x1)()); }
+		bool CheckExtentsOnSpawn(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	void Initialize(int NewPrice, int NewBuildup, int NewCooldown)

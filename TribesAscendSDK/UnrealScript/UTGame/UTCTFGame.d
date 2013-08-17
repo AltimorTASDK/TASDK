@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTCTFGame;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.AIController;
@@ -16,9 +17,9 @@ extern(C++) interface UTCTFGame : UTTeamGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFGame")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFGame")()); }
 	private static __gshared UTCTFGame mDefaultProperties;
-	@property final static UTCTFGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFGame)("UTCTFGame UTGame.Default__UTCTFGame")); }
+	@property final static UTCTFGame DefaultProperties() { mixin(MGDPC!(UTCTFGame, "UTCTFGame UTGame.Default__UTCTFGame")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,23 +38,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.PostBeginPlay")); }
-			ScriptFunction SetEndGameFocus() { return mSetEndGameFocus ? mSetEndGameFocus : (mSetEndGameFocus = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.SetEndGameFocus")); }
-			ScriptFunction GetHandicapNeed() { return mGetHandicapNeed ? mGetHandicapNeed : (mGetHandicapNeed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.GetHandicapNeed")); }
-			ScriptFunction GetLocationFor() { return mGetLocationFor ? mGetLocationFor : (mGetLocationFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.GetLocationFor")); }
-			ScriptFunction RegisterFlag() { return mRegisterFlag ? mRegisterFlag : (mRegisterFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.RegisterFlag")); }
-			ScriptFunction NearGoal() { return mNearGoal ? mNearGoal : (mNearGoal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.NearGoal")); }
-			ScriptFunction WantFastSpawnFor() { return mWantFastSpawnFor ? mWantFastSpawnFor : (mWantFastSpawnFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.WantFastSpawnFor")); }
-			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.CheckEndGame")); }
-			ScriptFunction ScoreFlag() { return mScoreFlag ? mScoreFlag : (mScoreFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.ScoreFlag")); }
-			ScriptFunction ViewObjective() { return mViewObjective ? mViewObjective : (mViewObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.ViewObjective")); }
-			ScriptFunction GetAutoObjectiveFor() { return mGetAutoObjectiveFor ? mGetAutoObjectiveFor : (mGetAutoObjectiveFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFGame.GetAutoObjectiveFor")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCTFGame.PostBeginPlay")()); }
+			ScriptFunction SetEndGameFocus() { mixin(MGF!("mSetEndGameFocus", "Function UTGame.UTCTFGame.SetEndGameFocus")()); }
+			ScriptFunction GetHandicapNeed() { mixin(MGF!("mGetHandicapNeed", "Function UTGame.UTCTFGame.GetHandicapNeed")()); }
+			ScriptFunction GetLocationFor() { mixin(MGF!("mGetLocationFor", "Function UTGame.UTCTFGame.GetLocationFor")()); }
+			ScriptFunction RegisterFlag() { mixin(MGF!("mRegisterFlag", "Function UTGame.UTCTFGame.RegisterFlag")()); }
+			ScriptFunction NearGoal() { mixin(MGF!("mNearGoal", "Function UTGame.UTCTFGame.NearGoal")()); }
+			ScriptFunction WantFastSpawnFor() { mixin(MGF!("mWantFastSpawnFor", "Function UTGame.UTCTFGame.WantFastSpawnFor")()); }
+			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function UTGame.UTCTFGame.CheckEndGame")()); }
+			ScriptFunction ScoreFlag() { mixin(MGF!("mScoreFlag", "Function UTGame.UTCTFGame.ScoreFlag")()); }
+			ScriptFunction ViewObjective() { mixin(MGF!("mViewObjective", "Function UTGame.UTCTFGame.ViewObjective")()); }
+			ScriptFunction GetAutoObjectiveFor() { mixin(MGF!("mGetAutoObjectiveFor", "Function UTGame.UTCTFGame.GetAutoObjectiveFor")()); }
 		}
+	}
+	static struct MatchOver
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTCTFGame.MatchOver")()); }
 	}
 	@property final auto ref
 	{
-		ScriptClass AnnouncerMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1336); }
-		UTCTFFlag Flags() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 1328); }
+		ScriptClass AnnouncerMessageClass() { mixin(MGPC!(ScriptClass, 1336)()); }
+		UTCTFFlag Flags() { mixin(MGPC!(UTCTFFlag, 1328)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -75,13 +81,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHandicapNeed, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	bool GetLocationFor(Pawn StatusPawn, Actor* LocationObject, int* MessageIndex, int LocationSpeechOffset)
+	bool GetLocationFor(Pawn StatusPawn, ref Actor LocationObject, ref int MessageIndex, int LocationSpeechOffset)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = StatusPawn;
-		*cast(Actor*)&params[4] = *LocationObject;
-		*cast(int*)&params[8] = *MessageIndex;
+		*cast(Actor*)&params[4] = LocationObject;
+		*cast(int*)&params[8] = MessageIndex;
 		*cast(int*)&params[12] = LocationSpeechOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationFor, params.ptr, cast(void*)0);
 		*LocationObject = *cast(Actor*)&params[4];

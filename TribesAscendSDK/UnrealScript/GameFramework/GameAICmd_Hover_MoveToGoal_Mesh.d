@@ -1,6 +1,7 @@
 module UnrealScript.GameFramework.GameAICmd_Hover_MoveToGoal_Mesh;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.GameFramework.GameAIController;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
@@ -11,9 +12,9 @@ extern(C++) interface GameAICmd_Hover_MoveToGoal_Mesh : GameAICommand
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameAICmd_Hover_MoveToGoal_Mesh")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameAICmd_Hover_MoveToGoal_Mesh")()); }
 	private static __gshared GameAICmd_Hover_MoveToGoal_Mesh mDefaultProperties;
-	@property final static GameAICmd_Hover_MoveToGoal_Mesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameAICmd_Hover_MoveToGoal_Mesh)("GameAICmd_Hover_MoveToGoal_Mesh GameFramework.Default__GameAICmd_Hover_MoveToGoal_Mesh")); }
+	@property final static GameAICmd_Hover_MoveToGoal_Mesh DefaultProperties() { mixin(MGDPC!(GameAICmd_Hover_MoveToGoal_Mesh, "GameAICmd_Hover_MoveToGoal_Mesh GameFramework.Default__GameAICmd_Hover_MoveToGoal_Mesh")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,35 +29,60 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HoverToGoal() { return mHoverToGoal ? mHoverToGoal : (mHoverToGoal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.HoverToGoal")); }
-			ScriptFunction HoverToPoint() { return mHoverToPoint ? mHoverToPoint : (mHoverToPoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.HoverToPoint")); }
-			ScriptFunction Pushed() { return mPushed ? mPushed : (mPushed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.Pushed")); }
-			ScriptFunction Popped() { return mPopped ? mPopped : (mPopped = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.Popped")); }
-			ScriptFunction HandlePathObstruction() { return mHandlePathObstruction ? mHandlePathObstruction : (mHandlePathObstruction = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.HandlePathObstruction")); }
-			ScriptFunction IsEnemyBasedOnInterpActor() { return mIsEnemyBasedOnInterpActor ? mIsEnemyBasedOnInterpActor : (mIsEnemyBasedOnInterpActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.IsEnemyBasedOnInterpActor")); }
-			ScriptFunction DrawDebug() { return mDrawDebug ? mDrawDebug : (mDrawDebug = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.DrawDebug")); }
+			ScriptFunction HoverToGoal() { mixin(MGF!("mHoverToGoal", "Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.HoverToGoal")()); }
+			ScriptFunction HoverToPoint() { mixin(MGF!("mHoverToPoint", "Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.HoverToPoint")()); }
+			ScriptFunction Pushed() { mixin(MGF!("mPushed", "Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.Pushed")()); }
+			ScriptFunction Popped() { mixin(MGF!("mPopped", "Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.Popped")()); }
+			ScriptFunction HandlePathObstruction() { mixin(MGF!("mHandlePathObstruction", "Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.HandlePathObstruction")()); }
+			ScriptFunction IsEnemyBasedOnInterpActor() { mixin(MGF!("mIsEnemyBasedOnInterpActor", "Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.IsEnemyBasedOnInterpActor")()); }
+			ScriptFunction DrawDebug() { mixin(MGF!("mDrawDebug", "Function GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.DrawDebug")()); }
 		}
+	}
+	static struct DelayFailure
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.DelayFailure")()); }
+	}
+	static struct MoveDown
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.MoveDown")()); }
+	}
+	static struct Moving
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.Moving")()); }
+	}
+	static struct FallbackMoveToward
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.FallbackMoveToward")()); }
+	}
+	static struct Fallback
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State GameFramework.GameAICmd_Hover_MoveToGoal_Mesh.Fallback")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxMoveFails() { return *cast(int*)(cast(size_t)cast(void*)this + 172); }
-			int MoveFailCounter() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
-			Vector InitialFinalDestination() { return *cast(Vector*)(cast(size_t)cast(void*)this + 156); }
-			Vector LastMoveVectDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 144); }
-			Vector MoveVectDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 132); }
-			float GoalDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 128); }
-			float SubGoalReachDist() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-			float CurrentHoverHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			float DesiredHoverHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float Radius() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			Actor Goal() { return *cast(Actor*)(cast(size_t)cast(void*)this + 104); }
-			Actor Find() { return *cast(Actor*)(cast(size_t)cast(void*)this + 100); }
-			Vector Transient_FinalDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 88); }
+			int MaxMoveFails() { mixin(MGPC!(int, 172)()); }
+			int MoveFailCounter() { mixin(MGPC!(int, 168)()); }
+			Vector InitialFinalDestination() { mixin(MGPC!(Vector, 156)()); }
+			Vector LastMoveVectDest() { mixin(MGPC!(Vector, 144)()); }
+			Vector MoveVectDest() { mixin(MGPC!(Vector, 132)()); }
+			float GoalDistance() { mixin(MGPC!(float, 128)()); }
+			float SubGoalReachDist() { mixin(MGPC!(float, 124)()); }
+			float CurrentHoverHeight() { mixin(MGPC!(float, 120)()); }
+			float DesiredHoverHeight() { mixin(MGPC!(float, 116)()); }
+			float Radius() { mixin(MGPC!(float, 108)()); }
+			Actor Goal() { mixin(MGPC!(Actor, 104)()); }
+			Actor Find() { mixin(MGPC!(Actor, 100)()); }
+			Vector Transient_FinalDest() { mixin(MGPC!(Vector, 88)()); }
 		}
-		bool bWasFiring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x1) != 0; }
-		bool bWasFiring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x1; } return val; }
+		bool bWasFiring() { mixin(MGBPC!(112, 0x1)()); }
+		bool bWasFiring(bool val) { mixin(MSBPC!(112, 0x1)()); }
 	}
 final:
 	static bool HoverToGoal(GameAIController AI, Actor InGoal, float InGoalDistance, float InHoverHeight)

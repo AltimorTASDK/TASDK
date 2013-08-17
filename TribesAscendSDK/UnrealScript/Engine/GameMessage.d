@@ -1,6 +1,7 @@
 module UnrealScript.Engine.GameMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,39 +10,39 @@ extern(C++) interface GameMessage : LocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameMessage")()); }
 	private static __gshared GameMessage mDefaultProperties;
-	@property final static GameMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameMessage)("GameMessage Engine.Default__GameMessage")); }
+	@property final static GameMessage DefaultProperties() { mixin(MGDPC!(GameMessage, "GameMessage Engine.Default__GameMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function Engine.GameMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function Engine.GameMessage.GetString")()); }
 	}
 	@property final auto ref
 	{
-		ScriptString MaxedOutMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 152); }
-		ScriptString SpecEnteredMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 344); }
-		ScriptString NewSpecMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 332); }
-		ScriptString KickWarning() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 320); }
-		ScriptString NewPlayerMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 308); }
-		ScriptString BecameSpectator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 296); }
-		ScriptString CantBePlayer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 284); }
-		ScriptString CantBeSpectator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 272); }
-		ScriptString MustHaveStats() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 260); }
-		ScriptString VotePassed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 248); }
-		ScriptString VoteStarted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 236); }
-		ScriptString NoNameChange() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 224); }
-		ScriptString NewTeamMessageTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 212); }
-		ScriptString NewTeamMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 200); }
-		ScriptString GlobalNameChange() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 188); }
-		ScriptString OvertimeMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 176); }
-		ScriptString ArbitrationMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 164); }
-		ScriptString EnteredMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 140); }
-		ScriptString FailedSpawnMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 128); }
-		ScriptString FailedPlaceMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 116); }
-		ScriptString FailedTeamMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 104); }
-		ScriptString LeftMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 92); }
-		ScriptString SwitchLevelMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
+		ScriptString MaxedOutMessage() { mixin(MGPC!(ScriptString, 152)()); }
+		ScriptString SpecEnteredMessage() { mixin(MGPC!(ScriptString, 344)()); }
+		ScriptString NewSpecMessage() { mixin(MGPC!(ScriptString, 332)()); }
+		ScriptString KickWarning() { mixin(MGPC!(ScriptString, 320)()); }
+		ScriptString NewPlayerMessage() { mixin(MGPC!(ScriptString, 308)()); }
+		ScriptString BecameSpectator() { mixin(MGPC!(ScriptString, 296)()); }
+		ScriptString CantBePlayer() { mixin(MGPC!(ScriptString, 284)()); }
+		ScriptString CantBeSpectator() { mixin(MGPC!(ScriptString, 272)()); }
+		ScriptString MustHaveStats() { mixin(MGPC!(ScriptString, 260)()); }
+		ScriptString VotePassed() { mixin(MGPC!(ScriptString, 248)()); }
+		ScriptString VoteStarted() { mixin(MGPC!(ScriptString, 236)()); }
+		ScriptString NoNameChange() { mixin(MGPC!(ScriptString, 224)()); }
+		ScriptString NewTeamMessageTrailer() { mixin(MGPC!(ScriptString, 212)()); }
+		ScriptString NewTeamMessage() { mixin(MGPC!(ScriptString, 200)()); }
+		ScriptString GlobalNameChange() { mixin(MGPC!(ScriptString, 188)()); }
+		ScriptString OvertimeMessage() { mixin(MGPC!(ScriptString, 176)()); }
+		ScriptString ArbitrationMessage() { mixin(MGPC!(ScriptString, 164)()); }
+		ScriptString EnteredMessage() { mixin(MGPC!(ScriptString, 140)()); }
+		ScriptString FailedSpawnMessage() { mixin(MGPC!(ScriptString, 128)()); }
+		ScriptString FailedPlaceMessage() { mixin(MGPC!(ScriptString, 116)()); }
+		ScriptString FailedTeamMessage() { mixin(MGPC!(ScriptString, 104)()); }
+		ScriptString LeftMessage() { mixin(MGPC!(ScriptString, 92)()); }
+		ScriptString SwitchLevelMessage() { mixin(MGPC!(ScriptString, 80)()); }
 	}
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{

@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTGameObjective;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTPlayerController;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Core.UObject;
@@ -31,9 +32,9 @@ extern(C++) interface UTGameObjective : UDKGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameObjective")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameObjective")()); }
 	private static __gshared UTGameObjective mDefaultProperties;
-	@property final static UTGameObjective DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGameObjective)("UTGameObjective UTGame.Default__UTGameObjective")); }
+	@property final static UTGameObjective DefaultProperties() { mixin(MGDPC!(UTGameObjective, "UTGameObjective UTGame.Default__UTGameObjective")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -88,53 +89,53 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UsedBy() { return mUsedBy ? mUsedBy : (mUsedBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.UsedBy")); }
-			ScriptFunction GetAutoObjectiveActor() { return mGetAutoObjectiveActor ? mGetAutoObjectiveActor : (mGetAutoObjectiveActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetAutoObjectiveActor")); }
-			ScriptFunction GetFlag() { return mGetFlag ? mGetFlag : (mGetFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetFlag")); }
-			ScriptFunction Shootable() { return mShootable ? mShootable : (mShootable = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.Shootable")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.PostBeginPlay")); }
-			ScriptFunction IsStandalone() { return mIsStandalone ? mIsStandalone : (mIsStandalone = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsStandalone")); }
-			ScriptFunction GetHUDOffset() { return mGetHUDOffset ? mGetHUDOffset : (mGetHUDOffset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetHUDOffset")); }
-			ScriptFunction GetLocationMessageIndex() { return mGetLocationMessageIndex ? mGetLocationMessageIndex : (mGetLocationMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetLocationMessageIndex")); }
-			ScriptFunction GetLocationSpeechFor() { return mGetLocationSpeechFor ? mGetLocationSpeechFor : (mGetLocationSpeechFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetLocationSpeechFor")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.Destroyed")); }
-			ScriptFunction AddTeamStaticMesh() { return mAddTeamStaticMesh ? mAddTeamStaticMesh : (mAddTeamStaticMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.AddTeamStaticMesh")); }
-			ScriptFunction UpdateTeamStaticMeshes() { return mUpdateTeamStaticMeshes ? mUpdateTeamStaticMeshes : (mUpdateTeamStaticMeshes = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.UpdateTeamStaticMeshes")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ReplicatedEvent")); }
-			ScriptFunction FindNearestFriendlyNode() { return mFindNearestFriendlyNode ? mFindNearestFriendlyNode : (mFindNearestFriendlyNode = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.FindNearestFriendlyNode")); }
-			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.CalcCamera")); }
-			ScriptFunction HighlightOnMinimap() { return mHighlightOnMinimap ? mHighlightOnMinimap : (mHighlightOnMinimap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.HighlightOnMinimap")); }
-			ScriptFunction RenderMinimap() { return mRenderMinimap ? mRenderMinimap : (mRenderMinimap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.RenderMinimap")); }
-			ScriptFunction RenderExtraDetails() { return mRenderExtraDetails ? mRenderExtraDetails : (mRenderExtraDetails = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.RenderExtraDetails")); }
-			ScriptFunction DrawMapSelection() { return mDrawMapSelection ? mDrawMapSelection : (mDrawMapSelection = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.DrawMapSelection")); }
-			ScriptFunction IsCritical() { return mIsCritical ? mIsCritical : (mIsCritical = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsCritical")); }
-			ScriptFunction IsNeutral() { return mIsNeutral ? mIsNeutral : (mIsNeutral = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsNeutral")); }
-			ScriptFunction IsActive() { return mIsActive ? mIsActive : (mIsActive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsActive")); }
-			ScriptFunction TellBotHowToHeal() { return mTellBotHowToHeal ? mTellBotHowToHeal : (mTellBotHowToHeal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TellBotHowToHeal")); }
-			ScriptFunction TeamLink() { return mTeamLink ? mTeamLink : (mTeamLink = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TeamLink")); }
-			ScriptFunction NeedsHealing() { return mNeedsHealing ? mNeedsHealing : (mNeedsHealing = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.NeedsHealing")); }
-			ScriptFunction CanDoubleJump() { return mCanDoubleJump ? mCanDoubleJump : (mCanDoubleJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.CanDoubleJump")); }
-			ScriptFunction BotNearObjective() { return mBotNearObjective ? mBotNearObjective : (mBotNearObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.BotNearObjective")); }
-			ScriptFunction NearObjective() { return mNearObjective ? mNearObjective : (mNearObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.NearObjective")); }
-			ScriptFunction GetHumanReadableName() { return mGetHumanReadableName ? mGetHumanReadableName : (mGetHumanReadableName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetHumanReadableName")); }
-			ScriptFunction TellBotHowToDisable() { return mTellBotHowToDisable ? mTellBotHowToDisable : (mTellBotHowToDisable = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TellBotHowToDisable")); }
-			ScriptFunction GetNumDefenders() { return mGetNumDefenders ? mGetNumDefenders : (mGetNumDefenders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetNumDefenders")); }
-			ScriptFunction BetterObjectiveThan() { return mBetterObjectiveThan ? mBetterObjectiveThan : (mBetterObjectiveThan = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.BetterObjectiveThan")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.Reset")); }
-			ScriptFunction ClientReset() { return mClientReset ? mClientReset : (mClientReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ClientReset")); }
-			ScriptFunction AddScorer() { return mAddScorer ? mAddScorer : (mAddScorer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.AddScorer")); }
-			ScriptFunction ShareScore() { return mShareScore ? mShareScore : (mShareScore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ShareScore")); }
-			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.SetTeam")); }
-			ScriptFunction FindGoodEndView() { return mFindGoodEndView ? mFindGoodEndView : (mFindGoodEndView = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.FindGoodEndView")); }
-			ScriptFunction TeleportTo() { return mTeleportTo ? mTeleportTo : (mTeleportTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TeleportTo")); }
-			ScriptFunction ValidSpawnPointFor() { return mValidSpawnPointFor ? mValidSpawnPointFor : (mValidSpawnPointFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ValidSpawnPointFor")); }
-			ScriptFunction SetAlarm() { return mSetAlarm ? mSetAlarm : (mSetAlarm = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.SetAlarm")); }
-			ScriptFunction TriggerFlagEvent() { return mTriggerFlagEvent ? mTriggerFlagEvent : (mTriggerFlagEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TriggerFlagEvent")); }
-			ScriptFunction MarkShootSpotsFor() { return mMarkShootSpotsFor ? mMarkShootSpotsFor : (mMarkShootSpotsFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.MarkShootSpotsFor")); }
-			ScriptFunction ReachedParkingSpot() { return mReachedParkingSpot ? mReachedParkingSpot : (mReachedParkingSpot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ReachedParkingSpot")); }
-			ScriptFunction FlagUpdated() { return mFlagUpdated ? mFlagUpdated : (mFlagUpdated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.FlagUpdated")); }
-			ScriptFunction OnFlagComesHome() { return mOnFlagComesHome ? mOnFlagComesHome : (mOnFlagComesHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.OnFlagComesHome")); }
-			ScriptFunction OnFlagTaken() { return mOnFlagTaken ? mOnFlagTaken : (mOnFlagTaken = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.OnFlagTaken")); }
+			ScriptFunction UsedBy() { mixin(MGF!("mUsedBy", "Function UTGame.UTGameObjective.UsedBy")()); }
+			ScriptFunction GetAutoObjectiveActor() { mixin(MGF!("mGetAutoObjectiveActor", "Function UTGame.UTGameObjective.GetAutoObjectiveActor")()); }
+			ScriptFunction GetFlag() { mixin(MGF!("mGetFlag", "Function UTGame.UTGameObjective.GetFlag")()); }
+			ScriptFunction Shootable() { mixin(MGF!("mShootable", "Function UTGame.UTGameObjective.Shootable")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTGameObjective.PostBeginPlay")()); }
+			ScriptFunction IsStandalone() { mixin(MGF!("mIsStandalone", "Function UTGame.UTGameObjective.IsStandalone")()); }
+			ScriptFunction GetHUDOffset() { mixin(MGF!("mGetHUDOffset", "Function UTGame.UTGameObjective.GetHUDOffset")()); }
+			ScriptFunction GetLocationMessageIndex() { mixin(MGF!("mGetLocationMessageIndex", "Function UTGame.UTGameObjective.GetLocationMessageIndex")()); }
+			ScriptFunction GetLocationSpeechFor() { mixin(MGF!("mGetLocationSpeechFor", "Function UTGame.UTGameObjective.GetLocationSpeechFor")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTGameObjective.Destroyed")()); }
+			ScriptFunction AddTeamStaticMesh() { mixin(MGF!("mAddTeamStaticMesh", "Function UTGame.UTGameObjective.AddTeamStaticMesh")()); }
+			ScriptFunction UpdateTeamStaticMeshes() { mixin(MGF!("mUpdateTeamStaticMeshes", "Function UTGame.UTGameObjective.UpdateTeamStaticMeshes")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTGameObjective.ReplicatedEvent")()); }
+			ScriptFunction FindNearestFriendlyNode() { mixin(MGF!("mFindNearestFriendlyNode", "Function UTGame.UTGameObjective.FindNearestFriendlyNode")()); }
+			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function UTGame.UTGameObjective.CalcCamera")()); }
+			ScriptFunction HighlightOnMinimap() { mixin(MGF!("mHighlightOnMinimap", "Function UTGame.UTGameObjective.HighlightOnMinimap")()); }
+			ScriptFunction RenderMinimap() { mixin(MGF!("mRenderMinimap", "Function UTGame.UTGameObjective.RenderMinimap")()); }
+			ScriptFunction RenderExtraDetails() { mixin(MGF!("mRenderExtraDetails", "Function UTGame.UTGameObjective.RenderExtraDetails")()); }
+			ScriptFunction DrawMapSelection() { mixin(MGF!("mDrawMapSelection", "Function UTGame.UTGameObjective.DrawMapSelection")()); }
+			ScriptFunction IsCritical() { mixin(MGF!("mIsCritical", "Function UTGame.UTGameObjective.IsCritical")()); }
+			ScriptFunction IsNeutral() { mixin(MGF!("mIsNeutral", "Function UTGame.UTGameObjective.IsNeutral")()); }
+			ScriptFunction IsActive() { mixin(MGF!("mIsActive", "Function UTGame.UTGameObjective.IsActive")()); }
+			ScriptFunction TellBotHowToHeal() { mixin(MGF!("mTellBotHowToHeal", "Function UTGame.UTGameObjective.TellBotHowToHeal")()); }
+			ScriptFunction TeamLink() { mixin(MGF!("mTeamLink", "Function UTGame.UTGameObjective.TeamLink")()); }
+			ScriptFunction NeedsHealing() { mixin(MGF!("mNeedsHealing", "Function UTGame.UTGameObjective.NeedsHealing")()); }
+			ScriptFunction CanDoubleJump() { mixin(MGF!("mCanDoubleJump", "Function UTGame.UTGameObjective.CanDoubleJump")()); }
+			ScriptFunction BotNearObjective() { mixin(MGF!("mBotNearObjective", "Function UTGame.UTGameObjective.BotNearObjective")()); }
+			ScriptFunction NearObjective() { mixin(MGF!("mNearObjective", "Function UTGame.UTGameObjective.NearObjective")()); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function UTGame.UTGameObjective.GetHumanReadableName")()); }
+			ScriptFunction TellBotHowToDisable() { mixin(MGF!("mTellBotHowToDisable", "Function UTGame.UTGameObjective.TellBotHowToDisable")()); }
+			ScriptFunction GetNumDefenders() { mixin(MGF!("mGetNumDefenders", "Function UTGame.UTGameObjective.GetNumDefenders")()); }
+			ScriptFunction BetterObjectiveThan() { mixin(MGF!("mBetterObjectiveThan", "Function UTGame.UTGameObjective.BetterObjectiveThan")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTGameObjective.Reset")()); }
+			ScriptFunction ClientReset() { mixin(MGF!("mClientReset", "Function UTGame.UTGameObjective.ClientReset")()); }
+			ScriptFunction AddScorer() { mixin(MGF!("mAddScorer", "Function UTGame.UTGameObjective.AddScorer")()); }
+			ScriptFunction ShareScore() { mixin(MGF!("mShareScore", "Function UTGame.UTGameObjective.ShareScore")()); }
+			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function UTGame.UTGameObjective.SetTeam")()); }
+			ScriptFunction FindGoodEndView() { mixin(MGF!("mFindGoodEndView", "Function UTGame.UTGameObjective.FindGoodEndView")()); }
+			ScriptFunction TeleportTo() { mixin(MGF!("mTeleportTo", "Function UTGame.UTGameObjective.TeleportTo")()); }
+			ScriptFunction ValidSpawnPointFor() { mixin(MGF!("mValidSpawnPointFor", "Function UTGame.UTGameObjective.ValidSpawnPointFor")()); }
+			ScriptFunction SetAlarm() { mixin(MGF!("mSetAlarm", "Function UTGame.UTGameObjective.SetAlarm")()); }
+			ScriptFunction TriggerFlagEvent() { mixin(MGF!("mTriggerFlagEvent", "Function UTGame.UTGameObjective.TriggerFlagEvent")()); }
+			ScriptFunction MarkShootSpotsFor() { mixin(MGF!("mMarkShootSpotsFor", "Function UTGame.UTGameObjective.MarkShootSpotsFor")()); }
+			ScriptFunction ReachedParkingSpot() { mixin(MGF!("mReachedParkingSpot", "Function UTGame.UTGameObjective.ReachedParkingSpot")()); }
+			ScriptFunction FlagUpdated() { mixin(MGF!("mFlagUpdated", "Function UTGame.UTGameObjective.FlagUpdated")()); }
+			ScriptFunction OnFlagComesHome() { mixin(MGF!("mOnFlagComesHome", "Function UTGame.UTGameObjective.OnFlagComesHome")()); }
+			ScriptFunction OnFlagTaken() { mixin(MGF!("mOnFlagTaken", "Function UTGame.UTGameObjective.OnFlagTaken")()); }
 		}
 	}
 	struct ScorerRecord
@@ -142,72 +143,72 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGameObjective.ScorerRecord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGameObjective.ScorerRecord")()); }
 		@property final auto ref
 		{
-			float Pct() { return *cast(float*)(cast(size_t)&this + 4); }
-			UTPlayerReplicationInfo PRI() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)&this + 0); }
+			float Pct() { mixin(MGPS!(float, 4)()); }
+			UTPlayerReplicationInfo PRI() { mixin(MGPS!(UTPlayerReplicationInfo, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(NavigationPoint) VehicleParkingSpots() { return *cast(ScriptArray!(NavigationPoint)*)(cast(size_t)cast(void*)this + 772); }
-			ScriptArray!(UTGameObjective.ScorerRecord) Scorers() { return *cast(ScriptArray!(UTGameObjective.ScorerRecord)*)(cast(size_t)cast(void*)this + 792); }
-			ScriptArray!(UTVehicleFactory) VehicleFactories() { return *cast(ScriptArray!(UTVehicleFactory)*)(cast(size_t)cast(void*)this + 904); }
-			ScriptArray!(PlayerStart) PlayerStarts() { return *cast(ScriptArray!(PlayerStart)*)(cast(size_t)cast(void*)this + 916); }
-			ScriptArray!(UTTeamStaticMesh) TeamStaticMeshes() { return *cast(ScriptArray!(UTTeamStaticMesh)*)(cast(size_t)cast(void*)this + 928); }
-			ScriptArray!(SoundNodeWave) LocationSpeech() { return *cast(ScriptArray!(SoundNodeWave)*)(cast(size_t)cast(void*)this + 1000); }
-			UObject.LinearColor AttackLinearColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1012); }
-			float MaxBeaconDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 996); }
-			float LastPostRenderTraceTime() { return *cast(float*)(cast(size_t)cast(void*)this + 992); }
-			float LastHighlightUpdate() { return *cast(float*)(cast(size_t)cast(void*)this + 988); }
-			float MinimapIconScale() { return *cast(float*)(cast(size_t)cast(void*)this + 984); }
-			float HighlightSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 980); }
-			float MaxHighlightScale() { return *cast(float*)(cast(size_t)cast(void*)this + 976); }
-			float HighlightScale() { return *cast(float*)(cast(size_t)cast(void*)this + 972); }
-			UDKPlayerController.ObjectiveAnnouncementInfo DefendAnnouncement() { return *cast(UDKPlayerController.ObjectiveAnnouncementInfo*)(cast(size_t)cast(void*)this + 956); }
-			UDKPlayerController.ObjectiveAnnouncementInfo AttackAnnouncement() { return *cast(UDKPlayerController.ObjectiveAnnouncementInfo*)(cast(size_t)cast(void*)this + 940); }
-			float CameraViewDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 900); }
-			float MaxSensorRange() { return *cast(float*)(cast(size_t)cast(void*)this + 896); }
-			Material HudMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 892); }
-			float IconExtentY() { return *cast(float*)(cast(size_t)cast(void*)this + 888); }
-			float IconExtentX() { return *cast(float*)(cast(size_t)cast(void*)this + 884); }
-			float IconPosY() { return *cast(float*)(cast(size_t)cast(void*)this + 880); }
-			float IconPosX() { return *cast(float*)(cast(size_t)cast(void*)this + 876); }
-			UIRoot.TextureCoordinates AttackCoords() { return *cast(UIRoot.TextureCoordinates*)(cast(size_t)cast(void*)this + 860); }
-			UObject.LinearColor ControlColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 812); }
-			UTGameObjective NextObjective() { return *cast(UTGameObjective*)(cast(size_t)cast(void*)this + 808); }
-			int Score() { return *cast(int*)(cast(size_t)cast(void*)this + 804); }
-			float BaseRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 788); }
-			Volume MyBaseVolume() { return *cast(Volume*)(cast(size_t)cast(void*)this + 784); }
-			ScriptString ObjectiveName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 760); }
-			UTDefensePoint DefensePoints() { return *cast(UTDefensePoint*)(cast(size_t)cast(void*)this + 756); }
-			UTSquadAI DefenseSquad() { return *cast(UTSquadAI*)(cast(size_t)cast(void*)this + 752); }
-			ubyte DefensePriority() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 749); }
-			ubyte StartTeam() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 748); }
+			ScriptArray!(NavigationPoint) VehicleParkingSpots() { mixin(MGPC!(ScriptArray!(NavigationPoint), 772)()); }
+			ScriptArray!(UTGameObjective.ScorerRecord) Scorers() { mixin(MGPC!(ScriptArray!(UTGameObjective.ScorerRecord), 792)()); }
+			ScriptArray!(UTVehicleFactory) VehicleFactories() { mixin(MGPC!(ScriptArray!(UTVehicleFactory), 904)()); }
+			ScriptArray!(PlayerStart) PlayerStarts() { mixin(MGPC!(ScriptArray!(PlayerStart), 916)()); }
+			ScriptArray!(UTTeamStaticMesh) TeamStaticMeshes() { mixin(MGPC!(ScriptArray!(UTTeamStaticMesh), 928)()); }
+			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1000)()); }
+			UObject.LinearColor AttackLinearColor() { mixin(MGPC!(UObject.LinearColor, 1012)()); }
+			float MaxBeaconDistance() { mixin(MGPC!(float, 996)()); }
+			float LastPostRenderTraceTime() { mixin(MGPC!(float, 992)()); }
+			float LastHighlightUpdate() { mixin(MGPC!(float, 988)()); }
+			float MinimapIconScale() { mixin(MGPC!(float, 984)()); }
+			float HighlightSpeed() { mixin(MGPC!(float, 980)()); }
+			float MaxHighlightScale() { mixin(MGPC!(float, 976)()); }
+			float HighlightScale() { mixin(MGPC!(float, 972)()); }
+			UDKPlayerController.ObjectiveAnnouncementInfo DefendAnnouncement() { mixin(MGPC!(UDKPlayerController.ObjectiveAnnouncementInfo, 956)()); }
+			UDKPlayerController.ObjectiveAnnouncementInfo AttackAnnouncement() { mixin(MGPC!(UDKPlayerController.ObjectiveAnnouncementInfo, 940)()); }
+			float CameraViewDistance() { mixin(MGPC!(float, 900)()); }
+			float MaxSensorRange() { mixin(MGPC!(float, 896)()); }
+			Material HudMaterial() { mixin(MGPC!(Material, 892)()); }
+			float IconExtentY() { mixin(MGPC!(float, 888)()); }
+			float IconExtentX() { mixin(MGPC!(float, 884)()); }
+			float IconPosY() { mixin(MGPC!(float, 880)()); }
+			float IconPosX() { mixin(MGPC!(float, 876)()); }
+			UIRoot.TextureCoordinates AttackCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 860)()); }
+			UObject.LinearColor ControlColor() { mixin(MGPC!(UObject.LinearColor, 812)()); }
+			UTGameObjective NextObjective() { mixin(MGPC!(UTGameObjective, 808)()); }
+			int Score() { mixin(MGPC!(int, 804)()); }
+			float BaseRadius() { mixin(MGPC!(float, 788)()); }
+			Volume MyBaseVolume() { mixin(MGPC!(Volume, 784)()); }
+			ScriptString ObjectiveName() { mixin(MGPC!(ScriptString, 760)()); }
+			UTDefensePoint DefensePoints() { mixin(MGPC!(UTDefensePoint, 756)()); }
+			UTSquadAI DefenseSquad() { mixin(MGPC!(UTSquadAI, 752)()); }
+			ubyte DefensePriority() { mixin(MGPC!(ubyte, 749)()); }
+			ubyte StartTeam() { mixin(MGPC!(ubyte, 748)()); }
 		}
-		bool bAllowRemoteUse() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x2) != 0; }
-		bool bAllowRemoteUse(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x2; } return val; }
-		bool bScriptRenderAdditionalMinimap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x200) != 0; }
-		bool bScriptRenderAdditionalMinimap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x200; } return val; }
-		bool bHasLocationSpeech() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x100) != 0; }
-		bool bHasLocationSpeech(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x100; } return val; }
-		bool bPostRenderTraceSucceeded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x80) != 0; }
-		bool bPostRenderTraceSucceeded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x80; } return val; }
-		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x40) != 0; }
-		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x40; } return val; }
-		bool bIsDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x20) != 0; }
-		bool bIsDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x20; } return val; }
-		bool bIsConstructing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x10) != 0; }
-		bool bIsConstructing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x10; } return val; }
-		bool bHasSensor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x8) != 0; }
-		bool bHasSensor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x8; } return val; }
-		bool bFirstObjective() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x4) != 0; }
-		bool bFirstObjective(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x4; } return val; }
-		bool bAlreadyRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 744) & 0x1) != 0; }
-		bool bAlreadyRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 744) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 744) &= ~0x1; } return val; }
+		bool bAllowRemoteUse() { mixin(MGBPC!(744, 0x2)()); }
+		bool bAllowRemoteUse(bool val) { mixin(MSBPC!(744, 0x2)()); }
+		bool bScriptRenderAdditionalMinimap() { mixin(MGBPC!(744, 0x200)()); }
+		bool bScriptRenderAdditionalMinimap(bool val) { mixin(MSBPC!(744, 0x200)()); }
+		bool bHasLocationSpeech() { mixin(MGBPC!(744, 0x100)()); }
+		bool bHasLocationSpeech(bool val) { mixin(MSBPC!(744, 0x100)()); }
+		bool bPostRenderTraceSucceeded() { mixin(MGBPC!(744, 0x80)()); }
+		bool bPostRenderTraceSucceeded(bool val) { mixin(MSBPC!(744, 0x80)()); }
+		bool bIsActive() { mixin(MGBPC!(744, 0x40)()); }
+		bool bIsActive(bool val) { mixin(MSBPC!(744, 0x40)()); }
+		bool bIsDisabled() { mixin(MGBPC!(744, 0x20)()); }
+		bool bIsDisabled(bool val) { mixin(MSBPC!(744, 0x20)()); }
+		bool bIsConstructing() { mixin(MGBPC!(744, 0x10)()); }
+		bool bIsConstructing(bool val) { mixin(MSBPC!(744, 0x10)()); }
+		bool bHasSensor() { mixin(MGBPC!(744, 0x8)()); }
+		bool bHasSensor(bool val) { mixin(MSBPC!(744, 0x8)()); }
+		bool bFirstObjective() { mixin(MGBPC!(744, 0x4)()); }
+		bool bFirstObjective(bool val) { mixin(MSBPC!(744, 0x4)()); }
+		bool bAlreadyRendered() { mixin(MGBPC!(744, 0x1)()); }
+		bool bAlreadyRendered(bool val) { mixin(MSBPC!(744, 0x1)()); }
 	}
 final:
 	bool UsedBy(Pawn P)
@@ -309,14 +310,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindNearestFriendlyNode, params.ptr, cast(void*)0);
 		return *cast(UTGameObjective*)&params[4];
 	}
-	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
@@ -491,12 +492,12 @@ final:
 		params[0] = TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTeam, params.ptr, cast(void*)0);
 	}
-	void FindGoodEndView(PlayerController PC, Rotator* GoodRotation)
+	void FindGoodEndView(PlayerController PC, ref Rotator GoodRotation)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		*cast(Rotator*)&params[4] = *GoodRotation;
+		*cast(Rotator*)&params[4] = GoodRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindGoodEndView, params.ptr, cast(void*)0);
 		*GoodRotation = *cast(Rotator*)&params[4];
 	}

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimNodeSequenceBlendBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeSequence;
 import UnrealScript.Engine.AnimSequence;
 
@@ -8,20 +9,20 @@ extern(C++) interface AnimNodeSequenceBlendBase : AnimNodeSequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSequenceBlendBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeSequenceBlendBase")()); }
 	private static __gshared AnimNodeSequenceBlendBase mDefaultProperties;
-	@property final static AnimNodeSequenceBlendBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeSequenceBlendBase)("AnimNodeSequenceBlendBase Engine.Default__AnimNodeSequenceBlendBase")); }
+	@property final static AnimNodeSequenceBlendBase DefaultProperties() { mixin(MGDPC!(AnimNodeSequenceBlendBase, "AnimNodeSequenceBlendBase Engine.Default__AnimNodeSequenceBlendBase")()); }
 	struct AnimBlendInfo
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimBlendInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimBlendInfo")()); }
 		@property final auto ref
 		{
-			float Weight() { return *cast(float*)(cast(size_t)&this + 24); }
+			float Weight() { mixin(MGPS!(float, 24)()); }
 			// WARNING: Property 'AnimInfo' has the same name as a defined type!
-			ScriptName AnimName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptName AnimName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct AnimInfo
@@ -29,13 +30,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimInfo")()); }
 		@property final auto ref
 		{
-			int AnimLinkupIndex() { return *cast(int*)(cast(size_t)&this + 12); }
-			AnimSequence AnimSeq() { return *cast(AnimSequence*)(cast(size_t)&this + 8); }
-			ScriptName AnimSeqName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			int AnimLinkupIndex() { mixin(MGPS!(int, 12)()); }
+			AnimSequence AnimSeq() { mixin(MGPS!(AnimSequence, 8)()); }
+			ScriptName AnimSeqName() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo) Anims() { return *cast(ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo)*)(cast(size_t)cast(void*)this + 320); }
+	@property final auto ref ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo) Anims() { mixin(MGPC!(ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo), 320)()); }
 }

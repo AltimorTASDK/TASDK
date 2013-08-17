@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKDataStore_GameSearchBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataStore_OnlineGameSearch;
 import UnrealScript.UDKBase.UDKUIDataProvider_ServerDetails;
 
@@ -8,9 +9,9 @@ extern(C++) interface UDKDataStore_GameSearchBase : UIDataStore_OnlineGameSearch
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKDataStore_GameSearchBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKDataStore_GameSearchBase")()); }
 	private static __gshared UDKDataStore_GameSearchBase mDefaultProperties;
-	@property final static UDKDataStore_GameSearchBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKDataStore_GameSearchBase)("UDKDataStore_GameSearchBase UDKBase.Default__UDKDataStore_GameSearchBase")); }
+	@property final static UDKDataStore_GameSearchBase DefaultProperties() { mixin(MGDPC!(UDKDataStore_GameSearchBase, "UDKDataStore_GameSearchBase UDKBase.Default__UDKDataStore_GameSearchBase")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,21 +25,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetEnabledMutators() { return mGetEnabledMutators ? mGetEnabledMutators : (mGetEnabledMutators = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKDataStore_GameSearchBase.GetEnabledMutators")); }
-			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKDataStore_GameSearchBase.Init")); }
-			ScriptFunction SubmitGameSearch() { return mSubmitGameSearch ? mSubmitGameSearch : (mSubmitGameSearch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKDataStore_GameSearchBase.SubmitGameSearch")); }
-			ScriptFunction OnSearchComplete() { return mOnSearchComplete ? mOnSearchComplete : (mOnSearchComplete = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKDataStore_GameSearchBase.OnSearchComplete")); }
-			ScriptFunction HasOutstandingQueries() { return mHasOutstandingQueries ? mHasOutstandingQueries : (mHasOutstandingQueries = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKDataStore_GameSearchBase.HasOutstandingQueries")); }
-			ScriptFunction HasExistingSearchResults() { return mHasExistingSearchResults ? mHasExistingSearchResults : (mHasExistingSearchResults = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKDataStore_GameSearchBase.HasExistingSearchResults")); }
+			ScriptFunction GetEnabledMutators() { mixin(MGF!("mGetEnabledMutators", "Function UDKBase.UDKDataStore_GameSearchBase.GetEnabledMutators")()); }
+			ScriptFunction Init() { mixin(MGF!("mInit", "Function UDKBase.UDKDataStore_GameSearchBase.Init")()); }
+			ScriptFunction SubmitGameSearch() { mixin(MGF!("mSubmitGameSearch", "Function UDKBase.UDKDataStore_GameSearchBase.SubmitGameSearch")()); }
+			ScriptFunction OnSearchComplete() { mixin(MGF!("mOnSearchComplete", "Function UDKBase.UDKDataStore_GameSearchBase.OnSearchComplete")()); }
+			ScriptFunction HasOutstandingQueries() { mixin(MGF!("mHasOutstandingQueries", "Function UDKBase.UDKDataStore_GameSearchBase.HasOutstandingQueries")()); }
+			ScriptFunction HasExistingSearchResults() { mixin(MGF!("mHasExistingSearchResults", "Function UDKBase.UDKDataStore_GameSearchBase.HasExistingSearchResults")()); }
 		}
 	}
-	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { return *cast(UDKUIDataProvider_ServerDetails*)(cast(size_t)cast(void*)this + 168); }
+	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { mixin(MGPC!(UDKUIDataProvider_ServerDetails, 168)()); }
 final:
-	bool GetEnabledMutators(ScriptArray!(int)* MutatorIndices)
+	bool GetEnabledMutators(ref ScriptArray!(int) MutatorIndices)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(int)*)params.ptr = *MutatorIndices;
+		*cast(ScriptArray!(int)*)params.ptr = MutatorIndices;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetEnabledMutators, params.ptr, cast(void*)0);
 		*MutatorIndices = *cast(ScriptArray!(int)*)params.ptr;
 		return *cast(bool*)&params[12];

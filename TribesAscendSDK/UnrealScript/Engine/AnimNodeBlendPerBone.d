@@ -1,30 +1,31 @@
 module UnrealScript.Engine.AnimNodeBlendPerBone;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlend;
 
 extern(C++) interface AnimNodeBlendPerBone : AnimNodeBlend
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendPerBone")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeBlendPerBone")()); }
 	private static __gshared AnimNodeBlendPerBone mDefaultProperties;
-	@property final static AnimNodeBlendPerBone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlendPerBone)("AnimNodeBlendPerBone Engine.Default__AnimNodeBlendPerBone")); }
+	@property final static AnimNodeBlendPerBone DefaultProperties() { mixin(MGDPC!(AnimNodeBlendPerBone, "AnimNodeBlendPerBone Engine.Default__AnimNodeBlendPerBone")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetBlendTarget;
-		public @property static final ScriptFunction SetBlendTarget() { return mSetBlendTarget ? mSetBlendTarget : (mSetBlendTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlendPerBone.SetBlendTarget")); }
+		public @property static final ScriptFunction SetBlendTarget() { mixin(MGF!("mSetBlendTarget", "Function Engine.AnimNodeBlendPerBone.SetBlendTarget")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) BranchStartBoneName() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 264); }
-			ScriptArray!(float) Child2PerBoneWeight() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 276); }
-			ScriptArray!(ubyte) LocalToCompReqBones() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 288); }
+			ScriptArray!(ScriptName) BranchStartBoneName() { mixin(MGPC!(ScriptArray!(ScriptName), 264)()); }
+			ScriptArray!(float) Child2PerBoneWeight() { mixin(MGPC!(ScriptArray!(float), 276)()); }
+			ScriptArray!(ubyte) LocalToCompReqBones() { mixin(MGPC!(ScriptArray!(ubyte), 288)()); }
 		}
-		bool bForceLocalSpaceBlend() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
-		bool bForceLocalSpaceBlend(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+		bool bForceLocalSpaceBlend() { mixin(MGBPC!(260, 0x1)()); }
+		bool bForceLocalSpaceBlend(bool val) { mixin(MSBPC!(260, 0x1)()); }
 	}
 	final void SetBlendTarget(float BlendTarget, float BlendTime)
 	{

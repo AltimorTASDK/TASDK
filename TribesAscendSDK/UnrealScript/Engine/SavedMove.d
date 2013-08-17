@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SavedMove;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
@@ -11,9 +12,9 @@ extern(C++) interface SavedMove : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SavedMove")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SavedMove")()); }
 	private static __gshared SavedMove mDefaultProperties;
-	@property final static SavedMove DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SavedMove)("SavedMove Engine.Default__SavedMove")); }
+	@property final static SavedMove DefaultProperties() { mixin(MGDPC!(SavedMove, "SavedMove Engine.Default__SavedMove")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,63 +34,63 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetFlags() { return mSetFlags ? mSetFlags : (mSetFlags = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.SetFlags")); }
-			ScriptFunction CompressedFlags() { return mCompressedFlags ? mCompressedFlags : (mCompressedFlags = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.CompressedFlags")); }
-			ScriptFunction IsImportantMove() { return mIsImportantMove ? mIsImportantMove : (mIsImportantMove = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.IsImportantMove")); }
-			ScriptFunction CanCombineWith() { return mCanCombineWith ? mCanCombineWith : (mCanCombineWith = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.CanCombineWith")); }
-			ScriptFunction GetStartLocation() { return mGetStartLocation ? mGetStartLocation : (mGetStartLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.GetStartLocation")); }
-			ScriptFunction Clear() { return mClear ? mClear : (mClear = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.Clear")); }
-			ScriptFunction PostUpdate() { return mPostUpdate ? mPostUpdate : (mPostUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.PostUpdate")); }
-			ScriptFunction SetInitialPosition() { return mSetInitialPosition ? mSetInitialPosition : (mSetInitialPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.SetInitialPosition")); }
-			ScriptFunction SetMoveFor() { return mSetMoveFor ? mSetMoveFor : (mSetMoveFor = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.SetMoveFor")); }
-			ScriptFunction PrepMoveFor() { return mPrepMoveFor ? mPrepMoveFor : (mPrepMoveFor = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.PrepMoveFor")); }
-			ScriptFunction ResetMoveFor() { return mResetMoveFor ? mResetMoveFor : (mResetMoveFor = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.ResetMoveFor")); }
-			ScriptFunction GetDebugString() { return mGetDebugString ? mGetDebugString : (mGetDebugString = ScriptObject.Find!(ScriptFunction)("Function Engine.SavedMove.GetDebugString")); }
+			ScriptFunction SetFlags() { mixin(MGF!("mSetFlags", "Function Engine.SavedMove.SetFlags")()); }
+			ScriptFunction CompressedFlags() { mixin(MGF!("mCompressedFlags", "Function Engine.SavedMove.CompressedFlags")()); }
+			ScriptFunction IsImportantMove() { mixin(MGF!("mIsImportantMove", "Function Engine.SavedMove.IsImportantMove")()); }
+			ScriptFunction CanCombineWith() { mixin(MGF!("mCanCombineWith", "Function Engine.SavedMove.CanCombineWith")()); }
+			ScriptFunction GetStartLocation() { mixin(MGF!("mGetStartLocation", "Function Engine.SavedMove.GetStartLocation")()); }
+			ScriptFunction Clear() { mixin(MGF!("mClear", "Function Engine.SavedMove.Clear")()); }
+			ScriptFunction PostUpdate() { mixin(MGF!("mPostUpdate", "Function Engine.SavedMove.PostUpdate")()); }
+			ScriptFunction SetInitialPosition() { mixin(MGF!("mSetInitialPosition", "Function Engine.SavedMove.SetInitialPosition")()); }
+			ScriptFunction SetMoveFor() { mixin(MGF!("mSetMoveFor", "Function Engine.SavedMove.SetMoveFor")()); }
+			ScriptFunction PrepMoveFor() { mixin(MGF!("mPrepMoveFor", "Function Engine.SavedMove.PrepMoveFor")()); }
+			ScriptFunction ResetMoveFor() { mixin(MGF!("mResetMoveFor", "Function Engine.SavedMove.ResetMoveFor")()); }
+			ScriptFunction GetDebugString() { mixin(MGF!("mGetDebugString", "Function Engine.SavedMove.GetDebugString")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float TimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 64); }
-			SavedMove NextMove() { return *cast(SavedMove*)(cast(size_t)cast(void*)this + 60); }
-			Vector Acceleration() { return *cast(Vector*)(cast(size_t)cast(void*)this + 176); }
-			Actor EndBase() { return *cast(Actor*)(cast(size_t)cast(void*)this + 204); }
-			Vector SavedRelativeLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 152); }
-			Vector SavedLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 128); }
-			Vector SavedVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 140); }
-			float Delta() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-			Actor.EDoubleClickDir DoubleClickMove() { return *cast(Actor.EDoubleClickDir*)(cast(size_t)cast(void*)this + 76); }
-			Vector StartVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 104); }
-			Actor StartBase() { return *cast(Actor*)(cast(size_t)cast(void*)this + 200); }
-			Vector StartFloor() { return *cast(Vector*)(cast(size_t)cast(void*)this + 116); }
-			Rotator Rotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 188); }
-			Vector RootMotionInterpCurveLastValue() { return *cast(Vector*)(cast(size_t)cast(void*)this + 220); }
-			float RootMotionInterpCurrentTime() { return *cast(float*)(cast(size_t)cast(void*)this + 216); }
-			float AccelDotThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 212); }
-			float CustomTimeDilation() { return *cast(float*)(cast(size_t)cast(void*)this + 208); }
-			Vector RMVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 164); }
-			Vector StartRelativeLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 92); }
-			Vector StartLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 80); }
-			SkeletalMeshComponent.ERootMotionMode RootMotionMode() { return *cast(SkeletalMeshComponent.ERootMotionMode*)(cast(size_t)cast(void*)this + 78); }
-			Actor.EPhysics SavedPhysics() { return *cast(Actor.EPhysics*)(cast(size_t)cast(void*)this + 77); }
+			float TimeStamp() { mixin(MGPC!(float, 64)()); }
+			SavedMove NextMove() { mixin(MGPC!(SavedMove, 60)()); }
+			Vector Acceleration() { mixin(MGPC!(Vector, 176)()); }
+			Actor EndBase() { mixin(MGPC!(Actor, 204)()); }
+			Vector SavedRelativeLocation() { mixin(MGPC!(Vector, 152)()); }
+			Vector SavedLocation() { mixin(MGPC!(Vector, 128)()); }
+			Vector SavedVelocity() { mixin(MGPC!(Vector, 140)()); }
+			float Delta() { mixin(MGPC!(float, 68)()); }
+			Actor.EDoubleClickDir DoubleClickMove() { mixin(MGPC!(Actor.EDoubleClickDir, 76)()); }
+			Vector StartVelocity() { mixin(MGPC!(Vector, 104)()); }
+			Actor StartBase() { mixin(MGPC!(Actor, 200)()); }
+			Vector StartFloor() { mixin(MGPC!(Vector, 116)()); }
+			Rotator Rotation() { mixin(MGPC!(Rotator, 188)()); }
+			Vector RootMotionInterpCurveLastValue() { mixin(MGPC!(Vector, 220)()); }
+			float RootMotionInterpCurrentTime() { mixin(MGPC!(float, 216)()); }
+			float AccelDotThreshold() { mixin(MGPC!(float, 212)()); }
+			float CustomTimeDilation() { mixin(MGPC!(float, 208)()); }
+			Vector RMVelocity() { mixin(MGPC!(Vector, 164)()); }
+			Vector StartRelativeLocation() { mixin(MGPC!(Vector, 92)()); }
+			Vector StartLocation() { mixin(MGPC!(Vector, 80)()); }
+			SkeletalMeshComponent.ERootMotionMode RootMotionMode() { mixin(MGPC!(SkeletalMeshComponent.ERootMotionMode, 78)()); }
+			Actor.EPhysics SavedPhysics() { mixin(MGPC!(Actor.EPhysics, 77)()); }
 		}
-		bool bForceRMVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x20) != 0; }
-		bool bForceRMVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x20; } return val; }
-		bool bRootMotionFromInterpCurve() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x80) != 0; }
-		bool bRootMotionFromInterpCurve(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x80; } return val; }
-		bool bForceMaxAccel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x40) != 0; }
-		bool bForceMaxAccel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x40; } return val; }
-		bool bPreciseDestination() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x10) != 0; }
-		bool bPreciseDestination(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x10; } return val; }
-		bool bDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x8) != 0; }
-		bool bDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x8; } return val; }
-		bool bPressedJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
-		bool bPressedJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
-		bool bDuck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
-		bool bDuck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
-		bool bRun() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-		bool bRun(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+		bool bForceRMVelocity() { mixin(MGBPC!(72, 0x20)()); }
+		bool bForceRMVelocity(bool val) { mixin(MSBPC!(72, 0x20)()); }
+		bool bRootMotionFromInterpCurve() { mixin(MGBPC!(72, 0x80)()); }
+		bool bRootMotionFromInterpCurve(bool val) { mixin(MSBPC!(72, 0x80)()); }
+		bool bForceMaxAccel() { mixin(MGBPC!(72, 0x40)()); }
+		bool bForceMaxAccel(bool val) { mixin(MSBPC!(72, 0x40)()); }
+		bool bPreciseDestination() { mixin(MGBPC!(72, 0x10)()); }
+		bool bPreciseDestination(bool val) { mixin(MSBPC!(72, 0x10)()); }
+		bool bDoubleJump() { mixin(MGBPC!(72, 0x8)()); }
+		bool bDoubleJump(bool val) { mixin(MSBPC!(72, 0x8)()); }
+		bool bPressedJump() { mixin(MGBPC!(72, 0x4)()); }
+		bool bPressedJump(bool val) { mixin(MSBPC!(72, 0x4)()); }
+		bool bDuck() { mixin(MGBPC!(72, 0x2)()); }
+		bool bDuck(bool val) { mixin(MSBPC!(72, 0x2)()); }
+		bool bRun() { mixin(MGBPC!(72, 0x1)()); }
+		bool bRun(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 final:
 	static Actor.EDoubleClickDir SetFlags(ubyte Flags, PlayerController PC)

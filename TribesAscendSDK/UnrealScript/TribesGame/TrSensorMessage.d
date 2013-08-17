@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrSensorMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrSensorMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSensorMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSensorMessage")()); }
 	private static __gshared TrSensorMessage mDefaultProperties;
-	@property final static TrSensorMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSensorMessage)("TrSensorMessage TribesGame.Default__TrSensorMessage")); }
+	@property final static TrSensorMessage DefaultProperties() { mixin(MGDPC!(TrSensorMessage, "TrSensorMessage TribesGame.Default__TrSensorMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,14 +24,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSensorMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSensorMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrSensorMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrSensorMessage.ClientReceive")()); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue MotionSensorAlarmSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 112); }
-		ScriptString MotionSensorDetectedEnemy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		SoundCue MotionSensorAlarmSound() { mixin(MGPC!(SoundCue, 112)()); }
+		ScriptString MotionSensorDetectedEnemy() { mixin(MGPC!(ScriptString, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

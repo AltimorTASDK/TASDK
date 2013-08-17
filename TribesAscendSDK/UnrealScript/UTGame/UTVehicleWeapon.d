@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTVehicleWeapon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTWeapon;
 import UnrealScript.UTGame.UTVehicle;
 import UnrealScript.Engine.SoundCue;
@@ -16,9 +17,9 @@ extern(C++) interface UTVehicleWeapon : UTWeapon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleWeapon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleWeapon")()); }
 	private static __gshared UTVehicleWeapon mDefaultProperties;
-	@property final static UTVehicleWeapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleWeapon)("UTVehicleWeapon UTGame.Default__UTVehicleWeapon")); }
+	@property final static UTVehicleWeapon DefaultProperties() { mixin(MGDPC!(UTVehicleWeapon, "UTVehicleWeapon UTGame.Default__UTVehicleWeapon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -56,67 +57,67 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetMaxFinalAimAdjustment() { return mGetMaxFinalAimAdjustment ? mGetMaxFinalAimAdjustment : (mGetMaxFinalAimAdjustment = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetMaxFinalAimAdjustment")); }
-			ScriptFunction GetAdjustedAim() { return mGetAdjustedAim ? mGetAdjustedAim : (mGetAdjustedAim = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetAdjustedAim")); }
-			ScriptFunction GetFireTriggerTag() { return mGetFireTriggerTag ? mGetFireTriggerTag : (mGetFireTriggerTag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetFireTriggerTag")); }
-			ScriptFunction GetImpactEffect() { return mGetImpactEffect ? mGetImpactEffect : (mGetImpactEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetImpactEffect")); }
-			ScriptFunction CanHitDesiredTarget() { return mCanHitDesiredTarget ? mCanHitDesiredTarget : (mCanHitDesiredTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.CanHitDesiredTarget")); }
-			ScriptFunction DrawKillIcon() { return mDrawKillIcon ? mDrawKillIcon : (mDrawKillIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.DrawKillIcon")); }
-			ScriptFunction GetCrosshairScaling() { return mGetCrosshairScaling ? mGetCrosshairScaling : (mGetCrosshairScaling = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetCrosshairScaling")); }
-			ScriptFunction DrawWeaponCrosshair() { return mDrawWeaponCrosshair ? mDrawWeaponCrosshair : (mDrawWeaponCrosshair = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.DrawWeaponCrosshair")); }
-			ScriptFunction GetDesiredAimPoint() { return mGetDesiredAimPoint ? mGetDesiredAimPoint : (mGetDesiredAimPoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetDesiredAimPoint")); }
-			ScriptFunction GetFireStartLocationAndRotation() { return mGetFireStartLocationAndRotation ? mGetFireStartLocationAndRotation : (mGetFireStartLocationAndRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetFireStartLocationAndRotation")); }
-			ScriptFunction IsAimCorrect() { return mIsAimCorrect ? mIsAimCorrect : (mIsAimCorrect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.IsAimCorrect")); }
-			ScriptFunction GetFireInterval() { return mGetFireInterval ? mGetFireInterval : (mGetFireInterval = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetFireInterval")); }
-			ScriptFunction AttachWeaponTo() { return mAttachWeaponTo ? mAttachWeaponTo : (mAttachWeaponTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.AttachWeaponTo")); }
-			ScriptFunction DetachWeapon() { return mDetachWeapon ? mDetachWeapon : (mDetachWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.DetachWeapon")); }
-			ScriptFunction Activate() { return mActivate ? mActivate : (mActivate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.Activate")); }
-			ScriptFunction PutDownWeapon() { return mPutDownWeapon ? mPutDownWeapon : (mPutDownWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.PutDownWeapon")); }
-			ScriptFunction GetPhysicalFireStartLoc() { return mGetPhysicalFireStartLoc ? mGetPhysicalFireStartLoc : (mGetPhysicalFireStartLoc = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetPhysicalFireStartLoc")); }
-			ScriptFunction BeginFire() { return mBeginFire ? mBeginFire : (mBeginFire = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.BeginFire")); }
-			ScriptFunction EndFire() { return mEndFire ? mEndFire : (mEndFire = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.EndFire")); }
-			ScriptFunction ProjectileFire() { return mProjectileFire ? mProjectileFire : (mProjectileFire = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.ProjectileFire")); }
-			ScriptFunction InstantFireStartTrace() { return mInstantFireStartTrace ? mInstantFireStartTrace : (mInstantFireStartTrace = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.InstantFireStartTrace")); }
-			ScriptFunction InstantFireEndTrace() { return mInstantFireEndTrace ? mInstantFireEndTrace : (mInstantFireEndTrace = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.InstantFireEndTrace")); }
-			ScriptFunction GetTraceOwner() { return mGetTraceOwner ? mGetTraceOwner : (mGetTraceOwner = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetTraceOwner")); }
-			ScriptFunction NotifyVehicleDeployed() { return mNotifyVehicleDeployed ? mNotifyVehicleDeployed : (mNotifyVehicleDeployed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.NotifyVehicleDeployed")); }
-			ScriptFunction NotifyVehicleUndeployed() { return mNotifyVehicleUndeployed ? mNotifyVehicleUndeployed : (mNotifyVehicleUndeployed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.NotifyVehicleUndeployed")); }
-			ScriptFunction WeaponPlaySound() { return mWeaponPlaySound ? mWeaponPlaySound : (mWeaponPlaySound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.WeaponPlaySound")); }
-			ScriptFunction GetZoomedState() { return mGetZoomedState ? mGetZoomedState : (mGetZoomedState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.GetZoomedState")); }
-			ScriptFunction ServerSetZoom() { return mServerSetZoom ? mServerSetZoom : (mServerSetZoom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.ServerSetZoom")); }
-			ScriptFunction StartZoom() { return mStartZoom ? mStartZoom : (mStartZoom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.StartZoom")); }
-			ScriptFunction EndZoom() { return mEndZoom ? mEndZoom : (mEndZoom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleWeapon.EndZoom")); }
+			ScriptFunction GetMaxFinalAimAdjustment() { mixin(MGF!("mGetMaxFinalAimAdjustment", "Function UTGame.UTVehicleWeapon.GetMaxFinalAimAdjustment")()); }
+			ScriptFunction GetAdjustedAim() { mixin(MGF!("mGetAdjustedAim", "Function UTGame.UTVehicleWeapon.GetAdjustedAim")()); }
+			ScriptFunction GetFireTriggerTag() { mixin(MGF!("mGetFireTriggerTag", "Function UTGame.UTVehicleWeapon.GetFireTriggerTag")()); }
+			ScriptFunction GetImpactEffect() { mixin(MGF!("mGetImpactEffect", "Function UTGame.UTVehicleWeapon.GetImpactEffect")()); }
+			ScriptFunction CanHitDesiredTarget() { mixin(MGF!("mCanHitDesiredTarget", "Function UTGame.UTVehicleWeapon.CanHitDesiredTarget")()); }
+			ScriptFunction DrawKillIcon() { mixin(MGF!("mDrawKillIcon", "Function UTGame.UTVehicleWeapon.DrawKillIcon")()); }
+			ScriptFunction GetCrosshairScaling() { mixin(MGF!("mGetCrosshairScaling", "Function UTGame.UTVehicleWeapon.GetCrosshairScaling")()); }
+			ScriptFunction DrawWeaponCrosshair() { mixin(MGF!("mDrawWeaponCrosshair", "Function UTGame.UTVehicleWeapon.DrawWeaponCrosshair")()); }
+			ScriptFunction GetDesiredAimPoint() { mixin(MGF!("mGetDesiredAimPoint", "Function UTGame.UTVehicleWeapon.GetDesiredAimPoint")()); }
+			ScriptFunction GetFireStartLocationAndRotation() { mixin(MGF!("mGetFireStartLocationAndRotation", "Function UTGame.UTVehicleWeapon.GetFireStartLocationAndRotation")()); }
+			ScriptFunction IsAimCorrect() { mixin(MGF!("mIsAimCorrect", "Function UTGame.UTVehicleWeapon.IsAimCorrect")()); }
+			ScriptFunction GetFireInterval() { mixin(MGF!("mGetFireInterval", "Function UTGame.UTVehicleWeapon.GetFireInterval")()); }
+			ScriptFunction AttachWeaponTo() { mixin(MGF!("mAttachWeaponTo", "Function UTGame.UTVehicleWeapon.AttachWeaponTo")()); }
+			ScriptFunction DetachWeapon() { mixin(MGF!("mDetachWeapon", "Function UTGame.UTVehicleWeapon.DetachWeapon")()); }
+			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function UTGame.UTVehicleWeapon.Activate")()); }
+			ScriptFunction PutDownWeapon() { mixin(MGF!("mPutDownWeapon", "Function UTGame.UTVehicleWeapon.PutDownWeapon")()); }
+			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF!("mGetPhysicalFireStartLoc", "Function UTGame.UTVehicleWeapon.GetPhysicalFireStartLoc")()); }
+			ScriptFunction BeginFire() { mixin(MGF!("mBeginFire", "Function UTGame.UTVehicleWeapon.BeginFire")()); }
+			ScriptFunction EndFire() { mixin(MGF!("mEndFire", "Function UTGame.UTVehicleWeapon.EndFire")()); }
+			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function UTGame.UTVehicleWeapon.ProjectileFire")()); }
+			ScriptFunction InstantFireStartTrace() { mixin(MGF!("mInstantFireStartTrace", "Function UTGame.UTVehicleWeapon.InstantFireStartTrace")()); }
+			ScriptFunction InstantFireEndTrace() { mixin(MGF!("mInstantFireEndTrace", "Function UTGame.UTVehicleWeapon.InstantFireEndTrace")()); }
+			ScriptFunction GetTraceOwner() { mixin(MGF!("mGetTraceOwner", "Function UTGame.UTVehicleWeapon.GetTraceOwner")()); }
+			ScriptFunction NotifyVehicleDeployed() { mixin(MGF!("mNotifyVehicleDeployed", "Function UTGame.UTVehicleWeapon.NotifyVehicleDeployed")()); }
+			ScriptFunction NotifyVehicleUndeployed() { mixin(MGF!("mNotifyVehicleUndeployed", "Function UTGame.UTVehicleWeapon.NotifyVehicleUndeployed")()); }
+			ScriptFunction WeaponPlaySound() { mixin(MGF!("mWeaponPlaySound", "Function UTGame.UTVehicleWeapon.WeaponPlaySound")()); }
+			ScriptFunction GetZoomedState() { mixin(MGF!("mGetZoomedState", "Function UTGame.UTVehicleWeapon.GetZoomedState")()); }
+			ScriptFunction ServerSetZoom() { mixin(MGF!("mServerSetZoom", "Function UTGame.UTVehicleWeapon.ServerSetZoom")()); }
+			ScriptFunction StartZoom() { mixin(MGF!("mStartZoom", "Function UTGame.UTVehicleWeapon.StartZoom")()); }
+			ScriptFunction EndZoom() { mixin(MGF!("mEndZoom", "Function UTGame.UTVehicleWeapon.EndZoom")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int SeatIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 1472); }
-			UTVehicle MyVehicle() { return *cast(UTVehicle*)(cast(size_t)cast(void*)this + 1476); }
-			SoundCue BulletWhip() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1624); }
-			ScriptArray!(ScriptName) FireTriggerTags() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1480); }
-			ScriptArray!(ScriptName) AltFireTriggerTags() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 1492); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { return *cast(ScriptArray!(UDKPawn.MaterialImpactEffect)*)(cast(size_t)cast(void*)this + 1504); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { return *cast(ScriptArray!(UDKPawn.MaterialImpactEffect)*)(cast(size_t)cast(void*)this + 1516); }
-			ScriptClass VehicleClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1648); }
-			float MaxFinalAimAdjustment() { return *cast(float*)(cast(size_t)cast(void*)this + 1640); }
-			float CurrentCrosshairScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 1636); }
-			float LastInCorrectAimTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1632); }
-			float LastCorrectAimTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1628); }
-			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { return *cast(UDKPawn.MaterialImpactEffect*)(cast(size_t)cast(void*)this + 1576); }
-			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { return *cast(UDKPawn.MaterialImpactEffect*)(cast(size_t)cast(void*)this + 1528); }
+			int SeatIndex() { mixin(MGPC!(int, 1472)()); }
+			UTVehicle MyVehicle() { mixin(MGPC!(UTVehicle, 1476)()); }
+			SoundCue BulletWhip() { mixin(MGPC!(SoundCue, 1624)()); }
+			ScriptArray!(ScriptName) FireTriggerTags() { mixin(MGPC!(ScriptArray!(ScriptName), 1480)()); }
+			ScriptArray!(ScriptName) AltFireTriggerTags() { mixin(MGPC!(ScriptArray!(ScriptName), 1492)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 1504)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 1516)()); }
+			ScriptClass VehicleClass() { mixin(MGPC!(ScriptClass, 1648)()); }
+			float MaxFinalAimAdjustment() { mixin(MGPC!(float, 1640)()); }
+			float CurrentCrosshairScaling() { mixin(MGPC!(float, 1636)()); }
+			float LastInCorrectAimTime() { mixin(MGPC!(float, 1632)()); }
+			float LastCorrectAimTime() { mixin(MGPC!(float, 1628)()); }
+			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 1576)()); }
+			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 1528)()); }
 		}
-		bool bIgnoreSocketPitchRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1644) & 0x4) != 0; }
-		bool bIgnoreSocketPitchRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1644) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1644) &= ~0x4; } return val; }
-		bool bIgnoreDownwardPitch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1644) & 0x8) != 0; }
-		bool bIgnoreDownwardPitch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1644) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1644) &= ~0x8; } return val; }
-		bool bDebugTurret() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1644) & 0x10) != 0; }
-		bool bDebugTurret(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1644) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1644) &= ~0x10; } return val; }
-		bool bCurrentlyZoomed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1644) & 0x2) != 0; }
-		bool bCurrentlyZoomed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1644) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1644) &= ~0x2; } return val; }
-		bool bPlaySoundFromSocket() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1644) & 0x1) != 0; }
-		bool bPlaySoundFromSocket(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1644) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1644) &= ~0x1; } return val; }
+		bool bIgnoreSocketPitchRotation() { mixin(MGBPC!(1644, 0x4)()); }
+		bool bIgnoreSocketPitchRotation(bool val) { mixin(MSBPC!(1644, 0x4)()); }
+		bool bIgnoreDownwardPitch() { mixin(MGBPC!(1644, 0x8)()); }
+		bool bIgnoreDownwardPitch(bool val) { mixin(MSBPC!(1644, 0x8)()); }
+		bool bDebugTurret() { mixin(MGBPC!(1644, 0x10)()); }
+		bool bDebugTurret(bool val) { mixin(MSBPC!(1644, 0x10)()); }
+		bool bCurrentlyZoomed() { mixin(MGBPC!(1644, 0x2)()); }
+		bool bCurrentlyZoomed(bool val) { mixin(MSBPC!(1644, 0x2)()); }
+		bool bPlaySoundFromSocket() { mixin(MGBPC!(1644, 0x1)()); }
+		bool bPlaySoundFromSocket(bool val) { mixin(MSBPC!(1644, 0x1)()); }
 	}
 final:
 	float GetMaxFinalAimAdjustment()
@@ -153,7 +154,7 @@ final:
 		StaticClass.ProcessEvent(Functions.GetImpactEffect, params.ptr, cast(void*)0);
 		return *cast(UDKPawn.MaterialImpactEffect*)&params[12];
 	}
-	bool CanHitDesiredTarget(Vector SocketLocation, Rotator SocketRotation, Vector DesiredAimPoint, Actor TargetActor, Vector* RealAimPoint)
+	bool CanHitDesiredTarget(Vector SocketLocation, Rotator SocketRotation, Vector DesiredAimPoint, Actor TargetActor, ref Vector RealAimPoint)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -161,7 +162,7 @@ final:
 		*cast(Rotator*)&params[12] = SocketRotation;
 		*cast(Vector*)&params[24] = DesiredAimPoint;
 		*cast(Actor*)&params[36] = TargetActor;
-		*cast(Vector*)&params[40] = *RealAimPoint;
+		*cast(Vector*)&params[40] = RealAimPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanHitDesiredTarget, params.ptr, cast(void*)0);
 		*RealAimPoint = *cast(Vector*)&params[40];
 		return *cast(bool*)&params[52];
@@ -195,17 +196,17 @@ final:
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Actor*)params.ptr = *TargetActor;
+		*cast(Actor*)params.ptr = TargetActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDesiredAimPoint, params.ptr, cast(void*)0);
 		*TargetActor = *cast(Actor*)params.ptr;
 		return *cast(Vector*)&params[4];
 	}
-	void GetFireStartLocationAndRotation(Vector* StartLocation, Rotator* StartRotation)
+	void GetFireStartLocationAndRotation(ref Vector StartLocation, ref Rotator StartRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *StartLocation;
-		*cast(Rotator*)&params[12] = *StartRotation;
+		*cast(Vector*)params.ptr = StartLocation;
+		*cast(Rotator*)&params[12] = StartRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireStartLocationAndRotation, params.ptr, cast(void*)0);
 		*StartLocation = *cast(Vector*)params.ptr;
 		*StartRotation = *cast(Rotator*)&params[12];

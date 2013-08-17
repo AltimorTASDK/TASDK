@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTWillowWhisp;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.UTGame.UTReplicatedEmitter;
 
@@ -8,9 +9,9 @@ extern(C++) interface UTWillowWhisp : UTReplicatedEmitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWillowWhisp")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWillowWhisp")()); }
 	private static __gshared UTWillowWhisp mDefaultProperties;
-	@property final static UTWillowWhisp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWillowWhisp)("UTWillowWhisp UTGame.Default__UTWillowWhisp")); }
+	@property final static UTWillowWhisp DefaultProperties() { mixin(MGDPC!(UTWillowWhisp, "UTWillowWhisp UTGame.Default__UTWillowWhisp")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,22 +24,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.PostBeginPlay")); }
-			ScriptFunction SetInitialState() { return mSetInitialState ? mSetInitialState : (mSetInitialState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.SetInitialState")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.ReplicatedEvent")); }
-			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.SetTemplate")); }
-			ScriptFunction StartNextPath() { return mStartNextPath ? mStartNextPath : (mStartNextPath = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.StartNextPath")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTWillowWhisp.PostBeginPlay")()); }
+			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function UTGame.UTWillowWhisp.SetInitialState")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTWillowWhisp.ReplicatedEvent")()); }
+			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function UTGame.UTWillowWhisp.SetTemplate")()); }
+			ScriptFunction StartNextPath() { mixin(MGF!("mStartNextPath", "Function UTGame.UTWillowWhisp.StartNextPath")()); }
 		}
 	}
 	static struct Constants
 	{
 		enum MAX_WAYPOINTS = 15;
 	}
+	static struct Pathing
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWillowWhisp.Pathing")()); }
+	}
 	@property final auto ref
 	{
-		int Position() { return *cast(int*)(cast(size_t)cast(void*)this + 680); }
-		int NumPoints() { return *cast(int*)(cast(size_t)cast(void*)this + 676); }
-		Vector WayPoints() { return *cast(Vector*)(cast(size_t)cast(void*)this + 496); }
+		int Position() { mixin(MGPC!(int, 680)()); }
+		int NumPoints() { mixin(MGPC!(int, 676)()); }
+		Vector WayPoints() { mixin(MGPC!(Vector, 496)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqEvent_TakeDamage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 import UnrealScript.Engine.Actor;
 
@@ -8,9 +9,9 @@ extern(C++) interface SeqEvent_TakeDamage : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_TakeDamage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_TakeDamage")()); }
 	private static __gshared SeqEvent_TakeDamage mDefaultProperties;
-	@property final static SeqEvent_TakeDamage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_TakeDamage)("SeqEvent_TakeDamage Engine.Default__SeqEvent_TakeDamage")); }
+	@property final static SeqEvent_TakeDamage DefaultProperties() { mixin(MGDPC!(SeqEvent_TakeDamage, "SeqEvent_TakeDamage Engine.Default__SeqEvent_TakeDamage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,25 +24,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsValidDamageType() { return mIsValidDamageType ? mIsValidDamageType : (mIsValidDamageType = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_TakeDamage.IsValidDamageType")); }
-			ScriptFunction HandleDamage() { return mHandleDamage ? mHandleDamage : (mHandleDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_TakeDamage.HandleDamage")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_TakeDamage.Reset")); }
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_TakeDamage.GetObjClassVersion")); }
-			ScriptFunction Toggled() { return mToggled ? mToggled : (mToggled = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqEvent_TakeDamage.Toggled")); }
+			ScriptFunction IsValidDamageType() { mixin(MGF!("mIsValidDamageType", "Function Engine.SeqEvent_TakeDamage.IsValidDamageType")()); }
+			ScriptFunction HandleDamage() { mixin(MGF!("mHandleDamage", "Function Engine.SeqEvent_TakeDamage.HandleDamage")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.SeqEvent_TakeDamage.Reset")()); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqEvent_TakeDamage.GetObjClassVersion")()); }
+			ScriptFunction Toggled() { mixin(MGF!("mToggled", "Function Engine.SeqEvent_TakeDamage.Toggled")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) DamageTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 264); }
-			ScriptArray!(ScriptClass) IgnoreDamageTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 276); }
-			float CurrentDamage() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
-			float DamageThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-			float MinDamageAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+			ScriptArray!(ScriptClass) DamageTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 264)()); }
+			ScriptArray!(ScriptClass) IgnoreDamageTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 276)()); }
+			float CurrentDamage() { mixin(MGPC!(float, 288)()); }
+			float DamageThreshold() { mixin(MGPC!(float, 260)()); }
+			float MinDamageAmount() { mixin(MGPC!(float, 256)()); }
 		}
-		bool bResetDamageOnToggle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 292) & 0x1) != 0; }
-		bool bResetDamageOnToggle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 292) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 292) &= ~0x1; } return val; }
+		bool bResetDamageOnToggle() { mixin(MGBPC!(292, 0x1)()); }
+		bool bResetDamageOnToggle(bool val) { mixin(MSBPC!(292, 0x1)()); }
 	}
 final:
 	bool IsValidDamageType(ScriptClass inDamageType)

@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrWeatherVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Volume;
 import UnrealScript.Engine.Emitter;
@@ -9,9 +10,9 @@ extern(C++) interface TrWeatherVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrWeatherVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrWeatherVolume")()); }
 	private static __gshared TrWeatherVolume mDefaultProperties;
-	@property final static TrWeatherVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrWeatherVolume)("TrWeatherVolume TribesGame.Default__TrWeatherVolume")); }
+	@property final static TrWeatherVolume DefaultProperties() { mixin(MGDPC!(TrWeatherVolume, "TrWeatherVolume TribesGame.Default__TrWeatherVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +22,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWeatherVolume.Touch")); }
-			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrWeatherVolume.UnTouch")); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrWeatherVolume.Touch")()); }
+			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrWeatherVolume.UnTouch")()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(Emitter) m_WeatherEmitters() { return *cast(ScriptArray!(Emitter)*)(cast(size_t)cast(void*)this + 520); }
-		bool m_DeactivatePawnCentricWeatherOnEnter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-		bool m_DeactivatePawnCentricWeatherOnEnter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		@property final auto ref ScriptArray!(Emitter) m_WeatherEmitters() { mixin(MGPC!(ScriptArray!(Emitter), 520)()); }
+		bool m_DeactivatePawnCentricWeatherOnEnter() { mixin(MGBPC!(532, 0x1)()); }
+		bool m_DeactivatePawnCentricWeatherOnEnter(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}
 final:
 	void Touch(Actor Other, 

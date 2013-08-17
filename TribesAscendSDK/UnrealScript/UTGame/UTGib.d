@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTGib;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstance;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.SoundCue;
@@ -17,9 +18,9 @@ extern(C++) interface UTGib : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGib")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGib")()); }
 	private static __gshared UTGib mDefaultProperties;
-	@property final static UTGib DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGib)("UTGib UTGame.Default__UTGib")); }
+	@property final static UTGib DefaultProperties() { mixin(MGDPC!(UTGib, "UTGib UTGame.Default__UTGib")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,20 +42,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.PreBeginPlay")); }
-			ScriptFunction SetTexturesToBeResident() { return mSetTexturesToBeResident ? mSetTexturesToBeResident : (mSetTexturesToBeResident = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.SetTexturesToBeResident")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.DisplayDebug")); }
-			ScriptFunction SetGibStaticMesh() { return mSetGibStaticMesh ? mSetGibStaticMesh : (mSetGibStaticMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.SetGibStaticMesh")); }
-			ScriptFunction ChooseGib() { return mChooseGib ? mChooseGib : (mChooseGib = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.ChooseGib")); }
-			ScriptFunction DoCustomGibEffects() { return mDoCustomGibEffects ? mDoCustomGibEffects : (mDoCustomGibEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.DoCustomGibEffects")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.Timer")); }
-			ScriptFunction BecomeViewTarget() { return mBecomeViewTarget ? mBecomeViewTarget : (mBecomeViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.BecomeViewTarget")); }
-			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.CalcCamera")); }
-			ScriptFunction RigidBodyCollision() { return mRigidBodyCollision ? mRigidBodyCollision : (mRigidBodyCollision = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.RigidBodyCollision")); }
-			ScriptFunction LeaveADecal() { return mLeaveADecal ? mLeaveADecal : (mLeaveADecal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.LeaveADecal")); }
-			ScriptFunction TurnOnCollision() { return mTurnOnCollision ? mTurnOnCollision : (mTurnOnCollision = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.TurnOnCollision")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.Landed")); }
-			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.HitWall")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTGib.PreBeginPlay")()); }
+			ScriptFunction SetTexturesToBeResident() { mixin(MGF!("mSetTexturesToBeResident", "Function UTGame.UTGib.SetTexturesToBeResident")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTGib.DisplayDebug")()); }
+			ScriptFunction SetGibStaticMesh() { mixin(MGF!("mSetGibStaticMesh", "Function UTGame.UTGib.SetGibStaticMesh")()); }
+			ScriptFunction ChooseGib() { mixin(MGF!("mChooseGib", "Function UTGame.UTGib.ChooseGib")()); }
+			ScriptFunction DoCustomGibEffects() { mixin(MGF!("mDoCustomGibEffects", "Function UTGame.UTGib.DoCustomGibEffects")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTGib.Timer")()); }
+			ScriptFunction BecomeViewTarget() { mixin(MGF!("mBecomeViewTarget", "Function UTGame.UTGib.BecomeViewTarget")()); }
+			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function UTGame.UTGib.CalcCamera")()); }
+			ScriptFunction RigidBodyCollision() { mixin(MGF!("mRigidBodyCollision", "Function UTGame.UTGib.RigidBodyCollision")()); }
+			ScriptFunction LeaveADecal() { mixin(MGF!("mLeaveADecal", "Function UTGame.UTGib.LeaveADecal")()); }
+			ScriptFunction TurnOnCollision() { mixin(MGF!("mTurnOnCollision", "Function UTGame.UTGib.TurnOnCollision")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function UTGame.UTGib.Landed")()); }
+			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function UTGame.UTGib.HitWall")()); }
 		}
 	}
 	struct StaticMeshDatum
@@ -62,43 +63,46 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGib.StaticMeshDatum")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGib.StaticMeshDatum")()); }
 		@property final
 		{
 			auto ref
 			{
-				float DrawScale() { return *cast(float*)(cast(size_t)&this + 12); }
-				PhysicsAsset ThePhysAsset() { return *cast(PhysicsAsset*)(cast(size_t)&this + 8); }
-				SkeletalMesh TheSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)&this + 4); }
-				StaticMesh TheStaticMesh() { return *cast(StaticMesh*)(cast(size_t)&this + 0); }
+				float DrawScale() { mixin(MGPS!(float, 12)()); }
+				PhysicsAsset ThePhysAsset() { mixin(MGPS!(PhysicsAsset, 8)()); }
+				SkeletalMesh TheSkelMesh() { mixin(MGPS!(SkeletalMesh, 4)()); }
+				StaticMesh TheStaticMesh() { mixin(MGPS!(StaticMesh, 0)()); }
 			}
-			bool bUseSecondaryGibMeshMITV() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-			bool bUseSecondaryGibMeshMITV(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
+			bool bUseSecondaryGibMeshMITV() { mixin(MGBPS!(16, 0x1)()); }
+			bool bUseSecondaryGibMeshMITV(bool val) { mixin(MSBPS!(16, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptName DecalDissolveParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 500); }
-			float DecalWaitTimeBeforeDissolve() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-			ScriptArray!(UTGib.StaticMeshDatum) GibMeshesData() { return *cast(ScriptArray!(UTGib.StaticMeshDatum)*)(cast(size_t)cast(void*)this + 544); }
-			Rotator OldCamRot() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 568); }
-			Vector OldCamLoc() { return *cast(Vector*)(cast(size_t)cast(void*)this + 556); }
-			ParticleSystem PS_CustomEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 536); }
-			float GibMeshWaitTimeBeforeDissolve() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			ScriptName GibMeshDissolveParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 520); }
-			MaterialInstanceTimeVarying MITV_GibMeshTemplateSecondary() { return *cast(MaterialInstanceTimeVarying*)(cast(size_t)cast(void*)this + 516); }
-			MaterialInstanceTimeVarying MITV_GibMeshTemplate() { return *cast(MaterialInstanceTimeVarying*)(cast(size_t)cast(void*)this + 512); }
-			MaterialInstanceTimeVarying MITV_DecalTemplate() { return *cast(MaterialInstanceTimeVarying*)(cast(size_t)cast(void*)this + 496); }
-			MaterialInstance MI_Decal() { return *cast(MaterialInstance*)(cast(size_t)cast(void*)this + 492); }
-			MaterialInstanceConstant MIC_Gib() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 488); }
-			SoundCue HitSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 480); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GibMeshComp'!
+			ScriptName DecalDissolveParamName() { mixin(MGPC!(ScriptName, 500)()); }
+			float DecalWaitTimeBeforeDissolve() { mixin(MGPC!(float, 508)()); }
+			ScriptArray!(UTGib.StaticMeshDatum) GibMeshesData() { mixin(MGPC!(ScriptArray!(UTGib.StaticMeshDatum), 544)()); }
+			Rotator OldCamRot() { mixin(MGPC!(Rotator, 568)()); }
+			Vector OldCamLoc() { mixin(MGPC!(Vector, 556)()); }
+			ParticleSystem PS_CustomEffect() { mixin(MGPC!(ParticleSystem, 536)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PSC_GibEffect'!
+			float GibMeshWaitTimeBeforeDissolve() { mixin(MGPC!(float, 528)()); }
+			ScriptName GibMeshDissolveParamName() { mixin(MGPC!(ScriptName, 520)()); }
+			MaterialInstanceTimeVarying MITV_GibMeshTemplateSecondary() { mixin(MGPC!(MaterialInstanceTimeVarying, 516)()); }
+			MaterialInstanceTimeVarying MITV_GibMeshTemplate() { mixin(MGPC!(MaterialInstanceTimeVarying, 512)()); }
+			MaterialInstanceTimeVarying MITV_DecalTemplate() { mixin(MGPC!(MaterialInstanceTimeVarying, 496)()); }
+			MaterialInstance MI_Decal() { mixin(MGPC!(MaterialInstance, 492)()); }
+			MaterialInstanceConstant MIC_Gib() { mixin(MGPC!(MaterialInstanceConstant, 488)()); }
+			SoundCue HitSound() { mixin(MGPC!(SoundCue, 480)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GibLightEnvironment'!
 		}
-		bool bUseUnrealPhysics() { return (*cast(uint*)(cast(size_t)cast(void*)this + 540) & 0x1) != 0; }
-		bool bUseUnrealPhysics(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 540) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 540) &= ~0x1; } return val; }
-		bool bStopMovingCamera() { return (*cast(uint*)(cast(size_t)cast(void*)this + 540) & 0x2) != 0; }
-		bool bStopMovingCamera(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 540) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 540) &= ~0x2; } return val; }
+		bool bUseUnrealPhysics() { mixin(MGBPC!(540, 0x1)()); }
+		bool bUseUnrealPhysics(bool val) { mixin(MSBPC!(540, 0x1)()); }
+		bool bStopMovingCamera() { mixin(MGBPC!(540, 0x2)()); }
+		bool bStopMovingCamera(bool val) { mixin(MSBPC!(540, 0x2)()); }
 	}
 final:
 	void PreBeginPlay()
@@ -112,13 +116,13 @@ final:
 		*cast(float*)params.ptr = TimeToBeResident;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTexturesToBeResident, params.ptr, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
@@ -149,14 +153,14 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BecomeViewTarget, params.ptr, cast(void*)0);
 	}
-	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		*cast(Vector*)&params[4] = *out_CamLoc;
-		*cast(Rotator*)&params[16] = *out_CamRot;
-		*cast(float*)&params[28] = *out_FOV;
+		*cast(Vector*)&params[4] = out_CamLoc;
+		*cast(Rotator*)&params[16] = out_CamRot;
+		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
@@ -167,7 +171,7 @@ final:
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* OtherComponent, Actor.CollisionImpactData* RigidCollisionData, int ContactIndex)
+void* OtherComponent, ref const Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -177,7 +181,7 @@ void**)params.ptr = HitComponent;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
-		*cast(Actor.CollisionImpactData*)&params[8] = *RigidCollisionData;
+		*cast(Actor.CollisionImpactData*)&params[8] = RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
 		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];

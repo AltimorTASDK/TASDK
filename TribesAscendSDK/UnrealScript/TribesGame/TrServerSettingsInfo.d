@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrServerSettingsInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.Info;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrServerSettingsInfo : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrServerSettingsInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrServerSettingsInfo")()); }
 	private static __gshared TrServerSettingsInfo mDefaultProperties;
-	@property final static TrServerSettingsInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrServerSettingsInfo)("TrServerSettingsInfo TribesGame.Default__TrServerSettingsInfo")); }
+	@property final static TrServerSettingsInfo DefaultProperties() { mixin(MGDPC!(TrServerSettingsInfo, "TrServerSettingsInfo TribesGame.Default__TrServerSettingsInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,15 +28,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetClassCount() { return mGetClassCount ? mGetClassCount : (mGetClassCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetClassCount")); }
-			ScriptFunction IsCallinAllowed() { return mIsCallinAllowed ? mIsCallinAllowed : (mIsCallinAllowed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.IsCallinAllowed")); }
-			ScriptFunction IsClassAllowed() { return mIsClassAllowed ? mIsClassAllowed : (mIsClassAllowed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.IsClassAllowed")); }
-			ScriptFunction GetPropAsFloat() { return mGetPropAsFloat ? mGetPropAsFloat : (mGetPropAsFloat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetPropAsFloat")); }
-			ScriptFunction GetPropAsInt() { return mGetPropAsInt ? mGetPropAsInt : (mGetPropAsInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetPropAsInt")); }
-			ScriptFunction GetPropAsString() { return mGetPropAsString ? mGetPropAsString : (mGetPropAsString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetPropAsString")); }
-			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.ApplyServerSettings")); }
-			ScriptFunction LoadServerSettings() { return mLoadServerSettings ? mLoadServerSettings : (mLoadServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.LoadServerSettings")); }
-			ScriptFunction GetVehicleLimit() { return mGetVehicleLimit ? mGetVehicleLimit : (mGetVehicleLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetVehicleLimit")); }
+			ScriptFunction GetClassCount() { mixin(MGF!("mGetClassCount", "Function TribesGame.TrServerSettingsInfo.GetClassCount")()); }
+			ScriptFunction IsCallinAllowed() { mixin(MGF!("mIsCallinAllowed", "Function TribesGame.TrServerSettingsInfo.IsCallinAllowed")()); }
+			ScriptFunction IsClassAllowed() { mixin(MGF!("mIsClassAllowed", "Function TribesGame.TrServerSettingsInfo.IsClassAllowed")()); }
+			ScriptFunction GetPropAsFloat() { mixin(MGF!("mGetPropAsFloat", "Function TribesGame.TrServerSettingsInfo.GetPropAsFloat")()); }
+			ScriptFunction GetPropAsInt() { mixin(MGF!("mGetPropAsInt", "Function TribesGame.TrServerSettingsInfo.GetPropAsInt")()); }
+			ScriptFunction GetPropAsString() { mixin(MGF!("mGetPropAsString", "Function TribesGame.TrServerSettingsInfo.GetPropAsString")()); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrServerSettingsInfo.ApplyServerSettings")()); }
+			ScriptFunction LoadServerSettings() { mixin(MGF!("mLoadServerSettings", "Function TribesGame.TrServerSettingsInfo.LoadServerSettings")()); }
+			ScriptFunction GetVehicleLimit() { mixin(MGF!("mGetVehicleLimit", "Function TribesGame.TrServerSettingsInfo.GetVehicleLimit")()); }
 		}
 	}
 	static struct Constants
@@ -1421,64 +1422,64 @@ public extern(D):
 	{
 		auto ref
 		{
-			int BaseDestructionLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 508); }
-			int MaxSpeedWithFlagLight() { return *cast(int*)(cast(size_t)cast(void*)this + 692); }
-			int MaxSpeedWithFlagMedium() { return *cast(int*)(cast(size_t)cast(void*)this + 684); }
-			int MaxSpeedWithFlagHeavy() { return *cast(int*)(cast(size_t)cast(void*)this + 696); }
-			int DecelerationRateWithFlag() { return *cast(int*)(cast(size_t)cast(void*)this + 688); }
-			float fEnergyMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
-			int RespawnTime() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-			int TeamAssignType() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
-			int VehiclePrices() { return *cast(int*)(cast(size_t)cast(void*)this + 604); }
-			int FFKillLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 512); }
-			int FFDamageLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 516); }
-			int CallinPrices() { return *cast(int*)(cast(size_t)cast(void*)this + 628); }
-			float CallinBuildups() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
-			int CallinCooldowns() { return *cast(int*)(cast(size_t)cast(void*)this + 640); }
-			int TimeLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
-			int OvertimeLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-			int WarmupTime() { return *cast(int*)(cast(size_t)cast(void*)this + 480); }
-			float fFriendlyFireDamageMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 664); }
-			int ArenaRounds() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
-			int GameScores() { return *cast(int*)(cast(size_t)cast(void*)this + 528); }
-			int SpawnType() { return *cast(int*)(cast(size_t)cast(void*)this + 520); }
-			float fAoEDamageMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 680); }
-			float fAoESizeMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-			float fVehicleHealthMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 668); }
-			int CallinsDenied() { return *cast(int*)(cast(size_t)cast(void*)this + 624); }
-			int VehicleLimits() { return *cast(int*)(cast(size_t)cast(void*)this + 584); }
-			int ClassCounts() { return *cast(int*)(cast(size_t)cast(void*)this + 548); }
-			int MaxPlayers() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
-			int ScoreLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 484); }
+			int BaseDestructionLimit() { mixin(MGPC!(int, 508)()); }
+			int MaxSpeedWithFlagLight() { mixin(MGPC!(int, 692)()); }
+			int MaxSpeedWithFlagMedium() { mixin(MGPC!(int, 684)()); }
+			int MaxSpeedWithFlagHeavy() { mixin(MGPC!(int, 696)()); }
+			int DecelerationRateWithFlag() { mixin(MGPC!(int, 688)()); }
+			float fEnergyMultiplier() { mixin(MGPC!(float, 672)()); }
+			int RespawnTime() { mixin(MGPC!(int, 496)()); }
+			int TeamAssignType() { mixin(MGPC!(int, 504)()); }
+			int VehiclePrices() { mixin(MGPC!(int, 604)()); }
+			int FFKillLimit() { mixin(MGPC!(int, 512)()); }
+			int FFDamageLimit() { mixin(MGPC!(int, 516)()); }
+			int CallinPrices() { mixin(MGPC!(int, 628)()); }
+			float CallinBuildups() { mixin(MGPC!(float, 652)()); }
+			int CallinCooldowns() { mixin(MGPC!(int, 640)()); }
+			int TimeLimit() { mixin(MGPC!(int, 476)()); }
+			int OvertimeLimit() { mixin(MGPC!(int, 500)()); }
+			int WarmupTime() { mixin(MGPC!(int, 480)()); }
+			float fFriendlyFireDamageMultiplier() { mixin(MGPC!(float, 664)()); }
+			int ArenaRounds() { mixin(MGPC!(int, 492)()); }
+			int GameScores() { mixin(MGPC!(int, 528)()); }
+			int SpawnType() { mixin(MGPC!(int, 520)()); }
+			float fAoEDamageMultiplier() { mixin(MGPC!(float, 680)()); }
+			float fAoESizeMultiplier() { mixin(MGPC!(float, 676)()); }
+			float fVehicleHealthMultiplier() { mixin(MGPC!(float, 668)()); }
+			int CallinsDenied() { mixin(MGPC!(int, 624)()); }
+			int VehicleLimits() { mixin(MGPC!(int, 584)()); }
+			int ClassCounts() { mixin(MGPC!(int, 548)()); }
+			int MaxPlayers() { mixin(MGPC!(int, 488)()); }
+			int ScoreLimit() { mixin(MGPC!(int, 484)()); }
 		}
-		bool bObjectiveUpgrades() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x4) != 0; }
-		bool bObjectiveUpgrades(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x4; } return val; }
-		bool bPreplacedObjectives() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x20) != 0; }
-		bool bPreplacedObjectives(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x20; } return val; }
-		bool bFriendlyFireDeployables() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x100) != 0; }
-		bool bFriendlyFireDeployables(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x100; } return val; }
-		bool bPoweredDeployables() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x8) != 0; }
-		bool bPoweredDeployables(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x8; } return val; }
-		bool bFriendlyFireBaseAssets() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x80) != 0; }
-		bool bFriendlyFireBaseAssets(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x80; } return val; }
-		bool bSupplyDropAmmoOnly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x200) != 0; }
-		bool bSupplyDropAmmoOnly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x200; } return val; }
-		bool bTeamCredits() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x800) != 0; }
-		bool bTeamCredits(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x800; } return val; }
-		bool bAutoBalanceInGame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x2) != 0; }
-		bool bAutoBalanceInGame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x2; } return val; }
-		bool bCTFBlitzAllFlagsMove() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x2000) != 0; }
-		bool bCTFBlitzAllFlagsMove(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x2000; } return val; }
-		bool bFriendlyFire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x1) != 0; }
-		bool bFriendlyFire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x1; } return val; }
-		bool bPoweredCallins() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x400) != 0; }
-		bool bPoweredCallins(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x400; } return val; }
-		bool bSkiEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x1000) != 0; }
-		bool bSkiEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x1000; } return val; }
-		bool bGeneratorAutoRegen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x10) != 0; }
-		bool bGeneratorAutoRegen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x10; } return val; }
-		bool bGenDestroyable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 524) & 0x40) != 0; }
-		bool bGenDestroyable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 524) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 524) &= ~0x40; } return val; }
+		bool bObjectiveUpgrades() { mixin(MGBPC!(524, 0x4)()); }
+		bool bObjectiveUpgrades(bool val) { mixin(MSBPC!(524, 0x4)()); }
+		bool bPreplacedObjectives() { mixin(MGBPC!(524, 0x20)()); }
+		bool bPreplacedObjectives(bool val) { mixin(MSBPC!(524, 0x20)()); }
+		bool bFriendlyFireDeployables() { mixin(MGBPC!(524, 0x100)()); }
+		bool bFriendlyFireDeployables(bool val) { mixin(MSBPC!(524, 0x100)()); }
+		bool bPoweredDeployables() { mixin(MGBPC!(524, 0x8)()); }
+		bool bPoweredDeployables(bool val) { mixin(MSBPC!(524, 0x8)()); }
+		bool bFriendlyFireBaseAssets() { mixin(MGBPC!(524, 0x80)()); }
+		bool bFriendlyFireBaseAssets(bool val) { mixin(MSBPC!(524, 0x80)()); }
+		bool bSupplyDropAmmoOnly() { mixin(MGBPC!(524, 0x200)()); }
+		bool bSupplyDropAmmoOnly(bool val) { mixin(MSBPC!(524, 0x200)()); }
+		bool bTeamCredits() { mixin(MGBPC!(524, 0x800)()); }
+		bool bTeamCredits(bool val) { mixin(MSBPC!(524, 0x800)()); }
+		bool bAutoBalanceInGame() { mixin(MGBPC!(524, 0x2)()); }
+		bool bAutoBalanceInGame(bool val) { mixin(MSBPC!(524, 0x2)()); }
+		bool bCTFBlitzAllFlagsMove() { mixin(MGBPC!(524, 0x2000)()); }
+		bool bCTFBlitzAllFlagsMove(bool val) { mixin(MSBPC!(524, 0x2000)()); }
+		bool bFriendlyFire() { mixin(MGBPC!(524, 0x1)()); }
+		bool bFriendlyFire(bool val) { mixin(MSBPC!(524, 0x1)()); }
+		bool bPoweredCallins() { mixin(MGBPC!(524, 0x400)()); }
+		bool bPoweredCallins(bool val) { mixin(MSBPC!(524, 0x400)()); }
+		bool bSkiEnabled() { mixin(MGBPC!(524, 0x1000)()); }
+		bool bSkiEnabled(bool val) { mixin(MSBPC!(524, 0x1000)()); }
+		bool bGeneratorAutoRegen() { mixin(MGBPC!(524, 0x10)()); }
+		bool bGeneratorAutoRegen(bool val) { mixin(MSBPC!(524, 0x10)()); }
+		bool bGenDestroyable() { mixin(MGBPC!(524, 0x40)()); }
+		bool bGenDestroyable(bool val) { mixin(MSBPC!(524, 0x40)()); }
 	}
 final:
 	int GetClassCount(TrObject.TrClassType ClassType)
@@ -1506,32 +1507,32 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsClassAllowed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	static bool GetPropAsFloat(int PropId, float* Value)
+	static bool GetPropAsFloat(int PropId, ref float Value)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
-		*cast(float*)&params[4] = *Value;
+		*cast(float*)&params[4] = Value;
 		StaticClass.ProcessEvent(Functions.GetPropAsFloat, params.ptr, cast(void*)0);
 		*Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	static bool GetPropAsInt(int PropId, int* Value)
+	static bool GetPropAsInt(int PropId, ref int Value)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
-		*cast(int*)&params[4] = *Value;
+		*cast(int*)&params[4] = Value;
 		StaticClass.ProcessEvent(Functions.GetPropAsInt, params.ptr, cast(void*)0);
 		*Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	static bool GetPropAsString(int PropId, ScriptString* Value)
+	static bool GetPropAsString(int PropId, ref ScriptString Value)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
-		*cast(ScriptString*)&params[4] = *Value;
+		*cast(ScriptString*)&params[4] = Value;
 		StaticClass.ProcessEvent(Functions.GetPropAsString, params.ptr, cast(void*)0);
 		*Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];

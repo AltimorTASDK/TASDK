@@ -1,6 +1,7 @@
 module UnrealScript.Engine.EmitterPool;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.ParticleSystem;
@@ -9,9 +10,9 @@ extern(C++) interface EmitterPool : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EmitterPool")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.EmitterPool")()); }
 	private static __gshared EmitterPool mDefaultProperties;
-	@property final static EmitterPool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EmitterPool)("EmitterPool Engine.Default__EmitterPool")); }
+	@property final static EmitterPool DefaultProperties() { mixin(MGDPC!(EmitterPool, "EmitterPool Engine.Default__EmitterPool")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,17 +31,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnEmitter() { return mSpawnEmitter ? mSpawnEmitter : (mSpawnEmitter = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.SpawnEmitter")); }
-			ScriptFunction OnParticleSystemFinished() { return mOnParticleSystemFinished ? mOnParticleSystemFinished : (mOnParticleSystemFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.OnParticleSystemFinished")); }
-			ScriptFunction ReturnToPool() { return mReturnToPool ? mReturnToPool : (mReturnToPool = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.ReturnToPool")); }
-			ScriptFunction ClearPoolComponents() { return mClearPoolComponents ? mClearPoolComponents : (mClearPoolComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.ClearPoolComponents")); }
-			ScriptFunction FreeStaticMeshComponents() { return mFreeStaticMeshComponents ? mFreeStaticMeshComponents : (mFreeStaticMeshComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.FreeStaticMeshComponents")); }
-			ScriptFunction GetFreeStaticMeshComponent() { return mGetFreeStaticMeshComponent ? mGetFreeStaticMeshComponent : (mGetFreeStaticMeshComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.GetFreeStaticMeshComponent")); }
-			ScriptFunction FreeMaterialInstanceConstants() { return mFreeMaterialInstanceConstants ? mFreeMaterialInstanceConstants : (mFreeMaterialInstanceConstants = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.FreeMaterialInstanceConstants")); }
-			ScriptFunction GetFreeMatInstConsts() { return mGetFreeMatInstConsts ? mGetFreeMatInstConsts : (mGetFreeMatInstConsts = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.GetFreeMatInstConsts")); }
-			ScriptFunction GetPooledComponent() { return mGetPooledComponent ? mGetPooledComponent : (mGetPooledComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.GetPooledComponent")); }
-			ScriptFunction SpawnEmitterMeshAttachment() { return mSpawnEmitterMeshAttachment ? mSpawnEmitterMeshAttachment : (mSpawnEmitterMeshAttachment = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.SpawnEmitterMeshAttachment")); }
-			ScriptFunction SpawnEmitterCustomLifetime() { return mSpawnEmitterCustomLifetime ? mSpawnEmitterCustomLifetime : (mSpawnEmitterCustomLifetime = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.SpawnEmitterCustomLifetime")); }
+			ScriptFunction SpawnEmitter() { mixin(MGF!("mSpawnEmitter", "Function Engine.EmitterPool.SpawnEmitter")()); }
+			ScriptFunction OnParticleSystemFinished() { mixin(MGF!("mOnParticleSystemFinished", "Function Engine.EmitterPool.OnParticleSystemFinished")()); }
+			ScriptFunction ReturnToPool() { mixin(MGF!("mReturnToPool", "Function Engine.EmitterPool.ReturnToPool")()); }
+			ScriptFunction ClearPoolComponents() { mixin(MGF!("mClearPoolComponents", "Function Engine.EmitterPool.ClearPoolComponents")()); }
+			ScriptFunction FreeStaticMeshComponents() { mixin(MGF!("mFreeStaticMeshComponents", "Function Engine.EmitterPool.FreeStaticMeshComponents")()); }
+			ScriptFunction GetFreeStaticMeshComponent() { mixin(MGF!("mGetFreeStaticMeshComponent", "Function Engine.EmitterPool.GetFreeStaticMeshComponent")()); }
+			ScriptFunction FreeMaterialInstanceConstants() { mixin(MGF!("mFreeMaterialInstanceConstants", "Function Engine.EmitterPool.FreeMaterialInstanceConstants")()); }
+			ScriptFunction GetFreeMatInstConsts() { mixin(MGF!("mGetFreeMatInstConsts", "Function Engine.EmitterPool.GetFreeMatInstConsts")()); }
+			ScriptFunction GetPooledComponent() { mixin(MGF!("mGetPooledComponent", "Function Engine.EmitterPool.GetPooledComponent")()); }
+			ScriptFunction SpawnEmitterMeshAttachment() { mixin(MGF!("mSpawnEmitterMeshAttachment", "Function Engine.EmitterPool.SpawnEmitterMeshAttachment")()); }
+			ScriptFunction SpawnEmitterCustomLifetime() { mixin(MGF!("mSpawnEmitterCustomLifetime", "Function Engine.EmitterPool.SpawnEmitterCustomLifetime")()); }
 		}
 	}
 	struct EmitterBaseInfo
@@ -48,17 +49,18 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EmitterPool.EmitterBaseInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EmitterPool.EmitterBaseInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				Rotator RelativeRotation() { return *cast(Rotator*)(cast(size_t)&this + 20); }
-				Vector RelativeLocation() { return *cast(Vector*)(cast(size_t)&this + 8); }
-				Actor Base() { return *cast(Actor*)(cast(size_t)&this + 4); }
+				Rotator RelativeRotation() { mixin(MGPS!(Rotator, 20)()); }
+				Vector RelativeLocation() { mixin(MGPS!(Vector, 8)()); }
+				Actor Base() { mixin(MGPS!(Actor, 4)()); }
+				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PSC'!
 			}
-			bool bInheritBaseScale() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x1) != 0; }
-			bool bInheritBaseScale(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x1; } return val; }
+			bool bInheritBaseScale() { mixin(MGBPS!(32, 0x1)()); }
+			bool bInheritBaseScale(bool val) { mixin(MSBPS!(32, 0x1)()); }
 		}
 	}
 	@property final
@@ -67,31 +69,32 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) PoolComponents() { return *cast(ScriptArray!(
+void*) PoolComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 480); }
+void*), 480)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) ActiveComponents() { return *cast(ScriptArray!(
+void*) ActiveComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 492); }
-			ScriptArray!(EmitterPool.EmitterBaseInfo) RelativePSCs() { return *cast(ScriptArray!(EmitterPool.EmitterBaseInfo)*)(cast(size_t)cast(void*)this + 512); }
+void*), 492)()); }
+			ScriptArray!(EmitterPool.EmitterBaseInfo) RelativePSCs() { mixin(MGPC!(ScriptArray!(EmitterPool.EmitterBaseInfo), 512)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) FreeSMComponents() { return *cast(ScriptArray!(
+void*) FreeSMComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 540); }
-			ScriptArray!(MaterialInstanceConstant) FreeMatInstConsts() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 552); }
-			int IdealMaterialInstanceConstants() { return *cast(int*)(cast(size_t)cast(void*)this + 536); }
-			int IdealStaticMeshComponents() { return *cast(int*)(cast(size_t)cast(void*)this + 532); }
-			float SMC_MIC_CurrentReductionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 528); }
-			float SMC_MIC_ReductionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 524); }
-			int MaxActiveEffects() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
+void*), 540)()); }
+			ScriptArray!(MaterialInstanceConstant) FreeMatInstConsts() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 552)()); }
+			int IdealMaterialInstanceConstants() { mixin(MGPC!(int, 536)()); }
+			int IdealStaticMeshComponents() { mixin(MGPC!(int, 532)()); }
+			float SMC_MIC_CurrentReductionTime() { mixin(MGPC!(float, 528)()); }
+			float SMC_MIC_ReductionTime() { mixin(MGPC!(float, 524)()); }
+			int MaxActiveEffects() { mixin(MGPC!(int, 504)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PSCTemplate'!
 		}
-		bool bLogPoolOverflowList() { return (*cast(uint*)(cast(size_t)cast(void*)this + 508) & 0x2) != 0; }
-		bool bLogPoolOverflowList(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 508) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 508) &= ~0x2; } return val; }
-		bool bLogPoolOverflow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 508) & 0x1) != 0; }
-		bool bLogPoolOverflow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 508) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 508) &= ~0x1; } return val; }
+		bool bLogPoolOverflowList() { mixin(MGBPC!(508, 0x2)()); }
+		bool bLogPoolOverflowList(bool val) { mixin(MSBPC!(508, 0x2)()); }
+		bool bLogPoolOverflow() { mixin(MGBPC!(508, 0x1)()); }
+		bool bLogPoolOverflow(bool val) { mixin(MSBPC!(508, 0x1)()); }
 	}
 final:
 	

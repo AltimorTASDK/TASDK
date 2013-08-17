@@ -1,30 +1,31 @@
 module UnrealScript.UTGame.UTSkelControl_Oscillate;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface UTSkelControl_Oscillate : SkelControlSingleBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_Oscillate")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_Oscillate")()); }
 	private static __gshared UTSkelControl_Oscillate mDefaultProperties;
-	@property final static UTSkelControl_Oscillate DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_Oscillate)("UTSkelControl_Oscillate UTGame.Default__UTSkelControl_Oscillate")); }
+	@property final static UTSkelControl_Oscillate DefaultProperties() { mixin(MGDPC!(UTSkelControl_Oscillate, "UTSkelControl_Oscillate UTGame.Default__UTSkelControl_Oscillate")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;
-		public @property static final ScriptFunction TickSkelControl() { return mTickSkelControl ? mTickSkelControl : (mTickSkelControl = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSkelControl_Oscillate.TickSkelControl")); }
+		public @property static final ScriptFunction TickSkelControl() { mixin(MGF!("mTickSkelControl", "Function UTGame.UTSkelControl_Oscillate.TickSkelControl")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float CurrentTime() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-			float Period() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			Vector MaxDelta() { return *cast(Vector*)(cast(size_t)cast(void*)this + 236); }
+			float CurrentTime() { mixin(MGPC!(float, 252)()); }
+			float Period() { mixin(MGPC!(float, 248)()); }
+			Vector MaxDelta() { mixin(MGPC!(Vector, 236)()); }
 		}
-		bool bReverseDirection() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x1) != 0; }
-		bool bReverseDirection(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x1; } return val; }
+		bool bReverseDirection() { mixin(MGBPC!(256, 0x1)()); }
+		bool bReverseDirection(bool val) { mixin(MSBPC!(256, 0x1)()); }
 	}
 	final void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

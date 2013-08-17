@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.GFxUDKFrontEnd_FilterDialog;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.GFxUDKFrontEnd_Dialog;
 import UnrealScript.UTGame.UTUIDataStore_MenuItems;
 import UnrealScript.GFxUI.GFxObject;
@@ -12,9 +13,9 @@ extern(C++) interface GFxUDKFrontEnd_FilterDialog : GFxUDKFrontEnd_Dialog
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_FilterDialog")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_FilterDialog")()); }
 	private static __gshared GFxUDKFrontEnd_FilterDialog mDefaultProperties;
-	@property final static GFxUDKFrontEnd_FilterDialog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_FilterDialog)("GFxUDKFrontEnd_FilterDialog UTGame.Default__GFxUDKFrontEnd_FilterDialog")); }
+	@property final static GFxUDKFrontEnd_FilterDialog DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_FilterDialog, "GFxUDKFrontEnd_FilterDialog UTGame.Default__GFxUDKFrontEnd_FilterDialog")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,19 +36,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnSwitchedGameType() { return mOnSwitchedGameType ? mOnSwitchedGameType : (mOnSwitchedGameType = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.OnSwitchedGameType")); }
-			ScriptFunction OnViewLoaded() { return mOnViewLoaded ? mOnViewLoaded : (mOnViewLoaded = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.OnViewLoaded")); }
-			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.OnTopMostView")); }
-			ScriptFunction OnViewClosed() { return mOnViewClosed ? mOnViewClosed : (mOnViewClosed = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.OnViewClosed")); }
-			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.DisableSubComponents")); }
-			ScriptFunction SetBackButtonListener() { return mSetBackButtonListener ? mSetBackButtonListener : (mSetBackButtonListener = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.SetBackButtonListener")); }
-			ScriptFunction ValidateServerType() { return mValidateServerType ? mValidateServerType : (mValidateServerType = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.ValidateServerType")); }
-			ScriptFunction ForceLANOption() { return mForceLANOption ? mForceLANOption : (mForceLANOption = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.ForceLANOption")); }
-			ScriptFunction GetGameClassByFriendlyName() { return mGetGameClassByFriendlyName ? mGetGameClassByFriendlyName : (mGetGameClassByFriendlyName = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.GetGameClassByFriendlyName")); }
-			ScriptFunction OnFilterList_OptionChanged() { return mOnFilterList_OptionChanged ? mOnFilterList_OptionChanged : (mOnFilterList_OptionChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.OnFilterList_OptionChanged")); }
-			ScriptFunction SetupListDataProvider() { return mSetupListDataProvider ? mSetupListDataProvider : (mSetupListDataProvider = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.SetupListDataProvider")); }
-			ScriptFunction PushFilterListUpdate() { return mPushFilterListUpdate ? mPushFilterListUpdate : (mPushFilterListUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.PushFilterListUpdate")); }
-			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_FilterDialog.WidgetInitialized")); }
+			ScriptFunction OnSwitchedGameType() { mixin(MGF!("mOnSwitchedGameType", "Function UTGame.GFxUDKFrontEnd_FilterDialog.OnSwitchedGameType")()); }
+			ScriptFunction OnViewLoaded() { mixin(MGF!("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_FilterDialog.OnViewLoaded")()); }
+			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_FilterDialog.OnTopMostView")()); }
+			ScriptFunction OnViewClosed() { mixin(MGF!("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_FilterDialog.OnViewClosed")()); }
+			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_FilterDialog.DisableSubComponents")()); }
+			ScriptFunction SetBackButtonListener() { mixin(MGF!("mSetBackButtonListener", "Function UTGame.GFxUDKFrontEnd_FilterDialog.SetBackButtonListener")()); }
+			ScriptFunction ValidateServerType() { mixin(MGF!("mValidateServerType", "Function UTGame.GFxUDKFrontEnd_FilterDialog.ValidateServerType")()); }
+			ScriptFunction ForceLANOption() { mixin(MGF!("mForceLANOption", "Function UTGame.GFxUDKFrontEnd_FilterDialog.ForceLANOption")()); }
+			ScriptFunction GetGameClassByFriendlyName() { mixin(MGF!("mGetGameClassByFriendlyName", "Function UTGame.GFxUDKFrontEnd_FilterDialog.GetGameClassByFriendlyName")()); }
+			ScriptFunction OnFilterList_OptionChanged() { mixin(MGF!("mOnFilterList_OptionChanged", "Function UTGame.GFxUDKFrontEnd_FilterDialog.OnFilterList_OptionChanged")()); }
+			ScriptFunction SetupListDataProvider() { mixin(MGF!("mSetupListDataProvider", "Function UTGame.GFxUDKFrontEnd_FilterDialog.SetupListDataProvider")()); }
+			ScriptFunction PushFilterListUpdate() { mixin(MGF!("mPushFilterListUpdate", "Function UTGame.GFxUDKFrontEnd_FilterDialog.PushFilterListUpdate")()); }
+			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_FilterDialog.WidgetInitialized")()); }
 		}
 	}
 	struct Option
@@ -55,28 +56,29 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.GFxUDKFrontEnd_FilterDialog.Option")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxUDKFrontEnd_FilterDialog.Option")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) OptionData() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 24); }
-			ScriptString OptionLabel() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			ScriptString OptionName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			ScriptArray!(ScriptString) OptionData() { mixin(MGPS!(ScriptArray!(ScriptString), 24)()); }
+			ScriptString OptionLabel() { mixin(MGPS!(ScriptString, 12)()); }
+			ScriptString OptionName() { mixin(MGPS!(ScriptString, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option) ListOptions() { return *cast(ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option)*)(cast(size_t)cast(void*)this + 196); }
-			GFxObject GameTypeOptionItem() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 192); }
-			GFxObject DataProvider() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 188); }
-			GFxClikWidget FilterListMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 180); }
-			UTDataStore_GameSearchDM SearchDataStore() { return *cast(UTDataStore_GameSearchDM*)(cast(size_t)cast(void*)this + 176); }
-			UTUIDataStore_MenuItems MenuDataStore() { return *cast(UTUIDataStore_MenuItems*)(cast(size_t)cast(void*)this + 172); }
-			UTUIDataStore_StringList StringListDataStore() { return *cast(UTUIDataStore_StringList*)(cast(size_t)cast(void*)this + 168); }
+			ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option) ListOptions() { mixin(MGPC!(ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option), 196)()); }
+			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnSwitchedGameType__Delegate'!
+			GFxObject GameTypeOptionItem() { mixin(MGPC!(GFxObject, 192)()); }
+			GFxObject DataProvider() { mixin(MGPC!(GFxObject, 188)()); }
+			GFxClikWidget FilterListMC() { mixin(MGPC!(GFxClikWidget, 180)()); }
+			UTDataStore_GameSearchDM SearchDataStore() { mixin(MGPC!(UTDataStore_GameSearchDM, 176)()); }
+			UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!(UTUIDataStore_MenuItems, 172)()); }
+			UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!(UTUIDataStore_StringList, 168)()); }
 		}
-		bool bFiltersHaveChanged() { return (*cast(uint*)(cast(size_t)cast(void*)this + 184) & 0x1) != 0; }
-		bool bFiltersHaveChanged(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 184) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 184) &= ~0x1; } return val; }
+		bool bFiltersHaveChanged() { mixin(MGBPC!(184, 0x1)()); }
+		bool bFiltersHaveChanged(bool val) { mixin(MSBPC!(184, 0x1)()); }
 	}
 final:
 	void OnSwitchedGameType()

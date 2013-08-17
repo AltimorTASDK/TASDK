@@ -1,6 +1,7 @@
 module UnrealScript.Engine.GameReplicationInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.ReplicationInfo;
@@ -10,9 +11,9 @@ extern(C++) interface GameReplicationInfo : ReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameReplicationInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameReplicationInfo")()); }
 	private static __gshared GameReplicationInfo mDefaultProperties;
-	@property final static GameReplicationInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameReplicationInfo)("GameReplicationInfo Engine.Default__GameReplicationInfo")); }
+	@property final static GameReplicationInfo DefaultProperties() { mixin(MGDPC!(GameReplicationInfo, "GameReplicationInfo Engine.Default__GameReplicationInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,46 +35,46 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldShowGore() { return mShouldShowGore ? mShouldShowGore : (mShouldShowGore = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.ShouldShowGore")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.PostBeginPlay")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.ReplicatedEvent")); }
-			ScriptFunction ReceivedGameClass() { return mReceivedGameClass ? mReceivedGameClass : (mReceivedGameClass = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.ReceivedGameClass")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.Reset")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.Timer")); }
-			ScriptFunction OnSameTeam() { return mOnSameTeam ? mOnSameTeam : (mOnSameTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.OnSameTeam")); }
-			ScriptFunction AddPRI() { return mAddPRI ? mAddPRI : (mAddPRI = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.AddPRI")); }
-			ScriptFunction RemovePRI() { return mRemovePRI ? mRemovePRI : (mRemovePRI = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.RemovePRI")); }
-			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.SetTeam")); }
-			ScriptFunction StartMatch() { return mStartMatch ? mStartMatch : (mStartMatch = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.StartMatch")); }
-			ScriptFunction EndGame() { return mEndGame ? mEndGame : (mEndGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.EndGame")); }
-			ScriptFunction IsMultiplayerGame() { return mIsMultiplayerGame ? mIsMultiplayerGame : (mIsMultiplayerGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.IsMultiplayerGame")); }
-			ScriptFunction IsCoopMultiplayerGame() { return mIsCoopMultiplayerGame ? mIsCoopMultiplayerGame : (mIsCoopMultiplayerGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameReplicationInfo.IsCoopMultiplayerGame")); }
+			ScriptFunction ShouldShowGore() { mixin(MGF!("mShouldShowGore", "Function Engine.GameReplicationInfo.ShouldShowGore")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.GameReplicationInfo.PostBeginPlay")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.GameReplicationInfo.ReplicatedEvent")()); }
+			ScriptFunction ReceivedGameClass() { mixin(MGF!("mReceivedGameClass", "Function Engine.GameReplicationInfo.ReceivedGameClass")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.GameReplicationInfo.Reset")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.GameReplicationInfo.Timer")()); }
+			ScriptFunction OnSameTeam() { mixin(MGF!("mOnSameTeam", "Function Engine.GameReplicationInfo.OnSameTeam")()); }
+			ScriptFunction AddPRI() { mixin(MGF!("mAddPRI", "Function Engine.GameReplicationInfo.AddPRI")()); }
+			ScriptFunction RemovePRI() { mixin(MGF!("mRemovePRI", "Function Engine.GameReplicationInfo.RemovePRI")()); }
+			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function Engine.GameReplicationInfo.SetTeam")()); }
+			ScriptFunction StartMatch() { mixin(MGF!("mStartMatch", "Function Engine.GameReplicationInfo.StartMatch")()); }
+			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function Engine.GameReplicationInfo.EndGame")()); }
+			ScriptFunction IsMultiplayerGame() { mixin(MGF!("mIsMultiplayerGame", "Function Engine.GameReplicationInfo.IsMultiplayerGame")()); }
+			ScriptFunction IsCoopMultiplayerGame() { mixin(MGF!("mIsCoopMultiplayerGame", "Function Engine.GameReplicationInfo.IsCoopMultiplayerGame")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PlayerReplicationInfo) PRIArray() { return *cast(ScriptArray!(PlayerReplicationInfo)*)(cast(size_t)cast(void*)this + 532); }
-			ScriptClass GameClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 476); }
-			ScriptArray!(TeamInfo) Teams() { return *cast(ScriptArray!(TeamInfo)*)(cast(size_t)cast(void*)this + 504); }
-			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { return *cast(ScriptArray!(PlayerReplicationInfo)*)(cast(size_t)cast(void*)this + 544); }
-			Actor Winner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 528); }
-			ScriptString ServerName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 516); }
-			int TimeLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-			int GoalScore() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-			int RemainingMinute() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
-			int ElapsedTime() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
-			int RemainingTime() { return *cast(int*)(cast(size_t)cast(void*)this + 484); }
+			ScriptArray!(PlayerReplicationInfo) PRIArray() { mixin(MGPC!(ScriptArray!(PlayerReplicationInfo), 532)()); }
+			ScriptClass GameClass() { mixin(MGPC!(ScriptClass, 476)()); }
+			ScriptArray!(TeamInfo) Teams() { mixin(MGPC!(ScriptArray!(TeamInfo), 504)()); }
+			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { mixin(MGPC!(ScriptArray!(PlayerReplicationInfo), 544)()); }
+			Actor Winner() { mixin(MGPC!(Actor, 528)()); }
+			ScriptString ServerName() { mixin(MGPC!(ScriptString, 516)()); }
+			int TimeLimit() { mixin(MGPC!(int, 500)()); }
+			int GoalScore() { mixin(MGPC!(int, 496)()); }
+			int RemainingMinute() { mixin(MGPC!(int, 492)()); }
+			int ElapsedTime() { mixin(MGPC!(int, 488)()); }
+			int RemainingTime() { mixin(MGPC!(int, 484)()); }
 		}
-		bool bMatchHasBegun() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x2) != 0; }
-		bool bMatchHasBegun(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x2; } return val; }
-		bool r_bFriendlyFire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x8) != 0; }
-		bool r_bFriendlyFire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x8; } return val; }
-		bool bMatchIsOver() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x4) != 0; }
-		bool bMatchIsOver(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x4; } return val; }
-		bool bStopCountDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-		bool bStopCountDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+		bool bMatchHasBegun() { mixin(MGBPC!(480, 0x2)()); }
+		bool bMatchHasBegun(bool val) { mixin(MSBPC!(480, 0x2)()); }
+		bool r_bFriendlyFire() { mixin(MGBPC!(480, 0x8)()); }
+		bool r_bFriendlyFire(bool val) { mixin(MSBPC!(480, 0x8)()); }
+		bool bMatchIsOver() { mixin(MGBPC!(480, 0x4)()); }
+		bool bMatchIsOver(bool val) { mixin(MSBPC!(480, 0x4)()); }
+		bool bStopCountDown() { mixin(MGBPC!(480, 0x1)()); }
+		bool bStopCountDown(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
 final:
 	bool ShouldShowGore()

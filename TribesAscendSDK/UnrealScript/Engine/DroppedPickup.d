@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DroppedPickup;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.Inventory;
 import UnrealScript.Engine.Pawn;
@@ -10,9 +11,9 @@ extern(C++) interface DroppedPickup : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DroppedPickup")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DroppedPickup")()); }
 	private static __gshared DroppedPickup mDefaultProperties;
-	@property final static DroppedPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DroppedPickup)("DroppedPickup Engine.Default__DroppedPickup")); }
+	@property final static DroppedPickup DefaultProperties() { mixin(MGDPC!(DroppedPickup, "DroppedPickup Engine.Default__DroppedPickup")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,31 +34,41 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddToNavigation() { return mAddToNavigation ? mAddToNavigation : (mAddToNavigation = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.AddToNavigation")); }
-			ScriptFunction RemoveFromNavigation() { return mRemoveFromNavigation ? mRemoveFromNavigation : (mRemoveFromNavigation = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.RemoveFromNavigation")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.Destroyed")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.ReplicatedEvent")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.Reset")); }
-			ScriptFunction SetPickupMesh() { return mSetPickupMesh ? mSetPickupMesh : (mSetPickupMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.SetPickupMesh")); }
-			ScriptFunction SetPickupParticles() { return mSetPickupParticles ? mSetPickupParticles : (mSetPickupParticles = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.SetPickupParticles")); }
-			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.EncroachedBy")); }
-			ScriptFunction DetourWeight() { return mDetourWeight ? mDetourWeight : (mDetourWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.DetourWeight")); }
-			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.Landed")); }
-			ScriptFunction GiveTo() { return mGiveTo ? mGiveTo : (mGiveTo = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.GiveTo")); }
-			ScriptFunction PickedUpBy() { return mPickedUpBy ? mPickedUpBy : (mPickedUpBy = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.PickedUpBy")); }
-			ScriptFunction RecheckValidTouch() { return mRecheckValidTouch ? mRecheckValidTouch : (mRecheckValidTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.DroppedPickup.RecheckValidTouch")); }
+			ScriptFunction AddToNavigation() { mixin(MGF!("mAddToNavigation", "Function Engine.DroppedPickup.AddToNavigation")()); }
+			ScriptFunction RemoveFromNavigation() { mixin(MGF!("mRemoveFromNavigation", "Function Engine.DroppedPickup.RemoveFromNavigation")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.DroppedPickup.Destroyed")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.DroppedPickup.ReplicatedEvent")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.DroppedPickup.Reset")()); }
+			ScriptFunction SetPickupMesh() { mixin(MGF!("mSetPickupMesh", "Function Engine.DroppedPickup.SetPickupMesh")()); }
+			ScriptFunction SetPickupParticles() { mixin(MGF!("mSetPickupParticles", "Function Engine.DroppedPickup.SetPickupParticles")()); }
+			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.DroppedPickup.EncroachedBy")()); }
+			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function Engine.DroppedPickup.DetourWeight")()); }
+			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function Engine.DroppedPickup.Landed")()); }
+			ScriptFunction GiveTo() { mixin(MGF!("mGiveTo", "Function Engine.DroppedPickup.GiveTo")()); }
+			ScriptFunction PickedUpBy() { mixin(MGF!("mPickedUpBy", "Function Engine.DroppedPickup.PickedUpBy")()); }
+			ScriptFunction RecheckValidTouch() { mixin(MGF!("mRecheckValidTouch", "Function Engine.DroppedPickup.RecheckValidTouch")()); }
 		}
+	}
+	static struct Pickup
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.DroppedPickup.Pickup")()); }
+	}
+	static struct FadeOut
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.DroppedPickup.FadeOut")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			NavigationPoint PickupCache() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 484); }
-			ScriptClass InventoryClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 480); }
+			NavigationPoint PickupCache() { mixin(MGPC!(NavigationPoint, 484)()); }
+			ScriptClass InventoryClass() { mixin(MGPC!(ScriptClass, 480)()); }
 			// WARNING: Property 'Inventory' has the same name as a defined type!
 		}
-		bool bFadeOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-		bool bFadeOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
+		bool bFadeOut() { mixin(MGBPC!(488, 0x1)()); }
+		bool bFadeOut(bool val) { mixin(MSBPC!(488, 0x1)()); }
 	}
 final:
 	void AddToNavigation()

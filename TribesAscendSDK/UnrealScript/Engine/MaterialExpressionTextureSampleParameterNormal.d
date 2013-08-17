@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MaterialExpressionTextureSampleParameterNormal;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpressionTextureSampleParameter;
 
@@ -8,8 +9,8 @@ extern(C++) interface MaterialExpressionTextureSampleParameterNormal : MaterialE
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTextureSampleParameterNormal")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTextureSampleParameterNormal")()); }
 	private static __gshared MaterialExpressionTextureSampleParameterNormal mDefaultProperties;
-	@property final static MaterialExpressionTextureSampleParameterNormal DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTextureSampleParameterNormal)("MaterialExpressionTextureSampleParameterNormal Engine.Default__MaterialExpressionTextureSampleParameterNormal")); }
-	@property final auto ref UObject.Pointer InstanceOverride() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 164); }
+	@property final static MaterialExpressionTextureSampleParameterNormal DefaultProperties() { mixin(MGDPC!(MaterialExpressionTextureSampleParameterNormal, "MaterialExpressionTextureSampleParameterNormal Engine.Default__MaterialExpressionTextureSampleParameterNormal")()); }
+	@property final auto ref UObject.Pointer InstanceOverride() { mixin(MGPC!(UObject.Pointer, 164)()); }
 }

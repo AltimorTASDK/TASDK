@@ -1,6 +1,7 @@
 module UnrealScript.Engine.K2NodeBase;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.K2Output;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.K2Input;
@@ -9,14 +10,14 @@ extern(C++) interface K2NodeBase : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.K2NodeBase")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.K2NodeBase")()); }
 	private static __gshared K2NodeBase mDefaultProperties;
-	@property final static K2NodeBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(K2NodeBase)("K2NodeBase Engine.Default__K2NodeBase")); }
+	@property final static K2NodeBase DefaultProperties() { mixin(MGDPC!(K2NodeBase, "K2NodeBase Engine.Default__K2NodeBase")()); }
 	@property final auto ref
 	{
-		ScriptArray!(K2Input) Inputs() { return *cast(ScriptArray!(K2Input)*)(cast(size_t)cast(void*)this + 60); }
-		ScriptArray!(K2Output) Outputs() { return *cast(ScriptArray!(K2Output)*)(cast(size_t)cast(void*)this + 72); }
-		int NodePosY() { return *cast(int*)(cast(size_t)cast(void*)this + 88); }
-		int NodePosX() { return *cast(int*)(cast(size_t)cast(void*)this + 84); }
+		ScriptArray!(K2Input) Inputs() { mixin(MGPC!(ScriptArray!(K2Input), 60)()); }
+		ScriptArray!(K2Output) Outputs() { mixin(MGPC!(ScriptArray!(K2Output), 72)()); }
+		int NodePosY() { mixin(MGPC!(int, 88)()); }
+		int NodePosX() { mixin(MGPC!(int, 84)()); }
 	}
 }

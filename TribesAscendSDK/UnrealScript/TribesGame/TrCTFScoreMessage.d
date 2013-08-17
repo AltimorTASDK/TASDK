@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCTFScoreMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -11,9 +12,9 @@ extern(C++) interface TrCTFScoreMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCTFScoreMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCTFScoreMessage")()); }
 	private static __gshared TrCTFScoreMessage mDefaultProperties;
-	@property final static TrCTFScoreMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCTFScoreMessage)("TrCTFScoreMessage TribesGame.Default__TrCTFScoreMessage")); }
+	@property final static TrCTFScoreMessage DefaultProperties() { mixin(MGDPC!(TrCTFScoreMessage, "TrCTFScoreMessage TribesGame.Default__TrCTFScoreMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,11 +27,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFScoreMessage.AnnouncementLevel")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFScoreMessage.ClientReceive")); }
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFScoreMessage.AnnouncementSound")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFScoreMessage.GetString")); }
-			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFScoreMessage.GetColor")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function TribesGame.TrCTFScoreMessage.AnnouncementLevel")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrCTFScoreMessage.ClientReceive")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function TribesGame.TrCTFScoreMessage.AnnouncementSound")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrCTFScoreMessage.GetString")()); }
+			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function TribesGame.TrCTFScoreMessage.GetColor")()); }
 		}
 	}
 	static struct Constants
@@ -541,21 +542,21 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString TeamHigherScore() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 288); }
-		ScriptString PlayerHattrick() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 276); }
-		ScriptString Team1JustGotAhead() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 264); }
-		ScriptString Team0JustGotAhead() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 252); }
-		ScriptString Team1LeadingBy2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 240); }
-		ScriptString Team0LeadingBy2() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 228); }
-		ScriptString Team1Scored() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 216); }
-		ScriptString Team0Scored() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
-		ScriptString ScoreNone() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 192); }
-		ScriptString PreScoreNone() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 180); }
-		ScriptString ScoreBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-		ScriptString PreScoreBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-		ScriptString ScoreRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-		ScriptString PreScoreRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-		SoundNodeWave TeamScoreSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString TeamHigherScore() { mixin(MGPC!(ScriptString, 288)()); }
+		ScriptString PlayerHattrick() { mixin(MGPC!(ScriptString, 276)()); }
+		ScriptString Team1JustGotAhead() { mixin(MGPC!(ScriptString, 264)()); }
+		ScriptString Team0JustGotAhead() { mixin(MGPC!(ScriptString, 252)()); }
+		ScriptString Team1LeadingBy2() { mixin(MGPC!(ScriptString, 240)()); }
+		ScriptString Team0LeadingBy2() { mixin(MGPC!(ScriptString, 228)()); }
+		ScriptString Team1Scored() { mixin(MGPC!(ScriptString, 216)()); }
+		ScriptString Team0Scored() { mixin(MGPC!(ScriptString, 204)()); }
+		ScriptString ScoreNone() { mixin(MGPC!(ScriptString, 192)()); }
+		ScriptString PreScoreNone() { mixin(MGPC!(ScriptString, 180)()); }
+		ScriptString ScoreBlue() { mixin(MGPC!(ScriptString, 168)()); }
+		ScriptString PreScoreBlue() { mixin(MGPC!(ScriptString, 156)()); }
+		ScriptString ScoreRed() { mixin(MGPC!(ScriptString, 144)()); }
+		ScriptString PreScoreRed() { mixin(MGPC!(ScriptString, 132)()); }
+		SoundNodeWave TeamScoreSounds() { mixin(MGPC!(SoundNodeWave, 100)()); }
 	}
 final:
 	static ubyte AnnouncementLevel(ubyte MessageIndex)

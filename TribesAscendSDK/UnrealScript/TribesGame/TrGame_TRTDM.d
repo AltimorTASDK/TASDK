@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGame_TRTDM;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.TribesGame.TrGame;
@@ -9,9 +10,9 @@ extern(C++) interface TrGame_TRTDM : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TRTDM")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TRTDM")()); }
 	private static __gshared TrGame_TRTDM mDefaultProperties;
-	@property final static TrGame_TRTDM DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TRTDM)("TrGame_TRTDM TribesGame.Default__TrGame_TRTDM")); }
+	@property final static TrGame_TRTDM DefaultProperties() { mixin(MGDPC!(TrGame_TRTDM, "TrGame_TRTDM TribesGame.Default__TrGame_TRTDM")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ScoreKill() { return mScoreKill ? mScoreKill : (mScoreKill = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRTDM.ScoreKill")); }
-			ScriptFunction CheckScore() { return mCheckScore ? mCheckScore : (mCheckScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRTDM.CheckScore")); }
+			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function TribesGame.TrGame_TRTDM.ScoreKill")()); }
+			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TRTDM.CheckScore")()); }
 		}
 	}
 final:

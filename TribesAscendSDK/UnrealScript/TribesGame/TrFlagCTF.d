@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrFlagCTF;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.TribesGame.TrFlagBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrFlagCTF : TrFlagBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFlagCTF")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFlagCTF")()); }
 	private static __gshared TrFlagCTF mDefaultProperties;
-	@property final static TrFlagCTF DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFlagCTF)("TrFlagCTF TribesGame.Default__TrFlagCTF")); }
+	@property final static TrFlagCTF DefaultProperties() { mixin(MGDPC!(TrFlagCTF, "TrFlagCTF TribesGame.Default__TrFlagCTF")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,23 +29,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction LogTaken() { return mLogTaken ? mLogTaken : (mLogTaken = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.LogTaken")); }
-			ScriptFunction LogDropped() { return mLogDropped ? mLogDropped : (mLogDropped = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.LogDropped")); }
-			ScriptFunction ClearHolder() { return mClearHolder ? mClearHolder : (mClearHolder = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.ClearHolder")); }
-			ScriptFunction SendHome() { return mSendHome ? mSendHome : (mSendHome = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.SendHome")); }
-			ScriptFunction RemindPlayerAboutFlagTimer() { return mRemindPlayerAboutFlagTimer ? mRemindPlayerAboutFlagTimer : (mRemindPlayerAboutFlagTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.RemindPlayerAboutFlagTimer")); }
-			ScriptFunction BroadcastTakenFromBaseMessage() { return mBroadcastTakenFromBaseMessage ? mBroadcastTakenFromBaseMessage : (mBroadcastTakenFromBaseMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.BroadcastTakenFromBaseMessage")); }
-			ScriptFunction BroadcastTakenDroppedMessage() { return mBroadcastTakenDroppedMessage ? mBroadcastTakenDroppedMessage : (mBroadcastTakenDroppedMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.BroadcastTakenDroppedMessage")); }
-			ScriptFunction BroadcastCapturedMessage() { return mBroadcastCapturedMessage ? mBroadcastCapturedMessage : (mBroadcastCapturedMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.BroadcastCapturedMessage")); }
-			ScriptFunction BroadcastReturnedMessage() { return mBroadcastReturnedMessage ? mBroadcastReturnedMessage : (mBroadcastReturnedMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.BroadcastReturnedMessage")); }
-			ScriptFunction BroadcastDroppedMessage() { return mBroadcastDroppedMessage ? mBroadcastDroppedMessage : (mBroadcastDroppedMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagCTF.BroadcastDroppedMessage")); }
+			ScriptFunction LogTaken() { mixin(MGF!("mLogTaken", "Function TribesGame.TrFlagCTF.LogTaken")()); }
+			ScriptFunction LogDropped() { mixin(MGF!("mLogDropped", "Function TribesGame.TrFlagCTF.LogDropped")()); }
+			ScriptFunction ClearHolder() { mixin(MGF!("mClearHolder", "Function TribesGame.TrFlagCTF.ClearHolder")()); }
+			ScriptFunction SendHome() { mixin(MGF!("mSendHome", "Function TribesGame.TrFlagCTF.SendHome")()); }
+			ScriptFunction RemindPlayerAboutFlagTimer() { mixin(MGF!("mRemindPlayerAboutFlagTimer", "Function TribesGame.TrFlagCTF.RemindPlayerAboutFlagTimer")()); }
+			ScriptFunction BroadcastTakenFromBaseMessage() { mixin(MGF!("mBroadcastTakenFromBaseMessage", "Function TribesGame.TrFlagCTF.BroadcastTakenFromBaseMessage")()); }
+			ScriptFunction BroadcastTakenDroppedMessage() { mixin(MGF!("mBroadcastTakenDroppedMessage", "Function TribesGame.TrFlagCTF.BroadcastTakenDroppedMessage")()); }
+			ScriptFunction BroadcastCapturedMessage() { mixin(MGF!("mBroadcastCapturedMessage", "Function TribesGame.TrFlagCTF.BroadcastCapturedMessage")()); }
+			ScriptFunction BroadcastReturnedMessage() { mixin(MGF!("mBroadcastReturnedMessage", "Function TribesGame.TrFlagCTF.BroadcastReturnedMessage")()); }
+			ScriptFunction BroadcastDroppedMessage() { mixin(MGF!("mBroadcastDroppedMessage", "Function TribesGame.TrFlagCTF.BroadcastDroppedMessage")()); }
 		}
+	}
+	static struct Home
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrFlagCTF.Home")()); }
+	}
+	static struct Dropped
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrFlagCTF.Dropped")()); }
 	}
 	@property final auto ref
 	{
-		float m_YouHaveTheFlagReminderTime() { return *cast(float*)(cast(size_t)cast(void*)this + 940); }
-		int m_ReturnedTimeLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 936); }
-		int m_LastReturnedTime() { return *cast(int*)(cast(size_t)cast(void*)this + 932); }
+		float m_YouHaveTheFlagReminderTime() { mixin(MGPC!(float, 940)()); }
+		int m_ReturnedTimeLimit() { mixin(MGPC!(int, 936)()); }
+		int m_LastReturnedTime() { mixin(MGPC!(int, 932)()); }
 	}
 final:
 	void LogTaken(Controller EventInstigator)

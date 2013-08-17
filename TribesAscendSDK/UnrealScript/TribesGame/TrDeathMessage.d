@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeathMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -10,9 +11,9 @@ extern(C++) interface TrDeathMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeathMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeathMessage")()); }
 	private static __gshared TrDeathMessage mDefaultProperties;
-	@property final static TrDeathMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeathMessage)("TrDeathMessage TribesGame.Default__TrDeathMessage")); }
+	@property final static TrDeathMessage DefaultProperties() { mixin(MGDPC!(TrDeathMessage, "TrDeathMessage TribesGame.Default__TrDeathMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,20 +24,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetConsoleColor() { return mGetConsoleColor ? mGetConsoleColor : (mGetConsoleColor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeathMessage.GetConsoleColor")); }
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeathMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeathMessage.ClientReceive")); }
+			ScriptFunction GetConsoleColor() { mixin(MGF!("mGetConsoleColor", "Function TribesGame.TrDeathMessage.GetConsoleColor")()); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrDeathMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrDeathMessage.ClientReceive")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString SomeoneString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-			ScriptString KilledString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+			ScriptString SomeoneString() { mixin(MGPC!(ScriptString, 112)()); }
+			ScriptString KilledString() { mixin(MGPC!(ScriptString, 100)()); }
 		}
-		bool bNoConsoleDeathMessages() { return (*cast(uint*)(cast(size_t)cast(void*)this + 124) & 0x1) != 0; }
-		bool bNoConsoleDeathMessages(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 124) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 124) &= ~0x1; } return val; }
+		bool bNoConsoleDeathMessages() { mixin(MGBPC!(124, 0x1)()); }
+		bool bNoConsoleDeathMessages(bool val) { mixin(MSBPC!(124, 0x1)()); }
 	}
 final:
 	static UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)

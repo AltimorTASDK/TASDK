@@ -1,25 +1,26 @@
 module UnrealScript.UDKBase.UDKSkelControl_HoverboardSuspension;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface UDKSkelControl_HoverboardSuspension : SkelControlSingleBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_HoverboardSuspension")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKSkelControl_HoverboardSuspension")()); }
 	private static __gshared UDKSkelControl_HoverboardSuspension mDefaultProperties;
-	@property final static UDKSkelControl_HoverboardSuspension DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_HoverboardSuspension)("UDKSkelControl_HoverboardSuspension UDKBase.Default__UDKSkelControl_HoverboardSuspension")); }
+	@property final static UDKSkelControl_HoverboardSuspension DefaultProperties() { mixin(MGDPC!(UDKSkelControl_HoverboardSuspension, "UDKSkelControl_HoverboardSuspension UDKBase.Default__UDKSkelControl_HoverboardSuspension")()); }
 	@property final auto ref
 	{
-		float CurrentRot() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
-		float MaxRotRate() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-		float MaxRot() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-		float RotScale() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-		float MinTrans() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-		float MaxTrans() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-		float TransOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-		float TransScale() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
-		float TransIgnore() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
+		float CurrentRot() { mixin(MGPC!(float, 268)()); }
+		float MaxRotRate() { mixin(MGPC!(float, 264)()); }
+		float MaxRot() { mixin(MGPC!(float, 260)()); }
+		float RotScale() { mixin(MGPC!(float, 256)()); }
+		float MinTrans() { mixin(MGPC!(float, 252)()); }
+		float MaxTrans() { mixin(MGPC!(float, 248)()); }
+		float TransOffset() { mixin(MGPC!(float, 244)()); }
+		float TransScale() { mixin(MGPC!(float, 240)()); }
+		float TransIgnore() { mixin(MGPC!(float, 236)()); }
 	}
 }

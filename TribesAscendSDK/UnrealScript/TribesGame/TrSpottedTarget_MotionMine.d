@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrSpottedTarget_MotionMine;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrSpottedTarget;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
@@ -9,9 +10,9 @@ extern(C++) interface TrSpottedTarget_MotionMine : TrSpottedTarget
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSpottedTarget_MotionMine")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSpottedTarget_MotionMine")()); }
 	private static __gshared TrSpottedTarget_MotionMine mDefaultProperties;
-	@property final static TrSpottedTarget_MotionMine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSpottedTarget_MotionMine)("TrSpottedTarget_MotionMine TribesGame.Default__TrSpottedTarget_MotionMine")); }
+	@property final static TrSpottedTarget_MotionMine DefaultProperties() { mixin(MGDPC!(TrSpottedTarget_MotionMine, "TrSpottedTarget_MotionMine TribesGame.Default__TrSpottedTarget_MotionMine")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSpottedTarget_MotionMine.Tick")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSpottedTarget_MotionMine.GetMarker")); }
-			ScriptFunction GetMarkerColor() { return mGetMarkerColor ? mGetMarkerColor : (mGetMarkerColor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSpottedTarget_MotionMine.GetMarkerColor")); }
-			ScriptFunction ShouldRenderMarker() { return mShouldRenderMarker ? mShouldRenderMarker : (mShouldRenderMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSpottedTarget_MotionMine.ShouldRenderMarker")); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrSpottedTarget_MotionMine.Tick")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrSpottedTarget_MotionMine.GetMarker")()); }
+			ScriptFunction GetMarkerColor() { mixin(MGF!("mGetMarkerColor", "Function TribesGame.TrSpottedTarget_MotionMine.GetMarkerColor")()); }
+			ScriptFunction ShouldRenderMarker() { mixin(MGF!("mShouldRenderMarker", "Function TribesGame.TrSpottedTarget_MotionMine.ShouldRenderMarker")()); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fMarkerBlinkSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 516); }
-		float m_fCurrentMarkerTime() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
+		float m_fMarkerBlinkSpeed() { mixin(MGPC!(float, 516)()); }
+		float m_fCurrentMarkerTime() { mixin(MGPC!(float, 512)()); }
 	}
 final:
 	void Tick(float DeltaTime)

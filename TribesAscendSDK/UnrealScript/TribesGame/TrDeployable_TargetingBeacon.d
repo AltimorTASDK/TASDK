@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrDeployable_TargetingBeacon;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Canvas;
 import UnrealScript.Engine.PlayerController;
 import UnrealScript.Engine.Texture2D;
@@ -10,9 +11,9 @@ extern(C++) interface TrDeployable_TargetingBeacon : TrDeployable_RadarSensor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_TargetingBeacon")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_TargetingBeacon")()); }
 	private static __gshared TrDeployable_TargetingBeacon mDefaultProperties;
-	@property final static TrDeployable_TargetingBeacon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_TargetingBeacon)("TrDeployable_TargetingBeacon TribesGame.Default__TrDeployable_TargetingBeacon")); }
+	@property final static TrDeployable_TargetingBeacon DefaultProperties() { mixin(MGDPC!(TrDeployable_TargetingBeacon, "TrDeployable_TargetingBeacon TribesGame.Default__TrDeployable_TargetingBeacon")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,9 +24,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TargetingBeacon.PostRenderFor")); }
-			ScriptFunction RenderForTeammate() { return mRenderForTeammate ? mRenderForTeammate : (mRenderForTeammate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TargetingBeacon.RenderForTeammate")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_TargetingBeacon.GetMarker")); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrDeployable_TargetingBeacon.PostRenderFor")()); }
+			ScriptFunction RenderForTeammate() { mixin(MGF!("mRenderForTeammate", "Function TribesGame.TrDeployable_TargetingBeacon.RenderForTeammate")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDeployable_TargetingBeacon.GetMarker")()); }
 		}
 	}
 final:

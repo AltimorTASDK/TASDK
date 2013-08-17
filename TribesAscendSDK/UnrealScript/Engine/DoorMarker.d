@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DoorMarker;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
@@ -10,9 +11,9 @@ extern(C++) interface DoorMarker : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DoorMarker")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DoorMarker")()); }
 	private static __gshared DoorMarker mDefaultProperties;
-	@property final static DoorMarker DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DoorMarker)("DoorMarker Engine.Default__DoorMarker")); }
+	@property final static DoorMarker DefaultProperties() { mixin(MGDPC!(DoorMarker, "DoorMarker Engine.Default__DoorMarker")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,12 +27,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.PostBeginPlay")); }
-			ScriptFunction MoverOpened() { return mMoverOpened ? mMoverOpened : (mMoverOpened = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.MoverOpened")); }
-			ScriptFunction MoverClosed() { return mMoverClosed ? mMoverClosed : (mMoverClosed = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.MoverClosed")); }
-			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.SpecialHandling")); }
-			ScriptFunction ProceedWithMove() { return mProceedWithMove ? mProceedWithMove : (mProceedWithMove = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.ProceedWithMove")); }
-			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.SuggestMovePreparation")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.DoorMarker.PostBeginPlay")()); }
+			ScriptFunction MoverOpened() { mixin(MGF!("mMoverOpened", "Function Engine.DoorMarker.MoverOpened")()); }
+			ScriptFunction MoverClosed() { mixin(MGF!("mMoverClosed", "Function Engine.DoorMarker.MoverClosed")()); }
+			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.DoorMarker.SpecialHandling")()); }
+			ScriptFunction ProceedWithMove() { mixin(MGF!("mProceedWithMove", "Function Engine.DoorMarker.ProceedWithMove")()); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.DoorMarker.SuggestMovePreparation")()); }
 		}
 	}
 	enum EDoorType : ubyte
@@ -44,20 +45,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor DoorTrigger() { return *cast(Actor*)(cast(size_t)cast(void*)this + 700); }
-			DoorMarker.EDoorType DoorType() { return *cast(DoorMarker.EDoorType*)(cast(size_t)cast(void*)this + 696); }
-			InterpActor MyDoor() { return *cast(InterpActor*)(cast(size_t)cast(void*)this + 692); }
+			Actor DoorTrigger() { mixin(MGPC!(Actor, 700)()); }
+			DoorMarker.EDoorType DoorType() { mixin(MGPC!(DoorMarker.EDoorType, 696)()); }
+			InterpActor MyDoor() { mixin(MGPC!(InterpActor, 692)()); }
 		}
-		bool bTempDisabledCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 704) & 0x10) != 0; }
-		bool bTempDisabledCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 704) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 704) &= ~0x10; } return val; }
-		bool bDoorOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 704) & 0x8) != 0; }
-		bool bDoorOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 704) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 704) &= ~0x8; } return val; }
-		bool bBlockedWhenClosed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 704) & 0x4) != 0; }
-		bool bBlockedWhenClosed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 704) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 704) &= ~0x4; } return val; }
-		bool bInitiallyClosed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 704) & 0x2) != 0; }
-		bool bInitiallyClosed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 704) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 704) &= ~0x2; } return val; }
-		bool bWaitUntilCompletelyOpened() { return (*cast(uint*)(cast(size_t)cast(void*)this + 704) & 0x1) != 0; }
-		bool bWaitUntilCompletelyOpened(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 704) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 704) &= ~0x1; } return val; }
+		bool bTempDisabledCollision() { mixin(MGBPC!(704, 0x10)()); }
+		bool bTempDisabledCollision(bool val) { mixin(MSBPC!(704, 0x10)()); }
+		bool bDoorOpen() { mixin(MGBPC!(704, 0x8)()); }
+		bool bDoorOpen(bool val) { mixin(MSBPC!(704, 0x8)()); }
+		bool bBlockedWhenClosed() { mixin(MGBPC!(704, 0x4)()); }
+		bool bBlockedWhenClosed(bool val) { mixin(MSBPC!(704, 0x4)()); }
+		bool bInitiallyClosed() { mixin(MGBPC!(704, 0x2)()); }
+		bool bInitiallyClosed(bool val) { mixin(MSBPC!(704, 0x2)()); }
+		bool bWaitUntilCompletelyOpened() { mixin(MGBPC!(704, 0x1)()); }
+		bool bWaitUntilCompletelyOpened(bool val) { mixin(MSBPC!(704, 0x1)()); }
 	}
 final:
 	void PostBeginPlay()

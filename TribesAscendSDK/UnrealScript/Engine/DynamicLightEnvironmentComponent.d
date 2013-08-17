@@ -1,6 +1,7 @@
 module UnrealScript.Engine.DynamicLightEnvironmentComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LightEnvironmentComponent;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.LightComponent;
@@ -9,13 +10,13 @@ extern(C++) interface DynamicLightEnvironmentComponent : LightEnvironmentCompone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicLightEnvironmentComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DynamicLightEnvironmentComponent")()); }
 	private static __gshared DynamicLightEnvironmentComponent mDefaultProperties;
-	@property final static DynamicLightEnvironmentComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicLightEnvironmentComponent)("DynamicLightEnvironmentComponent Engine.Default__DynamicLightEnvironmentComponent")); }
+	@property final static DynamicLightEnvironmentComponent DefaultProperties() { mixin(MGDPC!(DynamicLightEnvironmentComponent, "DynamicLightEnvironmentComponent Engine.Default__DynamicLightEnvironmentComponent")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mResetEnvironment;
-		public @property static final ScriptFunction ResetEnvironment() { return mResetEnvironment ? mResetEnvironment : (mResetEnvironment = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicLightEnvironmentComponent.ResetEnvironment")); }
+		public @property static final ScriptFunction ResetEnvironment() { mixin(MGF!("mResetEnvironment", "Function Engine.DynamicLightEnvironmentComponent.ResetEnvironment")()); }
 	}
 	enum EDynamicLightEnvironmentBoundsMethod : ubyte
 	{
@@ -30,65 +31,65 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) OverriddenLightComponents() { return *cast(ScriptArray!(
+void*) OverriddenLightComponents() { mixin(MGPC!(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)*)(cast(size_t)cast(void*)this + 284); }
-			LightComponent.LightingChannelContainer OverriddenLightingChannels() { return *cast(LightComponent.LightingChannelContainer*)(cast(size_t)cast(void*)this + 280); }
-			UObject.BoxSphereBounds OverriddenBounds() { return *cast(UObject.BoxSphereBounds*)(cast(size_t)cast(void*)this + 252); }
-			float MinShadowAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-			float BouncedLightingFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-			DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod BoundsMethod() { return *cast(DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod*)(cast(size_t)cast(void*)this + 242); }
+void*), 284)()); }
+			LightComponent.LightingChannelContainer OverriddenLightingChannels() { mixin(MGPC!(LightComponent.LightingChannelContainer, 280)()); }
+			UObject.BoxSphereBounds OverriddenBounds() { mixin(MGPC!(UObject.BoxSphereBounds, 252)()); }
+			float MinShadowAngle() { mixin(MGPC!(float, 248)()); }
+			float BouncedLightingFactor() { mixin(MGPC!(float, 244)()); }
+			DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod BoundsMethod() { mixin(MGPC!(DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod, 242)()); }
 			// WARNING: Property 'State' has the same name as a defined type!
-			LightComponent.ELightShadowMode LightShadowMode() { return *cast(LightComponent.ELightShadowMode*)(cast(size_t)cast(void*)this + 241); }
-			LightComponent.EShadowFilterQuality ShadowFilterQuality() { return *cast(LightComponent.EShadowFilterQuality*)(cast(size_t)cast(void*)this + 240); }
-			int ShadowFadeResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 236); }
-			int MaxShadowResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 232); }
-			int MinShadowResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 228); }
-			float DominantShadowTransitionEndDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 224); }
-			float DominantShadowTransitionStartDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 220); }
-			UObject.LinearColor MaxModulatedShadowColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 204); }
-			float ModShadowFadeoutExponent() { return *cast(float*)(cast(size_t)cast(void*)this + 200); }
-			float ModShadowFadeoutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 196); }
-			float ShadowDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 188); }
-			float LightDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 184); }
-			float LightDesaturation() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			UObject.LinearColor AmbientGlow() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 164); }
-			Vector AmbientShadowSourceDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 152); }
-			UObject.LinearColor AmbientShadowColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 136); }
-			float LightingBoundsScale() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-			int NumVolumeVisibilitySamples() { return *cast(int*)(cast(size_t)cast(void*)this + 128); }
-			float ShadowInterpolationSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-			float MinTimeBetweenFullUpdates() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-			float InvisibleUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
+			LightComponent.ELightShadowMode LightShadowMode() { mixin(MGPC!(LightComponent.ELightShadowMode, 241)()); }
+			LightComponent.EShadowFilterQuality ShadowFilterQuality() { mixin(MGPC!(LightComponent.EShadowFilterQuality, 240)()); }
+			int ShadowFadeResolution() { mixin(MGPC!(int, 236)()); }
+			int MaxShadowResolution() { mixin(MGPC!(int, 232)()); }
+			int MinShadowResolution() { mixin(MGPC!(int, 228)()); }
+			float DominantShadowTransitionEndDistance() { mixin(MGPC!(float, 224)()); }
+			float DominantShadowTransitionStartDistance() { mixin(MGPC!(float, 220)()); }
+			UObject.LinearColor MaxModulatedShadowColor() { mixin(MGPC!(UObject.LinearColor, 204)()); }
+			float ModShadowFadeoutExponent() { mixin(MGPC!(float, 200)()); }
+			float ModShadowFadeoutTime() { mixin(MGPC!(float, 196)()); }
+			float ShadowDistance() { mixin(MGPC!(float, 188)()); }
+			float LightDistance() { mixin(MGPC!(float, 184)()); }
+			float LightDesaturation() { mixin(MGPC!(float, 180)()); }
+			UObject.LinearColor AmbientGlow() { mixin(MGPC!(UObject.LinearColor, 164)()); }
+			Vector AmbientShadowSourceDirection() { mixin(MGPC!(Vector, 152)()); }
+			UObject.LinearColor AmbientShadowColor() { mixin(MGPC!(UObject.LinearColor, 136)()); }
+			float LightingBoundsScale() { mixin(MGPC!(float, 132)()); }
+			int NumVolumeVisibilitySamples() { mixin(MGPC!(int, 128)()); }
+			float ShadowInterpolationSpeed() { mixin(MGPC!(float, 124)()); }
+			float MinTimeBetweenFullUpdates() { mixin(MGPC!(float, 120)()); }
+			float InvisibleUpdateTime() { mixin(MGPC!(float, 116)()); }
 		}
-		bool bOverrideOwnerLightingChannels() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x2000) != 0; }
-		bool bOverrideOwnerLightingChannels(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x2000; } return val; }
-		bool bIsCharacterLightEnvironment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x1000) != 0; }
-		bool bIsCharacterLightEnvironment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x1000; } return val; }
-		bool bTraceFromClosestBoundsPoint() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x800) != 0; }
-		bool bTraceFromClosestBoundsPoint(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x800; } return val; }
-		bool bRequiresNonLatentUpdates() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x400) != 0; }
-		bool bRequiresNonLatentUpdates(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x400; } return val; }
-		bool bForceAllowLightEnvSphericalHarmonicLights() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x200) != 0; }
-		bool bForceAllowLightEnvSphericalHarmonicLights(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x200; } return val; }
-		bool bSynthesizeSHLight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x100) != 0; }
-		bool bSynthesizeSHLight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x100; } return val; }
-		bool bSynthesizeDirectionalLight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x80) != 0; }
-		bool bSynthesizeDirectionalLight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x80; } return val; }
-		bool bDynamic() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x40) != 0; }
-		bool bDynamic(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x40; } return val; }
-		bool bShadowFromEnvironment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x20) != 0; }
-		bool bShadowFromEnvironment(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x20; } return val; }
-		bool bUseBooleanEnvironmentShadowing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x10) != 0; }
-		bool bUseBooleanEnvironmentShadowing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x10; } return val; }
-		bool bAffectedBySmallDynamicLights() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x8) != 0; }
-		bool bAffectedBySmallDynamicLights(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x8; } return val; }
-		bool bForceCompositeAllLights() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x4) != 0; }
-		bool bForceCompositeAllLights(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x4; } return val; }
-		bool bCompositeShadowsFromDynamicLights() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x2) != 0; }
-		bool bCompositeShadowsFromDynamicLights(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x2; } return val; }
-		bool bCastShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 192) & 0x1) != 0; }
-		bool bCastShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 192) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 192) &= ~0x1; } return val; }
+		bool bOverrideOwnerLightingChannels() { mixin(MGBPC!(192, 0x2000)()); }
+		bool bOverrideOwnerLightingChannels(bool val) { mixin(MSBPC!(192, 0x2000)()); }
+		bool bIsCharacterLightEnvironment() { mixin(MGBPC!(192, 0x1000)()); }
+		bool bIsCharacterLightEnvironment(bool val) { mixin(MSBPC!(192, 0x1000)()); }
+		bool bTraceFromClosestBoundsPoint() { mixin(MGBPC!(192, 0x800)()); }
+		bool bTraceFromClosestBoundsPoint(bool val) { mixin(MSBPC!(192, 0x800)()); }
+		bool bRequiresNonLatentUpdates() { mixin(MGBPC!(192, 0x400)()); }
+		bool bRequiresNonLatentUpdates(bool val) { mixin(MSBPC!(192, 0x400)()); }
+		bool bForceAllowLightEnvSphericalHarmonicLights() { mixin(MGBPC!(192, 0x200)()); }
+		bool bForceAllowLightEnvSphericalHarmonicLights(bool val) { mixin(MSBPC!(192, 0x200)()); }
+		bool bSynthesizeSHLight() { mixin(MGBPC!(192, 0x100)()); }
+		bool bSynthesizeSHLight(bool val) { mixin(MSBPC!(192, 0x100)()); }
+		bool bSynthesizeDirectionalLight() { mixin(MGBPC!(192, 0x80)()); }
+		bool bSynthesizeDirectionalLight(bool val) { mixin(MSBPC!(192, 0x80)()); }
+		bool bDynamic() { mixin(MGBPC!(192, 0x40)()); }
+		bool bDynamic(bool val) { mixin(MSBPC!(192, 0x40)()); }
+		bool bShadowFromEnvironment() { mixin(MGBPC!(192, 0x20)()); }
+		bool bShadowFromEnvironment(bool val) { mixin(MSBPC!(192, 0x20)()); }
+		bool bUseBooleanEnvironmentShadowing() { mixin(MGBPC!(192, 0x10)()); }
+		bool bUseBooleanEnvironmentShadowing(bool val) { mixin(MSBPC!(192, 0x10)()); }
+		bool bAffectedBySmallDynamicLights() { mixin(MGBPC!(192, 0x8)()); }
+		bool bAffectedBySmallDynamicLights(bool val) { mixin(MSBPC!(192, 0x8)()); }
+		bool bForceCompositeAllLights() { mixin(MGBPC!(192, 0x4)()); }
+		bool bForceCompositeAllLights(bool val) { mixin(MSBPC!(192, 0x4)()); }
+		bool bCompositeShadowsFromDynamicLights() { mixin(MGBPC!(192, 0x2)()); }
+		bool bCompositeShadowsFromDynamicLights(bool val) { mixin(MSBPC!(192, 0x2)()); }
+		bool bCastShadows() { mixin(MGBPC!(192, 0x1)()); }
+		bool bCastShadows(bool val) { mixin(MSBPC!(192, 0x1)()); }
 	}
 	final void ResetEnvironment()
 	{

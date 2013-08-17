@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGameObjectiveUpgrade;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrGameObjective;
 
@@ -8,20 +9,20 @@ extern(C++) interface TrGameObjectiveUpgrade : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameObjectiveUpgrade")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameObjectiveUpgrade")()); }
 	private static __gshared TrGameObjectiveUpgrade mDefaultProperties;
-	@property final static TrGameObjectiveUpgrade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameObjectiveUpgrade)("TrGameObjectiveUpgrade TribesGame.Default__TrGameObjectiveUpgrade")); }
+	@property final static TrGameObjectiveUpgrade DefaultProperties() { mixin(MGDPC!(TrGameObjectiveUpgrade, "TrGameObjectiveUpgrade TribesGame.Default__TrGameObjectiveUpgrade")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitUpgrade;
-		public @property static final ScriptFunction InitUpgrade() { return mInitUpgrade ? mInitUpgrade : (mInitUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjectiveUpgrade.InitUpgrade")); }
+		public @property static final ScriptFunction InitUpgrade() { mixin(MGF!("mInitUpgrade", "Function TribesGame.TrGameObjectiveUpgrade.InitUpgrade")()); }
 	}
 	@property final auto ref
 	{
-		float m_fNewValue() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
-		ScriptName m_nmClassPropertyName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
-		TrGameObjective m_Owner() { return *cast(TrGameObjective*)(cast(size_t)cast(void*)this + 76); }
-		UObject.Pointer m_ClassPropertyPointer() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 72); }
+		float m_fNewValue() { mixin(MGPC!(float, 68)()); }
+		ScriptName m_nmClassPropertyName() { mixin(MGPC!(ScriptName, 60)()); }
+		TrGameObjective m_Owner() { mixin(MGPC!(TrGameObjective, 76)()); }
+		UObject.Pointer m_ClassPropertyPointer() { mixin(MGPC!(UObject.Pointer, 72)()); }
 	}
 	final void InitUpgrade(TrGameObjective OwnerObject)
 	{

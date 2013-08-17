@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrConduitVolume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrPhysicsVolume;
 import UnrealScript.Engine.Pawn;
 
@@ -8,9 +9,9 @@ extern(C++) interface TrConduitVolume : TrPhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrConduitVolume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrConduitVolume")()); }
 	private static __gshared TrConduitVolume mDefaultProperties;
-	@property final static TrConduitVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrConduitVolume)("TrConduitVolume TribesGame.Default__TrConduitVolume")); }
+	@property final static TrConduitVolume DefaultProperties() { mixin(MGDPC!(TrConduitVolume, "TrConduitVolume TribesGame.Default__TrConduitVolume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PawnEnteredVolume() { return mPawnEnteredVolume ? mPawnEnteredVolume : (mPawnEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConduitVolume.PawnEnteredVolume")); }
-			ScriptFunction PawnLeavingVolume() { return mPawnLeavingVolume ? mPawnLeavingVolume : (mPawnLeavingVolume = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConduitVolume.PawnLeavingVolume")); }
+			ScriptFunction PawnEnteredVolume() { mixin(MGF!("mPawnEnteredVolume", "Function TribesGame.TrConduitVolume.PawnEnteredVolume")()); }
+			ScriptFunction PawnLeavingVolume() { mixin(MGF!("mPawnLeavingVolume", "Function TribesGame.TrConduitVolume.PawnLeavingVolume")()); }
 		}
 	}
 final:

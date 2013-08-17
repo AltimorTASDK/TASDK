@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKPawn;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -25,9 +26,9 @@ extern(C++) interface UDKPawn : GamePawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPawn")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKPawn")()); }
 	private static __gshared UDKPawn mDefaultProperties;
-	@property final static UDKPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKPawn)("UDKPawn UDKBase.Default__UDKPawn")); }
+	@property final static UDKPawn DefaultProperties() { mixin(MGDPC!(UDKPawn, "UDKPawn UDKBase.Default__UDKPawn")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -53,24 +54,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBoundingCylinder() { return mGetBoundingCylinder ? mGetBoundingCylinder : (mGetBoundingCylinder = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.GetBoundingCylinder")); }
-			ScriptFunction RestorePreRagdollCollisionComponent() { return mRestorePreRagdollCollisionComponent ? mRestorePreRagdollCollisionComponent : (mRestorePreRagdollCollisionComponent = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.RestorePreRagdollCollisionComponent")); }
-			ScriptFunction EnsureOverlayComponentLast() { return mEnsureOverlayComponentLast ? mEnsureOverlayComponentLast : (mEnsureOverlayComponentLast = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.EnsureOverlayComponentLast")); }
-			ScriptFunction GetTargetLocation() { return mGetTargetLocation ? mGetTargetLocation : (mGetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.GetTargetLocation")); }
-			ScriptFunction IsInvisible() { return mIsInvisible ? mIsInvisible : (mIsInvisible = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.IsInvisible")); }
-			ScriptFunction HoldGameObject() { return mHoldGameObject ? mHoldGameObject : (mHoldGameObject = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.HoldGameObject")); }
-			ScriptFunction StoppedFalling() { return mStoppedFalling ? mStoppedFalling : (mStoppedFalling = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StoppedFalling")); }
-			ScriptFunction EndCrouch() { return mEndCrouch ? mEndCrouch : (mEndCrouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.EndCrouch")); }
-			ScriptFunction StartCrouch() { return mStartCrouch ? mStartCrouch : (mStartCrouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StartCrouch")); }
-			ScriptFunction SuggestJumpVelocity() { return mSuggestJumpVelocity ? mSuggestJumpVelocity : (mSuggestJumpVelocity = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SuggestJumpVelocity")); }
-			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SetHUDLocation")); }
-			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.NativePostRenderFor")); }
-			ScriptFunction SetWeaponAttachmentVisibility() { return mSetWeaponAttachmentVisibility ? mSetWeaponAttachmentVisibility : (mSetWeaponAttachmentVisibility = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SetWeaponAttachmentVisibility")); }
-			ScriptFunction SetHandIKEnabled() { return mSetHandIKEnabled ? mSetHandIKEnabled : (mSetHandIKEnabled = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SetHandIKEnabled")); }
-			ScriptFunction StartFeignDeathRecoveryAnim() { return mStartFeignDeathRecoveryAnim ? mStartFeignDeathRecoveryAnim : (mStartFeignDeathRecoveryAnim = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StartFeignDeathRecoveryAnim")); }
-			ScriptFunction TakeHitBlendedOut() { return mTakeHitBlendedOut ? mTakeHitBlendedOut : (mTakeHitBlendedOut = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.TakeHitBlendedOut")); }
-			ScriptFunction UpdateEyeHeight() { return mUpdateEyeHeight ? mUpdateEyeHeight : (mUpdateEyeHeight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.UpdateEyeHeight")); }
-			ScriptFunction StuckFalling() { return mStuckFalling ? mStuckFalling : (mStuckFalling = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StuckFalling")); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function UDKBase.UDKPawn.GetBoundingCylinder")()); }
+			ScriptFunction RestorePreRagdollCollisionComponent() { mixin(MGF!("mRestorePreRagdollCollisionComponent", "Function UDKBase.UDKPawn.RestorePreRagdollCollisionComponent")()); }
+			ScriptFunction EnsureOverlayComponentLast() { mixin(MGF!("mEnsureOverlayComponentLast", "Function UDKBase.UDKPawn.EnsureOverlayComponentLast")()); }
+			ScriptFunction GetTargetLocation() { mixin(MGF!("mGetTargetLocation", "Function UDKBase.UDKPawn.GetTargetLocation")()); }
+			ScriptFunction IsInvisible() { mixin(MGF!("mIsInvisible", "Function UDKBase.UDKPawn.IsInvisible")()); }
+			ScriptFunction HoldGameObject() { mixin(MGF!("mHoldGameObject", "Function UDKBase.UDKPawn.HoldGameObject")()); }
+			ScriptFunction StoppedFalling() { mixin(MGF!("mStoppedFalling", "Function UDKBase.UDKPawn.StoppedFalling")()); }
+			ScriptFunction EndCrouch() { mixin(MGF!("mEndCrouch", "Function UDKBase.UDKPawn.EndCrouch")()); }
+			ScriptFunction StartCrouch() { mixin(MGF!("mStartCrouch", "Function UDKBase.UDKPawn.StartCrouch")()); }
+			ScriptFunction SuggestJumpVelocity() { mixin(MGF!("mSuggestJumpVelocity", "Function UDKBase.UDKPawn.SuggestJumpVelocity")()); }
+			ScriptFunction SetHUDLocation() { mixin(MGF!("mSetHUDLocation", "Function UDKBase.UDKPawn.SetHUDLocation")()); }
+			ScriptFunction NativePostRenderFor() { mixin(MGF!("mNativePostRenderFor", "Function UDKBase.UDKPawn.NativePostRenderFor")()); }
+			ScriptFunction SetWeaponAttachmentVisibility() { mixin(MGF!("mSetWeaponAttachmentVisibility", "Function UDKBase.UDKPawn.SetWeaponAttachmentVisibility")()); }
+			ScriptFunction SetHandIKEnabled() { mixin(MGF!("mSetHandIKEnabled", "Function UDKBase.UDKPawn.SetHandIKEnabled")()); }
+			ScriptFunction StartFeignDeathRecoveryAnim() { mixin(MGF!("mStartFeignDeathRecoveryAnim", "Function UDKBase.UDKPawn.StartFeignDeathRecoveryAnim")()); }
+			ScriptFunction TakeHitBlendedOut() { mixin(MGF!("mTakeHitBlendedOut", "Function UDKBase.UDKPawn.TakeHitBlendedOut")()); }
+			ScriptFunction UpdateEyeHeight() { mixin(MGF!("mUpdateEyeHeight", "Function UDKBase.UDKPawn.UpdateEyeHeight")()); }
+			ScriptFunction StuckFalling() { mixin(MGF!("mStuckFalling", "Function UDKBase.UDKPawn.StuckFalling")()); }
 		}
 	}
 	struct DrivenWeaponPawnInfo
@@ -78,12 +79,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.DrivenWeaponPawnInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.DrivenWeaponPawnInfo")()); }
 		@property final auto ref
 		{
-			PlayerReplicationInfo PRI() { return *cast(PlayerReplicationInfo*)(cast(size_t)&this + 8); }
-			ubyte SeatIndex() { return *cast(ubyte*)(cast(size_t)&this + 4); }
-			UDKVehicle BaseVehicle() { return *cast(UDKVehicle*)(cast(size_t)&this + 0); }
+			PlayerReplicationInfo PRI() { mixin(MGPS!(PlayerReplicationInfo, 8)()); }
+			ubyte SeatIndex() { mixin(MGPS!(ubyte, 4)()); }
+			UDKVehicle BaseVehicle() { mixin(MGPS!(UDKVehicle, 0)()); }
 		}
 	}
 	struct UTTakeHitInfo
@@ -91,19 +92,19 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.UTTakeHitInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.UTTakeHitInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName HitBone() { return *cast(ScriptName*)(cast(size_t)&this + 32); }
+				ScriptName HitBone() { mixin(MGPS!(ScriptName, 32)()); }
 				// WARNING: Property 'DamageType' has the same name as a defined type!
-				Vector Momentum() { return *cast(Vector*)(cast(size_t)&this + 16); }
-				Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 4); }
-				int Damage() { return *cast(int*)(cast(size_t)&this + 0); }
+				Vector Momentum() { mixin(MGPS!(Vector, 16)()); }
+				Vector HitLocation() { mixin(MGPS!(Vector, 4)()); }
+				int Damage() { mixin(MGPS!(int, 0)()); }
 			}
-			bool m_bDamagedSelf() { return (*cast(uint*)(cast(size_t)&this + 40) & 0x1) != 0; }
-			bool m_bDamagedSelf(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 40) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 40) &= ~0x1; } return val; }
+			bool m_bDamagedSelf() { mixin(MGBPS!(40, 0x1)()); }
+			bool m_bDamagedSelf(bool val) { mixin(MSBPS!(40, 0x1)()); }
 		}
 	}
 	struct PlayEmoteInfo
@@ -111,16 +112,16 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.PlayEmoteInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.PlayEmoteInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				int EmoteID() { return *cast(int*)(cast(size_t)&this + 8); }
-				ScriptName EmoteTag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				int EmoteID() { mixin(MGPS!(int, 8)()); }
+				ScriptName EmoteTag() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bNewData() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bNewData(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bNewData() { mixin(MGBPS!(12, 0x1)()); }
+			bool bNewData(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
 	}
 	struct MaterialImpactEffect
@@ -128,17 +129,17 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.MaterialImpactEffect")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.MaterialImpactEffect")()); }
 		@property final auto ref
 		{
-			ScriptArray!(MaterialInterface) DecalMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)&this + 12); }
-			ParticleSystem ParticleTemplate() { return *cast(ParticleSystem*)(cast(size_t)&this + 44); }
-			float DecalHeight() { return *cast(float*)(cast(size_t)&this + 40); }
-			float DecalWidth() { return *cast(float*)(cast(size_t)&this + 36); }
-			ScriptName DecalDissolveParamName() { return *cast(ScriptName*)(cast(size_t)&this + 28); }
-			float DurationOfDecal() { return *cast(float*)(cast(size_t)&this + 24); }
-			SoundCue Sound() { return *cast(SoundCue*)(cast(size_t)&this + 8); }
-			ScriptName MaterialType() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptArray!(MaterialInterface) DecalMaterials() { mixin(MGPS!(ScriptArray!(MaterialInterface), 12)()); }
+			ParticleSystem ParticleTemplate() { mixin(MGPS!(ParticleSystem, 44)()); }
+			float DecalHeight() { mixin(MGPS!(float, 40)()); }
+			float DecalWidth() { mixin(MGPS!(float, 36)()); }
+			ScriptName DecalDissolveParamName() { mixin(MGPS!(ScriptName, 28)()); }
+			float DurationOfDecal() { mixin(MGPS!(float, 24)()); }
+			SoundCue Sound() { mixin(MGPS!(SoundCue, 8)()); }
+			ScriptName MaterialType() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct MaterialSoundEffect
@@ -146,11 +147,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.MaterialSoundEffect")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.MaterialSoundEffect")()); }
 		@property final auto ref
 		{
-			SoundCue Sound() { return *cast(SoundCue*)(cast(size_t)&this + 8); }
-			ScriptName MaterialType() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			SoundCue Sound() { mixin(MGPS!(SoundCue, 8)()); }
+			ScriptName MaterialType() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct MaterialParticleEffect
@@ -158,11 +159,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.MaterialParticleEffect")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.MaterialParticleEffect")()); }
 		@property final auto ref
 		{
-			ParticleSystem ParticleTemplate() { return *cast(ParticleSystem*)(cast(size_t)&this + 8); }
-			ScriptName MaterialType() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ParticleSystem ParticleTemplate() { mixin(MGPS!(ParticleSystem, 8)()); }
+			ScriptName MaterialType() { mixin(MGPS!(ScriptName, 0)()); }
 		}
 	}
 	struct DistanceBasedParticleTemplate
@@ -170,11 +171,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.DistanceBasedParticleTemplate")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.DistanceBasedParticleTemplate")()); }
 		@property final auto ref
 		{
-			float MinDistance() { return *cast(float*)(cast(size_t)&this + 4); }
-			ParticleSystem Template() { return *cast(ParticleSystem*)(cast(size_t)&this + 0); }
+			float MinDistance() { mixin(MGPS!(float, 4)()); }
+			ParticleSystem Template() { mixin(MGPS!(ParticleSystem, 0)()); }
 		}
 	}
 	struct EmoteInfo
@@ -182,144 +183,149 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.EmoteInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.EmoteInfo")()); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName Command() { return *cast(ScriptName*)(cast(size_t)&this + 40); }
-				ScriptName EmoteAnim() { return *cast(ScriptName*)(cast(size_t)&this + 28); }
-				ScriptString EmoteName() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-				ScriptName EmoteTag() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-				ScriptName CategoryName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				ScriptName Command() { mixin(MGPS!(ScriptName, 40)()); }
+				ScriptName EmoteAnim() { mixin(MGPS!(ScriptName, 28)()); }
+				ScriptString EmoteName() { mixin(MGPS!(ScriptString, 16)()); }
+				ScriptName EmoteTag() { mixin(MGPS!(ScriptName, 8)()); }
+				ScriptName CategoryName() { mixin(MGPS!(ScriptName, 0)()); }
 			}
-			bool bRequiresPlayer() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x1) != 0; }
-			bool bRequiresPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x1; } return val; }
-			bool bTopHalfEmote() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x2) != 0; }
-			bool bTopHalfEmote(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x2; } return val; }
-			bool bVictoryEmote() { return (*cast(uint*)(cast(size_t)&this + 36) & 0x1) != 0; }
-			bool bVictoryEmote(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 36) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 36) &= ~0x1; } return val; }
+			bool bRequiresPlayer() { mixin(MGBPS!(48, 0x1)()); }
+			bool bRequiresPlayer(bool val) { mixin(MSBPS!(48, 0x1)()); }
+			bool bTopHalfEmote() { mixin(MGBPS!(36, 0x2)()); }
+			bool bTopHalfEmote(bool val) { mixin(MSBPS!(36, 0x2)()); }
+			bool bVictoryEmote() { mixin(MGBPS!(36, 0x1)()); }
+			bool bVictoryEmote(bool val) { mixin(MSBPS!(36, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) BodyMaterialInstances() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 1316); }
-			ScriptArray!(UDKBot) Trackers() { return *cast(ScriptArray!(UDKBot)*)(cast(size_t)cast(void*)this + 1352); }
-			Vector HUDLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1604); }
-			UObject.Vector2D CurrentSkelAim() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 1596); }
-			int MaxYawAim() { return *cast(int*)(cast(size_t)cast(void*)this + 1592); }
-			float RootYawSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1588); }
-			int RootYaw() { return *cast(int*)(cast(size_t)cast(void*)this + 1584); }
-			float TakeHitPhysicsBlendOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1572); }
-			float CrouchMeshZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1568); }
-			float SwimmingZOffsetSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1564); }
-			float SwimmingZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1560); }
-			float FeignDeathPhysicsBlendOutSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1556); }
-			int MaxLeanRoll() { return *cast(int*)(cast(size_t)cast(void*)this + 1552); }
-			AnimNodeAimOffset FlyingDirOffset() { return *cast(AnimNodeAimOffset*)(cast(size_t)cast(void*)this + 1548); }
-			float SlopeBoostFriction() { return *cast(float*)(cast(size_t)cast(void*)this + 1544); }
-			float StartedFallingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1540); }
-			float TeamBeaconMaxDist() { return *cast(float*)(cast(size_t)cast(void*)this + 1536); }
-			float LastPostRenderTraceTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1532); }
-			ScriptName SaturationParameterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1524); }
-			ScriptName DamageParameterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1516); }
-			SkelControlLimb RightHandIK() { return *cast(SkelControlLimb*)(cast(size_t)cast(void*)this + 1512); }
-			SkelControlLimb LeftHandIK() { return *cast(SkelControlLimb*)(cast(size_t)cast(void*)this + 1508); }
-			SkelControlFootPlacement RightLegControl() { return *cast(SkelControlFootPlacement*)(cast(size_t)cast(void*)this + 1504); }
-			SkelControlFootPlacement LeftLegControl() { return *cast(SkelControlFootPlacement*)(cast(size_t)cast(void*)this + 1500); }
-			float MaxFootPlacementDistSquared() { return *cast(float*)(cast(size_t)cast(void*)this + 1496); }
-			float ZSmoothingRate() { return *cast(float*)(cast(size_t)cast(void*)this + 1492); }
-			float OldLocationZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1488); }
-			float CrouchTranslationOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1484); }
-			float BaseTranslationOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 1480); }
-			ScriptName RightFootControlName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1472); }
-			ScriptName LeftFootControlName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1464); }
-			ScriptName RightFootBone() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1456); }
-			ScriptName LeftFootBone() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1448); }
-			float FallSpeedThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1436); }
-			SoundCue FallImpactSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1432); }
-			ScriptName TorsoBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1424); }
-			float StartFallImpactTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1420); }
-			Rotator CompressedBodyMatColor() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 1408); }
-			UObject.LinearColor BodyMatColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1392); }
-			float ClientBodyMatDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 1388); }
-			float RemainingBodyMatDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 1384); }
-			UObject.LinearColor CurrentBodyMatColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 1368); }
-			float BodyMatFadeDuration() { return *cast(float*)(cast(size_t)cast(void*)this + 1364); }
-			GameSkelCtrl_Recoil RightRecoilNode() { return *cast(GameSkelCtrl_Recoil*)(cast(size_t)cast(void*)this + 1348); }
-			GameSkelCtrl_Recoil LeftRecoilNode() { return *cast(GameSkelCtrl_Recoil*)(cast(size_t)cast(void*)this + 1344); }
-			GameSkelCtrl_Recoil GunRecoilNode() { return *cast(GameSkelCtrl_Recoil*)(cast(size_t)cast(void*)this + 1340); }
-			AnimNodeAimOffset AimNode() { return *cast(AnimNodeAimOffset*)(cast(size_t)cast(void*)this + 1336); }
-			SkelControlSingleBone RootRotControl() { return *cast(SkelControlSingleBone*)(cast(size_t)cast(void*)this + 1332); }
-			MaterialInterface OverlayMaterialInstance() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 1328); }
-			Material ReplicatedBodyMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 1312); }
-			SoundCue WeaponAmbientSoundCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1308); }
-			UDKPawn.DrivenWeaponPawnInfo DrivenWeaponPawn() { return *cast(UDKPawn.DrivenWeaponPawnInfo*)(cast(size_t)cast(void*)this + 1292); }
-			SoundCue PawnAmbientSoundCue() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1288); }
-			float OldZ() { return *cast(float*)(cast(size_t)cast(void*)this + 1280); }
-			Vector MeshTranslationOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1268); }
-			float SmoothNetUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1264); }
-			float NoSmoothNetUpdateDist() { return *cast(float*)(cast(size_t)cast(void*)this + 1260); }
-			float MaxSmoothNetUpdateDist() { return *cast(float*)(cast(size_t)cast(void*)this + 1256); }
-			float HeadScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1252); }
-			float FireRateMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 1248); }
-			float LastTakeHitTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 1244); }
-			UDKPawn.UTTakeHitInfo LastTakeHitInfo() { return *cast(UDKPawn.UTTakeHitInfo*)(cast(size_t)cast(void*)this + 1200); }
-			ubyte WeaponOverlayFlags() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1197); }
-			ubyte BigTeleportCount() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1196); }
-			float MinTimeBetweenEmotes() { return *cast(float*)(cast(size_t)cast(void*)this + 1192); }
-			float LastEmoteTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1188); }
-			UDKPawn.PlayEmoteInfo EmoteRepInfo() { return *cast(UDKPawn.PlayEmoteInfo*)(cast(size_t)cast(void*)this + 1172); }
-			float CustomGravityScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 1168); }
-			int MultiJumpBoost() { return *cast(int*)(cast(size_t)cast(void*)this + 1164); }
-			int MaxMultiJump() { return *cast(int*)(cast(size_t)cast(void*)this + 1160); }
-			int MultiJumpRemaining() { return *cast(int*)(cast(size_t)cast(void*)this + 1156); }
-			float MaxDoubleJumpHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1152); }
+			ScriptArray!(MaterialInstanceConstant) BodyMaterialInstances() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 1316)()); }
+			ScriptArray!(UDKBot) Trackers() { mixin(MGPC!(ScriptArray!(UDKBot), 1352)()); }
+			Vector HUDLocation() { mixin(MGPC!(Vector, 1604)()); }
+			UObject.Vector2D CurrentSkelAim() { mixin(MGPC!(UObject.Vector2D, 1596)()); }
+			int MaxYawAim() { mixin(MGPC!(int, 1592)()); }
+			float RootYawSpeed() { mixin(MGPC!(float, 1588)()); }
+			int RootYaw() { mixin(MGPC!(int, 1584)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ArmsMesh'!
+			float TakeHitPhysicsBlendOutSpeed() { mixin(MGPC!(float, 1572)()); }
+			float CrouchMeshZOffset() { mixin(MGPC!(float, 1568)()); }
+			float SwimmingZOffsetSpeed() { mixin(MGPC!(float, 1564)()); }
+			float SwimmingZOffset() { mixin(MGPC!(float, 1560)()); }
+			float FeignDeathPhysicsBlendOutSpeed() { mixin(MGPC!(float, 1556)()); }
+			int MaxLeanRoll() { mixin(MGPC!(int, 1552)()); }
+			AnimNodeAimOffset FlyingDirOffset() { mixin(MGPC!(AnimNodeAimOffset, 1548)()); }
+			float SlopeBoostFriction() { mixin(MGPC!(float, 1544)()); }
+			float StartedFallingTime() { mixin(MGPC!(float, 1540)()); }
+			float TeamBeaconMaxDist() { mixin(MGPC!(float, 1536)()); }
+			float LastPostRenderTraceTime() { mixin(MGPC!(float, 1532)()); }
+			ScriptName SaturationParameterName() { mixin(MGPC!(ScriptName, 1524)()); }
+			ScriptName DamageParameterName() { mixin(MGPC!(ScriptName, 1516)()); }
+			SkelControlLimb RightHandIK() { mixin(MGPC!(SkelControlLimb, 1512)()); }
+			SkelControlLimb LeftHandIK() { mixin(MGPC!(SkelControlLimb, 1508)()); }
+			SkelControlFootPlacement RightLegControl() { mixin(MGPC!(SkelControlFootPlacement, 1504)()); }
+			SkelControlFootPlacement LeftLegControl() { mixin(MGPC!(SkelControlFootPlacement, 1500)()); }
+			float MaxFootPlacementDistSquared() { mixin(MGPC!(float, 1496)()); }
+			float ZSmoothingRate() { mixin(MGPC!(float, 1492)()); }
+			float OldLocationZ() { mixin(MGPC!(float, 1488)()); }
+			float CrouchTranslationOffset() { mixin(MGPC!(float, 1484)()); }
+			float BaseTranslationOffset() { mixin(MGPC!(float, 1480)()); }
+			ScriptName RightFootControlName() { mixin(MGPC!(ScriptName, 1472)()); }
+			ScriptName LeftFootControlName() { mixin(MGPC!(ScriptName, 1464)()); }
+			ScriptName RightFootBone() { mixin(MGPC!(ScriptName, 1456)()); }
+			ScriptName LeftFootBone() { mixin(MGPC!(ScriptName, 1448)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OverlayMesh'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BlobShadow'!
+			float FallSpeedThreshold() { mixin(MGPC!(float, 1436)()); }
+			SoundCue FallImpactSound() { mixin(MGPC!(SoundCue, 1432)()); }
+			ScriptName TorsoBoneName() { mixin(MGPC!(ScriptName, 1424)()); }
+			float StartFallImpactTime() { mixin(MGPC!(float, 1420)()); }
+			Rotator CompressedBodyMatColor() { mixin(MGPC!(Rotator, 1408)()); }
+			UObject.LinearColor BodyMatColor() { mixin(MGPC!(UObject.LinearColor, 1392)()); }
+			float ClientBodyMatDuration() { mixin(MGPC!(float, 1388)()); }
+			float RemainingBodyMatDuration() { mixin(MGPC!(float, 1384)()); }
+			UObject.LinearColor CurrentBodyMatColor() { mixin(MGPC!(UObject.LinearColor, 1368)()); }
+			float BodyMatFadeDuration() { mixin(MGPC!(float, 1364)()); }
+			GameSkelCtrl_Recoil RightRecoilNode() { mixin(MGPC!(GameSkelCtrl_Recoil, 1348)()); }
+			GameSkelCtrl_Recoil LeftRecoilNode() { mixin(MGPC!(GameSkelCtrl_Recoil, 1344)()); }
+			GameSkelCtrl_Recoil GunRecoilNode() { mixin(MGPC!(GameSkelCtrl_Recoil, 1340)()); }
+			AnimNodeAimOffset AimNode() { mixin(MGPC!(AnimNodeAimOffset, 1336)()); }
+			SkelControlSingleBone RootRotControl() { mixin(MGPC!(SkelControlSingleBone, 1332)()); }
+			MaterialInterface OverlayMaterialInstance() { mixin(MGPC!(MaterialInterface, 1328)()); }
+			Material ReplicatedBodyMaterial() { mixin(MGPC!(Material, 1312)()); }
+			SoundCue WeaponAmbientSoundCue() { mixin(MGPC!(SoundCue, 1308)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'WeaponAmbientSound'!
+			UDKPawn.DrivenWeaponPawnInfo DrivenWeaponPawn() { mixin(MGPC!(UDKPawn.DrivenWeaponPawnInfo, 1292)()); }
+			SoundCue PawnAmbientSoundCue() { mixin(MGPC!(SoundCue, 1288)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PawnAmbientSound'!
+			float OldZ() { mixin(MGPC!(float, 1280)()); }
+			Vector MeshTranslationOffset() { mixin(MGPC!(Vector, 1268)()); }
+			float SmoothNetUpdateTime() { mixin(MGPC!(float, 1264)()); }
+			float NoSmoothNetUpdateDist() { mixin(MGPC!(float, 1260)()); }
+			float MaxSmoothNetUpdateDist() { mixin(MGPC!(float, 1256)()); }
+			float HeadScale() { mixin(MGPC!(float, 1252)()); }
+			float FireRateMultiplier() { mixin(MGPC!(float, 1248)()); }
+			float LastTakeHitTimeout() { mixin(MGPC!(float, 1244)()); }
+			UDKPawn.UTTakeHitInfo LastTakeHitInfo() { mixin(MGPC!(UDKPawn.UTTakeHitInfo, 1200)()); }
+			ubyte WeaponOverlayFlags() { mixin(MGPC!(ubyte, 1197)()); }
+			ubyte BigTeleportCount() { mixin(MGPC!(ubyte, 1196)()); }
+			float MinTimeBetweenEmotes() { mixin(MGPC!(float, 1192)()); }
+			float LastEmoteTime() { mixin(MGPC!(float, 1188)()); }
+			UDKPawn.PlayEmoteInfo EmoteRepInfo() { mixin(MGPC!(UDKPawn.PlayEmoteInfo, 1172)()); }
+			float CustomGravityScaling() { mixin(MGPC!(float, 1168)()); }
+			int MultiJumpBoost() { mixin(MGPC!(int, 1164)()); }
+			int MaxMultiJump() { mixin(MGPC!(int, 1160)()); }
+			int MultiJumpRemaining() { mixin(MGPC!(int, 1156)()); }
+			float MaxDoubleJumpHeight() { mixin(MGPC!(float, 1152)()); }
 		}
-		bool bNotifyStopFalling() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x40) != 0; }
-		bool bNotifyStopFalling(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x40; } return val; }
-		bool bReadyToDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x1) != 0; }
-		bool bReadyToDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x1; } return val; }
-		bool bTearOffGibs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x10000) != 0; }
-		bool bTearOffGibs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x10000; } return val; }
-		bool bUpdateEyeheight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x8000) != 0; }
-		bool bUpdateEyeheight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x8000; } return val; }
-		bool bBlendOutTakeHitPhysics() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x4000) != 0; }
-		bool bBlendOutTakeHitPhysics(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x4000; } return val; }
-		bool bPostRenderOtherTeam() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x2000) != 0; }
-		bool bPostRenderOtherTeam(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x2000; } return val; }
-		bool bEnableFootPlacement() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x1000) != 0; }
-		bool bEnableFootPlacement(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x1000; } return val; }
-		bool bCanPlayFallingImpacts() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x800) != 0; }
-		bool bCanPlayFallingImpacts(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x800; } return val; }
-		bool bPlayingFeignDeathRecovery() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x400) != 0; }
-		bool bPlayingFeignDeathRecovery(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x400; } return val; }
-		bool bPuttingDownWeapon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x200) != 0; }
-		bool bPuttingDownWeapon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x200; } return val; }
-		bool bSmoothNetUpdates() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x100) != 0; }
-		bool bSmoothNetUpdates(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x100; } return val; }
-		bool bIsInvisible() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x80) != 0; }
-		bool bIsInvisible(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x80; } return val; }
-		bool bFeigningDeath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x20) != 0; }
-		bool bFeigningDeath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x20; } return val; }
-		bool bIsHoverboardAnimPawn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x10) != 0; }
-		bool bIsHoverboardAnimPawn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x10; } return val; }
-		bool bNoJumpAdjust() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x8) != 0; }
-		bool bNoJumpAdjust(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x8; } return val; }
-		bool bCanDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x4) != 0; }
-		bool bCanDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x4; } return val; }
-		bool bRequiresDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1148) & 0x2) != 0; }
-		bool bRequiresDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1148) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1148) &= ~0x2; } return val; }
+		bool bNotifyStopFalling() { mixin(MGBPC!(1148, 0x40)()); }
+		bool bNotifyStopFalling(bool val) { mixin(MSBPC!(1148, 0x40)()); }
+		bool bReadyToDoubleJump() { mixin(MGBPC!(1148, 0x1)()); }
+		bool bReadyToDoubleJump(bool val) { mixin(MSBPC!(1148, 0x1)()); }
+		bool bTearOffGibs() { mixin(MGBPC!(1148, 0x10000)()); }
+		bool bTearOffGibs(bool val) { mixin(MSBPC!(1148, 0x10000)()); }
+		bool bUpdateEyeheight() { mixin(MGBPC!(1148, 0x8000)()); }
+		bool bUpdateEyeheight(bool val) { mixin(MSBPC!(1148, 0x8000)()); }
+		bool bBlendOutTakeHitPhysics() { mixin(MGBPC!(1148, 0x4000)()); }
+		bool bBlendOutTakeHitPhysics(bool val) { mixin(MSBPC!(1148, 0x4000)()); }
+		bool bPostRenderOtherTeam() { mixin(MGBPC!(1148, 0x2000)()); }
+		bool bPostRenderOtherTeam(bool val) { mixin(MSBPC!(1148, 0x2000)()); }
+		bool bEnableFootPlacement() { mixin(MGBPC!(1148, 0x1000)()); }
+		bool bEnableFootPlacement(bool val) { mixin(MSBPC!(1148, 0x1000)()); }
+		bool bCanPlayFallingImpacts() { mixin(MGBPC!(1148, 0x800)()); }
+		bool bCanPlayFallingImpacts(bool val) { mixin(MSBPC!(1148, 0x800)()); }
+		bool bPlayingFeignDeathRecovery() { mixin(MGBPC!(1148, 0x400)()); }
+		bool bPlayingFeignDeathRecovery(bool val) { mixin(MSBPC!(1148, 0x400)()); }
+		bool bPuttingDownWeapon() { mixin(MGBPC!(1148, 0x200)()); }
+		bool bPuttingDownWeapon(bool val) { mixin(MSBPC!(1148, 0x200)()); }
+		bool bSmoothNetUpdates() { mixin(MGBPC!(1148, 0x100)()); }
+		bool bSmoothNetUpdates(bool val) { mixin(MSBPC!(1148, 0x100)()); }
+		bool bIsInvisible() { mixin(MGBPC!(1148, 0x80)()); }
+		bool bIsInvisible(bool val) { mixin(MSBPC!(1148, 0x80)()); }
+		bool bFeigningDeath() { mixin(MGBPC!(1148, 0x20)()); }
+		bool bFeigningDeath(bool val) { mixin(MSBPC!(1148, 0x20)()); }
+		bool bIsHoverboardAnimPawn() { mixin(MGBPC!(1148, 0x10)()); }
+		bool bIsHoverboardAnimPawn(bool val) { mixin(MSBPC!(1148, 0x10)()); }
+		bool bNoJumpAdjust() { mixin(MGBPC!(1148, 0x8)()); }
+		bool bNoJumpAdjust(bool val) { mixin(MSBPC!(1148, 0x8)()); }
+		bool bCanDoubleJump() { mixin(MGBPC!(1148, 0x4)()); }
+		bool bCanDoubleJump(bool val) { mixin(MSBPC!(1148, 0x4)()); }
+		bool bRequiresDoubleJump() { mixin(MGBPC!(1148, 0x2)()); }
+		bool bRequiresDoubleJump(bool val) { mixin(MSBPC!(1148, 0x2)()); }
 	}
 final:
-	void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight)
+	void GetBoundingCylinder(ref float CollisionRadius, ref float CollisionHeight)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = *CollisionRadius;
-		*cast(float*)&params[4] = *CollisionHeight;
+		*cast(float*)params.ptr = CollisionRadius;
+		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
 		*CollisionRadius = *cast(float*)params.ptr;
 		*CollisionHeight = *cast(float*)&params[4];
@@ -373,11 +379,11 @@ final:
 		*cast(float*)params.ptr = HeightAdjust;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartCrouch, params.ptr, cast(void*)0);
 	}
-	bool SuggestJumpVelocity(Vector* JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
+	bool SuggestJumpVelocity(ref Vector JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *JumpVelocity;
+		*cast(Vector*)params.ptr = JumpVelocity;
 		*cast(Vector*)&params[12] = Destination;
 		*cast(Vector*)&params[24] = Start;
 		*cast(bool*)&params[36] = bRequireFallLanding;

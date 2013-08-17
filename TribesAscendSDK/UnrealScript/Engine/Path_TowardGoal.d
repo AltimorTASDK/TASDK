@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Path_TowardGoal;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.PathConstraint;
@@ -9,9 +10,9 @@ extern(C++) interface Path_TowardGoal : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_TowardGoal")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_TowardGoal")()); }
 	private static __gshared Path_TowardGoal mDefaultProperties;
-	@property final static Path_TowardGoal DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_TowardGoal)("Path_TowardGoal Engine.Default__Path_TowardGoal")); }
+	@property final static Path_TowardGoal DefaultProperties() { mixin(MGDPC!(Path_TowardGoal, "Path_TowardGoal Engine.Default__Path_TowardGoal")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +22,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TowardGoal() { return mTowardGoal ? mTowardGoal : (mTowardGoal = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_TowardGoal.TowardGoal")); }
-			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_TowardGoal.Recycle")); }
+			ScriptFunction TowardGoal() { mixin(MGF!("mTowardGoal", "Function Engine.Path_TowardGoal.TowardGoal")()); }
+			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_TowardGoal.Recycle")()); }
 		}
 	}
-	@property final auto ref Actor GoalActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 68); }
+	@property final auto ref Actor GoalActor() { mixin(MGPC!(Actor, 68)()); }
 final:
 	static bool TowardGoal(Pawn P, Actor Goal)
 	{

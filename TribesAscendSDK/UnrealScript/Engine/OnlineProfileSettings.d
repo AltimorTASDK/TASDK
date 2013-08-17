@@ -1,6 +1,7 @@
 module UnrealScript.Engine.OnlineProfileSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlinePlayerStorage;
 import UnrealScript.Engine.Settings;
 
@@ -8,9 +9,9 @@ extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineProfileSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineProfileSettings")()); }
 	private static __gshared OnlineProfileSettings mDefaultProperties;
-	@property final static OnlineProfileSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineProfileSettings)("OnlineProfileSettings Engine.Default__OnlineProfileSettings")); }
+	@property final static OnlineProfileSettings DefaultProperties() { mixin(MGDPC!(OnlineProfileSettings, "OnlineProfileSettings Engine.Default__OnlineProfileSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,12 +25,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetProfileSettingDefaultId() { return mGetProfileSettingDefaultId ? mGetProfileSettingDefaultId : (mGetProfileSettingDefaultId = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.GetProfileSettingDefaultId")); }
-			ScriptFunction GetProfileSettingDefaultInt() { return mGetProfileSettingDefaultInt ? mGetProfileSettingDefaultInt : (mGetProfileSettingDefaultInt = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.GetProfileSettingDefaultInt")); }
-			ScriptFunction GetProfileSettingDefaultFloat() { return mGetProfileSettingDefaultFloat ? mGetProfileSettingDefaultFloat : (mGetProfileSettingDefaultFloat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.GetProfileSettingDefaultFloat")); }
-			ScriptFunction SetToDefaults() { return mSetToDefaults ? mSetToDefaults : (mSetToDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.SetToDefaults")); }
-			ScriptFunction AppendVersionToReadIds() { return mAppendVersionToReadIds ? mAppendVersionToReadIds : (mAppendVersionToReadIds = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.AppendVersionToReadIds")); }
-			ScriptFunction ModifyAvailableProfileSettings() { return mModifyAvailableProfileSettings ? mModifyAvailableProfileSettings : (mModifyAvailableProfileSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.ModifyAvailableProfileSettings")); }
+			ScriptFunction GetProfileSettingDefaultId() { mixin(MGF!("mGetProfileSettingDefaultId", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultId")()); }
+			ScriptFunction GetProfileSettingDefaultInt() { mixin(MGF!("mGetProfileSettingDefaultInt", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultInt")()); }
+			ScriptFunction GetProfileSettingDefaultFloat() { mixin(MGF!("mGetProfileSettingDefaultFloat", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultFloat")()); }
+			ScriptFunction SetToDefaults() { mixin(MGF!("mSetToDefaults", "Function Engine.OnlineProfileSettings.SetToDefaults")()); }
+			ScriptFunction AppendVersionToReadIds() { mixin(MGF!("mAppendVersionToReadIds", "Function Engine.OnlineProfileSettings.AppendVersionToReadIds")()); }
+			ScriptFunction ModifyAvailableProfileSettings() { mixin(MGF!("mModifyAvailableProfileSettings", "Function Engine.OnlineProfileSettings.ModifyAvailableProfileSettings")()); }
 		}
 	}
 	enum EProfileSettingID : ubyte
@@ -172,39 +173,39 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) ProfileSettingIds() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 100); }
-		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { return *cast(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)*)(cast(size_t)cast(void*)this + 112); }
-		ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { return *cast(ScriptArray!(Settings.IdToStringMapping)*)(cast(size_t)cast(void*)this + 124); }
+		ScriptArray!(int) ProfileSettingIds() { mixin(MGPC!(ScriptArray!(int), 100)()); }
+		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { mixin(MGPC!(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting), 112)()); }
+		ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { mixin(MGPC!(ScriptArray!(Settings.IdToStringMapping), 124)()); }
 	}
 final:
-	bool GetProfileSettingDefaultId(int ProfileSettingId, int* DefaultId, int* ListIndex)
+	bool GetProfileSettingDefaultId(int ProfileSettingId, ref int DefaultId, ref int ListIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
-		*cast(int*)&params[4] = *DefaultId;
-		*cast(int*)&params[8] = *ListIndex;
+		*cast(int*)&params[4] = DefaultId;
+		*cast(int*)&params[8] = ListIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultId, params.ptr, cast(void*)0);
 		*DefaultId = *cast(int*)&params[4];
 		*ListIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetProfileSettingDefaultInt(int ProfileSettingId, int* DefaultInt)
+	bool GetProfileSettingDefaultInt(int ProfileSettingId, ref int DefaultInt)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
-		*cast(int*)&params[4] = *DefaultInt;
+		*cast(int*)&params[4] = DefaultInt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultInt, params.ptr, cast(void*)0);
 		*DefaultInt = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	bool GetProfileSettingDefaultFloat(int ProfileSettingId, float* DefaultFloat)
+	bool GetProfileSettingDefaultFloat(int ProfileSettingId, ref float DefaultFloat)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
-		*cast(float*)&params[4] = *DefaultFloat;
+		*cast(float*)&params[4] = DefaultFloat;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultFloat, params.ptr, cast(void*)0);
 		*DefaultFloat = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Volume;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Brush;
@@ -10,9 +11,9 @@ extern(C++) interface Volume : Brush
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Volume")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Volume")()); }
 	private static __gshared Volume mDefaultProperties;
-	@property final static Volume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Volume)("Volume Engine.Default__Volume")); }
+	@property final static Volume DefaultProperties() { mixin(MGDPC!(Volume, "Volume Engine.Default__Volume")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,22 +28,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Encompasses() { return mEncompasses ? mEncompasses : (mEncompasses = ScriptObject.Find!(ScriptFunction)("Function Engine.Volume.Encompasses")); }
-			ScriptFunction EncompassesPoint() { return mEncompassesPoint ? mEncompassesPoint : (mEncompassesPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.Volume.EncompassesPoint")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Volume.PostBeginPlay")); }
-			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.Volume.DisplayDebug")); }
-			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.Volume.OnToggle")); }
-			ScriptFunction CollisionChanged() { return mCollisionChanged ? mCollisionChanged : (mCollisionChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.Volume.CollisionChanged")); }
-			ScriptFunction ProcessActorSetVolume() { return mProcessActorSetVolume ? mProcessActorSetVolume : (mProcessActorSetVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.Volume.ProcessActorSetVolume")); }
+			ScriptFunction Encompasses() { mixin(MGF!("mEncompasses", "Function Engine.Volume.Encompasses")()); }
+			ScriptFunction EncompassesPoint() { mixin(MGF!("mEncompassesPoint", "Function Engine.Volume.EncompassesPoint")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Volume.PostBeginPlay")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Volume.DisplayDebug")()); }
+			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.Volume.OnToggle")()); }
+			ScriptFunction CollisionChanged() { mixin(MGF!("mCollisionChanged", "Function Engine.Volume.CollisionChanged")()); }
+			ScriptFunction ProcessActorSetVolume() { mixin(MGF!("mProcessActorSetVolume", "Function Engine.Volume.ProcessActorSetVolume")()); }
 		}
+	}
+	static struct AssociatedTouch
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Volume.AssociatedTouch")()); }
 	}
 	@property final
 	{
-		@property final auto ref Actor AssociatedActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 512); }
-		bool bProcessAllActors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x2) != 0; }
-		bool bProcessAllActors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x2; } return val; }
-		bool bForcePawnWalk() { return (*cast(uint*)(cast(size_t)cast(void*)this + 516) & 0x1) != 0; }
-		bool bForcePawnWalk(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 516) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 516) &= ~0x1; } return val; }
+		@property final auto ref Actor AssociatedActor() { mixin(MGPC!(Actor, 512)()); }
+		bool bProcessAllActors() { mixin(MGBPC!(516, 0x2)()); }
+		bool bProcessAllActors(bool val) { mixin(MSBPC!(516, 0x2)()); }
+		bool bForcePawnWalk() { mixin(MGBPC!(516, 0x1)()); }
+		bool bForcePawnWalk(bool val) { mixin(MSBPC!(516, 0x1)()); }
 	}
 final:
 	bool Encompasses(Actor Other)
@@ -65,13 +71,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
-		*cast(float*)&params[4] = *out_YL;
-		*cast(float*)&params[8] = *out_YPos;
+		*cast(float*)&params[4] = out_YL;
+		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];

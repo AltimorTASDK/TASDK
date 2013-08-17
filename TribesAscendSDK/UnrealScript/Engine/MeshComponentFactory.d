@@ -1,6 +1,7 @@
 module UnrealScript.Engine.MeshComponentFactory;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.PrimitiveComponentFactory;
 import UnrealScript.Engine.MaterialInterface;
 
@@ -8,8 +9,8 @@ extern(C++) interface MeshComponentFactory : PrimitiveComponentFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MeshComponentFactory")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MeshComponentFactory")()); }
 	private static __gshared MeshComponentFactory mDefaultProperties;
-	@property final static MeshComponentFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MeshComponentFactory)("MeshComponentFactory Engine.Default__MeshComponentFactory")); }
-	@property final auto ref ScriptArray!(MaterialInterface) Materials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 64); }
+	@property final static MeshComponentFactory DefaultProperties() { mixin(MGDPC!(MeshComponentFactory, "MeshComponentFactory Engine.Default__MeshComponentFactory")()); }
+	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 64)()); }
 }

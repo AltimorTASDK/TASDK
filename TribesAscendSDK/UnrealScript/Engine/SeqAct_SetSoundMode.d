@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SeqAct_SetSoundMode;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundMode;
 import UnrealScript.Engine.SequenceAction;
 
@@ -8,9 +9,9 @@ extern(C++) interface SeqAct_SetSoundMode : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetSoundMode")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_SetSoundMode")()); }
 	private static __gshared SeqAct_SetSoundMode mDefaultProperties;
-	@property final static SeqAct_SetSoundMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetSoundMode)("SeqAct_SetSoundMode Engine.Default__SeqAct_SetSoundMode")); }
+	@property final static SeqAct_SetSoundMode DefaultProperties() { mixin(MGDPC!(SeqAct_SetSoundMode, "SeqAct_SetSoundMode Engine.Default__SeqAct_SetSoundMode")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Activated() { return mActivated ? mActivated : (mActivated = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_SetSoundMode.Activated")); }
-			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_SetSoundMode.GetObjClassVersion")); }
+			ScriptFunction Activated() { mixin(MGF!("mActivated", "Function Engine.SeqAct_SetSoundMode.Activated")()); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_SetSoundMode.GetObjClassVersion")()); }
 		}
 	}
 	@property final
 	{
 		// WARNING: Property 'SoundMode' has the same name as a defined type!
-		bool bTopPriority() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x1) != 0; }
-		bool bTopPriority(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x1; } return val; }
+		bool bTopPriority() { mixin(MGBPC!(236, 0x1)()); }
+		bool bTopPriority(bool val) { mixin(MSBPC!(236, 0x1)()); }
 	}
 final:
 	void Activated()

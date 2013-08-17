@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FileWriter;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Info;
 
@@ -8,9 +9,9 @@ extern(C++) interface FileWriter : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FileWriter")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FileWriter")()); }
 	private static __gshared FileWriter mDefaultProperties;
-	@property final static FileWriter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FileWriter)("FileWriter Engine.Default__FileWriter")); }
+	@property final static FileWriter DefaultProperties() { mixin(MGDPC!(FileWriter, "FileWriter Engine.Default__FileWriter")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OpenFile() { return mOpenFile ? mOpenFile : (mOpenFile = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.OpenFile")); }
-			ScriptFunction CloseFile() { return mCloseFile ? mCloseFile : (mCloseFile = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.CloseFile")); }
-			ScriptFunction Logf() { return mLogf ? mLogf : (mLogf = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.Logf")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.Destroyed")); }
+			ScriptFunction OpenFile() { mixin(MGF!("mOpenFile", "Function Engine.FileWriter.OpenFile")()); }
+			ScriptFunction CloseFile() { mixin(MGF!("mCloseFile", "Function Engine.FileWriter.CloseFile")()); }
+			ScriptFunction Logf() { mixin(MGF!("mLogf", "Function Engine.FileWriter.Logf")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.FileWriter.Destroyed")()); }
 		}
 	}
 	enum FWFileType : ubyte
@@ -41,14 +42,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ArchivePtr() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 476); }
-			ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 480); }
-			FileWriter.FWFileType FileType() { return *cast(FileWriter.FWFileType*)(cast(size_t)cast(void*)this + 492); }
+			UObject.Pointer ArchivePtr() { mixin(MGPC!(UObject.Pointer, 476)()); }
+			ScriptString Filename() { mixin(MGPC!(ScriptString, 480)()); }
+			FileWriter.FWFileType FileType() { mixin(MGPC!(FileWriter.FWFileType, 492)()); }
 		}
-		bool bFlushEachWrite() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x1) != 0; }
-		bool bFlushEachWrite(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x1; } return val; }
-		bool bWantsAsyncWrites() { return (*cast(uint*)(cast(size_t)cast(void*)this + 496) & 0x2) != 0; }
-		bool bWantsAsyncWrites(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 496) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 496) &= ~0x2; } return val; }
+		bool bFlushEachWrite() { mixin(MGBPC!(496, 0x1)()); }
+		bool bFlushEachWrite(bool val) { mixin(MSBPC!(496, 0x1)()); }
+		bool bWantsAsyncWrites() { mixin(MGBPC!(496, 0x2)()); }
+		bool bWantsAsyncWrites(bool val) { mixin(MSBPC!(496, 0x2)()); }
 	}
 final:
 	bool OpenFile(ScriptString InFilename, FileWriter.FWFileType InFileType, ScriptString InExtension, bool bUnique, bool bIncludeTimeStamp)

@@ -1,6 +1,7 @@
 module UnrealScript.Engine.FluidSurfaceActor;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Controller;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.ParticleSystem;
@@ -9,9 +10,9 @@ extern(C++) interface FluidSurfaceActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidSurfaceActor")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FluidSurfaceActor")()); }
 	private static __gshared FluidSurfaceActor mDefaultProperties;
-	@property final static FluidSurfaceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FluidSurfaceActor)("FluidSurfaceActor Engine.Default__FluidSurfaceActor")); }
+	@property final static FluidSurfaceActor DefaultProperties() { mixin(MGDPC!(FluidSurfaceActor, "FluidSurfaceActor Engine.Default__FluidSurfaceActor")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +22,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceActor.TakeDamage")); }
-			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceActor.Touch")); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.FluidSurfaceActor.TakeDamage")()); }
+			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.FluidSurfaceActor.Touch")()); }
 		}
 	}
-	@property final auto ref ParticleSystem ProjectileEntryEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 480); }
+	@property final auto ref
+	{
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FluidComponent'!
+		ParticleSystem ProjectileEntryEffect() { mixin(MGPC!(ParticleSystem, 480)()); }
+	}
 final:
 	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{

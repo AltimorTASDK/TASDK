@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTGameReplicationInfo;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameReplicationInfo;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.UTGame.UTPlayerController;
@@ -11,9 +12,9 @@ extern(C++) interface UTGameReplicationInfo : GameReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameReplicationInfo")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameReplicationInfo")()); }
 	private static __gshared UTGameReplicationInfo mDefaultProperties;
-	@property final static UTGameReplicationInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGameReplicationInfo)("UTGameReplicationInfo UTGame.Default__UTGameReplicationInfo")); }
+	@property final static UTGameReplicationInfo DefaultProperties() { mixin(MGDPC!(UTGameReplicationInfo, "UTGameReplicationInfo UTGame.Default__UTGameReplicationInfo")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,23 +39,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.PostBeginPlay")); }
-			ScriptFunction InOrder() { return mInOrder ? mInOrder : (mInOrder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.InOrder")); }
-			ScriptFunction SortPRIArray() { return mSortPRIArray ? mSortPRIArray : (mSortPRIArray = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SortPRIArray")); }
-			ScriptFunction CharacterProcessingComplete() { return mCharacterProcessingComplete ? mCharacterProcessingComplete : (mCharacterProcessingComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.CharacterProcessingComplete")); }
-			ScriptFunction SetFlagHome() { return mSetFlagHome ? mSetFlagHome : (mSetFlagHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagHome")); }
-			ScriptFunction FlagIsHome() { return mFlagIsHome ? mFlagIsHome : (mFlagIsHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsHome")); }
-			ScriptFunction FlagsAreHome() { return mFlagsAreHome ? mFlagsAreHome : (mFlagsAreHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagsAreHome")); }
-			ScriptFunction SetFlagHeldFriendly() { return mSetFlagHeldFriendly ? mSetFlagHeldFriendly : (mSetFlagHeldFriendly = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagHeldFriendly")); }
-			ScriptFunction FlagIsHeldFriendly() { return mFlagIsHeldFriendly ? mFlagIsHeldFriendly : (mFlagIsHeldFriendly = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsHeldFriendly")); }
-			ScriptFunction SetFlagHeldEnemy() { return mSetFlagHeldEnemy ? mSetFlagHeldEnemy : (mSetFlagHeldEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagHeldEnemy")); }
-			ScriptFunction FlagIsHeldEnemy() { return mFlagIsHeldEnemy ? mFlagIsHeldEnemy : (mFlagIsHeldEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsHeldEnemy")); }
-			ScriptFunction SetFlagDown() { return mSetFlagDown ? mSetFlagDown : (mSetFlagDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagDown")); }
-			ScriptFunction FlagIsDown() { return mFlagIsDown ? mFlagIsDown : (mFlagIsDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsDown")); }
-			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.Timer")); }
-			ScriptFunction ShowMidGameMenu() { return mShowMidGameMenu ? mShowMidGameMenu : (mShowMidGameMenu = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.ShowMidGameMenu")); }
-			ScriptFunction SetHudShowScores() { return mSetHudShowScores ? mSetHudShowScores : (mSetHudShowScores = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetHudShowScores")); }
-			ScriptFunction AddGameRule() { return mAddGameRule ? mAddGameRule : (mAddGameRule = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.AddGameRule")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTGameReplicationInfo.PostBeginPlay")()); }
+			ScriptFunction InOrder() { mixin(MGF!("mInOrder", "Function UTGame.UTGameReplicationInfo.InOrder")()); }
+			ScriptFunction SortPRIArray() { mixin(MGF!("mSortPRIArray", "Function UTGame.UTGameReplicationInfo.SortPRIArray")()); }
+			ScriptFunction CharacterProcessingComplete() { mixin(MGF!("mCharacterProcessingComplete", "Function UTGame.UTGameReplicationInfo.CharacterProcessingComplete")()); }
+			ScriptFunction SetFlagHome() { mixin(MGF!("mSetFlagHome", "Function UTGame.UTGameReplicationInfo.SetFlagHome")()); }
+			ScriptFunction FlagIsHome() { mixin(MGF!("mFlagIsHome", "Function UTGame.UTGameReplicationInfo.FlagIsHome")()); }
+			ScriptFunction FlagsAreHome() { mixin(MGF!("mFlagsAreHome", "Function UTGame.UTGameReplicationInfo.FlagsAreHome")()); }
+			ScriptFunction SetFlagHeldFriendly() { mixin(MGF!("mSetFlagHeldFriendly", "Function UTGame.UTGameReplicationInfo.SetFlagHeldFriendly")()); }
+			ScriptFunction FlagIsHeldFriendly() { mixin(MGF!("mFlagIsHeldFriendly", "Function UTGame.UTGameReplicationInfo.FlagIsHeldFriendly")()); }
+			ScriptFunction SetFlagHeldEnemy() { mixin(MGF!("mSetFlagHeldEnemy", "Function UTGame.UTGameReplicationInfo.SetFlagHeldEnemy")()); }
+			ScriptFunction FlagIsHeldEnemy() { mixin(MGF!("mFlagIsHeldEnemy", "Function UTGame.UTGameReplicationInfo.FlagIsHeldEnemy")()); }
+			ScriptFunction SetFlagDown() { mixin(MGF!("mSetFlagDown", "Function UTGame.UTGameReplicationInfo.SetFlagDown")()); }
+			ScriptFunction FlagIsDown() { mixin(MGF!("mFlagIsDown", "Function UTGame.UTGameReplicationInfo.FlagIsDown")()); }
+			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTGameReplicationInfo.Timer")()); }
+			ScriptFunction ShowMidGameMenu() { mixin(MGF!("mShowMidGameMenu", "Function UTGame.UTGameReplicationInfo.ShowMidGameMenu")()); }
+			ScriptFunction SetHudShowScores() { mixin(MGF!("mSetHudShowScores", "Function UTGame.UTGameReplicationInfo.SetHudShowScores")()); }
+			ScriptFunction AddGameRule() { mixin(MGF!("mAddGameRule", "Function UTGame.UTGameReplicationInfo.AddGameRule")()); }
 		}
 	}
 	enum EFlagState : ubyte
@@ -70,10 +71,10 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGameReplicationInfo.MeshEffect")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGameReplicationInfo.MeshEffect")()); }
 		@property final auto ref
 		{
-			StaticMesh Mesh() { return *cast(StaticMesh*)(cast(size_t)&this + 0); }
+			StaticMesh Mesh() { mixin(MGPS!(StaticMesh, 0)()); }
 			// WARNING: Property 'Material' has the same name as a defined type!
 		}
 	}
@@ -81,30 +82,30 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString MessageOfTheDay() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 624); }
-			ScriptArray!(UTGameReplicationInfo.MeshEffect) VehicleWeaponEffects() { return *cast(ScriptArray!(UTGameReplicationInfo.MeshEffect)*)(cast(size_t)cast(void*)this + 612); }
-			ScriptArray!(MaterialInterface) WeaponOverlays() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 600); }
-			int BotDifficulty() { return *cast(int*)(cast(size_t)cast(void*)this + 564); }
-			int MinNetPlayers() { return *cast(int*)(cast(size_t)cast(void*)this + 560); }
-			ScriptString MutatorList() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 576); }
-			ScriptString RulesString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 588); }
-			UTGameReplicationInfo.EFlagState FlagState() { return *cast(UTGameReplicationInfo.EFlagState*)(cast(size_t)cast(void*)this + 572); }
-			float WeaponBerserk() { return *cast(float*)(cast(size_t)cast(void*)this + 556); }
+			ScriptString MessageOfTheDay() { mixin(MGPC!(ScriptString, 624)()); }
+			ScriptArray!(UTGameReplicationInfo.MeshEffect) VehicleWeaponEffects() { mixin(MGPC!(ScriptArray!(UTGameReplicationInfo.MeshEffect), 612)()); }
+			ScriptArray!(MaterialInterface) WeaponOverlays() { mixin(MGPC!(ScriptArray!(MaterialInterface), 600)()); }
+			int BotDifficulty() { mixin(MGPC!(int, 564)()); }
+			int MinNetPlayers() { mixin(MGPC!(int, 560)()); }
+			ScriptString MutatorList() { mixin(MGPC!(ScriptString, 576)()); }
+			ScriptString RulesString() { mixin(MGPC!(ScriptString, 588)()); }
+			UTGameReplicationInfo.EFlagState FlagState() { mixin(MGPC!(UTGameReplicationInfo.EFlagState, 572)()); }
+			float WeaponBerserk() { mixin(MGPC!(float, 556)()); }
 		}
-		bool bStoryMode() { return (*cast(uint*)(cast(size_t)cast(void*)this + 568) & 0x4) != 0; }
-		bool bStoryMode(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 568) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 568) &= ~0x4; } return val; }
-		bool bAnnouncementsDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 568) & 0x20) != 0; }
-		bool bAnnouncementsDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 568) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 568) &= ~0x20; } return val; }
-		bool bConsoleServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 568) & 0x8) != 0; }
-		bool bConsoleServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 568) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 568) &= ~0x8; } return val; }
-		bool bAllowKeyboardAndMouse() { return (*cast(uint*)(cast(size_t)cast(void*)this + 568) & 0x10) != 0; }
-		bool bAllowKeyboardAndMouse(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 568) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 568) &= ~0x10; } return val; }
-		bool bRequireReady() { return (*cast(uint*)(cast(size_t)cast(void*)this + 568) & 0x40) != 0; }
-		bool bRequireReady(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 568) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 568) &= ~0x40; } return val; }
-		bool bWarmupRound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 568) & 0x1) != 0; }
-		bool bWarmupRound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 568) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 568) &= ~0x1; } return val; }
-		bool bForceDefaultCharacter() { return (*cast(uint*)(cast(size_t)cast(void*)this + 568) & 0x2) != 0; }
-		bool bForceDefaultCharacter(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 568) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 568) &= ~0x2; } return val; }
+		bool bStoryMode() { mixin(MGBPC!(568, 0x4)()); }
+		bool bStoryMode(bool val) { mixin(MSBPC!(568, 0x4)()); }
+		bool bAnnouncementsDisabled() { mixin(MGBPC!(568, 0x20)()); }
+		bool bAnnouncementsDisabled(bool val) { mixin(MSBPC!(568, 0x20)()); }
+		bool bConsoleServer() { mixin(MGBPC!(568, 0x8)()); }
+		bool bConsoleServer(bool val) { mixin(MSBPC!(568, 0x8)()); }
+		bool bAllowKeyboardAndMouse() { mixin(MGBPC!(568, 0x10)()); }
+		bool bAllowKeyboardAndMouse(bool val) { mixin(MSBPC!(568, 0x10)()); }
+		bool bRequireReady() { mixin(MGBPC!(568, 0x40)()); }
+		bool bRequireReady(bool val) { mixin(MSBPC!(568, 0x40)()); }
+		bool bWarmupRound() { mixin(MGBPC!(568, 0x1)()); }
+		bool bWarmupRound(bool val) { mixin(MSBPC!(568, 0x1)()); }
+		bool bForceDefaultCharacter() { mixin(MGBPC!(568, 0x2)()); }
+		bool bForceDefaultCharacter(bool val) { mixin(MSBPC!(568, 0x2)()); }
 	}
 final:
 	void PostBeginPlay()

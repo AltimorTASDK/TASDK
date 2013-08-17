@@ -1,27 +1,28 @@
 module UnrealScript.UDKBase.UDKUIDataProvider_SearchResult;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataProvider_Settings;
 
 extern(C++) interface UDKUIDataProvider_SearchResult : UIDataProvider_Settings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataProvider_SearchResult")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKUIDataProvider_SearchResult")()); }
 	private static __gshared UDKUIDataProvider_SearchResult mDefaultProperties;
-	@property final static UDKUIDataProvider_SearchResult DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataProvider_SearchResult)("UDKUIDataProvider_SearchResult UDKBase.Default__UDKUIDataProvider_SearchResult")); }
+	@property final static UDKUIDataProvider_SearchResult DefaultProperties() { mixin(MGDPC!(UDKUIDataProvider_SearchResult, "UDKUIDataProvider_SearchResult UDKBase.Default__UDKUIDataProvider_SearchResult")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsPrivateServer;
-		public @property static final ScriptFunction IsPrivateServer() { return mIsPrivateServer ? mIsPrivateServer : (mIsPrivateServer = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataProvider_SearchResult.IsPrivateServer")); }
+		public @property static final ScriptFunction IsPrivateServer() { mixin(MGF!("mIsPrivateServer", "Function UDKBase.UDKUIDataProvider_SearchResult.IsPrivateServer")()); }
 	}
 	@property final auto ref
 	{
-		ScriptString IconFontPathName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 176); }
-		ScriptName MapNameTag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 168); }
-		ScriptName ServerFlagsTag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 160); }
-		ScriptName GameModeFriendlyNameTag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 152); }
-		ScriptName PlayerRatioTag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 144); }
+		ScriptString IconFontPathName() { mixin(MGPC!(ScriptString, 176)()); }
+		ScriptName MapNameTag() { mixin(MGPC!(ScriptName, 168)()); }
+		ScriptName ServerFlagsTag() { mixin(MGPC!(ScriptName, 160)()); }
+		ScriptName GameModeFriendlyNameTag() { mixin(MGPC!(ScriptName, 152)()); }
+		ScriptName PlayerRatioTag() { mixin(MGPC!(ScriptName, 144)()); }
 	}
 	final bool IsPrivateServer()
 	{

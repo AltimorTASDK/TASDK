@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrCTFMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.PlayerReplicationInfo;
@@ -12,9 +13,9 @@ extern(C++) interface TrCTFMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCTFMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCTFMessage")()); }
 	private static __gshared TrCTFMessage mDefaultProperties;
-	@property final static TrCTFMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCTFMessage)("TrCTFMessage TribesGame.Default__TrCTFMessage")); }
+	@property final static TrCTFMessage DefaultProperties() { mixin(MGDPC!(TrCTFMessage, "TrCTFMessage TribesGame.Default__TrCTFMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,8 +25,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFMessage.GetString")); }
-			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCTFMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrCTFMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrCTFMessage.ClientReceive")()); }
 		}
 	}
 	static struct Constants
@@ -536,46 +537,46 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString DiamondSwordFlagAbandoned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 472); }
-		ScriptString BloodEagleFlagAbandoned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 460); }
-		ScriptString DiamondSwordFlagDropped() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 448); }
-		ScriptString BloodEagleFlagDropped() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 436); }
-		ScriptString DiamondSwordFlagReturned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 424); }
-		ScriptString BloodEagleFlagReturned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 412); }
-		ScriptString DiamondSwordFlagCaptured() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 400); }
-		ScriptString BloodEagleFlagCaptured() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 388); }
-		ScriptString DiamondSwordFlagPickupAwayFromBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 376); }
-		ScriptString BloodEagleFlagPickupAwayFromBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 364); }
-		ScriptString DiamondSwordFlagTaken() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 352); }
-		ScriptString BloodEagleFlagTaken() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 340); }
-		ScriptString FriendlyFlagAbandoned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 328); }
-		ScriptString EnemyFlagAbandoned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 316); }
-		ScriptString FriendlyFlagDropped() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 304); }
-		ScriptString EnemyFlagDropped() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 292); }
-		ScriptString FriendlyFlagReturned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 280); }
-		ScriptString EnemyFlagReturned() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 268); }
-		ScriptString FriendlyFlagCaptured() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 256); }
-		ScriptString EnemyFlagCaptured() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 244); }
-		ScriptString FriendlyFlagPickupAwayFromBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 232); }
-		ScriptString EnemyFlagPickupAwayFromBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 220); }
-		ScriptString FriendlyFlagTaken() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 208); }
-		ScriptString EnemyFlagTaken() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 196); }
-		SoundCue m_sBECapturedDSFlag() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 192); }
-		SoundCue m_sDSCapturedBEFlag() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 188); }
-		SoundCue m_sBETookDSFlag() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 184); }
-		SoundCue m_sDSTookBEFlag() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 180); }
-		SoundCue m_sBEFlagSecured() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 176); }
-		SoundCue m_sDSFlagSecured() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 172); }
-		SoundCue m_sBELostDSFlag() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 168); }
-		SoundCue m_sDSLostBEFlag() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 164); }
-		SoundCue m_sDSFlagCaptured() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 160); }
-		SoundCue m_sDSFlagTaken() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 156); }
-		SoundCue m_sBEFlagCaptured() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 152); }
-		SoundCue m_sBEFlagTaken() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 148); }
-		SoundNodeWave m_CapturedSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 136); }
-		SoundNodeWave m_TakenSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 124); }
-		SoundNodeWave m_DroppedSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 112); }
-		SoundNodeWave m_ReturnSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 100); }
+		ScriptString DiamondSwordFlagAbandoned() { mixin(MGPC!(ScriptString, 472)()); }
+		ScriptString BloodEagleFlagAbandoned() { mixin(MGPC!(ScriptString, 460)()); }
+		ScriptString DiamondSwordFlagDropped() { mixin(MGPC!(ScriptString, 448)()); }
+		ScriptString BloodEagleFlagDropped() { mixin(MGPC!(ScriptString, 436)()); }
+		ScriptString DiamondSwordFlagReturned() { mixin(MGPC!(ScriptString, 424)()); }
+		ScriptString BloodEagleFlagReturned() { mixin(MGPC!(ScriptString, 412)()); }
+		ScriptString DiamondSwordFlagCaptured() { mixin(MGPC!(ScriptString, 400)()); }
+		ScriptString BloodEagleFlagCaptured() { mixin(MGPC!(ScriptString, 388)()); }
+		ScriptString DiamondSwordFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 376)()); }
+		ScriptString BloodEagleFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 364)()); }
+		ScriptString DiamondSwordFlagTaken() { mixin(MGPC!(ScriptString, 352)()); }
+		ScriptString BloodEagleFlagTaken() { mixin(MGPC!(ScriptString, 340)()); }
+		ScriptString FriendlyFlagAbandoned() { mixin(MGPC!(ScriptString, 328)()); }
+		ScriptString EnemyFlagAbandoned() { mixin(MGPC!(ScriptString, 316)()); }
+		ScriptString FriendlyFlagDropped() { mixin(MGPC!(ScriptString, 304)()); }
+		ScriptString EnemyFlagDropped() { mixin(MGPC!(ScriptString, 292)()); }
+		ScriptString FriendlyFlagReturned() { mixin(MGPC!(ScriptString, 280)()); }
+		ScriptString EnemyFlagReturned() { mixin(MGPC!(ScriptString, 268)()); }
+		ScriptString FriendlyFlagCaptured() { mixin(MGPC!(ScriptString, 256)()); }
+		ScriptString EnemyFlagCaptured() { mixin(MGPC!(ScriptString, 244)()); }
+		ScriptString FriendlyFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 232)()); }
+		ScriptString EnemyFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 220)()); }
+		ScriptString FriendlyFlagTaken() { mixin(MGPC!(ScriptString, 208)()); }
+		ScriptString EnemyFlagTaken() { mixin(MGPC!(ScriptString, 196)()); }
+		SoundCue m_sBECapturedDSFlag() { mixin(MGPC!(SoundCue, 192)()); }
+		SoundCue m_sDSCapturedBEFlag() { mixin(MGPC!(SoundCue, 188)()); }
+		SoundCue m_sBETookDSFlag() { mixin(MGPC!(SoundCue, 184)()); }
+		SoundCue m_sDSTookBEFlag() { mixin(MGPC!(SoundCue, 180)()); }
+		SoundCue m_sBEFlagSecured() { mixin(MGPC!(SoundCue, 176)()); }
+		SoundCue m_sDSFlagSecured() { mixin(MGPC!(SoundCue, 172)()); }
+		SoundCue m_sBELostDSFlag() { mixin(MGPC!(SoundCue, 168)()); }
+		SoundCue m_sDSLostBEFlag() { mixin(MGPC!(SoundCue, 164)()); }
+		SoundCue m_sDSFlagCaptured() { mixin(MGPC!(SoundCue, 160)()); }
+		SoundCue m_sDSFlagTaken() { mixin(MGPC!(SoundCue, 156)()); }
+		SoundCue m_sBEFlagCaptured() { mixin(MGPC!(SoundCue, 152)()); }
+		SoundCue m_sBEFlagTaken() { mixin(MGPC!(SoundCue, 148)()); }
+		SoundNodeWave m_CapturedSounds() { mixin(MGPC!(SoundNodeWave, 136)()); }
+		SoundNodeWave m_TakenSounds() { mixin(MGPC!(SoundNodeWave, 124)()); }
+		SoundNodeWave m_DroppedSounds() { mixin(MGPC!(SoundNodeWave, 112)()); }
+		SoundNodeWave m_ReturnSounds() { mixin(MGPC!(SoundNodeWave, 100)()); }
 	}
 final:
 	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)

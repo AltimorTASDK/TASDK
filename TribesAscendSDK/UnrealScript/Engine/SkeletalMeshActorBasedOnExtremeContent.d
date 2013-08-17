@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SkeletalMeshActorBasedOnExtremeContent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInterface;
 import UnrealScript.Engine.SkeletalMeshActor;
 
@@ -8,9 +9,9 @@ extern(C++) interface SkeletalMeshActorBasedOnExtremeContent : SkeletalMeshActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMeshActorBasedOnExtremeContent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkeletalMeshActorBasedOnExtremeContent")()); }
 	private static __gshared SkeletalMeshActorBasedOnExtremeContent mDefaultProperties;
-	@property final static SkeletalMeshActorBasedOnExtremeContent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMeshActorBasedOnExtremeContent)("SkeletalMeshActorBasedOnExtremeContent Engine.Default__SkeletalMeshActorBasedOnExtremeContent")); }
+	@property final static SkeletalMeshActorBasedOnExtremeContent DefaultProperties() { mixin(MGDPC!(SkeletalMeshActorBasedOnExtremeContent, "SkeletalMeshActorBasedOnExtremeContent Engine.Default__SkeletalMeshActorBasedOnExtremeContent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorBasedOnExtremeContent.PostBeginPlay")); }
-			ScriptFunction SetMaterialBasedOnExtremeContent() { return mSetMaterialBasedOnExtremeContent ? mSetMaterialBasedOnExtremeContent : (mSetMaterialBasedOnExtremeContent = ScriptObject.Find!(ScriptFunction)("Function Engine.SkeletalMeshActorBasedOnExtremeContent.SetMaterialBasedOnExtremeContent")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.SkeletalMeshActorBasedOnExtremeContent.PostBeginPlay")()); }
+			ScriptFunction SetMaterialBasedOnExtremeContent() { mixin(MGF!("mSetMaterialBasedOnExtremeContent", "Function Engine.SkeletalMeshActorBasedOnExtremeContent.SetMaterialBasedOnExtremeContent")()); }
 		}
 	}
 	struct SkelMaterialSetterDatum
@@ -29,17 +30,17 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum")()); }
 		@property final auto ref
 		{
-			MaterialInterface TheMaterial() { return *cast(MaterialInterface*)(cast(size_t)&this + 4); }
-			int MaterialIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+			MaterialInterface TheMaterial() { mixin(MGPS!(MaterialInterface, 4)()); }
+			int MaterialIndex() { mixin(MGPS!(int, 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) ExtremeContent() { return *cast(ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum)*)(cast(size_t)cast(void*)this + 536); }
-		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) NonExtremeContent() { return *cast(ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum)*)(cast(size_t)cast(void*)this + 548); }
+		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) ExtremeContent() { mixin(MGPC!(ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum), 536)()); }
+		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) NonExtremeContent() { mixin(MGPC!(ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum), 548)()); }
 	}
 final:
 	void PostBeginPlay()

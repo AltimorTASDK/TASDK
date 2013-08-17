@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKAnimBlendByFall;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKAnimNodeJumpLeanOffset;
 import UnrealScript.UDKBase.UDKAnimBlendBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface UDKAnimBlendByFall : UDKAnimBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByFall")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByFall")()); }
 	private static __gshared UDKAnimBlendByFall mDefaultProperties;
-	@property final static UDKAnimBlendByFall DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByFall)("UDKAnimBlendByFall UDKBase.Default__UDKAnimBlendByFall")); }
+	@property final static UDKAnimBlendByFall DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByFall, "UDKAnimBlendByFall UDKBase.Default__UDKAnimBlendByFall")()); }
 	enum EBlendFallTypes : ubyte
 	{
 		FBT_Up = 0,
@@ -28,18 +29,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			UDKAnimNodeJumpLeanOffset CachedLeanNode() { return *cast(UDKAnimNodeJumpLeanOffset*)(cast(size_t)cast(void*)this + 320); }
-			float LastFallingVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-			UDKAnimBlendByFall.EBlendFallTypes FallState() { return *cast(UDKAnimBlendByFall.EBlendFallTypes*)(cast(size_t)cast(void*)this + 312); }
-			float ToDblJumpUprightTime() { return *cast(float*)(cast(size_t)cast(void*)this + 308); }
-			float PreLandStartUprightTime() { return *cast(float*)(cast(size_t)cast(void*)this + 304); }
-			float PreLandTime() { return *cast(float*)(cast(size_t)cast(void*)this + 300); }
+			UDKAnimNodeJumpLeanOffset CachedLeanNode() { mixin(MGPC!(UDKAnimNodeJumpLeanOffset, 320)()); }
+			float LastFallingVelocity() { mixin(MGPC!(float, 316)()); }
+			UDKAnimBlendByFall.EBlendFallTypes FallState() { mixin(MGPC!(UDKAnimBlendByFall.EBlendFallTypes, 312)()); }
+			float ToDblJumpUprightTime() { mixin(MGPC!(float, 308)()); }
+			float PreLandStartUprightTime() { mixin(MGPC!(float, 304)()); }
+			float PreLandTime() { mixin(MGPC!(float, 300)()); }
 		}
-		bool bDodgeFall() { return (*cast(uint*)(cast(size_t)cast(void*)this + 296) & 0x4) != 0; }
-		bool bDodgeFall(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 296) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 296) &= ~0x4; } return val; }
-		bool bDidDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 296) & 0x2) != 0; }
-		bool bDidDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 296) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 296) &= ~0x2; } return val; }
-		bool bIgnoreDoubleJumps() { return (*cast(uint*)(cast(size_t)cast(void*)this + 296) & 0x1) != 0; }
-		bool bIgnoreDoubleJumps(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 296) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 296) &= ~0x1; } return val; }
+		bool bDodgeFall() { mixin(MGBPC!(296, 0x4)()); }
+		bool bDodgeFall(bool val) { mixin(MSBPC!(296, 0x4)()); }
+		bool bDidDoubleJump() { mixin(MGBPC!(296, 0x2)()); }
+		bool bDidDoubleJump(bool val) { mixin(MSBPC!(296, 0x2)()); }
+		bool bIgnoreDoubleJumps() { mixin(MGBPC!(296, 0x1)()); }
+		bool bIgnoreDoubleJumps(bool val) { mixin(MSBPC!(296, 0x1)()); }
 	}
 }

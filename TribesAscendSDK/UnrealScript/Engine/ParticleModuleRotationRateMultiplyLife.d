@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ParticleModuleRotationRateMultiplyLife;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleRotationRateBase;
 import UnrealScript.Core.DistributionFloat;
 
@@ -8,8 +9,8 @@ extern(C++) interface ParticleModuleRotationRateMultiplyLife : ParticleModuleRot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleRotationRateMultiplyLife")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleRotationRateMultiplyLife")()); }
 	private static __gshared ParticleModuleRotationRateMultiplyLife mDefaultProperties;
-	@property final static ParticleModuleRotationRateMultiplyLife DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleRotationRateMultiplyLife)("ParticleModuleRotationRateMultiplyLife Engine.Default__ParticleModuleRotationRateMultiplyLife")); }
-	@property final auto ref DistributionFloat.RawDistributionFloat LifeMultiplier() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 72); }
+	@property final static ParticleModuleRotationRateMultiplyLife DefaultProperties() { mixin(MGDPC!(ParticleModuleRotationRateMultiplyLife, "ParticleModuleRotationRateMultiplyLife Engine.Default__ParticleModuleRotationRateMultiplyLife")()); }
+	@property final auto ref DistributionFloat.RawDistributionFloat LifeMultiplier() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 72)()); }
 }

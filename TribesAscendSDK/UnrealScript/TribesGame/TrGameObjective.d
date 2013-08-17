@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrGameObjective;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.Material;
 import UnrealScript.TribesGame.TrHelpTextManager;
@@ -23,9 +24,9 @@ extern(C++) interface TrGameObjective : UTGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameObjective")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameObjective")()); }
 	private static __gshared TrGameObjective mDefaultProperties;
-	@property final static TrGameObjective DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameObjective)("TrGameObjective TribesGame.Default__TrGameObjective")); }
+	@property final static TrGameObjective DefaultProperties() { mixin(MGDPC!(TrGameObjective, "TrGameObjective TribesGame.Default__TrGameObjective")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -84,57 +85,57 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsEnemy() { return mIsEnemy ? mIsEnemy : (mIsEnemy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.IsEnemy")); }
-			ScriptFunction IsInLOS_Basic() { return mIsInLOS_Basic ? mIsInLOS_Basic : (mIsInLOS_Basic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.IsInLOS_Basic")); }
-			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ApplyServerSettings")); }
-			ScriptFunction GetScreenName() { return mGetScreenName ? mGetScreenName : (mGetScreenName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetScreenName")); }
-			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetSpectatorName")); }
-			ScriptFunction GetHealthAmount() { return mGetHealthAmount ? mGetHealthAmount : (mGetHealthAmount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetHealthAmount")); }
-			ScriptFunction GetUpgradeCost() { return mGetUpgradeCost ? mGetUpgradeCost : (mGetUpgradeCost = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetUpgradeCost")); }
-			ScriptFunction ShouldShowPromptText() { return mShouldShowPromptText ? mShouldShowPromptText : (mShouldShowPromptText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ShouldShowPromptText")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.PostBeginPlay")); }
-			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ReplicatedEvent")); }
-			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.Tick")); }
-			ScriptFunction Shootable() { return mShootable ? mShootable : (mShootable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.Shootable")); }
-			ScriptFunction RegenerateHealth() { return mRegenerateHealth ? mRegenerateHealth : (mRegenerateHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.RegenerateHealth")); }
-			ScriptFunction DoRepairs() { return mDoRepairs ? mDoRepairs : (mDoRepairs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.DoRepairs")); }
-			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.TakeDamage")); }
-			ScriptFunction ClientRecievedHitInfo() { return mClientRecievedHitInfo ? mClientRecievedHitInfo : (mClientRecievedHitInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ClientRecievedHitInfo")); }
-			ScriptFunction ClientPlayUpgradeEffect() { return mClientPlayUpgradeEffect ? mClientPlayUpgradeEffect : (mClientPlayUpgradeEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ClientPlayUpgradeEffect")); }
-			ScriptFunction PlayDestroyedEffects() { return mPlayDestroyedEffects ? mPlayDestroyedEffects : (mPlayDestroyedEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.PlayDestroyedEffects")); }
-			ScriptFunction OnHealthChanged() { return mOnHealthChanged ? mOnHealthChanged : (mOnHealthChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.OnHealthChanged")); }
-			ScriptFunction PlayDamageHealthEffects() { return mPlayDamageHealthEffects ? mPlayDamageHealthEffects : (mPlayDamageHealthEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.PlayDamageHealthEffects")); }
-			ScriptFunction PlayDamageShieldEffects() { return mPlayDamageShieldEffects ? mPlayDamageShieldEffects : (mPlayDamageShieldEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.PlayDamageShieldEffects")); }
-			ScriptFunction PlayExplosion() { return mPlayExplosion ? mPlayExplosion : (mPlayExplosion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.PlayExplosion")); }
-			ScriptFunction SetPowered() { return mSetPowered ? mSetPowered : (mSetPowered = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.SetPowered")); }
-			ScriptFunction OnPowerStatusChanged() { return mOnPowerStatusChanged ? mOnPowerStatusChanged : (mOnPowerStatusChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.OnPowerStatusChanged")); }
-			ScriptFunction HideMesh() { return mHideMesh ? mHideMesh : (mHideMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.HideMesh")); }
-			ScriptFunction ShouldPostRenderForCaH() { return mShouldPostRenderForCaH ? mShouldPostRenderForCaH : (mShouldPostRenderForCaH = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ShouldPostRenderForCaH")); }
-			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.PostRenderFor")); }
-			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetMarker")); }
-			ScriptFunction GetPossessiveInstigatorName() { return mGetPossessiveInstigatorName ? mGetPossessiveInstigatorName : (mGetPossessiveInstigatorName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetPossessiveInstigatorName")); }
-			ScriptFunction BlocksLineChecksFromSourceActor() { return mBlocksLineChecksFromSourceActor ? mBlocksLineChecksFromSourceActor : (mBlocksLineChecksFromSourceActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.BlocksLineChecksFromSourceActor")); }
-			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.Reset")); }
-			ScriptFunction SpawnHelpTextCollisionProxy() { return mSpawnHelpTextCollisionProxy ? mSpawnHelpTextCollisionProxy : (mSpawnHelpTextCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.SpawnHelpTextCollisionProxy")); }
-			ScriptFunction ShouldShowHelpText() { return mShouldShowHelpText ? mShouldShowHelpText : (mShouldShowHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ShouldShowHelpText")); }
-			ScriptFunction ReceivesPowerFromGenerator() { return mReceivesPowerFromGenerator ? mReceivesPowerFromGenerator : (mReceivesPowerFromGenerator = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ReceivesPowerFromGenerator")); }
-			ScriptFunction PerformUpgrade() { return mPerformUpgrade ? mPerformUpgrade : (mPerformUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.PerformUpgrade")); }
-			ScriptFunction AddUpgrader() { return mAddUpgrader ? mAddUpgrader : (mAddUpgrader = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.AddUpgrader")); }
-			ScriptFunction AddDamageAssistance() { return mAddDamageAssistance ? mAddDamageAssistance : (mAddDamageAssistance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.AddDamageAssistance")); }
-			ScriptFunction CheckRepairAssists() { return mCheckRepairAssists ? mCheckRepairAssists : (mCheckRepairAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.CheckRepairAssists")); }
-			ScriptFunction CheckDestroyAssists() { return mCheckDestroyAssists ? mCheckDestroyAssists : (mCheckDestroyAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.CheckDestroyAssists")); }
-			ScriptFunction ClearDamageAssistance() { return mClearDamageAssistance ? mClearDamageAssistance : (mClearDamageAssistance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.ClearDamageAssistance")); }
-			ScriptFunction GiveDestroyAccolade() { return mGiveDestroyAccolade ? mGiveDestroyAccolade : (mGiveDestroyAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GiveDestroyAccolade")); }
-			ScriptFunction GetSpectatorHealthInfo() { return mGetSpectatorHealthInfo ? mGetSpectatorHealthInfo : (mGetSpectatorHealthInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetSpectatorHealthInfo")); }
-			ScriptFunction GetSpectatorDescription() { return mGetSpectatorDescription ? mGetSpectatorDescription : (mGetSpectatorDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.GetSpectatorDescription")); }
-			ScriptFunction IsAliveAndWell() { return mIsAliveAndWell ? mIsAliveAndWell : (mIsAliveAndWell = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.IsAliveAndWell")); }
-			ScriptFunction InstantlyRegenerateHealth() { return mInstantlyRegenerateHealth ? mInstantlyRegenerateHealth : (mInstantlyRegenerateHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.InstantlyRegenerateHealth")); }
-			ScriptFunction HideBasePlatform() { return mHideBasePlatform ? mHideBasePlatform : (mHideBasePlatform = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.HideBasePlatform")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.Destroyed")); }
-			ScriptFunction RequiresLOSForRepairDeployable() { return mRequiresLOSForRepairDeployable ? mRequiresLOSForRepairDeployable : (mRequiresLOSForRepairDeployable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.RequiresLOSForRepairDeployable")); }
-			ScriptFunction AwardKillAssists() { return mAwardKillAssists ? mAwardKillAssists : (mAwardKillAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.AwardKillAssists")); }
-			ScriptFunction AwardUpgradeAssists() { return mAwardUpgradeAssists ? mAwardUpgradeAssists : (mAwardUpgradeAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.AwardUpgradeAssists")); }
-			ScriptFunction OnUpgradePerformed() { return mOnUpgradePerformed ? mOnUpgradePerformed : (mOnUpgradePerformed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjective.OnUpgradePerformed")); }
+			ScriptFunction IsEnemy() { mixin(MGF!("mIsEnemy", "Function TribesGame.TrGameObjective.IsEnemy")()); }
+			ScriptFunction IsInLOS_Basic() { mixin(MGF!("mIsInLOS_Basic", "Function TribesGame.TrGameObjective.IsInLOS_Basic")()); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrGameObjective.ApplyServerSettings")()); }
+			ScriptFunction GetScreenName() { mixin(MGF!("mGetScreenName", "Function TribesGame.TrGameObjective.GetScreenName")()); }
+			ScriptFunction GetSpectatorName() { mixin(MGF!("mGetSpectatorName", "Function TribesGame.TrGameObjective.GetSpectatorName")()); }
+			ScriptFunction GetHealthAmount() { mixin(MGF!("mGetHealthAmount", "Function TribesGame.TrGameObjective.GetHealthAmount")()); }
+			ScriptFunction GetUpgradeCost() { mixin(MGF!("mGetUpgradeCost", "Function TribesGame.TrGameObjective.GetUpgradeCost")()); }
+			ScriptFunction ShouldShowPromptText() { mixin(MGF!("mShouldShowPromptText", "Function TribesGame.TrGameObjective.ShouldShowPromptText")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrGameObjective.PostBeginPlay")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrGameObjective.ReplicatedEvent")()); }
+			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrGameObjective.Tick")()); }
+			ScriptFunction Shootable() { mixin(MGF!("mShootable", "Function TribesGame.TrGameObjective.Shootable")()); }
+			ScriptFunction RegenerateHealth() { mixin(MGF!("mRegenerateHealth", "Function TribesGame.TrGameObjective.RegenerateHealth")()); }
+			ScriptFunction DoRepairs() { mixin(MGF!("mDoRepairs", "Function TribesGame.TrGameObjective.DoRepairs")()); }
+			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrGameObjective.TakeDamage")()); }
+			ScriptFunction ClientRecievedHitInfo() { mixin(MGF!("mClientRecievedHitInfo", "Function TribesGame.TrGameObjective.ClientRecievedHitInfo")()); }
+			ScriptFunction ClientPlayUpgradeEffect() { mixin(MGF!("mClientPlayUpgradeEffect", "Function TribesGame.TrGameObjective.ClientPlayUpgradeEffect")()); }
+			ScriptFunction PlayDestroyedEffects() { mixin(MGF!("mPlayDestroyedEffects", "Function TribesGame.TrGameObjective.PlayDestroyedEffects")()); }
+			ScriptFunction OnHealthChanged() { mixin(MGF!("mOnHealthChanged", "Function TribesGame.TrGameObjective.OnHealthChanged")()); }
+			ScriptFunction PlayDamageHealthEffects() { mixin(MGF!("mPlayDamageHealthEffects", "Function TribesGame.TrGameObjective.PlayDamageHealthEffects")()); }
+			ScriptFunction PlayDamageShieldEffects() { mixin(MGF!("mPlayDamageShieldEffects", "Function TribesGame.TrGameObjective.PlayDamageShieldEffects")()); }
+			ScriptFunction PlayExplosion() { mixin(MGF!("mPlayExplosion", "Function TribesGame.TrGameObjective.PlayExplosion")()); }
+			ScriptFunction SetPowered() { mixin(MGF!("mSetPowered", "Function TribesGame.TrGameObjective.SetPowered")()); }
+			ScriptFunction OnPowerStatusChanged() { mixin(MGF!("mOnPowerStatusChanged", "Function TribesGame.TrGameObjective.OnPowerStatusChanged")()); }
+			ScriptFunction HideMesh() { mixin(MGF!("mHideMesh", "Function TribesGame.TrGameObjective.HideMesh")()); }
+			ScriptFunction ShouldPostRenderForCaH() { mixin(MGF!("mShouldPostRenderForCaH", "Function TribesGame.TrGameObjective.ShouldPostRenderForCaH")()); }
+			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrGameObjective.PostRenderFor")()); }
+			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrGameObjective.GetMarker")()); }
+			ScriptFunction GetPossessiveInstigatorName() { mixin(MGF!("mGetPossessiveInstigatorName", "Function TribesGame.TrGameObjective.GetPossessiveInstigatorName")()); }
+			ScriptFunction BlocksLineChecksFromSourceActor() { mixin(MGF!("mBlocksLineChecksFromSourceActor", "Function TribesGame.TrGameObjective.BlocksLineChecksFromSourceActor")()); }
+			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrGameObjective.Reset")()); }
+			ScriptFunction SpawnHelpTextCollisionProxy() { mixin(MGF!("mSpawnHelpTextCollisionProxy", "Function TribesGame.TrGameObjective.SpawnHelpTextCollisionProxy")()); }
+			ScriptFunction ShouldShowHelpText() { mixin(MGF!("mShouldShowHelpText", "Function TribesGame.TrGameObjective.ShouldShowHelpText")()); }
+			ScriptFunction ReceivesPowerFromGenerator() { mixin(MGF!("mReceivesPowerFromGenerator", "Function TribesGame.TrGameObjective.ReceivesPowerFromGenerator")()); }
+			ScriptFunction PerformUpgrade() { mixin(MGF!("mPerformUpgrade", "Function TribesGame.TrGameObjective.PerformUpgrade")()); }
+			ScriptFunction AddUpgrader() { mixin(MGF!("mAddUpgrader", "Function TribesGame.TrGameObjective.AddUpgrader")()); }
+			ScriptFunction AddDamageAssistance() { mixin(MGF!("mAddDamageAssistance", "Function TribesGame.TrGameObjective.AddDamageAssistance")()); }
+			ScriptFunction CheckRepairAssists() { mixin(MGF!("mCheckRepairAssists", "Function TribesGame.TrGameObjective.CheckRepairAssists")()); }
+			ScriptFunction CheckDestroyAssists() { mixin(MGF!("mCheckDestroyAssists", "Function TribesGame.TrGameObjective.CheckDestroyAssists")()); }
+			ScriptFunction ClearDamageAssistance() { mixin(MGF!("mClearDamageAssistance", "Function TribesGame.TrGameObjective.ClearDamageAssistance")()); }
+			ScriptFunction GiveDestroyAccolade() { mixin(MGF!("mGiveDestroyAccolade", "Function TribesGame.TrGameObjective.GiveDestroyAccolade")()); }
+			ScriptFunction GetSpectatorHealthInfo() { mixin(MGF!("mGetSpectatorHealthInfo", "Function TribesGame.TrGameObjective.GetSpectatorHealthInfo")()); }
+			ScriptFunction GetSpectatorDescription() { mixin(MGF!("mGetSpectatorDescription", "Function TribesGame.TrGameObjective.GetSpectatorDescription")()); }
+			ScriptFunction IsAliveAndWell() { mixin(MGF!("mIsAliveAndWell", "Function TribesGame.TrGameObjective.IsAliveAndWell")()); }
+			ScriptFunction InstantlyRegenerateHealth() { mixin(MGF!("mInstantlyRegenerateHealth", "Function TribesGame.TrGameObjective.InstantlyRegenerateHealth")()); }
+			ScriptFunction HideBasePlatform() { mixin(MGF!("mHideBasePlatform", "Function TribesGame.TrGameObjective.HideBasePlatform")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrGameObjective.Destroyed")()); }
+			ScriptFunction RequiresLOSForRepairDeployable() { mixin(MGF!("mRequiresLOSForRepairDeployable", "Function TribesGame.TrGameObjective.RequiresLOSForRepairDeployable")()); }
+			ScriptFunction AwardKillAssists() { mixin(MGF!("mAwardKillAssists", "Function TribesGame.TrGameObjective.AwardKillAssists")()); }
+			ScriptFunction AwardUpgradeAssists() { mixin(MGF!("mAwardUpgradeAssists", "Function TribesGame.TrGameObjective.AwardUpgradeAssists")()); }
+			ScriptFunction OnUpgradePerformed() { mixin(MGF!("mOnUpgradePerformed", "Function TribesGame.TrGameObjective.OnUpgradePerformed")()); }
 		}
 	}
 	static struct Constants
@@ -1521,14 +1522,14 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrGameObjective.UpgradeSelectionList")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGameObjective.UpgradeSelectionList")()); }
 		@property final auto ref
 		{
-			ScriptName PropertyName() { return *cast(ScriptName*)(cast(size_t)&this + 16); }
-			float NewValue() { return *cast(float*)(cast(size_t)&this + 12); }
-			int UpgradeCreditCost() { return *cast(int*)(cast(size_t)&this + 8); }
-			int UpgradeLevel() { return *cast(int*)(cast(size_t)&this + 4); }
-			ScriptClass UpgradeClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
+			ScriptName PropertyName() { mixin(MGPS!(ScriptName, 16)()); }
+			float NewValue() { mixin(MGPS!(float, 12)()); }
+			int UpgradeCreditCost() { mixin(MGPS!(int, 8)()); }
+			int UpgradeLevel() { mixin(MGPS!(int, 4)()); }
+			ScriptClass UpgradeClass() { mixin(MGPS!(ScriptClass, 0)()); }
 		}
 	}
 	struct ObjectiveDamageAssist
@@ -1536,108 +1537,132 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrGameObjective.ObjectiveDamageAssist")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGameObjective.ObjectiveDamageAssist")()); }
 		@property final auto ref
 		{
-			int DamageAmount() { return *cast(int*)(cast(size_t)&this + 4); }
-			TrPlayerController Damager() { return *cast(TrPlayerController*)(cast(size_t)&this + 0); }
+			int DamageAmount() { mixin(MGPS!(int, 4)()); }
+			TrPlayerController Damager() { mixin(MGPS!(TrPlayerController, 0)()); }
 		}
+	}
+	static struct Active
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGameObjective.Active")()); }
+	}
+	static struct Critical
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGameObjective.Critical")()); }
+	}
+	static struct BlownUp
+	{
+		private static __gshared ScriptState mStaticClass;
+		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGameObjective.BlownUp")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrGameObjective.UpgradeSelectionList) m_UpgradeList() { return *cast(ScriptArray!(TrGameObjective.UpgradeSelectionList)*)(cast(size_t)cast(void*)this + 1260); }
-			ScriptArray!(TrGameObjective.ObjectiveDamageAssist) DamageAssistList() { return *cast(ScriptArray!(TrGameObjective.ObjectiveDamageAssist)*)(cast(size_t)cast(void*)this + 1324); }
-			ScriptArray!(TrPlayerController) m_Upgraders() { return *cast(ScriptArray!(TrPlayerController)*)(cast(size_t)cast(void*)this + 1348); }
-			ScriptClass m_AssistAccolade() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1344); }
-			float fUpgradeAssistTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1340); }
-			float m_fMarker2DDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 1336); }
-			float DESTROY_ASSIST_PERCENTAGE() { return *cast(float*)(cast(size_t)cast(void*)this + 1320); }
-			float REPAIR_ASSIST_PERCENTAGE() { return *cast(float*)(cast(size_t)cast(void*)this + 1316); }
-			float m_fInstigatorNamePlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1312); }
-			float m_fObjectiveNamePlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1308); }
-			float m_fObjectiveHealthBarHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1304); }
-			float m_fObjectiveHealthBarWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 1300); }
-			float m_fObjectiveHealthBarPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1296); }
-			float m_fObjectiveHealthBarPlacementX() { return *cast(float*)(cast(size_t)cast(void*)this + 1292); }
-			MaterialInstanceConstant m_MarkerMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1288); }
-			MaterialInstanceConstant m_HealthBarMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1284); }
-			float m_fRepairBoost() { return *cast(float*)(cast(size_t)cast(void*)this + 1280); }
-			ParticleSystem m_UpgradeTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 1276); }
-			int r_nUpgradeLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 1272); }
-			int m_nPromptMessageSwitch() { return *cast(int*)(cast(size_t)cast(void*)this + 1256); }
-			float m_fPromptMessageTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1252); }
-			float m_fRemainingSeekingTargetHUDZoomTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1248); }
-			Rotator m_rPotentialSeekingTargetHUDRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 1236); }
-			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1232); }
-			TrObject.EMissileLock m_MissileLockStatus() { return *cast(TrObject.EMissileLock*)(cast(size_t)cast(void*)this + 1229); }
-			ubyte r_bReset() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 1228); }
-			ParticleSystem DestroyedTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 1220); }
-			float m_fLifeAfterDeathSecs() { return *cast(float*)(cast(size_t)cast(void*)this + 1212); }
-			Controller m_LastDamager() { return *cast(Controller*)(cast(size_t)cast(void*)this + 1208); }
-			SoundCue m_ExplosionSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1192); }
-			PhysicsAsset m_OfflinePhysicsAsset() { return *cast(PhysicsAsset*)(cast(size_t)cast(void*)this + 1180); }
-			PhysicsAsset m_OnlinePhysicsAsset() { return *cast(PhysicsAsset*)(cast(size_t)cast(void*)this + 1176); }
-			ScriptClass m_ExplosionLightClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1172); }
-			ScriptString m_sScreenName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1160); }
-			float m_fOuterExplosionShakeRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 1156); }
-			float m_fInnerExplosionShakeRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 1152); }
-			CameraAnim m_ExplosionShake() { return *cast(CameraAnim*)(cast(size_t)cast(void*)this + 1148); }
-			ParticleSystem m_ExplosionTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 1144); }
-			float m_fShieldHitRemainingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1140); }
-			float m_fShieldHitTargetTimeLength() { return *cast(float*)(cast(size_t)cast(void*)this + 1136); }
-			float m_fShieldHitTargetScale() { return *cast(float*)(cast(size_t)cast(void*)this + 1132); }
-			MaterialInstanceConstant m_ShieldMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1128); }
-			float ShowHeaderUntil() { return *cast(float*)(cast(size_t)cast(void*)this + 1124); }
-			int MarkerOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 1120); }
-			Texture2D m_ShieldNormalMap() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 1116); }
-			Material m_ShieldMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 1112); }
-			float m_fShieldHealthPercentage() { return *cast(float*)(cast(size_t)cast(void*)this + 1104); }
-			int r_nRepairHealthThreshold() { return *cast(int*)(cast(size_t)cast(void*)this + 1100); }
-			int m_nCriticalHealthThreshold() { return *cast(int*)(cast(size_t)cast(void*)this + 1096); }
-			Vector r_vReplicatedHitInfo() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1084); }
-			int m_nHealthRegenRate() { return *cast(int*)(cast(size_t)cast(void*)this + 1080); }
-			int m_nLastHealth() { return *cast(int*)(cast(size_t)cast(void*)this + 1076); }
-			int r_MaxHealth() { return *cast(int*)(cast(size_t)cast(void*)this + 1072); }
-			int r_Health() { return *cast(int*)(cast(size_t)cast(void*)this + 1068); }
-			MaterialInstanceConstant m_ObjectiveMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1064); }
-			Vector CallInPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1044); }
-			Rotator CallInRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 1032); }
-			TrStatsInterface Stats() { return *cast(TrStatsInterface*)(cast(size_t)cast(void*)this + 1028); }
+			ScriptArray!(TrGameObjective.UpgradeSelectionList) m_UpgradeList() { mixin(MGPC!(ScriptArray!(TrGameObjective.UpgradeSelectionList), 1260)()); }
+			ScriptArray!(TrGameObjective.ObjectiveDamageAssist) DamageAssistList() { mixin(MGPC!(ScriptArray!(TrGameObjective.ObjectiveDamageAssist), 1324)()); }
+			ScriptArray!(TrPlayerController) m_Upgraders() { mixin(MGPC!(ScriptArray!(TrPlayerController), 1348)()); }
+			ScriptClass m_AssistAccolade() { mixin(MGPC!(ScriptClass, 1344)()); }
+			float fUpgradeAssistTime() { mixin(MGPC!(float, 1340)()); }
+			float m_fMarker2DDistance() { mixin(MGPC!(float, 1336)()); }
+			float DESTROY_ASSIST_PERCENTAGE() { mixin(MGPC!(float, 1320)()); }
+			float REPAIR_ASSIST_PERCENTAGE() { mixin(MGPC!(float, 1316)()); }
+			float m_fInstigatorNamePlacementY() { mixin(MGPC!(float, 1312)()); }
+			float m_fObjectiveNamePlacementY() { mixin(MGPC!(float, 1308)()); }
+			float m_fObjectiveHealthBarHeight() { mixin(MGPC!(float, 1304)()); }
+			float m_fObjectiveHealthBarWidth() { mixin(MGPC!(float, 1300)()); }
+			float m_fObjectiveHealthBarPlacementY() { mixin(MGPC!(float, 1296)()); }
+			float m_fObjectiveHealthBarPlacementX() { mixin(MGPC!(float, 1292)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 1288)()); }
+			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 1284)()); }
+			float m_fRepairBoost() { mixin(MGPC!(float, 1280)()); }
+			ParticleSystem m_UpgradeTemplate() { mixin(MGPC!(ParticleSystem, 1276)()); }
+			int r_nUpgradeLevel() { mixin(MGPC!(int, 1272)()); }
+			int m_nPromptMessageSwitch() { mixin(MGPC!(int, 1256)()); }
+			float m_fPromptMessageTime() { mixin(MGPC!(float, 1252)()); }
+			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 1248)()); }
+			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!(Rotator, 1236)()); }
+			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 1232)()); }
+			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!(TrObject.EMissileLock, 1229)()); }
+			ubyte r_bReset() { mixin(MGPC!(ubyte, 1228)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DestroyedParticleComp'!
+			ParticleSystem DestroyedTemplate() { mixin(MGPC!(ParticleSystem, 1220)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_DestroyedSound'!
+			float m_fLifeAfterDeathSecs() { mixin(MGPC!(float, 1212)()); }
+			Controller m_LastDamager() { mixin(MGPC!(Controller, 1208)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_PowerDownSound'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ShieldHitSound'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CriticalSound'!
+			SoundCue m_ExplosionSound() { mixin(MGPC!(SoundCue, 1192)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_OnlineSound'!
+			PhysicsAsset m_OfflinePhysicsAsset() { mixin(MGPC!(PhysicsAsset, 1180)()); }
+			PhysicsAsset m_OnlinePhysicsAsset() { mixin(MGPC!(PhysicsAsset, 1176)()); }
+			ScriptClass m_ExplosionLightClass() { mixin(MGPC!(ScriptClass, 1172)()); }
+			ScriptString m_sScreenName() { mixin(MGPC!(ScriptString, 1160)()); }
+			float m_fOuterExplosionShakeRadius() { mixin(MGPC!(float, 1156)()); }
+			float m_fInnerExplosionShakeRadius() { mixin(MGPC!(float, 1152)()); }
+			CameraAnim m_ExplosionShake() { mixin(MGPC!(CameraAnim, 1148)()); }
+			ParticleSystem m_ExplosionTemplate() { mixin(MGPC!(ParticleSystem, 1144)()); }
+			float m_fShieldHitRemainingTime() { mixin(MGPC!(float, 1140)()); }
+			float m_fShieldHitTargetTimeLength() { mixin(MGPC!(float, 1136)()); }
+			float m_fShieldHitTargetScale() { mixin(MGPC!(float, 1132)()); }
+			MaterialInstanceConstant m_ShieldMIC() { mixin(MGPC!(MaterialInstanceConstant, 1128)()); }
+			float ShowHeaderUntil() { mixin(MGPC!(float, 1124)()); }
+			int MarkerOffset() { mixin(MGPC!(int, 1120)()); }
+			Texture2D m_ShieldNormalMap() { mixin(MGPC!(Texture2D, 1116)()); }
+			Material m_ShieldMaterial() { mixin(MGPC!(Material, 1112)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ShieldMesh'!
+			float m_fShieldHealthPercentage() { mixin(MGPC!(float, 1104)()); }
+			int r_nRepairHealthThreshold() { mixin(MGPC!(int, 1100)()); }
+			int m_nCriticalHealthThreshold() { mixin(MGPC!(int, 1096)()); }
+			Vector r_vReplicatedHitInfo() { mixin(MGPC!(Vector, 1084)()); }
+			int m_nHealthRegenRate() { mixin(MGPC!(int, 1080)()); }
+			int m_nLastHealth() { mixin(MGPC!(int, 1076)()); }
+			int r_MaxHealth() { mixin(MGPC!(int, 1072)()); }
+			int r_Health() { mixin(MGPC!(int, 1068)()); }
+			MaterialInstanceConstant m_ObjectiveMIC() { mixin(MGPC!(MaterialInstanceConstant, 1064)()); }
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_LightEnvironment'!
+			Vector CallInPosition() { mixin(MGPC!(Vector, 1044)()); }
+			Rotator CallInRotation() { mixin(MGPC!(Rotator, 1032)()); }
+			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 1028)()); }
 		}
-		bool m_bAlwaysRelevantToSameTeam() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x8000) != 0; }
-		bool m_bAlwaysRelevantToSameTeam(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x8000; } return val; }
-		bool m_bHurtByFriendlyFire() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x4000) != 0; }
-		bool m_bHurtByFriendlyFire(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x4000; } return val; }
-		bool m_bDestroyable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x2000) != 0; }
-		bool m_bDestroyable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x2000; } return val; }
-		bool m_bShowObjectivesForcesMarker() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x1000) != 0; }
-		bool m_bShowObjectivesForcesMarker(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x1000; } return val; }
-		bool m_bIsRepairable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x800) != 0; }
-		bool m_bIsRepairable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x800; } return val; }
-		bool m_bIsUpgradeable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x400) != 0; }
-		bool m_bIsUpgradeable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x400; } return val; }
-		bool m_bHasPromptText() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x200) != 0; }
-		bool m_bHasPromptText(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x200; } return val; }
-		bool r_bInDestroyedState() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x100) != 0; }
-		bool r_bInDestroyedState(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x100; } return val; }
-		bool m_bIsRepairableAfterDeath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x80) != 0; }
-		bool m_bIsRepairableAfterDeath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x80; } return val; }
-		bool m_bPostRenderForEnemy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x40) != 0; }
-		bool m_bPostRenderForEnemy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x40; } return val; }
-		bool m_bVisibilityRequiredForEnemy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x20) != 0; }
-		bool m_bVisibilityRequiredForEnemy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x20; } return val; }
-		bool m_bForceShowHUD() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x10) != 0; }
-		bool m_bForceShowHUD(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x10; } return val; }
-		bool m_bReceivesPowerFromGenerator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x8) != 0; }
-		bool m_bReceivesPowerFromGenerator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x8; } return val; }
-		bool r_bIsPowered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x4) != 0; }
-		bool r_bIsPowered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x4; } return val; }
-		bool m_bInstantOnlineSound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x2) != 0; }
-		bool m_bInstantOnlineSound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x2; } return val; }
-		bool m_bAutoPlayOnlineSound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1184) & 0x1) != 0; }
-		bool m_bAutoPlayOnlineSound(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1184) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1184) &= ~0x1; } return val; }
+		bool m_bAlwaysRelevantToSameTeam() { mixin(MGBPC!(1184, 0x8000)()); }
+		bool m_bAlwaysRelevantToSameTeam(bool val) { mixin(MSBPC!(1184, 0x8000)()); }
+		bool m_bHurtByFriendlyFire() { mixin(MGBPC!(1184, 0x4000)()); }
+		bool m_bHurtByFriendlyFire(bool val) { mixin(MSBPC!(1184, 0x4000)()); }
+		bool m_bDestroyable() { mixin(MGBPC!(1184, 0x2000)()); }
+		bool m_bDestroyable(bool val) { mixin(MSBPC!(1184, 0x2000)()); }
+		bool m_bShowObjectivesForcesMarker() { mixin(MGBPC!(1184, 0x1000)()); }
+		bool m_bShowObjectivesForcesMarker(bool val) { mixin(MSBPC!(1184, 0x1000)()); }
+		bool m_bIsRepairable() { mixin(MGBPC!(1184, 0x800)()); }
+		bool m_bIsRepairable(bool val) { mixin(MSBPC!(1184, 0x800)()); }
+		bool m_bIsUpgradeable() { mixin(MGBPC!(1184, 0x400)()); }
+		bool m_bIsUpgradeable(bool val) { mixin(MSBPC!(1184, 0x400)()); }
+		bool m_bHasPromptText() { mixin(MGBPC!(1184, 0x200)()); }
+		bool m_bHasPromptText(bool val) { mixin(MSBPC!(1184, 0x200)()); }
+		bool r_bInDestroyedState() { mixin(MGBPC!(1184, 0x100)()); }
+		bool r_bInDestroyedState(bool val) { mixin(MSBPC!(1184, 0x100)()); }
+		bool m_bIsRepairableAfterDeath() { mixin(MGBPC!(1184, 0x80)()); }
+		bool m_bIsRepairableAfterDeath(bool val) { mixin(MSBPC!(1184, 0x80)()); }
+		bool m_bPostRenderForEnemy() { mixin(MGBPC!(1184, 0x40)()); }
+		bool m_bPostRenderForEnemy(bool val) { mixin(MSBPC!(1184, 0x40)()); }
+		bool m_bVisibilityRequiredForEnemy() { mixin(MGBPC!(1184, 0x20)()); }
+		bool m_bVisibilityRequiredForEnemy(bool val) { mixin(MSBPC!(1184, 0x20)()); }
+		bool m_bForceShowHUD() { mixin(MGBPC!(1184, 0x10)()); }
+		bool m_bForceShowHUD(bool val) { mixin(MSBPC!(1184, 0x10)()); }
+		bool m_bReceivesPowerFromGenerator() { mixin(MGBPC!(1184, 0x8)()); }
+		bool m_bReceivesPowerFromGenerator(bool val) { mixin(MSBPC!(1184, 0x8)()); }
+		bool r_bIsPowered() { mixin(MGBPC!(1184, 0x4)()); }
+		bool r_bIsPowered(bool val) { mixin(MSBPC!(1184, 0x4)()); }
+		bool m_bInstantOnlineSound() { mixin(MGBPC!(1184, 0x2)()); }
+		bool m_bInstantOnlineSound(bool val) { mixin(MSBPC!(1184, 0x2)()); }
+		bool m_bAutoPlayOnlineSound() { mixin(MGBPC!(1184, 0x1)()); }
+		bool m_bAutoPlayOnlineSound(bool val) { mixin(MSBPC!(1184, 0x1)()); }
 	}
 final:
 	bool IsEnemy(Actor Target)
@@ -1825,11 +1850,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMarker, params.ptr, cast(void*)0);
 		return *cast(Texture2D*)params.ptr;
 	}
-	bool GetPossessiveInstigatorName(ScriptString* PlayerName)
+	bool GetPossessiveInstigatorName(ref ScriptString PlayerName)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *PlayerName;
+		*cast(ScriptString*)params.ptr = PlayerName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPossessiveInstigatorName, params.ptr, cast(void*)0);
 		*PlayerName = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
@@ -1913,12 +1938,12 @@ final:
 		*cast(TrPlayerController*)params.ptr = TrPC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GiveDestroyAccolade, params.ptr, cast(void*)0);
 	}
-	void GetSpectatorHealthInfo(int* Health, int* MaxHealth)
+	void GetSpectatorHealthInfo(ref int Health, ref int MaxHealth)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = *Health;
-		*cast(int*)&params[4] = *MaxHealth;
+		*cast(int*)params.ptr = Health;
+		*cast(int*)&params[4] = MaxHealth;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorHealthInfo, params.ptr, cast(void*)0);
 		*Health = *cast(int*)params.ptr;
 		*MaxHealth = *cast(int*)&params[4];

@@ -1,14 +1,15 @@
 module UnrealScript.Core.UObject;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 
 extern(C++) interface UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.Object")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.Object")()); }
 	private static __gshared UObject mDefaultProperties;
-	@property final static UObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UObject)("Object Core.Default__Object")); }
+	@property final static UObject DefaultProperties() { mixin(MGDPC!(UObject, "Object Core.Default__Object")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -307,297 +308,297 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBuildChangelistNumber() { return mGetBuildChangelistNumber ? mGetBuildChangelistNumber : (mGetBuildChangelistNumber = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetBuildChangelistNumber")); }
-			ScriptFunction GetEngineVersion() { return mGetEngineVersion ? mGetEngineVersion : (mGetEngineVersion = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetEngineVersion")); }
-			ScriptFunction GetSystemTime() { return mGetSystemTime ? mGetSystemTime : (mGetSystemTime = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetSystemTime")); }
-			ScriptFunction TimeStamp() { return mTimeStamp ? mTimeStamp : (mTimeStamp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.TimeStamp")); }
-			ScriptFunction TransformVectorByRotation() { return mTransformVectorByRotation ? mTransformVectorByRotation : (mTransformVectorByRotation = ScriptObject.Find!(ScriptFunction)("Function Core.Object.TransformVectorByRotation")); }
-			ScriptFunction GetPackageName() { return mGetPackageName ? mGetPackageName : (mGetPackageName = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetPackageName")); }
-			ScriptFunction IsPendingKill() { return mIsPendingKill ? mIsPendingKill : (mIsPendingKill = ScriptObject.Find!(ScriptFunction)("Function Core.Object.IsPendingKill")); }
-			ScriptFunction ByteToFloat() { return mByteToFloat ? mByteToFloat : (mByteToFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ByteToFloat")); }
-			ScriptFunction FloatToByte() { return mFloatToByte ? mFloatToByte : (mFloatToByte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FloatToByte")); }
-			ScriptFunction UnwindHeading() { return mUnwindHeading ? mUnwindHeading : (mUnwindHeading = ScriptObject.Find!(ScriptFunction)("Function Core.Object.UnwindHeading")); }
-			ScriptFunction FindDeltaAngle() { return mFindDeltaAngle ? mFindDeltaAngle : (mFindDeltaAngle = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FindDeltaAngle")); }
-			ScriptFunction GetHeadingAngle() { return mGetHeadingAngle ? mGetHeadingAngle : (mGetHeadingAngle = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetHeadingAngle")); }
-			ScriptFunction GetAngularDegreesFromRadians() { return mGetAngularDegreesFromRadians ? mGetAngularDegreesFromRadians : (mGetAngularDegreesFromRadians = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetAngularDegreesFromRadians")); }
-			ScriptFunction Acos() { return mAcos ? mAcos : (mAcos = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Acos")); }
-			ScriptFunction GetAngularFromDotDist() { return mGetAngularFromDotDist ? mGetAngularFromDotDist : (mGetAngularFromDotDist = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetAngularFromDotDist")); }
-			ScriptFunction GetAngularDistance() { return mGetAngularDistance ? mGetAngularDistance : (mGetAngularDistance = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetAngularDistance")); }
-			ScriptFunction GetDotDistance() { return mGetDotDistance ? mGetDotDistance : (mGetDotDistance = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetDotDistance")); }
-			ScriptFunction PointProjectToPlane() { return mPointProjectToPlane ? mPointProjectToPlane : (mPointProjectToPlane = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PointProjectToPlane")); }
-			ScriptFunction PointDistToPlane() { return mPointDistToPlane ? mPointDistToPlane : (mPointDistToPlane = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PointDistToPlane")); }
-			ScriptFunction PointDistToSegment() { return mPointDistToSegment ? mPointDistToSegment : (mPointDistToSegment = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PointDistToSegment")); }
-			ScriptFunction PointDistToLine() { return mPointDistToLine ? mPointDistToLine : (mPointDistToLine = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PointDistToLine")); }
-			ScriptFunction GetPerObjectConfigSections() { return mGetPerObjectConfigSections ? mGetPerObjectConfigSections : (mGetPerObjectConfigSections = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetPerObjectConfigSections")); }
-			ScriptFunction StaticSaveConfig() { return mStaticSaveConfig ? mStaticSaveConfig : (mStaticSaveConfig = ScriptObject.Find!(ScriptFunction)("Function Core.Object.StaticSaveConfig")); }
-			ScriptFunction SaveConfig() { return mSaveConfig ? mSaveConfig : (mSaveConfig = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SaveConfig")); }
-			ScriptFunction FindObject() { return mFindObject ? mFindObject : (mFindObject = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FindObject")); }
-			ScriptFunction DynamicLoadObject() { return mDynamicLoadObject ? mDynamicLoadObject : (mDynamicLoadObject = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DynamicLoadObject")); }
-			ScriptFunction GetEnum() { return mGetEnum ? mGetEnum : (mGetEnum = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetEnum")); }
-			ScriptFunction Disable() { return mDisable ? mDisable : (mDisable = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Disable")); }
-			ScriptFunction Enable() { return mEnable ? mEnable : (mEnable = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Enable")); }
-			ScriptFunction ContinuedState() { return mContinuedState ? mContinuedState : (mContinuedState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ContinuedState")); }
-			ScriptFunction PausedState() { return mPausedState ? mPausedState : (mPausedState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PausedState")); }
-			ScriptFunction PoppedState() { return mPoppedState ? mPoppedState : (mPoppedState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PoppedState")); }
-			ScriptFunction PushedState() { return mPushedState ? mPushedState : (mPushedState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PushedState")); }
-			ScriptFunction EndState() { return mEndState ? mEndState : (mEndState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EndState")); }
-			ScriptFunction BeginState() { return mBeginState ? mBeginState : (mBeginState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.BeginState")); }
-			ScriptFunction DumpStateStack() { return mDumpStateStack ? mDumpStateStack : (mDumpStateStack = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DumpStateStack")); }
-			ScriptFunction PopState() { return mPopState ? mPopState : (mPopState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PopState")); }
-			ScriptFunction PushState() { return mPushState ? mPushState : (mPushState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PushState")); }
-			ScriptFunction GetStateName() { return mGetStateName ? mGetStateName : (mGetStateName = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetStateName")); }
-			ScriptFunction IsChildState() { return mIsChildState ? mIsChildState : (mIsChildState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.IsChildState")); }
-			ScriptFunction IsInState() { return mIsInState ? mIsInState : (mIsInState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.IsInState")); }
-			ScriptFunction GotoState() { return mGotoState ? mGotoState : (mGotoState = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GotoState")); }
-			ScriptFunction IsUTracing() { return mIsUTracing ? mIsUTracing : (mIsUTracing = ScriptObject.Find!(ScriptFunction)("Function Core.Object.IsUTracing")); }
-			ScriptFunction SetUTracing() { return mSetUTracing ? mSetUTracing : (mSetUTracing = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SetUTracing")); }
-			ScriptFunction GetFuncName() { return mGetFuncName ? mGetFuncName : (mGetFuncName = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetFuncName")); }
-			ScriptFunction DebugBreak() { return mDebugBreak ? mDebugBreak : (mDebugBreak = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DebugBreak")); }
-			ScriptFunction GetScriptTrace() { return mGetScriptTrace ? mGetScriptTrace : (mGetScriptTrace = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetScriptTrace")); }
-			ScriptFunction ScriptTrace() { return mScriptTrace ? mScriptTrace : (mScriptTrace = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ScriptTrace")); }
-			ScriptFunction ParseLocalizedPropertyPath() { return mParseLocalizedPropertyPath ? mParseLocalizedPropertyPath : (mParseLocalizedPropertyPath = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ParseLocalizedPropertyPath")); }
-			ScriptFunction Localize() { return mLocalize ? mLocalize : (mLocalize = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Localize")); }
-			ScriptFunction ParseStringIntoArray() { return mParseStringIntoArray ? mParseStringIntoArray : (mParseStringIntoArray = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ParseStringIntoArray")); }
-			ScriptFunction WarnInternal() { return mWarnInternal ? mWarnInternal : (mWarnInternal = ScriptObject.Find!(ScriptFunction)("Function Core.Object.WarnInternal")); }
-			ScriptFunction LogInternal() { return mLogInternal ? mLogInternal : (mLogInternal = ScriptObject.Find!(ScriptFunction)("Function Core.Object.LogInternal")); }
-			ScriptFunction Subtract_LinearColorLinearColor() { return mSubtract_LinearColorLinearColor ? mSubtract_LinearColorLinearColor : (mSubtract_LinearColorLinearColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_LinearColorLinearColor")); }
-			ScriptFunction Multiply_LinearColorFloat() { return mMultiply_LinearColorFloat ? mMultiply_LinearColorFloat : (mMultiply_LinearColorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_LinearColorFloat")); }
-			ScriptFunction ColorToLinearColor() { return mColorToLinearColor ? mColorToLinearColor : (mColorToLinearColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ColorToLinearColor")); }
-			ScriptFunction MakeLinearColor() { return mMakeLinearColor ? mMakeLinearColor : (mMakeLinearColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MakeLinearColor")); }
-			ScriptFunction LerpColor() { return mLerpColor ? mLerpColor : (mLerpColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.LerpColor")); }
-			ScriptFunction MakeColor() { return mMakeColor ? mMakeColor : (mMakeColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MakeColor")); }
-			ScriptFunction Add_ColorColor() { return mAdd_ColorColor ? mAdd_ColorColor : (mAdd_ColorColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Add_ColorColor")); }
-			ScriptFunction Multiply_ColorFloat() { return mMultiply_ColorFloat ? mMultiply_ColorFloat : (mMultiply_ColorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_ColorFloat")); }
-			ScriptFunction Multiply_FloatColor() { return mMultiply_FloatColor ? mMultiply_FloatColor : (mMultiply_FloatColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_FloatColor")); }
-			ScriptFunction Subtract_ColorColor() { return mSubtract_ColorColor ? mSubtract_ColorColor : (mSubtract_ColorColor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_ColorColor")); }
-			ScriptFunction EvalInterpCurveVector2D() { return mEvalInterpCurveVector2D ? mEvalInterpCurveVector2D : (mEvalInterpCurveVector2D = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EvalInterpCurveVector2D")); }
-			ScriptFunction EvalInterpCurveVector() { return mEvalInterpCurveVector ? mEvalInterpCurveVector : (mEvalInterpCurveVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EvalInterpCurveVector")); }
-			ScriptFunction EvalInterpCurveFloat() { return mEvalInterpCurveFloat ? mEvalInterpCurveFloat : (mEvalInterpCurveFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EvalInterpCurveFloat")); }
-			ScriptFunction vect2d() { return mvect2d ? mvect2d : (mvect2d = ScriptObject.Find!(ScriptFunction)("Function Core.Object.vect2d")); }
-			ScriptFunction GetMappedRangeValue() { return mGetMappedRangeValue ? mGetMappedRangeValue : (mGetMappedRangeValue = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetMappedRangeValue")); }
-			ScriptFunction GetRangePctByValue() { return mGetRangePctByValue ? mGetRangePctByValue : (mGetRangePctByValue = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetRangePctByValue")); }
-			ScriptFunction GetRangeValueByPct() { return mGetRangeValueByPct ? mGetRangeValueByPct : (mGetRangeValueByPct = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetRangeValueByPct")); }
-			ScriptFunction SubtractEqual_Vector2DVector2D() { return mSubtractEqual_Vector2DVector2D ? mSubtractEqual_Vector2DVector2D : (mSubtractEqual_Vector2DVector2D = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractEqual_Vector2DVector2D")); }
-			ScriptFunction AddEqual_Vector2DVector2D() { return mAddEqual_Vector2DVector2D ? mAddEqual_Vector2DVector2D : (mAddEqual_Vector2DVector2D = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddEqual_Vector2DVector2D")); }
-			ScriptFunction DivideEqual_Vector2DFloat() { return mDivideEqual_Vector2DFloat ? mDivideEqual_Vector2DFloat : (mDivideEqual_Vector2DFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DivideEqual_Vector2DFloat")); }
-			ScriptFunction MultiplyEqual_Vector2DFloat() { return mMultiplyEqual_Vector2DFloat ? mMultiplyEqual_Vector2DFloat : (mMultiplyEqual_Vector2DFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_Vector2DFloat")); }
-			ScriptFunction Divide_Vector2DFloat() { return mDivide_Vector2DFloat ? mDivide_Vector2DFloat : (mDivide_Vector2DFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Divide_Vector2DFloat")); }
-			ScriptFunction Multiply_Vector2DFloat() { return mMultiply_Vector2DFloat ? mMultiply_Vector2DFloat : (mMultiply_Vector2DFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_Vector2DFloat")); }
-			ScriptFunction Subtract_Vector2DVector2D() { return mSubtract_Vector2DVector2D ? mSubtract_Vector2DVector2D : (mSubtract_Vector2DVector2D = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_Vector2DVector2D")); }
-			ScriptFunction Add_Vector2DVector2D() { return mAdd_Vector2DVector2D ? mAdd_Vector2DVector2D : (mAdd_Vector2DVector2D = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Add_Vector2DVector2D")); }
-			ScriptFunction Subtract_QuatQuat() { return mSubtract_QuatQuat ? mSubtract_QuatQuat : (mSubtract_QuatQuat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_QuatQuat")); }
-			ScriptFunction Add_QuatQuat() { return mAdd_QuatQuat ? mAdd_QuatQuat : (mAdd_QuatQuat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Add_QuatQuat")); }
-			ScriptFunction QuatSlerp() { return mQuatSlerp ? mQuatSlerp : (mQuatSlerp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatSlerp")); }
-			ScriptFunction QuatToRotator() { return mQuatToRotator ? mQuatToRotator : (mQuatToRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatToRotator")); }
-			ScriptFunction QuatFromRotator() { return mQuatFromRotator ? mQuatFromRotator : (mQuatFromRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatFromRotator")); }
-			ScriptFunction QuatFromAxisAndAngle() { return mQuatFromAxisAndAngle ? mQuatFromAxisAndAngle : (mQuatFromAxisAndAngle = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatFromAxisAndAngle")); }
-			ScriptFunction QuatFindBetween() { return mQuatFindBetween ? mQuatFindBetween : (mQuatFindBetween = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatFindBetween")); }
-			ScriptFunction QuatRotateVector() { return mQuatRotateVector ? mQuatRotateVector : (mQuatRotateVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatRotateVector")); }
-			ScriptFunction QuatInvert() { return mQuatInvert ? mQuatInvert : (mQuatInvert = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatInvert")); }
-			ScriptFunction QuatDot() { return mQuatDot ? mQuatDot : (mQuatDot = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatDot")); }
-			ScriptFunction QuatProduct() { return mQuatProduct ? mQuatProduct : (mQuatProduct = ScriptObject.Find!(ScriptFunction)("Function Core.Object.QuatProduct")); }
-			ScriptFunction MatrixGetAxis() { return mMatrixGetAxis ? mMatrixGetAxis : (mMatrixGetAxis = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MatrixGetAxis")); }
-			ScriptFunction MatrixGetOrigin() { return mMatrixGetOrigin ? mMatrixGetOrigin : (mMatrixGetOrigin = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MatrixGetOrigin")); }
-			ScriptFunction MatrixGetRotator() { return mMatrixGetRotator ? mMatrixGetRotator : (mMatrixGetRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MatrixGetRotator")); }
-			ScriptFunction MakeRotationMatrix() { return mMakeRotationMatrix ? mMakeRotationMatrix : (mMakeRotationMatrix = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MakeRotationMatrix")); }
-			ScriptFunction MakeRotationTranslationMatrix() { return mMakeRotationTranslationMatrix ? mMakeRotationTranslationMatrix : (mMakeRotationTranslationMatrix = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MakeRotationTranslationMatrix")); }
-			ScriptFunction InverseTransformNormal() { return mInverseTransformNormal ? mInverseTransformNormal : (mInverseTransformNormal = ScriptObject.Find!(ScriptFunction)("Function Core.Object.InverseTransformNormal")); }
-			ScriptFunction TransformNormal() { return mTransformNormal ? mTransformNormal : (mTransformNormal = ScriptObject.Find!(ScriptFunction)("Function Core.Object.TransformNormal")); }
-			ScriptFunction InverseTransformVector() { return mInverseTransformVector ? mInverseTransformVector : (mInverseTransformVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.InverseTransformVector")); }
-			ScriptFunction TransformVector() { return mTransformVector ? mTransformVector : (mTransformVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.TransformVector")); }
-			ScriptFunction Multiply_MatrixMatrix() { return mMultiply_MatrixMatrix ? mMultiply_MatrixMatrix : (mMultiply_MatrixMatrix = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_MatrixMatrix")); }
-			ScriptFunction NotEqual_NameName() { return mNotEqual_NameName ? mNotEqual_NameName : (mNotEqual_NameName = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_NameName")); }
-			ScriptFunction EqualEqual_NameName() { return mEqualEqual_NameName ? mEqualEqual_NameName : (mEqualEqual_NameName = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_NameName")); }
-			ScriptFunction IsA() { return mIsA ? mIsA : (mIsA = ScriptObject.Find!(ScriptFunction)("Function Core.Object.IsA")); }
-			ScriptFunction ClassIsChildOf() { return mClassIsChildOf ? mClassIsChildOf : (mClassIsChildOf = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ClassIsChildOf")); }
-			ScriptFunction NotEqual_InterfaceInterface() { return mNotEqual_InterfaceInterface ? mNotEqual_InterfaceInterface : (mNotEqual_InterfaceInterface = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_InterfaceInterface")); }
-			ScriptFunction EqualEqual_InterfaceInterface() { return mEqualEqual_InterfaceInterface ? mEqualEqual_InterfaceInterface : (mEqualEqual_InterfaceInterface = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_InterfaceInterface")); }
-			ScriptFunction NotEqual_ObjectObject() { return mNotEqual_ObjectObject ? mNotEqual_ObjectObject : (mNotEqual_ObjectObject = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_ObjectObject")); }
-			ScriptFunction EqualEqual_ObjectObject() { return mEqualEqual_ObjectObject ? mEqualEqual_ObjectObject : (mEqualEqual_ObjectObject = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_ObjectObject")); }
-			ScriptFunction PathName() { return mPathName ? mPathName : (mPathName = ScriptObject.Find!(ScriptFunction)("Function Core.Object.PathName")); }
-			ScriptFunction SplitString() { return mSplitString ? mSplitString : (mSplitString = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SplitString")); }
-			ScriptFunction JoinArray() { return mJoinArray ? mJoinArray : (mJoinArray = ScriptObject.Find!(ScriptFunction)("Function Core.Object.JoinArray")); }
-			ScriptFunction GetRightMost() { return mGetRightMost ? mGetRightMost : (mGetRightMost = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetRightMost")); }
-			ScriptFunction ConcatEqual_StrStr() { return mConcatEqual_StrStr ? mConcatEqual_StrStr : (mConcatEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ConcatEqual_StrStr")); }
-			ScriptFunction Split() { return mSplit ? mSplit : (mSplit = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Split")); }
-			ScriptFunction Repl() { return mRepl ? mRepl : (mRepl = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Repl")); }
-			ScriptFunction Asc() { return mAsc ? mAsc : (mAsc = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Asc")); }
-			ScriptFunction Chr() { return mChr ? mChr : (mChr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Chr")); }
-			ScriptFunction Locs() { return mLocs ? mLocs : (mLocs = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Locs")); }
-			ScriptFunction Caps() { return mCaps ? mCaps : (mCaps = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Caps")); }
-			ScriptFunction Right() { return mRight ? mRight : (mRight = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Right")); }
-			ScriptFunction Left() { return mLeft ? mLeft : (mLeft = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Left")); }
-			ScriptFunction Mid() { return mMid ? mMid : (mMid = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Mid")); }
-			ScriptFunction InStr() { return mInStr ? mInStr : (mInStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.InStr")); }
-			ScriptFunction Len() { return mLen ? mLen : (mLen = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Len")); }
-			ScriptFunction SubtractEqual_StrStr() { return mSubtractEqual_StrStr ? mSubtractEqual_StrStr : (mSubtractEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractEqual_StrStr")); }
-			ScriptFunction AtEqual_StrStr() { return mAtEqual_StrStr ? mAtEqual_StrStr : (mAtEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AtEqual_StrStr")); }
-			ScriptFunction ComplementEqual_StrStr() { return mComplementEqual_StrStr ? mComplementEqual_StrStr : (mComplementEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ComplementEqual_StrStr")); }
-			ScriptFunction NotEqual_StrStr() { return mNotEqual_StrStr ? mNotEqual_StrStr : (mNotEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_StrStr")); }
-			ScriptFunction EqualEqual_StrStr() { return mEqualEqual_StrStr ? mEqualEqual_StrStr : (mEqualEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_StrStr")); }
-			ScriptFunction GreaterEqual_StrStr() { return mGreaterEqual_StrStr ? mGreaterEqual_StrStr : (mGreaterEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GreaterEqual_StrStr")); }
-			ScriptFunction LessEqual_StrStr() { return mLessEqual_StrStr ? mLessEqual_StrStr : (mLessEqual_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.LessEqual_StrStr")); }
-			ScriptFunction Greater_StrStr() { return mGreater_StrStr ? mGreater_StrStr : (mGreater_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Greater_StrStr")); }
-			ScriptFunction Less_StrStr() { return mLess_StrStr ? mLess_StrStr : (mLess_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Less_StrStr")); }
-			ScriptFunction At_StrStr() { return mAt_StrStr ? mAt_StrStr : (mAt_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.At_StrStr")); }
-			ScriptFunction Concat_StrStr() { return mConcat_StrStr ? mConcat_StrStr : (mConcat_StrStr = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Concat_StrStr")); }
-			ScriptFunction MakeRotator() { return mMakeRotator ? mMakeRotator : (mMakeRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MakeRotator")); }
-			ScriptFunction SClampRotAxis() { return mSClampRotAxis ? mSClampRotAxis : (mSClampRotAxis = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SClampRotAxis")); }
-			ScriptFunction ClampRotAxisFromRange() { return mClampRotAxisFromRange ? mClampRotAxisFromRange : (mClampRotAxisFromRange = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ClampRotAxisFromRange")); }
-			ScriptFunction NormalizeRotAxis() { return mNormalizeRotAxis ? mNormalizeRotAxis : (mNormalizeRotAxis = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NormalizeRotAxis")); }
-			ScriptFunction FInterpTo() { return mFInterpTo ? mFInterpTo : (mFInterpTo = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FInterpTo")); }
-			ScriptFunction ClampRotAxisFromBase() { return mClampRotAxisFromBase ? mClampRotAxisFromBase : (mClampRotAxisFromBase = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ClampRotAxisFromBase")); }
-			ScriptFunction ClampRotAxis() { return mClampRotAxis ? mClampRotAxis : (mClampRotAxis = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ClampRotAxis")); }
-			ScriptFunction RSize() { return mRSize ? mRSize : (mRSize = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RSize")); }
-			ScriptFunction RDiff() { return mRDiff ? mRDiff : (mRDiff = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RDiff")); }
-			ScriptFunction RInterpTo() { return mRInterpTo ? mRInterpTo : (mRInterpTo = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RInterpTo")); }
-			ScriptFunction RTransform() { return mRTransform ? mRTransform : (mRTransform = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RTransform")); }
-			ScriptFunction RSmerp() { return mRSmerp ? mRSmerp : (mRSmerp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RSmerp")); }
-			ScriptFunction RLerp() { return mRLerp ? mRLerp : (mRLerp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RLerp")); }
-			ScriptFunction Normalize() { return mNormalize ? mNormalize : (mNormalize = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Normalize")); }
-			ScriptFunction OrthoRotation() { return mOrthoRotation ? mOrthoRotation : (mOrthoRotation = ScriptObject.Find!(ScriptFunction)("Function Core.Object.OrthoRotation")); }
-			ScriptFunction RotRand() { return mRotRand ? mRotRand : (mRotRand = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RotRand")); }
-			ScriptFunction GetRotatorAxis() { return mGetRotatorAxis ? mGetRotatorAxis : (mGetRotatorAxis = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetRotatorAxis")); }
-			ScriptFunction GetUnAxes() { return mGetUnAxes ? mGetUnAxes : (mGetUnAxes = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetUnAxes")); }
-			ScriptFunction GetAxes() { return mGetAxes ? mGetAxes : (mGetAxes = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GetAxes")); }
-			ScriptFunction ClockwiseFrom_IntInt() { return mClockwiseFrom_IntInt ? mClockwiseFrom_IntInt : (mClockwiseFrom_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ClockwiseFrom_IntInt")); }
-			ScriptFunction SubtractEqual_RotatorRotator() { return mSubtractEqual_RotatorRotator ? mSubtractEqual_RotatorRotator : (mSubtractEqual_RotatorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractEqual_RotatorRotator")); }
-			ScriptFunction AddEqual_RotatorRotator() { return mAddEqual_RotatorRotator ? mAddEqual_RotatorRotator : (mAddEqual_RotatorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddEqual_RotatorRotator")); }
-			ScriptFunction Subtract_RotatorRotator() { return mSubtract_RotatorRotator ? mSubtract_RotatorRotator : (mSubtract_RotatorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_RotatorRotator")); }
-			ScriptFunction Add_RotatorRotator() { return mAdd_RotatorRotator ? mAdd_RotatorRotator : (mAdd_RotatorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Add_RotatorRotator")); }
-			ScriptFunction DivideEqual_RotatorFloat() { return mDivideEqual_RotatorFloat ? mDivideEqual_RotatorFloat : (mDivideEqual_RotatorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DivideEqual_RotatorFloat")); }
-			ScriptFunction MultiplyEqual_RotatorFloat() { return mMultiplyEqual_RotatorFloat ? mMultiplyEqual_RotatorFloat : (mMultiplyEqual_RotatorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_RotatorFloat")); }
-			ScriptFunction Divide_RotatorFloat() { return mDivide_RotatorFloat ? mDivide_RotatorFloat : (mDivide_RotatorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Divide_RotatorFloat")); }
-			ScriptFunction Multiply_FloatRotator() { return mMultiply_FloatRotator ? mMultiply_FloatRotator : (mMultiply_FloatRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_FloatRotator")); }
-			ScriptFunction Multiply_RotatorFloat() { return mMultiply_RotatorFloat ? mMultiply_RotatorFloat : (mMultiply_RotatorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_RotatorFloat")); }
-			ScriptFunction NotEqual_RotatorRotator() { return mNotEqual_RotatorRotator ? mNotEqual_RotatorRotator : (mNotEqual_RotatorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_RotatorRotator")); }
-			ScriptFunction EqualEqual_RotatorRotator() { return mEqualEqual_RotatorRotator ? mEqualEqual_RotatorRotator : (mEqualEqual_RotatorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_RotatorRotator")); }
-			ScriptFunction InCylinder() { return mInCylinder ? mInCylinder : (mInCylinder = ScriptObject.Find!(ScriptFunction)("Function Core.Object.InCylinder")); }
-			ScriptFunction NoZDot() { return mNoZDot ? mNoZDot : (mNoZDot = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NoZDot")); }
-			ScriptFunction ClampLength() { return mClampLength ? mClampLength : (mClampLength = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ClampLength")); }
-			ScriptFunction VInterpTo() { return mVInterpTo ? mVInterpTo : (mVInterpTo = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VInterpTo")); }
-			ScriptFunction IsZero() { return mIsZero ? mIsZero : (mIsZero = ScriptObject.Find!(ScriptFunction)("Function Core.Object.IsZero")); }
-			ScriptFunction ProjectOnTo() { return mProjectOnTo ? mProjectOnTo : (mProjectOnTo = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ProjectOnTo")); }
-			ScriptFunction MirrorVectorByNormal() { return mMirrorVectorByNormal ? mMirrorVectorByNormal : (mMirrorVectorByNormal = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MirrorVectorByNormal")); }
-			ScriptFunction VRandCone2() { return mVRandCone2 ? mVRandCone2 : (mVRandCone2 = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VRandCone2")); }
-			ScriptFunction VRandCone() { return mVRandCone ? mVRandCone : (mVRandCone = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VRandCone")); }
-			ScriptFunction VRand() { return mVRand ? mVRand : (mVRand = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VRand")); }
-			ScriptFunction VSmerp() { return mVSmerp ? mVSmerp : (mVSmerp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VSmerp")); }
-			ScriptFunction VLerp() { return mVLerp ? mVLerp : (mVLerp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VLerp")); }
-			ScriptFunction Normal() { return mNormal ? mNormal : (mNormal = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Normal")); }
-			ScriptFunction VSizeSq2D() { return mVSizeSq2D ? mVSizeSq2D : (mVSizeSq2D = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VSizeSq2D")); }
-			ScriptFunction VSizeSq() { return mVSizeSq ? mVSizeSq : (mVSizeSq = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VSizeSq")); }
-			ScriptFunction VSize2D() { return mVSize2D ? mVSize2D : (mVSize2D = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VSize2D")); }
-			ScriptFunction VSize() { return mVSize ? mVSize : (mVSize = ScriptObject.Find!(ScriptFunction)("Function Core.Object.VSize")); }
-			ScriptFunction SubtractEqual_VectorVector() { return mSubtractEqual_VectorVector ? mSubtractEqual_VectorVector : (mSubtractEqual_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractEqual_VectorVector")); }
-			ScriptFunction AddEqual_VectorVector() { return mAddEqual_VectorVector ? mAddEqual_VectorVector : (mAddEqual_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddEqual_VectorVector")); }
-			ScriptFunction DivideEqual_VectorFloat() { return mDivideEqual_VectorFloat ? mDivideEqual_VectorFloat : (mDivideEqual_VectorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DivideEqual_VectorFloat")); }
-			ScriptFunction MultiplyEqual_VectorVector() { return mMultiplyEqual_VectorVector ? mMultiplyEqual_VectorVector : (mMultiplyEqual_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_VectorVector")); }
-			ScriptFunction MultiplyEqual_VectorFloat() { return mMultiplyEqual_VectorFloat ? mMultiplyEqual_VectorFloat : (mMultiplyEqual_VectorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_VectorFloat")); }
-			ScriptFunction Cross_VectorVector() { return mCross_VectorVector ? mCross_VectorVector : (mCross_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Cross_VectorVector")); }
-			ScriptFunction Dot_VectorVector() { return mDot_VectorVector ? mDot_VectorVector : (mDot_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Dot_VectorVector")); }
-			ScriptFunction NotEqual_VectorVector() { return mNotEqual_VectorVector ? mNotEqual_VectorVector : (mNotEqual_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_VectorVector")); }
-			ScriptFunction EqualEqual_VectorVector() { return mEqualEqual_VectorVector ? mEqualEqual_VectorVector : (mEqualEqual_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_VectorVector")); }
-			ScriptFunction GreaterGreater_VectorRotator() { return mGreaterGreater_VectorRotator ? mGreaterGreater_VectorRotator : (mGreaterGreater_VectorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GreaterGreater_VectorRotator")); }
-			ScriptFunction LessLess_VectorRotator() { return mLessLess_VectorRotator ? mLessLess_VectorRotator : (mLessLess_VectorRotator = ScriptObject.Find!(ScriptFunction)("Function Core.Object.LessLess_VectorRotator")); }
-			ScriptFunction Subtract_VectorVector() { return mSubtract_VectorVector ? mSubtract_VectorVector : (mSubtract_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_VectorVector")); }
-			ScriptFunction Add_VectorVector() { return mAdd_VectorVector ? mAdd_VectorVector : (mAdd_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Add_VectorVector")); }
-			ScriptFunction Divide_VectorFloat() { return mDivide_VectorFloat ? mDivide_VectorFloat : (mDivide_VectorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Divide_VectorFloat")); }
-			ScriptFunction Multiply_VectorVector() { return mMultiply_VectorVector ? mMultiply_VectorVector : (mMultiply_VectorVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_VectorVector")); }
-			ScriptFunction Multiply_FloatVector() { return mMultiply_FloatVector ? mMultiply_FloatVector : (mMultiply_FloatVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_FloatVector")); }
-			ScriptFunction Multiply_VectorFloat() { return mMultiply_VectorFloat ? mMultiply_VectorFloat : (mMultiply_VectorFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_VectorFloat")); }
-			ScriptFunction Subtract_PreVector() { return mSubtract_PreVector ? mSubtract_PreVector : (mSubtract_PreVector = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_PreVector")); }
-			ScriptFunction FInterpConstantTo() { return mFInterpConstantTo ? mFInterpConstantTo : (mFInterpConstantTo = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FInterpConstantTo")); }
-			ScriptFunction FPctByRange() { return mFPctByRange ? mFPctByRange : (mFPctByRange = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FPctByRange")); }
-			ScriptFunction RandRange() { return mRandRange ? mRandRange : (mRandRange = ScriptObject.Find!(ScriptFunction)("Function Core.Object.RandRange")); }
-			ScriptFunction FInterpEaseInOut() { return mFInterpEaseInOut ? mFInterpEaseInOut : (mFInterpEaseInOut = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FInterpEaseInOut")); }
-			ScriptFunction FInterpEaseOut() { return mFInterpEaseOut ? mFInterpEaseOut : (mFInterpEaseOut = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FInterpEaseOut")); }
-			ScriptFunction FInterpEaseIn() { return mFInterpEaseIn ? mFInterpEaseIn : (mFInterpEaseIn = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FInterpEaseIn")); }
-			ScriptFunction FCubicInterp() { return mFCubicInterp ? mFCubicInterp : (mFCubicInterp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FCubicInterp")); }
-			ScriptFunction FCeil() { return mFCeil ? mFCeil : (mFCeil = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FCeil")); }
-			ScriptFunction FFloor() { return mFFloor ? mFFloor : (mFFloor = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FFloor")); }
-			ScriptFunction Round() { return mRound ? mRound : (mRound = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Round")); }
-			ScriptFunction Lerp() { return mLerp ? mLerp : (mLerp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Lerp")); }
-			ScriptFunction FClamp() { return mFClamp ? mFClamp : (mFClamp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FClamp")); }
-			ScriptFunction FMax() { return mFMax ? mFMax : (mFMax = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FMax")); }
-			ScriptFunction FMin() { return mFMin ? mFMin : (mFMin = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FMin")); }
-			ScriptFunction FRand() { return mFRand ? mFRand : (mFRand = ScriptObject.Find!(ScriptFunction)("Function Core.Object.FRand")); }
-			ScriptFunction Square() { return mSquare ? mSquare : (mSquare = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Square")); }
-			ScriptFunction Sqrt() { return mSqrt ? mSqrt : (mSqrt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Sqrt")); }
-			ScriptFunction Loge() { return mLoge ? mLoge : (mLoge = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Loge")); }
-			ScriptFunction Exp() { return mExp ? mExp : (mExp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Exp")); }
-			ScriptFunction Atan2() { return mAtan2 ? mAtan2 : (mAtan2 = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Atan2")); }
-			ScriptFunction Atan() { return mAtan ? mAtan : (mAtan = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Atan")); }
-			ScriptFunction Tan() { return mTan ? mTan : (mTan = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Tan")); }
-			ScriptFunction Cos() { return mCos ? mCos : (mCos = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Cos")); }
-			ScriptFunction Asin() { return mAsin ? mAsin : (mAsin = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Asin")); }
-			ScriptFunction Sin() { return mSin ? mSin : (mSin = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Sin")); }
-			ScriptFunction Abs() { return mAbs ? mAbs : (mAbs = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Abs")); }
-			ScriptFunction SubtractEqual_FloatFloat() { return mSubtractEqual_FloatFloat ? mSubtractEqual_FloatFloat : (mSubtractEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractEqual_FloatFloat")); }
-			ScriptFunction AddEqual_FloatFloat() { return mAddEqual_FloatFloat ? mAddEqual_FloatFloat : (mAddEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddEqual_FloatFloat")); }
-			ScriptFunction DivideEqual_FloatFloat() { return mDivideEqual_FloatFloat ? mDivideEqual_FloatFloat : (mDivideEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DivideEqual_FloatFloat")); }
-			ScriptFunction MultiplyEqual_FloatFloat() { return mMultiplyEqual_FloatFloat ? mMultiplyEqual_FloatFloat : (mMultiplyEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_FloatFloat")); }
-			ScriptFunction NotEqual_FloatFloat() { return mNotEqual_FloatFloat ? mNotEqual_FloatFloat : (mNotEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_FloatFloat")); }
-			ScriptFunction ComplementEqual_FloatFloat() { return mComplementEqual_FloatFloat ? mComplementEqual_FloatFloat : (mComplementEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ComplementEqual_FloatFloat")); }
-			ScriptFunction EqualEqual_FloatFloat() { return mEqualEqual_FloatFloat ? mEqualEqual_FloatFloat : (mEqualEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_FloatFloat")); }
-			ScriptFunction GreaterEqual_FloatFloat() { return mGreaterEqual_FloatFloat ? mGreaterEqual_FloatFloat : (mGreaterEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GreaterEqual_FloatFloat")); }
-			ScriptFunction LessEqual_FloatFloat() { return mLessEqual_FloatFloat ? mLessEqual_FloatFloat : (mLessEqual_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.LessEqual_FloatFloat")); }
-			ScriptFunction Greater_FloatFloat() { return mGreater_FloatFloat ? mGreater_FloatFloat : (mGreater_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Greater_FloatFloat")); }
-			ScriptFunction Less_FloatFloat() { return mLess_FloatFloat ? mLess_FloatFloat : (mLess_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Less_FloatFloat")); }
-			ScriptFunction Subtract_FloatFloat() { return mSubtract_FloatFloat ? mSubtract_FloatFloat : (mSubtract_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_FloatFloat")); }
-			ScriptFunction Add_FloatFloat() { return mAdd_FloatFloat ? mAdd_FloatFloat : (mAdd_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Add_FloatFloat")); }
-			ScriptFunction Percent_FloatFloat() { return mPercent_FloatFloat ? mPercent_FloatFloat : (mPercent_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Percent_FloatFloat")); }
-			ScriptFunction Divide_FloatFloat() { return mDivide_FloatFloat ? mDivide_FloatFloat : (mDivide_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Divide_FloatFloat")); }
-			ScriptFunction Multiply_FloatFloat() { return mMultiply_FloatFloat ? mMultiply_FloatFloat : (mMultiply_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_FloatFloat")); }
-			ScriptFunction MultiplyMultiply_FloatFloat() { return mMultiplyMultiply_FloatFloat ? mMultiplyMultiply_FloatFloat : (mMultiplyMultiply_FloatFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyMultiply_FloatFloat")); }
-			ScriptFunction Subtract_PreFloat() { return mSubtract_PreFloat ? mSubtract_PreFloat : (mSubtract_PreFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_PreFloat")); }
-			ScriptFunction ToHex() { return mToHex ? mToHex : (mToHex = ScriptObject.Find!(ScriptFunction)("Function Core.Object.ToHex")); }
-			ScriptFunction Clamp() { return mClamp ? mClamp : (mClamp = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Clamp")); }
-			ScriptFunction Max() { return mMax ? mMax : (mMax = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Max")); }
-			ScriptFunction Min() { return mMin ? mMin : (mMin = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Min")); }
-			ScriptFunction Rand() { return mRand ? mRand : (mRand = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Rand")); }
-			ScriptFunction SubtractSubtract_Int() { return mSubtractSubtract_Int ? mSubtractSubtract_Int : (mSubtractSubtract_Int = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractSubtract_Int")); }
-			ScriptFunction AddAdd_Int() { return mAddAdd_Int ? mAddAdd_Int : (mAddAdd_Int = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddAdd_Int")); }
-			ScriptFunction SubtractSubtract_PreInt() { return mSubtractSubtract_PreInt ? mSubtractSubtract_PreInt : (mSubtractSubtract_PreInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractSubtract_PreInt")); }
-			ScriptFunction AddAdd_PreInt() { return mAddAdd_PreInt ? mAddAdd_PreInt : (mAddAdd_PreInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddAdd_PreInt")); }
-			ScriptFunction SubtractEqual_IntInt() { return mSubtractEqual_IntInt ? mSubtractEqual_IntInt : (mSubtractEqual_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractEqual_IntInt")); }
-			ScriptFunction AddEqual_IntInt() { return mAddEqual_IntInt ? mAddEqual_IntInt : (mAddEqual_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddEqual_IntInt")); }
-			ScriptFunction DivideEqual_IntFloat() { return mDivideEqual_IntFloat ? mDivideEqual_IntFloat : (mDivideEqual_IntFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DivideEqual_IntFloat")); }
-			ScriptFunction MultiplyEqual_IntFloat() { return mMultiplyEqual_IntFloat ? mMultiplyEqual_IntFloat : (mMultiplyEqual_IntFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_IntFloat")); }
-			ScriptFunction Or_IntInt() { return mOr_IntInt ? mOr_IntInt : (mOr_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Or_IntInt")); }
-			ScriptFunction Xor_IntInt() { return mXor_IntInt ? mXor_IntInt : (mXor_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Xor_IntInt")); }
-			ScriptFunction And_IntInt() { return mAnd_IntInt ? mAnd_IntInt : (mAnd_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.And_IntInt")); }
-			ScriptFunction NotEqual_IntInt() { return mNotEqual_IntInt ? mNotEqual_IntInt : (mNotEqual_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_IntInt")); }
-			ScriptFunction EqualEqual_IntInt() { return mEqualEqual_IntInt ? mEqualEqual_IntInt : (mEqualEqual_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_IntInt")); }
-			ScriptFunction GreaterEqual_IntInt() { return mGreaterEqual_IntInt ? mGreaterEqual_IntInt : (mGreaterEqual_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GreaterEqual_IntInt")); }
-			ScriptFunction LessEqual_IntInt() { return mLessEqual_IntInt ? mLessEqual_IntInt : (mLessEqual_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.LessEqual_IntInt")); }
-			ScriptFunction Greater_IntInt() { return mGreater_IntInt ? mGreater_IntInt : (mGreater_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Greater_IntInt")); }
-			ScriptFunction Less_IntInt() { return mLess_IntInt ? mLess_IntInt : (mLess_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Less_IntInt")); }
-			ScriptFunction GreaterGreaterGreater_IntInt() { return mGreaterGreaterGreater_IntInt ? mGreaterGreaterGreater_IntInt : (mGreaterGreaterGreater_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GreaterGreaterGreater_IntInt")); }
-			ScriptFunction GreaterGreater_IntInt() { return mGreaterGreater_IntInt ? mGreaterGreater_IntInt : (mGreaterGreater_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.GreaterGreater_IntInt")); }
-			ScriptFunction LessLess_IntInt() { return mLessLess_IntInt ? mLessLess_IntInt : (mLessLess_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.LessLess_IntInt")); }
-			ScriptFunction Subtract_IntInt() { return mSubtract_IntInt ? mSubtract_IntInt : (mSubtract_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_IntInt")); }
-			ScriptFunction Add_IntInt() { return mAdd_IntInt ? mAdd_IntInt : (mAdd_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Add_IntInt")); }
-			ScriptFunction Percent_IntInt() { return mPercent_IntInt ? mPercent_IntInt : (mPercent_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Percent_IntInt")); }
-			ScriptFunction Divide_IntInt() { return mDivide_IntInt ? mDivide_IntInt : (mDivide_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Divide_IntInt")); }
-			ScriptFunction Multiply_IntInt() { return mMultiply_IntInt ? mMultiply_IntInt : (mMultiply_IntInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Multiply_IntInt")); }
-			ScriptFunction Subtract_PreInt() { return mSubtract_PreInt ? mSubtract_PreInt : (mSubtract_PreInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Subtract_PreInt")); }
-			ScriptFunction Complement_PreInt() { return mComplement_PreInt ? mComplement_PreInt : (mComplement_PreInt = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Complement_PreInt")); }
-			ScriptFunction SubtractSubtract_Byte() { return mSubtractSubtract_Byte ? mSubtractSubtract_Byte : (mSubtractSubtract_Byte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractSubtract_Byte")); }
-			ScriptFunction AddAdd_Byte() { return mAddAdd_Byte ? mAddAdd_Byte : (mAddAdd_Byte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddAdd_Byte")); }
-			ScriptFunction SubtractSubtract_PreByte() { return mSubtractSubtract_PreByte ? mSubtractSubtract_PreByte : (mSubtractSubtract_PreByte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractSubtract_PreByte")); }
-			ScriptFunction AddAdd_PreByte() { return mAddAdd_PreByte ? mAddAdd_PreByte : (mAddAdd_PreByte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddAdd_PreByte")); }
-			ScriptFunction SubtractEqual_ByteByte() { return mSubtractEqual_ByteByte ? mSubtractEqual_ByteByte : (mSubtractEqual_ByteByte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.SubtractEqual_ByteByte")); }
-			ScriptFunction AddEqual_ByteByte() { return mAddEqual_ByteByte ? mAddEqual_ByteByte : (mAddEqual_ByteByte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AddEqual_ByteByte")); }
-			ScriptFunction DivideEqual_ByteByte() { return mDivideEqual_ByteByte ? mDivideEqual_ByteByte : (mDivideEqual_ByteByte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.DivideEqual_ByteByte")); }
-			ScriptFunction MultiplyEqual_ByteFloat() { return mMultiplyEqual_ByteFloat ? mMultiplyEqual_ByteFloat : (mMultiplyEqual_ByteFloat = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_ByteFloat")); }
-			ScriptFunction MultiplyEqual_ByteByte() { return mMultiplyEqual_ByteByte ? mMultiplyEqual_ByteByte : (mMultiplyEqual_ByteByte = ScriptObject.Find!(ScriptFunction)("Function Core.Object.MultiplyEqual_ByteByte")); }
-			ScriptFunction OrOr_BoolBool() { return mOrOr_BoolBool ? mOrOr_BoolBool : (mOrOr_BoolBool = ScriptObject.Find!(ScriptFunction)("Function Core.Object.OrOr_BoolBool")); }
-			ScriptFunction XorXor_BoolBool() { return mXorXor_BoolBool ? mXorXor_BoolBool : (mXorXor_BoolBool = ScriptObject.Find!(ScriptFunction)("Function Core.Object.XorXor_BoolBool")); }
-			ScriptFunction AndAnd_BoolBool() { return mAndAnd_BoolBool ? mAndAnd_BoolBool : (mAndAnd_BoolBool = ScriptObject.Find!(ScriptFunction)("Function Core.Object.AndAnd_BoolBool")); }
-			ScriptFunction NotEqual_BoolBool() { return mNotEqual_BoolBool ? mNotEqual_BoolBool : (mNotEqual_BoolBool = ScriptObject.Find!(ScriptFunction)("Function Core.Object.NotEqual_BoolBool")); }
-			ScriptFunction EqualEqual_BoolBool() { return mEqualEqual_BoolBool ? mEqualEqual_BoolBool : (mEqualEqual_BoolBool = ScriptObject.Find!(ScriptFunction)("Function Core.Object.EqualEqual_BoolBool")); }
-			ScriptFunction Not_PreBool() { return mNot_PreBool ? mNot_PreBool : (mNot_PreBool = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Not_PreBool")); }
+			ScriptFunction GetBuildChangelistNumber() { mixin(MGF!("mGetBuildChangelistNumber", "Function Core.Object.GetBuildChangelistNumber")()); }
+			ScriptFunction GetEngineVersion() { mixin(MGF!("mGetEngineVersion", "Function Core.Object.GetEngineVersion")()); }
+			ScriptFunction GetSystemTime() { mixin(MGF!("mGetSystemTime", "Function Core.Object.GetSystemTime")()); }
+			ScriptFunction TimeStamp() { mixin(MGF!("mTimeStamp", "Function Core.Object.TimeStamp")()); }
+			ScriptFunction TransformVectorByRotation() { mixin(MGF!("mTransformVectorByRotation", "Function Core.Object.TransformVectorByRotation")()); }
+			ScriptFunction GetPackageName() { mixin(MGF!("mGetPackageName", "Function Core.Object.GetPackageName")()); }
+			ScriptFunction IsPendingKill() { mixin(MGF!("mIsPendingKill", "Function Core.Object.IsPendingKill")()); }
+			ScriptFunction ByteToFloat() { mixin(MGF!("mByteToFloat", "Function Core.Object.ByteToFloat")()); }
+			ScriptFunction FloatToByte() { mixin(MGF!("mFloatToByte", "Function Core.Object.FloatToByte")()); }
+			ScriptFunction UnwindHeading() { mixin(MGF!("mUnwindHeading", "Function Core.Object.UnwindHeading")()); }
+			ScriptFunction FindDeltaAngle() { mixin(MGF!("mFindDeltaAngle", "Function Core.Object.FindDeltaAngle")()); }
+			ScriptFunction GetHeadingAngle() { mixin(MGF!("mGetHeadingAngle", "Function Core.Object.GetHeadingAngle")()); }
+			ScriptFunction GetAngularDegreesFromRadians() { mixin(MGF!("mGetAngularDegreesFromRadians", "Function Core.Object.GetAngularDegreesFromRadians")()); }
+			ScriptFunction Acos() { mixin(MGF!("mAcos", "Function Core.Object.Acos")()); }
+			ScriptFunction GetAngularFromDotDist() { mixin(MGF!("mGetAngularFromDotDist", "Function Core.Object.GetAngularFromDotDist")()); }
+			ScriptFunction GetAngularDistance() { mixin(MGF!("mGetAngularDistance", "Function Core.Object.GetAngularDistance")()); }
+			ScriptFunction GetDotDistance() { mixin(MGF!("mGetDotDistance", "Function Core.Object.GetDotDistance")()); }
+			ScriptFunction PointProjectToPlane() { mixin(MGF!("mPointProjectToPlane", "Function Core.Object.PointProjectToPlane")()); }
+			ScriptFunction PointDistToPlane() { mixin(MGF!("mPointDistToPlane", "Function Core.Object.PointDistToPlane")()); }
+			ScriptFunction PointDistToSegment() { mixin(MGF!("mPointDistToSegment", "Function Core.Object.PointDistToSegment")()); }
+			ScriptFunction PointDistToLine() { mixin(MGF!("mPointDistToLine", "Function Core.Object.PointDistToLine")()); }
+			ScriptFunction GetPerObjectConfigSections() { mixin(MGF!("mGetPerObjectConfigSections", "Function Core.Object.GetPerObjectConfigSections")()); }
+			ScriptFunction StaticSaveConfig() { mixin(MGF!("mStaticSaveConfig", "Function Core.Object.StaticSaveConfig")()); }
+			ScriptFunction SaveConfig() { mixin(MGF!("mSaveConfig", "Function Core.Object.SaveConfig")()); }
+			ScriptFunction FindObject() { mixin(MGF!("mFindObject", "Function Core.Object.FindObject")()); }
+			ScriptFunction DynamicLoadObject() { mixin(MGF!("mDynamicLoadObject", "Function Core.Object.DynamicLoadObject")()); }
+			ScriptFunction GetEnum() { mixin(MGF!("mGetEnum", "Function Core.Object.GetEnum")()); }
+			ScriptFunction Disable() { mixin(MGF!("mDisable", "Function Core.Object.Disable")()); }
+			ScriptFunction Enable() { mixin(MGF!("mEnable", "Function Core.Object.Enable")()); }
+			ScriptFunction ContinuedState() { mixin(MGF!("mContinuedState", "Function Core.Object.ContinuedState")()); }
+			ScriptFunction PausedState() { mixin(MGF!("mPausedState", "Function Core.Object.PausedState")()); }
+			ScriptFunction PoppedState() { mixin(MGF!("mPoppedState", "Function Core.Object.PoppedState")()); }
+			ScriptFunction PushedState() { mixin(MGF!("mPushedState", "Function Core.Object.PushedState")()); }
+			ScriptFunction EndState() { mixin(MGF!("mEndState", "Function Core.Object.EndState")()); }
+			ScriptFunction BeginState() { mixin(MGF!("mBeginState", "Function Core.Object.BeginState")()); }
+			ScriptFunction DumpStateStack() { mixin(MGF!("mDumpStateStack", "Function Core.Object.DumpStateStack")()); }
+			ScriptFunction PopState() { mixin(MGF!("mPopState", "Function Core.Object.PopState")()); }
+			ScriptFunction PushState() { mixin(MGF!("mPushState", "Function Core.Object.PushState")()); }
+			ScriptFunction GetStateName() { mixin(MGF!("mGetStateName", "Function Core.Object.GetStateName")()); }
+			ScriptFunction IsChildState() { mixin(MGF!("mIsChildState", "Function Core.Object.IsChildState")()); }
+			ScriptFunction IsInState() { mixin(MGF!("mIsInState", "Function Core.Object.IsInState")()); }
+			ScriptFunction GotoState() { mixin(MGF!("mGotoState", "Function Core.Object.GotoState")()); }
+			ScriptFunction IsUTracing() { mixin(MGF!("mIsUTracing", "Function Core.Object.IsUTracing")()); }
+			ScriptFunction SetUTracing() { mixin(MGF!("mSetUTracing", "Function Core.Object.SetUTracing")()); }
+			ScriptFunction GetFuncName() { mixin(MGF!("mGetFuncName", "Function Core.Object.GetFuncName")()); }
+			ScriptFunction DebugBreak() { mixin(MGF!("mDebugBreak", "Function Core.Object.DebugBreak")()); }
+			ScriptFunction GetScriptTrace() { mixin(MGF!("mGetScriptTrace", "Function Core.Object.GetScriptTrace")()); }
+			ScriptFunction ScriptTrace() { mixin(MGF!("mScriptTrace", "Function Core.Object.ScriptTrace")()); }
+			ScriptFunction ParseLocalizedPropertyPath() { mixin(MGF!("mParseLocalizedPropertyPath", "Function Core.Object.ParseLocalizedPropertyPath")()); }
+			ScriptFunction Localize() { mixin(MGF!("mLocalize", "Function Core.Object.Localize")()); }
+			ScriptFunction ParseStringIntoArray() { mixin(MGF!("mParseStringIntoArray", "Function Core.Object.ParseStringIntoArray")()); }
+			ScriptFunction WarnInternal() { mixin(MGF!("mWarnInternal", "Function Core.Object.WarnInternal")()); }
+			ScriptFunction LogInternal() { mixin(MGF!("mLogInternal", "Function Core.Object.LogInternal")()); }
+			ScriptFunction Subtract_LinearColorLinearColor() { mixin(MGF!("mSubtract_LinearColorLinearColor", "Function Core.Object.Subtract_LinearColorLinearColor")()); }
+			ScriptFunction Multiply_LinearColorFloat() { mixin(MGF!("mMultiply_LinearColorFloat", "Function Core.Object.Multiply_LinearColorFloat")()); }
+			ScriptFunction ColorToLinearColor() { mixin(MGF!("mColorToLinearColor", "Function Core.Object.ColorToLinearColor")()); }
+			ScriptFunction MakeLinearColor() { mixin(MGF!("mMakeLinearColor", "Function Core.Object.MakeLinearColor")()); }
+			ScriptFunction LerpColor() { mixin(MGF!("mLerpColor", "Function Core.Object.LerpColor")()); }
+			ScriptFunction MakeColor() { mixin(MGF!("mMakeColor", "Function Core.Object.MakeColor")()); }
+			ScriptFunction Add_ColorColor() { mixin(MGF!("mAdd_ColorColor", "Function Core.Object.Add_ColorColor")()); }
+			ScriptFunction Multiply_ColorFloat() { mixin(MGF!("mMultiply_ColorFloat", "Function Core.Object.Multiply_ColorFloat")()); }
+			ScriptFunction Multiply_FloatColor() { mixin(MGF!("mMultiply_FloatColor", "Function Core.Object.Multiply_FloatColor")()); }
+			ScriptFunction Subtract_ColorColor() { mixin(MGF!("mSubtract_ColorColor", "Function Core.Object.Subtract_ColorColor")()); }
+			ScriptFunction EvalInterpCurveVector2D() { mixin(MGF!("mEvalInterpCurveVector2D", "Function Core.Object.EvalInterpCurveVector2D")()); }
+			ScriptFunction EvalInterpCurveVector() { mixin(MGF!("mEvalInterpCurveVector", "Function Core.Object.EvalInterpCurveVector")()); }
+			ScriptFunction EvalInterpCurveFloat() { mixin(MGF!("mEvalInterpCurveFloat", "Function Core.Object.EvalInterpCurveFloat")()); }
+			ScriptFunction vect2d() { mixin(MGF!("mvect2d", "Function Core.Object.vect2d")()); }
+			ScriptFunction GetMappedRangeValue() { mixin(MGF!("mGetMappedRangeValue", "Function Core.Object.GetMappedRangeValue")()); }
+			ScriptFunction GetRangePctByValue() { mixin(MGF!("mGetRangePctByValue", "Function Core.Object.GetRangePctByValue")()); }
+			ScriptFunction GetRangeValueByPct() { mixin(MGF!("mGetRangeValueByPct", "Function Core.Object.GetRangeValueByPct")()); }
+			ScriptFunction SubtractEqual_Vector2DVector2D() { mixin(MGF!("mSubtractEqual_Vector2DVector2D", "Function Core.Object.SubtractEqual_Vector2DVector2D")()); }
+			ScriptFunction AddEqual_Vector2DVector2D() { mixin(MGF!("mAddEqual_Vector2DVector2D", "Function Core.Object.AddEqual_Vector2DVector2D")()); }
+			ScriptFunction DivideEqual_Vector2DFloat() { mixin(MGF!("mDivideEqual_Vector2DFloat", "Function Core.Object.DivideEqual_Vector2DFloat")()); }
+			ScriptFunction MultiplyEqual_Vector2DFloat() { mixin(MGF!("mMultiplyEqual_Vector2DFloat", "Function Core.Object.MultiplyEqual_Vector2DFloat")()); }
+			ScriptFunction Divide_Vector2DFloat() { mixin(MGF!("mDivide_Vector2DFloat", "Function Core.Object.Divide_Vector2DFloat")()); }
+			ScriptFunction Multiply_Vector2DFloat() { mixin(MGF!("mMultiply_Vector2DFloat", "Function Core.Object.Multiply_Vector2DFloat")()); }
+			ScriptFunction Subtract_Vector2DVector2D() { mixin(MGF!("mSubtract_Vector2DVector2D", "Function Core.Object.Subtract_Vector2DVector2D")()); }
+			ScriptFunction Add_Vector2DVector2D() { mixin(MGF!("mAdd_Vector2DVector2D", "Function Core.Object.Add_Vector2DVector2D")()); }
+			ScriptFunction Subtract_QuatQuat() { mixin(MGF!("mSubtract_QuatQuat", "Function Core.Object.Subtract_QuatQuat")()); }
+			ScriptFunction Add_QuatQuat() { mixin(MGF!("mAdd_QuatQuat", "Function Core.Object.Add_QuatQuat")()); }
+			ScriptFunction QuatSlerp() { mixin(MGF!("mQuatSlerp", "Function Core.Object.QuatSlerp")()); }
+			ScriptFunction QuatToRotator() { mixin(MGF!("mQuatToRotator", "Function Core.Object.QuatToRotator")()); }
+			ScriptFunction QuatFromRotator() { mixin(MGF!("mQuatFromRotator", "Function Core.Object.QuatFromRotator")()); }
+			ScriptFunction QuatFromAxisAndAngle() { mixin(MGF!("mQuatFromAxisAndAngle", "Function Core.Object.QuatFromAxisAndAngle")()); }
+			ScriptFunction QuatFindBetween() { mixin(MGF!("mQuatFindBetween", "Function Core.Object.QuatFindBetween")()); }
+			ScriptFunction QuatRotateVector() { mixin(MGF!("mQuatRotateVector", "Function Core.Object.QuatRotateVector")()); }
+			ScriptFunction QuatInvert() { mixin(MGF!("mQuatInvert", "Function Core.Object.QuatInvert")()); }
+			ScriptFunction QuatDot() { mixin(MGF!("mQuatDot", "Function Core.Object.QuatDot")()); }
+			ScriptFunction QuatProduct() { mixin(MGF!("mQuatProduct", "Function Core.Object.QuatProduct")()); }
+			ScriptFunction MatrixGetAxis() { mixin(MGF!("mMatrixGetAxis", "Function Core.Object.MatrixGetAxis")()); }
+			ScriptFunction MatrixGetOrigin() { mixin(MGF!("mMatrixGetOrigin", "Function Core.Object.MatrixGetOrigin")()); }
+			ScriptFunction MatrixGetRotator() { mixin(MGF!("mMatrixGetRotator", "Function Core.Object.MatrixGetRotator")()); }
+			ScriptFunction MakeRotationMatrix() { mixin(MGF!("mMakeRotationMatrix", "Function Core.Object.MakeRotationMatrix")()); }
+			ScriptFunction MakeRotationTranslationMatrix() { mixin(MGF!("mMakeRotationTranslationMatrix", "Function Core.Object.MakeRotationTranslationMatrix")()); }
+			ScriptFunction InverseTransformNormal() { mixin(MGF!("mInverseTransformNormal", "Function Core.Object.InverseTransformNormal")()); }
+			ScriptFunction TransformNormal() { mixin(MGF!("mTransformNormal", "Function Core.Object.TransformNormal")()); }
+			ScriptFunction InverseTransformVector() { mixin(MGF!("mInverseTransformVector", "Function Core.Object.InverseTransformVector")()); }
+			ScriptFunction TransformVector() { mixin(MGF!("mTransformVector", "Function Core.Object.TransformVector")()); }
+			ScriptFunction Multiply_MatrixMatrix() { mixin(MGF!("mMultiply_MatrixMatrix", "Function Core.Object.Multiply_MatrixMatrix")()); }
+			ScriptFunction NotEqual_NameName() { mixin(MGF!("mNotEqual_NameName", "Function Core.Object.NotEqual_NameName")()); }
+			ScriptFunction EqualEqual_NameName() { mixin(MGF!("mEqualEqual_NameName", "Function Core.Object.EqualEqual_NameName")()); }
+			ScriptFunction IsA() { mixin(MGF!("mIsA", "Function Core.Object.IsA")()); }
+			ScriptFunction ClassIsChildOf() { mixin(MGF!("mClassIsChildOf", "Function Core.Object.ClassIsChildOf")()); }
+			ScriptFunction NotEqual_InterfaceInterface() { mixin(MGF!("mNotEqual_InterfaceInterface", "Function Core.Object.NotEqual_InterfaceInterface")()); }
+			ScriptFunction EqualEqual_InterfaceInterface() { mixin(MGF!("mEqualEqual_InterfaceInterface", "Function Core.Object.EqualEqual_InterfaceInterface")()); }
+			ScriptFunction NotEqual_ObjectObject() { mixin(MGF!("mNotEqual_ObjectObject", "Function Core.Object.NotEqual_ObjectObject")()); }
+			ScriptFunction EqualEqual_ObjectObject() { mixin(MGF!("mEqualEqual_ObjectObject", "Function Core.Object.EqualEqual_ObjectObject")()); }
+			ScriptFunction PathName() { mixin(MGF!("mPathName", "Function Core.Object.PathName")()); }
+			ScriptFunction SplitString() { mixin(MGF!("mSplitString", "Function Core.Object.SplitString")()); }
+			ScriptFunction JoinArray() { mixin(MGF!("mJoinArray", "Function Core.Object.JoinArray")()); }
+			ScriptFunction GetRightMost() { mixin(MGF!("mGetRightMost", "Function Core.Object.GetRightMost")()); }
+			ScriptFunction ConcatEqual_StrStr() { mixin(MGF!("mConcatEqual_StrStr", "Function Core.Object.ConcatEqual_StrStr")()); }
+			ScriptFunction Split() { mixin(MGF!("mSplit", "Function Core.Object.Split")()); }
+			ScriptFunction Repl() { mixin(MGF!("mRepl", "Function Core.Object.Repl")()); }
+			ScriptFunction Asc() { mixin(MGF!("mAsc", "Function Core.Object.Asc")()); }
+			ScriptFunction Chr() { mixin(MGF!("mChr", "Function Core.Object.Chr")()); }
+			ScriptFunction Locs() { mixin(MGF!("mLocs", "Function Core.Object.Locs")()); }
+			ScriptFunction Caps() { mixin(MGF!("mCaps", "Function Core.Object.Caps")()); }
+			ScriptFunction Right() { mixin(MGF!("mRight", "Function Core.Object.Right")()); }
+			ScriptFunction Left() { mixin(MGF!("mLeft", "Function Core.Object.Left")()); }
+			ScriptFunction Mid() { mixin(MGF!("mMid", "Function Core.Object.Mid")()); }
+			ScriptFunction InStr() { mixin(MGF!("mInStr", "Function Core.Object.InStr")()); }
+			ScriptFunction Len() { mixin(MGF!("mLen", "Function Core.Object.Len")()); }
+			ScriptFunction SubtractEqual_StrStr() { mixin(MGF!("mSubtractEqual_StrStr", "Function Core.Object.SubtractEqual_StrStr")()); }
+			ScriptFunction AtEqual_StrStr() { mixin(MGF!("mAtEqual_StrStr", "Function Core.Object.AtEqual_StrStr")()); }
+			ScriptFunction ComplementEqual_StrStr() { mixin(MGF!("mComplementEqual_StrStr", "Function Core.Object.ComplementEqual_StrStr")()); }
+			ScriptFunction NotEqual_StrStr() { mixin(MGF!("mNotEqual_StrStr", "Function Core.Object.NotEqual_StrStr")()); }
+			ScriptFunction EqualEqual_StrStr() { mixin(MGF!("mEqualEqual_StrStr", "Function Core.Object.EqualEqual_StrStr")()); }
+			ScriptFunction GreaterEqual_StrStr() { mixin(MGF!("mGreaterEqual_StrStr", "Function Core.Object.GreaterEqual_StrStr")()); }
+			ScriptFunction LessEqual_StrStr() { mixin(MGF!("mLessEqual_StrStr", "Function Core.Object.LessEqual_StrStr")()); }
+			ScriptFunction Greater_StrStr() { mixin(MGF!("mGreater_StrStr", "Function Core.Object.Greater_StrStr")()); }
+			ScriptFunction Less_StrStr() { mixin(MGF!("mLess_StrStr", "Function Core.Object.Less_StrStr")()); }
+			ScriptFunction At_StrStr() { mixin(MGF!("mAt_StrStr", "Function Core.Object.At_StrStr")()); }
+			ScriptFunction Concat_StrStr() { mixin(MGF!("mConcat_StrStr", "Function Core.Object.Concat_StrStr")()); }
+			ScriptFunction MakeRotator() { mixin(MGF!("mMakeRotator", "Function Core.Object.MakeRotator")()); }
+			ScriptFunction SClampRotAxis() { mixin(MGF!("mSClampRotAxis", "Function Core.Object.SClampRotAxis")()); }
+			ScriptFunction ClampRotAxisFromRange() { mixin(MGF!("mClampRotAxisFromRange", "Function Core.Object.ClampRotAxisFromRange")()); }
+			ScriptFunction NormalizeRotAxis() { mixin(MGF!("mNormalizeRotAxis", "Function Core.Object.NormalizeRotAxis")()); }
+			ScriptFunction FInterpTo() { mixin(MGF!("mFInterpTo", "Function Core.Object.FInterpTo")()); }
+			ScriptFunction ClampRotAxisFromBase() { mixin(MGF!("mClampRotAxisFromBase", "Function Core.Object.ClampRotAxisFromBase")()); }
+			ScriptFunction ClampRotAxis() { mixin(MGF!("mClampRotAxis", "Function Core.Object.ClampRotAxis")()); }
+			ScriptFunction RSize() { mixin(MGF!("mRSize", "Function Core.Object.RSize")()); }
+			ScriptFunction RDiff() { mixin(MGF!("mRDiff", "Function Core.Object.RDiff")()); }
+			ScriptFunction RInterpTo() { mixin(MGF!("mRInterpTo", "Function Core.Object.RInterpTo")()); }
+			ScriptFunction RTransform() { mixin(MGF!("mRTransform", "Function Core.Object.RTransform")()); }
+			ScriptFunction RSmerp() { mixin(MGF!("mRSmerp", "Function Core.Object.RSmerp")()); }
+			ScriptFunction RLerp() { mixin(MGF!("mRLerp", "Function Core.Object.RLerp")()); }
+			ScriptFunction Normalize() { mixin(MGF!("mNormalize", "Function Core.Object.Normalize")()); }
+			ScriptFunction OrthoRotation() { mixin(MGF!("mOrthoRotation", "Function Core.Object.OrthoRotation")()); }
+			ScriptFunction RotRand() { mixin(MGF!("mRotRand", "Function Core.Object.RotRand")()); }
+			ScriptFunction GetRotatorAxis() { mixin(MGF!("mGetRotatorAxis", "Function Core.Object.GetRotatorAxis")()); }
+			ScriptFunction GetUnAxes() { mixin(MGF!("mGetUnAxes", "Function Core.Object.GetUnAxes")()); }
+			ScriptFunction GetAxes() { mixin(MGF!("mGetAxes", "Function Core.Object.GetAxes")()); }
+			ScriptFunction ClockwiseFrom_IntInt() { mixin(MGF!("mClockwiseFrom_IntInt", "Function Core.Object.ClockwiseFrom_IntInt")()); }
+			ScriptFunction SubtractEqual_RotatorRotator() { mixin(MGF!("mSubtractEqual_RotatorRotator", "Function Core.Object.SubtractEqual_RotatorRotator")()); }
+			ScriptFunction AddEqual_RotatorRotator() { mixin(MGF!("mAddEqual_RotatorRotator", "Function Core.Object.AddEqual_RotatorRotator")()); }
+			ScriptFunction Subtract_RotatorRotator() { mixin(MGF!("mSubtract_RotatorRotator", "Function Core.Object.Subtract_RotatorRotator")()); }
+			ScriptFunction Add_RotatorRotator() { mixin(MGF!("mAdd_RotatorRotator", "Function Core.Object.Add_RotatorRotator")()); }
+			ScriptFunction DivideEqual_RotatorFloat() { mixin(MGF!("mDivideEqual_RotatorFloat", "Function Core.Object.DivideEqual_RotatorFloat")()); }
+			ScriptFunction MultiplyEqual_RotatorFloat() { mixin(MGF!("mMultiplyEqual_RotatorFloat", "Function Core.Object.MultiplyEqual_RotatorFloat")()); }
+			ScriptFunction Divide_RotatorFloat() { mixin(MGF!("mDivide_RotatorFloat", "Function Core.Object.Divide_RotatorFloat")()); }
+			ScriptFunction Multiply_FloatRotator() { mixin(MGF!("mMultiply_FloatRotator", "Function Core.Object.Multiply_FloatRotator")()); }
+			ScriptFunction Multiply_RotatorFloat() { mixin(MGF!("mMultiply_RotatorFloat", "Function Core.Object.Multiply_RotatorFloat")()); }
+			ScriptFunction NotEqual_RotatorRotator() { mixin(MGF!("mNotEqual_RotatorRotator", "Function Core.Object.NotEqual_RotatorRotator")()); }
+			ScriptFunction EqualEqual_RotatorRotator() { mixin(MGF!("mEqualEqual_RotatorRotator", "Function Core.Object.EqualEqual_RotatorRotator")()); }
+			ScriptFunction InCylinder() { mixin(MGF!("mInCylinder", "Function Core.Object.InCylinder")()); }
+			ScriptFunction NoZDot() { mixin(MGF!("mNoZDot", "Function Core.Object.NoZDot")()); }
+			ScriptFunction ClampLength() { mixin(MGF!("mClampLength", "Function Core.Object.ClampLength")()); }
+			ScriptFunction VInterpTo() { mixin(MGF!("mVInterpTo", "Function Core.Object.VInterpTo")()); }
+			ScriptFunction IsZero() { mixin(MGF!("mIsZero", "Function Core.Object.IsZero")()); }
+			ScriptFunction ProjectOnTo() { mixin(MGF!("mProjectOnTo", "Function Core.Object.ProjectOnTo")()); }
+			ScriptFunction MirrorVectorByNormal() { mixin(MGF!("mMirrorVectorByNormal", "Function Core.Object.MirrorVectorByNormal")()); }
+			ScriptFunction VRandCone2() { mixin(MGF!("mVRandCone2", "Function Core.Object.VRandCone2")()); }
+			ScriptFunction VRandCone() { mixin(MGF!("mVRandCone", "Function Core.Object.VRandCone")()); }
+			ScriptFunction VRand() { mixin(MGF!("mVRand", "Function Core.Object.VRand")()); }
+			ScriptFunction VSmerp() { mixin(MGF!("mVSmerp", "Function Core.Object.VSmerp")()); }
+			ScriptFunction VLerp() { mixin(MGF!("mVLerp", "Function Core.Object.VLerp")()); }
+			ScriptFunction Normal() { mixin(MGF!("mNormal", "Function Core.Object.Normal")()); }
+			ScriptFunction VSizeSq2D() { mixin(MGF!("mVSizeSq2D", "Function Core.Object.VSizeSq2D")()); }
+			ScriptFunction VSizeSq() { mixin(MGF!("mVSizeSq", "Function Core.Object.VSizeSq")()); }
+			ScriptFunction VSize2D() { mixin(MGF!("mVSize2D", "Function Core.Object.VSize2D")()); }
+			ScriptFunction VSize() { mixin(MGF!("mVSize", "Function Core.Object.VSize")()); }
+			ScriptFunction SubtractEqual_VectorVector() { mixin(MGF!("mSubtractEqual_VectorVector", "Function Core.Object.SubtractEqual_VectorVector")()); }
+			ScriptFunction AddEqual_VectorVector() { mixin(MGF!("mAddEqual_VectorVector", "Function Core.Object.AddEqual_VectorVector")()); }
+			ScriptFunction DivideEqual_VectorFloat() { mixin(MGF!("mDivideEqual_VectorFloat", "Function Core.Object.DivideEqual_VectorFloat")()); }
+			ScriptFunction MultiplyEqual_VectorVector() { mixin(MGF!("mMultiplyEqual_VectorVector", "Function Core.Object.MultiplyEqual_VectorVector")()); }
+			ScriptFunction MultiplyEqual_VectorFloat() { mixin(MGF!("mMultiplyEqual_VectorFloat", "Function Core.Object.MultiplyEqual_VectorFloat")()); }
+			ScriptFunction Cross_VectorVector() { mixin(MGF!("mCross_VectorVector", "Function Core.Object.Cross_VectorVector")()); }
+			ScriptFunction Dot_VectorVector() { mixin(MGF!("mDot_VectorVector", "Function Core.Object.Dot_VectorVector")()); }
+			ScriptFunction NotEqual_VectorVector() { mixin(MGF!("mNotEqual_VectorVector", "Function Core.Object.NotEqual_VectorVector")()); }
+			ScriptFunction EqualEqual_VectorVector() { mixin(MGF!("mEqualEqual_VectorVector", "Function Core.Object.EqualEqual_VectorVector")()); }
+			ScriptFunction GreaterGreater_VectorRotator() { mixin(MGF!("mGreaterGreater_VectorRotator", "Function Core.Object.GreaterGreater_VectorRotator")()); }
+			ScriptFunction LessLess_VectorRotator() { mixin(MGF!("mLessLess_VectorRotator", "Function Core.Object.LessLess_VectorRotator")()); }
+			ScriptFunction Subtract_VectorVector() { mixin(MGF!("mSubtract_VectorVector", "Function Core.Object.Subtract_VectorVector")()); }
+			ScriptFunction Add_VectorVector() { mixin(MGF!("mAdd_VectorVector", "Function Core.Object.Add_VectorVector")()); }
+			ScriptFunction Divide_VectorFloat() { mixin(MGF!("mDivide_VectorFloat", "Function Core.Object.Divide_VectorFloat")()); }
+			ScriptFunction Multiply_VectorVector() { mixin(MGF!("mMultiply_VectorVector", "Function Core.Object.Multiply_VectorVector")()); }
+			ScriptFunction Multiply_FloatVector() { mixin(MGF!("mMultiply_FloatVector", "Function Core.Object.Multiply_FloatVector")()); }
+			ScriptFunction Multiply_VectorFloat() { mixin(MGF!("mMultiply_VectorFloat", "Function Core.Object.Multiply_VectorFloat")()); }
+			ScriptFunction Subtract_PreVector() { mixin(MGF!("mSubtract_PreVector", "Function Core.Object.Subtract_PreVector")()); }
+			ScriptFunction FInterpConstantTo() { mixin(MGF!("mFInterpConstantTo", "Function Core.Object.FInterpConstantTo")()); }
+			ScriptFunction FPctByRange() { mixin(MGF!("mFPctByRange", "Function Core.Object.FPctByRange")()); }
+			ScriptFunction RandRange() { mixin(MGF!("mRandRange", "Function Core.Object.RandRange")()); }
+			ScriptFunction FInterpEaseInOut() { mixin(MGF!("mFInterpEaseInOut", "Function Core.Object.FInterpEaseInOut")()); }
+			ScriptFunction FInterpEaseOut() { mixin(MGF!("mFInterpEaseOut", "Function Core.Object.FInterpEaseOut")()); }
+			ScriptFunction FInterpEaseIn() { mixin(MGF!("mFInterpEaseIn", "Function Core.Object.FInterpEaseIn")()); }
+			ScriptFunction FCubicInterp() { mixin(MGF!("mFCubicInterp", "Function Core.Object.FCubicInterp")()); }
+			ScriptFunction FCeil() { mixin(MGF!("mFCeil", "Function Core.Object.FCeil")()); }
+			ScriptFunction FFloor() { mixin(MGF!("mFFloor", "Function Core.Object.FFloor")()); }
+			ScriptFunction Round() { mixin(MGF!("mRound", "Function Core.Object.Round")()); }
+			ScriptFunction Lerp() { mixin(MGF!("mLerp", "Function Core.Object.Lerp")()); }
+			ScriptFunction FClamp() { mixin(MGF!("mFClamp", "Function Core.Object.FClamp")()); }
+			ScriptFunction FMax() { mixin(MGF!("mFMax", "Function Core.Object.FMax")()); }
+			ScriptFunction FMin() { mixin(MGF!("mFMin", "Function Core.Object.FMin")()); }
+			ScriptFunction FRand() { mixin(MGF!("mFRand", "Function Core.Object.FRand")()); }
+			ScriptFunction Square() { mixin(MGF!("mSquare", "Function Core.Object.Square")()); }
+			ScriptFunction Sqrt() { mixin(MGF!("mSqrt", "Function Core.Object.Sqrt")()); }
+			ScriptFunction Loge() { mixin(MGF!("mLoge", "Function Core.Object.Loge")()); }
+			ScriptFunction Exp() { mixin(MGF!("mExp", "Function Core.Object.Exp")()); }
+			ScriptFunction Atan2() { mixin(MGF!("mAtan2", "Function Core.Object.Atan2")()); }
+			ScriptFunction Atan() { mixin(MGF!("mAtan", "Function Core.Object.Atan")()); }
+			ScriptFunction Tan() { mixin(MGF!("mTan", "Function Core.Object.Tan")()); }
+			ScriptFunction Cos() { mixin(MGF!("mCos", "Function Core.Object.Cos")()); }
+			ScriptFunction Asin() { mixin(MGF!("mAsin", "Function Core.Object.Asin")()); }
+			ScriptFunction Sin() { mixin(MGF!("mSin", "Function Core.Object.Sin")()); }
+			ScriptFunction Abs() { mixin(MGF!("mAbs", "Function Core.Object.Abs")()); }
+			ScriptFunction SubtractEqual_FloatFloat() { mixin(MGF!("mSubtractEqual_FloatFloat", "Function Core.Object.SubtractEqual_FloatFloat")()); }
+			ScriptFunction AddEqual_FloatFloat() { mixin(MGF!("mAddEqual_FloatFloat", "Function Core.Object.AddEqual_FloatFloat")()); }
+			ScriptFunction DivideEqual_FloatFloat() { mixin(MGF!("mDivideEqual_FloatFloat", "Function Core.Object.DivideEqual_FloatFloat")()); }
+			ScriptFunction MultiplyEqual_FloatFloat() { mixin(MGF!("mMultiplyEqual_FloatFloat", "Function Core.Object.MultiplyEqual_FloatFloat")()); }
+			ScriptFunction NotEqual_FloatFloat() { mixin(MGF!("mNotEqual_FloatFloat", "Function Core.Object.NotEqual_FloatFloat")()); }
+			ScriptFunction ComplementEqual_FloatFloat() { mixin(MGF!("mComplementEqual_FloatFloat", "Function Core.Object.ComplementEqual_FloatFloat")()); }
+			ScriptFunction EqualEqual_FloatFloat() { mixin(MGF!("mEqualEqual_FloatFloat", "Function Core.Object.EqualEqual_FloatFloat")()); }
+			ScriptFunction GreaterEqual_FloatFloat() { mixin(MGF!("mGreaterEqual_FloatFloat", "Function Core.Object.GreaterEqual_FloatFloat")()); }
+			ScriptFunction LessEqual_FloatFloat() { mixin(MGF!("mLessEqual_FloatFloat", "Function Core.Object.LessEqual_FloatFloat")()); }
+			ScriptFunction Greater_FloatFloat() { mixin(MGF!("mGreater_FloatFloat", "Function Core.Object.Greater_FloatFloat")()); }
+			ScriptFunction Less_FloatFloat() { mixin(MGF!("mLess_FloatFloat", "Function Core.Object.Less_FloatFloat")()); }
+			ScriptFunction Subtract_FloatFloat() { mixin(MGF!("mSubtract_FloatFloat", "Function Core.Object.Subtract_FloatFloat")()); }
+			ScriptFunction Add_FloatFloat() { mixin(MGF!("mAdd_FloatFloat", "Function Core.Object.Add_FloatFloat")()); }
+			ScriptFunction Percent_FloatFloat() { mixin(MGF!("mPercent_FloatFloat", "Function Core.Object.Percent_FloatFloat")()); }
+			ScriptFunction Divide_FloatFloat() { mixin(MGF!("mDivide_FloatFloat", "Function Core.Object.Divide_FloatFloat")()); }
+			ScriptFunction Multiply_FloatFloat() { mixin(MGF!("mMultiply_FloatFloat", "Function Core.Object.Multiply_FloatFloat")()); }
+			ScriptFunction MultiplyMultiply_FloatFloat() { mixin(MGF!("mMultiplyMultiply_FloatFloat", "Function Core.Object.MultiplyMultiply_FloatFloat")()); }
+			ScriptFunction Subtract_PreFloat() { mixin(MGF!("mSubtract_PreFloat", "Function Core.Object.Subtract_PreFloat")()); }
+			ScriptFunction ToHex() { mixin(MGF!("mToHex", "Function Core.Object.ToHex")()); }
+			ScriptFunction Clamp() { mixin(MGF!("mClamp", "Function Core.Object.Clamp")()); }
+			ScriptFunction Max() { mixin(MGF!("mMax", "Function Core.Object.Max")()); }
+			ScriptFunction Min() { mixin(MGF!("mMin", "Function Core.Object.Min")()); }
+			ScriptFunction Rand() { mixin(MGF!("mRand", "Function Core.Object.Rand")()); }
+			ScriptFunction SubtractSubtract_Int() { mixin(MGF!("mSubtractSubtract_Int", "Function Core.Object.SubtractSubtract_Int")()); }
+			ScriptFunction AddAdd_Int() { mixin(MGF!("mAddAdd_Int", "Function Core.Object.AddAdd_Int")()); }
+			ScriptFunction SubtractSubtract_PreInt() { mixin(MGF!("mSubtractSubtract_PreInt", "Function Core.Object.SubtractSubtract_PreInt")()); }
+			ScriptFunction AddAdd_PreInt() { mixin(MGF!("mAddAdd_PreInt", "Function Core.Object.AddAdd_PreInt")()); }
+			ScriptFunction SubtractEqual_IntInt() { mixin(MGF!("mSubtractEqual_IntInt", "Function Core.Object.SubtractEqual_IntInt")()); }
+			ScriptFunction AddEqual_IntInt() { mixin(MGF!("mAddEqual_IntInt", "Function Core.Object.AddEqual_IntInt")()); }
+			ScriptFunction DivideEqual_IntFloat() { mixin(MGF!("mDivideEqual_IntFloat", "Function Core.Object.DivideEqual_IntFloat")()); }
+			ScriptFunction MultiplyEqual_IntFloat() { mixin(MGF!("mMultiplyEqual_IntFloat", "Function Core.Object.MultiplyEqual_IntFloat")()); }
+			ScriptFunction Or_IntInt() { mixin(MGF!("mOr_IntInt", "Function Core.Object.Or_IntInt")()); }
+			ScriptFunction Xor_IntInt() { mixin(MGF!("mXor_IntInt", "Function Core.Object.Xor_IntInt")()); }
+			ScriptFunction And_IntInt() { mixin(MGF!("mAnd_IntInt", "Function Core.Object.And_IntInt")()); }
+			ScriptFunction NotEqual_IntInt() { mixin(MGF!("mNotEqual_IntInt", "Function Core.Object.NotEqual_IntInt")()); }
+			ScriptFunction EqualEqual_IntInt() { mixin(MGF!("mEqualEqual_IntInt", "Function Core.Object.EqualEqual_IntInt")()); }
+			ScriptFunction GreaterEqual_IntInt() { mixin(MGF!("mGreaterEqual_IntInt", "Function Core.Object.GreaterEqual_IntInt")()); }
+			ScriptFunction LessEqual_IntInt() { mixin(MGF!("mLessEqual_IntInt", "Function Core.Object.LessEqual_IntInt")()); }
+			ScriptFunction Greater_IntInt() { mixin(MGF!("mGreater_IntInt", "Function Core.Object.Greater_IntInt")()); }
+			ScriptFunction Less_IntInt() { mixin(MGF!("mLess_IntInt", "Function Core.Object.Less_IntInt")()); }
+			ScriptFunction GreaterGreaterGreater_IntInt() { mixin(MGF!("mGreaterGreaterGreater_IntInt", "Function Core.Object.GreaterGreaterGreater_IntInt")()); }
+			ScriptFunction GreaterGreater_IntInt() { mixin(MGF!("mGreaterGreater_IntInt", "Function Core.Object.GreaterGreater_IntInt")()); }
+			ScriptFunction LessLess_IntInt() { mixin(MGF!("mLessLess_IntInt", "Function Core.Object.LessLess_IntInt")()); }
+			ScriptFunction Subtract_IntInt() { mixin(MGF!("mSubtract_IntInt", "Function Core.Object.Subtract_IntInt")()); }
+			ScriptFunction Add_IntInt() { mixin(MGF!("mAdd_IntInt", "Function Core.Object.Add_IntInt")()); }
+			ScriptFunction Percent_IntInt() { mixin(MGF!("mPercent_IntInt", "Function Core.Object.Percent_IntInt")()); }
+			ScriptFunction Divide_IntInt() { mixin(MGF!("mDivide_IntInt", "Function Core.Object.Divide_IntInt")()); }
+			ScriptFunction Multiply_IntInt() { mixin(MGF!("mMultiply_IntInt", "Function Core.Object.Multiply_IntInt")()); }
+			ScriptFunction Subtract_PreInt() { mixin(MGF!("mSubtract_PreInt", "Function Core.Object.Subtract_PreInt")()); }
+			ScriptFunction Complement_PreInt() { mixin(MGF!("mComplement_PreInt", "Function Core.Object.Complement_PreInt")()); }
+			ScriptFunction SubtractSubtract_Byte() { mixin(MGF!("mSubtractSubtract_Byte", "Function Core.Object.SubtractSubtract_Byte")()); }
+			ScriptFunction AddAdd_Byte() { mixin(MGF!("mAddAdd_Byte", "Function Core.Object.AddAdd_Byte")()); }
+			ScriptFunction SubtractSubtract_PreByte() { mixin(MGF!("mSubtractSubtract_PreByte", "Function Core.Object.SubtractSubtract_PreByte")()); }
+			ScriptFunction AddAdd_PreByte() { mixin(MGF!("mAddAdd_PreByte", "Function Core.Object.AddAdd_PreByte")()); }
+			ScriptFunction SubtractEqual_ByteByte() { mixin(MGF!("mSubtractEqual_ByteByte", "Function Core.Object.SubtractEqual_ByteByte")()); }
+			ScriptFunction AddEqual_ByteByte() { mixin(MGF!("mAddEqual_ByteByte", "Function Core.Object.AddEqual_ByteByte")()); }
+			ScriptFunction DivideEqual_ByteByte() { mixin(MGF!("mDivideEqual_ByteByte", "Function Core.Object.DivideEqual_ByteByte")()); }
+			ScriptFunction MultiplyEqual_ByteFloat() { mixin(MGF!("mMultiplyEqual_ByteFloat", "Function Core.Object.MultiplyEqual_ByteFloat")()); }
+			ScriptFunction MultiplyEqual_ByteByte() { mixin(MGF!("mMultiplyEqual_ByteByte", "Function Core.Object.MultiplyEqual_ByteByte")()); }
+			ScriptFunction OrOr_BoolBool() { mixin(MGF!("mOrOr_BoolBool", "Function Core.Object.OrOr_BoolBool")()); }
+			ScriptFunction XorXor_BoolBool() { mixin(MGF!("mXorXor_BoolBool", "Function Core.Object.XorXor_BoolBool")()); }
+			ScriptFunction AndAnd_BoolBool() { mixin(MGF!("mAndAnd_BoolBool", "Function Core.Object.AndAnd_BoolBool")()); }
+			ScriptFunction NotEqual_BoolBool() { mixin(MGF!("mNotEqual_BoolBool", "Function Core.Object.NotEqual_BoolBool")()); }
+			ScriptFunction EqualEqual_BoolBool() { mixin(MGF!("mEqualEqual_BoolBool", "Function Core.Object.EqualEqual_BoolBool")()); }
+			ScriptFunction Not_PreBool() { mixin(MGF!("mNot_PreBool", "Function Core.Object.Not_PreBool")()); }
 		}
 	}
 	static struct Constants
@@ -702,12 +703,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Rotator")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Rotator")()); }
 		@property final auto ref
 		{
-			int Pitch() { return *cast(int*)(cast(size_t)&this + 0); }
-			int Yaw() { return *cast(int*)(cast(size_t)&this + 4); }
-			int Roll() { return *cast(int*)(cast(size_t)&this + 8); }
+			int Pitch() { mixin(MGPS!(int, 0)()); }
+			int Yaw() { mixin(MGPS!(int, 4)()); }
+			int Roll() { mixin(MGPS!(int, 8)()); }
 		}
 	}
 	struct Plane
@@ -715,26 +716,26 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Plane")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Plane")()); }
 		@property final auto ref
 		{
-			float X() { return *cast(float*)(cast(size_t)&this + 0); }
-			float Y() { return *cast(float*)(cast(size_t)&this + 4); }
-			float Z() { return *cast(float*)(cast(size_t)&this + 8); }
+			float X() { mixin(MGPS!(float, 0)()); }
+			float Y() { mixin(MGPS!(float, 4)()); }
+			float Z() { mixin(MGPS!(float, 8)()); }
 		}
-		@property final auto ref float W() { return *cast(float*)(cast(size_t)&this + 12); }
+		@property final auto ref float W() { mixin(MGPS!(float, 12)()); }
 	}
 	struct Vector
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Vector")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector")()); }
 		@property final auto ref
 		{
-			float X() { return *cast(float*)(cast(size_t)&this + 0); }
-			float Y() { return *cast(float*)(cast(size_t)&this + 4); }
-			float Z() { return *cast(float*)(cast(size_t)&this + 8); }
+			float X() { mixin(MGPS!(float, 0)()); }
+			float Y() { mixin(MGPS!(float, 4)()); }
+			float Z() { mixin(MGPS!(float, 8)()); }
 		}
 	}
 	struct Guid
@@ -742,13 +743,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Guid")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Guid")()); }
 		@property final auto ref
 		{
-			int A() { return *cast(int*)(cast(size_t)&this + 0); }
-			int B() { return *cast(int*)(cast(size_t)&this + 4); }
-			int C() { return *cast(int*)(cast(size_t)&this + 8); }
-			int D() { return *cast(int*)(cast(size_t)&this + 12); }
+			int A() { mixin(MGPS!(int, 0)()); }
+			int B() { mixin(MGPS!(int, 4)()); }
+			int C() { mixin(MGPS!(int, 8)()); }
+			int D() { mixin(MGPS!(int, 12)()); }
 		}
 	}
 	struct Vector2D
@@ -756,11 +757,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Vector2D")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector2D")()); }
 		@property final auto ref
 		{
-			float X() { return *cast(float*)(cast(size_t)&this + 0); }
-			float Y() { return *cast(float*)(cast(size_t)&this + 4); }
+			float X() { mixin(MGPS!(float, 0)()); }
+			float Y() { mixin(MGPS!(float, 4)()); }
 		}
 	}
 	struct Vector4
@@ -768,13 +769,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Vector4")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector4")()); }
 		@property final auto ref
 		{
-			float X() { return *cast(float*)(cast(size_t)&this + 0); }
-			float Y() { return *cast(float*)(cast(size_t)&this + 4); }
-			float Z() { return *cast(float*)(cast(size_t)&this + 8); }
-			float W() { return *cast(float*)(cast(size_t)&this + 12); }
+			float X() { mixin(MGPS!(float, 0)()); }
+			float Y() { mixin(MGPS!(float, 4)()); }
+			float Z() { mixin(MGPS!(float, 8)()); }
+			float W() { mixin(MGPS!(float, 12)()); }
 		}
 	}
 	struct LinearColor
@@ -782,13 +783,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.LinearColor")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.LinearColor")()); }
 		@property final auto ref
 		{
-			float R() { return *cast(float*)(cast(size_t)&this + 0); }
-			float G() { return *cast(float*)(cast(size_t)&this + 4); }
-			float B() { return *cast(float*)(cast(size_t)&this + 8); }
-			float A() { return *cast(float*)(cast(size_t)&this + 12); }
+			float R() { mixin(MGPS!(float, 0)()); }
+			float G() { mixin(MGPS!(float, 4)()); }
+			float B() { mixin(MGPS!(float, 8)()); }
+			float A() { mixin(MGPS!(float, 12)()); }
 		}
 	}
 	struct Color
@@ -796,13 +797,13 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Color")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Color")()); }
 		@property final auto ref
 		{
-			ubyte R() { return *cast(ubyte*)(cast(size_t)&this + 2); }
-			ubyte G() { return *cast(ubyte*)(cast(size_t)&this + 1); }
-			ubyte B() { return *cast(ubyte*)(cast(size_t)&this + 0); }
-			ubyte A() { return *cast(ubyte*)(cast(size_t)&this + 3); }
+			ubyte R() { mixin(MGPS!(ubyte, 2)()); }
+			ubyte G() { mixin(MGPS!(ubyte, 1)()); }
+			ubyte B() { mixin(MGPS!(ubyte, 0)()); }
+			ubyte A() { mixin(MGPS!(ubyte, 3)()); }
 		}
 	}
 	struct InterpCurveVector2D
@@ -810,11 +811,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurveVector2D")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveVector2D")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointVector2D) Points() { return *cast(ScriptArray!(UObject.InterpCurvePointVector2D)*)(cast(size_t)&this + 0); }
-			UObject.EInterpMethodType InterpMethod() { return *cast(UObject.EInterpMethodType*)(cast(size_t)&this + 12); }
+			ScriptArray!(UObject.InterpCurvePointVector2D) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointVector2D), 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
 		}
 	}
 	struct InterpCurvePointVector2D
@@ -822,14 +823,14 @@ public extern(D):
 		private ubyte __buffer__[29];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurvePointVector2D")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointVector2D")()); }
 		@property final auto ref
 		{
-			float InVal() { return *cast(float*)(cast(size_t)&this + 0); }
-			UObject.Vector2D OutVal() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 4); }
-			UObject.Vector2D ArriveTangent() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 12); }
-			UObject.Vector2D LeaveTangent() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 20); }
-			UObject.EInterpCurveMode InterpMode() { return *cast(UObject.EInterpCurveMode*)(cast(size_t)&this + 28); }
+			float InVal() { mixin(MGPS!(float, 0)()); }
+			UObject.Vector2D OutVal() { mixin(MGPS!(UObject.Vector2D, 4)()); }
+			UObject.Vector2D ArriveTangent() { mixin(MGPS!(UObject.Vector2D, 12)()); }
+			UObject.Vector2D LeaveTangent() { mixin(MGPS!(UObject.Vector2D, 20)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 28)()); }
 		}
 	}
 	struct InterpCurveFloat
@@ -837,11 +838,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurveFloat")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveFloat")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointFloat) Points() { return *cast(ScriptArray!(UObject.InterpCurvePointFloat)*)(cast(size_t)&this + 0); }
-			UObject.EInterpMethodType InterpMethod() { return *cast(UObject.EInterpMethodType*)(cast(size_t)&this + 12); }
+			ScriptArray!(UObject.InterpCurvePointFloat) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointFloat), 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
 		}
 	}
 	struct Cylinder
@@ -849,11 +850,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Cylinder")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Cylinder")()); }
 		@property final auto ref
 		{
-			float Radius() { return *cast(float*)(cast(size_t)&this + 0); }
-			float Height() { return *cast(float*)(cast(size_t)&this + 4); }
+			float Radius() { mixin(MGPS!(float, 0)()); }
+			float Height() { mixin(MGPS!(float, 4)()); }
 		}
 	}
 	struct InterpCurveVector
@@ -861,11 +862,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurveVector")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveVector")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointVector) Points() { return *cast(ScriptArray!(UObject.InterpCurvePointVector)*)(cast(size_t)&this + 0); }
-			UObject.EInterpMethodType InterpMethod() { return *cast(UObject.EInterpMethodType*)(cast(size_t)&this + 12); }
+			ScriptArray!(UObject.InterpCurvePointVector) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointVector), 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
 		}
 	}
 	struct InterpCurvePointVector
@@ -873,14 +874,14 @@ public extern(D):
 		private ubyte __buffer__[41];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurvePointVector")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointVector")()); }
 		@property final auto ref
 		{
-			float InVal() { return *cast(float*)(cast(size_t)&this + 0); }
-			Vector OutVal() { return *cast(Vector*)(cast(size_t)&this + 4); }
-			Vector ArriveTangent() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			Vector LeaveTangent() { return *cast(Vector*)(cast(size_t)&this + 28); }
-			UObject.EInterpCurveMode InterpMode() { return *cast(UObject.EInterpCurveMode*)(cast(size_t)&this + 40); }
+			float InVal() { mixin(MGPS!(float, 0)()); }
+			Vector OutVal() { mixin(MGPS!(Vector, 4)()); }
+			Vector ArriveTangent() { mixin(MGPS!(Vector, 16)()); }
+			Vector LeaveTangent() { mixin(MGPS!(Vector, 28)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 40)()); }
 		}
 	}
 	struct InterpCurvePointFloat
@@ -888,14 +889,14 @@ public extern(D):
 		private ubyte __buffer__[17];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurvePointFloat")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointFloat")()); }
 		@property final auto ref
 		{
-			float InVal() { return *cast(float*)(cast(size_t)&this + 0); }
-			float OutVal() { return *cast(float*)(cast(size_t)&this + 4); }
-			float ArriveTangent() { return *cast(float*)(cast(size_t)&this + 8); }
-			float LeaveTangent() { return *cast(float*)(cast(size_t)&this + 12); }
-			UObject.EInterpCurveMode InterpMode() { return *cast(UObject.EInterpCurveMode*)(cast(size_t)&this + 16); }
+			float InVal() { mixin(MGPS!(float, 0)()); }
+			float OutVal() { mixin(MGPS!(float, 4)()); }
+			float ArriveTangent() { mixin(MGPS!(float, 8)()); }
+			float LeaveTangent() { mixin(MGPS!(float, 12)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 16)()); }
 		}
 	}
 	struct Quat
@@ -903,13 +904,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Quat")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Quat")()); }
 		@property final auto ref
 		{
-			float X() { return *cast(float*)(cast(size_t)&this + 0); }
-			float Y() { return *cast(float*)(cast(size_t)&this + 4); }
-			float Z() { return *cast(float*)(cast(size_t)&this + 8); }
-			float W() { return *cast(float*)(cast(size_t)&this + 12); }
+			float X() { mixin(MGPS!(float, 0)()); }
+			float Y() { mixin(MGPS!(float, 4)()); }
+			float Z() { mixin(MGPS!(float, 8)()); }
+			float W() { mixin(MGPS!(float, 12)()); }
 		}
 	}
 	struct Matrix
@@ -917,13 +918,13 @@ public extern(D):
 		private ubyte __buffer__[64];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Matrix")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Matrix")()); }
 		@property final auto ref
 		{
-			UObject.Plane XPlane() { return *cast(UObject.Plane*)(cast(size_t)&this + 0); }
-			UObject.Plane YPlane() { return *cast(UObject.Plane*)(cast(size_t)&this + 16); }
-			UObject.Plane ZPlane() { return *cast(UObject.Plane*)(cast(size_t)&this + 32); }
-			UObject.Plane WPlane() { return *cast(UObject.Plane*)(cast(size_t)&this + 48); }
+			UObject.Plane XPlane() { mixin(MGPS!(UObject.Plane, 0)()); }
+			UObject.Plane YPlane() { mixin(MGPS!(UObject.Plane, 16)()); }
+			UObject.Plane ZPlane() { mixin(MGPS!(UObject.Plane, 32)()); }
+			UObject.Plane WPlane() { mixin(MGPS!(UObject.Plane, 48)()); }
 		}
 	}
 	struct BoxSphereBounds
@@ -931,12 +932,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.BoxSphereBounds")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BoxSphereBounds")()); }
 		@property final auto ref
 		{
-			Vector Origin() { return *cast(Vector*)(cast(size_t)&this + 0); }
-			Vector BoxExtent() { return *cast(Vector*)(cast(size_t)&this + 12); }
-			float SphereRadius() { return *cast(float*)(cast(size_t)&this + 24); }
+			Vector Origin() { mixin(MGPS!(Vector, 0)()); }
+			Vector BoxExtent() { mixin(MGPS!(Vector, 12)()); }
+			float SphereRadius() { mixin(MGPS!(float, 24)()); }
 		}
 	}
 	struct TwoVectors
@@ -944,11 +945,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.TwoVectors")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TwoVectors")()); }
 		@property final auto ref
 		{
-			Vector v1() { return *cast(Vector*)(cast(size_t)&this + 0); }
-			Vector v2() { return *cast(Vector*)(cast(size_t)&this + 12); }
+			Vector v1() { mixin(MGPS!(Vector, 0)()); }
+			Vector v2() { mixin(MGPS!(Vector, 12)()); }
 		}
 	}
 	struct TAlphaBlend
@@ -956,15 +957,15 @@ public extern(D):
 		private ubyte __buffer__[21];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.TAlphaBlend")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TAlphaBlend")()); }
 		@property final auto ref
 		{
-			float AlphaIn() { return *cast(float*)(cast(size_t)&this + 0); }
-			float AlphaOut() { return *cast(float*)(cast(size_t)&this + 4); }
-			float AlphaTarget() { return *cast(float*)(cast(size_t)&this + 8); }
-			float BlendTime() { return *cast(float*)(cast(size_t)&this + 12); }
-			float BlendTimeToGo() { return *cast(float*)(cast(size_t)&this + 16); }
-			UObject.AlphaBlendType BlendType() { return *cast(UObject.AlphaBlendType*)(cast(size_t)&this + 20); }
+			float AlphaIn() { mixin(MGPS!(float, 0)()); }
+			float AlphaOut() { mixin(MGPS!(float, 4)()); }
+			float AlphaTarget() { mixin(MGPS!(float, 8)()); }
+			float BlendTime() { mixin(MGPS!(float, 12)()); }
+			float BlendTimeToGo() { mixin(MGPS!(float, 16)()); }
+			UObject.AlphaBlendType BlendType() { mixin(MGPS!(UObject.AlphaBlendType, 20)()); }
 		}
 	}
 	struct BoneAtom
@@ -972,12 +973,12 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.BoneAtom")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BoneAtom")()); }
 		@property final auto ref
 		{
-			UObject.Quat Rotation() { return *cast(UObject.Quat*)(cast(size_t)&this + 0); }
-			Vector Translation() { return *cast(Vector*)(cast(size_t)&this + 16); }
-			float Scale() { return *cast(float*)(cast(size_t)&this + 28); }
+			UObject.Quat Rotation() { mixin(MGPS!(UObject.Quat, 0)()); }
+			Vector Translation() { mixin(MGPS!(Vector, 16)()); }
+			float Scale() { mixin(MGPS!(float, 28)()); }
 		}
 	}
 	struct OctreeElementId
@@ -985,11 +986,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.OctreeElementId")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.OctreeElementId")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Node() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
-			int ElementIndex() { return *cast(int*)(cast(size_t)&this + 4); }
+			UObject.Pointer Node() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			int ElementIndex() { mixin(MGPS!(int, 4)()); }
 		}
 	}
 	struct RenderCommandFence
@@ -997,32 +998,32 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.RenderCommandFence")); }
-		@property final auto ref int NumPendingFences() { return *cast(int*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RenderCommandFence")()); }
+		@property final auto ref int NumPendingFences() { mixin(MGPS!(int, 0)()); }
 	}
 	struct Pointer
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Pointer")); }
-		@property final auto ref int Dummy() { return *cast(int*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Pointer")()); }
+		@property final auto ref int Dummy() { mixin(MGPS!(int, 0)()); }
 	}
 	struct RawDistribution
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.RawDistribution")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RawDistribution")()); }
 		@property final auto ref
 		{
-			ubyte Type() { return *cast(ubyte*)(cast(size_t)&this + 0); }
-			ubyte Op() { return *cast(ubyte*)(cast(size_t)&this + 1); }
-			ubyte LookupTableNumElements() { return *cast(ubyte*)(cast(size_t)&this + 2); }
-			ubyte LookupTableChunkSize() { return *cast(ubyte*)(cast(size_t)&this + 3); }
-			ScriptArray!(float) LookupTable() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 4); }
-			float LookupTableTimeScale() { return *cast(float*)(cast(size_t)&this + 16); }
-			float LookupTableStartTime() { return *cast(float*)(cast(size_t)&this + 20); }
+			ubyte Type() { mixin(MGPS!(ubyte, 0)()); }
+			ubyte Op() { mixin(MGPS!(ubyte, 1)()); }
+			ubyte LookupTableNumElements() { mixin(MGPS!(ubyte, 2)()); }
+			ubyte LookupTableChunkSize() { mixin(MGPS!(ubyte, 3)()); }
+			ScriptArray!(float) LookupTable() { mixin(MGPS!(ScriptArray!(float), 4)()); }
+			float LookupTableTimeScale() { mixin(MGPS!(float, 16)()); }
+			float LookupTableStartTime() { mixin(MGPS!(float, 20)()); }
 		}
 	}
 	struct InterpCurveLinearColor
@@ -1030,11 +1031,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurveLinearColor")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveLinearColor")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointLinearColor) Points() { return *cast(ScriptArray!(UObject.InterpCurvePointLinearColor)*)(cast(size_t)&this + 0); }
-			UObject.EInterpMethodType InterpMethod() { return *cast(UObject.EInterpMethodType*)(cast(size_t)&this + 12); }
+			ScriptArray!(UObject.InterpCurvePointLinearColor) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointLinearColor), 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
 		}
 	}
 	struct InterpCurvePointLinearColor
@@ -1042,14 +1043,14 @@ public extern(D):
 		private ubyte __buffer__[53];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurvePointLinearColor")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointLinearColor")()); }
 		@property final auto ref
 		{
-			float InVal() { return *cast(float*)(cast(size_t)&this + 0); }
-			UObject.LinearColor OutVal() { return *cast(UObject.LinearColor*)(cast(size_t)&this + 4); }
-			UObject.LinearColor ArriveTangent() { return *cast(UObject.LinearColor*)(cast(size_t)&this + 20); }
-			UObject.LinearColor LeaveTangent() { return *cast(UObject.LinearColor*)(cast(size_t)&this + 36); }
-			UObject.EInterpCurveMode InterpMode() { return *cast(UObject.EInterpCurveMode*)(cast(size_t)&this + 52); }
+			float InVal() { mixin(MGPS!(float, 0)()); }
+			UObject.LinearColor OutVal() { mixin(MGPS!(UObject.LinearColor, 4)()); }
+			UObject.LinearColor ArriveTangent() { mixin(MGPS!(UObject.LinearColor, 20)()); }
+			UObject.LinearColor LeaveTangent() { mixin(MGPS!(UObject.LinearColor, 36)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 52)()); }
 		}
 	}
 	struct InterpCurveQuat
@@ -1057,11 +1058,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurveQuat")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveQuat")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointQuat) Points() { return *cast(ScriptArray!(UObject.InterpCurvePointQuat)*)(cast(size_t)&this + 0); }
-			UObject.EInterpMethodType InterpMethod() { return *cast(UObject.EInterpMethodType*)(cast(size_t)&this + 12); }
+			ScriptArray!(UObject.InterpCurvePointQuat) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointQuat), 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
 		}
 	}
 	struct InterpCurvePointQuat
@@ -1069,14 +1070,14 @@ public extern(D):
 		private ubyte __buffer__[65];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurvePointQuat")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointQuat")()); }
 		@property final auto ref
 		{
-			float InVal() { return *cast(float*)(cast(size_t)&this + 0); }
-			UObject.Quat OutVal() { return *cast(UObject.Quat*)(cast(size_t)&this + 16); }
-			UObject.Quat ArriveTangent() { return *cast(UObject.Quat*)(cast(size_t)&this + 32); }
-			UObject.Quat LeaveTangent() { return *cast(UObject.Quat*)(cast(size_t)&this + 48); }
-			UObject.EInterpCurveMode InterpMode() { return *cast(UObject.EInterpCurveMode*)(cast(size_t)&this + 64); }
+			float InVal() { mixin(MGPS!(float, 0)()); }
+			UObject.Quat OutVal() { mixin(MGPS!(UObject.Quat, 16)()); }
+			UObject.Quat ArriveTangent() { mixin(MGPS!(UObject.Quat, 32)()); }
+			UObject.Quat LeaveTangent() { mixin(MGPS!(UObject.Quat, 48)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 64)()); }
 		}
 	}
 	struct InterpCurveTwoVectors
@@ -1084,11 +1085,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurveTwoVectors")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveTwoVectors")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointTwoVectors) Points() { return *cast(ScriptArray!(UObject.InterpCurvePointTwoVectors)*)(cast(size_t)&this + 0); }
-			UObject.EInterpMethodType InterpMethod() { return *cast(UObject.EInterpMethodType*)(cast(size_t)&this + 12); }
+			ScriptArray!(UObject.InterpCurvePointTwoVectors) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointTwoVectors), 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
 		}
 	}
 	struct InterpCurvePointTwoVectors
@@ -1096,14 +1097,14 @@ public extern(D):
 		private ubyte __buffer__[77];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InterpCurvePointTwoVectors")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointTwoVectors")()); }
 		@property final auto ref
 		{
-			float InVal() { return *cast(float*)(cast(size_t)&this + 0); }
-			UObject.TwoVectors OutVal() { return *cast(UObject.TwoVectors*)(cast(size_t)&this + 4); }
-			UObject.TwoVectors ArriveTangent() { return *cast(UObject.TwoVectors*)(cast(size_t)&this + 28); }
-			UObject.TwoVectors LeaveTangent() { return *cast(UObject.TwoVectors*)(cast(size_t)&this + 52); }
-			UObject.EInterpCurveMode InterpMode() { return *cast(UObject.EInterpCurveMode*)(cast(size_t)&this + 76); }
+			float InVal() { mixin(MGPS!(float, 0)()); }
+			UObject.TwoVectors OutVal() { mixin(MGPS!(UObject.TwoVectors, 4)()); }
+			UObject.TwoVectors ArriveTangent() { mixin(MGPS!(UObject.TwoVectors, 28)()); }
+			UObject.TwoVectors LeaveTangent() { mixin(MGPS!(UObject.TwoVectors, 52)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 76)()); }
 		}
 	}
 	struct Box
@@ -1111,12 +1112,12 @@ public extern(D):
 		private ubyte __buffer__[25];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Box")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Box")()); }
 		@property final auto ref
 		{
-			Vector Min() { return *cast(Vector*)(cast(size_t)&this + 0); }
-			Vector Max() { return *cast(Vector*)(cast(size_t)&this + 12); }
-			ubyte IsValid() { return *cast(ubyte*)(cast(size_t)&this + 24); }
+			Vector Min() { mixin(MGPS!(Vector, 0)()); }
+			Vector Max() { mixin(MGPS!(Vector, 12)()); }
+			ubyte IsValid() { mixin(MGPS!(ubyte, 24)()); }
 		}
 	}
 	struct TPOV
@@ -1124,12 +1125,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.TPOV")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TPOV")()); }
 		@property final auto ref
 		{
-			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 0); }
-			Rotator Rotation() { return *cast(Rotator*)(cast(size_t)&this + 12); }
-			float FOV() { return *cast(float*)(cast(size_t)&this + 24); }
+			Vector Location() { mixin(MGPS!(Vector, 0)()); }
+			Rotator Rotation() { mixin(MGPS!(Rotator, 12)()); }
+			float FOV() { mixin(MGPS!(float, 24)()); }
 		}
 	}
 	struct SHVectorRGB
@@ -1137,12 +1138,12 @@ public extern(D):
 		private ubyte __buffer__[144];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.SHVectorRGB")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SHVectorRGB")()); }
 		@property final auto ref
 		{
-			UObject.SHVector R() { return *cast(UObject.SHVector*)(cast(size_t)&this + 0); }
-			UObject.SHVector G() { return *cast(UObject.SHVector*)(cast(size_t)&this + 48); }
-			UObject.SHVector B() { return *cast(UObject.SHVector*)(cast(size_t)&this + 96); }
+			UObject.SHVector R() { mixin(MGPS!(UObject.SHVector, 0)()); }
+			UObject.SHVector G() { mixin(MGPS!(UObject.SHVector, 48)()); }
+			UObject.SHVector B() { mixin(MGPS!(UObject.SHVector, 96)()); }
 		}
 	}
 	struct SHVector
@@ -1150,11 +1151,11 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.SHVector")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SHVector")()); }
 		@property final auto ref
 		{
-			float V() { return *cast(float*)(cast(size_t)&this + 0); }
-			float Padding() { return *cast(float*)(cast(size_t)&this + 36); }
+			float V() { mixin(MGPS!(float, 0)()); }
+			float Padding() { mixin(MGPS!(float, 36)()); }
 		}
 	}
 	struct IntPoint
@@ -1162,11 +1163,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.IntPoint")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.IntPoint")()); }
 		@property final auto ref
 		{
-			int X() { return *cast(int*)(cast(size_t)&this + 0); }
-			int Y() { return *cast(int*)(cast(size_t)&this + 4); }
+			int X() { mixin(MGPS!(int, 0)()); }
+			int Y() { mixin(MGPS!(int, 4)()); }
 		}
 	}
 	struct InlinePointerArray_Mirror
@@ -1174,11 +1175,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.InlinePointerArray_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InlinePointerArray_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer InlineData() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
-			UObject.Array_Mirror SecondaryData() { return *cast(UObject.Array_Mirror*)(cast(size_t)&this + 4); }
+			UObject.Pointer InlineData() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			UObject.Array_Mirror SecondaryData() { mixin(MGPS!(UObject.Array_Mirror, 4)()); }
 		}
 	}
 	struct Array_Mirror
@@ -1186,12 +1187,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Array_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Array_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
-			int ArrayNum() { return *cast(int*)(cast(size_t)&this + 4); }
-			int ArrayMax() { return *cast(int*)(cast(size_t)&this + 8); }
+			UObject.Pointer Data() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			int ArrayNum() { mixin(MGPS!(int, 4)()); }
+			int ArrayMax() { mixin(MGPS!(int, 8)()); }
 		}
 	}
 	struct IndirectArray_Mirror
@@ -1199,12 +1200,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.IndirectArray_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.IndirectArray_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
-			int ArrayNum() { return *cast(int*)(cast(size_t)&this + 4); }
-			int ArrayMax() { return *cast(int*)(cast(size_t)&this + 8); }
+			UObject.Pointer Data() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			int ArrayNum() { mixin(MGPS!(int, 4)()); }
+			int ArrayMax() { mixin(MGPS!(int, 8)()); }
 		}
 	}
 	struct FColorVertexBuffer_Mirror
@@ -1212,14 +1213,14 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.FColorVertexBuffer_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.FColorVertexBuffer_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
-			UObject.Pointer VertexData() { return *cast(UObject.Pointer*)(cast(size_t)&this + 4); }
-			int Data() { return *cast(int*)(cast(size_t)&this + 8); }
-			int Stride() { return *cast(int*)(cast(size_t)&this + 12); }
-			int NumVertices() { return *cast(int*)(cast(size_t)&this + 16); }
+			UObject.Pointer VfTable() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			UObject.Pointer VertexData() { mixin(MGPS!(UObject.Pointer, 4)()); }
+			int Data() { mixin(MGPS!(int, 8)()); }
+			int Stride() { mixin(MGPS!(int, 12)()); }
+			int NumVertices() { mixin(MGPS!(int, 16)()); }
 		}
 	}
 	struct RenderCommandFence_Mirror
@@ -1227,30 +1228,30 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.RenderCommandFence_Mirror")); }
-		@property final auto ref int NumPendingFences() { return *cast(int*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RenderCommandFence_Mirror")()); }
+		@property final auto ref int NumPendingFences() { mixin(MGPS!(int, 0)()); }
 	}
 	struct UntypedBulkData_Mirror
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.UntypedBulkData_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.UntypedBulkData_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
-			int BulkDataFlags() { return *cast(int*)(cast(size_t)&this + 4); }
-			int ElementCount() { return *cast(int*)(cast(size_t)&this + 8); }
-			int BulkDataOffsetInFile() { return *cast(int*)(cast(size_t)&this + 12); }
-			int BulkDataSizeOnDisk() { return *cast(int*)(cast(size_t)&this + 16); }
-			int SavedBulkDataFlags() { return *cast(int*)(cast(size_t)&this + 20); }
-			int SavedElementCount() { return *cast(int*)(cast(size_t)&this + 24); }
-			int SavedBulkDataOffsetInFile() { return *cast(int*)(cast(size_t)&this + 28); }
-			int SavedBulkDataSizeOnDisk() { return *cast(int*)(cast(size_t)&this + 32); }
-			UObject.Pointer BulkData() { return *cast(UObject.Pointer*)(cast(size_t)&this + 36); }
-			int LockStatus() { return *cast(int*)(cast(size_t)&this + 40); }
-			UObject.Pointer AttachedAr() { return *cast(UObject.Pointer*)(cast(size_t)&this + 44); }
-			int bShouldFreeOnEmpty() { return *cast(int*)(cast(size_t)&this + 48); }
+			UObject.Pointer VfTable() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			int BulkDataFlags() { mixin(MGPS!(int, 4)()); }
+			int ElementCount() { mixin(MGPS!(int, 8)()); }
+			int BulkDataOffsetInFile() { mixin(MGPS!(int, 12)()); }
+			int BulkDataSizeOnDisk() { mixin(MGPS!(int, 16)()); }
+			int SavedBulkDataFlags() { mixin(MGPS!(int, 20)()); }
+			int SavedElementCount() { mixin(MGPS!(int, 24)()); }
+			int SavedBulkDataOffsetInFile() { mixin(MGPS!(int, 28)()); }
+			int SavedBulkDataSizeOnDisk() { mixin(MGPS!(int, 32)()); }
+			UObject.Pointer BulkData() { mixin(MGPS!(UObject.Pointer, 36)()); }
+			int LockStatus() { mixin(MGPS!(int, 40)()); }
+			UObject.Pointer AttachedAr() { mixin(MGPS!(UObject.Pointer, 44)()); }
+			int bShouldFreeOnEmpty() { mixin(MGPS!(int, 48)()); }
 		}
 	}
 	struct MultiMap_Mirror
@@ -1258,29 +1259,29 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.MultiMap_Mirror")); }
-		@property final auto ref UObject.Set_Mirror Pairs() { return *cast(UObject.Set_Mirror*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.MultiMap_Mirror")()); }
+		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!(UObject.Set_Mirror, 0)()); }
 	}
 	struct Map_Mirror
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Map_Mirror")); }
-		@property final auto ref UObject.Set_Mirror Pairs() { return *cast(UObject.Set_Mirror*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Map_Mirror")()); }
+		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!(UObject.Set_Mirror, 0)()); }
 	}
 	struct Set_Mirror
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Set_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Set_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.SparseArray_Mirror Elements() { return *cast(UObject.SparseArray_Mirror*)(cast(size_t)&this + 0); }
-			UObject.Pointer Hash() { return *cast(UObject.Pointer*)(cast(size_t)&this + 48); }
-			int InlineHash() { return *cast(int*)(cast(size_t)&this + 52); }
-			int HashSize() { return *cast(int*)(cast(size_t)&this + 56); }
+			UObject.SparseArray_Mirror Elements() { mixin(MGPS!(UObject.SparseArray_Mirror, 0)()); }
+			UObject.Pointer Hash() { mixin(MGPS!(UObject.Pointer, 48)()); }
+			int InlineHash() { mixin(MGPS!(int, 52)()); }
+			int HashSize() { mixin(MGPS!(int, 56)()); }
 		}
 	}
 	struct SparseArray_Mirror
@@ -1288,13 +1289,13 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.SparseArray_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SparseArray_Mirror")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) Elements() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 0); }
-			UObject.BitArray_Mirror AllocationFlags() { return *cast(UObject.BitArray_Mirror*)(cast(size_t)&this + 12); }
-			int FirstFreeIndex() { return *cast(int*)(cast(size_t)&this + 40); }
-			int NumFreeIndices() { return *cast(int*)(cast(size_t)&this + 44); }
+			ScriptArray!(int) Elements() { mixin(MGPS!(ScriptArray!(int), 0)()); }
+			UObject.BitArray_Mirror AllocationFlags() { mixin(MGPS!(UObject.BitArray_Mirror, 12)()); }
+			int FirstFreeIndex() { mixin(MGPS!(int, 40)()); }
+			int NumFreeIndices() { mixin(MGPS!(int, 44)()); }
 		}
 	}
 	struct BitArray_Mirror
@@ -1302,13 +1303,13 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.BitArray_Mirror")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BitArray_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer IndirectData() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
-			int InlineData() { return *cast(int*)(cast(size_t)&this + 4); }
-			int NumBits() { return *cast(int*)(cast(size_t)&this + 20); }
-			int MaxBits() { return *cast(int*)(cast(size_t)&this + 24); }
+			UObject.Pointer IndirectData() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			int InlineData() { mixin(MGPS!(int, 4)()); }
+			int NumBits() { mixin(MGPS!(int, 20)()); }
+			int MaxBits() { mixin(MGPS!(int, 24)()); }
 		}
 	}
 	struct ThreadSafeCounter
@@ -1316,19 +1317,19 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.ThreadSafeCounter")); }
-		@property final auto ref int Value() { return *cast(int*)(cast(size_t)&this + 0); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.ThreadSafeCounter")()); }
+		@property final auto ref int Value() { mixin(MGPS!(int, 0)()); }
 	}
 	struct Double
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.Double")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Double")()); }
 		@property final auto ref
 		{
-			int A() { return *cast(int*)(cast(size_t)&this + 0); }
-			int B() { return *cast(int*)(cast(size_t)&this + 4); }
+			int A() { mixin(MGPS!(int, 0)()); }
+			int B() { mixin(MGPS!(int, 4)()); }
 		}
 	}
 	struct QWord
@@ -1336,28 +1337,28 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.Object.QWord")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.QWord")()); }
 		@property final auto ref
 		{
-			int A() { return *cast(int*)(cast(size_t)&this + 0); }
-			int B() { return *cast(int*)(cast(size_t)&this + 4); }
+			int A() { mixin(MGPS!(int, 0)()); }
+			int B() { mixin(MGPS!(int, 4)()); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject Outer() { return *cast(UObject*)(cast(size_t)cast(void*)this + 40); }
-		ScriptName Name() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 44); }
-		UObject.Pointer VfTableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 0); }
-		int ObjectInternalInteger() { return *cast(int*)(cast(size_t)cast(void*)this + 4); }
-		QWord ObjectFlags() { return *cast(QWord*)(cast(size_t)cast(void*)this + 8); }
-		UObject.Pointer HashNext() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 16); }
-		UObject.Pointer HashOuterNext() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 20); }
-		UObject.Pointer StateFrame() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 24); }
+		UObject Outer() { mixin(MGPC!(UObject, 40)()); }
+		ScriptName Name() { mixin(MGPC!(ScriptName, 44)()); }
+		UObject.Pointer VfTableObject() { mixin(MGPC!(UObject.Pointer, 0)()); }
+		int ObjectInternalInteger() { mixin(MGPC!(int, 4)()); }
+		QWord ObjectFlags() { mixin(MGPC!(QWord, 8)()); }
+		UObject.Pointer HashNext() { mixin(MGPC!(UObject.Pointer, 16)()); }
+		UObject.Pointer HashOuterNext() { mixin(MGPC!(UObject.Pointer, 20)()); }
+		UObject.Pointer StateFrame() { mixin(MGPC!(UObject.Pointer, 24)()); }
 		// WARNING: Property 'Linker' has the same name as a defined type!
-		UObject.Pointer LinkerIndex() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 32); }
-		int NetIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 36); }
+		UObject.Pointer LinkerIndex() { mixin(MGPC!(UObject.Pointer, 32)()); }
+		int NetIndex() { mixin(MGPC!(int, 36)()); }
 		// WARNING: Property 'Class' has the same name as a defined type!
-		UObject ObjectArchetype() { return *cast(UObject*)(cast(size_t)cast(void*)this + 56); }
+		UObject ObjectArchetype() { mixin(MGPC!(UObject, 56)()); }
 	}
 final:
 	int GetBuildChangelistNumber()
@@ -1374,18 +1375,18 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetEngineVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	void GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int* Hour, int* Min, int* Sec, int* MSec)
+	void GetSystemTime(ref int Year, ref int Month, ref int DayOfWeek, ref int Day, ref int Hour, ref int Min, ref int Sec, ref int MSec)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(int*)params.ptr = *Year;
-		*cast(int*)&params[4] = *Month;
-		*cast(int*)&params[8] = *DayOfWeek;
-		*cast(int*)&params[12] = *Day;
-		*cast(int*)&params[16] = *Hour;
-		*cast(int*)&params[20] = *Min;
-		*cast(int*)&params[24] = *Sec;
-		*cast(int*)&params[28] = *MSec;
+		*cast(int*)params.ptr = Year;
+		*cast(int*)&params[4] = Month;
+		*cast(int*)&params[8] = DayOfWeek;
+		*cast(int*)&params[12] = Day;
+		*cast(int*)&params[16] = Hour;
+		*cast(int*)&params[20] = Min;
+		*cast(int*)&params[24] = Sec;
+		*cast(int*)&params[28] = MSec;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSystemTime, params.ptr, cast(void*)0);
 		*Year = *cast(int*)params.ptr;
 		*Month = *cast(int*)&params[4];
@@ -1470,11 +1471,11 @@ final:
 		StaticClass.ProcessEvent(Functions.GetHeadingAngle, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	static void GetAngularDegreesFromRadians(UObject.Vector2D* OutFOV)
+	static void GetAngularDegreesFromRadians(ref UObject.Vector2D OutFOV)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *OutFOV;
+		*cast(UObject.Vector2D*)params.ptr = OutFOV;
 		StaticClass.ProcessEvent(Functions.GetAngularDegreesFromRadians, params.ptr, cast(void*)0);
 		*OutFOV = *cast(UObject.Vector2D*)params.ptr;
 	}
@@ -1486,20 +1487,20 @@ final:
 		StaticClass.ProcessEvent(Functions.Acos, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	static void GetAngularFromDotDist(UObject.Vector2D* OutAngDist, UObject.Vector2D DotDist)
+	static void GetAngularFromDotDist(ref UObject.Vector2D OutAngDist, UObject.Vector2D DotDist)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *OutAngDist;
+		*cast(UObject.Vector2D*)params.ptr = OutAngDist;
 		*cast(UObject.Vector2D*)&params[8] = DotDist;
 		StaticClass.ProcessEvent(Functions.GetAngularFromDotDist, params.ptr, cast(void*)0);
 		*OutAngDist = *cast(UObject.Vector2D*)params.ptr;
 	}
-	static bool GetAngularDistance(UObject.Vector2D* OutAngularDist, Vector Direction, Vector AxisX, Vector AxisY, Vector AxisZ)
+	static bool GetAngularDistance(ref UObject.Vector2D OutAngularDist, Vector Direction, Vector AxisX, Vector AxisY, Vector AxisZ)
 	{
 		ubyte params[60];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *OutAngularDist;
+		*cast(UObject.Vector2D*)params.ptr = OutAngularDist;
 		*cast(Vector*)&params[8] = Direction;
 		*cast(Vector*)&params[20] = AxisX;
 		*cast(Vector*)&params[32] = AxisY;
@@ -1508,11 +1509,11 @@ final:
 		*OutAngularDist = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(bool*)&params[56];
 	}
-	static bool GetDotDistance(UObject.Vector2D* OutDotDist, Vector Direction, Vector AxisX, Vector AxisY, Vector AxisZ)
+	static bool GetDotDistance(ref UObject.Vector2D OutDotDist, Vector Direction, Vector AxisX, Vector AxisY, Vector AxisZ)
 	{
 		ubyte params[60];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *OutDotDist;
+		*cast(UObject.Vector2D*)params.ptr = OutDotDist;
 		*cast(Vector*)&params[8] = Direction;
 		*cast(Vector*)&params[20] = AxisX;
 		*cast(Vector*)&params[32] = AxisY;
@@ -1539,7 +1540,7 @@ final:
 		*cast(Vector*)params.ptr = Point;
 		*cast(Rotator*)&params[12] = Orientation;
 		*cast(Vector*)&params[24] = Origin;
-		*cast(Vector*)&params[36] = *out_ClosestPoint;
+		*cast(Vector*)&params[36] = out_ClosestPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointDistToPlane, params.ptr, cast(void*)0);
 		*out_ClosestPoint = *cast(Vector*)&params[36];
 		return *cast(float*)&params[48];
@@ -1551,7 +1552,7 @@ final:
 		*cast(Vector*)params.ptr = Point;
 		*cast(Vector*)&params[12] = StartPoint;
 		*cast(Vector*)&params[24] = EndPoint;
-		*cast(Vector*)&params[36] = *OutClosestPoint;
+		*cast(Vector*)&params[36] = OutClosestPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointDistToSegment, params.ptr, cast(void*)0);
 		*OutClosestPoint = *cast(Vector*)&params[36];
 		return *cast(float*)&params[48];
@@ -1563,17 +1564,17 @@ final:
 		*cast(Vector*)params.ptr = Point;
 		*cast(Vector*)&params[12] = Line;
 		*cast(Vector*)&params[24] = Origin;
-		*cast(Vector*)&params[36] = *OutClosestPoint;
+		*cast(Vector*)&params[36] = OutClosestPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointDistToLine, params.ptr, cast(void*)0);
 		*OutClosestPoint = *cast(Vector*)&params[36];
 		return *cast(float*)&params[48];
 	}
-	static bool GetPerObjectConfigSections(ScriptClass SearchClass, ScriptArray!(ScriptString)* out_SectionNames, UObject ObjectOuter, int MaxResults)
+	static bool GetPerObjectConfigSections(ScriptClass SearchClass, ref ScriptArray!(ScriptString) out_SectionNames, UObject ObjectOuter, int MaxResults)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = SearchClass;
-		*cast(ScriptArray!(ScriptString)*)&params[4] = *out_SectionNames;
+		*cast(ScriptArray!(ScriptString)*)&params[4] = out_SectionNames;
 		*cast(UObject*)&params[16] = ObjectOuter;
 		*cast(int*)&params[20] = MaxResults;
 		StaticClass.ProcessEvent(Functions.GetPerObjectConfigSections, params.ptr, cast(void*)0);
@@ -1772,12 +1773,12 @@ final:
 		StaticClass.ProcessEvent(Functions.Localize, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[36];
 	}
-	static void ParseStringIntoArray(ScriptString BaseString, ScriptArray!(ScriptString)* Pieces, ScriptString delim, bool bCullEmpty)
+	static void ParseStringIntoArray(ScriptString BaseString, ref ScriptArray!(ScriptString) Pieces, ScriptString delim, bool bCullEmpty)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = BaseString;
-		*cast(ScriptArray!(ScriptString)*)&params[12] = *Pieces;
+		*cast(ScriptArray!(ScriptString)*)&params[12] = Pieces;
 		*cast(ScriptString*)&params[24] = delim;
 		*cast(bool*)&params[36] = bCullEmpty;
 		StaticClass.ProcessEvent(Functions.ParseStringIntoArray, params.ptr, cast(void*)0);
@@ -1956,41 +1957,41 @@ final:
 		StaticClass.ProcessEvent(Functions.GetRangeValueByPct, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	static UObject.Vector2D SubtractEqual_Vector2DVector2D(UObject.Vector2D* A, UObject.Vector2D B)
+	static UObject.Vector2D SubtractEqual_Vector2DVector2D(ref UObject.Vector2D A, UObject.Vector2D B)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *A;
+		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(UObject.Vector2D*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_Vector2DVector2D, params.ptr, cast(void*)0);
 		*A = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(UObject.Vector2D*)&params[16];
 	}
-	static UObject.Vector2D AddEqual_Vector2DVector2D(UObject.Vector2D* A, UObject.Vector2D B)
+	static UObject.Vector2D AddEqual_Vector2DVector2D(ref UObject.Vector2D A, UObject.Vector2D B)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *A;
+		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(UObject.Vector2D*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_Vector2DVector2D, params.ptr, cast(void*)0);
 		*A = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(UObject.Vector2D*)&params[16];
 	}
-	static UObject.Vector2D DivideEqual_Vector2DFloat(UObject.Vector2D* A, float B)
+	static UObject.Vector2D DivideEqual_Vector2DFloat(ref UObject.Vector2D A, float B)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *A;
+		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(float*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_Vector2DFloat, params.ptr, cast(void*)0);
 		*A = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(UObject.Vector2D*)&params[12];
 	}
-	static UObject.Vector2D MultiplyEqual_Vector2DFloat(UObject.Vector2D* A, float B)
+	static UObject.Vector2D MultiplyEqual_Vector2DFloat(ref UObject.Vector2D A, float B)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(UObject.Vector2D*)params.ptr = *A;
+		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(float*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_Vector2DFloat, params.ptr, cast(void*)0);
 		*A = *cast(UObject.Vector2D*)params.ptr;
@@ -2322,12 +2323,12 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.SplitString, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(ScriptString)*)&params[28];
 	}
-	static void JoinArray(ScriptArray!(ScriptString) StringArray, ScriptString* out_Result, ScriptString delim, bool bIgnoreBlanks)
+	static void JoinArray(ScriptArray!(ScriptString) StringArray, ref ScriptString out_Result, ScriptString delim, bool bIgnoreBlanks)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = StringArray;
-		*cast(ScriptString*)&params[12] = *out_Result;
+		*cast(ScriptString*)&params[12] = out_Result;
 		*cast(ScriptString*)&params[24] = delim;
 		*cast(bool*)&params[36] = bIgnoreBlanks;
 		StaticClass.ProcessEvent(Functions.JoinArray, params.ptr, cast(void*)0);
@@ -2341,11 +2342,11 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.GetRightMost, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	static ScriptString ConcatEqual_StrStr(ScriptString* A, ScriptString B)
+	static ScriptString ConcatEqual_StrStr(ref ScriptString A, ScriptString B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *A;
+		*cast(ScriptString*)params.ptr = A;
 		*cast(ScriptString*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.ConcatEqual_StrStr, params.ptr, cast(void*)0);
 		*A = *cast(ScriptString*)params.ptr;
@@ -2452,21 +2453,21 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.Len, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	static ScriptString SubtractEqual_StrStr(ScriptString* A, ScriptString B)
+	static ScriptString SubtractEqual_StrStr(ref ScriptString A, ScriptString B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *A;
+		*cast(ScriptString*)params.ptr = A;
 		*cast(ScriptString*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_StrStr, params.ptr, cast(void*)0);
 		*A = *cast(ScriptString*)params.ptr;
 		return *cast(ScriptString*)&params[24];
 	}
-	static ScriptString AtEqual_StrStr(ScriptString* A, ScriptString B)
+	static ScriptString AtEqual_StrStr(ref ScriptString A, ScriptString B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *A;
+		*cast(ScriptString*)params.ptr = A;
 		*cast(ScriptString*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.AtEqual_StrStr, params.ptr, cast(void*)0);
 		*A = *cast(ScriptString*)params.ptr;
@@ -2563,13 +2564,13 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.MakeRotator, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[12];
 	}
-	static bool SClampRotAxis(float DeltaTime, int ViewAxis, int* out_DeltaViewAxis, int MaxLimit, int MinLimit, float InterpolationSpeed)
+	static bool SClampRotAxis(float DeltaTime, int ViewAxis, ref int out_DeltaViewAxis, int MaxLimit, int MinLimit, float InterpolationSpeed)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(int*)&params[4] = ViewAxis;
-		*cast(int*)&params[8] = *out_DeltaViewAxis;
+		*cast(int*)&params[8] = out_DeltaViewAxis;
 		*cast(int*)&params[12] = MaxLimit;
 		*cast(int*)&params[16] = MinLimit;
 		*cast(float*)&params[20] = InterpolationSpeed;
@@ -2616,12 +2617,12 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.ClampRotAxisFromBase, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	static void ClampRotAxis(int ViewAxis, int* out_DeltaViewAxis, int MaxLimit, int MinLimit)
+	static void ClampRotAxis(int ViewAxis, ref int out_DeltaViewAxis, int MaxLimit, int MinLimit)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ViewAxis;
-		*cast(int*)&params[4] = *out_DeltaViewAxis;
+		*cast(int*)&params[4] = out_DeltaViewAxis;
 		*cast(int*)&params[8] = MaxLimit;
 		*cast(int*)&params[12] = MinLimit;
 		StaticClass.ProcessEvent(Functions.ClampRotAxis, params.ptr, cast(void*)0);
@@ -2644,18 +2645,6 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.RDiff, params.ptr, cast(void*)0);
 		return *cast(float*)&params[24];
 	}
-	/**
-	 * Tries to reach Target based on distance from Current position,
-	 * giving a nice smooth feeling when tracking a position.
-	 * (Doesn't work well when target teleports)
-	 *
-	 * Params:
-	 * 		Current =		Actual position
-	 * 		Target	=		Target position
-	 * 		DeltaTime =		Time since last tick
-	 * 		InterpSpeed =	Interpolation speed, if !bConstantInterpSpeed will perform a continuous lerp, otherwise will interp at constant speed
-	 * Returns: new interpolated position
-	 */
 	static Rotator RInterpTo(Rotator Current, Rotator Target, float DeltaTime, float InterpSpeed, bool bConstantInterpSpeed)
 	{
 		ubyte params[48];
@@ -2734,27 +2723,27 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.GetRotatorAxis, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[16];
 	}
-	static void GetUnAxes(Rotator A, Vector* X, Vector* Y, Vector* Z)
+	static void GetUnAxes(Rotator A, ref Vector X, ref Vector Y, ref Vector Z)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = A;
-		*cast(Vector*)&params[12] = *X;
-		*cast(Vector*)&params[24] = *Y;
-		*cast(Vector*)&params[36] = *Z;
+		*cast(Vector*)&params[12] = X;
+		*cast(Vector*)&params[24] = Y;
+		*cast(Vector*)&params[36] = Z;
 		StaticClass.ProcessEvent(Functions.GetUnAxes, params.ptr, cast(void*)0);
 		*X = *cast(Vector*)&params[12];
 		*Y = *cast(Vector*)&params[24];
 		*Z = *cast(Vector*)&params[36];
 	}
-	static void GetAxes(Rotator A, Vector* X, Vector* Y, Vector* Z)
+	static void GetAxes(Rotator A, ref Vector X, ref Vector Y, ref Vector Z)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = A;
-		*cast(Vector*)&params[12] = *X;
-		*cast(Vector*)&params[24] = *Y;
-		*cast(Vector*)&params[36] = *Z;
+		*cast(Vector*)&params[12] = X;
+		*cast(Vector*)&params[24] = Y;
+		*cast(Vector*)&params[36] = Z;
 		StaticClass.ProcessEvent(Functions.GetAxes, params.ptr, cast(void*)0);
 		*X = *cast(Vector*)&params[12];
 		*Y = *cast(Vector*)&params[24];
@@ -2769,21 +2758,21 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.ClockwiseFrom_IntInt, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	static Rotator SubtractEqual_RotatorRotator(Rotator* A, Rotator B)
+	static Rotator SubtractEqual_RotatorRotator(ref Rotator A, Rotator B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *A;
+		*cast(Rotator*)params.ptr = A;
 		*cast(Rotator*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_RotatorRotator, params.ptr, cast(void*)0);
 		*A = *cast(Rotator*)params.ptr;
 		return *cast(Rotator*)&params[24];
 	}
-	static Rotator AddEqual_RotatorRotator(Rotator* A, Rotator B)
+	static Rotator AddEqual_RotatorRotator(ref Rotator A, Rotator B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *A;
+		*cast(Rotator*)params.ptr = A;
 		*cast(Rotator*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_RotatorRotator, params.ptr, cast(void*)0);
 		*A = *cast(Rotator*)params.ptr;
@@ -2807,21 +2796,21 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.Add_RotatorRotator, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[24];
 	}
-	static Rotator DivideEqual_RotatorFloat(Rotator* A, float B)
+	static Rotator DivideEqual_RotatorFloat(ref Rotator A, float B)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *A;
+		*cast(Rotator*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_RotatorFloat, params.ptr, cast(void*)0);
 		*A = *cast(Rotator*)params.ptr;
 		return *cast(Rotator*)&params[16];
 	}
-	static Rotator MultiplyEqual_RotatorFloat(Rotator* A, float B)
+	static Rotator MultiplyEqual_RotatorFloat(ref Rotator A, float B)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Rotator*)params.ptr = *A;
+		*cast(Rotator*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_RotatorFloat, params.ptr, cast(void*)0);
 		*A = *cast(Rotator*)params.ptr;
@@ -3025,51 +3014,51 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.VSize, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	static Vector SubtractEqual_VectorVector(Vector* A, Vector B)
+	static Vector SubtractEqual_VectorVector(ref Vector A, Vector B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *A;
+		*cast(Vector*)params.ptr = A;
 		*cast(Vector*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_VectorVector, params.ptr, cast(void*)0);
 		*A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[24];
 	}
-	static Vector AddEqual_VectorVector(Vector* A, Vector B)
+	static Vector AddEqual_VectorVector(ref Vector A, Vector B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *A;
+		*cast(Vector*)params.ptr = A;
 		*cast(Vector*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_VectorVector, params.ptr, cast(void*)0);
 		*A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[24];
 	}
-	static Vector DivideEqual_VectorFloat(Vector* A, float B)
+	static Vector DivideEqual_VectorFloat(ref Vector A, float B)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *A;
+		*cast(Vector*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_VectorFloat, params.ptr, cast(void*)0);
 		*A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[16];
 	}
-	static Vector MultiplyEqual_VectorVector(Vector* A, Vector B)
+	static Vector MultiplyEqual_VectorVector(ref Vector A, Vector B)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *A;
+		*cast(Vector*)params.ptr = A;
 		*cast(Vector*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_VectorVector, params.ptr, cast(void*)0);
 		*A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[24];
 	}
-	static Vector MultiplyEqual_VectorFloat(Vector* A, float B)
+	static Vector MultiplyEqual_VectorFloat(ref Vector A, float B)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *A;
+		*cast(Vector*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_VectorFloat, params.ptr, cast(void*)0);
 		*A = *cast(Vector*)params.ptr;
@@ -3424,41 +3413,41 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.Abs, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	static float SubtractEqual_FloatFloat(float* A, float B)
+	static float SubtractEqual_FloatFloat(ref float A, float B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(float*)params.ptr = *A;
+		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_FloatFloat, params.ptr, cast(void*)0);
 		*A = *cast(float*)params.ptr;
 		return *cast(float*)&params[8];
 	}
-	static float AddEqual_FloatFloat(float* A, float B)
+	static float AddEqual_FloatFloat(ref float A, float B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(float*)params.ptr = *A;
+		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_FloatFloat, params.ptr, cast(void*)0);
 		*A = *cast(float*)params.ptr;
 		return *cast(float*)&params[8];
 	}
-	static float DivideEqual_FloatFloat(float* A, float B)
+	static float DivideEqual_FloatFloat(ref float A, float B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(float*)params.ptr = *A;
+		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_FloatFloat, params.ptr, cast(void*)0);
 		*A = *cast(float*)params.ptr;
 		return *cast(float*)&params[8];
 	}
-	static float MultiplyEqual_FloatFloat(float* A, float B)
+	static float MultiplyEqual_FloatFloat(ref float A, float B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(float*)params.ptr = *A;
+		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_FloatFloat, params.ptr, cast(void*)0);
 		*A = *cast(float*)params.ptr;
@@ -3633,77 +3622,77 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.Rand, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	static int SubtractSubtract_Int(int* A)
+	static int SubtractSubtract_Int(ref int A)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_Int, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
-	static int AddAdd_Int(int* A)
+	static int AddAdd_Int(ref int A)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_Int, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
-	static int SubtractSubtract_PreInt(int* A)
+	static int SubtractSubtract_PreInt(ref int A)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_PreInt, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
-	static int AddAdd_PreInt(int* A)
+	static int AddAdd_PreInt(ref int A)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_PreInt, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
-	static int SubtractEqual_IntInt(int* A, int B)
+	static int SubtractEqual_IntInt(ref int A, int B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		*cast(int*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_IntInt, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
 		return *cast(int*)&params[8];
 	}
-	static int AddEqual_IntInt(int* A, int B)
+	static int AddEqual_IntInt(ref int A, int B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		*cast(int*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_IntInt, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
 		return *cast(int*)&params[8];
 	}
-	static int DivideEqual_IntFloat(int* A, float B)
+	static int DivideEqual_IntFloat(ref int A, float B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_IntFloat, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
 		return *cast(int*)&params[8];
 	}
-	static int MultiplyEqual_IntFloat(int* A, float B)
+	static int MultiplyEqual_IntFloat(ref int A, float B)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(int*)params.ptr = *A;
+		*cast(int*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_IntFloat, params.ptr, cast(void*)0);
 		*A = *cast(int*)params.ptr;
@@ -3878,87 +3867,87 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.Complement_PreInt, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	static ubyte SubtractSubtract_Byte(ubyte* A)
+	static ubyte SubtractSubtract_Byte(ref ubyte A)
 	{
 		ubyte params[2];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_Byte, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[1];
 	}
-	static ubyte AddAdd_Byte(ubyte* A)
+	static ubyte AddAdd_Byte(ref ubyte A)
 	{
 		ubyte params[2];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_Byte, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[1];
 	}
-	static ubyte SubtractSubtract_PreByte(ubyte* A)
+	static ubyte SubtractSubtract_PreByte(ref ubyte A)
 	{
 		ubyte params[2];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_PreByte, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[1];
 	}
-	static ubyte AddAdd_PreByte(ubyte* A)
+	static ubyte AddAdd_PreByte(ref ubyte A)
 	{
 		ubyte params[2];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_PreByte, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[1];
 	}
-	static ubyte SubtractEqual_ByteByte(ubyte* A, ubyte B)
+	static ubyte SubtractEqual_ByteByte(ref ubyte A, ubyte B)
 	{
 		ubyte params[3];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_ByteByte, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[2];
 	}
-	static ubyte AddEqual_ByteByte(ubyte* A, ubyte B)
+	static ubyte AddEqual_ByteByte(ref ubyte A, ubyte B)
 	{
 		ubyte params[3];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_ByteByte, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[2];
 	}
-	static ubyte DivideEqual_ByteByte(ubyte* A, ubyte B)
+	static ubyte DivideEqual_ByteByte(ref ubyte A, ubyte B)
 	{
 		ubyte params[3];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_ByteByte, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[2];
 	}
-	static ubyte MultiplyEqual_ByteFloat(ubyte* A, float B)
+	static ubyte MultiplyEqual_ByteFloat(ref ubyte A, float B)
 	{
 		ubyte params[9];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_ByteFloat, params.ptr, cast(void*)0);
 		*A = params[0];
 		return params[8];
 	}
-	static ubyte MultiplyEqual_ByteByte(ubyte* A, ubyte B)
+	static ubyte MultiplyEqual_ByteByte(ref ubyte A, ubyte B)
 	{
 		ubyte params[3];
 		params[] = 0;
-		params[0] = *A;
+		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_ByteByte, params.ptr, cast(void*)0);
 		*A = params[0];

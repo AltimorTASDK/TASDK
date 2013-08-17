@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrFirstBloodMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UTGame.UTLocalMessage;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Core.UObject;
@@ -9,13 +10,13 @@ extern(C++) interface TrFirstBloodMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFirstBloodMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFirstBloodMessage")()); }
 	private static __gshared TrFirstBloodMessage mDefaultProperties;
-	@property final static TrFirstBloodMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFirstBloodMessage)("TrFirstBloodMessage TribesGame.Default__TrFirstBloodMessage")); }
+	@property final static TrFirstBloodMessage DefaultProperties() { mixin(MGDPC!(TrFirstBloodMessage, "TrFirstBloodMessage TribesGame.Default__TrFirstBloodMessage")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFirstBloodMessage.GetString")); }
+		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrFirstBloodMessage.GetString")()); }
 	}
 	static struct Constants
 	{
@@ -523,7 +524,7 @@ public extern(D):
 			MOD_TYPE_REPAIRDEPLOYABLERATEPCT = 92,
 		}
 	}
-	@property final auto ref ScriptString FirstBlood() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	@property final auto ref ScriptString FirstBlood() { mixin(MGPC!(ScriptString, 100)()); }
 	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

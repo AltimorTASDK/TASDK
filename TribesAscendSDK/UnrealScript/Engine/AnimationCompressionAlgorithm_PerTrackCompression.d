@@ -1,6 +1,7 @@
 module UnrealScript.Engine.AnimationCompressionAlgorithm_PerTrackCompression;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.AnimSequence;
 import UnrealScript.Engine.AnimationCompressionAlgorithm_RemoveLinearKeys;
@@ -9,36 +10,36 @@ extern(C++) interface AnimationCompressionAlgorithm_PerTrackCompression : Animat
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm_PerTrackCompression")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimationCompressionAlgorithm_PerTrackCompression")()); }
 	private static __gshared AnimationCompressionAlgorithm_PerTrackCompression mDefaultProperties;
-	@property final static AnimationCompressionAlgorithm_PerTrackCompression DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimationCompressionAlgorithm_PerTrackCompression)("AnimationCompressionAlgorithm_PerTrackCompression Engine.Default__AnimationCompressionAlgorithm_PerTrackCompression")); }
+	@property final static AnimationCompressionAlgorithm_PerTrackCompression DefaultProperties() { mixin(MGDPC!(AnimationCompressionAlgorithm_PerTrackCompression, "AnimationCompressionAlgorithm_PerTrackCompression Engine.Default__AnimationCompressionAlgorithm_PerTrackCompression")()); }
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedRotationFormats() { return *cast(ScriptArray!(AnimSequence.AnimationCompressionFormat)*)(cast(size_t)cast(void*)this + 120); }
-			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedTranslationFormats() { return *cast(ScriptArray!(AnimSequence.AnimationCompressionFormat)*)(cast(size_t)cast(void*)this + 132); }
-			UObject.Pointer PerReductionCachedData() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 184); }
-			float PerturbationProbeSize() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }
-			float MaxErrorPerTrackRatio() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
-			float TranslationErrorSourceRatio() { return *cast(float*)(cast(size_t)cast(void*)this + 172); }
-			float RotationErrorSourceRatio() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float ParentingDivisorExponent() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float ParentingDivisor() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			int TrackHeightBias() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-			int MinKeysForResampling() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
-			float ResampledFramerate() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			float MaxAngleDiffBitwise() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-			float MaxPosDiffBitwise() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-			float MaxZeroingThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
+			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedRotationFormats() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimationCompressionFormat), 120)()); }
+			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedTranslationFormats() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimationCompressionFormat), 132)()); }
+			UObject.Pointer PerReductionCachedData() { mixin(MGPC!(UObject.Pointer, 184)()); }
+			float PerturbationProbeSize() { mixin(MGPC!(float, 180)()); }
+			float MaxErrorPerTrackRatio() { mixin(MGPC!(float, 176)()); }
+			float TranslationErrorSourceRatio() { mixin(MGPC!(float, 172)()); }
+			float RotationErrorSourceRatio() { mixin(MGPC!(float, 168)()); }
+			float ParentingDivisorExponent() { mixin(MGPC!(float, 164)()); }
+			float ParentingDivisor() { mixin(MGPC!(float, 160)()); }
+			int TrackHeightBias() { mixin(MGPC!(int, 156)()); }
+			int MinKeysForResampling() { mixin(MGPC!(int, 152)()); }
+			float ResampledFramerate() { mixin(MGPC!(float, 148)()); }
+			float MaxAngleDiffBitwise() { mixin(MGPC!(float, 116)()); }
+			float MaxPosDiffBitwise() { mixin(MGPC!(float, 112)()); }
+			float MaxZeroingThreshold() { mixin(MGPC!(float, 108)()); }
 		}
-		bool bUseAdaptiveError2() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x8) != 0; }
-		bool bUseAdaptiveError2(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x8; } return val; }
-		bool bUseOverrideForEndEffectors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x4) != 0; }
-		bool bUseOverrideForEndEffectors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x4; } return val; }
-		bool bUseAdaptiveError() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x2) != 0; }
-		bool bUseAdaptiveError(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x2; } return val; }
-		bool bResampleAnimation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 144) & 0x1) != 0; }
-		bool bResampleAnimation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 144) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 144) &= ~0x1; } return val; }
+		bool bUseAdaptiveError2() { mixin(MGBPC!(144, 0x8)()); }
+		bool bUseAdaptiveError2(bool val) { mixin(MSBPC!(144, 0x8)()); }
+		bool bUseOverrideForEndEffectors() { mixin(MGBPC!(144, 0x4)()); }
+		bool bUseOverrideForEndEffectors(bool val) { mixin(MSBPC!(144, 0x4)()); }
+		bool bUseAdaptiveError() { mixin(MGBPC!(144, 0x2)()); }
+		bool bUseAdaptiveError(bool val) { mixin(MSBPC!(144, 0x2)()); }
+		bool bResampleAnimation() { mixin(MGBPC!(144, 0x1)()); }
+		bool bResampleAnimation(bool val) { mixin(MSBPC!(144, 0x1)()); }
 	}
 }

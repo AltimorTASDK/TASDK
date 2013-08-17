@@ -1,6 +1,7 @@
 module UnrealScript.Engine.K2Connector;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.K2NodeBase;
 
@@ -8,9 +9,9 @@ extern(C++) interface K2Connector : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.K2Connector")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.K2Connector")()); }
 	private static __gshared K2Connector mDefaultProperties;
-	@property final static K2Connector DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(K2Connector)("K2Connector Engine.Default__K2Connector")); }
+	@property final static K2Connector DefaultProperties() { mixin(MGDPC!(K2Connector, "K2Connector Engine.Default__K2Connector")()); }
 	enum EK2ConnectorType : ubyte
 	{
 		K2CT_Bool = 0,
@@ -32,8 +33,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		K2Connector.EK2ConnectorType Type() { return *cast(K2Connector.EK2ConnectorType*)(cast(size_t)cast(void*)this + 76); }
-		ScriptString ConnName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 64); }
-		K2NodeBase OwningNode() { return *cast(K2NodeBase*)(cast(size_t)cast(void*)this + 60); }
+		K2Connector.EK2ConnectorType Type() { mixin(MGPC!(K2Connector.EK2ConnectorType, 76)()); }
+		ScriptString ConnName() { mixin(MGPC!(ScriptString, 64)()); }
+		K2NodeBase OwningNode() { mixin(MGPC!(K2NodeBase, 60)()); }
 	}
 }

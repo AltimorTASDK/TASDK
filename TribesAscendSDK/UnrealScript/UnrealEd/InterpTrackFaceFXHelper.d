@@ -1,13 +1,14 @@
 module UnrealScript.UnrealEd.InterpTrackFaceFXHelper;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UnrealEd.InterpTrackHelper;
 
 extern(C++) interface InterpTrackFaceFXHelper : InterpTrackHelper
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.InterpTrackFaceFXHelper")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.InterpTrackFaceFXHelper")()); }
 	private static __gshared InterpTrackFaceFXHelper mDefaultProperties;
-	@property final static InterpTrackFaceFXHelper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackFaceFXHelper)("InterpTrackFaceFXHelper UnrealEd.Default__InterpTrackFaceFXHelper")); }
+	@property final static InterpTrackFaceFXHelper DefaultProperties() { mixin(MGDPC!(InterpTrackFaceFXHelper, "InterpTrackFaceFXHelper UnrealEd.Default__InterpTrackFaceFXHelper")()); }
 }

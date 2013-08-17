@@ -1,6 +1,7 @@
 module UnrealScript.UTGame.UTLocalMessage;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalMessage;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerController;
@@ -14,9 +15,9 @@ extern(C++) interface UTLocalMessage : LocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLocalMessage")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTLocalMessage")()); }
 	private static __gshared UTLocalMessage mDefaultProperties;
-	@property final static UTLocalMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTLocalMessage)("UTLocalMessage UTGame.Default__UTLocalMessage")); }
+	@property final static UTLocalMessage DefaultProperties() { mixin(MGDPC!(UTLocalMessage, "UTLocalMessage UTGame.Default__UTLocalMessage")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,25 +31,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLocalMessage.AnnouncementSound")); }
-			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLocalMessage.AnnouncementLevel")); }
-			ScriptFunction AddAnnouncement() { return mAddAnnouncement ? mAddAnnouncement : (mAddAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLocalMessage.AddAnnouncement")); }
-			ScriptFunction ShouldBeRemoved() { return mShouldBeRemoved ? mShouldBeRemoved : (mShouldBeRemoved = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLocalMessage.ShouldBeRemoved")); }
-			ScriptFunction GetPos() { return mGetPos ? mGetPos : (mGetPos = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLocalMessage.GetPos")); }
-			ScriptFunction KilledByVictoryMessage() { return mKilledByVictoryMessage ? mKilledByVictoryMessage : (mKilledByVictoryMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLocalMessage.KilledByVictoryMessage")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTLocalMessage.AnnouncementSound")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTLocalMessage.AnnouncementLevel")()); }
+			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTLocalMessage.AddAnnouncement")()); }
+			ScriptFunction ShouldBeRemoved() { mixin(MGF!("mShouldBeRemoved", "Function UTGame.UTLocalMessage.ShouldBeRemoved")()); }
+			ScriptFunction GetPos() { mixin(MGF!("mGetPos", "Function UTGame.UTLocalMessage.GetPos")()); }
+			ScriptFunction KilledByVictoryMessage() { mixin(MGF!("mKilledByVictoryMessage", "Function UTGame.UTLocalMessage.KilledByVictoryMessage")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float AnnouncementVolume() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float AnnouncementDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			int AnnouncementPriority() { return *cast(int*)(cast(size_t)cast(void*)this + 84); }
-			int MessageArea() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
+			float AnnouncementVolume() { mixin(MGPC!(float, 92)()); }
+			float AnnouncementDelay() { mixin(MGPC!(float, 96)()); }
+			int AnnouncementPriority() { mixin(MGPC!(int, 84)()); }
+			int MessageArea() { mixin(MGPC!(int, 80)()); }
 		}
-		bool bShowPortrait() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }
-		bool bShowPortrait(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 88) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 88) &= ~0x1; } return val; }
+		bool bShowPortrait() { mixin(MGBPC!(88, 0x1)()); }
+		bool bShowPortrait(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 final:
 	static SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)

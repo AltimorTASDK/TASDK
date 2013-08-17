@@ -1,6 +1,7 @@
 module UnrealScript.Engine.SceneCapture2DComponent;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.TextureRenderTarget2D;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SceneCaptureComponent;
@@ -9,9 +10,9 @@ extern(C++) interface SceneCapture2DComponent : SceneCaptureComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCapture2DComponent")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SceneCapture2DComponent")()); }
 	private static __gshared SceneCapture2DComponent mDefaultProperties;
-	@property final static SceneCapture2DComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SceneCapture2DComponent)("SceneCapture2DComponent Engine.Default__SceneCapture2DComponent")); }
+	@property final static SceneCapture2DComponent DefaultProperties() { mixin(MGDPC!(SceneCapture2DComponent, "SceneCapture2DComponent Engine.Default__SceneCapture2DComponent")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,23 +22,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetCaptureParameters() { return mSetCaptureParameters ? mSetCaptureParameters : (mSetCaptureParameters = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapture2DComponent.SetCaptureParameters")); }
-			ScriptFunction SetView() { return mSetView ? mSetView : (mSetView = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapture2DComponent.SetView")); }
+			ScriptFunction SetCaptureParameters() { mixin(MGF!("mSetCaptureParameters", "Function Engine.SceneCapture2DComponent.SetCaptureParameters")()); }
+			ScriptFunction SetView() { mixin(MGF!("mSetView", "Function Engine.SceneCapture2DComponent.SetView")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Matrix ProjMatrix() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 240); }
-			UObject.Matrix ViewMatrix() { return *cast(UObject.Matrix*)(cast(size_t)cast(void*)this + 176); }
-			float FarPlane() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-			float NearPlane() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			float FieldOfView() { return *cast(float*)(cast(size_t)cast(void*)this + 148); }
-			TextureRenderTarget2D TextureTarget() { return *cast(TextureRenderTarget2D*)(cast(size_t)cast(void*)this + 144); }
+			UObject.Matrix ProjMatrix() { mixin(MGPC!(UObject.Matrix, 240)()); }
+			UObject.Matrix ViewMatrix() { mixin(MGPC!(UObject.Matrix, 176)()); }
+			float FarPlane() { mixin(MGPC!(float, 156)()); }
+			float NearPlane() { mixin(MGPC!(float, 152)()); }
+			float FieldOfView() { mixin(MGPC!(float, 148)()); }
+			TextureRenderTarget2D TextureTarget() { mixin(MGPC!(TextureRenderTarget2D, 144)()); }
 		}
-		bool bUpdateMatrices() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x1) != 0; }
-		bool bUpdateMatrices(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x1; } return val; }
+		bool bUpdateMatrices() { mixin(MGBPC!(160, 0x1)()); }
+		bool bUpdateMatrices(bool val) { mixin(MSBPC!(160, 0x1)()); }
 	}
 final:
 	void SetCaptureParameters(TextureRenderTarget2D NewTextureTarget, float NewFOV, float NewNearPlane, float NewFarPlane)

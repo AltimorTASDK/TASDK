@@ -38,17 +38,8 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenericBrowserType_GFxMovie.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_GFxMovie.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxImportCommandlet.d">
-      <LastGenOutput>obj\Debug\GFxImportCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxMovieFactory.d">
-      <LastGenOutput>obj\Debug\GFxMovieFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxReimportCommandlet.d">
-      <LastGenOutput>obj\Debug\GFxReimportCommandlet.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="GenericBrowserType_GFxMovie.d" />
+    <Compile Include="GFxImportCommandlet.d" />
+    <Compile Include="GFxReimportCommandlet.d" />
   </ItemGroup>
 </Project>

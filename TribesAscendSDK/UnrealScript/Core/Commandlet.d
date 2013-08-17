@@ -1,40 +1,41 @@
 module UnrealScript.Core.Commandlet;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface Commandlet : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.Commandlet")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.Commandlet")()); }
 	private static __gshared Commandlet mDefaultProperties;
-	@property final static Commandlet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Commandlet)("Commandlet Core.Default__Commandlet")); }
+	@property final static Commandlet DefaultProperties() { mixin(MGDPC!(Commandlet, "Commandlet Core.Default__Commandlet")()); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMain;
-		public @property static final ScriptFunction Main() { return mMain ? mMain : (mMain = ScriptObject.Find!(ScriptFunction)("Function Core.Commandlet.Main")); }
+		public @property static final ScriptFunction Main() { mixin(MGF!("mMain", "Function Core.Commandlet.Main")()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) HelpParamNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 96); }
-			ScriptArray!(ScriptString) HelpParamDescriptions() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 108); }
-			ScriptString HelpWebLink() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
-			ScriptString HelpUsage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 72); }
-			ScriptString HelpDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(ScriptString) HelpParamNames() { mixin(MGPC!(ScriptArray!(ScriptString), 96)()); }
+			ScriptArray!(ScriptString) HelpParamDescriptions() { mixin(MGPC!(ScriptArray!(ScriptString), 108)()); }
+			ScriptString HelpWebLink() { mixin(MGPC!(ScriptString, 84)()); }
+			ScriptString HelpUsage() { mixin(MGPC!(ScriptString, 72)()); }
+			ScriptString HelpDescription() { mixin(MGPC!(ScriptString, 60)()); }
 		}
-		bool ShowErrorCount() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x10) != 0; }
-		bool ShowErrorCount(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x10; } return val; }
-		bool LogToConsole() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x8) != 0; }
-		bool LogToConsole(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x8; } return val; }
-		bool IsEditor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x4) != 0; }
-		bool IsEditor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x4; } return val; }
-		bool IsClient() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x2) != 0; }
-		bool IsClient(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x2; } return val; }
-		bool IsServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 120) & 0x1) != 0; }
-		bool IsServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x1; } return val; }
+		bool ShowErrorCount() { mixin(MGBPC!(120, 0x10)()); }
+		bool ShowErrorCount(bool val) { mixin(MSBPC!(120, 0x10)()); }
+		bool LogToConsole() { mixin(MGBPC!(120, 0x8)()); }
+		bool LogToConsole(bool val) { mixin(MSBPC!(120, 0x8)()); }
+		bool IsEditor() { mixin(MGBPC!(120, 0x4)()); }
+		bool IsEditor(bool val) { mixin(MSBPC!(120, 0x4)()); }
+		bool IsClient() { mixin(MGBPC!(120, 0x2)()); }
+		bool IsClient(bool val) { mixin(MSBPC!(120, 0x2)()); }
+		bool IsServer() { mixin(MGBPC!(120, 0x1)()); }
+		bool IsServer(bool val) { mixin(MSBPC!(120, 0x1)()); }
 	}
 	final int Main(ScriptString Params)
 	{

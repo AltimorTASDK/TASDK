@@ -1,6 +1,7 @@
 module UnrealScript.Engine.PhysicsAssetInstance;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.RB_ConstraintInstance;
 import UnrealScript.Engine.Actor;
@@ -12,9 +13,9 @@ extern(C++) interface PhysicsAssetInstance : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicsAssetInstance")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PhysicsAssetInstance")()); }
 	private static __gshared PhysicsAssetInstance mDefaultProperties;
-	@property final static PhysicsAssetInstance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PhysicsAssetInstance)("PhysicsAssetInstance Engine.Default__PhysicsAssetInstance")); }
+	@property final static PhysicsAssetInstance DefaultProperties() { mixin(MGDPC!(PhysicsAssetInstance, "PhysicsAssetInstance Engine.Default__PhysicsAssetInstance")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,43 +40,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetLinearDriveScale() { return mSetLinearDriveScale ? mSetLinearDriveScale : (mSetLinearDriveScale = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetLinearDriveScale")); }
-			ScriptFunction SetAngularDriveScale() { return mSetAngularDriveScale ? mSetAngularDriveScale : (mSetAngularDriveScale = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetAngularDriveScale")); }
-			ScriptFunction GetTotalMassBelowBone() { return mGetTotalMassBelowBone ? mGetTotalMassBelowBone : (mGetTotalMassBelowBone = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.GetTotalMassBelowBone")); }
-			ScriptFunction SetAllBodiesFixed() { return mSetAllBodiesFixed ? mSetAllBodiesFixed : (mSetAllBodiesFixed = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetAllBodiesFixed")); }
-			ScriptFunction SetNamedBodiesFixed() { return mSetNamedBodiesFixed ? mSetNamedBodiesFixed : (mSetNamedBodiesFixed = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetNamedBodiesFixed")); }
-			ScriptFunction ForceAllBodiesBelowUnfixed() { return mForceAllBodiesBelowUnfixed ? mForceAllBodiesBelowUnfixed : (mForceAllBodiesBelowUnfixed = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.ForceAllBodiesBelowUnfixed")); }
-			ScriptFunction SetAllMotorsAngularPositionDrive() { return mSetAllMotorsAngularPositionDrive ? mSetAllMotorsAngularPositionDrive : (mSetAllMotorsAngularPositionDrive = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetAllMotorsAngularPositionDrive")); }
-			ScriptFunction SetAllMotorsAngularVelocityDrive() { return mSetAllMotorsAngularVelocityDrive ? mSetAllMotorsAngularVelocityDrive : (mSetAllMotorsAngularVelocityDrive = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetAllMotorsAngularVelocityDrive")); }
-			ScriptFunction SetAllMotorsAngularDriveParams() { return mSetAllMotorsAngularDriveParams ? mSetAllMotorsAngularDriveParams : (mSetAllMotorsAngularDriveParams = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetAllMotorsAngularDriveParams")); }
-			ScriptFunction SetNamedMotorsAngularPositionDrive() { return mSetNamedMotorsAngularPositionDrive ? mSetNamedMotorsAngularPositionDrive : (mSetNamedMotorsAngularPositionDrive = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularPositionDrive")); }
-			ScriptFunction SetNamedMotorsAngularVelocityDrive() { return mSetNamedMotorsAngularVelocityDrive ? mSetNamedMotorsAngularVelocityDrive : (mSetNamedMotorsAngularVelocityDrive = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularVelocityDrive")); }
-			ScriptFunction SetNamedRBBoneSprings() { return mSetNamedRBBoneSprings ? mSetNamedRBBoneSprings : (mSetNamedRBBoneSprings = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetNamedRBBoneSprings")); }
-			ScriptFunction SetNamedBodiesBlockRigidBody() { return mSetNamedBodiesBlockRigidBody ? mSetNamedBodiesBlockRigidBody : (mSetNamedBodiesBlockRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetNamedBodiesBlockRigidBody")); }
-			ScriptFunction SetFullAnimWeightBlockRigidBody() { return mSetFullAnimWeightBlockRigidBody ? mSetFullAnimWeightBlockRigidBody : (mSetFullAnimWeightBlockRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetFullAnimWeightBlockRigidBody")); }
-			ScriptFunction SetFullAnimWeightBonesFixed() { return mSetFullAnimWeightBonesFixed ? mSetFullAnimWeightBonesFixed : (mSetFullAnimWeightBonesFixed = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.SetFullAnimWeightBonesFixed")); }
-			ScriptFunction FindBodyInstance() { return mFindBodyInstance ? mFindBodyInstance : (mFindBodyInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.FindBodyInstance")); }
-			ScriptFunction FindConstraintInstance() { return mFindConstraintInstance ? mFindConstraintInstance : (mFindConstraintInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAssetInstance.FindConstraintInstance")); }
+			ScriptFunction SetLinearDriveScale() { mixin(MGF!("mSetLinearDriveScale", "Function Engine.PhysicsAssetInstance.SetLinearDriveScale")()); }
+			ScriptFunction SetAngularDriveScale() { mixin(MGF!("mSetAngularDriveScale", "Function Engine.PhysicsAssetInstance.SetAngularDriveScale")()); }
+			ScriptFunction GetTotalMassBelowBone() { mixin(MGF!("mGetTotalMassBelowBone", "Function Engine.PhysicsAssetInstance.GetTotalMassBelowBone")()); }
+			ScriptFunction SetAllBodiesFixed() { mixin(MGF!("mSetAllBodiesFixed", "Function Engine.PhysicsAssetInstance.SetAllBodiesFixed")()); }
+			ScriptFunction SetNamedBodiesFixed() { mixin(MGF!("mSetNamedBodiesFixed", "Function Engine.PhysicsAssetInstance.SetNamedBodiesFixed")()); }
+			ScriptFunction ForceAllBodiesBelowUnfixed() { mixin(MGF!("mForceAllBodiesBelowUnfixed", "Function Engine.PhysicsAssetInstance.ForceAllBodiesBelowUnfixed")()); }
+			ScriptFunction SetAllMotorsAngularPositionDrive() { mixin(MGF!("mSetAllMotorsAngularPositionDrive", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularPositionDrive")()); }
+			ScriptFunction SetAllMotorsAngularVelocityDrive() { mixin(MGF!("mSetAllMotorsAngularVelocityDrive", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularVelocityDrive")()); }
+			ScriptFunction SetAllMotorsAngularDriveParams() { mixin(MGF!("mSetAllMotorsAngularDriveParams", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularDriveParams")()); }
+			ScriptFunction SetNamedMotorsAngularPositionDrive() { mixin(MGF!("mSetNamedMotorsAngularPositionDrive", "Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularPositionDrive")()); }
+			ScriptFunction SetNamedMotorsAngularVelocityDrive() { mixin(MGF!("mSetNamedMotorsAngularVelocityDrive", "Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularVelocityDrive")()); }
+			ScriptFunction SetNamedRBBoneSprings() { mixin(MGF!("mSetNamedRBBoneSprings", "Function Engine.PhysicsAssetInstance.SetNamedRBBoneSprings")()); }
+			ScriptFunction SetNamedBodiesBlockRigidBody() { mixin(MGF!("mSetNamedBodiesBlockRigidBody", "Function Engine.PhysicsAssetInstance.SetNamedBodiesBlockRigidBody")()); }
+			ScriptFunction SetFullAnimWeightBlockRigidBody() { mixin(MGF!("mSetFullAnimWeightBlockRigidBody", "Function Engine.PhysicsAssetInstance.SetFullAnimWeightBlockRigidBody")()); }
+			ScriptFunction SetFullAnimWeightBonesFixed() { mixin(MGF!("mSetFullAnimWeightBonesFixed", "Function Engine.PhysicsAssetInstance.SetFullAnimWeightBonesFixed")()); }
+			ScriptFunction FindBodyInstance() { mixin(MGF!("mFindBodyInstance", "Function Engine.PhysicsAssetInstance.FindBodyInstance")()); }
+			ScriptFunction FindConstraintInstance() { mixin(MGF!("mFindConstraintInstance", "Function Engine.PhysicsAssetInstance.FindConstraintInstance")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(RB_ConstraintInstance) Constraints() { return *cast(ScriptArray!(RB_ConstraintInstance)*)(cast(size_t)cast(void*)this + 80); }
-			ScriptArray!(RB_BodyInstance) Bodies() { return *cast(ScriptArray!(RB_BodyInstance)*)(cast(size_t)cast(void*)this + 68); }
-			float AngularForceLimitScale() { return *cast(float*)(cast(size_t)cast(void*)this + 172); }
-			float AngularDampingScale() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-			float AngularSpringScale() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-			float LinearForceLimitScale() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-			float LinearDampingScale() { return *cast(float*)(cast(size_t)cast(void*)this + 156); }
-			float LinearSpringScale() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
-			UObject.Map_Mirror CollisionDisableTable() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 92); }
-			int RootBodyIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-			Actor Owner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(RB_ConstraintInstance) Constraints() { mixin(MGPC!(ScriptArray!(RB_ConstraintInstance), 80)()); }
+			ScriptArray!(RB_BodyInstance) Bodies() { mixin(MGPC!(ScriptArray!(RB_BodyInstance), 68)()); }
+			float AngularForceLimitScale() { mixin(MGPC!(float, 172)()); }
+			float AngularDampingScale() { mixin(MGPC!(float, 168)()); }
+			float AngularSpringScale() { mixin(MGPC!(float, 164)()); }
+			float LinearForceLimitScale() { mixin(MGPC!(float, 160)()); }
+			float LinearDampingScale() { mixin(MGPC!(float, 156)()); }
+			float LinearSpringScale() { mixin(MGPC!(float, 152)()); }
+			UObject.Map_Mirror CollisionDisableTable() { mixin(MGPC!(UObject.Map_Mirror, 92)()); }
+			int RootBodyIndex() { mixin(MGPC!(int, 64)()); }
+			Actor Owner() { mixin(MGPC!(Actor, 60)()); }
 		}
-		bool bInitBodies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 176) & 0x1) != 0; }
-		bool bInitBodies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 176) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 176) &= ~0x1; } return val; }
+		bool bInitBodies() { mixin(MGBPC!(176, 0x1)()); }
+		bool bInitBodies(bool val) { mixin(MSBPC!(176, 0x1)()); }
 	}
 final:
 	void SetLinearDriveScale(float InLinearSpringScale, float InLinearDampingScale, float InLinearForceLimitScale)
@@ -128,13 +129,13 @@ void**)&params[16] = SkelMesh;
 		*cast(bool*)&params[24] = bSkipFullAnimWeightBodies;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetNamedBodiesFixed, params.ptr, cast(void*)0);
 	}
-	void ForceAllBodiesBelowUnfixed(ScriptName* InBoneName, PhysicsAsset InAsset, 
+	void ForceAllBodiesBelowUnfixed(ref const ScriptName InBoneName, PhysicsAsset InAsset, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* InSkelMesh, bool InbInstanceAlwaysFullAnimWeight)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = *InBoneName;
+		*cast(ScriptName*)params.ptr = InBoneName;
 		*cast(PhysicsAsset*)&params[8] = InAsset;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

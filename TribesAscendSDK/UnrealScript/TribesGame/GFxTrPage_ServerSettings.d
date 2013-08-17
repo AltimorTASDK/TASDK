@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.GFxTrPage_ServerSettings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.GFxTrAction;
 import UnrealScript.TribesGame.GFxTrPage;
 import UnrealScript.GFxUI.GFxObject;
@@ -9,9 +10,9 @@ extern(C++) interface GFxTrPage_ServerSettings : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ServerSettings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ServerSettings")()); }
 	private static __gshared GFxTrPage_ServerSettings mDefaultProperties;
-	@property final static GFxTrPage_ServerSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ServerSettings)("GFxTrPage_ServerSettings TribesGame.Default__GFxTrPage_ServerSettings")); }
+	@property final static GFxTrPage_ServerSettings DefaultProperties() { mixin(MGDPC!(GFxTrPage_ServerSettings, "GFxTrPage_ServerSettings TribesGame.Default__GFxTrPage_ServerSettings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,27 +30,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.Initialize")); }
-			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.SpecialAction")); }
-			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.PopupData")); }
-			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.PopupComplete")); }
-			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.FillData")); }
-			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.FillOption")); }
-			ScriptFunction RefreshButtons() { return mRefreshButtons ? mRefreshButtons : (mRefreshButtons = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.RefreshButtons")); }
-			ScriptFunction SetOverrides() { return mSetOverrides ? mSetOverrides : (mSetOverrides = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.SetOverrides")); }
-			ScriptFunction CheckDescription() { return mCheckDescription ? mCheckDescription : (mCheckDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.CheckDescription")); }
-			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerSettings.FillDescription")); }
+			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_ServerSettings.Initialize")()); }
+			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ServerSettings.SpecialAction")()); }
+			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ServerSettings.PopupData")()); }
+			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ServerSettings.PopupComplete")()); }
+			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ServerSettings.FillData")()); }
+			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ServerSettings.FillOption")()); }
+			ScriptFunction RefreshButtons() { mixin(MGF!("mRefreshButtons", "Function TribesGame.GFxTrPage_ServerSettings.RefreshButtons")()); }
+			ScriptFunction SetOverrides() { mixin(MGF!("mSetOverrides", "Function TribesGame.GFxTrPage_ServerSettings.SetOverrides")()); }
+			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ServerSettings.CheckDescription")()); }
+			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ServerSettings.FillDescription")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int PopupNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-			int LocalNameNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+			int PopupNumber() { mixin(MGPC!(int, 360)()); }
+			int LocalNameNumber() { mixin(MGPC!(int, 356)()); }
 		}
-		bool bPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 364) & 0x1) != 0; }
-		bool bPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 364) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 364) &= ~0x1; } return val; }
+		bool bPopup() { mixin(MGBPC!(364, 0x1)()); }
+		bool bPopup(bool val) { mixin(MSBPC!(364, 0x1)()); }
 	}
 final:
 	void Initialize()

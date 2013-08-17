@@ -1,6 +1,7 @@
 module UnrealScript.Engine.Settings;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.GameInfo;
 import UnrealScript.Core.UObject;
 
@@ -8,9 +9,9 @@ extern(C++) interface Settings : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Settings")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Settings")()); }
 	private static __gshared Settings mDefaultProperties;
-	@property final static Settings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Settings)("Settings Engine.Default__Settings")); }
+	@property final static Settings DefaultProperties() { mixin(MGDPC!(Settings, "Settings Engine.Default__Settings")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -73,61 +74,61 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateFromURL() { return mUpdateFromURL ? mUpdateFromURL : (mUpdateFromURL = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.UpdateFromURL")); }
-			ScriptFunction BuildURL() { return mBuildURL ? mBuildURL : (mBuildURL = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.BuildURL")); }
-			ScriptFunction AppendContextsToURL() { return mAppendContextsToURL ? mAppendContextsToURL : (mAppendContextsToURL = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.AppendContextsToURL")); }
-			ScriptFunction AppendPropertiesToURL() { return mAppendPropertiesToURL ? mAppendPropertiesToURL : (mAppendPropertiesToURL = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.AppendPropertiesToURL")); }
-			ScriptFunction AppendDataBindingsToURL() { return mAppendDataBindingsToURL ? mAppendDataBindingsToURL : (mAppendDataBindingsToURL = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.AppendDataBindingsToURL")); }
-			ScriptFunction GetQoSAdvertisedStringSettings() { return mGetQoSAdvertisedStringSettings ? mGetQoSAdvertisedStringSettings : (mGetQoSAdvertisedStringSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetQoSAdvertisedStringSettings")); }
-			ScriptFunction GetQoSAdvertisedProperties() { return mGetQoSAdvertisedProperties ? mGetQoSAdvertisedProperties : (mGetQoSAdvertisedProperties = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetQoSAdvertisedProperties")); }
-			ScriptFunction GetRangedPropertyValue() { return mGetRangedPropertyValue ? mGetRangedPropertyValue : (mGetRangedPropertyValue = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetRangedPropertyValue")); }
-			ScriptFunction SetRangedPropertyValue() { return mSetRangedPropertyValue ? mSetRangedPropertyValue : (mSetRangedPropertyValue = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetRangedPropertyValue")); }
-			ScriptFunction GetPropertyRange() { return mGetPropertyRange ? mGetPropertyRange : (mGetPropertyRange = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyRange")); }
-			ScriptFunction GetPropertyMappingType() { return mGetPropertyMappingType ? mGetPropertyMappingType : (mGetPropertyMappingType = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyMappingType")); }
-			ScriptFunction HasStringSetting() { return mHasStringSetting ? mHasStringSetting : (mHasStringSetting = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.HasStringSetting")); }
-			ScriptFunction HasProperty() { return mHasProperty ? mHasProperty : (mHasProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.HasProperty")); }
-			ScriptFunction UpdateProperties() { return mUpdateProperties ? mUpdateProperties : (mUpdateProperties = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.UpdateProperties")); }
-			ScriptFunction UpdateStringSettings() { return mUpdateStringSettings ? mUpdateStringSettings : (mUpdateStringSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.UpdateStringSettings")); }
-			ScriptFunction GetPropertyType() { return mGetPropertyType ? mGetPropertyType : (mGetPropertyType = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyType")); }
-			ScriptFunction GetPropertyValueId() { return mGetPropertyValueId ? mGetPropertyValueId : (mGetPropertyValueId = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyValueId")); }
-			ScriptFunction SetPropertyValueId() { return mSetPropertyValueId ? mSetPropertyValueId : (mSetPropertyValueId = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetPropertyValueId")); }
-			ScriptFunction GetStringProperty() { return mGetStringProperty ? mGetStringProperty : (mGetStringProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringProperty")); }
-			ScriptFunction SetStringProperty() { return mSetStringProperty ? mSetStringProperty : (mSetStringProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetStringProperty")); }
-			ScriptFunction GetIntProperty() { return mGetIntProperty ? mGetIntProperty : (mGetIntProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetIntProperty")); }
-			ScriptFunction SetIntProperty() { return mSetIntProperty ? mSetIntProperty : (mSetIntProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetIntProperty")); }
-			ScriptFunction GetFloatProperty() { return mGetFloatProperty ? mGetFloatProperty : (mGetFloatProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetFloatProperty")); }
-			ScriptFunction SetFloatProperty() { return mSetFloatProperty ? mSetFloatProperty : (mSetFloatProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetFloatProperty")); }
-			ScriptFunction SetPropertyFromStringByName() { return mSetPropertyFromStringByName ? mSetPropertyFromStringByName : (mSetPropertyFromStringByName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetPropertyFromStringByName")); }
-			ScriptFunction GetPropertyAsStringByName() { return mGetPropertyAsStringByName ? mGetPropertyAsStringByName : (mGetPropertyAsStringByName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyAsStringByName")); }
-			ScriptFunction GetPropertyAsString() { return mGetPropertyAsString ? mGetPropertyAsString : (mGetPropertyAsString = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyAsString")); }
-			ScriptFunction GetPropertyColumnHeader() { return mGetPropertyColumnHeader ? mGetPropertyColumnHeader : (mGetPropertyColumnHeader = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyColumnHeader")); }
-			ScriptFunction GetPropertyName() { return mGetPropertyName ? mGetPropertyName : (mGetPropertyName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyName")); }
-			ScriptFunction GetPropertyId() { return mGetPropertyId ? mGetPropertyId : (mGetPropertyId = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetPropertyId")); }
-			ScriptFunction SetStringSettingValueFromStringByName() { return mSetStringSettingValueFromStringByName ? mSetStringSettingValueFromStringByName : (mSetStringSettingValueFromStringByName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetStringSettingValueFromStringByName")); }
-			ScriptFunction GetStringSettingValueNameByName() { return mGetStringSettingValueNameByName ? mGetStringSettingValueNameByName : (mGetStringSettingValueNameByName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingValueNameByName")); }
-			ScriptFunction GetStringSettingValueName() { return mGetStringSettingValueName ? mGetStringSettingValueName : (mGetStringSettingValueName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingValueName")); }
-			ScriptFunction IsWildcardStringSetting() { return mIsWildcardStringSetting ? mIsWildcardStringSetting : (mIsWildcardStringSetting = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.IsWildcardStringSetting")); }
-			ScriptFunction GetStringSettingColumnHeader() { return mGetStringSettingColumnHeader ? mGetStringSettingColumnHeader : (mGetStringSettingColumnHeader = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingColumnHeader")); }
-			ScriptFunction GetStringSettingName() { return mGetStringSettingName ? mGetStringSettingName : (mGetStringSettingName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingName")); }
-			ScriptFunction GetStringSettingId() { return mGetStringSettingId ? mGetStringSettingId : (mGetStringSettingId = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingId")); }
-			ScriptFunction GetStringSettingValueByName() { return mGetStringSettingValueByName ? mGetStringSettingValueByName : (mGetStringSettingValueByName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingValueByName")); }
-			ScriptFunction SetStringSettingValueByName() { return mSetStringSettingValueByName ? mSetStringSettingValueByName : (mSetStringSettingValueByName = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetStringSettingValueByName")); }
-			ScriptFunction GetStringSettingValueNames() { return mGetStringSettingValueNames ? mGetStringSettingValueNames : (mGetStringSettingValueNames = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingValueNames")); }
-			ScriptFunction IncrementStringSettingValue() { return mIncrementStringSettingValue ? mIncrementStringSettingValue : (mIncrementStringSettingValue = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.IncrementStringSettingValue")); }
-			ScriptFunction GetStringSettingValue() { return mGetStringSettingValue ? mGetStringSettingValue : (mGetStringSettingValue = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetStringSettingValue")); }
-			ScriptFunction SetStringSettingValue() { return mSetStringSettingValue ? mSetStringSettingValue : (mSetStringSettingValue = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetStringSettingValue")); }
-			ScriptFunction GetSettingsDataDateTime() { return mGetSettingsDataDateTime ? mGetSettingsDataDateTime : (mGetSettingsDataDateTime = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetSettingsDataDateTime")); }
-			ScriptFunction GetSettingsDataBlob() { return mGetSettingsDataBlob ? mGetSettingsDataBlob : (mGetSettingsDataBlob = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetSettingsDataBlob")); }
-			ScriptFunction GetSettingsDataInt() { return mGetSettingsDataInt ? mGetSettingsDataInt : (mGetSettingsDataInt = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetSettingsDataInt")); }
-			ScriptFunction GetSettingsDataFloat() { return mGetSettingsDataFloat ? mGetSettingsDataFloat : (mGetSettingsDataFloat = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetSettingsDataFloat")); }
-			ScriptFunction GetSettingsDataString() { return mGetSettingsDataString ? mGetSettingsDataString : (mGetSettingsDataString = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.GetSettingsDataString")); }
-			ScriptFunction EmptySettingsData() { return mEmptySettingsData ? mEmptySettingsData : (mEmptySettingsData = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.EmptySettingsData")); }
-			ScriptFunction SetSettingsData() { return mSetSettingsData ? mSetSettingsData : (mSetSettingsData = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetSettingsData")); }
-			ScriptFunction SetSettingsDataBlob() { return mSetSettingsDataBlob ? mSetSettingsDataBlob : (mSetSettingsDataBlob = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetSettingsDataBlob")); }
-			ScriptFunction SetSettingsDataDateTime() { return mSetSettingsDataDateTime ? mSetSettingsDataDateTime : (mSetSettingsDataDateTime = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetSettingsDataDateTime")); }
-			ScriptFunction SetSettingsDataInt() { return mSetSettingsDataInt ? mSetSettingsDataInt : (mSetSettingsDataInt = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetSettingsDataInt")); }
-			ScriptFunction SetSettingsDataFloat() { return mSetSettingsDataFloat ? mSetSettingsDataFloat : (mSetSettingsDataFloat = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetSettingsDataFloat")); }
-			ScriptFunction SetSettingsDataString() { return mSetSettingsDataString ? mSetSettingsDataString : (mSetSettingsDataString = ScriptObject.Find!(ScriptFunction)("Function Engine.Settings.SetSettingsDataString")); }
+			ScriptFunction UpdateFromURL() { mixin(MGF!("mUpdateFromURL", "Function Engine.Settings.UpdateFromURL")()); }
+			ScriptFunction BuildURL() { mixin(MGF!("mBuildURL", "Function Engine.Settings.BuildURL")()); }
+			ScriptFunction AppendContextsToURL() { mixin(MGF!("mAppendContextsToURL", "Function Engine.Settings.AppendContextsToURL")()); }
+			ScriptFunction AppendPropertiesToURL() { mixin(MGF!("mAppendPropertiesToURL", "Function Engine.Settings.AppendPropertiesToURL")()); }
+			ScriptFunction AppendDataBindingsToURL() { mixin(MGF!("mAppendDataBindingsToURL", "Function Engine.Settings.AppendDataBindingsToURL")()); }
+			ScriptFunction GetQoSAdvertisedStringSettings() { mixin(MGF!("mGetQoSAdvertisedStringSettings", "Function Engine.Settings.GetQoSAdvertisedStringSettings")()); }
+			ScriptFunction GetQoSAdvertisedProperties() { mixin(MGF!("mGetQoSAdvertisedProperties", "Function Engine.Settings.GetQoSAdvertisedProperties")()); }
+			ScriptFunction GetRangedPropertyValue() { mixin(MGF!("mGetRangedPropertyValue", "Function Engine.Settings.GetRangedPropertyValue")()); }
+			ScriptFunction SetRangedPropertyValue() { mixin(MGF!("mSetRangedPropertyValue", "Function Engine.Settings.SetRangedPropertyValue")()); }
+			ScriptFunction GetPropertyRange() { mixin(MGF!("mGetPropertyRange", "Function Engine.Settings.GetPropertyRange")()); }
+			ScriptFunction GetPropertyMappingType() { mixin(MGF!("mGetPropertyMappingType", "Function Engine.Settings.GetPropertyMappingType")()); }
+			ScriptFunction HasStringSetting() { mixin(MGF!("mHasStringSetting", "Function Engine.Settings.HasStringSetting")()); }
+			ScriptFunction HasProperty() { mixin(MGF!("mHasProperty", "Function Engine.Settings.HasProperty")()); }
+			ScriptFunction UpdateProperties() { mixin(MGF!("mUpdateProperties", "Function Engine.Settings.UpdateProperties")()); }
+			ScriptFunction UpdateStringSettings() { mixin(MGF!("mUpdateStringSettings", "Function Engine.Settings.UpdateStringSettings")()); }
+			ScriptFunction GetPropertyType() { mixin(MGF!("mGetPropertyType", "Function Engine.Settings.GetPropertyType")()); }
+			ScriptFunction GetPropertyValueId() { mixin(MGF!("mGetPropertyValueId", "Function Engine.Settings.GetPropertyValueId")()); }
+			ScriptFunction SetPropertyValueId() { mixin(MGF!("mSetPropertyValueId", "Function Engine.Settings.SetPropertyValueId")()); }
+			ScriptFunction GetStringProperty() { mixin(MGF!("mGetStringProperty", "Function Engine.Settings.GetStringProperty")()); }
+			ScriptFunction SetStringProperty() { mixin(MGF!("mSetStringProperty", "Function Engine.Settings.SetStringProperty")()); }
+			ScriptFunction GetIntProperty() { mixin(MGF!("mGetIntProperty", "Function Engine.Settings.GetIntProperty")()); }
+			ScriptFunction SetIntProperty() { mixin(MGF!("mSetIntProperty", "Function Engine.Settings.SetIntProperty")()); }
+			ScriptFunction GetFloatProperty() { mixin(MGF!("mGetFloatProperty", "Function Engine.Settings.GetFloatProperty")()); }
+			ScriptFunction SetFloatProperty() { mixin(MGF!("mSetFloatProperty", "Function Engine.Settings.SetFloatProperty")()); }
+			ScriptFunction SetPropertyFromStringByName() { mixin(MGF!("mSetPropertyFromStringByName", "Function Engine.Settings.SetPropertyFromStringByName")()); }
+			ScriptFunction GetPropertyAsStringByName() { mixin(MGF!("mGetPropertyAsStringByName", "Function Engine.Settings.GetPropertyAsStringByName")()); }
+			ScriptFunction GetPropertyAsString() { mixin(MGF!("mGetPropertyAsString", "Function Engine.Settings.GetPropertyAsString")()); }
+			ScriptFunction GetPropertyColumnHeader() { mixin(MGF!("mGetPropertyColumnHeader", "Function Engine.Settings.GetPropertyColumnHeader")()); }
+			ScriptFunction GetPropertyName() { mixin(MGF!("mGetPropertyName", "Function Engine.Settings.GetPropertyName")()); }
+			ScriptFunction GetPropertyId() { mixin(MGF!("mGetPropertyId", "Function Engine.Settings.GetPropertyId")()); }
+			ScriptFunction SetStringSettingValueFromStringByName() { mixin(MGF!("mSetStringSettingValueFromStringByName", "Function Engine.Settings.SetStringSettingValueFromStringByName")()); }
+			ScriptFunction GetStringSettingValueNameByName() { mixin(MGF!("mGetStringSettingValueNameByName", "Function Engine.Settings.GetStringSettingValueNameByName")()); }
+			ScriptFunction GetStringSettingValueName() { mixin(MGF!("mGetStringSettingValueName", "Function Engine.Settings.GetStringSettingValueName")()); }
+			ScriptFunction IsWildcardStringSetting() { mixin(MGF!("mIsWildcardStringSetting", "Function Engine.Settings.IsWildcardStringSetting")()); }
+			ScriptFunction GetStringSettingColumnHeader() { mixin(MGF!("mGetStringSettingColumnHeader", "Function Engine.Settings.GetStringSettingColumnHeader")()); }
+			ScriptFunction GetStringSettingName() { mixin(MGF!("mGetStringSettingName", "Function Engine.Settings.GetStringSettingName")()); }
+			ScriptFunction GetStringSettingId() { mixin(MGF!("mGetStringSettingId", "Function Engine.Settings.GetStringSettingId")()); }
+			ScriptFunction GetStringSettingValueByName() { mixin(MGF!("mGetStringSettingValueByName", "Function Engine.Settings.GetStringSettingValueByName")()); }
+			ScriptFunction SetStringSettingValueByName() { mixin(MGF!("mSetStringSettingValueByName", "Function Engine.Settings.SetStringSettingValueByName")()); }
+			ScriptFunction GetStringSettingValueNames() { mixin(MGF!("mGetStringSettingValueNames", "Function Engine.Settings.GetStringSettingValueNames")()); }
+			ScriptFunction IncrementStringSettingValue() { mixin(MGF!("mIncrementStringSettingValue", "Function Engine.Settings.IncrementStringSettingValue")()); }
+			ScriptFunction GetStringSettingValue() { mixin(MGF!("mGetStringSettingValue", "Function Engine.Settings.GetStringSettingValue")()); }
+			ScriptFunction SetStringSettingValue() { mixin(MGF!("mSetStringSettingValue", "Function Engine.Settings.SetStringSettingValue")()); }
+			ScriptFunction GetSettingsDataDateTime() { mixin(MGF!("mGetSettingsDataDateTime", "Function Engine.Settings.GetSettingsDataDateTime")()); }
+			ScriptFunction GetSettingsDataBlob() { mixin(MGF!("mGetSettingsDataBlob", "Function Engine.Settings.GetSettingsDataBlob")()); }
+			ScriptFunction GetSettingsDataInt() { mixin(MGF!("mGetSettingsDataInt", "Function Engine.Settings.GetSettingsDataInt")()); }
+			ScriptFunction GetSettingsDataFloat() { mixin(MGF!("mGetSettingsDataFloat", "Function Engine.Settings.GetSettingsDataFloat")()); }
+			ScriptFunction GetSettingsDataString() { mixin(MGF!("mGetSettingsDataString", "Function Engine.Settings.GetSettingsDataString")()); }
+			ScriptFunction EmptySettingsData() { mixin(MGF!("mEmptySettingsData", "Function Engine.Settings.EmptySettingsData")()); }
+			ScriptFunction SetSettingsData() { mixin(MGF!("mSetSettingsData", "Function Engine.Settings.SetSettingsData")()); }
+			ScriptFunction SetSettingsDataBlob() { mixin(MGF!("mSetSettingsDataBlob", "Function Engine.Settings.SetSettingsDataBlob")()); }
+			ScriptFunction SetSettingsDataDateTime() { mixin(MGF!("mSetSettingsDataDateTime", "Function Engine.Settings.SetSettingsDataDateTime")()); }
+			ScriptFunction SetSettingsDataInt() { mixin(MGF!("mSetSettingsDataInt", "Function Engine.Settings.SetSettingsDataInt")()); }
+			ScriptFunction SetSettingsDataFloat() { mixin(MGF!("mSetSettingsDataFloat", "Function Engine.Settings.SetSettingsDataFloat")()); }
+			ScriptFunction SetSettingsDataString() { mixin(MGF!("mSetSettingsDataString", "Function Engine.Settings.SetSettingsDataString")()); }
 		}
 	}
 	enum EOnlineDataAdvertisementType : ubyte
@@ -163,12 +164,12 @@ public extern(D):
 		private ubyte __buffer__[9];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Settings.LocalizedStringSetting")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.LocalizedStringSetting")()); }
 		@property final auto ref
 		{
-			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-			int ValueIndex() { return *cast(int*)(cast(size_t)&this + 4); }
-			Settings.EOnlineDataAdvertisementType AdvertisementType() { return *cast(Settings.EOnlineDataAdvertisementType*)(cast(size_t)&this + 8); }
+			int Id() { mixin(MGPS!(int, 0)()); }
+			int ValueIndex() { mixin(MGPS!(int, 4)()); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!(Settings.EOnlineDataAdvertisementType, 8)()); }
 		}
 	}
 	struct SettingsProperty
@@ -176,12 +177,12 @@ public extern(D):
 		private ubyte __buffer__[17];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Settings.SettingsProperty")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsProperty")()); }
 		@property final auto ref
 		{
-			int PropertyId() { return *cast(int*)(cast(size_t)&this + 0); }
-			Settings.SettingsData Data() { return *cast(Settings.SettingsData*)(cast(size_t)&this + 4); }
-			Settings.EOnlineDataAdvertisementType AdvertisementType() { return *cast(Settings.EOnlineDataAdvertisementType*)(cast(size_t)&this + 16); }
+			int PropertyId() { mixin(MGPS!(int, 0)()); }
+			Settings.SettingsData Data() { mixin(MGPS!(Settings.SettingsData, 4)()); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!(Settings.EOnlineDataAdvertisementType, 16)()); }
 		}
 	}
 	struct SettingsData
@@ -189,12 +190,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Settings.SettingsData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsData")()); }
 		@property final auto ref
 		{
-			Settings.ESettingsDataType Type() { return *cast(Settings.ESettingsDataType*)(cast(size_t)&this + 0); }
-			int Value1() { return *cast(int*)(cast(size_t)&this + 4); }
-			UObject.Pointer Value2() { return *cast(UObject.Pointer*)(cast(size_t)&this + 8); }
+			Settings.ESettingsDataType Type() { mixin(MGPS!(Settings.ESettingsDataType, 0)()); }
+			int Value1() { mixin(MGPS!(int, 4)()); }
+			UObject.Pointer Value2() { mixin(MGPS!(UObject.Pointer, 8)()); }
 		}
 	}
 	struct IdToStringMapping
@@ -202,11 +203,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Settings.IdToStringMapping")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.IdToStringMapping")()); }
 		@property final auto ref
 		{
-			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			int Id() { mixin(MGPS!(int, 0)()); }
+			ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
 		}
 	}
 	struct LocalizedStringSettingMetaData
@@ -214,13 +215,13 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Settings.LocalizedStringSettingMetaData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.LocalizedStringSettingMetaData")()); }
 		@property final auto ref
 		{
-			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			ScriptString ColumnHeaderText() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { return *cast(ScriptArray!(Settings.StringIdToStringMapping)*)(cast(size_t)&this + 24); }
+			int Id() { mixin(MGPS!(int, 0)()); }
+			ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
+			ScriptString ColumnHeaderText() { mixin(MGPS!(ScriptString, 12)()); }
+			ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { mixin(MGPS!(ScriptArray!(Settings.StringIdToStringMapping), 24)()); }
 		}
 	}
 	struct StringIdToStringMapping
@@ -228,16 +229,16 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Settings.StringIdToStringMapping")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.StringIdToStringMapping")()); }
 		@property final
 		{
 			auto ref
 			{
-				int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-				ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+				int Id() { mixin(MGPS!(int, 0)()); }
+				ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
 			}
-			bool bIsWildcard() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-			bool bIsWildcard(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bIsWildcard() { mixin(MGBPS!(12, 0x1)()); }
+			bool bIsWildcard(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
 	}
 	struct SettingsPropertyPropertyMetaData
@@ -245,91 +246,91 @@ public extern(D):
 		private ubyte __buffer__[64];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Settings.SettingsPropertyPropertyMetaData")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsPropertyPropertyMetaData")()); }
 		@property final auto ref
 		{
-			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-			ScriptString ColumnHeaderText() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-			Settings.EPropertyValueMappingType MappingType() { return *cast(Settings.EPropertyValueMappingType*)(cast(size_t)&this + 24); }
-			ScriptArray!(Settings.IdToStringMapping) ValueMappings() { return *cast(ScriptArray!(Settings.IdToStringMapping)*)(cast(size_t)&this + 28); }
-			ScriptArray!(Settings.SettingsData) PredefinedValues() { return *cast(ScriptArray!(Settings.SettingsData)*)(cast(size_t)&this + 40); }
-			float MinVal() { return *cast(float*)(cast(size_t)&this + 52); }
-			float MaxVal() { return *cast(float*)(cast(size_t)&this + 56); }
-			float RangeIncrement() { return *cast(float*)(cast(size_t)&this + 60); }
+			int Id() { mixin(MGPS!(int, 0)()); }
+			ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
+			ScriptString ColumnHeaderText() { mixin(MGPS!(ScriptString, 12)()); }
+			Settings.EPropertyValueMappingType MappingType() { mixin(MGPS!(Settings.EPropertyValueMappingType, 24)()); }
+			ScriptArray!(Settings.IdToStringMapping) ValueMappings() { mixin(MGPS!(ScriptArray!(Settings.IdToStringMapping), 28)()); }
+			ScriptArray!(Settings.SettingsData) PredefinedValues() { mixin(MGPS!(ScriptArray!(Settings.SettingsData), 40)()); }
+			float MinVal() { mixin(MGPS!(float, 52)()); }
+			float MaxVal() { mixin(MGPS!(float, 56)()); }
+			float RangeIncrement() { mixin(MGPS!(float, 60)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { return *cast(ScriptArray!(Settings.LocalizedStringSetting)*)(cast(size_t)cast(void*)this + 60); }
-		ScriptArray!(Settings.SettingsProperty) Properties() { return *cast(ScriptArray!(Settings.SettingsProperty)*)(cast(size_t)cast(void*)this + 72); }
-		ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { return *cast(ScriptArray!(Settings.LocalizedStringSettingMetaData)*)(cast(size_t)cast(void*)this + 84); }
-		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { return *cast(ScriptArray!(Settings.SettingsPropertyPropertyMetaData)*)(cast(size_t)cast(void*)this + 96); }
+		ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { mixin(MGPC!(ScriptArray!(Settings.LocalizedStringSetting), 60)()); }
+		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!(ScriptArray!(Settings.SettingsProperty), 72)()); }
+		ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { mixin(MGPC!(ScriptArray!(Settings.LocalizedStringSettingMetaData), 84)()); }
+		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { mixin(MGPC!(ScriptArray!(Settings.SettingsPropertyPropertyMetaData), 96)()); }
 	}
 final:
-	void UpdateFromURL(ScriptString* pURL, GameInfo Game)
+	void UpdateFromURL(ref const ScriptString pURL, GameInfo Game)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		*cast(GameInfo*)&params[12] = Game;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFromURL, params.ptr, cast(void*)0);
 		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	void BuildURL(ScriptString* pURL)
+	void BuildURL(ref ScriptString pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BuildURL, params.ptr, cast(void*)0);
 		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	void AppendContextsToURL(ScriptString* pURL)
+	void AppendContextsToURL(ref ScriptString pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendContextsToURL, params.ptr, cast(void*)0);
 		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	void AppendPropertiesToURL(ScriptString* pURL)
+	void AppendPropertiesToURL(ref ScriptString pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendPropertiesToURL, params.ptr, cast(void*)0);
 		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	void AppendDataBindingsToURL(ScriptString* pURL)
+	void AppendDataBindingsToURL(ref ScriptString pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *pURL;
+		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendDataBindingsToURL, params.ptr, cast(void*)0);
 		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	void GetQoSAdvertisedStringSettings(ScriptArray!(Settings.LocalizedStringSetting)* QoSSettings)
+	void GetQoSAdvertisedStringSettings(ref ScriptArray!(Settings.LocalizedStringSetting) QoSSettings)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr = *QoSSettings;
+		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr = QoSSettings;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetQoSAdvertisedStringSettings, params.ptr, cast(void*)0);
 		*QoSSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr;
 	}
-	void GetQoSAdvertisedProperties(ScriptArray!(Settings.SettingsProperty)* QoSProps)
+	void GetQoSAdvertisedProperties(ref ScriptArray!(Settings.SettingsProperty) QoSProps)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr = *QoSProps;
+		*cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr = QoSProps;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetQoSAdvertisedProperties, params.ptr, cast(void*)0);
 		*QoSProps = *cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr;
 	}
-	bool GetRangedPropertyValue(int PropertyId, float* OutValue)
+	bool GetRangedPropertyValue(int PropertyId, ref float OutValue)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
-		*cast(float*)&params[4] = *OutValue;
+		*cast(float*)&params[4] = OutValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRangedPropertyValue, params.ptr, cast(void*)0);
 		*OutValue = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
@@ -343,15 +344,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRangedPropertyValue, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool GetPropertyRange(int PropertyId, float* OutMinValue, float* OutMaxValue, float* RangeIncrement, ubyte* bFormatAsInt)
+	bool GetPropertyRange(int PropertyId, ref float OutMinValue, ref float OutMaxValue, ref float RangeIncrement, ref ubyte bFormatAsInt)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
-		*cast(float*)&params[4] = *OutMinValue;
-		*cast(float*)&params[8] = *OutMaxValue;
-		*cast(float*)&params[12] = *RangeIncrement;
-		params[16] = *bFormatAsInt;
+		*cast(float*)&params[4] = OutMinValue;
+		*cast(float*)&params[8] = OutMaxValue;
+		*cast(float*)&params[12] = RangeIncrement;
+		params[16] = bFormatAsInt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyRange, params.ptr, cast(void*)0);
 		*OutMinValue = *cast(float*)&params[4];
 		*OutMaxValue = *cast(float*)&params[8];
@@ -359,12 +360,12 @@ final:
 		*bFormatAsInt = params[16];
 		return *cast(bool*)&params[20];
 	}
-	bool GetPropertyMappingType(int PropertyId, Settings.EPropertyValueMappingType* OutType)
+	bool GetPropertyMappingType(int PropertyId, ref Settings.EPropertyValueMappingType OutType)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
-		*cast(Settings.EPropertyValueMappingType*)&params[4] = *OutType;
+		*cast(Settings.EPropertyValueMappingType*)&params[4] = OutType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyMappingType, params.ptr, cast(void*)0);
 		*OutType = *cast(Settings.EPropertyValueMappingType*)&params[4];
 		return *cast(bool*)&params[8];
@@ -385,20 +386,20 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasProperty, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void UpdateProperties(ScriptArray!(Settings.SettingsProperty)* Props, bool bShouldAddIfMissing)
+	void UpdateProperties(ref const ScriptArray!(Settings.SettingsProperty) Props, bool bShouldAddIfMissing)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr = *Props;
+		*cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr = Props;
 		*cast(bool*)&params[12] = bShouldAddIfMissing;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateProperties, params.ptr, cast(void*)0);
 		*Props = *cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr;
 	}
-	void UpdateStringSettings(ScriptArray!(Settings.LocalizedStringSetting)* pSettings, bool bShouldAddIfMissing)
+	void UpdateStringSettings(ref const ScriptArray!(Settings.LocalizedStringSetting) pSettings, bool bShouldAddIfMissing)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr = *pSettings;
+		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr = pSettings;
 		*cast(bool*)&params[12] = bShouldAddIfMissing;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateStringSettings, params.ptr, cast(void*)0);
 		*pSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr;
@@ -411,12 +412,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyType, params.ptr, cast(void*)0);
 		return *cast(Settings.ESettingsDataType*)&params[4];
 	}
-	bool GetPropertyValueId(int PropertyId, int* ValueId)
+	bool GetPropertyValueId(int PropertyId, ref int ValueId)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
-		*cast(int*)&params[4] = *ValueId;
+		*cast(int*)&params[4] = ValueId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyValueId, params.ptr, cast(void*)0);
 		*ValueId = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
@@ -430,12 +431,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPropertyValueId, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool GetStringProperty(int PropertyId, ScriptString* Value)
+	bool GetStringProperty(int PropertyId, ref ScriptString Value)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
-		*cast(ScriptString*)&params[4] = *Value;
+		*cast(ScriptString*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringProperty, params.ptr, cast(void*)0);
 		*Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
@@ -448,12 +449,12 @@ final:
 		*cast(ScriptString*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStringProperty, params.ptr, cast(void*)0);
 	}
-	bool GetIntProperty(int PropertyId, int* Value)
+	bool GetIntProperty(int PropertyId, ref int Value)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
-		*cast(int*)&params[4] = *Value;
+		*cast(int*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetIntProperty, params.ptr, cast(void*)0);
 		*Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
@@ -466,12 +467,12 @@ final:
 		*cast(int*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetIntProperty, params.ptr, cast(void*)0);
 	}
-	bool GetFloatProperty(int PropertyId, float* Value)
+	bool GetFloatProperty(int PropertyId, ref float Value)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
-		*cast(float*)&params[4] = *Value;
+		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatProperty, params.ptr, cast(void*)0);
 		*Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
@@ -484,12 +485,12 @@ final:
 		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFloatProperty, params.ptr, cast(void*)0);
 	}
-	bool SetPropertyFromStringByName(ScriptName PropertyName, ScriptString* NewValue)
+	bool SetPropertyFromStringByName(ScriptName PropertyName, ref const ScriptString NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = PropertyName;
-		*cast(ScriptString*)&params[8] = *NewValue;
+		*cast(ScriptString*)&params[8] = NewValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPropertyFromStringByName, params.ptr, cast(void*)0);
 		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
@@ -526,22 +527,22 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyName, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	bool GetPropertyId(ScriptName PropertyName, int* PropertyId)
+	bool GetPropertyId(ScriptName PropertyName, ref int PropertyId)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = PropertyName;
-		*cast(int*)&params[8] = *PropertyId;
+		*cast(int*)&params[8] = PropertyId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyId, params.ptr, cast(void*)0);
 		*PropertyId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool SetStringSettingValueFromStringByName(ScriptName StringSettingName, ScriptString* NewValue)
+	bool SetStringSettingValueFromStringByName(ScriptName StringSettingName, ref const ScriptString NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = StringSettingName;
-		*cast(ScriptString*)&params[8] = *NewValue;
+		*cast(ScriptString*)&params[8] = NewValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStringSettingValueFromStringByName, params.ptr, cast(void*)0);
 		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
@@ -587,22 +588,22 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingName, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	bool GetStringSettingId(ScriptName StringSettingName, int* StringSettingId)
+	bool GetStringSettingId(ScriptName StringSettingName, ref int StringSettingId)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = StringSettingName;
-		*cast(int*)&params[8] = *StringSettingId;
+		*cast(int*)&params[8] = StringSettingId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingId, params.ptr, cast(void*)0);
 		*StringSettingId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetStringSettingValueByName(ScriptName StringSettingName, int* ValueIndex)
+	bool GetStringSettingValueByName(ScriptName StringSettingName, ref int ValueIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = StringSettingName;
-		*cast(int*)&params[8] = *ValueIndex;
+		*cast(int*)&params[8] = ValueIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingValueByName, params.ptr, cast(void*)0);
 		*ValueIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
@@ -616,12 +617,12 @@ final:
 		*cast(bool*)&params[12] = bShouldAutoAdd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStringSettingValueByName, params.ptr, cast(void*)0);
 	}
-	bool GetStringSettingValueNames(int StringSettingId, ScriptArray!(Settings.IdToStringMapping)* Values)
+	bool GetStringSettingValueNames(int StringSettingId, ref ScriptArray!(Settings.IdToStringMapping) Values)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = StringSettingId;
-		*cast(ScriptArray!(Settings.IdToStringMapping)*)&params[4] = *Values;
+		*cast(ScriptArray!(Settings.IdToStringMapping)*)&params[4] = Values;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingValueNames, params.ptr, cast(void*)0);
 		*Values = *cast(ScriptArray!(Settings.IdToStringMapping)*)&params[4];
 		return *cast(bool*)&params[16];
@@ -636,12 +637,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementStringSettingValue, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool GetStringSettingValue(int StringSettingId, int* ValueIndex)
+	bool GetStringSettingValue(int StringSettingId, ref int ValueIndex)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = StringSettingId;
-		*cast(int*)&params[4] = *ValueIndex;
+		*cast(int*)&params[4] = ValueIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingValue, params.ptr, cast(void*)0);
 		*ValueIndex = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
@@ -655,116 +656,116 @@ final:
 		*cast(bool*)&params[8] = bShouldAutoAdd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStringSettingValue, params.ptr, cast(void*)0);
 	}
-	static void GetSettingsDataDateTime(Settings.SettingsData* Data, int* OutInt1, int* OutInt2)
+	static void GetSettingsDataDateTime(ref Settings.SettingsData Data, ref int OutInt1, ref int OutInt2)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
-		*cast(int*)&params[12] = *OutInt1;
-		*cast(int*)&params[16] = *OutInt2;
+		*cast(Settings.SettingsData*)params.ptr = Data;
+		*cast(int*)&params[12] = OutInt1;
+		*cast(int*)&params[16] = OutInt2;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataDateTime, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		*OutInt1 = *cast(int*)&params[12];
 		*OutInt2 = *cast(int*)&params[16];
 	}
-	static void GetSettingsDataBlob(Settings.SettingsData* Data, ScriptArray!(ubyte)* OutBlob)
+	static void GetSettingsDataBlob(ref Settings.SettingsData Data, ref ScriptArray!(ubyte) OutBlob)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
-		*cast(ScriptArray!(ubyte)*)&params[12] = *OutBlob;
+		*cast(Settings.SettingsData*)params.ptr = Data;
+		*cast(ScriptArray!(ubyte)*)&params[12] = OutBlob;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataBlob, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		*OutBlob = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
-	static int GetSettingsDataInt(Settings.SettingsData* Data)
+	static int GetSettingsDataInt(ref Settings.SettingsData Data)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataInt, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(int*)&params[12];
 	}
-	static float GetSettingsDataFloat(Settings.SettingsData* Data)
+	static float GetSettingsDataFloat(ref Settings.SettingsData Data)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataFloat, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(float*)&params[12];
 	}
-	static ScriptString GetSettingsDataString(Settings.SettingsData* Data)
+	static ScriptString GetSettingsDataString(ref Settings.SettingsData Data)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataString, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(ScriptString*)&params[12];
 	}
-	static void EmptySettingsData(Settings.SettingsData* Data)
+	static void EmptySettingsData(ref Settings.SettingsData Data)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.EmptySettingsData, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	static void SetSettingsData(Settings.SettingsData* Data, Settings.SettingsData* Data2Copy)
+	static void SetSettingsData(ref Settings.SettingsData Data, ref Settings.SettingsData Data2Copy)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
-		*cast(Settings.SettingsData*)&params[12] = *Data2Copy;
+		*cast(Settings.SettingsData*)params.ptr = Data;
+		*cast(Settings.SettingsData*)&params[12] = Data2Copy;
 		StaticClass.ProcessEvent(Functions.SetSettingsData, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		*Data2Copy = *cast(Settings.SettingsData*)&params[12];
 	}
-	static void SetSettingsDataBlob(Settings.SettingsData* Data, ScriptArray!(ubyte)* InBlob)
+	static void SetSettingsDataBlob(ref Settings.SettingsData Data, ref ScriptArray!(ubyte) InBlob)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
-		*cast(ScriptArray!(ubyte)*)&params[12] = *InBlob;
+		*cast(Settings.SettingsData*)params.ptr = Data;
+		*cast(ScriptArray!(ubyte)*)&params[12] = InBlob;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataBlob, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		*InBlob = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
-	static void SetSettingsDataDateTime(Settings.SettingsData* Data, int InInt1, int InInt2)
+	static void SetSettingsDataDateTime(ref Settings.SettingsData Data, int InInt1, int InInt2)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(int*)&params[12] = InInt1;
 		*cast(int*)&params[16] = InInt2;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataDateTime, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	static void SetSettingsDataInt(Settings.SettingsData* Data, int InInt)
+	static void SetSettingsDataInt(ref Settings.SettingsData Data, int InInt)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(int*)&params[12] = InInt;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataInt, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	static void SetSettingsDataFloat(Settings.SettingsData* Data, float InFloat)
+	static void SetSettingsDataFloat(ref Settings.SettingsData Data, float InFloat)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(float*)&params[12] = InFloat;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataFloat, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	static void SetSettingsDataString(Settings.SettingsData* Data, ScriptString InString)
+	static void SetSettingsDataString(ref Settings.SettingsData Data, ScriptString InString)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Settings.SettingsData*)params.ptr = *Data;
+		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(ScriptString*)&params[12] = InString;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataString, params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;

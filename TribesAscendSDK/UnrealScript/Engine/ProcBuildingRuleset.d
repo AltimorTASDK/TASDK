@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ProcBuildingRuleset;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PBRuleNodeBase;
 import UnrealScript.Engine.ProcBuilding;
@@ -12,9 +13,9 @@ extern(C++) interface ProcBuildingRuleset : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ProcBuildingRuleset")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ProcBuildingRuleset")()); }
 	private static __gshared ProcBuildingRuleset mDefaultProperties;
-	@property final static ProcBuildingRuleset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ProcBuildingRuleset)("ProcBuildingRuleset Engine.Default__ProcBuildingRuleset")); }
+	@property final static ProcBuildingRuleset DefaultProperties() { mixin(MGDPC!(ProcBuildingRuleset, "ProcBuildingRuleset Engine.Default__ProcBuildingRuleset")()); }
 	enum EProcBuildingAxis : ubyte
 	{
 		EPBAxis_X = 0,
@@ -26,11 +27,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuildingRuleset.PBParamSwatch")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuildingRuleset.PBParamSwatch")()); }
 		@property final auto ref
 		{
-			ScriptName SwatchName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			ScriptArray!(ProcBuilding.PBMaterialParam) Params() { return *cast(ScriptArray!(ProcBuilding.PBMaterialParam)*)(cast(size_t)&this + 8); }
+			ScriptName SwatchName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(ProcBuilding.PBMaterialParam) Params() { mixin(MGPS!(ScriptArray!(ProcBuilding.PBMaterialParam), 8)()); }
 		}
 	}
 	struct PBVariationInfo
@@ -38,43 +39,43 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuildingRuleset.PBVariationInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuildingRuleset.PBVariationInfo")()); }
 		@property final
 		{
-			@property final auto ref ScriptName VariationName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-			bool bMeshOnTopOfFacePoly() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-			bool bMeshOnTopOfFacePoly(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
+			@property final auto ref ScriptName VariationName() { mixin(MGPS!(ScriptName, 0)()); }
+			bool bMeshOnTopOfFacePoly() { mixin(MGBPS!(8, 0x1)()); }
+			bool bMeshOnTopOfFacePoly(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PBRuleNodeBase RootRule() { return *cast(PBRuleNodeBase*)(cast(size_t)cast(void*)this + 60); }
-			MaterialInterface DefaultRoofMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 68); }
-			MaterialInterface DefaultFloorMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 72); }
-			MaterialInterface DefaultNonRectWallMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 76); }
-			float RoofZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-			float NotRoofZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-			float FloorZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-			float NotFloorZOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-			float RoofPolyInset() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-			float FloorPolyInset() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-			float BuildingLODSpecular() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-			float RoofEdgeScopeRaise() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-			Texture LODCubemap() { return *cast(Texture*)(cast(size_t)cast(void*)this + 112); }
-			Texture InteriorTexture() { return *cast(Texture*)(cast(size_t)cast(void*)this + 116); }
-			ScriptArray!(ProcBuildingRuleset.PBVariationInfo) Variations() { return *cast(ScriptArray!(ProcBuildingRuleset.PBVariationInfo)*)(cast(size_t)cast(void*)this + 120); }
-			ScriptArray!(ProcBuildingRuleset.PBParamSwatch) ParamSwatches() { return *cast(ScriptArray!(ProcBuildingRuleset.PBParamSwatch)*)(cast(size_t)cast(void*)this + 132); }
-			ScriptArray!(PBRuleNodeComment) Comments() { return *cast(ScriptArray!(PBRuleNodeComment)*)(cast(size_t)cast(void*)this + 144); }
+			PBRuleNodeBase RootRule() { mixin(MGPC!(PBRuleNodeBase, 60)()); }
+			MaterialInterface DefaultRoofMaterial() { mixin(MGPC!(MaterialInterface, 68)()); }
+			MaterialInterface DefaultFloorMaterial() { mixin(MGPC!(MaterialInterface, 72)()); }
+			MaterialInterface DefaultNonRectWallMaterial() { mixin(MGPC!(MaterialInterface, 76)()); }
+			float RoofZOffset() { mixin(MGPC!(float, 80)()); }
+			float NotRoofZOffset() { mixin(MGPC!(float, 84)()); }
+			float FloorZOffset() { mixin(MGPC!(float, 88)()); }
+			float NotFloorZOffset() { mixin(MGPC!(float, 92)()); }
+			float RoofPolyInset() { mixin(MGPC!(float, 96)()); }
+			float FloorPolyInset() { mixin(MGPC!(float, 100)()); }
+			float BuildingLODSpecular() { mixin(MGPC!(float, 104)()); }
+			float RoofEdgeScopeRaise() { mixin(MGPC!(float, 108)()); }
+			Texture LODCubemap() { mixin(MGPC!(Texture, 112)()); }
+			Texture InteriorTexture() { mixin(MGPC!(Texture, 116)()); }
+			ScriptArray!(ProcBuildingRuleset.PBVariationInfo) Variations() { mixin(MGPC!(ScriptArray!(ProcBuildingRuleset.PBVariationInfo), 120)()); }
+			ScriptArray!(ProcBuildingRuleset.PBParamSwatch) ParamSwatches() { mixin(MGPC!(ScriptArray!(ProcBuildingRuleset.PBParamSwatch), 132)()); }
+			ScriptArray!(PBRuleNodeComment) Comments() { mixin(MGPC!(ScriptArray!(PBRuleNodeComment), 144)()); }
 		}
-		bool bBeingEdited() { return (*cast(uint*)(cast(size_t)cast(void*)this + 64) & 0x1) != 0; }
-		bool bBeingEdited(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 64) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 64) &= ~0x1; } return val; }
-		bool bEnableInteriorTexture() { return (*cast(uint*)(cast(size_t)cast(void*)this + 64) & 0x2) != 0; }
-		bool bEnableInteriorTexture(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 64) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 64) &= ~0x2; } return val; }
-		bool bLODOnlyRoof() { return (*cast(uint*)(cast(size_t)cast(void*)this + 64) & 0x4) != 0; }
-		bool bLODOnlyRoof(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 64) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 64) &= ~0x4; } return val; }
-		bool bPickRandomSwatch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 64) & 0x8) != 0; }
-		bool bPickRandomSwatch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 64) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 64) &= ~0x8; } return val; }
+		bool bBeingEdited() { mixin(MGBPC!(64, 0x1)()); }
+		bool bBeingEdited(bool val) { mixin(MSBPC!(64, 0x1)()); }
+		bool bEnableInteriorTexture() { mixin(MGBPC!(64, 0x2)()); }
+		bool bEnableInteriorTexture(bool val) { mixin(MSBPC!(64, 0x2)()); }
+		bool bLODOnlyRoof() { mixin(MGBPC!(64, 0x4)()); }
+		bool bLODOnlyRoof(bool val) { mixin(MSBPC!(64, 0x4)()); }
+		bool bPickRandomSwatch() { mixin(MGBPC!(64, 0x8)()); }
+		bool bPickRandomSwatch(bool val) { mixin(MSBPC!(64, 0x8)()); }
 	}
 }

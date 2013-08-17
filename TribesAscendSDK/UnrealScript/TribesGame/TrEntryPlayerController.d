@@ -1,6 +1,7 @@
 module UnrealScript.TribesGame.TrEntryPlayerController;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrObject;
 import UnrealScript.Engine.LocalPlayer;
 import UnrealScript.Engine.OnlineSubsystem;
@@ -13,9 +14,9 @@ extern(C++) interface TrEntryPlayerController : TrPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEntryPlayerController")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEntryPlayerController")()); }
 	private static __gshared TrEntryPlayerController mDefaultProperties;
-	@property final static TrEntryPlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEntryPlayerController)("TrEntryPlayerController TribesGame.Default__TrEntryPlayerController")); }
+	@property final static TrEntryPlayerController DefaultProperties() { mixin(MGDPC!(TrEntryPlayerController, "TrEntryPlayerController TribesGame.Default__TrEntryPlayerController")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -68,78 +69,78 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RequestPaperDoll() { return mRequestPaperDoll ? mRequestPaperDoll : (mRequestPaperDoll = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.RequestPaperDoll")); }
-			ScriptFunction SendMenuToLobby() { return mSendMenuToLobby ? mSendMenuToLobby : (mSendMenuToLobby = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.SendMenuToLobby")); }
-			ScriptFunction ResendReadyCheck() { return mResendReadyCheck ? mResendReadyCheck : (mResendReadyCheck = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ResendReadyCheck")); }
-			ScriptFunction UpdateMenuTimer() { return mUpdateMenuTimer ? mUpdateMenuTimer : (mUpdateMenuTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.UpdateMenuTimer")); }
-			ScriptFunction GetWaitRemaining() { return mGetWaitRemaining ? mGetWaitRemaining : (mGetWaitRemaining = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.GetWaitRemaining")); }
-			ScriptFunction NotifyMenuReady() { return mNotifyMenuReady ? mNotifyMenuReady : (mNotifyMenuReady = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.NotifyMenuReady")); }
-			ScriptFunction RefreshFriends() { return mRefreshFriends ? mRefreshFriends : (mRefreshFriends = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.RefreshFriends")); }
-			ScriptFunction SwapModel() { return mSwapModel ? mSwapModel : (mSwapModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.SwapModel")); }
-			ScriptFunction ShowPeach() { return mShowPeach ? mShowPeach : (mShowPeach = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ShowPeach")); }
-			ScriptFunction ToggleMenuVisible() { return mToggleMenuVisible ? mToggleMenuVisible : (mToggleMenuVisible = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ToggleMenuVisible")); }
-			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.PostBeginPlay")); }
-			ScriptFunction GetPlayerViewPoint() { return mGetPlayerViewPoint ? mGetPlayerViewPoint : (mGetPlayerViewPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.GetPlayerViewPoint")); }
-			ScriptFunction SwingCamera() { return mSwingCamera ? mSwingCamera : (mSwingCamera = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.SwingCamera")); }
-			ScriptFunction SwingCameraBack() { return mSwingCameraBack ? mSwingCameraBack : (mSwingCameraBack = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.SwingCameraBack")); }
-			ScriptFunction PreloadTexturesTimer() { return mPreloadTexturesTimer ? mPreloadTexturesTimer : (mPreloadTexturesTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.PreloadTexturesTimer")); }
-			ScriptFunction NotifyMenuReadyTimer() { return mNotifyMenuReadyTimer ? mNotifyMenuReadyTimer : (mNotifyMenuReadyTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.NotifyMenuReadyTimer")); }
-			ScriptFunction RequestPaperDollTimer() { return mRequestPaperDollTimer ? mRequestPaperDollTimer : (mRequestPaperDollTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.RequestPaperDollTimer")); }
-			ScriptFunction BeginQueueResendTimer() { return mBeginQueueResendTimer ? mBeginQueueResendTimer : (mBeginQueueResendTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.BeginQueueResendTimer")); }
-			ScriptFunction ClearQueueResendTimer() { return mClearQueueResendTimer ? mClearQueueResendTimer : (mClearQueueResendTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ClearQueueResendTimer")); }
-			ScriptFunction LoadingTimer() { return mLoadingTimer ? mLoadingTimer : (mLoadingTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.LoadingTimer")); }
-			ScriptFunction InitInputSystem() { return mInitInputSystem ? mInitInputSystem : (mInitInputSystem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.InitInputSystem")); }
-			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.Destroyed")); }
-			ScriptFunction OnControllerChanged() { return mOnControllerChanged ? mOnControllerChanged : (mOnControllerChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnControllerChanged")); }
-			ScriptFunction OnGameInviteReceived() { return mOnGameInviteReceived ? mOnGameInviteReceived : (mOnGameInviteReceived = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnGameInviteReceived")); }
-			ScriptFunction OnFriendInviteReceived() { return mOnFriendInviteReceived ? mOnFriendInviteReceived : (mOnFriendInviteReceived = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnFriendInviteReceived")); }
-			ScriptFunction OnFriendMessageReceived() { return mOnFriendMessageReceived ? mOnFriendMessageReceived : (mOnFriendMessageReceived = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnFriendMessageReceived")); }
-			ScriptFunction OnConnectionStatusChange() { return mOnConnectionStatusChange ? mOnConnectionStatusChange : (mOnConnectionStatusChange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnConnectionStatusChange")); }
-			ScriptFunction OnLinkStatusChanged() { return mOnLinkStatusChanged ? mOnLinkStatusChanged : (mOnLinkStatusChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnLinkStatusChanged")); }
-			ScriptFunction QuitToMainMenu() { return mQuitToMainMenu ? mQuitToMainMenu : (mQuitToMainMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.QuitToMainMenu")); }
-			ScriptFunction SetPawnConstructionScene() { return mSetPawnConstructionScene ? mSetPawnConstructionScene : (mSetPawnConstructionScene = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.SetPawnConstructionScene")); }
-			ScriptFunction ShowMidGameMenu() { return mShowMidGameMenu ? mShowMidGameMenu : (mShowMidGameMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ShowMidGameMenu")); }
-			ScriptFunction ShowScoreboard() { return mShowScoreboard ? mShowScoreboard : (mShowScoreboard = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ShowScoreboard")); }
-			ScriptFunction Pose() { return mPose ? mPose : (mPose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.Pose")); }
-			ScriptFunction Weap() { return mWeap ? mWeap : (mWeap = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.Weap")); }
-			ScriptFunction Char() { return mChar ? mChar : (mChar = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.Char")); }
-			ScriptFunction UpdatePaperDoll_Device() { return mUpdatePaperDoll_Device ? mUpdatePaperDoll_Device : (mUpdatePaperDoll_Device = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.UpdatePaperDoll_Device")); }
-			ScriptFunction ClearMainMenuPaperDoll() { return mClearMainMenuPaperDoll ? mClearMainMenuPaperDoll : (mClearMainMenuPaperDoll = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ClearMainMenuPaperDoll")); }
-			ScriptFunction UpdateMainMenuPaperDoll_Mesh() { return mUpdateMainMenuPaperDoll_Mesh ? mUpdateMainMenuPaperDoll_Mesh : (mUpdateMainMenuPaperDoll_Mesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.UpdateMainMenuPaperDoll_Mesh")); }
-			ScriptFunction UpdatePaperDoll() { return mUpdatePaperDoll ? mUpdatePaperDoll : (mUpdatePaperDoll = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.UpdatePaperDoll")); }
-			ScriptFunction OnDeviceContentDataClassLoaded() { return mOnDeviceContentDataClassLoaded ? mOnDeviceContentDataClassLoaded : (mOnDeviceContentDataClassLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnDeviceContentDataClassLoaded")); }
-			ScriptFunction OnClassSelectedMainMenu() { return mOnClassSelectedMainMenu ? mOnClassSelectedMainMenu : (mOnClassSelectedMainMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.OnClassSelectedMainMenu")); }
-			ScriptFunction On3PSkinContentLoaded() { return mOn3PSkinContentLoaded ? mOn3PSkinContentLoaded : (mOn3PSkinContentLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.On3PSkinContentLoaded")); }
-			ScriptFunction RefreshFriendsTimer() { return mRefreshFriendsTimer ? mRefreshFriendsTimer : (mRefreshFriendsTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.RefreshFriendsTimer")); }
-			ScriptFunction SwapModelTimer() { return mSwapModelTimer ? mSwapModelTimer : (mSwapModelTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.SwapModelTimer")); }
-			ScriptFunction ShowPeachTimer() { return mShowPeachTimer ? mShowPeachTimer : (mShowPeachTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEntryPlayerController.ShowPeachTimer")); }
+			ScriptFunction RequestPaperDoll() { mixin(MGF!("mRequestPaperDoll", "Function TribesGame.TrEntryPlayerController.RequestPaperDoll")()); }
+			ScriptFunction SendMenuToLobby() { mixin(MGF!("mSendMenuToLobby", "Function TribesGame.TrEntryPlayerController.SendMenuToLobby")()); }
+			ScriptFunction ResendReadyCheck() { mixin(MGF!("mResendReadyCheck", "Function TribesGame.TrEntryPlayerController.ResendReadyCheck")()); }
+			ScriptFunction UpdateMenuTimer() { mixin(MGF!("mUpdateMenuTimer", "Function TribesGame.TrEntryPlayerController.UpdateMenuTimer")()); }
+			ScriptFunction GetWaitRemaining() { mixin(MGF!("mGetWaitRemaining", "Function TribesGame.TrEntryPlayerController.GetWaitRemaining")()); }
+			ScriptFunction NotifyMenuReady() { mixin(MGF!("mNotifyMenuReady", "Function TribesGame.TrEntryPlayerController.NotifyMenuReady")()); }
+			ScriptFunction RefreshFriends() { mixin(MGF!("mRefreshFriends", "Function TribesGame.TrEntryPlayerController.RefreshFriends")()); }
+			ScriptFunction SwapModel() { mixin(MGF!("mSwapModel", "Function TribesGame.TrEntryPlayerController.SwapModel")()); }
+			ScriptFunction ShowPeach() { mixin(MGF!("mShowPeach", "Function TribesGame.TrEntryPlayerController.ShowPeach")()); }
+			ScriptFunction ToggleMenuVisible() { mixin(MGF!("mToggleMenuVisible", "Function TribesGame.TrEntryPlayerController.ToggleMenuVisible")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrEntryPlayerController.PostBeginPlay")()); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function TribesGame.TrEntryPlayerController.GetPlayerViewPoint")()); }
+			ScriptFunction SwingCamera() { mixin(MGF!("mSwingCamera", "Function TribesGame.TrEntryPlayerController.SwingCamera")()); }
+			ScriptFunction SwingCameraBack() { mixin(MGF!("mSwingCameraBack", "Function TribesGame.TrEntryPlayerController.SwingCameraBack")()); }
+			ScriptFunction PreloadTexturesTimer() { mixin(MGF!("mPreloadTexturesTimer", "Function TribesGame.TrEntryPlayerController.PreloadTexturesTimer")()); }
+			ScriptFunction NotifyMenuReadyTimer() { mixin(MGF!("mNotifyMenuReadyTimer", "Function TribesGame.TrEntryPlayerController.NotifyMenuReadyTimer")()); }
+			ScriptFunction RequestPaperDollTimer() { mixin(MGF!("mRequestPaperDollTimer", "Function TribesGame.TrEntryPlayerController.RequestPaperDollTimer")()); }
+			ScriptFunction BeginQueueResendTimer() { mixin(MGF!("mBeginQueueResendTimer", "Function TribesGame.TrEntryPlayerController.BeginQueueResendTimer")()); }
+			ScriptFunction ClearQueueResendTimer() { mixin(MGF!("mClearQueueResendTimer", "Function TribesGame.TrEntryPlayerController.ClearQueueResendTimer")()); }
+			ScriptFunction LoadingTimer() { mixin(MGF!("mLoadingTimer", "Function TribesGame.TrEntryPlayerController.LoadingTimer")()); }
+			ScriptFunction InitInputSystem() { mixin(MGF!("mInitInputSystem", "Function TribesGame.TrEntryPlayerController.InitInputSystem")()); }
+			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrEntryPlayerController.Destroyed")()); }
+			ScriptFunction OnControllerChanged() { mixin(MGF!("mOnControllerChanged", "Function TribesGame.TrEntryPlayerController.OnControllerChanged")()); }
+			ScriptFunction OnGameInviteReceived() { mixin(MGF!("mOnGameInviteReceived", "Function TribesGame.TrEntryPlayerController.OnGameInviteReceived")()); }
+			ScriptFunction OnFriendInviteReceived() { mixin(MGF!("mOnFriendInviteReceived", "Function TribesGame.TrEntryPlayerController.OnFriendInviteReceived")()); }
+			ScriptFunction OnFriendMessageReceived() { mixin(MGF!("mOnFriendMessageReceived", "Function TribesGame.TrEntryPlayerController.OnFriendMessageReceived")()); }
+			ScriptFunction OnConnectionStatusChange() { mixin(MGF!("mOnConnectionStatusChange", "Function TribesGame.TrEntryPlayerController.OnConnectionStatusChange")()); }
+			ScriptFunction OnLinkStatusChanged() { mixin(MGF!("mOnLinkStatusChanged", "Function TribesGame.TrEntryPlayerController.OnLinkStatusChanged")()); }
+			ScriptFunction QuitToMainMenu() { mixin(MGF!("mQuitToMainMenu", "Function TribesGame.TrEntryPlayerController.QuitToMainMenu")()); }
+			ScriptFunction SetPawnConstructionScene() { mixin(MGF!("mSetPawnConstructionScene", "Function TribesGame.TrEntryPlayerController.SetPawnConstructionScene")()); }
+			ScriptFunction ShowMidGameMenu() { mixin(MGF!("mShowMidGameMenu", "Function TribesGame.TrEntryPlayerController.ShowMidGameMenu")()); }
+			ScriptFunction ShowScoreboard() { mixin(MGF!("mShowScoreboard", "Function TribesGame.TrEntryPlayerController.ShowScoreboard")()); }
+			ScriptFunction Pose() { mixin(MGF!("mPose", "Function TribesGame.TrEntryPlayerController.Pose")()); }
+			ScriptFunction Weap() { mixin(MGF!("mWeap", "Function TribesGame.TrEntryPlayerController.Weap")()); }
+			ScriptFunction Char() { mixin(MGF!("mChar", "Function TribesGame.TrEntryPlayerController.Char")()); }
+			ScriptFunction UpdatePaperDoll_Device() { mixin(MGF!("mUpdatePaperDoll_Device", "Function TribesGame.TrEntryPlayerController.UpdatePaperDoll_Device")()); }
+			ScriptFunction ClearMainMenuPaperDoll() { mixin(MGF!("mClearMainMenuPaperDoll", "Function TribesGame.TrEntryPlayerController.ClearMainMenuPaperDoll")()); }
+			ScriptFunction UpdateMainMenuPaperDoll_Mesh() { mixin(MGF!("mUpdateMainMenuPaperDoll_Mesh", "Function TribesGame.TrEntryPlayerController.UpdateMainMenuPaperDoll_Mesh")()); }
+			ScriptFunction UpdatePaperDoll() { mixin(MGF!("mUpdatePaperDoll", "Function TribesGame.TrEntryPlayerController.UpdatePaperDoll")()); }
+			ScriptFunction OnDeviceContentDataClassLoaded() { mixin(MGF!("mOnDeviceContentDataClassLoaded", "Function TribesGame.TrEntryPlayerController.OnDeviceContentDataClassLoaded")()); }
+			ScriptFunction OnClassSelectedMainMenu() { mixin(MGF!("mOnClassSelectedMainMenu", "Function TribesGame.TrEntryPlayerController.OnClassSelectedMainMenu")()); }
+			ScriptFunction On3PSkinContentLoaded() { mixin(MGF!("mOn3PSkinContentLoaded", "Function TribesGame.TrEntryPlayerController.On3PSkinContentLoaded")()); }
+			ScriptFunction RefreshFriendsTimer() { mixin(MGF!("mRefreshFriendsTimer", "Function TribesGame.TrEntryPlayerController.RefreshFriendsTimer")()); }
+			ScriptFunction SwapModelTimer() { mixin(MGF!("mSwapModelTimer", "Function TribesGame.TrEntryPlayerController.SwapModelTimer")()); }
+			ScriptFunction ShowPeachTimer() { mixin(MGF!("mShowPeachTimer", "Function TribesGame.TrEntryPlayerController.ShowPeachTimer")()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PostProcessChain) OldPostProcessChain() { return *cast(ScriptArray!(PostProcessChain)*)(cast(size_t)cast(void*)this + 3452); }
-			float m_fCameraRotationInterpTime() { return *cast(float*)(cast(size_t)cast(void*)this + 3560); }
-			float m_fCameraRotationCurrTime() { return *cast(float*)(cast(size_t)cast(void*)this + 3556); }
-			Rotator m_rTargetCameraRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 3544); }
-			Rotator m_rInitialCameraRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 3532); }
-			Vector m_CameraLocation4x3() { return *cast(Vector*)(cast(size_t)cast(void*)this + 3520); }
-			Vector m_CameraLocation16x10() { return *cast(Vector*)(cast(size_t)cast(void*)this + 3508); }
-			Vector m_CameraLocation16x9() { return *cast(Vector*)(cast(size_t)cast(void*)this + 3496); }
-			float m_PreloadTextureTime() { return *cast(float*)(cast(size_t)cast(void*)this + 3492); }
-			TrObject.EContentDataType m_ContentDataType() { return *cast(TrObject.EContentDataType*)(cast(size_t)cast(void*)this + 3488); }
-			TrPaperDollMainMenu m_MainMenuPaperDoll() { return *cast(TrPaperDollMainMenu*)(cast(size_t)cast(void*)this + 3484); }
-			ScriptString MainMenuContentClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 3472); }
-			TrMainMenuContentData m_MainMenuContentData() { return *cast(TrMainMenuContentData*)(cast(size_t)cast(void*)this + 3468); }
-			LocalPlayer OldPlayer() { return *cast(LocalPlayer*)(cast(size_t)cast(void*)this + 3464); }
-			PostProcessChain EntryPostProcessChain() { return *cast(PostProcessChain*)(cast(size_t)cast(void*)this + 3448); }
-			int MAX_RESEND_WAIT_TIME() { return *cast(int*)(cast(size_t)cast(void*)this + 3440); }
-			int MIN_RESEND_WAIT_TIME() { return *cast(int*)(cast(size_t)cast(void*)this + 3436); }
-			int m_CountdownTime() { return *cast(int*)(cast(size_t)cast(void*)this + 3432); }
+			ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC!(ScriptArray!(PostProcessChain), 3452)()); }
+			float m_fCameraRotationInterpTime() { mixin(MGPC!(float, 3560)()); }
+			float m_fCameraRotationCurrTime() { mixin(MGPC!(float, 3556)()); }
+			Rotator m_rTargetCameraRotation() { mixin(MGPC!(Rotator, 3544)()); }
+			Rotator m_rInitialCameraRotation() { mixin(MGPC!(Rotator, 3532)()); }
+			Vector m_CameraLocation4x3() { mixin(MGPC!(Vector, 3520)()); }
+			Vector m_CameraLocation16x10() { mixin(MGPC!(Vector, 3508)()); }
+			Vector m_CameraLocation16x9() { mixin(MGPC!(Vector, 3496)()); }
+			float m_PreloadTextureTime() { mixin(MGPC!(float, 3492)()); }
+			TrObject.EContentDataType m_ContentDataType() { mixin(MGPC!(TrObject.EContentDataType, 3488)()); }
+			TrPaperDollMainMenu m_MainMenuPaperDoll() { mixin(MGPC!(TrPaperDollMainMenu, 3484)()); }
+			ScriptString MainMenuContentClassName() { mixin(MGPC!(ScriptString, 3472)()); }
+			TrMainMenuContentData m_MainMenuContentData() { mixin(MGPC!(TrMainMenuContentData, 3468)()); }
+			LocalPlayer OldPlayer() { mixin(MGPC!(LocalPlayer, 3464)()); }
+			PostProcessChain EntryPostProcessChain() { mixin(MGPC!(PostProcessChain, 3448)()); }
+			int MAX_RESEND_WAIT_TIME() { mixin(MGPC!(int, 3440)()); }
+			int MIN_RESEND_WAIT_TIME() { mixin(MGPC!(int, 3436)()); }
+			int m_CountdownTime() { mixin(MGPC!(int, 3432)()); }
 		}
-		bool bMenuNotified() { return (*cast(uint*)(cast(size_t)cast(void*)this + 3444) & 0x1) != 0; }
-		bool bMenuNotified(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 3444) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 3444) &= ~0x1; } return val; }
+		bool bMenuNotified() { mixin(MGBPC!(3444, 0x1)()); }
+		bool bMenuNotified(bool val) { mixin(MSBPC!(3444, 0x1)()); }
 	}
 final:
 	bool RequestPaperDoll()
@@ -195,12 +196,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void GetPlayerViewPoint(Vector* POVLocation, Rotator* POVRotation)
+	void GetPlayerViewPoint(ref Vector POVLocation, ref Rotator POVRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = *POVLocation;
-		*cast(Rotator*)&params[12] = *POVRotation;
+		*cast(Vector*)params.ptr = POVLocation;
+		*cast(Rotator*)&params[12] = POVRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
 		*POVLocation = *cast(Vector*)params.ptr;
 		*POVRotation = *cast(Rotator*)&params[12];

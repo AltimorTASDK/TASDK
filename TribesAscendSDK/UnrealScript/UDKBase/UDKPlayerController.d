@@ -1,6 +1,7 @@
 module UnrealScript.UDKBase.UDKPlayerController;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.UDKBase.UDKEmitCameraEffect;
 import UnrealScript.Engine.CameraAnimInst;
 import UnrealScript.Engine.Pawn;
@@ -13,9 +14,9 @@ extern(C++) interface UDKPlayerController : GamePlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPlayerController")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKPlayerController")()); }
 	private static __gshared UDKPlayerController mDefaultProperties;
-	@property final static UDKPlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKPlayerController)("UDKPlayerController UDKBase.Default__UDKPlayerController")); }
+	@property final static UDKPlayerController DefaultProperties() { mixin(MGDPC!(UDKPlayerController, "UDKPlayerController UDKBase.Default__UDKPlayerController")()); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,19 +37,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetGamma() { return mSetGamma ? mSetGamma : (mSetGamma = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetGamma")); }
-			ScriptFunction SetHardwarePhysicsEnabled() { return mSetHardwarePhysicsEnabled ? mSetHardwarePhysicsEnabled : (mSetHardwarePhysicsEnabled = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetHardwarePhysicsEnabled")); }
-			ScriptFunction IsKeyboardAvailable() { return mIsKeyboardAvailable ? mIsKeyboardAvailable : (mIsKeyboardAvailable = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.IsKeyboardAvailable")); }
-			ScriptFunction IsMouseAvailable() { return mIsMouseAvailable ? mIsMouseAvailable : (mIsMouseAvailable = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.IsMouseAvailable")); }
-			ScriptFunction RemoveCameraEffect() { return mRemoveCameraEffect ? mRemoveCameraEffect : (mRemoveCameraEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.RemoveCameraEffect")); }
-			ScriptFunction ClientSpawnCameraEffect() { return mClientSpawnCameraEffect ? mClientSpawnCameraEffect : (mClientSpawnCameraEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.ClientSpawnCameraEffect")); }
-			ScriptFunction ClearCameraEffect() { return mClearCameraEffect ? mClearCameraEffect : (mClearCameraEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.ClearCameraEffect")); }
-			ScriptFunction GetTargetAdhesionFrictionTarget() { return mGetTargetAdhesionFrictionTarget ? mGetTargetAdhesionFrictionTarget : (mGetTargetAdhesionFrictionTarget = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.GetTargetAdhesionFrictionTarget")); }
-			ScriptFunction IsControllerTiltActive() { return mIsControllerTiltActive ? mIsControllerTiltActive : (mIsControllerTiltActive = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.IsControllerTiltActive")); }
-			ScriptFunction SetControllerTiltDesiredIfAvailable() { return mSetControllerTiltDesiredIfAvailable ? mSetControllerTiltDesiredIfAvailable : (mSetControllerTiltDesiredIfAvailable = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetControllerTiltDesiredIfAvailable")); }
-			ScriptFunction SetControllerTiltActive() { return mSetControllerTiltActive ? mSetControllerTiltActive : (mSetControllerTiltActive = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetControllerTiltActive")); }
-			ScriptFunction SetOnlyUseControllerTiltInput() { return mSetOnlyUseControllerTiltInput ? mSetOnlyUseControllerTiltInput : (mSetOnlyUseControllerTiltInput = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetOnlyUseControllerTiltInput")); }
-			ScriptFunction SetUseTiltForwardAndBack() { return mSetUseTiltForwardAndBack ? mSetUseTiltForwardAndBack : (mSetUseTiltForwardAndBack = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetUseTiltForwardAndBack")); }
+			ScriptFunction SetGamma() { mixin(MGF!("mSetGamma", "Function UDKBase.UDKPlayerController.SetGamma")()); }
+			ScriptFunction SetHardwarePhysicsEnabled() { mixin(MGF!("mSetHardwarePhysicsEnabled", "Function UDKBase.UDKPlayerController.SetHardwarePhysicsEnabled")()); }
+			ScriptFunction IsKeyboardAvailable() { mixin(MGF!("mIsKeyboardAvailable", "Function UDKBase.UDKPlayerController.IsKeyboardAvailable")()); }
+			ScriptFunction IsMouseAvailable() { mixin(MGF!("mIsMouseAvailable", "Function UDKBase.UDKPlayerController.IsMouseAvailable")()); }
+			ScriptFunction RemoveCameraEffect() { mixin(MGF!("mRemoveCameraEffect", "Function UDKBase.UDKPlayerController.RemoveCameraEffect")()); }
+			ScriptFunction ClientSpawnCameraEffect() { mixin(MGF!("mClientSpawnCameraEffect", "Function UDKBase.UDKPlayerController.ClientSpawnCameraEffect")()); }
+			ScriptFunction ClearCameraEffect() { mixin(MGF!("mClearCameraEffect", "Function UDKBase.UDKPlayerController.ClearCameraEffect")()); }
+			ScriptFunction GetTargetAdhesionFrictionTarget() { mixin(MGF!("mGetTargetAdhesionFrictionTarget", "Function UDKBase.UDKPlayerController.GetTargetAdhesionFrictionTarget")()); }
+			ScriptFunction IsControllerTiltActive() { mixin(MGF!("mIsControllerTiltActive", "Function UDKBase.UDKPlayerController.IsControllerTiltActive")()); }
+			ScriptFunction SetControllerTiltDesiredIfAvailable() { mixin(MGF!("mSetControllerTiltDesiredIfAvailable", "Function UDKBase.UDKPlayerController.SetControllerTiltDesiredIfAvailable")()); }
+			ScriptFunction SetControllerTiltActive() { mixin(MGF!("mSetControllerTiltActive", "Function UDKBase.UDKPlayerController.SetControllerTiltActive")()); }
+			ScriptFunction SetOnlyUseControllerTiltInput() { mixin(MGF!("mSetOnlyUseControllerTiltInput", "Function UDKBase.UDKPlayerController.SetOnlyUseControllerTiltInput")()); }
+			ScriptFunction SetUseTiltForwardAndBack() { mixin(MGF!("mSetUseTiltForwardAndBack", "Function UDKBase.UDKPlayerController.SetUseTiltForwardAndBack")()); }
 		}
 	}
 	struct ObjectiveAnnouncementInfo
@@ -56,37 +57,37 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPlayerController.ObjectiveAnnouncementInfo")); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPlayerController.ObjectiveAnnouncementInfo")()); }
 		@property final auto ref
 		{
-			ScriptString AnnouncementText() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-			SoundNodeWave AnnouncementSound() { return *cast(SoundNodeWave*)(cast(size_t)&this + 0); }
+			ScriptString AnnouncementText() { mixin(MGPS!(ScriptString, 4)()); }
+			SoundNodeWave AnnouncementSound() { mixin(MGPS!(SoundNodeWave, 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) PotentiallyHiddenActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 1940); }
-			float PulseTimer() { return *cast(float*)(cast(size_t)cast(void*)this + 1956); }
-			float VehicleCheckRadiusScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 1952); }
-			PostProcessVolume.PostProcessSettings PostProcessModifier() { return *cast(PostProcessVolume.PostProcessSettings*)(cast(size_t)cast(void*)this + 1720); }
-			PostProcessVolume.PostProcessSettings CamOverridePostProcess() { return *cast(PostProcessVolume.PostProcessSettings*)(cast(size_t)cast(void*)this + 1500); }
-			Rotator ShakeRot() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 1488); }
-			Vector ShakeOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1476); }
-			UDKEmitCameraEffect CameraEffect() { return *cast(UDKEmitCameraEffect*)(cast(size_t)cast(void*)this + 1468); }
-			CameraAnimInst CameraAnimPlayer() { return *cast(CameraAnimInst*)(cast(size_t)cast(void*)this + 1464); }
+			ScriptArray!(Actor) PotentiallyHiddenActors() { mixin(MGPC!(ScriptArray!(Actor), 1940)()); }
+			float PulseTimer() { mixin(MGPC!(float, 1956)()); }
+			float VehicleCheckRadiusScaling() { mixin(MGPC!(float, 1952)()); }
+			PostProcessVolume.PostProcessSettings PostProcessModifier() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 1720)()); }
+			PostProcessVolume.PostProcessSettings CamOverridePostProcess() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 1500)()); }
+			Rotator ShakeRot() { mixin(MGPC!(Rotator, 1488)()); }
+			Vector ShakeOffset() { mixin(MGPC!(Vector, 1476)()); }
+			UDKEmitCameraEffect CameraEffect() { mixin(MGPC!(UDKEmitCameraEffect, 1468)()); }
+			CameraAnimInst CameraAnimPlayer() { mixin(MGPC!(CameraAnimInst, 1464)()); }
 		}
-		bool bUsePhysicsRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x10) != 0; }
-		bool bUsePhysicsRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x10; } return val; }
-		bool bPulseTeamColor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x8) != 0; }
-		bool bPulseTeamColor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x8; } return val; }
-		bool bConsolePlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x4) != 0; }
-		bool bConsolePlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x4; } return val; }
-		bool bAcuteHearing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x2) != 0; }
-		bool bAcuteHearing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x2; } return val; }
-		bool bDedicatedServerSpectator() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x1) != 0; }
-		bool bDedicatedServerSpectator(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x1; } return val; }
+		bool bUsePhysicsRotation() { mixin(MGBPC!(1472, 0x10)()); }
+		bool bUsePhysicsRotation(bool val) { mixin(MSBPC!(1472, 0x10)()); }
+		bool bPulseTeamColor() { mixin(MGBPC!(1472, 0x8)()); }
+		bool bPulseTeamColor(bool val) { mixin(MSBPC!(1472, 0x8)()); }
+		bool bConsolePlayer() { mixin(MGBPC!(1472, 0x4)()); }
+		bool bConsolePlayer(bool val) { mixin(MSBPC!(1472, 0x4)()); }
+		bool bAcuteHearing() { mixin(MGBPC!(1472, 0x2)()); }
+		bool bAcuteHearing(bool val) { mixin(MSBPC!(1472, 0x2)()); }
+		bool bDedicatedServerSpectator() { mixin(MGBPC!(1472, 0x1)()); }
+		bool bDedicatedServerSpectator(bool val) { mixin(MSBPC!(1472, 0x1)()); }
 	}
 final:
 	void SetGamma(float GammaValue)
@@ -135,13 +136,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCameraEffect, cast(void*)0, cast(void*)0);
 	}
-	Pawn GetTargetAdhesionFrictionTarget(float MaxDistance, Vector* CamLoc, Rotator* CamRot)
+	Pawn GetTargetAdhesionFrictionTarget(float MaxDistance, ref const Vector CamLoc, ref const Rotator CamRot)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(float*)params.ptr = MaxDistance;
-		*cast(Vector*)&params[4] = *CamLoc;
-		*cast(Rotator*)&params[16] = *CamRot;
+		*cast(Vector*)&params[4] = CamLoc;
+		*cast(Rotator*)&params[16] = CamRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetAdhesionFrictionTarget, params.ptr, cast(void*)0);
 		*CamLoc = *cast(Vector*)&params[4];
 		*CamRot = *cast(Rotator*)&params[16];

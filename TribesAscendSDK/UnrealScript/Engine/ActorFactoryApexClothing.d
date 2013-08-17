@@ -1,6 +1,7 @@
 module UnrealScript.Engine.ActorFactoryApexClothing;
 
 import ScriptClasses;
+import UnrealScript.Helpers;
 import UnrealScript.Engine.ApexClothingAsset;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.ActorFactorySkeletalMesh;
@@ -9,13 +10,13 @@ extern(C++) interface ActorFactoryApexClothing : ActorFactorySkeletalMesh
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryApexClothing")); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryApexClothing")()); }
 	private static __gshared ActorFactoryApexClothing mDefaultProperties;
-	@property final static ActorFactoryApexClothing DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactoryApexClothing)("ActorFactoryApexClothing Engine.Default__ActorFactoryApexClothing")); }
+	@property final static ActorFactoryApexClothing DefaultProperties() { mixin(MGDPC!(ActorFactoryApexClothing, "ActorFactoryApexClothing Engine.Default__ActorFactoryApexClothing")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ApexClothingAsset) ClothingAssets() { return *cast(ScriptArray!(ApexClothingAsset)*)(cast(size_t)cast(void*)this + 108); }
-		PrimitiveComponent.RBCollisionChannelContainer ClothingRBCollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 124); }
-		PrimitiveComponent.ERBCollisionChannel ClothingRBChannel() { return *cast(PrimitiveComponent.ERBCollisionChannel*)(cast(size_t)cast(void*)this + 120); }
+		ScriptArray!(ApexClothingAsset) ClothingAssets() { mixin(MGPC!(ScriptArray!(ApexClothingAsset), 108)()); }
+		PrimitiveComponent.RBCollisionChannelContainer ClothingRBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 124)()); }
+		PrimitiveComponent.ERBCollisionChannel ClothingRBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 120)()); }
 	}
 }
