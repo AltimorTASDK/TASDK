@@ -497,13 +497,13 @@ final class PropertyDescriptor : Descriptor
 					wtr.Write("@property final ");
 				if (ParentIsStruct)
 				{
-					wtr.WriteLine("bool %s() { mixin(MGBPS!(%u, 0x%X)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("bool %s(bool val) { mixin(MSBPS!(%u, 0x%x)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { mixin(MGBPS(%u, 0x%X)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { mixin(MSBPS(%u, 0x%x)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				else
 				{
-					wtr.WriteLine("bool %s() { mixin(MGBPC!(%u, 0x%X)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("bool %s(bool val) { mixin(MSBPC!(%u, 0x%X)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { mixin(MGBPC(%u, 0x%X)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { mixin(MSBPC(%u, 0x%X)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				break;
 
@@ -520,9 +520,9 @@ final class PropertyDescriptor : Descriptor
 				if (alone)
 					wtr.Write("@property final auto ref ");
 				if (ParentIsStruct)
-					wtr.WriteLine(`%s %s() { mixin(MGPS!("%s", %u)()); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine(`%s %s() { mixin(MGPS("%s", %u)); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				else
-					wtr.WriteLine(`%s %s() { mixin(MGPC!("%s", %u)()); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine(`%s %s() { mixin(MGPC("%s", %u)); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 				
 			case ScriptPropertyType.Component:
@@ -705,7 +705,7 @@ final class FunctionDescriptor : Descriptor
 	{
 		if (alone)
 			wtr.Write("public @property static final ");
-		wtr.WriteLine(`ScriptFunction %s() { mixin(MGF!("m%s", "%s")()); }`, InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetFullName());
+		wtr.WriteLine(`ScriptFunction %s() { mixin(MGF("m%s", "%s")); }`, InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetFullName());
 	}
 
 	void Write(IndentedStreamWriter wtr, bool alone)
@@ -996,10 +996,10 @@ final class ClassDescriptor : NestableContainer
 		wtr.Indent++;
 		
 		wtr.WriteLine("private static __gshared ScriptClass mStaticClass;");
-		wtr.WriteLine(`@property final static ScriptClass StaticClass() { mixin(MGSCC!("%s")()); }`, InnerClass.GetFullName());
+		wtr.WriteLine(`@property final static ScriptClass StaticClass() { mixin(MGSCC("%s")); }`, InnerClass.GetFullName());
 
 		wtr.WriteLine("private static __gshared %s mDefaultProperties;", EscapeName(InnerClass.GetName()));
-		wtr.WriteLine(`@property final static %s DefaultProperties() { mixin(MGDPC!(%s, "%s")()); }`, EscapeName(InnerClass.GetName()), EscapeName(InnerClass.GetName()), GetDefaultFullName(InnerClass));
+		wtr.WriteLine(`@property final static %s DefaultProperties() { mixin(MGDPC("%s", "%s")); }`, EscapeName(InnerClass.GetName()), EscapeName(InnerClass.GetName()), GetDefaultFullName(InnerClass));
 		
 		WriteChildren(wtr);
 
@@ -1063,7 +1063,7 @@ final class StructDescriptor : NestableContainer
 		wtr.Indent++;
 
 		wtr.WriteLine("private static __gshared ScriptStruct mStaticClass;");
-		wtr.WriteLine(`@property final static ScriptStruct StaticClass() { mixin(MGSCS!("%s")()); }`, InnerStruct.GetFullName());
+		wtr.WriteLine(`@property final static ScriptStruct StaticClass() { mixin(MGSCS("%s")); }`, InnerStruct.GetFullName());
 
 		WriteBody(wtr);
 		
@@ -1103,7 +1103,7 @@ final class StateDescriptor : NestableContainer
 		wtr.Indent++;
 
 		wtr.WriteLine("private static __gshared ScriptState mStaticClass;");
-		wtr.WriteLine(`@property final static ScriptState StaticClass() { mixin(MGSCSA!("%s")()); }`, InnerState.GetFullName());
+		wtr.WriteLine(`@property final static ScriptState StaticClass() { mixin(MGSCSA("%s")); }`, InnerState.GetFullName());
 
 		// TODO: Add a way to hook the arbitrary code that can be executed in a state (See UTGame.UTPlayerController.Dead for an example)
 
