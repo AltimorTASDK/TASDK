@@ -564,6 +564,7 @@ final class FunctionArgumentDescriptor : Descriptor
 			wtr.Write("const ");
 
 		wtr.Write("%s%s %s", GetTypeName(InnerProperty), InnerProperty.IsOptionalParameter ? "*" : "", ArgumentName);
+		// TODO: Optional parameters are very very fun!
 		if (InnerProperty.IsOptionalParameter)
 			wtr.Write(" = null");
 	}
@@ -612,7 +613,9 @@ final class FunctionArgumentDescriptor : Descriptor
 
 	void WriteLoadFromBuffer(IndentedStreamWriter wtr, string bufName)
 	{
-		if (InnerProperty.IsOutParameter)
+		// If an out parameter is constant, then it's being
+		// used purely as an input value, not an output value.
+		if (InnerProperty.IsOutParameter && !InnerProperty.IsConstant)
 		{
 			string tpName = GetTypeName(InnerProperty);
 			if (InnerProperty.IsOptionalParameter)
