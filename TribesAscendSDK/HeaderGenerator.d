@@ -573,42 +573,40 @@ final class FunctionArgumentDescriptor : Descriptor
 	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
 	{
 		string tpName = GetTypeName(InnerProperty);
+
 		if (InnerProperty.IsOptionalParameter)
 		{
 			wtr.WriteLine("if (%s !is null)", ArgumentName);
 			wtr.Indent++;
-			if (InnerProperty.Offset != 0)
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[%u] = *%s;", bufName, InnerProperty.Offset, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)&%s[%u] = *%s;", tpName, bufName, InnerProperty.Offset, ArgumentName);
-			}
+		}
+
+		if (InnerProperty.Offset != 0)
+		{
+			if (tpName == "ubyte")
+				wtr.Write("%s[%u]", bufName, InnerProperty.Offset);
 			else
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[0] = *%s;", bufName, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)%s.ptr = *%s;", tpName, bufName, ArgumentName);
-			}
+				wtr.Write("*cast(%s*)&%s[%u]", tpName, bufName, InnerProperty.Offset);
+		}
+		else
+		{
+			if (tpName == "ubyte")
+				wtr.Write("%s[0]", bufName);
+			else
+				wtr.Write("*cast(%s*)%s.ptr", tpName, bufName);
+		}
+
+		wtr.Write(" = ");
+		if (InnerProperty.IsConstant)
+			wtr.Write("cast(%s)", tpName);
+
+		if (InnerProperty.IsOptionalParameter)
+		{
+			wtr.WriteLine("*%s;", ArgumentName);
 			wtr.Indent--;
 		}
 		else
 		{
-			if (InnerProperty.Offset != 0)
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, ArgumentName);
-			}
-			else
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[0] = %s;", bufName, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, ArgumentName);
-			}
+			wtr.WriteLine("%s;", ArgumentName);
 		}
 	}
 
@@ -623,39 +621,32 @@ final class FunctionArgumentDescriptor : Descriptor
 			{
 				wtr.WriteLine("if (%s !is null)", ArgumentName);
 				wtr.Indent++;
-				if (InnerProperty.Offset != 0)
-				{
-					if (tpName == "ubyte")
-						wtr.WriteLine("*%s = %s[%u];", ArgumentName, bufName, InnerProperty.Offset);
-					else
-						wtr.WriteLine("*%s = *cast(%s*)&%s[%u];", ArgumentName, tpName, bufName, InnerProperty.Offset);
-				}
-				else
-				{
-					if (tpName == "ubyte")
-						wtr.WriteLine("*%s = %s[0];", ArgumentName, bufName);
-					else
-						wtr.WriteLine("*%s = *cast(%s*)%s.ptr;", ArgumentName, tpName, bufName);
-				}
-				wtr.Indent--;
+
+				wtr.Write("*%s");
 			}
 			else
 			{
-				if (InnerProperty.Offset != 0)
-				{
-					if (tpName == "ubyte")
-						wtr.WriteLine("%s = %s[%u];", ArgumentName, bufName, InnerProperty.Offset);
-					else
-						wtr.WriteLine("%s = *cast(%s*)&%s[%u];", ArgumentName, tpName, bufName, InnerProperty.Offset);
-				}
-				else
-				{
-					if (tpName == "ubyte")
-						wtr.WriteLine("%s = %s[0];", ArgumentName, bufName);
-					else
-						wtr.WriteLine("%s = *cast(%s*)%s.ptr;", ArgumentName, tpName, bufName);
-				}
+				wtr.Write("%s");
 			}
+
+			wtr.Write(" = ");
+
+			if (InnerProperty.Offset != 0)
+			{
+				if (tpName == "ubyte")
+					wtr.Write("%s[%u];", bufName, InnerProperty.Offset);
+				else
+					wtr.Write("*cast(%s*)&%s[%u];", tpName, bufName, InnerProperty.Offset);
+			}
+			else
+			{
+				if (tpName == "ubyte")
+					wtr.Write("%s[0];", bufName);
+				else
+					wtr.Write("*cast(%s*)%s.ptr;", tpName, bufName);
+			}
+			if (InnerProperty.IsOptionalParameter)
+				wtr.Indent--;
 		}
 	}
 }
