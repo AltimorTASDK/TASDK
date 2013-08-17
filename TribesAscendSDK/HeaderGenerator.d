@@ -1,5 +1,7 @@
 module HeaderGenerator;
 
+private import std.string;
+private import std.regex;
 private import Config;
 private import IndentedStreamWriter;
 private import ScriptClasses;
@@ -170,6 +172,7 @@ immutable(string) EscapeName(string name)
 			return name;
 	}
 }
+
 final class DependencyManager
 {
 	ScriptObject[string] RequiredImports;
@@ -244,6 +247,7 @@ final class DependencyManager
 	void Write(IndentedStreamWriter wtr)
 	{
 		wtr.WriteLine("import ScriptClasses;");
+		wtr.WriteLine("import UnrealScript.Helpers;");
 		// TODO: Sort these before writing them out.
 		foreach (ri; RequiredImports.byValue())
 			wtr.WriteLine("import %s;", GetImportName(ri));
@@ -333,12 +337,64 @@ enum DescriptorType
 {
 	Class,
 	Constant,
+	Documenation,
 	Enum,
 	Function,
 	FunctionArgument,
 	Property,
 	State,
 	Struct,
+}
+
+final class DocumenationDescriptor : Descriptor
+{
+	@property final override DescriptorType Type() { return DescriptorType.Documenation; }
+
+	struct ParameterDocumentationDescriptor
+	{
+		string ParameterName;
+		string Summary;
+	}
+
+	@property bool HasDocumentation() { return Summary !is null || ParameterDocumentation.length > 0 || ReturnDocumentation !is null; }
+	string Summary;
+	ParameterDocumentationDescriptor[] ParameterDocumentation;
+	string ReturnDocumentation;
+	this(string docString)
+	{
+		if (startsWith(docString, "/**"))
+			docString = docString[3..docString.length];
+		if (endsWith(docString, "*/"))
+			docString = docString[0..(docString.length - 3)];
+		Summary = docString;
+		// TODO: Extract parameters, and return documentation.
+		//string[] lns = splitLines(docString);
+	}
+
+	// Documentation doesn't have any types to require.
+	override void RequireDependencies(DependencyManager mgr) { }
+	override void Write(IndentedStreamWriter wtr)
+	{
+		if (HasDocumentation)
+		{
+			wtr.WriteLine("/**");
+			if (Summary !is null)
+			{
+				wtr.WriteLine(" * %s", Summary);
+				wtr.WriteLine(" * ");
+			}
+			if (ParameterDocumentation.length > 0)
+			{
+				wtr.WriteLine(" * Params:");
+				foreach (pd; ParameterDocumentation)
+					wtr.WriteLine(" *\t\t%s = %s", pd.ParameterName, pd.Summary);
+				wtr.WriteLine(" * ");
+			}
+			if (ReturnDocumentation !is null)
+				wtr.WriteLine(" * Returns: %s", ReturnDocumentation);
+			wtr.WriteLine(" */");
+		}
+	}
 }
 
 final class EnumDescriptor : Descriptor
@@ -464,9 +520,9 @@ final class PropertyDescriptor : Descriptor
 				if (alone)
 					wtr.Write("auto ref ");
 				if (ParentIsStruct)
-					wtr.WriteLine("%s %s() { return *cast(%s*)(cast(size_t)&this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine("%s %s() { mixin(MGPS!(%s, %u)()); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				else
-					wtr.WriteLine("%s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine("%s %s() { mixin(MGPC!(%s, %u)()); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 				
 			case ScriptPropertyType.Component:
@@ -606,7 +662,7 @@ final class FunctionDescriptor : Descriptor
 	{
 		if (alone)
 			wtr.Write("public @property static final ");
-		wtr.WriteLine("ScriptFunction %s() { return m%s ? m%s : (m%s = ScriptObject.Find!(ScriptFunction)(\"%s\")); }", InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetFullName());
+		wtr.WriteLine(`ScriptFunction %s() { mixin(MGF!("m%s", "%s")()); }`, InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetFullName());
 	}
 
 	void Write(IndentedStreamWriter wtr, bool alone)
@@ -897,10 +953,10 @@ final class ClassDescriptor : NestableContainer
 		wtr.Indent++;
 		
 		wtr.WriteLine("private static __gshared ScriptClass mStaticClass;");
-		wtr.WriteLine("@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)(\"%s\")); }", InnerClass.GetFullName());
+		wtr.WriteLine(`@property final static ScriptClass StaticClass() { mixin(MGSCC!("%s")()); }`, InnerClass.GetFullName());
 
 		wtr.WriteLine("private static __gshared %s mDefaultProperties;", EscapeName(InnerClass.GetName()));
-		wtr.WriteLine("@property final static %s DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(%s)(\"%s\")); }", EscapeName(InnerClass.GetName()), EscapeName(InnerClass.GetName()), GetDefaultFullName(InnerClass));
+		wtr.WriteLine(`@property final static %s DefaultProperties() { mixin(MGDPC!(%s, "%s")()); }`, EscapeName(InnerClass.GetName()), EscapeName(InnerClass.GetName()), GetDefaultFullName(InnerClass));
 		
 		WriteChildren(wtr);
 
@@ -964,7 +1020,7 @@ final class StructDescriptor : NestableContainer
 		wtr.Indent++;
 
 		wtr.WriteLine("private static __gshared ScriptStruct mStaticClass;");
-		wtr.WriteLine("@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)(\"%s\")); }", InnerStruct.GetFullName());
+		wtr.WriteLine(`@property final static ScriptStruct StaticClass() { mixin(MGSCS!("%s")()); }`, InnerStruct.GetFullName());
 
 		WriteBody(wtr);
 		
