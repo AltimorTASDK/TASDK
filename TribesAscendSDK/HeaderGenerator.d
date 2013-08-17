@@ -497,13 +497,13 @@ final class PropertyDescriptor : Descriptor
 			case ScriptPropertyType.Boolean:
 				if (ParentIsStruct)
 				{
-					wtr.WriteLine("bool %s() { return (*cast(uint*)(cast(size_t)&this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)&this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { mixin(MGBPS!(%u, 0x%X)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { mixin(MSBPS!(%u, 0x%x)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				else
 				{
-					wtr.WriteLine("bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { mixin(MGBPC!(%u, 0x%X)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { mixin(MSBPC!(%u, 0x%X)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				break;
 
@@ -1060,7 +1060,7 @@ final class StateDescriptor : NestableContainer
 		wtr.Indent++;
 
 		wtr.WriteLine("private static __gshared ScriptState mStaticClass;");
-		wtr.WriteLine("@property final static ScriptState StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptState)(\"%s\")); }", InnerState.GetFullName());
+		wtr.WriteLine(`@property final static ScriptState StaticClass() { mixin(MGSCSA!("%s")()); }`, InnerState.GetFullName());
 
 		// TODO: Add a way to hook the arbitrary code that can be executed in a state (See UTGame.UTPlayerController.Dead for an example)
 
