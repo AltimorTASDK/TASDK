@@ -520,9 +520,9 @@ final class PropertyDescriptor : Descriptor
 				if (alone)
 					wtr.Write("@property final auto ref ");
 				if (ParentIsStruct)
-					wtr.WriteLine("%s %s() { mixin(MGPS!(%s, %u)()); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine(`%s %s() { mixin(MGPS!("%s", %u)()); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				else
-					wtr.WriteLine("%s %s() { mixin(MGPC!(%s, %u)()); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine(`%s %s() { mixin(MGPC!("%s", %u)()); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 				
 			case ScriptPropertyType.Component:
@@ -622,11 +622,11 @@ final class FunctionArgumentDescriptor : Descriptor
 				wtr.WriteLine("if (%s !is null)", ArgumentName);
 				wtr.Indent++;
 
-				wtr.Write("*%s");
+				wtr.Write("*%s", ArgumentName);
 			}
 			else
 			{
-				wtr.Write("%s");
+				wtr.Write("%s", ArgumentName);
 			}
 
 			wtr.Write(" = ");
@@ -634,17 +634,18 @@ final class FunctionArgumentDescriptor : Descriptor
 			if (InnerProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.Write("%s[%u];", bufName, InnerProperty.Offset);
+					wtr.Write("%s[%u]", bufName, InnerProperty.Offset);
 				else
-					wtr.Write("*cast(%s*)&%s[%u];", tpName, bufName, InnerProperty.Offset);
+					wtr.Write("*cast(%s*)&%s[%u]", tpName, bufName, InnerProperty.Offset);
 			}
 			else
 			{
 				if (tpName == "ubyte")
-					wtr.Write("%s[0];", bufName);
+					wtr.Write("%s[0]", bufName);
 				else
-					wtr.Write("*cast(%s*)%s.ptr;", tpName, bufName);
+					wtr.Write("*cast(%s*)%s.ptr", tpName, bufName);
 			}
+			wtr.WriteLine(";");
 			if (InnerProperty.IsOptionalParameter)
 				wtr.Indent--;
 		}

@@ -14,17 +14,17 @@ string MGF(string fieldName, string fullName)()
 /**
  * A mixin for getting a property of a struct.
  */
-string MGPS(T, int offset)()
+string MGPS(string typeName, int offset)()
 {
-	return "return *cast(" ~ T.stringof ~ "*)(cast(size_t)&this + " ~ to!string(offset) ~ ");";
+	return "return *cast(" ~ typeName ~ "*)(cast(size_t)&this + " ~ to!string(offset) ~ ");";
 }
 
 /**
  * A mixin for getting a property of a class.
  */
-string MGPC(T, int offset)()
+string MGPC(string typeName, int offset)()
 {
-	return "return *cast(" ~ T.stringof ~ "*)(cast(size_t)cast(void*)this + " ~ to!string(offset) ~ ");";
+	return "return *cast(" ~ typeName ~ "*)(cast(size_t)cast(void*)this + " ~ to!string(offset) ~ ");";
 }
 
 /**
