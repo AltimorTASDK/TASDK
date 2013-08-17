@@ -561,7 +561,8 @@ final class FunctionArgumentDescriptor : Descriptor
 		if (InnerProperty.IsOutParameter && !InnerProperty.IsOptionalParameter)
 			wtr.Write("ref ");
 		if (InnerProperty.IsConstant)
-			wtr.Write("const ");
+			wtr.Write("in ");
+
 
 		wtr.Write("%s%s %s", GetTypeName(InnerProperty), InnerProperty.IsOptionalParameter ? "*" : "", ArgumentName);
 		// TODO: Optional parameters are very very fun!
