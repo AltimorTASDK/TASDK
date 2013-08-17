@@ -10,9 +10,9 @@ extern(C++) interface GFxUDKFrontEnd_Dialog : GFxUDKFrontEnd_View
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_Dialog")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxUDKFrontEnd_Dialog")); }
 	private static __gshared GFxUDKFrontEnd_Dialog mDefaultProperties;
-	@property final static GFxUDKFrontEnd_Dialog DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_Dialog, "GFxUDKFrontEnd_Dialog UTGame.Default__GFxUDKFrontEnd_Dialog")()); }
+	@property final static GFxUDKFrontEnd_Dialog DefaultProperties() { mixin(MGDPC("GFxUDKFrontEnd_Dialog", "GFxUDKFrontEnd_Dialog UTGame.Default__GFxUDKFrontEnd_Dialog")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,26 +30,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AcceptDelegate() { mixin(MGF!("mAcceptDelegate", "Function UTGame.GFxUDKFrontEnd_Dialog.AcceptDelegate")()); }
-			ScriptFunction OnViewClosed() { mixin(MGF!("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_Dialog.OnViewClosed")()); }
-			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_Dialog.DisableSubComponents")()); }
-			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_Dialog.OnTopMostView")()); }
-			ScriptFunction PlayOpenAnimation() { mixin(MGF!("mPlayOpenAnimation", "Function UTGame.GFxUDKFrontEnd_Dialog.PlayOpenAnimation")()); }
-			ScriptFunction PlayCloseAnimation() { mixin(MGF!("mPlayCloseAnimation", "Function UTGame.GFxUDKFrontEnd_Dialog.PlayCloseAnimation")()); }
-			ScriptFunction SetBackButton() { mixin(MGF!("mSetBackButton", "Function UTGame.GFxUDKFrontEnd_Dialog.SetBackButton")()); }
-			ScriptFunction SetBackButton_OnPress() { mixin(MGF!("mSetBackButton_OnPress", "Function UTGame.GFxUDKFrontEnd_Dialog.SetBackButton_OnPress")()); }
-			ScriptFunction Select_Back() { mixin(MGF!("mSelect_Back", "Function UTGame.GFxUDKFrontEnd_Dialog.Select_Back")()); }
-			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_Dialog.WidgetInitialized")()); }
+			ScriptFunction AcceptDelegate() { mixin(MGF("mAcceptDelegate", "Function UTGame.GFxUDKFrontEnd_Dialog.AcceptDelegate")); }
+			ScriptFunction OnViewClosed() { mixin(MGF("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_Dialog.OnViewClosed")); }
+			ScriptFunction DisableSubComponents() { mixin(MGF("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_Dialog.DisableSubComponents")); }
+			ScriptFunction OnTopMostView() { mixin(MGF("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_Dialog.OnTopMostView")); }
+			ScriptFunction PlayOpenAnimation() { mixin(MGF("mPlayOpenAnimation", "Function UTGame.GFxUDKFrontEnd_Dialog.PlayOpenAnimation")); }
+			ScriptFunction PlayCloseAnimation() { mixin(MGF("mPlayCloseAnimation", "Function UTGame.GFxUDKFrontEnd_Dialog.PlayCloseAnimation")); }
+			ScriptFunction SetBackButton() { mixin(MGF("mSetBackButton", "Function UTGame.GFxUDKFrontEnd_Dialog.SetBackButton")); }
+			ScriptFunction SetBackButton_OnPress() { mixin(MGF("mSetBackButton_OnPress", "Function UTGame.GFxUDKFrontEnd_Dialog.SetBackButton_OnPress")); }
+			ScriptFunction Select_Back() { mixin(MGF("mSelect_Back", "Function UTGame.GFxUDKFrontEnd_Dialog.Select_Back")); }
+			ScriptFunction WidgetInitialized() { mixin(MGF("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_Dialog.WidgetInitialized")); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__AcceptDelegate__Delegate'!
-		GFxClikWidget AcceptBtn() { mixin(MGPC!("GFxClikWidget", 152)()); }
-		GFxClikWidget BackBtn() { mixin(MGPC!("GFxClikWidget", 148)()); }
-		GFxObject InfoTxt() { mixin(MGPC!("GFxObject", 144)()); }
-		GFxObject TitleTxt() { mixin(MGPC!("GFxObject", 140)()); }
-		GFxObject DialogMC() { mixin(MGPC!("GFxObject", 136)()); }
+		GFxClikWidget AcceptBtn() { mixin(MGPC("GFxClikWidget", 152)); }
+		GFxClikWidget BackBtn() { mixin(MGPC("GFxClikWidget", 148)); }
+		GFxObject InfoTxt() { mixin(MGPC("GFxObject", 144)); }
+		GFxObject TitleTxt() { mixin(MGPC("GFxObject", 140)); }
+		GFxObject DialogMC() { mixin(MGPC("GFxObject", 136)); }
 	}
 final:
 	void AcceptDelegate(GFxClikWidget.EventData ev)

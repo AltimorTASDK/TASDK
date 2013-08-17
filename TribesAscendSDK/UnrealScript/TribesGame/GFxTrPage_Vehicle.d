@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_Vehicle : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Vehicle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Vehicle")); }
 	private static __gshared GFxTrPage_Vehicle mDefaultProperties;
-	@property final static GFxTrPage_Vehicle DefaultProperties() { mixin(MGDPC!(GFxTrPage_Vehicle, "GFxTrPage_Vehicle TribesGame.Default__GFxTrPage_Vehicle")()); }
+	@property final static GFxTrPage_Vehicle DefaultProperties() { mixin(MGDPC("GFxTrPage_Vehicle", "GFxTrPage_Vehicle TribesGame.Default__GFxTrPage_Vehicle")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,15 +29,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Vehicle.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Vehicle.SpecialAction")()); }
-			ScriptFunction ClearActions() { mixin(MGF!("mClearActions", "Function TribesGame.GFxTrPage_Vehicle.ClearActions")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Vehicle.TakeAction")()); }
-			ScriptFunction AddOption() { mixin(MGF!("mAddOption", "Function TribesGame.GFxTrPage_Vehicle.AddOption")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Vehicle.FillData")()); }
-			ScriptFunction FillOptions() { mixin(MGF!("mFillOptions", "Function TribesGame.GFxTrPage_Vehicle.FillOptions")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Vehicle.FillOption")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Vehicle.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_Vehicle.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_Vehicle.SpecialAction")); }
+			ScriptFunction ClearActions() { mixin(MGF("mClearActions", "Function TribesGame.GFxTrPage_Vehicle.ClearActions")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_Vehicle.TakeAction")); }
+			ScriptFunction AddOption() { mixin(MGF("mAddOption", "Function TribesGame.GFxTrPage_Vehicle.AddOption")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_Vehicle.FillData")); }
+			ScriptFunction FillOptions() { mixin(MGF("mFillOptions", "Function TribesGame.GFxTrPage_Vehicle.FillOptions")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_Vehicle.FillOption")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_Vehicle.ShowModel")); }
 		}
 	}
 	struct VehicleOption
@@ -45,21 +45,21 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrPage_Vehicle.VehicleOption")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.GFxTrPage_Vehicle.VehicleOption")); }
 		@property final auto ref
 		{
-			ScriptString DisplayName() { mixin(MGPS!("ScriptString", 28)()); }
-			ScriptString ClassName() { mixin(MGPS!("ScriptString", 16)()); }
-			int MaxCount() { mixin(MGPS!("int", 12)()); }
-			int Count() { mixin(MGPS!("int", 8)()); }
-			int Icon() { mixin(MGPS!("int", 4)()); }
-			int Cost() { mixin(MGPS!("int", 0)()); }
+			ScriptString DisplayName() { mixin(MGPS("ScriptString", 28)); }
+			ScriptString ClassName() { mixin(MGPS("ScriptString", 16)); }
+			int MaxCount() { mixin(MGPS("int", 12)); }
+			int Count() { mixin(MGPS("int", 8)); }
+			int Icon() { mixin(MGPS("int", 4)); }
+			int Cost() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		int PlayerCredits() { mixin(MGPC!("int", 356)()); }
-		ScriptArray!(GFxTrPage_Vehicle.VehicleOption) VehicleOptions() { mixin(MGPC!("ScriptArray!(GFxTrPage_Vehicle.VehicleOption)", 360)()); }
+		int PlayerCredits() { mixin(MGPC("int", 356)); }
+		ScriptArray!(GFxTrPage_Vehicle.VehicleOption) VehicleOptions() { mixin(MGPC("ScriptArray!(GFxTrPage_Vehicle.VehicleOption)", 360)); }
 	}
 final:
 	void Initialize()

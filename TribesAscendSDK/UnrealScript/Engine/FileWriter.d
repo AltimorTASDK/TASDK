@@ -9,9 +9,9 @@ extern(C++) interface FileWriter : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FileWriter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FileWriter")); }
 	private static __gshared FileWriter mDefaultProperties;
-	@property final static FileWriter DefaultProperties() { mixin(MGDPC!(FileWriter, "FileWriter Engine.Default__FileWriter")()); }
+	@property final static FileWriter DefaultProperties() { mixin(MGDPC("FileWriter", "FileWriter Engine.Default__FileWriter")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OpenFile() { mixin(MGF!("mOpenFile", "Function Engine.FileWriter.OpenFile")()); }
-			ScriptFunction CloseFile() { mixin(MGF!("mCloseFile", "Function Engine.FileWriter.CloseFile")()); }
-			ScriptFunction Logf() { mixin(MGF!("mLogf", "Function Engine.FileWriter.Logf")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.FileWriter.Destroyed")()); }
+			ScriptFunction OpenFile() { mixin(MGF("mOpenFile", "Function Engine.FileWriter.OpenFile")); }
+			ScriptFunction CloseFile() { mixin(MGF("mCloseFile", "Function Engine.FileWriter.CloseFile")); }
+			ScriptFunction Logf() { mixin(MGF("mLogf", "Function Engine.FileWriter.Logf")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.FileWriter.Destroyed")); }
 		}
 	}
 	enum FWFileType : ubyte
@@ -42,14 +42,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ArchivePtr() { mixin(MGPC!("UObject.Pointer", 476)()); }
-			ScriptString Filename() { mixin(MGPC!("ScriptString", 480)()); }
-			FileWriter.FWFileType FileType() { mixin(MGPC!("FileWriter.FWFileType", 492)()); }
+			UObject.Pointer ArchivePtr() { mixin(MGPC("UObject.Pointer", 476)); }
+			ScriptString Filename() { mixin(MGPC("ScriptString", 480)); }
+			FileWriter.FWFileType FileType() { mixin(MGPC("FileWriter.FWFileType", 492)); }
 		}
-		bool bFlushEachWrite() { mixin(MGBPC!(496, 0x1)()); }
-		bool bFlushEachWrite(bool val) { mixin(MSBPC!(496, 0x1)()); }
-		bool bWantsAsyncWrites() { mixin(MGBPC!(496, 0x2)()); }
-		bool bWantsAsyncWrites(bool val) { mixin(MSBPC!(496, 0x2)()); }
+		bool bFlushEachWrite() { mixin(MGBPC(496, 0x1)); }
+		bool bFlushEachWrite(bool val) { mixin(MSBPC(496, 0x1)); }
+		bool bWantsAsyncWrites() { mixin(MGBPC(496, 0x2)); }
+		bool bWantsAsyncWrites(bool val) { mixin(MSBPC(496, 0x2)); }
 	}
 final:
 	bool OpenFile(ScriptString InFilename, FileWriter.FWFileType* InFileType = null, ScriptString* InExtension = null, bool* bUnique = null, bool* bIncludeTimeStamp = null)

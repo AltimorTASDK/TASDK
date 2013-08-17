@@ -8,7 +8,7 @@ extern(C++) interface InterpTrackFloatPropHelper : InterpTrackHelper
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.InterpTrackFloatPropHelper")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.InterpTrackFloatPropHelper")); }
 	private static __gshared InterpTrackFloatPropHelper mDefaultProperties;
-	@property final static InterpTrackFloatPropHelper DefaultProperties() { mixin(MGDPC!(InterpTrackFloatPropHelper, "InterpTrackFloatPropHelper UnrealEd.Default__InterpTrackFloatPropHelper")()); }
+	@property final static InterpTrackFloatPropHelper DefaultProperties() { mixin(MGDPC("InterpTrackFloatPropHelper", "InterpTrackFloatPropHelper UnrealEd.Default__InterpTrackFloatPropHelper")); }
 }

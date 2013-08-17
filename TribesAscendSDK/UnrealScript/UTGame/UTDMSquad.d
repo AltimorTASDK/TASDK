@@ -13,9 +13,9 @@ extern(C++) interface UTDMSquad : UTSquadAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDMSquad")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDMSquad")); }
 	private static __gshared UTDMSquad mDefaultProperties;
-	@property final static UTDMSquad DefaultProperties() { mixin(MGDPC!(UTDMSquad, "UTDMSquad UTGame.Default__UTDMSquad")()); }
+	@property final static UTDMSquad DefaultProperties() { mixin(MGDPC("UTDMSquad", "UTDMSquad UTGame.Default__UTDMSquad")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,21 +38,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTDMSquad.DisplayDebug")()); }
-			ScriptFunction IsDefending() { mixin(MGF!("mIsDefending", "Function UTGame.UTDMSquad.IsDefending")()); }
-			ScriptFunction AddBot() { mixin(MGF!("mAddBot", "Function UTGame.UTDMSquad.AddBot")()); }
-			ScriptFunction RemoveBot() { mixin(MGF!("mRemoveBot", "Function UTGame.UTDMSquad.RemoveBot")()); }
-			ScriptFunction ShouldDeferTo() { mixin(MGF!("mShouldDeferTo", "Function UTGame.UTDMSquad.ShouldDeferTo")()); }
-			ScriptFunction CheckSquadObjectives() { mixin(MGF!("mCheckSquadObjectives", "Function UTGame.UTDMSquad.CheckSquadObjectives")()); }
-			ScriptFunction WaitAtThisPosition() { mixin(MGF!("mWaitAtThisPosition", "Function UTGame.UTDMSquad.WaitAtThisPosition")()); }
-			ScriptFunction NearFormationCenter() { mixin(MGF!("mNearFormationCenter", "Function UTGame.UTDMSquad.NearFormationCenter")()); }
-			ScriptFunction BeDevious() { mixin(MGF!("mBeDevious", "Function UTGame.UTDMSquad.BeDevious")()); }
-			ScriptFunction GetOrders() { mixin(MGF!("mGetOrders", "Function UTGame.UTDMSquad.GetOrders")()); }
-			ScriptFunction SetEnemy() { mixin(MGF!("mSetEnemy", "Function UTGame.UTDMSquad.SetEnemy")()); }
-			ScriptFunction FriendlyToward() { mixin(MGF!("mFriendlyToward", "Function UTGame.UTDMSquad.FriendlyToward")()); }
-			ScriptFunction AllowContinueOnFoot() { mixin(MGF!("mAllowContinueOnFoot", "Function UTGame.UTDMSquad.AllowContinueOnFoot")()); }
-			ScriptFunction VehicleDesireability() { mixin(MGF!("mVehicleDesireability", "Function UTGame.UTDMSquad.VehicleDesireability")()); }
-			ScriptFunction AssignSquadResponsibility() { mixin(MGF!("mAssignSquadResponsibility", "Function UTGame.UTDMSquad.AssignSquadResponsibility")()); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function UTGame.UTDMSquad.DisplayDebug")); }
+			ScriptFunction IsDefending() { mixin(MGF("mIsDefending", "Function UTGame.UTDMSquad.IsDefending")); }
+			ScriptFunction AddBot() { mixin(MGF("mAddBot", "Function UTGame.UTDMSquad.AddBot")); }
+			ScriptFunction RemoveBot() { mixin(MGF("mRemoveBot", "Function UTGame.UTDMSquad.RemoveBot")); }
+			ScriptFunction ShouldDeferTo() { mixin(MGF("mShouldDeferTo", "Function UTGame.UTDMSquad.ShouldDeferTo")); }
+			ScriptFunction CheckSquadObjectives() { mixin(MGF("mCheckSquadObjectives", "Function UTGame.UTDMSquad.CheckSquadObjectives")); }
+			ScriptFunction WaitAtThisPosition() { mixin(MGF("mWaitAtThisPosition", "Function UTGame.UTDMSquad.WaitAtThisPosition")); }
+			ScriptFunction NearFormationCenter() { mixin(MGF("mNearFormationCenter", "Function UTGame.UTDMSquad.NearFormationCenter")); }
+			ScriptFunction BeDevious() { mixin(MGF("mBeDevious", "Function UTGame.UTDMSquad.BeDevious")); }
+			ScriptFunction GetOrders() { mixin(MGF("mGetOrders", "Function UTGame.UTDMSquad.GetOrders")); }
+			ScriptFunction SetEnemy() { mixin(MGF("mSetEnemy", "Function UTGame.UTDMSquad.SetEnemy")); }
+			ScriptFunction FriendlyToward() { mixin(MGF("mFriendlyToward", "Function UTGame.UTDMSquad.FriendlyToward")); }
+			ScriptFunction AllowContinueOnFoot() { mixin(MGF("mAllowContinueOnFoot", "Function UTGame.UTDMSquad.AllowContinueOnFoot")); }
+			ScriptFunction VehicleDesireability() { mixin(MGF("mVehicleDesireability", "Function UTGame.UTDMSquad.VehicleDesireability")); }
+			ScriptFunction AssignSquadResponsibility() { mixin(MGF("mAssignSquadResponsibility", "Function UTGame.UTDMSquad.AssignSquadResponsibility")); }
 		}
 	}
 final:

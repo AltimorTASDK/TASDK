@@ -8,7 +8,7 @@ extern(C++) interface UTRocketLight : UDKExplosionLight
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTRocketLight")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTRocketLight")); }
 	private static __gshared UTRocketLight mDefaultProperties;
-	@property final static UTRocketLight DefaultProperties() { mixin(MGDPC!(UTRocketLight, "UTRocketLight UTGame.Default__UTRocketLight")()); }
+	@property final static UTRocketLight DefaultProperties() { mixin(MGDPC("UTRocketLight", "UTRocketLight UTGame.Default__UTRocketLight")); }
 }

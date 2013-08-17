@@ -13,9 +13,9 @@ extern(C++) interface UTVictoryMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVictoryMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVictoryMessage")); }
 	private static __gshared UTVictoryMessage mDefaultProperties;
-	@property final static UTVictoryMessage DefaultProperties() { mixin(MGDPC!(UTVictoryMessage, "UTVictoryMessage UTGame.Default__UTVictoryMessage")()); }
+	@property final static UTVictoryMessage DefaultProperties() { mixin(MGDPC("UTVictoryMessage", "UTVictoryMessage UTGame.Default__UTVictoryMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,13 +27,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTVictoryMessage.AnnouncementLevel")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVictoryMessage.AnnouncementSound")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVictoryMessage.ClientReceive")()); }
-			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTVictoryMessage.AddAnnouncement")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF("mAnnouncementLevel", "Function UTGame.UTVictoryMessage.AnnouncementLevel")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTVictoryMessage.AnnouncementSound")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTVictoryMessage.ClientReceive")); }
+			ScriptFunction AddAnnouncement() { mixin(MGF("mAddAnnouncement", "Function UTGame.UTVictoryMessage.AddAnnouncement")); }
 		}
 	}
-	@property final auto ref SoundNodeWave VictorySounds() { mixin(MGPC!("SoundNodeWave", 100)()); }
+	@property final auto ref SoundNodeWave VictorySounds() { mixin(MGPC("SoundNodeWave", 100)); }
 final:
 	static ubyte AnnouncementLevel(ubyte MessageIndex)
 	{

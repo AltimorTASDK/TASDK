@@ -8,7 +8,7 @@ extern(C++) interface GeomModifier_Weld : GeomModifier_Edit
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.GeomModifier_Weld")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.GeomModifier_Weld")); }
 	private static __gshared GeomModifier_Weld mDefaultProperties;
-	@property final static GeomModifier_Weld DefaultProperties() { mixin(MGDPC!(GeomModifier_Weld, "GeomModifier_Weld UnrealEd.Default__GeomModifier_Weld")()); }
+	@property final static GeomModifier_Weld DefaultProperties() { mixin(MGDPC("GeomModifier_Weld", "GeomModifier_Weld UnrealEd.Default__GeomModifier_Weld")); }
 }

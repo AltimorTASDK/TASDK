@@ -9,9 +9,9 @@ extern(C++) interface UTWillowWhisp : UTReplicatedEmitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWillowWhisp")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWillowWhisp")); }
 	private static __gshared UTWillowWhisp mDefaultProperties;
-	@property final static UTWillowWhisp DefaultProperties() { mixin(MGDPC!(UTWillowWhisp, "UTWillowWhisp UTGame.Default__UTWillowWhisp")()); }
+	@property final static UTWillowWhisp DefaultProperties() { mixin(MGDPC("UTWillowWhisp", "UTWillowWhisp UTGame.Default__UTWillowWhisp")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTWillowWhisp.PostBeginPlay")()); }
-			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function UTGame.UTWillowWhisp.SetInitialState")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTWillowWhisp.ReplicatedEvent")()); }
-			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function UTGame.UTWillowWhisp.SetTemplate")()); }
-			ScriptFunction StartNextPath() { mixin(MGF!("mStartNextPath", "Function UTGame.UTWillowWhisp.StartNextPath")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTWillowWhisp.PostBeginPlay")); }
+			ScriptFunction SetInitialState() { mixin(MGF("mSetInitialState", "Function UTGame.UTWillowWhisp.SetInitialState")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UTGame.UTWillowWhisp.ReplicatedEvent")); }
+			ScriptFunction SetTemplate() { mixin(MGF("mSetTemplate", "Function UTGame.UTWillowWhisp.SetTemplate")); }
+			ScriptFunction StartNextPath() { mixin(MGF("mStartNextPath", "Function UTGame.UTWillowWhisp.StartNextPath")); }
 		}
 	}
 	static struct Constants
@@ -38,13 +38,13 @@ public extern(D):
 	static struct Pathing
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWillowWhisp.Pathing")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWillowWhisp.Pathing")); }
 	}
 	@property final auto ref
 	{
-		int Position() { mixin(MGPC!("int", 680)()); }
-		int NumPoints() { mixin(MGPC!("int", 676)()); }
-		Vector WayPoints() { mixin(MGPC!("Vector", 496)()); }
+		int Position() { mixin(MGPC("int", 680)); }
+		int NumPoints() { mixin(MGPC("int", 676)); }
+		Vector WayPoints() { mixin(MGPC("Vector", 496)); }
 	}
 final:
 	void PostBeginPlay()

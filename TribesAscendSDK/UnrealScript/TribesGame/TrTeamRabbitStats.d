@@ -11,9 +11,9 @@ extern(C++) interface TrTeamRabbitStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTeamRabbitStats")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrTeamRabbitStats")); }
 	private static __gshared TrTeamRabbitStats mDefaultProperties;
-	@property final static TrTeamRabbitStats DefaultProperties() { mixin(MGDPC!(TrTeamRabbitStats, "TrTeamRabbitStats TribesGame.Default__TrTeamRabbitStats")()); }
+	@property final static TrTeamRabbitStats DefaultProperties() { mixin(MGDPC("TrTeamRabbitStats", "TrTeamRabbitStats TribesGame.Default__TrTeamRabbitStats")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,33 +31,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrTeamRabbitStats.Initialize")()); }
-			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrTeamRabbitStats.Show")()); }
-			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrTeamRabbitStats.Hide")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrTeamRabbitStats.Tick")()); }
-			ScriptFunction UpdateTeam() { mixin(MGF!("mUpdateTeam", "Function TribesGame.TrTeamRabbitStats.UpdateTeam")()); }
-			ScriptFunction UpdateFlagStatus() { mixin(MGF!("mUpdateFlagStatus", "Function TribesGame.TrTeamRabbitStats.UpdateFlagStatus")()); }
-			ScriptFunction UpdateTeamScore() { mixin(MGF!("mUpdateTeamScore", "Function TribesGame.TrTeamRabbitStats.UpdateTeamScore")()); }
-			ScriptFunction UpdateTime() { mixin(MGF!("mUpdateTime", "Function TribesGame.TrTeamRabbitStats.UpdateTime")()); }
-			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrTeamRabbitStats.FormatTime")()); }
-			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrTeamRabbitStats.ForceUpdate")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrTeamRabbitStats.Initialize")); }
+			ScriptFunction Show() { mixin(MGF("mShow", "Function TribesGame.TrTeamRabbitStats.Show")); }
+			ScriptFunction Hide() { mixin(MGF("mHide", "Function TribesGame.TrTeamRabbitStats.Hide")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrTeamRabbitStats.Tick")); }
+			ScriptFunction UpdateTeam() { mixin(MGF("mUpdateTeam", "Function TribesGame.TrTeamRabbitStats.UpdateTeam")); }
+			ScriptFunction UpdateFlagStatus() { mixin(MGF("mUpdateFlagStatus", "Function TribesGame.TrTeamRabbitStats.UpdateFlagStatus")); }
+			ScriptFunction UpdateTeamScore() { mixin(MGF("mUpdateTeamScore", "Function TribesGame.TrTeamRabbitStats.UpdateTeamScore")); }
+			ScriptFunction UpdateTime() { mixin(MGF("mUpdateTime", "Function TribesGame.TrTeamRabbitStats.UpdateTime")); }
+			ScriptFunction FormatTime() { mixin(MGF("mFormatTime", "Function TribesGame.TrTeamRabbitStats.FormatTime")); }
+			ScriptFunction ForceUpdate() { mixin(MGF("mForceUpdate", "Function TribesGame.TrTeamRabbitStats.ForceUpdate")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 84)()); }
-			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 88)()); }
-			int TeamHoldingFlag() { mixin(MGPC!("int", 80)()); }
-			int TeamScore() { mixin(MGPC!("int", 72)()); }
-			int RemainingTime() { mixin(MGPC!("int", 64)()); }
-			int MyTeam() { mixin(MGPC!("int", 60)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC("GfxTrHud", 84)); }
+			TrPlayerController TrPC() { mixin(MGPC("TrPlayerController", 88)); }
+			int TeamHoldingFlag() { mixin(MGPC("int", 80)); }
+			int TeamScore() { mixin(MGPC("int", 72)); }
+			int RemainingTime() { mixin(MGPC("int", 64)); }
+			int MyTeam() { mixin(MGPC("int", 60)); }
 		}
-		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
-		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }
-		bool bForcingUpdate() { mixin(MGBPC!(68, 0x2)()); }
-		bool bForcingUpdate(bool val) { mixin(MSBPC!(68, 0x2)()); }
+		bool bIsActive() { mixin(MGBPC(68, 0x1)); }
+		bool bIsActive(bool val) { mixin(MSBPC(68, 0x1)); }
+		bool bForcingUpdate() { mixin(MGBPC(68, 0x2)); }
+		bool bForcingUpdate(bool val) { mixin(MSBPC(68, 0x2)); }
 	}
 final:
 	void Initialize(TrPlayerController PC, GfxTrHud MP)

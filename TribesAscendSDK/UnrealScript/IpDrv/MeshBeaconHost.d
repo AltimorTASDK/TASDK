@@ -10,9 +10,9 @@ extern(C++) interface MeshBeaconHost : MeshBeacon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.MeshBeaconHost")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.MeshBeaconHost")); }
 	private static __gshared MeshBeaconHost mDefaultProperties;
-	@property final static MeshBeaconHost DefaultProperties() { mixin(MGDPC!(MeshBeaconHost, "MeshBeaconHost IpDrv.Default__MeshBeaconHost")()); }
+	@property final static MeshBeaconHost DefaultProperties() { mixin(MGDPC("MeshBeaconHost", "MeshBeaconHost IpDrv.Default__MeshBeaconHost")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,24 +38,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReceivedClientCreateNewSessionResult() { mixin(MGF!("mOnReceivedClientCreateNewSessionResult", "Function IpDrv.MeshBeaconHost.OnReceivedClientCreateNewSessionResult")()); }
-			ScriptFunction OnAllPendingPlayersConnected() { mixin(MGF!("mOnAllPendingPlayersConnected", "Function IpDrv.MeshBeaconHost.OnAllPendingPlayersConnected")()); }
-			ScriptFunction OnFinishedBandwidthTest() { mixin(MGF!("mOnFinishedBandwidthTest", "Function IpDrv.MeshBeaconHost.OnFinishedBandwidthTest")()); }
-			ScriptFunction OnStartedBandwidthTest() { mixin(MGF!("mOnStartedBandwidthTest", "Function IpDrv.MeshBeaconHost.OnStartedBandwidthTest")()); }
-			ScriptFunction OnReceivedClientConnectionRequest() { mixin(MGF!("mOnReceivedClientConnectionRequest", "Function IpDrv.MeshBeaconHost.OnReceivedClientConnectionRequest")()); }
-			ScriptFunction InitHostBeacon() { mixin(MGF!("mInitHostBeacon", "Function IpDrv.MeshBeaconHost.InitHostBeacon")()); }
-			ScriptFunction DestroyBeacon() { mixin(MGF!("mDestroyBeacon", "Function IpDrv.MeshBeaconHost.DestroyBeacon")()); }
-			ScriptFunction RequestClientBandwidthTest() { mixin(MGF!("mRequestClientBandwidthTest", "Function IpDrv.MeshBeaconHost.RequestClientBandwidthTest")()); }
-			ScriptFunction HasInProgressBandwidthTest() { mixin(MGF!("mHasInProgressBandwidthTest", "Function IpDrv.MeshBeaconHost.HasInProgressBandwidthTest")()); }
-			ScriptFunction CancelInProgressBandwidthTests() { mixin(MGF!("mCancelInProgressBandwidthTests", "Function IpDrv.MeshBeaconHost.CancelInProgressBandwidthTests")()); }
-			ScriptFunction HasPendingBandwidthTest() { mixin(MGF!("mHasPendingBandwidthTest", "Function IpDrv.MeshBeaconHost.HasPendingBandwidthTest")()); }
-			ScriptFunction CancelPendingBandwidthTests() { mixin(MGF!("mCancelPendingBandwidthTests", "Function IpDrv.MeshBeaconHost.CancelPendingBandwidthTests")()); }
-			ScriptFunction AllowBandwidthTesting() { mixin(MGF!("mAllowBandwidthTesting", "Function IpDrv.MeshBeaconHost.AllowBandwidthTesting")()); }
-			ScriptFunction SetPendingPlayerConnections() { mixin(MGF!("mSetPendingPlayerConnections", "Function IpDrv.MeshBeaconHost.SetPendingPlayerConnections")()); }
-			ScriptFunction GetConnectionIndexForPlayer() { mixin(MGF!("mGetConnectionIndexForPlayer", "Function IpDrv.MeshBeaconHost.GetConnectionIndexForPlayer")()); }
-			ScriptFunction AllPlayersConnected() { mixin(MGF!("mAllPlayersConnected", "Function IpDrv.MeshBeaconHost.AllPlayersConnected")()); }
-			ScriptFunction TellClientsToTravel() { mixin(MGF!("mTellClientsToTravel", "Function IpDrv.MeshBeaconHost.TellClientsToTravel")()); }
-			ScriptFunction RequestClientCreateNewSession() { mixin(MGF!("mRequestClientCreateNewSession", "Function IpDrv.MeshBeaconHost.RequestClientCreateNewSession")()); }
+			ScriptFunction OnReceivedClientCreateNewSessionResult() { mixin(MGF("mOnReceivedClientCreateNewSessionResult", "Function IpDrv.MeshBeaconHost.OnReceivedClientCreateNewSessionResult")); }
+			ScriptFunction OnAllPendingPlayersConnected() { mixin(MGF("mOnAllPendingPlayersConnected", "Function IpDrv.MeshBeaconHost.OnAllPendingPlayersConnected")); }
+			ScriptFunction OnFinishedBandwidthTest() { mixin(MGF("mOnFinishedBandwidthTest", "Function IpDrv.MeshBeaconHost.OnFinishedBandwidthTest")); }
+			ScriptFunction OnStartedBandwidthTest() { mixin(MGF("mOnStartedBandwidthTest", "Function IpDrv.MeshBeaconHost.OnStartedBandwidthTest")); }
+			ScriptFunction OnReceivedClientConnectionRequest() { mixin(MGF("mOnReceivedClientConnectionRequest", "Function IpDrv.MeshBeaconHost.OnReceivedClientConnectionRequest")); }
+			ScriptFunction InitHostBeacon() { mixin(MGF("mInitHostBeacon", "Function IpDrv.MeshBeaconHost.InitHostBeacon")); }
+			ScriptFunction DestroyBeacon() { mixin(MGF("mDestroyBeacon", "Function IpDrv.MeshBeaconHost.DestroyBeacon")); }
+			ScriptFunction RequestClientBandwidthTest() { mixin(MGF("mRequestClientBandwidthTest", "Function IpDrv.MeshBeaconHost.RequestClientBandwidthTest")); }
+			ScriptFunction HasInProgressBandwidthTest() { mixin(MGF("mHasInProgressBandwidthTest", "Function IpDrv.MeshBeaconHost.HasInProgressBandwidthTest")); }
+			ScriptFunction CancelInProgressBandwidthTests() { mixin(MGF("mCancelInProgressBandwidthTests", "Function IpDrv.MeshBeaconHost.CancelInProgressBandwidthTests")); }
+			ScriptFunction HasPendingBandwidthTest() { mixin(MGF("mHasPendingBandwidthTest", "Function IpDrv.MeshBeaconHost.HasPendingBandwidthTest")); }
+			ScriptFunction CancelPendingBandwidthTests() { mixin(MGF("mCancelPendingBandwidthTests", "Function IpDrv.MeshBeaconHost.CancelPendingBandwidthTests")); }
+			ScriptFunction AllowBandwidthTesting() { mixin(MGF("mAllowBandwidthTesting", "Function IpDrv.MeshBeaconHost.AllowBandwidthTesting")); }
+			ScriptFunction SetPendingPlayerConnections() { mixin(MGF("mSetPendingPlayerConnections", "Function IpDrv.MeshBeaconHost.SetPendingPlayerConnections")); }
+			ScriptFunction GetConnectionIndexForPlayer() { mixin(MGF("mGetConnectionIndexForPlayer", "Function IpDrv.MeshBeaconHost.GetConnectionIndexForPlayer")); }
+			ScriptFunction AllPlayersConnected() { mixin(MGF("mAllPlayersConnected", "Function IpDrv.MeshBeaconHost.AllPlayersConnected")); }
+			ScriptFunction TellClientsToTravel() { mixin(MGF("mTellClientsToTravel", "Function IpDrv.MeshBeaconHost.TellClientsToTravel")); }
+			ScriptFunction RequestClientCreateNewSession() { mixin(MGF("mRequestClientCreateNewSession", "Function IpDrv.MeshBeaconHost.RequestClientCreateNewSession")); }
 		}
 	}
 	struct ClientMeshBeaconConnection
@@ -63,24 +63,24 @@ public extern(D):
 		private ubyte __buffer__[88];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.MeshBeaconHost.ClientMeshBeaconConnection")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.MeshBeaconHost.ClientMeshBeaconConnection")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(MeshBeacon.ConnectionBandwidthStats) BandwidthHistory() { mixin(MGPS!("ScriptArray!(MeshBeacon.ConnectionBandwidthStats)", 72)()); }
-				int MinutesSinceLastTest() { mixin(MGPS!("int", 84)()); }
-				float GoodHostRatio() { mixin(MGPS!("float", 68)()); }
-				OnlineSubsystem.ENATType NatType() { mixin(MGPS!("OnlineSubsystem.ENATType", 60)()); }
-				MeshBeaconHost.ClientConnectionBandwidthTestData BandwidthTest() { mixin(MGPS!("MeshBeaconHost.ClientConnectionBandwidthTestData", 20)()); }
-				UObject.Pointer Socket() { mixin(MGPS!("UObject.Pointer", 12)()); }
-				float ElapsedHeartbeatTime() { mixin(MGPS!("float", 8)()); }
-				OnlineSubsystem.UniqueNetId PlayerNetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
+				ScriptArray!(MeshBeacon.ConnectionBandwidthStats) BandwidthHistory() { mixin(MGPS("ScriptArray!(MeshBeacon.ConnectionBandwidthStats)", 72)); }
+				int MinutesSinceLastTest() { mixin(MGPS("int", 84)); }
+				float GoodHostRatio() { mixin(MGPS("float", 68)); }
+				OnlineSubsystem.ENATType NatType() { mixin(MGPS("OnlineSubsystem.ENATType", 60)); }
+				MeshBeaconHost.ClientConnectionBandwidthTestData BandwidthTest() { mixin(MGPS("MeshBeaconHost.ClientConnectionBandwidthTestData", 20)); }
+				UObject.Pointer Socket() { mixin(MGPS("UObject.Pointer", 12)); }
+				float ElapsedHeartbeatTime() { mixin(MGPS("float", 8)); }
+				OnlineSubsystem.UniqueNetId PlayerNetId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 			}
-			bool bCanHostVs() { mixin(MGBPS!(64, 0x1)()); }
-			bool bCanHostVs(bool val) { mixin(MSBPS!(64, 0x1)()); }
-			bool bConnectionAccepted() { mixin(MGBPS!(16, 0x1)()); }
-			bool bConnectionAccepted(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bCanHostVs() { mixin(MGBPS(64, 0x1)); }
+			bool bCanHostVs(bool val) { mixin(MSBPS(64, 0x1)); }
+			bool bConnectionAccepted() { mixin(MGBPS(16, 0x1)); }
+			bool bConnectionAccepted(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	struct ClientConnectionBandwidthTestData
@@ -88,34 +88,34 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.MeshBeaconHost.ClientConnectionBandwidthTestData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.MeshBeaconHost.ClientConnectionBandwidthTestData")); }
 		@property final auto ref
 		{
-			MeshBeacon.ConnectionBandwidthStats BandwidthStats() { mixin(MGPS!("MeshBeacon.ConnectionBandwidthStats", 28)()); }
-			UObject.Double TestStartTime() { mixin(MGPS!("UObject.Double", 20)()); }
-			UObject.Double RequestTestStartTime() { mixin(MGPS!("UObject.Double", 12)()); }
-			int BytesReceived() { mixin(MGPS!("int", 8)()); }
-			int BytesTotalNeeded() { mixin(MGPS!("int", 4)()); }
-			MeshBeacon.EMeshBeaconBandwidthTestType TestType() { mixin(MGPS!("MeshBeacon.EMeshBeaconBandwidthTestType", 1)()); }
-			MeshBeacon.EMeshBeaconBandwidthTestState CurrentState() { mixin(MGPS!("MeshBeacon.EMeshBeaconBandwidthTestState", 0)()); }
+			MeshBeacon.ConnectionBandwidthStats BandwidthStats() { mixin(MGPS("MeshBeacon.ConnectionBandwidthStats", 28)); }
+			UObject.Double TestStartTime() { mixin(MGPS("UObject.Double", 20)); }
+			UObject.Double RequestTestStartTime() { mixin(MGPS("UObject.Double", 12)); }
+			int BytesReceived() { mixin(MGPS("int", 8)); }
+			int BytesTotalNeeded() { mixin(MGPS("int", 4)); }
+			MeshBeacon.EMeshBeaconBandwidthTestType TestType() { mixin(MGPS("MeshBeacon.EMeshBeaconBandwidthTestType", 1)); }
+			MeshBeacon.EMeshBeaconBandwidthTestState CurrentState() { mixin(MGPS("MeshBeacon.EMeshBeaconBandwidthTestState", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(MeshBeaconHost.ClientMeshBeaconConnection) ClientConnections() { mixin(MGPC!("ScriptArray!(MeshBeaconHost.ClientMeshBeaconConnection)", 120)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) PendingPlayerConnections() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 132)()); }
+			ScriptArray!(MeshBeaconHost.ClientMeshBeaconConnection) ClientConnections() { mixin(MGPC("ScriptArray!(MeshBeaconHost.ClientMeshBeaconConnection)", 120)); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) PendingPlayerConnections() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 132)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReceivedClientCreateNewSessionResult__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnAllPendingPlayersConnected__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFinishedBandwidthTest__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnStartedBandwidthTest__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReceivedClientConnectionRequest__Delegate'!
-			int ConnectionBacklog() { mixin(MGPC!("int", 156)()); }
-			OnlineSubsystem.UniqueNetId OwningPlayerId() { mixin(MGPC!("OnlineSubsystem.UniqueNetId", 144)()); }
+			int ConnectionBacklog() { mixin(MGPC("int", 156)); }
+			OnlineSubsystem.UniqueNetId OwningPlayerId() { mixin(MGPC("OnlineSubsystem.UniqueNetId", 144)); }
 		}
-		bool bAllowBandwidthTesting() { mixin(MGBPC!(152, 0x1)()); }
-		bool bAllowBandwidthTesting(bool val) { mixin(MSBPC!(152, 0x1)()); }
+		bool bAllowBandwidthTesting() { mixin(MGBPC(152, 0x1)); }
+		bool bAllowBandwidthTesting(bool val) { mixin(MSBPC(152, 0x1)); }
 	}
 final:
 	void OnReceivedClientCreateNewSessionResult(bool bSucceeded, ScriptName SessionName, ScriptClass SearchClass, ref in ubyte PlatformSpecificInfo)

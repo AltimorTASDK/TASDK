@@ -9,9 +9,9 @@ extern(C++) interface UTSeqEvent_GameEnded : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSeqEvent_GameEnded")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSeqEvent_GameEnded")); }
 	private static __gshared UTSeqEvent_GameEnded mDefaultProperties;
-	@property final static UTSeqEvent_GameEnded DefaultProperties() { mixin(MGDPC!(UTSeqEvent_GameEnded, "UTSeqEvent_GameEnded UTGame.Default__UTSeqEvent_GameEnded")()); }
+	@property final static UTSeqEvent_GameEnded DefaultProperties() { mixin(MGDPC("UTSeqEvent_GameEnded", "UTSeqEvent_GameEnded UTGame.Default__UTSeqEvent_GameEnded")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,14 +21,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Activated() { mixin(MGF!("mActivated", "Function UTGame.UTSeqEvent_GameEnded.Activated")()); }
-			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function UTGame.UTSeqEvent_GameEnded.GetObjClassVersion")()); }
+			ScriptFunction Activated() { mixin(MGF("mActivated", "Function UTGame.UTSeqEvent_GameEnded.Activated")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF("mGetObjClassVersion", "Function UTGame.UTSeqEvent_GameEnded.GetObjClassVersion")); }
 		}
 	}
 	@property final auto ref
 	{
-		Actor ActualWinner() { mixin(MGPC!("Actor", 260)()); }
-		Actor Winner() { mixin(MGPC!("Actor", 256)()); }
+		Actor ActualWinner() { mixin(MGPC("Actor", 260)); }
+		Actor Winner() { mixin(MGPC("Actor", 256)); }
 	}
 final:
 	void Activated()

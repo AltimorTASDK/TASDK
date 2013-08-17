@@ -8,7 +8,7 @@ extern(C++) interface TagCookedReferencedAssetsCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.TagCookedReferencedAssetsCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.TagCookedReferencedAssetsCommandlet")); }
 	private static __gshared TagCookedReferencedAssetsCommandlet mDefaultProperties;
-	@property final static TagCookedReferencedAssetsCommandlet DefaultProperties() { mixin(MGDPC!(TagCookedReferencedAssetsCommandlet, "TagCookedReferencedAssetsCommandlet UnrealEd.Default__TagCookedReferencedAssetsCommandlet")()); }
+	@property final static TagCookedReferencedAssetsCommandlet DefaultProperties() { mixin(MGDPC("TagCookedReferencedAssetsCommandlet", "TagCookedReferencedAssetsCommandlet UnrealEd.Default__TagCookedReferencedAssetsCommandlet")); }
 }

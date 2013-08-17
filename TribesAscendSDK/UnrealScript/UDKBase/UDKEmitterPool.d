@@ -10,9 +10,9 @@ extern(C++) interface UDKEmitterPool : EmitterPool
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKEmitterPool")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKEmitterPool")); }
 	private static __gshared UDKEmitterPool mDefaultProperties;
-	@property final static UDKEmitterPool DefaultProperties() { mixin(MGDPC!(UDKEmitterPool, "UDKEmitterPool UDKBase.Default__UDKEmitterPool")()); }
+	@property final static UDKEmitterPool DefaultProperties() { mixin(MGDPC("UDKEmitterPool", "UDKEmitterPool UDKBase.Default__UDKEmitterPool")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,9 +23,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnEmitter() { mixin(MGF!("mSpawnEmitter", "Function UDKBase.UDKEmitterPool.SpawnEmitter")()); }
-			ScriptFunction OnExplosionLightFinished() { mixin(MGF!("mOnExplosionLightFinished", "Function UDKBase.UDKEmitterPool.OnExplosionLightFinished")()); }
-			ScriptFunction SpawnExplosionLight() { mixin(MGF!("mSpawnExplosionLight", "Function UDKBase.UDKEmitterPool.SpawnExplosionLight")()); }
+			ScriptFunction SpawnEmitter() { mixin(MGF("mSpawnEmitter", "Function UDKBase.UDKEmitterPool.SpawnEmitter")); }
+			ScriptFunction OnExplosionLightFinished() { mixin(MGF("mOnExplosionLightFinished", "Function UDKBase.UDKEmitterPool.OnExplosionLightFinished")); }
+			ScriptFunction SpawnExplosionLight() { mixin(MGF("mSpawnExplosionLight", "Function UDKBase.UDKEmitterPool.SpawnExplosionLight")); }
 		}
 	}
 	struct AttachedExplosionLight
@@ -33,15 +33,15 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKEmitterPool.AttachedExplosionLight")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKEmitterPool.AttachedExplosionLight")); }
 		@property final auto ref
 		{
-			Vector RelativeLocation() { mixin(MGPS!("Vector", 8)()); }
-			Actor Base() { mixin(MGPS!("Actor", 4)()); }
+			Vector RelativeLocation() { mixin(MGPS("Vector", 8)); }
+			Actor Base() { mixin(MGPS("Actor", 4)); }
 			// WARNING: Property 'Light' has the same name as a defined type!
 		}
 	}
-	@property final auto ref ScriptArray!(UDKEmitterPool.AttachedExplosionLight) RelativeExplosionLights() { mixin(MGPC!("ScriptArray!(UDKEmitterPool.AttachedExplosionLight)", 564)()); }
+	@property final auto ref ScriptArray!(UDKEmitterPool.AttachedExplosionLight) RelativeExplosionLights() { mixin(MGPC("ScriptArray!(UDKEmitterPool.AttachedExplosionLight)", 564)); }
 final:
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

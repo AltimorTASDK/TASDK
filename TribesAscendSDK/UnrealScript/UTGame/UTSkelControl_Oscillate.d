@@ -8,24 +8,24 @@ extern(C++) interface UTSkelControl_Oscillate : SkelControlSingleBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_Oscillate")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSkelControl_Oscillate")); }
 	private static __gshared UTSkelControl_Oscillate mDefaultProperties;
-	@property final static UTSkelControl_Oscillate DefaultProperties() { mixin(MGDPC!(UTSkelControl_Oscillate, "UTSkelControl_Oscillate UTGame.Default__UTSkelControl_Oscillate")()); }
+	@property final static UTSkelControl_Oscillate DefaultProperties() { mixin(MGDPC("UTSkelControl_Oscillate", "UTSkelControl_Oscillate UTGame.Default__UTSkelControl_Oscillate")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;
-		public @property static final ScriptFunction TickSkelControl() { mixin(MGF!("mTickSkelControl", "Function UTGame.UTSkelControl_Oscillate.TickSkelControl")()); }
+		public @property static final ScriptFunction TickSkelControl() { mixin(MGF("mTickSkelControl", "Function UTGame.UTSkelControl_Oscillate.TickSkelControl")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float CurrentTime() { mixin(MGPC!("float", 252)()); }
-			float Period() { mixin(MGPC!("float", 248)()); }
-			Vector MaxDelta() { mixin(MGPC!("Vector", 236)()); }
+			float CurrentTime() { mixin(MGPC("float", 252)); }
+			float Period() { mixin(MGPC("float", 248)); }
+			Vector MaxDelta() { mixin(MGPC("Vector", 236)); }
 		}
-		bool bReverseDirection() { mixin(MGBPC!(256, 0x1)()); }
-		bool bReverseDirection(bool val) { mixin(MSBPC!(256, 0x1)()); }
+		bool bReverseDirection() { mixin(MGBPC(256, 0x1)); }
+		bool bReverseDirection(bool val) { mixin(MSBPC(256, 0x1)); }
 	}
 	final void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

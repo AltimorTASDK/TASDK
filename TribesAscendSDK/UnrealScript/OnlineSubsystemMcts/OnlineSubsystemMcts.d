@@ -15,9 +15,9 @@ extern(C++) interface OnlineSubsystemMcts : OnlineSubsystemCommonImpl
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class OnlineSubsystemMcts.OnlineSubsystemMcts")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class OnlineSubsystemMcts.OnlineSubsystemMcts")); }
 	private static __gshared OnlineSubsystemMcts mDefaultProperties;
-	@property final static OnlineSubsystemMcts DefaultProperties() { mixin(MGDPC!(OnlineSubsystemMcts, "OnlineSubsystemMcts OnlineSubsystemMcts.Default__OnlineSubsystemMcts")()); }
+	@property final static OnlineSubsystemMcts DefaultProperties() { mixin(MGDPC("OnlineSubsystemMcts", "OnlineSubsystemMcts OnlineSubsystemMcts.Default__OnlineSubsystemMcts")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -172,153 +172,153 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnConnectionStatusChange() { mixin(MGF!("mOnConnectionStatusChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnConnectionStatusChange")()); }
-			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginChange")()); }
-			ScriptFunction OnLoginFailed() { mixin(MGF!("mOnLoginFailed", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginFailed")()); }
-			ScriptFunction OnLogoutCompleted() { mixin(MGF!("mOnLogoutCompleted", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLogoutCompleted")()); }
-			ScriptFunction OnLinkStatusChange() { mixin(MGF!("mOnLinkStatusChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLinkStatusChange")()); }
-			ScriptFunction OnChatMessage() { mixin(MGF!("mOnChatMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnChatMessage")()); }
-			ScriptFunction OnKeyboardInputComplete() { mixin(MGF!("mOnKeyboardInputComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnKeyboardInputComplete")()); }
-			ScriptFunction OnReadAchievementsComplete() { mixin(MGF!("mOnReadAchievementsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadAchievementsComplete")()); }
-			ScriptFunction OnUnlockAchievementComplete() { mixin(MGF!("mOnUnlockAchievementComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnUnlockAchievementComplete")()); }
-			ScriptFunction OnFriendMessageReceived() { mixin(MGF!("mOnFriendMessageReceived", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnFriendMessageReceived")()); }
-			ScriptFunction OnJoinFriendGameComplete() { mixin(MGF!("mOnJoinFriendGameComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnJoinFriendGameComplete")()); }
-			ScriptFunction OnReceivedGameInvite() { mixin(MGF!("mOnReceivedGameInvite", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReceivedGameInvite")()); }
-			ScriptFunction OnFriendInviteReceived() { mixin(MGF!("mOnFriendInviteReceived", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnFriendInviteReceived")()); }
-			ScriptFunction OnAddFriendByNameComplete() { mixin(MGF!("mOnAddFriendByNameComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnAddFriendByNameComplete")()); }
-			ScriptFunction OnReadFriendsComplete() { mixin(MGF!("mOnReadFriendsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadFriendsComplete")()); }
-			ScriptFunction OnFriendsChange() { mixin(MGF!("mOnFriendsChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnFriendsChange")()); }
-			ScriptFunction OnWritePlayerStorageComplete() { mixin(MGF!("mOnWritePlayerStorageComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnWritePlayerStorageComplete")()); }
-			ScriptFunction OnReadPlayerStorageForNetIdComplete() { mixin(MGF!("mOnReadPlayerStorageForNetIdComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadPlayerStorageForNetIdComplete")()); }
-			ScriptFunction OnReadPlayerStorageComplete() { mixin(MGF!("mOnReadPlayerStorageComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadPlayerStorageComplete")()); }
-			ScriptFunction OnWriteProfileSettingsComplete() { mixin(MGF!("mOnWriteProfileSettingsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnWriteProfileSettingsComplete")()); }
-			ScriptFunction OnReadProfileSettingsComplete() { mixin(MGF!("mOnReadProfileSettingsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadProfileSettingsComplete")()); }
-			ScriptFunction OnMutingChange() { mixin(MGF!("mOnMutingChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnMutingChange")()); }
-			ScriptFunction OnLoginCancelled() { mixin(MGF!("mOnLoginCancelled", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginCancelled")()); }
-			ScriptFunction OnLoginStatusChange() { mixin(MGF!("mOnLoginStatusChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginStatusChange")()); }
-			ScriptFunction OnStorageDeviceChange() { mixin(MGF!("mOnStorageDeviceChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnStorageDeviceChange")()); }
-			ScriptFunction OnControllerChange() { mixin(MGF!("mOnControllerChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnControllerChange")()); }
-			ScriptFunction OnExternalUIChange() { mixin(MGF!("mOnExternalUIChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnExternalUIChange")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.Init")()); }
-			ScriptFunction Login() { mixin(MGF!("mLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.Login")()); }
-			ScriptFunction RequestNewPlayer() { mixin(MGF!("mRequestNewPlayer", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.RequestNewPlayer")()); }
-			ScriptFunction AutoLogin() { mixin(MGF!("mAutoLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AutoLogin")()); }
-			ScriptFunction AddLoginFailedDelegate() { mixin(MGF!("mAddLoginFailedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginFailedDelegate")()); }
-			ScriptFunction ClearLoginFailedDelegate() { mixin(MGF!("mClearLoginFailedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginFailedDelegate")()); }
-			ScriptFunction Logout() { mixin(MGF!("mLogout", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.Logout")()); }
-			ScriptFunction AddLogoutCompletedDelegate() { mixin(MGF!("mAddLogoutCompletedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLogoutCompletedDelegate")()); }
-			ScriptFunction ClearLogoutCompletedDelegate() { mixin(MGF!("mClearLogoutCompletedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLogoutCompletedDelegate")()); }
-			ScriptFunction GetLoginStatus() { mixin(MGF!("mGetLoginStatus", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetLoginStatus")()); }
-			ScriptFunction IsGuestLogin() { mixin(MGF!("mIsGuestLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsGuestLogin")()); }
-			ScriptFunction IsLocalLogin() { mixin(MGF!("mIsLocalLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsLocalLogin")()); }
-			ScriptFunction GetUniquePlayerId() { mixin(MGF!("mGetUniquePlayerId", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetUniquePlayerId")()); }
-			ScriptFunction GetPlayerNickname() { mixin(MGF!("mGetPlayerNickname", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerNickname")()); }
-			ScriptFunction CanPlayOnline() { mixin(MGF!("mCanPlayOnline", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanPlayOnline")()); }
-			ScriptFunction CanDownloadUserContent() { mixin(MGF!("mCanDownloadUserContent", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanDownloadUserContent")()); }
-			ScriptFunction CanPurchaseContent() { mixin(MGF!("mCanPurchaseContent", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanPurchaseContent")()); }
-			ScriptFunction CanViewPlayerProfiles() { mixin(MGF!("mCanViewPlayerProfiles", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanViewPlayerProfiles")()); }
-			ScriptFunction CanShowPresenceInformation() { mixin(MGF!("mCanShowPresenceInformation", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanShowPresenceInformation")()); }
-			ScriptFunction IsFriend() { mixin(MGF!("mIsFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsFriend")()); }
-			ScriptFunction AreAnyFriends() { mixin(MGF!("mAreAnyFriends", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AreAnyFriends")()); }
-			ScriptFunction GetPlayerMctsName() { mixin(MGF!("mGetPlayerMctsName", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerMctsName")()); }
-			ScriptFunction AddLoginChangeDelegate() { mixin(MGF!("mAddLoginChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginChangeDelegate")()); }
-			ScriptFunction ClearLoginChangeDelegate() { mixin(MGF!("mClearLoginChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginChangeDelegate")()); }
-			ScriptFunction NeedEULA() { mixin(MGF!("mNeedEULA", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.NeedEULA")()); }
-			ScriptFunction GetPlayerNicknameFromIndex() { mixin(MGF!("mGetPlayerNicknameFromIndex", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerNicknameFromIndex")()); }
-			ScriptFunction GetPlayerUniqueNetIdFromIndex() { mixin(MGF!("mGetPlayerUniqueNetIdFromIndex", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerUniqueNetIdFromIndex")()); }
-			ScriptFunction HasLinkConnection() { mixin(MGF!("mHasLinkConnection", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.HasLinkConnection")()); }
-			ScriptFunction AddLinkStatusChangeDelegate() { mixin(MGF!("mAddLinkStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLinkStatusChangeDelegate")()); }
-			ScriptFunction ClearLinkStatusChangeDelegate() { mixin(MGF!("mClearLinkStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLinkStatusChangeDelegate")()); }
-			ScriptFunction AddExternalUIChangeDelegate() { mixin(MGF!("mAddExternalUIChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddExternalUIChangeDelegate")()); }
-			ScriptFunction ClearExternalUIChangeDelegate() { mixin(MGF!("mClearExternalUIChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearExternalUIChangeDelegate")()); }
-			ScriptFunction GetNetworkNotificationPosition() { mixin(MGF!("mGetNetworkNotificationPosition", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetNetworkNotificationPosition")()); }
-			ScriptFunction AddControllerChangeDelegate() { mixin(MGF!("mAddControllerChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddControllerChangeDelegate")()); }
-			ScriptFunction ClearControllerChangeDelegate() { mixin(MGF!("mClearControllerChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearControllerChangeDelegate")()); }
-			ScriptFunction IsControllerConnected() { mixin(MGF!("mIsControllerConnected", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsControllerConnected")()); }
-			ScriptFunction AddConnectionStatusChangeDelegate() { mixin(MGF!("mAddConnectionStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddConnectionStatusChangeDelegate")()); }
-			ScriptFunction ClearConnectionStatusChangeDelegate() { mixin(MGF!("mClearConnectionStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearConnectionStatusChangeDelegate")()); }
-			ScriptFunction GetNATType() { mixin(MGF!("mGetNATType", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetNATType")()); }
-			ScriptFunction AddStorageDeviceChangeDelegate() { mixin(MGF!("mAddStorageDeviceChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddStorageDeviceChangeDelegate")()); }
-			ScriptFunction ClearStorageDeviceChangeDelegate() { mixin(MGF!("mClearStorageDeviceChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearStorageDeviceChangeDelegate")()); }
-			ScriptFunction AddChatMessageDelegate() { mixin(MGF!("mAddChatMessageDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddChatMessageDelegate")()); }
-			ScriptFunction ClearChatMessageDelegate() { mixin(MGF!("mClearChatMessageDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearChatMessageDelegate")()); }
-			ScriptFunction SendChatMessage() { mixin(MGF!("mSendChatMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendChatMessage")()); }
-			ScriptFunction SendPrivateChatMessage() { mixin(MGF!("mSendPrivateChatMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendPrivateChatMessage")()); }
-			ScriptFunction WriteActiveCharacterClass() { mixin(MGF!("mWriteActiveCharacterClass", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WriteActiveCharacterClass")()); }
-			ScriptFunction ReadCharacterClasses() { mixin(MGF!("mReadCharacterClasses", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadCharacterClasses")()); }
-			ScriptFunction ReadActiveCharacterClass() { mixin(MGF!("mReadActiveCharacterClass", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadActiveCharacterClass")()); }
-			ScriptFunction WritePlayerProfileData() { mixin(MGF!("mWritePlayerProfileData", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WritePlayerProfileData")()); }
-			ScriptFunction ReadPlayerProfileData() { mixin(MGF!("mReadPlayerProfileData", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadPlayerProfileData")()); }
-			ScriptFunction NotifyTeamChange() { mixin(MGF!("mNotifyTeamChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.NotifyTeamChange")()); }
-			ScriptFunction GetCharacterIdFromClassId() { mixin(MGF!("mGetCharacterIdFromClassId", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetCharacterIdFromClassId")()); }
-			ScriptFunction IsMuted() { mixin(MGF!("mIsMuted", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsMuted")()); }
-			ScriptFunction CanCommunicate() { mixin(MGF!("mCanCommunicate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanCommunicate")()); }
-			ScriptFunction AddLoginStatusChangeDelegate() { mixin(MGF!("mAddLoginStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginStatusChangeDelegate")()); }
-			ScriptFunction ClearLoginStatusChangeDelegate() { mixin(MGF!("mClearLoginStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginStatusChangeDelegate")()); }
-			ScriptFunction AddLoginCancelledDelegate() { mixin(MGF!("mAddLoginCancelledDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginCancelledDelegate")()); }
-			ScriptFunction ClearLoginCancelledDelegate() { mixin(MGF!("mClearLoginCancelledDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginCancelledDelegate")()); }
-			ScriptFunction ReadProfileSettings() { mixin(MGF!("mReadProfileSettings", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadProfileSettings")()); }
-			ScriptFunction WriteProfileSettings() { mixin(MGF!("mWriteProfileSettings", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WriteProfileSettings")()); }
-			ScriptFunction GetProfileSettings() { mixin(MGF!("mGetProfileSettings", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetProfileSettings")()); }
-			ScriptFunction AddMutingChangeDelegate() { mixin(MGF!("mAddMutingChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddMutingChangeDelegate")()); }
-			ScriptFunction ClearMutingChangeDelegate() { mixin(MGF!("mClearMutingChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearMutingChangeDelegate")()); }
-			ScriptFunction AddReadProfileSettingsCompleteDelegate() { mixin(MGF!("mAddReadProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadProfileSettingsCompleteDelegate")()); }
-			ScriptFunction ClearReadProfileSettingsCompleteDelegate() { mixin(MGF!("mClearReadProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadProfileSettingsCompleteDelegate")()); }
-			ScriptFunction AddWriteProfileSettingsCompleteDelegate() { mixin(MGF!("mAddWriteProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddWriteProfileSettingsCompleteDelegate")()); }
-			ScriptFunction ClearWriteProfileSettingsCompleteDelegate() { mixin(MGF!("mClearWriteProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearWriteProfileSettingsCompleteDelegate")()); }
-			ScriptFunction ReadPlayerStorage() { mixin(MGF!("mReadPlayerStorage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadPlayerStorage")()); }
-			ScriptFunction AddReadPlayerStorageCompleteDelegate() { mixin(MGF!("mAddReadPlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadPlayerStorageCompleteDelegate")()); }
-			ScriptFunction ClearReadPlayerStorageCompleteDelegate() { mixin(MGF!("mClearReadPlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadPlayerStorageCompleteDelegate")()); }
-			ScriptFunction ReadPlayerStorageForNetId() { mixin(MGF!("mReadPlayerStorageForNetId", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadPlayerStorageForNetId")()); }
-			ScriptFunction AddReadPlayerStorageForNetIdCompleteDelegate() { mixin(MGF!("mAddReadPlayerStorageForNetIdCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadPlayerStorageForNetIdCompleteDelegate")()); }
-			ScriptFunction ClearReadPlayerStorageForNetIdCompleteDelegate() { mixin(MGF!("mClearReadPlayerStorageForNetIdCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadPlayerStorageForNetIdCompleteDelegate")()); }
-			ScriptFunction GetPlayerStorage() { mixin(MGF!("mGetPlayerStorage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerStorage")()); }
-			ScriptFunction WritePlayerStorage() { mixin(MGF!("mWritePlayerStorage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WritePlayerStorage")()); }
-			ScriptFunction AddWritePlayerStorageCompleteDelegate() { mixin(MGF!("mAddWritePlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddWritePlayerStorageCompleteDelegate")()); }
-			ScriptFunction ClearWritePlayerStorageCompleteDelegate() { mixin(MGF!("mClearWritePlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearWritePlayerStorageCompleteDelegate")()); }
-			ScriptFunction AddFriendsChangeDelegate() { mixin(MGF!("mAddFriendsChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendsChangeDelegate")()); }
-			ScriptFunction ClearFriendsChangeDelegate() { mixin(MGF!("mClearFriendsChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearFriendsChangeDelegate")()); }
-			ScriptFunction ReadFriendsList() { mixin(MGF!("mReadFriendsList", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadFriendsList")()); }
-			ScriptFunction AddReadFriendsCompleteDelegate() { mixin(MGF!("mAddReadFriendsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadFriendsCompleteDelegate")()); }
-			ScriptFunction ClearReadFriendsCompleteDelegate() { mixin(MGF!("mClearReadFriendsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadFriendsCompleteDelegate")()); }
-			ScriptFunction GetFriendsList() { mixin(MGF!("mGetFriendsList", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetFriendsList")()); }
-			ScriptFunction SetOnlineStatus() { mixin(MGF!("mSetOnlineStatus", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SetOnlineStatus")()); }
-			ScriptFunction ShowKeyboardUI() { mixin(MGF!("mShowKeyboardUI", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ShowKeyboardUI")()); }
-			ScriptFunction AddKeyboardInputDoneDelegate() { mixin(MGF!("mAddKeyboardInputDoneDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddKeyboardInputDoneDelegate")()); }
-			ScriptFunction ClearKeyboardInputDoneDelegate() { mixin(MGF!("mClearKeyboardInputDoneDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearKeyboardInputDoneDelegate")()); }
-			ScriptFunction GetKeyboardInputResults() { mixin(MGF!("mGetKeyboardInputResults", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetKeyboardInputResults")()); }
-			ScriptFunction AddFriend() { mixin(MGF!("mAddFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriend")()); }
-			ScriptFunction AddFriendByName() { mixin(MGF!("mAddFriendByName", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendByName")()); }
-			ScriptFunction AddAddFriendByNameCompleteDelegate() { mixin(MGF!("mAddAddFriendByNameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddAddFriendByNameCompleteDelegate")()); }
-			ScriptFunction ClearAddFriendByNameCompleteDelegate() { mixin(MGF!("mClearAddFriendByNameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearAddFriendByNameCompleteDelegate")()); }
-			ScriptFunction AcceptFriendInvite() { mixin(MGF!("mAcceptFriendInvite", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AcceptFriendInvite")()); }
-			ScriptFunction DenyFriendInvite() { mixin(MGF!("mDenyFriendInvite", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.DenyFriendInvite")()); }
-			ScriptFunction RemoveFriend() { mixin(MGF!("mRemoveFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.RemoveFriend")()); }
-			ScriptFunction AddFriendInviteReceivedDelegate() { mixin(MGF!("mAddFriendInviteReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendInviteReceivedDelegate")()); }
-			ScriptFunction ClearFriendInviteReceivedDelegate() { mixin(MGF!("mClearFriendInviteReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearFriendInviteReceivedDelegate")()); }
-			ScriptFunction SendMessageToFriend() { mixin(MGF!("mSendMessageToFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendMessageToFriend")()); }
-			ScriptFunction SendGameInviteToFriend() { mixin(MGF!("mSendGameInviteToFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendGameInviteToFriend")()); }
-			ScriptFunction SendGameInviteToFriends() { mixin(MGF!("mSendGameInviteToFriends", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendGameInviteToFriends")()); }
-			ScriptFunction AddReceivedGameInviteDelegate() { mixin(MGF!("mAddReceivedGameInviteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReceivedGameInviteDelegate")()); }
-			ScriptFunction ClearReceivedGameInviteDelegate() { mixin(MGF!("mClearReceivedGameInviteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReceivedGameInviteDelegate")()); }
-			ScriptFunction JoinFriendGame() { mixin(MGF!("mJoinFriendGame", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.JoinFriendGame")()); }
-			ScriptFunction AddJoinFriendGameCompleteDelegate() { mixin(MGF!("mAddJoinFriendGameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddJoinFriendGameCompleteDelegate")()); }
-			ScriptFunction ClearJoinFriendGameCompleteDelegate() { mixin(MGF!("mClearJoinFriendGameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearJoinFriendGameCompleteDelegate")()); }
-			ScriptFunction GetFriendMessages() { mixin(MGF!("mGetFriendMessages", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetFriendMessages")()); }
-			ScriptFunction AddFriendMessageReceivedDelegate() { mixin(MGF!("mAddFriendMessageReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendMessageReceivedDelegate")()); }
-			ScriptFunction ClearFriendMessageReceivedDelegate() { mixin(MGF!("mClearFriendMessageReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearFriendMessageReceivedDelegate")()); }
-			ScriptFunction UnlockAchievement() { mixin(MGF!("mUnlockAchievement", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.UnlockAchievement")()); }
-			ScriptFunction ReadAchievements() { mixin(MGF!("mReadAchievements", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadAchievements")()); }
-			ScriptFunction GetAchievements() { mixin(MGF!("mGetAchievements", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetAchievements")()); }
-			ScriptFunction AddUnlockAchievementCompleteDelegate() { mixin(MGF!("mAddUnlockAchievementCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddUnlockAchievementCompleteDelegate")()); }
-			ScriptFunction ClearUnlockAchievementCompleteDelegate() { mixin(MGF!("mClearUnlockAchievementCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearUnlockAchievementCompleteDelegate")()); }
-			ScriptFunction AddReadAchievementsCompleteDelegate() { mixin(MGF!("mAddReadAchievementsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadAchievementsCompleteDelegate")()); }
-			ScriptFunction ClearReadAchievementsCompleteDelegate() { mixin(MGF!("mClearReadAchievementsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadAchievementsCompleteDelegate")()); }
-			ScriptFunction DeleteMessage() { mixin(MGF!("mDeleteMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.DeleteMessage")()); }
-			ScriptFunction ShowFriendsUI() { mixin(MGF!("mShowFriendsUI", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ShowFriendsUI")()); }
-			ScriptFunction ShowLoginUI() { mixin(MGF!("mShowLoginUI", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ShowLoginUI")()); }
-			ScriptFunction SetNetworkNotificationPosition() { mixin(MGF!("mSetNetworkNotificationPosition", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SetNetworkNotificationPosition")()); }
-			ScriptFunction GetLocale() { mixin(MGF!("mGetLocale", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetLocale")()); }
+			ScriptFunction OnConnectionStatusChange() { mixin(MGF("mOnConnectionStatusChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnConnectionStatusChange")); }
+			ScriptFunction OnLoginChange() { mixin(MGF("mOnLoginChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginChange")); }
+			ScriptFunction OnLoginFailed() { mixin(MGF("mOnLoginFailed", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginFailed")); }
+			ScriptFunction OnLogoutCompleted() { mixin(MGF("mOnLogoutCompleted", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLogoutCompleted")); }
+			ScriptFunction OnLinkStatusChange() { mixin(MGF("mOnLinkStatusChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLinkStatusChange")); }
+			ScriptFunction OnChatMessage() { mixin(MGF("mOnChatMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnChatMessage")); }
+			ScriptFunction OnKeyboardInputComplete() { mixin(MGF("mOnKeyboardInputComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnKeyboardInputComplete")); }
+			ScriptFunction OnReadAchievementsComplete() { mixin(MGF("mOnReadAchievementsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadAchievementsComplete")); }
+			ScriptFunction OnUnlockAchievementComplete() { mixin(MGF("mOnUnlockAchievementComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnUnlockAchievementComplete")); }
+			ScriptFunction OnFriendMessageReceived() { mixin(MGF("mOnFriendMessageReceived", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnFriendMessageReceived")); }
+			ScriptFunction OnJoinFriendGameComplete() { mixin(MGF("mOnJoinFriendGameComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnJoinFriendGameComplete")); }
+			ScriptFunction OnReceivedGameInvite() { mixin(MGF("mOnReceivedGameInvite", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReceivedGameInvite")); }
+			ScriptFunction OnFriendInviteReceived() { mixin(MGF("mOnFriendInviteReceived", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnFriendInviteReceived")); }
+			ScriptFunction OnAddFriendByNameComplete() { mixin(MGF("mOnAddFriendByNameComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnAddFriendByNameComplete")); }
+			ScriptFunction OnReadFriendsComplete() { mixin(MGF("mOnReadFriendsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadFriendsComplete")); }
+			ScriptFunction OnFriendsChange() { mixin(MGF("mOnFriendsChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnFriendsChange")); }
+			ScriptFunction OnWritePlayerStorageComplete() { mixin(MGF("mOnWritePlayerStorageComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnWritePlayerStorageComplete")); }
+			ScriptFunction OnReadPlayerStorageForNetIdComplete() { mixin(MGF("mOnReadPlayerStorageForNetIdComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadPlayerStorageForNetIdComplete")); }
+			ScriptFunction OnReadPlayerStorageComplete() { mixin(MGF("mOnReadPlayerStorageComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadPlayerStorageComplete")); }
+			ScriptFunction OnWriteProfileSettingsComplete() { mixin(MGF("mOnWriteProfileSettingsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnWriteProfileSettingsComplete")); }
+			ScriptFunction OnReadProfileSettingsComplete() { mixin(MGF("mOnReadProfileSettingsComplete", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnReadProfileSettingsComplete")); }
+			ScriptFunction OnMutingChange() { mixin(MGF("mOnMutingChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnMutingChange")); }
+			ScriptFunction OnLoginCancelled() { mixin(MGF("mOnLoginCancelled", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginCancelled")); }
+			ScriptFunction OnLoginStatusChange() { mixin(MGF("mOnLoginStatusChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnLoginStatusChange")); }
+			ScriptFunction OnStorageDeviceChange() { mixin(MGF("mOnStorageDeviceChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnStorageDeviceChange")); }
+			ScriptFunction OnControllerChange() { mixin(MGF("mOnControllerChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnControllerChange")); }
+			ScriptFunction OnExternalUIChange() { mixin(MGF("mOnExternalUIChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.OnExternalUIChange")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.Init")); }
+			ScriptFunction Login() { mixin(MGF("mLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.Login")); }
+			ScriptFunction RequestNewPlayer() { mixin(MGF("mRequestNewPlayer", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.RequestNewPlayer")); }
+			ScriptFunction AutoLogin() { mixin(MGF("mAutoLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AutoLogin")); }
+			ScriptFunction AddLoginFailedDelegate() { mixin(MGF("mAddLoginFailedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginFailedDelegate")); }
+			ScriptFunction ClearLoginFailedDelegate() { mixin(MGF("mClearLoginFailedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginFailedDelegate")); }
+			ScriptFunction Logout() { mixin(MGF("mLogout", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.Logout")); }
+			ScriptFunction AddLogoutCompletedDelegate() { mixin(MGF("mAddLogoutCompletedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLogoutCompletedDelegate")); }
+			ScriptFunction ClearLogoutCompletedDelegate() { mixin(MGF("mClearLogoutCompletedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLogoutCompletedDelegate")); }
+			ScriptFunction GetLoginStatus() { mixin(MGF("mGetLoginStatus", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetLoginStatus")); }
+			ScriptFunction IsGuestLogin() { mixin(MGF("mIsGuestLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsGuestLogin")); }
+			ScriptFunction IsLocalLogin() { mixin(MGF("mIsLocalLogin", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsLocalLogin")); }
+			ScriptFunction GetUniquePlayerId() { mixin(MGF("mGetUniquePlayerId", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetUniquePlayerId")); }
+			ScriptFunction GetPlayerNickname() { mixin(MGF("mGetPlayerNickname", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerNickname")); }
+			ScriptFunction CanPlayOnline() { mixin(MGF("mCanPlayOnline", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanPlayOnline")); }
+			ScriptFunction CanDownloadUserContent() { mixin(MGF("mCanDownloadUserContent", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanDownloadUserContent")); }
+			ScriptFunction CanPurchaseContent() { mixin(MGF("mCanPurchaseContent", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanPurchaseContent")); }
+			ScriptFunction CanViewPlayerProfiles() { mixin(MGF("mCanViewPlayerProfiles", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanViewPlayerProfiles")); }
+			ScriptFunction CanShowPresenceInformation() { mixin(MGF("mCanShowPresenceInformation", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanShowPresenceInformation")); }
+			ScriptFunction IsFriend() { mixin(MGF("mIsFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsFriend")); }
+			ScriptFunction AreAnyFriends() { mixin(MGF("mAreAnyFriends", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AreAnyFriends")); }
+			ScriptFunction GetPlayerMctsName() { mixin(MGF("mGetPlayerMctsName", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerMctsName")); }
+			ScriptFunction AddLoginChangeDelegate() { mixin(MGF("mAddLoginChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginChangeDelegate")); }
+			ScriptFunction ClearLoginChangeDelegate() { mixin(MGF("mClearLoginChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginChangeDelegate")); }
+			ScriptFunction NeedEULA() { mixin(MGF("mNeedEULA", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.NeedEULA")); }
+			ScriptFunction GetPlayerNicknameFromIndex() { mixin(MGF("mGetPlayerNicknameFromIndex", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerNicknameFromIndex")); }
+			ScriptFunction GetPlayerUniqueNetIdFromIndex() { mixin(MGF("mGetPlayerUniqueNetIdFromIndex", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerUniqueNetIdFromIndex")); }
+			ScriptFunction HasLinkConnection() { mixin(MGF("mHasLinkConnection", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.HasLinkConnection")); }
+			ScriptFunction AddLinkStatusChangeDelegate() { mixin(MGF("mAddLinkStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLinkStatusChangeDelegate")); }
+			ScriptFunction ClearLinkStatusChangeDelegate() { mixin(MGF("mClearLinkStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLinkStatusChangeDelegate")); }
+			ScriptFunction AddExternalUIChangeDelegate() { mixin(MGF("mAddExternalUIChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddExternalUIChangeDelegate")); }
+			ScriptFunction ClearExternalUIChangeDelegate() { mixin(MGF("mClearExternalUIChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearExternalUIChangeDelegate")); }
+			ScriptFunction GetNetworkNotificationPosition() { mixin(MGF("mGetNetworkNotificationPosition", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetNetworkNotificationPosition")); }
+			ScriptFunction AddControllerChangeDelegate() { mixin(MGF("mAddControllerChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddControllerChangeDelegate")); }
+			ScriptFunction ClearControllerChangeDelegate() { mixin(MGF("mClearControllerChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearControllerChangeDelegate")); }
+			ScriptFunction IsControllerConnected() { mixin(MGF("mIsControllerConnected", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsControllerConnected")); }
+			ScriptFunction AddConnectionStatusChangeDelegate() { mixin(MGF("mAddConnectionStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddConnectionStatusChangeDelegate")); }
+			ScriptFunction ClearConnectionStatusChangeDelegate() { mixin(MGF("mClearConnectionStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearConnectionStatusChangeDelegate")); }
+			ScriptFunction GetNATType() { mixin(MGF("mGetNATType", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetNATType")); }
+			ScriptFunction AddStorageDeviceChangeDelegate() { mixin(MGF("mAddStorageDeviceChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddStorageDeviceChangeDelegate")); }
+			ScriptFunction ClearStorageDeviceChangeDelegate() { mixin(MGF("mClearStorageDeviceChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearStorageDeviceChangeDelegate")); }
+			ScriptFunction AddChatMessageDelegate() { mixin(MGF("mAddChatMessageDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddChatMessageDelegate")); }
+			ScriptFunction ClearChatMessageDelegate() { mixin(MGF("mClearChatMessageDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearChatMessageDelegate")); }
+			ScriptFunction SendChatMessage() { mixin(MGF("mSendChatMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendChatMessage")); }
+			ScriptFunction SendPrivateChatMessage() { mixin(MGF("mSendPrivateChatMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendPrivateChatMessage")); }
+			ScriptFunction WriteActiveCharacterClass() { mixin(MGF("mWriteActiveCharacterClass", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WriteActiveCharacterClass")); }
+			ScriptFunction ReadCharacterClasses() { mixin(MGF("mReadCharacterClasses", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadCharacterClasses")); }
+			ScriptFunction ReadActiveCharacterClass() { mixin(MGF("mReadActiveCharacterClass", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadActiveCharacterClass")); }
+			ScriptFunction WritePlayerProfileData() { mixin(MGF("mWritePlayerProfileData", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WritePlayerProfileData")); }
+			ScriptFunction ReadPlayerProfileData() { mixin(MGF("mReadPlayerProfileData", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadPlayerProfileData")); }
+			ScriptFunction NotifyTeamChange() { mixin(MGF("mNotifyTeamChange", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.NotifyTeamChange")); }
+			ScriptFunction GetCharacterIdFromClassId() { mixin(MGF("mGetCharacterIdFromClassId", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetCharacterIdFromClassId")); }
+			ScriptFunction IsMuted() { mixin(MGF("mIsMuted", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.IsMuted")); }
+			ScriptFunction CanCommunicate() { mixin(MGF("mCanCommunicate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.CanCommunicate")); }
+			ScriptFunction AddLoginStatusChangeDelegate() { mixin(MGF("mAddLoginStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginStatusChangeDelegate")); }
+			ScriptFunction ClearLoginStatusChangeDelegate() { mixin(MGF("mClearLoginStatusChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginStatusChangeDelegate")); }
+			ScriptFunction AddLoginCancelledDelegate() { mixin(MGF("mAddLoginCancelledDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddLoginCancelledDelegate")); }
+			ScriptFunction ClearLoginCancelledDelegate() { mixin(MGF("mClearLoginCancelledDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearLoginCancelledDelegate")); }
+			ScriptFunction ReadProfileSettings() { mixin(MGF("mReadProfileSettings", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadProfileSettings")); }
+			ScriptFunction WriteProfileSettings() { mixin(MGF("mWriteProfileSettings", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WriteProfileSettings")); }
+			ScriptFunction GetProfileSettings() { mixin(MGF("mGetProfileSettings", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetProfileSettings")); }
+			ScriptFunction AddMutingChangeDelegate() { mixin(MGF("mAddMutingChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddMutingChangeDelegate")); }
+			ScriptFunction ClearMutingChangeDelegate() { mixin(MGF("mClearMutingChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearMutingChangeDelegate")); }
+			ScriptFunction AddReadProfileSettingsCompleteDelegate() { mixin(MGF("mAddReadProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadProfileSettingsCompleteDelegate")); }
+			ScriptFunction ClearReadProfileSettingsCompleteDelegate() { mixin(MGF("mClearReadProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadProfileSettingsCompleteDelegate")); }
+			ScriptFunction AddWriteProfileSettingsCompleteDelegate() { mixin(MGF("mAddWriteProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddWriteProfileSettingsCompleteDelegate")); }
+			ScriptFunction ClearWriteProfileSettingsCompleteDelegate() { mixin(MGF("mClearWriteProfileSettingsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearWriteProfileSettingsCompleteDelegate")); }
+			ScriptFunction ReadPlayerStorage() { mixin(MGF("mReadPlayerStorage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadPlayerStorage")); }
+			ScriptFunction AddReadPlayerStorageCompleteDelegate() { mixin(MGF("mAddReadPlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadPlayerStorageCompleteDelegate")); }
+			ScriptFunction ClearReadPlayerStorageCompleteDelegate() { mixin(MGF("mClearReadPlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadPlayerStorageCompleteDelegate")); }
+			ScriptFunction ReadPlayerStorageForNetId() { mixin(MGF("mReadPlayerStorageForNetId", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadPlayerStorageForNetId")); }
+			ScriptFunction AddReadPlayerStorageForNetIdCompleteDelegate() { mixin(MGF("mAddReadPlayerStorageForNetIdCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadPlayerStorageForNetIdCompleteDelegate")); }
+			ScriptFunction ClearReadPlayerStorageForNetIdCompleteDelegate() { mixin(MGF("mClearReadPlayerStorageForNetIdCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadPlayerStorageForNetIdCompleteDelegate")); }
+			ScriptFunction GetPlayerStorage() { mixin(MGF("mGetPlayerStorage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetPlayerStorage")); }
+			ScriptFunction WritePlayerStorage() { mixin(MGF("mWritePlayerStorage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.WritePlayerStorage")); }
+			ScriptFunction AddWritePlayerStorageCompleteDelegate() { mixin(MGF("mAddWritePlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddWritePlayerStorageCompleteDelegate")); }
+			ScriptFunction ClearWritePlayerStorageCompleteDelegate() { mixin(MGF("mClearWritePlayerStorageCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearWritePlayerStorageCompleteDelegate")); }
+			ScriptFunction AddFriendsChangeDelegate() { mixin(MGF("mAddFriendsChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendsChangeDelegate")); }
+			ScriptFunction ClearFriendsChangeDelegate() { mixin(MGF("mClearFriendsChangeDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearFriendsChangeDelegate")); }
+			ScriptFunction ReadFriendsList() { mixin(MGF("mReadFriendsList", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadFriendsList")); }
+			ScriptFunction AddReadFriendsCompleteDelegate() { mixin(MGF("mAddReadFriendsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadFriendsCompleteDelegate")); }
+			ScriptFunction ClearReadFriendsCompleteDelegate() { mixin(MGF("mClearReadFriendsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadFriendsCompleteDelegate")); }
+			ScriptFunction GetFriendsList() { mixin(MGF("mGetFriendsList", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetFriendsList")); }
+			ScriptFunction SetOnlineStatus() { mixin(MGF("mSetOnlineStatus", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SetOnlineStatus")); }
+			ScriptFunction ShowKeyboardUI() { mixin(MGF("mShowKeyboardUI", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ShowKeyboardUI")); }
+			ScriptFunction AddKeyboardInputDoneDelegate() { mixin(MGF("mAddKeyboardInputDoneDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddKeyboardInputDoneDelegate")); }
+			ScriptFunction ClearKeyboardInputDoneDelegate() { mixin(MGF("mClearKeyboardInputDoneDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearKeyboardInputDoneDelegate")); }
+			ScriptFunction GetKeyboardInputResults() { mixin(MGF("mGetKeyboardInputResults", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetKeyboardInputResults")); }
+			ScriptFunction AddFriend() { mixin(MGF("mAddFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriend")); }
+			ScriptFunction AddFriendByName() { mixin(MGF("mAddFriendByName", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendByName")); }
+			ScriptFunction AddAddFriendByNameCompleteDelegate() { mixin(MGF("mAddAddFriendByNameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddAddFriendByNameCompleteDelegate")); }
+			ScriptFunction ClearAddFriendByNameCompleteDelegate() { mixin(MGF("mClearAddFriendByNameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearAddFriendByNameCompleteDelegate")); }
+			ScriptFunction AcceptFriendInvite() { mixin(MGF("mAcceptFriendInvite", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AcceptFriendInvite")); }
+			ScriptFunction DenyFriendInvite() { mixin(MGF("mDenyFriendInvite", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.DenyFriendInvite")); }
+			ScriptFunction RemoveFriend() { mixin(MGF("mRemoveFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.RemoveFriend")); }
+			ScriptFunction AddFriendInviteReceivedDelegate() { mixin(MGF("mAddFriendInviteReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendInviteReceivedDelegate")); }
+			ScriptFunction ClearFriendInviteReceivedDelegate() { mixin(MGF("mClearFriendInviteReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearFriendInviteReceivedDelegate")); }
+			ScriptFunction SendMessageToFriend() { mixin(MGF("mSendMessageToFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendMessageToFriend")); }
+			ScriptFunction SendGameInviteToFriend() { mixin(MGF("mSendGameInviteToFriend", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendGameInviteToFriend")); }
+			ScriptFunction SendGameInviteToFriends() { mixin(MGF("mSendGameInviteToFriends", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SendGameInviteToFriends")); }
+			ScriptFunction AddReceivedGameInviteDelegate() { mixin(MGF("mAddReceivedGameInviteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReceivedGameInviteDelegate")); }
+			ScriptFunction ClearReceivedGameInviteDelegate() { mixin(MGF("mClearReceivedGameInviteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReceivedGameInviteDelegate")); }
+			ScriptFunction JoinFriendGame() { mixin(MGF("mJoinFriendGame", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.JoinFriendGame")); }
+			ScriptFunction AddJoinFriendGameCompleteDelegate() { mixin(MGF("mAddJoinFriendGameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddJoinFriendGameCompleteDelegate")); }
+			ScriptFunction ClearJoinFriendGameCompleteDelegate() { mixin(MGF("mClearJoinFriendGameCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearJoinFriendGameCompleteDelegate")); }
+			ScriptFunction GetFriendMessages() { mixin(MGF("mGetFriendMessages", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetFriendMessages")); }
+			ScriptFunction AddFriendMessageReceivedDelegate() { mixin(MGF("mAddFriendMessageReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddFriendMessageReceivedDelegate")); }
+			ScriptFunction ClearFriendMessageReceivedDelegate() { mixin(MGF("mClearFriendMessageReceivedDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearFriendMessageReceivedDelegate")); }
+			ScriptFunction UnlockAchievement() { mixin(MGF("mUnlockAchievement", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.UnlockAchievement")); }
+			ScriptFunction ReadAchievements() { mixin(MGF("mReadAchievements", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ReadAchievements")); }
+			ScriptFunction GetAchievements() { mixin(MGF("mGetAchievements", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetAchievements")); }
+			ScriptFunction AddUnlockAchievementCompleteDelegate() { mixin(MGF("mAddUnlockAchievementCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddUnlockAchievementCompleteDelegate")); }
+			ScriptFunction ClearUnlockAchievementCompleteDelegate() { mixin(MGF("mClearUnlockAchievementCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearUnlockAchievementCompleteDelegate")); }
+			ScriptFunction AddReadAchievementsCompleteDelegate() { mixin(MGF("mAddReadAchievementsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.AddReadAchievementsCompleteDelegate")); }
+			ScriptFunction ClearReadAchievementsCompleteDelegate() { mixin(MGF("mClearReadAchievementsCompleteDelegate", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ClearReadAchievementsCompleteDelegate")); }
+			ScriptFunction DeleteMessage() { mixin(MGF("mDeleteMessage", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.DeleteMessage")); }
+			ScriptFunction ShowFriendsUI() { mixin(MGF("mShowFriendsUI", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ShowFriendsUI")); }
+			ScriptFunction ShowLoginUI() { mixin(MGF("mShowLoginUI", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.ShowLoginUI")); }
+			ScriptFunction SetNetworkNotificationPosition() { mixin(MGF("mSetNetworkNotificationPosition", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.SetNetworkNotificationPosition")); }
+			ScriptFunction GetLocale() { mixin(MGF("mGetLocale", "Function OnlineSubsystemMcts.OnlineSubsystemMcts.GetLocale")); }
 		}
 	}
 	struct ControllerConnectionState
@@ -326,11 +326,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct OnlineSubsystemMcts.OnlineSubsystemMcts.ControllerConnectionState")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct OnlineSubsystemMcts.OnlineSubsystemMcts.ControllerConnectionState")); }
 		@property final auto ref
 		{
-			int bLastIsControllerConnected() { mixin(MGPS!("int", 4)()); }
-			int bIsControllerConnected() { mixin(MGPS!("int", 0)()); }
+			int bLastIsControllerConnected() { mixin(MGPS("int", 4)); }
+			int bIsControllerConnected() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
@@ -339,39 +339,39 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ConnectionStatusChangeDelegates() { mixin(MGPC!("ScriptArray!(
+void*) ConnectionStatusChangeDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 316)()); }
+void*)", 316)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LoginChangeDelegates() { mixin(MGPC!("ScriptArray!(
+void*) LoginChangeDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 328)()); }
+void*)", 328)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LoginFailedDelegates() { mixin(MGPC!("ScriptArray!(
+void*) LoginFailedDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 340)()); }
+void*)", 340)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LogoutCompletedDelegates() { mixin(MGPC!("ScriptArray!(
+void*) LogoutCompletedDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 352)()); }
+void*)", 352)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LinkStatusDelegates() { mixin(MGPC!("ScriptArray!(
+void*) LinkStatusDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 364)()); }
+void*)", 364)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ChatMessageDelegates() { mixin(MGPC!("ScriptArray!(
+void*) ChatMessageDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 376)()); }
+void*)", 376)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) KeyboardInputDelegates() { mixin(MGPC!("ScriptArray!(
+void*) KeyboardInputDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 404)()); }
+void*)", 404)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadAchievementsComplete__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUnlockAchievementComplete__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFriendMessageReceived__Delegate'!
@@ -399,28 +399,28 @@ void*)", 404)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLogoutCompleted__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLoginFailed__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLoginChange__Delegate'!
-			float ConnectionPresenceElapsedTime() { mixin(MGPC!("float", 452)()); }
-			float ConnectionPresenceTimeInterval() { mixin(MGPC!("float", 448)()); }
-			OnlineSubsystemMcts.ControllerConnectionState ControllerStates() { mixin(MGPC!("OnlineSubsystemMcts.ControllerConnectionState", 416)()); }
-			ScriptString KeyboardResultsString() { mixin(MGPC!("ScriptString", 388)()); }
-			ScriptString ProfileDataExtension() { mixin(MGPC!("ScriptString", 304)()); }
-			ScriptString ProfileDataDirectory() { mixin(MGPC!("ScriptString", 292)()); }
-			OnlineSubsystem.ENetworkNotificationPosition CurrentNotificationPosition() { mixin(MGPC!("OnlineSubsystem.ENetworkNotificationPosition", 290)()); }
-			ubyte bWasKeyboardInputCanceled() { mixin(MGPC!("ubyte", 289)()); }
-			OnlineSubsystem.ELoginStatus LoggedInStatus() { mixin(MGPC!("OnlineSubsystem.ELoginStatus", 288)()); }
-			int LoggedInPlayerNum() { mixin(MGPC!("int", 284)()); }
-			OnlineSubsystem.UniqueNetId LoggedInPlayerId() { mixin(MGPC!("OnlineSubsystem.UniqueNetId", 276)()); }
-			ScriptString LoggedInPlayerName() { mixin(MGPC!("ScriptString", 264)()); }
-			ScriptString LocalProfileName() { mixin(MGPC!("ScriptString", 252)()); }
-			OnlineVoiceInterfaceMcts MctsVoiceInt() { mixin(MGPC!("OnlineVoiceInterfaceMcts", 248)()); }
-			OnlineGameInterfaceMcts MctsGameInt() { mixin(MGPC!("OnlineGameInterfaceMcts", 244)()); }
+			float ConnectionPresenceElapsedTime() { mixin(MGPC("float", 452)); }
+			float ConnectionPresenceTimeInterval() { mixin(MGPC("float", 448)); }
+			OnlineSubsystemMcts.ControllerConnectionState ControllerStates() { mixin(MGPC("OnlineSubsystemMcts.ControllerConnectionState", 416)); }
+			ScriptString KeyboardResultsString() { mixin(MGPC("ScriptString", 388)); }
+			ScriptString ProfileDataExtension() { mixin(MGPC("ScriptString", 304)); }
+			ScriptString ProfileDataDirectory() { mixin(MGPC("ScriptString", 292)); }
+			OnlineSubsystem.ENetworkNotificationPosition CurrentNotificationPosition() { mixin(MGPC("OnlineSubsystem.ENetworkNotificationPosition", 290)); }
+			ubyte bWasKeyboardInputCanceled() { mixin(MGPC("ubyte", 289)); }
+			OnlineSubsystem.ELoginStatus LoggedInStatus() { mixin(MGPC("OnlineSubsystem.ELoginStatus", 288)); }
+			int LoggedInPlayerNum() { mixin(MGPC("int", 284)); }
+			OnlineSubsystem.UniqueNetId LoggedInPlayerId() { mixin(MGPC("OnlineSubsystem.UniqueNetId", 276)); }
+			ScriptString LoggedInPlayerName() { mixin(MGPC("ScriptString", 264)); }
+			ScriptString LocalProfileName() { mixin(MGPC("ScriptString", 252)); }
+			OnlineVoiceInterfaceMcts MctsVoiceInt() { mixin(MGPC("OnlineVoiceInterfaceMcts", 248)); }
+			OnlineGameInterfaceMcts MctsGameInt() { mixin(MGPC("OnlineGameInterfaceMcts", 244)); }
 		}
-		bool bShouldUseMcp() { mixin(MGBPC!(400, 0x4)()); }
-		bool bShouldUseMcp(bool val) { mixin(MSBPC!(400, 0x4)()); }
-		bool bLastHasConnection() { mixin(MGBPC!(400, 0x2)()); }
-		bool bLastHasConnection(bool val) { mixin(MSBPC!(400, 0x2)()); }
-		bool bNeedsKeyboardTicking() { mixin(MGBPC!(400, 0x1)()); }
-		bool bNeedsKeyboardTicking(bool val) { mixin(MSBPC!(400, 0x1)()); }
+		bool bShouldUseMcp() { mixin(MGBPC(400, 0x4)); }
+		bool bShouldUseMcp(bool val) { mixin(MSBPC(400, 0x4)); }
+		bool bLastHasConnection() { mixin(MGBPC(400, 0x2)); }
+		bool bLastHasConnection(bool val) { mixin(MSBPC(400, 0x2)); }
+		bool bNeedsKeyboardTicking() { mixin(MGBPC(400, 0x1)); }
+		bool bNeedsKeyboardTicking(bool val) { mixin(MSBPC(400, 0x1)); }
 	}
 final:
 	void OnConnectionStatusChange(OnlineSubsystem.EOnlineServerConnectionStatus ConnectionStatus)

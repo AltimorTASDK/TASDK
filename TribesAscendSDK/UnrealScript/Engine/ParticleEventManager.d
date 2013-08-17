@@ -9,13 +9,13 @@ extern(C++) interface ParticleEventManager : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleEventManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleEventManager")); }
 	private static __gshared ParticleEventManager mDefaultProperties;
-	@property final static ParticleEventManager DefaultProperties() { mixin(MGDPC!(ParticleEventManager, "ParticleEventManager Engine.Default__ParticleEventManager")()); }
+	@property final static ParticleEventManager DefaultProperties() { mixin(MGDPC("ParticleEventManager", "ParticleEventManager Engine.Default__ParticleEventManager")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mHandleParticleModuleEventSendToGame;
-		public @property static final ScriptFunction HandleParticleModuleEventSendToGame() { mixin(MGF!("mHandleParticleModuleEventSendToGame", "Function Engine.ParticleEventManager.HandleParticleModuleEventSendToGame")()); }
+		public @property static final ScriptFunction HandleParticleModuleEventSendToGame() { mixin(MGF("mHandleParticleModuleEventSendToGame", "Function Engine.ParticleEventManager.HandleParticleModuleEventSendToGame")); }
 	}
 	final void HandleParticleModuleEventSendToGame(ParticleModuleEventSendToGame InEvent, ref in Vector InCollideDirection, ref in Vector InHitLocation, ref in Vector InHitNormal, ref in ScriptName InBoneName)
 	{

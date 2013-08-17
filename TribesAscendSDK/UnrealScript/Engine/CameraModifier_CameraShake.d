@@ -12,9 +12,9 @@ extern(C++) interface CameraModifier_CameraShake : CameraModifier
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CameraModifier_CameraShake")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CameraModifier_CameraShake")); }
 	private static __gshared CameraModifier_CameraShake mDefaultProperties;
-	@property final static CameraModifier_CameraShake DefaultProperties() { mixin(MGDPC!(CameraModifier_CameraShake, "CameraModifier_CameraShake Engine.Default__CameraModifier_CameraShake")()); }
+	@property final static CameraModifier_CameraShake DefaultProperties() { mixin(MGDPC("CameraModifier_CameraShake", "CameraModifier_CameraShake Engine.Default__CameraModifier_CameraShake")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,14 +30,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitializeOffset() { mixin(MGF!("mInitializeOffset", "Function Engine.CameraModifier_CameraShake.InitializeOffset")()); }
-			ScriptFunction ReinitShake() { mixin(MGF!("mReinitShake", "Function Engine.CameraModifier_CameraShake.ReinitShake")()); }
-			ScriptFunction InitializeShake() { mixin(MGF!("mInitializeShake", "Function Engine.CameraModifier_CameraShake.InitializeShake")()); }
-			ScriptFunction AddCameraShake() { mixin(MGF!("mAddCameraShake", "Function Engine.CameraModifier_CameraShake.AddCameraShake")()); }
-			ScriptFunction RemoveCameraShake() { mixin(MGF!("mRemoveCameraShake", "Function Engine.CameraModifier_CameraShake.RemoveCameraShake")()); }
-			ScriptFunction RemoveAllCameraShakes() { mixin(MGF!("mRemoveAllCameraShakes", "Function Engine.CameraModifier_CameraShake.RemoveAllCameraShakes")()); }
-			ScriptFunction UpdateCameraShake() { mixin(MGF!("mUpdateCameraShake", "Function Engine.CameraModifier_CameraShake.UpdateCameraShake")()); }
-			ScriptFunction ModifyCamera() { mixin(MGF!("mModifyCamera", "Function Engine.CameraModifier_CameraShake.ModifyCamera")()); }
+			ScriptFunction InitializeOffset() { mixin(MGF("mInitializeOffset", "Function Engine.CameraModifier_CameraShake.InitializeOffset")); }
+			ScriptFunction ReinitShake() { mixin(MGF("mReinitShake", "Function Engine.CameraModifier_CameraShake.ReinitShake")); }
+			ScriptFunction InitializeShake() { mixin(MGF("mInitializeShake", "Function Engine.CameraModifier_CameraShake.InitializeShake")); }
+			ScriptFunction AddCameraShake() { mixin(MGF("mAddCameraShake", "Function Engine.CameraModifier_CameraShake.AddCameraShake")); }
+			ScriptFunction RemoveCameraShake() { mixin(MGF("mRemoveCameraShake", "Function Engine.CameraModifier_CameraShake.RemoveCameraShake")); }
+			ScriptFunction RemoveAllCameraShakes() { mixin(MGF("mRemoveAllCameraShakes", "Function Engine.CameraModifier_CameraShake.RemoveAllCameraShakes")); }
+			ScriptFunction UpdateCameraShake() { mixin(MGF("mUpdateCameraShake", "Function Engine.CameraModifier_CameraShake.UpdateCameraShake")); }
+			ScriptFunction ModifyCamera() { mixin(MGF("mModifyCamera", "Function Engine.CameraModifier_CameraShake.ModifyCamera")); }
 		}
 	}
 	struct CameraShakeInstance
@@ -45,34 +45,34 @@ public extern(D):
 		private ubyte __buffer__[144];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CameraModifier_CameraShake.CameraShakeInstance")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CameraModifier_CameraShake.CameraShakeInstance")); }
 		@property final
 		{
 			auto ref
 			{
-				UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPS!("UObject.Matrix", 80)()); }
-				Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPS!("Camera.ECameraAnimPlaySpace", 68)()); }
-				CameraAnimInst AnimInst() { mixin(MGPS!("CameraAnimInst", 64)()); }
-				float Scale() { mixin(MGPS!("float", 60)()); }
-				float FOVSinOffset() { mixin(MGPS!("float", 56)()); }
-				Vector RotSinOffset() { mixin(MGPS!("Vector", 44)()); }
-				Vector LocSinOffset() { mixin(MGPS!("Vector", 32)()); }
-				float CurrentBlendOutTime() { mixin(MGPS!("float", 28)()); }
-				float CurrentBlendInTime() { mixin(MGPS!("float", 20)()); }
-				float OscillatorTimeRemaining() { mixin(MGPS!("float", 12)()); }
-				ScriptName SourceShakeName() { mixin(MGPS!("ScriptName", 4)()); }
-				CameraShake SourceShake() { mixin(MGPS!("CameraShake", 0)()); }
+				UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPS("UObject.Matrix", 80)); }
+				Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPS("Camera.ECameraAnimPlaySpace", 68)); }
+				CameraAnimInst AnimInst() { mixin(MGPS("CameraAnimInst", 64)); }
+				float Scale() { mixin(MGPS("float", 60)); }
+				float FOVSinOffset() { mixin(MGPS("float", 56)); }
+				Vector RotSinOffset() { mixin(MGPS("Vector", 44)); }
+				Vector LocSinOffset() { mixin(MGPS("Vector", 32)); }
+				float CurrentBlendOutTime() { mixin(MGPS("float", 28)); }
+				float CurrentBlendInTime() { mixin(MGPS("float", 20)); }
+				float OscillatorTimeRemaining() { mixin(MGPS("float", 12)); }
+				ScriptName SourceShakeName() { mixin(MGPS("ScriptName", 4)); }
+				CameraShake SourceShake() { mixin(MGPS("CameraShake", 0)); }
 			}
-			bool bBlendingOut() { mixin(MGBPS!(24, 0x1)()); }
-			bool bBlendingOut(bool val) { mixin(MSBPS!(24, 0x1)()); }
-			bool bBlendingIn() { mixin(MGBPS!(16, 0x1)()); }
-			bool bBlendingIn(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bBlendingOut() { mixin(MGBPS(24, 0x1)); }
+			bool bBlendingOut(bool val) { mixin(MSBPS(24, 0x1)); }
+			bool bBlendingIn() { mixin(MGBPS(16, 0x1)); }
+			bool bBlendingIn(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance) ActiveShakes() { mixin(MGPC!("ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance)", 88)()); }
-		float SplitScreenShakeScale() { mixin(MGPC!("float", 100)()); }
+		ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance) ActiveShakes() { mixin(MGPC("ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance)", 88)); }
+		float SplitScreenShakeScale() { mixin(MGPC("float", 100)); }
 	}
 final:
 	static float InitializeOffset(ref in CameraShake.FOscillator Param)

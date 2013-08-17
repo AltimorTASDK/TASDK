@@ -8,7 +8,7 @@ extern(C++) interface UTAnimBlendByPhysicsVolume : UDKAnimBlendByPhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnimBlendByPhysicsVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnimBlendByPhysicsVolume")); }
 	private static __gshared UTAnimBlendByPhysicsVolume mDefaultProperties;
-	@property final static UTAnimBlendByPhysicsVolume DefaultProperties() { mixin(MGDPC!(UTAnimBlendByPhysicsVolume, "UTAnimBlendByPhysicsVolume UTGame.Default__UTAnimBlendByPhysicsVolume")()); }
+	@property final static UTAnimBlendByPhysicsVolume DefaultProperties() { mixin(MGDPC("UTAnimBlendByPhysicsVolume", "UTAnimBlendByPhysicsVolume UTGame.Default__UTAnimBlendByPhysicsVolume")); }
 }

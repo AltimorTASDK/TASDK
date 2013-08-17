@@ -11,9 +11,9 @@ extern(C++) interface Interface_TrTripNotifier : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.Interface_TrTripNotifier")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.Interface_TrTripNotifier")); }
 	private static __gshared Interface_TrTripNotifier mDefaultProperties;
-	@property final static Interface_TrTripNotifier DefaultProperties() { mixin(MGDPC!(Interface_TrTripNotifier, "Interface_TrTripNotifier TribesGame.Default__Interface_TrTripNotifier")()); }
+	@property final static Interface_TrTripNotifier DefaultProperties() { mixin(MGDPC("Interface_TrTripNotifier", "Interface_TrTripNotifier TribesGame.Default__Interface_TrTripNotifier")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,13 +28,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddTripActor() { mixin(MGF!("mAddTripActor", "Function TribesGame.Interface_TrTripNotifier.AddTripActor")()); }
-			ScriptFunction RemoveTripActor() { mixin(MGF!("mRemoveTripActor", "Function TribesGame.Interface_TrTripNotifier.RemoveTripActor")()); }
-			ScriptFunction TripActivated() { mixin(MGF!("mTripActivated", "Function TribesGame.Interface_TrTripNotifier.TripActivated")()); }
-			ScriptFunction GetParticleSystemName() { mixin(MGF!("mGetParticleSystemName", "Function TribesGame.Interface_TrTripNotifier.GetParticleSystemName")()); }
-			ScriptFunction GetTripSocketPosition() { mixin(MGF!("mGetTripSocketPosition", "Function TribesGame.Interface_TrTripNotifier.GetTripSocketPosition")()); }
-			ScriptFunction OnTripAwake() { mixin(MGF!("mOnTripAwake", "Function TribesGame.Interface_TrTripNotifier.OnTripAwake")()); }
-			ScriptFunction OnTripSleep() { mixin(MGF!("mOnTripSleep", "Function TribesGame.Interface_TrTripNotifier.OnTripSleep")()); }
+			ScriptFunction AddTripActor() { mixin(MGF("mAddTripActor", "Function TribesGame.Interface_TrTripNotifier.AddTripActor")); }
+			ScriptFunction RemoveTripActor() { mixin(MGF("mRemoveTripActor", "Function TribesGame.Interface_TrTripNotifier.RemoveTripActor")); }
+			ScriptFunction TripActivated() { mixin(MGF("mTripActivated", "Function TribesGame.Interface_TrTripNotifier.TripActivated")); }
+			ScriptFunction GetParticleSystemName() { mixin(MGF("mGetParticleSystemName", "Function TribesGame.Interface_TrTripNotifier.GetParticleSystemName")); }
+			ScriptFunction GetTripSocketPosition() { mixin(MGF("mGetTripSocketPosition", "Function TribesGame.Interface_TrTripNotifier.GetTripSocketPosition")); }
+			ScriptFunction OnTripAwake() { mixin(MGF("mOnTripAwake", "Function TribesGame.Interface_TrTripNotifier.OnTripAwake")); }
+			ScriptFunction OnTripSleep() { mixin(MGF("mOnTripSleep", "Function TribesGame.Interface_TrTripNotifier.OnTripSleep")); }
 		}
 	}
 final:

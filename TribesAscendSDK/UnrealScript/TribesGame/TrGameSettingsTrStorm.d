@@ -8,7 +8,7 @@ extern(C++) interface TrGameSettingsTrStorm : TrGameSettingsCommon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameSettingsTrStorm")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameSettingsTrStorm")); }
 	private static __gshared TrGameSettingsTrStorm mDefaultProperties;
-	@property final static TrGameSettingsTrStorm DefaultProperties() { mixin(MGDPC!(TrGameSettingsTrStorm, "TrGameSettingsTrStorm TribesGame.Default__TrGameSettingsTrStorm")()); }
+	@property final static TrGameSettingsTrStorm DefaultProperties() { mixin(MGDPC("TrGameSettingsTrStorm", "TrGameSettingsTrStorm TribesGame.Default__TrGameSettingsTrStorm")); }
 }

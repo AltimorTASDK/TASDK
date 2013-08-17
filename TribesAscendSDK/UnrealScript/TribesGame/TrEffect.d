@@ -10,9 +10,9 @@ extern(C++) interface TrEffect : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect")); }
 	private static __gshared TrEffect mDefaultProperties;
-	@property final static TrEffect DefaultProperties() { mixin(MGDPC!(TrEffect, "TrEffect TribesGame.Default__TrEffect")()); }
+	@property final static TrEffect DefaultProperties() { mixin(MGDPC("TrEffect", "TrEffect TribesGame.Default__TrEffect")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,22 +23,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect.Remove")()); }
-			ScriptFunction CanBeApplied() { mixin(MGF!("mCanBeApplied", "Function TribesGame.TrEffect.CanBeApplied")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect.Remove")); }
+			ScriptFunction CanBeApplied() { mixin(MGF("mCanBeApplied", "Function TribesGame.TrEffect.CanBeApplied")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptClass m_EffectFormClass() { mixin(MGPC!("ScriptClass", 76)()); }
-			float m_fValue() { mixin(MGPC!("float", 72)()); }
-			TrObject.EffectCalcMethod m_eCalcMethodCode() { mixin(MGPC!("TrObject.EffectCalcMethod", 64)()); }
-			int m_nEffectInstanceId() { mixin(MGPC!("int", 60)()); }
+			ScriptClass m_EffectFormClass() { mixin(MGPC("ScriptClass", 76)); }
+			float m_fValue() { mixin(MGPC("float", 72)); }
+			TrObject.EffectCalcMethod m_eCalcMethodCode() { mixin(MGPC("TrObject.EffectCalcMethod", 64)); }
+			int m_nEffectInstanceId() { mixin(MGPC("int", 60)); }
 		}
-		bool m_bRemovable() { mixin(MGBPC!(68, 0x1)()); }
-		bool m_bRemovable(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool m_bRemovable() { mixin(MGBPC(68, 0x1)); }
+		bool m_bRemovable(bool val) { mixin(MSBPC(68, 0x1)); }
 	}
 final:
 	void Apply(Actor Target, Actor.ImpactInfo* Impact = null)

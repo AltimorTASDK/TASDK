@@ -11,9 +11,9 @@ extern(C++) interface PlayerCollectorGame : GameInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.PlayerCollectorGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.PlayerCollectorGame")); }
 	private static __gshared PlayerCollectorGame mDefaultProperties;
-	@property final static PlayerCollectorGame DefaultProperties() { mixin(MGDPC!(PlayerCollectorGame, "PlayerCollectorGame GameFramework.Default__PlayerCollectorGame")()); }
+	@property final static PlayerCollectorGame DefaultProperties() { mixin(MGDPC("PlayerCollectorGame", "PlayerCollectorGame GameFramework.Default__PlayerCollectorGame")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,14 +23,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Login() { mixin(MGF!("mLogin", "Function GameFramework.PlayerCollectorGame.Login")()); }
-			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF!("mGetSeamlessTravelActorList", "Function GameFramework.PlayerCollectorGame.GetSeamlessTravelActorList")()); }
+			ScriptFunction Login() { mixin(MGF("mLogin", "Function GameFramework.PlayerCollectorGame.Login")); }
+			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF("mGetSeamlessTravelActorList", "Function GameFramework.PlayerCollectorGame.GetSeamlessTravelActorList")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString URLToLoad() { mixin(MGPC!("ScriptString", 888)()); }
-		int NumberOfClientsToWaitFor() { mixin(MGPC!("int", 884)()); }
+		ScriptString URLToLoad() { mixin(MGPC("ScriptString", 888)); }
+		int NumberOfClientsToWaitFor() { mixin(MGPC("int", 884)); }
 	}
 final:
 	PlayerController Login(ScriptString Portal, ScriptString Options, in OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)

@@ -8,7 +8,7 @@ extern(C++) interface TrFamilyInfo_Medium_Engineer_BE : TrFamilyInfo_Medium_Engi
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFamilyInfo_Medium_Engineer_BE")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrFamilyInfo_Medium_Engineer_BE")); }
 	private static __gshared TrFamilyInfo_Medium_Engineer_BE mDefaultProperties;
-	@property final static TrFamilyInfo_Medium_Engineer_BE DefaultProperties() { mixin(MGDPC!(TrFamilyInfo_Medium_Engineer_BE, "TrFamilyInfo_Medium_Engineer_BE TribesGame.Default__TrFamilyInfo_Medium_Engineer_BE")()); }
+	@property final static TrFamilyInfo_Medium_Engineer_BE DefaultProperties() { mixin(MGDPC("TrFamilyInfo_Medium_Engineer_BE", "TrFamilyInfo_Medium_Engineer_BE TribesGame.Default__TrFamilyInfo_Medium_Engineer_BE")); }
 }

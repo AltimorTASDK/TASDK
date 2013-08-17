@@ -8,7 +8,7 @@ extern(C++) interface ParticleModuleSizeBase : ParticleModule
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleSizeBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleSizeBase")); }
 	private static __gshared ParticleModuleSizeBase mDefaultProperties;
-	@property final static ParticleModuleSizeBase DefaultProperties() { mixin(MGDPC!(ParticleModuleSizeBase, "ParticleModuleSizeBase Engine.Default__ParticleModuleSizeBase")()); }
+	@property final static ParticleModuleSizeBase DefaultProperties() { mixin(MGDPC("ParticleModuleSizeBase", "ParticleModuleSizeBase Engine.Default__ParticleModuleSizeBase")); }
 }

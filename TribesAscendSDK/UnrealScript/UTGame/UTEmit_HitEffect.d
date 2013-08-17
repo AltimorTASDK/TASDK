@@ -9,9 +9,9 @@ extern(C++) interface UTEmit_HitEffect : UTEmitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTEmit_HitEffect")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTEmit_HitEffect")); }
 	private static __gshared UTEmit_HitEffect mDefaultProperties;
-	@property final static UTEmit_HitEffect DefaultProperties() { mixin(MGDPC!(UTEmit_HitEffect, "UTEmit_HitEffect UTGame.Default__UTEmit_HitEffect")()); }
+	@property final static UTEmit_HitEffect DefaultProperties() { mixin(MGDPC("UTEmit_HitEffect", "UTEmit_HitEffect UTGame.Default__UTEmit_HitEffect")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AttachTo() { mixin(MGF!("mAttachTo", "Function UTGame.UTEmit_HitEffect.AttachTo")()); }
-			ScriptFunction PawnBaseDied() { mixin(MGF!("mPawnBaseDied", "Function UTGame.UTEmit_HitEffect.PawnBaseDied")()); }
+			ScriptFunction AttachTo() { mixin(MGF("mAttachTo", "Function UTGame.UTEmit_HitEffect.AttachTo")); }
+			ScriptFunction PawnBaseDied() { mixin(MGF("mPawnBaseDied", "Function UTGame.UTEmit_HitEffect.PawnBaseDied")); }
 		}
 	}
 final:

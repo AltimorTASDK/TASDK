@@ -14,9 +14,9 @@ extern(C++) interface TrEntryPlayerController : TrPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEntryPlayerController")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEntryPlayerController")); }
 	private static __gshared TrEntryPlayerController mDefaultProperties;
-	@property final static TrEntryPlayerController DefaultProperties() { mixin(MGDPC!(TrEntryPlayerController, "TrEntryPlayerController TribesGame.Default__TrEntryPlayerController")()); }
+	@property final static TrEntryPlayerController DefaultProperties() { mixin(MGDPC("TrEntryPlayerController", "TrEntryPlayerController TribesGame.Default__TrEntryPlayerController")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -69,78 +69,78 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RequestPaperDoll() { mixin(MGF!("mRequestPaperDoll", "Function TribesGame.TrEntryPlayerController.RequestPaperDoll")()); }
-			ScriptFunction SendMenuToLobby() { mixin(MGF!("mSendMenuToLobby", "Function TribesGame.TrEntryPlayerController.SendMenuToLobby")()); }
-			ScriptFunction ResendReadyCheck() { mixin(MGF!("mResendReadyCheck", "Function TribesGame.TrEntryPlayerController.ResendReadyCheck")()); }
-			ScriptFunction UpdateMenuTimer() { mixin(MGF!("mUpdateMenuTimer", "Function TribesGame.TrEntryPlayerController.UpdateMenuTimer")()); }
-			ScriptFunction GetWaitRemaining() { mixin(MGF!("mGetWaitRemaining", "Function TribesGame.TrEntryPlayerController.GetWaitRemaining")()); }
-			ScriptFunction NotifyMenuReady() { mixin(MGF!("mNotifyMenuReady", "Function TribesGame.TrEntryPlayerController.NotifyMenuReady")()); }
-			ScriptFunction RefreshFriends() { mixin(MGF!("mRefreshFriends", "Function TribesGame.TrEntryPlayerController.RefreshFriends")()); }
-			ScriptFunction SwapModel() { mixin(MGF!("mSwapModel", "Function TribesGame.TrEntryPlayerController.SwapModel")()); }
-			ScriptFunction ShowPeach() { mixin(MGF!("mShowPeach", "Function TribesGame.TrEntryPlayerController.ShowPeach")()); }
-			ScriptFunction ToggleMenuVisible() { mixin(MGF!("mToggleMenuVisible", "Function TribesGame.TrEntryPlayerController.ToggleMenuVisible")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrEntryPlayerController.PostBeginPlay")()); }
-			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function TribesGame.TrEntryPlayerController.GetPlayerViewPoint")()); }
-			ScriptFunction SwingCamera() { mixin(MGF!("mSwingCamera", "Function TribesGame.TrEntryPlayerController.SwingCamera")()); }
-			ScriptFunction SwingCameraBack() { mixin(MGF!("mSwingCameraBack", "Function TribesGame.TrEntryPlayerController.SwingCameraBack")()); }
-			ScriptFunction PreloadTexturesTimer() { mixin(MGF!("mPreloadTexturesTimer", "Function TribesGame.TrEntryPlayerController.PreloadTexturesTimer")()); }
-			ScriptFunction NotifyMenuReadyTimer() { mixin(MGF!("mNotifyMenuReadyTimer", "Function TribesGame.TrEntryPlayerController.NotifyMenuReadyTimer")()); }
-			ScriptFunction RequestPaperDollTimer() { mixin(MGF!("mRequestPaperDollTimer", "Function TribesGame.TrEntryPlayerController.RequestPaperDollTimer")()); }
-			ScriptFunction BeginQueueResendTimer() { mixin(MGF!("mBeginQueueResendTimer", "Function TribesGame.TrEntryPlayerController.BeginQueueResendTimer")()); }
-			ScriptFunction ClearQueueResendTimer() { mixin(MGF!("mClearQueueResendTimer", "Function TribesGame.TrEntryPlayerController.ClearQueueResendTimer")()); }
-			ScriptFunction LoadingTimer() { mixin(MGF!("mLoadingTimer", "Function TribesGame.TrEntryPlayerController.LoadingTimer")()); }
-			ScriptFunction InitInputSystem() { mixin(MGF!("mInitInputSystem", "Function TribesGame.TrEntryPlayerController.InitInputSystem")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrEntryPlayerController.Destroyed")()); }
-			ScriptFunction OnControllerChanged() { mixin(MGF!("mOnControllerChanged", "Function TribesGame.TrEntryPlayerController.OnControllerChanged")()); }
-			ScriptFunction OnGameInviteReceived() { mixin(MGF!("mOnGameInviteReceived", "Function TribesGame.TrEntryPlayerController.OnGameInviteReceived")()); }
-			ScriptFunction OnFriendInviteReceived() { mixin(MGF!("mOnFriendInviteReceived", "Function TribesGame.TrEntryPlayerController.OnFriendInviteReceived")()); }
-			ScriptFunction OnFriendMessageReceived() { mixin(MGF!("mOnFriendMessageReceived", "Function TribesGame.TrEntryPlayerController.OnFriendMessageReceived")()); }
-			ScriptFunction OnConnectionStatusChange() { mixin(MGF!("mOnConnectionStatusChange", "Function TribesGame.TrEntryPlayerController.OnConnectionStatusChange")()); }
-			ScriptFunction OnLinkStatusChanged() { mixin(MGF!("mOnLinkStatusChanged", "Function TribesGame.TrEntryPlayerController.OnLinkStatusChanged")()); }
-			ScriptFunction QuitToMainMenu() { mixin(MGF!("mQuitToMainMenu", "Function TribesGame.TrEntryPlayerController.QuitToMainMenu")()); }
-			ScriptFunction SetPawnConstructionScene() { mixin(MGF!("mSetPawnConstructionScene", "Function TribesGame.TrEntryPlayerController.SetPawnConstructionScene")()); }
-			ScriptFunction ShowMidGameMenu() { mixin(MGF!("mShowMidGameMenu", "Function TribesGame.TrEntryPlayerController.ShowMidGameMenu")()); }
-			ScriptFunction ShowScoreboard() { mixin(MGF!("mShowScoreboard", "Function TribesGame.TrEntryPlayerController.ShowScoreboard")()); }
-			ScriptFunction Pose() { mixin(MGF!("mPose", "Function TribesGame.TrEntryPlayerController.Pose")()); }
-			ScriptFunction Weap() { mixin(MGF!("mWeap", "Function TribesGame.TrEntryPlayerController.Weap")()); }
-			ScriptFunction Char() { mixin(MGF!("mChar", "Function TribesGame.TrEntryPlayerController.Char")()); }
-			ScriptFunction UpdatePaperDoll_Device() { mixin(MGF!("mUpdatePaperDoll_Device", "Function TribesGame.TrEntryPlayerController.UpdatePaperDoll_Device")()); }
-			ScriptFunction ClearMainMenuPaperDoll() { mixin(MGF!("mClearMainMenuPaperDoll", "Function TribesGame.TrEntryPlayerController.ClearMainMenuPaperDoll")()); }
-			ScriptFunction UpdateMainMenuPaperDoll_Mesh() { mixin(MGF!("mUpdateMainMenuPaperDoll_Mesh", "Function TribesGame.TrEntryPlayerController.UpdateMainMenuPaperDoll_Mesh")()); }
-			ScriptFunction UpdatePaperDoll() { mixin(MGF!("mUpdatePaperDoll", "Function TribesGame.TrEntryPlayerController.UpdatePaperDoll")()); }
-			ScriptFunction OnDeviceContentDataClassLoaded() { mixin(MGF!("mOnDeviceContentDataClassLoaded", "Function TribesGame.TrEntryPlayerController.OnDeviceContentDataClassLoaded")()); }
-			ScriptFunction OnClassSelectedMainMenu() { mixin(MGF!("mOnClassSelectedMainMenu", "Function TribesGame.TrEntryPlayerController.OnClassSelectedMainMenu")()); }
-			ScriptFunction On3PSkinContentLoaded() { mixin(MGF!("mOn3PSkinContentLoaded", "Function TribesGame.TrEntryPlayerController.On3PSkinContentLoaded")()); }
-			ScriptFunction RefreshFriendsTimer() { mixin(MGF!("mRefreshFriendsTimer", "Function TribesGame.TrEntryPlayerController.RefreshFriendsTimer")()); }
-			ScriptFunction SwapModelTimer() { mixin(MGF!("mSwapModelTimer", "Function TribesGame.TrEntryPlayerController.SwapModelTimer")()); }
-			ScriptFunction ShowPeachTimer() { mixin(MGF!("mShowPeachTimer", "Function TribesGame.TrEntryPlayerController.ShowPeachTimer")()); }
+			ScriptFunction RequestPaperDoll() { mixin(MGF("mRequestPaperDoll", "Function TribesGame.TrEntryPlayerController.RequestPaperDoll")); }
+			ScriptFunction SendMenuToLobby() { mixin(MGF("mSendMenuToLobby", "Function TribesGame.TrEntryPlayerController.SendMenuToLobby")); }
+			ScriptFunction ResendReadyCheck() { mixin(MGF("mResendReadyCheck", "Function TribesGame.TrEntryPlayerController.ResendReadyCheck")); }
+			ScriptFunction UpdateMenuTimer() { mixin(MGF("mUpdateMenuTimer", "Function TribesGame.TrEntryPlayerController.UpdateMenuTimer")); }
+			ScriptFunction GetWaitRemaining() { mixin(MGF("mGetWaitRemaining", "Function TribesGame.TrEntryPlayerController.GetWaitRemaining")); }
+			ScriptFunction NotifyMenuReady() { mixin(MGF("mNotifyMenuReady", "Function TribesGame.TrEntryPlayerController.NotifyMenuReady")); }
+			ScriptFunction RefreshFriends() { mixin(MGF("mRefreshFriends", "Function TribesGame.TrEntryPlayerController.RefreshFriends")); }
+			ScriptFunction SwapModel() { mixin(MGF("mSwapModel", "Function TribesGame.TrEntryPlayerController.SwapModel")); }
+			ScriptFunction ShowPeach() { mixin(MGF("mShowPeach", "Function TribesGame.TrEntryPlayerController.ShowPeach")); }
+			ScriptFunction ToggleMenuVisible() { mixin(MGF("mToggleMenuVisible", "Function TribesGame.TrEntryPlayerController.ToggleMenuVisible")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrEntryPlayerController.PostBeginPlay")); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF("mGetPlayerViewPoint", "Function TribesGame.TrEntryPlayerController.GetPlayerViewPoint")); }
+			ScriptFunction SwingCamera() { mixin(MGF("mSwingCamera", "Function TribesGame.TrEntryPlayerController.SwingCamera")); }
+			ScriptFunction SwingCameraBack() { mixin(MGF("mSwingCameraBack", "Function TribesGame.TrEntryPlayerController.SwingCameraBack")); }
+			ScriptFunction PreloadTexturesTimer() { mixin(MGF("mPreloadTexturesTimer", "Function TribesGame.TrEntryPlayerController.PreloadTexturesTimer")); }
+			ScriptFunction NotifyMenuReadyTimer() { mixin(MGF("mNotifyMenuReadyTimer", "Function TribesGame.TrEntryPlayerController.NotifyMenuReadyTimer")); }
+			ScriptFunction RequestPaperDollTimer() { mixin(MGF("mRequestPaperDollTimer", "Function TribesGame.TrEntryPlayerController.RequestPaperDollTimer")); }
+			ScriptFunction BeginQueueResendTimer() { mixin(MGF("mBeginQueueResendTimer", "Function TribesGame.TrEntryPlayerController.BeginQueueResendTimer")); }
+			ScriptFunction ClearQueueResendTimer() { mixin(MGF("mClearQueueResendTimer", "Function TribesGame.TrEntryPlayerController.ClearQueueResendTimer")); }
+			ScriptFunction LoadingTimer() { mixin(MGF("mLoadingTimer", "Function TribesGame.TrEntryPlayerController.LoadingTimer")); }
+			ScriptFunction InitInputSystem() { mixin(MGF("mInitInputSystem", "Function TribesGame.TrEntryPlayerController.InitInputSystem")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrEntryPlayerController.Destroyed")); }
+			ScriptFunction OnControllerChanged() { mixin(MGF("mOnControllerChanged", "Function TribesGame.TrEntryPlayerController.OnControllerChanged")); }
+			ScriptFunction OnGameInviteReceived() { mixin(MGF("mOnGameInviteReceived", "Function TribesGame.TrEntryPlayerController.OnGameInviteReceived")); }
+			ScriptFunction OnFriendInviteReceived() { mixin(MGF("mOnFriendInviteReceived", "Function TribesGame.TrEntryPlayerController.OnFriendInviteReceived")); }
+			ScriptFunction OnFriendMessageReceived() { mixin(MGF("mOnFriendMessageReceived", "Function TribesGame.TrEntryPlayerController.OnFriendMessageReceived")); }
+			ScriptFunction OnConnectionStatusChange() { mixin(MGF("mOnConnectionStatusChange", "Function TribesGame.TrEntryPlayerController.OnConnectionStatusChange")); }
+			ScriptFunction OnLinkStatusChanged() { mixin(MGF("mOnLinkStatusChanged", "Function TribesGame.TrEntryPlayerController.OnLinkStatusChanged")); }
+			ScriptFunction QuitToMainMenu() { mixin(MGF("mQuitToMainMenu", "Function TribesGame.TrEntryPlayerController.QuitToMainMenu")); }
+			ScriptFunction SetPawnConstructionScene() { mixin(MGF("mSetPawnConstructionScene", "Function TribesGame.TrEntryPlayerController.SetPawnConstructionScene")); }
+			ScriptFunction ShowMidGameMenu() { mixin(MGF("mShowMidGameMenu", "Function TribesGame.TrEntryPlayerController.ShowMidGameMenu")); }
+			ScriptFunction ShowScoreboard() { mixin(MGF("mShowScoreboard", "Function TribesGame.TrEntryPlayerController.ShowScoreboard")); }
+			ScriptFunction Pose() { mixin(MGF("mPose", "Function TribesGame.TrEntryPlayerController.Pose")); }
+			ScriptFunction Weap() { mixin(MGF("mWeap", "Function TribesGame.TrEntryPlayerController.Weap")); }
+			ScriptFunction Char() { mixin(MGF("mChar", "Function TribesGame.TrEntryPlayerController.Char")); }
+			ScriptFunction UpdatePaperDoll_Device() { mixin(MGF("mUpdatePaperDoll_Device", "Function TribesGame.TrEntryPlayerController.UpdatePaperDoll_Device")); }
+			ScriptFunction ClearMainMenuPaperDoll() { mixin(MGF("mClearMainMenuPaperDoll", "Function TribesGame.TrEntryPlayerController.ClearMainMenuPaperDoll")); }
+			ScriptFunction UpdateMainMenuPaperDoll_Mesh() { mixin(MGF("mUpdateMainMenuPaperDoll_Mesh", "Function TribesGame.TrEntryPlayerController.UpdateMainMenuPaperDoll_Mesh")); }
+			ScriptFunction UpdatePaperDoll() { mixin(MGF("mUpdatePaperDoll", "Function TribesGame.TrEntryPlayerController.UpdatePaperDoll")); }
+			ScriptFunction OnDeviceContentDataClassLoaded() { mixin(MGF("mOnDeviceContentDataClassLoaded", "Function TribesGame.TrEntryPlayerController.OnDeviceContentDataClassLoaded")); }
+			ScriptFunction OnClassSelectedMainMenu() { mixin(MGF("mOnClassSelectedMainMenu", "Function TribesGame.TrEntryPlayerController.OnClassSelectedMainMenu")); }
+			ScriptFunction On3PSkinContentLoaded() { mixin(MGF("mOn3PSkinContentLoaded", "Function TribesGame.TrEntryPlayerController.On3PSkinContentLoaded")); }
+			ScriptFunction RefreshFriendsTimer() { mixin(MGF("mRefreshFriendsTimer", "Function TribesGame.TrEntryPlayerController.RefreshFriendsTimer")); }
+			ScriptFunction SwapModelTimer() { mixin(MGF("mSwapModelTimer", "Function TribesGame.TrEntryPlayerController.SwapModelTimer")); }
+			ScriptFunction ShowPeachTimer() { mixin(MGF("mShowPeachTimer", "Function TribesGame.TrEntryPlayerController.ShowPeachTimer")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC!("ScriptArray!(PostProcessChain)", 3452)()); }
-			float m_fCameraRotationInterpTime() { mixin(MGPC!("float", 3560)()); }
-			float m_fCameraRotationCurrTime() { mixin(MGPC!("float", 3556)()); }
-			Rotator m_rTargetCameraRotation() { mixin(MGPC!("Rotator", 3544)()); }
-			Rotator m_rInitialCameraRotation() { mixin(MGPC!("Rotator", 3532)()); }
-			Vector m_CameraLocation4x3() { mixin(MGPC!("Vector", 3520)()); }
-			Vector m_CameraLocation16x10() { mixin(MGPC!("Vector", 3508)()); }
-			Vector m_CameraLocation16x9() { mixin(MGPC!("Vector", 3496)()); }
-			float m_PreloadTextureTime() { mixin(MGPC!("float", 3492)()); }
-			TrObject.EContentDataType m_ContentDataType() { mixin(MGPC!("TrObject.EContentDataType", 3488)()); }
-			TrPaperDollMainMenu m_MainMenuPaperDoll() { mixin(MGPC!("TrPaperDollMainMenu", 3484)()); }
-			ScriptString MainMenuContentClassName() { mixin(MGPC!("ScriptString", 3472)()); }
-			TrMainMenuContentData m_MainMenuContentData() { mixin(MGPC!("TrMainMenuContentData", 3468)()); }
-			LocalPlayer OldPlayer() { mixin(MGPC!("LocalPlayer", 3464)()); }
-			PostProcessChain EntryPostProcessChain() { mixin(MGPC!("PostProcessChain", 3448)()); }
-			int MAX_RESEND_WAIT_TIME() { mixin(MGPC!("int", 3440)()); }
-			int MIN_RESEND_WAIT_TIME() { mixin(MGPC!("int", 3436)()); }
-			int m_CountdownTime() { mixin(MGPC!("int", 3432)()); }
+			ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC("ScriptArray!(PostProcessChain)", 3452)); }
+			float m_fCameraRotationInterpTime() { mixin(MGPC("float", 3560)); }
+			float m_fCameraRotationCurrTime() { mixin(MGPC("float", 3556)); }
+			Rotator m_rTargetCameraRotation() { mixin(MGPC("Rotator", 3544)); }
+			Rotator m_rInitialCameraRotation() { mixin(MGPC("Rotator", 3532)); }
+			Vector m_CameraLocation4x3() { mixin(MGPC("Vector", 3520)); }
+			Vector m_CameraLocation16x10() { mixin(MGPC("Vector", 3508)); }
+			Vector m_CameraLocation16x9() { mixin(MGPC("Vector", 3496)); }
+			float m_PreloadTextureTime() { mixin(MGPC("float", 3492)); }
+			TrObject.EContentDataType m_ContentDataType() { mixin(MGPC("TrObject.EContentDataType", 3488)); }
+			TrPaperDollMainMenu m_MainMenuPaperDoll() { mixin(MGPC("TrPaperDollMainMenu", 3484)); }
+			ScriptString MainMenuContentClassName() { mixin(MGPC("ScriptString", 3472)); }
+			TrMainMenuContentData m_MainMenuContentData() { mixin(MGPC("TrMainMenuContentData", 3468)); }
+			LocalPlayer OldPlayer() { mixin(MGPC("LocalPlayer", 3464)); }
+			PostProcessChain EntryPostProcessChain() { mixin(MGPC("PostProcessChain", 3448)); }
+			int MAX_RESEND_WAIT_TIME() { mixin(MGPC("int", 3440)); }
+			int MIN_RESEND_WAIT_TIME() { mixin(MGPC("int", 3436)); }
+			int m_CountdownTime() { mixin(MGPC("int", 3432)); }
 		}
-		bool bMenuNotified() { mixin(MGBPC!(3444, 0x1)()); }
-		bool bMenuNotified(bool val) { mixin(MSBPC!(3444, 0x1)()); }
+		bool bMenuNotified() { mixin(MGBPC(3444, 0x1)); }
+		bool bMenuNotified(bool val) { mixin(MSBPC(3444, 0x1)); }
 	}
 final:
 	bool RequestPaperDoll()

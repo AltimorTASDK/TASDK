@@ -11,9 +11,9 @@ extern(C++) interface UTDataStore_GameSearchPersonal : UDKDataStore_GameSearchBa
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDataStore_GameSearchPersonal")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDataStore_GameSearchPersonal")); }
 	private static __gshared UTDataStore_GameSearchPersonal mDefaultProperties;
-	@property final static UTDataStore_GameSearchPersonal DefaultProperties() { mixin(MGDPC!(UTDataStore_GameSearchPersonal, "UTDataStore_GameSearchPersonal UTGame.Default__UTDataStore_GameSearchPersonal")()); }
+	@property final static UTDataStore_GameSearchPersonal DefaultProperties() { mixin(MGDPC("UTDataStore_GameSearchPersonal", "UTDataStore_GameSearchPersonal UTGame.Default__UTDataStore_GameSearchPersonal")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,16 +31,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HasOutstandingQueries() { mixin(MGF!("mHasOutstandingQueries", "Function UTGame.UTDataStore_GameSearchPersonal.HasOutstandingQueries")()); }
-			ScriptFunction OverrideQuerySubmission() { mixin(MGF!("mOverrideQuerySubmission", "Function UTGame.UTDataStore_GameSearchPersonal.OverrideQuerySubmission")()); }
-			ScriptFunction GetPlayerName() { mixin(MGF!("mGetPlayerName", "Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerName")()); }
-			ScriptFunction GetPlayerNetId() { mixin(MGF!("mGetPlayerNetId", "Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerNetId")()); }
-			ScriptFunction FindServerIndexByString() { mixin(MGF!("mFindServerIndexByString", "Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexByString")()); }
-			ScriptFunction FindServerIndexById() { mixin(MGF!("mFindServerIndexById", "Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexById")()); }
-			ScriptFunction AddServer() { mixin(MGF!("mAddServer", "Function UTGame.UTDataStore_GameSearchPersonal.AddServer")()); }
-			ScriptFunction RemoveServer() { mixin(MGF!("mRemoveServer", "Function UTGame.UTDataStore_GameSearchPersonal.RemoveServer")()); }
-			ScriptFunction GetServerIdList() { mixin(MGF!("mGetServerIdList", "Function UTGame.UTDataStore_GameSearchPersonal.GetServerIdList")()); }
-			ScriptFunction GetServerStringList() { mixin(MGF!("mGetServerStringList", "Function UTGame.UTDataStore_GameSearchPersonal.GetServerStringList")()); }
+			ScriptFunction HasOutstandingQueries() { mixin(MGF("mHasOutstandingQueries", "Function UTGame.UTDataStore_GameSearchPersonal.HasOutstandingQueries")); }
+			ScriptFunction OverrideQuerySubmission() { mixin(MGF("mOverrideQuerySubmission", "Function UTGame.UTDataStore_GameSearchPersonal.OverrideQuerySubmission")); }
+			ScriptFunction GetPlayerName() { mixin(MGF("mGetPlayerName", "Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerName")); }
+			ScriptFunction GetPlayerNetId() { mixin(MGF("mGetPlayerNetId", "Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerNetId")); }
+			ScriptFunction FindServerIndexByString() { mixin(MGF("mFindServerIndexByString", "Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexByString")); }
+			ScriptFunction FindServerIndexById() { mixin(MGF("mFindServerIndexById", "Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexById")); }
+			ScriptFunction AddServer() { mixin(MGF("mAddServer", "Function UTGame.UTDataStore_GameSearchPersonal.AddServer")); }
+			ScriptFunction RemoveServer() { mixin(MGF("mRemoveServer", "Function UTGame.UTDataStore_GameSearchPersonal.RemoveServer")); }
+			ScriptFunction GetServerIdList() { mixin(MGF("mGetServerIdList", "Function UTGame.UTDataStore_GameSearchPersonal.GetServerIdList")); }
+			ScriptFunction GetServerStringList() { mixin(MGF("mGetServerStringList", "Function UTGame.UTDataStore_GameSearchPersonal.GetServerStringList")); }
 		}
 	}
 	static struct Constants
@@ -49,8 +49,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTDataStore_GameSearchDM PrimaryGameSearchDataStore() { mixin(MGPC!("UTDataStore_GameSearchDM", 172)()); }
-		ScriptString ServerUniqueId() { mixin(MGPC!("ScriptString", 176)()); }
+		UTDataStore_GameSearchDM PrimaryGameSearchDataStore() { mixin(MGPC("UTDataStore_GameSearchDM", 172)); }
+		ScriptString ServerUniqueId() { mixin(MGPC("ScriptString", 176)); }
 	}
 final:
 	bool HasOutstandingQueries(bool* bRestrictCheckToSelf = null)

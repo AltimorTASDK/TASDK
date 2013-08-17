@@ -28,9 +28,9 @@ extern(C++) interface TrDevice : UTWeapon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice")); }
 	private static __gshared TrDevice mDefaultProperties;
-	@property final static TrDevice DefaultProperties() { mixin(MGDPC!(TrDevice, "TrDevice TribesGame.Default__TrDevice")()); }
+	@property final static TrDevice DefaultProperties() { mixin(MGDPC("TrDevice", "TrDevice TribesGame.Default__TrDevice")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -180,148 +180,148 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CalcHUDAimChargePercent() { mixin(MGF!("mCalcHUDAimChargePercent", "Function TribesGame.TrDevice.CalcHUDAimChargePercent")()); }
-			ScriptFunction GetAccuracy() { mixin(MGF!("mGetAccuracy", "Function TribesGame.TrDevice.GetAccuracy")()); }
-			ScriptFunction GetFireModeNum() { mixin(MGF!("mGetFireModeNum", "Function TribesGame.TrDevice.GetFireModeNum")()); }
-			ScriptFunction IsValidTarget() { mixin(MGF!("mIsValidTarget", "Function TribesGame.TrDevice.IsValidTarget")()); }
-			ScriptFunction IsEnemy() { mixin(MGF!("mIsEnemy", "Function TribesGame.TrDevice.IsEnemy")()); }
-			ScriptFunction IsInsideCone() { mixin(MGF!("mIsInsideCone", "Function TribesGame.TrDevice.IsInsideCone")()); }
-			ScriptFunction ShouldAddToImpactList() { mixin(MGF!("mShouldAddToImpactList", "Function TribesGame.TrDevice.ShouldAddToImpactList")()); }
-			ScriptFunction TickInHandWeapon() { mixin(MGF!("mTickInHandWeapon", "Function TribesGame.TrDevice.TickInHandWeapon")()); }
-			ScriptFunction ResetLock() { mixin(MGF!("mResetLock", "Function TribesGame.TrDevice.ResetLock")()); }
-			ScriptFunction GetLockedTarget() { mixin(MGF!("mGetLockedTarget", "Function TribesGame.TrDevice.GetLockedTarget")()); }
-			ScriptFunction SpawnPet() { mixin(MGF!("mSpawnPet", "Function TribesGame.TrDevice.SpawnPet")()); }
-			ScriptFunction GetTargetAccuracy() { mixin(MGF!("mGetTargetAccuracy", "Function TribesGame.TrDevice.GetTargetAccuracy")()); }
-			ScriptFunction RestoreAccuracy() { mixin(MGF!("mRestoreAccuracy", "Function TribesGame.TrDevice.RestoreAccuracy")()); }
-			ScriptFunction RestoreKickback() { mixin(MGF!("mRestoreKickback", "Function TribesGame.TrDevice.RestoreKickback")()); }
-			ScriptFunction IsInLOS() { mixin(MGF!("mIsInLOS", "Function TribesGame.TrDevice.IsInLOS")()); }
-			ScriptFunction AttachHandsMesh() { mixin(MGF!("mAttachHandsMesh", "Function TribesGame.TrDevice.AttachHandsMesh")()); }
-			ScriptFunction LoadMeshData() { mixin(MGF!("mLoadMeshData", "Function TribesGame.TrDevice.LoadMeshData")()); }
-			ScriptFunction ValidateClientReportedHit() { mixin(MGF!("mValidateClientReportedHit", "Function TribesGame.TrDevice.ValidateClientReportedHit")()); }
-			ScriptFunction ValidateClientReportedHitInternal() { mixin(MGF!("mValidateClientReportedHitInternal", "Function TribesGame.TrDevice.ValidateClientReportedHitInternal")()); }
-			ScriptFunction GetObjectReferencerName() { mixin(MGF!("mGetObjectReferencerName", "Function TribesGame.TrDevice.GetObjectReferencerName")()); }
-			ScriptFunction GetObjectReferencerPackageName() { mixin(MGF!("mGetObjectReferencerPackageName", "Function TribesGame.TrDevice.GetObjectReferencerPackageName")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrDevice.ReplicatedEvent")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDevice.PostBeginPlay")()); }
-			ScriptFunction AddAmmo() { mixin(MGF!("mAddAmmo", "Function TribesGame.TrDevice.AddAmmo")()); }
-			ScriptFunction ReplicateAmmoOnWeaponFire() { mixin(MGF!("mReplicateAmmoOnWeaponFire", "Function TribesGame.TrDevice.ReplicateAmmoOnWeaponFire")()); }
-			ScriptFunction ConsumeAmmo_Internal() { mixin(MGF!("mConsumeAmmo_Internal", "Function TribesGame.TrDevice.ConsumeAmmo_Internal")()); }
-			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function TribesGame.TrDevice.ConsumeAmmo")()); }
-			ScriptFunction GetTraceOwner() { mixin(MGF!("mGetTraceOwner", "Function TribesGame.TrDevice.GetTraceOwner")()); }
-			ScriptFunction AttachWeaponTo() { mixin(MGF!("mAttachWeaponTo", "Function TribesGame.TrDevice.AttachWeaponTo")()); }
-			ScriptFunction CreateFirstPersonHandsMesh() { mixin(MGF!("mCreateFirstPersonHandsMesh", "Function TribesGame.TrDevice.CreateFirstPersonHandsMesh")()); }
-			ScriptFunction ChangeVisibility() { mixin(MGF!("mChangeVisibility", "Function TribesGame.TrDevice.ChangeVisibility")()); }
-			ScriptFunction CentralUpdateHandsMesh() { mixin(MGF!("mCentralUpdateHandsMesh", "Function TribesGame.TrDevice.CentralUpdateHandsMesh")()); }
-			ScriptFunction UpdateHandsMesh() { mixin(MGF!("mUpdateHandsMesh", "Function TribesGame.TrDevice.UpdateHandsMesh")()); }
-			ScriptFunction CreateOverlayMesh() { mixin(MGF!("mCreateOverlayMesh", "Function TribesGame.TrDevice.CreateOverlayMesh")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice.PostInitAnimTree")()); }
-			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice.PlayWeaponEquip")()); }
-			ScriptFunction OnPlayRetrieveAnim() { mixin(MGF!("mOnPlayRetrieveAnim", "Function TribesGame.TrDevice.OnPlayRetrieveAnim")()); }
-			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice.PlayWeaponPutDown")()); }
-			ScriptFunction WeaponEmpty() { mixin(MGF!("mWeaponEmpty", "Function TribesGame.TrDevice.WeaponEmpty")()); }
-			ScriptFunction OnSwitchToWeapon() { mixin(MGF!("mOnSwitchToWeapon", "Function TribesGame.TrDevice.OnSwitchToWeapon")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice.OnSwitchAwayFromWeapon")()); }
-			ScriptFunction ClientWeaponSet() { mixin(MGF!("mClientWeaponSet", "Function TribesGame.TrDevice.ClientWeaponSet")()); }
-			ScriptFunction PlayFireEffects() { mixin(MGF!("mPlayFireEffects", "Function TribesGame.TrDevice.PlayFireEffects")()); }
-			ScriptFunction PlayFireAnimation() { mixin(MGF!("mPlayFireAnimation", "Function TribesGame.TrDevice.PlayFireAnimation")()); }
-			ScriptFunction ShakeView() { mixin(MGF!("mShakeView", "Function TribesGame.TrDevice.ShakeView")()); }
-			ScriptFunction ShouldFireTracer() { mixin(MGF!("mShouldFireTracer", "Function TribesGame.TrDevice.ShouldFireTracer")()); }
-			ScriptFunction ShouldFireTracerBeam() { mixin(MGF!("mShouldFireTracerBeam", "Function TribesGame.TrDevice.ShouldFireTracerBeam")()); }
-			ScriptFunction SpawnTracerBeam() { mixin(MGF!("mSpawnTracerBeam", "Function TribesGame.TrDevice.SpawnTracerBeam")()); }
-			ScriptFunction SpawnTracerEffect() { mixin(MGF!("mSpawnTracerEffect", "Function TribesGame.TrDevice.SpawnTracerEffect")()); }
-			ScriptFunction GetTracer() { mixin(MGF!("mGetTracer", "Function TribesGame.TrDevice.GetTracer")()); }
-			ScriptFunction GetNumRoundsCurrentlyInClip() { mixin(MGF!("mGetNumRoundsCurrentlyInClip", "Function TribesGame.TrDevice.GetNumRoundsCurrentlyInClip")()); }
-			ScriptFunction HasAmmo() { mixin(MGF!("mHasAmmo", "Function TribesGame.TrDevice.HasAmmo")()); }
-			ScriptFunction HasAnyAmmo() { mixin(MGF!("mHasAnyAmmo", "Function TribesGame.TrDevice.HasAnyAmmo")()); }
-			ScriptFunction AllowSwitchTo() { mixin(MGF!("mAllowSwitchTo", "Function TribesGame.TrDevice.AllowSwitchTo")()); }
-			ScriptFunction CalculateRangeDamageFalloff() { mixin(MGF!("mCalculateRangeDamageFalloff", "Function TribesGame.TrDevice.CalculateRangeDamageFalloff")()); }
-			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function TribesGame.TrDevice.InstantFire")()); }
-			ScriptFunction ProcessInstantHit() { mixin(MGF!("mProcessInstantHit", "Function TribesGame.TrDevice.ProcessInstantHit")()); }
-			ScriptFunction ServerNotifyHit() { mixin(MGF!("mServerNotifyHit", "Function TribesGame.TrDevice.ServerNotifyHit")()); }
-			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF!("mProcessInstantHit_Internal", "Function TribesGame.TrDevice.ProcessInstantHit_Internal")()); }
-			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrDevice.ModifyInstantHitDamage")()); }
-			ScriptFunction ProcessEffect() { mixin(MGF!("mProcessEffect", "Function TribesGame.TrDevice.ProcessEffect")()); }
-			ScriptFunction UsesPower() { mixin(MGF!("mUsesPower", "Function TribesGame.TrDevice.UsesPower")()); }
-			ScriptFunction IsDeviceCoolingDown() { mixin(MGF!("mIsDeviceCoolingDown", "Function TribesGame.TrDevice.IsDeviceCoolingDown")()); }
-			ScriptFunction EnterDeployMode() { mixin(MGF!("mEnterDeployMode", "Function TribesGame.TrDevice.EnterDeployMode")()); }
-			ScriptFunction ExitDeployMode() { mixin(MGF!("mExitDeployMode", "Function TribesGame.TrDevice.ExitDeployMode")()); }
-			ScriptFunction ToggleActivate() { mixin(MGF!("mToggleActivate", "Function TribesGame.TrDevice.ToggleActivate")()); }
-			ScriptFunction PayAccuracyForJump() { mixin(MGF!("mPayAccuracyForJump", "Function TribesGame.TrDevice.PayAccuracyForJump")()); }
-			ScriptFunction PayAccuracyForWeaponSwitch() { mixin(MGF!("mPayAccuracyForWeaponSwitch", "Function TribesGame.TrDevice.PayAccuracyForWeaponSwitch")()); }
-			ScriptFunction PayAccuracyForShot() { mixin(MGF!("mPayAccuracyForShot", "Function TribesGame.TrDevice.PayAccuracyForShot")()); }
-			ScriptFunction AddSpreadWithAccuracy() { mixin(MGF!("mAddSpreadWithAccuracy", "Function TribesGame.TrDevice.AddSpreadWithAccuracy")()); }
-			ScriptFunction ApplyKickbackToAim() { mixin(MGF!("mApplyKickbackToAim", "Function TribesGame.TrDevice.ApplyKickbackToAim")()); }
-			ScriptFunction GetCurrentKickbackAmount() { mixin(MGF!("mGetCurrentKickbackAmount", "Function TribesGame.TrDevice.GetCurrentKickbackAmount")()); }
-			ScriptFunction AddKickback() { mixin(MGF!("mAddKickback", "Function TribesGame.TrDevice.AddKickback")()); }
-			ScriptFunction GetAdjustedAim() { mixin(MGF!("mGetAdjustedAim", "Function TribesGame.TrDevice.GetAdjustedAim")()); }
-			ScriptFunction ShowWeaponRedLowAmmoIndicator() { mixin(MGF!("mShowWeaponRedLowAmmoIndicator", "Function TribesGame.TrDevice.ShowWeaponRedLowAmmoIndicator")()); }
-			ScriptFunction NeedToVisitInventoryStation() { mixin(MGF!("mNeedToVisitInventoryStation", "Function TribesGame.TrDevice.NeedToVisitInventoryStation")()); }
-			ScriptFunction GetAmmoCount() { mixin(MGF!("mGetAmmoCount", "Function TribesGame.TrDevice.GetAmmoCount")()); }
-			ScriptFunction UpdateLowAmmoWarning() { mixin(MGF!("mUpdateLowAmmoWarning", "Function TribesGame.TrDevice.UpdateLowAmmoWarning")()); }
-			ScriptFunction GetProjectileClass() { mixin(MGF!("mGetProjectileClass", "Function TribesGame.TrDevice.GetProjectileClass")()); }
-			ScriptFunction GetClientSideProjectileFireStartLoc() { mixin(MGF!("mGetClientSideProjectileFireStartLoc", "Function TribesGame.TrDevice.GetClientSideProjectileFireStartLoc")()); }
-			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function TribesGame.TrDevice.ProjectileFire")()); }
-			ScriptFunction DestroyOldestProjectileOverLimit() { mixin(MGF!("mDestroyOldestProjectileOverLimit", "Function TribesGame.TrDevice.DestroyOldestProjectileOverLimit")()); }
-			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice.FireAmmunition")()); }
-			ScriptFunction MaxRange() { mixin(MGF!("mMaxRange", "Function TribesGame.TrDevice.MaxRange")()); }
-			ScriptFunction GetWeaponRange() { mixin(MGF!("mGetWeaponRange", "Function TribesGame.TrDevice.GetWeaponRange")()); }
-			ScriptFunction GetAimForCamera() { mixin(MGF!("mGetAimForCamera", "Function TribesGame.TrDevice.GetAimForCamera")()); }
-			ScriptFunction CanClientRequestReloadNow() { mixin(MGF!("mCanClientRequestReloadNow", "Function TribesGame.TrDevice.CanClientRequestReloadNow")()); }
-			ScriptFunction HolderEnteredVehicle() { mixin(MGF!("mHolderEnteredVehicle", "Function TribesGame.TrDevice.HolderEnteredVehicle")()); }
-			ScriptFunction GetReloadTime() { mixin(MGF!("mGetReloadTime", "Function TribesGame.TrDevice.GetReloadTime")()); }
-			ScriptFunction ClearMeshAnimSeqNodes() { mixin(MGF!("mClearMeshAnimSeqNodes", "Function TribesGame.TrDevice.ClearMeshAnimSeqNodes")()); }
-			ScriptFunction CacheMeshAnimSeqNodes() { mixin(MGF!("mCacheMeshAnimSeqNodes", "Function TribesGame.TrDevice.CacheMeshAnimSeqNodes")()); }
-			ScriptFunction SuppressAnimNotifies() { mixin(MGF!("mSuppressAnimNotifies", "Function TribesGame.TrDevice.SuppressAnimNotifies")()); }
-			ScriptFunction IsReloading() { mixin(MGF!("mIsReloading", "Function TribesGame.TrDevice.IsReloading")()); }
-			ScriptFunction RequestReload() { mixin(MGF!("mRequestReload", "Function TribesGame.TrDevice.RequestReload")()); }
-			ScriptFunction OnClientReloaded() { mixin(MGF!("mOnClientReloaded", "Function TribesGame.TrDevice.OnClientReloaded")()); }
-			ScriptFunction PerformInactiveReload() { mixin(MGF!("mPerformInactiveReload", "Function TribesGame.TrDevice.PerformInactiveReload")()); }
-			ScriptFunction CalcAmountToLoad() { mixin(MGF!("mCalcAmountToLoad", "Function TribesGame.TrDevice.CalcAmountToLoad")()); }
-			ScriptFunction ClientFinishedReload() { mixin(MGF!("mClientFinishedReload", "Function TribesGame.TrDevice.ClientFinishedReload")()); }
-			ScriptFunction ResumeZoomOnReloadEnd() { mixin(MGF!("mResumeZoomOnReloadEnd", "Function TribesGame.TrDevice.ResumeZoomOnReloadEnd")()); }
-			ScriptFunction PlayReloadAnim() { mixin(MGF!("mPlayReloadAnim", "Function TribesGame.TrDevice.PlayReloadAnim")()); }
-			ScriptFunction EnableWeaponReadyToFire() { mixin(MGF!("mEnableWeaponReadyToFire", "Function TribesGame.TrDevice.EnableWeaponReadyToFire")()); }
-			ScriptFunction OnReloadComplete() { mixin(MGF!("mOnReloadComplete", "Function TribesGame.TrDevice.OnReloadComplete")()); }
-			ScriptFunction BeginAReload() { mixin(MGF!("mBeginAReload", "Function TribesGame.TrDevice.BeginAReload")()); }
-			ScriptFunction AddCarriedAmmo() { mixin(MGF!("mAddCarriedAmmo", "Function TribesGame.TrDevice.AddCarriedAmmo")()); }
-			ScriptFunction UpdateReplicatedCarriedAmmo() { mixin(MGF!("mUpdateReplicatedCarriedAmmo", "Function TribesGame.TrDevice.UpdateReplicatedCarriedAmmo")()); }
-			ScriptFunction GoInactiveDueToOffhand() { mixin(MGF!("mGoInactiveDueToOffhand", "Function TribesGame.TrDevice.GoInactiveDueToOffhand")()); }
-			ScriptFunction StopFire() { mixin(MGF!("mStopFire", "Function TribesGame.TrDevice.StopFire")()); }
-			ScriptFunction BeginFire() { mixin(MGF!("mBeginFire", "Function TribesGame.TrDevice.BeginFire")()); }
-			ScriptFunction GetEquipTime() { mixin(MGF!("mGetEquipTime", "Function TribesGame.TrDevice.GetEquipTime")()); }
-			ScriptFunction TimeWeaponPutDown() { mixin(MGF!("mTimeWeaponPutDown", "Function TribesGame.TrDevice.TimeWeaponPutDown")()); }
-			ScriptFunction GetPutDownTime() { mixin(MGF!("mGetPutDownTime", "Function TribesGame.TrDevice.GetPutDownTime")()); }
-			ScriptFunction CanFireOffhandNow() { mixin(MGF!("mCanFireOffhandNow", "Function TribesGame.TrDevice.CanFireOffhandNow")()); }
-			ScriptFunction ServerOnClientDeniedFire() { mixin(MGF!("mServerOnClientDeniedFire", "Function TribesGame.TrDevice.ServerOnClientDeniedFire")()); }
-			ScriptFunction ApplyEquipEffect() { mixin(MGF!("mApplyEquipEffect", "Function TribesGame.TrDevice.ApplyEquipEffect")()); }
-			ScriptFunction RemoveEquipEffect() { mixin(MGF!("mRemoveEquipEffect", "Function TribesGame.TrDevice.RemoveEquipEffect")()); }
-			ScriptFunction SetPosition() { mixin(MGF!("mSetPosition", "Function TribesGame.TrDevice.SetPosition")()); }
-			ScriptFunction LagRot() { mixin(MGF!("mLagRot", "Function TribesGame.TrDevice.LagRot")()); }
-			ScriptFunction ShouldRefire() { mixin(MGF!("mShouldRefire", "Function TribesGame.TrDevice.ShouldRefire")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice.StartFire")()); }
-			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function TribesGame.TrDevice.Activate")()); }
-			ScriptFunction AnnounceInvalidPickup() { mixin(MGF!("mAnnounceInvalidPickup", "Function TribesGame.TrDevice.AnnounceInvalidPickup")()); }
-			ScriptFunction DenyPickupQuery() { mixin(MGF!("mDenyPickupQuery", "Function TribesGame.TrDevice.DenyPickupQuery")()); }
-			ScriptFunction PutDownFast() { mixin(MGF!("mPutDownFast", "Function TribesGame.TrDevice.PutDownFast")()); }
-			ScriptFunction ForceEndFire() { mixin(MGF!("mForceEndFire", "Function TribesGame.TrDevice.ForceEndFire")()); }
-			ScriptFunction CanAutoDeviceFireNow() { mixin(MGF!("mCanAutoDeviceFireNow", "Function TribesGame.TrDevice.CanAutoDeviceFireNow")()); }
-			ScriptFunction CustomFire() { mixin(MGF!("mCustomFire", "Function TribesGame.TrDevice.CustomFire")()); }
-			ScriptFunction AttachMuzzleFlash() { mixin(MGF!("mAttachMuzzleFlash", "Function TribesGame.TrDevice.AttachMuzzleFlash")()); }
-			ScriptFunction WeaponPlaySoundLocal() { mixin(MGF!("mWeaponPlaySoundLocal", "Function TribesGame.TrDevice.WeaponPlaySoundLocal")()); }
-			ScriptFunction ClientWeaponThrown() { mixin(MGF!("mClientWeaponThrown", "Function TribesGame.TrDevice.ClientWeaponThrown")()); }
-			ScriptFunction UpdateShotsFired() { mixin(MGF!("mUpdateShotsFired", "Function TribesGame.TrDevice.UpdateShotsFired")()); }
-			ScriptFunction StartZoom() { mixin(MGF!("mStartZoom", "Function TribesGame.TrDevice.StartZoom")()); }
-			ScriptFunction EndZoom() { mixin(MGF!("mEndZoom", "Function TribesGame.TrDevice.EndZoom")()); }
-			ScriptFunction CanViewZoom() { mixin(MGF!("mCanViewZoom", "Function TribesGame.TrDevice.CanViewZoom")()); }
-			ScriptFunction SetAltReticule() { mixin(MGF!("mSetAltReticule", "Function TribesGame.TrDevice.SetAltReticule")()); }
-			ScriptFunction ResetAltReticule() { mixin(MGF!("mResetAltReticule", "Function TribesGame.TrDevice.ResetAltReticule")()); }
-			ScriptFunction CalcWeaponFire() { mixin(MGF!("mCalcWeaponFire", "Function TribesGame.TrDevice.CalcWeaponFire")()); }
-			ScriptFunction PlayDryFireZoom() { mixin(MGF!("mPlayDryFireZoom", "Function TribesGame.TrDevice.PlayDryFireZoom")()); }
-			ScriptFunction BuffMaxCarriedAmmo() { mixin(MGF!("mBuffMaxCarriedAmmo", "Function TribesGame.TrDevice.BuffMaxCarriedAmmo")()); }
-			ScriptFunction GetMaxAmmoCount() { mixin(MGF!("mGetMaxAmmoCount", "Function TribesGame.TrDevice.GetMaxAmmoCount")()); }
-			ScriptFunction GetBasePickupAmmoAmount() { mixin(MGF!("mGetBasePickupAmmoAmount", "Function TribesGame.TrDevice.GetBasePickupAmmoAmount")()); }
-			ScriptFunction ServerStartFire() { mixin(MGF!("mServerStartFire", "Function TribesGame.TrDevice.ServerStartFire")()); }
-			ScriptFunction UpdateWeaponMICs() { mixin(MGF!("mUpdateWeaponMICs", "Function TribesGame.TrDevice.UpdateWeaponMICs")()); }
+			ScriptFunction CalcHUDAimChargePercent() { mixin(MGF("mCalcHUDAimChargePercent", "Function TribesGame.TrDevice.CalcHUDAimChargePercent")); }
+			ScriptFunction GetAccuracy() { mixin(MGF("mGetAccuracy", "Function TribesGame.TrDevice.GetAccuracy")); }
+			ScriptFunction GetFireModeNum() { mixin(MGF("mGetFireModeNum", "Function TribesGame.TrDevice.GetFireModeNum")); }
+			ScriptFunction IsValidTarget() { mixin(MGF("mIsValidTarget", "Function TribesGame.TrDevice.IsValidTarget")); }
+			ScriptFunction IsEnemy() { mixin(MGF("mIsEnemy", "Function TribesGame.TrDevice.IsEnemy")); }
+			ScriptFunction IsInsideCone() { mixin(MGF("mIsInsideCone", "Function TribesGame.TrDevice.IsInsideCone")); }
+			ScriptFunction ShouldAddToImpactList() { mixin(MGF("mShouldAddToImpactList", "Function TribesGame.TrDevice.ShouldAddToImpactList")); }
+			ScriptFunction TickInHandWeapon() { mixin(MGF("mTickInHandWeapon", "Function TribesGame.TrDevice.TickInHandWeapon")); }
+			ScriptFunction ResetLock() { mixin(MGF("mResetLock", "Function TribesGame.TrDevice.ResetLock")); }
+			ScriptFunction GetLockedTarget() { mixin(MGF("mGetLockedTarget", "Function TribesGame.TrDevice.GetLockedTarget")); }
+			ScriptFunction SpawnPet() { mixin(MGF("mSpawnPet", "Function TribesGame.TrDevice.SpawnPet")); }
+			ScriptFunction GetTargetAccuracy() { mixin(MGF("mGetTargetAccuracy", "Function TribesGame.TrDevice.GetTargetAccuracy")); }
+			ScriptFunction RestoreAccuracy() { mixin(MGF("mRestoreAccuracy", "Function TribesGame.TrDevice.RestoreAccuracy")); }
+			ScriptFunction RestoreKickback() { mixin(MGF("mRestoreKickback", "Function TribesGame.TrDevice.RestoreKickback")); }
+			ScriptFunction IsInLOS() { mixin(MGF("mIsInLOS", "Function TribesGame.TrDevice.IsInLOS")); }
+			ScriptFunction AttachHandsMesh() { mixin(MGF("mAttachHandsMesh", "Function TribesGame.TrDevice.AttachHandsMesh")); }
+			ScriptFunction LoadMeshData() { mixin(MGF("mLoadMeshData", "Function TribesGame.TrDevice.LoadMeshData")); }
+			ScriptFunction ValidateClientReportedHit() { mixin(MGF("mValidateClientReportedHit", "Function TribesGame.TrDevice.ValidateClientReportedHit")); }
+			ScriptFunction ValidateClientReportedHitInternal() { mixin(MGF("mValidateClientReportedHitInternal", "Function TribesGame.TrDevice.ValidateClientReportedHitInternal")); }
+			ScriptFunction GetObjectReferencerName() { mixin(MGF("mGetObjectReferencerName", "Function TribesGame.TrDevice.GetObjectReferencerName")); }
+			ScriptFunction GetObjectReferencerPackageName() { mixin(MGF("mGetObjectReferencerPackageName", "Function TribesGame.TrDevice.GetObjectReferencerPackageName")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrDevice.ReplicatedEvent")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrDevice.PostBeginPlay")); }
+			ScriptFunction AddAmmo() { mixin(MGF("mAddAmmo", "Function TribesGame.TrDevice.AddAmmo")); }
+			ScriptFunction ReplicateAmmoOnWeaponFire() { mixin(MGF("mReplicateAmmoOnWeaponFire", "Function TribesGame.TrDevice.ReplicateAmmoOnWeaponFire")); }
+			ScriptFunction ConsumeAmmo_Internal() { mixin(MGF("mConsumeAmmo_Internal", "Function TribesGame.TrDevice.ConsumeAmmo_Internal")); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF("mConsumeAmmo", "Function TribesGame.TrDevice.ConsumeAmmo")); }
+			ScriptFunction GetTraceOwner() { mixin(MGF("mGetTraceOwner", "Function TribesGame.TrDevice.GetTraceOwner")); }
+			ScriptFunction AttachWeaponTo() { mixin(MGF("mAttachWeaponTo", "Function TribesGame.TrDevice.AttachWeaponTo")); }
+			ScriptFunction CreateFirstPersonHandsMesh() { mixin(MGF("mCreateFirstPersonHandsMesh", "Function TribesGame.TrDevice.CreateFirstPersonHandsMesh")); }
+			ScriptFunction ChangeVisibility() { mixin(MGF("mChangeVisibility", "Function TribesGame.TrDevice.ChangeVisibility")); }
+			ScriptFunction CentralUpdateHandsMesh() { mixin(MGF("mCentralUpdateHandsMesh", "Function TribesGame.TrDevice.CentralUpdateHandsMesh")); }
+			ScriptFunction UpdateHandsMesh() { mixin(MGF("mUpdateHandsMesh", "Function TribesGame.TrDevice.UpdateHandsMesh")); }
+			ScriptFunction CreateOverlayMesh() { mixin(MGF("mCreateOverlayMesh", "Function TribesGame.TrDevice.CreateOverlayMesh")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDevice.PostInitAnimTree")); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF("mPlayWeaponEquip", "Function TribesGame.TrDevice.PlayWeaponEquip")); }
+			ScriptFunction OnPlayRetrieveAnim() { mixin(MGF("mOnPlayRetrieveAnim", "Function TribesGame.TrDevice.OnPlayRetrieveAnim")); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF("mPlayWeaponPutDown", "Function TribesGame.TrDevice.PlayWeaponPutDown")); }
+			ScriptFunction WeaponEmpty() { mixin(MGF("mWeaponEmpty", "Function TribesGame.TrDevice.WeaponEmpty")); }
+			ScriptFunction OnSwitchToWeapon() { mixin(MGF("mOnSwitchToWeapon", "Function TribesGame.TrDevice.OnSwitchToWeapon")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice.OnSwitchAwayFromWeapon")); }
+			ScriptFunction ClientWeaponSet() { mixin(MGF("mClientWeaponSet", "Function TribesGame.TrDevice.ClientWeaponSet")); }
+			ScriptFunction PlayFireEffects() { mixin(MGF("mPlayFireEffects", "Function TribesGame.TrDevice.PlayFireEffects")); }
+			ScriptFunction PlayFireAnimation() { mixin(MGF("mPlayFireAnimation", "Function TribesGame.TrDevice.PlayFireAnimation")); }
+			ScriptFunction ShakeView() { mixin(MGF("mShakeView", "Function TribesGame.TrDevice.ShakeView")); }
+			ScriptFunction ShouldFireTracer() { mixin(MGF("mShouldFireTracer", "Function TribesGame.TrDevice.ShouldFireTracer")); }
+			ScriptFunction ShouldFireTracerBeam() { mixin(MGF("mShouldFireTracerBeam", "Function TribesGame.TrDevice.ShouldFireTracerBeam")); }
+			ScriptFunction SpawnTracerBeam() { mixin(MGF("mSpawnTracerBeam", "Function TribesGame.TrDevice.SpawnTracerBeam")); }
+			ScriptFunction SpawnTracerEffect() { mixin(MGF("mSpawnTracerEffect", "Function TribesGame.TrDevice.SpawnTracerEffect")); }
+			ScriptFunction GetTracer() { mixin(MGF("mGetTracer", "Function TribesGame.TrDevice.GetTracer")); }
+			ScriptFunction GetNumRoundsCurrentlyInClip() { mixin(MGF("mGetNumRoundsCurrentlyInClip", "Function TribesGame.TrDevice.GetNumRoundsCurrentlyInClip")); }
+			ScriptFunction HasAmmo() { mixin(MGF("mHasAmmo", "Function TribesGame.TrDevice.HasAmmo")); }
+			ScriptFunction HasAnyAmmo() { mixin(MGF("mHasAnyAmmo", "Function TribesGame.TrDevice.HasAnyAmmo")); }
+			ScriptFunction AllowSwitchTo() { mixin(MGF("mAllowSwitchTo", "Function TribesGame.TrDevice.AllowSwitchTo")); }
+			ScriptFunction CalculateRangeDamageFalloff() { mixin(MGF("mCalculateRangeDamageFalloff", "Function TribesGame.TrDevice.CalculateRangeDamageFalloff")); }
+			ScriptFunction InstantFire() { mixin(MGF("mInstantFire", "Function TribesGame.TrDevice.InstantFire")); }
+			ScriptFunction ProcessInstantHit() { mixin(MGF("mProcessInstantHit", "Function TribesGame.TrDevice.ProcessInstantHit")); }
+			ScriptFunction ServerNotifyHit() { mixin(MGF("mServerNotifyHit", "Function TribesGame.TrDevice.ServerNotifyHit")); }
+			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF("mProcessInstantHit_Internal", "Function TribesGame.TrDevice.ProcessInstantHit_Internal")); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF("mModifyInstantHitDamage", "Function TribesGame.TrDevice.ModifyInstantHitDamage")); }
+			ScriptFunction ProcessEffect() { mixin(MGF("mProcessEffect", "Function TribesGame.TrDevice.ProcessEffect")); }
+			ScriptFunction UsesPower() { mixin(MGF("mUsesPower", "Function TribesGame.TrDevice.UsesPower")); }
+			ScriptFunction IsDeviceCoolingDown() { mixin(MGF("mIsDeviceCoolingDown", "Function TribesGame.TrDevice.IsDeviceCoolingDown")); }
+			ScriptFunction EnterDeployMode() { mixin(MGF("mEnterDeployMode", "Function TribesGame.TrDevice.EnterDeployMode")); }
+			ScriptFunction ExitDeployMode() { mixin(MGF("mExitDeployMode", "Function TribesGame.TrDevice.ExitDeployMode")); }
+			ScriptFunction ToggleActivate() { mixin(MGF("mToggleActivate", "Function TribesGame.TrDevice.ToggleActivate")); }
+			ScriptFunction PayAccuracyForJump() { mixin(MGF("mPayAccuracyForJump", "Function TribesGame.TrDevice.PayAccuracyForJump")); }
+			ScriptFunction PayAccuracyForWeaponSwitch() { mixin(MGF("mPayAccuracyForWeaponSwitch", "Function TribesGame.TrDevice.PayAccuracyForWeaponSwitch")); }
+			ScriptFunction PayAccuracyForShot() { mixin(MGF("mPayAccuracyForShot", "Function TribesGame.TrDevice.PayAccuracyForShot")); }
+			ScriptFunction AddSpreadWithAccuracy() { mixin(MGF("mAddSpreadWithAccuracy", "Function TribesGame.TrDevice.AddSpreadWithAccuracy")); }
+			ScriptFunction ApplyKickbackToAim() { mixin(MGF("mApplyKickbackToAim", "Function TribesGame.TrDevice.ApplyKickbackToAim")); }
+			ScriptFunction GetCurrentKickbackAmount() { mixin(MGF("mGetCurrentKickbackAmount", "Function TribesGame.TrDevice.GetCurrentKickbackAmount")); }
+			ScriptFunction AddKickback() { mixin(MGF("mAddKickback", "Function TribesGame.TrDevice.AddKickback")); }
+			ScriptFunction GetAdjustedAim() { mixin(MGF("mGetAdjustedAim", "Function TribesGame.TrDevice.GetAdjustedAim")); }
+			ScriptFunction ShowWeaponRedLowAmmoIndicator() { mixin(MGF("mShowWeaponRedLowAmmoIndicator", "Function TribesGame.TrDevice.ShowWeaponRedLowAmmoIndicator")); }
+			ScriptFunction NeedToVisitInventoryStation() { mixin(MGF("mNeedToVisitInventoryStation", "Function TribesGame.TrDevice.NeedToVisitInventoryStation")); }
+			ScriptFunction GetAmmoCount() { mixin(MGF("mGetAmmoCount", "Function TribesGame.TrDevice.GetAmmoCount")); }
+			ScriptFunction UpdateLowAmmoWarning() { mixin(MGF("mUpdateLowAmmoWarning", "Function TribesGame.TrDevice.UpdateLowAmmoWarning")); }
+			ScriptFunction GetProjectileClass() { mixin(MGF("mGetProjectileClass", "Function TribesGame.TrDevice.GetProjectileClass")); }
+			ScriptFunction GetClientSideProjectileFireStartLoc() { mixin(MGF("mGetClientSideProjectileFireStartLoc", "Function TribesGame.TrDevice.GetClientSideProjectileFireStartLoc")); }
+			ScriptFunction ProjectileFire() { mixin(MGF("mProjectileFire", "Function TribesGame.TrDevice.ProjectileFire")); }
+			ScriptFunction DestroyOldestProjectileOverLimit() { mixin(MGF("mDestroyOldestProjectileOverLimit", "Function TribesGame.TrDevice.DestroyOldestProjectileOverLimit")); }
+			ScriptFunction FireAmmunition() { mixin(MGF("mFireAmmunition", "Function TribesGame.TrDevice.FireAmmunition")); }
+			ScriptFunction MaxRange() { mixin(MGF("mMaxRange", "Function TribesGame.TrDevice.MaxRange")); }
+			ScriptFunction GetWeaponRange() { mixin(MGF("mGetWeaponRange", "Function TribesGame.TrDevice.GetWeaponRange")); }
+			ScriptFunction GetAimForCamera() { mixin(MGF("mGetAimForCamera", "Function TribesGame.TrDevice.GetAimForCamera")); }
+			ScriptFunction CanClientRequestReloadNow() { mixin(MGF("mCanClientRequestReloadNow", "Function TribesGame.TrDevice.CanClientRequestReloadNow")); }
+			ScriptFunction HolderEnteredVehicle() { mixin(MGF("mHolderEnteredVehicle", "Function TribesGame.TrDevice.HolderEnteredVehicle")); }
+			ScriptFunction GetReloadTime() { mixin(MGF("mGetReloadTime", "Function TribesGame.TrDevice.GetReloadTime")); }
+			ScriptFunction ClearMeshAnimSeqNodes() { mixin(MGF("mClearMeshAnimSeqNodes", "Function TribesGame.TrDevice.ClearMeshAnimSeqNodes")); }
+			ScriptFunction CacheMeshAnimSeqNodes() { mixin(MGF("mCacheMeshAnimSeqNodes", "Function TribesGame.TrDevice.CacheMeshAnimSeqNodes")); }
+			ScriptFunction SuppressAnimNotifies() { mixin(MGF("mSuppressAnimNotifies", "Function TribesGame.TrDevice.SuppressAnimNotifies")); }
+			ScriptFunction IsReloading() { mixin(MGF("mIsReloading", "Function TribesGame.TrDevice.IsReloading")); }
+			ScriptFunction RequestReload() { mixin(MGF("mRequestReload", "Function TribesGame.TrDevice.RequestReload")); }
+			ScriptFunction OnClientReloaded() { mixin(MGF("mOnClientReloaded", "Function TribesGame.TrDevice.OnClientReloaded")); }
+			ScriptFunction PerformInactiveReload() { mixin(MGF("mPerformInactiveReload", "Function TribesGame.TrDevice.PerformInactiveReload")); }
+			ScriptFunction CalcAmountToLoad() { mixin(MGF("mCalcAmountToLoad", "Function TribesGame.TrDevice.CalcAmountToLoad")); }
+			ScriptFunction ClientFinishedReload() { mixin(MGF("mClientFinishedReload", "Function TribesGame.TrDevice.ClientFinishedReload")); }
+			ScriptFunction ResumeZoomOnReloadEnd() { mixin(MGF("mResumeZoomOnReloadEnd", "Function TribesGame.TrDevice.ResumeZoomOnReloadEnd")); }
+			ScriptFunction PlayReloadAnim() { mixin(MGF("mPlayReloadAnim", "Function TribesGame.TrDevice.PlayReloadAnim")); }
+			ScriptFunction EnableWeaponReadyToFire() { mixin(MGF("mEnableWeaponReadyToFire", "Function TribesGame.TrDevice.EnableWeaponReadyToFire")); }
+			ScriptFunction OnReloadComplete() { mixin(MGF("mOnReloadComplete", "Function TribesGame.TrDevice.OnReloadComplete")); }
+			ScriptFunction BeginAReload() { mixin(MGF("mBeginAReload", "Function TribesGame.TrDevice.BeginAReload")); }
+			ScriptFunction AddCarriedAmmo() { mixin(MGF("mAddCarriedAmmo", "Function TribesGame.TrDevice.AddCarriedAmmo")); }
+			ScriptFunction UpdateReplicatedCarriedAmmo() { mixin(MGF("mUpdateReplicatedCarriedAmmo", "Function TribesGame.TrDevice.UpdateReplicatedCarriedAmmo")); }
+			ScriptFunction GoInactiveDueToOffhand() { mixin(MGF("mGoInactiveDueToOffhand", "Function TribesGame.TrDevice.GoInactiveDueToOffhand")); }
+			ScriptFunction StopFire() { mixin(MGF("mStopFire", "Function TribesGame.TrDevice.StopFire")); }
+			ScriptFunction BeginFire() { mixin(MGF("mBeginFire", "Function TribesGame.TrDevice.BeginFire")); }
+			ScriptFunction GetEquipTime() { mixin(MGF("mGetEquipTime", "Function TribesGame.TrDevice.GetEquipTime")); }
+			ScriptFunction TimeWeaponPutDown() { mixin(MGF("mTimeWeaponPutDown", "Function TribesGame.TrDevice.TimeWeaponPutDown")); }
+			ScriptFunction GetPutDownTime() { mixin(MGF("mGetPutDownTime", "Function TribesGame.TrDevice.GetPutDownTime")); }
+			ScriptFunction CanFireOffhandNow() { mixin(MGF("mCanFireOffhandNow", "Function TribesGame.TrDevice.CanFireOffhandNow")); }
+			ScriptFunction ServerOnClientDeniedFire() { mixin(MGF("mServerOnClientDeniedFire", "Function TribesGame.TrDevice.ServerOnClientDeniedFire")); }
+			ScriptFunction ApplyEquipEffect() { mixin(MGF("mApplyEquipEffect", "Function TribesGame.TrDevice.ApplyEquipEffect")); }
+			ScriptFunction RemoveEquipEffect() { mixin(MGF("mRemoveEquipEffect", "Function TribesGame.TrDevice.RemoveEquipEffect")); }
+			ScriptFunction SetPosition() { mixin(MGF("mSetPosition", "Function TribesGame.TrDevice.SetPosition")); }
+			ScriptFunction LagRot() { mixin(MGF("mLagRot", "Function TribesGame.TrDevice.LagRot")); }
+			ScriptFunction ShouldRefire() { mixin(MGF("mShouldRefire", "Function TribesGame.TrDevice.ShouldRefire")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function TribesGame.TrDevice.StartFire")); }
+			ScriptFunction Activate() { mixin(MGF("mActivate", "Function TribesGame.TrDevice.Activate")); }
+			ScriptFunction AnnounceInvalidPickup() { mixin(MGF("mAnnounceInvalidPickup", "Function TribesGame.TrDevice.AnnounceInvalidPickup")); }
+			ScriptFunction DenyPickupQuery() { mixin(MGF("mDenyPickupQuery", "Function TribesGame.TrDevice.DenyPickupQuery")); }
+			ScriptFunction PutDownFast() { mixin(MGF("mPutDownFast", "Function TribesGame.TrDevice.PutDownFast")); }
+			ScriptFunction ForceEndFire() { mixin(MGF("mForceEndFire", "Function TribesGame.TrDevice.ForceEndFire")); }
+			ScriptFunction CanAutoDeviceFireNow() { mixin(MGF("mCanAutoDeviceFireNow", "Function TribesGame.TrDevice.CanAutoDeviceFireNow")); }
+			ScriptFunction CustomFire() { mixin(MGF("mCustomFire", "Function TribesGame.TrDevice.CustomFire")); }
+			ScriptFunction AttachMuzzleFlash() { mixin(MGF("mAttachMuzzleFlash", "Function TribesGame.TrDevice.AttachMuzzleFlash")); }
+			ScriptFunction WeaponPlaySoundLocal() { mixin(MGF("mWeaponPlaySoundLocal", "Function TribesGame.TrDevice.WeaponPlaySoundLocal")); }
+			ScriptFunction ClientWeaponThrown() { mixin(MGF("mClientWeaponThrown", "Function TribesGame.TrDevice.ClientWeaponThrown")); }
+			ScriptFunction UpdateShotsFired() { mixin(MGF("mUpdateShotsFired", "Function TribesGame.TrDevice.UpdateShotsFired")); }
+			ScriptFunction StartZoom() { mixin(MGF("mStartZoom", "Function TribesGame.TrDevice.StartZoom")); }
+			ScriptFunction EndZoom() { mixin(MGF("mEndZoom", "Function TribesGame.TrDevice.EndZoom")); }
+			ScriptFunction CanViewZoom() { mixin(MGF("mCanViewZoom", "Function TribesGame.TrDevice.CanViewZoom")); }
+			ScriptFunction SetAltReticule() { mixin(MGF("mSetAltReticule", "Function TribesGame.TrDevice.SetAltReticule")); }
+			ScriptFunction ResetAltReticule() { mixin(MGF("mResetAltReticule", "Function TribesGame.TrDevice.ResetAltReticule")); }
+			ScriptFunction CalcWeaponFire() { mixin(MGF("mCalcWeaponFire", "Function TribesGame.TrDevice.CalcWeaponFire")); }
+			ScriptFunction PlayDryFireZoom() { mixin(MGF("mPlayDryFireZoom", "Function TribesGame.TrDevice.PlayDryFireZoom")); }
+			ScriptFunction BuffMaxCarriedAmmo() { mixin(MGF("mBuffMaxCarriedAmmo", "Function TribesGame.TrDevice.BuffMaxCarriedAmmo")); }
+			ScriptFunction GetMaxAmmoCount() { mixin(MGF("mGetMaxAmmoCount", "Function TribesGame.TrDevice.GetMaxAmmoCount")); }
+			ScriptFunction GetBasePickupAmmoAmount() { mixin(MGF("mGetBasePickupAmmoAmount", "Function TribesGame.TrDevice.GetBasePickupAmmoAmount")); }
+			ScriptFunction ServerStartFire() { mixin(MGF("mServerStartFire", "Function TribesGame.TrDevice.ServerStartFire")); }
+			ScriptFunction UpdateWeaponMICs() { mixin(MGF("mUpdateWeaponMICs", "Function TribesGame.TrDevice.UpdateWeaponMICs")); }
 		}
 	}
 	static struct Constants
@@ -838,12 +838,12 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.DeviceUpgrade")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrDevice.DeviceUpgrade")); }
 		@property final auto ref
 		{
-			int DatabaseItemId() { mixin(MGPS!("int", 4)()); }
-			int IconId() { mixin(MGPS!("int", 0)()); }
-			ScriptArray!(TrDevice.DeviceModification) Modifications() { mixin(MGPS!("ScriptArray!(TrDevice.DeviceModification)", 8)()); }
+			int DatabaseItemId() { mixin(MGPS("int", 4)); }
+			int IconId() { mixin(MGPS("int", 0)); }
+			ScriptArray!(TrDevice.DeviceModification) Modifications() { mixin(MGPS("ScriptArray!(TrDevice.DeviceModification)", 8)); }
 		}
 	}
 	struct EffectInfo
@@ -851,15 +851,15 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.EffectInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrDevice.EffectInfo")); }
 		@property final auto ref
 		{
-			float interval() { mixin(MGPS!("float", 20)()); }
-			float Value() { mixin(MGPS!("float", 16)()); }
-			float Lifetime() { mixin(MGPS!("float", 12)()); }
-			TrObject.EffectType Type() { mixin(MGPS!("TrObject.EffectType", 8)()); }
-			ScriptClass effectClass() { mixin(MGPS!("ScriptClass", 4)()); }
-			ubyte FireModeNum() { mixin(MGPS!("ubyte", 0)()); }
+			float interval() { mixin(MGPS("float", 20)); }
+			float Value() { mixin(MGPS("float", 16)); }
+			float Lifetime() { mixin(MGPS("float", 12)); }
+			TrObject.EffectType Type() { mixin(MGPS("TrObject.EffectType", 8)); }
+			ScriptClass effectClass() { mixin(MGPS("ScriptClass", 4)); }
+			ubyte FireModeNum() { mixin(MGPS("ubyte", 0)); }
 		}
 	}
 	struct ReplicatedAmmoCount
@@ -867,11 +867,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.ReplicatedAmmoCount")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrDevice.ReplicatedAmmoCount")); }
 		@property final auto ref
 		{
-			int ClipAmmoCount() { mixin(MGPS!("int", 4)()); }
-			int CarriedAmmoCount() { mixin(MGPS!("int", 0)()); }
+			int ClipAmmoCount() { mixin(MGPS("int", 4)); }
+			int CarriedAmmoCount() { mixin(MGPS("int", 0)); }
 		}
 	}
 	struct DeviceModification
@@ -879,206 +879,206 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.DeviceModification")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrDevice.DeviceModification")); }
 		@property final auto ref
 		{
-			float Value() { mixin(MGPS!("float", 4)()); }
-			int ModType() { mixin(MGPS!("int", 0)()); }
+			float Value() { mixin(MGPS("float", 4)); }
+			int ModType() { mixin(MGPS("int", 0)); }
 		}
 	}
 	static struct WeaponFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.WeaponFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.WeaponFiring")); }
 	}
 	static struct WeaponAbortEquip
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.WeaponAbortEquip")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.WeaponAbortEquip")); }
 	}
 	static struct WeaponEquipping
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.WeaponEquipping")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.WeaponEquipping")); }
 	}
 	static struct Active
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.Active")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.Active")); }
 	}
 	static struct DeviceReloading
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.DeviceReloading")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.DeviceReloading")); }
 	}
 	static struct InactiveDueToOffhand
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.InactiveDueToOffhand")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.InactiveDueToOffhand")); }
 	}
 	static struct Inactive
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.Inactive")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.Inactive")); }
 	}
 	static struct WeaponPuttingDown
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.WeaponPuttingDown")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.WeaponPuttingDown")); }
 	}
 	static struct WeaponPuttingDownFast
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice.WeaponPuttingDownFast")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice.WeaponPuttingDownFast")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			int m_nCarriedAmmo() { mixin(MGPC!("int", 1596)()); }
-			int m_nIconIndex() { mixin(MGPC!("int", 1688)()); }
-			ScriptArray!(TrDevice.DeviceUpgrade) Upgrades() { mixin(MGPC!("ScriptArray!(TrDevice.DeviceUpgrade)", 2088)()); }
-			ScriptString UpgradeDescription() { mixin(MGPC!("ScriptString", 2028)()); }
-			int DBXPActivityId() { mixin(MGPC!("int", 1484)()); }
-			ScriptString InfoPanelDescription() { mixin(MGPC!("ScriptString", 2000)()); }
-			int InfoPanelDamage() { mixin(MGPC!("int", 2012)()); }
-			int InfoPanelRadius() { mixin(MGPC!("int", 2016)()); }
-			int InfoPanelFireRate() { mixin(MGPC!("int", 2020)()); }
-			int InfoPanelClipSize() { mixin(MGPC!("int", 2024)()); }
-			int DBWeaponId() { mixin(MGPC!("int", 1472)()); }
-			int m_nReticuleIndex() { mixin(MGPC!("int", 1584)()); }
-			ScriptArray!(TrDevice.EffectInfo) m_EffectInfo() { mixin(MGPC!("ScriptArray!(TrDevice.EffectInfo)", 1492)()); }
-			ScriptArray!(TrObject.DeviceTargeterType) m_eTargetType() { mixin(MGPC!("ScriptArray!(TrObject.DeviceTargeterType)", 1504)()); }
-			ScriptArray!(TrObject.DeviceAttackType) m_eAttackType() { mixin(MGPC!("ScriptArray!(TrObject.DeviceAttackType)", 1516)()); }
-			ScriptArray!(int) m_PowerPoolCost() { mixin(MGPC!("ScriptArray!(int)", 1528)()); }
-			ScriptArray!(ScriptClass) m_WeaponDeployables() { mixin(MGPC!("ScriptArray!(ScriptClass)", 1656)()); }
-			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!("ScriptArray!(TrObject.EffectFormOverwrite)", 1768)()); }
-			ScriptArray!(AnimNodeSequence) m_MeshAnimSequenceNodes() { mixin(MGPC!("ScriptArray!(AnimNodeSequence)", 1840)()); }
-			Vector m_vClientSideFireOffset() { mixin(MGPC!("Vector", 2136)()); }
-			TrDeviceContentData m_ContentData() { mixin(MGPC!("TrDeviceContentData", 2132)()); }
-			ScriptString m_sContentDataClassName() { mixin(MGPC!("ScriptString", 2120)()); }
-			TrDevice.DeviceUpgrade BaseMod() { mixin(MGPC!("TrDevice.DeviceUpgrade", 2100)()); }
-			TrObject.PaperDollInfo m_InGamePaperDollInfo() { mixin(MGPC!("TrObject.PaperDollInfo", 1944)()); }
-			TrObject.PaperDollInfo m_MainMenuPaperDollInfo() { mixin(MGPC!("TrObject.PaperDollInfo", 1888)()); }
-			Vector m_TinyWeaponsOffset() { mixin(MGPC!("Vector", 1876)()); }
-			float m_fTimeBeforeInactiveReload() { mixin(MGPC!("float", 1872)()); }
-			float m_fLastActiveTime() { mixin(MGPC!("float", 1868)()); }
-			int m_nTetherCounter() { mixin(MGPC!("int", 1864)()); }
-			AnimSet m_NoAmmoAnimSet() { mixin(MGPC!("AnimSet", 1860)()); }
-			float m_fFireIntervalForLastShotInClip() { mixin(MGPC!("float", 1856)()); }
-			float m_fClientSideHitLeeway() { mixin(MGPC!("float", 1852)()); }
-			MaterialInstanceConstant m_ZoomOverlayMaterial() { mixin(MGPC!("MaterialInstanceConstant", 1836)()); }
-			ScriptName m_nmZoomMaterialEffectName() { mixin(MGPC!("ScriptName", 1828)()); }
-			Vector m_vZoomMeshOffset() { mixin(MGPC!("Vector", 1816)()); }
-			float m_fZoomRate() { mixin(MGPC!("float", 1812)()); }
-			float m_fDesiredZoomFOV() { mixin(MGPC!("float", 1808)()); }
-			int m_ShotsFired() { mixin(MGPC!("int", 1804)()); }
-			Vector m_vPositionPivotOffset() { mixin(MGPC!("Vector", 1792)()); }
-			CameraShake m_FireCameraShake() { mixin(MGPC!("CameraShake", 1788)()); }
+			int m_nCarriedAmmo() { mixin(MGPC("int", 1596)); }
+			int m_nIconIndex() { mixin(MGPC("int", 1688)); }
+			ScriptArray!(TrDevice.DeviceUpgrade) Upgrades() { mixin(MGPC("ScriptArray!(TrDevice.DeviceUpgrade)", 2088)); }
+			ScriptString UpgradeDescription() { mixin(MGPC("ScriptString", 2028)); }
+			int DBXPActivityId() { mixin(MGPC("int", 1484)); }
+			ScriptString InfoPanelDescription() { mixin(MGPC("ScriptString", 2000)); }
+			int InfoPanelDamage() { mixin(MGPC("int", 2012)); }
+			int InfoPanelRadius() { mixin(MGPC("int", 2016)); }
+			int InfoPanelFireRate() { mixin(MGPC("int", 2020)); }
+			int InfoPanelClipSize() { mixin(MGPC("int", 2024)); }
+			int DBWeaponId() { mixin(MGPC("int", 1472)); }
+			int m_nReticuleIndex() { mixin(MGPC("int", 1584)); }
+			ScriptArray!(TrDevice.EffectInfo) m_EffectInfo() { mixin(MGPC("ScriptArray!(TrDevice.EffectInfo)", 1492)); }
+			ScriptArray!(TrObject.DeviceTargeterType) m_eTargetType() { mixin(MGPC("ScriptArray!(TrObject.DeviceTargeterType)", 1504)); }
+			ScriptArray!(TrObject.DeviceAttackType) m_eAttackType() { mixin(MGPC("ScriptArray!(TrObject.DeviceAttackType)", 1516)); }
+			ScriptArray!(int) m_PowerPoolCost() { mixin(MGPC("ScriptArray!(int)", 1528)); }
+			ScriptArray!(ScriptClass) m_WeaponDeployables() { mixin(MGPC("ScriptArray!(ScriptClass)", 1656)); }
+			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC("ScriptArray!(TrObject.EffectFormOverwrite)", 1768)); }
+			ScriptArray!(AnimNodeSequence) m_MeshAnimSequenceNodes() { mixin(MGPC("ScriptArray!(AnimNodeSequence)", 1840)); }
+			Vector m_vClientSideFireOffset() { mixin(MGPC("Vector", 2136)); }
+			TrDeviceContentData m_ContentData() { mixin(MGPC("TrDeviceContentData", 2132)); }
+			ScriptString m_sContentDataClassName() { mixin(MGPC("ScriptString", 2120)); }
+			TrDevice.DeviceUpgrade BaseMod() { mixin(MGPC("TrDevice.DeviceUpgrade", 2100)); }
+			TrObject.PaperDollInfo m_InGamePaperDollInfo() { mixin(MGPC("TrObject.PaperDollInfo", 1944)); }
+			TrObject.PaperDollInfo m_MainMenuPaperDollInfo() { mixin(MGPC("TrObject.PaperDollInfo", 1888)); }
+			Vector m_TinyWeaponsOffset() { mixin(MGPC("Vector", 1876)); }
+			float m_fTimeBeforeInactiveReload() { mixin(MGPC("float", 1872)); }
+			float m_fLastActiveTime() { mixin(MGPC("float", 1868)); }
+			int m_nTetherCounter() { mixin(MGPC("int", 1864)); }
+			AnimSet m_NoAmmoAnimSet() { mixin(MGPC("AnimSet", 1860)); }
+			float m_fFireIntervalForLastShotInClip() { mixin(MGPC("float", 1856)); }
+			float m_fClientSideHitLeeway() { mixin(MGPC("float", 1852)); }
+			MaterialInstanceConstant m_ZoomOverlayMaterial() { mixin(MGPC("MaterialInstanceConstant", 1836)); }
+			ScriptName m_nmZoomMaterialEffectName() { mixin(MGPC("ScriptName", 1828)); }
+			Vector m_vZoomMeshOffset() { mixin(MGPC("Vector", 1816)); }
+			float m_fZoomRate() { mixin(MGPC("float", 1812)); }
+			float m_fDesiredZoomFOV() { mixin(MGPC("float", 1808)); }
+			int m_ShotsFired() { mixin(MGPC("int", 1804)); }
+			Vector m_vPositionPivotOffset() { mixin(MGPC("Vector", 1792)); }
+			CameraShake m_FireCameraShake() { mixin(MGPC("CameraShake", 1788)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonHandsOverlayMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonHandsMesh'!
-			Material r_ReplicatedMaterial() { mixin(MGPC!("Material", 1764)()); }
-			UObject.Vector2D m_v2WeaponLagSmoothingFactor() { mixin(MGPC!("UObject.Vector2D", 1756)()); }
-			UObject.Vector2D m_v2WeaponLagInterpSpeed() { mixin(MGPC!("UObject.Vector2D", 1748)()); }
-			int m_nMaxWeaponLagPitch() { mixin(MGPC!("int", 1744)()); }
-			int m_nMaxWeaponLagYaw() { mixin(MGPC!("int", 1740)()); }
-			UObject.Vector2D m_v2WeaponLagAimOffset() { mixin(MGPC!("UObject.Vector2D", 1732)()); }
-			float m_fMaxKickbackDistanceY() { mixin(MGPC!("float", 1728)()); }
-			float m_fMaxKickbackDistanceX() { mixin(MGPC!("float", 1724)()); }
-			float m_fKickbackBlendOutTime() { mixin(MGPC!("float", 1720)()); }
-			float m_fLastKickbackTime() { mixin(MGPC!("float", 1716)()); }
-			UObject.Vector2D m_v2KickbackAmount() { mixin(MGPC!("UObject.Vector2D", 1708)()); }
-			UObject.Vector2D m_v2MinMaxKickbackY() { mixin(MGPC!("UObject.Vector2D", 1700)()); }
-			UObject.Vector2D m_v2MinMaxKickbackX() { mixin(MGPC!("UObject.Vector2D", 1692)()); }
-			int m_nCreditCost() { mixin(MGPC!("int", 1684)()); }
-			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!("ParticleSystem", 1680)()); }
-			float m_fShowTracerDistance() { mixin(MGPC!("float", 1676)()); }
-			int m_nTracerInterval() { mixin(MGPC!("int", 1672)()); }
-			TrAnimNodeBlendByDeviceAnim m_DeviceAnimNode() { mixin(MGPC!("TrAnimNodeBlendByDeviceAnim", 1668)()); }
-			float m_fLockTargetTime() { mixin(MGPC!("float", 1652)()); }
-			Actor c_LockedActor() { mixin(MGPC!("Actor", 1648)()); }
-			float c_fLockTime() { mixin(MGPC!("float", 1644)()); }
-			TrDevice.ReplicatedAmmoCount r_AmmoCount() { mixin(MGPC!("TrDevice.ReplicatedAmmoCount", 1636)()); }
-			int s_iCheatCountAmmo() { mixin(MGPC!("int", 1632)()); }
-			SoundCue m_ZoomOutSoundCue() { mixin(MGPC!("SoundCue", 1628)()); }
-			SoundCue m_ZoomInSoundCue() { mixin(MGPC!("SoundCue", 1624)()); }
-			SoundCue m_DryFireSoundCue() { mixin(MGPC!("SoundCue", 1620)()); }
-			SoundCue m_ReloadAmmoSoundCue() { mixin(MGPC!("SoundCue", 1616)()); }
-			float m_fPctTimeBeforeReload() { mixin(MGPC!("float", 1612)()); }
-			float m_fReloadTime() { mixin(MGPC!("float", 1608)()); }
-			int m_RemainingAmmoInClip() { mixin(MGPC!("int", 1604)()); }
-			int m_nMaxCarriedAmmo() { mixin(MGPC!("int", 1600)()); }
-			int m_nLowAmmoWarning() { mixin(MGPC!("int", 1592)()); }
-			int m_nAltReticuleIndex() { mixin(MGPC!("int", 1588)()); }
-			float m_fQuickRetrieveEquipTime() { mixin(MGPC!("float", 1580)()); }
-			float m_fAccuracyCorrectionRate() { mixin(MGPC!("float", 1576)()); }
-			float m_fAimingModeAccuracyBonus() { mixin(MGPC!("float", 1572)()); }
-			float m_fAccuracyLossMax() { mixin(MGPC!("float", 1568)()); }
-			float m_fAccuracyLossOnShot() { mixin(MGPC!("float", 1564)()); }
-			float m_fAccuracyLossOnWeaponSwitch() { mixin(MGPC!("float", 1560)()); }
-			float m_fAccuracyLossOnJump() { mixin(MGPC!("float", 1556)()); }
-			float m_fDefaultAccuracy() { mixin(MGPC!("float", 1552)()); }
-			float m_fConeAttackAngle() { mixin(MGPC!("float", 1544)()); }
-			float m_fDamageRadius() { mixin(MGPC!("float", 1540)()); }
-			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!("TrObject.EWeaponTracerType", 1489)()); }
-			TrObject.TR_EQUIP_POINT r_eEquipAt() { mixin(MGPC!("TrObject.TR_EQUIP_POINT", 1488)()); }
-			int DBWeaponTypeId() { mixin(MGPC!("int", 1480)()); }
-			int DBWeaponBaseId() { mixin(MGPC!("int", 1476)()); }
+			Material r_ReplicatedMaterial() { mixin(MGPC("Material", 1764)); }
+			UObject.Vector2D m_v2WeaponLagSmoothingFactor() { mixin(MGPC("UObject.Vector2D", 1756)); }
+			UObject.Vector2D m_v2WeaponLagInterpSpeed() { mixin(MGPC("UObject.Vector2D", 1748)); }
+			int m_nMaxWeaponLagPitch() { mixin(MGPC("int", 1744)); }
+			int m_nMaxWeaponLagYaw() { mixin(MGPC("int", 1740)); }
+			UObject.Vector2D m_v2WeaponLagAimOffset() { mixin(MGPC("UObject.Vector2D", 1732)); }
+			float m_fMaxKickbackDistanceY() { mixin(MGPC("float", 1728)); }
+			float m_fMaxKickbackDistanceX() { mixin(MGPC("float", 1724)); }
+			float m_fKickbackBlendOutTime() { mixin(MGPC("float", 1720)); }
+			float m_fLastKickbackTime() { mixin(MGPC("float", 1716)); }
+			UObject.Vector2D m_v2KickbackAmount() { mixin(MGPC("UObject.Vector2D", 1708)); }
+			UObject.Vector2D m_v2MinMaxKickbackY() { mixin(MGPC("UObject.Vector2D", 1700)); }
+			UObject.Vector2D m_v2MinMaxKickbackX() { mixin(MGPC("UObject.Vector2D", 1692)); }
+			int m_nCreditCost() { mixin(MGPC("int", 1684)); }
+			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC("ParticleSystem", 1680)); }
+			float m_fShowTracerDistance() { mixin(MGPC("float", 1676)); }
+			int m_nTracerInterval() { mixin(MGPC("int", 1672)); }
+			TrAnimNodeBlendByDeviceAnim m_DeviceAnimNode() { mixin(MGPC("TrAnimNodeBlendByDeviceAnim", 1668)); }
+			float m_fLockTargetTime() { mixin(MGPC("float", 1652)); }
+			Actor c_LockedActor() { mixin(MGPC("Actor", 1648)); }
+			float c_fLockTime() { mixin(MGPC("float", 1644)); }
+			TrDevice.ReplicatedAmmoCount r_AmmoCount() { mixin(MGPC("TrDevice.ReplicatedAmmoCount", 1636)); }
+			int s_iCheatCountAmmo() { mixin(MGPC("int", 1632)); }
+			SoundCue m_ZoomOutSoundCue() { mixin(MGPC("SoundCue", 1628)); }
+			SoundCue m_ZoomInSoundCue() { mixin(MGPC("SoundCue", 1624)); }
+			SoundCue m_DryFireSoundCue() { mixin(MGPC("SoundCue", 1620)); }
+			SoundCue m_ReloadAmmoSoundCue() { mixin(MGPC("SoundCue", 1616)); }
+			float m_fPctTimeBeforeReload() { mixin(MGPC("float", 1612)); }
+			float m_fReloadTime() { mixin(MGPC("float", 1608)); }
+			int m_RemainingAmmoInClip() { mixin(MGPC("int", 1604)); }
+			int m_nMaxCarriedAmmo() { mixin(MGPC("int", 1600)); }
+			int m_nLowAmmoWarning() { mixin(MGPC("int", 1592)); }
+			int m_nAltReticuleIndex() { mixin(MGPC("int", 1588)); }
+			float m_fQuickRetrieveEquipTime() { mixin(MGPC("float", 1580)); }
+			float m_fAccuracyCorrectionRate() { mixin(MGPC("float", 1576)); }
+			float m_fAimingModeAccuracyBonus() { mixin(MGPC("float", 1572)); }
+			float m_fAccuracyLossMax() { mixin(MGPC("float", 1568)); }
+			float m_fAccuracyLossOnShot() { mixin(MGPC("float", 1564)); }
+			float m_fAccuracyLossOnWeaponSwitch() { mixin(MGPC("float", 1560)); }
+			float m_fAccuracyLossOnJump() { mixin(MGPC("float", 1556)); }
+			float m_fDefaultAccuracy() { mixin(MGPC("float", 1552)); }
+			float m_fConeAttackAngle() { mixin(MGPC("float", 1544)); }
+			float m_fDamageRadius() { mixin(MGPC("float", 1540)); }
+			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC("TrObject.EWeaponTracerType", 1489)); }
+			TrObject.TR_EQUIP_POINT r_eEquipAt() { mixin(MGPC("TrObject.TR_EQUIP_POINT", 1488)); }
+			int DBWeaponTypeId() { mixin(MGPC("int", 1480)); }
+			int DBWeaponBaseId() { mixin(MGPC("int", 1476)); }
 		}
-		bool m_bAllowFireWhileZoomed() { mixin(MGBPC!(1548, 0x100000)()); }
-		bool m_bAllowFireWhileZoomed(bool val) { mixin(MSBPC!(1548, 0x100000)()); }
-		bool m_bTinyWeaponsEnabled() { mixin(MGBPC!(1548, 0x4000000)()); }
-		bool m_bTinyWeaponsEnabled(bool val) { mixin(MSBPC!(1548, 0x4000000)()); }
-		bool r_bIsReloading() { mixin(MGBPC!(1548, 0x2000000)()); }
-		bool r_bIsReloading(bool val) { mixin(MSBPC!(1548, 0x2000000)()); }
-		bool m_bResumeZoomOnReloadEnd() { mixin(MGBPC!(1548, 0x1000000)()); }
-		bool m_bResumeZoomOnReloadEnd(bool val) { mixin(MSBPC!(1548, 0x1000000)()); }
-		bool m_bEndZoomOnReload() { mixin(MGBPC!(1548, 0x800000)()); }
-		bool m_bEndZoomOnReload(bool val) { mixin(MSBPC!(1548, 0x800000)()); }
-		bool m_bUseMeshZoomOffset() { mixin(MGBPC!(1548, 0x400000)()); }
-		bool m_bUseMeshZoomOffset(bool val) { mixin(MSBPC!(1548, 0x400000)()); }
-		bool m_bCanZoom() { mixin(MGBPC!(1548, 0x200000)()); }
-		bool m_bCanZoom(bool val) { mixin(MSBPC!(1548, 0x200000)()); }
-		bool m_bAllowHoldDownFire() { mixin(MGBPC!(1548, 0x80000)()); }
-		bool m_bAllowHoldDownFire(bool val) { mixin(MSBPC!(1548, 0x80000)()); }
-		bool m_bWantsToFire() { mixin(MGBPC!(1548, 0x40000)()); }
-		bool m_bWantsToFire(bool val) { mixin(MSBPC!(1548, 0x40000)()); }
-		bool m_bIsPassive() { mixin(MGBPC!(1548, 0x20000)()); }
-		bool m_bIsPassive(bool val) { mixin(MSBPC!(1548, 0x20000)()); }
-		bool m_bIsKickbackAdditive() { mixin(MGBPC!(1548, 0x10000)()); }
-		bool m_bIsKickbackAdditive(bool val) { mixin(MSBPC!(1548, 0x10000)()); }
-		bool m_bSpawnTracerBeams() { mixin(MGBPC!(1548, 0x8000)()); }
-		bool m_bSpawnTracerBeams(bool val) { mixin(MSBPC!(1548, 0x8000)()); }
-		bool m_bSpawnTracers() { mixin(MGBPC!(1548, 0x4000)()); }
-		bool m_bSpawnTracers(bool val) { mixin(MSBPC!(1548, 0x4000)()); }
-		bool m_bUsesDeployMode() { mixin(MGBPC!(1548, 0x2000)()); }
-		bool m_bUsesDeployMode(bool val) { mixin(MSBPC!(1548, 0x2000)()); }
-		bool c_bLocking() { mixin(MGBPC!(1548, 0x1000)()); }
-		bool c_bLocking(bool val) { mixin(MSBPC!(1548, 0x1000)()); }
-		bool m_bForceReplicateAmmoOnFire() { mixin(MGBPC!(1548, 0x800)()); }
-		bool m_bForceReplicateAmmoOnFire(bool val) { mixin(MSBPC!(1548, 0x800)()); }
-		bool r_bReadyToFire() { mixin(MGBPC!(1548, 0x400)()); }
-		bool r_bReadyToFire(bool val) { mixin(MSBPC!(1548, 0x400)()); }
-		bool m_bCanEarlyAbortReload() { mixin(MGBPC!(1548, 0x200)()); }
-		bool m_bCanEarlyAbortReload(bool val) { mixin(MSBPC!(1548, 0x200)()); }
-		bool m_bReloadBulletInChamber() { mixin(MGBPC!(1548, 0x100)()); }
-		bool m_bReloadBulletInChamber(bool val) { mixin(MSBPC!(1548, 0x100)()); }
-		bool m_bPendingReload() { mixin(MGBPC!(1548, 0x80)()); }
-		bool m_bPendingReload(bool val) { mixin(MSBPC!(1548, 0x80)()); }
-		bool m_bReloadSingles() { mixin(MGBPC!(1548, 0x40)()); }
-		bool m_bReloadSingles(bool val) { mixin(MSBPC!(1548, 0x40)()); }
-		bool m_bAllowReloads() { mixin(MGBPC!(1548, 0x20)()); }
-		bool m_bAllowReloads(bool val) { mixin(MSBPC!(1548, 0x20)()); }
-		bool m_bLowAmmoOn() { mixin(MGBPC!(1548, 0x10)()); }
-		bool m_bLowAmmoOn(bool val) { mixin(MSBPC!(1548, 0x10)()); }
-		bool m_bRequireAimMode() { mixin(MGBPC!(1548, 0x8)()); }
-		bool m_bRequireAimMode(bool val) { mixin(MSBPC!(1548, 0x8)()); }
-		bool m_bHighlightEnemies() { mixin(MGBPC!(1548, 0x4)()); }
-		bool m_bHighlightEnemies(bool val) { mixin(MSBPC!(1548, 0x4)()); }
-		bool m_bEquipEffectsApplied() { mixin(MGBPC!(1548, 0x2)()); }
-		bool m_bEquipEffectsApplied(bool val) { mixin(MSBPC!(1548, 0x2)()); }
-		bool m_bAllowMultipleTargets() { mixin(MGBPC!(1548, 0x1)()); }
-		bool m_bAllowMultipleTargets(bool val) { mixin(MSBPC!(1548, 0x1)()); }
+		bool m_bAllowFireWhileZoomed() { mixin(MGBPC(1548, 0x100000)); }
+		bool m_bAllowFireWhileZoomed(bool val) { mixin(MSBPC(1548, 0x100000)); }
+		bool m_bTinyWeaponsEnabled() { mixin(MGBPC(1548, 0x4000000)); }
+		bool m_bTinyWeaponsEnabled(bool val) { mixin(MSBPC(1548, 0x4000000)); }
+		bool r_bIsReloading() { mixin(MGBPC(1548, 0x2000000)); }
+		bool r_bIsReloading(bool val) { mixin(MSBPC(1548, 0x2000000)); }
+		bool m_bResumeZoomOnReloadEnd() { mixin(MGBPC(1548, 0x1000000)); }
+		bool m_bResumeZoomOnReloadEnd(bool val) { mixin(MSBPC(1548, 0x1000000)); }
+		bool m_bEndZoomOnReload() { mixin(MGBPC(1548, 0x800000)); }
+		bool m_bEndZoomOnReload(bool val) { mixin(MSBPC(1548, 0x800000)); }
+		bool m_bUseMeshZoomOffset() { mixin(MGBPC(1548, 0x400000)); }
+		bool m_bUseMeshZoomOffset(bool val) { mixin(MSBPC(1548, 0x400000)); }
+		bool m_bCanZoom() { mixin(MGBPC(1548, 0x200000)); }
+		bool m_bCanZoom(bool val) { mixin(MSBPC(1548, 0x200000)); }
+		bool m_bAllowHoldDownFire() { mixin(MGBPC(1548, 0x80000)); }
+		bool m_bAllowHoldDownFire(bool val) { mixin(MSBPC(1548, 0x80000)); }
+		bool m_bWantsToFire() { mixin(MGBPC(1548, 0x40000)); }
+		bool m_bWantsToFire(bool val) { mixin(MSBPC(1548, 0x40000)); }
+		bool m_bIsPassive() { mixin(MGBPC(1548, 0x20000)); }
+		bool m_bIsPassive(bool val) { mixin(MSBPC(1548, 0x20000)); }
+		bool m_bIsKickbackAdditive() { mixin(MGBPC(1548, 0x10000)); }
+		bool m_bIsKickbackAdditive(bool val) { mixin(MSBPC(1548, 0x10000)); }
+		bool m_bSpawnTracerBeams() { mixin(MGBPC(1548, 0x8000)); }
+		bool m_bSpawnTracerBeams(bool val) { mixin(MSBPC(1548, 0x8000)); }
+		bool m_bSpawnTracers() { mixin(MGBPC(1548, 0x4000)); }
+		bool m_bSpawnTracers(bool val) { mixin(MSBPC(1548, 0x4000)); }
+		bool m_bUsesDeployMode() { mixin(MGBPC(1548, 0x2000)); }
+		bool m_bUsesDeployMode(bool val) { mixin(MSBPC(1548, 0x2000)); }
+		bool c_bLocking() { mixin(MGBPC(1548, 0x1000)); }
+		bool c_bLocking(bool val) { mixin(MSBPC(1548, 0x1000)); }
+		bool m_bForceReplicateAmmoOnFire() { mixin(MGBPC(1548, 0x800)); }
+		bool m_bForceReplicateAmmoOnFire(bool val) { mixin(MSBPC(1548, 0x800)); }
+		bool r_bReadyToFire() { mixin(MGBPC(1548, 0x400)); }
+		bool r_bReadyToFire(bool val) { mixin(MSBPC(1548, 0x400)); }
+		bool m_bCanEarlyAbortReload() { mixin(MGBPC(1548, 0x200)); }
+		bool m_bCanEarlyAbortReload(bool val) { mixin(MSBPC(1548, 0x200)); }
+		bool m_bReloadBulletInChamber() { mixin(MGBPC(1548, 0x100)); }
+		bool m_bReloadBulletInChamber(bool val) { mixin(MSBPC(1548, 0x100)); }
+		bool m_bPendingReload() { mixin(MGBPC(1548, 0x80)); }
+		bool m_bPendingReload(bool val) { mixin(MSBPC(1548, 0x80)); }
+		bool m_bReloadSingles() { mixin(MGBPC(1548, 0x40)); }
+		bool m_bReloadSingles(bool val) { mixin(MSBPC(1548, 0x40)); }
+		bool m_bAllowReloads() { mixin(MGBPC(1548, 0x20)); }
+		bool m_bAllowReloads(bool val) { mixin(MSBPC(1548, 0x20)); }
+		bool m_bLowAmmoOn() { mixin(MGBPC(1548, 0x10)); }
+		bool m_bLowAmmoOn(bool val) { mixin(MSBPC(1548, 0x10)); }
+		bool m_bRequireAimMode() { mixin(MGBPC(1548, 0x8)); }
+		bool m_bRequireAimMode(bool val) { mixin(MSBPC(1548, 0x8)); }
+		bool m_bHighlightEnemies() { mixin(MGBPC(1548, 0x4)); }
+		bool m_bHighlightEnemies(bool val) { mixin(MSBPC(1548, 0x4)); }
+		bool m_bEquipEffectsApplied() { mixin(MGBPC(1548, 0x2)); }
+		bool m_bEquipEffectsApplied(bool val) { mixin(MSBPC(1548, 0x2)); }
+		bool m_bAllowMultipleTargets() { mixin(MGBPC(1548, 0x1)); }
+		bool m_bAllowMultipleTargets(bool val) { mixin(MSBPC(1548, 0x1)); }
 	}
 final:
 	float CalcHUDAimChargePercent()

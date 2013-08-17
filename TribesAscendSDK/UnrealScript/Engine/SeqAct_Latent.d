@@ -9,9 +9,9 @@ extern(C++) interface SeqAct_Latent : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_Latent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SeqAct_Latent")); }
 	private static __gshared SeqAct_Latent mDefaultProperties;
-	@property final static SeqAct_Latent DefaultProperties() { mixin(MGDPC!(SeqAct_Latent, "SeqAct_Latent Engine.Default__SeqAct_Latent")()); }
+	@property final static SeqAct_Latent DefaultProperties() { mixin(MGDPC("SeqAct_Latent", "SeqAct_Latent Engine.Default__SeqAct_Latent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AbortFor() { mixin(MGF!("mAbortFor", "Function Engine.SeqAct_Latent.AbortFor")()); }
-			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function Engine.SeqAct_Latent.Update")()); }
+			ScriptFunction AbortFor() { mixin(MGF("mAbortFor", "Function Engine.SeqAct_Latent.AbortFor")); }
+			ScriptFunction Update() { mixin(MGF("mUpdate", "Function Engine.SeqAct_Latent.Update")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(Actor) LatentActors() { mixin(MGPC!("ScriptArray!(Actor)", 232)()); }
-		bool bAborted() { mixin(MGBPC!(244, 0x1)()); }
-		bool bAborted(bool val) { mixin(MSBPC!(244, 0x1)()); }
+		@property final auto ref ScriptArray!(Actor) LatentActors() { mixin(MGPC("ScriptArray!(Actor)", 232)); }
+		bool bAborted() { mixin(MGBPC(244, 0x1)); }
+		bool bAborted(bool val) { mixin(MSBPC(244, 0x1)); }
 	}
 final:
 	void AbortFor(Actor latentActor)

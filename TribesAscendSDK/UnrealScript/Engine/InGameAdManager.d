@@ -8,9 +8,9 @@ extern(C++) interface InGameAdManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InGameAdManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.InGameAdManager")); }
 	private static __gshared InGameAdManager mDefaultProperties;
-	@property final static InGameAdManager DefaultProperties() { mixin(MGDPC!(InGameAdManager, "InGameAdManager Engine.Default__InGameAdManager")()); }
+	@property final static InGameAdManager DefaultProperties() { mixin(MGDPC("InGameAdManager", "InGameAdManager Engine.Default__InGameAdManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,17 +29,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnUserClickedBanner() { mixin(MGF!("mOnUserClickedBanner", "Function Engine.InGameAdManager.OnUserClickedBanner")()); }
-			ScriptFunction OnUserClosedAdvertisement() { mixin(MGF!("mOnUserClosedAdvertisement", "Function Engine.InGameAdManager.OnUserClosedAdvertisement")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.InGameAdManager.Init")()); }
-			ScriptFunction ShowBanner() { mixin(MGF!("mShowBanner", "Function Engine.InGameAdManager.ShowBanner")()); }
-			ScriptFunction HideBanner() { mixin(MGF!("mHideBanner", "Function Engine.InGameAdManager.HideBanner")()); }
-			ScriptFunction ForceCloseAd() { mixin(MGF!("mForceCloseAd", "Function Engine.InGameAdManager.ForceCloseAd")()); }
-			ScriptFunction SetPauseWhileAdOpen() { mixin(MGF!("mSetPauseWhileAdOpen", "Function Engine.InGameAdManager.SetPauseWhileAdOpen")()); }
-			ScriptFunction AddClickedBannerDelegate() { mixin(MGF!("mAddClickedBannerDelegate", "Function Engine.InGameAdManager.AddClickedBannerDelegate")()); }
-			ScriptFunction ClearClickedBannerDelegate() { mixin(MGF!("mClearClickedBannerDelegate", "Function Engine.InGameAdManager.ClearClickedBannerDelegate")()); }
-			ScriptFunction AddClosedAdDelegate() { mixin(MGF!("mAddClosedAdDelegate", "Function Engine.InGameAdManager.AddClosedAdDelegate")()); }
-			ScriptFunction ClearClosedAdDelegate() { mixin(MGF!("mClearClosedAdDelegate", "Function Engine.InGameAdManager.ClearClosedAdDelegate")()); }
+			ScriptFunction OnUserClickedBanner() { mixin(MGF("mOnUserClickedBanner", "Function Engine.InGameAdManager.OnUserClickedBanner")); }
+			ScriptFunction OnUserClosedAdvertisement() { mixin(MGF("mOnUserClosedAdvertisement", "Function Engine.InGameAdManager.OnUserClosedAdvertisement")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.InGameAdManager.Init")); }
+			ScriptFunction ShowBanner() { mixin(MGF("mShowBanner", "Function Engine.InGameAdManager.ShowBanner")); }
+			ScriptFunction HideBanner() { mixin(MGF("mHideBanner", "Function Engine.InGameAdManager.HideBanner")); }
+			ScriptFunction ForceCloseAd() { mixin(MGF("mForceCloseAd", "Function Engine.InGameAdManager.ForceCloseAd")); }
+			ScriptFunction SetPauseWhileAdOpen() { mixin(MGF("mSetPauseWhileAdOpen", "Function Engine.InGameAdManager.SetPauseWhileAdOpen")); }
+			ScriptFunction AddClickedBannerDelegate() { mixin(MGF("mAddClickedBannerDelegate", "Function Engine.InGameAdManager.AddClickedBannerDelegate")); }
+			ScriptFunction ClearClickedBannerDelegate() { mixin(MGF("mClearClickedBannerDelegate", "Function Engine.InGameAdManager.ClearClickedBannerDelegate")); }
+			ScriptFunction AddClosedAdDelegate() { mixin(MGF("mAddClosedAdDelegate", "Function Engine.InGameAdManager.AddClosedAdDelegate")); }
+			ScriptFunction ClearClosedAdDelegate() { mixin(MGF("mClearClosedAdDelegate", "Function Engine.InGameAdManager.ClearClosedAdDelegate")); }
 		}
 	}
 	@property final
@@ -48,19 +48,19 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ClickedBannerDelegates() { mixin(MGPC!("ScriptArray!(
+void*) ClickedBannerDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 64)()); }
+void*)", 64)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ClosedAdDelegates() { mixin(MGPC!("ScriptArray!(
+void*) ClosedAdDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 76)()); }
+void*)", 76)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUserClosedAdvertisement__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUserClickedBanner__Delegate'!
 		}
-		bool bShouldPauseWhileAdOpen() { mixin(MGBPC!(60, 0x1)()); }
-		bool bShouldPauseWhileAdOpen(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		bool bShouldPauseWhileAdOpen() { mixin(MGBPC(60, 0x1)); }
+		bool bShouldPauseWhileAdOpen(bool val) { mixin(MSBPC(60, 0x1)); }
 	}
 final:
 	void OnUserClickedBanner()

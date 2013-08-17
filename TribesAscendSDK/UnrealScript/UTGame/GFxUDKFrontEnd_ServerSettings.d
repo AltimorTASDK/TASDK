@@ -10,9 +10,9 @@ extern(C++) interface GFxUDKFrontEnd_ServerSettings : GFxUDKFrontEnd_SettingsBas
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_ServerSettings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxUDKFrontEnd_ServerSettings")); }
 	private static __gshared GFxUDKFrontEnd_ServerSettings mDefaultProperties;
-	@property final static GFxUDKFrontEnd_ServerSettings DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_ServerSettings, "GFxUDKFrontEnd_ServerSettings UTGame.Default__GFxUDKFrontEnd_ServerSettings")()); }
+	@property final static GFxUDKFrontEnd_ServerSettings DefaultProperties() { mixin(MGDPC("GFxUDKFrontEnd_ServerSettings", "GFxUDKFrontEnd_ServerSettings UTGame.Default__GFxUDKFrontEnd_ServerSettings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetSelectedOptionSet() { mixin(MGF!("mSetSelectedOptionSet", "Function UTGame.GFxUDKFrontEnd_ServerSettings.SetSelectedOptionSet")()); }
-			ScriptFunction OnOptionChanged() { mixin(MGF!("mOnOptionChanged", "Function UTGame.GFxUDKFrontEnd_ServerSettings.OnOptionChanged")()); }
-			ScriptFunction SaveState() { mixin(MGF!("mSaveState", "Function UTGame.GFxUDKFrontEnd_ServerSettings.SaveState")()); }
-			ScriptFunction UpdateListDataProvider() { mixin(MGF!("mUpdateListDataProvider", "Function UTGame.GFxUDKFrontEnd_ServerSettings.UpdateListDataProvider")()); }
-			ScriptFunction PopulateOptionDataProviderForIndex() { mixin(MGF!("mPopulateOptionDataProviderForIndex", "Function UTGame.GFxUDKFrontEnd_ServerSettings.PopulateOptionDataProviderForIndex")()); }
-			ScriptFunction FindControlByUTClassName() { mixin(MGF!("mFindControlByUTClassName", "Function UTGame.GFxUDKFrontEnd_ServerSettings.FindControlByUTClassName")()); }
+			ScriptFunction SetSelectedOptionSet() { mixin(MGF("mSetSelectedOptionSet", "Function UTGame.GFxUDKFrontEnd_ServerSettings.SetSelectedOptionSet")); }
+			ScriptFunction OnOptionChanged() { mixin(MGF("mOnOptionChanged", "Function UTGame.GFxUDKFrontEnd_ServerSettings.OnOptionChanged")); }
+			ScriptFunction SaveState() { mixin(MGF("mSaveState", "Function UTGame.GFxUDKFrontEnd_ServerSettings.SaveState")); }
+			ScriptFunction UpdateListDataProvider() { mixin(MGF("mUpdateListDataProvider", "Function UTGame.GFxUDKFrontEnd_ServerSettings.UpdateListDataProvider")); }
+			ScriptFunction PopulateOptionDataProviderForIndex() { mixin(MGF("mPopulateOptionDataProviderForIndex", "Function UTGame.GFxUDKFrontEnd_ServerSettings.PopulateOptionDataProviderForIndex")); }
+			ScriptFunction FindControlByUTClassName() { mixin(MGF("mFindControlByUTClassName", "Function UTGame.GFxUDKFrontEnd_ServerSettings.FindControlByUTClassName")); }
 		}
 	}
 	@property final
 	{
-		bool bDataChangedByReqs() { mixin(MGBPC!(260, 0x1)()); }
-		bool bDataChangedByReqs(bool val) { mixin(MSBPC!(260, 0x1)()); }
+		bool bDataChangedByReqs() { mixin(MGBPC(260, 0x1)); }
+		bool bDataChangedByReqs(bool val) { mixin(MSBPC(260, 0x1)); }
 	}
 final:
 	void SetSelectedOptionSet()

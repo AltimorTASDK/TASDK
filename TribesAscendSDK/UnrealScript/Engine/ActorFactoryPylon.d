@@ -8,7 +8,7 @@ extern(C++) interface ActorFactoryPylon : ActorFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryPylon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ActorFactoryPylon")); }
 	private static __gshared ActorFactoryPylon mDefaultProperties;
-	@property final static ActorFactoryPylon DefaultProperties() { mixin(MGDPC!(ActorFactoryPylon, "ActorFactoryPylon Engine.Default__ActorFactoryPylon")()); }
+	@property final static ActorFactoryPylon DefaultProperties() { mixin(MGDPC("ActorFactoryPylon", "ActorFactoryPylon Engine.Default__ActorFactoryPylon")); }
 }

@@ -8,7 +8,7 @@ extern(C++) interface TrDevice_ConcussionGrenade_MKD : TrDevice_ConcussionGrenad
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_ConcussionGrenade_MKD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_ConcussionGrenade_MKD")); }
 	private static __gshared TrDevice_ConcussionGrenade_MKD mDefaultProperties;
-	@property final static TrDevice_ConcussionGrenade_MKD DefaultProperties() { mixin(MGDPC!(TrDevice_ConcussionGrenade_MKD, "TrDevice_ConcussionGrenade_MKD TribesGame.Default__TrDevice_ConcussionGrenade_MKD")()); }
+	@property final static TrDevice_ConcussionGrenade_MKD DefaultProperties() { mixin(MGDPC("TrDevice_ConcussionGrenade_MKD", "TrDevice_ConcussionGrenade_MKD TribesGame.Default__TrDevice_ConcussionGrenade_MKD")); }
 }

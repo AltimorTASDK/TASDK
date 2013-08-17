@@ -8,19 +8,19 @@ extern(C++) interface UTSkelControl_JetThruster : SkelControlSingleBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_JetThruster")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSkelControl_JetThruster")); }
 	private static __gshared UTSkelControl_JetThruster mDefaultProperties;
-	@property final static UTSkelControl_JetThruster DefaultProperties() { mixin(MGDPC!(UTSkelControl_JetThruster, "UTSkelControl_JetThruster UTGame.Default__UTSkelControl_JetThruster")()); }
+	@property final static UTSkelControl_JetThruster DefaultProperties() { mixin(MGDPC("UTSkelControl_JetThruster", "UTSkelControl_JetThruster UTGame.Default__UTSkelControl_JetThruster")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;
-		public @property static final ScriptFunction TickSkelControl() { mixin(MGF!("mTickSkelControl", "Function UTGame.UTSkelControl_JetThruster.TickSkelControl")()); }
+		public @property static final ScriptFunction TickSkelControl() { mixin(MGF("mTickSkelControl", "Function UTGame.UTSkelControl_JetThruster.TickSkelControl")); }
 	}
 	@property final auto ref
 	{
-		float DesiredStrength() { mixin(MGPC!("float", 244)()); }
-		float BlendRate() { mixin(MGPC!("float", 240)()); }
-		float MaxForwardVelocity() { mixin(MGPC!("float", 236)()); }
+		float DesiredStrength() { mixin(MGPC("float", 244)); }
+		float BlendRate() { mixin(MGPC("float", 240)); }
+		float MaxForwardVelocity() { mixin(MGPC("float", 236)); }
 	}
 	final void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

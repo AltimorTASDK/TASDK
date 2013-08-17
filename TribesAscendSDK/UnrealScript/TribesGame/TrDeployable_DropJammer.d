@@ -10,9 +10,9 @@ extern(C++) interface TrDeployable_DropJammer : TrDeployable_Sensor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_DropJammer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployable_DropJammer")); }
 	private static __gshared TrDeployable_DropJammer mDefaultProperties;
-	@property final static TrDeployable_DropJammer DefaultProperties() { mixin(MGDPC!(TrDeployable_DropJammer, "TrDeployable_DropJammer TribesGame.Default__TrDeployable_DropJammer")()); }
+	@property final static TrDeployable_DropJammer DefaultProperties() { mixin(MGDPC("TrDeployable_DropJammer", "TrDeployable_DropJammer TribesGame.Default__TrDeployable_DropJammer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,17 +25,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldDetectPawn() { mixin(MGF!("mShouldDetectPawn", "Function TribesGame.TrDeployable_DropJammer.ShouldDetectPawn")()); }
-			ScriptFunction OnPowerStatusChanged() { mixin(MGF!("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_DropJammer.OnPowerStatusChanged")()); }
-			ScriptFunction AddDetectedPawn() { mixin(MGF!("mAddDetectedPawn", "Function TribesGame.TrDeployable_DropJammer.AddDetectedPawn")()); }
-			ScriptFunction RemoveDetectedPawn() { mixin(MGF!("mRemoveDetectedPawn", "Function TribesGame.TrDeployable_DropJammer.RemoveDetectedPawn")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDeployable_DropJammer.GetMarker")()); }
+			ScriptFunction ShouldDetectPawn() { mixin(MGF("mShouldDetectPawn", "Function TribesGame.TrDeployable_DropJammer.ShouldDetectPawn")); }
+			ScriptFunction OnPowerStatusChanged() { mixin(MGF("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_DropJammer.OnPowerStatusChanged")); }
+			ScriptFunction AddDetectedPawn() { mixin(MGF("mAddDetectedPawn", "Function TribesGame.TrDeployable_DropJammer.AddDetectedPawn")); }
+			ScriptFunction RemoveDetectedPawn() { mixin(MGF("mRemoveDetectedPawn", "Function TribesGame.TrDeployable_DropJammer.RemoveDetectedPawn")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrDeployable_DropJammer.GetMarker")); }
 		}
 	}
 	static struct BlownUp
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable_DropJammer.BlownUp")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDeployable_DropJammer.BlownUp")); }
 	}
 final:
 	bool ShouldDetectPawn(Pawn P)

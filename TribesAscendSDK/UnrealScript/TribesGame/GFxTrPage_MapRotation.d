@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_MapRotation : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_MapRotation")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_MapRotation")); }
 	private static __gshared GFxTrPage_MapRotation mDefaultProperties;
-	@property final static GFxTrPage_MapRotation DefaultProperties() { mixin(MGDPC!(GFxTrPage_MapRotation, "GFxTrPage_MapRotation TribesGame.Default__GFxTrPage_MapRotation")()); }
+	@property final static GFxTrPage_MapRotation DefaultProperties() { mixin(MGDPC("GFxTrPage_MapRotation", "GFxTrPage_MapRotation TribesGame.Default__GFxTrPage_MapRotation")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,16 +26,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_MapRotation.Initialize")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_MapRotation.TakeAction")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_MapRotation.TakeFocus")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_MapRotation.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_MapRotation.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_MapRotation.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_MapRotation.FillDescription")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_MapRotation.Initialize")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_MapRotation.TakeAction")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_MapRotation.TakeFocus")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_MapRotation.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_MapRotation.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_MapRotation.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_MapRotation.FillDescription")); }
 		}
 	}
-	@property final auto ref int AddMapNumber() { mixin(MGPC!("int", 356)()); }
+	@property final auto ref int AddMapNumber() { mixin(MGPC("int", 356)); }
 final:
 	void Initialize()
 	{

@@ -8,7 +8,7 @@ extern(C++) interface TrDevice_OmniSensorDeployable : TrDevice_Deployable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_OmniSensorDeployable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_OmniSensorDeployable")); }
 	private static __gshared TrDevice_OmniSensorDeployable mDefaultProperties;
-	@property final static TrDevice_OmniSensorDeployable DefaultProperties() { mixin(MGDPC!(TrDevice_OmniSensorDeployable, "TrDevice_OmniSensorDeployable TribesGame.Default__TrDevice_OmniSensorDeployable")()); }
+	@property final static TrDevice_OmniSensorDeployable DefaultProperties() { mixin(MGDPC("TrDevice_OmniSensorDeployable", "TrDevice_OmniSensorDeployable TribesGame.Default__TrDevice_OmniSensorDeployable")); }
 }

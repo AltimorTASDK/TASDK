@@ -11,18 +11,18 @@ extern(C++) interface AICommandNodeBase : K2NodeBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AICommandNodeBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AICommandNodeBase")); }
 	private static __gshared AICommandNodeBase mDefaultProperties;
-	@property final static AICommandNodeBase DefaultProperties() { mixin(MGDPC!(AICommandNodeBase, "AICommandNodeBase Engine.Default__AICommandNodeBase")()); }
+	@property final static AICommandNodeBase DefaultProperties() { mixin(MGDPC("AICommandNodeBase", "AICommandNodeBase Engine.Default__AICommandNodeBase")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSelectBestChild;
-		public @property static final ScriptFunction SelectBestChild() { mixin(MGF!("mSelectBestChild", "Function Engine.AICommandNodeBase.SelectBestChild")()); }
+		public @property static final ScriptFunction SelectBestChild() { mixin(MGF("mSelectBestChild", "Function Engine.AICommandNodeBase.SelectBestChild")); }
 	}
 	@property final auto ref
 	{
-		DMC_Prototype UtilityDMC() { mixin(MGPC!("DMC_Prototype", 96)()); }
-		ScriptClass CommandClass() { mixin(MGPC!("ScriptClass", 92)()); }
+		DMC_Prototype UtilityDMC() { mixin(MGPC("DMC_Prototype", 96)); }
+		ScriptClass CommandClass() { mixin(MGPC("ScriptClass", 92)); }
 	}
 	final AICommandNodeBase SelectBestChild(AIController InAI, ref AITree.AITreeHandle Handle)
 	{

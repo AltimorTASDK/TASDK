@@ -8,9 +8,9 @@ extern(C++) interface MaterialExpressionTransformPosition : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTransformPosition")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionTransformPosition")); }
 	private static __gshared MaterialExpressionTransformPosition mDefaultProperties;
-	@property final static MaterialExpressionTransformPosition DefaultProperties() { mixin(MGDPC!(MaterialExpressionTransformPosition, "MaterialExpressionTransformPosition Engine.Default__MaterialExpressionTransformPosition")()); }
+	@property final static MaterialExpressionTransformPosition DefaultProperties() { mixin(MGDPC("MaterialExpressionTransformPosition", "MaterialExpressionTransformPosition Engine.Default__MaterialExpressionTransformPosition")); }
 	enum EMaterialPositionTransform : ubyte
 	{
 		TRANSFORMPOS_World = 0,
@@ -18,7 +18,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		MaterialExpressionTransformPosition.EMaterialPositionTransform TransformType() { mixin(MGPC!("MaterialExpressionTransformPosition.EMaterialPositionTransform", 136)()); }
+		MaterialExpressionTransformPosition.EMaterialPositionTransform TransformType() { mixin(MGPC("MaterialExpressionTransformPosition.EMaterialPositionTransform", 136)); }
 		// WARNING: Property 'Input' has the same name as a defined type!
 	}
 }

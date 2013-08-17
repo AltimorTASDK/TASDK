@@ -9,9 +9,9 @@ extern(C++) interface TrEffect_Jammer : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_Jammer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_Jammer")); }
 	private static __gshared TrEffect_Jammer mDefaultProperties;
-	@property final static TrEffect_Jammer DefaultProperties() { mixin(MGDPC!(TrEffect_Jammer, "TrEffect_Jammer TribesGame.Default__TrEffect_Jammer")()); }
+	@property final static TrEffect_Jammer DefaultProperties() { mixin(MGDPC("TrEffect_Jammer", "TrEffect_Jammer TribesGame.Default__TrEffect_Jammer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_Jammer.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_Jammer.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_Jammer.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_Jammer.Remove")); }
 		}
 	}
 final:

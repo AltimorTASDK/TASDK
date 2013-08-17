@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionFoliageImpulseDirection : MaterialExpres
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionFoliageImpulseDirection")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionFoliageImpulseDirection")); }
 	private static __gshared MaterialExpressionFoliageImpulseDirection mDefaultProperties;
-	@property final static MaterialExpressionFoliageImpulseDirection DefaultProperties() { mixin(MGDPC!(MaterialExpressionFoliageImpulseDirection, "MaterialExpressionFoliageImpulseDirection Engine.Default__MaterialExpressionFoliageImpulseDirection")()); }
+	@property final static MaterialExpressionFoliageImpulseDirection DefaultProperties() { mixin(MGDPC("MaterialExpressionFoliageImpulseDirection", "MaterialExpressionFoliageImpulseDirection Engine.Default__MaterialExpressionFoliageImpulseDirection")); }
 }

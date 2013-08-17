@@ -9,9 +9,9 @@ extern(C++) interface TrEffect_MaxPowerPoolBuff : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_MaxPowerPoolBuff")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_MaxPowerPoolBuff")); }
 	private static __gshared TrEffect_MaxPowerPoolBuff mDefaultProperties;
-	@property final static TrEffect_MaxPowerPoolBuff DefaultProperties() { mixin(MGDPC!(TrEffect_MaxPowerPoolBuff, "TrEffect_MaxPowerPoolBuff TribesGame.Default__TrEffect_MaxPowerPoolBuff")()); }
+	@property final static TrEffect_MaxPowerPoolBuff DefaultProperties() { mixin(MGDPC("TrEffect_MaxPowerPoolBuff", "TrEffect_MaxPowerPoolBuff TribesGame.Default__TrEffect_MaxPowerPoolBuff")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_MaxPowerPoolBuff.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_MaxPowerPoolBuff.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_MaxPowerPoolBuff.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_MaxPowerPoolBuff.Remove")); }
 		}
 	}
 final:

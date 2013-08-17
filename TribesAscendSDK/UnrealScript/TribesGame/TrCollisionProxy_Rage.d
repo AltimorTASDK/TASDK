@@ -9,9 +9,9 @@ extern(C++) interface TrCollisionProxy_Rage : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCollisionProxy_Rage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCollisionProxy_Rage")); }
 	private static __gshared TrCollisionProxy_Rage mDefaultProperties;
-	@property final static TrCollisionProxy_Rage DefaultProperties() { mixin(MGDPC!(TrCollisionProxy_Rage, "TrCollisionProxy_Rage TribesGame.Default__TrCollisionProxy_Rage")()); }
+	@property final static TrCollisionProxy_Rage DefaultProperties() { mixin(MGDPC("TrCollisionProxy_Rage", "TrCollisionProxy_Rage TribesGame.Default__TrCollisionProxy_Rage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,9 +22,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrCollisionProxy_Rage.Touch")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrCollisionProxy_Rage.UnTouch")()); }
-			ScriptFunction ForceProximityScan() { mixin(MGF!("mForceProximityScan", "Function TribesGame.TrCollisionProxy_Rage.ForceProximityScan")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrCollisionProxy_Rage.Touch")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function TribesGame.TrCollisionProxy_Rage.UnTouch")); }
+			ScriptFunction ForceProximityScan() { mixin(MGF("mForceProximityScan", "Function TribesGame.TrCollisionProxy_Rage.ForceProximityScan")); }
 		}
 	}
 final:

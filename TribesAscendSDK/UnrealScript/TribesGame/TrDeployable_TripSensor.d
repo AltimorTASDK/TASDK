@@ -12,9 +12,9 @@ extern(C++) interface TrDeployable_TripSensor : TrDeployable_Sensor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_TripSensor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployable_TripSensor")); }
 	private static __gshared TrDeployable_TripSensor mDefaultProperties;
-	@property final static TrDeployable_TripSensor DefaultProperties() { mixin(MGDPC!(TrDeployable_TripSensor, "TrDeployable_TripSensor TribesGame.Default__TrDeployable_TripSensor")()); }
+	@property final static TrDeployable_TripSensor DefaultProperties() { mixin(MGDPC("TrDeployable_TripSensor", "TrDeployable_TripSensor TribesGame.Default__TrDeployable_TripSensor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,16 +29,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddTripActor() { mixin(MGF!("mAddTripActor", "Function TribesGame.TrDeployable_TripSensor.AddTripActor")()); }
-			ScriptFunction RemoveTripActor() { mixin(MGF!("mRemoveTripActor", "Function TribesGame.TrDeployable_TripSensor.RemoveTripActor")()); }
-			ScriptFunction TripActivated() { mixin(MGF!("mTripActivated", "Function TribesGame.TrDeployable_TripSensor.TripActivated")()); }
-			ScriptFunction GetParticleSystemName() { mixin(MGF!("mGetParticleSystemName", "Function TribesGame.TrDeployable_TripSensor.GetParticleSystemName")()); }
-			ScriptFunction GetTripSocketPosition() { mixin(MGF!("mGetTripSocketPosition", "Function TribesGame.TrDeployable_TripSensor.GetTripSocketPosition")()); }
-			ScriptFunction OnTripAwake() { mixin(MGF!("mOnTripAwake", "Function TribesGame.TrDeployable_TripSensor.OnTripAwake")()); }
-			ScriptFunction OnTripSleep() { mixin(MGF!("mOnTripSleep", "Function TribesGame.TrDeployable_TripSensor.OnTripSleep")()); }
+			ScriptFunction AddTripActor() { mixin(MGF("mAddTripActor", "Function TribesGame.TrDeployable_TripSensor.AddTripActor")); }
+			ScriptFunction RemoveTripActor() { mixin(MGF("mRemoveTripActor", "Function TribesGame.TrDeployable_TripSensor.RemoveTripActor")); }
+			ScriptFunction TripActivated() { mixin(MGF("mTripActivated", "Function TribesGame.TrDeployable_TripSensor.TripActivated")); }
+			ScriptFunction GetParticleSystemName() { mixin(MGF("mGetParticleSystemName", "Function TribesGame.TrDeployable_TripSensor.GetParticleSystemName")); }
+			ScriptFunction GetTripSocketPosition() { mixin(MGF("mGetTripSocketPosition", "Function TribesGame.TrDeployable_TripSensor.GetTripSocketPosition")); }
+			ScriptFunction OnTripAwake() { mixin(MGF("mOnTripAwake", "Function TribesGame.TrDeployable_TripSensor.OnTripAwake")); }
+			ScriptFunction OnTripSleep() { mixin(MGF("mOnTripSleep", "Function TribesGame.TrDeployable_TripSensor.OnTripSleep")); }
 		}
 	}
-	@property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!("UObject.Pointer", 1540)()); }
+	@property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("UObject.Pointer", 1540)); }
 final:
 	void AddTripActor(TrTripActor NewTrip)
 	{

@@ -11,9 +11,9 @@ extern(C++) interface LensFlareSource : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LensFlareSource")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.LensFlareSource")); }
 	private static __gshared LensFlareSource mDefaultProperties;
-	@property final static LensFlareSource DefaultProperties() { mixin(MGDPC!(LensFlareSource, "LensFlareSource Engine.Default__LensFlareSource")()); }
+	@property final static LensFlareSource DefaultProperties() { mixin(MGDPC("LensFlareSource", "LensFlareSource Engine.Default__LensFlareSource")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,22 +30,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function Engine.LensFlareSource.SetTemplate")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.LensFlareSource.PostBeginPlay")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.LensFlareSource.OnToggle")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.LensFlareSource.ReplicatedEvent")()); }
-			ScriptFunction SetFloatParameter() { mixin(MGF!("mSetFloatParameter", "Function Engine.LensFlareSource.SetFloatParameter")()); }
-			ScriptFunction SetVectorParameter() { mixin(MGF!("mSetVectorParameter", "Function Engine.LensFlareSource.SetVectorParameter")()); }
-			ScriptFunction SetColorParameter() { mixin(MGF!("mSetColorParameter", "Function Engine.LensFlareSource.SetColorParameter")()); }
-			ScriptFunction SetExtColorParameter() { mixin(MGF!("mSetExtColorParameter", "Function Engine.LensFlareSource.SetExtColorParameter")()); }
-			ScriptFunction SetActorParameter() { mixin(MGF!("mSetActorParameter", "Function Engine.LensFlareSource.SetActorParameter")()); }
+			ScriptFunction SetTemplate() { mixin(MGF("mSetTemplate", "Function Engine.LensFlareSource.SetTemplate")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.LensFlareSource.PostBeginPlay")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.LensFlareSource.OnToggle")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.LensFlareSource.ReplicatedEvent")); }
+			ScriptFunction SetFloatParameter() { mixin(MGF("mSetFloatParameter", "Function Engine.LensFlareSource.SetFloatParameter")); }
+			ScriptFunction SetVectorParameter() { mixin(MGF("mSetVectorParameter", "Function Engine.LensFlareSource.SetVectorParameter")); }
+			ScriptFunction SetColorParameter() { mixin(MGF("mSetColorParameter", "Function Engine.LensFlareSource.SetColorParameter")); }
+			ScriptFunction SetExtColorParameter() { mixin(MGF("mSetExtColorParameter", "Function Engine.LensFlareSource.SetExtColorParameter")); }
+			ScriptFunction SetActorParameter() { mixin(MGF("mSetActorParameter", "Function Engine.LensFlareSource.SetActorParameter")); }
 		}
 	}
 	@property final
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LensFlareComp'!
-		bool bCurrentlyActive() { mixin(MGBPC!(480, 0x1)()); }
-		bool bCurrentlyActive(bool val) { mixin(MSBPC!(480, 0x1)()); }
+		bool bCurrentlyActive() { mixin(MGBPC(480, 0x1)); }
+		bool bCurrentlyActive(bool val) { mixin(MSBPC(480, 0x1)); }
 	}
 final:
 	void SetTemplate(LensFlare NewTemplate)

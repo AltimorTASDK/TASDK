@@ -9,9 +9,9 @@ extern(C++) interface UDKEmitCameraEffect : Emitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKEmitCameraEffect")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKEmitCameraEffect")); }
 	private static __gshared UDKEmitCameraEffect mDefaultProperties;
-	@property final static UDKEmitCameraEffect DefaultProperties() { mixin(MGDPC!(UDKEmitCameraEffect, "UDKEmitCameraEffect UDKBase.Default__UDKEmitCameraEffect")()); }
+	@property final static UDKEmitCameraEffect DefaultProperties() { mixin(MGDPC("UDKEmitCameraEffect", "UDKEmitCameraEffect UDKBase.Default__UDKEmitCameraEffect")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,18 +25,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UDKBase.UDKEmitCameraEffect.PostBeginPlay")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UDKBase.UDKEmitCameraEffect.Destroyed")()); }
-			ScriptFunction RegisterCamera() { mixin(MGF!("mRegisterCamera", "Function UDKBase.UDKEmitCameraEffect.RegisterCamera")()); }
-			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function UDKBase.UDKEmitCameraEffect.Activate")()); }
-			ScriptFunction Deactivate() { mixin(MGF!("mDeactivate", "Function UDKBase.UDKEmitCameraEffect.Deactivate")()); }
-			ScriptFunction UpdateLocation() { mixin(MGF!("mUpdateLocation", "Function UDKBase.UDKEmitCameraEffect.UpdateLocation")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UDKBase.UDKEmitCameraEffect.PostBeginPlay")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UDKBase.UDKEmitCameraEffect.Destroyed")); }
+			ScriptFunction RegisterCamera() { mixin(MGF("mRegisterCamera", "Function UDKBase.UDKEmitCameraEffect.RegisterCamera")); }
+			ScriptFunction Activate() { mixin(MGF("mActivate", "Function UDKBase.UDKEmitCameraEffect.Activate")); }
+			ScriptFunction Deactivate() { mixin(MGF("mDeactivate", "Function UDKBase.UDKEmitCameraEffect.Deactivate")); }
+			ScriptFunction UpdateLocation() { mixin(MGF("mUpdateLocation", "Function UDKBase.UDKEmitCameraEffect.UpdateLocation")); }
 		}
 	}
 	@property final auto ref
 	{
-		UDKPlayerController Cam() { mixin(MGPC!("UDKPlayerController", 492)()); }
-		float DistFromCamera() { mixin(MGPC!("float", 488)()); }
+		UDKPlayerController Cam() { mixin(MGPC("UDKPlayerController", 492)); }
+		float DistFromCamera() { mixin(MGPC("float", 488)); }
 	}
 final:
 	void PostBeginPlay()

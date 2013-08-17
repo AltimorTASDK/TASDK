@@ -12,9 +12,9 @@ extern(C++) interface LiftCenter : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LiftCenter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.LiftCenter")); }
 	private static __gshared LiftCenter mDefaultProperties;
-	@property final static LiftCenter DefaultProperties() { mixin(MGDPC!(LiftCenter, "LiftCenter Engine.Default__LiftCenter")()); }
+	@property final static LiftCenter DefaultProperties() { mixin(MGDPC("LiftCenter", "LiftCenter Engine.Default__LiftCenter")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,24 +26,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.LiftCenter.PostBeginPlay")()); }
-			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.LiftCenter.SpecialHandling")()); }
-			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.LiftCenter.SuggestMovePreparation")()); }
-			ScriptFunction ProceedWithMove() { mixin(MGF!("mProceedWithMove", "Function Engine.LiftCenter.ProceedWithMove")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.LiftCenter.PostBeginPlay")); }
+			ScriptFunction SpecialHandling() { mixin(MGF("mSpecialHandling", "Function Engine.LiftCenter.SpecialHandling")); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF("mSuggestMovePreparation", "Function Engine.LiftCenter.SuggestMovePreparation")); }
+			ScriptFunction ProceedWithMove() { mixin(MGF("mProceedWithMove", "Function Engine.LiftCenter.ProceedWithMove")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Trigger LiftTrigger() { mixin(MGPC!("Trigger", 720)()); }
-			float CollisionHeight() { mixin(MGPC!("float", 716)()); }
-			Vector LiftOffset() { mixin(MGPC!("Vector", 700)()); }
-			float MaxDist2D() { mixin(MGPC!("float", 696)()); }
-			InterpActor MyLift() { mixin(MGPC!("InterpActor", 692)()); }
+			Trigger LiftTrigger() { mixin(MGPC("Trigger", 720)); }
+			float CollisionHeight() { mixin(MGPC("float", 716)); }
+			Vector LiftOffset() { mixin(MGPC("Vector", 700)); }
+			float MaxDist2D() { mixin(MGPC("float", 696)); }
+			InterpActor MyLift() { mixin(MGPC("InterpActor", 692)); }
 		}
-		bool bJumpLift() { mixin(MGBPC!(712, 0x1)()); }
-		bool bJumpLift(bool val) { mixin(MSBPC!(712, 0x1)()); }
+		bool bJumpLift() { mixin(MGBPC(712, 0x1)); }
+		bool bJumpLift(bool val) { mixin(MSBPC(712, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

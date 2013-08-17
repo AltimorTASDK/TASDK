@@ -9,9 +9,9 @@ extern(C++) interface TrDevice_PhaseRifle : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_PhaseRifle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_PhaseRifle")); }
 	private static __gshared TrDevice_PhaseRifle mDefaultProperties;
-	@property final static TrDevice_PhaseRifle DefaultProperties() { mixin(MGDPC!(TrDevice_PhaseRifle, "TrDevice_PhaseRifle TribesGame.Default__TrDevice_PhaseRifle")()); }
+	@property final static TrDevice_PhaseRifle DefaultProperties() { mixin(MGDPC("TrDevice_PhaseRifle", "TrDevice_PhaseRifle TribesGame.Default__TrDevice_PhaseRifle")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,14 +21,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function TribesGame.TrDevice_PhaseRifle.InstantFire")()); }
-			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrDevice_PhaseRifle.ModifyInstantHitDamage")()); }
+			ScriptFunction InstantFire() { mixin(MGF("mInstantFire", "Function TribesGame.TrDevice_PhaseRifle.InstantFire")); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF("mModifyInstantHitDamage", "Function TribesGame.TrDevice_PhaseRifle.ModifyInstantHitDamage")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_MaxEnergyConsumed() { mixin(MGPC!("float", 2152)()); }
-		float m_DamagePerEnergy() { mixin(MGPC!("float", 2148)()); }
+		float m_MaxEnergyConsumed() { mixin(MGPC("float", 2152)); }
+		float m_DamagePerEnergy() { mixin(MGPC("float", 2148)); }
 	}
 final:
 	void InstantFire()

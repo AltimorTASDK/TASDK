@@ -10,13 +10,13 @@ extern(C++) interface UDKAnimBlendByFlying : UDKAnimBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByFlying")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKAnimBlendByFlying")); }
 	private static __gshared UDKAnimBlendByFlying mDefaultProperties;
-	@property final static UDKAnimBlendByFlying DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByFlying, "UDKAnimBlendByFlying UDKBase.Default__UDKAnimBlendByFlying")()); }
+	@property final static UDKAnimBlendByFlying DefaultProperties() { mixin(MGDPC("UDKAnimBlendByFlying", "UDKAnimBlendByFlying UDKBase.Default__UDKAnimBlendByFlying")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mUpdateFlyingState;
-		public @property static final ScriptFunction UpdateFlyingState() { mixin(MGF!("mUpdateFlyingState", "Function UDKBase.UDKAnimBlendByFlying.UpdateFlyingState")()); }
+		public @property static final ScriptFunction UpdateFlyingState() { mixin(MGF("mUpdateFlyingState", "Function UDKBase.UDKAnimBlendByFlying.UpdateFlyingState")); }
 	}
 	enum EFlyingState : ubyte
 	{
@@ -30,17 +30,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName EndingAnimName() { mixin(MGPC!("ScriptName", 324)()); }
-			ScriptName StartingAnimName() { mixin(MGPC!("ScriptName", 312)()); }
-			AnimNodeAimOffset FlyingDir() { mixin(MGPC!("AnimNodeAimOffset", 308)()); }
-			UDKAnimBlendBase FlyingMode() { mixin(MGPC!("UDKAnimBlendBase", 304)()); }
+			ScriptName EndingAnimName() { mixin(MGPC("ScriptName", 324)); }
+			ScriptName StartingAnimName() { mixin(MGPC("ScriptName", 312)); }
+			AnimNodeAimOffset FlyingDir() { mixin(MGPC("AnimNodeAimOffset", 308)); }
+			UDKAnimBlendBase FlyingMode() { mixin(MGPC("UDKAnimBlendBase", 304)); }
 			// WARNING: Property 'Pawn' has the same name as a defined type!
-			UDKAnimBlendByFlying.EFlyingState FlyingState() { mixin(MGPC!("UDKAnimBlendByFlying.EFlyingState", 296)()); }
+			UDKAnimBlendByFlying.EFlyingState FlyingState() { mixin(MGPC("UDKAnimBlendByFlying.EFlyingState", 296)); }
 		}
-		bool bHasEndingAnim() { mixin(MGBPC!(320, 0x2)()); }
-		bool bHasEndingAnim(bool val) { mixin(MSBPC!(320, 0x2)()); }
-		bool bHasStartingAnim() { mixin(MGBPC!(320, 0x1)()); }
-		bool bHasStartingAnim(bool val) { mixin(MSBPC!(320, 0x1)()); }
+		bool bHasEndingAnim() { mixin(MGBPC(320, 0x2)); }
+		bool bHasEndingAnim(bool val) { mixin(MSBPC(320, 0x2)); }
+		bool bHasStartingAnim() { mixin(MGBPC(320, 0x1)); }
+		bool bHasStartingAnim(bool val) { mixin(MSBPC(320, 0x1)); }
 	}
 	final void UpdateFlyingState()
 	{

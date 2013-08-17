@@ -12,9 +12,9 @@ extern(C++) interface UTWeaponRewardMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponRewardMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWeaponRewardMessage")); }
 	private static __gshared UTWeaponRewardMessage mDefaultProperties;
-	@property final static UTWeaponRewardMessage DefaultProperties() { mixin(MGDPC!(UTWeaponRewardMessage, "UTWeaponRewardMessage UTGame.Default__UTWeaponRewardMessage")()); }
+	@property final static UTWeaponRewardMessage DefaultProperties() { mixin(MGDPC("UTWeaponRewardMessage", "UTWeaponRewardMessage UTGame.Default__UTWeaponRewardMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,15 +25,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTWeaponRewardMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTWeaponRewardMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTWeaponRewardMessage.AnnouncementSound")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTWeaponRewardMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTWeaponRewardMessage.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTWeaponRewardMessage.AnnouncementSound")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave RewardSounds() { mixin(MGPC!("SoundNodeWave", 232)()); }
-		ScriptString RewardString() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundNodeWave RewardSounds() { mixin(MGPC("SoundNodeWave", 232)); }
+		ScriptString RewardString() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

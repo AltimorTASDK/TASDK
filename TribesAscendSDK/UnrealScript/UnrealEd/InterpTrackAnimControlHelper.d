@@ -8,7 +8,7 @@ extern(C++) interface InterpTrackAnimControlHelper : InterpTrackHelper
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.InterpTrackAnimControlHelper")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.InterpTrackAnimControlHelper")); }
 	private static __gshared InterpTrackAnimControlHelper mDefaultProperties;
-	@property final static InterpTrackAnimControlHelper DefaultProperties() { mixin(MGDPC!(InterpTrackAnimControlHelper, "InterpTrackAnimControlHelper UnrealEd.Default__InterpTrackAnimControlHelper")()); }
+	@property final static InterpTrackAnimControlHelper DefaultProperties() { mixin(MGDPC("InterpTrackAnimControlHelper", "InterpTrackAnimControlHelper UnrealEd.Default__InterpTrackAnimControlHelper")); }
 }

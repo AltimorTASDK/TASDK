@@ -13,9 +13,9 @@ extern(C++) interface UTTeamGameMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamGameMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeamGameMessage")); }
 	private static __gshared UTTeamGameMessage mDefaultProperties;
-	@property final static UTTeamGameMessage DefaultProperties() { mixin(MGDPC!(UTTeamGameMessage, "UTTeamGameMessage UTGame.Default__UTTeamGameMessage")()); }
+	@property final static UTTeamGameMessage DefaultProperties() { mixin(MGDPC("UTTeamGameMessage", "UTTeamGameMessage UTGame.Default__UTTeamGameMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,23 +29,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTTeamGameMessage.ClientReceive")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTTeamGameMessage.GetString")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTTeamGameMessage.AnnouncementSound")()); }
-			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function UTGame.UTTeamGameMessage.GetFontSize")()); }
-			ScriptFunction GetPos() { mixin(MGF!("mGetPos", "Function UTGame.UTTeamGameMessage.GetPos")()); }
-			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function UTGame.UTTeamGameMessage.GetColor")()); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTTeamGameMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTTeamGameMessage.GetString")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTTeamGameMessage.AnnouncementSound")); }
+			ScriptFunction GetFontSize() { mixin(MGF("mGetFontSize", "Function UTGame.UTTeamGameMessage.GetFontSize")); }
+			ScriptFunction GetPos() { mixin(MGF("mGetPos", "Function UTGame.UTTeamGameMessage.GetPos")); }
+			ScriptFunction GetColor() { mixin(MGF("mGetColor", "Function UTGame.UTTeamGameMessage.GetColor")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave AnnouncerSounds() { mixin(MGPC!("SoundNodeWave", 156)()); }
-		UObject.Color BlueDrawColor() { mixin(MGPC!("UObject.Color", 152)()); }
-		UObject.Color RedDrawColor() { mixin(MGPC!("UObject.Color", 148)()); }
-		ScriptString YouAreOnBlueMessage() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString YouAreOnRedMessage() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString RequestTeamSwapPostfix() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString RequestTeamSwapPrefix() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundNodeWave AnnouncerSounds() { mixin(MGPC("SoundNodeWave", 156)); }
+		UObject.Color BlueDrawColor() { mixin(MGPC("UObject.Color", 152)); }
+		UObject.Color RedDrawColor() { mixin(MGPC("UObject.Color", 148)); }
+		ScriptString YouAreOnBlueMessage() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString YouAreOnRedMessage() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString RequestTeamSwapPostfix() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString RequestTeamSwapPrefix() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

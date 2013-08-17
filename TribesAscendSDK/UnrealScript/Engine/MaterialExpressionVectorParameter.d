@@ -9,8 +9,8 @@ extern(C++) interface MaterialExpressionVectorParameter : MaterialExpressionPara
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionVectorParameter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionVectorParameter")); }
 	private static __gshared MaterialExpressionVectorParameter mDefaultProperties;
-	@property final static MaterialExpressionVectorParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionVectorParameter, "MaterialExpressionVectorParameter Engine.Default__MaterialExpressionVectorParameter")()); }
-	@property final auto ref UObject.LinearColor DefaultValue() { mixin(MGPC!("UObject.LinearColor", 132)()); }
+	@property final static MaterialExpressionVectorParameter DefaultProperties() { mixin(MGDPC("MaterialExpressionVectorParameter", "MaterialExpressionVectorParameter Engine.Default__MaterialExpressionVectorParameter")); }
+	@property final auto ref UObject.LinearColor DefaultValue() { mixin(MGPC("UObject.LinearColor", 132)); }
 }

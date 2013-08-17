@@ -9,9 +9,9 @@ extern(C++) interface TrUser : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrUser")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrUser")); }
 	private static __gshared TrUser mDefaultProperties;
-	@property final static TrUser DefaultProperties() { mixin(MGDPC!(TrUser, "TrUser TribesGame.Default__TrUser")()); }
+	@property final static TrUser DefaultProperties() { mixin(MGDPC("TrUser", "TrUser TribesGame.Default__TrUser")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -43,30 +43,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction NeedsToSeeNewItemsClass() { mixin(MGF!("mNeedsToSeeNewItemsClass", "Function TribesGame.TrUser.NeedsToSeeNewItemsClass")()); }
-			ScriptFunction NeedsToSeeNewItemsType() { mixin(MGF!("mNeedsToSeeNewItemsType", "Function TribesGame.TrUser.NeedsToSeeNewItemsType")()); }
-			ScriptFunction NeedToSeeNewBundle() { mixin(MGF!("mNeedToSeeNewBundle", "Function TribesGame.TrUser.NeedToSeeNewBundle")()); }
-			ScriptFunction NeedsToSeeClanTags() { mixin(MGF!("mNeedsToSeeClanTags", "Function TribesGame.TrUser.NeedsToSeeClanTags")()); }
-			ScriptFunction NeedToSeeAnyNewItem() { mixin(MGF!("mNeedToSeeAnyNewItem", "Function TribesGame.TrUser.NeedToSeeAnyNewItem")()); }
-			ScriptFunction IsFavoriteServer() { mixin(MGF!("mIsFavoriteServer", "Function TribesGame.TrUser.IsFavoriteServer")()); }
-			ScriptFunction NeedsToSeeNewItem() { mixin(MGF!("mNeedsToSeeNewItem", "Function TribesGame.TrUser.NeedsToSeeNewItem")()); }
-			ScriptFunction DecryptPassword() { mixin(MGF!("mDecryptPassword", "Function TribesGame.TrUser.DecryptPassword")()); }
-			ScriptFunction EncryptPassword() { mixin(MGF!("mEncryptPassword", "Function TribesGame.TrUser.EncryptPassword")()); }
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrUser.Initialize")()); }
-			ScriptFunction SaveCredentials() { mixin(MGF!("mSaveCredentials", "Function TribesGame.TrUser.SaveCredentials")()); }
-			ScriptFunction SaveClassId() { mixin(MGF!("mSaveClassId", "Function TribesGame.TrUser.SaveClassId")()); }
-			ScriptFunction SaveGameType() { mixin(MGF!("mSaveGameType", "Function TribesGame.TrUser.SaveGameType")()); }
-			ScriptFunction SaveDidLogin() { mixin(MGF!("mSaveDidLogin", "Function TribesGame.TrUser.SaveDidLogin")()); }
-			ScriptFunction SaveChoseRegion() { mixin(MGF!("mSaveChoseRegion", "Function TribesGame.TrUser.SaveChoseRegion")()); }
-			ScriptFunction SeenNewGametype() { mixin(MGF!("mSeenNewGametype", "Function TribesGame.TrUser.SeenNewGametype")()); }
-			ScriptFunction SeenNewItemsMain() { mixin(MGF!("mSeenNewItemsMain", "Function TribesGame.TrUser.SeenNewItemsMain")()); }
-			ScriptFunction SeenNewBundlesMain() { mixin(MGF!("mSeenNewBundlesMain", "Function TribesGame.TrUser.SeenNewBundlesMain")()); }
-			ScriptFunction SeenClanTags() { mixin(MGF!("mSeenClanTags", "Function TribesGame.TrUser.SeenClanTags")()); }
-			ScriptFunction SeenNewBundle() { mixin(MGF!("mSeenNewBundle", "Function TribesGame.TrUser.SeenNewBundle")()); }
-			ScriptFunction SeenNewItemsClass() { mixin(MGF!("mSeenNewItemsClass", "Function TribesGame.TrUser.SeenNewItemsClass")()); }
-			ScriptFunction SeenNewItemsType() { mixin(MGF!("mSeenNewItemsType", "Function TribesGame.TrUser.SeenNewItemsType")()); }
-			ScriptFunction NeedsToSeeNewBundle() { mixin(MGF!("mNeedsToSeeNewBundle", "Function TribesGame.TrUser.NeedsToSeeNewBundle")()); }
-			ScriptFunction SetFavoriteServer() { mixin(MGF!("mSetFavoriteServer", "Function TribesGame.TrUser.SetFavoriteServer")()); }
+			ScriptFunction NeedsToSeeNewItemsClass() { mixin(MGF("mNeedsToSeeNewItemsClass", "Function TribesGame.TrUser.NeedsToSeeNewItemsClass")); }
+			ScriptFunction NeedsToSeeNewItemsType() { mixin(MGF("mNeedsToSeeNewItemsType", "Function TribesGame.TrUser.NeedsToSeeNewItemsType")); }
+			ScriptFunction NeedToSeeNewBundle() { mixin(MGF("mNeedToSeeNewBundle", "Function TribesGame.TrUser.NeedToSeeNewBundle")); }
+			ScriptFunction NeedsToSeeClanTags() { mixin(MGF("mNeedsToSeeClanTags", "Function TribesGame.TrUser.NeedsToSeeClanTags")); }
+			ScriptFunction NeedToSeeAnyNewItem() { mixin(MGF("mNeedToSeeAnyNewItem", "Function TribesGame.TrUser.NeedToSeeAnyNewItem")); }
+			ScriptFunction IsFavoriteServer() { mixin(MGF("mIsFavoriteServer", "Function TribesGame.TrUser.IsFavoriteServer")); }
+			ScriptFunction NeedsToSeeNewItem() { mixin(MGF("mNeedsToSeeNewItem", "Function TribesGame.TrUser.NeedsToSeeNewItem")); }
+			ScriptFunction DecryptPassword() { mixin(MGF("mDecryptPassword", "Function TribesGame.TrUser.DecryptPassword")); }
+			ScriptFunction EncryptPassword() { mixin(MGF("mEncryptPassword", "Function TribesGame.TrUser.EncryptPassword")); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrUser.Initialize")); }
+			ScriptFunction SaveCredentials() { mixin(MGF("mSaveCredentials", "Function TribesGame.TrUser.SaveCredentials")); }
+			ScriptFunction SaveClassId() { mixin(MGF("mSaveClassId", "Function TribesGame.TrUser.SaveClassId")); }
+			ScriptFunction SaveGameType() { mixin(MGF("mSaveGameType", "Function TribesGame.TrUser.SaveGameType")); }
+			ScriptFunction SaveDidLogin() { mixin(MGF("mSaveDidLogin", "Function TribesGame.TrUser.SaveDidLogin")); }
+			ScriptFunction SaveChoseRegion() { mixin(MGF("mSaveChoseRegion", "Function TribesGame.TrUser.SaveChoseRegion")); }
+			ScriptFunction SeenNewGametype() { mixin(MGF("mSeenNewGametype", "Function TribesGame.TrUser.SeenNewGametype")); }
+			ScriptFunction SeenNewItemsMain() { mixin(MGF("mSeenNewItemsMain", "Function TribesGame.TrUser.SeenNewItemsMain")); }
+			ScriptFunction SeenNewBundlesMain() { mixin(MGF("mSeenNewBundlesMain", "Function TribesGame.TrUser.SeenNewBundlesMain")); }
+			ScriptFunction SeenClanTags() { mixin(MGF("mSeenClanTags", "Function TribesGame.TrUser.SeenClanTags")); }
+			ScriptFunction SeenNewBundle() { mixin(MGF("mSeenNewBundle", "Function TribesGame.TrUser.SeenNewBundle")); }
+			ScriptFunction SeenNewItemsClass() { mixin(MGF("mSeenNewItemsClass", "Function TribesGame.TrUser.SeenNewItemsClass")); }
+			ScriptFunction SeenNewItemsType() { mixin(MGF("mSeenNewItemsType", "Function TribesGame.TrUser.SeenNewItemsType")); }
+			ScriptFunction NeedsToSeeNewBundle() { mixin(MGF("mNeedsToSeeNewBundle", "Function TribesGame.TrUser.NeedsToSeeNewBundle")); }
+			ScriptFunction SetFavoriteServer() { mixin(MGF("mSetFavoriteServer", "Function TribesGame.TrUser.SetFavoriteServer")); }
 		}
 	}
 	struct NewItem
@@ -74,44 +74,44 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrUser.NewItem")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrUser.NewItem")); }
 		@property final auto ref
 		{
-			int ItemId() { mixin(MGPS!("int", 8)()); }
-			int Type() { mixin(MGPS!("int", 4)()); }
-			int ClassId() { mixin(MGPS!("int", 0)()); }
+			int ItemId() { mixin(MGPS("int", 8)); }
+			int Type() { mixin(MGPS("int", 4)); }
+			int ClassId() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int m_ClassId() { mixin(MGPC!("int", 76)()); }
-			ScriptString CurrencyName() { mixin(MGPC!("ScriptString", 64)()); }
-			ScriptString m_Username() { mixin(MGPC!("ScriptString", 96)()); }
-			ScriptString m_Password() { mixin(MGPC!("ScriptString", 108)()); }
-			ScriptArray!(TrUser.NewItem) NewItems() { mixin(MGPC!("ScriptArray!(TrUser.NewItem)", 120)()); }
-			ScriptArray!(TrUser.NewItem) NewBundles() { mixin(MGPC!("ScriptArray!(TrUser.NewItem)", 132)()); }
-			ScriptArray!(TrUser.NewItem) SeenNewItems() { mixin(MGPC!("ScriptArray!(TrUser.NewItem)", 144)()); }
-			ScriptArray!(int) FavServers() { mixin(MGPC!("ScriptArray!(int)", 156)()); }
-			GFxTrMenuMoviePlayer MainMenu() { mixin(MGPC!("GFxTrMenuMoviePlayer", 168)()); }
-			ScriptString m_GameType() { mixin(MGPC!("ScriptString", 84)()); }
-			int CurrencyCode() { mixin(MGPC!("int", 60)()); }
+			int m_ClassId() { mixin(MGPC("int", 76)); }
+			ScriptString CurrencyName() { mixin(MGPC("ScriptString", 64)); }
+			ScriptString m_Username() { mixin(MGPC("ScriptString", 96)); }
+			ScriptString m_Password() { mixin(MGPC("ScriptString", 108)); }
+			ScriptArray!(TrUser.NewItem) NewItems() { mixin(MGPC("ScriptArray!(TrUser.NewItem)", 120)); }
+			ScriptArray!(TrUser.NewItem) NewBundles() { mixin(MGPC("ScriptArray!(TrUser.NewItem)", 132)); }
+			ScriptArray!(TrUser.NewItem) SeenNewItems() { mixin(MGPC("ScriptArray!(TrUser.NewItem)", 144)); }
+			ScriptArray!(int) FavServers() { mixin(MGPC("ScriptArray!(int)", 156)); }
+			GFxTrMenuMoviePlayer MainMenu() { mixin(MGPC("GFxTrMenuMoviePlayer", 168)); }
+			ScriptString m_GameType() { mixin(MGPC("ScriptString", 84)); }
+			int CurrencyCode() { mixin(MGPC("int", 60)); }
 		}
-		bool m_DidLogin() { mixin(MGBPC!(80, 0x1)()); }
-		bool m_DidLogin(bool val) { mixin(MSBPC!(80, 0x1)()); }
-		bool m_SeenNewItemsMain() { mixin(MGBPC!(80, 0x20)()); }
-		bool m_SeenNewItemsMain(bool val) { mixin(MSBPC!(80, 0x20)()); }
-		bool m_ChoseRegion() { mixin(MGBPC!(80, 0x2)()); }
-		bool m_ChoseRegion(bool val) { mixin(MSBPC!(80, 0x2)()); }
-		bool m_ChoseRegion2() { mixin(MGBPC!(80, 0x4)()); }
-		bool m_ChoseRegion2(bool val) { mixin(MSBPC!(80, 0x4)()); }
-		bool m_SeenNewBundlesMain() { mixin(MGBPC!(80, 0x40)()); }
-		bool m_SeenNewBundlesMain(bool val) { mixin(MSBPC!(80, 0x40)()); }
-		bool m_SeenNewGametype() { mixin(MGBPC!(80, 0x10)()); }
-		bool m_SeenNewGametype(bool val) { mixin(MSBPC!(80, 0x10)()); }
-		bool m_SeenClanTags() { mixin(MGBPC!(80, 0x8)()); }
-		bool m_SeenClanTags(bool val) { mixin(MSBPC!(80, 0x8)()); }
+		bool m_DidLogin() { mixin(MGBPC(80, 0x1)); }
+		bool m_DidLogin(bool val) { mixin(MSBPC(80, 0x1)); }
+		bool m_SeenNewItemsMain() { mixin(MGBPC(80, 0x20)); }
+		bool m_SeenNewItemsMain(bool val) { mixin(MSBPC(80, 0x20)); }
+		bool m_ChoseRegion() { mixin(MGBPC(80, 0x2)); }
+		bool m_ChoseRegion(bool val) { mixin(MSBPC(80, 0x2)); }
+		bool m_ChoseRegion2() { mixin(MGBPC(80, 0x4)); }
+		bool m_ChoseRegion2(bool val) { mixin(MSBPC(80, 0x4)); }
+		bool m_SeenNewBundlesMain() { mixin(MGBPC(80, 0x40)); }
+		bool m_SeenNewBundlesMain(bool val) { mixin(MSBPC(80, 0x40)); }
+		bool m_SeenNewGametype() { mixin(MGBPC(80, 0x10)); }
+		bool m_SeenNewGametype(bool val) { mixin(MSBPC(80, 0x10)); }
+		bool m_SeenClanTags() { mixin(MGBPC(80, 0x8)); }
+		bool m_SeenClanTags(bool val) { mixin(MSBPC(80, 0x8)); }
 	}
 final:
 	bool NeedsToSeeNewItemsClass(int ClassId)

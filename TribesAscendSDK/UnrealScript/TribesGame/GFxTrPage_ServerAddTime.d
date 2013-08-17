@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_ServerAddTime : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ServerAddTime")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_ServerAddTime")); }
 	private static __gshared GFxTrPage_ServerAddTime mDefaultProperties;
-	@property final static GFxTrPage_ServerAddTime DefaultProperties() { mixin(MGDPC!(GFxTrPage_ServerAddTime, "GFxTrPage_ServerAddTime TribesGame.Default__GFxTrPage_ServerAddTime")()); }
+	@property final static GFxTrPage_ServerAddTime DefaultProperties() { mixin(MGDPC("GFxTrPage_ServerAddTime", "GFxTrPage_ServerAddTime TribesGame.Default__GFxTrPage_ServerAddTime")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,25 +33,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_ServerAddTime.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ServerAddTime.SpecialAction")()); }
-			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_ServerAddTime.ModifyAction")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_ServerAddTime.TakeFocus")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ServerAddTime.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ServerAddTime.PopupComplete")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ServerAddTime.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ServerAddTime.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ServerAddTime.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ServerAddTime.FillDescription")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ServerAddTime.ShowModel")()); }
-			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_ServerAddTime.CheckPricing")()); }
-			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage_ServerAddTime.FillPricing")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_ServerAddTime.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_ServerAddTime.SpecialAction")); }
+			ScriptFunction ModifyAction() { mixin(MGF("mModifyAction", "Function TribesGame.GFxTrPage_ServerAddTime.ModifyAction")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_ServerAddTime.TakeFocus")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_ServerAddTime.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_ServerAddTime.PopupComplete")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_ServerAddTime.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_ServerAddTime.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_ServerAddTime.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_ServerAddTime.FillDescription")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_ServerAddTime.ShowModel")); }
+			ScriptFunction CheckPricing() { mixin(MGF("mCheckPricing", "Function TribesGame.GFxTrPage_ServerAddTime.CheckPricing")); }
+			ScriptFunction FillPricing() { mixin(MGF("mFillPricing", "Function TribesGame.GFxTrPage_ServerAddTime.FillPricing")); }
 		}
 	}
 	@property final auto ref
 	{
-		int PurchaseIndex() { mixin(MGPC!("int", 360)()); }
-		int FocusIndex() { mixin(MGPC!("int", 356)()); }
+		int PurchaseIndex() { mixin(MGPC("int", 360)); }
+		int FocusIndex() { mixin(MGPC("int", 356)); }
 	}
 final:
 	void Initialize()

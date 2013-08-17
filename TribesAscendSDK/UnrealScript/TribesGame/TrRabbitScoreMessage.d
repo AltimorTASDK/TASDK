@@ -12,9 +12,9 @@ extern(C++) interface TrRabbitScoreMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRabbitScoreMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrRabbitScoreMessage")); }
 	private static __gshared TrRabbitScoreMessage mDefaultProperties;
-	@property final static TrRabbitScoreMessage DefaultProperties() { mixin(MGDPC!(TrRabbitScoreMessage, "TrRabbitScoreMessage TribesGame.Default__TrRabbitScoreMessage")()); }
+	@property final static TrRabbitScoreMessage DefaultProperties() { mixin(MGDPC("TrRabbitScoreMessage", "TrRabbitScoreMessage TribesGame.Default__TrRabbitScoreMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,9 +25,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrRabbitScoreMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrRabbitScoreMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function TribesGame.TrRabbitScoreMessage.AnnouncementLevel")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrRabbitScoreMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrRabbitScoreMessage.ClientReceive")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF("mAnnouncementLevel", "Function TribesGame.TrRabbitScoreMessage.AnnouncementLevel")); }
 		}
 	}
 	static struct Constants
@@ -538,18 +538,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SoundCue m_sFlagReturnedToStand() { mixin(MGPC!("SoundCue", 208)()); }
-		SoundCue m_sYouPickedUpFlag() { mixin(MGPC!("SoundCue", 204)()); }
-		SoundCue m_sOtherIsNewLeadeCue() { mixin(MGPC!("SoundCue", 200)()); }
-		SoundCue m_sYouAreNewLeadeCue() { mixin(MGPC!("SoundCue", 196)()); }
-		ScriptString GetToTheFlag() { mixin(MGPC!("ScriptString", 184)()); }
-		ScriptString KillTheRabbit() { mixin(MGPC!("ScriptString", 172)()); }
-		ScriptString OtherDroppedFlag() { mixin(MGPC!("ScriptString", 160)()); }
-		ScriptString YouDroppedFlag() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString OtherIsNewLeader() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString YouAreNewLeader() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString OtherScoreFlagTouch() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString YouScoreFlagTouch() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundCue m_sFlagReturnedToStand() { mixin(MGPC("SoundCue", 208)); }
+		SoundCue m_sYouPickedUpFlag() { mixin(MGPC("SoundCue", 204)); }
+		SoundCue m_sOtherIsNewLeadeCue() { mixin(MGPC("SoundCue", 200)); }
+		SoundCue m_sYouAreNewLeadeCue() { mixin(MGPC("SoundCue", 196)); }
+		ScriptString GetToTheFlag() { mixin(MGPC("ScriptString", 184)); }
+		ScriptString KillTheRabbit() { mixin(MGPC("ScriptString", 172)); }
+		ScriptString OtherDroppedFlag() { mixin(MGPC("ScriptString", 160)); }
+		ScriptString YouDroppedFlag() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString OtherIsNewLeader() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString YouAreNewLeader() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString OtherScoreFlagTouch() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString YouScoreFlagTouch() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

@@ -10,15 +10,15 @@ extern(C++) interface UTScavengerMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTScavengerMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTScavengerMessage")); }
 	private static __gshared UTScavengerMessage mDefaultProperties;
-	@property final static UTScavengerMessage DefaultProperties() { mixin(MGDPC!(UTScavengerMessage, "UTScavengerMessage UTGame.Default__UTScavengerMessage")()); }
+	@property final static UTScavengerMessage DefaultProperties() { mixin(MGDPC("UTScavengerMessage", "UTScavengerMessage UTGame.Default__UTScavengerMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTScavengerMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTScavengerMessage.GetString")); }
 	}
-	@property final auto ref ScriptArray!(ScriptString) MessageText() { mixin(MGPC!("ScriptArray!(ScriptString)", 100)()); }
+	@property final auto ref ScriptArray!(ScriptString) MessageText() { mixin(MGPC("ScriptArray!(ScriptString)", 100)); }
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[32];

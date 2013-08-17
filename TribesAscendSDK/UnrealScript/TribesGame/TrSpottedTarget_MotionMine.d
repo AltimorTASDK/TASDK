@@ -10,9 +10,9 @@ extern(C++) interface TrSpottedTarget_MotionMine : TrSpottedTarget
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSpottedTarget_MotionMine")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSpottedTarget_MotionMine")); }
 	private static __gshared TrSpottedTarget_MotionMine mDefaultProperties;
-	@property final static TrSpottedTarget_MotionMine DefaultProperties() { mixin(MGDPC!(TrSpottedTarget_MotionMine, "TrSpottedTarget_MotionMine TribesGame.Default__TrSpottedTarget_MotionMine")()); }
+	@property final static TrSpottedTarget_MotionMine DefaultProperties() { mixin(MGDPC("TrSpottedTarget_MotionMine", "TrSpottedTarget_MotionMine TribesGame.Default__TrSpottedTarget_MotionMine")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrSpottedTarget_MotionMine.Tick")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrSpottedTarget_MotionMine.GetMarker")()); }
-			ScriptFunction GetMarkerColor() { mixin(MGF!("mGetMarkerColor", "Function TribesGame.TrSpottedTarget_MotionMine.GetMarkerColor")()); }
-			ScriptFunction ShouldRenderMarker() { mixin(MGF!("mShouldRenderMarker", "Function TribesGame.TrSpottedTarget_MotionMine.ShouldRenderMarker")()); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrSpottedTarget_MotionMine.Tick")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrSpottedTarget_MotionMine.GetMarker")); }
+			ScriptFunction GetMarkerColor() { mixin(MGF("mGetMarkerColor", "Function TribesGame.TrSpottedTarget_MotionMine.GetMarkerColor")); }
+			ScriptFunction ShouldRenderMarker() { mixin(MGF("mShouldRenderMarker", "Function TribesGame.TrSpottedTarget_MotionMine.ShouldRenderMarker")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fMarkerBlinkSpeed() { mixin(MGPC!("float", 516)()); }
-		float m_fCurrentMarkerTime() { mixin(MGPC!("float", 512)()); }
+		float m_fMarkerBlinkSpeed() { mixin(MGPC("float", 516)); }
+		float m_fCurrentMarkerTime() { mixin(MGPC("float", 512)); }
 	}
 final:
 	void Tick(float DeltaTime)

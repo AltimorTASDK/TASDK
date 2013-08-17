@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionTextureSampleParameterMeshSubUV : Materi
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTextureSampleParameterMeshSubUV")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionTextureSampleParameterMeshSubUV")); }
 	private static __gshared MaterialExpressionTextureSampleParameterMeshSubUV mDefaultProperties;
-	@property final static MaterialExpressionTextureSampleParameterMeshSubUV DefaultProperties() { mixin(MGDPC!(MaterialExpressionTextureSampleParameterMeshSubUV, "MaterialExpressionTextureSampleParameterMeshSubUV Engine.Default__MaterialExpressionTextureSampleParameterMeshSubUV")()); }
+	@property final static MaterialExpressionTextureSampleParameterMeshSubUV DefaultProperties() { mixin(MGDPC("MaterialExpressionTextureSampleParameterMeshSubUV", "MaterialExpressionTextureSampleParameterMeshSubUV Engine.Default__MaterialExpressionTextureSampleParameterMeshSubUV")); }
 }

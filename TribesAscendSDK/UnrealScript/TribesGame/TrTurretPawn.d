@@ -14,9 +14,9 @@ extern(C++) interface TrTurretPawn : TrPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTurretPawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrTurretPawn")); }
 	private static __gshared TrTurretPawn mDefaultProperties;
-	@property final static TrTurretPawn DefaultProperties() { mixin(MGDPC!(TrTurretPawn, "TrTurretPawn TribesGame.Default__TrTurretPawn")()); }
+	@property final static TrTurretPawn DefaultProperties() { mixin(MGDPC("TrTurretPawn", "TrTurretPawn TribesGame.Default__TrTurretPawn")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,25 +40,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction LeadingAimLocation() { mixin(MGF!("mLeadingAimLocation", "Function TribesGame.TrTurretPawn.LeadingAimLocation")()); }
-			ScriptFunction GetValidAimTarget() { mixin(MGF!("mGetValidAimTarget", "Function TribesGame.TrTurretPawn.GetValidAimTarget")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrTurretPawn.PostBeginPlay")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrTurretPawn.Destroyed")()); }
-			ScriptFunction WeaponFired() { mixin(MGF!("mWeaponFired", "Function TribesGame.TrTurretPawn.WeaponFired")()); }
-			ScriptFunction GetAimVectorFor() { mixin(MGF!("mGetAimVectorFor", "Function TribesGame.TrTurretPawn.GetAimVectorFor")()); }
-			ScriptFunction GetAdjustedAimFor() { mixin(MGF!("mGetAdjustedAimFor", "Function TribesGame.TrTurretPawn.GetAdjustedAimFor")()); }
-			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF!("mGetWeaponStartTraceLocation", "Function TribesGame.TrTurretPawn.GetWeaponStartTraceLocation")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrTurretPawn.Reset")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrTurretPawn.TakeDamage")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function TribesGame.TrTurretPawn.TakeRadiusDamage")()); }
-			ScriptFunction RefreshPlayer() { mixin(MGF!("mRefreshPlayer", "Function TribesGame.TrTurretPawn.RefreshPlayer")()); }
-			ScriptFunction RefreshInventory() { mixin(MGF!("mRefreshInventory", "Function TribesGame.TrTurretPawn.RefreshInventory")()); }
-			ScriptFunction SetCharacterClassFromInfo() { mixin(MGF!("mSetCharacterClassFromInfo", "Function TribesGame.TrTurretPawn.SetCharacterClassFromInfo")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrTurretPawn.PostRenderFor")()); }
-			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function TribesGame.TrTurretPawn.IncrementFlashCount")()); }
+			ScriptFunction LeadingAimLocation() { mixin(MGF("mLeadingAimLocation", "Function TribesGame.TrTurretPawn.LeadingAimLocation")); }
+			ScriptFunction GetValidAimTarget() { mixin(MGF("mGetValidAimTarget", "Function TribesGame.TrTurretPawn.GetValidAimTarget")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrTurretPawn.PostBeginPlay")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrTurretPawn.Destroyed")); }
+			ScriptFunction WeaponFired() { mixin(MGF("mWeaponFired", "Function TribesGame.TrTurretPawn.WeaponFired")); }
+			ScriptFunction GetAimVectorFor() { mixin(MGF("mGetAimVectorFor", "Function TribesGame.TrTurretPawn.GetAimVectorFor")); }
+			ScriptFunction GetAdjustedAimFor() { mixin(MGF("mGetAdjustedAimFor", "Function TribesGame.TrTurretPawn.GetAdjustedAimFor")); }
+			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF("mGetWeaponStartTraceLocation", "Function TribesGame.TrTurretPawn.GetWeaponStartTraceLocation")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function TribesGame.TrTurretPawn.Reset")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrTurretPawn.TakeDamage")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function TribesGame.TrTurretPawn.TakeRadiusDamage")); }
+			ScriptFunction RefreshPlayer() { mixin(MGF("mRefreshPlayer", "Function TribesGame.TrTurretPawn.RefreshPlayer")); }
+			ScriptFunction RefreshInventory() { mixin(MGF("mRefreshInventory", "Function TribesGame.TrTurretPawn.RefreshInventory")); }
+			ScriptFunction SetCharacterClassFromInfo() { mixin(MGF("mSetCharacterClassFromInfo", "Function TribesGame.TrTurretPawn.SetCharacterClassFromInfo")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrTurretPawn.PostRenderFor")); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF("mIncrementFlashCount", "Function TribesGame.TrTurretPawn.IncrementFlashCount")); }
 		}
 	}
-	@property final auto ref TrDeployable m_OwnerDeployable() { mixin(MGPC!("TrDeployable", 3192)()); }
+	@property final auto ref TrDeployable m_OwnerDeployable() { mixin(MGPC("TrDeployable", 3192)); }
 final:
 	Vector LeadingAimLocation(Actor Enemy)
 	{

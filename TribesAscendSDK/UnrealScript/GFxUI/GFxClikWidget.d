@@ -8,9 +8,9 @@ extern(C++) interface GFxClikWidget : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GFxUI.GFxClikWidget")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GFxUI.GFxClikWidget")); }
 	private static __gshared GFxClikWidget mDefaultProperties;
-	@property final static GFxClikWidget DefaultProperties() { mixin(MGDPC!(GFxClikWidget, "GFxClikWidget GFxUI.Default__GFxClikWidget")()); }
+	@property final static GFxClikWidget DefaultProperties() { mixin(MGDPC("GFxClikWidget", "GFxClikWidget GFxUI.Default__GFxClikWidget")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,13 +25,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EventListener() { mixin(MGF!("mEventListener", "Function GFxUI.GFxClikWidget.EventListener")()); }
-			ScriptFunction AddEventListener() { mixin(MGF!("mAddEventListener", "Function GFxUI.GFxClikWidget.AddEventListener")()); }
-			ScriptFunction GetEventStringFromTypename() { mixin(MGF!("mGetEventStringFromTypename", "Function GFxUI.GFxClikWidget.GetEventStringFromTypename")()); }
-			ScriptFunction SetListener() { mixin(MGF!("mSetListener", "Function GFxUI.GFxClikWidget.SetListener")()); }
-			ScriptFunction ASAddEventListener() { mixin(MGF!("mASAddEventListener", "Function GFxUI.GFxClikWidget.ASAddEventListener")()); }
-			ScriptFunction RemoveAllEventListeners() { mixin(MGF!("mRemoveAllEventListeners", "Function GFxUI.GFxClikWidget.RemoveAllEventListeners")()); }
-			ScriptFunction ASRemoveAllEventListeners() { mixin(MGF!("mASRemoveAllEventListeners", "Function GFxUI.GFxClikWidget.ASRemoveAllEventListeners")()); }
+			ScriptFunction EventListener() { mixin(MGF("mEventListener", "Function GFxUI.GFxClikWidget.EventListener")); }
+			ScriptFunction AddEventListener() { mixin(MGF("mAddEventListener", "Function GFxUI.GFxClikWidget.AddEventListener")); }
+			ScriptFunction GetEventStringFromTypename() { mixin(MGF("mGetEventStringFromTypename", "Function GFxUI.GFxClikWidget.GetEventStringFromTypename")); }
+			ScriptFunction SetListener() { mixin(MGF("mSetListener", "Function GFxUI.GFxClikWidget.SetListener")); }
+			ScriptFunction ASAddEventListener() { mixin(MGF("mASAddEventListener", "Function GFxUI.GFxClikWidget.ASAddEventListener")); }
+			ScriptFunction RemoveAllEventListeners() { mixin(MGF("mRemoveAllEventListeners", "Function GFxUI.GFxClikWidget.RemoveAllEventListeners")); }
+			ScriptFunction ASRemoveAllEventListeners() { mixin(MGF("mASRemoveAllEventListeners", "Function GFxUI.GFxClikWidget.ASRemoveAllEventListeners")); }
 		}
 	}
 	struct EventData
@@ -39,16 +39,16 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxClikWidget.EventData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GFxUI.GFxClikWidget.EventData")); }
 		@property final auto ref
 		{
-			int lastIndex() { mixin(MGPS!("int", 32)()); }
-			int Index() { mixin(MGPS!("int", 28)()); }
-			int Button() { mixin(MGPS!("int", 24)()); }
-			int mouseIndex() { mixin(MGPS!("int", 20)()); }
-			int Data() { mixin(MGPS!("int", 16)()); }
-			ScriptString Type() { mixin(MGPS!("ScriptString", 4)()); }
-			GFxObject Target() { mixin(MGPS!("GFxObject", 0)()); }
+			int lastIndex() { mixin(MGPS("int", 32)); }
+			int Index() { mixin(MGPS("int", 28)); }
+			int Button() { mixin(MGPS("int", 24)); }
+			int mouseIndex() { mixin(MGPS("int", 20)); }
+			int Data() { mixin(MGPS("int", 16)); }
+			ScriptString Type() { mixin(MGPS("ScriptString", 4)); }
+			GFxObject Target() { mixin(MGPS("GFxObject", 0)); }
 		}
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__EventListener__Delegate'!

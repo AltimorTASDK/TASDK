@@ -13,9 +13,9 @@ extern(C++) interface Emitter : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Emitter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Emitter")); }
 	private static __gshared Emitter mDefaultProperties;
-	@property final static Emitter DefaultProperties() { mixin(MGDPC!(Emitter, "Emitter Engine.Default__Emitter")()); }
+	@property final static Emitter DefaultProperties() { mixin(MGDPC("Emitter", "Emitter Engine.Default__Emitter")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,23 +40,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function Engine.Emitter.SetTemplate")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Emitter.PostBeginPlay")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.Emitter.ReplicatedEvent")()); }
-			ScriptFunction OnParticleSystemFinished() { mixin(MGF!("mOnParticleSystemFinished", "Function Engine.Emitter.OnParticleSystemFinished")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.Emitter.OnToggle")()); }
-			ScriptFunction OnParticleEventGenerator() { mixin(MGF!("mOnParticleEventGenerator", "Function Engine.Emitter.OnParticleEventGenerator")()); }
-			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.Emitter.ShutDown")()); }
-			ScriptFunction SetFloatParameter() { mixin(MGF!("mSetFloatParameter", "Function Engine.Emitter.SetFloatParameter")()); }
-			ScriptFunction SetVectorParameter() { mixin(MGF!("mSetVectorParameter", "Function Engine.Emitter.SetVectorParameter")()); }
-			ScriptFunction SetColorParameter() { mixin(MGF!("mSetColorParameter", "Function Engine.Emitter.SetColorParameter")()); }
-			ScriptFunction SetExtColorParameter() { mixin(MGF!("mSetExtColorParameter", "Function Engine.Emitter.SetExtColorParameter")()); }
-			ScriptFunction SetActorParameter() { mixin(MGF!("mSetActorParameter", "Function Engine.Emitter.SetActorParameter")()); }
-			ScriptFunction OnSetParticleSysParam() { mixin(MGF!("mOnSetParticleSysParam", "Function Engine.Emitter.OnSetParticleSysParam")()); }
-			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.Emitter.ShouldSaveForCheckpoint")()); }
-			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.Emitter.CreateCheckpointRecord")()); }
-			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.Emitter.ApplyCheckpointRecord")()); }
-			ScriptFunction HideSelf() { mixin(MGF!("mHideSelf", "Function Engine.Emitter.HideSelf")()); }
+			ScriptFunction SetTemplate() { mixin(MGF("mSetTemplate", "Function Engine.Emitter.SetTemplate")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Emitter.PostBeginPlay")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.Emitter.ReplicatedEvent")); }
+			ScriptFunction OnParticleSystemFinished() { mixin(MGF("mOnParticleSystemFinished", "Function Engine.Emitter.OnParticleSystemFinished")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.Emitter.OnToggle")); }
+			ScriptFunction OnParticleEventGenerator() { mixin(MGF("mOnParticleEventGenerator", "Function Engine.Emitter.OnParticleEventGenerator")); }
+			ScriptFunction ShutDown() { mixin(MGF("mShutDown", "Function Engine.Emitter.ShutDown")); }
+			ScriptFunction SetFloatParameter() { mixin(MGF("mSetFloatParameter", "Function Engine.Emitter.SetFloatParameter")); }
+			ScriptFunction SetVectorParameter() { mixin(MGF("mSetVectorParameter", "Function Engine.Emitter.SetVectorParameter")); }
+			ScriptFunction SetColorParameter() { mixin(MGF("mSetColorParameter", "Function Engine.Emitter.SetColorParameter")); }
+			ScriptFunction SetExtColorParameter() { mixin(MGF("mSetExtColorParameter", "Function Engine.Emitter.SetExtColorParameter")); }
+			ScriptFunction SetActorParameter() { mixin(MGF("mSetActorParameter", "Function Engine.Emitter.SetActorParameter")); }
+			ScriptFunction OnSetParticleSysParam() { mixin(MGF("mOnSetParticleSysParam", "Function Engine.Emitter.OnSetParticleSysParam")); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF("mShouldSaveForCheckpoint", "Function Engine.Emitter.ShouldSaveForCheckpoint")); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF("mCreateCheckpointRecord", "Function Engine.Emitter.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF("mApplyCheckpointRecord", "Function Engine.Emitter.ApplyCheckpointRecord")); }
+			ScriptFunction HideSelf() { mixin(MGF("mHideSelf", "Function Engine.Emitter.HideSelf")); }
 		}
 	}
 	struct CheckpointRecord
@@ -64,11 +64,11 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Emitter.CheckpointRecord")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Emitter.CheckpointRecord")); }
 		@property final
 		{
-			bool bIsActive() { mixin(MGBPS!(0, 0x1)()); }
-			bool bIsActive(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bIsActive() { mixin(MGBPS(0, 0x1)); }
+			bool bIsActive(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	@property final
@@ -78,12 +78,12 @@ public extern(D):
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// WARNING: Property 'ParticleSystemComponent' has the same name as a defined type!
 		}
-		bool bCurrentlyActive() { mixin(MGBPC!(484, 0x4)()); }
-		bool bCurrentlyActive(bool val) { mixin(MSBPC!(484, 0x4)()); }
-		bool bPostUpdateTickGroup() { mixin(MGBPC!(484, 0x2)()); }
-		bool bPostUpdateTickGroup(bool val) { mixin(MSBPC!(484, 0x2)()); }
-		bool bDestroyOnSystemFinish() { mixin(MGBPC!(484, 0x1)()); }
-		bool bDestroyOnSystemFinish(bool val) { mixin(MSBPC!(484, 0x1)()); }
+		bool bCurrentlyActive() { mixin(MGBPC(484, 0x4)); }
+		bool bCurrentlyActive(bool val) { mixin(MSBPC(484, 0x4)); }
+		bool bPostUpdateTickGroup() { mixin(MGBPC(484, 0x2)); }
+		bool bPostUpdateTickGroup(bool val) { mixin(MSBPC(484, 0x2)); }
+		bool bDestroyOnSystemFinish() { mixin(MGBPC(484, 0x1)); }
+		bool bDestroyOnSystemFinish(bool val) { mixin(MSBPC(484, 0x1)); }
 	}
 final:
 	void SetTemplate(ParticleSystem NewTemplate, bool* bDestroyOnFinish = null)

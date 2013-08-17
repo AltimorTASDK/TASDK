@@ -9,9 +9,9 @@ extern(C++) interface SeqVar_ObjectList : SeqVar_Object
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqVar_ObjectList")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SeqVar_ObjectList")); }
 	private static __gshared SeqVar_ObjectList mDefaultProperties;
-	@property final static SeqVar_ObjectList DefaultProperties() { mixin(MGDPC!(SeqVar_ObjectList, "SeqVar_ObjectList Engine.Default__SeqVar_ObjectList")()); }
+	@property final static SeqVar_ObjectList DefaultProperties() { mixin(MGDPC("SeqVar_ObjectList", "SeqVar_ObjectList Engine.Default__SeqVar_ObjectList")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjectValue() { mixin(MGF!("mGetObjectValue", "Function Engine.SeqVar_ObjectList.GetObjectValue")()); }
-			ScriptFunction SetObjectValue() { mixin(MGF!("mSetObjectValue", "Function Engine.SeqVar_ObjectList.SetObjectValue")()); }
+			ScriptFunction GetObjectValue() { mixin(MGF("mGetObjectValue", "Function Engine.SeqVar_ObjectList.GetObjectValue")); }
+			ScriptFunction SetObjectValue() { mixin(MGF("mSetObjectValue", "Function Engine.SeqVar_ObjectList.SetObjectValue")); }
 		}
 	}
-	@property final auto ref ScriptArray!(UObject) ObjList() { mixin(MGPC!("ScriptArray!(UObject)", 176)()); }
+	@property final auto ref ScriptArray!(UObject) ObjList() { mixin(MGPC("ScriptArray!(UObject)", 176)); }
 final:
 	UObject GetObjectValue()
 	{

@@ -9,9 +9,9 @@ extern(C++) interface SequenceEvent : SequenceOp
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SequenceEvent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SequenceEvent")); }
 	private static __gshared SequenceEvent mDefaultProperties;
-	@property final static SequenceEvent DefaultProperties() { mixin(MGDPC!(SequenceEvent, "SequenceEvent Engine.Default__SequenceEvent")()); }
+	@property final static SequenceEvent DefaultProperties() { mixin(MGDPC("SequenceEvent", "SequenceEvent Engine.Default__SequenceEvent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,34 +23,34 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckActivate() { mixin(MGF!("mCheckActivate", "Function Engine.SequenceEvent.CheckActivate")()); }
-			ScriptFunction RegisterEvent() { mixin(MGF!("mRegisterEvent", "Function Engine.SequenceEvent.RegisterEvent")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.SequenceEvent.Reset")()); }
-			ScriptFunction Toggled() { mixin(MGF!("mToggled", "Function Engine.SequenceEvent.Toggled")()); }
+			ScriptFunction CheckActivate() { mixin(MGF("mCheckActivate", "Function Engine.SequenceEvent.CheckActivate")); }
+			ScriptFunction RegisterEvent() { mixin(MGF("mRegisterEvent", "Function Engine.SequenceEvent.RegisterEvent")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.SequenceEvent.Reset")); }
+			ScriptFunction Toggled() { mixin(MGF("mToggled", "Function Engine.SequenceEvent.Toggled")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxTriggerCount() { mixin(MGPC!("int", 236)()); }
-			int TriggerCount() { mixin(MGPC!("int", 232)()); }
-			ScriptArray!(SequenceEvent) DuplicateEvts() { mixin(MGPC!("ScriptArray!(SequenceEvent)", 208)()); }
-			int MaxWidth() { mixin(MGPC!("int", 252)()); }
-			ubyte Priority() { mixin(MGPC!("ubyte", 248)()); }
-			float ReTriggerDelay() { mixin(MGPC!("float", 240)()); }
-			float ActivationTime() { mixin(MGPC!("float", 228)()); }
-			Actor Instigator() { mixin(MGPC!("Actor", 224)()); }
-			Actor Originator() { mixin(MGPC!("Actor", 220)()); }
+			int MaxTriggerCount() { mixin(MGPC("int", 236)); }
+			int TriggerCount() { mixin(MGPC("int", 232)); }
+			ScriptArray!(SequenceEvent) DuplicateEvts() { mixin(MGPC("ScriptArray!(SequenceEvent)", 208)); }
+			int MaxWidth() { mixin(MGPC("int", 252)); }
+			ubyte Priority() { mixin(MGPC("ubyte", 248)); }
+			float ReTriggerDelay() { mixin(MGPC("float", 240)); }
+			float ActivationTime() { mixin(MGPC("float", 228)); }
+			Actor Instigator() { mixin(MGPC("Actor", 224)); }
+			Actor Originator() { mixin(MGPC("Actor", 220)); }
 		}
-		bool bEnabled() { mixin(MGBPC!(244, 0x1)()); }
-		bool bEnabled(bool val) { mixin(MSBPC!(244, 0x1)()); }
-		bool bPlayerOnly() { mixin(MGBPC!(244, 0x2)()); }
-		bool bPlayerOnly(bool val) { mixin(MSBPC!(244, 0x2)()); }
-		bool bClientSideOnly() { mixin(MGBPC!(244, 0x8)()); }
-		bool bClientSideOnly(bool val) { mixin(MSBPC!(244, 0x8)()); }
-		bool bRegistered() { mixin(MGBPC!(244, 0x4)()); }
-		bool bRegistered(bool val) { mixin(MSBPC!(244, 0x4)()); }
+		bool bEnabled() { mixin(MGBPC(244, 0x1)); }
+		bool bEnabled(bool val) { mixin(MSBPC(244, 0x1)); }
+		bool bPlayerOnly() { mixin(MGBPC(244, 0x2)); }
+		bool bPlayerOnly(bool val) { mixin(MSBPC(244, 0x2)); }
+		bool bClientSideOnly() { mixin(MGBPC(244, 0x8)); }
+		bool bClientSideOnly(bool val) { mixin(MSBPC(244, 0x8)); }
+		bool bRegistered() { mixin(MGBPC(244, 0x4)); }
+		bool bRegistered(bool val) { mixin(MSBPC(244, 0x4)); }
 	}
 final:
 	bool CheckActivate(Actor InOriginator, Actor InInstigator, bool* bTest = null, in ScriptArray!(int)* ActivateIndices = null, bool* bPushTop = null)

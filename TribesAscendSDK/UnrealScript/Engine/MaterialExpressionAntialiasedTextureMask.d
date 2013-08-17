@@ -8,9 +8,9 @@ extern(C++) interface MaterialExpressionAntialiasedTextureMask : MaterialExpress
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionAntialiasedTextureMask")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionAntialiasedTextureMask")); }
 	private static __gshared MaterialExpressionAntialiasedTextureMask mDefaultProperties;
-	@property final static MaterialExpressionAntialiasedTextureMask DefaultProperties() { mixin(MGDPC!(MaterialExpressionAntialiasedTextureMask, "MaterialExpressionAntialiasedTextureMask Engine.Default__MaterialExpressionAntialiasedTextureMask")()); }
+	@property final static MaterialExpressionAntialiasedTextureMask DefaultProperties() { mixin(MGDPC("MaterialExpressionAntialiasedTextureMask", "MaterialExpressionAntialiasedTextureMask Engine.Default__MaterialExpressionAntialiasedTextureMask")); }
 	enum ETextureColorChannel : ubyte
 	{
 		TCC_Red = 0,
@@ -22,6 +22,6 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'Channel' has the same name as a defined type!
-		float Threshold() { mixin(MGPC!("float", 164)()); }
+		float Threshold() { mixin(MGPC("float", 164)); }
 	}
 }

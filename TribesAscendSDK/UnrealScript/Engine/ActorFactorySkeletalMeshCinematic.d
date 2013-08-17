@@ -8,7 +8,7 @@ extern(C++) interface ActorFactorySkeletalMeshCinematic : ActorFactorySkeletalMe
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactorySkeletalMeshCinematic")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ActorFactorySkeletalMeshCinematic")); }
 	private static __gshared ActorFactorySkeletalMeshCinematic mDefaultProperties;
-	@property final static ActorFactorySkeletalMeshCinematic DefaultProperties() { mixin(MGDPC!(ActorFactorySkeletalMeshCinematic, "ActorFactorySkeletalMeshCinematic Engine.Default__ActorFactorySkeletalMeshCinematic")()); }
+	@property final static ActorFactorySkeletalMeshCinematic DefaultProperties() { mixin(MGDPC("ActorFactorySkeletalMeshCinematic", "ActorFactorySkeletalMeshCinematic Engine.Default__ActorFactorySkeletalMeshCinematic")); }
 }

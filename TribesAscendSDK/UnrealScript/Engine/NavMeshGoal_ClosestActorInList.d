@@ -10,9 +10,9 @@ extern(C++) interface NavMeshGoal_ClosestActorInList : NavMeshPathGoalEvaluator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshGoal_ClosestActorInList")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavMeshGoal_ClosestActorInList")); }
 	private static __gshared NavMeshGoal_ClosestActorInList mDefaultProperties;
-	@property final static NavMeshGoal_ClosestActorInList DefaultProperties() { mixin(MGDPC!(NavMeshGoal_ClosestActorInList, "NavMeshGoal_ClosestActorInList Engine.Default__NavMeshGoal_ClosestActorInList")()); }
+	@property final static NavMeshGoal_ClosestActorInList DefaultProperties() { mixin(MGDPC("NavMeshGoal_ClosestActorInList", "NavMeshGoal_ClosestActorInList Engine.Default__NavMeshGoal_ClosestActorInList")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClosestActorInList() { mixin(MGF!("mClosestActorInList", "Function Engine.NavMeshGoal_ClosestActorInList.ClosestActorInList")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshGoal_ClosestActorInList.Recycle")()); }
-			ScriptFunction RecycleInternal() { mixin(MGF!("mRecycleInternal", "Function Engine.NavMeshGoal_ClosestActorInList.RecycleInternal")()); }
+			ScriptFunction ClosestActorInList() { mixin(MGF("mClosestActorInList", "Function Engine.NavMeshGoal_ClosestActorInList.ClosestActorInList")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.NavMeshGoal_ClosestActorInList.Recycle")); }
+			ScriptFunction RecycleInternal() { mixin(MGF("mRecycleInternal", "Function Engine.NavMeshGoal_ClosestActorInList.RecycleInternal")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) GoalList() { mixin(MGPC!("ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor)", 80)()); }
-		UObject.Pointer CachedAnchorPoly() { mixin(MGPC!("UObject.Pointer", 152)()); }
-		UObject.MultiMap_Mirror PolyToGoalActorMap() { mixin(MGPC!("UObject.MultiMap_Mirror", 92)()); }
+		ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) GoalList() { mixin(MGPC("ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor)", 80)); }
+		UObject.Pointer CachedAnchorPoly() { mixin(MGPC("UObject.Pointer", 152)); }
+		UObject.MultiMap_Mirror PolyToGoalActorMap() { mixin(MGPC("UObject.MultiMap_Mirror", 92)); }
 	}
 final:
 	static NavMeshGoal_ClosestActorInList ClosestActorInList(NavigationHandle NavHandle, ref in ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) InGoalList)

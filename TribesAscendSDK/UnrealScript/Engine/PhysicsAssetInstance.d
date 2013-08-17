@@ -13,9 +13,9 @@ extern(C++) interface PhysicsAssetInstance : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PhysicsAssetInstance")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.PhysicsAssetInstance")); }
 	private static __gshared PhysicsAssetInstance mDefaultProperties;
-	@property final static PhysicsAssetInstance DefaultProperties() { mixin(MGDPC!(PhysicsAssetInstance, "PhysicsAssetInstance Engine.Default__PhysicsAssetInstance")()); }
+	@property final static PhysicsAssetInstance DefaultProperties() { mixin(MGDPC("PhysicsAssetInstance", "PhysicsAssetInstance Engine.Default__PhysicsAssetInstance")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,43 +40,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetLinearDriveScale() { mixin(MGF!("mSetLinearDriveScale", "Function Engine.PhysicsAssetInstance.SetLinearDriveScale")()); }
-			ScriptFunction SetAngularDriveScale() { mixin(MGF!("mSetAngularDriveScale", "Function Engine.PhysicsAssetInstance.SetAngularDriveScale")()); }
-			ScriptFunction GetTotalMassBelowBone() { mixin(MGF!("mGetTotalMassBelowBone", "Function Engine.PhysicsAssetInstance.GetTotalMassBelowBone")()); }
-			ScriptFunction SetAllBodiesFixed() { mixin(MGF!("mSetAllBodiesFixed", "Function Engine.PhysicsAssetInstance.SetAllBodiesFixed")()); }
-			ScriptFunction SetNamedBodiesFixed() { mixin(MGF!("mSetNamedBodiesFixed", "Function Engine.PhysicsAssetInstance.SetNamedBodiesFixed")()); }
-			ScriptFunction ForceAllBodiesBelowUnfixed() { mixin(MGF!("mForceAllBodiesBelowUnfixed", "Function Engine.PhysicsAssetInstance.ForceAllBodiesBelowUnfixed")()); }
-			ScriptFunction SetAllMotorsAngularPositionDrive() { mixin(MGF!("mSetAllMotorsAngularPositionDrive", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularPositionDrive")()); }
-			ScriptFunction SetAllMotorsAngularVelocityDrive() { mixin(MGF!("mSetAllMotorsAngularVelocityDrive", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularVelocityDrive")()); }
-			ScriptFunction SetAllMotorsAngularDriveParams() { mixin(MGF!("mSetAllMotorsAngularDriveParams", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularDriveParams")()); }
-			ScriptFunction SetNamedMotorsAngularPositionDrive() { mixin(MGF!("mSetNamedMotorsAngularPositionDrive", "Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularPositionDrive")()); }
-			ScriptFunction SetNamedMotorsAngularVelocityDrive() { mixin(MGF!("mSetNamedMotorsAngularVelocityDrive", "Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularVelocityDrive")()); }
-			ScriptFunction SetNamedRBBoneSprings() { mixin(MGF!("mSetNamedRBBoneSprings", "Function Engine.PhysicsAssetInstance.SetNamedRBBoneSprings")()); }
-			ScriptFunction SetNamedBodiesBlockRigidBody() { mixin(MGF!("mSetNamedBodiesBlockRigidBody", "Function Engine.PhysicsAssetInstance.SetNamedBodiesBlockRigidBody")()); }
-			ScriptFunction SetFullAnimWeightBlockRigidBody() { mixin(MGF!("mSetFullAnimWeightBlockRigidBody", "Function Engine.PhysicsAssetInstance.SetFullAnimWeightBlockRigidBody")()); }
-			ScriptFunction SetFullAnimWeightBonesFixed() { mixin(MGF!("mSetFullAnimWeightBonesFixed", "Function Engine.PhysicsAssetInstance.SetFullAnimWeightBonesFixed")()); }
-			ScriptFunction FindBodyInstance() { mixin(MGF!("mFindBodyInstance", "Function Engine.PhysicsAssetInstance.FindBodyInstance")()); }
-			ScriptFunction FindConstraintInstance() { mixin(MGF!("mFindConstraintInstance", "Function Engine.PhysicsAssetInstance.FindConstraintInstance")()); }
+			ScriptFunction SetLinearDriveScale() { mixin(MGF("mSetLinearDriveScale", "Function Engine.PhysicsAssetInstance.SetLinearDriveScale")); }
+			ScriptFunction SetAngularDriveScale() { mixin(MGF("mSetAngularDriveScale", "Function Engine.PhysicsAssetInstance.SetAngularDriveScale")); }
+			ScriptFunction GetTotalMassBelowBone() { mixin(MGF("mGetTotalMassBelowBone", "Function Engine.PhysicsAssetInstance.GetTotalMassBelowBone")); }
+			ScriptFunction SetAllBodiesFixed() { mixin(MGF("mSetAllBodiesFixed", "Function Engine.PhysicsAssetInstance.SetAllBodiesFixed")); }
+			ScriptFunction SetNamedBodiesFixed() { mixin(MGF("mSetNamedBodiesFixed", "Function Engine.PhysicsAssetInstance.SetNamedBodiesFixed")); }
+			ScriptFunction ForceAllBodiesBelowUnfixed() { mixin(MGF("mForceAllBodiesBelowUnfixed", "Function Engine.PhysicsAssetInstance.ForceAllBodiesBelowUnfixed")); }
+			ScriptFunction SetAllMotorsAngularPositionDrive() { mixin(MGF("mSetAllMotorsAngularPositionDrive", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularPositionDrive")); }
+			ScriptFunction SetAllMotorsAngularVelocityDrive() { mixin(MGF("mSetAllMotorsAngularVelocityDrive", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularVelocityDrive")); }
+			ScriptFunction SetAllMotorsAngularDriveParams() { mixin(MGF("mSetAllMotorsAngularDriveParams", "Function Engine.PhysicsAssetInstance.SetAllMotorsAngularDriveParams")); }
+			ScriptFunction SetNamedMotorsAngularPositionDrive() { mixin(MGF("mSetNamedMotorsAngularPositionDrive", "Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularPositionDrive")); }
+			ScriptFunction SetNamedMotorsAngularVelocityDrive() { mixin(MGF("mSetNamedMotorsAngularVelocityDrive", "Function Engine.PhysicsAssetInstance.SetNamedMotorsAngularVelocityDrive")); }
+			ScriptFunction SetNamedRBBoneSprings() { mixin(MGF("mSetNamedRBBoneSprings", "Function Engine.PhysicsAssetInstance.SetNamedRBBoneSprings")); }
+			ScriptFunction SetNamedBodiesBlockRigidBody() { mixin(MGF("mSetNamedBodiesBlockRigidBody", "Function Engine.PhysicsAssetInstance.SetNamedBodiesBlockRigidBody")); }
+			ScriptFunction SetFullAnimWeightBlockRigidBody() { mixin(MGF("mSetFullAnimWeightBlockRigidBody", "Function Engine.PhysicsAssetInstance.SetFullAnimWeightBlockRigidBody")); }
+			ScriptFunction SetFullAnimWeightBonesFixed() { mixin(MGF("mSetFullAnimWeightBonesFixed", "Function Engine.PhysicsAssetInstance.SetFullAnimWeightBonesFixed")); }
+			ScriptFunction FindBodyInstance() { mixin(MGF("mFindBodyInstance", "Function Engine.PhysicsAssetInstance.FindBodyInstance")); }
+			ScriptFunction FindConstraintInstance() { mixin(MGF("mFindConstraintInstance", "Function Engine.PhysicsAssetInstance.FindConstraintInstance")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(RB_ConstraintInstance) Constraints() { mixin(MGPC!("ScriptArray!(RB_ConstraintInstance)", 80)()); }
-			ScriptArray!(RB_BodyInstance) Bodies() { mixin(MGPC!("ScriptArray!(RB_BodyInstance)", 68)()); }
-			float AngularForceLimitScale() { mixin(MGPC!("float", 172)()); }
-			float AngularDampingScale() { mixin(MGPC!("float", 168)()); }
-			float AngularSpringScale() { mixin(MGPC!("float", 164)()); }
-			float LinearForceLimitScale() { mixin(MGPC!("float", 160)()); }
-			float LinearDampingScale() { mixin(MGPC!("float", 156)()); }
-			float LinearSpringScale() { mixin(MGPC!("float", 152)()); }
-			UObject.Map_Mirror CollisionDisableTable() { mixin(MGPC!("UObject.Map_Mirror", 92)()); }
-			int RootBodyIndex() { mixin(MGPC!("int", 64)()); }
-			Actor Owner() { mixin(MGPC!("Actor", 60)()); }
+			ScriptArray!(RB_ConstraintInstance) Constraints() { mixin(MGPC("ScriptArray!(RB_ConstraintInstance)", 80)); }
+			ScriptArray!(RB_BodyInstance) Bodies() { mixin(MGPC("ScriptArray!(RB_BodyInstance)", 68)); }
+			float AngularForceLimitScale() { mixin(MGPC("float", 172)); }
+			float AngularDampingScale() { mixin(MGPC("float", 168)); }
+			float AngularSpringScale() { mixin(MGPC("float", 164)); }
+			float LinearForceLimitScale() { mixin(MGPC("float", 160)); }
+			float LinearDampingScale() { mixin(MGPC("float", 156)); }
+			float LinearSpringScale() { mixin(MGPC("float", 152)); }
+			UObject.Map_Mirror CollisionDisableTable() { mixin(MGPC("UObject.Map_Mirror", 92)); }
+			int RootBodyIndex() { mixin(MGPC("int", 64)); }
+			Actor Owner() { mixin(MGPC("Actor", 60)); }
 		}
-		bool bInitBodies() { mixin(MGBPC!(176, 0x1)()); }
-		bool bInitBodies(bool val) { mixin(MSBPC!(176, 0x1)()); }
+		bool bInitBodies() { mixin(MGBPC(176, 0x1)); }
+		bool bInitBodies(bool val) { mixin(MSBPC(176, 0x1)); }
 	}
 final:
 	void SetLinearDriveScale(float InLinearSpringScale, float InLinearDampingScale, float InLinearForceLimitScale)

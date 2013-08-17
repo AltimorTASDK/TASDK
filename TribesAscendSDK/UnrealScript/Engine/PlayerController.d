@@ -55,9 +55,9 @@ extern(C++) interface PlayerController : Controller
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PlayerController")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.PlayerController")); }
 	private static __gshared PlayerController mDefaultProperties;
-	@property final static PlayerController DefaultProperties() { mixin(MGDPC!(PlayerController, "PlayerController Engine.Default__PlayerController")()); }
+	@property final static PlayerController DefaultProperties() { mixin(MGDPC("PlayerController", "PlayerController Engine.Default__PlayerController")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -419,360 +419,360 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFOVAngle() { mixin(MGF!("mGetFOVAngle", "Function Engine.PlayerController.GetFOVAngle")()); }
-			ScriptFunction GetPlayerNetworkAddress() { mixin(MGF!("mGetPlayerNetworkAddress", "Function Engine.PlayerController.GetPlayerNetworkAddress")()); }
-			ScriptFunction GetViewTarget() { mixin(MGF!("mGetViewTarget", "Function Engine.PlayerController.GetViewTarget")()); }
-			ScriptFunction IsPrimaryPlayer() { mixin(MGF!("mIsPrimaryPlayer", "Function Engine.PlayerController.IsPrimaryPlayer")()); }
-			ScriptFunction SetNetSpeed() { mixin(MGF!("mSetNetSpeed", "Function Engine.PlayerController.SetNetSpeed")()); }
-			ScriptFunction GetServerNetworkAddress() { mixin(MGF!("mGetServerNetworkAddress", "Function Engine.PlayerController.GetServerNetworkAddress")()); }
-			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function Engine.PlayerController.ConsoleCommand")()); }
-			ScriptFunction ClientTravel() { mixin(MGF!("mClientTravel", "Function Engine.PlayerController.ClientTravel")()); }
-			ScriptFunction UpdateURL() { mixin(MGF!("mUpdateURL", "Function Engine.PlayerController.UpdateURL")()); }
-			ScriptFunction GetDefaultURL() { mixin(MGF!("mGetDefaultURL", "Function Engine.PlayerController.GetDefaultURL")()); }
-			ScriptFunction CopyToClipboard() { mixin(MGF!("mCopyToClipboard", "Function Engine.PlayerController.CopyToClipboard")()); }
-			ScriptFunction PasteFromClipboard() { mixin(MGF!("mPasteFromClipboard", "Function Engine.PlayerController.PasteFromClipboard")()); }
-			ScriptFunction SetAllowMatureLanguage() { mixin(MGF!("mSetAllowMatureLanguage", "Function Engine.PlayerController.SetAllowMatureLanguage")()); }
-			ScriptFunction SetAudioGroupVolume() { mixin(MGF!("mSetAudioGroupVolume", "Function Engine.PlayerController.SetAudioGroupVolume")()); }
-			ScriptFunction ClientConvolve() { mixin(MGF!("mClientConvolve", "Function Engine.PlayerController.ClientConvolve")()); }
-			ScriptFunction ServerProcessConvolve() { mixin(MGF!("mServerProcessConvolve", "Function Engine.PlayerController.ServerProcessConvolve")()); }
-			ScriptFunction CheckSpeedHack() { mixin(MGF!("mCheckSpeedHack", "Function Engine.PlayerController.CheckSpeedHack")()); }
-			ScriptFunction FindStairRotation() { mixin(MGF!("mFindStairRotation", "Function Engine.PlayerController.FindStairRotation")()); }
-			ScriptFunction CleanUpAudioComponents() { mixin(MGF!("mCleanUpAudioComponents", "Function Engine.PlayerController.CleanUpAudioComponents")()); }
-			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.PlayerController.FellOutOfWorld")()); }
-			ScriptFunction ForceClearUnpauseDelegates() { mixin(MGF!("mForceClearUnpauseDelegates", "Function Engine.PlayerController.ForceClearUnpauseDelegates")()); }
-			ScriptFunction OnExternalUIChanged() { mixin(MGF!("mOnExternalUIChanged", "Function Engine.PlayerController.OnExternalUIChanged")()); }
-			ScriptFunction CanUnpauseExternalUI() { mixin(MGF!("mCanUnpauseExternalUI", "Function Engine.PlayerController.CanUnpauseExternalUI")()); }
-			ScriptFunction OnControllerChanged() { mixin(MGF!("mOnControllerChanged", "Function Engine.PlayerController.OnControllerChanged")()); }
-			ScriptFunction CanUnpauseControllerConnected() { mixin(MGF!("mCanUnpauseControllerConnected", "Function Engine.PlayerController.CanUnpauseControllerConnected")()); }
-			ScriptFunction SpawnCoverReplicator() { mixin(MGF!("mSpawnCoverReplicator", "Function Engine.PlayerController.SpawnCoverReplicator")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.PlayerController.PostBeginPlay")()); }
-			ScriptFunction ReceivedPlayer() { mixin(MGF!("mReceivedPlayer", "Function Engine.PlayerController.ReceivedPlayer")()); }
-			ScriptFunction RegisterPlayerDataStores() { mixin(MGF!("mRegisterPlayerDataStores", "Function Engine.PlayerController.RegisterPlayerDataStores")()); }
-			ScriptFunction FindConnectedPeerIndex() { mixin(MGF!("mFindConnectedPeerIndex", "Function Engine.PlayerController.FindConnectedPeerIndex")()); }
-			ScriptFunction AddPeer() { mixin(MGF!("mAddPeer", "Function Engine.PlayerController.AddPeer")()); }
-			ScriptFunction RemovePeer() { mixin(MGF!("mRemovePeer", "Function Engine.PlayerController.RemovePeer")()); }
-			ScriptFunction ServerAddPeer() { mixin(MGF!("mServerAddPeer", "Function Engine.PlayerController.ServerAddPeer")()); }
-			ScriptFunction ServerRemovePeer() { mixin(MGF!("mServerRemovePeer", "Function Engine.PlayerController.ServerRemovePeer")()); }
-			ScriptFunction ClientUpdateBestNextHosts() { mixin(MGF!("mClientUpdateBestNextHosts", "Function Engine.PlayerController.ClientUpdateBestNextHosts")()); }
-			ScriptFunction NotifyPeerDisconnectHost() { mixin(MGF!("mNotifyPeerDisconnectHost", "Function Engine.PlayerController.NotifyPeerDisconnectHost")()); }
-			ScriptFunction IsBestHostPeer() { mixin(MGF!("mIsBestHostPeer", "Function Engine.PlayerController.IsBestHostPeer")()); }
-			ScriptFunction MigrateNewHost() { mixin(MGF!("mMigrateNewHost", "Function Engine.PlayerController.MigrateNewHost")()); }
-			ScriptFunction OnEndGameForHostMigrate() { mixin(MGF!("mOnEndGameForHostMigrate", "Function Engine.PlayerController.OnEndGameForHostMigrate")()); }
-			ScriptFunction GetRegisteredPlayersInSession() { mixin(MGF!("mGetRegisteredPlayersInSession", "Function Engine.PlayerController.GetRegisteredPlayersInSession")()); }
-			ScriptFunction RemoveMissingPeersFromSession() { mixin(MGF!("mRemoveMissingPeersFromSession", "Function Engine.PlayerController.RemoveMissingPeersFromSession")()); }
-			ScriptFunction OnUnregisterPlayerCompleteForMigrate() { mixin(MGF!("mOnUnregisterPlayerCompleteForMigrate", "Function Engine.PlayerController.OnUnregisterPlayerCompleteForMigrate")()); }
-			ScriptFunction OnHostMigratedOnlineGame() { mixin(MGF!("mOnHostMigratedOnlineGame", "Function Engine.PlayerController.OnHostMigratedOnlineGame")()); }
-			ScriptFunction GetCurrentSearchClass() { mixin(MGF!("mGetCurrentSearchClass", "Function Engine.PlayerController.GetCurrentSearchClass")()); }
-			ScriptFunction PeerDesignatedAsHost() { mixin(MGF!("mPeerDesignatedAsHost", "Function Engine.PlayerController.PeerDesignatedAsHost")()); }
-			ScriptFunction PeerTravelAsHost() { mixin(MGF!("mPeerTravelAsHost", "Function Engine.PlayerController.PeerTravelAsHost")()); }
-			ScriptFunction TellPeerToTravel() { mixin(MGF!("mTellPeerToTravel", "Function Engine.PlayerController.TellPeerToTravel")()); }
-			ScriptFunction TellPeerToTravelToSession() { mixin(MGF!("mTellPeerToTravelToSession", "Function Engine.PlayerController.TellPeerToTravelToSession")()); }
-			ScriptFunction PeerReceivedMigratedSession() { mixin(MGF!("mPeerReceivedMigratedSession", "Function Engine.PlayerController.PeerReceivedMigratedSession")()); }
-			ScriptFunction OnEndGameForJoinMigrate() { mixin(MGF!("mOnEndGameForJoinMigrate", "Function Engine.PlayerController.OnEndGameForJoinMigrate")()); }
-			ScriptFunction OnJoinMigratedGame() { mixin(MGF!("mOnJoinMigratedGame", "Function Engine.PlayerController.OnJoinMigratedGame")()); }
-			ScriptFunction PreRender() { mixin(MGF!("mPreRender", "Function Engine.PlayerController.PreRender")()); }
-			ScriptFunction ResetTimeMargin() { mixin(MGF!("mResetTimeMargin", "Function Engine.PlayerController.ResetTimeMargin")()); }
-			ScriptFunction ServerShortTimeout() { mixin(MGF!("mServerShortTimeout", "Function Engine.PlayerController.ServerShortTimeout")()); }
-			ScriptFunction ServerGivePawn() { mixin(MGF!("mServerGivePawn", "Function Engine.PlayerController.ServerGivePawn")()); }
-			ScriptFunction KickWarning() { mixin(MGF!("mKickWarning", "Function Engine.PlayerController.KickWarning")()); }
-			ScriptFunction AddCheats() { mixin(MGF!("mAddCheats", "Function Engine.PlayerController.AddCheats")()); }
-			ScriptFunction EnableCheats() { mixin(MGF!("mEnableCheats", "Function Engine.PlayerController.EnableCheats")()); }
-			ScriptFunction SpawnDefaultHUD() { mixin(MGF!("mSpawnDefaultHUD", "Function Engine.PlayerController.SpawnDefaultHUD")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.PlayerController.Reset")()); }
-			ScriptFunction ClientReset() { mixin(MGF!("mClientReset", "Function Engine.PlayerController.ClientReset")()); }
-			ScriptFunction CleanOutSavedMoves() { mixin(MGF!("mCleanOutSavedMoves", "Function Engine.PlayerController.CleanOutSavedMoves")()); }
-			ScriptFunction PreControllerIdChange() { mixin(MGF!("mPreControllerIdChange", "Function Engine.PlayerController.PreControllerIdChange")()); }
-			ScriptFunction PostControllerIdChange() { mixin(MGF!("mPostControllerIdChange", "Function Engine.PlayerController.PostControllerIdChange")()); }
-			ScriptFunction GetOnlineSubsystem() { mixin(MGF!("mGetOnlineSubsystem", "Function Engine.PlayerController.GetOnlineSubsystem")()); }
-			ScriptFunction InitInputSystem() { mixin(MGF!("mInitInputSystem", "Function Engine.PlayerController.InitInputSystem")()); }
-			ScriptFunction ClientInitializeDataStores() { mixin(MGF!("mClientInitializeDataStores", "Function Engine.PlayerController.ClientInitializeDataStores")()); }
-			ScriptFunction RegisterCustomPlayerDataStores() { mixin(MGF!("mRegisterCustomPlayerDataStores", "Function Engine.PlayerController.RegisterCustomPlayerDataStores")()); }
-			ScriptFunction RegisterStandardPlayerDataStores() { mixin(MGF!("mRegisterStandardPlayerDataStores", "Function Engine.PlayerController.RegisterStandardPlayerDataStores")()); }
-			ScriptFunction UnregisterPlayerDataStores() { mixin(MGF!("mUnregisterPlayerDataStores", "Function Engine.PlayerController.UnregisterPlayerDataStores")()); }
-			ScriptFunction UnregisterStandardPlayerDataStores() { mixin(MGF!("mUnregisterStandardPlayerDataStores", "Function Engine.PlayerController.UnregisterStandardPlayerDataStores")()); }
-			ScriptFunction ReloadProfileSettings() { mixin(MGF!("mReloadProfileSettings", "Function Engine.PlayerController.ReloadProfileSettings")()); }
-			ScriptFunction SetRumbleScale() { mixin(MGF!("mSetRumbleScale", "Function Engine.PlayerController.SetRumbleScale")()); }
-			ScriptFunction IsControllerTiltActive() { mixin(MGF!("mIsControllerTiltActive", "Function Engine.PlayerController.IsControllerTiltActive")()); }
-			ScriptFunction SetControllerTiltDesiredIfAvailable() { mixin(MGF!("mSetControllerTiltDesiredIfAvailable", "Function Engine.PlayerController.SetControllerTiltDesiredIfAvailable")()); }
-			ScriptFunction SetControllerTiltActive() { mixin(MGF!("mSetControllerTiltActive", "Function Engine.PlayerController.SetControllerTiltActive")()); }
-			ScriptFunction SetOnlyUseControllerTiltInput() { mixin(MGF!("mSetOnlyUseControllerTiltInput", "Function Engine.PlayerController.SetOnlyUseControllerTiltInput")()); }
-			ScriptFunction SetUseTiltForwardAndBack() { mixin(MGF!("mSetUseTiltForwardAndBack", "Function Engine.PlayerController.SetUseTiltForwardAndBack")()); }
-			ScriptFunction IsKeyboardAvailable() { mixin(MGF!("mIsKeyboardAvailable", "Function Engine.PlayerController.IsKeyboardAvailable")()); }
-			ScriptFunction IsMouseAvailable() { mixin(MGF!("mIsMouseAvailable", "Function Engine.PlayerController.IsMouseAvailable")()); }
-			ScriptFunction ClientGotoState() { mixin(MGF!("mClientGotoState", "Function Engine.PlayerController.ClientGotoState")()); }
-			ScriptFunction AskForPawn() { mixin(MGF!("mAskForPawn", "Function Engine.PlayerController.AskForPawn")()); }
-			ScriptFunction GivePawn() { mixin(MGF!("mGivePawn", "Function Engine.PlayerController.GivePawn")()); }
-			ScriptFunction Possess() { mixin(MGF!("mPossess", "Function Engine.PlayerController.Possess")()); }
-			ScriptFunction AcknowledgePossession() { mixin(MGF!("mAcknowledgePossession", "Function Engine.PlayerController.AcknowledgePossession")()); }
-			ScriptFunction ServerAcknowledgePossession() { mixin(MGF!("mServerAcknowledgePossession", "Function Engine.PlayerController.ServerAcknowledgePossession")()); }
-			ScriptFunction UnPossess() { mixin(MGF!("mUnPossess", "Function Engine.PlayerController.UnPossess")()); }
-			ScriptFunction PawnDied() { mixin(MGF!("mPawnDied", "Function Engine.PlayerController.PawnDied")()); }
-			ScriptFunction ClientSetHUD() { mixin(MGF!("mClientSetHUD", "Function Engine.PlayerController.ClientSetHUD")()); }
-			ScriptFunction HandlePickup() { mixin(MGF!("mHandlePickup", "Function Engine.PlayerController.HandlePickup")()); }
-			ScriptFunction CleanupPRI() { mixin(MGF!("mCleanupPRI", "Function Engine.PlayerController.CleanupPRI")()); }
-			ScriptFunction ReceiveLocalizedMessage() { mixin(MGF!("mReceiveLocalizedMessage", "Function Engine.PlayerController.ReceiveLocalizedMessage")()); }
-			ScriptFunction ClientPlaySound() { mixin(MGF!("mClientPlaySound", "Function Engine.PlayerController.ClientPlaySound")()); }
-			ScriptFunction HearSoundFinished() { mixin(MGF!("mHearSoundFinished", "Function Engine.PlayerController.HearSoundFinished")()); }
-			ScriptFunction GetPooledAudioComponent() { mixin(MGF!("mGetPooledAudioComponent", "Function Engine.PlayerController.GetPooledAudioComponent")()); }
-			ScriptFunction ClientHearSound() { mixin(MGF!("mClientHearSound", "Function Engine.PlayerController.ClientHearSound")()); }
-			ScriptFunction IsClosestLocalPlayerToActor() { mixin(MGF!("mIsClosestLocalPlayerToActor", "Function Engine.PlayerController.IsClosestLocalPlayerToActor")()); }
-			ScriptFunction Kismet_ClientPlaySound() { mixin(MGF!("mKismet_ClientPlaySound", "Function Engine.PlayerController.Kismet_ClientPlaySound")()); }
-			ScriptFunction Kismet_ClientStopSound() { mixin(MGF!("mKismet_ClientStopSound", "Function Engine.PlayerController.Kismet_ClientStopSound")()); }
-			ScriptFunction ClientPlayActorFaceFXAnim() { mixin(MGF!("mClientPlayActorFaceFXAnim", "Function Engine.PlayerController.ClientPlayActorFaceFXAnim")()); }
-			ScriptFunction ClientMessage() { mixin(MGF!("mClientMessage", "Function Engine.PlayerController.ClientMessage")()); }
-			ScriptFunction CanCommunicate() { mixin(MGF!("mCanCommunicate", "Function Engine.PlayerController.CanCommunicate")()); }
-			ScriptFunction AllowTTSMessageFrom() { mixin(MGF!("mAllowTTSMessageFrom", "Function Engine.PlayerController.AllowTTSMessageFrom")()); }
-			ScriptFunction CreateTTSSoundCue() { mixin(MGF!("mCreateTTSSoundCue", "Function Engine.PlayerController.CreateTTSSoundCue")()); }
-			ScriptFunction Talk() { mixin(MGF!("mTalk", "Function Engine.PlayerController.Talk")()); }
-			ScriptFunction TeamTalk() { mixin(MGF!("mTeamTalk", "Function Engine.PlayerController.TeamTalk")()); }
-			ScriptFunction SpeakTTS() { mixin(MGF!("mSpeakTTS", "Function Engine.PlayerController.SpeakTTS")()); }
-			ScriptFunction TeamMessage() { mixin(MGF!("mTeamMessage", "Function Engine.PlayerController.TeamMessage")()); }
-			ScriptFunction PlayBeepSound() { mixin(MGF!("mPlayBeepSound", "Function Engine.PlayerController.PlayBeepSound")()); }
-			ScriptFunction RegisterOnlineDelegates() { mixin(MGF!("mRegisterOnlineDelegates", "Function Engine.PlayerController.RegisterOnlineDelegates")()); }
-			ScriptFunction OnPartyMemberListChanged() { mixin(MGF!("mOnPartyMemberListChanged", "Function Engine.PlayerController.OnPartyMemberListChanged")()); }
-			ScriptFunction OnPartyMembersInfoChanged() { mixin(MGF!("mOnPartyMembersInfoChanged", "Function Engine.PlayerController.OnPartyMembersInfoChanged")()); }
-			ScriptFunction ClearOnlineDelegates() { mixin(MGF!("mClearOnlineDelegates", "Function Engine.PlayerController.ClearOnlineDelegates")()); }
-			ScriptFunction CleanupPawn() { mixin(MGF!("mCleanupPawn", "Function Engine.PlayerController.CleanupPawn")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.PlayerController.Destroyed")()); }
-			ScriptFunction FixFOV() { mixin(MGF!("mFixFOV", "Function Engine.PlayerController.FixFOV")()); }
-			ScriptFunction SetFOV() { mixin(MGF!("mSetFOV", "Function Engine.PlayerController.SetFOV")()); }
-			ScriptFunction ResetFOV() { mixin(MGF!("mResetFOV", "Function Engine.PlayerController.ResetFOV")()); }
-			ScriptFunction FOV() { mixin(MGF!("mFOV", "Function Engine.PlayerController.FOV")()); }
-			ScriptFunction AllowTextMessage() { mixin(MGF!("mAllowTextMessage", "Function Engine.PlayerController.AllowTextMessage")()); }
-			ScriptFunction Say() { mixin(MGF!("mSay", "Function Engine.PlayerController.Say")()); }
-			ScriptFunction ServerSay() { mixin(MGF!("mServerSay", "Function Engine.PlayerController.ServerSay")()); }
-			ScriptFunction ClientAdminMessage() { mixin(MGF!("mClientAdminMessage", "Function Engine.PlayerController.ClientAdminMessage")()); }
-			ScriptFunction TeamSay() { mixin(MGF!("mTeamSay", "Function Engine.PlayerController.TeamSay")()); }
-			ScriptFunction ServerTeamSay() { mixin(MGF!("mServerTeamSay", "Function Engine.PlayerController.ServerTeamSay")()); }
-			ScriptFunction PreClientTravel() { mixin(MGF!("mPreClientTravel", "Function Engine.PlayerController.PreClientTravel")()); }
-			ScriptFunction GetUIController() { mixin(MGF!("mGetUIController", "Function Engine.PlayerController.GetUIController")()); }
-			ScriptFunction Camera() { mixin(MGF!("mCamera", "Function Engine.PlayerController.Camera")()); }
-			ScriptFunction ServerCamera() { mixin(MGF!("mServerCamera", "Function Engine.PlayerController.ServerCamera")()); }
-			ScriptFunction ClientSetCameraMode() { mixin(MGF!("mClientSetCameraMode", "Function Engine.PlayerController.ClientSetCameraMode")()); }
-			ScriptFunction SetCameraMode() { mixin(MGF!("mSetCameraMode", "Function Engine.PlayerController.SetCameraMode")()); }
-			ScriptFunction ResetCameraMode() { mixin(MGF!("mResetCameraMode", "Function Engine.PlayerController.ResetCameraMode")()); }
-			ScriptFunction ClientSetCameraFade() { mixin(MGF!("mClientSetCameraFade", "Function Engine.PlayerController.ClientSetCameraFade")()); }
-			ScriptFunction UsingFirstPersonCamera() { mixin(MGF!("mUsingFirstPersonCamera", "Function Engine.PlayerController.UsingFirstPersonCamera")()); }
-			ScriptFunction ForceDeathUpdate() { mixin(MGF!("mForceDeathUpdate", "Function Engine.PlayerController.ForceDeathUpdate")()); }
-			ScriptFunction DualServerMove() { mixin(MGF!("mDualServerMove", "Function Engine.PlayerController.DualServerMove")()); }
-			ScriptFunction OldServerMove() { mixin(MGF!("mOldServerMove", "Function Engine.PlayerController.OldServerMove")()); }
-			ScriptFunction GetServerMoveDeltaTime() { mixin(MGF!("mGetServerMoveDeltaTime", "Function Engine.PlayerController.GetServerMoveDeltaTime")()); }
-			ScriptFunction ServerMoveHandleClientError() { mixin(MGF!("mServerMoveHandleClientError", "Function Engine.PlayerController.ServerMoveHandleClientError")()); }
-			ScriptFunction ServerMove() { mixin(MGF!("mServerMove", "Function Engine.PlayerController.ServerMove")()); }
-			ScriptFunction SendClientAdjustment() { mixin(MGF!("mSendClientAdjustment", "Function Engine.PlayerController.SendClientAdjustment")()); }
-			ScriptFunction ServerDrive() { mixin(MGF!("mServerDrive", "Function Engine.PlayerController.ServerDrive")()); }
-			ScriptFunction ProcessDrive() { mixin(MGF!("mProcessDrive", "Function Engine.PlayerController.ProcessDrive")()); }
-			ScriptFunction ProcessMove() { mixin(MGF!("mProcessMove", "Function Engine.PlayerController.ProcessMove")()); }
-			ScriptFunction MoveAutonomous() { mixin(MGF!("mMoveAutonomous", "Function Engine.PlayerController.MoveAutonomous")()); }
-			ScriptFunction VeryShortClientAdjustPosition() { mixin(MGF!("mVeryShortClientAdjustPosition", "Function Engine.PlayerController.VeryShortClientAdjustPosition")()); }
-			ScriptFunction ShortClientAdjustPosition() { mixin(MGF!("mShortClientAdjustPosition", "Function Engine.PlayerController.ShortClientAdjustPosition")()); }
-			ScriptFunction ClientCapBandwidth() { mixin(MGF!("mClientCapBandwidth", "Function Engine.PlayerController.ClientCapBandwidth")()); }
-			ScriptFunction ClientAckGoodMove() { mixin(MGF!("mClientAckGoodMove", "Function Engine.PlayerController.ClientAckGoodMove")()); }
-			ScriptFunction UpdatePing() { mixin(MGF!("mUpdatePing", "Function Engine.PlayerController.UpdatePing")()); }
-			ScriptFunction ClientAdjustPosition() { mixin(MGF!("mClientAdjustPosition", "Function Engine.PlayerController.ClientAdjustPosition")()); }
-			ScriptFunction LongClientAdjustPosition() { mixin(MGF!("mLongClientAdjustPosition", "Function Engine.PlayerController.LongClientAdjustPosition")()); }
-			ScriptFunction UpdateStateFromAdjustment() { mixin(MGF!("mUpdateStateFromAdjustment", "Function Engine.PlayerController.UpdateStateFromAdjustment")()); }
-			ScriptFunction ServerUpdatePing() { mixin(MGF!("mServerUpdatePing", "Function Engine.PlayerController.ServerUpdatePing")()); }
-			ScriptFunction ClearAckedMoves() { mixin(MGF!("mClearAckedMoves", "Function Engine.PlayerController.ClearAckedMoves")()); }
-			ScriptFunction ClientUpdatePosition() { mixin(MGF!("mClientUpdatePosition", "Function Engine.PlayerController.ClientUpdatePosition")()); }
-			ScriptFunction GetFreeMove() { mixin(MGF!("mGetFreeMove", "Function Engine.PlayerController.GetFreeMove")()); }
-			ScriptFunction CompressAccel() { mixin(MGF!("mCompressAccel", "Function Engine.PlayerController.CompressAccel")()); }
-			ScriptFunction ReplicateMove() { mixin(MGF!("mReplicateMove", "Function Engine.PlayerController.ReplicateMove")()); }
-			ScriptFunction CallServerMove() { mixin(MGF!("mCallServerMove", "Function Engine.PlayerController.CallServerMove")()); }
-			ScriptFunction HandleWalking() { mixin(MGF!("mHandleWalking", "Function Engine.PlayerController.HandleWalking")()); }
-			ScriptFunction ServerRestartGame() { mixin(MGF!("mServerRestartGame", "Function Engine.PlayerController.ServerRestartGame")()); }
-			ScriptFunction RestartLevel() { mixin(MGF!("mRestartLevel", "Function Engine.PlayerController.RestartLevel")()); }
-			ScriptFunction PauseRumbleForAllPlayers() { mixin(MGF!("mPauseRumbleForAllPlayers", "Function Engine.PlayerController.PauseRumbleForAllPlayers")()); }
-			ScriptFunction CanUnpause() { mixin(MGF!("mCanUnpause", "Function Engine.PlayerController.CanUnpause")()); }
-			ScriptFunction SetPause() { mixin(MGF!("mSetPause", "Function Engine.PlayerController.SetPause")()); }
-			ScriptFunction IsPaused() { mixin(MGF!("mIsPaused", "Function Engine.PlayerController.IsPaused")()); }
-			ScriptFunction Pause() { mixin(MGF!("mPause", "Function Engine.PlayerController.Pause")()); }
-			ScriptFunction ServerPause() { mixin(MGF!("mServerPause", "Function Engine.PlayerController.ServerPause")()); }
-			ScriptFunction ConditionalPause() { mixin(MGF!("mConditionalPause", "Function Engine.PlayerController.ConditionalPause")()); }
-			ScriptFunction ThrowWeapon() { mixin(MGF!("mThrowWeapon", "Function Engine.PlayerController.ThrowWeapon")()); }
-			ScriptFunction ServerThrowWeapon() { mixin(MGF!("mServerThrowWeapon", "Function Engine.PlayerController.ServerThrowWeapon")()); }
-			ScriptFunction PrevWeapon() { mixin(MGF!("mPrevWeapon", "Function Engine.PlayerController.PrevWeapon")()); }
-			ScriptFunction NextWeapon() { mixin(MGF!("mNextWeapon", "Function Engine.PlayerController.NextWeapon")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function Engine.PlayerController.StartFire")()); }
-			ScriptFunction StopFire() { mixin(MGF!("mStopFire", "Function Engine.PlayerController.StopFire")()); }
-			ScriptFunction StartAltFire() { mixin(MGF!("mStartAltFire", "Function Engine.PlayerController.StartAltFire")()); }
-			ScriptFunction StopAltFire() { mixin(MGF!("mStopAltFire", "Function Engine.PlayerController.StopAltFire")()); }
-			ScriptFunction GetTriggerUseList() { mixin(MGF!("mGetTriggerUseList", "Function Engine.PlayerController.GetTriggerUseList")()); }
-			ScriptFunction Use() { mixin(MGF!("mUse", "Function Engine.PlayerController.Use")()); }
-			ScriptFunction ServerUse() { mixin(MGF!("mServerUse", "Function Engine.PlayerController.ServerUse")()); }
-			ScriptFunction PerformedUseAction() { mixin(MGF!("mPerformedUseAction", "Function Engine.PlayerController.PerformedUseAction")()); }
-			ScriptFunction FindVehicleToDrive() { mixin(MGF!("mFindVehicleToDrive", "Function Engine.PlayerController.FindVehicleToDrive")()); }
-			ScriptFunction TriggerInteracted() { mixin(MGF!("mTriggerInteracted", "Function Engine.PlayerController.TriggerInteracted")()); }
-			ScriptFunction Suicide() { mixin(MGF!("mSuicide", "Function Engine.PlayerController.Suicide")()); }
-			ScriptFunction ServerSuicide() { mixin(MGF!("mServerSuicide", "Function Engine.PlayerController.ServerSuicide")()); }
-			ScriptFunction SetName() { mixin(MGF!("mSetName", "Function Engine.PlayerController.SetName")()); }
-			ScriptFunction ServerChangeName() { mixin(MGF!("mServerChangeName", "Function Engine.PlayerController.ServerChangeName")()); }
-			ScriptFunction SwitchTeam() { mixin(MGF!("mSwitchTeam", "Function Engine.PlayerController.SwitchTeam")()); }
-			ScriptFunction ChangeTeam() { mixin(MGF!("mChangeTeam", "Function Engine.PlayerController.ChangeTeam")()); }
-			ScriptFunction ServerChangeTeam() { mixin(MGF!("mServerChangeTeam", "Function Engine.PlayerController.ServerChangeTeam")()); }
-			ScriptFunction ClientSetProgressMessage() { mixin(MGF!("mClientSetProgressMessage", "Function Engine.PlayerController.ClientSetProgressMessage")()); }
-			ScriptFunction Restart() { mixin(MGF!("mRestart", "Function Engine.PlayerController.Restart")()); }
-			ScriptFunction ServerNotifyLoadedWorld() { mixin(MGF!("mServerNotifyLoadedWorld", "Function Engine.PlayerController.ServerNotifyLoadedWorld")()); }
-			ScriptFunction NotifyLoadedWorld() { mixin(MGF!("mNotifyLoadedWorld", "Function Engine.PlayerController.NotifyLoadedWorld")()); }
-			ScriptFunction HasClientLoadedCurrentWorld() { mixin(MGF!("mHasClientLoadedCurrentWorld", "Function Engine.PlayerController.HasClientLoadedCurrentWorld")()); }
-			ScriptFunction ForceSingleNetUpdateFor() { mixin(MGF!("mForceSingleNetUpdateFor", "Function Engine.PlayerController.ForceSingleNetUpdateFor")()); }
-			ScriptFunction EnterStartState() { mixin(MGF!("mEnterStartState", "Function Engine.PlayerController.EnterStartState")()); }
-			ScriptFunction ClientRestart() { mixin(MGF!("mClientRestart", "Function Engine.PlayerController.ClientRestart")()); }
-			ScriptFunction GameHasEnded() { mixin(MGF!("mGameHasEnded", "Function Engine.PlayerController.GameHasEnded")()); }
-			ScriptFunction ClientGameEnded() { mixin(MGF!("mClientGameEnded", "Function Engine.PlayerController.ClientGameEnded")()); }
-			ScriptFunction NotifyChangedWeapon() { mixin(MGF!("mNotifyChangedWeapon", "Function Engine.PlayerController.NotifyChangedWeapon")()); }
-			ScriptFunction PlayerTick() { mixin(MGF!("mPlayerTick", "Function Engine.PlayerController.PlayerTick")()); }
-			ScriptFunction PlayerMove() { mixin(MGF!("mPlayerMove", "Function Engine.PlayerController.PlayerMove")()); }
-			ScriptFunction AimingHelp() { mixin(MGF!("mAimingHelp", "Function Engine.PlayerController.AimingHelp")()); }
-			ScriptFunction CameraLookAtFinished() { mixin(MGF!("mCameraLookAtFinished", "Function Engine.PlayerController.CameraLookAtFinished")()); }
-			ScriptFunction GetAdjustedAimFor() { mixin(MGF!("mGetAdjustedAimFor", "Function Engine.PlayerController.GetAdjustedAimFor")()); }
-			ScriptFunction AimHelpDot() { mixin(MGF!("mAimHelpDot", "Function Engine.PlayerController.AimHelpDot")()); }
-			ScriptFunction NotifyLanded() { mixin(MGF!("mNotifyLanded", "Function Engine.PlayerController.NotifyLanded")()); }
-			ScriptFunction AdjustFOV() { mixin(MGF!("mAdjustFOV", "Function Engine.PlayerController.AdjustFOV")()); }
-			ScriptFunction IsLocalPlayerController() { mixin(MGF!("mIsLocalPlayerController", "Function Engine.PlayerController.IsLocalPlayerController")()); }
-			ScriptFunction SetViewTarget() { mixin(MGF!("mSetViewTarget", "Function Engine.PlayerController.SetViewTarget")()); }
-			ScriptFunction SetViewTargetWithBlend() { mixin(MGF!("mSetViewTargetWithBlend", "Function Engine.PlayerController.SetViewTargetWithBlend")()); }
-			ScriptFunction ClientSetViewTarget() { mixin(MGF!("mClientSetViewTarget", "Function Engine.PlayerController.ClientSetViewTarget")()); }
-			ScriptFunction ServerVerifyViewTarget() { mixin(MGF!("mServerVerifyViewTarget", "Function Engine.PlayerController.ServerVerifyViewTarget")()); }
-			ScriptFunction SpawnPlayerCamera() { mixin(MGF!("mSpawnPlayerCamera", "Function Engine.PlayerController.SpawnPlayerCamera")()); }
-			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function Engine.PlayerController.GetPlayerViewPoint")()); }
-			ScriptFunction ViewShake() { mixin(MGF!("mViewShake", "Function Engine.PlayerController.ViewShake")()); }
-			ScriptFunction UpdateRotation() { mixin(MGF!("mUpdateRotation", "Function Engine.PlayerController.UpdateRotation")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function Engine.PlayerController.ProcessViewRotation")()); }
-			ScriptFunction LimitViewRotation() { mixin(MGF!("mLimitViewRotation", "Function Engine.PlayerController.LimitViewRotation")()); }
-			ScriptFunction CheckJumpOrDuck() { mixin(MGF!("mCheckJumpOrDuck", "Function Engine.PlayerController.CheckJumpOrDuck")()); }
-			ScriptFunction IsSpectating() { mixin(MGF!("mIsSpectating", "Function Engine.PlayerController.IsSpectating")()); }
-			ScriptFunction ServerSetSpectatorLocation() { mixin(MGF!("mServerSetSpectatorLocation", "Function Engine.PlayerController.ServerSetSpectatorLocation")()); }
-			ScriptFunction ServerViewNextPlayer() { mixin(MGF!("mServerViewNextPlayer", "Function Engine.PlayerController.ServerViewNextPlayer")()); }
-			ScriptFunction ServerViewPrevPlayer() { mixin(MGF!("mServerViewPrevPlayer", "Function Engine.PlayerController.ServerViewPrevPlayer")()); }
-			ScriptFunction ViewAPlayer() { mixin(MGF!("mViewAPlayer", "Function Engine.PlayerController.ViewAPlayer")()); }
-			ScriptFunction ServerViewSelf() { mixin(MGF!("mServerViewSelf", "Function Engine.PlayerController.ServerViewSelf")()); }
-			ScriptFunction IsWaiting() { mixin(MGF!("mIsWaiting", "Function Engine.PlayerController.IsWaiting")()); }
-			ScriptFunction CanRestartPlayer() { mixin(MGF!("mCanRestartPlayer", "Function Engine.PlayerController.CanRestartPlayer")()); }
-			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function Engine.PlayerController.DrawHUD")()); }
-			ScriptFunction OnToggleInput() { mixin(MGF!("mOnToggleInput", "Function Engine.PlayerController.OnToggleInput")()); }
-			ScriptFunction ClientIgnoreMoveInput() { mixin(MGF!("mClientIgnoreMoveInput", "Function Engine.PlayerController.ClientIgnoreMoveInput")()); }
-			ScriptFunction ClientIgnoreLookInput() { mixin(MGF!("mClientIgnoreLookInput", "Function Engine.PlayerController.ClientIgnoreLookInput")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.PlayerController.DisplayDebug")()); }
-			ScriptFunction OnDrawText() { mixin(MGF!("mOnDrawText", "Function Engine.PlayerController.OnDrawText")()); }
-			ScriptFunction ClientDrawKismetText() { mixin(MGF!("mClientDrawKismetText", "Function Engine.PlayerController.ClientDrawKismetText")()); }
-			ScriptFunction ClientClearKismetText() { mixin(MGF!("mClientClearKismetText", "Function Engine.PlayerController.ClientClearKismetText")()); }
-			ScriptFunction OnSetCameraTarget() { mixin(MGF!("mOnSetCameraTarget", "Function Engine.PlayerController.OnSetCameraTarget")()); }
-			ScriptFunction OnToggleHUD() { mixin(MGF!("mOnToggleHUD", "Function Engine.PlayerController.OnToggleHUD")()); }
-			ScriptFunction NotifyTakeHit() { mixin(MGF!("mNotifyTakeHit", "Function Engine.PlayerController.NotifyTakeHit")()); }
-			ScriptFunction OnForceFeedback() { mixin(MGF!("mOnForceFeedback", "Function Engine.PlayerController.OnForceFeedback")()); }
-			ScriptFunction ClientStopForceFeedbackWaveform() { mixin(MGF!("mClientStopForceFeedbackWaveform", "Function Engine.PlayerController.ClientStopForceFeedbackWaveform")()); }
-			ScriptFunction PlayRumble() { mixin(MGF!("mPlayRumble", "Function Engine.PlayerController.PlayRumble")()); }
-			ScriptFunction ClientPlayForceFeedbackWaveform() { mixin(MGF!("mClientPlayForceFeedbackWaveform", "Function Engine.PlayerController.ClientPlayForceFeedbackWaveform")()); }
-			ScriptFunction IsForceFeedbackAllowed() { mixin(MGF!("mIsForceFeedbackAllowed", "Function Engine.PlayerController.IsForceFeedbackAllowed")()); }
-			ScriptFunction OnToggleCinematicMode() { mixin(MGF!("mOnToggleCinematicMode", "Function Engine.PlayerController.OnToggleCinematicMode")()); }
-			ScriptFunction SetCinematicMode() { mixin(MGF!("mSetCinematicMode", "Function Engine.PlayerController.SetCinematicMode")()); }
-			ScriptFunction ClientSetCinematicMode() { mixin(MGF!("mClientSetCinematicMode", "Function Engine.PlayerController.ClientSetCinematicMode")()); }
-			ScriptFunction IgnoreMoveInput() { mixin(MGF!("mIgnoreMoveInput", "Function Engine.PlayerController.IgnoreMoveInput")()); }
-			ScriptFunction IsMoveInputIgnored() { mixin(MGF!("mIsMoveInputIgnored", "Function Engine.PlayerController.IsMoveInputIgnored")()); }
-			ScriptFunction IgnoreLookInput() { mixin(MGF!("mIgnoreLookInput", "Function Engine.PlayerController.IgnoreLookInput")()); }
-			ScriptFunction IsLookInputIgnored() { mixin(MGF!("mIsLookInputIgnored", "Function Engine.PlayerController.IsLookInputIgnored")()); }
-			ScriptFunction ResetPlayerMovementInput() { mixin(MGF!("mResetPlayerMovementInput", "Function Engine.PlayerController.ResetPlayerMovementInput")()); }
-			ScriptFunction OnConsoleCommand() { mixin(MGF!("mOnConsoleCommand", "Function Engine.PlayerController.OnConsoleCommand")()); }
-			ScriptFunction ClientForceGarbageCollection() { mixin(MGF!("mClientForceGarbageCollection", "Function Engine.PlayerController.ClientForceGarbageCollection")()); }
-			ScriptFunction LevelStreamingStatusChanged() { mixin(MGF!("mLevelStreamingStatusChanged", "Function Engine.PlayerController.LevelStreamingStatusChanged")()); }
-			ScriptFunction ClientUpdateLevelStreamingStatus() { mixin(MGF!("mClientUpdateLevelStreamingStatus", "Function Engine.PlayerController.ClientUpdateLevelStreamingStatus")()); }
-			ScriptFunction ServerUpdateLevelVisibility() { mixin(MGF!("mServerUpdateLevelVisibility", "Function Engine.PlayerController.ServerUpdateLevelVisibility")()); }
-			ScriptFunction ClientPrepareMapChange() { mixin(MGF!("mClientPrepareMapChange", "Function Engine.PlayerController.ClientPrepareMapChange")()); }
-			ScriptFunction DelayedPrepareMapChange() { mixin(MGF!("mDelayedPrepareMapChange", "Function Engine.PlayerController.DelayedPrepareMapChange")()); }
-			ScriptFunction ClientCommitMapChange() { mixin(MGF!("mClientCommitMapChange", "Function Engine.PlayerController.ClientCommitMapChange")()); }
-			ScriptFunction ClientCancelPendingMapChange() { mixin(MGF!("mClientCancelPendingMapChange", "Function Engine.PlayerController.ClientCancelPendingMapChange")()); }
-			ScriptFunction ClientFlushLevelStreaming() { mixin(MGF!("mClientFlushLevelStreaming", "Function Engine.PlayerController.ClientFlushLevelStreaming")()); }
-			ScriptFunction ClientSetBlockOnAsyncLoading() { mixin(MGF!("mClientSetBlockOnAsyncLoading", "Function Engine.PlayerController.ClientSetBlockOnAsyncLoading")()); }
-			ScriptFunction IsPlayerMuted() { mixin(MGF!("mIsPlayerMuted", "Function Engine.PlayerController.IsPlayerMuted")()); }
-			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF!("mGetSeamlessTravelActorList", "Function Engine.PlayerController.GetSeamlessTravelActorList")()); }
-			ScriptFunction SeamlessTravelTo() { mixin(MGF!("mSeamlessTravelTo", "Function Engine.PlayerController.SeamlessTravelTo")()); }
-			ScriptFunction SeamlessTravelFrom() { mixin(MGF!("mSeamlessTravelFrom", "Function Engine.PlayerController.SeamlessTravelFrom")()); }
-			ScriptFunction ClientSetOnlineStatus() { mixin(MGF!("mClientSetOnlineStatus", "Function Engine.PlayerController.ClientSetOnlineStatus")()); }
-			ScriptFunction GetPlayerControllerFromNetId() { mixin(MGF!("mGetPlayerControllerFromNetId", "Function Engine.PlayerController.GetPlayerControllerFromNetId")()); }
-			ScriptFunction ClientVoiceHandshakeComplete() { mixin(MGF!("mClientVoiceHandshakeComplete", "Function Engine.PlayerController.ClientVoiceHandshakeComplete")()); }
-			ScriptFunction ClientMutePlayer() { mixin(MGF!("mClientMutePlayer", "Function Engine.PlayerController.ClientMutePlayer")()); }
-			ScriptFunction ClientUnmutePlayer() { mixin(MGF!("mClientUnmutePlayer", "Function Engine.PlayerController.ClientUnmutePlayer")()); }
-			ScriptFunction GameplayMutePlayer() { mixin(MGF!("mGameplayMutePlayer", "Function Engine.PlayerController.GameplayMutePlayer")()); }
-			ScriptFunction GameplayUnmutePlayer() { mixin(MGF!("mGameplayUnmutePlayer", "Function Engine.PlayerController.GameplayUnmutePlayer")()); }
-			ScriptFunction ServerMutePlayer() { mixin(MGF!("mServerMutePlayer", "Function Engine.PlayerController.ServerMutePlayer")()); }
-			ScriptFunction ServerUnmutePlayer() { mixin(MGF!("mServerUnmutePlayer", "Function Engine.PlayerController.ServerUnmutePlayer")()); }
-			ScriptFunction NotifyDirectorControl() { mixin(MGF!("mNotifyDirectorControl", "Function Engine.PlayerController.NotifyDirectorControl")()); }
-			ScriptFunction SetShowSubtitles() { mixin(MGF!("mSetShowSubtitles", "Function Engine.PlayerController.SetShowSubtitles")()); }
-			ScriptFunction IsShowingSubtitles() { mixin(MGF!("mIsShowingSubtitles", "Function Engine.PlayerController.IsShowingSubtitles")()); }
-			ScriptFunction ClientWasKicked() { mixin(MGF!("mClientWasKicked", "Function Engine.PlayerController.ClientWasKicked")()); }
-			ScriptFunction ClientRegisterForArbitration() { mixin(MGF!("mClientRegisterForArbitration", "Function Engine.PlayerController.ClientRegisterForArbitration")()); }
-			ScriptFunction OnArbitrationRegisterComplete() { mixin(MGF!("mOnArbitrationRegisterComplete", "Function Engine.PlayerController.OnArbitrationRegisterComplete")()); }
-			ScriptFunction ServerRegisteredForArbitration() { mixin(MGF!("mServerRegisteredForArbitration", "Function Engine.PlayerController.ServerRegisteredForArbitration")()); }
-			ScriptFunction OnGameInviteAccepted() { mixin(MGF!("mOnGameInviteAccepted", "Function Engine.PlayerController.OnGameInviteAccepted")()); }
-			ScriptFunction InviteHasEnoughSpace() { mixin(MGF!("mInviteHasEnoughSpace", "Function Engine.PlayerController.InviteHasEnoughSpace")()); }
-			ScriptFunction CanAllPlayersPlayOnline() { mixin(MGF!("mCanAllPlayersPlayOnline", "Function Engine.PlayerController.CanAllPlayersPlayOnline")()); }
-			ScriptFunction ClearInviteDelegates() { mixin(MGF!("mClearInviteDelegates", "Function Engine.PlayerController.ClearInviteDelegates")()); }
-			ScriptFunction OnEndForInviteComplete() { mixin(MGF!("mOnEndForInviteComplete", "Function Engine.PlayerController.OnEndForInviteComplete")()); }
-			ScriptFunction OnDestroyForInviteComplete() { mixin(MGF!("mOnDestroyForInviteComplete", "Function Engine.PlayerController.OnDestroyForInviteComplete")()); }
-			ScriptFunction ModifyClientURL() { mixin(MGF!("mModifyClientURL", "Function Engine.PlayerController.ModifyClientURL")()); }
-			ScriptFunction OnInviteJoinComplete() { mixin(MGF!("mOnInviteJoinComplete", "Function Engine.PlayerController.OnInviteJoinComplete")()); }
-			ScriptFunction NotifyInviteFailed() { mixin(MGF!("mNotifyInviteFailed", "Function Engine.PlayerController.NotifyInviteFailed")()); }
-			ScriptFunction NotifyNotAllPlayersCanJoinInvite() { mixin(MGF!("mNotifyNotAllPlayersCanJoinInvite", "Function Engine.PlayerController.NotifyNotAllPlayersCanJoinInvite")()); }
-			ScriptFunction NotifyNotEnoughSpaceInInvite() { mixin(MGF!("mNotifyNotEnoughSpaceInInvite", "Function Engine.PlayerController.NotifyNotEnoughSpaceInInvite")()); }
-			ScriptFunction ClientArbitratedMatchEnded() { mixin(MGF!("mClientArbitratedMatchEnded", "Function Engine.PlayerController.ClientArbitratedMatchEnded")()); }
-			ScriptFunction ClientWriteOnlinePlayerScores() { mixin(MGF!("mClientWriteOnlinePlayerScores", "Function Engine.PlayerController.ClientWriteOnlinePlayerScores")()); }
-			ScriptFunction ClientWriteLeaderboardStats() { mixin(MGF!("mClientWriteLeaderboardStats", "Function Engine.PlayerController.ClientWriteLeaderboardStats")()); }
-			ScriptFunction ClientSetHostUniqueId() { mixin(MGF!("mClientSetHostUniqueId", "Function Engine.PlayerController.ClientSetHostUniqueId")()); }
-			ScriptFunction ClientStopNetworkedVoice() { mixin(MGF!("mClientStopNetworkedVoice", "Function Engine.PlayerController.ClientStopNetworkedVoice")()); }
-			ScriptFunction ClientStartNetworkedVoice() { mixin(MGF!("mClientStartNetworkedVoice", "Function Engine.PlayerController.ClientStartNetworkedVoice")()); }
-			ScriptFunction OnDestroy() { mixin(MGF!("mOnDestroy", "Function Engine.PlayerController.OnDestroy")()); }
-			ScriptFunction DrawDebugTextList() { mixin(MGF!("mDrawDebugTextList", "Function Engine.PlayerController.DrawDebugTextList")()); }
-			ScriptFunction AddDebugText() { mixin(MGF!("mAddDebugText", "Function Engine.PlayerController.AddDebugText")()); }
-			ScriptFunction RemoveDebugText() { mixin(MGF!("mRemoveDebugText", "Function Engine.PlayerController.RemoveDebugText")()); }
-			ScriptFunction RemoveAllDebugStrings() { mixin(MGF!("mRemoveAllDebugStrings", "Function Engine.PlayerController.RemoveAllDebugStrings")()); }
-			ScriptFunction ClientRegisterHostStatGuid() { mixin(MGF!("mClientRegisterHostStatGuid", "Function Engine.PlayerController.ClientRegisterHostStatGuid")()); }
-			ScriptFunction OnRegisterHostStatGuidComplete() { mixin(MGF!("mOnRegisterHostStatGuidComplete", "Function Engine.PlayerController.OnRegisterHostStatGuidComplete")()); }
-			ScriptFunction ServerRegisterClientStatGuid() { mixin(MGF!("mServerRegisterClientStatGuid", "Function Engine.PlayerController.ServerRegisterClientStatGuid")()); }
-			ScriptFunction ClientStartOnlineGame() { mixin(MGF!("mClientStartOnlineGame", "Function Engine.PlayerController.ClientStartOnlineGame")()); }
-			ScriptFunction ClientEndOnlineGame() { mixin(MGF!("mClientEndOnlineGame", "Function Engine.PlayerController.ClientEndOnlineGame")()); }
-			ScriptFunction CanViewUserCreatedContent() { mixin(MGF!("mCanViewUserCreatedContent", "Function Engine.PlayerController.CanViewUserCreatedContent")()); }
-			ScriptFunction IncrementNumberOfMatchesPlayed() { mixin(MGF!("mIncrementNumberOfMatchesPlayed", "Function Engine.PlayerController.IncrementNumberOfMatchesPlayed")()); }
-			ScriptFunction SoakPause() { mixin(MGF!("mSoakPause", "Function Engine.PlayerController.SoakPause")()); }
-			ScriptFunction ClientTravelToSession() { mixin(MGF!("mClientTravelToSession", "Function Engine.PlayerController.ClientTravelToSession")()); }
-			ScriptFunction OnJoinTravelToSessionComplete() { mixin(MGF!("mOnJoinTravelToSessionComplete", "Function Engine.PlayerController.OnJoinTravelToSessionComplete")()); }
-			ScriptFunction ClientReturnToParty() { mixin(MGF!("mClientReturnToParty", "Function Engine.PlayerController.ClientReturnToParty")()); }
-			ScriptFunction IsSplitscreenPlayer() { mixin(MGF!("mIsSplitscreenPlayer", "Function Engine.PlayerController.IsSplitscreenPlayer")()); }
-			ScriptFunction GetSplitscreenPlayerByIndex() { mixin(MGF!("mGetSplitscreenPlayerByIndex", "Function Engine.PlayerController.GetSplitscreenPlayerByIndex")()); }
-			ScriptFunction GetSplitscreenPlayerCount() { mixin(MGF!("mGetSplitscreenPlayerCount", "Function Engine.PlayerController.GetSplitscreenPlayerCount")()); }
-			ScriptFunction ClientControlMovieTexture() { mixin(MGF!("mClientControlMovieTexture", "Function Engine.PlayerController.ClientControlMovieTexture")()); }
-			ScriptFunction ClientSetForceMipLevelsToBeResident() { mixin(MGF!("mClientSetForceMipLevelsToBeResident", "Function Engine.PlayerController.ClientSetForceMipLevelsToBeResident")()); }
-			ScriptFunction ClientPrestreamTextures() { mixin(MGF!("mClientPrestreamTextures", "Function Engine.PlayerController.ClientPrestreamTextures")()); }
-			ScriptFunction IsPartyLeader() { mixin(MGF!("mIsPartyLeader", "Function Engine.PlayerController.IsPartyLeader")()); }
-			ScriptFunction GetPartyMapName() { mixin(MGF!("mGetPartyMapName", "Function Engine.PlayerController.GetPartyMapName")()); }
-			ScriptFunction GetPartyGameTypeName() { mixin(MGF!("mGetPartyGameTypeName", "Function Engine.PlayerController.GetPartyGameTypeName")()); }
-			ScriptFunction GetAchievementProgression() { mixin(MGF!("mGetAchievementProgression", "Function Engine.PlayerController.GetAchievementProgression")()); }
-			ScriptFunction OnFlyThroughHasEnded() { mixin(MGF!("mOnFlyThroughHasEnded", "Function Engine.PlayerController.OnFlyThroughHasEnded")()); }
-			ScriptFunction Sentinel_SetupForGamebasedTravelTheWorld() { mixin(MGF!("mSentinel_SetupForGamebasedTravelTheWorld", "Function Engine.PlayerController.Sentinel_SetupForGamebasedTravelTheWorld")()); }
-			ScriptFunction Sentinel_PreAcquireTravelTheWorldPoints() { mixin(MGF!("mSentinel_PreAcquireTravelTheWorldPoints", "Function Engine.PlayerController.Sentinel_PreAcquireTravelTheWorldPoints")()); }
-			ScriptFunction Sentinel_PostAcquireTravelTheWorldPoints() { mixin(MGF!("mSentinel_PostAcquireTravelTheWorldPoints", "Function Engine.PlayerController.Sentinel_PostAcquireTravelTheWorldPoints")()); }
-			ScriptFunction InputMatchDelegate() { mixin(MGF!("mInputMatchDelegate", "Function Engine.PlayerController.InputMatchDelegate")()); }
-			ScriptFunction DoForceFeedbackForScreenShake() { mixin(MGF!("mDoForceFeedbackForScreenShake", "Function Engine.PlayerController.DoForceFeedbackForScreenShake")()); }
-			ScriptFunction ClientPlayCameraShake() { mixin(MGF!("mClientPlayCameraShake", "Function Engine.PlayerController.ClientPlayCameraShake")()); }
-			ScriptFunction ClientStopCameraShake() { mixin(MGF!("mClientStopCameraShake", "Function Engine.PlayerController.ClientStopCameraShake")()); }
-			ScriptFunction OnCameraShake() { mixin(MGF!("mOnCameraShake", "Function Engine.PlayerController.OnCameraShake")()); }
-			ScriptFunction ClientPlayCameraAnim() { mixin(MGF!("mClientPlayCameraAnim", "Function Engine.PlayerController.ClientPlayCameraAnim")()); }
-			ScriptFunction ClientStopCameraAnim() { mixin(MGF!("mClientStopCameraAnim", "Function Engine.PlayerController.ClientStopCameraAnim")()); }
-			ScriptFunction ClientSpawnCameraLensEffect() { mixin(MGF!("mClientSpawnCameraLensEffect", "Function Engine.PlayerController.ClientSpawnCameraLensEffect")()); }
-			ScriptFunction OnSetSoundMode() { mixin(MGF!("mOnSetSoundMode", "Function Engine.PlayerController.OnSetSoundMode")()); }
-			ScriptFunction HasPeerConnection() { mixin(MGF!("mHasPeerConnection", "Function Engine.PlayerController.HasPeerConnection")()); }
-			ScriptFunction BugItGo() { mixin(MGF!("mBugItGo", "Function Engine.PlayerController.BugItGo")()); }
-			ScriptFunction BugItGoString() { mixin(MGF!("mBugItGoString", "Function Engine.PlayerController.BugItGoString")()); }
-			ScriptFunction BugItWorker() { mixin(MGF!("mBugItWorker", "Function Engine.PlayerController.BugItWorker")()); }
-			ScriptFunction BugIt() { mixin(MGF!("mBugIt", "Function Engine.PlayerController.BugIt")()); }
-			ScriptFunction LogOutBugItGoToLogFile() { mixin(MGF!("mLogOutBugItGoToLogFile", "Function Engine.PlayerController.LogOutBugItGoToLogFile")()); }
-			ScriptFunction LogLoc() { mixin(MGF!("mLogLoc", "Function Engine.PlayerController.LogLoc")()); }
-			ScriptFunction BugItAI() { mixin(MGF!("mBugItAI", "Function Engine.PlayerController.BugItAI")()); }
-			ScriptFunction LogOutBugItAIGoToLogFile() { mixin(MGF!("mLogOutBugItAIGoToLogFile", "Function Engine.PlayerController.LogOutBugItAIGoToLogFile")()); }
-			ScriptFunction BugItStringCreator() { mixin(MGF!("mBugItStringCreator", "Function Engine.PlayerController.BugItStringCreator")()); }
-			ScriptFunction OnEngineInitialTick() { mixin(MGF!("mOnEngineInitialTick", "Function Engine.PlayerController.OnEngineInitialTick")()); }
-			ScriptFunction DisableDebugAI() { mixin(MGF!("mDisableDebugAI", "Function Engine.PlayerController.DisableDebugAI")()); }
-			ScriptFunction ReceivedGameClass() { mixin(MGF!("mReceivedGameClass", "Function Engine.PlayerController.ReceivedGameClass")()); }
+			ScriptFunction GetFOVAngle() { mixin(MGF("mGetFOVAngle", "Function Engine.PlayerController.GetFOVAngle")); }
+			ScriptFunction GetPlayerNetworkAddress() { mixin(MGF("mGetPlayerNetworkAddress", "Function Engine.PlayerController.GetPlayerNetworkAddress")); }
+			ScriptFunction GetViewTarget() { mixin(MGF("mGetViewTarget", "Function Engine.PlayerController.GetViewTarget")); }
+			ScriptFunction IsPrimaryPlayer() { mixin(MGF("mIsPrimaryPlayer", "Function Engine.PlayerController.IsPrimaryPlayer")); }
+			ScriptFunction SetNetSpeed() { mixin(MGF("mSetNetSpeed", "Function Engine.PlayerController.SetNetSpeed")); }
+			ScriptFunction GetServerNetworkAddress() { mixin(MGF("mGetServerNetworkAddress", "Function Engine.PlayerController.GetServerNetworkAddress")); }
+			ScriptFunction ConsoleCommand() { mixin(MGF("mConsoleCommand", "Function Engine.PlayerController.ConsoleCommand")); }
+			ScriptFunction ClientTravel() { mixin(MGF("mClientTravel", "Function Engine.PlayerController.ClientTravel")); }
+			ScriptFunction UpdateURL() { mixin(MGF("mUpdateURL", "Function Engine.PlayerController.UpdateURL")); }
+			ScriptFunction GetDefaultURL() { mixin(MGF("mGetDefaultURL", "Function Engine.PlayerController.GetDefaultURL")); }
+			ScriptFunction CopyToClipboard() { mixin(MGF("mCopyToClipboard", "Function Engine.PlayerController.CopyToClipboard")); }
+			ScriptFunction PasteFromClipboard() { mixin(MGF("mPasteFromClipboard", "Function Engine.PlayerController.PasteFromClipboard")); }
+			ScriptFunction SetAllowMatureLanguage() { mixin(MGF("mSetAllowMatureLanguage", "Function Engine.PlayerController.SetAllowMatureLanguage")); }
+			ScriptFunction SetAudioGroupVolume() { mixin(MGF("mSetAudioGroupVolume", "Function Engine.PlayerController.SetAudioGroupVolume")); }
+			ScriptFunction ClientConvolve() { mixin(MGF("mClientConvolve", "Function Engine.PlayerController.ClientConvolve")); }
+			ScriptFunction ServerProcessConvolve() { mixin(MGF("mServerProcessConvolve", "Function Engine.PlayerController.ServerProcessConvolve")); }
+			ScriptFunction CheckSpeedHack() { mixin(MGF("mCheckSpeedHack", "Function Engine.PlayerController.CheckSpeedHack")); }
+			ScriptFunction FindStairRotation() { mixin(MGF("mFindStairRotation", "Function Engine.PlayerController.FindStairRotation")); }
+			ScriptFunction CleanUpAudioComponents() { mixin(MGF("mCleanUpAudioComponents", "Function Engine.PlayerController.CleanUpAudioComponents")); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF("mFellOutOfWorld", "Function Engine.PlayerController.FellOutOfWorld")); }
+			ScriptFunction ForceClearUnpauseDelegates() { mixin(MGF("mForceClearUnpauseDelegates", "Function Engine.PlayerController.ForceClearUnpauseDelegates")); }
+			ScriptFunction OnExternalUIChanged() { mixin(MGF("mOnExternalUIChanged", "Function Engine.PlayerController.OnExternalUIChanged")); }
+			ScriptFunction CanUnpauseExternalUI() { mixin(MGF("mCanUnpauseExternalUI", "Function Engine.PlayerController.CanUnpauseExternalUI")); }
+			ScriptFunction OnControllerChanged() { mixin(MGF("mOnControllerChanged", "Function Engine.PlayerController.OnControllerChanged")); }
+			ScriptFunction CanUnpauseControllerConnected() { mixin(MGF("mCanUnpauseControllerConnected", "Function Engine.PlayerController.CanUnpauseControllerConnected")); }
+			ScriptFunction SpawnCoverReplicator() { mixin(MGF("mSpawnCoverReplicator", "Function Engine.PlayerController.SpawnCoverReplicator")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.PlayerController.PostBeginPlay")); }
+			ScriptFunction ReceivedPlayer() { mixin(MGF("mReceivedPlayer", "Function Engine.PlayerController.ReceivedPlayer")); }
+			ScriptFunction RegisterPlayerDataStores() { mixin(MGF("mRegisterPlayerDataStores", "Function Engine.PlayerController.RegisterPlayerDataStores")); }
+			ScriptFunction FindConnectedPeerIndex() { mixin(MGF("mFindConnectedPeerIndex", "Function Engine.PlayerController.FindConnectedPeerIndex")); }
+			ScriptFunction AddPeer() { mixin(MGF("mAddPeer", "Function Engine.PlayerController.AddPeer")); }
+			ScriptFunction RemovePeer() { mixin(MGF("mRemovePeer", "Function Engine.PlayerController.RemovePeer")); }
+			ScriptFunction ServerAddPeer() { mixin(MGF("mServerAddPeer", "Function Engine.PlayerController.ServerAddPeer")); }
+			ScriptFunction ServerRemovePeer() { mixin(MGF("mServerRemovePeer", "Function Engine.PlayerController.ServerRemovePeer")); }
+			ScriptFunction ClientUpdateBestNextHosts() { mixin(MGF("mClientUpdateBestNextHosts", "Function Engine.PlayerController.ClientUpdateBestNextHosts")); }
+			ScriptFunction NotifyPeerDisconnectHost() { mixin(MGF("mNotifyPeerDisconnectHost", "Function Engine.PlayerController.NotifyPeerDisconnectHost")); }
+			ScriptFunction IsBestHostPeer() { mixin(MGF("mIsBestHostPeer", "Function Engine.PlayerController.IsBestHostPeer")); }
+			ScriptFunction MigrateNewHost() { mixin(MGF("mMigrateNewHost", "Function Engine.PlayerController.MigrateNewHost")); }
+			ScriptFunction OnEndGameForHostMigrate() { mixin(MGF("mOnEndGameForHostMigrate", "Function Engine.PlayerController.OnEndGameForHostMigrate")); }
+			ScriptFunction GetRegisteredPlayersInSession() { mixin(MGF("mGetRegisteredPlayersInSession", "Function Engine.PlayerController.GetRegisteredPlayersInSession")); }
+			ScriptFunction RemoveMissingPeersFromSession() { mixin(MGF("mRemoveMissingPeersFromSession", "Function Engine.PlayerController.RemoveMissingPeersFromSession")); }
+			ScriptFunction OnUnregisterPlayerCompleteForMigrate() { mixin(MGF("mOnUnregisterPlayerCompleteForMigrate", "Function Engine.PlayerController.OnUnregisterPlayerCompleteForMigrate")); }
+			ScriptFunction OnHostMigratedOnlineGame() { mixin(MGF("mOnHostMigratedOnlineGame", "Function Engine.PlayerController.OnHostMigratedOnlineGame")); }
+			ScriptFunction GetCurrentSearchClass() { mixin(MGF("mGetCurrentSearchClass", "Function Engine.PlayerController.GetCurrentSearchClass")); }
+			ScriptFunction PeerDesignatedAsHost() { mixin(MGF("mPeerDesignatedAsHost", "Function Engine.PlayerController.PeerDesignatedAsHost")); }
+			ScriptFunction PeerTravelAsHost() { mixin(MGF("mPeerTravelAsHost", "Function Engine.PlayerController.PeerTravelAsHost")); }
+			ScriptFunction TellPeerToTravel() { mixin(MGF("mTellPeerToTravel", "Function Engine.PlayerController.TellPeerToTravel")); }
+			ScriptFunction TellPeerToTravelToSession() { mixin(MGF("mTellPeerToTravelToSession", "Function Engine.PlayerController.TellPeerToTravelToSession")); }
+			ScriptFunction PeerReceivedMigratedSession() { mixin(MGF("mPeerReceivedMigratedSession", "Function Engine.PlayerController.PeerReceivedMigratedSession")); }
+			ScriptFunction OnEndGameForJoinMigrate() { mixin(MGF("mOnEndGameForJoinMigrate", "Function Engine.PlayerController.OnEndGameForJoinMigrate")); }
+			ScriptFunction OnJoinMigratedGame() { mixin(MGF("mOnJoinMigratedGame", "Function Engine.PlayerController.OnJoinMigratedGame")); }
+			ScriptFunction PreRender() { mixin(MGF("mPreRender", "Function Engine.PlayerController.PreRender")); }
+			ScriptFunction ResetTimeMargin() { mixin(MGF("mResetTimeMargin", "Function Engine.PlayerController.ResetTimeMargin")); }
+			ScriptFunction ServerShortTimeout() { mixin(MGF("mServerShortTimeout", "Function Engine.PlayerController.ServerShortTimeout")); }
+			ScriptFunction ServerGivePawn() { mixin(MGF("mServerGivePawn", "Function Engine.PlayerController.ServerGivePawn")); }
+			ScriptFunction KickWarning() { mixin(MGF("mKickWarning", "Function Engine.PlayerController.KickWarning")); }
+			ScriptFunction AddCheats() { mixin(MGF("mAddCheats", "Function Engine.PlayerController.AddCheats")); }
+			ScriptFunction EnableCheats() { mixin(MGF("mEnableCheats", "Function Engine.PlayerController.EnableCheats")); }
+			ScriptFunction SpawnDefaultHUD() { mixin(MGF("mSpawnDefaultHUD", "Function Engine.PlayerController.SpawnDefaultHUD")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.PlayerController.Reset")); }
+			ScriptFunction ClientReset() { mixin(MGF("mClientReset", "Function Engine.PlayerController.ClientReset")); }
+			ScriptFunction CleanOutSavedMoves() { mixin(MGF("mCleanOutSavedMoves", "Function Engine.PlayerController.CleanOutSavedMoves")); }
+			ScriptFunction PreControllerIdChange() { mixin(MGF("mPreControllerIdChange", "Function Engine.PlayerController.PreControllerIdChange")); }
+			ScriptFunction PostControllerIdChange() { mixin(MGF("mPostControllerIdChange", "Function Engine.PlayerController.PostControllerIdChange")); }
+			ScriptFunction GetOnlineSubsystem() { mixin(MGF("mGetOnlineSubsystem", "Function Engine.PlayerController.GetOnlineSubsystem")); }
+			ScriptFunction InitInputSystem() { mixin(MGF("mInitInputSystem", "Function Engine.PlayerController.InitInputSystem")); }
+			ScriptFunction ClientInitializeDataStores() { mixin(MGF("mClientInitializeDataStores", "Function Engine.PlayerController.ClientInitializeDataStores")); }
+			ScriptFunction RegisterCustomPlayerDataStores() { mixin(MGF("mRegisterCustomPlayerDataStores", "Function Engine.PlayerController.RegisterCustomPlayerDataStores")); }
+			ScriptFunction RegisterStandardPlayerDataStores() { mixin(MGF("mRegisterStandardPlayerDataStores", "Function Engine.PlayerController.RegisterStandardPlayerDataStores")); }
+			ScriptFunction UnregisterPlayerDataStores() { mixin(MGF("mUnregisterPlayerDataStores", "Function Engine.PlayerController.UnregisterPlayerDataStores")); }
+			ScriptFunction UnregisterStandardPlayerDataStores() { mixin(MGF("mUnregisterStandardPlayerDataStores", "Function Engine.PlayerController.UnregisterStandardPlayerDataStores")); }
+			ScriptFunction ReloadProfileSettings() { mixin(MGF("mReloadProfileSettings", "Function Engine.PlayerController.ReloadProfileSettings")); }
+			ScriptFunction SetRumbleScale() { mixin(MGF("mSetRumbleScale", "Function Engine.PlayerController.SetRumbleScale")); }
+			ScriptFunction IsControllerTiltActive() { mixin(MGF("mIsControllerTiltActive", "Function Engine.PlayerController.IsControllerTiltActive")); }
+			ScriptFunction SetControllerTiltDesiredIfAvailable() { mixin(MGF("mSetControllerTiltDesiredIfAvailable", "Function Engine.PlayerController.SetControllerTiltDesiredIfAvailable")); }
+			ScriptFunction SetControllerTiltActive() { mixin(MGF("mSetControllerTiltActive", "Function Engine.PlayerController.SetControllerTiltActive")); }
+			ScriptFunction SetOnlyUseControllerTiltInput() { mixin(MGF("mSetOnlyUseControllerTiltInput", "Function Engine.PlayerController.SetOnlyUseControllerTiltInput")); }
+			ScriptFunction SetUseTiltForwardAndBack() { mixin(MGF("mSetUseTiltForwardAndBack", "Function Engine.PlayerController.SetUseTiltForwardAndBack")); }
+			ScriptFunction IsKeyboardAvailable() { mixin(MGF("mIsKeyboardAvailable", "Function Engine.PlayerController.IsKeyboardAvailable")); }
+			ScriptFunction IsMouseAvailable() { mixin(MGF("mIsMouseAvailable", "Function Engine.PlayerController.IsMouseAvailable")); }
+			ScriptFunction ClientGotoState() { mixin(MGF("mClientGotoState", "Function Engine.PlayerController.ClientGotoState")); }
+			ScriptFunction AskForPawn() { mixin(MGF("mAskForPawn", "Function Engine.PlayerController.AskForPawn")); }
+			ScriptFunction GivePawn() { mixin(MGF("mGivePawn", "Function Engine.PlayerController.GivePawn")); }
+			ScriptFunction Possess() { mixin(MGF("mPossess", "Function Engine.PlayerController.Possess")); }
+			ScriptFunction AcknowledgePossession() { mixin(MGF("mAcknowledgePossession", "Function Engine.PlayerController.AcknowledgePossession")); }
+			ScriptFunction ServerAcknowledgePossession() { mixin(MGF("mServerAcknowledgePossession", "Function Engine.PlayerController.ServerAcknowledgePossession")); }
+			ScriptFunction UnPossess() { mixin(MGF("mUnPossess", "Function Engine.PlayerController.UnPossess")); }
+			ScriptFunction PawnDied() { mixin(MGF("mPawnDied", "Function Engine.PlayerController.PawnDied")); }
+			ScriptFunction ClientSetHUD() { mixin(MGF("mClientSetHUD", "Function Engine.PlayerController.ClientSetHUD")); }
+			ScriptFunction HandlePickup() { mixin(MGF("mHandlePickup", "Function Engine.PlayerController.HandlePickup")); }
+			ScriptFunction CleanupPRI() { mixin(MGF("mCleanupPRI", "Function Engine.PlayerController.CleanupPRI")); }
+			ScriptFunction ReceiveLocalizedMessage() { mixin(MGF("mReceiveLocalizedMessage", "Function Engine.PlayerController.ReceiveLocalizedMessage")); }
+			ScriptFunction ClientPlaySound() { mixin(MGF("mClientPlaySound", "Function Engine.PlayerController.ClientPlaySound")); }
+			ScriptFunction HearSoundFinished() { mixin(MGF("mHearSoundFinished", "Function Engine.PlayerController.HearSoundFinished")); }
+			ScriptFunction GetPooledAudioComponent() { mixin(MGF("mGetPooledAudioComponent", "Function Engine.PlayerController.GetPooledAudioComponent")); }
+			ScriptFunction ClientHearSound() { mixin(MGF("mClientHearSound", "Function Engine.PlayerController.ClientHearSound")); }
+			ScriptFunction IsClosestLocalPlayerToActor() { mixin(MGF("mIsClosestLocalPlayerToActor", "Function Engine.PlayerController.IsClosestLocalPlayerToActor")); }
+			ScriptFunction Kismet_ClientPlaySound() { mixin(MGF("mKismet_ClientPlaySound", "Function Engine.PlayerController.Kismet_ClientPlaySound")); }
+			ScriptFunction Kismet_ClientStopSound() { mixin(MGF("mKismet_ClientStopSound", "Function Engine.PlayerController.Kismet_ClientStopSound")); }
+			ScriptFunction ClientPlayActorFaceFXAnim() { mixin(MGF("mClientPlayActorFaceFXAnim", "Function Engine.PlayerController.ClientPlayActorFaceFXAnim")); }
+			ScriptFunction ClientMessage() { mixin(MGF("mClientMessage", "Function Engine.PlayerController.ClientMessage")); }
+			ScriptFunction CanCommunicate() { mixin(MGF("mCanCommunicate", "Function Engine.PlayerController.CanCommunicate")); }
+			ScriptFunction AllowTTSMessageFrom() { mixin(MGF("mAllowTTSMessageFrom", "Function Engine.PlayerController.AllowTTSMessageFrom")); }
+			ScriptFunction CreateTTSSoundCue() { mixin(MGF("mCreateTTSSoundCue", "Function Engine.PlayerController.CreateTTSSoundCue")); }
+			ScriptFunction Talk() { mixin(MGF("mTalk", "Function Engine.PlayerController.Talk")); }
+			ScriptFunction TeamTalk() { mixin(MGF("mTeamTalk", "Function Engine.PlayerController.TeamTalk")); }
+			ScriptFunction SpeakTTS() { mixin(MGF("mSpeakTTS", "Function Engine.PlayerController.SpeakTTS")); }
+			ScriptFunction TeamMessage() { mixin(MGF("mTeamMessage", "Function Engine.PlayerController.TeamMessage")); }
+			ScriptFunction PlayBeepSound() { mixin(MGF("mPlayBeepSound", "Function Engine.PlayerController.PlayBeepSound")); }
+			ScriptFunction RegisterOnlineDelegates() { mixin(MGF("mRegisterOnlineDelegates", "Function Engine.PlayerController.RegisterOnlineDelegates")); }
+			ScriptFunction OnPartyMemberListChanged() { mixin(MGF("mOnPartyMemberListChanged", "Function Engine.PlayerController.OnPartyMemberListChanged")); }
+			ScriptFunction OnPartyMembersInfoChanged() { mixin(MGF("mOnPartyMembersInfoChanged", "Function Engine.PlayerController.OnPartyMembersInfoChanged")); }
+			ScriptFunction ClearOnlineDelegates() { mixin(MGF("mClearOnlineDelegates", "Function Engine.PlayerController.ClearOnlineDelegates")); }
+			ScriptFunction CleanupPawn() { mixin(MGF("mCleanupPawn", "Function Engine.PlayerController.CleanupPawn")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.PlayerController.Destroyed")); }
+			ScriptFunction FixFOV() { mixin(MGF("mFixFOV", "Function Engine.PlayerController.FixFOV")); }
+			ScriptFunction SetFOV() { mixin(MGF("mSetFOV", "Function Engine.PlayerController.SetFOV")); }
+			ScriptFunction ResetFOV() { mixin(MGF("mResetFOV", "Function Engine.PlayerController.ResetFOV")); }
+			ScriptFunction FOV() { mixin(MGF("mFOV", "Function Engine.PlayerController.FOV")); }
+			ScriptFunction AllowTextMessage() { mixin(MGF("mAllowTextMessage", "Function Engine.PlayerController.AllowTextMessage")); }
+			ScriptFunction Say() { mixin(MGF("mSay", "Function Engine.PlayerController.Say")); }
+			ScriptFunction ServerSay() { mixin(MGF("mServerSay", "Function Engine.PlayerController.ServerSay")); }
+			ScriptFunction ClientAdminMessage() { mixin(MGF("mClientAdminMessage", "Function Engine.PlayerController.ClientAdminMessage")); }
+			ScriptFunction TeamSay() { mixin(MGF("mTeamSay", "Function Engine.PlayerController.TeamSay")); }
+			ScriptFunction ServerTeamSay() { mixin(MGF("mServerTeamSay", "Function Engine.PlayerController.ServerTeamSay")); }
+			ScriptFunction PreClientTravel() { mixin(MGF("mPreClientTravel", "Function Engine.PlayerController.PreClientTravel")); }
+			ScriptFunction GetUIController() { mixin(MGF("mGetUIController", "Function Engine.PlayerController.GetUIController")); }
+			ScriptFunction Camera() { mixin(MGF("mCamera", "Function Engine.PlayerController.Camera")); }
+			ScriptFunction ServerCamera() { mixin(MGF("mServerCamera", "Function Engine.PlayerController.ServerCamera")); }
+			ScriptFunction ClientSetCameraMode() { mixin(MGF("mClientSetCameraMode", "Function Engine.PlayerController.ClientSetCameraMode")); }
+			ScriptFunction SetCameraMode() { mixin(MGF("mSetCameraMode", "Function Engine.PlayerController.SetCameraMode")); }
+			ScriptFunction ResetCameraMode() { mixin(MGF("mResetCameraMode", "Function Engine.PlayerController.ResetCameraMode")); }
+			ScriptFunction ClientSetCameraFade() { mixin(MGF("mClientSetCameraFade", "Function Engine.PlayerController.ClientSetCameraFade")); }
+			ScriptFunction UsingFirstPersonCamera() { mixin(MGF("mUsingFirstPersonCamera", "Function Engine.PlayerController.UsingFirstPersonCamera")); }
+			ScriptFunction ForceDeathUpdate() { mixin(MGF("mForceDeathUpdate", "Function Engine.PlayerController.ForceDeathUpdate")); }
+			ScriptFunction DualServerMove() { mixin(MGF("mDualServerMove", "Function Engine.PlayerController.DualServerMove")); }
+			ScriptFunction OldServerMove() { mixin(MGF("mOldServerMove", "Function Engine.PlayerController.OldServerMove")); }
+			ScriptFunction GetServerMoveDeltaTime() { mixin(MGF("mGetServerMoveDeltaTime", "Function Engine.PlayerController.GetServerMoveDeltaTime")); }
+			ScriptFunction ServerMoveHandleClientError() { mixin(MGF("mServerMoveHandleClientError", "Function Engine.PlayerController.ServerMoveHandleClientError")); }
+			ScriptFunction ServerMove() { mixin(MGF("mServerMove", "Function Engine.PlayerController.ServerMove")); }
+			ScriptFunction SendClientAdjustment() { mixin(MGF("mSendClientAdjustment", "Function Engine.PlayerController.SendClientAdjustment")); }
+			ScriptFunction ServerDrive() { mixin(MGF("mServerDrive", "Function Engine.PlayerController.ServerDrive")); }
+			ScriptFunction ProcessDrive() { mixin(MGF("mProcessDrive", "Function Engine.PlayerController.ProcessDrive")); }
+			ScriptFunction ProcessMove() { mixin(MGF("mProcessMove", "Function Engine.PlayerController.ProcessMove")); }
+			ScriptFunction MoveAutonomous() { mixin(MGF("mMoveAutonomous", "Function Engine.PlayerController.MoveAutonomous")); }
+			ScriptFunction VeryShortClientAdjustPosition() { mixin(MGF("mVeryShortClientAdjustPosition", "Function Engine.PlayerController.VeryShortClientAdjustPosition")); }
+			ScriptFunction ShortClientAdjustPosition() { mixin(MGF("mShortClientAdjustPosition", "Function Engine.PlayerController.ShortClientAdjustPosition")); }
+			ScriptFunction ClientCapBandwidth() { mixin(MGF("mClientCapBandwidth", "Function Engine.PlayerController.ClientCapBandwidth")); }
+			ScriptFunction ClientAckGoodMove() { mixin(MGF("mClientAckGoodMove", "Function Engine.PlayerController.ClientAckGoodMove")); }
+			ScriptFunction UpdatePing() { mixin(MGF("mUpdatePing", "Function Engine.PlayerController.UpdatePing")); }
+			ScriptFunction ClientAdjustPosition() { mixin(MGF("mClientAdjustPosition", "Function Engine.PlayerController.ClientAdjustPosition")); }
+			ScriptFunction LongClientAdjustPosition() { mixin(MGF("mLongClientAdjustPosition", "Function Engine.PlayerController.LongClientAdjustPosition")); }
+			ScriptFunction UpdateStateFromAdjustment() { mixin(MGF("mUpdateStateFromAdjustment", "Function Engine.PlayerController.UpdateStateFromAdjustment")); }
+			ScriptFunction ServerUpdatePing() { mixin(MGF("mServerUpdatePing", "Function Engine.PlayerController.ServerUpdatePing")); }
+			ScriptFunction ClearAckedMoves() { mixin(MGF("mClearAckedMoves", "Function Engine.PlayerController.ClearAckedMoves")); }
+			ScriptFunction ClientUpdatePosition() { mixin(MGF("mClientUpdatePosition", "Function Engine.PlayerController.ClientUpdatePosition")); }
+			ScriptFunction GetFreeMove() { mixin(MGF("mGetFreeMove", "Function Engine.PlayerController.GetFreeMove")); }
+			ScriptFunction CompressAccel() { mixin(MGF("mCompressAccel", "Function Engine.PlayerController.CompressAccel")); }
+			ScriptFunction ReplicateMove() { mixin(MGF("mReplicateMove", "Function Engine.PlayerController.ReplicateMove")); }
+			ScriptFunction CallServerMove() { mixin(MGF("mCallServerMove", "Function Engine.PlayerController.CallServerMove")); }
+			ScriptFunction HandleWalking() { mixin(MGF("mHandleWalking", "Function Engine.PlayerController.HandleWalking")); }
+			ScriptFunction ServerRestartGame() { mixin(MGF("mServerRestartGame", "Function Engine.PlayerController.ServerRestartGame")); }
+			ScriptFunction RestartLevel() { mixin(MGF("mRestartLevel", "Function Engine.PlayerController.RestartLevel")); }
+			ScriptFunction PauseRumbleForAllPlayers() { mixin(MGF("mPauseRumbleForAllPlayers", "Function Engine.PlayerController.PauseRumbleForAllPlayers")); }
+			ScriptFunction CanUnpause() { mixin(MGF("mCanUnpause", "Function Engine.PlayerController.CanUnpause")); }
+			ScriptFunction SetPause() { mixin(MGF("mSetPause", "Function Engine.PlayerController.SetPause")); }
+			ScriptFunction IsPaused() { mixin(MGF("mIsPaused", "Function Engine.PlayerController.IsPaused")); }
+			ScriptFunction Pause() { mixin(MGF("mPause", "Function Engine.PlayerController.Pause")); }
+			ScriptFunction ServerPause() { mixin(MGF("mServerPause", "Function Engine.PlayerController.ServerPause")); }
+			ScriptFunction ConditionalPause() { mixin(MGF("mConditionalPause", "Function Engine.PlayerController.ConditionalPause")); }
+			ScriptFunction ThrowWeapon() { mixin(MGF("mThrowWeapon", "Function Engine.PlayerController.ThrowWeapon")); }
+			ScriptFunction ServerThrowWeapon() { mixin(MGF("mServerThrowWeapon", "Function Engine.PlayerController.ServerThrowWeapon")); }
+			ScriptFunction PrevWeapon() { mixin(MGF("mPrevWeapon", "Function Engine.PlayerController.PrevWeapon")); }
+			ScriptFunction NextWeapon() { mixin(MGF("mNextWeapon", "Function Engine.PlayerController.NextWeapon")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function Engine.PlayerController.StartFire")); }
+			ScriptFunction StopFire() { mixin(MGF("mStopFire", "Function Engine.PlayerController.StopFire")); }
+			ScriptFunction StartAltFire() { mixin(MGF("mStartAltFire", "Function Engine.PlayerController.StartAltFire")); }
+			ScriptFunction StopAltFire() { mixin(MGF("mStopAltFire", "Function Engine.PlayerController.StopAltFire")); }
+			ScriptFunction GetTriggerUseList() { mixin(MGF("mGetTriggerUseList", "Function Engine.PlayerController.GetTriggerUseList")); }
+			ScriptFunction Use() { mixin(MGF("mUse", "Function Engine.PlayerController.Use")); }
+			ScriptFunction ServerUse() { mixin(MGF("mServerUse", "Function Engine.PlayerController.ServerUse")); }
+			ScriptFunction PerformedUseAction() { mixin(MGF("mPerformedUseAction", "Function Engine.PlayerController.PerformedUseAction")); }
+			ScriptFunction FindVehicleToDrive() { mixin(MGF("mFindVehicleToDrive", "Function Engine.PlayerController.FindVehicleToDrive")); }
+			ScriptFunction TriggerInteracted() { mixin(MGF("mTriggerInteracted", "Function Engine.PlayerController.TriggerInteracted")); }
+			ScriptFunction Suicide() { mixin(MGF("mSuicide", "Function Engine.PlayerController.Suicide")); }
+			ScriptFunction ServerSuicide() { mixin(MGF("mServerSuicide", "Function Engine.PlayerController.ServerSuicide")); }
+			ScriptFunction SetName() { mixin(MGF("mSetName", "Function Engine.PlayerController.SetName")); }
+			ScriptFunction ServerChangeName() { mixin(MGF("mServerChangeName", "Function Engine.PlayerController.ServerChangeName")); }
+			ScriptFunction SwitchTeam() { mixin(MGF("mSwitchTeam", "Function Engine.PlayerController.SwitchTeam")); }
+			ScriptFunction ChangeTeam() { mixin(MGF("mChangeTeam", "Function Engine.PlayerController.ChangeTeam")); }
+			ScriptFunction ServerChangeTeam() { mixin(MGF("mServerChangeTeam", "Function Engine.PlayerController.ServerChangeTeam")); }
+			ScriptFunction ClientSetProgressMessage() { mixin(MGF("mClientSetProgressMessage", "Function Engine.PlayerController.ClientSetProgressMessage")); }
+			ScriptFunction Restart() { mixin(MGF("mRestart", "Function Engine.PlayerController.Restart")); }
+			ScriptFunction ServerNotifyLoadedWorld() { mixin(MGF("mServerNotifyLoadedWorld", "Function Engine.PlayerController.ServerNotifyLoadedWorld")); }
+			ScriptFunction NotifyLoadedWorld() { mixin(MGF("mNotifyLoadedWorld", "Function Engine.PlayerController.NotifyLoadedWorld")); }
+			ScriptFunction HasClientLoadedCurrentWorld() { mixin(MGF("mHasClientLoadedCurrentWorld", "Function Engine.PlayerController.HasClientLoadedCurrentWorld")); }
+			ScriptFunction ForceSingleNetUpdateFor() { mixin(MGF("mForceSingleNetUpdateFor", "Function Engine.PlayerController.ForceSingleNetUpdateFor")); }
+			ScriptFunction EnterStartState() { mixin(MGF("mEnterStartState", "Function Engine.PlayerController.EnterStartState")); }
+			ScriptFunction ClientRestart() { mixin(MGF("mClientRestart", "Function Engine.PlayerController.ClientRestart")); }
+			ScriptFunction GameHasEnded() { mixin(MGF("mGameHasEnded", "Function Engine.PlayerController.GameHasEnded")); }
+			ScriptFunction ClientGameEnded() { mixin(MGF("mClientGameEnded", "Function Engine.PlayerController.ClientGameEnded")); }
+			ScriptFunction NotifyChangedWeapon() { mixin(MGF("mNotifyChangedWeapon", "Function Engine.PlayerController.NotifyChangedWeapon")); }
+			ScriptFunction PlayerTick() { mixin(MGF("mPlayerTick", "Function Engine.PlayerController.PlayerTick")); }
+			ScriptFunction PlayerMove() { mixin(MGF("mPlayerMove", "Function Engine.PlayerController.PlayerMove")); }
+			ScriptFunction AimingHelp() { mixin(MGF("mAimingHelp", "Function Engine.PlayerController.AimingHelp")); }
+			ScriptFunction CameraLookAtFinished() { mixin(MGF("mCameraLookAtFinished", "Function Engine.PlayerController.CameraLookAtFinished")); }
+			ScriptFunction GetAdjustedAimFor() { mixin(MGF("mGetAdjustedAimFor", "Function Engine.PlayerController.GetAdjustedAimFor")); }
+			ScriptFunction AimHelpDot() { mixin(MGF("mAimHelpDot", "Function Engine.PlayerController.AimHelpDot")); }
+			ScriptFunction NotifyLanded() { mixin(MGF("mNotifyLanded", "Function Engine.PlayerController.NotifyLanded")); }
+			ScriptFunction AdjustFOV() { mixin(MGF("mAdjustFOV", "Function Engine.PlayerController.AdjustFOV")); }
+			ScriptFunction IsLocalPlayerController() { mixin(MGF("mIsLocalPlayerController", "Function Engine.PlayerController.IsLocalPlayerController")); }
+			ScriptFunction SetViewTarget() { mixin(MGF("mSetViewTarget", "Function Engine.PlayerController.SetViewTarget")); }
+			ScriptFunction SetViewTargetWithBlend() { mixin(MGF("mSetViewTargetWithBlend", "Function Engine.PlayerController.SetViewTargetWithBlend")); }
+			ScriptFunction ClientSetViewTarget() { mixin(MGF("mClientSetViewTarget", "Function Engine.PlayerController.ClientSetViewTarget")); }
+			ScriptFunction ServerVerifyViewTarget() { mixin(MGF("mServerVerifyViewTarget", "Function Engine.PlayerController.ServerVerifyViewTarget")); }
+			ScriptFunction SpawnPlayerCamera() { mixin(MGF("mSpawnPlayerCamera", "Function Engine.PlayerController.SpawnPlayerCamera")); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF("mGetPlayerViewPoint", "Function Engine.PlayerController.GetPlayerViewPoint")); }
+			ScriptFunction ViewShake() { mixin(MGF("mViewShake", "Function Engine.PlayerController.ViewShake")); }
+			ScriptFunction UpdateRotation() { mixin(MGF("mUpdateRotation", "Function Engine.PlayerController.UpdateRotation")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function Engine.PlayerController.ProcessViewRotation")); }
+			ScriptFunction LimitViewRotation() { mixin(MGF("mLimitViewRotation", "Function Engine.PlayerController.LimitViewRotation")); }
+			ScriptFunction CheckJumpOrDuck() { mixin(MGF("mCheckJumpOrDuck", "Function Engine.PlayerController.CheckJumpOrDuck")); }
+			ScriptFunction IsSpectating() { mixin(MGF("mIsSpectating", "Function Engine.PlayerController.IsSpectating")); }
+			ScriptFunction ServerSetSpectatorLocation() { mixin(MGF("mServerSetSpectatorLocation", "Function Engine.PlayerController.ServerSetSpectatorLocation")); }
+			ScriptFunction ServerViewNextPlayer() { mixin(MGF("mServerViewNextPlayer", "Function Engine.PlayerController.ServerViewNextPlayer")); }
+			ScriptFunction ServerViewPrevPlayer() { mixin(MGF("mServerViewPrevPlayer", "Function Engine.PlayerController.ServerViewPrevPlayer")); }
+			ScriptFunction ViewAPlayer() { mixin(MGF("mViewAPlayer", "Function Engine.PlayerController.ViewAPlayer")); }
+			ScriptFunction ServerViewSelf() { mixin(MGF("mServerViewSelf", "Function Engine.PlayerController.ServerViewSelf")); }
+			ScriptFunction IsWaiting() { mixin(MGF("mIsWaiting", "Function Engine.PlayerController.IsWaiting")); }
+			ScriptFunction CanRestartPlayer() { mixin(MGF("mCanRestartPlayer", "Function Engine.PlayerController.CanRestartPlayer")); }
+			ScriptFunction DrawHUD() { mixin(MGF("mDrawHUD", "Function Engine.PlayerController.DrawHUD")); }
+			ScriptFunction OnToggleInput() { mixin(MGF("mOnToggleInput", "Function Engine.PlayerController.OnToggleInput")); }
+			ScriptFunction ClientIgnoreMoveInput() { mixin(MGF("mClientIgnoreMoveInput", "Function Engine.PlayerController.ClientIgnoreMoveInput")); }
+			ScriptFunction ClientIgnoreLookInput() { mixin(MGF("mClientIgnoreLookInput", "Function Engine.PlayerController.ClientIgnoreLookInput")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function Engine.PlayerController.DisplayDebug")); }
+			ScriptFunction OnDrawText() { mixin(MGF("mOnDrawText", "Function Engine.PlayerController.OnDrawText")); }
+			ScriptFunction ClientDrawKismetText() { mixin(MGF("mClientDrawKismetText", "Function Engine.PlayerController.ClientDrawKismetText")); }
+			ScriptFunction ClientClearKismetText() { mixin(MGF("mClientClearKismetText", "Function Engine.PlayerController.ClientClearKismetText")); }
+			ScriptFunction OnSetCameraTarget() { mixin(MGF("mOnSetCameraTarget", "Function Engine.PlayerController.OnSetCameraTarget")); }
+			ScriptFunction OnToggleHUD() { mixin(MGF("mOnToggleHUD", "Function Engine.PlayerController.OnToggleHUD")); }
+			ScriptFunction NotifyTakeHit() { mixin(MGF("mNotifyTakeHit", "Function Engine.PlayerController.NotifyTakeHit")); }
+			ScriptFunction OnForceFeedback() { mixin(MGF("mOnForceFeedback", "Function Engine.PlayerController.OnForceFeedback")); }
+			ScriptFunction ClientStopForceFeedbackWaveform() { mixin(MGF("mClientStopForceFeedbackWaveform", "Function Engine.PlayerController.ClientStopForceFeedbackWaveform")); }
+			ScriptFunction PlayRumble() { mixin(MGF("mPlayRumble", "Function Engine.PlayerController.PlayRumble")); }
+			ScriptFunction ClientPlayForceFeedbackWaveform() { mixin(MGF("mClientPlayForceFeedbackWaveform", "Function Engine.PlayerController.ClientPlayForceFeedbackWaveform")); }
+			ScriptFunction IsForceFeedbackAllowed() { mixin(MGF("mIsForceFeedbackAllowed", "Function Engine.PlayerController.IsForceFeedbackAllowed")); }
+			ScriptFunction OnToggleCinematicMode() { mixin(MGF("mOnToggleCinematicMode", "Function Engine.PlayerController.OnToggleCinematicMode")); }
+			ScriptFunction SetCinematicMode() { mixin(MGF("mSetCinematicMode", "Function Engine.PlayerController.SetCinematicMode")); }
+			ScriptFunction ClientSetCinematicMode() { mixin(MGF("mClientSetCinematicMode", "Function Engine.PlayerController.ClientSetCinematicMode")); }
+			ScriptFunction IgnoreMoveInput() { mixin(MGF("mIgnoreMoveInput", "Function Engine.PlayerController.IgnoreMoveInput")); }
+			ScriptFunction IsMoveInputIgnored() { mixin(MGF("mIsMoveInputIgnored", "Function Engine.PlayerController.IsMoveInputIgnored")); }
+			ScriptFunction IgnoreLookInput() { mixin(MGF("mIgnoreLookInput", "Function Engine.PlayerController.IgnoreLookInput")); }
+			ScriptFunction IsLookInputIgnored() { mixin(MGF("mIsLookInputIgnored", "Function Engine.PlayerController.IsLookInputIgnored")); }
+			ScriptFunction ResetPlayerMovementInput() { mixin(MGF("mResetPlayerMovementInput", "Function Engine.PlayerController.ResetPlayerMovementInput")); }
+			ScriptFunction OnConsoleCommand() { mixin(MGF("mOnConsoleCommand", "Function Engine.PlayerController.OnConsoleCommand")); }
+			ScriptFunction ClientForceGarbageCollection() { mixin(MGF("mClientForceGarbageCollection", "Function Engine.PlayerController.ClientForceGarbageCollection")); }
+			ScriptFunction LevelStreamingStatusChanged() { mixin(MGF("mLevelStreamingStatusChanged", "Function Engine.PlayerController.LevelStreamingStatusChanged")); }
+			ScriptFunction ClientUpdateLevelStreamingStatus() { mixin(MGF("mClientUpdateLevelStreamingStatus", "Function Engine.PlayerController.ClientUpdateLevelStreamingStatus")); }
+			ScriptFunction ServerUpdateLevelVisibility() { mixin(MGF("mServerUpdateLevelVisibility", "Function Engine.PlayerController.ServerUpdateLevelVisibility")); }
+			ScriptFunction ClientPrepareMapChange() { mixin(MGF("mClientPrepareMapChange", "Function Engine.PlayerController.ClientPrepareMapChange")); }
+			ScriptFunction DelayedPrepareMapChange() { mixin(MGF("mDelayedPrepareMapChange", "Function Engine.PlayerController.DelayedPrepareMapChange")); }
+			ScriptFunction ClientCommitMapChange() { mixin(MGF("mClientCommitMapChange", "Function Engine.PlayerController.ClientCommitMapChange")); }
+			ScriptFunction ClientCancelPendingMapChange() { mixin(MGF("mClientCancelPendingMapChange", "Function Engine.PlayerController.ClientCancelPendingMapChange")); }
+			ScriptFunction ClientFlushLevelStreaming() { mixin(MGF("mClientFlushLevelStreaming", "Function Engine.PlayerController.ClientFlushLevelStreaming")); }
+			ScriptFunction ClientSetBlockOnAsyncLoading() { mixin(MGF("mClientSetBlockOnAsyncLoading", "Function Engine.PlayerController.ClientSetBlockOnAsyncLoading")); }
+			ScriptFunction IsPlayerMuted() { mixin(MGF("mIsPlayerMuted", "Function Engine.PlayerController.IsPlayerMuted")); }
+			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF("mGetSeamlessTravelActorList", "Function Engine.PlayerController.GetSeamlessTravelActorList")); }
+			ScriptFunction SeamlessTravelTo() { mixin(MGF("mSeamlessTravelTo", "Function Engine.PlayerController.SeamlessTravelTo")); }
+			ScriptFunction SeamlessTravelFrom() { mixin(MGF("mSeamlessTravelFrom", "Function Engine.PlayerController.SeamlessTravelFrom")); }
+			ScriptFunction ClientSetOnlineStatus() { mixin(MGF("mClientSetOnlineStatus", "Function Engine.PlayerController.ClientSetOnlineStatus")); }
+			ScriptFunction GetPlayerControllerFromNetId() { mixin(MGF("mGetPlayerControllerFromNetId", "Function Engine.PlayerController.GetPlayerControllerFromNetId")); }
+			ScriptFunction ClientVoiceHandshakeComplete() { mixin(MGF("mClientVoiceHandshakeComplete", "Function Engine.PlayerController.ClientVoiceHandshakeComplete")); }
+			ScriptFunction ClientMutePlayer() { mixin(MGF("mClientMutePlayer", "Function Engine.PlayerController.ClientMutePlayer")); }
+			ScriptFunction ClientUnmutePlayer() { mixin(MGF("mClientUnmutePlayer", "Function Engine.PlayerController.ClientUnmutePlayer")); }
+			ScriptFunction GameplayMutePlayer() { mixin(MGF("mGameplayMutePlayer", "Function Engine.PlayerController.GameplayMutePlayer")); }
+			ScriptFunction GameplayUnmutePlayer() { mixin(MGF("mGameplayUnmutePlayer", "Function Engine.PlayerController.GameplayUnmutePlayer")); }
+			ScriptFunction ServerMutePlayer() { mixin(MGF("mServerMutePlayer", "Function Engine.PlayerController.ServerMutePlayer")); }
+			ScriptFunction ServerUnmutePlayer() { mixin(MGF("mServerUnmutePlayer", "Function Engine.PlayerController.ServerUnmutePlayer")); }
+			ScriptFunction NotifyDirectorControl() { mixin(MGF("mNotifyDirectorControl", "Function Engine.PlayerController.NotifyDirectorControl")); }
+			ScriptFunction SetShowSubtitles() { mixin(MGF("mSetShowSubtitles", "Function Engine.PlayerController.SetShowSubtitles")); }
+			ScriptFunction IsShowingSubtitles() { mixin(MGF("mIsShowingSubtitles", "Function Engine.PlayerController.IsShowingSubtitles")); }
+			ScriptFunction ClientWasKicked() { mixin(MGF("mClientWasKicked", "Function Engine.PlayerController.ClientWasKicked")); }
+			ScriptFunction ClientRegisterForArbitration() { mixin(MGF("mClientRegisterForArbitration", "Function Engine.PlayerController.ClientRegisterForArbitration")); }
+			ScriptFunction OnArbitrationRegisterComplete() { mixin(MGF("mOnArbitrationRegisterComplete", "Function Engine.PlayerController.OnArbitrationRegisterComplete")); }
+			ScriptFunction ServerRegisteredForArbitration() { mixin(MGF("mServerRegisteredForArbitration", "Function Engine.PlayerController.ServerRegisteredForArbitration")); }
+			ScriptFunction OnGameInviteAccepted() { mixin(MGF("mOnGameInviteAccepted", "Function Engine.PlayerController.OnGameInviteAccepted")); }
+			ScriptFunction InviteHasEnoughSpace() { mixin(MGF("mInviteHasEnoughSpace", "Function Engine.PlayerController.InviteHasEnoughSpace")); }
+			ScriptFunction CanAllPlayersPlayOnline() { mixin(MGF("mCanAllPlayersPlayOnline", "Function Engine.PlayerController.CanAllPlayersPlayOnline")); }
+			ScriptFunction ClearInviteDelegates() { mixin(MGF("mClearInviteDelegates", "Function Engine.PlayerController.ClearInviteDelegates")); }
+			ScriptFunction OnEndForInviteComplete() { mixin(MGF("mOnEndForInviteComplete", "Function Engine.PlayerController.OnEndForInviteComplete")); }
+			ScriptFunction OnDestroyForInviteComplete() { mixin(MGF("mOnDestroyForInviteComplete", "Function Engine.PlayerController.OnDestroyForInviteComplete")); }
+			ScriptFunction ModifyClientURL() { mixin(MGF("mModifyClientURL", "Function Engine.PlayerController.ModifyClientURL")); }
+			ScriptFunction OnInviteJoinComplete() { mixin(MGF("mOnInviteJoinComplete", "Function Engine.PlayerController.OnInviteJoinComplete")); }
+			ScriptFunction NotifyInviteFailed() { mixin(MGF("mNotifyInviteFailed", "Function Engine.PlayerController.NotifyInviteFailed")); }
+			ScriptFunction NotifyNotAllPlayersCanJoinInvite() { mixin(MGF("mNotifyNotAllPlayersCanJoinInvite", "Function Engine.PlayerController.NotifyNotAllPlayersCanJoinInvite")); }
+			ScriptFunction NotifyNotEnoughSpaceInInvite() { mixin(MGF("mNotifyNotEnoughSpaceInInvite", "Function Engine.PlayerController.NotifyNotEnoughSpaceInInvite")); }
+			ScriptFunction ClientArbitratedMatchEnded() { mixin(MGF("mClientArbitratedMatchEnded", "Function Engine.PlayerController.ClientArbitratedMatchEnded")); }
+			ScriptFunction ClientWriteOnlinePlayerScores() { mixin(MGF("mClientWriteOnlinePlayerScores", "Function Engine.PlayerController.ClientWriteOnlinePlayerScores")); }
+			ScriptFunction ClientWriteLeaderboardStats() { mixin(MGF("mClientWriteLeaderboardStats", "Function Engine.PlayerController.ClientWriteLeaderboardStats")); }
+			ScriptFunction ClientSetHostUniqueId() { mixin(MGF("mClientSetHostUniqueId", "Function Engine.PlayerController.ClientSetHostUniqueId")); }
+			ScriptFunction ClientStopNetworkedVoice() { mixin(MGF("mClientStopNetworkedVoice", "Function Engine.PlayerController.ClientStopNetworkedVoice")); }
+			ScriptFunction ClientStartNetworkedVoice() { mixin(MGF("mClientStartNetworkedVoice", "Function Engine.PlayerController.ClientStartNetworkedVoice")); }
+			ScriptFunction OnDestroy() { mixin(MGF("mOnDestroy", "Function Engine.PlayerController.OnDestroy")); }
+			ScriptFunction DrawDebugTextList() { mixin(MGF("mDrawDebugTextList", "Function Engine.PlayerController.DrawDebugTextList")); }
+			ScriptFunction AddDebugText() { mixin(MGF("mAddDebugText", "Function Engine.PlayerController.AddDebugText")); }
+			ScriptFunction RemoveDebugText() { mixin(MGF("mRemoveDebugText", "Function Engine.PlayerController.RemoveDebugText")); }
+			ScriptFunction RemoveAllDebugStrings() { mixin(MGF("mRemoveAllDebugStrings", "Function Engine.PlayerController.RemoveAllDebugStrings")); }
+			ScriptFunction ClientRegisterHostStatGuid() { mixin(MGF("mClientRegisterHostStatGuid", "Function Engine.PlayerController.ClientRegisterHostStatGuid")); }
+			ScriptFunction OnRegisterHostStatGuidComplete() { mixin(MGF("mOnRegisterHostStatGuidComplete", "Function Engine.PlayerController.OnRegisterHostStatGuidComplete")); }
+			ScriptFunction ServerRegisterClientStatGuid() { mixin(MGF("mServerRegisterClientStatGuid", "Function Engine.PlayerController.ServerRegisterClientStatGuid")); }
+			ScriptFunction ClientStartOnlineGame() { mixin(MGF("mClientStartOnlineGame", "Function Engine.PlayerController.ClientStartOnlineGame")); }
+			ScriptFunction ClientEndOnlineGame() { mixin(MGF("mClientEndOnlineGame", "Function Engine.PlayerController.ClientEndOnlineGame")); }
+			ScriptFunction CanViewUserCreatedContent() { mixin(MGF("mCanViewUserCreatedContent", "Function Engine.PlayerController.CanViewUserCreatedContent")); }
+			ScriptFunction IncrementNumberOfMatchesPlayed() { mixin(MGF("mIncrementNumberOfMatchesPlayed", "Function Engine.PlayerController.IncrementNumberOfMatchesPlayed")); }
+			ScriptFunction SoakPause() { mixin(MGF("mSoakPause", "Function Engine.PlayerController.SoakPause")); }
+			ScriptFunction ClientTravelToSession() { mixin(MGF("mClientTravelToSession", "Function Engine.PlayerController.ClientTravelToSession")); }
+			ScriptFunction OnJoinTravelToSessionComplete() { mixin(MGF("mOnJoinTravelToSessionComplete", "Function Engine.PlayerController.OnJoinTravelToSessionComplete")); }
+			ScriptFunction ClientReturnToParty() { mixin(MGF("mClientReturnToParty", "Function Engine.PlayerController.ClientReturnToParty")); }
+			ScriptFunction IsSplitscreenPlayer() { mixin(MGF("mIsSplitscreenPlayer", "Function Engine.PlayerController.IsSplitscreenPlayer")); }
+			ScriptFunction GetSplitscreenPlayerByIndex() { mixin(MGF("mGetSplitscreenPlayerByIndex", "Function Engine.PlayerController.GetSplitscreenPlayerByIndex")); }
+			ScriptFunction GetSplitscreenPlayerCount() { mixin(MGF("mGetSplitscreenPlayerCount", "Function Engine.PlayerController.GetSplitscreenPlayerCount")); }
+			ScriptFunction ClientControlMovieTexture() { mixin(MGF("mClientControlMovieTexture", "Function Engine.PlayerController.ClientControlMovieTexture")); }
+			ScriptFunction ClientSetForceMipLevelsToBeResident() { mixin(MGF("mClientSetForceMipLevelsToBeResident", "Function Engine.PlayerController.ClientSetForceMipLevelsToBeResident")); }
+			ScriptFunction ClientPrestreamTextures() { mixin(MGF("mClientPrestreamTextures", "Function Engine.PlayerController.ClientPrestreamTextures")); }
+			ScriptFunction IsPartyLeader() { mixin(MGF("mIsPartyLeader", "Function Engine.PlayerController.IsPartyLeader")); }
+			ScriptFunction GetPartyMapName() { mixin(MGF("mGetPartyMapName", "Function Engine.PlayerController.GetPartyMapName")); }
+			ScriptFunction GetPartyGameTypeName() { mixin(MGF("mGetPartyGameTypeName", "Function Engine.PlayerController.GetPartyGameTypeName")); }
+			ScriptFunction GetAchievementProgression() { mixin(MGF("mGetAchievementProgression", "Function Engine.PlayerController.GetAchievementProgression")); }
+			ScriptFunction OnFlyThroughHasEnded() { mixin(MGF("mOnFlyThroughHasEnded", "Function Engine.PlayerController.OnFlyThroughHasEnded")); }
+			ScriptFunction Sentinel_SetupForGamebasedTravelTheWorld() { mixin(MGF("mSentinel_SetupForGamebasedTravelTheWorld", "Function Engine.PlayerController.Sentinel_SetupForGamebasedTravelTheWorld")); }
+			ScriptFunction Sentinel_PreAcquireTravelTheWorldPoints() { mixin(MGF("mSentinel_PreAcquireTravelTheWorldPoints", "Function Engine.PlayerController.Sentinel_PreAcquireTravelTheWorldPoints")); }
+			ScriptFunction Sentinel_PostAcquireTravelTheWorldPoints() { mixin(MGF("mSentinel_PostAcquireTravelTheWorldPoints", "Function Engine.PlayerController.Sentinel_PostAcquireTravelTheWorldPoints")); }
+			ScriptFunction InputMatchDelegate() { mixin(MGF("mInputMatchDelegate", "Function Engine.PlayerController.InputMatchDelegate")); }
+			ScriptFunction DoForceFeedbackForScreenShake() { mixin(MGF("mDoForceFeedbackForScreenShake", "Function Engine.PlayerController.DoForceFeedbackForScreenShake")); }
+			ScriptFunction ClientPlayCameraShake() { mixin(MGF("mClientPlayCameraShake", "Function Engine.PlayerController.ClientPlayCameraShake")); }
+			ScriptFunction ClientStopCameraShake() { mixin(MGF("mClientStopCameraShake", "Function Engine.PlayerController.ClientStopCameraShake")); }
+			ScriptFunction OnCameraShake() { mixin(MGF("mOnCameraShake", "Function Engine.PlayerController.OnCameraShake")); }
+			ScriptFunction ClientPlayCameraAnim() { mixin(MGF("mClientPlayCameraAnim", "Function Engine.PlayerController.ClientPlayCameraAnim")); }
+			ScriptFunction ClientStopCameraAnim() { mixin(MGF("mClientStopCameraAnim", "Function Engine.PlayerController.ClientStopCameraAnim")); }
+			ScriptFunction ClientSpawnCameraLensEffect() { mixin(MGF("mClientSpawnCameraLensEffect", "Function Engine.PlayerController.ClientSpawnCameraLensEffect")); }
+			ScriptFunction OnSetSoundMode() { mixin(MGF("mOnSetSoundMode", "Function Engine.PlayerController.OnSetSoundMode")); }
+			ScriptFunction HasPeerConnection() { mixin(MGF("mHasPeerConnection", "Function Engine.PlayerController.HasPeerConnection")); }
+			ScriptFunction BugItGo() { mixin(MGF("mBugItGo", "Function Engine.PlayerController.BugItGo")); }
+			ScriptFunction BugItGoString() { mixin(MGF("mBugItGoString", "Function Engine.PlayerController.BugItGoString")); }
+			ScriptFunction BugItWorker() { mixin(MGF("mBugItWorker", "Function Engine.PlayerController.BugItWorker")); }
+			ScriptFunction BugIt() { mixin(MGF("mBugIt", "Function Engine.PlayerController.BugIt")); }
+			ScriptFunction LogOutBugItGoToLogFile() { mixin(MGF("mLogOutBugItGoToLogFile", "Function Engine.PlayerController.LogOutBugItGoToLogFile")); }
+			ScriptFunction LogLoc() { mixin(MGF("mLogLoc", "Function Engine.PlayerController.LogLoc")); }
+			ScriptFunction BugItAI() { mixin(MGF("mBugItAI", "Function Engine.PlayerController.BugItAI")); }
+			ScriptFunction LogOutBugItAIGoToLogFile() { mixin(MGF("mLogOutBugItAIGoToLogFile", "Function Engine.PlayerController.LogOutBugItAIGoToLogFile")); }
+			ScriptFunction BugItStringCreator() { mixin(MGF("mBugItStringCreator", "Function Engine.PlayerController.BugItStringCreator")); }
+			ScriptFunction OnEngineInitialTick() { mixin(MGF("mOnEngineInitialTick", "Function Engine.PlayerController.OnEngineInitialTick")); }
+			ScriptFunction DisableDebugAI() { mixin(MGF("mDisableDebugAI", "Function Engine.PlayerController.DisableDebugAI")); }
+			ScriptFunction ReceivedGameClass() { mixin(MGF("mReceivedGameClass", "Function Engine.PlayerController.ReceivedGameClass")); }
 		}
 	}
 	static struct Constants
@@ -815,25 +815,25 @@ public extern(D):
 		private ubyte __buffer__[72];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.DebugTextInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.PlayerController.DebugTextInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				Actor SrcActor() { mixin(MGPS!("Actor", 0)()); }
-				float TimeRemaining() { mixin(MGPS!("float", 40)()); }
+				Actor SrcActor() { mixin(MGPS("Actor", 0)); }
+				float TimeRemaining() { mixin(MGPS("float", 40)); }
 				// WARNING: Property 'Font' has the same name as a defined type!
-				Vector SrcActorOffset() { mixin(MGPS!("Vector", 4)()); }
-				Vector SrcActorDesiredOffset() { mixin(MGPS!("Vector", 16)()); }
-				float Duration() { mixin(MGPS!("float", 44)()); }
-				Vector OrigActorLocation() { mixin(MGPS!("Vector", 56)()); }
-				UObject.Color TextColor() { mixin(MGPS!("UObject.Color", 48)()); }
-				ScriptString DebugText() { mixin(MGPS!("ScriptString", 28)()); }
+				Vector SrcActorOffset() { mixin(MGPS("Vector", 4)); }
+				Vector SrcActorDesiredOffset() { mixin(MGPS("Vector", 16)); }
+				float Duration() { mixin(MGPS("float", 44)); }
+				Vector OrigActorLocation() { mixin(MGPS("Vector", 56)); }
+				UObject.Color TextColor() { mixin(MGPS("UObject.Color", 48)); }
+				ScriptString DebugText() { mixin(MGPS("ScriptString", 28)); }
 			}
-			bool bAbsoluteLocation() { mixin(MGBPS!(52, 0x1)()); }
-			bool bAbsoluteLocation(bool val) { mixin(MSBPS!(52, 0x1)()); }
-			bool bKeepAttachedToActor() { mixin(MGBPS!(52, 0x2)()); }
-			bool bKeepAttachedToActor(bool val) { mixin(MSBPS!(52, 0x2)()); }
+			bool bAbsoluteLocation() { mixin(MGBPS(52, 0x1)); }
+			bool bAbsoluteLocation(bool val) { mixin(MSBPS(52, 0x1)); }
+			bool bKeepAttachedToActor() { mixin(MGBPS(52, 0x2)); }
+			bool bKeepAttachedToActor(bool val) { mixin(MSBPS(52, 0x2)); }
 		}
 	}
 	struct ConnectedPeerInfo
@@ -841,16 +841,16 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.ConnectedPeerInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.PlayerController.ConnectedPeerInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
-				OnlineSubsystem.ENATType NatType() { mixin(MGPS!("OnlineSubsystem.ENATType", 8)()); }
+				OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
+				OnlineSubsystem.ENATType NatType() { mixin(MGPS("OnlineSubsystem.ENATType", 8)); }
 			}
-			bool bLostConnectionToHost() { mixin(MGBPS!(12, 0x1)()); }
-			bool bLostConnectionToHost(bool val) { mixin(MSBPS!(12, 0x1)()); }
+			bool bLostConnectionToHost() { mixin(MGBPS(12, 0x1)); }
+			bool bLostConnectionToHost(bool val) { mixin(MSBPS(12, 0x1)); }
 		}
 	}
 	struct ClientAdjustment
@@ -858,16 +858,16 @@ public extern(D):
 		private ubyte __buffer__[49];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.ClientAdjustment")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.PlayerController.ClientAdjustment")); }
 		@property final auto ref
 		{
-			Actor.EPhysics newPhysics() { mixin(MGPS!("Actor.EPhysics", 4)()); }
-			Vector NewLoc() { mixin(MGPS!("Vector", 8)()); }
-			Vector NewVel() { mixin(MGPS!("Vector", 20)()); }
-			Actor NewBase() { mixin(MGPS!("Actor", 32)()); }
-			Vector NewFloor() { mixin(MGPS!("Vector", 36)()); }
-			float TimeStamp() { mixin(MGPS!("float", 0)()); }
-			ubyte bAckGoodMove() { mixin(MGPS!("ubyte", 48)()); }
+			Actor.EPhysics newPhysics() { mixin(MGPS("Actor.EPhysics", 4)); }
+			Vector NewLoc() { mixin(MGPS("Vector", 8)); }
+			Vector NewVel() { mixin(MGPS("Vector", 20)); }
+			Actor NewBase() { mixin(MGPS("Actor", 32)); }
+			Vector NewFloor() { mixin(MGPS("Vector", 36)); }
+			float TimeStamp() { mixin(MGPS("float", 0)); }
+			ubyte bAckGoodMove() { mixin(MGPS("ubyte", 48)); }
 		}
 	}
 	struct InputMatchRequest
@@ -875,17 +875,17 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.InputMatchRequest")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.PlayerController.InputMatchRequest")); }
 		@property final auto ref
 		{
-			ScriptArray!(PlayerController.InputEntry) Inputs() { mixin(MGPS!("ScriptArray!(PlayerController.InputEntry)", 0)()); }
-			Actor MatchActor() { mixin(MGPS!("Actor", 12)()); }
-			ScriptName MatchFuncName() { mixin(MGPS!("ScriptName", 16)()); }
+			ScriptArray!(PlayerController.InputEntry) Inputs() { mixin(MGPS("ScriptArray!(PlayerController.InputEntry)", 0)); }
+			Actor MatchActor() { mixin(MGPS("Actor", 12)); }
+			ScriptName MatchFuncName() { mixin(MGPS("ScriptName", 16)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named 'MatchDelegate'!
-			ScriptName FailedFuncName() { mixin(MGPS!("ScriptName", 36)()); }
-			ScriptName RequestName() { mixin(MGPS!("ScriptName", 44)()); }
-			int MatchIdx() { mixin(MGPS!("int", 52)()); }
-			float LastMatchTime() { mixin(MGPS!("float", 56)()); }
+			ScriptName FailedFuncName() { mixin(MGPS("ScriptName", 36)); }
+			ScriptName RequestName() { mixin(MGPS("ScriptName", 44)); }
+			int MatchIdx() { mixin(MGPS("int", 52)); }
+			float LastMatchTime() { mixin(MGPS("float", 56)); }
 		}
 	}
 	struct InputEntry
@@ -893,220 +893,220 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.InputEntry")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.PlayerController.InputEntry")); }
 		@property final auto ref
 		{
-			PlayerController.EInputTypes Type() { mixin(MGPS!("PlayerController.EInputTypes", 0)()); }
-			float Value() { mixin(MGPS!("float", 4)()); }
-			float TimeDelta() { mixin(MGPS!("float", 8)()); }
-			PlayerController.EInputMatchAction Action() { mixin(MGPS!("PlayerController.EInputMatchAction", 12)()); }
+			PlayerController.EInputTypes Type() { mixin(MGPS("PlayerController.EInputTypes", 0)); }
+			float Value() { mixin(MGPS("float", 4)); }
+			float TimeDelta() { mixin(MGPS("float", 8)); }
+			PlayerController.EInputMatchAction Action() { mixin(MGPS("PlayerController.EInputMatchAction", 12)); }
 		}
 	}
 	static struct PlayerWalking
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.PlayerWalking")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.PlayerWalking")); }
 	}
 	static struct PlayerClimbing
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.PlayerClimbing")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.PlayerClimbing")); }
 	}
 	static struct PlayerDriving
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.PlayerDriving")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.PlayerDriving")); }
 	}
 	static struct PlayerSwimming
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.PlayerSwimming")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.PlayerSwimming")); }
 	}
 	static struct PlayerFlying
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.PlayerFlying")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.PlayerFlying")); }
 	}
 	static struct BaseSpectating
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.BaseSpectating")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.BaseSpectating")); }
 	}
 	static struct Spectating
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.Spectating")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.Spectating")); }
 	}
 	static struct PlayerWaiting
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.PlayerWaiting")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.PlayerWaiting")); }
 	}
 	static struct WaitingForPawn
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.WaitingForPawn")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.WaitingForPawn")); }
 	}
 	static struct RoundEnded
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.RoundEnded")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.RoundEnded")); }
 	}
 	static struct Dead
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.PlayerController.Dead")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.PlayerController.Dead")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float LODDistanceFactor() { mixin(MGPC!("float", 960)()); }
+			float LODDistanceFactor() { mixin(MGPC("float", 960)); }
 			// WARNING: Property 'Player' has the same name as a defined type!
-			Actor ViewTarget() { mixin(MGPC!("Actor", 936)()); }
-			Camera PlayerCamera() { mixin(MGPC!("Camera", 904)()); }
-			CoverReplicator MyCoverReplicator() { mixin(MGPC!("CoverReplicator", 1352)()); }
-			float MaxTimeMargin() { mixin(MGPC!("float", 1044)()); }
-			float MaxResponseTime() { mixin(MGPC!("float", 916)()); }
-			float LastActiveTime() { mixin(MGPC!("float", 1048)()); }
-			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 1248)()); }
-			ScriptArray!(PlayerController.ConnectedPeerInfo) ConnectedPeers() { mixin(MGPC!("ScriptArray!(PlayerController.ConnectedPeerInfo)", 1220)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) BestNextHostPeers() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1232)()); }
-			OnlineGameSearch MigratedSearchToJoin() { mixin(MGPC!("OnlineGameSearch", 1244)()); }
-			float TimeMargin() { mixin(MGPC!("float", 1036)()); }
-			HUD myHUD() { mixin(MGPC!("HUD", 992)()); }
-			float WaitDelay() { mixin(MGPC!("float", 920)()); }
-			SavedMove SavedMoves() { mixin(MGPC!("SavedMove", 1000)()); }
-			SavedMove PendingMove() { mixin(MGPC!("SavedMove", 1008)()); }
+			Actor ViewTarget() { mixin(MGPC("Actor", 936)); }
+			Camera PlayerCamera() { mixin(MGPC("Camera", 904)); }
+			CoverReplicator MyCoverReplicator() { mixin(MGPC("CoverReplicator", 1352)); }
+			float MaxTimeMargin() { mixin(MGPC("float", 1044)); }
+			float MaxResponseTime() { mixin(MGPC("float", 916)); }
+			float LastActiveTime() { mixin(MGPC("float", 1048)); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC("OnlineSubsystem", 1248)); }
+			ScriptArray!(PlayerController.ConnectedPeerInfo) ConnectedPeers() { mixin(MGPC("ScriptArray!(PlayerController.ConnectedPeerInfo)", 1220)); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) BestNextHostPeers() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1232)); }
+			OnlineGameSearch MigratedSearchToJoin() { mixin(MGPC("OnlineGameSearch", 1244)); }
+			float TimeMargin() { mixin(MGPC("float", 1036)); }
+			HUD myHUD() { mixin(MGPC("HUD", 992)); }
+			float WaitDelay() { mixin(MGPC("float", 920)); }
+			SavedMove SavedMoves() { mixin(MGPC("SavedMove", 1000)); }
+			SavedMove PendingMove() { mixin(MGPC("SavedMove", 1008)); }
 			// WARNING: Property 'PlayerInput' has the same name as a defined type!
-			ScriptClass InputClass() { mixin(MGPC!("ScriptClass", 1136)()); }
-			ScriptArray!(Interaction) Interactions() { mixin(MGPC!("ScriptArray!(Interaction)", 1172)()); }
-			ScriptString ForceFeedbackManagerClassName() { mixin(MGPC!("ScriptString", 1156)()); }
+			ScriptClass InputClass() { mixin(MGPC("ScriptClass", 1136)); }
+			ScriptArray!(Interaction) Interactions() { mixin(MGPC("ScriptArray!(Interaction)", 1172)); }
+			ScriptString ForceFeedbackManagerClassName() { mixin(MGPC("ScriptString", 1156)); }
 			// WARNING: Property 'ForceFeedbackManager' has the same name as a defined type!
-			UIDataStore_OnlinePlayerData OnlinePlayerData() { mixin(MGPC!("UIDataStore_OnlinePlayerData", 1260)()); }
-			Pawn AcknowledgedPawn() { mixin(MGPC!("Pawn", 924)()); }
+			UIDataStore_OnlinePlayerData OnlinePlayerData() { mixin(MGPC("UIDataStore_OnlinePlayerData", 1260)); }
+			Pawn AcknowledgedPawn() { mixin(MGPC("Pawn", 924)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) HearSoundActiveComponents() { mixin(MGPC!("ScriptArray!(
+void*) HearSoundActiveComponents() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)", 1384)()); }
+void*)", 1384)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) HearSoundPoolComponents() { mixin(MGPC!("ScriptArray!(
+void*) HearSoundPoolComponents() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)", 1396)()); }
+void*)", 1396)); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'VoiceInterface'!
-			float FOVAngle() { mixin(MGPC!("float", 948)()); }
-			float DefaultFOV() { mixin(MGPC!("float", 956)()); }
-			float DesiredFOV() { mixin(MGPC!("float", 952)()); }
-			float LastBroadcastTime() { mixin(MGPC!("float", 1288)()); }
-			ScriptString LastBroadcastString() { mixin(MGPC!("ScriptString", 1292)()); }
-			float LastUpdateTime() { mixin(MGPC!("float", 1028)()); }
-			float CurrentTimeStamp() { mixin(MGPC!("float", 1024)()); }
-			float LastSpeedHackLog() { mixin(MGPC!("float", 1064)()); }
-			PlayerController.ClientAdjustment PendingAdjustment() { mixin(MGPC!("PlayerController.ClientAdjustment", 1068)()); }
-			float ServerTimeStamp() { mixin(MGPC!("float", 1032)()); }
-			ScriptClass SavedMoveClass() { mixin(MGPC!("ScriptClass", 996)()); }
-			int ClientCap() { mixin(MGPC!("int", 1052)()); }
-			float LastPingUpdate() { mixin(MGPC!("float", 1060)()); }
-			SavedMove FreeMoves() { mixin(MGPC!("SavedMove", 1004)()); }
-			Vector LastAckedAccel() { mixin(MGPC!("Vector", 1012)()); }
-			ubyte bRun() { mixin(MGPC!("ubyte", 931)()); }
-			ubyte bDuck() { mixin(MGPC!("ubyte", 932)()); }
-			float ClientUpdateTime() { mixin(MGPC!("float", 1040)()); }
+			float FOVAngle() { mixin(MGPC("float", 948)); }
+			float DefaultFOV() { mixin(MGPC("float", 956)); }
+			float DesiredFOV() { mixin(MGPC("float", 952)); }
+			float LastBroadcastTime() { mixin(MGPC("float", 1288)); }
+			ScriptString LastBroadcastString() { mixin(MGPC("ScriptString", 1292)); }
+			float LastUpdateTime() { mixin(MGPC("float", 1028)); }
+			float CurrentTimeStamp() { mixin(MGPC("float", 1024)); }
+			float LastSpeedHackLog() { mixin(MGPC("float", 1064)); }
+			PlayerController.ClientAdjustment PendingAdjustment() { mixin(MGPC("PlayerController.ClientAdjustment", 1068)); }
+			float ServerTimeStamp() { mixin(MGPC("float", 1032)); }
+			ScriptClass SavedMoveClass() { mixin(MGPC("ScriptClass", 996)); }
+			int ClientCap() { mixin(MGPC("int", 1052)); }
+			float LastPingUpdate() { mixin(MGPC("float", 1060)); }
+			SavedMove FreeMoves() { mixin(MGPC("SavedMove", 1004)); }
+			Vector LastAckedAccel() { mixin(MGPC("Vector", 1012)); }
+			ubyte bRun() { mixin(MGPC("ubyte", 931)); }
+			ubyte bDuck() { mixin(MGPC("ubyte", 932)); }
+			float ClientUpdateTime() { mixin(MGPC("float", 1040)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CanUnpause__Delegate'!
-			float InteractDistance() { mixin(MGPC!("float", 1264)()); }
-			ScriptClass CameraClass() { mixin(MGPC!("ScriptClass", 908)()); }
-			Actor.EDoubleClickDir DoubleClickDir() { mixin(MGPC!("Actor.EDoubleClickDir", 928)()); }
-			int GroundPitch() { mixin(MGPC!("int", 1120)()); }
-			float LastSpectatorStateSynchTime() { mixin(MGPC!("float", 1420)()); }
-			float SpectatorCameraSpeed() { mixin(MGPC!("float", 1368)()); }
-			PlayerReplicationInfo RealViewTarget() { mixin(MGPC!("PlayerReplicationInfo", 940)()); }
-			float MinRespawnDelay() { mixin(MGPC!("float", 1376)()); }
-			NetConnection PendingSwapConnection() { mixin(MGPC!("NetConnection", 1372)()); }
-			ubyte bIgnoreMoveInput() { mixin(MGPC!("ubyte", 929)()); }
-			ubyte bIgnoreLookInput() { mixin(MGPC!("ubyte", 930)()); }
-			ScriptArray!(ScriptName) PendingMapChangeLevelNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1340)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) VoicePacketFilter() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1208)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) GameplayVoiceMuteList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1196)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) VoiceMuteList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1184)()); }
-			ScriptArray!(PlayerController.DebugTextInfo) DebugTextList() { mixin(MGPC!("ScriptArray!(PlayerController.DebugTextInfo)", 1356)()); }
-			ubyte NetPlayerIndex() { mixin(MGPC!("ubyte", 933)()); }
+			float InteractDistance() { mixin(MGPC("float", 1264)); }
+			ScriptClass CameraClass() { mixin(MGPC("ScriptClass", 908)); }
+			Actor.EDoubleClickDir DoubleClickDir() { mixin(MGPC("Actor.EDoubleClickDir", 928)); }
+			int GroundPitch() { mixin(MGPC("int", 1120)); }
+			float LastSpectatorStateSynchTime() { mixin(MGPC("float", 1420)); }
+			float SpectatorCameraSpeed() { mixin(MGPC("float", 1368)); }
+			PlayerReplicationInfo RealViewTarget() { mixin(MGPC("PlayerReplicationInfo", 940)); }
+			float MinRespawnDelay() { mixin(MGPC("float", 1376)); }
+			NetConnection PendingSwapConnection() { mixin(MGPC("NetConnection", 1372)); }
+			ubyte bIgnoreMoveInput() { mixin(MGPC("ubyte", 929)); }
+			ubyte bIgnoreLookInput() { mixin(MGPC("ubyte", 930)); }
+			ScriptArray!(ScriptName) PendingMapChangeLevelNames() { mixin(MGPC("ScriptArray!(ScriptName)", 1340)); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) VoicePacketFilter() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1208)); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) GameplayVoiceMuteList() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1196)); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) VoiceMuteList() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1184)); }
+			ScriptArray!(PlayerController.DebugTextInfo) DebugTextList() { mixin(MGPC("ScriptArray!(PlayerController.DebugTextInfo)", 1356)); }
+			ubyte NetPlayerIndex() { mixin(MGPC("ubyte", 933)); }
 			// WARNING: Property 'CheatManager' has the same name as a defined type!
-			InterpTrackInstDirector ControllingDirTrackInst() { mixin(MGPC!("InterpTrackInstDirector", 944)()); }
-			Rotator TargetViewRotation() { mixin(MGPC!("Rotator", 964)()); }
-			float TargetEyeHeight() { mixin(MGPC!("float", 976)()); }
-			Rotator BlendedTargetViewRotation() { mixin(MGPC!("Rotator", 980)()); }
-			float DynamicPingThreshold() { mixin(MGPC!("float", 1056)()); }
-			ScriptClass CheatClass() { mixin(MGPC!("ScriptClass", 1128)()); }
-			Vector FailedPathStart() { mixin(MGPC!("Vector", 1140)()); }
+			InterpTrackInstDirector ControllingDirTrackInst() { mixin(MGPC("InterpTrackInstDirector", 944)); }
+			Rotator TargetViewRotation() { mixin(MGPC("Rotator", 964)); }
+			float TargetEyeHeight() { mixin(MGPC("float", 976)); }
+			Rotator BlendedTargetViewRotation() { mixin(MGPC("Rotator", 980)); }
+			float DynamicPingThreshold() { mixin(MGPC("float", 1056)); }
+			ScriptClass CheatClass() { mixin(MGPC("ScriptClass", 1128)); }
+			Vector FailedPathStart() { mixin(MGPC("Vector", 1140)); }
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-			ScriptName DelayedJoinSessionName() { mixin(MGPC!("ScriptName", 1268)()); }
-			ScriptArray!(PlayerController.InputMatchRequest) InputRequests() { mixin(MGPC!("ScriptArray!(PlayerController.InputMatchRequest)", 1276)()); }
-			int MaxConcurrentHearSounds() { mixin(MGPC!("int", 1380)()); }
-			ScriptArray!(Actor) HiddenActors() { mixin(MGPC!("ScriptArray!(Actor)", 1408)()); }
+			ScriptName DelayedJoinSessionName() { mixin(MGPC("ScriptName", 1268)); }
+			ScriptArray!(PlayerController.InputMatchRequest) InputRequests() { mixin(MGPC("ScriptArray!(PlayerController.InputMatchRequest)", 1276)); }
+			int MaxConcurrentHearSounds() { mixin(MGPC("int", 1380)); }
+			ScriptArray!(Actor) HiddenActors() { mixin(MGPC("ScriptArray!(Actor)", 1408)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__InputMatchDelegate__Delegate'!
 		}
-		bool bIsExternalUIOpen() { mixin(MGBPC!(912, 0x400000)()); }
-		bool bIsExternalUIOpen(bool val) { mixin(MSBPC!(912, 0x400000)()); }
-		bool bPendingDestroy() { mixin(MGBPC!(912, 0x200)()); }
-		bool bPendingDestroy(bool val) { mixin(MSBPC!(912, 0x200)()); }
-		bool bIsControllerConnected() { mixin(MGBPC!(912, 0x800000)()); }
-		bool bIsControllerConnected(bool val) { mixin(MSBPC!(912, 0x800000)()); }
-		bool bShortConnectTimeOut() { mixin(MGBPC!(912, 0x100)()); }
-		bool bShortConnectTimeOut(bool val) { mixin(MSBPC!(912, 0x100)()); }
-		bool bFrozen() { mixin(MGBPC!(912, 0x1)()); }
-		bool bFrozen(bool val) { mixin(MSBPC!(912, 0x1)()); }
-		bool bWasSpeedHack() { mixin(MGBPC!(912, 0x400)()); }
-		bool bWasSpeedHack(bool val) { mixin(MSBPC!(912, 0x400)()); }
-		bool bDoubleJump() { mixin(MGBPC!(912, 0x4)()); }
-		bool bDoubleJump(bool val) { mixin(MSBPC!(912, 0x4)()); }
-		bool bUpdatePosition() { mixin(MGBPC!(912, 0x8)()); }
-		bool bUpdatePosition(bool val) { mixin(MSBPC!(912, 0x8)()); }
-		bool bPressedJump() { mixin(MGBPC!(912, 0x2)()); }
-		bool bPressedJump(bool val) { mixin(MSBPC!(912, 0x2)()); }
-		bool bUpdating() { mixin(MGBPC!(912, 0x10)()); }
-		bool bUpdating(bool val) { mixin(MSBPC!(912, 0x10)()); }
-		bool bCinematicMode() { mixin(MGBPC!(912, 0x10000)()); }
-		bool bCinematicMode(bool val) { mixin(MSBPC!(912, 0x10000)()); }
-		bool bAimingHelp() { mixin(MGBPC!(912, 0x1000)()); }
-		bool bAimingHelp(bool val) { mixin(MSBPC!(912, 0x1000)()); }
-		bool bClientSimulatingViewTarget() { mixin(MGBPC!(912, 0x2000)()); }
-		bool bClientSimulatingViewTarget(bool val) { mixin(MSBPC!(912, 0x2000)()); }
-		bool bCheatFlying() { mixin(MGBPC!(912, 0x40)()); }
-		bool bCheatFlying(bool val) { mixin(MSBPC!(912, 0x40)()); }
-		bool bCinemaDisableInputMove() { mixin(MGBPC!(912, 0x20000)()); }
-		bool bCinemaDisableInputMove(bool val) { mixin(MSBPC!(912, 0x20000)()); }
-		bool bCinemaDisableInputLook() { mixin(MGBPC!(912, 0x40000)()); }
-		bool bCinemaDisableInputLook(bool val) { mixin(MSBPC!(912, 0x40000)()); }
-		bool bHasVoiceHandshakeCompleted() { mixin(MGBPC!(912, 0x8000)()); }
-		bool bHasVoiceHandshakeCompleted(bool val) { mixin(MSBPC!(912, 0x8000)()); }
-		bool bNeverSwitchOnPickup() { mixin(MGBPC!(912, 0x20)()); }
-		bool bNeverSwitchOnPickup(bool val) { mixin(MSBPC!(912, 0x20)()); }
-		bool bCameraPositionLocked() { mixin(MGBPC!(912, 0x80)()); }
-		bool bCameraPositionLocked(bool val) { mixin(MSBPC!(912, 0x80)()); }
-		bool bWasSaturated() { mixin(MGBPC!(912, 0x800)()); }
-		bool bWasSaturated(bool val) { mixin(MSBPC!(912, 0x800)()); }
-		bool bPreventRespawn() { mixin(MGBPC!(912, 0x4000)()); }
-		bool bPreventRespawn(bool val) { mixin(MSBPC!(912, 0x4000)()); }
-		bool bIgnoreNetworkMessages() { mixin(MGBPC!(912, 0x80000)()); }
-		bool bIgnoreNetworkMessages(bool val) { mixin(MSBPC!(912, 0x80000)()); }
-		bool bReplicateAllPawns() { mixin(MGBPC!(912, 0x100000)()); }
-		bool bReplicateAllPawns(bool val) { mixin(MSBPC!(912, 0x100000)()); }
-		bool bIsUsingStreamingVolumes() { mixin(MGBPC!(912, 0x200000)()); }
-		bool bIsUsingStreamingVolumes(bool val) { mixin(MSBPC!(912, 0x200000)()); }
-		bool bCheckSoundOcclusion() { mixin(MGBPC!(912, 0x1000000)()); }
-		bool bCheckSoundOcclusion(bool val) { mixin(MSBPC!(912, 0x1000000)()); }
-		bool bDebugCameraAnims() { mixin(MGBPC!(912, 0x2000000)()); }
-		bool bDebugCameraAnims(bool val) { mixin(MSBPC!(912, 0x2000000)()); }
-		bool bBlockCameraAnimsFromOverridingPostProcess() { mixin(MGBPC!(912, 0x4000000)()); }
-		bool bBlockCameraAnimsFromOverridingPostProcess(bool val) { mixin(MSBPC!(912, 0x4000000)()); }
-		bool bLogHearSoundOverflow() { mixin(MGBPC!(912, 0x8000000)()); }
-		bool bLogHearSoundOverflow(bool val) { mixin(MSBPC!(912, 0x8000000)()); }
-		bool bCheckRelevancyThroughPortals() { mixin(MGBPC!(912, 0x10000000)()); }
-		bool bCheckRelevancyThroughPortals(bool val) { mixin(MSBPC!(912, 0x10000000)()); }
-		bool bDebugClientAdjustPosition() { mixin(MGBPC!(912, 0x20000000)()); }
-		bool bDebugClientAdjustPosition(bool val) { mixin(MSBPC!(912, 0x20000000)()); }
+		bool bIsExternalUIOpen() { mixin(MGBPC(912, 0x400000)); }
+		bool bIsExternalUIOpen(bool val) { mixin(MSBPC(912, 0x400000)); }
+		bool bPendingDestroy() { mixin(MGBPC(912, 0x200)); }
+		bool bPendingDestroy(bool val) { mixin(MSBPC(912, 0x200)); }
+		bool bIsControllerConnected() { mixin(MGBPC(912, 0x800000)); }
+		bool bIsControllerConnected(bool val) { mixin(MSBPC(912, 0x800000)); }
+		bool bShortConnectTimeOut() { mixin(MGBPC(912, 0x100)); }
+		bool bShortConnectTimeOut(bool val) { mixin(MSBPC(912, 0x100)); }
+		bool bFrozen() { mixin(MGBPC(912, 0x1)); }
+		bool bFrozen(bool val) { mixin(MSBPC(912, 0x1)); }
+		bool bWasSpeedHack() { mixin(MGBPC(912, 0x400)); }
+		bool bWasSpeedHack(bool val) { mixin(MSBPC(912, 0x400)); }
+		bool bDoubleJump() { mixin(MGBPC(912, 0x4)); }
+		bool bDoubleJump(bool val) { mixin(MSBPC(912, 0x4)); }
+		bool bUpdatePosition() { mixin(MGBPC(912, 0x8)); }
+		bool bUpdatePosition(bool val) { mixin(MSBPC(912, 0x8)); }
+		bool bPressedJump() { mixin(MGBPC(912, 0x2)); }
+		bool bPressedJump(bool val) { mixin(MSBPC(912, 0x2)); }
+		bool bUpdating() { mixin(MGBPC(912, 0x10)); }
+		bool bUpdating(bool val) { mixin(MSBPC(912, 0x10)); }
+		bool bCinematicMode() { mixin(MGBPC(912, 0x10000)); }
+		bool bCinematicMode(bool val) { mixin(MSBPC(912, 0x10000)); }
+		bool bAimingHelp() { mixin(MGBPC(912, 0x1000)); }
+		bool bAimingHelp(bool val) { mixin(MSBPC(912, 0x1000)); }
+		bool bClientSimulatingViewTarget() { mixin(MGBPC(912, 0x2000)); }
+		bool bClientSimulatingViewTarget(bool val) { mixin(MSBPC(912, 0x2000)); }
+		bool bCheatFlying() { mixin(MGBPC(912, 0x40)); }
+		bool bCheatFlying(bool val) { mixin(MSBPC(912, 0x40)); }
+		bool bCinemaDisableInputMove() { mixin(MGBPC(912, 0x20000)); }
+		bool bCinemaDisableInputMove(bool val) { mixin(MSBPC(912, 0x20000)); }
+		bool bCinemaDisableInputLook() { mixin(MGBPC(912, 0x40000)); }
+		bool bCinemaDisableInputLook(bool val) { mixin(MSBPC(912, 0x40000)); }
+		bool bHasVoiceHandshakeCompleted() { mixin(MGBPC(912, 0x8000)); }
+		bool bHasVoiceHandshakeCompleted(bool val) { mixin(MSBPC(912, 0x8000)); }
+		bool bNeverSwitchOnPickup() { mixin(MGBPC(912, 0x20)); }
+		bool bNeverSwitchOnPickup(bool val) { mixin(MSBPC(912, 0x20)); }
+		bool bCameraPositionLocked() { mixin(MGBPC(912, 0x80)); }
+		bool bCameraPositionLocked(bool val) { mixin(MSBPC(912, 0x80)); }
+		bool bWasSaturated() { mixin(MGBPC(912, 0x800)); }
+		bool bWasSaturated(bool val) { mixin(MSBPC(912, 0x800)); }
+		bool bPreventRespawn() { mixin(MGBPC(912, 0x4000)); }
+		bool bPreventRespawn(bool val) { mixin(MSBPC(912, 0x4000)); }
+		bool bIgnoreNetworkMessages() { mixin(MGBPC(912, 0x80000)); }
+		bool bIgnoreNetworkMessages(bool val) { mixin(MSBPC(912, 0x80000)); }
+		bool bReplicateAllPawns() { mixin(MGBPC(912, 0x100000)); }
+		bool bReplicateAllPawns(bool val) { mixin(MSBPC(912, 0x100000)); }
+		bool bIsUsingStreamingVolumes() { mixin(MGBPC(912, 0x200000)); }
+		bool bIsUsingStreamingVolumes(bool val) { mixin(MSBPC(912, 0x200000)); }
+		bool bCheckSoundOcclusion() { mixin(MGBPC(912, 0x1000000)); }
+		bool bCheckSoundOcclusion(bool val) { mixin(MSBPC(912, 0x1000000)); }
+		bool bDebugCameraAnims() { mixin(MGBPC(912, 0x2000000)); }
+		bool bDebugCameraAnims(bool val) { mixin(MSBPC(912, 0x2000000)); }
+		bool bBlockCameraAnimsFromOverridingPostProcess() { mixin(MGBPC(912, 0x4000000)); }
+		bool bBlockCameraAnimsFromOverridingPostProcess(bool val) { mixin(MSBPC(912, 0x4000000)); }
+		bool bLogHearSoundOverflow() { mixin(MGBPC(912, 0x8000000)); }
+		bool bLogHearSoundOverflow(bool val) { mixin(MSBPC(912, 0x8000000)); }
+		bool bCheckRelevancyThroughPortals() { mixin(MGBPC(912, 0x10000000)); }
+		bool bCheckRelevancyThroughPortals(bool val) { mixin(MSBPC(912, 0x10000000)); }
+		bool bDebugClientAdjustPosition() { mixin(MGBPC(912, 0x20000000)); }
+		bool bDebugClientAdjustPosition(bool val) { mixin(MSBPC(912, 0x20000000)); }
 	}
 final:
 	float GetFOVAngle()

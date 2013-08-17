@@ -9,9 +9,9 @@ extern(C++) interface TrWeaponPawn : UTWeaponPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrWeaponPawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrWeaponPawn")); }
 	private static __gshared TrWeaponPawn mDefaultProperties;
-	@property final static TrWeaponPawn DefaultProperties() { mixin(MGDPC!(TrWeaponPawn, "TrWeaponPawn TribesGame.Default__TrWeaponPawn")()); }
+	@property final static TrWeaponPawn DefaultProperties() { mixin(MGDPC("TrWeaponPawn", "TrWeaponPawn TribesGame.Default__TrWeaponPawn")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,24 +24,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrWeaponPawn.ReplicatedEvent")()); }
-			ScriptFunction PlayReload() { mixin(MGF!("mPlayReload", "Function TribesGame.TrWeaponPawn.PlayReload")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function TribesGame.TrWeaponPawn.ProcessViewRotation")()); }
-			ScriptFunction ClientPlayLoopSound() { mixin(MGF!("mClientPlayLoopSound", "Function TribesGame.TrWeaponPawn.ClientPlayLoopSound")()); }
-			ScriptFunction PlayLoopingSound() { mixin(MGF!("mPlayLoopingSound", "Function TribesGame.TrWeaponPawn.PlayLoopingSound")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrWeaponPawn.ReplicatedEvent")); }
+			ScriptFunction PlayReload() { mixin(MGF("mPlayReload", "Function TribesGame.TrWeaponPawn.PlayReload")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function TribesGame.TrWeaponPawn.ProcessViewRotation")); }
+			ScriptFunction ClientPlayLoopSound() { mixin(MGF("mClientPlayLoopSound", "Function TribesGame.TrWeaponPawn.ClientPlayLoopSound")); }
+			ScriptFunction PlayLoopingSound() { mixin(MGF("mPlayLoopingSound", "Function TribesGame.TrWeaponPawn.PlayLoopingSound")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float m_fCurrentAccuracy() { mixin(MGPC!("float", 1560)()); }
-			ubyte r_nFlashReload() { mixin(MGPC!("ubyte", 1564)()); }
-			SoundCue r_scFiringLoop() { mixin(MGPC!("SoundCue", 1576)()); }
+			float m_fCurrentAccuracy() { mixin(MGPC("float", 1560)); }
+			ubyte r_nFlashReload() { mixin(MGPC("ubyte", 1564)); }
+			SoundCue r_scFiringLoop() { mixin(MGPC("SoundCue", 1576)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FiringLoopAudio'!
 		}
-		bool r_bFiringLoopSound() { mixin(MGBPC!(1572, 0x1)()); }
-		bool r_bFiringLoopSound(bool val) { mixin(MSBPC!(1572, 0x1)()); }
+		bool r_bFiringLoopSound() { mixin(MGBPC(1572, 0x1)); }
+		bool r_bFiringLoopSound(bool val) { mixin(MSBPC(1572, 0x1)); }
 	}
 final:
 	void ReplicatedEvent(ScriptName VarName)

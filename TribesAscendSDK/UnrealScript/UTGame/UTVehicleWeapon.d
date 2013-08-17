@@ -17,9 +17,9 @@ extern(C++) interface UTVehicleWeapon : UTWeapon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleWeapon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVehicleWeapon")); }
 	private static __gshared UTVehicleWeapon mDefaultProperties;
-	@property final static UTVehicleWeapon DefaultProperties() { mixin(MGDPC!(UTVehicleWeapon, "UTVehicleWeapon UTGame.Default__UTVehicleWeapon")()); }
+	@property final static UTVehicleWeapon DefaultProperties() { mixin(MGDPC("UTVehicleWeapon", "UTVehicleWeapon UTGame.Default__UTVehicleWeapon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -57,67 +57,67 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetMaxFinalAimAdjustment() { mixin(MGF!("mGetMaxFinalAimAdjustment", "Function UTGame.UTVehicleWeapon.GetMaxFinalAimAdjustment")()); }
-			ScriptFunction GetAdjustedAim() { mixin(MGF!("mGetAdjustedAim", "Function UTGame.UTVehicleWeapon.GetAdjustedAim")()); }
-			ScriptFunction GetFireTriggerTag() { mixin(MGF!("mGetFireTriggerTag", "Function UTGame.UTVehicleWeapon.GetFireTriggerTag")()); }
-			ScriptFunction GetImpactEffect() { mixin(MGF!("mGetImpactEffect", "Function UTGame.UTVehicleWeapon.GetImpactEffect")()); }
-			ScriptFunction CanHitDesiredTarget() { mixin(MGF!("mCanHitDesiredTarget", "Function UTGame.UTVehicleWeapon.CanHitDesiredTarget")()); }
-			ScriptFunction DrawKillIcon() { mixin(MGF!("mDrawKillIcon", "Function UTGame.UTVehicleWeapon.DrawKillIcon")()); }
-			ScriptFunction GetCrosshairScaling() { mixin(MGF!("mGetCrosshairScaling", "Function UTGame.UTVehicleWeapon.GetCrosshairScaling")()); }
-			ScriptFunction DrawWeaponCrosshair() { mixin(MGF!("mDrawWeaponCrosshair", "Function UTGame.UTVehicleWeapon.DrawWeaponCrosshair")()); }
-			ScriptFunction GetDesiredAimPoint() { mixin(MGF!("mGetDesiredAimPoint", "Function UTGame.UTVehicleWeapon.GetDesiredAimPoint")()); }
-			ScriptFunction GetFireStartLocationAndRotation() { mixin(MGF!("mGetFireStartLocationAndRotation", "Function UTGame.UTVehicleWeapon.GetFireStartLocationAndRotation")()); }
-			ScriptFunction IsAimCorrect() { mixin(MGF!("mIsAimCorrect", "Function UTGame.UTVehicleWeapon.IsAimCorrect")()); }
-			ScriptFunction GetFireInterval() { mixin(MGF!("mGetFireInterval", "Function UTGame.UTVehicleWeapon.GetFireInterval")()); }
-			ScriptFunction AttachWeaponTo() { mixin(MGF!("mAttachWeaponTo", "Function UTGame.UTVehicleWeapon.AttachWeaponTo")()); }
-			ScriptFunction DetachWeapon() { mixin(MGF!("mDetachWeapon", "Function UTGame.UTVehicleWeapon.DetachWeapon")()); }
-			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function UTGame.UTVehicleWeapon.Activate")()); }
-			ScriptFunction PutDownWeapon() { mixin(MGF!("mPutDownWeapon", "Function UTGame.UTVehicleWeapon.PutDownWeapon")()); }
-			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF!("mGetPhysicalFireStartLoc", "Function UTGame.UTVehicleWeapon.GetPhysicalFireStartLoc")()); }
-			ScriptFunction BeginFire() { mixin(MGF!("mBeginFire", "Function UTGame.UTVehicleWeapon.BeginFire")()); }
-			ScriptFunction EndFire() { mixin(MGF!("mEndFire", "Function UTGame.UTVehicleWeapon.EndFire")()); }
-			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function UTGame.UTVehicleWeapon.ProjectileFire")()); }
-			ScriptFunction InstantFireStartTrace() { mixin(MGF!("mInstantFireStartTrace", "Function UTGame.UTVehicleWeapon.InstantFireStartTrace")()); }
-			ScriptFunction InstantFireEndTrace() { mixin(MGF!("mInstantFireEndTrace", "Function UTGame.UTVehicleWeapon.InstantFireEndTrace")()); }
-			ScriptFunction GetTraceOwner() { mixin(MGF!("mGetTraceOwner", "Function UTGame.UTVehicleWeapon.GetTraceOwner")()); }
-			ScriptFunction NotifyVehicleDeployed() { mixin(MGF!("mNotifyVehicleDeployed", "Function UTGame.UTVehicleWeapon.NotifyVehicleDeployed")()); }
-			ScriptFunction NotifyVehicleUndeployed() { mixin(MGF!("mNotifyVehicleUndeployed", "Function UTGame.UTVehicleWeapon.NotifyVehicleUndeployed")()); }
-			ScriptFunction WeaponPlaySound() { mixin(MGF!("mWeaponPlaySound", "Function UTGame.UTVehicleWeapon.WeaponPlaySound")()); }
-			ScriptFunction GetZoomedState() { mixin(MGF!("mGetZoomedState", "Function UTGame.UTVehicleWeapon.GetZoomedState")()); }
-			ScriptFunction ServerSetZoom() { mixin(MGF!("mServerSetZoom", "Function UTGame.UTVehicleWeapon.ServerSetZoom")()); }
-			ScriptFunction StartZoom() { mixin(MGF!("mStartZoom", "Function UTGame.UTVehicleWeapon.StartZoom")()); }
-			ScriptFunction EndZoom() { mixin(MGF!("mEndZoom", "Function UTGame.UTVehicleWeapon.EndZoom")()); }
+			ScriptFunction GetMaxFinalAimAdjustment() { mixin(MGF("mGetMaxFinalAimAdjustment", "Function UTGame.UTVehicleWeapon.GetMaxFinalAimAdjustment")); }
+			ScriptFunction GetAdjustedAim() { mixin(MGF("mGetAdjustedAim", "Function UTGame.UTVehicleWeapon.GetAdjustedAim")); }
+			ScriptFunction GetFireTriggerTag() { mixin(MGF("mGetFireTriggerTag", "Function UTGame.UTVehicleWeapon.GetFireTriggerTag")); }
+			ScriptFunction GetImpactEffect() { mixin(MGF("mGetImpactEffect", "Function UTGame.UTVehicleWeapon.GetImpactEffect")); }
+			ScriptFunction CanHitDesiredTarget() { mixin(MGF("mCanHitDesiredTarget", "Function UTGame.UTVehicleWeapon.CanHitDesiredTarget")); }
+			ScriptFunction DrawKillIcon() { mixin(MGF("mDrawKillIcon", "Function UTGame.UTVehicleWeapon.DrawKillIcon")); }
+			ScriptFunction GetCrosshairScaling() { mixin(MGF("mGetCrosshairScaling", "Function UTGame.UTVehicleWeapon.GetCrosshairScaling")); }
+			ScriptFunction DrawWeaponCrosshair() { mixin(MGF("mDrawWeaponCrosshair", "Function UTGame.UTVehicleWeapon.DrawWeaponCrosshair")); }
+			ScriptFunction GetDesiredAimPoint() { mixin(MGF("mGetDesiredAimPoint", "Function UTGame.UTVehicleWeapon.GetDesiredAimPoint")); }
+			ScriptFunction GetFireStartLocationAndRotation() { mixin(MGF("mGetFireStartLocationAndRotation", "Function UTGame.UTVehicleWeapon.GetFireStartLocationAndRotation")); }
+			ScriptFunction IsAimCorrect() { mixin(MGF("mIsAimCorrect", "Function UTGame.UTVehicleWeapon.IsAimCorrect")); }
+			ScriptFunction GetFireInterval() { mixin(MGF("mGetFireInterval", "Function UTGame.UTVehicleWeapon.GetFireInterval")); }
+			ScriptFunction AttachWeaponTo() { mixin(MGF("mAttachWeaponTo", "Function UTGame.UTVehicleWeapon.AttachWeaponTo")); }
+			ScriptFunction DetachWeapon() { mixin(MGF("mDetachWeapon", "Function UTGame.UTVehicleWeapon.DetachWeapon")); }
+			ScriptFunction Activate() { mixin(MGF("mActivate", "Function UTGame.UTVehicleWeapon.Activate")); }
+			ScriptFunction PutDownWeapon() { mixin(MGF("mPutDownWeapon", "Function UTGame.UTVehicleWeapon.PutDownWeapon")); }
+			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF("mGetPhysicalFireStartLoc", "Function UTGame.UTVehicleWeapon.GetPhysicalFireStartLoc")); }
+			ScriptFunction BeginFire() { mixin(MGF("mBeginFire", "Function UTGame.UTVehicleWeapon.BeginFire")); }
+			ScriptFunction EndFire() { mixin(MGF("mEndFire", "Function UTGame.UTVehicleWeapon.EndFire")); }
+			ScriptFunction ProjectileFire() { mixin(MGF("mProjectileFire", "Function UTGame.UTVehicleWeapon.ProjectileFire")); }
+			ScriptFunction InstantFireStartTrace() { mixin(MGF("mInstantFireStartTrace", "Function UTGame.UTVehicleWeapon.InstantFireStartTrace")); }
+			ScriptFunction InstantFireEndTrace() { mixin(MGF("mInstantFireEndTrace", "Function UTGame.UTVehicleWeapon.InstantFireEndTrace")); }
+			ScriptFunction GetTraceOwner() { mixin(MGF("mGetTraceOwner", "Function UTGame.UTVehicleWeapon.GetTraceOwner")); }
+			ScriptFunction NotifyVehicleDeployed() { mixin(MGF("mNotifyVehicleDeployed", "Function UTGame.UTVehicleWeapon.NotifyVehicleDeployed")); }
+			ScriptFunction NotifyVehicleUndeployed() { mixin(MGF("mNotifyVehicleUndeployed", "Function UTGame.UTVehicleWeapon.NotifyVehicleUndeployed")); }
+			ScriptFunction WeaponPlaySound() { mixin(MGF("mWeaponPlaySound", "Function UTGame.UTVehicleWeapon.WeaponPlaySound")); }
+			ScriptFunction GetZoomedState() { mixin(MGF("mGetZoomedState", "Function UTGame.UTVehicleWeapon.GetZoomedState")); }
+			ScriptFunction ServerSetZoom() { mixin(MGF("mServerSetZoom", "Function UTGame.UTVehicleWeapon.ServerSetZoom")); }
+			ScriptFunction StartZoom() { mixin(MGF("mStartZoom", "Function UTGame.UTVehicleWeapon.StartZoom")); }
+			ScriptFunction EndZoom() { mixin(MGF("mEndZoom", "Function UTGame.UTVehicleWeapon.EndZoom")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int SeatIndex() { mixin(MGPC!("int", 1472)()); }
-			UTVehicle MyVehicle() { mixin(MGPC!("UTVehicle", 1476)()); }
-			SoundCue BulletWhip() { mixin(MGPC!("SoundCue", 1624)()); }
-			ScriptArray!(ScriptName) FireTriggerTags() { mixin(MGPC!("ScriptArray!(ScriptName)", 1480)()); }
-			ScriptArray!(ScriptName) AltFireTriggerTags() { mixin(MGPC!("ScriptArray!(ScriptName)", 1492)()); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 1504)()); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 1516)()); }
-			ScriptClass VehicleClass() { mixin(MGPC!("ScriptClass", 1648)()); }
-			float MaxFinalAimAdjustment() { mixin(MGPC!("float", 1640)()); }
-			float CurrentCrosshairScaling() { mixin(MGPC!("float", 1636)()); }
-			float LastInCorrectAimTime() { mixin(MGPC!("float", 1632)()); }
-			float LastCorrectAimTime() { mixin(MGPC!("float", 1628)()); }
-			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC!("UDKPawn.MaterialImpactEffect", 1576)()); }
-			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC!("UDKPawn.MaterialImpactEffect", 1528)()); }
+			int SeatIndex() { mixin(MGPC("int", 1472)); }
+			UTVehicle MyVehicle() { mixin(MGPC("UTVehicle", 1476)); }
+			SoundCue BulletWhip() { mixin(MGPC("SoundCue", 1624)); }
+			ScriptArray!(ScriptName) FireTriggerTags() { mixin(MGPC("ScriptArray!(ScriptName)", 1480)); }
+			ScriptArray!(ScriptName) AltFireTriggerTags() { mixin(MGPC("ScriptArray!(ScriptName)", 1492)); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC("ScriptArray!(UDKPawn.MaterialImpactEffect)", 1504)); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC("ScriptArray!(UDKPawn.MaterialImpactEffect)", 1516)); }
+			ScriptClass VehicleClass() { mixin(MGPC("ScriptClass", 1648)); }
+			float MaxFinalAimAdjustment() { mixin(MGPC("float", 1640)); }
+			float CurrentCrosshairScaling() { mixin(MGPC("float", 1636)); }
+			float LastInCorrectAimTime() { mixin(MGPC("float", 1632)); }
+			float LastCorrectAimTime() { mixin(MGPC("float", 1628)); }
+			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC("UDKPawn.MaterialImpactEffect", 1576)); }
+			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC("UDKPawn.MaterialImpactEffect", 1528)); }
 		}
-		bool bIgnoreSocketPitchRotation() { mixin(MGBPC!(1644, 0x4)()); }
-		bool bIgnoreSocketPitchRotation(bool val) { mixin(MSBPC!(1644, 0x4)()); }
-		bool bIgnoreDownwardPitch() { mixin(MGBPC!(1644, 0x8)()); }
-		bool bIgnoreDownwardPitch(bool val) { mixin(MSBPC!(1644, 0x8)()); }
-		bool bDebugTurret() { mixin(MGBPC!(1644, 0x10)()); }
-		bool bDebugTurret(bool val) { mixin(MSBPC!(1644, 0x10)()); }
-		bool bCurrentlyZoomed() { mixin(MGBPC!(1644, 0x2)()); }
-		bool bCurrentlyZoomed(bool val) { mixin(MSBPC!(1644, 0x2)()); }
-		bool bPlaySoundFromSocket() { mixin(MGBPC!(1644, 0x1)()); }
-		bool bPlaySoundFromSocket(bool val) { mixin(MSBPC!(1644, 0x1)()); }
+		bool bIgnoreSocketPitchRotation() { mixin(MGBPC(1644, 0x4)); }
+		bool bIgnoreSocketPitchRotation(bool val) { mixin(MSBPC(1644, 0x4)); }
+		bool bIgnoreDownwardPitch() { mixin(MGBPC(1644, 0x8)); }
+		bool bIgnoreDownwardPitch(bool val) { mixin(MSBPC(1644, 0x8)); }
+		bool bDebugTurret() { mixin(MGBPC(1644, 0x10)); }
+		bool bDebugTurret(bool val) { mixin(MSBPC(1644, 0x10)); }
+		bool bCurrentlyZoomed() { mixin(MGBPC(1644, 0x2)); }
+		bool bCurrentlyZoomed(bool val) { mixin(MSBPC(1644, 0x2)); }
+		bool bPlaySoundFromSocket() { mixin(MGBPC(1644, 0x1)); }
+		bool bPlaySoundFromSocket(bool val) { mixin(MSBPC(1644, 0x1)); }
 	}
 final:
 	float GetMaxFinalAimAdjustment()

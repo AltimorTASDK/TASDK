@@ -8,9 +8,9 @@ extern(C++) interface UTEntryGame : UTTeamGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTEntryGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTEntryGame")); }
 	private static __gshared UTEntryGame mDefaultProperties;
-	@property final static UTEntryGame DefaultProperties() { mixin(MGDPC!(UTEntryGame, "UTEntryGame UTGame.Default__UTEntryGame")()); }
+	@property final static UTEntryGame DefaultProperties() { mixin(MGDPC("UTEntryGame", "UTEntryGame UTGame.Default__UTEntryGame")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction NeedPlayers() { mixin(MGF!("mNeedPlayers", "Function UTGame.UTEntryGame.NeedPlayers")()); }
-			ScriptFunction StartMatch() { mixin(MGF!("mStartMatch", "Function UTGame.UTEntryGame.StartMatch")()); }
-			ScriptFunction InitGame() { mixin(MGF!("mInitGame", "Function UTGame.UTEntryGame.InitGame")()); }
+			ScriptFunction NeedPlayers() { mixin(MGF("mNeedPlayers", "Function UTGame.UTEntryGame.NeedPlayers")); }
+			ScriptFunction StartMatch() { mixin(MGF("mStartMatch", "Function UTGame.UTEntryGame.StartMatch")); }
+			ScriptFunction InitGame() { mixin(MGF("mInitGame", "Function UTGame.UTEntryGame.InitGame")); }
 		}
 	}
 	static struct PendingMatch
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTEntryGame.PendingMatch")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTEntryGame.PendingMatch")); }
 	}
 final:
 	bool NeedPlayers()

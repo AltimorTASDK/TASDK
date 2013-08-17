@@ -8,18 +8,18 @@ extern(C++) interface TrAnimNodeBlendList : AnimNodeBlendList
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendList")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAnimNodeBlendList")); }
 	private static __gshared TrAnimNodeBlendList mDefaultProperties;
-	@property final static TrAnimNodeBlendList DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendList, "TrAnimNodeBlendList TribesGame.Default__TrAnimNodeBlendList")()); }
+	@property final static TrAnimNodeBlendList DefaultProperties() { mixin(MGDPC("TrAnimNodeBlendList", "TrAnimNodeBlendList TribesGame.Default__TrAnimNodeBlendList")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetBlendTime;
-		public @property static final ScriptFunction GetBlendTime() { mixin(MGF!("mGetBlendTime", "Function TribesGame.TrAnimNodeBlendList.GetBlendTime")()); }
+		public @property static final ScriptFunction GetBlendTime() { mixin(MGF("mGetBlendTime", "Function TribesGame.TrAnimNodeBlendList.GetBlendTime")); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(float) m_ChildBlendInTime() { mixin(MGPC!("ScriptArray!(float)", 276)()); }
-		float m_fBlendTime() { mixin(MGPC!("float", 288)()); }
+		ScriptArray!(float) m_ChildBlendInTime() { mixin(MGPC("ScriptArray!(float)", 276)); }
+		float m_fBlendTime() { mixin(MGPC("float", 288)); }
 	}
 	final float GetBlendTime(int ChildIndex, bool* bGetDefault = null)
 	{

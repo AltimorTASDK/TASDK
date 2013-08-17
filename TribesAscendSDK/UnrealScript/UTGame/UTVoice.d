@@ -18,9 +18,9 @@ extern(C++) interface UTVoice : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVoice")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVoice")); }
 	private static __gshared UTVoice mDefaultProperties;
-	@property final static UTVoice DefaultProperties() { mixin(MGDPC!(UTVoice, "UTVoice UTGame.Default__UTVoice")()); }
+	@property final static UTVoice DefaultProperties() { mixin(MGDPC("UTVoice", "UTVoice UTGame.Default__UTVoice")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -52,30 +52,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetAckMessageIndex() { mixin(MGF!("mGetAckMessageIndex", "Function UTGame.UTVoice.GetAckMessageIndex")()); }
-			ScriptFunction GetFriendlyFireMessageIndex() { mixin(MGF!("mGetFriendlyFireMessageIndex", "Function UTGame.UTVoice.GetFriendlyFireMessageIndex")()); }
-			ScriptFunction GetGotYourBackMessageIndex() { mixin(MGF!("mGetGotYourBackMessageIndex", "Function UTGame.UTVoice.GetGotYourBackMessageIndex")()); }
-			ScriptFunction GetNeedOurFlagMessageIndex() { mixin(MGF!("mGetNeedOurFlagMessageIndex", "Function UTGame.UTVoice.GetNeedOurFlagMessageIndex")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVoice.ClientReceive")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVoice.AnnouncementSound")()); }
-			ScriptFunction EnemySound() { mixin(MGF!("mEnemySound", "Function UTGame.UTVoice.EnemySound")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVoice.GetString")()); }
-			ScriptFunction AllowVoiceMessage() { mixin(MGF!("mAllowVoiceMessage", "Function UTGame.UTVoice.AllowVoiceMessage")()); }
-			ScriptFunction SendVoiceMessage() { mixin(MGF!("mSendVoiceMessage", "Function UTGame.UTVoice.SendVoiceMessage")()); }
-			ScriptFunction GetMessageIndex() { mixin(MGF!("mGetMessageIndex", "Function UTGame.UTVoice.GetMessageIndex")()); }
-			ScriptFunction InitStatusUpdate() { mixin(MGF!("mInitStatusUpdate", "Function UTGame.UTVoice.InitStatusUpdate")()); }
-			ScriptFunction InitCombatUpdate() { mixin(MGF!("mInitCombatUpdate", "Function UTGame.UTVoice.InitCombatUpdate")()); }
-			ScriptFunction SetHoldingFlagUpdate() { mixin(MGF!("mSetHoldingFlagUpdate", "Function UTGame.UTVoice.SetHoldingFlagUpdate")()); }
-			ScriptFunction SendLocalizedMessage() { mixin(MGF!("mSendLocalizedMessage", "Function UTGame.UTVoice.SendLocalizedMessage")()); }
-			ScriptFunction SendEnemyFlagCarrierHereUpdate() { mixin(MGF!("mSendEnemyFlagCarrierHereUpdate", "Function UTGame.UTVoice.SendEnemyFlagCarrierHereUpdate")()); }
-			ScriptFunction InitSniperUpdate() { mixin(MGF!("mInitSniperUpdate", "Function UTGame.UTVoice.InitSniperUpdate")()); }
-			ScriptFunction SendEnemyStatusUpdate() { mixin(MGF!("mSendEnemyStatusUpdate", "Function UTGame.UTVoice.SendEnemyStatusUpdate")()); }
-			ScriptFunction SendKilledVehicleMessage() { mixin(MGF!("mSendKilledVehicleMessage", "Function UTGame.UTVoice.SendKilledVehicleMessage")()); }
-			ScriptFunction KilledVehicleSound() { mixin(MGF!("mKilledVehicleSound", "Function UTGame.UTVoice.KilledVehicleSound")()); }
-			ScriptFunction SendLocationUpdate() { mixin(MGF!("mSendLocationUpdate", "Function UTGame.UTVoice.SendLocationUpdate")()); }
-			ScriptFunction SendInPositionMessage() { mixin(MGF!("mSendInPositionMessage", "Function UTGame.UTVoice.SendInPositionMessage")()); }
-			ScriptFunction ShouldBeRemoved() { mixin(MGF!("mShouldBeRemoved", "Function UTGame.UTVoice.ShouldBeRemoved")()); }
-			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTVoice.AddAnnouncement")()); }
+			ScriptFunction GetAckMessageIndex() { mixin(MGF("mGetAckMessageIndex", "Function UTGame.UTVoice.GetAckMessageIndex")); }
+			ScriptFunction GetFriendlyFireMessageIndex() { mixin(MGF("mGetFriendlyFireMessageIndex", "Function UTGame.UTVoice.GetFriendlyFireMessageIndex")); }
+			ScriptFunction GetGotYourBackMessageIndex() { mixin(MGF("mGetGotYourBackMessageIndex", "Function UTGame.UTVoice.GetGotYourBackMessageIndex")); }
+			ScriptFunction GetNeedOurFlagMessageIndex() { mixin(MGF("mGetNeedOurFlagMessageIndex", "Function UTGame.UTVoice.GetNeedOurFlagMessageIndex")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTVoice.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTVoice.AnnouncementSound")); }
+			ScriptFunction EnemySound() { mixin(MGF("mEnemySound", "Function UTGame.UTVoice.EnemySound")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTVoice.GetString")); }
+			ScriptFunction AllowVoiceMessage() { mixin(MGF("mAllowVoiceMessage", "Function UTGame.UTVoice.AllowVoiceMessage")); }
+			ScriptFunction SendVoiceMessage() { mixin(MGF("mSendVoiceMessage", "Function UTGame.UTVoice.SendVoiceMessage")); }
+			ScriptFunction GetMessageIndex() { mixin(MGF("mGetMessageIndex", "Function UTGame.UTVoice.GetMessageIndex")); }
+			ScriptFunction InitStatusUpdate() { mixin(MGF("mInitStatusUpdate", "Function UTGame.UTVoice.InitStatusUpdate")); }
+			ScriptFunction InitCombatUpdate() { mixin(MGF("mInitCombatUpdate", "Function UTGame.UTVoice.InitCombatUpdate")); }
+			ScriptFunction SetHoldingFlagUpdate() { mixin(MGF("mSetHoldingFlagUpdate", "Function UTGame.UTVoice.SetHoldingFlagUpdate")); }
+			ScriptFunction SendLocalizedMessage() { mixin(MGF("mSendLocalizedMessage", "Function UTGame.UTVoice.SendLocalizedMessage")); }
+			ScriptFunction SendEnemyFlagCarrierHereUpdate() { mixin(MGF("mSendEnemyFlagCarrierHereUpdate", "Function UTGame.UTVoice.SendEnemyFlagCarrierHereUpdate")); }
+			ScriptFunction InitSniperUpdate() { mixin(MGF("mInitSniperUpdate", "Function UTGame.UTVoice.InitSniperUpdate")); }
+			ScriptFunction SendEnemyStatusUpdate() { mixin(MGF("mSendEnemyStatusUpdate", "Function UTGame.UTVoice.SendEnemyStatusUpdate")); }
+			ScriptFunction SendKilledVehicleMessage() { mixin(MGF("mSendKilledVehicleMessage", "Function UTGame.UTVoice.SendKilledVehicleMessage")); }
+			ScriptFunction KilledVehicleSound() { mixin(MGF("mKilledVehicleSound", "Function UTGame.UTVoice.KilledVehicleSound")); }
+			ScriptFunction SendLocationUpdate() { mixin(MGF("mSendLocationUpdate", "Function UTGame.UTVoice.SendLocationUpdate")); }
+			ScriptFunction SendInPositionMessage() { mixin(MGF("mSendInPositionMessage", "Function UTGame.UTVoice.SendInPositionMessage")); }
+			ScriptFunction ShouldBeRemoved() { mixin(MGF("mShouldBeRemoved", "Function UTGame.UTVoice.ShouldBeRemoved")); }
+			ScriptFunction AddAnnouncement() { mixin(MGF("mAddAnnouncement", "Function UTGame.UTVoice.AddAnnouncement")); }
 		}
 	}
 	static struct Constants
@@ -100,22 +100,22 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundNodeWave) AckSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 100)()); }
-		ScriptArray!(SoundNodeWave) FriendlyFireSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 112)()); }
-		ScriptArray!(SoundNodeWave) GotYourBackSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 124)()); }
-		ScriptArray!(SoundNodeWave) NeedOurFlagSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 136)()); }
-		ScriptArray!(SoundNodeWave) SniperSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 148)()); }
-		ScriptArray!(SoundNodeWave) InPositionSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 160)()); }
-		ScriptArray!(SoundNodeWave) HaveFlagSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 172)()); }
-		ScriptArray!(SoundNodeWave) AreaSecureSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 184)()); }
-		int LocationSpeechOffset() { mixin(MGPC!("int", 224)()); }
-		SoundNodeWave GotOurFlagSound() { mixin(MGPC!("SoundNodeWave", 220)()); }
-		SoundNodeWave MidfieldSound() { mixin(MGPC!("SoundNodeWave", 216)()); }
-		SoundNodeWave EnemyFlagCarrierLowSound() { mixin(MGPC!("SoundNodeWave", 212)()); }
-		SoundNodeWave EnemyFlagCarrierHighSound() { mixin(MGPC!("SoundNodeWave", 208)()); }
-		SoundNodeWave EnemyFlagCarrierHereSound() { mixin(MGPC!("SoundNodeWave", 204)()); }
-		SoundNodeWave EnemyFlagCarrierSound() { mixin(MGPC!("SoundNodeWave", 200)()); }
-		SoundNodeWave IncomingSound() { mixin(MGPC!("SoundNodeWave", 196)()); }
+		ScriptArray!(SoundNodeWave) AckSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 100)); }
+		ScriptArray!(SoundNodeWave) FriendlyFireSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 112)); }
+		ScriptArray!(SoundNodeWave) GotYourBackSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 124)); }
+		ScriptArray!(SoundNodeWave) NeedOurFlagSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 136)); }
+		ScriptArray!(SoundNodeWave) SniperSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 148)); }
+		ScriptArray!(SoundNodeWave) InPositionSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 160)); }
+		ScriptArray!(SoundNodeWave) HaveFlagSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 172)); }
+		ScriptArray!(SoundNodeWave) AreaSecureSounds() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 184)); }
+		int LocationSpeechOffset() { mixin(MGPC("int", 224)); }
+		SoundNodeWave GotOurFlagSound() { mixin(MGPC("SoundNodeWave", 220)); }
+		SoundNodeWave MidfieldSound() { mixin(MGPC("SoundNodeWave", 216)); }
+		SoundNodeWave EnemyFlagCarrierLowSound() { mixin(MGPC("SoundNodeWave", 212)); }
+		SoundNodeWave EnemyFlagCarrierHighSound() { mixin(MGPC("SoundNodeWave", 208)); }
+		SoundNodeWave EnemyFlagCarrierHereSound() { mixin(MGPC("SoundNodeWave", 204)); }
+		SoundNodeWave EnemyFlagCarrierSound() { mixin(MGPC("SoundNodeWave", 200)); }
+		SoundNodeWave IncomingSound() { mixin(MGPC("SoundNodeWave", 196)); }
 	}
 final:
 	static int GetAckMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)

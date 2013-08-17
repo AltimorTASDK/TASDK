@@ -8,9 +8,9 @@ extern(C++) interface UDKAnimNodeFramePlayer : AnimNodeSequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimNodeFramePlayer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKAnimNodeFramePlayer")); }
 	private static __gshared UDKAnimNodeFramePlayer mDefaultProperties;
-	@property final static UDKAnimNodeFramePlayer DefaultProperties() { mixin(MGDPC!(UDKAnimNodeFramePlayer, "UDKAnimNodeFramePlayer UDKBase.Default__UDKAnimNodeFramePlayer")()); }
+	@property final static UDKAnimNodeFramePlayer DefaultProperties() { mixin(MGDPC("UDKAnimNodeFramePlayer", "UDKAnimNodeFramePlayer UDKBase.Default__UDKAnimNodeFramePlayer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetAnimation() { mixin(MGF!("mSetAnimation", "Function UDKBase.UDKAnimNodeFramePlayer.SetAnimation")()); }
-			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function UDKBase.UDKAnimNodeFramePlayer.SetAnimPosition")()); }
+			ScriptFunction SetAnimation() { mixin(MGF("mSetAnimation", "Function UDKBase.UDKAnimNodeFramePlayer.SetAnimation")); }
+			ScriptFunction SetAnimPosition() { mixin(MGF("mSetAnimPosition", "Function UDKBase.UDKAnimNodeFramePlayer.SetAnimPosition")); }
 		}
 	}
 final:

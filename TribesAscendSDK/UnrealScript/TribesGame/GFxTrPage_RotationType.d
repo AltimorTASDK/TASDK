@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_RotationType : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_RotationType")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_RotationType")); }
 	private static __gshared GFxTrPage_RotationType mDefaultProperties;
-	@property final static GFxTrPage_RotationType DefaultProperties() { mixin(MGDPC!(GFxTrPage_RotationType, "GFxTrPage_RotationType TribesGame.Default__GFxTrPage_RotationType")()); }
+	@property final static GFxTrPage_RotationType DefaultProperties() { mixin(MGDPC("GFxTrPage_RotationType", "GFxTrPage_RotationType TribesGame.Default__GFxTrPage_RotationType")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,13 +26,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_RotationType.Initialize")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_RotationType.TakeAction")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_RotationType.TakeFocus")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_RotationType.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_RotationType.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_RotationType.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_RotationType.FillDescription")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_RotationType.Initialize")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_RotationType.TakeAction")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_RotationType.TakeFocus")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_RotationType.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_RotationType.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_RotationType.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_RotationType.FillDescription")); }
 		}
 	}
 final:

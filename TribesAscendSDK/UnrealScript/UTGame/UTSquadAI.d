@@ -19,9 +19,9 @@ extern(C++) interface UTSquadAI : UDKSquadAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSquadAI")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSquadAI")); }
 	private static __gshared UTSquadAI mDefaultProperties;
-	@property final static UTSquadAI DefaultProperties() { mixin(MGDPC!(UTSquadAI, "UTSquadAI UTGame.Default__UTSquadAI")()); }
+	@property final static UTSquadAI DefaultProperties() { mixin(MGDPC("UTSquadAI", "UTSquadAI UTGame.Default__UTSquadAI")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -115,92 +115,92 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AllowContinueOnFoot() { mixin(MGF!("mAllowContinueOnFoot", "Function UTGame.UTSquadAI.AllowContinueOnFoot")()); }
-			ScriptFunction AllowImpactJumpBy() { mixin(MGF!("mAllowImpactJumpBy", "Function UTGame.UTSquadAI.AllowImpactJumpBy")()); }
-			ScriptFunction GetOrders() { mixin(MGF!("mGetOrders", "Function UTGame.UTSquadAI.GetOrders")()); }
-			ScriptFunction SetEnemy() { mixin(MGF!("mSetEnemy", "Function UTGame.UTSquadAI.SetEnemy")()); }
-			ScriptFunction AssignSquadResponsibility() { mixin(MGF!("mAssignSquadResponsibility", "Function UTGame.UTSquadAI.AssignSquadResponsibility")()); }
-			ScriptFunction FindNewEnemyFor() { mixin(MGF!("mFindNewEnemyFor", "Function UTGame.UTSquadAI.FindNewEnemyFor")()); }
-			ScriptFunction MustKeepEnemy() { mixin(MGF!("mMustKeepEnemy", "Function UTGame.UTSquadAI.MustKeepEnemy")()); }
-			ScriptFunction IsDefending() { mixin(MGF!("mIsDefending", "Function UTGame.UTSquadAI.IsDefending")()); }
-			ScriptFunction HasOtherVisibleEnemy() { mixin(MGF!("mHasOtherVisibleEnemy", "Function UTGame.UTSquadAI.HasOtherVisibleEnemy")()); }
-			ScriptFunction PriorityObjective() { mixin(MGF!("mPriorityObjective", "Function UTGame.UTSquadAI.PriorityObjective")()); }
-			ScriptFunction AllowDetourTo() { mixin(MGF!("mAllowDetourTo", "Function UTGame.UTSquadAI.AllowDetourTo")()); }
-			ScriptFunction SetFacingActor() { mixin(MGF!("mSetFacingActor", "Function UTGame.UTSquadAI.SetFacingActor")()); }
-			ScriptFunction FormationCenter() { mixin(MGF!("mFormationCenter", "Function UTGame.UTSquadAI.FormationCenter")()); }
-			ScriptFunction AcceptableDefensivePosition() { mixin(MGF!("mAcceptableDefensivePosition", "Function UTGame.UTSquadAI.AcceptableDefensivePosition")()); }
-			ScriptFunction FindDefensivePositionFor() { mixin(MGF!("mFindDefensivePositionFor", "Function UTGame.UTSquadAI.FindDefensivePositionFor")()); }
-			ScriptFunction ClearPathFor() { mixin(MGF!("mClearPathFor", "Function UTGame.UTSquadAI.ClearPathFor")()); }
-			ScriptFunction LostEnemy() { mixin(MGF!("mLostEnemy", "Function UTGame.UTSquadAI.LostEnemy")()); }
-			ScriptFunction PickRetreatDestination() { mixin(MGF!("mPickRetreatDestination", "Function UTGame.UTSquadAI.PickRetreatDestination")()); }
-			ScriptFunction BeDevious() { mixin(MGF!("mBeDevious", "Function UTGame.UTSquadAI.BeDevious")()); }
-			ScriptFunction ShouldSuppressEnemy() { mixin(MGF!("mShouldSuppressEnemy", "Function UTGame.UTSquadAI.ShouldSuppressEnemy")()); }
-			ScriptFunction VehicleDesireability() { mixin(MGF!("mVehicleDesireability", "Function UTGame.UTSquadAI.VehicleDesireability")()); }
-			ScriptFunction HandlePathObstruction() { mixin(MGF!("mHandlePathObstruction", "Function UTGame.UTSquadAI.HandlePathObstruction")()); }
-			ScriptFunction FindPathToObjective() { mixin(MGF!("mFindPathToObjective", "Function UTGame.UTSquadAI.FindPathToObjective")()); }
-			ScriptFunction GetSize() { mixin(MGF!("mGetSize", "Function UTGame.UTSquadAI.GetSize")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTSquadAI.Reset")()); }
-			ScriptFunction CriticalObjectiveWarning() { mixin(MGF!("mCriticalObjectiveWarning", "Function UTGame.UTSquadAI.CriticalObjectiveWarning")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTSquadAI.Destroyed")()); }
-			ScriptFunction GetLinkVehicle() { mixin(MGF!("mGetLinkVehicle", "Function UTGame.UTSquadAI.GetLinkVehicle")()); }
-			ScriptFunction GetFacingRotation() { mixin(MGF!("mGetFacingRotation", "Function UTGame.UTSquadAI.GetFacingRotation")()); }
-			ScriptFunction AddEnemy() { mixin(MGF!("mAddEnemy", "Function UTGame.UTSquadAI.AddEnemy")()); }
-			ScriptFunction ValidEnemy() { mixin(MGF!("mValidEnemy", "Function UTGame.UTSquadAI.ValidEnemy")()); }
-			ScriptFunction IsOnSquad() { mixin(MGF!("mIsOnSquad", "Function UTGame.UTSquadAI.IsOnSquad")()); }
-			ScriptFunction RemoveEnemy() { mixin(MGF!("mRemoveEnemy", "Function UTGame.UTSquadAI.RemoveEnemy")()); }
-			ScriptFunction NotifyKilled() { mixin(MGF!("mNotifyKilled", "Function UTGame.UTSquadAI.NotifyKilled")()); }
-			ScriptFunction ModifyThreat() { mixin(MGF!("mModifyThreat", "Function UTGame.UTSquadAI.ModifyThreat")()); }
-			ScriptFunction UnderFire() { mixin(MGF!("mUnderFire", "Function UTGame.UTSquadAI.UnderFire")()); }
-			ScriptFunction AssessThreat() { mixin(MGF!("mAssessThreat", "Function UTGame.UTSquadAI.AssessThreat")()); }
-			ScriptFunction ShouldDeferTo() { mixin(MGF!("mShouldDeferTo", "Function UTGame.UTSquadAI.ShouldDeferTo")()); }
-			ScriptFunction WaitAtThisPosition() { mixin(MGF!("mWaitAtThisPosition", "Function UTGame.UTSquadAI.WaitAtThisPosition")()); }
-			ScriptFunction WanderNearLeader() { mixin(MGF!("mWanderNearLeader", "Function UTGame.UTSquadAI.WanderNearLeader")()); }
-			ScriptFunction NearFormationCenter() { mixin(MGF!("mNearFormationCenter", "Function UTGame.UTSquadAI.NearFormationCenter")()); }
-			ScriptFunction CloseToLeader() { mixin(MGF!("mCloseToLeader", "Function UTGame.UTSquadAI.CloseToLeader")()); }
-			ScriptFunction MergeWith() { mixin(MGF!("mMergeWith", "Function UTGame.UTSquadAI.MergeWith")()); }
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function UTGame.UTSquadAI.Initialize")()); }
-			ScriptFunction ShouldUseAlternatePaths() { mixin(MGF!("mShouldUseAlternatePaths", "Function UTGame.UTSquadAI.ShouldUseAlternatePaths")()); }
-			ScriptFunction SetAlternatePathTo() { mixin(MGF!("mSetAlternatePathTo", "Function UTGame.UTSquadAI.SetAlternatePathTo")()); }
-			ScriptFunction TryToIntercept() { mixin(MGF!("mTryToIntercept", "Function UTGame.UTSquadAI.TryToIntercept")()); }
-			ScriptFunction CloseEnoughToObjective() { mixin(MGF!("mCloseEnoughToObjective", "Function UTGame.UTSquadAI.CloseEnoughToObjective")()); }
-			ScriptFunction LeaveVehicleToReachObjective() { mixin(MGF!("mLeaveVehicleToReachObjective", "Function UTGame.UTSquadAI.LeaveVehicleToReachObjective")()); }
-			ScriptFunction MustCompleteOnFoot() { mixin(MGF!("mMustCompleteOnFoot", "Function UTGame.UTSquadAI.MustCompleteOnFoot")()); }
-			ScriptFunction LeaveVehicleAtParkingSpot() { mixin(MGF!("mLeaveVehicleAtParkingSpot", "Function UTGame.UTSquadAI.LeaveVehicleAtParkingSpot")()); }
-			ScriptFunction SetLeader() { mixin(MGF!("mSetLeader", "Function UTGame.UTSquadAI.SetLeader")()); }
-			ScriptFunction RemovePlayer() { mixin(MGF!("mRemovePlayer", "Function UTGame.UTSquadAI.RemovePlayer")()); }
-			ScriptFunction RemoveBot() { mixin(MGF!("mRemoveBot", "Function UTGame.UTSquadAI.RemoveBot")()); }
-			ScriptFunction AddBot() { mixin(MGF!("mAddBot", "Function UTGame.UTSquadAI.AddBot")()); }
-			ScriptFunction SetDefenseScriptFor() { mixin(MGF!("mSetDefenseScriptFor", "Function UTGame.UTSquadAI.SetDefenseScriptFor")()); }
-			ScriptFunction SetObjective() { mixin(MGF!("mSetObjective", "Function UTGame.UTSquadAI.SetObjective")()); }
-			ScriptFunction Retask() { mixin(MGF!("mRetask", "Function UTGame.UTSquadAI.Retask")()); }
-			ScriptFunction GetOrderStringFor() { mixin(MGF!("mGetOrderStringFor", "Function UTGame.UTSquadAI.GetOrderStringFor")()); }
-			ScriptFunction GetShortOrderStringFor() { mixin(MGF!("mGetShortOrderStringFor", "Function UTGame.UTSquadAI.GetShortOrderStringFor")()); }
-			ScriptFunction PickNewLeader() { mixin(MGF!("mPickNewLeader", "Function UTGame.UTSquadAI.PickNewLeader")()); }
-			ScriptFunction TellBotToFollow() { mixin(MGF!("mTellBotToFollow", "Function UTGame.UTSquadAI.TellBotToFollow")()); }
-			ScriptFunction AllowTaunt() { mixin(MGF!("mAllowTaunt", "Function UTGame.UTSquadAI.AllowTaunt")()); }
-			ScriptFunction AddTransientCosts() { mixin(MGF!("mAddTransientCosts", "Function UTGame.UTSquadAI.AddTransientCosts")()); }
-			ScriptFunction MaxVehicleDist() { mixin(MGF!("mMaxVehicleDist", "Function UTGame.UTSquadAI.MaxVehicleDist")()); }
-			ScriptFunction NeverBail() { mixin(MGF!("mNeverBail", "Function UTGame.UTSquadAI.NeverBail")()); }
-			ScriptFunction BotEnteredVehicle() { mixin(MGF!("mBotEnteredVehicle", "Function UTGame.UTSquadAI.BotEnteredVehicle")()); }
-			ScriptFunction IsOnPathToSquadObjective() { mixin(MGF!("mIsOnPathToSquadObjective", "Function UTGame.UTSquadAI.IsOnPathToSquadObjective")()); }
-			ScriptFunction GetOnHoverboard() { mixin(MGF!("mGetOnHoverboard", "Function UTGame.UTSquadAI.GetOnHoverboard")()); }
-			ScriptFunction EnterAndExitVehicle() { mixin(MGF!("mEnterAndExitVehicle", "Function UTGame.UTSquadAI.EnterAndExitVehicle")()); }
-			ScriptFunction GotoVehicle() { mixin(MGF!("mGotoVehicle", "Function UTGame.UTSquadAI.GotoVehicle")()); }
-			ScriptFunction CheckVehicle() { mixin(MGF!("mCheckVehicle", "Function UTGame.UTSquadAI.CheckVehicle")()); }
-			ScriptFunction CheckHoverboard() { mixin(MGF!("mCheckHoverboard", "Function UTGame.UTSquadAI.CheckHoverboard")()); }
-			ScriptFunction ShouldUseHoverboard() { mixin(MGF!("mShouldUseHoverboard", "Function UTGame.UTSquadAI.ShouldUseHoverboard")()); }
-			ScriptFunction OverrideFollowPlayer() { mixin(MGF!("mOverrideFollowPlayer", "Function UTGame.UTSquadAI.OverrideFollowPlayer")()); }
-			ScriptFunction ShouldCheckSuperVehicle() { mixin(MGF!("mShouldCheckSuperVehicle", "Function UTGame.UTSquadAI.ShouldCheckSuperVehicle")()); }
-			ScriptFunction CheckSuperItem() { mixin(MGF!("mCheckSuperItem", "Function UTGame.UTSquadAI.CheckSuperItem")()); }
-			ScriptFunction CheckSquadObjectives() { mixin(MGF!("mCheckSquadObjectives", "Function UTGame.UTSquadAI.CheckSquadObjectives")()); }
-			ScriptFunction BotSuitability() { mixin(MGF!("mBotSuitability", "Function UTGame.UTSquadAI.BotSuitability")()); }
-			ScriptFunction PickBotToReassign() { mixin(MGF!("mPickBotToReassign", "Function UTGame.UTSquadAI.PickBotToReassign")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTSquadAI.DisplayDebug")()); }
-			ScriptFunction FriendlyToward() { mixin(MGF!("mFriendlyToward", "Function UTGame.UTSquadAI.FriendlyToward")()); }
-			ScriptFunction GetMaxDefenseDistanceFrom() { mixin(MGF!("mGetMaxDefenseDistanceFrom", "Function UTGame.UTSquadAI.GetMaxDefenseDistanceFrom")()); }
-			ScriptFunction RateDefensivePosition() { mixin(MGF!("mRateDefensivePosition", "Function UTGame.UTSquadAI.RateDefensivePosition")()); }
-			ScriptFunction MarkHuntingSpots() { mixin(MGF!("mMarkHuntingSpots", "Function UTGame.UTSquadAI.MarkHuntingSpots")()); }
-			ScriptFunction ModifyAggression() { mixin(MGF!("mModifyAggression", "Function UTGame.UTSquadAI.ModifyAggression")()); }
+			ScriptFunction AllowContinueOnFoot() { mixin(MGF("mAllowContinueOnFoot", "Function UTGame.UTSquadAI.AllowContinueOnFoot")); }
+			ScriptFunction AllowImpactJumpBy() { mixin(MGF("mAllowImpactJumpBy", "Function UTGame.UTSquadAI.AllowImpactJumpBy")); }
+			ScriptFunction GetOrders() { mixin(MGF("mGetOrders", "Function UTGame.UTSquadAI.GetOrders")); }
+			ScriptFunction SetEnemy() { mixin(MGF("mSetEnemy", "Function UTGame.UTSquadAI.SetEnemy")); }
+			ScriptFunction AssignSquadResponsibility() { mixin(MGF("mAssignSquadResponsibility", "Function UTGame.UTSquadAI.AssignSquadResponsibility")); }
+			ScriptFunction FindNewEnemyFor() { mixin(MGF("mFindNewEnemyFor", "Function UTGame.UTSquadAI.FindNewEnemyFor")); }
+			ScriptFunction MustKeepEnemy() { mixin(MGF("mMustKeepEnemy", "Function UTGame.UTSquadAI.MustKeepEnemy")); }
+			ScriptFunction IsDefending() { mixin(MGF("mIsDefending", "Function UTGame.UTSquadAI.IsDefending")); }
+			ScriptFunction HasOtherVisibleEnemy() { mixin(MGF("mHasOtherVisibleEnemy", "Function UTGame.UTSquadAI.HasOtherVisibleEnemy")); }
+			ScriptFunction PriorityObjective() { mixin(MGF("mPriorityObjective", "Function UTGame.UTSquadAI.PriorityObjective")); }
+			ScriptFunction AllowDetourTo() { mixin(MGF("mAllowDetourTo", "Function UTGame.UTSquadAI.AllowDetourTo")); }
+			ScriptFunction SetFacingActor() { mixin(MGF("mSetFacingActor", "Function UTGame.UTSquadAI.SetFacingActor")); }
+			ScriptFunction FormationCenter() { mixin(MGF("mFormationCenter", "Function UTGame.UTSquadAI.FormationCenter")); }
+			ScriptFunction AcceptableDefensivePosition() { mixin(MGF("mAcceptableDefensivePosition", "Function UTGame.UTSquadAI.AcceptableDefensivePosition")); }
+			ScriptFunction FindDefensivePositionFor() { mixin(MGF("mFindDefensivePositionFor", "Function UTGame.UTSquadAI.FindDefensivePositionFor")); }
+			ScriptFunction ClearPathFor() { mixin(MGF("mClearPathFor", "Function UTGame.UTSquadAI.ClearPathFor")); }
+			ScriptFunction LostEnemy() { mixin(MGF("mLostEnemy", "Function UTGame.UTSquadAI.LostEnemy")); }
+			ScriptFunction PickRetreatDestination() { mixin(MGF("mPickRetreatDestination", "Function UTGame.UTSquadAI.PickRetreatDestination")); }
+			ScriptFunction BeDevious() { mixin(MGF("mBeDevious", "Function UTGame.UTSquadAI.BeDevious")); }
+			ScriptFunction ShouldSuppressEnemy() { mixin(MGF("mShouldSuppressEnemy", "Function UTGame.UTSquadAI.ShouldSuppressEnemy")); }
+			ScriptFunction VehicleDesireability() { mixin(MGF("mVehicleDesireability", "Function UTGame.UTSquadAI.VehicleDesireability")); }
+			ScriptFunction HandlePathObstruction() { mixin(MGF("mHandlePathObstruction", "Function UTGame.UTSquadAI.HandlePathObstruction")); }
+			ScriptFunction FindPathToObjective() { mixin(MGF("mFindPathToObjective", "Function UTGame.UTSquadAI.FindPathToObjective")); }
+			ScriptFunction GetSize() { mixin(MGF("mGetSize", "Function UTGame.UTSquadAI.GetSize")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function UTGame.UTSquadAI.Reset")); }
+			ScriptFunction CriticalObjectiveWarning() { mixin(MGF("mCriticalObjectiveWarning", "Function UTGame.UTSquadAI.CriticalObjectiveWarning")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UTGame.UTSquadAI.Destroyed")); }
+			ScriptFunction GetLinkVehicle() { mixin(MGF("mGetLinkVehicle", "Function UTGame.UTSquadAI.GetLinkVehicle")); }
+			ScriptFunction GetFacingRotation() { mixin(MGF("mGetFacingRotation", "Function UTGame.UTSquadAI.GetFacingRotation")); }
+			ScriptFunction AddEnemy() { mixin(MGF("mAddEnemy", "Function UTGame.UTSquadAI.AddEnemy")); }
+			ScriptFunction ValidEnemy() { mixin(MGF("mValidEnemy", "Function UTGame.UTSquadAI.ValidEnemy")); }
+			ScriptFunction IsOnSquad() { mixin(MGF("mIsOnSquad", "Function UTGame.UTSquadAI.IsOnSquad")); }
+			ScriptFunction RemoveEnemy() { mixin(MGF("mRemoveEnemy", "Function UTGame.UTSquadAI.RemoveEnemy")); }
+			ScriptFunction NotifyKilled() { mixin(MGF("mNotifyKilled", "Function UTGame.UTSquadAI.NotifyKilled")); }
+			ScriptFunction ModifyThreat() { mixin(MGF("mModifyThreat", "Function UTGame.UTSquadAI.ModifyThreat")); }
+			ScriptFunction UnderFire() { mixin(MGF("mUnderFire", "Function UTGame.UTSquadAI.UnderFire")); }
+			ScriptFunction AssessThreat() { mixin(MGF("mAssessThreat", "Function UTGame.UTSquadAI.AssessThreat")); }
+			ScriptFunction ShouldDeferTo() { mixin(MGF("mShouldDeferTo", "Function UTGame.UTSquadAI.ShouldDeferTo")); }
+			ScriptFunction WaitAtThisPosition() { mixin(MGF("mWaitAtThisPosition", "Function UTGame.UTSquadAI.WaitAtThisPosition")); }
+			ScriptFunction WanderNearLeader() { mixin(MGF("mWanderNearLeader", "Function UTGame.UTSquadAI.WanderNearLeader")); }
+			ScriptFunction NearFormationCenter() { mixin(MGF("mNearFormationCenter", "Function UTGame.UTSquadAI.NearFormationCenter")); }
+			ScriptFunction CloseToLeader() { mixin(MGF("mCloseToLeader", "Function UTGame.UTSquadAI.CloseToLeader")); }
+			ScriptFunction MergeWith() { mixin(MGF("mMergeWith", "Function UTGame.UTSquadAI.MergeWith")); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function UTGame.UTSquadAI.Initialize")); }
+			ScriptFunction ShouldUseAlternatePaths() { mixin(MGF("mShouldUseAlternatePaths", "Function UTGame.UTSquadAI.ShouldUseAlternatePaths")); }
+			ScriptFunction SetAlternatePathTo() { mixin(MGF("mSetAlternatePathTo", "Function UTGame.UTSquadAI.SetAlternatePathTo")); }
+			ScriptFunction TryToIntercept() { mixin(MGF("mTryToIntercept", "Function UTGame.UTSquadAI.TryToIntercept")); }
+			ScriptFunction CloseEnoughToObjective() { mixin(MGF("mCloseEnoughToObjective", "Function UTGame.UTSquadAI.CloseEnoughToObjective")); }
+			ScriptFunction LeaveVehicleToReachObjective() { mixin(MGF("mLeaveVehicleToReachObjective", "Function UTGame.UTSquadAI.LeaveVehicleToReachObjective")); }
+			ScriptFunction MustCompleteOnFoot() { mixin(MGF("mMustCompleteOnFoot", "Function UTGame.UTSquadAI.MustCompleteOnFoot")); }
+			ScriptFunction LeaveVehicleAtParkingSpot() { mixin(MGF("mLeaveVehicleAtParkingSpot", "Function UTGame.UTSquadAI.LeaveVehicleAtParkingSpot")); }
+			ScriptFunction SetLeader() { mixin(MGF("mSetLeader", "Function UTGame.UTSquadAI.SetLeader")); }
+			ScriptFunction RemovePlayer() { mixin(MGF("mRemovePlayer", "Function UTGame.UTSquadAI.RemovePlayer")); }
+			ScriptFunction RemoveBot() { mixin(MGF("mRemoveBot", "Function UTGame.UTSquadAI.RemoveBot")); }
+			ScriptFunction AddBot() { mixin(MGF("mAddBot", "Function UTGame.UTSquadAI.AddBot")); }
+			ScriptFunction SetDefenseScriptFor() { mixin(MGF("mSetDefenseScriptFor", "Function UTGame.UTSquadAI.SetDefenseScriptFor")); }
+			ScriptFunction SetObjective() { mixin(MGF("mSetObjective", "Function UTGame.UTSquadAI.SetObjective")); }
+			ScriptFunction Retask() { mixin(MGF("mRetask", "Function UTGame.UTSquadAI.Retask")); }
+			ScriptFunction GetOrderStringFor() { mixin(MGF("mGetOrderStringFor", "Function UTGame.UTSquadAI.GetOrderStringFor")); }
+			ScriptFunction GetShortOrderStringFor() { mixin(MGF("mGetShortOrderStringFor", "Function UTGame.UTSquadAI.GetShortOrderStringFor")); }
+			ScriptFunction PickNewLeader() { mixin(MGF("mPickNewLeader", "Function UTGame.UTSquadAI.PickNewLeader")); }
+			ScriptFunction TellBotToFollow() { mixin(MGF("mTellBotToFollow", "Function UTGame.UTSquadAI.TellBotToFollow")); }
+			ScriptFunction AllowTaunt() { mixin(MGF("mAllowTaunt", "Function UTGame.UTSquadAI.AllowTaunt")); }
+			ScriptFunction AddTransientCosts() { mixin(MGF("mAddTransientCosts", "Function UTGame.UTSquadAI.AddTransientCosts")); }
+			ScriptFunction MaxVehicleDist() { mixin(MGF("mMaxVehicleDist", "Function UTGame.UTSquadAI.MaxVehicleDist")); }
+			ScriptFunction NeverBail() { mixin(MGF("mNeverBail", "Function UTGame.UTSquadAI.NeverBail")); }
+			ScriptFunction BotEnteredVehicle() { mixin(MGF("mBotEnteredVehicle", "Function UTGame.UTSquadAI.BotEnteredVehicle")); }
+			ScriptFunction IsOnPathToSquadObjective() { mixin(MGF("mIsOnPathToSquadObjective", "Function UTGame.UTSquadAI.IsOnPathToSquadObjective")); }
+			ScriptFunction GetOnHoverboard() { mixin(MGF("mGetOnHoverboard", "Function UTGame.UTSquadAI.GetOnHoverboard")); }
+			ScriptFunction EnterAndExitVehicle() { mixin(MGF("mEnterAndExitVehicle", "Function UTGame.UTSquadAI.EnterAndExitVehicle")); }
+			ScriptFunction GotoVehicle() { mixin(MGF("mGotoVehicle", "Function UTGame.UTSquadAI.GotoVehicle")); }
+			ScriptFunction CheckVehicle() { mixin(MGF("mCheckVehicle", "Function UTGame.UTSquadAI.CheckVehicle")); }
+			ScriptFunction CheckHoverboard() { mixin(MGF("mCheckHoverboard", "Function UTGame.UTSquadAI.CheckHoverboard")); }
+			ScriptFunction ShouldUseHoverboard() { mixin(MGF("mShouldUseHoverboard", "Function UTGame.UTSquadAI.ShouldUseHoverboard")); }
+			ScriptFunction OverrideFollowPlayer() { mixin(MGF("mOverrideFollowPlayer", "Function UTGame.UTSquadAI.OverrideFollowPlayer")); }
+			ScriptFunction ShouldCheckSuperVehicle() { mixin(MGF("mShouldCheckSuperVehicle", "Function UTGame.UTSquadAI.ShouldCheckSuperVehicle")); }
+			ScriptFunction CheckSuperItem() { mixin(MGF("mCheckSuperItem", "Function UTGame.UTSquadAI.CheckSuperItem")); }
+			ScriptFunction CheckSquadObjectives() { mixin(MGF("mCheckSquadObjectives", "Function UTGame.UTSquadAI.CheckSquadObjectives")); }
+			ScriptFunction BotSuitability() { mixin(MGF("mBotSuitability", "Function UTGame.UTSquadAI.BotSuitability")); }
+			ScriptFunction PickBotToReassign() { mixin(MGF("mPickBotToReassign", "Function UTGame.UTSquadAI.PickBotToReassign")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function UTGame.UTSquadAI.DisplayDebug")); }
+			ScriptFunction FriendlyToward() { mixin(MGF("mFriendlyToward", "Function UTGame.UTSquadAI.FriendlyToward")); }
+			ScriptFunction GetMaxDefenseDistanceFrom() { mixin(MGF("mGetMaxDefenseDistanceFrom", "Function UTGame.UTSquadAI.GetMaxDefenseDistanceFrom")); }
+			ScriptFunction RateDefensivePosition() { mixin(MGF("mRateDefensivePosition", "Function UTGame.UTSquadAI.RateDefensivePosition")); }
+			ScriptFunction MarkHuntingSpots() { mixin(MGF("mMarkHuntingSpots", "Function UTGame.UTSquadAI.MarkHuntingSpots")); }
+			ScriptFunction ModifyAggression() { mixin(MGF("mModifyAggression", "Function UTGame.UTSquadAI.ModifyAggression")); }
 		}
 	}
 	static struct Constants
@@ -210,40 +210,40 @@ public extern(D):
 	static struct Retasking
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTSquadAI.Retasking")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTSquadAI.Retasking")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Controller SquadLeader() { mixin(MGPC!("Controller", 536)()); }
-			UTBot SquadMembers() { mixin(MGPC!("UTBot", 552)()); }
-			float FormationSize() { mixin(MGPC!("float", 676)()); }
-			int MaxSquadSize() { mixin(MGPC!("int", 668)()); }
-			Pawn Enemies() { mixin(MGPC!("Pawn", 636)()); }
-			ScriptName CurrentOrders() { mixin(MGPC!("ScriptName", 628)()); }
-			ScriptString SupportStringTrailer() { mixin(MGPC!("ScriptString", 616)()); }
-			ScriptString FreelanceString() { mixin(MGPC!("ScriptString", 604)()); }
-			ScriptString HoldString() { mixin(MGPC!("ScriptString", 592)()); }
-			ScriptString AttackString() { mixin(MGPC!("ScriptString", 580)()); }
-			ScriptString DefendString() { mixin(MGPC!("ScriptString", 568)()); }
-			ScriptString SupportString() { mixin(MGPC!("ScriptString", 556)()); }
-			int Size() { mixin(MGPC!("int", 548)()); }
-			UTSquadAI NextSquad() { mixin(MGPC!("UTSquadAI", 544)()); }
-			UTPlayerReplicationInfo LeaderPRI() { mixin(MGPC!("UTPlayerReplicationInfo", 540)()); }
+			Controller SquadLeader() { mixin(MGPC("Controller", 536)); }
+			UTBot SquadMembers() { mixin(MGPC("UTBot", 552)); }
+			float FormationSize() { mixin(MGPC("float", 676)); }
+			int MaxSquadSize() { mixin(MGPC("int", 668)); }
+			Pawn Enemies() { mixin(MGPC("Pawn", 636)); }
+			ScriptName CurrentOrders() { mixin(MGPC("ScriptName", 628)); }
+			ScriptString SupportStringTrailer() { mixin(MGPC("ScriptString", 616)); }
+			ScriptString FreelanceString() { mixin(MGPC("ScriptString", 604)); }
+			ScriptString HoldString() { mixin(MGPC("ScriptString", 592)); }
+			ScriptString AttackString() { mixin(MGPC("ScriptString", 580)); }
+			ScriptString DefendString() { mixin(MGPC("ScriptString", 568)); }
+			ScriptString SupportString() { mixin(MGPC("ScriptString", 556)); }
+			int Size() { mixin(MGPC("int", 548)); }
+			UTSquadAI NextSquad() { mixin(MGPC("UTSquadAI", 544)); }
+			UTPlayerReplicationInfo LeaderPRI() { mixin(MGPC("UTPlayerReplicationInfo", 540)); }
 		}
-		bool bShouldUseGatherPoints() { mixin(MGBPC!(672, 0x20)()); }
-		bool bShouldUseGatherPoints(bool val) { mixin(MSBPC!(672, 0x20)()); }
-		bool bAddTransientCosts() { mixin(MGBPC!(672, 0x10)()); }
-		bool bAddTransientCosts(bool val) { mixin(MSBPC!(672, 0x10)()); }
-		bool bRoamingSquad() { mixin(MGBPC!(672, 0x8)()); }
-		bool bRoamingSquad(bool val) { mixin(MSBPC!(672, 0x8)()); }
-		bool bFreelanceDefend() { mixin(MGBPC!(672, 0x4)()); }
-		bool bFreelanceDefend(bool val) { mixin(MSBPC!(672, 0x4)()); }
-		bool bFreelanceAttack() { mixin(MGBPC!(672, 0x2)()); }
-		bool bFreelanceAttack(bool val) { mixin(MSBPC!(672, 0x2)()); }
-		bool bFreelance() { mixin(MGBPC!(672, 0x1)()); }
-		bool bFreelance(bool val) { mixin(MSBPC!(672, 0x1)()); }
+		bool bShouldUseGatherPoints() { mixin(MGBPC(672, 0x20)); }
+		bool bShouldUseGatherPoints(bool val) { mixin(MSBPC(672, 0x20)); }
+		bool bAddTransientCosts() { mixin(MGBPC(672, 0x10)); }
+		bool bAddTransientCosts(bool val) { mixin(MSBPC(672, 0x10)); }
+		bool bRoamingSquad() { mixin(MGBPC(672, 0x8)); }
+		bool bRoamingSquad(bool val) { mixin(MSBPC(672, 0x8)); }
+		bool bFreelanceDefend() { mixin(MGBPC(672, 0x4)); }
+		bool bFreelanceDefend(bool val) { mixin(MSBPC(672, 0x4)); }
+		bool bFreelanceAttack() { mixin(MGBPC(672, 0x2)); }
+		bool bFreelanceAttack(bool val) { mixin(MSBPC(672, 0x2)); }
+		bool bFreelance() { mixin(MGBPC(672, 0x1)); }
+		bool bFreelance(bool val) { mixin(MSBPC(672, 0x1)); }
 	}
 final:
 	bool AllowContinueOnFoot(UTBot B, UTVehicle V)

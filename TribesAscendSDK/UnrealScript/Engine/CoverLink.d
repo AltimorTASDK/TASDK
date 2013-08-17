@@ -15,9 +15,9 @@ extern(C++) interface CoverLink : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CoverLink")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CoverLink")); }
 	private static __gshared CoverLink mDefaultProperties;
-	@property final static CoverLink DefaultProperties() { mixin(MGDPC!(CoverLink, "CoverLink Engine.Default__CoverLink")()); }
+	@property final static CoverLink DefaultProperties() { mixin(MGDPC("CoverLink", "CoverLink Engine.Default__CoverLink")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -66,47 +66,47 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFireLinkTargetCoverInfo() { mixin(MGF!("mGetFireLinkTargetCoverInfo", "Function Engine.CoverLink.GetFireLinkTargetCoverInfo")()); }
-			ScriptFunction PackFireLinkInteractionInfo() { mixin(MGF!("mPackFireLinkInteractionInfo", "Function Engine.CoverLink.PackFireLinkInteractionInfo")()); }
-			ScriptFunction UnPackFireLinkInteractionInfo() { mixin(MGF!("mUnPackFireLinkInteractionInfo", "Function Engine.CoverLink.UnPackFireLinkInteractionInfo")()); }
-			ScriptFunction GetSlotLocation() { mixin(MGF!("mGetSlotLocation", "Function Engine.CoverLink.GetSlotLocation")()); }
-			ScriptFunction GetSlotRotation() { mixin(MGF!("mGetSlotRotation", "Function Engine.CoverLink.GetSlotRotation")()); }
-			ScriptFunction GetSlotViewPoint() { mixin(MGF!("mGetSlotViewPoint", "Function Engine.CoverLink.GetSlotViewPoint")()); }
-			ScriptFunction IsExposedTo() { mixin(MGF!("mIsExposedTo", "Function Engine.CoverLink.IsExposedTo")()); }
-			ScriptFunction SetInvalidUntil() { mixin(MGF!("mSetInvalidUntil", "Function Engine.CoverLink.SetInvalidUntil")()); }
-			ScriptFunction Claim() { mixin(MGF!("mClaim", "Function Engine.CoverLink.Claim")()); }
-			ScriptFunction UnClaim() { mixin(MGF!("mUnClaim", "Function Engine.CoverLink.UnClaim")()); }
-			ScriptFunction IsValidClaim() { mixin(MGF!("mIsValidClaim", "Function Engine.CoverLink.IsValidClaim")()); }
-			ScriptFunction IsValidClaimBetween() { mixin(MGF!("mIsValidClaimBetween", "Function Engine.CoverLink.IsValidClaimBetween")()); }
-			ScriptFunction IsStationarySlot() { mixin(MGF!("mIsStationarySlot", "Function Engine.CoverLink.IsStationarySlot")()); }
-			ScriptFunction IsEdgeSlot() { mixin(MGF!("mIsEdgeSlot", "Function Engine.CoverLink.IsEdgeSlot")()); }
-			ScriptFunction FindSlots() { mixin(MGF!("mFindSlots", "Function Engine.CoverLink.FindSlots")()); }
-			ScriptFunction IsLeftEdgeSlot() { mixin(MGF!("mIsLeftEdgeSlot", "Function Engine.CoverLink.IsLeftEdgeSlot")()); }
-			ScriptFunction IsRightEdgeSlot() { mixin(MGF!("mIsRightEdgeSlot", "Function Engine.CoverLink.IsRightEdgeSlot")()); }
-			ScriptFunction GetSlotIdxToLeft() { mixin(MGF!("mGetSlotIdxToLeft", "Function Engine.CoverLink.GetSlotIdxToLeft")()); }
-			ScriptFunction GetSlotIdxToRight() { mixin(MGF!("mGetSlotIdxToRight", "Function Engine.CoverLink.GetSlotIdxToRight")()); }
-			ScriptFunction AllowRightTransition() { mixin(MGF!("mAllowRightTransition", "Function Engine.CoverLink.AllowRightTransition")()); }
-			ScriptFunction AllowLeftTransition() { mixin(MGF!("mAllowLeftTransition", "Function Engine.CoverLink.AllowLeftTransition")()); }
-			ScriptFunction GetFireLinkTo() { mixin(MGF!("mGetFireLinkTo", "Function Engine.CoverLink.GetFireLinkTo")()); }
-			ScriptFunction HasFireLinkTo() { mixin(MGF!("mHasFireLinkTo", "Function Engine.CoverLink.HasFireLinkTo")()); }
-			ScriptFunction GetSlotActions() { mixin(MGF!("mGetSlotActions", "Function Engine.CoverLink.GetSlotActions")()); }
-			ScriptFunction SetDisabled() { mixin(MGF!("mSetDisabled", "Function Engine.CoverLink.SetDisabled")()); }
-			ScriptFunction SetSlotEnabled() { mixin(MGF!("mSetSlotEnabled", "Function Engine.CoverLink.SetSlotEnabled")()); }
-			ScriptFunction NotifySlotOwnerCoverDisabled() { mixin(MGF!("mNotifySlotOwnerCoverDisabled", "Function Engine.CoverLink.NotifySlotOwnerCoverDisabled")()); }
-			ScriptFunction SetSlotPlayerOnly() { mixin(MGF!("mSetSlotPlayerOnly", "Function Engine.CoverLink.SetSlotPlayerOnly")()); }
-			ScriptFunction OnModifyCover() { mixin(MGF!("mOnModifyCover", "Function Engine.CoverLink.OnModifyCover")()); }
-			ScriptFunction AutoAdjustSlot() { mixin(MGF!("mAutoAdjustSlot", "Function Engine.CoverLink.AutoAdjustSlot")()); }
-			ScriptFunction IsEnabled() { mixin(MGF!("mIsEnabled", "Function Engine.CoverLink.IsEnabled")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.CoverLink.OnToggle")()); }
-			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.CoverLink.CreateCheckpointRecord")()); }
-			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.CoverLink.ApplyCheckpointRecord")()); }
-			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.CoverLink.ShutDown")()); }
-			ScriptFunction GetSwatTurnTarget() { mixin(MGF!("mGetSwatTurnTarget", "Function Engine.CoverLink.GetSwatTurnTarget")()); }
-			ScriptFunction BreakFracturedMeshes() { mixin(MGF!("mBreakFracturedMeshes", "Function Engine.CoverLink.BreakFracturedMeshes")()); }
-			ScriptFunction AddCoverSlot() { mixin(MGF!("mAddCoverSlot", "Function Engine.CoverLink.AddCoverSlot")()); }
-			ScriptFunction GetDebugString() { mixin(MGF!("mGetDebugString", "Function Engine.CoverLink.GetDebugString")()); }
-			ScriptFunction GetLocationDescription() { mixin(MGF!("mGetLocationDescription", "Function Engine.CoverLink.GetLocationDescription")()); }
-			ScriptFunction GetDebugAbbrev() { mixin(MGF!("mGetDebugAbbrev", "Function Engine.CoverLink.GetDebugAbbrev")()); }
+			ScriptFunction GetFireLinkTargetCoverInfo() { mixin(MGF("mGetFireLinkTargetCoverInfo", "Function Engine.CoverLink.GetFireLinkTargetCoverInfo")); }
+			ScriptFunction PackFireLinkInteractionInfo() { mixin(MGF("mPackFireLinkInteractionInfo", "Function Engine.CoverLink.PackFireLinkInteractionInfo")); }
+			ScriptFunction UnPackFireLinkInteractionInfo() { mixin(MGF("mUnPackFireLinkInteractionInfo", "Function Engine.CoverLink.UnPackFireLinkInteractionInfo")); }
+			ScriptFunction GetSlotLocation() { mixin(MGF("mGetSlotLocation", "Function Engine.CoverLink.GetSlotLocation")); }
+			ScriptFunction GetSlotRotation() { mixin(MGF("mGetSlotRotation", "Function Engine.CoverLink.GetSlotRotation")); }
+			ScriptFunction GetSlotViewPoint() { mixin(MGF("mGetSlotViewPoint", "Function Engine.CoverLink.GetSlotViewPoint")); }
+			ScriptFunction IsExposedTo() { mixin(MGF("mIsExposedTo", "Function Engine.CoverLink.IsExposedTo")); }
+			ScriptFunction SetInvalidUntil() { mixin(MGF("mSetInvalidUntil", "Function Engine.CoverLink.SetInvalidUntil")); }
+			ScriptFunction Claim() { mixin(MGF("mClaim", "Function Engine.CoverLink.Claim")); }
+			ScriptFunction UnClaim() { mixin(MGF("mUnClaim", "Function Engine.CoverLink.UnClaim")); }
+			ScriptFunction IsValidClaim() { mixin(MGF("mIsValidClaim", "Function Engine.CoverLink.IsValidClaim")); }
+			ScriptFunction IsValidClaimBetween() { mixin(MGF("mIsValidClaimBetween", "Function Engine.CoverLink.IsValidClaimBetween")); }
+			ScriptFunction IsStationarySlot() { mixin(MGF("mIsStationarySlot", "Function Engine.CoverLink.IsStationarySlot")); }
+			ScriptFunction IsEdgeSlot() { mixin(MGF("mIsEdgeSlot", "Function Engine.CoverLink.IsEdgeSlot")); }
+			ScriptFunction FindSlots() { mixin(MGF("mFindSlots", "Function Engine.CoverLink.FindSlots")); }
+			ScriptFunction IsLeftEdgeSlot() { mixin(MGF("mIsLeftEdgeSlot", "Function Engine.CoverLink.IsLeftEdgeSlot")); }
+			ScriptFunction IsRightEdgeSlot() { mixin(MGF("mIsRightEdgeSlot", "Function Engine.CoverLink.IsRightEdgeSlot")); }
+			ScriptFunction GetSlotIdxToLeft() { mixin(MGF("mGetSlotIdxToLeft", "Function Engine.CoverLink.GetSlotIdxToLeft")); }
+			ScriptFunction GetSlotIdxToRight() { mixin(MGF("mGetSlotIdxToRight", "Function Engine.CoverLink.GetSlotIdxToRight")); }
+			ScriptFunction AllowRightTransition() { mixin(MGF("mAllowRightTransition", "Function Engine.CoverLink.AllowRightTransition")); }
+			ScriptFunction AllowLeftTransition() { mixin(MGF("mAllowLeftTransition", "Function Engine.CoverLink.AllowLeftTransition")); }
+			ScriptFunction GetFireLinkTo() { mixin(MGF("mGetFireLinkTo", "Function Engine.CoverLink.GetFireLinkTo")); }
+			ScriptFunction HasFireLinkTo() { mixin(MGF("mHasFireLinkTo", "Function Engine.CoverLink.HasFireLinkTo")); }
+			ScriptFunction GetSlotActions() { mixin(MGF("mGetSlotActions", "Function Engine.CoverLink.GetSlotActions")); }
+			ScriptFunction SetDisabled() { mixin(MGF("mSetDisabled", "Function Engine.CoverLink.SetDisabled")); }
+			ScriptFunction SetSlotEnabled() { mixin(MGF("mSetSlotEnabled", "Function Engine.CoverLink.SetSlotEnabled")); }
+			ScriptFunction NotifySlotOwnerCoverDisabled() { mixin(MGF("mNotifySlotOwnerCoverDisabled", "Function Engine.CoverLink.NotifySlotOwnerCoverDisabled")); }
+			ScriptFunction SetSlotPlayerOnly() { mixin(MGF("mSetSlotPlayerOnly", "Function Engine.CoverLink.SetSlotPlayerOnly")); }
+			ScriptFunction OnModifyCover() { mixin(MGF("mOnModifyCover", "Function Engine.CoverLink.OnModifyCover")); }
+			ScriptFunction AutoAdjustSlot() { mixin(MGF("mAutoAdjustSlot", "Function Engine.CoverLink.AutoAdjustSlot")); }
+			ScriptFunction IsEnabled() { mixin(MGF("mIsEnabled", "Function Engine.CoverLink.IsEnabled")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.CoverLink.OnToggle")); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF("mCreateCheckpointRecord", "Function Engine.CoverLink.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF("mApplyCheckpointRecord", "Function Engine.CoverLink.ApplyCheckpointRecord")); }
+			ScriptFunction ShutDown() { mixin(MGF("mShutDown", "Function Engine.CoverLink.ShutDown")); }
+			ScriptFunction GetSwatTurnTarget() { mixin(MGF("mGetSwatTurnTarget", "Function Engine.CoverLink.GetSwatTurnTarget")); }
+			ScriptFunction BreakFracturedMeshes() { mixin(MGF("mBreakFracturedMeshes", "Function Engine.CoverLink.BreakFracturedMeshes")); }
+			ScriptFunction AddCoverSlot() { mixin(MGF("mAddCoverSlot", "Function Engine.CoverLink.AddCoverSlot")); }
+			ScriptFunction GetDebugString() { mixin(MGF("mGetDebugString", "Function Engine.CoverLink.GetDebugString")); }
+			ScriptFunction GetLocationDescription() { mixin(MGF("mGetLocationDescription", "Function Engine.CoverLink.GetLocationDescription")); }
+			ScriptFunction GetDebugAbbrev() { mixin(MGF("mGetDebugAbbrev", "Function Engine.CoverLink.GetDebugAbbrev")); }
 		}
 	}
 	static struct Constants
@@ -175,16 +175,16 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CovPosInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.CovPosInfo")); }
 		@property final auto ref
 		{
-			CoverLink Link() { mixin(MGPS!("CoverLink", 0)()); }
-			int LtSlotIdx() { mixin(MGPS!("int", 4)()); }
-			int RtSlotIdx() { mixin(MGPS!("int", 8)()); }
-			float LtToRtPct() { mixin(MGPS!("float", 12)()); }
-			Vector Location() { mixin(MGPS!("Vector", 16)()); }
-			Vector Normal() { mixin(MGPS!("Vector", 28)()); }
-			Vector Tangent() { mixin(MGPS!("Vector", 40)()); }
+			CoverLink Link() { mixin(MGPS("CoverLink", 0)); }
+			int LtSlotIdx() { mixin(MGPS("int", 4)); }
+			int RtSlotIdx() { mixin(MGPS("int", 8)); }
+			float LtToRtPct() { mixin(MGPS("float", 12)); }
+			Vector Location() { mixin(MGPS("Vector", 16)); }
+			Vector Normal() { mixin(MGPS("Vector", 28)); }
+			Vector Tangent() { mixin(MGPS("Vector", 40)); }
 		}
 	}
 	struct FireLinkItem
@@ -192,13 +192,13 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.FireLinkItem")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.FireLinkItem")); }
 		@property final auto ref
 		{
-			CoverLink.ECoverAction DestAction() { mixin(MGPS!("CoverLink.ECoverAction", 3)()); }
-			CoverLink.ECoverType DestType() { mixin(MGPS!("CoverLink.ECoverType", 2)()); }
-			CoverLink.ECoverAction SrcAction() { mixin(MGPS!("CoverLink.ECoverAction", 1)()); }
-			CoverLink.ECoverType SrcType() { mixin(MGPS!("CoverLink.ECoverType", 0)()); }
+			CoverLink.ECoverAction DestAction() { mixin(MGPS("CoverLink.ECoverAction", 3)); }
+			CoverLink.ECoverType DestType() { mixin(MGPS("CoverLink.ECoverType", 2)); }
+			CoverLink.ECoverAction SrcAction() { mixin(MGPS("CoverLink.ECoverAction", 1)); }
+			CoverLink.ECoverType SrcType() { mixin(MGPS("CoverLink.ECoverType", 0)); }
 		}
 	}
 	struct FireLink
@@ -206,18 +206,18 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.FireLink")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.FireLink")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(ubyte) Interactions() { mixin(MGPS!("ScriptArray!(ubyte)", 0)()); }
-				int PackedProperties_CoverPairRefAndDynamicInfo() { mixin(MGPS!("int", 12)()); }
+				ScriptArray!(ubyte) Interactions() { mixin(MGPS("ScriptArray!(ubyte)", 0)); }
+				int PackedProperties_CoverPairRefAndDynamicInfo() { mixin(MGPS("int", 12)); }
 			}
-			bool bDynamicIndexInited() { mixin(MGBPS!(16, 0x2)()); }
-			bool bDynamicIndexInited(bool val) { mixin(MSBPS!(16, 0x2)()); }
-			bool bFallbackLink() { mixin(MGBPS!(16, 0x1)()); }
-			bool bFallbackLink(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bDynamicIndexInited() { mixin(MGBPS(16, 0x2)); }
+			bool bDynamicIndexInited(bool val) { mixin(MSBPS(16, 0x2)); }
+			bool bFallbackLink() { mixin(MGBPS(16, 0x1)); }
+			bool bFallbackLink(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	struct DynamicLinkInfo
@@ -225,11 +225,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.DynamicLinkInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.DynamicLinkInfo")); }
 		@property final auto ref
 		{
-			Vector LastSrcLocation() { mixin(MGPS!("Vector", 12)()); }
-			Vector LastTargetLocation() { mixin(MGPS!("Vector", 0)()); }
+			Vector LastSrcLocation() { mixin(MGPS("Vector", 12)); }
+			Vector LastTargetLocation() { mixin(MGPS("Vector", 0)); }
 		}
 	}
 	struct ExposedLink
@@ -237,11 +237,11 @@ public extern(D):
 		private ubyte __buffer__[25];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.ExposedLink")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.ExposedLink")); }
 		@property final auto ref
 		{
-			ubyte ExposedScale() { mixin(MGPS!("ubyte", 24)()); }
-			CoverLink.CoverReference TargetActor() { mixin(MGPS!("CoverLink.CoverReference", 0)()); }
+			ubyte ExposedScale() { mixin(MGPS("ubyte", 24)); }
+			CoverLink.CoverReference TargetActor() { mixin(MGPS("CoverLink.CoverReference", 0)); }
 		}
 	}
 	struct CoverReference
@@ -249,25 +249,25 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CoverReference")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.CoverReference")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
 			// WARNING: Property 'Actor' has the same name as a defined type!
 		}
-		@property final auto ref int SlotIdx() { mixin(MGPS!("int", 20)()); }
+		@property final auto ref int SlotIdx() { mixin(MGPS("int", 20)); }
 	}
 	struct SlotMoveRef
 	{
 		private ubyte __buffer__[80];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.SlotMoveRef")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.SlotMoveRef")); }
 		@property final auto ref
 		{
-			int Direction() { mixin(MGPS!("int", 76)()); }
-			Actor.BasedPosition Dest() { mixin(MGPS!("Actor.BasedPosition", 24)()); }
-			Pylon.PolyReference Poly() { mixin(MGPS!("Pylon.PolyReference", 0)()); }
+			int Direction() { mixin(MGPS("int", 76)); }
+			Actor.BasedPosition Dest() { mixin(MGPS("Actor.BasedPosition", 24)); }
+			Pylon.PolyReference Poly() { mixin(MGPS("Pylon.PolyReference", 0)); }
 		}
 	}
 	struct CoverSlot
@@ -275,70 +275,70 @@ public extern(D):
 		private ubyte __buffer__[116];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CoverSlot")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.CoverSlot")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(CoverLink.ECoverAction) Actions() { mixin(MGPS!("ScriptArray!(CoverLink.ECoverAction)", 36)()); }
-				ScriptArray!(CoverLink.FireLink) FireLinks() { mixin(MGPS!("ScriptArray!(CoverLink.FireLink)", 48)()); }
-				ScriptArray!(CoverLink.FireLink) RejectedFireLinks() { mixin(MGPS!("ScriptArray!(CoverLink.FireLink)", 60)()); }
-				ScriptArray!(int) ExposedCoverPackedProperties() { mixin(MGPS!("ScriptArray!(int)", 72)()); }
-				ScriptArray!(CoverLink.SlotMoveRef) SlipRefs() { mixin(MGPS!("ScriptArray!(CoverLink.SlotMoveRef)", 88)()); }
-				ScriptArray!(CoverLink.CoverInfo) OverlapClaimsList() { mixin(MGPS!("ScriptArray!(CoverLink.CoverInfo)", 100)()); }
-				int TurnTargetPackedProperties() { mixin(MGPS!("int", 84)()); }
-				Rotator RotationOffset() { mixin(MGPS!("Rotator", 24)()); }
-				Vector LocationOffset() { mixin(MGPS!("Vector", 12)()); }
-				CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPS!("CoverLink.ECoverLocationDescription", 10)()); }
-				CoverLink.ECoverType CoverType() { mixin(MGPS!("CoverLink.ECoverType", 9)()); }
-				CoverLink.ECoverType ForceCoverType() { mixin(MGPS!("CoverLink.ECoverType", 8)()); }
-				float SlotValidAfterTime() { mixin(MGPS!("float", 4)()); }
-				Pawn SlotOwner() { mixin(MGPS!("Pawn", 0)()); }
+				ScriptArray!(CoverLink.ECoverAction) Actions() { mixin(MGPS("ScriptArray!(CoverLink.ECoverAction)", 36)); }
+				ScriptArray!(CoverLink.FireLink) FireLinks() { mixin(MGPS("ScriptArray!(CoverLink.FireLink)", 48)); }
+				ScriptArray!(CoverLink.FireLink) RejectedFireLinks() { mixin(MGPS("ScriptArray!(CoverLink.FireLink)", 60)); }
+				ScriptArray!(int) ExposedCoverPackedProperties() { mixin(MGPS("ScriptArray!(int)", 72)); }
+				ScriptArray!(CoverLink.SlotMoveRef) SlipRefs() { mixin(MGPS("ScriptArray!(CoverLink.SlotMoveRef)", 88)); }
+				ScriptArray!(CoverLink.CoverInfo) OverlapClaimsList() { mixin(MGPS("ScriptArray!(CoverLink.CoverInfo)", 100)); }
+				int TurnTargetPackedProperties() { mixin(MGPS("int", 84)); }
+				Rotator RotationOffset() { mixin(MGPS("Rotator", 24)); }
+				Vector LocationOffset() { mixin(MGPS("Vector", 12)); }
+				CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPS("CoverLink.ECoverLocationDescription", 10)); }
+				CoverLink.ECoverType CoverType() { mixin(MGPS("CoverLink.ECoverType", 9)); }
+				CoverLink.ECoverType ForceCoverType() { mixin(MGPS("CoverLink.ECoverType", 8)); }
+				float SlotValidAfterTime() { mixin(MGPS("float", 4)); }
+				Pawn SlotOwner() { mixin(MGPS("Pawn", 0)); }
 			}
-			bool bFailedToFindSurface() { mixin(MGBPS!(112, 0x200000)()); }
-			bool bFailedToFindSurface(bool val) { mixin(MSBPS!(112, 0x200000)()); }
-			bool bSelected() { mixin(MGBPS!(112, 0x100000)()); }
-			bool bSelected(bool val) { mixin(MSBPS!(112, 0x100000)()); }
-			bool bPlayerOnly() { mixin(MGBPS!(112, 0x80000)()); }
-			bool bPlayerOnly(bool val) { mixin(MSBPS!(112, 0x80000)()); }
-			bool bForceNoGroundAdjust() { mixin(MGBPS!(112, 0x40000)()); }
-			bool bForceNoGroundAdjust(bool val) { mixin(MSBPS!(112, 0x40000)()); }
-			bool bAllowSwatTurn() { mixin(MGBPS!(112, 0x20000)()); }
-			bool bAllowSwatTurn(bool val) { mixin(MSBPS!(112, 0x20000)()); }
-			bool bAllowClimbUp() { mixin(MGBPS!(112, 0x10000)()); }
-			bool bAllowClimbUp(bool val) { mixin(MSBPS!(112, 0x10000)()); }
-			bool bAllowCoverSlip() { mixin(MGBPS!(112, 0x8000)()); }
-			bool bAllowCoverSlip(bool val) { mixin(MSBPS!(112, 0x8000)()); }
-			bool bAllowMantle() { mixin(MGBPS!(112, 0x4000)()); }
-			bool bAllowMantle(bool val) { mixin(MSBPS!(112, 0x4000)()); }
-			bool bAllowPopup() { mixin(MGBPS!(112, 0x2000)()); }
-			bool bAllowPopup(bool val) { mixin(MSBPS!(112, 0x2000)()); }
-			bool bEnabled() { mixin(MGBPS!(112, 0x1000)()); }
-			bool bEnabled(bool val) { mixin(MSBPS!(112, 0x1000)()); }
-			bool bCanSwatTurn_Right() { mixin(MGBPS!(112, 0x800)()); }
-			bool bCanSwatTurn_Right(bool val) { mixin(MSBPS!(112, 0x800)()); }
-			bool bCanSwatTurn_Left() { mixin(MGBPS!(112, 0x400)()); }
-			bool bCanSwatTurn_Left(bool val) { mixin(MSBPS!(112, 0x400)()); }
-			bool bCanCoverSlip_Right() { mixin(MGBPS!(112, 0x200)()); }
-			bool bCanCoverSlip_Right(bool val) { mixin(MSBPS!(112, 0x200)()); }
-			bool bCanCoverSlip_Left() { mixin(MGBPS!(112, 0x100)()); }
-			bool bCanCoverSlip_Left(bool val) { mixin(MSBPS!(112, 0x100)()); }
-			bool bForceCanCoverSlip_Right() { mixin(MGBPS!(112, 0x80)()); }
-			bool bForceCanCoverSlip_Right(bool val) { mixin(MSBPS!(112, 0x80)()); }
-			bool bForceCanCoverSlip_Left() { mixin(MGBPS!(112, 0x40)()); }
-			bool bForceCanCoverSlip_Left(bool val) { mixin(MSBPS!(112, 0x40)()); }
-			bool bCanClimbUp() { mixin(MGBPS!(112, 0x20)()); }
-			bool bCanClimbUp(bool val) { mixin(MSBPS!(112, 0x20)()); }
-			bool bCanMantle() { mixin(MGBPS!(112, 0x10)()); }
-			bool bCanMantle(bool val) { mixin(MSBPS!(112, 0x10)()); }
-			bool bCanPopUp() { mixin(MGBPS!(112, 0x8)()); }
-			bool bCanPopUp(bool val) { mixin(MSBPS!(112, 0x8)()); }
-			bool bForceCanPopUp() { mixin(MGBPS!(112, 0x4)()); }
-			bool bForceCanPopUp(bool val) { mixin(MSBPS!(112, 0x4)()); }
-			bool bLeanRight() { mixin(MGBPS!(112, 0x2)()); }
-			bool bLeanRight(bool val) { mixin(MSBPS!(112, 0x2)()); }
-			bool bLeanLeft() { mixin(MGBPS!(112, 0x1)()); }
-			bool bLeanLeft(bool val) { mixin(MSBPS!(112, 0x1)()); }
+			bool bFailedToFindSurface() { mixin(MGBPS(112, 0x200000)); }
+			bool bFailedToFindSurface(bool val) { mixin(MSBPS(112, 0x200000)); }
+			bool bSelected() { mixin(MGBPS(112, 0x100000)); }
+			bool bSelected(bool val) { mixin(MSBPS(112, 0x100000)); }
+			bool bPlayerOnly() { mixin(MGBPS(112, 0x80000)); }
+			bool bPlayerOnly(bool val) { mixin(MSBPS(112, 0x80000)); }
+			bool bForceNoGroundAdjust() { mixin(MGBPS(112, 0x40000)); }
+			bool bForceNoGroundAdjust(bool val) { mixin(MSBPS(112, 0x40000)); }
+			bool bAllowSwatTurn() { mixin(MGBPS(112, 0x20000)); }
+			bool bAllowSwatTurn(bool val) { mixin(MSBPS(112, 0x20000)); }
+			bool bAllowClimbUp() { mixin(MGBPS(112, 0x10000)); }
+			bool bAllowClimbUp(bool val) { mixin(MSBPS(112, 0x10000)); }
+			bool bAllowCoverSlip() { mixin(MGBPS(112, 0x8000)); }
+			bool bAllowCoverSlip(bool val) { mixin(MSBPS(112, 0x8000)); }
+			bool bAllowMantle() { mixin(MGBPS(112, 0x4000)); }
+			bool bAllowMantle(bool val) { mixin(MSBPS(112, 0x4000)); }
+			bool bAllowPopup() { mixin(MGBPS(112, 0x2000)); }
+			bool bAllowPopup(bool val) { mixin(MSBPS(112, 0x2000)); }
+			bool bEnabled() { mixin(MGBPS(112, 0x1000)); }
+			bool bEnabled(bool val) { mixin(MSBPS(112, 0x1000)); }
+			bool bCanSwatTurn_Right() { mixin(MGBPS(112, 0x800)); }
+			bool bCanSwatTurn_Right(bool val) { mixin(MSBPS(112, 0x800)); }
+			bool bCanSwatTurn_Left() { mixin(MGBPS(112, 0x400)); }
+			bool bCanSwatTurn_Left(bool val) { mixin(MSBPS(112, 0x400)); }
+			bool bCanCoverSlip_Right() { mixin(MGBPS(112, 0x200)); }
+			bool bCanCoverSlip_Right(bool val) { mixin(MSBPS(112, 0x200)); }
+			bool bCanCoverSlip_Left() { mixin(MGBPS(112, 0x100)); }
+			bool bCanCoverSlip_Left(bool val) { mixin(MSBPS(112, 0x100)); }
+			bool bForceCanCoverSlip_Right() { mixin(MGBPS(112, 0x80)); }
+			bool bForceCanCoverSlip_Right(bool val) { mixin(MSBPS(112, 0x80)); }
+			bool bForceCanCoverSlip_Left() { mixin(MGBPS(112, 0x40)); }
+			bool bForceCanCoverSlip_Left(bool val) { mixin(MSBPS(112, 0x40)); }
+			bool bCanClimbUp() { mixin(MGBPS(112, 0x20)); }
+			bool bCanClimbUp(bool val) { mixin(MSBPS(112, 0x20)); }
+			bool bCanMantle() { mixin(MGBPS(112, 0x10)); }
+			bool bCanMantle(bool val) { mixin(MSBPS(112, 0x10)); }
+			bool bCanPopUp() { mixin(MGBPS(112, 0x8)); }
+			bool bCanPopUp(bool val) { mixin(MSBPS(112, 0x8)); }
+			bool bForceCanPopUp() { mixin(MGBPS(112, 0x4)); }
+			bool bForceCanPopUp(bool val) { mixin(MSBPS(112, 0x4)); }
+			bool bLeanRight() { mixin(MGBPS(112, 0x2)); }
+			bool bLeanRight(bool val) { mixin(MSBPS(112, 0x2)); }
+			bool bLeanLeft() { mixin(MGBPS(112, 0x1)); }
+			bool bLeanLeft(bool val) { mixin(MSBPS(112, 0x1)); }
 		}
 	}
 	struct CoverInfo
@@ -346,66 +346,66 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CoverInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.CoverInfo")); }
 		@property final auto ref
 		{
-			CoverLink Link() { mixin(MGPS!("CoverLink", 0)()); }
-			int SlotIdx() { mixin(MGPS!("int", 4)()); }
+			CoverLink Link() { mixin(MGPS("CoverLink", 0)); }
+			int SlotIdx() { mixin(MGPS("int", 4)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(CoverLink.CoverSlot) Slots() { mixin(MGPC!("ScriptArray!(CoverLink.CoverSlot)", 700)()); }
-			ScriptArray!(Pawn) Claims() { mixin(MGPC!("ScriptArray!(Pawn)", 724)()); }
-			float LeanTraceDist() { mixin(MGPC!("float", 696)()); }
-			ScriptArray!(CoverLink.DynamicLinkInfo) DynamicLinkInfos() { mixin(MGPC!("ScriptArray!(CoverLink.DynamicLinkInfo)", 712)()); }
-			float InvalidateDistance() { mixin(MGPC!("float", 736)()); }
-			float MaxFireLinkDist() { mixin(MGPC!("float", 740)()); }
-			Vector CircularOrigin() { mixin(MGPC!("Vector", 744)()); }
-			float CircularRadius() { mixin(MGPC!("float", 756)()); }
-			float AlignDist() { mixin(MGPC!("float", 760)()); }
-			float AutoCoverSlotInterval() { mixin(MGPC!("float", 764)()); }
-			float StandHeight() { mixin(MGPC!("float", 768)()); }
-			float MidHeight() { mixin(MGPC!("float", 772)()); }
-			Vector StandingLeanOffset() { mixin(MGPC!("Vector", 776)()); }
-			Vector CrouchLeanOffset() { mixin(MGPC!("Vector", 788)()); }
-			Vector PopupOffset() { mixin(MGPC!("Vector", 800)()); }
-			float SlipDist() { mixin(MGPC!("float", 812)()); }
-			float TurnDist() { mixin(MGPC!("float", 816)()); }
-			float DangerScale() { mixin(MGPC!("float", 820)()); }
-			CoverLink NextCoverLink() { mixin(MGPC!("CoverLink", 824)()); }
-			CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPC!("CoverLink.ECoverLocationDescription", 828)()); }
+			ScriptArray!(CoverLink.CoverSlot) Slots() { mixin(MGPC("ScriptArray!(CoverLink.CoverSlot)", 700)); }
+			ScriptArray!(Pawn) Claims() { mixin(MGPC("ScriptArray!(Pawn)", 724)); }
+			float LeanTraceDist() { mixin(MGPC("float", 696)); }
+			ScriptArray!(CoverLink.DynamicLinkInfo) DynamicLinkInfos() { mixin(MGPC("ScriptArray!(CoverLink.DynamicLinkInfo)", 712)); }
+			float InvalidateDistance() { mixin(MGPC("float", 736)); }
+			float MaxFireLinkDist() { mixin(MGPC("float", 740)); }
+			Vector CircularOrigin() { mixin(MGPC("Vector", 744)); }
+			float CircularRadius() { mixin(MGPC("float", 756)); }
+			float AlignDist() { mixin(MGPC("float", 760)); }
+			float AutoCoverSlotInterval() { mixin(MGPC("float", 764)); }
+			float StandHeight() { mixin(MGPC("float", 768)); }
+			float MidHeight() { mixin(MGPC("float", 772)); }
+			Vector StandingLeanOffset() { mixin(MGPC("Vector", 776)); }
+			Vector CrouchLeanOffset() { mixin(MGPC("Vector", 788)); }
+			Vector PopupOffset() { mixin(MGPC("Vector", 800)); }
+			float SlipDist() { mixin(MGPC("float", 812)); }
+			float TurnDist() { mixin(MGPC("float", 816)); }
+			float DangerScale() { mixin(MGPC("float", 820)); }
+			CoverLink NextCoverLink() { mixin(MGPC("CoverLink", 824)); }
+			CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPC("CoverLink.ECoverLocationDescription", 828)); }
 		}
-		bool bClaimAllSlots() { mixin(MGBPC!(692, 0x4)()); }
-		bool bClaimAllSlots(bool val) { mixin(MSBPC!(692, 0x4)()); }
-		bool bCircular() { mixin(MGBPC!(692, 0x20)()); }
-		bool bCircular(bool val) { mixin(MSBPC!(692, 0x20)()); }
-		bool bDisabled() { mixin(MGBPC!(692, 0x2)()); }
-		bool bDisabled(bool val) { mixin(MSBPC!(692, 0x2)()); }
-		bool bFractureOnTouch() { mixin(MGBPC!(692, 0x200)()); }
-		bool bFractureOnTouch(bool val) { mixin(MSBPC!(692, 0x200)()); }
-		bool GLOBAL_bUseSlotMarkers() { mixin(MGBPC!(692, 0x1)()); }
-		bool GLOBAL_bUseSlotMarkers(bool val) { mixin(MSBPC!(692, 0x1)()); }
-		bool bAutoSort() { mixin(MGBPC!(692, 0x8)()); }
-		bool bAutoSort(bool val) { mixin(MSBPC!(692, 0x8)()); }
-		bool bAutoAdjust() { mixin(MGBPC!(692, 0x10)()); }
-		bool bAutoAdjust(bool val) { mixin(MSBPC!(692, 0x10)()); }
-		bool bLooped() { mixin(MGBPC!(692, 0x40)()); }
-		bool bLooped(bool val) { mixin(MSBPC!(692, 0x40)()); }
-		bool bPlayerOnly() { mixin(MGBPC!(692, 0x80)()); }
-		bool bPlayerOnly(bool val) { mixin(MSBPC!(692, 0x80)()); }
-		bool bDynamicCover() { mixin(MGBPC!(692, 0x100)()); }
-		bool bDynamicCover(bool val) { mixin(MSBPC!(692, 0x100)()); }
-		bool bDebug_FireLinks() { mixin(MGBPC!(692, 0x400)()); }
-		bool bDebug_FireLinks(bool val) { mixin(MSBPC!(692, 0x400)()); }
-		bool bDebug_ExposedLinks() { mixin(MGBPC!(692, 0x800)()); }
-		bool bDebug_ExposedLinks(bool val) { mixin(MSBPC!(692, 0x800)()); }
-		bool bDebug_CoverGen() { mixin(MGBPC!(692, 0x1000)()); }
-		bool bDebug_CoverGen(bool val) { mixin(MSBPC!(692, 0x1000)()); }
-		bool bDoAutoSlotDensityFixup() { mixin(MGBPC!(692, 0x2000)()); }
-		bool bDoAutoSlotDensityFixup(bool val) { mixin(MSBPC!(692, 0x2000)()); }
+		bool bClaimAllSlots() { mixin(MGBPC(692, 0x4)); }
+		bool bClaimAllSlots(bool val) { mixin(MSBPC(692, 0x4)); }
+		bool bCircular() { mixin(MGBPC(692, 0x20)); }
+		bool bCircular(bool val) { mixin(MSBPC(692, 0x20)); }
+		bool bDisabled() { mixin(MGBPC(692, 0x2)); }
+		bool bDisabled(bool val) { mixin(MSBPC(692, 0x2)); }
+		bool bFractureOnTouch() { mixin(MGBPC(692, 0x200)); }
+		bool bFractureOnTouch(bool val) { mixin(MSBPC(692, 0x200)); }
+		bool GLOBAL_bUseSlotMarkers() { mixin(MGBPC(692, 0x1)); }
+		bool GLOBAL_bUseSlotMarkers(bool val) { mixin(MSBPC(692, 0x1)); }
+		bool bAutoSort() { mixin(MGBPC(692, 0x8)); }
+		bool bAutoSort(bool val) { mixin(MSBPC(692, 0x8)); }
+		bool bAutoAdjust() { mixin(MGBPC(692, 0x10)); }
+		bool bAutoAdjust(bool val) { mixin(MSBPC(692, 0x10)); }
+		bool bLooped() { mixin(MGBPC(692, 0x40)); }
+		bool bLooped(bool val) { mixin(MSBPC(692, 0x40)); }
+		bool bPlayerOnly() { mixin(MGBPC(692, 0x80)); }
+		bool bPlayerOnly(bool val) { mixin(MSBPC(692, 0x80)); }
+		bool bDynamicCover() { mixin(MGBPC(692, 0x100)); }
+		bool bDynamicCover(bool val) { mixin(MSBPC(692, 0x100)); }
+		bool bDebug_FireLinks() { mixin(MGBPC(692, 0x400)); }
+		bool bDebug_FireLinks(bool val) { mixin(MSBPC(692, 0x400)); }
+		bool bDebug_ExposedLinks() { mixin(MGBPC(692, 0x800)); }
+		bool bDebug_ExposedLinks(bool val) { mixin(MSBPC(692, 0x800)); }
+		bool bDebug_CoverGen() { mixin(MGBPC(692, 0x1000)); }
+		bool bDebug_CoverGen(bool val) { mixin(MSBPC(692, 0x1000)); }
+		bool bDoAutoSlotDensityFixup() { mixin(MGBPC(692, 0x2000)); }
+		bool bDoAutoSlotDensityFixup(bool val) { mixin(MSBPC(692, 0x2000)); }
 	}
 final:
 	bool GetFireLinkTargetCoverInfo(int SlotIdx, int FireLinkIdx, ref CoverLink.CoverInfo out_Info, CoverLink.EFireLinkID* ArrayID = null)

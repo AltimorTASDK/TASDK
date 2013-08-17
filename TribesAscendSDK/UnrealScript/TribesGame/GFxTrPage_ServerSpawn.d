@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_ServerSpawn : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ServerSpawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_ServerSpawn")); }
 	private static __gshared GFxTrPage_ServerSpawn mDefaultProperties;
-	@property final static GFxTrPage_ServerSpawn DefaultProperties() { mixin(MGDPC!(GFxTrPage_ServerSpawn, "GFxTrPage_ServerSpawn TribesGame.Default__GFxTrPage_ServerSpawn")()); }
+	@property final static GFxTrPage_ServerSpawn DefaultProperties() { mixin(MGDPC("GFxTrPage_ServerSpawn", "GFxTrPage_ServerSpawn TribesGame.Default__GFxTrPage_ServerSpawn")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,13 +27,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_ServerSpawn.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ServerSpawn.SpecialAction")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ServerSpawn.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ServerSpawn.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ServerSpawn.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ServerSpawn.FillDescription")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ServerSpawn.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_ServerSpawn.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_ServerSpawn.SpecialAction")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_ServerSpawn.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_ServerSpawn.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_ServerSpawn.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_ServerSpawn.FillDescription")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_ServerSpawn.ShowModel")); }
 		}
 	}
 final:

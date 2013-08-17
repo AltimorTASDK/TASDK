@@ -9,9 +9,9 @@ extern(C++) interface TrStationCollision : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStationCollision")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrStationCollision")); }
 	private static __gshared TrStationCollision mDefaultProperties;
-	@property final static TrStationCollision DefaultProperties() { mixin(MGDPC!(TrStationCollision, "TrStationCollision TribesGame.Default__TrStationCollision")()); }
+	@property final static TrStationCollision DefaultProperties() { mixin(MGDPC("TrStationCollision", "TrStationCollision TribesGame.Default__TrStationCollision")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,19 +23,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPawnsInStation() { mixin(MGF!("mGetPawnsInStation", "Function TribesGame.TrStationCollision.GetPawnsInStation")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrStationCollision.Touch")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrStationCollision.UnTouch")()); }
-			ScriptFunction CheckCanPawnUseStationNow() { mixin(MGF!("mCheckCanPawnUseStationNow", "Function TribesGame.TrStationCollision.CheckCanPawnUseStationNow")()); }
+			ScriptFunction GetPawnsInStation() { mixin(MGF("mGetPawnsInStation", "Function TribesGame.TrStationCollision.GetPawnsInStation")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrStationCollision.Touch")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function TribesGame.TrStationCollision.UnTouch")); }
+			ScriptFunction CheckCanPawnUseStationNow() { mixin(MGF("mCheckCanPawnUseStationNow", "Function TribesGame.TrStationCollision.CheckCanPawnUseStationNow")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref TrPawn m_OccupiedPawn() { mixin(MGPC!("TrPawn", 480)()); }
-		bool m_bCanBeUsedDuringWarmupRound() { mixin(MGBPC!(476, 0x2)()); }
-		bool m_bCanBeUsedDuringWarmupRound(bool val) { mixin(MSBPC!(476, 0x2)()); }
-		bool m_bOccupied() { mixin(MGBPC!(476, 0x1)()); }
-		bool m_bOccupied(bool val) { mixin(MSBPC!(476, 0x1)()); }
+		@property final auto ref TrPawn m_OccupiedPawn() { mixin(MGPC("TrPawn", 480)); }
+		bool m_bCanBeUsedDuringWarmupRound() { mixin(MGBPC(476, 0x2)); }
+		bool m_bCanBeUsedDuringWarmupRound(bool val) { mixin(MSBPC(476, 0x2)); }
+		bool m_bOccupied() { mixin(MGBPC(476, 0x1)); }
+		bool m_bOccupied(bool val) { mixin(MSBPC(476, 0x1)); }
 	}
 final:
 	int GetPawnsInStation()

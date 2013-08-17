@@ -11,9 +11,9 @@ extern(C++) interface Interaction : UIRoot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Interaction")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Interaction")); }
 	private static __gshared Interaction mDefaultProperties;
-	@property final static Interaction DefaultProperties() { mixin(MGDPC!(Interaction, "Interaction Engine.Default__Interaction")()); }
+	@property final static Interaction DefaultProperties() { mixin(MGDPC("Interaction", "Interaction Engine.Default__Interaction")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,17 +32,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReceivedNativeInputKey() { mixin(MGF!("mOnReceivedNativeInputKey", "Function Engine.Interaction.OnReceivedNativeInputKey")()); }
-			ScriptFunction OnInitialize() { mixin(MGF!("mOnInitialize", "Function Engine.Interaction.OnInitialize")()); }
-			ScriptFunction OnReceivedNativeInputChar() { mixin(MGF!("mOnReceivedNativeInputChar", "Function Engine.Interaction.OnReceivedNativeInputChar")()); }
-			ScriptFunction OnReceivedNativeInputAxis() { mixin(MGF!("mOnReceivedNativeInputAxis", "Function Engine.Interaction.OnReceivedNativeInputAxis")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function Engine.Interaction.Tick")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function Engine.Interaction.PostRender")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.Interaction.Init")()); }
-			ScriptFunction Initialized() { mixin(MGF!("mInitialized", "Function Engine.Interaction.Initialized")()); }
-			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function Engine.Interaction.NotifyGameSessionEnded")()); }
-			ScriptFunction NotifyPlayerAdded() { mixin(MGF!("mNotifyPlayerAdded", "Function Engine.Interaction.NotifyPlayerAdded")()); }
-			ScriptFunction NotifyPlayerRemoved() { mixin(MGF!("mNotifyPlayerRemoved", "Function Engine.Interaction.NotifyPlayerRemoved")()); }
+			ScriptFunction OnReceivedNativeInputKey() { mixin(MGF("mOnReceivedNativeInputKey", "Function Engine.Interaction.OnReceivedNativeInputKey")); }
+			ScriptFunction OnInitialize() { mixin(MGF("mOnInitialize", "Function Engine.Interaction.OnInitialize")); }
+			ScriptFunction OnReceivedNativeInputChar() { mixin(MGF("mOnReceivedNativeInputChar", "Function Engine.Interaction.OnReceivedNativeInputChar")); }
+			ScriptFunction OnReceivedNativeInputAxis() { mixin(MGF("mOnReceivedNativeInputAxis", "Function Engine.Interaction.OnReceivedNativeInputAxis")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function Engine.Interaction.Tick")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function Engine.Interaction.PostRender")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.Interaction.Init")); }
+			ScriptFunction Initialized() { mixin(MGF("mInitialized", "Function Engine.Interaction.Initialized")); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF("mNotifyGameSessionEnded", "Function Engine.Interaction.NotifyGameSessionEnded")); }
+			ScriptFunction NotifyPlayerAdded() { mixin(MGF("mNotifyPlayerAdded", "Function Engine.Interaction.NotifyPlayerAdded")); }
+			ScriptFunction NotifyPlayerRemoved() { mixin(MGF("mNotifyPlayerRemoved", "Function Engine.Interaction.NotifyPlayerRemoved")); }
 		}
 	}
 	@property final auto ref

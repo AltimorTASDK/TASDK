@@ -9,9 +9,9 @@ extern(C++) interface TrDevice_SniperRifle : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_SniperRifle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_SniperRifle")); }
 	private static __gshared TrDevice_SniperRifle mDefaultProperties;
-	@property final static TrDevice_SniperRifle DefaultProperties() { mixin(MGDPC!(TrDevice_SniperRifle, "TrDevice_SniperRifle TribesGame.Default__TrDevice_SniperRifle")()); }
+	@property final static TrDevice_SniperRifle DefaultProperties() { mixin(MGDPC("TrDevice_SniperRifle", "TrDevice_SniperRifle TribesGame.Default__TrDevice_SniperRifle")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,25 +28,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnSwitchToWeapon() { mixin(MGF!("mOnSwitchToWeapon", "Function TribesGame.TrDevice_SniperRifle.OnSwitchToWeapon")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_SniperRifle.OnSwitchAwayFromWeapon")()); }
-			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function TribesGame.TrDevice_SniperRifle.InstantFire")()); }
-			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrDevice_SniperRifle.ModifyInstantHitDamage")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_SniperRifle.StartFire")()); }
-			ScriptFunction CalcHUDAimChargePercent() { mixin(MGF!("mCalcHUDAimChargePercent", "Function TribesGame.TrDevice_SniperRifle.CalcHUDAimChargePercent")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDevice_SniperRifle.Tick")()); }
-			ScriptFunction PlayScopeRechargeSound() { mixin(MGF!("mPlayScopeRechargeSound", "Function TribesGame.TrDevice_SniperRifle.PlayScopeRechargeSound")()); }
-			ScriptFunction StopScopeRechargeSound() { mixin(MGF!("mStopScopeRechargeSound", "Function TribesGame.TrDevice_SniperRifle.StopScopeRechargeSound")()); }
+			ScriptFunction OnSwitchToWeapon() { mixin(MGF("mOnSwitchToWeapon", "Function TribesGame.TrDevice_SniperRifle.OnSwitchToWeapon")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_SniperRifle.OnSwitchAwayFromWeapon")); }
+			ScriptFunction InstantFire() { mixin(MGF("mInstantFire", "Function TribesGame.TrDevice_SniperRifle.InstantFire")); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF("mModifyInstantHitDamage", "Function TribesGame.TrDevice_SniperRifle.ModifyInstantHitDamage")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function TribesGame.TrDevice_SniperRifle.StartFire")); }
+			ScriptFunction CalcHUDAimChargePercent() { mixin(MGF("mCalcHUDAimChargePercent", "Function TribesGame.TrDevice_SniperRifle.CalcHUDAimChargePercent")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrDevice_SniperRifle.Tick")); }
+			ScriptFunction PlayScopeRechargeSound() { mixin(MGF("mPlayScopeRechargeSound", "Function TribesGame.TrDevice_SniperRifle.PlayScopeRechargeSound")); }
+			ScriptFunction StopScopeRechargeSound() { mixin(MGF("mStopScopeRechargeSound", "Function TribesGame.TrDevice_SniperRifle.StopScopeRechargeSound")); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ScopeChargeSound'!
-		float m_fDivCoeff() { mixin(MGPC!("float", 2164)()); }
-		float m_fMultCoeff() { mixin(MGPC!("float", 2160)()); }
-		float r_fAimChargeTime() { mixin(MGPC!("float", 2156)()); }
-		float m_fAimChargeDeltaTime() { mixin(MGPC!("float", 2152)()); }
-		float m_fMaxAimedDamage() { mixin(MGPC!("float", 2148)()); }
+		float m_fDivCoeff() { mixin(MGPC("float", 2164)); }
+		float m_fMultCoeff() { mixin(MGPC("float", 2160)); }
+		float r_fAimChargeTime() { mixin(MGPC("float", 2156)); }
+		float m_fAimChargeDeltaTime() { mixin(MGPC("float", 2152)); }
+		float m_fMaxAimedDamage() { mixin(MGPC("float", 2148)); }
 	}
 final:
 	void OnSwitchToWeapon()

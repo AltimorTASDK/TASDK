@@ -10,19 +10,19 @@ extern(C++) interface SceneCapturePortalComponent : SceneCaptureComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SceneCapturePortalComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SceneCapturePortalComponent")); }
 	private static __gshared SceneCapturePortalComponent mDefaultProperties;
-	@property final static SceneCapturePortalComponent DefaultProperties() { mixin(MGDPC!(SceneCapturePortalComponent, "SceneCapturePortalComponent Engine.Default__SceneCapturePortalComponent")()); }
+	@property final static SceneCapturePortalComponent DefaultProperties() { mixin(MGDPC("SceneCapturePortalComponent", "SceneCapturePortalComponent Engine.Default__SceneCapturePortalComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetCaptureParameters;
-		public @property static final ScriptFunction SetCaptureParameters() { mixin(MGF!("mSetCaptureParameters", "Function Engine.SceneCapturePortalComponent.SetCaptureParameters")()); }
+		public @property static final ScriptFunction SetCaptureParameters() { mixin(MGF("mSetCaptureParameters", "Function Engine.SceneCapturePortalComponent.SetCaptureParameters")); }
 	}
 	@property final auto ref
 	{
-		Actor ViewDestination() { mixin(MGPC!("Actor", 152)()); }
-		float ScaleFOV() { mixin(MGPC!("float", 148)()); }
-		TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 144)()); }
+		Actor ViewDestination() { mixin(MGPC("Actor", 152)); }
+		float ScaleFOV() { mixin(MGPC("float", 148)); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC("TextureRenderTarget2D", 144)); }
 	}
 	final void SetCaptureParameters(TextureRenderTarget2D* NewTextureTarget = null, float* NewScaleFOV = null, Actor* NewViewDest = null)
 	{

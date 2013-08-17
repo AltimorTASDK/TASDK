@@ -8,9 +8,9 @@ extern(C++) interface UTUIDataProvider_MapInfo : UDKUIDataProvider_MapInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTUIDataProvider_MapInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTUIDataProvider_MapInfo")); }
 	private static __gshared UTUIDataProvider_MapInfo mDefaultProperties;
-	@property final static UTUIDataProvider_MapInfo DefaultProperties() { mixin(MGDPC!(UTUIDataProvider_MapInfo, "UTUIDataProvider_MapInfo UTGame.Default__UTUIDataProvider_MapInfo")()); }
+	@property final static UTUIDataProvider_MapInfo DefaultProperties() { mixin(MGDPC("UTUIDataProvider_MapInfo", "UTUIDataProvider_MapInfo UTGame.Default__UTUIDataProvider_MapInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldBeFiltered() { mixin(MGF!("mShouldBeFiltered", "Function UTGame.UTUIDataProvider_MapInfo.ShouldBeFiltered")()); }
-			ScriptFunction SupportedByCurrentGameMode() { mixin(MGF!("mSupportedByCurrentGameMode", "Function UTGame.UTUIDataProvider_MapInfo.SupportedByCurrentGameMode")()); }
+			ScriptFunction ShouldBeFiltered() { mixin(MGF("mShouldBeFiltered", "Function UTGame.UTUIDataProvider_MapInfo.ShouldBeFiltered")); }
+			ScriptFunction SupportedByCurrentGameMode() { mixin(MGF("mSupportedByCurrentGameMode", "Function UTGame.UTUIDataProvider_MapInfo.SupportedByCurrentGameMode")); }
 		}
 	}
 final:

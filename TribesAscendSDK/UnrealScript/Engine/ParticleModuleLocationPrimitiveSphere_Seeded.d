@@ -9,8 +9,8 @@ extern(C++) interface ParticleModuleLocationPrimitiveSphere_Seeded : ParticleMod
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleLocationPrimitiveSphere_Seeded")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleLocationPrimitiveSphere_Seeded")); }
 	private static __gshared ParticleModuleLocationPrimitiveSphere_Seeded mDefaultProperties;
-	@property final static ParticleModuleLocationPrimitiveSphere_Seeded DefaultProperties() { mixin(MGDPC!(ParticleModuleLocationPrimitiveSphere_Seeded, "ParticleModuleLocationPrimitiveSphere_Seeded Engine.Default__ParticleModuleLocationPrimitiveSphere_Seeded")()); }
-	@property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { mixin(MGPC!("ParticleModule.ParticleRandomSeedInfo", 160)()); }
+	@property final static ParticleModuleLocationPrimitiveSphere_Seeded DefaultProperties() { mixin(MGDPC("ParticleModuleLocationPrimitiveSphere_Seeded", "ParticleModuleLocationPrimitiveSphere_Seeded Engine.Default__ParticleModuleLocationPrimitiveSphere_Seeded")); }
+	@property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { mixin(MGPC("ParticleModule.ParticleRandomSeedInfo", 160)); }
 }

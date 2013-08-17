@@ -9,9 +9,9 @@ extern(C++) interface TrPartyManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPartyManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrPartyManager")); }
 	private static __gshared TrPartyManager mDefaultProperties;
-	@property final static TrPartyManager DefaultProperties() { mixin(MGDPC!(TrPartyManager, "TrPartyManager TribesGame.Default__TrPartyManager")()); }
+	@property final static TrPartyManager DefaultProperties() { mixin(MGDPC("TrPartyManager", "TrPartyManager TribesGame.Default__TrPartyManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,32 +38,32 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InParty() { mixin(MGF!("mInParty", "Function TribesGame.TrPartyManager.InParty")()); }
-			ScriptFunction AmLeader() { mixin(MGF!("mAmLeader", "Function TribesGame.TrPartyManager.AmLeader")()); }
-			ScriptFunction CanInvite() { mixin(MGF!("mCanInvite", "Function TribesGame.TrPartyManager.CanInvite")()); }
-			ScriptFunction GetMemberCap() { mixin(MGF!("mGetMemberCap", "Function TribesGame.TrPartyManager.GetMemberCap")()); }
-			ScriptFunction GetMemberCount() { mixin(MGF!("mGetMemberCount", "Function TribesGame.TrPartyManager.GetMemberCount")()); }
-			ScriptFunction Kick() { mixin(MGF!("mKick", "Function TribesGame.TrPartyManager.Kick")()); }
-			ScriptFunction SendInvite() { mixin(MGF!("mSendInvite", "Function TribesGame.TrPartyManager.SendInvite")()); }
-			ScriptFunction GetMemberId() { mixin(MGF!("mGetMemberId", "Function TribesGame.TrPartyManager.GetMemberId")()); }
-			ScriptFunction GetMemberName() { mixin(MGF!("mGetMemberName", "Function TribesGame.TrPartyManager.GetMemberName")()); }
-			ScriptFunction ActiveMember() { mixin(MGF!("mActiveMember", "Function TribesGame.TrPartyManager.ActiveMember")()); }
-			ScriptFunction Leave() { mixin(MGF!("mLeave", "Function TribesGame.TrPartyManager.Leave")()); }
-			ScriptFunction AcceptInvite() { mixin(MGF!("mAcceptInvite", "Function TribesGame.TrPartyManager.AcceptInvite")()); }
-			ScriptFunction GetLeaderName() { mixin(MGF!("mGetLeaderName", "Function TribesGame.TrPartyManager.GetLeaderName")()); }
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrPartyManager.Initialize")()); }
-			ScriptFunction ShowInvitation() { mixin(MGF!("mShowInvitation", "Function TribesGame.TrPartyManager.ShowInvitation")()); }
-			ScriptFunction InvitationPopup() { mixin(MGF!("mInvitationPopup", "Function TribesGame.TrPartyManager.InvitationPopup")()); }
-			ScriptFunction InvitationComplete() { mixin(MGF!("mInvitationComplete", "Function TribesGame.TrPartyManager.InvitationComplete")()); }
-			ScriptFunction OnUpdate() { mixin(MGF!("mOnUpdate", "Function TribesGame.TrPartyManager.OnUpdate")()); }
-			ScriptFunction LeaveParty() { mixin(MGF!("mLeaveParty", "Function TribesGame.TrPartyManager.LeaveParty")()); }
+			ScriptFunction InParty() { mixin(MGF("mInParty", "Function TribesGame.TrPartyManager.InParty")); }
+			ScriptFunction AmLeader() { mixin(MGF("mAmLeader", "Function TribesGame.TrPartyManager.AmLeader")); }
+			ScriptFunction CanInvite() { mixin(MGF("mCanInvite", "Function TribesGame.TrPartyManager.CanInvite")); }
+			ScriptFunction GetMemberCap() { mixin(MGF("mGetMemberCap", "Function TribesGame.TrPartyManager.GetMemberCap")); }
+			ScriptFunction GetMemberCount() { mixin(MGF("mGetMemberCount", "Function TribesGame.TrPartyManager.GetMemberCount")); }
+			ScriptFunction Kick() { mixin(MGF("mKick", "Function TribesGame.TrPartyManager.Kick")); }
+			ScriptFunction SendInvite() { mixin(MGF("mSendInvite", "Function TribesGame.TrPartyManager.SendInvite")); }
+			ScriptFunction GetMemberId() { mixin(MGF("mGetMemberId", "Function TribesGame.TrPartyManager.GetMemberId")); }
+			ScriptFunction GetMemberName() { mixin(MGF("mGetMemberName", "Function TribesGame.TrPartyManager.GetMemberName")); }
+			ScriptFunction ActiveMember() { mixin(MGF("mActiveMember", "Function TribesGame.TrPartyManager.ActiveMember")); }
+			ScriptFunction Leave() { mixin(MGF("mLeave", "Function TribesGame.TrPartyManager.Leave")); }
+			ScriptFunction AcceptInvite() { mixin(MGF("mAcceptInvite", "Function TribesGame.TrPartyManager.AcceptInvite")); }
+			ScriptFunction GetLeaderName() { mixin(MGF("mGetLeaderName", "Function TribesGame.TrPartyManager.GetLeaderName")); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrPartyManager.Initialize")); }
+			ScriptFunction ShowInvitation() { mixin(MGF("mShowInvitation", "Function TribesGame.TrPartyManager.ShowInvitation")); }
+			ScriptFunction InvitationPopup() { mixin(MGF("mInvitationPopup", "Function TribesGame.TrPartyManager.InvitationPopup")); }
+			ScriptFunction InvitationComplete() { mixin(MGF("mInvitationComplete", "Function TribesGame.TrPartyManager.InvitationComplete")); }
+			ScriptFunction OnUpdate() { mixin(MGF("mOnUpdate", "Function TribesGame.TrPartyManager.OnUpdate")); }
+			ScriptFunction LeaveParty() { mixin(MGF("mLeaveParty", "Function TribesGame.TrPartyManager.LeaveParty")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptString InvitingPlayer() { mixin(MGPC!("ScriptString", 64)()); }
-		bool bCreatedParty() { mixin(MGBPC!(60, 0x1)()); }
-		bool bCreatedParty(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		@property final auto ref ScriptString InvitingPlayer() { mixin(MGPC("ScriptString", 64)); }
+		bool bCreatedParty() { mixin(MGBPC(60, 0x1)); }
+		bool bCreatedParty(bool val) { mixin(MSBPC(60, 0x1)); }
 	}
 final:
 	bool InParty()

@@ -9,19 +9,19 @@ extern(C++) interface GameCrowdInteractionPoint : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdInteractionPoint")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdInteractionPoint")); }
 	private static __gshared GameCrowdInteractionPoint mDefaultProperties;
-	@property final static GameCrowdInteractionPoint DefaultProperties() { mixin(MGDPC!(GameCrowdInteractionPoint, "GameCrowdInteractionPoint GameFramework.Default__GameCrowdInteractionPoint")()); }
+	@property final static GameCrowdInteractionPoint DefaultProperties() { mixin(MGDPC("GameCrowdInteractionPoint", "GameCrowdInteractionPoint GameFramework.Default__GameCrowdInteractionPoint")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;
-		public @property static final ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function GameFramework.GameCrowdInteractionPoint.OnToggle")()); }
+		public @property static final ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function GameFramework.GameCrowdInteractionPoint.OnToggle")); }
 	}
 	@property final
 	{
 		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-		bool bIsEnabled() { mixin(MGBPC!(476, 0x1)()); }
-		bool bIsEnabled(bool val) { mixin(MSBPC!(476, 0x1)()); }
+		bool bIsEnabled() { mixin(MGBPC(476, 0x1)); }
+		bool bIsEnabled(bool val) { mixin(MSBPC(476, 0x1)); }
 	}
 	final void OnToggle(SeqAct_Toggle Action)
 	{

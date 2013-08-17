@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_TrainingMatch : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_TrainingMatch")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_TrainingMatch")); }
 	private static __gshared GFxTrPage_TrainingMatch mDefaultProperties;
-	@property final static GFxTrPage_TrainingMatch DefaultProperties() { mixin(MGDPC!(GFxTrPage_TrainingMatch, "GFxTrPage_TrainingMatch TribesGame.Default__GFxTrPage_TrainingMatch")()); }
+	@property final static GFxTrPage_TrainingMatch DefaultProperties() { mixin(MGDPC("GFxTrPage_TrainingMatch", "GFxTrPage_TrainingMatch TribesGame.Default__GFxTrPage_TrainingMatch")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,11 +25,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_TrainingMatch.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_TrainingMatch.SpecialAction")()); }
-			ScriptFunction JoinLocalGame() { mixin(MGF!("mJoinLocalGame", "Function TribesGame.GFxTrPage_TrainingMatch.JoinLocalGame")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_TrainingMatch.TakeFocus")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_TrainingMatch.FillOption")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_TrainingMatch.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_TrainingMatch.SpecialAction")); }
+			ScriptFunction JoinLocalGame() { mixin(MGF("mJoinLocalGame", "Function TribesGame.GFxTrPage_TrainingMatch.JoinLocalGame")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_TrainingMatch.TakeFocus")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_TrainingMatch.FillOption")); }
 		}
 	}
 final:

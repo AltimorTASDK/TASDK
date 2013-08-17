@@ -9,15 +9,15 @@ extern(C++) interface SeqEvent_MobileZoneBase : SeqEvent_MobileBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.SeqEvent_MobileZoneBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.SeqEvent_MobileZoneBase")); }
 	private static __gshared SeqEvent_MobileZoneBase mDefaultProperties;
-	@property final static SeqEvent_MobileZoneBase DefaultProperties() { mixin(MGDPC!(SeqEvent_MobileZoneBase, "SeqEvent_MobileZoneBase GameFramework.Default__SeqEvent_MobileZoneBase")()); }
+	@property final static SeqEvent_MobileZoneBase DefaultProperties() { mixin(MGDPC("SeqEvent_MobileZoneBase", "SeqEvent_MobileZoneBase GameFramework.Default__SeqEvent_MobileZoneBase")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mAddToMobileInput;
-		public @property static final ScriptFunction AddToMobileInput() { mixin(MGF!("mAddToMobileInput", "Function GameFramework.SeqEvent_MobileZoneBase.AddToMobileInput")()); }
+		public @property static final ScriptFunction AddToMobileInput() { mixin(MGF("mAddToMobileInput", "Function GameFramework.SeqEvent_MobileZoneBase.AddToMobileInput")); }
 	}
-	@property final auto ref ScriptString TargetZoneName() { mixin(MGPC!("ScriptString", 256)()); }
+	@property final auto ref ScriptString TargetZoneName() { mixin(MGPC("ScriptString", 256)); }
 	final void AddToMobileInput(MobilePlayerInput MPI)
 	{
 		ubyte params[4];

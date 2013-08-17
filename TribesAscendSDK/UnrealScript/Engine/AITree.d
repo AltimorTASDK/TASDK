@@ -11,9 +11,9 @@ extern(C++) interface AITree : K2GraphBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AITree")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AITree")); }
 	private static __gshared AITree mDefaultProperties;
-	@property final static AITree DefaultProperties() { mixin(MGDPC!(AITree, "AITree Engine.Default__AITree")()); }
+	@property final static AITree DefaultProperties() { mixin(MGDPC("AITree", "AITree Engine.Default__AITree")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetActiveRoot() { mixin(MGF!("mSetActiveRoot", "Function Engine.AITree.SetActiveRoot")()); }
-			ScriptFunction EvaluateTree() { mixin(MGF!("mEvaluateTree", "Function Engine.AITree.EvaluateTree")()); }
+			ScriptFunction SetActiveRoot() { mixin(MGF("mSetActiveRoot", "Function Engine.AITree.SetActiveRoot")); }
+			ScriptFunction EvaluateTree() { mixin(MGF("mEvaluateTree", "Function Engine.AITree.EvaluateTree")); }
 		}
 	}
 	struct AITreeUtilityInfo
@@ -32,11 +32,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AITree.AITreeUtilityInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.AITree.AITreeUtilityInfo")); }
 		@property final auto ref
 		{
-			float UtilityRating() { mixin(MGPS!("float", 4)()); }
-			ScriptClass CommandClass() { mixin(MGPS!("ScriptClass", 0)()); }
+			float UtilityRating() { mixin(MGPS("float", 4)); }
+			ScriptClass CommandClass() { mixin(MGPS("ScriptClass", 0)); }
 		}
 	}
 	struct AITreeHandle
@@ -44,20 +44,20 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AITree.AITreeHandle")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.AITree.AITreeHandle")); }
 		@property final auto ref
 		{
-			ScriptArray!(AICommandNodeBase) DisabledNodes() { mixin(MGPS!("ScriptArray!(AICommandNodeBase)", 12)()); }
-			ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingList() { mixin(MGPS!("ScriptArray!(AITree.AITreeUtilityInfo)", 24)()); }
-			ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingListAtChange() { mixin(MGPS!("ScriptArray!(AITree.AITreeUtilityInfo)", 36)()); }
-			AICommandNodeRoot ActiveRoot() { mixin(MGPS!("AICommandNodeRoot", 8)()); }
-			ScriptName ActiveRootName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(AICommandNodeBase) DisabledNodes() { mixin(MGPS("ScriptArray!(AICommandNodeBase)", 12)); }
+			ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingList() { mixin(MGPS("ScriptArray!(AITree.AITreeUtilityInfo)", 24)); }
+			ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingListAtChange() { mixin(MGPS("ScriptArray!(AITree.AITreeUtilityInfo)", 36)); }
+			AICommandNodeRoot ActiveRoot() { mixin(MGPS("AICommandNodeRoot", 8)); }
+			ScriptName ActiveRootName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(AICommandNodeRoot) RootList() { mixin(MGPC!("ScriptArray!(AICommandNodeRoot)", 72)()); }
-		K2GraphBase GatherList() { mixin(MGPC!("K2GraphBase", 84)()); }
+		ScriptArray!(AICommandNodeRoot) RootList() { mixin(MGPC("ScriptArray!(AICommandNodeRoot)", 72)); }
+		K2GraphBase GatherList() { mixin(MGPC("K2GraphBase", 84)); }
 	}
 final:
 	bool SetActiveRoot(ScriptName InName, ref AITree.AITreeHandle Handle)

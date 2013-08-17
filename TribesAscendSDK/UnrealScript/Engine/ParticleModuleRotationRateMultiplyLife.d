@@ -9,8 +9,8 @@ extern(C++) interface ParticleModuleRotationRateMultiplyLife : ParticleModuleRot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleRotationRateMultiplyLife")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleRotationRateMultiplyLife")); }
 	private static __gshared ParticleModuleRotationRateMultiplyLife mDefaultProperties;
-	@property final static ParticleModuleRotationRateMultiplyLife DefaultProperties() { mixin(MGDPC!(ParticleModuleRotationRateMultiplyLife, "ParticleModuleRotationRateMultiplyLife Engine.Default__ParticleModuleRotationRateMultiplyLife")()); }
-	@property final auto ref DistributionFloat.RawDistributionFloat LifeMultiplier() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
+	@property final static ParticleModuleRotationRateMultiplyLife DefaultProperties() { mixin(MGDPC("ParticleModuleRotationRateMultiplyLife", "ParticleModuleRotationRateMultiplyLife Engine.Default__ParticleModuleRotationRateMultiplyLife")); }
+	@property final auto ref DistributionFloat.RawDistributionFloat LifeMultiplier() { mixin(MGPC("DistributionFloat.RawDistributionFloat", 72)); }
 }

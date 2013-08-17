@@ -9,13 +9,13 @@ extern(C++) interface InterpTrackInstBoolProp : InterpTrackInstProperty
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackInstBoolProp")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.InterpTrackInstBoolProp")); }
 	private static __gshared InterpTrackInstBoolProp mDefaultProperties;
-	@property final static InterpTrackInstBoolProp DefaultProperties() { mixin(MGDPC!(InterpTrackInstBoolProp, "InterpTrackInstBoolProp Engine.Default__InterpTrackInstBoolProp")()); }
+	@property final static InterpTrackInstBoolProp DefaultProperties() { mixin(MGDPC("InterpTrackInstBoolProp", "InterpTrackInstBoolProp Engine.Default__InterpTrackInstBoolProp")); }
 	@property final
 	{
-		@property final auto ref UObject.Pointer BoolProp() { mixin(MGPC!("UObject.Pointer", 68)()); }
-		bool ResetBool() { mixin(MGBPC!(72, 0x1)()); }
-		bool ResetBool(bool val) { mixin(MSBPC!(72, 0x1)()); }
+		@property final auto ref UObject.Pointer BoolProp() { mixin(MGPC("UObject.Pointer", 68)); }
+		bool ResetBool() { mixin(MGBPC(72, 0x1)); }
+		bool ResetBool(bool val) { mixin(MSBPC(72, 0x1)); }
 	}
 }

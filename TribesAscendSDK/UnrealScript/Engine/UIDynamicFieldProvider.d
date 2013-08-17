@@ -10,9 +10,9 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDynamicFieldProvider")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDynamicFieldProvider")); }
 	private static __gshared UIDynamicFieldProvider mDefaultProperties;
-	@property final static UIDynamicFieldProvider DefaultProperties() { mixin(MGDPC!(UIDynamicFieldProvider, "UIDynamicFieldProvider Engine.Default__UIDynamicFieldProvider")()); }
+	@property final static UIDynamicFieldProvider DefaultProperties() { mixin(MGDPC("UIDynamicFieldProvider", "UIDynamicFieldProvider Engine.Default__UIDynamicFieldProvider")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,33 +39,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitializeRuntimeFields() { mixin(MGF!("mInitializeRuntimeFields", "Function Engine.UIDynamicFieldProvider.InitializeRuntimeFields")()); }
-			ScriptFunction AddField() { mixin(MGF!("mAddField", "Function Engine.UIDynamicFieldProvider.AddField")()); }
-			ScriptFunction RemoveField() { mixin(MGF!("mRemoveField", "Function Engine.UIDynamicFieldProvider.RemoveField")()); }
-			ScriptFunction FindFieldIndex() { mixin(MGF!("mFindFieldIndex", "Function Engine.UIDynamicFieldProvider.FindFieldIndex")()); }
-			ScriptFunction ClearFields() { mixin(MGF!("mClearFields", "Function Engine.UIDynamicFieldProvider.ClearFields")()); }
-			ScriptFunction GetField() { mixin(MGF!("mGetField", "Function Engine.UIDynamicFieldProvider.GetField")()); }
-			ScriptFunction SetField() { mixin(MGF!("mSetField", "Function Engine.UIDynamicFieldProvider.SetField")()); }
-			ScriptFunction SavePersistentProviderData() { mixin(MGF!("mSavePersistentProviderData", "Function Engine.UIDynamicFieldProvider.SavePersistentProviderData")()); }
-			ScriptFunction GetCollectionValueSchema() { mixin(MGF!("mGetCollectionValueSchema", "Function Engine.UIDynamicFieldProvider.GetCollectionValueSchema")()); }
-			ScriptFunction GetCollectionValueArray() { mixin(MGF!("mGetCollectionValueArray", "Function Engine.UIDynamicFieldProvider.GetCollectionValueArray")()); }
-			ScriptFunction SetCollectionValueArray() { mixin(MGF!("mSetCollectionValueArray", "Function Engine.UIDynamicFieldProvider.SetCollectionValueArray")()); }
-			ScriptFunction InsertCollectionValue() { mixin(MGF!("mInsertCollectionValue", "Function Engine.UIDynamicFieldProvider.InsertCollectionValue")()); }
-			ScriptFunction RemoveCollectionValue() { mixin(MGF!("mRemoveCollectionValue", "Function Engine.UIDynamicFieldProvider.RemoveCollectionValue")()); }
-			ScriptFunction RemoveCollectionValueByIndex() { mixin(MGF!("mRemoveCollectionValueByIndex", "Function Engine.UIDynamicFieldProvider.RemoveCollectionValueByIndex")()); }
-			ScriptFunction ReplaceCollectionValue() { mixin(MGF!("mReplaceCollectionValue", "Function Engine.UIDynamicFieldProvider.ReplaceCollectionValue")()); }
-			ScriptFunction ReplaceCollectionValueByIndex() { mixin(MGF!("mReplaceCollectionValueByIndex", "Function Engine.UIDynamicFieldProvider.ReplaceCollectionValueByIndex")()); }
-			ScriptFunction ClearCollectionValueArray() { mixin(MGF!("mClearCollectionValueArray", "Function Engine.UIDynamicFieldProvider.ClearCollectionValueArray")()); }
-			ScriptFunction GetCollectionValue() { mixin(MGF!("mGetCollectionValue", "Function Engine.UIDynamicFieldProvider.GetCollectionValue")()); }
-			ScriptFunction FindCollectionValueIndex() { mixin(MGF!("mFindCollectionValueIndex", "Function Engine.UIDynamicFieldProvider.FindCollectionValueIndex")()); }
+			ScriptFunction InitializeRuntimeFields() { mixin(MGF("mInitializeRuntimeFields", "Function Engine.UIDynamicFieldProvider.InitializeRuntimeFields")); }
+			ScriptFunction AddField() { mixin(MGF("mAddField", "Function Engine.UIDynamicFieldProvider.AddField")); }
+			ScriptFunction RemoveField() { mixin(MGF("mRemoveField", "Function Engine.UIDynamicFieldProvider.RemoveField")); }
+			ScriptFunction FindFieldIndex() { mixin(MGF("mFindFieldIndex", "Function Engine.UIDynamicFieldProvider.FindFieldIndex")); }
+			ScriptFunction ClearFields() { mixin(MGF("mClearFields", "Function Engine.UIDynamicFieldProvider.ClearFields")); }
+			ScriptFunction GetField() { mixin(MGF("mGetField", "Function Engine.UIDynamicFieldProvider.GetField")); }
+			ScriptFunction SetField() { mixin(MGF("mSetField", "Function Engine.UIDynamicFieldProvider.SetField")); }
+			ScriptFunction SavePersistentProviderData() { mixin(MGF("mSavePersistentProviderData", "Function Engine.UIDynamicFieldProvider.SavePersistentProviderData")); }
+			ScriptFunction GetCollectionValueSchema() { mixin(MGF("mGetCollectionValueSchema", "Function Engine.UIDynamicFieldProvider.GetCollectionValueSchema")); }
+			ScriptFunction GetCollectionValueArray() { mixin(MGF("mGetCollectionValueArray", "Function Engine.UIDynamicFieldProvider.GetCollectionValueArray")); }
+			ScriptFunction SetCollectionValueArray() { mixin(MGF("mSetCollectionValueArray", "Function Engine.UIDynamicFieldProvider.SetCollectionValueArray")); }
+			ScriptFunction InsertCollectionValue() { mixin(MGF("mInsertCollectionValue", "Function Engine.UIDynamicFieldProvider.InsertCollectionValue")); }
+			ScriptFunction RemoveCollectionValue() { mixin(MGF("mRemoveCollectionValue", "Function Engine.UIDynamicFieldProvider.RemoveCollectionValue")); }
+			ScriptFunction RemoveCollectionValueByIndex() { mixin(MGF("mRemoveCollectionValueByIndex", "Function Engine.UIDynamicFieldProvider.RemoveCollectionValueByIndex")); }
+			ScriptFunction ReplaceCollectionValue() { mixin(MGF("mReplaceCollectionValue", "Function Engine.UIDynamicFieldProvider.ReplaceCollectionValue")); }
+			ScriptFunction ReplaceCollectionValueByIndex() { mixin(MGF("mReplaceCollectionValueByIndex", "Function Engine.UIDynamicFieldProvider.ReplaceCollectionValueByIndex")); }
+			ScriptFunction ClearCollectionValueArray() { mixin(MGF("mClearCollectionValueArray", "Function Engine.UIDynamicFieldProvider.ClearCollectionValueArray")); }
+			ScriptFunction GetCollectionValue() { mixin(MGF("mGetCollectionValue", "Function Engine.UIDynamicFieldProvider.GetCollectionValue")); }
+			ScriptFunction FindCollectionValueIndex() { mixin(MGF("mFindCollectionValueIndex", "Function Engine.UIDynamicFieldProvider.FindCollectionValueIndex")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIRoot.UIProviderScriptFieldValue) PersistentDataFields() { mixin(MGPC!("ScriptArray!(UIRoot.UIProviderScriptFieldValue)", 88)()); }
-		ScriptArray!(UIRoot.UIProviderScriptFieldValue) RuntimeDataFields() { mixin(MGPC!("ScriptArray!(UIRoot.UIProviderScriptFieldValue)", 100)()); }
-		UObject.Map_Mirror RuntimeCollectionData() { mixin(MGPC!("UObject.Map_Mirror", 172)()); }
-		UObject.Map_Mirror PersistentCollectionData() { mixin(MGPC!("UObject.Map_Mirror", 112)()); }
+		ScriptArray!(UIRoot.UIProviderScriptFieldValue) PersistentDataFields() { mixin(MGPC("ScriptArray!(UIRoot.UIProviderScriptFieldValue)", 88)); }
+		ScriptArray!(UIRoot.UIProviderScriptFieldValue) RuntimeDataFields() { mixin(MGPC("ScriptArray!(UIRoot.UIProviderScriptFieldValue)", 100)); }
+		UObject.Map_Mirror RuntimeCollectionData() { mixin(MGPC("UObject.Map_Mirror", 172)); }
+		UObject.Map_Mirror PersistentCollectionData() { mixin(MGPC("UObject.Map_Mirror", 112)); }
 	}
 final:
 	void InitializeRuntimeFields()

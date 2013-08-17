@@ -15,9 +15,9 @@ extern(C++) interface UIRoot : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIRoot")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIRoot")); }
 	private static __gshared UIRoot mDefaultProperties;
-	@property final static UIRoot DefaultProperties() { mixin(MGDPC!(UIRoot, "UIRoot Engine.Default__UIRoot")()); }
+	@property final static UIRoot DefaultProperties() { mixin(MGDPC("UIRoot", "UIRoot Engine.Default__UIRoot")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,17 +36,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetDataStoreStringValue() { mixin(MGF!("mGetDataStoreStringValue", "Function Engine.UIRoot.GetDataStoreStringValue")()); }
-			ScriptFunction SetDataStoreStringValue() { mixin(MGF!("mSetDataStoreStringValue", "Function Engine.UIRoot.SetDataStoreStringValue")()); }
-			ScriptFunction GetInputPlatformType() { mixin(MGF!("mGetInputPlatformType", "Function Engine.UIRoot.GetInputPlatformType")()); }
-			ScriptFunction GetCurrentUIController() { mixin(MGF!("mGetCurrentUIController", "Function Engine.UIRoot.GetCurrentUIController")()); }
-			ScriptFunction GetSceneClient() { mixin(MGF!("mGetSceneClient", "Function Engine.UIRoot.GetSceneClient")()); }
-			ScriptFunction StaticResolveDataStore() { mixin(MGF!("mStaticResolveDataStore", "Function Engine.UIRoot.StaticResolveDataStore")()); }
-			ScriptFunction SetDataStoreFieldValue() { mixin(MGF!("mSetDataStoreFieldValue", "Function Engine.UIRoot.SetDataStoreFieldValue")()); }
-			ScriptFunction GetDataStoreFieldValue() { mixin(MGF!("mGetDataStoreFieldValue", "Function Engine.UIRoot.GetDataStoreFieldValue")()); }
-			ScriptFunction GetOnlineGameInterface() { mixin(MGF!("mGetOnlineGameInterface", "Function Engine.UIRoot.GetOnlineGameInterface")()); }
-			ScriptFunction GetOnlinePlayerInterface() { mixin(MGF!("mGetOnlinePlayerInterface", "Function Engine.UIRoot.GetOnlinePlayerInterface")()); }
-			ScriptFunction GetOnlinePlayerInterfaceEx() { mixin(MGF!("mGetOnlinePlayerInterfaceEx", "Function Engine.UIRoot.GetOnlinePlayerInterfaceEx")()); }
+			ScriptFunction GetDataStoreStringValue() { mixin(MGF("mGetDataStoreStringValue", "Function Engine.UIRoot.GetDataStoreStringValue")); }
+			ScriptFunction SetDataStoreStringValue() { mixin(MGF("mSetDataStoreStringValue", "Function Engine.UIRoot.SetDataStoreStringValue")); }
+			ScriptFunction GetInputPlatformType() { mixin(MGF("mGetInputPlatformType", "Function Engine.UIRoot.GetInputPlatformType")); }
+			ScriptFunction GetCurrentUIController() { mixin(MGF("mGetCurrentUIController", "Function Engine.UIRoot.GetCurrentUIController")); }
+			ScriptFunction GetSceneClient() { mixin(MGF("mGetSceneClient", "Function Engine.UIRoot.GetSceneClient")); }
+			ScriptFunction StaticResolveDataStore() { mixin(MGF("mStaticResolveDataStore", "Function Engine.UIRoot.StaticResolveDataStore")); }
+			ScriptFunction SetDataStoreFieldValue() { mixin(MGF("mSetDataStoreFieldValue", "Function Engine.UIRoot.SetDataStoreFieldValue")); }
+			ScriptFunction GetDataStoreFieldValue() { mixin(MGF("mGetDataStoreFieldValue", "Function Engine.UIRoot.GetDataStoreFieldValue")); }
+			ScriptFunction GetOnlineGameInterface() { mixin(MGF("mGetOnlineGameInterface", "Function Engine.UIRoot.GetOnlineGameInterface")); }
+			ScriptFunction GetOnlinePlayerInterface() { mixin(MGF("mGetOnlinePlayerInterface", "Function Engine.UIRoot.GetOnlinePlayerInterface")); }
+			ScriptFunction GetOnlinePlayerInterfaceEx() { mixin(MGF("mGetOnlinePlayerInterfaceEx", "Function Engine.UIRoot.GetOnlinePlayerInterfaceEx")); }
 		}
 	}
 	static struct Constants
@@ -80,18 +80,18 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIRangeData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.UIRangeData")); }
 		@property final
 		{
 			auto ref
 			{
-				float NudgeValue() { mixin(MGPS!("float", 12)()); }
-				float MaxValue() { mixin(MGPS!("float", 8)()); }
-				float MinValue() { mixin(MGPS!("float", 4)()); }
-				float CurrentValue() { mixin(MGPS!("float", 0)()); }
+				float NudgeValue() { mixin(MGPS("float", 12)); }
+				float MaxValue() { mixin(MGPS("float", 8)); }
+				float MinValue() { mixin(MGPS("float", 4)); }
+				float CurrentValue() { mixin(MGPS("float", 0)); }
 			}
-			bool bIntRange() { mixin(MGBPS!(16, 0x1)()); }
-			bool bIntRange(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bIntRange() { mixin(MGBPS(16, 0x1)); }
+			bool bIntRange(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	struct TextureCoordinates
@@ -99,13 +99,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.TextureCoordinates")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.TextureCoordinates")); }
 		@property final auto ref
 		{
-			float VL() { mixin(MGPS!("float", 12)()); }
-			float UL() { mixin(MGPS!("float", 8)()); }
-			float V() { mixin(MGPS!("float", 4)()); }
-			float U() { mixin(MGPS!("float", 0)()); }
+			float VL() { mixin(MGPS("float", 12)); }
+			float UL() { mixin(MGPS("float", 8)); }
+			float V() { mixin(MGPS("float", 4)); }
+			float U() { mixin(MGPS("float", 0)); }
 		}
 	}
 	struct UIProviderScriptFieldValue
@@ -113,17 +113,17 @@ public extern(D):
 		private ubyte __buffer__[84];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIProviderScriptFieldValue")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.UIProviderScriptFieldValue")); }
 		@property final auto ref
 		{
-			ScriptArray!(int) ArrayValue() { mixin(MGPS!("ScriptArray!(int)", 28)()); }
-			UIRoot.TextureCoordinates AtlasCoordinates() { mixin(MGPS!("UIRoot.TextureCoordinates", 68)()); }
-			OnlineSubsystem.UniqueNetId NetIdValue() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 60)()); }
-			UIRoot.UIRangeData RangeValue() { mixin(MGPS!("UIRoot.UIRangeData", 40)()); }
-			Surface ImageValue() { mixin(MGPS!("Surface", 24)()); }
-			ScriptString StringValue() { mixin(MGPS!("ScriptString", 12)()); }
-			UIRoot.EUIDataProviderFieldType PropertyType() { mixin(MGPS!("UIRoot.EUIDataProviderFieldType", 8)()); }
-			ScriptName PropertyTag() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(int) ArrayValue() { mixin(MGPS("ScriptArray!(int)", 28)); }
+			UIRoot.TextureCoordinates AtlasCoordinates() { mixin(MGPS("UIRoot.TextureCoordinates", 68)); }
+			OnlineSubsystem.UniqueNetId NetIdValue() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 60)); }
+			UIRoot.UIRangeData RangeValue() { mixin(MGPS("UIRoot.UIRangeData", 40)); }
+			Surface ImageValue() { mixin(MGPS("Surface", 24)); }
+			ScriptString StringValue() { mixin(MGPS("ScriptString", 12)); }
+			UIRoot.EUIDataProviderFieldType PropertyType() { mixin(MGPS("UIRoot.EUIDataProviderFieldType", 8)); }
+			ScriptName PropertyTag() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct UIProviderFieldValue
@@ -131,32 +131,32 @@ public extern(D):
 		private ubyte __buffer__[88];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIProviderFieldValue")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.UIProviderFieldValue")); }
 		@property final auto ref
 		{
-			ScriptArray!(int) ArrayValue() { mixin(MGPS!("ScriptArray!(int)", 28)()); }
-			UIRoot.TextureCoordinates AtlasCoordinates() { mixin(MGPS!("UIRoot.TextureCoordinates", 68)()); }
-			OnlineSubsystem.UniqueNetId NetIdValue() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 60)()); }
-			UIRoot.UIRangeData RangeValue() { mixin(MGPS!("UIRoot.UIRangeData", 40)()); }
-			Surface ImageValue() { mixin(MGPS!("Surface", 24)()); }
-			ScriptString StringValue() { mixin(MGPS!("ScriptString", 12)()); }
-			UIRoot.EUIDataProviderFieldType PropertyType() { mixin(MGPS!("UIRoot.EUIDataProviderFieldType", 8)()); }
-			ScriptName PropertyTag() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(int) ArrayValue() { mixin(MGPS("ScriptArray!(int)", 28)); }
+			UIRoot.TextureCoordinates AtlasCoordinates() { mixin(MGPS("UIRoot.TextureCoordinates", 68)); }
+			OnlineSubsystem.UniqueNetId NetIdValue() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 60)); }
+			UIRoot.UIRangeData RangeValue() { mixin(MGPS("UIRoot.UIRangeData", 40)); }
+			Surface ImageValue() { mixin(MGPS("Surface", 24)); }
+			ScriptString StringValue() { mixin(MGPS("ScriptString", 12)); }
+			UIRoot.EUIDataProviderFieldType PropertyType() { mixin(MGPS("UIRoot.EUIDataProviderFieldType", 8)); }
+			ScriptName PropertyTag() { mixin(MGPS("ScriptName", 0)); }
 		}
-		@property final auto ref UObject.Pointer CustomStringNode() { mixin(MGPS!("UObject.Pointer", 84)()); }
+		@property final auto ref UObject.Pointer CustomStringNode() { mixin(MGPS("UObject.Pointer", 84)); }
 	}
 	struct InputKeyAction
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.InputKeyAction")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.InputKeyAction")); }
 		@property final auto ref
 		{
-			ScriptArray!(SequenceOp.SeqOpOutputInputLink) TriggeredOps() { mixin(MGPS!("ScriptArray!(SequenceOp.SeqOpOutputInputLink)", 12)()); }
-			ScriptArray!(SequenceOp) ActionsToExecute() { mixin(MGPS!("ScriptArray!(SequenceOp)", 24)()); }
-			UObject.EInputEvent InputKeyState() { mixin(MGPS!("UObject.EInputEvent", 8)()); }
-			ScriptName InputKeyName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(SequenceOp.SeqOpOutputInputLink) TriggeredOps() { mixin(MGPS("ScriptArray!(SequenceOp.SeqOpOutputInputLink)", 12)); }
+			ScriptArray!(SequenceOp) ActionsToExecute() { mixin(MGPS("ScriptArray!(SequenceOp)", 24)); }
+			UObject.EInputEvent InputKeyState() { mixin(MGPS("UObject.EInputEvent", 8)); }
+			ScriptName InputKeyName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct UIDataStoreBinding
@@ -164,15 +164,15 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIDataStoreBinding")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.UIDataStoreBinding")); }
 		@property final auto ref
 		{
-			UIDataStore ResolvedDataStore() { mixin(MGPS!("UIDataStore", 44)()); }
-			ScriptName DataStoreField() { mixin(MGPS!("ScriptName", 36)()); }
-			ScriptName DataStoreName() { mixin(MGPS!("ScriptName", 28)()); }
-			int BindingIndex() { mixin(MGPS!("int", 24)()); }
-			ScriptString MarkupString() { mixin(MGPS!("ScriptString", 12)()); }
-			UIRoot.EUIDataProviderFieldType RequiredFieldType() { mixin(MGPS!("UIRoot.EUIDataProviderFieldType", 8)()); }
+			UIDataStore ResolvedDataStore() { mixin(MGPS("UIDataStore", 44)); }
+			ScriptName DataStoreField() { mixin(MGPS("ScriptName", 36)); }
+			ScriptName DataStoreName() { mixin(MGPS("ScriptName", 28)); }
+			int BindingIndex() { mixin(MGPS("int", 24)); }
+			ScriptString MarkupString() { mixin(MGPS("ScriptString", 12)); }
+			UIRoot.EUIDataProviderFieldType RequiredFieldType() { mixin(MGPS("UIRoot.EUIDataProviderFieldType", 8)); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'Subscriber'!
 		}
 	}
@@ -181,24 +181,24 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.InputEventParameters")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.InputEventParameters")); }
 		@property final
 		{
 			auto ref
 			{
-				float DeltaTime() { mixin(MGPS!("float", 24)()); }
-				float InputDelta() { mixin(MGPS!("float", 20)()); }
-				UObject.EInputEvent EventType() { mixin(MGPS!("UObject.EInputEvent", 16)()); }
-				ScriptName InputKeyName() { mixin(MGPS!("ScriptName", 8)()); }
-				int ControllerId() { mixin(MGPS!("int", 4)()); }
-				int PlayerIndex() { mixin(MGPS!("int", 0)()); }
+				float DeltaTime() { mixin(MGPS("float", 24)); }
+				float InputDelta() { mixin(MGPS("float", 20)); }
+				UObject.EInputEvent EventType() { mixin(MGPS("UObject.EInputEvent", 16)); }
+				ScriptName InputKeyName() { mixin(MGPS("ScriptName", 8)); }
+				int ControllerId() { mixin(MGPS("int", 4)); }
+				int PlayerIndex() { mixin(MGPS("int", 0)); }
 			}
-			bool bShiftPressed() { mixin(MGBPS!(28, 0x4)()); }
-			bool bShiftPressed(bool val) { mixin(MSBPS!(28, 0x4)()); }
-			bool bCtrlPressed() { mixin(MGBPS!(28, 0x2)()); }
-			bool bCtrlPressed(bool val) { mixin(MSBPS!(28, 0x2)()); }
-			bool bAltPressed() { mixin(MGBPS!(28, 0x1)()); }
-			bool bAltPressed(bool val) { mixin(MSBPS!(28, 0x1)()); }
+			bool bShiftPressed() { mixin(MGBPS(28, 0x4)); }
+			bool bShiftPressed(bool val) { mixin(MSBPS(28, 0x4)); }
+			bool bCtrlPressed() { mixin(MGBPS(28, 0x2)); }
+			bool bCtrlPressed(bool val) { mixin(MSBPS(28, 0x2)); }
+			bool bAltPressed() { mixin(MGBPS(28, 0x1)); }
+			bool bAltPressed(bool val) { mixin(MSBPS(28, 0x1)); }
 		}
 	}
 	struct SubscribedInputEventParameters
@@ -206,43 +206,43 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.SubscribedInputEventParameters")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.SubscribedInputEventParameters")); }
 		@property final
 		{
 			auto ref
 			{
-				float DeltaTime() { mixin(MGPS!("float", 24)()); }
-				float InputDelta() { mixin(MGPS!("float", 20)()); }
-				UObject.EInputEvent EventType() { mixin(MGPS!("UObject.EInputEvent", 16)()); }
-				ScriptName InputKeyName() { mixin(MGPS!("ScriptName", 8)()); }
-				int ControllerId() { mixin(MGPS!("int", 4)()); }
-				int PlayerIndex() { mixin(MGPS!("int", 0)()); }
+				float DeltaTime() { mixin(MGPS("float", 24)); }
+				float InputDelta() { mixin(MGPS("float", 20)); }
+				UObject.EInputEvent EventType() { mixin(MGPS("UObject.EInputEvent", 16)); }
+				ScriptName InputKeyName() { mixin(MGPS("ScriptName", 8)); }
+				int ControllerId() { mixin(MGPS("int", 4)); }
+				int PlayerIndex() { mixin(MGPS("int", 0)); }
 			}
-			bool bShiftPressed() { mixin(MGBPS!(28, 0x4)()); }
-			bool bShiftPressed(bool val) { mixin(MSBPS!(28, 0x4)()); }
-			bool bCtrlPressed() { mixin(MGBPS!(28, 0x2)()); }
-			bool bCtrlPressed(bool val) { mixin(MSBPS!(28, 0x2)()); }
-			bool bAltPressed() { mixin(MGBPS!(28, 0x1)()); }
-			bool bAltPressed(bool val) { mixin(MSBPS!(28, 0x1)()); }
+			bool bShiftPressed() { mixin(MGBPS(28, 0x4)); }
+			bool bShiftPressed(bool val) { mixin(MSBPS(28, 0x4)); }
+			bool bCtrlPressed() { mixin(MGBPS(28, 0x2)); }
+			bool bCtrlPressed(bool val) { mixin(MSBPS(28, 0x2)); }
+			bool bAltPressed() { mixin(MGBPS(28, 0x1)); }
+			bool bAltPressed(bool val) { mixin(MSBPS(28, 0x1)); }
 		}
-		@property final auto ref ScriptName InputAliasName() { mixin(MGPS!("ScriptName", 32)()); }
+		@property final auto ref ScriptName InputAliasName() { mixin(MGPS("ScriptName", 32)); }
 	}
 	struct UIAxisEmulationDefinition
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.UIAxisEmulationDefinition")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.UIAxisEmulationDefinition")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName InputKeyToEmulate() { mixin(MGPS!("ScriptName", 20)()); }
-				ScriptName AdjacentAxisInputKey() { mixin(MGPS!("ScriptName", 8)()); }
-				ScriptName AxisInputKey() { mixin(MGPS!("ScriptName", 0)()); }
+				ScriptName InputKeyToEmulate() { mixin(MGPS("ScriptName", 20)); }
+				ScriptName AdjacentAxisInputKey() { mixin(MGPS("ScriptName", 8)); }
+				ScriptName AxisInputKey() { mixin(MGPS("ScriptName", 0)); }
 			}
-			bool bEmulateButtonPress() { mixin(MGBPS!(16, 0x1)()); }
-			bool bEmulateButtonPress(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bEmulateButtonPress() { mixin(MGBPS(16, 0x1)); }
+			bool bEmulateButtonPress(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	struct RawInputKeyEventData
@@ -250,11 +250,11 @@ public extern(D):
 		private ubyte __buffer__[9];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIRoot.RawInputKeyEventData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIRoot.RawInputKeyEventData")); }
 		@property final auto ref
 		{
-			ubyte ModifierKeyFlags() { mixin(MGPS!("ubyte", 8)()); }
-			ScriptName InputKeyName() { mixin(MGPS!("ScriptName", 0)()); }
+			ubyte ModifierKeyFlags() { mixin(MGPS("ubyte", 8)); }
+			ScriptName InputKeyName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 final:

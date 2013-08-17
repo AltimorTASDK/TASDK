@@ -11,9 +11,9 @@ extern(C++) interface MeshComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MeshComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MeshComponent")); }
 	private static __gshared MeshComponent mDefaultProperties;
-	@property final static MeshComponent DefaultProperties() { mixin(MGDPC!(MeshComponent, "MeshComponent Engine.Default__MeshComponent")()); }
+	@property final static MeshComponent DefaultProperties() { mixin(MGDPC("MeshComponent", "MeshComponent Engine.Default__MeshComponent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,15 +27,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetMaterial() { mixin(MGF!("mGetMaterial", "Function Engine.MeshComponent.GetMaterial")()); }
-			ScriptFunction SetMaterial() { mixin(MGF!("mSetMaterial", "Function Engine.MeshComponent.SetMaterial")()); }
-			ScriptFunction GetNumElements() { mixin(MGF!("mGetNumElements", "Function Engine.MeshComponent.GetNumElements")()); }
-			ScriptFunction PrestreamTextures() { mixin(MGF!("mPrestreamTextures", "Function Engine.MeshComponent.PrestreamTextures")()); }
-			ScriptFunction CreateAndSetMaterialInstanceConstant() { mixin(MGF!("mCreateAndSetMaterialInstanceConstant", "Function Engine.MeshComponent.CreateAndSetMaterialInstanceConstant")()); }
-			ScriptFunction CreateAndSetMaterialInstanceTimeVarying() { mixin(MGF!("mCreateAndSetMaterialInstanceTimeVarying", "Function Engine.MeshComponent.CreateAndSetMaterialInstanceTimeVarying")()); }
+			ScriptFunction GetMaterial() { mixin(MGF("mGetMaterial", "Function Engine.MeshComponent.GetMaterial")); }
+			ScriptFunction SetMaterial() { mixin(MGF("mSetMaterial", "Function Engine.MeshComponent.SetMaterial")); }
+			ScriptFunction GetNumElements() { mixin(MGF("mGetNumElements", "Function Engine.MeshComponent.GetNumElements")); }
+			ScriptFunction PrestreamTextures() { mixin(MGF("mPrestreamTextures", "Function Engine.MeshComponent.PrestreamTextures")); }
+			ScriptFunction CreateAndSetMaterialInstanceConstant() { mixin(MGF("mCreateAndSetMaterialInstanceConstant", "Function Engine.MeshComponent.CreateAndSetMaterialInstanceConstant")); }
+			ScriptFunction CreateAndSetMaterialInstanceTimeVarying() { mixin(MGF("mCreateAndSetMaterialInstanceTimeVarying", "Function Engine.MeshComponent.CreateAndSetMaterialInstanceTimeVarying")); }
 		}
 	}
-	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 488)()); }
+	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC("ScriptArray!(MaterialInterface)", 488)); }
 final:
 	MaterialInterface GetMaterial(int ElementIndex)
 	{

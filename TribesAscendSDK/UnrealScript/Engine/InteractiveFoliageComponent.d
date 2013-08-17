@@ -9,8 +9,8 @@ extern(C++) interface InteractiveFoliageComponent : StaticMeshComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InteractiveFoliageComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.InteractiveFoliageComponent")); }
 	private static __gshared InteractiveFoliageComponent mDefaultProperties;
-	@property final static InteractiveFoliageComponent DefaultProperties() { mixin(MGDPC!(InteractiveFoliageComponent, "InteractiveFoliageComponent Engine.Default__InteractiveFoliageComponent")()); }
-	@property final auto ref UObject.Pointer FoliageSceneProxy() { mixin(MGPC!("UObject.Pointer", 608)()); }
+	@property final static InteractiveFoliageComponent DefaultProperties() { mixin(MGDPC("InteractiveFoliageComponent", "InteractiveFoliageComponent Engine.Default__InteractiveFoliageComponent")); }
+	@property final auto ref UObject.Pointer FoliageSceneProxy() { mixin(MGPC("UObject.Pointer", 608)); }
 }

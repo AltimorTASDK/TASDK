@@ -13,9 +13,9 @@ extern(C++) interface UTAnnouncer : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnnouncer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnnouncer")); }
 	private static __gshared UTAnnouncer mDefaultProperties;
-	@property final static UTAnnouncer DefaultProperties() { mixin(MGDPC!(UTAnnouncer, "UTAnnouncer UTGame.Default__UTAnnouncer")()); }
+	@property final static UTAnnouncer DefaultProperties() { mixin(MGDPC("UTAnnouncer", "UTAnnouncer UTGame.Default__UTAnnouncer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,26 +29,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTAnnouncer.Destroyed")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTAnnouncer.PostBeginPlay")()); }
-			ScriptFunction PlayNextAnnouncement() { mixin(MGF!("mPlayNextAnnouncement", "Function UTGame.UTAnnouncer.PlayNextAnnouncement")()); }
-			ScriptFunction PlayAnnouncementNow() { mixin(MGF!("mPlayAnnouncementNow", "Function UTGame.UTAnnouncer.PlayAnnouncementNow")()); }
-			ScriptFunction AnnouncementFinished() { mixin(MGF!("mAnnouncementFinished", "Function UTGame.UTAnnouncer.AnnouncementFinished")()); }
-			ScriptFunction PlayAnnouncement() { mixin(MGF!("mPlayAnnouncement", "Function UTGame.UTAnnouncer.PlayAnnouncement")()); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UTGame.UTAnnouncer.Destroyed")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTAnnouncer.PostBeginPlay")); }
+			ScriptFunction PlayNextAnnouncement() { mixin(MGF("mPlayNextAnnouncement", "Function UTGame.UTAnnouncer.PlayNextAnnouncement")); }
+			ScriptFunction PlayAnnouncementNow() { mixin(MGF("mPlayAnnouncementNow", "Function UTGame.UTAnnouncer.PlayAnnouncementNow")); }
+			ScriptFunction AnnouncementFinished() { mixin(MGF("mAnnouncementFinished", "Function UTGame.UTAnnouncer.AnnouncementFinished")); }
+			ScriptFunction PlayAnnouncement() { mixin(MGF("mPlayAnnouncement", "Function UTGame.UTAnnouncer.PlayAnnouncement")); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CurrentAnnouncementComponent'!
-		ScriptString UTVoiceSoundCueSoundCue() { mixin(MGPC!("ScriptString", 516)()); }
-		SoundCue UTVoiceSoundCue() { mixin(MGPC!("SoundCue", 512)()); }
-		ScriptString CustomAnnouncerSoundCue() { mixin(MGPC!("ScriptString", 500)()); }
-		SoundCue AnnouncerSoundCue() { mixin(MGPC!("SoundCue", 496)()); }
-		UTPlayerController PlayerOwner() { mixin(MGPC!("UTPlayerController", 492)()); }
-		UTQueuedAnnouncement Queue() { mixin(MGPC!("UTQueuedAnnouncement", 488)()); }
-		int PlayingAnnouncementIndex() { mixin(MGPC!("int", 484)()); }
-		ScriptClass PlayingAnnouncementClass() { mixin(MGPC!("ScriptClass", 480)()); }
-		ubyte AnnouncerLevel() { mixin(MGPC!("ubyte", 476)()); }
+		ScriptString UTVoiceSoundCueSoundCue() { mixin(MGPC("ScriptString", 516)); }
+		SoundCue UTVoiceSoundCue() { mixin(MGPC("SoundCue", 512)); }
+		ScriptString CustomAnnouncerSoundCue() { mixin(MGPC("ScriptString", 500)); }
+		SoundCue AnnouncerSoundCue() { mixin(MGPC("SoundCue", 496)); }
+		UTPlayerController PlayerOwner() { mixin(MGPC("UTPlayerController", 492)); }
+		UTQueuedAnnouncement Queue() { mixin(MGPC("UTQueuedAnnouncement", 488)); }
+		int PlayingAnnouncementIndex() { mixin(MGPC("int", 484)); }
+		ScriptClass PlayingAnnouncementClass() { mixin(MGPC("ScriptClass", 480)); }
+		ubyte AnnouncerLevel() { mixin(MGPC("ubyte", 476)); }
 	}
 final:
 	void Destroyed()

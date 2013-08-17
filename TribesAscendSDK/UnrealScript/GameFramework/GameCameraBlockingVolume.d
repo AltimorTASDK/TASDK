@@ -8,7 +8,7 @@ extern(C++) interface GameCameraBlockingVolume : BlockingVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCameraBlockingVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCameraBlockingVolume")); }
 	private static __gshared GameCameraBlockingVolume mDefaultProperties;
-	@property final static GameCameraBlockingVolume DefaultProperties() { mixin(MGDPC!(GameCameraBlockingVolume, "GameCameraBlockingVolume GameFramework.Default__GameCameraBlockingVolume")()); }
+	@property final static GameCameraBlockingVolume DefaultProperties() { mixin(MGDPC("GameCameraBlockingVolume", "GameCameraBlockingVolume GameFramework.Default__GameCameraBlockingVolume")); }
 }

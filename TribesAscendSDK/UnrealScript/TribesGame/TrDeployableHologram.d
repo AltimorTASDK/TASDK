@@ -9,9 +9,9 @@ extern(C++) interface TrDeployableHologram : SkeletalMeshActorSpawnable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployableHologram")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployableHologram")); }
 	private static __gshared TrDeployableHologram mDefaultProperties;
-	@property final static TrDeployableHologram DefaultProperties() { mixin(MGDPC!(TrDeployableHologram, "TrDeployableHologram TribesGame.Default__TrDeployableHologram")()); }
+	@property final static TrDeployableHologram DefaultProperties() { mixin(MGDPC("TrDeployableHologram", "TrDeployableHologram TribesGame.Default__TrDeployableHologram")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetValidDeployableLocation() { mixin(MGF!("mSetValidDeployableLocation", "Function TribesGame.TrDeployableHologram.SetValidDeployableLocation")()); }
-			ScriptFunction ClearAllMessages() { mixin(MGF!("mClearAllMessages", "Function TribesGame.TrDeployableHologram.ClearAllMessages")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDeployableHologram.Destroyed")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function TribesGame.TrDeployableHologram.PreBeginPlay")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrDeployableHologram.Init")()); }
+			ScriptFunction SetValidDeployableLocation() { mixin(MGF("mSetValidDeployableLocation", "Function TribesGame.TrDeployableHologram.SetValidDeployableLocation")); }
+			ScriptFunction ClearAllMessages() { mixin(MGF("mClearAllMessages", "Function TribesGame.TrDeployableHologram.ClearAllMessages")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrDeployableHologram.Destroyed")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function TribesGame.TrDeployableHologram.PreBeginPlay")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrDeployableHologram.Init")); }
 		}
 	}
 	@property final auto ref
 	{
-		int m_nOldInvalidDeployReason() { mixin(MGPC!("int", 544)()); }
-		MaterialInstanceConstant m_RuntimeMIC() { mixin(MGPC!("MaterialInstanceConstant", 540)()); }
-		MaterialInstanceConstant m_HologramMaterial() { mixin(MGPC!("MaterialInstanceConstant", 536)()); }
+		int m_nOldInvalidDeployReason() { mixin(MGPC("int", 544)); }
+		MaterialInstanceConstant m_RuntimeMIC() { mixin(MGPC("MaterialInstanceConstant", 540)); }
+		MaterialInstanceConstant m_HologramMaterial() { mixin(MGPC("MaterialInstanceConstant", 536)); }
 	}
 final:
 	void SetValidDeployableLocation(bool bValidLocation, int* InvalidDeployReason = null)

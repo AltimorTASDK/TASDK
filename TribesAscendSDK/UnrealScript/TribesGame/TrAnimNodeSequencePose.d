@@ -10,15 +10,15 @@ extern(C++) interface TrAnimNodeSequencePose : AnimNodeSequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeSequencePose")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAnimNodeSequencePose")); }
 	private static __gshared TrAnimNodeSequencePose mDefaultProperties;
-	@property final static TrAnimNodeSequencePose DefaultProperties() { mixin(MGDPC!(TrAnimNodeSequencePose, "TrAnimNodeSequencePose TribesGame.Default__TrAnimNodeSequencePose")()); }
+	@property final static TrAnimNodeSequencePose DefaultProperties() { mixin(MGDPC("TrAnimNodeSequencePose", "TrAnimNodeSequencePose TribesGame.Default__TrAnimNodeSequencePose")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFillWithPose;
-		public @property static final ScriptFunction FillWithPose() { mixin(MGF!("mFillWithPose", "Function TribesGame.TrAnimNodeSequencePose.FillWithPose")()); }
+		public @property static final ScriptFunction FillWithPose() { mixin(MGF("mFillWithPose", "Function TribesGame.TrAnimNodeSequencePose.FillWithPose")); }
 	}
-	@property final auto ref ScriptArray!(UObject.BoneAtom) m_PoseSpaceBases() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 320)()); }
+	@property final auto ref ScriptArray!(UObject.BoneAtom) m_PoseSpaceBases() { mixin(MGPC("ScriptArray!(UObject.BoneAtom)", 320)); }
 	final void FillWithPose(TrPawn P)
 	{
 		ubyte params[4];

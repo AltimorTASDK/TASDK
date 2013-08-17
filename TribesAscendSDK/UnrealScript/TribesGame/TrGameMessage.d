@@ -12,9 +12,9 @@ extern(C++) interface TrGameMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameMessage")); }
 	private static __gshared TrGameMessage mDefaultProperties;
-	@property final static TrGameMessage DefaultProperties() { mixin(MGDPC!(TrGameMessage, "TrGameMessage TribesGame.Default__TrGameMessage")()); }
+	@property final static TrGameMessage DefaultProperties() { mixin(MGDPC("TrGameMessage", "TrGameMessage TribesGame.Default__TrGameMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrGameMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrGameMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrGameMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrGameMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue m_sMatchStartDiamondSword() { mixin(MGPC!("SoundCue", 152)()); }
-		SoundCue m_sMatchStartBloodEagle() { mixin(MGPC!("SoundCue", 148)()); }
-		ScriptString WaitingForPlayers() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString OvertimeNotification() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString YouAreOnDiamondSwordMessage() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString YouAreOnBloodEagleMessage() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundCue m_sMatchStartDiamondSword() { mixin(MGPC("SoundCue", 152)); }
+		SoundCue m_sMatchStartBloodEagle() { mixin(MGPC("SoundCue", 148)); }
+		ScriptString WaitingForPlayers() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString OvertimeNotification() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString YouAreOnDiamondSwordMessage() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString YouAreOnBloodEagleMessage() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

@@ -11,9 +11,9 @@ extern(C++) interface NavMeshGoal_At : NavMeshPathGoalEvaluator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshGoal_At")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavMeshGoal_At")); }
 	private static __gshared NavMeshGoal_At mDefaultProperties;
-	@property final static NavMeshGoal_At DefaultProperties() { mixin(MGDPC!(NavMeshGoal_At, "NavMeshGoal_At Engine.Default__NavMeshGoal_At")()); }
+	@property final static NavMeshGoal_At DefaultProperties() { mixin(MGDPC("NavMeshGoal_At", "NavMeshGoal_At Engine.Default__NavMeshGoal_At")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,23 +25,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RecycleNative() { mixin(MGF!("mRecycleNative", "Function Engine.NavMeshGoal_At.RecycleNative")()); }
-			ScriptFunction AtActor() { mixin(MGF!("mAtActor", "Function Engine.NavMeshGoal_At.AtActor")()); }
-			ScriptFunction AtLocation() { mixin(MGF!("mAtLocation", "Function Engine.NavMeshGoal_At.AtLocation")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshGoal_At.Recycle")()); }
+			ScriptFunction RecycleNative() { mixin(MGF("mRecycleNative", "Function Engine.NavMeshGoal_At.RecycleNative")); }
+			ScriptFunction AtActor() { mixin(MGF("mAtActor", "Function Engine.NavMeshGoal_At.AtActor")); }
+			ScriptFunction AtLocation() { mixin(MGF("mAtLocation", "Function Engine.NavMeshGoal_At.AtLocation")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.NavMeshGoal_At.Recycle")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Pointer PartialGoal() { mixin(MGPC!("UObject.Pointer", 104)()); }
-			UObject.Pointer GoalPoly() { mixin(MGPC!("UObject.Pointer", 100)()); }
-			float GoalDist() { mixin(MGPC!("float", 92)()); }
-			Vector Goal() { mixin(MGPC!("Vector", 80)()); }
+			UObject.Pointer PartialGoal() { mixin(MGPC("UObject.Pointer", 104)); }
+			UObject.Pointer GoalPoly() { mixin(MGPC("UObject.Pointer", 100)); }
+			float GoalDist() { mixin(MGPC("float", 92)); }
+			Vector Goal() { mixin(MGPC("Vector", 80)); }
 		}
-		bool bKeepPartial() { mixin(MGBPC!(96, 0x1)()); }
-		bool bKeepPartial(bool val) { mixin(MSBPC!(96, 0x1)()); }
+		bool bKeepPartial() { mixin(MGBPC(96, 0x1)); }
+		bool bKeepPartial(bool val) { mixin(MSBPC(96, 0x1)); }
 	}
 final:
 	void RecycleNative()

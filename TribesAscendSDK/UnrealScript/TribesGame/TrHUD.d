@@ -36,9 +36,9 @@ extern(C++) interface TrHUD : UTGFxHudWrapper
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrHUD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrHUD")); }
 	private static __gshared TrHUD mDefaultProperties;
-	@property final static TrHUD DefaultProperties() { mixin(MGDPC!(TrHUD, "TrHUD TribesGame.Default__TrHUD")()); }
+	@property final static TrHUD DefaultProperties() { mixin(MGDPC("TrHUD", "TrHUD TribesGame.Default__TrHUD")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -169,129 +169,129 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DrawMarkerText() { mixin(MGF!("mDrawMarkerText", "Function TribesGame.TrHUD.DrawMarkerText")()); }
-			ScriptFunction DrawMICMarker() { mixin(MGF!("mDrawMICMarker", "Function TribesGame.TrHUD.DrawMICMarker")()); }
-			ScriptFunction GetEdgeScreenCoordinates() { mixin(MGF!("mGetEdgeScreenCoordinates", "Function TribesGame.TrHUD.GetEdgeScreenCoordinates")()); }
-			ScriptFunction DrawMarker() { mixin(MGF!("mDrawMarker", "Function TribesGame.TrHUD.DrawMarker")()); }
-			ScriptFunction DrawRotatedMarker() { mixin(MGF!("mDrawRotatedMarker", "Function TribesGame.TrHUD.DrawRotatedMarker")()); }
-			ScriptFunction ShowDebugInfo() { mixin(MGF!("mShowDebugInfo", "Function TribesGame.TrHUD.ShowDebugInfo")()); }
-			ScriptFunction CreateHUDMovie() { mixin(MGF!("mCreateHUDMovie", "Function TribesGame.TrHUD.CreateHUDMovie")()); }
-			ScriptFunction ShowSpectatorControls() { mixin(MGF!("mShowSpectatorControls", "Function TribesGame.TrHUD.ShowSpectatorControls")()); }
-			ScriptFunction SetShowScores() { mixin(MGF!("mSetShowScores", "Function TribesGame.TrHUD.SetShowScores")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrHUD.PostBeginPlay")()); }
-			ScriptFunction InitializeGameHUD() { mixin(MGF!("mInitializeGameHUD", "Function TribesGame.TrHUD.InitializeGameHUD")()); }
-			ScriptFunction FadeInTimer() { mixin(MGF!("mFadeInTimer", "Function TribesGame.TrHUD.FadeInTimer")()); }
-			ScriptFunction Fade() { mixin(MGF!("mFade", "Function TribesGame.TrHUD.Fade")()); }
-			ScriptFunction PlayRoundOver() { mixin(MGF!("mPlayRoundOver", "Function TribesGame.TrHUD.PlayRoundOver")()); }
-			ScriptFunction ShowRoundEnding() { mixin(MGF!("mShowRoundEnding", "Function TribesGame.TrHUD.ShowRoundEnding")()); }
-			ScriptFunction PlayMatchOver() { mixin(MGF!("mPlayMatchOver", "Function TribesGame.TrHUD.PlayMatchOver")()); }
-			ScriptFunction ShowEnding() { mixin(MGF!("mShowEnding", "Function TribesGame.TrHUD.ShowEnding")()); }
-			ScriptFunction FadeInSummary() { mixin(MGF!("mFadeInSummary", "Function TribesGame.TrHUD.FadeInSummary")()); }
-			ScriptFunction ScaleformJoystickInputEvent() { mixin(MGF!("mScaleformJoystickInputEvent", "Function TribesGame.TrHUD.ScaleformJoystickInputEvent")()); }
-			ScriptFunction ToggleSkiEffect() { mixin(MGF!("mToggleSkiEffect", "Function TribesGame.TrHUD.ToggleSkiEffect")()); }
-			ScriptFunction TogglePauseMenu() { mixin(MGF!("mTogglePauseMenu", "Function TribesGame.TrHUD.TogglePauseMenu")()); }
-			ScriptFunction ToggleMovieHUD() { mixin(MGF!("mToggleMovieHUD", "Function TribesGame.TrHUD.ToggleMovieHUD")()); }
-			ScriptFunction ToggleVehicleMenu() { mixin(MGF!("mToggleVehicleMenu", "Function TribesGame.TrHUD.ToggleVehicleMenu")()); }
-			ScriptFunction ToggleTeamSelectionMenu() { mixin(MGF!("mToggleTeamSelectionMenu", "Function TribesGame.TrHUD.ToggleTeamSelectionMenu")()); }
-			ScriptFunction SetPowerOscillation() { mixin(MGF!("mSetPowerOscillation", "Function TribesGame.TrHUD.SetPowerOscillation")()); }
-			ScriptFunction AddUpdateToCombatLog() { mixin(MGF!("mAddUpdateToCombatLog", "Function TribesGame.TrHUD.AddUpdateToCombatLog")()); }
-			ScriptFunction AddToPromptPanel() { mixin(MGF!("mAddToPromptPanel", "Function TribesGame.TrHUD.AddToPromptPanel")()); }
-			ScriptFunction AddToPromptPanelTime() { mixin(MGF!("mAddToPromptPanelTime", "Function TribesGame.TrHUD.AddToPromptPanelTime")()); }
-			ScriptFunction ClearPromptPanel() { mixin(MGF!("mClearPromptPanel", "Function TribesGame.TrHUD.ClearPromptPanel")()); }
-			ScriptFunction AddToHeroStatus() { mixin(MGF!("mAddToHeroStatus", "Function TribesGame.TrHUD.AddToHeroStatus")()); }
-			ScriptFunction ClearHeroStatus() { mixin(MGF!("mClearHeroStatus", "Function TribesGame.TrHUD.ClearHeroStatus")()); }
-			ScriptFunction ClearPromptPanelMessage() { mixin(MGF!("mClearPromptPanelMessage", "Function TribesGame.TrHUD.ClearPromptPanelMessage")()); }
-			ScriptFunction UpdateVGSMenu() { mixin(MGF!("mUpdateVGSMenu", "Function TribesGame.TrHUD.UpdateVGSMenu")()); }
-			ScriptFunction HideVGSMenu() { mixin(MGF!("mHideVGSMenu", "Function TribesGame.TrHUD.HideVGSMenu")()); }
-			ScriptFunction AddToHelpText() { mixin(MGF!("mAddToHelpText", "Function TribesGame.TrHUD.AddToHelpText")()); }
-			ScriptFunction ClearHelpText() { mixin(MGF!("mClearHelpText", "Function TribesGame.TrHUD.ClearHelpText")()); }
-			ScriptFunction AddUpdateToKillMessage() { mixin(MGF!("mAddUpdateToKillMessage", "Function TribesGame.TrHUD.AddUpdateToKillMessage")()); }
-			ScriptFunction AddFlyingIcon() { mixin(MGF!("mAddFlyingIcon", "Function TribesGame.TrHUD.AddFlyingIcon")()); }
-			ScriptFunction OnSpectate() { mixin(MGF!("mOnSpectate", "Function TribesGame.TrHUD.OnSpectate")()); }
-			ScriptFunction CreateSpectatorHUDCache() { mixin(MGF!("mCreateSpectatorHUDCache", "Function TribesGame.TrHUD.CreateSpectatorHUDCache")()); }
-			ScriptFunction ClearSpectatorHUDCache() { mixin(MGF!("mClearSpectatorHUDCache", "Function TribesGame.TrHUD.ClearSpectatorHUDCache")()); }
-			ScriptFunction HideHUDElements() { mixin(MGF!("mHideHUDElements", "Function TribesGame.TrHUD.HideHUDElements")()); }
-			ScriptFunction ShowHUDPlayerSpawning() { mixin(MGF!("mShowHUDPlayerSpawning", "Function TribesGame.TrHUD.ShowHUDPlayerSpawning")()); }
-			ScriptFunction ShowHUDPlayerAlive() { mixin(MGF!("mShowHUDPlayerAlive", "Function TribesGame.TrHUD.ShowHUDPlayerAlive")()); }
-			ScriptFunction ShowCenterHUDElements() { mixin(MGF!("mShowCenterHUDElements", "Function TribesGame.TrHUD.ShowCenterHUDElements")()); }
-			ScriptFunction UpdateRespawnText() { mixin(MGF!("mUpdateRespawnText", "Function TribesGame.TrHUD.UpdateRespawnText")()); }
-			ScriptFunction UpdateRespawnTimer() { mixin(MGF!("mUpdateRespawnTimer", "Function TribesGame.TrHUD.UpdateRespawnTimer")()); }
-			ScriptFunction UpdateHUDCredits() { mixin(MGF!("mUpdateHUDCredits", "Function TribesGame.TrHUD.UpdateHUDCredits")()); }
-			ScriptFunction TeamScoreboardShow() { mixin(MGF!("mTeamScoreboardShow", "Function TribesGame.TrHUD.TeamScoreboardShow")()); }
-			ScriptFunction RabbitScoreboardShow() { mixin(MGF!("mRabbitScoreboardShow", "Function TribesGame.TrHUD.RabbitScoreboardShow")()); }
-			ScriptFunction TeamScoreboardUpdateSlot() { mixin(MGF!("mTeamScoreboardUpdateSlot", "Function TribesGame.TrHUD.TeamScoreboardUpdateSlot")()); }
-			ScriptFunction RabbitScoreboardUpdateSlot() { mixin(MGF!("mRabbitScoreboardUpdateSlot", "Function TribesGame.TrHUD.RabbitScoreboardUpdateSlot")()); }
-			ScriptFunction TeamScoreboardUpdateTeamScore() { mixin(MGF!("mTeamScoreboardUpdateTeamScore", "Function TribesGame.TrHUD.TeamScoreboardUpdateTeamScore")()); }
-			ScriptFunction TeamScoreboardUpdateTime() { mixin(MGF!("mTeamScoreboardUpdateTime", "Function TribesGame.TrHUD.TeamScoreboardUpdateTime")()); }
-			ScriptFunction RabbitScoreboardUpdateTime() { mixin(MGF!("mRabbitScoreboardUpdateTime", "Function TribesGame.TrHUD.RabbitScoreboardUpdateTime")()); }
-			ScriptFunction TeamScoreboardActivePlayer() { mixin(MGF!("mTeamScoreboardActivePlayer", "Function TribesGame.TrHUD.TeamScoreboardActivePlayer")()); }
-			ScriptFunction RabbitScoreboardActivePlayer() { mixin(MGF!("mRabbitScoreboardActivePlayer", "Function TribesGame.TrHUD.RabbitScoreboardActivePlayer")()); }
-			ScriptFunction ResolutionChanged() { mixin(MGF!("mResolutionChanged", "Function TribesGame.TrHUD.ResolutionChanged")()); }
-			ScriptFunction RestoreHUDState() { mixin(MGF!("mRestoreHUDState", "Function TribesGame.TrHUD.RestoreHUDState")()); }
-			ScriptFunction HideMenus() { mixin(MGF!("mHideMenus", "Function TribesGame.TrHUD.HideMenus")()); }
-			ScriptFunction RemoveMovies() { mixin(MGF!("mRemoveMovies", "Function TribesGame.TrHUD.RemoveMovies")()); }
-			ScriptFunction CompleteVehicleMenuClose() { mixin(MGF!("mCompleteVehicleMenuClose", "Function TribesGame.TrHUD.CompleteVehicleMenuClose")()); }
-			ScriptFunction CompleteTeamSelectionMenuClose() { mixin(MGF!("mCompleteTeamSelectionMenuClose", "Function TribesGame.TrHUD.CompleteTeamSelectionMenuClose")()); }
-			ScriptFunction ClearCrosshairOnFriendly() { mixin(MGF!("mClearCrosshairOnFriendly", "Function TribesGame.TrHUD.ClearCrosshairOnFriendly")()); }
-			ScriptFunction CheckCrosshairOnFriendly() { mixin(MGF!("mCheckCrosshairOnFriendly", "Function TribesGame.TrHUD.CheckCrosshairOnFriendly")()); }
-			ScriptFunction DrawColoredMarkerText() { mixin(MGF!("mDrawColoredMarkerText", "Function TribesGame.TrHUD.DrawColoredMarkerText")()); }
-			ScriptFunction DrawSmallText() { mixin(MGF!("mDrawSmallText", "Function TribesGame.TrHUD.DrawSmallText")()); }
-			ScriptFunction DrawHealthBar() { mixin(MGF!("mDrawHealthBar", "Function TribesGame.TrHUD.DrawHealthBar")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function TribesGame.TrHUD.PostRender")()); }
-			ScriptFunction GetRemainingFriendlyGeneratorRestoreTime() { mixin(MGF!("mGetRemainingFriendlyGeneratorRestoreTime", "Function TribesGame.TrHUD.GetRemainingFriendlyGeneratorRestoreTime")()); }
-			ScriptFunction GetRemainingEnemyGeneratorRestoreTime() { mixin(MGF!("mGetRemainingEnemyGeneratorRestoreTime", "Function TribesGame.TrHUD.GetRemainingEnemyGeneratorRestoreTime")()); }
-			ScriptFunction UpdateSkiEffect() { mixin(MGF!("mUpdateSkiEffect", "Function TribesGame.TrHUD.UpdateSkiEffect")()); }
-			ScriptFunction UpdatePickupFlashEffect() { mixin(MGF!("mUpdatePickupFlashEffect", "Function TribesGame.TrHUD.UpdatePickupFlashEffect")()); }
-			ScriptFunction PulsePickupFlashEffect() { mixin(MGF!("mPulsePickupFlashEffect", "Function TribesGame.TrHUD.PulsePickupFlashEffect")()); }
-			ScriptFunction UpdateInvulnerableEfect() { mixin(MGF!("mUpdateInvulnerableEfect", "Function TribesGame.TrHUD.UpdateInvulnerableEfect")()); }
-			ScriptFunction UpdateShieldEffect() { mixin(MGF!("mUpdateShieldEffect", "Function TribesGame.TrHUD.UpdateShieldEffect")()); }
-			ScriptFunction PulseShieldEffect() { mixin(MGF!("mPulseShieldEffect", "Function TribesGame.TrHUD.PulseShieldEffect")()); }
-			ScriptFunction UpdateJammerEffect() { mixin(MGF!("mUpdateJammerEffect", "Function TribesGame.TrHUD.UpdateJammerEffect")()); }
-			ScriptFunction UpdateFadeEffect() { mixin(MGF!("mUpdateFadeEffect", "Function TribesGame.TrHUD.UpdateFadeEffect")()); }
-			ScriptFunction FumbleFlag() { mixin(MGF!("mFumbleFlag", "Function TribesGame.TrHUD.FumbleFlag")()); }
-			ScriptFunction UpdateFumbledFlagEffect() { mixin(MGF!("mUpdateFumbledFlagEffect", "Function TribesGame.TrHUD.UpdateFumbledFlagEffect")()); }
-			ScriptFunction Whiteout() { mixin(MGF!("mWhiteout", "Function TribesGame.TrHUD.Whiteout")()); }
-			ScriptFunction ClearWhiteout() { mixin(MGF!("mClearWhiteout", "Function TribesGame.TrHUD.ClearWhiteout")()); }
-			ScriptFunction UpdateWhiteoutEffect() { mixin(MGF!("mUpdateWhiteoutEffect", "Function TribesGame.TrHUD.UpdateWhiteoutEffect")()); }
-			ScriptFunction LocalizedMessage() { mixin(MGF!("mLocalizedMessage", "Function TribesGame.TrHUD.LocalizedMessage")()); }
-			ScriptFunction ChatMessageReceived() { mixin(MGF!("mChatMessageReceived", "Function TribesGame.TrHUD.ChatMessageReceived")()); }
-			ScriptFunction StripTag() { mixin(MGF!("mStripTag", "Function TribesGame.TrHUD.StripTag")()); }
-			ScriptFunction SendLocalMessageToGlobalAlert() { mixin(MGF!("mSendLocalMessageToGlobalAlert", "Function TribesGame.TrHUD.SendLocalMessageToGlobalAlert")()); }
-			ScriptFunction SendLocalMessageToChat() { mixin(MGF!("mSendLocalMessageToChat", "Function TribesGame.TrHUD.SendLocalMessageToChat")()); }
-			ScriptFunction SetPlayerClassObjects() { mixin(MGF!("mSetPlayerClassObjects", "Function TribesGame.TrHUD.SetPlayerClassObjects")()); }
-			ScriptFunction HideGlobalAlert() { mixin(MGF!("mHideGlobalAlert", "Function TribesGame.TrHUD.HideGlobalAlert")()); }
-			ScriptFunction KickVoteMessage() { mixin(MGF!("mKickVoteMessage", "Function TribesGame.TrHUD.KickVoteMessage")()); }
-			ScriptFunction EnableGameTypeHUD() { mixin(MGF!("mEnableGameTypeHUD", "Function TribesGame.TrHUD.EnableGameTypeHUD")()); }
-			ScriptFunction ShowSpectatorPlayer() { mixin(MGF!("mShowSpectatorPlayer", "Function TribesGame.TrHUD.ShowSpectatorPlayer")()); }
-			ScriptFunction HideSpectatorPlayer() { mixin(MGF!("mHideSpectatorPlayer", "Function TribesGame.TrHUD.HideSpectatorPlayer")()); }
-			ScriptFunction UpdateSpectatorPlayerPanel() { mixin(MGF!("mUpdateSpectatorPlayerPanel", "Function TribesGame.TrHUD.UpdateSpectatorPlayerPanel")()); }
-			ScriptFunction ShowSpectatorVehicle() { mixin(MGF!("mShowSpectatorVehicle", "Function TribesGame.TrHUD.ShowSpectatorVehicle")()); }
-			ScriptFunction HideSpectatorVehicle() { mixin(MGF!("mHideSpectatorVehicle", "Function TribesGame.TrHUD.HideSpectatorVehicle")()); }
-			ScriptFunction UpdateSpectatorVehiclePanel() { mixin(MGF!("mUpdateSpectatorVehiclePanel", "Function TribesGame.TrHUD.UpdateSpectatorVehiclePanel")()); }
-			ScriptFunction ShowSpectatorBookmark() { mixin(MGF!("mShowSpectatorBookmark", "Function TribesGame.TrHUD.ShowSpectatorBookmark")()); }
-			ScriptFunction HideSpectatorBookmark() { mixin(MGF!("mHideSpectatorBookmark", "Function TribesGame.TrHUD.HideSpectatorBookmark")()); }
-			ScriptFunction UpdateSpectatorBookmarkPanel() { mixin(MGF!("mUpdateSpectatorBookmarkPanel", "Function TribesGame.TrHUD.UpdateSpectatorBookmarkPanel")()); }
-			ScriptFunction ShowSpectatorObjectivePanel() { mixin(MGF!("mShowSpectatorObjectivePanel", "Function TribesGame.TrHUD.ShowSpectatorObjectivePanel")()); }
-			ScriptFunction HideSpectatorObjectivePanel() { mixin(MGF!("mHideSpectatorObjectivePanel", "Function TribesGame.TrHUD.HideSpectatorObjectivePanel")()); }
-			ScriptFunction UpdateSpectatorObjectivePanel() { mixin(MGF!("mUpdateSpectatorObjectivePanel", "Function TribesGame.TrHUD.UpdateSpectatorObjectivePanel")()); }
-			ScriptFunction ShowSpectatorFloatCameraPanel() { mixin(MGF!("mShowSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.ShowSpectatorFloatCameraPanel")()); }
-			ScriptFunction HideSpectatorFloatCameraPanel() { mixin(MGF!("mHideSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.HideSpectatorFloatCameraPanel")()); }
-			ScriptFunction UpdateSpectatorFloatCameraPanel() { mixin(MGF!("mUpdateSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.UpdateSpectatorFloatCameraPanel")()); }
-			ScriptFunction HideAllSpectatorPanels() { mixin(MGF!("mHideAllSpectatorPanels", "Function TribesGame.TrHUD.HideAllSpectatorPanels")()); }
-			ScriptFunction OnViewTargetChange() { mixin(MGF!("mOnViewTargetChange", "Function TribesGame.TrHUD.OnViewTargetChange")()); }
-			ScriptFunction TestNumber() { mixin(MGF!("mTestNumber", "Function TribesGame.TrHUD.TestNumber")()); }
-			ScriptFunction AddOverheadNumber() { mixin(MGF!("mAddOverheadNumber", "Function TribesGame.TrHUD.AddOverheadNumber")()); }
-			ScriptFunction UpdateOverheadNumbers() { mixin(MGF!("mUpdateOverheadNumbers", "Function TribesGame.TrHUD.UpdateOverheadNumbers")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrHUD.Tick")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrHUD.PostRenderFor")()); }
-			ScriptFunction PlayAward() { mixin(MGF!("mPlayAward", "Function TribesGame.TrHUD.PlayAward")()); }
-			ScriptFunction QueueAccolade() { mixin(MGF!("mQueueAccolade", "Function TribesGame.TrHUD.QueueAccolade")()); }
-			ScriptFunction CheckQueuedAccolades() { mixin(MGF!("mCheckQueuedAccolades", "Function TribesGame.TrHUD.CheckQueuedAccolades")()); }
-			ScriptFunction RunQueuedAccoladesTimer() { mixin(MGF!("mRunQueuedAccoladesTimer", "Function TribesGame.TrHUD.RunQueuedAccoladesTimer")()); }
-			ScriptFunction ClearQueuedAccoladesTimer() { mixin(MGF!("mClearQueuedAccoladesTimer", "Function TribesGame.TrHUD.ClearQueuedAccoladesTimer")()); }
-			ScriptFunction DeployableReplicated() { mixin(MGF!("mDeployableReplicated", "Function TribesGame.TrHUD.DeployableReplicated")()); }
-			ScriptFunction MineReplicated() { mixin(MGF!("mMineReplicated", "Function TribesGame.TrHUD.MineReplicated")()); }
-			ScriptFunction UpdateOwnedItems() { mixin(MGF!("mUpdateOwnedItems", "Function TribesGame.TrHUD.UpdateOwnedItems")()); }
+			ScriptFunction DrawMarkerText() { mixin(MGF("mDrawMarkerText", "Function TribesGame.TrHUD.DrawMarkerText")); }
+			ScriptFunction DrawMICMarker() { mixin(MGF("mDrawMICMarker", "Function TribesGame.TrHUD.DrawMICMarker")); }
+			ScriptFunction GetEdgeScreenCoordinates() { mixin(MGF("mGetEdgeScreenCoordinates", "Function TribesGame.TrHUD.GetEdgeScreenCoordinates")); }
+			ScriptFunction DrawMarker() { mixin(MGF("mDrawMarker", "Function TribesGame.TrHUD.DrawMarker")); }
+			ScriptFunction DrawRotatedMarker() { mixin(MGF("mDrawRotatedMarker", "Function TribesGame.TrHUD.DrawRotatedMarker")); }
+			ScriptFunction ShowDebugInfo() { mixin(MGF("mShowDebugInfo", "Function TribesGame.TrHUD.ShowDebugInfo")); }
+			ScriptFunction CreateHUDMovie() { mixin(MGF("mCreateHUDMovie", "Function TribesGame.TrHUD.CreateHUDMovie")); }
+			ScriptFunction ShowSpectatorControls() { mixin(MGF("mShowSpectatorControls", "Function TribesGame.TrHUD.ShowSpectatorControls")); }
+			ScriptFunction SetShowScores() { mixin(MGF("mSetShowScores", "Function TribesGame.TrHUD.SetShowScores")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrHUD.PostBeginPlay")); }
+			ScriptFunction InitializeGameHUD() { mixin(MGF("mInitializeGameHUD", "Function TribesGame.TrHUD.InitializeGameHUD")); }
+			ScriptFunction FadeInTimer() { mixin(MGF("mFadeInTimer", "Function TribesGame.TrHUD.FadeInTimer")); }
+			ScriptFunction Fade() { mixin(MGF("mFade", "Function TribesGame.TrHUD.Fade")); }
+			ScriptFunction PlayRoundOver() { mixin(MGF("mPlayRoundOver", "Function TribesGame.TrHUD.PlayRoundOver")); }
+			ScriptFunction ShowRoundEnding() { mixin(MGF("mShowRoundEnding", "Function TribesGame.TrHUD.ShowRoundEnding")); }
+			ScriptFunction PlayMatchOver() { mixin(MGF("mPlayMatchOver", "Function TribesGame.TrHUD.PlayMatchOver")); }
+			ScriptFunction ShowEnding() { mixin(MGF("mShowEnding", "Function TribesGame.TrHUD.ShowEnding")); }
+			ScriptFunction FadeInSummary() { mixin(MGF("mFadeInSummary", "Function TribesGame.TrHUD.FadeInSummary")); }
+			ScriptFunction ScaleformJoystickInputEvent() { mixin(MGF("mScaleformJoystickInputEvent", "Function TribesGame.TrHUD.ScaleformJoystickInputEvent")); }
+			ScriptFunction ToggleSkiEffect() { mixin(MGF("mToggleSkiEffect", "Function TribesGame.TrHUD.ToggleSkiEffect")); }
+			ScriptFunction TogglePauseMenu() { mixin(MGF("mTogglePauseMenu", "Function TribesGame.TrHUD.TogglePauseMenu")); }
+			ScriptFunction ToggleMovieHUD() { mixin(MGF("mToggleMovieHUD", "Function TribesGame.TrHUD.ToggleMovieHUD")); }
+			ScriptFunction ToggleVehicleMenu() { mixin(MGF("mToggleVehicleMenu", "Function TribesGame.TrHUD.ToggleVehicleMenu")); }
+			ScriptFunction ToggleTeamSelectionMenu() { mixin(MGF("mToggleTeamSelectionMenu", "Function TribesGame.TrHUD.ToggleTeamSelectionMenu")); }
+			ScriptFunction SetPowerOscillation() { mixin(MGF("mSetPowerOscillation", "Function TribesGame.TrHUD.SetPowerOscillation")); }
+			ScriptFunction AddUpdateToCombatLog() { mixin(MGF("mAddUpdateToCombatLog", "Function TribesGame.TrHUD.AddUpdateToCombatLog")); }
+			ScriptFunction AddToPromptPanel() { mixin(MGF("mAddToPromptPanel", "Function TribesGame.TrHUD.AddToPromptPanel")); }
+			ScriptFunction AddToPromptPanelTime() { mixin(MGF("mAddToPromptPanelTime", "Function TribesGame.TrHUD.AddToPromptPanelTime")); }
+			ScriptFunction ClearPromptPanel() { mixin(MGF("mClearPromptPanel", "Function TribesGame.TrHUD.ClearPromptPanel")); }
+			ScriptFunction AddToHeroStatus() { mixin(MGF("mAddToHeroStatus", "Function TribesGame.TrHUD.AddToHeroStatus")); }
+			ScriptFunction ClearHeroStatus() { mixin(MGF("mClearHeroStatus", "Function TribesGame.TrHUD.ClearHeroStatus")); }
+			ScriptFunction ClearPromptPanelMessage() { mixin(MGF("mClearPromptPanelMessage", "Function TribesGame.TrHUD.ClearPromptPanelMessage")); }
+			ScriptFunction UpdateVGSMenu() { mixin(MGF("mUpdateVGSMenu", "Function TribesGame.TrHUD.UpdateVGSMenu")); }
+			ScriptFunction HideVGSMenu() { mixin(MGF("mHideVGSMenu", "Function TribesGame.TrHUD.HideVGSMenu")); }
+			ScriptFunction AddToHelpText() { mixin(MGF("mAddToHelpText", "Function TribesGame.TrHUD.AddToHelpText")); }
+			ScriptFunction ClearHelpText() { mixin(MGF("mClearHelpText", "Function TribesGame.TrHUD.ClearHelpText")); }
+			ScriptFunction AddUpdateToKillMessage() { mixin(MGF("mAddUpdateToKillMessage", "Function TribesGame.TrHUD.AddUpdateToKillMessage")); }
+			ScriptFunction AddFlyingIcon() { mixin(MGF("mAddFlyingIcon", "Function TribesGame.TrHUD.AddFlyingIcon")); }
+			ScriptFunction OnSpectate() { mixin(MGF("mOnSpectate", "Function TribesGame.TrHUD.OnSpectate")); }
+			ScriptFunction CreateSpectatorHUDCache() { mixin(MGF("mCreateSpectatorHUDCache", "Function TribesGame.TrHUD.CreateSpectatorHUDCache")); }
+			ScriptFunction ClearSpectatorHUDCache() { mixin(MGF("mClearSpectatorHUDCache", "Function TribesGame.TrHUD.ClearSpectatorHUDCache")); }
+			ScriptFunction HideHUDElements() { mixin(MGF("mHideHUDElements", "Function TribesGame.TrHUD.HideHUDElements")); }
+			ScriptFunction ShowHUDPlayerSpawning() { mixin(MGF("mShowHUDPlayerSpawning", "Function TribesGame.TrHUD.ShowHUDPlayerSpawning")); }
+			ScriptFunction ShowHUDPlayerAlive() { mixin(MGF("mShowHUDPlayerAlive", "Function TribesGame.TrHUD.ShowHUDPlayerAlive")); }
+			ScriptFunction ShowCenterHUDElements() { mixin(MGF("mShowCenterHUDElements", "Function TribesGame.TrHUD.ShowCenterHUDElements")); }
+			ScriptFunction UpdateRespawnText() { mixin(MGF("mUpdateRespawnText", "Function TribesGame.TrHUD.UpdateRespawnText")); }
+			ScriptFunction UpdateRespawnTimer() { mixin(MGF("mUpdateRespawnTimer", "Function TribesGame.TrHUD.UpdateRespawnTimer")); }
+			ScriptFunction UpdateHUDCredits() { mixin(MGF("mUpdateHUDCredits", "Function TribesGame.TrHUD.UpdateHUDCredits")); }
+			ScriptFunction TeamScoreboardShow() { mixin(MGF("mTeamScoreboardShow", "Function TribesGame.TrHUD.TeamScoreboardShow")); }
+			ScriptFunction RabbitScoreboardShow() { mixin(MGF("mRabbitScoreboardShow", "Function TribesGame.TrHUD.RabbitScoreboardShow")); }
+			ScriptFunction TeamScoreboardUpdateSlot() { mixin(MGF("mTeamScoreboardUpdateSlot", "Function TribesGame.TrHUD.TeamScoreboardUpdateSlot")); }
+			ScriptFunction RabbitScoreboardUpdateSlot() { mixin(MGF("mRabbitScoreboardUpdateSlot", "Function TribesGame.TrHUD.RabbitScoreboardUpdateSlot")); }
+			ScriptFunction TeamScoreboardUpdateTeamScore() { mixin(MGF("mTeamScoreboardUpdateTeamScore", "Function TribesGame.TrHUD.TeamScoreboardUpdateTeamScore")); }
+			ScriptFunction TeamScoreboardUpdateTime() { mixin(MGF("mTeamScoreboardUpdateTime", "Function TribesGame.TrHUD.TeamScoreboardUpdateTime")); }
+			ScriptFunction RabbitScoreboardUpdateTime() { mixin(MGF("mRabbitScoreboardUpdateTime", "Function TribesGame.TrHUD.RabbitScoreboardUpdateTime")); }
+			ScriptFunction TeamScoreboardActivePlayer() { mixin(MGF("mTeamScoreboardActivePlayer", "Function TribesGame.TrHUD.TeamScoreboardActivePlayer")); }
+			ScriptFunction RabbitScoreboardActivePlayer() { mixin(MGF("mRabbitScoreboardActivePlayer", "Function TribesGame.TrHUD.RabbitScoreboardActivePlayer")); }
+			ScriptFunction ResolutionChanged() { mixin(MGF("mResolutionChanged", "Function TribesGame.TrHUD.ResolutionChanged")); }
+			ScriptFunction RestoreHUDState() { mixin(MGF("mRestoreHUDState", "Function TribesGame.TrHUD.RestoreHUDState")); }
+			ScriptFunction HideMenus() { mixin(MGF("mHideMenus", "Function TribesGame.TrHUD.HideMenus")); }
+			ScriptFunction RemoveMovies() { mixin(MGF("mRemoveMovies", "Function TribesGame.TrHUD.RemoveMovies")); }
+			ScriptFunction CompleteVehicleMenuClose() { mixin(MGF("mCompleteVehicleMenuClose", "Function TribesGame.TrHUD.CompleteVehicleMenuClose")); }
+			ScriptFunction CompleteTeamSelectionMenuClose() { mixin(MGF("mCompleteTeamSelectionMenuClose", "Function TribesGame.TrHUD.CompleteTeamSelectionMenuClose")); }
+			ScriptFunction ClearCrosshairOnFriendly() { mixin(MGF("mClearCrosshairOnFriendly", "Function TribesGame.TrHUD.ClearCrosshairOnFriendly")); }
+			ScriptFunction CheckCrosshairOnFriendly() { mixin(MGF("mCheckCrosshairOnFriendly", "Function TribesGame.TrHUD.CheckCrosshairOnFriendly")); }
+			ScriptFunction DrawColoredMarkerText() { mixin(MGF("mDrawColoredMarkerText", "Function TribesGame.TrHUD.DrawColoredMarkerText")); }
+			ScriptFunction DrawSmallText() { mixin(MGF("mDrawSmallText", "Function TribesGame.TrHUD.DrawSmallText")); }
+			ScriptFunction DrawHealthBar() { mixin(MGF("mDrawHealthBar", "Function TribesGame.TrHUD.DrawHealthBar")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function TribesGame.TrHUD.PostRender")); }
+			ScriptFunction GetRemainingFriendlyGeneratorRestoreTime() { mixin(MGF("mGetRemainingFriendlyGeneratorRestoreTime", "Function TribesGame.TrHUD.GetRemainingFriendlyGeneratorRestoreTime")); }
+			ScriptFunction GetRemainingEnemyGeneratorRestoreTime() { mixin(MGF("mGetRemainingEnemyGeneratorRestoreTime", "Function TribesGame.TrHUD.GetRemainingEnemyGeneratorRestoreTime")); }
+			ScriptFunction UpdateSkiEffect() { mixin(MGF("mUpdateSkiEffect", "Function TribesGame.TrHUD.UpdateSkiEffect")); }
+			ScriptFunction UpdatePickupFlashEffect() { mixin(MGF("mUpdatePickupFlashEffect", "Function TribesGame.TrHUD.UpdatePickupFlashEffect")); }
+			ScriptFunction PulsePickupFlashEffect() { mixin(MGF("mPulsePickupFlashEffect", "Function TribesGame.TrHUD.PulsePickupFlashEffect")); }
+			ScriptFunction UpdateInvulnerableEfect() { mixin(MGF("mUpdateInvulnerableEfect", "Function TribesGame.TrHUD.UpdateInvulnerableEfect")); }
+			ScriptFunction UpdateShieldEffect() { mixin(MGF("mUpdateShieldEffect", "Function TribesGame.TrHUD.UpdateShieldEffect")); }
+			ScriptFunction PulseShieldEffect() { mixin(MGF("mPulseShieldEffect", "Function TribesGame.TrHUD.PulseShieldEffect")); }
+			ScriptFunction UpdateJammerEffect() { mixin(MGF("mUpdateJammerEffect", "Function TribesGame.TrHUD.UpdateJammerEffect")); }
+			ScriptFunction UpdateFadeEffect() { mixin(MGF("mUpdateFadeEffect", "Function TribesGame.TrHUD.UpdateFadeEffect")); }
+			ScriptFunction FumbleFlag() { mixin(MGF("mFumbleFlag", "Function TribesGame.TrHUD.FumbleFlag")); }
+			ScriptFunction UpdateFumbledFlagEffect() { mixin(MGF("mUpdateFumbledFlagEffect", "Function TribesGame.TrHUD.UpdateFumbledFlagEffect")); }
+			ScriptFunction Whiteout() { mixin(MGF("mWhiteout", "Function TribesGame.TrHUD.Whiteout")); }
+			ScriptFunction ClearWhiteout() { mixin(MGF("mClearWhiteout", "Function TribesGame.TrHUD.ClearWhiteout")); }
+			ScriptFunction UpdateWhiteoutEffect() { mixin(MGF("mUpdateWhiteoutEffect", "Function TribesGame.TrHUD.UpdateWhiteoutEffect")); }
+			ScriptFunction LocalizedMessage() { mixin(MGF("mLocalizedMessage", "Function TribesGame.TrHUD.LocalizedMessage")); }
+			ScriptFunction ChatMessageReceived() { mixin(MGF("mChatMessageReceived", "Function TribesGame.TrHUD.ChatMessageReceived")); }
+			ScriptFunction StripTag() { mixin(MGF("mStripTag", "Function TribesGame.TrHUD.StripTag")); }
+			ScriptFunction SendLocalMessageToGlobalAlert() { mixin(MGF("mSendLocalMessageToGlobalAlert", "Function TribesGame.TrHUD.SendLocalMessageToGlobalAlert")); }
+			ScriptFunction SendLocalMessageToChat() { mixin(MGF("mSendLocalMessageToChat", "Function TribesGame.TrHUD.SendLocalMessageToChat")); }
+			ScriptFunction SetPlayerClassObjects() { mixin(MGF("mSetPlayerClassObjects", "Function TribesGame.TrHUD.SetPlayerClassObjects")); }
+			ScriptFunction HideGlobalAlert() { mixin(MGF("mHideGlobalAlert", "Function TribesGame.TrHUD.HideGlobalAlert")); }
+			ScriptFunction KickVoteMessage() { mixin(MGF("mKickVoteMessage", "Function TribesGame.TrHUD.KickVoteMessage")); }
+			ScriptFunction EnableGameTypeHUD() { mixin(MGF("mEnableGameTypeHUD", "Function TribesGame.TrHUD.EnableGameTypeHUD")); }
+			ScriptFunction ShowSpectatorPlayer() { mixin(MGF("mShowSpectatorPlayer", "Function TribesGame.TrHUD.ShowSpectatorPlayer")); }
+			ScriptFunction HideSpectatorPlayer() { mixin(MGF("mHideSpectatorPlayer", "Function TribesGame.TrHUD.HideSpectatorPlayer")); }
+			ScriptFunction UpdateSpectatorPlayerPanel() { mixin(MGF("mUpdateSpectatorPlayerPanel", "Function TribesGame.TrHUD.UpdateSpectatorPlayerPanel")); }
+			ScriptFunction ShowSpectatorVehicle() { mixin(MGF("mShowSpectatorVehicle", "Function TribesGame.TrHUD.ShowSpectatorVehicle")); }
+			ScriptFunction HideSpectatorVehicle() { mixin(MGF("mHideSpectatorVehicle", "Function TribesGame.TrHUD.HideSpectatorVehicle")); }
+			ScriptFunction UpdateSpectatorVehiclePanel() { mixin(MGF("mUpdateSpectatorVehiclePanel", "Function TribesGame.TrHUD.UpdateSpectatorVehiclePanel")); }
+			ScriptFunction ShowSpectatorBookmark() { mixin(MGF("mShowSpectatorBookmark", "Function TribesGame.TrHUD.ShowSpectatorBookmark")); }
+			ScriptFunction HideSpectatorBookmark() { mixin(MGF("mHideSpectatorBookmark", "Function TribesGame.TrHUD.HideSpectatorBookmark")); }
+			ScriptFunction UpdateSpectatorBookmarkPanel() { mixin(MGF("mUpdateSpectatorBookmarkPanel", "Function TribesGame.TrHUD.UpdateSpectatorBookmarkPanel")); }
+			ScriptFunction ShowSpectatorObjectivePanel() { mixin(MGF("mShowSpectatorObjectivePanel", "Function TribesGame.TrHUD.ShowSpectatorObjectivePanel")); }
+			ScriptFunction HideSpectatorObjectivePanel() { mixin(MGF("mHideSpectatorObjectivePanel", "Function TribesGame.TrHUD.HideSpectatorObjectivePanel")); }
+			ScriptFunction UpdateSpectatorObjectivePanel() { mixin(MGF("mUpdateSpectatorObjectivePanel", "Function TribesGame.TrHUD.UpdateSpectatorObjectivePanel")); }
+			ScriptFunction ShowSpectatorFloatCameraPanel() { mixin(MGF("mShowSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.ShowSpectatorFloatCameraPanel")); }
+			ScriptFunction HideSpectatorFloatCameraPanel() { mixin(MGF("mHideSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.HideSpectatorFloatCameraPanel")); }
+			ScriptFunction UpdateSpectatorFloatCameraPanel() { mixin(MGF("mUpdateSpectatorFloatCameraPanel", "Function TribesGame.TrHUD.UpdateSpectatorFloatCameraPanel")); }
+			ScriptFunction HideAllSpectatorPanels() { mixin(MGF("mHideAllSpectatorPanels", "Function TribesGame.TrHUD.HideAllSpectatorPanels")); }
+			ScriptFunction OnViewTargetChange() { mixin(MGF("mOnViewTargetChange", "Function TribesGame.TrHUD.OnViewTargetChange")); }
+			ScriptFunction TestNumber() { mixin(MGF("mTestNumber", "Function TribesGame.TrHUD.TestNumber")); }
+			ScriptFunction AddOverheadNumber() { mixin(MGF("mAddOverheadNumber", "Function TribesGame.TrHUD.AddOverheadNumber")); }
+			ScriptFunction UpdateOverheadNumbers() { mixin(MGF("mUpdateOverheadNumbers", "Function TribesGame.TrHUD.UpdateOverheadNumbers")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrHUD.Tick")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrHUD.PostRenderFor")); }
+			ScriptFunction PlayAward() { mixin(MGF("mPlayAward", "Function TribesGame.TrHUD.PlayAward")); }
+			ScriptFunction QueueAccolade() { mixin(MGF("mQueueAccolade", "Function TribesGame.TrHUD.QueueAccolade")); }
+			ScriptFunction CheckQueuedAccolades() { mixin(MGF("mCheckQueuedAccolades", "Function TribesGame.TrHUD.CheckQueuedAccolades")); }
+			ScriptFunction RunQueuedAccoladesTimer() { mixin(MGF("mRunQueuedAccoladesTimer", "Function TribesGame.TrHUD.RunQueuedAccoladesTimer")); }
+			ScriptFunction ClearQueuedAccoladesTimer() { mixin(MGF("mClearQueuedAccoladesTimer", "Function TribesGame.TrHUD.ClearQueuedAccoladesTimer")); }
+			ScriptFunction DeployableReplicated() { mixin(MGF("mDeployableReplicated", "Function TribesGame.TrHUD.DeployableReplicated")); }
+			ScriptFunction MineReplicated() { mixin(MGF("mMineReplicated", "Function TribesGame.TrHUD.MineReplicated")); }
+			ScriptFunction UpdateOwnedItems() { mixin(MGF("mUpdateOwnedItems", "Function TribesGame.TrHUD.UpdateOwnedItems")); }
 		}
 	}
 	static struct Constants
@@ -805,17 +805,17 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrHUD.QueuedAccolade")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrHUD.QueuedAccolade")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptString Subtitle() { mixin(MGPS!("ScriptString", 20)()); }
-				ScriptString Title() { mixin(MGPS!("ScriptString", 8)()); }
-				int Icon() { mixin(MGPS!("int", 0)()); }
+				ScriptString Subtitle() { mixin(MGPS("ScriptString", 20)); }
+				ScriptString Title() { mixin(MGPS("ScriptString", 8)); }
+				int Icon() { mixin(MGPS("int", 0)); }
 			}
-			bool bIsBadge() { mixin(MGBPS!(4, 0x1)()); }
-			bool bIsBadge(bool val) { mixin(MSBPS!(4, 0x1)()); }
+			bool bIsBadge() { mixin(MGBPS(4, 0x1)); }
+			bool bIsBadge(bool val) { mixin(MSBPS(4, 0x1)); }
 		}
 	}
 	struct OverheadNumber
@@ -823,261 +823,261 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrHUD.OverheadNumber")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrHUD.OverheadNumber")); }
 		@property final auto ref
 		{
-			float CurrentScale() { mixin(MGPS!("float", 36)()); }
-			UObject.Color CurrentColor() { mixin(MGPS!("UObject.Color", 32)()); }
-			UObject.Vector4 WorldSpaceLocation() { mixin(MGPS!("UObject.Vector4", 16)()); }
-			float RemainingTime() { mixin(MGPS!("float", 4)()); }
-			int NumberValue() { mixin(MGPS!("int", 0)()); }
+			float CurrentScale() { mixin(MGPS("float", 36)); }
+			UObject.Color CurrentColor() { mixin(MGPS("UObject.Color", 32)); }
+			UObject.Vector4 WorldSpaceLocation() { mixin(MGPS("UObject.Vector4", 16)); }
+			float RemainingTime() { mixin(MGPS("float", 4)); }
+			int NumberValue() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrSpectatorHUDCache m_SpectatorHUDCache() { mixin(MGPC!("TrSpectatorHUDCache", 2424)()); }
-			GFxTrUI_TeamSelectionMenu TeamSelectionMenuMovie() { mixin(MGPC!("GFxTrUI_TeamSelectionMenu", 2044)()); }
-			TrPlayerController TrPlayerOwner() { mixin(MGPC!("TrPlayerController", 2096)()); }
-			MaterialInstanceConstant MarkerBaseMIC() { mixin(MGPC!("MaterialInstanceConstant", 1632)()); }
-			UObject.LinearColor MarkerColorFriendly() { mixin(MGPC!("UObject.LinearColor", 1668)()); }
-			UObject.LinearColor MarkerColorEnemy() { mixin(MGPC!("UObject.LinearColor", 1636)()); }
-			Texture2D BaseDeployableLevel1() { mixin(MGPC!("Texture2D", 1820)()); }
-			Texture2D BaseDeployableLevel2() { mixin(MGPC!("Texture2D", 1824)()); }
-			Texture2D BaseDeployableLevel3() { mixin(MGPC!("Texture2D", 1828)()); }
-			Texture2D BaseDeployableLevel4() { mixin(MGPC!("Texture2D", 1832)()); }
-			Texture2D BaseDeployableLevel5() { mixin(MGPC!("Texture2D", 1836)()); }
-			Texture2D BaseNoPower() { mixin(MGPC!("Texture2D", 1816)()); }
-			Texture2D DeployableTurret() { mixin(MGPC!("Texture2D", 1980)()); }
-			Texture2D BaseTurretLevel1() { mixin(MGPC!("Texture2D", 1920)()); }
-			Texture2D BaseTurretLevel2() { mixin(MGPC!("Texture2D", 1924)()); }
-			Texture2D BaseTurretLevel3() { mixin(MGPC!("Texture2D", 1928)()); }
-			Texture2D BaseTurretLevel4() { mixin(MGPC!("Texture2D", 1932)()); }
-			Texture2D BaseTurretLevel5() { mixin(MGPC!("Texture2D", 1936)()); }
-			Texture2D BaseTurretLevel1_Down() { mixin(MGPC!("Texture2D", 1940)()); }
-			Texture2D BaseTurretLevel2_Down() { mixin(MGPC!("Texture2D", 1944)()); }
-			Texture2D BaseTurretLevel3_Down() { mixin(MGPC!("Texture2D", 1948)()); }
-			Texture2D BaseTurretLevel4_Down() { mixin(MGPC!("Texture2D", 1952)()); }
-			Texture2D BaseTurretLevel5_Down() { mixin(MGPC!("Texture2D", 1956)()); }
-			int m_nPotentialSeekingTargetHUDRotationRate() { mixin(MGPC!("int", 2276)()); }
-			float m_fPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 2280)()); }
-			float m_fSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 2300)()); }
-			Texture2D HUDMarkerMissileLocked() { mixin(MGPC!("Texture2D", 1784)()); }
-			float m_fSeekingTargetHUDZoomEnd() { mixin(MGPC!("float", 2308)()); }
-			float m_fSeekingTargetHUDZoomOpacityStart() { mixin(MGPC!("float", 2312)()); }
-			float m_fSeekingTargetHUDZoomOpacityEnd() { mixin(MGPC!("float", 2316)()); }
-			float m_fSeekingTargetHUDZoomStart() { mixin(MGPC!("float", 2304)()); }
-			float m_fInitialSeekingTargetYaw() { mixin(MGPC!("float", 2320)()); }
-			Texture2D HUDMarkerMissileLocking() { mixin(MGPC!("Texture2D", 1780)()); }
-			Texture2D HUDMarkerMissileTargetLocked() { mixin(MGPC!("Texture2D", 1792)()); }
-			Texture2D HUDMarkerMissileTarget() { mixin(MGPC!("Texture2D", 1788)()); }
-			float m_fPotentialSeekingTargetHUDZoomOpacityStart() { mixin(MGPC!("float", 2292)()); }
-			float m_fPotentialSeekingTargetHUDZoomOpacityEnd() { mixin(MGPC!("float", 2296)()); }
-			float m_fPotentialSeekingTargetHUDZoomStart() { mixin(MGPC!("float", 2284)()); }
-			float m_fPotentialSeekingTargetHUDZoomEnd() { mixin(MGPC!("float", 2288)()); }
-			float m_fCaratPlacementX() { mixin(MGPC!("float", 2348)()); }
-			float m_fCaratPlacementY() { mixin(MGPC!("float", 2352)()); }
-			float m_fMarker2DDistance() { mixin(MGPC!("float", 2488)()); }
-			float m_fCurrentWhiteoutValue() { mixin(MGPC!("float", 2232)()); }
-			float TeamPlayerInfoMaxDist() { mixin(MGPC!("float", 1576)()); }
-			Texture2D DeployableSensor() { mixin(MGPC!("Texture2D", 1972)()); }
-			Texture2D MarkerLight() { mixin(MGPC!("Texture2D", 1716)()); }
-			Texture2D MarkerMedium() { mixin(MGPC!("Texture2D", 1720)()); }
-			Texture2D MarkerHeavy() { mixin(MGPC!("Texture2D", 1724)()); }
-			Texture2D FlagHeldLight() { mixin(MGPC!("Texture2D", 1756)()); }
-			Texture2D FlagHeldMedium() { mixin(MGPC!("Texture2D", 1760)()); }
-			Texture2D FlagHeldHeavy() { mixin(MGPC!("Texture2D", 1764)()); }
-			UObject.LinearColor MarkerColorEnemy_IsFriend() { mixin(MGPC!("UObject.LinearColor", 1652)()); }
-			float m_fNamePlacementX() { mixin(MGPC!("float", 2340)()); }
-			float m_fNamePlacementY() { mixin(MGPC!("float", 2344)()); }
-			float m_fHealthBarPlacementX() { mixin(MGPC!("float", 2324)()); }
-			float m_fHealthBarPlacementY() { mixin(MGPC!("float", 2328)()); }
-			float m_fHealthBarWidth() { mixin(MGPC!("float", 2332)()); }
-			float m_fHealthBarHeight() { mixin(MGPC!("float", 2336)()); }
-			UObject.LinearColor MarkerColorFriendly_IsFriend() { mixin(MGPC!("UObject.LinearColor", 1684)()); }
-			GfxTrHud m_GFxHud() { mixin(MGPC!("GfxTrHud", 2076)()); }
-			int FriendlyChatColorIdx() { mixin(MGPC!("int", 2004)()); }
-			UObject.Color FriendlyChatColor() { mixin(MGPC!("UObject.Color", 2016)()); }
-			int EnemyChatColorIdx() { mixin(MGPC!("int", 2000)()); }
-			UObject.Color EnemyChatColor() { mixin(MGPC!("UObject.Color", 2020)()); }
-			int WhisperChatColorIdx() { mixin(MGPC!("int", 2012)()); }
-			UObject.Color WhisperChatColor() { mixin(MGPC!("UObject.Color", 2028)()); }
-			int InfoChatColorIdx() { mixin(MGPC!("int", 1996)()); }
-			Texture2D FlagEmptyBase() { mixin(MGPC!("Texture2D", 1772)()); }
-			Texture2D BaseGeneratorLevel1() { mixin(MGPC!("Texture2D", 1840)()); }
-			Texture2D BaseGeneratorLevel1_Down() { mixin(MGPC!("Texture2D", 1860)()); }
-			Texture2D DeployableJammer() { mixin(MGPC!("Texture2D", 1964)()); }
-			Texture2D DeployableShield() { mixin(MGPC!("Texture2D", 1976)()); }
-			Texture2D BaseSensorLevel1() { mixin(MGPC!("Texture2D", 1880)()); }
-			Texture2D BaseSensorLevel2() { mixin(MGPC!("Texture2D", 1884)()); }
-			Texture2D BaseSensorLevel3() { mixin(MGPC!("Texture2D", 1888)()); }
-			Texture2D BaseSensorLevel4() { mixin(MGPC!("Texture2D", 1892)()); }
-			Texture2D BaseSensorLevel5() { mixin(MGPC!("Texture2D", 1896)()); }
-			Texture2D BaseSensorLevel1_Down() { mixin(MGPC!("Texture2D", 1900)()); }
-			Texture2D BaseSensorLevel2_Down() { mixin(MGPC!("Texture2D", 1904)()); }
-			Texture2D BaseSensorLevel3_Down() { mixin(MGPC!("Texture2D", 1908)()); }
-			Texture2D BaseSensorLevel4_Down() { mixin(MGPC!("Texture2D", 1912)()); }
-			Texture2D BaseSensorLevel5_Down() { mixin(MGPC!("Texture2D", 1916)()); }
-			Texture2D HUDMarkerLaserTargetAimPoint() { mixin(MGPC!("Texture2D", 1800)()); }
-			Texture2D HUDMarkerLaserTarget() { mixin(MGPC!("Texture2D", 1796)()); }
-			UObject.Color LaserTargetTracePossible() { mixin(MGPC!("UObject.Color", 1592)()); }
-			UObject.Color LaserTargetTraceImprobable() { mixin(MGPC!("UObject.Color", 1596)()); }
-			Texture2D AmmoDropPickup() { mixin(MGPC!("Texture2D", 1984)()); }
-			Texture2D FlagAtBase() { mixin(MGPC!("Texture2D", 1748)()); }
-			Texture2D FlagDropped() { mixin(MGPC!("Texture2D", 1752)()); }
-			ScriptArray!(TrDeployable) m_OwnedDeployables() { mixin(MGPC!("ScriptArray!(TrDeployable)", 1600)()); }
-			ScriptArray!(TrProj_Mine) m_OwnedMines() { mixin(MGPC!("ScriptArray!(TrProj_Mine)", 1612)()); }
-			ScriptArray!(TrHUD.QueuedAccolade) QueuedAccolades() { mixin(MGPC!("ScriptArray!(TrHUD.QueuedAccolade)", 2428)()); }
-			ScriptArray!(TrHUD.OverheadNumber) m_OverheadNumbers() { mixin(MGPC!("ScriptArray!(TrHUD.OverheadNumber)", 2440)()); }
-			float m_fOverheadNumberColorizeTimeMax() { mixin(MGPC!("float", 2484)()); }
-			float m_fOverheadNumberColorizeTimeMin() { mixin(MGPC!("float", 2480)()); }
-			float m_fOverheadNumberMaxScaleAmount() { mixin(MGPC!("float", 2476)()); }
-			float m_fOverheadNumberScaleTime() { mixin(MGPC!("float", 2472)()); }
-			float m_fOverheadNumberFadeTime() { mixin(MGPC!("float", 2468)()); }
-			float m_fOverheadNumberTotalTime() { mixin(MGPC!("float", 2464)()); }
-			UObject.Color m_OverheadNumberColorMax() { mixin(MGPC!("UObject.Color", 2460)()); }
-			UObject.Color m_OverheadNumberColorMin() { mixin(MGPC!("UObject.Color", 2456)()); }
-			float m_fOverheadNumberZSpeed() { mixin(MGPC!("float", 2452)()); }
-			UberPostProcessEffect m_UperPPEffect() { mixin(MGPC!("UberPostProcessEffect", 2420)()); }
-			Canvas.FontRenderInfo m_nNameFontRenderInfo() { mixin(MGPC!("Canvas.FontRenderInfo", 2380)()); }
-			float m_fMineDeployerNamePlacementY() { mixin(MGPC!("float", 2376)()); }
-			float m_fMineDeployerNamePlacementX() { mixin(MGPC!("float", 2372)()); }
-			float m_fMineNamePlacementY() { mixin(MGPC!("float", 2368)()); }
-			float m_fMineNamePlacementX() { mixin(MGPC!("float", 2364)()); }
-			float m_fVehicleNamePlacementY() { mixin(MGPC!("float", 2360)()); }
-			float m_fVehicleNamePlacementX() { mixin(MGPC!("float", 2356)()); }
-			MaterialInstanceConstant AwardMIC() { mixin(MGPC!("MaterialInstanceConstant", 2272)()); }
-			float AwardTimelineLoc() { mixin(MGPC!("float", 2268)()); }
-			float AwardFadeInScale() { mixin(MGPC!("float", 2264)()); }
-			float AwardTimelineLength() { mixin(MGPC!("float", 2260)()); }
-			float AwardBaseHeight() { mixin(MGPC!("float", 2256)()); }
-			float AwardBaseSize() { mixin(MGPC!("float", 2252)()); }
-			float m_fCurrentFumbledFlagValue() { mixin(MGPC!("float", 2248)()); }
-			float m_FumbledFlagFadeOutSpeed() { mixin(MGPC!("float", 2244)()); }
-			MaterialInstanceConstant m_FumbledFlagMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2240)()); }
-			MaterialEffect m_FumbledFlagMaterialEffect() { mixin(MGPC!("MaterialEffect", 2236)()); }
-			float m_WhiteoutFadeOutSpeed() { mixin(MGPC!("float", 2228)()); }
-			MaterialInstanceConstant m_WhiteoutMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2224)()); }
-			MaterialEffect m_WhiteoutMaterialEffect() { mixin(MGPC!("MaterialEffect", 2220)()); }
-			float m_VignetteValueMultiplier() { mixin(MGPC!("float", 2216)()); }
-			float m_VignetteFadeTarget() { mixin(MGPC!("float", 2212)()); }
-			float m_VignetteFadeSpeed() { mixin(MGPC!("float", 2208)()); }
-			MaterialInstanceConstant m_VignetteMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2204)()); }
-			MaterialEffect m_VignetteMaterialEffect() { mixin(MGPC!("MaterialEffect", 2200)()); }
-			int LastChangeResCheckTime() { mixin(MGPC!("int", 2196)()); }
-			int LastChangeResTime() { mixin(MGPC!("int", 2192)()); }
-			int LastCreditTotal() { mixin(MGPC!("int", 2188)()); }
-			float m_JammerPackFadeOutSpeed() { mixin(MGPC!("float", 2184)()); }
-			MaterialInstanceConstant m_JammerPackMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2180)()); }
-			MaterialEffect m_JammerPackMaterialEffect() { mixin(MGPC!("MaterialEffect", 2176)()); }
-			float m_ShieldHitFadeOutSpeed() { mixin(MGPC!("float", 2172)()); }
-			float m_ShieldHitFadeInSpeed() { mixin(MGPC!("float", 2168)()); }
-			float m_ShieldFadeOutSpeed() { mixin(MGPC!("float", 2164)()); }
-			MaterialInstanceConstant m_ShieldMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2160)()); }
-			MaterialEffect m_ShieldMaterialEffect() { mixin(MGPC!("MaterialEffect", 2156)()); }
-			float m_InvulnerableFadeOutSpeed() { mixin(MGPC!("float", 2152)()); }
-			MaterialInstanceConstant m_InvulnerableMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2148)()); }
-			MaterialEffect m_InvulnerableMaterialEffect() { mixin(MGPC!("MaterialEffect", 2144)()); }
-			float m_PickupFlashFadeOutSpeed() { mixin(MGPC!("float", 2140)()); }
-			MaterialInstanceConstant m_PickupFlashMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2136)()); }
-			MaterialEffect m_PickupFlashMaterialEffect() { mixin(MGPC!("MaterialEffect", 2132)()); }
-			float m_fSkiEffectStrobeTime() { mixin(MGPC!("float", 2128)()); }
-			float m_fSkiEffectFadeOutTime() { mixin(MGPC!("float", 2124)()); }
-			float m_fSkiEffectFadeInTime() { mixin(MGPC!("float", 2120)()); }
-			float m_fSkiEffectMinIntensity() { mixin(MGPC!("float", 2116)()); }
-			float m_fSkiEffectMaxIntensity() { mixin(MGPC!("float", 2112)()); }
-			float m_fControllerSkiSpeed() { mixin(MGPC!("float", 2108)()); }
-			MaterialInstanceConstant m_SkiEffectMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 2104)()); }
-			MaterialEffect m_SkiEffect() { mixin(MGPC!("MaterialEffect", 2100)()); }
-			ScriptClass m_GameClass() { mixin(MGPC!("ScriptClass", 2092)()); }
-			ScriptClass m_MusicManagerClass() { mixin(MGPC!("ScriptClass", 2088)()); }
-			float m_fEnemyGeneratorRestoreTime() { mixin(MGPC!("float", 2084)()); }
-			float m_fFriendlyGeneratorRestoreTime() { mixin(MGPC!("float", 2080)()); }
-			TrCaHStats CaHStats() { mixin(MGPC!("TrCaHStats", 2072)()); }
-			TrDaDStats DaDStats() { mixin(MGPC!("TrDaDStats", 2068)()); }
-			TrArenaStats ArenaStats() { mixin(MGPC!("TrArenaStats", 2064)()); }
-			TrTeamRabbitStats TeamRabbitStats() { mixin(MGPC!("TrTeamRabbitStats", 2060)()); }
-			TrHUDTeamCTFStats HUDTeamCTFStats() { mixin(MGPC!("TrHUDTeamCTFStats", 2056)()); }
-			TrRabbitLeaderboard RabbitLeaderboard() { mixin(MGPC!("TrRabbitLeaderboard", 2052)()); }
-			TrScoreboard Scoreboard() { mixin(MGPC!("TrScoreboard", 2048)()); }
-			GFxTrUI_VehicleMenu VehicleMenuMovie() { mixin(MGPC!("GFxTrUI_VehicleMenu", 2040)()); }
-			Material MapMaterialReference() { mixin(MGPC!("Material", 2036)()); }
-			MaterialInstanceConstant LowAmmoMic() { mixin(MGPC!("MaterialInstanceConstant", 2032)()); }
-			UObject.Color TeamChatColor() { mixin(MGPC!("UObject.Color", 2024)()); }
-			int SelfChatColorIdx() { mixin(MGPC!("int", 2008)()); }
-			Texture2D SpottedTarget_MotionMine() { mixin(MGPC!("Texture2D", 1992)()); }
-			Texture2D SpottedTarget() { mixin(MGPC!("Texture2D", 1988)()); }
-			Texture2D DeployableMine() { mixin(MGPC!("Texture2D", 1968)()); }
-			Texture2D DeployableClaymore() { mixin(MGPC!("Texture2D", 1960)()); }
-			Texture2D BaseGeneratorLevel5_Down() { mixin(MGPC!("Texture2D", 1876)()); }
-			Texture2D BaseGeneratorLevel4_Down() { mixin(MGPC!("Texture2D", 1872)()); }
-			Texture2D BaseGeneratorLevel3_Down() { mixin(MGPC!("Texture2D", 1868)()); }
-			Texture2D BaseGeneratorLevel2_Down() { mixin(MGPC!("Texture2D", 1864)()); }
-			Texture2D BaseGeneratorLevel5() { mixin(MGPC!("Texture2D", 1856)()); }
-			Texture2D BaseGeneratorLevel4() { mixin(MGPC!("Texture2D", 1852)()); }
-			Texture2D BaseGeneratorLevel3() { mixin(MGPC!("Texture2D", 1848)()); }
-			Texture2D BaseGeneratorLevel2() { mixin(MGPC!("Texture2D", 1844)()); }
-			Texture2D BaseVehicleStation() { mixin(MGPC!("Texture2D", 1812)()); }
-			Texture2D BaseRepairStation() { mixin(MGPC!("Texture2D", 1808)()); }
-			Texture2D BaseInventoryStation() { mixin(MGPC!("Texture2D", 1804)()); }
-			Texture2D HUDMarkerMissileIncoming() { mixin(MGPC!("Texture2D", 1776)()); }
-			Texture2D FlagHeldVehicle() { mixin(MGPC!("Texture2D", 1768)()); }
-			Texture2D VehicleMarkerNoDriver() { mixin(MGPC!("Texture2D", 1744)()); }
-			Texture2D VehicleMarkerHeavy() { mixin(MGPC!("Texture2D", 1740)()); }
-			Texture2D VehicleMarkerMedium() { mixin(MGPC!("Texture2D", 1736)()); }
-			Texture2D VehicleMarkerLight() { mixin(MGPC!("Texture2D", 1732)()); }
-			Texture2D VehicleMarker() { mixin(MGPC!("Texture2D", 1728)()); }
-			UObject.LinearColor MarkerColorNone() { mixin(MGPC!("UObject.LinearColor", 1700)()); }
-			int m_LastDeployableCount() { mixin(MGPC!("int", 1628)()); }
-			int m_LastMineCount() { mixin(MGPC!("int", 1624)()); }
-			UObject.Color ColorEnemy() { mixin(MGPC!("UObject.Color", 1588)()); }
-			UObject.Color ColorFriend() { mixin(MGPC!("UObject.Color", 1584)()); }
-			float ObjectiveInfoMaxDist() { mixin(MGPC!("float", 1580)()); }
-			ScriptString m_sLastClassName() { mixin(MGPC!("ScriptString", 1564)()); }
-			ScriptString m_sWinningPlayer() { mixin(MGPC!("ScriptString", 1552)()); }
-			int m_nLastPerk2Icon() { mixin(MGPC!("int", 1544)()); }
-			int m_nLastPerk1Icon() { mixin(MGPC!("int", 1540)()); }
-			int m_nWinningTeam() { mixin(MGPC!("int", 1536)()); }
+			TrSpectatorHUDCache m_SpectatorHUDCache() { mixin(MGPC("TrSpectatorHUDCache", 2424)); }
+			GFxTrUI_TeamSelectionMenu TeamSelectionMenuMovie() { mixin(MGPC("GFxTrUI_TeamSelectionMenu", 2044)); }
+			TrPlayerController TrPlayerOwner() { mixin(MGPC("TrPlayerController", 2096)); }
+			MaterialInstanceConstant MarkerBaseMIC() { mixin(MGPC("MaterialInstanceConstant", 1632)); }
+			UObject.LinearColor MarkerColorFriendly() { mixin(MGPC("UObject.LinearColor", 1668)); }
+			UObject.LinearColor MarkerColorEnemy() { mixin(MGPC("UObject.LinearColor", 1636)); }
+			Texture2D BaseDeployableLevel1() { mixin(MGPC("Texture2D", 1820)); }
+			Texture2D BaseDeployableLevel2() { mixin(MGPC("Texture2D", 1824)); }
+			Texture2D BaseDeployableLevel3() { mixin(MGPC("Texture2D", 1828)); }
+			Texture2D BaseDeployableLevel4() { mixin(MGPC("Texture2D", 1832)); }
+			Texture2D BaseDeployableLevel5() { mixin(MGPC("Texture2D", 1836)); }
+			Texture2D BaseNoPower() { mixin(MGPC("Texture2D", 1816)); }
+			Texture2D DeployableTurret() { mixin(MGPC("Texture2D", 1980)); }
+			Texture2D BaseTurretLevel1() { mixin(MGPC("Texture2D", 1920)); }
+			Texture2D BaseTurretLevel2() { mixin(MGPC("Texture2D", 1924)); }
+			Texture2D BaseTurretLevel3() { mixin(MGPC("Texture2D", 1928)); }
+			Texture2D BaseTurretLevel4() { mixin(MGPC("Texture2D", 1932)); }
+			Texture2D BaseTurretLevel5() { mixin(MGPC("Texture2D", 1936)); }
+			Texture2D BaseTurretLevel1_Down() { mixin(MGPC("Texture2D", 1940)); }
+			Texture2D BaseTurretLevel2_Down() { mixin(MGPC("Texture2D", 1944)); }
+			Texture2D BaseTurretLevel3_Down() { mixin(MGPC("Texture2D", 1948)); }
+			Texture2D BaseTurretLevel4_Down() { mixin(MGPC("Texture2D", 1952)); }
+			Texture2D BaseTurretLevel5_Down() { mixin(MGPC("Texture2D", 1956)); }
+			int m_nPotentialSeekingTargetHUDRotationRate() { mixin(MGPC("int", 2276)); }
+			float m_fPotentialSeekingTargetHUDZoomTime() { mixin(MGPC("float", 2280)); }
+			float m_fSeekingTargetHUDZoomTime() { mixin(MGPC("float", 2300)); }
+			Texture2D HUDMarkerMissileLocked() { mixin(MGPC("Texture2D", 1784)); }
+			float m_fSeekingTargetHUDZoomEnd() { mixin(MGPC("float", 2308)); }
+			float m_fSeekingTargetHUDZoomOpacityStart() { mixin(MGPC("float", 2312)); }
+			float m_fSeekingTargetHUDZoomOpacityEnd() { mixin(MGPC("float", 2316)); }
+			float m_fSeekingTargetHUDZoomStart() { mixin(MGPC("float", 2304)); }
+			float m_fInitialSeekingTargetYaw() { mixin(MGPC("float", 2320)); }
+			Texture2D HUDMarkerMissileLocking() { mixin(MGPC("Texture2D", 1780)); }
+			Texture2D HUDMarkerMissileTargetLocked() { mixin(MGPC("Texture2D", 1792)); }
+			Texture2D HUDMarkerMissileTarget() { mixin(MGPC("Texture2D", 1788)); }
+			float m_fPotentialSeekingTargetHUDZoomOpacityStart() { mixin(MGPC("float", 2292)); }
+			float m_fPotentialSeekingTargetHUDZoomOpacityEnd() { mixin(MGPC("float", 2296)); }
+			float m_fPotentialSeekingTargetHUDZoomStart() { mixin(MGPC("float", 2284)); }
+			float m_fPotentialSeekingTargetHUDZoomEnd() { mixin(MGPC("float", 2288)); }
+			float m_fCaratPlacementX() { mixin(MGPC("float", 2348)); }
+			float m_fCaratPlacementY() { mixin(MGPC("float", 2352)); }
+			float m_fMarker2DDistance() { mixin(MGPC("float", 2488)); }
+			float m_fCurrentWhiteoutValue() { mixin(MGPC("float", 2232)); }
+			float TeamPlayerInfoMaxDist() { mixin(MGPC("float", 1576)); }
+			Texture2D DeployableSensor() { mixin(MGPC("Texture2D", 1972)); }
+			Texture2D MarkerLight() { mixin(MGPC("Texture2D", 1716)); }
+			Texture2D MarkerMedium() { mixin(MGPC("Texture2D", 1720)); }
+			Texture2D MarkerHeavy() { mixin(MGPC("Texture2D", 1724)); }
+			Texture2D FlagHeldLight() { mixin(MGPC("Texture2D", 1756)); }
+			Texture2D FlagHeldMedium() { mixin(MGPC("Texture2D", 1760)); }
+			Texture2D FlagHeldHeavy() { mixin(MGPC("Texture2D", 1764)); }
+			UObject.LinearColor MarkerColorEnemy_IsFriend() { mixin(MGPC("UObject.LinearColor", 1652)); }
+			float m_fNamePlacementX() { mixin(MGPC("float", 2340)); }
+			float m_fNamePlacementY() { mixin(MGPC("float", 2344)); }
+			float m_fHealthBarPlacementX() { mixin(MGPC("float", 2324)); }
+			float m_fHealthBarPlacementY() { mixin(MGPC("float", 2328)); }
+			float m_fHealthBarWidth() { mixin(MGPC("float", 2332)); }
+			float m_fHealthBarHeight() { mixin(MGPC("float", 2336)); }
+			UObject.LinearColor MarkerColorFriendly_IsFriend() { mixin(MGPC("UObject.LinearColor", 1684)); }
+			GfxTrHud m_GFxHud() { mixin(MGPC("GfxTrHud", 2076)); }
+			int FriendlyChatColorIdx() { mixin(MGPC("int", 2004)); }
+			UObject.Color FriendlyChatColor() { mixin(MGPC("UObject.Color", 2016)); }
+			int EnemyChatColorIdx() { mixin(MGPC("int", 2000)); }
+			UObject.Color EnemyChatColor() { mixin(MGPC("UObject.Color", 2020)); }
+			int WhisperChatColorIdx() { mixin(MGPC("int", 2012)); }
+			UObject.Color WhisperChatColor() { mixin(MGPC("UObject.Color", 2028)); }
+			int InfoChatColorIdx() { mixin(MGPC("int", 1996)); }
+			Texture2D FlagEmptyBase() { mixin(MGPC("Texture2D", 1772)); }
+			Texture2D BaseGeneratorLevel1() { mixin(MGPC("Texture2D", 1840)); }
+			Texture2D BaseGeneratorLevel1_Down() { mixin(MGPC("Texture2D", 1860)); }
+			Texture2D DeployableJammer() { mixin(MGPC("Texture2D", 1964)); }
+			Texture2D DeployableShield() { mixin(MGPC("Texture2D", 1976)); }
+			Texture2D BaseSensorLevel1() { mixin(MGPC("Texture2D", 1880)); }
+			Texture2D BaseSensorLevel2() { mixin(MGPC("Texture2D", 1884)); }
+			Texture2D BaseSensorLevel3() { mixin(MGPC("Texture2D", 1888)); }
+			Texture2D BaseSensorLevel4() { mixin(MGPC("Texture2D", 1892)); }
+			Texture2D BaseSensorLevel5() { mixin(MGPC("Texture2D", 1896)); }
+			Texture2D BaseSensorLevel1_Down() { mixin(MGPC("Texture2D", 1900)); }
+			Texture2D BaseSensorLevel2_Down() { mixin(MGPC("Texture2D", 1904)); }
+			Texture2D BaseSensorLevel3_Down() { mixin(MGPC("Texture2D", 1908)); }
+			Texture2D BaseSensorLevel4_Down() { mixin(MGPC("Texture2D", 1912)); }
+			Texture2D BaseSensorLevel5_Down() { mixin(MGPC("Texture2D", 1916)); }
+			Texture2D HUDMarkerLaserTargetAimPoint() { mixin(MGPC("Texture2D", 1800)); }
+			Texture2D HUDMarkerLaserTarget() { mixin(MGPC("Texture2D", 1796)); }
+			UObject.Color LaserTargetTracePossible() { mixin(MGPC("UObject.Color", 1592)); }
+			UObject.Color LaserTargetTraceImprobable() { mixin(MGPC("UObject.Color", 1596)); }
+			Texture2D AmmoDropPickup() { mixin(MGPC("Texture2D", 1984)); }
+			Texture2D FlagAtBase() { mixin(MGPC("Texture2D", 1748)); }
+			Texture2D FlagDropped() { mixin(MGPC("Texture2D", 1752)); }
+			ScriptArray!(TrDeployable) m_OwnedDeployables() { mixin(MGPC("ScriptArray!(TrDeployable)", 1600)); }
+			ScriptArray!(TrProj_Mine) m_OwnedMines() { mixin(MGPC("ScriptArray!(TrProj_Mine)", 1612)); }
+			ScriptArray!(TrHUD.QueuedAccolade) QueuedAccolades() { mixin(MGPC("ScriptArray!(TrHUD.QueuedAccolade)", 2428)); }
+			ScriptArray!(TrHUD.OverheadNumber) m_OverheadNumbers() { mixin(MGPC("ScriptArray!(TrHUD.OverheadNumber)", 2440)); }
+			float m_fOverheadNumberColorizeTimeMax() { mixin(MGPC("float", 2484)); }
+			float m_fOverheadNumberColorizeTimeMin() { mixin(MGPC("float", 2480)); }
+			float m_fOverheadNumberMaxScaleAmount() { mixin(MGPC("float", 2476)); }
+			float m_fOverheadNumberScaleTime() { mixin(MGPC("float", 2472)); }
+			float m_fOverheadNumberFadeTime() { mixin(MGPC("float", 2468)); }
+			float m_fOverheadNumberTotalTime() { mixin(MGPC("float", 2464)); }
+			UObject.Color m_OverheadNumberColorMax() { mixin(MGPC("UObject.Color", 2460)); }
+			UObject.Color m_OverheadNumberColorMin() { mixin(MGPC("UObject.Color", 2456)); }
+			float m_fOverheadNumberZSpeed() { mixin(MGPC("float", 2452)); }
+			UberPostProcessEffect m_UperPPEffect() { mixin(MGPC("UberPostProcessEffect", 2420)); }
+			Canvas.FontRenderInfo m_nNameFontRenderInfo() { mixin(MGPC("Canvas.FontRenderInfo", 2380)); }
+			float m_fMineDeployerNamePlacementY() { mixin(MGPC("float", 2376)); }
+			float m_fMineDeployerNamePlacementX() { mixin(MGPC("float", 2372)); }
+			float m_fMineNamePlacementY() { mixin(MGPC("float", 2368)); }
+			float m_fMineNamePlacementX() { mixin(MGPC("float", 2364)); }
+			float m_fVehicleNamePlacementY() { mixin(MGPC("float", 2360)); }
+			float m_fVehicleNamePlacementX() { mixin(MGPC("float", 2356)); }
+			MaterialInstanceConstant AwardMIC() { mixin(MGPC("MaterialInstanceConstant", 2272)); }
+			float AwardTimelineLoc() { mixin(MGPC("float", 2268)); }
+			float AwardFadeInScale() { mixin(MGPC("float", 2264)); }
+			float AwardTimelineLength() { mixin(MGPC("float", 2260)); }
+			float AwardBaseHeight() { mixin(MGPC("float", 2256)); }
+			float AwardBaseSize() { mixin(MGPC("float", 2252)); }
+			float m_fCurrentFumbledFlagValue() { mixin(MGPC("float", 2248)); }
+			float m_FumbledFlagFadeOutSpeed() { mixin(MGPC("float", 2244)); }
+			MaterialInstanceConstant m_FumbledFlagMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2240)); }
+			MaterialEffect m_FumbledFlagMaterialEffect() { mixin(MGPC("MaterialEffect", 2236)); }
+			float m_WhiteoutFadeOutSpeed() { mixin(MGPC("float", 2228)); }
+			MaterialInstanceConstant m_WhiteoutMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2224)); }
+			MaterialEffect m_WhiteoutMaterialEffect() { mixin(MGPC("MaterialEffect", 2220)); }
+			float m_VignetteValueMultiplier() { mixin(MGPC("float", 2216)); }
+			float m_VignetteFadeTarget() { mixin(MGPC("float", 2212)); }
+			float m_VignetteFadeSpeed() { mixin(MGPC("float", 2208)); }
+			MaterialInstanceConstant m_VignetteMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2204)); }
+			MaterialEffect m_VignetteMaterialEffect() { mixin(MGPC("MaterialEffect", 2200)); }
+			int LastChangeResCheckTime() { mixin(MGPC("int", 2196)); }
+			int LastChangeResTime() { mixin(MGPC("int", 2192)); }
+			int LastCreditTotal() { mixin(MGPC("int", 2188)); }
+			float m_JammerPackFadeOutSpeed() { mixin(MGPC("float", 2184)); }
+			MaterialInstanceConstant m_JammerPackMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2180)); }
+			MaterialEffect m_JammerPackMaterialEffect() { mixin(MGPC("MaterialEffect", 2176)); }
+			float m_ShieldHitFadeOutSpeed() { mixin(MGPC("float", 2172)); }
+			float m_ShieldHitFadeInSpeed() { mixin(MGPC("float", 2168)); }
+			float m_ShieldFadeOutSpeed() { mixin(MGPC("float", 2164)); }
+			MaterialInstanceConstant m_ShieldMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2160)); }
+			MaterialEffect m_ShieldMaterialEffect() { mixin(MGPC("MaterialEffect", 2156)); }
+			float m_InvulnerableFadeOutSpeed() { mixin(MGPC("float", 2152)); }
+			MaterialInstanceConstant m_InvulnerableMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2148)); }
+			MaterialEffect m_InvulnerableMaterialEffect() { mixin(MGPC("MaterialEffect", 2144)); }
+			float m_PickupFlashFadeOutSpeed() { mixin(MGPC("float", 2140)); }
+			MaterialInstanceConstant m_PickupFlashMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2136)); }
+			MaterialEffect m_PickupFlashMaterialEffect() { mixin(MGPC("MaterialEffect", 2132)); }
+			float m_fSkiEffectStrobeTime() { mixin(MGPC("float", 2128)); }
+			float m_fSkiEffectFadeOutTime() { mixin(MGPC("float", 2124)); }
+			float m_fSkiEffectFadeInTime() { mixin(MGPC("float", 2120)); }
+			float m_fSkiEffectMinIntensity() { mixin(MGPC("float", 2116)); }
+			float m_fSkiEffectMaxIntensity() { mixin(MGPC("float", 2112)); }
+			float m_fControllerSkiSpeed() { mixin(MGPC("float", 2108)); }
+			MaterialInstanceConstant m_SkiEffectMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 2104)); }
+			MaterialEffect m_SkiEffect() { mixin(MGPC("MaterialEffect", 2100)); }
+			ScriptClass m_GameClass() { mixin(MGPC("ScriptClass", 2092)); }
+			ScriptClass m_MusicManagerClass() { mixin(MGPC("ScriptClass", 2088)); }
+			float m_fEnemyGeneratorRestoreTime() { mixin(MGPC("float", 2084)); }
+			float m_fFriendlyGeneratorRestoreTime() { mixin(MGPC("float", 2080)); }
+			TrCaHStats CaHStats() { mixin(MGPC("TrCaHStats", 2072)); }
+			TrDaDStats DaDStats() { mixin(MGPC("TrDaDStats", 2068)); }
+			TrArenaStats ArenaStats() { mixin(MGPC("TrArenaStats", 2064)); }
+			TrTeamRabbitStats TeamRabbitStats() { mixin(MGPC("TrTeamRabbitStats", 2060)); }
+			TrHUDTeamCTFStats HUDTeamCTFStats() { mixin(MGPC("TrHUDTeamCTFStats", 2056)); }
+			TrRabbitLeaderboard RabbitLeaderboard() { mixin(MGPC("TrRabbitLeaderboard", 2052)); }
+			TrScoreboard Scoreboard() { mixin(MGPC("TrScoreboard", 2048)); }
+			GFxTrUI_VehicleMenu VehicleMenuMovie() { mixin(MGPC("GFxTrUI_VehicleMenu", 2040)); }
+			Material MapMaterialReference() { mixin(MGPC("Material", 2036)); }
+			MaterialInstanceConstant LowAmmoMic() { mixin(MGPC("MaterialInstanceConstant", 2032)); }
+			UObject.Color TeamChatColor() { mixin(MGPC("UObject.Color", 2024)); }
+			int SelfChatColorIdx() { mixin(MGPC("int", 2008)); }
+			Texture2D SpottedTarget_MotionMine() { mixin(MGPC("Texture2D", 1992)); }
+			Texture2D SpottedTarget() { mixin(MGPC("Texture2D", 1988)); }
+			Texture2D DeployableMine() { mixin(MGPC("Texture2D", 1968)); }
+			Texture2D DeployableClaymore() { mixin(MGPC("Texture2D", 1960)); }
+			Texture2D BaseGeneratorLevel5_Down() { mixin(MGPC("Texture2D", 1876)); }
+			Texture2D BaseGeneratorLevel4_Down() { mixin(MGPC("Texture2D", 1872)); }
+			Texture2D BaseGeneratorLevel3_Down() { mixin(MGPC("Texture2D", 1868)); }
+			Texture2D BaseGeneratorLevel2_Down() { mixin(MGPC("Texture2D", 1864)); }
+			Texture2D BaseGeneratorLevel5() { mixin(MGPC("Texture2D", 1856)); }
+			Texture2D BaseGeneratorLevel4() { mixin(MGPC("Texture2D", 1852)); }
+			Texture2D BaseGeneratorLevel3() { mixin(MGPC("Texture2D", 1848)); }
+			Texture2D BaseGeneratorLevel2() { mixin(MGPC("Texture2D", 1844)); }
+			Texture2D BaseVehicleStation() { mixin(MGPC("Texture2D", 1812)); }
+			Texture2D BaseRepairStation() { mixin(MGPC("Texture2D", 1808)); }
+			Texture2D BaseInventoryStation() { mixin(MGPC("Texture2D", 1804)); }
+			Texture2D HUDMarkerMissileIncoming() { mixin(MGPC("Texture2D", 1776)); }
+			Texture2D FlagHeldVehicle() { mixin(MGPC("Texture2D", 1768)); }
+			Texture2D VehicleMarkerNoDriver() { mixin(MGPC("Texture2D", 1744)); }
+			Texture2D VehicleMarkerHeavy() { mixin(MGPC("Texture2D", 1740)); }
+			Texture2D VehicleMarkerMedium() { mixin(MGPC("Texture2D", 1736)); }
+			Texture2D VehicleMarkerLight() { mixin(MGPC("Texture2D", 1732)); }
+			Texture2D VehicleMarker() { mixin(MGPC("Texture2D", 1728)); }
+			UObject.LinearColor MarkerColorNone() { mixin(MGPC("UObject.LinearColor", 1700)); }
+			int m_LastDeployableCount() { mixin(MGPC("int", 1628)); }
+			int m_LastMineCount() { mixin(MGPC("int", 1624)); }
+			UObject.Color ColorEnemy() { mixin(MGPC("UObject.Color", 1588)); }
+			UObject.Color ColorFriend() { mixin(MGPC("UObject.Color", 1584)); }
+			float ObjectiveInfoMaxDist() { mixin(MGPC("float", 1580)); }
+			ScriptString m_sLastClassName() { mixin(MGPC("ScriptString", 1564)); }
+			ScriptString m_sWinningPlayer() { mixin(MGPC("ScriptString", 1552)); }
+			int m_nLastPerk2Icon() { mixin(MGPC("int", 1544)); }
+			int m_nLastPerk1Icon() { mixin(MGPC("int", 1540)); }
+			int m_nWinningTeam() { mixin(MGPC("int", 1536)); }
 		}
-		bool m_bIsControllerSkiing() { mixin(MGBPC!(1548, 0x8)()); }
-		bool m_bIsControllerSkiing(bool val) { mixin(MSBPC!(1548, 0x8)()); }
-		bool bIsMainMenuOpen() { mixin(MGBPC!(1548, 0x1000)()); }
-		bool bIsMainMenuOpen(bool val) { mixin(MSBPC!(1548, 0x1000)()); }
-		bool bShowObjectives() { mixin(MGBPC!(1548, 0x4)()); }
-		bool bShowObjectives(bool val) { mixin(MSBPC!(1548, 0x4)()); }
-		bool bVotePending() { mixin(MGBPC!(1548, 0x800)()); }
-		bool bVotePending(bool val) { mixin(MSBPC!(1548, 0x800)()); }
-		bool bAccoladePlaying() { mixin(MGBPC!(1548, 0x40000)()); }
-		bool bAccoladePlaying(bool val) { mixin(MSBPC!(1548, 0x40000)()); }
-		bool m_bIsSpectatorFloatCameraPanelVisible() { mixin(MGBPC!(1548, 0x20000)()); }
-		bool m_bIsSpectatorFloatCameraPanelVisible(bool val) { mixin(MSBPC!(1548, 0x20000)()); }
-		bool m_bIsSpectatorObjectivePanelVisible() { mixin(MGBPC!(1548, 0x10000)()); }
-		bool m_bIsSpectatorObjectivePanelVisible(bool val) { mixin(MSBPC!(1548, 0x10000)()); }
-		bool m_bIsSpectatorBookmarkPanelVisible() { mixin(MGBPC!(1548, 0x8000)()); }
-		bool m_bIsSpectatorBookmarkPanelVisible(bool val) { mixin(MSBPC!(1548, 0x8000)()); }
-		bool m_bIsSpectatorVehiclePanelVisible() { mixin(MGBPC!(1548, 0x4000)()); }
-		bool m_bIsSpectatorVehiclePanelVisible(bool val) { mixin(MSBPC!(1548, 0x4000)()); }
-		bool m_bIsSpectatorPlayerPanelVisible() { mixin(MGBPC!(1548, 0x2000)()); }
-		bool m_bIsSpectatorPlayerPanelVisible(bool val) { mixin(MSBPC!(1548, 0x2000)()); }
-		bool bPlayAward() { mixin(MGBPC!(1548, 0x400)()); }
-		bool bPlayAward(bool val) { mixin(MSBPC!(1548, 0x400)()); }
-		bool m_bUpdateFumbledFlagEffect() { mixin(MGBPC!(1548, 0x200)()); }
-		bool m_bUpdateFumbledFlagEffect(bool val) { mixin(MSBPC!(1548, 0x200)()); }
-		bool m_bUpdateWhiteoutEffect() { mixin(MGBPC!(1548, 0x100)()); }
-		bool m_bUpdateWhiteoutEffect(bool val) { mixin(MSBPC!(1548, 0x100)()); }
-		bool bLoadSequenceComplete() { mixin(MGBPC!(1548, 0x80)()); }
-		bool bLoadSequenceComplete(bool val) { mixin(MSBPC!(1548, 0x80)()); }
-		bool bRestoreHUDState() { mixin(MGBPC!(1548, 0x40)()); }
-		bool bRestoreHUDState(bool val) { mixin(MSBPC!(1548, 0x40)()); }
-		bool m_bEffectFadingIn() { mixin(MGBPC!(1548, 0x20)()); }
-		bool m_bEffectFadingIn(bool val) { mixin(MSBPC!(1548, 0x20)()); }
-		bool m_bStrobeIn() { mixin(MGBPC!(1548, 0x10)()); }
-		bool m_bStrobeIn(bool val) { mixin(MSBPC!(1548, 0x10)()); }
-		bool HasGlobalChatAsAlert() { mixin(MGBPC!(1548, 0x2)()); }
-		bool HasGlobalChatAsAlert(bool val) { mixin(MSBPC!(1548, 0x2)()); }
-		bool m_bGameOver() { mixin(MGBPC!(1548, 0x1)()); }
-		bool m_bGameOver(bool val) { mixin(MSBPC!(1548, 0x1)()); }
+		bool m_bIsControllerSkiing() { mixin(MGBPC(1548, 0x8)); }
+		bool m_bIsControllerSkiing(bool val) { mixin(MSBPC(1548, 0x8)); }
+		bool bIsMainMenuOpen() { mixin(MGBPC(1548, 0x1000)); }
+		bool bIsMainMenuOpen(bool val) { mixin(MSBPC(1548, 0x1000)); }
+		bool bShowObjectives() { mixin(MGBPC(1548, 0x4)); }
+		bool bShowObjectives(bool val) { mixin(MSBPC(1548, 0x4)); }
+		bool bVotePending() { mixin(MGBPC(1548, 0x800)); }
+		bool bVotePending(bool val) { mixin(MSBPC(1548, 0x800)); }
+		bool bAccoladePlaying() { mixin(MGBPC(1548, 0x40000)); }
+		bool bAccoladePlaying(bool val) { mixin(MSBPC(1548, 0x40000)); }
+		bool m_bIsSpectatorFloatCameraPanelVisible() { mixin(MGBPC(1548, 0x20000)); }
+		bool m_bIsSpectatorFloatCameraPanelVisible(bool val) { mixin(MSBPC(1548, 0x20000)); }
+		bool m_bIsSpectatorObjectivePanelVisible() { mixin(MGBPC(1548, 0x10000)); }
+		bool m_bIsSpectatorObjectivePanelVisible(bool val) { mixin(MSBPC(1548, 0x10000)); }
+		bool m_bIsSpectatorBookmarkPanelVisible() { mixin(MGBPC(1548, 0x8000)); }
+		bool m_bIsSpectatorBookmarkPanelVisible(bool val) { mixin(MSBPC(1548, 0x8000)); }
+		bool m_bIsSpectatorVehiclePanelVisible() { mixin(MGBPC(1548, 0x4000)); }
+		bool m_bIsSpectatorVehiclePanelVisible(bool val) { mixin(MSBPC(1548, 0x4000)); }
+		bool m_bIsSpectatorPlayerPanelVisible() { mixin(MGBPC(1548, 0x2000)); }
+		bool m_bIsSpectatorPlayerPanelVisible(bool val) { mixin(MSBPC(1548, 0x2000)); }
+		bool bPlayAward() { mixin(MGBPC(1548, 0x400)); }
+		bool bPlayAward(bool val) { mixin(MSBPC(1548, 0x400)); }
+		bool m_bUpdateFumbledFlagEffect() { mixin(MGBPC(1548, 0x200)); }
+		bool m_bUpdateFumbledFlagEffect(bool val) { mixin(MSBPC(1548, 0x200)); }
+		bool m_bUpdateWhiteoutEffect() { mixin(MGBPC(1548, 0x100)); }
+		bool m_bUpdateWhiteoutEffect(bool val) { mixin(MSBPC(1548, 0x100)); }
+		bool bLoadSequenceComplete() { mixin(MGBPC(1548, 0x80)); }
+		bool bLoadSequenceComplete(bool val) { mixin(MSBPC(1548, 0x80)); }
+		bool bRestoreHUDState() { mixin(MGBPC(1548, 0x40)); }
+		bool bRestoreHUDState(bool val) { mixin(MSBPC(1548, 0x40)); }
+		bool m_bEffectFadingIn() { mixin(MGBPC(1548, 0x20)); }
+		bool m_bEffectFadingIn(bool val) { mixin(MSBPC(1548, 0x20)); }
+		bool m_bStrobeIn() { mixin(MGBPC(1548, 0x10)); }
+		bool m_bStrobeIn(bool val) { mixin(MSBPC(1548, 0x10)); }
+		bool HasGlobalChatAsAlert() { mixin(MGBPC(1548, 0x2)); }
+		bool HasGlobalChatAsAlert(bool val) { mixin(MSBPC(1548, 0x2)); }
+		bool m_bGameOver() { mixin(MGBPC(1548, 0x1)); }
+		bool m_bGameOver(bool val) { mixin(MSBPC(1548, 0x1)); }
 	}
 final:
 	Vector DrawMarkerText(ScriptString ShowText, bool bFriend, Vector Placement, Canvas DrawCanvas, bool* bBuddy = null)

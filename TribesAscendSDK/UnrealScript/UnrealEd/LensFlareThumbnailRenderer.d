@@ -8,7 +8,7 @@ extern(C++) interface LensFlareThumbnailRenderer : TextureThumbnailRenderer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.LensFlareThumbnailRenderer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.LensFlareThumbnailRenderer")); }
 	private static __gshared LensFlareThumbnailRenderer mDefaultProperties;
-	@property final static LensFlareThumbnailRenderer DefaultProperties() { mixin(MGDPC!(LensFlareThumbnailRenderer, "LensFlareThumbnailRenderer UnrealEd.Default__LensFlareThumbnailRenderer")()); }
+	@property final static LensFlareThumbnailRenderer DefaultProperties() { mixin(MGDPC("LensFlareThumbnailRenderer", "LensFlareThumbnailRenderer UnrealEd.Default__LensFlareThumbnailRenderer")); }
 }

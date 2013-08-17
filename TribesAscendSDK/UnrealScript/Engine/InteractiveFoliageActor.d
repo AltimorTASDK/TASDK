@@ -10,9 +10,9 @@ extern(C++) interface InteractiveFoliageActor : StaticMeshActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InteractiveFoliageActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.InteractiveFoliageActor")); }
 	private static __gshared InteractiveFoliageActor mDefaultProperties;
-	@property final static InteractiveFoliageActor DefaultProperties() { mixin(MGDPC!(InteractiveFoliageActor, "InteractiveFoliageActor Engine.Default__InteractiveFoliageActor")()); }
+	@property final static InteractiveFoliageActor DefaultProperties() { mixin(MGDPC("InteractiveFoliageActor", "InteractiveFoliageActor Engine.Default__InteractiveFoliageActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,25 +22,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.InteractiveFoliageActor.TakeDamage")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.InteractiveFoliageActor.Touch")()); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.InteractiveFoliageActor.TakeDamage")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.InteractiveFoliageActor.Touch")); }
 		}
 	}
 	@property final auto ref
 	{
-		float Mass() { mixin(MGPC!("float", 568)()); }
-		float MaxForce() { mixin(MGPC!("float", 564)()); }
-		float MaxTouchImpulse() { mixin(MGPC!("float", 560)()); }
-		float MaxDamageImpulse() { mixin(MGPC!("float", 556)()); }
-		float FoliageDamping() { mixin(MGPC!("float", 552)()); }
-		float FoliageStiffnessQuadratic() { mixin(MGPC!("float", 548)()); }
-		float FoliageStiffness() { mixin(MGPC!("float", 544)()); }
-		float FoliageTouchImpulseScale() { mixin(MGPC!("float", 540)()); }
-		float FoliageDamageImpulseScale() { mixin(MGPC!("float", 536)()); }
-		Vector FoliagePosition() { mixin(MGPC!("Vector", 524)()); }
-		Vector FoliageForce() { mixin(MGPC!("Vector", 512)()); }
-		Vector FoliageVelocity() { mixin(MGPC!("Vector", 500)()); }
-		Vector TouchingActorEntryPosition() { mixin(MGPC!("Vector", 488)()); }
+		float Mass() { mixin(MGPC("float", 568)); }
+		float MaxForce() { mixin(MGPC("float", 564)); }
+		float MaxTouchImpulse() { mixin(MGPC("float", 560)); }
+		float MaxDamageImpulse() { mixin(MGPC("float", 556)); }
+		float FoliageDamping() { mixin(MGPC("float", 552)); }
+		float FoliageStiffnessQuadratic() { mixin(MGPC("float", 548)); }
+		float FoliageStiffness() { mixin(MGPC("float", 544)); }
+		float FoliageTouchImpulseScale() { mixin(MGPC("float", 540)); }
+		float FoliageDamageImpulseScale() { mixin(MGPC("float", 536)); }
+		Vector FoliagePosition() { mixin(MGPC("Vector", 524)); }
+		Vector FoliageForce() { mixin(MGPC("Vector", 512)); }
+		Vector FoliageVelocity() { mixin(MGPC("Vector", 500)); }
+		Vector TouchingActorEntryPosition() { mixin(MGPC("Vector", 488)); }
 		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
 	}
 final:

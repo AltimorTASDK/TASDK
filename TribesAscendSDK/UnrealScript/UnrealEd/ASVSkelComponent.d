@@ -8,7 +8,7 @@ extern(C++) interface ASVSkelComponent : SkeletalMeshComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.ASVSkelComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.ASVSkelComponent")); }
 	private static __gshared ASVSkelComponent mDefaultProperties;
-	@property final static ASVSkelComponent DefaultProperties() { mixin(MGDPC!(ASVSkelComponent, "ASVSkelComponent UnrealEd.Default__ASVSkelComponent")()); }
+	@property final static ASVSkelComponent DefaultProperties() { mixin(MGDPC("ASVSkelComponent", "ASVSkelComponent UnrealEd.Default__ASVSkelComponent")); }
 }

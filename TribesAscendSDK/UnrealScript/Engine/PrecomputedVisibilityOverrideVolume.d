@@ -9,12 +9,12 @@ extern(C++) interface PrecomputedVisibilityOverrideVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PrecomputedVisibilityOverrideVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.PrecomputedVisibilityOverrideVolume")); }
 	private static __gshared PrecomputedVisibilityOverrideVolume mDefaultProperties;
-	@property final static PrecomputedVisibilityOverrideVolume DefaultProperties() { mixin(MGDPC!(PrecomputedVisibilityOverrideVolume, "PrecomputedVisibilityOverrideVolume Engine.Default__PrecomputedVisibilityOverrideVolume")()); }
+	@property final static PrecomputedVisibilityOverrideVolume DefaultProperties() { mixin(MGDPC("PrecomputedVisibilityOverrideVolume", "PrecomputedVisibilityOverrideVolume Engine.Default__PrecomputedVisibilityOverrideVolume")); }
 	@property final auto ref
 	{
-		ScriptArray!(Actor) OverrideVisibleActors() { mixin(MGPC!("ScriptArray!(Actor)", 520)()); }
-		ScriptArray!(Actor) OverrideInvisibleActors() { mixin(MGPC!("ScriptArray!(Actor)", 532)()); }
+		ScriptArray!(Actor) OverrideVisibleActors() { mixin(MGPC("ScriptArray!(Actor)", 520)); }
+		ScriptArray!(Actor) OverrideInvisibleActors() { mixin(MGPC("ScriptArray!(Actor)", 532)); }
 	}
 }

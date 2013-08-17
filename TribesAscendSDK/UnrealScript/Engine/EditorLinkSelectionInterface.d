@@ -8,7 +8,7 @@ extern(C++) interface EditorLinkSelectionInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.EditorLinkSelectionInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.EditorLinkSelectionInterface")); }
 	private static __gshared EditorLinkSelectionInterface mDefaultProperties;
-	@property final static EditorLinkSelectionInterface DefaultProperties() { mixin(MGDPC!(EditorLinkSelectionInterface, "EditorLinkSelectionInterface Engine.Default__EditorLinkSelectionInterface")()); }
+	@property final static EditorLinkSelectionInterface DefaultProperties() { mixin(MGDPC("EditorLinkSelectionInterface", "EditorLinkSelectionInterface Engine.Default__EditorLinkSelectionInterface")); }
 }

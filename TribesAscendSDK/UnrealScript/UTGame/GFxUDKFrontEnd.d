@@ -27,9 +27,9 @@ extern(C++) interface GFxUDKFrontEnd : GFxMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxUDKFrontEnd")); }
 	private static __gshared GFxUDKFrontEnd mDefaultProperties;
-	@property final static GFxUDKFrontEnd DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd, "GFxUDKFrontEnd UTGame.Default__GFxUDKFrontEnd")()); }
+	@property final static GFxUDKFrontEnd DefaultProperties() { mixin(MGDPC("GFxUDKFrontEnd", "GFxUDKFrontEnd UTGame.Default__GFxUDKFrontEnd")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -64,33 +64,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EscapeDelegate() { mixin(MGF!("mEscapeDelegate", "Function UTGame.GFxUDKFrontEnd.EscapeDelegate")()); }
-			ScriptFunction Start() { mixin(MGF!("mStart", "Function UTGame.GFxUDKFrontEnd.Start")()); }
-			ScriptFunction ConfigFrontEnd() { mixin(MGF!("mConfigFrontEnd", "Function UTGame.GFxUDKFrontEnd.ConfigFrontEnd")()); }
-			ScriptFunction ASShowCursor() { mixin(MGF!("mASShowCursor", "Function UTGame.GFxUDKFrontEnd.ASShowCursor")()); }
-			ScriptFunction LoadViews() { mixin(MGF!("mLoadViews", "Function UTGame.GFxUDKFrontEnd.LoadViews")()); }
-			ScriptFunction LoadView() { mixin(MGF!("mLoadView", "Function UTGame.GFxUDKFrontEnd.LoadView")()); }
-			ScriptFunction LoadViewByName() { mixin(MGF!("mLoadViewByName", "Function UTGame.GFxUDKFrontEnd.LoadViewByName")()); }
-			ScriptFunction IsViewLoaded() { mixin(MGF!("mIsViewLoaded", "Function UTGame.GFxUDKFrontEnd.IsViewLoaded")()); }
-			ScriptFunction SetEscapeDelegate() { mixin(MGF!("mSetEscapeDelegate", "Function UTGame.GFxUDKFrontEnd.SetEscapeDelegate")()); }
-			ScriptFunction PushViewByName() { mixin(MGF!("mPushViewByName", "Function UTGame.GFxUDKFrontEnd.PushViewByName")()); }
-			ScriptFunction SpawnDialog() { mixin(MGF!("mSpawnDialog", "Function UTGame.GFxUDKFrontEnd.SpawnDialog")()); }
-			ScriptFunction ConfigureTargetDialog() { mixin(MGF!("mConfigureTargetDialog", "Function UTGame.GFxUDKFrontEnd.ConfigureTargetDialog")()); }
-			ScriptFunction ConfigureTargetView() { mixin(MGF!("mConfigureTargetView", "Function UTGame.GFxUDKFrontEnd.ConfigureTargetView")()); }
-			ScriptFunction IsViewAllowed() { mixin(MGF!("mIsViewAllowed", "Function UTGame.GFxUDKFrontEnd.IsViewAllowed")()); }
-			ScriptFunction PushView() { mixin(MGF!("mPushView", "Function UTGame.GFxUDKFrontEnd.PushView")()); }
-			ScriptFunction PushDialogView() { mixin(MGF!("mPushDialogView", "Function UTGame.GFxUDKFrontEnd.PushDialogView")()); }
-			ScriptFunction SetSelectionFocus() { mixin(MGF!("mSetSelectionFocus", "Function UTGame.GFxUDKFrontEnd.SetSelectionFocus")()); }
-			ScriptFunction ASSetSelectionFocus() { mixin(MGF!("mASSetSelectionFocus", "Function UTGame.GFxUDKFrontEnd.ASSetSelectionFocus")()); }
-			ScriptFunction PopView() { mixin(MGF!("mPopView", "Function UTGame.GFxUDKFrontEnd.PopView")()); }
-			ScriptFunction PopViewStub() { mixin(MGF!("mPopViewStub", "Function UTGame.GFxUDKFrontEnd.PopViewStub")()); }
-			ScriptFunction UpdateViewLayout() { mixin(MGF!("mUpdateViewLayout", "Function UTGame.GFxUDKFrontEnd.UpdateViewLayout")()); }
-			ScriptFunction ConfigureView() { mixin(MGF!("mConfigureView", "Function UTGame.GFxUDKFrontEnd.ConfigureView")()); }
-			ScriptFunction PostWidgetInit() { mixin(MGF!("mPostWidgetInit", "Function UTGame.GFxUDKFrontEnd.PostWidgetInit")()); }
-			ScriptFunction CheckLinkConnectionAndError() { mixin(MGF!("mCheckLinkConnectionAndError", "Function UTGame.GFxUDKFrontEnd.CheckLinkConnectionAndError")()); }
-			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd.WidgetInitialized")()); }
-			ScriptFunction LoadDependantViews() { mixin(MGF!("mLoadDependantViews", "Function UTGame.GFxUDKFrontEnd.LoadDependantViews")()); }
-			ScriptFunction DestroyDependantViews() { mixin(MGF!("mDestroyDependantViews", "Function UTGame.GFxUDKFrontEnd.DestroyDependantViews")()); }
+			ScriptFunction EscapeDelegate() { mixin(MGF("mEscapeDelegate", "Function UTGame.GFxUDKFrontEnd.EscapeDelegate")); }
+			ScriptFunction Start() { mixin(MGF("mStart", "Function UTGame.GFxUDKFrontEnd.Start")); }
+			ScriptFunction ConfigFrontEnd() { mixin(MGF("mConfigFrontEnd", "Function UTGame.GFxUDKFrontEnd.ConfigFrontEnd")); }
+			ScriptFunction ASShowCursor() { mixin(MGF("mASShowCursor", "Function UTGame.GFxUDKFrontEnd.ASShowCursor")); }
+			ScriptFunction LoadViews() { mixin(MGF("mLoadViews", "Function UTGame.GFxUDKFrontEnd.LoadViews")); }
+			ScriptFunction LoadView() { mixin(MGF("mLoadView", "Function UTGame.GFxUDKFrontEnd.LoadView")); }
+			ScriptFunction LoadViewByName() { mixin(MGF("mLoadViewByName", "Function UTGame.GFxUDKFrontEnd.LoadViewByName")); }
+			ScriptFunction IsViewLoaded() { mixin(MGF("mIsViewLoaded", "Function UTGame.GFxUDKFrontEnd.IsViewLoaded")); }
+			ScriptFunction SetEscapeDelegate() { mixin(MGF("mSetEscapeDelegate", "Function UTGame.GFxUDKFrontEnd.SetEscapeDelegate")); }
+			ScriptFunction PushViewByName() { mixin(MGF("mPushViewByName", "Function UTGame.GFxUDKFrontEnd.PushViewByName")); }
+			ScriptFunction SpawnDialog() { mixin(MGF("mSpawnDialog", "Function UTGame.GFxUDKFrontEnd.SpawnDialog")); }
+			ScriptFunction ConfigureTargetDialog() { mixin(MGF("mConfigureTargetDialog", "Function UTGame.GFxUDKFrontEnd.ConfigureTargetDialog")); }
+			ScriptFunction ConfigureTargetView() { mixin(MGF("mConfigureTargetView", "Function UTGame.GFxUDKFrontEnd.ConfigureTargetView")); }
+			ScriptFunction IsViewAllowed() { mixin(MGF("mIsViewAllowed", "Function UTGame.GFxUDKFrontEnd.IsViewAllowed")); }
+			ScriptFunction PushView() { mixin(MGF("mPushView", "Function UTGame.GFxUDKFrontEnd.PushView")); }
+			ScriptFunction PushDialogView() { mixin(MGF("mPushDialogView", "Function UTGame.GFxUDKFrontEnd.PushDialogView")); }
+			ScriptFunction SetSelectionFocus() { mixin(MGF("mSetSelectionFocus", "Function UTGame.GFxUDKFrontEnd.SetSelectionFocus")); }
+			ScriptFunction ASSetSelectionFocus() { mixin(MGF("mASSetSelectionFocus", "Function UTGame.GFxUDKFrontEnd.ASSetSelectionFocus")); }
+			ScriptFunction PopView() { mixin(MGF("mPopView", "Function UTGame.GFxUDKFrontEnd.PopView")); }
+			ScriptFunction PopViewStub() { mixin(MGF("mPopViewStub", "Function UTGame.GFxUDKFrontEnd.PopViewStub")); }
+			ScriptFunction UpdateViewLayout() { mixin(MGF("mUpdateViewLayout", "Function UTGame.GFxUDKFrontEnd.UpdateViewLayout")); }
+			ScriptFunction ConfigureView() { mixin(MGF("mConfigureView", "Function UTGame.GFxUDKFrontEnd.ConfigureView")); }
+			ScriptFunction PostWidgetInit() { mixin(MGF("mPostWidgetInit", "Function UTGame.GFxUDKFrontEnd.PostWidgetInit")); }
+			ScriptFunction CheckLinkConnectionAndError() { mixin(MGF("mCheckLinkConnectionAndError", "Function UTGame.GFxUDKFrontEnd.CheckLinkConnectionAndError")); }
+			ScriptFunction WidgetInitialized() { mixin(MGF("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd.WidgetInitialized")); }
+			ScriptFunction LoadDependantViews() { mixin(MGF("mLoadDependantViews", "Function UTGame.GFxUDKFrontEnd.LoadDependantViews")); }
+			ScriptFunction DestroyDependantViews() { mixin(MGF("mDestroyDependantViews", "Function UTGame.GFxUDKFrontEnd.DestroyDependantViews")); }
 		}
 	}
 	struct ViewInfo
@@ -98,42 +98,42 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxUDKFrontEnd.ViewInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.GFxUDKFrontEnd.ViewInfo")); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptName) DependantViews() { mixin(MGPS!("ScriptArray!(ScriptName)", 20)()); }
-			ScriptString SWFName() { mixin(MGPS!("ScriptString", 8)()); }
-			ScriptName ViewName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(ScriptName) DependantViews() { mixin(MGPS("ScriptArray!(ScriptName)", 20)); }
+			ScriptString SWFName() { mixin(MGPS("ScriptString", 8)); }
+			ScriptName ViewName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxUDKFrontEnd.ViewInfo) ViewData() { mixin(MGPC!("ScriptArray!(GFxUDKFrontEnd.ViewInfo)", 452)()); }
-			ScriptArray!(GFxUDKFrontEnd_View) ViewStack() { mixin(MGPC!("ScriptArray!(GFxUDKFrontEnd_View)", 464)()); }
-			ScriptArray!(ScriptName) LoadedViews() { mixin(MGPC!("ScriptArray!(ScriptName)", 476)()); }
+			ScriptArray!(GFxUDKFrontEnd.ViewInfo) ViewData() { mixin(MGPC("ScriptArray!(GFxUDKFrontEnd.ViewInfo)", 452)); }
+			ScriptArray!(GFxUDKFrontEnd_View) ViewStack() { mixin(MGPC("ScriptArray!(GFxUDKFrontEnd_View)", 464)); }
+			ScriptArray!(ScriptName) LoadedViews() { mixin(MGPC("ScriptArray!(ScriptName)", 476)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__EscapeDelegate__Delegate'!
-			GFxUDKFrontEnd_PasswordDialog PasswordDialog() { mixin(MGPC!("GFxUDKFrontEnd_PasswordDialog", 448)()); }
-			GFxUDKFrontEnd_ErrorDialog ErrorDialog() { mixin(MGPC!("GFxUDKFrontEnd_ErrorDialog", 444)()); }
-			GFxUDKFrontEnd_JoinDialog JoinDialog() { mixin(MGPC!("GFxUDKFrontEnd_JoinDialog", 440)()); }
-			GFxUDKFrontEnd_FilterDialog FilterDialog() { mixin(MGPC!("GFxUDKFrontEnd_FilterDialog", 436)()); }
-			GFxUDKFrontEnd_InfoDialog InfoDialog() { mixin(MGPC!("GFxUDKFrontEnd_InfoDialog", 432)()); }
-			GFxUDKFrontEnd_JoinGame JoinGameView() { mixin(MGPC!("GFxUDKFrontEnd_JoinGame", 428)()); }
-			GFxUDKFrontEnd_ServerSettings ServerSettingsView() { mixin(MGPC!("GFxUDKFrontEnd_ServerSettings", 424)()); }
-			GFxUDKFrontEnd_Settings SettingsView() { mixin(MGPC!("GFxUDKFrontEnd_Settings", 420)()); }
-			GFxUDKFrontEnd_Mutators MutatorsView() { mixin(MGPC!("GFxUDKFrontEnd_Mutators", 416)()); }
-			GFxUDKFrontEnd_GameMode GameModeView() { mixin(MGPC!("GFxUDKFrontEnd_GameMode", 412)()); }
-			GFxUDKFrontEnd_MapSelect MapSelectView() { mixin(MGPC!("GFxUDKFrontEnd_MapSelect", 408)()); }
-			GFxUDKFrontEnd_HostGame HostGameView() { mixin(MGPC!("GFxUDKFrontEnd_HostGame", 404)()); }
-			GFxUDKFrontEnd_Multiplayer MultiplayerView() { mixin(MGPC!("GFxUDKFrontEnd_Multiplayer", 400)()); }
-			GFxUDKFrontEnd_InstantAction InstantActionView() { mixin(MGPC!("GFxUDKFrontEnd_InstantAction", 396)()); }
-			GFxUDKFrontEnd_MainMenu MainMenuView() { mixin(MGPC!("GFxUDKFrontEnd_MainMenu", 392)()); }
-			GFxObject ManagerMC() { mixin(MGPC!("GFxObject", 384)()); }
-			GFxObject RootMC() { mixin(MGPC!("GFxObject", 380)()); }
+			GFxUDKFrontEnd_PasswordDialog PasswordDialog() { mixin(MGPC("GFxUDKFrontEnd_PasswordDialog", 448)); }
+			GFxUDKFrontEnd_ErrorDialog ErrorDialog() { mixin(MGPC("GFxUDKFrontEnd_ErrorDialog", 444)); }
+			GFxUDKFrontEnd_JoinDialog JoinDialog() { mixin(MGPC("GFxUDKFrontEnd_JoinDialog", 440)); }
+			GFxUDKFrontEnd_FilterDialog FilterDialog() { mixin(MGPC("GFxUDKFrontEnd_FilterDialog", 436)); }
+			GFxUDKFrontEnd_InfoDialog InfoDialog() { mixin(MGPC("GFxUDKFrontEnd_InfoDialog", 432)); }
+			GFxUDKFrontEnd_JoinGame JoinGameView() { mixin(MGPC("GFxUDKFrontEnd_JoinGame", 428)); }
+			GFxUDKFrontEnd_ServerSettings ServerSettingsView() { mixin(MGPC("GFxUDKFrontEnd_ServerSettings", 424)); }
+			GFxUDKFrontEnd_Settings SettingsView() { mixin(MGPC("GFxUDKFrontEnd_Settings", 420)); }
+			GFxUDKFrontEnd_Mutators MutatorsView() { mixin(MGPC("GFxUDKFrontEnd_Mutators", 416)); }
+			GFxUDKFrontEnd_GameMode GameModeView() { mixin(MGPC("GFxUDKFrontEnd_GameMode", 412)); }
+			GFxUDKFrontEnd_MapSelect MapSelectView() { mixin(MGPC("GFxUDKFrontEnd_MapSelect", 408)); }
+			GFxUDKFrontEnd_HostGame HostGameView() { mixin(MGPC("GFxUDKFrontEnd_HostGame", 404)); }
+			GFxUDKFrontEnd_Multiplayer MultiplayerView() { mixin(MGPC("GFxUDKFrontEnd_Multiplayer", 400)); }
+			GFxUDKFrontEnd_InstantAction InstantActionView() { mixin(MGPC("GFxUDKFrontEnd_InstantAction", 396)); }
+			GFxUDKFrontEnd_MainMenu MainMenuView() { mixin(MGPC("GFxUDKFrontEnd_MainMenu", 392)); }
+			GFxObject ManagerMC() { mixin(MGPC("GFxObject", 384)); }
+			GFxObject RootMC() { mixin(MGPC("GFxObject", 380)); }
 		}
-		bool bInitialized() { mixin(MGBPC!(388, 0x1)()); }
-		bool bInitialized(bool val) { mixin(MSBPC!(388, 0x1)()); }
+		bool bInitialized() { mixin(MGBPC(388, 0x1)); }
+		bool bInitialized(bool val) { mixin(MSBPC(388, 0x1)); }
 	}
 final:
 	void EscapeDelegate()

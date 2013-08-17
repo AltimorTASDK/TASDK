@@ -13,9 +13,9 @@ extern(C++) interface TrObject : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrObject")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrObject")); }
 	private static __gshared TrObject mDefaultProperties;
-	@property final static TrObject DefaultProperties() { mixin(MGDPC!(TrObject, "TrObject TribesGame.Default__TrObject")()); }
+	@property final static TrObject DefaultProperties() { mixin(MGDPC("TrObject", "TrObject TribesGame.Default__TrObject")); }
 	static struct Constants
 	{
 		enum
@@ -516,11 +516,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.EffectFormOverwrite")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.EffectFormOverwrite")); }
 		@property final auto ref
 		{
-			Material Mat() { mixin(MGPS!("Material", 4)()); }
-			TrObject.EffectFormMatTypes eType() { mixin(MGPS!("TrObject.EffectFormMatTypes", 0)()); }
+			Material Mat() { mixin(MGPS("Material", 4)); }
+			TrObject.EffectFormMatTypes eType() { mixin(MGPS("TrObject.EffectFormMatTypes", 0)); }
 		}
 	}
 	struct PaperDollInfo
@@ -528,26 +528,26 @@ public extern(D):
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.PaperDollInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.PaperDollInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				float CharacterLightingContrastFactor() { mixin(MGPS!("float", 48)()); }
+				float CharacterLightingContrastFactor() { mixin(MGPS("float", 48)); }
 				// WARNING: Property 'AnimSet' has the same name as a defined type!
-				AnimTree AnimTreeTemplate() { mixin(MGPS!("AnimTree", 36)()); }
-				PhysicsAsset PhysAsset() { mixin(MGPS!("PhysicsAsset", 32)()); }
-				SkeletalMesh SkelMesh() { mixin(MGPS!("SkeletalMesh", 28)()); }
-				float Scale() { mixin(MGPS!("float", 24)()); }
-				Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
-				Vector Translation() { mixin(MGPS!("Vector", 0)()); }
+				AnimTree AnimTreeTemplate() { mixin(MGPS("AnimTree", 36)); }
+				PhysicsAsset PhysAsset() { mixin(MGPS("PhysicsAsset", 32)); }
+				SkeletalMesh SkelMesh() { mixin(MGPS("SkeletalMesh", 28)); }
+				float Scale() { mixin(MGPS("float", 24)); }
+				Rotator Rotation() { mixin(MGPS("Rotator", 12)); }
+				Vector Translation() { mixin(MGPS("Vector", 0)); }
 			}
-			bool bIsLoading() { mixin(MGBPS!(52, 0x2)()); }
-			bool bIsLoading(bool val) { mixin(MSBPS!(52, 0x2)()); }
-			bool bIsStreaming() { mixin(MGBPS!(52, 0x1)()); }
-			bool bIsStreaming(bool val) { mixin(MSBPS!(52, 0x1)()); }
-			bool bOnlySelfShadow() { mixin(MGBPS!(44, 0x1)()); }
-			bool bOnlySelfShadow(bool val) { mixin(MSBPS!(44, 0x1)()); }
+			bool bIsLoading() { mixin(MGBPS(52, 0x2)); }
+			bool bIsLoading(bool val) { mixin(MSBPS(52, 0x2)); }
+			bool bIsStreaming() { mixin(MGBPS(52, 0x1)); }
+			bool bIsStreaming(bool val) { mixin(MSBPS(52, 0x1)); }
+			bool bOnlySelfShadow() { mixin(MGBPS(44, 0x1)); }
+			bool bOnlySelfShadow(bool val) { mixin(MSBPS(44, 0x1)); }
 		}
 	}
 	struct TrTakeEffectInfo
@@ -555,11 +555,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.TrTakeEffectInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.TrTakeEffectInfo")); }
 		@property final auto ref
 		{
-			Vector HitLocation() { mixin(MGPS!("Vector", 0)()); }
-			ScriptClass EffectForm() { mixin(MGPS!("ScriptClass", 12)()); }
+			Vector HitLocation() { mixin(MGPS("Vector", 0)); }
+			ScriptClass EffectForm() { mixin(MGPS("ScriptClass", 12)); }
 		}
 	}
 	struct TrTakeHitInfo
@@ -567,14 +567,14 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.TrTakeHitInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.TrTakeHitInfo")); }
 		@property final auto ref
 		{
-			int Damage() { mixin(MGPS!("int", 0)()); }
-			Vector HitLocation() { mixin(MGPS!("Vector", 4)()); }
-			Vector Momentum() { mixin(MGPS!("Vector", 16)()); }
+			int Damage() { mixin(MGPS("int", 0)); }
+			Vector HitLocation() { mixin(MGPS("Vector", 4)); }
+			Vector Momentum() { mixin(MGPS("Vector", 16)); }
 			// WARNING: Property 'DamageType' has the same name as a defined type!
-			ScriptName HitBone() { mixin(MGPS!("ScriptName", 32)()); }
+			ScriptName HitBone() { mixin(MGPS("ScriptName", 32)); }
 		}
 	}
 	struct OffhandAnimation
@@ -582,16 +582,16 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.OffhandAnimation")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.OffhandAnimation")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName m_OffhandUseType() { mixin(MGPS!("ScriptName", 0)()); }
-				ScriptName m_AnimName() { mixin(MGPS!("ScriptName", 8)()); }
+				ScriptName m_OffhandUseType() { mixin(MGPS("ScriptName", 0)); }
+				ScriptName m_AnimName() { mixin(MGPS("ScriptName", 8)); }
 			}
-			bool m_bFullBody() { mixin(MGBPS!(16, 0x1)()); }
-			bool m_bFullBody(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool m_bFullBody() { mixin(MGBPS(16, 0x1)); }
+			bool m_bFullBody(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	struct TrEventCredits
@@ -599,18 +599,18 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.TrEventCredits")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.TrEventCredits")); }
 		@property final
 		{
 			auto ref
 			{
-				TrObject.TrCreditEventType EventType() { mixin(MGPS!("TrObject.TrCreditEventType", 0)()); }
-				int eventCredits() { mixin(MGPS!("int", 4)()); }
-				int proxyEventCredits() { mixin(MGPS!("int", 8)()); }
-				int MsgIdx() { mixin(MGPS!("int", 12)()); }
+				TrObject.TrCreditEventType EventType() { mixin(MGPS("TrObject.TrCreditEventType", 0)); }
+				int eventCredits() { mixin(MGPS("int", 4)); }
+				int proxyEventCredits() { mixin(MGPS("int", 8)); }
+				int MsgIdx() { mixin(MGPS("int", 12)); }
 			}
-			bool bIsBroadcast() { mixin(MGBPS!(16, 0x1)()); }
-			bool bIsBroadcast(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bIsBroadcast() { mixin(MGBPS(16, 0x1)); }
+			bool bIsBroadcast(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	struct TR_HUD_INFO
@@ -618,31 +618,31 @@ public extern(D):
 		private ubyte __buffer__[68];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.TR_HUD_INFO")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.TR_HUD_INFO")); }
 		@property final
 		{
 			auto ref
 			{
-				Vector vScreenLoc() { mixin(MGPS!("Vector", 0)()); }
-				float fScale() { mixin(MGPS!("float", 12)()); }
-				float fAlphaLevel() { mixin(MGPS!("float", 16)()); }
-				float fLastSeenTime() { mixin(MGPS!("float", 20)()); }
-				float fLastUnseenTime() { mixin(MGPS!("float", 24)()); }
-				ScriptString sName() { mixin(MGPS!("ScriptString", 32)()); }
-				int nHealth() { mixin(MGPS!("int", 44)()); }
-				int nMaxHealth() { mixin(MGPS!("int", 48)()); }
-				float fDistance() { mixin(MGPS!("float", 56)()); }
-				TrObject.OverlayType eOverlayType() { mixin(MGPS!("TrObject.OverlayType", 60)()); }
-				int nActorId() { mixin(MGPS!("int", 64)()); }
+				Vector vScreenLoc() { mixin(MGPS("Vector", 0)); }
+				float fScale() { mixin(MGPS("float", 12)); }
+				float fAlphaLevel() { mixin(MGPS("float", 16)); }
+				float fLastSeenTime() { mixin(MGPS("float", 20)); }
+				float fLastUnseenTime() { mixin(MGPS("float", 24)); }
+				ScriptString sName() { mixin(MGPS("ScriptString", 32)); }
+				int nHealth() { mixin(MGPS("int", 44)); }
+				int nMaxHealth() { mixin(MGPS("int", 48)); }
+				float fDistance() { mixin(MGPS("float", 56)); }
+				TrObject.OverlayType eOverlayType() { mixin(MGPS("TrObject.OverlayType", 60)); }
+				int nActorId() { mixin(MGPS("int", 64)); }
 			}
-			bool bIsTarget() { mixin(MGBPS!(28, 0x1)()); }
-			bool bIsTarget(bool val) { mixin(MSBPS!(28, 0x1)()); }
-			bool bEnemy() { mixin(MGBPS!(52, 0x1)()); }
-			bool bEnemy(bool val) { mixin(MSBPS!(52, 0x1)()); }
-			bool bDrawStat() { mixin(MGBPS!(52, 0x2)()); }
-			bool bDrawStat(bool val) { mixin(MSBPS!(52, 0x2)()); }
-			bool bDrawHealth() { mixin(MGBPS!(52, 0x4)()); }
-			bool bDrawHealth(bool val) { mixin(MSBPS!(52, 0x4)()); }
+			bool bIsTarget() { mixin(MGBPS(28, 0x1)); }
+			bool bIsTarget(bool val) { mixin(MSBPS(28, 0x1)); }
+			bool bEnemy() { mixin(MGBPS(52, 0x1)); }
+			bool bEnemy(bool val) { mixin(MSBPS(52, 0x1)); }
+			bool bDrawStat() { mixin(MGBPS(52, 0x2)); }
+			bool bDrawStat(bool val) { mixin(MSBPS(52, 0x2)); }
+			bool bDrawHealth() { mixin(MGBPS(52, 0x4)); }
+			bool bDrawHealth(bool val) { mixin(MSBPS(52, 0x4)); }
 		}
 	}
 	struct ObjectiveMICInfo
@@ -650,14 +650,14 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.ObjectiveMICInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrObject.ObjectiveMICInfo")); }
 		@property final auto ref
 		{
-			int MyTeam() { mixin(MGPS!("int", 0)()); }
-			float AmountFilled() { mixin(MGPS!("float", 4)()); }
-			int ObjStatus() { mixin(MGPS!("int", 8)()); }
-			int IsContested() { mixin(MGPS!("int", 12)()); }
-			int Flip() { mixin(MGPS!("int", 16)()); }
+			int MyTeam() { mixin(MGPS("int", 0)); }
+			float AmountFilled() { mixin(MGPS("float", 4)); }
+			int ObjStatus() { mixin(MGPS("int", 8)); }
+			int IsContested() { mixin(MGPS("int", 12)); }
+			int Flip() { mixin(MGPS("int", 16)); }
 		}
 	}
 }

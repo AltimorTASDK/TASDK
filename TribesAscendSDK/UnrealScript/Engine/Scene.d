@@ -8,9 +8,9 @@ extern(C++) interface Scene : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Scene")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Scene")); }
 	private static __gshared Scene mDefaultProperties;
-	@property final static Scene DefaultProperties() { mixin(MGDPC!(Scene, "Scene Engine.Default__Scene")()); }
+	@property final static Scene DefaultProperties() { mixin(MGDPC("Scene", "Scene Engine.Default__Scene")); }
 	static struct Constants
 	{
 		enum SDPG_NumBits = 3;

@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_GameRules : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_GameRules")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_GameRules")); }
 	private static __gshared GFxTrPage_GameRules mDefaultProperties;
-	@property final static GFxTrPage_GameRules DefaultProperties() { mixin(MGDPC!(GFxTrPage_GameRules, "GFxTrPage_GameRules TribesGame.Default__GFxTrPage_GameRules")()); }
+	@property final static GFxTrPage_GameRules DefaultProperties() { mixin(MGDPC("GFxTrPage_GameRules", "GFxTrPage_GameRules TribesGame.Default__GFxTrPage_GameRules")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,12 +25,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_GameRules.Initialize")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_GameRules.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_GameRules.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_GameRules.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_GameRules.FillDescription")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_GameRules.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_GameRules.Initialize")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_GameRules.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_GameRules.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_GameRules.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_GameRules.FillDescription")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_GameRules.ShowModel")); }
 		}
 	}
 final:

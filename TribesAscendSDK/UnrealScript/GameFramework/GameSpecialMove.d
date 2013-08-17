@@ -11,9 +11,9 @@ extern(C++) interface GameSpecialMove : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameSpecialMove")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameSpecialMove")); }
 	private static __gshared GameSpecialMove mDefaultProperties;
-	@property final static GameSpecialMove DefaultProperties() { mixin(MGDPC!(GameSpecialMove, "GameSpecialMove GameFramework.Default__GameSpecialMove")()); }
+	@property final static GameSpecialMove DefaultProperties() { mixin(MGDPC("GameSpecialMove", "GameSpecialMove GameFramework.Default__GameSpecialMove")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,54 +42,54 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitSpecialMove() { mixin(MGF!("mInitSpecialMove", "Function GameFramework.GameSpecialMove.InitSpecialMove")()); }
-			ScriptFunction InitSpecialMoveFlags() { mixin(MGF!("mInitSpecialMoveFlags", "Function GameFramework.GameSpecialMove.InitSpecialMoveFlags")()); }
-			ScriptFunction ExtractSpecialMoveFlags() { mixin(MGF!("mExtractSpecialMoveFlags", "Function GameFramework.GameSpecialMove.ExtractSpecialMoveFlags")()); }
-			ScriptFunction CanChainMove() { mixin(MGF!("mCanChainMove", "Function GameFramework.GameSpecialMove.CanChainMove")()); }
-			ScriptFunction CanOverrideMoveWith() { mixin(MGF!("mCanOverrideMoveWith", "Function GameFramework.GameSpecialMove.CanOverrideMoveWith")()); }
-			ScriptFunction CanOverrideSpecialMove() { mixin(MGF!("mCanOverrideSpecialMove", "Function GameFramework.GameSpecialMove.CanOverrideSpecialMove")()); }
-			ScriptFunction CanDoSpecialMove() { mixin(MGF!("mCanDoSpecialMove", "Function GameFramework.GameSpecialMove.CanDoSpecialMove")()); }
-			ScriptFunction InternalCanDoSpecialMove() { mixin(MGF!("mInternalCanDoSpecialMove", "Function GameFramework.GameSpecialMove.InternalCanDoSpecialMove")()); }
-			ScriptFunction SpecialMoveStarted() { mixin(MGF!("mSpecialMoveStarted", "Function GameFramework.GameSpecialMove.SpecialMoveStarted")()); }
-			ScriptFunction SpecialMoveEnded() { mixin(MGF!("mSpecialMoveEnded", "Function GameFramework.GameSpecialMove.SpecialMoveEnded")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function GameFramework.GameSpecialMove.Tick")()); }
-			ScriptFunction SpecialMoveFlagsUpdated() { mixin(MGF!("mSpecialMoveFlagsUpdated", "Function GameFramework.GameSpecialMove.SpecialMoveFlagsUpdated")()); }
-			ScriptFunction ShouldReplicate() { mixin(MGF!("mShouldReplicate", "Function GameFramework.GameSpecialMove.ShouldReplicate")()); }
-			ScriptFunction SetReachPreciseDestination() { mixin(MGF!("mSetReachPreciseDestination", "Function GameFramework.GameSpecialMove.SetReachPreciseDestination")()); }
-			ScriptFunction SetFacePreciseRotation() { mixin(MGF!("mSetFacePreciseRotation", "Function GameFramework.GameSpecialMove.SetFacePreciseRotation")()); }
-			ScriptFunction ReachedPrecisePosition() { mixin(MGF!("mReachedPrecisePosition", "Function GameFramework.GameSpecialMove.ReachedPrecisePosition")()); }
-			ScriptFunction ResetFacePreciseRotation() { mixin(MGF!("mResetFacePreciseRotation", "Function GameFramework.GameSpecialMove.ResetFacePreciseRotation")()); }
-			ScriptFunction MessageEvent() { mixin(MGF!("mMessageEvent", "Function GameFramework.GameSpecialMove.MessageEvent")()); }
-			ScriptFunction ForcePawnRotation() { mixin(MGF!("mForcePawnRotation", "Function GameFramework.GameSpecialMove.ForcePawnRotation")()); }
-			ScriptFunction WorldToRelativeOffset() { mixin(MGF!("mWorldToRelativeOffset", "Function GameFramework.GameSpecialMove.WorldToRelativeOffset")()); }
-			ScriptFunction RelativeToWorldOffset() { mixin(MGF!("mRelativeToWorldOffset", "Function GameFramework.GameSpecialMove.RelativeToWorldOffset")()); }
+			ScriptFunction InitSpecialMove() { mixin(MGF("mInitSpecialMove", "Function GameFramework.GameSpecialMove.InitSpecialMove")); }
+			ScriptFunction InitSpecialMoveFlags() { mixin(MGF("mInitSpecialMoveFlags", "Function GameFramework.GameSpecialMove.InitSpecialMoveFlags")); }
+			ScriptFunction ExtractSpecialMoveFlags() { mixin(MGF("mExtractSpecialMoveFlags", "Function GameFramework.GameSpecialMove.ExtractSpecialMoveFlags")); }
+			ScriptFunction CanChainMove() { mixin(MGF("mCanChainMove", "Function GameFramework.GameSpecialMove.CanChainMove")); }
+			ScriptFunction CanOverrideMoveWith() { mixin(MGF("mCanOverrideMoveWith", "Function GameFramework.GameSpecialMove.CanOverrideMoveWith")); }
+			ScriptFunction CanOverrideSpecialMove() { mixin(MGF("mCanOverrideSpecialMove", "Function GameFramework.GameSpecialMove.CanOverrideSpecialMove")); }
+			ScriptFunction CanDoSpecialMove() { mixin(MGF("mCanDoSpecialMove", "Function GameFramework.GameSpecialMove.CanDoSpecialMove")); }
+			ScriptFunction InternalCanDoSpecialMove() { mixin(MGF("mInternalCanDoSpecialMove", "Function GameFramework.GameSpecialMove.InternalCanDoSpecialMove")); }
+			ScriptFunction SpecialMoveStarted() { mixin(MGF("mSpecialMoveStarted", "Function GameFramework.GameSpecialMove.SpecialMoveStarted")); }
+			ScriptFunction SpecialMoveEnded() { mixin(MGF("mSpecialMoveEnded", "Function GameFramework.GameSpecialMove.SpecialMoveEnded")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function GameFramework.GameSpecialMove.Tick")); }
+			ScriptFunction SpecialMoveFlagsUpdated() { mixin(MGF("mSpecialMoveFlagsUpdated", "Function GameFramework.GameSpecialMove.SpecialMoveFlagsUpdated")); }
+			ScriptFunction ShouldReplicate() { mixin(MGF("mShouldReplicate", "Function GameFramework.GameSpecialMove.ShouldReplicate")); }
+			ScriptFunction SetReachPreciseDestination() { mixin(MGF("mSetReachPreciseDestination", "Function GameFramework.GameSpecialMove.SetReachPreciseDestination")); }
+			ScriptFunction SetFacePreciseRotation() { mixin(MGF("mSetFacePreciseRotation", "Function GameFramework.GameSpecialMove.SetFacePreciseRotation")); }
+			ScriptFunction ReachedPrecisePosition() { mixin(MGF("mReachedPrecisePosition", "Function GameFramework.GameSpecialMove.ReachedPrecisePosition")); }
+			ScriptFunction ResetFacePreciseRotation() { mixin(MGF("mResetFacePreciseRotation", "Function GameFramework.GameSpecialMove.ResetFacePreciseRotation")); }
+			ScriptFunction MessageEvent() { mixin(MGF("mMessageEvent", "Function GameFramework.GameSpecialMove.MessageEvent")); }
+			ScriptFunction ForcePawnRotation() { mixin(MGF("mForcePawnRotation", "Function GameFramework.GameSpecialMove.ForcePawnRotation")); }
+			ScriptFunction WorldToRelativeOffset() { mixin(MGF("mWorldToRelativeOffset", "Function GameFramework.GameSpecialMove.WorldToRelativeOffset")); }
+			ScriptFunction RelativeToWorldOffset() { mixin(MGF("mRelativeToWorldOffset", "Function GameFramework.GameSpecialMove.RelativeToWorldOffset")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Rotator PreciseRotation() { mixin(MGPC!("Rotator", 112)()); }
-			float PreciseRotationInterpolationTime() { mixin(MGPC!("float", 108)()); }
-			Vector PreciseDestRelOffset() { mixin(MGPC!("Vector", 96)()); }
-			Actor PreciseDestBase() { mixin(MGPC!("Actor", 92)()); }
-			Vector PreciseDestination() { mixin(MGPC!("Vector", 80)()); }
-			float LastCanDoSpecialMoveTime() { mixin(MGPC!("float", 72)()); }
-			ScriptName Handle() { mixin(MGPC!("ScriptName", 64)()); }
-			GamePawn PawnOwner() { mixin(MGPC!("GamePawn", 60)()); }
+			Rotator PreciseRotation() { mixin(MGPC("Rotator", 112)); }
+			float PreciseRotationInterpolationTime() { mixin(MGPC("float", 108)); }
+			Vector PreciseDestRelOffset() { mixin(MGPC("Vector", 96)); }
+			Actor PreciseDestBase() { mixin(MGPC("Actor", 92)); }
+			Vector PreciseDestination() { mixin(MGPC("Vector", 80)); }
+			float LastCanDoSpecialMoveTime() { mixin(MGPC("float", 72)); }
+			ScriptName Handle() { mixin(MGPC("ScriptName", 64)); }
+			GamePawn PawnOwner() { mixin(MGPC("GamePawn", 60)); }
 		}
-		bool bForcePrecisePosition() { mixin(MGBPC!(76, 0x20)()); }
-		bool bForcePrecisePosition(bool val) { mixin(MSBPC!(76, 0x20)()); }
-		bool bReachedPreciseRotation() { mixin(MGBPC!(76, 0x10)()); }
-		bool bReachedPreciseRotation(bool val) { mixin(MSBPC!(76, 0x10)()); }
-		bool bReachPreciseRotation() { mixin(MGBPC!(76, 0x8)()); }
-		bool bReachPreciseRotation(bool val) { mixin(MSBPC!(76, 0x8)()); }
-		bool bReachedPreciseDestination() { mixin(MGBPC!(76, 0x4)()); }
-		bool bReachedPreciseDestination(bool val) { mixin(MSBPC!(76, 0x4)()); }
-		bool bReachPreciseDestination() { mixin(MGBPC!(76, 0x2)()); }
-		bool bReachPreciseDestination(bool val) { mixin(MSBPC!(76, 0x2)()); }
-		bool bLastCanDoSpecialMove() { mixin(MGBPC!(76, 0x1)()); }
-		bool bLastCanDoSpecialMove(bool val) { mixin(MSBPC!(76, 0x1)()); }
+		bool bForcePrecisePosition() { mixin(MGBPC(76, 0x20)); }
+		bool bForcePrecisePosition(bool val) { mixin(MSBPC(76, 0x20)); }
+		bool bReachedPreciseRotation() { mixin(MGBPC(76, 0x10)); }
+		bool bReachedPreciseRotation(bool val) { mixin(MSBPC(76, 0x10)); }
+		bool bReachPreciseRotation() { mixin(MGBPC(76, 0x8)); }
+		bool bReachPreciseRotation(bool val) { mixin(MSBPC(76, 0x8)); }
+		bool bReachedPreciseDestination() { mixin(MGBPC(76, 0x4)); }
+		bool bReachedPreciseDestination(bool val) { mixin(MSBPC(76, 0x4)); }
+		bool bReachPreciseDestination() { mixin(MGBPC(76, 0x2)); }
+		bool bReachPreciseDestination(bool val) { mixin(MSBPC(76, 0x2)); }
+		bool bLastCanDoSpecialMove() { mixin(MGBPC(76, 0x1)); }
+		bool bLastCanDoSpecialMove(bool val) { mixin(MSBPC(76, 0x1)); }
 	}
 final:
 	void InitSpecialMove(GamePawn inPawn, ScriptName InHandle)

@@ -8,9 +8,9 @@ extern(C++) interface ForceFieldShapeBox : ForceFieldShape
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ForceFieldShapeBox")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ForceFieldShapeBox")); }
 	private static __gshared ForceFieldShapeBox mDefaultProperties;
-	@property final static ForceFieldShapeBox DefaultProperties() { mixin(MGDPC!(ForceFieldShapeBox, "ForceFieldShapeBox Engine.Default__ForceFieldShapeBox")()); }
+	@property final static ForceFieldShapeBox DefaultProperties() { mixin(MGDPC("ForceFieldShapeBox", "ForceFieldShapeBox Engine.Default__ForceFieldShapeBox")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,12 +24,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetRadii() { mixin(MGF!("mGetRadii", "Function Engine.ForceFieldShapeBox.GetRadii")()); }
-			ScriptFunction FillBySphere() { mixin(MGF!("mFillBySphere", "Function Engine.ForceFieldShapeBox.FillBySphere")()); }
-			ScriptFunction FillByBox() { mixin(MGF!("mFillByBox", "Function Engine.ForceFieldShapeBox.FillByBox")()); }
-			ScriptFunction FillByCapsule() { mixin(MGF!("mFillByCapsule", "Function Engine.ForceFieldShapeBox.FillByCapsule")()); }
-			ScriptFunction FillByCylinder() { mixin(MGF!("mFillByCylinder", "Function Engine.ForceFieldShapeBox.FillByCylinder")()); }
-			ScriptFunction GetDrawComponent() { mixin(MGF!("mGetDrawComponent", "Function Engine.ForceFieldShapeBox.GetDrawComponent")()); }
+			ScriptFunction GetRadii() { mixin(MGF("mGetRadii", "Function Engine.ForceFieldShapeBox.GetRadii")); }
+			ScriptFunction FillBySphere() { mixin(MGF("mFillBySphere", "Function Engine.ForceFieldShapeBox.FillBySphere")); }
+			ScriptFunction FillByBox() { mixin(MGF("mFillByBox", "Function Engine.ForceFieldShapeBox.FillByBox")); }
+			ScriptFunction FillByCapsule() { mixin(MGF("mFillByCapsule", "Function Engine.ForceFieldShapeBox.FillByCapsule")); }
+			ScriptFunction FillByCylinder() { mixin(MGF("mFillByCylinder", "Function Engine.ForceFieldShapeBox.FillByCylinder")); }
+			ScriptFunction GetDrawComponent() { mixin(MGF("mGetDrawComponent", "Function Engine.ForceFieldShapeBox.GetDrawComponent")); }
 		}
 	}
 	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Shape'!

@@ -8,19 +8,19 @@ extern(C++) interface TrOrientedBoxComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrOrientedBoxComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrOrientedBoxComponent")); }
 	private static __gshared TrOrientedBoxComponent mDefaultProperties;
-	@property final static TrOrientedBoxComponent DefaultProperties() { mixin(MGDPC!(TrOrientedBoxComponent, "TrOrientedBoxComponent TribesGame.Default__TrOrientedBoxComponent")()); }
+	@property final static TrOrientedBoxComponent DefaultProperties() { mixin(MGDPC("TrOrientedBoxComponent", "TrOrientedBoxComponent TribesGame.Default__TrOrientedBoxComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetBoxSize;
-		public @property static final ScriptFunction SetBoxSize() { mixin(MGF!("mSetBoxSize", "Function TribesGame.TrOrientedBoxComponent.SetBoxSize")()); }
+		public @property static final ScriptFunction SetBoxSize() { mixin(MGF("mSetBoxSize", "Function TribesGame.TrOrientedBoxComponent.SetBoxSize")); }
 	}
 	@property final auto ref
 	{
-		float BoxLength() { mixin(MGPC!("float", 496)()); }
-		float BoxWidth() { mixin(MGPC!("float", 492)()); }
-		float BoxHeight() { mixin(MGPC!("float", 488)()); }
+		float BoxLength() { mixin(MGPC("float", 496)); }
+		float BoxWidth() { mixin(MGPC("float", 492)); }
+		float BoxHeight() { mixin(MGPC("float", 488)); }
 	}
 	final void SetBoxSize(float NewHeight, float NewLength, float NewWidth, bool* IsRadii = null)
 	{

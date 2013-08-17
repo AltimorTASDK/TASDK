@@ -11,9 +11,9 @@ extern(C++) interface GamePlayerController : PlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GamePlayerController")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GamePlayerController")); }
 	private static __gshared GamePlayerController mDefaultProperties;
-	@property final static GamePlayerController DefaultProperties() { mixin(MGDPC!(GamePlayerController, "GamePlayerController GameFramework.Default__GamePlayerController")()); }
+	@property final static GamePlayerController DefaultProperties() { mixin(MGDPC("GamePlayerController", "GamePlayerController GameFramework.Default__GamePlayerController")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,37 +37,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetUIPlayerIndex() { mixin(MGF!("mGetUIPlayerIndex", "Function GameFramework.GamePlayerController.GetUIPlayerIndex")()); }
-			ScriptFunction NotifyCrowdAgentRefresh() { mixin(MGF!("mNotifyCrowdAgentRefresh", "Function GameFramework.GamePlayerController.NotifyCrowdAgentRefresh")()); }
-			ScriptFunction NotifyCrowdAgentInRadius() { mixin(MGF!("mNotifyCrowdAgentInRadius", "Function GameFramework.GamePlayerController.NotifyCrowdAgentInRadius")()); }
-			ScriptFunction DoForceFeedbackForScreenShake() { mixin(MGF!("mDoForceFeedbackForScreenShake", "Function GameFramework.GamePlayerController.DoForceFeedbackForScreenShake")()); }
-			ScriptFunction SetSoundMode() { mixin(MGF!("mSetSoundMode", "Function GameFramework.GamePlayerController.SetSoundMode")()); }
-			ScriptFunction ShowLoadingMovie() { mixin(MGF!("mShowLoadingMovie", "Function GameFramework.GamePlayerController.ShowLoadingMovie")()); }
-			ScriptFunction KeepPlayingLoadingMovie() { mixin(MGF!("mKeepPlayingLoadingMovie", "Function GameFramework.GamePlayerController.KeepPlayingLoadingMovie")()); }
-			ScriptFunction ClientPlayMovie() { mixin(MGF!("mClientPlayMovie", "Function GameFramework.GamePlayerController.ClientPlayMovie")()); }
-			ScriptFunction ClientStopMovie() { mixin(MGF!("mClientStopMovie", "Function GameFramework.GamePlayerController.ClientStopMovie")()); }
-			ScriptFunction GetCurrentMovie() { mixin(MGF!("mGetCurrentMovie", "Function GameFramework.GamePlayerController.GetCurrentMovie")()); }
-			ScriptFunction CanUnpauseWarmup() { mixin(MGF!("mCanUnpauseWarmup", "Function GameFramework.GamePlayerController.CanUnpauseWarmup")()); }
-			ScriptFunction WarmupPause() { mixin(MGF!("mWarmupPause", "Function GameFramework.GamePlayerController.WarmupPause")()); }
-			ScriptFunction DoMemLeakChecking() { mixin(MGF!("mDoMemLeakChecking", "Function GameFramework.GamePlayerController.DoMemLeakChecking")()); }
-			ScriptFunction StopMemLeakChecking() { mixin(MGF!("mStopMemLeakChecking", "Function GameFramework.GamePlayerController.StopMemLeakChecking")()); }
-			ScriptFunction CallMemLeakCheck() { mixin(MGF!("mCallMemLeakCheck", "Function GameFramework.GamePlayerController.CallMemLeakCheck")()); }
-			ScriptFunction ClientColorFade() { mixin(MGF!("mClientColorFade", "Function GameFramework.GamePlayerController.ClientColorFade")()); }
+			ScriptFunction GetUIPlayerIndex() { mixin(MGF("mGetUIPlayerIndex", "Function GameFramework.GamePlayerController.GetUIPlayerIndex")); }
+			ScriptFunction NotifyCrowdAgentRefresh() { mixin(MGF("mNotifyCrowdAgentRefresh", "Function GameFramework.GamePlayerController.NotifyCrowdAgentRefresh")); }
+			ScriptFunction NotifyCrowdAgentInRadius() { mixin(MGF("mNotifyCrowdAgentInRadius", "Function GameFramework.GamePlayerController.NotifyCrowdAgentInRadius")); }
+			ScriptFunction DoForceFeedbackForScreenShake() { mixin(MGF("mDoForceFeedbackForScreenShake", "Function GameFramework.GamePlayerController.DoForceFeedbackForScreenShake")); }
+			ScriptFunction SetSoundMode() { mixin(MGF("mSetSoundMode", "Function GameFramework.GamePlayerController.SetSoundMode")); }
+			ScriptFunction ShowLoadingMovie() { mixin(MGF("mShowLoadingMovie", "Function GameFramework.GamePlayerController.ShowLoadingMovie")); }
+			ScriptFunction KeepPlayingLoadingMovie() { mixin(MGF("mKeepPlayingLoadingMovie", "Function GameFramework.GamePlayerController.KeepPlayingLoadingMovie")); }
+			ScriptFunction ClientPlayMovie() { mixin(MGF("mClientPlayMovie", "Function GameFramework.GamePlayerController.ClientPlayMovie")); }
+			ScriptFunction ClientStopMovie() { mixin(MGF("mClientStopMovie", "Function GameFramework.GamePlayerController.ClientStopMovie")); }
+			ScriptFunction GetCurrentMovie() { mixin(MGF("mGetCurrentMovie", "Function GameFramework.GamePlayerController.GetCurrentMovie")); }
+			ScriptFunction CanUnpauseWarmup() { mixin(MGF("mCanUnpauseWarmup", "Function GameFramework.GamePlayerController.CanUnpauseWarmup")); }
+			ScriptFunction WarmupPause() { mixin(MGF("mWarmupPause", "Function GameFramework.GamePlayerController.WarmupPause")); }
+			ScriptFunction DoMemLeakChecking() { mixin(MGF("mDoMemLeakChecking", "Function GameFramework.GamePlayerController.DoMemLeakChecking")); }
+			ScriptFunction StopMemLeakChecking() { mixin(MGF("mStopMemLeakChecking", "Function GameFramework.GamePlayerController.StopMemLeakChecking")); }
+			ScriptFunction CallMemLeakCheck() { mixin(MGF("mCallMemLeakCheck", "Function GameFramework.GamePlayerController.CallMemLeakCheck")); }
+			ScriptFunction ClientColorFade() { mixin(MGF("mClientColorFade", "Function GameFramework.GamePlayerController.ClientColorFade")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptName CurrentSoundMode() { mixin(MGPC!("ScriptName", 1456)()); }
-			float AgentAwareRadius() { mixin(MGPC!("float", 1452)()); }
+			ScriptName CurrentSoundMode() { mixin(MGPC("ScriptName", 1456)); }
+			float AgentAwareRadius() { mixin(MGPC("float", 1452)); }
 		}
-		bool bIsWarmupPaused() { mixin(MGBPC!(1448, 0x4)()); }
-		bool bIsWarmupPaused(bool val) { mixin(MSBPC!(1448, 0x4)()); }
-		bool bDebugCrowdAwareness() { mixin(MGBPC!(1448, 0x2)()); }
-		bool bDebugCrowdAwareness(bool val) { mixin(MSBPC!(1448, 0x2)()); }
-		bool bWarnCrowdMembers() { mixin(MGBPC!(1448, 0x1)()); }
-		bool bWarnCrowdMembers(bool val) { mixin(MSBPC!(1448, 0x1)()); }
+		bool bIsWarmupPaused() { mixin(MGBPC(1448, 0x4)); }
+		bool bIsWarmupPaused(bool val) { mixin(MSBPC(1448, 0x4)); }
+		bool bDebugCrowdAwareness() { mixin(MGBPC(1448, 0x2)); }
+		bool bDebugCrowdAwareness(bool val) { mixin(MSBPC(1448, 0x2)); }
+		bool bWarnCrowdMembers() { mixin(MGBPC(1448, 0x1)); }
+		bool bWarnCrowdMembers(bool val) { mixin(MSBPC(1448, 0x1)); }
 	}
 final:
 	int GetUIPlayerIndex()

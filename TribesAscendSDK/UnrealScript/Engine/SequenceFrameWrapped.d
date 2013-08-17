@@ -8,7 +8,7 @@ extern(C++) interface SequenceFrameWrapped : SequenceFrame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SequenceFrameWrapped")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SequenceFrameWrapped")); }
 	private static __gshared SequenceFrameWrapped mDefaultProperties;
-	@property final static SequenceFrameWrapped DefaultProperties() { mixin(MGDPC!(SequenceFrameWrapped, "SequenceFrameWrapped Engine.Default__SequenceFrameWrapped")()); }
+	@property final static SequenceFrameWrapped DefaultProperties() { mixin(MGDPC("SequenceFrameWrapped", "SequenceFrameWrapped Engine.Default__SequenceFrameWrapped")); }
 }

@@ -13,9 +13,9 @@ extern(C++) interface TrGame_TRTeamRabbit : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TRTeamRabbit")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGame_TRTeamRabbit")); }
 	private static __gshared TrGame_TRTeamRabbit mDefaultProperties;
-	@property final static TrGame_TRTeamRabbit DefaultProperties() { mixin(MGDPC!(TrGame_TRTeamRabbit, "TrGame_TRTeamRabbit TribesGame.Default__TrGame_TRTeamRabbit")()); }
+	@property final static TrGame_TRTeamRabbit DefaultProperties() { mixin(MGDPC("TrGame_TRTeamRabbit", "TrGame_TRTeamRabbit TribesGame.Default__TrGame_TRTeamRabbit")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,21 +38,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrGame_TRTeamRabbit.PostBeginPlay")()); }
-			ScriptFunction ResetLevel() { mixin(MGF!("mResetLevel", "Function TribesGame.TrGame_TRTeamRabbit.ResetLevel")()); }
-			ScriptFunction ResetScores() { mixin(MGF!("mResetScores", "Function TribesGame.TrGame_TRTeamRabbit.ResetScores")()); }
-			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrGame_TRTeamRabbit.ApplyServerSettings")()); }
-			ScriptFunction SpawnFlag() { mixin(MGF!("mSpawnFlag", "Function TribesGame.TrGame_TRTeamRabbit.SpawnFlag")()); }
-			ScriptFunction Killed() { mixin(MGF!("mKilled", "Function TribesGame.TrGame_TRTeamRabbit.Killed")()); }
-			ScriptFunction FlagDestoyed() { mixin(MGF!("mFlagDestoyed", "Function TribesGame.TrGame_TRTeamRabbit.FlagDestoyed")()); }
-			ScriptFunction PickedUpFlag() { mixin(MGF!("mPickedUpFlag", "Function TribesGame.TrGame_TRTeamRabbit.PickedUpFlag")()); }
-			ScriptFunction DroppedFlag() { mixin(MGF!("mDroppedFlag", "Function TribesGame.TrGame_TRTeamRabbit.DroppedFlag")()); }
-			ScriptFunction AwardFlagHolder() { mixin(MGF!("mAwardFlagHolder", "Function TribesGame.TrGame_TRTeamRabbit.AwardFlagHolder")()); }
-			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function TribesGame.TrGame_TRTeamRabbit.ScoreKill")()); }
-			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TRTeamRabbit.CheckScore")()); }
-			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function TribesGame.TrGame_TRTeamRabbit.CheckEndGame")()); }
-			ScriptFunction RatePlayerStart() { mixin(MGF!("mRatePlayerStart", "Function TribesGame.TrGame_TRTeamRabbit.RatePlayerStart")()); }
-			ScriptFunction GetGameTypeId() { mixin(MGF!("mGetGameTypeId", "Function TribesGame.TrGame_TRTeamRabbit.GetGameTypeId")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrGame_TRTeamRabbit.PostBeginPlay")); }
+			ScriptFunction ResetLevel() { mixin(MGF("mResetLevel", "Function TribesGame.TrGame_TRTeamRabbit.ResetLevel")); }
+			ScriptFunction ResetScores() { mixin(MGF("mResetScores", "Function TribesGame.TrGame_TRTeamRabbit.ResetScores")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF("mApplyServerSettings", "Function TribesGame.TrGame_TRTeamRabbit.ApplyServerSettings")); }
+			ScriptFunction SpawnFlag() { mixin(MGF("mSpawnFlag", "Function TribesGame.TrGame_TRTeamRabbit.SpawnFlag")); }
+			ScriptFunction Killed() { mixin(MGF("mKilled", "Function TribesGame.TrGame_TRTeamRabbit.Killed")); }
+			ScriptFunction FlagDestoyed() { mixin(MGF("mFlagDestoyed", "Function TribesGame.TrGame_TRTeamRabbit.FlagDestoyed")); }
+			ScriptFunction PickedUpFlag() { mixin(MGF("mPickedUpFlag", "Function TribesGame.TrGame_TRTeamRabbit.PickedUpFlag")); }
+			ScriptFunction DroppedFlag() { mixin(MGF("mDroppedFlag", "Function TribesGame.TrGame_TRTeamRabbit.DroppedFlag")); }
+			ScriptFunction AwardFlagHolder() { mixin(MGF("mAwardFlagHolder", "Function TribesGame.TrGame_TRTeamRabbit.AwardFlagHolder")); }
+			ScriptFunction ScoreKill() { mixin(MGF("mScoreKill", "Function TribesGame.TrGame_TRTeamRabbit.ScoreKill")); }
+			ScriptFunction CheckScore() { mixin(MGF("mCheckScore", "Function TribesGame.TrGame_TRTeamRabbit.CheckScore")); }
+			ScriptFunction CheckEndGame() { mixin(MGF("mCheckEndGame", "Function TribesGame.TrGame_TRTeamRabbit.CheckEndGame")); }
+			ScriptFunction RatePlayerStart() { mixin(MGF("mRatePlayerStart", "Function TribesGame.TrGame_TRTeamRabbit.RatePlayerStart")); }
+			ScriptFunction GetGameTypeId() { mixin(MGF("mGetGameTypeId", "Function TribesGame.TrGame_TRTeamRabbit.GetGameTypeId")); }
 		}
 	}
 	static struct Constants
@@ -66,20 +66,20 @@ public extern(D):
 	static struct PendingRoundStart
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TRTeamRabbit.PendingRoundStart")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrGame_TRTeamRabbit.PendingRoundStart")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrFlagTeamRabbit m_TeamRabbitFlag() { mixin(MGPC!("TrFlagTeamRabbit", 1460)()); }
-			int m_nBuffAmount() { mixin(MGPC!("int", 1468)()); }
-			ubyte m_nBuffedTeamIndex() { mixin(MGPC!("ubyte", 1464)()); }
+			TrFlagTeamRabbit m_TeamRabbitFlag() { mixin(MGPC("TrFlagTeamRabbit", 1460)); }
+			int m_nBuffAmount() { mixin(MGPC("int", 1468)); }
+			ubyte m_nBuffedTeamIndex() { mixin(MGPC("ubyte", 1464)); }
 		}
-		bool m_bPlayedAnnouncerRally() { mixin(MGBPC!(1456, 0x2)()); }
-		bool m_bPlayedAnnouncerRally(bool val) { mixin(MSBPC!(1456, 0x2)()); }
-		bool m_bSpawnFlagOnNextKill() { mixin(MGBPC!(1456, 0x1)()); }
-		bool m_bSpawnFlagOnNextKill(bool val) { mixin(MSBPC!(1456, 0x1)()); }
+		bool m_bPlayedAnnouncerRally() { mixin(MGBPC(1456, 0x2)); }
+		bool m_bPlayedAnnouncerRally(bool val) { mixin(MSBPC(1456, 0x2)); }
+		bool m_bSpawnFlagOnNextKill() { mixin(MGBPC(1456, 0x1)); }
+		bool m_bSpawnFlagOnNextKill(bool val) { mixin(MSBPC(1456, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

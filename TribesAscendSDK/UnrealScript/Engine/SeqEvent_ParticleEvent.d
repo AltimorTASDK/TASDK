@@ -8,13 +8,13 @@ extern(C++) interface SeqEvent_ParticleEvent : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_ParticleEvent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SeqEvent_ParticleEvent")); }
 	private static __gshared SeqEvent_ParticleEvent mDefaultProperties;
-	@property final static SeqEvent_ParticleEvent DefaultProperties() { mixin(MGDPC!(SeqEvent_ParticleEvent, "SeqEvent_ParticleEvent Engine.Default__SeqEvent_ParticleEvent")()); }
+	@property final static SeqEvent_ParticleEvent DefaultProperties() { mixin(MGDPC("SeqEvent_ParticleEvent", "SeqEvent_ParticleEvent Engine.Default__SeqEvent_ParticleEvent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqEvent_ParticleEvent.GetObjClassVersion")()); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF("mGetObjClassVersion", "Function Engine.SeqEvent_ParticleEvent.GetObjClassVersion")); }
 	}
 	enum EParticleEventOutputType : ubyte
 	{
@@ -28,15 +28,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector EventNormal() { mixin(MGPC!("Vector", 292)()); }
-			float EventParticleTime() { mixin(MGPC!("float", 288)()); }
-			Vector EventVelocity() { mixin(MGPC!("Vector", 276)()); }
-			float EventEmitterTime() { mixin(MGPC!("float", 272)()); }
-			Vector EventPosition() { mixin(MGPC!("Vector", 260)()); }
-			SeqEvent_ParticleEvent.EParticleEventOutputType EventType() { mixin(MGPC!("SeqEvent_ParticleEvent.EParticleEventOutputType", 256)()); }
+			Vector EventNormal() { mixin(MGPC("Vector", 292)); }
+			float EventParticleTime() { mixin(MGPC("float", 288)); }
+			Vector EventVelocity() { mixin(MGPC("Vector", 276)); }
+			float EventEmitterTime() { mixin(MGPC("float", 272)); }
+			Vector EventPosition() { mixin(MGPC("Vector", 260)); }
+			SeqEvent_ParticleEvent.EParticleEventOutputType EventType() { mixin(MGPC("SeqEvent_ParticleEvent.EParticleEventOutputType", 256)); }
 		}
-		bool UseRelfectedImpactVector() { mixin(MGBPC!(304, 0x1)()); }
-		bool UseRelfectedImpactVector(bool val) { mixin(MSBPC!(304, 0x1)()); }
+		bool UseRelfectedImpactVector() { mixin(MGBPC(304, 0x1)); }
+		bool UseRelfectedImpactVector(bool val) { mixin(MSBPC(304, 0x1)); }
 	}
 	final static int GetObjClassVersion()
 	{

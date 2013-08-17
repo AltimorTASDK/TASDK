@@ -8,7 +8,7 @@ extern(C++) interface TrCamera_BloodEagle : TrCamera_SpectatorBookmark
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCamera_BloodEagle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCamera_BloodEagle")); }
 	private static __gshared TrCamera_BloodEagle mDefaultProperties;
-	@property final static TrCamera_BloodEagle DefaultProperties() { mixin(MGDPC!(TrCamera_BloodEagle, "TrCamera_BloodEagle TribesGame.Default__TrCamera_BloodEagle")()); }
+	@property final static TrCamera_BloodEagle DefaultProperties() { mixin(MGDPC("TrCamera_BloodEagle", "TrCamera_BloodEagle TribesGame.Default__TrCamera_BloodEagle")); }
 }

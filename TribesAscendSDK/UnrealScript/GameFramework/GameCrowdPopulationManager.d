@@ -17,9 +17,9 @@ extern(C++) interface GameCrowdPopulationManager : CrowdPopulationManagerBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdPopulationManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdPopulationManager")); }
 	private static __gshared GameCrowdPopulationManager mDefaultProperties;
-	@property final static GameCrowdPopulationManager DefaultProperties() { mixin(MGDPC!(GameCrowdPopulationManager, "GameCrowdPopulationManager GameFramework.Default__GameCrowdPopulationManager")()); }
+	@property final static GameCrowdPopulationManager DefaultProperties() { mixin(MGDPC("GameCrowdPopulationManager", "GameCrowdPopulationManager GameFramework.Default__GameCrowdPopulationManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,75 +46,75 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function GameFramework.GameCrowdPopulationManager.PostBeginPlay")()); }
-			ScriptFunction NotifyPathChanged() { mixin(MGF!("mNotifyPathChanged", "Function GameFramework.GameCrowdPopulationManager.NotifyPathChanged")()); }
-			ScriptFunction GetMaxSpawnDist() { mixin(MGF!("mGetMaxSpawnDist", "Function GameFramework.GameCrowdPopulationManager.GetMaxSpawnDist")()); }
-			ScriptFunction AddSpawnPoint() { mixin(MGF!("mAddSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.AddSpawnPoint")()); }
-			ScriptFunction RemoveSpawnPoint() { mixin(MGF!("mRemoveSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.RemoveSpawnPoint")()); }
-			ScriptFunction OnGameCrowdPopulationManagerToggle() { mixin(MGF!("mOnGameCrowdPopulationManagerToggle", "Function GameFramework.GameCrowdPopulationManager.OnGameCrowdPopulationManagerToggle")()); }
-			ScriptFunction FlushAgents() { mixin(MGF!("mFlushAgents", "Function GameFramework.GameCrowdPopulationManager.FlushAgents")()); }
-			ScriptFunction AgentDestroyed() { mixin(MGF!("mAgentDestroyed", "Function GameFramework.GameCrowdPopulationManager.AgentDestroyed")()); }
-			ScriptFunction AddToAgentPool() { mixin(MGF!("mAddToAgentPool", "Function GameFramework.GameCrowdPopulationManager.AddToAgentPool")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function GameFramework.GameCrowdPopulationManager.DisplayDebug")()); }
-			ScriptFunction IsSpawningActive() { mixin(MGF!("mIsSpawningActive", "Function GameFramework.GameCrowdPopulationManager.IsSpawningActive")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function GameFramework.GameCrowdPopulationManager.Tick")()); }
-			ScriptFunction PickSpawnPoint() { mixin(MGF!("mPickSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.PickSpawnPoint")()); }
-			ScriptFunction PrioritizeSpawnPoints() { mixin(MGF!("mPrioritizeSpawnPoints", "Function GameFramework.GameCrowdPopulationManager.PrioritizeSpawnPoints")()); }
-			ScriptFunction AnalyzeSpawnPoints() { mixin(MGF!("mAnalyzeSpawnPoints", "Function GameFramework.GameCrowdPopulationManager.AnalyzeSpawnPoints")()); }
-			ScriptFunction AddPrioritizedSpawnPoint() { mixin(MGF!("mAddPrioritizedSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.AddPrioritizedSpawnPoint")()); }
-			ScriptFunction ValidateSpawnAt() { mixin(MGF!("mValidateSpawnAt", "Function GameFramework.GameCrowdPopulationManager.ValidateSpawnAt")()); }
-			ScriptFunction SpawnAgent() { mixin(MGF!("mSpawnAgent", "Function GameFramework.GameCrowdPopulationManager.SpawnAgent")()); }
-			ScriptFunction CreateNewAgent() { mixin(MGF!("mCreateNewAgent", "Function GameFramework.GameCrowdPopulationManager.CreateNewAgent")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function GameFramework.GameCrowdPopulationManager.PostBeginPlay")); }
+			ScriptFunction NotifyPathChanged() { mixin(MGF("mNotifyPathChanged", "Function GameFramework.GameCrowdPopulationManager.NotifyPathChanged")); }
+			ScriptFunction GetMaxSpawnDist() { mixin(MGF("mGetMaxSpawnDist", "Function GameFramework.GameCrowdPopulationManager.GetMaxSpawnDist")); }
+			ScriptFunction AddSpawnPoint() { mixin(MGF("mAddSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.AddSpawnPoint")); }
+			ScriptFunction RemoveSpawnPoint() { mixin(MGF("mRemoveSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.RemoveSpawnPoint")); }
+			ScriptFunction OnGameCrowdPopulationManagerToggle() { mixin(MGF("mOnGameCrowdPopulationManagerToggle", "Function GameFramework.GameCrowdPopulationManager.OnGameCrowdPopulationManagerToggle")); }
+			ScriptFunction FlushAgents() { mixin(MGF("mFlushAgents", "Function GameFramework.GameCrowdPopulationManager.FlushAgents")); }
+			ScriptFunction AgentDestroyed() { mixin(MGF("mAgentDestroyed", "Function GameFramework.GameCrowdPopulationManager.AgentDestroyed")); }
+			ScriptFunction AddToAgentPool() { mixin(MGF("mAddToAgentPool", "Function GameFramework.GameCrowdPopulationManager.AddToAgentPool")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function GameFramework.GameCrowdPopulationManager.DisplayDebug")); }
+			ScriptFunction IsSpawningActive() { mixin(MGF("mIsSpawningActive", "Function GameFramework.GameCrowdPopulationManager.IsSpawningActive")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function GameFramework.GameCrowdPopulationManager.Tick")); }
+			ScriptFunction PickSpawnPoint() { mixin(MGF("mPickSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.PickSpawnPoint")); }
+			ScriptFunction PrioritizeSpawnPoints() { mixin(MGF("mPrioritizeSpawnPoints", "Function GameFramework.GameCrowdPopulationManager.PrioritizeSpawnPoints")); }
+			ScriptFunction AnalyzeSpawnPoints() { mixin(MGF("mAnalyzeSpawnPoints", "Function GameFramework.GameCrowdPopulationManager.AnalyzeSpawnPoints")); }
+			ScriptFunction AddPrioritizedSpawnPoint() { mixin(MGF("mAddPrioritizedSpawnPoint", "Function GameFramework.GameCrowdPopulationManager.AddPrioritizedSpawnPoint")); }
+			ScriptFunction ValidateSpawnAt() { mixin(MGF("mValidateSpawnAt", "Function GameFramework.GameCrowdPopulationManager.ValidateSpawnAt")); }
+			ScriptFunction SpawnAgent() { mixin(MGF("mSpawnAgent", "Function GameFramework.GameCrowdPopulationManager.SpawnAgent")); }
+			ScriptFunction CreateNewAgent() { mixin(MGF("mCreateNewAgent", "Function GameFramework.GameCrowdPopulationManager.CreateNewAgent")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo) AgentArchetypes() { mixin(MGPC!("ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo)", 504)()); }
-			ScriptArray!(GameCrowdAgent) AgentPool() { mixin(MGPC!("ScriptArray!(GameCrowdAgent)", 516)()); }
-			ScriptArray!(GameCrowdDestination) PrioritizedSpawnPoints() { mixin(MGPC!("ScriptArray!(GameCrowdDestination)", 556)()); }
-			ScriptArray!(GameCrowdDestination) PotentialSpawnPoints() { mixin(MGPC!("ScriptArray!(GameCrowdDestination)", 572)()); }
-			GameCrowdAgent QueryingAgent() { mixin(MGPC!("GameCrowdAgent", 624)()); }
+			ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo) AgentArchetypes() { mixin(MGPC("ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo)", 504)); }
+			ScriptArray!(GameCrowdAgent) AgentPool() { mixin(MGPC("ScriptArray!(GameCrowdAgent)", 516)); }
+			ScriptArray!(GameCrowdDestination) PrioritizedSpawnPoints() { mixin(MGPC("ScriptArray!(GameCrowdDestination)", 556)); }
+			ScriptArray!(GameCrowdDestination) PotentialSpawnPoints() { mixin(MGPC("ScriptArray!(GameCrowdDestination)", 572)); }
+			GameCrowdAgent QueryingAgent() { mixin(MGPC("GameCrowdAgent", 624)); }
 			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
-			ScriptClass NavigationHandleClass() { mixin(MGPC!("ScriptClass", 616)()); }
-			float InitialPopulationPct() { mixin(MGPC!("float", 612)()); }
-			float HeadVisibilityOffset() { mixin(MGPC!("float", 608)()); }
-			int KilledCount() { mixin(MGPC!("int", 604)()); }
-			int PoolCount() { mixin(MGPC!("int", 600)()); }
-			int SpawnedCount() { mixin(MGPC!("int", 596)()); }
-			float MinBehindSpawnDistSq() { mixin(MGPC!("float", 592)()); }
-			float MaxSpawnDistSq() { mixin(MGPC!("float", 588)()); }
-			float MaxSpawnDist() { mixin(MGPC!("float", 584)()); }
-			float PlayerPositionPredictionTime() { mixin(MGPC!("float", 568)()); }
-			int PrioritizationUpdateIndex() { mixin(MGPC!("int", 552)()); }
-			int PrioritizationIndex() { mixin(MGPC!("int", 548)()); }
-			float SpawnPrioritizationInterval() { mixin(MGPC!("float", 544)()); }
-			float AgentWarmupTime() { mixin(MGPC!("float", 540)()); }
-			LightComponent.LightingChannelContainer AgentLightingChannel() { mixin(MGPC!("LightComponent.LightingChannelContainer", 536)()); }
-			int AgentCount() { mixin(MGPC!("int", 532)()); }
-			int MaxAgentPoolSize() { mixin(MGPC!("int", 528)()); }
-			float AgentFrequencySum() { mixin(MGPC!("float", 500)()); }
-			float Remainder() { mixin(MGPC!("float", 496)()); }
-			float SplitScreenNumReduction() { mixin(MGPC!("float", 492)()); }
-			int SpawnNum() { mixin(MGPC!("int", 488)()); }
-			float SpawnRate() { mixin(MGPC!("float", 484)()); }
-			UObject.Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC!("UObject.Pointer", 476)()); }
+			ScriptClass NavigationHandleClass() { mixin(MGPC("ScriptClass", 616)); }
+			float InitialPopulationPct() { mixin(MGPC("float", 612)); }
+			float HeadVisibilityOffset() { mixin(MGPC("float", 608)); }
+			int KilledCount() { mixin(MGPC("int", 604)); }
+			int PoolCount() { mixin(MGPC("int", 600)); }
+			int SpawnedCount() { mixin(MGPC("int", 596)); }
+			float MinBehindSpawnDistSq() { mixin(MGPC("float", 592)); }
+			float MaxSpawnDistSq() { mixin(MGPC("float", 588)); }
+			float MaxSpawnDist() { mixin(MGPC("float", 584)); }
+			float PlayerPositionPredictionTime() { mixin(MGPC("float", 568)); }
+			int PrioritizationUpdateIndex() { mixin(MGPC("int", 552)); }
+			int PrioritizationIndex() { mixin(MGPC("int", 548)); }
+			float SpawnPrioritizationInterval() { mixin(MGPC("float", 544)); }
+			float AgentWarmupTime() { mixin(MGPC("float", 540)); }
+			LightComponent.LightingChannelContainer AgentLightingChannel() { mixin(MGPC("LightComponent.LightingChannelContainer", 536)); }
+			int AgentCount() { mixin(MGPC("int", 532)); }
+			int MaxAgentPoolSize() { mixin(MGPC("int", 528)); }
+			float AgentFrequencySum() { mixin(MGPC("float", 500)); }
+			float Remainder() { mixin(MGPC("float", 496)); }
+			float SplitScreenNumReduction() { mixin(MGPC("float", 492)); }
+			int SpawnNum() { mixin(MGPC("int", 488)); }
+			float SpawnRate() { mixin(MGPC("float", 484)); }
+			UObject.Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC("UObject.Pointer", 476)); }
 		}
-		bool bWarmupPosition() { mixin(MGBPC!(480, 0x40)()); }
-		bool bWarmupPosition(bool val) { mixin(MSBPC!(480, 0x40)()); }
-		bool bHaveInitialPopulation() { mixin(MGBPC!(480, 0x20)()); }
-		bool bHaveInitialPopulation(bool val) { mixin(MSBPC!(480, 0x20)()); }
-		bool bForceNavMeshPathing() { mixin(MGBPC!(480, 0x10)()); }
-		bool bForceNavMeshPathing(bool val) { mixin(MSBPC!(480, 0x10)()); }
-		bool bForceObstacleChecking() { mixin(MGBPC!(480, 0x8)()); }
-		bool bForceObstacleChecking(bool val) { mixin(MSBPC!(480, 0x8)()); }
-		bool bCastShadows() { mixin(MGBPC!(480, 0x4)()); }
-		bool bCastShadows(bool val) { mixin(MSBPC!(480, 0x4)()); }
-		bool bEnableCrowdLightEnvironment() { mixin(MGBPC!(480, 0x2)()); }
-		bool bEnableCrowdLightEnvironment(bool val) { mixin(MSBPC!(480, 0x2)()); }
-		bool bSpawningActive() { mixin(MGBPC!(480, 0x1)()); }
-		bool bSpawningActive(bool val) { mixin(MSBPC!(480, 0x1)()); }
+		bool bWarmupPosition() { mixin(MGBPC(480, 0x40)); }
+		bool bWarmupPosition(bool val) { mixin(MSBPC(480, 0x40)); }
+		bool bHaveInitialPopulation() { mixin(MGBPC(480, 0x20)); }
+		bool bHaveInitialPopulation(bool val) { mixin(MSBPC(480, 0x20)); }
+		bool bForceNavMeshPathing() { mixin(MGBPC(480, 0x10)); }
+		bool bForceNavMeshPathing(bool val) { mixin(MSBPC(480, 0x10)); }
+		bool bForceObstacleChecking() { mixin(MGBPC(480, 0x8)); }
+		bool bForceObstacleChecking(bool val) { mixin(MSBPC(480, 0x8)); }
+		bool bCastShadows() { mixin(MGBPC(480, 0x4)); }
+		bool bCastShadows(bool val) { mixin(MSBPC(480, 0x4)); }
+		bool bEnableCrowdLightEnvironment() { mixin(MGBPC(480, 0x2)); }
+		bool bEnableCrowdLightEnvironment(bool val) { mixin(MSBPC(480, 0x2)); }
+		bool bSpawningActive() { mixin(MGBPC(480, 0x1)); }
+		bool bSpawningActive(bool val) { mixin(MSBPC(480, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

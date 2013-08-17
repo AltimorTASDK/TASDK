@@ -8,9 +8,9 @@ extern(C++) interface ForceFieldShape : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ForceFieldShape")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ForceFieldShape")); }
 	private static __gshared ForceFieldShape mDefaultProperties;
-	@property final static ForceFieldShape DefaultProperties() { mixin(MGDPC!(ForceFieldShape, "ForceFieldShape Engine.Default__ForceFieldShape")()); }
+	@property final static ForceFieldShape DefaultProperties() { mixin(MGDPC("ForceFieldShape", "ForceFieldShape Engine.Default__ForceFieldShape")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillBySphere() { mixin(MGF!("mFillBySphere", "Function Engine.ForceFieldShape.FillBySphere")()); }
-			ScriptFunction FillByBox() { mixin(MGF!("mFillByBox", "Function Engine.ForceFieldShape.FillByBox")()); }
-			ScriptFunction FillByCapsule() { mixin(MGF!("mFillByCapsule", "Function Engine.ForceFieldShape.FillByCapsule")()); }
-			ScriptFunction FillByCylinder() { mixin(MGF!("mFillByCylinder", "Function Engine.ForceFieldShape.FillByCylinder")()); }
-			ScriptFunction GetDrawComponent() { mixin(MGF!("mGetDrawComponent", "Function Engine.ForceFieldShape.GetDrawComponent")()); }
+			ScriptFunction FillBySphere() { mixin(MGF("mFillBySphere", "Function Engine.ForceFieldShape.FillBySphere")); }
+			ScriptFunction FillByBox() { mixin(MGF("mFillByBox", "Function Engine.ForceFieldShape.FillByBox")); }
+			ScriptFunction FillByCapsule() { mixin(MGF("mFillByCapsule", "Function Engine.ForceFieldShape.FillByCapsule")); }
+			ScriptFunction FillByCylinder() { mixin(MGF("mFillByCylinder", "Function Engine.ForceFieldShape.FillByCylinder")); }
+			ScriptFunction GetDrawComponent() { mixin(MGF("mGetDrawComponent", "Function Engine.ForceFieldShape.GetDrawComponent")); }
 		}
 	}
 final:

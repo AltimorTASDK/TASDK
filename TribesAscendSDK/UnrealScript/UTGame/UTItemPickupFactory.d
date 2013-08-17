@@ -12,9 +12,9 @@ extern(C++) interface UTItemPickupFactory : UTPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTItemPickupFactory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTItemPickupFactory")); }
 	private static __gshared UTItemPickupFactory mDefaultProperties;
-	@property final static UTItemPickupFactory DefaultProperties() { mixin(MGDPC!(UTItemPickupFactory, "UTItemPickupFactory UTGame.Default__UTItemPickupFactory")()); }
+	@property final static UTItemPickupFactory DefaultProperties() { mixin(MGDPC("UTItemPickupFactory", "UTItemPickupFactory UTGame.Default__UTItemPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,20 +28,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitializePickup() { mixin(MGF!("mInitializePickup", "Function UTGame.UTItemPickupFactory.InitializePickup")()); }
-			ScriptFunction GetLocalString() { mixin(MGF!("mGetLocalString", "Function UTGame.UTItemPickupFactory.GetLocalString")()); }
-			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTItemPickupFactory.SpawnCopyFor")()); }
-			ScriptFunction SetRespawn() { mixin(MGF!("mSetRespawn", "Function UTGame.UTItemPickupFactory.SetRespawn")()); }
-			ScriptFunction GetRespawnTime() { mixin(MGF!("mGetRespawnTime", "Function UTGame.UTItemPickupFactory.GetRespawnTime")()); }
-			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTItemPickupFactory.BotDesireability")()); }
+			ScriptFunction InitializePickup() { mixin(MGF("mInitializePickup", "Function UTGame.UTItemPickupFactory.InitializePickup")); }
+			ScriptFunction GetLocalString() { mixin(MGF("mGetLocalString", "Function UTGame.UTItemPickupFactory.GetLocalString")); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF("mSpawnCopyFor", "Function UTGame.UTItemPickupFactory.SpawnCopyFor")); }
+			ScriptFunction SetRespawn() { mixin(MGF("mSetRespawn", "Function UTGame.UTItemPickupFactory.SetRespawn")); }
+			ScriptFunction GetRespawnTime() { mixin(MGF("mGetRespawnTime", "Function UTGame.UTItemPickupFactory.GetRespawnTime")); }
+			ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function UTGame.UTItemPickupFactory.BotDesireability")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString PickupMessage() { mixin(MGPC!("ScriptString", 948)()); }
-		ScriptString UseHintMessage() { mixin(MGPC!("ScriptString", 964)()); }
-		float RespawnTime() { mixin(MGPC!("float", 960)()); }
-		SoundCue PickupSound() { mixin(MGPC!("SoundCue", 944)()); }
+		ScriptString PickupMessage() { mixin(MGPC("ScriptString", 948)); }
+		ScriptString UseHintMessage() { mixin(MGPC("ScriptString", 964)); }
+		float RespawnTime() { mixin(MGPC("float", 960)); }
+		SoundCue PickupSound() { mixin(MGPC("SoundCue", 944)); }
 	}
 final:
 	void InitializePickup()

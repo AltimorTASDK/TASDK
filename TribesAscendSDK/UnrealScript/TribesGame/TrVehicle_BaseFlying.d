@@ -9,9 +9,9 @@ extern(C++) interface TrVehicle_BaseFlying : TrVehicle
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicle_BaseFlying")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicle_BaseFlying")); }
 	private static __gshared TrVehicle_BaseFlying mDefaultProperties;
-	@property final static TrVehicle_BaseFlying DefaultProperties() { mixin(MGDPC!(TrVehicle_BaseFlying, "TrVehicle_BaseFlying TribesGame.Default__TrVehicle_BaseFlying")()); }
+	@property final static TrVehicle_BaseFlying DefaultProperties() { mixin(MGDPC("TrVehicle_BaseFlying", "TrVehicle_BaseFlying TribesGame.Default__TrVehicle_BaseFlying")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrVehicle_BaseFlying.PostBeginPlay")()); }
-			ScriptFunction CreateParticleSystems() { mixin(MGF!("mCreateParticleSystems", "Function TribesGame.TrVehicle_BaseFlying.CreateParticleSystems")()); }
-			ScriptFunction SetInputs() { mixin(MGF!("mSetInputs", "Function TribesGame.TrVehicle_BaseFlying.SetInputs")()); }
-			ScriptFunction VehicleCalcCamera() { mixin(MGF!("mVehicleCalcCamera", "Function TribesGame.TrVehicle_BaseFlying.VehicleCalcCamera")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrVehicle_BaseFlying.PostBeginPlay")); }
+			ScriptFunction CreateParticleSystems() { mixin(MGF("mCreateParticleSystems", "Function TribesGame.TrVehicle_BaseFlying.CreateParticleSystems")); }
+			ScriptFunction SetInputs() { mixin(MGF("mSetInputs", "Function TribesGame.TrVehicle_BaseFlying.SetInputs")); }
+			ScriptFunction VehicleCalcCamera() { mixin(MGF("mVehicleCalcCamera", "Function TribesGame.TrVehicle_BaseFlying.VehicleCalcCamera")); }
 		}
 	}
 	struct FlyingParticleEffects
@@ -34,37 +34,37 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrVehicle_BaseFlying.FlyingParticleEffects")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrVehicle_BaseFlying.FlyingParticleEffects")); }
 		@property final
 		{
 			auto ref
 			{
 				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ParticleEffect'!
-				ParticleSystem ParticleTemplate() { mixin(MGPS!("ParticleSystem", 12)()); }
-				ScriptName SocketToAttach() { mixin(MGPS!("ScriptName", 4)()); }
+				ParticleSystem ParticleTemplate() { mixin(MGPS("ParticleSystem", 12)); }
+				ScriptName SocketToAttach() { mixin(MGPS("ScriptName", 4)); }
 			}
-			bool bIsAttachedToBoost() { mixin(MGBPS!(0, 0x1)()); }
-			bool bIsAttachedToBoost(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bIsAttachedToBoost() { mixin(MGBPS(0, 0x1)); }
+			bool bIsAttachedToBoost(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) LeftEngineParticles() { mixin(MGPC!("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3212)()); }
-			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) MidEngineParticles() { mixin(MGPC!("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3224)()); }
-			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) RightEngineParticles() { mixin(MGPC!("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3236)()); }
-			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) LeftContrailParticles() { mixin(MGPC!("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3248)()); }
-			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) RightContrailParticles() { mixin(MGPC!("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3260)()); }
-			float m_fBoostThrustInvDuration() { mixin(MGPC!("float", 3284)()); }
-			float m_fBoostThrustBuildUp() { mixin(MGPC!("float", 3280)()); }
-			float m_fThrustInvDuration() { mixin(MGPC!("float", 3276)()); }
-			float m_fThrustBuildUp() { mixin(MGPC!("float", 3272)()); }
+			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) LeftEngineParticles() { mixin(MGPC("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3212)); }
+			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) MidEngineParticles() { mixin(MGPC("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3224)); }
+			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) RightEngineParticles() { mixin(MGPC("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3236)); }
+			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) LeftContrailParticles() { mixin(MGPC("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3248)); }
+			ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects) RightContrailParticles() { mixin(MGPC("ScriptArray!(TrVehicle_BaseFlying.FlyingParticleEffects)", 3260)); }
+			float m_fBoostThrustInvDuration() { mixin(MGPC("float", 3284)); }
+			float m_fBoostThrustBuildUp() { mixin(MGPC("float", 3280)); }
+			float m_fThrustInvDuration() { mixin(MGPC("float", 3276)); }
+			float m_fThrustBuildUp() { mixin(MGPC("float", 3272)); }
 		}
-		bool m_bCanAutoLevelVehicle() { mixin(MGBPC!(3288, 0x2)()); }
-		bool m_bCanAutoLevelVehicle(bool val) { mixin(MSBPC!(3288, 0x2)()); }
-		bool m_bFreeLook() { mixin(MGBPC!(3288, 0x1)()); }
-		bool m_bFreeLook(bool val) { mixin(MSBPC!(3288, 0x1)()); }
+		bool m_bCanAutoLevelVehicle() { mixin(MGBPC(3288, 0x2)); }
+		bool m_bCanAutoLevelVehicle(bool val) { mixin(MSBPC(3288, 0x2)); }
+		bool m_bFreeLook() { mixin(MGBPC(3288, 0x1)); }
+		bool m_bFreeLook(bool val) { mixin(MSBPC(3288, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

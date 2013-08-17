@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_ServerEditCallin : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ServerEditCallin")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_ServerEditCallin")); }
 	private static __gshared GFxTrPage_ServerEditCallin mDefaultProperties;
-	@property final static GFxTrPage_ServerEditCallin DefaultProperties() { mixin(MGDPC!(GFxTrPage_ServerEditCallin, "GFxTrPage_ServerEditCallin TribesGame.Default__GFxTrPage_ServerEditCallin")()); }
+	@property final static GFxTrPage_ServerEditCallin DefaultProperties() { mixin(MGDPC("GFxTrPage_ServerEditCallin", "GFxTrPage_ServerEditCallin TribesGame.Default__GFxTrPage_ServerEditCallin")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,38 +30,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ServerEditCallin.SpecialAction")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ServerEditCallin.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ServerEditCallin.FillOption")()); }
-			ScriptFunction SetSubTitle() { mixin(MGF!("mSetSubTitle", "Function TribesGame.GFxTrPage_ServerEditCallin.SetSubTitle")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ServerEditCallin.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ServerEditCallin.PopupComplete")()); }
-			ScriptFunction ShowBoundsError() { mixin(MGF!("mShowBoundsError", "Function TribesGame.GFxTrPage_ServerEditCallin.ShowBoundsError")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ServerEditCallin.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ServerEditCallin.FillDescription")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ServerEditCallin.ShowModel")()); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_ServerEditCallin.SpecialAction")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_ServerEditCallin.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_ServerEditCallin.FillOption")); }
+			ScriptFunction SetSubTitle() { mixin(MGF("mSetSubTitle", "Function TribesGame.GFxTrPage_ServerEditCallin.SetSubTitle")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_ServerEditCallin.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_ServerEditCallin.PopupComplete")); }
+			ScriptFunction ShowBoundsError() { mixin(MGF("mShowBoundsError", "Function TribesGame.GFxTrPage_ServerEditCallin.ShowBoundsError")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_ServerEditCallin.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_ServerEditCallin.FillDescription")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_ServerEditCallin.ShowModel")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int CallinType() { mixin(MGPC!("int", 376)()); }
-			int popupIndex() { mixin(MGPC!("int", 396)()); }
-			int BuildupIndex() { mixin(MGPC!("int", 392)()); }
-			int CooldownIndex() { mixin(MGPC!("int", 388)()); }
-			int PriceIndex() { mixin(MGPC!("int", 384)()); }
-			int EnabledIndex() { mixin(MGPC!("int", 380)()); }
-			int ORBNumber() { mixin(MGPC!("int", 372)()); }
-			int SUPNumber() { mixin(MGPC!("int", 368)()); }
-			int TACNumber() { mixin(MGPC!("int", 364)()); }
-			int MaxBOunds() { mixin(MGPC!("int", 360)()); }
-			int MinBounds() { mixin(MGPC!("int", 356)()); }
+			int CallinType() { mixin(MGPC("int", 376)); }
+			int popupIndex() { mixin(MGPC("int", 396)); }
+			int BuildupIndex() { mixin(MGPC("int", 392)); }
+			int CooldownIndex() { mixin(MGPC("int", 388)); }
+			int PriceIndex() { mixin(MGPC("int", 384)); }
+			int EnabledIndex() { mixin(MGPC("int", 380)); }
+			int ORBNumber() { mixin(MGPC("int", 372)); }
+			int SUPNumber() { mixin(MGPC("int", 368)); }
+			int TACNumber() { mixin(MGPC("int", 364)); }
+			int MaxBOunds() { mixin(MGPC("int", 360)); }
+			int MinBounds() { mixin(MGPC("int", 356)); }
 		}
-		bool bBoundsPopup() { mixin(MGBPC!(400, 0x2)()); }
-		bool bBoundsPopup(bool val) { mixin(MSBPC!(400, 0x2)()); }
-		bool bPopup() { mixin(MGBPC!(400, 0x1)()); }
-		bool bPopup(bool val) { mixin(MSBPC!(400, 0x1)()); }
+		bool bBoundsPopup() { mixin(MGBPC(400, 0x2)); }
+		bool bBoundsPopup(bool val) { mixin(MSBPC(400, 0x2)); }
+		bool bPopup() { mixin(MGBPC(400, 0x1)); }
+		bool bPopup(bool val) { mixin(MSBPC(400, 0x1)); }
 	}
 final:
 	void SpecialAction(GFxTrAction Action)

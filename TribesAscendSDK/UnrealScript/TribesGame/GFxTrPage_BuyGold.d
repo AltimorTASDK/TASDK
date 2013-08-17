@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_BuyGold : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_BuyGold")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_BuyGold")); }
 	private static __gshared GFxTrPage_BuyGold mDefaultProperties;
-	@property final static GFxTrPage_BuyGold DefaultProperties() { mixin(MGDPC!(GFxTrPage_BuyGold, "GFxTrPage_BuyGold TribesGame.Default__GFxTrPage_BuyGold")()); }
+	@property final static GFxTrPage_BuyGold DefaultProperties() { mixin(MGDPC("GFxTrPage_BuyGold", "GFxTrPage_BuyGold TribesGame.Default__GFxTrPage_BuyGold")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_BuyGold.FillData")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_BuyGold.TakeAction")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_BuyGold.FillOption")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_BuyGold.ShowModel")()); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_BuyGold.FillData")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_BuyGold.TakeAction")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_BuyGold.FillOption")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_BuyGold.ShowModel")); }
 		}
 	}
 final:

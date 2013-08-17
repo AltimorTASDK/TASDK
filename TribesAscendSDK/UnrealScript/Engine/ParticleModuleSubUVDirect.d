@@ -9,12 +9,12 @@ extern(C++) interface ParticleModuleSubUVDirect : ParticleModuleSubUVBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleSubUVDirect")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleSubUVDirect")); }
 	private static __gshared ParticleModuleSubUVDirect mDefaultProperties;
-	@property final static ParticleModuleSubUVDirect DefaultProperties() { mixin(MGDPC!(ParticleModuleSubUVDirect, "ParticleModuleSubUVDirect Engine.Default__ParticleModuleSubUVDirect")()); }
+	@property final static ParticleModuleSubUVDirect DefaultProperties() { mixin(MGDPC("ParticleModuleSubUVDirect", "ParticleModuleSubUVDirect Engine.Default__ParticleModuleSubUVDirect")); }
 	@property final auto ref
 	{
-		DistributionVector.RawDistributionVector SubUVSize() { mixin(MGPC!("DistributionVector.RawDistributionVector", 100)()); }
-		DistributionVector.RawDistributionVector SubUVPosition() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
+		DistributionVector.RawDistributionVector SubUVSize() { mixin(MGPC("DistributionVector.RawDistributionVector", 100)); }
+		DistributionVector.RawDistributionVector SubUVPosition() { mixin(MGPC("DistributionVector.RawDistributionVector", 72)); }
 	}
 }

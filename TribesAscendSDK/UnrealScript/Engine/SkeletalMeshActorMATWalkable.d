@@ -8,7 +8,7 @@ extern(C++) interface SkeletalMeshActorMATWalkable : SkeletalMeshActorMAT
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkeletalMeshActorMATWalkable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SkeletalMeshActorMATWalkable")); }
 	private static __gshared SkeletalMeshActorMATWalkable mDefaultProperties;
-	@property final static SkeletalMeshActorMATWalkable DefaultProperties() { mixin(MGDPC!(SkeletalMeshActorMATWalkable, "SkeletalMeshActorMATWalkable Engine.Default__SkeletalMeshActorMATWalkable")()); }
+	@property final static SkeletalMeshActorMATWalkable DefaultProperties() { mixin(MGDPC("SkeletalMeshActorMATWalkable", "SkeletalMeshActorMATWalkable Engine.Default__SkeletalMeshActorMATWalkable")); }
 }

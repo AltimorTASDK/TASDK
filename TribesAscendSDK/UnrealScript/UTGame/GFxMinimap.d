@@ -14,9 +14,9 @@ extern(C++) interface GFxMinimap : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxMinimap")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxMinimap")); }
 	private static __gshared GFxMinimap mDefaultProperties;
-	@property final static GFxMinimap DefaultProperties() { mixin(MGDPC!(GFxMinimap, "GFxMinimap UTGame.Default__GFxMinimap")()); }
+	@property final static GFxMinimap DefaultProperties() { mixin(MGDPC("GFxMinimap", "GFxMinimap UTGame.Default__GFxMinimap")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,41 +31,41 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function UTGame.GFxMinimap.Init")()); }
-			ScriptFunction UpdateData() { mixin(MGF!("mUpdateData", "Function UTGame.GFxMinimap.UpdateData")()); }
-			ScriptFunction GenFriendIcons() { mixin(MGF!("mGenFriendIcons", "Function UTGame.GFxMinimap.GenFriendIcons")()); }
-			ScriptFunction GenEnemyIcons() { mixin(MGF!("mGenEnemyIcons", "Function UTGame.GFxMinimap.GenEnemyIcons")()); }
-			ScriptFunction GenFlagIcons() { mixin(MGF!("mGenFlagIcons", "Function UTGame.GFxMinimap.GenFlagIcons")()); }
-			ScriptFunction UpdateIcons() { mixin(MGF!("mUpdateIcons", "Function UTGame.GFxMinimap.UpdateIcons")()); }
-			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function UTGame.GFxMinimap.Update")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function UTGame.GFxMinimap.Init")); }
+			ScriptFunction UpdateData() { mixin(MGF("mUpdateData", "Function UTGame.GFxMinimap.UpdateData")); }
+			ScriptFunction GenFriendIcons() { mixin(MGF("mGenFriendIcons", "Function UTGame.GFxMinimap.GenFriendIcons")); }
+			ScriptFunction GenEnemyIcons() { mixin(MGF("mGenEnemyIcons", "Function UTGame.GFxMinimap.GenEnemyIcons")); }
+			ScriptFunction GenFlagIcons() { mixin(MGF("mGenFlagIcons", "Function UTGame.GFxMinimap.GenFlagIcons")); }
+			ScriptFunction UpdateIcons() { mixin(MGF("mUpdateIcons", "Function UTGame.GFxMinimap.UpdateIcons")); }
+			ScriptFunction Update() { mixin(MGF("mUpdate", "Function UTGame.GFxMinimap.Update")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxObject) EnemyIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 152)()); }
-			ScriptArray!(GFxObject) MyTeamIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 164)()); }
-			ScriptArray!(GFxObject) FlagIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 176)()); }
-			ScriptArray!(GFxObject) ObjectiveIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 188)()); }
-			ScriptArray!(UTGameObjective) Objectives() { mixin(MGPC!("ScriptArray!(UTGameObjective)", 296)()); }
-			int IconsFlagCount() { mixin(MGPC!("int", 292)()); }
-			int IconsBlueCount() { mixin(MGPC!("int", 288)()); }
-			int IconsRedCount() { mixin(MGPC!("int", 284)()); }
-			GFxObject IconsFlagMC() { mixin(MGPC!("GFxObject", 280)()); }
-			GFxObject IconsBlueMC() { mixin(MGPC!("GFxObject", 276)()); }
-			GFxObject IconsRedMC() { mixin(MGPC!("GFxObject", 272)()); }
-			UObject.Matrix IconMatrix() { mixin(MGPC!("UObject.Matrix", 208)()); }
-			GFxObject MapMC() { mixin(MGPC!("GFxObject", 148)()); }
-			GFxObject CompassIcon() { mixin(MGPC!("GFxObject", 144)()); }
-			GFxObject PlayerIcon() { mixin(MGPC!("GFxObject", 140)()); }
-			int MapTexSize() { mixin(MGPC!("int", 132)()); }
+			ScriptArray!(GFxObject) EnemyIcons() { mixin(MGPC("ScriptArray!(GFxObject)", 152)); }
+			ScriptArray!(GFxObject) MyTeamIcons() { mixin(MGPC("ScriptArray!(GFxObject)", 164)); }
+			ScriptArray!(GFxObject) FlagIcons() { mixin(MGPC("ScriptArray!(GFxObject)", 176)); }
+			ScriptArray!(GFxObject) ObjectiveIcons() { mixin(MGPC("ScriptArray!(GFxObject)", 188)); }
+			ScriptArray!(UTGameObjective) Objectives() { mixin(MGPC("ScriptArray!(UTGameObjective)", 296)); }
+			int IconsFlagCount() { mixin(MGPC("int", 292)); }
+			int IconsBlueCount() { mixin(MGPC("int", 288)); }
+			int IconsRedCount() { mixin(MGPC("int", 284)); }
+			GFxObject IconsFlagMC() { mixin(MGPC("GFxObject", 280)); }
+			GFxObject IconsBlueMC() { mixin(MGPC("GFxObject", 276)); }
+			GFxObject IconsRedMC() { mixin(MGPC("GFxObject", 272)); }
+			UObject.Matrix IconMatrix() { mixin(MGPC("UObject.Matrix", 208)); }
+			GFxObject MapMC() { mixin(MGPC("GFxObject", 148)); }
+			GFxObject CompassIcon() { mixin(MGPC("GFxObject", 144)); }
+			GFxObject PlayerIcon() { mixin(MGPC("GFxObject", 140)); }
+			int MapTexSize() { mixin(MGPC("int", 132)); }
 			// WARNING: Property 'MapInfo' has the same name as a defined type!
-			WorldInfo ThisWorld() { mixin(MGPC!("WorldInfo", 124)()); }
+			WorldInfo ThisWorld() { mixin(MGPC("WorldInfo", 124)); }
 			// WARNING: Property 'HUD' has the same name as a defined type!
 		}
-		bool bNeedsUpdateData() { mixin(MGBPC!(136, 0x1)()); }
-		bool bNeedsUpdateData(bool val) { mixin(MSBPC!(136, 0x1)()); }
+		bool bNeedsUpdateData() { mixin(MGBPC(136, 0x1)); }
+		bool bNeedsUpdateData(bool val) { mixin(MSBPC(136, 0x1)); }
 	}
 final:
 	void Init(GFxMinimapHud H)

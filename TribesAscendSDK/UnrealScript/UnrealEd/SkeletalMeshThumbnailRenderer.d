@@ -8,7 +8,7 @@ extern(C++) interface SkeletalMeshThumbnailRenderer : DefaultSizedThumbnailRende
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.SkeletalMeshThumbnailRenderer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.SkeletalMeshThumbnailRenderer")); }
 	private static __gshared SkeletalMeshThumbnailRenderer mDefaultProperties;
-	@property final static SkeletalMeshThumbnailRenderer DefaultProperties() { mixin(MGDPC!(SkeletalMeshThumbnailRenderer, "SkeletalMeshThumbnailRenderer UnrealEd.Default__SkeletalMeshThumbnailRenderer")()); }
+	@property final static SkeletalMeshThumbnailRenderer DefaultProperties() { mixin(MGDPC("SkeletalMeshThumbnailRenderer", "SkeletalMeshThumbnailRenderer UnrealEd.Default__SkeletalMeshThumbnailRenderer")); }
 }

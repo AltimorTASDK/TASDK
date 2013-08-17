@@ -8,9 +8,9 @@ extern(C++) interface ParticleModuleOrientationAxisLock : ParticleModuleOrientat
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleOrientationAxisLock")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleOrientationAxisLock")); }
 	private static __gshared ParticleModuleOrientationAxisLock mDefaultProperties;
-	@property final static ParticleModuleOrientationAxisLock DefaultProperties() { mixin(MGDPC!(ParticleModuleOrientationAxisLock, "ParticleModuleOrientationAxisLock Engine.Default__ParticleModuleOrientationAxisLock")()); }
+	@property final static ParticleModuleOrientationAxisLock DefaultProperties() { mixin(MGDPC("ParticleModuleOrientationAxisLock", "ParticleModuleOrientationAxisLock Engine.Default__ParticleModuleOrientationAxisLock")); }
 	enum EParticleAxisLock : ubyte
 	{
 		EPAL_NONE = 0,
@@ -25,5 +25,5 @@ public extern(D):
 		EPAL_ROTATE_Z = 9,
 		EPAL_MAX = 10,
 	}
-	@property final auto ref ParticleModuleOrientationAxisLock.EParticleAxisLock LockAxisFlags() { mixin(MGPC!("ParticleModuleOrientationAxisLock.EParticleAxisLock", 72)()); }
+	@property final auto ref ParticleModuleOrientationAxisLock.EParticleAxisLock LockAxisFlags() { mixin(MGPC("ParticleModuleOrientationAxisLock.EParticleAxisLock", 72)); }
 }

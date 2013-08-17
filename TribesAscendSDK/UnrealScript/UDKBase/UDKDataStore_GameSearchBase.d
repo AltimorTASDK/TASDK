@@ -9,9 +9,9 @@ extern(C++) interface UDKDataStore_GameSearchBase : UIDataStore_OnlineGameSearch
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKDataStore_GameSearchBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKDataStore_GameSearchBase")); }
 	private static __gshared UDKDataStore_GameSearchBase mDefaultProperties;
-	@property final static UDKDataStore_GameSearchBase DefaultProperties() { mixin(MGDPC!(UDKDataStore_GameSearchBase, "UDKDataStore_GameSearchBase UDKBase.Default__UDKDataStore_GameSearchBase")()); }
+	@property final static UDKDataStore_GameSearchBase DefaultProperties() { mixin(MGDPC("UDKDataStore_GameSearchBase", "UDKDataStore_GameSearchBase UDKBase.Default__UDKDataStore_GameSearchBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,15 +25,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetEnabledMutators() { mixin(MGF!("mGetEnabledMutators", "Function UDKBase.UDKDataStore_GameSearchBase.GetEnabledMutators")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function UDKBase.UDKDataStore_GameSearchBase.Init")()); }
-			ScriptFunction SubmitGameSearch() { mixin(MGF!("mSubmitGameSearch", "Function UDKBase.UDKDataStore_GameSearchBase.SubmitGameSearch")()); }
-			ScriptFunction OnSearchComplete() { mixin(MGF!("mOnSearchComplete", "Function UDKBase.UDKDataStore_GameSearchBase.OnSearchComplete")()); }
-			ScriptFunction HasOutstandingQueries() { mixin(MGF!("mHasOutstandingQueries", "Function UDKBase.UDKDataStore_GameSearchBase.HasOutstandingQueries")()); }
-			ScriptFunction HasExistingSearchResults() { mixin(MGF!("mHasExistingSearchResults", "Function UDKBase.UDKDataStore_GameSearchBase.HasExistingSearchResults")()); }
+			ScriptFunction GetEnabledMutators() { mixin(MGF("mGetEnabledMutators", "Function UDKBase.UDKDataStore_GameSearchBase.GetEnabledMutators")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function UDKBase.UDKDataStore_GameSearchBase.Init")); }
+			ScriptFunction SubmitGameSearch() { mixin(MGF("mSubmitGameSearch", "Function UDKBase.UDKDataStore_GameSearchBase.SubmitGameSearch")); }
+			ScriptFunction OnSearchComplete() { mixin(MGF("mOnSearchComplete", "Function UDKBase.UDKDataStore_GameSearchBase.OnSearchComplete")); }
+			ScriptFunction HasOutstandingQueries() { mixin(MGF("mHasOutstandingQueries", "Function UDKBase.UDKDataStore_GameSearchBase.HasOutstandingQueries")); }
+			ScriptFunction HasExistingSearchResults() { mixin(MGF("mHasExistingSearchResults", "Function UDKBase.UDKDataStore_GameSearchBase.HasExistingSearchResults")); }
 		}
 	}
-	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { mixin(MGPC!("UDKUIDataProvider_ServerDetails", 168)()); }
+	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { mixin(MGPC("UDKUIDataProvider_ServerDetails", 168)); }
 final:
 	bool GetEnabledMutators(ref ScriptArray!(int) MutatorIndices)
 	{

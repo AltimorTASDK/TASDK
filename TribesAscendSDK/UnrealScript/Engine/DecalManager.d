@@ -10,9 +10,9 @@ extern(C++) interface DecalManager : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DecalManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DecalManager")); }
 	private static __gshared DecalManager mDefaultProperties;
-	@property final static DecalManager DefaultProperties() { mixin(MGDPC!(DecalManager, "DecalManager Engine.Default__DecalManager")()); }
+	@property final static DecalManager DefaultProperties() { mixin(MGDPC("DecalManager", "DecalManager Engine.Default__DecalManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,12 +26,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AreDynamicDecalsEnabled() { mixin(MGF!("mAreDynamicDecalsEnabled", "Function Engine.DecalManager.AreDynamicDecalsEnabled")()); }
-			ScriptFunction DecalFinished() { mixin(MGF!("mDecalFinished", "Function Engine.DecalManager.DecalFinished")()); }
-			ScriptFunction CanSpawnDecals() { mixin(MGF!("mCanSpawnDecals", "Function Engine.DecalManager.CanSpawnDecals")()); }
-			ScriptFunction SetDecalParameters() { mixin(MGF!("mSetDecalParameters", "Function Engine.DecalManager.SetDecalParameters")()); }
-			ScriptFunction GetPooledComponent() { mixin(MGF!("mGetPooledComponent", "Function Engine.DecalManager.GetPooledComponent")()); }
-			ScriptFunction SpawnDecal() { mixin(MGF!("mSpawnDecal", "Function Engine.DecalManager.SpawnDecal")()); }
+			ScriptFunction AreDynamicDecalsEnabled() { mixin(MGF("mAreDynamicDecalsEnabled", "Function Engine.DecalManager.AreDynamicDecalsEnabled")); }
+			ScriptFunction DecalFinished() { mixin(MGF("mDecalFinished", "Function Engine.DecalManager.DecalFinished")); }
+			ScriptFunction CanSpawnDecals() { mixin(MGF("mCanSpawnDecals", "Function Engine.DecalManager.CanSpawnDecals")); }
+			ScriptFunction SetDecalParameters() { mixin(MGF("mSetDecalParameters", "Function Engine.DecalManager.SetDecalParameters")); }
+			ScriptFunction GetPooledComponent() { mixin(MGF("mGetPooledComponent", "Function Engine.DecalManager.GetPooledComponent")); }
+			ScriptFunction SpawnDecal() { mixin(MGF("mSpawnDecal", "Function Engine.DecalManager.SpawnDecal")); }
 		}
 	}
 	struct ActiveDecalInfo
@@ -39,10 +39,10 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.DecalManager.ActiveDecalInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.DecalManager.ActiveDecalInfo")); }
 		@property final auto ref
 		{
-			float LifetimeRemaining() { mixin(MGPS!("float", 4)()); }
+			float LifetimeRemaining() { mixin(MGPS("float", 4)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Decal'!
 		}
 	}
@@ -50,14 +50,14 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) PoolDecals() { mixin(MGPC!("ScriptArray!(
+void*) PoolDecals() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)", 480)()); }
-		ScriptArray!(DecalManager.ActiveDecalInfo) ActiveDecals() { mixin(MGPC!("ScriptArray!(DecalManager.ActiveDecalInfo)", 512)()); }
-		UObject.Vector2D DecalBlendRange() { mixin(MGPC!("UObject.Vector2D", 504)()); }
-		float DecalDepthBias() { mixin(MGPC!("float", 500)()); }
-		float DecalLifeSpan() { mixin(MGPC!("float", 496)()); }
-		int MaxActiveDecals() { mixin(MGPC!("int", 492)()); }
+void*)", 480)); }
+		ScriptArray!(DecalManager.ActiveDecalInfo) ActiveDecals() { mixin(MGPC("ScriptArray!(DecalManager.ActiveDecalInfo)", 512)); }
+		UObject.Vector2D DecalBlendRange() { mixin(MGPC("UObject.Vector2D", 504)); }
+		float DecalDepthBias() { mixin(MGPC("float", 500)); }
+		float DecalLifeSpan() { mixin(MGPC("float", 496)); }
+		int MaxActiveDecals() { mixin(MGPC("int", 492)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DecalTemplate'!
 	}
 final:

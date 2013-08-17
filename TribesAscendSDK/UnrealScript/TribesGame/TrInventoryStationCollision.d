@@ -9,13 +9,13 @@ extern(C++) interface TrInventoryStationCollision : TrStationCollision
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrInventoryStationCollision")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrInventoryStationCollision")); }
 	private static __gshared TrInventoryStationCollision mDefaultProperties;
-	@property final static TrInventoryStationCollision DefaultProperties() { mixin(MGDPC!(TrInventoryStationCollision, "TrInventoryStationCollision TribesGame.Default__TrInventoryStationCollision")()); }
+	@property final static TrInventoryStationCollision DefaultProperties() { mixin(MGDPC("TrInventoryStationCollision", "TrInventoryStationCollision TribesGame.Default__TrInventoryStationCollision")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCheckCanPawnUseStationNow;
-		public @property static final ScriptFunction CheckCanPawnUseStationNow() { mixin(MGF!("mCheckCanPawnUseStationNow", "Function TribesGame.TrInventoryStationCollision.CheckCanPawnUseStationNow")()); }
+		public @property static final ScriptFunction CheckCanPawnUseStationNow() { mixin(MGF("mCheckCanPawnUseStationNow", "Function TribesGame.TrInventoryStationCollision.CheckCanPawnUseStationNow")); }
 	}
 	final bool CheckCanPawnUseStationNow(TrPawn P)
 	{

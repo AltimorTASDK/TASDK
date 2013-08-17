@@ -8,7 +8,7 @@ extern(C++) interface SeqAct_ActorFactoryEx : SeqAct_ActorFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_ActorFactoryEx")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SeqAct_ActorFactoryEx")); }
 	private static __gshared SeqAct_ActorFactoryEx mDefaultProperties;
-	@property final static SeqAct_ActorFactoryEx DefaultProperties() { mixin(MGDPC!(SeqAct_ActorFactoryEx, "SeqAct_ActorFactoryEx Engine.Default__SeqAct_ActorFactoryEx")()); }
+	@property final static SeqAct_ActorFactoryEx DefaultProperties() { mixin(MGDPC("SeqAct_ActorFactoryEx", "SeqAct_ActorFactoryEx Engine.Default__SeqAct_ActorFactoryEx")); }
 }

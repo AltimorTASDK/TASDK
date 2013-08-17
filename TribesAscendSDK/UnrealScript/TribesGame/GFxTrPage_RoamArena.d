@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_RoamArena : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_RoamArena")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_RoamArena")); }
 	private static __gshared GFxTrPage_RoamArena mDefaultProperties;
-	@property final static GFxTrPage_RoamArena DefaultProperties() { mixin(MGDPC!(GFxTrPage_RoamArena, "GFxTrPage_RoamArena TribesGame.Default__GFxTrPage_RoamArena")()); }
+	@property final static GFxTrPage_RoamArena DefaultProperties() { mixin(MGDPC("GFxTrPage_RoamArena", "GFxTrPage_RoamArena TribesGame.Default__GFxTrPage_RoamArena")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_RoamArena.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_RoamArena.SpecialAction")()); }
-			ScriptFunction JoinLocalGame() { mixin(MGF!("mJoinLocalGame", "Function TribesGame.GFxTrPage_RoamArena.JoinLocalGame")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_RoamArena.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_RoamArena.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_RoamArena.SpecialAction")); }
+			ScriptFunction JoinLocalGame() { mixin(MGF("mJoinLocalGame", "Function TribesGame.GFxTrPage_RoamArena.JoinLocalGame")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_RoamArena.ShowModel")); }
 		}
 	}
 final:

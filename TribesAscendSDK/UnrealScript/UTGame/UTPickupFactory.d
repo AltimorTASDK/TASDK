@@ -17,9 +17,9 @@ extern(C++) interface UTPickupFactory : UDKPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPickupFactory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTPickupFactory")); }
 	private static __gshared UTPickupFactory mDefaultProperties;
-	@property final static UTPickupFactory DefaultProperties() { mixin(MGDPC!(UTPickupFactory, "UTPickupFactory UTGame.Default__UTPickupFactory")()); }
+	@property final static UTPickupFactory DefaultProperties() { mixin(MGDPC("UTPickupFactory", "UTPickupFactory UTGame.Default__UTPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,55 +44,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTPickupFactory.PostBeginPlay")()); }
-			ScriptFunction SetResOut() { mixin(MGF!("mSetResOut", "Function UTGame.UTPickupFactory.SetResOut")()); }
-			ScriptFunction DisablePickup() { mixin(MGF!("mDisablePickup", "Function UTGame.UTPickupFactory.DisablePickup")()); }
-			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function UTGame.UTPickupFactory.ShutDown")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTPickupFactory.ReplicatedEvent")()); }
-			ScriptFunction ShouldCamp() { mixin(MGF!("mShouldCamp", "Function UTGame.UTPickupFactory.ShouldCamp")()); }
-			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function UTGame.UTPickupFactory.UpdateHUD")()); }
-			ScriptFunction RespawnEffect() { mixin(MGF!("mRespawnEffect", "Function UTGame.UTPickupFactory.RespawnEffect")()); }
-			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function UTGame.UTPickupFactory.StopsProjectile")()); }
-			ScriptFunction StartPulse() { mixin(MGF!("mStartPulse", "Function UTGame.UTPickupFactory.StartPulse")()); }
-			ScriptFunction SetPickupMesh() { mixin(MGF!("mSetPickupMesh", "Function UTGame.UTPickupFactory.SetPickupMesh")()); }
-			ScriptFunction GetPickupStatName() { mixin(MGF!("mGetPickupStatName", "Function UTGame.UTPickupFactory.GetPickupStatName")()); }
-			ScriptFunction InitPickupMeshEffects() { mixin(MGF!("mInitPickupMeshEffects", "Function UTGame.UTPickupFactory.InitPickupMeshEffects")()); }
-			ScriptFunction SetPickupVisible() { mixin(MGF!("mSetPickupVisible", "Function UTGame.UTPickupFactory.SetPickupVisible")()); }
-			ScriptFunction SetPickupHidden() { mixin(MGF!("mSetPickupHidden", "Function UTGame.UTPickupFactory.SetPickupHidden")()); }
-			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function UTGame.UTPickupFactory.SetInitialState")()); }
-			ScriptFunction PickedUpBy() { mixin(MGF!("mPickedUpBy", "Function UTGame.UTPickupFactory.PickedUpBy")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTPickupFactory.PostBeginPlay")); }
+			ScriptFunction SetResOut() { mixin(MGF("mSetResOut", "Function UTGame.UTPickupFactory.SetResOut")); }
+			ScriptFunction DisablePickup() { mixin(MGF("mDisablePickup", "Function UTGame.UTPickupFactory.DisablePickup")); }
+			ScriptFunction ShutDown() { mixin(MGF("mShutDown", "Function UTGame.UTPickupFactory.ShutDown")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UTGame.UTPickupFactory.ReplicatedEvent")); }
+			ScriptFunction ShouldCamp() { mixin(MGF("mShouldCamp", "Function UTGame.UTPickupFactory.ShouldCamp")); }
+			ScriptFunction UpdateHUD() { mixin(MGF("mUpdateHUD", "Function UTGame.UTPickupFactory.UpdateHUD")); }
+			ScriptFunction RespawnEffect() { mixin(MGF("mRespawnEffect", "Function UTGame.UTPickupFactory.RespawnEffect")); }
+			ScriptFunction StopsProjectile() { mixin(MGF("mStopsProjectile", "Function UTGame.UTPickupFactory.StopsProjectile")); }
+			ScriptFunction StartPulse() { mixin(MGF("mStartPulse", "Function UTGame.UTPickupFactory.StartPulse")); }
+			ScriptFunction SetPickupMesh() { mixin(MGF("mSetPickupMesh", "Function UTGame.UTPickupFactory.SetPickupMesh")); }
+			ScriptFunction GetPickupStatName() { mixin(MGF("mGetPickupStatName", "Function UTGame.UTPickupFactory.GetPickupStatName")); }
+			ScriptFunction InitPickupMeshEffects() { mixin(MGF("mInitPickupMeshEffects", "Function UTGame.UTPickupFactory.InitPickupMeshEffects")); }
+			ScriptFunction SetPickupVisible() { mixin(MGF("mSetPickupVisible", "Function UTGame.UTPickupFactory.SetPickupVisible")); }
+			ScriptFunction SetPickupHidden() { mixin(MGF("mSetPickupHidden", "Function UTGame.UTPickupFactory.SetPickupHidden")); }
+			ScriptFunction SetInitialState() { mixin(MGF("mSetInitialState", "Function UTGame.UTPickupFactory.SetInitialState")); }
+			ScriptFunction PickedUpBy() { mixin(MGF("mPickedUpBy", "Function UTGame.UTPickupFactory.PickedUpBy")); }
 		}
 	}
 	static struct Pickup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPickupFactory.Pickup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTPickupFactory.Pickup")); }
 	}
 	static struct Sleeping
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPickupFactory.Sleeping")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTPickupFactory.Sleeping")); }
 	}
 	static struct Disabled
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTPickupFactory.Disabled")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTPickupFactory.Disabled")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 924)()); }
-			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 940)()); }
-			float LastSeekNotificationTime() { mixin(MGPC!("float", 936)()); }
-			ScriptName PickupStatName() { mixin(MGPC!("ScriptName", 912)()); }
+			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 924)); }
+			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC("ForceFeedbackWaveform", 940)); }
+			float LastSeekNotificationTime() { mixin(MGPC("float", 936)); }
+			ScriptName PickupStatName() { mixin(MGPC("ScriptName", 912)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupReadySound'!
-			SoundCue RespawnSound() { mixin(MGPC!("SoundCue", 900)()); }
-			Controller TeamOwner() { mixin(MGPC!("Controller", 884)()); }
+			SoundCue RespawnSound() { mixin(MGPC("SoundCue", 900)); }
+			Controller TeamOwner() { mixin(MGPC("Controller", 884)); }
 		}
-		bool bHasLocationSpeech() { mixin(MGBPC!(920, 0x1)()); }
-		bool bHasLocationSpeech(bool val) { mixin(MSBPC!(920, 0x1)()); }
+		bool bHasLocationSpeech() { mixin(MGBPC(920, 0x1)); }
+		bool bHasLocationSpeech(bool val) { mixin(MSBPC(920, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

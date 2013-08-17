@@ -8,7 +8,7 @@ extern(C++) interface UTUIDataProvider_SimpleElementProvider : UDKUIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTUIDataProvider_SimpleElementProvider")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTUIDataProvider_SimpleElementProvider")); }
 	private static __gshared UTUIDataProvider_SimpleElementProvider mDefaultProperties;
-	@property final static UTUIDataProvider_SimpleElementProvider DefaultProperties() { mixin(MGDPC!(UTUIDataProvider_SimpleElementProvider, "UTUIDataProvider_SimpleElementProvider UTGame.Default__UTUIDataProvider_SimpleElementProvider")()); }
+	@property final static UTUIDataProvider_SimpleElementProvider DefaultProperties() { mixin(MGDPC("UTUIDataProvider_SimpleElementProvider", "UTUIDataProvider_SimpleElementProvider UTGame.Default__UTUIDataProvider_SimpleElementProvider")); }
 }

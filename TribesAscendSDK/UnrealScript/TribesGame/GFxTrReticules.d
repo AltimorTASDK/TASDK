@@ -12,9 +12,9 @@ extern(C++) interface GFxTrReticules : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrReticules")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrReticules")); }
 	private static __gshared GFxTrReticules mDefaultProperties;
-	@property final static GFxTrReticules DefaultProperties() { mixin(MGDPC!(GFxTrReticules, "GFxTrReticules TribesGame.Default__GFxTrReticules")()); }
+	@property final static GFxTrReticules DefaultProperties() { mixin(MGDPC("GFxTrReticules", "GFxTrReticules TribesGame.Default__GFxTrReticules")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,44 +41,44 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CallShowReticule() { mixin(MGF!("mCallShowReticule", "Function TribesGame.GFxTrReticules.CallShowReticule")()); }
-			ScriptFunction CallSetReticuleColor() { mixin(MGF!("mCallSetReticuleColor", "Function TribesGame.GFxTrReticules.CallSetReticuleColor")()); }
-			ScriptFunction ASC_SetCustomReticule() { mixin(MGF!("mASC_SetCustomReticule", "Function TribesGame.GFxTrReticules.ASC_SetCustomReticule")()); }
-			ScriptFunction CallSetReticuleDepth() { mixin(MGF!("mCallSetReticuleDepth", "Function TribesGame.GFxTrReticules.CallSetReticuleDepth")()); }
-			ScriptFunction ChangeReticule() { mixin(MGF!("mChangeReticule", "Function TribesGame.GFxTrReticules.ChangeReticule")()); }
-			ScriptFunction SetCustomReticule() { mixin(MGF!("mSetCustomReticule", "Function TribesGame.GFxTrReticules.SetCustomReticule")()); }
-			ScriptFunction GetCurrentReticuleIndex() { mixin(MGF!("mGetCurrentReticuleIndex", "Function TribesGame.GFxTrReticules.GetCurrentReticuleIndex")()); }
-			ScriptFunction CallSetAccuracy() { mixin(MGF!("mCallSetAccuracy", "Function TribesGame.GFxTrReticules.CallSetAccuracy")()); }
-			ScriptFunction CallShowHit() { mixin(MGF!("mCallShowHit", "Function TribesGame.GFxTrReticules.CallShowHit")()); }
-			ScriptFunction DisableVehicleAmmoClip() { mixin(MGF!("mDisableVehicleAmmoClip", "Function TribesGame.GFxTrReticules.DisableVehicleAmmoClip")()); }
-			ScriptFunction EnableVehicleAmmoClip() { mixin(MGF!("mEnableVehicleAmmoClip", "Function TribesGame.GFxTrReticules.EnableVehicleAmmoClip")()); }
-			ScriptFunction SetVehicleAmmoClip() { mixin(MGF!("mSetVehicleAmmoClip", "Function TribesGame.GFxTrReticules.SetVehicleAmmoClip")()); }
-			ScriptFunction SetPowerupPercentage() { mixin(MGF!("mSetPowerupPercentage", "Function TribesGame.GFxTrReticules.SetPowerupPercentage")()); }
-			ScriptFunction SetLaserPowerupPercentage() { mixin(MGF!("mSetLaserPowerupPercentage", "Function TribesGame.GFxTrReticules.SetLaserPowerupPercentage")()); }
-			ScriptFunction SetVehiclePowerupPercentage() { mixin(MGF!("mSetVehiclePowerupPercentage", "Function TribesGame.GFxTrReticules.SetVehiclePowerupPercentage")()); }
-			ScriptFunction SetGenericPowerupPercentage() { mixin(MGF!("mSetGenericPowerupPercentage", "Function TribesGame.GFxTrReticules.SetGenericPowerupPercentage")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.GFxTrReticules.Init")()); }
-			ScriptFunction SetReticuleVisible() { mixin(MGF!("mSetReticuleVisible", "Function TribesGame.GFxTrReticules.SetReticuleVisible")()); }
-			ScriptFunction UpdateReticule() { mixin(MGF!("mUpdateReticule", "Function TribesGame.GFxTrReticules.UpdateReticule")()); }
+			ScriptFunction CallShowReticule() { mixin(MGF("mCallShowReticule", "Function TribesGame.GFxTrReticules.CallShowReticule")); }
+			ScriptFunction CallSetReticuleColor() { mixin(MGF("mCallSetReticuleColor", "Function TribesGame.GFxTrReticules.CallSetReticuleColor")); }
+			ScriptFunction ASC_SetCustomReticule() { mixin(MGF("mASC_SetCustomReticule", "Function TribesGame.GFxTrReticules.ASC_SetCustomReticule")); }
+			ScriptFunction CallSetReticuleDepth() { mixin(MGF("mCallSetReticuleDepth", "Function TribesGame.GFxTrReticules.CallSetReticuleDepth")); }
+			ScriptFunction ChangeReticule() { mixin(MGF("mChangeReticule", "Function TribesGame.GFxTrReticules.ChangeReticule")); }
+			ScriptFunction SetCustomReticule() { mixin(MGF("mSetCustomReticule", "Function TribesGame.GFxTrReticules.SetCustomReticule")); }
+			ScriptFunction GetCurrentReticuleIndex() { mixin(MGF("mGetCurrentReticuleIndex", "Function TribesGame.GFxTrReticules.GetCurrentReticuleIndex")); }
+			ScriptFunction CallSetAccuracy() { mixin(MGF("mCallSetAccuracy", "Function TribesGame.GFxTrReticules.CallSetAccuracy")); }
+			ScriptFunction CallShowHit() { mixin(MGF("mCallShowHit", "Function TribesGame.GFxTrReticules.CallShowHit")); }
+			ScriptFunction DisableVehicleAmmoClip() { mixin(MGF("mDisableVehicleAmmoClip", "Function TribesGame.GFxTrReticules.DisableVehicleAmmoClip")); }
+			ScriptFunction EnableVehicleAmmoClip() { mixin(MGF("mEnableVehicleAmmoClip", "Function TribesGame.GFxTrReticules.EnableVehicleAmmoClip")); }
+			ScriptFunction SetVehicleAmmoClip() { mixin(MGF("mSetVehicleAmmoClip", "Function TribesGame.GFxTrReticules.SetVehicleAmmoClip")); }
+			ScriptFunction SetPowerupPercentage() { mixin(MGF("mSetPowerupPercentage", "Function TribesGame.GFxTrReticules.SetPowerupPercentage")); }
+			ScriptFunction SetLaserPowerupPercentage() { mixin(MGF("mSetLaserPowerupPercentage", "Function TribesGame.GFxTrReticules.SetLaserPowerupPercentage")); }
+			ScriptFunction SetVehiclePowerupPercentage() { mixin(MGF("mSetVehiclePowerupPercentage", "Function TribesGame.GFxTrReticules.SetVehiclePowerupPercentage")); }
+			ScriptFunction SetGenericPowerupPercentage() { mixin(MGF("mSetGenericPowerupPercentage", "Function TribesGame.GFxTrReticules.SetGenericPowerupPercentage")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.GFxTrReticules.Init")); }
+			ScriptFunction SetReticuleVisible() { mixin(MGF("mSetReticuleVisible", "Function TribesGame.GFxTrReticules.SetReticuleVisible")); }
+			ScriptFunction UpdateReticule() { mixin(MGF("mUpdateReticule", "Function TribesGame.GFxTrReticules.UpdateReticule")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int m_nCurrentReticuleIndex() { mixin(MGPC!("int", 160)()); }
-			float LastReticuleDepth() { mixin(MGPC!("float", 152)()); }
-			float LastHitEnemyTime() { mixin(MGPC!("float", 148)()); }
-			float LastAccuracy() { mixin(MGPC!("float", 144)()); }
-			int LastCrossMode() { mixin(MGPC!("int", 140)()); }
-			Weapon LastWeapon() { mixin(MGPC!("Weapon", 136)()); }
-			GFxObject ActiveReticule() { mixin(MGPC!("GFxObject", 132)()); }
-			GFxObject ReticulesMC() { mixin(MGPC!("GFxObject", 128)()); }
-			WorldInfo ThisWorld() { mixin(MGPC!("WorldInfo", 124)()); }
+			int m_nCurrentReticuleIndex() { mixin(MGPC("int", 160)); }
+			float LastReticuleDepth() { mixin(MGPC("float", 152)); }
+			float LastHitEnemyTime() { mixin(MGPC("float", 148)); }
+			float LastAccuracy() { mixin(MGPC("float", 144)); }
+			int LastCrossMode() { mixin(MGPC("int", 140)); }
+			Weapon LastWeapon() { mixin(MGPC("Weapon", 136)); }
+			GFxObject ActiveReticule() { mixin(MGPC("GFxObject", 132)); }
+			GFxObject ReticulesMC() { mixin(MGPC("GFxObject", 128)); }
+			WorldInfo ThisWorld() { mixin(MGPC("WorldInfo", 124)); }
 			// WARNING: Property 'HUD' has the same name as a defined type!
 		}
-		bool m_bVisible() { mixin(MGBPC!(156, 0x1)()); }
-		bool m_bVisible(bool val) { mixin(MSBPC!(156, 0x1)()); }
+		bool m_bVisible() { mixin(MGBPC(156, 0x1)); }
+		bool m_bVisible(bool val) { mixin(MSBPC(156, 0x1)); }
 	}
 final:
 	void CallShowReticule(int nIndex)

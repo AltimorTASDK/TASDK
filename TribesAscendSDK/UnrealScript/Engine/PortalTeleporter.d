@@ -12,9 +12,9 @@ extern(C++) interface PortalTeleporter : SceneCapturePortalActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PortalTeleporter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.PortalTeleporter")); }
 	private static __gshared PortalTeleporter mDefaultProperties;
-	@property final static PortalTeleporter DefaultProperties() { mixin(MGDPC!(PortalTeleporter, "PortalTeleporter Engine.Default__PortalTeleporter")()); }
+	@property final static PortalTeleporter DefaultProperties() { mixin(MGDPC("PortalTeleporter", "PortalTeleporter Engine.Default__PortalTeleporter")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,28 +27,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TransformActor() { mixin(MGF!("mTransformActor", "Function Engine.PortalTeleporter.TransformActor")()); }
-			ScriptFunction TransformVectorDir() { mixin(MGF!("mTransformVectorDir", "Function Engine.PortalTeleporter.TransformVectorDir")()); }
-			ScriptFunction TransformHitLocation() { mixin(MGF!("mTransformHitLocation", "Function Engine.PortalTeleporter.TransformHitLocation")()); }
-			ScriptFunction CreatePortalTexture() { mixin(MGF!("mCreatePortalTexture", "Function Engine.PortalTeleporter.CreatePortalTexture")()); }
-			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function Engine.PortalTeleporter.StopsProjectile")()); }
+			ScriptFunction TransformActor() { mixin(MGF("mTransformActor", "Function Engine.PortalTeleporter.TransformActor")); }
+			ScriptFunction TransformVectorDir() { mixin(MGF("mTransformVectorDir", "Function Engine.PortalTeleporter.TransformVectorDir")); }
+			ScriptFunction TransformHitLocation() { mixin(MGF("mTransformHitLocation", "Function Engine.PortalTeleporter.TransformHitLocation")); }
+			ScriptFunction CreatePortalTexture() { mixin(MGF("mCreatePortalTexture", "Function Engine.PortalTeleporter.CreatePortalTexture")); }
+			ScriptFunction StopsProjectile() { mixin(MGF("mStopsProjectile", "Function Engine.PortalTeleporter.StopsProjectile")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PortalMarker MyMarker() { mixin(MGPC!("PortalMarker", 500)()); }
-			int TextureResolutionY() { mixin(MGPC!("int", 496)()); }
-			int TextureResolutionX() { mixin(MGPC!("int", 492)()); }
-			PortalTeleporter SisterPortal() { mixin(MGPC!("PortalTeleporter", 488)()); }
+			PortalMarker MyMarker() { mixin(MGPC("PortalMarker", 500)); }
+			int TextureResolutionY() { mixin(MGPC("int", 496)); }
+			int TextureResolutionX() { mixin(MGPC("int", 492)); }
+			PortalTeleporter SisterPortal() { mixin(MGPC("PortalTeleporter", 488)); }
 		}
-		bool bCanTeleportVehicles() { mixin(MGBPC!(504, 0x4)()); }
-		bool bCanTeleportVehicles(bool val) { mixin(MSBPC!(504, 0x4)()); }
-		bool bAlwaysTeleportNonPawns() { mixin(MGBPC!(504, 0x2)()); }
-		bool bAlwaysTeleportNonPawns(bool val) { mixin(MSBPC!(504, 0x2)()); }
-		bool bMovablePortal() { mixin(MGBPC!(504, 0x1)()); }
-		bool bMovablePortal(bool val) { mixin(MSBPC!(504, 0x1)()); }
+		bool bCanTeleportVehicles() { mixin(MGBPC(504, 0x4)); }
+		bool bCanTeleportVehicles(bool val) { mixin(MSBPC(504, 0x4)); }
+		bool bAlwaysTeleportNonPawns() { mixin(MGBPC(504, 0x2)); }
+		bool bAlwaysTeleportNonPawns(bool val) { mixin(MSBPC(504, 0x2)); }
+		bool bMovablePortal() { mixin(MGBPC(504, 0x1)); }
+		bool bMovablePortal(bool val) { mixin(MSBPC(504, 0x1)); }
 	}
 final:
 	bool TransformActor(Actor A)

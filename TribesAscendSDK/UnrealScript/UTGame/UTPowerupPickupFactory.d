@@ -10,9 +10,9 @@ extern(C++) interface UTPowerupPickupFactory : UTPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPowerupPickupFactory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTPowerupPickupFactory")); }
 	private static __gshared UTPowerupPickupFactory mDefaultProperties;
-	@property final static UTPowerupPickupFactory DefaultProperties() { mixin(MGDPC!(UTPowerupPickupFactory, "UTPowerupPickupFactory UTGame.Default__UTPowerupPickupFactory")()); }
+	@property final static UTPowerupPickupFactory DefaultProperties() { mixin(MGDPC("UTPowerupPickupFactory", "UTPowerupPickupFactory UTGame.Default__UTPowerupPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddWeaponOverlay() { mixin(MGF!("mAddWeaponOverlay", "Function UTGame.UTPowerupPickupFactory.AddWeaponOverlay")()); }
-			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTPowerupPickupFactory.SpawnCopyFor")()); }
+			ScriptFunction AddWeaponOverlay() { mixin(MGF("mAddWeaponOverlay", "Function UTGame.UTPowerupPickupFactory.AddWeaponOverlay")); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF("mSpawnCopyFor", "Function UTGame.UTPowerupPickupFactory.SpawnCopyFor")); }
 		}
 	}
 final:

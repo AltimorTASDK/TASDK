@@ -8,9 +8,9 @@ extern(C++) interface UTSkelControl_DamageHinge : UDKSkelControl_DamageHinge
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_DamageHinge")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSkelControl_DamageHinge")); }
 	private static __gshared UTSkelControl_DamageHinge mDefaultProperties;
-	@property final static UTSkelControl_DamageHinge DefaultProperties() { mixin(MGDPC!(UTSkelControl_DamageHinge, "UTSkelControl_DamageHinge UTGame.Default__UTSkelControl_DamageHinge")()); }
+	@property final static UTSkelControl_DamageHinge DefaultProperties() { mixin(MGDPC("UTSkelControl_DamageHinge", "UTSkelControl_DamageHinge UTGame.Default__UTSkelControl_DamageHinge")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BreakApart() { mixin(MGF!("mBreakApart", "Function UTGame.UTSkelControl_DamageHinge.BreakApart")()); }
-			ScriptFunction BreakApartOnDeath() { mixin(MGF!("mBreakApartOnDeath", "Function UTGame.UTSkelControl_DamageHinge.BreakApartOnDeath")()); }
+			ScriptFunction BreakApart() { mixin(MGF("mBreakApart", "Function UTGame.UTSkelControl_DamageHinge.BreakApart")); }
+			ScriptFunction BreakApartOnDeath() { mixin(MGF("mBreakApartOnDeath", "Function UTGame.UTSkelControl_DamageHinge.BreakApartOnDeath")); }
 		}
 	}
 final:

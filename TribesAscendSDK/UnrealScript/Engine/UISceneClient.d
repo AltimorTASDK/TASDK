@@ -11,9 +11,9 @@ extern(C++) interface UISceneClient : UIRoot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UISceneClient")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UISceneClient")); }
 	private static __gshared UISceneClient mDefaultProperties;
-	@property final static UISceneClient DefaultProperties() { mixin(MGDPC!(UISceneClient, "UISceneClient Engine.Default__UISceneClient")()); }
+	@property final static UISceneClient DefaultProperties() { mixin(MGDPC("UISceneClient", "UISceneClient Engine.Default__UISceneClient")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,10 +25,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsUIActive() { mixin(MGF!("mIsUIActive", "Function Engine.UISceneClient.IsUIActive")()); }
-			ScriptFunction GetCanvasToScreen() { mixin(MGF!("mGetCanvasToScreen", "Function Engine.UISceneClient.GetCanvasToScreen")()); }
-			ScriptFunction GetInverseCanvasToScreen() { mixin(MGF!("mGetInverseCanvasToScreen", "Function Engine.UISceneClient.GetInverseCanvasToScreen")()); }
-			ScriptFunction InitializeSceneClient() { mixin(MGF!("mInitializeSceneClient", "Function Engine.UISceneClient.InitializeSceneClient")()); }
+			ScriptFunction IsUIActive() { mixin(MGF("mIsUIActive", "Function Engine.UISceneClient.IsUIActive")); }
+			ScriptFunction GetCanvasToScreen() { mixin(MGF("mGetCanvasToScreen", "Function Engine.UISceneClient.GetCanvasToScreen")); }
+			ScriptFunction GetInverseCanvasToScreen() { mixin(MGF("mGetInverseCanvasToScreen", "Function Engine.UISceneClient.GetInverseCanvasToScreen")); }
+			ScriptFunction InitializeSceneClient() { mixin(MGF("mInitializeSceneClient", "Function Engine.UISceneClient.InitializeSceneClient")); }
 		}
 	}
 	static struct Constants
@@ -49,16 +49,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			PostProcessChain UIScenePostProcess() { mixin(MGPC!("PostProcessChain", 208)()); }
-			UObject.Matrix InvCanvasToScreen() { mixin(MGPC!("UObject.Matrix", 144)()); }
-			UObject.Matrix CanvasToScreen() { mixin(MGPC!("UObject.Matrix", 80)()); }
-			DataStoreClient DataStoreManager() { mixin(MGPC!("DataStoreClient", 76)()); }
-			UObject.IntPoint MousePosition() { mixin(MGPC!("UObject.IntPoint", 68)()); }
-			UObject.Pointer RenderViewport() { mixin(MGPC!("UObject.Pointer", 64)()); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC!("UObject.Pointer", 60)()); }
+			PostProcessChain UIScenePostProcess() { mixin(MGPC("PostProcessChain", 208)); }
+			UObject.Matrix InvCanvasToScreen() { mixin(MGPC("UObject.Matrix", 144)); }
+			UObject.Matrix CanvasToScreen() { mixin(MGPC("UObject.Matrix", 80)); }
+			DataStoreClient DataStoreManager() { mixin(MGPC("DataStoreClient", 76)); }
+			UObject.IntPoint MousePosition() { mixin(MGPC("UObject.IntPoint", 68)); }
+			UObject.Pointer RenderViewport() { mixin(MGPC("UObject.Pointer", 64)); }
+			UObject.Pointer VfTable_FExec() { mixin(MGPC("UObject.Pointer", 60)); }
 		}
-		bool bEnablePostProcess() { mixin(MGBPC!(212, 0x1)()); }
-		bool bEnablePostProcess(bool val) { mixin(MSBPC!(212, 0x1)()); }
+		bool bEnablePostProcess() { mixin(MGBPC(212, 0x1)); }
+		bool bEnablePostProcess(bool val) { mixin(MSBPC(212, 0x1)); }
 	}
 final:
 	bool IsUIActive(int* Flags = null)

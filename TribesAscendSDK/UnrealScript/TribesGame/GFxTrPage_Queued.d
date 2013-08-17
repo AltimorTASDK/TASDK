@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_Queued : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Queued")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Queued")); }
 	private static __gshared GFxTrPage_Queued mDefaultProperties;
-	@property final static GFxTrPage_Queued DefaultProperties() { mixin(MGDPC!(GFxTrPage_Queued, "GFxTrPage_Queued TribesGame.Default__GFxTrPage_Queued")()); }
+	@property final static GFxTrPage_Queued DefaultProperties() { mixin(MGDPC("GFxTrPage_Queued", "GFxTrPage_Queued TribesGame.Default__GFxTrPage_Queued")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Queued.Initialize")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Queued.TakeAction")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_Queued.Initialize")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_Queued.TakeAction")); }
 		}
 	}
 final:

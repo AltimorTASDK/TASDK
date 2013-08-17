@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_Party : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Party")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Party")); }
 	private static __gshared GFxTrPage_Party mDefaultProperties;
-	@property final static GFxTrPage_Party DefaultProperties() { mixin(MGDPC!(GFxTrPage_Party, "GFxTrPage_Party TribesGame.Default__GFxTrPage_Party")()); }
+	@property final static GFxTrPage_Party DefaultProperties() { mixin(MGDPC("GFxTrPage_Party", "GFxTrPage_Party TribesGame.Default__GFxTrPage_Party")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,19 +25,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Party.Initialize")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Party.FillOption")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Party.TakeAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_Party.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_Party.PopupComplete")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Party.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_Party.Initialize")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_Party.FillOption")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_Party.TakeAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_Party.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_Party.PopupComplete")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_Party.ShowModel")); }
 		}
 	}
 	@property final auto ref
 	{
-		int Action_SendMessage() { mixin(MGPC!("int", 364)()); }
-		int Action_Leave() { mixin(MGPC!("int", 360)()); }
-		int PopupNum() { mixin(MGPC!("int", 356)()); }
+		int Action_SendMessage() { mixin(MGPC("int", 364)); }
+		int Action_Leave() { mixin(MGPC("int", 360)); }
+		int PopupNum() { mixin(MGPC("int", 356)); }
 	}
 final:
 	void Initialize()

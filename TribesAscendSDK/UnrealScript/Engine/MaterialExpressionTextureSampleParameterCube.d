@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionTextureSampleParameterCube : MaterialExp
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTextureSampleParameterCube")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionTextureSampleParameterCube")); }
 	private static __gshared MaterialExpressionTextureSampleParameterCube mDefaultProperties;
-	@property final static MaterialExpressionTextureSampleParameterCube DefaultProperties() { mixin(MGDPC!(MaterialExpressionTextureSampleParameterCube, "MaterialExpressionTextureSampleParameterCube Engine.Default__MaterialExpressionTextureSampleParameterCube")()); }
+	@property final static MaterialExpressionTextureSampleParameterCube DefaultProperties() { mixin(MGDPC("MaterialExpressionTextureSampleParameterCube", "MaterialExpressionTextureSampleParameterCube Engine.Default__MaterialExpressionTextureSampleParameterCube")); }
 }

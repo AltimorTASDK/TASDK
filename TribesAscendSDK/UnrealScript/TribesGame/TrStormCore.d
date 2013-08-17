@@ -13,9 +13,9 @@ extern(C++) interface TrStormCore : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStormCore")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrStormCore")); }
 	private static __gshared TrStormCore mDefaultProperties;
-	@property final static TrStormCore DefaultProperties() { mixin(MGDPC!(TrStormCore, "TrStormCore TribesGame.Default__TrStormCore")()); }
+	@property final static TrStormCore DefaultProperties() { mixin(MGDPC("TrStormCore", "TrStormCore TribesGame.Default__TrStormCore")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,17 +28,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrStormCore.TakeDamage")()); }
-			ScriptFunction GetHealthAmount() { mixin(MGF!("mGetHealthAmount", "Function TribesGame.TrStormCore.GetHealthAmount")()); }
-			ScriptFunction GetShieldAmount() { mixin(MGF!("mGetShieldAmount", "Function TribesGame.TrStormCore.GetShieldAmount")()); }
-			ScriptFunction OnCoreDestroyed() { mixin(MGF!("mOnCoreDestroyed", "Function TribesGame.TrStormCore.OnCoreDestroyed")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrStormCore.PostRenderFor")()); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrStormCore.TakeDamage")); }
+			ScriptFunction GetHealthAmount() { mixin(MGF("mGetHealthAmount", "Function TribesGame.TrStormCore.GetHealthAmount")); }
+			ScriptFunction GetShieldAmount() { mixin(MGF("mGetShieldAmount", "Function TribesGame.TrStormCore.GetShieldAmount")); }
+			ScriptFunction OnCoreDestroyed() { mixin(MGF("mOnCoreDestroyed", "Function TribesGame.TrStormCore.OnCoreDestroyed")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrStormCore.PostRenderFor")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fShieldBarPlacementY() { mixin(MGPC!("float", 1364)()); }
-		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 1360)()); }
+		float m_fShieldBarPlacementY() { mixin(MGPC("float", 1364)); }
+		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC("MaterialInstanceConstant", 1360)); }
 	}
 final:
 	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)

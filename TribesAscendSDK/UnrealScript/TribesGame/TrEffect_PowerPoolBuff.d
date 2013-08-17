@@ -9,9 +9,9 @@ extern(C++) interface TrEffect_PowerPoolBuff : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_PowerPoolBuff")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_PowerPoolBuff")); }
 	private static __gshared TrEffect_PowerPoolBuff mDefaultProperties;
-	@property final static TrEffect_PowerPoolBuff DefaultProperties() { mixin(MGDPC!(TrEffect_PowerPoolBuff, "TrEffect_PowerPoolBuff TribesGame.Default__TrEffect_PowerPoolBuff")()); }
+	@property final static TrEffect_PowerPoolBuff DefaultProperties() { mixin(MGDPC("TrEffect_PowerPoolBuff", "TrEffect_PowerPoolBuff TribesGame.Default__TrEffect_PowerPoolBuff")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_PowerPoolBuff.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_PowerPoolBuff.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_PowerPoolBuff.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_PowerPoolBuff.Remove")); }
 		}
 	}
 final:

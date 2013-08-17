@@ -9,9 +9,9 @@ extern(C++) interface TrVehicle_Havoc : TrVehicle_BaseFlying
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicle_Havoc")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicle_Havoc")); }
 	private static __gshared TrVehicle_Havoc mDefaultProperties;
-	@property final static TrVehicle_Havoc DefaultProperties() { mixin(MGDPC!(TrVehicle_Havoc, "TrVehicle_Havoc TribesGame.Default__TrVehicle_Havoc")()); }
+	@property final static TrVehicle_Havoc DefaultProperties() { mixin(MGDPC("TrVehicle_Havoc", "TrVehicle_Havoc TribesGame.Default__TrVehicle_Havoc")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,14 +21,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrVehicle_Havoc.PostBeginPlay")()); }
-			ScriptFunction GetWeaponAim() { mixin(MGF!("mGetWeaponAim", "Function TribesGame.TrVehicle_Havoc.GetWeaponAim")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrVehicle_Havoc.PostBeginPlay")); }
+			ScriptFunction GetWeaponAim() { mixin(MGF("mGetWeaponAim", "Function TribesGame.TrVehicle_Havoc.GetWeaponAim")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fPitchAimAngleRotation() { mixin(MGPC!("float", 3296)()); }
-		float m_fPitchAimAngle() { mixin(MGPC!("float", 3292)()); }
+		float m_fPitchAimAngleRotation() { mixin(MGPC("float", 3296)); }
+		float m_fPitchAimAngle() { mixin(MGPC("float", 3292)); }
 	}
 final:
 	void PostBeginPlay()

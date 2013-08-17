@@ -9,9 +9,9 @@ extern(C++) interface TrProj_HavocPilot : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_HavocPilot")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_HavocPilot")); }
 	private static __gshared TrProj_HavocPilot mDefaultProperties;
-	@property final static TrProj_HavocPilot DefaultProperties() { mixin(MGDPC!(TrProj_HavocPilot, "TrProj_HavocPilot TribesGame.Default__TrProj_HavocPilot")()); }
+	@property final static TrProj_HavocPilot DefaultProperties() { mixin(MGDPC("TrProj_HavocPilot", "TrProj_HavocPilot TribesGame.Default__TrProj_HavocPilot")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CalculateHijackMetric() { mixin(MGF!("mCalculateHijackMetric", "Function TribesGame.TrProj_HavocPilot.CalculateHijackMetric")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_HavocPilot.PostBeginPlay")()); }
-			ScriptFunction HijackMissileGuidance() { mixin(MGF!("mHijackMissileGuidance", "Function TribesGame.TrProj_HavocPilot.HijackMissileGuidance")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrProj_HavocPilot.Destroyed")()); }
+			ScriptFunction CalculateHijackMetric() { mixin(MGF("mCalculateHijackMetric", "Function TribesGame.TrProj_HavocPilot.CalculateHijackMetric")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrProj_HavocPilot.PostBeginPlay")); }
+			ScriptFunction HijackMissileGuidance() { mixin(MGF("mHijackMissileGuidance", "Function TribesGame.TrProj_HavocPilot.HijackMissileGuidance")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrProj_HavocPilot.Destroyed")); }
 		}
 	}
 final:

@@ -9,20 +9,20 @@ extern(C++) interface AnimNodeSequenceBlendBase : AnimNodeSequence
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeSequenceBlendBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AnimNodeSequenceBlendBase")); }
 	private static __gshared AnimNodeSequenceBlendBase mDefaultProperties;
-	@property final static AnimNodeSequenceBlendBase DefaultProperties() { mixin(MGDPC!(AnimNodeSequenceBlendBase, "AnimNodeSequenceBlendBase Engine.Default__AnimNodeSequenceBlendBase")()); }
+	@property final static AnimNodeSequenceBlendBase DefaultProperties() { mixin(MGDPC("AnimNodeSequenceBlendBase", "AnimNodeSequenceBlendBase Engine.Default__AnimNodeSequenceBlendBase")); }
 	struct AnimBlendInfo
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimBlendInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimBlendInfo")); }
 		@property final auto ref
 		{
-			float Weight() { mixin(MGPS!("float", 24)()); }
+			float Weight() { mixin(MGPS("float", 24)); }
 			// WARNING: Property 'AnimInfo' has the same name as a defined type!
-			ScriptName AnimName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptName AnimName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct AnimInfo
@@ -30,13 +30,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.AnimNodeSequenceBlendBase.AnimInfo")); }
 		@property final auto ref
 		{
-			int AnimLinkupIndex() { mixin(MGPS!("int", 12)()); }
-			AnimSequence AnimSeq() { mixin(MGPS!("AnimSequence", 8)()); }
-			ScriptName AnimSeqName() { mixin(MGPS!("ScriptName", 0)()); }
+			int AnimLinkupIndex() { mixin(MGPS("int", 12)); }
+			AnimSequence AnimSeq() { mixin(MGPS("AnimSequence", 8)); }
+			ScriptName AnimSeqName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
-	@property final auto ref ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo) Anims() { mixin(MGPC!("ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo)", 320)()); }
+	@property final auto ref ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo) Anims() { mixin(MGPC("ScriptArray!(AnimNodeSequenceBlendBase.AnimBlendInfo)", 320)); }
 }

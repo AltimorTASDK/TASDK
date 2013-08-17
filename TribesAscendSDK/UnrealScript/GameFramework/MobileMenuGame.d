@@ -10,9 +10,9 @@ extern(C++) interface MobileMenuGame : GameInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.MobileMenuGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.MobileMenuGame")); }
 	private static __gshared MobileMenuGame mDefaultProperties;
-	@property final static MobileMenuGame DefaultProperties() { mixin(MGDPC!(MobileMenuGame, "MobileMenuGame GameFramework.Default__MobileMenuGame")()); }
+	@property final static MobileMenuGame DefaultProperties() { mixin(MGDPC("MobileMenuGame", "MobileMenuGame GameFramework.Default__MobileMenuGame")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,12 +23,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostLogin() { mixin(MGF!("mPostLogin", "Function GameFramework.MobileMenuGame.PostLogin")()); }
-			ScriptFunction StartMatch() { mixin(MGF!("mStartMatch", "Function GameFramework.MobileMenuGame.StartMatch")()); }
-			ScriptFunction RestartPlayer() { mixin(MGF!("mRestartPlayer", "Function GameFramework.MobileMenuGame.RestartPlayer")()); }
+			ScriptFunction PostLogin() { mixin(MGF("mPostLogin", "Function GameFramework.MobileMenuGame.PostLogin")); }
+			ScriptFunction StartMatch() { mixin(MGF("mStartMatch", "Function GameFramework.MobileMenuGame.StartMatch")); }
+			ScriptFunction RestartPlayer() { mixin(MGF("mRestartPlayer", "Function GameFramework.MobileMenuGame.RestartPlayer")); }
 		}
 	}
-	@property final auto ref ScriptClass InitialSceneToDisplayClass() { mixin(MGPC!("ScriptClass", 884)()); }
+	@property final auto ref ScriptClass InitialSceneToDisplayClass() { mixin(MGPC("ScriptClass", 884)); }
 final:
 	void PostLogin(PlayerController NewPlayer)
 	{

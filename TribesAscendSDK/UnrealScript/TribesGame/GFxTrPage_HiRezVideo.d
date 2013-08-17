@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_HiRezVideo : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_HiRezVideo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_HiRezVideo")); }
 	private static __gshared GFxTrPage_HiRezVideo mDefaultProperties;
-	@property final static GFxTrPage_HiRezVideo DefaultProperties() { mixin(MGDPC!(GFxTrPage_HiRezVideo, "GFxTrPage_HiRezVideo TribesGame.Default__GFxTrPage_HiRezVideo")()); }
+	@property final static GFxTrPage_HiRezVideo DefaultProperties() { mixin(MGDPC("GFxTrPage_HiRezVideo", "GFxTrPage_HiRezVideo TribesGame.Default__GFxTrPage_HiRezVideo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_HiRezVideo.Initialize")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_HiRezVideo.ShowModel")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_HiRezVideo.SpecialAction")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_HiRezVideo.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_HiRezVideo.FillOption")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_HiRezVideo.FillDescription")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_HiRezVideo.Initialize")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_HiRezVideo.ShowModel")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_HiRezVideo.SpecialAction")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_HiRezVideo.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_HiRezVideo.FillOption")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_HiRezVideo.FillDescription")); }
 		}
 	}
 	@property final
 	{
-		bool bValid() { mixin(MGBPC!(356, 0x1)()); }
-		bool bValid(bool val) { mixin(MSBPC!(356, 0x1)()); }
+		bool bValid() { mixin(MGBPC(356, 0x1)); }
+		bool bValid(bool val) { mixin(MSBPC(356, 0x1)); }
 	}
 final:
 	void Initialize()

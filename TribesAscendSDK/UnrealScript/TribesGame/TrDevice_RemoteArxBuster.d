@@ -15,9 +15,9 @@ extern(C++) interface TrDevice_RemoteArxBuster : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_RemoteArxBuster")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_RemoteArxBuster")); }
 	private static __gshared TrDevice_RemoteArxBuster mDefaultProperties;
-	@property final static TrDevice_RemoteArxBuster DefaultProperties() { mixin(MGDPC!(TrDevice_RemoteArxBuster, "TrDevice_RemoteArxBuster TribesGame.Default__TrDevice_RemoteArxBuster")()); }
+	@property final static TrDevice_RemoteArxBuster DefaultProperties() { mixin(MGDPC("TrDevice_RemoteArxBuster", "TrDevice_RemoteArxBuster TribesGame.Default__TrDevice_RemoteArxBuster")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -48,53 +48,53 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetArxIdle() { mixin(MGF!("mSetArxIdle", "Function TribesGame.TrDevice_RemoteArxBuster.SetArxIdle")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrDevice_RemoteArxBuster.ReplicatedEvent")()); }
-			ScriptFunction SetLeftArmVisible() { mixin(MGF!("mSetLeftArmVisible", "Function TribesGame.TrDevice_RemoteArxBuster.SetLeftArmVisible")()); }
-			ScriptFunction DetPoseActive() { mixin(MGF!("mDetPoseActive", "Function TribesGame.TrDevice_RemoteArxBuster.DetPoseActive")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_RemoteArxBuster.PostInitAnimTree")()); }
-			ScriptFunction AddAmmo() { mixin(MGF!("mAddAmmo", "Function TribesGame.TrDevice_RemoteArxBuster.AddAmmo")()); }
-			ScriptFunction PerformInactiveReload() { mixin(MGF!("mPerformInactiveReload", "Function TribesGame.TrDevice_RemoteArxBuster.PerformInactiveReload")()); }
-			ScriptFunction RequestReload() { mixin(MGF!("mRequestReload", "Function TribesGame.TrDevice_RemoteArxBuster.RequestReload")()); }
-			ScriptFunction CanClientRequestReloadNow() { mixin(MGF!("mCanClientRequestReloadNow", "Function TribesGame.TrDevice_RemoteArxBuster.CanClientRequestReloadNow")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_RemoteArxBuster.StartFire")()); }
-			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_RemoteArxBuster.FireAmmunition")()); }
-			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function TribesGame.TrDevice_RemoteArxBuster.ProjectileFire")()); }
-			ScriptFunction ActivateRemoteRounds() { mixin(MGF!("mActivateRemoteRounds", "Function TribesGame.TrDevice_RemoteArxBuster.ActivateRemoteRounds")()); }
-			ScriptFunction HideArmTimer() { mixin(MGF!("mHideArmTimer", "Function TribesGame.TrDevice_RemoteArxBuster.HideArmTimer")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDevice_RemoteArxBuster.Destroyed")()); }
-			ScriptFunction OnRemoteProjectileDestroyedByOther() { mixin(MGF!("mOnRemoteProjectileDestroyedByOther", "Function TribesGame.TrDevice_RemoteArxBuster.OnRemoteProjectileDestroyedByOther")()); }
-			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function TribesGame.TrDevice_RemoteArxBuster.OnAnimPlay")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_RemoteArxBuster.OnAnimEnd")()); }
-			ScriptFunction OnPlayRetrieveAnim() { mixin(MGF!("mOnPlayRetrieveAnim", "Function TribesGame.TrDevice_RemoteArxBuster.OnPlayRetrieveAnim")()); }
-			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_RemoteArxBuster.PlayWeaponEquip")()); }
-			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice_RemoteArxBuster.PlayWeaponPutDown")()); }
-			ScriptFunction PutDownFast() { mixin(MGF!("mPutDownFast", "Function TribesGame.TrDevice_RemoteArxBuster.PutDownFast")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_RemoteArxBuster.OnSwitchAwayFromWeapon")()); }
+			ScriptFunction SetArxIdle() { mixin(MGF("mSetArxIdle", "Function TribesGame.TrDevice_RemoteArxBuster.SetArxIdle")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrDevice_RemoteArxBuster.ReplicatedEvent")); }
+			ScriptFunction SetLeftArmVisible() { mixin(MGF("mSetLeftArmVisible", "Function TribesGame.TrDevice_RemoteArxBuster.SetLeftArmVisible")); }
+			ScriptFunction DetPoseActive() { mixin(MGF("mDetPoseActive", "Function TribesGame.TrDevice_RemoteArxBuster.DetPoseActive")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDevice_RemoteArxBuster.PostInitAnimTree")); }
+			ScriptFunction AddAmmo() { mixin(MGF("mAddAmmo", "Function TribesGame.TrDevice_RemoteArxBuster.AddAmmo")); }
+			ScriptFunction PerformInactiveReload() { mixin(MGF("mPerformInactiveReload", "Function TribesGame.TrDevice_RemoteArxBuster.PerformInactiveReload")); }
+			ScriptFunction RequestReload() { mixin(MGF("mRequestReload", "Function TribesGame.TrDevice_RemoteArxBuster.RequestReload")); }
+			ScriptFunction CanClientRequestReloadNow() { mixin(MGF("mCanClientRequestReloadNow", "Function TribesGame.TrDevice_RemoteArxBuster.CanClientRequestReloadNow")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function TribesGame.TrDevice_RemoteArxBuster.StartFire")); }
+			ScriptFunction FireAmmunition() { mixin(MGF("mFireAmmunition", "Function TribesGame.TrDevice_RemoteArxBuster.FireAmmunition")); }
+			ScriptFunction ProjectileFire() { mixin(MGF("mProjectileFire", "Function TribesGame.TrDevice_RemoteArxBuster.ProjectileFire")); }
+			ScriptFunction ActivateRemoteRounds() { mixin(MGF("mActivateRemoteRounds", "Function TribesGame.TrDevice_RemoteArxBuster.ActivateRemoteRounds")); }
+			ScriptFunction HideArmTimer() { mixin(MGF("mHideArmTimer", "Function TribesGame.TrDevice_RemoteArxBuster.HideArmTimer")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrDevice_RemoteArxBuster.Destroyed")); }
+			ScriptFunction OnRemoteProjectileDestroyedByOther() { mixin(MGF("mOnRemoteProjectileDestroyedByOther", "Function TribesGame.TrDevice_RemoteArxBuster.OnRemoteProjectileDestroyedByOther")); }
+			ScriptFunction OnAnimPlay() { mixin(MGF("mOnAnimPlay", "Function TribesGame.TrDevice_RemoteArxBuster.OnAnimPlay")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function TribesGame.TrDevice_RemoteArxBuster.OnAnimEnd")); }
+			ScriptFunction OnPlayRetrieveAnim() { mixin(MGF("mOnPlayRetrieveAnim", "Function TribesGame.TrDevice_RemoteArxBuster.OnPlayRetrieveAnim")); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF("mPlayWeaponEquip", "Function TribesGame.TrDevice_RemoteArxBuster.PlayWeaponEquip")); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF("mPlayWeaponPutDown", "Function TribesGame.TrDevice_RemoteArxBuster.PlayWeaponPutDown")); }
+			ScriptFunction PutDownFast() { mixin(MGF("mPutDownFast", "Function TribesGame.TrDevice_RemoteArxBuster.PutDownFast")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_RemoteArxBuster.OnSwitchAwayFromWeapon")); }
 		}
 	}
 	static struct Active
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_RemoteArxBuster.Active")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_RemoteArxBuster.Active")); }
 	}
 	static struct WeaponConstantFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_RemoteArxBuster.WeaponConstantFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_RemoteArxBuster.WeaponConstantFiring")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrProj_RemoteArxBuster) RemoteArxRounds() { mixin(MGPC!("ScriptArray!(TrProj_RemoteArxBuster)", 2160)()); }
-			SoundCue m_ArxIdleSound() { mixin(MGPC!("SoundCue", 2176)()); }
-			AnimNodeAdditiveBlending DetReadyAdditiveAnimNode() { mixin(MGPC!("AnimNodeAdditiveBlending", 2172)()); }
-			SkelControlSingleBone DetonatorChild() { mixin(MGPC!("SkelControlSingleBone", 2152)()); }
-			SkelControlSingleBone DetonatorControl() { mixin(MGPC!("SkelControlSingleBone", 2148)()); }
+			ScriptArray!(TrProj_RemoteArxBuster) RemoteArxRounds() { mixin(MGPC("ScriptArray!(TrProj_RemoteArxBuster)", 2160)); }
+			SoundCue m_ArxIdleSound() { mixin(MGPC("SoundCue", 2176)); }
+			AnimNodeAdditiveBlending DetReadyAdditiveAnimNode() { mixin(MGPC("AnimNodeAdditiveBlending", 2172)); }
+			SkelControlSingleBone DetonatorChild() { mixin(MGPC("SkelControlSingleBone", 2152)); }
+			SkelControlSingleBone DetonatorControl() { mixin(MGPC("SkelControlSingleBone", 2148)); }
 		}
-		bool r_bIsLeftArmVisible() { mixin(MGBPC!(2156, 0x1)()); }
-		bool r_bIsLeftArmVisible(bool val) { mixin(MSBPC!(2156, 0x1)()); }
+		bool r_bIsLeftArmVisible() { mixin(MGBPC(2156, 0x1)); }
+		bool r_bIsLeftArmVisible(bool val) { mixin(MSBPC(2156, 0x1)); }
 	}
 final:
 	void SetArxIdle(bool bEnabled)

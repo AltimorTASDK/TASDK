@@ -11,13 +11,13 @@ extern(C++) interface UTPickupInventory : UTInventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPickupInventory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTPickupInventory")); }
 	private static __gshared UTPickupInventory mDefaultProperties;
-	@property final static UTPickupInventory DefaultProperties() { mixin(MGDPC!(UTPickupInventory, "UTPickupInventory UTGame.Default__UTPickupInventory")()); }
+	@property final static UTPickupInventory DefaultProperties() { mixin(MGDPC("UTPickupInventory", "UTPickupInventory UTGame.Default__UTPickupInventory")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mBotDesireability;
-		public @property static final ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTPickupInventory.BotDesireability")()); }
+		public @property static final ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function UTGame.UTPickupInventory.BotDesireability")); }
 	}
 	final static float BotDesireability(Actor PickupHolder, Pawn P, Controller C)
 	{

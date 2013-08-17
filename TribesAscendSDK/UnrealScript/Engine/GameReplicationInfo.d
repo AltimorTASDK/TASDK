@@ -11,9 +11,9 @@ extern(C++) interface GameReplicationInfo : ReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameReplicationInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.GameReplicationInfo")); }
 	private static __gshared GameReplicationInfo mDefaultProperties;
-	@property final static GameReplicationInfo DefaultProperties() { mixin(MGDPC!(GameReplicationInfo, "GameReplicationInfo Engine.Default__GameReplicationInfo")()); }
+	@property final static GameReplicationInfo DefaultProperties() { mixin(MGDPC("GameReplicationInfo", "GameReplicationInfo Engine.Default__GameReplicationInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,46 +35,46 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldShowGore() { mixin(MGF!("mShouldShowGore", "Function Engine.GameReplicationInfo.ShouldShowGore")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.GameReplicationInfo.PostBeginPlay")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.GameReplicationInfo.ReplicatedEvent")()); }
-			ScriptFunction ReceivedGameClass() { mixin(MGF!("mReceivedGameClass", "Function Engine.GameReplicationInfo.ReceivedGameClass")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.GameReplicationInfo.Reset")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.GameReplicationInfo.Timer")()); }
-			ScriptFunction OnSameTeam() { mixin(MGF!("mOnSameTeam", "Function Engine.GameReplicationInfo.OnSameTeam")()); }
-			ScriptFunction AddPRI() { mixin(MGF!("mAddPRI", "Function Engine.GameReplicationInfo.AddPRI")()); }
-			ScriptFunction RemovePRI() { mixin(MGF!("mRemovePRI", "Function Engine.GameReplicationInfo.RemovePRI")()); }
-			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function Engine.GameReplicationInfo.SetTeam")()); }
-			ScriptFunction StartMatch() { mixin(MGF!("mStartMatch", "Function Engine.GameReplicationInfo.StartMatch")()); }
-			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function Engine.GameReplicationInfo.EndGame")()); }
-			ScriptFunction IsMultiplayerGame() { mixin(MGF!("mIsMultiplayerGame", "Function Engine.GameReplicationInfo.IsMultiplayerGame")()); }
-			ScriptFunction IsCoopMultiplayerGame() { mixin(MGF!("mIsCoopMultiplayerGame", "Function Engine.GameReplicationInfo.IsCoopMultiplayerGame")()); }
+			ScriptFunction ShouldShowGore() { mixin(MGF("mShouldShowGore", "Function Engine.GameReplicationInfo.ShouldShowGore")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.GameReplicationInfo.PostBeginPlay")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.GameReplicationInfo.ReplicatedEvent")); }
+			ScriptFunction ReceivedGameClass() { mixin(MGF("mReceivedGameClass", "Function Engine.GameReplicationInfo.ReceivedGameClass")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.GameReplicationInfo.Reset")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function Engine.GameReplicationInfo.Timer")); }
+			ScriptFunction OnSameTeam() { mixin(MGF("mOnSameTeam", "Function Engine.GameReplicationInfo.OnSameTeam")); }
+			ScriptFunction AddPRI() { mixin(MGF("mAddPRI", "Function Engine.GameReplicationInfo.AddPRI")); }
+			ScriptFunction RemovePRI() { mixin(MGF("mRemovePRI", "Function Engine.GameReplicationInfo.RemovePRI")); }
+			ScriptFunction SetTeam() { mixin(MGF("mSetTeam", "Function Engine.GameReplicationInfo.SetTeam")); }
+			ScriptFunction StartMatch() { mixin(MGF("mStartMatch", "Function Engine.GameReplicationInfo.StartMatch")); }
+			ScriptFunction EndGame() { mixin(MGF("mEndGame", "Function Engine.GameReplicationInfo.EndGame")); }
+			ScriptFunction IsMultiplayerGame() { mixin(MGF("mIsMultiplayerGame", "Function Engine.GameReplicationInfo.IsMultiplayerGame")); }
+			ScriptFunction IsCoopMultiplayerGame() { mixin(MGF("mIsCoopMultiplayerGame", "Function Engine.GameReplicationInfo.IsCoopMultiplayerGame")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PlayerReplicationInfo) PRIArray() { mixin(MGPC!("ScriptArray!(PlayerReplicationInfo)", 532)()); }
-			ScriptClass GameClass() { mixin(MGPC!("ScriptClass", 476)()); }
-			ScriptArray!(TeamInfo) Teams() { mixin(MGPC!("ScriptArray!(TeamInfo)", 504)()); }
-			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { mixin(MGPC!("ScriptArray!(PlayerReplicationInfo)", 544)()); }
-			Actor Winner() { mixin(MGPC!("Actor", 528)()); }
-			ScriptString ServerName() { mixin(MGPC!("ScriptString", 516)()); }
-			int TimeLimit() { mixin(MGPC!("int", 500)()); }
-			int GoalScore() { mixin(MGPC!("int", 496)()); }
-			int RemainingMinute() { mixin(MGPC!("int", 492)()); }
-			int ElapsedTime() { mixin(MGPC!("int", 488)()); }
-			int RemainingTime() { mixin(MGPC!("int", 484)()); }
+			ScriptArray!(PlayerReplicationInfo) PRIArray() { mixin(MGPC("ScriptArray!(PlayerReplicationInfo)", 532)); }
+			ScriptClass GameClass() { mixin(MGPC("ScriptClass", 476)); }
+			ScriptArray!(TeamInfo) Teams() { mixin(MGPC("ScriptArray!(TeamInfo)", 504)); }
+			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { mixin(MGPC("ScriptArray!(PlayerReplicationInfo)", 544)); }
+			Actor Winner() { mixin(MGPC("Actor", 528)); }
+			ScriptString ServerName() { mixin(MGPC("ScriptString", 516)); }
+			int TimeLimit() { mixin(MGPC("int", 500)); }
+			int GoalScore() { mixin(MGPC("int", 496)); }
+			int RemainingMinute() { mixin(MGPC("int", 492)); }
+			int ElapsedTime() { mixin(MGPC("int", 488)); }
+			int RemainingTime() { mixin(MGPC("int", 484)); }
 		}
-		bool bMatchHasBegun() { mixin(MGBPC!(480, 0x2)()); }
-		bool bMatchHasBegun(bool val) { mixin(MSBPC!(480, 0x2)()); }
-		bool r_bFriendlyFire() { mixin(MGBPC!(480, 0x8)()); }
-		bool r_bFriendlyFire(bool val) { mixin(MSBPC!(480, 0x8)()); }
-		bool bMatchIsOver() { mixin(MGBPC!(480, 0x4)()); }
-		bool bMatchIsOver(bool val) { mixin(MSBPC!(480, 0x4)()); }
-		bool bStopCountDown() { mixin(MGBPC!(480, 0x1)()); }
-		bool bStopCountDown(bool val) { mixin(MSBPC!(480, 0x1)()); }
+		bool bMatchHasBegun() { mixin(MGBPC(480, 0x2)); }
+		bool bMatchHasBegun(bool val) { mixin(MSBPC(480, 0x2)); }
+		bool r_bFriendlyFire() { mixin(MGBPC(480, 0x8)); }
+		bool r_bFriendlyFire(bool val) { mixin(MSBPC(480, 0x8)); }
+		bool bMatchIsOver() { mixin(MGBPC(480, 0x4)); }
+		bool bMatchIsOver(bool val) { mixin(MSBPC(480, 0x4)); }
+		bool bStopCountDown() { mixin(MGBPC(480, 0x1)); }
+		bool bStopCountDown(bool val) { mixin(MSBPC(480, 0x1)); }
 	}
 final:
 	bool ShouldShowGore()

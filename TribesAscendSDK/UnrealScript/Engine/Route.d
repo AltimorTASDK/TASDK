@@ -11,9 +11,9 @@ extern(C++) interface Route : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Route")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Route")); }
 	private static __gshared Route mDefaultProperties;
-	@property final static Route DefaultProperties() { mixin(MGDPC!(Route, "Route Engine.Default__Route")()); }
+	@property final static Route DefaultProperties() { mixin(MGDPC("Route", "Route Engine.Default__Route")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ResolveRouteIndex() { mixin(MGF!("mResolveRouteIndex", "Function Engine.Route.ResolveRouteIndex")()); }
-			ScriptFunction MoveOntoRoutePath() { mixin(MGF!("mMoveOntoRoutePath", "Function Engine.Route.MoveOntoRoutePath")()); }
+			ScriptFunction ResolveRouteIndex() { mixin(MGF("mResolveRouteIndex", "Function Engine.Route.ResolveRouteIndex")); }
+			ScriptFunction MoveOntoRoutePath() { mixin(MGF("mMoveOntoRoutePath", "Function Engine.Route.MoveOntoRoutePath")); }
 		}
 	}
 	enum ERouteDirection : ubyte
@@ -50,11 +50,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ActorReference) RouteList() { mixin(MGPC!("ScriptArray!(Actor.ActorReference)", 484)()); }
-		Route.ERouteType RouteType() { mixin(MGPC!("Route.ERouteType", 480)()); }
-		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!("UObject.Pointer", 476)()); }
-		float FudgeFactor() { mixin(MGPC!("float", 496)()); }
-		int RouteIndexOffset() { mixin(MGPC!("int", 500)()); }
+		ScriptArray!(Actor.ActorReference) RouteList() { mixin(MGPC("ScriptArray!(Actor.ActorReference)", 484)); }
+		Route.ERouteType RouteType() { mixin(MGPC("Route.ERouteType", 480)); }
+		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("UObject.Pointer", 476)); }
+		float FudgeFactor() { mixin(MGPC("float", 496)); }
+		int RouteIndexOffset() { mixin(MGPC("int", 500)); }
 	}
 final:
 	int ResolveRouteIndex(int Idx, Route.ERouteDirection RouteDirection, ref ubyte out_bComplete, ref ubyte out_bReverse)

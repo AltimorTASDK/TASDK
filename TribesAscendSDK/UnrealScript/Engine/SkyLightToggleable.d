@@ -8,7 +8,7 @@ extern(C++) interface SkyLightToggleable : SkyLight
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkyLightToggleable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SkyLightToggleable")); }
 	private static __gshared SkyLightToggleable mDefaultProperties;
-	@property final static SkyLightToggleable DefaultProperties() { mixin(MGDPC!(SkyLightToggleable, "SkyLightToggleable Engine.Default__SkyLightToggleable")()); }
+	@property final static SkyLightToggleable DefaultProperties() { mixin(MGDPC("SkyLightToggleable", "SkyLightToggleable Engine.Default__SkyLightToggleable")); }
 }

@@ -11,9 +11,9 @@ extern(C++) interface UTAmmoPickupFactory : UTItemPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAmmoPickupFactory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAmmoPickupFactory")); }
 	private static __gshared UTAmmoPickupFactory mDefaultProperties;
-	@property final static UTAmmoPickupFactory DefaultProperties() { mixin(MGDPC!(UTAmmoPickupFactory, "UTAmmoPickupFactory UTGame.Default__UTAmmoPickupFactory")()); }
+	@property final static UTAmmoPickupFactory DefaultProperties() { mixin(MGDPC("UTAmmoPickupFactory", "UTAmmoPickupFactory UTGame.Default__UTAmmoPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,20 +24,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTAmmoPickupFactory.SpawnCopyFor")()); }
-			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function UTGame.UTAmmoPickupFactory.UpdateHUD")()); }
-			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTAmmoPickupFactory.BotDesireability")()); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF("mSpawnCopyFor", "Function UTGame.UTAmmoPickupFactory.SpawnCopyFor")); }
+			ScriptFunction UpdateHUD() { mixin(MGF("mUpdateHUD", "Function UTGame.UTAmmoPickupFactory.UpdateHUD")); }
+			ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function UTGame.UTAmmoPickupFactory.BotDesireability")); }
 		}
 	}
 	static struct Pickup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTAmmoPickupFactory.Pickup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTAmmoPickupFactory.Pickup")); }
 	}
 	@property final auto ref
 	{
-		ScriptClass TargetWeapon() { mixin(MGPC!("ScriptClass", 980)()); }
-		int AmmoAmount() { mixin(MGPC!("int", 976)()); }
+		ScriptClass TargetWeapon() { mixin(MGPC("ScriptClass", 980)); }
+		int AmmoAmount() { mixin(MGPC("int", 976)); }
 	}
 final:
 	void SpawnCopyFor(Pawn Recipient)

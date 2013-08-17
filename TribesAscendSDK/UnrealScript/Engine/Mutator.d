@@ -15,9 +15,9 @@ extern(C++) interface Mutator : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Mutator")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Mutator")); }
 	private static __gshared Mutator mDefaultProperties;
-	@property final static Mutator DefaultProperties() { mixin(MGDPC!(Mutator, "Mutator Engine.Default__Mutator")()); }
+	@property final static Mutator DefaultProperties() { mixin(MGDPC("Mutator", "Mutator Engine.Default__Mutator")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -51,43 +51,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreventDeath() { mixin(MGF!("mPreventDeath", "Function Engine.Mutator.PreventDeath")()); }
-			ScriptFunction CheckRelevance() { mixin(MGF!("mCheckRelevance", "Function Engine.Mutator.CheckRelevance")()); }
-			ScriptFunction OverridePickupQuery() { mixin(MGF!("mOverridePickupQuery", "Function Engine.Mutator.OverridePickupQuery")()); }
-			ScriptFunction HandleRestartGame() { mixin(MGF!("mHandleRestartGame", "Function Engine.Mutator.HandleRestartGame")()); }
-			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function Engine.Mutator.CheckEndGame")()); }
-			ScriptFunction FindPlayerStart() { mixin(MGF!("mFindPlayerStart", "Function Engine.Mutator.FindPlayerStart")()); }
-			ScriptFunction CanLeaveVehicle() { mixin(MGF!("mCanLeaveVehicle", "Function Engine.Mutator.CanLeaveVehicle")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.Mutator.PreBeginPlay")()); }
-			ScriptFunction MutatorIsAllowed() { mixin(MGF!("mMutatorIsAllowed", "Function Engine.Mutator.MutatorIsAllowed")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Mutator.Destroyed")()); }
-			ScriptFunction Mutate() { mixin(MGF!("mMutate", "Function Engine.Mutator.Mutate")()); }
-			ScriptFunction ModifyLogin() { mixin(MGF!("mModifyLogin", "Function Engine.Mutator.ModifyLogin")()); }
-			ScriptFunction ModifyPlayer() { mixin(MGF!("mModifyPlayer", "Function Engine.Mutator.ModifyPlayer")()); }
-			ScriptFunction AddMutator() { mixin(MGF!("mAddMutator", "Function Engine.Mutator.AddMutator")()); }
-			ScriptFunction AlwaysKeep() { mixin(MGF!("mAlwaysKeep", "Function Engine.Mutator.AlwaysKeep")()); }
-			ScriptFunction IsRelevant() { mixin(MGF!("mIsRelevant", "Function Engine.Mutator.IsRelevant")()); }
-			ScriptFunction CheckReplacement() { mixin(MGF!("mCheckReplacement", "Function Engine.Mutator.CheckReplacement")()); }
-			ScriptFunction NotifyLogout() { mixin(MGF!("mNotifyLogout", "Function Engine.Mutator.NotifyLogout")()); }
-			ScriptFunction NotifyLogin() { mixin(MGF!("mNotifyLogin", "Function Engine.Mutator.NotifyLogin")()); }
-			ScriptFunction DriverEnteredVehicle() { mixin(MGF!("mDriverEnteredVehicle", "Function Engine.Mutator.DriverEnteredVehicle")()); }
-			ScriptFunction DriverLeftVehicle() { mixin(MGF!("mDriverLeftVehicle", "Function Engine.Mutator.DriverLeftVehicle")()); }
-			ScriptFunction InitMutator() { mixin(MGF!("mInitMutator", "Function Engine.Mutator.InitMutator")()); }
-			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF!("mGetSeamlessTravelActorList", "Function Engine.Mutator.GetSeamlessTravelActorList")()); }
-			ScriptFunction ScoreObjective() { mixin(MGF!("mScoreObjective", "Function Engine.Mutator.ScoreObjective")()); }
-			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function Engine.Mutator.ScoreKill")()); }
-			ScriptFunction NetDamage() { mixin(MGF!("mNetDamage", "Function Engine.Mutator.NetDamage")()); }
+			ScriptFunction PreventDeath() { mixin(MGF("mPreventDeath", "Function Engine.Mutator.PreventDeath")); }
+			ScriptFunction CheckRelevance() { mixin(MGF("mCheckRelevance", "Function Engine.Mutator.CheckRelevance")); }
+			ScriptFunction OverridePickupQuery() { mixin(MGF("mOverridePickupQuery", "Function Engine.Mutator.OverridePickupQuery")); }
+			ScriptFunction HandleRestartGame() { mixin(MGF("mHandleRestartGame", "Function Engine.Mutator.HandleRestartGame")); }
+			ScriptFunction CheckEndGame() { mixin(MGF("mCheckEndGame", "Function Engine.Mutator.CheckEndGame")); }
+			ScriptFunction FindPlayerStart() { mixin(MGF("mFindPlayerStart", "Function Engine.Mutator.FindPlayerStart")); }
+			ScriptFunction CanLeaveVehicle() { mixin(MGF("mCanLeaveVehicle", "Function Engine.Mutator.CanLeaveVehicle")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function Engine.Mutator.PreBeginPlay")); }
+			ScriptFunction MutatorIsAllowed() { mixin(MGF("mMutatorIsAllowed", "Function Engine.Mutator.MutatorIsAllowed")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.Mutator.Destroyed")); }
+			ScriptFunction Mutate() { mixin(MGF("mMutate", "Function Engine.Mutator.Mutate")); }
+			ScriptFunction ModifyLogin() { mixin(MGF("mModifyLogin", "Function Engine.Mutator.ModifyLogin")); }
+			ScriptFunction ModifyPlayer() { mixin(MGF("mModifyPlayer", "Function Engine.Mutator.ModifyPlayer")); }
+			ScriptFunction AddMutator() { mixin(MGF("mAddMutator", "Function Engine.Mutator.AddMutator")); }
+			ScriptFunction AlwaysKeep() { mixin(MGF("mAlwaysKeep", "Function Engine.Mutator.AlwaysKeep")); }
+			ScriptFunction IsRelevant() { mixin(MGF("mIsRelevant", "Function Engine.Mutator.IsRelevant")); }
+			ScriptFunction CheckReplacement() { mixin(MGF("mCheckReplacement", "Function Engine.Mutator.CheckReplacement")); }
+			ScriptFunction NotifyLogout() { mixin(MGF("mNotifyLogout", "Function Engine.Mutator.NotifyLogout")); }
+			ScriptFunction NotifyLogin() { mixin(MGF("mNotifyLogin", "Function Engine.Mutator.NotifyLogin")); }
+			ScriptFunction DriverEnteredVehicle() { mixin(MGF("mDriverEnteredVehicle", "Function Engine.Mutator.DriverEnteredVehicle")); }
+			ScriptFunction DriverLeftVehicle() { mixin(MGF("mDriverLeftVehicle", "Function Engine.Mutator.DriverLeftVehicle")); }
+			ScriptFunction InitMutator() { mixin(MGF("mInitMutator", "Function Engine.Mutator.InitMutator")); }
+			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF("mGetSeamlessTravelActorList", "Function Engine.Mutator.GetSeamlessTravelActorList")); }
+			ScriptFunction ScoreObjective() { mixin(MGF("mScoreObjective", "Function Engine.Mutator.ScoreObjective")); }
+			ScriptFunction ScoreKill() { mixin(MGF("mScoreKill", "Function Engine.Mutator.ScoreKill")); }
+			ScriptFunction NetDamage() { mixin(MGF("mNetDamage", "Function Engine.Mutator.NetDamage")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) GroupNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 480)()); }
-			Mutator NextMutator() { mixin(MGPC!("Mutator", 476)()); }
+			ScriptArray!(ScriptString) GroupNames() { mixin(MGPC("ScriptArray!(ScriptString)", 480)); }
+			Mutator NextMutator() { mixin(MGPC("Mutator", 476)); }
 		}
-		bool bUserAdded() { mixin(MGBPC!(492, 0x1)()); }
-		bool bUserAdded(bool val) { mixin(MSBPC!(492, 0x1)()); }
+		bool bUserAdded() { mixin(MGBPC(492, 0x1)); }
+		bool bUserAdded(bool val) { mixin(MSBPC(492, 0x1)); }
 	}
 final:
 	bool PreventDeath(Pawn Killed, Controller Killer, ScriptClass pDamageType, Vector HitLocation)

@@ -12,9 +12,9 @@ extern(C++) interface UTVehicleCantCarryFlagMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleCantCarryFlagMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVehicleCantCarryFlagMessage")); }
 	private static __gshared UTVehicleCantCarryFlagMessage mDefaultProperties;
-	@property final static UTVehicleCantCarryFlagMessage DefaultProperties() { mixin(MGDPC!(UTVehicleCantCarryFlagMessage, "UTVehicleCantCarryFlagMessage UTGame.Default__UTVehicleCantCarryFlagMessage")()); }
+	@property final static UTVehicleCantCarryFlagMessage DefaultProperties() { mixin(MGDPC("UTVehicleCantCarryFlagMessage", "UTVehicleCantCarryFlagMessage UTGame.Default__UTVehicleCantCarryFlagMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,16 +26,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVehicleCantCarryFlagMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementSound")()); }
-			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementLevel")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVehicleCantCarryFlagMessage.GetString")()); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTVehicleCantCarryFlagMessage.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementSound")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF("mAnnouncementLevel", "Function UTGame.UTVehicleCantCarryFlagMessage.AnnouncementLevel")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTVehicleCantCarryFlagMessage.GetString")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave FlagAnnouncement() { mixin(MGPC!("SoundNodeWave", 112)()); }
-		ScriptString FlagMessage() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundNodeWave FlagAnnouncement() { mixin(MGPC("SoundNodeWave", 112)); }
+		ScriptString FlagMessage() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

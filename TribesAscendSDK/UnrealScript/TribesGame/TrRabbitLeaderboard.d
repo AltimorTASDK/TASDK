@@ -11,9 +11,9 @@ extern(C++) interface TrRabbitLeaderboard : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRabbitLeaderboard")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrRabbitLeaderboard")); }
 	private static __gshared TrRabbitLeaderboard mDefaultProperties;
-	@property final static TrRabbitLeaderboard DefaultProperties() { mixin(MGDPC!(TrRabbitLeaderboard, "TrRabbitLeaderboard TribesGame.Default__TrRabbitLeaderboard")()); }
+	@property final static TrRabbitLeaderboard DefaultProperties() { mixin(MGDPC("TrRabbitLeaderboard", "TrRabbitLeaderboard TribesGame.Default__TrRabbitLeaderboard")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,15 +30,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrRabbitLeaderboard.Initialize")()); }
-			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrRabbitLeaderboard.Show")()); }
-			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrRabbitLeaderboard.Hide")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrRabbitLeaderboard.Tick")()); }
-			ScriptFunction UpdatePlayers() { mixin(MGF!("mUpdatePlayers", "Function TribesGame.TrRabbitLeaderboard.UpdatePlayers")()); }
-			ScriptFunction UpdateLeaderboard() { mixin(MGF!("mUpdateLeaderboard", "Function TribesGame.TrRabbitLeaderboard.UpdateLeaderboard")()); }
-			ScriptFunction UpdateTime() { mixin(MGF!("mUpdateTime", "Function TribesGame.TrRabbitLeaderboard.UpdateTime")()); }
-			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrRabbitLeaderboard.FormatTime")()); }
-			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrRabbitLeaderboard.ForceUpdate")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrRabbitLeaderboard.Initialize")); }
+			ScriptFunction Show() { mixin(MGF("mShow", "Function TribesGame.TrRabbitLeaderboard.Show")); }
+			ScriptFunction Hide() { mixin(MGF("mHide", "Function TribesGame.TrRabbitLeaderboard.Hide")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrRabbitLeaderboard.Tick")); }
+			ScriptFunction UpdatePlayers() { mixin(MGF("mUpdatePlayers", "Function TribesGame.TrRabbitLeaderboard.UpdatePlayers")); }
+			ScriptFunction UpdateLeaderboard() { mixin(MGF("mUpdateLeaderboard", "Function TribesGame.TrRabbitLeaderboard.UpdateLeaderboard")); }
+			ScriptFunction UpdateTime() { mixin(MGF("mUpdateTime", "Function TribesGame.TrRabbitLeaderboard.UpdateTime")); }
+			ScriptFunction FormatTime() { mixin(MGF("mFormatTime", "Function TribesGame.TrRabbitLeaderboard.FormatTime")); }
+			ScriptFunction ForceUpdate() { mixin(MGF("mForceUpdate", "Function TribesGame.TrRabbitLeaderboard.ForceUpdate")); }
 		}
 	}
 	struct LeaderboardSlot
@@ -46,29 +46,29 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrRabbitLeaderboard.LeaderboardSlot")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrRabbitLeaderboard.LeaderboardSlot")); }
 		@property final auto ref
 		{
-			int Score() { mixin(MGPS!("int", 8)()); }
-			ScriptName PRIName() { mixin(MGPS!("ScriptName", 0)()); }
+			int Score() { mixin(MGPS("int", 8)); }
+			ScriptName PRIName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 72)()); }
-			TrRabbitLeaderboard.LeaderboardSlot LeaderboardSlots() { mixin(MGPC!("TrRabbitLeaderboard.LeaderboardSlot", 80)()); }
-			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 76)()); }
-			int RemainingTime() { mixin(MGPC!("int", 64)()); }
-			int PrevSlots() { mixin(MGPC!("int", 60)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC("GfxTrHud", 72)); }
+			TrRabbitLeaderboard.LeaderboardSlot LeaderboardSlots() { mixin(MGPC("TrRabbitLeaderboard.LeaderboardSlot", 80)); }
+			TrPlayerController TrPC() { mixin(MGPC("TrPlayerController", 76)); }
+			int RemainingTime() { mixin(MGPC("int", 64)); }
+			int PrevSlots() { mixin(MGPC("int", 60)); }
 		}
-		bool bIsActive() { mixin(MGBPC!(68, 0x4)()); }
-		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x4)()); }
-		bool bInitialized() { mixin(MGBPC!(68, 0x2)()); }
-		bool bInitialized(bool val) { mixin(MSBPC!(68, 0x2)()); }
-		bool bUpdated() { mixin(MGBPC!(68, 0x1)()); }
-		bool bUpdated(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool bIsActive() { mixin(MGBPC(68, 0x4)); }
+		bool bIsActive(bool val) { mixin(MSBPC(68, 0x4)); }
+		bool bInitialized() { mixin(MGBPC(68, 0x2)); }
+		bool bInitialized(bool val) { mixin(MSBPC(68, 0x2)); }
+		bool bUpdated() { mixin(MGBPC(68, 0x1)); }
+		bool bUpdated(bool val) { mixin(MSBPC(68, 0x1)); }
 	}
 final:
 	void Initialize(TrPlayerController PC, GfxTrHud MP)

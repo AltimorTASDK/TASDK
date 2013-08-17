@@ -9,9 +9,9 @@ extern(C++) interface GenericParamListStatEntry : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GenericParamListStatEntry")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.GenericParamListStatEntry")); }
 	private static __gshared GenericParamListStatEntry mDefaultProperties;
-	@property final static GenericParamListStatEntry DefaultProperties() { mixin(MGDPC!(GenericParamListStatEntry, "GenericParamListStatEntry Engine.Default__GenericParamListStatEntry")()); }
+	@property final static GenericParamListStatEntry DefaultProperties() { mixin(MGDPC("GenericParamListStatEntry", "GenericParamListStatEntry Engine.Default__GenericParamListStatEntry")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,21 +28,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddFloat() { mixin(MGF!("mAddFloat", "Function Engine.GenericParamListStatEntry.AddFloat")()); }
-			ScriptFunction AddInt() { mixin(MGF!("mAddInt", "Function Engine.GenericParamListStatEntry.AddInt")()); }
-			ScriptFunction AddVector() { mixin(MGF!("mAddVector", "Function Engine.GenericParamListStatEntry.AddVector")()); }
-			ScriptFunction AddString() { mixin(MGF!("mAddString", "Function Engine.GenericParamListStatEntry.AddString")()); }
-			ScriptFunction GetFloat() { mixin(MGF!("mGetFloat", "Function Engine.GenericParamListStatEntry.GetFloat")()); }
-			ScriptFunction GetInt() { mixin(MGF!("mGetInt", "Function Engine.GenericParamListStatEntry.GetInt")()); }
-			ScriptFunction GetVector() { mixin(MGF!("mGetVector", "Function Engine.GenericParamListStatEntry.GetVector")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function Engine.GenericParamListStatEntry.GetString")()); }
-			ScriptFunction CommitToDisk() { mixin(MGF!("mCommitToDisk", "Function Engine.GenericParamListStatEntry.CommitToDisk")()); }
+			ScriptFunction AddFloat() { mixin(MGF("mAddFloat", "Function Engine.GenericParamListStatEntry.AddFloat")); }
+			ScriptFunction AddInt() { mixin(MGF("mAddInt", "Function Engine.GenericParamListStatEntry.AddInt")); }
+			ScriptFunction AddVector() { mixin(MGF("mAddVector", "Function Engine.GenericParamListStatEntry.AddVector")); }
+			ScriptFunction AddString() { mixin(MGF("mAddString", "Function Engine.GenericParamListStatEntry.AddString")); }
+			ScriptFunction GetFloat() { mixin(MGF("mGetFloat", "Function Engine.GenericParamListStatEntry.GetFloat")); }
+			ScriptFunction GetInt() { mixin(MGF("mGetInt", "Function Engine.GenericParamListStatEntry.GetInt")); }
+			ScriptFunction GetVector() { mixin(MGF("mGetVector", "Function Engine.GenericParamListStatEntry.GetVector")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function Engine.GenericParamListStatEntry.GetString")); }
+			ScriptFunction CommitToDisk() { mixin(MGF("mCommitToDisk", "Function Engine.GenericParamListStatEntry.CommitToDisk")); }
 		}
 	}
 	@property final auto ref
 	{
-		GameplayEventsWriter Writer() { mixin(MGPC!("GameplayEventsWriter", 64)()); }
-		UObject.Pointer StatEvent() { mixin(MGPC!("UObject.Pointer", 60)()); }
+		GameplayEventsWriter Writer() { mixin(MGPC("GameplayEventsWriter", 64)); }
+		UObject.Pointer StatEvent() { mixin(MGPC("UObject.Pointer", 60)); }
 	}
 final:
 	void AddFloat(ScriptName ParamName, float Value)

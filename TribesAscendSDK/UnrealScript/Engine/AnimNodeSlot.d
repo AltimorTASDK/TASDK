@@ -10,9 +10,9 @@ extern(C++) interface AnimNodeSlot : AnimNodeBlendBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeSlot")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AnimNodeSlot")); }
 	private static __gshared AnimNodeSlot mDefaultProperties;
-	@property final static AnimNodeSlot DefaultProperties() { mixin(MGDPC!(AnimNodeSlot, "AnimNodeSlot Engine.Default__AnimNodeSlot")()); }
+	@property final static AnimNodeSlot DefaultProperties() { mixin(MGDPC("AnimNodeSlot", "AnimNodeSlot Engine.Default__AnimNodeSlot")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,37 +30,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayCustomAnim() { mixin(MGF!("mPlayCustomAnim", "Function Engine.AnimNodeSlot.PlayCustomAnim")()); }
-			ScriptFunction PlayCustomAnimByDuration() { mixin(MGF!("mPlayCustomAnimByDuration", "Function Engine.AnimNodeSlot.PlayCustomAnimByDuration")()); }
-			ScriptFunction GetPlayedAnimation() { mixin(MGF!("mGetPlayedAnimation", "Function Engine.AnimNodeSlot.GetPlayedAnimation")()); }
-			ScriptFunction StopCustomAnim() { mixin(MGF!("mStopCustomAnim", "Function Engine.AnimNodeSlot.StopCustomAnim")()); }
-			ScriptFunction SetCustomAnim() { mixin(MGF!("mSetCustomAnim", "Function Engine.AnimNodeSlot.SetCustomAnim")()); }
-			ScriptFunction SetActorAnimEndNotification() { mixin(MGF!("mSetActorAnimEndNotification", "Function Engine.AnimNodeSlot.SetActorAnimEndNotification")()); }
-			ScriptFunction GetCustomAnimNodeSeq() { mixin(MGF!("mGetCustomAnimNodeSeq", "Function Engine.AnimNodeSlot.GetCustomAnimNodeSeq")()); }
-			ScriptFunction SetRootBoneAxisOption() { mixin(MGF!("mSetRootBoneAxisOption", "Function Engine.AnimNodeSlot.SetRootBoneAxisOption")()); }
-			ScriptFunction SetRootBoneRotationOption() { mixin(MGF!("mSetRootBoneRotationOption", "Function Engine.AnimNodeSlot.SetRootBoneRotationOption")()); }
-			ScriptFunction AddToSynchGroup() { mixin(MGF!("mAddToSynchGroup", "Function Engine.AnimNodeSlot.AddToSynchGroup")()); }
+			ScriptFunction PlayCustomAnim() { mixin(MGF("mPlayCustomAnim", "Function Engine.AnimNodeSlot.PlayCustomAnim")); }
+			ScriptFunction PlayCustomAnimByDuration() { mixin(MGF("mPlayCustomAnimByDuration", "Function Engine.AnimNodeSlot.PlayCustomAnimByDuration")); }
+			ScriptFunction GetPlayedAnimation() { mixin(MGF("mGetPlayedAnimation", "Function Engine.AnimNodeSlot.GetPlayedAnimation")); }
+			ScriptFunction StopCustomAnim() { mixin(MGF("mStopCustomAnim", "Function Engine.AnimNodeSlot.StopCustomAnim")); }
+			ScriptFunction SetCustomAnim() { mixin(MGF("mSetCustomAnim", "Function Engine.AnimNodeSlot.SetCustomAnim")); }
+			ScriptFunction SetActorAnimEndNotification() { mixin(MGF("mSetActorAnimEndNotification", "Function Engine.AnimNodeSlot.SetActorAnimEndNotification")); }
+			ScriptFunction GetCustomAnimNodeSeq() { mixin(MGF("mGetCustomAnimNodeSeq", "Function Engine.AnimNodeSlot.GetCustomAnimNodeSeq")); }
+			ScriptFunction SetRootBoneAxisOption() { mixin(MGF("mSetRootBoneAxisOption", "Function Engine.AnimNodeSlot.SetRootBoneAxisOption")); }
+			ScriptFunction SetRootBoneRotationOption() { mixin(MGF("mSetRootBoneRotationOption", "Function Engine.AnimNodeSlot.SetRootBoneRotationOption")); }
+			ScriptFunction AddToSynchGroup() { mixin(MGF("mAddToSynchGroup", "Function Engine.AnimNodeSlot.AddToSynchGroup")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(float) TargetWeight() { mixin(MGPC!("ScriptArray!(float)", 260)()); }
-			AnimNodeSynch SynchNode() { mixin(MGPC!("AnimNodeSynch", 276)()); }
-			float BlendTimeToGo() { mixin(MGPC!("float", 272)()); }
-			int TargetChildIndex() { mixin(MGPC!("int", 256)()); }
-			int CustomChildIndex() { mixin(MGPC!("int", 252)()); }
-			float PendingBlendOutTime() { mixin(MGPC!("float", 248)()); }
+			ScriptArray!(float) TargetWeight() { mixin(MGPC("ScriptArray!(float)", 260)); }
+			AnimNodeSynch SynchNode() { mixin(MGPC("AnimNodeSynch", 276)); }
+			float BlendTimeToGo() { mixin(MGPC("float", 272)); }
+			int TargetChildIndex() { mixin(MGPC("int", 256)); }
+			int CustomChildIndex() { mixin(MGPC("int", 252)); }
+			float PendingBlendOutTime() { mixin(MGPC("float", 248)); }
 		}
-		bool bAdditiveAnimationsOverrideSource() { mixin(MGBPC!(244, 0x8)()); }
-		bool bAdditiveAnimationsOverrideSource(bool val) { mixin(MSBPC!(244, 0x8)()); }
-		bool bSkipBlendWhenNotRendered() { mixin(MGBPC!(244, 0x4)()); }
-		bool bSkipBlendWhenNotRendered(bool val) { mixin(MSBPC!(244, 0x4)()); }
-		bool bEarlyAnimEndNotify() { mixin(MGBPC!(244, 0x2)()); }
-		bool bEarlyAnimEndNotify(bool val) { mixin(MSBPC!(244, 0x2)()); }
-		bool bIsPlayingCustomAnim() { mixin(MGBPC!(244, 0x1)()); }
-		bool bIsPlayingCustomAnim(bool val) { mixin(MSBPC!(244, 0x1)()); }
+		bool bAdditiveAnimationsOverrideSource() { mixin(MGBPC(244, 0x8)); }
+		bool bAdditiveAnimationsOverrideSource(bool val) { mixin(MSBPC(244, 0x8)); }
+		bool bSkipBlendWhenNotRendered() { mixin(MGBPC(244, 0x4)); }
+		bool bSkipBlendWhenNotRendered(bool val) { mixin(MSBPC(244, 0x4)); }
+		bool bEarlyAnimEndNotify() { mixin(MGBPC(244, 0x2)); }
+		bool bEarlyAnimEndNotify(bool val) { mixin(MSBPC(244, 0x2)); }
+		bool bIsPlayingCustomAnim() { mixin(MGBPC(244, 0x1)); }
+		bool bIsPlayingCustomAnim(bool val) { mixin(MSBPC(244, 0x1)); }
 	}
 final:
 	float PlayCustomAnim(ScriptName AnimName, float Rate, float* BlendInTime = null, float* BlendOutTime = null, bool* bLooping = null, bool* bOverride = null, float* StartTime = null, float* EndTime = null)

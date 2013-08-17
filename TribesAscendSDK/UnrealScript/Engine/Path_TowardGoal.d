@@ -10,9 +10,9 @@ extern(C++) interface Path_TowardGoal : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_TowardGoal")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Path_TowardGoal")); }
 	private static __gshared Path_TowardGoal mDefaultProperties;
-	@property final static Path_TowardGoal DefaultProperties() { mixin(MGDPC!(Path_TowardGoal, "Path_TowardGoal Engine.Default__Path_TowardGoal")()); }
+	@property final static Path_TowardGoal DefaultProperties() { mixin(MGDPC("Path_TowardGoal", "Path_TowardGoal Engine.Default__Path_TowardGoal")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +22,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TowardGoal() { mixin(MGF!("mTowardGoal", "Function Engine.Path_TowardGoal.TowardGoal")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_TowardGoal.Recycle")()); }
+			ScriptFunction TowardGoal() { mixin(MGF("mTowardGoal", "Function Engine.Path_TowardGoal.TowardGoal")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.Path_TowardGoal.Recycle")); }
 		}
 	}
-	@property final auto ref Actor GoalActor() { mixin(MGPC!("Actor", 68)()); }
+	@property final auto ref Actor GoalActor() { mixin(MGPC("Actor", 68)); }
 final:
 	static bool TowardGoal(Pawn P, Actor Goal)
 	{

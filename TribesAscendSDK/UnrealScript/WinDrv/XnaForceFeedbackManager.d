@@ -8,7 +8,7 @@ extern(C++) interface XnaForceFeedbackManager : ForceFeedbackManager
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class WinDrv.XnaForceFeedbackManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class WinDrv.XnaForceFeedbackManager")); }
 	private static __gshared XnaForceFeedbackManager mDefaultProperties;
-	@property final static XnaForceFeedbackManager DefaultProperties() { mixin(MGDPC!(XnaForceFeedbackManager, "XnaForceFeedbackManager WinDrv.Default__XnaForceFeedbackManager")()); }
+	@property final static XnaForceFeedbackManager DefaultProperties() { mixin(MGDPC("XnaForceFeedbackManager", "XnaForceFeedbackManager WinDrv.Default__XnaForceFeedbackManager")); }
 }

@@ -8,7 +8,7 @@ extern(C++) interface UTAnimBlendByTurnInPlace : UDKAnimBlendByTurnInPlace
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnimBlendByTurnInPlace")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnimBlendByTurnInPlace")); }
 	private static __gshared UTAnimBlendByTurnInPlace mDefaultProperties;
-	@property final static UTAnimBlendByTurnInPlace DefaultProperties() { mixin(MGDPC!(UTAnimBlendByTurnInPlace, "UTAnimBlendByTurnInPlace UTGame.Default__UTAnimBlendByTurnInPlace")()); }
+	@property final static UTAnimBlendByTurnInPlace DefaultProperties() { mixin(MGDPC("UTAnimBlendByTurnInPlace", "UTAnimBlendByTurnInPlace UTGame.Default__UTAnimBlendByTurnInPlace")); }
 }

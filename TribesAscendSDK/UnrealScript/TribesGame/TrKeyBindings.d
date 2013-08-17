@@ -11,9 +11,9 @@ extern(C++) interface TrKeyBindings : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrKeyBindings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrKeyBindings")); }
 	private static __gshared TrKeyBindings mDefaultProperties;
-	@property final static TrKeyBindings DefaultProperties() { mixin(MGDPC!(TrKeyBindings, "TrKeyBindings TribesGame.Default__TrKeyBindings")()); }
+	@property final static TrKeyBindings DefaultProperties() { mixin(MGDPC("TrKeyBindings", "TrKeyBindings TribesGame.Default__TrKeyBindings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,55 +46,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentBind() { mixin(MGF!("mGetCurrentBind", "Function TribesGame.TrKeyBindings.GetCurrentBind")()); }
-			ScriptFunction SaveKeyBind() { mixin(MGF!("mSaveKeyBind", "Function TribesGame.TrKeyBindings.SaveKeyBind")()); }
-			ScriptFunction FlushSettings() { mixin(MGF!("mFlushSettings", "Function TribesGame.TrKeyBindings.FlushSettings")()); }
-			ScriptFunction ClearSettingById() { mixin(MGF!("mClearSettingById", "Function TribesGame.TrKeyBindings.ClearSettingById")()); }
-			ScriptFunction ClearSettingByValue() { mixin(MGF!("mClearSettingByValue", "Function TribesGame.TrKeyBindings.ClearSettingByValue")()); }
-			ScriptFunction StoreSetting() { mixin(MGF!("mStoreSetting", "Function TribesGame.TrKeyBindings.StoreSetting")()); }
-			ScriptFunction ReadSetting() { mixin(MGF!("mReadSetting", "Function TribesGame.TrKeyBindings.ReadSetting")()); }
-			ScriptFunction CaptureNextKey() { mixin(MGF!("mCaptureNextKey", "Function TribesGame.TrKeyBindings.CaptureNextKey")()); }
-			ScriptFunction ResetDefaultKeyBindings() { mixin(MGF!("mResetDefaultKeyBindings", "Function TribesGame.TrKeyBindings.ResetDefaultKeyBindings")()); }
-			ScriptFunction ResetDefaultSpectatorBindings() { mixin(MGF!("mResetDefaultSpectatorBindings", "Function TribesGame.TrKeyBindings.ResetDefaultSpectatorBindings")()); }
-			ScriptFunction ReadBindings() { mixin(MGF!("mReadBindings", "Function TribesGame.TrKeyBindings.ReadBindings")()); }
-			ScriptFunction AddBinding() { mixin(MGF!("mAddBinding", "Function TribesGame.TrKeyBindings.AddBinding")()); }
-			ScriptFunction ApplyKeyBinding() { mixin(MGF!("mApplyKeyBinding", "Function TribesGame.TrKeyBindings.ApplyKeyBinding")()); }
-			ScriptFunction SavePlayerKeyBind() { mixin(MGF!("mSavePlayerKeyBind", "Function TribesGame.TrKeyBindings.SavePlayerKeyBind")()); }
-			ScriptFunction SaveSpectatorKeyBind() { mixin(MGF!("mSaveSpectatorKeyBind", "Function TribesGame.TrKeyBindings.SaveSpectatorKeyBind")()); }
-			ScriptFunction UnbindPlayerCommand() { mixin(MGF!("mUnbindPlayerCommand", "Function TribesGame.TrKeyBindings.UnbindPlayerCommand")()); }
-			ScriptFunction UnbindSpectatorCommand() { mixin(MGF!("mUnbindSpectatorCommand", "Function TribesGame.TrKeyBindings.UnbindSpectatorCommand")()); }
-			ScriptFunction GetCurrentBinding() { mixin(MGF!("mGetCurrentBinding", "Function TribesGame.TrKeyBindings.GetCurrentBinding")()); }
-			ScriptFunction GetCommandName() { mixin(MGF!("mGetCommandName", "Function TribesGame.TrKeyBindings.GetCommandName")()); }
-			ScriptFunction ApplyDefaultSettings() { mixin(MGF!("mApplyDefaultSettings", "Function TribesGame.TrKeyBindings.ApplyDefaultSettings")()); }
-			ScriptFunction GetPlayerInput() { mixin(MGF!("mGetPlayerInput", "Function TribesGame.TrKeyBindings.GetPlayerInput")()); }
-			ScriptFunction GetSpectatorInput() { mixin(MGF!("mGetSpectatorInput", "Function TribesGame.TrKeyBindings.GetSpectatorInput")()); }
-			ScriptFunction UpdateRuntimePlayer() { mixin(MGF!("mUpdateRuntimePlayer", "Function TribesGame.TrKeyBindings.UpdateRuntimePlayer")()); }
-			ScriptFunction UpdateRuntimeSpectator() { mixin(MGF!("mUpdateRuntimeSpectator", "Function TribesGame.TrKeyBindings.UpdateRuntimeSpectator")()); }
-			ScriptFunction SaveInterceptKeys() { mixin(MGF!("mSaveInterceptKeys", "Function TribesGame.TrKeyBindings.SaveInterceptKeys")()); }
+			ScriptFunction GetCurrentBind() { mixin(MGF("mGetCurrentBind", "Function TribesGame.TrKeyBindings.GetCurrentBind")); }
+			ScriptFunction SaveKeyBind() { mixin(MGF("mSaveKeyBind", "Function TribesGame.TrKeyBindings.SaveKeyBind")); }
+			ScriptFunction FlushSettings() { mixin(MGF("mFlushSettings", "Function TribesGame.TrKeyBindings.FlushSettings")); }
+			ScriptFunction ClearSettingById() { mixin(MGF("mClearSettingById", "Function TribesGame.TrKeyBindings.ClearSettingById")); }
+			ScriptFunction ClearSettingByValue() { mixin(MGF("mClearSettingByValue", "Function TribesGame.TrKeyBindings.ClearSettingByValue")); }
+			ScriptFunction StoreSetting() { mixin(MGF("mStoreSetting", "Function TribesGame.TrKeyBindings.StoreSetting")); }
+			ScriptFunction ReadSetting() { mixin(MGF("mReadSetting", "Function TribesGame.TrKeyBindings.ReadSetting")); }
+			ScriptFunction CaptureNextKey() { mixin(MGF("mCaptureNextKey", "Function TribesGame.TrKeyBindings.CaptureNextKey")); }
+			ScriptFunction ResetDefaultKeyBindings() { mixin(MGF("mResetDefaultKeyBindings", "Function TribesGame.TrKeyBindings.ResetDefaultKeyBindings")); }
+			ScriptFunction ResetDefaultSpectatorBindings() { mixin(MGF("mResetDefaultSpectatorBindings", "Function TribesGame.TrKeyBindings.ResetDefaultSpectatorBindings")); }
+			ScriptFunction ReadBindings() { mixin(MGF("mReadBindings", "Function TribesGame.TrKeyBindings.ReadBindings")); }
+			ScriptFunction AddBinding() { mixin(MGF("mAddBinding", "Function TribesGame.TrKeyBindings.AddBinding")); }
+			ScriptFunction ApplyKeyBinding() { mixin(MGF("mApplyKeyBinding", "Function TribesGame.TrKeyBindings.ApplyKeyBinding")); }
+			ScriptFunction SavePlayerKeyBind() { mixin(MGF("mSavePlayerKeyBind", "Function TribesGame.TrKeyBindings.SavePlayerKeyBind")); }
+			ScriptFunction SaveSpectatorKeyBind() { mixin(MGF("mSaveSpectatorKeyBind", "Function TribesGame.TrKeyBindings.SaveSpectatorKeyBind")); }
+			ScriptFunction UnbindPlayerCommand() { mixin(MGF("mUnbindPlayerCommand", "Function TribesGame.TrKeyBindings.UnbindPlayerCommand")); }
+			ScriptFunction UnbindSpectatorCommand() { mixin(MGF("mUnbindSpectatorCommand", "Function TribesGame.TrKeyBindings.UnbindSpectatorCommand")); }
+			ScriptFunction GetCurrentBinding() { mixin(MGF("mGetCurrentBinding", "Function TribesGame.TrKeyBindings.GetCurrentBinding")); }
+			ScriptFunction GetCommandName() { mixin(MGF("mGetCommandName", "Function TribesGame.TrKeyBindings.GetCommandName")); }
+			ScriptFunction ApplyDefaultSettings() { mixin(MGF("mApplyDefaultSettings", "Function TribesGame.TrKeyBindings.ApplyDefaultSettings")); }
+			ScriptFunction GetPlayerInput() { mixin(MGF("mGetPlayerInput", "Function TribesGame.TrKeyBindings.GetPlayerInput")); }
+			ScriptFunction GetSpectatorInput() { mixin(MGF("mGetSpectatorInput", "Function TribesGame.TrKeyBindings.GetSpectatorInput")); }
+			ScriptFunction UpdateRuntimePlayer() { mixin(MGF("mUpdateRuntimePlayer", "Function TribesGame.TrKeyBindings.UpdateRuntimePlayer")); }
+			ScriptFunction UpdateRuntimeSpectator() { mixin(MGF("mUpdateRuntimeSpectator", "Function TribesGame.TrKeyBindings.UpdateRuntimeSpectator")); }
+			ScriptFunction SaveInterceptKeys() { mixin(MGF("mSaveInterceptKeys", "Function TribesGame.TrKeyBindings.SaveInterceptKeys")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString m_EscapeKeybind() { mixin(MGPC!("ScriptString", 136)()); }
-			ScriptString m_FriendsHotkey() { mixin(MGPC!("ScriptString", 232)()); }
-			ScriptString m_SettingsHotkey() { mixin(MGPC!("ScriptString", 244)()); }
-			ScriptString m_MainMenuHotkey() { mixin(MGPC!("ScriptString", 256)()); }
-			ScriptString m_ClassSelectKeybind() { mixin(MGPC!("ScriptString", 172)()); }
-			ScriptString m_TeamSelectKeybind() { mixin(MGPC!("ScriptString", 160)()); }
-			ScriptString m_TalkReplyKeybind() { mixin(MGPC!("ScriptString", 220)()); }
-			ScriptString m_ChatHotkey() { mixin(MGPC!("ScriptString", 268)()); }
-			ScriptString m_TalkKeybind() { mixin(MGPC!("ScriptString", 196)()); }
-			ScriptString m_TeamTalkKeybind() { mixin(MGPC!("ScriptString", 208)()); }
-			ScriptString m_ScoreboardKeybind() { mixin(MGPC!("ScriptString", 184)()); }
-			ScriptString m_EnterKeybind() { mixin(MGPC!("ScriptString", 148)()); }
-			PlayerInput m_EngineInput() { mixin(MGPC!("PlayerInput", 132)()); }
-			GFxObject m_KeyBindingsList() { mixin(MGPC!("GFxObject", 128)()); }
-			int m_KeyBindingsCount() { mixin(MGPC!("int", 124)()); }
+			ScriptString m_EscapeKeybind() { mixin(MGPC("ScriptString", 136)); }
+			ScriptString m_FriendsHotkey() { mixin(MGPC("ScriptString", 232)); }
+			ScriptString m_SettingsHotkey() { mixin(MGPC("ScriptString", 244)); }
+			ScriptString m_MainMenuHotkey() { mixin(MGPC("ScriptString", 256)); }
+			ScriptString m_ClassSelectKeybind() { mixin(MGPC("ScriptString", 172)); }
+			ScriptString m_TeamSelectKeybind() { mixin(MGPC("ScriptString", 160)); }
+			ScriptString m_TalkReplyKeybind() { mixin(MGPC("ScriptString", 220)); }
+			ScriptString m_ChatHotkey() { mixin(MGPC("ScriptString", 268)); }
+			ScriptString m_TalkKeybind() { mixin(MGPC("ScriptString", 196)); }
+			ScriptString m_TeamTalkKeybind() { mixin(MGPC("ScriptString", 208)); }
+			ScriptString m_ScoreboardKeybind() { mixin(MGPC("ScriptString", 184)); }
+			ScriptString m_EnterKeybind() { mixin(MGPC("ScriptString", 148)); }
+			PlayerInput m_EngineInput() { mixin(MGPC("PlayerInput", 132)); }
+			GFxObject m_KeyBindingsList() { mixin(MGPC("GFxObject", 128)); }
+			int m_KeyBindingsCount() { mixin(MGPC("int", 124)); }
 		}
-		bool m_bGotInputKey() { mixin(MGBPC!(120, 0x1)()); }
-		bool m_bGotInputKey(bool val) { mixin(MSBPC!(120, 0x1)()); }
+		bool m_bGotInputKey() { mixin(MGBPC(120, 0x1)); }
+		bool m_bGotInputKey(bool val) { mixin(MSBPC(120, 0x1)); }
 	}
 final:
 	ScriptString GetCurrentBind(TrObject.ESettingsList Key)

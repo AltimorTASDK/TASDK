@@ -22,9 +22,9 @@ extern(C++) interface UTTeamGame : UTDeathmatch
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeamGame")); }
 	private static __gshared UTTeamGame mDefaultProperties;
-	@property final static UTTeamGame DefaultProperties() { mixin(MGDPC!(UTTeamGame, "UTTeamGame UTGame.Default__UTTeamGame")()); }
+	@property final static UTTeamGame DefaultProperties() { mixin(MGDPC("UTTeamGame", "UTTeamGame UTGame.Default__UTTeamGame")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -72,74 +72,74 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTTeamGame.PreBeginPlay")()); }
-			ScriptFunction PostLogin() { mixin(MGF!("mPostLogin", "Function UTGame.UTTeamGame.PostLogin")()); }
-			ScriptFunction FindNewObjectives() { mixin(MGF!("mFindNewObjectives", "Function UTGame.UTTeamGame.FindNewObjectives")()); }
-			ScriptFunction CreateTeam() { mixin(MGF!("mCreateTeam", "Function UTGame.UTTeamGame.CreateTeam")()); }
-			ScriptFunction GetHandicapNeed() { mixin(MGF!("mGetHandicapNeed", "Function UTGame.UTTeamGame.GetHandicapNeed")()); }
-			ScriptFunction GetBotTeam() { mixin(MGF!("mGetBotTeam", "Function UTGame.UTTeamGame.GetBotTeam")()); }
-			ScriptFunction LevelRecommendedPlayers() { mixin(MGF!("mLevelRecommendedPlayers", "Function UTGame.UTTeamGame.LevelRecommendedPlayers")()); }
-			ScriptFunction CheckMaxLives() { mixin(MGF!("mCheckMaxLives", "Function UTGame.UTTeamGame.CheckMaxLives")()); }
-			ScriptFunction InitGame() { mixin(MGF!("mInitGame", "Function UTGame.UTTeamGame.InitGame")()); }
-			ScriptFunction TooManyBots() { mixin(MGF!("mTooManyBots", "Function UTGame.UTTeamGame.TooManyBots")()); }
-			ScriptFunction NotifyKilled() { mixin(MGF!("mNotifyKilled", "Function UTGame.UTTeamGame.NotifyKilled")()); }
-			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function UTGame.UTTeamGame.CheckEndGame")()); }
-			ScriptFunction SetEndGameFocus() { mixin(MGF!("mSetEndGameFocus", "Function UTGame.UTTeamGame.SetEndGameFocus")()); }
-			ScriptFunction CanSpectate() { mixin(MGF!("mCanSpectate", "Function UTGame.UTTeamGame.CanSpectate")()); }
-			ScriptFunction RestartGame() { mixin(MGF!("mRestartGame", "Function UTGame.UTTeamGame.RestartGame")()); }
-			ScriptFunction PickTeam() { mixin(MGF!("mPickTeam", "Function UTGame.UTTeamGame.PickTeam")()); }
-			ScriptFunction ChangeTeam() { mixin(MGF!("mChangeTeam", "Function UTGame.UTTeamGame.ChangeTeam")()); }
-			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function UTGame.UTTeamGame.SetTeam")()); }
-			ScriptFunction RatePlayerStart() { mixin(MGF!("mRatePlayerStart", "Function UTGame.UTTeamGame.RatePlayerStart")()); }
-			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function UTGame.UTTeamGame.CheckScore")()); }
-			ScriptFunction FindVictimsTarget() { mixin(MGF!("mFindVictimsTarget", "Function UTGame.UTTeamGame.FindVictimsTarget")()); }
-			ScriptFunction NearGoal() { mixin(MGF!("mNearGoal", "Function UTGame.UTTeamGame.NearGoal")()); }
-			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function UTGame.UTTeamGame.ScoreKill")()); }
-			ScriptFunction CampaignSkillAdjust() { mixin(MGF!("mCampaignSkillAdjust", "Function UTGame.UTTeamGame.CampaignSkillAdjust")()); }
-			ScriptFunction AdjustSkill() { mixin(MGF!("mAdjustSkill", "Function UTGame.UTTeamGame.AdjustSkill")()); }
-			ScriptFunction SendFlagKillMessage() { mixin(MGF!("mSendFlagKillMessage", "Function UTGame.UTTeamGame.SendFlagKillMessage")()); }
-			ScriptFunction DominatingVictory() { mixin(MGF!("mDominatingVictory", "Function UTGame.UTTeamGame.DominatingVictory")()); }
-			ScriptFunction IsAWinner() { mixin(MGF!("mIsAWinner", "Function UTGame.UTTeamGame.IsAWinner")()); }
-			ScriptFunction IsWinningTeam() { mixin(MGF!("mIsWinningTeam", "Function UTGame.UTTeamGame.IsWinningTeam")()); }
-			ScriptFunction PlayRegularEndOfMatchMessage() { mixin(MGF!("mPlayRegularEndOfMatchMessage", "Function UTGame.UTTeamGame.PlayRegularEndOfMatchMessage")()); }
-			ScriptFunction AnnounceScore() { mixin(MGF!("mAnnounceScore", "Function UTGame.UTTeamGame.AnnounceScore")()); }
-			ScriptFunction OverridePRI() { mixin(MGF!("mOverridePRI", "Function UTGame.UTTeamGame.OverridePRI")()); }
-			ScriptFunction AllowClientToTeleport() { mixin(MGF!("mAllowClientToTeleport", "Function UTGame.UTTeamGame.AllowClientToTeleport")()); }
-			ScriptFunction ShowPathTo() { mixin(MGF!("mShowPathTo", "Function UTGame.UTTeamGame.ShowPathTo")()); }
-			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF!("mGetSeamlessTravelActorList", "Function UTGame.UTTeamGame.GetSeamlessTravelActorList")()); }
-			ScriptFunction Logout() { mixin(MGF!("mLogout", "Function UTGame.UTTeamGame.Logout")()); }
-			ScriptFunction HandleSeamlessTravelPlayer() { mixin(MGF!("mHandleSeamlessTravelPlayer", "Function UTGame.UTTeamGame.HandleSeamlessTravelPlayer")()); }
-			ScriptFunction ParseSpeechRecipients() { mixin(MGF!("mParseSpeechRecipients", "Function UTGame.UTTeamGame.ParseSpeechRecipients")()); }
-			ScriptFunction ProcessSpeechOrders() { mixin(MGF!("mProcessSpeechOrders", "Function UTGame.UTTeamGame.ProcessSpeechOrders")()); }
-			ScriptFunction ProcessSpeechRecognition() { mixin(MGF!("mProcessSpeechRecognition", "Function UTGame.UTTeamGame.ProcessSpeechRecognition")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function UTGame.UTTeamGame.PreBeginPlay")); }
+			ScriptFunction PostLogin() { mixin(MGF("mPostLogin", "Function UTGame.UTTeamGame.PostLogin")); }
+			ScriptFunction FindNewObjectives() { mixin(MGF("mFindNewObjectives", "Function UTGame.UTTeamGame.FindNewObjectives")); }
+			ScriptFunction CreateTeam() { mixin(MGF("mCreateTeam", "Function UTGame.UTTeamGame.CreateTeam")); }
+			ScriptFunction GetHandicapNeed() { mixin(MGF("mGetHandicapNeed", "Function UTGame.UTTeamGame.GetHandicapNeed")); }
+			ScriptFunction GetBotTeam() { mixin(MGF("mGetBotTeam", "Function UTGame.UTTeamGame.GetBotTeam")); }
+			ScriptFunction LevelRecommendedPlayers() { mixin(MGF("mLevelRecommendedPlayers", "Function UTGame.UTTeamGame.LevelRecommendedPlayers")); }
+			ScriptFunction CheckMaxLives() { mixin(MGF("mCheckMaxLives", "Function UTGame.UTTeamGame.CheckMaxLives")); }
+			ScriptFunction InitGame() { mixin(MGF("mInitGame", "Function UTGame.UTTeamGame.InitGame")); }
+			ScriptFunction TooManyBots() { mixin(MGF("mTooManyBots", "Function UTGame.UTTeamGame.TooManyBots")); }
+			ScriptFunction NotifyKilled() { mixin(MGF("mNotifyKilled", "Function UTGame.UTTeamGame.NotifyKilled")); }
+			ScriptFunction CheckEndGame() { mixin(MGF("mCheckEndGame", "Function UTGame.UTTeamGame.CheckEndGame")); }
+			ScriptFunction SetEndGameFocus() { mixin(MGF("mSetEndGameFocus", "Function UTGame.UTTeamGame.SetEndGameFocus")); }
+			ScriptFunction CanSpectate() { mixin(MGF("mCanSpectate", "Function UTGame.UTTeamGame.CanSpectate")); }
+			ScriptFunction RestartGame() { mixin(MGF("mRestartGame", "Function UTGame.UTTeamGame.RestartGame")); }
+			ScriptFunction PickTeam() { mixin(MGF("mPickTeam", "Function UTGame.UTTeamGame.PickTeam")); }
+			ScriptFunction ChangeTeam() { mixin(MGF("mChangeTeam", "Function UTGame.UTTeamGame.ChangeTeam")); }
+			ScriptFunction SetTeam() { mixin(MGF("mSetTeam", "Function UTGame.UTTeamGame.SetTeam")); }
+			ScriptFunction RatePlayerStart() { mixin(MGF("mRatePlayerStart", "Function UTGame.UTTeamGame.RatePlayerStart")); }
+			ScriptFunction CheckScore() { mixin(MGF("mCheckScore", "Function UTGame.UTTeamGame.CheckScore")); }
+			ScriptFunction FindVictimsTarget() { mixin(MGF("mFindVictimsTarget", "Function UTGame.UTTeamGame.FindVictimsTarget")); }
+			ScriptFunction NearGoal() { mixin(MGF("mNearGoal", "Function UTGame.UTTeamGame.NearGoal")); }
+			ScriptFunction ScoreKill() { mixin(MGF("mScoreKill", "Function UTGame.UTTeamGame.ScoreKill")); }
+			ScriptFunction CampaignSkillAdjust() { mixin(MGF("mCampaignSkillAdjust", "Function UTGame.UTTeamGame.CampaignSkillAdjust")); }
+			ScriptFunction AdjustSkill() { mixin(MGF("mAdjustSkill", "Function UTGame.UTTeamGame.AdjustSkill")); }
+			ScriptFunction SendFlagKillMessage() { mixin(MGF("mSendFlagKillMessage", "Function UTGame.UTTeamGame.SendFlagKillMessage")); }
+			ScriptFunction DominatingVictory() { mixin(MGF("mDominatingVictory", "Function UTGame.UTTeamGame.DominatingVictory")); }
+			ScriptFunction IsAWinner() { mixin(MGF("mIsAWinner", "Function UTGame.UTTeamGame.IsAWinner")); }
+			ScriptFunction IsWinningTeam() { mixin(MGF("mIsWinningTeam", "Function UTGame.UTTeamGame.IsWinningTeam")); }
+			ScriptFunction PlayRegularEndOfMatchMessage() { mixin(MGF("mPlayRegularEndOfMatchMessage", "Function UTGame.UTTeamGame.PlayRegularEndOfMatchMessage")); }
+			ScriptFunction AnnounceScore() { mixin(MGF("mAnnounceScore", "Function UTGame.UTTeamGame.AnnounceScore")); }
+			ScriptFunction OverridePRI() { mixin(MGF("mOverridePRI", "Function UTGame.UTTeamGame.OverridePRI")); }
+			ScriptFunction AllowClientToTeleport() { mixin(MGF("mAllowClientToTeleport", "Function UTGame.UTTeamGame.AllowClientToTeleport")); }
+			ScriptFunction ShowPathTo() { mixin(MGF("mShowPathTo", "Function UTGame.UTTeamGame.ShowPathTo")); }
+			ScriptFunction GetSeamlessTravelActorList() { mixin(MGF("mGetSeamlessTravelActorList", "Function UTGame.UTTeamGame.GetSeamlessTravelActorList")); }
+			ScriptFunction Logout() { mixin(MGF("mLogout", "Function UTGame.UTTeamGame.Logout")); }
+			ScriptFunction HandleSeamlessTravelPlayer() { mixin(MGF("mHandleSeamlessTravelPlayer", "Function UTGame.UTTeamGame.HandleSeamlessTravelPlayer")); }
+			ScriptFunction ParseSpeechRecipients() { mixin(MGF("mParseSpeechRecipients", "Function UTGame.UTTeamGame.ParseSpeechRecipients")); }
+			ScriptFunction ProcessSpeechOrders() { mixin(MGF("mProcessSpeechOrders", "Function UTGame.UTTeamGame.ProcessSpeechOrders")); }
+			ScriptFunction ProcessSpeechRecognition() { mixin(MGF("mProcessSpeechRecognition", "Function UTGame.UTTeamGame.ProcessSpeechRecognition")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptName FlagKillMessageName() { mixin(MGPC!("ScriptName", 1320)()); }
-			float SwapRequestTime() { mixin(MGPC!("float", 1316)()); }
-			PlayerController PendingTeamSwap() { mixin(MGPC!("PlayerController", 1312)()); }
-			ScriptClass TeamScoreMessageClass() { mixin(MGPC!("ScriptClass", 1308)()); }
-			ScriptString TeamFactions() { mixin(MGPC!("ScriptString", 1284)()); }
-			ScriptClass TeamAIType() { mixin(MGPC!("ScriptClass", 1276)()); }
-			UTTeamInfo Teams() { mixin(MGPC!("UTTeamInfo", 1268)()); }
-			float TeammateBoost() { mixin(MGPC!("float", 1264)()); }
-			float FriendlyFireScale() { mixin(MGPC!("float", 1260)()); }
+			ScriptName FlagKillMessageName() { mixin(MGPC("ScriptName", 1320)); }
+			float SwapRequestTime() { mixin(MGPC("float", 1316)); }
+			PlayerController PendingTeamSwap() { mixin(MGPC("PlayerController", 1312)); }
+			ScriptClass TeamScoreMessageClass() { mixin(MGPC("ScriptClass", 1308)); }
+			ScriptString TeamFactions() { mixin(MGPC("ScriptString", 1284)); }
+			ScriptClass TeamAIType() { mixin(MGPC("ScriptClass", 1276)); }
+			UTTeamInfo Teams() { mixin(MGPC("UTTeamInfo", 1268)); }
+			float TeammateBoost() { mixin(MGPC("float", 1264)); }
+			float FriendlyFireScale() { mixin(MGPC("float", 1260)); }
 		}
-		bool bForceAllRed() { mixin(MGBPC!(1256, 0x20)()); }
-		bool bForceAllRed(bool val) { mixin(MSBPC!(1256, 0x20)()); }
-		bool bScoreVictimsTarget() { mixin(MGBPC!(1256, 0x10)()); }
-		bool bScoreVictimsTarget(bool val) { mixin(MSBPC!(1256, 0x10)()); }
-		bool bSpawnInTeamArea() { mixin(MGBPC!(1256, 0x8)()); }
-		bool bSpawnInTeamArea(bool val) { mixin(MSBPC!(1256, 0x8)()); }
-		bool bScoreTeamKills() { mixin(MGBPC!(1256, 0x4)()); }
-		bool bScoreTeamKills(bool val) { mixin(MSBPC!(1256, 0x4)()); }
-		bool bAllowNonTeamChat() { mixin(MGBPC!(1256, 0x2)()); }
-		bool bAllowNonTeamChat(bool val) { mixin(MSBPC!(1256, 0x2)()); }
-		bool bPlayersBalanceTeams() { mixin(MGBPC!(1256, 0x1)()); }
-		bool bPlayersBalanceTeams(bool val) { mixin(MSBPC!(1256, 0x1)()); }
+		bool bForceAllRed() { mixin(MGBPC(1256, 0x20)); }
+		bool bForceAllRed(bool val) { mixin(MSBPC(1256, 0x20)); }
+		bool bScoreVictimsTarget() { mixin(MGBPC(1256, 0x10)); }
+		bool bScoreVictimsTarget(bool val) { mixin(MSBPC(1256, 0x10)); }
+		bool bSpawnInTeamArea() { mixin(MGBPC(1256, 0x8)); }
+		bool bSpawnInTeamArea(bool val) { mixin(MSBPC(1256, 0x8)); }
+		bool bScoreTeamKills() { mixin(MGBPC(1256, 0x4)); }
+		bool bScoreTeamKills(bool val) { mixin(MSBPC(1256, 0x4)); }
+		bool bAllowNonTeamChat() { mixin(MGBPC(1256, 0x2)); }
+		bool bAllowNonTeamChat(bool val) { mixin(MSBPC(1256, 0x2)); }
+		bool bPlayersBalanceTeams() { mixin(MGBPC(1256, 0x1)); }
+		bool bPlayersBalanceTeams(bool val) { mixin(MSBPC(1256, 0x1)); }
 	}
 final:
 	void PreBeginPlay()

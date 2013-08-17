@@ -10,15 +10,15 @@ extern(C++) interface GFxDeviceAmmoCount : GFxMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxDeviceAmmoCount")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxDeviceAmmoCount")); }
 	private static __gshared GFxDeviceAmmoCount mDefaultProperties;
-	@property final static GFxDeviceAmmoCount DefaultProperties() { mixin(MGDPC!(GFxDeviceAmmoCount, "GFxDeviceAmmoCount TribesGame.Default__GFxDeviceAmmoCount")()); }
+	@property final static GFxDeviceAmmoCount DefaultProperties() { mixin(MGDPC("GFxDeviceAmmoCount", "GFxDeviceAmmoCount TribesGame.Default__GFxDeviceAmmoCount")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInit;
-		public @property static final ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.GFxDeviceAmmoCount.Init")()); }
+		public @property static final ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.GFxDeviceAmmoCount.Init")); }
 	}
-	@property final auto ref GFxObject AmmoCountTF() { mixin(MGPC!("GFxObject", 380)()); }
+	@property final auto ref GFxObject AmmoCountTF() { mixin(MGPC("GFxObject", 380)); }
 	final void Init(LocalPlayer* pPlayer = null)
 	{
 		ubyte params[4];

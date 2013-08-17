@@ -9,9 +9,9 @@ extern(C++) interface UIDataProvider_OnlinePlayerDataBase : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_OnlinePlayerDataBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataProvider_OnlinePlayerDataBase")); }
 	private static __gshared UIDataProvider_OnlinePlayerDataBase mDefaultProperties;
-	@property final static UIDataProvider_OnlinePlayerDataBase DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlinePlayerDataBase, "UIDataProvider_OnlinePlayerDataBase Engine.Default__UIDataProvider_OnlinePlayerDataBase")()); }
+	@property final static UIDataProvider_OnlinePlayerDataBase DefaultProperties() { mixin(MGDPC("UIDataProvider_OnlinePlayerDataBase", "UIDataProvider_OnlinePlayerDataBase Engine.Default__UIDataProvider_OnlinePlayerDataBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnRegister() { mixin(MGF!("mOnRegister", "Function Engine.UIDataProvider_OnlinePlayerDataBase.OnRegister")()); }
-			ScriptFunction OnUnregister() { mixin(MGF!("mOnUnregister", "Function Engine.UIDataProvider_OnlinePlayerDataBase.OnUnregister")()); }
+			ScriptFunction OnRegister() { mixin(MGF("mOnRegister", "Function Engine.UIDataProvider_OnlinePlayerDataBase.OnRegister")); }
+			ScriptFunction OnUnregister() { mixin(MGF("mOnUnregister", "Function Engine.UIDataProvider_OnlinePlayerDataBase.OnUnregister")); }
 		}
 	}
-	@property final auto ref int PlayerControllerId() { mixin(MGPC!("int", 88)()); }
+	@property final auto ref int PlayerControllerId() { mixin(MGPC("int", 88)); }
 final:
 	void OnRegister(LocalPlayer InPlayer)
 	{

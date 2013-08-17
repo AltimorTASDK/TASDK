@@ -11,9 +11,9 @@ extern(C++) interface TrDevice_Deployable : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Deployable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_Deployable")); }
 	private static __gshared TrDevice_Deployable mDefaultProperties;
-	@property final static TrDevice_Deployable DefaultProperties() { mixin(MGDPC!(TrDevice_Deployable, "TrDevice_Deployable TribesGame.Default__TrDevice_Deployable")()); }
+	@property final static TrDevice_Deployable DefaultProperties() { mixin(MGDPC("TrDevice_Deployable", "TrDevice_Deployable TribesGame.Default__TrDevice_Deployable")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -59,44 +59,44 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetAmmoCount() { mixin(MGF!("mGetAmmoCount", "Function TribesGame.TrDevice_Deployable.GetAmmoCount")()); }
-			ScriptFunction CanAttemptDeploy() { mixin(MGF!("mCanAttemptDeploy", "Function TribesGame.TrDevice_Deployable.CanAttemptDeploy")()); }
-			ScriptFunction UpdateDeployModeStatus() { mixin(MGF!("mUpdateDeployModeStatus", "Function TribesGame.TrDevice_Deployable.UpdateDeployModeStatus")()); }
-			ScriptFunction TickInHandWeapon() { mixin(MGF!("mTickInHandWeapon", "Function TribesGame.TrDevice_Deployable.TickInHandWeapon")()); }
-			ScriptFunction Deploy() { mixin(MGF!("mDeploy", "Function TribesGame.TrDevice_Deployable.Deploy")()); }
-			ScriptFunction IsValidDeployTerrain() { mixin(MGF!("mIsValidDeployTerrain", "Function TribesGame.TrDevice_Deployable.IsValidDeployTerrain")()); }
-			ScriptFunction IsValidDeployVolume() { mixin(MGF!("mIsValidDeployVolume", "Function TribesGame.TrDevice_Deployable.IsValidDeployVolume")()); }
-			ScriptFunction IsValidDeployProximity() { mixin(MGF!("mIsValidDeployProximity", "Function TribesGame.TrDevice_Deployable.IsValidDeployProximity")()); }
-			ScriptFunction IsValidOutsideCheck() { mixin(MGF!("mIsValidOutsideCheck", "Function TribesGame.TrDevice_Deployable.IsValidOutsideCheck")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrDevice_Deployable.ReplicatedEvent")()); }
-			ScriptFunction UpdateReplicatedCarriedAmmo() { mixin(MGF!("mUpdateReplicatedCarriedAmmo", "Function TribesGame.TrDevice_Deployable.UpdateReplicatedCarriedAmmo")()); }
-			ScriptFunction OnSwitchToWeapon() { mixin(MGF!("mOnSwitchToWeapon", "Function TribesGame.TrDevice_Deployable.OnSwitchToWeapon")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Deployable.OnSwitchAwayFromWeapon")()); }
-			ScriptFunction CheckInHandWeapon() { mixin(MGF!("mCheckInHandWeapon", "Function TribesGame.TrDevice_Deployable.CheckInHandWeapon")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDevice_Deployable.Destroyed")()); }
-			ScriptFunction HolderEnteredVehicle() { mixin(MGF!("mHolderEnteredVehicle", "Function TribesGame.TrDevice_Deployable.HolderEnteredVehicle")()); }
-			ScriptFunction ResumeInhandWeapon() { mixin(MGF!("mResumeInhandWeapon", "Function TribesGame.TrDevice_Deployable.ResumeInhandWeapon")()); }
-			ScriptFunction TryPutDown() { mixin(MGF!("mTryPutDown", "Function TribesGame.TrDevice_Deployable.TryPutDown")()); }
-			ScriptFunction GetMaxDeployedLimit() { mixin(MGF!("mGetMaxDeployedLimit", "Function TribesGame.TrDevice_Deployable.GetMaxDeployedLimit")()); }
-			ScriptFunction IsDeployableOldest() { mixin(MGF!("mIsDeployableOldest", "Function TribesGame.TrDevice_Deployable.IsDeployableOldest")()); }
-			ScriptFunction BelowMaxCountLimit() { mixin(MGF!("mBelowMaxCountLimit", "Function TribesGame.TrDevice_Deployable.BelowMaxCountLimit")()); }
-			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function TribesGame.TrDevice_Deployable.ConsumeAmmo")()); }
-			ScriptFunction AddCarriedAmmo() { mixin(MGF!("mAddCarriedAmmo", "Function TribesGame.TrDevice_Deployable.AddCarriedAmmo")()); }
-			ScriptFunction AddAmmo() { mixin(MGF!("mAddAmmo", "Function TribesGame.TrDevice_Deployable.AddAmmo")()); }
-			ScriptFunction EnterDeployMode() { mixin(MGF!("mEnterDeployMode", "Function TribesGame.TrDevice_Deployable.EnterDeployMode")()); }
-			ScriptFunction ExitDeployMode() { mixin(MGF!("mExitDeployMode", "Function TribesGame.TrDevice_Deployable.ExitDeployMode")()); }
-			ScriptFunction AttachWeaponTo() { mixin(MGF!("mAttachWeaponTo", "Function TribesGame.TrDevice_Deployable.AttachWeaponTo")()); }
-			ScriptFunction EndZoom() { mixin(MGF!("mEndZoom", "Function TribesGame.TrDevice_Deployable.EndZoom")()); }
-			ScriptFunction ChangeVisibility() { mixin(MGF!("mChangeVisibility", "Function TribesGame.TrDevice_Deployable.ChangeVisibility")()); }
-			ScriptFunction EnterDeployModeDisplay() { mixin(MGF!("mEnterDeployModeDisplay", "Function TribesGame.TrDevice_Deployable.EnterDeployModeDisplay")()); }
-			ScriptFunction ExitDeployModeDisplay() { mixin(MGF!("mExitDeployModeDisplay", "Function TribesGame.TrDevice_Deployable.ExitDeployModeDisplay")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_Deployable.StartFire")()); }
-			ScriptFunction IsValidDesiredDeploy() { mixin(MGF!("mIsValidDesiredDeploy", "Function TribesGame.TrDevice_Deployable.IsValidDesiredDeploy")()); }
-			ScriptFunction ServerRequestDeploy() { mixin(MGF!("mServerRequestDeploy", "Function TribesGame.TrDevice_Deployable.ServerRequestDeploy")()); }
-			ScriptFunction CustomFire() { mixin(MGF!("mCustomFire", "Function TribesGame.TrDevice_Deployable.CustomFire")()); }
-			ScriptFunction CanAutoDeviceFireNow() { mixin(MGF!("mCanAutoDeviceFireNow", "Function TribesGame.TrDevice_Deployable.CanAutoDeviceFireNow")()); }
-			ScriptFunction HasAnyAmmo() { mixin(MGF!("mHasAnyAmmo", "Function TribesGame.TrDevice_Deployable.HasAnyAmmo")()); }
-			ScriptFunction HasAmmo() { mixin(MGF!("mHasAmmo", "Function TribesGame.TrDevice_Deployable.HasAmmo")()); }
+			ScriptFunction GetAmmoCount() { mixin(MGF("mGetAmmoCount", "Function TribesGame.TrDevice_Deployable.GetAmmoCount")); }
+			ScriptFunction CanAttemptDeploy() { mixin(MGF("mCanAttemptDeploy", "Function TribesGame.TrDevice_Deployable.CanAttemptDeploy")); }
+			ScriptFunction UpdateDeployModeStatus() { mixin(MGF("mUpdateDeployModeStatus", "Function TribesGame.TrDevice_Deployable.UpdateDeployModeStatus")); }
+			ScriptFunction TickInHandWeapon() { mixin(MGF("mTickInHandWeapon", "Function TribesGame.TrDevice_Deployable.TickInHandWeapon")); }
+			ScriptFunction Deploy() { mixin(MGF("mDeploy", "Function TribesGame.TrDevice_Deployable.Deploy")); }
+			ScriptFunction IsValidDeployTerrain() { mixin(MGF("mIsValidDeployTerrain", "Function TribesGame.TrDevice_Deployable.IsValidDeployTerrain")); }
+			ScriptFunction IsValidDeployVolume() { mixin(MGF("mIsValidDeployVolume", "Function TribesGame.TrDevice_Deployable.IsValidDeployVolume")); }
+			ScriptFunction IsValidDeployProximity() { mixin(MGF("mIsValidDeployProximity", "Function TribesGame.TrDevice_Deployable.IsValidDeployProximity")); }
+			ScriptFunction IsValidOutsideCheck() { mixin(MGF("mIsValidOutsideCheck", "Function TribesGame.TrDevice_Deployable.IsValidOutsideCheck")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrDevice_Deployable.ReplicatedEvent")); }
+			ScriptFunction UpdateReplicatedCarriedAmmo() { mixin(MGF("mUpdateReplicatedCarriedAmmo", "Function TribesGame.TrDevice_Deployable.UpdateReplicatedCarriedAmmo")); }
+			ScriptFunction OnSwitchToWeapon() { mixin(MGF("mOnSwitchToWeapon", "Function TribesGame.TrDevice_Deployable.OnSwitchToWeapon")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Deployable.OnSwitchAwayFromWeapon")); }
+			ScriptFunction CheckInHandWeapon() { mixin(MGF("mCheckInHandWeapon", "Function TribesGame.TrDevice_Deployable.CheckInHandWeapon")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrDevice_Deployable.Destroyed")); }
+			ScriptFunction HolderEnteredVehicle() { mixin(MGF("mHolderEnteredVehicle", "Function TribesGame.TrDevice_Deployable.HolderEnteredVehicle")); }
+			ScriptFunction ResumeInhandWeapon() { mixin(MGF("mResumeInhandWeapon", "Function TribesGame.TrDevice_Deployable.ResumeInhandWeapon")); }
+			ScriptFunction TryPutDown() { mixin(MGF("mTryPutDown", "Function TribesGame.TrDevice_Deployable.TryPutDown")); }
+			ScriptFunction GetMaxDeployedLimit() { mixin(MGF("mGetMaxDeployedLimit", "Function TribesGame.TrDevice_Deployable.GetMaxDeployedLimit")); }
+			ScriptFunction IsDeployableOldest() { mixin(MGF("mIsDeployableOldest", "Function TribesGame.TrDevice_Deployable.IsDeployableOldest")); }
+			ScriptFunction BelowMaxCountLimit() { mixin(MGF("mBelowMaxCountLimit", "Function TribesGame.TrDevice_Deployable.BelowMaxCountLimit")); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF("mConsumeAmmo", "Function TribesGame.TrDevice_Deployable.ConsumeAmmo")); }
+			ScriptFunction AddCarriedAmmo() { mixin(MGF("mAddCarriedAmmo", "Function TribesGame.TrDevice_Deployable.AddCarriedAmmo")); }
+			ScriptFunction AddAmmo() { mixin(MGF("mAddAmmo", "Function TribesGame.TrDevice_Deployable.AddAmmo")); }
+			ScriptFunction EnterDeployMode() { mixin(MGF("mEnterDeployMode", "Function TribesGame.TrDevice_Deployable.EnterDeployMode")); }
+			ScriptFunction ExitDeployMode() { mixin(MGF("mExitDeployMode", "Function TribesGame.TrDevice_Deployable.ExitDeployMode")); }
+			ScriptFunction AttachWeaponTo() { mixin(MGF("mAttachWeaponTo", "Function TribesGame.TrDevice_Deployable.AttachWeaponTo")); }
+			ScriptFunction EndZoom() { mixin(MGF("mEndZoom", "Function TribesGame.TrDevice_Deployable.EndZoom")); }
+			ScriptFunction ChangeVisibility() { mixin(MGF("mChangeVisibility", "Function TribesGame.TrDevice_Deployable.ChangeVisibility")); }
+			ScriptFunction EnterDeployModeDisplay() { mixin(MGF("mEnterDeployModeDisplay", "Function TribesGame.TrDevice_Deployable.EnterDeployModeDisplay")); }
+			ScriptFunction ExitDeployModeDisplay() { mixin(MGF("mExitDeployModeDisplay", "Function TribesGame.TrDevice_Deployable.ExitDeployModeDisplay")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function TribesGame.TrDevice_Deployable.StartFire")); }
+			ScriptFunction IsValidDesiredDeploy() { mixin(MGF("mIsValidDesiredDeploy", "Function TribesGame.TrDevice_Deployable.IsValidDesiredDeploy")); }
+			ScriptFunction ServerRequestDeploy() { mixin(MGF("mServerRequestDeploy", "Function TribesGame.TrDevice_Deployable.ServerRequestDeploy")); }
+			ScriptFunction CustomFire() { mixin(MGF("mCustomFire", "Function TribesGame.TrDevice_Deployable.CustomFire")); }
+			ScriptFunction CanAutoDeviceFireNow() { mixin(MGF("mCanAutoDeviceFireNow", "Function TribesGame.TrDevice_Deployable.CanAutoDeviceFireNow")); }
+			ScriptFunction HasAnyAmmo() { mixin(MGF("mHasAnyAmmo", "Function TribesGame.TrDevice_Deployable.HasAnyAmmo")); }
+			ScriptFunction HasAmmo() { mixin(MGF("mHasAmmo", "Function TribesGame.TrDevice_Deployable.HasAmmo")); }
 		}
 	}
 	static struct Constants
@@ -110,25 +110,25 @@ public extern(D):
 	static struct WeaponFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_Deployable.WeaponFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_Deployable.WeaponFiring")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Rotator m_rDesiredPlacementRotation() { mixin(MGPC!("Rotator", 2212)()); }
-			Vector m_vDesiredPlacementLocation() { mixin(MGPC!("Vector", 2200)()); }
-			float m_fOutsideCheckDistance() { mixin(MGPC!("float", 2192)()); }
-			float m_fOtherDeployableProximityCheck() { mixin(MGPC!("float", 2188)()); }
-			Vector m_vDeployVolumePlacementExtent() { mixin(MGPC!("Vector", 2176)()); }
-			Vector m_vPlacementExtent() { mixin(MGPC!("Vector", 2164)()); }
-			float m_fPlacementScale() { mixin(MGPC!("float", 2160)()); }
-			int m_nPerPlayerMaxDeployed() { mixin(MGPC!("int", 2156)()); }
-			ScriptClass c_DeployableHologramClass() { mixin(MGPC!("ScriptClass", 2152)()); }
-			TrDeployableHologram c_DeployableHologram() { mixin(MGPC!("TrDeployableHologram", 2148)()); }
+			Rotator m_rDesiredPlacementRotation() { mixin(MGPC("Rotator", 2212)); }
+			Vector m_vDesiredPlacementLocation() { mixin(MGPC("Vector", 2200)); }
+			float m_fOutsideCheckDistance() { mixin(MGPC("float", 2192)); }
+			float m_fOtherDeployableProximityCheck() { mixin(MGPC("float", 2188)); }
+			Vector m_vDeployVolumePlacementExtent() { mixin(MGPC("Vector", 2176)); }
+			Vector m_vPlacementExtent() { mixin(MGPC("Vector", 2164)); }
+			float m_fPlacementScale() { mixin(MGPC("float", 2160)); }
+			int m_nPerPlayerMaxDeployed() { mixin(MGPC("int", 2156)); }
+			ScriptClass c_DeployableHologramClass() { mixin(MGPC("ScriptClass", 2152)); }
+			TrDeployableHologram c_DeployableHologram() { mixin(MGPC("TrDeployableHologram", 2148)); }
 		}
-		bool m_bIgnoreCollisionForPlacement() { mixin(MGBPC!(2196, 0x1)()); }
-		bool m_bIgnoreCollisionForPlacement(bool val) { mixin(MSBPC!(2196, 0x1)()); }
+		bool m_bIgnoreCollisionForPlacement() { mixin(MGBPC(2196, 0x1)); }
+		bool m_bIgnoreCollisionForPlacement(bool val) { mixin(MSBPC(2196, 0x1)); }
 	}
 final:
 	int GetAmmoCount()

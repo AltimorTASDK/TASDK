@@ -10,9 +10,9 @@ extern(C++) interface NavMeshGoal_Null : NavMeshPathGoalEvaluator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshGoal_Null")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavMeshGoal_Null")); }
 	private static __gshared NavMeshGoal_Null mDefaultProperties;
-	@property final static NavMeshGoal_Null DefaultProperties() { mixin(MGDPC!(NavMeshGoal_Null, "NavMeshGoal_Null Engine.Default__NavMeshGoal_Null")()); }
+	@property final static NavMeshGoal_Null DefaultProperties() { mixin(MGDPC("NavMeshGoal_Null", "NavMeshGoal_Null Engine.Default__NavMeshGoal_Null")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,12 +23,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GoUntilBust() { mixin(MGF!("mGoUntilBust", "Function Engine.NavMeshGoal_Null.GoUntilBust")()); }
-			ScriptFunction RecycleNative() { mixin(MGF!("mRecycleNative", "Function Engine.NavMeshGoal_Null.RecycleNative")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshGoal_Null.Recycle")()); }
+			ScriptFunction GoUntilBust() { mixin(MGF("mGoUntilBust", "Function Engine.NavMeshGoal_Null.GoUntilBust")); }
+			ScriptFunction RecycleNative() { mixin(MGF("mRecycleNative", "Function Engine.NavMeshGoal_Null.RecycleNative")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.NavMeshGoal_Null.Recycle")); }
 		}
 	}
-	@property final auto ref UObject.Pointer PartialGoal() { mixin(MGPC!("UObject.Pointer", 80)()); }
+	@property final auto ref UObject.Pointer PartialGoal() { mixin(MGPC("UObject.Pointer", 80)); }
 final:
 	static bool GoUntilBust(NavigationHandle NavHandle, int* InMaxPathVisits = null)
 	{

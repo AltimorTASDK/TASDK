@@ -14,9 +14,9 @@ extern(C++) interface GameUISceneClient : UISceneClient
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameUISceneClient")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.GameUISceneClient")); }
 	private static __gshared GameUISceneClient mDefaultProperties;
-	@property final static GameUISceneClient DefaultProperties() { mixin(MGDPC!(GameUISceneClient, "GameUISceneClient Engine.Default__GameUISceneClient")()); }
+	@property final static GameUISceneClient DefaultProperties() { mixin(MGDPC("GameUISceneClient", "GameUISceneClient Engine.Default__GameUISceneClient")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,38 +33,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentNetMode() { mixin(MGF!("mGetCurrentNetMode", "Function Engine.GameUISceneClient.GetCurrentNetMode")()); }
-			ScriptFunction RequestInputProcessingUpdate() { mixin(MGF!("mRequestInputProcessingUpdate", "Function Engine.GameUISceneClient.RequestInputProcessingUpdate")()); }
-			ScriptFunction CanUnpauseInternalUI() { mixin(MGF!("mCanUnpauseInternalUI", "Function Engine.GameUISceneClient.CanUnpauseInternalUI")()); }
-			ScriptFunction PauseGame() { mixin(MGF!("mPauseGame", "Function Engine.GameUISceneClient.PauseGame")()); }
-			ScriptFunction NotifyClientTravel() { mixin(MGF!("mNotifyClientTravel", "Function Engine.GameUISceneClient.NotifyClientTravel")()); }
-			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function Engine.GameUISceneClient.NotifyGameSessionEnded")()); }
-			ScriptFunction NotifyPlayerAdded() { mixin(MGF!("mNotifyPlayerAdded", "Function Engine.GameUISceneClient.NotifyPlayerAdded")()); }
-			ScriptFunction NotifyPlayerRemoved() { mixin(MGF!("mNotifyPlayerRemoved", "Function Engine.GameUISceneClient.NotifyPlayerRemoved")()); }
-			ScriptFunction FindLocalPlayerIndex() { mixin(MGF!("mFindLocalPlayerIndex", "Function Engine.GameUISceneClient.FindLocalPlayerIndex")()); }
+			ScriptFunction GetCurrentNetMode() { mixin(MGF("mGetCurrentNetMode", "Function Engine.GameUISceneClient.GetCurrentNetMode")); }
+			ScriptFunction RequestInputProcessingUpdate() { mixin(MGF("mRequestInputProcessingUpdate", "Function Engine.GameUISceneClient.RequestInputProcessingUpdate")); }
+			ScriptFunction CanUnpauseInternalUI() { mixin(MGF("mCanUnpauseInternalUI", "Function Engine.GameUISceneClient.CanUnpauseInternalUI")); }
+			ScriptFunction PauseGame() { mixin(MGF("mPauseGame", "Function Engine.GameUISceneClient.PauseGame")); }
+			ScriptFunction NotifyClientTravel() { mixin(MGF("mNotifyClientTravel", "Function Engine.GameUISceneClient.NotifyClientTravel")); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF("mNotifyGameSessionEnded", "Function Engine.GameUISceneClient.NotifyGameSessionEnded")); }
+			ScriptFunction NotifyPlayerAdded() { mixin(MGF("mNotifyPlayerAdded", "Function Engine.GameUISceneClient.NotifyPlayerAdded")); }
+			ScriptFunction NotifyPlayerRemoved() { mixin(MGF("mNotifyPlayerRemoved", "Function Engine.GameUISceneClient.NotifyPlayerRemoved")); }
+			ScriptFunction FindLocalPlayerIndex() { mixin(MGF("mFindLocalPlayerIndex", "Function Engine.GameUISceneClient.FindLocalPlayerIndex")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) NavAliases() { mixin(MGPC!("ScriptArray!(ScriptName)", 300)()); }
-			ScriptArray!(ScriptName) AxisInputKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 312)()); }
-			UObject.Map_Mirror InitialPressedKeys() { mixin(MGPC!("UObject.Map_Mirror", 236)()); }
-			UObject.IntPoint DoubleClickStartPosition() { mixin(MGPC!("UObject.IntPoint", 228)()); }
-			UObject.Double DoubleClickStartTime() { mixin(MGPC!("UObject.Double", 220)()); }
-			float LatestDeltaTime() { mixin(MGPC!("float", 216)()); }
+			ScriptArray!(ScriptName) NavAliases() { mixin(MGPC("ScriptArray!(ScriptName)", 300)); }
+			ScriptArray!(ScriptName) AxisInputKeys() { mixin(MGPC("ScriptArray!(ScriptName)", 312)); }
+			UObject.Map_Mirror InitialPressedKeys() { mixin(MGPC("UObject.Map_Mirror", 236)); }
+			UObject.IntPoint DoubleClickStartPosition() { mixin(MGPC("UObject.IntPoint", 228)); }
+			UObject.Double DoubleClickStartTime() { mixin(MGPC("UObject.Double", 220)); }
+			float LatestDeltaTime() { mixin(MGPC("float", 216)); }
 		}
-		bool bCaptureUnprocessedInput() { mixin(MGBPC!(296, 0x10)()); }
-		bool bCaptureUnprocessedInput(bool val) { mixin(MSBPC!(296, 0x10)()); }
-		bool bRenderDebugInfo() { mixin(MGBPC!(296, 0x8)()); }
-		bool bRenderDebugInfo(bool val) { mixin(MSBPC!(296, 0x8)()); }
-		bool bEnableDebugInput() { mixin(MGBPC!(296, 0x4)()); }
-		bool bEnableDebugInput(bool val) { mixin(MSBPC!(296, 0x4)()); }
-		bool bUpdateSceneViewportSizes() { mixin(MGBPC!(296, 0x2)()); }
-		bool bUpdateSceneViewportSizes(bool val) { mixin(MSBPC!(296, 0x2)()); }
-		bool bUpdateInputProcessingStatus() { mixin(MGBPC!(296, 0x1)()); }
-		bool bUpdateInputProcessingStatus(bool val) { mixin(MSBPC!(296, 0x1)()); }
+		bool bCaptureUnprocessedInput() { mixin(MGBPC(296, 0x10)); }
+		bool bCaptureUnprocessedInput(bool val) { mixin(MSBPC(296, 0x10)); }
+		bool bRenderDebugInfo() { mixin(MGBPC(296, 0x8)); }
+		bool bRenderDebugInfo(bool val) { mixin(MSBPC(296, 0x8)); }
+		bool bEnableDebugInput() { mixin(MGBPC(296, 0x4)); }
+		bool bEnableDebugInput(bool val) { mixin(MSBPC(296, 0x4)); }
+		bool bUpdateSceneViewportSizes() { mixin(MGBPC(296, 0x2)); }
+		bool bUpdateSceneViewportSizes(bool val) { mixin(MSBPC(296, 0x2)); }
+		bool bUpdateInputProcessingStatus() { mixin(MGBPC(296, 0x1)); }
+		bool bUpdateInputProcessingStatus(bool val) { mixin(MSBPC(296, 0x1)); }
 	}
 final:
 	static WorldInfo.ENetMode GetCurrentNetMode()

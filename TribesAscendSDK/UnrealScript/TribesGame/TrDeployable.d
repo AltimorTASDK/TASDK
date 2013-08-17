@@ -24,9 +24,9 @@ extern(C++) interface TrDeployable : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployable")); }
 	private static __gshared TrDeployable mDefaultProperties;
-	@property final static TrDeployable DefaultProperties() { mixin(MGDPC!(TrDeployable, "TrDeployable TribesGame.Default__TrDeployable")()); }
+	@property final static TrDeployable DefaultProperties() { mixin(MGDPC("TrDeployable", "TrDeployable TribesGame.Default__TrDeployable")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -67,39 +67,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AdjustMeshToGround() { mixin(MGF!("mAdjustMeshToGround", "Function TribesGame.TrDeployable.AdjustMeshToGround")()); }
-			ScriptFunction CalcMeshOffset() { mixin(MGF!("mCalcMeshOffset", "Function TribesGame.TrDeployable.CalcMeshOffset")()); }
-			ScriptFunction IsInLOS() { mixin(MGF!("mIsInLOS", "Function TribesGame.TrDeployable.IsInLOS")()); }
-			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrDeployable.ApplyServerSettings")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDeployable.PostInitAnimTree")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrDeployable.ReplicatedEvent")()); }
-			ScriptFunction OnPRIReplicated() { mixin(MGF!("mOnPRIReplicated", "Function TribesGame.TrDeployable.OnPRIReplicated")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDeployable.Tick")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function TribesGame.TrDeployable.TakeRadiusDamage")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrDeployable.TakeDamage")()); }
-			ScriptFunction OnPawnDetectedByCollisionProxy() { mixin(MGF!("mOnPawnDetectedByCollisionProxy", "Function TribesGame.TrDeployable.OnPawnDetectedByCollisionProxy")()); }
-			ScriptFunction OnPawnExitedCollisionProxy() { mixin(MGF!("mOnPawnExitedCollisionProxy", "Function TribesGame.TrDeployable.OnPawnExitedCollisionProxy")()); }
-			ScriptFunction OnVehicleDetectedByCollisionProxy() { mixin(MGF!("mOnVehicleDetectedByCollisionProxy", "Function TribesGame.TrDeployable.OnVehicleDetectedByCollisionProxy")()); }
-			ScriptFunction OnVehicleExitedCollisionProxy() { mixin(MGF!("mOnVehicleExitedCollisionProxy", "Function TribesGame.TrDeployable.OnVehicleExitedCollisionProxy")()); }
-			ScriptFunction OnPowerStatusChanged() { mixin(MGF!("mOnPowerStatusChanged", "Function TribesGame.TrDeployable.OnPowerStatusChanged")()); }
-			ScriptFunction SetInstigatorController() { mixin(MGF!("mSetInstigatorController", "Function TribesGame.TrDeployable.SetInstigatorController")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDeployable.PostBeginPlay")()); }
-			ScriptFunction GetDamageRadius() { mixin(MGF!("mGetDamageRadius", "Function TribesGame.TrDeployable.GetDamageRadius")()); }
-			ScriptFunction FinalizeDeployment() { mixin(MGF!("mFinalizeDeployment", "Function TribesGame.TrDeployable.FinalizeDeployment")()); }
-			ScriptFunction DeployComplete() { mixin(MGF!("mDeployComplete", "Function TribesGame.TrDeployable.DeployComplete")()); }
-			ScriptFunction IsFiring() { mixin(MGF!("mIsFiring", "Function TribesGame.TrDeployable.IsFiring")()); }
-			ScriptFunction UpdateHealthMaterial() { mixin(MGF!("mUpdateHealthMaterial", "Function TribesGame.TrDeployable.UpdateHealthMaterial")()); }
-			ScriptFunction OnHealthChanged() { mixin(MGF!("mOnHealthChanged", "Function TribesGame.TrDeployable.OnHealthChanged")()); }
-			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF!("mGetWeaponStartTraceLocation", "Function TribesGame.TrDeployable.GetWeaponStartTraceLocation")()); }
-			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function TribesGame.TrDeployable.StopsProjectile")()); }
-			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function TribesGame.TrDeployable.IncrementFlashCount")()); }
-			ScriptFunction PlayFireEffects() { mixin(MGF!("mPlayFireEffects", "Function TribesGame.TrDeployable.PlayFireEffects")()); }
-			ScriptFunction PulseBackupGenerators() { mixin(MGF!("mPulseBackupGenerators", "Function TribesGame.TrDeployable.PulseBackupGenerators")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDeployable.Destroyed")()); }
-			ScriptFunction ReceivesPowerFromGenerator() { mixin(MGF!("mReceivesPowerFromGenerator", "Function TribesGame.TrDeployable.ReceivesPowerFromGenerator")()); }
-			ScriptFunction GetPossessiveInstigatorName() { mixin(MGF!("mGetPossessiveInstigatorName", "Function TribesGame.TrDeployable.GetPossessiveInstigatorName")()); }
-			ScriptFunction CalcOtherWatchingCam() { mixin(MGF!("mCalcOtherWatchingCam", "Function TribesGame.TrDeployable.CalcOtherWatchingCam")()); }
-			ScriptFunction OnUpgradePerformed() { mixin(MGF!("mOnUpgradePerformed", "Function TribesGame.TrDeployable.OnUpgradePerformed")()); }
+			ScriptFunction AdjustMeshToGround() { mixin(MGF("mAdjustMeshToGround", "Function TribesGame.TrDeployable.AdjustMeshToGround")); }
+			ScriptFunction CalcMeshOffset() { mixin(MGF("mCalcMeshOffset", "Function TribesGame.TrDeployable.CalcMeshOffset")); }
+			ScriptFunction IsInLOS() { mixin(MGF("mIsInLOS", "Function TribesGame.TrDeployable.IsInLOS")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF("mApplyServerSettings", "Function TribesGame.TrDeployable.ApplyServerSettings")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDeployable.PostInitAnimTree")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrDeployable.ReplicatedEvent")); }
+			ScriptFunction OnPRIReplicated() { mixin(MGF("mOnPRIReplicated", "Function TribesGame.TrDeployable.OnPRIReplicated")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrDeployable.Tick")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function TribesGame.TrDeployable.TakeRadiusDamage")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrDeployable.TakeDamage")); }
+			ScriptFunction OnPawnDetectedByCollisionProxy() { mixin(MGF("mOnPawnDetectedByCollisionProxy", "Function TribesGame.TrDeployable.OnPawnDetectedByCollisionProxy")); }
+			ScriptFunction OnPawnExitedCollisionProxy() { mixin(MGF("mOnPawnExitedCollisionProxy", "Function TribesGame.TrDeployable.OnPawnExitedCollisionProxy")); }
+			ScriptFunction OnVehicleDetectedByCollisionProxy() { mixin(MGF("mOnVehicleDetectedByCollisionProxy", "Function TribesGame.TrDeployable.OnVehicleDetectedByCollisionProxy")); }
+			ScriptFunction OnVehicleExitedCollisionProxy() { mixin(MGF("mOnVehicleExitedCollisionProxy", "Function TribesGame.TrDeployable.OnVehicleExitedCollisionProxy")); }
+			ScriptFunction OnPowerStatusChanged() { mixin(MGF("mOnPowerStatusChanged", "Function TribesGame.TrDeployable.OnPowerStatusChanged")); }
+			ScriptFunction SetInstigatorController() { mixin(MGF("mSetInstigatorController", "Function TribesGame.TrDeployable.SetInstigatorController")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrDeployable.PostBeginPlay")); }
+			ScriptFunction GetDamageRadius() { mixin(MGF("mGetDamageRadius", "Function TribesGame.TrDeployable.GetDamageRadius")); }
+			ScriptFunction FinalizeDeployment() { mixin(MGF("mFinalizeDeployment", "Function TribesGame.TrDeployable.FinalizeDeployment")); }
+			ScriptFunction DeployComplete() { mixin(MGF("mDeployComplete", "Function TribesGame.TrDeployable.DeployComplete")); }
+			ScriptFunction IsFiring() { mixin(MGF("mIsFiring", "Function TribesGame.TrDeployable.IsFiring")); }
+			ScriptFunction UpdateHealthMaterial() { mixin(MGF("mUpdateHealthMaterial", "Function TribesGame.TrDeployable.UpdateHealthMaterial")); }
+			ScriptFunction OnHealthChanged() { mixin(MGF("mOnHealthChanged", "Function TribesGame.TrDeployable.OnHealthChanged")); }
+			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF("mGetWeaponStartTraceLocation", "Function TribesGame.TrDeployable.GetWeaponStartTraceLocation")); }
+			ScriptFunction StopsProjectile() { mixin(MGF("mStopsProjectile", "Function TribesGame.TrDeployable.StopsProjectile")); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF("mIncrementFlashCount", "Function TribesGame.TrDeployable.IncrementFlashCount")); }
+			ScriptFunction PlayFireEffects() { mixin(MGF("mPlayFireEffects", "Function TribesGame.TrDeployable.PlayFireEffects")); }
+			ScriptFunction PulseBackupGenerators() { mixin(MGF("mPulseBackupGenerators", "Function TribesGame.TrDeployable.PulseBackupGenerators")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrDeployable.Destroyed")); }
+			ScriptFunction ReceivesPowerFromGenerator() { mixin(MGF("mReceivesPowerFromGenerator", "Function TribesGame.TrDeployable.ReceivesPowerFromGenerator")); }
+			ScriptFunction GetPossessiveInstigatorName() { mixin(MGF("mGetPossessiveInstigatorName", "Function TribesGame.TrDeployable.GetPossessiveInstigatorName")); }
+			ScriptFunction CalcOtherWatchingCam() { mixin(MGF("mCalcOtherWatchingCam", "Function TribesGame.TrDeployable.CalcOtherWatchingCam")); }
+			ScriptFunction OnUpgradePerformed() { mixin(MGF("mOnUpgradePerformed", "Function TribesGame.TrDeployable.OnUpgradePerformed")); }
 		}
 	}
 	static struct Constants
@@ -109,68 +109,68 @@ public extern(D):
 	static struct Deploy
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable.Deploy")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDeployable.Deploy")); }
 	}
 	static struct BlownUp
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable.BlownUp")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDeployable.BlownUp")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Controller m_Controller() { mixin(MGPC!("Controller", 1408)()); }
-			ScriptArray!(float) m_fRelevancyCheckHeights() { mixin(MGPC!("ScriptArray!(float)", 1480)()); }
-			int m_nIconStackId() { mixin(MGPC!("int", 1520)()); }
-			Vector m_vDeathCamStartOffset() { mixin(MGPC!("Vector", 1508)()); }
-			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC!("PlayerReplicationInfo", 1504)()); }
+			Controller m_Controller() { mixin(MGPC("Controller", 1408)); }
+			ScriptArray!(float) m_fRelevancyCheckHeights() { mixin(MGPC("ScriptArray!(float)", 1480)); }
+			int m_nIconStackId() { mixin(MGPC("int", 1520)); }
+			Vector m_vDeathCamStartOffset() { mixin(MGPC("Vector", 1508)); }
+			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC("PlayerReplicationInfo", 1504)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_XRayMesh'!
-			float m_fAnimInterpSpeed() { mixin(MGPC!("float", 1496)()); }
-			AnimNodeScalePlayRate m_AnimNodeScale() { mixin(MGPC!("AnimNodeScalePlayRate", 1492)()); }
-			Actor m_LastViewer() { mixin(MGPC!("Actor", 1476)()); }
-			PlayerController m_LastRealViewer() { mixin(MGPC!("PlayerController", 1472)()); }
-			float m_fNetRelevancyTime() { mixin(MGPC!("float", 1468)()); }
-			SoundCue m_DeploySound() { mixin(MGPC!("SoundCue", 1464)()); }
-			TrPowerGenerator m_MyMainGenerator() { mixin(MGPC!("TrPowerGenerator", 1460)()); }
-			Pawn r_TargetPawn() { mixin(MGPC!("Pawn", 1456)()); }
-			ubyte r_FlashCount() { mixin(MGPC!("ubyte", 1452)()); }
-			TrSubDevice m_Weapon() { mixin(MGPC!("TrSubDevice", 1448)()); }
-			TrTurretPawn m_WeaponHolder() { mixin(MGPC!("TrTurretPawn", 1444)()); }
-			ScriptClass m_DeviceClass() { mixin(MGPC!("ScriptClass", 1440)()); }
-			float m_fAlwaysRelevantDistanceSquared() { mixin(MGPC!("float", 1436)()); }
-			float r_fNewDetectionRadius() { mixin(MGPC!("float", 1432)()); }
-			float m_fDamageRadius() { mixin(MGPC!("float", 1428)()); }
-			TrDeployableCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrDeployableCollisionProxy", 1424)()); }
-			float m_fOverriddenTargetComponentHeight() { mixin(MGPC!("float", 1420)()); }
-			float m_TargetCollisionTraceDistance() { mixin(MGPC!("float", 1416)()); }
+			float m_fAnimInterpSpeed() { mixin(MGPC("float", 1496)); }
+			AnimNodeScalePlayRate m_AnimNodeScale() { mixin(MGPC("AnimNodeScalePlayRate", 1492)); }
+			Actor m_LastViewer() { mixin(MGPC("Actor", 1476)); }
+			PlayerController m_LastRealViewer() { mixin(MGPC("PlayerController", 1472)); }
+			float m_fNetRelevancyTime() { mixin(MGPC("float", 1468)); }
+			SoundCue m_DeploySound() { mixin(MGPC("SoundCue", 1464)); }
+			TrPowerGenerator m_MyMainGenerator() { mixin(MGPC("TrPowerGenerator", 1460)); }
+			Pawn r_TargetPawn() { mixin(MGPC("Pawn", 1456)); }
+			ubyte r_FlashCount() { mixin(MGPC("ubyte", 1452)); }
+			TrSubDevice m_Weapon() { mixin(MGPC("TrSubDevice", 1448)); }
+			TrTurretPawn m_WeaponHolder() { mixin(MGPC("TrTurretPawn", 1444)); }
+			ScriptClass m_DeviceClass() { mixin(MGPC("ScriptClass", 1440)); }
+			float m_fAlwaysRelevantDistanceSquared() { mixin(MGPC("float", 1436)); }
+			float r_fNewDetectionRadius() { mixin(MGPC("float", 1432)); }
+			float m_fDamageRadius() { mixin(MGPC("float", 1428)); }
+			TrDeployableCollisionProxy m_CollisionProxy() { mixin(MGPC("TrDeployableCollisionProxy", 1424)); }
+			float m_fOverriddenTargetComponentHeight() { mixin(MGPC("float", 1420)); }
+			float m_TargetCollisionTraceDistance() { mixin(MGPC("float", 1416)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TargetComponent'!
-			float m_fFiringArcCheckValue() { mixin(MGPC!("float", 1404)()); }
-			Vector m_PlacementOrientationVector() { mixin(MGPC!("Vector", 1392)()); }
-			int m_nFiringArcDegrees() { mixin(MGPC!("int", 1388)()); }
-			float m_fTimeToDeploySecs() { mixin(MGPC!("float", 1380)()); }
-			float m_fRemoteActivationTime() { mixin(MGPC!("float", 1376)()); }
-			float m_fBuildupTime() { mixin(MGPC!("float", 1372)()); }
-			TrPawn m_TouchedPlayer() { mixin(MGPC!("TrPawn", 1368)()); }
-			float m_TimeCreated() { mixin(MGPC!("float", 1364)()); }
-			int m_nMaxDeployablesOut() { mixin(MGPC!("int", 1360)()); }
+			float m_fFiringArcCheckValue() { mixin(MGPC("float", 1404)); }
+			Vector m_PlacementOrientationVector() { mixin(MGPC("Vector", 1392)); }
+			int m_nFiringArcDegrees() { mixin(MGPC("int", 1388)); }
+			float m_fTimeToDeploySecs() { mixin(MGPC("float", 1380)); }
+			float m_fRemoteActivationTime() { mixin(MGPC("float", 1376)); }
+			float m_fBuildupTime() { mixin(MGPC("float", 1372)); }
+			TrPawn m_TouchedPlayer() { mixin(MGPC("TrPawn", 1368)); }
+			float m_TimeCreated() { mixin(MGPC("float", 1364)); }
+			int m_nMaxDeployablesOut() { mixin(MGPC("int", 1360)); }
 		}
-		bool m_bBlocksFriendlies() { mixin(MGBPC!(1384, 0x80)()); }
-		bool m_bBlocksFriendlies(bool val) { mixin(MSBPC!(1384, 0x80)()); }
-		bool m_bCanBeSpottedByVGS() { mixin(MGBPC!(1384, 0x40)()); }
-		bool m_bCanBeSpottedByVGS(bool val) { mixin(MSBPC!(1384, 0x40)()); }
-		bool m_bIsXRay() { mixin(MGBPC!(1384, 0x20)()); }
-		bool m_bIsXRay(bool val) { mixin(MSBPC!(1384, 0x20)()); }
-		bool m_bCachedRelevant() { mixin(MGBPC!(1384, 0x10)()); }
-		bool m_bCachedRelevant(bool val) { mixin(MSBPC!(1384, 0x10)()); }
-		bool m_bOverrideTargetComponentHeight() { mixin(MGBPC!(1384, 0x8)()); }
-		bool m_bOverrideTargetComponentHeight(bool val) { mixin(MSBPC!(1384, 0x8)()); }
-		bool m_bUsesArmoredMultiplier() { mixin(MGBPC!(1384, 0x4)()); }
-		bool m_bUsesArmoredMultiplier(bool val) { mixin(MSBPC!(1384, 0x4)()); }
-		bool m_bRequireLOS() { mixin(MGBPC!(1384, 0x2)()); }
-		bool m_bRequireLOS(bool val) { mixin(MSBPC!(1384, 0x2)()); }
-		bool m_bIsDeployed() { mixin(MGBPC!(1384, 0x1)()); }
-		bool m_bIsDeployed(bool val) { mixin(MSBPC!(1384, 0x1)()); }
+		bool m_bBlocksFriendlies() { mixin(MGBPC(1384, 0x80)); }
+		bool m_bBlocksFriendlies(bool val) { mixin(MSBPC(1384, 0x80)); }
+		bool m_bCanBeSpottedByVGS() { mixin(MGBPC(1384, 0x40)); }
+		bool m_bCanBeSpottedByVGS(bool val) { mixin(MSBPC(1384, 0x40)); }
+		bool m_bIsXRay() { mixin(MGBPC(1384, 0x20)); }
+		bool m_bIsXRay(bool val) { mixin(MSBPC(1384, 0x20)); }
+		bool m_bCachedRelevant() { mixin(MGBPC(1384, 0x10)); }
+		bool m_bCachedRelevant(bool val) { mixin(MSBPC(1384, 0x10)); }
+		bool m_bOverrideTargetComponentHeight() { mixin(MGBPC(1384, 0x8)); }
+		bool m_bOverrideTargetComponentHeight(bool val) { mixin(MSBPC(1384, 0x8)); }
+		bool m_bUsesArmoredMultiplier() { mixin(MGBPC(1384, 0x4)); }
+		bool m_bUsesArmoredMultiplier(bool val) { mixin(MSBPC(1384, 0x4)); }
+		bool m_bRequireLOS() { mixin(MGBPC(1384, 0x2)); }
+		bool m_bRequireLOS(bool val) { mixin(MSBPC(1384, 0x2)); }
+		bool m_bIsDeployed() { mixin(MGBPC(1384, 0x1)); }
+		bool m_bIsDeployed(bool val) { mixin(MSBPC(1384, 0x1)); }
 	}
 final:
 	void AdjustMeshToGround()

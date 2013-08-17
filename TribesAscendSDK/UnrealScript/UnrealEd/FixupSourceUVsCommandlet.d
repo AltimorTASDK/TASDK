@@ -8,7 +8,7 @@ extern(C++) interface FixupSourceUVsCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.FixupSourceUVsCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.FixupSourceUVsCommandlet")); }
 	private static __gshared FixupSourceUVsCommandlet mDefaultProperties;
-	@property final static FixupSourceUVsCommandlet DefaultProperties() { mixin(MGDPC!(FixupSourceUVsCommandlet, "FixupSourceUVsCommandlet UnrealEd.Default__FixupSourceUVsCommandlet")()); }
+	@property final static FixupSourceUVsCommandlet DefaultProperties() { mixin(MGDPC("FixupSourceUVsCommandlet", "FixupSourceUVsCommandlet UnrealEd.Default__FixupSourceUVsCommandlet")); }
 }

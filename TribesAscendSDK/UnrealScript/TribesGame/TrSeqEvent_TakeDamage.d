@@ -9,9 +9,9 @@ extern(C++) interface TrSeqEvent_TakeDamage : SeqEvent_TakeDamage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSeqEvent_TakeDamage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSeqEvent_TakeDamage")); }
 	private static __gshared TrSeqEvent_TakeDamage mDefaultProperties;
-	@property final static TrSeqEvent_TakeDamage DefaultProperties() { mixin(MGDPC!(TrSeqEvent_TakeDamage, "TrSeqEvent_TakeDamage TribesGame.Default__TrSeqEvent_TakeDamage")()); }
+	@property final static TrSeqEvent_TakeDamage DefaultProperties() { mixin(MGDPC("TrSeqEvent_TakeDamage", "TrSeqEvent_TakeDamage TribesGame.Default__TrSeqEvent_TakeDamage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function TribesGame.TrSeqEvent_TakeDamage.GetObjClassVersion")()); }
-			ScriptFunction HandleDamage() { mixin(MGF!("mHandleDamage", "Function TribesGame.TrSeqEvent_TakeDamage.HandleDamage")()); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF("mGetObjClassVersion", "Function TribesGame.TrSeqEvent_TakeDamage.GetObjClassVersion")); }
+			ScriptFunction HandleDamage() { mixin(MGF("mHandleDamage", "Function TribesGame.TrSeqEvent_TakeDamage.HandleDamage")); }
 		}
 	}
 final:

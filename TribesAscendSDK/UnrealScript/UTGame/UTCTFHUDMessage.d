@@ -11,9 +11,9 @@ extern(C++) interface UTCTFHUDMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFHUDMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTCTFHUDMessage")); }
 	private static __gshared UTCTFHUDMessage mDefaultProperties;
-	@property final static UTCTFHUDMessage DefaultProperties() { mixin(MGDPC!(UTCTFHUDMessage, "UTCTFHUDMessage UTGame.Default__UTCTFHUDMessage")()); }
+	@property final static UTCTFHUDMessage DefaultProperties() { mixin(MGDPC("UTCTFHUDMessage", "UTCTFHUDMessage UTGame.Default__UTCTFHUDMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function UTGame.UTCTFHUDMessage.GetColor")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTCTFHUDMessage.GetString")()); }
-			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTCTFHUDMessage.AddAnnouncement")()); }
+			ScriptFunction GetColor() { mixin(MGF("mGetColor", "Function UTGame.UTCTFHUDMessage.GetColor")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTCTFHUDMessage.GetString")); }
+			ScriptFunction AddAnnouncement() { mixin(MGF("mAddAnnouncement", "Function UTGame.UTCTFHUDMessage.AddAnnouncement")); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject.Color YellowColor() { mixin(MGPC!("UObject.Color", 140)()); }
-		UObject.Color RedColor() { mixin(MGPC!("UObject.Color", 136)()); }
-		ScriptString BothFlagsString() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString EnemyHasFlagString() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString YouHaveFlagString() { mixin(MGPC!("ScriptString", 100)()); }
+		UObject.Color YellowColor() { mixin(MGPC("UObject.Color", 140)); }
+		UObject.Color RedColor() { mixin(MGPC("UObject.Color", 136)); }
+		ScriptString BothFlagsString() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString EnemyHasFlagString() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString YouHaveFlagString() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static UObject.Color GetColor(int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

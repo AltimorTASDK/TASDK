@@ -8,7 +8,7 @@ extern(C++) interface UTUIDataProvider_ServerDetails : UDKUIDataProvider_ServerD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTUIDataProvider_ServerDetails")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTUIDataProvider_ServerDetails")); }
 	private static __gshared UTUIDataProvider_ServerDetails mDefaultProperties;
-	@property final static UTUIDataProvider_ServerDetails DefaultProperties() { mixin(MGDPC!(UTUIDataProvider_ServerDetails, "UTUIDataProvider_ServerDetails UTGame.Default__UTUIDataProvider_ServerDetails")()); }
+	@property final static UTUIDataProvider_ServerDetails DefaultProperties() { mixin(MGDPC("UTUIDataProvider_ServerDetails", "UTUIDataProvider_ServerDetails UTGame.Default__UTUIDataProvider_ServerDetails")); }
 }

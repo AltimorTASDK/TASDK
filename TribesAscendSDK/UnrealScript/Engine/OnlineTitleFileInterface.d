@@ -9,9 +9,9 @@ extern(C++) interface OnlineTitleFileInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineTitleFileInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineTitleFileInterface")); }
 	private static __gshared OnlineTitleFileInterface mDefaultProperties;
-	@property final static OnlineTitleFileInterface DefaultProperties() { mixin(MGDPC!(OnlineTitleFileInterface, "OnlineTitleFileInterface Engine.Default__OnlineTitleFileInterface")()); }
+	@property final static OnlineTitleFileInterface DefaultProperties() { mixin(MGDPC("OnlineTitleFileInterface", "OnlineTitleFileInterface Engine.Default__OnlineTitleFileInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,14 +27,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReadTitleFile() { mixin(MGF!("mReadTitleFile", "Function Engine.OnlineTitleFileInterface.ReadTitleFile")()); }
-			ScriptFunction GetTitleFileContents() { mixin(MGF!("mGetTitleFileContents", "Function Engine.OnlineTitleFileInterface.GetTitleFileContents")()); }
-			ScriptFunction ClearDownloadedFiles() { mixin(MGF!("mClearDownloadedFiles", "Function Engine.OnlineTitleFileInterface.ClearDownloadedFiles")()); }
-			ScriptFunction OnReadTitleFileComplete() { mixin(MGF!("mOnReadTitleFileComplete", "Function Engine.OnlineTitleFileInterface.OnReadTitleFileComplete")()); }
-			ScriptFunction AddReadTitleFileCompleteDelegate() { mixin(MGF!("mAddReadTitleFileCompleteDelegate", "Function Engine.OnlineTitleFileInterface.AddReadTitleFileCompleteDelegate")()); }
-			ScriptFunction ClearReadTitleFileCompleteDelegate() { mixin(MGF!("mClearReadTitleFileCompleteDelegate", "Function Engine.OnlineTitleFileInterface.ClearReadTitleFileCompleteDelegate")()); }
-			ScriptFunction GetTitleFileState() { mixin(MGF!("mGetTitleFileState", "Function Engine.OnlineTitleFileInterface.GetTitleFileState")()); }
-			ScriptFunction ClearDownloadedFile() { mixin(MGF!("mClearDownloadedFile", "Function Engine.OnlineTitleFileInterface.ClearDownloadedFile")()); }
+			ScriptFunction ReadTitleFile() { mixin(MGF("mReadTitleFile", "Function Engine.OnlineTitleFileInterface.ReadTitleFile")); }
+			ScriptFunction GetTitleFileContents() { mixin(MGF("mGetTitleFileContents", "Function Engine.OnlineTitleFileInterface.GetTitleFileContents")); }
+			ScriptFunction ClearDownloadedFiles() { mixin(MGF("mClearDownloadedFiles", "Function Engine.OnlineTitleFileInterface.ClearDownloadedFiles")); }
+			ScriptFunction OnReadTitleFileComplete() { mixin(MGF("mOnReadTitleFileComplete", "Function Engine.OnlineTitleFileInterface.OnReadTitleFileComplete")); }
+			ScriptFunction AddReadTitleFileCompleteDelegate() { mixin(MGF("mAddReadTitleFileCompleteDelegate", "Function Engine.OnlineTitleFileInterface.AddReadTitleFileCompleteDelegate")); }
+			ScriptFunction ClearReadTitleFileCompleteDelegate() { mixin(MGF("mClearReadTitleFileCompleteDelegate", "Function Engine.OnlineTitleFileInterface.ClearReadTitleFileCompleteDelegate")); }
+			ScriptFunction GetTitleFileState() { mixin(MGF("mGetTitleFileState", "Function Engine.OnlineTitleFileInterface.GetTitleFileState")); }
+			ScriptFunction ClearDownloadedFile() { mixin(MGF("mClearDownloadedFile", "Function Engine.OnlineTitleFileInterface.ClearDownloadedFile")); }
 		}
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadTitleFileComplete__Delegate'!

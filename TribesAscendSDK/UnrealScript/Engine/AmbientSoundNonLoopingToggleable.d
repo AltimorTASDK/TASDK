@@ -8,7 +8,7 @@ extern(C++) interface AmbientSoundNonLoopingToggleable : AmbientSoundSimpleToggl
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AmbientSoundNonLoopingToggleable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AmbientSoundNonLoopingToggleable")); }
 	private static __gshared AmbientSoundNonLoopingToggleable mDefaultProperties;
-	@property final static AmbientSoundNonLoopingToggleable DefaultProperties() { mixin(MGDPC!(AmbientSoundNonLoopingToggleable, "AmbientSoundNonLoopingToggleable Engine.Default__AmbientSoundNonLoopingToggleable")()); }
+	@property final static AmbientSoundNonLoopingToggleable DefaultProperties() { mixin(MGDPC("AmbientSoundNonLoopingToggleable", "AmbientSoundNonLoopingToggleable Engine.Default__AmbientSoundNonLoopingToggleable")); }
 }

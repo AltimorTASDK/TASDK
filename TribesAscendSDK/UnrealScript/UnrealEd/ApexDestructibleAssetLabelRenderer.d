@@ -8,7 +8,7 @@ extern(C++) interface ApexDestructibleAssetLabelRenderer : ThumbnailLabelRendere
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.ApexDestructibleAssetLabelRenderer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.ApexDestructibleAssetLabelRenderer")); }
 	private static __gshared ApexDestructibleAssetLabelRenderer mDefaultProperties;
-	@property final static ApexDestructibleAssetLabelRenderer DefaultProperties() { mixin(MGDPC!(ApexDestructibleAssetLabelRenderer, "ApexDestructibleAssetLabelRenderer UnrealEd.Default__ApexDestructibleAssetLabelRenderer")()); }
+	@property final static ApexDestructibleAssetLabelRenderer DefaultProperties() { mixin(MGDPC("ApexDestructibleAssetLabelRenderer", "ApexDestructibleAssetLabelRenderer UnrealEd.Default__ApexDestructibleAssetLabelRenderer")); }
 }

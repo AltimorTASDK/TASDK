@@ -12,9 +12,9 @@ extern(C++) interface TrRepairStation : TrStation
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRepairStation")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrRepairStation")); }
 	private static __gshared TrRepairStation mDefaultProperties;
-	@property final static TrRepairStation DefaultProperties() { mixin(MGDPC!(TrRepairStation, "TrRepairStation TribesGame.Default__TrRepairStation")()); }
+	@property final static TrRepairStation DefaultProperties() { mixin(MGDPC("TrRepairStation", "TrRepairStation TribesGame.Default__TrRepairStation")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,26 +30,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrRepairStation.PostBeginPlay")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrRepairStation.PostInitAnimTree")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrRepairStation.OnAnimEnd")()); }
-			ScriptFunction PlayStationEnteredEffects() { mixin(MGF!("mPlayStationEnteredEffects", "Function TribesGame.TrRepairStation.PlayStationEnteredEffects")()); }
-			ScriptFunction PlayStationLeftEffects() { mixin(MGF!("mPlayStationLeftEffects", "Function TribesGame.TrRepairStation.PlayStationLeftEffects")()); }
-			ScriptFunction PawnGrabbedRepairTool() { mixin(MGF!("mPawnGrabbedRepairTool", "Function TribesGame.TrRepairStation.PawnGrabbedRepairTool")()); }
-			ScriptFunction CloseStation() { mixin(MGF!("mCloseStation", "Function TribesGame.TrRepairStation.CloseStation")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrRepairStation.GetMarker")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrRepairStation.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrRepairStation.PostInitAnimTree")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function TribesGame.TrRepairStation.OnAnimEnd")); }
+			ScriptFunction PlayStationEnteredEffects() { mixin(MGF("mPlayStationEnteredEffects", "Function TribesGame.TrRepairStation.PlayStationEnteredEffects")); }
+			ScriptFunction PlayStationLeftEffects() { mixin(MGF("mPlayStationLeftEffects", "Function TribesGame.TrRepairStation.PlayStationLeftEffects")); }
+			ScriptFunction PawnGrabbedRepairTool() { mixin(MGF("mPawnGrabbedRepairTool", "Function TribesGame.TrRepairStation.PawnGrabbedRepairTool")); }
+			ScriptFunction CloseStation() { mixin(MGF("mCloseStation", "Function TribesGame.TrRepairStation.CloseStation")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrRepairStation.GetMarker")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			SkelControlSingleBone m_RepairGunControl() { mixin(MGPC!("SkelControlSingleBone", 1408)()); }
-			TrAnimNodeBlendList m_RepairStationBlendList() { mixin(MGPC!("TrAnimNodeBlendList", 1404)()); }
-			float m_fStationOpenDelay() { mixin(MGPC!("float", 1400)()); }
+			SkelControlSingleBone m_RepairGunControl() { mixin(MGPC("SkelControlSingleBone", 1408)); }
+			TrAnimNodeBlendList m_RepairStationBlendList() { mixin(MGPC("TrAnimNodeBlendList", 1404)); }
+			float m_fStationOpenDelay() { mixin(MGPC("float", 1400)); }
 		}
-		bool m_bIsStationOpen() { mixin(MGBPC!(1396, 0x1)()); }
-		bool m_bIsStationOpen(bool val) { mixin(MSBPC!(1396, 0x1)()); }
+		bool m_bIsStationOpen() { mixin(MGBPC(1396, 0x1)); }
+		bool m_bIsStationOpen(bool val) { mixin(MSBPC(1396, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

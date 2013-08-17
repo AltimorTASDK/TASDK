@@ -8,7 +8,7 @@ extern(C++) interface UIConfigProvider : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIConfigProvider")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIConfigProvider")); }
 	private static __gshared UIConfigProvider mDefaultProperties;
-	@property final static UIConfigProvider DefaultProperties() { mixin(MGDPC!(UIConfigProvider, "UIConfigProvider Engine.Default__UIConfigProvider")()); }
+	@property final static UIConfigProvider DefaultProperties() { mixin(MGDPC("UIConfigProvider", "UIConfigProvider Engine.Default__UIConfigProvider")); }
 }

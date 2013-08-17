@@ -8,9 +8,9 @@ extern(C++) interface Texture2DDynamic : Texture
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Texture2DDynamic")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Texture2DDynamic")); }
 	private static __gshared Texture2DDynamic mDefaultProperties;
-	@property final static Texture2DDynamic DefaultProperties() { mixin(MGDPC!(Texture2DDynamic, "Texture2DDynamic Engine.Default__Texture2DDynamic")()); }
+	@property final static Texture2DDynamic DefaultProperties() { mixin(MGDPC("Texture2DDynamic", "Texture2DDynamic Engine.Default__Texture2DDynamic")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,21 +20,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.Texture2DDynamic.Init")()); }
-			ScriptFunction Create() { mixin(MGF!("mCreate", "Function Engine.Texture2DDynamic.Create")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.Texture2DDynamic.Init")); }
+			ScriptFunction Create() { mixin(MGF("mCreate", "Function Engine.Texture2DDynamic.Create")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int NumMips() { mixin(MGPC!("int", 248)()); }
+			int NumMips() { mixin(MGPC("int", 248)); }
 			// WARNING: Property 'Format' has the same name as a defined type!
-			int SizeY() { mixin(MGPC!("int", 240)()); }
-			int SizeX() { mixin(MGPC!("int", 236)()); }
+			int SizeY() { mixin(MGPC("int", 240)); }
+			int SizeX() { mixin(MGPC("int", 236)); }
 		}
-		bool bIsResolveTarget() { mixin(MGBPC!(252, 0x1)()); }
-		bool bIsResolveTarget(bool val) { mixin(MSBPC!(252, 0x1)()); }
+		bool bIsResolveTarget() { mixin(MGBPC(252, 0x1)); }
+		bool bIsResolveTarget(bool val) { mixin(MSBPC(252, 0x1)); }
 	}
 final:
 	void Init(int InSizeX, int InSizeY, Texture.EPixelFormat* InFormat = null, bool* InIsResolveTarget = null)

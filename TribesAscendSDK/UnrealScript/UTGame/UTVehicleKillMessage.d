@@ -12,9 +12,9 @@ extern(C++) interface UTVehicleKillMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleKillMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVehicleKillMessage")); }
 	private static __gshared UTVehicleKillMessage mDefaultProperties;
-	@property final static UTVehicleKillMessage DefaultProperties() { mixin(MGDPC!(UTVehicleKillMessage, "UTVehicleKillMessage UTGame.Default__UTVehicleKillMessage")()); }
+	@property final static UTVehicleKillMessage DefaultProperties() { mixin(MGDPC("UTVehicleKillMessage", "UTVehicleKillMessage UTGame.Default__UTVehicleKillMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,15 +25,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVehicleKillMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVehicleKillMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVehicleKillMessage.AnnouncementSound")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTVehicleKillMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTVehicleKillMessage.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTVehicleKillMessage.AnnouncementSound")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave KillSounds() { mixin(MGPC!("SoundNodeWave", 196)()); }
-		ScriptString KillString() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundNodeWave KillSounds() { mixin(MGPC("SoundNodeWave", 196)); }
+		ScriptString KillString() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

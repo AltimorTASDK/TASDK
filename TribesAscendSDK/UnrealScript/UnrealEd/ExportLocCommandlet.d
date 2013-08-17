@@ -8,7 +8,7 @@ extern(C++) interface ExportLocCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.ExportLocCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.ExportLocCommandlet")); }
 	private static __gshared ExportLocCommandlet mDefaultProperties;
-	@property final static ExportLocCommandlet DefaultProperties() { mixin(MGDPC!(ExportLocCommandlet, "ExportLocCommandlet UnrealEd.Default__ExportLocCommandlet")()); }
+	@property final static ExportLocCommandlet DefaultProperties() { mixin(MGDPC("ExportLocCommandlet", "ExportLocCommandlet UnrealEd.Default__ExportLocCommandlet")); }
 }

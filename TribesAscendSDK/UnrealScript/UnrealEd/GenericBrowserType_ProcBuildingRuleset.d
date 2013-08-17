@@ -8,7 +8,7 @@ extern(C++) interface GenericBrowserType_ProcBuildingRuleset : GenericBrowserTyp
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.GenericBrowserType_ProcBuildingRuleset")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.GenericBrowserType_ProcBuildingRuleset")); }
 	private static __gshared GenericBrowserType_ProcBuildingRuleset mDefaultProperties;
-	@property final static GenericBrowserType_ProcBuildingRuleset DefaultProperties() { mixin(MGDPC!(GenericBrowserType_ProcBuildingRuleset, "GenericBrowserType_ProcBuildingRuleset UnrealEd.Default__GenericBrowserType_ProcBuildingRuleset")()); }
+	@property final static GenericBrowserType_ProcBuildingRuleset DefaultProperties() { mixin(MGDPC("GenericBrowserType_ProcBuildingRuleset", "GenericBrowserType_ProcBuildingRuleset UnrealEd.Default__GenericBrowserType_ProcBuildingRuleset")); }
 }

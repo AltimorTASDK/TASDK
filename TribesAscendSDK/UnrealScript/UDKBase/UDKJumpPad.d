@@ -12,9 +12,9 @@ extern(C++) interface UDKJumpPad : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKJumpPad")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKJumpPad")); }
 	private static __gshared UDKJumpPad mDefaultProperties;
-	@property final static UDKJumpPad DefaultProperties() { mixin(MGDPC!(UDKJumpPad, "UDKJumpPad UDKBase.Default__UDKJumpPad")()); }
+	@property final static UDKJumpPad DefaultProperties() { mixin(MGDPC("UDKJumpPad", "UDKJumpPad UDKBase.Default__UDKJumpPad")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,19 +25,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UDKBase.UDKJumpPad.Touch")()); }
-			ScriptFunction PostTouch() { mixin(MGF!("mPostTouch", "Function UDKBase.UDKJumpPad.PostTouch")()); }
-			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function UDKBase.UDKJumpPad.SuggestMovePreparation")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function UDKBase.UDKJumpPad.Touch")); }
+			ScriptFunction PostTouch() { mixin(MGF("mPostTouch", "Function UDKBase.UDKJumpPad.PostTouch")); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF("mSuggestMovePreparation", "Function UDKBase.UDKJumpPad.SuggestMovePreparation")); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'JumpAmbientSound'!
-		float JumpAirControl() { mixin(MGPC!("float", 716)()); }
-		float JumpTime() { mixin(MGPC!("float", 712)()); }
-		SoundCue JumpSound() { mixin(MGPC!("SoundCue", 708)()); }
-		PathNode JumpTarget() { mixin(MGPC!("PathNode", 704)()); }
-		Vector JumpVelocity() { mixin(MGPC!("Vector", 692)()); }
+		float JumpAirControl() { mixin(MGPC("float", 716)); }
+		float JumpTime() { mixin(MGPC("float", 712)); }
+		SoundCue JumpSound() { mixin(MGPC("SoundCue", 708)); }
+		PathNode JumpTarget() { mixin(MGPC("PathNode", 704)); }
+		Vector JumpVelocity() { mixin(MGPC("Vector", 692)); }
 	}
 final:
 	void Touch(Actor Other, 

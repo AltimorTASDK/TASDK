@@ -9,9 +9,9 @@ extern(C++) interface TrSummaryHelper : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSummaryHelper")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSummaryHelper")); }
 	private static __gshared TrSummaryHelper mDefaultProperties;
-	@property final static TrSummaryHelper DefaultProperties() { mixin(MGDPC!(TrSummaryHelper, "TrSummaryHelper TribesGame.Default__TrSummaryHelper")()); }
+	@property final static TrSummaryHelper DefaultProperties() { mixin(MGDPC("TrSummaryHelper", "TrSummaryHelper TribesGame.Default__TrSummaryHelper")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,17 +30,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SortPlayerAwards() { mixin(MGF!("mSortPlayerAwards", "Function TribesGame.TrSummaryHelper.SortPlayerAwards")()); }
-			ScriptFunction SortMVPAwards() { mixin(MGF!("mSortMVPAwards", "Function TribesGame.TrSummaryHelper.SortMVPAwards")()); }
-			ScriptFunction MVPSort() { mixin(MGF!("mMVPSort", "Function TribesGame.TrSummaryHelper.MVPSort")()); }
-			ScriptFunction AwardSort() { mixin(MGF!("mAwardSort", "Function TribesGame.TrSummaryHelper.AwardSort")()); }
-			ScriptFunction GetAwardFromId() { mixin(MGF!("mGetAwardFromId", "Function TribesGame.TrSummaryHelper.GetAwardFromId")()); }
-			ScriptFunction GetTierTitle() { mixin(MGF!("mGetTierTitle", "Function TribesGame.TrSummaryHelper.GetTierTitle")()); }
-			ScriptFunction GetAccoladeFromId() { mixin(MGF!("mGetAccoladeFromId", "Function TribesGame.TrSummaryHelper.GetAccoladeFromId")()); }
-			ScriptFunction GetRankFromXP() { mixin(MGF!("mGetRankFromXP", "Function TribesGame.TrSummaryHelper.GetRankFromXP")()); }
-			ScriptFunction GetNextRank() { mixin(MGF!("mGetNextRank", "Function TribesGame.TrSummaryHelper.GetNextRank")()); }
-			ScriptFunction GetMinTierValue() { mixin(MGF!("mGetMinTierValue", "Function TribesGame.TrSummaryHelper.GetMinTierValue")()); }
-			ScriptFunction GetTieredWeight() { mixin(MGF!("mGetTieredWeight", "Function TribesGame.TrSummaryHelper.GetTieredWeight")()); }
+			ScriptFunction SortPlayerAwards() { mixin(MGF("mSortPlayerAwards", "Function TribesGame.TrSummaryHelper.SortPlayerAwards")); }
+			ScriptFunction SortMVPAwards() { mixin(MGF("mSortMVPAwards", "Function TribesGame.TrSummaryHelper.SortMVPAwards")); }
+			ScriptFunction MVPSort() { mixin(MGF("mMVPSort", "Function TribesGame.TrSummaryHelper.MVPSort")); }
+			ScriptFunction AwardSort() { mixin(MGF("mAwardSort", "Function TribesGame.TrSummaryHelper.AwardSort")); }
+			ScriptFunction GetAwardFromId() { mixin(MGF("mGetAwardFromId", "Function TribesGame.TrSummaryHelper.GetAwardFromId")); }
+			ScriptFunction GetTierTitle() { mixin(MGF("mGetTierTitle", "Function TribesGame.TrSummaryHelper.GetTierTitle")); }
+			ScriptFunction GetAccoladeFromId() { mixin(MGF("mGetAccoladeFromId", "Function TribesGame.TrSummaryHelper.GetAccoladeFromId")); }
+			ScriptFunction GetRankFromXP() { mixin(MGF("mGetRankFromXP", "Function TribesGame.TrSummaryHelper.GetRankFromXP")); }
+			ScriptFunction GetNextRank() { mixin(MGF("mGetNextRank", "Function TribesGame.TrSummaryHelper.GetNextRank")); }
+			ScriptFunction GetMinTierValue() { mixin(MGF("mGetMinTierValue", "Function TribesGame.TrSummaryHelper.GetMinTierValue")); }
+			ScriptFunction GetTieredWeight() { mixin(MGF("mGetTieredWeight", "Function TribesGame.TrSummaryHelper.GetTieredWeight")); }
 		}
 	}
 	static struct Constants
@@ -314,19 +314,19 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSummaryHelper.MVPAward")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrSummaryHelper.MVPAward")); }
 		@property final auto ref
 		{
-			int Value() { mixin(MGPS!("int", 0)()); }
-			int AwardId() { mixin(MGPS!("int", 8)()); }
-			int PlayerID() { mixin(MGPS!("int", 4)()); }
+			int Value() { mixin(MGPS("int", 0)); }
+			int AwardId() { mixin(MGPS("int", 8)); }
+			int PlayerID() { mixin(MGPS("int", 4)); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__AwardSort__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__MVPSort__Delegate'!
-		int AWARD_TIER_SIZE() { mixin(MGPC!("int", 60)()); }
+		int AWARD_TIER_SIZE() { mixin(MGPC("int", 60)); }
 	}
 final:
 	void SortPlayerAwards(ref ScriptArray!(TgPlayerProfile.PropertyPair) AwardArray)

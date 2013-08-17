@@ -8,7 +8,7 @@ extern(C++) interface AnimationCompressionAlgorithm_RevertToRaw : AnimationCompr
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimationCompressionAlgorithm_RevertToRaw")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AnimationCompressionAlgorithm_RevertToRaw")); }
 	private static __gshared AnimationCompressionAlgorithm_RevertToRaw mDefaultProperties;
-	@property final static AnimationCompressionAlgorithm_RevertToRaw DefaultProperties() { mixin(MGDPC!(AnimationCompressionAlgorithm_RevertToRaw, "AnimationCompressionAlgorithm_RevertToRaw Engine.Default__AnimationCompressionAlgorithm_RevertToRaw")()); }
+	@property final static AnimationCompressionAlgorithm_RevertToRaw DefaultProperties() { mixin(MGDPC("AnimationCompressionAlgorithm_RevertToRaw", "AnimationCompressionAlgorithm_RevertToRaw Engine.Default__AnimationCompressionAlgorithm_RevertToRaw")); }
 }

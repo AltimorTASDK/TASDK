@@ -8,9 +8,9 @@ extern(C++) interface OnlineChatInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineChatInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineChatInterface")); }
 	private static __gshared OnlineChatInterface mDefaultProperties;
-	@property final static OnlineChatInterface DefaultProperties() { mixin(MGDPC!(OnlineChatInterface, "OnlineChatInterface Engine.Default__OnlineChatInterface")()); }
+	@property final static OnlineChatInterface DefaultProperties() { mixin(MGDPC("OnlineChatInterface", "OnlineChatInterface Engine.Default__OnlineChatInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,12 +24,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnChatMessage() { mixin(MGF!("mOnChatMessage", "Function Engine.OnlineChatInterface.OnChatMessage")()); }
-			ScriptFunction AddChatMessageDelegate() { mixin(MGF!("mAddChatMessageDelegate", "Function Engine.OnlineChatInterface.AddChatMessageDelegate")()); }
-			ScriptFunction ClearChatMessageDelegate() { mixin(MGF!("mClearChatMessageDelegate", "Function Engine.OnlineChatInterface.ClearChatMessageDelegate")()); }
-			ScriptFunction SendChatMessage() { mixin(MGF!("mSendChatMessage", "Function Engine.OnlineChatInterface.SendChatMessage")()); }
-			ScriptFunction SendPrivateChatMessage() { mixin(MGF!("mSendPrivateChatMessage", "Function Engine.OnlineChatInterface.SendPrivateChatMessage")()); }
-			ScriptFunction NotifyTeamChange() { mixin(MGF!("mNotifyTeamChange", "Function Engine.OnlineChatInterface.NotifyTeamChange")()); }
+			ScriptFunction OnChatMessage() { mixin(MGF("mOnChatMessage", "Function Engine.OnlineChatInterface.OnChatMessage")); }
+			ScriptFunction AddChatMessageDelegate() { mixin(MGF("mAddChatMessageDelegate", "Function Engine.OnlineChatInterface.AddChatMessageDelegate")); }
+			ScriptFunction ClearChatMessageDelegate() { mixin(MGF("mClearChatMessageDelegate", "Function Engine.OnlineChatInterface.ClearChatMessageDelegate")); }
+			ScriptFunction SendChatMessage() { mixin(MGF("mSendChatMessage", "Function Engine.OnlineChatInterface.SendChatMessage")); }
+			ScriptFunction SendPrivateChatMessage() { mixin(MGF("mSendPrivateChatMessage", "Function Engine.OnlineChatInterface.SendPrivateChatMessage")); }
+			ScriptFunction NotifyTeamChange() { mixin(MGF("mNotifyTeamChange", "Function Engine.OnlineChatInterface.NotifyTeamChange")); }
 		}
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnChatMessage__Delegate'!

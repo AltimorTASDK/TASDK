@@ -9,9 +9,9 @@ extern(C++) interface ColorScaleVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ColorScaleVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ColorScaleVolume")); }
 	private static __gshared ColorScaleVolume mDefaultProperties;
-	@property final static ColorScaleVolume DefaultProperties() { mixin(MGDPC!(ColorScaleVolume, "ColorScaleVolume Engine.Default__ColorScaleVolume")()); }
+	@property final static ColorScaleVolume DefaultProperties() { mixin(MGDPC("ColorScaleVolume", "ColorScaleVolume Engine.Default__ColorScaleVolume")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,14 +21,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.ColorScaleVolume.Touch")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function Engine.ColorScaleVolume.UnTouch")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.ColorScaleVolume.Touch")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function Engine.ColorScaleVolume.UnTouch")); }
 		}
 	}
 	@property final auto ref
 	{
-		float InterpTime() { mixin(MGPC!("float", 532)()); }
-		Vector ColorScale() { mixin(MGPC!("Vector", 520)()); }
+		float InterpTime() { mixin(MGPC("float", 532)); }
+		Vector ColorScale() { mixin(MGPC("Vector", 520)); }
 	}
 final:
 	void Touch(Actor Other, 

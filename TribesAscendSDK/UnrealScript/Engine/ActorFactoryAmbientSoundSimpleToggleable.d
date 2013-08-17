@@ -8,7 +8,7 @@ extern(C++) interface ActorFactoryAmbientSoundSimpleToggleable : ActorFactoryAmb
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryAmbientSoundSimpleToggleable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ActorFactoryAmbientSoundSimpleToggleable")); }
 	private static __gshared ActorFactoryAmbientSoundSimpleToggleable mDefaultProperties;
-	@property final static ActorFactoryAmbientSoundSimpleToggleable DefaultProperties() { mixin(MGDPC!(ActorFactoryAmbientSoundSimpleToggleable, "ActorFactoryAmbientSoundSimpleToggleable Engine.Default__ActorFactoryAmbientSoundSimpleToggleable")()); }
+	@property final static ActorFactoryAmbientSoundSimpleToggleable DefaultProperties() { mixin(MGDPC("ActorFactoryAmbientSoundSimpleToggleable", "ActorFactoryAmbientSoundSimpleToggleable Engine.Default__ActorFactoryAmbientSoundSimpleToggleable")); }
 }

@@ -11,9 +11,9 @@ extern(C++) interface TrDestroyableTarget : UTSimpleDestroyable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDestroyableTarget")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDestroyableTarget")); }
 	private static __gshared TrDestroyableTarget mDefaultProperties;
-	@property final static TrDestroyableTarget DefaultProperties() { mixin(MGDPC!(TrDestroyableTarget, "TrDestroyableTarget TribesGame.Default__TrDestroyableTarget")()); }
+	@property final static TrDestroyableTarget DefaultProperties() { mixin(MGDPC("TrDestroyableTarget", "TrDestroyableTarget TribesGame.Default__TrDestroyableTarget")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrDestroyableTarget.TakeDamage")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function TribesGame.TrDestroyableTarget.OnToggle")()); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrDestroyableTarget.TakeDamage")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function TribesGame.TrDestroyableTarget.OnToggle")); }
 		}
 	}
 final:

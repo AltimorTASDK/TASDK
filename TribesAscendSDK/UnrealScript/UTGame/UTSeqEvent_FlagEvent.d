@@ -9,9 +9,9 @@ extern(C++) interface UTSeqEvent_FlagEvent : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSeqEvent_FlagEvent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSeqEvent_FlagEvent")); }
 	private static __gshared UTSeqEvent_FlagEvent mDefaultProperties;
-	@property final static UTSeqEvent_FlagEvent DefaultProperties() { mixin(MGDPC!(UTSeqEvent_FlagEvent, "UTSeqEvent_FlagEvent UTGame.Default__UTSeqEvent_FlagEvent")()); }
+	@property final static UTSeqEvent_FlagEvent DefaultProperties() { mixin(MGDPC("UTSeqEvent_FlagEvent", "UTSeqEvent_FlagEvent UTGame.Default__UTSeqEvent_FlagEvent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Trigger() { mixin(MGF!("mTrigger", "Function UTGame.UTSeqEvent_FlagEvent.Trigger")()); }
-			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function UTGame.UTSeqEvent_FlagEvent.GetObjClassVersion")()); }
+			ScriptFunction Trigger() { mixin(MGF("mTrigger", "Function UTGame.UTSeqEvent_FlagEvent.Trigger")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF("mGetObjClassVersion", "Function UTGame.UTSeqEvent_FlagEvent.GetObjClassVersion")); }
 		}
 	}
 final:

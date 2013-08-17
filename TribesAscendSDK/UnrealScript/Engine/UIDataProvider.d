@@ -8,9 +8,9 @@ extern(C++) interface UIDataProvider : UIRoot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataProvider")); }
 	private static __gshared UIDataProvider mDefaultProperties;
-	@property final static UIDataProvider DefaultProperties() { mixin(MGDPC!(UIDataProvider, "UIDataProvider Engine.Default__UIDataProvider")()); }
+	@property final static UIDataProvider DefaultProperties() { mixin(MGDPC("UIDataProvider", "UIDataProvider Engine.Default__UIDataProvider")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,21 +33,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnDataProviderPropertyChange() { mixin(MGF!("mOnDataProviderPropertyChange", "Function Engine.UIDataProvider.OnDataProviderPropertyChange")()); }
-			ScriptFunction GetProviderFieldType() { mixin(MGF!("mGetProviderFieldType", "Function Engine.UIDataProvider.GetProviderFieldType")()); }
-			ScriptFunction ParseArrayDelimiter() { mixin(MGF!("mParseArrayDelimiter", "Function Engine.UIDataProvider.ParseArrayDelimiter")()); }
-			ScriptFunction GetSupportedScriptFields() { mixin(MGF!("mGetSupportedScriptFields", "Function Engine.UIDataProvider.GetSupportedScriptFields")()); }
-			ScriptFunction AllowPublishingToField() { mixin(MGF!("mAllowPublishingToField", "Function Engine.UIDataProvider.AllowPublishingToField")()); }
-			ScriptFunction GetFieldValue() { mixin(MGF!("mGetFieldValue", "Function Engine.UIDataProvider.GetFieldValue")()); }
-			ScriptFunction SetFieldValue() { mixin(MGF!("mSetFieldValue", "Function Engine.UIDataProvider.SetFieldValue")()); }
-			ScriptFunction GenerateScriptMarkupString() { mixin(MGF!("mGenerateScriptMarkupString", "Function Engine.UIDataProvider.GenerateScriptMarkupString")()); }
-			ScriptFunction GenerateFillerData() { mixin(MGF!("mGenerateFillerData", "Function Engine.UIDataProvider.GenerateFillerData")()); }
-			ScriptFunction IsProviderDisabled() { mixin(MGF!("mIsProviderDisabled", "Function Engine.UIDataProvider.IsProviderDisabled")()); }
-			ScriptFunction IsCollectionDataType() { mixin(MGF!("mIsCollectionDataType", "Function Engine.UIDataProvider.IsCollectionDataType")()); }
-			ScriptFunction NotifyPropertyChanged() { mixin(MGF!("mNotifyPropertyChanged", "Function Engine.UIDataProvider.NotifyPropertyChanged")()); }
-			ScriptFunction AddPropertyNotificationChangeRequest() { mixin(MGF!("mAddPropertyNotificationChangeRequest", "Function Engine.UIDataProvider.AddPropertyNotificationChangeRequest")()); }
-			ScriptFunction RemovePropertyNotificationChangeRequest() { mixin(MGF!("mRemovePropertyNotificationChangeRequest", "Function Engine.UIDataProvider.RemovePropertyNotificationChangeRequest")()); }
-			ScriptFunction ParseTagArrayDelimiter() { mixin(MGF!("mParseTagArrayDelimiter", "Function Engine.UIDataProvider.ParseTagArrayDelimiter")()); }
+			ScriptFunction OnDataProviderPropertyChange() { mixin(MGF("mOnDataProviderPropertyChange", "Function Engine.UIDataProvider.OnDataProviderPropertyChange")); }
+			ScriptFunction GetProviderFieldType() { mixin(MGF("mGetProviderFieldType", "Function Engine.UIDataProvider.GetProviderFieldType")); }
+			ScriptFunction ParseArrayDelimiter() { mixin(MGF("mParseArrayDelimiter", "Function Engine.UIDataProvider.ParseArrayDelimiter")); }
+			ScriptFunction GetSupportedScriptFields() { mixin(MGF("mGetSupportedScriptFields", "Function Engine.UIDataProvider.GetSupportedScriptFields")); }
+			ScriptFunction AllowPublishingToField() { mixin(MGF("mAllowPublishingToField", "Function Engine.UIDataProvider.AllowPublishingToField")); }
+			ScriptFunction GetFieldValue() { mixin(MGF("mGetFieldValue", "Function Engine.UIDataProvider.GetFieldValue")); }
+			ScriptFunction SetFieldValue() { mixin(MGF("mSetFieldValue", "Function Engine.UIDataProvider.SetFieldValue")); }
+			ScriptFunction GenerateScriptMarkupString() { mixin(MGF("mGenerateScriptMarkupString", "Function Engine.UIDataProvider.GenerateScriptMarkupString")); }
+			ScriptFunction GenerateFillerData() { mixin(MGF("mGenerateFillerData", "Function Engine.UIDataProvider.GenerateFillerData")); }
+			ScriptFunction IsProviderDisabled() { mixin(MGF("mIsProviderDisabled", "Function Engine.UIDataProvider.IsProviderDisabled")); }
+			ScriptFunction IsCollectionDataType() { mixin(MGF("mIsCollectionDataType", "Function Engine.UIDataProvider.IsCollectionDataType")); }
+			ScriptFunction NotifyPropertyChanged() { mixin(MGF("mNotifyPropertyChanged", "Function Engine.UIDataProvider.NotifyPropertyChanged")); }
+			ScriptFunction AddPropertyNotificationChangeRequest() { mixin(MGF("mAddPropertyNotificationChangeRequest", "Function Engine.UIDataProvider.AddPropertyNotificationChangeRequest")); }
+			ScriptFunction RemovePropertyNotificationChangeRequest() { mixin(MGF("mRemovePropertyNotificationChangeRequest", "Function Engine.UIDataProvider.RemovePropertyNotificationChangeRequest")); }
+			ScriptFunction ParseTagArrayDelimiter() { mixin(MGF("mParseTagArrayDelimiter", "Function Engine.UIDataProvider.ParseTagArrayDelimiter")); }
 		}
 	}
 	enum EProviderAccessType : ubyte
@@ -62,23 +62,23 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataProvider.UIDataProviderField")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataProvider.UIDataProviderField")); }
 		@property final auto ref
 		{
-			ScriptArray!(UIDataProvider) FieldProviders() { mixin(MGPS!("ScriptArray!(UIDataProvider)", 12)()); }
-			UIRoot.EUIDataProviderFieldType FieldType() { mixin(MGPS!("UIRoot.EUIDataProviderFieldType", 8)()); }
-			ScriptName FieldTag() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(UIDataProvider) FieldProviders() { mixin(MGPS("ScriptArray!(UIDataProvider)", 12)); }
+			UIRoot.EUIDataProviderFieldType FieldType() { mixin(MGPS("UIRoot.EUIDataProviderFieldType", 8)); }
+			ScriptName FieldTag() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ProviderChangedNotifies() { mixin(MGPC!("ScriptArray!(
+void*) ProviderChangedNotifies() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 64)()); }
+void*)", 64)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDataProviderPropertyChange__Delegate'!
-		UIDataProvider.EProviderAccessType WriteAccessType() { mixin(MGPC!("UIDataProvider.EProviderAccessType", 60)()); }
+		UIDataProvider.EProviderAccessType WriteAccessType() { mixin(MGPC("UIDataProvider.EProviderAccessType", 60)); }
 	}
 final:
 	void OnDataProviderPropertyChange(UIDataProvider SourceProvider, ScriptName* PropTag = null)

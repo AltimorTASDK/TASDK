@@ -11,9 +11,9 @@ extern(C++) interface TrGameNextRoundMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameNextRoundMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameNextRoundMessage")); }
 	private static __gshared TrGameNextRoundMessage mDefaultProperties;
-	@property final static TrGameNextRoundMessage DefaultProperties() { mixin(MGDPC!(TrGameNextRoundMessage, "TrGameNextRoundMessage TribesGame.Default__TrGameNextRoundMessage")()); }
+	@property final static TrGameNextRoundMessage DefaultProperties() { mixin(MGDPC("TrGameNextRoundMessage", "TrGameNextRoundMessage TribesGame.Default__TrGameNextRoundMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,14 +23,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrGameNextRoundMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrGameNextRoundMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrGameNextRoundMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrGameNextRoundMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString BeginsIn() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString Round() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString BeginsIn() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString Round() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

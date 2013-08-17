@@ -10,9 +10,9 @@ extern(C++) interface TrAttachment_Melee : TrDeviceAttachment
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAttachment_Melee")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAttachment_Melee")); }
 	private static __gshared TrAttachment_Melee mDefaultProperties;
-	@property final static TrAttachment_Melee DefaultProperties() { mixin(MGDPC!(TrAttachment_Melee, "TrAttachment_Melee TribesGame.Default__TrAttachment_Melee")()); }
+	@property final static TrAttachment_Melee DefaultProperties() { mixin(MGDPC("TrAttachment_Melee", "TrAttachment_Melee TribesGame.Default__TrAttachment_Melee")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayImpactSound() { mixin(MGF!("mPlayImpactSound", "Function TribesGame.TrAttachment_Melee.PlayImpactSound")()); }
-			ScriptFunction PlayImpactEffects() { mixin(MGF!("mPlayImpactEffects", "Function TribesGame.TrAttachment_Melee.PlayImpactEffects")()); }
+			ScriptFunction PlayImpactSound() { mixin(MGF("mPlayImpactSound", "Function TribesGame.TrAttachment_Melee.PlayImpactSound")); }
+			ScriptFunction PlayImpactEffects() { mixin(MGF("mPlayImpactEffects", "Function TribesGame.TrAttachment_Melee.PlayImpactEffects")); }
 		}
 	}
 final:

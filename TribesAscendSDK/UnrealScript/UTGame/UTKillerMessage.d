@@ -10,23 +10,23 @@ extern(C++) interface UTKillerMessage : UTWeaponKillMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTKillerMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTKillerMessage")); }
 	private static __gshared UTKillerMessage mDefaultProperties;
-	@property final static UTKillerMessage DefaultProperties() { mixin(MGDPC!(UTKillerMessage, "UTKillerMessage UTGame.Default__UTKillerMessage")()); }
+	@property final static UTKillerMessage DefaultProperties() { mixin(MGDPC("UTKillerMessage", "UTKillerMessage UTGame.Default__UTKillerMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTKillerMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTKillerMessage.GetString")); }
 	}
 	@property final auto ref
 	{
-		ScriptString OtherKilledTrailer() { mixin(MGPC!("ScriptString", 172)()); }
-		ScriptString OtherKilled() { mixin(MGPC!("ScriptString", 160)()); }
-		ScriptString OtherKilledPrefix() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString YouTeamKilledTrailer() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString YouTeamKilled() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString YouKilledTrailer() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString YouKilled() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString OtherKilledTrailer() { mixin(MGPC("ScriptString", 172)); }
+		ScriptString OtherKilled() { mixin(MGPC("ScriptString", 160)); }
+		ScriptString OtherKilledPrefix() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString YouTeamKilledTrailer() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString YouTeamKilled() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString YouKilledTrailer() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString YouKilled() { mixin(MGPC("ScriptString", 100)); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

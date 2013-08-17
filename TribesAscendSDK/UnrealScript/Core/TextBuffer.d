@@ -8,7 +8,7 @@ extern(C++) interface TextBuffer : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.TextBuffer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Core.TextBuffer")); }
 	private static __gshared TextBuffer mDefaultProperties;
-	@property final static TextBuffer DefaultProperties() { mixin(MGDPC!(TextBuffer, "TextBuffer Core.Default__TextBuffer")()); }
+	@property final static TextBuffer DefaultProperties() { mixin(MGDPC("TextBuffer", "TextBuffer Core.Default__TextBuffer")); }
 }

@@ -12,9 +12,9 @@ extern(C++) interface UIResourceCombinationProvider : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIResourceCombinationProvider")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIResourceCombinationProvider")); }
 	private static __gshared UIResourceCombinationProvider mDefaultProperties;
-	@property final static UIResourceCombinationProvider DefaultProperties() { mixin(MGDPC!(UIResourceCombinationProvider, "UIResourceCombinationProvider Engine.Default__UIResourceCombinationProvider")()); }
+	@property final static UIResourceCombinationProvider DefaultProperties() { mixin(MGDPC("UIResourceCombinationProvider", "UIResourceCombinationProvider Engine.Default__UIResourceCombinationProvider")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,27 +35,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitializeProvider() { mixin(MGF!("mInitializeProvider", "Function Engine.UIResourceCombinationProvider.InitializeProvider")()); }
-			ScriptFunction GetElementProviderTags() { mixin(MGF!("mGetElementProviderTags", "Function Engine.UIResourceCombinationProvider.GetElementProviderTags")()); }
-			ScriptFunction GetElementCount() { mixin(MGF!("mGetElementCount", "Function Engine.UIResourceCombinationProvider.GetElementCount")()); }
-			ScriptFunction GetListElements() { mixin(MGF!("mGetListElements", "Function Engine.UIResourceCombinationProvider.GetListElements")()); }
-			ScriptFunction IsElementEnabled() { mixin(MGF!("mIsElementEnabled", "Function Engine.UIResourceCombinationProvider.IsElementEnabled")()); }
-			ScriptFunction GetElementCellSchemaProvider() { mixin(MGF!("mGetElementCellSchemaProvider", "Function Engine.UIResourceCombinationProvider.GetElementCellSchemaProvider")()); }
-			ScriptFunction GetElementCellValueProvider() { mixin(MGF!("mGetElementCellValueProvider", "Function Engine.UIResourceCombinationProvider.GetElementCellValueProvider")()); }
-			ScriptFunction GetElementCellTags() { mixin(MGF!("mGetElementCellTags", "Function Engine.UIResourceCombinationProvider.GetElementCellTags")()); }
-			ScriptFunction GetCellFieldType() { mixin(MGF!("mGetCellFieldType", "Function Engine.UIResourceCombinationProvider.GetCellFieldType")()); }
-			ScriptFunction GetCellFieldValue() { mixin(MGF!("mGetCellFieldValue", "Function Engine.UIResourceCombinationProvider.GetCellFieldValue")()); }
-			ScriptFunction ClearProviderReferences() { mixin(MGF!("mClearProviderReferences", "Function Engine.UIResourceCombinationProvider.ClearProviderReferences")()); }
-			ScriptFunction ReplaceProviderValue() { mixin(MGF!("mReplaceProviderValue", "Function Engine.UIResourceCombinationProvider.ReplaceProviderValue")()); }
-			ScriptFunction ReplaceProviderCollection() { mixin(MGF!("mReplaceProviderCollection", "Function Engine.UIResourceCombinationProvider.ReplaceProviderCollection")()); }
+			ScriptFunction InitializeProvider() { mixin(MGF("mInitializeProvider", "Function Engine.UIResourceCombinationProvider.InitializeProvider")); }
+			ScriptFunction GetElementProviderTags() { mixin(MGF("mGetElementProviderTags", "Function Engine.UIResourceCombinationProvider.GetElementProviderTags")); }
+			ScriptFunction GetElementCount() { mixin(MGF("mGetElementCount", "Function Engine.UIResourceCombinationProvider.GetElementCount")); }
+			ScriptFunction GetListElements() { mixin(MGF("mGetListElements", "Function Engine.UIResourceCombinationProvider.GetListElements")); }
+			ScriptFunction IsElementEnabled() { mixin(MGF("mIsElementEnabled", "Function Engine.UIResourceCombinationProvider.IsElementEnabled")); }
+			ScriptFunction GetElementCellSchemaProvider() { mixin(MGF("mGetElementCellSchemaProvider", "Function Engine.UIResourceCombinationProvider.GetElementCellSchemaProvider")); }
+			ScriptFunction GetElementCellValueProvider() { mixin(MGF("mGetElementCellValueProvider", "Function Engine.UIResourceCombinationProvider.GetElementCellValueProvider")); }
+			ScriptFunction GetElementCellTags() { mixin(MGF("mGetElementCellTags", "Function Engine.UIResourceCombinationProvider.GetElementCellTags")); }
+			ScriptFunction GetCellFieldType() { mixin(MGF("mGetCellFieldType", "Function Engine.UIResourceCombinationProvider.GetCellFieldType")); }
+			ScriptFunction GetCellFieldValue() { mixin(MGF("mGetCellFieldValue", "Function Engine.UIResourceCombinationProvider.GetCellFieldValue")); }
+			ScriptFunction ClearProviderReferences() { mixin(MGF("mClearProviderReferences", "Function Engine.UIResourceCombinationProvider.ClearProviderReferences")); }
+			ScriptFunction ReplaceProviderValue() { mixin(MGF("mReplaceProviderValue", "Function Engine.UIResourceCombinationProvider.ReplaceProviderValue")); }
+			ScriptFunction ReplaceProviderCollection() { mixin(MGF("mReplaceProviderCollection", "Function Engine.UIResourceCombinationProvider.ReplaceProviderCollection")); }
 		}
 	}
 	@property final auto ref
 	{
-		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC!("UIDataProvider_OnlineProfileSettings", 100)()); }
-		UIResourceDataProvider StaticDataProvider() { mixin(MGPC!("UIResourceDataProvider", 96)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 88)()); }
+		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC("UIDataProvider_OnlineProfileSettings", 100)); }
+		UIResourceDataProvider StaticDataProvider() { mixin(MGPC("UIResourceDataProvider", 96)); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 88)); }
 	}
 final:
 	void InitializeProvider(bool bIsEditor, UIResourceDataProvider InStaticResourceProvider, UIDataProvider_OnlineProfileSettings InProfileProvider)

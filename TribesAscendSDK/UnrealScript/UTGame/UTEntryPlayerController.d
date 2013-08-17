@@ -11,9 +11,9 @@ extern(C++) interface UTEntryPlayerController : UTPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTEntryPlayerController")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTEntryPlayerController")); }
 	private static __gshared UTEntryPlayerController mDefaultProperties;
-	@property final static UTEntryPlayerController DefaultProperties() { mixin(MGDPC!(UTEntryPlayerController, "UTEntryPlayerController UTGame.Default__UTEntryPlayerController")()); }
+	@property final static UTEntryPlayerController DefaultProperties() { mixin(MGDPC("UTEntryPlayerController", "UTEntryPlayerController UTGame.Default__UTEntryPlayerController")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,26 +34,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitInputSystem() { mixin(MGF!("mInitInputSystem", "Function UTGame.UTEntryPlayerController.InitInputSystem")()); }
-			ScriptFunction RestorePostProcessing() { mixin(MGF!("mRestorePostProcessing", "Function UTGame.UTEntryPlayerController.RestorePostProcessing")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTEntryPlayerController.Destroyed")()); }
-			ScriptFunction OnControllerChanged() { mixin(MGF!("mOnControllerChanged", "Function UTGame.UTEntryPlayerController.OnControllerChanged")()); }
-			ScriptFunction OnGameInviteReceived() { mixin(MGF!("mOnGameInviteReceived", "Function UTGame.UTEntryPlayerController.OnGameInviteReceived")()); }
-			ScriptFunction OnFriendInviteReceived() { mixin(MGF!("mOnFriendInviteReceived", "Function UTGame.UTEntryPlayerController.OnFriendInviteReceived")()); }
-			ScriptFunction OnFriendMessageReceived() { mixin(MGF!("mOnFriendMessageReceived", "Function UTGame.UTEntryPlayerController.OnFriendMessageReceived")()); }
-			ScriptFunction OnConnectionStatusChange() { mixin(MGF!("mOnConnectionStatusChange", "Function UTGame.UTEntryPlayerController.OnConnectionStatusChange")()); }
-			ScriptFunction OnLinkStatusChanged() { mixin(MGF!("mOnLinkStatusChanged", "Function UTGame.UTEntryPlayerController.OnLinkStatusChanged")()); }
-			ScriptFunction QuitToMainMenu() { mixin(MGF!("mQuitToMainMenu", "Function UTGame.UTEntryPlayerController.QuitToMainMenu")()); }
-			ScriptFunction SetPawnConstructionScene() { mixin(MGF!("mSetPawnConstructionScene", "Function UTGame.UTEntryPlayerController.SetPawnConstructionScene")()); }
-			ScriptFunction ShowMidGameMenu() { mixin(MGF!("mShowMidGameMenu", "Function UTGame.UTEntryPlayerController.ShowMidGameMenu")()); }
-			ScriptFunction ShowScoreboard() { mixin(MGF!("mShowScoreboard", "Function UTGame.UTEntryPlayerController.ShowScoreboard")()); }
+			ScriptFunction InitInputSystem() { mixin(MGF("mInitInputSystem", "Function UTGame.UTEntryPlayerController.InitInputSystem")); }
+			ScriptFunction RestorePostProcessing() { mixin(MGF("mRestorePostProcessing", "Function UTGame.UTEntryPlayerController.RestorePostProcessing")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UTGame.UTEntryPlayerController.Destroyed")); }
+			ScriptFunction OnControllerChanged() { mixin(MGF("mOnControllerChanged", "Function UTGame.UTEntryPlayerController.OnControllerChanged")); }
+			ScriptFunction OnGameInviteReceived() { mixin(MGF("mOnGameInviteReceived", "Function UTGame.UTEntryPlayerController.OnGameInviteReceived")); }
+			ScriptFunction OnFriendInviteReceived() { mixin(MGF("mOnFriendInviteReceived", "Function UTGame.UTEntryPlayerController.OnFriendInviteReceived")); }
+			ScriptFunction OnFriendMessageReceived() { mixin(MGF("mOnFriendMessageReceived", "Function UTGame.UTEntryPlayerController.OnFriendMessageReceived")); }
+			ScriptFunction OnConnectionStatusChange() { mixin(MGF("mOnConnectionStatusChange", "Function UTGame.UTEntryPlayerController.OnConnectionStatusChange")); }
+			ScriptFunction OnLinkStatusChanged() { mixin(MGF("mOnLinkStatusChanged", "Function UTGame.UTEntryPlayerController.OnLinkStatusChanged")); }
+			ScriptFunction QuitToMainMenu() { mixin(MGF("mQuitToMainMenu", "Function UTGame.UTEntryPlayerController.QuitToMainMenu")); }
+			ScriptFunction SetPawnConstructionScene() { mixin(MGF("mSetPawnConstructionScene", "Function UTGame.UTEntryPlayerController.SetPawnConstructionScene")); }
+			ScriptFunction ShowMidGameMenu() { mixin(MGF("mShowMidGameMenu", "Function UTGame.UTEntryPlayerController.ShowMidGameMenu")); }
+			ScriptFunction ShowScoreboard() { mixin(MGF("mShowScoreboard", "Function UTGame.UTEntryPlayerController.ShowScoreboard")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC!("ScriptArray!(PostProcessChain)", 2180)()); }
-		LocalPlayer OldPlayer() { mixin(MGPC!("LocalPlayer", 2192)()); }
-		PostProcessChain EntryPostProcessChain() { mixin(MGPC!("PostProcessChain", 2176)()); }
+		ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC("ScriptArray!(PostProcessChain)", 2180)); }
+		LocalPlayer OldPlayer() { mixin(MGPC("LocalPlayer", 2192)); }
+		PostProcessChain EntryPostProcessChain() { mixin(MGPC("PostProcessChain", 2176)); }
 	}
 final:
 	void InitInputSystem()

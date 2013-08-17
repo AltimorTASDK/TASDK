@@ -9,9 +9,9 @@ extern(C++) interface TrEffect_RegenBuff : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_RegenBuff")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_RegenBuff")); }
 	private static __gshared TrEffect_RegenBuff mDefaultProperties;
-	@property final static TrEffect_RegenBuff DefaultProperties() { mixin(MGDPC!(TrEffect_RegenBuff, "TrEffect_RegenBuff TribesGame.Default__TrEffect_RegenBuff")()); }
+	@property final static TrEffect_RegenBuff DefaultProperties() { mixin(MGDPC("TrEffect_RegenBuff", "TrEffect_RegenBuff TribesGame.Default__TrEffect_RegenBuff")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_RegenBuff.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_RegenBuff.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_RegenBuff.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_RegenBuff.Remove")); }
 		}
 	}
 final:

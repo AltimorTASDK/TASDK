@@ -8,13 +8,13 @@ extern(C++) interface StringsTag : TranslatorTag
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.StringsTag")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.StringsTag")); }
 	private static __gshared StringsTag mDefaultProperties;
-	@property final static StringsTag DefaultProperties() { mixin(MGDPC!(StringsTag, "StringsTag Engine.Default__StringsTag")()); }
+	@property final static StringsTag DefaultProperties() { mixin(MGDPC("StringsTag", "StringsTag Engine.Default__StringsTag")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTranslate;
-		public @property static final ScriptFunction Translate() { mixin(MGF!("mTranslate", "Function Engine.StringsTag.Translate")()); }
+		public @property static final ScriptFunction Translate() { mixin(MGF("mTranslate", "Function Engine.StringsTag.Translate")); }
 	}
 	final ScriptString Translate(ScriptString InArgument)
 	{

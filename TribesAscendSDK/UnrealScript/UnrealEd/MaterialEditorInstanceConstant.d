@@ -8,7 +8,7 @@ extern(C++) interface MaterialEditorInstanceConstant : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.MaterialEditorInstanceConstant")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.MaterialEditorInstanceConstant")); }
 	private static __gshared MaterialEditorInstanceConstant mDefaultProperties;
-	@property final static MaterialEditorInstanceConstant DefaultProperties() { mixin(MGDPC!(MaterialEditorInstanceConstant, "MaterialEditorInstanceConstant UnrealEd.Default__MaterialEditorInstanceConstant")()); }
+	@property final static MaterialEditorInstanceConstant DefaultProperties() { mixin(MGDPC("MaterialEditorInstanceConstant", "MaterialEditorInstanceConstant UnrealEd.Default__MaterialEditorInstanceConstant")); }
 }

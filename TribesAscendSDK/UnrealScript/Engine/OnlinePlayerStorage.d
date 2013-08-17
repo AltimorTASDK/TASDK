@@ -9,9 +9,9 @@ extern(C++) interface OnlinePlayerStorage : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlinePlayerStorage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlinePlayerStorage")); }
 	private static __gshared OnlinePlayerStorage mDefaultProperties;
-	@property final static OnlinePlayerStorage DefaultProperties() { mixin(MGDPC!(OnlinePlayerStorage, "OnlinePlayerStorage Engine.Default__OnlinePlayerStorage")()); }
+	@property final static OnlinePlayerStorage DefaultProperties() { mixin(MGDPC("OnlinePlayerStorage", "OnlinePlayerStorage Engine.Default__OnlinePlayerStorage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -51,38 +51,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetProfileSettingId() { mixin(MGF!("mGetProfileSettingId", "Function Engine.OnlinePlayerStorage.GetProfileSettingId")()); }
-			ScriptFunction GetProfileSettingName() { mixin(MGF!("mGetProfileSettingName", "Function Engine.OnlinePlayerStorage.GetProfileSettingName")()); }
-			ScriptFunction GetProfileSettingColumnHeader() { mixin(MGF!("mGetProfileSettingColumnHeader", "Function Engine.OnlinePlayerStorage.GetProfileSettingColumnHeader")()); }
-			ScriptFunction FindProfileSettingIndex() { mixin(MGF!("mFindProfileSettingIndex", "Function Engine.OnlinePlayerStorage.FindProfileSettingIndex")()); }
-			ScriptFunction FindProfileMappingIndex() { mixin(MGF!("mFindProfileMappingIndex", "Function Engine.OnlinePlayerStorage.FindProfileMappingIndex")()); }
-			ScriptFunction FindProfileMappingIndexByName() { mixin(MGF!("mFindProfileMappingIndexByName", "Function Engine.OnlinePlayerStorage.FindProfileMappingIndexByName")()); }
-			ScriptFunction FindDefaultProfileMappingIndexByName() { mixin(MGF!("mFindDefaultProfileMappingIndexByName", "Function Engine.OnlinePlayerStorage.FindDefaultProfileMappingIndexByName")()); }
-			ScriptFunction IsProfileSettingIdMapped() { mixin(MGF!("mIsProfileSettingIdMapped", "Function Engine.OnlinePlayerStorage.IsProfileSettingIdMapped")()); }
-			ScriptFunction GetProfileSettingValue() { mixin(MGF!("mGetProfileSettingValue", "Function Engine.OnlinePlayerStorage.GetProfileSettingValue")()); }
-			ScriptFunction GetProfileSettingValueName() { mixin(MGF!("mGetProfileSettingValueName", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueName")()); }
-			ScriptFunction GetProfileSettingValues() { mixin(MGF!("mGetProfileSettingValues", "Function Engine.OnlinePlayerStorage.GetProfileSettingValues")()); }
-			ScriptFunction GetProfileSettingValueByName() { mixin(MGF!("mGetProfileSettingValueByName", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueByName")()); }
-			ScriptFunction SetProfileSettingValueByName() { mixin(MGF!("mSetProfileSettingValueByName", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueByName")()); }
-			ScriptFunction SetProfileSettingValue() { mixin(MGF!("mSetProfileSettingValue", "Function Engine.OnlinePlayerStorage.SetProfileSettingValue")()); }
-			ScriptFunction GetProfileSettingValueId() { mixin(MGF!("mGetProfileSettingValueId", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueId")()); }
-			ScriptFunction GetProfileSettingValueFromListIndex() { mixin(MGF!("mGetProfileSettingValueFromListIndex", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueFromListIndex")()); }
-			ScriptFunction GetProfileSettingValueInt() { mixin(MGF!("mGetProfileSettingValueInt", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueInt")()); }
-			ScriptFunction GetProfileSettingValueFloat() { mixin(MGF!("mGetProfileSettingValueFloat", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueFloat")()); }
-			ScriptFunction SetProfileSettingValueId() { mixin(MGF!("mSetProfileSettingValueId", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueId")()); }
-			ScriptFunction SetProfileSettingValueInt() { mixin(MGF!("mSetProfileSettingValueInt", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueInt")()); }
-			ScriptFunction SetProfileSettingValueFloat() { mixin(MGF!("mSetProfileSettingValueFloat", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueFloat")()); }
-			ScriptFunction GetProfileSettingMappingType() { mixin(MGF!("mGetProfileSettingMappingType", "Function Engine.OnlinePlayerStorage.GetProfileSettingMappingType")()); }
-			ScriptFunction GetProfileSettingMappingIds() { mixin(MGF!("mGetProfileSettingMappingIds", "Function Engine.OnlinePlayerStorage.GetProfileSettingMappingIds")()); }
-			ScriptFunction GetProfileSettingRange() { mixin(MGF!("mGetProfileSettingRange", "Function Engine.OnlinePlayerStorage.GetProfileSettingRange")()); }
-			ScriptFunction SetRangedProfileSettingValue() { mixin(MGF!("mSetRangedProfileSettingValue", "Function Engine.OnlinePlayerStorage.SetRangedProfileSettingValue")()); }
-			ScriptFunction GetRangedProfileSettingValue() { mixin(MGF!("mGetRangedProfileSettingValue", "Function Engine.OnlinePlayerStorage.GetRangedProfileSettingValue")()); }
-			ScriptFunction AddSettingInt() { mixin(MGF!("mAddSettingInt", "Function Engine.OnlinePlayerStorage.AddSettingInt")()); }
-			ScriptFunction AddSettingFloat() { mixin(MGF!("mAddSettingFloat", "Function Engine.OnlinePlayerStorage.AddSettingFloat")()); }
-			ScriptFunction SetToDefaults() { mixin(MGF!("mSetToDefaults", "Function Engine.OnlinePlayerStorage.SetToDefaults")()); }
-			ScriptFunction AppendVersionToSettings() { mixin(MGF!("mAppendVersionToSettings", "Function Engine.OnlinePlayerStorage.AppendVersionToSettings")()); }
-			ScriptFunction GetVersionNumber() { mixin(MGF!("mGetVersionNumber", "Function Engine.OnlinePlayerStorage.GetVersionNumber")()); }
-			ScriptFunction SetDefaultVersionNumber() { mixin(MGF!("mSetDefaultVersionNumber", "Function Engine.OnlinePlayerStorage.SetDefaultVersionNumber")()); }
+			ScriptFunction GetProfileSettingId() { mixin(MGF("mGetProfileSettingId", "Function Engine.OnlinePlayerStorage.GetProfileSettingId")); }
+			ScriptFunction GetProfileSettingName() { mixin(MGF("mGetProfileSettingName", "Function Engine.OnlinePlayerStorage.GetProfileSettingName")); }
+			ScriptFunction GetProfileSettingColumnHeader() { mixin(MGF("mGetProfileSettingColumnHeader", "Function Engine.OnlinePlayerStorage.GetProfileSettingColumnHeader")); }
+			ScriptFunction FindProfileSettingIndex() { mixin(MGF("mFindProfileSettingIndex", "Function Engine.OnlinePlayerStorage.FindProfileSettingIndex")); }
+			ScriptFunction FindProfileMappingIndex() { mixin(MGF("mFindProfileMappingIndex", "Function Engine.OnlinePlayerStorage.FindProfileMappingIndex")); }
+			ScriptFunction FindProfileMappingIndexByName() { mixin(MGF("mFindProfileMappingIndexByName", "Function Engine.OnlinePlayerStorage.FindProfileMappingIndexByName")); }
+			ScriptFunction FindDefaultProfileMappingIndexByName() { mixin(MGF("mFindDefaultProfileMappingIndexByName", "Function Engine.OnlinePlayerStorage.FindDefaultProfileMappingIndexByName")); }
+			ScriptFunction IsProfileSettingIdMapped() { mixin(MGF("mIsProfileSettingIdMapped", "Function Engine.OnlinePlayerStorage.IsProfileSettingIdMapped")); }
+			ScriptFunction GetProfileSettingValue() { mixin(MGF("mGetProfileSettingValue", "Function Engine.OnlinePlayerStorage.GetProfileSettingValue")); }
+			ScriptFunction GetProfileSettingValueName() { mixin(MGF("mGetProfileSettingValueName", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueName")); }
+			ScriptFunction GetProfileSettingValues() { mixin(MGF("mGetProfileSettingValues", "Function Engine.OnlinePlayerStorage.GetProfileSettingValues")); }
+			ScriptFunction GetProfileSettingValueByName() { mixin(MGF("mGetProfileSettingValueByName", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueByName")); }
+			ScriptFunction SetProfileSettingValueByName() { mixin(MGF("mSetProfileSettingValueByName", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueByName")); }
+			ScriptFunction SetProfileSettingValue() { mixin(MGF("mSetProfileSettingValue", "Function Engine.OnlinePlayerStorage.SetProfileSettingValue")); }
+			ScriptFunction GetProfileSettingValueId() { mixin(MGF("mGetProfileSettingValueId", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueId")); }
+			ScriptFunction GetProfileSettingValueFromListIndex() { mixin(MGF("mGetProfileSettingValueFromListIndex", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueFromListIndex")); }
+			ScriptFunction GetProfileSettingValueInt() { mixin(MGF("mGetProfileSettingValueInt", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueInt")); }
+			ScriptFunction GetProfileSettingValueFloat() { mixin(MGF("mGetProfileSettingValueFloat", "Function Engine.OnlinePlayerStorage.GetProfileSettingValueFloat")); }
+			ScriptFunction SetProfileSettingValueId() { mixin(MGF("mSetProfileSettingValueId", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueId")); }
+			ScriptFunction SetProfileSettingValueInt() { mixin(MGF("mSetProfileSettingValueInt", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueInt")); }
+			ScriptFunction SetProfileSettingValueFloat() { mixin(MGF("mSetProfileSettingValueFloat", "Function Engine.OnlinePlayerStorage.SetProfileSettingValueFloat")); }
+			ScriptFunction GetProfileSettingMappingType() { mixin(MGF("mGetProfileSettingMappingType", "Function Engine.OnlinePlayerStorage.GetProfileSettingMappingType")); }
+			ScriptFunction GetProfileSettingMappingIds() { mixin(MGF("mGetProfileSettingMappingIds", "Function Engine.OnlinePlayerStorage.GetProfileSettingMappingIds")); }
+			ScriptFunction GetProfileSettingRange() { mixin(MGF("mGetProfileSettingRange", "Function Engine.OnlinePlayerStorage.GetProfileSettingRange")); }
+			ScriptFunction SetRangedProfileSettingValue() { mixin(MGF("mSetRangedProfileSettingValue", "Function Engine.OnlinePlayerStorage.SetRangedProfileSettingValue")); }
+			ScriptFunction GetRangedProfileSettingValue() { mixin(MGF("mGetRangedProfileSettingValue", "Function Engine.OnlinePlayerStorage.GetRangedProfileSettingValue")); }
+			ScriptFunction AddSettingInt() { mixin(MGF("mAddSettingInt", "Function Engine.OnlinePlayerStorage.AddSettingInt")); }
+			ScriptFunction AddSettingFloat() { mixin(MGF("mAddSettingFloat", "Function Engine.OnlinePlayerStorage.AddSettingFloat")); }
+			ScriptFunction SetToDefaults() { mixin(MGF("mSetToDefaults", "Function Engine.OnlinePlayerStorage.SetToDefaults")); }
+			ScriptFunction AppendVersionToSettings() { mixin(MGF("mAppendVersionToSettings", "Function Engine.OnlinePlayerStorage.AppendVersionToSettings")); }
+			ScriptFunction GetVersionNumber() { mixin(MGF("mGetVersionNumber", "Function Engine.OnlinePlayerStorage.GetVersionNumber")); }
+			ScriptFunction SetDefaultVersionNumber() { mixin(MGF("mSetDefaultVersionNumber", "Function Engine.OnlinePlayerStorage.SetDefaultVersionNumber")); }
 		}
 	}
 	enum EOnlineProfilePropertyOwner : ubyte
@@ -104,21 +104,21 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlinePlayerStorage.OnlineProfileSetting")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlinePlayerStorage.OnlineProfileSetting")); }
 		@property final auto ref
 		{
-			Settings.SettingsProperty ProfileSetting() { mixin(MGPS!("Settings.SettingsProperty", 4)()); }
-			OnlinePlayerStorage.EOnlineProfilePropertyOwner Owner() { mixin(MGPS!("OnlinePlayerStorage.EOnlineProfilePropertyOwner", 0)()); }
+			Settings.SettingsProperty ProfileSetting() { mixin(MGPS("Settings.SettingsProperty", 4)); }
+			OnlinePlayerStorage.EOnlineProfilePropertyOwner Owner() { mixin(MGPS("OnlinePlayerStorage.EOnlineProfilePropertyOwner", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) ProfileSettings() { mixin(MGPC!("ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)", 68)()); }
-		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) ProfileMappings() { mixin(MGPC!("ScriptArray!(Settings.SettingsPropertyPropertyMetaData)", 80)()); }
-		int DeviceID() { mixin(MGPC!("int", 96)()); }
-		OnlinePlayerStorage.EOnlinePlayerStorageAsyncState AsyncState() { mixin(MGPC!("OnlinePlayerStorage.EOnlinePlayerStorageAsyncState", 92)()); }
-		int VersionNumber() { mixin(MGPC!("int", 60)()); }
-		int VersionSettingsId() { mixin(MGPC!("int", 64)()); }
+		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) ProfileSettings() { mixin(MGPC("ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)", 68)); }
+		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) ProfileMappings() { mixin(MGPC("ScriptArray!(Settings.SettingsPropertyPropertyMetaData)", 80)); }
+		int DeviceID() { mixin(MGPC("int", 96)); }
+		OnlinePlayerStorage.EOnlinePlayerStorageAsyncState AsyncState() { mixin(MGPC("OnlinePlayerStorage.EOnlinePlayerStorageAsyncState", 92)); }
+		int VersionNumber() { mixin(MGPC("int", 60)); }
+		int VersionSettingsId() { mixin(MGPC("int", 64)); }
 	}
 final:
 	bool GetProfileSettingId(ScriptName ProfileSettingName, ref int ProfileSettingId)

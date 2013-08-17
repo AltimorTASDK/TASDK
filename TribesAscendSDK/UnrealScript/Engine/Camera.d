@@ -21,9 +21,9 @@ extern(C++) interface Camera : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Camera")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Camera")); }
 	private static __gshared Camera mDefaultProperties;
-	@property final static Camera DefaultProperties() { mixin(MGDPC!(Camera, "Camera Engine.Default__Camera")()); }
+	@property final static Camera DefaultProperties() { mixin(MGDPC("Camera", "Camera Engine.Default__Camera")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -62,37 +62,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateCameraModifier() { mixin(MGF!("mCreateCameraModifier", "Function Engine.Camera.CreateCameraModifier")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Camera.PostBeginPlay")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Camera.Destroyed")()); }
-			ScriptFunction ApplyCameraModifiers() { mixin(MGF!("mApplyCameraModifiers", "Function Engine.Camera.ApplyCameraModifiers")()); }
-			ScriptFunction InitializeFor() { mixin(MGF!("mInitializeFor", "Function Engine.Camera.InitializeFor")()); }
-			ScriptFunction SetViewTarget() { mixin(MGF!("mSetViewTarget", "Function Engine.Camera.SetViewTarget")()); }
-			ScriptFunction GetFOVAngle() { mixin(MGF!("mGetFOVAngle", "Function Engine.Camera.GetFOVAngle")()); }
-			ScriptFunction SetFOV() { mixin(MGF!("mSetFOV", "Function Engine.Camera.SetFOV")()); }
-			ScriptFunction GetCameraViewPoint() { mixin(MGF!("mGetCameraViewPoint", "Function Engine.Camera.GetCameraViewPoint")()); }
-			ScriptFunction GetCameraRotation() { mixin(MGF!("mGetCameraRotation", "Function Engine.Camera.GetCameraRotation")()); }
-			ScriptFunction SetDesiredColorScale() { mixin(MGF!("mSetDesiredColorScale", "Function Engine.Camera.SetDesiredColorScale")()); }
-			ScriptFunction UpdateCamera() { mixin(MGF!("mUpdateCamera", "Function Engine.Camera.UpdateCamera")()); }
-			ScriptFunction BlendViewTargets() { mixin(MGF!("mBlendViewTargets", "Function Engine.Camera.BlendViewTargets")()); }
-			ScriptFunction FillCameraCache() { mixin(MGF!("mFillCameraCache", "Function Engine.Camera.FillCameraCache")()); }
-			ScriptFunction CheckViewTarget() { mixin(MGF!("mCheckViewTarget", "Function Engine.Camera.CheckViewTarget")()); }
-			ScriptFunction UpdateViewTarget() { mixin(MGF!("mUpdateViewTarget", "Function Engine.Camera.UpdateViewTarget")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function Engine.Camera.ProcessViewRotation")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Camera.DisplayDebug")()); }
-			ScriptFunction FindCameraLensEffect() { mixin(MGF!("mFindCameraLensEffect", "Function Engine.Camera.FindCameraLensEffect")()); }
-			ScriptFunction AddCameraLensEffect() { mixin(MGF!("mAddCameraLensEffect", "Function Engine.Camera.AddCameraLensEffect")()); }
-			ScriptFunction RemoveCameraLensEffect() { mixin(MGF!("mRemoveCameraLensEffect", "Function Engine.Camera.RemoveCameraLensEffect")()); }
-			ScriptFunction ClearCameraLensEffects() { mixin(MGF!("mClearCameraLensEffects", "Function Engine.Camera.ClearCameraLensEffects")()); }
-			ScriptFunction PlayCameraShake() { mixin(MGF!("mPlayCameraShake", "Function Engine.Camera.PlayCameraShake")()); }
-			ScriptFunction StopCameraShake() { mixin(MGF!("mStopCameraShake", "Function Engine.Camera.StopCameraShake")()); }
-			ScriptFunction CalcRadialShakeScale() { mixin(MGF!("mCalcRadialShakeScale", "Function Engine.Camera.CalcRadialShakeScale")()); }
-			ScriptFunction PlayWorldCameraShake() { mixin(MGF!("mPlayWorldCameraShake", "Function Engine.Camera.PlayWorldCameraShake")()); }
-			ScriptFunction ClearAllCameraShakes() { mixin(MGF!("mClearAllCameraShakes", "Function Engine.Camera.ClearAllCameraShakes")()); }
-			ScriptFunction PlayCameraAnim() { mixin(MGF!("mPlayCameraAnim", "Function Engine.Camera.PlayCameraAnim")()); }
-			ScriptFunction StopAllCameraAnims() { mixin(MGF!("mStopAllCameraAnims", "Function Engine.Camera.StopAllCameraAnims")()); }
-			ScriptFunction StopAllCameraAnimsByType() { mixin(MGF!("mStopAllCameraAnimsByType", "Function Engine.Camera.StopAllCameraAnimsByType")()); }
-			ScriptFunction StopCameraAnim() { mixin(MGF!("mStopCameraAnim", "Function Engine.Camera.StopCameraAnim")()); }
+			ScriptFunction CreateCameraModifier() { mixin(MGF("mCreateCameraModifier", "Function Engine.Camera.CreateCameraModifier")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Camera.PostBeginPlay")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.Camera.Destroyed")); }
+			ScriptFunction ApplyCameraModifiers() { mixin(MGF("mApplyCameraModifiers", "Function Engine.Camera.ApplyCameraModifiers")); }
+			ScriptFunction InitializeFor() { mixin(MGF("mInitializeFor", "Function Engine.Camera.InitializeFor")); }
+			ScriptFunction SetViewTarget() { mixin(MGF("mSetViewTarget", "Function Engine.Camera.SetViewTarget")); }
+			ScriptFunction GetFOVAngle() { mixin(MGF("mGetFOVAngle", "Function Engine.Camera.GetFOVAngle")); }
+			ScriptFunction SetFOV() { mixin(MGF("mSetFOV", "Function Engine.Camera.SetFOV")); }
+			ScriptFunction GetCameraViewPoint() { mixin(MGF("mGetCameraViewPoint", "Function Engine.Camera.GetCameraViewPoint")); }
+			ScriptFunction GetCameraRotation() { mixin(MGF("mGetCameraRotation", "Function Engine.Camera.GetCameraRotation")); }
+			ScriptFunction SetDesiredColorScale() { mixin(MGF("mSetDesiredColorScale", "Function Engine.Camera.SetDesiredColorScale")); }
+			ScriptFunction UpdateCamera() { mixin(MGF("mUpdateCamera", "Function Engine.Camera.UpdateCamera")); }
+			ScriptFunction BlendViewTargets() { mixin(MGF("mBlendViewTargets", "Function Engine.Camera.BlendViewTargets")); }
+			ScriptFunction FillCameraCache() { mixin(MGF("mFillCameraCache", "Function Engine.Camera.FillCameraCache")); }
+			ScriptFunction CheckViewTarget() { mixin(MGF("mCheckViewTarget", "Function Engine.Camera.CheckViewTarget")); }
+			ScriptFunction UpdateViewTarget() { mixin(MGF("mUpdateViewTarget", "Function Engine.Camera.UpdateViewTarget")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function Engine.Camera.ProcessViewRotation")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function Engine.Camera.DisplayDebug")); }
+			ScriptFunction FindCameraLensEffect() { mixin(MGF("mFindCameraLensEffect", "Function Engine.Camera.FindCameraLensEffect")); }
+			ScriptFunction AddCameraLensEffect() { mixin(MGF("mAddCameraLensEffect", "Function Engine.Camera.AddCameraLensEffect")); }
+			ScriptFunction RemoveCameraLensEffect() { mixin(MGF("mRemoveCameraLensEffect", "Function Engine.Camera.RemoveCameraLensEffect")); }
+			ScriptFunction ClearCameraLensEffects() { mixin(MGF("mClearCameraLensEffects", "Function Engine.Camera.ClearCameraLensEffects")); }
+			ScriptFunction PlayCameraShake() { mixin(MGF("mPlayCameraShake", "Function Engine.Camera.PlayCameraShake")); }
+			ScriptFunction StopCameraShake() { mixin(MGF("mStopCameraShake", "Function Engine.Camera.StopCameraShake")); }
+			ScriptFunction CalcRadialShakeScale() { mixin(MGF("mCalcRadialShakeScale", "Function Engine.Camera.CalcRadialShakeScale")); }
+			ScriptFunction PlayWorldCameraShake() { mixin(MGF("mPlayWorldCameraShake", "Function Engine.Camera.PlayWorldCameraShake")); }
+			ScriptFunction ClearAllCameraShakes() { mixin(MGF("mClearAllCameraShakes", "Function Engine.Camera.ClearAllCameraShakes")); }
+			ScriptFunction PlayCameraAnim() { mixin(MGF("mPlayCameraAnim", "Function Engine.Camera.PlayCameraAnim")); }
+			ScriptFunction StopAllCameraAnims() { mixin(MGF("mStopAllCameraAnims", "Function Engine.Camera.StopAllCameraAnims")); }
+			ScriptFunction StopAllCameraAnimsByType() { mixin(MGF("mStopAllCameraAnimsByType", "Function Engine.Camera.StopAllCameraAnimsByType")); }
+			ScriptFunction StopCameraAnim() { mixin(MGF("mStopCameraAnim", "Function Engine.Camera.StopCameraAnim")); }
 		}
 	}
 	static struct Constants
@@ -120,14 +120,14 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Camera.TViewTarget")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Camera.TViewTarget")); }
 		@property final auto ref
 		{
-			Actor Target() { mixin(MGPS!("Actor", 0)()); }
-			UObject.TPOV POV() { mixin(MGPS!("UObject.TPOV", 8)()); }
-			float AspectRatio() { mixin(MGPS!("float", 36)()); }
+			Actor Target() { mixin(MGPS("Actor", 0)); }
+			UObject.TPOV POV() { mixin(MGPS("UObject.TPOV", 8)); }
+			float AspectRatio() { mixin(MGPS("float", 36)); }
 			// WARNING: Property 'Controller' has the same name as a defined type!
-			PlayerReplicationInfo PRI() { mixin(MGPS!("PlayerReplicationInfo", 40)()); }
+			PlayerReplicationInfo PRI() { mixin(MGPS("PlayerReplicationInfo", 40)); }
 		}
 	}
 	struct TCameraCache
@@ -135,11 +135,11 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Camera.TCameraCache")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Camera.TCameraCache")); }
 		@property final auto ref
 		{
-			UObject.TPOV POV() { mixin(MGPS!("UObject.TPOV", 4)()); }
-			float TimeStamp() { mixin(MGPS!("float", 0)()); }
+			UObject.TPOV POV() { mixin(MGPS("UObject.TPOV", 4)); }
+			float TimeStamp() { mixin(MGPS("float", 0)); }
 		}
 	}
 	struct ViewTargetTransitionParams
@@ -147,70 +147,70 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Camera.ViewTargetTransitionParams")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Camera.ViewTargetTransitionParams")); }
 		@property final
 		{
 			auto ref
 			{
-				float BlendTime() { mixin(MGPS!("float", 0)()); }
-				Camera.EViewTargetBlendFunction BlendFunction() { mixin(MGPS!("Camera.EViewTargetBlendFunction", 4)()); }
-				float BlendExp() { mixin(MGPS!("float", 8)()); }
+				float BlendTime() { mixin(MGPS("float", 0)); }
+				Camera.EViewTargetBlendFunction BlendFunction() { mixin(MGPS("Camera.EViewTargetBlendFunction", 4)); }
+				float BlendExp() { mixin(MGPS("float", 8)); }
 			}
-			bool bLockOutgoing() { mixin(MGBPS!(12, 0x1)()); }
-			bool bLockOutgoing(bool val) { mixin(MSBPS!(12, 0x1)()); }
+			bool bLockOutgoing() { mixin(MGBPS(12, 0x1)); }
+			bool bLockOutgoing(bool val) { mixin(MSBPS(12, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			CameraModifier_CameraShake CameraShakeCamMod() { mixin(MGPC!("CameraModifier_CameraShake", 1020)()); }
-			ScriptClass CameraShakeCamModClass() { mixin(MGPC!("ScriptClass", 1024)()); }
-			CameraAnimInst AnimInstPool() { mixin(MGPC!("CameraAnimInst", 1028)()); }
-			ScriptArray!(CameraAnimInst) FreeAnims() { mixin(MGPC!("ScriptArray!(CameraAnimInst)", 1072)()); }
-			DynamicCameraActor AnimCameraActor() { mixin(MGPC!("DynamicCameraActor", 1084)()); }
-			Camera.TCameraCache CameraCache() { mixin(MGPC!("Camera.TCameraCache", 792)()); }
-			float DefaultFOV() { mixin(MGPC!("float", 488)()); }
-			PlayerController PCOwner() { mixin(MGPC!("PlayerController", 476)()); }
-			float LockedFOV() { mixin(MGPC!("float", 496)()); }
-			Vector ColorScale() { mixin(MGPC!("Vector", 748)()); }
-			Vector OriginalColorScale() { mixin(MGPC!("Vector", 772)()); }
-			Vector DesiredColorScale() { mixin(MGPC!("Vector", 760)()); }
-			float ColorScaleInterpStartTime() { mixin(MGPC!("float", 788)()); }
-			float ColorScaleInterpDuration() { mixin(MGPC!("float", 784)()); }
-			float CamOverridePostProcessAlpha() { mixin(MGPC!("float", 524)()); }
-			Camera.TViewTarget PendingViewTarget() { mixin(MGPC!("Camera.TViewTarget", 900)()); }
-			Camera.ViewTargetTransitionParams BlendParams() { mixin(MGPC!("Camera.ViewTargetTransitionParams", 948)()); }
-			Camera.TViewTarget ViewTarget() { mixin(MGPC!("Camera.TViewTarget", 856)()); }
-			float ConstrainedAspectRatio() { mixin(MGPC!("float", 500)()); }
-			float BlendTimeToGo() { mixin(MGPC!("float", 944)()); }
-			float FadeTimeRemaining() { mixin(MGPC!("float", 1004)()); }
-			float FadeTime() { mixin(MGPC!("float", 1000)()); }
-			float FadeAmount() { mixin(MGPC!("float", 520)()); }
-			UObject.Vector2D FadeAlpha() { mixin(MGPC!("UObject.Vector2D", 992)()); }
-			Camera.TCameraCache LastFrameCameraCache() { mixin(MGPC!("Camera.TCameraCache", 824)()); }
-			ScriptArray!(CameraModifier) ModifierList() { mixin(MGPC!("ScriptArray!(CameraModifier)", 964)()); }
-			ScriptArray!(EmitterCameraLensEffectBase) CameraLensEffects() { mixin(MGPC!("ScriptArray!(EmitterCameraLensEffectBase)", 1008)()); }
-			ScriptArray!(CameraAnimInst) ActiveAnims() { mixin(MGPC!("ScriptArray!(CameraAnimInst)", 1060)()); }
-			Vector FreeCamOffset() { mixin(MGPC!("Vector", 980)()); }
-			float FreeCamDistance() { mixin(MGPC!("float", 976)()); }
-			PostProcessVolume.PostProcessSettings CamPostProcessSettings() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 528)()); }
-			UObject.Color FadeColor() { mixin(MGPC!("UObject.Color", 516)()); }
-			float OffAxisPitchAngle() { mixin(MGPC!("float", 512)()); }
-			float OffAxisYawAngle() { mixin(MGPC!("float", 508)()); }
-			float DefaultAspectRatio() { mixin(MGPC!("float", 504)()); }
-			ScriptName CameraStyle() { mixin(MGPC!("ScriptName", 480)()); }
+			CameraModifier_CameraShake CameraShakeCamMod() { mixin(MGPC("CameraModifier_CameraShake", 1020)); }
+			ScriptClass CameraShakeCamModClass() { mixin(MGPC("ScriptClass", 1024)); }
+			CameraAnimInst AnimInstPool() { mixin(MGPC("CameraAnimInst", 1028)); }
+			ScriptArray!(CameraAnimInst) FreeAnims() { mixin(MGPC("ScriptArray!(CameraAnimInst)", 1072)); }
+			DynamicCameraActor AnimCameraActor() { mixin(MGPC("DynamicCameraActor", 1084)); }
+			Camera.TCameraCache CameraCache() { mixin(MGPC("Camera.TCameraCache", 792)); }
+			float DefaultFOV() { mixin(MGPC("float", 488)); }
+			PlayerController PCOwner() { mixin(MGPC("PlayerController", 476)); }
+			float LockedFOV() { mixin(MGPC("float", 496)); }
+			Vector ColorScale() { mixin(MGPC("Vector", 748)); }
+			Vector OriginalColorScale() { mixin(MGPC("Vector", 772)); }
+			Vector DesiredColorScale() { mixin(MGPC("Vector", 760)); }
+			float ColorScaleInterpStartTime() { mixin(MGPC("float", 788)); }
+			float ColorScaleInterpDuration() { mixin(MGPC("float", 784)); }
+			float CamOverridePostProcessAlpha() { mixin(MGPC("float", 524)); }
+			Camera.TViewTarget PendingViewTarget() { mixin(MGPC("Camera.TViewTarget", 900)); }
+			Camera.ViewTargetTransitionParams BlendParams() { mixin(MGPC("Camera.ViewTargetTransitionParams", 948)); }
+			Camera.TViewTarget ViewTarget() { mixin(MGPC("Camera.TViewTarget", 856)); }
+			float ConstrainedAspectRatio() { mixin(MGPC("float", 500)); }
+			float BlendTimeToGo() { mixin(MGPC("float", 944)); }
+			float FadeTimeRemaining() { mixin(MGPC("float", 1004)); }
+			float FadeTime() { mixin(MGPC("float", 1000)); }
+			float FadeAmount() { mixin(MGPC("float", 520)); }
+			UObject.Vector2D FadeAlpha() { mixin(MGPC("UObject.Vector2D", 992)); }
+			Camera.TCameraCache LastFrameCameraCache() { mixin(MGPC("Camera.TCameraCache", 824)); }
+			ScriptArray!(CameraModifier) ModifierList() { mixin(MGPC("ScriptArray!(CameraModifier)", 964)); }
+			ScriptArray!(EmitterCameraLensEffectBase) CameraLensEffects() { mixin(MGPC("ScriptArray!(EmitterCameraLensEffectBase)", 1008)); }
+			ScriptArray!(CameraAnimInst) ActiveAnims() { mixin(MGPC("ScriptArray!(CameraAnimInst)", 1060)); }
+			Vector FreeCamOffset() { mixin(MGPC("Vector", 980)); }
+			float FreeCamDistance() { mixin(MGPC("float", 976)); }
+			PostProcessVolume.PostProcessSettings CamPostProcessSettings() { mixin(MGPC("PostProcessVolume.PostProcessSettings", 528)); }
+			UObject.Color FadeColor() { mixin(MGPC("UObject.Color", 516)); }
+			float OffAxisPitchAngle() { mixin(MGPC("float", 512)); }
+			float OffAxisYawAngle() { mixin(MGPC("float", 508)); }
+			float DefaultAspectRatio() { mixin(MGPC("float", 504)); }
+			ScriptName CameraStyle() { mixin(MGPC("ScriptName", 480)); }
 		}
-		bool bLockedFOV() { mixin(MGBPC!(492, 0x1)()); }
-		bool bLockedFOV(bool val) { mixin(MSBPC!(492, 0x1)()); }
-		bool bEnableColorScaling() { mixin(MGBPC!(492, 0x8)()); }
-		bool bEnableColorScaling(bool val) { mixin(MSBPC!(492, 0x8)()); }
-		bool bEnableColorScaleInterp() { mixin(MGBPC!(492, 0x10)()); }
-		bool bEnableColorScaleInterp(bool val) { mixin(MSBPC!(492, 0x10)()); }
-		bool bConstrainAspectRatio() { mixin(MGBPC!(492, 0x2)()); }
-		bool bConstrainAspectRatio(bool val) { mixin(MSBPC!(492, 0x2)()); }
-		bool bEnableFading() { mixin(MGBPC!(492, 0x4)()); }
-		bool bEnableFading(bool val) { mixin(MSBPC!(492, 0x4)()); }
+		bool bLockedFOV() { mixin(MGBPC(492, 0x1)); }
+		bool bLockedFOV(bool val) { mixin(MSBPC(492, 0x1)); }
+		bool bEnableColorScaling() { mixin(MGBPC(492, 0x8)); }
+		bool bEnableColorScaling(bool val) { mixin(MSBPC(492, 0x8)); }
+		bool bEnableColorScaleInterp() { mixin(MGBPC(492, 0x10)); }
+		bool bEnableColorScaleInterp(bool val) { mixin(MSBPC(492, 0x10)); }
+		bool bConstrainAspectRatio() { mixin(MGBPC(492, 0x2)); }
+		bool bConstrainAspectRatio(bool val) { mixin(MSBPC(492, 0x2)); }
+		bool bEnableFading() { mixin(MGBPC(492, 0x4)); }
+		bool bEnableFading(bool val) { mixin(MSBPC(492, 0x4)); }
 	}
 final:
 	CameraModifier CreateCameraModifier(ScriptClass ModifierClass)

@@ -10,9 +10,9 @@ extern(C++) interface TrGame_TrTraining : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TrTraining")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGame_TrTraining")); }
 	private static __gshared TrGame_TrTraining mDefaultProperties;
-	@property final static TrGame_TrTraining DefaultProperties() { mixin(MGDPC!(TrGame_TrTraining, "TrGame_TrTraining TribesGame.Default__TrGame_TrTraining")()); }
+	@property final static TrGame_TrTraining DefaultProperties() { mixin(MGDPC("TrGame_TrTraining", "TrGame_TrTraining TribesGame.Default__TrGame_TrTraining")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TrTraining.CheckScore")()); }
-			ScriptFunction PickTeam() { mixin(MGF!("mPickTeam", "Function TribesGame.TrGame_TrTraining.PickTeam")()); }
-			ScriptFunction PickTeamForMigration() { mixin(MGF!("mPickTeamForMigration", "Function TribesGame.TrGame_TrTraining.PickTeamForMigration")()); }
-			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function TribesGame.TrGame_TrTraining.EndGame")()); }
-			ScriptFunction AutoEndGame() { mixin(MGF!("mAutoEndGame", "Function TribesGame.TrGame_TrTraining.AutoEndGame")()); }
-			ScriptFunction PlayEndOfMatchMessage() { mixin(MGF!("mPlayEndOfMatchMessage", "Function TribesGame.TrGame_TrTraining.PlayEndOfMatchMessage")()); }
+			ScriptFunction CheckScore() { mixin(MGF("mCheckScore", "Function TribesGame.TrGame_TrTraining.CheckScore")); }
+			ScriptFunction PickTeam() { mixin(MGF("mPickTeam", "Function TribesGame.TrGame_TrTraining.PickTeam")); }
+			ScriptFunction PickTeamForMigration() { mixin(MGF("mPickTeamForMigration", "Function TribesGame.TrGame_TrTraining.PickTeamForMigration")); }
+			ScriptFunction EndGame() { mixin(MGF("mEndGame", "Function TribesGame.TrGame_TrTraining.EndGame")); }
+			ScriptFunction AutoEndGame() { mixin(MGF("mAutoEndGame", "Function TribesGame.TrGame_TrTraining.AutoEndGame")); }
+			ScriptFunction PlayEndOfMatchMessage() { mixin(MGF("mPlayEndOfMatchMessage", "Function TribesGame.TrGame_TrTraining.PlayEndOfMatchMessage")); }
 		}
 	}
 	static struct MatchOver
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TrTraining.MatchOver")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrGame_TrTraining.MatchOver")); }
 	}
 final:
 	bool CheckScore(PlayerReplicationInfo Scorer)

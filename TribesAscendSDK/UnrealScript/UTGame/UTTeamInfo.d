@@ -15,9 +15,9 @@ extern(C++) interface UTTeamInfo : TeamInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeamInfo")); }
 	private static __gshared UTTeamInfo mDefaultProperties;
-	@property final static UTTeamInfo DefaultProperties() { mixin(MGDPC!(UTTeamInfo, "UTTeamInfo UTGame.Default__UTTeamInfo")()); }
+	@property final static UTTeamInfo DefaultProperties() { mixin(MGDPC("UTTeamInfo", "UTTeamInfo UTGame.Default__UTTeamInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,30 +38,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBotInfo() { mixin(MGF!("mGetBotInfo", "Function UTGame.UTTeamInfo.GetBotInfo")()); }
-			ScriptFunction AllBotsSpawned() { mixin(MGF!("mAllBotsSpawned", "Function UTGame.UTTeamInfo.AllBotsSpawned")()); }
-			ScriptFunction GetHUDColor() { mixin(MGF!("mGetHUDColor", "Function UTGame.UTTeamInfo.GetHUDColor")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTTeamInfo.ReplicatedEvent")()); }
-			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function UTGame.UTTeamInfo.GetHumanReadableName")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTTeamInfo.Reset")()); }
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function UTGame.UTTeamInfo.Initialize")()); }
-			ScriptFunction NeedsBotMoreThan() { mixin(MGF!("mNeedsBotMoreThan", "Function UTGame.UTTeamInfo.NeedsBotMoreThan")()); }
-			ScriptFunction SetBotOrders() { mixin(MGF!("mSetBotOrders", "Function UTGame.UTTeamInfo.SetBotOrders")()); }
-			ScriptFunction RemoveFromTeam() { mixin(MGF!("mRemoveFromTeam", "Function UTGame.UTTeamInfo.RemoveFromTeam")()); }
-			ScriptFunction BotNameTaken() { mixin(MGF!("mBotNameTaken", "Function UTGame.UTTeamInfo.BotNameTaken")()); }
-			ScriptFunction GetAvailableBotList() { mixin(MGF!("mGetAvailableBotList", "Function UTGame.UTTeamInfo.GetAvailableBotList")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTTeamInfo.Destroyed")()); }
+			ScriptFunction GetBotInfo() { mixin(MGF("mGetBotInfo", "Function UTGame.UTTeamInfo.GetBotInfo")); }
+			ScriptFunction AllBotsSpawned() { mixin(MGF("mAllBotsSpawned", "Function UTGame.UTTeamInfo.AllBotsSpawned")); }
+			ScriptFunction GetHUDColor() { mixin(MGF("mGetHUDColor", "Function UTGame.UTTeamInfo.GetHUDColor")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UTGame.UTTeamInfo.ReplicatedEvent")); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF("mGetHumanReadableName", "Function UTGame.UTTeamInfo.GetHumanReadableName")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function UTGame.UTTeamInfo.Reset")); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function UTGame.UTTeamInfo.Initialize")); }
+			ScriptFunction NeedsBotMoreThan() { mixin(MGF("mNeedsBotMoreThan", "Function UTGame.UTTeamInfo.NeedsBotMoreThan")); }
+			ScriptFunction SetBotOrders() { mixin(MGF("mSetBotOrders", "Function UTGame.UTTeamInfo.SetBotOrders")); }
+			ScriptFunction RemoveFromTeam() { mixin(MGF("mRemoveFromTeam", "Function UTGame.UTTeamInfo.RemoveFromTeam")); }
+			ScriptFunction BotNameTaken() { mixin(MGF("mBotNameTaken", "Function UTGame.UTTeamInfo.BotNameTaken")); }
+			ScriptFunction GetAvailableBotList() { mixin(MGF("mGetAvailableBotList", "Function UTGame.UTTeamInfo.GetAvailableBotList")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UTGame.UTTeamInfo.Destroyed")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString Faction() { mixin(MGPC!("ScriptString", 520)()); }
-		UTCarriedObject TeamFlag() { mixin(MGPC!("UTCarriedObject", 516)()); }
-		UTTeamAI AI() { mixin(MGPC!("UTTeamAI", 508)()); }
-		UTGameObjective HomeBase() { mixin(MGPC!("UTGameObjective", 512)()); }
-		ScriptString TeamColorNames() { mixin(MGPC!("ScriptString", 548)()); }
-		UObject.Color BaseTeamColor() { mixin(MGPC!("UObject.Color", 532)()); }
-		int DesiredTeamSize() { mixin(MGPC!("int", 504)()); }
+		ScriptString Faction() { mixin(MGPC("ScriptString", 520)); }
+		UTCarriedObject TeamFlag() { mixin(MGPC("UTCarriedObject", 516)); }
+		UTTeamAI AI() { mixin(MGPC("UTTeamAI", 508)); }
+		UTGameObjective HomeBase() { mixin(MGPC("UTGameObjective", 512)); }
+		ScriptString TeamColorNames() { mixin(MGPC("ScriptString", 548)); }
+		UObject.Color BaseTeamColor() { mixin(MGPC("UObject.Color", 532)); }
+		int DesiredTeamSize() { mixin(MGPC("int", 504)); }
 	}
 final:
 	UTCharInfo.CharacterInfo GetBotInfo(ScriptString BotName)

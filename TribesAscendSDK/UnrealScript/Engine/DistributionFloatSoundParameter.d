@@ -8,7 +8,7 @@ extern(C++) interface DistributionFloatSoundParameter : DistributionFloatParamet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DistributionFloatSoundParameter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DistributionFloatSoundParameter")); }
 	private static __gshared DistributionFloatSoundParameter mDefaultProperties;
-	@property final static DistributionFloatSoundParameter DefaultProperties() { mixin(MGDPC!(DistributionFloatSoundParameter, "DistributionFloatSoundParameter Engine.Default__DistributionFloatSoundParameter")()); }
+	@property final static DistributionFloatSoundParameter DefaultProperties() { mixin(MGDPC("DistributionFloatSoundParameter", "DistributionFloatSoundParameter Engine.Default__DistributionFloatSoundParameter")); }
 }

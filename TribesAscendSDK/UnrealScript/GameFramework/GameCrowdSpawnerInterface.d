@@ -9,9 +9,9 @@ extern(C++) interface GameCrowdSpawnerInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdSpawnerInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdSpawnerInterface")); }
 	private static __gshared GameCrowdSpawnerInterface mDefaultProperties;
-	@property final static GameCrowdSpawnerInterface DefaultProperties() { mixin(MGDPC!(GameCrowdSpawnerInterface, "GameCrowdSpawnerInterface GameFramework.Default__GameCrowdSpawnerInterface")()); }
+	@property final static GameCrowdSpawnerInterface DefaultProperties() { mixin(MGDPC("GameCrowdSpawnerInterface", "GameCrowdSpawnerInterface GameFramework.Default__GameCrowdSpawnerInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,9 +22,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddToAgentPool() { mixin(MGF!("mAddToAgentPool", "Function GameFramework.GameCrowdSpawnerInterface.AddToAgentPool")()); }
-			ScriptFunction GetMaxSpawnDist() { mixin(MGF!("mGetMaxSpawnDist", "Function GameFramework.GameCrowdSpawnerInterface.GetMaxSpawnDist")()); }
-			ScriptFunction AgentDestroyed() { mixin(MGF!("mAgentDestroyed", "Function GameFramework.GameCrowdSpawnerInterface.AgentDestroyed")()); }
+			ScriptFunction AddToAgentPool() { mixin(MGF("mAddToAgentPool", "Function GameFramework.GameCrowdSpawnerInterface.AddToAgentPool")); }
+			ScriptFunction GetMaxSpawnDist() { mixin(MGF("mGetMaxSpawnDist", "Function GameFramework.GameCrowdSpawnerInterface.GetMaxSpawnDist")); }
+			ScriptFunction AgentDestroyed() { mixin(MGF("mAgentDestroyed", "Function GameFramework.GameCrowdSpawnerInterface.AgentDestroyed")); }
 		}
 	}
 final:

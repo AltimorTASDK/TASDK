@@ -9,9 +9,9 @@ extern(C++) interface RB_Handle : ActorComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.RB_Handle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.RB_Handle")); }
 	private static __gshared RB_Handle mDefaultProperties;
-	@property final static RB_Handle DefaultProperties() { mixin(MGDPC!(RB_Handle, "RB_Handle Engine.Default__RB_Handle")()); }
+	@property final static RB_Handle DefaultProperties() { mixin(MGDPC("RB_Handle", "RB_Handle Engine.Default__RB_Handle")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,40 +26,40 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GrabComponent() { mixin(MGF!("mGrabComponent", "Function Engine.RB_Handle.GrabComponent")()); }
-			ScriptFunction ReleaseComponent() { mixin(MGF!("mReleaseComponent", "Function Engine.RB_Handle.ReleaseComponent")()); }
-			ScriptFunction SetLocation() { mixin(MGF!("mSetLocation", "Function Engine.RB_Handle.SetLocation")()); }
-			ScriptFunction SetSmoothLocation() { mixin(MGF!("mSetSmoothLocation", "Function Engine.RB_Handle.SetSmoothLocation")()); }
-			ScriptFunction UpdateSmoothLocation() { mixin(MGF!("mUpdateSmoothLocation", "Function Engine.RB_Handle.UpdateSmoothLocation")()); }
-			ScriptFunction SetOrientation() { mixin(MGF!("mSetOrientation", "Function Engine.RB_Handle.SetOrientation")()); }
-			ScriptFunction GetOrientation() { mixin(MGF!("mGetOrientation", "Function Engine.RB_Handle.GetOrientation")()); }
+			ScriptFunction GrabComponent() { mixin(MGF("mGrabComponent", "Function Engine.RB_Handle.GrabComponent")); }
+			ScriptFunction ReleaseComponent() { mixin(MGF("mReleaseComponent", "Function Engine.RB_Handle.ReleaseComponent")); }
+			ScriptFunction SetLocation() { mixin(MGF("mSetLocation", "Function Engine.RB_Handle.SetLocation")); }
+			ScriptFunction SetSmoothLocation() { mixin(MGF("mSetSmoothLocation", "Function Engine.RB_Handle.SetSmoothLocation")); }
+			ScriptFunction UpdateSmoothLocation() { mixin(MGF("mUpdateSmoothLocation", "Function Engine.RB_Handle.UpdateSmoothLocation")); }
+			ScriptFunction SetOrientation() { mixin(MGF("mSetOrientation", "Function Engine.RB_Handle.SetOrientation")); }
+			ScriptFunction GetOrientation() { mixin(MGF("mGetOrientation", "Function Engine.RB_Handle.GetOrientation")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector Location() { mixin(MGPC!("Vector", 180)()); }
-			Vector StepSize() { mixin(MGPC!("Vector", 168)()); }
-			Vector Destination() { mixin(MGPC!("Vector", 156)()); }
-			float AngularStiffness() { mixin(MGPC!("float", 152)()); }
-			float AngularDamping() { mixin(MGPC!("float", 148)()); }
-			Vector LinearDampingScale3D() { mixin(MGPC!("Vector", 136)()); }
-			Vector LinearStiffnessScale3D() { mixin(MGPC!("Vector", 124)()); }
-			float LinearStiffness() { mixin(MGPC!("float", 120)()); }
-			float LinearDamping() { mixin(MGPC!("float", 116)()); }
-			UObject.Pointer KinActorData() { mixin(MGPC!("UObject.Pointer", 112)()); }
-			UObject.Pointer HandleData() { mixin(MGPC!("UObject.Pointer", 108)()); }
-			int SceneIndex() { mixin(MGPC!("int", 100)()); }
-			ScriptName GrabbedBoneName() { mixin(MGPC!("ScriptName", 92)()); }
+			Vector Location() { mixin(MGPC("Vector", 180)); }
+			Vector StepSize() { mixin(MGPC("Vector", 168)); }
+			Vector Destination() { mixin(MGPC("Vector", 156)); }
+			float AngularStiffness() { mixin(MGPC("float", 152)); }
+			float AngularDamping() { mixin(MGPC("float", 148)); }
+			Vector LinearDampingScale3D() { mixin(MGPC("Vector", 136)); }
+			Vector LinearStiffnessScale3D() { mixin(MGPC("Vector", 124)); }
+			float LinearStiffness() { mixin(MGPC("float", 120)); }
+			float LinearDamping() { mixin(MGPC("float", 116)); }
+			UObject.Pointer KinActorData() { mixin(MGPC("UObject.Pointer", 112)); }
+			UObject.Pointer HandleData() { mixin(MGPC("UObject.Pointer", 108)); }
+			int SceneIndex() { mixin(MGPC("int", 100)); }
+			ScriptName GrabbedBoneName() { mixin(MGPC("ScriptName", 92)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GrabbedComponent'!
 		}
-		bool bInterpolating() { mixin(MGBPC!(104, 0x4)()); }
-		bool bInterpolating(bool val) { mixin(MSBPC!(104, 0x4)()); }
-		bool bRotationConstrained() { mixin(MGBPC!(104, 0x2)()); }
-		bool bRotationConstrained(bool val) { mixin(MSBPC!(104, 0x2)()); }
-		bool bInHardware() { mixin(MGBPC!(104, 0x1)()); }
-		bool bInHardware(bool val) { mixin(MSBPC!(104, 0x1)()); }
+		bool bInterpolating() { mixin(MGBPC(104, 0x4)); }
+		bool bInterpolating(bool val) { mixin(MSBPC(104, 0x4)); }
+		bool bRotationConstrained() { mixin(MGBPC(104, 0x2)); }
+		bool bRotationConstrained(bool val) { mixin(MSBPC(104, 0x2)); }
+		bool bInHardware() { mixin(MGBPC(104, 0x1)); }
+		bool bInHardware(bool val) { mixin(MSBPC(104, 0x1)); }
 	}
 final:
 	void GrabComponent(

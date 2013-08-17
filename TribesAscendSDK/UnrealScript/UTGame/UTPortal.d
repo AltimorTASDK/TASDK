@@ -8,7 +8,7 @@ extern(C++) interface UTPortal : PortalTeleporter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPortal")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTPortal")); }
 	private static __gshared UTPortal mDefaultProperties;
-	@property final static UTPortal DefaultProperties() { mixin(MGDPC!(UTPortal, "UTPortal UTGame.Default__UTPortal")()); }
+	@property final static UTPortal DefaultProperties() { mixin(MGDPC("UTPortal", "UTPortal UTGame.Default__UTPortal")); }
 }

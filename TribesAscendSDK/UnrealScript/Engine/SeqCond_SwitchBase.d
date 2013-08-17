@@ -8,9 +8,9 @@ extern(C++) interface SeqCond_SwitchBase : SequenceCondition
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqCond_SwitchBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SeqCond_SwitchBase")); }
 	private static __gshared SeqCond_SwitchBase mDefaultProperties;
-	@property final static SeqCond_SwitchBase DefaultProperties() { mixin(MGDPC!(SeqCond_SwitchBase, "SeqCond_SwitchBase Engine.Default__SeqCond_SwitchBase")()); }
+	@property final static SeqCond_SwitchBase DefaultProperties() { mixin(MGDPC("SeqCond_SwitchBase", "SeqCond_SwitchBase Engine.Default__SeqCond_SwitchBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +22,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction VerifyDefaultCaseValue() { mixin(MGF!("mVerifyDefaultCaseValue", "Function Engine.SeqCond_SwitchBase.VerifyDefaultCaseValue")()); }
-			ScriptFunction IsFallThruEnabled() { mixin(MGF!("mIsFallThruEnabled", "Function Engine.SeqCond_SwitchBase.IsFallThruEnabled")()); }
-			ScriptFunction InsertValueEntry() { mixin(MGF!("mInsertValueEntry", "Function Engine.SeqCond_SwitchBase.InsertValueEntry")()); }
-			ScriptFunction RemoveValueEntry() { mixin(MGF!("mRemoveValueEntry", "Function Engine.SeqCond_SwitchBase.RemoveValueEntry")()); }
+			ScriptFunction VerifyDefaultCaseValue() { mixin(MGF("mVerifyDefaultCaseValue", "Function Engine.SeqCond_SwitchBase.VerifyDefaultCaseValue")); }
+			ScriptFunction IsFallThruEnabled() { mixin(MGF("mIsFallThruEnabled", "Function Engine.SeqCond_SwitchBase.IsFallThruEnabled")); }
+			ScriptFunction InsertValueEntry() { mixin(MGF("mInsertValueEntry", "Function Engine.SeqCond_SwitchBase.InsertValueEntry")); }
+			ScriptFunction RemoveValueEntry() { mixin(MGF("mRemoveValueEntry", "Function Engine.SeqCond_SwitchBase.RemoveValueEntry")); }
 		}
 	}
 final:

@@ -10,9 +10,9 @@ extern(C++) interface TrCallIn_Projectile : TrCallIn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallIn_Projectile")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCallIn_Projectile")); }
 	private static __gshared TrCallIn_Projectile mDefaultProperties;
-	@property final static TrCallIn_Projectile DefaultProperties() { mixin(MGDPC!(TrCallIn_Projectile, "TrCallIn_Projectile TribesGame.Default__TrCallIn_Projectile")()); }
+	@property final static TrCallIn_Projectile DefaultProperties() { mixin(MGDPC("TrCallIn_Projectile", "TrCallIn_Projectile TribesGame.Default__TrCallIn_Projectile")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,22 +22,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FireCompletedCallIn() { mixin(MGF!("mFireCompletedCallIn", "Function TribesGame.TrCallIn_Projectile.FireCompletedCallIn")()); }
-			ScriptFunction FireProjectile() { mixin(MGF!("mFireProjectile", "Function TribesGame.TrCallIn_Projectile.FireProjectile")()); }
+			ScriptFunction FireCompletedCallIn() { mixin(MGF("mFireCompletedCallIn", "Function TribesGame.TrCallIn_Projectile.FireCompletedCallIn")); }
+			ScriptFunction FireProjectile() { mixin(MGF("mFireProjectile", "Function TribesGame.TrCallIn_Projectile.FireProjectile")); }
 		}
 	}
 	@property final auto ref
 	{
-		Vector m_SavedTargetNormal() { mixin(MGPC!("Vector", 588)()); }
-		Vector m_SavedTargetLocation() { mixin(MGPC!("Vector", 576)()); }
-		int m_FiredProjectiles() { mixin(MGPC!("int", 572)()); }
-		ParticleSystem TargetParticleSystem() { mixin(MGPC!("ParticleSystem", 568)()); }
-		SoundCue TargetParticleSound() { mixin(MGPC!("SoundCue", 564)()); }
-		SoundCue AreaWarningSound() { mixin(MGPC!("SoundCue", 560)()); }
-		int NumberOfProjectiles() { mixin(MGPC!("int", 556)()); }
-		float FireTimeLength() { mixin(MGPC!("float", 552)()); }
-		float CallRadius() { mixin(MGPC!("float", 548)()); }
-		ScriptClass ProjectileFireClass() { mixin(MGPC!("ScriptClass", 544)()); }
+		Vector m_SavedTargetNormal() { mixin(MGPC("Vector", 588)); }
+		Vector m_SavedTargetLocation() { mixin(MGPC("Vector", 576)); }
+		int m_FiredProjectiles() { mixin(MGPC("int", 572)); }
+		ParticleSystem TargetParticleSystem() { mixin(MGPC("ParticleSystem", 568)); }
+		SoundCue TargetParticleSound() { mixin(MGPC("SoundCue", 564)); }
+		SoundCue AreaWarningSound() { mixin(MGPC("SoundCue", 560)); }
+		int NumberOfProjectiles() { mixin(MGPC("int", 556)); }
+		float FireTimeLength() { mixin(MGPC("float", 552)); }
+		float CallRadius() { mixin(MGPC("float", 548)); }
+		ScriptClass ProjectileFireClass() { mixin(MGPC("ScriptClass", 544)); }
 	}
 final:
 	bool FireCompletedCallIn(int CallInOffs, Vector TargetLocation, Vector TargetNormal)

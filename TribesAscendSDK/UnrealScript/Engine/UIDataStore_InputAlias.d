@@ -9,9 +9,9 @@ extern(C++) interface UIDataStore_InputAlias : UIDataStore_StringBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_InputAlias")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStore_InputAlias")); }
 	private static __gshared UIDataStore_InputAlias mDefaultProperties;
-	@property final static UIDataStore_InputAlias DefaultProperties() { mixin(MGDPC!(UIDataStore_InputAlias, "UIDataStore_InputAlias Engine.Default__UIDataStore_InputAlias")()); }
+	@property final static UIDataStore_InputAlias DefaultProperties() { mixin(MGDPC("UIDataStore_InputAlias", "UIDataStore_InputAlias Engine.Default__UIDataStore_InputAlias")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,14 +27,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetAliasFontMarkup() { mixin(MGF!("mGetAliasFontMarkup", "Function Engine.UIDataStore_InputAlias.GetAliasFontMarkup")()); }
-			ScriptFunction GetAliasFontMarkupByIndex() { mixin(MGF!("mGetAliasFontMarkupByIndex", "Function Engine.UIDataStore_InputAlias.GetAliasFontMarkupByIndex")()); }
-			ScriptFunction GetAliasInputKeyName() { mixin(MGF!("mGetAliasInputKeyName", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyName")()); }
-			ScriptFunction GetAliasInputKeyNameByIndex() { mixin(MGF!("mGetAliasInputKeyNameByIndex", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyNameByIndex")()); }
-			ScriptFunction GetAliasInputKeyData() { mixin(MGF!("mGetAliasInputKeyData", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyData")()); }
-			ScriptFunction GetAliasInputKeyDataByIndex() { mixin(MGF!("mGetAliasInputKeyDataByIndex", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyDataByIndex")()); }
-			ScriptFunction FindInputAliasIndex() { mixin(MGF!("mFindInputAliasIndex", "Function Engine.UIDataStore_InputAlias.FindInputAliasIndex")()); }
-			ScriptFunction HasAliasMappingForPlatform() { mixin(MGF!("mHasAliasMappingForPlatform", "Function Engine.UIDataStore_InputAlias.HasAliasMappingForPlatform")()); }
+			ScriptFunction GetAliasFontMarkup() { mixin(MGF("mGetAliasFontMarkup", "Function Engine.UIDataStore_InputAlias.GetAliasFontMarkup")); }
+			ScriptFunction GetAliasFontMarkupByIndex() { mixin(MGF("mGetAliasFontMarkupByIndex", "Function Engine.UIDataStore_InputAlias.GetAliasFontMarkupByIndex")); }
+			ScriptFunction GetAliasInputKeyName() { mixin(MGF("mGetAliasInputKeyName", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyName")); }
+			ScriptFunction GetAliasInputKeyNameByIndex() { mixin(MGF("mGetAliasInputKeyNameByIndex", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyNameByIndex")); }
+			ScriptFunction GetAliasInputKeyData() { mixin(MGF("mGetAliasInputKeyData", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyData")); }
+			ScriptFunction GetAliasInputKeyDataByIndex() { mixin(MGF("mGetAliasInputKeyDataByIndex", "Function Engine.UIDataStore_InputAlias.GetAliasInputKeyDataByIndex")); }
+			ScriptFunction FindInputAliasIndex() { mixin(MGF("mFindInputAliasIndex", "Function Engine.UIDataStore_InputAlias.FindInputAliasIndex")); }
+			ScriptFunction HasAliasMappingForPlatform() { mixin(MGF("mHasAliasMappingForPlatform", "Function Engine.UIDataStore_InputAlias.HasAliasMappingForPlatform")); }
 		}
 	}
 	struct UIDataStoreInputAlias
@@ -42,11 +42,11 @@ public extern(D):
 		private ubyte __buffer__[80];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_InputAlias.UIDataStoreInputAlias")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataStore_InputAlias.UIDataStoreInputAlias")); }
 		@property final auto ref
 		{
-			UIDataStore_InputAlias.UIInputKeyData PlatformInputKeys() { mixin(MGPS!("UIDataStore_InputAlias.UIInputKeyData", 8)()); }
-			ScriptName AliasName() { mixin(MGPS!("ScriptName", 0)()); }
+			UIDataStore_InputAlias.UIInputKeyData PlatformInputKeys() { mixin(MGPS("UIDataStore_InputAlias.UIInputKeyData", 8)); }
+			ScriptName AliasName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct UIInputKeyData
@@ -54,16 +54,16 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_InputAlias.UIInputKeyData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataStore_InputAlias.UIInputKeyData")); }
 		@property final auto ref
 		{
-			ScriptString ButtonFontMarkupString() { mixin(MGPS!("ScriptString", 12)()); }
-			UIRoot.RawInputKeyEventData InputKeyData() { mixin(MGPS!("UIRoot.RawInputKeyEventData", 0)()); }
+			ScriptString ButtonFontMarkupString() { mixin(MGPS("ScriptString", 12)); }
+			UIRoot.RawInputKeyEventData InputKeyData() { mixin(MGPS("UIRoot.RawInputKeyEventData", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias) InputAliases() { mixin(MGPC!("ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias)", 120)()); }
+		ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias) InputAliases() { mixin(MGPC("ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias)", 120)); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'InputAliasLookupMap'!
 	}
 final:

@@ -11,9 +11,9 @@ extern(C++) interface TrArenaStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrArenaStats")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrArenaStats")); }
 	private static __gshared TrArenaStats mDefaultProperties;
-	@property final static TrArenaStats DefaultProperties() { mixin(MGDPC!(TrArenaStats, "TrArenaStats TribesGame.Default__TrArenaStats")()); }
+	@property final static TrArenaStats DefaultProperties() { mixin(MGDPC("TrArenaStats", "TrArenaStats TribesGame.Default__TrArenaStats")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,17 +32,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrArenaStats.Initialize")()); }
-			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrArenaStats.Show")()); }
-			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrArenaStats.Hide")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrArenaStats.Tick")()); }
-			ScriptFunction UpdateTeam() { mixin(MGF!("mUpdateTeam", "Function TribesGame.TrArenaStats.UpdateTeam")()); }
-			ScriptFunction UpdateTeamScore() { mixin(MGF!("mUpdateTeamScore", "Function TribesGame.TrArenaStats.UpdateTeamScore")()); }
-			ScriptFunction SetManGraphicState() { mixin(MGF!("mSetManGraphicState", "Function TribesGame.TrArenaStats.SetManGraphicState")()); }
-			ScriptFunction UpdateRound() { mixin(MGF!("mUpdateRound", "Function TribesGame.TrArenaStats.UpdateRound")()); }
-			ScriptFunction UpdateTime() { mixin(MGF!("mUpdateTime", "Function TribesGame.TrArenaStats.UpdateTime")()); }
-			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrArenaStats.FormatTime")()); }
-			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrArenaStats.ForceUpdate")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrArenaStats.Initialize")); }
+			ScriptFunction Show() { mixin(MGF("mShow", "Function TribesGame.TrArenaStats.Show")); }
+			ScriptFunction Hide() { mixin(MGF("mHide", "Function TribesGame.TrArenaStats.Hide")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrArenaStats.Tick")); }
+			ScriptFunction UpdateTeam() { mixin(MGF("mUpdateTeam", "Function TribesGame.TrArenaStats.UpdateTeam")); }
+			ScriptFunction UpdateTeamScore() { mixin(MGF("mUpdateTeamScore", "Function TribesGame.TrArenaStats.UpdateTeamScore")); }
+			ScriptFunction SetManGraphicState() { mixin(MGF("mSetManGraphicState", "Function TribesGame.TrArenaStats.SetManGraphicState")); }
+			ScriptFunction UpdateRound() { mixin(MGF("mUpdateRound", "Function TribesGame.TrArenaStats.UpdateRound")); }
+			ScriptFunction UpdateTime() { mixin(MGF("mUpdateTime", "Function TribesGame.TrArenaStats.UpdateTime")); }
+			ScriptFunction FormatTime() { mixin(MGF("mFormatTime", "Function TribesGame.TrArenaStats.FormatTime")); }
+			ScriptFunction ForceUpdate() { mixin(MGF("mForceUpdate", "Function TribesGame.TrArenaStats.ForceUpdate")); }
 		}
 	}
 	static struct Constants
@@ -61,20 +61,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MyTeam() { mixin(MGPC!("int", 60)()); }
-			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 96)()); }
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 92)()); }
-			int TeamScore() { mixin(MGPC!("int", 72)()); }
-			TrArenaStats.ManGraphicState FriendlyManGraphics() { mixin(MGPC!("TrArenaStats.ManGraphicState", 100)()); }
-			TrArenaStats.ManGraphicState EnemyManGraphics() { mixin(MGPC!("TrArenaStats.ManGraphicState", 108)()); }
-			int RoundScore() { mixin(MGPC!("int", 80)()); }
-			int RoundNum() { mixin(MGPC!("int", 88)()); }
-			int RemainingTime() { mixin(MGPC!("int", 64)()); }
+			int MyTeam() { mixin(MGPC("int", 60)); }
+			TrPlayerController TrPC() { mixin(MGPC("TrPlayerController", 96)); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC("GfxTrHud", 92)); }
+			int TeamScore() { mixin(MGPC("int", 72)); }
+			TrArenaStats.ManGraphicState FriendlyManGraphics() { mixin(MGPC("TrArenaStats.ManGraphicState", 100)); }
+			TrArenaStats.ManGraphicState EnemyManGraphics() { mixin(MGPC("TrArenaStats.ManGraphicState", 108)); }
+			int RoundScore() { mixin(MGPC("int", 80)); }
+			int RoundNum() { mixin(MGPC("int", 88)); }
+			int RemainingTime() { mixin(MGPC("int", 64)); }
 		}
-		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
-		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }
-		bool bForcingUpdate() { mixin(MGBPC!(68, 0x2)()); }
-		bool bForcingUpdate(bool val) { mixin(MSBPC!(68, 0x2)()); }
+		bool bIsActive() { mixin(MGBPC(68, 0x1)); }
+		bool bIsActive(bool val) { mixin(MSBPC(68, 0x1)); }
+		bool bForcingUpdate() { mixin(MGBPC(68, 0x2)); }
+		bool bForcingUpdate(bool val) { mixin(MSBPC(68, 0x2)); }
 	}
 final:
 	void Initialize(TrPlayerController PC, GfxTrHud MP)

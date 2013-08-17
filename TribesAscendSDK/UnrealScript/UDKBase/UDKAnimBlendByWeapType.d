@@ -8,7 +8,7 @@ extern(C++) interface UDKAnimBlendByWeapType : AnimNodeBlendPerBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByWeapType")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKAnimBlendByWeapType")); }
 	private static __gshared UDKAnimBlendByWeapType mDefaultProperties;
-	@property final static UDKAnimBlendByWeapType DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByWeapType, "UDKAnimBlendByWeapType UDKBase.Default__UDKAnimBlendByWeapType")()); }
+	@property final static UDKAnimBlendByWeapType DefaultProperties() { mixin(MGDPC("UDKAnimBlendByWeapType", "UDKAnimBlendByWeapType UDKBase.Default__UDKAnimBlendByWeapType")); }
 }

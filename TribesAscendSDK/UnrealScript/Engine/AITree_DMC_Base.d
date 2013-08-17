@@ -10,9 +10,9 @@ extern(C++) interface AITree_DMC_Base : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AITree_DMC_Base")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AITree_DMC_Base")); }
 	private static __gshared AITree_DMC_Base mDefaultProperties;
-	@property final static AITree_DMC_Base DefaultProperties() { mixin(MGDPC!(AITree_DMC_Base, "AITree_DMC_Base Engine.Default__AITree_DMC_Base")()); }
+	@property final static AITree_DMC_Base DefaultProperties() { mixin(MGDPC("AITree_DMC_Base", "AITree_DMC_Base Engine.Default__AITree_DMC_Base")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,19 +33,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PrintString() { mixin(MGF!("mPrintString", "Function Engine.AITree_DMC_Base.PrintString")()); }
-			ScriptFunction GetWorldTime() { mixin(MGF!("mGetWorldTime", "Function Engine.AITree_DMC_Base.GetWorldTime")()); }
-			ScriptFunction Conv_IntToFloat() { mixin(MGF!("mConv_IntToFloat", "Function Engine.AITree_DMC_Base.Conv_IntToFloat")()); }
-			ScriptFunction Conv_FloatToString() { mixin(MGF!("mConv_FloatToString", "Function Engine.AITree_DMC_Base.Conv_FloatToString")()); }
-			ScriptFunction Conv_IntToString() { mixin(MGF!("mConv_IntToString", "Function Engine.AITree_DMC_Base.Conv_IntToString")()); }
-			ScriptFunction Conv_BoolToString() { mixin(MGF!("mConv_BoolToString", "Function Engine.AITree_DMC_Base.Conv_BoolToString")()); }
-			ScriptFunction Conv_VectorToString() { mixin(MGF!("mConv_VectorToString", "Function Engine.AITree_DMC_Base.Conv_VectorToString")()); }
-			ScriptFunction Conv_RotatorToString() { mixin(MGF!("mConv_RotatorToString", "Function Engine.AITree_DMC_Base.Conv_RotatorToString")()); }
-			ScriptFunction MakeVector() { mixin(MGF!("mMakeVector", "Function Engine.AITree_DMC_Base.MakeVector")()); }
-			ScriptFunction BreakVector() { mixin(MGF!("mBreakVector", "Function Engine.AITree_DMC_Base.BreakVector")()); }
-			ScriptFunction MakeRot() { mixin(MGF!("mMakeRot", "Function Engine.AITree_DMC_Base.MakeRot")()); }
-			ScriptFunction BreakRot() { mixin(MGF!("mBreakRot", "Function Engine.AITree_DMC_Base.BreakRot")()); }
-			ScriptFunction CalculateUtilityRating() { mixin(MGF!("mCalculateUtilityRating", "Function Engine.AITree_DMC_Base.CalculateUtilityRating")()); }
+			ScriptFunction PrintString() { mixin(MGF("mPrintString", "Function Engine.AITree_DMC_Base.PrintString")); }
+			ScriptFunction GetWorldTime() { mixin(MGF("mGetWorldTime", "Function Engine.AITree_DMC_Base.GetWorldTime")); }
+			ScriptFunction Conv_IntToFloat() { mixin(MGF("mConv_IntToFloat", "Function Engine.AITree_DMC_Base.Conv_IntToFloat")); }
+			ScriptFunction Conv_FloatToString() { mixin(MGF("mConv_FloatToString", "Function Engine.AITree_DMC_Base.Conv_FloatToString")); }
+			ScriptFunction Conv_IntToString() { mixin(MGF("mConv_IntToString", "Function Engine.AITree_DMC_Base.Conv_IntToString")); }
+			ScriptFunction Conv_BoolToString() { mixin(MGF("mConv_BoolToString", "Function Engine.AITree_DMC_Base.Conv_BoolToString")); }
+			ScriptFunction Conv_VectorToString() { mixin(MGF("mConv_VectorToString", "Function Engine.AITree_DMC_Base.Conv_VectorToString")); }
+			ScriptFunction Conv_RotatorToString() { mixin(MGF("mConv_RotatorToString", "Function Engine.AITree_DMC_Base.Conv_RotatorToString")); }
+			ScriptFunction MakeVector() { mixin(MGF("mMakeVector", "Function Engine.AITree_DMC_Base.MakeVector")); }
+			ScriptFunction BreakVector() { mixin(MGF("mBreakVector", "Function Engine.AITree_DMC_Base.BreakVector")); }
+			ScriptFunction MakeRot() { mixin(MGF("mMakeRot", "Function Engine.AITree_DMC_Base.MakeRot")); }
+			ScriptFunction BreakRot() { mixin(MGF("mBreakRot", "Function Engine.AITree_DMC_Base.BreakRot")); }
+			ScriptFunction CalculateUtilityRating() { mixin(MGF("mCalculateUtilityRating", "Function Engine.AITree_DMC_Base.CalculateUtilityRating")); }
 		}
 	}
 final:

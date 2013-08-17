@@ -8,7 +8,7 @@ extern(C++) interface UTTeamDeathMessage : UTDeathMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamDeathMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeamDeathMessage")); }
 	private static __gshared UTTeamDeathMessage mDefaultProperties;
-	@property final static UTTeamDeathMessage DefaultProperties() { mixin(MGDPC!(UTTeamDeathMessage, "UTTeamDeathMessage UTGame.Default__UTTeamDeathMessage")()); }
+	@property final static UTTeamDeathMessage DefaultProperties() { mixin(MGDPC("UTTeamDeathMessage", "UTTeamDeathMessage UTGame.Default__UTTeamDeathMessage")); }
 }

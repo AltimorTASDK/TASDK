@@ -14,9 +14,9 @@ extern(C++) interface GameCameraBase : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCameraBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCameraBase")); }
 	private static __gshared GameCameraBase mDefaultProperties;
-	@property final static GameCameraBase DefaultProperties() { mixin(MGDPC!(GameCameraBase, "GameCameraBase GameFramework.Default__GameCameraBase")()); }
+	@property final static GameCameraBase DefaultProperties() { mixin(MGDPC("GameCameraBase", "GameCameraBase GameFramework.Default__GameCameraBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,21 +32,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnBecomeActive() { mixin(MGF!("mOnBecomeActive", "Function GameFramework.GameCameraBase.OnBecomeActive")()); }
-			ScriptFunction OnBecomeInActive() { mixin(MGF!("mOnBecomeInActive", "Function GameFramework.GameCameraBase.OnBecomeInActive")()); }
-			ScriptFunction ResetInterpolation() { mixin(MGF!("mResetInterpolation", "Function GameFramework.GameCameraBase.ResetInterpolation")()); }
-			ScriptFunction UpdateCamera() { mixin(MGF!("mUpdateCamera", "Function GameFramework.GameCameraBase.UpdateCamera")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function GameFramework.GameCameraBase.ProcessViewRotation")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function GameFramework.GameCameraBase.DisplayDebug")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function GameFramework.GameCameraBase.Init")()); }
-			ScriptFunction ModifyPostProcessSettings() { mixin(MGF!("mModifyPostProcessSettings", "Function GameFramework.GameCameraBase.ModifyPostProcessSettings")()); }
+			ScriptFunction OnBecomeActive() { mixin(MGF("mOnBecomeActive", "Function GameFramework.GameCameraBase.OnBecomeActive")); }
+			ScriptFunction OnBecomeInActive() { mixin(MGF("mOnBecomeInActive", "Function GameFramework.GameCameraBase.OnBecomeInActive")); }
+			ScriptFunction ResetInterpolation() { mixin(MGF("mResetInterpolation", "Function GameFramework.GameCameraBase.ResetInterpolation")); }
+			ScriptFunction UpdateCamera() { mixin(MGF("mUpdateCamera", "Function GameFramework.GameCameraBase.UpdateCamera")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function GameFramework.GameCameraBase.ProcessViewRotation")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function GameFramework.GameCameraBase.DisplayDebug")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function GameFramework.GameCameraBase.Init")); }
+			ScriptFunction ModifyPostProcessSettings() { mixin(MGF("mModifyPostProcessSettings", "Function GameFramework.GameCameraBase.ModifyPostProcessSettings")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref GamePlayerCamera PlayerCamera() { mixin(MGPC!("GamePlayerCamera", 60)()); }
-		bool bResetCameraInterpolation() { mixin(MGBPC!(64, 0x1)()); }
-		bool bResetCameraInterpolation(bool val) { mixin(MSBPC!(64, 0x1)()); }
+		@property final auto ref GamePlayerCamera PlayerCamera() { mixin(MGPC("GamePlayerCamera", 60)); }
+		bool bResetCameraInterpolation() { mixin(MGBPC(64, 0x1)); }
+		bool bResetCameraInterpolation(bool val) { mixin(MSBPC(64, 0x1)); }
 	}
 final:
 	void OnBecomeActive(GameCameraBase OldCamera)

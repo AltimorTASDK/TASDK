@@ -9,9 +9,9 @@ extern(C++) interface ParticleModuleCameraOffset : ParticleModuleCameraBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleCameraOffset")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleCameraOffset")); }
 	private static __gshared ParticleModuleCameraOffset mDefaultProperties;
-	@property final static ParticleModuleCameraOffset DefaultProperties() { mixin(MGDPC!(ParticleModuleCameraOffset, "ParticleModuleCameraOffset Engine.Default__ParticleModuleCameraOffset")()); }
+	@property final static ParticleModuleCameraOffset DefaultProperties() { mixin(MGDPC("ParticleModuleCameraOffset", "ParticleModuleCameraOffset Engine.Default__ParticleModuleCameraOffset")); }
 	enum EParticleCameraOffsetUpdateMethod : ubyte
 	{
 		EPCOUM_DirectSet = 0,
@@ -23,10 +23,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod UpdateMethod() { mixin(MGPC!("ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod", 104)()); }
-			DistributionFloat.RawDistributionFloat CameraOffset() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
+			ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod UpdateMethod() { mixin(MGPC("ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod", 104)); }
+			DistributionFloat.RawDistributionFloat CameraOffset() { mixin(MGPC("DistributionFloat.RawDistributionFloat", 72)); }
 		}
-		bool bSpawnTimeOnly() { mixin(MGBPC!(100, 0x1)()); }
-		bool bSpawnTimeOnly(bool val) { mixin(MSBPC!(100, 0x1)()); }
+		bool bSpawnTimeOnly() { mixin(MGBPC(100, 0x1)); }
+		bool bSpawnTimeOnly(bool val) { mixin(MSBPC(100, 0x1)); }
 	}
 }

@@ -11,9 +11,9 @@ extern(C++) interface OnlineEventsInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineEventsInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineEventsInterface")); }
 	private static __gshared OnlineEventsInterface mDefaultProperties;
-	@property final static OnlineEventsInterface DefaultProperties() { mixin(MGDPC!(OnlineEventsInterface, "OnlineEventsInterface Engine.Default__OnlineEventsInterface")()); }
+	@property final static OnlineEventsInterface DefaultProperties() { mixin(MGDPC("OnlineEventsInterface", "OnlineEventsInterface Engine.Default__OnlineEventsInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,9 +24,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UploadPlayerData() { mixin(MGF!("mUploadPlayerData", "Function Engine.OnlineEventsInterface.UploadPlayerData")()); }
-			ScriptFunction UploadGameplayEventsData() { mixin(MGF!("mUploadGameplayEventsData", "Function Engine.OnlineEventsInterface.UploadGameplayEventsData")()); }
-			ScriptFunction UpdatePlaylistPopulation() { mixin(MGF!("mUpdatePlaylistPopulation", "Function Engine.OnlineEventsInterface.UpdatePlaylistPopulation")()); }
+			ScriptFunction UploadPlayerData() { mixin(MGF("mUploadPlayerData", "Function Engine.OnlineEventsInterface.UploadPlayerData")); }
+			ScriptFunction UploadGameplayEventsData() { mixin(MGF("mUploadGameplayEventsData", "Function Engine.OnlineEventsInterface.UploadGameplayEventsData")); }
+			ScriptFunction UpdatePlaylistPopulation() { mixin(MGF("mUpdatePlaylistPopulation", "Function Engine.OnlineEventsInterface.UpdatePlaylistPopulation")); }
 		}
 	}
 final:

@@ -10,9 +10,9 @@ extern(C++) interface GameCrowdGroup : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdGroup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdGroup")); }
 	private static __gshared GameCrowdGroup mDefaultProperties;
-	@property final static GameCrowdGroup DefaultProperties() { mixin(MGDPC!(GameCrowdGroup, "GameCrowdGroup GameFramework.Default__GameCrowdGroup")()); }
+	@property final static GameCrowdGroup DefaultProperties() { mixin(MGDPC("GameCrowdGroup", "GameCrowdGroup GameFramework.Default__GameCrowdGroup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,12 +23,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddMember() { mixin(MGF!("mAddMember", "Function GameFramework.GameCrowdGroup.AddMember")()); }
-			ScriptFunction RemoveMember() { mixin(MGF!("mRemoveMember", "Function GameFramework.GameCrowdGroup.RemoveMember")()); }
-			ScriptFunction UpdateDestinations() { mixin(MGF!("mUpdateDestinations", "Function GameFramework.GameCrowdGroup.UpdateDestinations")()); }
+			ScriptFunction AddMember() { mixin(MGF("mAddMember", "Function GameFramework.GameCrowdGroup.AddMember")); }
+			ScriptFunction RemoveMember() { mixin(MGF("mRemoveMember", "Function GameFramework.GameCrowdGroup.RemoveMember")); }
+			ScriptFunction UpdateDestinations() { mixin(MGF("mUpdateDestinations", "Function GameFramework.GameCrowdGroup.UpdateDestinations")); }
 		}
 	}
-	@property final auto ref ScriptArray!(GameCrowdAgent) Members() { mixin(MGPC!("ScriptArray!(GameCrowdAgent)", 60)()); }
+	@property final auto ref ScriptArray!(GameCrowdAgent) Members() { mixin(MGPC("ScriptArray!(GameCrowdAgent)", 60)); }
 final:
 	void AddMember(GameCrowdAgent Agent)
 	{

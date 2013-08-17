@@ -8,9 +8,9 @@ extern(C++) interface SeqCond_SwitchClass : SeqCond_SwitchBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqCond_SwitchClass")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SeqCond_SwitchClass")); }
 	private static __gshared SeqCond_SwitchClass mDefaultProperties;
-	@property final static SeqCond_SwitchClass DefaultProperties() { mixin(MGDPC!(SeqCond_SwitchClass, "SeqCond_SwitchClass Engine.Default__SeqCond_SwitchClass")()); }
+	@property final static SeqCond_SwitchClass DefaultProperties() { mixin(MGDPC("SeqCond_SwitchClass", "SeqCond_SwitchClass Engine.Default__SeqCond_SwitchClass")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,10 +22,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction VerifyDefaultCaseValue() { mixin(MGF!("mVerifyDefaultCaseValue", "Function Engine.SeqCond_SwitchClass.VerifyDefaultCaseValue")()); }
-			ScriptFunction IsFallThruEnabled() { mixin(MGF!("mIsFallThruEnabled", "Function Engine.SeqCond_SwitchClass.IsFallThruEnabled")()); }
-			ScriptFunction InsertValueEntry() { mixin(MGF!("mInsertValueEntry", "Function Engine.SeqCond_SwitchClass.InsertValueEntry")()); }
-			ScriptFunction RemoveValueEntry() { mixin(MGF!("mRemoveValueEntry", "Function Engine.SeqCond_SwitchClass.RemoveValueEntry")()); }
+			ScriptFunction VerifyDefaultCaseValue() { mixin(MGF("mVerifyDefaultCaseValue", "Function Engine.SeqCond_SwitchClass.VerifyDefaultCaseValue")); }
+			ScriptFunction IsFallThruEnabled() { mixin(MGF("mIsFallThruEnabled", "Function Engine.SeqCond_SwitchClass.IsFallThruEnabled")); }
+			ScriptFunction InsertValueEntry() { mixin(MGF("mInsertValueEntry", "Function Engine.SeqCond_SwitchClass.InsertValueEntry")); }
+			ScriptFunction RemoveValueEntry() { mixin(MGF("mRemoveValueEntry", "Function Engine.SeqCond_SwitchClass.RemoveValueEntry")); }
 		}
 	}
 	struct SwitchClassInfo
@@ -33,14 +33,14 @@ public extern(D):
 		private ubyte __buffer__[9];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SeqCond_SwitchClass.SwitchClassInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.SeqCond_SwitchClass.SwitchClassInfo")); }
 		@property final auto ref
 		{
-			ubyte bFallThru() { mixin(MGPS!("ubyte", 8)()); }
-			ScriptName ClassName() { mixin(MGPS!("ScriptName", 0)()); }
+			ubyte bFallThru() { mixin(MGPS("ubyte", 8)); }
+			ScriptName ClassName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
-	@property final auto ref ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo) ClassArray() { mixin(MGPC!("ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo)", 208)()); }
+	@property final auto ref ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo) ClassArray() { mixin(MGPC("ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo)", 208)); }
 final:
 	void VerifyDefaultCaseValue()
 	{

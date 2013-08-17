@@ -9,8 +9,8 @@ extern(C++) interface ParticleModuleAccelerationOverLifetime : ParticleModuleAcc
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleAccelerationOverLifetime")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleAccelerationOverLifetime")); }
 	private static __gshared ParticleModuleAccelerationOverLifetime mDefaultProperties;
-	@property final static ParticleModuleAccelerationOverLifetime DefaultProperties() { mixin(MGDPC!(ParticleModuleAccelerationOverLifetime, "ParticleModuleAccelerationOverLifetime Engine.Default__ParticleModuleAccelerationOverLifetime")()); }
-	@property final auto ref DistributionVector.RawDistributionVector AccelOverLife() { mixin(MGPC!("DistributionVector.RawDistributionVector", 76)()); }
+	@property final static ParticleModuleAccelerationOverLifetime DefaultProperties() { mixin(MGDPC("ParticleModuleAccelerationOverLifetime", "ParticleModuleAccelerationOverLifetime Engine.Default__ParticleModuleAccelerationOverLifetime")); }
+	@property final auto ref DistributionVector.RawDistributionVector AccelOverLife() { mixin(MGPC("DistributionVector.RawDistributionVector", 76)); }
 }

@@ -13,9 +13,9 @@ extern(C++) interface TrDaDCoreShield : DynamicSMActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDCoreShield")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDaDCoreShield")); }
 	private static __gshared TrDaDCoreShield mDefaultProperties;
-	@property final static TrDaDCoreShield DefaultProperties() { mixin(MGDPC!(TrDaDCoreShield, "TrDaDCoreShield TribesGame.Default__TrDaDCoreShield")()); }
+	@property final static TrDaDCoreShield DefaultProperties() { mixin(MGDPC("TrDaDCoreShield", "TrDaDCoreShield TribesGame.Default__TrDaDCoreShield")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,22 +29,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrDaDCoreShield.Init")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDaDCoreShield.PostBeginPlay")()); }
-			ScriptFunction DisableBlocking() { mixin(MGF!("mDisableBlocking", "Function TribesGame.TrDaDCoreShield.DisableBlocking")()); }
-			ScriptFunction EnableBlocking() { mixin(MGF!("mEnableBlocking", "Function TribesGame.TrDaDCoreShield.EnableBlocking")()); }
-			ScriptFunction UpdateMaterialForPawn() { mixin(MGF!("mUpdateMaterialForPawn", "Function TribesGame.TrDaDCoreShield.UpdateMaterialForPawn")()); }
-			ScriptFunction CreateMICs() { mixin(MGF!("mCreateMICs", "Function TribesGame.TrDaDCoreShield.CreateMICs")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrDaDCoreShield.Init")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrDaDCoreShield.PostBeginPlay")); }
+			ScriptFunction DisableBlocking() { mixin(MGF("mDisableBlocking", "Function TribesGame.TrDaDCoreShield.DisableBlocking")); }
+			ScriptFunction EnableBlocking() { mixin(MGF("mEnableBlocking", "Function TribesGame.TrDaDCoreShield.EnableBlocking")); }
+			ScriptFunction UpdateMaterialForPawn() { mixin(MGF("mUpdateMaterialForPawn", "Function TribesGame.TrDaDCoreShield.UpdateMaterialForPawn")); }
+			ScriptFunction CreateMICs() { mixin(MGF("mCreateMICs", "Function TribesGame.TrDaDCoreShield.CreateMICs")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 536)()); }
-		TrDaDShell m_Shell() { mixin(MGPC!("TrDaDShell", 560)()); }
-		int m_nShieldIndex() { mixin(MGPC!("int", 556)()); }
-		TrDaDCore m_Core() { mixin(MGPC!("TrDaDCore", 552)()); }
-		Material m_BaseMaterial() { mixin(MGPC!("Material", 548)()); }
-		ubyte m_DefenderTeamIndex() { mixin(MGPC!("ubyte", 532)()); }
+		ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC("ScriptArray!(MaterialInstanceConstant)", 536)); }
+		TrDaDShell m_Shell() { mixin(MGPC("TrDaDShell", 560)); }
+		int m_nShieldIndex() { mixin(MGPC("int", 556)); }
+		TrDaDCore m_Core() { mixin(MGPC("TrDaDCore", 552)); }
+		Material m_BaseMaterial() { mixin(MGPC("Material", 548)); }
+		ubyte m_DefenderTeamIndex() { mixin(MGPC("ubyte", 532)); }
 	}
 final:
 	void Init(int ShieldIndex, TrDaDCore* Core = null, TrDaDShell* Shell = null)

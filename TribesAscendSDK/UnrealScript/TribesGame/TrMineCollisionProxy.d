@@ -9,9 +9,9 @@ extern(C++) interface TrMineCollisionProxy : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMineCollisionProxy")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrMineCollisionProxy")); }
 	private static __gshared TrMineCollisionProxy mDefaultProperties;
-	@property final static TrMineCollisionProxy DefaultProperties() { mixin(MGDPC!(TrMineCollisionProxy, "TrMineCollisionProxy TribesGame.Default__TrMineCollisionProxy")()); }
+	@property final static TrMineCollisionProxy DefaultProperties() { mixin(MGDPC("TrMineCollisionProxy", "TrMineCollisionProxy TribesGame.Default__TrMineCollisionProxy")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPawnAdded() { mixin(MGF!("mOnPawnAdded", "Function TribesGame.TrMineCollisionProxy.OnPawnAdded")()); }
-			ScriptFunction OnPawnRemoved() { mixin(MGF!("mOnPawnRemoved", "Function TribesGame.TrMineCollisionProxy.OnPawnRemoved")()); }
+			ScriptFunction OnPawnAdded() { mixin(MGF("mOnPawnAdded", "Function TribesGame.TrMineCollisionProxy.OnPawnAdded")); }
+			ScriptFunction OnPawnRemoved() { mixin(MGF("mOnPawnRemoved", "Function TribesGame.TrMineCollisionProxy.OnPawnRemoved")); }
 		}
 	}
 	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_BoxComponent'!

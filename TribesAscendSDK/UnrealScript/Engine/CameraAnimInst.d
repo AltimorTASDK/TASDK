@@ -16,9 +16,9 @@ extern(C++) interface CameraAnimInst : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CameraAnimInst")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CameraAnimInst")); }
 	private static __gshared CameraAnimInst mDefaultProperties;
-	@property final static CameraAnimInst DefaultProperties() { mixin(MGDPC!(CameraAnimInst, "CameraAnimInst Engine.Default__CameraAnimInst")()); }
+	@property final static CameraAnimInst DefaultProperties() { mixin(MGDPC("CameraAnimInst", "CameraAnimInst Engine.Default__CameraAnimInst")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,49 +32,49 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetPlaySpace() { mixin(MGF!("mSetPlaySpace", "Function Engine.CameraAnimInst.SetPlaySpace")()); }
-			ScriptFunction Play() { mixin(MGF!("mPlay", "Function Engine.CameraAnimInst.Play")()); }
-			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function Engine.CameraAnimInst.Update")()); }
-			ScriptFunction AdvanceAnim() { mixin(MGF!("mAdvanceAnim", "Function Engine.CameraAnimInst.AdvanceAnim")()); }
-			ScriptFunction Stop() { mixin(MGF!("mStop", "Function Engine.CameraAnimInst.Stop")()); }
-			ScriptFunction ApplyTransientScaling() { mixin(MGF!("mApplyTransientScaling", "Function Engine.CameraAnimInst.ApplyTransientScaling")()); }
+			ScriptFunction SetPlaySpace() { mixin(MGF("mSetPlaySpace", "Function Engine.CameraAnimInst.SetPlaySpace")); }
+			ScriptFunction Play() { mixin(MGF("mPlay", "Function Engine.CameraAnimInst.Play")); }
+			ScriptFunction Update() { mixin(MGF("mUpdate", "Function Engine.CameraAnimInst.Update")); }
+			ScriptFunction AdvanceAnim() { mixin(MGF("mAdvanceAnim", "Function Engine.CameraAnimInst.AdvanceAnim")); }
+			ScriptFunction Stop() { mixin(MGF("mStop", "Function Engine.CameraAnimInst.Stop")); }
+			ScriptFunction ApplyTransientScaling() { mixin(MGF("mApplyTransientScaling", "Function Engine.CameraAnimInst.ApplyTransientScaling")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector LastCameraLoc() { mixin(MGPC!("Vector", 416)()); }
-			float LastPPSettingsAlpha() { mixin(MGPC!("float", 412)()); }
-			PostProcessVolume.PostProcessSettings LastPPSettings() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 192)()); }
-			UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPC!("UObject.Matrix", 128)()); }
-			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!("Camera.ECameraAnimPlaySpace", 124)()); }
-			AnimNodeSequence SourceAnimNode() { mixin(MGPC!("AnimNodeSequence", 120)()); }
-			InterpTrackInstMove MoveInst() { mixin(MGPC!("InterpTrackInstMove", 116)()); }
-			InterpTrackMove MoveTrack() { mixin(MGPC!("InterpTrackMove", 112)()); }
-			float RemainingTime() { mixin(MGPC!("float", 108)()); }
-			float CurrentBlendWeight() { mixin(MGPC!("float", 104)()); }
-			float TransientScaleModifier() { mixin(MGPC!("float", 100)()); }
-			float BasePlayScale() { mixin(MGPC!("float", 96)()); }
-			float PlayRate() { mixin(MGPC!("float", 92)()); }
-			float CurBlendOutTime() { mixin(MGPC!("float", 88)()); }
-			float CurBlendInTime() { mixin(MGPC!("float", 84)()); }
-			float BlendOutTime() { mixin(MGPC!("float", 80)()); }
-			float BlendInTime() { mixin(MGPC!("float", 76)()); }
-			float CurTime() { mixin(MGPC!("float", 68)()); }
+			Vector LastCameraLoc() { mixin(MGPC("Vector", 416)); }
+			float LastPPSettingsAlpha() { mixin(MGPC("float", 412)); }
+			PostProcessVolume.PostProcessSettings LastPPSettings() { mixin(MGPC("PostProcessVolume.PostProcessSettings", 192)); }
+			UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPC("UObject.Matrix", 128)); }
+			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC("Camera.ECameraAnimPlaySpace", 124)); }
+			AnimNodeSequence SourceAnimNode() { mixin(MGPC("AnimNodeSequence", 120)); }
+			InterpTrackInstMove MoveInst() { mixin(MGPC("InterpTrackInstMove", 116)); }
+			InterpTrackMove MoveTrack() { mixin(MGPC("InterpTrackMove", 112)); }
+			float RemainingTime() { mixin(MGPC("float", 108)); }
+			float CurrentBlendWeight() { mixin(MGPC("float", 104)); }
+			float TransientScaleModifier() { mixin(MGPC("float", 100)); }
+			float BasePlayScale() { mixin(MGPC("float", 96)); }
+			float PlayRate() { mixin(MGPC("float", 92)); }
+			float CurBlendOutTime() { mixin(MGPC("float", 88)); }
+			float CurBlendInTime() { mixin(MGPC("float", 84)); }
+			float BlendOutTime() { mixin(MGPC("float", 80)); }
+			float BlendInTime() { mixin(MGPC("float", 76)); }
+			float CurTime() { mixin(MGPC("float", 68)); }
 			// WARNING: Property 'InterpGroupInst' has the same name as a defined type!
-			CameraAnim CamAnim() { mixin(MGPC!("CameraAnim", 60)()); }
+			CameraAnim CamAnim() { mixin(MGPC("CameraAnim", 60)); }
 		}
-		bool bBlendingOut() { mixin(MGBPC!(72, 0x10)()); }
-		bool bBlendingOut(bool val) { mixin(MSBPC!(72, 0x10)()); }
-		bool bBlendingIn() { mixin(MGBPC!(72, 0x8)()); }
-		bool bBlendingIn(bool val) { mixin(MSBPC!(72, 0x8)()); }
-		bool bAutoReleaseWhenFinished() { mixin(MGBPC!(72, 0x4)()); }
-		bool bAutoReleaseWhenFinished(bool val) { mixin(MSBPC!(72, 0x4)()); }
-		bool bFinished() { mixin(MGBPC!(72, 0x2)()); }
-		bool bFinished(bool val) { mixin(MSBPC!(72, 0x2)()); }
-		bool bLooping() { mixin(MGBPC!(72, 0x1)()); }
-		bool bLooping(bool val) { mixin(MSBPC!(72, 0x1)()); }
+		bool bBlendingOut() { mixin(MGBPC(72, 0x10)); }
+		bool bBlendingOut(bool val) { mixin(MSBPC(72, 0x10)); }
+		bool bBlendingIn() { mixin(MGBPC(72, 0x8)); }
+		bool bBlendingIn(bool val) { mixin(MSBPC(72, 0x8)); }
+		bool bAutoReleaseWhenFinished() { mixin(MGBPC(72, 0x4)); }
+		bool bAutoReleaseWhenFinished(bool val) { mixin(MSBPC(72, 0x4)); }
+		bool bFinished() { mixin(MGBPC(72, 0x2)); }
+		bool bFinished(bool val) { mixin(MSBPC(72, 0x2)); }
+		bool bLooping() { mixin(MGBPC(72, 0x1)); }
+		bool bLooping(bool val) { mixin(MSBPC(72, 0x1)); }
 	}
 final:
 	void SetPlaySpace(Camera.ECameraAnimPlaySpace NewSpace, Rotator* UserPlaySpace = null)

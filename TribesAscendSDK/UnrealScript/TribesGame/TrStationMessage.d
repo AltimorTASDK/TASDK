@@ -12,9 +12,9 @@ extern(C++) interface TrStationMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStationMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrStationMessage")); }
 	private static __gshared TrStationMessage mDefaultProperties;
-	@property final static TrStationMessage DefaultProperties() { mixin(MGDPC!(TrStationMessage, "TrStationMessage TribesGame.Default__TrStationMessage")()); }
+	@property final static TrStationMessage DefaultProperties() { mixin(MGDPC("TrStationMessage", "TrStationMessage TribesGame.Default__TrStationMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,19 +24,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrStationMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrStationMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrStationMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrStationMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue EnemyStationSound() { mixin(MGPC!("SoundCue", 164)()); }
-		SoundCue StationNotPoweredSound() { mixin(MGPC!("SoundCue", 160)()); }
-		ScriptString MustBeHeld() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString ControlPoint() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString NeutralStation() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString EnemyStation() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString StationNotPowered() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundCue EnemyStationSound() { mixin(MGPC("SoundCue", 164)); }
+		SoundCue StationNotPoweredSound() { mixin(MGPC("SoundCue", 160)); }
+		ScriptString MustBeHeld() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString ControlPoint() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString NeutralStation() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString EnemyStation() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString StationNotPowered() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

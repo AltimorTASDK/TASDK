@@ -12,9 +12,9 @@ extern(C++) interface UTInventoryManager : InventoryManager
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTInventoryManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTInventoryManager")); }
 	private static __gshared UTInventoryManager mDefaultProperties;
-	@property final static UTInventoryManager DefaultProperties() { mixin(MGDPC!(UTInventoryManager, "UTInventoryManager UTGame.Default__UTInventoryManager")()); }
+	@property final static UTInventoryManager DefaultProperties() { mixin(MGDPC("UTInventoryManager", "UTInventoryManager UTGame.Default__UTInventoryManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -49,33 +49,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction NeedsAmmo() { mixin(MGF!("mNeedsAmmo", "Function UTGame.UTInventoryManager.NeedsAmmo")()); }
-			ScriptFunction ClientSyncWeapon() { mixin(MGF!("mClientSyncWeapon", "Function UTGame.UTInventoryManager.ClientSyncWeapon")()); }
-			ScriptFunction OwnerEvent() { mixin(MGF!("mOwnerEvent", "Function UTGame.UTInventoryManager.OwnerEvent")()); }
-			ScriptFunction GetWeaponList() { mixin(MGF!("mGetWeaponList", "Function UTGame.UTInventoryManager.GetWeaponList")()); }
-			ScriptFunction SwitchWeapon() { mixin(MGF!("mSwitchWeapon", "Function UTGame.UTInventoryManager.SwitchWeapon")()); }
-			ScriptFunction AdjustWeapon() { mixin(MGF!("mAdjustWeapon", "Function UTGame.UTInventoryManager.AdjustWeapon")()); }
-			ScriptFunction PrevWeapon() { mixin(MGF!("mPrevWeapon", "Function UTGame.UTInventoryManager.PrevWeapon")()); }
-			ScriptFunction NextWeapon() { mixin(MGF!("mNextWeapon", "Function UTGame.UTInventoryManager.NextWeapon")()); }
-			ScriptFunction AllAmmo() { mixin(MGF!("mAllAmmo", "Function UTGame.UTInventoryManager.AllAmmo")()); }
-			ScriptFunction SetCurrentWeapon() { mixin(MGF!("mSetCurrentWeapon", "Function UTGame.UTInventoryManager.SetCurrentWeapon")()); }
-			ScriptFunction ClientSetCurrentWeapon() { mixin(MGF!("mClientSetCurrentWeapon", "Function UTGame.UTInventoryManager.ClientSetCurrentWeapon")()); }
-			ScriptFunction ServerSetCurrentWeapon() { mixin(MGF!("mServerSetCurrentWeapon", "Function UTGame.UTInventoryManager.ServerSetCurrentWeapon")()); }
-			ScriptFunction SetPendingWeapon() { mixin(MGF!("mSetPendingWeapon", "Function UTGame.UTInventoryManager.SetPendingWeapon")()); }
-			ScriptFunction ClientWeaponSet() { mixin(MGF!("mClientWeaponSet", "Function UTGame.UTInventoryManager.ClientWeaponSet")()); }
-			ScriptFunction CreateInventory() { mixin(MGF!("mCreateInventory", "Function UTGame.UTInventoryManager.CreateInventory")()); }
-			ScriptFunction ProcessRetrySwitch() { mixin(MGF!("mProcessRetrySwitch", "Function UTGame.UTInventoryManager.ProcessRetrySwitch")()); }
-			ScriptFunction RetrySwitchTo() { mixin(MGF!("mRetrySwitchTo", "Function UTGame.UTInventoryManager.RetrySwitchTo")()); }
-			ScriptFunction CheckSwitchTo() { mixin(MGF!("mCheckSwitchTo", "Function UTGame.UTInventoryManager.CheckSwitchTo")()); }
-			ScriptFunction AddInventory() { mixin(MGF!("mAddInventory", "Function UTGame.UTInventoryManager.AddInventory")()); }
-			ScriptFunction DiscardInventory() { mixin(MGF!("mDiscardInventory", "Function UTGame.UTInventoryManager.DiscardInventory")()); }
-			ScriptFunction RemoveFromInventory() { mixin(MGF!("mRemoveFromInventory", "Function UTGame.UTInventoryManager.RemoveFromInventory")()); }
-			ScriptFunction AddAmmoToWeapon() { mixin(MGF!("mAddAmmoToWeapon", "Function UTGame.UTInventoryManager.AddAmmoToWeapon")()); }
-			ScriptFunction HasInventoryOfClass() { mixin(MGF!("mHasInventoryOfClass", "Function UTGame.UTInventoryManager.HasInventoryOfClass")()); }
-			ScriptFunction ChangedWeapon() { mixin(MGF!("mChangedWeapon", "Function UTGame.UTInventoryManager.ChangedWeapon")()); }
-			ScriptFunction SwitchToPreviousWeapon() { mixin(MGF!("mSwitchToPreviousWeapon", "Function UTGame.UTInventoryManager.SwitchToPreviousWeapon")()); }
-			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function UTGame.UTInventoryManager.DrawHUD")()); }
-			ScriptFunction SwitchToBestWeapon() { mixin(MGF!("mSwitchToBestWeapon", "Function UTGame.UTInventoryManager.SwitchToBestWeapon")()); }
+			ScriptFunction NeedsAmmo() { mixin(MGF("mNeedsAmmo", "Function UTGame.UTInventoryManager.NeedsAmmo")); }
+			ScriptFunction ClientSyncWeapon() { mixin(MGF("mClientSyncWeapon", "Function UTGame.UTInventoryManager.ClientSyncWeapon")); }
+			ScriptFunction OwnerEvent() { mixin(MGF("mOwnerEvent", "Function UTGame.UTInventoryManager.OwnerEvent")); }
+			ScriptFunction GetWeaponList() { mixin(MGF("mGetWeaponList", "Function UTGame.UTInventoryManager.GetWeaponList")); }
+			ScriptFunction SwitchWeapon() { mixin(MGF("mSwitchWeapon", "Function UTGame.UTInventoryManager.SwitchWeapon")); }
+			ScriptFunction AdjustWeapon() { mixin(MGF("mAdjustWeapon", "Function UTGame.UTInventoryManager.AdjustWeapon")); }
+			ScriptFunction PrevWeapon() { mixin(MGF("mPrevWeapon", "Function UTGame.UTInventoryManager.PrevWeapon")); }
+			ScriptFunction NextWeapon() { mixin(MGF("mNextWeapon", "Function UTGame.UTInventoryManager.NextWeapon")); }
+			ScriptFunction AllAmmo() { mixin(MGF("mAllAmmo", "Function UTGame.UTInventoryManager.AllAmmo")); }
+			ScriptFunction SetCurrentWeapon() { mixin(MGF("mSetCurrentWeapon", "Function UTGame.UTInventoryManager.SetCurrentWeapon")); }
+			ScriptFunction ClientSetCurrentWeapon() { mixin(MGF("mClientSetCurrentWeapon", "Function UTGame.UTInventoryManager.ClientSetCurrentWeapon")); }
+			ScriptFunction ServerSetCurrentWeapon() { mixin(MGF("mServerSetCurrentWeapon", "Function UTGame.UTInventoryManager.ServerSetCurrentWeapon")); }
+			ScriptFunction SetPendingWeapon() { mixin(MGF("mSetPendingWeapon", "Function UTGame.UTInventoryManager.SetPendingWeapon")); }
+			ScriptFunction ClientWeaponSet() { mixin(MGF("mClientWeaponSet", "Function UTGame.UTInventoryManager.ClientWeaponSet")); }
+			ScriptFunction CreateInventory() { mixin(MGF("mCreateInventory", "Function UTGame.UTInventoryManager.CreateInventory")); }
+			ScriptFunction ProcessRetrySwitch() { mixin(MGF("mProcessRetrySwitch", "Function UTGame.UTInventoryManager.ProcessRetrySwitch")); }
+			ScriptFunction RetrySwitchTo() { mixin(MGF("mRetrySwitchTo", "Function UTGame.UTInventoryManager.RetrySwitchTo")); }
+			ScriptFunction CheckSwitchTo() { mixin(MGF("mCheckSwitchTo", "Function UTGame.UTInventoryManager.CheckSwitchTo")); }
+			ScriptFunction AddInventory() { mixin(MGF("mAddInventory", "Function UTGame.UTInventoryManager.AddInventory")); }
+			ScriptFunction DiscardInventory() { mixin(MGF("mDiscardInventory", "Function UTGame.UTInventoryManager.DiscardInventory")); }
+			ScriptFunction RemoveFromInventory() { mixin(MGF("mRemoveFromInventory", "Function UTGame.UTInventoryManager.RemoveFromInventory")); }
+			ScriptFunction AddAmmoToWeapon() { mixin(MGF("mAddAmmoToWeapon", "Function UTGame.UTInventoryManager.AddAmmoToWeapon")); }
+			ScriptFunction HasInventoryOfClass() { mixin(MGF("mHasInventoryOfClass", "Function UTGame.UTInventoryManager.HasInventoryOfClass")); }
+			ScriptFunction ChangedWeapon() { mixin(MGF("mChangedWeapon", "Function UTGame.UTInventoryManager.ChangedWeapon")); }
+			ScriptFunction SwitchToPreviousWeapon() { mixin(MGF("mSwitchToPreviousWeapon", "Function UTGame.UTInventoryManager.SwitchToPreviousWeapon")); }
+			ScriptFunction DrawHUD() { mixin(MGF("mDrawHUD", "Function UTGame.UTInventoryManager.DrawHUD")); }
+			ScriptFunction SwitchToBestWeapon() { mixin(MGF("mSwitchToBestWeapon", "Function UTGame.UTInventoryManager.SwitchToBestWeapon")); }
 		}
 	}
 	struct AmmoStore
@@ -83,24 +83,24 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTInventoryManager.AmmoStore")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.UTInventoryManager.AmmoStore")); }
 		@property final auto ref
 		{
-			ScriptClass WeaponClass() { mixin(MGPS!("ScriptClass", 4)()); }
-			int Amount() { mixin(MGPS!("int", 0)()); }
+			ScriptClass WeaponClass() { mixin(MGPS("ScriptClass", 4)); }
+			int Amount() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UTInventoryManager.AmmoStore) AmmoStorage() { mixin(MGPC!("ScriptArray!(UTInventoryManager.AmmoStore)", 508)()); }
-			float LastAdjustWeaponTime() { mixin(MGPC!("float", 528)()); }
-			UTWeapon PendingSwitchWeapon() { mixin(MGPC!("UTWeapon", 524)()); }
-			Weapon PreviousWeapon() { mixin(MGPC!("Weapon", 520)()); }
+			ScriptArray!(UTInventoryManager.AmmoStore) AmmoStorage() { mixin(MGPC("ScriptArray!(UTInventoryManager.AmmoStore)", 508)); }
+			float LastAdjustWeaponTime() { mixin(MGPC("float", 528)); }
+			UTWeapon PendingSwitchWeapon() { mixin(MGPC("UTWeapon", 524)); }
+			Weapon PreviousWeapon() { mixin(MGPC("Weapon", 520)); }
 		}
-		bool bInfiniteAmmo() { mixin(MGBPC!(504, 0x1)()); }
-		bool bInfiniteAmmo(bool val) { mixin(MSBPC!(504, 0x1)()); }
+		bool bInfiniteAmmo() { mixin(MGBPC(504, 0x1)); }
+		bool bInfiniteAmmo(bool val) { mixin(MSBPC(504, 0x1)); }
 	}
 final:
 	bool NeedsAmmo(ScriptClass TestWeapon)

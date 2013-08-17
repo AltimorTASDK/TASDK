@@ -11,9 +11,9 @@ extern(C++) interface OnlineGameInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineGameInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineGameInterface")); }
 	private static __gshared OnlineGameInterface mDefaultProperties;
-	@property final static OnlineGameInterface DefaultProperties() { mixin(MGDPC!(OnlineGameInterface, "OnlineGameInterface Engine.Default__OnlineGameInterface")()); }
+	@property final static OnlineGameInterface DefaultProperties() { mixin(MGDPC("OnlineGameInterface", "OnlineGameInterface Engine.Default__OnlineGameInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -93,78 +93,78 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetGameSettings() { mixin(MGF!("mGetGameSettings", "Function Engine.OnlineGameInterface.GetGameSettings")()); }
-			ScriptFunction EndOnlineGame() { mixin(MGF!("mEndOnlineGame", "Function Engine.OnlineGameInterface.EndOnlineGame")()); }
-			ScriptFunction UnregisterPlayer() { mixin(MGF!("mUnregisterPlayer", "Function Engine.OnlineGameInterface.UnregisterPlayer")()); }
-			ScriptFunction MigrateOnlineGame() { mixin(MGF!("mMigrateOnlineGame", "Function Engine.OnlineGameInterface.MigrateOnlineGame")()); }
-			ScriptFunction ReadPlatformSpecificSessionInfoBySessionName() { mixin(MGF!("mReadPlatformSpecificSessionInfoBySessionName", "Function Engine.OnlineGameInterface.ReadPlatformSpecificSessionInfoBySessionName")()); }
-			ScriptFunction BindPlatformSpecificSessionToSearch() { mixin(MGF!("mBindPlatformSpecificSessionToSearch", "Function Engine.OnlineGameInterface.BindPlatformSpecificSessionToSearch")()); }
-			ScriptFunction JoinMigratedOnlineGame() { mixin(MGF!("mJoinMigratedOnlineGame", "Function Engine.OnlineGameInterface.JoinMigratedOnlineGame")()); }
-			ScriptFunction GetResolvedConnectString() { mixin(MGF!("mGetResolvedConnectString", "Function Engine.OnlineGameInterface.GetResolvedConnectString")()); }
-			ScriptFunction RegisterForArbitration() { mixin(MGF!("mRegisterForArbitration", "Function Engine.OnlineGameInterface.RegisterForArbitration")()); }
-			ScriptFunction AcceptGameInvite() { mixin(MGF!("mAcceptGameInvite", "Function Engine.OnlineGameInterface.AcceptGameInvite")()); }
-			ScriptFunction DestroyOnlineGame() { mixin(MGF!("mDestroyOnlineGame", "Function Engine.OnlineGameInterface.DestroyOnlineGame")()); }
-			ScriptFunction StartOnlineGame() { mixin(MGF!("mStartOnlineGame", "Function Engine.OnlineGameInterface.StartOnlineGame")()); }
-			ScriptFunction JoinOnlineGame() { mixin(MGF!("mJoinOnlineGame", "Function Engine.OnlineGameInterface.JoinOnlineGame")()); }
-			ScriptFunction RegisterPlayer() { mixin(MGF!("mRegisterPlayer", "Function Engine.OnlineGameInterface.RegisterPlayer")()); }
-			ScriptFunction RecalculateSkillRating() { mixin(MGF!("mRecalculateSkillRating", "Function Engine.OnlineGameInterface.RecalculateSkillRating")()); }
-			ScriptFunction CreateOnlineGame() { mixin(MGF!("mCreateOnlineGame", "Function Engine.OnlineGameInterface.CreateOnlineGame")()); }
-			ScriptFunction OnCreateOnlineGameComplete() { mixin(MGF!("mOnCreateOnlineGameComplete", "Function Engine.OnlineGameInterface.OnCreateOnlineGameComplete")()); }
-			ScriptFunction OnJoinMigratedOnlineGameComplete() { mixin(MGF!("mOnJoinMigratedOnlineGameComplete", "Function Engine.OnlineGameInterface.OnJoinMigratedOnlineGameComplete")()); }
-			ScriptFunction OnMigrateOnlineGameComplete() { mixin(MGF!("mOnMigrateOnlineGameComplete", "Function Engine.OnlineGameInterface.OnMigrateOnlineGameComplete")()); }
-			ScriptFunction OnRecalculateSkillRatingComplete() { mixin(MGF!("mOnRecalculateSkillRatingComplete", "Function Engine.OnlineGameInterface.OnRecalculateSkillRatingComplete")()); }
-			ScriptFunction OnGameInviteAccepted() { mixin(MGF!("mOnGameInviteAccepted", "Function Engine.OnlineGameInterface.OnGameInviteAccepted")()); }
-			ScriptFunction OnArbitrationRegistrationComplete() { mixin(MGF!("mOnArbitrationRegistrationComplete", "Function Engine.OnlineGameInterface.OnArbitrationRegistrationComplete")()); }
-			ScriptFunction OnEndOnlineGameComplete() { mixin(MGF!("mOnEndOnlineGameComplete", "Function Engine.OnlineGameInterface.OnEndOnlineGameComplete")()); }
-			ScriptFunction OnStartOnlineGameComplete() { mixin(MGF!("mOnStartOnlineGameComplete", "Function Engine.OnlineGameInterface.OnStartOnlineGameComplete")()); }
-			ScriptFunction OnUnregisterPlayerComplete() { mixin(MGF!("mOnUnregisterPlayerComplete", "Function Engine.OnlineGameInterface.OnUnregisterPlayerComplete")()); }
-			ScriptFunction OnRegisterPlayerComplete() { mixin(MGF!("mOnRegisterPlayerComplete", "Function Engine.OnlineGameInterface.OnRegisterPlayerComplete")()); }
-			ScriptFunction OnJoinOnlineGameComplete() { mixin(MGF!("mOnJoinOnlineGameComplete", "Function Engine.OnlineGameInterface.OnJoinOnlineGameComplete")()); }
-			ScriptFunction OnQosStatusChanged() { mixin(MGF!("mOnQosStatusChanged", "Function Engine.OnlineGameInterface.OnQosStatusChanged")()); }
-			ScriptFunction OnCancelFindOnlineGamesComplete() { mixin(MGF!("mOnCancelFindOnlineGamesComplete", "Function Engine.OnlineGameInterface.OnCancelFindOnlineGamesComplete")()); }
-			ScriptFunction OnFindOnlineGamesComplete() { mixin(MGF!("mOnFindOnlineGamesComplete", "Function Engine.OnlineGameInterface.OnFindOnlineGamesComplete")()); }
-			ScriptFunction OnDestroyOnlineGameComplete() { mixin(MGF!("mOnDestroyOnlineGameComplete", "Function Engine.OnlineGameInterface.OnDestroyOnlineGameComplete")()); }
-			ScriptFunction OnUpdateOnlineGameComplete() { mixin(MGF!("mOnUpdateOnlineGameComplete", "Function Engine.OnlineGameInterface.OnUpdateOnlineGameComplete")()); }
-			ScriptFunction AddCreateOnlineGameCompleteDelegate() { mixin(MGF!("mAddCreateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddCreateOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearCreateOnlineGameCompleteDelegate() { mixin(MGF!("mClearCreateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearCreateOnlineGameCompleteDelegate")()); }
-			ScriptFunction UpdateOnlineGame() { mixin(MGF!("mUpdateOnlineGame", "Function Engine.OnlineGameInterface.UpdateOnlineGame")()); }
-			ScriptFunction AddUpdateOnlineGameCompleteDelegate() { mixin(MGF!("mAddUpdateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddUpdateOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearUpdateOnlineGameCompleteDelegate() { mixin(MGF!("mClearUpdateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearUpdateOnlineGameCompleteDelegate")()); }
-			ScriptFunction AddDestroyOnlineGameCompleteDelegate() { mixin(MGF!("mAddDestroyOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddDestroyOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearDestroyOnlineGameCompleteDelegate() { mixin(MGF!("mClearDestroyOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearDestroyOnlineGameCompleteDelegate")()); }
-			ScriptFunction FindOnlineGames() { mixin(MGF!("mFindOnlineGames", "Function Engine.OnlineGameInterface.FindOnlineGames")()); }
-			ScriptFunction AddFindOnlineGamesCompleteDelegate() { mixin(MGF!("mAddFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.AddFindOnlineGamesCompleteDelegate")()); }
-			ScriptFunction ClearFindOnlineGamesCompleteDelegate() { mixin(MGF!("mClearFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.ClearFindOnlineGamesCompleteDelegate")()); }
-			ScriptFunction CancelFindOnlineGames() { mixin(MGF!("mCancelFindOnlineGames", "Function Engine.OnlineGameInterface.CancelFindOnlineGames")()); }
-			ScriptFunction AddCancelFindOnlineGamesCompleteDelegate() { mixin(MGF!("mAddCancelFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.AddCancelFindOnlineGamesCompleteDelegate")()); }
-			ScriptFunction ClearCancelFindOnlineGamesCompleteDelegate() { mixin(MGF!("mClearCancelFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.ClearCancelFindOnlineGamesCompleteDelegate")()); }
-			ScriptFunction AddQosStatusChangedDelegate() { mixin(MGF!("mAddQosStatusChangedDelegate", "Function Engine.OnlineGameInterface.AddQosStatusChangedDelegate")()); }
-			ScriptFunction ClearQosStatusChangedDelegate() { mixin(MGF!("mClearQosStatusChangedDelegate", "Function Engine.OnlineGameInterface.ClearQosStatusChangedDelegate")()); }
-			ScriptFunction ReadPlatformSpecificSessionInfo() { mixin(MGF!("mReadPlatformSpecificSessionInfo", "Function Engine.OnlineGameInterface.ReadPlatformSpecificSessionInfo")()); }
-			ScriptFunction GetGameSearch() { mixin(MGF!("mGetGameSearch", "Function Engine.OnlineGameInterface.GetGameSearch")()); }
-			ScriptFunction FreeSearchResults() { mixin(MGF!("mFreeSearchResults", "Function Engine.OnlineGameInterface.FreeSearchResults")()); }
-			ScriptFunction QueryNonAdvertisedData() { mixin(MGF!("mQueryNonAdvertisedData", "Function Engine.OnlineGameInterface.QueryNonAdvertisedData")()); }
-			ScriptFunction AddJoinOnlineGameCompleteDelegate() { mixin(MGF!("mAddJoinOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddJoinOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearJoinOnlineGameCompleteDelegate() { mixin(MGF!("mClearJoinOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearJoinOnlineGameCompleteDelegate")()); }
-			ScriptFunction AddRegisterPlayerCompleteDelegate() { mixin(MGF!("mAddRegisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.AddRegisterPlayerCompleteDelegate")()); }
-			ScriptFunction ClearRegisterPlayerCompleteDelegate() { mixin(MGF!("mClearRegisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.ClearRegisterPlayerCompleteDelegate")()); }
-			ScriptFunction AddUnregisterPlayerCompleteDelegate() { mixin(MGF!("mAddUnregisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.AddUnregisterPlayerCompleteDelegate")()); }
-			ScriptFunction ClearUnregisterPlayerCompleteDelegate() { mixin(MGF!("mClearUnregisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.ClearUnregisterPlayerCompleteDelegate")()); }
-			ScriptFunction AddStartOnlineGameCompleteDelegate() { mixin(MGF!("mAddStartOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddStartOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearStartOnlineGameCompleteDelegate() { mixin(MGF!("mClearStartOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearStartOnlineGameCompleteDelegate")()); }
-			ScriptFunction AddEndOnlineGameCompleteDelegate() { mixin(MGF!("mAddEndOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddEndOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearEndOnlineGameCompleteDelegate() { mixin(MGF!("mClearEndOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearEndOnlineGameCompleteDelegate")()); }
-			ScriptFunction AddArbitrationRegistrationCompleteDelegate() { mixin(MGF!("mAddArbitrationRegistrationCompleteDelegate", "Function Engine.OnlineGameInterface.AddArbitrationRegistrationCompleteDelegate")()); }
-			ScriptFunction ClearArbitrationRegistrationCompleteDelegate() { mixin(MGF!("mClearArbitrationRegistrationCompleteDelegate", "Function Engine.OnlineGameInterface.ClearArbitrationRegistrationCompleteDelegate")()); }
-			ScriptFunction GetArbitratedPlayers() { mixin(MGF!("mGetArbitratedPlayers", "Function Engine.OnlineGameInterface.GetArbitratedPlayers")()); }
-			ScriptFunction AddGameInviteAcceptedDelegate() { mixin(MGF!("mAddGameInviteAcceptedDelegate", "Function Engine.OnlineGameInterface.AddGameInviteAcceptedDelegate")()); }
-			ScriptFunction ClearGameInviteAcceptedDelegate() { mixin(MGF!("mClearGameInviteAcceptedDelegate", "Function Engine.OnlineGameInterface.ClearGameInviteAcceptedDelegate")()); }
-			ScriptFunction AddRecalculateSkillRatingCompleteDelegate() { mixin(MGF!("mAddRecalculateSkillRatingCompleteDelegate", "Function Engine.OnlineGameInterface.AddRecalculateSkillRatingCompleteDelegate")()); }
-			ScriptFunction ClearRecalculateSkillRatingCompleteDelegate() { mixin(MGF!("mClearRecalculateSkillRatingCompleteDelegate", "Function Engine.OnlineGameInterface.ClearRecalculateSkillRatingCompleteDelegate")()); }
-			ScriptFunction AddMigrateOnlineGameCompleteDelegate() { mixin(MGF!("mAddMigrateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddMigrateOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearMigrateOnlineGameCompleteDelegate() { mixin(MGF!("mClearMigrateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearMigrateOnlineGameCompleteDelegate")()); }
-			ScriptFunction AddJoinMigratedOnlineGameCompleteDelegate() { mixin(MGF!("mAddJoinMigratedOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddJoinMigratedOnlineGameCompleteDelegate")()); }
-			ScriptFunction ClearJoinMigratedOnlineGameCompleteDelegate() { mixin(MGF!("mClearJoinMigratedOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearJoinMigratedOnlineGameCompleteDelegate")()); }
+			ScriptFunction GetGameSettings() { mixin(MGF("mGetGameSettings", "Function Engine.OnlineGameInterface.GetGameSettings")); }
+			ScriptFunction EndOnlineGame() { mixin(MGF("mEndOnlineGame", "Function Engine.OnlineGameInterface.EndOnlineGame")); }
+			ScriptFunction UnregisterPlayer() { mixin(MGF("mUnregisterPlayer", "Function Engine.OnlineGameInterface.UnregisterPlayer")); }
+			ScriptFunction MigrateOnlineGame() { mixin(MGF("mMigrateOnlineGame", "Function Engine.OnlineGameInterface.MigrateOnlineGame")); }
+			ScriptFunction ReadPlatformSpecificSessionInfoBySessionName() { mixin(MGF("mReadPlatformSpecificSessionInfoBySessionName", "Function Engine.OnlineGameInterface.ReadPlatformSpecificSessionInfoBySessionName")); }
+			ScriptFunction BindPlatformSpecificSessionToSearch() { mixin(MGF("mBindPlatformSpecificSessionToSearch", "Function Engine.OnlineGameInterface.BindPlatformSpecificSessionToSearch")); }
+			ScriptFunction JoinMigratedOnlineGame() { mixin(MGF("mJoinMigratedOnlineGame", "Function Engine.OnlineGameInterface.JoinMigratedOnlineGame")); }
+			ScriptFunction GetResolvedConnectString() { mixin(MGF("mGetResolvedConnectString", "Function Engine.OnlineGameInterface.GetResolvedConnectString")); }
+			ScriptFunction RegisterForArbitration() { mixin(MGF("mRegisterForArbitration", "Function Engine.OnlineGameInterface.RegisterForArbitration")); }
+			ScriptFunction AcceptGameInvite() { mixin(MGF("mAcceptGameInvite", "Function Engine.OnlineGameInterface.AcceptGameInvite")); }
+			ScriptFunction DestroyOnlineGame() { mixin(MGF("mDestroyOnlineGame", "Function Engine.OnlineGameInterface.DestroyOnlineGame")); }
+			ScriptFunction StartOnlineGame() { mixin(MGF("mStartOnlineGame", "Function Engine.OnlineGameInterface.StartOnlineGame")); }
+			ScriptFunction JoinOnlineGame() { mixin(MGF("mJoinOnlineGame", "Function Engine.OnlineGameInterface.JoinOnlineGame")); }
+			ScriptFunction RegisterPlayer() { mixin(MGF("mRegisterPlayer", "Function Engine.OnlineGameInterface.RegisterPlayer")); }
+			ScriptFunction RecalculateSkillRating() { mixin(MGF("mRecalculateSkillRating", "Function Engine.OnlineGameInterface.RecalculateSkillRating")); }
+			ScriptFunction CreateOnlineGame() { mixin(MGF("mCreateOnlineGame", "Function Engine.OnlineGameInterface.CreateOnlineGame")); }
+			ScriptFunction OnCreateOnlineGameComplete() { mixin(MGF("mOnCreateOnlineGameComplete", "Function Engine.OnlineGameInterface.OnCreateOnlineGameComplete")); }
+			ScriptFunction OnJoinMigratedOnlineGameComplete() { mixin(MGF("mOnJoinMigratedOnlineGameComplete", "Function Engine.OnlineGameInterface.OnJoinMigratedOnlineGameComplete")); }
+			ScriptFunction OnMigrateOnlineGameComplete() { mixin(MGF("mOnMigrateOnlineGameComplete", "Function Engine.OnlineGameInterface.OnMigrateOnlineGameComplete")); }
+			ScriptFunction OnRecalculateSkillRatingComplete() { mixin(MGF("mOnRecalculateSkillRatingComplete", "Function Engine.OnlineGameInterface.OnRecalculateSkillRatingComplete")); }
+			ScriptFunction OnGameInviteAccepted() { mixin(MGF("mOnGameInviteAccepted", "Function Engine.OnlineGameInterface.OnGameInviteAccepted")); }
+			ScriptFunction OnArbitrationRegistrationComplete() { mixin(MGF("mOnArbitrationRegistrationComplete", "Function Engine.OnlineGameInterface.OnArbitrationRegistrationComplete")); }
+			ScriptFunction OnEndOnlineGameComplete() { mixin(MGF("mOnEndOnlineGameComplete", "Function Engine.OnlineGameInterface.OnEndOnlineGameComplete")); }
+			ScriptFunction OnStartOnlineGameComplete() { mixin(MGF("mOnStartOnlineGameComplete", "Function Engine.OnlineGameInterface.OnStartOnlineGameComplete")); }
+			ScriptFunction OnUnregisterPlayerComplete() { mixin(MGF("mOnUnregisterPlayerComplete", "Function Engine.OnlineGameInterface.OnUnregisterPlayerComplete")); }
+			ScriptFunction OnRegisterPlayerComplete() { mixin(MGF("mOnRegisterPlayerComplete", "Function Engine.OnlineGameInterface.OnRegisterPlayerComplete")); }
+			ScriptFunction OnJoinOnlineGameComplete() { mixin(MGF("mOnJoinOnlineGameComplete", "Function Engine.OnlineGameInterface.OnJoinOnlineGameComplete")); }
+			ScriptFunction OnQosStatusChanged() { mixin(MGF("mOnQosStatusChanged", "Function Engine.OnlineGameInterface.OnQosStatusChanged")); }
+			ScriptFunction OnCancelFindOnlineGamesComplete() { mixin(MGF("mOnCancelFindOnlineGamesComplete", "Function Engine.OnlineGameInterface.OnCancelFindOnlineGamesComplete")); }
+			ScriptFunction OnFindOnlineGamesComplete() { mixin(MGF("mOnFindOnlineGamesComplete", "Function Engine.OnlineGameInterface.OnFindOnlineGamesComplete")); }
+			ScriptFunction OnDestroyOnlineGameComplete() { mixin(MGF("mOnDestroyOnlineGameComplete", "Function Engine.OnlineGameInterface.OnDestroyOnlineGameComplete")); }
+			ScriptFunction OnUpdateOnlineGameComplete() { mixin(MGF("mOnUpdateOnlineGameComplete", "Function Engine.OnlineGameInterface.OnUpdateOnlineGameComplete")); }
+			ScriptFunction AddCreateOnlineGameCompleteDelegate() { mixin(MGF("mAddCreateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddCreateOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearCreateOnlineGameCompleteDelegate() { mixin(MGF("mClearCreateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearCreateOnlineGameCompleteDelegate")); }
+			ScriptFunction UpdateOnlineGame() { mixin(MGF("mUpdateOnlineGame", "Function Engine.OnlineGameInterface.UpdateOnlineGame")); }
+			ScriptFunction AddUpdateOnlineGameCompleteDelegate() { mixin(MGF("mAddUpdateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddUpdateOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearUpdateOnlineGameCompleteDelegate() { mixin(MGF("mClearUpdateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearUpdateOnlineGameCompleteDelegate")); }
+			ScriptFunction AddDestroyOnlineGameCompleteDelegate() { mixin(MGF("mAddDestroyOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddDestroyOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearDestroyOnlineGameCompleteDelegate() { mixin(MGF("mClearDestroyOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearDestroyOnlineGameCompleteDelegate")); }
+			ScriptFunction FindOnlineGames() { mixin(MGF("mFindOnlineGames", "Function Engine.OnlineGameInterface.FindOnlineGames")); }
+			ScriptFunction AddFindOnlineGamesCompleteDelegate() { mixin(MGF("mAddFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.AddFindOnlineGamesCompleteDelegate")); }
+			ScriptFunction ClearFindOnlineGamesCompleteDelegate() { mixin(MGF("mClearFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.ClearFindOnlineGamesCompleteDelegate")); }
+			ScriptFunction CancelFindOnlineGames() { mixin(MGF("mCancelFindOnlineGames", "Function Engine.OnlineGameInterface.CancelFindOnlineGames")); }
+			ScriptFunction AddCancelFindOnlineGamesCompleteDelegate() { mixin(MGF("mAddCancelFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.AddCancelFindOnlineGamesCompleteDelegate")); }
+			ScriptFunction ClearCancelFindOnlineGamesCompleteDelegate() { mixin(MGF("mClearCancelFindOnlineGamesCompleteDelegate", "Function Engine.OnlineGameInterface.ClearCancelFindOnlineGamesCompleteDelegate")); }
+			ScriptFunction AddQosStatusChangedDelegate() { mixin(MGF("mAddQosStatusChangedDelegate", "Function Engine.OnlineGameInterface.AddQosStatusChangedDelegate")); }
+			ScriptFunction ClearQosStatusChangedDelegate() { mixin(MGF("mClearQosStatusChangedDelegate", "Function Engine.OnlineGameInterface.ClearQosStatusChangedDelegate")); }
+			ScriptFunction ReadPlatformSpecificSessionInfo() { mixin(MGF("mReadPlatformSpecificSessionInfo", "Function Engine.OnlineGameInterface.ReadPlatformSpecificSessionInfo")); }
+			ScriptFunction GetGameSearch() { mixin(MGF("mGetGameSearch", "Function Engine.OnlineGameInterface.GetGameSearch")); }
+			ScriptFunction FreeSearchResults() { mixin(MGF("mFreeSearchResults", "Function Engine.OnlineGameInterface.FreeSearchResults")); }
+			ScriptFunction QueryNonAdvertisedData() { mixin(MGF("mQueryNonAdvertisedData", "Function Engine.OnlineGameInterface.QueryNonAdvertisedData")); }
+			ScriptFunction AddJoinOnlineGameCompleteDelegate() { mixin(MGF("mAddJoinOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddJoinOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearJoinOnlineGameCompleteDelegate() { mixin(MGF("mClearJoinOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearJoinOnlineGameCompleteDelegate")); }
+			ScriptFunction AddRegisterPlayerCompleteDelegate() { mixin(MGF("mAddRegisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.AddRegisterPlayerCompleteDelegate")); }
+			ScriptFunction ClearRegisterPlayerCompleteDelegate() { mixin(MGF("mClearRegisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.ClearRegisterPlayerCompleteDelegate")); }
+			ScriptFunction AddUnregisterPlayerCompleteDelegate() { mixin(MGF("mAddUnregisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.AddUnregisterPlayerCompleteDelegate")); }
+			ScriptFunction ClearUnregisterPlayerCompleteDelegate() { mixin(MGF("mClearUnregisterPlayerCompleteDelegate", "Function Engine.OnlineGameInterface.ClearUnregisterPlayerCompleteDelegate")); }
+			ScriptFunction AddStartOnlineGameCompleteDelegate() { mixin(MGF("mAddStartOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddStartOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearStartOnlineGameCompleteDelegate() { mixin(MGF("mClearStartOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearStartOnlineGameCompleteDelegate")); }
+			ScriptFunction AddEndOnlineGameCompleteDelegate() { mixin(MGF("mAddEndOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddEndOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearEndOnlineGameCompleteDelegate() { mixin(MGF("mClearEndOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearEndOnlineGameCompleteDelegate")); }
+			ScriptFunction AddArbitrationRegistrationCompleteDelegate() { mixin(MGF("mAddArbitrationRegistrationCompleteDelegate", "Function Engine.OnlineGameInterface.AddArbitrationRegistrationCompleteDelegate")); }
+			ScriptFunction ClearArbitrationRegistrationCompleteDelegate() { mixin(MGF("mClearArbitrationRegistrationCompleteDelegate", "Function Engine.OnlineGameInterface.ClearArbitrationRegistrationCompleteDelegate")); }
+			ScriptFunction GetArbitratedPlayers() { mixin(MGF("mGetArbitratedPlayers", "Function Engine.OnlineGameInterface.GetArbitratedPlayers")); }
+			ScriptFunction AddGameInviteAcceptedDelegate() { mixin(MGF("mAddGameInviteAcceptedDelegate", "Function Engine.OnlineGameInterface.AddGameInviteAcceptedDelegate")); }
+			ScriptFunction ClearGameInviteAcceptedDelegate() { mixin(MGF("mClearGameInviteAcceptedDelegate", "Function Engine.OnlineGameInterface.ClearGameInviteAcceptedDelegate")); }
+			ScriptFunction AddRecalculateSkillRatingCompleteDelegate() { mixin(MGF("mAddRecalculateSkillRatingCompleteDelegate", "Function Engine.OnlineGameInterface.AddRecalculateSkillRatingCompleteDelegate")); }
+			ScriptFunction ClearRecalculateSkillRatingCompleteDelegate() { mixin(MGF("mClearRecalculateSkillRatingCompleteDelegate", "Function Engine.OnlineGameInterface.ClearRecalculateSkillRatingCompleteDelegate")); }
+			ScriptFunction AddMigrateOnlineGameCompleteDelegate() { mixin(MGF("mAddMigrateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddMigrateOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearMigrateOnlineGameCompleteDelegate() { mixin(MGF("mClearMigrateOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearMigrateOnlineGameCompleteDelegate")); }
+			ScriptFunction AddJoinMigratedOnlineGameCompleteDelegate() { mixin(MGF("mAddJoinMigratedOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.AddJoinMigratedOnlineGameCompleteDelegate")); }
+			ScriptFunction ClearJoinMigratedOnlineGameCompleteDelegate() { mixin(MGF("mClearJoinMigratedOnlineGameCompleteDelegate", "Function Engine.OnlineGameInterface.ClearJoinMigratedOnlineGameCompleteDelegate")); }
 		}
 	}
 	@property final auto ref

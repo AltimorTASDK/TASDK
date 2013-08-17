@@ -13,9 +13,9 @@ extern(C++) interface MobileMenuButton : MobileMenuObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.MobileMenuButton")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.MobileMenuButton")); }
 	private static __gshared MobileMenuButton mDefaultProperties;
-	@property final static MobileMenuButton DefaultProperties() { mixin(MGDPC!(MobileMenuButton, "MobileMenuButton GameFramework.Default__MobileMenuButton")()); }
+	@property final static MobileMenuButton DefaultProperties() { mixin(MGDPC("MobileMenuButton", "MobileMenuButton GameFramework.Default__MobileMenuButton")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitMenuObject() { mixin(MGF!("mInitMenuObject", "Function GameFramework.MobileMenuButton.InitMenuObject")()); }
-			ScriptFunction RenderObject() { mixin(MGF!("mRenderObject", "Function GameFramework.MobileMenuButton.RenderObject")()); }
-			ScriptFunction RenderCaption() { mixin(MGF!("mRenderCaption", "Function GameFramework.MobileMenuButton.RenderCaption")()); }
+			ScriptFunction InitMenuObject() { mixin(MGF("mInitMenuObject", "Function GameFramework.MobileMenuButton.InitMenuObject")); }
+			ScriptFunction RenderObject() { mixin(MGF("mRenderObject", "Function GameFramework.MobileMenuButton.RenderObject")); }
+			ScriptFunction RenderCaption() { mixin(MGF("mRenderCaption", "Function GameFramework.MobileMenuButton.RenderCaption")); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject.LinearColor CaptionColor() { mixin(MGPC!("UObject.LinearColor", 208)()); }
-		ScriptString Caption() { mixin(MGPC!("ScriptString", 196)()); }
-		UObject.LinearColor ImageColor() { mixin(MGPC!("UObject.LinearColor", 180)()); }
-		MobileMenuObject.UVCoords ImagesUVs() { mixin(MGPC!("MobileMenuObject.UVCoords", 140)()); }
-		Texture2D Images() { mixin(MGPC!("Texture2D", 132)()); }
+		UObject.LinearColor CaptionColor() { mixin(MGPC("UObject.LinearColor", 208)); }
+		ScriptString Caption() { mixin(MGPC("ScriptString", 196)); }
+		UObject.LinearColor ImageColor() { mixin(MGPC("UObject.LinearColor", 180)); }
+		MobileMenuObject.UVCoords ImagesUVs() { mixin(MGPC("MobileMenuObject.UVCoords", 140)); }
+		Texture2D Images() { mixin(MGPC("Texture2D", 132)); }
 	}
 final:
 	void InitMenuObject(MobilePlayerInput pPlayerInput, MobileMenuScene pScene, int ScreenWidth, int ScreenHeight)

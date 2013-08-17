@@ -8,7 +8,7 @@ extern(C++) interface SequenceCondition : SequenceOp
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SequenceCondition")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SequenceCondition")); }
 	private static __gshared SequenceCondition mDefaultProperties;
-	@property final static SequenceCondition DefaultProperties() { mixin(MGDPC!(SequenceCondition, "SequenceCondition Engine.Default__SequenceCondition")()); }
+	@property final static SequenceCondition DefaultProperties() { mixin(MGDPC("SequenceCondition", "SequenceCondition Engine.Default__SequenceCondition")); }
 }

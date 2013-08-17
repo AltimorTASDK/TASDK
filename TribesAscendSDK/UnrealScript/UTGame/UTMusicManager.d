@@ -10,9 +10,9 @@ extern(C++) interface UTMusicManager : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMusicManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTMusicManager")); }
 	private static __gshared UTMusicManager mDefaultProperties;
-	@property final static UTMusicManager DefaultProperties() { mixin(MGDPC!(UTMusicManager, "UTMusicManager UTGame.Default__UTMusicManager")()); }
+	@property final static UTMusicManager DefaultProperties() { mixin(MGDPC("UTMusicManager", "UTMusicManager UTGame.Default__UTMusicManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,15 +29,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AlreadyInActionMusic() { mixin(MGF!("mAlreadyInActionMusic", "Function UTGame.UTMusicManager.AlreadyInActionMusic")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTMusicManager.PostBeginPlay")()); }
-			ScriptFunction StartMusic() { mixin(MGF!("mStartMusic", "Function UTGame.UTMusicManager.StartMusic")()); }
-			ScriptFunction IntroFinished() { mixin(MGF!("mIntroFinished", "Function UTGame.UTMusicManager.IntroFinished")()); }
-			ScriptFunction CreateNewTrack() { mixin(MGF!("mCreateNewTrack", "Function UTGame.UTMusicManager.CreateNewTrack")()); }
-			ScriptFunction MusicEvent() { mixin(MGF!("mMusicEvent", "Function UTGame.UTMusicManager.MusicEvent")()); }
-			ScriptFunction ProcessMusicEvent() { mixin(MGF!("mProcessMusicEvent", "Function UTGame.UTMusicManager.ProcessMusicEvent")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTMusicManager.Tick")()); }
-			ScriptFunction ChangeTrack() { mixin(MGF!("mChangeTrack", "Function UTGame.UTMusicManager.ChangeTrack")()); }
+			ScriptFunction AlreadyInActionMusic() { mixin(MGF("mAlreadyInActionMusic", "Function UTGame.UTMusicManager.AlreadyInActionMusic")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTMusicManager.PostBeginPlay")); }
+			ScriptFunction StartMusic() { mixin(MGF("mStartMusic", "Function UTGame.UTMusicManager.StartMusic")); }
+			ScriptFunction IntroFinished() { mixin(MGF("mIntroFinished", "Function UTGame.UTMusicManager.IntroFinished")); }
+			ScriptFunction CreateNewTrack() { mixin(MGF("mCreateNewTrack", "Function UTGame.UTMusicManager.CreateNewTrack")); }
+			ScriptFunction MusicEvent() { mixin(MGF("mMusicEvent", "Function UTGame.UTMusicManager.MusicEvent")); }
+			ScriptFunction ProcessMusicEvent() { mixin(MGF("mProcessMusicEvent", "Function UTGame.UTMusicManager.ProcessMusicEvent")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function UTGame.UTMusicManager.Tick")); }
+			ScriptFunction ChangeTrack() { mixin(MGF("mChangeTrack", "Function UTGame.UTMusicManager.ChangeTrack")); }
 		}
 	}
 	enum EMusicState : ubyte
@@ -53,23 +53,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MusicStartTime() { mixin(MGPC!("float", 476)()); }
+			float MusicStartTime() { mixin(MGPC("float", 476)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MusicTracks'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CurrentTrack'!
-			int LastBeat() { mixin(MGPC!("int", 480)()); }
-			UTMusicManager.EMusicState CurrentState() { mixin(MGPC!("UTMusicManager.EMusicState", 512)()); }
-			float MusicVolume() { mixin(MGPC!("float", 496)()); }
-			UTPlayerController PlayerOwner() { mixin(MGPC!("UTPlayerController", 492)()); }
-			float CurrTempo() { mixin(MGPC!("float", 484)()); }
-			float CurrFadeFactor() { mixin(MGPC!("float", 488)()); }
-			int PendingEvent() { mixin(MGPC!("int", 516)()); }
-			float PendingEventPlayTime() { mixin(MGPC!("float", 520)()); }
-			float PendingEventDelay() { mixin(MGPC!("float", 524)()); }
-			float LastActionEventTime() { mixin(MGPC!("float", 500)()); }
-			float StingerVolumeMultiplier() { mixin(MGPC!("float", 508)()); }
+			int LastBeat() { mixin(MGPC("int", 480)); }
+			UTMusicManager.EMusicState CurrentState() { mixin(MGPC("UTMusicManager.EMusicState", 512)); }
+			float MusicVolume() { mixin(MGPC("float", 496)); }
+			UTPlayerController PlayerOwner() { mixin(MGPC("UTPlayerController", 492)); }
+			float CurrTempo() { mixin(MGPC("float", 484)); }
+			float CurrFadeFactor() { mixin(MGPC("float", 488)); }
+			int PendingEvent() { mixin(MGPC("int", 516)); }
+			float PendingEventPlayTime() { mixin(MGPC("float", 520)); }
+			float PendingEventDelay() { mixin(MGPC("float", 524)); }
+			float LastActionEventTime() { mixin(MGPC("float", 500)); }
+			float StingerVolumeMultiplier() { mixin(MGPC("float", 508)); }
 		}
-		bool bPendingAction() { mixin(MGBPC!(504, 0x1)()); }
-		bool bPendingAction(bool val) { mixin(MSBPC!(504, 0x1)()); }
+		bool bPendingAction() { mixin(MGBPC(504, 0x1)); }
+		bool bPendingAction(bool val) { mixin(MSBPC(504, 0x1)); }
 	}
 final:
 	bool AlreadyInActionMusic()

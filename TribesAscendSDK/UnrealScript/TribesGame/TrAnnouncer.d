@@ -10,9 +10,9 @@ extern(C++) interface TrAnnouncer : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnnouncer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAnnouncer")); }
 	private static __gshared TrAnnouncer mDefaultProperties;
-	@property final static TrAnnouncer DefaultProperties() { mixin(MGDPC!(TrAnnouncer, "TrAnnouncer TribesGame.Default__TrAnnouncer")()); }
+	@property final static TrAnnouncer DefaultProperties() { mixin(MGDPC("TrAnnouncer", "TrAnnouncer TribesGame.Default__TrAnnouncer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrAnnouncer.Destroyed")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrAnnouncer.PostBeginPlay")()); }
-			ScriptFunction PlayAnnouncement() { mixin(MGF!("mPlayAnnouncement", "Function TribesGame.TrAnnouncer.PlayAnnouncement")()); }
-			ScriptFunction AnnouncementFinished() { mixin(MGF!("mAnnouncementFinished", "Function TribesGame.TrAnnouncer.AnnouncementFinished")()); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrAnnouncer.Destroyed")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrAnnouncer.PostBeginPlay")); }
+			ScriptFunction PlayAnnouncement() { mixin(MGF("mPlayAnnouncement", "Function TribesGame.TrAnnouncer.PlayAnnouncement")); }
+			ScriptFunction AnnouncementFinished() { mixin(MGF("mAnnouncementFinished", "Function TribesGame.TrAnnouncer.AnnouncementFinished")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundCue) m_QueuedAnnouncements() { mixin(MGPC!("ScriptArray!(SoundCue)", 476)()); }
-		TrPlayerController m_PlayerOwner() { mixin(MGPC!("TrPlayerController", 492)()); }
+		ScriptArray!(SoundCue) m_QueuedAnnouncements() { mixin(MGPC("ScriptArray!(SoundCue)", 476)); }
+		TrPlayerController m_PlayerOwner() { mixin(MGPC("TrPlayerController", 492)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CurrentAnnouncementAudioComponent'!
 	}
 final:

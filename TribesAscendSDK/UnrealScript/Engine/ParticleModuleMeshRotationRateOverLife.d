@@ -9,13 +9,13 @@ extern(C++) interface ParticleModuleMeshRotationRateOverLife : ParticleModuleRot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleMeshRotationRateOverLife")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleMeshRotationRateOverLife")); }
 	private static __gshared ParticleModuleMeshRotationRateOverLife mDefaultProperties;
-	@property final static ParticleModuleMeshRotationRateOverLife DefaultProperties() { mixin(MGDPC!(ParticleModuleMeshRotationRateOverLife, "ParticleModuleMeshRotationRateOverLife Engine.Default__ParticleModuleMeshRotationRateOverLife")()); }
+	@property final static ParticleModuleMeshRotationRateOverLife DefaultProperties() { mixin(MGDPC("ParticleModuleMeshRotationRateOverLife", "ParticleModuleMeshRotationRateOverLife Engine.Default__ParticleModuleMeshRotationRateOverLife")); }
 	@property final
 	{
-		@property final auto ref DistributionVector.RawDistributionVector RotRate() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
-		bool bScaleRotRate() { mixin(MGBPC!(100, 0x1)()); }
-		bool bScaleRotRate(bool val) { mixin(MSBPC!(100, 0x1)()); }
+		@property final auto ref DistributionVector.RawDistributionVector RotRate() { mixin(MGPC("DistributionVector.RawDistributionVector", 72)); }
+		bool bScaleRotRate() { mixin(MGBPC(100, 0x1)); }
+		bool bScaleRotRate(bool val) { mixin(MSBPC(100, 0x1)); }
 	}
 }

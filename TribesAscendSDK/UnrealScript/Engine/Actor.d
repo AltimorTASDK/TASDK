@@ -51,9 +51,9 @@ extern(C++) interface Actor : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Actor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Actor")); }
 	private static __gshared Actor mDefaultProperties;
-	@property final static Actor DefaultProperties() { mixin(MGDPC!(Actor, "Actor Engine.Default__Actor")()); }
+	@property final static Actor DefaultProperties() { mixin(MGDPC("Actor", "Actor Engine.Default__Actor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -306,251 +306,251 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ForceUpdateComponents() { mixin(MGF!("mForceUpdateComponents", "Function Engine.Actor.ForceUpdateComponents")()); }
-			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function Engine.Actor.ConsoleCommand")()); }
-			ScriptFunction Sleep() { mixin(MGF!("mSleep", "Function Engine.Actor.Sleep")()); }
-			ScriptFunction FinishAnim() { mixin(MGF!("mFinishAnim", "Function Engine.Actor.FinishAnim")()); }
-			ScriptFunction SetCollision() { mixin(MGF!("mSetCollision", "Function Engine.Actor.SetCollision")()); }
-			ScriptFunction SetCollisionSize() { mixin(MGF!("mSetCollisionSize", "Function Engine.Actor.SetCollisionSize")()); }
-			ScriptFunction SetCollisionType() { mixin(MGF!("mSetCollisionType", "Function Engine.Actor.SetCollisionType")()); }
-			ScriptFunction SetDrawScale() { mixin(MGF!("mSetDrawScale", "Function Engine.Actor.SetDrawScale")()); }
-			ScriptFunction SetDrawScale3D() { mixin(MGF!("mSetDrawScale3D", "Function Engine.Actor.SetDrawScale3D")()); }
-			ScriptFunction Move() { mixin(MGF!("mMove", "Function Engine.Actor.Move")()); }
-			ScriptFunction SetLocation() { mixin(MGF!("mSetLocation", "Function Engine.Actor.SetLocation")()); }
-			ScriptFunction SetRotation() { mixin(MGF!("mSetRotation", "Function Engine.Actor.SetRotation")()); }
-			ScriptFunction MovingWhichWay() { mixin(MGF!("mMovingWhichWay", "Function Engine.Actor.MovingWhichWay")()); }
-			ScriptFunction SetZone() { mixin(MGF!("mSetZone", "Function Engine.Actor.SetZone")()); }
-			ScriptFunction SetRelativeRotation() { mixin(MGF!("mSetRelativeRotation", "Function Engine.Actor.SetRelativeRotation")()); }
-			ScriptFunction SetRelativeLocation() { mixin(MGF!("mSetRelativeLocation", "Function Engine.Actor.SetRelativeLocation")()); }
-			ScriptFunction SetHardAttach() { mixin(MGF!("mSetHardAttach", "Function Engine.Actor.SetHardAttach")()); }
-			ScriptFunction fixedTurn() { mixin(MGF!("mfixedTurn", "Function Engine.Actor.fixedTurn")()); }
-			ScriptFunction MoveSmooth() { mixin(MGF!("mMoveSmooth", "Function Engine.Actor.MoveSmooth")()); }
-			ScriptFunction AutonomousPhysics() { mixin(MGF!("mAutonomousPhysics", "Function Engine.Actor.AutonomousPhysics")()); }
-			ScriptFunction GetTerminalVelocity() { mixin(MGF!("mGetTerminalVelocity", "Function Engine.Actor.GetTerminalVelocity")()); }
-			ScriptFunction SetBase() { mixin(MGF!("mSetBase", "Function Engine.Actor.SetBase")()); }
-			ScriptFunction SetOwner() { mixin(MGF!("mSetOwner", "Function Engine.Actor.SetOwner")()); }
-			ScriptFunction FindBase() { mixin(MGF!("mFindBase", "Function Engine.Actor.FindBase")()); }
-			ScriptFunction IsBasedOn() { mixin(MGF!("mIsBasedOn", "Function Engine.Actor.IsBasedOn")()); }
-			ScriptFunction GetBaseMost() { mixin(MGF!("mGetBaseMost", "Function Engine.Actor.GetBaseMost")()); }
-			ScriptFunction IsOwnedBy() { mixin(MGF!("mIsOwnedBy", "Function Engine.Actor.IsOwnedBy")()); }
-			ScriptFunction GetAggregateBaseVelocity() { mixin(MGF!("mGetAggregateBaseVelocity", "Function Engine.Actor.GetAggregateBaseVelocity")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.Actor.ReplicatedEvent")()); }
-			ScriptFunction SetForcedInitialReplicatedProperty() { mixin(MGF!("mSetForcedInitialReplicatedProperty", "Function Engine.Actor.SetForcedInitialReplicatedProperty")()); }
-			ScriptFunction Vect2BP() { mixin(MGF!("mVect2BP", "Function Engine.Actor.Vect2BP")()); }
-			ScriptFunction BP2Vect() { mixin(MGF!("mBP2Vect", "Function Engine.Actor.BP2Vect")()); }
-			ScriptFunction SetBasedPosition() { mixin(MGF!("mSetBasedPosition", "Function Engine.Actor.SetBasedPosition")()); }
-			ScriptFunction GetBasedPosition() { mixin(MGF!("mGetBasedPosition", "Function Engine.Actor.GetBasedPosition")()); }
-			ScriptFunction FlushPersistentDebugLines() { mixin(MGF!("mFlushPersistentDebugLines", "Function Engine.Actor.FlushPersistentDebugLines")()); }
-			ScriptFunction DrawDebugLine() { mixin(MGF!("mDrawDebugLine", "Function Engine.Actor.DrawDebugLine")()); }
-			ScriptFunction DrawDebugPoint() { mixin(MGF!("mDrawDebugPoint", "Function Engine.Actor.DrawDebugPoint")()); }
-			ScriptFunction DrawDebugBox() { mixin(MGF!("mDrawDebugBox", "Function Engine.Actor.DrawDebugBox")()); }
-			ScriptFunction DrawDebugStar() { mixin(MGF!("mDrawDebugStar", "Function Engine.Actor.DrawDebugStar")()); }
-			ScriptFunction DrawDebugCoordinateSystem() { mixin(MGF!("mDrawDebugCoordinateSystem", "Function Engine.Actor.DrawDebugCoordinateSystem")()); }
-			ScriptFunction DrawDebugSphere() { mixin(MGF!("mDrawDebugSphere", "Function Engine.Actor.DrawDebugSphere")()); }
-			ScriptFunction DrawDebugCylinder() { mixin(MGF!("mDrawDebugCylinder", "Function Engine.Actor.DrawDebugCylinder")()); }
-			ScriptFunction DrawDebugCone() { mixin(MGF!("mDrawDebugCone", "Function Engine.Actor.DrawDebugCone")()); }
-			ScriptFunction DrawDebugString() { mixin(MGF!("mDrawDebugString", "Function Engine.Actor.DrawDebugString")()); }
-			ScriptFunction DrawDebugFrustrum() { mixin(MGF!("mDrawDebugFrustrum", "Function Engine.Actor.DrawDebugFrustrum")()); }
-			ScriptFunction FlushDebugStrings() { mixin(MGF!("mFlushDebugStrings", "Function Engine.Actor.FlushDebugStrings")()); }
-			ScriptFunction ChartData() { mixin(MGF!("mChartData", "Function Engine.Actor.ChartData")()); }
-			ScriptFunction SetHidden() { mixin(MGF!("mSetHidden", "Function Engine.Actor.SetHidden")()); }
-			ScriptFunction SetOnlyOwnerSee() { mixin(MGF!("mSetOnlyOwnerSee", "Function Engine.Actor.SetOnlyOwnerSee")()); }
-			ScriptFunction SetPhysics() { mixin(MGF!("mSetPhysics", "Function Engine.Actor.SetPhysics")()); }
-			ScriptFunction Clock() { mixin(MGF!("mClock", "Function Engine.Actor.Clock")()); }
-			ScriptFunction UnClock() { mixin(MGF!("mUnClock", "Function Engine.Actor.UnClock")()); }
-			ScriptFunction AttachComponent() { mixin(MGF!("mAttachComponent", "Function Engine.Actor.AttachComponent")()); }
-			ScriptFunction DetachComponent() { mixin(MGF!("mDetachComponent", "Function Engine.Actor.DetachComponent")()); }
-			ScriptFunction ReattachComponent() { mixin(MGF!("mReattachComponent", "Function Engine.Actor.ReattachComponent")()); }
-			ScriptFunction SetTickGroup() { mixin(MGF!("mSetTickGroup", "Function Engine.Actor.SetTickGroup")()); }
-			ScriptFunction SetTickIsDisabled() { mixin(MGF!("mSetTickIsDisabled", "Function Engine.Actor.SetTickIsDisabled")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Actor.Destroyed")()); }
-			ScriptFunction GainedChild() { mixin(MGF!("mGainedChild", "Function Engine.Actor.GainedChild")()); }
-			ScriptFunction LostChild() { mixin(MGF!("mLostChild", "Function Engine.Actor.LostChild")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function Engine.Actor.Tick")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.Actor.Timer")()); }
-			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function Engine.Actor.HitWall")()); }
-			ScriptFunction Falling() { mixin(MGF!("mFalling", "Function Engine.Actor.Falling")()); }
-			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function Engine.Actor.Landed")()); }
-			ScriptFunction PhysicsVolumeChange() { mixin(MGF!("mPhysicsVolumeChange", "Function Engine.Actor.PhysicsVolumeChange")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.Actor.Touch")()); }
-			ScriptFunction PostTouch() { mixin(MGF!("mPostTouch", "Function Engine.Actor.PostTouch")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function Engine.Actor.UnTouch")()); }
-			ScriptFunction Bump() { mixin(MGF!("mBump", "Function Engine.Actor.Bump")()); }
-			ScriptFunction BaseChange() { mixin(MGF!("mBaseChange", "Function Engine.Actor.BaseChange")()); }
-			ScriptFunction Attach() { mixin(MGF!("mAttach", "Function Engine.Actor.Attach")()); }
-			ScriptFunction Detach() { mixin(MGF!("mDetach", "Function Engine.Actor.Detach")()); }
-			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.Actor.SpecialHandling")()); }
-			ScriptFunction CollisionChanged() { mixin(MGF!("mCollisionChanged", "Function Engine.Actor.CollisionChanged")()); }
-			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.Actor.EncroachingOn")()); }
-			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.Actor.EncroachedBy")()); }
-			ScriptFunction RanInto() { mixin(MGF!("mRanInto", "Function Engine.Actor.RanInto")()); }
-			ScriptFunction OnWakeRBPhysics() { mixin(MGF!("mOnWakeRBPhysics", "Function Engine.Actor.OnWakeRBPhysics")()); }
-			ScriptFunction OnSleepRBPhysics() { mixin(MGF!("mOnSleepRBPhysics", "Function Engine.Actor.OnSleepRBPhysics")()); }
-			ScriptFunction ClampRotation() { mixin(MGF!("mClampRotation", "Function Engine.Actor.ClampRotation")()); }
-			ScriptFunction OverRotated() { mixin(MGF!("mOverRotated", "Function Engine.Actor.OverRotated")()); }
-			ScriptFunction UsedBy() { mixin(MGF!("mUsedBy", "Function Engine.Actor.UsedBy")()); }
-			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.Actor.FellOutOfWorld")()); }
-			ScriptFunction OutsideWorldBounds() { mixin(MGF!("mOutsideWorldBounds", "Function Engine.Actor.OutsideWorldBounds")()); }
-			ScriptFunction VolumeBasedDestroy() { mixin(MGF!("mVolumeBasedDestroy", "Function Engine.Actor.VolumeBasedDestroy")()); }
-			ScriptFunction Trace() { mixin(MGF!("mTrace", "Function Engine.Actor.Trace")()); }
-			ScriptFunction TraceComponent() { mixin(MGF!("mTraceComponent", "Function Engine.Actor.TraceComponent")()); }
-			ScriptFunction PointCheckComponent() { mixin(MGF!("mPointCheckComponent", "Function Engine.Actor.PointCheckComponent")()); }
-			ScriptFunction FastTrace() { mixin(MGF!("mFastTrace", "Function Engine.Actor.FastTrace")()); }
-			ScriptFunction TraceAllPhysicsAssetInteractions() { mixin(MGF!("mTraceAllPhysicsAssetInteractions", "Function Engine.Actor.TraceAllPhysicsAssetInteractions")()); }
-			ScriptFunction FindSpot() { mixin(MGF!("mFindSpot", "Function Engine.Actor.FindSpot")()); }
-			ScriptFunction ContainsPoint() { mixin(MGF!("mContainsPoint", "Function Engine.Actor.ContainsPoint")()); }
-			ScriptFunction IsOverlapping() { mixin(MGF!("mIsOverlapping", "Function Engine.Actor.IsOverlapping")()); }
-			ScriptFunction GetComponentsBoundingBox() { mixin(MGF!("mGetComponentsBoundingBox", "Function Engine.Actor.GetComponentsBoundingBox")()); }
-			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function Engine.Actor.GetBoundingCylinder")()); }
-			ScriptFunction IsBlockedBy() { mixin(MGF!("mIsBlockedBy", "Function Engine.Actor.IsBlockedBy")()); }
-			ScriptFunction Spawn() { mixin(MGF!("mSpawn", "Function Engine.Actor.Spawn")()); }
-			ScriptFunction Destroy() { mixin(MGF!("mDestroy", "Function Engine.Actor.Destroy")()); }
-			ScriptFunction TornOff() { mixin(MGF!("mTornOff", "Function Engine.Actor.TornOff")()); }
-			ScriptFunction SetTimer() { mixin(MGF!("mSetTimer", "Function Engine.Actor.SetTimer")()); }
-			ScriptFunction ClearTimer() { mixin(MGF!("mClearTimer", "Function Engine.Actor.ClearTimer")()); }
-			ScriptFunction ClearAllTimers() { mixin(MGF!("mClearAllTimers", "Function Engine.Actor.ClearAllTimers")()); }
-			ScriptFunction PauseTimer() { mixin(MGF!("mPauseTimer", "Function Engine.Actor.PauseTimer")()); }
-			ScriptFunction IsTimerActive() { mixin(MGF!("mIsTimerActive", "Function Engine.Actor.IsTimerActive")()); }
-			ScriptFunction GetTimerCount() { mixin(MGF!("mGetTimerCount", "Function Engine.Actor.GetTimerCount")()); }
-			ScriptFunction GetTimerRate() { mixin(MGF!("mGetTimerRate", "Function Engine.Actor.GetTimerRate")()); }
-			ScriptFunction GetRemainingTimeForTimer() { mixin(MGF!("mGetRemainingTimeForTimer", "Function Engine.Actor.GetRemainingTimeForTimer")()); }
-			ScriptFunction ModifyTimerTimeDilation() { mixin(MGF!("mModifyTimerTimeDilation", "Function Engine.Actor.ModifyTimerTimeDilation")()); }
-			ScriptFunction ResetTimerTimeDilation() { mixin(MGF!("mResetTimerTimeDilation", "Function Engine.Actor.ResetTimerTimeDilation")()); }
-			ScriptFunction CreateAudioComponent() { mixin(MGF!("mCreateAudioComponent", "Function Engine.Actor.CreateAudioComponent")()); }
-			ScriptFunction PlaySound() { mixin(MGF!("mPlaySound", "Function Engine.Actor.PlaySound")()); }
-			ScriptFunction MakeNoise() { mixin(MGF!("mMakeNoise", "Function Engine.Actor.MakeNoise")()); }
-			ScriptFunction PlayerCanSeeMe() { mixin(MGF!("mPlayerCanSeeMe", "Function Engine.Actor.PlayerCanSeeMe")()); }
-			ScriptFunction SuggestTossVelocity() { mixin(MGF!("mSuggestTossVelocity", "Function Engine.Actor.SuggestTossVelocity")()); }
-			ScriptFunction CalculateMinSpeedTrajectory() { mixin(MGF!("mCalculateMinSpeedTrajectory", "Function Engine.Actor.CalculateMinSpeedTrajectory")()); }
-			ScriptFunction GetDestination() { mixin(MGF!("mGetDestination", "Function Engine.Actor.GetDestination")()); }
-			ScriptFunction PreTeleport() { mixin(MGF!("mPreTeleport", "Function Engine.Actor.PreTeleport")()); }
-			ScriptFunction PostTeleport() { mixin(MGF!("mPostTeleport", "Function Engine.Actor.PostTeleport")()); }
-			ScriptFunction GetURLMap() { mixin(MGF!("mGetURLMap", "Function Engine.Actor.GetURLMap")()); }
-			ScriptFunction AllActors() { mixin(MGF!("mAllActors", "Function Engine.Actor.AllActors")()); }
-			ScriptFunction DynamicActors() { mixin(MGF!("mDynamicActors", "Function Engine.Actor.DynamicActors")()); }
-			ScriptFunction ChildActors() { mixin(MGF!("mChildActors", "Function Engine.Actor.ChildActors")()); }
-			ScriptFunction BasedActors() { mixin(MGF!("mBasedActors", "Function Engine.Actor.BasedActors")()); }
-			ScriptFunction TouchingActors() { mixin(MGF!("mTouchingActors", "Function Engine.Actor.TouchingActors")()); }
-			ScriptFunction TraceActors() { mixin(MGF!("mTraceActors", "Function Engine.Actor.TraceActors")()); }
-			ScriptFunction VisibleActors() { mixin(MGF!("mVisibleActors", "Function Engine.Actor.VisibleActors")()); }
-			ScriptFunction VisibleCollidingActors() { mixin(MGF!("mVisibleCollidingActors", "Function Engine.Actor.VisibleCollidingActors")()); }
-			ScriptFunction CollidingActors() { mixin(MGF!("mCollidingActors", "Function Engine.Actor.CollidingActors")()); }
-			ScriptFunction VisibleCollidingExtentActors() { mixin(MGF!("mVisibleCollidingExtentActors", "Function Engine.Actor.VisibleCollidingExtentActors")()); }
-			ScriptFunction OverlappingActors() { mixin(MGF!("mOverlappingActors", "Function Engine.Actor.OverlappingActors")()); }
-			ScriptFunction ComponentList() { mixin(MGF!("mComponentList", "Function Engine.Actor.ComponentList")()); }
-			ScriptFunction AllOwnedComponents() { mixin(MGF!("mAllOwnedComponents", "Function Engine.Actor.AllOwnedComponents")()); }
-			ScriptFunction LocalPlayerControllers() { mixin(MGF!("mLocalPlayerControllers", "Function Engine.Actor.LocalPlayerControllers")()); }
-			ScriptFunction GetALocalPlayerController() { mixin(MGF!("mGetALocalPlayerController", "Function Engine.Actor.GetALocalPlayerController")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.Actor.PreBeginPlay")()); }
-			ScriptFunction BroadcastLocalizedMessage() { mixin(MGF!("mBroadcastLocalizedMessage", "Function Engine.Actor.BroadcastLocalizedMessage")()); }
-			ScriptFunction BroadcastLocalizedTeamMessage() { mixin(MGF!("mBroadcastLocalizedTeamMessage", "Function Engine.Actor.BroadcastLocalizedTeamMessage")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Actor.PostBeginPlay")()); }
-			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function Engine.Actor.SetInitialState")()); }
-			ScriptFunction ConstraintBrokenNotify() { mixin(MGF!("mConstraintBrokenNotify", "Function Engine.Actor.ConstraintBrokenNotify")()); }
-			ScriptFunction NotifySkelControlBeyondLimit() { mixin(MGF!("mNotifySkelControlBeyondLimit", "Function Engine.Actor.NotifySkelControlBeyondLimit")()); }
-			ScriptFunction StopsProjectile() { mixin(MGF!("mStopsProjectile", "Function Engine.Actor.StopsProjectile")()); }
-			ScriptFunction HurtRadius() { mixin(MGF!("mHurtRadius", "Function Engine.Actor.HurtRadius")()); }
-			ScriptFunction KilledBy() { mixin(MGF!("mKilledBy", "Function Engine.Actor.KilledBy")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.Actor.TakeDamage")()); }
-			ScriptFunction HealDamage() { mixin(MGF!("mHealDamage", "Function Engine.Actor.HealDamage")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.Actor.TakeRadiusDamage")()); }
-			ScriptFunction CheckHitInfo() { mixin(MGF!("mCheckHitInfo", "Function Engine.Actor.CheckHitInfo")()); }
-			ScriptFunction GetGravityZ() { mixin(MGF!("mGetGravityZ", "Function Engine.Actor.GetGravityZ")()); }
-			ScriptFunction DebugFreezeGame() { mixin(MGF!("mDebugFreezeGame", "Function Engine.Actor.DebugFreezeGame")()); }
-			ScriptFunction CheckForErrors() { mixin(MGF!("mCheckForErrors", "Function Engine.Actor.CheckForErrors")()); }
-			ScriptFunction BecomeViewTarget() { mixin(MGF!("mBecomeViewTarget", "Function Engine.Actor.BecomeViewTarget")()); }
-			ScriptFunction EndViewTarget() { mixin(MGF!("mEndViewTarget", "Function Engine.Actor.EndViewTarget")()); }
-			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function Engine.Actor.CalcCamera")()); }
-			ScriptFunction GetItemName() { mixin(MGF!("mGetItemName", "Function Engine.Actor.GetItemName")()); }
-			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function Engine.Actor.GetHumanReadableName")()); }
-			ScriptFunction ReplaceText() { mixin(MGF!("mReplaceText", "Function Engine.Actor.ReplaceText")()); }
-			ScriptFunction GetLocalString() { mixin(MGF!("mGetLocalString", "Function Engine.Actor.GetLocalString")()); }
-			ScriptFunction MatchStarting() { mixin(MGF!("mMatchStarting", "Function Engine.Actor.MatchStarting")()); }
-			ScriptFunction GetDebugName() { mixin(MGF!("mGetDebugName", "Function Engine.Actor.GetDebugName")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Actor.DisplayDebug")()); }
-			ScriptFunction GetPhysicsName() { mixin(MGF!("mGetPhysicsName", "Function Engine.Actor.GetPhysicsName")()); }
-			ScriptFunction ModifyHearSoundComponent() { mixin(MGF!("mModifyHearSoundComponent", "Function Engine.Actor.ModifyHearSoundComponent")()); }
-			ScriptFunction GetFaceFXAudioComponent() { mixin(MGF!("mGetFaceFXAudioComponent", "Function Engine.Actor.GetFaceFXAudioComponent")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.Actor.Reset")()); }
-			ScriptFunction IsInPain() { mixin(MGF!("mIsInPain", "Function Engine.Actor.IsInPain")()); }
-			ScriptFunction PlayTeleportEffect() { mixin(MGF!("mPlayTeleportEffect", "Function Engine.Actor.PlayTeleportEffect")()); }
-			ScriptFunction CanSplash() { mixin(MGF!("mCanSplash", "Function Engine.Actor.CanSplash")()); }
-			ScriptFunction ApplyFluidSurfaceImpact() { mixin(MGF!("mApplyFluidSurfaceImpact", "Function Engine.Actor.ApplyFluidSurfaceImpact")()); }
-			ScriptFunction EffectIsRelevant() { mixin(MGF!("mEffectIsRelevant", "Function Engine.Actor.EffectIsRelevant")()); }
-			ScriptFunction DebugMessagePlayer() { mixin(MGF!("mDebugMessagePlayer", "Function Engine.Actor.DebugMessagePlayer")()); }
-			ScriptFunction TriggerEventClass() { mixin(MGF!("mTriggerEventClass", "Function Engine.Actor.TriggerEventClass")()); }
-			ScriptFunction ActivateEventClass() { mixin(MGF!("mActivateEventClass", "Function Engine.Actor.ActivateEventClass")()); }
-			ScriptFunction ReceivedNewEvent() { mixin(MGF!("mReceivedNewEvent", "Function Engine.Actor.ReceivedNewEvent")()); }
-			ScriptFunction TriggerGlobalEventClass() { mixin(MGF!("mTriggerGlobalEventClass", "Function Engine.Actor.TriggerGlobalEventClass")()); }
-			ScriptFunction FindEventsOfClass() { mixin(MGF!("mFindEventsOfClass", "Function Engine.Actor.FindEventsOfClass")()); }
-			ScriptFunction ClearLatentAction() { mixin(MGF!("mClearLatentAction", "Function Engine.Actor.ClearLatentAction")()); }
-			ScriptFunction OnDestroy() { mixin(MGF!("mOnDestroy", "Function Engine.Actor.OnDestroy")()); }
-			ScriptFunction ForceNetRelevant() { mixin(MGF!("mForceNetRelevant", "Function Engine.Actor.ForceNetRelevant")()); }
-			ScriptFunction SetNetUpdateTime() { mixin(MGF!("mSetNetUpdateTime", "Function Engine.Actor.SetNetUpdateTime")()); }
-			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.Actor.ShutDown")()); }
-			ScriptFunction PrestreamTextures() { mixin(MGF!("mPrestreamTextures", "Function Engine.Actor.PrestreamTextures")()); }
-			ScriptFunction OnModifyHealth() { mixin(MGF!("mOnModifyHealth", "Function Engine.Actor.OnModifyHealth")()); }
-			ScriptFunction OnTeleport() { mixin(MGF!("mOnTeleport", "Function Engine.Actor.OnTeleport")()); }
-			ScriptFunction OnSetVelocity() { mixin(MGF!("mOnSetVelocity", "Function Engine.Actor.OnSetVelocity")()); }
-			ScriptFunction OnSetBlockRigidBody() { mixin(MGF!("mOnSetBlockRigidBody", "Function Engine.Actor.OnSetBlockRigidBody")()); }
-			ScriptFunction OnSetPhysics() { mixin(MGF!("mOnSetPhysics", "Function Engine.Actor.OnSetPhysics")()); }
-			ScriptFunction OnChangeCollision() { mixin(MGF!("mOnChangeCollision", "Function Engine.Actor.OnChangeCollision")()); }
-			ScriptFunction OnToggleHidden() { mixin(MGF!("mOnToggleHidden", "Function Engine.Actor.OnToggleHidden")()); }
-			ScriptFunction OnAttachToActor() { mixin(MGF!("mOnAttachToActor", "Function Engine.Actor.OnAttachToActor")()); }
-			ScriptFunction DoKismetAttachment() { mixin(MGF!("mDoKismetAttachment", "Function Engine.Actor.DoKismetAttachment")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function Engine.Actor.OnAnimEnd")()); }
-			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function Engine.Actor.OnAnimPlay")()); }
-			ScriptFunction BeginAnimControl() { mixin(MGF!("mBeginAnimControl", "Function Engine.Actor.BeginAnimControl")()); }
-			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function Engine.Actor.SetAnimPosition")()); }
-			ScriptFunction FinishAnimControl() { mixin(MGF!("mFinishAnimControl", "Function Engine.Actor.FinishAnimControl")()); }
-			ScriptFunction PlayActorFaceFXAnim() { mixin(MGF!("mPlayActorFaceFXAnim", "Function Engine.Actor.PlayActorFaceFXAnim")()); }
-			ScriptFunction StopActorFaceFXAnim() { mixin(MGF!("mStopActorFaceFXAnim", "Function Engine.Actor.StopActorFaceFXAnim")()); }
-			ScriptFunction SetMorphWeight() { mixin(MGF!("mSetMorphWeight", "Function Engine.Actor.SetMorphWeight")()); }
-			ScriptFunction SetSkelControlScale() { mixin(MGF!("mSetSkelControlScale", "Function Engine.Actor.SetSkelControlScale")()); }
-			ScriptFunction IsActorPlayingFaceFXAnim() { mixin(MGF!("mIsActorPlayingFaceFXAnim", "Function Engine.Actor.IsActorPlayingFaceFXAnim")()); }
-			ScriptFunction CanActorPlayFaceFXAnim() { mixin(MGF!("mCanActorPlayFaceFXAnim", "Function Engine.Actor.CanActorPlayFaceFXAnim")()); }
-			ScriptFunction GetActorFaceFXAsset() { mixin(MGF!("mGetActorFaceFXAsset", "Function Engine.Actor.GetActorFaceFXAsset")()); }
-			ScriptFunction IsStationary() { mixin(MGF!("mIsStationary", "Function Engine.Actor.IsStationary")()); }
-			ScriptFunction GetActorEyesViewPoint() { mixin(MGF!("mGetActorEyesViewPoint", "Function Engine.Actor.GetActorEyesViewPoint")()); }
-			ScriptFunction IsPlayerOwned() { mixin(MGF!("mIsPlayerOwned", "Function Engine.Actor.IsPlayerOwned")()); }
-			ScriptFunction PawnBaseDied() { mixin(MGF!("mPawnBaseDied", "Function Engine.Actor.PawnBaseDied")()); }
-			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.Actor.GetTeamNum")()); }
-			ScriptFunction ScriptGetTeamNum() { mixin(MGF!("mScriptGetTeamNum", "Function Engine.Actor.ScriptGetTeamNum")()); }
-			ScriptFunction NotifyLocalPlayerTeamReceived() { mixin(MGF!("mNotifyLocalPlayerTeamReceived", "Function Engine.Actor.NotifyLocalPlayerTeamReceived")()); }
-			ScriptFunction FindGoodEndView() { mixin(MGF!("mFindGoodEndView", "Function Engine.Actor.FindGoodEndView")()); }
-			ScriptFunction GetTargetLocation() { mixin(MGF!("mGetTargetLocation", "Function Engine.Actor.GetTargetLocation")()); }
-			ScriptFunction SpawnedByKismet() { mixin(MGF!("mSpawnedByKismet", "Function Engine.Actor.SpawnedByKismet")()); }
-			ScriptFunction InterpolationStarted() { mixin(MGF!("mInterpolationStarted", "Function Engine.Actor.InterpolationStarted")()); }
-			ScriptFunction InterpolationFinished() { mixin(MGF!("mInterpolationFinished", "Function Engine.Actor.InterpolationFinished")()); }
-			ScriptFunction InterpolationChanged() { mixin(MGF!("mInterpolationChanged", "Function Engine.Actor.InterpolationChanged")()); }
-			ScriptFunction RigidBodyCollision() { mixin(MGF!("mRigidBodyCollision", "Function Engine.Actor.RigidBodyCollision")()); }
-			ScriptFunction OnRanOver() { mixin(MGF!("mOnRanOver", "Function Engine.Actor.OnRanOver")()); }
-			ScriptFunction SetHUDLocation() { mixin(MGF!("mSetHUDLocation", "Function Engine.Actor.SetHUDLocation")()); }
-			ScriptFunction NativePostRenderFor() { mixin(MGF!("mNativePostRenderFor", "Function Engine.Actor.NativePostRenderFor")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function Engine.Actor.PostRenderFor")()); }
-			ScriptFunction RootMotionModeChanged() { mixin(MGF!("mRootMotionModeChanged", "Function Engine.Actor.RootMotionModeChanged")()); }
-			ScriptFunction RootMotionExtracted() { mixin(MGF!("mRootMotionExtracted", "Function Engine.Actor.RootMotionExtracted")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function Engine.Actor.PostInitAnimTree")()); }
-			ScriptFunction GetPackageGuid() { mixin(MGF!("mGetPackageGuid", "Function Engine.Actor.GetPackageGuid")()); }
-			ScriptFunction OnRigidBodySpringOverextension() { mixin(MGF!("mOnRigidBodySpringOverextension", "Function Engine.Actor.OnRigidBodySpringOverextension")()); }
-			ScriptFunction IsInPersistentLevel() { mixin(MGF!("mIsInPersistentLevel", "Function Engine.Actor.IsInPersistentLevel")()); }
-			ScriptFunction GetAimFrictionExtent() { mixin(MGF!("mGetAimFrictionExtent", "Function Engine.Actor.GetAimFrictionExtent")()); }
-			ScriptFunction GetAimAdhesionExtent() { mixin(MGF!("mGetAimAdhesionExtent", "Function Engine.Actor.GetAimAdhesionExtent")()); }
-			ScriptFunction PlayParticleEffect() { mixin(MGF!("mPlayParticleEffect", "Function Engine.Actor.PlayParticleEffect")()); }
-			ScriptFunction CreateForceField() { mixin(MGF!("mCreateForceField", "Function Engine.Actor.CreateForceField")()); }
-			ScriptFunction TrailsNotify() { mixin(MGF!("mTrailsNotify", "Function Engine.Actor.TrailsNotify")()); }
-			ScriptFunction TrailsNotifyTick() { mixin(MGF!("mTrailsNotifyTick", "Function Engine.Actor.TrailsNotifyTick")()); }
-			ScriptFunction TrailsNotifyEnd() { mixin(MGF!("mTrailsNotifyEnd", "Function Engine.Actor.TrailsNotifyEnd")()); }
-			ScriptFunction SupportsKismetModification() { mixin(MGF!("mSupportsKismetModification", "Function Engine.Actor.SupportsKismetModification")()); }
-			ScriptFunction AnimTreeUpdated() { mixin(MGF!("mAnimTreeUpdated", "Function Engine.Actor.AnimTreeUpdated")()); }
-			ScriptFunction PostDemoRewind() { mixin(MGF!("mPostDemoRewind", "Function Engine.Actor.PostDemoRewind")()); }
-			ScriptFunction ReplicationEnded() { mixin(MGF!("mReplicationEnded", "Function Engine.Actor.ReplicationEnded")()); }
-			ScriptFunction GetAvoidanceVector() { mixin(MGF!("mGetAvoidanceVector", "Function Engine.Actor.GetAvoidanceVector")()); }
-			ScriptFunction WillOverlap() { mixin(MGF!("mWillOverlap", "Function Engine.Actor.WillOverlap")()); }
-			ScriptFunction ShouldBeHiddenBySHOW_NavigationNodes() { mixin(MGF!("mShouldBeHiddenBySHOW_NavigationNodes", "Function Engine.Actor.ShouldBeHiddenBySHOW_NavigationNodes")()); }
-			ScriptFunction GetSpectatorName() { mixin(MGF!("mGetSpectatorName", "Function Engine.Actor.GetSpectatorName")()); }
-			ScriptFunction GetSpectatorDescription() { mixin(MGF!("mGetSpectatorDescription", "Function Engine.Actor.GetSpectatorDescription")()); }
-			ScriptFunction GetSpectatorHealthInfo() { mixin(MGF!("mGetSpectatorHealthInfo", "Function Engine.Actor.GetSpectatorHealthInfo")()); }
+			ScriptFunction ForceUpdateComponents() { mixin(MGF("mForceUpdateComponents", "Function Engine.Actor.ForceUpdateComponents")); }
+			ScriptFunction ConsoleCommand() { mixin(MGF("mConsoleCommand", "Function Engine.Actor.ConsoleCommand")); }
+			ScriptFunction Sleep() { mixin(MGF("mSleep", "Function Engine.Actor.Sleep")); }
+			ScriptFunction FinishAnim() { mixin(MGF("mFinishAnim", "Function Engine.Actor.FinishAnim")); }
+			ScriptFunction SetCollision() { mixin(MGF("mSetCollision", "Function Engine.Actor.SetCollision")); }
+			ScriptFunction SetCollisionSize() { mixin(MGF("mSetCollisionSize", "Function Engine.Actor.SetCollisionSize")); }
+			ScriptFunction SetCollisionType() { mixin(MGF("mSetCollisionType", "Function Engine.Actor.SetCollisionType")); }
+			ScriptFunction SetDrawScale() { mixin(MGF("mSetDrawScale", "Function Engine.Actor.SetDrawScale")); }
+			ScriptFunction SetDrawScale3D() { mixin(MGF("mSetDrawScale3D", "Function Engine.Actor.SetDrawScale3D")); }
+			ScriptFunction Move() { mixin(MGF("mMove", "Function Engine.Actor.Move")); }
+			ScriptFunction SetLocation() { mixin(MGF("mSetLocation", "Function Engine.Actor.SetLocation")); }
+			ScriptFunction SetRotation() { mixin(MGF("mSetRotation", "Function Engine.Actor.SetRotation")); }
+			ScriptFunction MovingWhichWay() { mixin(MGF("mMovingWhichWay", "Function Engine.Actor.MovingWhichWay")); }
+			ScriptFunction SetZone() { mixin(MGF("mSetZone", "Function Engine.Actor.SetZone")); }
+			ScriptFunction SetRelativeRotation() { mixin(MGF("mSetRelativeRotation", "Function Engine.Actor.SetRelativeRotation")); }
+			ScriptFunction SetRelativeLocation() { mixin(MGF("mSetRelativeLocation", "Function Engine.Actor.SetRelativeLocation")); }
+			ScriptFunction SetHardAttach() { mixin(MGF("mSetHardAttach", "Function Engine.Actor.SetHardAttach")); }
+			ScriptFunction fixedTurn() { mixin(MGF("mfixedTurn", "Function Engine.Actor.fixedTurn")); }
+			ScriptFunction MoveSmooth() { mixin(MGF("mMoveSmooth", "Function Engine.Actor.MoveSmooth")); }
+			ScriptFunction AutonomousPhysics() { mixin(MGF("mAutonomousPhysics", "Function Engine.Actor.AutonomousPhysics")); }
+			ScriptFunction GetTerminalVelocity() { mixin(MGF("mGetTerminalVelocity", "Function Engine.Actor.GetTerminalVelocity")); }
+			ScriptFunction SetBase() { mixin(MGF("mSetBase", "Function Engine.Actor.SetBase")); }
+			ScriptFunction SetOwner() { mixin(MGF("mSetOwner", "Function Engine.Actor.SetOwner")); }
+			ScriptFunction FindBase() { mixin(MGF("mFindBase", "Function Engine.Actor.FindBase")); }
+			ScriptFunction IsBasedOn() { mixin(MGF("mIsBasedOn", "Function Engine.Actor.IsBasedOn")); }
+			ScriptFunction GetBaseMost() { mixin(MGF("mGetBaseMost", "Function Engine.Actor.GetBaseMost")); }
+			ScriptFunction IsOwnedBy() { mixin(MGF("mIsOwnedBy", "Function Engine.Actor.IsOwnedBy")); }
+			ScriptFunction GetAggregateBaseVelocity() { mixin(MGF("mGetAggregateBaseVelocity", "Function Engine.Actor.GetAggregateBaseVelocity")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.Actor.ReplicatedEvent")); }
+			ScriptFunction SetForcedInitialReplicatedProperty() { mixin(MGF("mSetForcedInitialReplicatedProperty", "Function Engine.Actor.SetForcedInitialReplicatedProperty")); }
+			ScriptFunction Vect2BP() { mixin(MGF("mVect2BP", "Function Engine.Actor.Vect2BP")); }
+			ScriptFunction BP2Vect() { mixin(MGF("mBP2Vect", "Function Engine.Actor.BP2Vect")); }
+			ScriptFunction SetBasedPosition() { mixin(MGF("mSetBasedPosition", "Function Engine.Actor.SetBasedPosition")); }
+			ScriptFunction GetBasedPosition() { mixin(MGF("mGetBasedPosition", "Function Engine.Actor.GetBasedPosition")); }
+			ScriptFunction FlushPersistentDebugLines() { mixin(MGF("mFlushPersistentDebugLines", "Function Engine.Actor.FlushPersistentDebugLines")); }
+			ScriptFunction DrawDebugLine() { mixin(MGF("mDrawDebugLine", "Function Engine.Actor.DrawDebugLine")); }
+			ScriptFunction DrawDebugPoint() { mixin(MGF("mDrawDebugPoint", "Function Engine.Actor.DrawDebugPoint")); }
+			ScriptFunction DrawDebugBox() { mixin(MGF("mDrawDebugBox", "Function Engine.Actor.DrawDebugBox")); }
+			ScriptFunction DrawDebugStar() { mixin(MGF("mDrawDebugStar", "Function Engine.Actor.DrawDebugStar")); }
+			ScriptFunction DrawDebugCoordinateSystem() { mixin(MGF("mDrawDebugCoordinateSystem", "Function Engine.Actor.DrawDebugCoordinateSystem")); }
+			ScriptFunction DrawDebugSphere() { mixin(MGF("mDrawDebugSphere", "Function Engine.Actor.DrawDebugSphere")); }
+			ScriptFunction DrawDebugCylinder() { mixin(MGF("mDrawDebugCylinder", "Function Engine.Actor.DrawDebugCylinder")); }
+			ScriptFunction DrawDebugCone() { mixin(MGF("mDrawDebugCone", "Function Engine.Actor.DrawDebugCone")); }
+			ScriptFunction DrawDebugString() { mixin(MGF("mDrawDebugString", "Function Engine.Actor.DrawDebugString")); }
+			ScriptFunction DrawDebugFrustrum() { mixin(MGF("mDrawDebugFrustrum", "Function Engine.Actor.DrawDebugFrustrum")); }
+			ScriptFunction FlushDebugStrings() { mixin(MGF("mFlushDebugStrings", "Function Engine.Actor.FlushDebugStrings")); }
+			ScriptFunction ChartData() { mixin(MGF("mChartData", "Function Engine.Actor.ChartData")); }
+			ScriptFunction SetHidden() { mixin(MGF("mSetHidden", "Function Engine.Actor.SetHidden")); }
+			ScriptFunction SetOnlyOwnerSee() { mixin(MGF("mSetOnlyOwnerSee", "Function Engine.Actor.SetOnlyOwnerSee")); }
+			ScriptFunction SetPhysics() { mixin(MGF("mSetPhysics", "Function Engine.Actor.SetPhysics")); }
+			ScriptFunction Clock() { mixin(MGF("mClock", "Function Engine.Actor.Clock")); }
+			ScriptFunction UnClock() { mixin(MGF("mUnClock", "Function Engine.Actor.UnClock")); }
+			ScriptFunction AttachComponent() { mixin(MGF("mAttachComponent", "Function Engine.Actor.AttachComponent")); }
+			ScriptFunction DetachComponent() { mixin(MGF("mDetachComponent", "Function Engine.Actor.DetachComponent")); }
+			ScriptFunction ReattachComponent() { mixin(MGF("mReattachComponent", "Function Engine.Actor.ReattachComponent")); }
+			ScriptFunction SetTickGroup() { mixin(MGF("mSetTickGroup", "Function Engine.Actor.SetTickGroup")); }
+			ScriptFunction SetTickIsDisabled() { mixin(MGF("mSetTickIsDisabled", "Function Engine.Actor.SetTickIsDisabled")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.Actor.Destroyed")); }
+			ScriptFunction GainedChild() { mixin(MGF("mGainedChild", "Function Engine.Actor.GainedChild")); }
+			ScriptFunction LostChild() { mixin(MGF("mLostChild", "Function Engine.Actor.LostChild")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function Engine.Actor.Tick")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function Engine.Actor.Timer")); }
+			ScriptFunction HitWall() { mixin(MGF("mHitWall", "Function Engine.Actor.HitWall")); }
+			ScriptFunction Falling() { mixin(MGF("mFalling", "Function Engine.Actor.Falling")); }
+			ScriptFunction Landed() { mixin(MGF("mLanded", "Function Engine.Actor.Landed")); }
+			ScriptFunction PhysicsVolumeChange() { mixin(MGF("mPhysicsVolumeChange", "Function Engine.Actor.PhysicsVolumeChange")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.Actor.Touch")); }
+			ScriptFunction PostTouch() { mixin(MGF("mPostTouch", "Function Engine.Actor.PostTouch")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function Engine.Actor.UnTouch")); }
+			ScriptFunction Bump() { mixin(MGF("mBump", "Function Engine.Actor.Bump")); }
+			ScriptFunction BaseChange() { mixin(MGF("mBaseChange", "Function Engine.Actor.BaseChange")); }
+			ScriptFunction Attach() { mixin(MGF("mAttach", "Function Engine.Actor.Attach")); }
+			ScriptFunction Detach() { mixin(MGF("mDetach", "Function Engine.Actor.Detach")); }
+			ScriptFunction SpecialHandling() { mixin(MGF("mSpecialHandling", "Function Engine.Actor.SpecialHandling")); }
+			ScriptFunction CollisionChanged() { mixin(MGF("mCollisionChanged", "Function Engine.Actor.CollisionChanged")); }
+			ScriptFunction EncroachingOn() { mixin(MGF("mEncroachingOn", "Function Engine.Actor.EncroachingOn")); }
+			ScriptFunction EncroachedBy() { mixin(MGF("mEncroachedBy", "Function Engine.Actor.EncroachedBy")); }
+			ScriptFunction RanInto() { mixin(MGF("mRanInto", "Function Engine.Actor.RanInto")); }
+			ScriptFunction OnWakeRBPhysics() { mixin(MGF("mOnWakeRBPhysics", "Function Engine.Actor.OnWakeRBPhysics")); }
+			ScriptFunction OnSleepRBPhysics() { mixin(MGF("mOnSleepRBPhysics", "Function Engine.Actor.OnSleepRBPhysics")); }
+			ScriptFunction ClampRotation() { mixin(MGF("mClampRotation", "Function Engine.Actor.ClampRotation")); }
+			ScriptFunction OverRotated() { mixin(MGF("mOverRotated", "Function Engine.Actor.OverRotated")); }
+			ScriptFunction UsedBy() { mixin(MGF("mUsedBy", "Function Engine.Actor.UsedBy")); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF("mFellOutOfWorld", "Function Engine.Actor.FellOutOfWorld")); }
+			ScriptFunction OutsideWorldBounds() { mixin(MGF("mOutsideWorldBounds", "Function Engine.Actor.OutsideWorldBounds")); }
+			ScriptFunction VolumeBasedDestroy() { mixin(MGF("mVolumeBasedDestroy", "Function Engine.Actor.VolumeBasedDestroy")); }
+			ScriptFunction Trace() { mixin(MGF("mTrace", "Function Engine.Actor.Trace")); }
+			ScriptFunction TraceComponent() { mixin(MGF("mTraceComponent", "Function Engine.Actor.TraceComponent")); }
+			ScriptFunction PointCheckComponent() { mixin(MGF("mPointCheckComponent", "Function Engine.Actor.PointCheckComponent")); }
+			ScriptFunction FastTrace() { mixin(MGF("mFastTrace", "Function Engine.Actor.FastTrace")); }
+			ScriptFunction TraceAllPhysicsAssetInteractions() { mixin(MGF("mTraceAllPhysicsAssetInteractions", "Function Engine.Actor.TraceAllPhysicsAssetInteractions")); }
+			ScriptFunction FindSpot() { mixin(MGF("mFindSpot", "Function Engine.Actor.FindSpot")); }
+			ScriptFunction ContainsPoint() { mixin(MGF("mContainsPoint", "Function Engine.Actor.ContainsPoint")); }
+			ScriptFunction IsOverlapping() { mixin(MGF("mIsOverlapping", "Function Engine.Actor.IsOverlapping")); }
+			ScriptFunction GetComponentsBoundingBox() { mixin(MGF("mGetComponentsBoundingBox", "Function Engine.Actor.GetComponentsBoundingBox")); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF("mGetBoundingCylinder", "Function Engine.Actor.GetBoundingCylinder")); }
+			ScriptFunction IsBlockedBy() { mixin(MGF("mIsBlockedBy", "Function Engine.Actor.IsBlockedBy")); }
+			ScriptFunction Spawn() { mixin(MGF("mSpawn", "Function Engine.Actor.Spawn")); }
+			ScriptFunction Destroy() { mixin(MGF("mDestroy", "Function Engine.Actor.Destroy")); }
+			ScriptFunction TornOff() { mixin(MGF("mTornOff", "Function Engine.Actor.TornOff")); }
+			ScriptFunction SetTimer() { mixin(MGF("mSetTimer", "Function Engine.Actor.SetTimer")); }
+			ScriptFunction ClearTimer() { mixin(MGF("mClearTimer", "Function Engine.Actor.ClearTimer")); }
+			ScriptFunction ClearAllTimers() { mixin(MGF("mClearAllTimers", "Function Engine.Actor.ClearAllTimers")); }
+			ScriptFunction PauseTimer() { mixin(MGF("mPauseTimer", "Function Engine.Actor.PauseTimer")); }
+			ScriptFunction IsTimerActive() { mixin(MGF("mIsTimerActive", "Function Engine.Actor.IsTimerActive")); }
+			ScriptFunction GetTimerCount() { mixin(MGF("mGetTimerCount", "Function Engine.Actor.GetTimerCount")); }
+			ScriptFunction GetTimerRate() { mixin(MGF("mGetTimerRate", "Function Engine.Actor.GetTimerRate")); }
+			ScriptFunction GetRemainingTimeForTimer() { mixin(MGF("mGetRemainingTimeForTimer", "Function Engine.Actor.GetRemainingTimeForTimer")); }
+			ScriptFunction ModifyTimerTimeDilation() { mixin(MGF("mModifyTimerTimeDilation", "Function Engine.Actor.ModifyTimerTimeDilation")); }
+			ScriptFunction ResetTimerTimeDilation() { mixin(MGF("mResetTimerTimeDilation", "Function Engine.Actor.ResetTimerTimeDilation")); }
+			ScriptFunction CreateAudioComponent() { mixin(MGF("mCreateAudioComponent", "Function Engine.Actor.CreateAudioComponent")); }
+			ScriptFunction PlaySound() { mixin(MGF("mPlaySound", "Function Engine.Actor.PlaySound")); }
+			ScriptFunction MakeNoise() { mixin(MGF("mMakeNoise", "Function Engine.Actor.MakeNoise")); }
+			ScriptFunction PlayerCanSeeMe() { mixin(MGF("mPlayerCanSeeMe", "Function Engine.Actor.PlayerCanSeeMe")); }
+			ScriptFunction SuggestTossVelocity() { mixin(MGF("mSuggestTossVelocity", "Function Engine.Actor.SuggestTossVelocity")); }
+			ScriptFunction CalculateMinSpeedTrajectory() { mixin(MGF("mCalculateMinSpeedTrajectory", "Function Engine.Actor.CalculateMinSpeedTrajectory")); }
+			ScriptFunction GetDestination() { mixin(MGF("mGetDestination", "Function Engine.Actor.GetDestination")); }
+			ScriptFunction PreTeleport() { mixin(MGF("mPreTeleport", "Function Engine.Actor.PreTeleport")); }
+			ScriptFunction PostTeleport() { mixin(MGF("mPostTeleport", "Function Engine.Actor.PostTeleport")); }
+			ScriptFunction GetURLMap() { mixin(MGF("mGetURLMap", "Function Engine.Actor.GetURLMap")); }
+			ScriptFunction AllActors() { mixin(MGF("mAllActors", "Function Engine.Actor.AllActors")); }
+			ScriptFunction DynamicActors() { mixin(MGF("mDynamicActors", "Function Engine.Actor.DynamicActors")); }
+			ScriptFunction ChildActors() { mixin(MGF("mChildActors", "Function Engine.Actor.ChildActors")); }
+			ScriptFunction BasedActors() { mixin(MGF("mBasedActors", "Function Engine.Actor.BasedActors")); }
+			ScriptFunction TouchingActors() { mixin(MGF("mTouchingActors", "Function Engine.Actor.TouchingActors")); }
+			ScriptFunction TraceActors() { mixin(MGF("mTraceActors", "Function Engine.Actor.TraceActors")); }
+			ScriptFunction VisibleActors() { mixin(MGF("mVisibleActors", "Function Engine.Actor.VisibleActors")); }
+			ScriptFunction VisibleCollidingActors() { mixin(MGF("mVisibleCollidingActors", "Function Engine.Actor.VisibleCollidingActors")); }
+			ScriptFunction CollidingActors() { mixin(MGF("mCollidingActors", "Function Engine.Actor.CollidingActors")); }
+			ScriptFunction VisibleCollidingExtentActors() { mixin(MGF("mVisibleCollidingExtentActors", "Function Engine.Actor.VisibleCollidingExtentActors")); }
+			ScriptFunction OverlappingActors() { mixin(MGF("mOverlappingActors", "Function Engine.Actor.OverlappingActors")); }
+			ScriptFunction ComponentList() { mixin(MGF("mComponentList", "Function Engine.Actor.ComponentList")); }
+			ScriptFunction AllOwnedComponents() { mixin(MGF("mAllOwnedComponents", "Function Engine.Actor.AllOwnedComponents")); }
+			ScriptFunction LocalPlayerControllers() { mixin(MGF("mLocalPlayerControllers", "Function Engine.Actor.LocalPlayerControllers")); }
+			ScriptFunction GetALocalPlayerController() { mixin(MGF("mGetALocalPlayerController", "Function Engine.Actor.GetALocalPlayerController")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function Engine.Actor.PreBeginPlay")); }
+			ScriptFunction BroadcastLocalizedMessage() { mixin(MGF("mBroadcastLocalizedMessage", "Function Engine.Actor.BroadcastLocalizedMessage")); }
+			ScriptFunction BroadcastLocalizedTeamMessage() { mixin(MGF("mBroadcastLocalizedTeamMessage", "Function Engine.Actor.BroadcastLocalizedTeamMessage")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Actor.PostBeginPlay")); }
+			ScriptFunction SetInitialState() { mixin(MGF("mSetInitialState", "Function Engine.Actor.SetInitialState")); }
+			ScriptFunction ConstraintBrokenNotify() { mixin(MGF("mConstraintBrokenNotify", "Function Engine.Actor.ConstraintBrokenNotify")); }
+			ScriptFunction NotifySkelControlBeyondLimit() { mixin(MGF("mNotifySkelControlBeyondLimit", "Function Engine.Actor.NotifySkelControlBeyondLimit")); }
+			ScriptFunction StopsProjectile() { mixin(MGF("mStopsProjectile", "Function Engine.Actor.StopsProjectile")); }
+			ScriptFunction HurtRadius() { mixin(MGF("mHurtRadius", "Function Engine.Actor.HurtRadius")); }
+			ScriptFunction KilledBy() { mixin(MGF("mKilledBy", "Function Engine.Actor.KilledBy")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.Actor.TakeDamage")); }
+			ScriptFunction HealDamage() { mixin(MGF("mHealDamage", "Function Engine.Actor.HealDamage")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function Engine.Actor.TakeRadiusDamage")); }
+			ScriptFunction CheckHitInfo() { mixin(MGF("mCheckHitInfo", "Function Engine.Actor.CheckHitInfo")); }
+			ScriptFunction GetGravityZ() { mixin(MGF("mGetGravityZ", "Function Engine.Actor.GetGravityZ")); }
+			ScriptFunction DebugFreezeGame() { mixin(MGF("mDebugFreezeGame", "Function Engine.Actor.DebugFreezeGame")); }
+			ScriptFunction CheckForErrors() { mixin(MGF("mCheckForErrors", "Function Engine.Actor.CheckForErrors")); }
+			ScriptFunction BecomeViewTarget() { mixin(MGF("mBecomeViewTarget", "Function Engine.Actor.BecomeViewTarget")); }
+			ScriptFunction EndViewTarget() { mixin(MGF("mEndViewTarget", "Function Engine.Actor.EndViewTarget")); }
+			ScriptFunction CalcCamera() { mixin(MGF("mCalcCamera", "Function Engine.Actor.CalcCamera")); }
+			ScriptFunction GetItemName() { mixin(MGF("mGetItemName", "Function Engine.Actor.GetItemName")); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF("mGetHumanReadableName", "Function Engine.Actor.GetHumanReadableName")); }
+			ScriptFunction ReplaceText() { mixin(MGF("mReplaceText", "Function Engine.Actor.ReplaceText")); }
+			ScriptFunction GetLocalString() { mixin(MGF("mGetLocalString", "Function Engine.Actor.GetLocalString")); }
+			ScriptFunction MatchStarting() { mixin(MGF("mMatchStarting", "Function Engine.Actor.MatchStarting")); }
+			ScriptFunction GetDebugName() { mixin(MGF("mGetDebugName", "Function Engine.Actor.GetDebugName")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function Engine.Actor.DisplayDebug")); }
+			ScriptFunction GetPhysicsName() { mixin(MGF("mGetPhysicsName", "Function Engine.Actor.GetPhysicsName")); }
+			ScriptFunction ModifyHearSoundComponent() { mixin(MGF("mModifyHearSoundComponent", "Function Engine.Actor.ModifyHearSoundComponent")); }
+			ScriptFunction GetFaceFXAudioComponent() { mixin(MGF("mGetFaceFXAudioComponent", "Function Engine.Actor.GetFaceFXAudioComponent")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.Actor.Reset")); }
+			ScriptFunction IsInPain() { mixin(MGF("mIsInPain", "Function Engine.Actor.IsInPain")); }
+			ScriptFunction PlayTeleportEffect() { mixin(MGF("mPlayTeleportEffect", "Function Engine.Actor.PlayTeleportEffect")); }
+			ScriptFunction CanSplash() { mixin(MGF("mCanSplash", "Function Engine.Actor.CanSplash")); }
+			ScriptFunction ApplyFluidSurfaceImpact() { mixin(MGF("mApplyFluidSurfaceImpact", "Function Engine.Actor.ApplyFluidSurfaceImpact")); }
+			ScriptFunction EffectIsRelevant() { mixin(MGF("mEffectIsRelevant", "Function Engine.Actor.EffectIsRelevant")); }
+			ScriptFunction DebugMessagePlayer() { mixin(MGF("mDebugMessagePlayer", "Function Engine.Actor.DebugMessagePlayer")); }
+			ScriptFunction TriggerEventClass() { mixin(MGF("mTriggerEventClass", "Function Engine.Actor.TriggerEventClass")); }
+			ScriptFunction ActivateEventClass() { mixin(MGF("mActivateEventClass", "Function Engine.Actor.ActivateEventClass")); }
+			ScriptFunction ReceivedNewEvent() { mixin(MGF("mReceivedNewEvent", "Function Engine.Actor.ReceivedNewEvent")); }
+			ScriptFunction TriggerGlobalEventClass() { mixin(MGF("mTriggerGlobalEventClass", "Function Engine.Actor.TriggerGlobalEventClass")); }
+			ScriptFunction FindEventsOfClass() { mixin(MGF("mFindEventsOfClass", "Function Engine.Actor.FindEventsOfClass")); }
+			ScriptFunction ClearLatentAction() { mixin(MGF("mClearLatentAction", "Function Engine.Actor.ClearLatentAction")); }
+			ScriptFunction OnDestroy() { mixin(MGF("mOnDestroy", "Function Engine.Actor.OnDestroy")); }
+			ScriptFunction ForceNetRelevant() { mixin(MGF("mForceNetRelevant", "Function Engine.Actor.ForceNetRelevant")); }
+			ScriptFunction SetNetUpdateTime() { mixin(MGF("mSetNetUpdateTime", "Function Engine.Actor.SetNetUpdateTime")); }
+			ScriptFunction ShutDown() { mixin(MGF("mShutDown", "Function Engine.Actor.ShutDown")); }
+			ScriptFunction PrestreamTextures() { mixin(MGF("mPrestreamTextures", "Function Engine.Actor.PrestreamTextures")); }
+			ScriptFunction OnModifyHealth() { mixin(MGF("mOnModifyHealth", "Function Engine.Actor.OnModifyHealth")); }
+			ScriptFunction OnTeleport() { mixin(MGF("mOnTeleport", "Function Engine.Actor.OnTeleport")); }
+			ScriptFunction OnSetVelocity() { mixin(MGF("mOnSetVelocity", "Function Engine.Actor.OnSetVelocity")); }
+			ScriptFunction OnSetBlockRigidBody() { mixin(MGF("mOnSetBlockRigidBody", "Function Engine.Actor.OnSetBlockRigidBody")); }
+			ScriptFunction OnSetPhysics() { mixin(MGF("mOnSetPhysics", "Function Engine.Actor.OnSetPhysics")); }
+			ScriptFunction OnChangeCollision() { mixin(MGF("mOnChangeCollision", "Function Engine.Actor.OnChangeCollision")); }
+			ScriptFunction OnToggleHidden() { mixin(MGF("mOnToggleHidden", "Function Engine.Actor.OnToggleHidden")); }
+			ScriptFunction OnAttachToActor() { mixin(MGF("mOnAttachToActor", "Function Engine.Actor.OnAttachToActor")); }
+			ScriptFunction DoKismetAttachment() { mixin(MGF("mDoKismetAttachment", "Function Engine.Actor.DoKismetAttachment")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function Engine.Actor.OnAnimEnd")); }
+			ScriptFunction OnAnimPlay() { mixin(MGF("mOnAnimPlay", "Function Engine.Actor.OnAnimPlay")); }
+			ScriptFunction BeginAnimControl() { mixin(MGF("mBeginAnimControl", "Function Engine.Actor.BeginAnimControl")); }
+			ScriptFunction SetAnimPosition() { mixin(MGF("mSetAnimPosition", "Function Engine.Actor.SetAnimPosition")); }
+			ScriptFunction FinishAnimControl() { mixin(MGF("mFinishAnimControl", "Function Engine.Actor.FinishAnimControl")); }
+			ScriptFunction PlayActorFaceFXAnim() { mixin(MGF("mPlayActorFaceFXAnim", "Function Engine.Actor.PlayActorFaceFXAnim")); }
+			ScriptFunction StopActorFaceFXAnim() { mixin(MGF("mStopActorFaceFXAnim", "Function Engine.Actor.StopActorFaceFXAnim")); }
+			ScriptFunction SetMorphWeight() { mixin(MGF("mSetMorphWeight", "Function Engine.Actor.SetMorphWeight")); }
+			ScriptFunction SetSkelControlScale() { mixin(MGF("mSetSkelControlScale", "Function Engine.Actor.SetSkelControlScale")); }
+			ScriptFunction IsActorPlayingFaceFXAnim() { mixin(MGF("mIsActorPlayingFaceFXAnim", "Function Engine.Actor.IsActorPlayingFaceFXAnim")); }
+			ScriptFunction CanActorPlayFaceFXAnim() { mixin(MGF("mCanActorPlayFaceFXAnim", "Function Engine.Actor.CanActorPlayFaceFXAnim")); }
+			ScriptFunction GetActorFaceFXAsset() { mixin(MGF("mGetActorFaceFXAsset", "Function Engine.Actor.GetActorFaceFXAsset")); }
+			ScriptFunction IsStationary() { mixin(MGF("mIsStationary", "Function Engine.Actor.IsStationary")); }
+			ScriptFunction GetActorEyesViewPoint() { mixin(MGF("mGetActorEyesViewPoint", "Function Engine.Actor.GetActorEyesViewPoint")); }
+			ScriptFunction IsPlayerOwned() { mixin(MGF("mIsPlayerOwned", "Function Engine.Actor.IsPlayerOwned")); }
+			ScriptFunction PawnBaseDied() { mixin(MGF("mPawnBaseDied", "Function Engine.Actor.PawnBaseDied")); }
+			ScriptFunction GetTeamNum() { mixin(MGF("mGetTeamNum", "Function Engine.Actor.GetTeamNum")); }
+			ScriptFunction ScriptGetTeamNum() { mixin(MGF("mScriptGetTeamNum", "Function Engine.Actor.ScriptGetTeamNum")); }
+			ScriptFunction NotifyLocalPlayerTeamReceived() { mixin(MGF("mNotifyLocalPlayerTeamReceived", "Function Engine.Actor.NotifyLocalPlayerTeamReceived")); }
+			ScriptFunction FindGoodEndView() { mixin(MGF("mFindGoodEndView", "Function Engine.Actor.FindGoodEndView")); }
+			ScriptFunction GetTargetLocation() { mixin(MGF("mGetTargetLocation", "Function Engine.Actor.GetTargetLocation")); }
+			ScriptFunction SpawnedByKismet() { mixin(MGF("mSpawnedByKismet", "Function Engine.Actor.SpawnedByKismet")); }
+			ScriptFunction InterpolationStarted() { mixin(MGF("mInterpolationStarted", "Function Engine.Actor.InterpolationStarted")); }
+			ScriptFunction InterpolationFinished() { mixin(MGF("mInterpolationFinished", "Function Engine.Actor.InterpolationFinished")); }
+			ScriptFunction InterpolationChanged() { mixin(MGF("mInterpolationChanged", "Function Engine.Actor.InterpolationChanged")); }
+			ScriptFunction RigidBodyCollision() { mixin(MGF("mRigidBodyCollision", "Function Engine.Actor.RigidBodyCollision")); }
+			ScriptFunction OnRanOver() { mixin(MGF("mOnRanOver", "Function Engine.Actor.OnRanOver")); }
+			ScriptFunction SetHUDLocation() { mixin(MGF("mSetHUDLocation", "Function Engine.Actor.SetHUDLocation")); }
+			ScriptFunction NativePostRenderFor() { mixin(MGF("mNativePostRenderFor", "Function Engine.Actor.NativePostRenderFor")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function Engine.Actor.PostRenderFor")); }
+			ScriptFunction RootMotionModeChanged() { mixin(MGF("mRootMotionModeChanged", "Function Engine.Actor.RootMotionModeChanged")); }
+			ScriptFunction RootMotionExtracted() { mixin(MGF("mRootMotionExtracted", "Function Engine.Actor.RootMotionExtracted")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function Engine.Actor.PostInitAnimTree")); }
+			ScriptFunction GetPackageGuid() { mixin(MGF("mGetPackageGuid", "Function Engine.Actor.GetPackageGuid")); }
+			ScriptFunction OnRigidBodySpringOverextension() { mixin(MGF("mOnRigidBodySpringOverextension", "Function Engine.Actor.OnRigidBodySpringOverextension")); }
+			ScriptFunction IsInPersistentLevel() { mixin(MGF("mIsInPersistentLevel", "Function Engine.Actor.IsInPersistentLevel")); }
+			ScriptFunction GetAimFrictionExtent() { mixin(MGF("mGetAimFrictionExtent", "Function Engine.Actor.GetAimFrictionExtent")); }
+			ScriptFunction GetAimAdhesionExtent() { mixin(MGF("mGetAimAdhesionExtent", "Function Engine.Actor.GetAimAdhesionExtent")); }
+			ScriptFunction PlayParticleEffect() { mixin(MGF("mPlayParticleEffect", "Function Engine.Actor.PlayParticleEffect")); }
+			ScriptFunction CreateForceField() { mixin(MGF("mCreateForceField", "Function Engine.Actor.CreateForceField")); }
+			ScriptFunction TrailsNotify() { mixin(MGF("mTrailsNotify", "Function Engine.Actor.TrailsNotify")); }
+			ScriptFunction TrailsNotifyTick() { mixin(MGF("mTrailsNotifyTick", "Function Engine.Actor.TrailsNotifyTick")); }
+			ScriptFunction TrailsNotifyEnd() { mixin(MGF("mTrailsNotifyEnd", "Function Engine.Actor.TrailsNotifyEnd")); }
+			ScriptFunction SupportsKismetModification() { mixin(MGF("mSupportsKismetModification", "Function Engine.Actor.SupportsKismetModification")); }
+			ScriptFunction AnimTreeUpdated() { mixin(MGF("mAnimTreeUpdated", "Function Engine.Actor.AnimTreeUpdated")); }
+			ScriptFunction PostDemoRewind() { mixin(MGF("mPostDemoRewind", "Function Engine.Actor.PostDemoRewind")); }
+			ScriptFunction ReplicationEnded() { mixin(MGF("mReplicationEnded", "Function Engine.Actor.ReplicationEnded")); }
+			ScriptFunction GetAvoidanceVector() { mixin(MGF("mGetAvoidanceVector", "Function Engine.Actor.GetAvoidanceVector")); }
+			ScriptFunction WillOverlap() { mixin(MGF("mWillOverlap", "Function Engine.Actor.WillOverlap")); }
+			ScriptFunction ShouldBeHiddenBySHOW_NavigationNodes() { mixin(MGF("mShouldBeHiddenBySHOW_NavigationNodes", "Function Engine.Actor.ShouldBeHiddenBySHOW_NavigationNodes")); }
+			ScriptFunction GetSpectatorName() { mixin(MGF("mGetSpectatorName", "Function Engine.Actor.GetSpectatorName")); }
+			ScriptFunction GetSpectatorDescription() { mixin(MGF("mGetSpectatorDescription", "Function Engine.Actor.GetSpectatorDescription")); }
+			ScriptFunction GetSpectatorHealthInfo() { mixin(MGF("mGetSpectatorHealthInfo", "Function Engine.Actor.GetSpectatorHealthInfo")); }
 		}
 	}
 	static struct Constants
@@ -647,11 +647,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.AnimSlotDesc")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.AnimSlotDesc")); }
 		@property final auto ref
 		{
-			ScriptName SlotName() { mixin(MGPS!("ScriptName", 0)()); }
-			int NumChannels() { mixin(MGPS!("int", 8)()); }
+			ScriptName SlotName() { mixin(MGPS("ScriptName", 0)); }
+			int NumChannels() { mixin(MGPS("int", 8)); }
 		}
 	}
 	struct RigidBodyState
@@ -659,14 +659,14 @@ public extern(D):
 		private ubyte __buffer__[57];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.RigidBodyState")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.RigidBodyState")); }
 		@property final auto ref
 		{
-			ubyte bNewData() { mixin(MGPS!("ubyte", 56)()); }
-			Vector AngVel() { mixin(MGPS!("Vector", 44)()); }
-			Vector LinVel() { mixin(MGPS!("Vector", 32)()); }
-			UObject.Quat Quaternion() { mixin(MGPS!("UObject.Quat", 16)()); }
-			Vector Position() { mixin(MGPS!("Vector", 0)()); }
+			ubyte bNewData() { mixin(MGPS("ubyte", 56)); }
+			Vector AngVel() { mixin(MGPS("Vector", 44)); }
+			Vector LinVel() { mixin(MGPS("Vector", 32)); }
+			UObject.Quat Quaternion() { mixin(MGPS("UObject.Quat", 16)); }
+			Vector Position() { mixin(MGPS("Vector", 0)); }
 		}
 	}
 	struct RigidBodyContactInfo
@@ -674,14 +674,14 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.RigidBodyContactInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.RigidBodyContactInfo")); }
 		@property final auto ref
 		{
-			PhysicalMaterial PhysMaterial() { mixin(MGPS!("PhysicalMaterial", 52)()); }
-			Vector ContactVelocity() { mixin(MGPS!("Vector", 28)()); }
-			float ContactPenetration() { mixin(MGPS!("float", 24)()); }
-			Vector ContactNormal() { mixin(MGPS!("Vector", 12)()); }
-			Vector ContactPosition() { mixin(MGPS!("Vector", 0)()); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPS("PhysicalMaterial", 52)); }
+			Vector ContactVelocity() { mixin(MGPS("Vector", 28)); }
+			float ContactPenetration() { mixin(MGPS("float", 24)); }
+			Vector ContactNormal() { mixin(MGPS("Vector", 12)); }
+			Vector ContactPosition() { mixin(MGPS("Vector", 0)); }
 		}
 	}
 	struct CollisionImpactData
@@ -689,12 +689,12 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.CollisionImpactData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.CollisionImpactData")); }
 		@property final auto ref
 		{
-			ScriptArray!(Actor.RigidBodyContactInfo) ContactInfos() { mixin(MGPS!("ScriptArray!(Actor.RigidBodyContactInfo)", 0)()); }
-			Vector TotalFrictionForceVector() { mixin(MGPS!("Vector", 24)()); }
-			Vector TotalNormalForceVector() { mixin(MGPS!("Vector", 12)()); }
+			ScriptArray!(Actor.RigidBodyContactInfo) ContactInfos() { mixin(MGPS("ScriptArray!(Actor.RigidBodyContactInfo)", 0)); }
+			Vector TotalFrictionForceVector() { mixin(MGPS("Vector", 24)); }
+			Vector TotalNormalForceVector() { mixin(MGPS("Vector", 12)); }
 		}
 	}
 	struct PhysEffectInfo
@@ -702,13 +702,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.PhysEffectInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.PhysEffectInfo")); }
 		@property final auto ref
 		{
-			SoundCue Sound() { mixin(MGPS!("SoundCue", 12)()); }
-			ParticleSystem Effect() { mixin(MGPS!("ParticleSystem", 8)()); }
-			float ReFireDelay() { mixin(MGPS!("float", 4)()); }
-			float Threshold() { mixin(MGPS!("float", 0)()); }
+			SoundCue Sound() { mixin(MGPS("SoundCue", 12)); }
+			ParticleSystem Effect() { mixin(MGPS("ParticleSystem", 8)); }
+			float ReFireDelay() { mixin(MGPS("float", 4)); }
+			float Threshold() { mixin(MGPS("float", 0)); }
 		}
 	}
 	struct ActorReference
@@ -716,7 +716,7 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.ActorReference")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.ActorReference")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
@@ -728,11 +728,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.NavReference")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.NavReference")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
-			NavigationPoint Nav() { mixin(MGPS!("NavigationPoint", 0)()); }
+			NavigationPoint Nav() { mixin(MGPS("NavigationPoint", 0)); }
 		}
 	}
 	struct BasedPosition
@@ -740,14 +740,14 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.BasedPosition")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.BasedPosition")); }
 		@property final auto ref
 		{
-			Vector CachedTransPosition() { mixin(MGPS!("Vector", 40)()); }
-			Rotator CachedBaseRotation() { mixin(MGPS!("Rotator", 28)()); }
-			Vector CachedBaseLocation() { mixin(MGPS!("Vector", 16)()); }
-			Vector Position() { mixin(MGPS!("Vector", 4)()); }
-			Actor Base() { mixin(MGPS!("Actor", 0)()); }
+			Vector CachedTransPosition() { mixin(MGPS("Vector", 40)); }
+			Rotator CachedBaseRotation() { mixin(MGPS("Rotator", 28)); }
+			Vector CachedBaseLocation() { mixin(MGPS("Vector", 16)); }
+			Vector Position() { mixin(MGPS("Vector", 4)); }
+			Actor Base() { mixin(MGPS("Actor", 0)); }
 		}
 	}
 	struct TraceHitInfo
@@ -755,14 +755,14 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.TraceHitInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.TraceHitInfo")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Material' has the same name as a defined type!
-			PhysicalMaterial PhysMaterial() { mixin(MGPS!("PhysicalMaterial", 4)()); }
-			int Item() { mixin(MGPS!("int", 8)()); }
-			int LevelIndex() { mixin(MGPS!("int", 12)()); }
-			ScriptName BoneName() { mixin(MGPS!("ScriptName", 16)()); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPS("PhysicalMaterial", 4)); }
+			int Item() { mixin(MGPS("int", 8)); }
+			int LevelIndex() { mixin(MGPS("int", 12)); }
+			ScriptName BoneName() { mixin(MGPS("ScriptName", 16)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'HitComponent'!
 		}
 	}
@@ -771,15 +771,15 @@ public extern(D):
 		private ubyte __buffer__[80];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.ImpactInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.ImpactInfo")); }
 		@property final auto ref
 		{
-			Actor HitActor() { mixin(MGPS!("Actor", 0)()); }
-			Vector HitLocation() { mixin(MGPS!("Vector", 4)()); }
-			Vector HitNormal() { mixin(MGPS!("Vector", 16)()); }
-			Vector RayDir() { mixin(MGPS!("Vector", 28)()); }
-			Vector StartTrace() { mixin(MGPS!("Vector", 40)()); }
-			Actor.TraceHitInfo HitInfo() { mixin(MGPS!("Actor.TraceHitInfo", 52)()); }
+			Actor HitActor() { mixin(MGPS("Actor", 0)); }
+			Vector HitLocation() { mixin(MGPS("Vector", 4)); }
+			Vector HitNormal() { mixin(MGPS("Vector", 16)); }
+			Vector RayDir() { mixin(MGPS("Vector", 28)); }
+			Vector StartTrace() { mixin(MGPS("Vector", 40)); }
+			Actor.TraceHitInfo HitInfo() { mixin(MGPS("Actor.TraceHitInfo", 52)); }
 		}
 	}
 	struct AnimSlotInfo
@@ -787,11 +787,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.AnimSlotInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.AnimSlotInfo")); }
 		@property final auto ref
 		{
-			ScriptName SlotName() { mixin(MGPS!("ScriptName", 0)()); }
-			ScriptArray!(float) ChannelWeights() { mixin(MGPS!("ScriptArray!(float)", 8)()); }
+			ScriptName SlotName() { mixin(MGPS("ScriptName", 0)); }
+			ScriptArray!(float) ChannelWeights() { mixin(MGPS("ScriptArray!(float)", 8)); }
 		}
 	}
 	struct TimerData
@@ -799,21 +799,21 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.TimerData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.TimerData")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName FuncName() { mixin(MGPS!("ScriptName", 4)()); }
-				float Rate() { mixin(MGPS!("float", 12)()); }
-				float Count() { mixin(MGPS!("float", 16)()); }
-				float TimerTimeDilation() { mixin(MGPS!("float", 20)()); }
-				UObject TimerObj() { mixin(MGPS!("UObject", 24)()); }
+				ScriptName FuncName() { mixin(MGPS("ScriptName", 4)); }
+				float Rate() { mixin(MGPS("float", 12)); }
+				float Count() { mixin(MGPS("float", 16)); }
+				float TimerTimeDilation() { mixin(MGPS("float", 20)); }
+				UObject TimerObj() { mixin(MGPS("UObject", 24)); }
 			}
-			bool bLoop() { mixin(MGBPS!(0, 0x1)()); }
-			bool bLoop(bool val) { mixin(MSBPS!(0, 0x1)()); }
-			bool bPaused() { mixin(MGBPS!(0, 0x2)()); }
-			bool bPaused(bool val) { mixin(MSBPS!(0, 0x2)()); }
+			bool bLoop() { mixin(MGBPS(0, 0x1)); }
+			bool bLoop(bool val) { mixin(MSBPS(0, 0x1)); }
+			bool bPaused() { mixin(MGBPS(0, 0x2)); }
+			bool bPaused(bool val) { mixin(MSBPS(0, 0x2)); }
 		}
 	}
 	@property final
@@ -822,259 +822,259 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) Components() { mixin(MGPC!("ScriptArray!(
+void*) Components() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)", 60)()); }
+void*)", 60)); }
 			// WARNING: Property 'WorldInfo' has the same name as a defined type!
-			ScriptName InitialState() { mixin(MGPC!("ScriptName", 268)()); }
-			Pawn Instigator() { mixin(MGPC!("Pawn", 240)()); }
-			ScriptArray!(SequenceEvent) GeneratedEvents() { mixin(MGPC!("ScriptArray!(SequenceEvent)", 452)()); }
-			Vector Location() { mixin(MGPC!("Vector", 188)()); }
-			Rotator Rotation() { mixin(MGPC!("Rotator", 84)()); }
-			Actor.ENetRole Role() { mixin(MGPC!("Actor.ENetRole", 138)()); }
-			Actor.ENetRole RemoteRole() { mixin(MGPC!("Actor.ENetRole", 137)()); }
+			ScriptName InitialState() { mixin(MGPC("ScriptName", 268)); }
+			Pawn Instigator() { mixin(MGPC("Pawn", 240)); }
+			ScriptArray!(SequenceEvent) GeneratedEvents() { mixin(MGPC("ScriptArray!(SequenceEvent)", 452)); }
+			Vector Location() { mixin(MGPC("Vector", 188)); }
+			Rotator Rotation() { mixin(MGPC("Rotator", 84)); }
+			Actor.ENetRole Role() { mixin(MGPC("Actor.ENetRole", 138)); }
+			Actor.ENetRole RemoteRole() { mixin(MGPC("Actor.ENetRole", 137)); }
 			// WARNING: Property 'PhysicsVolume' has the same name as a defined type!
-			Actor Base() { mixin(MGPC!("Actor", 148)()); }
-			Vector RelativeLocation() { mixin(MGPC!("Vector", 388)()); }
-			Rotator RelativeRotation() { mixin(MGPC!("Rotator", 400)()); }
+			Actor Base() { mixin(MGPC("Actor", 148)); }
+			Vector RelativeLocation() { mixin(MGPC("Vector", 388)); }
+			Rotator RelativeRotation() { mixin(MGPC("Rotator", 400)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BaseSkelComponent'!
-			ScriptName BaseBoneName() { mixin(MGPC!("ScriptName", 368)()); }
-			Vector Velocity() { mixin(MGPC!("Vector", 328)()); }
-			Vector Acceleration() { mixin(MGPC!("Vector", 340)()); }
-			Actor Owner() { mixin(MGPC!("Actor", 144)()); }
-			Actor.EPhysics Physics() { mixin(MGPC!("Actor.EPhysics", 136)()); }
-			float LastRenderTime() { mixin(MGPC!("float", 256)()); }
-			ScriptArray!(SeqAct_Latent) LatentActions() { mixin(MGPC!("ScriptArray!(SeqAct_Latent)", 464)()); }
-			ScriptArray!(Actor) Attached() { mixin(MGPC!("ScriptArray!(Actor)", 376)()); }
-			float NetUpdateFrequency() { mixin(MGPC!("float", 204)()); }
+			ScriptName BaseBoneName() { mixin(MGPC("ScriptName", 368)); }
+			Vector Velocity() { mixin(MGPC("Vector", 328)); }
+			Vector Acceleration() { mixin(MGPC("Vector", 340)); }
+			Actor Owner() { mixin(MGPC("Actor", 144)); }
+			Actor.EPhysics Physics() { mixin(MGPC("Actor.EPhysics", 136)); }
+			float LastRenderTime() { mixin(MGPC("float", 256)); }
+			ScriptArray!(SeqAct_Latent) LatentActions() { mixin(MGPC("ScriptArray!(SeqAct_Latent)", 464)); }
+			ScriptArray!(Actor) Attached() { mixin(MGPC("ScriptArray!(Actor)", 376)); }
+			float NetUpdateFrequency() { mixin(MGPC("float", 204)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CollisionComponent'!
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) AllComponents() { mixin(MGPC!("ScriptArray!(
+void*) AllComponents() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)", 72)()); }
-			float DrawScale() { mixin(MGPC!("float", 96)()); }
-			Vector DrawScale3D() { mixin(MGPC!("Vector", 100)()); }
-			Vector PrePivot() { mixin(MGPC!("Vector", 112)()); }
-			UObject.Color EditorIconColor() { mixin(MGPC!("UObject.Color", 124)()); }
-			UObject.RenderCommandFence DetachFence() { mixin(MGPC!("UObject.RenderCommandFence", 128)()); }
-			float CustomTimeDilation() { mixin(MGPC!("float", 132)()); }
-			Actor.ECollisionType CollisionType() { mixin(MGPC!("Actor.ECollisionType", 139)()); }
-			Actor.ECollisionType ReplicatedCollisionType() { mixin(MGPC!("Actor.ECollisionType", 140)()); }
-			UObject.ETickingGroup TickGroup() { mixin(MGPC!("UObject.ETickingGroup", 141)()); }
-			ScriptArray!(Actor.TimerData) Timers() { mixin(MGPC!("ScriptArray!(Actor.TimerData)", 152)()); }
-			int NetTag() { mixin(MGPC!("int", 176)()); }
-			int IndexInTickList() { mixin(MGPC!("int", 180)()); }
-			float LastSlowRelevancyCheckTime() { mixin(MGPC!("float", 184)()); }
-			float NetUpdateTime() { mixin(MGPC!("float", 200)()); }
-			float NetPriority() { mixin(MGPC!("float", 208)()); }
-			float LastNetUpdateTime() { mixin(MGPC!("float", 212)()); }
-			float TimeSinceLastTick() { mixin(MGPC!("float", 216)()); }
-			float TickFrequency() { mixin(MGPC!("float", 220)()); }
-			float TickFrequencyAtEndDistance() { mixin(MGPC!("float", 224)()); }
-			float TickFrequencyDecreaseDistanceStart() { mixin(MGPC!("float", 228)()); }
-			float TickFrequencyDecreaseDistanceEnd() { mixin(MGPC!("float", 232)()); }
-			float TickFrequencyLastSeenTimeBeforeForcingMaxTickFrequency() { mixin(MGPC!("float", 236)()); }
-			float LifeSpan() { mixin(MGPC!("float", 248)()); }
-			float CreationTime() { mixin(MGPC!("float", 252)()); }
-			ScriptName Tag() { mixin(MGPC!("ScriptName", 260)()); }
-			ScriptName Group() { mixin(MGPC!("ScriptName", 276)()); }
-			QWord HiddenEditorViews() { mixin(MGPC!("QWord", 284)()); }
-			ScriptArray!(Actor) Touching() { mixin(MGPC!("ScriptArray!(Actor)", 292)()); }
-			ScriptArray!(Actor) Children() { mixin(MGPC!("ScriptArray!(Actor)", 304)()); }
-			float LatentFloat() { mixin(MGPC!("float", 316)()); }
-			AnimNodeSequence LatentSeqNode() { mixin(MGPC!("AnimNodeSequence", 320)()); }
-			Vector AngularVelocity() { mixin(MGPC!("Vector", 352)()); }
-			int OverlapTag() { mixin(MGPC!("int", 416)()); }
-			Rotator RotationRate() { mixin(MGPC!("Rotator", 420)()); }
-			Actor PendingTouch() { mixin(MGPC!("Actor", 432)()); }
-			ScriptClass MessageClass() { mixin(MGPC!("ScriptClass", 436)()); }
-			ScriptArray!(ScriptClass) SupportedEvents() { mixin(MGPC!("ScriptArray!(ScriptClass)", 440)()); }
+void*)", 72)); }
+			float DrawScale() { mixin(MGPC("float", 96)); }
+			Vector DrawScale3D() { mixin(MGPC("Vector", 100)); }
+			Vector PrePivot() { mixin(MGPC("Vector", 112)); }
+			UObject.Color EditorIconColor() { mixin(MGPC("UObject.Color", 124)); }
+			UObject.RenderCommandFence DetachFence() { mixin(MGPC("UObject.RenderCommandFence", 128)); }
+			float CustomTimeDilation() { mixin(MGPC("float", 132)); }
+			Actor.ECollisionType CollisionType() { mixin(MGPC("Actor.ECollisionType", 139)); }
+			Actor.ECollisionType ReplicatedCollisionType() { mixin(MGPC("Actor.ECollisionType", 140)); }
+			UObject.ETickingGroup TickGroup() { mixin(MGPC("UObject.ETickingGroup", 141)); }
+			ScriptArray!(Actor.TimerData) Timers() { mixin(MGPC("ScriptArray!(Actor.TimerData)", 152)); }
+			int NetTag() { mixin(MGPC("int", 176)); }
+			int IndexInTickList() { mixin(MGPC("int", 180)); }
+			float LastSlowRelevancyCheckTime() { mixin(MGPC("float", 184)); }
+			float NetUpdateTime() { mixin(MGPC("float", 200)); }
+			float NetPriority() { mixin(MGPC("float", 208)); }
+			float LastNetUpdateTime() { mixin(MGPC("float", 212)); }
+			float TimeSinceLastTick() { mixin(MGPC("float", 216)); }
+			float TickFrequency() { mixin(MGPC("float", 220)); }
+			float TickFrequencyAtEndDistance() { mixin(MGPC("float", 224)); }
+			float TickFrequencyDecreaseDistanceStart() { mixin(MGPC("float", 228)); }
+			float TickFrequencyDecreaseDistanceEnd() { mixin(MGPC("float", 232)); }
+			float TickFrequencyLastSeenTimeBeforeForcingMaxTickFrequency() { mixin(MGPC("float", 236)); }
+			float LifeSpan() { mixin(MGPC("float", 248)); }
+			float CreationTime() { mixin(MGPC("float", 252)); }
+			ScriptName Tag() { mixin(MGPC("ScriptName", 260)); }
+			ScriptName Group() { mixin(MGPC("ScriptName", 276)); }
+			QWord HiddenEditorViews() { mixin(MGPC("QWord", 284)); }
+			ScriptArray!(Actor) Touching() { mixin(MGPC("ScriptArray!(Actor)", 292)); }
+			ScriptArray!(Actor) Children() { mixin(MGPC("ScriptArray!(Actor)", 304)); }
+			float LatentFloat() { mixin(MGPC("float", 316)); }
+			AnimNodeSequence LatentSeqNode() { mixin(MGPC("AnimNodeSequence", 320)); }
+			Vector AngularVelocity() { mixin(MGPC("Vector", 352)); }
+			int OverlapTag() { mixin(MGPC("int", 416)); }
+			Rotator RotationRate() { mixin(MGPC("Rotator", 420)); }
+			Actor PendingTouch() { mixin(MGPC("Actor", 432)); }
+			ScriptClass MessageClass() { mixin(MGPC("ScriptClass", 436)); }
+			ScriptArray!(ScriptClass) SupportedEvents() { mixin(MGPC("ScriptArray!(ScriptClass)", 440)); }
 		}
-		bool bGameRelevant() { mixin(MGBPC!(168, 0x10000)()); }
-		bool bGameRelevant(bool val) { mixin(MSBPC!(168, 0x10000)()); }
-		bool bStatic() { mixin(MGBPC!(164, 0x1)()); }
-		bool bStatic(bool val) { mixin(MSBPC!(164, 0x1)()); }
-		bool bNoDelete() { mixin(MGBPC!(164, 0x4)()); }
-		bool bNoDelete(bool val) { mixin(MSBPC!(164, 0x4)()); }
-		bool bScriptInitialized() { mixin(MGBPC!(172, 0x800000)()); }
-		bool bScriptInitialized(bool val) { mixin(MSBPC!(172, 0x800000)()); }
-		bool bProjTarget() { mixin(MGBPC!(168, 0x80000000)()); }
-		bool bProjTarget(bool val) { mixin(MSBPC!(168, 0x80000000)()); }
-		bool bBlockActors() { mixin(MGBPC!(168, 0x40000000)()); }
-		bool bBlockActors(bool val) { mixin(MSBPC!(168, 0x40000000)()); }
-		bool bHurtEntry() { mixin(MGBPC!(168, 0x8000)()); }
-		bool bHurtEntry(bool val) { mixin(MSBPC!(168, 0x8000)()); }
-		bool bWorldGeometry() { mixin(MGBPC!(164, 0x80)()); }
-		bool bWorldGeometry(bool val) { mixin(MSBPC!(164, 0x80)()); }
-		bool bCanBeDamaged() { mixin(MGBPC!(168, 0x80000)()); }
-		bool bCanBeDamaged(bool val) { mixin(MSBPC!(168, 0x80000)()); }
-		bool bDeleteMe() { mixin(MGBPC!(164, 0x8)()); }
-		bool bDeleteMe(bool val) { mixin(MSBPC!(164, 0x8)()); }
-		bool bTearOff() { mixin(MGBPC!(164, 0x4000000)()); }
-		bool bTearOff(bool val) { mixin(MSBPC!(164, 0x4000000)()); }
-		bool bBounce() { mixin(MGBPC!(172, 0x200)()); }
-		bool bBounce(bool val) { mixin(MSBPC!(172, 0x200)()); }
-		bool bHardAttach() { mixin(MGBPC!(168, 0x400)()); }
-		bool bHardAttach(bool val) { mixin(MSBPC!(168, 0x400)()); }
-		bool bCollideActors() { mixin(MGBPC!(168, 0x8000000)()); }
-		bool bCollideActors(bool val) { mixin(MSBPC!(168, 0x8000000)()); }
-		bool bCollideWorld() { mixin(MGBPC!(168, 0x10000000)()); }
-		bool bCollideWorld(bool val) { mixin(MSBPC!(168, 0x10000000)()); }
-		bool bAllowFluidSurfaceInteraction() { mixin(MGBPC!(164, 0x10000000)()); }
-		bool bAllowFluidSurfaceInteraction(bool val) { mixin(MSBPC!(164, 0x10000000)()); }
-		bool bDebugEffectIsRelevant() { mixin(MGBPC!(172, 0x8000000)()); }
-		bool bDebugEffectIsRelevant(bool val) { mixin(MSBPC!(172, 0x8000000)()); }
-		bool bAlwaysRelevant() { mixin(MGBPC!(164, 0x200000)()); }
-		bool bAlwaysRelevant(bool val) { mixin(MSBPC!(164, 0x200000)()); }
-		bool bForceNetUpdate() { mixin(MGBPC!(168, 0x100)()); }
-		bool bForceNetUpdate(bool val) { mixin(MSBPC!(168, 0x100)()); }
-		bool bHidden() { mixin(MGBPC!(164, 0x2)()); }
-		bool bHidden(bool val) { mixin(MSBPC!(164, 0x2)()); }
-		bool bUpdateSimulatedPosition() { mixin(MGBPC!(164, 0x2000000)()); }
-		bool bUpdateSimulatedPosition(bool val) { mixin(MSBPC!(164, 0x2000000)()); }
-		bool bNetDirty() { mixin(MGBPC!(164, 0x100000)()); }
-		bool bNetDirty(bool val) { mixin(MSBPC!(164, 0x100000)()); }
-		bool bOnlyDirtyReplication() { mixin(MGBPC!(164, 0x8000000)()); }
-		bool bOnlyDirtyReplication(bool val) { mixin(MSBPC!(164, 0x8000000)()); }
-		bool bCanBeFrictionedTo() { mixin(MGBPC!(168, 0x4000)()); }
-		bool bCanBeFrictionedTo(bool val) { mixin(MSBPC!(168, 0x4000)()); }
-		bool bCanBeAdheredTo() { mixin(MGBPC!(168, 0x2000)()); }
-		bool bCanBeAdheredTo(bool val) { mixin(MSBPC!(168, 0x2000)()); }
-		bool bSkipActorPropertyReplication() { mixin(MGBPC!(164, 0x1000000)()); }
-		bool bSkipActorPropertyReplication(bool val) { mixin(MSBPC!(164, 0x1000000)()); }
-		bool bNetInitial() { mixin(MGBPC!(172, 0x800)()); }
-		bool bNetInitial(bool val) { mixin(MSBPC!(172, 0x800)()); }
-		bool bReplicateMovement() { mixin(MGBPC!(164, 0x800000)()); }
-		bool bReplicateMovement(bool val) { mixin(MSBPC!(164, 0x800000)()); }
-		bool bReplicateInstigator() { mixin(MGBPC!(164, 0x400000)()); }
-		bool bReplicateInstigator(bool val) { mixin(MSBPC!(164, 0x400000)()); }
-		bool bNetOwner() { mixin(MGBPC!(172, 0x1000)()); }
-		bool bNetOwner(bool val) { mixin(MSBPC!(172, 0x1000)()); }
-		bool bTicked() { mixin(MGBPC!(164, 0x10)()); }
-		bool bTicked(bool val) { mixin(MSBPC!(164, 0x10)()); }
-		bool bOnlyOwnerSee() { mixin(MGBPC!(164, 0x20)()); }
-		bool bOnlyOwnerSee(bool val) { mixin(MSBPC!(164, 0x20)()); }
-		bool bTickIsDisabled() { mixin(MGBPC!(164, 0x40)()); }
-		bool bTickIsDisabled(bool val) { mixin(MSBPC!(164, 0x40)()); }
-		bool bIgnoreRigidBodyPawns() { mixin(MGBPC!(164, 0x100)()); }
-		bool bIgnoreRigidBodyPawns(bool val) { mixin(MSBPC!(164, 0x100)()); }
-		bool bOrientOnSlope() { mixin(MGBPC!(164, 0x200)()); }
-		bool bOrientOnSlope(bool val) { mixin(MSBPC!(164, 0x200)()); }
-		bool bIgnoreEncroachers() { mixin(MGBPC!(164, 0x400)()); }
-		bool bIgnoreEncroachers(bool val) { mixin(MSBPC!(164, 0x400)()); }
-		bool bPushedByEncroachers() { mixin(MGBPC!(164, 0x800)()); }
-		bool bPushedByEncroachers(bool val) { mixin(MSBPC!(164, 0x800)()); }
-		bool bDestroyedByInterpActor() { mixin(MGBPC!(164, 0x1000)()); }
-		bool bDestroyedByInterpActor(bool val) { mixin(MSBPC!(164, 0x1000)()); }
-		bool bRouteBeginPlayEvenIfStatic() { mixin(MGBPC!(164, 0x2000)()); }
-		bool bRouteBeginPlayEvenIfStatic(bool val) { mixin(MSBPC!(164, 0x2000)()); }
-		bool bIsMoving() { mixin(MGBPC!(164, 0x4000)()); }
-		bool bIsMoving(bool val) { mixin(MSBPC!(164, 0x4000)()); }
-		bool bAlwaysEncroachCheck() { mixin(MGBPC!(164, 0x8000)()); }
-		bool bAlwaysEncroachCheck(bool val) { mixin(MSBPC!(164, 0x8000)()); }
-		bool bHasAlternateTargetLocation() { mixin(MGBPC!(164, 0x10000)()); }
-		bool bHasAlternateTargetLocation(bool val) { mixin(MSBPC!(164, 0x10000)()); }
-		bool bCanStepUpOn() { mixin(MGBPC!(164, 0x20000)()); }
-		bool bCanStepUpOn(bool val) { mixin(MSBPC!(164, 0x20000)()); }
-		bool bNetTemporary() { mixin(MGBPC!(164, 0x40000)()); }
-		bool bNetTemporary(bool val) { mixin(MSBPC!(164, 0x40000)()); }
-		bool bOnlyRelevantToOwner() { mixin(MGBPC!(164, 0x80000)()); }
-		bool bOnlyRelevantToOwner(bool val) { mixin(MSBPC!(164, 0x80000)()); }
-		bool bDemoRecording() { mixin(MGBPC!(164, 0x20000000)()); }
-		bool bDemoRecording(bool val) { mixin(MSBPC!(164, 0x20000000)()); }
-		bool bDemoOwner() { mixin(MGBPC!(164, 0x40000000)()); }
-		bool bDemoOwner(bool val) { mixin(MSBPC!(164, 0x40000000)()); }
-		bool bForceDemoRelevant() { mixin(MGBPC!(164, 0x80000000)()); }
-		bool bForceDemoRelevant(bool val) { mixin(MSBPC!(164, 0x80000000)()); }
-		bool bNetInitialRotation() { mixin(MGBPC!(168, 0x1)()); }
-		bool bNetInitialRotation(bool val) { mixin(MSBPC!(168, 0x1)()); }
-		bool bReplicateRigidBodyLocation() { mixin(MGBPC!(168, 0x2)()); }
-		bool bReplicateRigidBodyLocation(bool val) { mixin(MSBPC!(168, 0x2)()); }
-		bool bKillDuringLevelTransition() { mixin(MGBPC!(168, 0x4)()); }
-		bool bKillDuringLevelTransition(bool val) { mixin(MSBPC!(168, 0x4)()); }
-		bool bExchangedRoles() { mixin(MGBPC!(168, 0x8)()); }
-		bool bExchangedRoles(bool val) { mixin(MSBPC!(168, 0x8)()); }
-		bool bConsiderAllStaticMeshComponentsForStreaming() { mixin(MGBPC!(168, 0x10)()); }
-		bool bConsiderAllStaticMeshComponentsForStreaming(bool val) { mixin(MSBPC!(168, 0x10)()); }
-		bool bDebug() { mixin(MGBPC!(168, 0x20)()); }
-		bool bDebug(bool val) { mixin(MSBPC!(168, 0x20)()); }
-		bool bPostRenderIfNotVisible() { mixin(MGBPC!(168, 0x40)()); }
-		bool bPostRenderIfNotVisible(bool val) { mixin(MSBPC!(168, 0x40)()); }
-		bool s_bThrottleNetRelevancy() { mixin(MGBPC!(168, 0x80)()); }
-		bool s_bThrottleNetRelevancy(bool val) { mixin(MSBPC!(168, 0x80)()); }
-		bool bPendingNetUpdate() { mixin(MGBPC!(168, 0x200)()); }
-		bool bPendingNetUpdate(bool val) { mixin(MSBPC!(168, 0x200)()); }
-		bool bIgnoreBaseRotation() { mixin(MGBPC!(168, 0x800)()); }
-		bool bIgnoreBaseRotation(bool val) { mixin(MSBPC!(168, 0x800)()); }
-		bool bShadowParented() { mixin(MGBPC!(168, 0x1000)()); }
-		bool bShadowParented(bool val) { mixin(MSBPC!(168, 0x1000)()); }
-		bool bMovable() { mixin(MGBPC!(168, 0x20000)()); }
-		bool bMovable(bool val) { mixin(MSBPC!(168, 0x20000)()); }
-		bool bDestroyInPainVolume() { mixin(MGBPC!(168, 0x40000)()); }
-		bool bDestroyInPainVolume(bool val) { mixin(MSBPC!(168, 0x40000)()); }
-		bool bShouldBaseAtStartup() { mixin(MGBPC!(168, 0x100000)()); }
-		bool bShouldBaseAtStartup(bool val) { mixin(MSBPC!(168, 0x100000)()); }
-		bool bPendingDelete() { mixin(MGBPC!(168, 0x200000)()); }
-		bool bPendingDelete(bool val) { mixin(MSBPC!(168, 0x200000)()); }
-		bool bCanTeleport() { mixin(MGBPC!(168, 0x400000)()); }
-		bool bCanTeleport(bool val) { mixin(MSBPC!(168, 0x400000)()); }
-		bool bAlwaysTick() { mixin(MGBPC!(168, 0x800000)()); }
-		bool bAlwaysTick(bool val) { mixin(MSBPC!(168, 0x800000)()); }
-		bool bBlocksNavigation() { mixin(MGBPC!(168, 0x1000000)()); }
-		bool bBlocksNavigation(bool val) { mixin(MSBPC!(168, 0x1000000)()); }
-		bool BlockRigidBody() { mixin(MGBPC!(168, 0x2000000)()); }
-		bool BlockRigidBody(bool val) { mixin(MSBPC!(168, 0x2000000)()); }
-		bool bCollideWhenPlacing() { mixin(MGBPC!(168, 0x4000000)()); }
-		bool bCollideWhenPlacing(bool val) { mixin(MSBPC!(168, 0x4000000)()); }
-		bool bCollideComplex() { mixin(MGBPC!(168, 0x20000000)()); }
-		bool bCollideComplex(bool val) { mixin(MSBPC!(168, 0x20000000)()); }
-		bool bBlocksTeleport() { mixin(MGBPC!(172, 0x1)()); }
-		bool bBlocksTeleport(bool val) { mixin(MSBPC!(172, 0x1)()); }
-		bool bMoveIgnoresDestruction() { mixin(MGBPC!(172, 0x2)()); }
-		bool bMoveIgnoresDestruction(bool val) { mixin(MSBPC!(172, 0x2)()); }
-		bool bNoEncroachCheck() { mixin(MGBPC!(172, 0x4)()); }
-		bool bNoEncroachCheck(bool val) { mixin(MSBPC!(172, 0x4)()); }
-		bool bCollideAsEncroacher() { mixin(MGBPC!(172, 0x8)()); }
-		bool bCollideAsEncroacher(bool val) { mixin(MSBPC!(172, 0x8)()); }
-		bool bPhysRigidBodyOutOfWorldCheck() { mixin(MGBPC!(172, 0x10)()); }
-		bool bPhysRigidBodyOutOfWorldCheck(bool val) { mixin(MSBPC!(172, 0x10)()); }
-		bool bComponentOutsideWorld() { mixin(MGBPC!(172, 0x20)()); }
-		bool bComponentOutsideWorld(bool val) { mixin(MSBPC!(172, 0x20)()); }
-		bool bForceOctreeSNFilter() { mixin(MGBPC!(172, 0x40)()); }
-		bool bForceOctreeSNFilter(bool val) { mixin(MSBPC!(172, 0x40)()); }
-		bool bRigidBodyWasAwake() { mixin(MGBPC!(172, 0x80)()); }
-		bool bRigidBodyWasAwake(bool val) { mixin(MSBPC!(172, 0x80)()); }
-		bool bCallRigidBodyWakeEvents() { mixin(MGBPC!(172, 0x100)()); }
-		bool bCallRigidBodyWakeEvents(bool val) { mixin(MSBPC!(172, 0x100)()); }
-		bool bJustTeleported() { mixin(MGBPC!(172, 0x400)()); }
-		bool bJustTeleported(bool val) { mixin(MSBPC!(172, 0x400)()); }
-		bool bHiddenEd() { mixin(MGBPC!(172, 0x2000)()); }
-		bool bHiddenEd(bool val) { mixin(MSBPC!(172, 0x2000)()); }
-		bool bEditable() { mixin(MGBPC!(172, 0x4000)()); }
-		bool bEditable(bool val) { mixin(MSBPC!(172, 0x4000)()); }
-		bool bHiddenEdGroup() { mixin(MGBPC!(172, 0x8000)()); }
-		bool bHiddenEdGroup(bool val) { mixin(MSBPC!(172, 0x8000)()); }
-		bool bHiddenEdCustom() { mixin(MGBPC!(172, 0x10000)()); }
-		bool bHiddenEdCustom(bool val) { mixin(MSBPC!(172, 0x10000)()); }
-		bool bHiddenEdTemporary() { mixin(MGBPC!(172, 0x20000)()); }
-		bool bHiddenEdTemporary(bool val) { mixin(MSBPC!(172, 0x20000)()); }
-		bool bHiddenEdLevel() { mixin(MGBPC!(172, 0x40000)()); }
-		bool bHiddenEdLevel(bool val) { mixin(MSBPC!(172, 0x40000)()); }
-		bool bEdShouldSnap() { mixin(MGBPC!(172, 0x80000)()); }
-		bool bEdShouldSnap(bool val) { mixin(MSBPC!(172, 0x80000)()); }
-		bool bTempEditor() { mixin(MGBPC!(172, 0x100000)()); }
-		bool bTempEditor(bool val) { mixin(MSBPC!(172, 0x100000)()); }
-		bool bPathColliding() { mixin(MGBPC!(172, 0x200000)()); }
-		bool bPathColliding(bool val) { mixin(MSBPC!(172, 0x200000)()); }
-		bool bPathTemp() { mixin(MGBPC!(172, 0x400000)()); }
-		bool bPathTemp(bool val) { mixin(MSBPC!(172, 0x400000)()); }
-		bool bLockLocation() { mixin(MGBPC!(172, 0x1000000)()); }
-		bool bLockLocation(bool val) { mixin(MSBPC!(172, 0x1000000)()); }
-		bool bForceAllowKismetModification() { mixin(MGBPC!(172, 0x2000000)()); }
-		bool bForceAllowKismetModification(bool val) { mixin(MSBPC!(172, 0x2000000)()); }
-		bool m_bPotentialSeekingTarget() { mixin(MGBPC!(172, 0x4000000)()); }
-		bool m_bPotentialSeekingTarget(bool val) { mixin(MSBPC!(172, 0x4000000)()); }
+		bool bGameRelevant() { mixin(MGBPC(168, 0x10000)); }
+		bool bGameRelevant(bool val) { mixin(MSBPC(168, 0x10000)); }
+		bool bStatic() { mixin(MGBPC(164, 0x1)); }
+		bool bStatic(bool val) { mixin(MSBPC(164, 0x1)); }
+		bool bNoDelete() { mixin(MGBPC(164, 0x4)); }
+		bool bNoDelete(bool val) { mixin(MSBPC(164, 0x4)); }
+		bool bScriptInitialized() { mixin(MGBPC(172, 0x800000)); }
+		bool bScriptInitialized(bool val) { mixin(MSBPC(172, 0x800000)); }
+		bool bProjTarget() { mixin(MGBPC(168, 0x80000000)); }
+		bool bProjTarget(bool val) { mixin(MSBPC(168, 0x80000000)); }
+		bool bBlockActors() { mixin(MGBPC(168, 0x40000000)); }
+		bool bBlockActors(bool val) { mixin(MSBPC(168, 0x40000000)); }
+		bool bHurtEntry() { mixin(MGBPC(168, 0x8000)); }
+		bool bHurtEntry(bool val) { mixin(MSBPC(168, 0x8000)); }
+		bool bWorldGeometry() { mixin(MGBPC(164, 0x80)); }
+		bool bWorldGeometry(bool val) { mixin(MSBPC(164, 0x80)); }
+		bool bCanBeDamaged() { mixin(MGBPC(168, 0x80000)); }
+		bool bCanBeDamaged(bool val) { mixin(MSBPC(168, 0x80000)); }
+		bool bDeleteMe() { mixin(MGBPC(164, 0x8)); }
+		bool bDeleteMe(bool val) { mixin(MSBPC(164, 0x8)); }
+		bool bTearOff() { mixin(MGBPC(164, 0x4000000)); }
+		bool bTearOff(bool val) { mixin(MSBPC(164, 0x4000000)); }
+		bool bBounce() { mixin(MGBPC(172, 0x200)); }
+		bool bBounce(bool val) { mixin(MSBPC(172, 0x200)); }
+		bool bHardAttach() { mixin(MGBPC(168, 0x400)); }
+		bool bHardAttach(bool val) { mixin(MSBPC(168, 0x400)); }
+		bool bCollideActors() { mixin(MGBPC(168, 0x8000000)); }
+		bool bCollideActors(bool val) { mixin(MSBPC(168, 0x8000000)); }
+		bool bCollideWorld() { mixin(MGBPC(168, 0x10000000)); }
+		bool bCollideWorld(bool val) { mixin(MSBPC(168, 0x10000000)); }
+		bool bAllowFluidSurfaceInteraction() { mixin(MGBPC(164, 0x10000000)); }
+		bool bAllowFluidSurfaceInteraction(bool val) { mixin(MSBPC(164, 0x10000000)); }
+		bool bDebugEffectIsRelevant() { mixin(MGBPC(172, 0x8000000)); }
+		bool bDebugEffectIsRelevant(bool val) { mixin(MSBPC(172, 0x8000000)); }
+		bool bAlwaysRelevant() { mixin(MGBPC(164, 0x200000)); }
+		bool bAlwaysRelevant(bool val) { mixin(MSBPC(164, 0x200000)); }
+		bool bForceNetUpdate() { mixin(MGBPC(168, 0x100)); }
+		bool bForceNetUpdate(bool val) { mixin(MSBPC(168, 0x100)); }
+		bool bHidden() { mixin(MGBPC(164, 0x2)); }
+		bool bHidden(bool val) { mixin(MSBPC(164, 0x2)); }
+		bool bUpdateSimulatedPosition() { mixin(MGBPC(164, 0x2000000)); }
+		bool bUpdateSimulatedPosition(bool val) { mixin(MSBPC(164, 0x2000000)); }
+		bool bNetDirty() { mixin(MGBPC(164, 0x100000)); }
+		bool bNetDirty(bool val) { mixin(MSBPC(164, 0x100000)); }
+		bool bOnlyDirtyReplication() { mixin(MGBPC(164, 0x8000000)); }
+		bool bOnlyDirtyReplication(bool val) { mixin(MSBPC(164, 0x8000000)); }
+		bool bCanBeFrictionedTo() { mixin(MGBPC(168, 0x4000)); }
+		bool bCanBeFrictionedTo(bool val) { mixin(MSBPC(168, 0x4000)); }
+		bool bCanBeAdheredTo() { mixin(MGBPC(168, 0x2000)); }
+		bool bCanBeAdheredTo(bool val) { mixin(MSBPC(168, 0x2000)); }
+		bool bSkipActorPropertyReplication() { mixin(MGBPC(164, 0x1000000)); }
+		bool bSkipActorPropertyReplication(bool val) { mixin(MSBPC(164, 0x1000000)); }
+		bool bNetInitial() { mixin(MGBPC(172, 0x800)); }
+		bool bNetInitial(bool val) { mixin(MSBPC(172, 0x800)); }
+		bool bReplicateMovement() { mixin(MGBPC(164, 0x800000)); }
+		bool bReplicateMovement(bool val) { mixin(MSBPC(164, 0x800000)); }
+		bool bReplicateInstigator() { mixin(MGBPC(164, 0x400000)); }
+		bool bReplicateInstigator(bool val) { mixin(MSBPC(164, 0x400000)); }
+		bool bNetOwner() { mixin(MGBPC(172, 0x1000)); }
+		bool bNetOwner(bool val) { mixin(MSBPC(172, 0x1000)); }
+		bool bTicked() { mixin(MGBPC(164, 0x10)); }
+		bool bTicked(bool val) { mixin(MSBPC(164, 0x10)); }
+		bool bOnlyOwnerSee() { mixin(MGBPC(164, 0x20)); }
+		bool bOnlyOwnerSee(bool val) { mixin(MSBPC(164, 0x20)); }
+		bool bTickIsDisabled() { mixin(MGBPC(164, 0x40)); }
+		bool bTickIsDisabled(bool val) { mixin(MSBPC(164, 0x40)); }
+		bool bIgnoreRigidBodyPawns() { mixin(MGBPC(164, 0x100)); }
+		bool bIgnoreRigidBodyPawns(bool val) { mixin(MSBPC(164, 0x100)); }
+		bool bOrientOnSlope() { mixin(MGBPC(164, 0x200)); }
+		bool bOrientOnSlope(bool val) { mixin(MSBPC(164, 0x200)); }
+		bool bIgnoreEncroachers() { mixin(MGBPC(164, 0x400)); }
+		bool bIgnoreEncroachers(bool val) { mixin(MSBPC(164, 0x400)); }
+		bool bPushedByEncroachers() { mixin(MGBPC(164, 0x800)); }
+		bool bPushedByEncroachers(bool val) { mixin(MSBPC(164, 0x800)); }
+		bool bDestroyedByInterpActor() { mixin(MGBPC(164, 0x1000)); }
+		bool bDestroyedByInterpActor(bool val) { mixin(MSBPC(164, 0x1000)); }
+		bool bRouteBeginPlayEvenIfStatic() { mixin(MGBPC(164, 0x2000)); }
+		bool bRouteBeginPlayEvenIfStatic(bool val) { mixin(MSBPC(164, 0x2000)); }
+		bool bIsMoving() { mixin(MGBPC(164, 0x4000)); }
+		bool bIsMoving(bool val) { mixin(MSBPC(164, 0x4000)); }
+		bool bAlwaysEncroachCheck() { mixin(MGBPC(164, 0x8000)); }
+		bool bAlwaysEncroachCheck(bool val) { mixin(MSBPC(164, 0x8000)); }
+		bool bHasAlternateTargetLocation() { mixin(MGBPC(164, 0x10000)); }
+		bool bHasAlternateTargetLocation(bool val) { mixin(MSBPC(164, 0x10000)); }
+		bool bCanStepUpOn() { mixin(MGBPC(164, 0x20000)); }
+		bool bCanStepUpOn(bool val) { mixin(MSBPC(164, 0x20000)); }
+		bool bNetTemporary() { mixin(MGBPC(164, 0x40000)); }
+		bool bNetTemporary(bool val) { mixin(MSBPC(164, 0x40000)); }
+		bool bOnlyRelevantToOwner() { mixin(MGBPC(164, 0x80000)); }
+		bool bOnlyRelevantToOwner(bool val) { mixin(MSBPC(164, 0x80000)); }
+		bool bDemoRecording() { mixin(MGBPC(164, 0x20000000)); }
+		bool bDemoRecording(bool val) { mixin(MSBPC(164, 0x20000000)); }
+		bool bDemoOwner() { mixin(MGBPC(164, 0x40000000)); }
+		bool bDemoOwner(bool val) { mixin(MSBPC(164, 0x40000000)); }
+		bool bForceDemoRelevant() { mixin(MGBPC(164, 0x80000000)); }
+		bool bForceDemoRelevant(bool val) { mixin(MSBPC(164, 0x80000000)); }
+		bool bNetInitialRotation() { mixin(MGBPC(168, 0x1)); }
+		bool bNetInitialRotation(bool val) { mixin(MSBPC(168, 0x1)); }
+		bool bReplicateRigidBodyLocation() { mixin(MGBPC(168, 0x2)); }
+		bool bReplicateRigidBodyLocation(bool val) { mixin(MSBPC(168, 0x2)); }
+		bool bKillDuringLevelTransition() { mixin(MGBPC(168, 0x4)); }
+		bool bKillDuringLevelTransition(bool val) { mixin(MSBPC(168, 0x4)); }
+		bool bExchangedRoles() { mixin(MGBPC(168, 0x8)); }
+		bool bExchangedRoles(bool val) { mixin(MSBPC(168, 0x8)); }
+		bool bConsiderAllStaticMeshComponentsForStreaming() { mixin(MGBPC(168, 0x10)); }
+		bool bConsiderAllStaticMeshComponentsForStreaming(bool val) { mixin(MSBPC(168, 0x10)); }
+		bool bDebug() { mixin(MGBPC(168, 0x20)); }
+		bool bDebug(bool val) { mixin(MSBPC(168, 0x20)); }
+		bool bPostRenderIfNotVisible() { mixin(MGBPC(168, 0x40)); }
+		bool bPostRenderIfNotVisible(bool val) { mixin(MSBPC(168, 0x40)); }
+		bool s_bThrottleNetRelevancy() { mixin(MGBPC(168, 0x80)); }
+		bool s_bThrottleNetRelevancy(bool val) { mixin(MSBPC(168, 0x80)); }
+		bool bPendingNetUpdate() { mixin(MGBPC(168, 0x200)); }
+		bool bPendingNetUpdate(bool val) { mixin(MSBPC(168, 0x200)); }
+		bool bIgnoreBaseRotation() { mixin(MGBPC(168, 0x800)); }
+		bool bIgnoreBaseRotation(bool val) { mixin(MSBPC(168, 0x800)); }
+		bool bShadowParented() { mixin(MGBPC(168, 0x1000)); }
+		bool bShadowParented(bool val) { mixin(MSBPC(168, 0x1000)); }
+		bool bMovable() { mixin(MGBPC(168, 0x20000)); }
+		bool bMovable(bool val) { mixin(MSBPC(168, 0x20000)); }
+		bool bDestroyInPainVolume() { mixin(MGBPC(168, 0x40000)); }
+		bool bDestroyInPainVolume(bool val) { mixin(MSBPC(168, 0x40000)); }
+		bool bShouldBaseAtStartup() { mixin(MGBPC(168, 0x100000)); }
+		bool bShouldBaseAtStartup(bool val) { mixin(MSBPC(168, 0x100000)); }
+		bool bPendingDelete() { mixin(MGBPC(168, 0x200000)); }
+		bool bPendingDelete(bool val) { mixin(MSBPC(168, 0x200000)); }
+		bool bCanTeleport() { mixin(MGBPC(168, 0x400000)); }
+		bool bCanTeleport(bool val) { mixin(MSBPC(168, 0x400000)); }
+		bool bAlwaysTick() { mixin(MGBPC(168, 0x800000)); }
+		bool bAlwaysTick(bool val) { mixin(MSBPC(168, 0x800000)); }
+		bool bBlocksNavigation() { mixin(MGBPC(168, 0x1000000)); }
+		bool bBlocksNavigation(bool val) { mixin(MSBPC(168, 0x1000000)); }
+		bool BlockRigidBody() { mixin(MGBPC(168, 0x2000000)); }
+		bool BlockRigidBody(bool val) { mixin(MSBPC(168, 0x2000000)); }
+		bool bCollideWhenPlacing() { mixin(MGBPC(168, 0x4000000)); }
+		bool bCollideWhenPlacing(bool val) { mixin(MSBPC(168, 0x4000000)); }
+		bool bCollideComplex() { mixin(MGBPC(168, 0x20000000)); }
+		bool bCollideComplex(bool val) { mixin(MSBPC(168, 0x20000000)); }
+		bool bBlocksTeleport() { mixin(MGBPC(172, 0x1)); }
+		bool bBlocksTeleport(bool val) { mixin(MSBPC(172, 0x1)); }
+		bool bMoveIgnoresDestruction() { mixin(MGBPC(172, 0x2)); }
+		bool bMoveIgnoresDestruction(bool val) { mixin(MSBPC(172, 0x2)); }
+		bool bNoEncroachCheck() { mixin(MGBPC(172, 0x4)); }
+		bool bNoEncroachCheck(bool val) { mixin(MSBPC(172, 0x4)); }
+		bool bCollideAsEncroacher() { mixin(MGBPC(172, 0x8)); }
+		bool bCollideAsEncroacher(bool val) { mixin(MSBPC(172, 0x8)); }
+		bool bPhysRigidBodyOutOfWorldCheck() { mixin(MGBPC(172, 0x10)); }
+		bool bPhysRigidBodyOutOfWorldCheck(bool val) { mixin(MSBPC(172, 0x10)); }
+		bool bComponentOutsideWorld() { mixin(MGBPC(172, 0x20)); }
+		bool bComponentOutsideWorld(bool val) { mixin(MSBPC(172, 0x20)); }
+		bool bForceOctreeSNFilter() { mixin(MGBPC(172, 0x40)); }
+		bool bForceOctreeSNFilter(bool val) { mixin(MSBPC(172, 0x40)); }
+		bool bRigidBodyWasAwake() { mixin(MGBPC(172, 0x80)); }
+		bool bRigidBodyWasAwake(bool val) { mixin(MSBPC(172, 0x80)); }
+		bool bCallRigidBodyWakeEvents() { mixin(MGBPC(172, 0x100)); }
+		bool bCallRigidBodyWakeEvents(bool val) { mixin(MSBPC(172, 0x100)); }
+		bool bJustTeleported() { mixin(MGBPC(172, 0x400)); }
+		bool bJustTeleported(bool val) { mixin(MSBPC(172, 0x400)); }
+		bool bHiddenEd() { mixin(MGBPC(172, 0x2000)); }
+		bool bHiddenEd(bool val) { mixin(MSBPC(172, 0x2000)); }
+		bool bEditable() { mixin(MGBPC(172, 0x4000)); }
+		bool bEditable(bool val) { mixin(MSBPC(172, 0x4000)); }
+		bool bHiddenEdGroup() { mixin(MGBPC(172, 0x8000)); }
+		bool bHiddenEdGroup(bool val) { mixin(MSBPC(172, 0x8000)); }
+		bool bHiddenEdCustom() { mixin(MGBPC(172, 0x10000)); }
+		bool bHiddenEdCustom(bool val) { mixin(MSBPC(172, 0x10000)); }
+		bool bHiddenEdTemporary() { mixin(MGBPC(172, 0x20000)); }
+		bool bHiddenEdTemporary(bool val) { mixin(MSBPC(172, 0x20000)); }
+		bool bHiddenEdLevel() { mixin(MGBPC(172, 0x40000)); }
+		bool bHiddenEdLevel(bool val) { mixin(MSBPC(172, 0x40000)); }
+		bool bEdShouldSnap() { mixin(MGBPC(172, 0x80000)); }
+		bool bEdShouldSnap(bool val) { mixin(MSBPC(172, 0x80000)); }
+		bool bTempEditor() { mixin(MGBPC(172, 0x100000)); }
+		bool bTempEditor(bool val) { mixin(MSBPC(172, 0x100000)); }
+		bool bPathColliding() { mixin(MGBPC(172, 0x200000)); }
+		bool bPathColliding(bool val) { mixin(MSBPC(172, 0x200000)); }
+		bool bPathTemp() { mixin(MGBPC(172, 0x400000)); }
+		bool bPathTemp(bool val) { mixin(MSBPC(172, 0x400000)); }
+		bool bLockLocation() { mixin(MGBPC(172, 0x1000000)); }
+		bool bLockLocation(bool val) { mixin(MSBPC(172, 0x1000000)); }
+		bool bForceAllowKismetModification() { mixin(MGBPC(172, 0x2000000)); }
+		bool bForceAllowKismetModification(bool val) { mixin(MSBPC(172, 0x2000000)); }
+		bool m_bPotentialSeekingTarget() { mixin(MGBPC(172, 0x4000000)); }
+		bool m_bPotentialSeekingTarget(bool val) { mixin(MSBPC(172, 0x4000000)); }
 	}
 final:
 	void ForceUpdateComponents(bool* bCollisionUpdate = null, bool* bTransformOnly = null)

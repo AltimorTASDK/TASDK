@@ -8,7 +8,7 @@ extern(C++) interface TrDmgType_AVMine : TrDmgType_Mine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDmgType_AVMine")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDmgType_AVMine")); }
 	private static __gshared TrDmgType_AVMine mDefaultProperties;
-	@property final static TrDmgType_AVMine DefaultProperties() { mixin(MGDPC!(TrDmgType_AVMine, "TrDmgType_AVMine TribesGame.Default__TrDmgType_AVMine")()); }
+	@property final static TrDmgType_AVMine DefaultProperties() { mixin(MGDPC("TrDmgType_AVMine", "TrDmgType_AVMine TribesGame.Default__TrDmgType_AVMine")); }
 }

@@ -8,13 +8,13 @@ extern(C++) interface HelpCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.HelpCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Core.HelpCommandlet")); }
 	private static __gshared HelpCommandlet mDefaultProperties;
-	@property final static HelpCommandlet DefaultProperties() { mixin(MGDPC!(HelpCommandlet, "HelpCommandlet Core.Default__HelpCommandlet")()); }
+	@property final static HelpCommandlet DefaultProperties() { mixin(MGDPC("HelpCommandlet", "HelpCommandlet Core.Default__HelpCommandlet")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMain;
-		public @property static final ScriptFunction Main() { mixin(MGF!("mMain", "Function Core.HelpCommandlet.Main")()); }
+		public @property static final ScriptFunction Main() { mixin(MGF("mMain", "Function Core.HelpCommandlet.Main")); }
 	}
 	final int Main(ScriptString Params)
 	{

@@ -12,9 +12,9 @@ extern(C++) interface Console : Interaction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Console")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Console")); }
 	private static __gshared Console mDefaultProperties;
-	@property final static Console DefaultProperties() { mixin(MGDPC!(Console, "Console Engine.Default__Console")()); }
+	@property final static Console DefaultProperties() { mixin(MGDPC("Console", "Console Engine.Default__Console")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,23 +39,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialized() { mixin(MGF!("mInitialized", "Function Engine.Console.Initialized")()); }
-			ScriptFunction SetInputText() { mixin(MGF!("mSetInputText", "Function Engine.Console.SetInputText")()); }
-			ScriptFunction SetCursorPos() { mixin(MGF!("mSetCursorPos", "Function Engine.Console.SetCursorPos")()); }
-			ScriptFunction PurgeCommandFromHistory() { mixin(MGF!("mPurgeCommandFromHistory", "Function Engine.Console.PurgeCommandFromHistory")()); }
-			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function Engine.Console.ConsoleCommand")()); }
-			ScriptFunction ClearOutput() { mixin(MGF!("mClearOutput", "Function Engine.Console.ClearOutput")()); }
-			ScriptFunction OutputTextLine() { mixin(MGF!("mOutputTextLine", "Function Engine.Console.OutputTextLine")()); }
-			ScriptFunction OutputText() { mixin(MGF!("mOutputText", "Function Engine.Console.OutputText")()); }
-			ScriptFunction StartTyping() { mixin(MGF!("mStartTyping", "Function Engine.Console.StartTyping")()); }
-			ScriptFunction PostRender_Console() { mixin(MGF!("mPostRender_Console", "Function Engine.Console.PostRender_Console")()); }
-			ScriptFunction InputKey() { mixin(MGF!("mInputKey", "Function Engine.Console.InputKey")()); }
-			ScriptFunction InputChar() { mixin(MGF!("mInputChar", "Function Engine.Console.InputChar")()); }
-			ScriptFunction FlushPlayerInput() { mixin(MGF!("mFlushPlayerInput", "Function Engine.Console.FlushPlayerInput")()); }
-			ScriptFunction ProcessControlKey() { mixin(MGF!("mProcessControlKey", "Function Engine.Console.ProcessControlKey")()); }
-			ScriptFunction AppendInputText() { mixin(MGF!("mAppendInputText", "Function Engine.Console.AppendInputText")()); }
-			ScriptFunction BuildRuntimeAutoCompleteList() { mixin(MGF!("mBuildRuntimeAutoCompleteList", "Function Engine.Console.BuildRuntimeAutoCompleteList")()); }
-			ScriptFunction UpdateCompleteIndices() { mixin(MGF!("mUpdateCompleteIndices", "Function Engine.Console.UpdateCompleteIndices")()); }
+			ScriptFunction Initialized() { mixin(MGF("mInitialized", "Function Engine.Console.Initialized")); }
+			ScriptFunction SetInputText() { mixin(MGF("mSetInputText", "Function Engine.Console.SetInputText")); }
+			ScriptFunction SetCursorPos() { mixin(MGF("mSetCursorPos", "Function Engine.Console.SetCursorPos")); }
+			ScriptFunction PurgeCommandFromHistory() { mixin(MGF("mPurgeCommandFromHistory", "Function Engine.Console.PurgeCommandFromHistory")); }
+			ScriptFunction ConsoleCommand() { mixin(MGF("mConsoleCommand", "Function Engine.Console.ConsoleCommand")); }
+			ScriptFunction ClearOutput() { mixin(MGF("mClearOutput", "Function Engine.Console.ClearOutput")); }
+			ScriptFunction OutputTextLine() { mixin(MGF("mOutputTextLine", "Function Engine.Console.OutputTextLine")); }
+			ScriptFunction OutputText() { mixin(MGF("mOutputText", "Function Engine.Console.OutputText")); }
+			ScriptFunction StartTyping() { mixin(MGF("mStartTyping", "Function Engine.Console.StartTyping")); }
+			ScriptFunction PostRender_Console() { mixin(MGF("mPostRender_Console", "Function Engine.Console.PostRender_Console")); }
+			ScriptFunction InputKey() { mixin(MGF("mInputKey", "Function Engine.Console.InputKey")); }
+			ScriptFunction InputChar() { mixin(MGF("mInputChar", "Function Engine.Console.InputChar")); }
+			ScriptFunction FlushPlayerInput() { mixin(MGF("mFlushPlayerInput", "Function Engine.Console.FlushPlayerInput")); }
+			ScriptFunction ProcessControlKey() { mixin(MGF("mProcessControlKey", "Function Engine.Console.ProcessControlKey")); }
+			ScriptFunction AppendInputText() { mixin(MGF("mAppendInputText", "Function Engine.Console.AppendInputText")); }
+			ScriptFunction BuildRuntimeAutoCompleteList() { mixin(MGF("mBuildRuntimeAutoCompleteList", "Function Engine.Console.BuildRuntimeAutoCompleteList")); }
+			ScriptFunction UpdateCompleteIndices() { mixin(MGF("mUpdateCompleteIndices", "Function Engine.Console.UpdateCompleteIndices")); }
 		}
 	}
 	static struct Constants
@@ -67,11 +67,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.scrollbackData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Console.scrollbackData")); }
 		@property final auto ref
 		{
-			UObject.Color OverrideColor() { mixin(MGPS!("UObject.Color", 12)()); }
-			ScriptString Text() { mixin(MGPS!("ScriptString", 0)()); }
+			UObject.Color OverrideColor() { mixin(MGPS("UObject.Color", 12)); }
+			ScriptString Text() { mixin(MGPS("ScriptString", 0)); }
 		}
 	}
 	struct AutoCompleteCommand
@@ -79,11 +79,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.AutoCompleteCommand")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Console.AutoCompleteCommand")); }
 		@property final auto ref
 		{
-			ScriptString Desc() { mixin(MGPS!("ScriptString", 12)()); }
-			ScriptString Command() { mixin(MGPS!("ScriptString", 0)()); }
+			ScriptString Desc() { mixin(MGPS("ScriptString", 12)); }
+			ScriptString Command() { mixin(MGPS("ScriptString", 0)); }
 		}
 	}
 	struct AutoCompleteNode
@@ -91,63 +91,63 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.AutoCompleteNode")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Console.AutoCompleteNode")); }
 		@property final auto ref
 		{
-			ScriptArray!(int) AutoCompleteListIndices() { mixin(MGPS!("ScriptArray!(int)", 4)()); }
-			ScriptArray!(UObject.Pointer) ChildNodes() { mixin(MGPS!("ScriptArray!(UObject.Pointer)", 16)()); }
-			int IndexChar() { mixin(MGPS!("int", 0)()); }
+			ScriptArray!(int) AutoCompleteListIndices() { mixin(MGPS("ScriptArray!(int)", 4)); }
+			ScriptArray!(UObject.Pointer) ChildNodes() { mixin(MGPS("ScriptArray!(UObject.Pointer)", 16)); }
+			int IndexChar() { mixin(MGPS("int", 0)); }
 		}
 	}
 	static struct Typing
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Console.Typing")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Console.Typing")); }
 	}
 	static struct Open
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Console.Open")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Console.Open")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Console.scrollbackData) Scrollback() { mixin(MGPC!("ScriptArray!(Console.scrollbackData)", 140)()); }
-			ScriptArray!(Console.AutoCompleteCommand) ManualAutoCompleteList() { mixin(MGPC!("ScriptArray!(Console.AutoCompleteCommand)", 384)()); }
-			ScriptArray!(Console.AutoCompleteCommand) AutoCompleteList() { mixin(MGPC!("ScriptArray!(Console.AutoCompleteCommand)", 396)()); }
-			ScriptArray!(int) AutoCompleteIndices() { mixin(MGPC!("ScriptArray!(int)", 440)()); }
-			Console.AutoCompleteNode AutoCompleteTree() { mixin(MGPC!("Console.AutoCompleteNode", 412)()); }
-			int AutoCompleteIndex() { mixin(MGPC!("int", 408)()); }
-			int TypedStrPos() { mixin(MGPC!("int", 380)()); }
-			ScriptString TypedStr() { mixin(MGPC!("ScriptString", 368)()); }
-			ScriptString History() { mixin(MGPC!("ScriptString", 172)()); }
-			int HistoryCur() { mixin(MGPC!("int", 168)()); }
-			int HistoryBot() { mixin(MGPC!("int", 164)()); }
-			int HistoryTop() { mixin(MGPC!("int", 160)()); }
-			int SBPos() { mixin(MGPC!("int", 156)()); }
-			int SBHead() { mixin(MGPC!("int", 152)()); }
-			int MaxScrollbackSize() { mixin(MGPC!("int", 136)()); }
-			ScriptName TypeKey() { mixin(MGPC!("ScriptName", 128)()); }
-			ScriptName ConsoleKey() { mixin(MGPC!("ScriptName", 120)()); }
-			Texture2D DefaultTexture_White() { mixin(MGPC!("Texture2D", 116)()); }
-			Texture2D DefaultTexture_Black() { mixin(MGPC!("Texture2D", 112)()); }
-			LocalPlayer ConsoleTargetPlayer() { mixin(MGPC!("LocalPlayer", 108)()); }
+			ScriptArray!(Console.scrollbackData) Scrollback() { mixin(MGPC("ScriptArray!(Console.scrollbackData)", 140)); }
+			ScriptArray!(Console.AutoCompleteCommand) ManualAutoCompleteList() { mixin(MGPC("ScriptArray!(Console.AutoCompleteCommand)", 384)); }
+			ScriptArray!(Console.AutoCompleteCommand) AutoCompleteList() { mixin(MGPC("ScriptArray!(Console.AutoCompleteCommand)", 396)); }
+			ScriptArray!(int) AutoCompleteIndices() { mixin(MGPC("ScriptArray!(int)", 440)); }
+			Console.AutoCompleteNode AutoCompleteTree() { mixin(MGPC("Console.AutoCompleteNode", 412)); }
+			int AutoCompleteIndex() { mixin(MGPC("int", 408)); }
+			int TypedStrPos() { mixin(MGPC("int", 380)); }
+			ScriptString TypedStr() { mixin(MGPC("ScriptString", 368)); }
+			ScriptString History() { mixin(MGPC("ScriptString", 172)); }
+			int HistoryCur() { mixin(MGPC("int", 168)); }
+			int HistoryBot() { mixin(MGPC("int", 164)); }
+			int HistoryTop() { mixin(MGPC("int", 160)); }
+			int SBPos() { mixin(MGPC("int", 156)); }
+			int SBHead() { mixin(MGPC("int", 152)); }
+			int MaxScrollbackSize() { mixin(MGPC("int", 136)); }
+			ScriptName TypeKey() { mixin(MGPC("ScriptName", 128)); }
+			ScriptName ConsoleKey() { mixin(MGPC("ScriptName", 120)); }
+			Texture2D DefaultTexture_White() { mixin(MGPC("Texture2D", 116)); }
+			Texture2D DefaultTexture_Black() { mixin(MGPC("Texture2D", 112)); }
+			LocalPlayer ConsoleTargetPlayer() { mixin(MGPC("LocalPlayer", 108)); }
 		}
-		bool bIsRuntimeAutoCompleteUpToDate() { mixin(MGBPC!(364, 0x40)()); }
-		bool bIsRuntimeAutoCompleteUpToDate(bool val) { mixin(MSBPC!(364, 0x40)()); }
-		bool bRequireCtrlToNavigateAutoComplete() { mixin(MGBPC!(364, 0x20)()); }
-		bool bRequireCtrlToNavigateAutoComplete(bool val) { mixin(MSBPC!(364, 0x20)()); }
-		bool bAutoCompleteLocked() { mixin(MGBPC!(364, 0x10)()); }
-		bool bAutoCompleteLocked(bool val) { mixin(MSBPC!(364, 0x10)()); }
-		bool bEnableUI() { mixin(MGBPC!(364, 0x8)()); }
-		bool bEnableUI(bool val) { mixin(MSBPC!(364, 0x8)()); }
-		bool bCtrl() { mixin(MGBPC!(364, 0x4)()); }
-		bool bCtrl(bool val) { mixin(MSBPC!(364, 0x4)()); }
-		bool bCaptureKeyInput() { mixin(MGBPC!(364, 0x2)()); }
-		bool bCaptureKeyInput(bool val) { mixin(MSBPC!(364, 0x2)()); }
-		bool bNavigatingHistory() { mixin(MGBPC!(364, 0x1)()); }
-		bool bNavigatingHistory(bool val) { mixin(MSBPC!(364, 0x1)()); }
+		bool bIsRuntimeAutoCompleteUpToDate() { mixin(MGBPC(364, 0x40)); }
+		bool bIsRuntimeAutoCompleteUpToDate(bool val) { mixin(MSBPC(364, 0x40)); }
+		bool bRequireCtrlToNavigateAutoComplete() { mixin(MGBPC(364, 0x20)); }
+		bool bRequireCtrlToNavigateAutoComplete(bool val) { mixin(MSBPC(364, 0x20)); }
+		bool bAutoCompleteLocked() { mixin(MGBPC(364, 0x10)); }
+		bool bAutoCompleteLocked(bool val) { mixin(MSBPC(364, 0x10)); }
+		bool bEnableUI() { mixin(MGBPC(364, 0x8)); }
+		bool bEnableUI(bool val) { mixin(MSBPC(364, 0x8)); }
+		bool bCtrl() { mixin(MGBPC(364, 0x4)); }
+		bool bCtrl(bool val) { mixin(MSBPC(364, 0x4)); }
+		bool bCaptureKeyInput() { mixin(MGBPC(364, 0x2)); }
+		bool bCaptureKeyInput(bool val) { mixin(MSBPC(364, 0x2)); }
+		bool bNavigatingHistory() { mixin(MGBPC(364, 0x1)); }
+		bool bNavigatingHistory(bool val) { mixin(MSBPC(364, 0x1)); }
 	}
 final:
 	void Initialized()

@@ -9,9 +9,9 @@ extern(C++) interface VolumeTimer : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.VolumeTimer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.VolumeTimer")); }
 	private static __gshared VolumeTimer mDefaultProperties;
-	@property final static VolumeTimer DefaultProperties() { mixin(MGDPC!(VolumeTimer, "VolumeTimer Engine.Default__VolumeTimer")()); }
+	@property final static VolumeTimer DefaultProperties() { mixin(MGDPC("VolumeTimer", "VolumeTimer Engine.Default__VolumeTimer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.VolumeTimer.PostBeginPlay")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.VolumeTimer.Timer")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.VolumeTimer.PostBeginPlay")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function Engine.VolumeTimer.Timer")); }
 		}
 	}
-	@property final auto ref PhysicsVolume V() { mixin(MGPC!("PhysicsVolume", 476)()); }
+	@property final auto ref PhysicsVolume V() { mixin(MGPC("PhysicsVolume", 476)); }
 final:
 	void PostBeginPlay()
 	{

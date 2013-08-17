@@ -8,7 +8,7 @@ extern(C++) interface FixAdditiveReferencesCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.FixAdditiveReferencesCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.FixAdditiveReferencesCommandlet")); }
 	private static __gshared FixAdditiveReferencesCommandlet mDefaultProperties;
-	@property final static FixAdditiveReferencesCommandlet DefaultProperties() { mixin(MGDPC!(FixAdditiveReferencesCommandlet, "FixAdditiveReferencesCommandlet UnrealEd.Default__FixAdditiveReferencesCommandlet")()); }
+	@property final static FixAdditiveReferencesCommandlet DefaultProperties() { mixin(MGDPC("FixAdditiveReferencesCommandlet", "FixAdditiveReferencesCommandlet UnrealEd.Default__FixAdditiveReferencesCommandlet")); }
 }

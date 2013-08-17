@@ -10,9 +10,9 @@ extern(C++) interface GFxUDKFrontEnd_PasswordDialog : GFxUDKFrontEnd_Dialog
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_PasswordDialog")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxUDKFrontEnd_PasswordDialog")); }
 	private static __gshared GFxUDKFrontEnd_PasswordDialog mDefaultProperties;
-	@property final static GFxUDKFrontEnd_PasswordDialog DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_PasswordDialog, "GFxUDKFrontEnd_PasswordDialog UTGame.Default__GFxUDKFrontEnd_PasswordDialog")()); }
+	@property final static GFxUDKFrontEnd_PasswordDialog DefaultProperties() { mixin(MGDPC("GFxUDKFrontEnd_PasswordDialog", "GFxUDKFrontEnd_PasswordDialog UTGame.Default__GFxUDKFrontEnd_PasswordDialog")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,21 +28,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPassword() { mixin(MGF!("mGetPassword", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.GetPassword")()); }
-			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.OnTopMostView")()); }
-			ScriptFunction ClearPasswordRenderer() { mixin(MGF!("mClearPasswordRenderer", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.ClearPasswordRenderer")()); }
-			ScriptFunction OnViewClosed() { mixin(MGF!("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.OnViewClosed")()); }
-			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.DisableSubComponents")()); }
-			ScriptFunction SetBackButtonListener() { mixin(MGF!("mSetBackButtonListener", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.SetBackButtonListener")()); }
-			ScriptFunction SetOKButtonListener() { mixin(MGF!("mSetOKButtonListener", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.SetOKButtonListener")()); }
-			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.WidgetInitialized")()); }
+			ScriptFunction GetPassword() { mixin(MGF("mGetPassword", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.GetPassword")); }
+			ScriptFunction OnTopMostView() { mixin(MGF("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.OnTopMostView")); }
+			ScriptFunction ClearPasswordRenderer() { mixin(MGF("mClearPasswordRenderer", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.ClearPasswordRenderer")); }
+			ScriptFunction OnViewClosed() { mixin(MGF("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.OnViewClosed")); }
+			ScriptFunction DisableSubComponents() { mixin(MGF("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.DisableSubComponents")); }
+			ScriptFunction SetBackButtonListener() { mixin(MGF("mSetBackButtonListener", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.SetBackButtonListener")); }
+			ScriptFunction SetOKButtonListener() { mixin(MGF("mSetOKButtonListener", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.SetOKButtonListener")); }
+			ScriptFunction WidgetInitialized() { mixin(MGF("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_PasswordDialog.WidgetInitialized")); }
 		}
 	}
 	@property final auto ref
 	{
-		GFxClikWidget JoinBtn() { mixin(MGPC!("GFxClikWidget", 176)()); }
-		GFxObject PasswordTextField() { mixin(MGPC!("GFxObject", 172)()); }
-		GFxClikWidget PasswordRendererMC() { mixin(MGPC!("GFxClikWidget", 168)()); }
+		GFxClikWidget JoinBtn() { mixin(MGPC("GFxClikWidget", 176)); }
+		GFxObject PasswordTextField() { mixin(MGPC("GFxObject", 172)); }
+		GFxClikWidget PasswordRendererMC() { mixin(MGPC("GFxClikWidget", 168)); }
 	}
 final:
 	ScriptString GetPassword()

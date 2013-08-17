@@ -9,9 +9,9 @@ extern(C++) interface UTMutator_SlowTimeKills : UTMutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator_SlowTimeKills")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTMutator_SlowTimeKills")); }
 	private static __gshared UTMutator_SlowTimeKills mDefaultProperties;
-	@property final static UTMutator_SlowTimeKills DefaultProperties() { mixin(MGDPC!(UTMutator_SlowTimeKills, "UTMutator_SlowTimeKills UTGame.Default__UTMutator_SlowTimeKills")()); }
+	@property final static UTMutator_SlowTimeKills DefaultProperties() { mixin(MGDPC("UTMutator_SlowTimeKills", "UTMutator_SlowTimeKills UTGame.Default__UTMutator_SlowTimeKills")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,21 +22,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction MutatorIsAllowed() { mixin(MGF!("mMutatorIsAllowed", "Function UTGame.UTMutator_SlowTimeKills.MutatorIsAllowed")()); }
-			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function UTGame.UTMutator_SlowTimeKills.ScoreKill")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTMutator_SlowTimeKills.Timer")()); }
+			ScriptFunction MutatorIsAllowed() { mixin(MGF("mMutatorIsAllowed", "Function UTGame.UTMutator_SlowTimeKills.MutatorIsAllowed")); }
+			ScriptFunction ScoreKill() { mixin(MGF("mScoreKill", "Function UTGame.UTMutator_SlowTimeKills.ScoreKill")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function UTGame.UTMutator_SlowTimeKills.Timer")); }
 		}
 	}
 	static struct Rampup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTMutator_SlowTimeKills.Rampup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTMutator_SlowTimeKills.Rampup")); }
 	}
 	@property final auto ref
 	{
-		float SlowSpeed() { mixin(MGPC!("float", 504)()); }
-		float RampUpTime() { mixin(MGPC!("float", 500)()); }
-		float SlowTime() { mixin(MGPC!("float", 496)()); }
+		float SlowSpeed() { mixin(MGPC("float", 504)); }
+		float RampUpTime() { mixin(MGPC("float", 500)); }
+		float SlowTime() { mixin(MGPC("float", 496)); }
 	}
 final:
 	bool MutatorIsAllowed()

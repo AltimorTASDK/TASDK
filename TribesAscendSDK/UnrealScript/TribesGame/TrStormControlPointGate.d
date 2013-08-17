@@ -12,9 +12,9 @@ extern(C++) interface TrStormControlPointGate : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStormControlPointGate")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrStormControlPointGate")); }
 	private static __gshared TrStormControlPointGate mDefaultProperties;
-	@property final static TrStormControlPointGate DefaultProperties() { mixin(MGDPC!(TrStormControlPointGate, "TrStormControlPointGate TribesGame.Default__TrStormControlPointGate")()); }
+	@property final static TrStormControlPointGate DefaultProperties() { mixin(MGDPC("TrStormControlPointGate", "TrStormControlPointGate TribesGame.Default__TrStormControlPointGate")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrStormControlPointGate.Touch")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrStormControlPointGate.PostRenderFor")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrStormControlPointGate.Touch")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrStormControlPointGate.PostRenderFor")); }
 		}
 	}
-	@property final auto ref TrStormControlPoint m_ControlPoint() { mixin(MGPC!("TrStormControlPoint", 1360)()); }
+	@property final auto ref TrStormControlPoint m_ControlPoint() { mixin(MGPC("TrStormControlPoint", 1360)); }
 final:
 	void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

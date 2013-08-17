@@ -11,9 +11,9 @@ extern(C++) interface TrDeathMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeathMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeathMessage")); }
 	private static __gshared TrDeathMessage mDefaultProperties;
-	@property final static TrDeathMessage DefaultProperties() { mixin(MGDPC!(TrDeathMessage, "TrDeathMessage TribesGame.Default__TrDeathMessage")()); }
+	@property final static TrDeathMessage DefaultProperties() { mixin(MGDPC("TrDeathMessage", "TrDeathMessage TribesGame.Default__TrDeathMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,20 +24,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetConsoleColor() { mixin(MGF!("mGetConsoleColor", "Function TribesGame.TrDeathMessage.GetConsoleColor")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrDeathMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrDeathMessage.ClientReceive")()); }
+			ScriptFunction GetConsoleColor() { mixin(MGF("mGetConsoleColor", "Function TribesGame.TrDeathMessage.GetConsoleColor")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrDeathMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrDeathMessage.ClientReceive")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString SomeoneString() { mixin(MGPC!("ScriptString", 112)()); }
-			ScriptString KilledString() { mixin(MGPC!("ScriptString", 100)()); }
+			ScriptString SomeoneString() { mixin(MGPC("ScriptString", 112)); }
+			ScriptString KilledString() { mixin(MGPC("ScriptString", 100)); }
 		}
-		bool bNoConsoleDeathMessages() { mixin(MGBPC!(124, 0x1)()); }
-		bool bNoConsoleDeathMessages(bool val) { mixin(MSBPC!(124, 0x1)()); }
+		bool bNoConsoleDeathMessages() { mixin(MGBPC(124, 0x1)); }
+		bool bNoConsoleDeathMessages(bool val) { mixin(MSBPC(124, 0x1)); }
 	}
 final:
 	static UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)

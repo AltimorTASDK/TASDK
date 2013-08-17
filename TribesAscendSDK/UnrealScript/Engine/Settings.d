@@ -9,9 +9,9 @@ extern(C++) interface Settings : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Settings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Settings")); }
 	private static __gshared Settings mDefaultProperties;
-	@property final static Settings DefaultProperties() { mixin(MGDPC!(Settings, "Settings Engine.Default__Settings")()); }
+	@property final static Settings DefaultProperties() { mixin(MGDPC("Settings", "Settings Engine.Default__Settings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -74,61 +74,61 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateFromURL() { mixin(MGF!("mUpdateFromURL", "Function Engine.Settings.UpdateFromURL")()); }
-			ScriptFunction BuildURL() { mixin(MGF!("mBuildURL", "Function Engine.Settings.BuildURL")()); }
-			ScriptFunction AppendContextsToURL() { mixin(MGF!("mAppendContextsToURL", "Function Engine.Settings.AppendContextsToURL")()); }
-			ScriptFunction AppendPropertiesToURL() { mixin(MGF!("mAppendPropertiesToURL", "Function Engine.Settings.AppendPropertiesToURL")()); }
-			ScriptFunction AppendDataBindingsToURL() { mixin(MGF!("mAppendDataBindingsToURL", "Function Engine.Settings.AppendDataBindingsToURL")()); }
-			ScriptFunction GetQoSAdvertisedStringSettings() { mixin(MGF!("mGetQoSAdvertisedStringSettings", "Function Engine.Settings.GetQoSAdvertisedStringSettings")()); }
-			ScriptFunction GetQoSAdvertisedProperties() { mixin(MGF!("mGetQoSAdvertisedProperties", "Function Engine.Settings.GetQoSAdvertisedProperties")()); }
-			ScriptFunction GetRangedPropertyValue() { mixin(MGF!("mGetRangedPropertyValue", "Function Engine.Settings.GetRangedPropertyValue")()); }
-			ScriptFunction SetRangedPropertyValue() { mixin(MGF!("mSetRangedPropertyValue", "Function Engine.Settings.SetRangedPropertyValue")()); }
-			ScriptFunction GetPropertyRange() { mixin(MGF!("mGetPropertyRange", "Function Engine.Settings.GetPropertyRange")()); }
-			ScriptFunction GetPropertyMappingType() { mixin(MGF!("mGetPropertyMappingType", "Function Engine.Settings.GetPropertyMappingType")()); }
-			ScriptFunction HasStringSetting() { mixin(MGF!("mHasStringSetting", "Function Engine.Settings.HasStringSetting")()); }
-			ScriptFunction HasProperty() { mixin(MGF!("mHasProperty", "Function Engine.Settings.HasProperty")()); }
-			ScriptFunction UpdateProperties() { mixin(MGF!("mUpdateProperties", "Function Engine.Settings.UpdateProperties")()); }
-			ScriptFunction UpdateStringSettings() { mixin(MGF!("mUpdateStringSettings", "Function Engine.Settings.UpdateStringSettings")()); }
-			ScriptFunction GetPropertyType() { mixin(MGF!("mGetPropertyType", "Function Engine.Settings.GetPropertyType")()); }
-			ScriptFunction GetPropertyValueId() { mixin(MGF!("mGetPropertyValueId", "Function Engine.Settings.GetPropertyValueId")()); }
-			ScriptFunction SetPropertyValueId() { mixin(MGF!("mSetPropertyValueId", "Function Engine.Settings.SetPropertyValueId")()); }
-			ScriptFunction GetStringProperty() { mixin(MGF!("mGetStringProperty", "Function Engine.Settings.GetStringProperty")()); }
-			ScriptFunction SetStringProperty() { mixin(MGF!("mSetStringProperty", "Function Engine.Settings.SetStringProperty")()); }
-			ScriptFunction GetIntProperty() { mixin(MGF!("mGetIntProperty", "Function Engine.Settings.GetIntProperty")()); }
-			ScriptFunction SetIntProperty() { mixin(MGF!("mSetIntProperty", "Function Engine.Settings.SetIntProperty")()); }
-			ScriptFunction GetFloatProperty() { mixin(MGF!("mGetFloatProperty", "Function Engine.Settings.GetFloatProperty")()); }
-			ScriptFunction SetFloatProperty() { mixin(MGF!("mSetFloatProperty", "Function Engine.Settings.SetFloatProperty")()); }
-			ScriptFunction SetPropertyFromStringByName() { mixin(MGF!("mSetPropertyFromStringByName", "Function Engine.Settings.SetPropertyFromStringByName")()); }
-			ScriptFunction GetPropertyAsStringByName() { mixin(MGF!("mGetPropertyAsStringByName", "Function Engine.Settings.GetPropertyAsStringByName")()); }
-			ScriptFunction GetPropertyAsString() { mixin(MGF!("mGetPropertyAsString", "Function Engine.Settings.GetPropertyAsString")()); }
-			ScriptFunction GetPropertyColumnHeader() { mixin(MGF!("mGetPropertyColumnHeader", "Function Engine.Settings.GetPropertyColumnHeader")()); }
-			ScriptFunction GetPropertyName() { mixin(MGF!("mGetPropertyName", "Function Engine.Settings.GetPropertyName")()); }
-			ScriptFunction GetPropertyId() { mixin(MGF!("mGetPropertyId", "Function Engine.Settings.GetPropertyId")()); }
-			ScriptFunction SetStringSettingValueFromStringByName() { mixin(MGF!("mSetStringSettingValueFromStringByName", "Function Engine.Settings.SetStringSettingValueFromStringByName")()); }
-			ScriptFunction GetStringSettingValueNameByName() { mixin(MGF!("mGetStringSettingValueNameByName", "Function Engine.Settings.GetStringSettingValueNameByName")()); }
-			ScriptFunction GetStringSettingValueName() { mixin(MGF!("mGetStringSettingValueName", "Function Engine.Settings.GetStringSettingValueName")()); }
-			ScriptFunction IsWildcardStringSetting() { mixin(MGF!("mIsWildcardStringSetting", "Function Engine.Settings.IsWildcardStringSetting")()); }
-			ScriptFunction GetStringSettingColumnHeader() { mixin(MGF!("mGetStringSettingColumnHeader", "Function Engine.Settings.GetStringSettingColumnHeader")()); }
-			ScriptFunction GetStringSettingName() { mixin(MGF!("mGetStringSettingName", "Function Engine.Settings.GetStringSettingName")()); }
-			ScriptFunction GetStringSettingId() { mixin(MGF!("mGetStringSettingId", "Function Engine.Settings.GetStringSettingId")()); }
-			ScriptFunction GetStringSettingValueByName() { mixin(MGF!("mGetStringSettingValueByName", "Function Engine.Settings.GetStringSettingValueByName")()); }
-			ScriptFunction SetStringSettingValueByName() { mixin(MGF!("mSetStringSettingValueByName", "Function Engine.Settings.SetStringSettingValueByName")()); }
-			ScriptFunction GetStringSettingValueNames() { mixin(MGF!("mGetStringSettingValueNames", "Function Engine.Settings.GetStringSettingValueNames")()); }
-			ScriptFunction IncrementStringSettingValue() { mixin(MGF!("mIncrementStringSettingValue", "Function Engine.Settings.IncrementStringSettingValue")()); }
-			ScriptFunction GetStringSettingValue() { mixin(MGF!("mGetStringSettingValue", "Function Engine.Settings.GetStringSettingValue")()); }
-			ScriptFunction SetStringSettingValue() { mixin(MGF!("mSetStringSettingValue", "Function Engine.Settings.SetStringSettingValue")()); }
-			ScriptFunction GetSettingsDataDateTime() { mixin(MGF!("mGetSettingsDataDateTime", "Function Engine.Settings.GetSettingsDataDateTime")()); }
-			ScriptFunction GetSettingsDataBlob() { mixin(MGF!("mGetSettingsDataBlob", "Function Engine.Settings.GetSettingsDataBlob")()); }
-			ScriptFunction GetSettingsDataInt() { mixin(MGF!("mGetSettingsDataInt", "Function Engine.Settings.GetSettingsDataInt")()); }
-			ScriptFunction GetSettingsDataFloat() { mixin(MGF!("mGetSettingsDataFloat", "Function Engine.Settings.GetSettingsDataFloat")()); }
-			ScriptFunction GetSettingsDataString() { mixin(MGF!("mGetSettingsDataString", "Function Engine.Settings.GetSettingsDataString")()); }
-			ScriptFunction EmptySettingsData() { mixin(MGF!("mEmptySettingsData", "Function Engine.Settings.EmptySettingsData")()); }
-			ScriptFunction SetSettingsData() { mixin(MGF!("mSetSettingsData", "Function Engine.Settings.SetSettingsData")()); }
-			ScriptFunction SetSettingsDataBlob() { mixin(MGF!("mSetSettingsDataBlob", "Function Engine.Settings.SetSettingsDataBlob")()); }
-			ScriptFunction SetSettingsDataDateTime() { mixin(MGF!("mSetSettingsDataDateTime", "Function Engine.Settings.SetSettingsDataDateTime")()); }
-			ScriptFunction SetSettingsDataInt() { mixin(MGF!("mSetSettingsDataInt", "Function Engine.Settings.SetSettingsDataInt")()); }
-			ScriptFunction SetSettingsDataFloat() { mixin(MGF!("mSetSettingsDataFloat", "Function Engine.Settings.SetSettingsDataFloat")()); }
-			ScriptFunction SetSettingsDataString() { mixin(MGF!("mSetSettingsDataString", "Function Engine.Settings.SetSettingsDataString")()); }
+			ScriptFunction UpdateFromURL() { mixin(MGF("mUpdateFromURL", "Function Engine.Settings.UpdateFromURL")); }
+			ScriptFunction BuildURL() { mixin(MGF("mBuildURL", "Function Engine.Settings.BuildURL")); }
+			ScriptFunction AppendContextsToURL() { mixin(MGF("mAppendContextsToURL", "Function Engine.Settings.AppendContextsToURL")); }
+			ScriptFunction AppendPropertiesToURL() { mixin(MGF("mAppendPropertiesToURL", "Function Engine.Settings.AppendPropertiesToURL")); }
+			ScriptFunction AppendDataBindingsToURL() { mixin(MGF("mAppendDataBindingsToURL", "Function Engine.Settings.AppendDataBindingsToURL")); }
+			ScriptFunction GetQoSAdvertisedStringSettings() { mixin(MGF("mGetQoSAdvertisedStringSettings", "Function Engine.Settings.GetQoSAdvertisedStringSettings")); }
+			ScriptFunction GetQoSAdvertisedProperties() { mixin(MGF("mGetQoSAdvertisedProperties", "Function Engine.Settings.GetQoSAdvertisedProperties")); }
+			ScriptFunction GetRangedPropertyValue() { mixin(MGF("mGetRangedPropertyValue", "Function Engine.Settings.GetRangedPropertyValue")); }
+			ScriptFunction SetRangedPropertyValue() { mixin(MGF("mSetRangedPropertyValue", "Function Engine.Settings.SetRangedPropertyValue")); }
+			ScriptFunction GetPropertyRange() { mixin(MGF("mGetPropertyRange", "Function Engine.Settings.GetPropertyRange")); }
+			ScriptFunction GetPropertyMappingType() { mixin(MGF("mGetPropertyMappingType", "Function Engine.Settings.GetPropertyMappingType")); }
+			ScriptFunction HasStringSetting() { mixin(MGF("mHasStringSetting", "Function Engine.Settings.HasStringSetting")); }
+			ScriptFunction HasProperty() { mixin(MGF("mHasProperty", "Function Engine.Settings.HasProperty")); }
+			ScriptFunction UpdateProperties() { mixin(MGF("mUpdateProperties", "Function Engine.Settings.UpdateProperties")); }
+			ScriptFunction UpdateStringSettings() { mixin(MGF("mUpdateStringSettings", "Function Engine.Settings.UpdateStringSettings")); }
+			ScriptFunction GetPropertyType() { mixin(MGF("mGetPropertyType", "Function Engine.Settings.GetPropertyType")); }
+			ScriptFunction GetPropertyValueId() { mixin(MGF("mGetPropertyValueId", "Function Engine.Settings.GetPropertyValueId")); }
+			ScriptFunction SetPropertyValueId() { mixin(MGF("mSetPropertyValueId", "Function Engine.Settings.SetPropertyValueId")); }
+			ScriptFunction GetStringProperty() { mixin(MGF("mGetStringProperty", "Function Engine.Settings.GetStringProperty")); }
+			ScriptFunction SetStringProperty() { mixin(MGF("mSetStringProperty", "Function Engine.Settings.SetStringProperty")); }
+			ScriptFunction GetIntProperty() { mixin(MGF("mGetIntProperty", "Function Engine.Settings.GetIntProperty")); }
+			ScriptFunction SetIntProperty() { mixin(MGF("mSetIntProperty", "Function Engine.Settings.SetIntProperty")); }
+			ScriptFunction GetFloatProperty() { mixin(MGF("mGetFloatProperty", "Function Engine.Settings.GetFloatProperty")); }
+			ScriptFunction SetFloatProperty() { mixin(MGF("mSetFloatProperty", "Function Engine.Settings.SetFloatProperty")); }
+			ScriptFunction SetPropertyFromStringByName() { mixin(MGF("mSetPropertyFromStringByName", "Function Engine.Settings.SetPropertyFromStringByName")); }
+			ScriptFunction GetPropertyAsStringByName() { mixin(MGF("mGetPropertyAsStringByName", "Function Engine.Settings.GetPropertyAsStringByName")); }
+			ScriptFunction GetPropertyAsString() { mixin(MGF("mGetPropertyAsString", "Function Engine.Settings.GetPropertyAsString")); }
+			ScriptFunction GetPropertyColumnHeader() { mixin(MGF("mGetPropertyColumnHeader", "Function Engine.Settings.GetPropertyColumnHeader")); }
+			ScriptFunction GetPropertyName() { mixin(MGF("mGetPropertyName", "Function Engine.Settings.GetPropertyName")); }
+			ScriptFunction GetPropertyId() { mixin(MGF("mGetPropertyId", "Function Engine.Settings.GetPropertyId")); }
+			ScriptFunction SetStringSettingValueFromStringByName() { mixin(MGF("mSetStringSettingValueFromStringByName", "Function Engine.Settings.SetStringSettingValueFromStringByName")); }
+			ScriptFunction GetStringSettingValueNameByName() { mixin(MGF("mGetStringSettingValueNameByName", "Function Engine.Settings.GetStringSettingValueNameByName")); }
+			ScriptFunction GetStringSettingValueName() { mixin(MGF("mGetStringSettingValueName", "Function Engine.Settings.GetStringSettingValueName")); }
+			ScriptFunction IsWildcardStringSetting() { mixin(MGF("mIsWildcardStringSetting", "Function Engine.Settings.IsWildcardStringSetting")); }
+			ScriptFunction GetStringSettingColumnHeader() { mixin(MGF("mGetStringSettingColumnHeader", "Function Engine.Settings.GetStringSettingColumnHeader")); }
+			ScriptFunction GetStringSettingName() { mixin(MGF("mGetStringSettingName", "Function Engine.Settings.GetStringSettingName")); }
+			ScriptFunction GetStringSettingId() { mixin(MGF("mGetStringSettingId", "Function Engine.Settings.GetStringSettingId")); }
+			ScriptFunction GetStringSettingValueByName() { mixin(MGF("mGetStringSettingValueByName", "Function Engine.Settings.GetStringSettingValueByName")); }
+			ScriptFunction SetStringSettingValueByName() { mixin(MGF("mSetStringSettingValueByName", "Function Engine.Settings.SetStringSettingValueByName")); }
+			ScriptFunction GetStringSettingValueNames() { mixin(MGF("mGetStringSettingValueNames", "Function Engine.Settings.GetStringSettingValueNames")); }
+			ScriptFunction IncrementStringSettingValue() { mixin(MGF("mIncrementStringSettingValue", "Function Engine.Settings.IncrementStringSettingValue")); }
+			ScriptFunction GetStringSettingValue() { mixin(MGF("mGetStringSettingValue", "Function Engine.Settings.GetStringSettingValue")); }
+			ScriptFunction SetStringSettingValue() { mixin(MGF("mSetStringSettingValue", "Function Engine.Settings.SetStringSettingValue")); }
+			ScriptFunction GetSettingsDataDateTime() { mixin(MGF("mGetSettingsDataDateTime", "Function Engine.Settings.GetSettingsDataDateTime")); }
+			ScriptFunction GetSettingsDataBlob() { mixin(MGF("mGetSettingsDataBlob", "Function Engine.Settings.GetSettingsDataBlob")); }
+			ScriptFunction GetSettingsDataInt() { mixin(MGF("mGetSettingsDataInt", "Function Engine.Settings.GetSettingsDataInt")); }
+			ScriptFunction GetSettingsDataFloat() { mixin(MGF("mGetSettingsDataFloat", "Function Engine.Settings.GetSettingsDataFloat")); }
+			ScriptFunction GetSettingsDataString() { mixin(MGF("mGetSettingsDataString", "Function Engine.Settings.GetSettingsDataString")); }
+			ScriptFunction EmptySettingsData() { mixin(MGF("mEmptySettingsData", "Function Engine.Settings.EmptySettingsData")); }
+			ScriptFunction SetSettingsData() { mixin(MGF("mSetSettingsData", "Function Engine.Settings.SetSettingsData")); }
+			ScriptFunction SetSettingsDataBlob() { mixin(MGF("mSetSettingsDataBlob", "Function Engine.Settings.SetSettingsDataBlob")); }
+			ScriptFunction SetSettingsDataDateTime() { mixin(MGF("mSetSettingsDataDateTime", "Function Engine.Settings.SetSettingsDataDateTime")); }
+			ScriptFunction SetSettingsDataInt() { mixin(MGF("mSetSettingsDataInt", "Function Engine.Settings.SetSettingsDataInt")); }
+			ScriptFunction SetSettingsDataFloat() { mixin(MGF("mSetSettingsDataFloat", "Function Engine.Settings.SetSettingsDataFloat")); }
+			ScriptFunction SetSettingsDataString() { mixin(MGF("mSetSettingsDataString", "Function Engine.Settings.SetSettingsDataString")); }
 		}
 	}
 	enum EOnlineDataAdvertisementType : ubyte
@@ -164,12 +164,12 @@ public extern(D):
 		private ubyte __buffer__[9];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.LocalizedStringSetting")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Settings.LocalizedStringSetting")); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!("int", 0)()); }
-			int ValueIndex() { mixin(MGPS!("int", 4)()); }
-			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!("Settings.EOnlineDataAdvertisementType", 8)()); }
+			int Id() { mixin(MGPS("int", 0)); }
+			int ValueIndex() { mixin(MGPS("int", 4)); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS("Settings.EOnlineDataAdvertisementType", 8)); }
 		}
 	}
 	struct SettingsProperty
@@ -177,12 +177,12 @@ public extern(D):
 		private ubyte __buffer__[17];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsProperty")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Settings.SettingsProperty")); }
 		@property final auto ref
 		{
-			int PropertyId() { mixin(MGPS!("int", 0)()); }
-			Settings.SettingsData Data() { mixin(MGPS!("Settings.SettingsData", 4)()); }
-			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!("Settings.EOnlineDataAdvertisementType", 16)()); }
+			int PropertyId() { mixin(MGPS("int", 0)); }
+			Settings.SettingsData Data() { mixin(MGPS("Settings.SettingsData", 4)); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS("Settings.EOnlineDataAdvertisementType", 16)); }
 		}
 	}
 	struct SettingsData
@@ -190,12 +190,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Settings.SettingsData")); }
 		@property final auto ref
 		{
-			Settings.ESettingsDataType Type() { mixin(MGPS!("Settings.ESettingsDataType", 0)()); }
-			int Value1() { mixin(MGPS!("int", 4)()); }
-			UObject.Pointer Value2() { mixin(MGPS!("UObject.Pointer", 8)()); }
+			Settings.ESettingsDataType Type() { mixin(MGPS("Settings.ESettingsDataType", 0)); }
+			int Value1() { mixin(MGPS("int", 4)); }
+			UObject.Pointer Value2() { mixin(MGPS("UObject.Pointer", 8)); }
 		}
 	}
 	struct IdToStringMapping
@@ -203,11 +203,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.IdToStringMapping")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Settings.IdToStringMapping")); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!("int", 0)()); }
-			ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
+			int Id() { mixin(MGPS("int", 0)); }
+			ScriptName Name() { mixin(MGPS("ScriptName", 4)); }
 		}
 	}
 	struct LocalizedStringSettingMetaData
@@ -215,13 +215,13 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.LocalizedStringSettingMetaData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Settings.LocalizedStringSettingMetaData")); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!("int", 0)()); }
-			ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
-			ScriptString ColumnHeaderText() { mixin(MGPS!("ScriptString", 12)()); }
-			ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { mixin(MGPS!("ScriptArray!(Settings.StringIdToStringMapping)", 24)()); }
+			int Id() { mixin(MGPS("int", 0)); }
+			ScriptName Name() { mixin(MGPS("ScriptName", 4)); }
+			ScriptString ColumnHeaderText() { mixin(MGPS("ScriptString", 12)); }
+			ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { mixin(MGPS("ScriptArray!(Settings.StringIdToStringMapping)", 24)); }
 		}
 	}
 	struct StringIdToStringMapping
@@ -229,16 +229,16 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.StringIdToStringMapping")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Settings.StringIdToStringMapping")); }
 		@property final
 		{
 			auto ref
 			{
-				int Id() { mixin(MGPS!("int", 0)()); }
-				ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
+				int Id() { mixin(MGPS("int", 0)); }
+				ScriptName Name() { mixin(MGPS("ScriptName", 4)); }
 			}
-			bool bIsWildcard() { mixin(MGBPS!(12, 0x1)()); }
-			bool bIsWildcard(bool val) { mixin(MSBPS!(12, 0x1)()); }
+			bool bIsWildcard() { mixin(MGBPS(12, 0x1)); }
+			bool bIsWildcard(bool val) { mixin(MSBPS(12, 0x1)); }
 		}
 	}
 	struct SettingsPropertyPropertyMetaData
@@ -246,26 +246,26 @@ public extern(D):
 		private ubyte __buffer__[64];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsPropertyPropertyMetaData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Settings.SettingsPropertyPropertyMetaData")); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!("int", 0)()); }
-			ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
-			ScriptString ColumnHeaderText() { mixin(MGPS!("ScriptString", 12)()); }
-			Settings.EPropertyValueMappingType MappingType() { mixin(MGPS!("Settings.EPropertyValueMappingType", 24)()); }
-			ScriptArray!(Settings.IdToStringMapping) ValueMappings() { mixin(MGPS!("ScriptArray!(Settings.IdToStringMapping)", 28)()); }
-			ScriptArray!(Settings.SettingsData) PredefinedValues() { mixin(MGPS!("ScriptArray!(Settings.SettingsData)", 40)()); }
-			float MinVal() { mixin(MGPS!("float", 52)()); }
-			float MaxVal() { mixin(MGPS!("float", 56)()); }
-			float RangeIncrement() { mixin(MGPS!("float", 60)()); }
+			int Id() { mixin(MGPS("int", 0)); }
+			ScriptName Name() { mixin(MGPS("ScriptName", 4)); }
+			ScriptString ColumnHeaderText() { mixin(MGPS("ScriptString", 12)); }
+			Settings.EPropertyValueMappingType MappingType() { mixin(MGPS("Settings.EPropertyValueMappingType", 24)); }
+			ScriptArray!(Settings.IdToStringMapping) ValueMappings() { mixin(MGPS("ScriptArray!(Settings.IdToStringMapping)", 28)); }
+			ScriptArray!(Settings.SettingsData) PredefinedValues() { mixin(MGPS("ScriptArray!(Settings.SettingsData)", 40)); }
+			float MinVal() { mixin(MGPS("float", 52)); }
+			float MaxVal() { mixin(MGPS("float", 56)); }
+			float RangeIncrement() { mixin(MGPS("float", 60)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { mixin(MGPC!("ScriptArray!(Settings.LocalizedStringSetting)", 60)()); }
-		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!("ScriptArray!(Settings.SettingsProperty)", 72)()); }
-		ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { mixin(MGPC!("ScriptArray!(Settings.LocalizedStringSettingMetaData)", 84)()); }
-		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { mixin(MGPC!("ScriptArray!(Settings.SettingsPropertyPropertyMetaData)", 96)()); }
+		ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { mixin(MGPC("ScriptArray!(Settings.LocalizedStringSetting)", 60)); }
+		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC("ScriptArray!(Settings.SettingsProperty)", 72)); }
+		ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { mixin(MGPC("ScriptArray!(Settings.LocalizedStringSettingMetaData)", 84)); }
+		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { mixin(MGPC("ScriptArray!(Settings.SettingsPropertyPropertyMetaData)", 96)); }
 	}
 final:
 	void UpdateFromURL(ref in ScriptString pURL, GameInfo Game)

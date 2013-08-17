@@ -8,7 +8,7 @@ extern(C++) interface TrRank_28 : TrRank
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRank_28")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrRank_28")); }
 	private static __gshared TrRank_28 mDefaultProperties;
-	@property final static TrRank_28 DefaultProperties() { mixin(MGDPC!(TrRank_28, "TrRank_28 TribesGame.Default__TrRank_28")()); }
+	@property final static TrRank_28 DefaultProperties() { mixin(MGDPC("TrRank_28", "TrRank_28 TribesGame.Default__TrRank_28")); }
 }

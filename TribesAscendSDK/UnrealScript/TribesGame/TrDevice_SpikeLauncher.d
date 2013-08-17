@@ -10,9 +10,9 @@ extern(C++) interface TrDevice_SpikeLauncher : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_SpikeLauncher")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_SpikeLauncher")); }
 	private static __gshared TrDevice_SpikeLauncher mDefaultProperties;
-	@property final static TrDevice_SpikeLauncher DefaultProperties() { mixin(MGDPC!(TrDevice_SpikeLauncher, "TrDevice_SpikeLauncher TribesGame.Default__TrDevice_SpikeLauncher")()); }
+	@property final static TrDevice_SpikeLauncher DefaultProperties() { mixin(MGDPC("TrDevice_SpikeLauncher", "TrDevice_SpikeLauncher TribesGame.Default__TrDevice_SpikeLauncher")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,17 +28,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetSpikeIdle() { mixin(MGF!("mSetSpikeIdle", "Function TribesGame.TrDevice_SpikeLauncher.SetSpikeIdle")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_SpikeLauncher.PostInitAnimTree")()); }
-			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function TribesGame.TrDevice_SpikeLauncher.OnAnimPlay")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_SpikeLauncher.OnAnimEnd")()); }
-			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_SpikeLauncher.PlayWeaponEquip")()); }
-			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice_SpikeLauncher.PlayWeaponPutDown")()); }
-			ScriptFunction PutDownFast() { mixin(MGF!("mPutDownFast", "Function TribesGame.TrDevice_SpikeLauncher.PutDownFast")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_SpikeLauncher.OnSwitchAwayFromWeapon")()); }
+			ScriptFunction SetSpikeIdle() { mixin(MGF("mSetSpikeIdle", "Function TribesGame.TrDevice_SpikeLauncher.SetSpikeIdle")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDevice_SpikeLauncher.PostInitAnimTree")); }
+			ScriptFunction OnAnimPlay() { mixin(MGF("mOnAnimPlay", "Function TribesGame.TrDevice_SpikeLauncher.OnAnimPlay")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function TribesGame.TrDevice_SpikeLauncher.OnAnimEnd")); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF("mPlayWeaponEquip", "Function TribesGame.TrDevice_SpikeLauncher.PlayWeaponEquip")); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF("mPlayWeaponPutDown", "Function TribesGame.TrDevice_SpikeLauncher.PlayWeaponPutDown")); }
+			ScriptFunction PutDownFast() { mixin(MGF("mPutDownFast", "Function TribesGame.TrDevice_SpikeLauncher.PutDownFast")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_SpikeLauncher.OnSwitchAwayFromWeapon")); }
 		}
 	}
-	@property final auto ref SoundCue m_SpikeIdleSound() { mixin(MGPC!("SoundCue", 2148)()); }
+	@property final auto ref SoundCue m_SpikeIdleSound() { mixin(MGPC("SoundCue", 2148)); }
 final:
 	void SetSpikeIdle(bool bEnabled)
 	{

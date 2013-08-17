@@ -10,9 +10,9 @@ extern(C++) interface TerrainMaterial : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TerrainMaterial")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.TerrainMaterial")); }
 	private static __gshared TerrainMaterial mDefaultProperties;
-	@property final static TerrainMaterial DefaultProperties() { mixin(MGDPC!(TerrainMaterial, "TerrainMaterial Engine.Default__TerrainMaterial")()); }
+	@property final static TerrainMaterial DefaultProperties() { mixin(MGDPC("TerrainMaterial", "TerrainMaterial Engine.Default__TerrainMaterial")); }
 	enum ETerrainMappingType : ubyte
 	{
 		TMT_Auto = 0,
@@ -23,14 +23,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float DisplacementScale() { mixin(MGPC!("float", 156)()); }
-		Texture2D DisplacementMap() { mixin(MGPC!("Texture2D", 152)()); }
+		float DisplacementScale() { mixin(MGPC("float", 156)); }
+		Texture2D DisplacementMap() { mixin(MGPC("Texture2D", 152)); }
 		// WARNING: Property 'Material' has the same name as a defined type!
-		float MappingPanV() { mixin(MGPC!("float", 144)()); }
-		float MappingPanU() { mixin(MGPC!("float", 140)()); }
-		float MappingRotation() { mixin(MGPC!("float", 136)()); }
-		float MappingScale() { mixin(MGPC!("float", 132)()); }
-		TerrainMaterial.ETerrainMappingType MappingType() { mixin(MGPC!("TerrainMaterial.ETerrainMappingType", 128)()); }
-		UObject.Matrix LocalToMapping() { mixin(MGPC!("UObject.Matrix", 64)()); }
+		float MappingPanV() { mixin(MGPC("float", 144)); }
+		float MappingPanU() { mixin(MGPC("float", 140)); }
+		float MappingRotation() { mixin(MGPC("float", 136)); }
+		float MappingScale() { mixin(MGPC("float", 132)); }
+		TerrainMaterial.ETerrainMappingType MappingType() { mixin(MGPC("TerrainMaterial.ETerrainMappingType", 128)); }
+		UObject.Matrix LocalToMapping() { mixin(MGPC("UObject.Matrix", 64)); }
 	}
 }

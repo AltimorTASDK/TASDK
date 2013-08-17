@@ -8,9 +8,9 @@ extern(C++) interface TrGameSettingsCommon : UTGameSettingsCommon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameSettingsCommon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameSettingsCommon")); }
 	private static __gshared TrGameSettingsCommon mDefaultProperties;
-	@property final static TrGameSettingsCommon DefaultProperties() { mixin(MGDPC!(TrGameSettingsCommon, "TrGameSettingsCommon TribesGame.Default__TrGameSettingsCommon")()); }
+	@property final static TrGameSettingsCommon DefaultProperties() { mixin(MGDPC("TrGameSettingsCommon", "TrGameSettingsCommon TribesGame.Default__TrGameSettingsCommon")); }
 	static struct Constants
 	{
 		enum
@@ -1394,8 +1394,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString MapName() { mixin(MGPC!("ScriptString", 196)()); }
-			ScriptString GameMode() { mixin(MGPC!("ScriptString", 184)()); }
+			ScriptString MapName() { mixin(MGPC("ScriptString", 196)); }
+			ScriptString GameMode() { mixin(MGPC("ScriptString", 184)); }
 		}
 		// WARNING: Property 'Console' has the same name as a defined type!
 	}

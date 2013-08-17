@@ -11,9 +11,9 @@ extern(C++) interface DroppedPickup : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DroppedPickup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DroppedPickup")); }
 	private static __gshared DroppedPickup mDefaultProperties;
-	@property final static DroppedPickup DefaultProperties() { mixin(MGDPC!(DroppedPickup, "DroppedPickup Engine.Default__DroppedPickup")()); }
+	@property final static DroppedPickup DefaultProperties() { mixin(MGDPC("DroppedPickup", "DroppedPickup Engine.Default__DroppedPickup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,41 +34,41 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddToNavigation() { mixin(MGF!("mAddToNavigation", "Function Engine.DroppedPickup.AddToNavigation")()); }
-			ScriptFunction RemoveFromNavigation() { mixin(MGF!("mRemoveFromNavigation", "Function Engine.DroppedPickup.RemoveFromNavigation")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.DroppedPickup.Destroyed")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.DroppedPickup.ReplicatedEvent")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.DroppedPickup.Reset")()); }
-			ScriptFunction SetPickupMesh() { mixin(MGF!("mSetPickupMesh", "Function Engine.DroppedPickup.SetPickupMesh")()); }
-			ScriptFunction SetPickupParticles() { mixin(MGF!("mSetPickupParticles", "Function Engine.DroppedPickup.SetPickupParticles")()); }
-			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.DroppedPickup.EncroachedBy")()); }
-			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function Engine.DroppedPickup.DetourWeight")()); }
-			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function Engine.DroppedPickup.Landed")()); }
-			ScriptFunction GiveTo() { mixin(MGF!("mGiveTo", "Function Engine.DroppedPickup.GiveTo")()); }
-			ScriptFunction PickedUpBy() { mixin(MGF!("mPickedUpBy", "Function Engine.DroppedPickup.PickedUpBy")()); }
-			ScriptFunction RecheckValidTouch() { mixin(MGF!("mRecheckValidTouch", "Function Engine.DroppedPickup.RecheckValidTouch")()); }
+			ScriptFunction AddToNavigation() { mixin(MGF("mAddToNavigation", "Function Engine.DroppedPickup.AddToNavigation")); }
+			ScriptFunction RemoveFromNavigation() { mixin(MGF("mRemoveFromNavigation", "Function Engine.DroppedPickup.RemoveFromNavigation")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.DroppedPickup.Destroyed")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.DroppedPickup.ReplicatedEvent")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.DroppedPickup.Reset")); }
+			ScriptFunction SetPickupMesh() { mixin(MGF("mSetPickupMesh", "Function Engine.DroppedPickup.SetPickupMesh")); }
+			ScriptFunction SetPickupParticles() { mixin(MGF("mSetPickupParticles", "Function Engine.DroppedPickup.SetPickupParticles")); }
+			ScriptFunction EncroachedBy() { mixin(MGF("mEncroachedBy", "Function Engine.DroppedPickup.EncroachedBy")); }
+			ScriptFunction DetourWeight() { mixin(MGF("mDetourWeight", "Function Engine.DroppedPickup.DetourWeight")); }
+			ScriptFunction Landed() { mixin(MGF("mLanded", "Function Engine.DroppedPickup.Landed")); }
+			ScriptFunction GiveTo() { mixin(MGF("mGiveTo", "Function Engine.DroppedPickup.GiveTo")); }
+			ScriptFunction PickedUpBy() { mixin(MGF("mPickedUpBy", "Function Engine.DroppedPickup.PickedUpBy")); }
+			ScriptFunction RecheckValidTouch() { mixin(MGF("mRecheckValidTouch", "Function Engine.DroppedPickup.RecheckValidTouch")); }
 		}
 	}
 	static struct Pickup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.DroppedPickup.Pickup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.DroppedPickup.Pickup")); }
 	}
 	static struct FadeOut
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.DroppedPickup.FadeOut")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.DroppedPickup.FadeOut")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			NavigationPoint PickupCache() { mixin(MGPC!("NavigationPoint", 484)()); }
-			ScriptClass InventoryClass() { mixin(MGPC!("ScriptClass", 480)()); }
+			NavigationPoint PickupCache() { mixin(MGPC("NavigationPoint", 484)); }
+			ScriptClass InventoryClass() { mixin(MGPC("ScriptClass", 480)); }
 			// WARNING: Property 'Inventory' has the same name as a defined type!
 		}
-		bool bFadeOut() { mixin(MGBPC!(488, 0x1)()); }
-		bool bFadeOut(bool val) { mixin(MSBPC!(488, 0x1)()); }
+		bool bFadeOut() { mixin(MGBPC(488, 0x1)); }
+		bool bFadeOut(bool val) { mixin(MSBPC(488, 0x1)); }
 	}
 final:
 	void AddToNavigation()

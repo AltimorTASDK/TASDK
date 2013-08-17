@@ -9,9 +9,9 @@ extern(C++) interface TrTripActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTripActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrTripActor")); }
 	private static __gshared TrTripActor mDefaultProperties;
-	@property final static TrTripActor DefaultProperties() { mixin(MGDPC!(TrTripActor, "TrTripActor TribesGame.Default__TrTripActor")()); }
+	@property final static TrTripActor DefaultProperties() { mixin(MGDPC("TrTripActor", "TrTripActor TribesGame.Default__TrTripActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,48 +28,48 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrTripActor.ReplicatedEvent")()); }
-			ScriptFunction CreateTripComponent() { mixin(MGF!("mCreateTripComponent", "Function TribesGame.TrTripActor.CreateTripComponent")()); }
-			ScriptFunction ClientCreateVisualEffect() { mixin(MGF!("mClientCreateVisualEffect", "Function TribesGame.TrTripActor.ClientCreateVisualEffect")()); }
-			ScriptFunction DestroyNotify() { mixin(MGF!("mDestroyNotify", "Function TribesGame.TrTripActor.DestroyNotify")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrTripActor.Destroyed")()); }
-			ScriptFunction InitializeTripPhysics() { mixin(MGF!("mInitializeTripPhysics", "Function TribesGame.TrTripActor.InitializeTripPhysics")()); }
-			ScriptFunction GoToSleep() { mixin(MGF!("mGoToSleep", "Function TribesGame.TrTripActor.GoToSleep")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrTripActor.Tick")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrTripActor.Touch")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrTripActor.ReplicatedEvent")); }
+			ScriptFunction CreateTripComponent() { mixin(MGF("mCreateTripComponent", "Function TribesGame.TrTripActor.CreateTripComponent")); }
+			ScriptFunction ClientCreateVisualEffect() { mixin(MGF("mClientCreateVisualEffect", "Function TribesGame.TrTripActor.ClientCreateVisualEffect")); }
+			ScriptFunction DestroyNotify() { mixin(MGF("mDestroyNotify", "Function TribesGame.TrTripActor.DestroyNotify")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrTripActor.Destroyed")); }
+			ScriptFunction InitializeTripPhysics() { mixin(MGF("mInitializeTripPhysics", "Function TribesGame.TrTripActor.InitializeTripPhysics")); }
+			ScriptFunction GoToSleep() { mixin(MGF("mGoToSleep", "Function TribesGame.TrTripActor.GoToSleep")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrTripActor.Tick")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrTripActor.Touch")); }
 		}
 	}
 	static struct TripAwake
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrTripActor.TripAwake")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrTripActor.TripAwake")); }
 	}
 	static struct TripSleep
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrTripActor.TripSleep")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrTripActor.TripSleep")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float m_fSleepTime() { mixin(MGPC!("float", 492)()); }
-			Actor r_Left() { mixin(MGPC!("Actor", 476)()); }
-			Actor r_Right() { mixin(MGPC!("Actor", 480)()); }
+			float m_fSleepTime() { mixin(MGPC("float", 492)); }
+			Actor r_Left() { mixin(MGPC("Actor", 476)); }
+			Actor r_Right() { mixin(MGPC("Actor", 480)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TripComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscLaserEffect'!
-			ParticleSystem m_LaserTemplate() { mixin(MGPC!("ParticleSystem", 520)()); }
+			ParticleSystem m_LaserTemplate() { mixin(MGPC("ParticleSystem", 520)); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_RightNotifier'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_LeftNotifier'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_DestroyNotifier'!
-			float r_fSleepEndTime() { mixin(MGPC!("float", 488)()); }
+			float r_fSleepEndTime() { mixin(MGPC("float", 488)); }
 		}
-		bool m_bRequiresTwoNotifiers() { mixin(MGBPC!(484, 0x4)()); }
-		bool m_bRequiresTwoNotifiers(bool val) { mixin(MSBPC!(484, 0x4)()); }
-		bool r_bIsInitialized() { mixin(MGBPC!(484, 0x2)()); }
-		bool r_bIsInitialized(bool val) { mixin(MSBPC!(484, 0x2)()); }
-		bool r_bIsPowered() { mixin(MGBPC!(484, 0x1)()); }
-		bool r_bIsPowered(bool val) { mixin(MSBPC!(484, 0x1)()); }
+		bool m_bRequiresTwoNotifiers() { mixin(MGBPC(484, 0x4)); }
+		bool m_bRequiresTwoNotifiers(bool val) { mixin(MSBPC(484, 0x4)); }
+		bool r_bIsInitialized() { mixin(MGBPC(484, 0x2)); }
+		bool r_bIsInitialized(bool val) { mixin(MSBPC(484, 0x2)); }
+		bool r_bIsPowered() { mixin(MGBPC(484, 0x1)); }
+		bool r_bIsPowered(bool val) { mixin(MSBPC(484, 0x1)); }
 	}
 final:
 	void ReplicatedEvent(ScriptName VarName)

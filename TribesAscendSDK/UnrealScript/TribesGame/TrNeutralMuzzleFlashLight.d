@@ -8,7 +8,7 @@ extern(C++) interface TrNeutralMuzzleFlashLight : UDKExplosionLight
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrNeutralMuzzleFlashLight")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrNeutralMuzzleFlashLight")); }
 	private static __gshared TrNeutralMuzzleFlashLight mDefaultProperties;
-	@property final static TrNeutralMuzzleFlashLight DefaultProperties() { mixin(MGDPC!(TrNeutralMuzzleFlashLight, "TrNeutralMuzzleFlashLight TribesGame.Default__TrNeutralMuzzleFlashLight")()); }
+	@property final static TrNeutralMuzzleFlashLight DefaultProperties() { mixin(MGDPC("TrNeutralMuzzleFlashLight", "TrNeutralMuzzleFlashLight TribesGame.Default__TrNeutralMuzzleFlashLight")); }
 }

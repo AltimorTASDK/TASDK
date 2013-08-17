@@ -11,9 +11,9 @@ extern(C++) interface GFxTrPage_Main : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Main")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Main")); }
 	private static __gshared GFxTrPage_Main mDefaultProperties;
-	@property final static GFxTrPage_Main DefaultProperties() { mixin(MGDPC!(GFxTrPage_Main, "GFxTrPage_Main TribesGame.Default__GFxTrPage_Main")()); }
+	@property final static GFxTrPage_Main DefaultProperties() { mixin(MGDPC("GFxTrPage_Main", "GFxTrPage_Main TribesGame.Default__GFxTrPage_Main")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,25 +40,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Main.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Main.SpecialAction")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_Main.TakeFocus")()); }
-			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_Main.CheckPricing")()); }
-			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage_Main.FillPricing")()); }
-			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_Main.ModifyAction")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Main.TakeAction")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Main.FillData")()); }
-			ScriptFunction CheckFeatures() { mixin(MGF!("mCheckFeatures", "Function TribesGame.GFxTrPage_Main.CheckFeatures")()); }
-			ScriptFunction FillFeature() { mixin(MGF!("mFillFeature", "Function TribesGame.GFxTrPage_Main.FillFeature")()); }
-			ScriptFunction FormatDealTime() { mixin(MGF!("mFormatDealTime", "Function TribesGame.GFxTrPage_Main.FormatDealTime")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Main.FillOption")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Main.ShowModel")()); }
-			ScriptFunction UpdateQueueTimer() { mixin(MGF!("mUpdateQueueTimer", "Function TribesGame.GFxTrPage_Main.UpdateQueueTimer")()); }
-			ScriptFunction StartDealTimer() { mixin(MGF!("mStartDealTimer", "Function TribesGame.GFxTrPage_Main.StartDealTimer")()); }
-			ScriptFunction UpdateDealTimer() { mixin(MGF!("mUpdateDealTimer", "Function TribesGame.GFxTrPage_Main.UpdateDealTimer")()); }
-			ScriptFunction CheckGoldDeal() { mixin(MGF!("mCheckGoldDeal", "Function TribesGame.GFxTrPage_Main.CheckGoldDeal")()); }
-			ScriptFunction NeedFeatureUpdate() { mixin(MGF!("mNeedFeatureUpdate", "Function TribesGame.GFxTrPage_Main.NeedFeatureUpdate")()); }
-			ScriptFunction GetEquipTypeName() { mixin(MGF!("mGetEquipTypeName", "Function TribesGame.GFxTrPage_Main.GetEquipTypeName")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_Main.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_Main.SpecialAction")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_Main.TakeFocus")); }
+			ScriptFunction CheckPricing() { mixin(MGF("mCheckPricing", "Function TribesGame.GFxTrPage_Main.CheckPricing")); }
+			ScriptFunction FillPricing() { mixin(MGF("mFillPricing", "Function TribesGame.GFxTrPage_Main.FillPricing")); }
+			ScriptFunction ModifyAction() { mixin(MGF("mModifyAction", "Function TribesGame.GFxTrPage_Main.ModifyAction")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_Main.TakeAction")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_Main.FillData")); }
+			ScriptFunction CheckFeatures() { mixin(MGF("mCheckFeatures", "Function TribesGame.GFxTrPage_Main.CheckFeatures")); }
+			ScriptFunction FillFeature() { mixin(MGF("mFillFeature", "Function TribesGame.GFxTrPage_Main.FillFeature")); }
+			ScriptFunction FormatDealTime() { mixin(MGF("mFormatDealTime", "Function TribesGame.GFxTrPage_Main.FormatDealTime")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_Main.FillOption")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_Main.ShowModel")); }
+			ScriptFunction UpdateQueueTimer() { mixin(MGF("mUpdateQueueTimer", "Function TribesGame.GFxTrPage_Main.UpdateQueueTimer")); }
+			ScriptFunction StartDealTimer() { mixin(MGF("mStartDealTimer", "Function TribesGame.GFxTrPage_Main.StartDealTimer")); }
+			ScriptFunction UpdateDealTimer() { mixin(MGF("mUpdateDealTimer", "Function TribesGame.GFxTrPage_Main.UpdateDealTimer")); }
+			ScriptFunction CheckGoldDeal() { mixin(MGF("mCheckGoldDeal", "Function TribesGame.GFxTrPage_Main.CheckGoldDeal")); }
+			ScriptFunction NeedFeatureUpdate() { mixin(MGF("mNeedFeatureUpdate", "Function TribesGame.GFxTrPage_Main.NeedFeatureUpdate")); }
+			ScriptFunction GetEquipTypeName() { mixin(MGF("mGetEquipTypeName", "Function TribesGame.GFxTrPage_Main.GetEquipTypeName")); }
 		}
 	}
 	enum EFEATURES : ubyte
@@ -75,30 +75,30 @@ public extern(D):
 		private ubyte __buffer__[5];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrPage_Main.BundleData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.GFxTrPage_Main.BundleData")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Model' has the same name as a defined type!
-			int LootId() { mixin(MGPS!("int", 0)()); }
+			int LootId() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxTrPage_Main.BundleData) ActiveBundles() { mixin(MGPC!("ScriptArray!(GFxTrPage_Main.BundleData)", 404)()); }
-			ScriptString TabOffset() { mixin(MGPC!("ScriptString", 392)()); }
-			ScriptString QueueTimer() { mixin(MGPC!("ScriptString", 380)()); }
-			int FeatureSwapTime() { mixin(MGPC!("int", 372)()); }
-			int FeatureShowTime() { mixin(MGPC!("int", 368)()); }
-			int ActiveFeature() { mixin(MGPC!("int", 364)()); }
-			int GoldDealId() { mixin(MGPC!("int", 360)()); }
-			int NumQuit() { mixin(MGPC!("int", 356)()); }
+			ScriptArray!(GFxTrPage_Main.BundleData) ActiveBundles() { mixin(MGPC("ScriptArray!(GFxTrPage_Main.BundleData)", 404)); }
+			ScriptString TabOffset() { mixin(MGPC("ScriptString", 392)); }
+			ScriptString QueueTimer() { mixin(MGPC("ScriptString", 380)); }
+			int FeatureSwapTime() { mixin(MGPC("int", 372)); }
+			int FeatureShowTime() { mixin(MGPC("int", 368)); }
+			int ActiveFeature() { mixin(MGPC("int", 364)); }
+			int GoldDealId() { mixin(MGPC("int", 360)); }
+			int NumQuit() { mixin(MGPC("int", 356)); }
 		}
-		bool bSwingingCamera() { mixin(MGBPC!(376, 0x1)()); }
-		bool bSwingingCamera(bool val) { mixin(MSBPC!(376, 0x1)()); }
-		bool bAnimInit() { mixin(MGBPC!(376, 0x2)()); }
-		bool bAnimInit(bool val) { mixin(MSBPC!(376, 0x2)()); }
+		bool bSwingingCamera() { mixin(MGBPC(376, 0x1)); }
+		bool bSwingingCamera(bool val) { mixin(MSBPC(376, 0x1)); }
+		bool bAnimInit() { mixin(MGBPC(376, 0x2)); }
+		bool bAnimInit(bool val) { mixin(MSBPC(376, 0x2)); }
 	}
 final:
 	void Initialize()

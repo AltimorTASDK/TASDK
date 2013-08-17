@@ -11,9 +11,9 @@ extern(C++) interface TrDeployable_ForceField : TrDeployable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_ForceField")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployable_ForceField")); }
 	private static __gshared TrDeployable_ForceField mDefaultProperties;
-	@property final static TrDeployable_ForceField DefaultProperties() { mixin(MGDPC!(TrDeployable_ForceField, "TrDeployable_ForceField TribesGame.Default__TrDeployable_ForceField")()); }
+	@property final static TrDeployable_ForceField DefaultProperties() { mixin(MGDPC("TrDeployable_ForceField", "TrDeployable_ForceField TribesGame.Default__TrDeployable_ForceField")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,27 +27,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrDeployable_ForceField.Touch")()); }
-			ScriptFunction OnHealthChanged() { mixin(MGF!("mOnHealthChanged", "Function TribesGame.TrDeployable_ForceField.OnHealthChanged")()); }
-			ScriptFunction PlayDamageHealthEffects() { mixin(MGF!("mPlayDamageHealthEffects", "Function TribesGame.TrDeployable_ForceField.PlayDamageHealthEffects")()); }
-			ScriptFunction PlayHitOtherEffects() { mixin(MGF!("mPlayHitOtherEffects", "Function TribesGame.TrDeployable_ForceField.PlayHitOtherEffects")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDeployable_ForceField.Tick")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDeployable_ForceField.GetMarker")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrDeployable_ForceField.Touch")); }
+			ScriptFunction OnHealthChanged() { mixin(MGF("mOnHealthChanged", "Function TribesGame.TrDeployable_ForceField.OnHealthChanged")); }
+			ScriptFunction PlayDamageHealthEffects() { mixin(MGF("mPlayDamageHealthEffects", "Function TribesGame.TrDeployable_ForceField.PlayDamageHealthEffects")); }
+			ScriptFunction PlayHitOtherEffects() { mixin(MGF("mPlayHitOtherEffects", "Function TribesGame.TrDeployable_ForceField.PlayHitOtherEffects")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrDeployable_ForceField.Tick")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrDeployable_ForceField.GetMarker")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_LightFlashBrightness() { mixin(MGPC!("float", 1564)()); }
-		UObject.Color m_LightFlashColor() { mixin(MGPC!("UObject.Color", 1560)()); }
+		float m_LightFlashBrightness() { mixin(MGPC("float", 1564)); }
+		UObject.Color m_LightFlashColor() { mixin(MGPC("UObject.Color", 1560)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Light'!
-		float m_fOutHitOtherFlashRemainingTime() { mixin(MGPC!("float", 1552)()); }
-		float m_fInHitOtherFlashRemainingTime() { mixin(MGPC!("float", 1548)()); }
-		float m_fOutHitOtherFlashTimeLength() { mixin(MGPC!("float", 1544)()); }
-		float m_fInHitOtherFlashTimeLength() { mixin(MGPC!("float", 1540)()); }
-		float m_fOutTakeHitFlashRemainingTime() { mixin(MGPC!("float", 1536)()); }
-		float m_fInTakeHitFlashRemainingTime() { mixin(MGPC!("float", 1532)()); }
-		float m_fOutTakeHitFlashTimeLength() { mixin(MGPC!("float", 1528)()); }
-		float m_fInTakeHitFlashTimeLength() { mixin(MGPC!("float", 1524)()); }
+		float m_fOutHitOtherFlashRemainingTime() { mixin(MGPC("float", 1552)); }
+		float m_fInHitOtherFlashRemainingTime() { mixin(MGPC("float", 1548)); }
+		float m_fOutHitOtherFlashTimeLength() { mixin(MGPC("float", 1544)); }
+		float m_fInHitOtherFlashTimeLength() { mixin(MGPC("float", 1540)); }
+		float m_fOutTakeHitFlashRemainingTime() { mixin(MGPC("float", 1536)); }
+		float m_fInTakeHitFlashRemainingTime() { mixin(MGPC("float", 1532)); }
+		float m_fOutTakeHitFlashTimeLength() { mixin(MGPC("float", 1528)); }
+		float m_fInTakeHitFlashTimeLength() { mixin(MGPC("float", 1524)); }
 	}
 final:
 	void Touch(Actor Other, 

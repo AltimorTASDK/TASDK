@@ -9,9 +9,9 @@ extern(C++) interface UTCheatManager : CheatManager
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCheatManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTCheatManager")); }
 	private static __gshared UTCheatManager mDefaultProperties;
-	@property final static UTCheatManager DefaultProperties() { mixin(MGDPC!(UTCheatManager, "UTCheatManager UTGame.Default__UTCheatManager")()); }
+	@property final static UTCheatManager DefaultProperties() { mixin(MGDPC("UTCheatManager", "UTCheatManager UTGame.Default__UTCheatManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -43,36 +43,36 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ViewFlag() { mixin(MGF!("mViewFlag", "Function UTGame.UTCheatManager.ViewFlag")()); }
-			ScriptFunction Glow() { mixin(MGF!("mGlow", "Function UTGame.UTCheatManager.Glow")()); }
-			ScriptFunction LM() { mixin(MGF!("mLM", "Function UTGame.UTCheatManager.LM")()); }
-			ScriptFunction LMS() { mixin(MGF!("mLMS", "Function UTGame.UTCheatManager.LMS")()); }
-			ScriptFunction SummonV() { mixin(MGF!("mSummonV", "Function UTGame.UTCheatManager.SummonV")()); }
-			ScriptFunction AllWeapons() { mixin(MGF!("mAllWeapons", "Function UTGame.UTCheatManager.AllWeapons")()); }
-			ScriptFunction DoubleUp() { mixin(MGF!("mDoubleUp", "Function UTGame.UTCheatManager.DoubleUp")()); }
-			ScriptFunction ChainGun() { mixin(MGF!("mChainGun", "Function UTGame.UTCheatManager.ChainGun")()); }
-			ScriptFunction AllAmmo() { mixin(MGF!("mAllAmmo", "Function UTGame.UTCheatManager.AllAmmo")()); }
-			ScriptFunction Invisible() { mixin(MGF!("mInvisible", "Function UTGame.UTCheatManager.Invisible")()); }
-			ScriptFunction FreeCamera() { mixin(MGF!("mFreeCamera", "Function UTGame.UTCheatManager.FreeCamera")()); }
-			ScriptFunction ViewBot() { mixin(MGF!("mViewBot", "Function UTGame.UTCheatManager.ViewBot")()); }
-			ScriptFunction KillBadGuys() { mixin(MGF!("mKillBadGuys", "Function UTGame.UTCheatManager.KillBadGuys")()); }
-			ScriptFunction RBGrav() { mixin(MGF!("mRBGrav", "Function UTGame.UTCheatManager.RBGrav")()); }
-			ScriptFunction SuicideBy() { mixin(MGF!("mSuicideBy", "Function UTGame.UTCheatManager.SuicideBy")()); }
-			ScriptFunction EditWeapon() { mixin(MGF!("mEditWeapon", "Function UTGame.UTCheatManager.EditWeapon")()); }
-			ScriptFunction KillOtherBots() { mixin(MGF!("mKillOtherBots", "Function UTGame.UTCheatManager.KillOtherBots")()); }
-			ScriptFunction SpawnABloodDecal() { mixin(MGF!("mSpawnABloodDecal", "Function UTGame.UTCheatManager.SpawnABloodDecal")()); }
-			ScriptFunction LeaveADecal() { mixin(MGF!("mLeaveADecal", "Function UTGame.UTCheatManager.LeaveADecal")()); }
-			ScriptFunction TiltIt() { mixin(MGF!("mTiltIt", "Function UTGame.UTCheatManager.TiltIt")()); }
-			ScriptFunction ShowStickBindings() { mixin(MGF!("mShowStickBindings", "Function UTGame.UTCheatManager.ShowStickBindings")()); }
-			ScriptFunction SetStickBind() { mixin(MGF!("mSetStickBind", "Function UTGame.UTCheatManager.SetStickBind")()); }
-			ScriptFunction KillAll() { mixin(MGF!("mKillAll", "Function UTGame.UTCheatManager.KillAll")()); }
-			ScriptFunction KillAllPawns() { mixin(MGF!("mKillAllPawns", "Function UTGame.UTCheatManager.KillAllPawns")()); }
+			ScriptFunction ViewFlag() { mixin(MGF("mViewFlag", "Function UTGame.UTCheatManager.ViewFlag")); }
+			ScriptFunction Glow() { mixin(MGF("mGlow", "Function UTGame.UTCheatManager.Glow")); }
+			ScriptFunction LM() { mixin(MGF("mLM", "Function UTGame.UTCheatManager.LM")); }
+			ScriptFunction LMS() { mixin(MGF("mLMS", "Function UTGame.UTCheatManager.LMS")); }
+			ScriptFunction SummonV() { mixin(MGF("mSummonV", "Function UTGame.UTCheatManager.SummonV")); }
+			ScriptFunction AllWeapons() { mixin(MGF("mAllWeapons", "Function UTGame.UTCheatManager.AllWeapons")); }
+			ScriptFunction DoubleUp() { mixin(MGF("mDoubleUp", "Function UTGame.UTCheatManager.DoubleUp")); }
+			ScriptFunction ChainGun() { mixin(MGF("mChainGun", "Function UTGame.UTCheatManager.ChainGun")); }
+			ScriptFunction AllAmmo() { mixin(MGF("mAllAmmo", "Function UTGame.UTCheatManager.AllAmmo")); }
+			ScriptFunction Invisible() { mixin(MGF("mInvisible", "Function UTGame.UTCheatManager.Invisible")); }
+			ScriptFunction FreeCamera() { mixin(MGF("mFreeCamera", "Function UTGame.UTCheatManager.FreeCamera")); }
+			ScriptFunction ViewBot() { mixin(MGF("mViewBot", "Function UTGame.UTCheatManager.ViewBot")); }
+			ScriptFunction KillBadGuys() { mixin(MGF("mKillBadGuys", "Function UTGame.UTCheatManager.KillBadGuys")); }
+			ScriptFunction RBGrav() { mixin(MGF("mRBGrav", "Function UTGame.UTCheatManager.RBGrav")); }
+			ScriptFunction SuicideBy() { mixin(MGF("mSuicideBy", "Function UTGame.UTCheatManager.SuicideBy")); }
+			ScriptFunction EditWeapon() { mixin(MGF("mEditWeapon", "Function UTGame.UTCheatManager.EditWeapon")); }
+			ScriptFunction KillOtherBots() { mixin(MGF("mKillOtherBots", "Function UTGame.UTCheatManager.KillOtherBots")); }
+			ScriptFunction SpawnABloodDecal() { mixin(MGF("mSpawnABloodDecal", "Function UTGame.UTCheatManager.SpawnABloodDecal")); }
+			ScriptFunction LeaveADecal() { mixin(MGF("mLeaveADecal", "Function UTGame.UTCheatManager.LeaveADecal")); }
+			ScriptFunction TiltIt() { mixin(MGF("mTiltIt", "Function UTGame.UTCheatManager.TiltIt")); }
+			ScriptFunction ShowStickBindings() { mixin(MGF("mShowStickBindings", "Function UTGame.UTCheatManager.ShowStickBindings")); }
+			ScriptFunction SetStickBind() { mixin(MGF("mSetStickBind", "Function UTGame.UTCheatManager.SetStickBind")); }
+			ScriptFunction KillAll() { mixin(MGF("mKillAll", "Function UTGame.UTCheatManager.KillAll")); }
+			ScriptFunction KillAllPawns() { mixin(MGF("mKillAllPawns", "Function UTGame.UTCheatManager.KillAllPawns")); }
 		}
 	}
 	@property final auto ref
 	{
-		SpeechRecognition RecogObject() { mixin(MGPC!("SpeechRecognition", 96)()); }
-		ScriptClass LMC() { mixin(MGPC!("ScriptClass", 92)()); }
+		SpeechRecognition RecogObject() { mixin(MGPC("SpeechRecognition", 96)); }
+		ScriptClass LMC() { mixin(MGPC("ScriptClass", 92)); }
 	}
 final:
 	void ViewFlag()

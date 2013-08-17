@@ -8,7 +8,7 @@ extern(C++) interface Enum : Field
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.Enum")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Core.Enum")); }
 	private static __gshared Enum mDefaultProperties;
-	@property final static Enum DefaultProperties() { mixin(MGDPC!(Enum, "Enum Core.Default__Enum")()); }
+	@property final static Enum DefaultProperties() { mixin(MGDPC("Enum", "Enum Core.Default__Enum")); }
 }

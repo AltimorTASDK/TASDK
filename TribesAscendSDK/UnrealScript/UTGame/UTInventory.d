@@ -9,9 +9,9 @@ extern(C++) interface UTInventory : Inventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTInventory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTInventory")); }
 	private static __gshared UTInventory mDefaultProperties;
-	@property final static UTInventory DefaultProperties() { mixin(MGDPC!(UTInventory, "UTInventory UTGame.Default__UTInventory")()); }
+	@property final static UTInventory DefaultProperties() { mixin(MGDPC("UTInventory", "UTInventory UTGame.Default__UTInventory")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddWeaponOverlay() { mixin(MGF!("mAddWeaponOverlay", "Function UTGame.UTInventory.AddWeaponOverlay")()); }
-			ScriptFunction ClientLostItem() { mixin(MGF!("mClientLostItem", "Function UTGame.UTInventory.ClientLostItem")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTInventory.Destroyed")()); }
-			ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function UTGame.UTInventory.DropFrom")()); }
-			ScriptFunction OwnerEvent() { mixin(MGF!("mOwnerEvent", "Function UTGame.UTInventory.OwnerEvent")()); }
+			ScriptFunction AddWeaponOverlay() { mixin(MGF("mAddWeaponOverlay", "Function UTGame.UTInventory.AddWeaponOverlay")); }
+			ScriptFunction ClientLostItem() { mixin(MGF("mClientLostItem", "Function UTGame.UTInventory.ClientLostItem")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UTGame.UTInventory.Destroyed")); }
+			ScriptFunction DropFrom() { mixin(MGF("mDropFrom", "Function UTGame.UTInventory.DropFrom")); }
+			ScriptFunction OwnerEvent() { mixin(MGF("mOwnerEvent", "Function UTGame.UTInventory.OwnerEvent")); }
 		}
 	}
 	@property final
 	{
-		bool bReceiveOwnerEvents() { mixin(MGBPC!(552, 0x1)()); }
-		bool bReceiveOwnerEvents(bool val) { mixin(MSBPC!(552, 0x1)()); }
+		bool bReceiveOwnerEvents() { mixin(MGBPC(552, 0x1)); }
+		bool bReceiveOwnerEvents(bool val) { mixin(MSBPC(552, 0x1)); }
 	}
 final:
 	static void AddWeaponOverlay(UTGameReplicationInfo GRI)

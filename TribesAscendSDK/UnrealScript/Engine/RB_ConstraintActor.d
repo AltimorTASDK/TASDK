@@ -14,9 +14,9 @@ extern(C++) interface RB_ConstraintActor : RigidBodyBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.RB_ConstraintActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.RB_ConstraintActor")); }
 	private static __gshared RB_ConstraintActor mDefaultProperties;
-	@property final static RB_ConstraintActor DefaultProperties() { mixin(MGDPC!(RB_ConstraintActor, "RB_ConstraintActor Engine.Default__RB_ConstraintActor")()); }
+	@property final static RB_ConstraintActor DefaultProperties() { mixin(MGDPC("RB_ConstraintActor", "RB_ConstraintActor Engine.Default__RB_ConstraintActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,31 +30,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetDisableCollision() { mixin(MGF!("mSetDisableCollision", "Function Engine.RB_ConstraintActor.SetDisableCollision")()); }
-			ScriptFunction InitConstraint() { mixin(MGF!("mInitConstraint", "Function Engine.RB_ConstraintActor.InitConstraint")()); }
-			ScriptFunction TermConstraint() { mixin(MGF!("mTermConstraint", "Function Engine.RB_ConstraintActor.TermConstraint")()); }
-			ScriptFunction OnDestroy() { mixin(MGF!("mOnDestroy", "Function Engine.RB_ConstraintActor.OnDestroy")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.RB_ConstraintActor.OnToggle")()); }
-			ScriptFunction OnToggleConstraintDrive() { mixin(MGF!("mOnToggleConstraintDrive", "Function Engine.RB_ConstraintActor.OnToggleConstraintDrive")()); }
+			ScriptFunction SetDisableCollision() { mixin(MGF("mSetDisableCollision", "Function Engine.RB_ConstraintActor.SetDisableCollision")); }
+			ScriptFunction InitConstraint() { mixin(MGF("mInitConstraint", "Function Engine.RB_ConstraintActor.InitConstraint")); }
+			ScriptFunction TermConstraint() { mixin(MGF("mTermConstraint", "Function Engine.RB_ConstraintActor.TermConstraint")); }
+			ScriptFunction OnDestroy() { mixin(MGF("mOnDestroy", "Function Engine.RB_ConstraintActor.OnDestroy")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.RB_ConstraintActor.OnToggle")); }
+			ScriptFunction OnToggleConstraintDrive() { mixin(MGF("mOnToggleConstraintDrive", "Function Engine.RB_ConstraintActor.OnToggleConstraintDrive")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Actor PulleyPivotActor2() { mixin(MGPC!("Actor", 500)()); }
-			Actor PulleyPivotActor1() { mixin(MGPC!("Actor", 496)()); }
-			RB_ConstraintInstance ConstraintInstance() { mixin(MGPC!("RB_ConstraintInstance", 488)()); }
-			RB_ConstraintSetup ConstraintSetup() { mixin(MGPC!("RB_ConstraintSetup", 484)()); }
-			Actor ConstraintActor2() { mixin(MGPC!("Actor", 480)()); }
-			Actor ConstraintActor1() { mixin(MGPC!("Actor", 476)()); }
+			Actor PulleyPivotActor2() { mixin(MGPC("Actor", 500)); }
+			Actor PulleyPivotActor1() { mixin(MGPC("Actor", 496)); }
+			RB_ConstraintInstance ConstraintInstance() { mixin(MGPC("RB_ConstraintInstance", 488)); }
+			RB_ConstraintSetup ConstraintSetup() { mixin(MGPC("RB_ConstraintSetup", 484)); }
+			Actor ConstraintActor2() { mixin(MGPC("Actor", 480)); }
+			Actor ConstraintActor1() { mixin(MGPC("Actor", 476)); }
 		}
-		bool bUpdateActor2RefFrame() { mixin(MGBPC!(492, 0x4)()); }
-		bool bUpdateActor2RefFrame(bool val) { mixin(MSBPC!(492, 0x4)()); }
-		bool bUpdateActor1RefFrame() { mixin(MGBPC!(492, 0x2)()); }
-		bool bUpdateActor1RefFrame(bool val) { mixin(MSBPC!(492, 0x2)()); }
-		bool bDisableCollision() { mixin(MGBPC!(492, 0x1)()); }
-		bool bDisableCollision(bool val) { mixin(MSBPC!(492, 0x1)()); }
+		bool bUpdateActor2RefFrame() { mixin(MGBPC(492, 0x4)); }
+		bool bUpdateActor2RefFrame(bool val) { mixin(MSBPC(492, 0x4)); }
+		bool bUpdateActor1RefFrame() { mixin(MGBPC(492, 0x2)); }
+		bool bUpdateActor1RefFrame(bool val) { mixin(MSBPC(492, 0x2)); }
+		bool bDisableCollision() { mixin(MGBPC(492, 0x1)); }
+		bool bDisableCollision(bool val) { mixin(MSBPC(492, 0x1)); }
 	}
 final:
 	void SetDisableCollision(bool NewDisableCollision)

@@ -9,9 +9,9 @@ extern(C++) interface Path_MinDistBetweenSpecsOfType : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_MinDistBetweenSpecsOfType")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Path_MinDistBetweenSpecsOfType")); }
 	private static __gshared Path_MinDistBetweenSpecsOfType mDefaultProperties;
-	@property final static Path_MinDistBetweenSpecsOfType DefaultProperties() { mixin(MGDPC!(Path_MinDistBetweenSpecsOfType, "Path_MinDistBetweenSpecsOfType Engine.Default__Path_MinDistBetweenSpecsOfType")()); }
+	@property final static Path_MinDistBetweenSpecsOfType DefaultProperties() { mixin(MGDPC("Path_MinDistBetweenSpecsOfType", "Path_MinDistBetweenSpecsOfType Engine.Default__Path_MinDistBetweenSpecsOfType")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EnforceMinDist() { mixin(MGF!("mEnforceMinDist", "Function Engine.Path_MinDistBetweenSpecsOfType.EnforceMinDist")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_MinDistBetweenSpecsOfType.Recycle")()); }
+			ScriptFunction EnforceMinDist() { mixin(MGF("mEnforceMinDist", "Function Engine.Path_MinDistBetweenSpecsOfType.EnforceMinDist")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.Path_MinDistBetweenSpecsOfType.Recycle")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptClass ReachSpecClass() { mixin(MGPC!("ScriptClass", 84)()); }
-		Vector InitLocation() { mixin(MGPC!("Vector", 72)()); }
-		float MinDistBetweenSpecTypes() { mixin(MGPC!("float", 68)()); }
+		ScriptClass ReachSpecClass() { mixin(MGPC("ScriptClass", 84)); }
+		Vector InitLocation() { mixin(MGPC("Vector", 72)); }
+		float MinDistBetweenSpecTypes() { mixin(MGPC("float", 68)); }
 	}
 final:
 	static bool EnforceMinDist(Pawn P, float InMinDist, ScriptClass InSpecClass, Vector* LastLocation = null)

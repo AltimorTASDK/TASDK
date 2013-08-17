@@ -14,9 +14,9 @@ extern(C++) interface TrMakeQuickMatch : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMakeQuickMatch")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrMakeQuickMatch")); }
 	private static __gshared TrMakeQuickMatch mDefaultProperties;
-	@property final static TrMakeQuickMatch DefaultProperties() { mixin(MGDPC!(TrMakeQuickMatch, "TrMakeQuickMatch TribesGame.Default__TrMakeQuickMatch")()); }
+	@property final static TrMakeQuickMatch DefaultProperties() { mixin(MGDPC("TrMakeQuickMatch", "TrMakeQuickMatch TribesGame.Default__TrMakeQuickMatch")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,17 +35,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrMakeQuickMatch.Init")()); }
-			ScriptFunction Launch() { mixin(MGF!("mLaunch", "Function TribesGame.TrMakeQuickMatch.Launch")()); }
-			ScriptFunction Cleanup() { mixin(MGF!("mCleanup", "Function TribesGame.TrMakeQuickMatch.Cleanup")()); }
-			ScriptFunction SubmitGameSearch() { mixin(MGF!("mSubmitGameSearch", "Function TribesGame.TrMakeQuickMatch.SubmitGameSearch")()); }
-			ScriptFunction GetLP() { mixin(MGF!("mGetLP", "Function TribesGame.TrMakeQuickMatch.GetLP")()); }
-			ScriptFunction GetPC() { mixin(MGF!("mGetPC", "Function TribesGame.TrMakeQuickMatch.GetPC")()); }
-			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function TribesGame.TrMakeQuickMatch.ConsoleCommand")()); }
-			ScriptFunction BuildJoinURL() { mixin(MGF!("mBuildJoinURL", "Function TribesGame.TrMakeQuickMatch.BuildJoinURL")()); }
-			ScriptFunction RequestJoin() { mixin(MGF!("mRequestJoin", "Function TribesGame.TrMakeQuickMatch.RequestJoin")()); }
-			ScriptFunction OnSearchComplete() { mixin(MGF!("mOnSearchComplete", "Function TribesGame.TrMakeQuickMatch.OnSearchComplete")()); }
-			ScriptFunction OnJoinGameComplete() { mixin(MGF!("mOnJoinGameComplete", "Function TribesGame.TrMakeQuickMatch.OnJoinGameComplete")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrMakeQuickMatch.Init")); }
+			ScriptFunction Launch() { mixin(MGF("mLaunch", "Function TribesGame.TrMakeQuickMatch.Launch")); }
+			ScriptFunction Cleanup() { mixin(MGF("mCleanup", "Function TribesGame.TrMakeQuickMatch.Cleanup")); }
+			ScriptFunction SubmitGameSearch() { mixin(MGF("mSubmitGameSearch", "Function TribesGame.TrMakeQuickMatch.SubmitGameSearch")); }
+			ScriptFunction GetLP() { mixin(MGF("mGetLP", "Function TribesGame.TrMakeQuickMatch.GetLP")); }
+			ScriptFunction GetPC() { mixin(MGF("mGetPC", "Function TribesGame.TrMakeQuickMatch.GetPC")); }
+			ScriptFunction ConsoleCommand() { mixin(MGF("mConsoleCommand", "Function TribesGame.TrMakeQuickMatch.ConsoleCommand")); }
+			ScriptFunction BuildJoinURL() { mixin(MGF("mBuildJoinURL", "Function TribesGame.TrMakeQuickMatch.BuildJoinURL")); }
+			ScriptFunction RequestJoin() { mixin(MGF("mRequestJoin", "Function TribesGame.TrMakeQuickMatch.RequestJoin")); }
+			ScriptFunction OnSearchComplete() { mixin(MGF("mOnSearchComplete", "Function TribesGame.TrMakeQuickMatch.OnSearchComplete")); }
+			ScriptFunction OnJoinGameComplete() { mixin(MGF("mOnJoinGameComplete", "Function TribesGame.TrMakeQuickMatch.OnJoinGameComplete")); }
 		}
 	}
 	static struct Constants
@@ -1431,17 +1431,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrGameSettingsCommon GameSettings() { mixin(MGPC!("TrGameSettingsCommon", 84)()); }
-			TrGameSearchCommon SearchSettings() { mixin(MGPC!("TrGameSearchCommon", 80)()); }
+			TrGameSettingsCommon GameSettings() { mixin(MGPC("TrGameSettingsCommon", 84)); }
+			TrGameSearchCommon SearchSettings() { mixin(MGPC("TrGameSearchCommon", 80)); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
-			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 68)()); }
-			float SearchStarted() { mixin(MGPC!("float", 64)()); }
-			ubyte ControllerId() { mixin(MGPC!("ubyte", 60)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC("OnlineSubsystem", 68)); }
+			float SearchStarted() { mixin(MGPC("float", 64)); }
+			ubyte ControllerId() { mixin(MGPC("ubyte", 60)); }
 		}
-		bool bProcessingJoin() { mixin(MGBPC!(88, 0x2)()); }
-		bool bProcessingJoin(bool val) { mixin(MSBPC!(88, 0x2)()); }
-		bool bIssuedInitialQuery() { mixin(MGBPC!(88, 0x1)()); }
-		bool bIssuedInitialQuery(bool val) { mixin(MSBPC!(88, 0x1)()); }
+		bool bProcessingJoin() { mixin(MGBPC(88, 0x2)); }
+		bool bProcessingJoin(bool val) { mixin(MSBPC(88, 0x2)); }
+		bool bIssuedInitialQuery() { mixin(MGBPC(88, 0x1)); }
+		bool bIssuedInitialQuery(bool val) { mixin(MSBPC(88, 0x1)); }
 	}
 final:
 	bool Init(ubyte ControllerIndex, int GameMode)

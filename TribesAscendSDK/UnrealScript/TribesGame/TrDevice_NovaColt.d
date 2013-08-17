@@ -8,9 +8,9 @@ extern(C++) interface TrDevice_NovaColt : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_NovaColt")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_NovaColt")); }
 	private static __gshared TrDevice_NovaColt mDefaultProperties;
-	@property final static TrDevice_NovaColt DefaultProperties() { mixin(MGDPC!(TrDevice_NovaColt, "TrDevice_NovaColt TribesGame.Default__TrDevice_NovaColt")()); }
+	@property final static TrDevice_NovaColt DefaultProperties() { mixin(MGDPC("TrDevice_NovaColt", "TrDevice_NovaColt TribesGame.Default__TrDevice_NovaColt")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,9 +21,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldRefire() { mixin(MGF!("mShouldRefire", "Function TribesGame.TrDevice_NovaColt.ShouldRefire")()); }
-			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_NovaColt.FireAmmunition")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_NovaColt.StartFire")()); }
+			ScriptFunction ShouldRefire() { mixin(MGF("mShouldRefire", "Function TribesGame.TrDevice_NovaColt.ShouldRefire")); }
+			ScriptFunction FireAmmunition() { mixin(MGF("mFireAmmunition", "Function TribesGame.TrDevice_NovaColt.FireAmmunition")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function TribesGame.TrDevice_NovaColt.StartFire")); }
 		}
 	}
 final:

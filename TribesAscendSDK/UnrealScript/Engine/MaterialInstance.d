@@ -13,9 +13,9 @@ extern(C++) interface MaterialInstance : MaterialInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialInstance")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialInstance")); }
 	private static __gshared MaterialInstance mDefaultProperties;
-	@property final static MaterialInstance DefaultProperties() { mixin(MGDPC!(MaterialInstance, "MaterialInstance Engine.Default__MaterialInstance")()); }
+	@property final static MaterialInstance DefaultProperties() { mixin(MGDPC("MaterialInstance", "MaterialInstance Engine.Default__MaterialInstance")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,41 +31,41 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetParent() { mixin(MGF!("mSetParent", "Function Engine.MaterialInstance.SetParent")()); }
-			ScriptFunction SetVectorParameterValue() { mixin(MGF!("mSetVectorParameterValue", "Function Engine.MaterialInstance.SetVectorParameterValue")()); }
-			ScriptFunction SetScalarParameterValue() { mixin(MGF!("mSetScalarParameterValue", "Function Engine.MaterialInstance.SetScalarParameterValue")()); }
-			ScriptFunction SetScalarCurveParameterValue() { mixin(MGF!("mSetScalarCurveParameterValue", "Function Engine.MaterialInstance.SetScalarCurveParameterValue")()); }
-			ScriptFunction SetTextureParameterValue() { mixin(MGF!("mSetTextureParameterValue", "Function Engine.MaterialInstance.SetTextureParameterValue")()); }
-			ScriptFunction SetFontParameterValue() { mixin(MGF!("mSetFontParameterValue", "Function Engine.MaterialInstance.SetFontParameterValue")()); }
-			ScriptFunction ClearParameterValues() { mixin(MGF!("mClearParameterValues", "Function Engine.MaterialInstance.ClearParameterValues")()); }
-			ScriptFunction IsInMapOrTransientPackage() { mixin(MGF!("mIsInMapOrTransientPackage", "Function Engine.MaterialInstance.IsInMapOrTransientPackage")()); }
+			ScriptFunction SetParent() { mixin(MGF("mSetParent", "Function Engine.MaterialInstance.SetParent")); }
+			ScriptFunction SetVectorParameterValue() { mixin(MGF("mSetVectorParameterValue", "Function Engine.MaterialInstance.SetVectorParameterValue")); }
+			ScriptFunction SetScalarParameterValue() { mixin(MGF("mSetScalarParameterValue", "Function Engine.MaterialInstance.SetScalarParameterValue")); }
+			ScriptFunction SetScalarCurveParameterValue() { mixin(MGF("mSetScalarCurveParameterValue", "Function Engine.MaterialInstance.SetScalarCurveParameterValue")); }
+			ScriptFunction SetTextureParameterValue() { mixin(MGF("mSetTextureParameterValue", "Function Engine.MaterialInstance.SetTextureParameterValue")); }
+			ScriptFunction SetFontParameterValue() { mixin(MGF("mSetFontParameterValue", "Function Engine.MaterialInstance.SetFontParameterValue")); }
+			ScriptFunction ClearParameterValues() { mixin(MGF("mClearParameterValues", "Function Engine.MaterialInstance.ClearParameterValues")); }
+			ScriptFunction IsInMapOrTransientPackage() { mixin(MGF("mIsInMapOrTransientPackage", "Function Engine.MaterialInstance.IsInMapOrTransientPackage")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Texture) ReferencedTextures() { mixin(MGPC!("ScriptArray!(Texture)", 392)()); }
-			ScriptArray!(UObject.Guid) ReferencedTextureGuids() { mixin(MGPC!("ScriptArray!(UObject.Guid)", 404)()); }
-			UObject.Guid ParentLightingGuid() { mixin(MGPC!("UObject.Guid", 416)()); }
-			UObject.Pointer Resources() { mixin(MGPC!("UObject.Pointer", 380)()); }
-			UObject.Pointer StaticPermutationResources() { mixin(MGPC!("UObject.Pointer", 372)()); }
-			UObject.Pointer StaticParameters() { mixin(MGPC!("UObject.Pointer", 364)()); }
-			PhysicalMaterial WhitePhysicalMaterial() { mixin(MGPC!("PhysicalMaterial", 356)()); }
-			PhysicalMaterial BlackPhysicalMaterial() { mixin(MGPC!("PhysicalMaterial", 352)()); }
-			int PhysMaterialMaskUVChannel() { mixin(MGPC!("int", 348)()); }
-			Texture2D PhysMaterialMask() { mixin(MGPC!("Texture2D", 344)()); }
-			MaterialInterface Parent() { mixin(MGPC!("MaterialInterface", 340)()); }
-			PhysicalMaterial PhysMaterial() { mixin(MGPC!("PhysicalMaterial", 336)()); }
+			ScriptArray!(Texture) ReferencedTextures() { mixin(MGPC("ScriptArray!(Texture)", 392)); }
+			ScriptArray!(UObject.Guid) ReferencedTextureGuids() { mixin(MGPC("ScriptArray!(UObject.Guid)", 404)); }
+			UObject.Guid ParentLightingGuid() { mixin(MGPC("UObject.Guid", 416)); }
+			UObject.Pointer Resources() { mixin(MGPC("UObject.Pointer", 380)); }
+			UObject.Pointer StaticPermutationResources() { mixin(MGPC("UObject.Pointer", 372)); }
+			UObject.Pointer StaticParameters() { mixin(MGPC("UObject.Pointer", 364)); }
+			PhysicalMaterial WhitePhysicalMaterial() { mixin(MGPC("PhysicalMaterial", 356)); }
+			PhysicalMaterial BlackPhysicalMaterial() { mixin(MGPC("PhysicalMaterial", 352)); }
+			int PhysMaterialMaskUVChannel() { mixin(MGPC("int", 348)); }
+			Texture2D PhysMaterialMask() { mixin(MGPC("Texture2D", 344)); }
+			MaterialInterface Parent() { mixin(MGPC("MaterialInterface", 340)); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPC("PhysicalMaterial", 336)); }
 		}
-		bool bNeedsMaterialFlattening() { mixin(MGBPC!(360, 0x8)()); }
-		bool bNeedsMaterialFlattening(bool val) { mixin(MSBPC!(360, 0x8)()); }
-		bool ReentrantFlag() { mixin(MGBPC!(360, 0x4)()); }
-		bool ReentrantFlag(bool val) { mixin(MSBPC!(360, 0x4)()); }
-		bool bStaticPermutationDirty() { mixin(MGBPC!(360, 0x2)()); }
-		bool bStaticPermutationDirty(bool val) { mixin(MSBPC!(360, 0x2)()); }
-		bool bHasStaticPermutationResource() { mixin(MGBPC!(360, 0x1)()); }
-		bool bHasStaticPermutationResource(bool val) { mixin(MSBPC!(360, 0x1)()); }
+		bool bNeedsMaterialFlattening() { mixin(MGBPC(360, 0x8)); }
+		bool bNeedsMaterialFlattening(bool val) { mixin(MSBPC(360, 0x8)); }
+		bool ReentrantFlag() { mixin(MGBPC(360, 0x4)); }
+		bool ReentrantFlag(bool val) { mixin(MSBPC(360, 0x4)); }
+		bool bStaticPermutationDirty() { mixin(MGBPC(360, 0x2)); }
+		bool bStaticPermutationDirty(bool val) { mixin(MSBPC(360, 0x2)); }
+		bool bHasStaticPermutationResource() { mixin(MGBPC(360, 0x1)); }
+		bool bHasStaticPermutationResource(bool val) { mixin(MSBPC(360, 0x1)); }
 	}
 final:
 	void SetParent(MaterialInterface NewParent)

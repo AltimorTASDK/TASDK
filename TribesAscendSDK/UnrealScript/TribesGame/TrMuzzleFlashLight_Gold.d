@@ -8,7 +8,7 @@ extern(C++) interface TrMuzzleFlashLight_Gold : UDKExplosionLight
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMuzzleFlashLight_Gold")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrMuzzleFlashLight_Gold")); }
 	private static __gshared TrMuzzleFlashLight_Gold mDefaultProperties;
-	@property final static TrMuzzleFlashLight_Gold DefaultProperties() { mixin(MGDPC!(TrMuzzleFlashLight_Gold, "TrMuzzleFlashLight_Gold TribesGame.Default__TrMuzzleFlashLight_Gold")()); }
+	@property final static TrMuzzleFlashLight_Gold DefaultProperties() { mixin(MGDPC("TrMuzzleFlashLight_Gold", "TrMuzzleFlashLight_Gold TribesGame.Default__TrMuzzleFlashLight_Gold")); }
 }

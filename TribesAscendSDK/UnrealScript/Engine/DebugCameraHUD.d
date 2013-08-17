@@ -8,9 +8,9 @@ extern(C++) interface DebugCameraHUD : HUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DebugCameraHUD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DebugCameraHUD")); }
 	private static __gshared DebugCameraHUD mDefaultProperties;
-	@property final static DebugCameraHUD DefaultProperties() { mixin(MGDPC!(DebugCameraHUD, "DebugCameraHUD Engine.Default__DebugCameraHUD")()); }
+	@property final static DebugCameraHUD DefaultProperties() { mixin(MGDPC("DebugCameraHUD", "DebugCameraHUD Engine.Default__DebugCameraHUD")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,9 +21,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.DebugCameraHUD.PostBeginPlay")()); }
-			ScriptFunction DisplayMaterials() { mixin(MGF!("mDisplayMaterials", "Function Engine.DebugCameraHUD.DisplayMaterials")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function Engine.DebugCameraHUD.PostRender")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.DebugCameraHUD.PostBeginPlay")); }
+			ScriptFunction DisplayMaterials() { mixin(MGF("mDisplayMaterials", "Function Engine.DebugCameraHUD.DisplayMaterials")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function Engine.DebugCameraHUD.PostRender")); }
 		}
 	}
 final:

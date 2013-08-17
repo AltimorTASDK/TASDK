@@ -9,9 +9,9 @@ extern(C++) interface UIManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIManager")); }
 	private static __gshared UIManager mDefaultProperties;
-	@property final static UIManager DefaultProperties() { mixin(MGDPC!(UIManager, "UIManager Engine.Default__UIManager")()); }
+	@property final static UIManager DefaultProperties() { mixin(MGDPC("UIManager", "UIManager Engine.Default__UIManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetUIManager() { mixin(MGF!("mGetUIManager", "Function Engine.UIManager.GetUIManager")()); }
-			ScriptFunction CanUnpauseInternalUI() { mixin(MGF!("mCanUnpauseInternalUI", "Function Engine.UIManager.CanUnpauseInternalUI")()); }
-			ScriptFunction PauseGame() { mixin(MGF!("mPauseGame", "Function Engine.UIManager.PauseGame")()); }
-			ScriptFunction NotifyPlayerAdded() { mixin(MGF!("mNotifyPlayerAdded", "Function Engine.UIManager.NotifyPlayerAdded")()); }
-			ScriptFunction NotifyPlayerRemoved() { mixin(MGF!("mNotifyPlayerRemoved", "Function Engine.UIManager.NotifyPlayerRemoved")()); }
+			ScriptFunction GetUIManager() { mixin(MGF("mGetUIManager", "Function Engine.UIManager.GetUIManager")); }
+			ScriptFunction CanUnpauseInternalUI() { mixin(MGF("mCanUnpauseInternalUI", "Function Engine.UIManager.CanUnpauseInternalUI")); }
+			ScriptFunction PauseGame() { mixin(MGF("mPauseGame", "Function Engine.UIManager.PauseGame")); }
+			ScriptFunction NotifyPlayerAdded() { mixin(MGF("mNotifyPlayerAdded", "Function Engine.UIManager.NotifyPlayerAdded")); }
+			ScriptFunction NotifyPlayerRemoved() { mixin(MGF("mNotifyPlayerRemoved", "Function Engine.UIManager.NotifyPlayerRemoved")); }
 		}
 	}
 final:

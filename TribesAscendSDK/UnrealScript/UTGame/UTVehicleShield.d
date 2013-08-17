@@ -11,9 +11,9 @@ extern(C++) interface UTVehicleShield : UDKWeaponShield
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleShield")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVehicleShield")); }
 	private static __gshared UTVehicleShield mDefaultProperties;
-	@property final static UTVehicleShield DefaultProperties() { mixin(MGDPC!(UTVehicleShield, "UTVehicleShield UTGame.Default__UTVehicleShield")()); }
+	@property final static UTVehicleShield DefaultProperties() { mixin(MGDPC("UTVehicleShield", "UTVehicleShield UTGame.Default__UTVehicleShield")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,23 +24,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetActive() { mixin(MGF!("mSetActive", "Function UTGame.UTVehicleShield.SetActive")()); }
-			ScriptFunction ShieldFullyOnline() { mixin(MGF!("mShieldFullyOnline", "Function UTGame.UTVehicleShield.ShieldFullyOnline")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function UTGame.UTVehicleShield.TakeDamage")()); }
+			ScriptFunction SetActive() { mixin(MGF("mSetActive", "Function UTGame.UTVehicleShield.SetActive")); }
+			ScriptFunction ShieldFullyOnline() { mixin(MGF("mShieldFullyOnline", "Function UTGame.UTVehicleShield.ShieldFullyOnline")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function UTGame.UTVehicleShield.TakeDamage")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float ShieldActivatedTime() { mixin(MGPC!("float", 496)()); }
+			float ShieldActivatedTime() { mixin(MGPC("float", 496)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ShieldEffectComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientComponent'!
-			SoundCue DeactivatedSound() { mixin(MGPC!("SoundCue", 484)()); }
-			SoundCue ActivatedSound() { mixin(MGPC!("SoundCue", 480)()); }
+			SoundCue DeactivatedSound() { mixin(MGPC("SoundCue", 484)); }
+			SoundCue ActivatedSound() { mixin(MGPC("SoundCue", 480)); }
 		}
-		bool bFullyActive() { mixin(MGBPC!(500, 0x1)()); }
-		bool bFullyActive(bool val) { mixin(MSBPC!(500, 0x1)()); }
+		bool bFullyActive() { mixin(MGBPC(500, 0x1)); }
+		bool bFullyActive(bool val) { mixin(MSBPC(500, 0x1)); }
 	}
 final:
 	void SetActive(bool bNowActive)

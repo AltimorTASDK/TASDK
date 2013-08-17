@@ -8,9 +8,9 @@ extern(C++) interface UDKGameSettingsCommon : OnlineGameSettings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKGameSettingsCommon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKGameSettingsCommon")); }
 	private static __gshared UDKGameSettingsCommon mDefaultProperties;
-	@property final static UDKGameSettingsCommon DefaultProperties() { mixin(MGDPC!(UDKGameSettingsCommon, "UDKGameSettingsCommon UDKBase.Default__UDKGameSettingsCommon")()); }
+	@property final static UDKGameSettingsCommon DefaultProperties() { mixin(MGDPC("UDKGameSettingsCommon", "UDKGameSettingsCommon UDKBase.Default__UDKGameSettingsCommon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction StringToBlob() { mixin(MGF!("mStringToBlob", "Function UDKBase.UDKGameSettingsCommon.StringToBlob")()); }
-			ScriptFunction BlobToString() { mixin(MGF!("mBlobToString", "Function UDKBase.UDKGameSettingsCommon.BlobToString")()); }
+			ScriptFunction StringToBlob() { mixin(MGF("mStringToBlob", "Function UDKBase.UDKGameSettingsCommon.StringToBlob")); }
+			ScriptFunction BlobToString() { mixin(MGF("mBlobToString", "Function UDKBase.UDKGameSettingsCommon.BlobToString")); }
 		}
 	}
 final:

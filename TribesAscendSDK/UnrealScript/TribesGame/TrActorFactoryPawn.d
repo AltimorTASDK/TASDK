@@ -9,19 +9,19 @@ extern(C++) interface TrActorFactoryPawn : UTActorFactoryAI
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrActorFactoryPawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrActorFactoryPawn")); }
 	private static __gshared TrActorFactoryPawn mDefaultProperties;
-	@property final static TrActorFactoryPawn DefaultProperties() { mixin(MGDPC!(TrActorFactoryPawn, "TrActorFactoryPawn TribesGame.Default__TrActorFactoryPawn")()); }
+	@property final static TrActorFactoryPawn DefaultProperties() { mixin(MGDPC("TrActorFactoryPawn", "TrActorFactoryPawn TribesGame.Default__TrActorFactoryPawn")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;
-		public @property static final ScriptFunction PostCreateActor() { mixin(MGF!("mPostCreateActor", "Function TribesGame.TrActorFactoryPawn.PostCreateActor")()); }
+		public @property static final ScriptFunction PostCreateActor() { mixin(MGF("mPostCreateActor", "Function TribesGame.TrActorFactoryPawn.PostCreateActor")); }
 	}
 	@property final auto ref
 	{
-		ScriptClass FamilyInfo() { mixin(MGPC!("ScriptClass", 144)()); }
-		float GroundSpeed() { mixin(MGPC!("float", 140)()); }
-		int NextTeam() { mixin(MGPC!("int", 136)()); }
+		ScriptClass FamilyInfo() { mixin(MGPC("ScriptClass", 144)); }
+		float GroundSpeed() { mixin(MGPC("float", 140)); }
+		int NextTeam() { mixin(MGPC("int", 136)); }
 	}
 	final void PostCreateActor(Actor NewActor)
 	{

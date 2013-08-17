@@ -10,9 +10,9 @@ extern(C++) interface GameplayEventsHandler : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameplayEventsHandler")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.GameplayEventsHandler")); }
 	private static __gshared GameplayEventsHandler mDefaultProperties;
-	@property final static GameplayEventsHandler DefaultProperties() { mixin(MGDPC!(GameplayEventsHandler, "GameplayEventsHandler Engine.Default__GameplayEventsHandler")()); }
+	@property final static GameplayEventsHandler DefaultProperties() { mixin(MGDPC("GameplayEventsHandler", "GameplayEventsHandler Engine.Default__GameplayEventsHandler")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,20 +27,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetReader() { mixin(MGF!("mSetReader", "Function Engine.GameplayEventsHandler.SetReader")()); }
-			ScriptFunction PreProcessStream() { mixin(MGF!("mPreProcessStream", "Function Engine.GameplayEventsHandler.PreProcessStream")()); }
-			ScriptFunction PostProcessStream() { mixin(MGF!("mPostProcessStream", "Function Engine.GameplayEventsHandler.PostProcessStream")()); }
-			ScriptFunction ResolveGroupFilters() { mixin(MGF!("mResolveGroupFilters", "Function Engine.GameplayEventsHandler.ResolveGroupFilters")()); }
-			ScriptFunction AddFilter() { mixin(MGF!("mAddFilter", "Function Engine.GameplayEventsHandler.AddFilter")()); }
-			ScriptFunction RemoveFilter() { mixin(MGF!("mRemoveFilter", "Function Engine.GameplayEventsHandler.RemoveFilter")()); }
-			ScriptFunction IsEventFiltered() { mixin(MGF!("mIsEventFiltered", "Function Engine.GameplayEventsHandler.IsEventFiltered")()); }
+			ScriptFunction SetReader() { mixin(MGF("mSetReader", "Function Engine.GameplayEventsHandler.SetReader")); }
+			ScriptFunction PreProcessStream() { mixin(MGF("mPreProcessStream", "Function Engine.GameplayEventsHandler.PreProcessStream")); }
+			ScriptFunction PostProcessStream() { mixin(MGF("mPostProcessStream", "Function Engine.GameplayEventsHandler.PostProcessStream")); }
+			ScriptFunction ResolveGroupFilters() { mixin(MGF("mResolveGroupFilters", "Function Engine.GameplayEventsHandler.ResolveGroupFilters")); }
+			ScriptFunction AddFilter() { mixin(MGF("mAddFilter", "Function Engine.GameplayEventsHandler.AddFilter")); }
+			ScriptFunction RemoveFilter() { mixin(MGF("mRemoveFilter", "Function Engine.GameplayEventsHandler.RemoveFilter")); }
+			ScriptFunction IsEventFiltered() { mixin(MGF("mIsEventFiltered", "Function Engine.GameplayEventsHandler.IsEventFiltered")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) EventIDFilter() { mixin(MGPC!("ScriptArray!(int)", 60)()); }
-		ScriptArray!(GameplayEvents.GameStatGroup) GroupFilter() { mixin(MGPC!("ScriptArray!(GameplayEvents.GameStatGroup)", 72)()); }
-		GameplayEventsReader Reader() { mixin(MGPC!("GameplayEventsReader", 84)()); }
+		ScriptArray!(int) EventIDFilter() { mixin(MGPC("ScriptArray!(int)", 60)); }
+		ScriptArray!(GameplayEvents.GameStatGroup) GroupFilter() { mixin(MGPC("ScriptArray!(GameplayEvents.GameStatGroup)", 72)); }
+		GameplayEventsReader Reader() { mixin(MGPC("GameplayEventsReader", 84)); }
 	}
 final:
 	void SetReader(GameplayEventsReader NewReader)

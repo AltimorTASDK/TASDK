@@ -15,9 +15,9 @@ extern(C++) interface LocalPlayer : Player
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LocalPlayer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.LocalPlayer")); }
 	private static __gshared LocalPlayer mDefaultProperties;
-	@property final static LocalPlayer DefaultProperties() { mixin(MGDPC!(LocalPlayer, "LocalPlayer Engine.Default__LocalPlayer")()); }
+	@property final static LocalPlayer DefaultProperties() { mixin(MGDPC("LocalPlayer", "LocalPlayer Engine.Default__LocalPlayer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,21 +40,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnPlayActor() { mixin(MGF!("mSpawnPlayActor", "Function Engine.LocalPlayer.SpawnPlayActor")()); }
-			ScriptFunction SendSplitJoin() { mixin(MGF!("mSendSplitJoin", "Function Engine.LocalPlayer.SendSplitJoin")()); }
-			ScriptFunction GetActorVisibility() { mixin(MGF!("mGetActorVisibility", "Function Engine.LocalPlayer.GetActorVisibility")()); }
-			ScriptFunction OverridePostProcessSettings() { mixin(MGF!("mOverridePostProcessSettings", "Function Engine.LocalPlayer.OverridePostProcessSettings")()); }
-			ScriptFunction ClearPostProcessSettingsOverride() { mixin(MGF!("mClearPostProcessSettingsOverride", "Function Engine.LocalPlayer.ClearPostProcessSettingsOverride")()); }
-			ScriptFunction SetControllerId() { mixin(MGF!("mSetControllerId", "Function Engine.LocalPlayer.SetControllerId")()); }
-			ScriptFunction GetTranslationContext() { mixin(MGF!("mGetTranslationContext", "Function Engine.LocalPlayer.GetTranslationContext")()); }
-			ScriptFunction InsertPostProcessingChain() { mixin(MGF!("mInsertPostProcessingChain", "Function Engine.LocalPlayer.InsertPostProcessingChain")()); }
-			ScriptFunction RemovePostProcessingChain() { mixin(MGF!("mRemovePostProcessingChain", "Function Engine.LocalPlayer.RemovePostProcessingChain")()); }
-			ScriptFunction RemoveAllPostProcessingChains() { mixin(MGF!("mRemoveAllPostProcessingChains", "Function Engine.LocalPlayer.RemoveAllPostProcessingChains")()); }
-			ScriptFunction GetPostProcessChain() { mixin(MGF!("mGetPostProcessChain", "Function Engine.LocalPlayer.GetPostProcessChain")()); }
-			ScriptFunction TouchPlayerPostProcessChain() { mixin(MGF!("mTouchPlayerPostProcessChain", "Function Engine.LocalPlayer.TouchPlayerPostProcessChain")()); }
-			ScriptFunction DeProject() { mixin(MGF!("mDeProject", "Function Engine.LocalPlayer.DeProject")()); }
-			ScriptFunction GetUniqueNetId() { mixin(MGF!("mGetUniqueNetId", "Function Engine.LocalPlayer.GetUniqueNetId")()); }
-			ScriptFunction GetNickname() { mixin(MGF!("mGetNickname", "Function Engine.LocalPlayer.GetNickname")()); }
+			ScriptFunction SpawnPlayActor() { mixin(MGF("mSpawnPlayActor", "Function Engine.LocalPlayer.SpawnPlayActor")); }
+			ScriptFunction SendSplitJoin() { mixin(MGF("mSendSplitJoin", "Function Engine.LocalPlayer.SendSplitJoin")); }
+			ScriptFunction GetActorVisibility() { mixin(MGF("mGetActorVisibility", "Function Engine.LocalPlayer.GetActorVisibility")); }
+			ScriptFunction OverridePostProcessSettings() { mixin(MGF("mOverridePostProcessSettings", "Function Engine.LocalPlayer.OverridePostProcessSettings")); }
+			ScriptFunction ClearPostProcessSettingsOverride() { mixin(MGF("mClearPostProcessSettingsOverride", "Function Engine.LocalPlayer.ClearPostProcessSettingsOverride")); }
+			ScriptFunction SetControllerId() { mixin(MGF("mSetControllerId", "Function Engine.LocalPlayer.SetControllerId")); }
+			ScriptFunction GetTranslationContext() { mixin(MGF("mGetTranslationContext", "Function Engine.LocalPlayer.GetTranslationContext")); }
+			ScriptFunction InsertPostProcessingChain() { mixin(MGF("mInsertPostProcessingChain", "Function Engine.LocalPlayer.InsertPostProcessingChain")); }
+			ScriptFunction RemovePostProcessingChain() { mixin(MGF("mRemovePostProcessingChain", "Function Engine.LocalPlayer.RemovePostProcessingChain")); }
+			ScriptFunction RemoveAllPostProcessingChains() { mixin(MGF("mRemoveAllPostProcessingChains", "Function Engine.LocalPlayer.RemoveAllPostProcessingChains")); }
+			ScriptFunction GetPostProcessChain() { mixin(MGF("mGetPostProcessChain", "Function Engine.LocalPlayer.GetPostProcessChain")); }
+			ScriptFunction TouchPlayerPostProcessChain() { mixin(MGF("mTouchPlayerPostProcessChain", "Function Engine.LocalPlayer.TouchPlayerPostProcessChain")); }
+			ScriptFunction DeProject() { mixin(MGF("mDeProject", "Function Engine.LocalPlayer.DeProject")); }
+			ScriptFunction GetUniqueNetId() { mixin(MGF("mGetUniqueNetId", "Function Engine.LocalPlayer.GetUniqueNetId")); }
+			ScriptFunction GetNickname() { mixin(MGF("mGetNickname", "Function Engine.LocalPlayer.GetNickname")); }
 		}
 	}
 	struct PostProcessSettingsOverride
@@ -62,22 +62,22 @@ public extern(D):
 		private ubyte __buffer__[244];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LocalPlayer.PostProcessSettingsOverride")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.LocalPlayer.PostProcessSettingsOverride")); }
 		@property final
 		{
 			auto ref
 			{
-				float BlendStartTime() { mixin(MGPS!("float", 240)()); }
-				float BlendOutDuration() { mixin(MGPS!("float", 236)()); }
-				float BlendInDuration() { mixin(MGPS!("float", 232)()); }
-				float CurrentBlendOutTime() { mixin(MGPS!("float", 228)()); }
-				float CurrentBlendInTime() { mixin(MGPS!("float", 224)()); }
+				float BlendStartTime() { mixin(MGPS("float", 240)); }
+				float BlendOutDuration() { mixin(MGPS("float", 236)); }
+				float BlendInDuration() { mixin(MGPS("float", 232)); }
+				float CurrentBlendOutTime() { mixin(MGPS("float", 228)); }
+				float CurrentBlendInTime() { mixin(MGPS("float", 224)); }
 				// WARNING: Property 'Settings' has the same name as a defined type!
 			}
-			bool bBlendingOut() { mixin(MGBPS!(220, 0x2)()); }
-			bool bBlendingOut(bool val) { mixin(MSBPS!(220, 0x2)()); }
-			bool bBlendingIn() { mixin(MGBPS!(220, 0x1)()); }
-			bool bBlendingIn(bool val) { mixin(MSBPS!(220, 0x1)()); }
+			bool bBlendingOut() { mixin(MGBPS(220, 0x2)); }
+			bool bBlendingOut(bool val) { mixin(MSBPS(220, 0x2)); }
+			bool bBlendingIn() { mixin(MGBPS(220, 0x1)); }
+			bool bBlendingIn(bool val) { mixin(MSBPS(220, 0x1)); }
 		}
 	}
 	struct CurrentPostProcessVolumeInfo
@@ -85,13 +85,13 @@ public extern(D):
 		private ubyte __buffer__[232];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LocalPlayer.CurrentPostProcessVolumeInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.LocalPlayer.CurrentPostProcessVolumeInfo")); }
 		@property final auto ref
 		{
-			float LastBlendTime() { mixin(MGPS!("float", 228)()); }
-			float BlendStartTime() { mixin(MGPS!("float", 224)()); }
-			PostProcessVolume LastVolumeUsed() { mixin(MGPS!("PostProcessVolume", 220)()); }
-			PostProcessVolume.PostProcessSettings LastSettings() { mixin(MGPS!("PostProcessVolume.PostProcessSettings", 0)()); }
+			float LastBlendTime() { mixin(MGPS("float", 228)); }
+			float BlendStartTime() { mixin(MGPS("float", 224)); }
+			PostProcessVolume LastVolumeUsed() { mixin(MGPS("PostProcessVolume", 220)); }
+			PostProcessVolume.PostProcessSettings LastSettings() { mixin(MGPS("PostProcessVolume.PostProcessSettings", 0)); }
 		}
 	}
 	struct SynchronizedActorVisibilityHistory
@@ -99,10 +99,10 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LocalPlayer.SynchronizedActorVisibilityHistory")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.LocalPlayer.SynchronizedActorVisibilityHistory")); }
 		@property final auto ref
 		{
-			UObject.Pointer CriticalSection() { mixin(MGPS!("UObject.Pointer", 4)()); }
+			UObject.Pointer CriticalSection() { mixin(MGPS("UObject.Pointer", 4)); }
 			// WARNING: Property 'State' has the same name as a defined type!
 		}
 	}
@@ -110,26 +110,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ControllerId() { mixin(MGPC!("int", 96)()); }
-			GameViewportClient ViewportClient() { mixin(MGPC!("GameViewportClient", 100)()); }
-			UObject.Vector2D Size() { mixin(MGPC!("UObject.Vector2D", 112)()); }
-			UObject.Vector2D Origin() { mixin(MGPC!("UObject.Vector2D", 104)()); }
-			ScriptArray!(PostProcessChain) PlayerPostProcessChains() { mixin(MGPC!("ScriptArray!(PostProcessChain)", 124)()); }
-			ScriptArray!(LocalPlayer.PostProcessSettingsOverride) ActivePPOverrides() { mixin(MGPC!("ScriptArray!(LocalPlayer.PostProcessSettingsOverride)", 624)()); }
-			TranslationContext TagContext() { mixin(MGPC!("TranslationContext", 656)()); }
-			ScriptString LastMap() { mixin(MGPC!("ScriptString", 640)()); }
-			UObject.EAspectRatioAxisConstraint AspectRatioAxisConstraint() { mixin(MGPC!("UObject.EAspectRatioAxisConstraint", 636)()); }
-			LocalPlayer.CurrentPostProcessVolumeInfo LevelPPInfo() { mixin(MGPC!("LocalPlayer.CurrentPostProcessVolumeInfo", 392)()); }
-			LocalPlayer.CurrentPostProcessVolumeInfo CurrentPPInfo() { mixin(MGPC!("LocalPlayer.CurrentPostProcessVolumeInfo", 160)()); }
-			Vector LastViewLocation() { mixin(MGPC!("Vector", 148)()); }
-			LocalPlayer.SynchronizedActorVisibilityHistory ActorVisibilityHistory() { mixin(MGPC!("LocalPlayer.SynchronizedActorVisibilityHistory", 140)()); }
-			UObject.Pointer ViewState() { mixin(MGPC!("UObject.Pointer", 136)()); }
-			PostProcessChain PlayerPostProcess() { mixin(MGPC!("PostProcessChain", 120)()); }
+			int ControllerId() { mixin(MGPC("int", 96)); }
+			GameViewportClient ViewportClient() { mixin(MGPC("GameViewportClient", 100)); }
+			UObject.Vector2D Size() { mixin(MGPC("UObject.Vector2D", 112)); }
+			UObject.Vector2D Origin() { mixin(MGPC("UObject.Vector2D", 104)); }
+			ScriptArray!(PostProcessChain) PlayerPostProcessChains() { mixin(MGPC("ScriptArray!(PostProcessChain)", 124)); }
+			ScriptArray!(LocalPlayer.PostProcessSettingsOverride) ActivePPOverrides() { mixin(MGPC("ScriptArray!(LocalPlayer.PostProcessSettingsOverride)", 624)); }
+			TranslationContext TagContext() { mixin(MGPC("TranslationContext", 656)); }
+			ScriptString LastMap() { mixin(MGPC("ScriptString", 640)); }
+			UObject.EAspectRatioAxisConstraint AspectRatioAxisConstraint() { mixin(MGPC("UObject.EAspectRatioAxisConstraint", 636)); }
+			LocalPlayer.CurrentPostProcessVolumeInfo LevelPPInfo() { mixin(MGPC("LocalPlayer.CurrentPostProcessVolumeInfo", 392)); }
+			LocalPlayer.CurrentPostProcessVolumeInfo CurrentPPInfo() { mixin(MGPC("LocalPlayer.CurrentPostProcessVolumeInfo", 160)); }
+			Vector LastViewLocation() { mixin(MGPC("Vector", 148)); }
+			LocalPlayer.SynchronizedActorVisibilityHistory ActorVisibilityHistory() { mixin(MGPC("LocalPlayer.SynchronizedActorVisibilityHistory", 140)); }
+			UObject.Pointer ViewState() { mixin(MGPC("UObject.Pointer", 136)); }
+			PostProcessChain PlayerPostProcess() { mixin(MGPC("PostProcessChain", 120)); }
 		}
-		bool bSentSplitJoin() { mixin(MGBPC!(652, 0x2)()); }
-		bool bSentSplitJoin(bool val) { mixin(MSBPC!(652, 0x2)()); }
-		bool bWantToResetToMapDefaultPP() { mixin(MGBPC!(652, 0x1)()); }
-		bool bWantToResetToMapDefaultPP(bool val) { mixin(MSBPC!(652, 0x1)()); }
+		bool bSentSplitJoin() { mixin(MGBPC(652, 0x2)); }
+		bool bSentSplitJoin(bool val) { mixin(MSBPC(652, 0x2)); }
+		bool bWantToResetToMapDefaultPP() { mixin(MGBPC(652, 0x1)); }
+		bool bWantToResetToMapDefaultPP(bool val) { mixin(MSBPC(652, 0x1)); }
 	}
 final:
 	bool SpawnPlayActor(ScriptString pURL, ref ScriptString OutError)

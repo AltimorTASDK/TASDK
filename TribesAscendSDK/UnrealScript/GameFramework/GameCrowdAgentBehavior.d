@@ -12,9 +12,9 @@ extern(C++) interface GameCrowdAgentBehavior : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdAgentBehavior")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdAgentBehavior")); }
 	private static __gshared GameCrowdAgentBehavior mDefaultProperties;
-	@property final static GameCrowdAgentBehavior DefaultProperties() { mixin(MGDPC!(GameCrowdAgentBehavior, "GameCrowdAgentBehavior GameFramework.Default__GameCrowdAgentBehavior")()); }
+	@property final static GameCrowdAgentBehavior DefaultProperties() { mixin(MGDPC("GameCrowdAgentBehavior", "GameCrowdAgentBehavior GameFramework.Default__GameCrowdAgentBehavior")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,43 +37,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AllowBehaviorAt() { mixin(MGF!("mAllowBehaviorAt", "Function GameFramework.GameCrowdAgentBehavior.AllowBehaviorAt")()); }
-			ScriptFunction AllowThisDestination() { mixin(MGF!("mAllowThisDestination", "Function GameFramework.GameCrowdAgentBehavior.AllowThisDestination")()); }
-			ScriptFunction CanBeUsedBy() { mixin(MGF!("mCanBeUsedBy", "Function GameFramework.GameCrowdAgentBehavior.CanBeUsedBy")()); }
-			ScriptFunction GetDestinationActor() { mixin(MGF!("mGetDestinationActor", "Function GameFramework.GameCrowdAgentBehavior.GetDestinationActor")()); }
-			ScriptFunction GetBehaviorString() { mixin(MGF!("mGetBehaviorString", "Function GameFramework.GameCrowdAgentBehavior.GetBehaviorString")()); }
-			ScriptFunction ShouldEndIdle() { mixin(MGF!("mShouldEndIdle", "Function GameFramework.GameCrowdAgentBehavior.ShouldEndIdle")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function GameFramework.GameCrowdAgentBehavior.Tick")()); }
-			ScriptFunction FinishedTargetRotation() { mixin(MGF!("mFinishedTargetRotation", "Function GameFramework.GameCrowdAgentBehavior.FinishedTargetRotation")()); }
-			ScriptFunction HandleMovement() { mixin(MGF!("mHandleMovement", "Function GameFramework.GameCrowdAgentBehavior.HandleMovement")()); }
-			ScriptFunction InitBehavior() { mixin(MGF!("mInitBehavior", "Function GameFramework.GameCrowdAgentBehavior.InitBehavior")()); }
-			ScriptFunction StopBehavior() { mixin(MGF!("mStopBehavior", "Function GameFramework.GameCrowdAgentBehavior.StopBehavior")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function GameFramework.GameCrowdAgentBehavior.OnAnimEnd")()); }
-			ScriptFunction ChangingDestination() { mixin(MGF!("mChangingDestination", "Function GameFramework.GameCrowdAgentBehavior.ChangingDestination")()); }
-			ScriptFunction ActivatedBy() { mixin(MGF!("mActivatedBy", "Function GameFramework.GameCrowdAgentBehavior.ActivatedBy")()); }
-			ScriptFunction PropagateViralBehaviorTo() { mixin(MGF!("mPropagateViralBehaviorTo", "Function GameFramework.GameCrowdAgentBehavior.PropagateViralBehaviorTo")()); }
+			ScriptFunction AllowBehaviorAt() { mixin(MGF("mAllowBehaviorAt", "Function GameFramework.GameCrowdAgentBehavior.AllowBehaviorAt")); }
+			ScriptFunction AllowThisDestination() { mixin(MGF("mAllowThisDestination", "Function GameFramework.GameCrowdAgentBehavior.AllowThisDestination")); }
+			ScriptFunction CanBeUsedBy() { mixin(MGF("mCanBeUsedBy", "Function GameFramework.GameCrowdAgentBehavior.CanBeUsedBy")); }
+			ScriptFunction GetDestinationActor() { mixin(MGF("mGetDestinationActor", "Function GameFramework.GameCrowdAgentBehavior.GetDestinationActor")); }
+			ScriptFunction GetBehaviorString() { mixin(MGF("mGetBehaviorString", "Function GameFramework.GameCrowdAgentBehavior.GetBehaviorString")); }
+			ScriptFunction ShouldEndIdle() { mixin(MGF("mShouldEndIdle", "Function GameFramework.GameCrowdAgentBehavior.ShouldEndIdle")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function GameFramework.GameCrowdAgentBehavior.Tick")); }
+			ScriptFunction FinishedTargetRotation() { mixin(MGF("mFinishedTargetRotation", "Function GameFramework.GameCrowdAgentBehavior.FinishedTargetRotation")); }
+			ScriptFunction HandleMovement() { mixin(MGF("mHandleMovement", "Function GameFramework.GameCrowdAgentBehavior.HandleMovement")); }
+			ScriptFunction InitBehavior() { mixin(MGF("mInitBehavior", "Function GameFramework.GameCrowdAgentBehavior.InitBehavior")); }
+			ScriptFunction StopBehavior() { mixin(MGF("mStopBehavior", "Function GameFramework.GameCrowdAgentBehavior.StopBehavior")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function GameFramework.GameCrowdAgentBehavior.OnAnimEnd")); }
+			ScriptFunction ChangingDestination() { mixin(MGF("mChangingDestination", "Function GameFramework.GameCrowdAgentBehavior.ChangingDestination")); }
+			ScriptFunction ActivatedBy() { mixin(MGF("mActivatedBy", "Function GameFramework.GameCrowdAgentBehavior.ActivatedBy")); }
+			ScriptFunction PropagateViralBehaviorTo() { mixin(MGF("mPropagateViralBehaviorTo", "Function GameFramework.GameCrowdAgentBehavior.PropagateViralBehaviorTo")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Actor ActionTarget() { mixin(MGPC!("Actor", 64)()); }
-			float MaxPlayerDistance() { mixin(MGPC!("float", 68)()); }
-			GameCrowdAgent MyAgent() { mixin(MGPC!("GameCrowdAgent", 80)()); }
-			float TimeToStopPropagatingViralBehavior() { mixin(MGPC!("float", 76)()); }
-			float DurationOfViralBehaviorPropagation() { mixin(MGPC!("float", 72)()); }
+			Actor ActionTarget() { mixin(MGPC("Actor", 64)); }
+			float MaxPlayerDistance() { mixin(MGPC("float", 68)); }
+			GameCrowdAgent MyAgent() { mixin(MGPC("GameCrowdAgent", 80)); }
+			float TimeToStopPropagatingViralBehavior() { mixin(MGPC("float", 76)); }
+			float DurationOfViralBehaviorPropagation() { mixin(MGPC("float", 72)); }
 		}
-		bool bIsPanicked() { mixin(MGBPC!(60, 0x10)()); }
-		bool bIsPanicked(bool val) { mixin(MSBPC!(60, 0x10)()); }
-		bool bPassOnIsViralBehaviorFlag() { mixin(MGBPC!(60, 0x8)()); }
-		bool bPassOnIsViralBehaviorFlag(bool val) { mixin(MSBPC!(60, 0x8)()); }
-		bool bIsViralBehavior() { mixin(MGBPC!(60, 0x4)()); }
-		bool bIsViralBehavior(bool val) { mixin(MSBPC!(60, 0x4)()); }
-		bool bFaceActionTargetFirst() { mixin(MGBPC!(60, 0x2)()); }
-		bool bFaceActionTargetFirst(bool val) { mixin(MSBPC!(60, 0x2)()); }
-		bool bIdleBehavior() { mixin(MGBPC!(60, 0x1)()); }
-		bool bIdleBehavior(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		bool bIsPanicked() { mixin(MGBPC(60, 0x10)); }
+		bool bIsPanicked(bool val) { mixin(MSBPC(60, 0x10)); }
+		bool bPassOnIsViralBehaviorFlag() { mixin(MGBPC(60, 0x8)); }
+		bool bPassOnIsViralBehaviorFlag(bool val) { mixin(MSBPC(60, 0x8)); }
+		bool bIsViralBehavior() { mixin(MGBPC(60, 0x4)); }
+		bool bIsViralBehavior(bool val) { mixin(MSBPC(60, 0x4)); }
+		bool bFaceActionTargetFirst() { mixin(MGBPC(60, 0x2)); }
+		bool bFaceActionTargetFirst(bool val) { mixin(MSBPC(60, 0x2)); }
+		bool bIdleBehavior() { mixin(MGBPC(60, 0x1)); }
+		bool bIdleBehavior(bool val) { mixin(MSBPC(60, 0x1)); }
 	}
 final:
 	bool AllowBehaviorAt(GameCrowdDestination Destination)

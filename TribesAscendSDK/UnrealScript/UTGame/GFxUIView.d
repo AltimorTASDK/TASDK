@@ -10,9 +10,9 @@ extern(C++) interface GFxUIView : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUIView")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxUIView")); }
 	private static __gshared GFxUIView mDefaultProperties;
-	@property final static GFxUIView DefaultProperties() { mixin(MGDPC!(GFxUIView, "GFxUIView UTGame.Default__GFxUIView")()); }
+	@property final static GFxUIView DefaultProperties() { mixin(MGDPC("GFxUIView", "GFxUIView UTGame.Default__GFxUIView")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,15 +29,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HasLinkConnection() { mixin(MGF!("mHasLinkConnection", "Function UTGame.GFxUIView.HasLinkConnection")()); }
-			ScriptFunction GetPlayerOwner() { mixin(MGF!("mGetPlayerOwner", "Function UTGame.GFxUIView.GetPlayerOwner")()); }
-			ScriptFunction GetUDKPlayerOwner() { mixin(MGF!("mGetUDKPlayerOwner", "Function UTGame.GFxUIView.GetUDKPlayerOwner")()); }
-			ScriptFunction GetPlayerName() { mixin(MGF!("mGetPlayerName", "Function UTGame.GFxUIView.GetPlayerName")()); }
-			ScriptFunction IsLoggedIn() { mixin(MGF!("mIsLoggedIn", "Function UTGame.GFxUIView.IsLoggedIn")()); }
-			ScriptFunction GetCommonOptionsURL() { mixin(MGF!("mGetCommonOptionsURL", "Function UTGame.GFxUIView.GetCommonOptionsURL")()); }
-			ScriptFunction GetPlayerIndex() { mixin(MGF!("mGetPlayerIndex", "Function UTGame.GFxUIView.GetPlayerIndex")()); }
-			ScriptFunction GetPlayerControllerId() { mixin(MGF!("mGetPlayerControllerId", "Function UTGame.GFxUIView.GetPlayerControllerId")()); }
-			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function UTGame.GFxUIView.ConsoleCommand")()); }
+			ScriptFunction HasLinkConnection() { mixin(MGF("mHasLinkConnection", "Function UTGame.GFxUIView.HasLinkConnection")); }
+			ScriptFunction GetPlayerOwner() { mixin(MGF("mGetPlayerOwner", "Function UTGame.GFxUIView.GetPlayerOwner")); }
+			ScriptFunction GetUDKPlayerOwner() { mixin(MGF("mGetUDKPlayerOwner", "Function UTGame.GFxUIView.GetUDKPlayerOwner")); }
+			ScriptFunction GetPlayerName() { mixin(MGF("mGetPlayerName", "Function UTGame.GFxUIView.GetPlayerName")); }
+			ScriptFunction IsLoggedIn() { mixin(MGF("mIsLoggedIn", "Function UTGame.GFxUIView.IsLoggedIn")); }
+			ScriptFunction GetCommonOptionsURL() { mixin(MGF("mGetCommonOptionsURL", "Function UTGame.GFxUIView.GetCommonOptionsURL")); }
+			ScriptFunction GetPlayerIndex() { mixin(MGF("mGetPlayerIndex", "Function UTGame.GFxUIView.GetPlayerIndex")); }
+			ScriptFunction GetPlayerControllerId() { mixin(MGF("mGetPlayerControllerId", "Function UTGame.GFxUIView.GetPlayerControllerId")); }
+			ScriptFunction ConsoleCommand() { mixin(MGF("mConsoleCommand", "Function UTGame.GFxUIView.ConsoleCommand")); }
 		}
 	}
 	static struct Constants
@@ -151,8 +151,8 @@ public extern(D):
 	}
 	@property final
 	{
-		bool bRequiresNetwork() { mixin(MGBPC!(120, 0x1)()); }
-		bool bRequiresNetwork(bool val) { mixin(MSBPC!(120, 0x1)()); }
+		bool bRequiresNetwork() { mixin(MGBPC(120, 0x1)); }
+		bool bRequiresNetwork(bool val) { mixin(MSBPC(120, 0x1)); }
 	}
 final:
 	static bool HasLinkConnection()

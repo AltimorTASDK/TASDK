@@ -15,9 +15,9 @@ extern(C++) interface TrDaDCapacitor : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDCapacitor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDaDCapacitor")); }
 	private static __gshared TrDaDCapacitor mDefaultProperties;
-	@property final static TrDaDCapacitor DefaultProperties() { mixin(MGDPC!(TrDaDCapacitor, "TrDaDCapacitor TribesGame.Default__TrDaDCapacitor")()); }
+	@property final static TrDaDCapacitor DefaultProperties() { mixin(MGDPC("TrDaDCapacitor", "TrDaDCapacitor TribesGame.Default__TrDaDCapacitor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,28 +30,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrDaDCapacitor.Init")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrDaDCapacitor.TakeDamage")()); }
-			ScriptFunction GetScreenName() { mixin(MGF!("mGetScreenName", "Function TribesGame.TrDaDCapacitor.GetScreenName")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrDaDCapacitor.PostRenderFor")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDaDCapacitor.GetMarker")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrDaDCapacitor.Init")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrDaDCapacitor.TakeDamage")); }
+			ScriptFunction GetScreenName() { mixin(MGF("mGetScreenName", "Function TribesGame.TrDaDCapacitor.GetScreenName")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrDaDCapacitor.PostRenderFor")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrDaDCapacitor.GetMarker")); }
 		}
 	}
 	static struct BlownUp
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDaDCapacitor.BlownUp")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDaDCapacitor.BlownUp")); }
 	}
 	@property final auto ref
 	{
-		ScriptString StringC() { mixin(MGPC!("ScriptString", 1404)()); }
-		ScriptString StringB() { mixin(MGPC!("ScriptString", 1392)()); }
-		ScriptString StringA() { mixin(MGPC!("ScriptString", 1380)()); }
+		ScriptString StringC() { mixin(MGPC("ScriptString", 1404)); }
+		ScriptString StringB() { mixin(MGPC("ScriptString", 1392)); }
+		ScriptString StringA() { mixin(MGPC("ScriptString", 1380)); }
 		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
-		int m_CapacitorIndex() { mixin(MGPC!("int", 1372)()); }
-		TrDaDCore m_Core() { mixin(MGPC!("TrDaDCore", 1368)()); }
-		float m_fShieldBarPlacementY() { mixin(MGPC!("float", 1364)()); }
-		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 1360)()); }
+		int m_CapacitorIndex() { mixin(MGPC("int", 1372)); }
+		TrDaDCore m_Core() { mixin(MGPC("TrDaDCore", 1368)); }
+		float m_fShieldBarPlacementY() { mixin(MGPC("float", 1364)); }
+		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC("MaterialInstanceConstant", 1360)); }
 	}
 final:
 	void Init(TrDaDCore Core, int Index)

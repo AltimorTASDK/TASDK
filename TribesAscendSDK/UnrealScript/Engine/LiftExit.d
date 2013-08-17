@@ -10,9 +10,9 @@ extern(C++) interface LiftExit : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LiftExit")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.LiftExit")); }
 	private static __gshared LiftExit mDefaultProperties;
-	@property final static LiftExit DefaultProperties() { mixin(MGDPC!(LiftExit, "LiftExit Engine.Default__LiftExit")()); }
+	@property final static LiftExit DefaultProperties() { mixin(MGDPC("LiftExit", "LiftExit Engine.Default__LiftExit")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanBeReachedFromLiftBy() { mixin(MGF!("mCanBeReachedFromLiftBy", "Function Engine.LiftExit.CanBeReachedFromLiftBy")()); }
-			ScriptFunction WaitForLift() { mixin(MGF!("mWaitForLift", "Function Engine.LiftExit.WaitForLift")()); }
-			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.LiftExit.SuggestMovePreparation")()); }
+			ScriptFunction CanBeReachedFromLiftBy() { mixin(MGF("mCanBeReachedFromLiftBy", "Function Engine.LiftExit.CanBeReachedFromLiftBy")); }
+			ScriptFunction WaitForLift() { mixin(MGF("mWaitForLift", "Function Engine.LiftExit.WaitForLift")); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF("mSuggestMovePreparation", "Function Engine.LiftExit.SuggestMovePreparation")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref LiftCenter MyLiftCenter() { mixin(MGPC!("LiftCenter", 692)()); }
-		bool bExitOnly() { mixin(MGBPC!(696, 0x1)()); }
-		bool bExitOnly(bool val) { mixin(MSBPC!(696, 0x1)()); }
+		@property final auto ref LiftCenter MyLiftCenter() { mixin(MGPC("LiftCenter", 692)); }
+		bool bExitOnly() { mixin(MGBPC(696, 0x1)); }
+		bool bExitOnly(bool val) { mixin(MSBPC(696, 0x1)); }
 	}
 final:
 	bool CanBeReachedFromLiftBy(Pawn Other)

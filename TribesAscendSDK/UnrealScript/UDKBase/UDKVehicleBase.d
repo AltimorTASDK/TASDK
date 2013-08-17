@@ -11,9 +11,9 @@ extern(C++) interface UDKVehicleBase : SVehicle
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKVehicleBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKVehicleBase")); }
 	private static __gshared UDKVehicleBase mDefaultProperties;
-	@property final static UDKVehicleBase DefaultProperties() { mixin(MGDPC!(UDKVehicleBase, "UDKVehicleBase UDKBase.Default__UDKVehicleBase")()); }
+	@property final static UDKVehicleBase DefaultProperties() { mixin(MGDPC("UDKVehicleBase", "UDKVehicleBase UDKBase.Default__UDKVehicleBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,30 +39,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HoldGameObject() { mixin(MGF!("mHoldGameObject", "Function UDKBase.UDKVehicleBase.HoldGameObject")()); }
-			ScriptFunction SwitchWeapon() { mixin(MGF!("mSwitchWeapon", "Function UDKBase.UDKVehicleBase.SwitchWeapon")()); }
-			ScriptFunction AdjacentSeat() { mixin(MGF!("mAdjacentSeat", "Function UDKBase.UDKVehicleBase.AdjacentSeat")()); }
-			ScriptFunction ServerAdjacentSeat() { mixin(MGF!("mServerAdjacentSeat", "Function UDKBase.UDKVehicleBase.ServerAdjacentSeat")()); }
-			ScriptFunction ServerChangeSeat() { mixin(MGF!("mServerChangeSeat", "Function UDKBase.UDKVehicleBase.ServerChangeSeat")()); }
-			ScriptFunction GetDamageScaling() { mixin(MGF!("mGetDamageScaling", "Function UDKBase.UDKVehicleBase.GetDamageScaling")()); }
-			ScriptFunction NeedToTurn() { mixin(MGF!("mNeedToTurn", "Function UDKBase.UDKVehicleBase.NeedToTurn")()); }
-			ScriptFunction DrivingStatusChanged() { mixin(MGF!("mDrivingStatusChanged", "Function UDKBase.UDKVehicleBase.DrivingStatusChanged")()); }
-			ScriptFunction DriverEnter() { mixin(MGF!("mDriverEnter", "Function UDKBase.UDKVehicleBase.DriverEnter")()); }
-			ScriptFunction ApplyWeaponEffects() { mixin(MGF!("mApplyWeaponEffects", "Function UDKBase.UDKVehicleBase.ApplyWeaponEffects")()); }
-			ScriptFunction GetVehicleDrivingStatName() { mixin(MGF!("mGetVehicleDrivingStatName", "Function UDKBase.UDKVehicleBase.GetVehicleDrivingStatName")()); }
-			ScriptFunction EjectDriver() { mixin(MGF!("mEjectDriver", "Function UDKBase.UDKVehicleBase.EjectDriver")()); }
-			ScriptFunction DetachDriver() { mixin(MGF!("mDetachDriver", "Function UDKBase.UDKVehicleBase.DetachDriver")()); }
-			ScriptFunction ChooseFireMode() { mixin(MGF!("mChooseFireMode", "Function UDKBase.UDKVehicleBase.ChooseFireMode")()); }
-			ScriptFunction BotFire() { mixin(MGF!("mBotFire", "Function UDKBase.UDKVehicleBase.BotFire")()); }
-			ScriptFunction StopFiringWeapon() { mixin(MGF!("mStopFiringWeapon", "Function UDKBase.UDKVehicleBase.StopFiringWeapon")()); }
-			ScriptFunction DriverLeft() { mixin(MGF!("mDriverLeft", "Function UDKBase.UDKVehicleBase.DriverLeft")()); }
-			ScriptFunction HandleDeadVehicleDriver() { mixin(MGF!("mHandleDeadVehicleDriver", "Function UDKBase.UDKVehicleBase.HandleDeadVehicleDriver")()); }
+			ScriptFunction HoldGameObject() { mixin(MGF("mHoldGameObject", "Function UDKBase.UDKVehicleBase.HoldGameObject")); }
+			ScriptFunction SwitchWeapon() { mixin(MGF("mSwitchWeapon", "Function UDKBase.UDKVehicleBase.SwitchWeapon")); }
+			ScriptFunction AdjacentSeat() { mixin(MGF("mAdjacentSeat", "Function UDKBase.UDKVehicleBase.AdjacentSeat")); }
+			ScriptFunction ServerAdjacentSeat() { mixin(MGF("mServerAdjacentSeat", "Function UDKBase.UDKVehicleBase.ServerAdjacentSeat")); }
+			ScriptFunction ServerChangeSeat() { mixin(MGF("mServerChangeSeat", "Function UDKBase.UDKVehicleBase.ServerChangeSeat")); }
+			ScriptFunction GetDamageScaling() { mixin(MGF("mGetDamageScaling", "Function UDKBase.UDKVehicleBase.GetDamageScaling")); }
+			ScriptFunction NeedToTurn() { mixin(MGF("mNeedToTurn", "Function UDKBase.UDKVehicleBase.NeedToTurn")); }
+			ScriptFunction DrivingStatusChanged() { mixin(MGF("mDrivingStatusChanged", "Function UDKBase.UDKVehicleBase.DrivingStatusChanged")); }
+			ScriptFunction DriverEnter() { mixin(MGF("mDriverEnter", "Function UDKBase.UDKVehicleBase.DriverEnter")); }
+			ScriptFunction ApplyWeaponEffects() { mixin(MGF("mApplyWeaponEffects", "Function UDKBase.UDKVehicleBase.ApplyWeaponEffects")); }
+			ScriptFunction GetVehicleDrivingStatName() { mixin(MGF("mGetVehicleDrivingStatName", "Function UDKBase.UDKVehicleBase.GetVehicleDrivingStatName")); }
+			ScriptFunction EjectDriver() { mixin(MGF("mEjectDriver", "Function UDKBase.UDKVehicleBase.EjectDriver")); }
+			ScriptFunction DetachDriver() { mixin(MGF("mDetachDriver", "Function UDKBase.UDKVehicleBase.DetachDriver")); }
+			ScriptFunction ChooseFireMode() { mixin(MGF("mChooseFireMode", "Function UDKBase.UDKVehicleBase.ChooseFireMode")); }
+			ScriptFunction BotFire() { mixin(MGF("mBotFire", "Function UDKBase.UDKVehicleBase.BotFire")); }
+			ScriptFunction StopFiringWeapon() { mixin(MGF("mStopFiringWeapon", "Function UDKBase.UDKVehicleBase.StopFiringWeapon")); }
+			ScriptFunction DriverLeft() { mixin(MGF("mDriverLeft", "Function UDKBase.UDKVehicleBase.DriverLeft")); }
+			ScriptFunction HandleDeadVehicleDriver() { mixin(MGF("mHandleDeadVehicleDriver", "Function UDKBase.UDKVehicleBase.HandleDeadVehicleDriver")); }
 		}
 	}
 	@property final
 	{
-		bool bShouldEject() { mixin(MGBPC!(1544, 0x1)()); }
-		bool bShouldEject(bool val) { mixin(MSBPC!(1544, 0x1)()); }
+		bool bShouldEject() { mixin(MGBPC(1544, 0x1)); }
+		bool bShouldEject(bool val) { mixin(MSBPC(1544, 0x1)); }
 	}
 final:
 	void HoldGameObject(UDKCarriedObject GameObj)

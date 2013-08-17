@@ -9,9 +9,9 @@ extern(C++) interface OnlineStatsWrite : OnlineStats
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineStatsWrite")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineStatsWrite")); }
 	private static __gshared OnlineStatsWrite mDefaultProperties;
-	@property final static OnlineStatsWrite DefaultProperties() { mixin(MGDPC!(OnlineStatsWrite, "OnlineStatsWrite Engine.Default__OnlineStatsWrite")()); }
+	@property final static OnlineStatsWrite DefaultProperties() { mixin(MGDPC("OnlineStatsWrite", "OnlineStatsWrite Engine.Default__OnlineStatsWrite")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,25 +28,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnStatsWriteComplete() { mixin(MGF!("mOnStatsWriteComplete", "Function Engine.OnlineStatsWrite.OnStatsWriteComplete")()); }
-			ScriptFunction GetStatId() { mixin(MGF!("mGetStatId", "Function Engine.OnlineStatsWrite.GetStatId")()); }
-			ScriptFunction GetStatName() { mixin(MGF!("mGetStatName", "Function Engine.OnlineStatsWrite.GetStatName")()); }
-			ScriptFunction SetFloatStat() { mixin(MGF!("mSetFloatStat", "Function Engine.OnlineStatsWrite.SetFloatStat")()); }
-			ScriptFunction SetIntStat() { mixin(MGF!("mSetIntStat", "Function Engine.OnlineStatsWrite.SetIntStat")()); }
-			ScriptFunction IncrementFloatStat() { mixin(MGF!("mIncrementFloatStat", "Function Engine.OnlineStatsWrite.IncrementFloatStat")()); }
-			ScriptFunction IncrementIntStat() { mixin(MGF!("mIncrementIntStat", "Function Engine.OnlineStatsWrite.IncrementIntStat")()); }
-			ScriptFunction DecrementFloatStat() { mixin(MGF!("mDecrementFloatStat", "Function Engine.OnlineStatsWrite.DecrementFloatStat")()); }
-			ScriptFunction DecrementIntStat() { mixin(MGF!("mDecrementIntStat", "Function Engine.OnlineStatsWrite.DecrementIntStat")()); }
+			ScriptFunction OnStatsWriteComplete() { mixin(MGF("mOnStatsWriteComplete", "Function Engine.OnlineStatsWrite.OnStatsWriteComplete")); }
+			ScriptFunction GetStatId() { mixin(MGF("mGetStatId", "Function Engine.OnlineStatsWrite.GetStatId")); }
+			ScriptFunction GetStatName() { mixin(MGF("mGetStatName", "Function Engine.OnlineStatsWrite.GetStatName")); }
+			ScriptFunction SetFloatStat() { mixin(MGF("mSetFloatStat", "Function Engine.OnlineStatsWrite.SetFloatStat")); }
+			ScriptFunction SetIntStat() { mixin(MGF("mSetIntStat", "Function Engine.OnlineStatsWrite.SetIntStat")); }
+			ScriptFunction IncrementFloatStat() { mixin(MGF("mIncrementFloatStat", "Function Engine.OnlineStatsWrite.IncrementFloatStat")); }
+			ScriptFunction IncrementIntStat() { mixin(MGF("mIncrementIntStat", "Function Engine.OnlineStatsWrite.IncrementIntStat")); }
+			ScriptFunction DecrementFloatStat() { mixin(MGF("mDecrementFloatStat", "Function Engine.OnlineStatsWrite.DecrementFloatStat")); }
+			ScriptFunction DecrementIntStat() { mixin(MGF("mDecrementIntStat", "Function Engine.OnlineStatsWrite.DecrementIntStat")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Settings.StringIdToStringMapping) StatMappings() { mixin(MGPC!("ScriptArray!(Settings.StringIdToStringMapping)", 72)()); }
-		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!("ScriptArray!(Settings.SettingsProperty)", 84)()); }
-		ScriptArray!(int) ViewIds() { mixin(MGPC!("ScriptArray!(int)", 96)()); }
-		ScriptArray!(int) ArbitratedViewIds() { mixin(MGPC!("ScriptArray!(int)", 108)()); }
+		ScriptArray!(Settings.StringIdToStringMapping) StatMappings() { mixin(MGPC("ScriptArray!(Settings.StringIdToStringMapping)", 72)); }
+		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC("ScriptArray!(Settings.SettingsProperty)", 84)); }
+		ScriptArray!(int) ViewIds() { mixin(MGPC("ScriptArray!(int)", 96)); }
+		ScriptArray!(int) ArbitratedViewIds() { mixin(MGPC("ScriptArray!(int)", 108)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnStatsWriteComplete__Delegate'!
-		int RatingId() { mixin(MGPC!("int", 120)()); }
+		int RatingId() { mixin(MGPC("int", 120)); }
 	}
 final:
 	void OnStatsWriteComplete()

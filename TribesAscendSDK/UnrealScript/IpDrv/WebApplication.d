@@ -12,9 +12,9 @@ extern(C++) interface WebApplication : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.WebApplication")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.WebApplication")); }
 	private static __gshared WebApplication mDefaultProperties;
-	@property final static WebApplication DefaultProperties() { mixin(MGDPC!(WebApplication, "WebApplication IpDrv.Default__WebApplication")()); }
+	@property final static WebApplication DefaultProperties() { mixin(MGDPC("WebApplication", "WebApplication IpDrv.Default__WebApplication")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,17 +28,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function IpDrv.WebApplication.Init")()); }
-			ScriptFunction Cleanup() { mixin(MGF!("mCleanup", "Function IpDrv.WebApplication.Cleanup")()); }
-			ScriptFunction CleanupApp() { mixin(MGF!("mCleanupApp", "Function IpDrv.WebApplication.CleanupApp")()); }
-			ScriptFunction PreQuery() { mixin(MGF!("mPreQuery", "Function IpDrv.WebApplication.PreQuery")()); }
-			ScriptFunction Query() { mixin(MGF!("mQuery", "Function IpDrv.WebApplication.Query")()); }
-			ScriptFunction PostQuery() { mixin(MGF!("mPostQuery", "Function IpDrv.WebApplication.PostQuery")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function IpDrv.WebApplication.Init")); }
+			ScriptFunction Cleanup() { mixin(MGF("mCleanup", "Function IpDrv.WebApplication.Cleanup")); }
+			ScriptFunction CleanupApp() { mixin(MGF("mCleanupApp", "Function IpDrv.WebApplication.CleanupApp")); }
+			ScriptFunction PreQuery() { mixin(MGF("mPreQuery", "Function IpDrv.WebApplication.PreQuery")); }
+			ScriptFunction Query() { mixin(MGF("mQuery", "Function IpDrv.WebApplication.Query")); }
+			ScriptFunction PostQuery() { mixin(MGF("mPostQuery", "Function IpDrv.WebApplication.PostQuery")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString Path() { mixin(MGPC!("ScriptString", 68)()); }
+		ScriptString Path() { mixin(MGPC("ScriptString", 68)); }
 		// WARNING: Property 'WebServer' has the same name as a defined type!
 		// WARNING: Property 'WorldInfo' has the same name as a defined type!
 	}

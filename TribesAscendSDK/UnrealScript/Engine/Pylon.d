@@ -13,9 +13,9 @@ extern(C++) interface Pylon : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Pylon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Pylon")); }
 	private static __gshared Pylon mDefaultProperties;
-	@property final static Pylon DefaultProperties() { mixin(MGDPC!(Pylon, "Pylon Engine.Default__Pylon")()); }
+	@property final static Pylon DefaultProperties() { mixin(MGDPC("Pylon", "Pylon Engine.Default__Pylon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,12 +29,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPylonStatusChange() { mixin(MGF!("mOnPylonStatusChange", "Function Engine.Pylon.OnPylonStatusChange")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Pylon.PostBeginPlay")()); }
-			ScriptFunction SetEnabled() { mixin(MGF!("mSetEnabled", "Function Engine.Pylon.SetEnabled")()); }
-			ScriptFunction IsEnabled() { mixin(MGF!("mIsEnabled", "Function Engine.Pylon.IsEnabled")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.Pylon.OnToggle")()); }
-			ScriptFunction CanReachPylon() { mixin(MGF!("mCanReachPylon", "Function Engine.Pylon.CanReachPylon")()); }
+			ScriptFunction OnPylonStatusChange() { mixin(MGF("mOnPylonStatusChange", "Function Engine.Pylon.OnPylonStatusChange")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Pylon.PostBeginPlay")); }
+			ScriptFunction SetEnabled() { mixin(MGF("mSetEnabled", "Function Engine.Pylon.SetEnabled")); }
+			ScriptFunction IsEnabled() { mixin(MGF("mIsEnabled", "Function Engine.Pylon.IsEnabled")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.Pylon.OnToggle")); }
+			ScriptFunction CanReachPylon() { mixin(MGF("mCanReachPylon", "Function Engine.Pylon.CanReachPylon")); }
 		}
 	}
 	enum ENavMeshEdgeType : ubyte
@@ -54,61 +54,61 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Pylon.PolyReference")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Pylon.PolyReference")); }
 		@property final auto ref
 		{
-			int PolyId() { mixin(MGPS!("int", 20)()); }
-			Actor.ActorReference OwningPylon() { mixin(MGPS!("Actor.ActorReference", 0)()); }
+			int PolyId() { mixin(MGPS("int", 20)); }
+			Actor.ActorReference OwningPylon() { mixin(MGPS("Actor.ActorReference", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Vector) NextPassSeedList() { mixin(MGPC!("ScriptArray!(Vector)", 716)()); }
-			ScriptArray!(Volume) ExpansionVolumes() { mixin(MGPC!("ScriptArray!(Volume)", 744)()); }
-			ScriptArray!(Pylon) ImposterPylons() { mixin(MGPC!("ScriptArray!(Pylon)", 792)()); }
-			ScriptArray!(Actor) OnBuild_DisableCollisionForThese() { mixin(MGPC!("ScriptArray!(Actor)", 804)()); }
-			ScriptArray!(Actor) OnBuild_EnableCollisionForThese() { mixin(MGPC!("ScriptArray!(Actor)", 816)()); }
-			int DebugEdgeCount() { mixin(MGPC!("int", 828)()); }
+			ScriptArray!(Vector) NextPassSeedList() { mixin(MGPC("ScriptArray!(Vector)", 716)); }
+			ScriptArray!(Volume) ExpansionVolumes() { mixin(MGPC("ScriptArray!(Volume)", 744)); }
+			ScriptArray!(Pylon) ImposterPylons() { mixin(MGPC("ScriptArray!(Pylon)", 792)); }
+			ScriptArray!(Actor) OnBuild_DisableCollisionForThese() { mixin(MGPC("ScriptArray!(Actor)", 804)); }
+			ScriptArray!(Actor) OnBuild_EnableCollisionForThese() { mixin(MGPC("ScriptArray!(Actor)", 816)); }
+			int DebugEdgeCount() { mixin(MGPC("int", 828)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BrokenSprite'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderingComp'!
-			Vector ExpansionSphereCenter() { mixin(MGPC!("Vector", 772)()); }
+			Vector ExpansionSphereCenter() { mixin(MGPC("Vector", 772)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PylonRadiusPreview'!
-			float MaxExpansionRadius() { mixin(MGPC!("float", 760)()); }
-			float ExpansionRadius() { mixin(MGPC!("float", 756)()); }
-			Pylon NextPylon() { mixin(MGPC!("Pylon", 740)()); }
-			UObject.Pointer OctreeIWasAddedTo() { mixin(MGPC!("UObject.Pointer", 736)()); }
-			UObject.OctreeElementId OctreeId() { mixin(MGPC!("UObject.OctreeElementId", 728)()); }
-			UObject.Pointer PathObjectsThatAffectThisPylon() { mixin(MGPC!("UObject.Pointer", 712)()); }
-			UObject.Pointer WorkingSetPtr() { mixin(MGPC!("UObject.Pointer", 708)()); }
-			UObject.Pointer DynamicObstacleMesh() { mixin(MGPC!("UObject.Pointer", 704)()); }
-			UObject.Pointer ObstacleMesh() { mixin(MGPC!("UObject.Pointer", 700)()); }
-			UObject.Pointer NavMeshPtr() { mixin(MGPC!("UObject.Pointer", 696)()); }
-			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!("UObject.Pointer", 692)()); }
+			float MaxExpansionRadius() { mixin(MGPC("float", 760)); }
+			float ExpansionRadius() { mixin(MGPC("float", 756)); }
+			Pylon NextPylon() { mixin(MGPC("Pylon", 740)); }
+			UObject.Pointer OctreeIWasAddedTo() { mixin(MGPC("UObject.Pointer", 736)); }
+			UObject.OctreeElementId OctreeId() { mixin(MGPC("UObject.OctreeElementId", 728)); }
+			UObject.Pointer PathObjectsThatAffectThisPylon() { mixin(MGPC("UObject.Pointer", 712)); }
+			UObject.Pointer WorkingSetPtr() { mixin(MGPC("UObject.Pointer", 708)); }
+			UObject.Pointer DynamicObstacleMesh() { mixin(MGPC("UObject.Pointer", 704)); }
+			UObject.Pointer ObstacleMesh() { mixin(MGPC("UObject.Pointer", 700)); }
+			UObject.Pointer NavMeshPtr() { mixin(MGPC("UObject.Pointer", 696)); }
+			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("UObject.Pointer", 692)); }
 		}
-		bool bForceObstacleMeshCollision() { mixin(MGBPC!(768, 0x400)()); }
-		bool bForceObstacleMeshCollision(bool val) { mixin(MSBPC!(768, 0x400)()); }
-		bool bDisabled() { mixin(MGBPC!(768, 0x200)()); }
-		bool bDisabled(bool val) { mixin(MSBPC!(768, 0x200)()); }
-		bool bBuildThisPylon() { mixin(MGBPC!(768, 0x100)()); }
-		bool bBuildThisPylon(bool val) { mixin(MSBPC!(768, 0x100)()); }
-		bool bDrawObstacleSurface() { mixin(MGBPC!(768, 0x80)()); }
-		bool bDrawObstacleSurface(bool val) { mixin(MSBPC!(768, 0x80)()); }
-		bool bDrawWalkableSurface() { mixin(MGBPC!(768, 0x40)()); }
-		bool bDrawWalkableSurface(bool val) { mixin(MSBPC!(768, 0x40)()); }
-		bool bRenderInShowPaths() { mixin(MGBPC!(768, 0x20)()); }
-		bool bRenderInShowPaths(bool val) { mixin(MSBPC!(768, 0x20)()); }
-		bool bDrawPolyBounds() { mixin(MGBPC!(768, 0x10)()); }
-		bool bDrawPolyBounds(bool val) { mixin(MSBPC!(768, 0x10)()); }
-		bool bDrawEdgePolys() { mixin(MGBPC!(768, 0x8)()); }
-		bool bDrawEdgePolys(bool val) { mixin(MSBPC!(768, 0x8)()); }
-		bool bNeedsCostCheck() { mixin(MGBPC!(768, 0x4)()); }
-		bool bNeedsCostCheck(bool val) { mixin(MSBPC!(768, 0x4)()); }
-		bool bUseExpansionSphereOverride() { mixin(MGBPC!(768, 0x2)()); }
-		bool bUseExpansionSphereOverride(bool val) { mixin(MSBPC!(768, 0x2)()); }
-		bool bImportedMesh() { mixin(MGBPC!(768, 0x1)()); }
-		bool bImportedMesh(bool val) { mixin(MSBPC!(768, 0x1)()); }
+		bool bForceObstacleMeshCollision() { mixin(MGBPC(768, 0x400)); }
+		bool bForceObstacleMeshCollision(bool val) { mixin(MSBPC(768, 0x400)); }
+		bool bDisabled() { mixin(MGBPC(768, 0x200)); }
+		bool bDisabled(bool val) { mixin(MSBPC(768, 0x200)); }
+		bool bBuildThisPylon() { mixin(MGBPC(768, 0x100)); }
+		bool bBuildThisPylon(bool val) { mixin(MSBPC(768, 0x100)); }
+		bool bDrawObstacleSurface() { mixin(MGBPC(768, 0x80)); }
+		bool bDrawObstacleSurface(bool val) { mixin(MSBPC(768, 0x80)); }
+		bool bDrawWalkableSurface() { mixin(MGBPC(768, 0x40)); }
+		bool bDrawWalkableSurface(bool val) { mixin(MSBPC(768, 0x40)); }
+		bool bRenderInShowPaths() { mixin(MGBPC(768, 0x20)); }
+		bool bRenderInShowPaths(bool val) { mixin(MSBPC(768, 0x20)); }
+		bool bDrawPolyBounds() { mixin(MGBPC(768, 0x10)); }
+		bool bDrawPolyBounds(bool val) { mixin(MSBPC(768, 0x10)); }
+		bool bDrawEdgePolys() { mixin(MGBPC(768, 0x8)); }
+		bool bDrawEdgePolys(bool val) { mixin(MSBPC(768, 0x8)); }
+		bool bNeedsCostCheck() { mixin(MGBPC(768, 0x4)); }
+		bool bNeedsCostCheck(bool val) { mixin(MSBPC(768, 0x4)); }
+		bool bUseExpansionSphereOverride() { mixin(MGBPC(768, 0x2)); }
+		bool bUseExpansionSphereOverride(bool val) { mixin(MSBPC(768, 0x2)); }
+		bool bImportedMesh() { mixin(MGBPC(768, 0x1)); }
+		bool bImportedMesh(bool val) { mixin(MSBPC(768, 0x1)); }
 	}
 final:
 	void OnPylonStatusChange()

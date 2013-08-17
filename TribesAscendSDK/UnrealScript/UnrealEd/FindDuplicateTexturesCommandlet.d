@@ -8,7 +8,7 @@ extern(C++) interface FindDuplicateTexturesCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.FindDuplicateTexturesCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.FindDuplicateTexturesCommandlet")); }
 	private static __gshared FindDuplicateTexturesCommandlet mDefaultProperties;
-	@property final static FindDuplicateTexturesCommandlet DefaultProperties() { mixin(MGDPC!(FindDuplicateTexturesCommandlet, "FindDuplicateTexturesCommandlet UnrealEd.Default__FindDuplicateTexturesCommandlet")()); }
+	@property final static FindDuplicateTexturesCommandlet DefaultProperties() { mixin(MGDPC("FindDuplicateTexturesCommandlet", "FindDuplicateTexturesCommandlet UnrealEd.Default__FindDuplicateTexturesCommandlet")); }
 }

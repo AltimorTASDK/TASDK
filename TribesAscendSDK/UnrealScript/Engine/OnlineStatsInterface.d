@@ -11,9 +11,9 @@ extern(C++) interface OnlineStatsInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineStatsInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineStatsInterface")); }
 	private static __gshared OnlineStatsInterface mDefaultProperties;
-	@property final static OnlineStatsInterface DefaultProperties() { mixin(MGDPC!(OnlineStatsInterface, "OnlineStatsInterface Engine.Default__OnlineStatsInterface")()); }
+	@property final static OnlineStatsInterface DefaultProperties() { mixin(MGDPC("OnlineStatsInterface", "OnlineStatsInterface Engine.Default__OnlineStatsInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,27 +42,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction WriteOnlinePlayerScores() { mixin(MGF!("mWriteOnlinePlayerScores", "Function Engine.OnlineStatsInterface.WriteOnlinePlayerScores")()); }
-			ScriptFunction RegisterHostStatGuid() { mixin(MGF!("mRegisterHostStatGuid", "Function Engine.OnlineStatsInterface.RegisterHostStatGuid")()); }
-			ScriptFunction GetClientStatGuid() { mixin(MGF!("mGetClientStatGuid", "Function Engine.OnlineStatsInterface.GetClientStatGuid")()); }
-			ScriptFunction RegisterStatGuid() { mixin(MGF!("mRegisterStatGuid", "Function Engine.OnlineStatsInterface.RegisterStatGuid")()); }
-			ScriptFunction GetHostStatGuid() { mixin(MGF!("mGetHostStatGuid", "Function Engine.OnlineStatsInterface.GetHostStatGuid")()); }
-			ScriptFunction ReadOnlineStats() { mixin(MGF!("mReadOnlineStats", "Function Engine.OnlineStatsInterface.ReadOnlineStats")()); }
-			ScriptFunction ReadOnlineStatsForFriends() { mixin(MGF!("mReadOnlineStatsForFriends", "Function Engine.OnlineStatsInterface.ReadOnlineStatsForFriends")()); }
-			ScriptFunction ReadOnlineStatsByRank() { mixin(MGF!("mReadOnlineStatsByRank", "Function Engine.OnlineStatsInterface.ReadOnlineStatsByRank")()); }
-			ScriptFunction ReadOnlineStatsByRankAroundPlayer() { mixin(MGF!("mReadOnlineStatsByRankAroundPlayer", "Function Engine.OnlineStatsInterface.ReadOnlineStatsByRankAroundPlayer")()); }
-			ScriptFunction OnReadOnlineStatsComplete() { mixin(MGF!("mOnReadOnlineStatsComplete", "Function Engine.OnlineStatsInterface.OnReadOnlineStatsComplete")()); }
-			ScriptFunction OnRegisterHostStatGuidComplete() { mixin(MGF!("mOnRegisterHostStatGuidComplete", "Function Engine.OnlineStatsInterface.OnRegisterHostStatGuidComplete")()); }
-			ScriptFunction OnFlushOnlineStatsComplete() { mixin(MGF!("mOnFlushOnlineStatsComplete", "Function Engine.OnlineStatsInterface.OnFlushOnlineStatsComplete")()); }
-			ScriptFunction AddReadOnlineStatsCompleteDelegate() { mixin(MGF!("mAddReadOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.AddReadOnlineStatsCompleteDelegate")()); }
-			ScriptFunction ClearReadOnlineStatsCompleteDelegate() { mixin(MGF!("mClearReadOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.ClearReadOnlineStatsCompleteDelegate")()); }
-			ScriptFunction FreeStats() { mixin(MGF!("mFreeStats", "Function Engine.OnlineStatsInterface.FreeStats")()); }
-			ScriptFunction WriteOnlineStats() { mixin(MGF!("mWriteOnlineStats", "Function Engine.OnlineStatsInterface.WriteOnlineStats")()); }
-			ScriptFunction FlushOnlineStats() { mixin(MGF!("mFlushOnlineStats", "Function Engine.OnlineStatsInterface.FlushOnlineStats")()); }
-			ScriptFunction AddFlushOnlineStatsCompleteDelegate() { mixin(MGF!("mAddFlushOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.AddFlushOnlineStatsCompleteDelegate")()); }
-			ScriptFunction ClearFlushOnlineStatsCompleteDelegate() { mixin(MGF!("mClearFlushOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.ClearFlushOnlineStatsCompleteDelegate")()); }
-			ScriptFunction AddRegisterHostStatGuidCompleteDelegate() { mixin(MGF!("mAddRegisterHostStatGuidCompleteDelegate", "Function Engine.OnlineStatsInterface.AddRegisterHostStatGuidCompleteDelegate")()); }
-			ScriptFunction ClearRegisterHostStatGuidCompleteDelegateDelegate() { mixin(MGF!("mClearRegisterHostStatGuidCompleteDelegateDelegate", "Function Engine.OnlineStatsInterface.ClearRegisterHostStatGuidCompleteDelegateDelegate")()); }
+			ScriptFunction WriteOnlinePlayerScores() { mixin(MGF("mWriteOnlinePlayerScores", "Function Engine.OnlineStatsInterface.WriteOnlinePlayerScores")); }
+			ScriptFunction RegisterHostStatGuid() { mixin(MGF("mRegisterHostStatGuid", "Function Engine.OnlineStatsInterface.RegisterHostStatGuid")); }
+			ScriptFunction GetClientStatGuid() { mixin(MGF("mGetClientStatGuid", "Function Engine.OnlineStatsInterface.GetClientStatGuid")); }
+			ScriptFunction RegisterStatGuid() { mixin(MGF("mRegisterStatGuid", "Function Engine.OnlineStatsInterface.RegisterStatGuid")); }
+			ScriptFunction GetHostStatGuid() { mixin(MGF("mGetHostStatGuid", "Function Engine.OnlineStatsInterface.GetHostStatGuid")); }
+			ScriptFunction ReadOnlineStats() { mixin(MGF("mReadOnlineStats", "Function Engine.OnlineStatsInterface.ReadOnlineStats")); }
+			ScriptFunction ReadOnlineStatsForFriends() { mixin(MGF("mReadOnlineStatsForFriends", "Function Engine.OnlineStatsInterface.ReadOnlineStatsForFriends")); }
+			ScriptFunction ReadOnlineStatsByRank() { mixin(MGF("mReadOnlineStatsByRank", "Function Engine.OnlineStatsInterface.ReadOnlineStatsByRank")); }
+			ScriptFunction ReadOnlineStatsByRankAroundPlayer() { mixin(MGF("mReadOnlineStatsByRankAroundPlayer", "Function Engine.OnlineStatsInterface.ReadOnlineStatsByRankAroundPlayer")); }
+			ScriptFunction OnReadOnlineStatsComplete() { mixin(MGF("mOnReadOnlineStatsComplete", "Function Engine.OnlineStatsInterface.OnReadOnlineStatsComplete")); }
+			ScriptFunction OnRegisterHostStatGuidComplete() { mixin(MGF("mOnRegisterHostStatGuidComplete", "Function Engine.OnlineStatsInterface.OnRegisterHostStatGuidComplete")); }
+			ScriptFunction OnFlushOnlineStatsComplete() { mixin(MGF("mOnFlushOnlineStatsComplete", "Function Engine.OnlineStatsInterface.OnFlushOnlineStatsComplete")); }
+			ScriptFunction AddReadOnlineStatsCompleteDelegate() { mixin(MGF("mAddReadOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.AddReadOnlineStatsCompleteDelegate")); }
+			ScriptFunction ClearReadOnlineStatsCompleteDelegate() { mixin(MGF("mClearReadOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.ClearReadOnlineStatsCompleteDelegate")); }
+			ScriptFunction FreeStats() { mixin(MGF("mFreeStats", "Function Engine.OnlineStatsInterface.FreeStats")); }
+			ScriptFunction WriteOnlineStats() { mixin(MGF("mWriteOnlineStats", "Function Engine.OnlineStatsInterface.WriteOnlineStats")); }
+			ScriptFunction FlushOnlineStats() { mixin(MGF("mFlushOnlineStats", "Function Engine.OnlineStatsInterface.FlushOnlineStats")); }
+			ScriptFunction AddFlushOnlineStatsCompleteDelegate() { mixin(MGF("mAddFlushOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.AddFlushOnlineStatsCompleteDelegate")); }
+			ScriptFunction ClearFlushOnlineStatsCompleteDelegate() { mixin(MGF("mClearFlushOnlineStatsCompleteDelegate", "Function Engine.OnlineStatsInterface.ClearFlushOnlineStatsCompleteDelegate")); }
+			ScriptFunction AddRegisterHostStatGuidCompleteDelegate() { mixin(MGF("mAddRegisterHostStatGuidCompleteDelegate", "Function Engine.OnlineStatsInterface.AddRegisterHostStatGuidCompleteDelegate")); }
+			ScriptFunction ClearRegisterHostStatGuidCompleteDelegateDelegate() { mixin(MGF("mClearRegisterHostStatGuidCompleteDelegateDelegate", "Function Engine.OnlineStatsInterface.ClearRegisterHostStatGuidCompleteDelegateDelegate")); }
 		}
 	}
 	@property final auto ref

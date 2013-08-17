@@ -10,22 +10,22 @@ extern(C++) interface TrDeployableMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployableMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployableMessage")); }
 	private static __gshared TrDeployableMessage mDefaultProperties;
-	@property final static TrDeployableMessage DefaultProperties() { mixin(MGDPC!(TrDeployableMessage, "TrDeployableMessage TribesGame.Default__TrDeployableMessage")()); }
+	@property final static TrDeployableMessage DefaultProperties() { mixin(MGDPC("TrDeployableMessage", "TrDeployableMessage TribesGame.Default__TrDeployableMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrDeployableMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrDeployableMessage.GetString")); }
 	}
 	@property final auto ref
 	{
-		ScriptString DeployableAmmoDepleted() { mixin(MGPC!("ScriptString", 160)()); }
-		ScriptString DeployableAmmoRemaining() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString DeployableHologramInvalidDeploySpot() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString DeployableHologramOnlyOutside() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString DeployableHologramTooCloseToAnotherDeployable() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString DeployableHologramTooCloseToEnemyBase() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString DeployableAmmoDepleted() { mixin(MGPC("ScriptString", 160)); }
+		ScriptString DeployableAmmoRemaining() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString DeployableHologramInvalidDeploySpot() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString DeployableHologramOnlyOutside() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString DeployableHologramTooCloseToAnotherDeployable() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString DeployableHologramTooCloseToEnemyBase() { mixin(MGPC("ScriptString", 100)); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

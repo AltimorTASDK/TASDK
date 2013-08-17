@@ -9,9 +9,9 @@ extern(C++) interface TrProj_StickyGrenade : TrProj_Grenade
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_StickyGrenade")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_StickyGrenade")); }
 	private static __gshared TrProj_StickyGrenade mDefaultProperties;
-	@property final static TrProj_StickyGrenade DefaultProperties() { mixin(MGDPC!(TrProj_StickyGrenade, "TrProj_StickyGrenade TribesGame.Default__TrProj_StickyGrenade")()); }
+	@property final static TrProj_StickyGrenade DefaultProperties() { mixin(MGDPC("TrProj_StickyGrenade", "TrProj_StickyGrenade TribesGame.Default__TrProj_StickyGrenade")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_StickyGrenade.PostBeginPlay")()); }
-			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_StickyGrenade.HitWall")()); }
-			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_StickyGrenade.ProcessTouch")()); }
-			ScriptFunction StickToTarget() { mixin(MGF!("mStickToTarget", "Function TribesGame.TrProj_StickyGrenade.StickToTarget")()); }
-			ScriptFunction OnBaseChanged() { mixin(MGF!("mOnBaseChanged", "Function TribesGame.TrProj_StickyGrenade.OnBaseChanged")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrProj_StickyGrenade.PostBeginPlay")); }
+			ScriptFunction HitWall() { mixin(MGF("mHitWall", "Function TribesGame.TrProj_StickyGrenade.HitWall")); }
+			ScriptFunction ProcessTouch() { mixin(MGF("mProcessTouch", "Function TribesGame.TrProj_StickyGrenade.ProcessTouch")); }
+			ScriptFunction StickToTarget() { mixin(MGF("mStickToTarget", "Function TribesGame.TrProj_StickyGrenade.StickToTarget")); }
+			ScriptFunction OnBaseChanged() { mixin(MGF("mOnBaseChanged", "Function TribesGame.TrProj_StickyGrenade.OnBaseChanged")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref Actor m_OldBase() { mixin(MGPC!("Actor", 888)()); }
-		bool m_bHasStuckToTarget() { mixin(MGBPC!(884, 0x1)()); }
-		bool m_bHasStuckToTarget(bool val) { mixin(MSBPC!(884, 0x1)()); }
+		@property final auto ref Actor m_OldBase() { mixin(MGPC("Actor", 888)); }
+		bool m_bHasStuckToTarget() { mixin(MGBPC(884, 0x1)); }
+		bool m_bHasStuckToTarget(bool val) { mixin(MSBPC(884, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

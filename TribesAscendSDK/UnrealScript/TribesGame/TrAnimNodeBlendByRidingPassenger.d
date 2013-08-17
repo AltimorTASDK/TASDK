@@ -10,9 +10,9 @@ extern(C++) interface TrAnimNodeBlendByRidingPassenger : TrAnimNodeBlendList
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendByRidingPassenger")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAnimNodeBlendByRidingPassenger")); }
 	private static __gshared TrAnimNodeBlendByRidingPassenger mDefaultProperties;
-	@property final static TrAnimNodeBlendByRidingPassenger DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByRidingPassenger, "TrAnimNodeBlendByRidingPassenger TribesGame.Default__TrAnimNodeBlendByRidingPassenger")()); }
+	@property final static TrAnimNodeBlendByRidingPassenger DefaultProperties() { mixin(MGDPC("TrAnimNodeBlendByRidingPassenger", "TrAnimNodeBlendByRidingPassenger TribesGame.Default__TrAnimNodeBlendByRidingPassenger")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayIdle() { mixin(MGF!("mPlayIdle", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayIdle")()); }
-			ScriptFunction PlayFire() { mixin(MGF!("mPlayFire", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayFire")()); }
-			ScriptFunction PlayReload() { mixin(MGF!("mPlayReload", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayReload")()); }
-			ScriptFunction PlayOffhand() { mixin(MGF!("mPlayOffhand", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayOffhand")()); }
+			ScriptFunction PlayIdle() { mixin(MGF("mPlayIdle", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayIdle")); }
+			ScriptFunction PlayFire() { mixin(MGF("mPlayFire", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayFire")); }
+			ScriptFunction PlayReload() { mixin(MGF("mPlayReload", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayReload")); }
+			ScriptFunction PlayOffhand() { mixin(MGF("mPlayOffhand", "Function TribesGame.TrAnimNodeBlendByRidingPassenger.PlayOffhand")); }
 		}
 	}
 	@property final auto ref
 	{
-		AnimNodeSequence m_FireAnimSeqNode() { mixin(MGPC!("AnimNodeSequence", 304)()); }
-		ScriptName m_nmFireAnimSeqNodeName() { mixin(MGPC!("ScriptName", 296)()); }
-		TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 292)()); }
+		AnimNodeSequence m_FireAnimSeqNode() { mixin(MGPC("AnimNodeSequence", 304)); }
+		ScriptName m_nmFireAnimSeqNodeName() { mixin(MGPC("ScriptName", 296)); }
+		TrPawn m_TrPawn() { mixin(MGPC("TrPawn", 292)); }
 	}
 final:
 	void PlayIdle()

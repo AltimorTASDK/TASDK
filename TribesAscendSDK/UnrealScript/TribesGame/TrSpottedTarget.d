@@ -13,9 +13,9 @@ extern(C++) interface TrSpottedTarget : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSpottedTarget")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSpottedTarget")); }
 	private static __gshared TrSpottedTarget mDefaultProperties;
-	@property final static TrSpottedTarget DefaultProperties() { mixin(MGDPC!(TrSpottedTarget, "TrSpottedTarget TribesGame.Default__TrSpottedTarget")()); }
+	@property final static TrSpottedTarget DefaultProperties() { mixin(MGDPC("TrSpottedTarget", "TrSpottedTarget TribesGame.Default__TrSpottedTarget")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,24 +29,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrSpottedTarget.PostBeginPlay")()); }
-			ScriptFunction SetSpottedActor() { mixin(MGF!("mSetSpottedActor", "Function TribesGame.TrSpottedTarget.SetSpottedActor")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrSpottedTarget.PostRenderFor")()); }
-			ScriptFunction ShouldRenderMarker() { mixin(MGF!("mShouldRenderMarker", "Function TribesGame.TrSpottedTarget.ShouldRenderMarker")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrSpottedTarget.GetMarker")()); }
-			ScriptFunction GetMarkerColor() { mixin(MGF!("mGetMarkerColor", "Function TribesGame.TrSpottedTarget.GetMarkerColor")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrSpottedTarget.PostBeginPlay")); }
+			ScriptFunction SetSpottedActor() { mixin(MGF("mSetSpottedActor", "Function TribesGame.TrSpottedTarget.SetSpottedActor")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrSpottedTarget.PostRenderFor")); }
+			ScriptFunction ShouldRenderMarker() { mixin(MGF("mShouldRenderMarker", "Function TribesGame.TrSpottedTarget.ShouldRenderMarker")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrSpottedTarget.GetMarker")); }
+			ScriptFunction GetMarkerColor() { mixin(MGF("mGetMarkerColor", "Function TribesGame.TrSpottedTarget.GetMarkerColor")); }
 		}
 	}
 	@property final auto ref
 	{
-		Actor m_SpottedActor() { mixin(MGPC!("Actor", 476)()); }
-		float m_fLastSpottedTimestamp() { mixin(MGPC!("float", 484)()); }
-		float m_fSpottedActorDuration() { mixin(MGPC!("float", 496)()); }
-		UObject.Vector2D m_MarkerSize() { mixin(MGPC!("UObject.Vector2D", 504)()); }
-		MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 500)()); }
-		float m_fMarkerOpacity() { mixin(MGPC!("float", 492)()); }
-		float m_fMarkerZOffset() { mixin(MGPC!("float", 488)()); }
-		ubyte m_CachedTeamIndex() { mixin(MGPC!("ubyte", 480)()); }
+		Actor m_SpottedActor() { mixin(MGPC("Actor", 476)); }
+		float m_fLastSpottedTimestamp() { mixin(MGPC("float", 484)); }
+		float m_fSpottedActorDuration() { mixin(MGPC("float", 496)); }
+		UObject.Vector2D m_MarkerSize() { mixin(MGPC("UObject.Vector2D", 504)); }
+		MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC("MaterialInstanceConstant", 500)); }
+		float m_fMarkerOpacity() { mixin(MGPC("float", 492)); }
+		float m_fMarkerZOffset() { mixin(MGPC("float", 488)); }
+		ubyte m_CachedTeamIndex() { mixin(MGPC("ubyte", 480)); }
 	}
 final:
 	void PostBeginPlay()

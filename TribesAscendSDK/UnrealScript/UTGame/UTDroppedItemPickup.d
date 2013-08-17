@@ -11,9 +11,9 @@ extern(C++) interface UTDroppedItemPickup : UTDroppedPickup
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDroppedItemPickup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDroppedItemPickup")); }
 	private static __gshared UTDroppedItemPickup mDefaultProperties;
-	@property final static UTDroppedItemPickup DefaultProperties() { mixin(MGDPC!(UTDroppedItemPickup, "UTDroppedItemPickup UTGame.Default__UTDroppedItemPickup")()); }
+	@property final static UTDroppedItemPickup DefaultProperties() { mixin(MGDPC("UTDroppedItemPickup", "UTDroppedItemPickup UTGame.Default__UTDroppedItemPickup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,18 +27,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTDroppedItemPickup.BotDesireability")()); }
-			ScriptFunction SetPickupMesh() { mixin(MGF!("mSetPickupMesh", "Function UTGame.UTDroppedItemPickup.SetPickupMesh")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTDroppedItemPickup.PostBeginPlay")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTDroppedItemPickup.Destroyed")()); }
-			ScriptFunction DroppedFrom() { mixin(MGF!("mDroppedFrom", "Function UTGame.UTDroppedItemPickup.DroppedFrom")()); }
-			ScriptFunction PickedUpBy() { mixin(MGF!("mPickedUpBy", "Function UTGame.UTDroppedItemPickup.PickedUpBy")()); }
+			ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function UTGame.UTDroppedItemPickup.BotDesireability")); }
+			ScriptFunction SetPickupMesh() { mixin(MGF("mSetPickupMesh", "Function UTGame.UTDroppedItemPickup.SetPickupMesh")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTDroppedItemPickup.PostBeginPlay")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UTGame.UTDroppedItemPickup.Destroyed")); }
+			ScriptFunction DroppedFrom() { mixin(MGF("mDroppedFrom", "Function UTGame.UTDroppedItemPickup.DroppedFrom")); }
+			ScriptFunction PickedUpBy() { mixin(MGF("mPickedUpBy", "Function UTGame.UTDroppedItemPickup.PickedUpBy")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue PickupSound() { mixin(MGPC!("SoundCue", 516)()); }
-		float MaxDesireability() { mixin(MGPC!("float", 512)()); }
+		SoundCue PickupSound() { mixin(MGPC("SoundCue", 516)); }
+		float MaxDesireability() { mixin(MGPC("float", 512)); }
 	}
 final:
 	float BotDesireability(Pawn Bot, Controller C)

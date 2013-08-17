@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_LiveStream : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_LiveStream")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_LiveStream")); }
 	private static __gshared GFxTrPage_LiveStream mDefaultProperties;
-	@property final static GFxTrPage_LiveStream DefaultProperties() { mixin(MGDPC!(GFxTrPage_LiveStream, "GFxTrPage_LiveStream TribesGame.Default__GFxTrPage_LiveStream")()); }
+	@property final static GFxTrPage_LiveStream DefaultProperties() { mixin(MGDPC("GFxTrPage_LiveStream", "GFxTrPage_LiveStream TribesGame.Default__GFxTrPage_LiveStream")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_LiveStream.Initialize")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_LiveStream.ShowModel")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_LiveStream.SpecialAction")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_LiveStream.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_LiveStream.FillOption")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_LiveStream.FillDescription")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_LiveStream.Initialize")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_LiveStream.ShowModel")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_LiveStream.SpecialAction")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_LiveStream.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_LiveStream.FillOption")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_LiveStream.FillDescription")); }
 		}
 	}
 	@property final
 	{
-		bool bValid() { mixin(MGBPC!(356, 0x1)()); }
-		bool bValid(bool val) { mixin(MSBPC!(356, 0x1)()); }
+		bool bValid() { mixin(MGBPC(356, 0x1)); }
+		bool bValid(bool val) { mixin(MSBPC(356, 0x1)); }
 	}
 final:
 	void Initialize()

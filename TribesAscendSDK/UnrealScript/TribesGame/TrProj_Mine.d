@@ -18,9 +18,9 @@ extern(C++) interface TrProj_Mine : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Mine")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_Mine")); }
 	private static __gshared TrProj_Mine mDefaultProperties;
-	@property final static TrProj_Mine DefaultProperties() { mixin(MGDPC!(TrProj_Mine, "TrProj_Mine TribesGame.Default__TrProj_Mine")()); }
+	@property final static TrProj_Mine DefaultProperties() { mixin(MGDPC("TrProj_Mine", "TrProj_Mine TribesGame.Default__TrProj_Mine")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,57 +46,57 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsAliveAndWell() { mixin(MGF!("mIsAliveAndWell", "Function TribesGame.TrProj_Mine.IsAliveAndWell")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrProj_Mine.ReplicatedEvent")()); }
-			ScriptFunction OnPRIReplicated() { mixin(MGF!("mOnPRIReplicated", "Function TribesGame.TrProj_Mine.OnPRIReplicated")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_Mine.PostBeginPlay")()); }
-			ScriptFunction ArmedTimer() { mixin(MGF!("mArmedTimer", "Function TribesGame.TrProj_Mine.ArmedTimer")()); }
-			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_Mine.HitWall")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function TribesGame.TrProj_Mine.TakeRadiusDamage")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrProj_Mine.TakeDamage")()); }
-			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_Mine.InitProjectile")()); }
-			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF!("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Mine.PawnEnteredDetonationArea")()); }
-			ScriptFunction MeetsDetonationRequirements() { mixin(MGF!("mMeetsDetonationRequirements", "Function TribesGame.TrProj_Mine.MeetsDetonationRequirements")()); }
-			ScriptFunction PawnLeftDetonationArea() { mixin(MGF!("mPawnLeftDetonationArea", "Function TribesGame.TrProj_Mine.PawnLeftDetonationArea")()); }
-			ScriptFunction NativeExplode() { mixin(MGF!("mNativeExplode", "Function TribesGame.TrProj_Mine.NativeExplode")()); }
-			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_Mine.ProcessTouch")()); }
-			ScriptFunction Bounce() { mixin(MGF!("mBounce", "Function TribesGame.TrProj_Mine.Bounce")()); }
-			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function TribesGame.TrProj_Mine.ShutDown")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrProj_Mine.GetMarker")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrProj_Mine.PostRenderFor")()); }
+			ScriptFunction IsAliveAndWell() { mixin(MGF("mIsAliveAndWell", "Function TribesGame.TrProj_Mine.IsAliveAndWell")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrProj_Mine.ReplicatedEvent")); }
+			ScriptFunction OnPRIReplicated() { mixin(MGF("mOnPRIReplicated", "Function TribesGame.TrProj_Mine.OnPRIReplicated")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrProj_Mine.PostBeginPlay")); }
+			ScriptFunction ArmedTimer() { mixin(MGF("mArmedTimer", "Function TribesGame.TrProj_Mine.ArmedTimer")); }
+			ScriptFunction HitWall() { mixin(MGF("mHitWall", "Function TribesGame.TrProj_Mine.HitWall")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function TribesGame.TrProj_Mine.TakeRadiusDamage")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrProj_Mine.TakeDamage")); }
+			ScriptFunction InitProjectile() { mixin(MGF("mInitProjectile", "Function TribesGame.TrProj_Mine.InitProjectile")); }
+			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Mine.PawnEnteredDetonationArea")); }
+			ScriptFunction MeetsDetonationRequirements() { mixin(MGF("mMeetsDetonationRequirements", "Function TribesGame.TrProj_Mine.MeetsDetonationRequirements")); }
+			ScriptFunction PawnLeftDetonationArea() { mixin(MGF("mPawnLeftDetonationArea", "Function TribesGame.TrProj_Mine.PawnLeftDetonationArea")); }
+			ScriptFunction NativeExplode() { mixin(MGF("mNativeExplode", "Function TribesGame.TrProj_Mine.NativeExplode")); }
+			ScriptFunction ProcessTouch() { mixin(MGF("mProcessTouch", "Function TribesGame.TrProj_Mine.ProcessTouch")); }
+			ScriptFunction Bounce() { mixin(MGF("mBounce", "Function TribesGame.TrProj_Mine.Bounce")); }
+			ScriptFunction ShutDown() { mixin(MGF("mShutDown", "Function TribesGame.TrProj_Mine.ShutDown")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrProj_Mine.GetMarker")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrProj_Mine.PostRenderFor")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC!("PlayerReplicationInfo", 888)()); }
-			int m_nIconStackId() { mixin(MGPC!("int", 896)()); }
-			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!("ScriptArray!(Pawn)", 840)()); }
-			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 892)()); }
-			int m_nMarkerOffset() { mixin(MGPC!("int", 884)()); }
-			float m_fShowHeaderUntil() { mixin(MGPC!("float", 880)()); }
-			float LastPostRenderTraceTime() { mixin(MGPC!("float", 876)()); }
-			ScriptString m_sScreenName() { mixin(MGPC!("ScriptString", 864)()); }
-			int m_nNumBouncesBeforeDetonateObsolete() { mixin(MGPC!("int", 860)()); }
-			int m_nNumBounces() { mixin(MGPC!("int", 856)()); }
-			float m_fMaxFloorZ() { mixin(MGPC!("float", 852)()); }
-			TrMineCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrMineCollisionProxy", 836)()); }
-			float m_fDetonationHeight() { mixin(MGPC!("float", 832)()); }
-			float m_fDetonationRadius() { mixin(MGPC!("float", 828)()); }
-			float m_fDeploySeconds() { mixin(MGPC!("float", 824)()); }
-			SoundCue WallImpactSound() { mixin(MGPC!("SoundCue", 816)()); }
+			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC("PlayerReplicationInfo", 888)); }
+			int m_nIconStackId() { mixin(MGPC("int", 896)); }
+			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC("ScriptArray!(Pawn)", 840)); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC("MaterialInstanceConstant", 892)); }
+			int m_nMarkerOffset() { mixin(MGPC("int", 884)); }
+			float m_fShowHeaderUntil() { mixin(MGPC("float", 880)); }
+			float LastPostRenderTraceTime() { mixin(MGPC("float", 876)); }
+			ScriptString m_sScreenName() { mixin(MGPC("ScriptString", 864)); }
+			int m_nNumBouncesBeforeDetonateObsolete() { mixin(MGPC("int", 860)); }
+			int m_nNumBounces() { mixin(MGPC("int", 856)); }
+			float m_fMaxFloorZ() { mixin(MGPC("float", 852)); }
+			TrMineCollisionProxy m_CollisionProxy() { mixin(MGPC("TrMineCollisionProxy", 836)); }
+			float m_fDetonationHeight() { mixin(MGPC("float", 832)); }
+			float m_fDetonationRadius() { mixin(MGPC("float", 828)); }
+			float m_fDeploySeconds() { mixin(MGPC("float", 824)); }
+			SoundCue WallImpactSound() { mixin(MGPC("SoundCue", 816)); }
 		}
-		bool m_bIsPostRendered() { mixin(MGBPC!(820, 0x10)()); }
-		bool m_bIsPostRendered(bool val) { mixin(MSBPC!(820, 0x10)()); }
-		bool bPostRenderTraceSucceeded() { mixin(MGBPC!(820, 0x8)()); }
-		bool bPostRenderTraceSucceeded(bool val) { mixin(MSBPC!(820, 0x8)()); }
-		bool m_bDrawOwnerName() { mixin(MGBPC!(820, 0x4)()); }
-		bool m_bDrawOwnerName(bool val) { mixin(MSBPC!(820, 0x4)()); }
-		bool m_bUsesDetonationProxy() { mixin(MGBPC!(820, 0x2)()); }
-		bool m_bUsesDetonationProxy(bool val) { mixin(MSBPC!(820, 0x2)()); }
-		bool m_bArmed() { mixin(MGBPC!(820, 0x1)()); }
-		bool m_bArmed(bool val) { mixin(MSBPC!(820, 0x1)()); }
+		bool m_bIsPostRendered() { mixin(MGBPC(820, 0x10)); }
+		bool m_bIsPostRendered(bool val) { mixin(MSBPC(820, 0x10)); }
+		bool bPostRenderTraceSucceeded() { mixin(MGBPC(820, 0x8)); }
+		bool bPostRenderTraceSucceeded(bool val) { mixin(MSBPC(820, 0x8)); }
+		bool m_bDrawOwnerName() { mixin(MGBPC(820, 0x4)); }
+		bool m_bDrawOwnerName(bool val) { mixin(MSBPC(820, 0x4)); }
+		bool m_bUsesDetonationProxy() { mixin(MGBPC(820, 0x2)); }
+		bool m_bUsesDetonationProxy(bool val) { mixin(MSBPC(820, 0x2)); }
+		bool m_bArmed() { mixin(MGBPC(820, 0x1)); }
+		bool m_bArmed(bool val) { mixin(MSBPC(820, 0x1)); }
 	}
 final:
 	bool IsAliveAndWell()

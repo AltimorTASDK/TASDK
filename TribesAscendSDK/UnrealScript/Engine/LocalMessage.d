@@ -11,9 +11,9 @@ extern(C++) interface LocalMessage : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LocalMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.LocalMessage")); }
 	private static __gshared LocalMessage mDefaultProperties;
-	@property final static LocalMessage DefaultProperties() { mixin(MGDPC!(LocalMessage, "LocalMessage Engine.Default__LocalMessage")()); }
+	@property final static LocalMessage DefaultProperties() { mixin(MGDPC("LocalMessage", "LocalMessage Engine.Default__LocalMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,38 +30,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetConsoleColor() { mixin(MGF!("mGetConsoleColor", "Function Engine.LocalMessage.GetConsoleColor")()); }
-			ScriptFunction PartiallyDuplicates() { mixin(MGF!("mPartiallyDuplicates", "Function Engine.LocalMessage.PartiallyDuplicates")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function Engine.LocalMessage.ClientReceive")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function Engine.LocalMessage.GetString")()); }
-			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function Engine.LocalMessage.GetColor")()); }
-			ScriptFunction GetPos() { mixin(MGF!("mGetPos", "Function Engine.LocalMessage.GetPos")()); }
-			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function Engine.LocalMessage.GetFontSize")()); }
-			ScriptFunction GetLifeTime() { mixin(MGF!("mGetLifeTime", "Function Engine.LocalMessage.GetLifeTime")()); }
-			ScriptFunction IsConsoleMessage() { mixin(MGF!("mIsConsoleMessage", "Function Engine.LocalMessage.IsConsoleMessage")()); }
+			ScriptFunction GetConsoleColor() { mixin(MGF("mGetConsoleColor", "Function Engine.LocalMessage.GetConsoleColor")); }
+			ScriptFunction PartiallyDuplicates() { mixin(MGF("mPartiallyDuplicates", "Function Engine.LocalMessage.PartiallyDuplicates")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function Engine.LocalMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function Engine.LocalMessage.GetString")); }
+			ScriptFunction GetColor() { mixin(MGF("mGetColor", "Function Engine.LocalMessage.GetColor")); }
+			ScriptFunction GetPos() { mixin(MGF("mGetPos", "Function Engine.LocalMessage.GetPos")); }
+			ScriptFunction GetFontSize() { mixin(MGF("mGetFontSize", "Function Engine.LocalMessage.GetFontSize")); }
+			ScriptFunction GetLifeTime() { mixin(MGF("mGetLifeTime", "Function Engine.LocalMessage.GetLifeTime")); }
+			ScriptFunction IsConsoleMessage() { mixin(MGF("mIsConsoleMessage", "Function Engine.LocalMessage.IsConsoleMessage")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float Lifetime() { mixin(MGPC!("float", 64)()); }
-			int FontSize() { mixin(MGPC!("int", 76)()); }
-			float PosY() { mixin(MGPC!("float", 72)()); }
-			UObject.Color DrawColor() { mixin(MGPC!("UObject.Color", 68)()); }
+			float Lifetime() { mixin(MGPC("float", 64)); }
+			int FontSize() { mixin(MGPC("int", 76)); }
+			float PosY() { mixin(MGPC("float", 72)); }
+			UObject.Color DrawColor() { mixin(MGPC("UObject.Color", 68)); }
 		}
-		bool bBeep() { mixin(MGBPC!(60, 0x10)()); }
-		bool bBeep(bool val) { mixin(MSBPC!(60, 0x10)()); }
-		bool bIsSpecial() { mixin(MGBPC!(60, 0x1)()); }
-		bool bIsSpecial(bool val) { mixin(MSBPC!(60, 0x1)()); }
-		bool bIsUnique() { mixin(MGBPC!(60, 0x2)()); }
-		bool bIsUnique(bool val) { mixin(MSBPC!(60, 0x2)()); }
-		bool bCountInstances() { mixin(MGBPC!(60, 0x20)()); }
-		bool bCountInstances(bool val) { mixin(MSBPC!(60, 0x20)()); }
-		bool bIsPartiallyUnique() { mixin(MGBPC!(60, 0x4)()); }
-		bool bIsPartiallyUnique(bool val) { mixin(MSBPC!(60, 0x4)()); }
-		bool bIsConsoleMessage() { mixin(MGBPC!(60, 0x8)()); }
-		bool bIsConsoleMessage(bool val) { mixin(MSBPC!(60, 0x8)()); }
+		bool bBeep() { mixin(MGBPC(60, 0x10)); }
+		bool bBeep(bool val) { mixin(MSBPC(60, 0x10)); }
+		bool bIsSpecial() { mixin(MGBPC(60, 0x1)); }
+		bool bIsSpecial(bool val) { mixin(MSBPC(60, 0x1)); }
+		bool bIsUnique() { mixin(MGBPC(60, 0x2)); }
+		bool bIsUnique(bool val) { mixin(MSBPC(60, 0x2)); }
+		bool bCountInstances() { mixin(MGBPC(60, 0x20)); }
+		bool bCountInstances(bool val) { mixin(MSBPC(60, 0x20)); }
+		bool bIsPartiallyUnique() { mixin(MGBPC(60, 0x4)); }
+		bool bIsPartiallyUnique(bool val) { mixin(MSBPC(60, 0x4)); }
+		bool bIsConsoleMessage() { mixin(MGBPC(60, 0x8)); }
+		bool bIsConsoleMessage(bool val) { mixin(MSBPC(60, 0x8)); }
 	}
 final:
 	static UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)

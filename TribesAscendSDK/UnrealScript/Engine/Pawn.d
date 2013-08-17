@@ -45,9 +45,9 @@ extern(C++) interface Pawn : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Pawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Pawn")); }
 	private static __gshared Pawn mDefaultProperties;
-	@property final static Pawn DefaultProperties() { mixin(MGDPC!(Pawn, "Pawn Engine.Default__Pawn")()); }
+	@property final static Pawn DefaultProperties() { mixin(MGDPC("Pawn", "Pawn Engine.Default__Pawn")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -280,231 +280,231 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsHumanControlled() { mixin(MGF!("mIsHumanControlled", "Function Engine.Pawn.IsHumanControlled")()); }
-			ScriptFunction IsLocallyControlled() { mixin(MGF!("mIsLocallyControlled", "Function Engine.Pawn.IsLocallyControlled")()); }
-			ScriptFunction PlayActorFaceFXAnim() { mixin(MGF!("mPlayActorFaceFXAnim", "Function Engine.Pawn.PlayActorFaceFXAnim")()); }
-			ScriptFunction StopFiring() { mixin(MGF!("mStopFiring", "Function Engine.Pawn.StopFiring")()); }
-			ScriptFunction GetBaseAimRotation() { mixin(MGF!("mGetBaseAimRotation", "Function Engine.Pawn.GetBaseAimRotation")()); }
-			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function Engine.Pawn.GetHumanReadableName")()); }
-			ScriptFunction Died() { mixin(MGF!("mDied", "Function Engine.Pawn.Died")()); }
-			ScriptFunction GetDefaultCameraMode() { mixin(MGF!("mGetDefaultCameraMode", "Function Engine.Pawn.GetDefaultCameraMode")()); }
-			ScriptFunction CanThrowWeapon() { mixin(MGF!("mCanThrowWeapon", "Function Engine.Pawn.CanThrowWeapon")()); }
-			ScriptFunction SetDesiredRotation() { mixin(MGF!("mSetDesiredRotation", "Function Engine.Pawn.SetDesiredRotation")()); }
-			ScriptFunction DoJump() { mixin(MGF!("mDoJump", "Function Engine.Pawn.DoJump")()); }
-			ScriptFunction SetRemoteViewPitch() { mixin(MGF!("mSetRemoteViewPitch", "Function Engine.Pawn.SetRemoteViewPitch")()); }
-			ScriptFunction CannotJumpNow() { mixin(MGF!("mCannotJumpNow", "Function Engine.Pawn.CannotJumpNow")()); }
-			ScriptFunction CheckWaterJump() { mixin(MGF!("mCheckWaterJump", "Function Engine.Pawn.CheckWaterJump")()); }
-			ScriptFunction TouchingWaterVolume() { mixin(MGF!("mTouchingWaterVolume", "Function Engine.Pawn.TouchingWaterVolume")()); }
-			ScriptFunction ReachedDestination() { mixin(MGF!("mReachedDestination", "Function Engine.Pawn.ReachedDestination")()); }
-			ScriptFunction SpecialMoveTo() { mixin(MGF!("mSpecialMoveTo", "Function Engine.Pawn.SpecialMoveTo")()); }
-			ScriptFunction SetScalarParameterInterp() { mixin(MGF!("mSetScalarParameterInterp", "Function Engine.Pawn.SetScalarParameterInterp")()); }
-			ScriptFunction CheatFly() { mixin(MGF!("mCheatFly", "Function Engine.Pawn.CheatFly")()); }
-			ScriptFunction CheatWalk() { mixin(MGF!("mCheatWalk", "Function Engine.Pawn.CheatWalk")()); }
-			ScriptFunction CheatGhost() { mixin(MGF!("mCheatGhost", "Function Engine.Pawn.CheatGhost")()); }
-			ScriptFunction IsPlayerPawn() { mixin(MGF!("mIsPlayerPawn", "Function Engine.Pawn.IsPlayerPawn")()); }
-			ScriptFunction FindInventoryType() { mixin(MGF!("mFindInventoryType", "Function Engine.Pawn.FindInventoryType")()); }
-			ScriptFunction CreateInventory() { mixin(MGF!("mCreateInventory", "Function Engine.Pawn.CreateInventory")()); }
-			ScriptFunction InGodMode() { mixin(MGF!("mInGodMode", "Function Engine.Pawn.InGodMode")()); }
-			ScriptFunction ValidAnchor() { mixin(MGF!("mValidAnchor", "Function Engine.Pawn.ValidAnchor")()); }
-			ScriptFunction GetBestAnchor() { mixin(MGF!("mGetBestAnchor", "Function Engine.Pawn.GetBestAnchor")()); }
-			ScriptFunction CreatePathGoalEvaluator() { mixin(MGF!("mCreatePathGoalEvaluator", "Function Engine.Pawn.CreatePathGoalEvaluator")()); }
-			ScriptFunction GetCollisionHeight() { mixin(MGF!("mGetCollisionHeight", "Function Engine.Pawn.GetCollisionHeight")()); }
-			ScriptFunction GetCollisionExtent() { mixin(MGF!("mGetCollisionExtent", "Function Engine.Pawn.GetCollisionExtent")()); }
-			ScriptFunction GetViewRotation() { mixin(MGF!("mGetViewRotation", "Function Engine.Pawn.GetViewRotation")()); }
-			ScriptFunction CanGrabLadder() { mixin(MGF!("mCanGrabLadder", "Function Engine.Pawn.CanGrabLadder")()); }
-			ScriptFunction LineOfSightTo() { mixin(MGF!("mLineOfSightTo", "Function Engine.Pawn.LineOfSightTo")()); }
-			ScriptFunction PickWallAdjust() { mixin(MGF!("mPickWallAdjust", "Function Engine.Pawn.PickWallAdjust")()); }
-			ScriptFunction LockDesiredRotation() { mixin(MGF!("mLockDesiredRotation", "Function Engine.Pawn.LockDesiredRotation")()); }
-			ScriptFunction ResetDesiredRotation() { mixin(MGF!("mResetDesiredRotation", "Function Engine.Pawn.ResetDesiredRotation")()); }
-			ScriptFunction CheckDesiredRotation() { mixin(MGF!("mCheckDesiredRotation", "Function Engine.Pawn.CheckDesiredRotation")()); }
-			ScriptFunction IsDesiredRotationInUse() { mixin(MGF!("mIsDesiredRotationInUse", "Function Engine.Pawn.IsDesiredRotationInUse")()); }
-			ScriptFunction IsDesiredRotationLocked() { mixin(MGF!("mIsDesiredRotationLocked", "Function Engine.Pawn.IsDesiredRotationLocked")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function Engine.Pawn.PostInitAnimTree")()); }
-			ScriptFunction CacheAnimNodes() { mixin(MGF!("mCacheAnimNodes", "Function Engine.Pawn.CacheAnimNodes")()); }
-			ScriptFunction ClearAnimNodes() { mixin(MGF!("mClearAnimNodes", "Function Engine.Pawn.ClearAnimNodes")()); }
-			ScriptFunction UpdateAnimSetList() { mixin(MGF!("mUpdateAnimSetList", "Function Engine.Pawn.UpdateAnimSetList")()); }
-			ScriptFunction BuildScriptAnimSetList() { mixin(MGF!("mBuildScriptAnimSetList", "Function Engine.Pawn.BuildScriptAnimSetList")()); }
-			ScriptFunction AddAnimSets() { mixin(MGF!("mAddAnimSets", "Function Engine.Pawn.AddAnimSets")()); }
-			ScriptFunction AnimSetListUpdated() { mixin(MGF!("mAnimSetListUpdated", "Function Engine.Pawn.AnimSetListUpdated")()); }
-			ScriptFunction RestoreAnimSetsToDefault() { mixin(MGF!("mRestoreAnimSetsToDefault", "Function Engine.Pawn.RestoreAnimSetsToDefault")()); }
-			ScriptFunction BeginAnimControl() { mixin(MGF!("mBeginAnimControl", "Function Engine.Pawn.BeginAnimControl")()); }
-			ScriptFunction MAT_BeginAnimControl() { mixin(MGF!("mMAT_BeginAnimControl", "Function Engine.Pawn.MAT_BeginAnimControl")()); }
-			ScriptFunction FinishAnimControl() { mixin(MGF!("mFinishAnimControl", "Function Engine.Pawn.FinishAnimControl")()); }
-			ScriptFunction MAT_FinishAnimControl() { mixin(MGF!("mMAT_FinishAnimControl", "Function Engine.Pawn.MAT_FinishAnimControl")()); }
-			ScriptFunction SetAnimPosition() { mixin(MGF!("mSetAnimPosition", "Function Engine.Pawn.SetAnimPosition")()); }
-			ScriptFunction MAT_SetAnimPosition() { mixin(MGF!("mMAT_SetAnimPosition", "Function Engine.Pawn.MAT_SetAnimPosition")()); }
-			ScriptFunction MAT_SetAnimWeights() { mixin(MGF!("mMAT_SetAnimWeights", "Function Engine.Pawn.MAT_SetAnimWeights")()); }
-			ScriptFunction MAT_SetMorphWeight() { mixin(MGF!("mMAT_SetMorphWeight", "Function Engine.Pawn.MAT_SetMorphWeight")()); }
-			ScriptFunction MAT_SetSkelControlScale() { mixin(MGF!("mMAT_SetSkelControlScale", "Function Engine.Pawn.MAT_SetSkelControlScale")()); }
-			ScriptFunction InterpolationStarted() { mixin(MGF!("mInterpolationStarted", "Function Engine.Pawn.InterpolationStarted")()); }
-			ScriptFunction InterpolationFinished() { mixin(MGF!("mInterpolationFinished", "Function Engine.Pawn.InterpolationFinished")()); }
-			ScriptFunction MAT_BeginAIGroup() { mixin(MGF!("mMAT_BeginAIGroup", "Function Engine.Pawn.MAT_BeginAIGroup")()); }
-			ScriptFunction MAT_FinishAIGroup() { mixin(MGF!("mMAT_FinishAIGroup", "Function Engine.Pawn.MAT_FinishAIGroup")()); }
-			ScriptFunction StopActorFaceFXAnim() { mixin(MGF!("mStopActorFaceFXAnim", "Function Engine.Pawn.StopActorFaceFXAnim")()); }
-			ScriptFunction GetFaceFXAudioComponent() { mixin(MGF!("mGetFaceFXAudioComponent", "Function Engine.Pawn.GetFaceFXAudioComponent")()); }
-			ScriptFunction IsActorPlayingFaceFXAnim() { mixin(MGF!("mIsActorPlayingFaceFXAnim", "Function Engine.Pawn.IsActorPlayingFaceFXAnim")()); }
-			ScriptFunction CanActorPlayFaceFXAnim() { mixin(MGF!("mCanActorPlayFaceFXAnim", "Function Engine.Pawn.CanActorPlayFaceFXAnim")()); }
-			ScriptFunction OnPlayFaceFXAnim() { mixin(MGF!("mOnPlayFaceFXAnim", "Function Engine.Pawn.OnPlayFaceFXAnim")()); }
-			ScriptFunction FaceFXAudioFinished() { mixin(MGF!("mFaceFXAudioFinished", "Function Engine.Pawn.FaceFXAudioFinished")()); }
-			ScriptFunction GetActorFaceFXAsset() { mixin(MGF!("mGetActorFaceFXAsset", "Function Engine.Pawn.GetActorFaceFXAsset")()); }
-			ScriptFunction SetMorphWeight() { mixin(MGF!("mSetMorphWeight", "Function Engine.Pawn.SetMorphWeight")()); }
-			ScriptFunction SetSkelControlScale() { mixin(MGF!("mSetSkelControlScale", "Function Engine.Pawn.SetSkelControlScale")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.Pawn.ReplicatedEvent")()); }
-			ScriptFunction IsAliveAndWell() { mixin(MGF!("mIsAliveAndWell", "Function Engine.Pawn.IsAliveAndWell")()); }
-			ScriptFunction AdjustDestination() { mixin(MGF!("mAdjustDestination", "Function Engine.Pawn.AdjustDestination")()); }
-			ScriptFunction SuggestJumpVelocity() { mixin(MGF!("mSuggestJumpVelocity", "Function Engine.Pawn.SuggestJumpVelocity")()); }
-			ScriptFunction GetFallDuration() { mixin(MGF!("mGetFallDuration", "Function Engine.Pawn.GetFallDuration")()); }
-			ScriptFunction IsValidEnemyTargetFor() { mixin(MGF!("mIsValidEnemyTargetFor", "Function Engine.Pawn.IsValidEnemyTargetFor")()); }
-			ScriptFunction IsInvisible() { mixin(MGF!("mIsInvisible", "Function Engine.Pawn.IsInvisible")()); }
-			ScriptFunction SetAnchor() { mixin(MGF!("mSetAnchor", "Function Engine.Pawn.SetAnchor")()); }
-			ScriptFunction ReachedPoint() { mixin(MGF!("mReachedPoint", "Function Engine.Pawn.ReachedPoint")()); }
-			ScriptFunction ForceCrouch() { mixin(MGF!("mForceCrouch", "Function Engine.Pawn.ForceCrouch")()); }
-			ScriptFunction SetPushesRigidBodies() { mixin(MGF!("mSetPushesRigidBodies", "Function Engine.Pawn.SetPushesRigidBodies")()); }
-			ScriptFunction ReachedDesiredRotation() { mixin(MGF!("mReachedDesiredRotation", "Function Engine.Pawn.ReachedDesiredRotation")()); }
-			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function Engine.Pawn.GetBoundingCylinder")()); }
-			ScriptFunction InitRagdoll() { mixin(MGF!("mInitRagdoll", "Function Engine.Pawn.InitRagdoll")()); }
-			ScriptFunction TermRagdoll() { mixin(MGF!("mTermRagdoll", "Function Engine.Pawn.TermRagdoll")()); }
-			ScriptFunction SpecialMoveThruEdge() { mixin(MGF!("mSpecialMoveThruEdge", "Function Engine.Pawn.SpecialMoveThruEdge")()); }
-			ScriptFunction SetBaseEyeheight() { mixin(MGF!("mSetBaseEyeheight", "Function Engine.Pawn.SetBaseEyeheight")()); }
-			ScriptFunction PlayerChangedTeam() { mixin(MGF!("mPlayerChangedTeam", "Function Engine.Pawn.PlayerChangedTeam")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.Pawn.Reset")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function Engine.Pawn.StartFire")()); }
-			ScriptFunction StopFire() { mixin(MGF!("mStopFire", "Function Engine.Pawn.StopFire")()); }
-			ScriptFunction GetWeaponFiringMode() { mixin(MGF!("mGetWeaponFiringMode", "Function Engine.Pawn.GetWeaponFiringMode")()); }
-			ScriptFunction SetFiringMode() { mixin(MGF!("mSetFiringMode", "Function Engine.Pawn.SetFiringMode")()); }
-			ScriptFunction FiringModeUpdated() { mixin(MGF!("mFiringModeUpdated", "Function Engine.Pawn.FiringModeUpdated")()); }
-			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function Engine.Pawn.IncrementFlashCount")()); }
-			ScriptFunction FlashCountUpdated() { mixin(MGF!("mFlashCountUpdated", "Function Engine.Pawn.FlashCountUpdated")()); }
-			ScriptFunction ClearFlashCount() { mixin(MGF!("mClearFlashCount", "Function Engine.Pawn.ClearFlashCount")()); }
-			ScriptFunction SetFlashLocation() { mixin(MGF!("mSetFlashLocation", "Function Engine.Pawn.SetFlashLocation")()); }
-			ScriptFunction ClearFlashLocation() { mixin(MGF!("mClearFlashLocation", "Function Engine.Pawn.ClearFlashLocation")()); }
-			ScriptFunction FlashLocationUpdated() { mixin(MGF!("mFlashLocationUpdated", "Function Engine.Pawn.FlashLocationUpdated")()); }
-			ScriptFunction WeaponFired() { mixin(MGF!("mWeaponFired", "Function Engine.Pawn.WeaponFired")()); }
-			ScriptFunction WeaponStoppedFiring() { mixin(MGF!("mWeaponStoppedFiring", "Function Engine.Pawn.WeaponStoppedFiring")()); }
-			ScriptFunction BotFire() { mixin(MGF!("mBotFire", "Function Engine.Pawn.BotFire")()); }
-			ScriptFunction CanAttack() { mixin(MGF!("mCanAttack", "Function Engine.Pawn.CanAttack")()); }
-			ScriptFunction TooCloseToAttack() { mixin(MGF!("mTooCloseToAttack", "Function Engine.Pawn.TooCloseToAttack")()); }
-			ScriptFunction FireOnRelease() { mixin(MGF!("mFireOnRelease", "Function Engine.Pawn.FireOnRelease")()); }
-			ScriptFunction HasRangedAttack() { mixin(MGF!("mHasRangedAttack", "Function Engine.Pawn.HasRangedAttack")()); }
-			ScriptFunction IsFiring() { mixin(MGF!("mIsFiring", "Function Engine.Pawn.IsFiring")()); }
-			ScriptFunction NeedToTurn() { mixin(MGF!("mNeedToTurn", "Function Engine.Pawn.NeedToTurn")()); }
-			ScriptFunction PlayTeleportEffect() { mixin(MGF!("mPlayTeleportEffect", "Function Engine.Pawn.PlayTeleportEffect")()); }
-			ScriptFunction NotifyTeamChanged() { mixin(MGF!("mNotifyTeamChanged", "Function Engine.Pawn.NotifyTeamChanged")()); }
-			ScriptFunction PossessedBy() { mixin(MGF!("mPossessedBy", "Function Engine.Pawn.PossessedBy")()); }
-			ScriptFunction UpdateControllerOnPossess() { mixin(MGF!("mUpdateControllerOnPossess", "Function Engine.Pawn.UpdateControllerOnPossess")()); }
-			ScriptFunction UnPossessed() { mixin(MGF!("mUnPossessed", "Function Engine.Pawn.UnPossessed")()); }
-			ScriptFunction DropToGround() { mixin(MGF!("mDropToGround", "Function Engine.Pawn.DropToGround")()); }
-			ScriptFunction RecommendLongRangedAttack() { mixin(MGF!("mRecommendLongRangedAttack", "Function Engine.Pawn.RecommendLongRangedAttack")()); }
-			ScriptFunction RangedAttackTime() { mixin(MGF!("mRangedAttackTime", "Function Engine.Pawn.RangedAttackTime")()); }
-			ScriptFunction SetWalking() { mixin(MGF!("mSetWalking", "Function Engine.Pawn.SetWalking")()); }
-			ScriptFunction CanSplash() { mixin(MGF!("mCanSplash", "Function Engine.Pawn.CanSplash")()); }
-			ScriptFunction EndClimbLadder() { mixin(MGF!("mEndClimbLadder", "Function Engine.Pawn.EndClimbLadder")()); }
-			ScriptFunction ClimbLadder() { mixin(MGF!("mClimbLadder", "Function Engine.Pawn.ClimbLadder")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Pawn.DisplayDebug")()); }
-			ScriptFunction IsFirstPerson() { mixin(MGF!("mIsFirstPerson", "Function Engine.Pawn.IsFirstPerson")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function Engine.Pawn.ProcessViewRotation")()); }
-			ScriptFunction GetActorEyesViewPoint() { mixin(MGF!("mGetActorEyesViewPoint", "Function Engine.Pawn.GetActorEyesViewPoint")()); }
-			ScriptFunction GetPawnViewLocation() { mixin(MGF!("mGetPawnViewLocation", "Function Engine.Pawn.GetPawnViewLocation")()); }
-			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF!("mGetWeaponStartTraceLocation", "Function Engine.Pawn.GetWeaponStartTraceLocation")()); }
-			ScriptFunction InFreeCam() { mixin(MGF!("mInFreeCam", "Function Engine.Pawn.InFreeCam")()); }
-			ScriptFunction GetAdjustedAimFor() { mixin(MGF!("mGetAdjustedAimFor", "Function Engine.Pawn.GetAdjustedAimFor")()); }
-			ScriptFunction SetViewRotation() { mixin(MGF!("mSetViewRotation", "Function Engine.Pawn.SetViewRotation")()); }
-			ScriptFunction SetMoveTarget() { mixin(MGF!("mSetMoveTarget", "Function Engine.Pawn.SetMoveTarget")()); }
-			ScriptFunction HandlePickup() { mixin(MGF!("mHandlePickup", "Function Engine.Pawn.HandlePickup")()); }
-			ScriptFunction ClientMessage() { mixin(MGF!("mClientMessage", "Function Engine.Pawn.ClientMessage")()); }
-			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.Pawn.FellOutOfWorld")()); }
-			ScriptFunction OutsideWorldBounds() { mixin(MGF!("mOutsideWorldBounds", "Function Engine.Pawn.OutsideWorldBounds")()); }
-			ScriptFunction UnCrouch() { mixin(MGF!("mUnCrouch", "Function Engine.Pawn.UnCrouch")()); }
-			ScriptFunction ShouldCrouch() { mixin(MGF!("mShouldCrouch", "Function Engine.Pawn.ShouldCrouch")()); }
-			ScriptFunction EndCrouch() { mixin(MGF!("mEndCrouch", "Function Engine.Pawn.EndCrouch")()); }
-			ScriptFunction StartCrouch() { mixin(MGF!("mStartCrouch", "Function Engine.Pawn.StartCrouch")()); }
-			ScriptFunction HandleMomentum() { mixin(MGF!("mHandleMomentum", "Function Engine.Pawn.HandleMomentum")()); }
-			ScriptFunction AddVelocity() { mixin(MGF!("mAddVelocity", "Function Engine.Pawn.AddVelocity")()); }
-			ScriptFunction KilledBy() { mixin(MGF!("mKilledBy", "Function Engine.Pawn.KilledBy")()); }
-			ScriptFunction TakeFallingDamage() { mixin(MGF!("mTakeFallingDamage", "Function Engine.Pawn.TakeFallingDamage")()); }
-			ScriptFunction Restart() { mixin(MGF!("mRestart", "Function Engine.Pawn.Restart")()); }
-			ScriptFunction ClientRestart() { mixin(MGF!("mClientRestart", "Function Engine.Pawn.ClientRestart")()); }
-			ScriptFunction ClientSetRotation() { mixin(MGF!("mClientSetRotation", "Function Engine.Pawn.ClientSetRotation")()); }
-			ScriptFunction UpdatePawnRotation() { mixin(MGF!("mUpdatePawnRotation", "Function Engine.Pawn.UpdatePawnRotation")()); }
-			ScriptFunction FaceRotation() { mixin(MGF!("mFaceRotation", "Function Engine.Pawn.FaceRotation")()); }
-			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.Pawn.EncroachingOn")()); }
-			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.Pawn.EncroachedBy")()); }
-			ScriptFunction gibbedBy() { mixin(MGF!("mgibbedBy", "Function Engine.Pawn.gibbedBy")()); }
-			ScriptFunction JumpOffPawn() { mixin(MGF!("mJumpOffPawn", "Function Engine.Pawn.JumpOffPawn")()); }
-			ScriptFunction StuckOnPawn() { mixin(MGF!("mStuckOnPawn", "Function Engine.Pawn.StuckOnPawn")()); }
-			ScriptFunction BaseChange() { mixin(MGF!("mBaseChange", "Function Engine.Pawn.BaseChange")()); }
-			ScriptFunction CanBeBaseForPawn() { mixin(MGF!("mCanBeBaseForPawn", "Function Engine.Pawn.CanBeBaseForPawn")()); }
-			ScriptFunction CrushedBy() { mixin(MGF!("mCrushedBy", "Function Engine.Pawn.CrushedBy")()); }
-			ScriptFunction DetachFromController() { mixin(MGF!("mDetachFromController", "Function Engine.Pawn.DetachFromController")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Pawn.Destroyed")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.Pawn.PreBeginPlay")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Pawn.PostBeginPlay")()); }
-			ScriptFunction SpawnDefaultController() { mixin(MGF!("mSpawnDefaultController", "Function Engine.Pawn.SpawnDefaultController")()); }
-			ScriptFunction ReceivedNewEvent() { mixin(MGF!("mReceivedNewEvent", "Function Engine.Pawn.ReceivedNewEvent")()); }
-			ScriptFunction OnAssignController() { mixin(MGF!("mOnAssignController", "Function Engine.Pawn.OnAssignController")()); }
-			ScriptFunction OnGiveInventory() { mixin(MGF!("mOnGiveInventory", "Function Engine.Pawn.OnGiveInventory")()); }
-			ScriptFunction Gasp() { mixin(MGF!("mGasp", "Function Engine.Pawn.Gasp")()); }
-			ScriptFunction SetMovementPhysics() { mixin(MGF!("mSetMovementPhysics", "Function Engine.Pawn.SetMovementPhysics")()); }
-			ScriptFunction AdjustDamage() { mixin(MGF!("mAdjustDamage", "Function Engine.Pawn.AdjustDamage")()); }
-			ScriptFunction HealDamage() { mixin(MGF!("mHealDamage", "Function Engine.Pawn.HealDamage")()); }
-			ScriptFunction PruneDamagedBoneList() { mixin(MGF!("mPruneDamagedBoneList", "Function Engine.Pawn.PruneDamagedBoneList")()); }
-			ScriptFunction TakeRadiusDamageOnBones() { mixin(MGF!("mTakeRadiusDamageOnBones", "Function Engine.Pawn.TakeRadiusDamageOnBones")()); }
-			ScriptFunction NotifyTakeHit() { mixin(MGF!("mNotifyTakeHit", "Function Engine.Pawn.NotifyTakeHit")()); }
-			ScriptFunction SetKillInstigator() { mixin(MGF!("mSetKillInstigator", "Function Engine.Pawn.SetKillInstigator")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.Pawn.TakeDamage")()); }
-			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.Pawn.GetTeamNum")()); }
-			ScriptFunction GetTeam() { mixin(MGF!("mGetTeam", "Function Engine.Pawn.GetTeam")()); }
-			ScriptFunction IsSameTeam() { mixin(MGF!("mIsSameTeam", "Function Engine.Pawn.IsSameTeam")()); }
-			ScriptFunction ThrowWeaponOnDeath() { mixin(MGF!("mThrowWeaponOnDeath", "Function Engine.Pawn.ThrowWeaponOnDeath")()); }
-			ScriptFunction DelayTriggerDeath() { mixin(MGF!("mDelayTriggerDeath", "Function Engine.Pawn.DelayTriggerDeath")()); }
-			ScriptFunction Falling() { mixin(MGF!("mFalling", "Function Engine.Pawn.Falling")()); }
-			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function Engine.Pawn.Landed")()); }
-			ScriptFunction TickSpecial() { mixin(MGF!("mTickSpecial", "Function Engine.Pawn.TickSpecial")()); }
-			ScriptFunction HeadVolumeChange() { mixin(MGF!("mHeadVolumeChange", "Function Engine.Pawn.HeadVolumeChange")()); }
-			ScriptFunction BreathTimer() { mixin(MGF!("mBreathTimer", "Function Engine.Pawn.BreathTimer")()); }
-			ScriptFunction TakeDrowningDamage() { mixin(MGF!("mTakeDrowningDamage", "Function Engine.Pawn.TakeDrowningDamage")()); }
-			ScriptFunction PlayDyingSound() { mixin(MGF!("mPlayDyingSound", "Function Engine.Pawn.PlayDyingSound")()); }
-			ScriptFunction PlayHit() { mixin(MGF!("mPlayHit", "Function Engine.Pawn.PlayHit")()); }
-			ScriptFunction TurnOff() { mixin(MGF!("mTurnOff", "Function Engine.Pawn.TurnOff")()); }
-			ScriptFunction SetDyingPhysics() { mixin(MGF!("mSetDyingPhysics", "Function Engine.Pawn.SetDyingPhysics")()); }
-			ScriptFunction PlayDying() { mixin(MGF!("mPlayDying", "Function Engine.Pawn.PlayDying")()); }
-			ScriptFunction TornOff() { mixin(MGF!("mTornOff", "Function Engine.Pawn.TornOff")()); }
-			ScriptFunction PlayFootStepSound() { mixin(MGF!("mPlayFootStepSound", "Function Engine.Pawn.PlayFootStepSound")()); }
-			ScriptFunction PlayLanded() { mixin(MGF!("mPlayLanded", "Function Engine.Pawn.PlayLanded")()); }
-			ScriptFunction GetVehicleBase() { mixin(MGF!("mGetVehicleBase", "Function Engine.Pawn.GetVehicleBase")()); }
-			ScriptFunction Suicide() { mixin(MGF!("mSuicide", "Function Engine.Pawn.Suicide")()); }
-			ScriptFunction StartDriving() { mixin(MGF!("mStartDriving", "Function Engine.Pawn.StartDriving")()); }
-			ScriptFunction StopDriving() { mixin(MGF!("mStopDriving", "Function Engine.Pawn.StopDriving")()); }
-			ScriptFunction AddDefaultInventory() { mixin(MGF!("mAddDefaultInventory", "Function Engine.Pawn.AddDefaultInventory")()); }
-			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function Engine.Pawn.DrawHUD")()); }
-			ScriptFunction ThrowActiveWeapon() { mixin(MGF!("mThrowActiveWeapon", "Function Engine.Pawn.ThrowActiveWeapon")()); }
-			ScriptFunction TossInventory() { mixin(MGF!("mTossInventory", "Function Engine.Pawn.TossInventory")()); }
-			ScriptFunction SetActiveWeapon() { mixin(MGF!("mSetActiveWeapon", "Function Engine.Pawn.SetActiveWeapon")()); }
-			ScriptFunction PlayWeaponSwitch() { mixin(MGF!("mPlayWeaponSwitch", "Function Engine.Pawn.PlayWeaponSwitch")()); }
-			ScriptFunction GetCollisionRadius() { mixin(MGF!("mGetCollisionRadius", "Function Engine.Pawn.GetCollisionRadius")()); }
-			ScriptFunction IsStationary() { mixin(MGF!("mIsStationary", "Function Engine.Pawn.IsStationary")()); }
-			ScriptFunction SpawnedByKismet() { mixin(MGF!("mSpawnedByKismet", "Function Engine.Pawn.SpawnedByKismet")()); }
-			ScriptFunction DoKismetAttachment() { mixin(MGF!("mDoKismetAttachment", "Function Engine.Pawn.DoKismetAttachment")()); }
-			ScriptFunction GetDamageScaling() { mixin(MGF!("mGetDamageScaling", "Function Engine.Pawn.GetDamageScaling")()); }
-			ScriptFunction OnSetMaterial() { mixin(MGF!("mOnSetMaterial", "Function Engine.Pawn.OnSetMaterial")()); }
-			ScriptFunction OnTeleport() { mixin(MGF!("mOnTeleport", "Function Engine.Pawn.OnTeleport")()); }
-			ScriptFunction MessagePlayer() { mixin(MGF!("mMessagePlayer", "Function Engine.Pawn.MessagePlayer")()); }
-			ScriptFunction BecomeViewTarget() { mixin(MGF!("mBecomeViewTarget", "Function Engine.Pawn.BecomeViewTarget")()); }
-			ScriptFunction SoakPause() { mixin(MGF!("mSoakPause", "Function Engine.Pawn.SoakPause")()); }
-			ScriptFunction ClearConstraints() { mixin(MGF!("mClearConstraints", "Function Engine.Pawn.ClearConstraints")()); }
-			ScriptFunction AddPathConstraint() { mixin(MGF!("mAddPathConstraint", "Function Engine.Pawn.AddPathConstraint")()); }
-			ScriptFunction AddGoalEvaluator() { mixin(MGF!("mAddGoalEvaluator", "Function Engine.Pawn.AddGoalEvaluator")()); }
-			ScriptFunction CreatePathConstraint() { mixin(MGF!("mCreatePathConstraint", "Function Engine.Pawn.CreatePathConstraint")()); }
-			ScriptFunction IncrementPathStep() { mixin(MGF!("mIncrementPathStep", "Function Engine.Pawn.IncrementPathStep")()); }
-			ScriptFunction IncrementPathChild() { mixin(MGF!("mIncrementPathChild", "Function Engine.Pawn.IncrementPathChild")()); }
-			ScriptFunction DrawPathStep() { mixin(MGF!("mDrawPathStep", "Function Engine.Pawn.DrawPathStep")()); }
-			ScriptFunction ClearPathStep() { mixin(MGF!("mClearPathStep", "Function Engine.Pawn.ClearPathStep")()); }
-			ScriptFunction ZeroMovementVariables() { mixin(MGF!("mZeroMovementVariables", "Function Engine.Pawn.ZeroMovementVariables")()); }
-			ScriptFunction SetCinematicMode() { mixin(MGF!("mSetCinematicMode", "Function Engine.Pawn.SetCinematicMode")()); }
-			ScriptFunction SetRootMotionInterpCurrentTime() { mixin(MGF!("mSetRootMotionInterpCurrentTime", "Function Engine.Pawn.SetRootMotionInterpCurrentTime")()); }
-			ScriptFunction Speak() { mixin(MGF!("mSpeak", "Function Engine.Pawn.Speak")()); }
-			ScriptFunction OnSetVelocity() { mixin(MGF!("mOnSetVelocity", "Function Engine.Pawn.OnSetVelocity")()); }
-			ScriptFunction CheckClotheslineDamage() { mixin(MGF!("mCheckClotheslineDamage", "Function Engine.Pawn.CheckClotheslineDamage")()); }
+			ScriptFunction IsHumanControlled() { mixin(MGF("mIsHumanControlled", "Function Engine.Pawn.IsHumanControlled")); }
+			ScriptFunction IsLocallyControlled() { mixin(MGF("mIsLocallyControlled", "Function Engine.Pawn.IsLocallyControlled")); }
+			ScriptFunction PlayActorFaceFXAnim() { mixin(MGF("mPlayActorFaceFXAnim", "Function Engine.Pawn.PlayActorFaceFXAnim")); }
+			ScriptFunction StopFiring() { mixin(MGF("mStopFiring", "Function Engine.Pawn.StopFiring")); }
+			ScriptFunction GetBaseAimRotation() { mixin(MGF("mGetBaseAimRotation", "Function Engine.Pawn.GetBaseAimRotation")); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF("mGetHumanReadableName", "Function Engine.Pawn.GetHumanReadableName")); }
+			ScriptFunction Died() { mixin(MGF("mDied", "Function Engine.Pawn.Died")); }
+			ScriptFunction GetDefaultCameraMode() { mixin(MGF("mGetDefaultCameraMode", "Function Engine.Pawn.GetDefaultCameraMode")); }
+			ScriptFunction CanThrowWeapon() { mixin(MGF("mCanThrowWeapon", "Function Engine.Pawn.CanThrowWeapon")); }
+			ScriptFunction SetDesiredRotation() { mixin(MGF("mSetDesiredRotation", "Function Engine.Pawn.SetDesiredRotation")); }
+			ScriptFunction DoJump() { mixin(MGF("mDoJump", "Function Engine.Pawn.DoJump")); }
+			ScriptFunction SetRemoteViewPitch() { mixin(MGF("mSetRemoteViewPitch", "Function Engine.Pawn.SetRemoteViewPitch")); }
+			ScriptFunction CannotJumpNow() { mixin(MGF("mCannotJumpNow", "Function Engine.Pawn.CannotJumpNow")); }
+			ScriptFunction CheckWaterJump() { mixin(MGF("mCheckWaterJump", "Function Engine.Pawn.CheckWaterJump")); }
+			ScriptFunction TouchingWaterVolume() { mixin(MGF("mTouchingWaterVolume", "Function Engine.Pawn.TouchingWaterVolume")); }
+			ScriptFunction ReachedDestination() { mixin(MGF("mReachedDestination", "Function Engine.Pawn.ReachedDestination")); }
+			ScriptFunction SpecialMoveTo() { mixin(MGF("mSpecialMoveTo", "Function Engine.Pawn.SpecialMoveTo")); }
+			ScriptFunction SetScalarParameterInterp() { mixin(MGF("mSetScalarParameterInterp", "Function Engine.Pawn.SetScalarParameterInterp")); }
+			ScriptFunction CheatFly() { mixin(MGF("mCheatFly", "Function Engine.Pawn.CheatFly")); }
+			ScriptFunction CheatWalk() { mixin(MGF("mCheatWalk", "Function Engine.Pawn.CheatWalk")); }
+			ScriptFunction CheatGhost() { mixin(MGF("mCheatGhost", "Function Engine.Pawn.CheatGhost")); }
+			ScriptFunction IsPlayerPawn() { mixin(MGF("mIsPlayerPawn", "Function Engine.Pawn.IsPlayerPawn")); }
+			ScriptFunction FindInventoryType() { mixin(MGF("mFindInventoryType", "Function Engine.Pawn.FindInventoryType")); }
+			ScriptFunction CreateInventory() { mixin(MGF("mCreateInventory", "Function Engine.Pawn.CreateInventory")); }
+			ScriptFunction InGodMode() { mixin(MGF("mInGodMode", "Function Engine.Pawn.InGodMode")); }
+			ScriptFunction ValidAnchor() { mixin(MGF("mValidAnchor", "Function Engine.Pawn.ValidAnchor")); }
+			ScriptFunction GetBestAnchor() { mixin(MGF("mGetBestAnchor", "Function Engine.Pawn.GetBestAnchor")); }
+			ScriptFunction CreatePathGoalEvaluator() { mixin(MGF("mCreatePathGoalEvaluator", "Function Engine.Pawn.CreatePathGoalEvaluator")); }
+			ScriptFunction GetCollisionHeight() { mixin(MGF("mGetCollisionHeight", "Function Engine.Pawn.GetCollisionHeight")); }
+			ScriptFunction GetCollisionExtent() { mixin(MGF("mGetCollisionExtent", "Function Engine.Pawn.GetCollisionExtent")); }
+			ScriptFunction GetViewRotation() { mixin(MGF("mGetViewRotation", "Function Engine.Pawn.GetViewRotation")); }
+			ScriptFunction CanGrabLadder() { mixin(MGF("mCanGrabLadder", "Function Engine.Pawn.CanGrabLadder")); }
+			ScriptFunction LineOfSightTo() { mixin(MGF("mLineOfSightTo", "Function Engine.Pawn.LineOfSightTo")); }
+			ScriptFunction PickWallAdjust() { mixin(MGF("mPickWallAdjust", "Function Engine.Pawn.PickWallAdjust")); }
+			ScriptFunction LockDesiredRotation() { mixin(MGF("mLockDesiredRotation", "Function Engine.Pawn.LockDesiredRotation")); }
+			ScriptFunction ResetDesiredRotation() { mixin(MGF("mResetDesiredRotation", "Function Engine.Pawn.ResetDesiredRotation")); }
+			ScriptFunction CheckDesiredRotation() { mixin(MGF("mCheckDesiredRotation", "Function Engine.Pawn.CheckDesiredRotation")); }
+			ScriptFunction IsDesiredRotationInUse() { mixin(MGF("mIsDesiredRotationInUse", "Function Engine.Pawn.IsDesiredRotationInUse")); }
+			ScriptFunction IsDesiredRotationLocked() { mixin(MGF("mIsDesiredRotationLocked", "Function Engine.Pawn.IsDesiredRotationLocked")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function Engine.Pawn.PostInitAnimTree")); }
+			ScriptFunction CacheAnimNodes() { mixin(MGF("mCacheAnimNodes", "Function Engine.Pawn.CacheAnimNodes")); }
+			ScriptFunction ClearAnimNodes() { mixin(MGF("mClearAnimNodes", "Function Engine.Pawn.ClearAnimNodes")); }
+			ScriptFunction UpdateAnimSetList() { mixin(MGF("mUpdateAnimSetList", "Function Engine.Pawn.UpdateAnimSetList")); }
+			ScriptFunction BuildScriptAnimSetList() { mixin(MGF("mBuildScriptAnimSetList", "Function Engine.Pawn.BuildScriptAnimSetList")); }
+			ScriptFunction AddAnimSets() { mixin(MGF("mAddAnimSets", "Function Engine.Pawn.AddAnimSets")); }
+			ScriptFunction AnimSetListUpdated() { mixin(MGF("mAnimSetListUpdated", "Function Engine.Pawn.AnimSetListUpdated")); }
+			ScriptFunction RestoreAnimSetsToDefault() { mixin(MGF("mRestoreAnimSetsToDefault", "Function Engine.Pawn.RestoreAnimSetsToDefault")); }
+			ScriptFunction BeginAnimControl() { mixin(MGF("mBeginAnimControl", "Function Engine.Pawn.BeginAnimControl")); }
+			ScriptFunction MAT_BeginAnimControl() { mixin(MGF("mMAT_BeginAnimControl", "Function Engine.Pawn.MAT_BeginAnimControl")); }
+			ScriptFunction FinishAnimControl() { mixin(MGF("mFinishAnimControl", "Function Engine.Pawn.FinishAnimControl")); }
+			ScriptFunction MAT_FinishAnimControl() { mixin(MGF("mMAT_FinishAnimControl", "Function Engine.Pawn.MAT_FinishAnimControl")); }
+			ScriptFunction SetAnimPosition() { mixin(MGF("mSetAnimPosition", "Function Engine.Pawn.SetAnimPosition")); }
+			ScriptFunction MAT_SetAnimPosition() { mixin(MGF("mMAT_SetAnimPosition", "Function Engine.Pawn.MAT_SetAnimPosition")); }
+			ScriptFunction MAT_SetAnimWeights() { mixin(MGF("mMAT_SetAnimWeights", "Function Engine.Pawn.MAT_SetAnimWeights")); }
+			ScriptFunction MAT_SetMorphWeight() { mixin(MGF("mMAT_SetMorphWeight", "Function Engine.Pawn.MAT_SetMorphWeight")); }
+			ScriptFunction MAT_SetSkelControlScale() { mixin(MGF("mMAT_SetSkelControlScale", "Function Engine.Pawn.MAT_SetSkelControlScale")); }
+			ScriptFunction InterpolationStarted() { mixin(MGF("mInterpolationStarted", "Function Engine.Pawn.InterpolationStarted")); }
+			ScriptFunction InterpolationFinished() { mixin(MGF("mInterpolationFinished", "Function Engine.Pawn.InterpolationFinished")); }
+			ScriptFunction MAT_BeginAIGroup() { mixin(MGF("mMAT_BeginAIGroup", "Function Engine.Pawn.MAT_BeginAIGroup")); }
+			ScriptFunction MAT_FinishAIGroup() { mixin(MGF("mMAT_FinishAIGroup", "Function Engine.Pawn.MAT_FinishAIGroup")); }
+			ScriptFunction StopActorFaceFXAnim() { mixin(MGF("mStopActorFaceFXAnim", "Function Engine.Pawn.StopActorFaceFXAnim")); }
+			ScriptFunction GetFaceFXAudioComponent() { mixin(MGF("mGetFaceFXAudioComponent", "Function Engine.Pawn.GetFaceFXAudioComponent")); }
+			ScriptFunction IsActorPlayingFaceFXAnim() { mixin(MGF("mIsActorPlayingFaceFXAnim", "Function Engine.Pawn.IsActorPlayingFaceFXAnim")); }
+			ScriptFunction CanActorPlayFaceFXAnim() { mixin(MGF("mCanActorPlayFaceFXAnim", "Function Engine.Pawn.CanActorPlayFaceFXAnim")); }
+			ScriptFunction OnPlayFaceFXAnim() { mixin(MGF("mOnPlayFaceFXAnim", "Function Engine.Pawn.OnPlayFaceFXAnim")); }
+			ScriptFunction FaceFXAudioFinished() { mixin(MGF("mFaceFXAudioFinished", "Function Engine.Pawn.FaceFXAudioFinished")); }
+			ScriptFunction GetActorFaceFXAsset() { mixin(MGF("mGetActorFaceFXAsset", "Function Engine.Pawn.GetActorFaceFXAsset")); }
+			ScriptFunction SetMorphWeight() { mixin(MGF("mSetMorphWeight", "Function Engine.Pawn.SetMorphWeight")); }
+			ScriptFunction SetSkelControlScale() { mixin(MGF("mSetSkelControlScale", "Function Engine.Pawn.SetSkelControlScale")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.Pawn.ReplicatedEvent")); }
+			ScriptFunction IsAliveAndWell() { mixin(MGF("mIsAliveAndWell", "Function Engine.Pawn.IsAliveAndWell")); }
+			ScriptFunction AdjustDestination() { mixin(MGF("mAdjustDestination", "Function Engine.Pawn.AdjustDestination")); }
+			ScriptFunction SuggestJumpVelocity() { mixin(MGF("mSuggestJumpVelocity", "Function Engine.Pawn.SuggestJumpVelocity")); }
+			ScriptFunction GetFallDuration() { mixin(MGF("mGetFallDuration", "Function Engine.Pawn.GetFallDuration")); }
+			ScriptFunction IsValidEnemyTargetFor() { mixin(MGF("mIsValidEnemyTargetFor", "Function Engine.Pawn.IsValidEnemyTargetFor")); }
+			ScriptFunction IsInvisible() { mixin(MGF("mIsInvisible", "Function Engine.Pawn.IsInvisible")); }
+			ScriptFunction SetAnchor() { mixin(MGF("mSetAnchor", "Function Engine.Pawn.SetAnchor")); }
+			ScriptFunction ReachedPoint() { mixin(MGF("mReachedPoint", "Function Engine.Pawn.ReachedPoint")); }
+			ScriptFunction ForceCrouch() { mixin(MGF("mForceCrouch", "Function Engine.Pawn.ForceCrouch")); }
+			ScriptFunction SetPushesRigidBodies() { mixin(MGF("mSetPushesRigidBodies", "Function Engine.Pawn.SetPushesRigidBodies")); }
+			ScriptFunction ReachedDesiredRotation() { mixin(MGF("mReachedDesiredRotation", "Function Engine.Pawn.ReachedDesiredRotation")); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF("mGetBoundingCylinder", "Function Engine.Pawn.GetBoundingCylinder")); }
+			ScriptFunction InitRagdoll() { mixin(MGF("mInitRagdoll", "Function Engine.Pawn.InitRagdoll")); }
+			ScriptFunction TermRagdoll() { mixin(MGF("mTermRagdoll", "Function Engine.Pawn.TermRagdoll")); }
+			ScriptFunction SpecialMoveThruEdge() { mixin(MGF("mSpecialMoveThruEdge", "Function Engine.Pawn.SpecialMoveThruEdge")); }
+			ScriptFunction SetBaseEyeheight() { mixin(MGF("mSetBaseEyeheight", "Function Engine.Pawn.SetBaseEyeheight")); }
+			ScriptFunction PlayerChangedTeam() { mixin(MGF("mPlayerChangedTeam", "Function Engine.Pawn.PlayerChangedTeam")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.Pawn.Reset")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function Engine.Pawn.StartFire")); }
+			ScriptFunction StopFire() { mixin(MGF("mStopFire", "Function Engine.Pawn.StopFire")); }
+			ScriptFunction GetWeaponFiringMode() { mixin(MGF("mGetWeaponFiringMode", "Function Engine.Pawn.GetWeaponFiringMode")); }
+			ScriptFunction SetFiringMode() { mixin(MGF("mSetFiringMode", "Function Engine.Pawn.SetFiringMode")); }
+			ScriptFunction FiringModeUpdated() { mixin(MGF("mFiringModeUpdated", "Function Engine.Pawn.FiringModeUpdated")); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF("mIncrementFlashCount", "Function Engine.Pawn.IncrementFlashCount")); }
+			ScriptFunction FlashCountUpdated() { mixin(MGF("mFlashCountUpdated", "Function Engine.Pawn.FlashCountUpdated")); }
+			ScriptFunction ClearFlashCount() { mixin(MGF("mClearFlashCount", "Function Engine.Pawn.ClearFlashCount")); }
+			ScriptFunction SetFlashLocation() { mixin(MGF("mSetFlashLocation", "Function Engine.Pawn.SetFlashLocation")); }
+			ScriptFunction ClearFlashLocation() { mixin(MGF("mClearFlashLocation", "Function Engine.Pawn.ClearFlashLocation")); }
+			ScriptFunction FlashLocationUpdated() { mixin(MGF("mFlashLocationUpdated", "Function Engine.Pawn.FlashLocationUpdated")); }
+			ScriptFunction WeaponFired() { mixin(MGF("mWeaponFired", "Function Engine.Pawn.WeaponFired")); }
+			ScriptFunction WeaponStoppedFiring() { mixin(MGF("mWeaponStoppedFiring", "Function Engine.Pawn.WeaponStoppedFiring")); }
+			ScriptFunction BotFire() { mixin(MGF("mBotFire", "Function Engine.Pawn.BotFire")); }
+			ScriptFunction CanAttack() { mixin(MGF("mCanAttack", "Function Engine.Pawn.CanAttack")); }
+			ScriptFunction TooCloseToAttack() { mixin(MGF("mTooCloseToAttack", "Function Engine.Pawn.TooCloseToAttack")); }
+			ScriptFunction FireOnRelease() { mixin(MGF("mFireOnRelease", "Function Engine.Pawn.FireOnRelease")); }
+			ScriptFunction HasRangedAttack() { mixin(MGF("mHasRangedAttack", "Function Engine.Pawn.HasRangedAttack")); }
+			ScriptFunction IsFiring() { mixin(MGF("mIsFiring", "Function Engine.Pawn.IsFiring")); }
+			ScriptFunction NeedToTurn() { mixin(MGF("mNeedToTurn", "Function Engine.Pawn.NeedToTurn")); }
+			ScriptFunction PlayTeleportEffect() { mixin(MGF("mPlayTeleportEffect", "Function Engine.Pawn.PlayTeleportEffect")); }
+			ScriptFunction NotifyTeamChanged() { mixin(MGF("mNotifyTeamChanged", "Function Engine.Pawn.NotifyTeamChanged")); }
+			ScriptFunction PossessedBy() { mixin(MGF("mPossessedBy", "Function Engine.Pawn.PossessedBy")); }
+			ScriptFunction UpdateControllerOnPossess() { mixin(MGF("mUpdateControllerOnPossess", "Function Engine.Pawn.UpdateControllerOnPossess")); }
+			ScriptFunction UnPossessed() { mixin(MGF("mUnPossessed", "Function Engine.Pawn.UnPossessed")); }
+			ScriptFunction DropToGround() { mixin(MGF("mDropToGround", "Function Engine.Pawn.DropToGround")); }
+			ScriptFunction RecommendLongRangedAttack() { mixin(MGF("mRecommendLongRangedAttack", "Function Engine.Pawn.RecommendLongRangedAttack")); }
+			ScriptFunction RangedAttackTime() { mixin(MGF("mRangedAttackTime", "Function Engine.Pawn.RangedAttackTime")); }
+			ScriptFunction SetWalking() { mixin(MGF("mSetWalking", "Function Engine.Pawn.SetWalking")); }
+			ScriptFunction CanSplash() { mixin(MGF("mCanSplash", "Function Engine.Pawn.CanSplash")); }
+			ScriptFunction EndClimbLadder() { mixin(MGF("mEndClimbLadder", "Function Engine.Pawn.EndClimbLadder")); }
+			ScriptFunction ClimbLadder() { mixin(MGF("mClimbLadder", "Function Engine.Pawn.ClimbLadder")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function Engine.Pawn.DisplayDebug")); }
+			ScriptFunction IsFirstPerson() { mixin(MGF("mIsFirstPerson", "Function Engine.Pawn.IsFirstPerson")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function Engine.Pawn.ProcessViewRotation")); }
+			ScriptFunction GetActorEyesViewPoint() { mixin(MGF("mGetActorEyesViewPoint", "Function Engine.Pawn.GetActorEyesViewPoint")); }
+			ScriptFunction GetPawnViewLocation() { mixin(MGF("mGetPawnViewLocation", "Function Engine.Pawn.GetPawnViewLocation")); }
+			ScriptFunction GetWeaponStartTraceLocation() { mixin(MGF("mGetWeaponStartTraceLocation", "Function Engine.Pawn.GetWeaponStartTraceLocation")); }
+			ScriptFunction InFreeCam() { mixin(MGF("mInFreeCam", "Function Engine.Pawn.InFreeCam")); }
+			ScriptFunction GetAdjustedAimFor() { mixin(MGF("mGetAdjustedAimFor", "Function Engine.Pawn.GetAdjustedAimFor")); }
+			ScriptFunction SetViewRotation() { mixin(MGF("mSetViewRotation", "Function Engine.Pawn.SetViewRotation")); }
+			ScriptFunction SetMoveTarget() { mixin(MGF("mSetMoveTarget", "Function Engine.Pawn.SetMoveTarget")); }
+			ScriptFunction HandlePickup() { mixin(MGF("mHandlePickup", "Function Engine.Pawn.HandlePickup")); }
+			ScriptFunction ClientMessage() { mixin(MGF("mClientMessage", "Function Engine.Pawn.ClientMessage")); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF("mFellOutOfWorld", "Function Engine.Pawn.FellOutOfWorld")); }
+			ScriptFunction OutsideWorldBounds() { mixin(MGF("mOutsideWorldBounds", "Function Engine.Pawn.OutsideWorldBounds")); }
+			ScriptFunction UnCrouch() { mixin(MGF("mUnCrouch", "Function Engine.Pawn.UnCrouch")); }
+			ScriptFunction ShouldCrouch() { mixin(MGF("mShouldCrouch", "Function Engine.Pawn.ShouldCrouch")); }
+			ScriptFunction EndCrouch() { mixin(MGF("mEndCrouch", "Function Engine.Pawn.EndCrouch")); }
+			ScriptFunction StartCrouch() { mixin(MGF("mStartCrouch", "Function Engine.Pawn.StartCrouch")); }
+			ScriptFunction HandleMomentum() { mixin(MGF("mHandleMomentum", "Function Engine.Pawn.HandleMomentum")); }
+			ScriptFunction AddVelocity() { mixin(MGF("mAddVelocity", "Function Engine.Pawn.AddVelocity")); }
+			ScriptFunction KilledBy() { mixin(MGF("mKilledBy", "Function Engine.Pawn.KilledBy")); }
+			ScriptFunction TakeFallingDamage() { mixin(MGF("mTakeFallingDamage", "Function Engine.Pawn.TakeFallingDamage")); }
+			ScriptFunction Restart() { mixin(MGF("mRestart", "Function Engine.Pawn.Restart")); }
+			ScriptFunction ClientRestart() { mixin(MGF("mClientRestart", "Function Engine.Pawn.ClientRestart")); }
+			ScriptFunction ClientSetRotation() { mixin(MGF("mClientSetRotation", "Function Engine.Pawn.ClientSetRotation")); }
+			ScriptFunction UpdatePawnRotation() { mixin(MGF("mUpdatePawnRotation", "Function Engine.Pawn.UpdatePawnRotation")); }
+			ScriptFunction FaceRotation() { mixin(MGF("mFaceRotation", "Function Engine.Pawn.FaceRotation")); }
+			ScriptFunction EncroachingOn() { mixin(MGF("mEncroachingOn", "Function Engine.Pawn.EncroachingOn")); }
+			ScriptFunction EncroachedBy() { mixin(MGF("mEncroachedBy", "Function Engine.Pawn.EncroachedBy")); }
+			ScriptFunction gibbedBy() { mixin(MGF("mgibbedBy", "Function Engine.Pawn.gibbedBy")); }
+			ScriptFunction JumpOffPawn() { mixin(MGF("mJumpOffPawn", "Function Engine.Pawn.JumpOffPawn")); }
+			ScriptFunction StuckOnPawn() { mixin(MGF("mStuckOnPawn", "Function Engine.Pawn.StuckOnPawn")); }
+			ScriptFunction BaseChange() { mixin(MGF("mBaseChange", "Function Engine.Pawn.BaseChange")); }
+			ScriptFunction CanBeBaseForPawn() { mixin(MGF("mCanBeBaseForPawn", "Function Engine.Pawn.CanBeBaseForPawn")); }
+			ScriptFunction CrushedBy() { mixin(MGF("mCrushedBy", "Function Engine.Pawn.CrushedBy")); }
+			ScriptFunction DetachFromController() { mixin(MGF("mDetachFromController", "Function Engine.Pawn.DetachFromController")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.Pawn.Destroyed")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function Engine.Pawn.PreBeginPlay")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Pawn.PostBeginPlay")); }
+			ScriptFunction SpawnDefaultController() { mixin(MGF("mSpawnDefaultController", "Function Engine.Pawn.SpawnDefaultController")); }
+			ScriptFunction ReceivedNewEvent() { mixin(MGF("mReceivedNewEvent", "Function Engine.Pawn.ReceivedNewEvent")); }
+			ScriptFunction OnAssignController() { mixin(MGF("mOnAssignController", "Function Engine.Pawn.OnAssignController")); }
+			ScriptFunction OnGiveInventory() { mixin(MGF("mOnGiveInventory", "Function Engine.Pawn.OnGiveInventory")); }
+			ScriptFunction Gasp() { mixin(MGF("mGasp", "Function Engine.Pawn.Gasp")); }
+			ScriptFunction SetMovementPhysics() { mixin(MGF("mSetMovementPhysics", "Function Engine.Pawn.SetMovementPhysics")); }
+			ScriptFunction AdjustDamage() { mixin(MGF("mAdjustDamage", "Function Engine.Pawn.AdjustDamage")); }
+			ScriptFunction HealDamage() { mixin(MGF("mHealDamage", "Function Engine.Pawn.HealDamage")); }
+			ScriptFunction PruneDamagedBoneList() { mixin(MGF("mPruneDamagedBoneList", "Function Engine.Pawn.PruneDamagedBoneList")); }
+			ScriptFunction TakeRadiusDamageOnBones() { mixin(MGF("mTakeRadiusDamageOnBones", "Function Engine.Pawn.TakeRadiusDamageOnBones")); }
+			ScriptFunction NotifyTakeHit() { mixin(MGF("mNotifyTakeHit", "Function Engine.Pawn.NotifyTakeHit")); }
+			ScriptFunction SetKillInstigator() { mixin(MGF("mSetKillInstigator", "Function Engine.Pawn.SetKillInstigator")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.Pawn.TakeDamage")); }
+			ScriptFunction GetTeamNum() { mixin(MGF("mGetTeamNum", "Function Engine.Pawn.GetTeamNum")); }
+			ScriptFunction GetTeam() { mixin(MGF("mGetTeam", "Function Engine.Pawn.GetTeam")); }
+			ScriptFunction IsSameTeam() { mixin(MGF("mIsSameTeam", "Function Engine.Pawn.IsSameTeam")); }
+			ScriptFunction ThrowWeaponOnDeath() { mixin(MGF("mThrowWeaponOnDeath", "Function Engine.Pawn.ThrowWeaponOnDeath")); }
+			ScriptFunction DelayTriggerDeath() { mixin(MGF("mDelayTriggerDeath", "Function Engine.Pawn.DelayTriggerDeath")); }
+			ScriptFunction Falling() { mixin(MGF("mFalling", "Function Engine.Pawn.Falling")); }
+			ScriptFunction Landed() { mixin(MGF("mLanded", "Function Engine.Pawn.Landed")); }
+			ScriptFunction TickSpecial() { mixin(MGF("mTickSpecial", "Function Engine.Pawn.TickSpecial")); }
+			ScriptFunction HeadVolumeChange() { mixin(MGF("mHeadVolumeChange", "Function Engine.Pawn.HeadVolumeChange")); }
+			ScriptFunction BreathTimer() { mixin(MGF("mBreathTimer", "Function Engine.Pawn.BreathTimer")); }
+			ScriptFunction TakeDrowningDamage() { mixin(MGF("mTakeDrowningDamage", "Function Engine.Pawn.TakeDrowningDamage")); }
+			ScriptFunction PlayDyingSound() { mixin(MGF("mPlayDyingSound", "Function Engine.Pawn.PlayDyingSound")); }
+			ScriptFunction PlayHit() { mixin(MGF("mPlayHit", "Function Engine.Pawn.PlayHit")); }
+			ScriptFunction TurnOff() { mixin(MGF("mTurnOff", "Function Engine.Pawn.TurnOff")); }
+			ScriptFunction SetDyingPhysics() { mixin(MGF("mSetDyingPhysics", "Function Engine.Pawn.SetDyingPhysics")); }
+			ScriptFunction PlayDying() { mixin(MGF("mPlayDying", "Function Engine.Pawn.PlayDying")); }
+			ScriptFunction TornOff() { mixin(MGF("mTornOff", "Function Engine.Pawn.TornOff")); }
+			ScriptFunction PlayFootStepSound() { mixin(MGF("mPlayFootStepSound", "Function Engine.Pawn.PlayFootStepSound")); }
+			ScriptFunction PlayLanded() { mixin(MGF("mPlayLanded", "Function Engine.Pawn.PlayLanded")); }
+			ScriptFunction GetVehicleBase() { mixin(MGF("mGetVehicleBase", "Function Engine.Pawn.GetVehicleBase")); }
+			ScriptFunction Suicide() { mixin(MGF("mSuicide", "Function Engine.Pawn.Suicide")); }
+			ScriptFunction StartDriving() { mixin(MGF("mStartDriving", "Function Engine.Pawn.StartDriving")); }
+			ScriptFunction StopDriving() { mixin(MGF("mStopDriving", "Function Engine.Pawn.StopDriving")); }
+			ScriptFunction AddDefaultInventory() { mixin(MGF("mAddDefaultInventory", "Function Engine.Pawn.AddDefaultInventory")); }
+			ScriptFunction DrawHUD() { mixin(MGF("mDrawHUD", "Function Engine.Pawn.DrawHUD")); }
+			ScriptFunction ThrowActiveWeapon() { mixin(MGF("mThrowActiveWeapon", "Function Engine.Pawn.ThrowActiveWeapon")); }
+			ScriptFunction TossInventory() { mixin(MGF("mTossInventory", "Function Engine.Pawn.TossInventory")); }
+			ScriptFunction SetActiveWeapon() { mixin(MGF("mSetActiveWeapon", "Function Engine.Pawn.SetActiveWeapon")); }
+			ScriptFunction PlayWeaponSwitch() { mixin(MGF("mPlayWeaponSwitch", "Function Engine.Pawn.PlayWeaponSwitch")); }
+			ScriptFunction GetCollisionRadius() { mixin(MGF("mGetCollisionRadius", "Function Engine.Pawn.GetCollisionRadius")); }
+			ScriptFunction IsStationary() { mixin(MGF("mIsStationary", "Function Engine.Pawn.IsStationary")); }
+			ScriptFunction SpawnedByKismet() { mixin(MGF("mSpawnedByKismet", "Function Engine.Pawn.SpawnedByKismet")); }
+			ScriptFunction DoKismetAttachment() { mixin(MGF("mDoKismetAttachment", "Function Engine.Pawn.DoKismetAttachment")); }
+			ScriptFunction GetDamageScaling() { mixin(MGF("mGetDamageScaling", "Function Engine.Pawn.GetDamageScaling")); }
+			ScriptFunction OnSetMaterial() { mixin(MGF("mOnSetMaterial", "Function Engine.Pawn.OnSetMaterial")); }
+			ScriptFunction OnTeleport() { mixin(MGF("mOnTeleport", "Function Engine.Pawn.OnTeleport")); }
+			ScriptFunction MessagePlayer() { mixin(MGF("mMessagePlayer", "Function Engine.Pawn.MessagePlayer")); }
+			ScriptFunction BecomeViewTarget() { mixin(MGF("mBecomeViewTarget", "Function Engine.Pawn.BecomeViewTarget")); }
+			ScriptFunction SoakPause() { mixin(MGF("mSoakPause", "Function Engine.Pawn.SoakPause")); }
+			ScriptFunction ClearConstraints() { mixin(MGF("mClearConstraints", "Function Engine.Pawn.ClearConstraints")); }
+			ScriptFunction AddPathConstraint() { mixin(MGF("mAddPathConstraint", "Function Engine.Pawn.AddPathConstraint")); }
+			ScriptFunction AddGoalEvaluator() { mixin(MGF("mAddGoalEvaluator", "Function Engine.Pawn.AddGoalEvaluator")); }
+			ScriptFunction CreatePathConstraint() { mixin(MGF("mCreatePathConstraint", "Function Engine.Pawn.CreatePathConstraint")); }
+			ScriptFunction IncrementPathStep() { mixin(MGF("mIncrementPathStep", "Function Engine.Pawn.IncrementPathStep")); }
+			ScriptFunction IncrementPathChild() { mixin(MGF("mIncrementPathChild", "Function Engine.Pawn.IncrementPathChild")); }
+			ScriptFunction DrawPathStep() { mixin(MGF("mDrawPathStep", "Function Engine.Pawn.DrawPathStep")); }
+			ScriptFunction ClearPathStep() { mixin(MGF("mClearPathStep", "Function Engine.Pawn.ClearPathStep")); }
+			ScriptFunction ZeroMovementVariables() { mixin(MGF("mZeroMovementVariables", "Function Engine.Pawn.ZeroMovementVariables")); }
+			ScriptFunction SetCinematicMode() { mixin(MGF("mSetCinematicMode", "Function Engine.Pawn.SetCinematicMode")); }
+			ScriptFunction SetRootMotionInterpCurrentTime() { mixin(MGF("mSetRootMotionInterpCurrentTime", "Function Engine.Pawn.SetRootMotionInterpCurrentTime")); }
+			ScriptFunction Speak() { mixin(MGF("mSpeak", "Function Engine.Pawn.Speak")); }
+			ScriptFunction OnSetVelocity() { mixin(MGF("mOnSetVelocity", "Function Engine.Pawn.OnSetVelocity")); }
+			ScriptFunction CheckClotheslineDamage() { mixin(MGF("mCheckClotheslineDamage", "Function Engine.Pawn.CheckClotheslineDamage")); }
 		}
 	}
 	enum EPathSearchType : ubyte
@@ -520,13 +520,13 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Pawn.ScalarParameterInterpStruct")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Pawn.ScalarParameterInterpStruct")); }
 		@property final auto ref
 		{
-			float WarmupTime() { mixin(MGPS!("float", 16)()); }
-			float InterpTime() { mixin(MGPS!("float", 12)()); }
-			float ParameterValue() { mixin(MGPS!("float", 8)()); }
-			ScriptName ParameterName() { mixin(MGPS!("ScriptName", 0)()); }
+			float WarmupTime() { mixin(MGPS("float", 16)); }
+			float InterpTime() { mixin(MGPS("float", 12)); }
+			float ParameterValue() { mixin(MGPS("float", 8)); }
+			ScriptName ParameterName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct LastHitInfoStruct
@@ -534,276 +534,276 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Pawn.LastHitInfoStruct")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Pawn.LastHitInfoStruct")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptClass Type() { mixin(MGPS!("ScriptClass", 16)()); }
-				Actor Causer() { mixin(MGPS!("Actor", 12)()); }
-				float Distance() { mixin(MGPS!("float", 8)()); }
-				float Amount() { mixin(MGPS!("float", 4)()); }
+				ScriptClass Type() { mixin(MGPS("ScriptClass", 16)); }
+				Actor Causer() { mixin(MGPS("Actor", 12)); }
+				float Distance() { mixin(MGPS("float", 8)); }
+				float Amount() { mixin(MGPS("float", 4)); }
 			}
-			bool bDirectHit() { mixin(MGBPS!(0, 0x1)()); }
-			bool bDirectHit(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bDirectHit() { mixin(MGBPS(0, 0x1)); }
+			bool bDirectHit(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	static struct Dying
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Pawn.Dying")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Pawn.Dying")); }
 	}
 	@property final
 	{
 		auto ref
 		{
 			// WARNING: Property 'Controller' has the same name as a defined type!
-			int MaxPitchLimit() { mixin(MGPC!("int", 664)()); }
+			int MaxPitchLimit() { mixin(MGPC("int", 664)); }
 			// WARNING: Property 'Weapon' has the same name as a defined type!
-			InventoryManager InvManager() { mixin(MGPC!("InventoryManager", 980)()); }
+			InventoryManager InvManager() { mixin(MGPC("InventoryManager", 980)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
-			float EyeHeight() { mixin(MGPC!("float", 728)()); }
-			float BaseEyeHeight() { mixin(MGPC!("float", 724)()); }
-			int Health() { mixin(MGPC!("int", 752)()); }
-			Vector Floor() { mixin(MGPC!("Vector", 732)()); }
+			float EyeHeight() { mixin(MGPC("float", 728)); }
+			float BaseEyeHeight() { mixin(MGPC("float", 724)); }
+			int Health() { mixin(MGPC("int", 752)); }
+			Vector Floor() { mixin(MGPC("Vector", 732)); }
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-			float CrouchHeight() { mixin(MGPC!("float", 548)()); }
-			float MaxStepHeight() { mixin(MGPC!("float", 480)()); }
-			float VehicleCheckRadius() { mixin(MGPC!("float", 944)()); }
-			float LastStartTime() { mixin(MGPC!("float", 888)()); }
-			PhysicsVolume HeadVolume() { mixin(MGPC!("PhysicsVolume", 748)()); }
-			float BreathTime() { mixin(MGPC!("float", 760)()); }
-			float UnderWaterTime() { mixin(MGPC!("float", 764)()); }
-			ScriptName WaterMovementState() { mixin(MGPC!("ScriptName", 876)()); }
-			ScriptName LandMovementState() { mixin(MGPC!("ScriptName", 868)()); }
-			float AccelRate() { mixin(MGPC!("float", 684)()); }
-			Actor.EPhysics WalkingPhysics() { mixin(MGPC!("Actor.EPhysics", 536)()); }
-			LadderVolume OnLadder() { mixin(MGPC!("LadderVolume", 864)()); }
-			float OutofWaterZ() { mixin(MGPC!("float", 692)()); }
-			NavigationPoint Anchor() { mixin(MGPC!("NavigationPoint", 612)()); }
-			ScriptArray!(AnimNodeSlot) SlotNodes() { mixin(MGPC!("ScriptArray!(AnimNodeSlot)", 1028)()); }
-			ScriptArray!(InterpGroup) InterpGroupList() { mixin(MGPC!("ScriptArray!(InterpGroup)", 1040)()); }
-			ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { mixin(MGPC!("ScriptArray!(Pawn.ScalarParameterInterpStruct)", 1064)()); }
-			Pawn.LastHitInfoStruct LastHitInfo() { mixin(MGPC!("Pawn.LastHitInfoStruct", 1124)()); }
-			Vector RootMotionInterpCurveLastValue() { mixin(MGPC!("Vector", 1112)()); }
-			float RootMotionInterpCurrentTime() { mixin(MGPC!("float", 1108)()); }
-			float RootMotionInterpRate() { mixin(MGPC!("float", 1104)()); }
-			EngineTypes.RootMotionCurve RootMotionInterpCurve() { mixin(MGPC!("EngineTypes.RootMotionCurve", 1076)()); }
-			MaterialInstanceConstant MIC_PawnHair() { mixin(MGPC!("MaterialInstanceConstant", 1060)()); }
-			MaterialInstanceConstant MIC_PawnMat() { mixin(MGPC!("MaterialInstanceConstant", 1056)()); }
+			float CrouchHeight() { mixin(MGPC("float", 548)); }
+			float MaxStepHeight() { mixin(MGPC("float", 480)); }
+			float VehicleCheckRadius() { mixin(MGPC("float", 944)); }
+			float LastStartTime() { mixin(MGPC("float", 888)); }
+			PhysicsVolume HeadVolume() { mixin(MGPC("PhysicsVolume", 748)); }
+			float BreathTime() { mixin(MGPC("float", 760)); }
+			float UnderWaterTime() { mixin(MGPC("float", 764)); }
+			ScriptName WaterMovementState() { mixin(MGPC("ScriptName", 876)); }
+			ScriptName LandMovementState() { mixin(MGPC("ScriptName", 868)); }
+			float AccelRate() { mixin(MGPC("float", 684)); }
+			Actor.EPhysics WalkingPhysics() { mixin(MGPC("Actor.EPhysics", 536)); }
+			LadderVolume OnLadder() { mixin(MGPC("LadderVolume", 864)); }
+			float OutofWaterZ() { mixin(MGPC("float", 692)); }
+			NavigationPoint Anchor() { mixin(MGPC("NavigationPoint", 612)); }
+			ScriptArray!(AnimNodeSlot) SlotNodes() { mixin(MGPC("ScriptArray!(AnimNodeSlot)", 1028)); }
+			ScriptArray!(InterpGroup) InterpGroupList() { mixin(MGPC("ScriptArray!(InterpGroup)", 1040)); }
+			ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { mixin(MGPC("ScriptArray!(Pawn.ScalarParameterInterpStruct)", 1064)); }
+			Pawn.LastHitInfoStruct LastHitInfo() { mixin(MGPC("Pawn.LastHitInfoStruct", 1124)); }
+			Vector RootMotionInterpCurveLastValue() { mixin(MGPC("Vector", 1112)); }
+			float RootMotionInterpCurrentTime() { mixin(MGPC("float", 1108)); }
+			float RootMotionInterpRate() { mixin(MGPC("float", 1104)); }
+			EngineTypes.RootMotionCurve RootMotionInterpCurve() { mixin(MGPC("EngineTypes.RootMotionCurve", 1076)); }
+			MaterialInstanceConstant MIC_PawnHair() { mixin(MGPC("MaterialInstanceConstant", 1060)); }
+			MaterialInstanceConstant MIC_PawnMat() { mixin(MGPC("MaterialInstanceConstant", 1056)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FacialAudioComp'!
-			int FailedLandingCount() { mixin(MGPC!("int", 1024)()); }
-			RB_BodyInstance PhysicsPushBody() { mixin(MGPC!("RB_BodyInstance", 1020)()); }
+			int FailedLandingCount() { mixin(MGPC("int", 1024)); }
+			RB_BodyInstance PhysicsPushBody() { mixin(MGPC("RB_BodyInstance", 1020)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreRagdollCollisionComponent'!
-			int ShotCount() { mixin(MGPC!("int", 1012)()); }
-			Vector LastFiringFlashLocation() { mixin(MGPC!("Vector", 1000)()); }
-			Vector FlashLocation() { mixin(MGPC!("Vector", 988)()); }
-			ScriptClass InventoryManagerClass() { mixin(MGPC!("ScriptClass", 976)()); }
-			Rotator DesiredRotation() { mixin(MGPC!("Rotator", 964)()); }
-			int AllowedYawError() { mixin(MGPC!("int", 960)()); }
-			float ViewPitchMax() { mixin(MGPC!("float", 956)()); }
-			float ViewPitchMin() { mixin(MGPC!("float", 952)()); }
-			Controller LastHitBy() { mixin(MGPC!("Controller", 948)()); }
-			float AlwaysRelevantDistanceSquared() { mixin(MGPC!("float", 940)()); }
-			Vehicle DrivenVehicle() { mixin(MGPC!("Vehicle", 936)()); }
-			float RBPushStrength() { mixin(MGPC!("float", 932)()); }
-			float RBPushRadius() { mixin(MGPC!("float", 928)()); }
-			Vector TearOffMomentum() { mixin(MGPC!("Vector", 908)()); }
-			ScriptClass HitDamageType() { mixin(MGPC!("ScriptClass", 904)()); }
-			Vector TakeHitLocation() { mixin(MGPC!("Vector", 892)()); }
-			PlayerStart LastStartSpot() { mixin(MGPC!("PlayerStart", 884)()); }
+			int ShotCount() { mixin(MGPC("int", 1012)); }
+			Vector LastFiringFlashLocation() { mixin(MGPC("Vector", 1000)); }
+			Vector FlashLocation() { mixin(MGPC("Vector", 988)); }
+			ScriptClass InventoryManagerClass() { mixin(MGPC("ScriptClass", 976)); }
+			Rotator DesiredRotation() { mixin(MGPC("Rotator", 964)); }
+			int AllowedYawError() { mixin(MGPC("int", 960)); }
+			float ViewPitchMax() { mixin(MGPC("float", 956)); }
+			float ViewPitchMin() { mixin(MGPC("float", 952)); }
+			Controller LastHitBy() { mixin(MGPC("Controller", 948)); }
+			float AlwaysRelevantDistanceSquared() { mixin(MGPC("float", 940)); }
+			Vehicle DrivenVehicle() { mixin(MGPC("Vehicle", 936)); }
+			float RBPushStrength() { mixin(MGPC("float", 932)); }
+			float RBPushRadius() { mixin(MGPC("float", 928)); }
+			Vector TearOffMomentum() { mixin(MGPC("Vector", 908)); }
+			ScriptClass HitDamageType() { mixin(MGPC("ScriptClass", 904)); }
+			Vector TakeHitLocation() { mixin(MGPC("Vector", 892)); }
+			PlayerStart LastStartSpot() { mixin(MGPC("PlayerStart", 884)); }
 			// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
-			ScriptClass ControllerClass() { mixin(MGPC!("ScriptClass", 856)()); }
-			ScriptString MenuName() { mixin(MGPC!("ScriptString", 844)()); }
-			float DamageScaling() { mixin(MGPC!("float", 840)()); }
-			float SoundDampening() { mixin(MGPC!("float", 836)()); }
-			float noise2loudness() { mixin(MGPC!("float", 832)()); }
-			Pawn noise2other() { mixin(MGPC!("Pawn", 828)()); }
-			float noise2time() { mixin(MGPC!("float", 824)()); }
-			Vector noise2spot() { mixin(MGPC!("Vector", 812)()); }
-			float noise1loudness() { mixin(MGPC!("float", 808)()); }
-			Pawn noise1other() { mixin(MGPC!("Pawn", 804)()); }
-			float noise1time() { mixin(MGPC!("float", 800)()); }
-			Vector noise1spot() { mixin(MGPC!("Vector", 788)()); }
-			Vector RMVelocity() { mixin(MGPC!("Vector", 776)()); }
-			float KismetDeathDelayTime() { mixin(MGPC!("float", 772)()); }
-			float LastPainTime() { mixin(MGPC!("float", 768)()); }
-			int HealthMax() { mixin(MGPC!("int", 756)()); }
-			float SplashTime() { mixin(MGPC!("float", 744)()); }
-			float AIMaxFallSpeedFactor() { mixin(MGPC!("float", 720)()); }
-			float MaxFallSpeed() { mixin(MGPC!("float", 716)()); }
-			float CrouchedPct() { mixin(MGPC!("float", 712)()); }
-			float MovementSpeedModifier() { mixin(MGPC!("float", 708)()); }
-			float WalkingPct() { mixin(MGPC!("float", 704)()); }
-			float AirControl() { mixin(MGPC!("float", 700)()); }
-			float MaxOutOfWaterStepHeight() { mixin(MGPC!("float", 696)()); }
-			float JumpZ() { mixin(MGPC!("float", 688)()); }
-			float LadderSpeed() { mixin(MGPC!("float", 680)()); }
-			float AirSpeed() { mixin(MGPC!("float", 676)()); }
-			float WaterSpeed() { mixin(MGPC!("float", 672)()); }
-			float GroundSpeed() { mixin(MGPC!("float", 668)()); }
-			float SpawnTime() { mixin(MGPC!("float", 660)()); }
-			float SerpentineTime() { mixin(MGPC!("float", 656)()); }
-			float SerpentineDist() { mixin(MGPC!("float", 652)()); }
-			Vector SerpentineDir() { mixin(MGPC!("Vector", 640)()); }
-			float NextPathRadius() { mixin(MGPC!("float", 636)()); }
-			float DestinationOffset() { mixin(MGPC!("float", 632)()); }
-			float LastValidAnchorTime() { mixin(MGPC!("float", 628)()); }
-			float FindAnchorFailedTime() { mixin(MGPC!("float", 624)()); }
-			NavigationPoint LastAnchor() { mixin(MGPC!("NavigationPoint", 620)()); }
-			int AnchorItem() { mixin(MGPC!("int", 616)()); }
-			float MeleeRange() { mixin(MGPC!("float", 608)()); }
-			float Buoyancy() { mixin(MGPC!("float", 604)()); }
-			float Mass() { mixin(MGPC!("float", 600)()); }
-			float AvgPhysicsTime() { mixin(MGPC!("float", 596)()); }
-			float PeripheralVision() { mixin(MGPC!("float", 592)()); }
-			float SightRadius() { mixin(MGPC!("float", 588)()); }
-			float Alertness() { mixin(MGPC!("float", 584)()); }
-			float HearingThreshold() { mixin(MGPC!("float", 580)()); }
-			float MaxDesiredSpeed() { mixin(MGPC!("float", 576)()); }
-			float DesiredSpeed() { mixin(MGPC!("float", 572)()); }
-			PathGoalEvaluator PathGoalList() { mixin(MGPC!("PathGoalEvaluator", 568)()); }
-			PathConstraint PathConstraintList() { mixin(MGPC!("PathConstraint", 564)()); }
-			float NonPreferredVehiclePathMultiplier() { mixin(MGPC!("float", 560)()); }
-			int FullHeight() { mixin(MGPC!("int", 556)()); }
-			float CrouchRadius() { mixin(MGPC!("float", 552)()); }
-			float UncrouchTime() { mixin(MGPC!("float", 544)()); }
-			ubyte FiringMode() { mixin(MGPC!("ubyte", 540)()); }
-			ubyte FlashCount() { mixin(MGPC!("ubyte", 539)()); }
-			ubyte RemoteViewPitch() { mixin(MGPC!("ubyte", 538)()); }
-			Pawn.EPathSearchType PathSearchType() { mixin(MGPC!("Pawn.EPathSearchType", 537)()); }
-			UObject.Pointer VfTable_IInterface_Speaker() { mixin(MGPC!("UObject.Pointer", 476)()); }
-			Actor LastViewer() { mixin(MGPC!("Actor", 524)()); }
-			PlayerController LastRealViewer() { mixin(MGPC!("PlayerController", 520)()); }
-			float NetRelevancyTime() { mixin(MGPC!("float", 516)()); }
-			Pawn NextPawn() { mixin(MGPC!("Pawn", 512)()); }
-			Vector PartialLedgeMoveDir() { mixin(MGPC!("Vector", 496)()); }
-			float LedgeCheckThreshold() { mixin(MGPC!("float", 492)()); }
-			float WalkableFloorZ() { mixin(MGPC!("float", 488)()); }
-			float MaxJumpHeight() { mixin(MGPC!("float", 484)()); }
+			ScriptClass ControllerClass() { mixin(MGPC("ScriptClass", 856)); }
+			ScriptString MenuName() { mixin(MGPC("ScriptString", 844)); }
+			float DamageScaling() { mixin(MGPC("float", 840)); }
+			float SoundDampening() { mixin(MGPC("float", 836)); }
+			float noise2loudness() { mixin(MGPC("float", 832)); }
+			Pawn noise2other() { mixin(MGPC("Pawn", 828)); }
+			float noise2time() { mixin(MGPC("float", 824)); }
+			Vector noise2spot() { mixin(MGPC("Vector", 812)); }
+			float noise1loudness() { mixin(MGPC("float", 808)); }
+			Pawn noise1other() { mixin(MGPC("Pawn", 804)); }
+			float noise1time() { mixin(MGPC("float", 800)); }
+			Vector noise1spot() { mixin(MGPC("Vector", 788)); }
+			Vector RMVelocity() { mixin(MGPC("Vector", 776)); }
+			float KismetDeathDelayTime() { mixin(MGPC("float", 772)); }
+			float LastPainTime() { mixin(MGPC("float", 768)); }
+			int HealthMax() { mixin(MGPC("int", 756)); }
+			float SplashTime() { mixin(MGPC("float", 744)); }
+			float AIMaxFallSpeedFactor() { mixin(MGPC("float", 720)); }
+			float MaxFallSpeed() { mixin(MGPC("float", 716)); }
+			float CrouchedPct() { mixin(MGPC("float", 712)); }
+			float MovementSpeedModifier() { mixin(MGPC("float", 708)); }
+			float WalkingPct() { mixin(MGPC("float", 704)); }
+			float AirControl() { mixin(MGPC("float", 700)); }
+			float MaxOutOfWaterStepHeight() { mixin(MGPC("float", 696)); }
+			float JumpZ() { mixin(MGPC("float", 688)); }
+			float LadderSpeed() { mixin(MGPC("float", 680)); }
+			float AirSpeed() { mixin(MGPC("float", 676)); }
+			float WaterSpeed() { mixin(MGPC("float", 672)); }
+			float GroundSpeed() { mixin(MGPC("float", 668)); }
+			float SpawnTime() { mixin(MGPC("float", 660)); }
+			float SerpentineTime() { mixin(MGPC("float", 656)); }
+			float SerpentineDist() { mixin(MGPC("float", 652)); }
+			Vector SerpentineDir() { mixin(MGPC("Vector", 640)); }
+			float NextPathRadius() { mixin(MGPC("float", 636)); }
+			float DestinationOffset() { mixin(MGPC("float", 632)); }
+			float LastValidAnchorTime() { mixin(MGPC("float", 628)); }
+			float FindAnchorFailedTime() { mixin(MGPC("float", 624)); }
+			NavigationPoint LastAnchor() { mixin(MGPC("NavigationPoint", 620)); }
+			int AnchorItem() { mixin(MGPC("int", 616)); }
+			float MeleeRange() { mixin(MGPC("float", 608)); }
+			float Buoyancy() { mixin(MGPC("float", 604)); }
+			float Mass() { mixin(MGPC("float", 600)); }
+			float AvgPhysicsTime() { mixin(MGPC("float", 596)); }
+			float PeripheralVision() { mixin(MGPC("float", 592)); }
+			float SightRadius() { mixin(MGPC("float", 588)); }
+			float Alertness() { mixin(MGPC("float", 584)); }
+			float HearingThreshold() { mixin(MGPC("float", 580)); }
+			float MaxDesiredSpeed() { mixin(MGPC("float", 576)); }
+			float DesiredSpeed() { mixin(MGPC("float", 572)); }
+			PathGoalEvaluator PathGoalList() { mixin(MGPC("PathGoalEvaluator", 568)); }
+			PathConstraint PathConstraintList() { mixin(MGPC("PathConstraint", 564)); }
+			float NonPreferredVehiclePathMultiplier() { mixin(MGPC("float", 560)); }
+			int FullHeight() { mixin(MGPC("int", 556)); }
+			float CrouchRadius() { mixin(MGPC("float", 552)); }
+			float UncrouchTime() { mixin(MGPC("float", 544)); }
+			ubyte FiringMode() { mixin(MGPC("ubyte", 540)); }
+			ubyte FlashCount() { mixin(MGPC("ubyte", 539)); }
+			ubyte RemoteViewPitch() { mixin(MGPC("ubyte", 538)); }
+			Pawn.EPathSearchType PathSearchType() { mixin(MGPC("Pawn.EPathSearchType", 537)); }
+			UObject.Pointer VfTable_IInterface_Speaker() { mixin(MGPC("UObject.Pointer", 476)); }
+			Actor LastViewer() { mixin(MGPC("Actor", 524)); }
+			PlayerController LastRealViewer() { mixin(MGPC("PlayerController", 520)); }
+			float NetRelevancyTime() { mixin(MGPC("float", 516)); }
+			Pawn NextPawn() { mixin(MGPC("Pawn", 512)); }
+			Vector PartialLedgeMoveDir() { mixin(MGPC("Vector", 496)); }
+			float LedgeCheckThreshold() { mixin(MGPC("float", 492)); }
+			float WalkableFloorZ() { mixin(MGPC("float", 488)); }
+			float MaxJumpHeight() { mixin(MGPC("float", 484)); }
 		}
-		bool bIsWalking() { mixin(MGBPC!(528, 0x4)()); }
-		bool bIsWalking(bool val) { mixin(MSBPC!(528, 0x4)()); }
-		bool bForceRMVelocity() { mixin(MGBPC!(532, 0x100000)()); }
-		bool bForceRMVelocity(bool val) { mixin(MSBPC!(532, 0x100000)()); }
-		bool bRootMotionFromInterpCurve() { mixin(MGBPC!(532, 0x8000000)()); }
-		bool bRootMotionFromInterpCurve(bool val) { mixin(MSBPC!(532, 0x8000000)()); }
-		bool bIsCrouched() { mixin(MGBPC!(528, 0x10)()); }
-		bool bIsCrouched(bool val) { mixin(MSBPC!(528, 0x10)()); }
-		bool bForceMaxAccel() { mixin(MGBPC!(532, 0x20000)()); }
-		bool bForceMaxAccel(bool val) { mixin(MSBPC!(532, 0x20000)()); }
-		bool bUpAndOut() { mixin(MGBPC!(528, 0x2)()); }
-		bool bUpAndOut(bool val) { mixin(MSBPC!(528, 0x2)()); }
-		bool bDebugShowCameraLocation() { mixin(MGBPC!(532, 0x10000000)()); }
-		bool bDebugShowCameraLocation(bool val) { mixin(MSBPC!(532, 0x10000000)()); }
-		bool bNeedsBaseTickedFirst() { mixin(MGBPC!(532, 0x4000000)()); }
-		bool bNeedsBaseTickedFirst(bool val) { mixin(MSBPC!(532, 0x4000000)()); }
-		bool bUnlockWhenReached() { mixin(MGBPC!(532, 0x2000000)()); }
-		bool bUnlockWhenReached(bool val) { mixin(MSBPC!(532, 0x2000000)()); }
-		bool bLockDesiredRotation() { mixin(MGBPC!(532, 0x1000000)()); }
-		bool bLockDesiredRotation(bool val) { mixin(MSBPC!(532, 0x1000000)()); }
-		bool bDesiredRotationSet() { mixin(MGBPC!(532, 0x800000)()); }
-		bool bDesiredRotationSet(bool val) { mixin(MSBPC!(532, 0x800000)()); }
-		bool bPlayedDeath() { mixin(MGBPC!(532, 0x400000)()); }
-		bool bPlayedDeath(bool val) { mixin(MSBPC!(532, 0x400000)()); }
-		bool bForceRegularVelocity() { mixin(MGBPC!(532, 0x200000)()); }
-		bool bForceRegularVelocity(bool val) { mixin(MSBPC!(532, 0x200000)()); }
-		bool bReplicateHealthToAll() { mixin(MGBPC!(532, 0x80000)()); }
-		bool bReplicateHealthToAll(bool val) { mixin(MSBPC!(532, 0x80000)()); }
-		bool bLimitFallAccel() { mixin(MGBPC!(532, 0x40000)()); }
-		bool bLimitFallAccel(bool val) { mixin(MSBPC!(532, 0x40000)()); }
-		bool bRunPhysicsWithNoController() { mixin(MGBPC!(532, 0x10000)()); }
-		bool bRunPhysicsWithNoController(bool val) { mixin(MSBPC!(532, 0x10000)()); }
-		bool bPathfindsAsVehicle() { mixin(MGBPC!(532, 0x8000)()); }
-		bool bPathfindsAsVehicle(bool val) { mixin(MSBPC!(532, 0x8000)()); }
-		bool bModifyNavPointDest() { mixin(MGBPC!(532, 0x4000)()); }
-		bool bModifyNavPointDest(bool val) { mixin(MSBPC!(532, 0x4000)()); }
-		bool bModifyReachSpecCost() { mixin(MGBPC!(532, 0x2000)()); }
-		bool bModifyReachSpecCost(bool val) { mixin(MSBPC!(532, 0x2000)()); }
-		bool bNoWeaponFiring() { mixin(MGBPC!(532, 0x1000)()); }
-		bool bNoWeaponFiring(bool val) { mixin(MSBPC!(532, 0x1000)()); }
-		bool bCachedRelevant() { mixin(MGBPC!(532, 0x800)()); }
-		bool bCachedRelevant(bool val) { mixin(MSBPC!(532, 0x800)()); }
-		bool bStationary() { mixin(MGBPC!(532, 0x400)()); }
-		bool bStationary(bool val) { mixin(MSBPC!(532, 0x400)()); }
-		bool bRollToDesired() { mixin(MGBPC!(532, 0x200)()); }
-		bool bRollToDesired(bool val) { mixin(MSBPC!(532, 0x200)()); }
-		bool bDontPossess() { mixin(MGBPC!(532, 0x100)()); }
-		bool bDontPossess(bool val) { mixin(MSBPC!(532, 0x100)()); }
-		bool bMuffledHearing() { mixin(MGBPC!(532, 0x80)()); }
-		bool bMuffledHearing(bool val) { mixin(MSBPC!(532, 0x80)()); }
-		bool bLOSHearing() { mixin(MGBPC!(532, 0x40)()); }
-		bool bLOSHearing(bool val) { mixin(MSBPC!(532, 0x40)()); }
-		bool bAmbientCreature() { mixin(MGBPC!(532, 0x20)()); }
-		bool bAmbientCreature(bool val) { mixin(MSBPC!(532, 0x20)()); }
-		bool bCanPickupInventory() { mixin(MGBPC!(532, 0x10)()); }
-		bool bCanPickupInventory(bool val) { mixin(MSBPC!(532, 0x10)()); }
-		bool bDisplayPathErrors() { mixin(MGBPC!(532, 0x8)()); }
-		bool bDisplayPathErrors(bool val) { mixin(MSBPC!(532, 0x8)()); }
-		bool bCanCoverSlip() { mixin(MGBPC!(532, 0x4)()); }
-		bool bCanCoverSlip(bool val) { mixin(MSBPC!(532, 0x4)()); }
-		bool bCanLeap() { mixin(MGBPC!(532, 0x2)()); }
-		bool bCanLeap(bool val) { mixin(MSBPC!(532, 0x2)()); }
-		bool bCanSwatTurn() { mixin(MGBPC!(532, 0x1)()); }
-		bool bCanSwatTurn(bool val) { mixin(MSBPC!(532, 0x1)()); }
-		bool bCanClimbCeilings() { mixin(MGBPC!(528, 0x80000000)()); }
-		bool bCanClimbCeilings(bool val) { mixin(MSBPC!(528, 0x80000000)()); }
-		bool bCanClimbUp() { mixin(MGBPC!(528, 0x40000000)()); }
-		bool bCanClimbUp(bool val) { mixin(MSBPC!(528, 0x40000000)()); }
-		bool bCanMantle() { mixin(MGBPC!(528, 0x20000000)()); }
-		bool bCanMantle(bool val) { mixin(MSBPC!(528, 0x20000000)()); }
-		bool bForceKeepAnchor() { mixin(MGBPC!(528, 0x10000000)()); }
-		bool bForceKeepAnchor(bool val) { mixin(MSBPC!(528, 0x10000000)()); }
-		bool bForceFloorCheck() { mixin(MGBPC!(528, 0x8000000)()); }
-		bool bForceFloorCheck(bool val) { mixin(MSBPC!(528, 0x8000000)()); }
-		bool bPushesRigidBodies() { mixin(MGBPC!(528, 0x4000000)()); }
-		bool bPushesRigidBodies(bool val) { mixin(MSBPC!(528, 0x4000000)()); }
-		bool bDirectHitWall() { mixin(MGBPC!(528, 0x2000000)()); }
-		bool bDirectHitWall(bool val) { mixin(MSBPC!(528, 0x2000000)()); }
-		bool bSimGravityDisabled() { mixin(MGBPC!(528, 0x1000000)()); }
-		bool bSimGravityDisabled(bool val) { mixin(MSBPC!(528, 0x1000000)()); }
-		bool bCanBeBaseForPawns() { mixin(MGBPC!(528, 0x800000)()); }
-		bool bCanBeBaseForPawns(bool val) { mixin(MSBPC!(528, 0x800000)()); }
-		bool bCanWalkOffLedges() { mixin(MGBPC!(528, 0x400000)()); }
-		bool bCanWalkOffLedges(bool val) { mixin(MSBPC!(528, 0x400000)()); }
-		bool bIgnoreForces() { mixin(MGBPC!(528, 0x200000)()); }
-		bool bIgnoreForces(bool val) { mixin(MSBPC!(528, 0x200000)()); }
-		bool bSimulateGravity() { mixin(MGBPC!(528, 0x100000)()); }
-		bool bSimulateGravity(bool val) { mixin(MSBPC!(528, 0x100000)()); }
-		bool bPartiallyOverLedge() { mixin(MGBPC!(528, 0x80000)()); }
-		bool bPartiallyOverLedge(bool val) { mixin(MSBPC!(528, 0x80000)()); }
-		bool bAllowLedgeOverhang() { mixin(MGBPC!(528, 0x40000)()); }
-		bool bAllowLedgeOverhang(bool val) { mixin(MSBPC!(528, 0x40000)()); }
-		bool bStopAtLedges() { mixin(MGBPC!(528, 0x20000)()); }
-		bool bStopAtLedges(bool val) { mixin(MSBPC!(528, 0x20000)()); }
-		bool bAvoidLedges() { mixin(MGBPC!(528, 0x10000)()); }
-		bool bAvoidLedges(bool val) { mixin(MSBPC!(528, 0x10000)()); }
-		bool bCanStrafe() { mixin(MGBPC!(528, 0x8000)()); }
-		bool bCanStrafe(bool val) { mixin(MSBPC!(528, 0x8000)()); }
-		bool bCanClimbLadders() { mixin(MGBPC!(528, 0x4000)()); }
-		bool bCanClimbLadders(bool val) { mixin(MSBPC!(528, 0x4000)()); }
-		bool bCanFly() { mixin(MGBPC!(528, 0x2000)()); }
-		bool bCanFly(bool val) { mixin(MSBPC!(528, 0x2000)()); }
-		bool bCanSwim() { mixin(MGBPC!(528, 0x1000)()); }
-		bool bCanSwim(bool val) { mixin(MSBPC!(528, 0x1000)()); }
-		bool bCanWalk() { mixin(MGBPC!(528, 0x800)()); }
-		bool bCanWalk(bool val) { mixin(MSBPC!(528, 0x800)()); }
-		bool bCanJump() { mixin(MGBPC!(528, 0x400)()); }
-		bool bCanJump(bool val) { mixin(MSBPC!(528, 0x400)()); }
-		bool bJumpCapable() { mixin(MGBPC!(528, 0x200)()); }
-		bool bJumpCapable(bool val) { mixin(MSBPC!(528, 0x200)()); }
-		bool bReducedSpeed() { mixin(MGBPC!(528, 0x100)()); }
-		bool bReducedSpeed(bool val) { mixin(MSBPC!(528, 0x100)()); }
-		bool bCrawler() { mixin(MGBPC!(528, 0x80)()); }
-		bool bCrawler(bool val) { mixin(MSBPC!(528, 0x80)()); }
-		bool bCanCrouch() { mixin(MGBPC!(528, 0x40)()); }
-		bool bCanCrouch(bool val) { mixin(MSBPC!(528, 0x40)()); }
-		bool bTryToUncrouch() { mixin(MGBPC!(528, 0x20)()); }
-		bool bTryToUncrouch(bool val) { mixin(MSBPC!(528, 0x20)()); }
-		bool bWantsToCrouch() { mixin(MGBPC!(528, 0x8)()); }
-		bool bWantsToCrouch(bool val) { mixin(MSBPC!(528, 0x8)()); }
-		bool bScriptTickSpecial() { mixin(MGBPC!(528, 0x1)()); }
-		bool bScriptTickSpecial(bool val) { mixin(MSBPC!(528, 0x1)()); }
+		bool bIsWalking() { mixin(MGBPC(528, 0x4)); }
+		bool bIsWalking(bool val) { mixin(MSBPC(528, 0x4)); }
+		bool bForceRMVelocity() { mixin(MGBPC(532, 0x100000)); }
+		bool bForceRMVelocity(bool val) { mixin(MSBPC(532, 0x100000)); }
+		bool bRootMotionFromInterpCurve() { mixin(MGBPC(532, 0x8000000)); }
+		bool bRootMotionFromInterpCurve(bool val) { mixin(MSBPC(532, 0x8000000)); }
+		bool bIsCrouched() { mixin(MGBPC(528, 0x10)); }
+		bool bIsCrouched(bool val) { mixin(MSBPC(528, 0x10)); }
+		bool bForceMaxAccel() { mixin(MGBPC(532, 0x20000)); }
+		bool bForceMaxAccel(bool val) { mixin(MSBPC(532, 0x20000)); }
+		bool bUpAndOut() { mixin(MGBPC(528, 0x2)); }
+		bool bUpAndOut(bool val) { mixin(MSBPC(528, 0x2)); }
+		bool bDebugShowCameraLocation() { mixin(MGBPC(532, 0x10000000)); }
+		bool bDebugShowCameraLocation(bool val) { mixin(MSBPC(532, 0x10000000)); }
+		bool bNeedsBaseTickedFirst() { mixin(MGBPC(532, 0x4000000)); }
+		bool bNeedsBaseTickedFirst(bool val) { mixin(MSBPC(532, 0x4000000)); }
+		bool bUnlockWhenReached() { mixin(MGBPC(532, 0x2000000)); }
+		bool bUnlockWhenReached(bool val) { mixin(MSBPC(532, 0x2000000)); }
+		bool bLockDesiredRotation() { mixin(MGBPC(532, 0x1000000)); }
+		bool bLockDesiredRotation(bool val) { mixin(MSBPC(532, 0x1000000)); }
+		bool bDesiredRotationSet() { mixin(MGBPC(532, 0x800000)); }
+		bool bDesiredRotationSet(bool val) { mixin(MSBPC(532, 0x800000)); }
+		bool bPlayedDeath() { mixin(MGBPC(532, 0x400000)); }
+		bool bPlayedDeath(bool val) { mixin(MSBPC(532, 0x400000)); }
+		bool bForceRegularVelocity() { mixin(MGBPC(532, 0x200000)); }
+		bool bForceRegularVelocity(bool val) { mixin(MSBPC(532, 0x200000)); }
+		bool bReplicateHealthToAll() { mixin(MGBPC(532, 0x80000)); }
+		bool bReplicateHealthToAll(bool val) { mixin(MSBPC(532, 0x80000)); }
+		bool bLimitFallAccel() { mixin(MGBPC(532, 0x40000)); }
+		bool bLimitFallAccel(bool val) { mixin(MSBPC(532, 0x40000)); }
+		bool bRunPhysicsWithNoController() { mixin(MGBPC(532, 0x10000)); }
+		bool bRunPhysicsWithNoController(bool val) { mixin(MSBPC(532, 0x10000)); }
+		bool bPathfindsAsVehicle() { mixin(MGBPC(532, 0x8000)); }
+		bool bPathfindsAsVehicle(bool val) { mixin(MSBPC(532, 0x8000)); }
+		bool bModifyNavPointDest() { mixin(MGBPC(532, 0x4000)); }
+		bool bModifyNavPointDest(bool val) { mixin(MSBPC(532, 0x4000)); }
+		bool bModifyReachSpecCost() { mixin(MGBPC(532, 0x2000)); }
+		bool bModifyReachSpecCost(bool val) { mixin(MSBPC(532, 0x2000)); }
+		bool bNoWeaponFiring() { mixin(MGBPC(532, 0x1000)); }
+		bool bNoWeaponFiring(bool val) { mixin(MSBPC(532, 0x1000)); }
+		bool bCachedRelevant() { mixin(MGBPC(532, 0x800)); }
+		bool bCachedRelevant(bool val) { mixin(MSBPC(532, 0x800)); }
+		bool bStationary() { mixin(MGBPC(532, 0x400)); }
+		bool bStationary(bool val) { mixin(MSBPC(532, 0x400)); }
+		bool bRollToDesired() { mixin(MGBPC(532, 0x200)); }
+		bool bRollToDesired(bool val) { mixin(MSBPC(532, 0x200)); }
+		bool bDontPossess() { mixin(MGBPC(532, 0x100)); }
+		bool bDontPossess(bool val) { mixin(MSBPC(532, 0x100)); }
+		bool bMuffledHearing() { mixin(MGBPC(532, 0x80)); }
+		bool bMuffledHearing(bool val) { mixin(MSBPC(532, 0x80)); }
+		bool bLOSHearing() { mixin(MGBPC(532, 0x40)); }
+		bool bLOSHearing(bool val) { mixin(MSBPC(532, 0x40)); }
+		bool bAmbientCreature() { mixin(MGBPC(532, 0x20)); }
+		bool bAmbientCreature(bool val) { mixin(MSBPC(532, 0x20)); }
+		bool bCanPickupInventory() { mixin(MGBPC(532, 0x10)); }
+		bool bCanPickupInventory(bool val) { mixin(MSBPC(532, 0x10)); }
+		bool bDisplayPathErrors() { mixin(MGBPC(532, 0x8)); }
+		bool bDisplayPathErrors(bool val) { mixin(MSBPC(532, 0x8)); }
+		bool bCanCoverSlip() { mixin(MGBPC(532, 0x4)); }
+		bool bCanCoverSlip(bool val) { mixin(MSBPC(532, 0x4)); }
+		bool bCanLeap() { mixin(MGBPC(532, 0x2)); }
+		bool bCanLeap(bool val) { mixin(MSBPC(532, 0x2)); }
+		bool bCanSwatTurn() { mixin(MGBPC(532, 0x1)); }
+		bool bCanSwatTurn(bool val) { mixin(MSBPC(532, 0x1)); }
+		bool bCanClimbCeilings() { mixin(MGBPC(528, 0x80000000)); }
+		bool bCanClimbCeilings(bool val) { mixin(MSBPC(528, 0x80000000)); }
+		bool bCanClimbUp() { mixin(MGBPC(528, 0x40000000)); }
+		bool bCanClimbUp(bool val) { mixin(MSBPC(528, 0x40000000)); }
+		bool bCanMantle() { mixin(MGBPC(528, 0x20000000)); }
+		bool bCanMantle(bool val) { mixin(MSBPC(528, 0x20000000)); }
+		bool bForceKeepAnchor() { mixin(MGBPC(528, 0x10000000)); }
+		bool bForceKeepAnchor(bool val) { mixin(MSBPC(528, 0x10000000)); }
+		bool bForceFloorCheck() { mixin(MGBPC(528, 0x8000000)); }
+		bool bForceFloorCheck(bool val) { mixin(MSBPC(528, 0x8000000)); }
+		bool bPushesRigidBodies() { mixin(MGBPC(528, 0x4000000)); }
+		bool bPushesRigidBodies(bool val) { mixin(MSBPC(528, 0x4000000)); }
+		bool bDirectHitWall() { mixin(MGBPC(528, 0x2000000)); }
+		bool bDirectHitWall(bool val) { mixin(MSBPC(528, 0x2000000)); }
+		bool bSimGravityDisabled() { mixin(MGBPC(528, 0x1000000)); }
+		bool bSimGravityDisabled(bool val) { mixin(MSBPC(528, 0x1000000)); }
+		bool bCanBeBaseForPawns() { mixin(MGBPC(528, 0x800000)); }
+		bool bCanBeBaseForPawns(bool val) { mixin(MSBPC(528, 0x800000)); }
+		bool bCanWalkOffLedges() { mixin(MGBPC(528, 0x400000)); }
+		bool bCanWalkOffLedges(bool val) { mixin(MSBPC(528, 0x400000)); }
+		bool bIgnoreForces() { mixin(MGBPC(528, 0x200000)); }
+		bool bIgnoreForces(bool val) { mixin(MSBPC(528, 0x200000)); }
+		bool bSimulateGravity() { mixin(MGBPC(528, 0x100000)); }
+		bool bSimulateGravity(bool val) { mixin(MSBPC(528, 0x100000)); }
+		bool bPartiallyOverLedge() { mixin(MGBPC(528, 0x80000)); }
+		bool bPartiallyOverLedge(bool val) { mixin(MSBPC(528, 0x80000)); }
+		bool bAllowLedgeOverhang() { mixin(MGBPC(528, 0x40000)); }
+		bool bAllowLedgeOverhang(bool val) { mixin(MSBPC(528, 0x40000)); }
+		bool bStopAtLedges() { mixin(MGBPC(528, 0x20000)); }
+		bool bStopAtLedges(bool val) { mixin(MSBPC(528, 0x20000)); }
+		bool bAvoidLedges() { mixin(MGBPC(528, 0x10000)); }
+		bool bAvoidLedges(bool val) { mixin(MSBPC(528, 0x10000)); }
+		bool bCanStrafe() { mixin(MGBPC(528, 0x8000)); }
+		bool bCanStrafe(bool val) { mixin(MSBPC(528, 0x8000)); }
+		bool bCanClimbLadders() { mixin(MGBPC(528, 0x4000)); }
+		bool bCanClimbLadders(bool val) { mixin(MSBPC(528, 0x4000)); }
+		bool bCanFly() { mixin(MGBPC(528, 0x2000)); }
+		bool bCanFly(bool val) { mixin(MSBPC(528, 0x2000)); }
+		bool bCanSwim() { mixin(MGBPC(528, 0x1000)); }
+		bool bCanSwim(bool val) { mixin(MSBPC(528, 0x1000)); }
+		bool bCanWalk() { mixin(MGBPC(528, 0x800)); }
+		bool bCanWalk(bool val) { mixin(MSBPC(528, 0x800)); }
+		bool bCanJump() { mixin(MGBPC(528, 0x400)); }
+		bool bCanJump(bool val) { mixin(MSBPC(528, 0x400)); }
+		bool bJumpCapable() { mixin(MGBPC(528, 0x200)); }
+		bool bJumpCapable(bool val) { mixin(MSBPC(528, 0x200)); }
+		bool bReducedSpeed() { mixin(MGBPC(528, 0x100)); }
+		bool bReducedSpeed(bool val) { mixin(MSBPC(528, 0x100)); }
+		bool bCrawler() { mixin(MGBPC(528, 0x80)); }
+		bool bCrawler(bool val) { mixin(MSBPC(528, 0x80)); }
+		bool bCanCrouch() { mixin(MGBPC(528, 0x40)); }
+		bool bCanCrouch(bool val) { mixin(MSBPC(528, 0x40)); }
+		bool bTryToUncrouch() { mixin(MGBPC(528, 0x20)); }
+		bool bTryToUncrouch(bool val) { mixin(MSBPC(528, 0x20)); }
+		bool bWantsToCrouch() { mixin(MGBPC(528, 0x8)); }
+		bool bWantsToCrouch(bool val) { mixin(MSBPC(528, 0x8)); }
+		bool bScriptTickSpecial() { mixin(MGBPC(528, 0x1)); }
+		bool bScriptTickSpecial(bool val) { mixin(MSBPC(528, 0x1)); }
 	}
 final:
 	bool IsHumanControlled(Controller* PawnController = null)

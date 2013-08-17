@@ -12,9 +12,9 @@ extern(C++) interface FractureManager : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FractureManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FractureManager")); }
 	private static __gshared FractureManager mDefaultProperties;
-	@property final static FractureManager DefaultProperties() { mixin(MGDPC!(FractureManager, "FractureManager Engine.Default__FractureManager")()); }
+	@property final static FractureManager DefaultProperties() { mixin(MGDPC("FractureManager", "FractureManager Engine.Default__FractureManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,20 +36,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFSMFractureCullDistanceScale() { mixin(MGF!("mGetFSMFractureCullDistanceScale", "Function Engine.FractureManager.GetFSMFractureCullDistanceScale")()); }
-			ScriptFunction GetFSMDirectSpawnChanceScale() { mixin(MGF!("mGetFSMDirectSpawnChanceScale", "Function Engine.FractureManager.GetFSMDirectSpawnChanceScale")()); }
-			ScriptFunction SpawnChunkDestroyEffect() { mixin(MGF!("mSpawnChunkDestroyEffect", "Function Engine.FractureManager.SpawnChunkDestroyEffect")()); }
-			ScriptFunction GetNumFSMPartsScale() { mixin(MGF!("mGetNumFSMPartsScale", "Function Engine.FractureManager.GetNumFSMPartsScale")()); }
-			ScriptFunction GetFSMRadialSpawnChanceScale() { mixin(MGF!("mGetFSMRadialSpawnChanceScale", "Function Engine.FractureManager.GetFSMRadialSpawnChanceScale")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.FractureManager.PreBeginPlay")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.FractureManager.Destroyed")()); }
-			ScriptFunction CleanUpFSMParts() { mixin(MGF!("mCleanUpFSMParts", "Function Engine.FractureManager.CleanUpFSMParts")()); }
-			ScriptFunction CreateFSMParts() { mixin(MGF!("mCreateFSMParts", "Function Engine.FractureManager.CreateFSMParts")()); }
-			ScriptFunction ResetPoolVisibility() { mixin(MGF!("mResetPoolVisibility", "Function Engine.FractureManager.ResetPoolVisibility")()); }
-			ScriptFunction GetFSMPart() { mixin(MGF!("mGetFSMPart", "Function Engine.FractureManager.GetFSMPart")()); }
-			ScriptFunction SpawnPartActor() { mixin(MGF!("mSpawnPartActor", "Function Engine.FractureManager.SpawnPartActor")()); }
-			ScriptFunction ReturnPartActor() { mixin(MGF!("mReturnPartActor", "Function Engine.FractureManager.ReturnPartActor")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function Engine.FractureManager.Tick")()); }
+			ScriptFunction GetFSMFractureCullDistanceScale() { mixin(MGF("mGetFSMFractureCullDistanceScale", "Function Engine.FractureManager.GetFSMFractureCullDistanceScale")); }
+			ScriptFunction GetFSMDirectSpawnChanceScale() { mixin(MGF("mGetFSMDirectSpawnChanceScale", "Function Engine.FractureManager.GetFSMDirectSpawnChanceScale")); }
+			ScriptFunction SpawnChunkDestroyEffect() { mixin(MGF("mSpawnChunkDestroyEffect", "Function Engine.FractureManager.SpawnChunkDestroyEffect")); }
+			ScriptFunction GetNumFSMPartsScale() { mixin(MGF("mGetNumFSMPartsScale", "Function Engine.FractureManager.GetNumFSMPartsScale")); }
+			ScriptFunction GetFSMRadialSpawnChanceScale() { mixin(MGF("mGetFSMRadialSpawnChanceScale", "Function Engine.FractureManager.GetFSMRadialSpawnChanceScale")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function Engine.FractureManager.PreBeginPlay")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.FractureManager.Destroyed")); }
+			ScriptFunction CleanUpFSMParts() { mixin(MGF("mCleanUpFSMParts", "Function Engine.FractureManager.CleanUpFSMParts")); }
+			ScriptFunction CreateFSMParts() { mixin(MGF("mCreateFSMParts", "Function Engine.FractureManager.CreateFSMParts")); }
+			ScriptFunction ResetPoolVisibility() { mixin(MGF("mResetPoolVisibility", "Function Engine.FractureManager.ResetPoolVisibility")); }
+			ScriptFunction GetFSMPart() { mixin(MGF("mGetFSMPart", "Function Engine.FractureManager.GetFSMPart")); }
+			ScriptFunction SpawnPartActor() { mixin(MGF("mSpawnPartActor", "Function Engine.FractureManager.SpawnPartActor")); }
+			ScriptFunction ReturnPartActor() { mixin(MGF("mReturnPartActor", "Function Engine.FractureManager.ReturnPartActor")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function Engine.FractureManager.Tick")); }
 		}
 	}
 	static struct Constants
@@ -60,18 +60,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(FracturedStaticMeshPart) PartPool() { mixin(MGPC!("ScriptArray!(FracturedStaticMeshPart)", 496)()); }
-			ScriptArray!(int) FreeParts() { mixin(MGPC!("ScriptArray!(int)", 508)()); }
-			ScriptArray!(FracturedStaticMeshActor) ActorsWithDeferredPartsToSpawn() { mixin(MGPC!("ScriptArray!(FracturedStaticMeshActor)", 520)()); }
-			float ExplosionVelScale() { mixin(MGPC!("float", 492)()); }
-			float DestroyMinAngVel() { mixin(MGPC!("float", 488)()); }
-			float DestroyVibrationLevel() { mixin(MGPC!("float", 484)()); }
-			int FSMPartPoolSize() { mixin(MGPC!("int", 476)()); }
+			ScriptArray!(FracturedStaticMeshPart) PartPool() { mixin(MGPC("ScriptArray!(FracturedStaticMeshPart)", 496)); }
+			ScriptArray!(int) FreeParts() { mixin(MGPC("ScriptArray!(int)", 508)); }
+			ScriptArray!(FracturedStaticMeshActor) ActorsWithDeferredPartsToSpawn() { mixin(MGPC("ScriptArray!(FracturedStaticMeshActor)", 520)); }
+			float ExplosionVelScale() { mixin(MGPC("float", 492)); }
+			float DestroyMinAngVel() { mixin(MGPC("float", 488)); }
+			float DestroyVibrationLevel() { mixin(MGPC("float", 484)); }
+			int FSMPartPoolSize() { mixin(MGPC("int", 476)); }
 		}
-		bool bEnableSpawnChunkEffectForRadialDamage() { mixin(MGBPC!(480, 0x2)()); }
-		bool bEnableSpawnChunkEffectForRadialDamage(bool val) { mixin(MSBPC!(480, 0x2)()); }
-		bool bEnableAntiVibration() { mixin(MGBPC!(480, 0x1)()); }
-		bool bEnableAntiVibration(bool val) { mixin(MSBPC!(480, 0x1)()); }
+		bool bEnableSpawnChunkEffectForRadialDamage() { mixin(MGBPC(480, 0x2)); }
+		bool bEnableSpawnChunkEffectForRadialDamage(bool val) { mixin(MSBPC(480, 0x2)); }
+		bool bEnableAntiVibration() { mixin(MGBPC(480, 0x1)); }
+		bool bEnableAntiVibration(bool val) { mixin(MSBPC(480, 0x1)); }
 	}
 final:
 	float GetFSMFractureCullDistanceScale()

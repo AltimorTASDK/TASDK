@@ -10,9 +10,9 @@ extern(C++) interface TrProj_SpikeLauncher : TrProj_StickyGrenade
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_SpikeLauncher")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_SpikeLauncher")); }
 	private static __gshared TrProj_SpikeLauncher mDefaultProperties;
-	@property final static TrProj_SpikeLauncher DefaultProperties() { mixin(MGDPC!(TrProj_SpikeLauncher, "TrProj_SpikeLauncher TribesGame.Default__TrProj_SpikeLauncher")()); }
+	@property final static TrProj_SpikeLauncher DefaultProperties() { mixin(MGDPC("TrProj_SpikeLauncher", "TrProj_SpikeLauncher TribesGame.Default__TrProj_SpikeLauncher")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,23 +25,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function TribesGame.TrProj_SpikeLauncher.PreBeginPlay")()); }
-			ScriptFunction StickToTarget() { mixin(MGF!("mStickToTarget", "Function TribesGame.TrProj_SpikeLauncher.StickToTarget")()); }
-			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_SpikeLauncher.ProcessTouch")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_SpikeLauncher.Explode")()); }
-			ScriptFunction SpawnSecondaryProjectile() { mixin(MGF!("mSpawnSecondaryProjectile", "Function TribesGame.TrProj_SpikeLauncher.SpawnSecondaryProjectile")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function TribesGame.TrProj_SpikeLauncher.PreBeginPlay")); }
+			ScriptFunction StickToTarget() { mixin(MGF("mStickToTarget", "Function TribesGame.TrProj_SpikeLauncher.StickToTarget")); }
+			ScriptFunction ProcessTouch() { mixin(MGF("mProcessTouch", "Function TribesGame.TrProj_SpikeLauncher.ProcessTouch")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function TribesGame.TrProj_SpikeLauncher.Explode")); }
+			ScriptFunction SpawnSecondaryProjectile() { mixin(MGF("mSpawnSecondaryProjectile", "Function TribesGame.TrProj_SpikeLauncher.SpawnSecondaryProjectile")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ParticleSystem ProjExplosionTemplateAir() { mixin(MGPC!("ParticleSystem", 904)()); }
-			ScriptClass m_ThirdProjectile() { mixin(MGPC!("ScriptClass", 896)()); }
-			ScriptClass m_SecondProjectile() { mixin(MGPC!("ScriptClass", 892)()); }
+			ParticleSystem ProjExplosionTemplateAir() { mixin(MGPC("ParticleSystem", 904)); }
+			ScriptClass m_ThirdProjectile() { mixin(MGPC("ScriptClass", 896)); }
+			ScriptClass m_SecondProjectile() { mixin(MGPC("ScriptClass", 892)); }
 		}
-		bool m_bInAirHit() { mixin(MGBPC!(900, 0x1)()); }
-		bool m_bInAirHit(bool val) { mixin(MSBPC!(900, 0x1)()); }
+		bool m_bInAirHit() { mixin(MGBPC(900, 0x1)); }
+		bool m_bInAirHit(bool val) { mixin(MSBPC(900, 0x1)); }
 	}
 final:
 	void PreBeginPlay()

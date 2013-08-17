@@ -10,9 +10,9 @@ extern(C++) interface DownloadableContentManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DownloadableContentManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DownloadableContentManager")); }
 	private static __gshared DownloadableContentManager mDefaultProperties;
-	@property final static DownloadableContentManager DefaultProperties() { mixin(MGDPC!(DownloadableContentManager, "DownloadableContentManager Engine.Default__DownloadableContentManager")()); }
+	@property final static DownloadableContentManager DefaultProperties() { mixin(MGDPC("DownloadableContentManager", "DownloadableContentManager Engine.Default__DownloadableContentManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -36,32 +36,32 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InstallDLC() { mixin(MGF!("mInstallDLC", "Function Engine.DownloadableContentManager.InstallDLC")()); }
-			ScriptFunction InstallDLCs() { mixin(MGF!("mInstallDLCs", "Function Engine.DownloadableContentManager.InstallDLCs")()); }
-			ScriptFunction ClearDLC() { mixin(MGF!("mClearDLC", "Function Engine.DownloadableContentManager.ClearDLC")()); }
-			ScriptFunction GetDLCTextureCachePath() { mixin(MGF!("mGetDLCTextureCachePath", "Function Engine.DownloadableContentManager.GetDLCTextureCachePath")()); }
-			ScriptFunction AddSectionToObjectList() { mixin(MGF!("mAddSectionToObjectList", "Function Engine.DownloadableContentManager.AddSectionToObjectList")()); }
-			ScriptFunction MarkPerObjectConfigPendingKill() { mixin(MGF!("mMarkPerObjectConfigPendingKill", "Function Engine.DownloadableContentManager.MarkPerObjectConfigPendingKill")()); }
-			ScriptFunction UpdateObjectLists() { mixin(MGF!("mUpdateObjectLists", "Function Engine.DownloadableContentManager.UpdateObjectLists")()); }
-			ScriptFunction InstallPackages() { mixin(MGF!("mInstallPackages", "Function Engine.DownloadableContentManager.InstallPackages")()); }
-			ScriptFunction InstallNonPackageFiles() { mixin(MGF!("mInstallNonPackageFiles", "Function Engine.DownloadableContentManager.InstallNonPackageFiles")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.DownloadableContentManager.Init")()); }
-			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.DownloadableContentManager.OnLoginChange")()); }
-			ScriptFunction OnStorageDeviceChange() { mixin(MGF!("mOnStorageDeviceChange", "Function Engine.DownloadableContentManager.OnStorageDeviceChange")()); }
-			ScriptFunction OnContentChange() { mixin(MGF!("mOnContentChange", "Function Engine.DownloadableContentManager.OnContentChange")()); }
-			ScriptFunction RefreshDLC() { mixin(MGF!("mRefreshDLC", "Function Engine.DownloadableContentManager.RefreshDLC")()); }
-			ScriptFunction RefreshDLCEnumComplete() { mixin(MGF!("mRefreshDLCEnumComplete", "Function Engine.DownloadableContentManager.RefreshDLCEnumComplete")()); }
-			ScriptFunction AddPackagesToFullyLoad() { mixin(MGF!("mAddPackagesToFullyLoad", "Function Engine.DownloadableContentManager.AddPackagesToFullyLoad")()); }
+			ScriptFunction InstallDLC() { mixin(MGF("mInstallDLC", "Function Engine.DownloadableContentManager.InstallDLC")); }
+			ScriptFunction InstallDLCs() { mixin(MGF("mInstallDLCs", "Function Engine.DownloadableContentManager.InstallDLCs")); }
+			ScriptFunction ClearDLC() { mixin(MGF("mClearDLC", "Function Engine.DownloadableContentManager.ClearDLC")); }
+			ScriptFunction GetDLCTextureCachePath() { mixin(MGF("mGetDLCTextureCachePath", "Function Engine.DownloadableContentManager.GetDLCTextureCachePath")); }
+			ScriptFunction AddSectionToObjectList() { mixin(MGF("mAddSectionToObjectList", "Function Engine.DownloadableContentManager.AddSectionToObjectList")); }
+			ScriptFunction MarkPerObjectConfigPendingKill() { mixin(MGF("mMarkPerObjectConfigPendingKill", "Function Engine.DownloadableContentManager.MarkPerObjectConfigPendingKill")); }
+			ScriptFunction UpdateObjectLists() { mixin(MGF("mUpdateObjectLists", "Function Engine.DownloadableContentManager.UpdateObjectLists")); }
+			ScriptFunction InstallPackages() { mixin(MGF("mInstallPackages", "Function Engine.DownloadableContentManager.InstallPackages")); }
+			ScriptFunction InstallNonPackageFiles() { mixin(MGF("mInstallNonPackageFiles", "Function Engine.DownloadableContentManager.InstallNonPackageFiles")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.DownloadableContentManager.Init")); }
+			ScriptFunction OnLoginChange() { mixin(MGF("mOnLoginChange", "Function Engine.DownloadableContentManager.OnLoginChange")); }
+			ScriptFunction OnStorageDeviceChange() { mixin(MGF("mOnStorageDeviceChange", "Function Engine.DownloadableContentManager.OnStorageDeviceChange")); }
+			ScriptFunction OnContentChange() { mixin(MGF("mOnContentChange", "Function Engine.DownloadableContentManager.OnContentChange")); }
+			ScriptFunction RefreshDLC() { mixin(MGF("mRefreshDLC", "Function Engine.DownloadableContentManager.RefreshDLC")); }
+			ScriptFunction RefreshDLCEnumComplete() { mixin(MGF("mRefreshDLCEnumComplete", "Function Engine.DownloadableContentManager.RefreshDLCEnumComplete")); }
+			ScriptFunction AddPackagesToFullyLoad() { mixin(MGF("mAddPackagesToFullyLoad", "Function Engine.DownloadableContentManager.AddPackagesToFullyLoad")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) DLCConfigCacheChanges() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 60)()); }
-		ScriptArray!(ScriptString) InstalledDLC() { mixin(MGPC!("ScriptArray!(ScriptString)", 72)()); }
-		ScriptArray!(ScriptClass) ClassesToReload() { mixin(MGPC!("ScriptArray!(ScriptClass)", 144)()); }
-		ScriptArray!(UObject) ObjectsToReload() { mixin(MGPC!("ScriptArray!(UObject)", 156)()); }
+		ScriptArray!(UObject.Pointer) DLCConfigCacheChanges() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 60)); }
+		ScriptArray!(ScriptString) InstalledDLC() { mixin(MGPC("ScriptArray!(ScriptString)", 72)); }
+		ScriptArray!(ScriptClass) ClassesToReload() { mixin(MGPC("ScriptArray!(ScriptClass)", 144)); }
+		ScriptArray!(UObject) ObjectsToReload() { mixin(MGPC("ScriptArray!(UObject)", 156)); }
 		// WARNING: Property 'GameEngine' has the same name as a defined type!
-		UObject.Map_Mirror TextureCachePathMap() { mixin(MGPC!("UObject.Map_Mirror", 84)()); }
+		UObject.Map_Mirror TextureCachePathMap() { mixin(MGPC("UObject.Map_Mirror", 84)); }
 	}
 final:
 	bool InstallDLC(ref in OnlineSubsystem.OnlineContent DLCBundle)

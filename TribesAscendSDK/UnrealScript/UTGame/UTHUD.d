@@ -25,9 +25,9 @@ extern(C++) interface UTHUD : UTHUDBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTHUD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTHUD")); }
 	private static __gshared UTHUD mDefaultProperties;
-	@property final static UTHUD DefaultProperties() { mixin(MGDPC!(UTHUD, "UTHUD UTGame.Default__UTHUD")()); }
+	@property final static UTHUD DefaultProperties() { mixin(MGDPC("UTHUD", "UTHUD UTGame.Default__UTHUD")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -78,49 +78,49 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DrawTileCentered() { mixin(MGF!("mDrawTileCentered", "Function UTGame.UTHUD.DrawTileCentered")()); }
-			ScriptFunction SetDisplayedOrders() { mixin(MGF!("mSetDisplayedOrders", "Function UTGame.UTHUD.SetDisplayedOrders")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTHUD.PostBeginPlay")()); }
-			ScriptFunction Message() { mixin(MGF!("mMessage", "Function UTGame.UTHUD.Message")()); }
-			ScriptFunction ResolveHUDPosition() { mixin(MGF!("mResolveHUDPosition", "Function UTGame.UTHUD.ResolveHUDPosition")()); }
-			ScriptFunction GetScreenCoords() { mixin(MGF!("mGetScreenCoords", "Function UTGame.UTHUD.GetScreenCoords")()); }
-			ScriptFunction DrawMessageText() { mixin(MGF!("mDrawMessageText", "Function UTGame.UTHUD.DrawMessageText")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function UTGame.UTHUD.PostRender")()); }
-			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function UTGame.UTHUD.DrawHUD")()); }
-			ScriptFunction DrawGameHud() { mixin(MGF!("mDrawGameHud", "Function UTGame.UTHUD.DrawGameHud")()); }
-			ScriptFunction DrawMicIcon() { mixin(MGF!("mDrawMicIcon", "Function UTGame.UTHUD.DrawMicIcon")()); }
-			ScriptFunction DisplayLocalMessages() { mixin(MGF!("mDisplayLocalMessages", "Function UTGame.UTHUD.DisplayLocalMessages")()); }
-			ScriptFunction DrawLivingHud() { mixin(MGF!("mDrawLivingHud", "Function UTGame.UTHUD.DrawLivingHud")()); }
-			ScriptFunction DrawPostGameHud() { mixin(MGF!("mDrawPostGameHud", "Function UTGame.UTHUD.DrawPostGameHud")()); }
-			ScriptFunction DisplayWeaponBar() { mixin(MGF!("mDisplayWeaponBar", "Function UTGame.UTHUD.DisplayWeaponBar")()); }
-			ScriptFunction DisplayMap() { mixin(MGF!("mDisplayMap", "Function UTGame.UTHUD.DisplayMap")()); }
-			ScriptFunction DrawAIOverlays() { mixin(MGF!("mDrawAIOverlays", "Function UTGame.UTHUD.DrawAIOverlays")()); }
-			ScriptFunction GetUIController() { mixin(MGF!("mGetUIController", "Function UTGame.UTHUD.GetUIController")()); }
-			ScriptFunction StartMusic() { mixin(MGF!("mStartMusic", "Function UTGame.UTHUD.StartMusic")()); }
-			ScriptFunction GetTeamColor() { mixin(MGF!("mGetTeamColor", "Function UTGame.UTHUD.GetTeamColor")()); }
-			ScriptFunction DisplayHit() { mixin(MGF!("mDisplayHit", "Function UTGame.UTHUD.DisplayHit")()); }
-			ScriptFunction FlashDamage() { mixin(MGF!("mFlashDamage", "Function UTGame.UTHUD.FlashDamage")()); }
-			ScriptFunction UpdateDamage() { mixin(MGF!("mUpdateDamage", "Function UTGame.UTHUD.UpdateDamage")()); }
-			ScriptFunction DisplayDamage() { mixin(MGF!("mDisplayDamage", "Function UTGame.UTHUD.DisplayDamage")()); }
-			ScriptFunction DrawBackground() { mixin(MGF!("mDrawBackground", "Function UTGame.UTHUD.DrawBackground")()); }
-			ScriptFunction DrawBeaconBackground() { mixin(MGF!("mDrawBeaconBackground", "Function UTGame.UTHUD.DrawBeaconBackground")()); }
-			ScriptFunction DrawHealth() { mixin(MGF!("mDrawHealth", "Function UTGame.UTHUD.DrawHealth")()); }
-			ScriptFunction DrawBarGraph() { mixin(MGF!("mDrawBarGraph", "Function UTGame.UTHUD.DrawBarGraph")()); }
-			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function UTGame.UTHUD.FormatTime")()); }
-			ScriptFunction GetFontSizeIndex() { mixin(MGF!("mGetFontSizeIndex", "Function UTGame.UTHUD.GetFontSizeIndex")()); }
-			ScriptFunction ShowPortrait() { mixin(MGF!("mShowPortrait", "Function UTGame.UTHUD.ShowPortrait")()); }
-			ScriptFunction HidePortrait() { mixin(MGF!("mHidePortrait", "Function UTGame.UTHUD.HidePortrait")()); }
-			ScriptFunction DisplayPortrait() { mixin(MGF!("mDisplayPortrait", "Function UTGame.UTHUD.DisplayPortrait")()); }
-			ScriptFunction DisplayHUDMessage() { mixin(MGF!("mDisplayHUDMessage", "Function UTGame.UTHUD.DisplayHUDMessage")()); }
-			ScriptFunction DisplayClock() { mixin(MGF!("mDisplayClock", "Function UTGame.UTHUD.DisplayClock")()); }
-			ScriptFunction DisplayPawnDoll() { mixin(MGF!("mDisplayPawnDoll", "Function UTGame.UTHUD.DisplayPawnDoll")()); }
-			ScriptFunction DisplayAmmo() { mixin(MGF!("mDisplayAmmo", "Function UTGame.UTHUD.DisplayAmmo")()); }
-			ScriptFunction DisplayPowerups() { mixin(MGF!("mDisplayPowerups", "Function UTGame.UTHUD.DisplayPowerups")()); }
-			ScriptFunction DisplayScoring() { mixin(MGF!("mDisplayScoring", "Function UTGame.UTHUD.DisplayScoring")()); }
-			ScriptFunction DisplayFragCount() { mixin(MGF!("mDisplayFragCount", "Function UTGame.UTHUD.DisplayFragCount")()); }
-			ScriptFunction DrawNameplateBackground() { mixin(MGF!("mDrawNameplateBackground", "Function UTGame.UTHUD.DrawNameplateBackground")()); }
-			ScriptFunction DisplayLeaderBoard() { mixin(MGF!("mDisplayLeaderBoard", "Function UTGame.UTHUD.DisplayLeaderBoard")()); }
-			ScriptFunction DisplayConsoleMessages() { mixin(MGF!("mDisplayConsoleMessages", "Function UTGame.UTHUD.DisplayConsoleMessages")()); }
+			ScriptFunction DrawTileCentered() { mixin(MGF("mDrawTileCentered", "Function UTGame.UTHUD.DrawTileCentered")); }
+			ScriptFunction SetDisplayedOrders() { mixin(MGF("mSetDisplayedOrders", "Function UTGame.UTHUD.SetDisplayedOrders")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTHUD.PostBeginPlay")); }
+			ScriptFunction Message() { mixin(MGF("mMessage", "Function UTGame.UTHUD.Message")); }
+			ScriptFunction ResolveHUDPosition() { mixin(MGF("mResolveHUDPosition", "Function UTGame.UTHUD.ResolveHUDPosition")); }
+			ScriptFunction GetScreenCoords() { mixin(MGF("mGetScreenCoords", "Function UTGame.UTHUD.GetScreenCoords")); }
+			ScriptFunction DrawMessageText() { mixin(MGF("mDrawMessageText", "Function UTGame.UTHUD.DrawMessageText")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function UTGame.UTHUD.PostRender")); }
+			ScriptFunction DrawHUD() { mixin(MGF("mDrawHUD", "Function UTGame.UTHUD.DrawHUD")); }
+			ScriptFunction DrawGameHud() { mixin(MGF("mDrawGameHud", "Function UTGame.UTHUD.DrawGameHud")); }
+			ScriptFunction DrawMicIcon() { mixin(MGF("mDrawMicIcon", "Function UTGame.UTHUD.DrawMicIcon")); }
+			ScriptFunction DisplayLocalMessages() { mixin(MGF("mDisplayLocalMessages", "Function UTGame.UTHUD.DisplayLocalMessages")); }
+			ScriptFunction DrawLivingHud() { mixin(MGF("mDrawLivingHud", "Function UTGame.UTHUD.DrawLivingHud")); }
+			ScriptFunction DrawPostGameHud() { mixin(MGF("mDrawPostGameHud", "Function UTGame.UTHUD.DrawPostGameHud")); }
+			ScriptFunction DisplayWeaponBar() { mixin(MGF("mDisplayWeaponBar", "Function UTGame.UTHUD.DisplayWeaponBar")); }
+			ScriptFunction DisplayMap() { mixin(MGF("mDisplayMap", "Function UTGame.UTHUD.DisplayMap")); }
+			ScriptFunction DrawAIOverlays() { mixin(MGF("mDrawAIOverlays", "Function UTGame.UTHUD.DrawAIOverlays")); }
+			ScriptFunction GetUIController() { mixin(MGF("mGetUIController", "Function UTGame.UTHUD.GetUIController")); }
+			ScriptFunction StartMusic() { mixin(MGF("mStartMusic", "Function UTGame.UTHUD.StartMusic")); }
+			ScriptFunction GetTeamColor() { mixin(MGF("mGetTeamColor", "Function UTGame.UTHUD.GetTeamColor")); }
+			ScriptFunction DisplayHit() { mixin(MGF("mDisplayHit", "Function UTGame.UTHUD.DisplayHit")); }
+			ScriptFunction FlashDamage() { mixin(MGF("mFlashDamage", "Function UTGame.UTHUD.FlashDamage")); }
+			ScriptFunction UpdateDamage() { mixin(MGF("mUpdateDamage", "Function UTGame.UTHUD.UpdateDamage")); }
+			ScriptFunction DisplayDamage() { mixin(MGF("mDisplayDamage", "Function UTGame.UTHUD.DisplayDamage")); }
+			ScriptFunction DrawBackground() { mixin(MGF("mDrawBackground", "Function UTGame.UTHUD.DrawBackground")); }
+			ScriptFunction DrawBeaconBackground() { mixin(MGF("mDrawBeaconBackground", "Function UTGame.UTHUD.DrawBeaconBackground")); }
+			ScriptFunction DrawHealth() { mixin(MGF("mDrawHealth", "Function UTGame.UTHUD.DrawHealth")); }
+			ScriptFunction DrawBarGraph() { mixin(MGF("mDrawBarGraph", "Function UTGame.UTHUD.DrawBarGraph")); }
+			ScriptFunction FormatTime() { mixin(MGF("mFormatTime", "Function UTGame.UTHUD.FormatTime")); }
+			ScriptFunction GetFontSizeIndex() { mixin(MGF("mGetFontSizeIndex", "Function UTGame.UTHUD.GetFontSizeIndex")); }
+			ScriptFunction ShowPortrait() { mixin(MGF("mShowPortrait", "Function UTGame.UTHUD.ShowPortrait")); }
+			ScriptFunction HidePortrait() { mixin(MGF("mHidePortrait", "Function UTGame.UTHUD.HidePortrait")); }
+			ScriptFunction DisplayPortrait() { mixin(MGF("mDisplayPortrait", "Function UTGame.UTHUD.DisplayPortrait")); }
+			ScriptFunction DisplayHUDMessage() { mixin(MGF("mDisplayHUDMessage", "Function UTGame.UTHUD.DisplayHUDMessage")); }
+			ScriptFunction DisplayClock() { mixin(MGF("mDisplayClock", "Function UTGame.UTHUD.DisplayClock")); }
+			ScriptFunction DisplayPawnDoll() { mixin(MGF("mDisplayPawnDoll", "Function UTGame.UTHUD.DisplayPawnDoll")); }
+			ScriptFunction DisplayAmmo() { mixin(MGF("mDisplayAmmo", "Function UTGame.UTHUD.DisplayAmmo")); }
+			ScriptFunction DisplayPowerups() { mixin(MGF("mDisplayPowerups", "Function UTGame.UTHUD.DisplayPowerups")); }
+			ScriptFunction DisplayScoring() { mixin(MGF("mDisplayScoring", "Function UTGame.UTHUD.DisplayScoring")); }
+			ScriptFunction DisplayFragCount() { mixin(MGF("mDisplayFragCount", "Function UTGame.UTHUD.DisplayFragCount")); }
+			ScriptFunction DrawNameplateBackground() { mixin(MGF("mDrawNameplateBackground", "Function UTGame.UTHUD.DrawNameplateBackground")); }
+			ScriptFunction DisplayLeaderBoard() { mixin(MGF("mDisplayLeaderBoard", "Function UTGame.UTHUD.DisplayLeaderBoard")); }
+			ScriptFunction DisplayConsoleMessages() { mixin(MGF("mDisplayConsoleMessages", "Function UTGame.UTHUD.DisplayConsoleMessages")); }
 		}
 	}
 	struct DamageInfo
@@ -128,221 +128,221 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTHUD.DamageInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.UTHUD.DamageInfo")); }
 		@property final auto ref
 		{
-			MaterialInstanceConstant MatConstant() { mixin(MGPS!("MaterialInstanceConstant", 8)()); }
-			float FadeValue() { mixin(MGPS!("float", 4)()); }
-			float FadeTime() { mixin(MGPS!("float", 0)()); }
+			MaterialInstanceConstant MatConstant() { mixin(MGPS("MaterialInstanceConstant", 8)); }
+			float FadeValue() { mixin(MGPS("float", 4)); }
+			float FadeTime() { mixin(MGPS("float", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Texture2D AltHudTexture() { mixin(MGPC!("Texture2D", 1528)()); }
-			UObject.LinearColor WhiteLinearColor() { mixin(MGPC!("UObject.LinearColor", 2612)()); }
-			UObject.LinearColor TeamHUDColor() { mixin(MGPC!("UObject.LinearColor", 1664)()); }
-			float TX() { mixin(MGPC!("float", 2540)()); }
-			float TY() { mixin(MGPC!("float", 2544)()); }
-			UObject.LinearColor GoldLinearColor() { mixin(MGPC!("UObject.LinearColor", 2628)()); }
-			Pawn PawnOwner() { mixin(MGPC!("Pawn", 1572)()); }
-			float LastAmmoPickupTime() { mixin(MGPC!("float", 1560)()); }
-			float LastArmorPickupTime() { mixin(MGPC!("float", 1568)()); }
-			float MessageOffset() { mixin(MGPC!("float", 1844)()); }
-			ScriptArray!(Font) HudFonts() { mixin(MGPC!("ScriptArray!(Font)", 1588)()); }
-			ScriptArray!(UTHUD.DamageInfo) DamageData() { mixin(MGPC!("ScriptArray!(UTHUD.DamageInfo)", 1916)()); }
-			UObject.Color BkgTexColor() { mixin(MGPC!("UObject.Color", 2680)()); }
-			UIRoot.TextureCoordinates BkgTexCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 2664)()); }
-			Texture2D BkgTexture() { mixin(MGPC!("Texture2D", 2660)()); }
-			UObject.LinearColor SilverLinearColor() { mixin(MGPC!("UObject.LinearColor", 2644)()); }
-			UObject.LinearColor DMLinearColor() { mixin(MGPC!("UObject.LinearColor", 2596)()); }
-			UObject.LinearColor BlueLinearColor() { mixin(MGPC!("UObject.LinearColor", 2580)()); }
-			UObject.LinearColor RedLinearColor() { mixin(MGPC!("UObject.LinearColor", 2564)()); }
-			UObject.LinearColor AmmoBarColor() { mixin(MGPC!("UObject.LinearColor", 2548)()); }
-			float THeight() { mixin(MGPC!("float", 2536)()); }
-			float BootHeight() { mixin(MGPC!("float", 2532)()); }
-			float BootWidth() { mixin(MGPC!("float", 2528)()); }
-			float BootY() { mixin(MGPC!("float", 2524)()); }
-			float BootX() { mixin(MGPC!("float", 2520)()); }
-			float HelmetHeight() { mixin(MGPC!("float", 2516)()); }
-			float HelmetWidth() { mixin(MGPC!("float", 2512)()); }
-			float HelmetY() { mixin(MGPC!("float", 2508)()); }
-			float HelmetX() { mixin(MGPC!("float", 2504)()); }
-			float ThighHeight() { mixin(MGPC!("float", 2500)()); }
-			float ThighWidth() { mixin(MGPC!("float", 2496)()); }
-			float ThighY() { mixin(MGPC!("float", 2492)()); }
-			float ThighX() { mixin(MGPC!("float", 2488)()); }
-			float VestHeight() { mixin(MGPC!("float", 2484)()); }
-			float VestWidth() { mixin(MGPC!("float", 2480)()); }
-			float VestY() { mixin(MGPC!("float", 2476)()); }
-			float VestX() { mixin(MGPC!("float", 2472)()); }
-			float DollHeight() { mixin(MGPC!("float", 2468)()); }
-			float DollWidth() { mixin(MGPC!("float", 2464)()); }
-			float DollOffsetY() { mixin(MGPC!("float", 2460)()); }
-			float DollOffsetX() { mixin(MGPC!("float", 2456)()); }
-			UIRoot.TextureCoordinates PawnDollBGCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 2440)()); }
-			ScriptString PlaceMarks() { mixin(MGPC!("ScriptString", 2392)()); }
-			ScriptString YouHaveLost() { mixin(MGPC!("ScriptString", 2380)()); }
-			ScriptString YouHaveWon() { mixin(MGPC!("ScriptString", 2368)()); }
-			ScriptString FireToRespawnMessage() { mixin(MGPC!("ScriptString", 2356)()); }
-			ScriptString DeadMessage() { mixin(MGPC!("ScriptString", 2344)()); }
-			ScriptString SpectatorMessage() { mixin(MGPC!("ScriptString", 2332)()); }
-			ScriptString PressFireToBegin() { mixin(MGPC!("ScriptString", 2320)()); }
-			ScriptString WaitingForMatch() { mixin(MGPC!("ScriptString", 2308)()); }
-			ScriptString WarmupString() { mixin(MGPC!("ScriptString", 2296)()); }
-			UObject.LinearColor BlackBackgroundColor() { mixin(MGPC!("UObject.LinearColor", 2280)()); }
-			UIRoot.TextureCoordinates NameplateRight() { mixin(MGPC!("UIRoot.TextureCoordinates", 2264)()); }
-			UIRoot.TextureCoordinates NameplateBubble() { mixin(MGPC!("UIRoot.TextureCoordinates", 2248)()); }
-			UIRoot.TextureCoordinates NameplateCenter() { mixin(MGPC!("UIRoot.TextureCoordinates", 2232)()); }
-			UIRoot.TextureCoordinates NameplateLeft() { mixin(MGPC!("UIRoot.TextureCoordinates", 2216)()); }
-			float NameplateBubbleWidth() { mixin(MGPC!("float", 2212)()); }
-			float NameplateWidth() { mixin(MGPC!("float", 2208)()); }
-			float DamageIndicatorSize() { mixin(MGPC!("float", 2204)()); }
-			UObject.Vector2D VehiclePosition() { mixin(MGPC!("UObject.Vector2D", 2196)()); }
-			int LastFragCount() { mixin(MGPC!("int", 2192)()); }
-			float FragPulseTime() { mixin(MGPC!("float", 2188)()); }
-			UObject.Vector2D ScoringPosition() { mixin(MGPC!("UObject.Vector2D", 2180)()); }
-			float PowerupTransitionTime() { mixin(MGPC!("float", 2176)()); }
-			float PowerupYPos() { mixin(MGPC!("float", 2172)()); }
-			UObject.Vector2D PowerupDims() { mixin(MGPC!("UObject.Vector2D", 2164)()); }
-			UObject.Vector2D MapPosition() { mixin(MGPC!("UObject.Vector2D", 2156)()); }
-			float AmmoPulseTime() { mixin(MGPC!("float", 2152)()); }
-			int LastAmmoCount() { mixin(MGPC!("int", 2148)()); }
-			UTWeapon LastWeapon() { mixin(MGPC!("UTWeapon", 2144)()); }
-			float AmmoTextOffsetY() { mixin(MGPC!("float", 2140)()); }
-			float AmmoTextOffsetX() { mixin(MGPC!("float", 2136)()); }
-			UIRoot.TextureCoordinates AmmoBGCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 2120)()); }
-			float AmmoBarOffsetY() { mixin(MGPC!("float", 2116)()); }
-			UObject.Vector2D AmmoPosition() { mixin(MGPC!("UObject.Vector2D", 2108)()); }
-			float ArmorPulseTime() { mixin(MGPC!("float", 2104)()); }
-			int LastArmorAmount() { mixin(MGPC!("int", 2100)()); }
-			float ArmorTextY() { mixin(MGPC!("float", 2096)()); }
-			float ArmorTextX() { mixin(MGPC!("float", 2092)()); }
-			float ArmorIconY() { mixin(MGPC!("float", 2088)()); }
-			float ArmorIconX() { mixin(MGPC!("float", 2084)()); }
-			float ArmorBGOffsetY() { mixin(MGPC!("float", 2080)()); }
-			float ArmorBGOffsetX() { mixin(MGPC!("float", 2076)()); }
-			UIRoot.TextureCoordinates ArmorBGCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 2060)()); }
-			float HealthPulseTime() { mixin(MGPC!("float", 2056)()); }
-			int LastHealth() { mixin(MGPC!("int", 2052)()); }
-			float HealthTextY() { mixin(MGPC!("float", 2048)()); }
-			float HealthTextX() { mixin(MGPC!("float", 2044)()); }
-			float HealthIconY() { mixin(MGPC!("float", 2040)()); }
-			float HealthIconX() { mixin(MGPC!("float", 2036)()); }
-			float HealthBGOffsetY() { mixin(MGPC!("float", 2032)()); }
-			float HealthBGOffsetX() { mixin(MGPC!("float", 2028)()); }
-			float HealthOffsetX() { mixin(MGPC!("float", 2024)()); }
-			UIRoot.TextureCoordinates HealthBGCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 2008)()); }
-			float DollVisibility() { mixin(MGPC!("float", 2004)()); }
-			float LastDollUpdate() { mixin(MGPC!("float", 2000)()); }
-			UObject.Vector2D DollPosition() { mixin(MGPC!("UObject.Vector2D", 1992)()); }
-			UObject.Vector2D ClockPosition() { mixin(MGPC!("UObject.Vector2D", 1984)()); }
-			MaterialInstanceConstant HitEffectMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 1980)()); }
-			MaterialEffect HitEffect() { mixin(MGPC!("MaterialEffect", 1976)()); }
-			float HitEffectFadeTime() { mixin(MGPC!("float", 1972)()); }
-			UObject.LinearColor MaxHitEffectColor() { mixin(MGPC!("UObject.LinearColor", 1956)()); }
-			float HitEffectIntensity() { mixin(MGPC!("float", 1952)()); }
-			ScriptName FadeParamName() { mixin(MGPC!("ScriptName", 1944)()); }
-			ScriptName PositionalParamName() { mixin(MGPC!("ScriptName", 1936)()); }
-			float FadeTime() { mixin(MGPC!("float", 1932)()); }
-			Material BaseMaterial() { mixin(MGPC!("Material", 1928)()); }
-			int MaxNoOfIndicators() { mixin(MGPC!("int", 1912)()); }
-			float FullHeight() { mixin(MGPC!("float", 1908)()); }
-			float FullWidth() { mixin(MGPC!("float", 1904)()); }
-			float SafeRegionPct() { mixin(MGPC!("float", 1900)()); }
-			Weapon LastSelectedWeapon() { mixin(MGPC!("Weapon", 1896)()); }
-			float OrderUpdateTime() { mixin(MGPC!("float", 1892)()); }
-			ScriptString DisplayedOrders() { mixin(MGPC!("ScriptString", 1880)()); }
-			float MapDefaultSize() { mixin(MGPC!("float", 1876)()); }
-			Texture2D MapBackground() { mixin(MGPC!("Texture2D", 1872)()); }
-			float LastWeaponBarDrawnTime() { mixin(MGPC!("float", 1840)()); }
-			float SelectedWeaponAmmoOffsetX() { mixin(MGPC!("float", 1836)()); }
-			float WeaponAmmoOffsetY() { mixin(MGPC!("float", 1832)()); }
-			float WeaponAmmoOffsetX() { mixin(MGPC!("float", 1828)()); }
-			float WeaponAmmoThickness() { mixin(MGPC!("float", 1824)()); }
-			float WeaponAmmoLength() { mixin(MGPC!("float", 1820)()); }
-			float WeaponYOffset() { mixin(MGPC!("float", 1816)()); }
-			float WeaponYScale() { mixin(MGPC!("float", 1812)()); }
-			float SelectedBoxScale() { mixin(MGPC!("float", 1808)()); }
-			float WeaponXOffset() { mixin(MGPC!("float", 1804)()); }
-			float WeaponBarXOffset() { mixin(MGPC!("float", 1800)()); }
-			float WeaponScaleSpeed() { mixin(MGPC!("float", 1796)()); }
-			int BouncedWeapon() { mixin(MGPC!("int", 1792)()); }
-			float LastHUDUpdateTime() { mixin(MGPC!("float", 1788)()); }
-			float EmptyWeaponAlpha() { mixin(MGPC!("float", 1784)()); }
-			float OffWeaponAlpha() { mixin(MGPC!("float", 1780)()); }
-			float SelectedWeaponAlpha() { mixin(MGPC!("float", 1776)()); }
-			float BounceWeaponScale() { mixin(MGPC!("float", 1772)()); }
-			float SelectedWeaponScale() { mixin(MGPC!("float", 1768)()); }
-			float CurrentWeaponScale() { mixin(MGPC!("float", 1728)()); }
-			UTWeapon WeaponList() { mixin(MGPC!("UTWeapon", 1688)()); }
-			float WeaponBarY() { mixin(MGPC!("float", 1684)()); }
-			UObject.Color TeamTextColor() { mixin(MGPC!("UObject.Color", 1680)()); }
-			float HUDScaleY() { mixin(MGPC!("float", 1660)()); }
-			float HUDScaleX() { mixin(MGPC!("float", 1656)()); }
-			float WeaponBoxHeight() { mixin(MGPC!("float", 1652)()); }
-			float WeaponBoxWidth() { mixin(MGPC!("float", 1648)()); }
-			float WeaponBarScale() { mixin(MGPC!("float", 1644)()); }
-			UTPlayerReplicationInfo CharPendingPRI() { mixin(MGPC!("UTPlayerReplicationInfo", 1640)()); }
-			UTPlayerReplicationInfo CharPRI() { mixin(MGPC!("UTPlayerReplicationInfo", 1636)()); }
-			UObject.Vector2D CharPortraitSize() { mixin(MGPC!("UObject.Vector2D", 1628)()); }
-			float CharPortraitSlideTransitionTime() { mixin(MGPC!("float", 1624)()); }
-			float CharPortraitSlideTime() { mixin(MGPC!("float", 1620)()); }
-			float CharPortraitTime() { mixin(MGPC!("float", 1616)()); }
-			float CharPortraitXPerc() { mixin(MGPC!("float", 1612)()); }
-			float CharPortraitYPerc() { mixin(MGPC!("float", 1608)()); }
-			MaterialInstanceConstant CharPortraitMI() { mixin(MGPC!("MaterialInstanceConstant", 1604)()); }
-			Material CharPortraitMaterial() { mixin(MGPC!("Material", 1600)()); }
-			UTPlayerReplicationInfo UTOwnerPRI() { mixin(MGPC!("UTPlayerReplicationInfo", 1580)()); }
-			UTPawn UTPawnOwner() { mixin(MGPC!("UTPawn", 1576)()); }
-			float LastHealthPickupTime() { mixin(MGPC!("float", 1564)()); }
-			UObject.Color GrayColor() { mixin(MGPC!("UObject.Color", 1556)()); }
-			UObject.LinearColor LC_White() { mixin(MGPC!("UObject.LinearColor", 1540)()); }
-			Texture2D UT3GHudTexture() { mixin(MGPC!("Texture2D", 1536)()); }
-			Texture2D TalkingTexture() { mixin(MGPC!("Texture2D", 1532)()); }
-			ScriptClass WeaponSwitchMessage() { mixin(MGPC!("ScriptClass", 1524)()); }
+			Texture2D AltHudTexture() { mixin(MGPC("Texture2D", 1528)); }
+			UObject.LinearColor WhiteLinearColor() { mixin(MGPC("UObject.LinearColor", 2612)); }
+			UObject.LinearColor TeamHUDColor() { mixin(MGPC("UObject.LinearColor", 1664)); }
+			float TX() { mixin(MGPC("float", 2540)); }
+			float TY() { mixin(MGPC("float", 2544)); }
+			UObject.LinearColor GoldLinearColor() { mixin(MGPC("UObject.LinearColor", 2628)); }
+			Pawn PawnOwner() { mixin(MGPC("Pawn", 1572)); }
+			float LastAmmoPickupTime() { mixin(MGPC("float", 1560)); }
+			float LastArmorPickupTime() { mixin(MGPC("float", 1568)); }
+			float MessageOffset() { mixin(MGPC("float", 1844)); }
+			ScriptArray!(Font) HudFonts() { mixin(MGPC("ScriptArray!(Font)", 1588)); }
+			ScriptArray!(UTHUD.DamageInfo) DamageData() { mixin(MGPC("ScriptArray!(UTHUD.DamageInfo)", 1916)); }
+			UObject.Color BkgTexColor() { mixin(MGPC("UObject.Color", 2680)); }
+			UIRoot.TextureCoordinates BkgTexCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 2664)); }
+			Texture2D BkgTexture() { mixin(MGPC("Texture2D", 2660)); }
+			UObject.LinearColor SilverLinearColor() { mixin(MGPC("UObject.LinearColor", 2644)); }
+			UObject.LinearColor DMLinearColor() { mixin(MGPC("UObject.LinearColor", 2596)); }
+			UObject.LinearColor BlueLinearColor() { mixin(MGPC("UObject.LinearColor", 2580)); }
+			UObject.LinearColor RedLinearColor() { mixin(MGPC("UObject.LinearColor", 2564)); }
+			UObject.LinearColor AmmoBarColor() { mixin(MGPC("UObject.LinearColor", 2548)); }
+			float THeight() { mixin(MGPC("float", 2536)); }
+			float BootHeight() { mixin(MGPC("float", 2532)); }
+			float BootWidth() { mixin(MGPC("float", 2528)); }
+			float BootY() { mixin(MGPC("float", 2524)); }
+			float BootX() { mixin(MGPC("float", 2520)); }
+			float HelmetHeight() { mixin(MGPC("float", 2516)); }
+			float HelmetWidth() { mixin(MGPC("float", 2512)); }
+			float HelmetY() { mixin(MGPC("float", 2508)); }
+			float HelmetX() { mixin(MGPC("float", 2504)); }
+			float ThighHeight() { mixin(MGPC("float", 2500)); }
+			float ThighWidth() { mixin(MGPC("float", 2496)); }
+			float ThighY() { mixin(MGPC("float", 2492)); }
+			float ThighX() { mixin(MGPC("float", 2488)); }
+			float VestHeight() { mixin(MGPC("float", 2484)); }
+			float VestWidth() { mixin(MGPC("float", 2480)); }
+			float VestY() { mixin(MGPC("float", 2476)); }
+			float VestX() { mixin(MGPC("float", 2472)); }
+			float DollHeight() { mixin(MGPC("float", 2468)); }
+			float DollWidth() { mixin(MGPC("float", 2464)); }
+			float DollOffsetY() { mixin(MGPC("float", 2460)); }
+			float DollOffsetX() { mixin(MGPC("float", 2456)); }
+			UIRoot.TextureCoordinates PawnDollBGCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 2440)); }
+			ScriptString PlaceMarks() { mixin(MGPC("ScriptString", 2392)); }
+			ScriptString YouHaveLost() { mixin(MGPC("ScriptString", 2380)); }
+			ScriptString YouHaveWon() { mixin(MGPC("ScriptString", 2368)); }
+			ScriptString FireToRespawnMessage() { mixin(MGPC("ScriptString", 2356)); }
+			ScriptString DeadMessage() { mixin(MGPC("ScriptString", 2344)); }
+			ScriptString SpectatorMessage() { mixin(MGPC("ScriptString", 2332)); }
+			ScriptString PressFireToBegin() { mixin(MGPC("ScriptString", 2320)); }
+			ScriptString WaitingForMatch() { mixin(MGPC("ScriptString", 2308)); }
+			ScriptString WarmupString() { mixin(MGPC("ScriptString", 2296)); }
+			UObject.LinearColor BlackBackgroundColor() { mixin(MGPC("UObject.LinearColor", 2280)); }
+			UIRoot.TextureCoordinates NameplateRight() { mixin(MGPC("UIRoot.TextureCoordinates", 2264)); }
+			UIRoot.TextureCoordinates NameplateBubble() { mixin(MGPC("UIRoot.TextureCoordinates", 2248)); }
+			UIRoot.TextureCoordinates NameplateCenter() { mixin(MGPC("UIRoot.TextureCoordinates", 2232)); }
+			UIRoot.TextureCoordinates NameplateLeft() { mixin(MGPC("UIRoot.TextureCoordinates", 2216)); }
+			float NameplateBubbleWidth() { mixin(MGPC("float", 2212)); }
+			float NameplateWidth() { mixin(MGPC("float", 2208)); }
+			float DamageIndicatorSize() { mixin(MGPC("float", 2204)); }
+			UObject.Vector2D VehiclePosition() { mixin(MGPC("UObject.Vector2D", 2196)); }
+			int LastFragCount() { mixin(MGPC("int", 2192)); }
+			float FragPulseTime() { mixin(MGPC("float", 2188)); }
+			UObject.Vector2D ScoringPosition() { mixin(MGPC("UObject.Vector2D", 2180)); }
+			float PowerupTransitionTime() { mixin(MGPC("float", 2176)); }
+			float PowerupYPos() { mixin(MGPC("float", 2172)); }
+			UObject.Vector2D PowerupDims() { mixin(MGPC("UObject.Vector2D", 2164)); }
+			UObject.Vector2D MapPosition() { mixin(MGPC("UObject.Vector2D", 2156)); }
+			float AmmoPulseTime() { mixin(MGPC("float", 2152)); }
+			int LastAmmoCount() { mixin(MGPC("int", 2148)); }
+			UTWeapon LastWeapon() { mixin(MGPC("UTWeapon", 2144)); }
+			float AmmoTextOffsetY() { mixin(MGPC("float", 2140)); }
+			float AmmoTextOffsetX() { mixin(MGPC("float", 2136)); }
+			UIRoot.TextureCoordinates AmmoBGCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 2120)); }
+			float AmmoBarOffsetY() { mixin(MGPC("float", 2116)); }
+			UObject.Vector2D AmmoPosition() { mixin(MGPC("UObject.Vector2D", 2108)); }
+			float ArmorPulseTime() { mixin(MGPC("float", 2104)); }
+			int LastArmorAmount() { mixin(MGPC("int", 2100)); }
+			float ArmorTextY() { mixin(MGPC("float", 2096)); }
+			float ArmorTextX() { mixin(MGPC("float", 2092)); }
+			float ArmorIconY() { mixin(MGPC("float", 2088)); }
+			float ArmorIconX() { mixin(MGPC("float", 2084)); }
+			float ArmorBGOffsetY() { mixin(MGPC("float", 2080)); }
+			float ArmorBGOffsetX() { mixin(MGPC("float", 2076)); }
+			UIRoot.TextureCoordinates ArmorBGCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 2060)); }
+			float HealthPulseTime() { mixin(MGPC("float", 2056)); }
+			int LastHealth() { mixin(MGPC("int", 2052)); }
+			float HealthTextY() { mixin(MGPC("float", 2048)); }
+			float HealthTextX() { mixin(MGPC("float", 2044)); }
+			float HealthIconY() { mixin(MGPC("float", 2040)); }
+			float HealthIconX() { mixin(MGPC("float", 2036)); }
+			float HealthBGOffsetY() { mixin(MGPC("float", 2032)); }
+			float HealthBGOffsetX() { mixin(MGPC("float", 2028)); }
+			float HealthOffsetX() { mixin(MGPC("float", 2024)); }
+			UIRoot.TextureCoordinates HealthBGCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 2008)); }
+			float DollVisibility() { mixin(MGPC("float", 2004)); }
+			float LastDollUpdate() { mixin(MGPC("float", 2000)); }
+			UObject.Vector2D DollPosition() { mixin(MGPC("UObject.Vector2D", 1992)); }
+			UObject.Vector2D ClockPosition() { mixin(MGPC("UObject.Vector2D", 1984)); }
+			MaterialInstanceConstant HitEffectMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 1980)); }
+			MaterialEffect HitEffect() { mixin(MGPC("MaterialEffect", 1976)); }
+			float HitEffectFadeTime() { mixin(MGPC("float", 1972)); }
+			UObject.LinearColor MaxHitEffectColor() { mixin(MGPC("UObject.LinearColor", 1956)); }
+			float HitEffectIntensity() { mixin(MGPC("float", 1952)); }
+			ScriptName FadeParamName() { mixin(MGPC("ScriptName", 1944)); }
+			ScriptName PositionalParamName() { mixin(MGPC("ScriptName", 1936)); }
+			float FadeTime() { mixin(MGPC("float", 1932)); }
+			Material BaseMaterial() { mixin(MGPC("Material", 1928)); }
+			int MaxNoOfIndicators() { mixin(MGPC("int", 1912)); }
+			float FullHeight() { mixin(MGPC("float", 1908)); }
+			float FullWidth() { mixin(MGPC("float", 1904)); }
+			float SafeRegionPct() { mixin(MGPC("float", 1900)); }
+			Weapon LastSelectedWeapon() { mixin(MGPC("Weapon", 1896)); }
+			float OrderUpdateTime() { mixin(MGPC("float", 1892)); }
+			ScriptString DisplayedOrders() { mixin(MGPC("ScriptString", 1880)); }
+			float MapDefaultSize() { mixin(MGPC("float", 1876)); }
+			Texture2D MapBackground() { mixin(MGPC("Texture2D", 1872)); }
+			float LastWeaponBarDrawnTime() { mixin(MGPC("float", 1840)); }
+			float SelectedWeaponAmmoOffsetX() { mixin(MGPC("float", 1836)); }
+			float WeaponAmmoOffsetY() { mixin(MGPC("float", 1832)); }
+			float WeaponAmmoOffsetX() { mixin(MGPC("float", 1828)); }
+			float WeaponAmmoThickness() { mixin(MGPC("float", 1824)); }
+			float WeaponAmmoLength() { mixin(MGPC("float", 1820)); }
+			float WeaponYOffset() { mixin(MGPC("float", 1816)); }
+			float WeaponYScale() { mixin(MGPC("float", 1812)); }
+			float SelectedBoxScale() { mixin(MGPC("float", 1808)); }
+			float WeaponXOffset() { mixin(MGPC("float", 1804)); }
+			float WeaponBarXOffset() { mixin(MGPC("float", 1800)); }
+			float WeaponScaleSpeed() { mixin(MGPC("float", 1796)); }
+			int BouncedWeapon() { mixin(MGPC("int", 1792)); }
+			float LastHUDUpdateTime() { mixin(MGPC("float", 1788)); }
+			float EmptyWeaponAlpha() { mixin(MGPC("float", 1784)); }
+			float OffWeaponAlpha() { mixin(MGPC("float", 1780)); }
+			float SelectedWeaponAlpha() { mixin(MGPC("float", 1776)); }
+			float BounceWeaponScale() { mixin(MGPC("float", 1772)); }
+			float SelectedWeaponScale() { mixin(MGPC("float", 1768)); }
+			float CurrentWeaponScale() { mixin(MGPC("float", 1728)); }
+			UTWeapon WeaponList() { mixin(MGPC("UTWeapon", 1688)); }
+			float WeaponBarY() { mixin(MGPC("float", 1684)); }
+			UObject.Color TeamTextColor() { mixin(MGPC("UObject.Color", 1680)); }
+			float HUDScaleY() { mixin(MGPC("float", 1660)); }
+			float HUDScaleX() { mixin(MGPC("float", 1656)); }
+			float WeaponBoxHeight() { mixin(MGPC("float", 1652)); }
+			float WeaponBoxWidth() { mixin(MGPC("float", 1648)); }
+			float WeaponBarScale() { mixin(MGPC("float", 1644)); }
+			UTPlayerReplicationInfo CharPendingPRI() { mixin(MGPC("UTPlayerReplicationInfo", 1640)); }
+			UTPlayerReplicationInfo CharPRI() { mixin(MGPC("UTPlayerReplicationInfo", 1636)); }
+			UObject.Vector2D CharPortraitSize() { mixin(MGPC("UObject.Vector2D", 1628)); }
+			float CharPortraitSlideTransitionTime() { mixin(MGPC("float", 1624)); }
+			float CharPortraitSlideTime() { mixin(MGPC("float", 1620)); }
+			float CharPortraitTime() { mixin(MGPC("float", 1616)); }
+			float CharPortraitXPerc() { mixin(MGPC("float", 1612)); }
+			float CharPortraitYPerc() { mixin(MGPC("float", 1608)); }
+			MaterialInstanceConstant CharPortraitMI() { mixin(MGPC("MaterialInstanceConstant", 1604)); }
+			Material CharPortraitMaterial() { mixin(MGPC("Material", 1600)); }
+			UTPlayerReplicationInfo UTOwnerPRI() { mixin(MGPC("UTPlayerReplicationInfo", 1580)); }
+			UTPawn UTPawnOwner() { mixin(MGPC("UTPawn", 1576)); }
+			float LastHealthPickupTime() { mixin(MGPC("float", 1564)); }
+			UObject.Color GrayColor() { mixin(MGPC("UObject.Color", 1556)); }
+			UObject.LinearColor LC_White() { mixin(MGPC("UObject.LinearColor", 1540)); }
+			Texture2D UT3GHudTexture() { mixin(MGPC("Texture2D", 1536)); }
+			Texture2D TalkingTexture() { mixin(MGPC("Texture2D", 1532)); }
+			ScriptClass WeaponSwitchMessage() { mixin(MGPC("ScriptClass", 1524)); }
 		}
-		bool bShowVehicleArmorCount() { mixin(MGBPC!(1584, 0x40000)()); }
-		bool bShowVehicleArmorCount(bool val) { mixin(MSBPC!(1584, 0x40000)()); }
-		bool bIsFirstPlayer() { mixin(MGBPC!(1584, 0x80000)()); }
-		bool bIsFirstPlayer(bool val) { mixin(MSBPC!(1584, 0x80000)()); }
-		bool bShowVehicle() { mixin(MGBPC!(1584, 0x20000)()); }
-		bool bShowVehicle(bool val) { mixin(MSBPC!(1584, 0x20000)()); }
-		bool bShowLeaderboard() { mixin(MGBPC!(1584, 0x10000)()); }
-		bool bShowLeaderboard(bool val) { mixin(MSBPC!(1584, 0x10000)()); }
-		bool bHasLeaderboard() { mixin(MGBPC!(1584, 0x8000)()); }
-		bool bHasLeaderboard(bool val) { mixin(MSBPC!(1584, 0x8000)()); }
-		bool bShowFragCount() { mixin(MGBPC!(1584, 0x4000)()); }
-		bool bShowFragCount(bool val) { mixin(MSBPC!(1584, 0x4000)()); }
-		bool bShowScoring() { mixin(MGBPC!(1584, 0x2000)()); }
-		bool bShowScoring(bool val) { mixin(MSBPC!(1584, 0x2000)()); }
-		bool bDisplayingPowerups() { mixin(MGBPC!(1584, 0x1000)()); }
-		bool bDisplayingPowerups(bool val) { mixin(MSBPC!(1584, 0x1000)()); }
-		bool bShowPowerups() { mixin(MGBPC!(1584, 0x800)()); }
-		bool bShowPowerups(bool val) { mixin(MSBPC!(1584, 0x800)()); }
-		bool bShowMap() { mixin(MGBPC!(1584, 0x400)()); }
-		bool bShowMap(bool val) { mixin(MSBPC!(1584, 0x400)()); }
-		bool bHasMap() { mixin(MGBPC!(1584, 0x200)()); }
-		bool bHasMap(bool val) { mixin(MSBPC!(1584, 0x200)()); }
-		bool bShowAmmo() { mixin(MGBPC!(1584, 0x100)()); }
-		bool bShowAmmo(bool val) { mixin(MSBPC!(1584, 0x100)()); }
-		bool bShowDoll() { mixin(MGBPC!(1584, 0x80)()); }
-		bool bShowDoll(bool val) { mixin(MSBPC!(1584, 0x80)()); }
-		bool bShowClock() { mixin(MGBPC!(1584, 0x40)()); }
-		bool bShowClock(bool val) { mixin(MSBPC!(1584, 0x40)()); }
-		bool bFadeOutHitEffect() { mixin(MGBPC!(1584, 0x20)()); }
-		bool bFadeOutHitEffect(bool val) { mixin(MSBPC!(1584, 0x20)()); }
-		bool bNoWeaponNumbers() { mixin(MGBPC!(1584, 0x10)()); }
-		bool bNoWeaponNumbers(bool val) { mixin(MSBPC!(1584, 0x10)()); }
-		bool bOnlyShowWeaponBarIfChanging() { mixin(MGBPC!(1584, 0x8)()); }
-		bool bOnlyShowWeaponBarIfChanging(bool val) { mixin(MSBPC!(1584, 0x8)()); }
-		bool bShowWeaponbar() { mixin(MGBPC!(1584, 0x4)()); }
-		bool bShowWeaponbar(bool val) { mixin(MSBPC!(1584, 0x4)()); }
-		bool bHudMessageRendered() { mixin(MGBPC!(1584, 0x2)()); }
-		bool bHudMessageRendered(bool val) { mixin(MSBPC!(1584, 0x2)()); }
-		bool bShowAllAI() { mixin(MGBPC!(1584, 0x1)()); }
-		bool bShowAllAI(bool val) { mixin(MSBPC!(1584, 0x1)()); }
+		bool bShowVehicleArmorCount() { mixin(MGBPC(1584, 0x40000)); }
+		bool bShowVehicleArmorCount(bool val) { mixin(MSBPC(1584, 0x40000)); }
+		bool bIsFirstPlayer() { mixin(MGBPC(1584, 0x80000)); }
+		bool bIsFirstPlayer(bool val) { mixin(MSBPC(1584, 0x80000)); }
+		bool bShowVehicle() { mixin(MGBPC(1584, 0x20000)); }
+		bool bShowVehicle(bool val) { mixin(MSBPC(1584, 0x20000)); }
+		bool bShowLeaderboard() { mixin(MGBPC(1584, 0x10000)); }
+		bool bShowLeaderboard(bool val) { mixin(MSBPC(1584, 0x10000)); }
+		bool bHasLeaderboard() { mixin(MGBPC(1584, 0x8000)); }
+		bool bHasLeaderboard(bool val) { mixin(MSBPC(1584, 0x8000)); }
+		bool bShowFragCount() { mixin(MGBPC(1584, 0x4000)); }
+		bool bShowFragCount(bool val) { mixin(MSBPC(1584, 0x4000)); }
+		bool bShowScoring() { mixin(MGBPC(1584, 0x2000)); }
+		bool bShowScoring(bool val) { mixin(MSBPC(1584, 0x2000)); }
+		bool bDisplayingPowerups() { mixin(MGBPC(1584, 0x1000)); }
+		bool bDisplayingPowerups(bool val) { mixin(MSBPC(1584, 0x1000)); }
+		bool bShowPowerups() { mixin(MGBPC(1584, 0x800)); }
+		bool bShowPowerups(bool val) { mixin(MSBPC(1584, 0x800)); }
+		bool bShowMap() { mixin(MGBPC(1584, 0x400)); }
+		bool bShowMap(bool val) { mixin(MSBPC(1584, 0x400)); }
+		bool bHasMap() { mixin(MGBPC(1584, 0x200)); }
+		bool bHasMap(bool val) { mixin(MSBPC(1584, 0x200)); }
+		bool bShowAmmo() { mixin(MGBPC(1584, 0x100)); }
+		bool bShowAmmo(bool val) { mixin(MSBPC(1584, 0x100)); }
+		bool bShowDoll() { mixin(MGBPC(1584, 0x80)); }
+		bool bShowDoll(bool val) { mixin(MSBPC(1584, 0x80)); }
+		bool bShowClock() { mixin(MGBPC(1584, 0x40)); }
+		bool bShowClock(bool val) { mixin(MSBPC(1584, 0x40)); }
+		bool bFadeOutHitEffect() { mixin(MGBPC(1584, 0x20)); }
+		bool bFadeOutHitEffect(bool val) { mixin(MSBPC(1584, 0x20)); }
+		bool bNoWeaponNumbers() { mixin(MGBPC(1584, 0x10)); }
+		bool bNoWeaponNumbers(bool val) { mixin(MSBPC(1584, 0x10)); }
+		bool bOnlyShowWeaponBarIfChanging() { mixin(MGBPC(1584, 0x8)); }
+		bool bOnlyShowWeaponBarIfChanging(bool val) { mixin(MSBPC(1584, 0x8)); }
+		bool bShowWeaponbar() { mixin(MGBPC(1584, 0x4)); }
+		bool bShowWeaponbar(bool val) { mixin(MSBPC(1584, 0x4)); }
+		bool bHudMessageRendered() { mixin(MGBPC(1584, 0x2)); }
+		bool bHudMessageRendered(bool val) { mixin(MSBPC(1584, 0x2)); }
+		bool bShowAllAI() { mixin(MGBPC(1584, 0x1)); }
+		bool bShowAllAI(bool val) { mixin(MSBPC(1584, 0x1)); }
 	}
 final:
 	void DrawTileCentered(Texture2D Tex, float XL, float YL, float U, float V, float UL, float VL, UObject.LinearColor C)

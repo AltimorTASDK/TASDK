@@ -10,9 +10,9 @@ extern(C++) interface CameraModifier : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CameraModifier")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CameraModifier")); }
 	private static __gshared CameraModifier mDefaultProperties;
-	@property final static CameraModifier DefaultProperties() { mixin(MGDPC!(CameraModifier, "CameraModifier Engine.Default__CameraModifier")()); }
+	@property final static CameraModifier DefaultProperties() { mixin(MGDPC("CameraModifier", "CameraModifier Engine.Default__CameraModifier")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,37 +30,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddCameraModifier() { mixin(MGF!("mAddCameraModifier", "Function Engine.CameraModifier.AddCameraModifier")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function Engine.CameraModifier.ProcessViewRotation")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.CameraModifier.Init")()); }
-			ScriptFunction ModifyCamera() { mixin(MGF!("mModifyCamera", "Function Engine.CameraModifier.ModifyCamera")()); }
-			ScriptFunction IsDisabled() { mixin(MGF!("mIsDisabled", "Function Engine.CameraModifier.IsDisabled")()); }
-			ScriptFunction RemoveCameraModifier() { mixin(MGF!("mRemoveCameraModifier", "Function Engine.CameraModifier.RemoveCameraModifier")()); }
-			ScriptFunction DisableModifier() { mixin(MGF!("mDisableModifier", "Function Engine.CameraModifier.DisableModifier")()); }
-			ScriptFunction EnableModifier() { mixin(MGF!("mEnableModifier", "Function Engine.CameraModifier.EnableModifier")()); }
-			ScriptFunction ToggleModifier() { mixin(MGF!("mToggleModifier", "Function Engine.CameraModifier.ToggleModifier")()); }
-			ScriptFunction UpdateAlpha() { mixin(MGF!("mUpdateAlpha", "Function Engine.CameraModifier.UpdateAlpha")()); }
+			ScriptFunction AddCameraModifier() { mixin(MGF("mAddCameraModifier", "Function Engine.CameraModifier.AddCameraModifier")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function Engine.CameraModifier.ProcessViewRotation")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.CameraModifier.Init")); }
+			ScriptFunction ModifyCamera() { mixin(MGF("mModifyCamera", "Function Engine.CameraModifier.ModifyCamera")); }
+			ScriptFunction IsDisabled() { mixin(MGF("mIsDisabled", "Function Engine.CameraModifier.IsDisabled")); }
+			ScriptFunction RemoveCameraModifier() { mixin(MGF("mRemoveCameraModifier", "Function Engine.CameraModifier.RemoveCameraModifier")); }
+			ScriptFunction DisableModifier() { mixin(MGF("mDisableModifier", "Function Engine.CameraModifier.DisableModifier")); }
+			ScriptFunction EnableModifier() { mixin(MGF("mEnableModifier", "Function Engine.CameraModifier.EnableModifier")); }
+			ScriptFunction ToggleModifier() { mixin(MGF("mToggleModifier", "Function Engine.CameraModifier.ToggleModifier")); }
+			ScriptFunction UpdateAlpha() { mixin(MGF("mUpdateAlpha", "Function Engine.CameraModifier.UpdateAlpha")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float TargetAlpha() { mixin(MGPC!("float", 84)()); }
-			float Alpha() { mixin(MGPC!("float", 80)()); }
-			float AlphaOutTime() { mixin(MGPC!("float", 76)()); }
-			float AlphaInTime() { mixin(MGPC!("float", 72)()); }
-			ubyte Priority() { mixin(MGPC!("ubyte", 68)()); }
-			Camera CameraOwner() { mixin(MGPC!("Camera", 64)()); }
+			float TargetAlpha() { mixin(MGPC("float", 84)); }
+			float Alpha() { mixin(MGPC("float", 80)); }
+			float AlphaOutTime() { mixin(MGPC("float", 76)); }
+			float AlphaInTime() { mixin(MGPC("float", 72)); }
+			ubyte Priority() { mixin(MGPC("ubyte", 68)); }
+			Camera CameraOwner() { mixin(MGPC("Camera", 64)); }
 		}
-		bool bDebug() { mixin(MGBPC!(60, 0x8)()); }
-		bool bDebug(bool val) { mixin(MSBPC!(60, 0x8)()); }
-		bool bExclusive() { mixin(MGBPC!(60, 0x4)()); }
-		bool bExclusive(bool val) { mixin(MSBPC!(60, 0x4)()); }
-		bool bPendingDisable() { mixin(MGBPC!(60, 0x2)()); }
-		bool bPendingDisable(bool val) { mixin(MSBPC!(60, 0x2)()); }
-		bool bDisabled() { mixin(MGBPC!(60, 0x1)()); }
-		bool bDisabled(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		bool bDebug() { mixin(MGBPC(60, 0x8)); }
+		bool bDebug(bool val) { mixin(MSBPC(60, 0x8)); }
+		bool bExclusive() { mixin(MGBPC(60, 0x4)); }
+		bool bExclusive(bool val) { mixin(MSBPC(60, 0x4)); }
+		bool bPendingDisable() { mixin(MGBPC(60, 0x2)); }
+		bool bPendingDisable(bool val) { mixin(MSBPC(60, 0x2)); }
+		bool bDisabled() { mixin(MGBPC(60, 0x1)); }
+		bool bDisabled(bool val) { mixin(MSBPC(60, 0x1)); }
 	}
 final:
 	bool AddCameraModifier(Camera pCamera)

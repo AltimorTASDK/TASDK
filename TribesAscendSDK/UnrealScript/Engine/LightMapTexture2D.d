@@ -8,7 +8,7 @@ extern(C++) interface LightMapTexture2D : Texture2D
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LightMapTexture2D")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.LightMapTexture2D")); }
 	private static __gshared LightMapTexture2D mDefaultProperties;
-	@property final static LightMapTexture2D DefaultProperties() { mixin(MGDPC!(LightMapTexture2D, "LightMapTexture2D Engine.Default__LightMapTexture2D")()); }
+	@property final static LightMapTexture2D DefaultProperties() { mixin(MGDPC("LightMapTexture2D", "LightMapTexture2D Engine.Default__LightMapTexture2D")); }
 }

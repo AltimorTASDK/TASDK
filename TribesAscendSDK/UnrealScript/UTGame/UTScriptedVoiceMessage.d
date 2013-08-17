@@ -12,9 +12,9 @@ extern(C++) interface UTScriptedVoiceMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTScriptedVoiceMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTScriptedVoiceMessage")); }
 	private static __gshared UTScriptedVoiceMessage mDefaultProperties;
-	@property final static UTScriptedVoiceMessage DefaultProperties() { mixin(MGDPC!(UTScriptedVoiceMessage, "UTScriptedVoiceMessage UTGame.Default__UTScriptedVoiceMessage")()); }
+	@property final static UTScriptedVoiceMessage DefaultProperties() { mixin(MGDPC("UTScriptedVoiceMessage", "UTScriptedVoiceMessage UTGame.Default__UTScriptedVoiceMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,10 +26,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTScriptedVoiceMessage.AnnouncementSound")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTScriptedVoiceMessage.ClientReceive")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTScriptedVoiceMessage.GetString")()); }
-			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTScriptedVoiceMessage.AnnouncementLevel")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTScriptedVoiceMessage.AnnouncementSound")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTScriptedVoiceMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTScriptedVoiceMessage.GetString")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF("mAnnouncementLevel", "Function UTGame.UTScriptedVoiceMessage.AnnouncementLevel")); }
 		}
 	}
 final:

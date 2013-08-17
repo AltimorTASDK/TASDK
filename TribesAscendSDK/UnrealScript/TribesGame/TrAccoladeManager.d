@@ -14,9 +14,9 @@ extern(C++) interface TrAccoladeManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAccoladeManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAccoladeManager")); }
 	private static __gshared TrAccoladeManager mDefaultProperties;
-	@property final static TrAccoladeManager DefaultProperties() { mixin(MGDPC!(TrAccoladeManager, "TrAccoladeManager TribesGame.Default__TrAccoladeManager")()); }
+	@property final static TrAccoladeManager DefaultProperties() { mixin(MGDPC("TrAccoladeManager", "TrAccoladeManager TribesGame.Default__TrAccoladeManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -52,52 +52,52 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFlagDistance() { mixin(MGF!("mGetFlagDistance", "Function TribesGame.TrAccoladeManager.GetFlagDistance")()); }
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrAccoladeManager.Initialize")()); }
-			ScriptFunction ResetStreaks() { mixin(MGF!("mResetStreaks", "Function TribesGame.TrAccoladeManager.ResetStreaks")()); }
-			ScriptFunction GiveAssist() { mixin(MGF!("mGiveAssist", "Function TribesGame.TrAccoladeManager.GiveAssist")()); }
-			ScriptFunction GiveVehicleAssist() { mixin(MGF!("mGiveVehicleAssist", "Function TribesGame.TrAccoladeManager.GiveVehicleAssist")()); }
-			ScriptFunction KillAsRabbit() { mixin(MGF!("mKillAsRabbit", "Function TribesGame.TrAccoladeManager.KillAsRabbit")()); }
-			ScriptFunction KilledTheRabbit() { mixin(MGF!("mKilledTheRabbit", "Function TribesGame.TrAccoladeManager.KilledTheRabbit")()); }
-			ScriptFunction KilledTheFlagHolder() { mixin(MGF!("mKilledTheFlagHolder", "Function TribesGame.TrAccoladeManager.KilledTheFlagHolder")()); }
-			ScriptFunction UpdateStandardKillingSpree() { mixin(MGF!("mUpdateStandardKillingSpree", "Function TribesGame.TrAccoladeManager.UpdateStandardKillingSpree")()); }
-			ScriptFunction KilledGenerator() { mixin(MGF!("mKilledGenerator", "Function TribesGame.TrAccoladeManager.KilledGenerator")()); }
-			ScriptFunction RepairedBase() { mixin(MGF!("mRepairedBase", "Function TribesGame.TrAccoladeManager.RepairedBase")()); }
-			ScriptFunction KilledBaseTurret() { mixin(MGF!("mKilledBaseTurret", "Function TribesGame.TrAccoladeManager.KilledBaseTurret")()); }
-			ScriptFunction KilledBaseRadar() { mixin(MGF!("mKilledBaseRadar", "Function TribesGame.TrAccoladeManager.KilledBaseRadar")()); }
-			ScriptFunction FlagGrab() { mixin(MGF!("mFlagGrab", "Function TribesGame.TrAccoladeManager.FlagGrab")()); }
-			ScriptFunction FlagGrabDeathmatch() { mixin(MGF!("mFlagGrabDeathmatch", "Function TribesGame.TrAccoladeManager.FlagGrabDeathmatch")()); }
-			ScriptFunction FlagHeld() { mixin(MGF!("mFlagHeld", "Function TribesGame.TrAccoladeManager.FlagHeld")()); }
-			ScriptFunction FlagAssist() { mixin(MGF!("mFlagAssist", "Function TribesGame.TrAccoladeManager.FlagAssist")()); }
-			ScriptFunction FlagCapture() { mixin(MGF!("mFlagCapture", "Function TribesGame.TrAccoladeManager.FlagCapture")()); }
-			ScriptFunction FlagReturn() { mixin(MGF!("mFlagReturn", "Function TribesGame.TrAccoladeManager.FlagReturn")()); }
-			ScriptFunction NoJoy() { mixin(MGF!("mNoJoy", "Function TribesGame.TrAccoladeManager.NoJoy")()); }
-			ScriptFunction GameCompleted() { mixin(MGF!("mGameCompleted", "Function TribesGame.TrAccoladeManager.GameCompleted")()); }
-			ScriptFunction GameWon() { mixin(MGF!("mGameWon", "Function TribesGame.TrAccoladeManager.GameWon")()); }
-			ScriptFunction UpdateMultiKills() { mixin(MGF!("mUpdateMultiKills", "Function TribesGame.TrAccoladeManager.UpdateMultiKills")()); }
-			ScriptFunction VehicleDestroyed() { mixin(MGF!("mVehicleDestroyed", "Function TribesGame.TrAccoladeManager.VehicleDestroyed")()); }
-			ScriptFunction UpdateSpecialAccolades() { mixin(MGF!("mUpdateSpecialAccolades", "Function TribesGame.TrAccoladeManager.UpdateSpecialAccolades")()); }
-			ScriptFunction QueueAccolade() { mixin(MGF!("mQueueAccolade", "Function TribesGame.TrAccoladeManager.QueueAccolade")()); }
-			ScriptFunction CreditsGiven() { mixin(MGF!("mCreditsGiven", "Function TribesGame.TrAccoladeManager.CreditsGiven")()); }
-			ScriptFunction BroadcastAccolade() { mixin(MGF!("mBroadcastAccolade", "Function TribesGame.TrAccoladeManager.BroadcastAccolade")()); }
+			ScriptFunction GetFlagDistance() { mixin(MGF("mGetFlagDistance", "Function TribesGame.TrAccoladeManager.GetFlagDistance")); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrAccoladeManager.Initialize")); }
+			ScriptFunction ResetStreaks() { mixin(MGF("mResetStreaks", "Function TribesGame.TrAccoladeManager.ResetStreaks")); }
+			ScriptFunction GiveAssist() { mixin(MGF("mGiveAssist", "Function TribesGame.TrAccoladeManager.GiveAssist")); }
+			ScriptFunction GiveVehicleAssist() { mixin(MGF("mGiveVehicleAssist", "Function TribesGame.TrAccoladeManager.GiveVehicleAssist")); }
+			ScriptFunction KillAsRabbit() { mixin(MGF("mKillAsRabbit", "Function TribesGame.TrAccoladeManager.KillAsRabbit")); }
+			ScriptFunction KilledTheRabbit() { mixin(MGF("mKilledTheRabbit", "Function TribesGame.TrAccoladeManager.KilledTheRabbit")); }
+			ScriptFunction KilledTheFlagHolder() { mixin(MGF("mKilledTheFlagHolder", "Function TribesGame.TrAccoladeManager.KilledTheFlagHolder")); }
+			ScriptFunction UpdateStandardKillingSpree() { mixin(MGF("mUpdateStandardKillingSpree", "Function TribesGame.TrAccoladeManager.UpdateStandardKillingSpree")); }
+			ScriptFunction KilledGenerator() { mixin(MGF("mKilledGenerator", "Function TribesGame.TrAccoladeManager.KilledGenerator")); }
+			ScriptFunction RepairedBase() { mixin(MGF("mRepairedBase", "Function TribesGame.TrAccoladeManager.RepairedBase")); }
+			ScriptFunction KilledBaseTurret() { mixin(MGF("mKilledBaseTurret", "Function TribesGame.TrAccoladeManager.KilledBaseTurret")); }
+			ScriptFunction KilledBaseRadar() { mixin(MGF("mKilledBaseRadar", "Function TribesGame.TrAccoladeManager.KilledBaseRadar")); }
+			ScriptFunction FlagGrab() { mixin(MGF("mFlagGrab", "Function TribesGame.TrAccoladeManager.FlagGrab")); }
+			ScriptFunction FlagGrabDeathmatch() { mixin(MGF("mFlagGrabDeathmatch", "Function TribesGame.TrAccoladeManager.FlagGrabDeathmatch")); }
+			ScriptFunction FlagHeld() { mixin(MGF("mFlagHeld", "Function TribesGame.TrAccoladeManager.FlagHeld")); }
+			ScriptFunction FlagAssist() { mixin(MGF("mFlagAssist", "Function TribesGame.TrAccoladeManager.FlagAssist")); }
+			ScriptFunction FlagCapture() { mixin(MGF("mFlagCapture", "Function TribesGame.TrAccoladeManager.FlagCapture")); }
+			ScriptFunction FlagReturn() { mixin(MGF("mFlagReturn", "Function TribesGame.TrAccoladeManager.FlagReturn")); }
+			ScriptFunction NoJoy() { mixin(MGF("mNoJoy", "Function TribesGame.TrAccoladeManager.NoJoy")); }
+			ScriptFunction GameCompleted() { mixin(MGF("mGameCompleted", "Function TribesGame.TrAccoladeManager.GameCompleted")); }
+			ScriptFunction GameWon() { mixin(MGF("mGameWon", "Function TribesGame.TrAccoladeManager.GameWon")); }
+			ScriptFunction UpdateMultiKills() { mixin(MGF("mUpdateMultiKills", "Function TribesGame.TrAccoladeManager.UpdateMultiKills")); }
+			ScriptFunction VehicleDestroyed() { mixin(MGF("mVehicleDestroyed", "Function TribesGame.TrAccoladeManager.VehicleDestroyed")); }
+			ScriptFunction UpdateSpecialAccolades() { mixin(MGF("mUpdateSpecialAccolades", "Function TribesGame.TrAccoladeManager.UpdateSpecialAccolades")); }
+			ScriptFunction QueueAccolade() { mixin(MGF("mQueueAccolade", "Function TribesGame.TrAccoladeManager.QueueAccolade")); }
+			ScriptFunction CreditsGiven() { mixin(MGF("mCreditsGiven", "Function TribesGame.TrAccoladeManager.CreditsGiven")); }
+			ScriptFunction BroadcastAccolade() { mixin(MGF("mBroadcastAccolade", "Function TribesGame.TrAccoladeManager.BroadcastAccolade")); }
 		}
 	}
 	@property final auto ref
 	{
-		int m_nLastFlagReturnTime() { mixin(MGPC!("int", 112)()); }
-		int m_nLastFlagGrabTime() { mixin(MGPC!("int", 108)()); }
-		int MAXIMUM_EMERGENCY_GRAB_DISTANCE() { mixin(MGPC!("int", 104)()); }
-		int MAXIMUM_FLAG_DEFENSE_DISTANCE() { mixin(MGPC!("int", 100)()); }
-		int MINIMUM_ULTRA_GRAB_SPEED() { mixin(MGPC!("int", 96)()); }
-		int MINIMUM_FAST_GRAB_SPEED() { mixin(MGPC!("int", 92)()); }
-		int MAXIMUM_LLAMA_GRAB_SPEED() { mixin(MGPC!("int", 88)()); }
-		int MINIMUM_TIME_FLAG_CREDITS() { mixin(MGPC!("int", 84)()); }
-		int m_nCurrSpinfusorKillStreak() { mixin(MGPC!("int", 80)()); }
-		int m_nCurrExplosiveKillStreak() { mixin(MGPC!("int", 76)()); }
-		int m_nCurrSnipingKillStreak() { mixin(MGPC!("int", 72)()); }
-		TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 68)()); }
-		TrPlayerController m_TrPC() { mixin(MGPC!("TrPlayerController", 64)()); }
-		TrGame m_TrG() { mixin(MGPC!("TrGame", 60)()); }
+		int m_nLastFlagReturnTime() { mixin(MGPC("int", 112)); }
+		int m_nLastFlagGrabTime() { mixin(MGPC("int", 108)); }
+		int MAXIMUM_EMERGENCY_GRAB_DISTANCE() { mixin(MGPC("int", 104)); }
+		int MAXIMUM_FLAG_DEFENSE_DISTANCE() { mixin(MGPC("int", 100)); }
+		int MINIMUM_ULTRA_GRAB_SPEED() { mixin(MGPC("int", 96)); }
+		int MINIMUM_FAST_GRAB_SPEED() { mixin(MGPC("int", 92)); }
+		int MAXIMUM_LLAMA_GRAB_SPEED() { mixin(MGPC("int", 88)); }
+		int MINIMUM_TIME_FLAG_CREDITS() { mixin(MGPC("int", 84)); }
+		int m_nCurrSpinfusorKillStreak() { mixin(MGPC("int", 80)); }
+		int m_nCurrExplosiveKillStreak() { mixin(MGPC("int", 76)); }
+		int m_nCurrSnipingKillStreak() { mixin(MGPC("int", 72)); }
+		TrStatsInterface Stats() { mixin(MGPC("TrStatsInterface", 68)); }
+		TrPlayerController m_TrPC() { mixin(MGPC("TrPlayerController", 64)); }
+		TrGame m_TrG() { mixin(MGPC("TrGame", 60)); }
 	}
 final:
 	int GetFlagDistance(Vector Loc1, Vector Loc2)

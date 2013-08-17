@@ -8,7 +8,7 @@ extern(C++) interface ShaderCache : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ShaderCache")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ShaderCache")); }
 	private static __gshared ShaderCache mDefaultProperties;
-	@property final static ShaderCache DefaultProperties() { mixin(MGDPC!(ShaderCache, "ShaderCache Engine.Default__ShaderCache")()); }
+	@property final static ShaderCache DefaultProperties() { mixin(MGDPC("ShaderCache", "ShaderCache Engine.Default__ShaderCache")); }
 }

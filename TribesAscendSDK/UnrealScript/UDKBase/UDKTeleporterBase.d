@@ -13,9 +13,9 @@ extern(C++) interface UDKTeleporterBase : Teleporter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKTeleporterBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKTeleporterBase")); }
 	private static __gshared UDKTeleporterBase mDefaultProperties;
-	@property final static UDKTeleporterBase DefaultProperties() { mixin(MGDPC!(UDKTeleporterBase, "UDKTeleporterBase UDKBase.Default__UDKTeleporterBase")()); }
+	@property final static UDKTeleporterBase DefaultProperties() { mixin(MGDPC("UDKTeleporterBase", "UDKTeleporterBase UDKBase.Default__UDKTeleporterBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,21 +26,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UDKBase.UDKTeleporterBase.PostBeginPlay")()); }
-			ScriptFunction InitializePortalEffect() { mixin(MGF!("mInitializePortalEffect", "Function UDKBase.UDKTeleporterBase.InitializePortalEffect")()); }
-			ScriptFunction Accept() { mixin(MGF!("mAccept", "Function UDKBase.UDKTeleporterBase.Accept")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UDKBase.UDKTeleporterBase.PostBeginPlay")); }
+			ScriptFunction InitializePortalEffect() { mixin(MGF("mInitializePortalEffect", "Function UDKBase.UDKTeleporterBase.InitializePortalEffect")); }
+			ScriptFunction Accept() { mixin(MGF("mAccept", "Function UDKBase.UDKTeleporterBase.Accept")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue TeleportingSound() { mixin(MGPC!("SoundCue", 768)()); }
-		ScriptName PortalTextureParameter() { mixin(MGPC!("ScriptName", 760)()); }
-		MaterialInstanceConstant PortalMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 756)()); }
-		MaterialInterface PortalMaterial() { mixin(MGPC!("MaterialInterface", 752)()); }
-		Actor PortalViewTarget() { mixin(MGPC!("Actor", 748)()); }
-		int TextureResolutionY() { mixin(MGPC!("int", 744)()); }
-		int TextureResolutionX() { mixin(MGPC!("int", 740)()); }
-		TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 736)()); }
+		SoundCue TeleportingSound() { mixin(MGPC("SoundCue", 768)); }
+		ScriptName PortalTextureParameter() { mixin(MGPC("ScriptName", 760)); }
+		MaterialInstanceConstant PortalMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 756)); }
+		MaterialInterface PortalMaterial() { mixin(MGPC("MaterialInterface", 752)); }
+		Actor PortalViewTarget() { mixin(MGPC("Actor", 748)); }
+		int TextureResolutionY() { mixin(MGPC("int", 744)); }
+		int TextureResolutionX() { mixin(MGPC("int", 740)); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC("TextureRenderTarget2D", 736)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PortalCaptureComponent'!
 	}
 final:

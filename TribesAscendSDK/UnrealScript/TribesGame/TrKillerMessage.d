@@ -11,9 +11,9 @@ extern(C++) interface TrKillerMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrKillerMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrKillerMessage")); }
 	private static __gshared TrKillerMessage mDefaultProperties;
-	@property final static TrKillerMessage DefaultProperties() { mixin(MGDPC!(TrKillerMessage, "TrKillerMessage TribesGame.Default__TrKillerMessage")()); }
+	@property final static TrKillerMessage DefaultProperties() { mixin(MGDPC("TrKillerMessage", "TrKillerMessage TribesGame.Default__TrKillerMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,14 +23,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrKillerMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrKillerMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrKillerMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrKillerMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString KillCreditFor() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString YouKilled() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString KillCreditFor() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString YouKilled() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

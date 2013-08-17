@@ -12,9 +12,9 @@ extern(C++) interface TrGeneratorMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGeneratorMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGeneratorMessage")); }
 	private static __gshared TrGeneratorMessage mDefaultProperties;
-	@property final static TrGeneratorMessage DefaultProperties() { mixin(MGDPC!(TrGeneratorMessage, "TrGeneratorMessage TribesGame.Default__TrGeneratorMessage")()); }
+	@property final static TrGeneratorMessage DefaultProperties() { mixin(MGDPC("TrGeneratorMessage", "TrGeneratorMessage TribesGame.Default__TrGeneratorMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrGeneratorMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrGeneratorMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrGeneratorMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrGeneratorMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString OurGeneratorRestored() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString EnemyGeneratorDestroyed() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString OurGeneratorDestroyed() { mixin(MGPC!("ScriptString", 124)()); }
-		SoundCue DiamondSwordSounds() { mixin(MGPC!("SoundCue", 112)()); }
-		SoundCue BloodEagleSounds() { mixin(MGPC!("SoundCue", 100)()); }
+		ScriptString OurGeneratorRestored() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString EnemyGeneratorDestroyed() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString OurGeneratorDestroyed() { mixin(MGPC("ScriptString", 124)); }
+		SoundCue DiamondSwordSounds() { mixin(MGPC("SoundCue", 112)); }
+		SoundCue BloodEagleSounds() { mixin(MGPC("SoundCue", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

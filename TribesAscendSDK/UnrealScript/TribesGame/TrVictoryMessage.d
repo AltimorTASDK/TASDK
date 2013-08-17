@@ -12,9 +12,9 @@ extern(C++) interface TrVictoryMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVictoryMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVictoryMessage")); }
 	private static __gshared TrVictoryMessage mDefaultProperties;
-	@property final static TrVictoryMessage DefaultProperties() { mixin(MGDPC!(TrVictoryMessage, "TrVictoryMessage TribesGame.Default__TrVictoryMessage")()); }
+	@property final static TrVictoryMessage DefaultProperties() { mixin(MGDPC("TrVictoryMessage", "TrVictoryMessage TribesGame.Default__TrVictoryMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,23 +24,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrVictoryMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrVictoryMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrVictoryMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrVictoryMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString TrainingComplete() { mixin(MGPC!("ScriptString", 228)()); }
-		ScriptString DrawGame() { mixin(MGPC!("ScriptString", 216)()); }
-		ScriptString PlayerWonRound() { mixin(MGPC!("ScriptString", 204)()); }
-		ScriptString DiamondSwordVictory() { mixin(MGPC!("ScriptString", 192)()); }
-		ScriptString BloodEagleVictory() { mixin(MGPC!("ScriptString", 180)()); }
-		ScriptString NormalDefeat() { mixin(MGPC!("ScriptString", 168)()); }
-		ScriptString NormalVictory() { mixin(MGPC!("ScriptString", 156)()); }
-		ScriptString DominantDefeat() { mixin(MGPC!("ScriptString", 144)()); }
-		ScriptString DominantVictory() { mixin(MGPC!("ScriptString", 132)()); }
-		SoundCue BloodEagleSounds() { mixin(MGPC!("SoundCue", 116)()); }
-		SoundCue DiamondSwordSounds() { mixin(MGPC!("SoundCue", 100)()); }
+		ScriptString TrainingComplete() { mixin(MGPC("ScriptString", 228)); }
+		ScriptString DrawGame() { mixin(MGPC("ScriptString", 216)); }
+		ScriptString PlayerWonRound() { mixin(MGPC("ScriptString", 204)); }
+		ScriptString DiamondSwordVictory() { mixin(MGPC("ScriptString", 192)); }
+		ScriptString BloodEagleVictory() { mixin(MGPC("ScriptString", 180)); }
+		ScriptString NormalDefeat() { mixin(MGPC("ScriptString", 168)); }
+		ScriptString NormalVictory() { mixin(MGPC("ScriptString", 156)); }
+		ScriptString DominantDefeat() { mixin(MGPC("ScriptString", 144)); }
+		ScriptString DominantVictory() { mixin(MGPC("ScriptString", 132)); }
+		SoundCue BloodEagleSounds() { mixin(MGPC("SoundCue", 116)); }
+		SoundCue DiamondSwordSounds() { mixin(MGPC("SoundCue", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

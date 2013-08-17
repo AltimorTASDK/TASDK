@@ -8,13 +8,13 @@ extern(C++) interface TrCTFBase_BloodEagle : TrCTFBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCTFBase_BloodEagle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCTFBase_BloodEagle")); }
 	private static __gshared TrCTFBase_BloodEagle mDefaultProperties;
-	@property final static TrCTFBase_BloodEagle DefaultProperties() { mixin(MGDPC!(TrCTFBase_BloodEagle, "TrCTFBase_BloodEagle TribesGame.Default__TrCTFBase_BloodEagle")()); }
+	@property final static TrCTFBase_BloodEagle DefaultProperties() { mixin(MGDPC("TrCTFBase_BloodEagle", "TrCTFBase_BloodEagle TribesGame.Default__TrCTFBase_BloodEagle")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetSpectatorName;
-		public @property static final ScriptFunction GetSpectatorName() { mixin(MGF!("mGetSpectatorName", "Function TribesGame.TrCTFBase_BloodEagle.GetSpectatorName")()); }
+		public @property static final ScriptFunction GetSpectatorName() { mixin(MGF("mGetSpectatorName", "Function TribesGame.TrCTFBase_BloodEagle.GetSpectatorName")); }
 	}
 	final ScriptString GetSpectatorName()
 	{

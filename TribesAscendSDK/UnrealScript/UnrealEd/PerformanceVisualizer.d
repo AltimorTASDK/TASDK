@@ -8,7 +8,7 @@ extern(C++) interface PerformanceVisualizer : HeatmapVisualizer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.PerformanceVisualizer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.PerformanceVisualizer")); }
 	private static __gshared PerformanceVisualizer mDefaultProperties;
-	@property final static PerformanceVisualizer DefaultProperties() { mixin(MGDPC!(PerformanceVisualizer, "PerformanceVisualizer UnrealEd.Default__PerformanceVisualizer")()); }
+	@property final static PerformanceVisualizer DefaultProperties() { mixin(MGDPC("PerformanceVisualizer", "PerformanceVisualizer UnrealEd.Default__PerformanceVisualizer")); }
 }

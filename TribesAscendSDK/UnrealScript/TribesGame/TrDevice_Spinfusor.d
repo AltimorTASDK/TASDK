@@ -12,9 +12,9 @@ extern(C++) interface TrDevice_Spinfusor : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Spinfusor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_Spinfusor")); }
 	private static __gshared TrDevice_Spinfusor mDefaultProperties;
-	@property final static TrDevice_Spinfusor DefaultProperties() { mixin(MGDPC!(TrDevice_Spinfusor, "TrDevice_Spinfusor TribesGame.Default__TrDevice_Spinfusor")()); }
+	@property final static TrDevice_Spinfusor DefaultProperties() { mixin(MGDPC("TrDevice_Spinfusor", "TrDevice_Spinfusor TribesGame.Default__TrDevice_Spinfusor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,24 +33,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateReplicatedCarriedAmmo() { mixin(MGF!("mUpdateReplicatedCarriedAmmo", "Function TribesGame.TrDevice_Spinfusor.UpdateReplicatedCarriedAmmo")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_Spinfusor.PostInitAnimTree")()); }
-			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function TribesGame.TrDevice_Spinfusor.OnAnimPlay")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_Spinfusor.OnAnimEnd")()); }
-			ScriptFunction PlayFireEffects() { mixin(MGF!("mPlayFireEffects", "Function TribesGame.TrDevice_Spinfusor.PlayFireEffects")()); }
-			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_Spinfusor.PlayWeaponEquip")()); }
-			ScriptFunction SetDiscVisibility() { mixin(MGF!("mSetDiscVisibility", "Function TribesGame.TrDevice_Spinfusor.SetDiscVisibility")()); }
-			ScriptFunction SetDiscSpinning() { mixin(MGF!("mSetDiscSpinning", "Function TribesGame.TrDevice_Spinfusor.SetDiscSpinning")()); }
-			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice_Spinfusor.PlayWeaponPutDown")()); }
-			ScriptFunction PutDownFast() { mixin(MGF!("mPutDownFast", "Function TribesGame.TrDevice_Spinfusor.PutDownFast")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Spinfusor.OnSwitchAwayFromWeapon")()); }
+			ScriptFunction UpdateReplicatedCarriedAmmo() { mixin(MGF("mUpdateReplicatedCarriedAmmo", "Function TribesGame.TrDevice_Spinfusor.UpdateReplicatedCarriedAmmo")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDevice_Spinfusor.PostInitAnimTree")); }
+			ScriptFunction OnAnimPlay() { mixin(MGF("mOnAnimPlay", "Function TribesGame.TrDevice_Spinfusor.OnAnimPlay")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function TribesGame.TrDevice_Spinfusor.OnAnimEnd")); }
+			ScriptFunction PlayFireEffects() { mixin(MGF("mPlayFireEffects", "Function TribesGame.TrDevice_Spinfusor.PlayFireEffects")); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF("mPlayWeaponEquip", "Function TribesGame.TrDevice_Spinfusor.PlayWeaponEquip")); }
+			ScriptFunction SetDiscVisibility() { mixin(MGF("mSetDiscVisibility", "Function TribesGame.TrDevice_Spinfusor.SetDiscVisibility")); }
+			ScriptFunction SetDiscSpinning() { mixin(MGF("mSetDiscSpinning", "Function TribesGame.TrDevice_Spinfusor.SetDiscSpinning")); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF("mPlayWeaponPutDown", "Function TribesGame.TrDevice_Spinfusor.PlayWeaponPutDown")); }
+			ScriptFunction PutDownFast() { mixin(MGF("mPutDownFast", "Function TribesGame.TrDevice_Spinfusor.PutDownFast")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Spinfusor.OnSwitchAwayFromWeapon")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue m_SpinfusorIdleSound() { mixin(MGPC!("SoundCue", 2156)()); }
-		SkelControlSingleBone m_DiscVisibilityControl() { mixin(MGPC!("SkelControlSingleBone", 2152)()); }
-		TrSkelControl_SpinControl m_DiscSpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 2148)()); }
+		SoundCue m_SpinfusorIdleSound() { mixin(MGPC("SoundCue", 2156)); }
+		SkelControlSingleBone m_DiscVisibilityControl() { mixin(MGPC("SkelControlSingleBone", 2152)); }
+		TrSkelControl_SpinControl m_DiscSpinControl() { mixin(MGPC("TrSkelControl_SpinControl", 2148)); }
 	}
 final:
 	void UpdateReplicatedCarriedAmmo()

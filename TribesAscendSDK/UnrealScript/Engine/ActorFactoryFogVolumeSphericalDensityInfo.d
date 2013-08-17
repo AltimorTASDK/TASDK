@@ -8,7 +8,7 @@ extern(C++) interface ActorFactoryFogVolumeSphericalDensityInfo : ActorFactoryFo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryFogVolumeSphericalDensityInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ActorFactoryFogVolumeSphericalDensityInfo")); }
 	private static __gshared ActorFactoryFogVolumeSphericalDensityInfo mDefaultProperties;
-	@property final static ActorFactoryFogVolumeSphericalDensityInfo DefaultProperties() { mixin(MGDPC!(ActorFactoryFogVolumeSphericalDensityInfo, "ActorFactoryFogVolumeSphericalDensityInfo Engine.Default__ActorFactoryFogVolumeSphericalDensityInfo")()); }
+	@property final static ActorFactoryFogVolumeSphericalDensityInfo DefaultProperties() { mixin(MGDPC("ActorFactoryFogVolumeSphericalDensityInfo", "ActorFactoryFogVolumeSphericalDensityInfo Engine.Default__ActorFactoryFogVolumeSphericalDensityInfo")); }
 }

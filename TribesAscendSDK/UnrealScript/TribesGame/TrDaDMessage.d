@@ -11,9 +11,9 @@ extern(C++) interface TrDaDMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDaDMessage")); }
 	private static __gshared TrDaDMessage mDefaultProperties;
-	@property final static TrDaDMessage DefaultProperties() { mixin(MGDPC!(TrDaDMessage, "TrDaDMessage TribesGame.Default__TrDaDMessage")()); }
+	@property final static TrDaDMessage DefaultProperties() { mixin(MGDPC("TrDaDMessage", "TrDaDMessage TribesGame.Default__TrDaDMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,19 +23,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrDaDMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrDaDMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrDaDMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrDaDMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString CannotSwitchTeam() { mixin(MGPC!("ScriptString", 172)()); }
-		ScriptString NoRespawnsRemain() { mixin(MGPC!("ScriptString", 160)()); }
-		ScriptString Fight() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString YouAreLastManStanding() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString TeamRespawnsDepleted() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString FiveTeamRespawnsRemain() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString TenTeamRespawnsRemain() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString CannotSwitchTeam() { mixin(MGPC("ScriptString", 172)); }
+		ScriptString NoRespawnsRemain() { mixin(MGPC("ScriptString", 160)); }
+		ScriptString Fight() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString YouAreLastManStanding() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString TeamRespawnsDepleted() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString FiveTeamRespawnsRemain() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString TenTeamRespawnsRemain() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

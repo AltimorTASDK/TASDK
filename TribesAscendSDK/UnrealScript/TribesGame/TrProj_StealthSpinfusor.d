@@ -8,13 +8,13 @@ extern(C++) interface TrProj_StealthSpinfusor : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_StealthSpinfusor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_StealthSpinfusor")); }
 	private static __gshared TrProj_StealthSpinfusor mDefaultProperties;
-	@property final static TrProj_StealthSpinfusor DefaultProperties() { mixin(MGDPC!(TrProj_StealthSpinfusor, "TrProj_StealthSpinfusor TribesGame.Default__TrProj_StealthSpinfusor")()); }
+	@property final static TrProj_StealthSpinfusor DefaultProperties() { mixin(MGDPC("TrProj_StealthSpinfusor", "TrProj_StealthSpinfusor TribesGame.Default__TrProj_StealthSpinfusor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSpawnFlightEffects;
-		public @property static final ScriptFunction SpawnFlightEffects() { mixin(MGF!("mSpawnFlightEffects", "Function TribesGame.TrProj_StealthSpinfusor.SpawnFlightEffects")()); }
+		public @property static final ScriptFunction SpawnFlightEffects() { mixin(MGF("mSpawnFlightEffects", "Function TribesGame.TrProj_StealthSpinfusor.SpawnFlightEffects")); }
 	}
 	final void SpawnFlightEffects()
 	{

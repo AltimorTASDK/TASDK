@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionMeshEmitterDynamicParameter : MaterialEx
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionMeshEmitterDynamicParameter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionMeshEmitterDynamicParameter")); }
 	private static __gshared MaterialExpressionMeshEmitterDynamicParameter mDefaultProperties;
-	@property final static MaterialExpressionMeshEmitterDynamicParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionMeshEmitterDynamicParameter, "MaterialExpressionMeshEmitterDynamicParameter Engine.Default__MaterialExpressionMeshEmitterDynamicParameter")()); }
+	@property final static MaterialExpressionMeshEmitterDynamicParameter DefaultProperties() { mixin(MGDPC("MaterialExpressionMeshEmitterDynamicParameter", "MaterialExpressionMeshEmitterDynamicParameter Engine.Default__MaterialExpressionMeshEmitterDynamicParameter")); }
 }

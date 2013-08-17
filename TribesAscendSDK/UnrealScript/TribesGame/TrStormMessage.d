@@ -10,31 +10,31 @@ extern(C++) interface TrStormMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStormMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrStormMessage")); }
 	private static __gshared TrStormMessage mDefaultProperties;
-	@property final static TrStormMessage DefaultProperties() { mixin(MGDPC!(TrStormMessage, "TrStormMessage TribesGame.Default__TrStormMessage")()); }
+	@property final static TrStormMessage DefaultProperties() { mixin(MGDPC("TrStormMessage", "TrStormMessage TribesGame.Default__TrStormMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrStormMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrStormMessage.GetString")); }
 	}
 	@property final auto ref
 	{
-		ScriptString FriendlyCoreDestroyed() { mixin(MGPC!("ScriptString", 268)()); }
-		ScriptString FriendlyCore25Percent() { mixin(MGPC!("ScriptString", 256)()); }
-		ScriptString FriendlyCore50Percent() { mixin(MGPC!("ScriptString", 244)()); }
-		ScriptString FriendlyCore75Percent() { mixin(MGPC!("ScriptString", 232)()); }
-		ScriptString EnemyCoreDestroyed() { mixin(MGPC!("ScriptString", 220)()); }
-		ScriptString EnemyCore25Percent() { mixin(MGPC!("ScriptString", 208)()); }
-		ScriptString EnemyCore50Percent() { mixin(MGPC!("ScriptString", 196)()); }
-		ScriptString EnemyCore75Percent() { mixin(MGPC!("ScriptString", 184)()); }
-		ScriptString EnemyCarrierShieldsDown() { mixin(MGPC!("ScriptString", 172)()); }
-		ScriptString FriendlyCarrierShieldsDown() { mixin(MGPC!("ScriptString", 160)()); }
-		ScriptString EnemyCarrierShields50Percent() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString FriendlyCarrierShields50Percent() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString ControlPointTransitioning() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString ControlPointLost() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString ControlPointWon() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString FriendlyCoreDestroyed() { mixin(MGPC("ScriptString", 268)); }
+		ScriptString FriendlyCore25Percent() { mixin(MGPC("ScriptString", 256)); }
+		ScriptString FriendlyCore50Percent() { mixin(MGPC("ScriptString", 244)); }
+		ScriptString FriendlyCore75Percent() { mixin(MGPC("ScriptString", 232)); }
+		ScriptString EnemyCoreDestroyed() { mixin(MGPC("ScriptString", 220)); }
+		ScriptString EnemyCore25Percent() { mixin(MGPC("ScriptString", 208)); }
+		ScriptString EnemyCore50Percent() { mixin(MGPC("ScriptString", 196)); }
+		ScriptString EnemyCore75Percent() { mixin(MGPC("ScriptString", 184)); }
+		ScriptString EnemyCarrierShieldsDown() { mixin(MGPC("ScriptString", 172)); }
+		ScriptString FriendlyCarrierShieldsDown() { mixin(MGPC("ScriptString", 160)); }
+		ScriptString EnemyCarrierShields50Percent() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString FriendlyCarrierShields50Percent() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString ControlPointTransitioning() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString ControlPointLost() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString ControlPointWon() { mixin(MGPC("ScriptString", 100)); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

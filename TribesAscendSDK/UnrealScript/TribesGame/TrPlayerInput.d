@@ -11,9 +11,9 @@ extern(C++) interface TrPlayerInput : PlayerInput
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPlayerInput")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrPlayerInput")); }
 	private static __gshared TrPlayerInput mDefaultProperties;
-	@property final static TrPlayerInput DefaultProperties() { mixin(MGDPC!(TrPlayerInput, "TrPlayerInput TribesGame.Default__TrPlayerInput")()); }
+	@property final static TrPlayerInput DefaultProperties() { mixin(MGDPC("TrPlayerInput", "TrPlayerInput TribesGame.Default__TrPlayerInput")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -43,51 +43,51 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InVGSClassMode() { mixin(MGF!("mInVGSClassMode", "Function TribesGame.TrPlayerInput.InVGSClassMode")()); }
-			ScriptFunction InVGSLoadoutMode() { mixin(MGF!("mInVGSLoadoutMode", "Function TribesGame.TrPlayerInput.InVGSLoadoutMode")()); }
-			ScriptFunction GetVGSClassId() { mixin(MGF!("mGetVGSClassId", "Function TribesGame.TrPlayerInput.GetVGSClassId")()); }
-			ScriptFunction PlaySpottedCommand() { mixin(MGF!("mPlaySpottedCommand", "Function TribesGame.TrPlayerInput.PlaySpottedCommand")()); }
-			ScriptFunction InitInputSystem() { mixin(MGF!("mInitInputSystem", "Function TribesGame.TrPlayerInput.InitInputSystem")()); }
-			ScriptFunction AdjustMouseSensitivity() { mixin(MGF!("mAdjustMouseSensitivity", "Function TribesGame.TrPlayerInput.AdjustMouseSensitivity")()); }
-			ScriptFunction IsMouseSmoothEnabled() { mixin(MGF!("mIsMouseSmoothEnabled", "Function TribesGame.TrPlayerInput.IsMouseSmoothEnabled")()); }
-			ScriptFunction OnVGSKeyPressed() { mixin(MGF!("mOnVGSKeyPressed", "Function TribesGame.TrPlayerInput.OnVGSKeyPressed")()); }
-			ScriptFunction OnVGSNumKeyPressed() { mixin(MGF!("mOnVGSNumKeyPressed", "Function TribesGame.TrPlayerInput.OnVGSNumKeyPressed")()); }
-			ScriptFunction PlayVGSCommand() { mixin(MGF!("mPlayVGSCommand", "Function TribesGame.TrPlayerInput.PlayVGSCommand")()); }
-			ScriptFunction IsValidVGSTarget() { mixin(MGF!("mIsValidVGSTarget", "Function TribesGame.TrPlayerInput.IsValidVGSTarget")()); }
-			ScriptFunction StartVGS() { mixin(MGF!("mStartVGS", "Function TribesGame.TrPlayerInput.StartVGS")()); }
-			ScriptFunction StartVGSClasses() { mixin(MGF!("mStartVGSClasses", "Function TribesGame.TrPlayerInput.StartVGSClasses")()); }
-			ScriptFunction StartVGSLoadouts() { mixin(MGF!("mStartVGSLoadouts", "Function TribesGame.TrPlayerInput.StartVGSLoadouts")()); }
-			ScriptFunction EndVGS() { mixin(MGF!("mEndVGS", "Function TribesGame.TrPlayerInput.EndVGS")()); }
-			ScriptFunction SetHUDTarget() { mixin(MGF!("mSetHUDTarget", "Function TribesGame.TrPlayerInput.SetHUDTarget")()); }
-			ScriptFunction GetStickAngle() { mixin(MGF!("mGetStickAngle", "Function TribesGame.TrPlayerInput.GetStickAngle")()); }
-			ScriptFunction PushAnalogJoysticksToScaleform() { mixin(MGF!("mPushAnalogJoysticksToScaleform", "Function TribesGame.TrPlayerInput.PushAnalogJoysticksToScaleform")()); }
-			ScriptFunction PreProcessInput() { mixin(MGF!("mPreProcessInput", "Function TribesGame.TrPlayerInput.PreProcessInput")()); }
-			ScriptFunction PlayerInput() { mixin(MGF!("mPlayerInput", "Function TribesGame.TrPlayerInput.PlayerInput")()); }
-			ScriptFunction SetFlyingPitchSensitivity() { mixin(MGF!("mSetFlyingPitchSensitivity", "Function TribesGame.TrPlayerInput.SetFlyingPitchSensitivity")()); }
-			ScriptFunction SetFlyingYawSensitivity() { mixin(MGF!("mSetFlyingYawSensitivity", "Function TribesGame.TrPlayerInput.SetFlyingYawSensitivity")()); }
+			ScriptFunction InVGSClassMode() { mixin(MGF("mInVGSClassMode", "Function TribesGame.TrPlayerInput.InVGSClassMode")); }
+			ScriptFunction InVGSLoadoutMode() { mixin(MGF("mInVGSLoadoutMode", "Function TribesGame.TrPlayerInput.InVGSLoadoutMode")); }
+			ScriptFunction GetVGSClassId() { mixin(MGF("mGetVGSClassId", "Function TribesGame.TrPlayerInput.GetVGSClassId")); }
+			ScriptFunction PlaySpottedCommand() { mixin(MGF("mPlaySpottedCommand", "Function TribesGame.TrPlayerInput.PlaySpottedCommand")); }
+			ScriptFunction InitInputSystem() { mixin(MGF("mInitInputSystem", "Function TribesGame.TrPlayerInput.InitInputSystem")); }
+			ScriptFunction AdjustMouseSensitivity() { mixin(MGF("mAdjustMouseSensitivity", "Function TribesGame.TrPlayerInput.AdjustMouseSensitivity")); }
+			ScriptFunction IsMouseSmoothEnabled() { mixin(MGF("mIsMouseSmoothEnabled", "Function TribesGame.TrPlayerInput.IsMouseSmoothEnabled")); }
+			ScriptFunction OnVGSKeyPressed() { mixin(MGF("mOnVGSKeyPressed", "Function TribesGame.TrPlayerInput.OnVGSKeyPressed")); }
+			ScriptFunction OnVGSNumKeyPressed() { mixin(MGF("mOnVGSNumKeyPressed", "Function TribesGame.TrPlayerInput.OnVGSNumKeyPressed")); }
+			ScriptFunction PlayVGSCommand() { mixin(MGF("mPlayVGSCommand", "Function TribesGame.TrPlayerInput.PlayVGSCommand")); }
+			ScriptFunction IsValidVGSTarget() { mixin(MGF("mIsValidVGSTarget", "Function TribesGame.TrPlayerInput.IsValidVGSTarget")); }
+			ScriptFunction StartVGS() { mixin(MGF("mStartVGS", "Function TribesGame.TrPlayerInput.StartVGS")); }
+			ScriptFunction StartVGSClasses() { mixin(MGF("mStartVGSClasses", "Function TribesGame.TrPlayerInput.StartVGSClasses")); }
+			ScriptFunction StartVGSLoadouts() { mixin(MGF("mStartVGSLoadouts", "Function TribesGame.TrPlayerInput.StartVGSLoadouts")); }
+			ScriptFunction EndVGS() { mixin(MGF("mEndVGS", "Function TribesGame.TrPlayerInput.EndVGS")); }
+			ScriptFunction SetHUDTarget() { mixin(MGF("mSetHUDTarget", "Function TribesGame.TrPlayerInput.SetHUDTarget")); }
+			ScriptFunction GetStickAngle() { mixin(MGF("mGetStickAngle", "Function TribesGame.TrPlayerInput.GetStickAngle")); }
+			ScriptFunction PushAnalogJoysticksToScaleform() { mixin(MGF("mPushAnalogJoysticksToScaleform", "Function TribesGame.TrPlayerInput.PushAnalogJoysticksToScaleform")); }
+			ScriptFunction PreProcessInput() { mixin(MGF("mPreProcessInput", "Function TribesGame.TrPlayerInput.PreProcessInput")); }
+			ScriptFunction PlayerInput() { mixin(MGF("mPlayerInput", "Function TribesGame.TrPlayerInput.PlayerInput")); }
+			ScriptFunction SetFlyingPitchSensitivity() { mixin(MGF("mSetFlyingPitchSensitivity", "Function TribesGame.TrPlayerInput.SetFlyingPitchSensitivity")); }
+			ScriptFunction SetFlyingYawSensitivity() { mixin(MGF("mSetFlyingYawSensitivity", "Function TribesGame.TrPlayerInput.SetFlyingYawSensitivity")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptClass m_CurrentVGSNode() { mixin(MGPC!("ScriptClass", 436)()); }
-			TrVGSCommandList m_VGSCommandList() { mixin(MGPC!("TrVGSCommandList", 440)()); }
-			ScriptArray!(ScriptName) m_VGSPassThroughKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 400)()); }
-			ScriptArray!(ScriptName) m_VGSNumKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 412)()); }
-			ScriptArray!(ScriptName) m_VGSPadKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 424)()); }
-			ScriptString m_CurrentVGSKeySequence() { mixin(MGPC!("ScriptString", 444)()); }
-			TrHUD m_HUD() { mixin(MGPC!("TrHUD", 392)()); }
-			float m_RightJoystickLastValue() { mixin(MGPC!("float", 388)()); }
-			float m_LeftJoystickLastValue() { mixin(MGPC!("float", 384)()); }
-			int m_VGSClassId() { mixin(MGPC!("int", 380)()); }
+			ScriptClass m_CurrentVGSNode() { mixin(MGPC("ScriptClass", 436)); }
+			TrVGSCommandList m_VGSCommandList() { mixin(MGPC("TrVGSCommandList", 440)); }
+			ScriptArray!(ScriptName) m_VGSPassThroughKeys() { mixin(MGPC("ScriptArray!(ScriptName)", 400)); }
+			ScriptArray!(ScriptName) m_VGSNumKeys() { mixin(MGPC("ScriptArray!(ScriptName)", 412)); }
+			ScriptArray!(ScriptName) m_VGSPadKeys() { mixin(MGPC("ScriptArray!(ScriptName)", 424)); }
+			ScriptString m_CurrentVGSKeySequence() { mixin(MGPC("ScriptString", 444)); }
+			TrHUD m_HUD() { mixin(MGPC("TrHUD", 392)); }
+			float m_RightJoystickLastValue() { mixin(MGPC("float", 388)); }
+			float m_LeftJoystickLastValue() { mixin(MGPC("float", 384)); }
+			int m_VGSClassId() { mixin(MGPC("int", 380)); }
 		}
-		bool m_bInVGSLoadoutMode() { mixin(MGBPC!(396, 0x4)()); }
-		bool m_bInVGSLoadoutMode(bool val) { mixin(MSBPC!(396, 0x4)()); }
-		bool m_bInVGSClassMode() { mixin(MGBPC!(396, 0x2)()); }
-		bool m_bInVGSClassMode(bool val) { mixin(MSBPC!(396, 0x2)()); }
-		bool m_bInVGSCaptureMode() { mixin(MGBPC!(396, 0x1)()); }
-		bool m_bInVGSCaptureMode(bool val) { mixin(MSBPC!(396, 0x1)()); }
+		bool m_bInVGSLoadoutMode() { mixin(MGBPC(396, 0x4)); }
+		bool m_bInVGSLoadoutMode(bool val) { mixin(MSBPC(396, 0x4)); }
+		bool m_bInVGSClassMode() { mixin(MGBPC(396, 0x2)); }
+		bool m_bInVGSClassMode(bool val) { mixin(MSBPC(396, 0x2)); }
+		bool m_bInVGSCaptureMode() { mixin(MGBPC(396, 0x1)); }
+		bool m_bInVGSCaptureMode(bool val) { mixin(MSBPC(396, 0x1)); }
 	}
 final:
 	bool InVGSClassMode()

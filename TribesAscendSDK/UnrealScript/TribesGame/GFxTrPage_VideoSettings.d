@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_VideoSettings : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_VideoSettings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_VideoSettings")); }
 	private static __gshared GFxTrPage_VideoSettings mDefaultProperties;
-	@property final static GFxTrPage_VideoSettings DefaultProperties() { mixin(MGDPC!(GFxTrPage_VideoSettings, "GFxTrPage_VideoSettings TribesGame.Default__GFxTrPage_VideoSettings")()); }
+	@property final static GFxTrPage_VideoSettings DefaultProperties() { mixin(MGDPC("GFxTrPage_VideoSettings", "GFxTrPage_VideoSettings TribesGame.Default__GFxTrPage_VideoSettings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_VideoSettings.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_VideoSettings.SpecialAction")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_VideoSettings.FillOption")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_VideoSettings.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_VideoSettings.SpecialAction")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_VideoSettings.FillOption")); }
 		}
 	}
 	@property final auto ref
 	{
-		int MotionBlurNumber() { mixin(MGPC!("int", 364)()); }
-		int FrameSmoothNumber() { mixin(MGPC!("int", 360)()); }
-		int VSyncNumber() { mixin(MGPC!("int", 356)()); }
+		int MotionBlurNumber() { mixin(MGPC("int", 364)); }
+		int FrameSmoothNumber() { mixin(MGPC("int", 360)); }
+		int VSyncNumber() { mixin(MGPC("int", 356)); }
 	}
 final:
 	void Initialize()

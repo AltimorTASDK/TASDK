@@ -9,9 +9,9 @@ extern(C++) interface DMC_Base : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DMC_Base")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DMC_Base")); }
 	private static __gshared DMC_Base mDefaultProperties;
-	@property final static DMC_Base DefaultProperties() { mixin(MGDPC!(DMC_Base, "DMC_Base Engine.Default__DMC_Base")()); }
+	@property final static DMC_Base DefaultProperties() { mixin(MGDPC("DMC_Base", "DMC_Base Engine.Default__DMC_Base")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,29 +35,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PrintString() { mixin(MGF!("mPrintString", "Function Engine.DMC_Base.PrintString")()); }
-			ScriptFunction GetWorldTime() { mixin(MGF!("mGetWorldTime", "Function Engine.DMC_Base.GetWorldTime")()); }
-			ScriptFunction Conv_IntToFloat() { mixin(MGF!("mConv_IntToFloat", "Function Engine.DMC_Base.Conv_IntToFloat")()); }
-			ScriptFunction Conv_FloatToString() { mixin(MGF!("mConv_FloatToString", "Function Engine.DMC_Base.Conv_FloatToString")()); }
-			ScriptFunction Conv_IntToString() { mixin(MGF!("mConv_IntToString", "Function Engine.DMC_Base.Conv_IntToString")()); }
-			ScriptFunction Conv_BoolToString() { mixin(MGF!("mConv_BoolToString", "Function Engine.DMC_Base.Conv_BoolToString")()); }
-			ScriptFunction Conv_VectorToString() { mixin(MGF!("mConv_VectorToString", "Function Engine.DMC_Base.Conv_VectorToString")()); }
-			ScriptFunction Conv_RotatorToString() { mixin(MGF!("mConv_RotatorToString", "Function Engine.DMC_Base.Conv_RotatorToString")()); }
-			ScriptFunction MakeVector() { mixin(MGF!("mMakeVector", "Function Engine.DMC_Base.MakeVector")()); }
-			ScriptFunction BreakVector() { mixin(MGF!("mBreakVector", "Function Engine.DMC_Base.BreakVector")()); }
-			ScriptFunction MakeRot() { mixin(MGF!("mMakeRot", "Function Engine.DMC_Base.MakeRot")()); }
-			ScriptFunction BreakRot() { mixin(MGF!("mBreakRot", "Function Engine.DMC_Base.BreakRot")()); }
-			ScriptFunction AddComponent() { mixin(MGF!("mAddComponent", "Function Engine.DMC_Base.AddComponent")()); }
-			ScriptFunction DMCCreate() { mixin(MGF!("mDMCCreate", "Function Engine.DMC_Base.DMCCreate")()); }
-			ScriptFunction DMCTakeDamage() { mixin(MGF!("mDMCTakeDamage", "Function Engine.DMC_Base.DMCTakeDamage")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.DMC_Base.TakeDamage")()); }
+			ScriptFunction PrintString() { mixin(MGF("mPrintString", "Function Engine.DMC_Base.PrintString")); }
+			ScriptFunction GetWorldTime() { mixin(MGF("mGetWorldTime", "Function Engine.DMC_Base.GetWorldTime")); }
+			ScriptFunction Conv_IntToFloat() { mixin(MGF("mConv_IntToFloat", "Function Engine.DMC_Base.Conv_IntToFloat")); }
+			ScriptFunction Conv_FloatToString() { mixin(MGF("mConv_FloatToString", "Function Engine.DMC_Base.Conv_FloatToString")); }
+			ScriptFunction Conv_IntToString() { mixin(MGF("mConv_IntToString", "Function Engine.DMC_Base.Conv_IntToString")); }
+			ScriptFunction Conv_BoolToString() { mixin(MGF("mConv_BoolToString", "Function Engine.DMC_Base.Conv_BoolToString")); }
+			ScriptFunction Conv_VectorToString() { mixin(MGF("mConv_VectorToString", "Function Engine.DMC_Base.Conv_VectorToString")); }
+			ScriptFunction Conv_RotatorToString() { mixin(MGF("mConv_RotatorToString", "Function Engine.DMC_Base.Conv_RotatorToString")); }
+			ScriptFunction MakeVector() { mixin(MGF("mMakeVector", "Function Engine.DMC_Base.MakeVector")); }
+			ScriptFunction BreakVector() { mixin(MGF("mBreakVector", "Function Engine.DMC_Base.BreakVector")); }
+			ScriptFunction MakeRot() { mixin(MGF("mMakeRot", "Function Engine.DMC_Base.MakeRot")); }
+			ScriptFunction BreakRot() { mixin(MGF("mBreakRot", "Function Engine.DMC_Base.BreakRot")); }
+			ScriptFunction AddComponent() { mixin(MGF("mAddComponent", "Function Engine.DMC_Base.AddComponent")); }
+			ScriptFunction DMCCreate() { mixin(MGF("mDMCCreate", "Function Engine.DMC_Base.DMCCreate")); }
+			ScriptFunction DMCTakeDamage() { mixin(MGF("mDMCTakeDamage", "Function Engine.DMC_Base.DMCTakeDamage")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.DMC_Base.TakeDamage")); }
 		}
 	}
 	@property final auto ref ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) CreatedComponents() { mixin(MGPC!("ScriptArray!(
+void*) CreatedComponents() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*)", 476)()); }
+void*)", 476)); }
 final:
 	void PrintString(ScriptString InString)
 	{

@@ -10,9 +10,9 @@ extern(C++) interface TrGame_TRTDM : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TRTDM")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGame_TRTDM")); }
 	private static __gshared TrGame_TRTDM mDefaultProperties;
-	@property final static TrGame_TRTDM DefaultProperties() { mixin(MGDPC!(TrGame_TRTDM, "TrGame_TRTDM TribesGame.Default__TrGame_TRTDM")()); }
+	@property final static TrGame_TRTDM DefaultProperties() { mixin(MGDPC("TrGame_TRTDM", "TrGame_TRTDM TribesGame.Default__TrGame_TRTDM")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function TribesGame.TrGame_TRTDM.ScoreKill")()); }
-			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TRTDM.CheckScore")()); }
+			ScriptFunction ScoreKill() { mixin(MGF("mScoreKill", "Function TribesGame.TrGame_TRTDM.ScoreKill")); }
+			ScriptFunction CheckScore() { mixin(MGF("mCheckScore", "Function TribesGame.TrGame_TRTDM.CheckScore")); }
 		}
 	}
 final:

@@ -8,9 +8,9 @@ extern(C++) interface GFxTrMenuSounds : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrMenuSounds")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrMenuSounds")); }
 	private static __gshared GFxTrMenuSounds mDefaultProperties;
-	@property final static GFxTrMenuSounds DefaultProperties() { mixin(MGDPC!(GFxTrMenuSounds, "GFxTrMenuSounds TribesGame.Default__GFxTrMenuSounds")()); }
+	@property final static GFxTrMenuSounds DefaultProperties() { mixin(MGDPC("GFxTrMenuSounds", "GFxTrMenuSounds TribesGame.Default__GFxTrMenuSounds")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,19 +31,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SoundToolTip() { mixin(MGF!("mSoundToolTip", "Function TribesGame.GFxTrMenuSounds.SoundToolTip")()); }
-			ScriptFunction SoundXPGain() { mixin(MGF!("mSoundXPGain", "Function TribesGame.GFxTrMenuSounds.SoundXPGain")()); }
-			ScriptFunction SoundSkillType() { mixin(MGF!("mSoundSkillType", "Function TribesGame.GFxTrMenuSounds.SoundSkillType")()); }
-			ScriptFunction SoundClassType() { mixin(MGF!("mSoundClassType", "Function TribesGame.GFxTrMenuSounds.SoundClassType")()); }
-			ScriptFunction SoundPurchaseSkill() { mixin(MGF!("mSoundPurchaseSkill", "Function TribesGame.GFxTrMenuSounds.SoundPurchaseSkill")()); }
-			ScriptFunction SoundSelectedQueue() { mixin(MGF!("mSoundSelectedQueue", "Function TribesGame.GFxTrMenuSounds.SoundSelectedQueue")()); }
-			ScriptFunction LeaveQueue() { mixin(MGF!("mLeaveQueue", "Function TribesGame.GFxTrMenuSounds.LeaveQueue")()); }
-			ScriptFunction PageForward() { mixin(MGF!("mPageForward", "Function TribesGame.GFxTrMenuSounds.PageForward")()); }
-			ScriptFunction PageBack() { mixin(MGF!("mPageBack", "Function TribesGame.GFxTrMenuSounds.PageBack")()); }
-			ScriptFunction ClassRollover() { mixin(MGF!("mClassRollover", "Function TribesGame.GFxTrMenuSounds.ClassRollover")()); }
-			ScriptFunction ClassSelected() { mixin(MGF!("mClassSelected", "Function TribesGame.GFxTrMenuSounds.ClassSelected")()); }
-			ScriptFunction ClassLocked() { mixin(MGF!("mClassLocked", "Function TribesGame.GFxTrMenuSounds.ClassLocked")()); }
-			ScriptFunction PlayMenuSound() { mixin(MGF!("mPlayMenuSound", "Function TribesGame.GFxTrMenuSounds.PlayMenuSound")()); }
+			ScriptFunction SoundToolTip() { mixin(MGF("mSoundToolTip", "Function TribesGame.GFxTrMenuSounds.SoundToolTip")); }
+			ScriptFunction SoundXPGain() { mixin(MGF("mSoundXPGain", "Function TribesGame.GFxTrMenuSounds.SoundXPGain")); }
+			ScriptFunction SoundSkillType() { mixin(MGF("mSoundSkillType", "Function TribesGame.GFxTrMenuSounds.SoundSkillType")); }
+			ScriptFunction SoundClassType() { mixin(MGF("mSoundClassType", "Function TribesGame.GFxTrMenuSounds.SoundClassType")); }
+			ScriptFunction SoundPurchaseSkill() { mixin(MGF("mSoundPurchaseSkill", "Function TribesGame.GFxTrMenuSounds.SoundPurchaseSkill")); }
+			ScriptFunction SoundSelectedQueue() { mixin(MGF("mSoundSelectedQueue", "Function TribesGame.GFxTrMenuSounds.SoundSelectedQueue")); }
+			ScriptFunction LeaveQueue() { mixin(MGF("mLeaveQueue", "Function TribesGame.GFxTrMenuSounds.LeaveQueue")); }
+			ScriptFunction PageForward() { mixin(MGF("mPageForward", "Function TribesGame.GFxTrMenuSounds.PageForward")); }
+			ScriptFunction PageBack() { mixin(MGF("mPageBack", "Function TribesGame.GFxTrMenuSounds.PageBack")); }
+			ScriptFunction ClassRollover() { mixin(MGF("mClassRollover", "Function TribesGame.GFxTrMenuSounds.ClassRollover")); }
+			ScriptFunction ClassSelected() { mixin(MGF("mClassSelected", "Function TribesGame.GFxTrMenuSounds.ClassSelected")); }
+			ScriptFunction ClassLocked() { mixin(MGF("mClassLocked", "Function TribesGame.GFxTrMenuSounds.ClassLocked")); }
+			ScriptFunction PlayMenuSound() { mixin(MGF("mPlayMenuSound", "Function TribesGame.GFxTrMenuSounds.PlayMenuSound")); }
 		}
 	}
 	enum EMenuSound : ubyte

@@ -10,9 +10,9 @@ extern(C++) interface SceneCaptureComponent : ActorComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SceneCaptureComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SceneCaptureComponent")); }
 	private static __gshared SceneCaptureComponent mDefaultProperties;
-	@property final static SceneCaptureComponent DefaultProperties() { mixin(MGDPC!(SceneCaptureComponent, "SceneCaptureComponent Engine.Default__SceneCaptureComponent")()); }
+	@property final static SceneCaptureComponent DefaultProperties() { mixin(MGDPC("SceneCaptureComponent", "SceneCaptureComponent Engine.Default__SceneCaptureComponent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetEnabled() { mixin(MGF!("mSetEnabled", "Function Engine.SceneCaptureComponent.SetEnabled")()); }
-			ScriptFunction SetFrameRate() { mixin(MGF!("mSetFrameRate", "Function Engine.SceneCaptureComponent.SetFrameRate")()); }
+			ScriptFunction SetEnabled() { mixin(MGF("mSetEnabled", "Function Engine.SceneCaptureComponent.SetEnabled")); }
+			ScriptFunction SetFrameRate() { mixin(MGF("mSetFrameRate", "Function Engine.SceneCaptureComponent.SetFrameRate")); }
 		}
 	}
 	enum ESceneCaptureViewMode : ubyte
@@ -38,32 +38,32 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) PostProcessProxies() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 132)()); }
-			UObject.Pointer ViewState() { mixin(MGPC!("UObject.Pointer", 128)()); }
-			UObject.Pointer CaptureInfo() { mixin(MGPC!("UObject.Pointer", 124)()); }
-			float MaxStreamingUpdateDist() { mixin(MGPC!("float", 120)()); }
-			float MaxViewDistanceOverride() { mixin(MGPC!("float", 116)()); }
-			float MaxUpdateDist() { mixin(MGPC!("float", 112)()); }
-			PostProcessChain PostProcess() { mixin(MGPC!("PostProcessChain", 108)()); }
-			float FrameRate() { mixin(MGPC!("float", 104)()); }
-			int SceneLOD() { mixin(MGPC!("int", 100)()); }
-			SceneCaptureComponent.ESceneCaptureViewMode ViewMode() { mixin(MGPC!("SceneCaptureComponent.ESceneCaptureViewMode", 96)()); }
-			UObject.Color ClearColor() { mixin(MGPC!("UObject.Color", 92)()); }
+			ScriptArray!(UObject.Pointer) PostProcessProxies() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 132)); }
+			UObject.Pointer ViewState() { mixin(MGPC("UObject.Pointer", 128)); }
+			UObject.Pointer CaptureInfo() { mixin(MGPC("UObject.Pointer", 124)); }
+			float MaxStreamingUpdateDist() { mixin(MGPC("float", 120)); }
+			float MaxViewDistanceOverride() { mixin(MGPC("float", 116)); }
+			float MaxUpdateDist() { mixin(MGPC("float", 112)); }
+			PostProcessChain PostProcess() { mixin(MGPC("PostProcessChain", 108)); }
+			float FrameRate() { mixin(MGPC("float", 104)); }
+			int SceneLOD() { mixin(MGPC("int", 100)); }
+			SceneCaptureComponent.ESceneCaptureViewMode ViewMode() { mixin(MGPC("SceneCaptureComponent.ESceneCaptureViewMode", 96)); }
+			UObject.Color ClearColor() { mixin(MGPC("UObject.Color", 92)); }
 		}
-		bool bEnabled() { mixin(MGBPC!(88, 0x1)()); }
-		bool bEnabled(bool val) { mixin(MSBPC!(88, 0x1)()); }
-		bool bSkipRenderingDepthPrepass() { mixin(MGBPC!(88, 0x40)()); }
-		bool bSkipRenderingDepthPrepass(bool val) { mixin(MSBPC!(88, 0x40)()); }
-		bool bSkipUpdateIfOwnerOccluded() { mixin(MGBPC!(88, 0x20)()); }
-		bool bSkipUpdateIfOwnerOccluded(bool val) { mixin(MSBPC!(88, 0x20)()); }
-		bool bSkipUpdateIfTextureUsersOccluded() { mixin(MGBPC!(88, 0x10)()); }
-		bool bSkipUpdateIfTextureUsersOccluded(bool val) { mixin(MSBPC!(88, 0x10)()); }
-		bool bUseMainScenePostProcessSettings() { mixin(MGBPC!(88, 0x8)()); }
-		bool bUseMainScenePostProcessSettings(bool val) { mixin(MSBPC!(88, 0x8)()); }
-		bool bEnableFog() { mixin(MGBPC!(88, 0x4)()); }
-		bool bEnableFog(bool val) { mixin(MSBPC!(88, 0x4)()); }
-		bool bEnablePostProcess() { mixin(MGBPC!(88, 0x2)()); }
-		bool bEnablePostProcess(bool val) { mixin(MSBPC!(88, 0x2)()); }
+		bool bEnabled() { mixin(MGBPC(88, 0x1)); }
+		bool bEnabled(bool val) { mixin(MSBPC(88, 0x1)); }
+		bool bSkipRenderingDepthPrepass() { mixin(MGBPC(88, 0x40)); }
+		bool bSkipRenderingDepthPrepass(bool val) { mixin(MSBPC(88, 0x40)); }
+		bool bSkipUpdateIfOwnerOccluded() { mixin(MGBPC(88, 0x20)); }
+		bool bSkipUpdateIfOwnerOccluded(bool val) { mixin(MSBPC(88, 0x20)); }
+		bool bSkipUpdateIfTextureUsersOccluded() { mixin(MGBPC(88, 0x10)); }
+		bool bSkipUpdateIfTextureUsersOccluded(bool val) { mixin(MSBPC(88, 0x10)); }
+		bool bUseMainScenePostProcessSettings() { mixin(MGBPC(88, 0x8)); }
+		bool bUseMainScenePostProcessSettings(bool val) { mixin(MSBPC(88, 0x8)); }
+		bool bEnableFog() { mixin(MGBPC(88, 0x4)); }
+		bool bEnableFog(bool val) { mixin(MSBPC(88, 0x4)); }
+		bool bEnablePostProcess() { mixin(MGBPC(88, 0x2)); }
+		bool bEnablePostProcess(bool val) { mixin(MSBPC(88, 0x2)); }
 	}
 final:
 	void SetEnabled(bool bEnable)

@@ -8,7 +8,7 @@ extern(C++) interface Download : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Download")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Download")); }
 	private static __gshared Download mDefaultProperties;
-	@property final static Download DefaultProperties() { mixin(MGDPC!(Download, "Download Engine.Default__Download")()); }
+	@property final static Download DefaultProperties() { mixin(MGDPC("Download", "Download Engine.Default__Download")); }
 }

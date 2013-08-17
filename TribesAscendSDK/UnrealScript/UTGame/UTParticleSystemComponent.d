@@ -8,7 +8,7 @@ extern(C++) interface UTParticleSystemComponent : UDKParticleSystemComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTParticleSystemComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTParticleSystemComponent")); }
 	private static __gshared UTParticleSystemComponent mDefaultProperties;
-	@property final static UTParticleSystemComponent DefaultProperties() { mixin(MGDPC!(UTParticleSystemComponent, "UTParticleSystemComponent UTGame.Default__UTParticleSystemComponent")()); }
+	@property final static UTParticleSystemComponent DefaultProperties() { mixin(MGDPC("UTParticleSystemComponent", "UTParticleSystemComponent UTGame.Default__UTParticleSystemComponent")); }
 }

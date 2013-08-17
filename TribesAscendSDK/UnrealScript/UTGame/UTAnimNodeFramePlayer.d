@@ -8,7 +8,7 @@ extern(C++) interface UTAnimNodeFramePlayer : UDKAnimNodeFramePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnimNodeFramePlayer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnimNodeFramePlayer")); }
 	private static __gshared UTAnimNodeFramePlayer mDefaultProperties;
-	@property final static UTAnimNodeFramePlayer DefaultProperties() { mixin(MGDPC!(UTAnimNodeFramePlayer, "UTAnimNodeFramePlayer UTGame.Default__UTAnimNodeFramePlayer")()); }
+	@property final static UTAnimNodeFramePlayer DefaultProperties() { mixin(MGDPC("UTAnimNodeFramePlayer", "UTAnimNodeFramePlayer UTGame.Default__UTAnimNodeFramePlayer")); }
 }

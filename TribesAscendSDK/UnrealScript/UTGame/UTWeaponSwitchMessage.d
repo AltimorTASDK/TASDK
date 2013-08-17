@@ -10,13 +10,13 @@ extern(C++) interface UTWeaponSwitchMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponSwitchMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWeaponSwitchMessage")); }
 	private static __gshared UTWeaponSwitchMessage mDefaultProperties;
-	@property final static UTWeaponSwitchMessage DefaultProperties() { mixin(MGDPC!(UTWeaponSwitchMessage, "UTWeaponSwitchMessage UTGame.Default__UTWeaponSwitchMessage")()); }
+	@property final static UTWeaponSwitchMessage DefaultProperties() { mixin(MGDPC("UTWeaponSwitchMessage", "UTWeaponSwitchMessage UTGame.Default__UTWeaponSwitchMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTWeaponSwitchMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTWeaponSwitchMessage.GetString")); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

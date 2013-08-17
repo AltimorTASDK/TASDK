@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_GameMapSetup : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_GameMapSetup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_GameMapSetup")); }
 	private static __gshared GFxTrPage_GameMapSetup mDefaultProperties;
-	@property final static GFxTrPage_GameMapSetup DefaultProperties() { mixin(MGDPC!(GFxTrPage_GameMapSetup, "GFxTrPage_GameMapSetup TribesGame.Default__GFxTrPage_GameMapSetup")()); }
+	@property final static GFxTrPage_GameMapSetup DefaultProperties() { mixin(MGDPC("GFxTrPage_GameMapSetup", "GFxTrPage_GameMapSetup TribesGame.Default__GFxTrPage_GameMapSetup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_GameMapSetup.Initialize")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_GameMapSetup.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_GameMapSetup.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_GameMapSetup.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_GameMapSetup.FillDescription")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_GameMapSetup.Initialize")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_GameMapSetup.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_GameMapSetup.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_GameMapSetup.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_GameMapSetup.FillDescription")); }
 		}
 	}
 final:

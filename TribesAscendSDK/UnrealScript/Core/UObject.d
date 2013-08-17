@@ -7,9 +7,9 @@ extern(C++) interface UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.Object")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Core.Object")); }
 	private static __gshared UObject mDefaultProperties;
-	@property final static UObject DefaultProperties() { mixin(MGDPC!(UObject, "Object Core.Default__Object")()); }
+	@property final static UObject DefaultProperties() { mixin(MGDPC("UObject", "Object Core.Default__Object")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -308,297 +308,297 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBuildChangelistNumber() { mixin(MGF!("mGetBuildChangelistNumber", "Function Core.Object.GetBuildChangelistNumber")()); }
-			ScriptFunction GetEngineVersion() { mixin(MGF!("mGetEngineVersion", "Function Core.Object.GetEngineVersion")()); }
-			ScriptFunction GetSystemTime() { mixin(MGF!("mGetSystemTime", "Function Core.Object.GetSystemTime")()); }
-			ScriptFunction TimeStamp() { mixin(MGF!("mTimeStamp", "Function Core.Object.TimeStamp")()); }
-			ScriptFunction TransformVectorByRotation() { mixin(MGF!("mTransformVectorByRotation", "Function Core.Object.TransformVectorByRotation")()); }
-			ScriptFunction GetPackageName() { mixin(MGF!("mGetPackageName", "Function Core.Object.GetPackageName")()); }
-			ScriptFunction IsPendingKill() { mixin(MGF!("mIsPendingKill", "Function Core.Object.IsPendingKill")()); }
-			ScriptFunction ByteToFloat() { mixin(MGF!("mByteToFloat", "Function Core.Object.ByteToFloat")()); }
-			ScriptFunction FloatToByte() { mixin(MGF!("mFloatToByte", "Function Core.Object.FloatToByte")()); }
-			ScriptFunction UnwindHeading() { mixin(MGF!("mUnwindHeading", "Function Core.Object.UnwindHeading")()); }
-			ScriptFunction FindDeltaAngle() { mixin(MGF!("mFindDeltaAngle", "Function Core.Object.FindDeltaAngle")()); }
-			ScriptFunction GetHeadingAngle() { mixin(MGF!("mGetHeadingAngle", "Function Core.Object.GetHeadingAngle")()); }
-			ScriptFunction GetAngularDegreesFromRadians() { mixin(MGF!("mGetAngularDegreesFromRadians", "Function Core.Object.GetAngularDegreesFromRadians")()); }
-			ScriptFunction Acos() { mixin(MGF!("mAcos", "Function Core.Object.Acos")()); }
-			ScriptFunction GetAngularFromDotDist() { mixin(MGF!("mGetAngularFromDotDist", "Function Core.Object.GetAngularFromDotDist")()); }
-			ScriptFunction GetAngularDistance() { mixin(MGF!("mGetAngularDistance", "Function Core.Object.GetAngularDistance")()); }
-			ScriptFunction GetDotDistance() { mixin(MGF!("mGetDotDistance", "Function Core.Object.GetDotDistance")()); }
-			ScriptFunction PointProjectToPlane() { mixin(MGF!("mPointProjectToPlane", "Function Core.Object.PointProjectToPlane")()); }
-			ScriptFunction PointDistToPlane() { mixin(MGF!("mPointDistToPlane", "Function Core.Object.PointDistToPlane")()); }
-			ScriptFunction PointDistToSegment() { mixin(MGF!("mPointDistToSegment", "Function Core.Object.PointDistToSegment")()); }
-			ScriptFunction PointDistToLine() { mixin(MGF!("mPointDistToLine", "Function Core.Object.PointDistToLine")()); }
-			ScriptFunction GetPerObjectConfigSections() { mixin(MGF!("mGetPerObjectConfigSections", "Function Core.Object.GetPerObjectConfigSections")()); }
-			ScriptFunction StaticSaveConfig() { mixin(MGF!("mStaticSaveConfig", "Function Core.Object.StaticSaveConfig")()); }
-			ScriptFunction SaveConfig() { mixin(MGF!("mSaveConfig", "Function Core.Object.SaveConfig")()); }
-			ScriptFunction FindObject() { mixin(MGF!("mFindObject", "Function Core.Object.FindObject")()); }
-			ScriptFunction DynamicLoadObject() { mixin(MGF!("mDynamicLoadObject", "Function Core.Object.DynamicLoadObject")()); }
-			ScriptFunction GetEnum() { mixin(MGF!("mGetEnum", "Function Core.Object.GetEnum")()); }
-			ScriptFunction Disable() { mixin(MGF!("mDisable", "Function Core.Object.Disable")()); }
-			ScriptFunction Enable() { mixin(MGF!("mEnable", "Function Core.Object.Enable")()); }
-			ScriptFunction ContinuedState() { mixin(MGF!("mContinuedState", "Function Core.Object.ContinuedState")()); }
-			ScriptFunction PausedState() { mixin(MGF!("mPausedState", "Function Core.Object.PausedState")()); }
-			ScriptFunction PoppedState() { mixin(MGF!("mPoppedState", "Function Core.Object.PoppedState")()); }
-			ScriptFunction PushedState() { mixin(MGF!("mPushedState", "Function Core.Object.PushedState")()); }
-			ScriptFunction EndState() { mixin(MGF!("mEndState", "Function Core.Object.EndState")()); }
-			ScriptFunction BeginState() { mixin(MGF!("mBeginState", "Function Core.Object.BeginState")()); }
-			ScriptFunction DumpStateStack() { mixin(MGF!("mDumpStateStack", "Function Core.Object.DumpStateStack")()); }
-			ScriptFunction PopState() { mixin(MGF!("mPopState", "Function Core.Object.PopState")()); }
-			ScriptFunction PushState() { mixin(MGF!("mPushState", "Function Core.Object.PushState")()); }
-			ScriptFunction GetStateName() { mixin(MGF!("mGetStateName", "Function Core.Object.GetStateName")()); }
-			ScriptFunction IsChildState() { mixin(MGF!("mIsChildState", "Function Core.Object.IsChildState")()); }
-			ScriptFunction IsInState() { mixin(MGF!("mIsInState", "Function Core.Object.IsInState")()); }
-			ScriptFunction GotoState() { mixin(MGF!("mGotoState", "Function Core.Object.GotoState")()); }
-			ScriptFunction IsUTracing() { mixin(MGF!("mIsUTracing", "Function Core.Object.IsUTracing")()); }
-			ScriptFunction SetUTracing() { mixin(MGF!("mSetUTracing", "Function Core.Object.SetUTracing")()); }
-			ScriptFunction GetFuncName() { mixin(MGF!("mGetFuncName", "Function Core.Object.GetFuncName")()); }
-			ScriptFunction DebugBreak() { mixin(MGF!("mDebugBreak", "Function Core.Object.DebugBreak")()); }
-			ScriptFunction GetScriptTrace() { mixin(MGF!("mGetScriptTrace", "Function Core.Object.GetScriptTrace")()); }
-			ScriptFunction ScriptTrace() { mixin(MGF!("mScriptTrace", "Function Core.Object.ScriptTrace")()); }
-			ScriptFunction ParseLocalizedPropertyPath() { mixin(MGF!("mParseLocalizedPropertyPath", "Function Core.Object.ParseLocalizedPropertyPath")()); }
-			ScriptFunction Localize() { mixin(MGF!("mLocalize", "Function Core.Object.Localize")()); }
-			ScriptFunction ParseStringIntoArray() { mixin(MGF!("mParseStringIntoArray", "Function Core.Object.ParseStringIntoArray")()); }
-			ScriptFunction WarnInternal() { mixin(MGF!("mWarnInternal", "Function Core.Object.WarnInternal")()); }
-			ScriptFunction LogInternal() { mixin(MGF!("mLogInternal", "Function Core.Object.LogInternal")()); }
-			ScriptFunction Subtract_LinearColorLinearColor() { mixin(MGF!("mSubtract_LinearColorLinearColor", "Function Core.Object.Subtract_LinearColorLinearColor")()); }
-			ScriptFunction Multiply_LinearColorFloat() { mixin(MGF!("mMultiply_LinearColorFloat", "Function Core.Object.Multiply_LinearColorFloat")()); }
-			ScriptFunction ColorToLinearColor() { mixin(MGF!("mColorToLinearColor", "Function Core.Object.ColorToLinearColor")()); }
-			ScriptFunction MakeLinearColor() { mixin(MGF!("mMakeLinearColor", "Function Core.Object.MakeLinearColor")()); }
-			ScriptFunction LerpColor() { mixin(MGF!("mLerpColor", "Function Core.Object.LerpColor")()); }
-			ScriptFunction MakeColor() { mixin(MGF!("mMakeColor", "Function Core.Object.MakeColor")()); }
-			ScriptFunction Add_ColorColor() { mixin(MGF!("mAdd_ColorColor", "Function Core.Object.Add_ColorColor")()); }
-			ScriptFunction Multiply_ColorFloat() { mixin(MGF!("mMultiply_ColorFloat", "Function Core.Object.Multiply_ColorFloat")()); }
-			ScriptFunction Multiply_FloatColor() { mixin(MGF!("mMultiply_FloatColor", "Function Core.Object.Multiply_FloatColor")()); }
-			ScriptFunction Subtract_ColorColor() { mixin(MGF!("mSubtract_ColorColor", "Function Core.Object.Subtract_ColorColor")()); }
-			ScriptFunction EvalInterpCurveVector2D() { mixin(MGF!("mEvalInterpCurveVector2D", "Function Core.Object.EvalInterpCurveVector2D")()); }
-			ScriptFunction EvalInterpCurveVector() { mixin(MGF!("mEvalInterpCurveVector", "Function Core.Object.EvalInterpCurveVector")()); }
-			ScriptFunction EvalInterpCurveFloat() { mixin(MGF!("mEvalInterpCurveFloat", "Function Core.Object.EvalInterpCurveFloat")()); }
-			ScriptFunction vect2d() { mixin(MGF!("mvect2d", "Function Core.Object.vect2d")()); }
-			ScriptFunction GetMappedRangeValue() { mixin(MGF!("mGetMappedRangeValue", "Function Core.Object.GetMappedRangeValue")()); }
-			ScriptFunction GetRangePctByValue() { mixin(MGF!("mGetRangePctByValue", "Function Core.Object.GetRangePctByValue")()); }
-			ScriptFunction GetRangeValueByPct() { mixin(MGF!("mGetRangeValueByPct", "Function Core.Object.GetRangeValueByPct")()); }
-			ScriptFunction SubtractEqual_Vector2DVector2D() { mixin(MGF!("mSubtractEqual_Vector2DVector2D", "Function Core.Object.SubtractEqual_Vector2DVector2D")()); }
-			ScriptFunction AddEqual_Vector2DVector2D() { mixin(MGF!("mAddEqual_Vector2DVector2D", "Function Core.Object.AddEqual_Vector2DVector2D")()); }
-			ScriptFunction DivideEqual_Vector2DFloat() { mixin(MGF!("mDivideEqual_Vector2DFloat", "Function Core.Object.DivideEqual_Vector2DFloat")()); }
-			ScriptFunction MultiplyEqual_Vector2DFloat() { mixin(MGF!("mMultiplyEqual_Vector2DFloat", "Function Core.Object.MultiplyEqual_Vector2DFloat")()); }
-			ScriptFunction Divide_Vector2DFloat() { mixin(MGF!("mDivide_Vector2DFloat", "Function Core.Object.Divide_Vector2DFloat")()); }
-			ScriptFunction Multiply_Vector2DFloat() { mixin(MGF!("mMultiply_Vector2DFloat", "Function Core.Object.Multiply_Vector2DFloat")()); }
-			ScriptFunction Subtract_Vector2DVector2D() { mixin(MGF!("mSubtract_Vector2DVector2D", "Function Core.Object.Subtract_Vector2DVector2D")()); }
-			ScriptFunction Add_Vector2DVector2D() { mixin(MGF!("mAdd_Vector2DVector2D", "Function Core.Object.Add_Vector2DVector2D")()); }
-			ScriptFunction Subtract_QuatQuat() { mixin(MGF!("mSubtract_QuatQuat", "Function Core.Object.Subtract_QuatQuat")()); }
-			ScriptFunction Add_QuatQuat() { mixin(MGF!("mAdd_QuatQuat", "Function Core.Object.Add_QuatQuat")()); }
-			ScriptFunction QuatSlerp() { mixin(MGF!("mQuatSlerp", "Function Core.Object.QuatSlerp")()); }
-			ScriptFunction QuatToRotator() { mixin(MGF!("mQuatToRotator", "Function Core.Object.QuatToRotator")()); }
-			ScriptFunction QuatFromRotator() { mixin(MGF!("mQuatFromRotator", "Function Core.Object.QuatFromRotator")()); }
-			ScriptFunction QuatFromAxisAndAngle() { mixin(MGF!("mQuatFromAxisAndAngle", "Function Core.Object.QuatFromAxisAndAngle")()); }
-			ScriptFunction QuatFindBetween() { mixin(MGF!("mQuatFindBetween", "Function Core.Object.QuatFindBetween")()); }
-			ScriptFunction QuatRotateVector() { mixin(MGF!("mQuatRotateVector", "Function Core.Object.QuatRotateVector")()); }
-			ScriptFunction QuatInvert() { mixin(MGF!("mQuatInvert", "Function Core.Object.QuatInvert")()); }
-			ScriptFunction QuatDot() { mixin(MGF!("mQuatDot", "Function Core.Object.QuatDot")()); }
-			ScriptFunction QuatProduct() { mixin(MGF!("mQuatProduct", "Function Core.Object.QuatProduct")()); }
-			ScriptFunction MatrixGetAxis() { mixin(MGF!("mMatrixGetAxis", "Function Core.Object.MatrixGetAxis")()); }
-			ScriptFunction MatrixGetOrigin() { mixin(MGF!("mMatrixGetOrigin", "Function Core.Object.MatrixGetOrigin")()); }
-			ScriptFunction MatrixGetRotator() { mixin(MGF!("mMatrixGetRotator", "Function Core.Object.MatrixGetRotator")()); }
-			ScriptFunction MakeRotationMatrix() { mixin(MGF!("mMakeRotationMatrix", "Function Core.Object.MakeRotationMatrix")()); }
-			ScriptFunction MakeRotationTranslationMatrix() { mixin(MGF!("mMakeRotationTranslationMatrix", "Function Core.Object.MakeRotationTranslationMatrix")()); }
-			ScriptFunction InverseTransformNormal() { mixin(MGF!("mInverseTransformNormal", "Function Core.Object.InverseTransformNormal")()); }
-			ScriptFunction TransformNormal() { mixin(MGF!("mTransformNormal", "Function Core.Object.TransformNormal")()); }
-			ScriptFunction InverseTransformVector() { mixin(MGF!("mInverseTransformVector", "Function Core.Object.InverseTransformVector")()); }
-			ScriptFunction TransformVector() { mixin(MGF!("mTransformVector", "Function Core.Object.TransformVector")()); }
-			ScriptFunction Multiply_MatrixMatrix() { mixin(MGF!("mMultiply_MatrixMatrix", "Function Core.Object.Multiply_MatrixMatrix")()); }
-			ScriptFunction NotEqual_NameName() { mixin(MGF!("mNotEqual_NameName", "Function Core.Object.NotEqual_NameName")()); }
-			ScriptFunction EqualEqual_NameName() { mixin(MGF!("mEqualEqual_NameName", "Function Core.Object.EqualEqual_NameName")()); }
-			ScriptFunction IsA() { mixin(MGF!("mIsA", "Function Core.Object.IsA")()); }
-			ScriptFunction ClassIsChildOf() { mixin(MGF!("mClassIsChildOf", "Function Core.Object.ClassIsChildOf")()); }
-			ScriptFunction NotEqual_InterfaceInterface() { mixin(MGF!("mNotEqual_InterfaceInterface", "Function Core.Object.NotEqual_InterfaceInterface")()); }
-			ScriptFunction EqualEqual_InterfaceInterface() { mixin(MGF!("mEqualEqual_InterfaceInterface", "Function Core.Object.EqualEqual_InterfaceInterface")()); }
-			ScriptFunction NotEqual_ObjectObject() { mixin(MGF!("mNotEqual_ObjectObject", "Function Core.Object.NotEqual_ObjectObject")()); }
-			ScriptFunction EqualEqual_ObjectObject() { mixin(MGF!("mEqualEqual_ObjectObject", "Function Core.Object.EqualEqual_ObjectObject")()); }
-			ScriptFunction PathName() { mixin(MGF!("mPathName", "Function Core.Object.PathName")()); }
-			ScriptFunction SplitString() { mixin(MGF!("mSplitString", "Function Core.Object.SplitString")()); }
-			ScriptFunction JoinArray() { mixin(MGF!("mJoinArray", "Function Core.Object.JoinArray")()); }
-			ScriptFunction GetRightMost() { mixin(MGF!("mGetRightMost", "Function Core.Object.GetRightMost")()); }
-			ScriptFunction ConcatEqual_StrStr() { mixin(MGF!("mConcatEqual_StrStr", "Function Core.Object.ConcatEqual_StrStr")()); }
-			ScriptFunction Split() { mixin(MGF!("mSplit", "Function Core.Object.Split")()); }
-			ScriptFunction Repl() { mixin(MGF!("mRepl", "Function Core.Object.Repl")()); }
-			ScriptFunction Asc() { mixin(MGF!("mAsc", "Function Core.Object.Asc")()); }
-			ScriptFunction Chr() { mixin(MGF!("mChr", "Function Core.Object.Chr")()); }
-			ScriptFunction Locs() { mixin(MGF!("mLocs", "Function Core.Object.Locs")()); }
-			ScriptFunction Caps() { mixin(MGF!("mCaps", "Function Core.Object.Caps")()); }
-			ScriptFunction Right() { mixin(MGF!("mRight", "Function Core.Object.Right")()); }
-			ScriptFunction Left() { mixin(MGF!("mLeft", "Function Core.Object.Left")()); }
-			ScriptFunction Mid() { mixin(MGF!("mMid", "Function Core.Object.Mid")()); }
-			ScriptFunction InStr() { mixin(MGF!("mInStr", "Function Core.Object.InStr")()); }
-			ScriptFunction Len() { mixin(MGF!("mLen", "Function Core.Object.Len")()); }
-			ScriptFunction SubtractEqual_StrStr() { mixin(MGF!("mSubtractEqual_StrStr", "Function Core.Object.SubtractEqual_StrStr")()); }
-			ScriptFunction AtEqual_StrStr() { mixin(MGF!("mAtEqual_StrStr", "Function Core.Object.AtEqual_StrStr")()); }
-			ScriptFunction ComplementEqual_StrStr() { mixin(MGF!("mComplementEqual_StrStr", "Function Core.Object.ComplementEqual_StrStr")()); }
-			ScriptFunction NotEqual_StrStr() { mixin(MGF!("mNotEqual_StrStr", "Function Core.Object.NotEqual_StrStr")()); }
-			ScriptFunction EqualEqual_StrStr() { mixin(MGF!("mEqualEqual_StrStr", "Function Core.Object.EqualEqual_StrStr")()); }
-			ScriptFunction GreaterEqual_StrStr() { mixin(MGF!("mGreaterEqual_StrStr", "Function Core.Object.GreaterEqual_StrStr")()); }
-			ScriptFunction LessEqual_StrStr() { mixin(MGF!("mLessEqual_StrStr", "Function Core.Object.LessEqual_StrStr")()); }
-			ScriptFunction Greater_StrStr() { mixin(MGF!("mGreater_StrStr", "Function Core.Object.Greater_StrStr")()); }
-			ScriptFunction Less_StrStr() { mixin(MGF!("mLess_StrStr", "Function Core.Object.Less_StrStr")()); }
-			ScriptFunction At_StrStr() { mixin(MGF!("mAt_StrStr", "Function Core.Object.At_StrStr")()); }
-			ScriptFunction Concat_StrStr() { mixin(MGF!("mConcat_StrStr", "Function Core.Object.Concat_StrStr")()); }
-			ScriptFunction MakeRotator() { mixin(MGF!("mMakeRotator", "Function Core.Object.MakeRotator")()); }
-			ScriptFunction SClampRotAxis() { mixin(MGF!("mSClampRotAxis", "Function Core.Object.SClampRotAxis")()); }
-			ScriptFunction ClampRotAxisFromRange() { mixin(MGF!("mClampRotAxisFromRange", "Function Core.Object.ClampRotAxisFromRange")()); }
-			ScriptFunction NormalizeRotAxis() { mixin(MGF!("mNormalizeRotAxis", "Function Core.Object.NormalizeRotAxis")()); }
-			ScriptFunction FInterpTo() { mixin(MGF!("mFInterpTo", "Function Core.Object.FInterpTo")()); }
-			ScriptFunction ClampRotAxisFromBase() { mixin(MGF!("mClampRotAxisFromBase", "Function Core.Object.ClampRotAxisFromBase")()); }
-			ScriptFunction ClampRotAxis() { mixin(MGF!("mClampRotAxis", "Function Core.Object.ClampRotAxis")()); }
-			ScriptFunction RSize() { mixin(MGF!("mRSize", "Function Core.Object.RSize")()); }
-			ScriptFunction RDiff() { mixin(MGF!("mRDiff", "Function Core.Object.RDiff")()); }
-			ScriptFunction RInterpTo() { mixin(MGF!("mRInterpTo", "Function Core.Object.RInterpTo")()); }
-			ScriptFunction RTransform() { mixin(MGF!("mRTransform", "Function Core.Object.RTransform")()); }
-			ScriptFunction RSmerp() { mixin(MGF!("mRSmerp", "Function Core.Object.RSmerp")()); }
-			ScriptFunction RLerp() { mixin(MGF!("mRLerp", "Function Core.Object.RLerp")()); }
-			ScriptFunction Normalize() { mixin(MGF!("mNormalize", "Function Core.Object.Normalize")()); }
-			ScriptFunction OrthoRotation() { mixin(MGF!("mOrthoRotation", "Function Core.Object.OrthoRotation")()); }
-			ScriptFunction RotRand() { mixin(MGF!("mRotRand", "Function Core.Object.RotRand")()); }
-			ScriptFunction GetRotatorAxis() { mixin(MGF!("mGetRotatorAxis", "Function Core.Object.GetRotatorAxis")()); }
-			ScriptFunction GetUnAxes() { mixin(MGF!("mGetUnAxes", "Function Core.Object.GetUnAxes")()); }
-			ScriptFunction GetAxes() { mixin(MGF!("mGetAxes", "Function Core.Object.GetAxes")()); }
-			ScriptFunction ClockwiseFrom_IntInt() { mixin(MGF!("mClockwiseFrom_IntInt", "Function Core.Object.ClockwiseFrom_IntInt")()); }
-			ScriptFunction SubtractEqual_RotatorRotator() { mixin(MGF!("mSubtractEqual_RotatorRotator", "Function Core.Object.SubtractEqual_RotatorRotator")()); }
-			ScriptFunction AddEqual_RotatorRotator() { mixin(MGF!("mAddEqual_RotatorRotator", "Function Core.Object.AddEqual_RotatorRotator")()); }
-			ScriptFunction Subtract_RotatorRotator() { mixin(MGF!("mSubtract_RotatorRotator", "Function Core.Object.Subtract_RotatorRotator")()); }
-			ScriptFunction Add_RotatorRotator() { mixin(MGF!("mAdd_RotatorRotator", "Function Core.Object.Add_RotatorRotator")()); }
-			ScriptFunction DivideEqual_RotatorFloat() { mixin(MGF!("mDivideEqual_RotatorFloat", "Function Core.Object.DivideEqual_RotatorFloat")()); }
-			ScriptFunction MultiplyEqual_RotatorFloat() { mixin(MGF!("mMultiplyEqual_RotatorFloat", "Function Core.Object.MultiplyEqual_RotatorFloat")()); }
-			ScriptFunction Divide_RotatorFloat() { mixin(MGF!("mDivide_RotatorFloat", "Function Core.Object.Divide_RotatorFloat")()); }
-			ScriptFunction Multiply_FloatRotator() { mixin(MGF!("mMultiply_FloatRotator", "Function Core.Object.Multiply_FloatRotator")()); }
-			ScriptFunction Multiply_RotatorFloat() { mixin(MGF!("mMultiply_RotatorFloat", "Function Core.Object.Multiply_RotatorFloat")()); }
-			ScriptFunction NotEqual_RotatorRotator() { mixin(MGF!("mNotEqual_RotatorRotator", "Function Core.Object.NotEqual_RotatorRotator")()); }
-			ScriptFunction EqualEqual_RotatorRotator() { mixin(MGF!("mEqualEqual_RotatorRotator", "Function Core.Object.EqualEqual_RotatorRotator")()); }
-			ScriptFunction InCylinder() { mixin(MGF!("mInCylinder", "Function Core.Object.InCylinder")()); }
-			ScriptFunction NoZDot() { mixin(MGF!("mNoZDot", "Function Core.Object.NoZDot")()); }
-			ScriptFunction ClampLength() { mixin(MGF!("mClampLength", "Function Core.Object.ClampLength")()); }
-			ScriptFunction VInterpTo() { mixin(MGF!("mVInterpTo", "Function Core.Object.VInterpTo")()); }
-			ScriptFunction IsZero() { mixin(MGF!("mIsZero", "Function Core.Object.IsZero")()); }
-			ScriptFunction ProjectOnTo() { mixin(MGF!("mProjectOnTo", "Function Core.Object.ProjectOnTo")()); }
-			ScriptFunction MirrorVectorByNormal() { mixin(MGF!("mMirrorVectorByNormal", "Function Core.Object.MirrorVectorByNormal")()); }
-			ScriptFunction VRandCone2() { mixin(MGF!("mVRandCone2", "Function Core.Object.VRandCone2")()); }
-			ScriptFunction VRandCone() { mixin(MGF!("mVRandCone", "Function Core.Object.VRandCone")()); }
-			ScriptFunction VRand() { mixin(MGF!("mVRand", "Function Core.Object.VRand")()); }
-			ScriptFunction VSmerp() { mixin(MGF!("mVSmerp", "Function Core.Object.VSmerp")()); }
-			ScriptFunction VLerp() { mixin(MGF!("mVLerp", "Function Core.Object.VLerp")()); }
-			ScriptFunction Normal() { mixin(MGF!("mNormal", "Function Core.Object.Normal")()); }
-			ScriptFunction VSizeSq2D() { mixin(MGF!("mVSizeSq2D", "Function Core.Object.VSizeSq2D")()); }
-			ScriptFunction VSizeSq() { mixin(MGF!("mVSizeSq", "Function Core.Object.VSizeSq")()); }
-			ScriptFunction VSize2D() { mixin(MGF!("mVSize2D", "Function Core.Object.VSize2D")()); }
-			ScriptFunction VSize() { mixin(MGF!("mVSize", "Function Core.Object.VSize")()); }
-			ScriptFunction SubtractEqual_VectorVector() { mixin(MGF!("mSubtractEqual_VectorVector", "Function Core.Object.SubtractEqual_VectorVector")()); }
-			ScriptFunction AddEqual_VectorVector() { mixin(MGF!("mAddEqual_VectorVector", "Function Core.Object.AddEqual_VectorVector")()); }
-			ScriptFunction DivideEqual_VectorFloat() { mixin(MGF!("mDivideEqual_VectorFloat", "Function Core.Object.DivideEqual_VectorFloat")()); }
-			ScriptFunction MultiplyEqual_VectorVector() { mixin(MGF!("mMultiplyEqual_VectorVector", "Function Core.Object.MultiplyEqual_VectorVector")()); }
-			ScriptFunction MultiplyEqual_VectorFloat() { mixin(MGF!("mMultiplyEqual_VectorFloat", "Function Core.Object.MultiplyEqual_VectorFloat")()); }
-			ScriptFunction Cross_VectorVector() { mixin(MGF!("mCross_VectorVector", "Function Core.Object.Cross_VectorVector")()); }
-			ScriptFunction Dot_VectorVector() { mixin(MGF!("mDot_VectorVector", "Function Core.Object.Dot_VectorVector")()); }
-			ScriptFunction NotEqual_VectorVector() { mixin(MGF!("mNotEqual_VectorVector", "Function Core.Object.NotEqual_VectorVector")()); }
-			ScriptFunction EqualEqual_VectorVector() { mixin(MGF!("mEqualEqual_VectorVector", "Function Core.Object.EqualEqual_VectorVector")()); }
-			ScriptFunction GreaterGreater_VectorRotator() { mixin(MGF!("mGreaterGreater_VectorRotator", "Function Core.Object.GreaterGreater_VectorRotator")()); }
-			ScriptFunction LessLess_VectorRotator() { mixin(MGF!("mLessLess_VectorRotator", "Function Core.Object.LessLess_VectorRotator")()); }
-			ScriptFunction Subtract_VectorVector() { mixin(MGF!("mSubtract_VectorVector", "Function Core.Object.Subtract_VectorVector")()); }
-			ScriptFunction Add_VectorVector() { mixin(MGF!("mAdd_VectorVector", "Function Core.Object.Add_VectorVector")()); }
-			ScriptFunction Divide_VectorFloat() { mixin(MGF!("mDivide_VectorFloat", "Function Core.Object.Divide_VectorFloat")()); }
-			ScriptFunction Multiply_VectorVector() { mixin(MGF!("mMultiply_VectorVector", "Function Core.Object.Multiply_VectorVector")()); }
-			ScriptFunction Multiply_FloatVector() { mixin(MGF!("mMultiply_FloatVector", "Function Core.Object.Multiply_FloatVector")()); }
-			ScriptFunction Multiply_VectorFloat() { mixin(MGF!("mMultiply_VectorFloat", "Function Core.Object.Multiply_VectorFloat")()); }
-			ScriptFunction Subtract_PreVector() { mixin(MGF!("mSubtract_PreVector", "Function Core.Object.Subtract_PreVector")()); }
-			ScriptFunction FInterpConstantTo() { mixin(MGF!("mFInterpConstantTo", "Function Core.Object.FInterpConstantTo")()); }
-			ScriptFunction FPctByRange() { mixin(MGF!("mFPctByRange", "Function Core.Object.FPctByRange")()); }
-			ScriptFunction RandRange() { mixin(MGF!("mRandRange", "Function Core.Object.RandRange")()); }
-			ScriptFunction FInterpEaseInOut() { mixin(MGF!("mFInterpEaseInOut", "Function Core.Object.FInterpEaseInOut")()); }
-			ScriptFunction FInterpEaseOut() { mixin(MGF!("mFInterpEaseOut", "Function Core.Object.FInterpEaseOut")()); }
-			ScriptFunction FInterpEaseIn() { mixin(MGF!("mFInterpEaseIn", "Function Core.Object.FInterpEaseIn")()); }
-			ScriptFunction FCubicInterp() { mixin(MGF!("mFCubicInterp", "Function Core.Object.FCubicInterp")()); }
-			ScriptFunction FCeil() { mixin(MGF!("mFCeil", "Function Core.Object.FCeil")()); }
-			ScriptFunction FFloor() { mixin(MGF!("mFFloor", "Function Core.Object.FFloor")()); }
-			ScriptFunction Round() { mixin(MGF!("mRound", "Function Core.Object.Round")()); }
-			ScriptFunction Lerp() { mixin(MGF!("mLerp", "Function Core.Object.Lerp")()); }
-			ScriptFunction FClamp() { mixin(MGF!("mFClamp", "Function Core.Object.FClamp")()); }
-			ScriptFunction FMax() { mixin(MGF!("mFMax", "Function Core.Object.FMax")()); }
-			ScriptFunction FMin() { mixin(MGF!("mFMin", "Function Core.Object.FMin")()); }
-			ScriptFunction FRand() { mixin(MGF!("mFRand", "Function Core.Object.FRand")()); }
-			ScriptFunction Square() { mixin(MGF!("mSquare", "Function Core.Object.Square")()); }
-			ScriptFunction Sqrt() { mixin(MGF!("mSqrt", "Function Core.Object.Sqrt")()); }
-			ScriptFunction Loge() { mixin(MGF!("mLoge", "Function Core.Object.Loge")()); }
-			ScriptFunction Exp() { mixin(MGF!("mExp", "Function Core.Object.Exp")()); }
-			ScriptFunction Atan2() { mixin(MGF!("mAtan2", "Function Core.Object.Atan2")()); }
-			ScriptFunction Atan() { mixin(MGF!("mAtan", "Function Core.Object.Atan")()); }
-			ScriptFunction Tan() { mixin(MGF!("mTan", "Function Core.Object.Tan")()); }
-			ScriptFunction Cos() { mixin(MGF!("mCos", "Function Core.Object.Cos")()); }
-			ScriptFunction Asin() { mixin(MGF!("mAsin", "Function Core.Object.Asin")()); }
-			ScriptFunction Sin() { mixin(MGF!("mSin", "Function Core.Object.Sin")()); }
-			ScriptFunction Abs() { mixin(MGF!("mAbs", "Function Core.Object.Abs")()); }
-			ScriptFunction SubtractEqual_FloatFloat() { mixin(MGF!("mSubtractEqual_FloatFloat", "Function Core.Object.SubtractEqual_FloatFloat")()); }
-			ScriptFunction AddEqual_FloatFloat() { mixin(MGF!("mAddEqual_FloatFloat", "Function Core.Object.AddEqual_FloatFloat")()); }
-			ScriptFunction DivideEqual_FloatFloat() { mixin(MGF!("mDivideEqual_FloatFloat", "Function Core.Object.DivideEqual_FloatFloat")()); }
-			ScriptFunction MultiplyEqual_FloatFloat() { mixin(MGF!("mMultiplyEqual_FloatFloat", "Function Core.Object.MultiplyEqual_FloatFloat")()); }
-			ScriptFunction NotEqual_FloatFloat() { mixin(MGF!("mNotEqual_FloatFloat", "Function Core.Object.NotEqual_FloatFloat")()); }
-			ScriptFunction ComplementEqual_FloatFloat() { mixin(MGF!("mComplementEqual_FloatFloat", "Function Core.Object.ComplementEqual_FloatFloat")()); }
-			ScriptFunction EqualEqual_FloatFloat() { mixin(MGF!("mEqualEqual_FloatFloat", "Function Core.Object.EqualEqual_FloatFloat")()); }
-			ScriptFunction GreaterEqual_FloatFloat() { mixin(MGF!("mGreaterEqual_FloatFloat", "Function Core.Object.GreaterEqual_FloatFloat")()); }
-			ScriptFunction LessEqual_FloatFloat() { mixin(MGF!("mLessEqual_FloatFloat", "Function Core.Object.LessEqual_FloatFloat")()); }
-			ScriptFunction Greater_FloatFloat() { mixin(MGF!("mGreater_FloatFloat", "Function Core.Object.Greater_FloatFloat")()); }
-			ScriptFunction Less_FloatFloat() { mixin(MGF!("mLess_FloatFloat", "Function Core.Object.Less_FloatFloat")()); }
-			ScriptFunction Subtract_FloatFloat() { mixin(MGF!("mSubtract_FloatFloat", "Function Core.Object.Subtract_FloatFloat")()); }
-			ScriptFunction Add_FloatFloat() { mixin(MGF!("mAdd_FloatFloat", "Function Core.Object.Add_FloatFloat")()); }
-			ScriptFunction Percent_FloatFloat() { mixin(MGF!("mPercent_FloatFloat", "Function Core.Object.Percent_FloatFloat")()); }
-			ScriptFunction Divide_FloatFloat() { mixin(MGF!("mDivide_FloatFloat", "Function Core.Object.Divide_FloatFloat")()); }
-			ScriptFunction Multiply_FloatFloat() { mixin(MGF!("mMultiply_FloatFloat", "Function Core.Object.Multiply_FloatFloat")()); }
-			ScriptFunction MultiplyMultiply_FloatFloat() { mixin(MGF!("mMultiplyMultiply_FloatFloat", "Function Core.Object.MultiplyMultiply_FloatFloat")()); }
-			ScriptFunction Subtract_PreFloat() { mixin(MGF!("mSubtract_PreFloat", "Function Core.Object.Subtract_PreFloat")()); }
-			ScriptFunction ToHex() { mixin(MGF!("mToHex", "Function Core.Object.ToHex")()); }
-			ScriptFunction Clamp() { mixin(MGF!("mClamp", "Function Core.Object.Clamp")()); }
-			ScriptFunction Max() { mixin(MGF!("mMax", "Function Core.Object.Max")()); }
-			ScriptFunction Min() { mixin(MGF!("mMin", "Function Core.Object.Min")()); }
-			ScriptFunction Rand() { mixin(MGF!("mRand", "Function Core.Object.Rand")()); }
-			ScriptFunction SubtractSubtract_Int() { mixin(MGF!("mSubtractSubtract_Int", "Function Core.Object.SubtractSubtract_Int")()); }
-			ScriptFunction AddAdd_Int() { mixin(MGF!("mAddAdd_Int", "Function Core.Object.AddAdd_Int")()); }
-			ScriptFunction SubtractSubtract_PreInt() { mixin(MGF!("mSubtractSubtract_PreInt", "Function Core.Object.SubtractSubtract_PreInt")()); }
-			ScriptFunction AddAdd_PreInt() { mixin(MGF!("mAddAdd_PreInt", "Function Core.Object.AddAdd_PreInt")()); }
-			ScriptFunction SubtractEqual_IntInt() { mixin(MGF!("mSubtractEqual_IntInt", "Function Core.Object.SubtractEqual_IntInt")()); }
-			ScriptFunction AddEqual_IntInt() { mixin(MGF!("mAddEqual_IntInt", "Function Core.Object.AddEqual_IntInt")()); }
-			ScriptFunction DivideEqual_IntFloat() { mixin(MGF!("mDivideEqual_IntFloat", "Function Core.Object.DivideEqual_IntFloat")()); }
-			ScriptFunction MultiplyEqual_IntFloat() { mixin(MGF!("mMultiplyEqual_IntFloat", "Function Core.Object.MultiplyEqual_IntFloat")()); }
-			ScriptFunction Or_IntInt() { mixin(MGF!("mOr_IntInt", "Function Core.Object.Or_IntInt")()); }
-			ScriptFunction Xor_IntInt() { mixin(MGF!("mXor_IntInt", "Function Core.Object.Xor_IntInt")()); }
-			ScriptFunction And_IntInt() { mixin(MGF!("mAnd_IntInt", "Function Core.Object.And_IntInt")()); }
-			ScriptFunction NotEqual_IntInt() { mixin(MGF!("mNotEqual_IntInt", "Function Core.Object.NotEqual_IntInt")()); }
-			ScriptFunction EqualEqual_IntInt() { mixin(MGF!("mEqualEqual_IntInt", "Function Core.Object.EqualEqual_IntInt")()); }
-			ScriptFunction GreaterEqual_IntInt() { mixin(MGF!("mGreaterEqual_IntInt", "Function Core.Object.GreaterEqual_IntInt")()); }
-			ScriptFunction LessEqual_IntInt() { mixin(MGF!("mLessEqual_IntInt", "Function Core.Object.LessEqual_IntInt")()); }
-			ScriptFunction Greater_IntInt() { mixin(MGF!("mGreater_IntInt", "Function Core.Object.Greater_IntInt")()); }
-			ScriptFunction Less_IntInt() { mixin(MGF!("mLess_IntInt", "Function Core.Object.Less_IntInt")()); }
-			ScriptFunction GreaterGreaterGreater_IntInt() { mixin(MGF!("mGreaterGreaterGreater_IntInt", "Function Core.Object.GreaterGreaterGreater_IntInt")()); }
-			ScriptFunction GreaterGreater_IntInt() { mixin(MGF!("mGreaterGreater_IntInt", "Function Core.Object.GreaterGreater_IntInt")()); }
-			ScriptFunction LessLess_IntInt() { mixin(MGF!("mLessLess_IntInt", "Function Core.Object.LessLess_IntInt")()); }
-			ScriptFunction Subtract_IntInt() { mixin(MGF!("mSubtract_IntInt", "Function Core.Object.Subtract_IntInt")()); }
-			ScriptFunction Add_IntInt() { mixin(MGF!("mAdd_IntInt", "Function Core.Object.Add_IntInt")()); }
-			ScriptFunction Percent_IntInt() { mixin(MGF!("mPercent_IntInt", "Function Core.Object.Percent_IntInt")()); }
-			ScriptFunction Divide_IntInt() { mixin(MGF!("mDivide_IntInt", "Function Core.Object.Divide_IntInt")()); }
-			ScriptFunction Multiply_IntInt() { mixin(MGF!("mMultiply_IntInt", "Function Core.Object.Multiply_IntInt")()); }
-			ScriptFunction Subtract_PreInt() { mixin(MGF!("mSubtract_PreInt", "Function Core.Object.Subtract_PreInt")()); }
-			ScriptFunction Complement_PreInt() { mixin(MGF!("mComplement_PreInt", "Function Core.Object.Complement_PreInt")()); }
-			ScriptFunction SubtractSubtract_Byte() { mixin(MGF!("mSubtractSubtract_Byte", "Function Core.Object.SubtractSubtract_Byte")()); }
-			ScriptFunction AddAdd_Byte() { mixin(MGF!("mAddAdd_Byte", "Function Core.Object.AddAdd_Byte")()); }
-			ScriptFunction SubtractSubtract_PreByte() { mixin(MGF!("mSubtractSubtract_PreByte", "Function Core.Object.SubtractSubtract_PreByte")()); }
-			ScriptFunction AddAdd_PreByte() { mixin(MGF!("mAddAdd_PreByte", "Function Core.Object.AddAdd_PreByte")()); }
-			ScriptFunction SubtractEqual_ByteByte() { mixin(MGF!("mSubtractEqual_ByteByte", "Function Core.Object.SubtractEqual_ByteByte")()); }
-			ScriptFunction AddEqual_ByteByte() { mixin(MGF!("mAddEqual_ByteByte", "Function Core.Object.AddEqual_ByteByte")()); }
-			ScriptFunction DivideEqual_ByteByte() { mixin(MGF!("mDivideEqual_ByteByte", "Function Core.Object.DivideEqual_ByteByte")()); }
-			ScriptFunction MultiplyEqual_ByteFloat() { mixin(MGF!("mMultiplyEqual_ByteFloat", "Function Core.Object.MultiplyEqual_ByteFloat")()); }
-			ScriptFunction MultiplyEqual_ByteByte() { mixin(MGF!("mMultiplyEqual_ByteByte", "Function Core.Object.MultiplyEqual_ByteByte")()); }
-			ScriptFunction OrOr_BoolBool() { mixin(MGF!("mOrOr_BoolBool", "Function Core.Object.OrOr_BoolBool")()); }
-			ScriptFunction XorXor_BoolBool() { mixin(MGF!("mXorXor_BoolBool", "Function Core.Object.XorXor_BoolBool")()); }
-			ScriptFunction AndAnd_BoolBool() { mixin(MGF!("mAndAnd_BoolBool", "Function Core.Object.AndAnd_BoolBool")()); }
-			ScriptFunction NotEqual_BoolBool() { mixin(MGF!("mNotEqual_BoolBool", "Function Core.Object.NotEqual_BoolBool")()); }
-			ScriptFunction EqualEqual_BoolBool() { mixin(MGF!("mEqualEqual_BoolBool", "Function Core.Object.EqualEqual_BoolBool")()); }
-			ScriptFunction Not_PreBool() { mixin(MGF!("mNot_PreBool", "Function Core.Object.Not_PreBool")()); }
+			ScriptFunction GetBuildChangelistNumber() { mixin(MGF("mGetBuildChangelistNumber", "Function Core.Object.GetBuildChangelistNumber")); }
+			ScriptFunction GetEngineVersion() { mixin(MGF("mGetEngineVersion", "Function Core.Object.GetEngineVersion")); }
+			ScriptFunction GetSystemTime() { mixin(MGF("mGetSystemTime", "Function Core.Object.GetSystemTime")); }
+			ScriptFunction TimeStamp() { mixin(MGF("mTimeStamp", "Function Core.Object.TimeStamp")); }
+			ScriptFunction TransformVectorByRotation() { mixin(MGF("mTransformVectorByRotation", "Function Core.Object.TransformVectorByRotation")); }
+			ScriptFunction GetPackageName() { mixin(MGF("mGetPackageName", "Function Core.Object.GetPackageName")); }
+			ScriptFunction IsPendingKill() { mixin(MGF("mIsPendingKill", "Function Core.Object.IsPendingKill")); }
+			ScriptFunction ByteToFloat() { mixin(MGF("mByteToFloat", "Function Core.Object.ByteToFloat")); }
+			ScriptFunction FloatToByte() { mixin(MGF("mFloatToByte", "Function Core.Object.FloatToByte")); }
+			ScriptFunction UnwindHeading() { mixin(MGF("mUnwindHeading", "Function Core.Object.UnwindHeading")); }
+			ScriptFunction FindDeltaAngle() { mixin(MGF("mFindDeltaAngle", "Function Core.Object.FindDeltaAngle")); }
+			ScriptFunction GetHeadingAngle() { mixin(MGF("mGetHeadingAngle", "Function Core.Object.GetHeadingAngle")); }
+			ScriptFunction GetAngularDegreesFromRadians() { mixin(MGF("mGetAngularDegreesFromRadians", "Function Core.Object.GetAngularDegreesFromRadians")); }
+			ScriptFunction Acos() { mixin(MGF("mAcos", "Function Core.Object.Acos")); }
+			ScriptFunction GetAngularFromDotDist() { mixin(MGF("mGetAngularFromDotDist", "Function Core.Object.GetAngularFromDotDist")); }
+			ScriptFunction GetAngularDistance() { mixin(MGF("mGetAngularDistance", "Function Core.Object.GetAngularDistance")); }
+			ScriptFunction GetDotDistance() { mixin(MGF("mGetDotDistance", "Function Core.Object.GetDotDistance")); }
+			ScriptFunction PointProjectToPlane() { mixin(MGF("mPointProjectToPlane", "Function Core.Object.PointProjectToPlane")); }
+			ScriptFunction PointDistToPlane() { mixin(MGF("mPointDistToPlane", "Function Core.Object.PointDistToPlane")); }
+			ScriptFunction PointDistToSegment() { mixin(MGF("mPointDistToSegment", "Function Core.Object.PointDistToSegment")); }
+			ScriptFunction PointDistToLine() { mixin(MGF("mPointDistToLine", "Function Core.Object.PointDistToLine")); }
+			ScriptFunction GetPerObjectConfigSections() { mixin(MGF("mGetPerObjectConfigSections", "Function Core.Object.GetPerObjectConfigSections")); }
+			ScriptFunction StaticSaveConfig() { mixin(MGF("mStaticSaveConfig", "Function Core.Object.StaticSaveConfig")); }
+			ScriptFunction SaveConfig() { mixin(MGF("mSaveConfig", "Function Core.Object.SaveConfig")); }
+			ScriptFunction FindObject() { mixin(MGF("mFindObject", "Function Core.Object.FindObject")); }
+			ScriptFunction DynamicLoadObject() { mixin(MGF("mDynamicLoadObject", "Function Core.Object.DynamicLoadObject")); }
+			ScriptFunction GetEnum() { mixin(MGF("mGetEnum", "Function Core.Object.GetEnum")); }
+			ScriptFunction Disable() { mixin(MGF("mDisable", "Function Core.Object.Disable")); }
+			ScriptFunction Enable() { mixin(MGF("mEnable", "Function Core.Object.Enable")); }
+			ScriptFunction ContinuedState() { mixin(MGF("mContinuedState", "Function Core.Object.ContinuedState")); }
+			ScriptFunction PausedState() { mixin(MGF("mPausedState", "Function Core.Object.PausedState")); }
+			ScriptFunction PoppedState() { mixin(MGF("mPoppedState", "Function Core.Object.PoppedState")); }
+			ScriptFunction PushedState() { mixin(MGF("mPushedState", "Function Core.Object.PushedState")); }
+			ScriptFunction EndState() { mixin(MGF("mEndState", "Function Core.Object.EndState")); }
+			ScriptFunction BeginState() { mixin(MGF("mBeginState", "Function Core.Object.BeginState")); }
+			ScriptFunction DumpStateStack() { mixin(MGF("mDumpStateStack", "Function Core.Object.DumpStateStack")); }
+			ScriptFunction PopState() { mixin(MGF("mPopState", "Function Core.Object.PopState")); }
+			ScriptFunction PushState() { mixin(MGF("mPushState", "Function Core.Object.PushState")); }
+			ScriptFunction GetStateName() { mixin(MGF("mGetStateName", "Function Core.Object.GetStateName")); }
+			ScriptFunction IsChildState() { mixin(MGF("mIsChildState", "Function Core.Object.IsChildState")); }
+			ScriptFunction IsInState() { mixin(MGF("mIsInState", "Function Core.Object.IsInState")); }
+			ScriptFunction GotoState() { mixin(MGF("mGotoState", "Function Core.Object.GotoState")); }
+			ScriptFunction IsUTracing() { mixin(MGF("mIsUTracing", "Function Core.Object.IsUTracing")); }
+			ScriptFunction SetUTracing() { mixin(MGF("mSetUTracing", "Function Core.Object.SetUTracing")); }
+			ScriptFunction GetFuncName() { mixin(MGF("mGetFuncName", "Function Core.Object.GetFuncName")); }
+			ScriptFunction DebugBreak() { mixin(MGF("mDebugBreak", "Function Core.Object.DebugBreak")); }
+			ScriptFunction GetScriptTrace() { mixin(MGF("mGetScriptTrace", "Function Core.Object.GetScriptTrace")); }
+			ScriptFunction ScriptTrace() { mixin(MGF("mScriptTrace", "Function Core.Object.ScriptTrace")); }
+			ScriptFunction ParseLocalizedPropertyPath() { mixin(MGF("mParseLocalizedPropertyPath", "Function Core.Object.ParseLocalizedPropertyPath")); }
+			ScriptFunction Localize() { mixin(MGF("mLocalize", "Function Core.Object.Localize")); }
+			ScriptFunction ParseStringIntoArray() { mixin(MGF("mParseStringIntoArray", "Function Core.Object.ParseStringIntoArray")); }
+			ScriptFunction WarnInternal() { mixin(MGF("mWarnInternal", "Function Core.Object.WarnInternal")); }
+			ScriptFunction LogInternal() { mixin(MGF("mLogInternal", "Function Core.Object.LogInternal")); }
+			ScriptFunction Subtract_LinearColorLinearColor() { mixin(MGF("mSubtract_LinearColorLinearColor", "Function Core.Object.Subtract_LinearColorLinearColor")); }
+			ScriptFunction Multiply_LinearColorFloat() { mixin(MGF("mMultiply_LinearColorFloat", "Function Core.Object.Multiply_LinearColorFloat")); }
+			ScriptFunction ColorToLinearColor() { mixin(MGF("mColorToLinearColor", "Function Core.Object.ColorToLinearColor")); }
+			ScriptFunction MakeLinearColor() { mixin(MGF("mMakeLinearColor", "Function Core.Object.MakeLinearColor")); }
+			ScriptFunction LerpColor() { mixin(MGF("mLerpColor", "Function Core.Object.LerpColor")); }
+			ScriptFunction MakeColor() { mixin(MGF("mMakeColor", "Function Core.Object.MakeColor")); }
+			ScriptFunction Add_ColorColor() { mixin(MGF("mAdd_ColorColor", "Function Core.Object.Add_ColorColor")); }
+			ScriptFunction Multiply_ColorFloat() { mixin(MGF("mMultiply_ColorFloat", "Function Core.Object.Multiply_ColorFloat")); }
+			ScriptFunction Multiply_FloatColor() { mixin(MGF("mMultiply_FloatColor", "Function Core.Object.Multiply_FloatColor")); }
+			ScriptFunction Subtract_ColorColor() { mixin(MGF("mSubtract_ColorColor", "Function Core.Object.Subtract_ColorColor")); }
+			ScriptFunction EvalInterpCurveVector2D() { mixin(MGF("mEvalInterpCurveVector2D", "Function Core.Object.EvalInterpCurveVector2D")); }
+			ScriptFunction EvalInterpCurveVector() { mixin(MGF("mEvalInterpCurveVector", "Function Core.Object.EvalInterpCurveVector")); }
+			ScriptFunction EvalInterpCurveFloat() { mixin(MGF("mEvalInterpCurveFloat", "Function Core.Object.EvalInterpCurveFloat")); }
+			ScriptFunction vect2d() { mixin(MGF("mvect2d", "Function Core.Object.vect2d")); }
+			ScriptFunction GetMappedRangeValue() { mixin(MGF("mGetMappedRangeValue", "Function Core.Object.GetMappedRangeValue")); }
+			ScriptFunction GetRangePctByValue() { mixin(MGF("mGetRangePctByValue", "Function Core.Object.GetRangePctByValue")); }
+			ScriptFunction GetRangeValueByPct() { mixin(MGF("mGetRangeValueByPct", "Function Core.Object.GetRangeValueByPct")); }
+			ScriptFunction SubtractEqual_Vector2DVector2D() { mixin(MGF("mSubtractEqual_Vector2DVector2D", "Function Core.Object.SubtractEqual_Vector2DVector2D")); }
+			ScriptFunction AddEqual_Vector2DVector2D() { mixin(MGF("mAddEqual_Vector2DVector2D", "Function Core.Object.AddEqual_Vector2DVector2D")); }
+			ScriptFunction DivideEqual_Vector2DFloat() { mixin(MGF("mDivideEqual_Vector2DFloat", "Function Core.Object.DivideEqual_Vector2DFloat")); }
+			ScriptFunction MultiplyEqual_Vector2DFloat() { mixin(MGF("mMultiplyEqual_Vector2DFloat", "Function Core.Object.MultiplyEqual_Vector2DFloat")); }
+			ScriptFunction Divide_Vector2DFloat() { mixin(MGF("mDivide_Vector2DFloat", "Function Core.Object.Divide_Vector2DFloat")); }
+			ScriptFunction Multiply_Vector2DFloat() { mixin(MGF("mMultiply_Vector2DFloat", "Function Core.Object.Multiply_Vector2DFloat")); }
+			ScriptFunction Subtract_Vector2DVector2D() { mixin(MGF("mSubtract_Vector2DVector2D", "Function Core.Object.Subtract_Vector2DVector2D")); }
+			ScriptFunction Add_Vector2DVector2D() { mixin(MGF("mAdd_Vector2DVector2D", "Function Core.Object.Add_Vector2DVector2D")); }
+			ScriptFunction Subtract_QuatQuat() { mixin(MGF("mSubtract_QuatQuat", "Function Core.Object.Subtract_QuatQuat")); }
+			ScriptFunction Add_QuatQuat() { mixin(MGF("mAdd_QuatQuat", "Function Core.Object.Add_QuatQuat")); }
+			ScriptFunction QuatSlerp() { mixin(MGF("mQuatSlerp", "Function Core.Object.QuatSlerp")); }
+			ScriptFunction QuatToRotator() { mixin(MGF("mQuatToRotator", "Function Core.Object.QuatToRotator")); }
+			ScriptFunction QuatFromRotator() { mixin(MGF("mQuatFromRotator", "Function Core.Object.QuatFromRotator")); }
+			ScriptFunction QuatFromAxisAndAngle() { mixin(MGF("mQuatFromAxisAndAngle", "Function Core.Object.QuatFromAxisAndAngle")); }
+			ScriptFunction QuatFindBetween() { mixin(MGF("mQuatFindBetween", "Function Core.Object.QuatFindBetween")); }
+			ScriptFunction QuatRotateVector() { mixin(MGF("mQuatRotateVector", "Function Core.Object.QuatRotateVector")); }
+			ScriptFunction QuatInvert() { mixin(MGF("mQuatInvert", "Function Core.Object.QuatInvert")); }
+			ScriptFunction QuatDot() { mixin(MGF("mQuatDot", "Function Core.Object.QuatDot")); }
+			ScriptFunction QuatProduct() { mixin(MGF("mQuatProduct", "Function Core.Object.QuatProduct")); }
+			ScriptFunction MatrixGetAxis() { mixin(MGF("mMatrixGetAxis", "Function Core.Object.MatrixGetAxis")); }
+			ScriptFunction MatrixGetOrigin() { mixin(MGF("mMatrixGetOrigin", "Function Core.Object.MatrixGetOrigin")); }
+			ScriptFunction MatrixGetRotator() { mixin(MGF("mMatrixGetRotator", "Function Core.Object.MatrixGetRotator")); }
+			ScriptFunction MakeRotationMatrix() { mixin(MGF("mMakeRotationMatrix", "Function Core.Object.MakeRotationMatrix")); }
+			ScriptFunction MakeRotationTranslationMatrix() { mixin(MGF("mMakeRotationTranslationMatrix", "Function Core.Object.MakeRotationTranslationMatrix")); }
+			ScriptFunction InverseTransformNormal() { mixin(MGF("mInverseTransformNormal", "Function Core.Object.InverseTransformNormal")); }
+			ScriptFunction TransformNormal() { mixin(MGF("mTransformNormal", "Function Core.Object.TransformNormal")); }
+			ScriptFunction InverseTransformVector() { mixin(MGF("mInverseTransformVector", "Function Core.Object.InverseTransformVector")); }
+			ScriptFunction TransformVector() { mixin(MGF("mTransformVector", "Function Core.Object.TransformVector")); }
+			ScriptFunction Multiply_MatrixMatrix() { mixin(MGF("mMultiply_MatrixMatrix", "Function Core.Object.Multiply_MatrixMatrix")); }
+			ScriptFunction NotEqual_NameName() { mixin(MGF("mNotEqual_NameName", "Function Core.Object.NotEqual_NameName")); }
+			ScriptFunction EqualEqual_NameName() { mixin(MGF("mEqualEqual_NameName", "Function Core.Object.EqualEqual_NameName")); }
+			ScriptFunction IsA() { mixin(MGF("mIsA", "Function Core.Object.IsA")); }
+			ScriptFunction ClassIsChildOf() { mixin(MGF("mClassIsChildOf", "Function Core.Object.ClassIsChildOf")); }
+			ScriptFunction NotEqual_InterfaceInterface() { mixin(MGF("mNotEqual_InterfaceInterface", "Function Core.Object.NotEqual_InterfaceInterface")); }
+			ScriptFunction EqualEqual_InterfaceInterface() { mixin(MGF("mEqualEqual_InterfaceInterface", "Function Core.Object.EqualEqual_InterfaceInterface")); }
+			ScriptFunction NotEqual_ObjectObject() { mixin(MGF("mNotEqual_ObjectObject", "Function Core.Object.NotEqual_ObjectObject")); }
+			ScriptFunction EqualEqual_ObjectObject() { mixin(MGF("mEqualEqual_ObjectObject", "Function Core.Object.EqualEqual_ObjectObject")); }
+			ScriptFunction PathName() { mixin(MGF("mPathName", "Function Core.Object.PathName")); }
+			ScriptFunction SplitString() { mixin(MGF("mSplitString", "Function Core.Object.SplitString")); }
+			ScriptFunction JoinArray() { mixin(MGF("mJoinArray", "Function Core.Object.JoinArray")); }
+			ScriptFunction GetRightMost() { mixin(MGF("mGetRightMost", "Function Core.Object.GetRightMost")); }
+			ScriptFunction ConcatEqual_StrStr() { mixin(MGF("mConcatEqual_StrStr", "Function Core.Object.ConcatEqual_StrStr")); }
+			ScriptFunction Split() { mixin(MGF("mSplit", "Function Core.Object.Split")); }
+			ScriptFunction Repl() { mixin(MGF("mRepl", "Function Core.Object.Repl")); }
+			ScriptFunction Asc() { mixin(MGF("mAsc", "Function Core.Object.Asc")); }
+			ScriptFunction Chr() { mixin(MGF("mChr", "Function Core.Object.Chr")); }
+			ScriptFunction Locs() { mixin(MGF("mLocs", "Function Core.Object.Locs")); }
+			ScriptFunction Caps() { mixin(MGF("mCaps", "Function Core.Object.Caps")); }
+			ScriptFunction Right() { mixin(MGF("mRight", "Function Core.Object.Right")); }
+			ScriptFunction Left() { mixin(MGF("mLeft", "Function Core.Object.Left")); }
+			ScriptFunction Mid() { mixin(MGF("mMid", "Function Core.Object.Mid")); }
+			ScriptFunction InStr() { mixin(MGF("mInStr", "Function Core.Object.InStr")); }
+			ScriptFunction Len() { mixin(MGF("mLen", "Function Core.Object.Len")); }
+			ScriptFunction SubtractEqual_StrStr() { mixin(MGF("mSubtractEqual_StrStr", "Function Core.Object.SubtractEqual_StrStr")); }
+			ScriptFunction AtEqual_StrStr() { mixin(MGF("mAtEqual_StrStr", "Function Core.Object.AtEqual_StrStr")); }
+			ScriptFunction ComplementEqual_StrStr() { mixin(MGF("mComplementEqual_StrStr", "Function Core.Object.ComplementEqual_StrStr")); }
+			ScriptFunction NotEqual_StrStr() { mixin(MGF("mNotEqual_StrStr", "Function Core.Object.NotEqual_StrStr")); }
+			ScriptFunction EqualEqual_StrStr() { mixin(MGF("mEqualEqual_StrStr", "Function Core.Object.EqualEqual_StrStr")); }
+			ScriptFunction GreaterEqual_StrStr() { mixin(MGF("mGreaterEqual_StrStr", "Function Core.Object.GreaterEqual_StrStr")); }
+			ScriptFunction LessEqual_StrStr() { mixin(MGF("mLessEqual_StrStr", "Function Core.Object.LessEqual_StrStr")); }
+			ScriptFunction Greater_StrStr() { mixin(MGF("mGreater_StrStr", "Function Core.Object.Greater_StrStr")); }
+			ScriptFunction Less_StrStr() { mixin(MGF("mLess_StrStr", "Function Core.Object.Less_StrStr")); }
+			ScriptFunction At_StrStr() { mixin(MGF("mAt_StrStr", "Function Core.Object.At_StrStr")); }
+			ScriptFunction Concat_StrStr() { mixin(MGF("mConcat_StrStr", "Function Core.Object.Concat_StrStr")); }
+			ScriptFunction MakeRotator() { mixin(MGF("mMakeRotator", "Function Core.Object.MakeRotator")); }
+			ScriptFunction SClampRotAxis() { mixin(MGF("mSClampRotAxis", "Function Core.Object.SClampRotAxis")); }
+			ScriptFunction ClampRotAxisFromRange() { mixin(MGF("mClampRotAxisFromRange", "Function Core.Object.ClampRotAxisFromRange")); }
+			ScriptFunction NormalizeRotAxis() { mixin(MGF("mNormalizeRotAxis", "Function Core.Object.NormalizeRotAxis")); }
+			ScriptFunction FInterpTo() { mixin(MGF("mFInterpTo", "Function Core.Object.FInterpTo")); }
+			ScriptFunction ClampRotAxisFromBase() { mixin(MGF("mClampRotAxisFromBase", "Function Core.Object.ClampRotAxisFromBase")); }
+			ScriptFunction ClampRotAxis() { mixin(MGF("mClampRotAxis", "Function Core.Object.ClampRotAxis")); }
+			ScriptFunction RSize() { mixin(MGF("mRSize", "Function Core.Object.RSize")); }
+			ScriptFunction RDiff() { mixin(MGF("mRDiff", "Function Core.Object.RDiff")); }
+			ScriptFunction RInterpTo() { mixin(MGF("mRInterpTo", "Function Core.Object.RInterpTo")); }
+			ScriptFunction RTransform() { mixin(MGF("mRTransform", "Function Core.Object.RTransform")); }
+			ScriptFunction RSmerp() { mixin(MGF("mRSmerp", "Function Core.Object.RSmerp")); }
+			ScriptFunction RLerp() { mixin(MGF("mRLerp", "Function Core.Object.RLerp")); }
+			ScriptFunction Normalize() { mixin(MGF("mNormalize", "Function Core.Object.Normalize")); }
+			ScriptFunction OrthoRotation() { mixin(MGF("mOrthoRotation", "Function Core.Object.OrthoRotation")); }
+			ScriptFunction RotRand() { mixin(MGF("mRotRand", "Function Core.Object.RotRand")); }
+			ScriptFunction GetRotatorAxis() { mixin(MGF("mGetRotatorAxis", "Function Core.Object.GetRotatorAxis")); }
+			ScriptFunction GetUnAxes() { mixin(MGF("mGetUnAxes", "Function Core.Object.GetUnAxes")); }
+			ScriptFunction GetAxes() { mixin(MGF("mGetAxes", "Function Core.Object.GetAxes")); }
+			ScriptFunction ClockwiseFrom_IntInt() { mixin(MGF("mClockwiseFrom_IntInt", "Function Core.Object.ClockwiseFrom_IntInt")); }
+			ScriptFunction SubtractEqual_RotatorRotator() { mixin(MGF("mSubtractEqual_RotatorRotator", "Function Core.Object.SubtractEqual_RotatorRotator")); }
+			ScriptFunction AddEqual_RotatorRotator() { mixin(MGF("mAddEqual_RotatorRotator", "Function Core.Object.AddEqual_RotatorRotator")); }
+			ScriptFunction Subtract_RotatorRotator() { mixin(MGF("mSubtract_RotatorRotator", "Function Core.Object.Subtract_RotatorRotator")); }
+			ScriptFunction Add_RotatorRotator() { mixin(MGF("mAdd_RotatorRotator", "Function Core.Object.Add_RotatorRotator")); }
+			ScriptFunction DivideEqual_RotatorFloat() { mixin(MGF("mDivideEqual_RotatorFloat", "Function Core.Object.DivideEqual_RotatorFloat")); }
+			ScriptFunction MultiplyEqual_RotatorFloat() { mixin(MGF("mMultiplyEqual_RotatorFloat", "Function Core.Object.MultiplyEqual_RotatorFloat")); }
+			ScriptFunction Divide_RotatorFloat() { mixin(MGF("mDivide_RotatorFloat", "Function Core.Object.Divide_RotatorFloat")); }
+			ScriptFunction Multiply_FloatRotator() { mixin(MGF("mMultiply_FloatRotator", "Function Core.Object.Multiply_FloatRotator")); }
+			ScriptFunction Multiply_RotatorFloat() { mixin(MGF("mMultiply_RotatorFloat", "Function Core.Object.Multiply_RotatorFloat")); }
+			ScriptFunction NotEqual_RotatorRotator() { mixin(MGF("mNotEqual_RotatorRotator", "Function Core.Object.NotEqual_RotatorRotator")); }
+			ScriptFunction EqualEqual_RotatorRotator() { mixin(MGF("mEqualEqual_RotatorRotator", "Function Core.Object.EqualEqual_RotatorRotator")); }
+			ScriptFunction InCylinder() { mixin(MGF("mInCylinder", "Function Core.Object.InCylinder")); }
+			ScriptFunction NoZDot() { mixin(MGF("mNoZDot", "Function Core.Object.NoZDot")); }
+			ScriptFunction ClampLength() { mixin(MGF("mClampLength", "Function Core.Object.ClampLength")); }
+			ScriptFunction VInterpTo() { mixin(MGF("mVInterpTo", "Function Core.Object.VInterpTo")); }
+			ScriptFunction IsZero() { mixin(MGF("mIsZero", "Function Core.Object.IsZero")); }
+			ScriptFunction ProjectOnTo() { mixin(MGF("mProjectOnTo", "Function Core.Object.ProjectOnTo")); }
+			ScriptFunction MirrorVectorByNormal() { mixin(MGF("mMirrorVectorByNormal", "Function Core.Object.MirrorVectorByNormal")); }
+			ScriptFunction VRandCone2() { mixin(MGF("mVRandCone2", "Function Core.Object.VRandCone2")); }
+			ScriptFunction VRandCone() { mixin(MGF("mVRandCone", "Function Core.Object.VRandCone")); }
+			ScriptFunction VRand() { mixin(MGF("mVRand", "Function Core.Object.VRand")); }
+			ScriptFunction VSmerp() { mixin(MGF("mVSmerp", "Function Core.Object.VSmerp")); }
+			ScriptFunction VLerp() { mixin(MGF("mVLerp", "Function Core.Object.VLerp")); }
+			ScriptFunction Normal() { mixin(MGF("mNormal", "Function Core.Object.Normal")); }
+			ScriptFunction VSizeSq2D() { mixin(MGF("mVSizeSq2D", "Function Core.Object.VSizeSq2D")); }
+			ScriptFunction VSizeSq() { mixin(MGF("mVSizeSq", "Function Core.Object.VSizeSq")); }
+			ScriptFunction VSize2D() { mixin(MGF("mVSize2D", "Function Core.Object.VSize2D")); }
+			ScriptFunction VSize() { mixin(MGF("mVSize", "Function Core.Object.VSize")); }
+			ScriptFunction SubtractEqual_VectorVector() { mixin(MGF("mSubtractEqual_VectorVector", "Function Core.Object.SubtractEqual_VectorVector")); }
+			ScriptFunction AddEqual_VectorVector() { mixin(MGF("mAddEqual_VectorVector", "Function Core.Object.AddEqual_VectorVector")); }
+			ScriptFunction DivideEqual_VectorFloat() { mixin(MGF("mDivideEqual_VectorFloat", "Function Core.Object.DivideEqual_VectorFloat")); }
+			ScriptFunction MultiplyEqual_VectorVector() { mixin(MGF("mMultiplyEqual_VectorVector", "Function Core.Object.MultiplyEqual_VectorVector")); }
+			ScriptFunction MultiplyEqual_VectorFloat() { mixin(MGF("mMultiplyEqual_VectorFloat", "Function Core.Object.MultiplyEqual_VectorFloat")); }
+			ScriptFunction Cross_VectorVector() { mixin(MGF("mCross_VectorVector", "Function Core.Object.Cross_VectorVector")); }
+			ScriptFunction Dot_VectorVector() { mixin(MGF("mDot_VectorVector", "Function Core.Object.Dot_VectorVector")); }
+			ScriptFunction NotEqual_VectorVector() { mixin(MGF("mNotEqual_VectorVector", "Function Core.Object.NotEqual_VectorVector")); }
+			ScriptFunction EqualEqual_VectorVector() { mixin(MGF("mEqualEqual_VectorVector", "Function Core.Object.EqualEqual_VectorVector")); }
+			ScriptFunction GreaterGreater_VectorRotator() { mixin(MGF("mGreaterGreater_VectorRotator", "Function Core.Object.GreaterGreater_VectorRotator")); }
+			ScriptFunction LessLess_VectorRotator() { mixin(MGF("mLessLess_VectorRotator", "Function Core.Object.LessLess_VectorRotator")); }
+			ScriptFunction Subtract_VectorVector() { mixin(MGF("mSubtract_VectorVector", "Function Core.Object.Subtract_VectorVector")); }
+			ScriptFunction Add_VectorVector() { mixin(MGF("mAdd_VectorVector", "Function Core.Object.Add_VectorVector")); }
+			ScriptFunction Divide_VectorFloat() { mixin(MGF("mDivide_VectorFloat", "Function Core.Object.Divide_VectorFloat")); }
+			ScriptFunction Multiply_VectorVector() { mixin(MGF("mMultiply_VectorVector", "Function Core.Object.Multiply_VectorVector")); }
+			ScriptFunction Multiply_FloatVector() { mixin(MGF("mMultiply_FloatVector", "Function Core.Object.Multiply_FloatVector")); }
+			ScriptFunction Multiply_VectorFloat() { mixin(MGF("mMultiply_VectorFloat", "Function Core.Object.Multiply_VectorFloat")); }
+			ScriptFunction Subtract_PreVector() { mixin(MGF("mSubtract_PreVector", "Function Core.Object.Subtract_PreVector")); }
+			ScriptFunction FInterpConstantTo() { mixin(MGF("mFInterpConstantTo", "Function Core.Object.FInterpConstantTo")); }
+			ScriptFunction FPctByRange() { mixin(MGF("mFPctByRange", "Function Core.Object.FPctByRange")); }
+			ScriptFunction RandRange() { mixin(MGF("mRandRange", "Function Core.Object.RandRange")); }
+			ScriptFunction FInterpEaseInOut() { mixin(MGF("mFInterpEaseInOut", "Function Core.Object.FInterpEaseInOut")); }
+			ScriptFunction FInterpEaseOut() { mixin(MGF("mFInterpEaseOut", "Function Core.Object.FInterpEaseOut")); }
+			ScriptFunction FInterpEaseIn() { mixin(MGF("mFInterpEaseIn", "Function Core.Object.FInterpEaseIn")); }
+			ScriptFunction FCubicInterp() { mixin(MGF("mFCubicInterp", "Function Core.Object.FCubicInterp")); }
+			ScriptFunction FCeil() { mixin(MGF("mFCeil", "Function Core.Object.FCeil")); }
+			ScriptFunction FFloor() { mixin(MGF("mFFloor", "Function Core.Object.FFloor")); }
+			ScriptFunction Round() { mixin(MGF("mRound", "Function Core.Object.Round")); }
+			ScriptFunction Lerp() { mixin(MGF("mLerp", "Function Core.Object.Lerp")); }
+			ScriptFunction FClamp() { mixin(MGF("mFClamp", "Function Core.Object.FClamp")); }
+			ScriptFunction FMax() { mixin(MGF("mFMax", "Function Core.Object.FMax")); }
+			ScriptFunction FMin() { mixin(MGF("mFMin", "Function Core.Object.FMin")); }
+			ScriptFunction FRand() { mixin(MGF("mFRand", "Function Core.Object.FRand")); }
+			ScriptFunction Square() { mixin(MGF("mSquare", "Function Core.Object.Square")); }
+			ScriptFunction Sqrt() { mixin(MGF("mSqrt", "Function Core.Object.Sqrt")); }
+			ScriptFunction Loge() { mixin(MGF("mLoge", "Function Core.Object.Loge")); }
+			ScriptFunction Exp() { mixin(MGF("mExp", "Function Core.Object.Exp")); }
+			ScriptFunction Atan2() { mixin(MGF("mAtan2", "Function Core.Object.Atan2")); }
+			ScriptFunction Atan() { mixin(MGF("mAtan", "Function Core.Object.Atan")); }
+			ScriptFunction Tan() { mixin(MGF("mTan", "Function Core.Object.Tan")); }
+			ScriptFunction Cos() { mixin(MGF("mCos", "Function Core.Object.Cos")); }
+			ScriptFunction Asin() { mixin(MGF("mAsin", "Function Core.Object.Asin")); }
+			ScriptFunction Sin() { mixin(MGF("mSin", "Function Core.Object.Sin")); }
+			ScriptFunction Abs() { mixin(MGF("mAbs", "Function Core.Object.Abs")); }
+			ScriptFunction SubtractEqual_FloatFloat() { mixin(MGF("mSubtractEqual_FloatFloat", "Function Core.Object.SubtractEqual_FloatFloat")); }
+			ScriptFunction AddEqual_FloatFloat() { mixin(MGF("mAddEqual_FloatFloat", "Function Core.Object.AddEqual_FloatFloat")); }
+			ScriptFunction DivideEqual_FloatFloat() { mixin(MGF("mDivideEqual_FloatFloat", "Function Core.Object.DivideEqual_FloatFloat")); }
+			ScriptFunction MultiplyEqual_FloatFloat() { mixin(MGF("mMultiplyEqual_FloatFloat", "Function Core.Object.MultiplyEqual_FloatFloat")); }
+			ScriptFunction NotEqual_FloatFloat() { mixin(MGF("mNotEqual_FloatFloat", "Function Core.Object.NotEqual_FloatFloat")); }
+			ScriptFunction ComplementEqual_FloatFloat() { mixin(MGF("mComplementEqual_FloatFloat", "Function Core.Object.ComplementEqual_FloatFloat")); }
+			ScriptFunction EqualEqual_FloatFloat() { mixin(MGF("mEqualEqual_FloatFloat", "Function Core.Object.EqualEqual_FloatFloat")); }
+			ScriptFunction GreaterEqual_FloatFloat() { mixin(MGF("mGreaterEqual_FloatFloat", "Function Core.Object.GreaterEqual_FloatFloat")); }
+			ScriptFunction LessEqual_FloatFloat() { mixin(MGF("mLessEqual_FloatFloat", "Function Core.Object.LessEqual_FloatFloat")); }
+			ScriptFunction Greater_FloatFloat() { mixin(MGF("mGreater_FloatFloat", "Function Core.Object.Greater_FloatFloat")); }
+			ScriptFunction Less_FloatFloat() { mixin(MGF("mLess_FloatFloat", "Function Core.Object.Less_FloatFloat")); }
+			ScriptFunction Subtract_FloatFloat() { mixin(MGF("mSubtract_FloatFloat", "Function Core.Object.Subtract_FloatFloat")); }
+			ScriptFunction Add_FloatFloat() { mixin(MGF("mAdd_FloatFloat", "Function Core.Object.Add_FloatFloat")); }
+			ScriptFunction Percent_FloatFloat() { mixin(MGF("mPercent_FloatFloat", "Function Core.Object.Percent_FloatFloat")); }
+			ScriptFunction Divide_FloatFloat() { mixin(MGF("mDivide_FloatFloat", "Function Core.Object.Divide_FloatFloat")); }
+			ScriptFunction Multiply_FloatFloat() { mixin(MGF("mMultiply_FloatFloat", "Function Core.Object.Multiply_FloatFloat")); }
+			ScriptFunction MultiplyMultiply_FloatFloat() { mixin(MGF("mMultiplyMultiply_FloatFloat", "Function Core.Object.MultiplyMultiply_FloatFloat")); }
+			ScriptFunction Subtract_PreFloat() { mixin(MGF("mSubtract_PreFloat", "Function Core.Object.Subtract_PreFloat")); }
+			ScriptFunction ToHex() { mixin(MGF("mToHex", "Function Core.Object.ToHex")); }
+			ScriptFunction Clamp() { mixin(MGF("mClamp", "Function Core.Object.Clamp")); }
+			ScriptFunction Max() { mixin(MGF("mMax", "Function Core.Object.Max")); }
+			ScriptFunction Min() { mixin(MGF("mMin", "Function Core.Object.Min")); }
+			ScriptFunction Rand() { mixin(MGF("mRand", "Function Core.Object.Rand")); }
+			ScriptFunction SubtractSubtract_Int() { mixin(MGF("mSubtractSubtract_Int", "Function Core.Object.SubtractSubtract_Int")); }
+			ScriptFunction AddAdd_Int() { mixin(MGF("mAddAdd_Int", "Function Core.Object.AddAdd_Int")); }
+			ScriptFunction SubtractSubtract_PreInt() { mixin(MGF("mSubtractSubtract_PreInt", "Function Core.Object.SubtractSubtract_PreInt")); }
+			ScriptFunction AddAdd_PreInt() { mixin(MGF("mAddAdd_PreInt", "Function Core.Object.AddAdd_PreInt")); }
+			ScriptFunction SubtractEqual_IntInt() { mixin(MGF("mSubtractEqual_IntInt", "Function Core.Object.SubtractEqual_IntInt")); }
+			ScriptFunction AddEqual_IntInt() { mixin(MGF("mAddEqual_IntInt", "Function Core.Object.AddEqual_IntInt")); }
+			ScriptFunction DivideEqual_IntFloat() { mixin(MGF("mDivideEqual_IntFloat", "Function Core.Object.DivideEqual_IntFloat")); }
+			ScriptFunction MultiplyEqual_IntFloat() { mixin(MGF("mMultiplyEqual_IntFloat", "Function Core.Object.MultiplyEqual_IntFloat")); }
+			ScriptFunction Or_IntInt() { mixin(MGF("mOr_IntInt", "Function Core.Object.Or_IntInt")); }
+			ScriptFunction Xor_IntInt() { mixin(MGF("mXor_IntInt", "Function Core.Object.Xor_IntInt")); }
+			ScriptFunction And_IntInt() { mixin(MGF("mAnd_IntInt", "Function Core.Object.And_IntInt")); }
+			ScriptFunction NotEqual_IntInt() { mixin(MGF("mNotEqual_IntInt", "Function Core.Object.NotEqual_IntInt")); }
+			ScriptFunction EqualEqual_IntInt() { mixin(MGF("mEqualEqual_IntInt", "Function Core.Object.EqualEqual_IntInt")); }
+			ScriptFunction GreaterEqual_IntInt() { mixin(MGF("mGreaterEqual_IntInt", "Function Core.Object.GreaterEqual_IntInt")); }
+			ScriptFunction LessEqual_IntInt() { mixin(MGF("mLessEqual_IntInt", "Function Core.Object.LessEqual_IntInt")); }
+			ScriptFunction Greater_IntInt() { mixin(MGF("mGreater_IntInt", "Function Core.Object.Greater_IntInt")); }
+			ScriptFunction Less_IntInt() { mixin(MGF("mLess_IntInt", "Function Core.Object.Less_IntInt")); }
+			ScriptFunction GreaterGreaterGreater_IntInt() { mixin(MGF("mGreaterGreaterGreater_IntInt", "Function Core.Object.GreaterGreaterGreater_IntInt")); }
+			ScriptFunction GreaterGreater_IntInt() { mixin(MGF("mGreaterGreater_IntInt", "Function Core.Object.GreaterGreater_IntInt")); }
+			ScriptFunction LessLess_IntInt() { mixin(MGF("mLessLess_IntInt", "Function Core.Object.LessLess_IntInt")); }
+			ScriptFunction Subtract_IntInt() { mixin(MGF("mSubtract_IntInt", "Function Core.Object.Subtract_IntInt")); }
+			ScriptFunction Add_IntInt() { mixin(MGF("mAdd_IntInt", "Function Core.Object.Add_IntInt")); }
+			ScriptFunction Percent_IntInt() { mixin(MGF("mPercent_IntInt", "Function Core.Object.Percent_IntInt")); }
+			ScriptFunction Divide_IntInt() { mixin(MGF("mDivide_IntInt", "Function Core.Object.Divide_IntInt")); }
+			ScriptFunction Multiply_IntInt() { mixin(MGF("mMultiply_IntInt", "Function Core.Object.Multiply_IntInt")); }
+			ScriptFunction Subtract_PreInt() { mixin(MGF("mSubtract_PreInt", "Function Core.Object.Subtract_PreInt")); }
+			ScriptFunction Complement_PreInt() { mixin(MGF("mComplement_PreInt", "Function Core.Object.Complement_PreInt")); }
+			ScriptFunction SubtractSubtract_Byte() { mixin(MGF("mSubtractSubtract_Byte", "Function Core.Object.SubtractSubtract_Byte")); }
+			ScriptFunction AddAdd_Byte() { mixin(MGF("mAddAdd_Byte", "Function Core.Object.AddAdd_Byte")); }
+			ScriptFunction SubtractSubtract_PreByte() { mixin(MGF("mSubtractSubtract_PreByte", "Function Core.Object.SubtractSubtract_PreByte")); }
+			ScriptFunction AddAdd_PreByte() { mixin(MGF("mAddAdd_PreByte", "Function Core.Object.AddAdd_PreByte")); }
+			ScriptFunction SubtractEqual_ByteByte() { mixin(MGF("mSubtractEqual_ByteByte", "Function Core.Object.SubtractEqual_ByteByte")); }
+			ScriptFunction AddEqual_ByteByte() { mixin(MGF("mAddEqual_ByteByte", "Function Core.Object.AddEqual_ByteByte")); }
+			ScriptFunction DivideEqual_ByteByte() { mixin(MGF("mDivideEqual_ByteByte", "Function Core.Object.DivideEqual_ByteByte")); }
+			ScriptFunction MultiplyEqual_ByteFloat() { mixin(MGF("mMultiplyEqual_ByteFloat", "Function Core.Object.MultiplyEqual_ByteFloat")); }
+			ScriptFunction MultiplyEqual_ByteByte() { mixin(MGF("mMultiplyEqual_ByteByte", "Function Core.Object.MultiplyEqual_ByteByte")); }
+			ScriptFunction OrOr_BoolBool() { mixin(MGF("mOrOr_BoolBool", "Function Core.Object.OrOr_BoolBool")); }
+			ScriptFunction XorXor_BoolBool() { mixin(MGF("mXorXor_BoolBool", "Function Core.Object.XorXor_BoolBool")); }
+			ScriptFunction AndAnd_BoolBool() { mixin(MGF("mAndAnd_BoolBool", "Function Core.Object.AndAnd_BoolBool")); }
+			ScriptFunction NotEqual_BoolBool() { mixin(MGF("mNotEqual_BoolBool", "Function Core.Object.NotEqual_BoolBool")); }
+			ScriptFunction EqualEqual_BoolBool() { mixin(MGF("mEqualEqual_BoolBool", "Function Core.Object.EqualEqual_BoolBool")); }
+			ScriptFunction Not_PreBool() { mixin(MGF("mNot_PreBool", "Function Core.Object.Not_PreBool")); }
 		}
 	}
 	static struct Constants
@@ -703,12 +703,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Rotator")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Rotator")); }
 		@property final auto ref
 		{
-			int Pitch() { mixin(MGPS!("int", 0)()); }
-			int Yaw() { mixin(MGPS!("int", 4)()); }
-			int Roll() { mixin(MGPS!("int", 8)()); }
+			int Pitch() { mixin(MGPS("int", 0)); }
+			int Yaw() { mixin(MGPS("int", 4)); }
+			int Roll() { mixin(MGPS("int", 8)); }
 		}
 	}
 	struct Plane
@@ -716,26 +716,26 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Plane")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Plane")); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!("float", 0)()); }
-			float Y() { mixin(MGPS!("float", 4)()); }
-			float Z() { mixin(MGPS!("float", 8)()); }
+			float X() { mixin(MGPS("float", 0)); }
+			float Y() { mixin(MGPS("float", 4)); }
+			float Z() { mixin(MGPS("float", 8)); }
 		}
-		@property final auto ref float W() { mixin(MGPS!("float", 12)()); }
+		@property final auto ref float W() { mixin(MGPS("float", 12)); }
 	}
 	struct Vector
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Vector")); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!("float", 0)()); }
-			float Y() { mixin(MGPS!("float", 4)()); }
-			float Z() { mixin(MGPS!("float", 8)()); }
+			float X() { mixin(MGPS("float", 0)); }
+			float Y() { mixin(MGPS("float", 4)); }
+			float Z() { mixin(MGPS("float", 8)); }
 		}
 	}
 	struct Guid
@@ -743,13 +743,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Guid")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Guid")); }
 		@property final auto ref
 		{
-			int A() { mixin(MGPS!("int", 0)()); }
-			int B() { mixin(MGPS!("int", 4)()); }
-			int C() { mixin(MGPS!("int", 8)()); }
-			int D() { mixin(MGPS!("int", 12)()); }
+			int A() { mixin(MGPS("int", 0)); }
+			int B() { mixin(MGPS("int", 4)); }
+			int C() { mixin(MGPS("int", 8)); }
+			int D() { mixin(MGPS("int", 12)); }
 		}
 	}
 	struct Vector2D
@@ -757,11 +757,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector2D")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Vector2D")); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!("float", 0)()); }
-			float Y() { mixin(MGPS!("float", 4)()); }
+			float X() { mixin(MGPS("float", 0)); }
+			float Y() { mixin(MGPS("float", 4)); }
 		}
 	}
 	struct Vector4
@@ -769,13 +769,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector4")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Vector4")); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!("float", 0)()); }
-			float Y() { mixin(MGPS!("float", 4)()); }
-			float Z() { mixin(MGPS!("float", 8)()); }
-			float W() { mixin(MGPS!("float", 12)()); }
+			float X() { mixin(MGPS("float", 0)); }
+			float Y() { mixin(MGPS("float", 4)); }
+			float Z() { mixin(MGPS("float", 8)); }
+			float W() { mixin(MGPS("float", 12)); }
 		}
 	}
 	struct LinearColor
@@ -783,13 +783,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.LinearColor")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.LinearColor")); }
 		@property final auto ref
 		{
-			float R() { mixin(MGPS!("float", 0)()); }
-			float G() { mixin(MGPS!("float", 4)()); }
-			float B() { mixin(MGPS!("float", 8)()); }
-			float A() { mixin(MGPS!("float", 12)()); }
+			float R() { mixin(MGPS("float", 0)); }
+			float G() { mixin(MGPS("float", 4)); }
+			float B() { mixin(MGPS("float", 8)); }
+			float A() { mixin(MGPS("float", 12)); }
 		}
 	}
 	struct Color
@@ -797,13 +797,13 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Color")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Color")); }
 		@property final auto ref
 		{
-			ubyte R() { mixin(MGPS!("ubyte", 2)()); }
-			ubyte G() { mixin(MGPS!("ubyte", 1)()); }
-			ubyte B() { mixin(MGPS!("ubyte", 0)()); }
-			ubyte A() { mixin(MGPS!("ubyte", 3)()); }
+			ubyte R() { mixin(MGPS("ubyte", 2)); }
+			ubyte G() { mixin(MGPS("ubyte", 1)); }
+			ubyte B() { mixin(MGPS("ubyte", 0)); }
+			ubyte A() { mixin(MGPS("ubyte", 3)); }
 		}
 	}
 	struct InterpCurveVector2D
@@ -811,11 +811,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveVector2D")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurveVector2D")); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointVector2D) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointVector2D)", 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
+			ScriptArray!(UObject.InterpCurvePointVector2D) Points() { mixin(MGPS("ScriptArray!(UObject.InterpCurvePointVector2D)", 0)); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS("UObject.EInterpMethodType", 12)); }
 		}
 	}
 	struct InterpCurvePointVector2D
@@ -823,14 +823,14 @@ public extern(D):
 		private ubyte __buffer__[29];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointVector2D")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurvePointVector2D")); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!("float", 0)()); }
-			UObject.Vector2D OutVal() { mixin(MGPS!("UObject.Vector2D", 4)()); }
-			UObject.Vector2D ArriveTangent() { mixin(MGPS!("UObject.Vector2D", 12)()); }
-			UObject.Vector2D LeaveTangent() { mixin(MGPS!("UObject.Vector2D", 20)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 28)()); }
+			float InVal() { mixin(MGPS("float", 0)); }
+			UObject.Vector2D OutVal() { mixin(MGPS("UObject.Vector2D", 4)); }
+			UObject.Vector2D ArriveTangent() { mixin(MGPS("UObject.Vector2D", 12)); }
+			UObject.Vector2D LeaveTangent() { mixin(MGPS("UObject.Vector2D", 20)); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS("UObject.EInterpCurveMode", 28)); }
 		}
 	}
 	struct InterpCurveFloat
@@ -838,11 +838,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveFloat")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurveFloat")); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointFloat) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointFloat)", 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
+			ScriptArray!(UObject.InterpCurvePointFloat) Points() { mixin(MGPS("ScriptArray!(UObject.InterpCurvePointFloat)", 0)); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS("UObject.EInterpMethodType", 12)); }
 		}
 	}
 	struct Cylinder
@@ -850,11 +850,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Cylinder")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Cylinder")); }
 		@property final auto ref
 		{
-			float Radius() { mixin(MGPS!("float", 0)()); }
-			float Height() { mixin(MGPS!("float", 4)()); }
+			float Radius() { mixin(MGPS("float", 0)); }
+			float Height() { mixin(MGPS("float", 4)); }
 		}
 	}
 	struct InterpCurveVector
@@ -862,11 +862,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveVector")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurveVector")); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointVector) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointVector)", 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
+			ScriptArray!(UObject.InterpCurvePointVector) Points() { mixin(MGPS("ScriptArray!(UObject.InterpCurvePointVector)", 0)); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS("UObject.EInterpMethodType", 12)); }
 		}
 	}
 	struct InterpCurvePointVector
@@ -874,14 +874,14 @@ public extern(D):
 		private ubyte __buffer__[41];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointVector")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurvePointVector")); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!("float", 0)()); }
-			Vector OutVal() { mixin(MGPS!("Vector", 4)()); }
-			Vector ArriveTangent() { mixin(MGPS!("Vector", 16)()); }
-			Vector LeaveTangent() { mixin(MGPS!("Vector", 28)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 40)()); }
+			float InVal() { mixin(MGPS("float", 0)); }
+			Vector OutVal() { mixin(MGPS("Vector", 4)); }
+			Vector ArriveTangent() { mixin(MGPS("Vector", 16)); }
+			Vector LeaveTangent() { mixin(MGPS("Vector", 28)); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS("UObject.EInterpCurveMode", 40)); }
 		}
 	}
 	struct InterpCurvePointFloat
@@ -889,14 +889,14 @@ public extern(D):
 		private ubyte __buffer__[17];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointFloat")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurvePointFloat")); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!("float", 0)()); }
-			float OutVal() { mixin(MGPS!("float", 4)()); }
-			float ArriveTangent() { mixin(MGPS!("float", 8)()); }
-			float LeaveTangent() { mixin(MGPS!("float", 12)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 16)()); }
+			float InVal() { mixin(MGPS("float", 0)); }
+			float OutVal() { mixin(MGPS("float", 4)); }
+			float ArriveTangent() { mixin(MGPS("float", 8)); }
+			float LeaveTangent() { mixin(MGPS("float", 12)); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS("UObject.EInterpCurveMode", 16)); }
 		}
 	}
 	struct Quat
@@ -904,13 +904,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Quat")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Quat")); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!("float", 0)()); }
-			float Y() { mixin(MGPS!("float", 4)()); }
-			float Z() { mixin(MGPS!("float", 8)()); }
-			float W() { mixin(MGPS!("float", 12)()); }
+			float X() { mixin(MGPS("float", 0)); }
+			float Y() { mixin(MGPS("float", 4)); }
+			float Z() { mixin(MGPS("float", 8)); }
+			float W() { mixin(MGPS("float", 12)); }
 		}
 	}
 	struct Matrix
@@ -918,13 +918,13 @@ public extern(D):
 		private ubyte __buffer__[64];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Matrix")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Matrix")); }
 		@property final auto ref
 		{
-			UObject.Plane XPlane() { mixin(MGPS!("UObject.Plane", 0)()); }
-			UObject.Plane YPlane() { mixin(MGPS!("UObject.Plane", 16)()); }
-			UObject.Plane ZPlane() { mixin(MGPS!("UObject.Plane", 32)()); }
-			UObject.Plane WPlane() { mixin(MGPS!("UObject.Plane", 48)()); }
+			UObject.Plane XPlane() { mixin(MGPS("UObject.Plane", 0)); }
+			UObject.Plane YPlane() { mixin(MGPS("UObject.Plane", 16)); }
+			UObject.Plane ZPlane() { mixin(MGPS("UObject.Plane", 32)); }
+			UObject.Plane WPlane() { mixin(MGPS("UObject.Plane", 48)); }
 		}
 	}
 	struct BoxSphereBounds
@@ -932,12 +932,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BoxSphereBounds")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.BoxSphereBounds")); }
 		@property final auto ref
 		{
-			Vector Origin() { mixin(MGPS!("Vector", 0)()); }
-			Vector BoxExtent() { mixin(MGPS!("Vector", 12)()); }
-			float SphereRadius() { mixin(MGPS!("float", 24)()); }
+			Vector Origin() { mixin(MGPS("Vector", 0)); }
+			Vector BoxExtent() { mixin(MGPS("Vector", 12)); }
+			float SphereRadius() { mixin(MGPS("float", 24)); }
 		}
 	}
 	struct TwoVectors
@@ -945,11 +945,11 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TwoVectors")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.TwoVectors")); }
 		@property final auto ref
 		{
-			Vector v1() { mixin(MGPS!("Vector", 0)()); }
-			Vector v2() { mixin(MGPS!("Vector", 12)()); }
+			Vector v1() { mixin(MGPS("Vector", 0)); }
+			Vector v2() { mixin(MGPS("Vector", 12)); }
 		}
 	}
 	struct TAlphaBlend
@@ -957,15 +957,15 @@ public extern(D):
 		private ubyte __buffer__[21];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TAlphaBlend")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.TAlphaBlend")); }
 		@property final auto ref
 		{
-			float AlphaIn() { mixin(MGPS!("float", 0)()); }
-			float AlphaOut() { mixin(MGPS!("float", 4)()); }
-			float AlphaTarget() { mixin(MGPS!("float", 8)()); }
-			float BlendTime() { mixin(MGPS!("float", 12)()); }
-			float BlendTimeToGo() { mixin(MGPS!("float", 16)()); }
-			UObject.AlphaBlendType BlendType() { mixin(MGPS!("UObject.AlphaBlendType", 20)()); }
+			float AlphaIn() { mixin(MGPS("float", 0)); }
+			float AlphaOut() { mixin(MGPS("float", 4)); }
+			float AlphaTarget() { mixin(MGPS("float", 8)); }
+			float BlendTime() { mixin(MGPS("float", 12)); }
+			float BlendTimeToGo() { mixin(MGPS("float", 16)); }
+			UObject.AlphaBlendType BlendType() { mixin(MGPS("UObject.AlphaBlendType", 20)); }
 		}
 	}
 	struct BoneAtom
@@ -973,12 +973,12 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BoneAtom")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.BoneAtom")); }
 		@property final auto ref
 		{
-			UObject.Quat Rotation() { mixin(MGPS!("UObject.Quat", 0)()); }
-			Vector Translation() { mixin(MGPS!("Vector", 16)()); }
-			float Scale() { mixin(MGPS!("float", 28)()); }
+			UObject.Quat Rotation() { mixin(MGPS("UObject.Quat", 0)); }
+			Vector Translation() { mixin(MGPS("Vector", 16)); }
+			float Scale() { mixin(MGPS("float", 28)); }
 		}
 	}
 	struct OctreeElementId
@@ -986,11 +986,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.OctreeElementId")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.OctreeElementId")); }
 		@property final auto ref
 		{
-			UObject.Pointer Node() { mixin(MGPS!("UObject.Pointer", 0)()); }
-			int ElementIndex() { mixin(MGPS!("int", 4)()); }
+			UObject.Pointer Node() { mixin(MGPS("UObject.Pointer", 0)); }
+			int ElementIndex() { mixin(MGPS("int", 4)); }
 		}
 	}
 	struct RenderCommandFence
@@ -998,32 +998,32 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RenderCommandFence")()); }
-		@property final auto ref int NumPendingFences() { mixin(MGPS!("int", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.RenderCommandFence")); }
+		@property final auto ref int NumPendingFences() { mixin(MGPS("int", 0)); }
 	}
 	struct Pointer
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Pointer")()); }
-		@property final auto ref int Dummy() { mixin(MGPS!("int", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Pointer")); }
+		@property final auto ref int Dummy() { mixin(MGPS("int", 0)); }
 	}
 	struct RawDistribution
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RawDistribution")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.RawDistribution")); }
 		@property final auto ref
 		{
-			ubyte Type() { mixin(MGPS!("ubyte", 0)()); }
-			ubyte Op() { mixin(MGPS!("ubyte", 1)()); }
-			ubyte LookupTableNumElements() { mixin(MGPS!("ubyte", 2)()); }
-			ubyte LookupTableChunkSize() { mixin(MGPS!("ubyte", 3)()); }
-			ScriptArray!(float) LookupTable() { mixin(MGPS!("ScriptArray!(float)", 4)()); }
-			float LookupTableTimeScale() { mixin(MGPS!("float", 16)()); }
-			float LookupTableStartTime() { mixin(MGPS!("float", 20)()); }
+			ubyte Type() { mixin(MGPS("ubyte", 0)); }
+			ubyte Op() { mixin(MGPS("ubyte", 1)); }
+			ubyte LookupTableNumElements() { mixin(MGPS("ubyte", 2)); }
+			ubyte LookupTableChunkSize() { mixin(MGPS("ubyte", 3)); }
+			ScriptArray!(float) LookupTable() { mixin(MGPS("ScriptArray!(float)", 4)); }
+			float LookupTableTimeScale() { mixin(MGPS("float", 16)); }
+			float LookupTableStartTime() { mixin(MGPS("float", 20)); }
 		}
 	}
 	struct InterpCurveLinearColor
@@ -1031,11 +1031,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveLinearColor")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurveLinearColor")); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointLinearColor) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointLinearColor)", 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
+			ScriptArray!(UObject.InterpCurvePointLinearColor) Points() { mixin(MGPS("ScriptArray!(UObject.InterpCurvePointLinearColor)", 0)); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS("UObject.EInterpMethodType", 12)); }
 		}
 	}
 	struct InterpCurvePointLinearColor
@@ -1043,14 +1043,14 @@ public extern(D):
 		private ubyte __buffer__[53];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointLinearColor")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurvePointLinearColor")); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!("float", 0)()); }
-			UObject.LinearColor OutVal() { mixin(MGPS!("UObject.LinearColor", 4)()); }
-			UObject.LinearColor ArriveTangent() { mixin(MGPS!("UObject.LinearColor", 20)()); }
-			UObject.LinearColor LeaveTangent() { mixin(MGPS!("UObject.LinearColor", 36)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 52)()); }
+			float InVal() { mixin(MGPS("float", 0)); }
+			UObject.LinearColor OutVal() { mixin(MGPS("UObject.LinearColor", 4)); }
+			UObject.LinearColor ArriveTangent() { mixin(MGPS("UObject.LinearColor", 20)); }
+			UObject.LinearColor LeaveTangent() { mixin(MGPS("UObject.LinearColor", 36)); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS("UObject.EInterpCurveMode", 52)); }
 		}
 	}
 	struct InterpCurveQuat
@@ -1058,11 +1058,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveQuat")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurveQuat")); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointQuat) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointQuat)", 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
+			ScriptArray!(UObject.InterpCurvePointQuat) Points() { mixin(MGPS("ScriptArray!(UObject.InterpCurvePointQuat)", 0)); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS("UObject.EInterpMethodType", 12)); }
 		}
 	}
 	struct InterpCurvePointQuat
@@ -1070,14 +1070,14 @@ public extern(D):
 		private ubyte __buffer__[65];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointQuat")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurvePointQuat")); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!("float", 0)()); }
-			UObject.Quat OutVal() { mixin(MGPS!("UObject.Quat", 16)()); }
-			UObject.Quat ArriveTangent() { mixin(MGPS!("UObject.Quat", 32)()); }
-			UObject.Quat LeaveTangent() { mixin(MGPS!("UObject.Quat", 48)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 64)()); }
+			float InVal() { mixin(MGPS("float", 0)); }
+			UObject.Quat OutVal() { mixin(MGPS("UObject.Quat", 16)); }
+			UObject.Quat ArriveTangent() { mixin(MGPS("UObject.Quat", 32)); }
+			UObject.Quat LeaveTangent() { mixin(MGPS("UObject.Quat", 48)); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS("UObject.EInterpCurveMode", 64)); }
 		}
 	}
 	struct InterpCurveTwoVectors
@@ -1085,11 +1085,11 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveTwoVectors")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurveTwoVectors")); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointTwoVectors) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointTwoVectors)", 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
+			ScriptArray!(UObject.InterpCurvePointTwoVectors) Points() { mixin(MGPS("ScriptArray!(UObject.InterpCurvePointTwoVectors)", 0)); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS("UObject.EInterpMethodType", 12)); }
 		}
 	}
 	struct InterpCurvePointTwoVectors
@@ -1097,14 +1097,14 @@ public extern(D):
 		private ubyte __buffer__[77];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointTwoVectors")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InterpCurvePointTwoVectors")); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!("float", 0)()); }
-			UObject.TwoVectors OutVal() { mixin(MGPS!("UObject.TwoVectors", 4)()); }
-			UObject.TwoVectors ArriveTangent() { mixin(MGPS!("UObject.TwoVectors", 28)()); }
-			UObject.TwoVectors LeaveTangent() { mixin(MGPS!("UObject.TwoVectors", 52)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 76)()); }
+			float InVal() { mixin(MGPS("float", 0)); }
+			UObject.TwoVectors OutVal() { mixin(MGPS("UObject.TwoVectors", 4)); }
+			UObject.TwoVectors ArriveTangent() { mixin(MGPS("UObject.TwoVectors", 28)); }
+			UObject.TwoVectors LeaveTangent() { mixin(MGPS("UObject.TwoVectors", 52)); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS("UObject.EInterpCurveMode", 76)); }
 		}
 	}
 	struct Box
@@ -1112,12 +1112,12 @@ public extern(D):
 		private ubyte __buffer__[25];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Box")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Box")); }
 		@property final auto ref
 		{
-			Vector Min() { mixin(MGPS!("Vector", 0)()); }
-			Vector Max() { mixin(MGPS!("Vector", 12)()); }
-			ubyte IsValid() { mixin(MGPS!("ubyte", 24)()); }
+			Vector Min() { mixin(MGPS("Vector", 0)); }
+			Vector Max() { mixin(MGPS("Vector", 12)); }
+			ubyte IsValid() { mixin(MGPS("ubyte", 24)); }
 		}
 	}
 	struct TPOV
@@ -1125,12 +1125,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TPOV")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.TPOV")); }
 		@property final auto ref
 		{
-			Vector Location() { mixin(MGPS!("Vector", 0)()); }
-			Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
-			float FOV() { mixin(MGPS!("float", 24)()); }
+			Vector Location() { mixin(MGPS("Vector", 0)); }
+			Rotator Rotation() { mixin(MGPS("Rotator", 12)); }
+			float FOV() { mixin(MGPS("float", 24)); }
 		}
 	}
 	struct SHVectorRGB
@@ -1138,12 +1138,12 @@ public extern(D):
 		private ubyte __buffer__[144];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SHVectorRGB")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.SHVectorRGB")); }
 		@property final auto ref
 		{
-			UObject.SHVector R() { mixin(MGPS!("UObject.SHVector", 0)()); }
-			UObject.SHVector G() { mixin(MGPS!("UObject.SHVector", 48)()); }
-			UObject.SHVector B() { mixin(MGPS!("UObject.SHVector", 96)()); }
+			UObject.SHVector R() { mixin(MGPS("UObject.SHVector", 0)); }
+			UObject.SHVector G() { mixin(MGPS("UObject.SHVector", 48)); }
+			UObject.SHVector B() { mixin(MGPS("UObject.SHVector", 96)); }
 		}
 	}
 	struct SHVector
@@ -1151,11 +1151,11 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SHVector")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.SHVector")); }
 		@property final auto ref
 		{
-			float V() { mixin(MGPS!("float", 0)()); }
-			float Padding() { mixin(MGPS!("float", 36)()); }
+			float V() { mixin(MGPS("float", 0)); }
+			float Padding() { mixin(MGPS("float", 36)); }
 		}
 	}
 	struct IntPoint
@@ -1163,11 +1163,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.IntPoint")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.IntPoint")); }
 		@property final auto ref
 		{
-			int X() { mixin(MGPS!("int", 0)()); }
-			int Y() { mixin(MGPS!("int", 4)()); }
+			int X() { mixin(MGPS("int", 0)); }
+			int Y() { mixin(MGPS("int", 4)); }
 		}
 	}
 	struct InlinePointerArray_Mirror
@@ -1175,11 +1175,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InlinePointerArray_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InlinePointerArray_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer InlineData() { mixin(MGPS!("UObject.Pointer", 0)()); }
-			UObject.Array_Mirror SecondaryData() { mixin(MGPS!("UObject.Array_Mirror", 4)()); }
+			UObject.Pointer InlineData() { mixin(MGPS("UObject.Pointer", 0)); }
+			UObject.Array_Mirror SecondaryData() { mixin(MGPS("UObject.Array_Mirror", 4)); }
 		}
 	}
 	struct Array_Mirror
@@ -1187,12 +1187,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Array_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Array_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { mixin(MGPS!("UObject.Pointer", 0)()); }
-			int ArrayNum() { mixin(MGPS!("int", 4)()); }
-			int ArrayMax() { mixin(MGPS!("int", 8)()); }
+			UObject.Pointer Data() { mixin(MGPS("UObject.Pointer", 0)); }
+			int ArrayNum() { mixin(MGPS("int", 4)); }
+			int ArrayMax() { mixin(MGPS("int", 8)); }
 		}
 	}
 	struct IndirectArray_Mirror
@@ -1200,12 +1200,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.IndirectArray_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.IndirectArray_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { mixin(MGPS!("UObject.Pointer", 0)()); }
-			int ArrayNum() { mixin(MGPS!("int", 4)()); }
-			int ArrayMax() { mixin(MGPS!("int", 8)()); }
+			UObject.Pointer Data() { mixin(MGPS("UObject.Pointer", 0)); }
+			int ArrayNum() { mixin(MGPS("int", 4)); }
+			int ArrayMax() { mixin(MGPS("int", 8)); }
 		}
 	}
 	struct FColorVertexBuffer_Mirror
@@ -1213,14 +1213,14 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.FColorVertexBuffer_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.FColorVertexBuffer_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { mixin(MGPS!("UObject.Pointer", 0)()); }
-			UObject.Pointer VertexData() { mixin(MGPS!("UObject.Pointer", 4)()); }
-			int Data() { mixin(MGPS!("int", 8)()); }
-			int Stride() { mixin(MGPS!("int", 12)()); }
-			int NumVertices() { mixin(MGPS!("int", 16)()); }
+			UObject.Pointer VfTable() { mixin(MGPS("UObject.Pointer", 0)); }
+			UObject.Pointer VertexData() { mixin(MGPS("UObject.Pointer", 4)); }
+			int Data() { mixin(MGPS("int", 8)); }
+			int Stride() { mixin(MGPS("int", 12)); }
+			int NumVertices() { mixin(MGPS("int", 16)); }
 		}
 	}
 	struct RenderCommandFence_Mirror
@@ -1228,30 +1228,30 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RenderCommandFence_Mirror")()); }
-		@property final auto ref int NumPendingFences() { mixin(MGPS!("int", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.RenderCommandFence_Mirror")); }
+		@property final auto ref int NumPendingFences() { mixin(MGPS("int", 0)); }
 	}
 	struct UntypedBulkData_Mirror
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.UntypedBulkData_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.UntypedBulkData_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { mixin(MGPS!("UObject.Pointer", 0)()); }
-			int BulkDataFlags() { mixin(MGPS!("int", 4)()); }
-			int ElementCount() { mixin(MGPS!("int", 8)()); }
-			int BulkDataOffsetInFile() { mixin(MGPS!("int", 12)()); }
-			int BulkDataSizeOnDisk() { mixin(MGPS!("int", 16)()); }
-			int SavedBulkDataFlags() { mixin(MGPS!("int", 20)()); }
-			int SavedElementCount() { mixin(MGPS!("int", 24)()); }
-			int SavedBulkDataOffsetInFile() { mixin(MGPS!("int", 28)()); }
-			int SavedBulkDataSizeOnDisk() { mixin(MGPS!("int", 32)()); }
-			UObject.Pointer BulkData() { mixin(MGPS!("UObject.Pointer", 36)()); }
-			int LockStatus() { mixin(MGPS!("int", 40)()); }
-			UObject.Pointer AttachedAr() { mixin(MGPS!("UObject.Pointer", 44)()); }
-			int bShouldFreeOnEmpty() { mixin(MGPS!("int", 48)()); }
+			UObject.Pointer VfTable() { mixin(MGPS("UObject.Pointer", 0)); }
+			int BulkDataFlags() { mixin(MGPS("int", 4)); }
+			int ElementCount() { mixin(MGPS("int", 8)); }
+			int BulkDataOffsetInFile() { mixin(MGPS("int", 12)); }
+			int BulkDataSizeOnDisk() { mixin(MGPS("int", 16)); }
+			int SavedBulkDataFlags() { mixin(MGPS("int", 20)); }
+			int SavedElementCount() { mixin(MGPS("int", 24)); }
+			int SavedBulkDataOffsetInFile() { mixin(MGPS("int", 28)); }
+			int SavedBulkDataSizeOnDisk() { mixin(MGPS("int", 32)); }
+			UObject.Pointer BulkData() { mixin(MGPS("UObject.Pointer", 36)); }
+			int LockStatus() { mixin(MGPS("int", 40)); }
+			UObject.Pointer AttachedAr() { mixin(MGPS("UObject.Pointer", 44)); }
+			int bShouldFreeOnEmpty() { mixin(MGPS("int", 48)); }
 		}
 	}
 	struct MultiMap_Mirror
@@ -1259,29 +1259,29 @@ public extern(D):
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.MultiMap_Mirror")()); }
-		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!("UObject.Set_Mirror", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.MultiMap_Mirror")); }
+		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS("UObject.Set_Mirror", 0)); }
 	}
 	struct Map_Mirror
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Map_Mirror")()); }
-		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!("UObject.Set_Mirror", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Map_Mirror")); }
+		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS("UObject.Set_Mirror", 0)); }
 	}
 	struct Set_Mirror
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Set_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Set_Mirror")); }
 		@property final auto ref
 		{
-			UObject.SparseArray_Mirror Elements() { mixin(MGPS!("UObject.SparseArray_Mirror", 0)()); }
-			UObject.Pointer Hash() { mixin(MGPS!("UObject.Pointer", 48)()); }
-			int InlineHash() { mixin(MGPS!("int", 52)()); }
-			int HashSize() { mixin(MGPS!("int", 56)()); }
+			UObject.SparseArray_Mirror Elements() { mixin(MGPS("UObject.SparseArray_Mirror", 0)); }
+			UObject.Pointer Hash() { mixin(MGPS("UObject.Pointer", 48)); }
+			int InlineHash() { mixin(MGPS("int", 52)); }
+			int HashSize() { mixin(MGPS("int", 56)); }
 		}
 	}
 	struct SparseArray_Mirror
@@ -1289,13 +1289,13 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SparseArray_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.SparseArray_Mirror")); }
 		@property final auto ref
 		{
-			ScriptArray!(int) Elements() { mixin(MGPS!("ScriptArray!(int)", 0)()); }
-			UObject.BitArray_Mirror AllocationFlags() { mixin(MGPS!("UObject.BitArray_Mirror", 12)()); }
-			int FirstFreeIndex() { mixin(MGPS!("int", 40)()); }
-			int NumFreeIndices() { mixin(MGPS!("int", 44)()); }
+			ScriptArray!(int) Elements() { mixin(MGPS("ScriptArray!(int)", 0)); }
+			UObject.BitArray_Mirror AllocationFlags() { mixin(MGPS("UObject.BitArray_Mirror", 12)); }
+			int FirstFreeIndex() { mixin(MGPS("int", 40)); }
+			int NumFreeIndices() { mixin(MGPS("int", 44)); }
 		}
 	}
 	struct BitArray_Mirror
@@ -1303,13 +1303,13 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BitArray_Mirror")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.BitArray_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer IndirectData() { mixin(MGPS!("UObject.Pointer", 0)()); }
-			int InlineData() { mixin(MGPS!("int", 4)()); }
-			int NumBits() { mixin(MGPS!("int", 20)()); }
-			int MaxBits() { mixin(MGPS!("int", 24)()); }
+			UObject.Pointer IndirectData() { mixin(MGPS("UObject.Pointer", 0)); }
+			int InlineData() { mixin(MGPS("int", 4)); }
+			int NumBits() { mixin(MGPS("int", 20)); }
+			int MaxBits() { mixin(MGPS("int", 24)); }
 		}
 	}
 	struct ThreadSafeCounter
@@ -1317,19 +1317,19 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.ThreadSafeCounter")()); }
-		@property final auto ref int Value() { mixin(MGPS!("int", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.ThreadSafeCounter")); }
+		@property final auto ref int Value() { mixin(MGPS("int", 0)); }
 	}
 	struct Double
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Double")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Double")); }
 		@property final auto ref
 		{
-			int A() { mixin(MGPS!("int", 0)()); }
-			int B() { mixin(MGPS!("int", 4)()); }
+			int A() { mixin(MGPS("int", 0)); }
+			int B() { mixin(MGPS("int", 4)); }
 		}
 	}
 	struct QWord
@@ -1337,28 +1337,28 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.QWord")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.QWord")); }
 		@property final auto ref
 		{
-			int A() { mixin(MGPS!("int", 0)()); }
-			int B() { mixin(MGPS!("int", 4)()); }
+			int A() { mixin(MGPS("int", 0)); }
+			int B() { mixin(MGPS("int", 4)); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject Outer() { mixin(MGPC!("UObject", 40)()); }
-		ScriptName Name() { mixin(MGPC!("ScriptName", 44)()); }
-		UObject.Pointer VfTableObject() { mixin(MGPC!("UObject.Pointer", 0)()); }
-		int ObjectInternalInteger() { mixin(MGPC!("int", 4)()); }
-		QWord ObjectFlags() { mixin(MGPC!("QWord", 8)()); }
-		UObject.Pointer HashNext() { mixin(MGPC!("UObject.Pointer", 16)()); }
-		UObject.Pointer HashOuterNext() { mixin(MGPC!("UObject.Pointer", 20)()); }
-		UObject.Pointer StateFrame() { mixin(MGPC!("UObject.Pointer", 24)()); }
+		UObject Outer() { mixin(MGPC("UObject", 40)); }
+		ScriptName Name() { mixin(MGPC("ScriptName", 44)); }
+		UObject.Pointer VfTableObject() { mixin(MGPC("UObject.Pointer", 0)); }
+		int ObjectInternalInteger() { mixin(MGPC("int", 4)); }
+		QWord ObjectFlags() { mixin(MGPC("QWord", 8)); }
+		UObject.Pointer HashNext() { mixin(MGPC("UObject.Pointer", 16)); }
+		UObject.Pointer HashOuterNext() { mixin(MGPC("UObject.Pointer", 20)); }
+		UObject.Pointer StateFrame() { mixin(MGPC("UObject.Pointer", 24)); }
 		// WARNING: Property 'Linker' has the same name as a defined type!
-		UObject.Pointer LinkerIndex() { mixin(MGPC!("UObject.Pointer", 32)()); }
-		int NetIndex() { mixin(MGPC!("int", 36)()); }
+		UObject.Pointer LinkerIndex() { mixin(MGPC("UObject.Pointer", 32)); }
+		int NetIndex() { mixin(MGPC("int", 36)); }
 		// WARNING: Property 'Class' has the same name as a defined type!
-		UObject ObjectArchetype() { mixin(MGPC!("UObject", 56)()); }
+		UObject ObjectArchetype() { mixin(MGPC("UObject", 56)); }
 	}
 final:
 	int GetBuildChangelistNumber()

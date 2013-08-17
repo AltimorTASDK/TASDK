@@ -9,9 +9,9 @@ extern(C++) interface TrFlagCTF : TrFlagBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFlagCTF")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrFlagCTF")); }
 	private static __gshared TrFlagCTF mDefaultProperties;
-	@property final static TrFlagCTF DefaultProperties() { mixin(MGDPC!(TrFlagCTF, "TrFlagCTF TribesGame.Default__TrFlagCTF")()); }
+	@property final static TrFlagCTF DefaultProperties() { mixin(MGDPC("TrFlagCTF", "TrFlagCTF TribesGame.Default__TrFlagCTF")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,33 +29,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction LogTaken() { mixin(MGF!("mLogTaken", "Function TribesGame.TrFlagCTF.LogTaken")()); }
-			ScriptFunction LogDropped() { mixin(MGF!("mLogDropped", "Function TribesGame.TrFlagCTF.LogDropped")()); }
-			ScriptFunction ClearHolder() { mixin(MGF!("mClearHolder", "Function TribesGame.TrFlagCTF.ClearHolder")()); }
-			ScriptFunction SendHome() { mixin(MGF!("mSendHome", "Function TribesGame.TrFlagCTF.SendHome")()); }
-			ScriptFunction RemindPlayerAboutFlagTimer() { mixin(MGF!("mRemindPlayerAboutFlagTimer", "Function TribesGame.TrFlagCTF.RemindPlayerAboutFlagTimer")()); }
-			ScriptFunction BroadcastTakenFromBaseMessage() { mixin(MGF!("mBroadcastTakenFromBaseMessage", "Function TribesGame.TrFlagCTF.BroadcastTakenFromBaseMessage")()); }
-			ScriptFunction BroadcastTakenDroppedMessage() { mixin(MGF!("mBroadcastTakenDroppedMessage", "Function TribesGame.TrFlagCTF.BroadcastTakenDroppedMessage")()); }
-			ScriptFunction BroadcastCapturedMessage() { mixin(MGF!("mBroadcastCapturedMessage", "Function TribesGame.TrFlagCTF.BroadcastCapturedMessage")()); }
-			ScriptFunction BroadcastReturnedMessage() { mixin(MGF!("mBroadcastReturnedMessage", "Function TribesGame.TrFlagCTF.BroadcastReturnedMessage")()); }
-			ScriptFunction BroadcastDroppedMessage() { mixin(MGF!("mBroadcastDroppedMessage", "Function TribesGame.TrFlagCTF.BroadcastDroppedMessage")()); }
+			ScriptFunction LogTaken() { mixin(MGF("mLogTaken", "Function TribesGame.TrFlagCTF.LogTaken")); }
+			ScriptFunction LogDropped() { mixin(MGF("mLogDropped", "Function TribesGame.TrFlagCTF.LogDropped")); }
+			ScriptFunction ClearHolder() { mixin(MGF("mClearHolder", "Function TribesGame.TrFlagCTF.ClearHolder")); }
+			ScriptFunction SendHome() { mixin(MGF("mSendHome", "Function TribesGame.TrFlagCTF.SendHome")); }
+			ScriptFunction RemindPlayerAboutFlagTimer() { mixin(MGF("mRemindPlayerAboutFlagTimer", "Function TribesGame.TrFlagCTF.RemindPlayerAboutFlagTimer")); }
+			ScriptFunction BroadcastTakenFromBaseMessage() { mixin(MGF("mBroadcastTakenFromBaseMessage", "Function TribesGame.TrFlagCTF.BroadcastTakenFromBaseMessage")); }
+			ScriptFunction BroadcastTakenDroppedMessage() { mixin(MGF("mBroadcastTakenDroppedMessage", "Function TribesGame.TrFlagCTF.BroadcastTakenDroppedMessage")); }
+			ScriptFunction BroadcastCapturedMessage() { mixin(MGF("mBroadcastCapturedMessage", "Function TribesGame.TrFlagCTF.BroadcastCapturedMessage")); }
+			ScriptFunction BroadcastReturnedMessage() { mixin(MGF("mBroadcastReturnedMessage", "Function TribesGame.TrFlagCTF.BroadcastReturnedMessage")); }
+			ScriptFunction BroadcastDroppedMessage() { mixin(MGF("mBroadcastDroppedMessage", "Function TribesGame.TrFlagCTF.BroadcastDroppedMessage")); }
 		}
 	}
 	static struct Home
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrFlagCTF.Home")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrFlagCTF.Home")); }
 	}
 	static struct Dropped
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrFlagCTF.Dropped")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrFlagCTF.Dropped")); }
 	}
 	@property final auto ref
 	{
-		float m_YouHaveTheFlagReminderTime() { mixin(MGPC!("float", 940)()); }
-		int m_ReturnedTimeLimit() { mixin(MGPC!("int", 936)()); }
-		int m_LastReturnedTime() { mixin(MGPC!("int", 932)()); }
+		float m_YouHaveTheFlagReminderTime() { mixin(MGPC("float", 940)); }
+		int m_ReturnedTimeLimit() { mixin(MGPC("int", 936)); }
+		int m_LastReturnedTime() { mixin(MGPC("int", 932)); }
 	}
 final:
 	void LogTaken(Controller EventInstigator)

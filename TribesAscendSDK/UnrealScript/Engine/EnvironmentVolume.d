@@ -9,23 +9,23 @@ extern(C++) interface EnvironmentVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.EnvironmentVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.EnvironmentVolume")); }
 	private static __gshared EnvironmentVolume mDefaultProperties;
-	@property final static EnvironmentVolume DefaultProperties() { mixin(MGDPC!(EnvironmentVolume, "EnvironmentVolume Engine.Default__EnvironmentVolume")()); }
+	@property final static EnvironmentVolume DefaultProperties() { mixin(MGDPC("EnvironmentVolume", "EnvironmentVolume Engine.Default__EnvironmentVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetSplitNavMesh;
-		public @property static final ScriptFunction SetSplitNavMesh() { mixin(MGF!("mSetSplitNavMesh", "Function Engine.EnvironmentVolume.SetSplitNavMesh")()); }
+		public @property static final ScriptFunction SetSplitNavMesh() { mixin(MGF("mSetSplitNavMesh", "Function Engine.EnvironmentVolume.SetSplitNavMesh")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Pointer VfTable_IInterface_NavMeshPathObject() { mixin(MGPC!("UObject.Pointer", 524)()); }
-			UObject.Pointer VfTable_IInterface_NavMeshPathObstacle() { mixin(MGPC!("UObject.Pointer", 520)()); }
+			UObject.Pointer VfTable_IInterface_NavMeshPathObject() { mixin(MGPC("UObject.Pointer", 524)); }
+			UObject.Pointer VfTable_IInterface_NavMeshPathObstacle() { mixin(MGPC("UObject.Pointer", 520)); }
 		}
-		bool bSplitNavMesh() { mixin(MGBPC!(528, 0x1)()); }
-		bool bSplitNavMesh(bool val) { mixin(MSBPC!(528, 0x1)()); }
+		bool bSplitNavMesh() { mixin(MGBPC(528, 0x1)); }
+		bool bSplitNavMesh(bool val) { mixin(MSBPC(528, 0x1)); }
 	}
 	final void SetSplitNavMesh(bool bNewValue)
 	{

@@ -8,9 +8,9 @@ extern(C++) interface TrSubDevice_Turret : TrSubDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSubDevice_Turret")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSubDevice_Turret")); }
 	private static __gshared TrSubDevice_Turret mDefaultProperties;
-	@property final static TrSubDevice_Turret DefaultProperties() { mixin(MGDPC!(TrSubDevice_Turret, "TrSubDevice_Turret TribesGame.Default__TrSubDevice_Turret")()); }
+	@property final static TrSubDevice_Turret DefaultProperties() { mixin(MGDPC("TrSubDevice_Turret", "TrSubDevice_Turret TribesGame.Default__TrSubDevice_Turret")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF!("mGetPhysicalFireStartLoc", "Function TribesGame.TrSubDevice_Turret.GetPhysicalFireStartLoc")()); }
-			ScriptFunction GetFireInterval() { mixin(MGF!("mGetFireInterval", "Function TribesGame.TrSubDevice_Turret.GetFireInterval")()); }
+			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF("mGetPhysicalFireStartLoc", "Function TribesGame.TrSubDevice_Turret.GetPhysicalFireStartLoc")); }
+			ScriptFunction GetFireInterval() { mixin(MGF("mGetFireInterval", "Function TribesGame.TrSubDevice_Turret.GetFireInterval")); }
 		}
 	}
 final:

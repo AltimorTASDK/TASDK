@@ -8,7 +8,7 @@ extern(C++) interface FindDarkDiffuseTexturesCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.FindDarkDiffuseTexturesCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.FindDarkDiffuseTexturesCommandlet")); }
 	private static __gshared FindDarkDiffuseTexturesCommandlet mDefaultProperties;
-	@property final static FindDarkDiffuseTexturesCommandlet DefaultProperties() { mixin(MGDPC!(FindDarkDiffuseTexturesCommandlet, "FindDarkDiffuseTexturesCommandlet UnrealEd.Default__FindDarkDiffuseTexturesCommandlet")()); }
+	@property final static FindDarkDiffuseTexturesCommandlet DefaultProperties() { mixin(MGDPC("FindDarkDiffuseTexturesCommandlet", "FindDarkDiffuseTexturesCommandlet UnrealEd.Default__FindDarkDiffuseTexturesCommandlet")); }
 }

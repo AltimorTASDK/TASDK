@@ -11,9 +11,9 @@ extern(C++) interface TriggeredPath : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TriggeredPath")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.TriggeredPath")); }
 	private static __gshared TriggeredPath mDefaultProperties;
-	@property final static TriggeredPath DefaultProperties() { mixin(MGDPC!(TriggeredPath, "TriggeredPath Engine.Default__TriggeredPath")()); }
+	@property final static TriggeredPath DefaultProperties() { mixin(MGDPC("TriggeredPath", "TriggeredPath Engine.Default__TriggeredPath")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.TriggeredPath.OnToggle")()); }
-			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.TriggeredPath.SpecialHandling")()); }
-			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.TriggeredPath.SuggestMovePreparation")()); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.TriggeredPath.OnToggle")); }
+			ScriptFunction SpecialHandling() { mixin(MGF("mSpecialHandling", "Function Engine.TriggeredPath.SpecialHandling")); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF("mSuggestMovePreparation", "Function Engine.TriggeredPath.SuggestMovePreparation")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref Actor MyTrigger() { mixin(MGPC!("Actor", 696)()); }
-		bool bOpen() { mixin(MGBPC!(692, 0x1)()); }
-		bool bOpen(bool val) { mixin(MSBPC!(692, 0x1)()); }
+		@property final auto ref Actor MyTrigger() { mixin(MGPC("Actor", 696)); }
+		bool bOpen() { mixin(MGBPC(692, 0x1)); }
+		bool bOpen(bool val) { mixin(MSBPC(692, 0x1)); }
 	}
 final:
 	void OnToggle(SeqAct_Toggle inAction)

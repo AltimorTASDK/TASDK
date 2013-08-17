@@ -9,9 +9,9 @@ extern(C++) interface TrProj_MIRVLauncher : TrProj_Grenade
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_MIRVLauncher")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_MIRVLauncher")); }
 	private static __gshared TrProj_MIRVLauncher mDefaultProperties;
-	@property final static TrProj_MIRVLauncher DefaultProperties() { mixin(MGDPC!(TrProj_MIRVLauncher, "TrProj_MIRVLauncher TribesGame.Default__TrProj_MIRVLauncher")()); }
+	@property final static TrProj_MIRVLauncher DefaultProperties() { mixin(MGDPC("TrProj_MIRVLauncher", "TrProj_MIRVLauncher TribesGame.Default__TrProj_MIRVLauncher")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetRandomSpread() { mixin(MGF!("mGetRandomSpread", "Function TribesGame.TrProj_MIRVLauncher.GetRandomSpread")()); }
-			ScriptFunction SpawnSecondaryProjectile() { mixin(MGF!("mSpawnSecondaryProjectile", "Function TribesGame.TrProj_MIRVLauncher.SpawnSecondaryProjectile")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_MIRVLauncher.Explode")()); }
-			ScriptFunction Bounce() { mixin(MGF!("mBounce", "Function TribesGame.TrProj_MIRVLauncher.Bounce")()); }
+			ScriptFunction GetRandomSpread() { mixin(MGF("mGetRandomSpread", "Function TribesGame.TrProj_MIRVLauncher.GetRandomSpread")); }
+			ScriptFunction SpawnSecondaryProjectile() { mixin(MGF("mSpawnSecondaryProjectile", "Function TribesGame.TrProj_MIRVLauncher.SpawnSecondaryProjectile")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function TribesGame.TrProj_MIRVLauncher.Explode")); }
+			ScriptFunction Bounce() { mixin(MGF("mBounce", "Function TribesGame.TrProj_MIRVLauncher.Bounce")); }
 		}
 	}
 	@property final auto ref
 	{
-		int m_nSecondaryExplosions() { mixin(MGPC!("int", 888)()); }
-		ScriptClass m_SecondaryProjectile() { mixin(MGPC!("ScriptClass", 884)()); }
+		int m_nSecondaryExplosions() { mixin(MGPC("int", 888)); }
+		ScriptClass m_SecondaryProjectile() { mixin(MGPC("ScriptClass", 884)); }
 	}
 final:
 	Rotator GetRandomSpread(Rotator BaseDirection)

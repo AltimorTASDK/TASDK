@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionMeshSubUVBlend : MaterialExpressionMeshS
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionMeshSubUVBlend")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionMeshSubUVBlend")); }
 	private static __gshared MaterialExpressionMeshSubUVBlend mDefaultProperties;
-	@property final static MaterialExpressionMeshSubUVBlend DefaultProperties() { mixin(MGDPC!(MaterialExpressionMeshSubUVBlend, "MaterialExpressionMeshSubUVBlend Engine.Default__MaterialExpressionMeshSubUVBlend")()); }
+	@property final static MaterialExpressionMeshSubUVBlend DefaultProperties() { mixin(MGDPC("MaterialExpressionMeshSubUVBlend", "MaterialExpressionMeshSubUVBlend Engine.Default__MaterialExpressionMeshSubUVBlend")); }
 }

@@ -8,9 +8,9 @@ extern(C++) interface TrProj_MotionSensor : TrProj_Mine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_MotionSensor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_MotionSensor")); }
 	private static __gshared TrProj_MotionSensor mDefaultProperties;
-	@property final static TrProj_MotionSensor DefaultProperties() { mixin(MGDPC!(TrProj_MotionSensor, "TrProj_MotionSensor TribesGame.Default__TrProj_MotionSensor")()); }
+	@property final static TrProj_MotionSensor DefaultProperties() { mixin(MGDPC("TrProj_MotionSensor", "TrProj_MotionSensor TribesGame.Default__TrProj_MotionSensor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_MotionSensor.Explode")()); }
-			ScriptFunction DetonateObsolete() { mixin(MGF!("mDetonateObsolete", "Function TribesGame.TrProj_MotionSensor.DetonateObsolete")()); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function TribesGame.TrProj_MotionSensor.Explode")); }
+			ScriptFunction DetonateObsolete() { mixin(MGF("mDetonateObsolete", "Function TribesGame.TrProj_MotionSensor.DetonateObsolete")); }
 		}
 	}
 final:

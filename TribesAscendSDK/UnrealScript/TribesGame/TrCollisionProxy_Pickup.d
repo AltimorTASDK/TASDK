@@ -9,13 +9,13 @@ extern(C++) interface TrCollisionProxy_Pickup : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCollisionProxy_Pickup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCollisionProxy_Pickup")); }
 	private static __gshared TrCollisionProxy_Pickup mDefaultProperties;
-	@property final static TrCollisionProxy_Pickup DefaultProperties() { mixin(MGDPC!(TrCollisionProxy_Pickup, "TrCollisionProxy_Pickup TribesGame.Default__TrCollisionProxy_Pickup")()); }
+	@property final static TrCollisionProxy_Pickup DefaultProperties() { mixin(MGDPC("TrCollisionProxy_Pickup", "TrCollisionProxy_Pickup TribesGame.Default__TrCollisionProxy_Pickup")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTouch;
-		public @property static final ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrCollisionProxy_Pickup.Touch")()); }
+		public @property static final ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrCollisionProxy_Pickup.Touch")); }
 	}
 	final void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

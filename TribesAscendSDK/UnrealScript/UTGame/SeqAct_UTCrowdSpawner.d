@@ -8,7 +8,7 @@ extern(C++) interface SeqAct_UTCrowdSpawner : SeqAct_GameCrowdSpawner
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.SeqAct_UTCrowdSpawner")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.SeqAct_UTCrowdSpawner")); }
 	private static __gshared SeqAct_UTCrowdSpawner mDefaultProperties;
-	@property final static SeqAct_UTCrowdSpawner DefaultProperties() { mixin(MGDPC!(SeqAct_UTCrowdSpawner, "SeqAct_UTCrowdSpawner UTGame.Default__SeqAct_UTCrowdSpawner")()); }
+	@property final static SeqAct_UTCrowdSpawner DefaultProperties() { mixin(MGDPC("SeqAct_UTCrowdSpawner", "SeqAct_UTCrowdSpawner UTGame.Default__SeqAct_UTCrowdSpawner")); }
 }

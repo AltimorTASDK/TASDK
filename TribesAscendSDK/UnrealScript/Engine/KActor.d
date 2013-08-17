@@ -13,9 +13,9 @@ extern(C++) interface KActor : DynamicSMActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.KActor")); }
 	private static __gshared KActor mDefaultProperties;
-	@property final static KActor DefaultProperties() { mixin(MGDPC!(KActor, "KActor Engine.Default__KActor")()); }
+	@property final static KActor DefaultProperties() { mixin(MGDPC("KActor", "KActor Engine.Default__KActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,60 +37,60 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetKActorPhysMaterial() { mixin(MGF!("mGetKActorPhysMaterial", "Function Engine.KActor.GetKActorPhysMaterial")()); }
-			ScriptFunction ResolveRBState() { mixin(MGF!("mResolveRBState", "Function Engine.KActor.ResolveRBState")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.KActor.PostBeginPlay")()); }
-			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.KActor.FellOutOfWorld")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.KActor.Destroyed")()); }
-			ScriptFunction SetPhysicalCollisionProperties() { mixin(MGF!("mSetPhysicalCollisionProperties", "Function Engine.KActor.SetPhysicalCollisionProperties")()); }
-			ScriptFunction SpawnedByKismet() { mixin(MGF!("mSpawnedByKismet", "Function Engine.KActor.SpawnedByKismet")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.KActor.ReplicatedEvent")()); }
-			ScriptFunction ApplyImpulse() { mixin(MGF!("mApplyImpulse", "Function Engine.KActor.ApplyImpulse")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.KActor.TakeDamage")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.KActor.TakeRadiusDamage")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.KActor.OnToggle")()); }
-			ScriptFunction OnTeleport() { mixin(MGF!("mOnTeleport", "Function Engine.KActor.OnTeleport")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.KActor.Reset")()); }
+			ScriptFunction GetKActorPhysMaterial() { mixin(MGF("mGetKActorPhysMaterial", "Function Engine.KActor.GetKActorPhysMaterial")); }
+			ScriptFunction ResolveRBState() { mixin(MGF("mResolveRBState", "Function Engine.KActor.ResolveRBState")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.KActor.PostBeginPlay")); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF("mFellOutOfWorld", "Function Engine.KActor.FellOutOfWorld")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.KActor.Destroyed")); }
+			ScriptFunction SetPhysicalCollisionProperties() { mixin(MGF("mSetPhysicalCollisionProperties", "Function Engine.KActor.SetPhysicalCollisionProperties")); }
+			ScriptFunction SpawnedByKismet() { mixin(MGF("mSpawnedByKismet", "Function Engine.KActor.SpawnedByKismet")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.KActor.ReplicatedEvent")); }
+			ScriptFunction ApplyImpulse() { mixin(MGF("mApplyImpulse", "Function Engine.KActor.ApplyImpulse")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.KActor.TakeDamage")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function Engine.KActor.TakeRadiusDamage")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.KActor.OnToggle")); }
+			ScriptFunction OnTeleport() { mixin(MGF("mOnTeleport", "Function Engine.KActor.OnTeleport")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.KActor.Reset")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Rotator InitialRotation() { mixin(MGPC!("Rotator", 700)()); }
-			Vector InitialLocation() { mixin(MGPC!("Vector", 688)()); }
-			Vector ReplicatedDrawScale3D() { mixin(MGPC!("Vector", 676)()); }
-			float AngErrorAccumulator() { mixin(MGPC!("float", 672)()); }
-			Actor.RigidBodyState RBState() { mixin(MGPC!("Actor.RigidBodyState", 608)()); }
-			float MaxPhysicsVelocity() { mixin(MGPC!("float", 604)()); }
-			float StayUprightMaxTorque() { mixin(MGPC!("float", 600)()); }
-			float StayUprightTorqueFactor() { mixin(MGPC!("float", 596)()); }
-			Actor.PhysEffectInfo SlideEffectInfo() { mixin(MGPC!("Actor.PhysEffectInfo", 580)()); }
-			float LastSlideTime() { mixin(MGPC!("float", 576)()); }
+			Rotator InitialRotation() { mixin(MGPC("Rotator", 700)); }
+			Vector InitialLocation() { mixin(MGPC("Vector", 688)); }
+			Vector ReplicatedDrawScale3D() { mixin(MGPC("Vector", 676)); }
+			float AngErrorAccumulator() { mixin(MGPC("float", 672)); }
+			Actor.RigidBodyState RBState() { mixin(MGPC("Actor.RigidBodyState", 608)); }
+			float MaxPhysicsVelocity() { mixin(MGPC("float", 604)); }
+			float StayUprightMaxTorque() { mixin(MGPC("float", 600)); }
+			float StayUprightTorqueFactor() { mixin(MGPC("float", 596)); }
+			Actor.PhysEffectInfo SlideEffectInfo() { mixin(MGPC("Actor.PhysEffectInfo", 580)); }
+			float LastSlideTime() { mixin(MGPC("float", 576)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SlideSoundComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SlideEffectComponent'!
-			Actor.PhysEffectInfo ImpactEffectInfo() { mixin(MGPC!("Actor.PhysEffectInfo", 552)()); }
-			float LastImpactTime() { mixin(MGPC!("float", 548)()); }
+			Actor.PhysEffectInfo ImpactEffectInfo() { mixin(MGPC("Actor.PhysEffectInfo", 552)); }
+			float LastImpactTime() { mixin(MGPC("float", 548)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpactSoundComponent2'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpactSoundComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpactEffectComponent'!
 		}
-		bool bDisableClientSidePawnInteractions() { mixin(MGBPC!(532, 0x80)()); }
-		bool bDisableClientSidePawnInteractions(bool val) { mixin(MSBPC!(532, 0x80)()); }
-		bool bNeedsRBStateReplication() { mixin(MGBPC!(532, 0x40)()); }
-		bool bNeedsRBStateReplication(bool val) { mixin(MSBPC!(532, 0x40)()); }
-		bool bLimitMaxPhysicsVelocity() { mixin(MGBPC!(532, 0x20)()); }
-		bool bLimitMaxPhysicsVelocity(bool val) { mixin(MSBPC!(532, 0x20)()); }
-		bool bEnableStayUprightSpring() { mixin(MGBPC!(532, 0x10)()); }
-		bool bEnableStayUprightSpring(bool val) { mixin(MSBPC!(532, 0x10)()); }
-		bool bSlideActive() { mixin(MGBPC!(532, 0x8)()); }
-		bool bSlideActive(bool val) { mixin(MSBPC!(532, 0x8)()); }
-		bool bCurrentSlide() { mixin(MGBPC!(532, 0x4)()); }
-		bool bCurrentSlide(bool val) { mixin(MSBPC!(532, 0x4)()); }
-		bool bWakeOnLevelStart() { mixin(MGBPC!(532, 0x2)()); }
-		bool bWakeOnLevelStart(bool val) { mixin(MSBPC!(532, 0x2)()); }
-		bool bDamageAppliesImpulse() { mixin(MGBPC!(532, 0x1)()); }
-		bool bDamageAppliesImpulse(bool val) { mixin(MSBPC!(532, 0x1)()); }
+		bool bDisableClientSidePawnInteractions() { mixin(MGBPC(532, 0x80)); }
+		bool bDisableClientSidePawnInteractions(bool val) { mixin(MSBPC(532, 0x80)); }
+		bool bNeedsRBStateReplication() { mixin(MGBPC(532, 0x40)); }
+		bool bNeedsRBStateReplication(bool val) { mixin(MSBPC(532, 0x40)); }
+		bool bLimitMaxPhysicsVelocity() { mixin(MGBPC(532, 0x20)); }
+		bool bLimitMaxPhysicsVelocity(bool val) { mixin(MSBPC(532, 0x20)); }
+		bool bEnableStayUprightSpring() { mixin(MGBPC(532, 0x10)); }
+		bool bEnableStayUprightSpring(bool val) { mixin(MSBPC(532, 0x10)); }
+		bool bSlideActive() { mixin(MGBPC(532, 0x8)); }
+		bool bSlideActive(bool val) { mixin(MSBPC(532, 0x8)); }
+		bool bCurrentSlide() { mixin(MGBPC(532, 0x4)); }
+		bool bCurrentSlide(bool val) { mixin(MSBPC(532, 0x4)); }
+		bool bWakeOnLevelStart() { mixin(MGBPC(532, 0x2)); }
+		bool bWakeOnLevelStart(bool val) { mixin(MSBPC(532, 0x2)); }
+		bool bDamageAppliesImpulse() { mixin(MGBPC(532, 0x1)); }
+		bool bDamageAppliesImpulse(bool val) { mixin(MSBPC(532, 0x1)); }
 	}
 final:
 	PhysicalMaterial GetKActorPhysMaterial()

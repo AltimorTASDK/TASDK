@@ -14,9 +14,9 @@ extern(C++) interface Weapon : Inventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Weapon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Weapon")); }
 	private static __gshared Weapon mDefaultProperties;
-	@property final static Weapon DefaultProperties() { mixin(MGDPC!(Weapon, "Weapon Engine.Default__Weapon")()); }
+	@property final static Weapon DefaultProperties() { mixin(MGDPC("Weapon", "Weapon Engine.Default__Weapon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -104,86 +104,86 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetTraceRange() { mixin(MGF!("mGetTraceRange", "Function Engine.Weapon.GetTraceRange")()); }
-			ScriptFunction HasAnyAmmo() { mixin(MGF!("mHasAnyAmmo", "Function Engine.Weapon.HasAnyAmmo")()); }
-			ScriptFunction GetAIRating() { mixin(MGF!("mGetAIRating", "Function Engine.Weapon.GetAIRating")()); }
-			ScriptFunction GetWeaponRating() { mixin(MGF!("mGetWeaponRating", "Function Engine.Weapon.GetWeaponRating")()); }
-			ScriptFunction TryPutDown() { mixin(MGF!("mTryPutDown", "Function Engine.Weapon.TryPutDown")()); }
-			ScriptFunction DenyClientWeaponSet() { mixin(MGF!("mDenyClientWeaponSet", "Function Engine.Weapon.DenyClientWeaponSet")()); }
-			ScriptFunction CanAttack() { mixin(MGF!("mCanAttack", "Function Engine.Weapon.CanAttack")()); }
-			ScriptFunction FireOnRelease() { mixin(MGF!("mFireOnRelease", "Function Engine.Weapon.FireOnRelease")()); }
-			ScriptFunction IsFiring() { mixin(MGF!("mIsFiring", "Function Engine.Weapon.IsFiring")()); }
-			ScriptFunction CanThrow() { mixin(MGF!("mCanThrow", "Function Engine.Weapon.CanThrow")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.Weapon.Destroyed")()); }
-			ScriptFunction ItemRemovedFromInvManager() { mixin(MGF!("mItemRemovedFromInvManager", "Function Engine.Weapon.ItemRemovedFromInvManager")()); }
-			ScriptFunction HolderDied() { mixin(MGF!("mHolderDied", "Function Engine.Weapon.HolderDied")()); }
-			ScriptFunction DoOverrideNextWeapon() { mixin(MGF!("mDoOverrideNextWeapon", "Function Engine.Weapon.DoOverrideNextWeapon")()); }
-			ScriptFunction DoOverridePrevWeapon() { mixin(MGF!("mDoOverridePrevWeapon", "Function Engine.Weapon.DoOverridePrevWeapon")()); }
-			ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function Engine.Weapon.DropFrom")()); }
-			ScriptFunction ClientWeaponThrown() { mixin(MGF!("mClientWeaponThrown", "Function Engine.Weapon.ClientWeaponThrown")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Weapon.DisplayDebug")()); }
-			ScriptFunction GetWeaponDebug() { mixin(MGF!("mGetWeaponDebug", "Function Engine.Weapon.GetWeaponDebug")()); }
-			ScriptFunction GetPendingFireLength() { mixin(MGF!("mGetPendingFireLength", "Function Engine.Weapon.GetPendingFireLength")()); }
-			ScriptFunction PendingFire() { mixin(MGF!("mPendingFire", "Function Engine.Weapon.PendingFire")()); }
-			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function Engine.Weapon.ConsumeAmmo")()); }
-			ScriptFunction AddAmmo() { mixin(MGF!("mAddAmmo", "Function Engine.Weapon.AddAmmo")()); }
-			ScriptFunction HasAmmo() { mixin(MGF!("mHasAmmo", "Function Engine.Weapon.HasAmmo")()); }
-			ScriptFunction SetPendingFire() { mixin(MGF!("mSetPendingFire", "Function Engine.Weapon.SetPendingFire")()); }
-			ScriptFunction ClearPendingFire() { mixin(MGF!("mClearPendingFire", "Function Engine.Weapon.ClearPendingFire")()); }
-			ScriptFunction GetProjectileClass() { mixin(MGF!("mGetProjectileClass", "Function Engine.Weapon.GetProjectileClass")()); }
-			ScriptFunction AddSpread() { mixin(MGF!("mAddSpread", "Function Engine.Weapon.AddSpread")()); }
-			ScriptFunction MaxRange() { mixin(MGF!("mMaxRange", "Function Engine.Weapon.MaxRange")()); }
-			ScriptFunction GetWeaponAnimNodeSeq() { mixin(MGF!("mGetWeaponAnimNodeSeq", "Function Engine.Weapon.GetWeaponAnimNodeSeq")()); }
-			ScriptFunction PlayWeaponAnimation() { mixin(MGF!("mPlayWeaponAnimation", "Function Engine.Weapon.PlayWeaponAnimation")()); }
-			ScriptFunction StopWeaponAnimation() { mixin(MGF!("mStopWeaponAnimation", "Function Engine.Weapon.StopWeaponAnimation")()); }
-			ScriptFunction PlayFireEffects() { mixin(MGF!("mPlayFireEffects", "Function Engine.Weapon.PlayFireEffects")()); }
-			ScriptFunction StopFireEffects() { mixin(MGF!("mStopFireEffects", "Function Engine.Weapon.StopFireEffects")()); }
-			ScriptFunction GetFireInterval() { mixin(MGF!("mGetFireInterval", "Function Engine.Weapon.GetFireInterval")()); }
-			ScriptFunction TimeWeaponFiring() { mixin(MGF!("mTimeWeaponFiring", "Function Engine.Weapon.TimeWeaponFiring")()); }
-			ScriptFunction RefireCheckTimer() { mixin(MGF!("mRefireCheckTimer", "Function Engine.Weapon.RefireCheckTimer")()); }
-			ScriptFunction TimeWeaponPutDown() { mixin(MGF!("mTimeWeaponPutDown", "Function Engine.Weapon.TimeWeaponPutDown")()); }
-			ScriptFunction TimeWeaponEquipping() { mixin(MGF!("mTimeWeaponEquipping", "Function Engine.Weapon.TimeWeaponEquipping")()); }
-			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function Engine.Weapon.Activate")()); }
-			ScriptFunction PutDownWeapon() { mixin(MGF!("mPutDownWeapon", "Function Engine.Weapon.PutDownWeapon")()); }
-			ScriptFunction DenyPickupQuery() { mixin(MGF!("mDenyPickupQuery", "Function Engine.Weapon.DenyPickupQuery")()); }
-			ScriptFunction WeaponEmpty() { mixin(MGF!("mWeaponEmpty", "Function Engine.Weapon.WeaponEmpty")()); }
-			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function Engine.Weapon.IncrementFlashCount")()); }
-			ScriptFunction ClearFlashCount() { mixin(MGF!("mClearFlashCount", "Function Engine.Weapon.ClearFlashCount")()); }
-			ScriptFunction SetFlashLocation() { mixin(MGF!("mSetFlashLocation", "Function Engine.Weapon.SetFlashLocation")()); }
-			ScriptFunction ClearFlashLocation() { mixin(MGF!("mClearFlashLocation", "Function Engine.Weapon.ClearFlashLocation")()); }
-			ScriptFunction AttachWeaponTo() { mixin(MGF!("mAttachWeaponTo", "Function Engine.Weapon.AttachWeaponTo")()); }
-			ScriptFunction DetachWeapon() { mixin(MGF!("mDetachWeapon", "Function Engine.Weapon.DetachWeapon")()); }
-			ScriptFunction ClientGivenTo() { mixin(MGF!("mClientGivenTo", "Function Engine.Weapon.ClientGivenTo")()); }
-			ScriptFunction ClientWeaponSet() { mixin(MGF!("mClientWeaponSet", "Function Engine.Weapon.ClientWeaponSet")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function Engine.Weapon.StartFire")()); }
-			ScriptFunction ServerStartFire() { mixin(MGF!("mServerStartFire", "Function Engine.Weapon.ServerStartFire")()); }
-			ScriptFunction BeginFire() { mixin(MGF!("mBeginFire", "Function Engine.Weapon.BeginFire")()); }
-			ScriptFunction StopFire() { mixin(MGF!("mStopFire", "Function Engine.Weapon.StopFire")()); }
-			ScriptFunction ServerStopFire() { mixin(MGF!("mServerStopFire", "Function Engine.Weapon.ServerStopFire")()); }
-			ScriptFunction EndFire() { mixin(MGF!("mEndFire", "Function Engine.Weapon.EndFire")()); }
-			ScriptFunction ForceEndFire() { mixin(MGF!("mForceEndFire", "Function Engine.Weapon.ForceEndFire")()); }
-			ScriptFunction SendToFiringState() { mixin(MGF!("mSendToFiringState", "Function Engine.Weapon.SendToFiringState")()); }
-			ScriptFunction SetCurrentFireMode() { mixin(MGF!("mSetCurrentFireMode", "Function Engine.Weapon.SetCurrentFireMode")()); }
-			ScriptFunction FireModeUpdated() { mixin(MGF!("mFireModeUpdated", "Function Engine.Weapon.FireModeUpdated")()); }
-			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function Engine.Weapon.FireAmmunition")()); }
-			ScriptFunction GetAdjustedAim() { mixin(MGF!("mGetAdjustedAim", "Function Engine.Weapon.GetAdjustedAim")()); }
-			ScriptFunction GetTraceOwner() { mixin(MGF!("mGetTraceOwner", "Function Engine.Weapon.GetTraceOwner")()); }
-			ScriptFunction CalcWeaponFire() { mixin(MGF!("mCalcWeaponFire", "Function Engine.Weapon.CalcWeaponFire")()); }
-			ScriptFunction PassThroughDamage() { mixin(MGF!("mPassThroughDamage", "Function Engine.Weapon.PassThroughDamage")()); }
-			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function Engine.Weapon.InstantFire")()); }
-			ScriptFunction ProcessInstantHit() { mixin(MGF!("mProcessInstantHit", "Function Engine.Weapon.ProcessInstantHit")()); }
-			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function Engine.Weapon.ProjectileFire")()); }
-			ScriptFunction CustomFire() { mixin(MGF!("mCustomFire", "Function Engine.Weapon.CustomFire")()); }
-			ScriptFunction GetMuzzleLoc() { mixin(MGF!("mGetMuzzleLoc", "Function Engine.Weapon.GetMuzzleLoc")()); }
-			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF!("mGetPhysicalFireStartLoc", "Function Engine.Weapon.GetPhysicalFireStartLoc")()); }
-			ScriptFunction HandleFinishedFiring() { mixin(MGF!("mHandleFinishedFiring", "Function Engine.Weapon.HandleFinishedFiring")()); }
-			ScriptFunction NotifyWeaponFired() { mixin(MGF!("mNotifyWeaponFired", "Function Engine.Weapon.NotifyWeaponFired")()); }
-			ScriptFunction NotifyWeaponFinishedFiring() { mixin(MGF!("mNotifyWeaponFinishedFiring", "Function Engine.Weapon.NotifyWeaponFinishedFiring")()); }
-			ScriptFunction ShouldRefire() { mixin(MGF!("mShouldRefire", "Function Engine.Weapon.ShouldRefire")()); }
-			ScriptFunction StillFiring() { mixin(MGF!("mStillFiring", "Function Engine.Weapon.StillFiring")()); }
-			ScriptFunction WeaponIsDown() { mixin(MGF!("mWeaponIsDown", "Function Engine.Weapon.WeaponIsDown")()); }
-			ScriptFunction CacheAIController() { mixin(MGF!("mCacheAIController", "Function Engine.Weapon.CacheAIController")()); }
-			ScriptFunction GetTargetDistance() { mixin(MGF!("mGetTargetDistance", "Function Engine.Weapon.GetTargetDistance")()); }
+			ScriptFunction GetTraceRange() { mixin(MGF("mGetTraceRange", "Function Engine.Weapon.GetTraceRange")); }
+			ScriptFunction HasAnyAmmo() { mixin(MGF("mHasAnyAmmo", "Function Engine.Weapon.HasAnyAmmo")); }
+			ScriptFunction GetAIRating() { mixin(MGF("mGetAIRating", "Function Engine.Weapon.GetAIRating")); }
+			ScriptFunction GetWeaponRating() { mixin(MGF("mGetWeaponRating", "Function Engine.Weapon.GetWeaponRating")); }
+			ScriptFunction TryPutDown() { mixin(MGF("mTryPutDown", "Function Engine.Weapon.TryPutDown")); }
+			ScriptFunction DenyClientWeaponSet() { mixin(MGF("mDenyClientWeaponSet", "Function Engine.Weapon.DenyClientWeaponSet")); }
+			ScriptFunction CanAttack() { mixin(MGF("mCanAttack", "Function Engine.Weapon.CanAttack")); }
+			ScriptFunction FireOnRelease() { mixin(MGF("mFireOnRelease", "Function Engine.Weapon.FireOnRelease")); }
+			ScriptFunction IsFiring() { mixin(MGF("mIsFiring", "Function Engine.Weapon.IsFiring")); }
+			ScriptFunction CanThrow() { mixin(MGF("mCanThrow", "Function Engine.Weapon.CanThrow")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.Weapon.Destroyed")); }
+			ScriptFunction ItemRemovedFromInvManager() { mixin(MGF("mItemRemovedFromInvManager", "Function Engine.Weapon.ItemRemovedFromInvManager")); }
+			ScriptFunction HolderDied() { mixin(MGF("mHolderDied", "Function Engine.Weapon.HolderDied")); }
+			ScriptFunction DoOverrideNextWeapon() { mixin(MGF("mDoOverrideNextWeapon", "Function Engine.Weapon.DoOverrideNextWeapon")); }
+			ScriptFunction DoOverridePrevWeapon() { mixin(MGF("mDoOverridePrevWeapon", "Function Engine.Weapon.DoOverridePrevWeapon")); }
+			ScriptFunction DropFrom() { mixin(MGF("mDropFrom", "Function Engine.Weapon.DropFrom")); }
+			ScriptFunction ClientWeaponThrown() { mixin(MGF("mClientWeaponThrown", "Function Engine.Weapon.ClientWeaponThrown")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function Engine.Weapon.DisplayDebug")); }
+			ScriptFunction GetWeaponDebug() { mixin(MGF("mGetWeaponDebug", "Function Engine.Weapon.GetWeaponDebug")); }
+			ScriptFunction GetPendingFireLength() { mixin(MGF("mGetPendingFireLength", "Function Engine.Weapon.GetPendingFireLength")); }
+			ScriptFunction PendingFire() { mixin(MGF("mPendingFire", "Function Engine.Weapon.PendingFire")); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF("mConsumeAmmo", "Function Engine.Weapon.ConsumeAmmo")); }
+			ScriptFunction AddAmmo() { mixin(MGF("mAddAmmo", "Function Engine.Weapon.AddAmmo")); }
+			ScriptFunction HasAmmo() { mixin(MGF("mHasAmmo", "Function Engine.Weapon.HasAmmo")); }
+			ScriptFunction SetPendingFire() { mixin(MGF("mSetPendingFire", "Function Engine.Weapon.SetPendingFire")); }
+			ScriptFunction ClearPendingFire() { mixin(MGF("mClearPendingFire", "Function Engine.Weapon.ClearPendingFire")); }
+			ScriptFunction GetProjectileClass() { mixin(MGF("mGetProjectileClass", "Function Engine.Weapon.GetProjectileClass")); }
+			ScriptFunction AddSpread() { mixin(MGF("mAddSpread", "Function Engine.Weapon.AddSpread")); }
+			ScriptFunction MaxRange() { mixin(MGF("mMaxRange", "Function Engine.Weapon.MaxRange")); }
+			ScriptFunction GetWeaponAnimNodeSeq() { mixin(MGF("mGetWeaponAnimNodeSeq", "Function Engine.Weapon.GetWeaponAnimNodeSeq")); }
+			ScriptFunction PlayWeaponAnimation() { mixin(MGF("mPlayWeaponAnimation", "Function Engine.Weapon.PlayWeaponAnimation")); }
+			ScriptFunction StopWeaponAnimation() { mixin(MGF("mStopWeaponAnimation", "Function Engine.Weapon.StopWeaponAnimation")); }
+			ScriptFunction PlayFireEffects() { mixin(MGF("mPlayFireEffects", "Function Engine.Weapon.PlayFireEffects")); }
+			ScriptFunction StopFireEffects() { mixin(MGF("mStopFireEffects", "Function Engine.Weapon.StopFireEffects")); }
+			ScriptFunction GetFireInterval() { mixin(MGF("mGetFireInterval", "Function Engine.Weapon.GetFireInterval")); }
+			ScriptFunction TimeWeaponFiring() { mixin(MGF("mTimeWeaponFiring", "Function Engine.Weapon.TimeWeaponFiring")); }
+			ScriptFunction RefireCheckTimer() { mixin(MGF("mRefireCheckTimer", "Function Engine.Weapon.RefireCheckTimer")); }
+			ScriptFunction TimeWeaponPutDown() { mixin(MGF("mTimeWeaponPutDown", "Function Engine.Weapon.TimeWeaponPutDown")); }
+			ScriptFunction TimeWeaponEquipping() { mixin(MGF("mTimeWeaponEquipping", "Function Engine.Weapon.TimeWeaponEquipping")); }
+			ScriptFunction Activate() { mixin(MGF("mActivate", "Function Engine.Weapon.Activate")); }
+			ScriptFunction PutDownWeapon() { mixin(MGF("mPutDownWeapon", "Function Engine.Weapon.PutDownWeapon")); }
+			ScriptFunction DenyPickupQuery() { mixin(MGF("mDenyPickupQuery", "Function Engine.Weapon.DenyPickupQuery")); }
+			ScriptFunction WeaponEmpty() { mixin(MGF("mWeaponEmpty", "Function Engine.Weapon.WeaponEmpty")); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF("mIncrementFlashCount", "Function Engine.Weapon.IncrementFlashCount")); }
+			ScriptFunction ClearFlashCount() { mixin(MGF("mClearFlashCount", "Function Engine.Weapon.ClearFlashCount")); }
+			ScriptFunction SetFlashLocation() { mixin(MGF("mSetFlashLocation", "Function Engine.Weapon.SetFlashLocation")); }
+			ScriptFunction ClearFlashLocation() { mixin(MGF("mClearFlashLocation", "Function Engine.Weapon.ClearFlashLocation")); }
+			ScriptFunction AttachWeaponTo() { mixin(MGF("mAttachWeaponTo", "Function Engine.Weapon.AttachWeaponTo")); }
+			ScriptFunction DetachWeapon() { mixin(MGF("mDetachWeapon", "Function Engine.Weapon.DetachWeapon")); }
+			ScriptFunction ClientGivenTo() { mixin(MGF("mClientGivenTo", "Function Engine.Weapon.ClientGivenTo")); }
+			ScriptFunction ClientWeaponSet() { mixin(MGF("mClientWeaponSet", "Function Engine.Weapon.ClientWeaponSet")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function Engine.Weapon.StartFire")); }
+			ScriptFunction ServerStartFire() { mixin(MGF("mServerStartFire", "Function Engine.Weapon.ServerStartFire")); }
+			ScriptFunction BeginFire() { mixin(MGF("mBeginFire", "Function Engine.Weapon.BeginFire")); }
+			ScriptFunction StopFire() { mixin(MGF("mStopFire", "Function Engine.Weapon.StopFire")); }
+			ScriptFunction ServerStopFire() { mixin(MGF("mServerStopFire", "Function Engine.Weapon.ServerStopFire")); }
+			ScriptFunction EndFire() { mixin(MGF("mEndFire", "Function Engine.Weapon.EndFire")); }
+			ScriptFunction ForceEndFire() { mixin(MGF("mForceEndFire", "Function Engine.Weapon.ForceEndFire")); }
+			ScriptFunction SendToFiringState() { mixin(MGF("mSendToFiringState", "Function Engine.Weapon.SendToFiringState")); }
+			ScriptFunction SetCurrentFireMode() { mixin(MGF("mSetCurrentFireMode", "Function Engine.Weapon.SetCurrentFireMode")); }
+			ScriptFunction FireModeUpdated() { mixin(MGF("mFireModeUpdated", "Function Engine.Weapon.FireModeUpdated")); }
+			ScriptFunction FireAmmunition() { mixin(MGF("mFireAmmunition", "Function Engine.Weapon.FireAmmunition")); }
+			ScriptFunction GetAdjustedAim() { mixin(MGF("mGetAdjustedAim", "Function Engine.Weapon.GetAdjustedAim")); }
+			ScriptFunction GetTraceOwner() { mixin(MGF("mGetTraceOwner", "Function Engine.Weapon.GetTraceOwner")); }
+			ScriptFunction CalcWeaponFire() { mixin(MGF("mCalcWeaponFire", "Function Engine.Weapon.CalcWeaponFire")); }
+			ScriptFunction PassThroughDamage() { mixin(MGF("mPassThroughDamage", "Function Engine.Weapon.PassThroughDamage")); }
+			ScriptFunction InstantFire() { mixin(MGF("mInstantFire", "Function Engine.Weapon.InstantFire")); }
+			ScriptFunction ProcessInstantHit() { mixin(MGF("mProcessInstantHit", "Function Engine.Weapon.ProcessInstantHit")); }
+			ScriptFunction ProjectileFire() { mixin(MGF("mProjectileFire", "Function Engine.Weapon.ProjectileFire")); }
+			ScriptFunction CustomFire() { mixin(MGF("mCustomFire", "Function Engine.Weapon.CustomFire")); }
+			ScriptFunction GetMuzzleLoc() { mixin(MGF("mGetMuzzleLoc", "Function Engine.Weapon.GetMuzzleLoc")); }
+			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF("mGetPhysicalFireStartLoc", "Function Engine.Weapon.GetPhysicalFireStartLoc")); }
+			ScriptFunction HandleFinishedFiring() { mixin(MGF("mHandleFinishedFiring", "Function Engine.Weapon.HandleFinishedFiring")); }
+			ScriptFunction NotifyWeaponFired() { mixin(MGF("mNotifyWeaponFired", "Function Engine.Weapon.NotifyWeaponFired")); }
+			ScriptFunction NotifyWeaponFinishedFiring() { mixin(MGF("mNotifyWeaponFinishedFiring", "Function Engine.Weapon.NotifyWeaponFinishedFiring")); }
+			ScriptFunction ShouldRefire() { mixin(MGF("mShouldRefire", "Function Engine.Weapon.ShouldRefire")); }
+			ScriptFunction StillFiring() { mixin(MGF("mStillFiring", "Function Engine.Weapon.StillFiring")); }
+			ScriptFunction WeaponIsDown() { mixin(MGF("mWeaponIsDown", "Function Engine.Weapon.WeaponIsDown")); }
+			ScriptFunction CacheAIController() { mixin(MGF("mCacheAIController", "Function Engine.Weapon.CacheAIController")); }
+			ScriptFunction GetTargetDistance() { mixin(MGF("mGetTargetDistance", "Function Engine.Weapon.GetTargetDistance")); }
 		}
 	}
 	enum EWeaponFireType : ubyte
@@ -197,70 +197,70 @@ public extern(D):
 	static struct Inactive
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.Inactive")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Weapon.Inactive")); }
 	}
 	static struct Active
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.Active")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Weapon.Active")); }
 	}
 	static struct WeaponFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.WeaponFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Weapon.WeaponFiring")); }
 	}
 	static struct WeaponEquipping
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.WeaponEquipping")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Weapon.WeaponEquipping")); }
 	}
 	static struct WeaponPuttingDown
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.WeaponPuttingDown")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Weapon.WeaponPuttingDown")); }
 	}
 	static struct PendingClientWeaponSet
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Weapon.PendingClientWeaponSet")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Weapon.PendingClientWeaponSet")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float WeaponRange() { mixin(MGPC!("float", 676)()); }
-			ubyte CurrentFireMode() { mixin(MGPC!("ubyte", 552)()); }
-			ScriptArray!(ScriptName) FiringStatesArray() { mixin(MGPC!("ScriptArray!(ScriptName)", 556)()); }
-			ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { mixin(MGPC!("ScriptArray!(Weapon.EWeaponFireType)", 568)()); }
-			ScriptArray!(ScriptClass) WeaponProjectiles() { mixin(MGPC!("ScriptArray!(ScriptClass)", 580)()); }
-			ScriptArray!(float) FireInterval() { mixin(MGPC!("ScriptArray!(float)", 592)()); }
-			ScriptArray!(float) Spread() { mixin(MGPC!("ScriptArray!(float)", 604)()); }
-			ScriptArray!(float) InstantHitDamage() { mixin(MGPC!("ScriptArray!(float)", 616)()); }
-			ScriptArray!(float) InstantHitMomentum() { mixin(MGPC!("ScriptArray!(float)", 628)()); }
-			ScriptArray!(ScriptClass) InstantHitDamageTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 640)()); }
-			ScriptArray!(ubyte) ShouldFireOnRelease() { mixin(MGPC!("ScriptArray!(ubyte)", 696)()); }
-			float CachedMaxRange() { mixin(MGPC!("float", 712)()); }
-			float AIRating() { mixin(MGPC!("float", 708)()); }
+			float WeaponRange() { mixin(MGPC("float", 676)); }
+			ubyte CurrentFireMode() { mixin(MGPC("ubyte", 552)); }
+			ScriptArray!(ScriptName) FiringStatesArray() { mixin(MGPC("ScriptArray!(ScriptName)", 556)); }
+			ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { mixin(MGPC("ScriptArray!(Weapon.EWeaponFireType)", 568)); }
+			ScriptArray!(ScriptClass) WeaponProjectiles() { mixin(MGPC("ScriptArray!(ScriptClass)", 580)); }
+			ScriptArray!(float) FireInterval() { mixin(MGPC("ScriptArray!(float)", 592)); }
+			ScriptArray!(float) Spread() { mixin(MGPC("ScriptArray!(float)", 604)); }
+			ScriptArray!(float) InstantHitDamage() { mixin(MGPC("ScriptArray!(float)", 616)); }
+			ScriptArray!(float) InstantHitMomentum() { mixin(MGPC("ScriptArray!(float)", 628)); }
+			ScriptArray!(ScriptClass) InstantHitDamageTypes() { mixin(MGPC("ScriptArray!(ScriptClass)", 640)); }
+			ScriptArray!(ubyte) ShouldFireOnRelease() { mixin(MGPC("ScriptArray!(ubyte)", 696)); }
+			float CachedMaxRange() { mixin(MGPC("float", 712)); }
+			float AIRating() { mixin(MGPC("float", 708)); }
 			// WARNING: Property 'AIController' has the same name as a defined type!
-			float Priority() { mixin(MGPC!("float", 688)()); }
-			float DefaultAnimSpeed() { mixin(MGPC!("float", 684)()); }
+			float Priority() { mixin(MGPC("float", 688)); }
+			float DefaultAnimSpeed() { mixin(MGPC("float", 684)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
-			Vector FireOffset() { mixin(MGPC!("Vector", 660)()); }
-			float PutDownTime() { mixin(MGPC!("float", 656)()); }
-			float EquipTime() { mixin(MGPC!("float", 652)()); }
+			Vector FireOffset() { mixin(MGPC("Vector", 660)); }
+			float PutDownTime() { mixin(MGPC("float", 656)); }
+			float EquipTime() { mixin(MGPC("float", 652)); }
 		}
-		bool bInstantHit() { mixin(MGBPC!(672, 0x10)()); }
-		bool bInstantHit(bool val) { mixin(MSBPC!(672, 0x10)()); }
-		bool bMeleeWeapon() { mixin(MGBPC!(672, 0x20)()); }
-		bool bMeleeWeapon(bool val) { mixin(MSBPC!(672, 0x20)()); }
-		bool bWasDoNotActivate() { mixin(MGBPC!(672, 0x8)()); }
-		bool bWasDoNotActivate(bool val) { mixin(MSBPC!(672, 0x8)()); }
-		bool bWasOptionalSet() { mixin(MGBPC!(672, 0x4)()); }
-		bool bWasOptionalSet(bool val) { mixin(MSBPC!(672, 0x4)()); }
-		bool bCanThrow() { mixin(MGBPC!(672, 0x2)()); }
-		bool bCanThrow(bool val) { mixin(MSBPC!(672, 0x2)()); }
-		bool bWeaponPutDown() { mixin(MGBPC!(672, 0x1)()); }
-		bool bWeaponPutDown(bool val) { mixin(MSBPC!(672, 0x1)()); }
+		bool bInstantHit() { mixin(MGBPC(672, 0x10)); }
+		bool bInstantHit(bool val) { mixin(MSBPC(672, 0x10)); }
+		bool bMeleeWeapon() { mixin(MGBPC(672, 0x20)); }
+		bool bMeleeWeapon(bool val) { mixin(MSBPC(672, 0x20)); }
+		bool bWasDoNotActivate() { mixin(MGBPC(672, 0x8)); }
+		bool bWasDoNotActivate(bool val) { mixin(MSBPC(672, 0x8)); }
+		bool bWasOptionalSet() { mixin(MGBPC(672, 0x4)); }
+		bool bWasOptionalSet(bool val) { mixin(MSBPC(672, 0x4)); }
+		bool bCanThrow() { mixin(MGBPC(672, 0x2)); }
+		bool bCanThrow(bool val) { mixin(MSBPC(672, 0x2)); }
+		bool bWeaponPutDown() { mixin(MGBPC(672, 0x1)); }
+		bool bWeaponPutDown(bool val) { mixin(MSBPC(672, 0x1)); }
 	}
 final:
 	float GetTraceRange()

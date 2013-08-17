@@ -9,9 +9,9 @@ extern(C++) interface TrDevice_Pack : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Pack")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_Pack")); }
 	private static __gshared TrDevice_Pack mDefaultProperties;
-	@property final static TrDevice_Pack DefaultProperties() { mixin(MGDPC!(TrDevice_Pack, "TrDevice_Pack TribesGame.Default__TrDevice_Pack")()); }
+	@property final static TrDevice_Pack DefaultProperties() { mixin(MGDPC("TrDevice_Pack", "TrDevice_Pack TribesGame.Default__TrDevice_Pack")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,18 +31,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UsesPower() { mixin(MGF!("mUsesPower", "Function TribesGame.TrDevice_Pack.UsesPower")()); }
-			ScriptFunction GetPowerPool() { mixin(MGF!("mGetPowerPool", "Function TribesGame.TrDevice_Pack.GetPowerPool")()); }
-			ScriptFunction CanBeActive() { mixin(MGF!("mCanBeActive", "Function TribesGame.TrDevice_Pack.CanBeActive")()); }
-			ScriptFunction ConsumePowerPool() { mixin(MGF!("mConsumePowerPool", "Function TribesGame.TrDevice_Pack.ConsumePowerPool")()); }
-			ScriptFunction ToggleActivate() { mixin(MGF!("mToggleActivate", "Function TribesGame.TrDevice_Pack.ToggleActivate")()); }
-			ScriptFunction ServerToggleActivate() { mixin(MGF!("mServerToggleActivate", "Function TribesGame.TrDevice_Pack.ServerToggleActivate")()); }
-			ScriptFunction ForceActivate() { mixin(MGF!("mForceActivate", "Function TribesGame.TrDevice_Pack.ForceActivate")()); }
-			ScriptFunction ClientForceActive() { mixin(MGF!("mClientForceActive", "Function TribesGame.TrDevice_Pack.ClientForceActive")()); }
-			ScriptFunction ClientForceInactive() { mixin(MGF!("mClientForceInactive", "Function TribesGame.TrDevice_Pack.ClientForceInactive")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_Pack.StartFire")()); }
-			ScriptFunction StopFire() { mixin(MGF!("mStopFire", "Function TribesGame.TrDevice_Pack.StopFire")()); }
-			ScriptFunction SendToFiringState() { mixin(MGF!("mSendToFiringState", "Function TribesGame.TrDevice_Pack.SendToFiringState")()); }
+			ScriptFunction UsesPower() { mixin(MGF("mUsesPower", "Function TribesGame.TrDevice_Pack.UsesPower")); }
+			ScriptFunction GetPowerPool() { mixin(MGF("mGetPowerPool", "Function TribesGame.TrDevice_Pack.GetPowerPool")); }
+			ScriptFunction CanBeActive() { mixin(MGF("mCanBeActive", "Function TribesGame.TrDevice_Pack.CanBeActive")); }
+			ScriptFunction ConsumePowerPool() { mixin(MGF("mConsumePowerPool", "Function TribesGame.TrDevice_Pack.ConsumePowerPool")); }
+			ScriptFunction ToggleActivate() { mixin(MGF("mToggleActivate", "Function TribesGame.TrDevice_Pack.ToggleActivate")); }
+			ScriptFunction ServerToggleActivate() { mixin(MGF("mServerToggleActivate", "Function TribesGame.TrDevice_Pack.ServerToggleActivate")); }
+			ScriptFunction ForceActivate() { mixin(MGF("mForceActivate", "Function TribesGame.TrDevice_Pack.ForceActivate")); }
+			ScriptFunction ClientForceActive() { mixin(MGF("mClientForceActive", "Function TribesGame.TrDevice_Pack.ClientForceActive")); }
+			ScriptFunction ClientForceInactive() { mixin(MGF("mClientForceInactive", "Function TribesGame.TrDevice_Pack.ClientForceInactive")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function TribesGame.TrDevice_Pack.StartFire")); }
+			ScriptFunction StopFire() { mixin(MGF("mStopFire", "Function TribesGame.TrDevice_Pack.StopFire")); }
+			ScriptFunction SendToFiringState() { mixin(MGF("mSendToFiringState", "Function TribesGame.TrDevice_Pack.SendToFiringState")); }
 		}
 	}
 	struct PowerPoolCostInfo
@@ -50,23 +50,23 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice_Pack.PowerPoolCostInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrDevice_Pack.PowerPoolCostInfo")); }
 		@property final auto ref
 		{
-			ScriptClass m_TrFamilyInfo() { mixin(MGPS!("ScriptClass", 4)()); }
-			float m_fPowerPoolCostPerSec() { mixin(MGPS!("float", 0)()); }
+			ScriptClass m_TrFamilyInfo() { mixin(MGPS("ScriptClass", 4)); }
+			float m_fPowerPoolCostPerSec() { mixin(MGPS("float", 0)); }
 		}
 	}
 	static struct Activated
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_Pack.Activated")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_Pack.Activated")); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrDevice_Pack.PowerPoolCostInfo) m_PowerPoolInfo() { mixin(MGPC!("ScriptArray!(TrDevice_Pack.PowerPoolCostInfo)", 2152)()); }
-		float m_CachedPowerPoolCostPerSec() { mixin(MGPC!("float", 2164)()); }
-		float m_fDefaultPowerPoolCostPerSec() { mixin(MGPC!("float", 2148)()); }
+		ScriptArray!(TrDevice_Pack.PowerPoolCostInfo) m_PowerPoolInfo() { mixin(MGPC("ScriptArray!(TrDevice_Pack.PowerPoolCostInfo)", 2152)); }
+		float m_CachedPowerPoolCostPerSec() { mixin(MGPC("float", 2164)); }
+		float m_fDefaultPowerPoolCostPerSec() { mixin(MGPC("float", 2148)); }
 	}
 final:
 	bool UsesPower()

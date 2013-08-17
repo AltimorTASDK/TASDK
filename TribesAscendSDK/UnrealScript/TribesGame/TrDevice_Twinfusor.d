@@ -10,9 +10,9 @@ extern(C++) interface TrDevice_Twinfusor : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Twinfusor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_Twinfusor")); }
 	private static __gshared TrDevice_Twinfusor mDefaultProperties;
-	@property final static TrDevice_Twinfusor DefaultProperties() { mixin(MGDPC!(TrDevice_Twinfusor, "TrDevice_Twinfusor TribesGame.Default__TrDevice_Twinfusor")()); }
+	@property final static TrDevice_Twinfusor DefaultProperties() { mixin(MGDPC("TrDevice_Twinfusor", "TrDevice_Twinfusor TribesGame.Default__TrDevice_Twinfusor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,17 +28,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_Twinfusor.PostInitAnimTree")()); }
-			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function TribesGame.TrDevice_Twinfusor.OnAnimPlay")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_Twinfusor.OnAnimEnd")()); }
-			ScriptFunction SetDiscSpinning() { mixin(MGF!("mSetDiscSpinning", "Function TribesGame.TrDevice_Twinfusor.SetDiscSpinning")()); }
-			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_Twinfusor.PlayWeaponEquip")()); }
-			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice_Twinfusor.PlayWeaponPutDown")()); }
-			ScriptFunction PutDownFast() { mixin(MGF!("mPutDownFast", "Function TribesGame.TrDevice_Twinfusor.PutDownFast")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Twinfusor.OnSwitchAwayFromWeapon")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDevice_Twinfusor.PostInitAnimTree")); }
+			ScriptFunction OnAnimPlay() { mixin(MGF("mOnAnimPlay", "Function TribesGame.TrDevice_Twinfusor.OnAnimPlay")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function TribesGame.TrDevice_Twinfusor.OnAnimEnd")); }
+			ScriptFunction SetDiscSpinning() { mixin(MGF("mSetDiscSpinning", "Function TribesGame.TrDevice_Twinfusor.SetDiscSpinning")); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF("mPlayWeaponEquip", "Function TribesGame.TrDevice_Twinfusor.PlayWeaponEquip")); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF("mPlayWeaponPutDown", "Function TribesGame.TrDevice_Twinfusor.PlayWeaponPutDown")); }
+			ScriptFunction PutDownFast() { mixin(MGF("mPutDownFast", "Function TribesGame.TrDevice_Twinfusor.PutDownFast")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Twinfusor.OnSwitchAwayFromWeapon")); }
 		}
 	}
-	@property final auto ref SoundCue m_SpinfusorIdleSound() { mixin(MGPC!("SoundCue", 2148)()); }
+	@property final auto ref SoundCue m_SpinfusorIdleSound() { mixin(MGPC("SoundCue", 2148)); }
 final:
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

@@ -12,9 +12,9 @@ extern(C++) interface UTCTFHUD : UTTeamHUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFHUD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTCTFHUD")); }
 	private static __gshared UTCTFHUD mDefaultProperties;
-	@property final static UTCTFHUD DefaultProperties() { mixin(MGDPC!(UTCTFHUD, "UTCTFHUD UTGame.Default__UTCTFHUD")()); }
+	@property final static UTCTFHUD DefaultProperties() { mixin(MGDPC("UTCTFHUD", "UTCTFHUD UTGame.Default__UTCTFHUD")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,16 +26,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCTFHUD.PostBeginPlay")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTCTFHUD.Timer")()); }
-			ScriptFunction DisplayTeamLogos() { mixin(MGF!("mDisplayTeamLogos", "Function UTGame.UTCTFHUD.DisplayTeamLogos")()); }
-			ScriptFunction GetDirectionalDest() { mixin(MGF!("mGetDirectionalDest", "Function UTGame.UTCTFHUD.GetDirectionalDest")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTCTFHUD.PostBeginPlay")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function UTGame.UTCTFHUD.Timer")); }
+			ScriptFunction DisplayTeamLogos() { mixin(MGF("mDisplayTeamLogos", "Function UTGame.UTCTFHUD.DisplayTeamLogos")); }
+			ScriptFunction GetDirectionalDest() { mixin(MGF("mGetDirectionalDest", "Function UTGame.UTCTFHUD.GetDirectionalDest")); }
 		}
 	}
 	@property final auto ref
 	{
-		UTGameReplicationInfo.EFlagState FlagStates() { mixin(MGPC!("UTGameReplicationInfo.EFlagState", 2748)()); }
-		UTCTFBase FlagBases() { mixin(MGPC!("UTCTFBase", 2740)()); }
+		UTGameReplicationInfo.EFlagState FlagStates() { mixin(MGPC("UTGameReplicationInfo.EFlagState", 2748)); }
+		UTCTFBase FlagBases() { mixin(MGPC("UTCTFBase", 2740)); }
 	}
 final:
 	void PostBeginPlay()

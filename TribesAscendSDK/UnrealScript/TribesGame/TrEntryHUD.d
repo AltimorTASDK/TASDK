@@ -8,9 +8,9 @@ extern(C++) interface TrEntryHUD : HUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEntryHUD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEntryHUD")); }
 	private static __gshared TrEntryHUD mDefaultProperties;
-	@property final static TrEntryHUD DefaultProperties() { mixin(MGDPC!(TrEntryHUD, "TrEntryHUD TribesGame.Default__TrEntryHUD")()); }
+	@property final static TrEntryHUD DefaultProperties() { mixin(MGDPC("TrEntryHUD", "TrEntryHUD TribesGame.Default__TrEntryHUD")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,8 +20,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateMainMenu() { mixin(MGF!("mCreateMainMenu", "Function TribesGame.TrEntryHUD.CreateMainMenu")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrEntryHUD.PostBeginPlay")()); }
+			ScriptFunction CreateMainMenu() { mixin(MGF("mCreateMainMenu", "Function TribesGame.TrEntryHUD.CreateMainMenu")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrEntryHUD.PostBeginPlay")); }
 		}
 	}
 final:

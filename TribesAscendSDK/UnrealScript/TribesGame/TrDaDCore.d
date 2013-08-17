@@ -16,9 +16,9 @@ extern(C++) interface TrDaDCore : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDCore")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDaDCore")); }
 	private static __gshared TrDaDCore mDefaultProperties;
-	@property final static TrDaDCore DefaultProperties() { mixin(MGDPC!(TrDaDCore, "TrDaDCore TribesGame.Default__TrDaDCore")()); }
+	@property final static TrDaDCore DefaultProperties() { mixin(MGDPC("TrDaDCore", "TrDaDCore TribesGame.Default__TrDaDCore")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,29 +34,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDaDCore.PostBeginPlay")()); }
-			ScriptFunction SpawnShield() { mixin(MGF!("mSpawnShield", "Function TribesGame.TrDaDCore.SpawnShield")()); }
-			ScriptFunction OnCapacitorBlownUp() { mixin(MGF!("mOnCapacitorBlownUp", "Function TribesGame.TrDaDCore.OnCapacitorBlownUp")()); }
-			ScriptFunction OnCapacitorRestored() { mixin(MGF!("mOnCapacitorRestored", "Function TribesGame.TrDaDCore.OnCapacitorRestored")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrDaDCore.TakeDamage")()); }
-			ScriptFunction OnCoreDestroyed() { mixin(MGF!("mOnCoreDestroyed", "Function TribesGame.TrDaDCore.OnCoreDestroyed")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrDaDCore.PostRenderFor")()); }
-			ScriptFunction GetCeilPctScore() { mixin(MGF!("mGetCeilPctScore", "Function TribesGame.TrDaDCore.GetCeilPctScore")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrDaDCore.PostBeginPlay")); }
+			ScriptFunction SpawnShield() { mixin(MGF("mSpawnShield", "Function TribesGame.TrDaDCore.SpawnShield")); }
+			ScriptFunction OnCapacitorBlownUp() { mixin(MGF("mOnCapacitorBlownUp", "Function TribesGame.TrDaDCore.OnCapacitorBlownUp")); }
+			ScriptFunction OnCapacitorRestored() { mixin(MGF("mOnCapacitorRestored", "Function TribesGame.TrDaDCore.OnCapacitorRestored")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrDaDCore.TakeDamage")); }
+			ScriptFunction OnCoreDestroyed() { mixin(MGF("mOnCoreDestroyed", "Function TribesGame.TrDaDCore.OnCoreDestroyed")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrDaDCore.PostRenderFor")); }
+			ScriptFunction GetCeilPctScore() { mixin(MGF("mGetCeilPctScore", "Function TribesGame.TrDaDCore.GetCeilPctScore")); }
 		}
 	}
 	static struct BlownUp
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDaDCore.BlownUp")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDaDCore.BlownUp")); }
 	}
 	@property final auto ref
 	{
 		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
-		TrDaDShell m_Shell() { mixin(MGPC!("TrDaDShell", 1392)()); }
-		TrDaDCoreShield m_Shields() { mixin(MGPC!("TrDaDCoreShield", 1380)()); }
-		TrDaDCapacitor m_Capacitors() { mixin(MGPC!("TrDaDCapacitor", 1368)()); }
-		float m_fShieldBarPlacementY() { mixin(MGPC!("float", 1364)()); }
-		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 1360)()); }
+		TrDaDShell m_Shell() { mixin(MGPC("TrDaDShell", 1392)); }
+		TrDaDCoreShield m_Shields() { mixin(MGPC("TrDaDCoreShield", 1380)); }
+		TrDaDCapacitor m_Capacitors() { mixin(MGPC("TrDaDCapacitor", 1368)); }
+		float m_fShieldBarPlacementY() { mixin(MGPC("float", 1364)); }
+		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC("MaterialInstanceConstant", 1360)); }
 	}
 final:
 	void PostBeginPlay()

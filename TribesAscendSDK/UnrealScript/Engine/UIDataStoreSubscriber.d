@@ -10,9 +10,9 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStoreSubscriber")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStoreSubscriber")); }
 	private static __gshared UIDataStoreSubscriber mDefaultProperties;
-	@property final static UIDataStoreSubscriber DefaultProperties() { mixin(MGDPC!(UIDataStoreSubscriber, "UIDataStoreSubscriber Engine.Default__UIDataStoreSubscriber")()); }
+	@property final static UIDataStoreSubscriber DefaultProperties() { mixin(MGDPC("UIDataStoreSubscriber", "UIDataStoreSubscriber Engine.Default__UIDataStoreSubscriber")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,12 +26,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetDataStoreBinding() { mixin(MGF!("mSetDataStoreBinding", "Function Engine.UIDataStoreSubscriber.SetDataStoreBinding")()); }
-			ScriptFunction GetDataStoreBinding() { mixin(MGF!("mGetDataStoreBinding", "Function Engine.UIDataStoreSubscriber.GetDataStoreBinding")()); }
-			ScriptFunction RefreshSubscriberValue() { mixin(MGF!("mRefreshSubscriberValue", "Function Engine.UIDataStoreSubscriber.RefreshSubscriberValue")()); }
-			ScriptFunction NotifyDataStoreValueUpdated() { mixin(MGF!("mNotifyDataStoreValueUpdated", "Function Engine.UIDataStoreSubscriber.NotifyDataStoreValueUpdated")()); }
-			ScriptFunction GetBoundDataStores() { mixin(MGF!("mGetBoundDataStores", "Function Engine.UIDataStoreSubscriber.GetBoundDataStores")()); }
-			ScriptFunction ClearBoundDataStores() { mixin(MGF!("mClearBoundDataStores", "Function Engine.UIDataStoreSubscriber.ClearBoundDataStores")()); }
+			ScriptFunction SetDataStoreBinding() { mixin(MGF("mSetDataStoreBinding", "Function Engine.UIDataStoreSubscriber.SetDataStoreBinding")); }
+			ScriptFunction GetDataStoreBinding() { mixin(MGF("mGetDataStoreBinding", "Function Engine.UIDataStoreSubscriber.GetDataStoreBinding")); }
+			ScriptFunction RefreshSubscriberValue() { mixin(MGF("mRefreshSubscriberValue", "Function Engine.UIDataStoreSubscriber.RefreshSubscriberValue")); }
+			ScriptFunction NotifyDataStoreValueUpdated() { mixin(MGF("mNotifyDataStoreValueUpdated", "Function Engine.UIDataStoreSubscriber.NotifyDataStoreValueUpdated")); }
+			ScriptFunction GetBoundDataStores() { mixin(MGF("mGetBoundDataStores", "Function Engine.UIDataStoreSubscriber.GetBoundDataStores")); }
+			ScriptFunction ClearBoundDataStores() { mixin(MGF("mClearBoundDataStores", "Function Engine.UIDataStoreSubscriber.ClearBoundDataStores")); }
 		}
 	}
 final:

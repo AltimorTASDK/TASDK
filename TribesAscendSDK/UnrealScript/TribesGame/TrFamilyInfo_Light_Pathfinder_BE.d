@@ -8,7 +8,7 @@ extern(C++) interface TrFamilyInfo_Light_Pathfinder_BE : TrFamilyInfo_Light_Path
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFamilyInfo_Light_Pathfinder_BE")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrFamilyInfo_Light_Pathfinder_BE")); }
 	private static __gshared TrFamilyInfo_Light_Pathfinder_BE mDefaultProperties;
-	@property final static TrFamilyInfo_Light_Pathfinder_BE DefaultProperties() { mixin(MGDPC!(TrFamilyInfo_Light_Pathfinder_BE, "TrFamilyInfo_Light_Pathfinder_BE TribesGame.Default__TrFamilyInfo_Light_Pathfinder_BE")()); }
+	@property final static TrFamilyInfo_Light_Pathfinder_BE DefaultProperties() { mixin(MGDPC("TrFamilyInfo_Light_Pathfinder_BE", "TrFamilyInfo_Light_Pathfinder_BE TribesGame.Default__TrFamilyInfo_Light_Pathfinder_BE")); }
 }

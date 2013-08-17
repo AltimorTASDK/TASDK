@@ -12,9 +12,9 @@ extern(C++) interface GfxTrHudTeam : GfxTrHud
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GfxTrHudTeam")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GfxTrHudTeam")); }
 	private static __gshared GfxTrHudTeam mDefaultProperties;
-	@property final static GfxTrHudTeam DefaultProperties() { mixin(MGDPC!(GfxTrHudTeam, "GfxTrHudTeam TribesGame.Default__GfxTrHudTeam")()); }
+	@property final static GfxTrHudTeam DefaultProperties() { mixin(MGDPC("GfxTrHudTeam", "GfxTrHudTeam TribesGame.Default__GfxTrHudTeam")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,18 +27,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.GfxTrHudTeam.Init")()); }
-			ScriptFunction InitMessageRow() { mixin(MGF!("mInitMessageRow", "Function TribesGame.GfxTrHudTeam.InitMessageRow")()); }
-			ScriptFunction ClearStats() { mixin(MGF!("mClearStats", "Function TribesGame.GfxTrHudTeam.ClearStats")()); }
-			ScriptFunction UpdateGameHUD() { mixin(MGF!("mUpdateGameHUD", "Function TribesGame.GfxTrHudTeam.UpdateGameHUD")()); }
-			ScriptFunction GetRank() { mixin(MGF!("mGetRank", "Function TribesGame.GfxTrHudTeam.GetRank")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.GfxTrHudTeam.Init")); }
+			ScriptFunction InitMessageRow() { mixin(MGF("mInitMessageRow", "Function TribesGame.GfxTrHudTeam.InitMessageRow")); }
+			ScriptFunction ClearStats() { mixin(MGF("mClearStats", "Function TribesGame.GfxTrHudTeam.ClearStats")); }
+			ScriptFunction UpdateGameHUD() { mixin(MGF("mUpdateGameHUD", "Function TribesGame.GfxTrHudTeam.UpdateGameHUD")); }
+			ScriptFunction GetRank() { mixin(MGF("mGetRank", "Function TribesGame.GfxTrHudTeam.GetRank")); }
 		}
 	}
 	@property final auto ref
 	{
-		GFxObject FlagCarrierTF() { mixin(MGPC!("GFxObject", 3132)()); }
-		GFxObject ScoreTF() { mixin(MGPC!("GFxObject", 3124)()); }
-		GFxObject ScoreBarMC() { mixin(MGPC!("GFxObject", 3116)()); }
+		GFxObject FlagCarrierTF() { mixin(MGPC("GFxObject", 3132)); }
+		GFxObject ScoreTF() { mixin(MGPC("GFxObject", 3124)); }
+		GFxObject ScoreBarMC() { mixin(MGPC("GFxObject", 3116)); }
 	}
 final:
 	void Init(LocalPlayer* pPlayer = null)

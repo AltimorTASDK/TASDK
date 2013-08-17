@@ -10,9 +10,9 @@ extern(C++) interface DataStoreClient : UIRoot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DataStoreClient")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DataStoreClient")); }
 	private static __gshared DataStoreClient mDefaultProperties;
-	@property final static DataStoreClient DefaultProperties() { mixin(MGDPC!(DataStoreClient, "DataStoreClient Engine.Default__DataStoreClient")()); }
+	@property final static DataStoreClient DefaultProperties() { mixin(MGDPC("DataStoreClient", "DataStoreClient Engine.Default__DataStoreClient")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,15 +29,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FindDataStore() { mixin(MGF!("mFindDataStore", "Function Engine.DataStoreClient.FindDataStore")()); }
-			ScriptFunction FindDataStoreClass() { mixin(MGF!("mFindDataStoreClass", "Function Engine.DataStoreClient.FindDataStoreClass")()); }
-			ScriptFunction CreateDataStore() { mixin(MGF!("mCreateDataStore", "Function Engine.DataStoreClient.CreateDataStore")()); }
-			ScriptFunction RegisterDataStore() { mixin(MGF!("mRegisterDataStore", "Function Engine.DataStoreClient.RegisterDataStore")()); }
-			ScriptFunction GetPlayerDataStoreClasses() { mixin(MGF!("mGetPlayerDataStoreClasses", "Function Engine.DataStoreClient.GetPlayerDataStoreClasses")()); }
-			ScriptFunction UnregisterDataStore() { mixin(MGF!("mUnregisterDataStore", "Function Engine.DataStoreClient.UnregisterDataStore")()); }
-			ScriptFunction FindPlayerDataStoreIndex() { mixin(MGF!("mFindPlayerDataStoreIndex", "Function Engine.DataStoreClient.FindPlayerDataStoreIndex")()); }
-			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function Engine.DataStoreClient.NotifyGameSessionEnded")()); }
-			ScriptFunction DebugDumpDataStoreInfo() { mixin(MGF!("mDebugDumpDataStoreInfo", "Function Engine.DataStoreClient.DebugDumpDataStoreInfo")()); }
+			ScriptFunction FindDataStore() { mixin(MGF("mFindDataStore", "Function Engine.DataStoreClient.FindDataStore")); }
+			ScriptFunction FindDataStoreClass() { mixin(MGF("mFindDataStoreClass", "Function Engine.DataStoreClient.FindDataStoreClass")); }
+			ScriptFunction CreateDataStore() { mixin(MGF("mCreateDataStore", "Function Engine.DataStoreClient.CreateDataStore")); }
+			ScriptFunction RegisterDataStore() { mixin(MGF("mRegisterDataStore", "Function Engine.DataStoreClient.RegisterDataStore")); }
+			ScriptFunction GetPlayerDataStoreClasses() { mixin(MGF("mGetPlayerDataStoreClasses", "Function Engine.DataStoreClient.GetPlayerDataStoreClasses")); }
+			ScriptFunction UnregisterDataStore() { mixin(MGF("mUnregisterDataStore", "Function Engine.DataStoreClient.UnregisterDataStore")); }
+			ScriptFunction FindPlayerDataStoreIndex() { mixin(MGF("mFindPlayerDataStoreIndex", "Function Engine.DataStoreClient.FindPlayerDataStoreIndex")); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF("mNotifyGameSessionEnded", "Function Engine.DataStoreClient.NotifyGameSessionEnded")); }
+			ScriptFunction DebugDumpDataStoreInfo() { mixin(MGF("mDebugDumpDataStoreInfo", "Function Engine.DataStoreClient.DebugDumpDataStoreInfo")); }
 		}
 	}
 	struct PlayerDataStoreGroup
@@ -45,20 +45,20 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.DataStoreClient.PlayerDataStoreGroup")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.DataStoreClient.PlayerDataStoreGroup")); }
 		@property final auto ref
 		{
-			ScriptArray!(UIDataStore) DataStores() { mixin(MGPS!("ScriptArray!(UIDataStore)", 4)()); }
-			LocalPlayer PlayerOwner() { mixin(MGPS!("LocalPlayer", 0)()); }
+			ScriptArray!(UIDataStore) DataStores() { mixin(MGPS("ScriptArray!(UIDataStore)", 4)); }
+			LocalPlayer PlayerOwner() { mixin(MGPS("LocalPlayer", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) GlobalDataStoreClasses() { mixin(MGPC!("ScriptArray!(ScriptString)", 60)()); }
-		ScriptArray!(UIDataStore) GlobalDataStores() { mixin(MGPC!("ScriptArray!(UIDataStore)", 72)()); }
-		ScriptArray!(ScriptString) PlayerDataStoreClassNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 84)()); }
-		ScriptArray!(ScriptClass) PlayerDataStoreClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 96)()); }
-		ScriptArray!(DataStoreClient.PlayerDataStoreGroup) PlayerDataStores() { mixin(MGPC!("ScriptArray!(DataStoreClient.PlayerDataStoreGroup)", 108)()); }
+		ScriptArray!(ScriptString) GlobalDataStoreClasses() { mixin(MGPC("ScriptArray!(ScriptString)", 60)); }
+		ScriptArray!(UIDataStore) GlobalDataStores() { mixin(MGPC("ScriptArray!(UIDataStore)", 72)); }
+		ScriptArray!(ScriptString) PlayerDataStoreClassNames() { mixin(MGPC("ScriptArray!(ScriptString)", 84)); }
+		ScriptArray!(ScriptClass) PlayerDataStoreClasses() { mixin(MGPC("ScriptArray!(ScriptClass)", 96)); }
+		ScriptArray!(DataStoreClient.PlayerDataStoreGroup) PlayerDataStores() { mixin(MGPC("ScriptArray!(DataStoreClient.PlayerDataStoreGroup)", 108)); }
 	}
 final:
 	UIDataStore FindDataStore(ScriptName DataStoreTag, LocalPlayer* PlayerOwner = null)

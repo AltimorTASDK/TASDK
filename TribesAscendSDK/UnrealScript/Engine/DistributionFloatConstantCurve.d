@@ -9,8 +9,8 @@ extern(C++) interface DistributionFloatConstantCurve : DistributionFloat
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DistributionFloatConstantCurve")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DistributionFloatConstantCurve")); }
 	private static __gshared DistributionFloatConstantCurve mDefaultProperties;
-	@property final static DistributionFloatConstantCurve DefaultProperties() { mixin(MGDPC!(DistributionFloatConstantCurve, "DistributionFloatConstantCurve Engine.Default__DistributionFloatConstantCurve")()); }
-	@property final auto ref UObject.InterpCurveFloat ConstantCurve() { mixin(MGPC!("UObject.InterpCurveFloat", 80)()); }
+	@property final static DistributionFloatConstantCurve DefaultProperties() { mixin(MGDPC("DistributionFloatConstantCurve", "DistributionFloatConstantCurve Engine.Default__DistributionFloatConstantCurve")); }
+	@property final auto ref UObject.InterpCurveFloat ConstantCurve() { mixin(MGPC("UObject.InterpCurveFloat", 80)); }
 }

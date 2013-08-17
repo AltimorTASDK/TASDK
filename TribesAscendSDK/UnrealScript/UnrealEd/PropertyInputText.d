@@ -8,7 +8,7 @@ extern(C++) interface PropertyInputText : PropertyInputArrayItemBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.PropertyInputText")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.PropertyInputText")); }
 	private static __gshared PropertyInputText mDefaultProperties;
-	@property final static PropertyInputText DefaultProperties() { mixin(MGDPC!(PropertyInputText, "PropertyInputText UnrealEd.Default__PropertyInputText")()); }
+	@property final static PropertyInputText DefaultProperties() { mixin(MGDPC("PropertyInputText", "PropertyInputText UnrealEd.Default__PropertyInputText")); }
 }

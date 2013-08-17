@@ -8,7 +8,7 @@ extern(C++) interface TrGameSearchTrStorm : TrGameSearchCommon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameSearchTrStorm")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameSearchTrStorm")); }
 	private static __gshared TrGameSearchTrStorm mDefaultProperties;
-	@property final static TrGameSearchTrStorm DefaultProperties() { mixin(MGDPC!(TrGameSearchTrStorm, "TrGameSearchTrStorm TribesGame.Default__TrGameSearchTrStorm")()); }
+	@property final static TrGameSearchTrStorm DefaultProperties() { mixin(MGDPC("TrGameSearchTrStorm", "TrGameSearchTrStorm TribesGame.Default__TrGameSearchTrStorm")); }
 }

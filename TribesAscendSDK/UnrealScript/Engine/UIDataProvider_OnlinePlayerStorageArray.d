@@ -10,17 +10,17 @@ extern(C++) interface UIDataProvider_OnlinePlayerStorageArray : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_OnlinePlayerStorageArray")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataProvider_OnlinePlayerStorageArray")); }
 	private static __gshared UIDataProvider_OnlinePlayerStorageArray mDefaultProperties;
-	@property final static UIDataProvider_OnlinePlayerStorageArray DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlinePlayerStorageArray, "UIDataProvider_OnlinePlayerStorageArray Engine.Default__UIDataProvider_OnlinePlayerStorageArray")()); }
+	@property final static UIDataProvider_OnlinePlayerStorageArray DefaultProperties() { mixin(MGDPC("UIDataProvider_OnlinePlayerStorageArray", "UIDataProvider_OnlinePlayerStorageArray Engine.Default__UIDataProvider_OnlinePlayerStorageArray")); }
 	@property final auto ref
 	{
-		ScriptArray!(ScriptName) Values() { mixin(MGPC!("ScriptArray!(ScriptName)", 124)()); }
-		ScriptString ColumnHeaderText() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptName PlayerStorageName() { mixin(MGPC!("ScriptName", 104)()); }
-		int PlayerStorageId() { mixin(MGPC!("int", 100)()); }
-		OnlinePlayerStorage PlayerStorage() { mixin(MGPC!("OnlinePlayerStorage", 96)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 88)()); }
+		ScriptArray!(ScriptName) Values() { mixin(MGPC("ScriptArray!(ScriptName)", 124)); }
+		ScriptString ColumnHeaderText() { mixin(MGPC("ScriptString", 112)); }
+		ScriptName PlayerStorageName() { mixin(MGPC("ScriptName", 104)); }
+		int PlayerStorageId() { mixin(MGPC("int", 100)); }
+		OnlinePlayerStorage PlayerStorage() { mixin(MGPC("OnlinePlayerStorage", 96)); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 88)); }
 	}
 }

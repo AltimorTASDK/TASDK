@@ -9,12 +9,12 @@ extern(C++) interface FogVolumeLinearHalfspaceDensityComponent : FogVolumeDensit
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FogVolumeLinearHalfspaceDensityComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FogVolumeLinearHalfspaceDensityComponent")); }
 	private static __gshared FogVolumeLinearHalfspaceDensityComponent mDefaultProperties;
-	@property final static FogVolumeLinearHalfspaceDensityComponent DefaultProperties() { mixin(MGDPC!(FogVolumeLinearHalfspaceDensityComponent, "FogVolumeLinearHalfspaceDensityComponent Engine.Default__FogVolumeLinearHalfspaceDensityComponent")()); }
+	@property final static FogVolumeLinearHalfspaceDensityComponent DefaultProperties() { mixin(MGDPC("FogVolumeLinearHalfspaceDensityComponent", "FogVolumeLinearHalfspaceDensityComponent Engine.Default__FogVolumeLinearHalfspaceDensityComponent")); }
 	@property final auto ref
 	{
-		UObject.Plane HalfspacePlane() { mixin(MGPC!("UObject.Plane", 160)()); }
-		float PlaneDistanceFactor() { mixin(MGPC!("float", 148)()); }
+		UObject.Plane HalfspacePlane() { mixin(MGPC("UObject.Plane", 160)); }
+		float PlaneDistanceFactor() { mixin(MGPC("float", 148)); }
 	}
 }

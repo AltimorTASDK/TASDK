@@ -8,7 +8,7 @@ extern(C++) interface TrVehicleStation_DiamondSword : TrVehicleStation
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicleStation_DiamondSword")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicleStation_DiamondSword")); }
 	private static __gshared TrVehicleStation_DiamondSword mDefaultProperties;
-	@property final static TrVehicleStation_DiamondSword DefaultProperties() { mixin(MGDPC!(TrVehicleStation_DiamondSword, "TrVehicleStation_DiamondSword TribesGame.Default__TrVehicleStation_DiamondSword")()); }
+	@property final static TrVehicleStation_DiamondSword DefaultProperties() { mixin(MGDPC("TrVehicleStation_DiamondSword", "TrVehicleStation_DiamondSword TribesGame.Default__TrVehicleStation_DiamondSword")); }
 }

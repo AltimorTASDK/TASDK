@@ -9,9 +9,9 @@ extern(C++) interface PartyBeacon : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.PartyBeacon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.PartyBeacon")); }
 	private static __gshared PartyBeacon mDefaultProperties;
-	@property final static PartyBeacon DefaultProperties() { mixin(MGDPC!(PartyBeacon, "PartyBeacon IpDrv.Default__PartyBeacon")()); }
+	@property final static PartyBeacon DefaultProperties() { mixin(MGDPC("PartyBeacon", "PartyBeacon IpDrv.Default__PartyBeacon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnDestroyComplete() { mixin(MGF!("mOnDestroyComplete", "Function IpDrv.PartyBeacon.OnDestroyComplete")()); }
-			ScriptFunction DestroyBeacon() { mixin(MGF!("mDestroyBeacon", "Function IpDrv.PartyBeacon.DestroyBeacon")()); }
+			ScriptFunction OnDestroyComplete() { mixin(MGF("mOnDestroyComplete", "Function IpDrv.PartyBeacon.OnDestroyComplete")); }
+			ScriptFunction DestroyBeacon() { mixin(MGF("mDestroyBeacon", "Function IpDrv.PartyBeacon.DestroyBeacon")); }
 		}
 	}
 	enum EReservationPacketType : ubyte
@@ -56,15 +56,15 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeacon.PlayerReservation")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.PartyBeacon.PlayerReservation")); }
 		@property final auto ref
 		{
-			float ElapsedSessionTime() { mixin(MGPS!("float", 32)()); }
-			UObject.Double Sigma() { mixin(MGPS!("UObject.Double", 24)()); }
-			UObject.Double Mu() { mixin(MGPS!("UObject.Double", 16)()); }
-			int XpLevel() { mixin(MGPS!("int", 12)()); }
-			int Skill() { mixin(MGPS!("int", 8)()); }
-			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
+			float ElapsedSessionTime() { mixin(MGPS("float", 32)); }
+			UObject.Double Sigma() { mixin(MGPS("UObject.Double", 24)); }
+			UObject.Double Mu() { mixin(MGPS("UObject.Double", 16)); }
+			int XpLevel() { mixin(MGPS("int", 12)); }
+			int Skill() { mixin(MGPS("int", 8)); }
+			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 		}
 	}
 	struct PartyReservation
@@ -72,12 +72,12 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeacon.PartyReservation")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.PartyBeacon.PartyReservation")); }
 		@property final auto ref
 		{
-			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { mixin(MGPS!("ScriptArray!(PartyBeacon.PlayerReservation)", 12)()); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 4)()); }
-			int TeamNum() { mixin(MGPS!("int", 0)()); }
+			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { mixin(MGPS("ScriptArray!(PartyBeacon.PlayerReservation)", 12)); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 4)); }
+			int TeamNum() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
@@ -85,19 +85,19 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDestroyComplete__Delegate'!
-			ScriptName BeaconName() { mixin(MGPC!("ScriptName", 84)()); }
-			float ElapsedHeartbeatTime() { mixin(MGPC!("float", 80)()); }
-			float HeartbeatTimeout() { mixin(MGPC!("float", 76)()); }
-			UObject.Pointer Socket() { mixin(MGPC!("UObject.Pointer", 68)()); }
-			int PartyBeaconPort() { mixin(MGPC!("int", 64)()); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!("UObject.Pointer", 60)()); }
+			ScriptName BeaconName() { mixin(MGPC("ScriptName", 84)); }
+			float ElapsedHeartbeatTime() { mixin(MGPC("float", 80)); }
+			float HeartbeatTimeout() { mixin(MGPC("float", 76)); }
+			UObject.Pointer Socket() { mixin(MGPC("UObject.Pointer", 68)); }
+			int PartyBeaconPort() { mixin(MGPC("int", 64)); }
+			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC("UObject.Pointer", 60)); }
 		}
-		bool bShouldTick() { mixin(MGBPC!(72, 0x4)()); }
-		bool bShouldTick(bool val) { mixin(MSBPC!(72, 0x4)()); }
-		bool bWantsDeferredDestroy() { mixin(MGBPC!(72, 0x2)()); }
-		bool bWantsDeferredDestroy(bool val) { mixin(MSBPC!(72, 0x2)()); }
-		bool bIsInTick() { mixin(MGBPC!(72, 0x1)()); }
-		bool bIsInTick(bool val) { mixin(MSBPC!(72, 0x1)()); }
+		bool bShouldTick() { mixin(MGBPC(72, 0x4)); }
+		bool bShouldTick(bool val) { mixin(MSBPC(72, 0x4)); }
+		bool bWantsDeferredDestroy() { mixin(MGBPC(72, 0x2)); }
+		bool bWantsDeferredDestroy(bool val) { mixin(MSBPC(72, 0x2)); }
+		bool bIsInTick() { mixin(MGBPC(72, 0x1)); }
+		bool bIsInTick(bool val) { mixin(MSBPC(72, 0x1)); }
 	}
 final:
 	void OnDestroyComplete()

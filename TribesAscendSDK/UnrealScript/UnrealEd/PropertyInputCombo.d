@@ -8,7 +8,7 @@ extern(C++) interface PropertyInputCombo : PropertyInputArrayItemBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.PropertyInputCombo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.PropertyInputCombo")); }
 	private static __gshared PropertyInputCombo mDefaultProperties;
-	@property final static PropertyInputCombo DefaultProperties() { mixin(MGDPC!(PropertyInputCombo, "PropertyInputCombo UnrealEd.Default__PropertyInputCombo")()); }
+	@property final static PropertyInputCombo DefaultProperties() { mixin(MGDPC("PropertyInputCombo", "PropertyInputCombo UnrealEd.Default__PropertyInputCombo")); }
 }

@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_JoinMatch : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_JoinMatch")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_JoinMatch")); }
 	private static __gshared GFxTrPage_JoinMatch mDefaultProperties;
-	@property final static GFxTrPage_JoinMatch DefaultProperties() { mixin(MGDPC!(GFxTrPage_JoinMatch, "GFxTrPage_JoinMatch TribesGame.Default__GFxTrPage_JoinMatch")()); }
+	@property final static GFxTrPage_JoinMatch DefaultProperties() { mixin(MGDPC("GFxTrPage_JoinMatch", "GFxTrPage_JoinMatch TribesGame.Default__GFxTrPage_JoinMatch")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_JoinMatch.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_JoinMatch.SpecialAction")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_JoinMatch.FillData")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_JoinMatch.TakeFocus")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_JoinMatch.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_JoinMatch.SpecialAction")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_JoinMatch.FillData")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_JoinMatch.TakeFocus")); }
 		}
 	}
 	@property final auto ref
 	{
-		int DollMesh() { mixin(MGPC!("int", 360)()); }
-		int queueId() { mixin(MGPC!("int", 356)()); }
+		int DollMesh() { mixin(MGPC("int", 360)); }
+		int queueId() { mixin(MGPC("int", 356)); }
 	}
 final:
 	void Initialize()

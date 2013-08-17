@@ -9,13 +9,13 @@ extern(C++) interface GameCrowdSpawnInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdSpawnInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdSpawnInterface")); }
 	private static __gshared GameCrowdSpawnInterface mDefaultProperties;
-	@property final static GameCrowdSpawnInterface DefaultProperties() { mixin(MGDPC!(GameCrowdSpawnInterface, "GameCrowdSpawnInterface GameFramework.Default__GameCrowdSpawnInterface")()); }
+	@property final static GameCrowdSpawnInterface DefaultProperties() { mixin(MGDPC("GameCrowdSpawnInterface", "GameCrowdSpawnInterface GameFramework.Default__GameCrowdSpawnInterface")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetSpawnPosition;
-		public @property static final ScriptFunction GetSpawnPosition() { mixin(MGF!("mGetSpawnPosition", "Function GameFramework.GameCrowdSpawnInterface.GetSpawnPosition")()); }
+		public @property static final ScriptFunction GetSpawnPosition() { mixin(MGF("mGetSpawnPosition", "Function GameFramework.GameCrowdSpawnInterface.GetSpawnPosition")); }
 	}
 	final void GetSpawnPosition(SeqAct_GameCrowdSpawner Spawner, ref Vector SpawnPos, ref Rotator SpawnRot)
 	{

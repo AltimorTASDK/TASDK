@@ -10,9 +10,9 @@ extern(C++) interface FluidSurfaceActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FluidSurfaceActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FluidSurfaceActor")); }
 	private static __gshared FluidSurfaceActor mDefaultProperties;
-	@property final static FluidSurfaceActor DefaultProperties() { mixin(MGDPC!(FluidSurfaceActor, "FluidSurfaceActor Engine.Default__FluidSurfaceActor")()); }
+	@property final static FluidSurfaceActor DefaultProperties() { mixin(MGDPC("FluidSurfaceActor", "FluidSurfaceActor Engine.Default__FluidSurfaceActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,14 +22,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.FluidSurfaceActor.TakeDamage")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.FluidSurfaceActor.Touch")()); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.FluidSurfaceActor.TakeDamage")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.FluidSurfaceActor.Touch")); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FluidComponent'!
-		ParticleSystem ProjectileEntryEffect() { mixin(MGPC!("ParticleSystem", 480)()); }
+		ParticleSystem ProjectileEntryEffect() { mixin(MGPC("ParticleSystem", 480)); }
 	}
 final:
 	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)

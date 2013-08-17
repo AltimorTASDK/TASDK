@@ -12,9 +12,9 @@ extern(C++) interface TrDevice_Melee : TrDevice_AutoFire
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Melee")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_Melee")); }
 	private static __gshared TrDevice_Melee mDefaultProperties;
-	@property final static TrDevice_Melee DefaultProperties() { mixin(MGDPC!(TrDevice_Melee, "TrDevice_Melee TribesGame.Default__TrDevice_Melee")()); }
+	@property final static TrDevice_Melee DefaultProperties() { mixin(MGDPC("TrDevice_Melee", "TrDevice_Melee TribesGame.Default__TrDevice_Melee")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,14 +30,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OwningClientPlayHit() { mixin(MGF!("mOwningClientPlayHit", "Function TribesGame.TrDevice_Melee.OwningClientPlayHit")()); }
-			ScriptFunction PlayFireAnimation() { mixin(MGF!("mPlayFireAnimation", "Function TribesGame.TrDevice_Melee.PlayFireAnimation")()); }
-			ScriptFunction CalcAmountToLoad() { mixin(MGF!("mCalcAmountToLoad", "Function TribesGame.TrDevice_Melee.CalcAmountToLoad")()); }
-			ScriptFunction HasAmmo() { mixin(MGF!("mHasAmmo", "Function TribesGame.TrDevice_Melee.HasAmmo")()); }
-			ScriptFunction GetBuildUpTime() { mixin(MGF!("mGetBuildUpTime", "Function TribesGame.TrDevice_Melee.GetBuildUpTime")()); }
-			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_Melee.FireAmmunition")()); }
-			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrDevice_Melee.ModifyInstantHitDamage")()); }
-			ScriptFunction AttemptFlagFumble() { mixin(MGF!("mAttemptFlagFumble", "Function TribesGame.TrDevice_Melee.AttemptFlagFumble")()); }
+			ScriptFunction OwningClientPlayHit() { mixin(MGF("mOwningClientPlayHit", "Function TribesGame.TrDevice_Melee.OwningClientPlayHit")); }
+			ScriptFunction PlayFireAnimation() { mixin(MGF("mPlayFireAnimation", "Function TribesGame.TrDevice_Melee.PlayFireAnimation")); }
+			ScriptFunction CalcAmountToLoad() { mixin(MGF("mCalcAmountToLoad", "Function TribesGame.TrDevice_Melee.CalcAmountToLoad")); }
+			ScriptFunction HasAmmo() { mixin(MGF("mHasAmmo", "Function TribesGame.TrDevice_Melee.HasAmmo")); }
+			ScriptFunction GetBuildUpTime() { mixin(MGF("mGetBuildUpTime", "Function TribesGame.TrDevice_Melee.GetBuildUpTime")); }
+			ScriptFunction FireAmmunition() { mixin(MGF("mFireAmmunition", "Function TribesGame.TrDevice_Melee.FireAmmunition")); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF("mModifyInstantHitDamage", "Function TribesGame.TrDevice_Melee.ModifyInstantHitDamage")); }
+			ScriptFunction AttemptFlagFumble() { mixin(MGF("mAttemptFlagFumble", "Function TribesGame.TrDevice_Melee.AttemptFlagFumble")); }
 		}
 	}
 	struct MeleeRandomAnimation
@@ -45,18 +45,18 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice_Melee.MeleeRandomAnimation")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrDevice_Melee.MeleeRandomAnimation")); }
 		@property final auto ref
 		{
-			CameraAnim FireCameraAnim() { mixin(MGPS!("CameraAnim", 8)()); }
-			ScriptName FireAnimName() { mixin(MGPS!("ScriptName", 0)()); }
+			CameraAnim FireCameraAnim() { mixin(MGPS("CameraAnim", 8)); }
+			ScriptName FireAnimName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ImpactInfo) PendingImpactList() { mixin(MGPC!("ScriptArray!(Actor.ImpactInfo)", 2164)()); }
-		ScriptArray!(TrDevice_Melee.MeleeRandomAnimation) FiringAnimRandomList() { mixin(MGPC!("ScriptArray!(TrDevice_Melee.MeleeRandomAnimation)", 2176)()); }
-		AnimNodeSequence FiringAnimSeqNode() { mixin(MGPC!("AnimNodeSequence", 2188)()); }
+		ScriptArray!(Actor.ImpactInfo) PendingImpactList() { mixin(MGPC("ScriptArray!(Actor.ImpactInfo)", 2164)); }
+		ScriptArray!(TrDevice_Melee.MeleeRandomAnimation) FiringAnimRandomList() { mixin(MGPC("ScriptArray!(TrDevice_Melee.MeleeRandomAnimation)", 2176)); }
+		AnimNodeSequence FiringAnimSeqNode() { mixin(MGPC("AnimNodeSequence", 2188)); }
 	}
 final:
 	void OwningClientPlayHit(Vector HitLocation)

@@ -9,9 +9,9 @@ extern(C++) interface OnlinePlayerInterfaceEx : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlinePlayerInterfaceEx")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlinePlayerInterfaceEx")); }
 	private static __gshared OnlinePlayerInterfaceEx mDefaultProperties;
-	@property final static OnlinePlayerInterfaceEx DefaultProperties() { mixin(MGDPC!(OnlinePlayerInterfaceEx, "OnlinePlayerInterfaceEx Engine.Default__OnlinePlayerInterfaceEx")()); }
+	@property final static OnlinePlayerInterfaceEx DefaultProperties() { mixin(MGDPC("OnlinePlayerInterfaceEx", "OnlinePlayerInterfaceEx Engine.Default__OnlinePlayerInterfaceEx")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,27 +40,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShowFeedbackUI() { mixin(MGF!("mShowFeedbackUI", "Function Engine.OnlinePlayerInterfaceEx.ShowFeedbackUI")()); }
-			ScriptFunction ShowGamerCardUI() { mixin(MGF!("mShowGamerCardUI", "Function Engine.OnlinePlayerInterfaceEx.ShowGamerCardUI")()); }
-			ScriptFunction ShowMessagesUI() { mixin(MGF!("mShowMessagesUI", "Function Engine.OnlinePlayerInterfaceEx.ShowMessagesUI")()); }
-			ScriptFunction ShowAchievementsUI() { mixin(MGF!("mShowAchievementsUI", "Function Engine.OnlinePlayerInterfaceEx.ShowAchievementsUI")()); }
-			ScriptFunction ShowInviteUI() { mixin(MGF!("mShowInviteUI", "Function Engine.OnlinePlayerInterfaceEx.ShowInviteUI")()); }
-			ScriptFunction ShowContentMarketplaceUI() { mixin(MGF!("mShowContentMarketplaceUI", "Function Engine.OnlinePlayerInterfaceEx.ShowContentMarketplaceUI")()); }
-			ScriptFunction ShowMembershipMarketplaceUI() { mixin(MGF!("mShowMembershipMarketplaceUI", "Function Engine.OnlinePlayerInterfaceEx.ShowMembershipMarketplaceUI")()); }
-			ScriptFunction ShowDeviceSelectionUI() { mixin(MGF!("mShowDeviceSelectionUI", "Function Engine.OnlinePlayerInterfaceEx.ShowDeviceSelectionUI")()); }
-			ScriptFunction OnDeviceSelectionComplete() { mixin(MGF!("mOnDeviceSelectionComplete", "Function Engine.OnlinePlayerInterfaceEx.OnDeviceSelectionComplete")()); }
-			ScriptFunction OnProfileDataChanged() { mixin(MGF!("mOnProfileDataChanged", "Function Engine.OnlinePlayerInterfaceEx.OnProfileDataChanged")()); }
-			ScriptFunction AddDeviceSelectionDoneDelegate() { mixin(MGF!("mAddDeviceSelectionDoneDelegate", "Function Engine.OnlinePlayerInterfaceEx.AddDeviceSelectionDoneDelegate")()); }
-			ScriptFunction ClearDeviceSelectionDoneDelegate() { mixin(MGF!("mClearDeviceSelectionDoneDelegate", "Function Engine.OnlinePlayerInterfaceEx.ClearDeviceSelectionDoneDelegate")()); }
-			ScriptFunction GetDeviceSelectionResults() { mixin(MGF!("mGetDeviceSelectionResults", "Function Engine.OnlinePlayerInterfaceEx.GetDeviceSelectionResults")()); }
-			ScriptFunction IsDeviceValid() { mixin(MGF!("mIsDeviceValid", "Function Engine.OnlinePlayerInterfaceEx.IsDeviceValid")()); }
-			ScriptFunction UnlockGamerPicture() { mixin(MGF!("mUnlockGamerPicture", "Function Engine.OnlinePlayerInterfaceEx.UnlockGamerPicture")()); }
-			ScriptFunction AddProfileDataChangedDelegate() { mixin(MGF!("mAddProfileDataChangedDelegate", "Function Engine.OnlinePlayerInterfaceEx.AddProfileDataChangedDelegate")()); }
-			ScriptFunction ClearProfileDataChangedDelegate() { mixin(MGF!("mClearProfileDataChangedDelegate", "Function Engine.OnlinePlayerInterfaceEx.ClearProfileDataChangedDelegate")()); }
-			ScriptFunction ShowFriendsInviteUI() { mixin(MGF!("mShowFriendsInviteUI", "Function Engine.OnlinePlayerInterfaceEx.ShowFriendsInviteUI")()); }
-			ScriptFunction ShowPlayersUI() { mixin(MGF!("mShowPlayersUI", "Function Engine.OnlinePlayerInterfaceEx.ShowPlayersUI")()); }
-			ScriptFunction ShowCustomPlayersUI() { mixin(MGF!("mShowCustomPlayersUI", "Function Engine.OnlinePlayerInterfaceEx.ShowCustomPlayersUI")()); }
-			ScriptFunction UnlockAvatarAward() { mixin(MGF!("mUnlockAvatarAward", "Function Engine.OnlinePlayerInterfaceEx.UnlockAvatarAward")()); }
+			ScriptFunction ShowFeedbackUI() { mixin(MGF("mShowFeedbackUI", "Function Engine.OnlinePlayerInterfaceEx.ShowFeedbackUI")); }
+			ScriptFunction ShowGamerCardUI() { mixin(MGF("mShowGamerCardUI", "Function Engine.OnlinePlayerInterfaceEx.ShowGamerCardUI")); }
+			ScriptFunction ShowMessagesUI() { mixin(MGF("mShowMessagesUI", "Function Engine.OnlinePlayerInterfaceEx.ShowMessagesUI")); }
+			ScriptFunction ShowAchievementsUI() { mixin(MGF("mShowAchievementsUI", "Function Engine.OnlinePlayerInterfaceEx.ShowAchievementsUI")); }
+			ScriptFunction ShowInviteUI() { mixin(MGF("mShowInviteUI", "Function Engine.OnlinePlayerInterfaceEx.ShowInviteUI")); }
+			ScriptFunction ShowContentMarketplaceUI() { mixin(MGF("mShowContentMarketplaceUI", "Function Engine.OnlinePlayerInterfaceEx.ShowContentMarketplaceUI")); }
+			ScriptFunction ShowMembershipMarketplaceUI() { mixin(MGF("mShowMembershipMarketplaceUI", "Function Engine.OnlinePlayerInterfaceEx.ShowMembershipMarketplaceUI")); }
+			ScriptFunction ShowDeviceSelectionUI() { mixin(MGF("mShowDeviceSelectionUI", "Function Engine.OnlinePlayerInterfaceEx.ShowDeviceSelectionUI")); }
+			ScriptFunction OnDeviceSelectionComplete() { mixin(MGF("mOnDeviceSelectionComplete", "Function Engine.OnlinePlayerInterfaceEx.OnDeviceSelectionComplete")); }
+			ScriptFunction OnProfileDataChanged() { mixin(MGF("mOnProfileDataChanged", "Function Engine.OnlinePlayerInterfaceEx.OnProfileDataChanged")); }
+			ScriptFunction AddDeviceSelectionDoneDelegate() { mixin(MGF("mAddDeviceSelectionDoneDelegate", "Function Engine.OnlinePlayerInterfaceEx.AddDeviceSelectionDoneDelegate")); }
+			ScriptFunction ClearDeviceSelectionDoneDelegate() { mixin(MGF("mClearDeviceSelectionDoneDelegate", "Function Engine.OnlinePlayerInterfaceEx.ClearDeviceSelectionDoneDelegate")); }
+			ScriptFunction GetDeviceSelectionResults() { mixin(MGF("mGetDeviceSelectionResults", "Function Engine.OnlinePlayerInterfaceEx.GetDeviceSelectionResults")); }
+			ScriptFunction IsDeviceValid() { mixin(MGF("mIsDeviceValid", "Function Engine.OnlinePlayerInterfaceEx.IsDeviceValid")); }
+			ScriptFunction UnlockGamerPicture() { mixin(MGF("mUnlockGamerPicture", "Function Engine.OnlinePlayerInterfaceEx.UnlockGamerPicture")); }
+			ScriptFunction AddProfileDataChangedDelegate() { mixin(MGF("mAddProfileDataChangedDelegate", "Function Engine.OnlinePlayerInterfaceEx.AddProfileDataChangedDelegate")); }
+			ScriptFunction ClearProfileDataChangedDelegate() { mixin(MGF("mClearProfileDataChangedDelegate", "Function Engine.OnlinePlayerInterfaceEx.ClearProfileDataChangedDelegate")); }
+			ScriptFunction ShowFriendsInviteUI() { mixin(MGF("mShowFriendsInviteUI", "Function Engine.OnlinePlayerInterfaceEx.ShowFriendsInviteUI")); }
+			ScriptFunction ShowPlayersUI() { mixin(MGF("mShowPlayersUI", "Function Engine.OnlinePlayerInterfaceEx.ShowPlayersUI")); }
+			ScriptFunction ShowCustomPlayersUI() { mixin(MGF("mShowCustomPlayersUI", "Function Engine.OnlinePlayerInterfaceEx.ShowCustomPlayersUI")); }
+			ScriptFunction UnlockAvatarAward() { mixin(MGF("mUnlockAvatarAward", "Function Engine.OnlinePlayerInterfaceEx.UnlockAvatarAward")); }
 		}
 	}
 	@property final auto ref

@@ -11,9 +11,9 @@ extern(C++) interface DoorMarker : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DoorMarker")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DoorMarker")); }
 	private static __gshared DoorMarker mDefaultProperties;
-	@property final static DoorMarker DefaultProperties() { mixin(MGDPC!(DoorMarker, "DoorMarker Engine.Default__DoorMarker")()); }
+	@property final static DoorMarker DefaultProperties() { mixin(MGDPC("DoorMarker", "DoorMarker Engine.Default__DoorMarker")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,12 +27,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.DoorMarker.PostBeginPlay")()); }
-			ScriptFunction MoverOpened() { mixin(MGF!("mMoverOpened", "Function Engine.DoorMarker.MoverOpened")()); }
-			ScriptFunction MoverClosed() { mixin(MGF!("mMoverClosed", "Function Engine.DoorMarker.MoverClosed")()); }
-			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.DoorMarker.SpecialHandling")()); }
-			ScriptFunction ProceedWithMove() { mixin(MGF!("mProceedWithMove", "Function Engine.DoorMarker.ProceedWithMove")()); }
-			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.DoorMarker.SuggestMovePreparation")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.DoorMarker.PostBeginPlay")); }
+			ScriptFunction MoverOpened() { mixin(MGF("mMoverOpened", "Function Engine.DoorMarker.MoverOpened")); }
+			ScriptFunction MoverClosed() { mixin(MGF("mMoverClosed", "Function Engine.DoorMarker.MoverClosed")); }
+			ScriptFunction SpecialHandling() { mixin(MGF("mSpecialHandling", "Function Engine.DoorMarker.SpecialHandling")); }
+			ScriptFunction ProceedWithMove() { mixin(MGF("mProceedWithMove", "Function Engine.DoorMarker.ProceedWithMove")); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF("mSuggestMovePreparation", "Function Engine.DoorMarker.SuggestMovePreparation")); }
 		}
 	}
 	enum EDoorType : ubyte
@@ -45,20 +45,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor DoorTrigger() { mixin(MGPC!("Actor", 700)()); }
-			DoorMarker.EDoorType DoorType() { mixin(MGPC!("DoorMarker.EDoorType", 696)()); }
-			InterpActor MyDoor() { mixin(MGPC!("InterpActor", 692)()); }
+			Actor DoorTrigger() { mixin(MGPC("Actor", 700)); }
+			DoorMarker.EDoorType DoorType() { mixin(MGPC("DoorMarker.EDoorType", 696)); }
+			InterpActor MyDoor() { mixin(MGPC("InterpActor", 692)); }
 		}
-		bool bTempDisabledCollision() { mixin(MGBPC!(704, 0x10)()); }
-		bool bTempDisabledCollision(bool val) { mixin(MSBPC!(704, 0x10)()); }
-		bool bDoorOpen() { mixin(MGBPC!(704, 0x8)()); }
-		bool bDoorOpen(bool val) { mixin(MSBPC!(704, 0x8)()); }
-		bool bBlockedWhenClosed() { mixin(MGBPC!(704, 0x4)()); }
-		bool bBlockedWhenClosed(bool val) { mixin(MSBPC!(704, 0x4)()); }
-		bool bInitiallyClosed() { mixin(MGBPC!(704, 0x2)()); }
-		bool bInitiallyClosed(bool val) { mixin(MSBPC!(704, 0x2)()); }
-		bool bWaitUntilCompletelyOpened() { mixin(MGBPC!(704, 0x1)()); }
-		bool bWaitUntilCompletelyOpened(bool val) { mixin(MSBPC!(704, 0x1)()); }
+		bool bTempDisabledCollision() { mixin(MGBPC(704, 0x10)); }
+		bool bTempDisabledCollision(bool val) { mixin(MSBPC(704, 0x10)); }
+		bool bDoorOpen() { mixin(MGBPC(704, 0x8)); }
+		bool bDoorOpen(bool val) { mixin(MSBPC(704, 0x8)); }
+		bool bBlockedWhenClosed() { mixin(MGBPC(704, 0x4)); }
+		bool bBlockedWhenClosed(bool val) { mixin(MSBPC(704, 0x4)); }
+		bool bInitiallyClosed() { mixin(MGBPC(704, 0x2)); }
+		bool bInitiallyClosed(bool val) { mixin(MSBPC(704, 0x2)); }
+		bool bWaitUntilCompletelyOpened() { mixin(MGBPC(704, 0x1)); }
+		bool bWaitUntilCompletelyOpened(bool val) { mixin(MSBPC(704, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

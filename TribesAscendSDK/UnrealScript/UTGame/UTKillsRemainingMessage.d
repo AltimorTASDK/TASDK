@@ -12,9 +12,9 @@ extern(C++) interface UTKillsRemainingMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTKillsRemainingMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTKillsRemainingMessage")); }
 	private static __gshared UTKillsRemainingMessage mDefaultProperties;
-	@property final static UTKillsRemainingMessage DefaultProperties() { mixin(MGDPC!(UTKillsRemainingMessage, "UTKillsRemainingMessage UTGame.Default__UTKillsRemainingMessage")()); }
+	@property final static UTKillsRemainingMessage DefaultProperties() { mixin(MGDPC("UTKillsRemainingMessage", "UTKillsRemainingMessage UTGame.Default__UTKillsRemainingMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,15 +25,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTKillsRemainingMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTKillsRemainingMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTKillsRemainingMessage.AnnouncementSound")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTKillsRemainingMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTKillsRemainingMessage.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTKillsRemainingMessage.AnnouncementSound")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString KillsRemainStrings() { mixin(MGPC!("ScriptString", 112)()); }
-		SoundNodeWave KillsRemainSounds() { mixin(MGPC!("SoundNodeWave", 100)()); }
+		ScriptString KillsRemainStrings() { mixin(MGPC("ScriptString", 112)); }
+		SoundNodeWave KillsRemainSounds() { mixin(MGPC("SoundNodeWave", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

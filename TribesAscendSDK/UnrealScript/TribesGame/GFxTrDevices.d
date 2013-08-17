@@ -10,9 +10,9 @@ extern(C++) interface GFxTrDevices : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrDevices")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrDevices")); }
 	private static __gshared GFxTrDevices mDefaultProperties;
-	@property final static GFxTrDevices DefaultProperties() { mixin(MGDPC!(GFxTrDevices, "GFxTrDevices TribesGame.Default__GFxTrDevices")()); }
+	@property final static GFxTrDevices DefaultProperties() { mixin(MGDPC("GFxTrDevices", "GFxTrDevices TribesGame.Default__GFxTrDevices")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,22 +25,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.GFxTrDevices.Init")()); }
-			ScriptFunction GetAmmonClip() { mixin(MGF!("mGetAmmonClip", "Function TribesGame.GFxTrDevices.GetAmmonClip")()); }
-			ScriptFunction GetAmmonPool() { mixin(MGF!("mGetAmmonPool", "Function TribesGame.GFxTrDevices.GetAmmonPool")()); }
-			ScriptFunction UpdateData() { mixin(MGF!("mUpdateData", "Function TribesGame.GFxTrDevices.UpdateData")()); }
-			ScriptFunction Update() { mixin(MGF!("mUpdate", "Function TribesGame.GFxTrDevices.Update")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.GFxTrDevices.Init")); }
+			ScriptFunction GetAmmonClip() { mixin(MGF("mGetAmmonClip", "Function TribesGame.GFxTrDevices.GetAmmonClip")); }
+			ScriptFunction GetAmmonPool() { mixin(MGF("mGetAmmonPool", "Function TribesGame.GFxTrDevices.GetAmmonPool")); }
+			ScriptFunction UpdateData() { mixin(MGF("mUpdateData", "Function TribesGame.GFxTrDevices.UpdateData")); }
+			ScriptFunction Update() { mixin(MGF("mUpdate", "Function TribesGame.GFxTrDevices.Update")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			WorldInfo ThisWorld() { mixin(MGPC!("WorldInfo", 124)()); }
+			WorldInfo ThisWorld() { mixin(MGPC("WorldInfo", 124)); }
 			// WARNING: Property 'HUD' has the same name as a defined type!
 		}
-		bool bNeedsUpdateData() { mixin(MGBPC!(128, 0x1)()); }
-		bool bNeedsUpdateData(bool val) { mixin(MSBPC!(128, 0x1)()); }
+		bool bNeedsUpdateData() { mixin(MGBPC(128, 0x1)); }
+		bool bNeedsUpdateData(bool val) { mixin(MSBPC(128, 0x1)); }
 	}
 final:
 	void Init(GFxMinimapHud H)

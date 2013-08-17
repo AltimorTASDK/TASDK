@@ -9,9 +9,9 @@ extern(C++) interface OnlineContentInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineContentInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineContentInterface")); }
 	private static __gshared OnlineContentInterface mDefaultProperties;
-	@property final static OnlineContentInterface DefaultProperties() { mixin(MGDPC!(OnlineContentInterface, "OnlineContentInterface Engine.Default__OnlineContentInterface")()); }
+	@property final static OnlineContentInterface DefaultProperties() { mixin(MGDPC("OnlineContentInterface", "OnlineContentInterface Engine.Default__OnlineContentInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,31 +44,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnContentChange() { mixin(MGF!("mOnContentChange", "Function Engine.OnlineContentInterface.OnContentChange")()); }
-			ScriptFunction OnWriteSaveGameDataComplete() { mixin(MGF!("mOnWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.OnWriteSaveGameDataComplete")()); }
-			ScriptFunction OnReadSaveGameDataComplete() { mixin(MGF!("mOnReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.OnReadSaveGameDataComplete")()); }
-			ScriptFunction OnQueryAvailableDownloadsComplete() { mixin(MGF!("mOnQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.OnQueryAvailableDownloadsComplete")()); }
-			ScriptFunction OnReadContentComplete() { mixin(MGF!("mOnReadContentComplete", "Function Engine.OnlineContentInterface.OnReadContentComplete")()); }
-			ScriptFunction AddContentChangeDelegate() { mixin(MGF!("mAddContentChangeDelegate", "Function Engine.OnlineContentInterface.AddContentChangeDelegate")()); }
-			ScriptFunction ClearContentChangeDelegate() { mixin(MGF!("mClearContentChangeDelegate", "Function Engine.OnlineContentInterface.ClearContentChangeDelegate")()); }
-			ScriptFunction AddReadContentComplete() { mixin(MGF!("mAddReadContentComplete", "Function Engine.OnlineContentInterface.AddReadContentComplete")()); }
-			ScriptFunction ClearReadContentComplete() { mixin(MGF!("mClearReadContentComplete", "Function Engine.OnlineContentInterface.ClearReadContentComplete")()); }
-			ScriptFunction ReadContentList() { mixin(MGF!("mReadContentList", "Function Engine.OnlineContentInterface.ReadContentList")()); }
-			ScriptFunction ClearContentList() { mixin(MGF!("mClearContentList", "Function Engine.OnlineContentInterface.ClearContentList")()); }
-			ScriptFunction GetContentList() { mixin(MGF!("mGetContentList", "Function Engine.OnlineContentInterface.GetContentList")()); }
-			ScriptFunction QueryAvailableDownloads() { mixin(MGF!("mQueryAvailableDownloads", "Function Engine.OnlineContentInterface.QueryAvailableDownloads")()); }
-			ScriptFunction AddQueryAvailableDownloadsComplete() { mixin(MGF!("mAddQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.AddQueryAvailableDownloadsComplete")()); }
-			ScriptFunction ClearQueryAvailableDownloadsComplete() { mixin(MGF!("mClearQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.ClearQueryAvailableDownloadsComplete")()); }
-			ScriptFunction GetAvailableDownloadCounts() { mixin(MGF!("mGetAvailableDownloadCounts", "Function Engine.OnlineContentInterface.GetAvailableDownloadCounts")()); }
-			ScriptFunction ReadSaveGameData() { mixin(MGF!("mReadSaveGameData", "Function Engine.OnlineContentInterface.ReadSaveGameData")()); }
-			ScriptFunction GetSaveGameData() { mixin(MGF!("mGetSaveGameData", "Function Engine.OnlineContentInterface.GetSaveGameData")()); }
-			ScriptFunction AddReadSaveGameDataComplete() { mixin(MGF!("mAddReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.AddReadSaveGameDataComplete")()); }
-			ScriptFunction ClearReadSaveGameDataComplete() { mixin(MGF!("mClearReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.ClearReadSaveGameDataComplete")()); }
-			ScriptFunction WriteSaveGameData() { mixin(MGF!("mWriteSaveGameData", "Function Engine.OnlineContentInterface.WriteSaveGameData")()); }
-			ScriptFunction AddWriteSaveGameDataComplete() { mixin(MGF!("mAddWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.AddWriteSaveGameDataComplete")()); }
-			ScriptFunction ClearWriteSaveGameDataComplete() { mixin(MGF!("mClearWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.ClearWriteSaveGameDataComplete")()); }
-			ScriptFunction DeleteSaveGame() { mixin(MGF!("mDeleteSaveGame", "Function Engine.OnlineContentInterface.DeleteSaveGame")()); }
-			ScriptFunction ClearSaveGames() { mixin(MGF!("mClearSaveGames", "Function Engine.OnlineContentInterface.ClearSaveGames")()); }
+			ScriptFunction OnContentChange() { mixin(MGF("mOnContentChange", "Function Engine.OnlineContentInterface.OnContentChange")); }
+			ScriptFunction OnWriteSaveGameDataComplete() { mixin(MGF("mOnWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.OnWriteSaveGameDataComplete")); }
+			ScriptFunction OnReadSaveGameDataComplete() { mixin(MGF("mOnReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.OnReadSaveGameDataComplete")); }
+			ScriptFunction OnQueryAvailableDownloadsComplete() { mixin(MGF("mOnQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.OnQueryAvailableDownloadsComplete")); }
+			ScriptFunction OnReadContentComplete() { mixin(MGF("mOnReadContentComplete", "Function Engine.OnlineContentInterface.OnReadContentComplete")); }
+			ScriptFunction AddContentChangeDelegate() { mixin(MGF("mAddContentChangeDelegate", "Function Engine.OnlineContentInterface.AddContentChangeDelegate")); }
+			ScriptFunction ClearContentChangeDelegate() { mixin(MGF("mClearContentChangeDelegate", "Function Engine.OnlineContentInterface.ClearContentChangeDelegate")); }
+			ScriptFunction AddReadContentComplete() { mixin(MGF("mAddReadContentComplete", "Function Engine.OnlineContentInterface.AddReadContentComplete")); }
+			ScriptFunction ClearReadContentComplete() { mixin(MGF("mClearReadContentComplete", "Function Engine.OnlineContentInterface.ClearReadContentComplete")); }
+			ScriptFunction ReadContentList() { mixin(MGF("mReadContentList", "Function Engine.OnlineContentInterface.ReadContentList")); }
+			ScriptFunction ClearContentList() { mixin(MGF("mClearContentList", "Function Engine.OnlineContentInterface.ClearContentList")); }
+			ScriptFunction GetContentList() { mixin(MGF("mGetContentList", "Function Engine.OnlineContentInterface.GetContentList")); }
+			ScriptFunction QueryAvailableDownloads() { mixin(MGF("mQueryAvailableDownloads", "Function Engine.OnlineContentInterface.QueryAvailableDownloads")); }
+			ScriptFunction AddQueryAvailableDownloadsComplete() { mixin(MGF("mAddQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.AddQueryAvailableDownloadsComplete")); }
+			ScriptFunction ClearQueryAvailableDownloadsComplete() { mixin(MGF("mClearQueryAvailableDownloadsComplete", "Function Engine.OnlineContentInterface.ClearQueryAvailableDownloadsComplete")); }
+			ScriptFunction GetAvailableDownloadCounts() { mixin(MGF("mGetAvailableDownloadCounts", "Function Engine.OnlineContentInterface.GetAvailableDownloadCounts")); }
+			ScriptFunction ReadSaveGameData() { mixin(MGF("mReadSaveGameData", "Function Engine.OnlineContentInterface.ReadSaveGameData")); }
+			ScriptFunction GetSaveGameData() { mixin(MGF("mGetSaveGameData", "Function Engine.OnlineContentInterface.GetSaveGameData")); }
+			ScriptFunction AddReadSaveGameDataComplete() { mixin(MGF("mAddReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.AddReadSaveGameDataComplete")); }
+			ScriptFunction ClearReadSaveGameDataComplete() { mixin(MGF("mClearReadSaveGameDataComplete", "Function Engine.OnlineContentInterface.ClearReadSaveGameDataComplete")); }
+			ScriptFunction WriteSaveGameData() { mixin(MGF("mWriteSaveGameData", "Function Engine.OnlineContentInterface.WriteSaveGameData")); }
+			ScriptFunction AddWriteSaveGameDataComplete() { mixin(MGF("mAddWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.AddWriteSaveGameDataComplete")); }
+			ScriptFunction ClearWriteSaveGameDataComplete() { mixin(MGF("mClearWriteSaveGameDataComplete", "Function Engine.OnlineContentInterface.ClearWriteSaveGameDataComplete")); }
+			ScriptFunction DeleteSaveGame() { mixin(MGF("mDeleteSaveGame", "Function Engine.OnlineContentInterface.DeleteSaveGame")); }
+			ScriptFunction ClearSaveGames() { mixin(MGF("mClearSaveGames", "Function Engine.OnlineContentInterface.ClearSaveGames")); }
 		}
 	}
 	@property final auto ref

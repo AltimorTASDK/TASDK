@@ -10,9 +10,9 @@ extern(C++) interface Teleporter : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Teleporter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Teleporter")); }
 	private static __gshared Teleporter mDefaultProperties;
-	@property final static Teleporter DefaultProperties() { mixin(MGDPC!(Teleporter, "Teleporter Engine.Default__Teleporter")()); }
+	@property final static Teleporter DefaultProperties() { mixin(MGDPC("Teleporter", "Teleporter Engine.Default__Teleporter")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,37 +26,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanTeleport() { mixin(MGF!("mCanTeleport", "Function Engine.Teleporter.CanTeleport")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Teleporter.PostBeginPlay")()); }
-			ScriptFunction Accept() { mixin(MGF!("mAccept", "Function Engine.Teleporter.Accept")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.Teleporter.Touch")()); }
-			ScriptFunction PostTouch() { mixin(MGF!("mPostTouch", "Function Engine.Teleporter.PostTouch")()); }
-			ScriptFunction SpecialHandling() { mixin(MGF!("mSpecialHandling", "Function Engine.Teleporter.SpecialHandling")()); }
+			ScriptFunction CanTeleport() { mixin(MGF("mCanTeleport", "Function Engine.Teleporter.CanTeleport")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Teleporter.PostBeginPlay")); }
+			ScriptFunction Accept() { mixin(MGF("mAccept", "Function Engine.Teleporter.Accept")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.Teleporter.Touch")); }
+			ScriptFunction PostTouch() { mixin(MGF("mPostTouch", "Function Engine.Teleporter.PostTouch")); }
+			ScriptFunction SpecialHandling() { mixin(MGF("mSpecialHandling", "Function Engine.Teleporter.SpecialHandling")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float LastFired() { mixin(MGPC!("float", 728)()); }
-			Vector TargetVelocity() { mixin(MGPC!("Vector", 716)()); }
-			ScriptName ProductRequired() { mixin(MGPC!("ScriptName", 704)()); }
+			float LastFired() { mixin(MGPC("float", 728)); }
+			Vector TargetVelocity() { mixin(MGPC("Vector", 716)); }
+			ScriptName ProductRequired() { mixin(MGPC("ScriptName", 704)); }
 			// WARNING: Property 'URL' has the same name as a defined type!
 		}
-		bool bCanTeleportVehicles() { mixin(MGBPC!(712, 0x40)()); }
-		bool bCanTeleportVehicles(bool val) { mixin(MSBPC!(712, 0x40)()); }
-		bool bEnabled() { mixin(MGBPC!(712, 0x20)()); }
-		bool bEnabled(bool val) { mixin(MSBPC!(712, 0x20)()); }
-		bool bReversesZ() { mixin(MGBPC!(712, 0x10)()); }
-		bool bReversesZ(bool val) { mixin(MSBPC!(712, 0x10)()); }
-		bool bReversesY() { mixin(MGBPC!(712, 0x8)()); }
-		bool bReversesY(bool val) { mixin(MSBPC!(712, 0x8)()); }
-		bool bReversesX() { mixin(MGBPC!(712, 0x4)()); }
-		bool bReversesX(bool val) { mixin(MSBPC!(712, 0x4)()); }
-		bool bChangesYaw() { mixin(MGBPC!(712, 0x2)()); }
-		bool bChangesYaw(bool val) { mixin(MSBPC!(712, 0x2)()); }
-		bool bChangesVelocity() { mixin(MGBPC!(712, 0x1)()); }
-		bool bChangesVelocity(bool val) { mixin(MSBPC!(712, 0x1)()); }
+		bool bCanTeleportVehicles() { mixin(MGBPC(712, 0x40)); }
+		bool bCanTeleportVehicles(bool val) { mixin(MSBPC(712, 0x40)); }
+		bool bEnabled() { mixin(MGBPC(712, 0x20)); }
+		bool bEnabled(bool val) { mixin(MSBPC(712, 0x20)); }
+		bool bReversesZ() { mixin(MGBPC(712, 0x10)); }
+		bool bReversesZ(bool val) { mixin(MSBPC(712, 0x10)); }
+		bool bReversesY() { mixin(MGBPC(712, 0x8)); }
+		bool bReversesY(bool val) { mixin(MSBPC(712, 0x8)); }
+		bool bReversesX() { mixin(MGBPC(712, 0x4)); }
+		bool bReversesX(bool val) { mixin(MSBPC(712, 0x4)); }
+		bool bChangesYaw() { mixin(MGBPC(712, 0x2)); }
+		bool bChangesYaw(bool val) { mixin(MSBPC(712, 0x2)); }
+		bool bChangesVelocity() { mixin(MGBPC(712, 0x1)); }
+		bool bChangesVelocity(bool val) { mixin(MSBPC(712, 0x1)); }
 	}
 final:
 	bool CanTeleport(Actor A)

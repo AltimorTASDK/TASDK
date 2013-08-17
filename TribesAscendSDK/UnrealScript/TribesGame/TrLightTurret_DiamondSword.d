@@ -8,7 +8,7 @@ extern(C++) interface TrLightTurret_DiamondSword : TrDeployable_LightTurret
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLightTurret_DiamondSword")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrLightTurret_DiamondSword")); }
 	private static __gshared TrLightTurret_DiamondSword mDefaultProperties;
-	@property final static TrLightTurret_DiamondSword DefaultProperties() { mixin(MGDPC!(TrLightTurret_DiamondSword, "TrLightTurret_DiamondSword TribesGame.Default__TrLightTurret_DiamondSword")()); }
+	@property final static TrLightTurret_DiamondSword DefaultProperties() { mixin(MGDPC("TrLightTurret_DiamondSword", "TrLightTurret_DiamondSword TribesGame.Default__TrLightTurret_DiamondSword")); }
 }

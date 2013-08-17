@@ -8,7 +8,7 @@ extern(C++) interface PrecompileShadersCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.PrecompileShadersCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.PrecompileShadersCommandlet")); }
 	private static __gshared PrecompileShadersCommandlet mDefaultProperties;
-	@property final static PrecompileShadersCommandlet DefaultProperties() { mixin(MGDPC!(PrecompileShadersCommandlet, "PrecompileShadersCommandlet UnrealEd.Default__PrecompileShadersCommandlet")()); }
+	@property final static PrecompileShadersCommandlet DefaultProperties() { mixin(MGDPC("PrecompileShadersCommandlet", "PrecompileShadersCommandlet UnrealEd.Default__PrecompileShadersCommandlet")); }
 }

@@ -8,9 +8,9 @@ extern(C++) interface MaterialExpressionTransform : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTransform")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionTransform")); }
 	private static __gshared MaterialExpressionTransform mDefaultProperties;
-	@property final static MaterialExpressionTransform DefaultProperties() { mixin(MGDPC!(MaterialExpressionTransform, "MaterialExpressionTransform Engine.Default__MaterialExpressionTransform")()); }
+	@property final static MaterialExpressionTransform DefaultProperties() { mixin(MGDPC("MaterialExpressionTransform", "MaterialExpressionTransform Engine.Default__MaterialExpressionTransform")); }
 	enum EMaterialVectorCoordTransform : ubyte
 	{
 		TRANSFORM_World = 0,
@@ -28,8 +28,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		MaterialExpressionTransform.EMaterialVectorCoordTransform TransformType() { mixin(MGPC!("MaterialExpressionTransform.EMaterialVectorCoordTransform", 137)()); }
-		MaterialExpressionTransform.EMaterialVectorCoordTransformSource TransformSourceType() { mixin(MGPC!("MaterialExpressionTransform.EMaterialVectorCoordTransformSource", 136)()); }
+		MaterialExpressionTransform.EMaterialVectorCoordTransform TransformType() { mixin(MGPC("MaterialExpressionTransform.EMaterialVectorCoordTransform", 137)); }
+		MaterialExpressionTransform.EMaterialVectorCoordTransformSource TransformSourceType() { mixin(MGPC("MaterialExpressionTransform.EMaterialVectorCoordTransformSource", 136)); }
 		// WARNING: Property 'Input' has the same name as a defined type!
 	}
 }

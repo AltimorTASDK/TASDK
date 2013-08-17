@@ -8,9 +8,9 @@ extern(C++) interface UTMutator_FriendlyFire : UTMutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator_FriendlyFire")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTMutator_FriendlyFire")); }
 	private static __gshared UTMutator_FriendlyFire mDefaultProperties;
-	@property final static UTMutator_FriendlyFire DefaultProperties() { mixin(MGDPC!(UTMutator_FriendlyFire, "UTMutator_FriendlyFire UTGame.Default__UTMutator_FriendlyFire")()); }
+	@property final static UTMutator_FriendlyFire DefaultProperties() { mixin(MGDPC("UTMutator_FriendlyFire", "UTMutator_FriendlyFire UTGame.Default__UTMutator_FriendlyFire")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +20,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction MutatorIsAllowed() { mixin(MGF!("mMutatorIsAllowed", "Function UTGame.UTMutator_FriendlyFire.MutatorIsAllowed")()); }
-			ScriptFunction InitMutator() { mixin(MGF!("mInitMutator", "Function UTGame.UTMutator_FriendlyFire.InitMutator")()); }
+			ScriptFunction MutatorIsAllowed() { mixin(MGF("mMutatorIsAllowed", "Function UTGame.UTMutator_FriendlyFire.MutatorIsAllowed")); }
+			ScriptFunction InitMutator() { mixin(MGF("mInitMutator", "Function UTGame.UTMutator_FriendlyFire.InitMutator")); }
 		}
 	}
-	@property final auto ref float FriendlyFireScale() { mixin(MGPC!("float", 496)()); }
+	@property final auto ref float FriendlyFireScale() { mixin(MGPC("float", 496)); }
 final:
 	bool MutatorIsAllowed()
 	{

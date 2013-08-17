@@ -9,9 +9,9 @@ extern(C++) interface UTSeqAct_ScriptedVoiceMessage : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSeqAct_ScriptedVoiceMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSeqAct_ScriptedVoiceMessage")); }
 	private static __gshared UTSeqAct_ScriptedVoiceMessage mDefaultProperties;
-	@property final static UTSeqAct_ScriptedVoiceMessage DefaultProperties() { mixin(MGDPC!(UTSeqAct_ScriptedVoiceMessage, "UTSeqAct_ScriptedVoiceMessage UTGame.Default__UTSeqAct_ScriptedVoiceMessage")()); }
+	@property final static UTSeqAct_ScriptedVoiceMessage DefaultProperties() { mixin(MGDPC("UTSeqAct_ScriptedVoiceMessage", "UTSeqAct_ScriptedVoiceMessage UTGame.Default__UTSeqAct_ScriptedVoiceMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,14 +21,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Activated() { mixin(MGF!("mActivated", "Function UTGame.UTSeqAct_ScriptedVoiceMessage.Activated")()); }
-			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function UTGame.UTSeqAct_ScriptedVoiceMessage.GetObjClassVersion")()); }
+			ScriptFunction Activated() { mixin(MGF("mActivated", "Function UTGame.UTSeqAct_ScriptedVoiceMessage.Activated")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF("mGetObjClassVersion", "Function UTGame.UTSeqAct_ScriptedVoiceMessage.GetObjClassVersion")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString SpeakingCharacterName() { mixin(MGPC!("ScriptString", 236)()); }
-		SoundNodeWave VoiceToPlay() { mixin(MGPC!("SoundNodeWave", 232)()); }
+		ScriptString SpeakingCharacterName() { mixin(MGPC("ScriptString", 236)); }
+		SoundNodeWave VoiceToPlay() { mixin(MGPC("SoundNodeWave", 232)); }
 	}
 final:
 	void Activated()

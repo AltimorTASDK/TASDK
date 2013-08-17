@@ -9,9 +9,9 @@ extern(C++) interface TrRegionSettings : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRegionSettings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrRegionSettings")); }
 	private static __gshared TrRegionSettings mDefaultProperties;
-	@property final static TrRegionSettings DefaultProperties() { mixin(MGDPC!(TrRegionSettings, "TrRegionSettings TribesGame.Default__TrRegionSettings")()); }
+	@property final static TrRegionSettings DefaultProperties() { mixin(MGDPC("TrRegionSettings", "TrRegionSettings TribesGame.Default__TrRegionSettings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,24 +30,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPreferredSiteId() { mixin(MGF!("mGetPreferredSiteId", "Function TribesGame.TrRegionSettings.GetPreferredSiteId")()); }
-			ScriptFunction LoadRegionSetting() { mixin(MGF!("mLoadRegionSetting", "Function TribesGame.TrRegionSettings.LoadRegionSetting")()); }
-			ScriptFunction GetRegionName() { mixin(MGF!("mGetRegionName", "Function TribesGame.TrRegionSettings.GetRegionName")()); }
-			ScriptFunction GetRegionIdAtIndex() { mixin(MGF!("mGetRegionIdAtIndex", "Function TribesGame.TrRegionSettings.GetRegionIdAtIndex")()); }
-			ScriptFunction GetRegionIndexByName() { mixin(MGF!("mGetRegionIndexByName", "Function TribesGame.TrRegionSettings.GetRegionIndexByName")()); }
-			ScriptFunction LoadRegions() { mixin(MGF!("mLoadRegions", "Function TribesGame.TrRegionSettings.LoadRegions")()); }
-			ScriptFunction SetPreferredSiteId() { mixin(MGF!("mSetPreferredSiteId", "Function TribesGame.TrRegionSettings.SetPreferredSiteId")()); }
-			ScriptFunction LoadRegionLabels() { mixin(MGF!("mLoadRegionLabels", "Function TribesGame.TrRegionSettings.LoadRegionLabels")()); }
-			ScriptFunction SetPreferredRegion() { mixin(MGF!("mSetPreferredRegion", "Function TribesGame.TrRegionSettings.SetPreferredRegion")()); }
-			ScriptFunction AddRegion() { mixin(MGF!("mAddRegion", "Function TribesGame.TrRegionSettings.AddRegion")()); }
-			ScriptFunction AddSetting() { mixin(MGF!("mAddSetting", "Function TribesGame.TrRegionSettings.AddSetting")()); }
+			ScriptFunction GetPreferredSiteId() { mixin(MGF("mGetPreferredSiteId", "Function TribesGame.TrRegionSettings.GetPreferredSiteId")); }
+			ScriptFunction LoadRegionSetting() { mixin(MGF("mLoadRegionSetting", "Function TribesGame.TrRegionSettings.LoadRegionSetting")); }
+			ScriptFunction GetRegionName() { mixin(MGF("mGetRegionName", "Function TribesGame.TrRegionSettings.GetRegionName")); }
+			ScriptFunction GetRegionIdAtIndex() { mixin(MGF("mGetRegionIdAtIndex", "Function TribesGame.TrRegionSettings.GetRegionIdAtIndex")); }
+			ScriptFunction GetRegionIndexByName() { mixin(MGF("mGetRegionIndexByName", "Function TribesGame.TrRegionSettings.GetRegionIndexByName")); }
+			ScriptFunction LoadRegions() { mixin(MGF("mLoadRegions", "Function TribesGame.TrRegionSettings.LoadRegions")); }
+			ScriptFunction SetPreferredSiteId() { mixin(MGF("mSetPreferredSiteId", "Function TribesGame.TrRegionSettings.SetPreferredSiteId")); }
+			ScriptFunction LoadRegionLabels() { mixin(MGF("mLoadRegionLabels", "Function TribesGame.TrRegionSettings.LoadRegionLabels")); }
+			ScriptFunction SetPreferredRegion() { mixin(MGF("mSetPreferredRegion", "Function TribesGame.TrRegionSettings.SetPreferredRegion")); }
+			ScriptFunction AddRegion() { mixin(MGF("mAddRegion", "Function TribesGame.TrRegionSettings.AddRegion")); }
+			ScriptFunction AddSetting() { mixin(MGF("mAddSetting", "Function TribesGame.TrRegionSettings.AddSetting")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) AvailableRegions() { mixin(MGPC!("ScriptArray!(SeqAct_ModifyProperty.PropertyInfo)", 128)()); }
-		GFxObject m_RegionSettingsList() { mixin(MGPC!("GFxObject", 124)()); }
-		int m_RegionSettingsCount() { mixin(MGPC!("int", 120)()); }
+		ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) AvailableRegions() { mixin(MGPC("ScriptArray!(SeqAct_ModifyProperty.PropertyInfo)", 128)); }
+		GFxObject m_RegionSettingsList() { mixin(MGPC("GFxObject", 124)); }
+		int m_RegionSettingsCount() { mixin(MGPC("int", 120)); }
 	}
 final:
 	int GetPreferredSiteId()

@@ -12,9 +12,9 @@ extern(C++) interface TrUpgradeMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrUpgradeMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrUpgradeMessage")); }
 	private static __gshared TrUpgradeMessage mDefaultProperties;
-	@property final static TrUpgradeMessage DefaultProperties() { mixin(MGDPC!(TrUpgradeMessage, "TrUpgradeMessage TribesGame.Default__TrUpgradeMessage")()); }
+	@property final static TrUpgradeMessage DefaultProperties() { mixin(MGDPC("TrUpgradeMessage", "TrUpgradeMessage TribesGame.Default__TrUpgradeMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,14 +24,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrUpgradeMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrUpgradeMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrUpgradeMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrUpgradeMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString ObjectiveUpgraded() { mixin(MGPC!("ScriptString", 104)()); }
-		SoundCue UpgradeSound() { mixin(MGPC!("SoundCue", 100)()); }
+		ScriptString ObjectiveUpgraded() { mixin(MGPC("ScriptString", 104)); }
+		SoundCue UpgradeSound() { mixin(MGPC("SoundCue", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

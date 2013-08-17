@@ -11,9 +11,9 @@ extern(C++) interface GFxUDKFrontEnd_View : GFxUIView
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_View")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxUDKFrontEnd_View")); }
 	private static __gshared GFxUDKFrontEnd_View mDefaultProperties;
-	@property final static GFxUDKFrontEnd_View DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_View, "GFxUDKFrontEnd_View UTGame.Default__GFxUDKFrontEnd_View")()); }
+	@property final static GFxUDKFrontEnd_View DefaultProperties() { mixin(MGDPC("GFxUDKFrontEnd_View", "GFxUDKFrontEnd_View UTGame.Default__GFxUDKFrontEnd_View")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,17 +32,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnViewLoaded() { mixin(MGF!("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_View.OnViewLoaded")()); }
-			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_View.OnTopMostView")()); }
-			ScriptFunction OnViewActivated() { mixin(MGF!("mOnViewActivated", "Function UTGame.GFxUDKFrontEnd_View.OnViewActivated")()); }
-			ScriptFunction OnViewClosed() { mixin(MGF!("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_View.OnViewClosed")()); }
-			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_View.DisableSubComponents")()); }
-			ScriptFunction PlayOpenAnimation() { mixin(MGF!("mPlayOpenAnimation", "Function UTGame.GFxUDKFrontEnd_View.PlayOpenAnimation")()); }
-			ScriptFunction PlayCloseAnimation() { mixin(MGF!("mPlayCloseAnimation", "Function UTGame.GFxUDKFrontEnd_View.PlayCloseAnimation")()); }
-			ScriptFunction Select_Back() { mixin(MGF!("mSelect_Back", "Function UTGame.GFxUDKFrontEnd_View.Select_Back")()); }
-			ScriptFunction MoveBackImpl() { mixin(MGF!("mMoveBackImpl", "Function UTGame.GFxUDKFrontEnd_View.MoveBackImpl")()); }
-			ScriptFunction OnEscapeKeyPress() { mixin(MGF!("mOnEscapeKeyPress", "Function UTGame.GFxUDKFrontEnd_View.OnEscapeKeyPress")()); }
-			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_View.WidgetInitialized")()); }
+			ScriptFunction OnViewLoaded() { mixin(MGF("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_View.OnViewLoaded")); }
+			ScriptFunction OnTopMostView() { mixin(MGF("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_View.OnTopMostView")); }
+			ScriptFunction OnViewActivated() { mixin(MGF("mOnViewActivated", "Function UTGame.GFxUDKFrontEnd_View.OnViewActivated")); }
+			ScriptFunction OnViewClosed() { mixin(MGF("mOnViewClosed", "Function UTGame.GFxUDKFrontEnd_View.OnViewClosed")); }
+			ScriptFunction DisableSubComponents() { mixin(MGF("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_View.DisableSubComponents")); }
+			ScriptFunction PlayOpenAnimation() { mixin(MGF("mPlayOpenAnimation", "Function UTGame.GFxUDKFrontEnd_View.PlayOpenAnimation")); }
+			ScriptFunction PlayCloseAnimation() { mixin(MGF("mPlayCloseAnimation", "Function UTGame.GFxUDKFrontEnd_View.PlayCloseAnimation")); }
+			ScriptFunction Select_Back() { mixin(MGF("mSelect_Back", "Function UTGame.GFxUDKFrontEnd_View.Select_Back")); }
+			ScriptFunction MoveBackImpl() { mixin(MGF("mMoveBackImpl", "Function UTGame.GFxUDKFrontEnd_View.MoveBackImpl")); }
+			ScriptFunction OnEscapeKeyPress() { mixin(MGF("mOnEscapeKeyPress", "Function UTGame.GFxUDKFrontEnd_View.OnEscapeKeyPress")); }
+			ScriptFunction WidgetInitialized() { mixin(MGF("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_View.WidgetInitialized")); }
 		}
 	}
 	static struct Constants
@@ -51,8 +51,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName ViewName() { mixin(MGPC!("ScriptName", 128)()); }
-		GFxUDKFrontEnd MenuManager() { mixin(MGPC!("GFxUDKFrontEnd", 124)()); }
+		ScriptName ViewName() { mixin(MGPC("ScriptName", 128)); }
+		GFxUDKFrontEnd MenuManager() { mixin(MGPC("GFxUDKFrontEnd", 124)); }
 	}
 final:
 	void OnViewLoaded()

@@ -11,9 +11,9 @@ extern(C++) interface TrDaDStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDaDStats")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDaDStats")); }
 	private static __gshared TrDaDStats mDefaultProperties;
-	@property final static TrDaDStats DefaultProperties() { mixin(MGDPC!(TrDaDStats, "TrDaDStats TribesGame.Default__TrDaDStats")()); }
+	@property final static TrDaDStats DefaultProperties() { mixin(MGDPC("TrDaDStats", "TrDaDStats TribesGame.Default__TrDaDStats")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,15 +30,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrDaDStats.Initialize")()); }
-			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrDaDStats.Show")()); }
-			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrDaDStats.Hide")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDaDStats.Tick")()); }
-			ScriptFunction UpdateTeam() { mixin(MGF!("mUpdateTeam", "Function TribesGame.TrDaDStats.UpdateTeam")()); }
-			ScriptFunction UpdateTeamScore() { mixin(MGF!("mUpdateTeamScore", "Function TribesGame.TrDaDStats.UpdateTeamScore")()); }
-			ScriptFunction UpdateTime() { mixin(MGF!("mUpdateTime", "Function TribesGame.TrDaDStats.UpdateTime")()); }
-			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrDaDStats.FormatTime")()); }
-			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrDaDStats.ForceUpdate")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrDaDStats.Initialize")); }
+			ScriptFunction Show() { mixin(MGF("mShow", "Function TribesGame.TrDaDStats.Show")); }
+			ScriptFunction Hide() { mixin(MGF("mHide", "Function TribesGame.TrDaDStats.Hide")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrDaDStats.Tick")); }
+			ScriptFunction UpdateTeam() { mixin(MGF("mUpdateTeam", "Function TribesGame.TrDaDStats.UpdateTeam")); }
+			ScriptFunction UpdateTeamScore() { mixin(MGF("mUpdateTeamScore", "Function TribesGame.TrDaDStats.UpdateTeamScore")); }
+			ScriptFunction UpdateTime() { mixin(MGF("mUpdateTime", "Function TribesGame.TrDaDStats.UpdateTime")); }
+			ScriptFunction FormatTime() { mixin(MGF("mFormatTime", "Function TribesGame.TrDaDStats.FormatTime")); }
+			ScriptFunction ForceUpdate() { mixin(MGF("mForceUpdate", "Function TribesGame.TrDaDStats.ForceUpdate")); }
 		}
 	}
 	struct DaDScoreInfo
@@ -46,42 +46,42 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDaDStats.DaDScoreInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrDaDStats.DaDScoreInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				int CoreHealthPct() { mixin(MGPS!("int", 12)()); }
-				int GeneratorRemainingTime() { mixin(MGPS!("int", 4)()); }
+				int CoreHealthPct() { mixin(MGPS("int", 12)); }
+				int GeneratorRemainingTime() { mixin(MGPS("int", 4)); }
 			}
-			bool bCapacitorCOnline() { mixin(MGBPS!(8, 0x4)()); }
-			bool bCapacitorCOnline(bool val) { mixin(MSBPS!(8, 0x4)()); }
-			bool bCapacitorBOnline() { mixin(MGBPS!(8, 0x2)()); }
-			bool bCapacitorBOnline(bool val) { mixin(MSBPS!(8, 0x2)()); }
-			bool bCapacitorAOnline() { mixin(MGBPS!(8, 0x1)()); }
-			bool bCapacitorAOnline(bool val) { mixin(MSBPS!(8, 0x1)()); }
-			bool bGeneratorOnline() { mixin(MGBPS!(0, 0x1)()); }
-			bool bGeneratorOnline(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bCapacitorCOnline() { mixin(MGBPS(8, 0x4)); }
+			bool bCapacitorCOnline(bool val) { mixin(MSBPS(8, 0x4)); }
+			bool bCapacitorBOnline() { mixin(MGBPS(8, 0x2)); }
+			bool bCapacitorBOnline(bool val) { mixin(MSBPS(8, 0x2)); }
+			bool bCapacitorAOnline() { mixin(MGBPS(8, 0x1)); }
+			bool bCapacitorAOnline(bool val) { mixin(MSBPS(8, 0x1)); }
+			bool bGeneratorOnline() { mixin(MGBPS(0, 0x1)); }
+			bool bGeneratorOnline(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrDaDStats.DaDScoreInfo EnemyDaDScore() { mixin(MGPC!("TrDaDStats.DaDScoreInfo", 116)()); }
-			TrDaDStats.DaDScoreInfo FriendlyDaDScore() { mixin(MGPC!("TrDaDStats.DaDScoreInfo", 100)()); }
-			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 96)()); }
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 92)()); }
-			int RoundNum() { mixin(MGPC!("int", 88)()); }
-			int RoundScore() { mixin(MGPC!("int", 80)()); }
-			int TeamScore() { mixin(MGPC!("int", 72)()); }
-			int RemainingTime() { mixin(MGPC!("int", 64)()); }
-			int MyTeam() { mixin(MGPC!("int", 60)()); }
+			TrDaDStats.DaDScoreInfo EnemyDaDScore() { mixin(MGPC("TrDaDStats.DaDScoreInfo", 116)); }
+			TrDaDStats.DaDScoreInfo FriendlyDaDScore() { mixin(MGPC("TrDaDStats.DaDScoreInfo", 100)); }
+			TrPlayerController TrPC() { mixin(MGPC("TrPlayerController", 96)); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC("GfxTrHud", 92)); }
+			int RoundNum() { mixin(MGPC("int", 88)); }
+			int RoundScore() { mixin(MGPC("int", 80)); }
+			int TeamScore() { mixin(MGPC("int", 72)); }
+			int RemainingTime() { mixin(MGPC("int", 64)); }
+			int MyTeam() { mixin(MGPC("int", 60)); }
 		}
-		bool bForcingUpdate() { mixin(MGBPC!(68, 0x2)()); }
-		bool bForcingUpdate(bool val) { mixin(MSBPC!(68, 0x2)()); }
-		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
-		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool bForcingUpdate() { mixin(MGBPC(68, 0x2)); }
+		bool bForcingUpdate(bool val) { mixin(MSBPC(68, 0x2)); }
+		bool bIsActive() { mixin(MGBPC(68, 0x1)); }
+		bool bIsActive(bool val) { mixin(MSBPC(68, 0x1)); }
 	}
 final:
 	void Initialize(TrPlayerController PC, GfxTrHud MP)

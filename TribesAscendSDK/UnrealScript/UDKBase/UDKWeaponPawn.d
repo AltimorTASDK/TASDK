@@ -11,19 +11,19 @@ extern(C++) interface UDKWeaponPawn : UDKVehicleBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKWeaponPawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKWeaponPawn")); }
 	private static __gshared UDKWeaponPawn mDefaultProperties;
-	@property final static UDKWeaponPawn DefaultProperties() { mixin(MGDPC!(UDKWeaponPawn, "UDKWeaponPawn UDKBase.Default__UDKWeaponPawn")()); }
+	@property final static UDKWeaponPawn DefaultProperties() { mixin(MGDPC("UDKWeaponPawn", "UDKWeaponPawn UDKBase.Default__UDKWeaponPawn")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetTargetLocation;
-		public @property static final ScriptFunction GetTargetLocation() { mixin(MGF!("mGetTargetLocation", "Function UDKBase.UDKWeaponPawn.GetTargetLocation")()); }
+		public @property static final ScriptFunction GetTargetLocation() { mixin(MGF("mGetTargetLocation", "Function UDKBase.UDKWeaponPawn.GetTargetLocation")); }
 	}
 	@property final auto ref
 	{
-		int MySeatIndex() { mixin(MGPC!("int", 1556)()); }
-		UDKWeapon MyVehicleWeapon() { mixin(MGPC!("UDKWeapon", 1552)()); }
-		UDKVehicle MyVehicle() { mixin(MGPC!("UDKVehicle", 1548)()); }
+		int MySeatIndex() { mixin(MGPC("int", 1556)); }
+		UDKWeapon MyVehicleWeapon() { mixin(MGPC("UDKWeapon", 1552)); }
+		UDKVehicle MyVehicle() { mixin(MGPC("UDKVehicle", 1548)); }
 	}
 	final Vector GetTargetLocation(Actor* RequestedBy = null, bool* bRequestAlternateLoc = null)
 	{

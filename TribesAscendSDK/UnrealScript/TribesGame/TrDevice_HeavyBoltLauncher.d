@@ -10,9 +10,9 @@ extern(C++) interface TrDevice_HeavyBoltLauncher : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_HeavyBoltLauncher")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_HeavyBoltLauncher")); }
 	private static __gshared TrDevice_HeavyBoltLauncher mDefaultProperties;
-	@property final static TrDevice_HeavyBoltLauncher DefaultProperties() { mixin(MGDPC!(TrDevice_HeavyBoltLauncher, "TrDevice_HeavyBoltLauncher TribesGame.Default__TrDevice_HeavyBoltLauncher")()); }
+	@property final static TrDevice_HeavyBoltLauncher DefaultProperties() { mixin(MGDPC("TrDevice_HeavyBoltLauncher", "TrDevice_HeavyBoltLauncher TribesGame.Default__TrDevice_HeavyBoltLauncher")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,17 +28,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetBoltIdle() { mixin(MGF!("mSetBoltIdle", "Function TribesGame.TrDevice_HeavyBoltLauncher.SetBoltIdle")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_HeavyBoltLauncher.PostInitAnimTree")()); }
-			ScriptFunction OnAnimPlay() { mixin(MGF!("mOnAnimPlay", "Function TribesGame.TrDevice_HeavyBoltLauncher.OnAnimPlay")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_HeavyBoltLauncher.OnAnimEnd")()); }
-			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function TribesGame.TrDevice_HeavyBoltLauncher.PlayWeaponEquip")()); }
-			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function TribesGame.TrDevice_HeavyBoltLauncher.PlayWeaponPutDown")()); }
-			ScriptFunction PutDownFast() { mixin(MGF!("mPutDownFast", "Function TribesGame.TrDevice_HeavyBoltLauncher.PutDownFast")()); }
-			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_HeavyBoltLauncher.OnSwitchAwayFromWeapon")()); }
+			ScriptFunction SetBoltIdle() { mixin(MGF("mSetBoltIdle", "Function TribesGame.TrDevice_HeavyBoltLauncher.SetBoltIdle")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDevice_HeavyBoltLauncher.PostInitAnimTree")); }
+			ScriptFunction OnAnimPlay() { mixin(MGF("mOnAnimPlay", "Function TribesGame.TrDevice_HeavyBoltLauncher.OnAnimPlay")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function TribesGame.TrDevice_HeavyBoltLauncher.OnAnimEnd")); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF("mPlayWeaponEquip", "Function TribesGame.TrDevice_HeavyBoltLauncher.PlayWeaponEquip")); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF("mPlayWeaponPutDown", "Function TribesGame.TrDevice_HeavyBoltLauncher.PlayWeaponPutDown")); }
+			ScriptFunction PutDownFast() { mixin(MGF("mPutDownFast", "Function TribesGame.TrDevice_HeavyBoltLauncher.PutDownFast")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_HeavyBoltLauncher.OnSwitchAwayFromWeapon")); }
 		}
 	}
-	@property final auto ref SoundCue m_BoltIdleSound() { mixin(MGPC!("SoundCue", 2148)()); }
+	@property final auto ref SoundCue m_BoltIdleSound() { mixin(MGPC("SoundCue", 2148)); }
 final:
 	void SetBoltIdle(bool bEnabled)
 	{

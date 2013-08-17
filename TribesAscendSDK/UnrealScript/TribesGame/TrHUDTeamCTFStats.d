@@ -13,9 +13,9 @@ extern(C++) interface TrHUDTeamCTFStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrHUDTeamCTFStats")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrHUDTeamCTFStats")); }
 	private static __gshared TrHUDTeamCTFStats mDefaultProperties;
-	@property final static TrHUDTeamCTFStats DefaultProperties() { mixin(MGDPC!(TrHUDTeamCTFStats, "TrHUDTeamCTFStats TribesGame.Default__TrHUDTeamCTFStats")()); }
+	@property final static TrHUDTeamCTFStats DefaultProperties() { mixin(MGDPC("TrHUDTeamCTFStats", "TrHUDTeamCTFStats TribesGame.Default__TrHUDTeamCTFStats")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,38 +35,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrHUDTeamCTFStats.Initialize")()); }
-			ScriptFunction Show() { mixin(MGF!("mShow", "Function TribesGame.TrHUDTeamCTFStats.Show")()); }
-			ScriptFunction Hide() { mixin(MGF!("mHide", "Function TribesGame.TrHUDTeamCTFStats.Hide")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrHUDTeamCTFStats.Tick")()); }
-			ScriptFunction UpdateTeam() { mixin(MGF!("mUpdateTeam", "Function TribesGame.TrHUDTeamCTFStats.UpdateTeam")()); }
-			ScriptFunction GetTeamIndex() { mixin(MGF!("mGetTeamIndex", "Function TribesGame.TrHUDTeamCTFStats.GetTeamIndex")()); }
-			ScriptFunction UpdateFlagStatus() { mixin(MGF!("mUpdateFlagStatus", "Function TribesGame.TrHUDTeamCTFStats.UpdateFlagStatus")()); }
-			ScriptFunction UpdateGeneratorStatus() { mixin(MGF!("mUpdateGeneratorStatus", "Function TribesGame.TrHUDTeamCTFStats.UpdateGeneratorStatus")()); }
-			ScriptFunction UpdateTeamScore() { mixin(MGF!("mUpdateTeamScore", "Function TribesGame.TrHUDTeamCTFStats.UpdateTeamScore")()); }
-			ScriptFunction UpdateTime() { mixin(MGF!("mUpdateTime", "Function TribesGame.TrHUDTeamCTFStats.UpdateTime")()); }
-			ScriptFunction FormatTime() { mixin(MGF!("mFormatTime", "Function TribesGame.TrHUDTeamCTFStats.FormatTime")()); }
-			ScriptFunction ForceUpdate() { mixin(MGF!("mForceUpdate", "Function TribesGame.TrHUDTeamCTFStats.ForceUpdate")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrHUDTeamCTFStats.Initialize")); }
+			ScriptFunction Show() { mixin(MGF("mShow", "Function TribesGame.TrHUDTeamCTFStats.Show")); }
+			ScriptFunction Hide() { mixin(MGF("mHide", "Function TribesGame.TrHUDTeamCTFStats.Hide")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrHUDTeamCTFStats.Tick")); }
+			ScriptFunction UpdateTeam() { mixin(MGF("mUpdateTeam", "Function TribesGame.TrHUDTeamCTFStats.UpdateTeam")); }
+			ScriptFunction GetTeamIndex() { mixin(MGF("mGetTeamIndex", "Function TribesGame.TrHUDTeamCTFStats.GetTeamIndex")); }
+			ScriptFunction UpdateFlagStatus() { mixin(MGF("mUpdateFlagStatus", "Function TribesGame.TrHUDTeamCTFStats.UpdateFlagStatus")); }
+			ScriptFunction UpdateGeneratorStatus() { mixin(MGF("mUpdateGeneratorStatus", "Function TribesGame.TrHUDTeamCTFStats.UpdateGeneratorStatus")); }
+			ScriptFunction UpdateTeamScore() { mixin(MGF("mUpdateTeamScore", "Function TribesGame.TrHUDTeamCTFStats.UpdateTeamScore")); }
+			ScriptFunction UpdateTime() { mixin(MGF("mUpdateTime", "Function TribesGame.TrHUDTeamCTFStats.UpdateTime")); }
+			ScriptFunction FormatTime() { mixin(MGF("mFormatTime", "Function TribesGame.TrHUDTeamCTFStats.FormatTime")); }
+			ScriptFunction ForceUpdate() { mixin(MGF("mForceUpdate", "Function TribesGame.TrHUDTeamCTFStats.ForceUpdate")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 116)()); }
-			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 120)()); }
-			PlayerReplicationInfo FlagHolderPRI() { mixin(MGPC!("PlayerReplicationInfo", 108)()); }
-			ubyte bEmptyFlagStatus() { mixin(MGPC!("ubyte", 106)()); }
-			UTGameReplicationInfo.EFlagState FlagState() { mixin(MGPC!("UTGameReplicationInfo.EFlagState", 104)()); }
-			int GeneratorDowntime() { mixin(MGPC!("int", 96)()); }
-			int GeneratorPower() { mixin(MGPC!("int", 88)()); }
-			int TeamScore() { mixin(MGPC!("int", 80)()); }
-			int FlagReturnTime() { mixin(MGPC!("int", 72)()); }
-			int RemainingTime() { mixin(MGPC!("int", 64)()); }
-			int MyTeam() { mixin(MGPC!("int", 60)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC("GfxTrHud", 116)); }
+			TrPlayerController TrPC() { mixin(MGPC("TrPlayerController", 120)); }
+			PlayerReplicationInfo FlagHolderPRI() { mixin(MGPC("PlayerReplicationInfo", 108)); }
+			ubyte bEmptyFlagStatus() { mixin(MGPC("ubyte", 106)); }
+			UTGameReplicationInfo.EFlagState FlagState() { mixin(MGPC("UTGameReplicationInfo.EFlagState", 104)); }
+			int GeneratorDowntime() { mixin(MGPC("int", 96)); }
+			int GeneratorPower() { mixin(MGPC("int", 88)); }
+			int TeamScore() { mixin(MGPC("int", 80)); }
+			int FlagReturnTime() { mixin(MGPC("int", 72)); }
+			int RemainingTime() { mixin(MGPC("int", 64)); }
+			int MyTeam() { mixin(MGPC("int", 60)); }
 		}
-		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
-		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool bIsActive() { mixin(MGBPC(68, 0x1)); }
+		bool bIsActive(bool val) { mixin(MSBPC(68, 0x1)); }
 	}
 final:
 	void Initialize(TrPlayerController PC, GfxTrHud MP)

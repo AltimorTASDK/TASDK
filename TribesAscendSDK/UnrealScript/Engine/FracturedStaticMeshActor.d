@@ -14,9 +14,9 @@ extern(C++) interface FracturedStaticMeshActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FracturedStaticMeshActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FracturedStaticMeshActor")); }
 	private static __gshared FracturedStaticMeshActor mDefaultProperties;
-	@property final static FracturedStaticMeshActor DefaultProperties() { mixin(MGDPC!(FracturedStaticMeshActor, "FracturedStaticMeshActor Engine.Default__FracturedStaticMeshActor")()); }
+	@property final static FracturedStaticMeshActor DefaultProperties() { mixin(MGDPC("FracturedStaticMeshActor", "FracturedStaticMeshActor Engine.Default__FracturedStaticMeshActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,23 +41,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsFracturedByDamageType() { mixin(MGF!("mIsFracturedByDamageType", "Function Engine.FracturedStaticMeshActor.IsFracturedByDamageType")()); }
-			ScriptFunction FractureEffectIsRelevant() { mixin(MGF!("mFractureEffectIsRelevant", "Function Engine.FracturedStaticMeshActor.FractureEffectIsRelevant")()); }
-			ScriptFunction SpawnPart() { mixin(MGF!("mSpawnPart", "Function Engine.FracturedStaticMeshActor.SpawnPart")()); }
-			ScriptFunction SpawnPartMulti() { mixin(MGF!("mSpawnPartMulti", "Function Engine.FracturedStaticMeshActor.SpawnPartMulti")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.FracturedStaticMeshActor.PostBeginPlay")()); }
-			ScriptFunction ResetHealth() { mixin(MGF!("mResetHealth", "Function Engine.FracturedStaticMeshActor.ResetHealth")()); }
-			ScriptFunction BreakOffIsolatedIslands() { mixin(MGF!("mBreakOffIsolatedIslands", "Function Engine.FracturedStaticMeshActor.BreakOffIsolatedIslands")()); }
-			ScriptFunction SpawnDeferredParts() { mixin(MGF!("mSpawnDeferredParts", "Function Engine.FracturedStaticMeshActor.SpawnDeferredParts")()); }
-			ScriptFunction RemoveDecals() { mixin(MGF!("mRemoveDecals", "Function Engine.FracturedStaticMeshActor.RemoveDecals")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.FracturedStaticMeshActor.TakeDamage")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function Engine.FracturedStaticMeshActor.Explode")()); }
-			ScriptFunction BreakOffPartsInRadius() { mixin(MGF!("mBreakOffPartsInRadius", "Function Engine.FracturedStaticMeshActor.BreakOffPartsInRadius")()); }
-			ScriptFunction ResetVisibility() { mixin(MGF!("mResetVisibility", "Function Engine.FracturedStaticMeshActor.ResetVisibility")()); }
-			ScriptFunction HideOneFragment() { mixin(MGF!("mHideOneFragment", "Function Engine.FracturedStaticMeshActor.HideOneFragment")()); }
-			ScriptFunction HideFragmentsToMaximizeMemoryUsage() { mixin(MGF!("mHideFragmentsToMaximizeMemoryUsage", "Function Engine.FracturedStaticMeshActor.HideFragmentsToMaximizeMemoryUsage")()); }
-			ScriptFunction SetLoseChunkReplacementMaterial() { mixin(MGF!("mSetLoseChunkReplacementMaterial", "Function Engine.FracturedStaticMeshActor.SetLoseChunkReplacementMaterial")()); }
-			ScriptFunction NotifyHitByExplosion() { mixin(MGF!("mNotifyHitByExplosion", "Function Engine.FracturedStaticMeshActor.NotifyHitByExplosion")()); }
+			ScriptFunction IsFracturedByDamageType() { mixin(MGF("mIsFracturedByDamageType", "Function Engine.FracturedStaticMeshActor.IsFracturedByDamageType")); }
+			ScriptFunction FractureEffectIsRelevant() { mixin(MGF("mFractureEffectIsRelevant", "Function Engine.FracturedStaticMeshActor.FractureEffectIsRelevant")); }
+			ScriptFunction SpawnPart() { mixin(MGF("mSpawnPart", "Function Engine.FracturedStaticMeshActor.SpawnPart")); }
+			ScriptFunction SpawnPartMulti() { mixin(MGF("mSpawnPartMulti", "Function Engine.FracturedStaticMeshActor.SpawnPartMulti")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.FracturedStaticMeshActor.PostBeginPlay")); }
+			ScriptFunction ResetHealth() { mixin(MGF("mResetHealth", "Function Engine.FracturedStaticMeshActor.ResetHealth")); }
+			ScriptFunction BreakOffIsolatedIslands() { mixin(MGF("mBreakOffIsolatedIslands", "Function Engine.FracturedStaticMeshActor.BreakOffIsolatedIslands")); }
+			ScriptFunction SpawnDeferredParts() { mixin(MGF("mSpawnDeferredParts", "Function Engine.FracturedStaticMeshActor.SpawnDeferredParts")); }
+			ScriptFunction RemoveDecals() { mixin(MGF("mRemoveDecals", "Function Engine.FracturedStaticMeshActor.RemoveDecals")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.FracturedStaticMeshActor.TakeDamage")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function Engine.FracturedStaticMeshActor.Explode")); }
+			ScriptFunction BreakOffPartsInRadius() { mixin(MGF("mBreakOffPartsInRadius", "Function Engine.FracturedStaticMeshActor.BreakOffPartsInRadius")); }
+			ScriptFunction ResetVisibility() { mixin(MGF("mResetVisibility", "Function Engine.FracturedStaticMeshActor.ResetVisibility")); }
+			ScriptFunction HideOneFragment() { mixin(MGF("mHideOneFragment", "Function Engine.FracturedStaticMeshActor.HideOneFragment")); }
+			ScriptFunction HideFragmentsToMaximizeMemoryUsage() { mixin(MGF("mHideFragmentsToMaximizeMemoryUsage", "Function Engine.FracturedStaticMeshActor.HideFragmentsToMaximizeMemoryUsage")); }
+			ScriptFunction SetLoseChunkReplacementMaterial() { mixin(MGF("mSetLoseChunkReplacementMaterial", "Function Engine.FracturedStaticMeshActor.SetLoseChunkReplacementMaterial")); }
+			ScriptFunction NotifyHitByExplosion() { mixin(MGF("mNotifyHitByExplosion", "Function Engine.FracturedStaticMeshActor.NotifyHitByExplosion")); }
 		}
 	}
 	struct DeferredPartToSpawn
@@ -65,43 +65,43 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.FracturedStaticMeshActor.DeferredPartToSpawn")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.FracturedStaticMeshActor.DeferredPartToSpawn")); }
 		@property final
 		{
 			auto ref
 			{
-				float RelativeScale() { mixin(MGPS!("float", 28)()); }
-				Vector InitialAngVel() { mixin(MGPS!("Vector", 16)()); }
-				Vector InitialVel() { mixin(MGPS!("Vector", 4)()); }
-				int ChunkIndex() { mixin(MGPS!("int", 0)()); }
+				float RelativeScale() { mixin(MGPS("float", 28)); }
+				Vector InitialAngVel() { mixin(MGPS("Vector", 16)); }
+				Vector InitialVel() { mixin(MGPS("Vector", 4)); }
+				int ChunkIndex() { mixin(MGPS("int", 0)); }
 			}
-			bool bExplosion() { mixin(MGBPS!(32, 0x1)()); }
-			bool bExplosion(bool val) { mixin(MSBPS!(32, 0x1)()); }
+			bool bExplosion() { mixin(MGBPS(32, 0x1)); }
+			bool bExplosion(bool val) { mixin(MSBPS(32, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(int) ChunkHealth() { mixin(MGPC!("ScriptArray!(int)", 488)()); }
-			ScriptArray!(ScriptClass) FracturedByDamageType() { mixin(MGPC!("ScriptArray!(ScriptClass)", 504)()); }
-			ScriptArray!(ParticleSystem) OverrideFragmentDestroyEffects() { mixin(MGPC!("ScriptArray!(ParticleSystem)", 520)()); }
-			ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn) DeferredPartsToSpawn() { mixin(MGPC!("ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn)", 540)()); }
-			MaterialInterface MI_LoseChunkPreviousMaterial() { mixin(MGPC!("MaterialInterface", 576)()); }
-			SoundCue SingleChunkFractureSound() { mixin(MGPC!("SoundCue", 572)()); }
-			SoundCue ExplosionFractureSound() { mixin(MGPC!("SoundCue", 568)()); }
-			Actor.PhysEffectInfo PartImpactEffect() { mixin(MGPC!("Actor.PhysEffectInfo", 552)()); }
-			float FractureCullMaxDistance() { mixin(MGPC!("float", 536)()); }
-			float FractureCullMinDistance() { mixin(MGPC!("float", 532)()); }
-			float ChunkHealthScale() { mixin(MGPC!("float", 516)()); }
+			ScriptArray!(int) ChunkHealth() { mixin(MGPC("ScriptArray!(int)", 488)); }
+			ScriptArray!(ScriptClass) FracturedByDamageType() { mixin(MGPC("ScriptArray!(ScriptClass)", 504)); }
+			ScriptArray!(ParticleSystem) OverrideFragmentDestroyEffects() { mixin(MGPC("ScriptArray!(ParticleSystem)", 520)); }
+			ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn) DeferredPartsToSpawn() { mixin(MGPC("ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn)", 540)); }
+			MaterialInterface MI_LoseChunkPreviousMaterial() { mixin(MGPC("MaterialInterface", 576)); }
+			SoundCue SingleChunkFractureSound() { mixin(MGPC("SoundCue", 572)); }
+			SoundCue ExplosionFractureSound() { mixin(MGPC("SoundCue", 568)); }
+			Actor.PhysEffectInfo PartImpactEffect() { mixin(MGPC("Actor.PhysEffectInfo", 552)); }
+			float FractureCullMaxDistance() { mixin(MGPC("float", 536)); }
+			float FractureCullMinDistance() { mixin(MGPC("float", 532)); }
+			float ChunkHealthScale() { mixin(MGPC("float", 516)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkinnedComponent'!
 			// WARNING: Property 'FracturedStaticMeshComponent' has the same name as a defined type!
-			int MaxPartsToSpawnAtOnce() { mixin(MGPC!("int", 476)()); }
+			int MaxPartsToSpawnAtOnce() { mixin(MGPC("int", 476)); }
 		}
-		bool bBreakChunksOnActorTouch() { mixin(MGBPC!(500, 0x2)()); }
-		bool bBreakChunksOnActorTouch(bool val) { mixin(MSBPC!(500, 0x2)()); }
-		bool bHasShownMissingSoundWarning() { mixin(MGBPC!(500, 0x1)()); }
-		bool bHasShownMissingSoundWarning(bool val) { mixin(MSBPC!(500, 0x1)()); }
+		bool bBreakChunksOnActorTouch() { mixin(MGBPC(500, 0x2)); }
+		bool bBreakChunksOnActorTouch(bool val) { mixin(MSBPC(500, 0x2)); }
+		bool bHasShownMissingSoundWarning() { mixin(MGBPC(500, 0x1)); }
+		bool bHasShownMissingSoundWarning(bool val) { mixin(MSBPC(500, 0x1)); }
 	}
 final:
 	bool IsFracturedByDamageType(ScriptClass dmgType)

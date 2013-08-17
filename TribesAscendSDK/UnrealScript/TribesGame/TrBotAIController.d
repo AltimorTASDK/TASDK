@@ -14,9 +14,9 @@ extern(C++) interface TrBotAIController : UTBot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrBotAIController")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrBotAIController")); }
 	private static __gshared TrBotAIController mDefaultProperties;
-	@property final static TrBotAIController DefaultProperties() { mixin(MGDPC!(TrBotAIController, "TrBotAIController TribesGame.Default__TrBotAIController")()); }
+	@property final static TrBotAIController DefaultProperties() { mixin(MGDPC("TrBotAIController", "TrBotAIController TribesGame.Default__TrBotAIController")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,14 +32,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnAIStartJetting() { mixin(MGF!("mOnAIStartJetting", "Function TribesGame.TrBotAIController.OnAIStartJetting")()); }
-			ScriptFunction OnAIStopJetting() { mixin(MGF!("mOnAIStopJetting", "Function TribesGame.TrBotAIController.OnAIStopJetting")()); }
-			ScriptFunction OnAIStartSkiing() { mixin(MGF!("mOnAIStartSkiing", "Function TribesGame.TrBotAIController.OnAIStartSkiing")()); }
-			ScriptFunction OnAIStopSkiing() { mixin(MGF!("mOnAIStopSkiing", "Function TribesGame.TrBotAIController.OnAIStopSkiing")()); }
-			ScriptFunction OnAIMoveToActor() { mixin(MGF!("mOnAIMoveToActor", "Function TribesGame.TrBotAIController.OnAIMoveToActor")()); }
-			ScriptFunction StartJetting() { mixin(MGF!("mStartJetting", "Function TribesGame.TrBotAIController.StartJetting")()); }
-			ScriptFunction StopJetting() { mixin(MGF!("mStopJetting", "Function TribesGame.TrBotAIController.StopJetting")()); }
-			ScriptFunction Possess() { mixin(MGF!("mPossess", "Function TribesGame.TrBotAIController.Possess")()); }
+			ScriptFunction OnAIStartJetting() { mixin(MGF("mOnAIStartJetting", "Function TribesGame.TrBotAIController.OnAIStartJetting")); }
+			ScriptFunction OnAIStopJetting() { mixin(MGF("mOnAIStopJetting", "Function TribesGame.TrBotAIController.OnAIStopJetting")); }
+			ScriptFunction OnAIStartSkiing() { mixin(MGF("mOnAIStartSkiing", "Function TribesGame.TrBotAIController.OnAIStartSkiing")); }
+			ScriptFunction OnAIStopSkiing() { mixin(MGF("mOnAIStopSkiing", "Function TribesGame.TrBotAIController.OnAIStopSkiing")); }
+			ScriptFunction OnAIMoveToActor() { mixin(MGF("mOnAIMoveToActor", "Function TribesGame.TrBotAIController.OnAIMoveToActor")); }
+			ScriptFunction StartJetting() { mixin(MGF("mStartJetting", "Function TribesGame.TrBotAIController.StartJetting")); }
+			ScriptFunction StopJetting() { mixin(MGF("mStopJetting", "Function TribesGame.TrBotAIController.StopJetting")); }
+			ScriptFunction Possess() { mixin(MGF("mPossess", "Function TribesGame.TrBotAIController.Possess")); }
 		}
 	}
 final:

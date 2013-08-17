@@ -9,9 +9,9 @@ extern(C++) interface TrFlagTeamRabbit : TrFlagBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFlagTeamRabbit")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrFlagTeamRabbit")); }
 	private static __gshared TrFlagTeamRabbit mDefaultProperties;
-	@property final static TrFlagTeamRabbit DefaultProperties() { mixin(MGDPC!(TrFlagTeamRabbit, "TrFlagTeamRabbit TribesGame.Default__TrFlagTeamRabbit")()); }
+	@property final static TrFlagTeamRabbit DefaultProperties() { mixin(MGDPC("TrFlagTeamRabbit", "TrFlagTeamRabbit TribesGame.Default__TrFlagTeamRabbit")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,27 +24,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetHolder() { mixin(MGF!("mSetHolder", "Function TribesGame.TrFlagTeamRabbit.SetHolder")()); }
-			ScriptFunction ClearHolder() { mixin(MGF!("mClearHolder", "Function TribesGame.TrFlagTeamRabbit.ClearHolder")()); }
-			ScriptFunction SendHome() { mixin(MGF!("mSendHome", "Function TribesGame.TrFlagTeamRabbit.SendHome")()); }
-			ScriptFunction BroadcastReturnedMessage() { mixin(MGF!("mBroadcastReturnedMessage", "Function TribesGame.TrFlagTeamRabbit.BroadcastReturnedMessage")()); }
-			ScriptFunction ClientReturnedHome() { mixin(MGF!("mClientReturnedHome", "Function TribesGame.TrFlagTeamRabbit.ClientReturnedHome")()); }
+			ScriptFunction SetHolder() { mixin(MGF("mSetHolder", "Function TribesGame.TrFlagTeamRabbit.SetHolder")); }
+			ScriptFunction ClearHolder() { mixin(MGF("mClearHolder", "Function TribesGame.TrFlagTeamRabbit.ClearHolder")); }
+			ScriptFunction SendHome() { mixin(MGF("mSendHome", "Function TribesGame.TrFlagTeamRabbit.SendHome")); }
+			ScriptFunction BroadcastReturnedMessage() { mixin(MGF("mBroadcastReturnedMessage", "Function TribesGame.TrFlagTeamRabbit.BroadcastReturnedMessage")); }
+			ScriptFunction ClientReturnedHome() { mixin(MGF("mClientReturnedHome", "Function TribesGame.TrFlagTeamRabbit.ClientReturnedHome")); }
 		}
 	}
 	static struct Home
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrFlagTeamRabbit.Home")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrFlagTeamRabbit.Home")); }
 	}
 	static struct Dropped
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrFlagTeamRabbit.Dropped")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrFlagTeamRabbit.Dropped")); }
 	}
 	static struct Held
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrFlagTeamRabbit.Held")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrFlagTeamRabbit.Held")); }
 	}
 final:
 	void SetHolder(Controller C)

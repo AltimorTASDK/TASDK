@@ -10,9 +10,9 @@ extern(C++) interface WaterVolume : PhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.WaterVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.WaterVolume")); }
 	private static __gshared WaterVolume mDefaultProperties;
-	@property final static WaterVolume DefaultProperties() { mixin(MGDPC!(WaterVolume, "WaterVolume Engine.Default__WaterVolume")()); }
+	@property final static WaterVolume DefaultProperties() { mixin(MGDPC("WaterVolume", "WaterVolume Engine.Default__WaterVolume")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.WaterVolume.Touch")()); }
-			ScriptFunction PlayEntrySplash() { mixin(MGF!("mPlayEntrySplash", "Function Engine.WaterVolume.PlayEntrySplash")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function Engine.WaterVolume.UnTouch")()); }
-			ScriptFunction PlayExitSplash() { mixin(MGF!("mPlayExitSplash", "Function Engine.WaterVolume.PlayExitSplash")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.WaterVolume.Touch")); }
+			ScriptFunction PlayEntrySplash() { mixin(MGF("mPlayEntrySplash", "Function Engine.WaterVolume.PlayEntrySplash")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function Engine.WaterVolume.UnTouch")); }
+			ScriptFunction PlayExitSplash() { mixin(MGF("mPlayExitSplash", "Function Engine.WaterVolume.PlayExitSplash")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptClass ExitActor() { mixin(MGPC!("ScriptClass", 596)()); }
-		SoundCue ExitSound() { mixin(MGPC!("SoundCue", 592)()); }
-		ScriptClass EntryActor() { mixin(MGPC!("ScriptClass", 588)()); }
-		SoundCue EntrySound() { mixin(MGPC!("SoundCue", 584)()); }
+		ScriptClass ExitActor() { mixin(MGPC("ScriptClass", 596)); }
+		SoundCue ExitSound() { mixin(MGPC("SoundCue", 592)); }
+		ScriptClass EntryActor() { mixin(MGPC("ScriptClass", 588)); }
+		SoundCue EntrySound() { mixin(MGPC("SoundCue", 584)); }
 	}
 final:
 	void Touch(Actor Other, 

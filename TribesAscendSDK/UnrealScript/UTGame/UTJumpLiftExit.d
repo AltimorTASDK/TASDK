@@ -9,9 +9,9 @@ extern(C++) interface UTJumpLiftExit : LiftExit
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTJumpLiftExit")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTJumpLiftExit")); }
 	private static __gshared UTJumpLiftExit mDefaultProperties;
-	@property final static UTJumpLiftExit DefaultProperties() { mixin(MGDPC!(UTJumpLiftExit, "UTJumpLiftExit UTGame.Default__UTJumpLiftExit")()); }
+	@property final static UTJumpLiftExit DefaultProperties() { mixin(MGDPC("UTJumpLiftExit", "UTJumpLiftExit UTGame.Default__UTJumpLiftExit")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,9 +22,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTJumpLiftExit.PostBeginPlay")()); }
-			ScriptFunction WaitForLift() { mixin(MGF!("mWaitForLift", "Function UTGame.UTJumpLiftExit.WaitForLift")()); }
-			ScriptFunction CanBeReachedFromLiftBy() { mixin(MGF!("mCanBeReachedFromLiftBy", "Function UTGame.UTJumpLiftExit.CanBeReachedFromLiftBy")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTJumpLiftExit.PostBeginPlay")); }
+			ScriptFunction WaitForLift() { mixin(MGF("mWaitForLift", "Function UTGame.UTJumpLiftExit.WaitForLift")); }
+			ScriptFunction CanBeReachedFromLiftBy() { mixin(MGF("mCanBeReachedFromLiftBy", "Function UTGame.UTJumpLiftExit.CanBeReachedFromLiftBy")); }
 		}
 	}
 final:

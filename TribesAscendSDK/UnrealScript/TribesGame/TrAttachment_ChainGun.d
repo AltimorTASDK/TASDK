@@ -9,9 +9,9 @@ extern(C++) interface TrAttachment_ChainGun : TrDeviceAttachment
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAttachment_ChainGun")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAttachment_ChainGun")); }
 	private static __gshared TrAttachment_ChainGun mDefaultProperties;
-	@property final static TrAttachment_ChainGun DefaultProperties() { mixin(MGDPC!(TrAttachment_ChainGun, "TrAttachment_ChainGun TribesGame.Default__TrAttachment_ChainGun")()); }
+	@property final static TrAttachment_ChainGun DefaultProperties() { mixin(MGDPC("TrAttachment_ChainGun", "TrAttachment_ChainGun TribesGame.Default__TrAttachment_ChainGun")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,22 +21,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrAttachment_ChainGun.PostInitAnimTree")()); }
-			ScriptFunction ThirdPersonFireEffects() { mixin(MGF!("mThirdPersonFireEffects", "Function TribesGame.TrAttachment_ChainGun.ThirdPersonFireEffects")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrAttachment_ChainGun.PostInitAnimTree")); }
+			ScriptFunction ThirdPersonFireEffects() { mixin(MGF("mThirdPersonFireEffects", "Function TribesGame.TrAttachment_ChainGun.ThirdPersonFireEffects")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 796)()); }
-			float m_fLastFireTime() { mixin(MGPC!("float", 792)()); }
-			float m_fCurrSpinTime() { mixin(MGPC!("float", 788)()); }
+			TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC("TrSkelControl_SpinControl", 796)); }
+			float m_fLastFireTime() { mixin(MGPC("float", 792)); }
+			float m_fCurrSpinTime() { mixin(MGPC("float", 788)); }
 		}
-		bool m_bSpinningUp() { mixin(MGBPC!(784, 0x2)()); }
-		bool m_bSpinningUp(bool val) { mixin(MSBPC!(784, 0x2)()); }
-		bool m_bIsFiring() { mixin(MGBPC!(784, 0x1)()); }
-		bool m_bIsFiring(bool val) { mixin(MSBPC!(784, 0x1)()); }
+		bool m_bSpinningUp() { mixin(MGBPC(784, 0x2)); }
+		bool m_bSpinningUp(bool val) { mixin(MSBPC(784, 0x2)); }
+		bool m_bIsFiring() { mixin(MGBPC(784, 0x1)); }
+		bool m_bIsFiring(bool val) { mixin(MSBPC(784, 0x1)); }
 	}
 final:
 	void PostInitAnimTree(

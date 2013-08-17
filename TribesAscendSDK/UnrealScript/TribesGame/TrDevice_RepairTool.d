@@ -9,9 +9,9 @@ extern(C++) interface TrDevice_RepairTool : TrDevice_ConstantFire
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_RepairTool")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_RepairTool")); }
 	private static __gshared TrDevice_RepairTool mDefaultProperties;
-	@property final static TrDevice_RepairTool DefaultProperties() { mixin(MGDPC!(TrDevice_RepairTool, "TrDevice_RepairTool TribesGame.Default__TrDevice_RepairTool")()); }
+	@property final static TrDevice_RepairTool DefaultProperties() { mixin(MGDPC("TrDevice_RepairTool", "TrDevice_RepairTool TribesGame.Default__TrDevice_RepairTool")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,48 +34,48 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanActorBeRepaired() { mixin(MGF!("mCanActorBeRepaired", "Function TribesGame.TrDevice_RepairTool.CanActorBeRepaired")()); }
-			ScriptFunction GetActorHealth() { mixin(MGF!("mGetActorHealth", "Function TribesGame.TrDevice_RepairTool.GetActorHealth")()); }
-			ScriptFunction GetAmmoCount() { mixin(MGF!("mGetAmmoCount", "Function TribesGame.TrDevice_RepairTool.GetAmmoCount")()); }
-			ScriptFunction OnEndConstantFire() { mixin(MGF!("mOnEndConstantFire", "Function TribesGame.TrDevice_RepairTool.OnEndConstantFire")()); }
-			ScriptFunction OnStartConstantFire() { mixin(MGF!("mOnStartConstantFire", "Function TribesGame.TrDevice_RepairTool.OnStartConstantFire")()); }
-			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function TribesGame.TrDevice_RepairTool.InstantFire")()); }
-			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF!("mProcessInstantHit_Internal", "Function TribesGame.TrDevice_RepairTool.ProcessInstantHit_Internal")()); }
-			ScriptFunction GetRepairEndAndTangent() { mixin(MGF!("mGetRepairEndAndTangent", "Function TribesGame.TrDevice_RepairTool.GetRepairEndAndTangent")()); }
-			ScriptFunction KillRepairEffect() { mixin(MGF!("mKillRepairEffect", "Function TribesGame.TrDevice_RepairTool.KillRepairEffect")()); }
-			ScriptFunction HasViewModeSwitched() { mixin(MGF!("mHasViewModeSwitched", "Function TribesGame.TrDevice_RepairTool.HasViewModeSwitched")()); }
-			ScriptFunction SpawnRepairEffect() { mixin(MGF!("mSpawnRepairEffect", "Function TribesGame.TrDevice_RepairTool.SpawnRepairEffect")()); }
-			ScriptFunction UpdateRepairEffect() { mixin(MGF!("mUpdateRepairEffect", "Function TribesGame.TrDevice_RepairTool.UpdateRepairEffect")()); }
-			ScriptFunction UpdateDamageMaterial() { mixin(MGF!("mUpdateDamageMaterial", "Function TribesGame.TrDevice_RepairTool.UpdateDamageMaterial")()); }
-			ScriptFunction ModifyInstantHitDamage() { mixin(MGF!("mModifyInstantHitDamage", "Function TribesGame.TrDevice_RepairTool.ModifyInstantHitDamage")()); }
-			ScriptFunction HasAnyAmmo() { mixin(MGF!("mHasAnyAmmo", "Function TribesGame.TrDevice_RepairTool.HasAnyAmmo")()); }
+			ScriptFunction CanActorBeRepaired() { mixin(MGF("mCanActorBeRepaired", "Function TribesGame.TrDevice_RepairTool.CanActorBeRepaired")); }
+			ScriptFunction GetActorHealth() { mixin(MGF("mGetActorHealth", "Function TribesGame.TrDevice_RepairTool.GetActorHealth")); }
+			ScriptFunction GetAmmoCount() { mixin(MGF("mGetAmmoCount", "Function TribesGame.TrDevice_RepairTool.GetAmmoCount")); }
+			ScriptFunction OnEndConstantFire() { mixin(MGF("mOnEndConstantFire", "Function TribesGame.TrDevice_RepairTool.OnEndConstantFire")); }
+			ScriptFunction OnStartConstantFire() { mixin(MGF("mOnStartConstantFire", "Function TribesGame.TrDevice_RepairTool.OnStartConstantFire")); }
+			ScriptFunction InstantFire() { mixin(MGF("mInstantFire", "Function TribesGame.TrDevice_RepairTool.InstantFire")); }
+			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF("mProcessInstantHit_Internal", "Function TribesGame.TrDevice_RepairTool.ProcessInstantHit_Internal")); }
+			ScriptFunction GetRepairEndAndTangent() { mixin(MGF("mGetRepairEndAndTangent", "Function TribesGame.TrDevice_RepairTool.GetRepairEndAndTangent")); }
+			ScriptFunction KillRepairEffect() { mixin(MGF("mKillRepairEffect", "Function TribesGame.TrDevice_RepairTool.KillRepairEffect")); }
+			ScriptFunction HasViewModeSwitched() { mixin(MGF("mHasViewModeSwitched", "Function TribesGame.TrDevice_RepairTool.HasViewModeSwitched")); }
+			ScriptFunction SpawnRepairEffect() { mixin(MGF("mSpawnRepairEffect", "Function TribesGame.TrDevice_RepairTool.SpawnRepairEffect")); }
+			ScriptFunction UpdateRepairEffect() { mixin(MGF("mUpdateRepairEffect", "Function TribesGame.TrDevice_RepairTool.UpdateRepairEffect")); }
+			ScriptFunction UpdateDamageMaterial() { mixin(MGF("mUpdateDamageMaterial", "Function TribesGame.TrDevice_RepairTool.UpdateDamageMaterial")); }
+			ScriptFunction ModifyInstantHitDamage() { mixin(MGF("mModifyInstantHitDamage", "Function TribesGame.TrDevice_RepairTool.ModifyInstantHitDamage")); }
+			ScriptFunction HasAnyAmmo() { mixin(MGF("mHasAnyAmmo", "Function TribesGame.TrDevice_RepairTool.HasAnyAmmo")); }
 		}
 	}
 	static struct Active
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_RepairTool.Active")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_RepairTool.Active")); }
 	}
 	static struct WeaponConstantFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_RepairTool.WeaponConstantFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_RepairTool.WeaponConstantFiring")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector m_Location() { mixin(MGPC!("Vector", 2212)()); }
-			Vector m_Tangent() { mixin(MGPC!("Vector", 2200)()); }
-			float m_fTargetHealth() { mixin(MGPC!("float", 2196)()); }
-			float m_fDisplayOn() { mixin(MGPC!("float", 2192)()); }
+			Vector m_Location() { mixin(MGPC("Vector", 2212)); }
+			Vector m_Tangent() { mixin(MGPC("Vector", 2200)); }
+			float m_fTargetHealth() { mixin(MGPC("float", 2196)); }
+			float m_fDisplayOn() { mixin(MGPC("float", 2192)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscRepairEffect'!
-			float m_fVehicleRepairPercentage() { mixin(MGPC!("float", 2180)()); }
-			float m_fPawnRepairPercentage() { mixin(MGPC!("float", 2176)()); }
-			float m_fRepairPercentage() { mixin(MGPC!("float", 2172)()); }
+			float m_fVehicleRepairPercentage() { mixin(MGPC("float", 2180)); }
+			float m_fPawnRepairPercentage() { mixin(MGPC("float", 2176)); }
+			float m_fRepairPercentage() { mixin(MGPC("float", 2172)); }
 		}
-		bool m_bIsBehindView() { mixin(MGBPC!(2188, 0x1)()); }
-		bool m_bIsBehindView(bool val) { mixin(MSBPC!(2188, 0x1)()); }
+		bool m_bIsBehindView() { mixin(MGBPC(2188, 0x1)); }
+		bool m_bIsBehindView(bool val) { mixin(MSBPC(2188, 0x1)); }
 	}
 final:
 	bool CanActorBeRepaired(Actor HitActor)

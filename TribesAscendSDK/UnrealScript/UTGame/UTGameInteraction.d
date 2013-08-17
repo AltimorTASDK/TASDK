@@ -8,7 +8,7 @@ extern(C++) interface UTGameInteraction : UDKGameInteraction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameInteraction")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTGameInteraction")); }
 	private static __gshared UTGameInteraction mDefaultProperties;
-	@property final static UTGameInteraction DefaultProperties() { mixin(MGDPC!(UTGameInteraction, "UTGameInteraction UTGame.Default__UTGameInteraction")()); }
+	@property final static UTGameInteraction DefaultProperties() { mixin(MGDPC("UTGameInteraction", "UTGameInteraction UTGame.Default__UTGameInteraction")); }
 }

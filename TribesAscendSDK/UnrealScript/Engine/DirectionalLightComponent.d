@@ -9,9 +9,9 @@ extern(C++) interface DirectionalLightComponent : LightComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DirectionalLightComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DirectionalLightComponent")); }
 	private static __gshared DirectionalLightComponent mDefaultProperties;
-	@property final static DirectionalLightComponent DefaultProperties() { mixin(MGDPC!(DirectionalLightComponent, "DirectionalLightComponent Engine.Default__DirectionalLightComponent")()); }
+	@property final static DirectionalLightComponent DefaultProperties() { mixin(MGDPC("DirectionalLightComponent", "DirectionalLightComponent Engine.Default__DirectionalLightComponent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,17 +21,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnUpdatePropertyLightColor() { mixin(MGF!("mOnUpdatePropertyLightColor", "Function Engine.DirectionalLightComponent.OnUpdatePropertyLightColor")()); }
-			ScriptFunction OnUpdatePropertyBrightness() { mixin(MGF!("mOnUpdatePropertyBrightness", "Function Engine.DirectionalLightComponent.OnUpdatePropertyBrightness")()); }
+			ScriptFunction OnUpdatePropertyLightColor() { mixin(MGF("mOnUpdatePropertyLightColor", "Function Engine.DirectionalLightComponent.OnUpdatePropertyLightColor")); }
+			ScriptFunction OnUpdatePropertyBrightness() { mixin(MGF("mOnUpdatePropertyBrightness", "Function Engine.DirectionalLightComponent.OnUpdatePropertyBrightness")); }
 		}
 	}
 	@property final auto ref
 	{
-		EngineTypes.LightmassDirectionalLightSettings LightmassSettings() { mixin(MGPC!("EngineTypes.LightmassDirectionalLightSettings", 448)()); }
-		float CascadeDistributionExponent() { mixin(MGPC!("float", 444)()); }
-		int NumWholeSceneDynamicShadowCascades() { mixin(MGPC!("int", 440)()); }
-		float WholeSceneDynamicShadowRadius() { mixin(MGPC!("float", 436)()); }
-		float TraceDistance() { mixin(MGPC!("float", 432)()); }
+		EngineTypes.LightmassDirectionalLightSettings LightmassSettings() { mixin(MGPC("EngineTypes.LightmassDirectionalLightSettings", 448)); }
+		float CascadeDistributionExponent() { mixin(MGPC("float", 444)); }
+		int NumWholeSceneDynamicShadowCascades() { mixin(MGPC("int", 440)); }
+		float WholeSceneDynamicShadowRadius() { mixin(MGPC("float", 436)); }
+		float TraceDistance() { mixin(MGPC("float", 432)); }
 	}
 final:
 	void OnUpdatePropertyLightColor()

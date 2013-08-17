@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Equip")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Equip")); }
 	private static __gshared GFxTrPage_Equip mDefaultProperties;
-	@property final static GFxTrPage_Equip DefaultProperties() { mixin(MGDPC!(GFxTrPage_Equip, "GFxTrPage_Equip TribesGame.Default__GFxTrPage_Equip")()); }
+	@property final static GFxTrPage_Equip DefaultProperties() { mixin(MGDPC("GFxTrPage_Equip", "GFxTrPage_Equip TribesGame.Default__GFxTrPage_Equip")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,50 +46,50 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Equip.SpecialAction")()); }
-			ScriptFunction ShowReticule() { mixin(MGF!("mShowReticule", "Function TribesGame.GFxTrPage_Equip.ShowReticule")()); }
-			ScriptFunction HideReticule() { mixin(MGF!("mHideReticule", "Function TribesGame.GFxTrPage_Equip.HideReticule")()); }
-			ScriptFunction OnPurchaseSuccess() { mixin(MGF!("mOnPurchaseSuccess", "Function TribesGame.GFxTrPage_Equip.OnPurchaseSuccess")()); }
-			ScriptFunction SetActiveEquip() { mixin(MGF!("mSetActiveEquip", "Function TribesGame.GFxTrPage_Equip.SetActiveEquip")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Equip.TakeAction")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_Equip.TakeFocus")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Equip.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Equip.FillOption")()); }
-			ScriptFunction FillSkin() { mixin(MGF!("mFillSkin", "Function TribesGame.GFxTrPage_Equip.FillSkin")()); }
-			ScriptFunction CheckUpgrades() { mixin(MGF!("mCheckUpgrades", "Function TribesGame.GFxTrPage_Equip.CheckUpgrades")()); }
-			ScriptFunction FillUpgrades() { mixin(MGF!("mFillUpgrades", "Function TribesGame.GFxTrPage_Equip.FillUpgrades")()); }
-			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_Equip.CheckPricing")()); }
-			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage_Equip.FillPricing")()); }
-			ScriptFunction FillPricingSkin() { mixin(MGF!("mFillPricingSkin", "Function TribesGame.GFxTrPage_Equip.FillPricingSkin")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_Equip.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_Equip.FillDescription")()); }
-			ScriptFunction CheckPurchasable() { mixin(MGF!("mCheckPurchasable", "Function TribesGame.GFxTrPage_Equip.CheckPurchasable")()); }
-			ScriptFunction IsEquipMaxed() { mixin(MGF!("mIsEquipMaxed", "Function TribesGame.GFxTrPage_Equip.IsEquipMaxed")()); }
-			ScriptFunction IsOwned() { mixin(MGF!("mIsOwned", "Function TribesGame.GFxTrPage_Equip.IsOwned")()); }
-			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_Equip.ModifyAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_Equip.PopupData")()); }
-			ScriptFunction PopupDataSkin() { mixin(MGF!("mPopupDataSkin", "Function TribesGame.GFxTrPage_Equip.PopupDataSkin")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_Equip.PopupComplete")()); }
-			ScriptFunction SaveReticule() { mixin(MGF!("mSaveReticule", "Function TribesGame.GFxTrPage_Equip.SaveReticule")()); }
-			ScriptFunction OnClose() { mixin(MGF!("mOnClose", "Function TribesGame.GFxTrPage_Equip.OnClose")()); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_Equip.SpecialAction")); }
+			ScriptFunction ShowReticule() { mixin(MGF("mShowReticule", "Function TribesGame.GFxTrPage_Equip.ShowReticule")); }
+			ScriptFunction HideReticule() { mixin(MGF("mHideReticule", "Function TribesGame.GFxTrPage_Equip.HideReticule")); }
+			ScriptFunction OnPurchaseSuccess() { mixin(MGF("mOnPurchaseSuccess", "Function TribesGame.GFxTrPage_Equip.OnPurchaseSuccess")); }
+			ScriptFunction SetActiveEquip() { mixin(MGF("mSetActiveEquip", "Function TribesGame.GFxTrPage_Equip.SetActiveEquip")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_Equip.TakeAction")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_Equip.TakeFocus")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_Equip.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_Equip.FillOption")); }
+			ScriptFunction FillSkin() { mixin(MGF("mFillSkin", "Function TribesGame.GFxTrPage_Equip.FillSkin")); }
+			ScriptFunction CheckUpgrades() { mixin(MGF("mCheckUpgrades", "Function TribesGame.GFxTrPage_Equip.CheckUpgrades")); }
+			ScriptFunction FillUpgrades() { mixin(MGF("mFillUpgrades", "Function TribesGame.GFxTrPage_Equip.FillUpgrades")); }
+			ScriptFunction CheckPricing() { mixin(MGF("mCheckPricing", "Function TribesGame.GFxTrPage_Equip.CheckPricing")); }
+			ScriptFunction FillPricing() { mixin(MGF("mFillPricing", "Function TribesGame.GFxTrPage_Equip.FillPricing")); }
+			ScriptFunction FillPricingSkin() { mixin(MGF("mFillPricingSkin", "Function TribesGame.GFxTrPage_Equip.FillPricingSkin")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_Equip.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_Equip.FillDescription")); }
+			ScriptFunction CheckPurchasable() { mixin(MGF("mCheckPurchasable", "Function TribesGame.GFxTrPage_Equip.CheckPurchasable")); }
+			ScriptFunction IsEquipMaxed() { mixin(MGF("mIsEquipMaxed", "Function TribesGame.GFxTrPage_Equip.IsEquipMaxed")); }
+			ScriptFunction IsOwned() { mixin(MGF("mIsOwned", "Function TribesGame.GFxTrPage_Equip.IsOwned")); }
+			ScriptFunction ModifyAction() { mixin(MGF("mModifyAction", "Function TribesGame.GFxTrPage_Equip.ModifyAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_Equip.PopupData")); }
+			ScriptFunction PopupDataSkin() { mixin(MGF("mPopupDataSkin", "Function TribesGame.GFxTrPage_Equip.PopupDataSkin")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_Equip.PopupComplete")); }
+			ScriptFunction SaveReticule() { mixin(MGF("mSaveReticule", "Function TribesGame.GFxTrPage_Equip.SaveReticule")); }
+			ScriptFunction OnClose() { mixin(MGF("mOnClose", "Function TribesGame.GFxTrPage_Equip.OnClose")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int ReticuleIndex() { mixin(MGPC!("int", 380)()); }
-			int PurchasingUpgrade() { mixin(MGPC!("int", 376)()); }
-			int PurchasingEquip() { mixin(MGPC!("int", 372)()); }
-			int FocusedEquip() { mixin(MGPC!("int", 368)()); }
-			int ViewedEquip() { mixin(MGPC!("int", 364)()); }
-			int GoldPrice() { mixin(MGPC!("int", 360)()); }
-			int xpPrice() { mixin(MGPC!("int", 356)()); }
+			int ReticuleIndex() { mixin(MGPC("int", 380)); }
+			int PurchasingUpgrade() { mixin(MGPC("int", 376)); }
+			int PurchasingEquip() { mixin(MGPC("int", 372)); }
+			int FocusedEquip() { mixin(MGPC("int", 368)); }
+			int ViewedEquip() { mixin(MGPC("int", 364)); }
+			int GoldPrice() { mixin(MGPC("int", 360)); }
+			int xpPrice() { mixin(MGPC("int", 356)); }
 		}
-		bool bReticulesOpen() { mixin(MGBPC!(384, 0x2)()); }
-		bool bReticulesOpen(bool val) { mixin(MSBPC!(384, 0x2)()); }
-		bool bUpgradePurchase() { mixin(MGBPC!(384, 0x1)()); }
-		bool bUpgradePurchase(bool val) { mixin(MSBPC!(384, 0x1)()); }
+		bool bReticulesOpen() { mixin(MGBPC(384, 0x2)); }
+		bool bReticulesOpen(bool val) { mixin(MSBPC(384, 0x2)); }
+		bool bUpgradePurchase() { mixin(MGBPC(384, 0x1)); }
+		bool bUpgradePurchase(bool val) { mixin(MSBPC(384, 0x1)); }
 	}
 final:
 	void SpecialAction(GFxTrAction Action)

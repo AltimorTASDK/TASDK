@@ -9,8 +9,8 @@ extern(C++) interface ActorFactoryLensFlare : ActorFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryLensFlare")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ActorFactoryLensFlare")); }
 	private static __gshared ActorFactoryLensFlare mDefaultProperties;
-	@property final static ActorFactoryLensFlare DefaultProperties() { mixin(MGDPC!(ActorFactoryLensFlare, "ActorFactoryLensFlare Engine.Default__ActorFactoryLensFlare")()); }
-	@property final auto ref LensFlare LensFlareObject() { mixin(MGPC!("LensFlare", 92)()); }
+	@property final static ActorFactoryLensFlare DefaultProperties() { mixin(MGDPC("ActorFactoryLensFlare", "ActorFactoryLensFlare Engine.Default__ActorFactoryLensFlare")); }
+	@property final auto ref LensFlare LensFlareObject() { mixin(MGPC("LensFlare", 92)); }
 }

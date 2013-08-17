@@ -10,24 +10,24 @@ extern(C++) interface TrWarningMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrWarningMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrWarningMessage")); }
 	private static __gshared TrWarningMessage mDefaultProperties;
-	@property final static TrWarningMessage DefaultProperties() { mixin(MGDPC!(TrWarningMessage, "TrWarningMessage TribesGame.Default__TrWarningMessage")()); }
+	@property final static TrWarningMessage DefaultProperties() { mixin(MGDPC("TrWarningMessage", "TrWarningMessage TribesGame.Default__TrWarningMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrWarningMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrWarningMessage.GetString")); }
 	}
 	@property final auto ref
 	{
-		ScriptString RequiresPowerToFire() { mixin(MGPC!("ScriptString", 184)()); }
-		ScriptString RequiresCreditsToFire() { mixin(MGPC!("ScriptString", 172)()); }
-		ScriptString SuicidePenalty() { mixin(MGPC!("ScriptString", 160)()); }
-		ScriptString MissileIntercepted() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString MissileTargetingYou() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString MissileLockedOnToYou() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString SaberLauncherNeedsTargetToFire() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString FumbledFlag() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString RequiresPowerToFire() { mixin(MGPC("ScriptString", 184)); }
+		ScriptString RequiresCreditsToFire() { mixin(MGPC("ScriptString", 172)); }
+		ScriptString SuicidePenalty() { mixin(MGPC("ScriptString", 160)); }
+		ScriptString MissileIntercepted() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString MissileTargetingYou() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString MissileLockedOnToYou() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString SaberLauncherNeedsTargetToFire() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString FumbledFlag() { mixin(MGPC("ScriptString", 100)); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

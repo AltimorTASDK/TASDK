@@ -10,18 +10,18 @@ extern(C++) interface TrVehicleMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicleMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicleMessage")); }
 	private static __gshared TrVehicleMessage mDefaultProperties;
-	@property final static TrVehicleMessage DefaultProperties() { mixin(MGDPC!(TrVehicleMessage, "TrVehicleMessage TribesGame.Default__TrVehicleMessage")()); }
+	@property final static TrVehicleMessage DefaultProperties() { mixin(MGDPC("TrVehicleMessage", "TrVehicleMessage TribesGame.Default__TrVehicleMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrVehicleMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrVehicleMessage.GetString")); }
 	}
 	@property final auto ref
 	{
-		ScriptString VehicleLocked() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString ArmorClassRestricted() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString VehicleLocked() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString ArmorClassRestricted() { mixin(MGPC("ScriptString", 100)); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

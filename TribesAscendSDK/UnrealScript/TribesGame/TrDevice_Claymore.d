@@ -9,9 +9,9 @@ extern(C++) interface TrDevice_Claymore : TrDevice_AutoFire
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Claymore")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_Claymore")); }
 	private static __gshared TrDevice_Claymore mDefaultProperties;
-	@property final static TrDevice_Claymore DefaultProperties() { mixin(MGDPC!(TrDevice_Claymore, "TrDevice_Claymore TribesGame.Default__TrDevice_Claymore")()); }
+	@property final static TrDevice_Claymore DefaultProperties() { mixin(MGDPC("TrDevice_Claymore", "TrDevice_Claymore TribesGame.Default__TrDevice_Claymore")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF!("mGetPhysicalFireStartLoc", "Function TribesGame.TrDevice_Claymore.GetPhysicalFireStartLoc")()); }
-			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function TribesGame.TrDevice_Claymore.ProjectileFire")()); }
+			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF("mGetPhysicalFireStartLoc", "Function TribesGame.TrDevice_Claymore.GetPhysicalFireStartLoc")); }
+			ScriptFunction ProjectileFire() { mixin(MGF("mProjectileFire", "Function TribesGame.TrDevice_Claymore.ProjectileFire")); }
 		}
 	}
-	@property final auto ref float m_fWorldZPlacementOffset() { mixin(MGPC!("float", 2164)()); }
+	@property final auto ref float m_fWorldZPlacementOffset() { mixin(MGPC("float", 2164)); }
 final:
 	Vector GetPhysicalFireStartLoc(Vector* AimDir = null)
 	{

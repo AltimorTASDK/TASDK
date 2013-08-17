@@ -8,9 +8,9 @@ extern(C++) interface Admin : PlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Admin")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Admin")); }
 	private static __gshared Admin mDefaultProperties;
-	@property final static Admin DefaultProperties() { mixin(MGDPC!(Admin, "Admin Engine.Default__Admin")()); }
+	@property final static Admin DefaultProperties() { mixin(MGDPC("Admin", "Admin Engine.Default__Admin")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,18 +30,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Admin.PostBeginPlay")()); }
-			ScriptFunction Admin() { mixin(MGF!("mAdmin", "Function Engine.Admin.Admin")()); }
-			ScriptFunction ServerAdmin() { mixin(MGF!("mServerAdmin", "Function Engine.Admin.ServerAdmin")()); }
-			ScriptFunction KickBan() { mixin(MGF!("mKickBan", "Function Engine.Admin.KickBan")()); }
-			ScriptFunction ServerKickBan() { mixin(MGF!("mServerKickBan", "Function Engine.Admin.ServerKickBan")()); }
-			ScriptFunction Kick() { mixin(MGF!("mKick", "Function Engine.Admin.Kick")()); }
-			ScriptFunction ServerKick() { mixin(MGF!("mServerKick", "Function Engine.Admin.ServerKick")()); }
-			ScriptFunction PlayerList() { mixin(MGF!("mPlayerList", "Function Engine.Admin.PlayerList")()); }
-			ScriptFunction RestartMap() { mixin(MGF!("mRestartMap", "Function Engine.Admin.RestartMap")()); }
-			ScriptFunction ServerRestartMap() { mixin(MGF!("mServerRestartMap", "Function Engine.Admin.ServerRestartMap")()); }
-			ScriptFunction Switch() { mixin(MGF!("mSwitch", "Function Engine.Admin.Switch")()); }
-			ScriptFunction ServerSwitch() { mixin(MGF!("mServerSwitch", "Function Engine.Admin.ServerSwitch")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Admin.PostBeginPlay")); }
+			ScriptFunction Admin() { mixin(MGF("mAdmin", "Function Engine.Admin.Admin")); }
+			ScriptFunction ServerAdmin() { mixin(MGF("mServerAdmin", "Function Engine.Admin.ServerAdmin")); }
+			ScriptFunction KickBan() { mixin(MGF("mKickBan", "Function Engine.Admin.KickBan")); }
+			ScriptFunction ServerKickBan() { mixin(MGF("mServerKickBan", "Function Engine.Admin.ServerKickBan")); }
+			ScriptFunction Kick() { mixin(MGF("mKick", "Function Engine.Admin.Kick")); }
+			ScriptFunction ServerKick() { mixin(MGF("mServerKick", "Function Engine.Admin.ServerKick")); }
+			ScriptFunction PlayerList() { mixin(MGF("mPlayerList", "Function Engine.Admin.PlayerList")); }
+			ScriptFunction RestartMap() { mixin(MGF("mRestartMap", "Function Engine.Admin.RestartMap")); }
+			ScriptFunction ServerRestartMap() { mixin(MGF("mServerRestartMap", "Function Engine.Admin.ServerRestartMap")); }
+			ScriptFunction Switch() { mixin(MGF("mSwitch", "Function Engine.Admin.Switch")); }
+			ScriptFunction ServerSwitch() { mixin(MGF("mServerSwitch", "Function Engine.Admin.ServerSwitch")); }
 		}
 	}
 final:

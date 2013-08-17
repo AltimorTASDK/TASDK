@@ -10,9 +10,9 @@ extern(C++) interface HelloWeb : WebApplication
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.HelloWeb")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.HelloWeb")); }
 	private static __gshared HelloWeb mDefaultProperties;
-	@property final static HelloWeb DefaultProperties() { mixin(MGDPC!(HelloWeb, "HelloWeb IpDrv.Default__HelloWeb")()); }
+	@property final static HelloWeb DefaultProperties() { mixin(MGDPC("HelloWeb", "HelloWeb IpDrv.Default__HelloWeb")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function IpDrv.HelloWeb.Init")()); }
-			ScriptFunction Query() { mixin(MGF!("mQuery", "Function IpDrv.HelloWeb.Query")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function IpDrv.HelloWeb.Init")); }
+			ScriptFunction Query() { mixin(MGF("mQuery", "Function IpDrv.HelloWeb.Query")); }
 		}
 	}
 final:

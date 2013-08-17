@@ -9,9 +9,9 @@ extern(C++) interface SplineComponent : PrimitiveComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SplineComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SplineComponent")); }
 	private static __gshared SplineComponent mDefaultProperties;
-	@property final static SplineComponent DefaultProperties() { mixin(MGDPC!(SplineComponent, "SplineComponent Engine.Default__SplineComponent")()); }
+	@property final static SplineComponent DefaultProperties() { mixin(MGDPC("SplineComponent", "SplineComponent Engine.Default__SplineComponent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,26 +24,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateSplineCurviness() { mixin(MGF!("mUpdateSplineCurviness", "Function Engine.SplineComponent.UpdateSplineCurviness")()); }
-			ScriptFunction UpdateSplineReparamTable() { mixin(MGF!("mUpdateSplineReparamTable", "Function Engine.SplineComponent.UpdateSplineReparamTable")()); }
-			ScriptFunction GetSplineLength() { mixin(MGF!("mGetSplineLength", "Function Engine.SplineComponent.GetSplineLength")()); }
-			ScriptFunction GetLocationAtDistanceAlongSpline() { mixin(MGF!("mGetLocationAtDistanceAlongSpline", "Function Engine.SplineComponent.GetLocationAtDistanceAlongSpline")()); }
-			ScriptFunction GetTangentAtDistanceAlongSpline() { mixin(MGF!("mGetTangentAtDistanceAlongSpline", "Function Engine.SplineComponent.GetTangentAtDistanceAlongSpline")()); }
+			ScriptFunction UpdateSplineCurviness() { mixin(MGF("mUpdateSplineCurviness", "Function Engine.SplineComponent.UpdateSplineCurviness")); }
+			ScriptFunction UpdateSplineReparamTable() { mixin(MGF("mUpdateSplineReparamTable", "Function Engine.SplineComponent.UpdateSplineReparamTable")); }
+			ScriptFunction GetSplineLength() { mixin(MGF("mGetSplineLength", "Function Engine.SplineComponent.GetSplineLength")); }
+			ScriptFunction GetLocationAtDistanceAlongSpline() { mixin(MGF("mGetLocationAtDistanceAlongSpline", "Function Engine.SplineComponent.GetLocationAtDistanceAlongSpline")); }
+			ScriptFunction GetTangentAtDistanceAlongSpline() { mixin(MGF("mGetTangentAtDistanceAlongSpline", "Function Engine.SplineComponent.GetTangentAtDistanceAlongSpline")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.InterpCurveFloat SplineReparamTable() { mixin(MGPC!("UObject.InterpCurveFloat", 524)()); }
-			float SplineArrowSize() { mixin(MGPC!("float", 516)()); }
-			float SplineDrawRes() { mixin(MGPC!("float", 512)()); }
-			UObject.Color SplineColor() { mixin(MGPC!("UObject.Color", 508)()); }
-			float SplineCurviness() { mixin(MGPC!("float", 504)()); }
-			UObject.InterpCurveVector SplineInfo() { mixin(MGPC!("UObject.InterpCurveVector", 488)()); }
+			UObject.InterpCurveFloat SplineReparamTable() { mixin(MGPC("UObject.InterpCurveFloat", 524)); }
+			float SplineArrowSize() { mixin(MGPC("float", 516)); }
+			float SplineDrawRes() { mixin(MGPC("float", 512)); }
+			UObject.Color SplineColor() { mixin(MGPC("UObject.Color", 508)); }
+			float SplineCurviness() { mixin(MGPC("float", 504)); }
+			UObject.InterpCurveVector SplineInfo() { mixin(MGPC("UObject.InterpCurveVector", 488)); }
 		}
-		bool bSplineDisabled() { mixin(MGBPC!(520, 0x1)()); }
-		bool bSplineDisabled(bool val) { mixin(MSBPC!(520, 0x1)()); }
+		bool bSplineDisabled() { mixin(MGBPC(520, 0x1)); }
+		bool bSplineDisabled(bool val) { mixin(MSBPC(520, 0x1)); }
 	}
 final:
 	void UpdateSplineCurviness()

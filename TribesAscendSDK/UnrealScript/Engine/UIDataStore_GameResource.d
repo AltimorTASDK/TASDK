@@ -11,9 +11,9 @@ extern(C++) interface UIDataStore_GameResource : UIDataStore
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_GameResource")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStore_GameResource")); }
 	private static __gshared UIDataStore_GameResource mDefaultProperties;
-	@property final static UIDataStore_GameResource DefaultProperties() { mixin(MGDPC!(UIDataStore_GameResource, "UIDataStore_GameResource Engine.Default__UIDataStore_GameResource")()); }
+	@property final static UIDataStore_GameResource DefaultProperties() { mixin(MGDPC("UIDataStore_GameResource", "UIDataStore_GameResource Engine.Default__UIDataStore_GameResource")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,13 +28,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FindProviderTypeIndex() { mixin(MGF!("mFindProviderTypeIndex", "Function Engine.UIDataStore_GameResource.FindProviderTypeIndex")()); }
-			ScriptFunction GenerateProviderAccessTag() { mixin(MGF!("mGenerateProviderAccessTag", "Function Engine.UIDataStore_GameResource.GenerateProviderAccessTag")()); }
-			ScriptFunction GetProviderCount() { mixin(MGF!("mGetProviderCount", "Function Engine.UIDataStore_GameResource.GetProviderCount")()); }
-			ScriptFunction GetResourceProviders() { mixin(MGF!("mGetResourceProviders", "Function Engine.UIDataStore_GameResource.GetResourceProviders")()); }
-			ScriptFunction GetResourceProviderFields() { mixin(MGF!("mGetResourceProviderFields", "Function Engine.UIDataStore_GameResource.GetResourceProviderFields")()); }
-			ScriptFunction GetProviderFieldValue() { mixin(MGF!("mGetProviderFieldValue", "Function Engine.UIDataStore_GameResource.GetProviderFieldValue")()); }
-			ScriptFunction FindProviderIndexByFieldValue() { mixin(MGF!("mFindProviderIndexByFieldValue", "Function Engine.UIDataStore_GameResource.FindProviderIndexByFieldValue")()); }
+			ScriptFunction FindProviderTypeIndex() { mixin(MGF("mFindProviderTypeIndex", "Function Engine.UIDataStore_GameResource.FindProviderTypeIndex")); }
+			ScriptFunction GenerateProviderAccessTag() { mixin(MGF("mGenerateProviderAccessTag", "Function Engine.UIDataStore_GameResource.GenerateProviderAccessTag")); }
+			ScriptFunction GetProviderCount() { mixin(MGF("mGetProviderCount", "Function Engine.UIDataStore_GameResource.GetProviderCount")); }
+			ScriptFunction GetResourceProviders() { mixin(MGF("mGetResourceProviders", "Function Engine.UIDataStore_GameResource.GetResourceProviders")); }
+			ScriptFunction GetResourceProviderFields() { mixin(MGF("mGetResourceProviderFields", "Function Engine.UIDataStore_GameResource.GetResourceProviderFields")); }
+			ScriptFunction GetProviderFieldValue() { mixin(MGF("mGetProviderFieldValue", "Function Engine.UIDataStore_GameResource.GetProviderFieldValue")); }
+			ScriptFunction FindProviderIndexByFieldValue() { mixin(MGF("mFindProviderIndexByFieldValue", "Function Engine.UIDataStore_GameResource.FindProviderIndexByFieldValue")); }
 		}
 	}
 	struct GameResourceDataProvider
@@ -42,24 +42,24 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_GameResource.GameResourceDataProvider")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataStore_GameResource.GameResourceDataProvider")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptClass ProviderClass() { mixin(MGPS!("ScriptClass", 24)()); }
-				ScriptString ProviderClassName() { mixin(MGPS!("ScriptString", 8)()); }
-				ScriptName ProviderTag() { mixin(MGPS!("ScriptName", 0)()); }
+				ScriptClass ProviderClass() { mixin(MGPS("ScriptClass", 24)); }
+				ScriptString ProviderClassName() { mixin(MGPS("ScriptString", 8)); }
+				ScriptName ProviderTag() { mixin(MGPS("ScriptName", 0)); }
 			}
-			bool bExpandProviders() { mixin(MGBPS!(20, 0x1)()); }
-			bool bExpandProviders(bool val) { mixin(MSBPS!(20, 0x1)()); }
+			bool bExpandProviders() { mixin(MGBPS(20, 0x1)); }
+			bool bExpandProviders(bool val) { mixin(MSBPS(20, 0x1)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_GameResource.GameResourceDataProvider) ElementProviderTypes() { mixin(MGPC!("ScriptArray!(UIDataStore_GameResource.GameResourceDataProvider)", 124)()); }
-		UObject.MultiMap_Mirror ListElementProviders() { mixin(MGPC!("UObject.MultiMap_Mirror", 136)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
+		ScriptArray!(UIDataStore_GameResource.GameResourceDataProvider) ElementProviderTypes() { mixin(MGPC("ScriptArray!(UIDataStore_GameResource.GameResourceDataProvider)", 124)); }
+		UObject.MultiMap_Mirror ListElementProviders() { mixin(MGPC("UObject.MultiMap_Mirror", 136)); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
 	}
 final:
 	int FindProviderTypeIndex(ScriptName ProviderTag)

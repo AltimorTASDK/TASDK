@@ -8,9 +8,9 @@ extern(C++) interface UDKSkelControl_MassBoneScaling : SkelControlBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKSkelControl_MassBoneScaling")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKSkelControl_MassBoneScaling")); }
 	private static __gshared UDKSkelControl_MassBoneScaling mDefaultProperties;
-	@property final static UDKSkelControl_MassBoneScaling DefaultProperties() { mixin(MGDPC!(UDKSkelControl_MassBoneScaling, "UDKSkelControl_MassBoneScaling UDKBase.Default__UDKSkelControl_MassBoneScaling")()); }
+	@property final static UDKSkelControl_MassBoneScaling DefaultProperties() { mixin(MGDPC("UDKSkelControl_MassBoneScaling", "UDKSkelControl_MassBoneScaling UDKBase.Default__UDKSkelControl_MassBoneScaling")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +20,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetBoneScale() { mixin(MGF!("mSetBoneScale", "Function UDKBase.UDKSkelControl_MassBoneScaling.SetBoneScale")()); }
-			ScriptFunction GetBoneScale() { mixin(MGF!("mGetBoneScale", "Function UDKBase.UDKSkelControl_MassBoneScaling.GetBoneScale")()); }
+			ScriptFunction SetBoneScale() { mixin(MGF("mSetBoneScale", "Function UDKBase.UDKSkelControl_MassBoneScaling.SetBoneScale")); }
+			ScriptFunction GetBoneScale() { mixin(MGF("mGetBoneScale", "Function UDKBase.UDKSkelControl_MassBoneScaling.GetBoneScale")); }
 		}
 	}
-	@property final auto ref ScriptArray!(float) BoneScales() { mixin(MGPC!("ScriptArray!(float)", 188)()); }
+	@property final auto ref ScriptArray!(float) BoneScales() { mixin(MGPC("ScriptArray!(float)", 188)); }
 final:
 	void SetBoneScale(ScriptName BoneName, float Scale)
 	{

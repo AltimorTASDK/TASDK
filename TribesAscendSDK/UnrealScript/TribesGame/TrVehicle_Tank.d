@@ -9,9 +9,9 @@ extern(C++) interface TrVehicle_Tank : TrVehicle
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicle_Tank")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicle_Tank")); }
 	private static __gshared TrVehicle_Tank mDefaultProperties;
-	@property final static TrVehicle_Tank DefaultProperties() { mixin(MGDPC!(TrVehicle_Tank, "TrVehicle_Tank TribesGame.Default__TrVehicle_Tank")()); }
+	@property final static TrVehicle_Tank DefaultProperties() { mixin(MGDPC("TrVehicle_Tank", "TrVehicle_Tank TribesGame.Default__TrVehicle_Tank")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,20 +23,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrVehicle_Tank.PostInitAnimTree")()); }
-			ScriptFunction VehicleWeaponFireEffects() { mixin(MGF!("mVehicleWeaponFireEffects", "Function TribesGame.TrVehicle_Tank.VehicleWeaponFireEffects")()); }
-			ScriptFunction ProcessViewRotationBasedOnSeat() { mixin(MGF!("mProcessViewRotationBasedOnSeat", "Function TribesGame.TrVehicle_Tank.ProcessViewRotationBasedOnSeat")()); }
-			ScriptFunction LimitViewRotation() { mixin(MGF!("mLimitViewRotation", "Function TribesGame.TrVehicle_Tank.LimitViewRotation")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrVehicle_Tank.PostInitAnimTree")); }
+			ScriptFunction VehicleWeaponFireEffects() { mixin(MGF("mVehicleWeaponFireEffects", "Function TribesGame.TrVehicle_Tank.VehicleWeaponFireEffects")); }
+			ScriptFunction ProcessViewRotationBasedOnSeat() { mixin(MGF("mProcessViewRotationBasedOnSeat", "Function TribesGame.TrVehicle_Tank.ProcessViewRotationBasedOnSeat")); }
+			ScriptFunction LimitViewRotation() { mixin(MGF("mLimitViewRotation", "Function TribesGame.TrVehicle_Tank.LimitViewRotation")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_CameraShakeEffectiveRadius() { mixin(MGPC!("float", 3244)()); }
-		CameraShake m_FireCameraShake() { mixin(MGPC!("CameraShake", 3240)()); }
-		ubyte GunnerFiringMode() { mixin(MGPC!("ubyte", 3237)()); }
-		ubyte GunnerFlashCount() { mixin(MGPC!("ubyte", 3236)()); }
-		Rotator GunnerWeaponRotation() { mixin(MGPC!("Rotator", 3224)()); }
-		Vector GunnerFlashLocation() { mixin(MGPC!("Vector", 3212)()); }
+		float m_CameraShakeEffectiveRadius() { mixin(MGPC("float", 3244)); }
+		CameraShake m_FireCameraShake() { mixin(MGPC("CameraShake", 3240)); }
+		ubyte GunnerFiringMode() { mixin(MGPC("ubyte", 3237)); }
+		ubyte GunnerFlashCount() { mixin(MGPC("ubyte", 3236)); }
+		Rotator GunnerWeaponRotation() { mixin(MGPC("Rotator", 3224)); }
+		Vector GunnerFlashLocation() { mixin(MGPC("Vector", 3212)); }
 	}
 final:
 	void PostInitAnimTree(

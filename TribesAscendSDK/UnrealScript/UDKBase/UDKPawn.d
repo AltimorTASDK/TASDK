@@ -26,9 +26,9 @@ extern(C++) interface UDKPawn : GamePawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKPawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKPawn")); }
 	private static __gshared UDKPawn mDefaultProperties;
-	@property final static UDKPawn DefaultProperties() { mixin(MGDPC!(UDKPawn, "UDKPawn UDKBase.Default__UDKPawn")()); }
+	@property final static UDKPawn DefaultProperties() { mixin(MGDPC("UDKPawn", "UDKPawn UDKBase.Default__UDKPawn")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -54,24 +54,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function UDKBase.UDKPawn.GetBoundingCylinder")()); }
-			ScriptFunction RestorePreRagdollCollisionComponent() { mixin(MGF!("mRestorePreRagdollCollisionComponent", "Function UDKBase.UDKPawn.RestorePreRagdollCollisionComponent")()); }
-			ScriptFunction EnsureOverlayComponentLast() { mixin(MGF!("mEnsureOverlayComponentLast", "Function UDKBase.UDKPawn.EnsureOverlayComponentLast")()); }
-			ScriptFunction GetTargetLocation() { mixin(MGF!("mGetTargetLocation", "Function UDKBase.UDKPawn.GetTargetLocation")()); }
-			ScriptFunction IsInvisible() { mixin(MGF!("mIsInvisible", "Function UDKBase.UDKPawn.IsInvisible")()); }
-			ScriptFunction HoldGameObject() { mixin(MGF!("mHoldGameObject", "Function UDKBase.UDKPawn.HoldGameObject")()); }
-			ScriptFunction StoppedFalling() { mixin(MGF!("mStoppedFalling", "Function UDKBase.UDKPawn.StoppedFalling")()); }
-			ScriptFunction EndCrouch() { mixin(MGF!("mEndCrouch", "Function UDKBase.UDKPawn.EndCrouch")()); }
-			ScriptFunction StartCrouch() { mixin(MGF!("mStartCrouch", "Function UDKBase.UDKPawn.StartCrouch")()); }
-			ScriptFunction SuggestJumpVelocity() { mixin(MGF!("mSuggestJumpVelocity", "Function UDKBase.UDKPawn.SuggestJumpVelocity")()); }
-			ScriptFunction SetHUDLocation() { mixin(MGF!("mSetHUDLocation", "Function UDKBase.UDKPawn.SetHUDLocation")()); }
-			ScriptFunction NativePostRenderFor() { mixin(MGF!("mNativePostRenderFor", "Function UDKBase.UDKPawn.NativePostRenderFor")()); }
-			ScriptFunction SetWeaponAttachmentVisibility() { mixin(MGF!("mSetWeaponAttachmentVisibility", "Function UDKBase.UDKPawn.SetWeaponAttachmentVisibility")()); }
-			ScriptFunction SetHandIKEnabled() { mixin(MGF!("mSetHandIKEnabled", "Function UDKBase.UDKPawn.SetHandIKEnabled")()); }
-			ScriptFunction StartFeignDeathRecoveryAnim() { mixin(MGF!("mStartFeignDeathRecoveryAnim", "Function UDKBase.UDKPawn.StartFeignDeathRecoveryAnim")()); }
-			ScriptFunction TakeHitBlendedOut() { mixin(MGF!("mTakeHitBlendedOut", "Function UDKBase.UDKPawn.TakeHitBlendedOut")()); }
-			ScriptFunction UpdateEyeHeight() { mixin(MGF!("mUpdateEyeHeight", "Function UDKBase.UDKPawn.UpdateEyeHeight")()); }
-			ScriptFunction StuckFalling() { mixin(MGF!("mStuckFalling", "Function UDKBase.UDKPawn.StuckFalling")()); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF("mGetBoundingCylinder", "Function UDKBase.UDKPawn.GetBoundingCylinder")); }
+			ScriptFunction RestorePreRagdollCollisionComponent() { mixin(MGF("mRestorePreRagdollCollisionComponent", "Function UDKBase.UDKPawn.RestorePreRagdollCollisionComponent")); }
+			ScriptFunction EnsureOverlayComponentLast() { mixin(MGF("mEnsureOverlayComponentLast", "Function UDKBase.UDKPawn.EnsureOverlayComponentLast")); }
+			ScriptFunction GetTargetLocation() { mixin(MGF("mGetTargetLocation", "Function UDKBase.UDKPawn.GetTargetLocation")); }
+			ScriptFunction IsInvisible() { mixin(MGF("mIsInvisible", "Function UDKBase.UDKPawn.IsInvisible")); }
+			ScriptFunction HoldGameObject() { mixin(MGF("mHoldGameObject", "Function UDKBase.UDKPawn.HoldGameObject")); }
+			ScriptFunction StoppedFalling() { mixin(MGF("mStoppedFalling", "Function UDKBase.UDKPawn.StoppedFalling")); }
+			ScriptFunction EndCrouch() { mixin(MGF("mEndCrouch", "Function UDKBase.UDKPawn.EndCrouch")); }
+			ScriptFunction StartCrouch() { mixin(MGF("mStartCrouch", "Function UDKBase.UDKPawn.StartCrouch")); }
+			ScriptFunction SuggestJumpVelocity() { mixin(MGF("mSuggestJumpVelocity", "Function UDKBase.UDKPawn.SuggestJumpVelocity")); }
+			ScriptFunction SetHUDLocation() { mixin(MGF("mSetHUDLocation", "Function UDKBase.UDKPawn.SetHUDLocation")); }
+			ScriptFunction NativePostRenderFor() { mixin(MGF("mNativePostRenderFor", "Function UDKBase.UDKPawn.NativePostRenderFor")); }
+			ScriptFunction SetWeaponAttachmentVisibility() { mixin(MGF("mSetWeaponAttachmentVisibility", "Function UDKBase.UDKPawn.SetWeaponAttachmentVisibility")); }
+			ScriptFunction SetHandIKEnabled() { mixin(MGF("mSetHandIKEnabled", "Function UDKBase.UDKPawn.SetHandIKEnabled")); }
+			ScriptFunction StartFeignDeathRecoveryAnim() { mixin(MGF("mStartFeignDeathRecoveryAnim", "Function UDKBase.UDKPawn.StartFeignDeathRecoveryAnim")); }
+			ScriptFunction TakeHitBlendedOut() { mixin(MGF("mTakeHitBlendedOut", "Function UDKBase.UDKPawn.TakeHitBlendedOut")); }
+			ScriptFunction UpdateEyeHeight() { mixin(MGF("mUpdateEyeHeight", "Function UDKBase.UDKPawn.UpdateEyeHeight")); }
+			ScriptFunction StuckFalling() { mixin(MGF("mStuckFalling", "Function UDKBase.UDKPawn.StuckFalling")); }
 		}
 	}
 	struct DrivenWeaponPawnInfo
@@ -79,12 +79,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.DrivenWeaponPawnInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.DrivenWeaponPawnInfo")); }
 		@property final auto ref
 		{
-			PlayerReplicationInfo PRI() { mixin(MGPS!("PlayerReplicationInfo", 8)()); }
-			ubyte SeatIndex() { mixin(MGPS!("ubyte", 4)()); }
-			UDKVehicle BaseVehicle() { mixin(MGPS!("UDKVehicle", 0)()); }
+			PlayerReplicationInfo PRI() { mixin(MGPS("PlayerReplicationInfo", 8)); }
+			ubyte SeatIndex() { mixin(MGPS("ubyte", 4)); }
+			UDKVehicle BaseVehicle() { mixin(MGPS("UDKVehicle", 0)); }
 		}
 	}
 	struct UTTakeHitInfo
@@ -92,19 +92,19 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.UTTakeHitInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.UTTakeHitInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName HitBone() { mixin(MGPS!("ScriptName", 32)()); }
+				ScriptName HitBone() { mixin(MGPS("ScriptName", 32)); }
 				// WARNING: Property 'DamageType' has the same name as a defined type!
-				Vector Momentum() { mixin(MGPS!("Vector", 16)()); }
-				Vector HitLocation() { mixin(MGPS!("Vector", 4)()); }
-				int Damage() { mixin(MGPS!("int", 0)()); }
+				Vector Momentum() { mixin(MGPS("Vector", 16)); }
+				Vector HitLocation() { mixin(MGPS("Vector", 4)); }
+				int Damage() { mixin(MGPS("int", 0)); }
 			}
-			bool m_bDamagedSelf() { mixin(MGBPS!(40, 0x1)()); }
-			bool m_bDamagedSelf(bool val) { mixin(MSBPS!(40, 0x1)()); }
+			bool m_bDamagedSelf() { mixin(MGBPS(40, 0x1)); }
+			bool m_bDamagedSelf(bool val) { mixin(MSBPS(40, 0x1)); }
 		}
 	}
 	struct PlayEmoteInfo
@@ -112,16 +112,16 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.PlayEmoteInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.PlayEmoteInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				int EmoteID() { mixin(MGPS!("int", 8)()); }
-				ScriptName EmoteTag() { mixin(MGPS!("ScriptName", 0)()); }
+				int EmoteID() { mixin(MGPS("int", 8)); }
+				ScriptName EmoteTag() { mixin(MGPS("ScriptName", 0)); }
 			}
-			bool bNewData() { mixin(MGBPS!(12, 0x1)()); }
-			bool bNewData(bool val) { mixin(MSBPS!(12, 0x1)()); }
+			bool bNewData() { mixin(MGBPS(12, 0x1)); }
+			bool bNewData(bool val) { mixin(MSBPS(12, 0x1)); }
 		}
 	}
 	struct MaterialImpactEffect
@@ -129,17 +129,17 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.MaterialImpactEffect")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.MaterialImpactEffect")); }
 		@property final auto ref
 		{
-			ScriptArray!(MaterialInterface) DecalMaterials() { mixin(MGPS!("ScriptArray!(MaterialInterface)", 12)()); }
-			ParticleSystem ParticleTemplate() { mixin(MGPS!("ParticleSystem", 44)()); }
-			float DecalHeight() { mixin(MGPS!("float", 40)()); }
-			float DecalWidth() { mixin(MGPS!("float", 36)()); }
-			ScriptName DecalDissolveParamName() { mixin(MGPS!("ScriptName", 28)()); }
-			float DurationOfDecal() { mixin(MGPS!("float", 24)()); }
-			SoundCue Sound() { mixin(MGPS!("SoundCue", 8)()); }
-			ScriptName MaterialType() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(MaterialInterface) DecalMaterials() { mixin(MGPS("ScriptArray!(MaterialInterface)", 12)); }
+			ParticleSystem ParticleTemplate() { mixin(MGPS("ParticleSystem", 44)); }
+			float DecalHeight() { mixin(MGPS("float", 40)); }
+			float DecalWidth() { mixin(MGPS("float", 36)); }
+			ScriptName DecalDissolveParamName() { mixin(MGPS("ScriptName", 28)); }
+			float DurationOfDecal() { mixin(MGPS("float", 24)); }
+			SoundCue Sound() { mixin(MGPS("SoundCue", 8)); }
+			ScriptName MaterialType() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct MaterialSoundEffect
@@ -147,11 +147,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.MaterialSoundEffect")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.MaterialSoundEffect")); }
 		@property final auto ref
 		{
-			SoundCue Sound() { mixin(MGPS!("SoundCue", 8)()); }
-			ScriptName MaterialType() { mixin(MGPS!("ScriptName", 0)()); }
+			SoundCue Sound() { mixin(MGPS("SoundCue", 8)); }
+			ScriptName MaterialType() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct MaterialParticleEffect
@@ -159,11 +159,11 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.MaterialParticleEffect")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.MaterialParticleEffect")); }
 		@property final auto ref
 		{
-			ParticleSystem ParticleTemplate() { mixin(MGPS!("ParticleSystem", 8)()); }
-			ScriptName MaterialType() { mixin(MGPS!("ScriptName", 0)()); }
+			ParticleSystem ParticleTemplate() { mixin(MGPS("ParticleSystem", 8)); }
+			ScriptName MaterialType() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct DistanceBasedParticleTemplate
@@ -171,11 +171,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.DistanceBasedParticleTemplate")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.DistanceBasedParticleTemplate")); }
 		@property final auto ref
 		{
-			float MinDistance() { mixin(MGPS!("float", 4)()); }
-			ParticleSystem Template() { mixin(MGPS!("ParticleSystem", 0)()); }
+			float MinDistance() { mixin(MGPS("float", 4)); }
+			ParticleSystem Template() { mixin(MGPS("ParticleSystem", 0)); }
 		}
 	}
 	struct EmoteInfo
@@ -183,141 +183,141 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPawn.EmoteInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKPawn.EmoteInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName Command() { mixin(MGPS!("ScriptName", 40)()); }
-				ScriptName EmoteAnim() { mixin(MGPS!("ScriptName", 28)()); }
-				ScriptString EmoteName() { mixin(MGPS!("ScriptString", 16)()); }
-				ScriptName EmoteTag() { mixin(MGPS!("ScriptName", 8)()); }
-				ScriptName CategoryName() { mixin(MGPS!("ScriptName", 0)()); }
+				ScriptName Command() { mixin(MGPS("ScriptName", 40)); }
+				ScriptName EmoteAnim() { mixin(MGPS("ScriptName", 28)); }
+				ScriptString EmoteName() { mixin(MGPS("ScriptString", 16)); }
+				ScriptName EmoteTag() { mixin(MGPS("ScriptName", 8)); }
+				ScriptName CategoryName() { mixin(MGPS("ScriptName", 0)); }
 			}
-			bool bRequiresPlayer() { mixin(MGBPS!(48, 0x1)()); }
-			bool bRequiresPlayer(bool val) { mixin(MSBPS!(48, 0x1)()); }
-			bool bTopHalfEmote() { mixin(MGBPS!(36, 0x2)()); }
-			bool bTopHalfEmote(bool val) { mixin(MSBPS!(36, 0x2)()); }
-			bool bVictoryEmote() { mixin(MGBPS!(36, 0x1)()); }
-			bool bVictoryEmote(bool val) { mixin(MSBPS!(36, 0x1)()); }
+			bool bRequiresPlayer() { mixin(MGBPS(48, 0x1)); }
+			bool bRequiresPlayer(bool val) { mixin(MSBPS(48, 0x1)); }
+			bool bTopHalfEmote() { mixin(MGBPS(36, 0x2)); }
+			bool bTopHalfEmote(bool val) { mixin(MSBPS(36, 0x2)); }
+			bool bVictoryEmote() { mixin(MGBPS(36, 0x1)); }
+			bool bVictoryEmote(bool val) { mixin(MSBPS(36, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) BodyMaterialInstances() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 1316)()); }
-			ScriptArray!(UDKBot) Trackers() { mixin(MGPC!("ScriptArray!(UDKBot)", 1352)()); }
-			Vector HUDLocation() { mixin(MGPC!("Vector", 1604)()); }
-			UObject.Vector2D CurrentSkelAim() { mixin(MGPC!("UObject.Vector2D", 1596)()); }
-			int MaxYawAim() { mixin(MGPC!("int", 1592)()); }
-			float RootYawSpeed() { mixin(MGPC!("float", 1588)()); }
-			int RootYaw() { mixin(MGPC!("int", 1584)()); }
+			ScriptArray!(MaterialInstanceConstant) BodyMaterialInstances() { mixin(MGPC("ScriptArray!(MaterialInstanceConstant)", 1316)); }
+			ScriptArray!(UDKBot) Trackers() { mixin(MGPC("ScriptArray!(UDKBot)", 1352)); }
+			Vector HUDLocation() { mixin(MGPC("Vector", 1604)); }
+			UObject.Vector2D CurrentSkelAim() { mixin(MGPC("UObject.Vector2D", 1596)); }
+			int MaxYawAim() { mixin(MGPC("int", 1592)); }
+			float RootYawSpeed() { mixin(MGPC("float", 1588)); }
+			int RootYaw() { mixin(MGPC("int", 1584)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ArmsMesh'!
-			float TakeHitPhysicsBlendOutSpeed() { mixin(MGPC!("float", 1572)()); }
-			float CrouchMeshZOffset() { mixin(MGPC!("float", 1568)()); }
-			float SwimmingZOffsetSpeed() { mixin(MGPC!("float", 1564)()); }
-			float SwimmingZOffset() { mixin(MGPC!("float", 1560)()); }
-			float FeignDeathPhysicsBlendOutSpeed() { mixin(MGPC!("float", 1556)()); }
-			int MaxLeanRoll() { mixin(MGPC!("int", 1552)()); }
-			AnimNodeAimOffset FlyingDirOffset() { mixin(MGPC!("AnimNodeAimOffset", 1548)()); }
-			float SlopeBoostFriction() { mixin(MGPC!("float", 1544)()); }
-			float StartedFallingTime() { mixin(MGPC!("float", 1540)()); }
-			float TeamBeaconMaxDist() { mixin(MGPC!("float", 1536)()); }
-			float LastPostRenderTraceTime() { mixin(MGPC!("float", 1532)()); }
-			ScriptName SaturationParameterName() { mixin(MGPC!("ScriptName", 1524)()); }
-			ScriptName DamageParameterName() { mixin(MGPC!("ScriptName", 1516)()); }
-			SkelControlLimb RightHandIK() { mixin(MGPC!("SkelControlLimb", 1512)()); }
-			SkelControlLimb LeftHandIK() { mixin(MGPC!("SkelControlLimb", 1508)()); }
-			SkelControlFootPlacement RightLegControl() { mixin(MGPC!("SkelControlFootPlacement", 1504)()); }
-			SkelControlFootPlacement LeftLegControl() { mixin(MGPC!("SkelControlFootPlacement", 1500)()); }
-			float MaxFootPlacementDistSquared() { mixin(MGPC!("float", 1496)()); }
-			float ZSmoothingRate() { mixin(MGPC!("float", 1492)()); }
-			float OldLocationZ() { mixin(MGPC!("float", 1488)()); }
-			float CrouchTranslationOffset() { mixin(MGPC!("float", 1484)()); }
-			float BaseTranslationOffset() { mixin(MGPC!("float", 1480)()); }
-			ScriptName RightFootControlName() { mixin(MGPC!("ScriptName", 1472)()); }
-			ScriptName LeftFootControlName() { mixin(MGPC!("ScriptName", 1464)()); }
-			ScriptName RightFootBone() { mixin(MGPC!("ScriptName", 1456)()); }
-			ScriptName LeftFootBone() { mixin(MGPC!("ScriptName", 1448)()); }
+			float TakeHitPhysicsBlendOutSpeed() { mixin(MGPC("float", 1572)); }
+			float CrouchMeshZOffset() { mixin(MGPC("float", 1568)); }
+			float SwimmingZOffsetSpeed() { mixin(MGPC("float", 1564)); }
+			float SwimmingZOffset() { mixin(MGPC("float", 1560)); }
+			float FeignDeathPhysicsBlendOutSpeed() { mixin(MGPC("float", 1556)); }
+			int MaxLeanRoll() { mixin(MGPC("int", 1552)); }
+			AnimNodeAimOffset FlyingDirOffset() { mixin(MGPC("AnimNodeAimOffset", 1548)); }
+			float SlopeBoostFriction() { mixin(MGPC("float", 1544)); }
+			float StartedFallingTime() { mixin(MGPC("float", 1540)); }
+			float TeamBeaconMaxDist() { mixin(MGPC("float", 1536)); }
+			float LastPostRenderTraceTime() { mixin(MGPC("float", 1532)); }
+			ScriptName SaturationParameterName() { mixin(MGPC("ScriptName", 1524)); }
+			ScriptName DamageParameterName() { mixin(MGPC("ScriptName", 1516)); }
+			SkelControlLimb RightHandIK() { mixin(MGPC("SkelControlLimb", 1512)); }
+			SkelControlLimb LeftHandIK() { mixin(MGPC("SkelControlLimb", 1508)); }
+			SkelControlFootPlacement RightLegControl() { mixin(MGPC("SkelControlFootPlacement", 1504)); }
+			SkelControlFootPlacement LeftLegControl() { mixin(MGPC("SkelControlFootPlacement", 1500)); }
+			float MaxFootPlacementDistSquared() { mixin(MGPC("float", 1496)); }
+			float ZSmoothingRate() { mixin(MGPC("float", 1492)); }
+			float OldLocationZ() { mixin(MGPC("float", 1488)); }
+			float CrouchTranslationOffset() { mixin(MGPC("float", 1484)); }
+			float BaseTranslationOffset() { mixin(MGPC("float", 1480)); }
+			ScriptName RightFootControlName() { mixin(MGPC("ScriptName", 1472)); }
+			ScriptName LeftFootControlName() { mixin(MGPC("ScriptName", 1464)); }
+			ScriptName RightFootBone() { mixin(MGPC("ScriptName", 1456)); }
+			ScriptName LeftFootBone() { mixin(MGPC("ScriptName", 1448)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OverlayMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BlobShadow'!
-			float FallSpeedThreshold() { mixin(MGPC!("float", 1436)()); }
-			SoundCue FallImpactSound() { mixin(MGPC!("SoundCue", 1432)()); }
-			ScriptName TorsoBoneName() { mixin(MGPC!("ScriptName", 1424)()); }
-			float StartFallImpactTime() { mixin(MGPC!("float", 1420)()); }
-			Rotator CompressedBodyMatColor() { mixin(MGPC!("Rotator", 1408)()); }
-			UObject.LinearColor BodyMatColor() { mixin(MGPC!("UObject.LinearColor", 1392)()); }
-			float ClientBodyMatDuration() { mixin(MGPC!("float", 1388)()); }
-			float RemainingBodyMatDuration() { mixin(MGPC!("float", 1384)()); }
-			UObject.LinearColor CurrentBodyMatColor() { mixin(MGPC!("UObject.LinearColor", 1368)()); }
-			float BodyMatFadeDuration() { mixin(MGPC!("float", 1364)()); }
-			GameSkelCtrl_Recoil RightRecoilNode() { mixin(MGPC!("GameSkelCtrl_Recoil", 1348)()); }
-			GameSkelCtrl_Recoil LeftRecoilNode() { mixin(MGPC!("GameSkelCtrl_Recoil", 1344)()); }
-			GameSkelCtrl_Recoil GunRecoilNode() { mixin(MGPC!("GameSkelCtrl_Recoil", 1340)()); }
-			AnimNodeAimOffset AimNode() { mixin(MGPC!("AnimNodeAimOffset", 1336)()); }
-			SkelControlSingleBone RootRotControl() { mixin(MGPC!("SkelControlSingleBone", 1332)()); }
-			MaterialInterface OverlayMaterialInstance() { mixin(MGPC!("MaterialInterface", 1328)()); }
-			Material ReplicatedBodyMaterial() { mixin(MGPC!("Material", 1312)()); }
-			SoundCue WeaponAmbientSoundCue() { mixin(MGPC!("SoundCue", 1308)()); }
+			float FallSpeedThreshold() { mixin(MGPC("float", 1436)); }
+			SoundCue FallImpactSound() { mixin(MGPC("SoundCue", 1432)); }
+			ScriptName TorsoBoneName() { mixin(MGPC("ScriptName", 1424)); }
+			float StartFallImpactTime() { mixin(MGPC("float", 1420)); }
+			Rotator CompressedBodyMatColor() { mixin(MGPC("Rotator", 1408)); }
+			UObject.LinearColor BodyMatColor() { mixin(MGPC("UObject.LinearColor", 1392)); }
+			float ClientBodyMatDuration() { mixin(MGPC("float", 1388)); }
+			float RemainingBodyMatDuration() { mixin(MGPC("float", 1384)); }
+			UObject.LinearColor CurrentBodyMatColor() { mixin(MGPC("UObject.LinearColor", 1368)); }
+			float BodyMatFadeDuration() { mixin(MGPC("float", 1364)); }
+			GameSkelCtrl_Recoil RightRecoilNode() { mixin(MGPC("GameSkelCtrl_Recoil", 1348)); }
+			GameSkelCtrl_Recoil LeftRecoilNode() { mixin(MGPC("GameSkelCtrl_Recoil", 1344)); }
+			GameSkelCtrl_Recoil GunRecoilNode() { mixin(MGPC("GameSkelCtrl_Recoil", 1340)); }
+			AnimNodeAimOffset AimNode() { mixin(MGPC("AnimNodeAimOffset", 1336)); }
+			SkelControlSingleBone RootRotControl() { mixin(MGPC("SkelControlSingleBone", 1332)); }
+			MaterialInterface OverlayMaterialInstance() { mixin(MGPC("MaterialInterface", 1328)); }
+			Material ReplicatedBodyMaterial() { mixin(MGPC("Material", 1312)); }
+			SoundCue WeaponAmbientSoundCue() { mixin(MGPC("SoundCue", 1308)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'WeaponAmbientSound'!
-			UDKPawn.DrivenWeaponPawnInfo DrivenWeaponPawn() { mixin(MGPC!("UDKPawn.DrivenWeaponPawnInfo", 1292)()); }
-			SoundCue PawnAmbientSoundCue() { mixin(MGPC!("SoundCue", 1288)()); }
+			UDKPawn.DrivenWeaponPawnInfo DrivenWeaponPawn() { mixin(MGPC("UDKPawn.DrivenWeaponPawnInfo", 1292)); }
+			SoundCue PawnAmbientSoundCue() { mixin(MGPC("SoundCue", 1288)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PawnAmbientSound'!
-			float OldZ() { mixin(MGPC!("float", 1280)()); }
-			Vector MeshTranslationOffset() { mixin(MGPC!("Vector", 1268)()); }
-			float SmoothNetUpdateTime() { mixin(MGPC!("float", 1264)()); }
-			float NoSmoothNetUpdateDist() { mixin(MGPC!("float", 1260)()); }
-			float MaxSmoothNetUpdateDist() { mixin(MGPC!("float", 1256)()); }
-			float HeadScale() { mixin(MGPC!("float", 1252)()); }
-			float FireRateMultiplier() { mixin(MGPC!("float", 1248)()); }
-			float LastTakeHitTimeout() { mixin(MGPC!("float", 1244)()); }
-			UDKPawn.UTTakeHitInfo LastTakeHitInfo() { mixin(MGPC!("UDKPawn.UTTakeHitInfo", 1200)()); }
-			ubyte WeaponOverlayFlags() { mixin(MGPC!("ubyte", 1197)()); }
-			ubyte BigTeleportCount() { mixin(MGPC!("ubyte", 1196)()); }
-			float MinTimeBetweenEmotes() { mixin(MGPC!("float", 1192)()); }
-			float LastEmoteTime() { mixin(MGPC!("float", 1188)()); }
-			UDKPawn.PlayEmoteInfo EmoteRepInfo() { mixin(MGPC!("UDKPawn.PlayEmoteInfo", 1172)()); }
-			float CustomGravityScaling() { mixin(MGPC!("float", 1168)()); }
-			int MultiJumpBoost() { mixin(MGPC!("int", 1164)()); }
-			int MaxMultiJump() { mixin(MGPC!("int", 1160)()); }
-			int MultiJumpRemaining() { mixin(MGPC!("int", 1156)()); }
-			float MaxDoubleJumpHeight() { mixin(MGPC!("float", 1152)()); }
+			float OldZ() { mixin(MGPC("float", 1280)); }
+			Vector MeshTranslationOffset() { mixin(MGPC("Vector", 1268)); }
+			float SmoothNetUpdateTime() { mixin(MGPC("float", 1264)); }
+			float NoSmoothNetUpdateDist() { mixin(MGPC("float", 1260)); }
+			float MaxSmoothNetUpdateDist() { mixin(MGPC("float", 1256)); }
+			float HeadScale() { mixin(MGPC("float", 1252)); }
+			float FireRateMultiplier() { mixin(MGPC("float", 1248)); }
+			float LastTakeHitTimeout() { mixin(MGPC("float", 1244)); }
+			UDKPawn.UTTakeHitInfo LastTakeHitInfo() { mixin(MGPC("UDKPawn.UTTakeHitInfo", 1200)); }
+			ubyte WeaponOverlayFlags() { mixin(MGPC("ubyte", 1197)); }
+			ubyte BigTeleportCount() { mixin(MGPC("ubyte", 1196)); }
+			float MinTimeBetweenEmotes() { mixin(MGPC("float", 1192)); }
+			float LastEmoteTime() { mixin(MGPC("float", 1188)); }
+			UDKPawn.PlayEmoteInfo EmoteRepInfo() { mixin(MGPC("UDKPawn.PlayEmoteInfo", 1172)); }
+			float CustomGravityScaling() { mixin(MGPC("float", 1168)); }
+			int MultiJumpBoost() { mixin(MGPC("int", 1164)); }
+			int MaxMultiJump() { mixin(MGPC("int", 1160)); }
+			int MultiJumpRemaining() { mixin(MGPC("int", 1156)); }
+			float MaxDoubleJumpHeight() { mixin(MGPC("float", 1152)); }
 		}
-		bool bNotifyStopFalling() { mixin(MGBPC!(1148, 0x40)()); }
-		bool bNotifyStopFalling(bool val) { mixin(MSBPC!(1148, 0x40)()); }
-		bool bReadyToDoubleJump() { mixin(MGBPC!(1148, 0x1)()); }
-		bool bReadyToDoubleJump(bool val) { mixin(MSBPC!(1148, 0x1)()); }
-		bool bTearOffGibs() { mixin(MGBPC!(1148, 0x10000)()); }
-		bool bTearOffGibs(bool val) { mixin(MSBPC!(1148, 0x10000)()); }
-		bool bUpdateEyeheight() { mixin(MGBPC!(1148, 0x8000)()); }
-		bool bUpdateEyeheight(bool val) { mixin(MSBPC!(1148, 0x8000)()); }
-		bool bBlendOutTakeHitPhysics() { mixin(MGBPC!(1148, 0x4000)()); }
-		bool bBlendOutTakeHitPhysics(bool val) { mixin(MSBPC!(1148, 0x4000)()); }
-		bool bPostRenderOtherTeam() { mixin(MGBPC!(1148, 0x2000)()); }
-		bool bPostRenderOtherTeam(bool val) { mixin(MSBPC!(1148, 0x2000)()); }
-		bool bEnableFootPlacement() { mixin(MGBPC!(1148, 0x1000)()); }
-		bool bEnableFootPlacement(bool val) { mixin(MSBPC!(1148, 0x1000)()); }
-		bool bCanPlayFallingImpacts() { mixin(MGBPC!(1148, 0x800)()); }
-		bool bCanPlayFallingImpacts(bool val) { mixin(MSBPC!(1148, 0x800)()); }
-		bool bPlayingFeignDeathRecovery() { mixin(MGBPC!(1148, 0x400)()); }
-		bool bPlayingFeignDeathRecovery(bool val) { mixin(MSBPC!(1148, 0x400)()); }
-		bool bPuttingDownWeapon() { mixin(MGBPC!(1148, 0x200)()); }
-		bool bPuttingDownWeapon(bool val) { mixin(MSBPC!(1148, 0x200)()); }
-		bool bSmoothNetUpdates() { mixin(MGBPC!(1148, 0x100)()); }
-		bool bSmoothNetUpdates(bool val) { mixin(MSBPC!(1148, 0x100)()); }
-		bool bIsInvisible() { mixin(MGBPC!(1148, 0x80)()); }
-		bool bIsInvisible(bool val) { mixin(MSBPC!(1148, 0x80)()); }
-		bool bFeigningDeath() { mixin(MGBPC!(1148, 0x20)()); }
-		bool bFeigningDeath(bool val) { mixin(MSBPC!(1148, 0x20)()); }
-		bool bIsHoverboardAnimPawn() { mixin(MGBPC!(1148, 0x10)()); }
-		bool bIsHoverboardAnimPawn(bool val) { mixin(MSBPC!(1148, 0x10)()); }
-		bool bNoJumpAdjust() { mixin(MGBPC!(1148, 0x8)()); }
-		bool bNoJumpAdjust(bool val) { mixin(MSBPC!(1148, 0x8)()); }
-		bool bCanDoubleJump() { mixin(MGBPC!(1148, 0x4)()); }
-		bool bCanDoubleJump(bool val) { mixin(MSBPC!(1148, 0x4)()); }
-		bool bRequiresDoubleJump() { mixin(MGBPC!(1148, 0x2)()); }
-		bool bRequiresDoubleJump(bool val) { mixin(MSBPC!(1148, 0x2)()); }
+		bool bNotifyStopFalling() { mixin(MGBPC(1148, 0x40)); }
+		bool bNotifyStopFalling(bool val) { mixin(MSBPC(1148, 0x40)); }
+		bool bReadyToDoubleJump() { mixin(MGBPC(1148, 0x1)); }
+		bool bReadyToDoubleJump(bool val) { mixin(MSBPC(1148, 0x1)); }
+		bool bTearOffGibs() { mixin(MGBPC(1148, 0x10000)); }
+		bool bTearOffGibs(bool val) { mixin(MSBPC(1148, 0x10000)); }
+		bool bUpdateEyeheight() { mixin(MGBPC(1148, 0x8000)); }
+		bool bUpdateEyeheight(bool val) { mixin(MSBPC(1148, 0x8000)); }
+		bool bBlendOutTakeHitPhysics() { mixin(MGBPC(1148, 0x4000)); }
+		bool bBlendOutTakeHitPhysics(bool val) { mixin(MSBPC(1148, 0x4000)); }
+		bool bPostRenderOtherTeam() { mixin(MGBPC(1148, 0x2000)); }
+		bool bPostRenderOtherTeam(bool val) { mixin(MSBPC(1148, 0x2000)); }
+		bool bEnableFootPlacement() { mixin(MGBPC(1148, 0x1000)); }
+		bool bEnableFootPlacement(bool val) { mixin(MSBPC(1148, 0x1000)); }
+		bool bCanPlayFallingImpacts() { mixin(MGBPC(1148, 0x800)); }
+		bool bCanPlayFallingImpacts(bool val) { mixin(MSBPC(1148, 0x800)); }
+		bool bPlayingFeignDeathRecovery() { mixin(MGBPC(1148, 0x400)); }
+		bool bPlayingFeignDeathRecovery(bool val) { mixin(MSBPC(1148, 0x400)); }
+		bool bPuttingDownWeapon() { mixin(MGBPC(1148, 0x200)); }
+		bool bPuttingDownWeapon(bool val) { mixin(MSBPC(1148, 0x200)); }
+		bool bSmoothNetUpdates() { mixin(MGBPC(1148, 0x100)); }
+		bool bSmoothNetUpdates(bool val) { mixin(MSBPC(1148, 0x100)); }
+		bool bIsInvisible() { mixin(MGBPC(1148, 0x80)); }
+		bool bIsInvisible(bool val) { mixin(MSBPC(1148, 0x80)); }
+		bool bFeigningDeath() { mixin(MGBPC(1148, 0x20)); }
+		bool bFeigningDeath(bool val) { mixin(MSBPC(1148, 0x20)); }
+		bool bIsHoverboardAnimPawn() { mixin(MGBPC(1148, 0x10)); }
+		bool bIsHoverboardAnimPawn(bool val) { mixin(MSBPC(1148, 0x10)); }
+		bool bNoJumpAdjust() { mixin(MGBPC(1148, 0x8)); }
+		bool bNoJumpAdjust(bool val) { mixin(MSBPC(1148, 0x8)); }
+		bool bCanDoubleJump() { mixin(MGBPC(1148, 0x4)); }
+		bool bCanDoubleJump(bool val) { mixin(MSBPC(1148, 0x4)); }
+		bool bRequiresDoubleJump() { mixin(MGBPC(1148, 0x2)); }
+		bool bRequiresDoubleJump(bool val) { mixin(MSBPC(1148, 0x2)); }
 	}
 final:
 	void GetBoundingCylinder(ref float CollisionRadius, ref float CollisionHeight)

@@ -12,9 +12,9 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_OnlinePlaylists")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStore_OnlinePlaylists")); }
 	private static __gshared UIDataStore_OnlinePlaylists mDefaultProperties;
-	@property final static UIDataStore_OnlinePlaylists DefaultProperties() { mixin(MGDPC!(UIDataStore_OnlinePlaylists, "UIDataStore_OnlinePlaylists Engine.Default__UIDataStore_OnlinePlaylists")()); }
+	@property final static UIDataStore_OnlinePlaylists DefaultProperties() { mixin(MGDPC("UIDataStore_OnlinePlaylists", "UIDataStore_OnlinePlaylists Engine.Default__UIDataStore_OnlinePlaylists")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,13 +29,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetProviderCount() { mixin(MGF!("mGetProviderCount", "Function Engine.UIDataStore_OnlinePlaylists.GetProviderCount")()); }
-			ScriptFunction GetResourceProviders() { mixin(MGF!("mGetResourceProviders", "Function Engine.UIDataStore_OnlinePlaylists.GetResourceProviders")()); }
-			ScriptFunction GetResourceProviderFields() { mixin(MGF!("mGetResourceProviderFields", "Function Engine.UIDataStore_OnlinePlaylists.GetResourceProviderFields")()); }
-			ScriptFunction GetProviderFieldValue() { mixin(MGF!("mGetProviderFieldValue", "Function Engine.UIDataStore_OnlinePlaylists.GetProviderFieldValue")()); }
-			ScriptFunction FindProviderIndexByFieldValue() { mixin(MGF!("mFindProviderIndexByFieldValue", "Function Engine.UIDataStore_OnlinePlaylists.FindProviderIndexByFieldValue")()); }
-			ScriptFunction GetPlaylistProvider() { mixin(MGF!("mGetPlaylistProvider", "Function Engine.UIDataStore_OnlinePlaylists.GetPlaylistProvider")()); }
-			ScriptFunction GetOnlinePlaylistProvider() { mixin(MGF!("mGetOnlinePlaylistProvider", "Function Engine.UIDataStore_OnlinePlaylists.GetOnlinePlaylistProvider")()); }
+			ScriptFunction GetProviderCount() { mixin(MGF("mGetProviderCount", "Function Engine.UIDataStore_OnlinePlaylists.GetProviderCount")); }
+			ScriptFunction GetResourceProviders() { mixin(MGF("mGetResourceProviders", "Function Engine.UIDataStore_OnlinePlaylists.GetResourceProviders")); }
+			ScriptFunction GetResourceProviderFields() { mixin(MGF("mGetResourceProviderFields", "Function Engine.UIDataStore_OnlinePlaylists.GetResourceProviderFields")); }
+			ScriptFunction GetProviderFieldValue() { mixin(MGF("mGetProviderFieldValue", "Function Engine.UIDataStore_OnlinePlaylists.GetProviderFieldValue")); }
+			ScriptFunction FindProviderIndexByFieldValue() { mixin(MGF("mFindProviderIndexByFieldValue", "Function Engine.UIDataStore_OnlinePlaylists.FindProviderIndexByFieldValue")); }
+			ScriptFunction GetPlaylistProvider() { mixin(MGF("mGetPlaylistProvider", "Function Engine.UIDataStore_OnlinePlaylists.GetPlaylistProvider")); }
+			ScriptFunction GetOnlinePlaylistProvider() { mixin(MGF("mGetOnlinePlaylistProvider", "Function Engine.UIDataStore_OnlinePlaylists.GetOnlinePlaylistProvider")); }
 		}
 	}
 	static struct Constants
@@ -48,11 +48,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIResourceDataProvider) RankedDataProviders() { mixin(MGPC!("ScriptArray!(UIResourceDataProvider)", 140)()); }
-		ScriptArray!(UIResourceDataProvider) UnRankedDataProviders() { mixin(MGPC!("ScriptArray!(UIResourceDataProvider)", 152)()); }
-		ScriptClass ProviderClass() { mixin(MGPC!("ScriptClass", 136)()); }
-		ScriptString ProviderClassName() { mixin(MGPC!("ScriptString", 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
+		ScriptArray!(UIResourceDataProvider) RankedDataProviders() { mixin(MGPC("ScriptArray!(UIResourceDataProvider)", 140)); }
+		ScriptArray!(UIResourceDataProvider) UnRankedDataProviders() { mixin(MGPC("ScriptArray!(UIResourceDataProvider)", 152)); }
+		ScriptClass ProviderClass() { mixin(MGPC("ScriptClass", 136)); }
+		ScriptString ProviderClassName() { mixin(MGPC("ScriptString", 124)); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
 	}
 final:
 	int GetProviderCount(ScriptName ProviderTag)

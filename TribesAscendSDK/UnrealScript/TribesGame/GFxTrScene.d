@@ -10,13 +10,13 @@ extern(C++) interface GFxTrScene : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrScene")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrScene")); }
 	private static __gshared GFxTrScene mDefaultProperties;
-	@property final static GFxTrScene DefaultProperties() { mixin(MGDPC!(GFxTrScene, "GFxTrScene TribesGame.Default__GFxTrScene")()); }
+	@property final static GFxTrScene DefaultProperties() { mixin(MGDPC("GFxTrScene", "GFxTrScene TribesGame.Default__GFxTrScene")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;
-		public @property static final ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrScene.Initialize")()); }
+		public @property static final ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrScene.Initialize")); }
 	}
 	static struct Constants
 	{
@@ -1661,11 +1661,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC!("GFxTrMenuMoviePlayer", 128)()); }
-			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 124)()); }
+			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC("GFxTrMenuMoviePlayer", 128)); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC("OnlineSubsystem", 124)); }
 		}
-		bool bSceneCreated() { mixin(MGBPC!(120, 0x1)()); }
-		bool bSceneCreated(bool val) { mixin(MSBPC!(120, 0x1)()); }
+		bool bSceneCreated() { mixin(MGBPC(120, 0x1)); }
+		bool bSceneCreated(bool val) { mixin(MSBPC(120, 0x1)); }
 	}
 	final void Initialize()
 	{

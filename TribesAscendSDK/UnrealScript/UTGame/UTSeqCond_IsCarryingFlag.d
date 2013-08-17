@@ -10,18 +10,18 @@ extern(C++) interface UTSeqCond_IsCarryingFlag : SequenceCondition
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSeqCond_IsCarryingFlag")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSeqCond_IsCarryingFlag")); }
 	private static __gshared UTSeqCond_IsCarryingFlag mDefaultProperties;
-	@property final static UTSeqCond_IsCarryingFlag DefaultProperties() { mixin(MGDPC!(UTSeqCond_IsCarryingFlag, "UTSeqCond_IsCarryingFlag UTGame.Default__UTSeqCond_IsCarryingFlag")()); }
+	@property final static UTSeqCond_IsCarryingFlag DefaultProperties() { mixin(MGDPC("UTSeqCond_IsCarryingFlag", "UTSeqCond_IsCarryingFlag UTGame.Default__UTSeqCond_IsCarryingFlag")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;
-		public @property static final ScriptFunction Activated() { mixin(MGF!("mActivated", "Function UTGame.UTSeqCond_IsCarryingFlag.Activated")()); }
+		public @property static final ScriptFunction Activated() { mixin(MGF("mActivated", "Function UTGame.UTSeqCond_IsCarryingFlag.Activated")); }
 	}
 	@property final auto ref
 	{
-		UTGameObjective FlagBase() { mixin(MGPC!("UTGameObjective", 212)()); }
-		Actor Target() { mixin(MGPC!("Actor", 208)()); }
+		UTGameObjective FlagBase() { mixin(MGPC("UTGameObjective", 212)); }
+		Actor Target() { mixin(MGPC("Actor", 208)); }
 	}
 	final void Activated()
 	{

@@ -9,9 +9,9 @@ extern(C++) interface TrProj_ThrowDeployable : TrProj_Mine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_ThrowDeployable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_ThrowDeployable")); }
 	private static __gshared TrProj_ThrowDeployable mDefaultProperties;
-	@property final static TrProj_ThrowDeployable DefaultProperties() { mixin(MGDPC!(TrProj_ThrowDeployable, "TrProj_ThrowDeployable TribesGame.Default__TrProj_ThrowDeployable")()); }
+	@property final static TrProj_ThrowDeployable DefaultProperties() { mixin(MGDPC("TrProj_ThrowDeployable", "TrProj_ThrowDeployable TribesGame.Default__TrProj_ThrowDeployable")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,13 +23,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SpawnDeployable() { mixin(MGF!("mSpawnDeployable", "Function TribesGame.TrProj_ThrowDeployable.SpawnDeployable")()); }
-			ScriptFunction DestroyOldestOverLimit() { mixin(MGF!("mDestroyOldestOverLimit", "Function TribesGame.TrProj_ThrowDeployable.DestroyOldestOverLimit")()); }
-			ScriptFunction GetMaxDeployedLimit() { mixin(MGF!("mGetMaxDeployedLimit", "Function TribesGame.TrProj_ThrowDeployable.GetMaxDeployedLimit")()); }
-			ScriptFunction ArmedTimer() { mixin(MGF!("mArmedTimer", "Function TribesGame.TrProj_ThrowDeployable.ArmedTimer")()); }
+			ScriptFunction SpawnDeployable() { mixin(MGF("mSpawnDeployable", "Function TribesGame.TrProj_ThrowDeployable.SpawnDeployable")); }
+			ScriptFunction DestroyOldestOverLimit() { mixin(MGF("mDestroyOldestOverLimit", "Function TribesGame.TrProj_ThrowDeployable.DestroyOldestOverLimit")); }
+			ScriptFunction GetMaxDeployedLimit() { mixin(MGF("mGetMaxDeployedLimit", "Function TribesGame.TrProj_ThrowDeployable.GetMaxDeployedLimit")); }
+			ScriptFunction ArmedTimer() { mixin(MGF("mArmedTimer", "Function TribesGame.TrProj_ThrowDeployable.ArmedTimer")); }
 		}
 	}
-	@property final auto ref ScriptClass m_DeployableToSpawn() { mixin(MGPC!("ScriptClass", 900)()); }
+	@property final auto ref ScriptClass m_DeployableToSpawn() { mixin(MGPC("ScriptClass", 900)); }
 final:
 	TrDeployable SpawnDeployable()
 	{

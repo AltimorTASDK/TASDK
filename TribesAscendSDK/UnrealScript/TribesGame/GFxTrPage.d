@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage")); }
 	private static __gshared GFxTrPage mDefaultProperties;
-	@property final static GFxTrPage DefaultProperties() { mixin(MGDPC!(GFxTrPage, "GFxTrPage TribesGame.Default__GFxTrPage")()); }
+	@property final static GFxTrPage DefaultProperties() { mixin(MGDPC("GFxTrPage", "GFxTrPage TribesGame.Default__GFxTrPage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -69,55 +69,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage.Initialize")()); }
-			ScriptFunction AddAction() { mixin(MGF!("mAddAction", "Function TribesGame.GFxTrPage.AddAction")()); }
-			ScriptFunction AddActionNumber() { mixin(MGF!("mAddActionNumber", "Function TribesGame.GFxTrPage.AddActionNumber")()); }
-			ScriptFunction AddActionString() { mixin(MGF!("mAddActionString", "Function TribesGame.GFxTrPage.AddActionString")()); }
-			ScriptFunction AddActionPage() { mixin(MGF!("mAddActionPage", "Function TribesGame.GFxTrPage.AddActionPage")()); }
-			ScriptFunction AddActionSet() { mixin(MGF!("mAddActionSet", "Function TribesGame.GFxTrPage.AddActionSet")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage.TakeFocus")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage.TakeAction")()); }
-			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage.ModifyAction")()); }
-			ScriptFunction ModifyFocus() { mixin(MGF!("mModifyFocus", "Function TribesGame.GFxTrPage.ModifyFocus")()); }
-			ScriptFunction HelpButton() { mixin(MGF!("mHelpButton", "Function TribesGame.GFxTrPage.HelpButton")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage.SpecialAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage.PopupComplete")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage.FillData")()); }
-			ScriptFunction FillOptions() { mixin(MGF!("mFillOptions", "Function TribesGame.GFxTrPage.FillOptions")()); }
-			ScriptFunction IsOwned() { mixin(MGF!("mIsOwned", "Function TribesGame.GFxTrPage.IsOwned")()); }
-			ScriptFunction CheckPurchasable() { mixin(MGF!("mCheckPurchasable", "Function TribesGame.GFxTrPage.CheckPurchasable")()); }
-			ScriptFunction IsEquipMaxed() { mixin(MGF!("mIsEquipMaxed", "Function TribesGame.GFxTrPage.IsEquipMaxed")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage.FillOption")()); }
-			ScriptFunction FillDefault() { mixin(MGF!("mFillDefault", "Function TribesGame.GFxTrPage.FillDefault")()); }
-			ScriptFunction CheckUpgrades() { mixin(MGF!("mCheckUpgrades", "Function TribesGame.GFxTrPage.CheckUpgrades")()); }
-			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage.CheckPricing")()); }
-			ScriptFunction FillUpgrades() { mixin(MGF!("mFillUpgrades", "Function TribesGame.GFxTrPage.FillUpgrades")()); }
-			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage.FillPricing")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage.FillDescription")()); }
-			ScriptFunction FillPage() { mixin(MGF!("mFillPage", "Function TribesGame.GFxTrPage.FillPage")()); }
-			ScriptFunction ClearActions() { mixin(MGF!("mClearActions", "Function TribesGame.GFxTrPage.ClearActions")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage.ShowModel")()); }
-			ScriptFunction FillClass() { mixin(MGF!("mFillClass", "Function TribesGame.GFxTrPage.FillClass")()); }
-			ScriptFunction FillEquipTypes() { mixin(MGF!("mFillEquipTypes", "Function TribesGame.GFxTrPage.FillEquipTypes")()); }
-			ScriptFunction NewClassEquip() { mixin(MGF!("mNewClassEquip", "Function TribesGame.GFxTrPage.NewClassEquip")()); }
-			ScriptFunction NewClassUpgrade() { mixin(MGF!("mNewClassUpgrade", "Function TribesGame.GFxTrPage.NewClassUpgrade")()); }
-			ScriptFunction NewEquipUpgrade() { mixin(MGF!("mNewEquipUpgrade", "Function TribesGame.GFxTrPage.NewEquipUpgrade")()); }
-			ScriptFunction RevertSetting() { mixin(MGF!("mRevertSetting", "Function TribesGame.GFxTrPage.RevertSetting")()); }
-			ScriptFunction OnPurchaseSuccess() { mixin(MGF!("mOnPurchaseSuccess", "Function TribesGame.GFxTrPage.OnPurchaseSuccess")()); }
-			ScriptFunction ActionUp() { mixin(MGF!("mActionUp", "Function TribesGame.GFxTrPage.ActionUp")()); }
-			ScriptFunction ActionDown() { mixin(MGF!("mActionDown", "Function TribesGame.GFxTrPage.ActionDown")()); }
-			ScriptFunction RefreshButtons() { mixin(MGF!("mRefreshButtons", "Function TribesGame.GFxTrPage.RefreshButtons")()); }
-			ScriptFunction KeyEvent() { mixin(MGF!("mKeyEvent", "Function TribesGame.GFxTrPage.KeyEvent")()); }
-			ScriptFunction UpdateDealTimer() { mixin(MGF!("mUpdateDealTimer", "Function TribesGame.GFxTrPage.UpdateDealTimer")()); }
-			ScriptFunction UpdateQueueTimer() { mixin(MGF!("mUpdateQueueTimer", "Function TribesGame.GFxTrPage.UpdateQueueTimer")()); }
-			ScriptFunction ProfileUp() { mixin(MGF!("mProfileUp", "Function TribesGame.GFxTrPage.ProfileUp")()); }
-			ScriptFunction ProfileDown() { mixin(MGF!("mProfileDown", "Function TribesGame.GFxTrPage.ProfileDown")()); }
-			ScriptFunction ResetRunaway() { mixin(MGF!("mResetRunaway", "Function TribesGame.GFxTrPage.ResetRunaway")()); }
-			ScriptFunction ShowReticule() { mixin(MGF!("mShowReticule", "Function TribesGame.GFxTrPage.ShowReticule")()); }
-			ScriptFunction SaveReticule() { mixin(MGF!("mSaveReticule", "Function TribesGame.GFxTrPage.SaveReticule")()); }
-			ScriptFunction OnClose() { mixin(MGF!("mOnClose", "Function TribesGame.GFxTrPage.OnClose")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage.Initialize")); }
+			ScriptFunction AddAction() { mixin(MGF("mAddAction", "Function TribesGame.GFxTrPage.AddAction")); }
+			ScriptFunction AddActionNumber() { mixin(MGF("mAddActionNumber", "Function TribesGame.GFxTrPage.AddActionNumber")); }
+			ScriptFunction AddActionString() { mixin(MGF("mAddActionString", "Function TribesGame.GFxTrPage.AddActionString")); }
+			ScriptFunction AddActionPage() { mixin(MGF("mAddActionPage", "Function TribesGame.GFxTrPage.AddActionPage")); }
+			ScriptFunction AddActionSet() { mixin(MGF("mAddActionSet", "Function TribesGame.GFxTrPage.AddActionSet")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage.TakeFocus")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage.TakeAction")); }
+			ScriptFunction ModifyAction() { mixin(MGF("mModifyAction", "Function TribesGame.GFxTrPage.ModifyAction")); }
+			ScriptFunction ModifyFocus() { mixin(MGF("mModifyFocus", "Function TribesGame.GFxTrPage.ModifyFocus")); }
+			ScriptFunction HelpButton() { mixin(MGF("mHelpButton", "Function TribesGame.GFxTrPage.HelpButton")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage.SpecialAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage.PopupComplete")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage.FillData")); }
+			ScriptFunction FillOptions() { mixin(MGF("mFillOptions", "Function TribesGame.GFxTrPage.FillOptions")); }
+			ScriptFunction IsOwned() { mixin(MGF("mIsOwned", "Function TribesGame.GFxTrPage.IsOwned")); }
+			ScriptFunction CheckPurchasable() { mixin(MGF("mCheckPurchasable", "Function TribesGame.GFxTrPage.CheckPurchasable")); }
+			ScriptFunction IsEquipMaxed() { mixin(MGF("mIsEquipMaxed", "Function TribesGame.GFxTrPage.IsEquipMaxed")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage.FillOption")); }
+			ScriptFunction FillDefault() { mixin(MGF("mFillDefault", "Function TribesGame.GFxTrPage.FillDefault")); }
+			ScriptFunction CheckUpgrades() { mixin(MGF("mCheckUpgrades", "Function TribesGame.GFxTrPage.CheckUpgrades")); }
+			ScriptFunction CheckPricing() { mixin(MGF("mCheckPricing", "Function TribesGame.GFxTrPage.CheckPricing")); }
+			ScriptFunction FillUpgrades() { mixin(MGF("mFillUpgrades", "Function TribesGame.GFxTrPage.FillUpgrades")); }
+			ScriptFunction FillPricing() { mixin(MGF("mFillPricing", "Function TribesGame.GFxTrPage.FillPricing")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage.FillDescription")); }
+			ScriptFunction FillPage() { mixin(MGF("mFillPage", "Function TribesGame.GFxTrPage.FillPage")); }
+			ScriptFunction ClearActions() { mixin(MGF("mClearActions", "Function TribesGame.GFxTrPage.ClearActions")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage.ShowModel")); }
+			ScriptFunction FillClass() { mixin(MGF("mFillClass", "Function TribesGame.GFxTrPage.FillClass")); }
+			ScriptFunction FillEquipTypes() { mixin(MGF("mFillEquipTypes", "Function TribesGame.GFxTrPage.FillEquipTypes")); }
+			ScriptFunction NewClassEquip() { mixin(MGF("mNewClassEquip", "Function TribesGame.GFxTrPage.NewClassEquip")); }
+			ScriptFunction NewClassUpgrade() { mixin(MGF("mNewClassUpgrade", "Function TribesGame.GFxTrPage.NewClassUpgrade")); }
+			ScriptFunction NewEquipUpgrade() { mixin(MGF("mNewEquipUpgrade", "Function TribesGame.GFxTrPage.NewEquipUpgrade")); }
+			ScriptFunction RevertSetting() { mixin(MGF("mRevertSetting", "Function TribesGame.GFxTrPage.RevertSetting")); }
+			ScriptFunction OnPurchaseSuccess() { mixin(MGF("mOnPurchaseSuccess", "Function TribesGame.GFxTrPage.OnPurchaseSuccess")); }
+			ScriptFunction ActionUp() { mixin(MGF("mActionUp", "Function TribesGame.GFxTrPage.ActionUp")); }
+			ScriptFunction ActionDown() { mixin(MGF("mActionDown", "Function TribesGame.GFxTrPage.ActionDown")); }
+			ScriptFunction RefreshButtons() { mixin(MGF("mRefreshButtons", "Function TribesGame.GFxTrPage.RefreshButtons")); }
+			ScriptFunction KeyEvent() { mixin(MGF("mKeyEvent", "Function TribesGame.GFxTrPage.KeyEvent")); }
+			ScriptFunction UpdateDealTimer() { mixin(MGF("mUpdateDealTimer", "Function TribesGame.GFxTrPage.UpdateDealTimer")); }
+			ScriptFunction UpdateQueueTimer() { mixin(MGF("mUpdateQueueTimer", "Function TribesGame.GFxTrPage.UpdateQueueTimer")); }
+			ScriptFunction ProfileUp() { mixin(MGF("mProfileUp", "Function TribesGame.GFxTrPage.ProfileUp")); }
+			ScriptFunction ProfileDown() { mixin(MGF("mProfileDown", "Function TribesGame.GFxTrPage.ProfileDown")); }
+			ScriptFunction ResetRunaway() { mixin(MGF("mResetRunaway", "Function TribesGame.GFxTrPage.ResetRunaway")); }
+			ScriptFunction ShowReticule() { mixin(MGF("mShowReticule", "Function TribesGame.GFxTrPage.ShowReticule")); }
+			ScriptFunction SaveReticule() { mixin(MGF("mSaveReticule", "Function TribesGame.GFxTrPage.SaveReticule")); }
+			ScriptFunction OnClose() { mixin(MGF("mOnClose", "Function TribesGame.GFxTrPage.OnClose")); }
 		}
 	}
 	static struct Constants
@@ -147,66 +147,66 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrPage.ResolutionSet")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.GFxTrPage.ResolutionSet")); }
 		@property final auto ref
 		{
-			TgPlayerProfile.PropertyPair Res() { mixin(MGPS!("TgPlayerProfile.PropertyPair", 4)()); }
-			int Index() { mixin(MGPS!("int", 0)()); }
+			TgPlayerProfile.PropertyPair Res() { mixin(MGPS("TgPlayerProfile.PropertyPair", 4)); }
+			int Index() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) OptionTitlesOverride() { mixin(MGPC!("ScriptArray!(ScriptString)", 188)()); }
-			ScriptArray!(ScriptString) OptionSubtextOverride() { mixin(MGPC!("ScriptArray!(ScriptString)", 200)()); }
-			ScriptArray!(ScriptString) OptionTitles() { mixin(MGPC!("ScriptArray!(ScriptString)", 320)()); }
-			ScriptArray!(ScriptString) OptionSubtext() { mixin(MGPC!("ScriptArray!(ScriptString)", 332)()); }
-			ScriptArray!(GFxTrAction) PageActions() { mixin(MGPC!("ScriptArray!(GFxTrAction)", 344)()); }
-			ScriptString HelpButtonYLabel() { mixin(MGPC!("ScriptString", 308)()); }
-			ScriptString HelpButtonXLabel() { mixin(MGPC!("ScriptString", 296)()); }
-			ScriptString HelpButtonBLabel() { mixin(MGPC!("ScriptString", 284)()); }
-			ScriptString HelpButtonALabel() { mixin(MGPC!("ScriptString", 272)()); }
-			ScriptString HelpButtonYKey() { mixin(MGPC!("ScriptString", 260)()); }
-			ScriptString HelpButtonXKey() { mixin(MGPC!("ScriptString", 248)()); }
-			ScriptString HelpButtonBKey() { mixin(MGPC!("ScriptString", 236)()); }
-			ScriptString HelpButtonAKey() { mixin(MGPC!("ScriptString", 224)()); }
-			ScriptString PageLabel() { mixin(MGPC!("ScriptString", 212)()); }
-			ScriptString PageLabelOverride() { mixin(MGPC!("ScriptString", 176)()); }
-			int LoadoutEquipType() { mixin(MGPC!("int", 168)()); }
-			int LoadoutClassId() { mixin(MGPC!("int", 164)()); }
-			int NewAction() { mixin(MGPC!("int", 160)()); }
-			int OptionCount() { mixin(MGPC!("int", 156)()); }
-			int DataCount() { mixin(MGPC!("int", 152)()); }
-			int ActiveIndex() { mixin(MGPC!("int", 148)()); }
-			int ScrollIndex() { mixin(MGPC!("int", 144)()); }
-			int HelpButtonYNum() { mixin(MGPC!("int", 140)()); }
-			int HelpButtonXNum() { mixin(MGPC!("int", 136)()); }
-			int HelpButtonBNum() { mixin(MGPC!("int", 132)()); }
-			int HelpButtonANum() { mixin(MGPC!("int", 128)()); }
-			int GoBack() { mixin(MGPC!("int", 124)()); }
-			int ActiveLoadout() { mixin(MGPC!("int", 120)()); }
+			ScriptArray!(ScriptString) OptionTitlesOverride() { mixin(MGPC("ScriptArray!(ScriptString)", 188)); }
+			ScriptArray!(ScriptString) OptionSubtextOverride() { mixin(MGPC("ScriptArray!(ScriptString)", 200)); }
+			ScriptArray!(ScriptString) OptionTitles() { mixin(MGPC("ScriptArray!(ScriptString)", 320)); }
+			ScriptArray!(ScriptString) OptionSubtext() { mixin(MGPC("ScriptArray!(ScriptString)", 332)); }
+			ScriptArray!(GFxTrAction) PageActions() { mixin(MGPC("ScriptArray!(GFxTrAction)", 344)); }
+			ScriptString HelpButtonYLabel() { mixin(MGPC("ScriptString", 308)); }
+			ScriptString HelpButtonXLabel() { mixin(MGPC("ScriptString", 296)); }
+			ScriptString HelpButtonBLabel() { mixin(MGPC("ScriptString", 284)); }
+			ScriptString HelpButtonALabel() { mixin(MGPC("ScriptString", 272)); }
+			ScriptString HelpButtonYKey() { mixin(MGPC("ScriptString", 260)); }
+			ScriptString HelpButtonXKey() { mixin(MGPC("ScriptString", 248)); }
+			ScriptString HelpButtonBKey() { mixin(MGPC("ScriptString", 236)); }
+			ScriptString HelpButtonAKey() { mixin(MGPC("ScriptString", 224)); }
+			ScriptString PageLabel() { mixin(MGPC("ScriptString", 212)); }
+			ScriptString PageLabelOverride() { mixin(MGPC("ScriptString", 176)); }
+			int LoadoutEquipType() { mixin(MGPC("int", 168)); }
+			int LoadoutClassId() { mixin(MGPC("int", 164)); }
+			int NewAction() { mixin(MGPC("int", 160)); }
+			int OptionCount() { mixin(MGPC("int", 156)); }
+			int DataCount() { mixin(MGPC("int", 152)); }
+			int ActiveIndex() { mixin(MGPC("int", 148)); }
+			int ScrollIndex() { mixin(MGPC("int", 144)); }
+			int HelpButtonYNum() { mixin(MGPC("int", 140)); }
+			int HelpButtonXNum() { mixin(MGPC("int", 136)); }
+			int HelpButtonBNum() { mixin(MGPC("int", 132)); }
+			int HelpButtonANum() { mixin(MGPC("int", 128)); }
+			int GoBack() { mixin(MGPC("int", 124)); }
+			int ActiveLoadout() { mixin(MGPC("int", 120)); }
 		}
-		bool bShowTribesLogo() { mixin(MGBPC!(172, 0x200)()); }
-		bool bShowTribesLogo(bool val) { mixin(MSBPC!(172, 0x200)()); }
-		bool bParentLocked() { mixin(MGBPC!(172, 0x100)()); }
-		bool bParentLocked(bool val) { mixin(MSBPC!(172, 0x100)()); }
-		bool bHasModifiers() { mixin(MGBPC!(172, 0x80)()); }
-		bool bHasModifiers(bool val) { mixin(MSBPC!(172, 0x80)()); }
-		bool bCreated() { mixin(MGBPC!(172, 0x40)()); }
-		bool bCreated(bool val) { mixin(MSBPC!(172, 0x40)()); }
-		bool bActive() { mixin(MGBPC!(172, 0x20)()); }
-		bool bActive(bool val) { mixin(MSBPC!(172, 0x20)()); }
-		bool bAllowBack() { mixin(MGBPC!(172, 0x10)()); }
-		bool bAllowBack(bool val) { mixin(MSBPC!(172, 0x10)()); }
-		bool bEndOfLine() { mixin(MGBPC!(172, 0x8)()); }
-		bool bEndOfLine(bool val) { mixin(MSBPC!(172, 0x8)()); }
-		bool bRemoveOption() { mixin(MGBPC!(172, 0x4)()); }
-		bool bRemoveOption(bool val) { mixin(MSBPC!(172, 0x4)()); }
-		bool bModifyOption() { mixin(MGBPC!(172, 0x2)()); }
-		bool bModifyOption(bool val) { mixin(MSBPC!(172, 0x2)()); }
-		bool bFillingFocus() { mixin(MGBPC!(172, 0x1)()); }
-		bool bFillingFocus(bool val) { mixin(MSBPC!(172, 0x1)()); }
+		bool bShowTribesLogo() { mixin(MGBPC(172, 0x200)); }
+		bool bShowTribesLogo(bool val) { mixin(MSBPC(172, 0x200)); }
+		bool bParentLocked() { mixin(MGBPC(172, 0x100)); }
+		bool bParentLocked(bool val) { mixin(MSBPC(172, 0x100)); }
+		bool bHasModifiers() { mixin(MGBPC(172, 0x80)); }
+		bool bHasModifiers(bool val) { mixin(MSBPC(172, 0x80)); }
+		bool bCreated() { mixin(MGBPC(172, 0x40)); }
+		bool bCreated(bool val) { mixin(MSBPC(172, 0x40)); }
+		bool bActive() { mixin(MGBPC(172, 0x20)); }
+		bool bActive(bool val) { mixin(MSBPC(172, 0x20)); }
+		bool bAllowBack() { mixin(MGBPC(172, 0x10)); }
+		bool bAllowBack(bool val) { mixin(MSBPC(172, 0x10)); }
+		bool bEndOfLine() { mixin(MGBPC(172, 0x8)); }
+		bool bEndOfLine(bool val) { mixin(MSBPC(172, 0x8)); }
+		bool bRemoveOption() { mixin(MGBPC(172, 0x4)); }
+		bool bRemoveOption(bool val) { mixin(MSBPC(172, 0x4)); }
+		bool bModifyOption() { mixin(MGBPC(172, 0x2)); }
+		bool bModifyOption(bool val) { mixin(MSBPC(172, 0x2)); }
+		bool bFillingFocus() { mixin(MGBPC(172, 0x1)); }
+		bool bFillingFocus(bool val) { mixin(MSBPC(172, 0x1)); }
 	}
 final:
 	void Initialize()

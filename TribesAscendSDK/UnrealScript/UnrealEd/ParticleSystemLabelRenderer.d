@@ -8,7 +8,7 @@ extern(C++) interface ParticleSystemLabelRenderer : ThumbnailLabelRenderer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.ParticleSystemLabelRenderer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.ParticleSystemLabelRenderer")); }
 	private static __gshared ParticleSystemLabelRenderer mDefaultProperties;
-	@property final static ParticleSystemLabelRenderer DefaultProperties() { mixin(MGDPC!(ParticleSystemLabelRenderer, "ParticleSystemLabelRenderer UnrealEd.Default__ParticleSystemLabelRenderer")()); }
+	@property final static ParticleSystemLabelRenderer DefaultProperties() { mixin(MGDPC("ParticleSystemLabelRenderer", "ParticleSystemLabelRenderer UnrealEd.Default__ParticleSystemLabelRenderer")); }
 }

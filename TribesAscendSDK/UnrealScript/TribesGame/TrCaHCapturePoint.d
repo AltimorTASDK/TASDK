@@ -20,9 +20,9 @@ extern(C++) interface TrCaHCapturePoint : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCaHCapturePoint")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCaHCapturePoint")); }
 	private static __gshared TrCaHCapturePoint mDefaultProperties;
-	@property final static TrCaHCapturePoint DefaultProperties() { mixin(MGDPC!(TrCaHCapturePoint, "TrCaHCapturePoint TribesGame.Default__TrCaHCapturePoint")()); }
+	@property final static TrCaHCapturePoint DefaultProperties() { mixin(MGDPC("TrCaHCapturePoint", "TrCaHCapturePoint TribesGame.Default__TrCaHCapturePoint")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,21 +45,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrCaHCapturePoint.PostBeginPlay")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrCaHCapturePoint.PostInitAnimTree")()); }
-			ScriptFunction PulseMarker() { mixin(MGF!("mPulseMarker", "Function TribesGame.TrCaHCapturePoint.PulseMarker")()); }
-			ScriptFunction PointPulseMarker() { mixin(MGF!("mPointPulseMarker", "Function TribesGame.TrCaHCapturePoint.PointPulseMarker")()); }
-			ScriptFunction UpdateHologramVisibility() { mixin(MGF!("mUpdateHologramVisibility", "Function TribesGame.TrCaHCapturePoint.UpdateHologramVisibility")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrCaHCapturePoint.ReplicatedEvent")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrCaHCapturePoint.Touch")()); }
-			ScriptFunction OnPawnTouched() { mixin(MGF!("mOnPawnTouched", "Function TribesGame.TrCaHCapturePoint.OnPawnTouched")()); }
-			ScriptFunction PostCapturePointTimer() { mixin(MGF!("mPostCapturePointTimer", "Function TribesGame.TrCaHCapturePoint.PostCapturePointTimer")()); }
-			ScriptFunction AwardPointTimer() { mixin(MGF!("mAwardPointTimer", "Function TribesGame.TrCaHCapturePoint.AwardPointTimer")()); }
-			ScriptFunction ShouldPostRenderForCaH() { mixin(MGF!("mShouldPostRenderForCaH", "Function TribesGame.TrCaHCapturePoint.ShouldPostRenderForCaH")()); }
-			ScriptFunction GetScreenName() { mixin(MGF!("mGetScreenName", "Function TribesGame.TrCaHCapturePoint.GetScreenName")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrCaHCapturePoint.PostRenderFor")()); }
-			ScriptFunction CheckNearbyPlayersTimer() { mixin(MGF!("mCheckNearbyPlayersTimer", "Function TribesGame.TrCaHCapturePoint.CheckNearbyPlayersTimer")()); }
-			ScriptFunction IsPawnConsideredNearby() { mixin(MGF!("mIsPawnConsideredNearby", "Function TribesGame.TrCaHCapturePoint.IsPawnConsideredNearby")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrCaHCapturePoint.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrCaHCapturePoint.PostInitAnimTree")); }
+			ScriptFunction PulseMarker() { mixin(MGF("mPulseMarker", "Function TribesGame.TrCaHCapturePoint.PulseMarker")); }
+			ScriptFunction PointPulseMarker() { mixin(MGF("mPointPulseMarker", "Function TribesGame.TrCaHCapturePoint.PointPulseMarker")); }
+			ScriptFunction UpdateHologramVisibility() { mixin(MGF("mUpdateHologramVisibility", "Function TribesGame.TrCaHCapturePoint.UpdateHologramVisibility")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrCaHCapturePoint.ReplicatedEvent")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrCaHCapturePoint.Touch")); }
+			ScriptFunction OnPawnTouched() { mixin(MGF("mOnPawnTouched", "Function TribesGame.TrCaHCapturePoint.OnPawnTouched")); }
+			ScriptFunction PostCapturePointTimer() { mixin(MGF("mPostCapturePointTimer", "Function TribesGame.TrCaHCapturePoint.PostCapturePointTimer")); }
+			ScriptFunction AwardPointTimer() { mixin(MGF("mAwardPointTimer", "Function TribesGame.TrCaHCapturePoint.AwardPointTimer")); }
+			ScriptFunction ShouldPostRenderForCaH() { mixin(MGF("mShouldPostRenderForCaH", "Function TribesGame.TrCaHCapturePoint.ShouldPostRenderForCaH")); }
+			ScriptFunction GetScreenName() { mixin(MGF("mGetScreenName", "Function TribesGame.TrCaHCapturePoint.GetScreenName")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrCaHCapturePoint.PostRenderFor")); }
+			ScriptFunction CheckNearbyPlayersTimer() { mixin(MGF("mCheckNearbyPlayersTimer", "Function TribesGame.TrCaHCapturePoint.CheckNearbyPlayersTimer")); }
+			ScriptFunction IsPawnConsideredNearby() { mixin(MGF("mIsPawnConsideredNearby", "Function TribesGame.TrCaHCapturePoint.IsPawnConsideredNearby")); }
 		}
 	}
 	struct NearbyPlayer
@@ -67,59 +67,59 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrCaHCapturePoint.NearbyPlayer")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrCaHCapturePoint.NearbyPlayer")); }
 		@property final auto ref
 		{
-			float LastCheckedTimestamp() { mixin(MGPS!("float", 8)()); }
-			float Time() { mixin(MGPS!("float", 4)()); }
-			TrPlayerController NearbyPC() { mixin(MGPS!("TrPlayerController", 0)()); }
+			float LastCheckedTimestamp() { mixin(MGPS("float", 8)); }
+			float Time() { mixin(MGPS("float", 4)); }
+			TrPlayerController NearbyPC() { mixin(MGPS("TrPlayerController", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrBaseTurret_Neutral) m_BaseTurrets() { mixin(MGPC!("ScriptArray!(TrBaseTurret_Neutral)", 1372)()); }
-			ScriptArray!(TrRadarStation_Neutral) m_BaseSensors() { mixin(MGPC!("ScriptArray!(TrRadarStation_Neutral)", 1384)()); }
-			ScriptArray!(TrInventoryStation_Neutral) m_InventoryStations() { mixin(MGPC!("ScriptArray!(TrInventoryStation_Neutral)", 1396)()); }
-			ScriptArray!(TrRepairStation_Neutral) m_RepairStations() { mixin(MGPC!("ScriptArray!(TrRepairStation_Neutral)", 1408)()); }
-			ScriptArray!(TrCaHCapturePoint.NearbyPlayer) m_NearbyPlayers() { mixin(MGPC!("ScriptArray!(TrCaHCapturePoint.NearbyPlayer)", 1580)()); }
-			float m_HoldTheLineAccoladeTime() { mixin(MGPC!("float", 1596)()); }
-			float m_fNearbyPawnCheckTime() { mixin(MGPC!("float", 1592)()); }
-			TrPlayerController m_LastCapturedBy() { mixin(MGPC!("TrPlayerController", 1576)()); }
-			float m_fPointPulseMarkerSpeed() { mixin(MGPC!("float", 1572)()); }
-			float m_fPointPulseMarkerTime() { mixin(MGPC!("float", 1568)()); }
-			float m_fRemainingPointPulseMarkerTime() { mixin(MGPC!("float", 1564)()); }
-			float m_fPulseMarkerSpeed() { mixin(MGPC!("float", 1560)()); }
-			float m_fPulseMarkerTime() { mixin(MGPC!("float", 1556)()); }
-			float m_fRemainingPulseMarkerTime() { mixin(MGPC!("float", 1552)()); }
-			float m_MarkerSize() { mixin(MGPC!("float", 1548)()); }
-			ubyte r_nFlashPointPulse() { mixin(MGPC!("ubyte", 1545)()); }
-			TrObject.CaHCapturePointLabel m_CapturePointLabel() { mixin(MGPC!("TrObject.CaHCapturePointLabel", 1544)()); }
-			Vector LastCameraPos() { mixin(MGPC!("Vector", 1528)()); }
-			Vector LastCameraDir() { mixin(MGPC!("Vector", 1516)()); }
-			Vector LastScreenLoc() { mixin(MGPC!("Vector", 1504)()); }
-			float m_fInfluenceRadiusSize() { mixin(MGPC!("float", 1500)()); }
-			SkelControlSingleBone m_SkyHologramSkelControl() { mixin(MGPC!("SkelControlSingleBone", 1496)()); }
-			float m_fSkyHologramScaleDS() { mixin(MGPC!("float", 1492)()); }
-			float m_fSkyHologramScaleBE() { mixin(MGPC!("float", 1488)()); }
-			float m_fSkyHologramScaleOffset() { mixin(MGPC!("float", 1484)()); }
-			Vector m_vSkyHologramOffsetDS() { mixin(MGPC!("Vector", 1472)()); }
-			Vector m_vSkyHologramOffsetBE() { mixin(MGPC!("Vector", 1460)()); }
-			float m_fSkyHologramOffsetZ() { mixin(MGPC!("float", 1456)()); }
-			float m_fSkyHologramOffsetY() { mixin(MGPC!("float", 1452)()); }
-			float m_fSkyHologramOffsetX() { mixin(MGPC!("float", 1448)()); }
-			MaterialInstanceConstant m_DiamondSwordHologramMIC() { mixin(MGPC!("MaterialInstanceConstant", 1444)()); }
-			MaterialInstanceConstant m_BloodEagleHologramMIC() { mixin(MGPC!("MaterialInstanceConstant", 1440)()); }
+			ScriptArray!(TrBaseTurret_Neutral) m_BaseTurrets() { mixin(MGPC("ScriptArray!(TrBaseTurret_Neutral)", 1372)); }
+			ScriptArray!(TrRadarStation_Neutral) m_BaseSensors() { mixin(MGPC("ScriptArray!(TrRadarStation_Neutral)", 1384)); }
+			ScriptArray!(TrInventoryStation_Neutral) m_InventoryStations() { mixin(MGPC("ScriptArray!(TrInventoryStation_Neutral)", 1396)); }
+			ScriptArray!(TrRepairStation_Neutral) m_RepairStations() { mixin(MGPC("ScriptArray!(TrRepairStation_Neutral)", 1408)); }
+			ScriptArray!(TrCaHCapturePoint.NearbyPlayer) m_NearbyPlayers() { mixin(MGPC("ScriptArray!(TrCaHCapturePoint.NearbyPlayer)", 1580)); }
+			float m_HoldTheLineAccoladeTime() { mixin(MGPC("float", 1596)); }
+			float m_fNearbyPawnCheckTime() { mixin(MGPC("float", 1592)); }
+			TrPlayerController m_LastCapturedBy() { mixin(MGPC("TrPlayerController", 1576)); }
+			float m_fPointPulseMarkerSpeed() { mixin(MGPC("float", 1572)); }
+			float m_fPointPulseMarkerTime() { mixin(MGPC("float", 1568)); }
+			float m_fRemainingPointPulseMarkerTime() { mixin(MGPC("float", 1564)); }
+			float m_fPulseMarkerSpeed() { mixin(MGPC("float", 1560)); }
+			float m_fPulseMarkerTime() { mixin(MGPC("float", 1556)); }
+			float m_fRemainingPulseMarkerTime() { mixin(MGPC("float", 1552)); }
+			float m_MarkerSize() { mixin(MGPC("float", 1548)); }
+			ubyte r_nFlashPointPulse() { mixin(MGPC("ubyte", 1545)); }
+			TrObject.CaHCapturePointLabel m_CapturePointLabel() { mixin(MGPC("TrObject.CaHCapturePointLabel", 1544)); }
+			Vector LastCameraPos() { mixin(MGPC("Vector", 1528)); }
+			Vector LastCameraDir() { mixin(MGPC("Vector", 1516)); }
+			Vector LastScreenLoc() { mixin(MGPC("Vector", 1504)); }
+			float m_fInfluenceRadiusSize() { mixin(MGPC("float", 1500)); }
+			SkelControlSingleBone m_SkyHologramSkelControl() { mixin(MGPC("SkelControlSingleBone", 1496)); }
+			float m_fSkyHologramScaleDS() { mixin(MGPC("float", 1492)); }
+			float m_fSkyHologramScaleBE() { mixin(MGPC("float", 1488)); }
+			float m_fSkyHologramScaleOffset() { mixin(MGPC("float", 1484)); }
+			Vector m_vSkyHologramOffsetDS() { mixin(MGPC("Vector", 1472)); }
+			Vector m_vSkyHologramOffsetBE() { mixin(MGPC("Vector", 1460)); }
+			float m_fSkyHologramOffsetZ() { mixin(MGPC("float", 1456)); }
+			float m_fSkyHologramOffsetY() { mixin(MGPC("float", 1452)); }
+			float m_fSkyHologramOffsetX() { mixin(MGPC("float", 1448)); }
+			MaterialInstanceConstant m_DiamondSwordHologramMIC() { mixin(MGPC("MaterialInstanceConstant", 1444)); }
+			MaterialInstanceConstant m_BloodEagleHologramMIC() { mixin(MGPC("MaterialInstanceConstant", 1440)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_SkyPreviewHologramMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_SkyDiamondSwordHologramMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_SkyBloodEagleHologramMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_GroundDiamondSwordHologramMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_GroundBloodEagleHologramMesh'!
-			ScriptString m_sCapturePointName() { mixin(MGPC!("ScriptString", 1360)()); }
+			ScriptString m_sCapturePointName() { mixin(MGPC("ScriptString", 1360)); }
 		}
-		bool r_bIsHeld() { mixin(MGBPC!(1540, 0x1)()); }
-		bool r_bIsHeld(bool val) { mixin(MSBPC!(1540, 0x1)()); }
+		bool r_bIsHeld() { mixin(MGBPC(1540, 0x1)); }
+		bool r_bIsHeld(bool val) { mixin(MSBPC(1540, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

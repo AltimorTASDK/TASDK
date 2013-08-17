@@ -13,9 +13,9 @@ extern(C++) interface BroadcastHandler : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.BroadcastHandler")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.BroadcastHandler")); }
 	private static __gshared BroadcastHandler mDefaultProperties;
-	@property final static BroadcastHandler DefaultProperties() { mixin(MGDPC!(BroadcastHandler, "BroadcastHandler Engine.Default__BroadcastHandler")()); }
+	@property final static BroadcastHandler DefaultProperties() { mixin(MGDPC("BroadcastHandler", "BroadcastHandler Engine.Default__BroadcastHandler")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,21 +31,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateSentText() { mixin(MGF!("mUpdateSentText", "Function Engine.BroadcastHandler.UpdateSentText")()); }
-			ScriptFunction AllowsBroadcast() { mixin(MGF!("mAllowsBroadcast", "Function Engine.BroadcastHandler.AllowsBroadcast")()); }
-			ScriptFunction BroadcastText() { mixin(MGF!("mBroadcastText", "Function Engine.BroadcastHandler.BroadcastText")()); }
-			ScriptFunction BroadcastLocalized() { mixin(MGF!("mBroadcastLocalized", "Function Engine.BroadcastHandler.BroadcastLocalized")()); }
-			ScriptFunction Broadcast() { mixin(MGF!("mBroadcast", "Function Engine.BroadcastHandler.Broadcast")()); }
-			ScriptFunction BroadcastTeam() { mixin(MGF!("mBroadcastTeam", "Function Engine.BroadcastHandler.BroadcastTeam")()); }
-			ScriptFunction AllowBroadcastLocalized() { mixin(MGF!("mAllowBroadcastLocalized", "Function Engine.BroadcastHandler.AllowBroadcastLocalized")()); }
-			ScriptFunction AllowBroadcastLocalizedTeam() { mixin(MGF!("mAllowBroadcastLocalizedTeam", "Function Engine.BroadcastHandler.AllowBroadcastLocalizedTeam")()); }
+			ScriptFunction UpdateSentText() { mixin(MGF("mUpdateSentText", "Function Engine.BroadcastHandler.UpdateSentText")); }
+			ScriptFunction AllowsBroadcast() { mixin(MGF("mAllowsBroadcast", "Function Engine.BroadcastHandler.AllowsBroadcast")); }
+			ScriptFunction BroadcastText() { mixin(MGF("mBroadcastText", "Function Engine.BroadcastHandler.BroadcastText")); }
+			ScriptFunction BroadcastLocalized() { mixin(MGF("mBroadcastLocalized", "Function Engine.BroadcastHandler.BroadcastLocalized")); }
+			ScriptFunction Broadcast() { mixin(MGF("mBroadcast", "Function Engine.BroadcastHandler.Broadcast")); }
+			ScriptFunction BroadcastTeam() { mixin(MGF("mBroadcastTeam", "Function Engine.BroadcastHandler.BroadcastTeam")); }
+			ScriptFunction AllowBroadcastLocalized() { mixin(MGF("mAllowBroadcastLocalized", "Function Engine.BroadcastHandler.AllowBroadcastLocalized")); }
+			ScriptFunction AllowBroadcastLocalizedTeam() { mixin(MGF("mAllowBroadcastLocalizedTeam", "Function Engine.BroadcastHandler.AllowBroadcastLocalizedTeam")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref int SentText() { mixin(MGPC!("int", 476)()); }
-		bool bMuteSpectators() { mixin(MGBPC!(480, 0x1)()); }
-		bool bMuteSpectators(bool val) { mixin(MSBPC!(480, 0x1)()); }
+		@property final auto ref int SentText() { mixin(MGPC("int", 476)); }
+		bool bMuteSpectators() { mixin(MGBPC(480, 0x1)); }
+		bool bMuteSpectators(bool val) { mixin(MSBPC(480, 0x1)); }
 	}
 final:
 	void UpdateSentText()

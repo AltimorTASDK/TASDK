@@ -9,9 +9,9 @@ extern(C++) interface MorphNodeMultiPose : MorphNodeBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MorphNodeMultiPose")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MorphNodeMultiPose")); }
 	private static __gshared MorphNodeMultiPose mDefaultProperties;
-	@property final static MorphNodeMultiPose DefaultProperties() { mixin(MGDPC!(MorphNodeMultiPose, "MorphNodeMultiPose Engine.Default__MorphNodeMultiPose")()); }
+	@property final static MorphNodeMultiPose DefaultProperties() { mixin(MGDPC("MorphNodeMultiPose", "MorphNodeMultiPose Engine.Default__MorphNodeMultiPose")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,16 +22,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddMorphTarget() { mixin(MGF!("mAddMorphTarget", "Function Engine.MorphNodeMultiPose.AddMorphTarget")()); }
-			ScriptFunction RemoveMorphTarget() { mixin(MGF!("mRemoveMorphTarget", "Function Engine.MorphNodeMultiPose.RemoveMorphTarget")()); }
-			ScriptFunction UpdateMorphTarget() { mixin(MGF!("mUpdateMorphTarget", "Function Engine.MorphNodeMultiPose.UpdateMorphTarget")()); }
+			ScriptFunction AddMorphTarget() { mixin(MGF("mAddMorphTarget", "Function Engine.MorphNodeMultiPose.AddMorphTarget")); }
+			ScriptFunction RemoveMorphTarget() { mixin(MGF("mRemoveMorphTarget", "Function Engine.MorphNodeMultiPose.RemoveMorphTarget")); }
+			ScriptFunction UpdateMorphTarget() { mixin(MGF("mUpdateMorphTarget", "Function Engine.MorphNodeMultiPose.UpdateMorphTarget")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MorphTarget) Targets() { mixin(MGPC!("ScriptArray!(MorphTarget)", 108)()); }
-		ScriptArray!(ScriptName) MorphNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 120)()); }
-		ScriptArray!(float) Weights() { mixin(MGPC!("ScriptArray!(float)", 132)()); }
+		ScriptArray!(MorphTarget) Targets() { mixin(MGPC("ScriptArray!(MorphTarget)", 108)); }
+		ScriptArray!(ScriptName) MorphNames() { mixin(MGPC("ScriptArray!(ScriptName)", 120)); }
+		ScriptArray!(float) Weights() { mixin(MGPC("ScriptArray!(float)", 132)); }
 	}
 final:
 	bool AddMorphTarget(ScriptName MorphTargetName, float* InWeight = null)

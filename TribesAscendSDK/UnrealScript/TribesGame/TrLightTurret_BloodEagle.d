@@ -8,7 +8,7 @@ extern(C++) interface TrLightTurret_BloodEagle : TrDeployable_LightTurret
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLightTurret_BloodEagle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrLightTurret_BloodEagle")); }
 	private static __gshared TrLightTurret_BloodEagle mDefaultProperties;
-	@property final static TrLightTurret_BloodEagle DefaultProperties() { mixin(MGDPC!(TrLightTurret_BloodEagle, "TrLightTurret_BloodEagle TribesGame.Default__TrLightTurret_BloodEagle")()); }
+	@property final static TrLightTurret_BloodEagle DefaultProperties() { mixin(MGDPC("TrLightTurret_BloodEagle", "TrLightTurret_BloodEagle TribesGame.Default__TrLightTurret_BloodEagle")); }
 }

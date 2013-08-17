@@ -9,8 +9,8 @@ extern(C++) interface ParticleModuleRotation : ParticleModuleRotationBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleRotation")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleRotation")); }
 	private static __gshared ParticleModuleRotation mDefaultProperties;
-	@property final static ParticleModuleRotation DefaultProperties() { mixin(MGDPC!(ParticleModuleRotation, "ParticleModuleRotation Engine.Default__ParticleModuleRotation")()); }
-	@property final auto ref DistributionFloat.RawDistributionFloat StartRotation() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
+	@property final static ParticleModuleRotation DefaultProperties() { mixin(MGDPC("ParticleModuleRotation", "ParticleModuleRotation Engine.Default__ParticleModuleRotation")); }
+	@property final auto ref DistributionFloat.RawDistributionFloat StartRotation() { mixin(MGPC("DistributionFloat.RawDistributionFloat", 72)); }
 }

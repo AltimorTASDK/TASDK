@@ -10,9 +10,9 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CoverReplicator")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CoverReplicator")); }
 	private static __gshared CoverReplicator mDefaultProperties;
-	@property final static CoverReplicator DefaultProperties() { mixin(MGDPC!(CoverReplicator, "CoverReplicator Engine.Default__CoverReplicator")()); }
+	@property final static CoverReplicator DefaultProperties() { mixin(MGDPC("CoverReplicator", "CoverReplicator Engine.Default__CoverReplicator")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,26 +40,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PurgeOldEntries() { mixin(MGF!("mPurgeOldEntries", "Function Engine.CoverReplicator.PurgeOldEntries")()); }
-			ScriptFunction ReplicateInitialCoverInfo() { mixin(MGF!("mReplicateInitialCoverInfo", "Function Engine.CoverReplicator.ReplicateInitialCoverInfo")()); }
-			ScriptFunction ClientSetOwner() { mixin(MGF!("mClientSetOwner", "Function Engine.CoverReplicator.ClientSetOwner")()); }
-			ScriptFunction ServerSendInitialCoverReplicationInfo() { mixin(MGF!("mServerSendInitialCoverReplicationInfo", "Function Engine.CoverReplicator.ServerSendInitialCoverReplicationInfo")()); }
-			ScriptFunction ClientReceiveInitialCoverReplicationInfo() { mixin(MGF!("mClientReceiveInitialCoverReplicationInfo", "Function Engine.CoverReplicator.ClientReceiveInitialCoverReplicationInfo")()); }
-			ScriptFunction NotifyEnabledSlots() { mixin(MGF!("mNotifyEnabledSlots", "Function Engine.CoverReplicator.NotifyEnabledSlots")()); }
-			ScriptFunction ServerSendEnabledSlots() { mixin(MGF!("mServerSendEnabledSlots", "Function Engine.CoverReplicator.ServerSendEnabledSlots")()); }
-			ScriptFunction ClientReceiveEnabledSlots() { mixin(MGF!("mClientReceiveEnabledSlots", "Function Engine.CoverReplicator.ClientReceiveEnabledSlots")()); }
-			ScriptFunction NotifyDisabledSlots() { mixin(MGF!("mNotifyDisabledSlots", "Function Engine.CoverReplicator.NotifyDisabledSlots")()); }
-			ScriptFunction ServerSendDisabledSlots() { mixin(MGF!("mServerSendDisabledSlots", "Function Engine.CoverReplicator.ServerSendDisabledSlots")()); }
-			ScriptFunction ClientReceiveDisabledSlots() { mixin(MGF!("mClientReceiveDisabledSlots", "Function Engine.CoverReplicator.ClientReceiveDisabledSlots")()); }
-			ScriptFunction NotifyAutoAdjustSlots() { mixin(MGF!("mNotifyAutoAdjustSlots", "Function Engine.CoverReplicator.NotifyAutoAdjustSlots")()); }
-			ScriptFunction ServerSendAdjustedSlots() { mixin(MGF!("mServerSendAdjustedSlots", "Function Engine.CoverReplicator.ServerSendAdjustedSlots")()); }
-			ScriptFunction ClientReceiveAdjustedSlots() { mixin(MGF!("mClientReceiveAdjustedSlots", "Function Engine.CoverReplicator.ClientReceiveAdjustedSlots")()); }
-			ScriptFunction NotifySetManualCoverTypeForSlots() { mixin(MGF!("mNotifySetManualCoverTypeForSlots", "Function Engine.CoverReplicator.NotifySetManualCoverTypeForSlots")()); }
-			ScriptFunction ServerSendManualCoverTypeSlots() { mixin(MGF!("mServerSendManualCoverTypeSlots", "Function Engine.CoverReplicator.ServerSendManualCoverTypeSlots")()); }
-			ScriptFunction ClientReceiveManualCoverTypeSlots() { mixin(MGF!("mClientReceiveManualCoverTypeSlots", "Function Engine.CoverReplicator.ClientReceiveManualCoverTypeSlots")()); }
-			ScriptFunction NotifyLinkDisabledStateChange() { mixin(MGF!("mNotifyLinkDisabledStateChange", "Function Engine.CoverReplicator.NotifyLinkDisabledStateChange")()); }
-			ScriptFunction ServerSendLinkDisabledState() { mixin(MGF!("mServerSendLinkDisabledState", "Function Engine.CoverReplicator.ServerSendLinkDisabledState")()); }
-			ScriptFunction ClientReceiveLinkDisabledState() { mixin(MGF!("mClientReceiveLinkDisabledState", "Function Engine.CoverReplicator.ClientReceiveLinkDisabledState")()); }
+			ScriptFunction PurgeOldEntries() { mixin(MGF("mPurgeOldEntries", "Function Engine.CoverReplicator.PurgeOldEntries")); }
+			ScriptFunction ReplicateInitialCoverInfo() { mixin(MGF("mReplicateInitialCoverInfo", "Function Engine.CoverReplicator.ReplicateInitialCoverInfo")); }
+			ScriptFunction ClientSetOwner() { mixin(MGF("mClientSetOwner", "Function Engine.CoverReplicator.ClientSetOwner")); }
+			ScriptFunction ServerSendInitialCoverReplicationInfo() { mixin(MGF("mServerSendInitialCoverReplicationInfo", "Function Engine.CoverReplicator.ServerSendInitialCoverReplicationInfo")); }
+			ScriptFunction ClientReceiveInitialCoverReplicationInfo() { mixin(MGF("mClientReceiveInitialCoverReplicationInfo", "Function Engine.CoverReplicator.ClientReceiveInitialCoverReplicationInfo")); }
+			ScriptFunction NotifyEnabledSlots() { mixin(MGF("mNotifyEnabledSlots", "Function Engine.CoverReplicator.NotifyEnabledSlots")); }
+			ScriptFunction ServerSendEnabledSlots() { mixin(MGF("mServerSendEnabledSlots", "Function Engine.CoverReplicator.ServerSendEnabledSlots")); }
+			ScriptFunction ClientReceiveEnabledSlots() { mixin(MGF("mClientReceiveEnabledSlots", "Function Engine.CoverReplicator.ClientReceiveEnabledSlots")); }
+			ScriptFunction NotifyDisabledSlots() { mixin(MGF("mNotifyDisabledSlots", "Function Engine.CoverReplicator.NotifyDisabledSlots")); }
+			ScriptFunction ServerSendDisabledSlots() { mixin(MGF("mServerSendDisabledSlots", "Function Engine.CoverReplicator.ServerSendDisabledSlots")); }
+			ScriptFunction ClientReceiveDisabledSlots() { mixin(MGF("mClientReceiveDisabledSlots", "Function Engine.CoverReplicator.ClientReceiveDisabledSlots")); }
+			ScriptFunction NotifyAutoAdjustSlots() { mixin(MGF("mNotifyAutoAdjustSlots", "Function Engine.CoverReplicator.NotifyAutoAdjustSlots")); }
+			ScriptFunction ServerSendAdjustedSlots() { mixin(MGF("mServerSendAdjustedSlots", "Function Engine.CoverReplicator.ServerSendAdjustedSlots")); }
+			ScriptFunction ClientReceiveAdjustedSlots() { mixin(MGF("mClientReceiveAdjustedSlots", "Function Engine.CoverReplicator.ClientReceiveAdjustedSlots")); }
+			ScriptFunction NotifySetManualCoverTypeForSlots() { mixin(MGF("mNotifySetManualCoverTypeForSlots", "Function Engine.CoverReplicator.NotifySetManualCoverTypeForSlots")); }
+			ScriptFunction ServerSendManualCoverTypeSlots() { mixin(MGF("mServerSendManualCoverTypeSlots", "Function Engine.CoverReplicator.ServerSendManualCoverTypeSlots")); }
+			ScriptFunction ClientReceiveManualCoverTypeSlots() { mixin(MGF("mClientReceiveManualCoverTypeSlots", "Function Engine.CoverReplicator.ClientReceiveManualCoverTypeSlots")); }
+			ScriptFunction NotifyLinkDisabledStateChange() { mixin(MGF("mNotifyLinkDisabledStateChange", "Function Engine.CoverReplicator.NotifyLinkDisabledStateChange")); }
+			ScriptFunction ServerSendLinkDisabledState() { mixin(MGF("mServerSendLinkDisabledState", "Function Engine.CoverReplicator.ServerSendLinkDisabledState")); }
+			ScriptFunction ClientReceiveLinkDisabledState() { mixin(MGF("mClientReceiveLinkDisabledState", "Function Engine.CoverReplicator.ClientReceiveLinkDisabledState")); }
 		}
 	}
 	struct CoverReplicationInfo
@@ -67,14 +67,14 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverReplicator.CoverReplicationInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverReplicator.CoverReplicationInfo")); }
 		@property final auto ref
 		{
-			ScriptArray!(ubyte) SlotsEnabled() { mixin(MGPS!("ScriptArray!(ubyte)", 4)()); }
-			ScriptArray!(ubyte) SlotsDisabled() { mixin(MGPS!("ScriptArray!(ubyte)", 16)()); }
-			ScriptArray!(ubyte) SlotsAdjusted() { mixin(MGPS!("ScriptArray!(ubyte)", 28)()); }
-			ScriptArray!(CoverReplicator.ManualCoverTypeInfo) SlotsCoverTypeChanged() { mixin(MGPS!("ScriptArray!(CoverReplicator.ManualCoverTypeInfo)", 40)()); }
-			CoverLink Link() { mixin(MGPS!("CoverLink", 0)()); }
+			ScriptArray!(ubyte) SlotsEnabled() { mixin(MGPS("ScriptArray!(ubyte)", 4)); }
+			ScriptArray!(ubyte) SlotsDisabled() { mixin(MGPS("ScriptArray!(ubyte)", 16)); }
+			ScriptArray!(ubyte) SlotsAdjusted() { mixin(MGPS("ScriptArray!(ubyte)", 28)); }
+			ScriptArray!(CoverReplicator.ManualCoverTypeInfo) SlotsCoverTypeChanged() { mixin(MGPS("ScriptArray!(CoverReplicator.ManualCoverTypeInfo)", 40)); }
+			CoverLink Link() { mixin(MGPS("CoverLink", 0)); }
 		}
 	}
 	struct ManualCoverTypeInfo
@@ -82,14 +82,14 @@ public extern(D):
 		private ubyte __buffer__[2];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverReplicator.ManualCoverTypeInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverReplicator.ManualCoverTypeInfo")); }
 		@property final auto ref
 		{
-			CoverLink.ECoverType ManualCoverType() { mixin(MGPS!("CoverLink.ECoverType", 1)()); }
-			ubyte SlotIndex() { mixin(MGPS!("ubyte", 0)()); }
+			CoverLink.ECoverType ManualCoverType() { mixin(MGPS("CoverLink.ECoverType", 1)); }
+			ubyte SlotIndex() { mixin(MGPS("ubyte", 0)); }
 		}
 	}
-	@property final auto ref ScriptArray!(CoverReplicator.CoverReplicationInfo) CoverReplicationData() { mixin(MGPC!("ScriptArray!(CoverReplicator.CoverReplicationInfo)", 476)()); }
+	@property final auto ref ScriptArray!(CoverReplicator.CoverReplicationInfo) CoverReplicationData() { mixin(MGPC("ScriptArray!(CoverReplicator.CoverReplicationInfo)", 476)); }
 final:
 	void PurgeOldEntries()
 	{

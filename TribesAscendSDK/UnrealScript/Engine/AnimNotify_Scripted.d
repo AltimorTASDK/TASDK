@@ -10,9 +10,9 @@ extern(C++) interface AnimNotify_Scripted : AnimNotify
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNotify_Scripted")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AnimNotify_Scripted")); }
 	private static __gshared AnimNotify_Scripted mDefaultProperties;
-	@property final static AnimNotify_Scripted DefaultProperties() { mixin(MGDPC!(AnimNotify_Scripted, "AnimNotify_Scripted Engine.Default__AnimNotify_Scripted")()); }
+	@property final static AnimNotify_Scripted DefaultProperties() { mixin(MGDPC("AnimNotify_Scripted", "AnimNotify_Scripted Engine.Default__AnimNotify_Scripted")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Notify() { mixin(MGF!("mNotify", "Function Engine.AnimNotify_Scripted.Notify")()); }
-			ScriptFunction NotifyEnd() { mixin(MGF!("mNotifyEnd", "Function Engine.AnimNotify_Scripted.NotifyEnd")()); }
+			ScriptFunction Notify() { mixin(MGF("mNotify", "Function Engine.AnimNotify_Scripted.Notify")); }
+			ScriptFunction NotifyEnd() { mixin(MGF("mNotifyEnd", "Function Engine.AnimNotify_Scripted.NotifyEnd")); }
 		}
 	}
 final:

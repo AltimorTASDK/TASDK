@@ -12,9 +12,9 @@ extern(C++) interface TrSavedMove : SavedMove
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSavedMove")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSavedMove")); }
 	private static __gshared TrSavedMove mDefaultProperties;
-	@property final static TrSavedMove DefaultProperties() { mixin(MGDPC!(TrSavedMove, "TrSavedMove TribesGame.Default__TrSavedMove")()); }
+	@property final static TrSavedMove DefaultProperties() { mixin(MGDPC("TrSavedMove", "TrSavedMove TribesGame.Default__TrSavedMove")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,26 +29,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Clear() { mixin(MGF!("mClear", "Function TribesGame.TrSavedMove.Clear")()); }
-			ScriptFunction PostUpdate() { mixin(MGF!("mPostUpdate", "Function TribesGame.TrSavedMove.PostUpdate")()); }
-			ScriptFunction CanCombineWith() { mixin(MGF!("mCanCombineWith", "Function TribesGame.TrSavedMove.CanCombineWith")()); }
-			ScriptFunction SetMoveFor() { mixin(MGF!("mSetMoveFor", "Function TribesGame.TrSavedMove.SetMoveFor")()); }
-			ScriptFunction CompressedFlags() { mixin(MGF!("mCompressedFlags", "Function TribesGame.TrSavedMove.CompressedFlags")()); }
-			ScriptFunction SetFlags() { mixin(MGF!("mSetFlags", "Function TribesGame.TrSavedMove.SetFlags")()); }
-			ScriptFunction GetDebugString() { mixin(MGF!("mGetDebugString", "Function TribesGame.TrSavedMove.GetDebugString")()); }
+			ScriptFunction Clear() { mixin(MGF("mClear", "Function TribesGame.TrSavedMove.Clear")); }
+			ScriptFunction PostUpdate() { mixin(MGF("mPostUpdate", "Function TribesGame.TrSavedMove.PostUpdate")); }
+			ScriptFunction CanCombineWith() { mixin(MGF("mCanCombineWith", "Function TribesGame.TrSavedMove.CanCombineWith")); }
+			ScriptFunction SetMoveFor() { mixin(MGF("mSetMoveFor", "Function TribesGame.TrSavedMove.SetMoveFor")); }
+			ScriptFunction CompressedFlags() { mixin(MGF("mCompressedFlags", "Function TribesGame.TrSavedMove.CompressedFlags")); }
+			ScriptFunction SetFlags() { mixin(MGF("mSetFlags", "Function TribesGame.TrSavedMove.SetFlags")); }
+			ScriptFunction GetDebugString() { mixin(MGF("mGetDebugString", "Function TribesGame.TrSavedMove.GetDebugString")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref TrPawn.WalkingDeceleration m_CurrentDecelerationFactor() { mixin(MGPC!("TrPawn.WalkingDeceleration", 236)()); }
-		bool m_bBlink() { mixin(MGBPC!(232, 0x8)()); }
-		bool m_bBlink(bool val) { mixin(MSBPC!(232, 0x8)()); }
-		bool m_bJumpJet() { mixin(MGBPC!(232, 0x4)()); }
-		bool m_bJumpJet(bool val) { mixin(MSBPC!(232, 0x4)()); }
-		bool m_bPressingJetpack() { mixin(MGBPC!(232, 0x2)()); }
-		bool m_bPressingJetpack(bool val) { mixin(MSBPC!(232, 0x2)()); }
-		bool m_bAirSpeedBoundToGroundSpeed() { mixin(MGBPC!(232, 0x1)()); }
-		bool m_bAirSpeedBoundToGroundSpeed(bool val) { mixin(MSBPC!(232, 0x1)()); }
+		@property final auto ref TrPawn.WalkingDeceleration m_CurrentDecelerationFactor() { mixin(MGPC("TrPawn.WalkingDeceleration", 236)); }
+		bool m_bBlink() { mixin(MGBPC(232, 0x8)); }
+		bool m_bBlink(bool val) { mixin(MSBPC(232, 0x8)); }
+		bool m_bJumpJet() { mixin(MGBPC(232, 0x4)); }
+		bool m_bJumpJet(bool val) { mixin(MSBPC(232, 0x4)); }
+		bool m_bPressingJetpack() { mixin(MGBPC(232, 0x2)); }
+		bool m_bPressingJetpack(bool val) { mixin(MSBPC(232, 0x2)); }
+		bool m_bAirSpeedBoundToGroundSpeed() { mixin(MGBPC(232, 0x1)); }
+		bool m_bAirSpeedBoundToGroundSpeed(bool val) { mixin(MSBPC(232, 0x1)); }
 	}
 final:
 	void Clear()

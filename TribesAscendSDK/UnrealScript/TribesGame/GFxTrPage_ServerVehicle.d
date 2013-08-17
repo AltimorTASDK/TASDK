@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_ServerVehicle : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ServerVehicle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_ServerVehicle")); }
 	private static __gshared GFxTrPage_ServerVehicle mDefaultProperties;
-	@property final static GFxTrPage_ServerVehicle DefaultProperties() { mixin(MGDPC!(GFxTrPage_ServerVehicle, "GFxTrPage_ServerVehicle TribesGame.Default__GFxTrPage_ServerVehicle")()); }
+	@property final static GFxTrPage_ServerVehicle DefaultProperties() { mixin(MGDPC("GFxTrPage_ServerVehicle", "GFxTrPage_ServerVehicle TribesGame.Default__GFxTrPage_ServerVehicle")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,28 +30,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_ServerVehicle.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ServerVehicle.SpecialAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ServerVehicle.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ServerVehicle.PopupComplete")()); }
-			ScriptFunction ShowBoundsError() { mixin(MGF!("mShowBoundsError", "Function TribesGame.GFxTrPage_ServerVehicle.ShowBoundsError")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ServerVehicle.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ServerVehicle.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ServerVehicle.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ServerVehicle.FillDescription")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ServerVehicle.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_ServerVehicle.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_ServerVehicle.SpecialAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_ServerVehicle.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_ServerVehicle.PopupComplete")); }
+			ScriptFunction ShowBoundsError() { mixin(MGF("mShowBoundsError", "Function TribesGame.GFxTrPage_ServerVehicle.ShowBoundsError")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_ServerVehicle.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_ServerVehicle.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_ServerVehicle.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_ServerVehicle.FillDescription")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_ServerVehicle.ShowModel")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float MaxBOunds() { mixin(MGPC!("float", 368)()); }
-			float MinBounds() { mixin(MGPC!("float", 364)()); }
-			int PopupNumber() { mixin(MGPC!("int", 356)()); }
+			float MaxBOunds() { mixin(MGPC("float", 368)); }
+			float MinBounds() { mixin(MGPC("float", 364)); }
+			int PopupNumber() { mixin(MGPC("int", 356)); }
 		}
-		bool bBoundsPopup() { mixin(MGBPC!(360, 0x1)()); }
-		bool bBoundsPopup(bool val) { mixin(MSBPC!(360, 0x1)()); }
+		bool bBoundsPopup() { mixin(MGBPC(360, 0x1)); }
+		bool bBoundsPopup(bool val) { mixin(MSBPC(360, 0x1)); }
 	}
 final:
 	void Initialize()

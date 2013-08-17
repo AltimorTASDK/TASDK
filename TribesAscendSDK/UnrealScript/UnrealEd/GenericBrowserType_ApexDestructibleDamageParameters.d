@@ -8,7 +8,7 @@ extern(C++) interface GenericBrowserType_ApexDestructibleDamageParameters : Gene
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.GenericBrowserType_ApexDestructibleDamageParameters")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.GenericBrowserType_ApexDestructibleDamageParameters")); }
 	private static __gshared GenericBrowserType_ApexDestructibleDamageParameters mDefaultProperties;
-	@property final static GenericBrowserType_ApexDestructibleDamageParameters DefaultProperties() { mixin(MGDPC!(GenericBrowserType_ApexDestructibleDamageParameters, "GenericBrowserType_ApexDestructibleDamageParameters UnrealEd.Default__GenericBrowserType_ApexDestructibleDamageParameters")()); }
+	@property final static GenericBrowserType_ApexDestructibleDamageParameters DefaultProperties() { mixin(MGDPC("GenericBrowserType_ApexDestructibleDamageParameters", "GenericBrowserType_ApexDestructibleDamageParameters UnrealEd.Default__GenericBrowserType_ApexDestructibleDamageParameters")); }
 }

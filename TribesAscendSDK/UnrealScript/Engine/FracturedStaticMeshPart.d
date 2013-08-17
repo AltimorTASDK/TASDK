@@ -11,9 +11,9 @@ extern(C++) interface FracturedStaticMeshPart : FracturedStaticMeshActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FracturedStaticMeshPart")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FracturedStaticMeshPart")); }
 	private static __gshared FracturedStaticMeshPart mDefaultProperties;
-	@property final static FracturedStaticMeshPart DefaultProperties() { mixin(MGDPC!(FracturedStaticMeshPart, "FracturedStaticMeshPart Engine.Default__FracturedStaticMeshPart")()); }
+	@property final static FracturedStaticMeshPart DefaultProperties() { mixin(MGDPC("FracturedStaticMeshPart", "FracturedStaticMeshPart Engine.Default__FracturedStaticMeshPart")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,35 +28,35 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function Engine.FracturedStaticMeshPart.Initialize")()); }
-			ScriptFunction RecyclePart() { mixin(MGF!("mRecyclePart", "Function Engine.FracturedStaticMeshPart.RecyclePart")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.FracturedStaticMeshPart.TakeDamage")()); }
-			ScriptFunction TryToCleanUp() { mixin(MGF!("mTryToCleanUp", "Function Engine.FracturedStaticMeshPart.TryToCleanUp")()); }
-			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.FracturedStaticMeshPart.FellOutOfWorld")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function Engine.FracturedStaticMeshPart.Explode")()); }
-			ScriptFunction BreakOffPartsInRadius() { mixin(MGF!("mBreakOffPartsInRadius", "Function Engine.FracturedStaticMeshPart.BreakOffPartsInRadius")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function Engine.FracturedStaticMeshPart.Initialize")); }
+			ScriptFunction RecyclePart() { mixin(MGF("mRecyclePart", "Function Engine.FracturedStaticMeshPart.RecyclePart")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.FracturedStaticMeshPart.TakeDamage")); }
+			ScriptFunction TryToCleanUp() { mixin(MGF("mTryToCleanUp", "Function Engine.FracturedStaticMeshPart.TryToCleanUp")); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF("mFellOutOfWorld", "Function Engine.FracturedStaticMeshPart.FellOutOfWorld")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function Engine.FracturedStaticMeshPart.Explode")); }
+			ScriptFunction BreakOffPartsInRadius() { mixin(MGF("mBreakOffPartsInRadius", "Function Engine.FracturedStaticMeshPart.BreakOffPartsInRadius")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float LastImpactSoundTime() { mixin(MGPC!("float", 624)()); }
-			float CurrentVibrationLevel() { mixin(MGPC!("float", 620)()); }
-			Vector OldVelocity() { mixin(MGPC!("Vector", 608)()); }
-			PrimitiveComponent.ERBCollisionChannel AsleepRBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 604)()); }
-			float FracPartGravScale() { mixin(MGPC!("float", 600)()); }
-			int PartPoolIndex() { mixin(MGPC!("int", 596)()); }
-			float LastSpawnTime() { mixin(MGPC!("float", 592)()); }
-			FracturedStaticMeshActor BaseFracturedMeshActor() { mixin(MGPC!("FracturedStaticMeshActor", 584)()); }
-			float DestroyPartRadiusFactor() { mixin(MGPC!("float", 580)()); }
+			float LastImpactSoundTime() { mixin(MGPC("float", 624)); }
+			float CurrentVibrationLevel() { mixin(MGPC("float", 620)); }
+			Vector OldVelocity() { mixin(MGPC("Vector", 608)); }
+			PrimitiveComponent.ERBCollisionChannel AsleepRBChannel() { mixin(MGPC("PrimitiveComponent.ERBCollisionChannel", 604)); }
+			float FracPartGravScale() { mixin(MGPC("float", 600)); }
+			int PartPoolIndex() { mixin(MGPC("int", 596)); }
+			float LastSpawnTime() { mixin(MGPC("float", 592)); }
+			FracturedStaticMeshActor BaseFracturedMeshActor() { mixin(MGPC("FracturedStaticMeshActor", 584)); }
+			float DestroyPartRadiusFactor() { mixin(MGPC("float", 580)); }
 		}
-		bool bCompositeThatExplodesOnImpact() { mixin(MGBPC!(588, 0x4)()); }
-		bool bCompositeThatExplodesOnImpact(bool val) { mixin(MSBPC!(588, 0x4)()); }
-		bool bChangeRBChannelWhenAsleep() { mixin(MGBPC!(588, 0x2)()); }
-		bool bChangeRBChannelWhenAsleep(bool val) { mixin(MSBPC!(588, 0x2)()); }
-		bool bHasBeenRecycled() { mixin(MGBPC!(588, 0x1)()); }
-		bool bHasBeenRecycled(bool val) { mixin(MSBPC!(588, 0x1)()); }
+		bool bCompositeThatExplodesOnImpact() { mixin(MGBPC(588, 0x4)); }
+		bool bCompositeThatExplodesOnImpact(bool val) { mixin(MSBPC(588, 0x4)); }
+		bool bChangeRBChannelWhenAsleep() { mixin(MGBPC(588, 0x2)); }
+		bool bChangeRBChannelWhenAsleep(bool val) { mixin(MSBPC(588, 0x2)); }
+		bool bHasBeenRecycled() { mixin(MGBPC(588, 0x1)); }
+		bool bHasBeenRecycled(bool val) { mixin(MSBPC(588, 0x1)); }
 	}
 final:
 	void Initialize()

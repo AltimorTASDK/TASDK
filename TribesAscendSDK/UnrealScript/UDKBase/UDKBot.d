@@ -16,9 +16,9 @@ extern(C++) interface UDKBot : AIController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKBot")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKBot")); }
 	private static __gshared UDKBot mDefaultProperties;
-	@property final static UDKBot DefaultProperties() { mixin(MGDPC!(UDKBot, "UDKBot UDKBase.Default__UDKBot")()); }
+	@property final static UDKBot DefaultProperties() { mixin(MGDPC("UDKBot", "UDKBot UDKBase.Default__UDKBot")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -46,26 +46,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FaceActor() { mixin(MGF!("mFaceActor", "Function UDKBase.UDKBot.FaceActor")()); }
-			ScriptFunction ExecuteWhatToDoNext() { mixin(MGF!("mExecuteWhatToDoNext", "Function UDKBase.UDKBot.ExecuteWhatToDoNext")()); }
-			ScriptFunction ReceiveRunOverWarning() { mixin(MGF!("mReceiveRunOverWarning", "Function UDKBase.UDKBot.ReceiveRunOverWarning")()); }
-			ScriptFunction WaitToSeeEnemy() { mixin(MGF!("mWaitToSeeEnemy", "Function UDKBase.UDKBot.WaitToSeeEnemy")()); }
-			ScriptFunction LatentWhatToDoNext() { mixin(MGF!("mLatentWhatToDoNext", "Function UDKBase.UDKBot.LatentWhatToDoNext")()); }
-			ScriptFunction CanMakePathTo() { mixin(MGF!("mCanMakePathTo", "Function UDKBase.UDKBot.CanMakePathTo")()); }
-			ScriptFunction FindBestInventoryPath() { mixin(MGF!("mFindBestInventoryPath", "Function UDKBase.UDKBot.FindBestInventoryPath")()); }
-			ScriptFunction FindPathToSquadRoute() { mixin(MGF!("mFindPathToSquadRoute", "Function UDKBase.UDKBot.FindPathToSquadRoute")()); }
-			ScriptFunction BuildSquadRoute() { mixin(MGF!("mBuildSquadRoute", "Function UDKBase.UDKBot.BuildSquadRoute")()); }
-			ScriptFunction FindBestSuperPickup() { mixin(MGF!("mFindBestSuperPickup", "Function UDKBase.UDKBot.FindBestSuperPickup")()); }
-			ScriptFunction WhatToDoNext() { mixin(MGF!("mWhatToDoNext", "Function UDKBase.UDKBot.WhatToDoNext")()); }
-			ScriptFunction MonitoredPawnAlert() { mixin(MGF!("mMonitoredPawnAlert", "Function UDKBase.UDKBot.MonitoredPawnAlert")()); }
-			ScriptFunction TimeDJReset() { mixin(MGF!("mTimeDJReset", "Function UDKBase.UDKBot.TimeDJReset")()); }
-			ScriptFunction MayDodgeToMoveTarget() { mixin(MGF!("mMayDodgeToMoveTarget", "Function UDKBase.UDKBot.MayDodgeToMoveTarget")()); }
-			ScriptFunction SpecialJumpCost() { mixin(MGF!("mSpecialJumpCost", "Function UDKBase.UDKBot.SpecialJumpCost")()); }
-			ScriptFunction SuperDesireability() { mixin(MGF!("mSuperDesireability", "Function UDKBase.UDKBot.SuperDesireability")()); }
-			ScriptFunction AdjustAimError() { mixin(MGF!("mAdjustAimError", "Function UDKBase.UDKBot.AdjustAimError")()); }
-			ScriptFunction MissedDodge() { mixin(MGF!("mMissedDodge", "Function UDKBase.UDKBot.MissedDodge")()); }
-			ScriptFunction DelayedWarning() { mixin(MGF!("mDelayedWarning", "Function UDKBase.UDKBot.DelayedWarning")()); }
-			ScriptFunction DelayedLeaveVehicle() { mixin(MGF!("mDelayedLeaveVehicle", "Function UDKBase.UDKBot.DelayedLeaveVehicle")()); }
+			ScriptFunction FaceActor() { mixin(MGF("mFaceActor", "Function UDKBase.UDKBot.FaceActor")); }
+			ScriptFunction ExecuteWhatToDoNext() { mixin(MGF("mExecuteWhatToDoNext", "Function UDKBase.UDKBot.ExecuteWhatToDoNext")); }
+			ScriptFunction ReceiveRunOverWarning() { mixin(MGF("mReceiveRunOverWarning", "Function UDKBase.UDKBot.ReceiveRunOverWarning")); }
+			ScriptFunction WaitToSeeEnemy() { mixin(MGF("mWaitToSeeEnemy", "Function UDKBase.UDKBot.WaitToSeeEnemy")); }
+			ScriptFunction LatentWhatToDoNext() { mixin(MGF("mLatentWhatToDoNext", "Function UDKBase.UDKBot.LatentWhatToDoNext")); }
+			ScriptFunction CanMakePathTo() { mixin(MGF("mCanMakePathTo", "Function UDKBase.UDKBot.CanMakePathTo")); }
+			ScriptFunction FindBestInventoryPath() { mixin(MGF("mFindBestInventoryPath", "Function UDKBase.UDKBot.FindBestInventoryPath")); }
+			ScriptFunction FindPathToSquadRoute() { mixin(MGF("mFindPathToSquadRoute", "Function UDKBase.UDKBot.FindPathToSquadRoute")); }
+			ScriptFunction BuildSquadRoute() { mixin(MGF("mBuildSquadRoute", "Function UDKBase.UDKBot.BuildSquadRoute")); }
+			ScriptFunction FindBestSuperPickup() { mixin(MGF("mFindBestSuperPickup", "Function UDKBase.UDKBot.FindBestSuperPickup")); }
+			ScriptFunction WhatToDoNext() { mixin(MGF("mWhatToDoNext", "Function UDKBase.UDKBot.WhatToDoNext")); }
+			ScriptFunction MonitoredPawnAlert() { mixin(MGF("mMonitoredPawnAlert", "Function UDKBase.UDKBot.MonitoredPawnAlert")); }
+			ScriptFunction TimeDJReset() { mixin(MGF("mTimeDJReset", "Function UDKBase.UDKBot.TimeDJReset")); }
+			ScriptFunction MayDodgeToMoveTarget() { mixin(MGF("mMayDodgeToMoveTarget", "Function UDKBase.UDKBot.MayDodgeToMoveTarget")); }
+			ScriptFunction SpecialJumpCost() { mixin(MGF("mSpecialJumpCost", "Function UDKBase.UDKBot.SpecialJumpCost")); }
+			ScriptFunction SuperDesireability() { mixin(MGF("mSuperDesireability", "Function UDKBase.UDKBot.SuperDesireability")); }
+			ScriptFunction AdjustAimError() { mixin(MGF("mAdjustAimError", "Function UDKBase.UDKBot.AdjustAimError")); }
+			ScriptFunction MissedDodge() { mixin(MGF("mMissedDodge", "Function UDKBase.UDKBot.MissedDodge")); }
+			ScriptFunction DelayedWarning() { mixin(MGF("mDelayedWarning", "Function UDKBase.UDKBot.DelayedWarning")); }
+			ScriptFunction DelayedLeaveVehicle() { mixin(MGF("mDelayedLeaveVehicle", "Function UDKBase.UDKBot.DelayedLeaveVehicle")); }
 		}
 	}
 	struct EnemyPosition
@@ -73,85 +73,85 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKBot.EnemyPosition")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKBot.EnemyPosition")); }
 		@property final auto ref
 		{
-			float Time() { mixin(MGPS!("float", 24)()); }
-			Vector Velocity() { mixin(MGPS!("Vector", 12)()); }
-			Vector Position() { mixin(MGPS!("Vector", 0)()); }
+			float Time() { mixin(MGPS("float", 24)); }
+			Vector Velocity() { mixin(MGPS("Vector", 12)); }
+			Vector Position() { mixin(MGPS("Vector", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UDKBot.EnemyPosition) SavedPositions() { mixin(MGPC!("ScriptArray!(UDKBot.EnemyPosition)", 960)()); }
-			float MultiJumpZ() { mixin(MGPC!("float", 1120)()); }
-			float DodgeToGoalPct() { mixin(MGPC!("float", 1116)()); }
-			Actor FearSpots() { mixin(MGPC!("Actor", 1108)()); }
-			float DodgeLandZ() { mixin(MGPC!("float", 1104)()); }
-			float CurrentAimError() { mixin(MGPC!("float", 1100)()); }
-			float LastErrorUpdateTime() { mixin(MGPC!("float", 1096)()); }
-			float ErrorUpdateFrequency() { mixin(MGPC!("float", 1092)()); }
-			float LastAimUpdateTime() { mixin(MGPC!("float", 1088)()); }
-			float AimUpdateFrequency() { mixin(MGPC!("float", 1084)()); }
-			float LastIterativeCheck() { mixin(MGPC!("float", 1080)()); }
-			Pawn BlockedAimTarget() { mixin(MGPC!("Pawn", 1076)()); }
-			NavigationPoint SquadRouteGoal() { mixin(MGPC!("NavigationPoint", 1072)()); }
-			Vector TrackedVelocity() { mixin(MGPC!("Vector", 1060)()); }
-			float BaseTrackingReactionTime() { mixin(MGPC!("float", 1056)()); }
-			float TrackingReactionTime() { mixin(MGPC!("float", 1052)()); }
-			float LastSeenTime() { mixin(MGPC!("float", 1048)()); }
-			Vector LastSeeingPos() { mixin(MGPC!("Vector", 1036)()); }
-			Vector LastSeenPos() { mixin(MGPC!("Vector", 1024)()); }
-			float MonitorMaxDistSq() { mixin(MGPC!("float", 1020)()); }
-			Pawn MonitoredPawn() { mixin(MGPC!("Pawn", 1016)()); }
-			Vector MonitorStartLoc() { mixin(MGPC!("Vector", 1004)()); }
-			Projectile WarningProjectile() { mixin(MGPC!("Projectile", 1000)()); }
-			float WarningDelay() { mixin(MGPC!("float", 996)()); }
-			float RespawnPredictionTime() { mixin(MGPC!("float", 992)()); }
-			float HearingThreshold() { mixin(MGPC!("float", 988)()); }
-			int AcquisitionYawRate() { mixin(MGPC!("int", 984)()); }
-			Vector ImpactVelocity() { mixin(MGPC!("Vector", 972)()); }
-			Pawn CurrentlyTrackedEnemy() { mixin(MGPC!("Pawn", 956)()); }
-			Vehicle LastBlockingVehicle() { mixin(MGPC!("Vehicle", 952)()); }
-			Pawn VisibleEnemy() { mixin(MGPC!("Pawn", 948)()); }
-			float EnemyVisibilityTime() { mixin(MGPC!("float", 944)()); }
-			ubyte ScriptedFireMode() { mixin(MGPC!("ubyte", 940)()); }
-			Actor TemporaryFocus() { mixin(MGPC!("Actor", 932)()); }
+			ScriptArray!(UDKBot.EnemyPosition) SavedPositions() { mixin(MGPC("ScriptArray!(UDKBot.EnemyPosition)", 960)); }
+			float MultiJumpZ() { mixin(MGPC("float", 1120)); }
+			float DodgeToGoalPct() { mixin(MGPC("float", 1116)); }
+			Actor FearSpots() { mixin(MGPC("Actor", 1108)); }
+			float DodgeLandZ() { mixin(MGPC("float", 1104)); }
+			float CurrentAimError() { mixin(MGPC("float", 1100)); }
+			float LastErrorUpdateTime() { mixin(MGPC("float", 1096)); }
+			float ErrorUpdateFrequency() { mixin(MGPC("float", 1092)); }
+			float LastAimUpdateTime() { mixin(MGPC("float", 1088)); }
+			float AimUpdateFrequency() { mixin(MGPC("float", 1084)); }
+			float LastIterativeCheck() { mixin(MGPC("float", 1080)); }
+			Pawn BlockedAimTarget() { mixin(MGPC("Pawn", 1076)); }
+			NavigationPoint SquadRouteGoal() { mixin(MGPC("NavigationPoint", 1072)); }
+			Vector TrackedVelocity() { mixin(MGPC("Vector", 1060)); }
+			float BaseTrackingReactionTime() { mixin(MGPC("float", 1056)); }
+			float TrackingReactionTime() { mixin(MGPC("float", 1052)); }
+			float LastSeenTime() { mixin(MGPC("float", 1048)); }
+			Vector LastSeeingPos() { mixin(MGPC("Vector", 1036)); }
+			Vector LastSeenPos() { mixin(MGPC("Vector", 1024)); }
+			float MonitorMaxDistSq() { mixin(MGPC("float", 1020)); }
+			Pawn MonitoredPawn() { mixin(MGPC("Pawn", 1016)); }
+			Vector MonitorStartLoc() { mixin(MGPC("Vector", 1004)); }
+			Projectile WarningProjectile() { mixin(MGPC("Projectile", 1000)); }
+			float WarningDelay() { mixin(MGPC("float", 996)); }
+			float RespawnPredictionTime() { mixin(MGPC("float", 992)); }
+			float HearingThreshold() { mixin(MGPC("float", 988)); }
+			int AcquisitionYawRate() { mixin(MGPC("int", 984)); }
+			Vector ImpactVelocity() { mixin(MGPC("Vector", 972)); }
+			Pawn CurrentlyTrackedEnemy() { mixin(MGPC("Pawn", 956)); }
+			Vehicle LastBlockingVehicle() { mixin(MGPC("Vehicle", 952)); }
+			Pawn VisibleEnemy() { mixin(MGPC("Pawn", 948)); }
+			float EnemyVisibilityTime() { mixin(MGPC("float", 944)); }
+			ubyte ScriptedFireMode() { mixin(MGPC("ubyte", 940)); }
+			Actor TemporaryFocus() { mixin(MGPC("Actor", 932)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DecisionComponent'!
-			UDKSquadAI Squad() { mixin(MGPC!("UDKSquadAI", 924)()); }
+			UDKSquadAI Squad() { mixin(MGPC("UDKSquadAI", 924)); }
 		}
-		bool bUsePreviousSquadRoute() { mixin(MGBPC!(936, 0x4000)()); }
-		bool bUsePreviousSquadRoute(bool val) { mixin(MSBPC!(936, 0x4000)()); }
-		bool bUsingSquadRoute() { mixin(MGBPC!(936, 0x2000)()); }
-		bool bUsingSquadRoute(bool val) { mixin(MSBPC!(936, 0x2000)()); }
-		bool bAllowRouteReuse() { mixin(MGBPC!(936, 0x1000)()); }
-		bool bAllowRouteReuse(bool val) { mixin(MSBPC!(936, 0x1000)()); }
-		bool bNeedDelayedLeaveVehicle() { mixin(MGBPC!(936, 0x800)()); }
-		bool bNeedDelayedLeaveVehicle(bool val) { mixin(MSBPC!(936, 0x800)()); }
-		bool bEnemyAcquired() { mixin(MGBPC!(936, 0x400)()); }
-		bool bEnemyAcquired(bool val) { mixin(MSBPC!(936, 0x400)()); }
-		bool bInDodgeMove() { mixin(MGBPC!(936, 0x200)()); }
-		bool bInDodgeMove(bool val) { mixin(MSBPC!(936, 0x200)()); }
-		bool bPlannedJump() { mixin(MGBPC!(936, 0x100)()); }
-		bool bPlannedJump(bool val) { mixin(MSBPC!(936, 0x100)()); }
-		bool bJumpOverWall() { mixin(MGBPC!(936, 0x80)()); }
-		bool bJumpOverWall(bool val) { mixin(MSBPC!(936, 0x80)()); }
-		bool bLeadTarget() { mixin(MGBPC!(936, 0x40)()); }
-		bool bLeadTarget(bool val) { mixin(MSBPC!(936, 0x40)()); }
-		bool bEnemyIsVisible() { mixin(MGBPC!(936, 0x20)()); }
-		bool bEnemyIsVisible(bool val) { mixin(MSBPC!(936, 0x20)()); }
-		bool bEnemyInfoValid() { mixin(MGBPC!(936, 0x10)()); }
-		bool bEnemyInfoValid(bool val) { mixin(MSBPC!(936, 0x10)()); }
-		bool bTargetAlternateLoc() { mixin(MGBPC!(936, 0x8)()); }
-		bool bTargetAlternateLoc(bool val) { mixin(MSBPC!(936, 0x8)()); }
-		bool bForceRefreshRoute() { mixin(MGBPC!(936, 0x4)()); }
-		bool bForceRefreshRoute(bool val) { mixin(MSBPC!(936, 0x4)()); }
-		bool bScriptSpecialJumpCost() { mixin(MGBPC!(936, 0x2)()); }
-		bool bScriptSpecialJumpCost(bool val) { mixin(MSBPC!(936, 0x2)()); }
-		bool bExecutingWhatToDoNext() { mixin(MGBPC!(936, 0x1)()); }
-		bool bExecutingWhatToDoNext(bool val) { mixin(MSBPC!(936, 0x1)()); }
+		bool bUsePreviousSquadRoute() { mixin(MGBPC(936, 0x4000)); }
+		bool bUsePreviousSquadRoute(bool val) { mixin(MSBPC(936, 0x4000)); }
+		bool bUsingSquadRoute() { mixin(MGBPC(936, 0x2000)); }
+		bool bUsingSquadRoute(bool val) { mixin(MSBPC(936, 0x2000)); }
+		bool bAllowRouteReuse() { mixin(MGBPC(936, 0x1000)); }
+		bool bAllowRouteReuse(bool val) { mixin(MSBPC(936, 0x1000)); }
+		bool bNeedDelayedLeaveVehicle() { mixin(MGBPC(936, 0x800)); }
+		bool bNeedDelayedLeaveVehicle(bool val) { mixin(MSBPC(936, 0x800)); }
+		bool bEnemyAcquired() { mixin(MGBPC(936, 0x400)); }
+		bool bEnemyAcquired(bool val) { mixin(MSBPC(936, 0x400)); }
+		bool bInDodgeMove() { mixin(MGBPC(936, 0x200)); }
+		bool bInDodgeMove(bool val) { mixin(MSBPC(936, 0x200)); }
+		bool bPlannedJump() { mixin(MGBPC(936, 0x100)); }
+		bool bPlannedJump(bool val) { mixin(MSBPC(936, 0x100)); }
+		bool bJumpOverWall() { mixin(MGBPC(936, 0x80)); }
+		bool bJumpOverWall(bool val) { mixin(MSBPC(936, 0x80)); }
+		bool bLeadTarget() { mixin(MGBPC(936, 0x40)); }
+		bool bLeadTarget(bool val) { mixin(MSBPC(936, 0x40)); }
+		bool bEnemyIsVisible() { mixin(MGBPC(936, 0x20)); }
+		bool bEnemyIsVisible(bool val) { mixin(MSBPC(936, 0x20)); }
+		bool bEnemyInfoValid() { mixin(MGBPC(936, 0x10)); }
+		bool bEnemyInfoValid(bool val) { mixin(MSBPC(936, 0x10)); }
+		bool bTargetAlternateLoc() { mixin(MGBPC(936, 0x8)); }
+		bool bTargetAlternateLoc(bool val) { mixin(MSBPC(936, 0x8)); }
+		bool bForceRefreshRoute() { mixin(MGBPC(936, 0x4)); }
+		bool bForceRefreshRoute(bool val) { mixin(MSBPC(936, 0x4)); }
+		bool bScriptSpecialJumpCost() { mixin(MGBPC(936, 0x2)); }
+		bool bScriptSpecialJumpCost(bool val) { mixin(MSBPC(936, 0x2)); }
+		bool bExecutingWhatToDoNext() { mixin(MGBPC(936, 0x1)); }
+		bool bExecutingWhatToDoNext(bool val) { mixin(MSBPC(936, 0x1)); }
 	}
 final:
 	Actor FaceActor(float StrafingModifier)

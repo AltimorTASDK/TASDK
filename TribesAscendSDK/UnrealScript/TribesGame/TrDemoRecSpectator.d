@@ -11,9 +11,9 @@ extern(C++) interface TrDemoRecSpectator : TrPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDemoRecSpectator")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDemoRecSpectator")); }
 	private static __gshared TrDemoRecSpectator mDefaultProperties;
-	@property final static TrDemoRecSpectator DefaultProperties() { mixin(MGDPC!(TrDemoRecSpectator, "TrDemoRecSpectator TribesGame.Default__TrDemoRecSpectator")()); }
+	@property final static TrDemoRecSpectator DefaultProperties() { mixin(MGDPC("TrDemoRecSpectator", "TrDemoRecSpectator TribesGame.Default__TrDemoRecSpectator")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,39 +34,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDemoRecSpectator.PostBeginPlay")()); }
-			ScriptFunction ReceivedPlayer() { mixin(MGF!("mReceivedPlayer", "Function TribesGame.TrDemoRecSpectator.ReceivedPlayer")()); }
-			ScriptFunction InitPlayerReplicationInfo() { mixin(MGF!("mInitPlayerReplicationInfo", "Function TribesGame.TrDemoRecSpectator.InitPlayerReplicationInfo")()); }
-			ScriptFunction Slomo() { mixin(MGF!("mSlomo", "Function TribesGame.TrDemoRecSpectator.Slomo")()); }
-			ScriptFunction ViewClass() { mixin(MGF!("mViewClass", "Function TribesGame.TrDemoRecSpectator.ViewClass")()); }
-			ScriptFunction DemoViewNextPlayer() { mixin(MGF!("mDemoViewNextPlayer", "Function TribesGame.TrDemoRecSpectator.DemoViewNextPlayer")()); }
-			ScriptFunction SetViewTarget() { mixin(MGF!("mSetViewTarget", "Function TribesGame.TrDemoRecSpectator.SetViewTarget")()); }
-			ScriptFunction ServerViewSelf() { mixin(MGF!("mServerViewSelf", "Function TribesGame.TrDemoRecSpectator.ServerViewSelf")()); }
-			ScriptFunction ClientSetRealViewTarget() { mixin(MGF!("mClientSetRealViewTarget", "Function TribesGame.TrDemoRecSpectator.ClientSetRealViewTarget")()); }
-			ScriptFunction SetPause() { mixin(MGF!("mSetPause", "Function TribesGame.TrDemoRecSpectator.SetPause")()); }
-			ScriptFunction Pause() { mixin(MGF!("mPause", "Function TribesGame.TrDemoRecSpectator.Pause")()); }
-			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function TribesGame.TrDemoRecSpectator.GetPlayerViewPoint")()); }
-			ScriptFunction UpdateRotation() { mixin(MGF!("mUpdateRotation", "Function TribesGame.TrDemoRecSpectator.UpdateRotation")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrDemoRecSpectator.PostBeginPlay")); }
+			ScriptFunction ReceivedPlayer() { mixin(MGF("mReceivedPlayer", "Function TribesGame.TrDemoRecSpectator.ReceivedPlayer")); }
+			ScriptFunction InitPlayerReplicationInfo() { mixin(MGF("mInitPlayerReplicationInfo", "Function TribesGame.TrDemoRecSpectator.InitPlayerReplicationInfo")); }
+			ScriptFunction Slomo() { mixin(MGF("mSlomo", "Function TribesGame.TrDemoRecSpectator.Slomo")); }
+			ScriptFunction ViewClass() { mixin(MGF("mViewClass", "Function TribesGame.TrDemoRecSpectator.ViewClass")); }
+			ScriptFunction DemoViewNextPlayer() { mixin(MGF("mDemoViewNextPlayer", "Function TribesGame.TrDemoRecSpectator.DemoViewNextPlayer")); }
+			ScriptFunction SetViewTarget() { mixin(MGF("mSetViewTarget", "Function TribesGame.TrDemoRecSpectator.SetViewTarget")); }
+			ScriptFunction ServerViewSelf() { mixin(MGF("mServerViewSelf", "Function TribesGame.TrDemoRecSpectator.ServerViewSelf")); }
+			ScriptFunction ClientSetRealViewTarget() { mixin(MGF("mClientSetRealViewTarget", "Function TribesGame.TrDemoRecSpectator.ClientSetRealViewTarget")); }
+			ScriptFunction SetPause() { mixin(MGF("mSetPause", "Function TribesGame.TrDemoRecSpectator.SetPause")); }
+			ScriptFunction Pause() { mixin(MGF("mPause", "Function TribesGame.TrDemoRecSpectator.Pause")); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF("mGetPlayerViewPoint", "Function TribesGame.TrDemoRecSpectator.GetPlayerViewPoint")); }
+			ScriptFunction UpdateRotation() { mixin(MGF("mUpdateRotation", "Function TribesGame.TrDemoRecSpectator.UpdateRotation")); }
 		}
 	}
 	static struct NeutralRovingSpectateTimer
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDemoRecSpectator.NeutralRovingSpectateTimer")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDemoRecSpectator.NeutralRovingSpectateTimer")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float AutoSwitchPlayerInterval() { mixin(MGPC!("float", 3440)()); }
-			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC!("PlayerReplicationInfo", 3436)()); }
+			float AutoSwitchPlayerInterval() { mixin(MGPC("float", 3440)); }
+			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC("PlayerReplicationInfo", 3436)); }
 		}
-		bool bAutoSwitchPlayers() { mixin(MGBPC!(3432, 0x4)()); }
-		bool bAutoSwitchPlayers(bool val) { mixin(MSBPC!(3432, 0x4)()); }
-		bool bLockRotationToViewTarget() { mixin(MGBPC!(3432, 0x2)()); }
-		bool bLockRotationToViewTarget(bool val) { mixin(MSBPC!(3432, 0x2)()); }
-		bool bFindPlayer() { mixin(MGBPC!(3432, 0x1)()); }
-		bool bFindPlayer(bool val) { mixin(MSBPC!(3432, 0x1)()); }
+		bool bAutoSwitchPlayers() { mixin(MGBPC(3432, 0x4)); }
+		bool bAutoSwitchPlayers(bool val) { mixin(MSBPC(3432, 0x4)); }
+		bool bLockRotationToViewTarget() { mixin(MGBPC(3432, 0x2)); }
+		bool bLockRotationToViewTarget(bool val) { mixin(MSBPC(3432, 0x2)); }
+		bool bFindPlayer() { mixin(MGBPC(3432, 0x1)); }
+		bool bFindPlayer(bool val) { mixin(MSBPC(3432, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

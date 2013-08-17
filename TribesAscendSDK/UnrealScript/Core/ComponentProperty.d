@@ -8,7 +8,7 @@ extern(C++) interface ComponentProperty : ObjectProperty
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.ComponentProperty")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Core.ComponentProperty")); }
 	private static __gshared ComponentProperty mDefaultProperties;
-	@property final static ComponentProperty DefaultProperties() { mixin(MGDPC!(ComponentProperty, "ComponentProperty Core.Default__ComponentProperty")()); }
+	@property final static ComponentProperty DefaultProperties() { mixin(MGDPC("ComponentProperty", "ComponentProperty Core.Default__ComponentProperty")); }
 }

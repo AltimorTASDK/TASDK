@@ -9,9 +9,9 @@ extern(C++) interface IniLocPatcher : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.IniLocPatcher")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.IniLocPatcher")); }
 	private static __gshared IniLocPatcher mDefaultProperties;
-	@property final static IniLocPatcher DefaultProperties() { mixin(MGDPC!(IniLocPatcher, "IniLocPatcher Engine.Default__IniLocPatcher")()); }
+	@property final static IniLocPatcher DefaultProperties() { mixin(MGDPC("IniLocPatcher", "IniLocPatcher Engine.Default__IniLocPatcher")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,16 +29,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnReadTitleFileComplete() { mixin(MGF!("mOnReadTitleFileComplete", "Function Engine.IniLocPatcher.OnReadTitleFileComplete")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.IniLocPatcher.Init")()); }
-			ScriptFunction DownloadFiles() { mixin(MGF!("mDownloadFiles", "Function Engine.IniLocPatcher.DownloadFiles")()); }
-			ScriptFunction OnReadFileComplete() { mixin(MGF!("mOnReadFileComplete", "Function Engine.IniLocPatcher.OnReadFileComplete")()); }
-			ScriptFunction ProcessIniLocFile() { mixin(MGF!("mProcessIniLocFile", "Function Engine.IniLocPatcher.ProcessIniLocFile")()); }
-			ScriptFunction AddFileToDownload() { mixin(MGF!("mAddFileToDownload", "Function Engine.IniLocPatcher.AddFileToDownload")()); }
-			ScriptFunction AddReadFileDelegate() { mixin(MGF!("mAddReadFileDelegate", "Function Engine.IniLocPatcher.AddReadFileDelegate")()); }
-			ScriptFunction ClearReadFileDelegate() { mixin(MGF!("mClearReadFileDelegate", "Function Engine.IniLocPatcher.ClearReadFileDelegate")()); }
-			ScriptFunction ClearCachedFiles() { mixin(MGF!("mClearCachedFiles", "Function Engine.IniLocPatcher.ClearCachedFiles")()); }
-			ScriptFunction UpdateLocFileName() { mixin(MGF!("mUpdateLocFileName", "Function Engine.IniLocPatcher.UpdateLocFileName")()); }
+			ScriptFunction OnReadTitleFileComplete() { mixin(MGF("mOnReadTitleFileComplete", "Function Engine.IniLocPatcher.OnReadTitleFileComplete")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.IniLocPatcher.Init")); }
+			ScriptFunction DownloadFiles() { mixin(MGF("mDownloadFiles", "Function Engine.IniLocPatcher.DownloadFiles")); }
+			ScriptFunction OnReadFileComplete() { mixin(MGF("mOnReadFileComplete", "Function Engine.IniLocPatcher.OnReadFileComplete")); }
+			ScriptFunction ProcessIniLocFile() { mixin(MGF("mProcessIniLocFile", "Function Engine.IniLocPatcher.ProcessIniLocFile")); }
+			ScriptFunction AddFileToDownload() { mixin(MGF("mAddFileToDownload", "Function Engine.IniLocPatcher.AddFileToDownload")); }
+			ScriptFunction AddReadFileDelegate() { mixin(MGF("mAddReadFileDelegate", "Function Engine.IniLocPatcher.AddReadFileDelegate")); }
+			ScriptFunction ClearReadFileDelegate() { mixin(MGF("mClearReadFileDelegate", "Function Engine.IniLocPatcher.ClearReadFileDelegate")); }
+			ScriptFunction ClearCachedFiles() { mixin(MGF("mClearCachedFiles", "Function Engine.IniLocPatcher.ClearCachedFiles")); }
+			ScriptFunction UpdateLocFileName() { mixin(MGF("mUpdateLocFileName", "Function Engine.IniLocPatcher.UpdateLocFileName")); }
 		}
 	}
 	struct IniLocFileEntry
@@ -46,16 +46,16 @@ public extern(D):
 		private ubyte __buffer__[13];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.IniLocPatcher.IniLocFileEntry")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.IniLocPatcher.IniLocFileEntry")); }
 		@property final auto ref
 		{
-			OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS!("OnlineSubsystem.EOnlineEnumerationReadState", 12)()); }
-			ScriptString Filename() { mixin(MGPS!("ScriptString", 0)()); }
+			OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS("OnlineSubsystem.EOnlineEnumerationReadState", 12)); }
+			ScriptString Filename() { mixin(MGPS("ScriptString", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(IniLocPatcher.IniLocFileEntry) Files() { mixin(MGPC!("ScriptArray!(IniLocPatcher.IniLocFileEntry)", 60)()); }
+		ScriptArray!(IniLocPatcher.IniLocFileEntry) Files() { mixin(MGPC("ScriptArray!(IniLocPatcher.IniLocFileEntry)", 60)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadTitleFileComplete__Delegate'!
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'TitleFileInterface'!
 	}

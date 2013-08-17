@@ -10,9 +10,9 @@ extern(C++) interface Goal_AtActor : PathGoalEvaluator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Goal_AtActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Goal_AtActor")); }
 	private static __gshared Goal_AtActor mDefaultProperties;
-	@property final static Goal_AtActor DefaultProperties() { mixin(MGDPC!(Goal_AtActor, "Goal_AtActor Engine.Default__Goal_AtActor")()); }
+	@property final static Goal_AtActor DefaultProperties() { mixin(MGDPC("Goal_AtActor", "Goal_AtActor Engine.Default__Goal_AtActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,19 +22,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AtActor() { mixin(MGF!("mAtActor", "Function Engine.Goal_AtActor.AtActor")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Goal_AtActor.Recycle")()); }
+			ScriptFunction AtActor() { mixin(MGF("mAtActor", "Function Engine.Goal_AtActor.AtActor")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.Goal_AtActor.Recycle")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float GoalDist() { mixin(MGPC!("float", 80)()); }
-			Actor GoalActor() { mixin(MGPC!("Actor", 76)()); }
+			float GoalDist() { mixin(MGPC("float", 80)); }
+			Actor GoalActor() { mixin(MGPC("Actor", 76)); }
 		}
-		bool bKeepPartial() { mixin(MGBPC!(84, 0x1)()); }
-		bool bKeepPartial(bool val) { mixin(MSBPC!(84, 0x1)()); }
+		bool bKeepPartial() { mixin(MGBPC(84, 0x1)); }
+		bool bKeepPartial(bool val) { mixin(MSBPC(84, 0x1)); }
 	}
 final:
 	static bool AtActor(Pawn P, Actor Goal, float* Dist = null, bool* bReturnPartial = null)

@@ -11,9 +11,9 @@ extern(C++) interface TrRepairStationCollision : TrStationCollision
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRepairStationCollision")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrRepairStationCollision")); }
 	private static __gshared TrRepairStationCollision mDefaultProperties;
-	@property final static TrRepairStationCollision DefaultProperties() { mixin(MGDPC!(TrRepairStationCollision, "TrRepairStationCollision TribesGame.Default__TrRepairStationCollision")()); }
+	@property final static TrRepairStationCollision DefaultProperties() { mixin(MGDPC("TrRepairStationCollision", "TrRepairStationCollision TribesGame.Default__TrRepairStationCollision")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,13 +25,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetPawnsInStation() { mixin(MGF!("mGetPawnsInStation", "Function TribesGame.TrRepairStationCollision.GetPawnsInStation")()); }
-			ScriptFunction CheckNearByPawns() { mixin(MGF!("mCheckNearByPawns", "Function TribesGame.TrRepairStationCollision.CheckNearByPawns")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrRepairStationCollision.Touch")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrRepairStationCollision.UnTouch")()); }
+			ScriptFunction GetPawnsInStation() { mixin(MGF("mGetPawnsInStation", "Function TribesGame.TrRepairStationCollision.GetPawnsInStation")); }
+			ScriptFunction CheckNearByPawns() { mixin(MGF("mCheckNearByPawns", "Function TribesGame.TrRepairStationCollision.CheckNearByPawns")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function TribesGame.TrRepairStationCollision.Touch")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function TribesGame.TrRepairStationCollision.UnTouch")); }
 		}
 	}
-	@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC!("ScriptArray!(Pawn)", 484)()); }
+	@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC("ScriptArray!(Pawn)", 484)); }
 final:
 	int GetPawnsInStation()
 	{

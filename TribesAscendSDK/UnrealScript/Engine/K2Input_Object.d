@@ -8,7 +8,7 @@ extern(C++) interface K2Input_Object : K2Input
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.K2Input_Object")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.K2Input_Object")); }
 	private static __gshared K2Input_Object mDefaultProperties;
-	@property final static K2Input_Object DefaultProperties() { mixin(MGDPC!(K2Input_Object, "K2Input_Object Engine.Default__K2Input_Object")()); }
+	@property final static K2Input_Object DefaultProperties() { mixin(MGDPC("K2Input_Object", "K2Input_Object Engine.Default__K2Input_Object")); }
 }

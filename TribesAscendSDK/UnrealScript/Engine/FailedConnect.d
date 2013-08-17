@@ -10,9 +10,9 @@ extern(C++) interface FailedConnect : LocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FailedConnect")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FailedConnect")); }
 	private static __gshared FailedConnect mDefaultProperties;
-	@property final static FailedConnect DefaultProperties() { mixin(MGDPC!(FailedConnect, "FailedConnect Engine.Default__FailedConnect")()); }
+	@property final static FailedConnect DefaultProperties() { mixin(MGDPC("FailedConnect", "FailedConnect Engine.Default__FailedConnect")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +22,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFailSwitch() { mixin(MGF!("mGetFailSwitch", "Function Engine.FailedConnect.GetFailSwitch")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function Engine.FailedConnect.GetString")()); }
+			ScriptFunction GetFailSwitch() { mixin(MGF("mGetFailSwitch", "Function Engine.FailedConnect.GetFailSwitch")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function Engine.FailedConnect.GetString")); }
 		}
 	}
-	@property final auto ref ScriptString FailMessage() { mixin(MGPC!("ScriptString", 80)()); }
+	@property final auto ref ScriptString FailMessage() { mixin(MGPC("ScriptString", 80)); }
 final:
 	static int GetFailSwitch(ScriptString FailString)
 	{

@@ -9,13 +9,13 @@ extern(C++) interface NxForceFieldSpawnable : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NxForceFieldSpawnable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NxForceFieldSpawnable")); }
 	private static __gshared NxForceFieldSpawnable mDefaultProperties;
-	@property final static NxForceFieldSpawnable DefaultProperties() { mixin(MGDPC!(NxForceFieldSpawnable, "NxForceFieldSpawnable Engine.Default__NxForceFieldSpawnable")()); }
+	@property final static NxForceFieldSpawnable DefaultProperties() { mixin(MGDPC("NxForceFieldSpawnable", "NxForceFieldSpawnable Engine.Default__NxForceFieldSpawnable")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;
-		public @property static final ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.NxForceFieldSpawnable.OnToggle")()); }
+		public @property static final ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.NxForceFieldSpawnable.OnToggle")); }
 	}
 	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ForceFieldComponent'!
 	final void OnToggle(SeqAct_Toggle inAction)

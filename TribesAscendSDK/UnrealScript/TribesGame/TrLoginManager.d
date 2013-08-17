@@ -10,9 +10,9 @@ extern(C++) interface TrLoginManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLoginManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrLoginManager")); }
 	private static __gshared TrLoginManager mDefaultProperties;
-	@property final static TrLoginManager DefaultProperties() { mixin(MGDPC!(TrLoginManager, "TrLoginManager TribesGame.Default__TrLoginManager")()); }
+	@property final static TrLoginManager DefaultProperties() { mixin(MGDPC("TrLoginManager", "TrLoginManager TribesGame.Default__TrLoginManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,27 +28,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrLoginManager.Initialize")()); }
-			ScriptFunction Login() { mixin(MGF!("mLogin", "Function TribesGame.TrLoginManager.Login")()); }
-			ScriptFunction OnUserLoginFailed() { mixin(MGF!("mOnUserLoginFailed", "Function TribesGame.TrLoginManager.OnUserLoginFailed")()); }
-			ScriptFunction RetryLogin() { mixin(MGF!("mRetryLogin", "Function TribesGame.TrLoginManager.RetryLogin")()); }
-			ScriptFunction Logout() { mixin(MGF!("mLogout", "Function TribesGame.TrLoginManager.Logout")()); }
-			ScriptFunction SubmitPlayerName() { mixin(MGF!("mSubmitPlayerName", "Function TribesGame.TrLoginManager.SubmitPlayerName")()); }
-			ScriptFunction LoginWaitPopup() { mixin(MGF!("mLoginWaitPopup", "Function TribesGame.TrLoginManager.LoginWaitPopup")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.TrLoginManager.PopupData")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrLoginManager.Initialize")); }
+			ScriptFunction Login() { mixin(MGF("mLogin", "Function TribesGame.TrLoginManager.Login")); }
+			ScriptFunction OnUserLoginFailed() { mixin(MGF("mOnUserLoginFailed", "Function TribesGame.TrLoginManager.OnUserLoginFailed")); }
+			ScriptFunction RetryLogin() { mixin(MGF("mRetryLogin", "Function TribesGame.TrLoginManager.RetryLogin")); }
+			ScriptFunction Logout() { mixin(MGF("mLogout", "Function TribesGame.TrLoginManager.Logout")); }
+			ScriptFunction SubmitPlayerName() { mixin(MGF("mSubmitPlayerName", "Function TribesGame.TrLoginManager.SubmitPlayerName")); }
+			ScriptFunction LoginWaitPopup() { mixin(MGF("mLoginWaitPopup", "Function TribesGame.TrLoginManager.LoginWaitPopup")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.TrLoginManager.PopupData")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString LoginName() { mixin(MGPC!("ScriptString", 64)()); }
-			ScriptString LoginPassword() { mixin(MGPC!("ScriptString", 76)()); }
+			ScriptString LoginName() { mixin(MGPC("ScriptString", 64)); }
+			ScriptString LoginPassword() { mixin(MGPC("ScriptString", 76)); }
 		}
-		bool bRemember() { mixin(MGBPC!(60, 0x1)()); }
-		bool bRemember(bool val) { mixin(MSBPC!(60, 0x1)()); }
-		bool bWaitingForLoginWaitPopup() { mixin(MGBPC!(60, 0x2)()); }
-		bool bWaitingForLoginWaitPopup(bool val) { mixin(MSBPC!(60, 0x2)()); }
+		bool bRemember() { mixin(MGBPC(60, 0x1)); }
+		bool bRemember(bool val) { mixin(MSBPC(60, 0x1)); }
+		bool bWaitingForLoginWaitPopup() { mixin(MGBPC(60, 0x2)); }
+		bool bWaitingForLoginWaitPopup(bool val) { mixin(MSBPC(60, 0x2)); }
 	}
 final:
 	void Initialize()

@@ -8,9 +8,9 @@ extern(C++) interface UDKSkeletalMeshComponent : SkeletalMeshComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKSkeletalMeshComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKSkeletalMeshComponent")); }
 	private static __gshared UDKSkeletalMeshComponent mDefaultProperties;
-	@property final static UDKSkeletalMeshComponent DefaultProperties() { mixin(MGDPC!(UDKSkeletalMeshComponent, "UDKSkeletalMeshComponent UDKBase.Default__UDKSkeletalMeshComponent")()); }
+	@property final static UDKSkeletalMeshComponent DefaultProperties() { mixin(MGDPC("UDKSkeletalMeshComponent", "UDKSkeletalMeshComponent UDKBase.Default__UDKSkeletalMeshComponent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,19 +20,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreloadTextures() { mixin(MGF!("mPreloadTextures", "Function UDKBase.UDKSkeletalMeshComponent.PreloadTextures")()); }
-			ScriptFunction SetFOV() { mixin(MGF!("mSetFOV", "Function UDKBase.UDKSkeletalMeshComponent.SetFOV")()); }
+			ScriptFunction PreloadTextures() { mixin(MGF("mPreloadTextures", "Function UDKBase.UDKSkeletalMeshComponent.PreloadTextures")); }
+			ScriptFunction SetFOV() { mixin(MGF("mSetFOV", "Function UDKBase.UDKSkeletalMeshComponent.SetFOV")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float ClearStreamingTime() { mixin(MGPC!("float", 1520)()); }
-			float FOV() { mixin(MGPC!("float", 1512)()); }
+			float ClearStreamingTime() { mixin(MGPC("float", 1520)); }
+			float FOV() { mixin(MGPC("float", 1512)); }
 		}
-		bool bForceLoadTextures() { mixin(MGBPC!(1516, 0x1)()); }
-		bool bForceLoadTextures(bool val) { mixin(MSBPC!(1516, 0x1)()); }
+		bool bForceLoadTextures() { mixin(MGBPC(1516, 0x1)); }
+		bool bForceLoadTextures(bool val) { mixin(MSBPC(1516, 0x1)); }
 	}
 final:
 	void PreloadTextures(bool bForcePreload, float ClearTime)

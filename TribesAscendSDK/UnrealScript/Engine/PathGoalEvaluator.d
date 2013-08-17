@@ -9,9 +9,9 @@ extern(C++) interface PathGoalEvaluator : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PathGoalEvaluator")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.PathGoalEvaluator")); }
 	private static __gshared PathGoalEvaluator mDefaultProperties;
-	@property final static PathGoalEvaluator DefaultProperties() { mixin(MGDPC!(PathGoalEvaluator, "PathGoalEvaluator Engine.Default__PathGoalEvaluator")()); }
+	@property final static PathGoalEvaluator DefaultProperties() { mixin(MGDPC("PathGoalEvaluator", "PathGoalEvaluator Engine.Default__PathGoalEvaluator")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,16 +21,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.PathGoalEvaluator.Recycle")()); }
-			ScriptFunction GetDumpString() { mixin(MGF!("mGetDumpString", "Function Engine.PathGoalEvaluator.GetDumpString")()); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.PathGoalEvaluator.Recycle")); }
+			ScriptFunction GetDumpString() { mixin(MGF("mGetDumpString", "Function Engine.PathGoalEvaluator.GetDumpString")); }
 		}
 	}
 	@property final auto ref
 	{
-		int CacheIdx() { mixin(MGPC!("int", 72)()); }
-		int MaxPathVisits() { mixin(MGPC!("int", 68)()); }
-		NavigationPoint GeneratedGoal() { mixin(MGPC!("NavigationPoint", 64)()); }
-		PathGoalEvaluator NextEvaluator() { mixin(MGPC!("PathGoalEvaluator", 60)()); }
+		int CacheIdx() { mixin(MGPC("int", 72)); }
+		int MaxPathVisits() { mixin(MGPC("int", 68)); }
+		NavigationPoint GeneratedGoal() { mixin(MGPC("NavigationPoint", 64)); }
+		PathGoalEvaluator NextEvaluator() { mixin(MGPC("PathGoalEvaluator", 60)); }
 	}
 final:
 	void Recycle()

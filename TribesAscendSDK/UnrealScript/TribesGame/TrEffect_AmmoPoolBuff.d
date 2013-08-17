@@ -9,9 +9,9 @@ extern(C++) interface TrEffect_AmmoPoolBuff : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_AmmoPoolBuff")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_AmmoPoolBuff")); }
 	private static __gshared TrEffect_AmmoPoolBuff mDefaultProperties;
-	@property final static TrEffect_AmmoPoolBuff DefaultProperties() { mixin(MGDPC!(TrEffect_AmmoPoolBuff, "TrEffect_AmmoPoolBuff TribesGame.Default__TrEffect_AmmoPoolBuff")()); }
+	@property final static TrEffect_AmmoPoolBuff DefaultProperties() { mixin(MGDPC("TrEffect_AmmoPoolBuff", "TrEffect_AmmoPoolBuff TribesGame.Default__TrEffect_AmmoPoolBuff")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_AmmoPoolBuff.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_AmmoPoolBuff.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_AmmoPoolBuff.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_AmmoPoolBuff.Remove")); }
 		}
 	}
 final:

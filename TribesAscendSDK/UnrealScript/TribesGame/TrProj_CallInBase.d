@@ -8,9 +8,9 @@ extern(C++) interface TrProj_CallInBase : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_CallInBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_CallInBase")); }
 	private static __gshared TrProj_CallInBase mDefaultProperties;
-	@property final static TrProj_CallInBase DefaultProperties() { mixin(MGDPC!(TrProj_CallInBase, "TrProj_CallInBase TribesGame.Default__TrProj_CallInBase")()); }
+	@property final static TrProj_CallInBase DefaultProperties() { mixin(MGDPC("TrProj_CallInBase", "TrProj_CallInBase TribesGame.Default__TrProj_CallInBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,11 +20,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrProj_CallInBase.ReplicatedEvent")()); }
-			ScriptFunction EffectIsRelevant() { mixin(MGF!("mEffectIsRelevant", "Function TribesGame.TrProj_CallInBase.EffectIsRelevant")()); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrProj_CallInBase.ReplicatedEvent")); }
+			ScriptFunction EffectIsRelevant() { mixin(MGF("mEffectIsRelevant", "Function TribesGame.TrProj_CallInBase.EffectIsRelevant")); }
 		}
 	}
-	@property final auto ref Vector r_TargetLocation() { mixin(MGPC!("Vector", 816)()); }
+	@property final auto ref Vector r_TargetLocation() { mixin(MGPC("Vector", 816)); }
 final:
 	void ReplicatedEvent(ScriptName VarName)
 	{

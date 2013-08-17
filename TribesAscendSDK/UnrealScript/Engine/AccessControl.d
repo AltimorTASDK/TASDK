@@ -11,9 +11,9 @@ extern(C++) interface AccessControl : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AccessControl")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AccessControl")); }
 	private static __gshared AccessControl mDefaultProperties;
-	@property final static AccessControl DefaultProperties() { mixin(MGDPC!(AccessControl, "AccessControl Engine.Default__AccessControl")()); }
+	@property final static AccessControl DefaultProperties() { mixin(MGDPC("AccessControl", "AccessControl Engine.Default__AccessControl")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,47 +39,47 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsAdmin() { mixin(MGF!("mIsAdmin", "Function Engine.AccessControl.IsAdmin")()); }
-			ScriptFunction SetAdminPassword() { mixin(MGF!("mSetAdminPassword", "Function Engine.AccessControl.SetAdminPassword")()); }
-			ScriptFunction SetGamePassword() { mixin(MGF!("mSetGamePassword", "Function Engine.AccessControl.SetGamePassword")()); }
-			ScriptFunction RequiresPassword() { mixin(MGF!("mRequiresPassword", "Function Engine.AccessControl.RequiresPassword")()); }
-			ScriptFunction GetControllerFromString() { mixin(MGF!("mGetControllerFromString", "Function Engine.AccessControl.GetControllerFromString")()); }
-			ScriptFunction Kick() { mixin(MGF!("mKick", "Function Engine.AccessControl.Kick")()); }
-			ScriptFunction KickBan() { mixin(MGF!("mKickBan", "Function Engine.AccessControl.KickBan")()); }
-			ScriptFunction ForceKickPlayer() { mixin(MGF!("mForceKickPlayer", "Function Engine.AccessControl.ForceKickPlayer")()); }
-			ScriptFunction KickPlayer() { mixin(MGF!("mKickPlayer", "Function Engine.AccessControl.KickPlayer")()); }
-			ScriptFunction AdminLogin() { mixin(MGF!("mAdminLogin", "Function Engine.AccessControl.AdminLogin")()); }
-			ScriptFunction AdminLogout() { mixin(MGF!("mAdminLogout", "Function Engine.AccessControl.AdminLogout")()); }
-			ScriptFunction AdminEntered() { mixin(MGF!("mAdminEntered", "Function Engine.AccessControl.AdminEntered")()); }
-			ScriptFunction AdminExited() { mixin(MGF!("mAdminExited", "Function Engine.AccessControl.AdminExited")()); }
-			ScriptFunction ParseAdminOptions() { mixin(MGF!("mParseAdminOptions", "Function Engine.AccessControl.ParseAdminOptions")()); }
-			ScriptFunction ValidLogin() { mixin(MGF!("mValidLogin", "Function Engine.AccessControl.ValidLogin")()); }
-			ScriptFunction PreLogin() { mixin(MGF!("mPreLogin", "Function Engine.AccessControl.PreLogin")()); }
-			ScriptFunction CheckIPPolicy() { mixin(MGF!("mCheckIPPolicy", "Function Engine.AccessControl.CheckIPPolicy")()); }
-			ScriptFunction IsIDBanned() { mixin(MGF!("mIsIDBanned", "Function Engine.AccessControl.IsIDBanned")()); }
+			ScriptFunction IsAdmin() { mixin(MGF("mIsAdmin", "Function Engine.AccessControl.IsAdmin")); }
+			ScriptFunction SetAdminPassword() { mixin(MGF("mSetAdminPassword", "Function Engine.AccessControl.SetAdminPassword")); }
+			ScriptFunction SetGamePassword() { mixin(MGF("mSetGamePassword", "Function Engine.AccessControl.SetGamePassword")); }
+			ScriptFunction RequiresPassword() { mixin(MGF("mRequiresPassword", "Function Engine.AccessControl.RequiresPassword")); }
+			ScriptFunction GetControllerFromString() { mixin(MGF("mGetControllerFromString", "Function Engine.AccessControl.GetControllerFromString")); }
+			ScriptFunction Kick() { mixin(MGF("mKick", "Function Engine.AccessControl.Kick")); }
+			ScriptFunction KickBan() { mixin(MGF("mKickBan", "Function Engine.AccessControl.KickBan")); }
+			ScriptFunction ForceKickPlayer() { mixin(MGF("mForceKickPlayer", "Function Engine.AccessControl.ForceKickPlayer")); }
+			ScriptFunction KickPlayer() { mixin(MGF("mKickPlayer", "Function Engine.AccessControl.KickPlayer")); }
+			ScriptFunction AdminLogin() { mixin(MGF("mAdminLogin", "Function Engine.AccessControl.AdminLogin")); }
+			ScriptFunction AdminLogout() { mixin(MGF("mAdminLogout", "Function Engine.AccessControl.AdminLogout")); }
+			ScriptFunction AdminEntered() { mixin(MGF("mAdminEntered", "Function Engine.AccessControl.AdminEntered")); }
+			ScriptFunction AdminExited() { mixin(MGF("mAdminExited", "Function Engine.AccessControl.AdminExited")); }
+			ScriptFunction ParseAdminOptions() { mixin(MGF("mParseAdminOptions", "Function Engine.AccessControl.ParseAdminOptions")); }
+			ScriptFunction ValidLogin() { mixin(MGF("mValidLogin", "Function Engine.AccessControl.ValidLogin")); }
+			ScriptFunction PreLogin() { mixin(MGF("mPreLogin", "Function Engine.AccessControl.PreLogin")); }
+			ScriptFunction CheckIPPolicy() { mixin(MGF("mCheckIPPolicy", "Function Engine.AccessControl.CheckIPPolicy")); }
+			ScriptFunction IsIDBanned() { mixin(MGF("mIsIDBanned", "Function Engine.AccessControl.IsIDBanned")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) IPPolicies() { mixin(MGPC!("ScriptArray!(ScriptString)", 476)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) BannedIDs() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 488)()); }
-			ScriptString ACDescText() { mixin(MGPC!("ScriptString", 648)()); }
-			ScriptString ACDisplayText() { mixin(MGPC!("ScriptString", 612)()); }
-			ScriptString GamePassword() { mixin(MGPC!("ScriptString", 600)()); }
-			ScriptString AdminPassword() { mixin(MGPC!("ScriptString", 588)()); }
-			ScriptClass AdminClass() { mixin(MGPC!("ScriptClass", 584)()); }
-			ScriptString IdleKickReason() { mixin(MGPC!("ScriptString", 572)()); }
-			ScriptString DefaultKickReason() { mixin(MGPC!("ScriptString", 560)()); }
-			ScriptString KickedMsg() { mixin(MGPC!("ScriptString", 548)()); }
-			ScriptString SessionBanned() { mixin(MGPC!("ScriptString", 536)()); }
-			ScriptString NeedPassword() { mixin(MGPC!("ScriptString", 524)()); }
-			ScriptString WrongPassword() { mixin(MGPC!("ScriptString", 512)()); }
-			ScriptString IPBanned() { mixin(MGPC!("ScriptString", 500)()); }
+			ScriptArray!(ScriptString) IPPolicies() { mixin(MGPC("ScriptArray!(ScriptString)", 476)); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) BannedIDs() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 488)); }
+			ScriptString ACDescText() { mixin(MGPC("ScriptString", 648)); }
+			ScriptString ACDisplayText() { mixin(MGPC("ScriptString", 612)); }
+			ScriptString GamePassword() { mixin(MGPC("ScriptString", 600)); }
+			ScriptString AdminPassword() { mixin(MGPC("ScriptString", 588)); }
+			ScriptClass AdminClass() { mixin(MGPC("ScriptClass", 584)); }
+			ScriptString IdleKickReason() { mixin(MGPC("ScriptString", 572)); }
+			ScriptString DefaultKickReason() { mixin(MGPC("ScriptString", 560)); }
+			ScriptString KickedMsg() { mixin(MGPC("ScriptString", 548)); }
+			ScriptString SessionBanned() { mixin(MGPC("ScriptString", 536)); }
+			ScriptString NeedPassword() { mixin(MGPC("ScriptString", 524)); }
+			ScriptString WrongPassword() { mixin(MGPC("ScriptString", 512)); }
+			ScriptString IPBanned() { mixin(MGPC("ScriptString", 500)); }
 		}
-		bool bDontAddDefaultAdmin() { mixin(MGBPC!(684, 0x1)()); }
-		bool bDontAddDefaultAdmin(bool val) { mixin(MSBPC!(684, 0x1)()); }
+		bool bDontAddDefaultAdmin() { mixin(MGBPC(684, 0x1)); }
+		bool bDontAddDefaultAdmin(bool val) { mixin(MSBPC(684, 0x1)); }
 	}
 final:
 	bool IsAdmin(PlayerController P)

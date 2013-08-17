@@ -19,9 +19,9 @@ extern(C++) interface TrGameReplicationInfo : UTGameReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameReplicationInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameReplicationInfo")); }
 	private static __gshared TrGameReplicationInfo mDefaultProperties;
-	@property final static TrGameReplicationInfo DefaultProperties() { mixin(MGDPC!(TrGameReplicationInfo, "TrGameReplicationInfo TribesGame.Default__TrGameReplicationInfo")()); }
+	@property final static TrGameReplicationInfo DefaultProperties() { mixin(MGDPC("TrGameReplicationInfo", "TrGameReplicationInfo TribesGame.Default__TrGameReplicationInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -51,28 +51,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsClassAllowed() { mixin(MGF!("mIsClassAllowed", "Function TribesGame.TrGameReplicationInfo.IsClassAllowed")()); }
-			ScriptFunction GetTeamSize() { mixin(MGF!("mGetTeamSize", "Function TribesGame.TrGameReplicationInfo.GetTeamSize")()); }
-			ScriptFunction CanJoinTeam() { mixin(MGF!("mCanJoinTeam", "Function TribesGame.TrGameReplicationInfo.CanJoinTeam")()); }
-			ScriptFunction GetGlobalSpeedCapMultiplier() { mixin(MGF!("mGetGlobalSpeedCapMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalSpeedCapMultiplier")()); }
-			ScriptFunction GetGlobalAccelerationMultiplier() { mixin(MGF!("mGetGlobalAccelerationMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalAccelerationMultiplier")()); }
-			ScriptFunction GetGlobalAirSpeedMultiplier() { mixin(MGF!("mGetGlobalAirSpeedMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalAirSpeedMultiplier")()); }
-			ScriptFunction GetGlobalMaxJetpackThrustSpeedMultiplier() { mixin(MGF!("mGetGlobalMaxJetpackThrustSpeedMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalMaxJetpackThrustSpeedMultiplier")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrGameReplicationInfo.ReplicatedEvent")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function TribesGame.TrGameReplicationInfo.PreBeginPlay")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrGameReplicationInfo.PostBeginPlay")()); }
-			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrGameReplicationInfo.ApplyServerSettings")()); }
-			ScriptFunction CanPlaceDeployables() { mixin(MGF!("mCanPlaceDeployables", "Function TribesGame.TrGameReplicationInfo.CanPlaceDeployables")()); }
-			ScriptFunction OnPhase0SiegeEnded() { mixin(MGF!("mOnPhase0SiegeEnded", "Function TribesGame.TrGameReplicationInfo.OnPhase0SiegeEnded")()); }
-			ScriptFunction OnResetGame() { mixin(MGF!("mOnResetGame", "Function TribesGame.TrGameReplicationInfo.OnResetGame")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function TribesGame.TrGameReplicationInfo.Timer")()); }
-			ScriptFunction OnSameTeam() { mixin(MGF!("mOnSameTeam", "Function TribesGame.TrGameReplicationInfo.OnSameTeam")()); }
-			ScriptFunction Blip() { mixin(MGF!("mBlip", "Function TribesGame.TrGameReplicationInfo.Blip")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrGameReplicationInfo.Tick")()); }
-			ScriptFunction ChangePhysicsType() { mixin(MGF!("mChangePhysicsType", "Function TribesGame.TrGameReplicationInfo.ChangePhysicsType")()); }
-			ScriptFunction IsValidTeamPlayer() { mixin(MGF!("mIsValidTeamPlayer", "Function TribesGame.TrGameReplicationInfo.IsValidTeamPlayer")()); }
-			ScriptFunction SetWarmingUp() { mixin(MGF!("mSetWarmingUp", "Function TribesGame.TrGameReplicationInfo.SetWarmingUp")()); }
-			ScriptFunction AddPRI() { mixin(MGF!("mAddPRI", "Function TribesGame.TrGameReplicationInfo.AddPRI")()); }
+			ScriptFunction IsClassAllowed() { mixin(MGF("mIsClassAllowed", "Function TribesGame.TrGameReplicationInfo.IsClassAllowed")); }
+			ScriptFunction GetTeamSize() { mixin(MGF("mGetTeamSize", "Function TribesGame.TrGameReplicationInfo.GetTeamSize")); }
+			ScriptFunction CanJoinTeam() { mixin(MGF("mCanJoinTeam", "Function TribesGame.TrGameReplicationInfo.CanJoinTeam")); }
+			ScriptFunction GetGlobalSpeedCapMultiplier() { mixin(MGF("mGetGlobalSpeedCapMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalSpeedCapMultiplier")); }
+			ScriptFunction GetGlobalAccelerationMultiplier() { mixin(MGF("mGetGlobalAccelerationMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalAccelerationMultiplier")); }
+			ScriptFunction GetGlobalAirSpeedMultiplier() { mixin(MGF("mGetGlobalAirSpeedMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalAirSpeedMultiplier")); }
+			ScriptFunction GetGlobalMaxJetpackThrustSpeedMultiplier() { mixin(MGF("mGetGlobalMaxJetpackThrustSpeedMultiplier", "Function TribesGame.TrGameReplicationInfo.GetGlobalMaxJetpackThrustSpeedMultiplier")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrGameReplicationInfo.ReplicatedEvent")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function TribesGame.TrGameReplicationInfo.PreBeginPlay")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrGameReplicationInfo.PostBeginPlay")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF("mApplyServerSettings", "Function TribesGame.TrGameReplicationInfo.ApplyServerSettings")); }
+			ScriptFunction CanPlaceDeployables() { mixin(MGF("mCanPlaceDeployables", "Function TribesGame.TrGameReplicationInfo.CanPlaceDeployables")); }
+			ScriptFunction OnPhase0SiegeEnded() { mixin(MGF("mOnPhase0SiegeEnded", "Function TribesGame.TrGameReplicationInfo.OnPhase0SiegeEnded")); }
+			ScriptFunction OnResetGame() { mixin(MGF("mOnResetGame", "Function TribesGame.TrGameReplicationInfo.OnResetGame")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function TribesGame.TrGameReplicationInfo.Timer")); }
+			ScriptFunction OnSameTeam() { mixin(MGF("mOnSameTeam", "Function TribesGame.TrGameReplicationInfo.OnSameTeam")); }
+			ScriptFunction Blip() { mixin(MGF("mBlip", "Function TribesGame.TrGameReplicationInfo.Blip")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrGameReplicationInfo.Tick")); }
+			ScriptFunction ChangePhysicsType() { mixin(MGF("mChangePhysicsType", "Function TribesGame.TrGameReplicationInfo.ChangePhysicsType")); }
+			ScriptFunction IsValidTeamPlayer() { mixin(MGF("mIsValidTeamPlayer", "Function TribesGame.TrGameReplicationInfo.IsValidTeamPlayer")); }
+			ScriptFunction SetWarmingUp() { mixin(MGF("mSetWarmingUp", "Function TribesGame.TrGameReplicationInfo.SetWarmingUp")); }
+			ScriptFunction AddPRI() { mixin(MGF("mAddPRI", "Function TribesGame.TrGameReplicationInfo.AddPRI")); }
 		}
 	}
 	static struct Constants
@@ -1461,47 +1461,47 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrServerSettingsInfo r_ServerConfig() { mixin(MGPC!("TrServerSettingsInfo", 684)()); }
-			TrPlayerReplicationInfo r_BEPlayerList() { mixin(MGPC!("TrPlayerReplicationInfo", 816)()); }
-			TrPlayerReplicationInfo r_DSPlayerList() { mixin(MGPC!("TrPlayerReplicationInfo", 848)()); }
-			int r_nRoundScore() { mixin(MGPC!("int", 764)()); }
-			int r_nCurrentRound() { mixin(MGPC!("int", 772)()); }
-			TrObjectPool m_TrObjectPool() { mixin(MGPC!("TrObjectPool", 636)()); }
-			ScriptArray!(TrDeployable) m_Deployables() { mixin(MGPC!("ScriptArray!(TrDeployable)", 640)()); }
-			TrPawn.PhysicsType r_PhysType() { mixin(MGPC!("TrPawn.PhysicsType", 711)()); }
-			float m_fCurrentSensorBlipOpacity() { mixin(MGPC!("float", 724)()); }
-			TrFlagBase m_Flags() { mixin(MGPC!("TrFlagBase", 676)()); }
-			int r_nNumCapturePointsHeld() { mixin(MGPC!("int", 808)()); }
-			int GeneratorPower() { mixin(MGPC!("int", 688)()); }
-			PlayerReplicationInfo m_CurrentRabbitPRI() { mixin(MGPC!("PlayerReplicationInfo", 664)()); }
-			TrDaDCore r_DaDCore() { mixin(MGPC!("TrDaDCore", 776)()); }
-			TrDaDCapacitor r_DaDCapacitorBE() { mixin(MGPC!("TrDaDCapacitor", 784)()); }
-			TrDaDCapacitor r_DaDCapacitorDS() { mixin(MGPC!("TrDaDCapacitor", 796)()); }
-			int FlagReturnTime() { mixin(MGPC!("int", 668)()); }
-			PlayerReplicationInfo m_RabbitLeaderBoard() { mixin(MGPC!("PlayerReplicationInfo", 652)()); }
-			int r_CarrierCoreHealth() { mixin(MGPC!("int", 756)()); }
-			int r_CarrierShieldHealth() { mixin(MGPC!("int", 748)()); }
-			ScriptArray!(TrTeamBlockerStaticMeshActor) m_TeamBlockerCache() { mixin(MGPC!("ScriptArray!(TrTeamBlockerStaticMeshActor)", 712)()); }
-			float r_fGlobalMaxJetpackThrustSpeedMultiplier() { mixin(MGPC!("float", 744)()); }
-			float r_fGlobalAirSpeedMultiplier() { mixin(MGPC!("float", 740)()); }
-			float r_fGlobalAccelerationMultiplier() { mixin(MGPC!("float", 736)()); }
-			float r_fGlobalSpeedCapMultiplier() { mixin(MGPC!("float", 732)()); }
-			float m_fSensorBlipFadeSpeed() { mixin(MGPC!("float", 728)()); }
-			ubyte r_nBlip() { mixin(MGPC!("ubyte", 710)()); }
-			ubyte r_nPhase0SeigeEnded() { mixin(MGPC!("ubyte", 709)()); }
-			ubyte r_ResetGame() { mixin(MGPC!("ubyte", 708)()); }
-			int GeneratorDowntime() { mixin(MGPC!("int", 696)()); }
+			TrServerSettingsInfo r_ServerConfig() { mixin(MGPC("TrServerSettingsInfo", 684)); }
+			TrPlayerReplicationInfo r_BEPlayerList() { mixin(MGPC("TrPlayerReplicationInfo", 816)); }
+			TrPlayerReplicationInfo r_DSPlayerList() { mixin(MGPC("TrPlayerReplicationInfo", 848)); }
+			int r_nRoundScore() { mixin(MGPC("int", 764)); }
+			int r_nCurrentRound() { mixin(MGPC("int", 772)); }
+			TrObjectPool m_TrObjectPool() { mixin(MGPC("TrObjectPool", 636)); }
+			ScriptArray!(TrDeployable) m_Deployables() { mixin(MGPC("ScriptArray!(TrDeployable)", 640)); }
+			TrPawn.PhysicsType r_PhysType() { mixin(MGPC("TrPawn.PhysicsType", 711)); }
+			float m_fCurrentSensorBlipOpacity() { mixin(MGPC("float", 724)); }
+			TrFlagBase m_Flags() { mixin(MGPC("TrFlagBase", 676)); }
+			int r_nNumCapturePointsHeld() { mixin(MGPC("int", 808)); }
+			int GeneratorPower() { mixin(MGPC("int", 688)); }
+			PlayerReplicationInfo m_CurrentRabbitPRI() { mixin(MGPC("PlayerReplicationInfo", 664)); }
+			TrDaDCore r_DaDCore() { mixin(MGPC("TrDaDCore", 776)); }
+			TrDaDCapacitor r_DaDCapacitorBE() { mixin(MGPC("TrDaDCapacitor", 784)); }
+			TrDaDCapacitor r_DaDCapacitorDS() { mixin(MGPC("TrDaDCapacitor", 796)); }
+			int FlagReturnTime() { mixin(MGPC("int", 668)); }
+			PlayerReplicationInfo m_RabbitLeaderBoard() { mixin(MGPC("PlayerReplicationInfo", 652)); }
+			int r_CarrierCoreHealth() { mixin(MGPC("int", 756)); }
+			int r_CarrierShieldHealth() { mixin(MGPC("int", 748)); }
+			ScriptArray!(TrTeamBlockerStaticMeshActor) m_TeamBlockerCache() { mixin(MGPC("ScriptArray!(TrTeamBlockerStaticMeshActor)", 712)); }
+			float r_fGlobalMaxJetpackThrustSpeedMultiplier() { mixin(MGPC("float", 744)); }
+			float r_fGlobalAirSpeedMultiplier() { mixin(MGPC("float", 740)); }
+			float r_fGlobalAccelerationMultiplier() { mixin(MGPC("float", 736)); }
+			float r_fGlobalSpeedCapMultiplier() { mixin(MGPC("float", 732)); }
+			float m_fSensorBlipFadeSpeed() { mixin(MGPC("float", 728)); }
+			ubyte r_nBlip() { mixin(MGPC("ubyte", 710)); }
+			ubyte r_nPhase0SeigeEnded() { mixin(MGPC("ubyte", 709)); }
+			ubyte r_ResetGame() { mixin(MGPC("ubyte", 708)); }
+			int GeneratorDowntime() { mixin(MGPC("int", 696)); }
 		}
-		bool r_bSkiEnabled() { mixin(MGBPC!(704, 0x10)()); }
-		bool r_bSkiEnabled(bool val) { mixin(MSBPC!(704, 0x10)()); }
-		bool r_bPoweredCallins() { mixin(MGBPC!(704, 0x2)()); }
-		bool r_bPoweredCallins(bool val) { mixin(MSBPC!(704, 0x2)()); }
-		bool bGivePerfBonus() { mixin(MGBPC!(704, 0x8)()); }
-		bool bGivePerfBonus(bool val) { mixin(MSBPC!(704, 0x8)()); }
-		bool bGivePrivateXP() { mixin(MGBPC!(704, 0x4)()); }
-		bool bGivePrivateXP(bool val) { mixin(MSBPC!(704, 0x4)()); }
-		bool r_bCanPlaceDeployables() { mixin(MGBPC!(704, 0x1)()); }
-		bool r_bCanPlaceDeployables(bool val) { mixin(MSBPC!(704, 0x1)()); }
+		bool r_bSkiEnabled() { mixin(MGBPC(704, 0x10)); }
+		bool r_bSkiEnabled(bool val) { mixin(MSBPC(704, 0x10)); }
+		bool r_bPoweredCallins() { mixin(MGBPC(704, 0x2)); }
+		bool r_bPoweredCallins(bool val) { mixin(MSBPC(704, 0x2)); }
+		bool bGivePerfBonus() { mixin(MGBPC(704, 0x8)); }
+		bool bGivePerfBonus(bool val) { mixin(MSBPC(704, 0x8)); }
+		bool bGivePrivateXP() { mixin(MGBPC(704, 0x4)); }
+		bool bGivePrivateXP(bool val) { mixin(MSBPC(704, 0x4)); }
+		bool r_bCanPlaceDeployables() { mixin(MGBPC(704, 0x1)); }
+		bool r_bCanPlaceDeployables(bool val) { mixin(MSBPC(704, 0x1)); }
 	}
 final:
 	bool IsClassAllowed(int TeamNum, ScriptClass FamilyInfo)

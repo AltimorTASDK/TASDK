@@ -8,9 +8,9 @@ extern(C++) interface TrGameSearchCommon : OnlineGameSearch
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameSearchCommon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameSearchCommon")); }
 	private static __gshared TrGameSearchCommon mDefaultProperties;
-	@property final static TrGameSearchCommon DefaultProperties() { mixin(MGDPC!(TrGameSearchCommon, "TrGameSearchCommon TribesGame.Default__TrGameSearchCommon")()); }
+	@property final static TrGameSearchCommon DefaultProperties() { mixin(MGDPC("TrGameSearchCommon", "TrGameSearchCommon TribesGame.Default__TrGameSearchCommon")); }
 	static struct Constants
 	{
 		enum

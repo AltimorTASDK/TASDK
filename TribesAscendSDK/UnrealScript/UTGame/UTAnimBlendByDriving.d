@@ -8,7 +8,7 @@ extern(C++) interface UTAnimBlendByDriving : UDKAnimBlendByDriving
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnimBlendByDriving")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnimBlendByDriving")); }
 	private static __gshared UTAnimBlendByDriving mDefaultProperties;
-	@property final static UTAnimBlendByDriving DefaultProperties() { mixin(MGDPC!(UTAnimBlendByDriving, "UTAnimBlendByDriving UTGame.Default__UTAnimBlendByDriving")()); }
+	@property final static UTAnimBlendByDriving DefaultProperties() { mixin(MGDPC("UTAnimBlendByDriving", "UTAnimBlendByDriving UTGame.Default__UTAnimBlendByDriving")); }
 }

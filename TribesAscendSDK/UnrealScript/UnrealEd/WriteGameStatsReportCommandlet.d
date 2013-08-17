@@ -8,7 +8,7 @@ extern(C++) interface WriteGameStatsReportCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.WriteGameStatsReportCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.WriteGameStatsReportCommandlet")); }
 	private static __gshared WriteGameStatsReportCommandlet mDefaultProperties;
-	@property final static WriteGameStatsReportCommandlet DefaultProperties() { mixin(MGDPC!(WriteGameStatsReportCommandlet, "WriteGameStatsReportCommandlet UnrealEd.Default__WriteGameStatsReportCommandlet")()); }
+	@property final static WriteGameStatsReportCommandlet DefaultProperties() { mixin(MGDPC("WriteGameStatsReportCommandlet", "WriteGameStatsReportCommandlet UnrealEd.Default__WriteGameStatsReportCommandlet")); }
 }

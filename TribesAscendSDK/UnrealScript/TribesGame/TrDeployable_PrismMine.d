@@ -13,9 +13,9 @@ extern(C++) interface TrDeployable_PrismMine : TrDeployable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_PrismMine")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployable_PrismMine")); }
 	private static __gshared TrDeployable_PrismMine mDefaultProperties;
-	@property final static TrDeployable_PrismMine DefaultProperties() { mixin(MGDPC!(TrDeployable_PrismMine, "TrDeployable_PrismMine TribesGame.Default__TrDeployable_PrismMine")()); }
+	@property final static TrDeployable_PrismMine DefaultProperties() { mixin(MGDPC("TrDeployable_PrismMine", "TrDeployable_PrismMine TribesGame.Default__TrDeployable_PrismMine")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,38 +35,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateTripActor() { mixin(MGF!("mCreateTripActor", "Function TribesGame.TrDeployable_PrismMine.CreateTripActor")()); }
-			ScriptFunction DestroyTripActor() { mixin(MGF!("mDestroyTripActor", "Function TribesGame.TrDeployable_PrismMine.DestroyTripActor")()); }
-			ScriptFunction AddTripActor() { mixin(MGF!("mAddTripActor", "Function TribesGame.TrDeployable_PrismMine.AddTripActor")()); }
-			ScriptFunction RemoveTripActor() { mixin(MGF!("mRemoveTripActor", "Function TribesGame.TrDeployable_PrismMine.RemoveTripActor")()); }
-			ScriptFunction TripActivated() { mixin(MGF!("mTripActivated", "Function TribesGame.TrDeployable_PrismMine.TripActivated")()); }
-			ScriptFunction GetParticleSystemName() { mixin(MGF!("mGetParticleSystemName", "Function TribesGame.TrDeployable_PrismMine.GetParticleSystemName")()); }
-			ScriptFunction GetTripSocketPosition() { mixin(MGF!("mGetTripSocketPosition", "Function TribesGame.TrDeployable_PrismMine.GetTripSocketPosition")()); }
-			ScriptFunction OnTripAwake() { mixin(MGF!("mOnTripAwake", "Function TribesGame.TrDeployable_PrismMine.OnTripAwake")()); }
-			ScriptFunction OnTripSleep() { mixin(MGF!("mOnTripSleep", "Function TribesGame.TrDeployable_PrismMine.OnTripSleep")()); }
-			ScriptFunction DeployComplete() { mixin(MGF!("mDeployComplete", "Function TribesGame.TrDeployable_PrismMine.DeployComplete")()); }
-			ScriptFunction NoConnectionExists() { mixin(MGF!("mNoConnectionExists", "Function TribesGame.TrDeployable_PrismMine.NoConnectionExists")()); }
-			ScriptFunction OnPowerStatusChanged() { mixin(MGF!("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_PrismMine.OnPowerStatusChanged")()); }
+			ScriptFunction CreateTripActor() { mixin(MGF("mCreateTripActor", "Function TribesGame.TrDeployable_PrismMine.CreateTripActor")); }
+			ScriptFunction DestroyTripActor() { mixin(MGF("mDestroyTripActor", "Function TribesGame.TrDeployable_PrismMine.DestroyTripActor")); }
+			ScriptFunction AddTripActor() { mixin(MGF("mAddTripActor", "Function TribesGame.TrDeployable_PrismMine.AddTripActor")); }
+			ScriptFunction RemoveTripActor() { mixin(MGF("mRemoveTripActor", "Function TribesGame.TrDeployable_PrismMine.RemoveTripActor")); }
+			ScriptFunction TripActivated() { mixin(MGF("mTripActivated", "Function TribesGame.TrDeployable_PrismMine.TripActivated")); }
+			ScriptFunction GetParticleSystemName() { mixin(MGF("mGetParticleSystemName", "Function TribesGame.TrDeployable_PrismMine.GetParticleSystemName")); }
+			ScriptFunction GetTripSocketPosition() { mixin(MGF("mGetTripSocketPosition", "Function TribesGame.TrDeployable_PrismMine.GetTripSocketPosition")); }
+			ScriptFunction OnTripAwake() { mixin(MGF("mOnTripAwake", "Function TribesGame.TrDeployable_PrismMine.OnTripAwake")); }
+			ScriptFunction OnTripSleep() { mixin(MGF("mOnTripSleep", "Function TribesGame.TrDeployable_PrismMine.OnTripSleep")); }
+			ScriptFunction DeployComplete() { mixin(MGF("mDeployComplete", "Function TribesGame.TrDeployable_PrismMine.DeployComplete")); }
+			ScriptFunction NoConnectionExists() { mixin(MGF("mNoConnectionExists", "Function TribesGame.TrDeployable_PrismMine.NoConnectionExists")); }
+			ScriptFunction OnPowerStatusChanged() { mixin(MGF("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_PrismMine.OnPowerStatusChanged")); }
 		}
 	}
 	static struct BlownUp
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable_PrismMine.BlownUp")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDeployable_PrismMine.BlownUp")); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrTripActor) m_aTripActors() { mixin(MGPC!("ScriptArray!(TrTripActor)", 1528)()); }
-		SoundCue m_HitSound() { mixin(MGPC!("SoundCue", 1576)()); }
-		SoundCue m_DeactivateSound() { mixin(MGPC!("SoundCue", 1572)()); }
-		SoundCue m_ActivateSound() { mixin(MGPC!("SoundCue", 1568)()); }
-		ParticleSystem m_LaserTemplate() { mixin(MGPC!("ParticleSystem", 1564)()); }
-		int m_DamageAmount() { mixin(MGPC!("int", 1560)()); }
-		float m_fSleepTimeAfterHit() { mixin(MGPC!("float", 1556)()); }
-		ScriptClass m_DamageType() { mixin(MGPC!("ScriptClass", 1552)()); }
-		ScriptName m_nSocketTraceName() { mixin(MGPC!("ScriptName", 1544)()); }
-		float m_fPrismRadius() { mixin(MGPC!("float", 1540)()); }
-		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!("UObject.Pointer", 1524)()); }
+		ScriptArray!(TrTripActor) m_aTripActors() { mixin(MGPC("ScriptArray!(TrTripActor)", 1528)); }
+		SoundCue m_HitSound() { mixin(MGPC("SoundCue", 1576)); }
+		SoundCue m_DeactivateSound() { mixin(MGPC("SoundCue", 1572)); }
+		SoundCue m_ActivateSound() { mixin(MGPC("SoundCue", 1568)); }
+		ParticleSystem m_LaserTemplate() { mixin(MGPC("ParticleSystem", 1564)); }
+		int m_DamageAmount() { mixin(MGPC("int", 1560)); }
+		float m_fSleepTimeAfterHit() { mixin(MGPC("float", 1556)); }
+		ScriptClass m_DamageType() { mixin(MGPC("ScriptClass", 1552)); }
+		ScriptName m_nSocketTraceName() { mixin(MGPC("ScriptName", 1544)); }
+		float m_fPrismRadius() { mixin(MGPC("float", 1540)); }
+		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("UObject.Pointer", 1524)); }
 	}
 final:
 	void CreateTripActor(TrDeployable_PrismMine Right, Vector LeftLocation, Vector RightLocation)

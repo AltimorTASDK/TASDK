@@ -8,7 +8,7 @@ extern(C++) interface TestWordWrapCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.TestWordWrapCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.TestWordWrapCommandlet")); }
 	private static __gshared TestWordWrapCommandlet mDefaultProperties;
-	@property final static TestWordWrapCommandlet DefaultProperties() { mixin(MGDPC!(TestWordWrapCommandlet, "TestWordWrapCommandlet UnrealEd.Default__TestWordWrapCommandlet")()); }
+	@property final static TestWordWrapCommandlet DefaultProperties() { mixin(MGDPC("TestWordWrapCommandlet", "TestWordWrapCommandlet UnrealEd.Default__TestWordWrapCommandlet")); }
 }

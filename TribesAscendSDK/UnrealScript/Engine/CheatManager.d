@@ -10,9 +10,9 @@ extern(C++) interface CheatManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CheatManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CheatManager")); }
 	private static __gshared CheatManager mDefaultProperties;
-	@property final static CheatManager DefaultProperties() { mixin(MGDPC!(CheatManager, "CheatManager Engine.Default__CheatManager")()); }
+	@property final static CheatManager DefaultProperties() { mixin(MGDPC("CheatManager", "CheatManager Engine.Default__CheatManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -69,63 +69,63 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FXPlay() { mixin(MGF!("mFXPlay", "Function Engine.CheatManager.FXPlay")()); }
-			ScriptFunction FXStop() { mixin(MGF!("mFXStop", "Function Engine.CheatManager.FXStop")()); }
-			ScriptFunction DebugAI() { mixin(MGF!("mDebugAI", "Function Engine.CheatManager.DebugAI")()); }
-			ScriptFunction EditAIByTrace() { mixin(MGF!("mEditAIByTrace", "Function Engine.CheatManager.EditAIByTrace")()); }
-			ScriptFunction DebugPause() { mixin(MGF!("mDebugPause", "Function Engine.CheatManager.DebugPause")()); }
-			ScriptFunction ListDynamicActors() { mixin(MGF!("mListDynamicActors", "Function Engine.CheatManager.ListDynamicActors")()); }
-			ScriptFunction FreezeFrame() { mixin(MGF!("mFreezeFrame", "Function Engine.CheatManager.FreezeFrame")()); }
-			ScriptFunction WriteToLog() { mixin(MGF!("mWriteToLog", "Function Engine.CheatManager.WriteToLog")()); }
-			ScriptFunction KillViewedActor() { mixin(MGF!("mKillViewedActor", "Function Engine.CheatManager.KillViewedActor")()); }
-			ScriptFunction Teleport() { mixin(MGF!("mTeleport", "Function Engine.CheatManager.Teleport")()); }
-			ScriptFunction ChangeSize() { mixin(MGF!("mChangeSize", "Function Engine.CheatManager.ChangeSize")()); }
-			ScriptFunction EndPath() { mixin(MGF!("mEndPath", "Function Engine.CheatManager.EndPath")()); }
-			ScriptFunction Amphibious() { mixin(MGF!("mAmphibious", "Function Engine.CheatManager.Amphibious")()); }
-			ScriptFunction Fly() { mixin(MGF!("mFly", "Function Engine.CheatManager.Fly")()); }
-			ScriptFunction Walk() { mixin(MGF!("mWalk", "Function Engine.CheatManager.Walk")()); }
-			ScriptFunction Ghost() { mixin(MGF!("mGhost", "Function Engine.CheatManager.Ghost")()); }
-			ScriptFunction AllAmmo() { mixin(MGF!("mAllAmmo", "Function Engine.CheatManager.AllAmmo")()); }
-			ScriptFunction God() { mixin(MGF!("mGod", "Function Engine.CheatManager.God")()); }
-			ScriptFunction Slomo() { mixin(MGF!("mSlomo", "Function Engine.CheatManager.Slomo")()); }
-			ScriptFunction SetJumpZ() { mixin(MGF!("mSetJumpZ", "Function Engine.CheatManager.SetJumpZ")()); }
-			ScriptFunction SetGravity() { mixin(MGF!("mSetGravity", "Function Engine.CheatManager.SetGravity")()); }
-			ScriptFunction SetSpeed() { mixin(MGF!("mSetSpeed", "Function Engine.CheatManager.SetSpeed")()); }
-			ScriptFunction KillAll() { mixin(MGF!("mKillAll", "Function Engine.CheatManager.KillAll")()); }
-			ScriptFunction KillAllPawns() { mixin(MGF!("mKillAllPawns", "Function Engine.CheatManager.KillAllPawns")()); }
-			ScriptFunction KillPawns() { mixin(MGF!("mKillPawns", "Function Engine.CheatManager.KillPawns")()); }
-			ScriptFunction Avatar() { mixin(MGF!("mAvatar", "Function Engine.CheatManager.Avatar")()); }
-			ScriptFunction Summon() { mixin(MGF!("mSummon", "Function Engine.CheatManager.Summon")()); }
-			ScriptFunction GiveWeapon() { mixin(MGF!("mGiveWeapon", "Function Engine.CheatManager.GiveWeapon")()); }
-			ScriptFunction PlayersOnly() { mixin(MGF!("mPlayersOnly", "Function Engine.CheatManager.PlayersOnly")()); }
-			ScriptFunction DestroyFractures() { mixin(MGF!("mDestroyFractures", "Function Engine.CheatManager.DestroyFractures")()); }
-			ScriptFunction FractureAllMeshes() { mixin(MGF!("mFractureAllMeshes", "Function Engine.CheatManager.FractureAllMeshes")()); }
-			ScriptFunction FractureAllMeshesToMaximizeMemoryUsage() { mixin(MGF!("mFractureAllMeshesToMaximizeMemoryUsage", "Function Engine.CheatManager.FractureAllMeshesToMaximizeMemoryUsage")()); }
-			ScriptFunction RememberSpot() { mixin(MGF!("mRememberSpot", "Function Engine.CheatManager.RememberSpot")()); }
-			ScriptFunction ViewSelf() { mixin(MGF!("mViewSelf", "Function Engine.CheatManager.ViewSelf")()); }
-			ScriptFunction ViewPlayer() { mixin(MGF!("mViewPlayer", "Function Engine.CheatManager.ViewPlayer")()); }
-			ScriptFunction ViewActor() { mixin(MGF!("mViewActor", "Function Engine.CheatManager.ViewActor")()); }
-			ScriptFunction ViewBot() { mixin(MGF!("mViewBot", "Function Engine.CheatManager.ViewBot")()); }
-			ScriptFunction ViewClass() { mixin(MGF!("mViewClass", "Function Engine.CheatManager.ViewClass")()); }
-			ScriptFunction Loaded() { mixin(MGF!("mLoaded", "Function Engine.CheatManager.Loaded")()); }
-			ScriptFunction AllWeapons() { mixin(MGF!("mAllWeapons", "Function Engine.CheatManager.AllWeapons")()); }
-			ScriptFunction SetLevelStreamingStatus() { mixin(MGF!("mSetLevelStreamingStatus", "Function Engine.CheatManager.SetLevelStreamingStatus")()); }
-			ScriptFunction EnableDebugCamera() { mixin(MGF!("mEnableDebugCamera", "Function Engine.CheatManager.EnableDebugCamera")()); }
-			ScriptFunction InitCheatManager() { mixin(MGF!("mInitCheatManager", "Function Engine.CheatManager.InitCheatManager")()); }
-			ScriptFunction LogPlaySoundCalls() { mixin(MGF!("mLogPlaySoundCalls", "Function Engine.CheatManager.LogPlaySoundCalls")()); }
-			ScriptFunction LogParticleActivateSystemCalls() { mixin(MGF!("mLogParticleActivateSystemCalls", "Function Engine.CheatManager.LogParticleActivateSystemCalls")()); }
-			ScriptFunction VerifyNavMeshObjects() { mixin(MGF!("mVerifyNavMeshObjects", "Function Engine.CheatManager.VerifyNavMeshObjects")()); }
-			ScriptFunction DrawUnsupportingEdges() { mixin(MGF!("mDrawUnsupportingEdges", "Function Engine.CheatManager.DrawUnsupportingEdges")()); }
-			ScriptFunction PrintNavMeshObstacles() { mixin(MGF!("mPrintNavMeshObstacles", "Function Engine.CheatManager.PrintNavMeshObstacles")()); }
-			ScriptFunction DumpCoverStats() { mixin(MGF!("mDumpCoverStats", "Function Engine.CheatManager.DumpCoverStats")()); }
+			ScriptFunction FXPlay() { mixin(MGF("mFXPlay", "Function Engine.CheatManager.FXPlay")); }
+			ScriptFunction FXStop() { mixin(MGF("mFXStop", "Function Engine.CheatManager.FXStop")); }
+			ScriptFunction DebugAI() { mixin(MGF("mDebugAI", "Function Engine.CheatManager.DebugAI")); }
+			ScriptFunction EditAIByTrace() { mixin(MGF("mEditAIByTrace", "Function Engine.CheatManager.EditAIByTrace")); }
+			ScriptFunction DebugPause() { mixin(MGF("mDebugPause", "Function Engine.CheatManager.DebugPause")); }
+			ScriptFunction ListDynamicActors() { mixin(MGF("mListDynamicActors", "Function Engine.CheatManager.ListDynamicActors")); }
+			ScriptFunction FreezeFrame() { mixin(MGF("mFreezeFrame", "Function Engine.CheatManager.FreezeFrame")); }
+			ScriptFunction WriteToLog() { mixin(MGF("mWriteToLog", "Function Engine.CheatManager.WriteToLog")); }
+			ScriptFunction KillViewedActor() { mixin(MGF("mKillViewedActor", "Function Engine.CheatManager.KillViewedActor")); }
+			ScriptFunction Teleport() { mixin(MGF("mTeleport", "Function Engine.CheatManager.Teleport")); }
+			ScriptFunction ChangeSize() { mixin(MGF("mChangeSize", "Function Engine.CheatManager.ChangeSize")); }
+			ScriptFunction EndPath() { mixin(MGF("mEndPath", "Function Engine.CheatManager.EndPath")); }
+			ScriptFunction Amphibious() { mixin(MGF("mAmphibious", "Function Engine.CheatManager.Amphibious")); }
+			ScriptFunction Fly() { mixin(MGF("mFly", "Function Engine.CheatManager.Fly")); }
+			ScriptFunction Walk() { mixin(MGF("mWalk", "Function Engine.CheatManager.Walk")); }
+			ScriptFunction Ghost() { mixin(MGF("mGhost", "Function Engine.CheatManager.Ghost")); }
+			ScriptFunction AllAmmo() { mixin(MGF("mAllAmmo", "Function Engine.CheatManager.AllAmmo")); }
+			ScriptFunction God() { mixin(MGF("mGod", "Function Engine.CheatManager.God")); }
+			ScriptFunction Slomo() { mixin(MGF("mSlomo", "Function Engine.CheatManager.Slomo")); }
+			ScriptFunction SetJumpZ() { mixin(MGF("mSetJumpZ", "Function Engine.CheatManager.SetJumpZ")); }
+			ScriptFunction SetGravity() { mixin(MGF("mSetGravity", "Function Engine.CheatManager.SetGravity")); }
+			ScriptFunction SetSpeed() { mixin(MGF("mSetSpeed", "Function Engine.CheatManager.SetSpeed")); }
+			ScriptFunction KillAll() { mixin(MGF("mKillAll", "Function Engine.CheatManager.KillAll")); }
+			ScriptFunction KillAllPawns() { mixin(MGF("mKillAllPawns", "Function Engine.CheatManager.KillAllPawns")); }
+			ScriptFunction KillPawns() { mixin(MGF("mKillPawns", "Function Engine.CheatManager.KillPawns")); }
+			ScriptFunction Avatar() { mixin(MGF("mAvatar", "Function Engine.CheatManager.Avatar")); }
+			ScriptFunction Summon() { mixin(MGF("mSummon", "Function Engine.CheatManager.Summon")); }
+			ScriptFunction GiveWeapon() { mixin(MGF("mGiveWeapon", "Function Engine.CheatManager.GiveWeapon")); }
+			ScriptFunction PlayersOnly() { mixin(MGF("mPlayersOnly", "Function Engine.CheatManager.PlayersOnly")); }
+			ScriptFunction DestroyFractures() { mixin(MGF("mDestroyFractures", "Function Engine.CheatManager.DestroyFractures")); }
+			ScriptFunction FractureAllMeshes() { mixin(MGF("mFractureAllMeshes", "Function Engine.CheatManager.FractureAllMeshes")); }
+			ScriptFunction FractureAllMeshesToMaximizeMemoryUsage() { mixin(MGF("mFractureAllMeshesToMaximizeMemoryUsage", "Function Engine.CheatManager.FractureAllMeshesToMaximizeMemoryUsage")); }
+			ScriptFunction RememberSpot() { mixin(MGF("mRememberSpot", "Function Engine.CheatManager.RememberSpot")); }
+			ScriptFunction ViewSelf() { mixin(MGF("mViewSelf", "Function Engine.CheatManager.ViewSelf")); }
+			ScriptFunction ViewPlayer() { mixin(MGF("mViewPlayer", "Function Engine.CheatManager.ViewPlayer")); }
+			ScriptFunction ViewActor() { mixin(MGF("mViewActor", "Function Engine.CheatManager.ViewActor")); }
+			ScriptFunction ViewBot() { mixin(MGF("mViewBot", "Function Engine.CheatManager.ViewBot")); }
+			ScriptFunction ViewClass() { mixin(MGF("mViewClass", "Function Engine.CheatManager.ViewClass")); }
+			ScriptFunction Loaded() { mixin(MGF("mLoaded", "Function Engine.CheatManager.Loaded")); }
+			ScriptFunction AllWeapons() { mixin(MGF("mAllWeapons", "Function Engine.CheatManager.AllWeapons")); }
+			ScriptFunction SetLevelStreamingStatus() { mixin(MGF("mSetLevelStreamingStatus", "Function Engine.CheatManager.SetLevelStreamingStatus")); }
+			ScriptFunction EnableDebugCamera() { mixin(MGF("mEnableDebugCamera", "Function Engine.CheatManager.EnableDebugCamera")); }
+			ScriptFunction InitCheatManager() { mixin(MGF("mInitCheatManager", "Function Engine.CheatManager.InitCheatManager")); }
+			ScriptFunction LogPlaySoundCalls() { mixin(MGF("mLogPlaySoundCalls", "Function Engine.CheatManager.LogPlaySoundCalls")); }
+			ScriptFunction LogParticleActivateSystemCalls() { mixin(MGF("mLogParticleActivateSystemCalls", "Function Engine.CheatManager.LogParticleActivateSystemCalls")); }
+			ScriptFunction VerifyNavMeshObjects() { mixin(MGF("mVerifyNavMeshObjects", "Function Engine.CheatManager.VerifyNavMeshObjects")); }
+			ScriptFunction DrawUnsupportingEdges() { mixin(MGF("mDrawUnsupportingEdges", "Function Engine.CheatManager.DrawUnsupportingEdges")); }
+			ScriptFunction PrintNavMeshObstacles() { mixin(MGF("mPrintNavMeshObstacles", "Function Engine.CheatManager.PrintNavMeshObstacles")); }
+			ScriptFunction DumpCoverStats() { mixin(MGF("mDumpCoverStats", "Function Engine.CheatManager.DumpCoverStats")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString OwnCamera() { mixin(MGPC!("ScriptString", 80)()); }
-		ScriptString ViewingFrom() { mixin(MGPC!("ScriptString", 68)()); }
-		ScriptClass DebugCameraControllerClass() { mixin(MGPC!("ScriptClass", 64)()); }
-		DebugCameraController DebugCameraControllerRef() { mixin(MGPC!("DebugCameraController", 60)()); }
+		ScriptString OwnCamera() { mixin(MGPC("ScriptString", 80)); }
+		ScriptString ViewingFrom() { mixin(MGPC("ScriptString", 68)); }
+		ScriptClass DebugCameraControllerClass() { mixin(MGPC("ScriptClass", 64)); }
+		DebugCameraController DebugCameraControllerRef() { mixin(MGPC("DebugCameraController", 60)); }
 	}
 final:
 	void FXPlay(ScriptClass aClass, ScriptString FXAnimPath)

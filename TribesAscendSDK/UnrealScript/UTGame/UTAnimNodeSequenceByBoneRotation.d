@@ -8,7 +8,7 @@ extern(C++) interface UTAnimNodeSequenceByBoneRotation : UDKAnimNodeSequenceByBo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnimNodeSequenceByBoneRotation")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnimNodeSequenceByBoneRotation")); }
 	private static __gshared UTAnimNodeSequenceByBoneRotation mDefaultProperties;
-	@property final static UTAnimNodeSequenceByBoneRotation DefaultProperties() { mixin(MGDPC!(UTAnimNodeSequenceByBoneRotation, "UTAnimNodeSequenceByBoneRotation UTGame.Default__UTAnimNodeSequenceByBoneRotation")()); }
+	@property final static UTAnimNodeSequenceByBoneRotation DefaultProperties() { mixin(MGDPC("UTAnimNodeSequenceByBoneRotation", "UTAnimNodeSequenceByBoneRotation UTGame.Default__UTAnimNodeSequenceByBoneRotation")); }
 }

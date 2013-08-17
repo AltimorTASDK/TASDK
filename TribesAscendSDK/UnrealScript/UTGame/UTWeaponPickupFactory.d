@@ -12,9 +12,9 @@ extern(C++) interface UTWeaponPickupFactory : UTPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponPickupFactory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWeaponPickupFactory")); }
 	private static __gshared UTWeaponPickupFactory mDefaultProperties;
-	@property final static UTWeaponPickupFactory DefaultProperties() { mixin(MGDPC!(UTWeaponPickupFactory, "UTWeaponPickupFactory UTGame.Default__UTWeaponPickupFactory")()); }
+	@property final static UTWeaponPickupFactory DefaultProperties() { mixin(MGDPC("UTWeaponPickupFactory", "UTWeaponPickupFactory UTGame.Default__UTWeaponPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,42 +38,42 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AllowPickup() { mixin(MGF!("mAllowPickup", "Function UTGame.UTWeaponPickupFactory.AllowPickup")()); }
-			ScriptFunction InitializePickup() { mixin(MGF!("mInitializePickup", "Function UTGame.UTWeaponPickupFactory.InitializePickup")()); }
-			ScriptFunction SetPickupVisible() { mixin(MGF!("mSetPickupVisible", "Function UTGame.UTWeaponPickupFactory.SetPickupVisible")()); }
-			ScriptFunction SetPickupHidden() { mixin(MGF!("mSetPickupHidden", "Function UTGame.UTWeaponPickupFactory.SetPickupHidden")()); }
-			ScriptFunction SetPickupMesh() { mixin(MGF!("mSetPickupMesh", "Function UTGame.UTWeaponPickupFactory.SetPickupMesh")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTWeaponPickupFactory.ReplicatedEvent")()); }
-			ScriptFunction CheckForErrors() { mixin(MGF!("mCheckForErrors", "Function UTGame.UTWeaponPickupFactory.CheckForErrors")()); }
-			ScriptFunction SetWeaponStay() { mixin(MGF!("mSetWeaponStay", "Function UTGame.UTWeaponPickupFactory.SetWeaponStay")()); }
-			ScriptFunction StartSleeping() { mixin(MGF!("mStartSleeping", "Function UTGame.UTWeaponPickupFactory.StartSleeping")()); }
-			ScriptFunction AddCustomer() { mixin(MGF!("mAddCustomer", "Function UTGame.UTWeaponPickupFactory.AddCustomer")()); }
-			ScriptFunction HasCustomer() { mixin(MGF!("mHasCustomer", "Function UTGame.UTWeaponPickupFactory.HasCustomer")()); }
-			ScriptFunction PickedUpBy() { mixin(MGF!("mPickedUpBy", "Function UTGame.UTWeaponPickupFactory.PickedUpBy")()); }
-			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTWeaponPickupFactory.SpawnCopyFor")()); }
-			ScriptFunction ShowActive() { mixin(MGF!("mShowActive", "Function UTGame.UTWeaponPickupFactory.ShowActive")()); }
-			ScriptFunction ShowHidden() { mixin(MGF!("mShowHidden", "Function UTGame.UTWeaponPickupFactory.ShowHidden")()); }
-			ScriptFunction NotifyLocalPlayerDead() { mixin(MGF!("mNotifyLocalPlayerDead", "Function UTGame.UTWeaponPickupFactory.NotifyLocalPlayerDead")()); }
+			ScriptFunction AllowPickup() { mixin(MGF("mAllowPickup", "Function UTGame.UTWeaponPickupFactory.AllowPickup")); }
+			ScriptFunction InitializePickup() { mixin(MGF("mInitializePickup", "Function UTGame.UTWeaponPickupFactory.InitializePickup")); }
+			ScriptFunction SetPickupVisible() { mixin(MGF("mSetPickupVisible", "Function UTGame.UTWeaponPickupFactory.SetPickupVisible")); }
+			ScriptFunction SetPickupHidden() { mixin(MGF("mSetPickupHidden", "Function UTGame.UTWeaponPickupFactory.SetPickupHidden")); }
+			ScriptFunction SetPickupMesh() { mixin(MGF("mSetPickupMesh", "Function UTGame.UTWeaponPickupFactory.SetPickupMesh")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UTGame.UTWeaponPickupFactory.ReplicatedEvent")); }
+			ScriptFunction CheckForErrors() { mixin(MGF("mCheckForErrors", "Function UTGame.UTWeaponPickupFactory.CheckForErrors")); }
+			ScriptFunction SetWeaponStay() { mixin(MGF("mSetWeaponStay", "Function UTGame.UTWeaponPickupFactory.SetWeaponStay")); }
+			ScriptFunction StartSleeping() { mixin(MGF("mStartSleeping", "Function UTGame.UTWeaponPickupFactory.StartSleeping")); }
+			ScriptFunction AddCustomer() { mixin(MGF("mAddCustomer", "Function UTGame.UTWeaponPickupFactory.AddCustomer")); }
+			ScriptFunction HasCustomer() { mixin(MGF("mHasCustomer", "Function UTGame.UTWeaponPickupFactory.HasCustomer")); }
+			ScriptFunction PickedUpBy() { mixin(MGF("mPickedUpBy", "Function UTGame.UTWeaponPickupFactory.PickedUpBy")); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF("mSpawnCopyFor", "Function UTGame.UTWeaponPickupFactory.SpawnCopyFor")); }
+			ScriptFunction ShowActive() { mixin(MGF("mShowActive", "Function UTGame.UTWeaponPickupFactory.ShowActive")); }
+			ScriptFunction ShowHidden() { mixin(MGF("mShowHidden", "Function UTGame.UTWeaponPickupFactory.ShowHidden")); }
+			ScriptFunction NotifyLocalPlayerDead() { mixin(MGF("mNotifyLocalPlayerDead", "Function UTGame.UTWeaponPickupFactory.NotifyLocalPlayerDead")); }
 		}
 	}
 	static struct Pickup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeaponPickupFactory.Pickup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeaponPickupFactory.Pickup")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC!("ScriptArray!(UTWeaponLocker.PawnToucher)", 960)()); }
-			float WeaponPickupScaling() { mixin(MGPC!("float", 956)()); }
+			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC("ScriptArray!(UTWeaponLocker.PawnToucher)", 960)); }
+			float WeaponPickupScaling() { mixin(MGPC("float", 956)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BaseGlow'!
-			ScriptClass WeaponPickupClass() { mixin(MGPC!("ScriptClass", 944)()); }
+			ScriptClass WeaponPickupClass() { mixin(MGPC("ScriptClass", 944)); }
 		}
-		bool bIsActive() { mixin(MGBPC!(948, 0x2)()); }
-		bool bIsActive(bool val) { mixin(MSBPC!(948, 0x2)()); }
-		bool bWeaponStay() { mixin(MGBPC!(948, 0x1)()); }
-		bool bWeaponStay(bool val) { mixin(MSBPC!(948, 0x1)()); }
+		bool bIsActive() { mixin(MGBPC(948, 0x2)); }
+		bool bIsActive(bool val) { mixin(MSBPC(948, 0x2)); }
+		bool bWeaponStay() { mixin(MGBPC(948, 0x1)); }
+		bool bWeaponStay(bool val) { mixin(MSBPC(948, 0x1)); }
 	}
 final:
 	bool AllowPickup(UTBot Bot)

@@ -11,9 +11,9 @@ extern(C++) interface UTEmitter : Emitter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTEmitter")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTEmitter")); }
 	private static __gshared UTEmitter mDefaultProperties;
-	@property final static UTEmitter DefaultProperties() { mixin(MGDPC!(UTEmitter, "UTEmitter UTGame.Default__UTEmitter")()); }
+	@property final static UTEmitter DefaultProperties() { mixin(MGDPC("UTEmitter", "UTEmitter UTGame.Default__UTEmitter")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,9 +24,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetTemplateForDistance() { mixin(MGF!("mGetTemplateForDistance", "Function UTGame.UTEmitter.GetTemplateForDistance")()); }
-			ScriptFunction SetTemplate() { mixin(MGF!("mSetTemplate", "Function UTGame.UTEmitter.SetTemplate")()); }
-			ScriptFunction SetLightEnvironment() { mixin(MGF!("mSetLightEnvironment", "Function UTGame.UTEmitter.SetLightEnvironment")()); }
+			ScriptFunction GetTemplateForDistance() { mixin(MGF("mGetTemplateForDistance", "Function UTGame.UTEmitter.GetTemplateForDistance")); }
+			ScriptFunction SetTemplate() { mixin(MGF("mSetTemplate", "Function UTGame.UTEmitter.SetTemplate")); }
+			ScriptFunction SetLightEnvironment() { mixin(MGF("mSetLightEnvironment", "Function UTGame.UTEmitter.SetLightEnvironment")); }
 		}
 	}
 final:

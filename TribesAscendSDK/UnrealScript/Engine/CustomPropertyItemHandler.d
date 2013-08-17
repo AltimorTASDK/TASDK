@@ -8,7 +8,7 @@ extern(C++) interface CustomPropertyItemHandler : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CustomPropertyItemHandler")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CustomPropertyItemHandler")); }
 	private static __gshared CustomPropertyItemHandler mDefaultProperties;
-	@property final static CustomPropertyItemHandler DefaultProperties() { mixin(MGDPC!(CustomPropertyItemHandler, "CustomPropertyItemHandler Engine.Default__CustomPropertyItemHandler")()); }
+	@property final static CustomPropertyItemHandler DefaultProperties() { mixin(MGDPC("CustomPropertyItemHandler", "CustomPropertyItemHandler Engine.Default__CustomPropertyItemHandler")); }
 }

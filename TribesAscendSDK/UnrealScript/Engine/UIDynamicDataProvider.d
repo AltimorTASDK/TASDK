@@ -9,9 +9,9 @@ extern(C++) interface UIDynamicDataProvider : UIPropertyDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDynamicDataProvider")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDynamicDataProvider")); }
 	private static __gshared UIDynamicDataProvider mDefaultProperties;
-	@property final static UIDynamicDataProvider DefaultProperties() { mixin(MGDPC!(UIDynamicDataProvider, "UIDynamicDataProvider Engine.Default__UIDynamicDataProvider")()); }
+	@property final static UIDynamicDataProvider DefaultProperties() { mixin(MGDPC("UIDynamicDataProvider", "UIDynamicDataProvider Engine.Default__UIDynamicDataProvider")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,20 +26,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BindProviderInstance() { mixin(MGF!("mBindProviderInstance", "Function Engine.UIDynamicDataProvider.BindProviderInstance")()); }
-			ScriptFunction UnbindProviderInstance() { mixin(MGF!("mUnbindProviderInstance", "Function Engine.UIDynamicDataProvider.UnbindProviderInstance")()); }
-			ScriptFunction ProviderInstanceBound() { mixin(MGF!("mProviderInstanceBound", "Function Engine.UIDynamicDataProvider.ProviderInstanceBound")()); }
-			ScriptFunction ProviderInstanceUnbound() { mixin(MGF!("mProviderInstanceUnbound", "Function Engine.UIDynamicDataProvider.ProviderInstanceUnbound")()); }
-			ScriptFunction IsValidDataSourceClass() { mixin(MGF!("mIsValidDataSourceClass", "Function Engine.UIDynamicDataProvider.IsValidDataSourceClass")()); }
-			ScriptFunction GetDataSource() { mixin(MGF!("mGetDataSource", "Function Engine.UIDynamicDataProvider.GetDataSource")()); }
-			ScriptFunction CleanupDataProvider() { mixin(MGF!("mCleanupDataProvider", "Function Engine.UIDynamicDataProvider.CleanupDataProvider")()); }
+			ScriptFunction BindProviderInstance() { mixin(MGF("mBindProviderInstance", "Function Engine.UIDynamicDataProvider.BindProviderInstance")); }
+			ScriptFunction UnbindProviderInstance() { mixin(MGF("mUnbindProviderInstance", "Function Engine.UIDynamicDataProvider.UnbindProviderInstance")); }
+			ScriptFunction ProviderInstanceBound() { mixin(MGF("mProviderInstanceBound", "Function Engine.UIDynamicDataProvider.ProviderInstanceBound")); }
+			ScriptFunction ProviderInstanceUnbound() { mixin(MGF("mProviderInstanceUnbound", "Function Engine.UIDynamicDataProvider.ProviderInstanceUnbound")); }
+			ScriptFunction IsValidDataSourceClass() { mixin(MGF("mIsValidDataSourceClass", "Function Engine.UIDynamicDataProvider.IsValidDataSourceClass")); }
+			ScriptFunction GetDataSource() { mixin(MGF("mGetDataSource", "Function Engine.UIDynamicDataProvider.GetDataSource")); }
+			ScriptFunction CleanupDataProvider() { mixin(MGF("mCleanupDataProvider", "Function Engine.UIDynamicDataProvider.CleanupDataProvider")); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject DataSource() { mixin(MGPC!("UObject", 120)()); }
-		ScriptClass DataClass() { mixin(MGPC!("ScriptClass", 116)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 112)()); }
+		UObject DataSource() { mixin(MGPC("UObject", 120)); }
+		ScriptClass DataClass() { mixin(MGPC("ScriptClass", 116)); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 112)); }
 	}
 final:
 	bool BindProviderInstance(UObject DataSourceInstance)

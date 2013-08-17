@@ -10,19 +10,19 @@ extern(C++) interface TrCallInMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallInMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCallInMessage")); }
 	private static __gshared TrCallInMessage mDefaultProperties;
-	@property final static TrCallInMessage DefaultProperties() { mixin(MGDPC!(TrCallInMessage, "TrCallInMessage TribesGame.Default__TrCallInMessage")()); }
+	@property final static TrCallInMessage DefaultProperties() { mixin(MGDPC("TrCallInMessage", "TrCallInMessage TribesGame.Default__TrCallInMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrCallInMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrCallInMessage.GetString")); }
 	}
 	@property final auto ref
 	{
-		ScriptString PlayerCalledInTacticalStrike() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString PlayerCalledInOrbitalStrike() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString PlayerCalledInSupportInventory() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString PlayerCalledInTacticalStrike() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString PlayerCalledInOrbitalStrike() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString PlayerCalledInSupportInventory() { mixin(MGPC("ScriptString", 100)); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

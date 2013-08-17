@@ -15,9 +15,9 @@ extern(C++) interface UTLocalMessage : LocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTLocalMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTLocalMessage")); }
 	private static __gshared UTLocalMessage mDefaultProperties;
-	@property final static UTLocalMessage DefaultProperties() { mixin(MGDPC!(UTLocalMessage, "UTLocalMessage UTGame.Default__UTLocalMessage")()); }
+	@property final static UTLocalMessage DefaultProperties() { mixin(MGDPC("UTLocalMessage", "UTLocalMessage UTGame.Default__UTLocalMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,25 +31,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTLocalMessage.AnnouncementSound")()); }
-			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTLocalMessage.AnnouncementLevel")()); }
-			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function UTGame.UTLocalMessage.AddAnnouncement")()); }
-			ScriptFunction ShouldBeRemoved() { mixin(MGF!("mShouldBeRemoved", "Function UTGame.UTLocalMessage.ShouldBeRemoved")()); }
-			ScriptFunction GetPos() { mixin(MGF!("mGetPos", "Function UTGame.UTLocalMessage.GetPos")()); }
-			ScriptFunction KilledByVictoryMessage() { mixin(MGF!("mKilledByVictoryMessage", "Function UTGame.UTLocalMessage.KilledByVictoryMessage")()); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTLocalMessage.AnnouncementSound")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF("mAnnouncementLevel", "Function UTGame.UTLocalMessage.AnnouncementLevel")); }
+			ScriptFunction AddAnnouncement() { mixin(MGF("mAddAnnouncement", "Function UTGame.UTLocalMessage.AddAnnouncement")); }
+			ScriptFunction ShouldBeRemoved() { mixin(MGF("mShouldBeRemoved", "Function UTGame.UTLocalMessage.ShouldBeRemoved")); }
+			ScriptFunction GetPos() { mixin(MGF("mGetPos", "Function UTGame.UTLocalMessage.GetPos")); }
+			ScriptFunction KilledByVictoryMessage() { mixin(MGF("mKilledByVictoryMessage", "Function UTGame.UTLocalMessage.KilledByVictoryMessage")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float AnnouncementVolume() { mixin(MGPC!("float", 92)()); }
-			float AnnouncementDelay() { mixin(MGPC!("float", 96)()); }
-			int AnnouncementPriority() { mixin(MGPC!("int", 84)()); }
-			int MessageArea() { mixin(MGPC!("int", 80)()); }
+			float AnnouncementVolume() { mixin(MGPC("float", 92)); }
+			float AnnouncementDelay() { mixin(MGPC("float", 96)); }
+			int AnnouncementPriority() { mixin(MGPC("int", 84)); }
+			int MessageArea() { mixin(MGPC("int", 80)); }
 		}
-		bool bShowPortrait() { mixin(MGBPC!(88, 0x1)()); }
-		bool bShowPortrait(bool val) { mixin(MSBPC!(88, 0x1)()); }
+		bool bShowPortrait() { mixin(MGBPC(88, 0x1)); }
+		bool bShowPortrait(bool val) { mixin(MSBPC(88, 0x1)); }
 	}
 final:
 	static SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)

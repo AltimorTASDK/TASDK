@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_VideoTexture : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_VideoTexture")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_VideoTexture")); }
 	private static __gshared GFxTrPage_VideoTexture mDefaultProperties;
-	@property final static GFxTrPage_VideoTexture DefaultProperties() { mixin(MGDPC!(GFxTrPage_VideoTexture, "GFxTrPage_VideoTexture TribesGame.Default__GFxTrPage_VideoTexture")()); }
+	@property final static GFxTrPage_VideoTexture DefaultProperties() { mixin(MGDPC("GFxTrPage_VideoTexture", "GFxTrPage_VideoTexture TribesGame.Default__GFxTrPage_VideoTexture")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,11 +25,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_VideoTexture.Initialize")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_VideoTexture.FillData")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_VideoTexture.SpecialAction")()); }
-			ScriptFunction PerformChange() { mixin(MGF!("mPerformChange", "Function TribesGame.GFxTrPage_VideoTexture.PerformChange")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_VideoTexture.FillOption")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_VideoTexture.Initialize")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_VideoTexture.FillData")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_VideoTexture.SpecialAction")); }
+			ScriptFunction PerformChange() { mixin(MGF("mPerformChange", "Function TribesGame.GFxTrPage_VideoTexture.PerformChange")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_VideoTexture.FillOption")); }
 		}
 	}
 	enum MENU_ACTION_VIDEOTEXTURE : ubyte
@@ -43,8 +43,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int CurrGraphics() { mixin(MGPC!("int", 360)()); }
-		int SettingIndex() { mixin(MGPC!("int", 356)()); }
+		int CurrGraphics() { mixin(MGPC("int", 360)); }
+		int SettingIndex() { mixin(MGPC("int", 356)); }
 	}
 final:
 	void Initialize()

@@ -12,9 +12,9 @@ extern(C++) interface UTBeamWeapon : UTWeapon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTBeamWeapon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTBeamWeapon")); }
 	private static __gshared UTBeamWeapon mDefaultProperties;
-	@property final static UTBeamWeapon DefaultProperties() { mixin(MGDPC!(UTBeamWeapon, "UTBeamWeapon UTGame.Default__UTBeamWeapon")()); }
+	@property final static UTBeamWeapon DefaultProperties() { mixin(MGDPC("UTBeamWeapon", "UTBeamWeapon UTGame.Default__UTBeamWeapon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,30 +29,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddBeamEmitter() { mixin(MGF!("mAddBeamEmitter", "Function UTGame.UTBeamWeapon.AddBeamEmitter")()); }
-			ScriptFunction KillBeamEmitter() { mixin(MGF!("mKillBeamEmitter", "Function UTGame.UTBeamWeapon.KillBeamEmitter")()); }
-			ScriptFunction SetBeamEmitterHidden() { mixin(MGF!("mSetBeamEmitterHidden", "Function UTGame.UTBeamWeapon.SetBeamEmitterHidden")()); }
-			ScriptFunction UpdateBeamEmitter() { mixin(MGF!("mUpdateBeamEmitter", "Function UTGame.UTBeamWeapon.UpdateBeamEmitter")()); }
-			ScriptFunction ProcessBeamHit() { mixin(MGF!("mProcessBeamHit", "Function UTGame.UTBeamWeapon.ProcessBeamHit")()); }
-			ScriptFunction UpdateBeam() { mixin(MGF!("mUpdateBeam", "Function UTGame.UTBeamWeapon.UpdateBeam")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTBeamWeapon.DisplayDebug")()); }
+			ScriptFunction AddBeamEmitter() { mixin(MGF("mAddBeamEmitter", "Function UTGame.UTBeamWeapon.AddBeamEmitter")); }
+			ScriptFunction KillBeamEmitter() { mixin(MGF("mKillBeamEmitter", "Function UTGame.UTBeamWeapon.KillBeamEmitter")); }
+			ScriptFunction SetBeamEmitterHidden() { mixin(MGF("mSetBeamEmitterHidden", "Function UTGame.UTBeamWeapon.SetBeamEmitterHidden")); }
+			ScriptFunction UpdateBeamEmitter() { mixin(MGF("mUpdateBeamEmitter", "Function UTGame.UTBeamWeapon.UpdateBeamEmitter")); }
+			ScriptFunction ProcessBeamHit() { mixin(MGF("mProcessBeamHit", "Function UTGame.UTBeamWeapon.ProcessBeamHit")); }
+			ScriptFunction UpdateBeam() { mixin(MGF("mUpdateBeam", "Function UTGame.UTBeamWeapon.UpdateBeam")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function UTGame.UTBeamWeapon.DisplayDebug")); }
 		}
 	}
 	static struct WeaponBeamFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTBeamWeapon.WeaponBeamFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTBeamWeapon.WeaponBeamFiring")); }
 	}
 	@property final auto ref
 	{
-		ForceFeedbackWaveform BeamWeaponFireWaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 1560)()); }
-		ScriptName BeamPostFireAnim() { mixin(MGPC!("ScriptName", 1544)()); }
-		ScriptName BeamFireAnim() { mixin(MGPC!("ScriptName", 1528)()); }
-		ScriptName BeamPreFireAnim() { mixin(MGPC!("ScriptName", 1512)()); }
-		ScriptName EndPointParamName() { mixin(MGPC!("ScriptName", 1504)()); }
-		ScriptName BeamSockets() { mixin(MGPC!("ScriptName", 1488)()); }
+		ForceFeedbackWaveform BeamWeaponFireWaveForm() { mixin(MGPC("ForceFeedbackWaveform", 1560)); }
+		ScriptName BeamPostFireAnim() { mixin(MGPC("ScriptName", 1544)); }
+		ScriptName BeamFireAnim() { mixin(MGPC("ScriptName", 1528)); }
+		ScriptName BeamPreFireAnim() { mixin(MGPC("ScriptName", 1512)); }
+		ScriptName EndPointParamName() { mixin(MGPC("ScriptName", 1504)); }
+		ScriptName BeamSockets() { mixin(MGPC("ScriptName", 1488)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BeamEmitter'!
-		ParticleSystem BeamTemplate() { mixin(MGPC!("ParticleSystem", 1472)()); }
+		ParticleSystem BeamTemplate() { mixin(MGPC("ParticleSystem", 1472)); }
 	}
 final:
 	void AddBeamEmitter()

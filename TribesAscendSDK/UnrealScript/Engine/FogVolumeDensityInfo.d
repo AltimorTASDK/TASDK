@@ -9,9 +9,9 @@ extern(C++) interface FogVolumeDensityInfo : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FogVolumeDensityInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.FogVolumeDensityInfo")); }
 	private static __gshared FogVolumeDensityInfo mDefaultProperties;
-	@property final static FogVolumeDensityInfo DefaultProperties() { mixin(MGDPC!(FogVolumeDensityInfo, "FogVolumeDensityInfo Engine.Default__FogVolumeDensityInfo")()); }
+	@property final static FogVolumeDensityInfo DefaultProperties() { mixin(MGDPC("FogVolumeDensityInfo", "FogVolumeDensityInfo Engine.Default__FogVolumeDensityInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,12 +25,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.FogVolumeDensityInfo.PostBeginPlay")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.FogVolumeDensityInfo.ReplicatedEvent")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.FogVolumeDensityInfo.OnToggle")()); }
-			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.FogVolumeDensityInfo.ShouldSaveForCheckpoint")()); }
-			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.FogVolumeDensityInfo.CreateCheckpointRecord")()); }
-			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.FogVolumeDensityInfo.ApplyCheckpointRecord")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.FogVolumeDensityInfo.PostBeginPlay")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.FogVolumeDensityInfo.ReplicatedEvent")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.FogVolumeDensityInfo.OnToggle")); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF("mShouldSaveForCheckpoint", "Function Engine.FogVolumeDensityInfo.ShouldSaveForCheckpoint")); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF("mCreateCheckpointRecord", "Function Engine.FogVolumeDensityInfo.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF("mApplyCheckpointRecord", "Function Engine.FogVolumeDensityInfo.ApplyCheckpointRecord")); }
 		}
 	}
 	struct CheckpointRecord
@@ -38,11 +38,11 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.FogVolumeDensityInfo.CheckpointRecord")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.FogVolumeDensityInfo.CheckpointRecord")); }
 		@property final
 		{
-			bool bEnabled() { mixin(MGBPS!(0, 0x1)()); }
-			bool bEnabled(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bEnabled() { mixin(MGBPS(0, 0x1)); }
+			bool bEnabled(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	@property final
@@ -52,8 +52,8 @@ public extern(D):
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AutomaticMeshComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DensityComponent'!
 		}
-		bool bEnabled() { mixin(MGBPC!(484, 0x1)()); }
-		bool bEnabled(bool val) { mixin(MSBPC!(484, 0x1)()); }
+		bool bEnabled() { mixin(MGBPC(484, 0x1)); }
+		bool bEnabled(bool val) { mixin(MSBPC(484, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

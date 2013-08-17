@@ -9,21 +9,21 @@ extern(C++) interface UTSeqAct_PlayCameraAnim : SequenceAction
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSeqAct_PlayCameraAnim")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSeqAct_PlayCameraAnim")); }
 	private static __gshared UTSeqAct_PlayCameraAnim mDefaultProperties;
-	@property final static UTSeqAct_PlayCameraAnim DefaultProperties() { mixin(MGDPC!(UTSeqAct_PlayCameraAnim, "UTSeqAct_PlayCameraAnim UTGame.Default__UTSeqAct_PlayCameraAnim")()); }
+	@property final static UTSeqAct_PlayCameraAnim DefaultProperties() { mixin(MGDPC("UTSeqAct_PlayCameraAnim", "UTSeqAct_PlayCameraAnim UTGame.Default__UTSeqAct_PlayCameraAnim")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;
-		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function UTGame.UTSeqAct_PlayCameraAnim.GetObjClassVersion")()); }
+		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF("mGetObjClassVersion", "Function UTGame.UTSeqAct_PlayCameraAnim.GetObjClassVersion")); }
 	}
 	@property final auto ref
 	{
-		CameraAnim AnimToPlay() { mixin(MGPC!("CameraAnim", 232)()); }
-		float IntensityScale() { mixin(MGPC!("float", 248)()); }
-		float Rate() { mixin(MGPC!("float", 244)()); }
-		float BlendInTime() { mixin(MGPC!("float", 236)()); }
-		float BlendOutTime() { mixin(MGPC!("float", 240)()); }
+		CameraAnim AnimToPlay() { mixin(MGPC("CameraAnim", 232)); }
+		float IntensityScale() { mixin(MGPC("float", 248)); }
+		float Rate() { mixin(MGPC("float", 244)); }
+		float BlendInTime() { mixin(MGPC("float", 236)); }
+		float BlendOutTime() { mixin(MGPC("float", 240)); }
 	}
 	final static int GetObjClassVersion()
 	{

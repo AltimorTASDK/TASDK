@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_ManageServer : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ManageServer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_ManageServer")); }
 	private static __gshared GFxTrPage_ManageServer mDefaultProperties;
-	@property final static GFxTrPage_ManageServer DefaultProperties() { mixin(MGDPC!(GFxTrPage_ManageServer, "GFxTrPage_ManageServer TribesGame.Default__GFxTrPage_ManageServer")()); }
+	@property final static GFxTrPage_ManageServer DefaultProperties() { mixin(MGDPC("GFxTrPage_ManageServer", "GFxTrPage_ManageServer TribesGame.Default__GFxTrPage_ManageServer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,13 +26,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_ManageServer.Initialize")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ManageServer.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ManageServer.FillOption")()); }
-			ScriptFunction RefreshButtons() { mixin(MGF!("mRefreshButtons", "Function TribesGame.GFxTrPage_ManageServer.RefreshButtons")()); }
-			ScriptFunction SetOverrides() { mixin(MGF!("mSetOverrides", "Function TribesGame.GFxTrPage_ManageServer.SetOverrides")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ManageServer.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ManageServer.FillDescription")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_ManageServer.Initialize")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_ManageServer.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_ManageServer.FillOption")); }
+			ScriptFunction RefreshButtons() { mixin(MGF("mRefreshButtons", "Function TribesGame.GFxTrPage_ManageServer.RefreshButtons")); }
+			ScriptFunction SetOverrides() { mixin(MGF("mSetOverrides", "Function TribesGame.GFxTrPage_ManageServer.SetOverrides")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_ManageServer.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_ManageServer.FillDescription")); }
 		}
 	}
 final:

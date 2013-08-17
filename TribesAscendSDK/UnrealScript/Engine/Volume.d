@@ -11,9 +11,9 @@ extern(C++) interface Volume : Brush
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Volume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Volume")); }
 	private static __gshared Volume mDefaultProperties;
-	@property final static Volume DefaultProperties() { mixin(MGDPC!(Volume, "Volume Engine.Default__Volume")()); }
+	@property final static Volume DefaultProperties() { mixin(MGDPC("Volume", "Volume Engine.Default__Volume")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,27 +28,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Encompasses() { mixin(MGF!("mEncompasses", "Function Engine.Volume.Encompasses")()); }
-			ScriptFunction EncompassesPoint() { mixin(MGF!("mEncompassesPoint", "Function Engine.Volume.EncompassesPoint")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Volume.PostBeginPlay")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function Engine.Volume.DisplayDebug")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.Volume.OnToggle")()); }
-			ScriptFunction CollisionChanged() { mixin(MGF!("mCollisionChanged", "Function Engine.Volume.CollisionChanged")()); }
-			ScriptFunction ProcessActorSetVolume() { mixin(MGF!("mProcessActorSetVolume", "Function Engine.Volume.ProcessActorSetVolume")()); }
+			ScriptFunction Encompasses() { mixin(MGF("mEncompasses", "Function Engine.Volume.Encompasses")); }
+			ScriptFunction EncompassesPoint() { mixin(MGF("mEncompassesPoint", "Function Engine.Volume.EncompassesPoint")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Volume.PostBeginPlay")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function Engine.Volume.DisplayDebug")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.Volume.OnToggle")); }
+			ScriptFunction CollisionChanged() { mixin(MGF("mCollisionChanged", "Function Engine.Volume.CollisionChanged")); }
+			ScriptFunction ProcessActorSetVolume() { mixin(MGF("mProcessActorSetVolume", "Function Engine.Volume.ProcessActorSetVolume")); }
 		}
 	}
 	static struct AssociatedTouch
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.Volume.AssociatedTouch")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.Volume.AssociatedTouch")); }
 	}
 	@property final
 	{
-		@property final auto ref Actor AssociatedActor() { mixin(MGPC!("Actor", 512)()); }
-		bool bProcessAllActors() { mixin(MGBPC!(516, 0x2)()); }
-		bool bProcessAllActors(bool val) { mixin(MSBPC!(516, 0x2)()); }
-		bool bForcePawnWalk() { mixin(MGBPC!(516, 0x1)()); }
-		bool bForcePawnWalk(bool val) { mixin(MSBPC!(516, 0x1)()); }
+		@property final auto ref Actor AssociatedActor() { mixin(MGPC("Actor", 512)); }
+		bool bProcessAllActors() { mixin(MGBPC(516, 0x2)); }
+		bool bProcessAllActors(bool val) { mixin(MSBPC(516, 0x2)); }
+		bool bForcePawnWalk() { mixin(MGBPC(516, 0x1)); }
+		bool bForcePawnWalk(bool val) { mixin(MSBPC(516, 0x1)); }
 	}
 final:
 	bool Encompasses(Actor Other)

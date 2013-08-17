@@ -9,20 +9,20 @@ extern(C++) interface PBRuleNodeQuad : PBRuleNodeBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PBRuleNodeQuad")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.PBRuleNodeQuad")); }
 	private static __gshared PBRuleNodeQuad mDefaultProperties;
-	@property final static PBRuleNodeQuad DefaultProperties() { mixin(MGDPC!(PBRuleNodeQuad, "PBRuleNodeQuad Engine.Default__PBRuleNodeQuad")()); }
+	@property final static PBRuleNodeQuad DefaultProperties() { mixin(MGDPC("PBRuleNodeQuad", "PBRuleNodeQuad Engine.Default__PBRuleNodeQuad")); }
 	@property final
 	{
 		auto ref
 		{
-			float YOffset() { mixin(MGPC!("float", 120)()); }
-			int QuadLightmapRes() { mixin(MGPC!("int", 116)()); }
-			float RepeatMaxSizeZ() { mixin(MGPC!("float", 112)()); }
-			float RepeatMaxSizeX() { mixin(MGPC!("float", 108)()); }
+			float YOffset() { mixin(MGPC("float", 120)); }
+			int QuadLightmapRes() { mixin(MGPC("int", 116)); }
+			float RepeatMaxSizeZ() { mixin(MGPC("float", 112)); }
+			float RepeatMaxSizeX() { mixin(MGPC("float", 108)); }
 			// WARNING: Property 'Material' has the same name as a defined type!
 		}
-		bool bDisableMaterialRepeat() { mixin(MGBPC!(124, 0x1)()); }
-		bool bDisableMaterialRepeat(bool val) { mixin(MSBPC!(124, 0x1)()); }
+		bool bDisableMaterialRepeat() { mixin(MGBPC(124, 0x1)); }
+		bool bDisableMaterialRepeat(bool val) { mixin(MSBPC(124, 0x1)); }
 	}
 }

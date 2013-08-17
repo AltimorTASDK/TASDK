@@ -10,9 +10,9 @@ extern(C++) interface TrVGSNode : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVGSNode")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVGSNode")); }
 	private static __gshared TrVGSNode mDefaultProperties;
-	@property final static TrVGSNode DefaultProperties() { mixin(MGDPC!(TrVGSNode, "TrVGSNode TribesGame.Default__TrVGSNode")()); }
+	@property final static TrVGSNode DefaultProperties() { mixin(MGDPC("TrVGSNode", "TrVGSNode TribesGame.Default__TrVGSNode")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,36 +25,36 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ProcessKeyInput() { mixin(MGF!("mProcessKeyInput", "Function TribesGame.TrVGSNode.ProcessKeyInput")()); }
-			ScriptFunction VerifyVGSCommandEntry() { mixin(MGF!("mVerifyVGSCommandEntry", "Function TribesGame.TrVGSNode.VerifyVGSCommandEntry")()); }
-			ScriptFunction VerifyVGSChild() { mixin(MGF!("mVerifyVGSChild", "Function TribesGame.TrVGSNode.VerifyVGSChild")()); }
-			ScriptFunction GetGametypeSpecificCommands() { mixin(MGF!("mGetGametypeSpecificCommands", "Function TribesGame.TrVGSNode.GetGametypeSpecificCommands")()); }
-			ScriptFunction GetGametypeSpecificChildrenNodes() { mixin(MGF!("mGetGametypeSpecificChildrenNodes", "Function TribesGame.TrVGSNode.GetGametypeSpecificChildrenNodes")()); }
+			ScriptFunction ProcessKeyInput() { mixin(MGF("mProcessKeyInput", "Function TribesGame.TrVGSNode.ProcessKeyInput")); }
+			ScriptFunction VerifyVGSCommandEntry() { mixin(MGF("mVerifyVGSCommandEntry", "Function TribesGame.TrVGSNode.VerifyVGSCommandEntry")); }
+			ScriptFunction VerifyVGSChild() { mixin(MGF("mVerifyVGSChild", "Function TribesGame.TrVGSNode.VerifyVGSChild")); }
+			ScriptFunction GetGametypeSpecificCommands() { mixin(MGF("mGetGametypeSpecificCommands", "Function TribesGame.TrVGSNode.GetGametypeSpecificCommands")); }
+			ScriptFunction GetGametypeSpecificChildrenNodes() { mixin(MGF("mGetGametypeSpecificChildrenNodes", "Function TribesGame.TrVGSNode.GetGametypeSpecificChildrenNodes")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString m_MenuString() { mixin(MGPC!("ScriptString", 68)()); }
-			ScriptName m_KeyBind() { mixin(MGPC!("ScriptName", 60)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_Commands() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 92)()); }
-			ScriptArray!(ScriptClass) m_Children() { mixin(MGPC!("ScriptArray!(ScriptClass)", 80)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCTFCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 104)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreTeamRabbitCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 116)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreArenaCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 128)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCaHCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 140)()); }
+			ScriptString m_MenuString() { mixin(MGPC("ScriptString", 68)); }
+			ScriptName m_KeyBind() { mixin(MGPC("ScriptName", 60)); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_Commands() { mixin(MGPC("ScriptArray!(TrVGSCommandList.VGSCommandType)", 92)); }
+			ScriptArray!(ScriptClass) m_Children() { mixin(MGPC("ScriptArray!(ScriptClass)", 80)); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCTFCommand() { mixin(MGPC("ScriptArray!(TrVGSCommandList.VGSCommandType)", 104)); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreTeamRabbitCommand() { mixin(MGPC("ScriptArray!(TrVGSCommandList.VGSCommandType)", 116)); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreArenaCommand() { mixin(MGPC("ScriptArray!(TrVGSCommandList.VGSCommandType)", 128)); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCaHCommand() { mixin(MGPC("ScriptArray!(TrVGSCommandList.VGSCommandType)", 140)); }
 		}
-		bool m_bDrawHeader() { mixin(MGBPC!(152, 0x10)()); }
-		bool m_bDrawHeader(bool val) { mixin(MSBPC!(152, 0x10)()); }
-		bool m_bIgnoreCaH() { mixin(MGBPC!(152, 0x8)()); }
-		bool m_bIgnoreCaH(bool val) { mixin(MSBPC!(152, 0x8)()); }
-		bool m_bIgnoreArena() { mixin(MGBPC!(152, 0x4)()); }
-		bool m_bIgnoreArena(bool val) { mixin(MSBPC!(152, 0x4)()); }
-		bool m_bIgnoreTeamRabbit() { mixin(MGBPC!(152, 0x2)()); }
-		bool m_bIgnoreTeamRabbit(bool val) { mixin(MSBPC!(152, 0x2)()); }
-		bool m_bIgnoreCTF() { mixin(MGBPC!(152, 0x1)()); }
-		bool m_bIgnoreCTF(bool val) { mixin(MSBPC!(152, 0x1)()); }
+		bool m_bDrawHeader() { mixin(MGBPC(152, 0x10)); }
+		bool m_bDrawHeader(bool val) { mixin(MSBPC(152, 0x10)); }
+		bool m_bIgnoreCaH() { mixin(MGBPC(152, 0x8)); }
+		bool m_bIgnoreCaH(bool val) { mixin(MSBPC(152, 0x8)); }
+		bool m_bIgnoreArena() { mixin(MGBPC(152, 0x4)); }
+		bool m_bIgnoreArena(bool val) { mixin(MSBPC(152, 0x4)); }
+		bool m_bIgnoreTeamRabbit() { mixin(MGBPC(152, 0x2)); }
+		bool m_bIgnoreTeamRabbit(bool val) { mixin(MSBPC(152, 0x2)); }
+		bool m_bIgnoreCTF() { mixin(MGBPC(152, 0x1)); }
+		bool m_bIgnoreCTF(bool val) { mixin(MSBPC(152, 0x1)); }
 	}
 final:
 	static ScriptClass ProcessKeyInput(ScriptName Key, TrPlayerInput pPlayerInput, ScriptClass GameClass)

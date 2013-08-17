@@ -8,7 +8,7 @@ extern(C++) interface CurveEdOptions : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.CurveEdOptions")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.CurveEdOptions")); }
 	private static __gshared CurveEdOptions mDefaultProperties;
-	@property final static CurveEdOptions DefaultProperties() { mixin(MGDPC!(CurveEdOptions, "CurveEdOptions UnrealEd.Default__CurveEdOptions")()); }
+	@property final static CurveEdOptions DefaultProperties() { mixin(MGDPC("CurveEdOptions", "CurveEdOptions UnrealEd.Default__CurveEdOptions")); }
 }

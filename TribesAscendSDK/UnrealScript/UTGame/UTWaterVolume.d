@@ -10,9 +10,9 @@ extern(C++) interface UTWaterVolume : WaterVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWaterVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWaterVolume")); }
 	private static __gshared UTWaterVolume mDefaultProperties;
-	@property final static UTWaterVolume DefaultProperties() { mixin(MGDPC!(UTWaterVolume, "UTWaterVolume UTGame.Default__UTWaterVolume")()); }
+	@property final static UTWaterVolume DefaultProperties() { mixin(MGDPC("UTWaterVolume", "UTWaterVolume UTGame.Default__UTWaterVolume")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,15 +22,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTWaterVolume.Touch")()); }
-			ScriptFunction PlayEntrySplash() { mixin(MGF!("mPlayEntrySplash", "Function UTGame.UTWaterVolume.PlayEntrySplash")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function UTGame.UTWaterVolume.Touch")); }
+			ScriptFunction PlayEntrySplash() { mixin(MGF("mPlayEntrySplash", "Function UTGame.UTWaterVolume.PlayEntrySplash")); }
 		}
 	}
 	@property final auto ref
 	{
-		ParticleSystem ProjectileEntryEffect() { mixin(MGPC!("ParticleSystem", 608)()); }
-		ParticleSystem PS_EnterWaterEffect_Vehicle() { mixin(MGPC!("ParticleSystem", 604)()); }
-		ParticleSystem PS_EnterWaterEffect_Pawn() { mixin(MGPC!("ParticleSystem", 600)()); }
+		ParticleSystem ProjectileEntryEffect() { mixin(MGPC("ParticleSystem", 608)); }
+		ParticleSystem PS_EnterWaterEffect_Vehicle() { mixin(MGPC("ParticleSystem", 604)); }
+		ParticleSystem PS_EnterWaterEffect_Pawn() { mixin(MGPC("ParticleSystem", 600)); }
 	}
 final:
 	void Touch(Actor Other, 

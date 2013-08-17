@@ -8,9 +8,9 @@ extern(C++) interface ImageReflection : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ImageReflection")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ImageReflection")); }
 	private static __gshared ImageReflection mDefaultProperties;
-	@property final static ImageReflection DefaultProperties() { mixin(MGDPC!(ImageReflection, "ImageReflection Engine.Default__ImageReflection")()); }
+	@property final static ImageReflection DefaultProperties() { mixin(MGDPC("ImageReflection", "ImageReflection Engine.Default__ImageReflection")); }
 	@property final auto ref
 	{
 		// WARNING: Property 'ImageReflectionComponent' has the same name as a defined type!

@@ -9,9 +9,9 @@ extern(C++) interface SeqEvent_TakeDamage : SequenceEvent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_TakeDamage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SeqEvent_TakeDamage")); }
 	private static __gshared SeqEvent_TakeDamage mDefaultProperties;
-	@property final static SeqEvent_TakeDamage DefaultProperties() { mixin(MGDPC!(SeqEvent_TakeDamage, "SeqEvent_TakeDamage Engine.Default__SeqEvent_TakeDamage")()); }
+	@property final static SeqEvent_TakeDamage DefaultProperties() { mixin(MGDPC("SeqEvent_TakeDamage", "SeqEvent_TakeDamage Engine.Default__SeqEvent_TakeDamage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,25 +24,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsValidDamageType() { mixin(MGF!("mIsValidDamageType", "Function Engine.SeqEvent_TakeDamage.IsValidDamageType")()); }
-			ScriptFunction HandleDamage() { mixin(MGF!("mHandleDamage", "Function Engine.SeqEvent_TakeDamage.HandleDamage")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.SeqEvent_TakeDamage.Reset")()); }
-			ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqEvent_TakeDamage.GetObjClassVersion")()); }
-			ScriptFunction Toggled() { mixin(MGF!("mToggled", "Function Engine.SeqEvent_TakeDamage.Toggled")()); }
+			ScriptFunction IsValidDamageType() { mixin(MGF("mIsValidDamageType", "Function Engine.SeqEvent_TakeDamage.IsValidDamageType")); }
+			ScriptFunction HandleDamage() { mixin(MGF("mHandleDamage", "Function Engine.SeqEvent_TakeDamage.HandleDamage")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.SeqEvent_TakeDamage.Reset")); }
+			ScriptFunction GetObjClassVersion() { mixin(MGF("mGetObjClassVersion", "Function Engine.SeqEvent_TakeDamage.GetObjClassVersion")); }
+			ScriptFunction Toggled() { mixin(MGF("mToggled", "Function Engine.SeqEvent_TakeDamage.Toggled")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) DamageTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 264)()); }
-			ScriptArray!(ScriptClass) IgnoreDamageTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 276)()); }
-			float CurrentDamage() { mixin(MGPC!("float", 288)()); }
-			float DamageThreshold() { mixin(MGPC!("float", 260)()); }
-			float MinDamageAmount() { mixin(MGPC!("float", 256)()); }
+			ScriptArray!(ScriptClass) DamageTypes() { mixin(MGPC("ScriptArray!(ScriptClass)", 264)); }
+			ScriptArray!(ScriptClass) IgnoreDamageTypes() { mixin(MGPC("ScriptArray!(ScriptClass)", 276)); }
+			float CurrentDamage() { mixin(MGPC("float", 288)); }
+			float DamageThreshold() { mixin(MGPC("float", 260)); }
+			float MinDamageAmount() { mixin(MGPC("float", 256)); }
 		}
-		bool bResetDamageOnToggle() { mixin(MGBPC!(292, 0x1)()); }
-		bool bResetDamageOnToggle(bool val) { mixin(MSBPC!(292, 0x1)()); }
+		bool bResetDamageOnToggle() { mixin(MGBPC(292, 0x1)); }
+		bool bResetDamageOnToggle(bool val) { mixin(MSBPC(292, 0x1)); }
 	}
 final:
 	bool IsValidDamageType(ScriptClass inDamageType)

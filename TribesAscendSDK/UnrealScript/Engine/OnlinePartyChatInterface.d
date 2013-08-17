@@ -9,9 +9,9 @@ extern(C++) interface OnlinePartyChatInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlinePartyChatInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlinePartyChatInterface")); }
 	private static __gshared OnlinePartyChatInterface mDefaultProperties;
-	@property final static OnlinePartyChatInterface DefaultProperties() { mixin(MGDPC!(OnlinePartyChatInterface, "OnlinePartyChatInterface Engine.Default__OnlinePartyChatInterface")()); }
+	@property final static OnlinePartyChatInterface DefaultProperties() { mixin(MGDPC("OnlinePartyChatInterface", "OnlinePartyChatInterface Engine.Default__OnlinePartyChatInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,24 +37,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SendPartyGameInvites() { mixin(MGF!("mSendPartyGameInvites", "Function Engine.OnlinePartyChatInterface.SendPartyGameInvites")()); }
-			ScriptFunction OnSendPartyGameInvitesComplete() { mixin(MGF!("mOnSendPartyGameInvitesComplete", "Function Engine.OnlinePartyChatInterface.OnSendPartyGameInvitesComplete")()); }
-			ScriptFunction OnPartyMembersInfoChanged() { mixin(MGF!("mOnPartyMembersInfoChanged", "Function Engine.OnlinePartyChatInterface.OnPartyMembersInfoChanged")()); }
-			ScriptFunction OnPartyMemberListChanged() { mixin(MGF!("mOnPartyMemberListChanged", "Function Engine.OnlinePartyChatInterface.OnPartyMemberListChanged")()); }
-			ScriptFunction AddSendPartyGameInvitesCompleteDelegate() { mixin(MGF!("mAddSendPartyGameInvitesCompleteDelegate", "Function Engine.OnlinePartyChatInterface.AddSendPartyGameInvitesCompleteDelegate")()); }
-			ScriptFunction ClearSendPartyGameInvitesCompleteDelegate() { mixin(MGF!("mClearSendPartyGameInvitesCompleteDelegate", "Function Engine.OnlinePartyChatInterface.ClearSendPartyGameInvitesCompleteDelegate")()); }
-			ScriptFunction GetPartyMembersInformation() { mixin(MGF!("mGetPartyMembersInformation", "Function Engine.OnlinePartyChatInterface.GetPartyMembersInformation")()); }
-			ScriptFunction GetPartyMemberInformation() { mixin(MGF!("mGetPartyMemberInformation", "Function Engine.OnlinePartyChatInterface.GetPartyMemberInformation")()); }
-			ScriptFunction AddPartyMemberListChangedDelegate() { mixin(MGF!("mAddPartyMemberListChangedDelegate", "Function Engine.OnlinePartyChatInterface.AddPartyMemberListChangedDelegate")()); }
-			ScriptFunction ClearPartyMemberListChangedDelegate() { mixin(MGF!("mClearPartyMemberListChangedDelegate", "Function Engine.OnlinePartyChatInterface.ClearPartyMemberListChangedDelegate")()); }
-			ScriptFunction AddPartyMembersInfoChangedDelegate() { mixin(MGF!("mAddPartyMembersInfoChangedDelegate", "Function Engine.OnlinePartyChatInterface.AddPartyMembersInfoChangedDelegate")()); }
-			ScriptFunction ClearPartyMembersInfoChangedDelegate() { mixin(MGF!("mClearPartyMembersInfoChangedDelegate", "Function Engine.OnlinePartyChatInterface.ClearPartyMembersInfoChangedDelegate")()); }
-			ScriptFunction SetPartyMemberCustomData() { mixin(MGF!("mSetPartyMemberCustomData", "Function Engine.OnlinePartyChatInterface.SetPartyMemberCustomData")()); }
-			ScriptFunction GetPartyBandwidth() { mixin(MGF!("mGetPartyBandwidth", "Function Engine.OnlinePartyChatInterface.GetPartyBandwidth")()); }
-			ScriptFunction ShowPartyUI() { mixin(MGF!("mShowPartyUI", "Function Engine.OnlinePartyChatInterface.ShowPartyUI")()); }
-			ScriptFunction ShowVoiceChannelUI() { mixin(MGF!("mShowVoiceChannelUI", "Function Engine.OnlinePartyChatInterface.ShowVoiceChannelUI")()); }
-			ScriptFunction ShowCommunitySessionsUI() { mixin(MGF!("mShowCommunitySessionsUI", "Function Engine.OnlinePartyChatInterface.ShowCommunitySessionsUI")()); }
-			ScriptFunction IsInPartyChat() { mixin(MGF!("mIsInPartyChat", "Function Engine.OnlinePartyChatInterface.IsInPartyChat")()); }
+			ScriptFunction SendPartyGameInvites() { mixin(MGF("mSendPartyGameInvites", "Function Engine.OnlinePartyChatInterface.SendPartyGameInvites")); }
+			ScriptFunction OnSendPartyGameInvitesComplete() { mixin(MGF("mOnSendPartyGameInvitesComplete", "Function Engine.OnlinePartyChatInterface.OnSendPartyGameInvitesComplete")); }
+			ScriptFunction OnPartyMembersInfoChanged() { mixin(MGF("mOnPartyMembersInfoChanged", "Function Engine.OnlinePartyChatInterface.OnPartyMembersInfoChanged")); }
+			ScriptFunction OnPartyMemberListChanged() { mixin(MGF("mOnPartyMemberListChanged", "Function Engine.OnlinePartyChatInterface.OnPartyMemberListChanged")); }
+			ScriptFunction AddSendPartyGameInvitesCompleteDelegate() { mixin(MGF("mAddSendPartyGameInvitesCompleteDelegate", "Function Engine.OnlinePartyChatInterface.AddSendPartyGameInvitesCompleteDelegate")); }
+			ScriptFunction ClearSendPartyGameInvitesCompleteDelegate() { mixin(MGF("mClearSendPartyGameInvitesCompleteDelegate", "Function Engine.OnlinePartyChatInterface.ClearSendPartyGameInvitesCompleteDelegate")); }
+			ScriptFunction GetPartyMembersInformation() { mixin(MGF("mGetPartyMembersInformation", "Function Engine.OnlinePartyChatInterface.GetPartyMembersInformation")); }
+			ScriptFunction GetPartyMemberInformation() { mixin(MGF("mGetPartyMemberInformation", "Function Engine.OnlinePartyChatInterface.GetPartyMemberInformation")); }
+			ScriptFunction AddPartyMemberListChangedDelegate() { mixin(MGF("mAddPartyMemberListChangedDelegate", "Function Engine.OnlinePartyChatInterface.AddPartyMemberListChangedDelegate")); }
+			ScriptFunction ClearPartyMemberListChangedDelegate() { mixin(MGF("mClearPartyMemberListChangedDelegate", "Function Engine.OnlinePartyChatInterface.ClearPartyMemberListChangedDelegate")); }
+			ScriptFunction AddPartyMembersInfoChangedDelegate() { mixin(MGF("mAddPartyMembersInfoChangedDelegate", "Function Engine.OnlinePartyChatInterface.AddPartyMembersInfoChangedDelegate")); }
+			ScriptFunction ClearPartyMembersInfoChangedDelegate() { mixin(MGF("mClearPartyMembersInfoChangedDelegate", "Function Engine.OnlinePartyChatInterface.ClearPartyMembersInfoChangedDelegate")); }
+			ScriptFunction SetPartyMemberCustomData() { mixin(MGF("mSetPartyMemberCustomData", "Function Engine.OnlinePartyChatInterface.SetPartyMemberCustomData")); }
+			ScriptFunction GetPartyBandwidth() { mixin(MGF("mGetPartyBandwidth", "Function Engine.OnlinePartyChatInterface.GetPartyBandwidth")); }
+			ScriptFunction ShowPartyUI() { mixin(MGF("mShowPartyUI", "Function Engine.OnlinePartyChatInterface.ShowPartyUI")); }
+			ScriptFunction ShowVoiceChannelUI() { mixin(MGF("mShowVoiceChannelUI", "Function Engine.OnlinePartyChatInterface.ShowVoiceChannelUI")); }
+			ScriptFunction ShowCommunitySessionsUI() { mixin(MGF("mShowCommunitySessionsUI", "Function Engine.OnlinePartyChatInterface.ShowCommunitySessionsUI")); }
+			ScriptFunction IsInPartyChat() { mixin(MGF("mIsInPartyChat", "Function Engine.OnlinePartyChatInterface.IsInPartyChat")); }
 		}
 	}
 	@property final auto ref

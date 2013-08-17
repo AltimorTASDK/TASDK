@@ -10,15 +10,15 @@ extern(C++) interface TrVictimMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVictimMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVictimMessage")); }
 	private static __gshared TrVictimMessage mDefaultProperties;
-	@property final static TrVictimMessage DefaultProperties() { mixin(MGDPC!(TrVictimMessage, "TrVictimMessage TribesGame.Default__TrVictimMessage")()); }
+	@property final static TrVictimMessage DefaultProperties() { mixin(MGDPC("TrVictimMessage", "TrVictimMessage TribesGame.Default__TrVictimMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrVictimMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrVictimMessage.GetString")); }
 	}
-	@property final auto ref ScriptString YouWereKilledBy() { mixin(MGPC!("ScriptString", 100)()); }
+	@property final auto ref ScriptString YouWereKilledBy() { mixin(MGPC("ScriptString", 100)); }
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[32];

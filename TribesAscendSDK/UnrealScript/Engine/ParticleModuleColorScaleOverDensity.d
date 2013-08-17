@@ -10,12 +10,12 @@ extern(C++) interface ParticleModuleColorScaleOverDensity : ParticleModuleColorB
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleColorScaleOverDensity")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleColorScaleOverDensity")); }
 	private static __gshared ParticleModuleColorScaleOverDensity mDefaultProperties;
-	@property final static ParticleModuleColorScaleOverDensity DefaultProperties() { mixin(MGDPC!(ParticleModuleColorScaleOverDensity, "ParticleModuleColorScaleOverDensity Engine.Default__ParticleModuleColorScaleOverDensity")()); }
+	@property final static ParticleModuleColorScaleOverDensity DefaultProperties() { mixin(MGDPC("ParticleModuleColorScaleOverDensity", "ParticleModuleColorScaleOverDensity Engine.Default__ParticleModuleColorScaleOverDensity")); }
 	@property final auto ref
 	{
-		DistributionFloat.RawDistributionFloat AlphaScaleOverDensity() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 100)()); }
-		DistributionVector.RawDistributionVector ColorScaleOverDensity() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
+		DistributionFloat.RawDistributionFloat AlphaScaleOverDensity() { mixin(MGPC("DistributionFloat.RawDistributionFloat", 100)); }
+		DistributionVector.RawDistributionVector ColorScaleOverDensity() { mixin(MGPC("DistributionVector.RawDistributionVector", 72)); }
 	}
 }

@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionVertexColor : MaterialExpression
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionVertexColor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionVertexColor")); }
 	private static __gshared MaterialExpressionVertexColor mDefaultProperties;
-	@property final static MaterialExpressionVertexColor DefaultProperties() { mixin(MGDPC!(MaterialExpressionVertexColor, "MaterialExpressionVertexColor Engine.Default__MaterialExpressionVertexColor")()); }
+	@property final static MaterialExpressionVertexColor DefaultProperties() { mixin(MGDPC("MaterialExpressionVertexColor", "MaterialExpressionVertexColor Engine.Default__MaterialExpressionVertexColor")); }
 }

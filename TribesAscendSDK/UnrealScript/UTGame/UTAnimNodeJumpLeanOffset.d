@@ -8,7 +8,7 @@ extern(C++) interface UTAnimNodeJumpLeanOffset : UDKAnimNodeJumpLeanOffset
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnimNodeJumpLeanOffset")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnimNodeJumpLeanOffset")); }
 	private static __gshared UTAnimNodeJumpLeanOffset mDefaultProperties;
-	@property final static UTAnimNodeJumpLeanOffset DefaultProperties() { mixin(MGDPC!(UTAnimNodeJumpLeanOffset, "UTAnimNodeJumpLeanOffset UTGame.Default__UTAnimNodeJumpLeanOffset")()); }
+	@property final static UTAnimNodeJumpLeanOffset DefaultProperties() { mixin(MGDPC("UTAnimNodeJumpLeanOffset", "UTAnimNodeJumpLeanOffset UTGame.Default__UTAnimNodeJumpLeanOffset")); }
 }

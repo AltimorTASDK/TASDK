@@ -9,9 +9,9 @@ extern(C++) interface OnlinePlaylistManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.OnlinePlaylistManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.OnlinePlaylistManager")); }
 	private static __gshared OnlinePlaylistManager mDefaultProperties;
-	@property final static OnlinePlaylistManager DefaultProperties() { mixin(MGDPC!(OnlinePlaylistManager, "OnlinePlaylistManager IpDrv.Default__OnlinePlaylistManager")()); }
+	@property final static OnlinePlaylistManager DefaultProperties() { mixin(MGDPC("OnlinePlaylistManager", "OnlinePlaylistManager IpDrv.Default__OnlinePlaylistManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,31 +44,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPlaylistPopulationDataUpdated() { mixin(MGF!("mOnPlaylistPopulationDataUpdated", "Function IpDrv.OnlinePlaylistManager.OnPlaylistPopulationDataUpdated")()); }
-			ScriptFunction OnReadPlaylistComplete() { mixin(MGF!("mOnReadPlaylistComplete", "Function IpDrv.OnlinePlaylistManager.OnReadPlaylistComplete")()); }
-			ScriptFunction DownloadPlaylist() { mixin(MGF!("mDownloadPlaylist", "Function IpDrv.OnlinePlaylistManager.DownloadPlaylist")()); }
-			ScriptFunction DetermineFilesToDownload() { mixin(MGF!("mDetermineFilesToDownload", "Function IpDrv.OnlinePlaylistManager.DetermineFilesToDownload")()); }
-			ScriptFunction OnReadTitleFileComplete() { mixin(MGF!("mOnReadTitleFileComplete", "Function IpDrv.OnlinePlaylistManager.OnReadTitleFileComplete")()); }
-			ScriptFunction FinalizePlaylistObjects() { mixin(MGF!("mFinalizePlaylistObjects", "Function IpDrv.OnlinePlaylistManager.FinalizePlaylistObjects")()); }
-			ScriptFunction GetGameSettings() { mixin(MGF!("mGetGameSettings", "Function IpDrv.OnlinePlaylistManager.GetGameSettings")()); }
-			ScriptFunction HasAnyGameSettings() { mixin(MGF!("mHasAnyGameSettings", "Function IpDrv.OnlinePlaylistManager.HasAnyGameSettings")()); }
-			ScriptFunction PlaylistSupportsDedicatedServers() { mixin(MGF!("mPlaylistSupportsDedicatedServers", "Function IpDrv.OnlinePlaylistManager.PlaylistSupportsDedicatedServers")()); }
-			ScriptFunction GetTeamInfoFromPlaylist() { mixin(MGF!("mGetTeamInfoFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetTeamInfoFromPlaylist")()); }
-			ScriptFunction GetLoadBalanceIdFromPlaylist() { mixin(MGF!("mGetLoadBalanceIdFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetLoadBalanceIdFromPlaylist")()); }
-			ScriptFunction IsPlaylistArbitrated() { mixin(MGF!("mIsPlaylistArbitrated", "Function IpDrv.OnlinePlaylistManager.IsPlaylistArbitrated")()); }
-			ScriptFunction GetUrlFromPlaylist() { mixin(MGF!("mGetUrlFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetUrlFromPlaylist")()); }
-			ScriptFunction GetMapCycleFromPlaylist() { mixin(MGF!("mGetMapCycleFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetMapCycleFromPlaylist")()); }
-			ScriptFunction GetInventorySwapFromPlaylist() { mixin(MGF!("mGetInventorySwapFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetInventorySwapFromPlaylist")()); }
-			ScriptFunction GetContentIdsFromPlaylist() { mixin(MGF!("mGetContentIdsFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetContentIdsFromPlaylist")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function IpDrv.OnlinePlaylistManager.Reset")()); }
-			ScriptFunction ReadPlaylistPopulation() { mixin(MGF!("mReadPlaylistPopulation", "Function IpDrv.OnlinePlaylistManager.ReadPlaylistPopulation")()); }
-			ScriptFunction OnReadPlaylistPopulationComplete() { mixin(MGF!("mOnReadPlaylistPopulationComplete", "Function IpDrv.OnlinePlaylistManager.OnReadPlaylistPopulationComplete")()); }
-			ScriptFunction ParsePlaylistPopulationData() { mixin(MGF!("mParsePlaylistPopulationData", "Function IpDrv.OnlinePlaylistManager.ParsePlaylistPopulationData")()); }
-			ScriptFunction GetPopulationInfoFromPlaylist() { mixin(MGF!("mGetPopulationInfoFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetPopulationInfoFromPlaylist")()); }
-			ScriptFunction SendPlaylistPopulationUpdate() { mixin(MGF!("mSendPlaylistPopulationUpdate", "Function IpDrv.OnlinePlaylistManager.SendPlaylistPopulationUpdate")()); }
-			ScriptFunction ReadDataCenterId() { mixin(MGF!("mReadDataCenterId", "Function IpDrv.OnlinePlaylistManager.ReadDataCenterId")()); }
-			ScriptFunction OnReadDataCenterIdComplete() { mixin(MGF!("mOnReadDataCenterIdComplete", "Function IpDrv.OnlinePlaylistManager.OnReadDataCenterIdComplete")()); }
-			ScriptFunction ParseDataCenterId() { mixin(MGF!("mParseDataCenterId", "Function IpDrv.OnlinePlaylistManager.ParseDataCenterId")()); }
+			ScriptFunction OnPlaylistPopulationDataUpdated() { mixin(MGF("mOnPlaylistPopulationDataUpdated", "Function IpDrv.OnlinePlaylistManager.OnPlaylistPopulationDataUpdated")); }
+			ScriptFunction OnReadPlaylistComplete() { mixin(MGF("mOnReadPlaylistComplete", "Function IpDrv.OnlinePlaylistManager.OnReadPlaylistComplete")); }
+			ScriptFunction DownloadPlaylist() { mixin(MGF("mDownloadPlaylist", "Function IpDrv.OnlinePlaylistManager.DownloadPlaylist")); }
+			ScriptFunction DetermineFilesToDownload() { mixin(MGF("mDetermineFilesToDownload", "Function IpDrv.OnlinePlaylistManager.DetermineFilesToDownload")); }
+			ScriptFunction OnReadTitleFileComplete() { mixin(MGF("mOnReadTitleFileComplete", "Function IpDrv.OnlinePlaylistManager.OnReadTitleFileComplete")); }
+			ScriptFunction FinalizePlaylistObjects() { mixin(MGF("mFinalizePlaylistObjects", "Function IpDrv.OnlinePlaylistManager.FinalizePlaylistObjects")); }
+			ScriptFunction GetGameSettings() { mixin(MGF("mGetGameSettings", "Function IpDrv.OnlinePlaylistManager.GetGameSettings")); }
+			ScriptFunction HasAnyGameSettings() { mixin(MGF("mHasAnyGameSettings", "Function IpDrv.OnlinePlaylistManager.HasAnyGameSettings")); }
+			ScriptFunction PlaylistSupportsDedicatedServers() { mixin(MGF("mPlaylistSupportsDedicatedServers", "Function IpDrv.OnlinePlaylistManager.PlaylistSupportsDedicatedServers")); }
+			ScriptFunction GetTeamInfoFromPlaylist() { mixin(MGF("mGetTeamInfoFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetTeamInfoFromPlaylist")); }
+			ScriptFunction GetLoadBalanceIdFromPlaylist() { mixin(MGF("mGetLoadBalanceIdFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetLoadBalanceIdFromPlaylist")); }
+			ScriptFunction IsPlaylistArbitrated() { mixin(MGF("mIsPlaylistArbitrated", "Function IpDrv.OnlinePlaylistManager.IsPlaylistArbitrated")); }
+			ScriptFunction GetUrlFromPlaylist() { mixin(MGF("mGetUrlFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetUrlFromPlaylist")); }
+			ScriptFunction GetMapCycleFromPlaylist() { mixin(MGF("mGetMapCycleFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetMapCycleFromPlaylist")); }
+			ScriptFunction GetInventorySwapFromPlaylist() { mixin(MGF("mGetInventorySwapFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetInventorySwapFromPlaylist")); }
+			ScriptFunction GetContentIdsFromPlaylist() { mixin(MGF("mGetContentIdsFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetContentIdsFromPlaylist")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function IpDrv.OnlinePlaylistManager.Reset")); }
+			ScriptFunction ReadPlaylistPopulation() { mixin(MGF("mReadPlaylistPopulation", "Function IpDrv.OnlinePlaylistManager.ReadPlaylistPopulation")); }
+			ScriptFunction OnReadPlaylistPopulationComplete() { mixin(MGF("mOnReadPlaylistPopulationComplete", "Function IpDrv.OnlinePlaylistManager.OnReadPlaylistPopulationComplete")); }
+			ScriptFunction ParsePlaylistPopulationData() { mixin(MGF("mParsePlaylistPopulationData", "Function IpDrv.OnlinePlaylistManager.ParsePlaylistPopulationData")); }
+			ScriptFunction GetPopulationInfoFromPlaylist() { mixin(MGF("mGetPopulationInfoFromPlaylist", "Function IpDrv.OnlinePlaylistManager.GetPopulationInfoFromPlaylist")); }
+			ScriptFunction SendPlaylistPopulationUpdate() { mixin(MGF("mSendPlaylistPopulationUpdate", "Function IpDrv.OnlinePlaylistManager.SendPlaylistPopulationUpdate")); }
+			ScriptFunction ReadDataCenterId() { mixin(MGF("mReadDataCenterId", "Function IpDrv.OnlinePlaylistManager.ReadDataCenterId")); }
+			ScriptFunction OnReadDataCenterIdComplete() { mixin(MGF("mOnReadDataCenterIdComplete", "Function IpDrv.OnlinePlaylistManager.OnReadDataCenterIdComplete")); }
+			ScriptFunction ParseDataCenterId() { mixin(MGF("mParseDataCenterId", "Function IpDrv.OnlinePlaylistManager.ParseDataCenterId")); }
 		}
 	}
 	struct Playlist
@@ -76,28 +76,28 @@ public extern(D):
 		private ubyte __buffer__[108];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlinePlaylistManager.Playlist")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.OnlinePlaylistManager.Playlist")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(OnlinePlaylistManager.ConfiguredGameSetting) ConfiguredGames() { mixin(MGPS!("ScriptArray!(OnlinePlaylistManager.ConfiguredGameSetting)", 0)()); }
-				ScriptArray!(int) ContentIds() { mixin(MGPS!("ScriptArray!(int)", 32)()); }
-				ScriptArray!(ScriptName) MapCycle() { mixin(MGPS!("ScriptArray!(ScriptName)", 84)()); }
-				ScriptArray!(OnlinePlaylistManager.InventorySwap) InventorySwaps() { mixin(MGPS!("ScriptArray!(OnlinePlaylistManager.InventorySwap)", 96)()); }
+				ScriptArray!(OnlinePlaylistManager.ConfiguredGameSetting) ConfiguredGames() { mixin(MGPS("ScriptArray!(OnlinePlaylistManager.ConfiguredGameSetting)", 0)); }
+				ScriptArray!(int) ContentIds() { mixin(MGPS("ScriptArray!(int)", 32)); }
+				ScriptArray!(ScriptName) MapCycle() { mixin(MGPS("ScriptArray!(ScriptName)", 84)); }
+				ScriptArray!(OnlinePlaylistManager.InventorySwap) InventorySwaps() { mixin(MGPS("ScriptArray!(OnlinePlaylistManager.InventorySwap)", 96)); }
 				// WARNING: Property 'URL' has the same name as a defined type!
-				ScriptString Name() { mixin(MGPS!("ScriptString", 56)()); }
-				int MaxPartySize() { mixin(MGPS!("int", 52)()); }
-				int TeamCount() { mixin(MGPS!("int", 48)()); }
-				int TeamSize() { mixin(MGPS!("int", 44)()); }
-				ScriptString LocalizationString() { mixin(MGPS!("ScriptString", 20)()); }
-				int LoadBalanceId() { mixin(MGPS!("int", 16)()); }
-				int PlaylistId() { mixin(MGPS!("int", 12)()); }
+				ScriptString Name() { mixin(MGPS("ScriptString", 56)); }
+				int MaxPartySize() { mixin(MGPS("int", 52)); }
+				int TeamCount() { mixin(MGPS("int", 48)); }
+				int TeamSize() { mixin(MGPS("int", 44)); }
+				ScriptString LocalizationString() { mixin(MGPS("ScriptString", 20)); }
+				int LoadBalanceId() { mixin(MGPS("int", 16)); }
+				int PlaylistId() { mixin(MGPS("int", 12)); }
 			}
-			bool bDisableDedicatedServerSearches() { mixin(MGBPS!(80, 0x2)()); }
-			bool bDisableDedicatedServerSearches(bool val) { mixin(MSBPS!(80, 0x2)()); }
-			bool bIsArbitrated() { mixin(MGBPS!(80, 0x1)()); }
-			bool bIsArbitrated(bool val) { mixin(MSBPS!(80, 0x1)()); }
+			bool bDisableDedicatedServerSearches() { mixin(MGBPS(80, 0x2)); }
+			bool bDisableDedicatedServerSearches(bool val) { mixin(MSBPS(80, 0x2)); }
+			bool bIsArbitrated() { mixin(MGBPS(80, 0x1)); }
+			bool bIsArbitrated(bool val) { mixin(MSBPS(80, 0x1)); }
 		}
 	}
 	struct PlaylistPopulation
@@ -105,12 +105,12 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlinePlaylistManager.PlaylistPopulation")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.OnlinePlaylistManager.PlaylistPopulation")); }
 		@property final auto ref
 		{
-			int RegionTotal() { mixin(MGPS!("int", 8)()); }
-			int WorldwideTotal() { mixin(MGPS!("int", 4)()); }
-			int PlaylistId() { mixin(MGPS!("int", 0)()); }
+			int RegionTotal() { mixin(MGPS("int", 8)); }
+			int WorldwideTotal() { mixin(MGPS("int", 4)); }
+			int PlaylistId() { mixin(MGPS("int", 0)); }
 		}
 	}
 	struct ConfiguredGameSetting
@@ -118,13 +118,13 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlinePlaylistManager.ConfiguredGameSetting")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.OnlinePlaylistManager.ConfiguredGameSetting")); }
 		@property final auto ref
 		{
-			OnlineGameSettings GameSettings() { mixin(MGPS!("OnlineGameSettings", 28)()); }
+			OnlineGameSettings GameSettings() { mixin(MGPS("OnlineGameSettings", 28)); }
 			// WARNING: Property 'URL' has the same name as a defined type!
-			ScriptString GameSettingsClassName() { mixin(MGPS!("ScriptString", 4)()); }
-			int GameSettingId() { mixin(MGPS!("int", 0)()); }
+			ScriptString GameSettingsClassName() { mixin(MGPS("ScriptString", 4)); }
+			int GameSettingId() { mixin(MGPS("int", 0)); }
 		}
 	}
 	struct InventorySwap
@@ -132,36 +132,36 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlinePlaylistManager.InventorySwap")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.OnlinePlaylistManager.InventorySwap")); }
 		@property final auto ref
 		{
-			ScriptString SwapTo() { mixin(MGPS!("ScriptString", 8)()); }
-			ScriptName Original() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptString SwapTo() { mixin(MGPS("ScriptString", 8)); }
+			ScriptName Original() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlinePlaylistManager.Playlist) Playlists() { mixin(MGPC!("ScriptArray!(OnlinePlaylistManager.Playlist)", 64)()); }
-		ScriptArray!(ScriptString) PlaylistFileNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 76)()); }
-		ScriptArray!(ScriptName) DatastoresToRefresh() { mixin(MGPC!("ScriptArray!(ScriptName)", 88)()); }
-		ScriptArray!(OnlinePlaylistManager.PlaylistPopulation) PopulationData() { mixin(MGPC!("ScriptArray!(OnlinePlaylistManager.PlaylistPopulation)", 112)()); }
+		ScriptArray!(OnlinePlaylistManager.Playlist) Playlists() { mixin(MGPC("ScriptArray!(OnlinePlaylistManager.Playlist)", 64)); }
+		ScriptArray!(ScriptString) PlaylistFileNames() { mixin(MGPC("ScriptArray!(ScriptString)", 76)); }
+		ScriptArray!(ScriptName) DatastoresToRefresh() { mixin(MGPC("ScriptArray!(ScriptName)", 88)); }
+		ScriptArray!(OnlinePlaylistManager.PlaylistPopulation) PopulationData() { mixin(MGPC("ScriptArray!(OnlinePlaylistManager.PlaylistPopulation)", 112)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPlaylistPopulationDataUpdated__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadPlaylistComplete__Delegate'!
-		ScriptString DataCenterFileName() { mixin(MGPC!("ScriptString", 180)()); }
-		int DataCenterId() { mixin(MGPC!("int", 176)()); }
-		ScriptName EventsInterfaceName() { mixin(MGPC!("ScriptName", 168)()); }
-		int CurrentPlaylistId() { mixin(MGPC!("int", 164)()); }
-		int MinPlaylistIdToReport() { mixin(MGPC!("int", 160)()); }
-		float PlaylistPopulationUpdateInterval() { mixin(MGPC!("float", 156)()); }
-		float NextPlaylistPopulationUpdateTime() { mixin(MGPC!("float", 152)()); }
-		ScriptString PopulationFileName() { mixin(MGPC!("ScriptString", 140)()); }
+		ScriptString DataCenterFileName() { mixin(MGPC("ScriptString", 180)); }
+		int DataCenterId() { mixin(MGPC("int", 176)); }
+		ScriptName EventsInterfaceName() { mixin(MGPC("ScriptName", 168)); }
+		int CurrentPlaylistId() { mixin(MGPC("int", 164)); }
+		int MinPlaylistIdToReport() { mixin(MGPC("int", 160)); }
+		float PlaylistPopulationUpdateInterval() { mixin(MGPC("float", 156)); }
+		float NextPlaylistPopulationUpdateTime() { mixin(MGPC("float", 152)); }
+		ScriptString PopulationFileName() { mixin(MGPC("ScriptString", 140)); }
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'TitleFileInterface'!
-		int RegionTotalPlayers() { mixin(MGPC!("int", 128)()); }
-		int WorldwideTotalPlayers() { mixin(MGPC!("int", 124)()); }
-		int VersionNumber() { mixin(MGPC!("int", 108)()); }
-		int SuccessfulCount() { mixin(MGPC!("int", 104)()); }
-		int DownloadCount() { mixin(MGPC!("int", 100)()); }
-		UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!("UObject.Pointer", 60)()); }
+		int RegionTotalPlayers() { mixin(MGPC("int", 128)); }
+		int WorldwideTotalPlayers() { mixin(MGPC("int", 124)); }
+		int VersionNumber() { mixin(MGPC("int", 108)); }
+		int SuccessfulCount() { mixin(MGPC("int", 104)); }
+		int DownloadCount() { mixin(MGPC("int", 100)); }
+		UObject.Pointer VfTable_FTickableObject() { mixin(MGPC("UObject.Pointer", 60)); }
 	}
 final:
 	void OnPlaylistPopulationDataUpdated()

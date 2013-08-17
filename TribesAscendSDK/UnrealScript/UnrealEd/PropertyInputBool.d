@@ -8,7 +8,7 @@ extern(C++) interface PropertyInputBool : PropertyInputArrayItemBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.PropertyInputBool")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.PropertyInputBool")); }
 	private static __gshared PropertyInputBool mDefaultProperties;
-	@property final static PropertyInputBool DefaultProperties() { mixin(MGDPC!(PropertyInputBool, "PropertyInputBool UnrealEd.Default__PropertyInputBool")()); }
+	@property final static PropertyInputBool DefaultProperties() { mixin(MGDPC("PropertyInputBool", "PropertyInputBool UnrealEd.Default__PropertyInputBool")); }
 }

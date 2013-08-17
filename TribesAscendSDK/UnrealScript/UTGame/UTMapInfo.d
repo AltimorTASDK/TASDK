@@ -21,9 +21,9 @@ extern(C++) interface UTMapInfo : UDKMapInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMapInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTMapInfo")); }
 	private static __gshared UTMapInfo mDefaultProperties;
-	@property final static UTMapInfo DefaultProperties() { mixin(MGDPC!(UTMapInfo, "UTMapInfo UTGame.Default__UTMapInfo")()); }
+	@property final static UTMapInfo DefaultProperties() { mixin(MGDPC("UTMapInfo", "UTMapInfo UTGame.Default__UTMapInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,59 +44,59 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction VerifyMapExtent() { mixin(MGF!("mVerifyMapExtent", "Function UTGame.UTMapInfo.VerifyMapExtent")()); }
-			ScriptFunction FindObjectives() { mixin(MGF!("mFindObjectives", "Function UTGame.UTMapInfo.FindObjectives")()); }
-			ScriptFunction RenderLinks() { mixin(MGF!("mRenderLinks", "Function UTGame.UTMapInfo.RenderLinks")()); }
-			ScriptFunction RenderAdditionalInformation() { mixin(MGF!("mRenderAdditionalInformation", "Function UTGame.UTMapInfo.RenderAdditionalInformation")()); }
-			ScriptFunction UpdateNodes() { mixin(MGF!("mUpdateNodes", "Function UTGame.UTMapInfo.UpdateNodes")()); }
-			ScriptFunction DrawMap() { mixin(MGF!("mDrawMap", "Function UTGame.UTMapInfo.DrawMap")()); }
-			ScriptFunction AddKeyVehicle() { mixin(MGF!("mAddKeyVehicle", "Function UTGame.UTMapInfo.AddKeyVehicle")()); }
-			ScriptFunction DrawRotatedTile() { mixin(MGF!("mDrawRotatedTile", "Function UTGame.UTMapInfo.DrawRotatedTile")()); }
-			ScriptFunction DrawRotatedMaterialTile() { mixin(MGF!("mDrawRotatedMaterialTile", "Function UTGame.UTMapInfo.DrawRotatedMaterialTile")()); }
-			ScriptFunction UpdateHUDLocation() { mixin(MGF!("mUpdateHUDLocation", "Function UTGame.UTMapInfo.UpdateHUDLocation")()); }
-			ScriptFunction ChangeMapRotation() { mixin(MGF!("mChangeMapRotation", "Function UTGame.UTMapInfo.ChangeMapRotation")()); }
-			ScriptFunction DrawMapImage() { mixin(MGF!("mDrawMapImage", "Function UTGame.UTMapInfo.DrawMapImage")()); }
-			ScriptFunction GetActorHudLocation() { mixin(MGF!("mGetActorHudLocation", "Function UTGame.UTMapInfo.GetActorHudLocation")()); }
+			ScriptFunction VerifyMapExtent() { mixin(MGF("mVerifyMapExtent", "Function UTGame.UTMapInfo.VerifyMapExtent")); }
+			ScriptFunction FindObjectives() { mixin(MGF("mFindObjectives", "Function UTGame.UTMapInfo.FindObjectives")); }
+			ScriptFunction RenderLinks() { mixin(MGF("mRenderLinks", "Function UTGame.UTMapInfo.RenderLinks")); }
+			ScriptFunction RenderAdditionalInformation() { mixin(MGF("mRenderAdditionalInformation", "Function UTGame.UTMapInfo.RenderAdditionalInformation")); }
+			ScriptFunction UpdateNodes() { mixin(MGF("mUpdateNodes", "Function UTGame.UTMapInfo.UpdateNodes")); }
+			ScriptFunction DrawMap() { mixin(MGF("mDrawMap", "Function UTGame.UTMapInfo.DrawMap")); }
+			ScriptFunction AddKeyVehicle() { mixin(MGF("mAddKeyVehicle", "Function UTGame.UTMapInfo.AddKeyVehicle")); }
+			ScriptFunction DrawRotatedTile() { mixin(MGF("mDrawRotatedTile", "Function UTGame.UTMapInfo.DrawRotatedTile")); }
+			ScriptFunction DrawRotatedMaterialTile() { mixin(MGF("mDrawRotatedMaterialTile", "Function UTGame.UTMapInfo.DrawRotatedMaterialTile")); }
+			ScriptFunction UpdateHUDLocation() { mixin(MGF("mUpdateHUDLocation", "Function UTGame.UTMapInfo.UpdateHUDLocation")); }
+			ScriptFunction ChangeMapRotation() { mixin(MGF("mChangeMapRotation", "Function UTGame.UTMapInfo.ChangeMapRotation")); }
+			ScriptFunction DrawMapImage() { mixin(MGF("mDrawMapImage", "Function UTGame.UTMapInfo.DrawMapImage")); }
+			ScriptFunction GetActorHudLocation() { mixin(MGF("mGetActorHudLocation", "Function UTGame.UTMapInfo.GetActorHudLocation")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Texture MapTexture() { mixin(MGPC!("Texture", 76)()); }
-			Vector MapCenter() { mixin(MGPC!("Vector", 84)()); }
-			float MapExtent() { mixin(MGPC!("float", 96)()); }
-			float MapScale() { mixin(MGPC!("float", 216)()); }
-			int RecommendedPlayersMax() { mixin(MGPC!("int", 68)()); }
-			int RecommendedPlayersMin() { mixin(MGPC!("int", 64)()); }
-			ScriptArray!(UTGameObjective) Objectives() { mixin(MGPC!("ScriptArray!(UTGameObjective)", 112)()); }
-			ScriptArray!(UTGameObjective) Sensors() { mixin(MGPC!("ScriptArray!(UTGameObjective)", 252)()); }
-			UDKVehicle KeyVehicles() { mixin(MGPC!("UDKVehicle", 244)()); }
-			UIRoot.TextureCoordinates PlayerIconCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 228)()); }
-			MaterialInstanceConstant GreenIconMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 224)()); }
-			float ColorPercent() { mixin(MGPC!("float", 220)()); }
-			Vector CenterPos() { mixin(MGPC!("Vector", 204)()); }
-			float RadarRange() { mixin(MGPC!("float", 200)()); }
-			float RadarWidth() { mixin(MGPC!("float", 196)()); }
-			Vector ActualMapCenter() { mixin(MGPC!("Vector", 184)()); }
-			float UseableRadius() { mixin(MGPC!("float", 180)()); }
-			Material MapMaterialReference() { mixin(MGPC!("Material", 176)()); }
-			MaterialInstanceConstant MapMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 172)()); }
-			int CurrentMapRotYaw() { mixin(MGPC!("int", 168)()); }
-			Vector MapRotY() { mixin(MGPC!("Vector", 156)()); }
-			Vector MapRotX() { mixin(MGPC!("Vector", 144)()); }
-			Texture2D HUDIconsT() { mixin(MGPC!("Texture2D", 140)()); }
-			Material HudIcons() { mixin(MGPC!("Material", 136)()); }
-			Actor WatchedActor() { mixin(MGPC!("Actor", 132)()); }
-			Actor CurrentActor() { mixin(MGPC!("Actor", 128)()); }
-			float DefaultMapSize() { mixin(MGPC!("float", 108)()); }
-			float RotatingMiniMapRange() { mixin(MGPC!("float", 104)()); }
-			int MapYaw() { mixin(MGPC!("int", 100)()); }
-			float MapTextureYaw() { mixin(MGPC!("float", 80)()); }
-			UTMapMusicInfo MapMusicInfo() { mixin(MGPC!("UTMapMusicInfo", 72)()); }
+			Texture MapTexture() { mixin(MGPC("Texture", 76)); }
+			Vector MapCenter() { mixin(MGPC("Vector", 84)); }
+			float MapExtent() { mixin(MGPC("float", 96)); }
+			float MapScale() { mixin(MGPC("float", 216)); }
+			int RecommendedPlayersMax() { mixin(MGPC("int", 68)); }
+			int RecommendedPlayersMin() { mixin(MGPC("int", 64)); }
+			ScriptArray!(UTGameObjective) Objectives() { mixin(MGPC("ScriptArray!(UTGameObjective)", 112)); }
+			ScriptArray!(UTGameObjective) Sensors() { mixin(MGPC("ScriptArray!(UTGameObjective)", 252)); }
+			UDKVehicle KeyVehicles() { mixin(MGPC("UDKVehicle", 244)); }
+			UIRoot.TextureCoordinates PlayerIconCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 228)); }
+			MaterialInstanceConstant GreenIconMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 224)); }
+			float ColorPercent() { mixin(MGPC("float", 220)); }
+			Vector CenterPos() { mixin(MGPC("Vector", 204)); }
+			float RadarRange() { mixin(MGPC("float", 200)); }
+			float RadarWidth() { mixin(MGPC("float", 196)); }
+			Vector ActualMapCenter() { mixin(MGPC("Vector", 184)); }
+			float UseableRadius() { mixin(MGPC("float", 180)); }
+			Material MapMaterialReference() { mixin(MGPC("Material", 176)); }
+			MaterialInstanceConstant MapMaterialInstance() { mixin(MGPC("MaterialInstanceConstant", 172)); }
+			int CurrentMapRotYaw() { mixin(MGPC("int", 168)); }
+			Vector MapRotY() { mixin(MGPC("Vector", 156)); }
+			Vector MapRotX() { mixin(MGPC("Vector", 144)); }
+			Texture2D HUDIconsT() { mixin(MGPC("Texture2D", 140)); }
+			Material HudIcons() { mixin(MGPC("Material", 136)); }
+			Actor WatchedActor() { mixin(MGPC("Actor", 132)); }
+			Actor CurrentActor() { mixin(MGPC("Actor", 128)); }
+			float DefaultMapSize() { mixin(MGPC("float", 108)); }
+			float RotatingMiniMapRange() { mixin(MGPC("float", 104)); }
+			int MapYaw() { mixin(MGPC("int", 100)); }
+			float MapTextureYaw() { mixin(MGPC("float", 80)); }
+			UTMapMusicInfo MapMusicInfo() { mixin(MGPC("UTMapMusicInfo", 72)); }
 		}
-		bool bMapUpToDate() { mixin(MGBPC!(124, 0x1)()); }
-		bool bMapUpToDate(bool val) { mixin(MSBPC!(124, 0x1)()); }
+		bool bMapUpToDate() { mixin(MGBPC(124, 0x1)); }
+		bool bMapUpToDate(bool val) { mixin(MSBPC(124, 0x1)); }
 	}
 final:
 	void VerifyMapExtent()

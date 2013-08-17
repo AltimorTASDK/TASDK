@@ -12,9 +12,9 @@ extern(C++) interface TrSensorMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSensorMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSensorMessage")); }
 	private static __gshared TrSensorMessage mDefaultProperties;
-	@property final static TrSensorMessage DefaultProperties() { mixin(MGDPC!(TrSensorMessage, "TrSensorMessage TribesGame.Default__TrSensorMessage")()); }
+	@property final static TrSensorMessage DefaultProperties() { mixin(MGDPC("TrSensorMessage", "TrSensorMessage TribesGame.Default__TrSensorMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,14 +24,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrSensorMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrSensorMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrSensorMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrSensorMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue MotionSensorAlarmSound() { mixin(MGPC!("SoundCue", 112)()); }
-		ScriptString MotionSensorDetectedEnemy() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundCue MotionSensorAlarmSound() { mixin(MGPC("SoundCue", 112)); }
+		ScriptString MotionSensorDetectedEnemy() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

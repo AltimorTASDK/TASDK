@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionLensFlareSourceDistance : MaterialExpres
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionLensFlareSourceDistance")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionLensFlareSourceDistance")); }
 	private static __gshared MaterialExpressionLensFlareSourceDistance mDefaultProperties;
-	@property final static MaterialExpressionLensFlareSourceDistance DefaultProperties() { mixin(MGDPC!(MaterialExpressionLensFlareSourceDistance, "MaterialExpressionLensFlareSourceDistance Engine.Default__MaterialExpressionLensFlareSourceDistance")()); }
+	@property final static MaterialExpressionLensFlareSourceDistance DefaultProperties() { mixin(MGDPC("MaterialExpressionLensFlareSourceDistance", "MaterialExpressionLensFlareSourceDistance Engine.Default__MaterialExpressionLensFlareSourceDistance")); }
 }

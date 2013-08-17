@@ -9,9 +9,9 @@ extern(C++) interface TrServerSettingsInfo : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrServerSettingsInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrServerSettingsInfo")); }
 	private static __gshared TrServerSettingsInfo mDefaultProperties;
-	@property final static TrServerSettingsInfo DefaultProperties() { mixin(MGDPC!(TrServerSettingsInfo, "TrServerSettingsInfo TribesGame.Default__TrServerSettingsInfo")()); }
+	@property final static TrServerSettingsInfo DefaultProperties() { mixin(MGDPC("TrServerSettingsInfo", "TrServerSettingsInfo TribesGame.Default__TrServerSettingsInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,15 +28,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetClassCount() { mixin(MGF!("mGetClassCount", "Function TribesGame.TrServerSettingsInfo.GetClassCount")()); }
-			ScriptFunction IsCallinAllowed() { mixin(MGF!("mIsCallinAllowed", "Function TribesGame.TrServerSettingsInfo.IsCallinAllowed")()); }
-			ScriptFunction IsClassAllowed() { mixin(MGF!("mIsClassAllowed", "Function TribesGame.TrServerSettingsInfo.IsClassAllowed")()); }
-			ScriptFunction GetPropAsFloat() { mixin(MGF!("mGetPropAsFloat", "Function TribesGame.TrServerSettingsInfo.GetPropAsFloat")()); }
-			ScriptFunction GetPropAsInt() { mixin(MGF!("mGetPropAsInt", "Function TribesGame.TrServerSettingsInfo.GetPropAsInt")()); }
-			ScriptFunction GetPropAsString() { mixin(MGF!("mGetPropAsString", "Function TribesGame.TrServerSettingsInfo.GetPropAsString")()); }
-			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrServerSettingsInfo.ApplyServerSettings")()); }
-			ScriptFunction LoadServerSettings() { mixin(MGF!("mLoadServerSettings", "Function TribesGame.TrServerSettingsInfo.LoadServerSettings")()); }
-			ScriptFunction GetVehicleLimit() { mixin(MGF!("mGetVehicleLimit", "Function TribesGame.TrServerSettingsInfo.GetVehicleLimit")()); }
+			ScriptFunction GetClassCount() { mixin(MGF("mGetClassCount", "Function TribesGame.TrServerSettingsInfo.GetClassCount")); }
+			ScriptFunction IsCallinAllowed() { mixin(MGF("mIsCallinAllowed", "Function TribesGame.TrServerSettingsInfo.IsCallinAllowed")); }
+			ScriptFunction IsClassAllowed() { mixin(MGF("mIsClassAllowed", "Function TribesGame.TrServerSettingsInfo.IsClassAllowed")); }
+			ScriptFunction GetPropAsFloat() { mixin(MGF("mGetPropAsFloat", "Function TribesGame.TrServerSettingsInfo.GetPropAsFloat")); }
+			ScriptFunction GetPropAsInt() { mixin(MGF("mGetPropAsInt", "Function TribesGame.TrServerSettingsInfo.GetPropAsInt")); }
+			ScriptFunction GetPropAsString() { mixin(MGF("mGetPropAsString", "Function TribesGame.TrServerSettingsInfo.GetPropAsString")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF("mApplyServerSettings", "Function TribesGame.TrServerSettingsInfo.ApplyServerSettings")); }
+			ScriptFunction LoadServerSettings() { mixin(MGF("mLoadServerSettings", "Function TribesGame.TrServerSettingsInfo.LoadServerSettings")); }
+			ScriptFunction GetVehicleLimit() { mixin(MGF("mGetVehicleLimit", "Function TribesGame.TrServerSettingsInfo.GetVehicleLimit")); }
 		}
 	}
 	static struct Constants
@@ -1422,64 +1422,64 @@ public extern(D):
 	{
 		auto ref
 		{
-			int BaseDestructionLimit() { mixin(MGPC!("int", 508)()); }
-			int MaxSpeedWithFlagLight() { mixin(MGPC!("int", 692)()); }
-			int MaxSpeedWithFlagMedium() { mixin(MGPC!("int", 684)()); }
-			int MaxSpeedWithFlagHeavy() { mixin(MGPC!("int", 696)()); }
-			int DecelerationRateWithFlag() { mixin(MGPC!("int", 688)()); }
-			float fEnergyMultiplier() { mixin(MGPC!("float", 672)()); }
-			int RespawnTime() { mixin(MGPC!("int", 496)()); }
-			int TeamAssignType() { mixin(MGPC!("int", 504)()); }
-			int VehiclePrices() { mixin(MGPC!("int", 604)()); }
-			int FFKillLimit() { mixin(MGPC!("int", 512)()); }
-			int FFDamageLimit() { mixin(MGPC!("int", 516)()); }
-			int CallinPrices() { mixin(MGPC!("int", 628)()); }
-			float CallinBuildups() { mixin(MGPC!("float", 652)()); }
-			int CallinCooldowns() { mixin(MGPC!("int", 640)()); }
-			int TimeLimit() { mixin(MGPC!("int", 476)()); }
-			int OvertimeLimit() { mixin(MGPC!("int", 500)()); }
-			int WarmupTime() { mixin(MGPC!("int", 480)()); }
-			float fFriendlyFireDamageMultiplier() { mixin(MGPC!("float", 664)()); }
-			int ArenaRounds() { mixin(MGPC!("int", 492)()); }
-			int GameScores() { mixin(MGPC!("int", 528)()); }
-			int SpawnType() { mixin(MGPC!("int", 520)()); }
-			float fAoEDamageMultiplier() { mixin(MGPC!("float", 680)()); }
-			float fAoESizeMultiplier() { mixin(MGPC!("float", 676)()); }
-			float fVehicleHealthMultiplier() { mixin(MGPC!("float", 668)()); }
-			int CallinsDenied() { mixin(MGPC!("int", 624)()); }
-			int VehicleLimits() { mixin(MGPC!("int", 584)()); }
-			int ClassCounts() { mixin(MGPC!("int", 548)()); }
-			int MaxPlayers() { mixin(MGPC!("int", 488)()); }
-			int ScoreLimit() { mixin(MGPC!("int", 484)()); }
+			int BaseDestructionLimit() { mixin(MGPC("int", 508)); }
+			int MaxSpeedWithFlagLight() { mixin(MGPC("int", 692)); }
+			int MaxSpeedWithFlagMedium() { mixin(MGPC("int", 684)); }
+			int MaxSpeedWithFlagHeavy() { mixin(MGPC("int", 696)); }
+			int DecelerationRateWithFlag() { mixin(MGPC("int", 688)); }
+			float fEnergyMultiplier() { mixin(MGPC("float", 672)); }
+			int RespawnTime() { mixin(MGPC("int", 496)); }
+			int TeamAssignType() { mixin(MGPC("int", 504)); }
+			int VehiclePrices() { mixin(MGPC("int", 604)); }
+			int FFKillLimit() { mixin(MGPC("int", 512)); }
+			int FFDamageLimit() { mixin(MGPC("int", 516)); }
+			int CallinPrices() { mixin(MGPC("int", 628)); }
+			float CallinBuildups() { mixin(MGPC("float", 652)); }
+			int CallinCooldowns() { mixin(MGPC("int", 640)); }
+			int TimeLimit() { mixin(MGPC("int", 476)); }
+			int OvertimeLimit() { mixin(MGPC("int", 500)); }
+			int WarmupTime() { mixin(MGPC("int", 480)); }
+			float fFriendlyFireDamageMultiplier() { mixin(MGPC("float", 664)); }
+			int ArenaRounds() { mixin(MGPC("int", 492)); }
+			int GameScores() { mixin(MGPC("int", 528)); }
+			int SpawnType() { mixin(MGPC("int", 520)); }
+			float fAoEDamageMultiplier() { mixin(MGPC("float", 680)); }
+			float fAoESizeMultiplier() { mixin(MGPC("float", 676)); }
+			float fVehicleHealthMultiplier() { mixin(MGPC("float", 668)); }
+			int CallinsDenied() { mixin(MGPC("int", 624)); }
+			int VehicleLimits() { mixin(MGPC("int", 584)); }
+			int ClassCounts() { mixin(MGPC("int", 548)); }
+			int MaxPlayers() { mixin(MGPC("int", 488)); }
+			int ScoreLimit() { mixin(MGPC("int", 484)); }
 		}
-		bool bObjectiveUpgrades() { mixin(MGBPC!(524, 0x4)()); }
-		bool bObjectiveUpgrades(bool val) { mixin(MSBPC!(524, 0x4)()); }
-		bool bPreplacedObjectives() { mixin(MGBPC!(524, 0x20)()); }
-		bool bPreplacedObjectives(bool val) { mixin(MSBPC!(524, 0x20)()); }
-		bool bFriendlyFireDeployables() { mixin(MGBPC!(524, 0x100)()); }
-		bool bFriendlyFireDeployables(bool val) { mixin(MSBPC!(524, 0x100)()); }
-		bool bPoweredDeployables() { mixin(MGBPC!(524, 0x8)()); }
-		bool bPoweredDeployables(bool val) { mixin(MSBPC!(524, 0x8)()); }
-		bool bFriendlyFireBaseAssets() { mixin(MGBPC!(524, 0x80)()); }
-		bool bFriendlyFireBaseAssets(bool val) { mixin(MSBPC!(524, 0x80)()); }
-		bool bSupplyDropAmmoOnly() { mixin(MGBPC!(524, 0x200)()); }
-		bool bSupplyDropAmmoOnly(bool val) { mixin(MSBPC!(524, 0x200)()); }
-		bool bTeamCredits() { mixin(MGBPC!(524, 0x800)()); }
-		bool bTeamCredits(bool val) { mixin(MSBPC!(524, 0x800)()); }
-		bool bAutoBalanceInGame() { mixin(MGBPC!(524, 0x2)()); }
-		bool bAutoBalanceInGame(bool val) { mixin(MSBPC!(524, 0x2)()); }
-		bool bCTFBlitzAllFlagsMove() { mixin(MGBPC!(524, 0x2000)()); }
-		bool bCTFBlitzAllFlagsMove(bool val) { mixin(MSBPC!(524, 0x2000)()); }
-		bool bFriendlyFire() { mixin(MGBPC!(524, 0x1)()); }
-		bool bFriendlyFire(bool val) { mixin(MSBPC!(524, 0x1)()); }
-		bool bPoweredCallins() { mixin(MGBPC!(524, 0x400)()); }
-		bool bPoweredCallins(bool val) { mixin(MSBPC!(524, 0x400)()); }
-		bool bSkiEnabled() { mixin(MGBPC!(524, 0x1000)()); }
-		bool bSkiEnabled(bool val) { mixin(MSBPC!(524, 0x1000)()); }
-		bool bGeneratorAutoRegen() { mixin(MGBPC!(524, 0x10)()); }
-		bool bGeneratorAutoRegen(bool val) { mixin(MSBPC!(524, 0x10)()); }
-		bool bGenDestroyable() { mixin(MGBPC!(524, 0x40)()); }
-		bool bGenDestroyable(bool val) { mixin(MSBPC!(524, 0x40)()); }
+		bool bObjectiveUpgrades() { mixin(MGBPC(524, 0x4)); }
+		bool bObjectiveUpgrades(bool val) { mixin(MSBPC(524, 0x4)); }
+		bool bPreplacedObjectives() { mixin(MGBPC(524, 0x20)); }
+		bool bPreplacedObjectives(bool val) { mixin(MSBPC(524, 0x20)); }
+		bool bFriendlyFireDeployables() { mixin(MGBPC(524, 0x100)); }
+		bool bFriendlyFireDeployables(bool val) { mixin(MSBPC(524, 0x100)); }
+		bool bPoweredDeployables() { mixin(MGBPC(524, 0x8)); }
+		bool bPoweredDeployables(bool val) { mixin(MSBPC(524, 0x8)); }
+		bool bFriendlyFireBaseAssets() { mixin(MGBPC(524, 0x80)); }
+		bool bFriendlyFireBaseAssets(bool val) { mixin(MSBPC(524, 0x80)); }
+		bool bSupplyDropAmmoOnly() { mixin(MGBPC(524, 0x200)); }
+		bool bSupplyDropAmmoOnly(bool val) { mixin(MSBPC(524, 0x200)); }
+		bool bTeamCredits() { mixin(MGBPC(524, 0x800)); }
+		bool bTeamCredits(bool val) { mixin(MSBPC(524, 0x800)); }
+		bool bAutoBalanceInGame() { mixin(MGBPC(524, 0x2)); }
+		bool bAutoBalanceInGame(bool val) { mixin(MSBPC(524, 0x2)); }
+		bool bCTFBlitzAllFlagsMove() { mixin(MGBPC(524, 0x2000)); }
+		bool bCTFBlitzAllFlagsMove(bool val) { mixin(MSBPC(524, 0x2000)); }
+		bool bFriendlyFire() { mixin(MGBPC(524, 0x1)); }
+		bool bFriendlyFire(bool val) { mixin(MSBPC(524, 0x1)); }
+		bool bPoweredCallins() { mixin(MGBPC(524, 0x400)); }
+		bool bPoweredCallins(bool val) { mixin(MSBPC(524, 0x400)); }
+		bool bSkiEnabled() { mixin(MGBPC(524, 0x1000)); }
+		bool bSkiEnabled(bool val) { mixin(MSBPC(524, 0x1000)); }
+		bool bGeneratorAutoRegen() { mixin(MGBPC(524, 0x10)); }
+		bool bGeneratorAutoRegen(bool val) { mixin(MSBPC(524, 0x10)); }
+		bool bGenDestroyable() { mixin(MGBPC(524, 0x40)); }
+		bool bGenDestroyable(bool val) { mixin(MSBPC(524, 0x40)); }
 	}
 final:
 	int GetClassCount(TrObject.TrClassType ClassType)

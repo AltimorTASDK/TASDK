@@ -10,9 +10,9 @@ extern(C++) interface UIDataStore_OnlineStats : UIDataStore_Remote
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_OnlineStats")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStore_OnlineStats")); }
 	private static __gshared UIDataStore_OnlineStats mDefaultProperties;
-	@property final static UIDataStore_OnlineStats DefaultProperties() { mixin(MGDPC!(UIDataStore_OnlineStats, "UIDataStore_OnlineStats Engine.Default__UIDataStore_OnlineStats")()); }
+	@property final static UIDataStore_OnlineStats DefaultProperties() { mixin(MGDPC("UIDataStore_OnlineStats", "UIDataStore_OnlineStats Engine.Default__UIDataStore_OnlineStats")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,12 +26,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.UIDataStore_OnlineStats.Init")()); }
-			ScriptFunction SetStatsReadInfo() { mixin(MGF!("mSetStatsReadInfo", "Function Engine.UIDataStore_OnlineStats.SetStatsReadInfo")()); }
-			ScriptFunction RefreshStats() { mixin(MGF!("mRefreshStats", "Function Engine.UIDataStore_OnlineStats.RefreshStats")()); }
-			ScriptFunction ShowGamercard() { mixin(MGF!("mShowGamercard", "Function Engine.UIDataStore_OnlineStats.ShowGamercard")()); }
-			ScriptFunction OnReadComplete() { mixin(MGF!("mOnReadComplete", "Function Engine.UIDataStore_OnlineStats.OnReadComplete")()); }
-			ScriptFunction SortResultsByRank() { mixin(MGF!("mSortResultsByRank", "Function Engine.UIDataStore_OnlineStats.SortResultsByRank")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.UIDataStore_OnlineStats.Init")); }
+			ScriptFunction SetStatsReadInfo() { mixin(MGF("mSetStatsReadInfo", "Function Engine.UIDataStore_OnlineStats.SetStatsReadInfo")); }
+			ScriptFunction RefreshStats() { mixin(MGF("mRefreshStats", "Function Engine.UIDataStore_OnlineStats.RefreshStats")); }
+			ScriptFunction ShowGamercard() { mixin(MGF("mShowGamercard", "Function Engine.UIDataStore_OnlineStats.ShowGamercard")); }
+			ScriptFunction OnReadComplete() { mixin(MGF("mOnReadComplete", "Function Engine.UIDataStore_OnlineStats.OnReadComplete")); }
+			ScriptFunction SortResultsByRank() { mixin(MGF("mSortResultsByRank", "Function Engine.UIDataStore_OnlineStats.SortResultsByRank")); }
 		}
 	}
 	enum EStatsFetchType : ubyte
@@ -47,11 +47,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineStats.RankMetaData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataStore_OnlineStats.RankMetaData")); }
 		@property final auto ref
 		{
-			ScriptString RankColumnName() { mixin(MGPS!("ScriptString", 8)()); }
-			ScriptName RankName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptString RankColumnName() { mixin(MGPS("ScriptString", 8)); }
+			ScriptName RankName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct PlayerNickMetaData
@@ -59,27 +59,27 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineStats.PlayerNickMetaData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataStore_OnlineStats.PlayerNickMetaData")); }
 		@property final auto ref
 		{
-			ScriptString PlayerNickColumnName() { mixin(MGPS!("ScriptString", 8)()); }
-			ScriptName PlayerNickName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptString PlayerNickColumnName() { mixin(MGPS("ScriptString", 8)); }
+			ScriptName PlayerNickName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptClass) StatsReadClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 128)()); }
-		ScriptArray!(OnlineStatsRead) StatsReadObjects() { mixin(MGPC!("ScriptArray!(OnlineStatsRead)", 196)()); }
+		ScriptArray!(ScriptClass) StatsReadClasses() { mixin(MGPC("ScriptArray!(ScriptClass)", 128)); }
+		ScriptArray!(OnlineStatsRead) StatsReadObjects() { mixin(MGPC("ScriptArray!(OnlineStatsRead)", 196)); }
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterface'!
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'StatsInterface'!
-		UIDataStore_OnlineStats.EStatsFetchType CurrentReadType() { mixin(MGPC!("UIDataStore_OnlineStats.EStatsFetchType", 212)()); }
-		OnlineStatsRead StatsRead() { mixin(MGPC!("OnlineStatsRead", 208)()); }
-		ScriptName TotalRowsName() { mixin(MGPC!("ScriptName", 188)()); }
-		UIDataStore_OnlineStats.RankMetaData RankNameMetaData() { mixin(MGPC!("UIDataStore_OnlineStats.RankMetaData", 168)()); }
-		UIDataStore_OnlineStats.PlayerNickMetaData PlayerNickData() { mixin(MGPC!("UIDataStore_OnlineStats.PlayerNickMetaData", 148)()); }
-		ScriptName StatsReadName() { mixin(MGPC!("ScriptName", 140)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
+		UIDataStore_OnlineStats.EStatsFetchType CurrentReadType() { mixin(MGPC("UIDataStore_OnlineStats.EStatsFetchType", 212)); }
+		OnlineStatsRead StatsRead() { mixin(MGPC("OnlineStatsRead", 208)); }
+		ScriptName TotalRowsName() { mixin(MGPC("ScriptName", 188)); }
+		UIDataStore_OnlineStats.RankMetaData RankNameMetaData() { mixin(MGPC("UIDataStore_OnlineStats.RankMetaData", 168)); }
+		UIDataStore_OnlineStats.PlayerNickMetaData PlayerNickData() { mixin(MGPC("UIDataStore_OnlineStats.PlayerNickMetaData", 148)); }
+		ScriptName StatsReadName() { mixin(MGPC("ScriptName", 140)); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 124)); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
 	}
 final:
 	void Init()

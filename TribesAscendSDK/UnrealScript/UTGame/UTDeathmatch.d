@@ -10,9 +10,9 @@ extern(C++) interface UTDeathmatch : UTGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDeathmatch")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDeathmatch")); }
 	private static __gshared UTDeathmatch mDefaultProperties;
-	@property final static UTDeathmatch DefaultProperties() { mixin(MGDPC!(UTDeathmatch, "UTDeathmatch UTGame.Default__UTDeathmatch")()); }
+	@property final static UTDeathmatch DefaultProperties() { mixin(MGDPC("UTDeathmatch", "UTDeathmatch UTGame.Default__UTDeathmatch")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction WantsPickups() { mixin(MGF!("mWantsPickups", "Function UTGame.UTDeathmatch.WantsPickups")()); }
-			ScriptFunction GetHandicapNeed() { mixin(MGF!("mGetHandicapNeed", "Function UTGame.UTDeathmatch.GetHandicapNeed")()); }
+			ScriptFunction WantsPickups() { mixin(MGF("mWantsPickups", "Function UTGame.UTDeathmatch.WantsPickups")); }
+			ScriptFunction GetHandicapNeed() { mixin(MGF("mGetHandicapNeed", "Function UTGame.UTDeathmatch.GetHandicapNeed")); }
 		}
 	}
 final:

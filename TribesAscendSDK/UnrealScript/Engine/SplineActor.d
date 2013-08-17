@@ -11,9 +11,9 @@ extern(C++) interface SplineActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SplineActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SplineActor")); }
 	private static __gshared SplineActor mDefaultProperties;
-	@property final static SplineActor DefaultProperties() { mixin(MGDPC!(SplineActor, "SplineActor Engine.Default__SplineActor")()); }
+	@property final static SplineActor DefaultProperties() { mixin(MGDPC("SplineActor", "SplineActor Engine.Default__SplineActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,22 +37,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetWorldSpaceTangent() { mixin(MGF!("mGetWorldSpaceTangent", "Function Engine.SplineActor.GetWorldSpaceTangent")()); }
-			ScriptFunction UpdateSplineComponents() { mixin(MGF!("mUpdateSplineComponents", "Function Engine.SplineActor.UpdateSplineComponents")()); }
-			ScriptFunction UpdateConnectedSplineComponents() { mixin(MGF!("mUpdateConnectedSplineComponents", "Function Engine.SplineActor.UpdateConnectedSplineComponents")()); }
-			ScriptFunction AddConnectionTo() { mixin(MGF!("mAddConnectionTo", "Function Engine.SplineActor.AddConnectionTo")()); }
-			ScriptFunction IsConnectedTo() { mixin(MGF!("mIsConnectedTo", "Function Engine.SplineActor.IsConnectedTo")()); }
-			ScriptFunction FindSplineComponentTo() { mixin(MGF!("mFindSplineComponentTo", "Function Engine.SplineActor.FindSplineComponentTo")()); }
-			ScriptFunction FindTargetForComponent() { mixin(MGF!("mFindTargetForComponent", "Function Engine.SplineActor.FindTargetForComponent")()); }
-			ScriptFunction BreakConnectionTo() { mixin(MGF!("mBreakConnectionTo", "Function Engine.SplineActor.BreakConnectionTo")()); }
-			ScriptFunction BreakAllConnections() { mixin(MGF!("mBreakAllConnections", "Function Engine.SplineActor.BreakAllConnections")()); }
-			ScriptFunction BreakAllConnectionsFrom() { mixin(MGF!("mBreakAllConnectionsFrom", "Function Engine.SplineActor.BreakAllConnectionsFrom")()); }
-			ScriptFunction GetRandomConnection() { mixin(MGF!("mGetRandomConnection", "Function Engine.SplineActor.GetRandomConnection")()); }
-			ScriptFunction GetBestConnectionInDirection() { mixin(MGF!("mGetBestConnectionInDirection", "Function Engine.SplineActor.GetBestConnectionInDirection")()); }
-			ScriptFunction FindSplinePathTo() { mixin(MGF!("mFindSplinePathTo", "Function Engine.SplineActor.FindSplinePathTo")()); }
-			ScriptFunction GetAllConnectedSplineActors() { mixin(MGF!("mGetAllConnectedSplineActors", "Function Engine.SplineActor.GetAllConnectedSplineActors")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.SplineActor.OnToggle")()); }
-			ScriptFunction OnToggleHidden() { mixin(MGF!("mOnToggleHidden", "Function Engine.SplineActor.OnToggleHidden")()); }
+			ScriptFunction GetWorldSpaceTangent() { mixin(MGF("mGetWorldSpaceTangent", "Function Engine.SplineActor.GetWorldSpaceTangent")); }
+			ScriptFunction UpdateSplineComponents() { mixin(MGF("mUpdateSplineComponents", "Function Engine.SplineActor.UpdateSplineComponents")); }
+			ScriptFunction UpdateConnectedSplineComponents() { mixin(MGF("mUpdateConnectedSplineComponents", "Function Engine.SplineActor.UpdateConnectedSplineComponents")); }
+			ScriptFunction AddConnectionTo() { mixin(MGF("mAddConnectionTo", "Function Engine.SplineActor.AddConnectionTo")); }
+			ScriptFunction IsConnectedTo() { mixin(MGF("mIsConnectedTo", "Function Engine.SplineActor.IsConnectedTo")); }
+			ScriptFunction FindSplineComponentTo() { mixin(MGF("mFindSplineComponentTo", "Function Engine.SplineActor.FindSplineComponentTo")); }
+			ScriptFunction FindTargetForComponent() { mixin(MGF("mFindTargetForComponent", "Function Engine.SplineActor.FindTargetForComponent")); }
+			ScriptFunction BreakConnectionTo() { mixin(MGF("mBreakConnectionTo", "Function Engine.SplineActor.BreakConnectionTo")); }
+			ScriptFunction BreakAllConnections() { mixin(MGF("mBreakAllConnections", "Function Engine.SplineActor.BreakAllConnections")); }
+			ScriptFunction BreakAllConnectionsFrom() { mixin(MGF("mBreakAllConnectionsFrom", "Function Engine.SplineActor.BreakAllConnectionsFrom")); }
+			ScriptFunction GetRandomConnection() { mixin(MGF("mGetRandomConnection", "Function Engine.SplineActor.GetRandomConnection")); }
+			ScriptFunction GetBestConnectionInDirection() { mixin(MGF("mGetBestConnectionInDirection", "Function Engine.SplineActor.GetBestConnectionInDirection")); }
+			ScriptFunction FindSplinePathTo() { mixin(MGF("mFindSplinePathTo", "Function Engine.SplineActor.FindSplinePathTo")); }
+			ScriptFunction GetAllConnectedSplineActors() { mixin(MGF("mGetAllConnectedSplineActors", "Function Engine.SplineActor.GetAllConnectedSplineActors")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.SplineActor.OnToggle")); }
+			ScriptFunction OnToggleHidden() { mixin(MGF("mOnToggleHidden", "Function Engine.SplineActor.OnToggleHidden")); }
 		}
 	}
 	struct SplineConnection
@@ -60,10 +60,10 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SplineActor.SplineConnection")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.SplineActor.SplineConnection")); }
 		@property final auto ref
 		{
-			SplineActor ConnectTo() { mixin(MGPS!("SplineActor", 4)()); }
+			SplineActor ConnectTo() { mixin(MGPS("SplineActor", 4)); }
 			// WARNING: Property 'SplineComponent' has the same name as a defined type!
 		}
 	}
@@ -71,21 +71,21 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SplineActor.SplineConnection) Connections() { mixin(MGPC!("ScriptArray!(SplineActor.SplineConnection)", 476)()); }
-			ScriptArray!(SplineActor) LinksFrom() { mixin(MGPC!("ScriptArray!(SplineActor)", 508)()); }
-			UObject.InterpCurveFloat SplineVelocityOverTime() { mixin(MGPC!("UObject.InterpCurveFloat", 540)()); }
-			int visitedWeight() { mixin(MGPC!("int", 536)()); }
-			int bestPathWeight() { mixin(MGPC!("int", 532)()); }
-			SplineActor previousPath() { mixin(MGPC!("SplineActor", 528)()); }
-			SplineActor prevOrdered() { mixin(MGPC!("SplineActor", 524)()); }
-			SplineActor nextOrdered() { mixin(MGPC!("SplineActor", 520)()); }
-			UObject.Color SplineColor() { mixin(MGPC!("UObject.Color", 500)()); }
-			Vector SplineActorTangent() { mixin(MGPC!("Vector", 488)()); }
+			ScriptArray!(SplineActor.SplineConnection) Connections() { mixin(MGPC("ScriptArray!(SplineActor.SplineConnection)", 476)); }
+			ScriptArray!(SplineActor) LinksFrom() { mixin(MGPC("ScriptArray!(SplineActor)", 508)); }
+			UObject.InterpCurveFloat SplineVelocityOverTime() { mixin(MGPC("UObject.InterpCurveFloat", 540)); }
+			int visitedWeight() { mixin(MGPC("int", 536)); }
+			int bestPathWeight() { mixin(MGPC("int", 532)); }
+			SplineActor previousPath() { mixin(MGPC("SplineActor", 528)); }
+			SplineActor prevOrdered() { mixin(MGPC("SplineActor", 524)); }
+			SplineActor nextOrdered() { mixin(MGPC("SplineActor", 520)); }
+			UObject.Color SplineColor() { mixin(MGPC("UObject.Color", 500)); }
+			Vector SplineActorTangent() { mixin(MGPC("Vector", 488)); }
 		}
-		bool bAlreadyVisited() { mixin(MGBPC!(504, 0x2)()); }
-		bool bAlreadyVisited(bool val) { mixin(MSBPC!(504, 0x2)()); }
-		bool bDisableDestination() { mixin(MGBPC!(504, 0x1)()); }
-		bool bDisableDestination(bool val) { mixin(MSBPC!(504, 0x1)()); }
+		bool bAlreadyVisited() { mixin(MGBPC(504, 0x2)); }
+		bool bAlreadyVisited(bool val) { mixin(MSBPC(504, 0x2)); }
+		bool bDisableDestination() { mixin(MGBPC(504, 0x1)); }
+		bool bDisableDestination(bool val) { mixin(MSBPC(504, 0x1)); }
 	}
 final:
 	Vector GetWorldSpaceTangent()

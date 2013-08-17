@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_Extras : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Extras")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Extras")); }
 	private static __gshared GFxTrPage_Extras mDefaultProperties;
-	@property final static GFxTrPage_Extras DefaultProperties() { mixin(MGDPC!(GFxTrPage_Extras, "GFxTrPage_Extras TribesGame.Default__GFxTrPage_Extras")()); }
+	@property final static GFxTrPage_Extras DefaultProperties() { mixin(MGDPC("GFxTrPage_Extras", "GFxTrPage_Extras TribesGame.Default__GFxTrPage_Extras")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,28 +25,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Extras.Initialize")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Extras.ShowModel")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Extras.SpecialAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_Extras.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_Extras.PopupComplete")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_Extras.Initialize")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_Extras.ShowModel")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_Extras.SpecialAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_Extras.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_Extras.PopupComplete")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString PromoPopupTitle() { mixin(MGPC!("ScriptString", 404)()); }
-			ScriptString C1P3() { mixin(MGPC!("ScriptString", 392)()); }
-			ScriptString C1P2() { mixin(MGPC!("ScriptString", 380)()); }
-			ScriptString C1P1() { mixin(MGPC!("ScriptString", 368)()); }
-			int CheatCodeAction() { mixin(MGPC!("int", 360)()); }
-			int ClaimPromotionAction() { mixin(MGPC!("int", 356)()); }
+			ScriptString PromoPopupTitle() { mixin(MGPC("ScriptString", 404)); }
+			ScriptString C1P3() { mixin(MGPC("ScriptString", 392)); }
+			ScriptString C1P2() { mixin(MGPC("ScriptString", 380)); }
+			ScriptString C1P1() { mixin(MGPC("ScriptString", 368)); }
+			int CheatCodeAction() { mixin(MGPC("int", 360)); }
+			int ClaimPromotionAction() { mixin(MGPC("int", 356)); }
 		}
-		bool bWaitingForClaimPromoPopup() { mixin(MGBPC!(364, 0x2)()); }
-		bool bWaitingForClaimPromoPopup(bool val) { mixin(MSBPC!(364, 0x2)()); }
-		bool bWaitingForCheatCodePopup() { mixin(MGBPC!(364, 0x1)()); }
-		bool bWaitingForCheatCodePopup(bool val) { mixin(MSBPC!(364, 0x1)()); }
+		bool bWaitingForClaimPromoPopup() { mixin(MGBPC(364, 0x2)); }
+		bool bWaitingForClaimPromoPopup(bool val) { mixin(MSBPC(364, 0x2)); }
+		bool bWaitingForCheatCodePopup() { mixin(MGBPC(364, 0x1)); }
+		bool bWaitingForCheatCodePopup(bool val) { mixin(MSBPC(364, 0x1)); }
 	}
 final:
 	void Initialize()

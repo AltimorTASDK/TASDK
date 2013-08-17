@@ -8,9 +8,9 @@ extern(C++) interface AISwitchablePylon : Pylon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AISwitchablePylon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AISwitchablePylon")); }
 	private static __gshared AISwitchablePylon mDefaultProperties;
-	@property final static AISwitchablePylon DefaultProperties() { mixin(MGDPC!(AISwitchablePylon, "AISwitchablePylon Engine.Default__AISwitchablePylon")()); }
+	@property final static AISwitchablePylon DefaultProperties() { mixin(MGDPC("AISwitchablePylon", "AISwitchablePylon Engine.Default__AISwitchablePylon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.AISwitchablePylon.PostBeginPlay")()); }
-			ScriptFunction SetEnabled() { mixin(MGF!("mSetEnabled", "Function Engine.AISwitchablePylon.SetEnabled")()); }
-			ScriptFunction IsEnabled() { mixin(MGF!("mIsEnabled", "Function Engine.AISwitchablePylon.IsEnabled")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.AISwitchablePylon.PostBeginPlay")); }
+			ScriptFunction SetEnabled() { mixin(MGF("mSetEnabled", "Function Engine.AISwitchablePylon.SetEnabled")); }
+			ScriptFunction IsEnabled() { mixin(MGF("mIsEnabled", "Function Engine.AISwitchablePylon.IsEnabled")); }
 		}
 	}
 	@property final
 	{
-		bool bOpen() { mixin(MGBPC!(832, 0x1)()); }
-		bool bOpen(bool val) { mixin(MSBPC!(832, 0x1)()); }
+		bool bOpen() { mixin(MGBPC(832, 0x1)); }
+		bool bOpen(bool val) { mixin(MSBPC(832, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

@@ -14,9 +14,9 @@ extern(C++) interface GameViewportClient : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameViewportClient")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.GameViewportClient")); }
 	private static __gshared GameViewportClient mDefaultProperties;
-	@property final static GameViewportClient DefaultProperties() { mixin(MGDPC!(GameViewportClient, "GameViewportClient Engine.Default__GameViewportClient")()); }
+	@property final static GameViewportClient DefaultProperties() { mixin(MGDPC("GameViewportClient", "GameViewportClient Engine.Default__GameViewportClient")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -74,56 +74,56 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ConsoleCommand() { mixin(MGF!("mConsoleCommand", "Function Engine.GameViewportClient.ConsoleCommand")()); }
-			ScriptFunction HandleInputKey() { mixin(MGF!("mHandleInputKey", "Function Engine.GameViewportClient.HandleInputKey")()); }
-			ScriptFunction HandleInputAxis() { mixin(MGF!("mHandleInputAxis", "Function Engine.GameViewportClient.HandleInputAxis")()); }
-			ScriptFunction HandleInputChar() { mixin(MGF!("mHandleInputChar", "Function Engine.GameViewportClient.HandleInputChar")()); }
-			ScriptFunction GetViewportSize() { mixin(MGF!("mGetViewportSize", "Function Engine.GameViewportClient.GetViewportSize")()); }
-			ScriptFunction IsFullScreenViewport() { mixin(MGF!("mIsFullScreenViewport", "Function Engine.GameViewportClient.IsFullScreenViewport")()); }
-			ScriptFunction ShouldForceFullscreenViewport() { mixin(MGF!("mShouldForceFullscreenViewport", "Function Engine.GameViewportClient.ShouldForceFullscreenViewport")()); }
-			ScriptFunction GetNumCustomInteractions() { mixin(MGF!("mGetNumCustomInteractions", "Function Engine.GameViewportClient.GetNumCustomInteractions")()); }
-			ScriptFunction GetCustomInteractionClass() { mixin(MGF!("mGetCustomInteractionClass", "Function Engine.GameViewportClient.GetCustomInteractionClass")()); }
-			ScriptFunction SetCustomInteractionObject() { mixin(MGF!("mSetCustomInteractionObject", "Function Engine.GameViewportClient.SetCustomInteractionObject")()); }
-			ScriptFunction CreatePlayer() { mixin(MGF!("mCreatePlayer", "Function Engine.GameViewportClient.CreatePlayer")()); }
-			ScriptFunction AddLocalPlayer() { mixin(MGF!("mAddLocalPlayer", "Function Engine.GameViewportClient.AddLocalPlayer")()); }
-			ScriptFunction RemoveLocalPlayer() { mixin(MGF!("mRemoveLocalPlayer", "Function Engine.GameViewportClient.RemoveLocalPlayer")()); }
-			ScriptFunction NotifyPlayerAdded() { mixin(MGF!("mNotifyPlayerAdded", "Function Engine.GameViewportClient.NotifyPlayerAdded")()); }
-			ScriptFunction RemovePlayer() { mixin(MGF!("mRemovePlayer", "Function Engine.GameViewportClient.RemovePlayer")()); }
-			ScriptFunction NotifyPlayerRemoved() { mixin(MGF!("mNotifyPlayerRemoved", "Function Engine.GameViewportClient.NotifyPlayerRemoved")()); }
-			ScriptFunction FindPlayerByControllerId() { mixin(MGF!("mFindPlayerByControllerId", "Function Engine.GameViewportClient.FindPlayerByControllerId")()); }
-			ScriptFunction CreateViewportConsole() { mixin(MGF!("mCreateViewportConsole", "Function Engine.GameViewportClient.CreateViewportConsole")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.GameViewportClient.Init")()); }
-			ScriptFunction CreateInitialPlayer() { mixin(MGF!("mCreateInitialPlayer", "Function Engine.GameViewportClient.CreateInitialPlayer")()); }
-			ScriptFunction InsertInteraction() { mixin(MGF!("mInsertInteraction", "Function Engine.GameViewportClient.InsertInteraction")()); }
-			ScriptFunction GameSessionEnded() { mixin(MGF!("mGameSessionEnded", "Function Engine.GameViewportClient.GameSessionEnded")()); }
-			ScriptFunction SetSplitscreenConfiguration() { mixin(MGF!("mSetSplitscreenConfiguration", "Function Engine.GameViewportClient.SetSplitscreenConfiguration")()); }
-			ScriptFunction GetSplitscreenConfiguration() { mixin(MGF!("mGetSplitscreenConfiguration", "Function Engine.GameViewportClient.GetSplitscreenConfiguration")()); }
-			ScriptFunction UpdateActiveSplitscreenType() { mixin(MGF!("mUpdateActiveSplitscreenType", "Function Engine.GameViewportClient.UpdateActiveSplitscreenType")()); }
-			ScriptFunction LayoutPlayers() { mixin(MGF!("mLayoutPlayers", "Function Engine.GameViewportClient.LayoutPlayers")()); }
-			ScriptFunction GetSubtitleRegion() { mixin(MGF!("mGetSubtitleRegion", "Function Engine.GameViewportClient.GetSubtitleRegion")()); }
-			ScriptFunction ConvertLocalPlayerToGamePlayerIndex() { mixin(MGF!("mConvertLocalPlayerToGamePlayerIndex", "Function Engine.GameViewportClient.ConvertLocalPlayerToGamePlayerIndex")()); }
-			ScriptFunction HasTopSafeZone() { mixin(MGF!("mHasTopSafeZone", "Function Engine.GameViewportClient.HasTopSafeZone")()); }
-			ScriptFunction HasBottomSafeZone() { mixin(MGF!("mHasBottomSafeZone", "Function Engine.GameViewportClient.HasBottomSafeZone")()); }
-			ScriptFunction HasLeftSafeZone() { mixin(MGF!("mHasLeftSafeZone", "Function Engine.GameViewportClient.HasLeftSafeZone")()); }
-			ScriptFunction HasRightSafeZone() { mixin(MGF!("mHasRightSafeZone", "Function Engine.GameViewportClient.HasRightSafeZone")()); }
-			ScriptFunction GetPixelSizeOfScreen() { mixin(MGF!("mGetPixelSizeOfScreen", "Function Engine.GameViewportClient.GetPixelSizeOfScreen")()); }
-			ScriptFunction CalculateSafeZoneValues() { mixin(MGF!("mCalculateSafeZoneValues", "Function Engine.GameViewportClient.CalculateSafeZoneValues")()); }
-			ScriptFunction CalculateDeadZoneForAllSides() { mixin(MGF!("mCalculateDeadZoneForAllSides", "Function Engine.GameViewportClient.CalculateDeadZoneForAllSides")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function Engine.GameViewportClient.Tick")()); }
-			ScriptFunction DrawTitleSafeArea() { mixin(MGF!("mDrawTitleSafeArea", "Function Engine.GameViewportClient.DrawTitleSafeArea")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function Engine.GameViewportClient.PostRender")()); }
-			ScriptFunction DisplayProgressMessage() { mixin(MGF!("mDisplayProgressMessage", "Function Engine.GameViewportClient.DisplayProgressMessage")()); }
-			ScriptFunction DrawTransition() { mixin(MGF!("mDrawTransition", "Function Engine.GameViewportClient.DrawTransition")()); }
-			ScriptFunction DrawTransitionMessage() { mixin(MGF!("mDrawTransitionMessage", "Function Engine.GameViewportClient.DrawTransitionMessage")()); }
-			ScriptFunction SetProgressMessage() { mixin(MGF!("mSetProgressMessage", "Function Engine.GameViewportClient.SetProgressMessage")()); }
-			ScriptFunction NotifyConnectionError() { mixin(MGF!("mNotifyConnectionError", "Function Engine.GameViewportClient.NotifyConnectionError")()); }
-			ScriptFunction SetProgressTime() { mixin(MGF!("mSetProgressTime", "Function Engine.GameViewportClient.SetProgressTime")()); }
-			ScriptFunction ClearProgressMessages() { mixin(MGF!("mClearProgressMessages", "Function Engine.GameViewportClient.ClearProgressMessages")()); }
-			ScriptFunction GetPlayerOwner() { mixin(MGF!("mGetPlayerOwner", "Function Engine.GameViewportClient.GetPlayerOwner")()); }
-			ScriptFunction FixupOwnerReferences() { mixin(MGF!("mFixupOwnerReferences", "Function Engine.GameViewportClient.FixupOwnerReferences")()); }
-			ScriptFunction OnPrimaryPlayerSwitch() { mixin(MGF!("mOnPrimaryPlayerSwitch", "Function Engine.GameViewportClient.OnPrimaryPlayerSwitch")()); }
-			ScriptFunction BecomePrimaryPlayer() { mixin(MGF!("mBecomePrimaryPlayer", "Function Engine.GameViewportClient.BecomePrimaryPlayer")()); }
-			ScriptFunction DebugSetUISystemEnabled() { mixin(MGF!("mDebugSetUISystemEnabled", "Function Engine.GameViewportClient.DebugSetUISystemEnabled")()); }
+			ScriptFunction ConsoleCommand() { mixin(MGF("mConsoleCommand", "Function Engine.GameViewportClient.ConsoleCommand")); }
+			ScriptFunction HandleInputKey() { mixin(MGF("mHandleInputKey", "Function Engine.GameViewportClient.HandleInputKey")); }
+			ScriptFunction HandleInputAxis() { mixin(MGF("mHandleInputAxis", "Function Engine.GameViewportClient.HandleInputAxis")); }
+			ScriptFunction HandleInputChar() { mixin(MGF("mHandleInputChar", "Function Engine.GameViewportClient.HandleInputChar")); }
+			ScriptFunction GetViewportSize() { mixin(MGF("mGetViewportSize", "Function Engine.GameViewportClient.GetViewportSize")); }
+			ScriptFunction IsFullScreenViewport() { mixin(MGF("mIsFullScreenViewport", "Function Engine.GameViewportClient.IsFullScreenViewport")); }
+			ScriptFunction ShouldForceFullscreenViewport() { mixin(MGF("mShouldForceFullscreenViewport", "Function Engine.GameViewportClient.ShouldForceFullscreenViewport")); }
+			ScriptFunction GetNumCustomInteractions() { mixin(MGF("mGetNumCustomInteractions", "Function Engine.GameViewportClient.GetNumCustomInteractions")); }
+			ScriptFunction GetCustomInteractionClass() { mixin(MGF("mGetCustomInteractionClass", "Function Engine.GameViewportClient.GetCustomInteractionClass")); }
+			ScriptFunction SetCustomInteractionObject() { mixin(MGF("mSetCustomInteractionObject", "Function Engine.GameViewportClient.SetCustomInteractionObject")); }
+			ScriptFunction CreatePlayer() { mixin(MGF("mCreatePlayer", "Function Engine.GameViewportClient.CreatePlayer")); }
+			ScriptFunction AddLocalPlayer() { mixin(MGF("mAddLocalPlayer", "Function Engine.GameViewportClient.AddLocalPlayer")); }
+			ScriptFunction RemoveLocalPlayer() { mixin(MGF("mRemoveLocalPlayer", "Function Engine.GameViewportClient.RemoveLocalPlayer")); }
+			ScriptFunction NotifyPlayerAdded() { mixin(MGF("mNotifyPlayerAdded", "Function Engine.GameViewportClient.NotifyPlayerAdded")); }
+			ScriptFunction RemovePlayer() { mixin(MGF("mRemovePlayer", "Function Engine.GameViewportClient.RemovePlayer")); }
+			ScriptFunction NotifyPlayerRemoved() { mixin(MGF("mNotifyPlayerRemoved", "Function Engine.GameViewportClient.NotifyPlayerRemoved")); }
+			ScriptFunction FindPlayerByControllerId() { mixin(MGF("mFindPlayerByControllerId", "Function Engine.GameViewportClient.FindPlayerByControllerId")); }
+			ScriptFunction CreateViewportConsole() { mixin(MGF("mCreateViewportConsole", "Function Engine.GameViewportClient.CreateViewportConsole")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.GameViewportClient.Init")); }
+			ScriptFunction CreateInitialPlayer() { mixin(MGF("mCreateInitialPlayer", "Function Engine.GameViewportClient.CreateInitialPlayer")); }
+			ScriptFunction InsertInteraction() { mixin(MGF("mInsertInteraction", "Function Engine.GameViewportClient.InsertInteraction")); }
+			ScriptFunction GameSessionEnded() { mixin(MGF("mGameSessionEnded", "Function Engine.GameViewportClient.GameSessionEnded")); }
+			ScriptFunction SetSplitscreenConfiguration() { mixin(MGF("mSetSplitscreenConfiguration", "Function Engine.GameViewportClient.SetSplitscreenConfiguration")); }
+			ScriptFunction GetSplitscreenConfiguration() { mixin(MGF("mGetSplitscreenConfiguration", "Function Engine.GameViewportClient.GetSplitscreenConfiguration")); }
+			ScriptFunction UpdateActiveSplitscreenType() { mixin(MGF("mUpdateActiveSplitscreenType", "Function Engine.GameViewportClient.UpdateActiveSplitscreenType")); }
+			ScriptFunction LayoutPlayers() { mixin(MGF("mLayoutPlayers", "Function Engine.GameViewportClient.LayoutPlayers")); }
+			ScriptFunction GetSubtitleRegion() { mixin(MGF("mGetSubtitleRegion", "Function Engine.GameViewportClient.GetSubtitleRegion")); }
+			ScriptFunction ConvertLocalPlayerToGamePlayerIndex() { mixin(MGF("mConvertLocalPlayerToGamePlayerIndex", "Function Engine.GameViewportClient.ConvertLocalPlayerToGamePlayerIndex")); }
+			ScriptFunction HasTopSafeZone() { mixin(MGF("mHasTopSafeZone", "Function Engine.GameViewportClient.HasTopSafeZone")); }
+			ScriptFunction HasBottomSafeZone() { mixin(MGF("mHasBottomSafeZone", "Function Engine.GameViewportClient.HasBottomSafeZone")); }
+			ScriptFunction HasLeftSafeZone() { mixin(MGF("mHasLeftSafeZone", "Function Engine.GameViewportClient.HasLeftSafeZone")); }
+			ScriptFunction HasRightSafeZone() { mixin(MGF("mHasRightSafeZone", "Function Engine.GameViewportClient.HasRightSafeZone")); }
+			ScriptFunction GetPixelSizeOfScreen() { mixin(MGF("mGetPixelSizeOfScreen", "Function Engine.GameViewportClient.GetPixelSizeOfScreen")); }
+			ScriptFunction CalculateSafeZoneValues() { mixin(MGF("mCalculateSafeZoneValues", "Function Engine.GameViewportClient.CalculateSafeZoneValues")); }
+			ScriptFunction CalculateDeadZoneForAllSides() { mixin(MGF("mCalculateDeadZoneForAllSides", "Function Engine.GameViewportClient.CalculateDeadZoneForAllSides")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function Engine.GameViewportClient.Tick")); }
+			ScriptFunction DrawTitleSafeArea() { mixin(MGF("mDrawTitleSafeArea", "Function Engine.GameViewportClient.DrawTitleSafeArea")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function Engine.GameViewportClient.PostRender")); }
+			ScriptFunction DisplayProgressMessage() { mixin(MGF("mDisplayProgressMessage", "Function Engine.GameViewportClient.DisplayProgressMessage")); }
+			ScriptFunction DrawTransition() { mixin(MGF("mDrawTransition", "Function Engine.GameViewportClient.DrawTransition")); }
+			ScriptFunction DrawTransitionMessage() { mixin(MGF("mDrawTransitionMessage", "Function Engine.GameViewportClient.DrawTransitionMessage")); }
+			ScriptFunction SetProgressMessage() { mixin(MGF("mSetProgressMessage", "Function Engine.GameViewportClient.SetProgressMessage")); }
+			ScriptFunction NotifyConnectionError() { mixin(MGF("mNotifyConnectionError", "Function Engine.GameViewportClient.NotifyConnectionError")); }
+			ScriptFunction SetProgressTime() { mixin(MGF("mSetProgressTime", "Function Engine.GameViewportClient.SetProgressTime")); }
+			ScriptFunction ClearProgressMessages() { mixin(MGF("mClearProgressMessages", "Function Engine.GameViewportClient.ClearProgressMessages")); }
+			ScriptFunction GetPlayerOwner() { mixin(MGF("mGetPlayerOwner", "Function Engine.GameViewportClient.GetPlayerOwner")); }
+			ScriptFunction FixupOwnerReferences() { mixin(MGF("mFixupOwnerReferences", "Function Engine.GameViewportClient.FixupOwnerReferences")); }
+			ScriptFunction OnPrimaryPlayerSwitch() { mixin(MGF("mOnPrimaryPlayerSwitch", "Function Engine.GameViewportClient.OnPrimaryPlayerSwitch")); }
+			ScriptFunction BecomePrimaryPlayer() { mixin(MGF("mBecomePrimaryPlayer", "Function Engine.GameViewportClient.BecomePrimaryPlayer")); }
+			ScriptFunction DebugSetUISystemEnabled() { mixin(MGF("mDebugSetUISystemEnabled", "Function Engine.GameViewportClient.DebugSetUISystemEnabled")); }
 		}
 	}
 	enum ESplitScreenType : ubyte
@@ -149,13 +149,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameViewportClient.TitleSafeZoneArea")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.GameViewportClient.TitleSafeZoneArea")); }
 		@property final auto ref
 		{
-			float MaxPercentX() { mixin(MGPS!("float", 0)()); }
-			float RecommendedPercentX() { mixin(MGPS!("float", 8)()); }
-			float MaxPercentY() { mixin(MGPS!("float", 4)()); }
-			float RecommendedPercentY() { mixin(MGPS!("float", 12)()); }
+			float MaxPercentX() { mixin(MGPS("float", 0)); }
+			float RecommendedPercentX() { mixin(MGPS("float", 8)); }
+			float MaxPercentY() { mixin(MGPS("float", 4)); }
+			float RecommendedPercentY() { mixin(MGPS("float", 12)); }
 		}
 	}
 	struct PerPlayerSplitscreenData
@@ -163,13 +163,13 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameViewportClient.PerPlayerSplitscreenData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.GameViewportClient.PerPlayerSplitscreenData")); }
 		@property final auto ref
 		{
-			float OriginY() { mixin(MGPS!("float", 12)()); }
-			float OriginX() { mixin(MGPS!("float", 8)()); }
-			float SizeY() { mixin(MGPS!("float", 4)()); }
-			float SizeX() { mixin(MGPS!("float", 0)()); }
+			float OriginY() { mixin(MGPS("float", 12)); }
+			float OriginX() { mixin(MGPS("float", 8)); }
+			float SizeY() { mixin(MGPS("float", 4)); }
+			float SizeX() { mixin(MGPS("float", 0)); }
 		}
 	}
 	struct SplitscreenData
@@ -177,77 +177,77 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameViewportClient.SplitscreenData")()); }
-		@property final auto ref ScriptArray!(GameViewportClient.PerPlayerSplitscreenData) PlayerData() { mixin(MGPS!("ScriptArray!(GameViewportClient.PerPlayerSplitscreenData)", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.GameViewportClient.SplitscreenData")); }
+		@property final auto ref ScriptArray!(GameViewportClient.PerPlayerSplitscreenData) PlayerData() { mixin(MGPS("ScriptArray!(GameViewportClient.PerPlayerSplitscreenData)", 0)); }
 	}
 	struct DebugDisplayProperty
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameViewportClient.DebugDisplayProperty")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.GameViewportClient.DebugDisplayProperty")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptName PropertyName() { mixin(MGPS!("ScriptName", 4)()); }
-				UObject Obj() { mixin(MGPS!("UObject", 0)()); }
+				ScriptName PropertyName() { mixin(MGPS("ScriptName", 4)); }
+				UObject Obj() { mixin(MGPS("UObject", 0)); }
 			}
-			bool bSpecialProperty() { mixin(MGBPS!(12, 0x1)()); }
-			bool bSpecialProperty(bool val) { mixin(MSBPS!(12, 0x1)()); }
+			bool bSpecialProperty() { mixin(MGBPS(12, 0x1)); }
+			bool bSpecialProperty(bool val) { mixin(MSBPS(12, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Console ViewportConsole() { mixin(MGPC!("Console", 96)()); }
-			UIInteraction UIController() { mixin(MGPC!("UIInteraction", 92)()); }
-			GameViewportClient.ESplitScreenType ActiveSplitscreenType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 201)()); }
-			GameViewportClient.ESplitScreenType DesiredSplitscreenType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 200)()); }
-			ScriptClass UIControllerClass() { mixin(MGPC!("ScriptClass", 88)()); }
-			ScriptArray!(Interaction) GlobalInteractions() { mixin(MGPC!("ScriptArray!(Interaction)", 76)()); }
-			GameViewportClient.ESplitScreenType Default2PSplitType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 202)()); }
-			GameViewportClient.ESplitScreenType Default3PSplitType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 203)()); }
-			ScriptArray!(GameViewportClient.SplitscreenData) SplitscreenInfo() { mixin(MGPC!("ScriptArray!(GameViewportClient.SplitscreenData)", 188)()); }
-			GameViewportClient.TitleSafeZoneArea TitleSafeZone() { mixin(MGPC!("GameViewportClient.TitleSafeZoneArea", 172)()); }
-			float ProgressTimeOut() { mixin(MGPC!("float", 228)()); }
-			float ProgressFadeTime() { mixin(MGPC!("float", 232)()); }
-			ScriptString ProgressMessage() { mixin(MGPC!("ScriptString", 204)()); }
-			ScriptString LoadingMessage() { mixin(MGPC!("ScriptString", 108)()); }
-			ScriptString SavingMessage() { mixin(MGPC!("ScriptString", 120)()); }
-			ScriptString ConnectingMessage() { mixin(MGPC!("ScriptString", 132)()); }
-			ScriptString PrecachingMessage() { mixin(MGPC!("ScriptString", 156)()); }
-			ScriptString PausedMessage() { mixin(MGPC!("ScriptString", 144)()); }
-			UObject.Pointer VfTable_FViewportClient() { mixin(MGPC!("UObject.Pointer", 60)()); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC!("UObject.Pointer", 64)()); }
-			UObject.Pointer Viewport() { mixin(MGPC!("UObject.Pointer", 68)()); }
-			UObject.Pointer ViewportFrame() { mixin(MGPC!("UObject.Pointer", 72)()); }
-			QWord ShowFlags() { mixin(MGPC!("QWord", 100)()); }
-			ScriptArray!(GameViewportClient.DebugDisplayProperty) DebugProperties() { mixin(MGPC!("ScriptArray!(GameViewportClient.DebugDisplayProperty)", 236)()); }
-			UObject.Pointer ScaleformInteraction() { mixin(MGPC!("UObject.Pointer", 248)()); }
+			Console ViewportConsole() { mixin(MGPC("Console", 96)); }
+			UIInteraction UIController() { mixin(MGPC("UIInteraction", 92)); }
+			GameViewportClient.ESplitScreenType ActiveSplitscreenType() { mixin(MGPC("GameViewportClient.ESplitScreenType", 201)); }
+			GameViewportClient.ESplitScreenType DesiredSplitscreenType() { mixin(MGPC("GameViewportClient.ESplitScreenType", 200)); }
+			ScriptClass UIControllerClass() { mixin(MGPC("ScriptClass", 88)); }
+			ScriptArray!(Interaction) GlobalInteractions() { mixin(MGPC("ScriptArray!(Interaction)", 76)); }
+			GameViewportClient.ESplitScreenType Default2PSplitType() { mixin(MGPC("GameViewportClient.ESplitScreenType", 202)); }
+			GameViewportClient.ESplitScreenType Default3PSplitType() { mixin(MGPC("GameViewportClient.ESplitScreenType", 203)); }
+			ScriptArray!(GameViewportClient.SplitscreenData) SplitscreenInfo() { mixin(MGPC("ScriptArray!(GameViewportClient.SplitscreenData)", 188)); }
+			GameViewportClient.TitleSafeZoneArea TitleSafeZone() { mixin(MGPC("GameViewportClient.TitleSafeZoneArea", 172)); }
+			float ProgressTimeOut() { mixin(MGPC("float", 228)); }
+			float ProgressFadeTime() { mixin(MGPC("float", 232)); }
+			ScriptString ProgressMessage() { mixin(MGPC("ScriptString", 204)); }
+			ScriptString LoadingMessage() { mixin(MGPC("ScriptString", 108)); }
+			ScriptString SavingMessage() { mixin(MGPC("ScriptString", 120)); }
+			ScriptString ConnectingMessage() { mixin(MGPC("ScriptString", 132)); }
+			ScriptString PrecachingMessage() { mixin(MGPC("ScriptString", 156)); }
+			ScriptString PausedMessage() { mixin(MGPC("ScriptString", 144)); }
+			UObject.Pointer VfTable_FViewportClient() { mixin(MGPC("UObject.Pointer", 60)); }
+			UObject.Pointer VfTable_FExec() { mixin(MGPC("UObject.Pointer", 64)); }
+			UObject.Pointer Viewport() { mixin(MGPC("UObject.Pointer", 68)); }
+			UObject.Pointer ViewportFrame() { mixin(MGPC("UObject.Pointer", 72)); }
+			QWord ShowFlags() { mixin(MGPC("QWord", 100)); }
+			ScriptArray!(GameViewportClient.DebugDisplayProperty) DebugProperties() { mixin(MGPC("ScriptArray!(GameViewportClient.DebugDisplayProperty)", 236)); }
+			UObject.Pointer ScaleformInteraction() { mixin(MGPC("UObject.Pointer", 248)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputKey__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputAxis__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputChar__Delegate'!
 		}
-		bool bDebugNoGFxUI() { mixin(MGBPC!(168, 0x80)()); }
-		bool bDebugNoGFxUI(bool val) { mixin(MSBPC!(168, 0x80)()); }
-		bool bShowTitleSafeZone() { mixin(MGBPC!(168, 0x1)()); }
-		bool bShowTitleSafeZone(bool val) { mixin(MSBPC!(168, 0x1)()); }
-		bool bDisplayingUIMouseCursor() { mixin(MGBPC!(168, 0x2)()); }
-		bool bDisplayingUIMouseCursor(bool val) { mixin(MSBPC!(168, 0x2)()); }
-		bool bUIMouseCaptureOverride() { mixin(MGBPC!(168, 0x4)()); }
-		bool bUIMouseCaptureOverride(bool val) { mixin(MSBPC!(168, 0x4)()); }
-		bool bOverrideDiffuseAndSpecular() { mixin(MGBPC!(168, 0x8)()); }
-		bool bOverrideDiffuseAndSpecular(bool val) { mixin(MSBPC!(168, 0x8)()); }
-		bool bIsPlayInEditorViewport() { mixin(MGBPC!(168, 0x10)()); }
-		bool bIsPlayInEditorViewport(bool val) { mixin(MSBPC!(168, 0x10)()); }
-		bool bShowSystemMouseCursor() { mixin(MGBPC!(168, 0x20)()); }
-		bool bShowSystemMouseCursor(bool val) { mixin(MSBPC!(168, 0x20)()); }
-		bool bDisableWorldRendering() { mixin(MGBPC!(168, 0x40)()); }
-		bool bDisableWorldRendering(bool val) { mixin(MSBPC!(168, 0x40)()); }
-		bool bUseHardwareCursorWhenWindowed() { mixin(MGBPC!(168, 0x100)()); }
-		bool bUseHardwareCursorWhenWindowed(bool val) { mixin(MSBPC!(168, 0x100)()); }
+		bool bDebugNoGFxUI() { mixin(MGBPC(168, 0x80)); }
+		bool bDebugNoGFxUI(bool val) { mixin(MSBPC(168, 0x80)); }
+		bool bShowTitleSafeZone() { mixin(MGBPC(168, 0x1)); }
+		bool bShowTitleSafeZone(bool val) { mixin(MSBPC(168, 0x1)); }
+		bool bDisplayingUIMouseCursor() { mixin(MGBPC(168, 0x2)); }
+		bool bDisplayingUIMouseCursor(bool val) { mixin(MSBPC(168, 0x2)); }
+		bool bUIMouseCaptureOverride() { mixin(MGBPC(168, 0x4)); }
+		bool bUIMouseCaptureOverride(bool val) { mixin(MSBPC(168, 0x4)); }
+		bool bOverrideDiffuseAndSpecular() { mixin(MGBPC(168, 0x8)); }
+		bool bOverrideDiffuseAndSpecular(bool val) { mixin(MSBPC(168, 0x8)); }
+		bool bIsPlayInEditorViewport() { mixin(MGBPC(168, 0x10)); }
+		bool bIsPlayInEditorViewport(bool val) { mixin(MSBPC(168, 0x10)); }
+		bool bShowSystemMouseCursor() { mixin(MGBPC(168, 0x20)); }
+		bool bShowSystemMouseCursor(bool val) { mixin(MSBPC(168, 0x20)); }
+		bool bDisableWorldRendering() { mixin(MGBPC(168, 0x40)); }
+		bool bDisableWorldRendering(bool val) { mixin(MSBPC(168, 0x40)); }
+		bool bUseHardwareCursorWhenWindowed() { mixin(MGBPC(168, 0x100)); }
+		bool bUseHardwareCursorWhenWindowed(bool val) { mixin(MSBPC(168, 0x100)); }
 	}
 final:
 	ScriptString ConsoleCommand(ScriptString Command)

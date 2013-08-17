@@ -8,7 +8,7 @@ extern(C++) interface UTAnimBlendBySlotActive : UDKAnimBlendBySlotActive
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAnimBlendBySlotActive")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAnimBlendBySlotActive")); }
 	private static __gshared UTAnimBlendBySlotActive mDefaultProperties;
-	@property final static UTAnimBlendBySlotActive DefaultProperties() { mixin(MGDPC!(UTAnimBlendBySlotActive, "UTAnimBlendBySlotActive UTGame.Default__UTAnimBlendBySlotActive")()); }
+	@property final static UTAnimBlendBySlotActive DefaultProperties() { mixin(MGDPC("UTAnimBlendBySlotActive", "UTAnimBlendBySlotActive UTGame.Default__UTAnimBlendBySlotActive")); }
 }

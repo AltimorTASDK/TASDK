@@ -14,9 +14,9 @@ extern(C++) interface TrMultiKillMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMultiKillMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrMultiKillMessage")); }
 	private static __gshared TrMultiKillMessage mDefaultProperties;
-	@property final static TrMultiKillMessage DefaultProperties() { mixin(MGDPC!(TrMultiKillMessage, "TrMultiKillMessage TribesGame.Default__TrMultiKillMessage")()); }
+	@property final static TrMultiKillMessage DefaultProperties() { mixin(MGDPC("TrMultiKillMessage", "TrMultiKillMessage TribesGame.Default__TrMultiKillMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,18 +30,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrMultiKillMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrMultiKillMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function TribesGame.TrMultiKillMessage.AnnouncementSound")()); }
-			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function TribesGame.TrMultiKillMessage.GetFontSize")()); }
-			ScriptFunction ShouldBeRemoved() { mixin(MGF!("mShouldBeRemoved", "Function TribesGame.TrMultiKillMessage.ShouldBeRemoved")()); }
-			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function TribesGame.TrMultiKillMessage.AddAnnouncement")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrMultiKillMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrMultiKillMessage.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function TribesGame.TrMultiKillMessage.AnnouncementSound")); }
+			ScriptFunction GetFontSize() { mixin(MGF("mGetFontSize", "Function TribesGame.TrMultiKillMessage.GetFontSize")); }
+			ScriptFunction ShouldBeRemoved() { mixin(MGF("mShouldBeRemoved", "Function TribesGame.TrMultiKillMessage.ShouldBeRemoved")); }
+			ScriptFunction AddAnnouncement() { mixin(MGF("mAddAnnouncement", "Function TribesGame.TrMultiKillMessage.AddAnnouncement")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundNodeWave KillSound() { mixin(MGPC!("SoundNodeWave", 160)()); }
-		ScriptString KillString() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundNodeWave KillSound() { mixin(MGPC("SoundNodeWave", 160)); }
+		ScriptString KillString() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

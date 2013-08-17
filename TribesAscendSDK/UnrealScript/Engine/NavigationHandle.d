@@ -15,9 +15,9 @@ extern(C++) interface NavigationHandle : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavigationHandle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavigationHandle")); }
 	private static __gshared NavigationHandle mDefaultProperties;
-	@property final static NavigationHandle DefaultProperties() { mixin(MGDPC!(NavigationHandle, "NavigationHandle Engine.Default__NavigationHandle")()); }
+	@property final static NavigationHandle DefaultProperties() { mixin(MGDPC("NavigationHandle", "NavigationHandle Engine.Default__NavigationHandle")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -61,42 +61,42 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClearConstraints() { mixin(MGF!("mClearConstraints", "Function Engine.NavigationHandle.ClearConstraints")()); }
-			ScriptFunction AddPathConstraint() { mixin(MGF!("mAddPathConstraint", "Function Engine.NavigationHandle.AddPathConstraint")()); }
-			ScriptFunction AddGoalEvaluator() { mixin(MGF!("mAddGoalEvaluator", "Function Engine.NavigationHandle.AddGoalEvaluator")()); }
-			ScriptFunction CreatePathConstraint() { mixin(MGF!("mCreatePathConstraint", "Function Engine.NavigationHandle.CreatePathConstraint")()); }
-			ScriptFunction CreatePathGoalEvaluator() { mixin(MGF!("mCreatePathGoalEvaluator", "Function Engine.NavigationHandle.CreatePathGoalEvaluator")()); }
-			ScriptFunction GetPathCacheLength() { mixin(MGF!("mGetPathCacheLength", "Function Engine.NavigationHandle.GetPathCacheLength")()); }
-			ScriptFunction PathCache_Empty() { mixin(MGF!("mPathCache_Empty", "Function Engine.NavigationHandle.PathCache_Empty")()); }
-			ScriptFunction PathCache_GetGoalPoint() { mixin(MGF!("mPathCache_GetGoalPoint", "Function Engine.NavigationHandle.PathCache_GetGoalPoint")()); }
-			ScriptFunction PathCache_RemoveIndex() { mixin(MGF!("mPathCache_RemoveIndex", "Function Engine.NavigationHandle.PathCache_RemoveIndex")()); }
-			ScriptFunction GetBestUnfinishedPathPoint() { mixin(MGF!("mGetBestUnfinishedPathPoint", "Function Engine.NavigationHandle.GetBestUnfinishedPathPoint")()); }
-			ScriptFunction FindPylon() { mixin(MGF!("mFindPylon", "Function Engine.NavigationHandle.FindPylon")()); }
-			ScriptFunction GetPylonFromPos() { mixin(MGF!("mGetPylonFromPos", "Function Engine.NavigationHandle.GetPylonFromPos")()); }
-			ScriptFunction GetNextMoveLocation() { mixin(MGF!("mGetNextMoveLocation", "Function Engine.NavigationHandle.GetNextMoveLocation")()); }
-			ScriptFunction SetFinalDestination() { mixin(MGF!("mSetFinalDestination", "Function Engine.NavigationHandle.SetFinalDestination")()); }
-			ScriptFunction ComputeValidFinalDestination() { mixin(MGF!("mComputeValidFinalDestination", "Function Engine.NavigationHandle.ComputeValidFinalDestination")()); }
-			ScriptFunction FindPath() { mixin(MGF!("mFindPath", "Function Engine.NavigationHandle.FindPath")()); }
-			ScriptFunction SuggestMovePreparation() { mixin(MGF!("mSuggestMovePreparation", "Function Engine.NavigationHandle.SuggestMovePreparation")()); }
-			ScriptFunction ObstacleLineCheck() { mixin(MGF!("mObstacleLineCheck", "Function Engine.NavigationHandle.ObstacleLineCheck")()); }
-			ScriptFunction ObstaclePointCheck() { mixin(MGF!("mObstaclePointCheck", "Function Engine.NavigationHandle.ObstaclePointCheck")()); }
-			ScriptFunction LineCheck() { mixin(MGF!("mLineCheck", "Function Engine.NavigationHandle.LineCheck")()); }
-			ScriptFunction PointCheck() { mixin(MGF!("mPointCheck", "Function Engine.NavigationHandle.PointCheck")()); }
-			ScriptFunction PointReachable() { mixin(MGF!("mPointReachable", "Function Engine.NavigationHandle.PointReachable")()); }
-			ScriptFunction ActorReachable() { mixin(MGF!("mActorReachable", "Function Engine.NavigationHandle.ActorReachable")()); }
-			ScriptFunction DrawPathCache() { mixin(MGF!("mDrawPathCache", "Function Engine.NavigationHandle.DrawPathCache")()); }
-			ScriptFunction GetCurrentEdgeDebugText() { mixin(MGF!("mGetCurrentEdgeDebugText", "Function Engine.NavigationHandle.GetCurrentEdgeDebugText")()); }
-			ScriptFunction ClearCurrentEdge() { mixin(MGF!("mClearCurrentEdge", "Function Engine.NavigationHandle.ClearCurrentEdge")()); }
-			ScriptFunction GetCurrentEdgeType() { mixin(MGF!("mGetCurrentEdgeType", "Function Engine.NavigationHandle.GetCurrentEdgeType")()); }
-			ScriptFunction GetAllPolyCentersWithinBounds() { mixin(MGF!("mGetAllPolyCentersWithinBounds", "Function Engine.NavigationHandle.GetAllPolyCentersWithinBounds")()); }
-			ScriptFunction GetValidPositionsForBox() { mixin(MGF!("mGetValidPositionsForBox", "Function Engine.NavigationHandle.GetValidPositionsForBox")()); }
-			ScriptFunction LimitPathCacheDistance() { mixin(MGF!("mLimitPathCacheDistance", "Function Engine.NavigationHandle.LimitPathCacheDistance")()); }
-			ScriptFunction IsAnchorInescapable() { mixin(MGF!("mIsAnchorInescapable", "Function Engine.NavigationHandle.IsAnchorInescapable")()); }
-			ScriptFunction GetFirstMoveLocation() { mixin(MGF!("mGetFirstMoveLocation", "Function Engine.NavigationHandle.GetFirstMoveLocation")()); }
-			ScriptFunction CalculatePathDistance() { mixin(MGF!("mCalculatePathDistance", "Function Engine.NavigationHandle.CalculatePathDistance")()); }
-			ScriptFunction MoveToDesiredHeightAboveMesh() { mixin(MGF!("mMoveToDesiredHeightAboveMesh", "Function Engine.NavigationHandle.MoveToDesiredHeightAboveMesh")()); }
-			ScriptFunction PopulatePathfindingParamCache() { mixin(MGF!("mPopulatePathfindingParamCache", "Function Engine.NavigationHandle.PopulatePathfindingParamCache")()); }
-			ScriptFunction GetAllCoverSlotsInRadius() { mixin(MGF!("mGetAllCoverSlotsInRadius", "Function Engine.NavigationHandle.GetAllCoverSlotsInRadius")()); }
+			ScriptFunction ClearConstraints() { mixin(MGF("mClearConstraints", "Function Engine.NavigationHandle.ClearConstraints")); }
+			ScriptFunction AddPathConstraint() { mixin(MGF("mAddPathConstraint", "Function Engine.NavigationHandle.AddPathConstraint")); }
+			ScriptFunction AddGoalEvaluator() { mixin(MGF("mAddGoalEvaluator", "Function Engine.NavigationHandle.AddGoalEvaluator")); }
+			ScriptFunction CreatePathConstraint() { mixin(MGF("mCreatePathConstraint", "Function Engine.NavigationHandle.CreatePathConstraint")); }
+			ScriptFunction CreatePathGoalEvaluator() { mixin(MGF("mCreatePathGoalEvaluator", "Function Engine.NavigationHandle.CreatePathGoalEvaluator")); }
+			ScriptFunction GetPathCacheLength() { mixin(MGF("mGetPathCacheLength", "Function Engine.NavigationHandle.GetPathCacheLength")); }
+			ScriptFunction PathCache_Empty() { mixin(MGF("mPathCache_Empty", "Function Engine.NavigationHandle.PathCache_Empty")); }
+			ScriptFunction PathCache_GetGoalPoint() { mixin(MGF("mPathCache_GetGoalPoint", "Function Engine.NavigationHandle.PathCache_GetGoalPoint")); }
+			ScriptFunction PathCache_RemoveIndex() { mixin(MGF("mPathCache_RemoveIndex", "Function Engine.NavigationHandle.PathCache_RemoveIndex")); }
+			ScriptFunction GetBestUnfinishedPathPoint() { mixin(MGF("mGetBestUnfinishedPathPoint", "Function Engine.NavigationHandle.GetBestUnfinishedPathPoint")); }
+			ScriptFunction FindPylon() { mixin(MGF("mFindPylon", "Function Engine.NavigationHandle.FindPylon")); }
+			ScriptFunction GetPylonFromPos() { mixin(MGF("mGetPylonFromPos", "Function Engine.NavigationHandle.GetPylonFromPos")); }
+			ScriptFunction GetNextMoveLocation() { mixin(MGF("mGetNextMoveLocation", "Function Engine.NavigationHandle.GetNextMoveLocation")); }
+			ScriptFunction SetFinalDestination() { mixin(MGF("mSetFinalDestination", "Function Engine.NavigationHandle.SetFinalDestination")); }
+			ScriptFunction ComputeValidFinalDestination() { mixin(MGF("mComputeValidFinalDestination", "Function Engine.NavigationHandle.ComputeValidFinalDestination")); }
+			ScriptFunction FindPath() { mixin(MGF("mFindPath", "Function Engine.NavigationHandle.FindPath")); }
+			ScriptFunction SuggestMovePreparation() { mixin(MGF("mSuggestMovePreparation", "Function Engine.NavigationHandle.SuggestMovePreparation")); }
+			ScriptFunction ObstacleLineCheck() { mixin(MGF("mObstacleLineCheck", "Function Engine.NavigationHandle.ObstacleLineCheck")); }
+			ScriptFunction ObstaclePointCheck() { mixin(MGF("mObstaclePointCheck", "Function Engine.NavigationHandle.ObstaclePointCheck")); }
+			ScriptFunction LineCheck() { mixin(MGF("mLineCheck", "Function Engine.NavigationHandle.LineCheck")); }
+			ScriptFunction PointCheck() { mixin(MGF("mPointCheck", "Function Engine.NavigationHandle.PointCheck")); }
+			ScriptFunction PointReachable() { mixin(MGF("mPointReachable", "Function Engine.NavigationHandle.PointReachable")); }
+			ScriptFunction ActorReachable() { mixin(MGF("mActorReachable", "Function Engine.NavigationHandle.ActorReachable")); }
+			ScriptFunction DrawPathCache() { mixin(MGF("mDrawPathCache", "Function Engine.NavigationHandle.DrawPathCache")); }
+			ScriptFunction GetCurrentEdgeDebugText() { mixin(MGF("mGetCurrentEdgeDebugText", "Function Engine.NavigationHandle.GetCurrentEdgeDebugText")); }
+			ScriptFunction ClearCurrentEdge() { mixin(MGF("mClearCurrentEdge", "Function Engine.NavigationHandle.ClearCurrentEdge")); }
+			ScriptFunction GetCurrentEdgeType() { mixin(MGF("mGetCurrentEdgeType", "Function Engine.NavigationHandle.GetCurrentEdgeType")); }
+			ScriptFunction GetAllPolyCentersWithinBounds() { mixin(MGF("mGetAllPolyCentersWithinBounds", "Function Engine.NavigationHandle.GetAllPolyCentersWithinBounds")); }
+			ScriptFunction GetValidPositionsForBox() { mixin(MGF("mGetValidPositionsForBox", "Function Engine.NavigationHandle.GetValidPositionsForBox")); }
+			ScriptFunction LimitPathCacheDistance() { mixin(MGF("mLimitPathCacheDistance", "Function Engine.NavigationHandle.LimitPathCacheDistance")); }
+			ScriptFunction IsAnchorInescapable() { mixin(MGF("mIsAnchorInescapable", "Function Engine.NavigationHandle.IsAnchorInescapable")); }
+			ScriptFunction GetFirstMoveLocation() { mixin(MGF("mGetFirstMoveLocation", "Function Engine.NavigationHandle.GetFirstMoveLocation")); }
+			ScriptFunction CalculatePathDistance() { mixin(MGF("mCalculatePathDistance", "Function Engine.NavigationHandle.CalculatePathDistance")); }
+			ScriptFunction MoveToDesiredHeightAboveMesh() { mixin(MGF("mMoveToDesiredHeightAboveMesh", "Function Engine.NavigationHandle.MoveToDesiredHeightAboveMesh")); }
+			ScriptFunction PopulatePathfindingParamCache() { mixin(MGF("mPopulatePathfindingParamCache", "Function Engine.NavigationHandle.PopulatePathfindingParamCache")); }
+			ScriptFunction GetAllCoverSlotsInRadius() { mixin(MGF("mGetAllCoverSlotsInRadius", "Function Engine.NavigationHandle.GetAllCoverSlotsInRadius")); }
 		}
 	}
 	static struct Constants
@@ -112,12 +112,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.PolySegmentSpan")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.NavigationHandle.PolySegmentSpan")); }
 		@property final auto ref
 		{
-			Vector P2() { mixin(MGPS!("Vector", 16)()); }
-			Vector P1() { mixin(MGPS!("Vector", 4)()); }
-			UObject.Pointer Poly() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			Vector P2() { mixin(MGPS("Vector", 16)); }
+			Vector P1() { mixin(MGPS("Vector", 4)); }
+			UObject.Pointer Poly() { mixin(MGPS("UObject.Pointer", 0)); }
 		}
 	}
 	struct NavMeshPathParams
@@ -125,25 +125,25 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.NavMeshPathParams")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.NavigationHandle.NavMeshPathParams")); }
 		@property final
 		{
 			auto ref
 			{
-				float MaxHoverDistance() { mixin(MGPS!("float", 44)()); }
-				float MinWalkableZ() { mixin(MGPS!("float", 40)()); }
-				float MaxDropHeight() { mixin(MGPS!("float", 36)()); }
-				Vector SearchStart() { mixin(MGPS!("Vector", 24)()); }
-				float SearchLaneMultiplier() { mixin(MGPS!("float", 20)()); }
-				Vector SearchExtent() { mixin(MGPS!("Vector", 8)()); }
+				float MaxHoverDistance() { mixin(MGPS("float", 44)); }
+				float MinWalkableZ() { mixin(MGPS("float", 40)); }
+				float MaxDropHeight() { mixin(MGPS("float", 36)); }
+				Vector SearchStart() { mixin(MGPS("Vector", 24)); }
+				float SearchLaneMultiplier() { mixin(MGPS("float", 20)); }
+				Vector SearchExtent() { mixin(MGPS("Vector", 8)); }
 				// WARNING: Property 'Interface' has the same name as a defined type!
 			}
-			bool bAbleToSearch() { mixin(MGBPS!(4, 0x4)()); }
-			bool bAbleToSearch(bool val) { mixin(MSBPS!(4, 0x4)()); }
-			bool bNeedsMantleValidityTest() { mixin(MGBPS!(4, 0x2)()); }
-			bool bNeedsMantleValidityTest(bool val) { mixin(MSBPS!(4, 0x2)()); }
-			bool bCanMantle() { mixin(MGBPS!(4, 0x1)()); }
-			bool bCanMantle(bool val) { mixin(MSBPS!(4, 0x1)()); }
+			bool bAbleToSearch() { mixin(MGBPS(4, 0x4)); }
+			bool bAbleToSearch(bool val) { mixin(MSBPS(4, 0x4)); }
+			bool bNeedsMantleValidityTest() { mixin(MGBPS(4, 0x2)); }
+			bool bNeedsMantleValidityTest(bool val) { mixin(MSBPS(4, 0x2)); }
+			bool bCanMantle() { mixin(MGBPS(4, 0x1)); }
+			bool bCanMantle(bool val) { mixin(MSBPS(4, 0x1)); }
 		}
 	}
 	struct PathStore
@@ -151,42 +151,42 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.PathStore")()); }
-		@property final auto ref ScriptArray!(NavigationHandle.EdgePointer) EdgeList() { mixin(MGPS!("ScriptArray!(NavigationHandle.EdgePointer)", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.NavigationHandle.PathStore")); }
+		@property final auto ref ScriptArray!(NavigationHandle.EdgePointer) EdgeList() { mixin(MGPS("ScriptArray!(NavigationHandle.EdgePointer)", 0)); }
 	}
 	struct EdgePointer
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.EdgePointer")()); }
-		@property final auto ref UObject.Pointer Dummy() { mixin(MGPS!("UObject.Pointer", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.NavigationHandle.EdgePointer")); }
+		@property final auto ref UObject.Pointer Dummy() { mixin(MGPS("UObject.Pointer", 0)); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float LastPathFailTime() { mixin(MGPC!("float", 208)()); }
-			EngineTypes.EPathFindingError LastPathError() { mixin(MGPC!("EngineTypes.EPathFindingError", 204)()); }
-			NavigationHandle.NavMeshPathParams CachedPathParams() { mixin(MGPC!("NavigationHandle.NavMeshPathParams", 156)()); }
-			NavMeshPathGoalEvaluator PathGoalList() { mixin(MGPC!("NavMeshPathGoalEvaluator", 152)()); }
-			NavMeshPathConstraint PathConstraintList() { mixin(MGPC!("NavMeshPathConstraint", 148)()); }
-			Actor.BasedPosition FinalDestination() { mixin(MGPC!("Actor.BasedPosition", 92)()); }
-			UObject.Pointer SubGoal_DestPoly() { mixin(MGPC!("UObject.Pointer", 88)()); }
-			UObject.Pointer CurrentEdge() { mixin(MGPC!("UObject.Pointer", 84)()); }
-			UObject.Pointer BestUnfinishedPathPoint() { mixin(MGPC!("UObject.Pointer", 80)()); }
-			NavigationHandle.PathStore PathCache() { mixin(MGPC!("NavigationHandle.PathStore", 68)()); }
-			UObject.Pointer AnchorPoly() { mixin(MGPC!("UObject.Pointer", 64)()); }
-			Pylon AnchorPylon() { mixin(MGPC!("Pylon", 60)()); }
+			float LastPathFailTime() { mixin(MGPC("float", 208)); }
+			EngineTypes.EPathFindingError LastPathError() { mixin(MGPC("EngineTypes.EPathFindingError", 204)); }
+			NavigationHandle.NavMeshPathParams CachedPathParams() { mixin(MGPC("NavigationHandle.NavMeshPathParams", 156)); }
+			NavMeshPathGoalEvaluator PathGoalList() { mixin(MGPC("NavMeshPathGoalEvaluator", 152)); }
+			NavMeshPathConstraint PathConstraintList() { mixin(MGPC("NavMeshPathConstraint", 148)); }
+			Actor.BasedPosition FinalDestination() { mixin(MGPC("Actor.BasedPosition", 92)); }
+			UObject.Pointer SubGoal_DestPoly() { mixin(MGPC("UObject.Pointer", 88)); }
+			UObject.Pointer CurrentEdge() { mixin(MGPC("UObject.Pointer", 84)); }
+			UObject.Pointer BestUnfinishedPathPoint() { mixin(MGPC("UObject.Pointer", 80)); }
+			NavigationHandle.PathStore PathCache() { mixin(MGPC("NavigationHandle.PathStore", 68)); }
+			UObject.Pointer AnchorPoly() { mixin(MGPC("UObject.Pointer", 64)); }
+			Pylon AnchorPylon() { mixin(MGPC("Pylon", 60)); }
 		}
-		bool bUltraVerbosePathDebugging() { mixin(MGBPC!(144, 0x8)()); }
-		bool bUltraVerbosePathDebugging(bool val) { mixin(MSBPC!(144, 0x8)()); }
-		bool bDebugConstraintsAndGoalEvals() { mixin(MGBPC!(144, 0x4)()); }
-		bool bDebugConstraintsAndGoalEvals(bool val) { mixin(MSBPC!(144, 0x4)()); }
-		bool bUseORforEvaluateGoal() { mixin(MGBPC!(144, 0x2)()); }
-		bool bUseORforEvaluateGoal(bool val) { mixin(MSBPC!(144, 0x2)()); }
-		bool bSkipRouteCacheUpdates() { mixin(MGBPC!(144, 0x1)()); }
-		bool bSkipRouteCacheUpdates(bool val) { mixin(MSBPC!(144, 0x1)()); }
+		bool bUltraVerbosePathDebugging() { mixin(MGBPC(144, 0x8)); }
+		bool bUltraVerbosePathDebugging(bool val) { mixin(MSBPC(144, 0x8)); }
+		bool bDebugConstraintsAndGoalEvals() { mixin(MGBPC(144, 0x4)); }
+		bool bDebugConstraintsAndGoalEvals(bool val) { mixin(MSBPC(144, 0x4)); }
+		bool bUseORforEvaluateGoal() { mixin(MGBPC(144, 0x2)); }
+		bool bUseORforEvaluateGoal(bool val) { mixin(MSBPC(144, 0x2)); }
+		bool bSkipRouteCacheUpdates() { mixin(MGBPC(144, 0x1)); }
+		bool bSkipRouteCacheUpdates(bool val) { mixin(MSBPC(144, 0x1)); }
 	}
 final:
 	void ClearConstraints()

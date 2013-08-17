@@ -8,7 +8,7 @@ extern(C++) interface Field : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Core.Field")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Core.Field")); }
 	private static __gshared Field mDefaultProperties;
-	@property final static Field DefaultProperties() { mixin(MGDPC!(Field, "Field Core.Default__Field")()); }
+	@property final static Field DefaultProperties() { mixin(MGDPC("Field", "Field Core.Default__Field")); }
 }

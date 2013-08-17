@@ -16,9 +16,9 @@ extern(C++) interface UDKGameObjective : NavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKGameObjective")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKGameObjective")); }
 	private static __gshared UDKGameObjective mDefaultProperties;
-	@property final static UDKGameObjective DefaultProperties() { mixin(MGDPC!(UDKGameObjective, "UDKGameObjective UDKBase.Default__UDKGameObjective")()); }
+	@property final static UDKGameObjective DefaultProperties() { mixin(MGDPC("UDKGameObjective", "UDKGameObjective UDKBase.Default__UDKGameObjective")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,29 +33,29 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ObjectiveChanged() { mixin(MGF!("mObjectiveChanged", "Function UDKBase.UDKGameObjective.ObjectiveChanged")()); }
-			ScriptFunction GetBestViewTarget() { mixin(MGF!("mGetBestViewTarget", "Function UDKBase.UDKGameObjective.GetBestViewTarget")()); }
-			ScriptFunction BotNearObjective() { mixin(MGF!("mBotNearObjective", "Function UDKBase.UDKGameObjective.BotNearObjective")()); }
-			ScriptFunction TriggerFlagEvent() { mixin(MGF!("mTriggerFlagEvent", "Function UDKBase.UDKGameObjective.TriggerFlagEvent")()); }
-			ScriptFunction SetHUDLocation() { mixin(MGF!("mSetHUDLocation", "Function UDKBase.UDKGameObjective.SetHUDLocation")()); }
-			ScriptFunction DrawIcon() { mixin(MGF!("mDrawIcon", "Function UDKBase.UDKGameObjective.DrawIcon")()); }
-			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function UDKBase.UDKGameObjective.GetTeamNum")()); }
+			ScriptFunction ObjectiveChanged() { mixin(MGF("mObjectiveChanged", "Function UDKBase.UDKGameObjective.ObjectiveChanged")); }
+			ScriptFunction GetBestViewTarget() { mixin(MGF("mGetBestViewTarget", "Function UDKBase.UDKGameObjective.GetBestViewTarget")); }
+			ScriptFunction BotNearObjective() { mixin(MGF("mBotNearObjective", "Function UDKBase.UDKGameObjective.BotNearObjective")); }
+			ScriptFunction TriggerFlagEvent() { mixin(MGF("mTriggerFlagEvent", "Function UDKBase.UDKGameObjective.TriggerFlagEvent")); }
+			ScriptFunction SetHUDLocation() { mixin(MGF("mSetHUDLocation", "Function UDKBase.UDKGameObjective.SetHUDLocation")); }
+			ScriptFunction DrawIcon() { mixin(MGF("mDrawIcon", "Function UDKBase.UDKGameObjective.DrawIcon")); }
+			ScriptFunction GetTeamNum() { mixin(MGF("mGetTeamNum", "Function UDKBase.UDKGameObjective.GetTeamNum")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(NavigationPoint) ShootSpots() { mixin(MGPC!("ScriptArray!(NavigationPoint)", 692)()); }
-			ubyte DefenderTeamIndex() { mixin(MGPC!("ubyte", 740)()); }
-			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 724)()); }
-			Texture2D IconHudTexture() { mixin(MGPC!("Texture2D", 720)()); }
-			Vector HUDLocation() { mixin(MGPC!("Vector", 708)()); }
+			ScriptArray!(NavigationPoint) ShootSpots() { mixin(MGPC("ScriptArray!(NavigationPoint)", 692)); }
+			ubyte DefenderTeamIndex() { mixin(MGPC("ubyte", 740)); }
+			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 724)); }
+			Texture2D IconHudTexture() { mixin(MGPC("Texture2D", 720)); }
+			Vector HUDLocation() { mixin(MGPC("Vector", 708)); }
 		}
-		bool bUnderAttack() { mixin(MGBPC!(704, 0x2)()); }
-		bool bUnderAttack(bool val) { mixin(MSBPC!(704, 0x2)()); }
-		bool bAllowOnlyShootable() { mixin(MGBPC!(704, 0x1)()); }
-		bool bAllowOnlyShootable(bool val) { mixin(MSBPC!(704, 0x1)()); }
+		bool bUnderAttack() { mixin(MGBPC(704, 0x2)); }
+		bool bUnderAttack(bool val) { mixin(MSBPC(704, 0x2)); }
+		bool bAllowOnlyShootable() { mixin(MGBPC(704, 0x1)); }
+		bool bAllowOnlyShootable(bool val) { mixin(MSBPC(704, 0x1)); }
 	}
 final:
 	void ObjectiveChanged()

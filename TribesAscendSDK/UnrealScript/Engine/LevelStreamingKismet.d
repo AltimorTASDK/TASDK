@@ -8,7 +8,7 @@ extern(C++) interface LevelStreamingKismet : LevelStreaming
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.LevelStreamingKismet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.LevelStreamingKismet")); }
 	private static __gshared LevelStreamingKismet mDefaultProperties;
-	@property final static LevelStreamingKismet DefaultProperties() { mixin(MGDPC!(LevelStreamingKismet, "LevelStreamingKismet Engine.Default__LevelStreamingKismet")()); }
+	@property final static LevelStreamingKismet DefaultProperties() { mixin(MGDPC("LevelStreamingKismet", "LevelStreamingKismet Engine.Default__LevelStreamingKismet")); }
 }

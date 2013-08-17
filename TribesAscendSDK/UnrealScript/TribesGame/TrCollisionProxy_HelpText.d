@@ -10,9 +10,9 @@ extern(C++) interface TrCollisionProxy_HelpText : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCollisionProxy_HelpText")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCollisionProxy_HelpText")); }
 	private static __gshared TrCollisionProxy_HelpText mDefaultProperties;
-	@property final static TrCollisionProxy_HelpText DefaultProperties() { mixin(MGDPC!(TrCollisionProxy_HelpText, "TrCollisionProxy_HelpText TribesGame.Default__TrCollisionProxy_HelpText")()); }
+	@property final static TrCollisionProxy_HelpText DefaultProperties() { mixin(MGDPC("TrCollisionProxy_HelpText", "TrCollisionProxy_HelpText TribesGame.Default__TrCollisionProxy_HelpText")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,20 +25,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldShowHelpText_Delegate() { mixin(MGF!("mShouldShowHelpText_Delegate", "Function TribesGame.TrCollisionProxy_HelpText.ShouldShowHelpText_Delegate")()); }
-			ScriptFunction OnPawnAdded() { mixin(MGF!("mOnPawnAdded", "Function TribesGame.TrCollisionProxy_HelpText.OnPawnAdded")()); }
-			ScriptFunction RequestHelpText() { mixin(MGF!("mRequestHelpText", "Function TribesGame.TrCollisionProxy_HelpText.RequestHelpText")()); }
-			ScriptFunction TryTraceAgainTimer() { mixin(MGF!("mTryTraceAgainTimer", "Function TribesGame.TrCollisionProxy_HelpText.TryTraceAgainTimer")()); }
-			ScriptFunction OnPawnRemoved() { mixin(MGF!("mOnPawnRemoved", "Function TribesGame.TrCollisionProxy_HelpText.OnPawnRemoved")()); }
+			ScriptFunction ShouldShowHelpText_Delegate() { mixin(MGF("mShouldShowHelpText_Delegate", "Function TribesGame.TrCollisionProxy_HelpText.ShouldShowHelpText_Delegate")); }
+			ScriptFunction OnPawnAdded() { mixin(MGF("mOnPawnAdded", "Function TribesGame.TrCollisionProxy_HelpText.OnPawnAdded")); }
+			ScriptFunction RequestHelpText() { mixin(MGF("mRequestHelpText", "Function TribesGame.TrCollisionProxy_HelpText.RequestHelpText")); }
+			ScriptFunction TryTraceAgainTimer() { mixin(MGF("mTryTraceAgainTimer", "Function TribesGame.TrCollisionProxy_HelpText.TryTraceAgainTimer")); }
+			ScriptFunction OnPawnRemoved() { mixin(MGF("mOnPawnRemoved", "Function TribesGame.TrCollisionProxy_HelpText.OnPawnRemoved")); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__ShouldShowHelpText_Delegate__Delegate'!
-		TrHelpTextManager.EHelpTextType m_HelpTextType() { mixin(MGPC!("TrHelpTextManager.EHelpTextType", 496)()); }
+		TrHelpTextManager.EHelpTextType m_HelpTextType() { mixin(MGPC("TrHelpTextManager.EHelpTextType", 496)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CylinderComponent'!
-		Pawn m_LocalPawn() { mixin(MGPC!("Pawn", 504)()); }
-		float m_fHelpTextRemovalTime() { mixin(MGPC!("float", 500)()); }
+		Pawn m_LocalPawn() { mixin(MGPC("Pawn", 504)); }
+		float m_fHelpTextRemovalTime() { mixin(MGPC("float", 500)); }
 	}
 final:
 	bool ShouldShowHelpText_Delegate(TrHelpTextManager.EHelpTextType HelpTextType)

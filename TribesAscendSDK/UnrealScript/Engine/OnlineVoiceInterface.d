@@ -10,9 +10,9 @@ extern(C++) interface OnlineVoiceInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineVoiceInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineVoiceInterface")); }
 	private static __gshared OnlineVoiceInterface mDefaultProperties;
-	@property final static OnlineVoiceInterface DefaultProperties() { mixin(MGDPC!(OnlineVoiceInterface, "OnlineVoiceInterface Engine.Default__OnlineVoiceInterface")()); }
+	@property final static OnlineVoiceInterface DefaultProperties() { mixin(MGDPC("OnlineVoiceInterface", "OnlineVoiceInterface Engine.Default__OnlineVoiceInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,31 +45,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction MuteRemoteTalker() { mixin(MGF!("mMuteRemoteTalker", "Function Engine.OnlineVoiceInterface.MuteRemoteTalker")()); }
-			ScriptFunction UnmuteRemoteTalker() { mixin(MGF!("mUnmuteRemoteTalker", "Function Engine.OnlineVoiceInterface.UnmuteRemoteTalker")()); }
-			ScriptFunction RegisterLocalTalker() { mixin(MGF!("mRegisterLocalTalker", "Function Engine.OnlineVoiceInterface.RegisterLocalTalker")()); }
-			ScriptFunction UnregisterLocalTalker() { mixin(MGF!("mUnregisterLocalTalker", "Function Engine.OnlineVoiceInterface.UnregisterLocalTalker")()); }
-			ScriptFunction RegisterRemoteTalker() { mixin(MGF!("mRegisterRemoteTalker", "Function Engine.OnlineVoiceInterface.RegisterRemoteTalker")()); }
-			ScriptFunction UnregisterRemoteTalker() { mixin(MGF!("mUnregisterRemoteTalker", "Function Engine.OnlineVoiceInterface.UnregisterRemoteTalker")()); }
-			ScriptFunction IsLocalPlayerTalking() { mixin(MGF!("mIsLocalPlayerTalking", "Function Engine.OnlineVoiceInterface.IsLocalPlayerTalking")()); }
-			ScriptFunction IsRemotePlayerTalking() { mixin(MGF!("mIsRemotePlayerTalking", "Function Engine.OnlineVoiceInterface.IsRemotePlayerTalking")()); }
-			ScriptFunction IsHeadsetPresent() { mixin(MGF!("mIsHeadsetPresent", "Function Engine.OnlineVoiceInterface.IsHeadsetPresent")()); }
-			ScriptFunction SetRemoteTalkerPriority() { mixin(MGF!("mSetRemoteTalkerPriority", "Function Engine.OnlineVoiceInterface.SetRemoteTalkerPriority")()); }
-			ScriptFunction OnPlayerTalkingStateChange() { mixin(MGF!("mOnPlayerTalkingStateChange", "Function Engine.OnlineVoiceInterface.OnPlayerTalkingStateChange")()); }
-			ScriptFunction OnRecognitionComplete() { mixin(MGF!("mOnRecognitionComplete", "Function Engine.OnlineVoiceInterface.OnRecognitionComplete")()); }
-			ScriptFunction AddPlayerTalkingDelegate() { mixin(MGF!("mAddPlayerTalkingDelegate", "Function Engine.OnlineVoiceInterface.AddPlayerTalkingDelegate")()); }
-			ScriptFunction ClearPlayerTalkingDelegate() { mixin(MGF!("mClearPlayerTalkingDelegate", "Function Engine.OnlineVoiceInterface.ClearPlayerTalkingDelegate")()); }
-			ScriptFunction StartNetworkedVoice() { mixin(MGF!("mStartNetworkedVoice", "Function Engine.OnlineVoiceInterface.StartNetworkedVoice")()); }
-			ScriptFunction StopNetworkedVoice() { mixin(MGF!("mStopNetworkedVoice", "Function Engine.OnlineVoiceInterface.StopNetworkedVoice")()); }
-			ScriptFunction StartSpeechRecognition() { mixin(MGF!("mStartSpeechRecognition", "Function Engine.OnlineVoiceInterface.StartSpeechRecognition")()); }
-			ScriptFunction StopSpeechRecognition() { mixin(MGF!("mStopSpeechRecognition", "Function Engine.OnlineVoiceInterface.StopSpeechRecognition")()); }
-			ScriptFunction GetRecognitionResults() { mixin(MGF!("mGetRecognitionResults", "Function Engine.OnlineVoiceInterface.GetRecognitionResults")()); }
-			ScriptFunction AddRecognitionCompleteDelegate() { mixin(MGF!("mAddRecognitionCompleteDelegate", "Function Engine.OnlineVoiceInterface.AddRecognitionCompleteDelegate")()); }
-			ScriptFunction ClearRecognitionCompleteDelegate() { mixin(MGF!("mClearRecognitionCompleteDelegate", "Function Engine.OnlineVoiceInterface.ClearRecognitionCompleteDelegate")()); }
-			ScriptFunction SelectVocabulary() { mixin(MGF!("mSelectVocabulary", "Function Engine.OnlineVoiceInterface.SelectVocabulary")()); }
-			ScriptFunction SetSpeechRecognitionObject() { mixin(MGF!("mSetSpeechRecognitionObject", "Function Engine.OnlineVoiceInterface.SetSpeechRecognitionObject")()); }
-			ScriptFunction MuteAll() { mixin(MGF!("mMuteAll", "Function Engine.OnlineVoiceInterface.MuteAll")()); }
-			ScriptFunction UnmuteAll() { mixin(MGF!("mUnmuteAll", "Function Engine.OnlineVoiceInterface.UnmuteAll")()); }
+			ScriptFunction MuteRemoteTalker() { mixin(MGF("mMuteRemoteTalker", "Function Engine.OnlineVoiceInterface.MuteRemoteTalker")); }
+			ScriptFunction UnmuteRemoteTalker() { mixin(MGF("mUnmuteRemoteTalker", "Function Engine.OnlineVoiceInterface.UnmuteRemoteTalker")); }
+			ScriptFunction RegisterLocalTalker() { mixin(MGF("mRegisterLocalTalker", "Function Engine.OnlineVoiceInterface.RegisterLocalTalker")); }
+			ScriptFunction UnregisterLocalTalker() { mixin(MGF("mUnregisterLocalTalker", "Function Engine.OnlineVoiceInterface.UnregisterLocalTalker")); }
+			ScriptFunction RegisterRemoteTalker() { mixin(MGF("mRegisterRemoteTalker", "Function Engine.OnlineVoiceInterface.RegisterRemoteTalker")); }
+			ScriptFunction UnregisterRemoteTalker() { mixin(MGF("mUnregisterRemoteTalker", "Function Engine.OnlineVoiceInterface.UnregisterRemoteTalker")); }
+			ScriptFunction IsLocalPlayerTalking() { mixin(MGF("mIsLocalPlayerTalking", "Function Engine.OnlineVoiceInterface.IsLocalPlayerTalking")); }
+			ScriptFunction IsRemotePlayerTalking() { mixin(MGF("mIsRemotePlayerTalking", "Function Engine.OnlineVoiceInterface.IsRemotePlayerTalking")); }
+			ScriptFunction IsHeadsetPresent() { mixin(MGF("mIsHeadsetPresent", "Function Engine.OnlineVoiceInterface.IsHeadsetPresent")); }
+			ScriptFunction SetRemoteTalkerPriority() { mixin(MGF("mSetRemoteTalkerPriority", "Function Engine.OnlineVoiceInterface.SetRemoteTalkerPriority")); }
+			ScriptFunction OnPlayerTalkingStateChange() { mixin(MGF("mOnPlayerTalkingStateChange", "Function Engine.OnlineVoiceInterface.OnPlayerTalkingStateChange")); }
+			ScriptFunction OnRecognitionComplete() { mixin(MGF("mOnRecognitionComplete", "Function Engine.OnlineVoiceInterface.OnRecognitionComplete")); }
+			ScriptFunction AddPlayerTalkingDelegate() { mixin(MGF("mAddPlayerTalkingDelegate", "Function Engine.OnlineVoiceInterface.AddPlayerTalkingDelegate")); }
+			ScriptFunction ClearPlayerTalkingDelegate() { mixin(MGF("mClearPlayerTalkingDelegate", "Function Engine.OnlineVoiceInterface.ClearPlayerTalkingDelegate")); }
+			ScriptFunction StartNetworkedVoice() { mixin(MGF("mStartNetworkedVoice", "Function Engine.OnlineVoiceInterface.StartNetworkedVoice")); }
+			ScriptFunction StopNetworkedVoice() { mixin(MGF("mStopNetworkedVoice", "Function Engine.OnlineVoiceInterface.StopNetworkedVoice")); }
+			ScriptFunction StartSpeechRecognition() { mixin(MGF("mStartSpeechRecognition", "Function Engine.OnlineVoiceInterface.StartSpeechRecognition")); }
+			ScriptFunction StopSpeechRecognition() { mixin(MGF("mStopSpeechRecognition", "Function Engine.OnlineVoiceInterface.StopSpeechRecognition")); }
+			ScriptFunction GetRecognitionResults() { mixin(MGF("mGetRecognitionResults", "Function Engine.OnlineVoiceInterface.GetRecognitionResults")); }
+			ScriptFunction AddRecognitionCompleteDelegate() { mixin(MGF("mAddRecognitionCompleteDelegate", "Function Engine.OnlineVoiceInterface.AddRecognitionCompleteDelegate")); }
+			ScriptFunction ClearRecognitionCompleteDelegate() { mixin(MGF("mClearRecognitionCompleteDelegate", "Function Engine.OnlineVoiceInterface.ClearRecognitionCompleteDelegate")); }
+			ScriptFunction SelectVocabulary() { mixin(MGF("mSelectVocabulary", "Function Engine.OnlineVoiceInterface.SelectVocabulary")); }
+			ScriptFunction SetSpeechRecognitionObject() { mixin(MGF("mSetSpeechRecognitionObject", "Function Engine.OnlineVoiceInterface.SetSpeechRecognitionObject")); }
+			ScriptFunction MuteAll() { mixin(MGF("mMuteAll", "Function Engine.OnlineVoiceInterface.MuteAll")); }
+			ScriptFunction UnmuteAll() { mixin(MGF("mUnmuteAll", "Function Engine.OnlineVoiceInterface.UnmuteAll")); }
 		}
 	}
 	@property final auto ref

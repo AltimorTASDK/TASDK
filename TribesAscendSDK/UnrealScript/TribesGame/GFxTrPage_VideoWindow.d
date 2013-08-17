@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_VideoWindow : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_VideoWindow")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_VideoWindow")); }
 	private static __gshared GFxTrPage_VideoWindow mDefaultProperties;
-	@property final static GFxTrPage_VideoWindow DefaultProperties() { mixin(MGDPC!(GFxTrPage_VideoWindow, "GFxTrPage_VideoWindow TribesGame.Default__GFxTrPage_VideoWindow")()); }
+	@property final static GFxTrPage_VideoWindow DefaultProperties() { mixin(MGDPC("GFxTrPage_VideoWindow", "GFxTrPage_VideoWindow TribesGame.Default__GFxTrPage_VideoWindow")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,10 +24,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_VideoWindow.Initialize")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_VideoWindow.FillData")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_VideoWindow.SpecialAction")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_VideoWindow.FillOption")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_VideoWindow.Initialize")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_VideoWindow.FillData")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_VideoWindow.SpecialAction")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_VideoWindow.FillOption")); }
 		}
 	}
 	enum MENU_ACTION_VIDEOWINDOW : ubyte
@@ -37,7 +37,7 @@ public extern(D):
 		MAVW_BORDERLESS = 2,
 		MAVW_MAX = 3,
 	}
-	@property final auto ref int CurrWindow() { mixin(MGPC!("int", 356)()); }
+	@property final auto ref int CurrWindow() { mixin(MGPC("int", 356)); }
 final:
 	void Initialize()
 	{

@@ -14,9 +14,9 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_DynamicResource")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStore_DynamicResource")); }
 	private static __gshared UIDataStore_DynamicResource mDefaultProperties;
-	@property final static UIDataStore_DynamicResource DefaultProperties() { mixin(MGDPC!(UIDataStore_DynamicResource, "UIDataStore_DynamicResource Engine.Default__UIDataStore_DynamicResource")()); }
+	@property final static UIDataStore_DynamicResource DefaultProperties() { mixin(MGDPC("UIDataStore_DynamicResource", "UIDataStore_DynamicResource Engine.Default__UIDataStore_DynamicResource")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,16 +34,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FindProviderTypeIndex() { mixin(MGF!("mFindProviderTypeIndex", "Function Engine.UIDataStore_DynamicResource.FindProviderTypeIndex")()); }
-			ScriptFunction GenerateProviderAccessTag() { mixin(MGF!("mGenerateProviderAccessTag", "Function Engine.UIDataStore_DynamicResource.GenerateProviderAccessTag")()); }
-			ScriptFunction GetProviderCount() { mixin(MGF!("mGetProviderCount", "Function Engine.UIDataStore_DynamicResource.GetProviderCount")()); }
-			ScriptFunction GetResourceProviders() { mixin(MGF!("mGetResourceProviders", "Function Engine.UIDataStore_DynamicResource.GetResourceProviders")()); }
-			ScriptFunction GetResourceProviderFields() { mixin(MGF!("mGetResourceProviderFields", "Function Engine.UIDataStore_DynamicResource.GetResourceProviderFields")()); }
-			ScriptFunction GetProviderFieldValue() { mixin(MGF!("mGetProviderFieldValue", "Function Engine.UIDataStore_DynamicResource.GetProviderFieldValue")()); }
-			ScriptFunction FindProviderIndexByFieldValue() { mixin(MGF!("mFindProviderIndexByFieldValue", "Function Engine.UIDataStore_DynamicResource.FindProviderIndexByFieldValue")()); }
-			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function Engine.UIDataStore_DynamicResource.OnLoginChange")()); }
-			ScriptFunction Registered() { mixin(MGF!("mRegistered", "Function Engine.UIDataStore_DynamicResource.Registered")()); }
-			ScriptFunction Unregistered() { mixin(MGF!("mUnregistered", "Function Engine.UIDataStore_DynamicResource.Unregistered")()); }
+			ScriptFunction FindProviderTypeIndex() { mixin(MGF("mFindProviderTypeIndex", "Function Engine.UIDataStore_DynamicResource.FindProviderTypeIndex")); }
+			ScriptFunction GenerateProviderAccessTag() { mixin(MGF("mGenerateProviderAccessTag", "Function Engine.UIDataStore_DynamicResource.GenerateProviderAccessTag")); }
+			ScriptFunction GetProviderCount() { mixin(MGF("mGetProviderCount", "Function Engine.UIDataStore_DynamicResource.GetProviderCount")); }
+			ScriptFunction GetResourceProviders() { mixin(MGF("mGetResourceProviders", "Function Engine.UIDataStore_DynamicResource.GetResourceProviders")); }
+			ScriptFunction GetResourceProviderFields() { mixin(MGF("mGetResourceProviderFields", "Function Engine.UIDataStore_DynamicResource.GetResourceProviderFields")); }
+			ScriptFunction GetProviderFieldValue() { mixin(MGF("mGetProviderFieldValue", "Function Engine.UIDataStore_DynamicResource.GetProviderFieldValue")); }
+			ScriptFunction FindProviderIndexByFieldValue() { mixin(MGF("mFindProviderIndexByFieldValue", "Function Engine.UIDataStore_DynamicResource.FindProviderIndexByFieldValue")); }
+			ScriptFunction OnLoginChange() { mixin(MGF("mOnLoginChange", "Function Engine.UIDataStore_DynamicResource.OnLoginChange")); }
+			ScriptFunction Registered() { mixin(MGF("mRegistered", "Function Engine.UIDataStore_DynamicResource.Registered")); }
+			ScriptFunction Unregistered() { mixin(MGF("mUnregistered", "Function Engine.UIDataStore_DynamicResource.Unregistered")); }
 		}
 	}
 	struct DynamicResourceProviderDefinition
@@ -51,21 +51,21 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_DynamicResource.DynamicResourceProviderDefinition")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataStore_DynamicResource.DynamicResourceProviderDefinition")); }
 		@property final auto ref
 		{
-			ScriptClass ProviderClass() { mixin(MGPS!("ScriptClass", 20)()); }
-			ScriptString ProviderClassName() { mixin(MGPS!("ScriptString", 8)()); }
-			ScriptName ProviderTag() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptClass ProviderClass() { mixin(MGPS("ScriptClass", 20)); }
+			ScriptString ProviderClassName() { mixin(MGPS("ScriptString", 8)); }
+			ScriptName ProviderTag() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition) ResourceProviderDefinitions() { mixin(MGPC!("ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition)", 132)()); }
-		UObject.MultiMap_Mirror ResourceProviders() { mixin(MGPC!("UObject.MultiMap_Mirror", 144)()); }
-		UIDataStore_GameResource GameResourceDataStore() { mixin(MGPC!("UIDataStore_GameResource", 128)()); }
-		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC!("UIDataProvider_OnlineProfileSettings", 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
+		ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition) ResourceProviderDefinitions() { mixin(MGPC("ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition)", 132)); }
+		UObject.MultiMap_Mirror ResourceProviders() { mixin(MGPC("UObject.MultiMap_Mirror", 144)); }
+		UIDataStore_GameResource GameResourceDataStore() { mixin(MGPC("UIDataStore_GameResource", 128)); }
+		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC("UIDataProvider_OnlineProfileSettings", 124)); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
 	}
 final:
 	int FindProviderTypeIndex(ScriptName ProviderTag)

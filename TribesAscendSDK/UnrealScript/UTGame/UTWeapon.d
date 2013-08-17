@@ -30,9 +30,9 @@ extern(C++) interface UTWeapon : UDKWeapon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeapon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWeapon")); }
 	private static __gshared UTWeapon mDefaultProperties;
-	@property final static UTWeapon DefaultProperties() { mixin(MGDPC!(UTWeapon, "UTWeapon UTGame.Default__UTWeapon")()); }
+	@property final static UTWeapon DefaultProperties() { mixin(MGDPC("UTWeapon", "UTWeapon UTGame.Default__UTWeapon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -155,121 +155,121 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetAmmoCount() { mixin(MGF!("mGetAmmoCount", "Function UTGame.UTWeapon.GetAmmoCount")()); }
-			ScriptFunction CoversScreenSpace() { mixin(MGF!("mCoversScreenSpace", "Function UTGame.UTWeapon.CoversScreenSpace")()); }
-			ScriptFunction GetPowerPerc() { mixin(MGF!("mGetPowerPerc", "Function UTGame.UTWeapon.GetPowerPerc")()); }
-			ScriptFunction DesireAmmo() { mixin(MGF!("mDesireAmmo", "Function UTGame.UTWeapon.DesireAmmo")()); }
-			ScriptFunction ServerStartFire() { mixin(MGF!("mServerStartFire", "Function UTGame.UTWeapon.ServerStartFire")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTWeapon.PostBeginPlay")()); }
-			ScriptFunction AdjustWeaponTimingForConsole() { mixin(MGF!("mAdjustWeaponTimingForConsole", "Function UTGame.UTWeapon.AdjustWeaponTimingForConsole")()); }
-			ScriptFunction CreateOverlayMesh() { mixin(MGF!("mCreateOverlayMesh", "Function UTGame.UTWeapon.CreateOverlayMesh")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTWeapon.ReplicatedEvent")()); }
-			ScriptFunction CalcInventoryWeight() { mixin(MGF!("mCalcInventoryWeight", "Function UTGame.UTWeapon.CalcInventoryWeight")()); }
-			ScriptFunction ShouldSwitchTo() { mixin(MGF!("mShouldSwitchTo", "Function UTGame.UTWeapon.ShouldSwitchTo")()); }
-			ScriptFunction SetSkin() { mixin(MGF!("mSetSkin", "Function UTGame.UTWeapon.SetSkin")()); }
-			ScriptFunction ActiveRenderOverlays() { mixin(MGF!("mActiveRenderOverlays", "Function UTGame.UTWeapon.ActiveRenderOverlays")()); }
-			ScriptFunction DrawWeaponCrosshair() { mixin(MGF!("mDrawWeaponCrosshair", "Function UTGame.UTWeapon.DrawWeaponCrosshair")()); }
-			ScriptFunction DrawLockedOn() { mixin(MGF!("mDrawLockedOn", "Function UTGame.UTWeapon.DrawLockedOn")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTWeapon.DisplayDebug")()); }
-			ScriptFunction GetFireInterval() { mixin(MGF!("mGetFireInterval", "Function UTGame.UTWeapon.GetFireInterval")()); }
-			ScriptFunction PlayArmAnimation() { mixin(MGF!("mPlayArmAnimation", "Function UTGame.UTWeapon.PlayArmAnimation")()); }
-			ScriptFunction PlayWeaponAnimation() { mixin(MGF!("mPlayWeaponAnimation", "Function UTGame.UTWeapon.PlayWeaponAnimation")()); }
-			ScriptFunction PlayFireEffects() { mixin(MGF!("mPlayFireEffects", "Function UTGame.UTWeapon.PlayFireEffects")()); }
-			ScriptFunction StopFireEffects() { mixin(MGF!("mStopFireEffects", "Function UTGame.UTWeapon.StopFireEffects")()); }
-			ScriptFunction ShakeView() { mixin(MGF!("mShakeView", "Function UTGame.UTWeapon.ShakeView")()); }
-			ScriptFunction WeaponCalcCamera() { mixin(MGF!("mWeaponCalcCamera", "Function UTGame.UTWeapon.WeaponCalcCamera")()); }
-			ScriptFunction WeaponPlaySound() { mixin(MGF!("mWeaponPlaySound", "Function UTGame.UTWeapon.WeaponPlaySound")()); }
-			ScriptFunction PlayFiringSound() { mixin(MGF!("mPlayFiringSound", "Function UTGame.UTWeapon.PlayFiringSound")()); }
-			ScriptFunction MuzzleFlashTimer() { mixin(MGF!("mMuzzleFlashTimer", "Function UTGame.UTWeapon.MuzzleFlashTimer")()); }
-			ScriptFunction CauseMuzzleFlashLight() { mixin(MGF!("mCauseMuzzleFlashLight", "Function UTGame.UTWeapon.CauseMuzzleFlashLight")()); }
-			ScriptFunction CauseMuzzleFlash() { mixin(MGF!("mCauseMuzzleFlash", "Function UTGame.UTWeapon.CauseMuzzleFlash")()); }
-			ScriptFunction StopMuzzleFlash() { mixin(MGF!("mStopMuzzleFlash", "Function UTGame.UTWeapon.StopMuzzleFlash")()); }
-			ScriptFunction TimeWeaponPutDown() { mixin(MGF!("mTimeWeaponPutDown", "Function UTGame.UTWeapon.TimeWeaponPutDown")()); }
-			ScriptFunction PlayWeaponPutDown() { mixin(MGF!("mPlayWeaponPutDown", "Function UTGame.UTWeapon.PlayWeaponPutDown")()); }
-			ScriptFunction TimeWeaponEquipping() { mixin(MGF!("mTimeWeaponEquipping", "Function UTGame.UTWeapon.TimeWeaponEquipping")()); }
-			ScriptFunction GetEquipTime() { mixin(MGF!("mGetEquipTime", "Function UTGame.UTWeapon.GetEquipTime")()); }
-			ScriptFunction PlayWeaponEquip() { mixin(MGF!("mPlayWeaponEquip", "Function UTGame.UTWeapon.PlayWeaponEquip")()); }
-			ScriptFunction AttachWeaponTo() { mixin(MGF!("mAttachWeaponTo", "Function UTGame.UTWeapon.AttachWeaponTo")()); }
-			ScriptFunction SetMuzzleFlashParams() { mixin(MGF!("mSetMuzzleFlashParams", "Function UTGame.UTWeapon.SetMuzzleFlashParams")()); }
-			ScriptFunction AttachMuzzleFlash() { mixin(MGF!("mAttachMuzzleFlash", "Function UTGame.UTWeapon.AttachMuzzleFlash")()); }
-			ScriptFunction DetachWeapon() { mixin(MGF!("mDetachWeapon", "Function UTGame.UTWeapon.DetachWeapon")()); }
-			ScriptFunction DetachMuzzleFlash() { mixin(MGF!("mDetachMuzzleFlash", "Function UTGame.UTWeapon.DetachMuzzleFlash")()); }
-			ScriptFunction ChangeVisibility() { mixin(MGF!("mChangeVisibility", "Function UTGame.UTWeapon.ChangeVisibility")()); }
-			ScriptFunction PerformWeaponChange() { mixin(MGF!("mPerformWeaponChange", "Function UTGame.UTWeapon.PerformWeaponChange")()); }
-			ScriptFunction GetViewAxes() { mixin(MGF!("mGetViewAxes", "Function UTGame.UTWeapon.GetViewAxes")()); }
-			ScriptFunction ServerReselectWeapon() { mixin(MGF!("mServerReselectWeapon", "Function UTGame.UTWeapon.ServerReselectWeapon")()); }
-			ScriptFunction CanThrow() { mixin(MGF!("mCanThrow", "Function UTGame.UTWeapon.CanThrow")()); }
-			ScriptFunction GetHand() { mixin(MGF!("mGetHand", "Function UTGame.UTWeapon.GetHand")()); }
-			ScriptFunction SetPosition() { mixin(MGF!("mSetPosition", "Function UTGame.UTWeapon.SetPosition")()); }
-			ScriptFunction ShouldLagRot() { mixin(MGF!("mShouldLagRot", "Function UTGame.UTWeapon.ShouldLagRot")()); }
-			ScriptFunction LagRot() { mixin(MGF!("mLagRot", "Function UTGame.UTWeapon.LagRot")()); }
-			ScriptFunction AdjustPlayerDamage() { mixin(MGF!("mAdjustPlayerDamage", "Function UTGame.UTWeapon.AdjustPlayerDamage")()); }
-			ScriptFunction RelativeStrengthVersus() { mixin(MGF!("mRelativeStrengthVersus", "Function UTGame.UTWeapon.RelativeStrengthVersus")()); }
-			ScriptFunction GetWeaponRating() { mixin(MGF!("mGetWeaponRating", "Function UTGame.UTWeapon.GetWeaponRating")()); }
-			ScriptFunction CanAttack() { mixin(MGF!("mCanAttack", "Function UTGame.UTWeapon.CanAttack")()); }
-			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTWeapon.BotDesireability")()); }
-			ScriptFunction AmmoMaxed() { mixin(MGF!("mAmmoMaxed", "Function UTGame.UTWeapon.AmmoMaxed")()); }
-			ScriptFunction GetDamageRadius() { mixin(MGF!("mGetDamageRadius", "Function UTGame.UTWeapon.GetDamageRadius")()); }
-			ScriptFunction CanHeal() { mixin(MGF!("mCanHeal", "Function UTGame.UTWeapon.CanHeal")()); }
-			ScriptFunction GetOptimalRangeFor() { mixin(MGF!("mGetOptimalRangeFor", "Function UTGame.UTWeapon.GetOptimalRangeFor")()); }
-			ScriptFunction FireOnRelease() { mixin(MGF!("mFireOnRelease", "Function UTGame.UTWeapon.FireOnRelease")()); }
-			ScriptFunction FocusOnLeader() { mixin(MGF!("mFocusOnLeader", "Function UTGame.UTWeapon.FocusOnLeader")()); }
-			ScriptFunction RecommendRangedAttack() { mixin(MGF!("mRecommendRangedAttack", "Function UTGame.UTWeapon.RecommendRangedAttack")()); }
-			ScriptFunction SuggestAttackStyle() { mixin(MGF!("mSuggestAttackStyle", "Function UTGame.UTWeapon.SuggestAttackStyle")()); }
-			ScriptFunction SuggestDefenseStyle() { mixin(MGF!("mSuggestDefenseStyle", "Function UTGame.UTWeapon.SuggestDefenseStyle")()); }
-			ScriptFunction RangedAttackTime() { mixin(MGF!("mRangedAttackTime", "Function UTGame.UTWeapon.RangedAttackTime")()); }
-			ScriptFunction SplashJump() { mixin(MGF!("mSplashJump", "Function UTGame.UTWeapon.SplashJump")()); }
-			ScriptFunction ShouldFireWithoutTarget() { mixin(MGF!("mShouldFireWithoutTarget", "Function UTGame.UTWeapon.ShouldFireWithoutTarget")()); }
-			ScriptFunction BestMode() { mixin(MGF!("mBestMode", "Function UTGame.UTWeapon.BestMode")()); }
-			ScriptFunction IsFullyCharged() { mixin(MGF!("mIsFullyCharged", "Function UTGame.UTWeapon.IsFullyCharged")()); }
-			ScriptFunction ReadyToFire() { mixin(MGF!("mReadyToFire", "Function UTGame.UTWeapon.ReadyToFire")()); }
-			ScriptFunction StillFiring() { mixin(MGF!("mStillFiring", "Function UTGame.UTWeapon.StillFiring")()); }
-			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function UTGame.UTWeapon.ConsumeAmmo")()); }
-			ScriptFunction AddAmmo() { mixin(MGF!("mAddAmmo", "Function UTGame.UTWeapon.AddAmmo")()); }
-			ScriptFunction HasAmmo() { mixin(MGF!("mHasAmmo", "Function UTGame.UTWeapon.HasAmmo")()); }
-			ScriptFunction HasAnyAmmo() { mixin(MGF!("mHasAnyAmmo", "Function UTGame.UTWeapon.HasAnyAmmo")()); }
-			ScriptFunction NeedAmmo() { mixin(MGF!("mNeedAmmo", "Function UTGame.UTWeapon.NeedAmmo")()); }
-			ScriptFunction Loaded() { mixin(MGF!("mLoaded", "Function UTGame.UTWeapon.Loaded")()); }
-			ScriptFunction DenyPickupQuery() { mixin(MGF!("mDenyPickupQuery", "Function UTGame.UTWeapon.DenyPickupQuery")()); }
-			ScriptFunction WeaponEmpty() { mixin(MGF!("mWeaponEmpty", "Function UTGame.UTWeapon.WeaponEmpty")()); }
-			ScriptFunction bReadyToFire() { mixin(MGF!("mbReadyToFire", "Function UTGame.UTWeapon.bReadyToFire")()); }
-			ScriptFunction InstantFireStartTrace() { mixin(MGF!("mInstantFireStartTrace", "Function UTGame.UTWeapon.InstantFireStartTrace")()); }
-			ScriptFunction InstantFireEndTrace() { mixin(MGF!("mInstantFireEndTrace", "Function UTGame.UTWeapon.InstantFireEndTrace")()); }
-			ScriptFunction InstantFire() { mixin(MGF!("mInstantFire", "Function UTGame.UTWeapon.InstantFire")()); }
-			ScriptFunction InstantAimHelp() { mixin(MGF!("mInstantAimHelp", "Function UTGame.UTWeapon.InstantAimHelp")()); }
-			ScriptFunction ProjectileFire() { mixin(MGF!("mProjectileFire", "Function UTGame.UTWeapon.ProjectileFire")()); }
-			ScriptFunction ProcessInstantHit() { mixin(MGF!("mProcessInstantHit", "Function UTGame.UTWeapon.ProcessInstantHit")()); }
-			ScriptFunction GetZoomedState() { mixin(MGF!("mGetZoomedState", "Function UTGame.UTWeapon.GetZoomedState")()); }
-			ScriptFunction CheckZoom() { mixin(MGF!("mCheckZoom", "Function UTGame.UTWeapon.CheckZoom")()); }
-			ScriptFunction StartZoom() { mixin(MGF!("mStartZoom", "Function UTGame.UTWeapon.StartZoom")()); }
-			ScriptFunction EndZoom() { mixin(MGF!("mEndZoom", "Function UTGame.UTWeapon.EndZoom")()); }
-			ScriptFunction ClientEndFire() { mixin(MGF!("mClientEndFire", "Function UTGame.UTWeapon.ClientEndFire")()); }
-			ScriptFunction EndFire() { mixin(MGF!("mEndFire", "Function UTGame.UTWeapon.EndFire")()); }
-			ScriptFunction SendToFiringState() { mixin(MGF!("mSendToFiringState", "Function UTGame.UTWeapon.SendToFiringState")()); }
-			ScriptFunction ClientWeaponSet() { mixin(MGF!("mClientWeaponSet", "Function UTGame.UTWeapon.ClientWeaponSet")()); }
-			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function UTGame.UTWeapon.FireAmmunition")()); }
-			ScriptFunction PreloadTextures() { mixin(MGF!("mPreloadTextures", "Function UTGame.UTWeapon.PreloadTextures")()); }
-			ScriptFunction AllowSwitchTo() { mixin(MGF!("mAllowSwitchTo", "Function UTGame.UTWeapon.AllowSwitchTo")()); }
-			ScriptFunction TryPutDown() { mixin(MGF!("mTryPutDown", "Function UTGame.UTWeapon.TryPutDown")()); }
-			ScriptFunction FiringPutDownWeapon() { mixin(MGF!("mFiringPutDownWeapon", "Function UTGame.UTWeapon.FiringPutDownWeapon")()); }
-			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF!("mGetPhysicalFireStartLoc", "Function UTGame.UTWeapon.GetPhysicalFireStartLoc")()); }
-			ScriptFunction GetEffectLocation() { mixin(MGF!("mGetEffectLocation", "Function UTGame.UTWeapon.GetEffectLocation")()); }
-			ScriptFunction RefireCheckTimer() { mixin(MGF!("mRefireCheckTimer", "Function UTGame.UTWeapon.RefireCheckTimer")()); }
-			ScriptFunction SetupArmsAnim() { mixin(MGF!("mSetupArmsAnim", "Function UTGame.UTWeapon.SetupArmsAnim")()); }
-			ScriptFunction GetArmAnimNodeSeq() { mixin(MGF!("mGetArmAnimNodeSeq", "Function UTGame.UTWeapon.GetArmAnimNodeSeq")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function UTGame.UTWeapon.Destroyed")()); }
-			ScriptFunction SetWeaponOverlayFlags() { mixin(MGF!("mSetWeaponOverlayFlags", "Function UTGame.UTWeapon.SetWeaponOverlayFlags")()); }
-			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function UTGame.UTWeapon.DetourWeight")()); }
-			ScriptFunction RecommendLongRangedAttack() { mixin(MGF!("mRecommendLongRangedAttack", "Function UTGame.UTWeapon.RecommendLongRangedAttack")()); }
-			ScriptFunction ThrottleLook() { mixin(MGF!("mThrottleLook", "Function UTGame.UTWeapon.ThrottleLook")()); }
-			ScriptFunction Activate() { mixin(MGF!("mActivate", "Function UTGame.UTWeapon.Activate")()); }
-			ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function UTGame.UTWeapon.DropFrom")()); }
-			ScriptFunction ClientWeaponThrown() { mixin(MGF!("mClientWeaponThrown", "Function UTGame.UTWeapon.ClientWeaponThrown")()); }
-			ScriptFunction CanViewAccelerationWhenFiring() { mixin(MGF!("mCanViewAccelerationWhenFiring", "Function UTGame.UTWeapon.CanViewAccelerationWhenFiring")()); }
-			ScriptFunction HolderEnteredVehicle() { mixin(MGF!("mHolderEnteredVehicle", "Function UTGame.UTWeapon.HolderEnteredVehicle")()); }
-			ScriptFunction HolderExitedVehicle() { mixin(MGF!("mHolderExitedVehicle", "Function UTGame.UTWeapon.HolderExitedVehicle")()); }
-			ScriptFunction DrawKillIcon() { mixin(MGF!("mDrawKillIcon", "Function UTGame.UTWeapon.DrawKillIcon")()); }
-			ScriptFunction EnableFriendlyWarningCrosshair() { mixin(MGF!("mEnableFriendlyWarningCrosshair", "Function UTGame.UTWeapon.EnableFriendlyWarningCrosshair")()); }
+			ScriptFunction GetAmmoCount() { mixin(MGF("mGetAmmoCount", "Function UTGame.UTWeapon.GetAmmoCount")); }
+			ScriptFunction CoversScreenSpace() { mixin(MGF("mCoversScreenSpace", "Function UTGame.UTWeapon.CoversScreenSpace")); }
+			ScriptFunction GetPowerPerc() { mixin(MGF("mGetPowerPerc", "Function UTGame.UTWeapon.GetPowerPerc")); }
+			ScriptFunction DesireAmmo() { mixin(MGF("mDesireAmmo", "Function UTGame.UTWeapon.DesireAmmo")); }
+			ScriptFunction ServerStartFire() { mixin(MGF("mServerStartFire", "Function UTGame.UTWeapon.ServerStartFire")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTWeapon.PostBeginPlay")); }
+			ScriptFunction AdjustWeaponTimingForConsole() { mixin(MGF("mAdjustWeaponTimingForConsole", "Function UTGame.UTWeapon.AdjustWeaponTimingForConsole")); }
+			ScriptFunction CreateOverlayMesh() { mixin(MGF("mCreateOverlayMesh", "Function UTGame.UTWeapon.CreateOverlayMesh")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UTGame.UTWeapon.ReplicatedEvent")); }
+			ScriptFunction CalcInventoryWeight() { mixin(MGF("mCalcInventoryWeight", "Function UTGame.UTWeapon.CalcInventoryWeight")); }
+			ScriptFunction ShouldSwitchTo() { mixin(MGF("mShouldSwitchTo", "Function UTGame.UTWeapon.ShouldSwitchTo")); }
+			ScriptFunction SetSkin() { mixin(MGF("mSetSkin", "Function UTGame.UTWeapon.SetSkin")); }
+			ScriptFunction ActiveRenderOverlays() { mixin(MGF("mActiveRenderOverlays", "Function UTGame.UTWeapon.ActiveRenderOverlays")); }
+			ScriptFunction DrawWeaponCrosshair() { mixin(MGF("mDrawWeaponCrosshair", "Function UTGame.UTWeapon.DrawWeaponCrosshair")); }
+			ScriptFunction DrawLockedOn() { mixin(MGF("mDrawLockedOn", "Function UTGame.UTWeapon.DrawLockedOn")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function UTGame.UTWeapon.DisplayDebug")); }
+			ScriptFunction GetFireInterval() { mixin(MGF("mGetFireInterval", "Function UTGame.UTWeapon.GetFireInterval")); }
+			ScriptFunction PlayArmAnimation() { mixin(MGF("mPlayArmAnimation", "Function UTGame.UTWeapon.PlayArmAnimation")); }
+			ScriptFunction PlayWeaponAnimation() { mixin(MGF("mPlayWeaponAnimation", "Function UTGame.UTWeapon.PlayWeaponAnimation")); }
+			ScriptFunction PlayFireEffects() { mixin(MGF("mPlayFireEffects", "Function UTGame.UTWeapon.PlayFireEffects")); }
+			ScriptFunction StopFireEffects() { mixin(MGF("mStopFireEffects", "Function UTGame.UTWeapon.StopFireEffects")); }
+			ScriptFunction ShakeView() { mixin(MGF("mShakeView", "Function UTGame.UTWeapon.ShakeView")); }
+			ScriptFunction WeaponCalcCamera() { mixin(MGF("mWeaponCalcCamera", "Function UTGame.UTWeapon.WeaponCalcCamera")); }
+			ScriptFunction WeaponPlaySound() { mixin(MGF("mWeaponPlaySound", "Function UTGame.UTWeapon.WeaponPlaySound")); }
+			ScriptFunction PlayFiringSound() { mixin(MGF("mPlayFiringSound", "Function UTGame.UTWeapon.PlayFiringSound")); }
+			ScriptFunction MuzzleFlashTimer() { mixin(MGF("mMuzzleFlashTimer", "Function UTGame.UTWeapon.MuzzleFlashTimer")); }
+			ScriptFunction CauseMuzzleFlashLight() { mixin(MGF("mCauseMuzzleFlashLight", "Function UTGame.UTWeapon.CauseMuzzleFlashLight")); }
+			ScriptFunction CauseMuzzleFlash() { mixin(MGF("mCauseMuzzleFlash", "Function UTGame.UTWeapon.CauseMuzzleFlash")); }
+			ScriptFunction StopMuzzleFlash() { mixin(MGF("mStopMuzzleFlash", "Function UTGame.UTWeapon.StopMuzzleFlash")); }
+			ScriptFunction TimeWeaponPutDown() { mixin(MGF("mTimeWeaponPutDown", "Function UTGame.UTWeapon.TimeWeaponPutDown")); }
+			ScriptFunction PlayWeaponPutDown() { mixin(MGF("mPlayWeaponPutDown", "Function UTGame.UTWeapon.PlayWeaponPutDown")); }
+			ScriptFunction TimeWeaponEquipping() { mixin(MGF("mTimeWeaponEquipping", "Function UTGame.UTWeapon.TimeWeaponEquipping")); }
+			ScriptFunction GetEquipTime() { mixin(MGF("mGetEquipTime", "Function UTGame.UTWeapon.GetEquipTime")); }
+			ScriptFunction PlayWeaponEquip() { mixin(MGF("mPlayWeaponEquip", "Function UTGame.UTWeapon.PlayWeaponEquip")); }
+			ScriptFunction AttachWeaponTo() { mixin(MGF("mAttachWeaponTo", "Function UTGame.UTWeapon.AttachWeaponTo")); }
+			ScriptFunction SetMuzzleFlashParams() { mixin(MGF("mSetMuzzleFlashParams", "Function UTGame.UTWeapon.SetMuzzleFlashParams")); }
+			ScriptFunction AttachMuzzleFlash() { mixin(MGF("mAttachMuzzleFlash", "Function UTGame.UTWeapon.AttachMuzzleFlash")); }
+			ScriptFunction DetachWeapon() { mixin(MGF("mDetachWeapon", "Function UTGame.UTWeapon.DetachWeapon")); }
+			ScriptFunction DetachMuzzleFlash() { mixin(MGF("mDetachMuzzleFlash", "Function UTGame.UTWeapon.DetachMuzzleFlash")); }
+			ScriptFunction ChangeVisibility() { mixin(MGF("mChangeVisibility", "Function UTGame.UTWeapon.ChangeVisibility")); }
+			ScriptFunction PerformWeaponChange() { mixin(MGF("mPerformWeaponChange", "Function UTGame.UTWeapon.PerformWeaponChange")); }
+			ScriptFunction GetViewAxes() { mixin(MGF("mGetViewAxes", "Function UTGame.UTWeapon.GetViewAxes")); }
+			ScriptFunction ServerReselectWeapon() { mixin(MGF("mServerReselectWeapon", "Function UTGame.UTWeapon.ServerReselectWeapon")); }
+			ScriptFunction CanThrow() { mixin(MGF("mCanThrow", "Function UTGame.UTWeapon.CanThrow")); }
+			ScriptFunction GetHand() { mixin(MGF("mGetHand", "Function UTGame.UTWeapon.GetHand")); }
+			ScriptFunction SetPosition() { mixin(MGF("mSetPosition", "Function UTGame.UTWeapon.SetPosition")); }
+			ScriptFunction ShouldLagRot() { mixin(MGF("mShouldLagRot", "Function UTGame.UTWeapon.ShouldLagRot")); }
+			ScriptFunction LagRot() { mixin(MGF("mLagRot", "Function UTGame.UTWeapon.LagRot")); }
+			ScriptFunction AdjustPlayerDamage() { mixin(MGF("mAdjustPlayerDamage", "Function UTGame.UTWeapon.AdjustPlayerDamage")); }
+			ScriptFunction RelativeStrengthVersus() { mixin(MGF("mRelativeStrengthVersus", "Function UTGame.UTWeapon.RelativeStrengthVersus")); }
+			ScriptFunction GetWeaponRating() { mixin(MGF("mGetWeaponRating", "Function UTGame.UTWeapon.GetWeaponRating")); }
+			ScriptFunction CanAttack() { mixin(MGF("mCanAttack", "Function UTGame.UTWeapon.CanAttack")); }
+			ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function UTGame.UTWeapon.BotDesireability")); }
+			ScriptFunction AmmoMaxed() { mixin(MGF("mAmmoMaxed", "Function UTGame.UTWeapon.AmmoMaxed")); }
+			ScriptFunction GetDamageRadius() { mixin(MGF("mGetDamageRadius", "Function UTGame.UTWeapon.GetDamageRadius")); }
+			ScriptFunction CanHeal() { mixin(MGF("mCanHeal", "Function UTGame.UTWeapon.CanHeal")); }
+			ScriptFunction GetOptimalRangeFor() { mixin(MGF("mGetOptimalRangeFor", "Function UTGame.UTWeapon.GetOptimalRangeFor")); }
+			ScriptFunction FireOnRelease() { mixin(MGF("mFireOnRelease", "Function UTGame.UTWeapon.FireOnRelease")); }
+			ScriptFunction FocusOnLeader() { mixin(MGF("mFocusOnLeader", "Function UTGame.UTWeapon.FocusOnLeader")); }
+			ScriptFunction RecommendRangedAttack() { mixin(MGF("mRecommendRangedAttack", "Function UTGame.UTWeapon.RecommendRangedAttack")); }
+			ScriptFunction SuggestAttackStyle() { mixin(MGF("mSuggestAttackStyle", "Function UTGame.UTWeapon.SuggestAttackStyle")); }
+			ScriptFunction SuggestDefenseStyle() { mixin(MGF("mSuggestDefenseStyle", "Function UTGame.UTWeapon.SuggestDefenseStyle")); }
+			ScriptFunction RangedAttackTime() { mixin(MGF("mRangedAttackTime", "Function UTGame.UTWeapon.RangedAttackTime")); }
+			ScriptFunction SplashJump() { mixin(MGF("mSplashJump", "Function UTGame.UTWeapon.SplashJump")); }
+			ScriptFunction ShouldFireWithoutTarget() { mixin(MGF("mShouldFireWithoutTarget", "Function UTGame.UTWeapon.ShouldFireWithoutTarget")); }
+			ScriptFunction BestMode() { mixin(MGF("mBestMode", "Function UTGame.UTWeapon.BestMode")); }
+			ScriptFunction IsFullyCharged() { mixin(MGF("mIsFullyCharged", "Function UTGame.UTWeapon.IsFullyCharged")); }
+			ScriptFunction ReadyToFire() { mixin(MGF("mReadyToFire", "Function UTGame.UTWeapon.ReadyToFire")); }
+			ScriptFunction StillFiring() { mixin(MGF("mStillFiring", "Function UTGame.UTWeapon.StillFiring")); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF("mConsumeAmmo", "Function UTGame.UTWeapon.ConsumeAmmo")); }
+			ScriptFunction AddAmmo() { mixin(MGF("mAddAmmo", "Function UTGame.UTWeapon.AddAmmo")); }
+			ScriptFunction HasAmmo() { mixin(MGF("mHasAmmo", "Function UTGame.UTWeapon.HasAmmo")); }
+			ScriptFunction HasAnyAmmo() { mixin(MGF("mHasAnyAmmo", "Function UTGame.UTWeapon.HasAnyAmmo")); }
+			ScriptFunction NeedAmmo() { mixin(MGF("mNeedAmmo", "Function UTGame.UTWeapon.NeedAmmo")); }
+			ScriptFunction Loaded() { mixin(MGF("mLoaded", "Function UTGame.UTWeapon.Loaded")); }
+			ScriptFunction DenyPickupQuery() { mixin(MGF("mDenyPickupQuery", "Function UTGame.UTWeapon.DenyPickupQuery")); }
+			ScriptFunction WeaponEmpty() { mixin(MGF("mWeaponEmpty", "Function UTGame.UTWeapon.WeaponEmpty")); }
+			ScriptFunction bReadyToFire() { mixin(MGF("mbReadyToFire", "Function UTGame.UTWeapon.bReadyToFire")); }
+			ScriptFunction InstantFireStartTrace() { mixin(MGF("mInstantFireStartTrace", "Function UTGame.UTWeapon.InstantFireStartTrace")); }
+			ScriptFunction InstantFireEndTrace() { mixin(MGF("mInstantFireEndTrace", "Function UTGame.UTWeapon.InstantFireEndTrace")); }
+			ScriptFunction InstantFire() { mixin(MGF("mInstantFire", "Function UTGame.UTWeapon.InstantFire")); }
+			ScriptFunction InstantAimHelp() { mixin(MGF("mInstantAimHelp", "Function UTGame.UTWeapon.InstantAimHelp")); }
+			ScriptFunction ProjectileFire() { mixin(MGF("mProjectileFire", "Function UTGame.UTWeapon.ProjectileFire")); }
+			ScriptFunction ProcessInstantHit() { mixin(MGF("mProcessInstantHit", "Function UTGame.UTWeapon.ProcessInstantHit")); }
+			ScriptFunction GetZoomedState() { mixin(MGF("mGetZoomedState", "Function UTGame.UTWeapon.GetZoomedState")); }
+			ScriptFunction CheckZoom() { mixin(MGF("mCheckZoom", "Function UTGame.UTWeapon.CheckZoom")); }
+			ScriptFunction StartZoom() { mixin(MGF("mStartZoom", "Function UTGame.UTWeapon.StartZoom")); }
+			ScriptFunction EndZoom() { mixin(MGF("mEndZoom", "Function UTGame.UTWeapon.EndZoom")); }
+			ScriptFunction ClientEndFire() { mixin(MGF("mClientEndFire", "Function UTGame.UTWeapon.ClientEndFire")); }
+			ScriptFunction EndFire() { mixin(MGF("mEndFire", "Function UTGame.UTWeapon.EndFire")); }
+			ScriptFunction SendToFiringState() { mixin(MGF("mSendToFiringState", "Function UTGame.UTWeapon.SendToFiringState")); }
+			ScriptFunction ClientWeaponSet() { mixin(MGF("mClientWeaponSet", "Function UTGame.UTWeapon.ClientWeaponSet")); }
+			ScriptFunction FireAmmunition() { mixin(MGF("mFireAmmunition", "Function UTGame.UTWeapon.FireAmmunition")); }
+			ScriptFunction PreloadTextures() { mixin(MGF("mPreloadTextures", "Function UTGame.UTWeapon.PreloadTextures")); }
+			ScriptFunction AllowSwitchTo() { mixin(MGF("mAllowSwitchTo", "Function UTGame.UTWeapon.AllowSwitchTo")); }
+			ScriptFunction TryPutDown() { mixin(MGF("mTryPutDown", "Function UTGame.UTWeapon.TryPutDown")); }
+			ScriptFunction FiringPutDownWeapon() { mixin(MGF("mFiringPutDownWeapon", "Function UTGame.UTWeapon.FiringPutDownWeapon")); }
+			ScriptFunction GetPhysicalFireStartLoc() { mixin(MGF("mGetPhysicalFireStartLoc", "Function UTGame.UTWeapon.GetPhysicalFireStartLoc")); }
+			ScriptFunction GetEffectLocation() { mixin(MGF("mGetEffectLocation", "Function UTGame.UTWeapon.GetEffectLocation")); }
+			ScriptFunction RefireCheckTimer() { mixin(MGF("mRefireCheckTimer", "Function UTGame.UTWeapon.RefireCheckTimer")); }
+			ScriptFunction SetupArmsAnim() { mixin(MGF("mSetupArmsAnim", "Function UTGame.UTWeapon.SetupArmsAnim")); }
+			ScriptFunction GetArmAnimNodeSeq() { mixin(MGF("mGetArmAnimNodeSeq", "Function UTGame.UTWeapon.GetArmAnimNodeSeq")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function UTGame.UTWeapon.Destroyed")); }
+			ScriptFunction SetWeaponOverlayFlags() { mixin(MGF("mSetWeaponOverlayFlags", "Function UTGame.UTWeapon.SetWeaponOverlayFlags")); }
+			ScriptFunction DetourWeight() { mixin(MGF("mDetourWeight", "Function UTGame.UTWeapon.DetourWeight")); }
+			ScriptFunction RecommendLongRangedAttack() { mixin(MGF("mRecommendLongRangedAttack", "Function UTGame.UTWeapon.RecommendLongRangedAttack")); }
+			ScriptFunction ThrottleLook() { mixin(MGF("mThrottleLook", "Function UTGame.UTWeapon.ThrottleLook")); }
+			ScriptFunction Activate() { mixin(MGF("mActivate", "Function UTGame.UTWeapon.Activate")); }
+			ScriptFunction DropFrom() { mixin(MGF("mDropFrom", "Function UTGame.UTWeapon.DropFrom")); }
+			ScriptFunction ClientWeaponThrown() { mixin(MGF("mClientWeaponThrown", "Function UTGame.UTWeapon.ClientWeaponThrown")); }
+			ScriptFunction CanViewAccelerationWhenFiring() { mixin(MGF("mCanViewAccelerationWhenFiring", "Function UTGame.UTWeapon.CanViewAccelerationWhenFiring")); }
+			ScriptFunction HolderEnteredVehicle() { mixin(MGF("mHolderEnteredVehicle", "Function UTGame.UTWeapon.HolderEnteredVehicle")); }
+			ScriptFunction HolderExitedVehicle() { mixin(MGF("mHolderExitedVehicle", "Function UTGame.UTWeapon.HolderExitedVehicle")); }
+			ScriptFunction DrawKillIcon() { mixin(MGF("mDrawKillIcon", "Function UTGame.UTWeapon.DrawKillIcon")); }
+			ScriptFunction EnableFriendlyWarningCrosshair() { mixin(MGF("mEnableFriendlyWarningCrosshair", "Function UTGame.UTWeapon.EnableFriendlyWarningCrosshair")); }
 		}
 	}
 	enum EZoomState : ubyte
@@ -291,192 +291,192 @@ public extern(D):
 	static struct Inactive
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeapon.Inactive")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeapon.Inactive")); }
 	}
 	static struct WeaponFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeapon.WeaponFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeapon.WeaponFiring")); }
 	}
 	static struct WeaponEquipping
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeapon.WeaponEquipping")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeapon.WeaponEquipping")); }
 	}
 	static struct WeaponAbortEquip
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeapon.WeaponAbortEquip")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeapon.WeaponAbortEquip")); }
 	}
 	static struct WeaponPuttingDown
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeapon.WeaponPuttingDown")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeapon.WeaponPuttingDown")); }
 	}
 	static struct Active
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeapon.Active")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeapon.Active")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			UTWeapon.AmmoWidgetDisplayStyle AmmoDisplayType() { mixin(MGPC!("UTWeapon.AmmoWidgetDisplayStyle", 970)()); }
-			ubyte InventoryGroup() { mixin(MGPC!("ubyte", 969)()); }
-			ScriptString UseHintString() { mixin(MGPC!("ScriptString", 1460)()); }
-			UIRoot.TextureCoordinates SimpleCrossHairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 868)()); }
-			UIRoot.TextureCoordinates CustomCrosshairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 936)()); }
-			float LastHitEnemyTime() { mixin(MGPC!("float", 924)()); }
-			float InventoryWeight() { mixin(MGPC!("float", 1012)()); }
-			float GroupWeight() { mixin(MGPC!("float", 1008)()); }
-			UIRoot.TextureCoordinates CrossHairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 852)()); }
-			float CrosshairScaling() { mixin(MGPC!("float", 932)()); }
-			Texture2D CrosshairImage() { mixin(MGPC!("Texture2D", 884)()); }
-			UObject.Color CrosshairColor() { mixin(MGPC!("UObject.Color", 928)()); }
-			float LockedStartTime() { mixin(MGPC!("float", 920)()); }
-			float CurrentLockedScale() { mixin(MGPC!("float", 904)()); }
-			float StartLockedScale() { mixin(MGPC!("float", 908)()); }
-			float LockedScaleTime() { mixin(MGPC!("float", 916)()); }
-			float FinalLockedScale() { mixin(MGPC!("float", 912)()); }
-			UIRoot.TextureCoordinates LockedCrossHairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 888)()); }
-			float ZoomedRate() { mixin(MGPC!("float", 976)()); }
-			float ZoomedTargetFOV() { mixin(MGPC!("float", 972)()); }
-			AnimSet ArmsAnimSet() { mixin(MGPC!("AnimSet", 1040)()); }
-			ScriptArray!(ScriptName) WeaponFireAnim() { mixin(MGPC!("ScriptArray!(ScriptName)", 1016)()); }
-			ScriptArray!(ScriptName) ArmFireAnim() { mixin(MGPC!("ScriptArray!(ScriptName)", 1028)()); }
-			ScriptArray!(CameraAnim) FireCameraAnim() { mixin(MGPC!("ScriptArray!(CameraAnim)", 788)()); }
-			ForceFeedbackWaveform WeaponFireWaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 800)()); }
-			ScriptArray!(SoundCue) WeaponFireSnd() { mixin(MGPC!("ScriptArray!(SoundCue)", 1100)()); }
+			UTWeapon.AmmoWidgetDisplayStyle AmmoDisplayType() { mixin(MGPC("UTWeapon.AmmoWidgetDisplayStyle", 970)); }
+			ubyte InventoryGroup() { mixin(MGPC("ubyte", 969)); }
+			ScriptString UseHintString() { mixin(MGPC("ScriptString", 1460)); }
+			UIRoot.TextureCoordinates SimpleCrossHairCoordinates() { mixin(MGPC("UIRoot.TextureCoordinates", 868)); }
+			UIRoot.TextureCoordinates CustomCrosshairCoordinates() { mixin(MGPC("UIRoot.TextureCoordinates", 936)); }
+			float LastHitEnemyTime() { mixin(MGPC("float", 924)); }
+			float InventoryWeight() { mixin(MGPC("float", 1012)); }
+			float GroupWeight() { mixin(MGPC("float", 1008)); }
+			UIRoot.TextureCoordinates CrossHairCoordinates() { mixin(MGPC("UIRoot.TextureCoordinates", 852)); }
+			float CrosshairScaling() { mixin(MGPC("float", 932)); }
+			Texture2D CrosshairImage() { mixin(MGPC("Texture2D", 884)); }
+			UObject.Color CrosshairColor() { mixin(MGPC("UObject.Color", 928)); }
+			float LockedStartTime() { mixin(MGPC("float", 920)); }
+			float CurrentLockedScale() { mixin(MGPC("float", 904)); }
+			float StartLockedScale() { mixin(MGPC("float", 908)); }
+			float LockedScaleTime() { mixin(MGPC("float", 916)); }
+			float FinalLockedScale() { mixin(MGPC("float", 912)); }
+			UIRoot.TextureCoordinates LockedCrossHairCoordinates() { mixin(MGPC("UIRoot.TextureCoordinates", 888)); }
+			float ZoomedRate() { mixin(MGPC("float", 976)); }
+			float ZoomedTargetFOV() { mixin(MGPC("float", 972)); }
+			AnimSet ArmsAnimSet() { mixin(MGPC("AnimSet", 1040)); }
+			ScriptArray!(ScriptName) WeaponFireAnim() { mixin(MGPC("ScriptArray!(ScriptName)", 1016)); }
+			ScriptArray!(ScriptName) ArmFireAnim() { mixin(MGPC("ScriptArray!(ScriptName)", 1028)); }
+			ScriptArray!(CameraAnim) FireCameraAnim() { mixin(MGPC("ScriptArray!(CameraAnim)", 788)); }
+			ForceFeedbackWaveform WeaponFireWaveForm() { mixin(MGPC("ForceFeedbackWaveform", 800)); }
+			ScriptArray!(SoundCue) WeaponFireSnd() { mixin(MGPC("ScriptArray!(SoundCue)", 1100)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashPSC'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashLight'!
-			ScriptClass MuzzleFlashLightClass() { mixin(MGPC!("ScriptClass", 1224)()); }
-			ScriptName MuzzleFlashSocket() { mixin(MGPC!("ScriptName", 1196)()); }
-			ParticleSystem MuzzleFlashAltPSCTemplate() { mixin(MGPC!("ParticleSystem", 1212)()); }
-			ParticleSystem MuzzleFlashPSCTemplate() { mixin(MGPC!("ParticleSystem", 1208)()); }
-			float MuzzleFlashDuration() { mixin(MGPC!("float", 1228)()); }
-			ScriptName WeaponPutDownAnim() { mixin(MGPC!("ScriptName", 1044)()); }
-			ScriptName ArmsPutDownAnim() { mixin(MGPC!("ScriptName", 1052)()); }
-			SoundCue WeaponPutDownSnd() { mixin(MGPC!("SoundCue", 1112)()); }
-			ScriptName WeaponEquipAnim() { mixin(MGPC!("ScriptName", 1060)()); }
-			ScriptName ArmsEquipAnim() { mixin(MGPC!("ScriptName", 1068)()); }
-			SoundCue WeaponEquipSnd() { mixin(MGPC!("SoundCue", 1116)()); }
-			ScriptClass AttachmentClass() { mixin(MGPC!("ScriptClass", 992)()); }
-			UObject.Color MuzzleFlashColor() { mixin(MGPC!("UObject.Color", 1216)()); }
-			Vector HiddenWeaponsOffset() { mixin(MGPC!("Vector", 1272)()); }
-			Vector PlayerViewOffset() { mixin(MGPC!("Vector", 1232)()); }
-			Vector SmallWeaponsOffset() { mixin(MGPC!("Vector", 1244)()); }
-			float WideScreenOffsetScaling() { mixin(MGPC!("float", 1256)()); }
-			float BobDamping() { mixin(MGPC!("float", 1120)()); }
-			float JumpDamping() { mixin(MGPC!("float", 1124)()); }
-			Rotator LastRotation() { mixin(MGPC!("Rotator", 1140)()); }
-			float MaxYawLag() { mixin(MGPC!("float", 1132)()); }
-			float MaxPitchLag() { mixin(MGPC!("float", 1128)()); }
-			float LastRotUpdate() { mixin(MGPC!("float", 1136)()); }
-			Rotator WidescreenRotationOffset() { mixin(MGPC!("Rotator", 1260)()); }
-			int OldRotDiff() { mixin(MGPC!("int", 1160)()); }
-			float OldLeadMag() { mixin(MGPC!("float", 1152)()); }
-			float OldMaxDiff() { mixin(MGPC!("float", 1168)()); }
-			float RotChgSpeed() { mixin(MGPC!("float", 1176)()); }
-			float ReturnChgSpeed() { mixin(MGPC!("float", 1180)()); }
-			float CurrentRating() { mixin(MGPC!("float", 1312)()); }
-			ScriptClass AmmoPickupClass() { mixin(MGPC!("ScriptClass", 752)()); }
-			int MaxAmmoCount() { mixin(MGPC!("int", 760)()); }
-			ScriptArray!(ubyte) bZoomedFireMode() { mixin(MGPC!("ScriptArray!(ubyte)", 956)()); }
-			ScriptArray!(int) ShotCost() { mixin(MGPC!("ScriptArray!(int)", 764)()); }
-			float AimingHelpRadius() { mixin(MGPC!("float", 1336)()); }
-			ubyte ZoomedFireModeNum() { mixin(MGPC!("ubyte", 968)()); }
-			SoundCue ZoomInSound() { mixin(MGPC!("SoundCue", 984)()); }
-			SoundCue ZoomOutSound() { mixin(MGPC!("SoundCue", 988)()); }
-			float SwitchAbortTime() { mixin(MGPC!("float", 832)()); }
-			ScriptArray!(float) MinReloadPct() { mixin(MGPC!("ScriptArray!(float)", 776)()); }
-			float ProjectileSpawnOffset() { mixin(MGPC!("float", 1284)()); }
-			ScriptArray!(ScriptName) EffectSockets() { mixin(MGPC!("ScriptArray!(ScriptName)", 804)()); }
-			float WeaponCanvasXPct() { mixin(MGPC!("float", 1188)()); }
-			float WeaponCanvasYPct() { mixin(MGPC!("float", 1192)()); }
-			UIRoot.TextureCoordinates IconCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 836)()); }
-			int LockerAmmoCount() { mixin(MGPC!("int", 756)()); }
-			int IconX() { mixin(MGPC!("int", 816)()); }
-			int IconY() { mixin(MGPC!("int", 820)()); }
-			int IconWidth() { mixin(MGPC!("int", 824)()); }
-			int IconHeight() { mixin(MGPC!("int", 828)()); }
-			float DroppedPickupOffsetZ() { mixin(MGPC!("float", 952)()); }
-			float ZoomFadeTime() { mixin(MGPC!("float", 980)()); }
-			Vector PivotTranslation() { mixin(MGPC!("Vector", 996)()); }
-			ScriptArray!(ScriptName) WeaponIdleAnims() { mixin(MGPC!("ScriptArray!(ScriptName)", 1076)()); }
-			ScriptArray!(ScriptName) ArmIdleAnims() { mixin(MGPC!("ScriptArray!(ScriptName)", 1088)()); }
-			UObject.Color WeaponColor() { mixin(MGPC!("UObject.Color", 1184)()); }
-			Rotator LockerRotation() { mixin(MGPC!("Rotator", 1288)()); }
-			Vector LockerOffset() { mixin(MGPC!("Vector", 1300)()); }
-			float aimerror() { mixin(MGPC!("float", 1316)()); }
-			UDKPlayerController.ObjectiveAnnouncementInfo NeedToPickUpAnnouncement() { mixin(MGPC!("UDKPlayerController.ObjectiveAnnouncementInfo", 1320)()); }
-			float ZoomedTurnSpeedScalePct() { mixin(MGPC!("float", 1344)()); }
-			float TargetFrictionDistanceMin() { mixin(MGPC!("float", 1348)()); }
-			float TargetFrictionDistancePeak() { mixin(MGPC!("float", 1352)()); }
-			float TargetFrictionDistanceMax() { mixin(MGPC!("float", 1356)()); }
-			UObject.InterpCurveFloat TargetFrictionDistanceCurve() { mixin(MGPC!("UObject.InterpCurveFloat", 1360)()); }
-			UObject.Vector2D TargetFrictionMultiplierRange() { mixin(MGPC!("UObject.Vector2D", 1376)()); }
-			float TargetFrictionPeakRadiusScale() { mixin(MGPC!("float", 1384)()); }
-			float TargetFrictionPeakHeightScale() { mixin(MGPC!("float", 1388)()); }
-			Vector TargetFrictionOffset() { mixin(MGPC!("Vector", 1392)()); }
-			float TargetFrictionZoomedBoostValue() { mixin(MGPC!("float", 1404)()); }
-			float TargetAdhesionTimeMax() { mixin(MGPC!("float", 1408)()); }
-			float TargetAdhesionDistanceMax() { mixin(MGPC!("float", 1412)()); }
-			float TargetAdhesionAimDistY() { mixin(MGPC!("float", 1416)()); }
-			float TargetAdhesionAimDistZ() { mixin(MGPC!("float", 1420)()); }
-			UObject.Vector2D TargetAdhesionScaleRange() { mixin(MGPC!("UObject.Vector2D", 1424)()); }
-			float TargetAdhesionScaleAmountMin() { mixin(MGPC!("float", 1432)()); }
-			float TargetAdhesionTargetVelocityMin() { mixin(MGPC!("float", 1436)()); }
-			float TargetAdhesionPlayerVelocityMin() { mixin(MGPC!("float", 1440)()); }
-			float TargetAdhesionZoomedBoostValue() { mixin(MGPC!("float", 1444)()); }
-			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1448)()); }
+			ScriptClass MuzzleFlashLightClass() { mixin(MGPC("ScriptClass", 1224)); }
+			ScriptName MuzzleFlashSocket() { mixin(MGPC("ScriptName", 1196)); }
+			ParticleSystem MuzzleFlashAltPSCTemplate() { mixin(MGPC("ParticleSystem", 1212)); }
+			ParticleSystem MuzzleFlashPSCTemplate() { mixin(MGPC("ParticleSystem", 1208)); }
+			float MuzzleFlashDuration() { mixin(MGPC("float", 1228)); }
+			ScriptName WeaponPutDownAnim() { mixin(MGPC("ScriptName", 1044)); }
+			ScriptName ArmsPutDownAnim() { mixin(MGPC("ScriptName", 1052)); }
+			SoundCue WeaponPutDownSnd() { mixin(MGPC("SoundCue", 1112)); }
+			ScriptName WeaponEquipAnim() { mixin(MGPC("ScriptName", 1060)); }
+			ScriptName ArmsEquipAnim() { mixin(MGPC("ScriptName", 1068)); }
+			SoundCue WeaponEquipSnd() { mixin(MGPC("SoundCue", 1116)); }
+			ScriptClass AttachmentClass() { mixin(MGPC("ScriptClass", 992)); }
+			UObject.Color MuzzleFlashColor() { mixin(MGPC("UObject.Color", 1216)); }
+			Vector HiddenWeaponsOffset() { mixin(MGPC("Vector", 1272)); }
+			Vector PlayerViewOffset() { mixin(MGPC("Vector", 1232)); }
+			Vector SmallWeaponsOffset() { mixin(MGPC("Vector", 1244)); }
+			float WideScreenOffsetScaling() { mixin(MGPC("float", 1256)); }
+			float BobDamping() { mixin(MGPC("float", 1120)); }
+			float JumpDamping() { mixin(MGPC("float", 1124)); }
+			Rotator LastRotation() { mixin(MGPC("Rotator", 1140)); }
+			float MaxYawLag() { mixin(MGPC("float", 1132)); }
+			float MaxPitchLag() { mixin(MGPC("float", 1128)); }
+			float LastRotUpdate() { mixin(MGPC("float", 1136)); }
+			Rotator WidescreenRotationOffset() { mixin(MGPC("Rotator", 1260)); }
+			int OldRotDiff() { mixin(MGPC("int", 1160)); }
+			float OldLeadMag() { mixin(MGPC("float", 1152)); }
+			float OldMaxDiff() { mixin(MGPC("float", 1168)); }
+			float RotChgSpeed() { mixin(MGPC("float", 1176)); }
+			float ReturnChgSpeed() { mixin(MGPC("float", 1180)); }
+			float CurrentRating() { mixin(MGPC("float", 1312)); }
+			ScriptClass AmmoPickupClass() { mixin(MGPC("ScriptClass", 752)); }
+			int MaxAmmoCount() { mixin(MGPC("int", 760)); }
+			ScriptArray!(ubyte) bZoomedFireMode() { mixin(MGPC("ScriptArray!(ubyte)", 956)); }
+			ScriptArray!(int) ShotCost() { mixin(MGPC("ScriptArray!(int)", 764)); }
+			float AimingHelpRadius() { mixin(MGPC("float", 1336)); }
+			ubyte ZoomedFireModeNum() { mixin(MGPC("ubyte", 968)); }
+			SoundCue ZoomInSound() { mixin(MGPC("SoundCue", 984)); }
+			SoundCue ZoomOutSound() { mixin(MGPC("SoundCue", 988)); }
+			float SwitchAbortTime() { mixin(MGPC("float", 832)); }
+			ScriptArray!(float) MinReloadPct() { mixin(MGPC("ScriptArray!(float)", 776)); }
+			float ProjectileSpawnOffset() { mixin(MGPC("float", 1284)); }
+			ScriptArray!(ScriptName) EffectSockets() { mixin(MGPC("ScriptArray!(ScriptName)", 804)); }
+			float WeaponCanvasXPct() { mixin(MGPC("float", 1188)); }
+			float WeaponCanvasYPct() { mixin(MGPC("float", 1192)); }
+			UIRoot.TextureCoordinates IconCoordinates() { mixin(MGPC("UIRoot.TextureCoordinates", 836)); }
+			int LockerAmmoCount() { mixin(MGPC("int", 756)); }
+			int IconX() { mixin(MGPC("int", 816)); }
+			int IconY() { mixin(MGPC("int", 820)); }
+			int IconWidth() { mixin(MGPC("int", 824)); }
+			int IconHeight() { mixin(MGPC("int", 828)); }
+			float DroppedPickupOffsetZ() { mixin(MGPC("float", 952)); }
+			float ZoomFadeTime() { mixin(MGPC("float", 980)); }
+			Vector PivotTranslation() { mixin(MGPC("Vector", 996)); }
+			ScriptArray!(ScriptName) WeaponIdleAnims() { mixin(MGPC("ScriptArray!(ScriptName)", 1076)); }
+			ScriptArray!(ScriptName) ArmIdleAnims() { mixin(MGPC("ScriptArray!(ScriptName)", 1088)); }
+			UObject.Color WeaponColor() { mixin(MGPC("UObject.Color", 1184)); }
+			Rotator LockerRotation() { mixin(MGPC("Rotator", 1288)); }
+			Vector LockerOffset() { mixin(MGPC("Vector", 1300)); }
+			float aimerror() { mixin(MGPC("float", 1316)); }
+			UDKPlayerController.ObjectiveAnnouncementInfo NeedToPickUpAnnouncement() { mixin(MGPC("UDKPlayerController.ObjectiveAnnouncementInfo", 1320)); }
+			float ZoomedTurnSpeedScalePct() { mixin(MGPC("float", 1344)); }
+			float TargetFrictionDistanceMin() { mixin(MGPC("float", 1348)); }
+			float TargetFrictionDistancePeak() { mixin(MGPC("float", 1352)); }
+			float TargetFrictionDistanceMax() { mixin(MGPC("float", 1356)); }
+			UObject.InterpCurveFloat TargetFrictionDistanceCurve() { mixin(MGPC("UObject.InterpCurveFloat", 1360)); }
+			UObject.Vector2D TargetFrictionMultiplierRange() { mixin(MGPC("UObject.Vector2D", 1376)); }
+			float TargetFrictionPeakRadiusScale() { mixin(MGPC("float", 1384)); }
+			float TargetFrictionPeakHeightScale() { mixin(MGPC("float", 1388)); }
+			Vector TargetFrictionOffset() { mixin(MGPC("Vector", 1392)); }
+			float TargetFrictionZoomedBoostValue() { mixin(MGPC("float", 1404)); }
+			float TargetAdhesionTimeMax() { mixin(MGPC("float", 1408)); }
+			float TargetAdhesionDistanceMax() { mixin(MGPC("float", 1412)); }
+			float TargetAdhesionAimDistY() { mixin(MGPC("float", 1416)); }
+			float TargetAdhesionAimDistZ() { mixin(MGPC("float", 1420)); }
+			UObject.Vector2D TargetAdhesionScaleRange() { mixin(MGPC("UObject.Vector2D", 1424)); }
+			float TargetAdhesionScaleAmountMin() { mixin(MGPC("float", 1432)); }
+			float TargetAdhesionTargetVelocityMin() { mixin(MGPC("float", 1436)); }
+			float TargetAdhesionPlayerVelocityMin() { mixin(MGPC("float", 1440)); }
+			float TargetAdhesionZoomedBoostValue() { mixin(MGPC("float", 1444)); }
+			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 1448)); }
 		}
-		bool bExportMenuData() { mixin(MGBPC!(748, 0x1)()); }
-		bool bExportMenuData(bool val) { mixin(MSBPC!(748, 0x1)()); }
-		bool bAllowFiringWithoutController() { mixin(MGBPC!(748, 0x40000)()); }
-		bool bAllowFiringWithoutController(bool val) { mixin(MSBPC!(748, 0x40000)()); }
-		bool bSmallWeapons() { mixin(MGBPC!(748, 0x8)()); }
-		bool bSmallWeapons(bool val) { mixin(MSBPC!(748, 0x8)()); }
-		bool bUseCustomCoordinates() { mixin(MGBPC!(748, 0x4)()); }
-		bool bUseCustomCoordinates(bool val) { mixin(MSBPC!(748, 0x4)()); }
-		bool bWasLocked() { mixin(MGBPC!(748, 0x2)()); }
-		bool bWasLocked(bool val) { mixin(MSBPC!(748, 0x2)()); }
-		bool bSuppressSounds() { mixin(MGBPC!(748, 0x40)()); }
-		bool bSuppressSounds(bool val) { mixin(MSBPC!(748, 0x40)()); }
-		bool bMuzzleFlashPSCLoops() { mixin(MGBPC!(748, 0x400)()); }
-		bool bMuzzleFlashPSCLoops(bool val) { mixin(MSBPC!(748, 0x400)()); }
-		bool bShowAltMuzzlePSCWhenWeaponHidden() { mixin(MGBPC!(748, 0x200)()); }
-		bool bShowAltMuzzlePSCWhenWeaponHidden(bool val) { mixin(MSBPC!(748, 0x200)()); }
-		bool bMuzzleFlashAttached() { mixin(MGBPC!(748, 0x800)()); }
-		bool bMuzzleFlashAttached(bool val) { mixin(MSBPC!(748, 0x800)()); }
-		bool bPendingShow() { mixin(MGBPC!(748, 0x100)()); }
-		bool bPendingShow(bool val) { mixin(MSBPC!(748, 0x100)()); }
-		bool bForceHidden() { mixin(MGBPC!(748, 0x200000)()); }
-		bool bForceHidden(bool val) { mixin(MSBPC!(748, 0x200000)()); }
-		bool bSplashJump() { mixin(MGBPC!(748, 0x1000)()); }
-		bool bSplashJump(bool val) { mixin(MSBPC!(748, 0x1000)()); }
-		bool bUsingAimingHelp() { mixin(MGBPC!(748, 0x20000)()); }
-		bool bUsingAimingHelp(bool val) { mixin(MSBPC!(748, 0x20000)()); }
-		bool bSuperWeapon() { mixin(MGBPC!(748, 0x10)()); }
-		bool bSuperWeapon(bool val) { mixin(MSBPC!(748, 0x10)()); }
-		bool bNeverForwardPendingFire() { mixin(MGBPC!(748, 0x20)()); }
-		bool bNeverForwardPendingFire(bool val) { mixin(MSBPC!(748, 0x20)()); }
-		bool bUsesOffhand() { mixin(MGBPC!(748, 0x80)()); }
-		bool bUsesOffhand(bool val) { mixin(MSBPC!(748, 0x80)()); }
-		bool bRecommendSplashDamage() { mixin(MGBPC!(748, 0x2000)()); }
-		bool bRecommendSplashDamage(bool val) { mixin(MSBPC!(748, 0x2000)()); }
-		bool bSniping() { mixin(MGBPC!(748, 0x4000)()); }
-		bool bSniping(bool val) { mixin(MSBPC!(748, 0x4000)()); }
-		bool bFastRepeater() { mixin(MGBPC!(748, 0x8000)()); }
-		bool bFastRepeater(bool val) { mixin(MSBPC!(748, 0x8000)()); }
-		bool bLockedAimWhileFiring() { mixin(MGBPC!(748, 0x10000)()); }
-		bool bLockedAimWhileFiring(bool val) { mixin(MSBPC!(748, 0x10000)()); }
-		bool bTargetFrictionEnabled() { mixin(MGBPC!(748, 0x80000)()); }
-		bool bTargetFrictionEnabled(bool val) { mixin(MSBPC!(748, 0x80000)()); }
-		bool bTargetAdhesionEnabled() { mixin(MGBPC!(748, 0x100000)()); }
-		bool bTargetAdhesionEnabled(bool val) { mixin(MSBPC!(748, 0x100000)()); }
-		bool bHasLocationSpeech() { mixin(MGBPC!(748, 0x400000)()); }
-		bool bHasLocationSpeech(bool val) { mixin(MSBPC!(748, 0x400000)()); }
+		bool bExportMenuData() { mixin(MGBPC(748, 0x1)); }
+		bool bExportMenuData(bool val) { mixin(MSBPC(748, 0x1)); }
+		bool bAllowFiringWithoutController() { mixin(MGBPC(748, 0x40000)); }
+		bool bAllowFiringWithoutController(bool val) { mixin(MSBPC(748, 0x40000)); }
+		bool bSmallWeapons() { mixin(MGBPC(748, 0x8)); }
+		bool bSmallWeapons(bool val) { mixin(MSBPC(748, 0x8)); }
+		bool bUseCustomCoordinates() { mixin(MGBPC(748, 0x4)); }
+		bool bUseCustomCoordinates(bool val) { mixin(MSBPC(748, 0x4)); }
+		bool bWasLocked() { mixin(MGBPC(748, 0x2)); }
+		bool bWasLocked(bool val) { mixin(MSBPC(748, 0x2)); }
+		bool bSuppressSounds() { mixin(MGBPC(748, 0x40)); }
+		bool bSuppressSounds(bool val) { mixin(MSBPC(748, 0x40)); }
+		bool bMuzzleFlashPSCLoops() { mixin(MGBPC(748, 0x400)); }
+		bool bMuzzleFlashPSCLoops(bool val) { mixin(MSBPC(748, 0x400)); }
+		bool bShowAltMuzzlePSCWhenWeaponHidden() { mixin(MGBPC(748, 0x200)); }
+		bool bShowAltMuzzlePSCWhenWeaponHidden(bool val) { mixin(MSBPC(748, 0x200)); }
+		bool bMuzzleFlashAttached() { mixin(MGBPC(748, 0x800)); }
+		bool bMuzzleFlashAttached(bool val) { mixin(MSBPC(748, 0x800)); }
+		bool bPendingShow() { mixin(MGBPC(748, 0x100)); }
+		bool bPendingShow(bool val) { mixin(MSBPC(748, 0x100)); }
+		bool bForceHidden() { mixin(MGBPC(748, 0x200000)); }
+		bool bForceHidden(bool val) { mixin(MSBPC(748, 0x200000)); }
+		bool bSplashJump() { mixin(MGBPC(748, 0x1000)); }
+		bool bSplashJump(bool val) { mixin(MSBPC(748, 0x1000)); }
+		bool bUsingAimingHelp() { mixin(MGBPC(748, 0x20000)); }
+		bool bUsingAimingHelp(bool val) { mixin(MSBPC(748, 0x20000)); }
+		bool bSuperWeapon() { mixin(MGBPC(748, 0x10)); }
+		bool bSuperWeapon(bool val) { mixin(MSBPC(748, 0x10)); }
+		bool bNeverForwardPendingFire() { mixin(MGBPC(748, 0x20)); }
+		bool bNeverForwardPendingFire(bool val) { mixin(MSBPC(748, 0x20)); }
+		bool bUsesOffhand() { mixin(MGBPC(748, 0x80)); }
+		bool bUsesOffhand(bool val) { mixin(MSBPC(748, 0x80)); }
+		bool bRecommendSplashDamage() { mixin(MGBPC(748, 0x2000)); }
+		bool bRecommendSplashDamage(bool val) { mixin(MSBPC(748, 0x2000)); }
+		bool bSniping() { mixin(MGBPC(748, 0x4000)); }
+		bool bSniping(bool val) { mixin(MSBPC(748, 0x4000)); }
+		bool bFastRepeater() { mixin(MGBPC(748, 0x8000)); }
+		bool bFastRepeater(bool val) { mixin(MSBPC(748, 0x8000)); }
+		bool bLockedAimWhileFiring() { mixin(MGBPC(748, 0x10000)); }
+		bool bLockedAimWhileFiring(bool val) { mixin(MSBPC(748, 0x10000)); }
+		bool bTargetFrictionEnabled() { mixin(MGBPC(748, 0x80000)); }
+		bool bTargetFrictionEnabled(bool val) { mixin(MSBPC(748, 0x80000)); }
+		bool bTargetAdhesionEnabled() { mixin(MGBPC(748, 0x100000)); }
+		bool bTargetAdhesionEnabled(bool val) { mixin(MSBPC(748, 0x100000)); }
+		bool bHasLocationSpeech() { mixin(MGBPC(748, 0x400000)); }
+		bool bHasLocationSpeech(bool val) { mixin(MSBPC(748, 0x400000)); }
 	}
 final:
 	int GetAmmoCount()

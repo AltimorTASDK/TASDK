@@ -8,7 +8,7 @@ extern(C++) interface GeomModifier : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.GeomModifier")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.GeomModifier")); }
 	private static __gshared GeomModifier mDefaultProperties;
-	@property final static GeomModifier DefaultProperties() { mixin(MGDPC!(GeomModifier, "GeomModifier UnrealEd.Default__GeomModifier")()); }
+	@property final static GeomModifier DefaultProperties() { mixin(MGDPC("GeomModifier", "GeomModifier UnrealEd.Default__GeomModifier")); }
 }

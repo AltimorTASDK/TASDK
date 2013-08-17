@@ -10,9 +10,9 @@ extern(C++) interface UTPawnSoundGroup : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPawnSoundGroup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTPawnSoundGroup")); }
 	private static __gshared UTPawnSoundGroup mDefaultProperties;
-	@property final static UTPawnSoundGroup DefaultProperties() { mixin(MGDPC!(UTPawnSoundGroup, "UTPawnSoundGroup UTGame.Default__UTPawnSoundGroup")()); }
+	@property final static UTPawnSoundGroup DefaultProperties() { mixin(MGDPC("UTPawnSoundGroup", "UTPawnSoundGroup UTGame.Default__UTPawnSoundGroup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,23 +37,23 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFootstepSound() { mixin(MGF!("mGetFootstepSound", "Function UTGame.UTPawnSoundGroup.GetFootstepSound")()); }
-			ScriptFunction GetLandSound() { mixin(MGF!("mGetLandSound", "Function UTGame.UTPawnSoundGroup.GetLandSound")()); }
-			ScriptFunction GetJumpSound() { mixin(MGF!("mGetJumpSound", "Function UTGame.UTPawnSoundGroup.GetJumpSound")()); }
-			ScriptFunction PlayInstagibSound() { mixin(MGF!("mPlayInstagibSound", "Function UTGame.UTPawnSoundGroup.PlayInstagibSound")()); }
-			ScriptFunction PlayBulletImpact() { mixin(MGF!("mPlayBulletImpact", "Function UTGame.UTPawnSoundGroup.PlayBulletImpact")()); }
-			ScriptFunction PlayCrushedSound() { mixin(MGF!("mPlayCrushedSound", "Function UTGame.UTPawnSoundGroup.PlayCrushedSound")()); }
-			ScriptFunction PlayBodyExplosion() { mixin(MGF!("mPlayBodyExplosion", "Function UTGame.UTPawnSoundGroup.PlayBodyExplosion")()); }
-			ScriptFunction PlayDodgeSound() { mixin(MGF!("mPlayDodgeSound", "Function UTGame.UTPawnSoundGroup.PlayDodgeSound")()); }
-			ScriptFunction PlayDoubleJumpSound() { mixin(MGF!("mPlayDoubleJumpSound", "Function UTGame.UTPawnSoundGroup.PlayDoubleJumpSound")()); }
-			ScriptFunction PlayJumpSound() { mixin(MGF!("mPlayJumpSound", "Function UTGame.UTPawnSoundGroup.PlayJumpSound")()); }
-			ScriptFunction PlayLandSound() { mixin(MGF!("mPlayLandSound", "Function UTGame.UTPawnSoundGroup.PlayLandSound")()); }
-			ScriptFunction PlayFallingDamageLandSound() { mixin(MGF!("mPlayFallingDamageLandSound", "Function UTGame.UTPawnSoundGroup.PlayFallingDamageLandSound")()); }
-			ScriptFunction PlayDyingSound() { mixin(MGF!("mPlayDyingSound", "Function UTGame.UTPawnSoundGroup.PlayDyingSound")()); }
-			ScriptFunction PlayTakeHitSound() { mixin(MGF!("mPlayTakeHitSound", "Function UTGame.UTPawnSoundGroup.PlayTakeHitSound")()); }
-			ScriptFunction PlayGibSound() { mixin(MGF!("mPlayGibSound", "Function UTGame.UTPawnSoundGroup.PlayGibSound")()); }
-			ScriptFunction PlayGaspSound() { mixin(MGF!("mPlayGaspSound", "Function UTGame.UTPawnSoundGroup.PlayGaspSound")()); }
-			ScriptFunction PlayDrownSound() { mixin(MGF!("mPlayDrownSound", "Function UTGame.UTPawnSoundGroup.PlayDrownSound")()); }
+			ScriptFunction GetFootstepSound() { mixin(MGF("mGetFootstepSound", "Function UTGame.UTPawnSoundGroup.GetFootstepSound")); }
+			ScriptFunction GetLandSound() { mixin(MGF("mGetLandSound", "Function UTGame.UTPawnSoundGroup.GetLandSound")); }
+			ScriptFunction GetJumpSound() { mixin(MGF("mGetJumpSound", "Function UTGame.UTPawnSoundGroup.GetJumpSound")); }
+			ScriptFunction PlayInstagibSound() { mixin(MGF("mPlayInstagibSound", "Function UTGame.UTPawnSoundGroup.PlayInstagibSound")); }
+			ScriptFunction PlayBulletImpact() { mixin(MGF("mPlayBulletImpact", "Function UTGame.UTPawnSoundGroup.PlayBulletImpact")); }
+			ScriptFunction PlayCrushedSound() { mixin(MGF("mPlayCrushedSound", "Function UTGame.UTPawnSoundGroup.PlayCrushedSound")); }
+			ScriptFunction PlayBodyExplosion() { mixin(MGF("mPlayBodyExplosion", "Function UTGame.UTPawnSoundGroup.PlayBodyExplosion")); }
+			ScriptFunction PlayDodgeSound() { mixin(MGF("mPlayDodgeSound", "Function UTGame.UTPawnSoundGroup.PlayDodgeSound")); }
+			ScriptFunction PlayDoubleJumpSound() { mixin(MGF("mPlayDoubleJumpSound", "Function UTGame.UTPawnSoundGroup.PlayDoubleJumpSound")); }
+			ScriptFunction PlayJumpSound() { mixin(MGF("mPlayJumpSound", "Function UTGame.UTPawnSoundGroup.PlayJumpSound")); }
+			ScriptFunction PlayLandSound() { mixin(MGF("mPlayLandSound", "Function UTGame.UTPawnSoundGroup.PlayLandSound")); }
+			ScriptFunction PlayFallingDamageLandSound() { mixin(MGF("mPlayFallingDamageLandSound", "Function UTGame.UTPawnSoundGroup.PlayFallingDamageLandSound")); }
+			ScriptFunction PlayDyingSound() { mixin(MGF("mPlayDyingSound", "Function UTGame.UTPawnSoundGroup.PlayDyingSound")); }
+			ScriptFunction PlayTakeHitSound() { mixin(MGF("mPlayTakeHitSound", "Function UTGame.UTPawnSoundGroup.PlayTakeHitSound")); }
+			ScriptFunction PlayGibSound() { mixin(MGF("mPlayGibSound", "Function UTGame.UTPawnSoundGroup.PlayGibSound")); }
+			ScriptFunction PlayGaspSound() { mixin(MGF("mPlayGaspSound", "Function UTGame.UTPawnSoundGroup.PlayGaspSound")); }
+			ScriptFunction PlayDrownSound() { mixin(MGF("mPlayDrownSound", "Function UTGame.UTPawnSoundGroup.PlayDrownSound")); }
 		}
 	}
 	struct FootstepSoundInfo
@@ -61,34 +61,34 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTPawnSoundGroup.FootstepSoundInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.UTPawnSoundGroup.FootstepSoundInfo")); }
 		@property final auto ref
 		{
-			SoundCue Sound() { mixin(MGPS!("SoundCue", 8)()); }
-			ScriptName MaterialType() { mixin(MGPS!("ScriptName", 0)()); }
+			SoundCue Sound() { mixin(MGPS("SoundCue", 8)); }
+			ScriptName MaterialType() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) FootstepSounds() { mixin(MGPC!("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 108)()); }
-		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) JumpingSounds() { mixin(MGPC!("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 124)()); }
-		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) LandingSounds() { mixin(MGPC!("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 136)()); }
-		SoundCue InstagibSound() { mixin(MGPC!("SoundCue", 164)()); }
-		SoundCue BodyExplosionSound() { mixin(MGPC!("SoundCue", 160)()); }
-		SoundCue CrushedSound() { mixin(MGPC!("SoundCue", 156)()); }
-		SoundCue BulletImpactSound() { mixin(MGPC!("SoundCue", 152)()); }
-		SoundCue DefaultLandingSound() { mixin(MGPC!("SoundCue", 148)()); }
-		SoundCue DefaultFootstepSound() { mixin(MGPC!("SoundCue", 120)()); }
-		SoundCue GaspSound() { mixin(MGPC!("SoundCue", 104)()); }
-		SoundCue DrownSound() { mixin(MGPC!("SoundCue", 100)()); }
-		SoundCue GibSound() { mixin(MGPC!("SoundCue", 96)()); }
-		SoundCue HitSounds() { mixin(MGPC!("SoundCue", 84)()); }
-		SoundCue DyingSound() { mixin(MGPC!("SoundCue", 80)()); }
-		SoundCue FallingDamageLandSound() { mixin(MGPC!("SoundCue", 76)()); }
-		SoundCue LandSound() { mixin(MGPC!("SoundCue", 72)()); }
-		SoundCue DefaultJumpingSound() { mixin(MGPC!("SoundCue", 68)()); }
-		SoundCue DoubleJumpSound() { mixin(MGPC!("SoundCue", 64)()); }
-		SoundCue DodgeSound() { mixin(MGPC!("SoundCue", 60)()); }
+		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) FootstepSounds() { mixin(MGPC("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 108)); }
+		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) JumpingSounds() { mixin(MGPC("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 124)); }
+		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) LandingSounds() { mixin(MGPC("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 136)); }
+		SoundCue InstagibSound() { mixin(MGPC("SoundCue", 164)); }
+		SoundCue BodyExplosionSound() { mixin(MGPC("SoundCue", 160)); }
+		SoundCue CrushedSound() { mixin(MGPC("SoundCue", 156)); }
+		SoundCue BulletImpactSound() { mixin(MGPC("SoundCue", 152)); }
+		SoundCue DefaultLandingSound() { mixin(MGPC("SoundCue", 148)); }
+		SoundCue DefaultFootstepSound() { mixin(MGPC("SoundCue", 120)); }
+		SoundCue GaspSound() { mixin(MGPC("SoundCue", 104)); }
+		SoundCue DrownSound() { mixin(MGPC("SoundCue", 100)); }
+		SoundCue GibSound() { mixin(MGPC("SoundCue", 96)); }
+		SoundCue HitSounds() { mixin(MGPC("SoundCue", 84)); }
+		SoundCue DyingSound() { mixin(MGPC("SoundCue", 80)); }
+		SoundCue FallingDamageLandSound() { mixin(MGPC("SoundCue", 76)); }
+		SoundCue LandSound() { mixin(MGPC("SoundCue", 72)); }
+		SoundCue DefaultJumpingSound() { mixin(MGPC("SoundCue", 68)); }
+		SoundCue DoubleJumpSound() { mixin(MGPC("SoundCue", 64)); }
+		SoundCue DodgeSound() { mixin(MGPC("SoundCue", 60)); }
 	}
 final:
 	static SoundCue GetFootstepSound(int FootDown, ScriptName MaterialType)

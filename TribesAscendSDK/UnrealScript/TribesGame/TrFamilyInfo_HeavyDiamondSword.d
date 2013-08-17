@@ -8,7 +8,7 @@ extern(C++) interface TrFamilyInfo_HeavyDiamondSword : TrFamilyInfo_Heavy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrFamilyInfo_HeavyDiamondSword")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrFamilyInfo_HeavyDiamondSword")); }
 	private static __gshared TrFamilyInfo_HeavyDiamondSword mDefaultProperties;
-	@property final static TrFamilyInfo_HeavyDiamondSword DefaultProperties() { mixin(MGDPC!(TrFamilyInfo_HeavyDiamondSword, "TrFamilyInfo_HeavyDiamondSword TribesGame.Default__TrFamilyInfo_HeavyDiamondSword")()); }
+	@property final static TrFamilyInfo_HeavyDiamondSword DefaultProperties() { mixin(MGDPC("TrFamilyInfo_HeavyDiamondSword", "TrFamilyInfo_HeavyDiamondSword TribesGame.Default__TrFamilyInfo_HeavyDiamondSword")); }
 }

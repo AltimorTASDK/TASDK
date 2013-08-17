@@ -11,9 +11,9 @@ extern(C++) interface UTHealthPickupFactory : UTItemPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTHealthPickupFactory")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTHealthPickupFactory")); }
 	private static __gshared UTHealthPickupFactory mDefaultProperties;
-	@property final static UTHealthPickupFactory DefaultProperties() { mixin(MGDPC!(UTHealthPickupFactory, "UTHealthPickupFactory UTGame.Default__UTHealthPickupFactory")()); }
+	@property final static UTHealthPickupFactory DefaultProperties() { mixin(MGDPC("UTHealthPickupFactory", "UTHealthPickupFactory UTGame.Default__UTHealthPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,22 +25,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateHUD() { mixin(MGF!("mUpdateHUD", "Function UTGame.UTHealthPickupFactory.UpdateHUD")()); }
-			ScriptFunction SpawnCopyFor() { mixin(MGF!("mSpawnCopyFor", "Function UTGame.UTHealthPickupFactory.SpawnCopyFor")()); }
-			ScriptFunction HealAmount() { mixin(MGF!("mHealAmount", "Function UTGame.UTHealthPickupFactory.HealAmount")()); }
-			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTHealthPickupFactory.BotDesireability")()); }
+			ScriptFunction UpdateHUD() { mixin(MGF("mUpdateHUD", "Function UTGame.UTHealthPickupFactory.UpdateHUD")); }
+			ScriptFunction SpawnCopyFor() { mixin(MGF("mSpawnCopyFor", "Function UTGame.UTHealthPickupFactory.SpawnCopyFor")); }
+			ScriptFunction HealAmount() { mixin(MGF("mHealAmount", "Function UTGame.UTHealthPickupFactory.HealAmount")); }
+			ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function UTGame.UTHealthPickupFactory.BotDesireability")); }
 		}
 	}
 	static struct Pickup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTHealthPickupFactory.Pickup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTHealthPickupFactory.Pickup")); }
 	}
 	@property final
 	{
-		@property final auto ref int HealingAmount() { mixin(MGPC!("int", 976)()); }
-		bool bSuperHeal() { mixin(MGBPC!(980, 0x1)()); }
-		bool bSuperHeal(bool val) { mixin(MSBPC!(980, 0x1)()); }
+		@property final auto ref int HealingAmount() { mixin(MGPC("int", 976)); }
+		bool bSuperHeal() { mixin(MGBPC(980, 0x1)); }
+		bool bSuperHeal(bool val) { mixin(MSBPC(980, 0x1)); }
 	}
 final:
 	static void UpdateHUD(UTHUD H)

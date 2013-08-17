@@ -9,9 +9,9 @@ extern(C++) interface TrEffect_Shield : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_Shield")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_Shield")); }
 	private static __gshared TrEffect_Shield mDefaultProperties;
-	@property final static TrEffect_Shield DefaultProperties() { mixin(MGDPC!(TrEffect_Shield, "TrEffect_Shield TribesGame.Default__TrEffect_Shield")()); }
+	@property final static TrEffect_Shield DefaultProperties() { mixin(MGDPC("TrEffect_Shield", "TrEffect_Shield TribesGame.Default__TrEffect_Shield")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_Shield.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_Shield.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_Shield.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_Shield.Remove")); }
 		}
 	}
 final:

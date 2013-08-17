@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionTextureSampleParameterMovie : MaterialEx
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTextureSampleParameterMovie")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionTextureSampleParameterMovie")); }
 	private static __gshared MaterialExpressionTextureSampleParameterMovie mDefaultProperties;
-	@property final static MaterialExpressionTextureSampleParameterMovie DefaultProperties() { mixin(MGDPC!(MaterialExpressionTextureSampleParameterMovie, "MaterialExpressionTextureSampleParameterMovie Engine.Default__MaterialExpressionTextureSampleParameterMovie")()); }
+	@property final static MaterialExpressionTextureSampleParameterMovie DefaultProperties() { mixin(MGDPC("MaterialExpressionTextureSampleParameterMovie", "MaterialExpressionTextureSampleParameterMovie Engine.Default__MaterialExpressionTextureSampleParameterMovie")); }
 }

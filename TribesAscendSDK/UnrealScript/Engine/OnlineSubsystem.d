@@ -12,9 +12,9 @@ extern(C++) interface OnlineSubsystem : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineSubsystem")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineSubsystem")); }
 	private static __gshared OnlineSubsystem mDefaultProperties;
-	@property final static OnlineSubsystem DefaultProperties() { mixin(MGDPC!(OnlineSubsystem, "OnlineSubsystem Engine.Default__OnlineSubsystem")()); }
+	@property final static OnlineSubsystem DefaultProperties() { mixin(MGDPC("OnlineSubsystem", "OnlineSubsystem Engine.Default__OnlineSubsystem")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -47,31 +47,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetDebugSpewLevel() { mixin(MGF!("mSetDebugSpewLevel", "Function Engine.OnlineSubsystem.SetDebugSpewLevel")()); }
-			ScriptFunction DumpVoiceRegistration() { mixin(MGF!("mDumpVoiceRegistration", "Function Engine.OnlineSubsystem.DumpVoiceRegistration")()); }
-			ScriptFunction DumpSessionState() { mixin(MGF!("mDumpSessionState", "Function Engine.OnlineSubsystem.DumpSessionState")()); }
-			ScriptFunction DumpGameSettings() { mixin(MGF!("mDumpGameSettings", "Function Engine.OnlineSubsystem.DumpGameSettings")()); }
-			ScriptFunction GetNumSupportedLogins() { mixin(MGF!("mGetNumSupportedLogins", "Function Engine.OnlineSubsystem.GetNumSupportedLogins")()); }
-			ScriptFunction GetBuildUniqueId() { mixin(MGF!("mGetBuildUniqueId", "Function Engine.OnlineSubsystem.GetBuildUniqueId")()); }
-			ScriptFunction StringToUniqueNetId() { mixin(MGF!("mStringToUniqueNetId", "Function Engine.OnlineSubsystem.StringToUniqueNetId")()); }
-			ScriptFunction UniqueNetIdToString() { mixin(MGF!("mUniqueNetIdToString", "Function Engine.OnlineSubsystem.UniqueNetIdToString")()); }
-			ScriptFunction GetNamedInterface() { mixin(MGF!("mGetNamedInterface", "Function Engine.OnlineSubsystem.GetNamedInterface")()); }
-			ScriptFunction SetNamedInterface() { mixin(MGF!("mSetNamedInterface", "Function Engine.OnlineSubsystem.SetNamedInterface")()); }
-			ScriptFunction SetGameChatInterface() { mixin(MGF!("mSetGameChatInterface", "Function Engine.OnlineSubsystem.SetGameChatInterface")()); }
-			ScriptFunction SetTitleFileInterface() { mixin(MGF!("mSetTitleFileInterface", "Function Engine.OnlineSubsystem.SetTitleFileInterface")()); }
-			ScriptFunction SetPartyChatInterface() { mixin(MGF!("mSetPartyChatInterface", "Function Engine.OnlineSubsystem.SetPartyChatInterface")()); }
-			ScriptFunction SetNewsInterface() { mixin(MGF!("mSetNewsInterface", "Function Engine.OnlineSubsystem.SetNewsInterface")()); }
-			ScriptFunction SetStatsInterface() { mixin(MGF!("mSetStatsInterface", "Function Engine.OnlineSubsystem.SetStatsInterface")()); }
-			ScriptFunction SetVoiceInterface() { mixin(MGF!("mSetVoiceInterface", "Function Engine.OnlineSubsystem.SetVoiceInterface")()); }
-			ScriptFunction SetContentInterface() { mixin(MGF!("mSetContentInterface", "Function Engine.OnlineSubsystem.SetContentInterface")()); }
-			ScriptFunction SetGameInterface() { mixin(MGF!("mSetGameInterface", "Function Engine.OnlineSubsystem.SetGameInterface")()); }
-			ScriptFunction SetSystemInterface() { mixin(MGF!("mSetSystemInterface", "Function Engine.OnlineSubsystem.SetSystemInterface")()); }
-			ScriptFunction SetPlayerInterfaceEx() { mixin(MGF!("mSetPlayerInterfaceEx", "Function Engine.OnlineSubsystem.SetPlayerInterfaceEx")()); }
-			ScriptFunction SetPlayerInterface() { mixin(MGF!("mSetPlayerInterface", "Function Engine.OnlineSubsystem.SetPlayerInterface")()); }
-			ScriptFunction SetAccountInterface() { mixin(MGF!("mSetAccountInterface", "Function Engine.OnlineSubsystem.SetAccountInterface")()); }
-			ScriptFunction Exit() { mixin(MGF!("mExit", "Function Engine.OnlineSubsystem.Exit")()); }
-			ScriptFunction PostInit() { mixin(MGF!("mPostInit", "Function Engine.OnlineSubsystem.PostInit")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.OnlineSubsystem.Init")()); }
+			ScriptFunction SetDebugSpewLevel() { mixin(MGF("mSetDebugSpewLevel", "Function Engine.OnlineSubsystem.SetDebugSpewLevel")); }
+			ScriptFunction DumpVoiceRegistration() { mixin(MGF("mDumpVoiceRegistration", "Function Engine.OnlineSubsystem.DumpVoiceRegistration")); }
+			ScriptFunction DumpSessionState() { mixin(MGF("mDumpSessionState", "Function Engine.OnlineSubsystem.DumpSessionState")); }
+			ScriptFunction DumpGameSettings() { mixin(MGF("mDumpGameSettings", "Function Engine.OnlineSubsystem.DumpGameSettings")); }
+			ScriptFunction GetNumSupportedLogins() { mixin(MGF("mGetNumSupportedLogins", "Function Engine.OnlineSubsystem.GetNumSupportedLogins")); }
+			ScriptFunction GetBuildUniqueId() { mixin(MGF("mGetBuildUniqueId", "Function Engine.OnlineSubsystem.GetBuildUniqueId")); }
+			ScriptFunction StringToUniqueNetId() { mixin(MGF("mStringToUniqueNetId", "Function Engine.OnlineSubsystem.StringToUniqueNetId")); }
+			ScriptFunction UniqueNetIdToString() { mixin(MGF("mUniqueNetIdToString", "Function Engine.OnlineSubsystem.UniqueNetIdToString")); }
+			ScriptFunction GetNamedInterface() { mixin(MGF("mGetNamedInterface", "Function Engine.OnlineSubsystem.GetNamedInterface")); }
+			ScriptFunction SetNamedInterface() { mixin(MGF("mSetNamedInterface", "Function Engine.OnlineSubsystem.SetNamedInterface")); }
+			ScriptFunction SetGameChatInterface() { mixin(MGF("mSetGameChatInterface", "Function Engine.OnlineSubsystem.SetGameChatInterface")); }
+			ScriptFunction SetTitleFileInterface() { mixin(MGF("mSetTitleFileInterface", "Function Engine.OnlineSubsystem.SetTitleFileInterface")); }
+			ScriptFunction SetPartyChatInterface() { mixin(MGF("mSetPartyChatInterface", "Function Engine.OnlineSubsystem.SetPartyChatInterface")); }
+			ScriptFunction SetNewsInterface() { mixin(MGF("mSetNewsInterface", "Function Engine.OnlineSubsystem.SetNewsInterface")); }
+			ScriptFunction SetStatsInterface() { mixin(MGF("mSetStatsInterface", "Function Engine.OnlineSubsystem.SetStatsInterface")); }
+			ScriptFunction SetVoiceInterface() { mixin(MGF("mSetVoiceInterface", "Function Engine.OnlineSubsystem.SetVoiceInterface")); }
+			ScriptFunction SetContentInterface() { mixin(MGF("mSetContentInterface", "Function Engine.OnlineSubsystem.SetContentInterface")); }
+			ScriptFunction SetGameInterface() { mixin(MGF("mSetGameInterface", "Function Engine.OnlineSubsystem.SetGameInterface")); }
+			ScriptFunction SetSystemInterface() { mixin(MGF("mSetSystemInterface", "Function Engine.OnlineSubsystem.SetSystemInterface")); }
+			ScriptFunction SetPlayerInterfaceEx() { mixin(MGF("mSetPlayerInterfaceEx", "Function Engine.OnlineSubsystem.SetPlayerInterfaceEx")); }
+			ScriptFunction SetPlayerInterface() { mixin(MGF("mSetPlayerInterface", "Function Engine.OnlineSubsystem.SetPlayerInterface")); }
+			ScriptFunction SetAccountInterface() { mixin(MGF("mSetAccountInterface", "Function Engine.OnlineSubsystem.SetAccountInterface")); }
+			ScriptFunction Exit() { mixin(MGF("mExit", "Function Engine.OnlineSubsystem.Exit")); }
+			ScriptFunction PostInit() { mixin(MGF("mPostInit", "Function Engine.OnlineSubsystem.PostInit")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.OnlineSubsystem.Init")); }
 		}
 	}
 	enum EOnlineNewsType : ubyte
@@ -185,14 +185,14 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.NamedSession")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.NamedSession")); }
 		@property final auto ref
 		{
-			OnlineGameSettings GameSettings() { mixin(MGPS!("OnlineGameSettings", 12)()); }
-			ScriptArray!(OnlineSubsystem.OnlineRegistrant) Registrants() { mixin(MGPS!("ScriptArray!(OnlineSubsystem.OnlineRegistrant)", 16)()); }
-			ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant) ArbitrationRegistrants() { mixin(MGPS!("ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant)", 28)()); }
-			ScriptName SessionName() { mixin(MGPS!("ScriptName", 0)()); }
-			UObject.Pointer SessionInfo() { mixin(MGPS!("UObject.Pointer", 8)()); }
+			OnlineGameSettings GameSettings() { mixin(MGPS("OnlineGameSettings", 12)); }
+			ScriptArray!(OnlineSubsystem.OnlineRegistrant) Registrants() { mixin(MGPS("ScriptArray!(OnlineSubsystem.OnlineRegistrant)", 16)); }
+			ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant) ArbitrationRegistrants() { mixin(MGPS("ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant)", 28)); }
+			ScriptName SessionName() { mixin(MGPS("ScriptName", 0)); }
+			UObject.Pointer SessionInfo() { mixin(MGPS("UObject.Pointer", 8)); }
 		}
 	}
 	struct OnlineRegistrant
@@ -200,20 +200,20 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.OnlineRegistrant")()); }
-		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.OnlineRegistrant")); }
+		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 	}
 	struct OnlineArbitrationRegistrant
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.OnlineArbitrationRegistrant")()); }
-		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.OnlineArbitrationRegistrant")); }
+		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 		@property final auto ref
 		{
-			QWord MachineId() { mixin(MGPS!("QWord", 8)()); }
-			int Trustworthiness() { mixin(MGPS!("int", 16)()); }
+			QWord MachineId() { mixin(MGPS("QWord", 8)); }
+			int Trustworthiness() { mixin(MGPS("int", 16)); }
 		}
 	}
 	struct UniqueNetId
@@ -221,19 +221,19 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.UniqueNetId")()); }
-		@property final auto ref QWord Uid() { mixin(MGPS!("QWord", 0)()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.UniqueNetId")); }
+		@property final auto ref QWord Uid() { mixin(MGPS("QWord", 0)); }
 	}
 	struct NamedInterface
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.NamedInterface")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.NamedInterface")); }
 		@property final auto ref
 		{
-			UObject InterfaceObject() { mixin(MGPS!("UObject", 8)()); }
-			ScriptName InterfaceName() { mixin(MGPS!("ScriptName", 0)()); }
+			UObject InterfaceObject() { mixin(MGPS("UObject", 8)); }
+			ScriptName InterfaceName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	struct OnlinePartyMember
@@ -241,32 +241,32 @@ public extern(D):
 		private ubyte __buffer__[56];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.OnlinePartyMember")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.OnlinePartyMember")); }
 		@property final
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
-				ScriptString NickName() { mixin(MGPS!("ScriptString", 8)()); }
-				ubyte LocalUserNum() { mixin(MGPS!("ubyte", 20)()); }
-				OnlineSubsystem.ENATType NatType() { mixin(MGPS!("OnlineSubsystem.ENATType", 21)()); }
-				int TitleId() { mixin(MGPS!("int", 24)()); }
-				QWord SessionId() { mixin(MGPS!("QWord", 32)()); }
-				int Data1() { mixin(MGPS!("int", 40)()); }
-				int Data2() { mixin(MGPS!("int", 44)()); }
-				int Data3() { mixin(MGPS!("int", 48)()); }
-				int Data4() { mixin(MGPS!("int", 52)()); }
+				OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
+				ScriptString NickName() { mixin(MGPS("ScriptString", 8)); }
+				ubyte LocalUserNum() { mixin(MGPS("ubyte", 20)); }
+				OnlineSubsystem.ENATType NatType() { mixin(MGPS("OnlineSubsystem.ENATType", 21)); }
+				int TitleId() { mixin(MGPS("int", 24)); }
+				QWord SessionId() { mixin(MGPS("QWord", 32)); }
+				int Data1() { mixin(MGPS("int", 40)); }
+				int Data2() { mixin(MGPS("int", 44)); }
+				int Data3() { mixin(MGPS("int", 48)); }
+				int Data4() { mixin(MGPS("int", 52)); }
 			}
-			bool bIsLocal() { mixin(MGBPS!(28, 0x1)()); }
-			bool bIsLocal(bool val) { mixin(MSBPS!(28, 0x1)()); }
-			bool bIsInPartyVoice() { mixin(MGBPS!(28, 0x2)()); }
-			bool bIsInPartyVoice(bool val) { mixin(MSBPS!(28, 0x2)()); }
-			bool bIsTalking() { mixin(MGBPS!(28, 0x4)()); }
-			bool bIsTalking(bool val) { mixin(MSBPS!(28, 0x4)()); }
-			bool bIsInGameSession() { mixin(MGBPS!(28, 0x8)()); }
-			bool bIsInGameSession(bool val) { mixin(MSBPS!(28, 0x8)()); }
-			bool bIsPlayingThisGame() { mixin(MGBPS!(28, 0x10)()); }
-			bool bIsPlayingThisGame(bool val) { mixin(MSBPS!(28, 0x10)()); }
+			bool bIsLocal() { mixin(MGBPS(28, 0x1)); }
+			bool bIsLocal(bool val) { mixin(MSBPS(28, 0x1)); }
+			bool bIsInPartyVoice() { mixin(MGBPS(28, 0x2)); }
+			bool bIsInPartyVoice(bool val) { mixin(MSBPS(28, 0x2)); }
+			bool bIsTalking() { mixin(MGBPS(28, 0x4)); }
+			bool bIsTalking(bool val) { mixin(MSBPS(28, 0x4)); }
+			bool bIsInGameSession() { mixin(MGBPS(28, 0x8)); }
+			bool bIsInGameSession(bool val) { mixin(MSBPS(28, 0x8)); }
+			bool bIsPlayingThisGame() { mixin(MGBPS(28, 0x10)); }
+			bool bIsPlayingThisGame(bool val) { mixin(MSBPS(28, 0x10)); }
 		}
 	}
 	struct AchievementDetails
@@ -274,24 +274,24 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.AchievementDetails")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.AchievementDetails")); }
 		@property final
 		{
 			auto ref
 			{
-				int Id() { mixin(MGPS!("int", 0)()); }
-				ScriptString AchievementName() { mixin(MGPS!("ScriptString", 4)()); }
-				ScriptString Description() { mixin(MGPS!("ScriptString", 16)()); }
-				ScriptString HowTo() { mixin(MGPS!("ScriptString", 28)()); }
-				Surface Image() { mixin(MGPS!("Surface", 40)()); }
-				int GamerPoints() { mixin(MGPS!("int", 44)()); }
+				int Id() { mixin(MGPS("int", 0)); }
+				ScriptString AchievementName() { mixin(MGPS("ScriptString", 4)); }
+				ScriptString Description() { mixin(MGPS("ScriptString", 16)); }
+				ScriptString HowTo() { mixin(MGPS("ScriptString", 28)); }
+				Surface Image() { mixin(MGPS("Surface", 40)); }
+				int GamerPoints() { mixin(MGPS("int", 44)); }
 			}
-			bool bIsSecret() { mixin(MGBPS!(48, 0x1)()); }
-			bool bIsSecret(bool val) { mixin(MSBPS!(48, 0x1)()); }
-			bool bWasAchievedOnline() { mixin(MGBPS!(48, 0x2)()); }
-			bool bWasAchievedOnline(bool val) { mixin(MSBPS!(48, 0x2)()); }
-			bool bWasAchievedOffline() { mixin(MGBPS!(48, 0x4)()); }
-			bool bWasAchievedOffline(bool val) { mixin(MSBPS!(48, 0x4)()); }
+			bool bIsSecret() { mixin(MGBPS(48, 0x1)); }
+			bool bIsSecret(bool val) { mixin(MSBPS(48, 0x1)); }
+			bool bWasAchievedOnline() { mixin(MGBPS(48, 0x2)); }
+			bool bWasAchievedOnline(bool val) { mixin(MSBPS(48, 0x2)); }
+			bool bWasAchievedOffline() { mixin(MGBPS(48, 0x4)); }
+			bool bWasAchievedOffline(bool val) { mixin(MSBPS(48, 0x4)); }
 		}
 	}
 	struct CommunityContentMetadata
@@ -299,11 +299,11 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.CommunityContentMetadata")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.CommunityContentMetadata")); }
 		@property final auto ref
 		{
-			int ContentType() { mixin(MGPS!("int", 0)()); }
-			ScriptArray!(Settings.SettingsProperty) MetadataItems() { mixin(MGPS!("ScriptArray!(Settings.SettingsProperty)", 4)()); }
+			int ContentType() { mixin(MGPS("int", 0)); }
+			ScriptArray!(Settings.SettingsProperty) MetadataItems() { mixin(MGPS("ScriptArray!(Settings.SettingsProperty)", 4)); }
 		}
 	}
 	struct CommunityContentFile
@@ -311,19 +311,19 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.CommunityContentFile")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.CommunityContentFile")); }
 		@property final auto ref
 		{
-			int ContentId() { mixin(MGPS!("int", 0)()); }
-			int FileId() { mixin(MGPS!("int", 4)()); }
-			int ContentType() { mixin(MGPS!("int", 8)()); }
-			int FileSize() { mixin(MGPS!("int", 12)()); }
-			OnlineSubsystem.UniqueNetId Owner() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 16)()); }
-			int DownloadCount() { mixin(MGPS!("int", 24)()); }
-			float AverageRating() { mixin(MGPS!("float", 28)()); }
-			int RatingCount() { mixin(MGPS!("int", 32)()); }
-			int LastRatingGiven() { mixin(MGPS!("int", 36)()); }
-			ScriptString LocalFilePath() { mixin(MGPS!("ScriptString", 40)()); }
+			int ContentId() { mixin(MGPS("int", 0)); }
+			int FileId() { mixin(MGPS("int", 4)); }
+			int ContentType() { mixin(MGPS("int", 8)); }
+			int FileSize() { mixin(MGPS("int", 12)); }
+			OnlineSubsystem.UniqueNetId Owner() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 16)); }
+			int DownloadCount() { mixin(MGPS("int", 24)); }
+			float AverageRating() { mixin(MGPS("float", 28)); }
+			int RatingCount() { mixin(MGPS("int", 32)); }
+			int LastRatingGiven() { mixin(MGPS("int", 36)); }
+			ScriptString LocalFilePath() { mixin(MGPS("ScriptString", 40)); }
 		}
 	}
 	struct TitleFile
@@ -331,12 +331,12 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.TitleFile")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.TitleFile")); }
 		@property final auto ref
 		{
-			ScriptString Filename() { mixin(MGPS!("ScriptString", 0)()); }
-			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { mixin(MGPS!("OnlineSubsystem.EOnlineEnumerationReadState", 12)()); }
-			ScriptArray!(ubyte) Data() { mixin(MGPS!("ScriptArray!(ubyte)", 16)()); }
+			ScriptString Filename() { mixin(MGPS("ScriptString", 0)); }
+			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { mixin(MGPS("OnlineSubsystem.EOnlineEnumerationReadState", 12)); }
+			ScriptArray!(ubyte) Data() { mixin(MGPS("ScriptArray!(ubyte)", 16)); }
 		}
 	}
 	struct NamedInterfaceDef
@@ -344,11 +344,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.NamedInterfaceDef")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.NamedInterfaceDef")); }
 		@property final auto ref
 		{
-			ScriptName InterfaceName() { mixin(MGPS!("ScriptName", 0)()); }
-			ScriptString InterfaceClassName() { mixin(MGPS!("ScriptString", 8)()); }
+			ScriptName InterfaceName() { mixin(MGPS("ScriptName", 0)); }
+			ScriptString InterfaceClassName() { mixin(MGPS("ScriptString", 8)); }
 		}
 	}
 	struct OnlineFriendMessage
@@ -356,23 +356,23 @@ public extern(D):
 		private ubyte __buffer__[36];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.OnlineFriendMessage")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.OnlineFriendMessage")); }
 		@property final
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId SendingPlayerId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
-				ScriptString SendingPlayerNick() { mixin(MGPS!("ScriptString", 8)()); }
-				ScriptString Message() { mixin(MGPS!("ScriptString", 24)()); }
+				OnlineSubsystem.UniqueNetId SendingPlayerId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
+				ScriptString SendingPlayerNick() { mixin(MGPS("ScriptString", 8)); }
+				ScriptString Message() { mixin(MGPS("ScriptString", 24)); }
 			}
-			bool bIsFriendInvite() { mixin(MGBPS!(20, 0x1)()); }
-			bool bIsFriendInvite(bool val) { mixin(MSBPS!(20, 0x1)()); }
-			bool bIsGameInvite() { mixin(MGBPS!(20, 0x2)()); }
-			bool bIsGameInvite(bool val) { mixin(MSBPS!(20, 0x2)()); }
-			bool bWasAccepted() { mixin(MGBPS!(20, 0x4)()); }
-			bool bWasAccepted(bool val) { mixin(MSBPS!(20, 0x4)()); }
-			bool bWasDenied() { mixin(MGBPS!(20, 0x8)()); }
-			bool bWasDenied(bool val) { mixin(MSBPS!(20, 0x8)()); }
+			bool bIsFriendInvite() { mixin(MGBPS(20, 0x1)); }
+			bool bIsFriendInvite(bool val) { mixin(MSBPS(20, 0x1)); }
+			bool bIsGameInvite() { mixin(MGBPS(20, 0x2)); }
+			bool bIsGameInvite(bool val) { mixin(MSBPS(20, 0x2)); }
+			bool bWasAccepted() { mixin(MGBPS(20, 0x4)); }
+			bool bWasAccepted(bool val) { mixin(MSBPS(20, 0x4)); }
+			bool bWasDenied() { mixin(MGBPS(20, 0x8)); }
+			bool bWasDenied(bool val) { mixin(MSBPS(20, 0x8)); }
 		}
 	}
 	struct RemoteTalker
@@ -380,20 +380,20 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.RemoteTalker")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.RemoteTalker")); }
 		@property final
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId TalkerId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
-				float LastNotificationTime() { mixin(MGPS!("float", 8)()); }
+				OnlineSubsystem.UniqueNetId TalkerId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
+				float LastNotificationTime() { mixin(MGPS("float", 8)); }
 			}
-			bool bWasTalking() { mixin(MGBPS!(12, 0x1)()); }
-			bool bWasTalking(bool val) { mixin(MSBPS!(12, 0x1)()); }
-			bool bIsTalking() { mixin(MGBPS!(12, 0x2)()); }
-			bool bIsTalking(bool val) { mixin(MSBPS!(12, 0x2)()); }
-			bool bIsRegistered() { mixin(MGBPS!(12, 0x4)()); }
-			bool bIsRegistered(bool val) { mixin(MSBPS!(12, 0x4)()); }
+			bool bWasTalking() { mixin(MGBPS(12, 0x1)); }
+			bool bWasTalking(bool val) { mixin(MSBPS(12, 0x1)); }
+			bool bIsTalking() { mixin(MGBPS(12, 0x2)); }
+			bool bIsTalking(bool val) { mixin(MSBPS(12, 0x2)); }
+			bool bIsRegistered() { mixin(MGBPS(12, 0x4)); }
+			bool bIsRegistered(bool val) { mixin(MSBPS(12, 0x4)); }
 		}
 	}
 	struct LocalTalker
@@ -401,21 +401,21 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.LocalTalker")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.LocalTalker")); }
 		@property final
 		{
-			bool bHasVoice() { mixin(MGBPS!(0, 0x1)()); }
-			bool bHasVoice(bool val) { mixin(MSBPS!(0, 0x1)()); }
-			bool bHasNetworkedVoice() { mixin(MGBPS!(0, 0x2)()); }
-			bool bHasNetworkedVoice(bool val) { mixin(MSBPS!(0, 0x2)()); }
-			bool bIsRecognizingSpeech() { mixin(MGBPS!(0, 0x4)()); }
-			bool bIsRecognizingSpeech(bool val) { mixin(MSBPS!(0, 0x4)()); }
-			bool bWasTalking() { mixin(MGBPS!(0, 0x8)()); }
-			bool bWasTalking(bool val) { mixin(MSBPS!(0, 0x8)()); }
-			bool bIsTalking() { mixin(MGBPS!(0, 0x10)()); }
-			bool bIsTalking(bool val) { mixin(MSBPS!(0, 0x10)()); }
-			bool bIsRegistered() { mixin(MGBPS!(0, 0x20)()); }
-			bool bIsRegistered(bool val) { mixin(MSBPS!(0, 0x20)()); }
+			bool bHasVoice() { mixin(MGBPS(0, 0x1)); }
+			bool bHasVoice(bool val) { mixin(MSBPS(0, 0x1)); }
+			bool bHasNetworkedVoice() { mixin(MGBPS(0, 0x2)); }
+			bool bHasNetworkedVoice(bool val) { mixin(MSBPS(0, 0x2)); }
+			bool bIsRecognizingSpeech() { mixin(MGBPS(0, 0x4)); }
+			bool bIsRecognizingSpeech(bool val) { mixin(MSBPS(0, 0x4)); }
+			bool bWasTalking() { mixin(MGBPS(0, 0x8)); }
+			bool bWasTalking(bool val) { mixin(MSBPS(0, 0x8)); }
+			bool bIsTalking() { mixin(MGBPS(0, 0x10)); }
+			bool bIsTalking(bool val) { mixin(MSBPS(0, 0x10)); }
+			bool bIsRegistered() { mixin(MGBPS(0, 0x20)); }
+			bool bIsRegistered(bool val) { mixin(MSBPS(0, 0x20)); }
 		}
 	}
 	struct OnlinePlayerScore
@@ -423,12 +423,12 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.OnlinePlayerScore")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.OnlinePlayerScore")); }
 		@property final auto ref
 		{
-			OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
-			int TeamID() { mixin(MGPS!("int", 8)()); }
-			int Score() { mixin(MGPS!("int", 12)()); }
+			OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
+			int TeamID() { mixin(MGPS("int", 8)); }
+			int Score() { mixin(MGPS("int", 12)); }
 		}
 	}
 	struct SpeechRecognizedWord
@@ -436,12 +436,12 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.SpeechRecognizedWord")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.SpeechRecognizedWord")); }
 		@property final auto ref
 		{
-			int WordId() { mixin(MGPS!("int", 0)()); }
-			ScriptString WordText() { mixin(MGPS!("ScriptString", 4)()); }
-			float Confidence() { mixin(MGPS!("float", 16)()); }
+			int WordId() { mixin(MGPS("int", 0)); }
+			ScriptString WordText() { mixin(MGPS("ScriptString", 4)); }
+			float Confidence() { mixin(MGPS("float", 16)); }
 		}
 	}
 	struct OnlineContent
@@ -449,17 +449,17 @@ public extern(D):
 		private ubyte __buffer__[68];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.OnlineContent")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.OnlineContent")); }
 		@property final auto ref
 		{
-			OnlineSubsystem.EOnlineContentType ContentType() { mixin(MGPS!("OnlineSubsystem.EOnlineContentType", 0)()); }
-			ubyte UserIndex() { mixin(MGPS!("ubyte", 1)()); }
-			int DeviceID() { mixin(MGPS!("int", 4)()); }
-			ScriptString FriendlyName() { mixin(MGPS!("ScriptString", 8)()); }
-			ScriptString Filename() { mixin(MGPS!("ScriptString", 20)()); }
-			ScriptString ContentPath() { mixin(MGPS!("ScriptString", 32)()); }
-			ScriptArray!(ScriptString) ContentPackages() { mixin(MGPS!("ScriptArray!(ScriptString)", 44)()); }
-			ScriptArray!(ScriptString) ContentFiles() { mixin(MGPS!("ScriptArray!(ScriptString)", 56)()); }
+			OnlineSubsystem.EOnlineContentType ContentType() { mixin(MGPS("OnlineSubsystem.EOnlineContentType", 0)); }
+			ubyte UserIndex() { mixin(MGPS("ubyte", 1)); }
+			int DeviceID() { mixin(MGPS("int", 4)); }
+			ScriptString FriendlyName() { mixin(MGPS("ScriptString", 8)); }
+			ScriptString Filename() { mixin(MGPS("ScriptString", 20)); }
+			ScriptString ContentPath() { mixin(MGPS("ScriptString", 32)); }
+			ScriptArray!(ScriptString) ContentPackages() { mixin(MGPS("ScriptArray!(ScriptString)", 44)); }
+			ScriptArray!(ScriptString) ContentFiles() { mixin(MGPS("ScriptArray!(ScriptString)", 56)); }
 		}
 	}
 	struct OnlineFriend
@@ -467,31 +467,31 @@ public extern(D):
 		private ubyte __buffer__[48];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.OnlineFriend")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.OnlineFriend")); }
 		@property final
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
-				QWord SessionId() { mixin(MGPS!("QWord", 8)()); }
-				ScriptString NickName() { mixin(MGPS!("ScriptString", 16)()); }
-				ScriptString PresenceInfo() { mixin(MGPS!("ScriptString", 28)()); }
-				OnlineSubsystem.EOnlineFriendState FriendState() { mixin(MGPS!("OnlineSubsystem.EOnlineFriendState", 40)()); }
+				OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
+				QWord SessionId() { mixin(MGPS("QWord", 8)); }
+				ScriptString NickName() { mixin(MGPS("ScriptString", 16)); }
+				ScriptString PresenceInfo() { mixin(MGPS("ScriptString", 28)); }
+				OnlineSubsystem.EOnlineFriendState FriendState() { mixin(MGPS("OnlineSubsystem.EOnlineFriendState", 40)); }
 			}
-			bool bIsOnline() { mixin(MGBPS!(44, 0x1)()); }
-			bool bIsOnline(bool val) { mixin(MSBPS!(44, 0x1)()); }
-			bool bIsPlaying() { mixin(MGBPS!(44, 0x2)()); }
-			bool bIsPlaying(bool val) { mixin(MSBPS!(44, 0x2)()); }
-			bool bIsPlayingThisGame() { mixin(MGBPS!(44, 0x4)()); }
-			bool bIsPlayingThisGame(bool val) { mixin(MSBPS!(44, 0x4)()); }
-			bool bIsJoinable() { mixin(MGBPS!(44, 0x8)()); }
-			bool bIsJoinable(bool val) { mixin(MSBPS!(44, 0x8)()); }
-			bool bHasVoiceSupport() { mixin(MGBPS!(44, 0x10)()); }
-			bool bHasVoiceSupport(bool val) { mixin(MSBPS!(44, 0x10)()); }
-			bool bHaveInvited() { mixin(MGBPS!(44, 0x20)()); }
-			bool bHaveInvited(bool val) { mixin(MSBPS!(44, 0x20)()); }
-			bool bHasInvitedYou() { mixin(MGBPS!(44, 0x40)()); }
-			bool bHasInvitedYou(bool val) { mixin(MSBPS!(44, 0x40)()); }
+			bool bIsOnline() { mixin(MGBPS(44, 0x1)); }
+			bool bIsOnline(bool val) { mixin(MSBPS(44, 0x1)); }
+			bool bIsPlaying() { mixin(MGBPS(44, 0x2)); }
+			bool bIsPlaying(bool val) { mixin(MSBPS(44, 0x2)); }
+			bool bIsPlayingThisGame() { mixin(MGBPS(44, 0x4)); }
+			bool bIsPlayingThisGame(bool val) { mixin(MSBPS(44, 0x4)); }
+			bool bIsJoinable() { mixin(MGBPS(44, 0x8)); }
+			bool bIsJoinable(bool val) { mixin(MSBPS(44, 0x8)); }
+			bool bHasVoiceSupport() { mixin(MGBPS(44, 0x10)); }
+			bool bHasVoiceSupport(bool val) { mixin(MSBPS(44, 0x10)); }
+			bool bHaveInvited() { mixin(MGBPS(44, 0x20)); }
+			bool bHaveInvited(bool val) { mixin(MSBPS(44, 0x20)); }
+			bool bHasInvitedYou() { mixin(MGBPS(44, 0x40)); }
+			bool bHasInvitedYou(bool val) { mixin(MSBPS(44, 0x40)); }
 		}
 	}
 	struct FriendsQuery
@@ -499,21 +499,21 @@ public extern(D):
 		private ubyte __buffer__[12];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineSubsystem.FriendsQuery")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineSubsystem.FriendsQuery")); }
 		@property final
 		{
-			@property final auto ref OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
-			bool bIsFriend() { mixin(MGBPS!(8, 0x1)()); }
-			bool bIsFriend(bool val) { mixin(MSBPS!(8, 0x1)()); }
+			@property final auto ref OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
+			bool bIsFriend() { mixin(MGBPS(8, 0x1)); }
+			bool bIsFriend(bool val) { mixin(MSBPS(8, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(OnlineSubsystem.NamedSession) Sessions() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.NamedSession)", 184)()); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!("UObject.Pointer", 60)()); }
-			ScriptArray!(OnlineSubsystem.NamedInterface) NamedInterfaces() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.NamedInterface)", 160)()); }
+			ScriptArray!(OnlineSubsystem.NamedSession) Sessions() { mixin(MGPC("ScriptArray!(OnlineSubsystem.NamedSession)", 184)); }
+			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC("UObject.Pointer", 60)); }
+			ScriptArray!(OnlineSubsystem.NamedInterface) NamedInterfaces() { mixin(MGPC("ScriptArray!(OnlineSubsystem.NamedInterface)", 160)); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'ChatInterface'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'TitleFileInterface'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PartyChatInterface'!
@@ -526,14 +526,14 @@ public extern(D):
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterfaceEx'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterface'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'AccountInterface'!
-			ScriptString IniLocPatcherClassName() { mixin(MGPC!("ScriptString", 204)()); }
-			IniLocPatcher Patcher() { mixin(MGPC!("IniLocPatcher", 216)()); }
-			ScriptArray!(OnlineSubsystem.NamedInterfaceDef) NamedInterfaceDefs() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.NamedInterfaceDef)", 172)()); }
-			int BuildIdOverride() { mixin(MGPC!("int", 200)()); }
-			float AsyncMinCompletionTime() { mixin(MGPC!("float", 220)()); }
+			ScriptString IniLocPatcherClassName() { mixin(MGPC("ScriptString", 204)); }
+			IniLocPatcher Patcher() { mixin(MGPC("IniLocPatcher", 216)); }
+			ScriptArray!(OnlineSubsystem.NamedInterfaceDef) NamedInterfaceDefs() { mixin(MGPC("ScriptArray!(OnlineSubsystem.NamedInterfaceDef)", 172)); }
+			int BuildIdOverride() { mixin(MGPC("int", 200)); }
+			float AsyncMinCompletionTime() { mixin(MGPC("float", 220)); }
 		}
-		bool bUseBuildIdOverride() { mixin(MGBPC!(196, 0x1)()); }
-		bool bUseBuildIdOverride(bool val) { mixin(MSBPC!(196, 0x1)()); }
+		bool bUseBuildIdOverride() { mixin(MGBPC(196, 0x1)); }
+		bool bUseBuildIdOverride(bool val) { mixin(MSBPC(196, 0x1)); }
 	}
 final:
 	void SetDebugSpewLevel(int DebugSpewLevel)

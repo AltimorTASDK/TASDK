@@ -9,9 +9,9 @@ extern(C++) interface TrEffect_GroundSpeed : TrEffect_Managed
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_GroundSpeed")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_GroundSpeed")); }
 	private static __gshared TrEffect_GroundSpeed mDefaultProperties;
-	@property final static TrEffect_GroundSpeed DefaultProperties() { mixin(MGDPC!(TrEffect_GroundSpeed, "TrEffect_GroundSpeed TribesGame.Default__TrEffect_GroundSpeed")()); }
+	@property final static TrEffect_GroundSpeed DefaultProperties() { mixin(MGDPC("TrEffect_GroundSpeed", "TrEffect_GroundSpeed TribesGame.Default__TrEffect_GroundSpeed")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_GroundSpeed.Apply")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_GroundSpeed.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_GroundSpeed.Apply")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_GroundSpeed.Remove")); }
 		}
 	}
 final:

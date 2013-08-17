@@ -9,13 +9,13 @@ extern(C++) interface UTDmgType_Pancake : UTDmgType_RanOver
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDmgType_Pancake")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDmgType_Pancake")); }
 	private static __gshared UTDmgType_Pancake mDefaultProperties;
-	@property final static UTDmgType_Pancake DefaultProperties() { mixin(MGDPC!(UTDmgType_Pancake, "UTDmgType_Pancake UTGame.Default__UTDmgType_Pancake")()); }
+	@property final static UTDmgType_Pancake DefaultProperties() { mixin(MGDPC("UTDmgType_Pancake", "UTDmgType_Pancake UTGame.Default__UTDmgType_Pancake")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSmallReward;
-		public @property static final ScriptFunction SmallReward() { mixin(MGF!("mSmallReward", "Function UTGame.UTDmgType_Pancake.SmallReward")()); }
+		public @property static final ScriptFunction SmallReward() { mixin(MGF("mSmallReward", "Function UTGame.UTDmgType_Pancake.SmallReward")); }
 	}
 	final static void SmallReward(UTPlayerController Killer, int KillCount)
 	{

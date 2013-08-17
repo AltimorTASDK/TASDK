@@ -8,7 +8,7 @@ extern(C++) interface ParticleModuleLocationBase : ParticleModule
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleLocationBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleLocationBase")); }
 	private static __gshared ParticleModuleLocationBase mDefaultProperties;
-	@property final static ParticleModuleLocationBase DefaultProperties() { mixin(MGDPC!(ParticleModuleLocationBase, "ParticleModuleLocationBase Engine.Default__ParticleModuleLocationBase")()); }
+	@property final static ParticleModuleLocationBase DefaultProperties() { mixin(MGDPC("ParticleModuleLocationBase", "ParticleModuleLocationBase Engine.Default__ParticleModuleLocationBase")); }
 }

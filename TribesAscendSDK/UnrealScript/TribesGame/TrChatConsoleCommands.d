@@ -8,9 +8,9 @@ extern(C++) interface TrChatConsoleCommands : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrChatConsoleCommands")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrChatConsoleCommands")); }
 	private static __gshared TrChatConsoleCommands mDefaultProperties;
-	@property final static TrChatConsoleCommands DefaultProperties() { mixin(MGDPC!(TrChatConsoleCommands, "TrChatConsoleCommands TribesGame.Default__TrChatConsoleCommands")()); }
+	@property final static TrChatConsoleCommands DefaultProperties() { mixin(MGDPC("TrChatConsoleCommands", "TrChatConsoleCommands TribesGame.Default__TrChatConsoleCommands")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,22 +34,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ChatConsoleCommand() { mixin(MGF!("mChatConsoleCommand", "Function TribesGame.TrChatConsoleCommands.ChatConsoleCommand")()); }
-			ScriptFunction ReportPlayer() { mixin(MGF!("mReportPlayer", "Function TribesGame.TrChatConsoleCommands.ReportPlayer")()); }
-			ScriptFunction Say() { mixin(MGF!("mSay", "Function TribesGame.TrChatConsoleCommands.Say")()); }
-			ScriptFunction TeamSay() { mixin(MGF!("mTeamSay", "Function TribesGame.TrChatConsoleCommands.TeamSay")()); }
-			ScriptFunction Mute() { mixin(MGF!("mMute", "Function TribesGame.TrChatConsoleCommands.Mute")()); }
-			ScriptFunction Unmute() { mixin(MGF!("mUnmute", "Function TribesGame.TrChatConsoleCommands.Unmute")()); }
-			ScriptFunction Votekick() { mixin(MGF!("mVotekick", "Function TribesGame.TrChatConsoleCommands.Votekick")()); }
-			ScriptFunction Report() { mixin(MGF!("mReport", "Function TribesGame.TrChatConsoleCommands.Report")()); }
-			ScriptFunction Tell() { mixin(MGF!("mTell", "Function TribesGame.TrChatConsoleCommands.Tell")()); }
-			ScriptFunction Exit() { mixin(MGF!("mExit", "Function TribesGame.TrChatConsoleCommands.Exit")()); }
-			ScriptFunction Quit() { mixin(MGF!("mQuit", "Function TribesGame.TrChatConsoleCommands.Quit")()); }
-			ScriptFunction GiveCredits() { mixin(MGF!("mGiveCredits", "Function TribesGame.TrChatConsoleCommands.GiveCredits")()); }
-			ScriptFunction SC() { mixin(MGF!("mSC", "Function TribesGame.TrChatConsoleCommands.SC")()); }
-			ScriptFunction SendCtrlRequest() { mixin(MGF!("mSendCtrlRequest", "Function TribesGame.TrChatConsoleCommands.SendCtrlRequest")()); }
-			ScriptFunction SendGameRequest() { mixin(MGF!("mSendGameRequest", "Function TribesGame.TrChatConsoleCommands.SendGameRequest")()); }
-			ScriptFunction SpecList() { mixin(MGF!("mSpecList", "Function TribesGame.TrChatConsoleCommands.SpecList")()); }
+			ScriptFunction ChatConsoleCommand() { mixin(MGF("mChatConsoleCommand", "Function TribesGame.TrChatConsoleCommands.ChatConsoleCommand")); }
+			ScriptFunction ReportPlayer() { mixin(MGF("mReportPlayer", "Function TribesGame.TrChatConsoleCommands.ReportPlayer")); }
+			ScriptFunction Say() { mixin(MGF("mSay", "Function TribesGame.TrChatConsoleCommands.Say")); }
+			ScriptFunction TeamSay() { mixin(MGF("mTeamSay", "Function TribesGame.TrChatConsoleCommands.TeamSay")); }
+			ScriptFunction Mute() { mixin(MGF("mMute", "Function TribesGame.TrChatConsoleCommands.Mute")); }
+			ScriptFunction Unmute() { mixin(MGF("mUnmute", "Function TribesGame.TrChatConsoleCommands.Unmute")); }
+			ScriptFunction Votekick() { mixin(MGF("mVotekick", "Function TribesGame.TrChatConsoleCommands.Votekick")); }
+			ScriptFunction Report() { mixin(MGF("mReport", "Function TribesGame.TrChatConsoleCommands.Report")); }
+			ScriptFunction Tell() { mixin(MGF("mTell", "Function TribesGame.TrChatConsoleCommands.Tell")); }
+			ScriptFunction Exit() { mixin(MGF("mExit", "Function TribesGame.TrChatConsoleCommands.Exit")); }
+			ScriptFunction Quit() { mixin(MGF("mQuit", "Function TribesGame.TrChatConsoleCommands.Quit")); }
+			ScriptFunction GiveCredits() { mixin(MGF("mGiveCredits", "Function TribesGame.TrChatConsoleCommands.GiveCredits")); }
+			ScriptFunction SC() { mixin(MGF("mSC", "Function TribesGame.TrChatConsoleCommands.SC")); }
+			ScriptFunction SendCtrlRequest() { mixin(MGF("mSendCtrlRequest", "Function TribesGame.TrChatConsoleCommands.SendCtrlRequest")); }
+			ScriptFunction SendGameRequest() { mixin(MGF("mSendGameRequest", "Function TribesGame.TrChatConsoleCommands.SendGameRequest")); }
+			ScriptFunction SpecList() { mixin(MGF("mSpecList", "Function TribesGame.TrChatConsoleCommands.SpecList")); }
 		}
 	}
 final:

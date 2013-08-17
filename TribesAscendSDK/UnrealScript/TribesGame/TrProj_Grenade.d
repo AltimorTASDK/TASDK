@@ -14,9 +14,9 @@ extern(C++) interface TrProj_Grenade : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Grenade")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_Grenade")); }
 	private static __gshared TrProj_Grenade mDefaultProperties;
-	@property final static TrProj_Grenade DefaultProperties() { mixin(MGDPC!(TrProj_Grenade, "TrProj_Grenade TribesGame.Default__TrProj_Grenade")()); }
+	@property final static TrProj_Grenade DefaultProperties() { mixin(MGDPC("TrProj_Grenade", "TrProj_Grenade TribesGame.Default__TrProj_Grenade")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,58 +41,58 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_Grenade.PostBeginPlay")()); }
-			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_Grenade.InitProjectile")()); }
-			ScriptFunction SpawnCollisionProxy() { mixin(MGF!("mSpawnCollisionProxy", "Function TribesGame.TrProj_Grenade.SpawnCollisionProxy")()); }
-			ScriptFunction DestroyCollisionProxy() { mixin(MGF!("mDestroyCollisionProxy", "Function TribesGame.TrProj_Grenade.DestroyCollisionProxy")()); }
-			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function TribesGame.TrProj_Grenade.ShutDown")()); }
-			ScriptFunction ApplyInheritance() { mixin(MGF!("mApplyInheritance", "Function TribesGame.TrProj_Grenade.ApplyInheritance")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function TribesGame.TrProj_Grenade.Timer")()); }
-			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrProj_Grenade.HitWall")()); }
-			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_Grenade.ProcessTouch")()); }
-			ScriptFunction PhysicsVolumeChange() { mixin(MGF!("mPhysicsVolumeChange", "Function TribesGame.TrProj_Grenade.PhysicsVolumeChange")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_Grenade.Explode")()); }
-			ScriptFunction StickToTarget() { mixin(MGF!("mStickToTarget", "Function TribesGame.TrProj_Grenade.StickToTarget")()); }
-			ScriptFunction PlayStuckOnEffects() { mixin(MGF!("mPlayStuckOnEffects", "Function TribesGame.TrProj_Grenade.PlayStuckOnEffects")()); }
-			ScriptFunction MyOnParticleSystemFinished() { mixin(MGF!("mMyOnParticleSystemFinished", "Function TribesGame.TrProj_Grenade.MyOnParticleSystemFinished")()); }
-			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF!("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Grenade.PawnEnteredDetonationArea")()); }
-			ScriptFunction PawnLeftDetonationArea() { mixin(MGF!("mPawnLeftDetonationArea", "Function TribesGame.TrProj_Grenade.PawnLeftDetonationArea")()); }
-			ScriptFunction NativeExplode() { mixin(MGF!("mNativeExplode", "Function TribesGame.TrProj_Grenade.NativeExplode")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrProj_Grenade.PostBeginPlay")); }
+			ScriptFunction InitProjectile() { mixin(MGF("mInitProjectile", "Function TribesGame.TrProj_Grenade.InitProjectile")); }
+			ScriptFunction SpawnCollisionProxy() { mixin(MGF("mSpawnCollisionProxy", "Function TribesGame.TrProj_Grenade.SpawnCollisionProxy")); }
+			ScriptFunction DestroyCollisionProxy() { mixin(MGF("mDestroyCollisionProxy", "Function TribesGame.TrProj_Grenade.DestroyCollisionProxy")); }
+			ScriptFunction ShutDown() { mixin(MGF("mShutDown", "Function TribesGame.TrProj_Grenade.ShutDown")); }
+			ScriptFunction ApplyInheritance() { mixin(MGF("mApplyInheritance", "Function TribesGame.TrProj_Grenade.ApplyInheritance")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function TribesGame.TrProj_Grenade.Timer")); }
+			ScriptFunction HitWall() { mixin(MGF("mHitWall", "Function TribesGame.TrProj_Grenade.HitWall")); }
+			ScriptFunction ProcessTouch() { mixin(MGF("mProcessTouch", "Function TribesGame.TrProj_Grenade.ProcessTouch")); }
+			ScriptFunction PhysicsVolumeChange() { mixin(MGF("mPhysicsVolumeChange", "Function TribesGame.TrProj_Grenade.PhysicsVolumeChange")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function TribesGame.TrProj_Grenade.Explode")); }
+			ScriptFunction StickToTarget() { mixin(MGF("mStickToTarget", "Function TribesGame.TrProj_Grenade.StickToTarget")); }
+			ScriptFunction PlayStuckOnEffects() { mixin(MGF("mPlayStuckOnEffects", "Function TribesGame.TrProj_Grenade.PlayStuckOnEffects")); }
+			ScriptFunction MyOnParticleSystemFinished() { mixin(MGF("mMyOnParticleSystemFinished", "Function TribesGame.TrProj_Grenade.MyOnParticleSystemFinished")); }
+			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Grenade.PawnEnteredDetonationArea")); }
+			ScriptFunction PawnLeftDetonationArea() { mixin(MGF("mPawnLeftDetonationArea", "Function TribesGame.TrProj_Grenade.PawnLeftDetonationArea")); }
+			ScriptFunction NativeExplode() { mixin(MGF("mNativeExplode", "Function TribesGame.TrProj_Grenade.NativeExplode")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!("ScriptArray!(Pawn)", 872)()); }
-			float m_fProxyDetonationHeight() { mixin(MGPC!("float", 868)()); }
-			float m_fProxyDetonationRadius() { mixin(MGPC!("float", 864)()); }
-			ScriptClass m_CollisionProxyClass() { mixin(MGPC!("ScriptClass", 860)()); }
-			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrCollisionProxy", 856)()); }
-			float m_fStuckMomentumMultiplier() { mixin(MGPC!("float", 852)()); }
-			float m_fStuckDamageMultiplier() { mixin(MGPC!("float", 848)()); }
-			Vector m_OverloadHitNormal() { mixin(MGPC!("Vector", 836)()); }
-			SoundCue m_StuckOnPawnLoopingSound() { mixin(MGPC!("SoundCue", 832)()); }
-			ParticleSystem m_StuckOnTargetTemplate() { mixin(MGPC!("ParticleSystem", 828)()); }
+			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC("ScriptArray!(Pawn)", 872)); }
+			float m_fProxyDetonationHeight() { mixin(MGPC("float", 868)); }
+			float m_fProxyDetonationRadius() { mixin(MGPC("float", 864)); }
+			ScriptClass m_CollisionProxyClass() { mixin(MGPC("ScriptClass", 860)); }
+			TrCollisionProxy m_CollisionProxy() { mixin(MGPC("TrCollisionProxy", 856)); }
+			float m_fStuckMomentumMultiplier() { mixin(MGPC("float", 852)); }
+			float m_fStuckDamageMultiplier() { mixin(MGPC("float", 848)); }
+			Vector m_OverloadHitNormal() { mixin(MGPC("Vector", 836)); }
+			SoundCue m_StuckOnPawnLoopingSound() { mixin(MGPC("SoundCue", 832)); }
+			ParticleSystem m_StuckOnTargetTemplate() { mixin(MGPC("ParticleSystem", 828)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StuckOnTargetEffects'!
-			float m_fExplosionTime() { mixin(MGPC!("float", 820)()); }
+			float m_fExplosionTime() { mixin(MGPC("float", 820)); }
 		}
-		bool m_bStuckOnPlayer() { mixin(MGBPC!(816, 0x1)()); }
-		bool m_bStuckOnPlayer(bool val) { mixin(MSBPC!(816, 0x1)()); }
-		bool m_bSpawnProxyOnInit() { mixin(MGBPC!(816, 0x80)()); }
-		bool m_bSpawnProxyOnInit(bool val) { mixin(MSBPC!(816, 0x80)()); }
-		bool m_bScanProxyOnInit() { mixin(MGBPC!(816, 0x40)()); }
-		bool m_bScanProxyOnInit(bool val) { mixin(MSBPC!(816, 0x40)()); }
-		bool m_bFullyInheritVelocity() { mixin(MGBPC!(816, 0x20)()); }
-		bool m_bFullyInheritVelocity(bool val) { mixin(MSBPC!(816, 0x20)()); }
-		bool m_bDoRandSpin() { mixin(MGBPC!(816, 0x10)()); }
-		bool m_bDoRandSpin(bool val) { mixin(MSBPC!(816, 0x10)()); }
-		bool m_bBounceRequiredForExplode() { mixin(MGBPC!(816, 0x8)()); }
-		bool m_bBounceRequiredForExplode(bool val) { mixin(MSBPC!(816, 0x8)()); }
-		bool m_bExplodeOnTouchEvent() { mixin(MGBPC!(816, 0x4)()); }
-		bool m_bExplodeOnTouchEvent(bool val) { mixin(MSBPC!(816, 0x4)()); }
-		bool m_bTimedExplosion() { mixin(MGBPC!(816, 0x2)()); }
-		bool m_bTimedExplosion(bool val) { mixin(MSBPC!(816, 0x2)()); }
+		bool m_bStuckOnPlayer() { mixin(MGBPC(816, 0x1)); }
+		bool m_bStuckOnPlayer(bool val) { mixin(MSBPC(816, 0x1)); }
+		bool m_bSpawnProxyOnInit() { mixin(MGBPC(816, 0x80)); }
+		bool m_bSpawnProxyOnInit(bool val) { mixin(MSBPC(816, 0x80)); }
+		bool m_bScanProxyOnInit() { mixin(MGBPC(816, 0x40)); }
+		bool m_bScanProxyOnInit(bool val) { mixin(MSBPC(816, 0x40)); }
+		bool m_bFullyInheritVelocity() { mixin(MGBPC(816, 0x20)); }
+		bool m_bFullyInheritVelocity(bool val) { mixin(MSBPC(816, 0x20)); }
+		bool m_bDoRandSpin() { mixin(MGBPC(816, 0x10)); }
+		bool m_bDoRandSpin(bool val) { mixin(MSBPC(816, 0x10)); }
+		bool m_bBounceRequiredForExplode() { mixin(MGBPC(816, 0x8)); }
+		bool m_bBounceRequiredForExplode(bool val) { mixin(MSBPC(816, 0x8)); }
+		bool m_bExplodeOnTouchEvent() { mixin(MGBPC(816, 0x4)); }
+		bool m_bExplodeOnTouchEvent(bool val) { mixin(MSBPC(816, 0x4)); }
+		bool m_bTimedExplosion() { mixin(MGBPC(816, 0x2)); }
+		bool m_bTimedExplosion(bool val) { mixin(MSBPC(816, 0x2)); }
 	}
 final:
 	void PostBeginPlay()

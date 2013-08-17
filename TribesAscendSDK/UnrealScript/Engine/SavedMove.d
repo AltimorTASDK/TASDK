@@ -12,9 +12,9 @@ extern(C++) interface SavedMove : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SavedMove")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SavedMove")); }
 	private static __gshared SavedMove mDefaultProperties;
-	@property final static SavedMove DefaultProperties() { mixin(MGDPC!(SavedMove, "SavedMove Engine.Default__SavedMove")()); }
+	@property final static SavedMove DefaultProperties() { mixin(MGDPC("SavedMove", "SavedMove Engine.Default__SavedMove")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,63 +34,63 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetFlags() { mixin(MGF!("mSetFlags", "Function Engine.SavedMove.SetFlags")()); }
-			ScriptFunction CompressedFlags() { mixin(MGF!("mCompressedFlags", "Function Engine.SavedMove.CompressedFlags")()); }
-			ScriptFunction IsImportantMove() { mixin(MGF!("mIsImportantMove", "Function Engine.SavedMove.IsImportantMove")()); }
-			ScriptFunction CanCombineWith() { mixin(MGF!("mCanCombineWith", "Function Engine.SavedMove.CanCombineWith")()); }
-			ScriptFunction GetStartLocation() { mixin(MGF!("mGetStartLocation", "Function Engine.SavedMove.GetStartLocation")()); }
-			ScriptFunction Clear() { mixin(MGF!("mClear", "Function Engine.SavedMove.Clear")()); }
-			ScriptFunction PostUpdate() { mixin(MGF!("mPostUpdate", "Function Engine.SavedMove.PostUpdate")()); }
-			ScriptFunction SetInitialPosition() { mixin(MGF!("mSetInitialPosition", "Function Engine.SavedMove.SetInitialPosition")()); }
-			ScriptFunction SetMoveFor() { mixin(MGF!("mSetMoveFor", "Function Engine.SavedMove.SetMoveFor")()); }
-			ScriptFunction PrepMoveFor() { mixin(MGF!("mPrepMoveFor", "Function Engine.SavedMove.PrepMoveFor")()); }
-			ScriptFunction ResetMoveFor() { mixin(MGF!("mResetMoveFor", "Function Engine.SavedMove.ResetMoveFor")()); }
-			ScriptFunction GetDebugString() { mixin(MGF!("mGetDebugString", "Function Engine.SavedMove.GetDebugString")()); }
+			ScriptFunction SetFlags() { mixin(MGF("mSetFlags", "Function Engine.SavedMove.SetFlags")); }
+			ScriptFunction CompressedFlags() { mixin(MGF("mCompressedFlags", "Function Engine.SavedMove.CompressedFlags")); }
+			ScriptFunction IsImportantMove() { mixin(MGF("mIsImportantMove", "Function Engine.SavedMove.IsImportantMove")); }
+			ScriptFunction CanCombineWith() { mixin(MGF("mCanCombineWith", "Function Engine.SavedMove.CanCombineWith")); }
+			ScriptFunction GetStartLocation() { mixin(MGF("mGetStartLocation", "Function Engine.SavedMove.GetStartLocation")); }
+			ScriptFunction Clear() { mixin(MGF("mClear", "Function Engine.SavedMove.Clear")); }
+			ScriptFunction PostUpdate() { mixin(MGF("mPostUpdate", "Function Engine.SavedMove.PostUpdate")); }
+			ScriptFunction SetInitialPosition() { mixin(MGF("mSetInitialPosition", "Function Engine.SavedMove.SetInitialPosition")); }
+			ScriptFunction SetMoveFor() { mixin(MGF("mSetMoveFor", "Function Engine.SavedMove.SetMoveFor")); }
+			ScriptFunction PrepMoveFor() { mixin(MGF("mPrepMoveFor", "Function Engine.SavedMove.PrepMoveFor")); }
+			ScriptFunction ResetMoveFor() { mixin(MGF("mResetMoveFor", "Function Engine.SavedMove.ResetMoveFor")); }
+			ScriptFunction GetDebugString() { mixin(MGF("mGetDebugString", "Function Engine.SavedMove.GetDebugString")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float TimeStamp() { mixin(MGPC!("float", 64)()); }
-			SavedMove NextMove() { mixin(MGPC!("SavedMove", 60)()); }
-			Vector Acceleration() { mixin(MGPC!("Vector", 176)()); }
-			Actor EndBase() { mixin(MGPC!("Actor", 204)()); }
-			Vector SavedRelativeLocation() { mixin(MGPC!("Vector", 152)()); }
-			Vector SavedLocation() { mixin(MGPC!("Vector", 128)()); }
-			Vector SavedVelocity() { mixin(MGPC!("Vector", 140)()); }
-			float Delta() { mixin(MGPC!("float", 68)()); }
-			Actor.EDoubleClickDir DoubleClickMove() { mixin(MGPC!("Actor.EDoubleClickDir", 76)()); }
-			Vector StartVelocity() { mixin(MGPC!("Vector", 104)()); }
-			Actor StartBase() { mixin(MGPC!("Actor", 200)()); }
-			Vector StartFloor() { mixin(MGPC!("Vector", 116)()); }
-			Rotator Rotation() { mixin(MGPC!("Rotator", 188)()); }
-			Vector RootMotionInterpCurveLastValue() { mixin(MGPC!("Vector", 220)()); }
-			float RootMotionInterpCurrentTime() { mixin(MGPC!("float", 216)()); }
-			float AccelDotThreshold() { mixin(MGPC!("float", 212)()); }
-			float CustomTimeDilation() { mixin(MGPC!("float", 208)()); }
-			Vector RMVelocity() { mixin(MGPC!("Vector", 164)()); }
-			Vector StartRelativeLocation() { mixin(MGPC!("Vector", 92)()); }
-			Vector StartLocation() { mixin(MGPC!("Vector", 80)()); }
-			SkeletalMeshComponent.ERootMotionMode RootMotionMode() { mixin(MGPC!("SkeletalMeshComponent.ERootMotionMode", 78)()); }
-			Actor.EPhysics SavedPhysics() { mixin(MGPC!("Actor.EPhysics", 77)()); }
+			float TimeStamp() { mixin(MGPC("float", 64)); }
+			SavedMove NextMove() { mixin(MGPC("SavedMove", 60)); }
+			Vector Acceleration() { mixin(MGPC("Vector", 176)); }
+			Actor EndBase() { mixin(MGPC("Actor", 204)); }
+			Vector SavedRelativeLocation() { mixin(MGPC("Vector", 152)); }
+			Vector SavedLocation() { mixin(MGPC("Vector", 128)); }
+			Vector SavedVelocity() { mixin(MGPC("Vector", 140)); }
+			float Delta() { mixin(MGPC("float", 68)); }
+			Actor.EDoubleClickDir DoubleClickMove() { mixin(MGPC("Actor.EDoubleClickDir", 76)); }
+			Vector StartVelocity() { mixin(MGPC("Vector", 104)); }
+			Actor StartBase() { mixin(MGPC("Actor", 200)); }
+			Vector StartFloor() { mixin(MGPC("Vector", 116)); }
+			Rotator Rotation() { mixin(MGPC("Rotator", 188)); }
+			Vector RootMotionInterpCurveLastValue() { mixin(MGPC("Vector", 220)); }
+			float RootMotionInterpCurrentTime() { mixin(MGPC("float", 216)); }
+			float AccelDotThreshold() { mixin(MGPC("float", 212)); }
+			float CustomTimeDilation() { mixin(MGPC("float", 208)); }
+			Vector RMVelocity() { mixin(MGPC("Vector", 164)); }
+			Vector StartRelativeLocation() { mixin(MGPC("Vector", 92)); }
+			Vector StartLocation() { mixin(MGPC("Vector", 80)); }
+			SkeletalMeshComponent.ERootMotionMode RootMotionMode() { mixin(MGPC("SkeletalMeshComponent.ERootMotionMode", 78)); }
+			Actor.EPhysics SavedPhysics() { mixin(MGPC("Actor.EPhysics", 77)); }
 		}
-		bool bForceRMVelocity() { mixin(MGBPC!(72, 0x20)()); }
-		bool bForceRMVelocity(bool val) { mixin(MSBPC!(72, 0x20)()); }
-		bool bRootMotionFromInterpCurve() { mixin(MGBPC!(72, 0x80)()); }
-		bool bRootMotionFromInterpCurve(bool val) { mixin(MSBPC!(72, 0x80)()); }
-		bool bForceMaxAccel() { mixin(MGBPC!(72, 0x40)()); }
-		bool bForceMaxAccel(bool val) { mixin(MSBPC!(72, 0x40)()); }
-		bool bPreciseDestination() { mixin(MGBPC!(72, 0x10)()); }
-		bool bPreciseDestination(bool val) { mixin(MSBPC!(72, 0x10)()); }
-		bool bDoubleJump() { mixin(MGBPC!(72, 0x8)()); }
-		bool bDoubleJump(bool val) { mixin(MSBPC!(72, 0x8)()); }
-		bool bPressedJump() { mixin(MGBPC!(72, 0x4)()); }
-		bool bPressedJump(bool val) { mixin(MSBPC!(72, 0x4)()); }
-		bool bDuck() { mixin(MGBPC!(72, 0x2)()); }
-		bool bDuck(bool val) { mixin(MSBPC!(72, 0x2)()); }
-		bool bRun() { mixin(MGBPC!(72, 0x1)()); }
-		bool bRun(bool val) { mixin(MSBPC!(72, 0x1)()); }
+		bool bForceRMVelocity() { mixin(MGBPC(72, 0x20)); }
+		bool bForceRMVelocity(bool val) { mixin(MSBPC(72, 0x20)); }
+		bool bRootMotionFromInterpCurve() { mixin(MGBPC(72, 0x80)); }
+		bool bRootMotionFromInterpCurve(bool val) { mixin(MSBPC(72, 0x80)); }
+		bool bForceMaxAccel() { mixin(MGBPC(72, 0x40)); }
+		bool bForceMaxAccel(bool val) { mixin(MSBPC(72, 0x40)); }
+		bool bPreciseDestination() { mixin(MGBPC(72, 0x10)); }
+		bool bPreciseDestination(bool val) { mixin(MSBPC(72, 0x10)); }
+		bool bDoubleJump() { mixin(MGBPC(72, 0x8)); }
+		bool bDoubleJump(bool val) { mixin(MSBPC(72, 0x8)); }
+		bool bPressedJump() { mixin(MGBPC(72, 0x4)); }
+		bool bPressedJump(bool val) { mixin(MSBPC(72, 0x4)); }
+		bool bDuck() { mixin(MGBPC(72, 0x2)); }
+		bool bDuck(bool val) { mixin(MSBPC(72, 0x2)); }
+		bool bRun() { mixin(MGBPC(72, 0x1)); }
+		bool bRun(bool val) { mixin(MSBPC(72, 0x1)); }
 	}
 final:
 	static Actor.EDoubleClickDir SetFlags(ubyte Flags, PlayerController PC)

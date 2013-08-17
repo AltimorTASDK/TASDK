@@ -13,9 +13,9 @@ extern(C++) interface UTWeaponLocker : UTPickupFactory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponLocker")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWeaponLocker")); }
 	private static __gshared UTWeaponLocker mDefaultProperties;
-	@property final static UTWeaponLocker DefaultProperties() { mixin(MGDPC!(UTWeaponLocker, "UTWeaponLocker UTGame.Default__UTWeaponLocker")()); }
+	@property final static UTWeaponLocker DefaultProperties() { mixin(MGDPC("UTWeaponLocker", "UTWeaponLocker UTGame.Default__UTWeaponLocker")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -41,24 +41,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function UTGame.UTWeaponLocker.BotDesireability")()); }
-			ScriptFunction SetInitialState() { mixin(MGF!("mSetInitialState", "Function UTGame.UTWeaponLocker.SetInitialState")()); }
-			ScriptFunction ShouldCamp() { mixin(MGF!("mShouldCamp", "Function UTGame.UTWeaponLocker.ShouldCamp")()); }
-			ScriptFunction AddCustomer() { mixin(MGF!("mAddCustomer", "Function UTGame.UTWeaponLocker.AddCustomer")()); }
-			ScriptFunction HasCustomer() { mixin(MGF!("mHasCustomer", "Function UTGame.UTWeaponLocker.HasCustomer")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTWeaponLocker.PostBeginPlay")()); }
-			ScriptFunction InitializeWeapons() { mixin(MGF!("mInitializeWeapons", "Function UTGame.UTWeaponLocker.InitializeWeapons")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTWeaponLocker.ReplicatedEvent")()); }
-			ScriptFunction ReplaceWeapon() { mixin(MGF!("mReplaceWeapon", "Function UTGame.UTWeaponLocker.ReplaceWeapon")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTWeaponLocker.Reset")()); }
-			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function UTGame.UTWeaponLocker.GetHumanReadableName")()); }
-			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function UTGame.UTWeaponLocker.DetourWeight")()); }
-			ScriptFunction InitializePickup() { mixin(MGF!("mInitializePickup", "Function UTGame.UTWeaponLocker.InitializePickup")()); }
-			ScriptFunction ShowActive() { mixin(MGF!("mShowActive", "Function UTGame.UTWeaponLocker.ShowActive")()); }
-			ScriptFunction NotifyLocalPlayerDead() { mixin(MGF!("mNotifyLocalPlayerDead", "Function UTGame.UTWeaponLocker.NotifyLocalPlayerDead")()); }
-			ScriptFunction SetPlayerNearby() { mixin(MGF!("mSetPlayerNearby", "Function UTGame.UTWeaponLocker.SetPlayerNearby")()); }
-			ScriptFunction DestroyWeapons() { mixin(MGF!("mDestroyWeapons", "Function UTGame.UTWeaponLocker.DestroyWeapons")()); }
-			ScriptFunction ShowHidden() { mixin(MGF!("mShowHidden", "Function UTGame.UTWeaponLocker.ShowHidden")()); }
+			ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function UTGame.UTWeaponLocker.BotDesireability")); }
+			ScriptFunction SetInitialState() { mixin(MGF("mSetInitialState", "Function UTGame.UTWeaponLocker.SetInitialState")); }
+			ScriptFunction ShouldCamp() { mixin(MGF("mShouldCamp", "Function UTGame.UTWeaponLocker.ShouldCamp")); }
+			ScriptFunction AddCustomer() { mixin(MGF("mAddCustomer", "Function UTGame.UTWeaponLocker.AddCustomer")); }
+			ScriptFunction HasCustomer() { mixin(MGF("mHasCustomer", "Function UTGame.UTWeaponLocker.HasCustomer")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTWeaponLocker.PostBeginPlay")); }
+			ScriptFunction InitializeWeapons() { mixin(MGF("mInitializeWeapons", "Function UTGame.UTWeaponLocker.InitializeWeapons")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UTGame.UTWeaponLocker.ReplicatedEvent")); }
+			ScriptFunction ReplaceWeapon() { mixin(MGF("mReplaceWeapon", "Function UTGame.UTWeaponLocker.ReplaceWeapon")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function UTGame.UTWeaponLocker.Reset")); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF("mGetHumanReadableName", "Function UTGame.UTWeaponLocker.GetHumanReadableName")); }
+			ScriptFunction DetourWeight() { mixin(MGF("mDetourWeight", "Function UTGame.UTWeaponLocker.DetourWeight")); }
+			ScriptFunction InitializePickup() { mixin(MGF("mInitializePickup", "Function UTGame.UTWeaponLocker.InitializePickup")); }
+			ScriptFunction ShowActive() { mixin(MGF("mShowActive", "Function UTGame.UTWeaponLocker.ShowActive")); }
+			ScriptFunction NotifyLocalPlayerDead() { mixin(MGF("mNotifyLocalPlayerDead", "Function UTGame.UTWeaponLocker.NotifyLocalPlayerDead")); }
+			ScriptFunction SetPlayerNearby() { mixin(MGF("mSetPlayerNearby", "Function UTGame.UTWeaponLocker.SetPlayerNearby")); }
+			ScriptFunction DestroyWeapons() { mixin(MGF("mDestroyWeapons", "Function UTGame.UTWeaponLocker.DestroyWeapons")); }
+			ScriptFunction ShowHidden() { mixin(MGF("mShowHidden", "Function UTGame.UTWeaponLocker.ShowHidden")); }
 		}
 	}
 	struct WeaponEntry
@@ -66,11 +66,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTWeaponLocker.WeaponEntry")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.UTWeaponLocker.WeaponEntry")); }
 		@property final auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupMesh'!
-			ScriptClass WeaponClass() { mixin(MGPS!("ScriptClass", 0)()); }
+			ScriptClass WeaponClass() { mixin(MGPS("ScriptClass", 0)); }
 		}
 	}
 	struct PawnToucher
@@ -78,11 +78,11 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTWeaponLocker.PawnToucher")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.UTWeaponLocker.PawnToucher")); }
 		@property final auto ref
 		{
-			float NextTouchTime() { mixin(MGPS!("float", 4)()); }
-			Pawn P() { mixin(MGPS!("Pawn", 0)()); }
+			float NextTouchTime() { mixin(MGPS("float", 4)); }
+			Pawn P() { mixin(MGPS("Pawn", 0)); }
 		}
 	}
 	struct ReplacementWeaponEntry
@@ -90,49 +90,49 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTWeaponLocker.ReplacementWeaponEntry")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.UTWeaponLocker.ReplacementWeaponEntry")); }
 		@property final
 		{
-			@property final auto ref ScriptClass WeaponClass() { mixin(MGPS!("ScriptClass", 4)()); }
-			bool bReplaced() { mixin(MGBPS!(0, 0x1)()); }
-			bool bReplaced(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			@property final auto ref ScriptClass WeaponClass() { mixin(MGPS("ScriptClass", 4)); }
+			bool bReplaced() { mixin(MGBPS(0, 0x1)); }
+			bool bReplaced(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	static struct LockerPickup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeaponLocker.LockerPickup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeaponLocker.LockerPickup")); }
 	}
 	static struct Disabled
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTWeaponLocker.Disabled")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTWeaponLocker.Disabled")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UTWeaponLocker.WeaponEntry) Weapons() { mixin(MGPC!("ScriptArray!(UTWeaponLocker.WeaponEntry)", 944)()); }
-			ScriptArray!(Vector) LockerPositions() { mixin(MGPC!("ScriptArray!(Vector)", 1004)()); }
-			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC!("ScriptArray!(UTWeaponLocker.PawnToucher)", 1028)()); }
-			float NextProximityCheckTime() { mixin(MGPC!("float", 1076)()); }
-			float ScaleRate() { mixin(MGPC!("float", 1072)()); }
-			ParticleSystem WeaponSpawnEffectTemplate() { mixin(MGPC!("ParticleSystem", 1068)()); }
-			ParticleSystem ActiveEffectTemplate() { mixin(MGPC!("ParticleSystem", 1064)()); }
-			ParticleSystem InactiveEffectTemplate() { mixin(MGPC!("ParticleSystem", 1060)()); }
+			ScriptArray!(UTWeaponLocker.WeaponEntry) Weapons() { mixin(MGPC("ScriptArray!(UTWeaponLocker.WeaponEntry)", 944)); }
+			ScriptArray!(Vector) LockerPositions() { mixin(MGPC("ScriptArray!(Vector)", 1004)); }
+			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC("ScriptArray!(UTWeaponLocker.PawnToucher)", 1028)); }
+			float NextProximityCheckTime() { mixin(MGPC("float", 1076)); }
+			float ScaleRate() { mixin(MGPC("float", 1072)); }
+			ParticleSystem WeaponSpawnEffectTemplate() { mixin(MGPC("ParticleSystem", 1068)); }
+			ParticleSystem ActiveEffectTemplate() { mixin(MGPC("ParticleSystem", 1064)); }
+			ParticleSystem InactiveEffectTemplate() { mixin(MGPC("ParticleSystem", 1060)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ProximityEffect'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientEffect'!
-			float ProximityDistanceSquared() { mixin(MGPC!("float", 1048)()); }
-			float CurrentWeaponScaleX() { mixin(MGPC!("float", 1044)()); }
-			ScriptString LockerString() { mixin(MGPC!("ScriptString", 1016)()); }
-			UTWeaponLocker.ReplacementWeaponEntry ReplacementWeapons() { mixin(MGPC!("UTWeaponLocker.ReplacementWeaponEntry", 956)()); }
+			float ProximityDistanceSquared() { mixin(MGPC("float", 1048)); }
+			float CurrentWeaponScaleX() { mixin(MGPC("float", 1044)); }
+			ScriptString LockerString() { mixin(MGPC("ScriptString", 1016)); }
+			UTWeaponLocker.ReplacementWeaponEntry ReplacementWeapons() { mixin(MGPC("UTWeaponLocker.ReplacementWeaponEntry", 956)); }
 		}
-		bool bScalingUp() { mixin(MGBPC!(1040, 0x4)()); }
-		bool bScalingUp(bool val) { mixin(MSBPC!(1040, 0x4)()); }
-		bool bPlayerNearby() { mixin(MGBPC!(1040, 0x2)()); }
-		bool bPlayerNearby(bool val) { mixin(MSBPC!(1040, 0x2)()); }
-		bool bIsActive() { mixin(MGBPC!(1040, 0x1)()); }
-		bool bIsActive(bool val) { mixin(MSBPC!(1040, 0x1)()); }
+		bool bScalingUp() { mixin(MGBPC(1040, 0x4)); }
+		bool bScalingUp(bool val) { mixin(MSBPC(1040, 0x4)); }
+		bool bPlayerNearby() { mixin(MGBPC(1040, 0x2)); }
+		bool bPlayerNearby(bool val) { mixin(MSBPC(1040, 0x2)); }
+		bool bIsActive() { mixin(MGBPC(1040, 0x1)); }
+		bool bIsActive(bool val) { mixin(MSBPC(1040, 0x1)); }
 	}
 final:
 	float BotDesireability(Pawn Bot, Controller C)

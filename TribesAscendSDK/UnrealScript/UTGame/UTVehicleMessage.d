@@ -12,9 +12,9 @@ extern(C++) interface UTVehicleMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVehicleMessage")); }
 	private static __gshared UTVehicleMessage mDefaultProperties;
-	@property final static UTVehicleMessage DefaultProperties() { mixin(MGDPC!(UTVehicleMessage, "UTVehicleMessage UTGame.Default__UTVehicleMessage")()); }
+	@property final static UTVehicleMessage DefaultProperties() { mixin(MGDPC("UTVehicleMessage", "UTVehicleMessage UTGame.Default__UTVehicleMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,19 +27,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTVehicleMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function UTGame.UTVehicleMessage.AnnouncementLevel")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTVehicleMessage.GetString")()); }
-			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function UTGame.UTVehicleMessage.GetColor")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTVehicleMessage.AnnouncementSound")()); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTVehicleMessage.ClientReceive")); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF("mAnnouncementLevel", "Function UTGame.UTVehicleMessage.AnnouncementLevel")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTVehicleMessage.GetString")); }
+			ScriptFunction GetColor() { mixin(MGF("mGetColor", "Function UTGame.UTVehicleMessage.GetColor")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTVehicleMessage.AnnouncementSound")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) MessageText() { mixin(MGPC!("ScriptArray!(ScriptString)", 100)()); }
-		ScriptArray!(UObject.Color) DrawColors() { mixin(MGPC!("ScriptArray!(UObject.Color)", 112)()); }
-		ScriptArray!(SoundNodeWave) MessageAnnouncements() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 124)()); }
-		ScriptArray!(int) CustomMessageArea() { mixin(MGPC!("ScriptArray!(int)", 136)()); }
+		ScriptArray!(ScriptString) MessageText() { mixin(MGPC("ScriptArray!(ScriptString)", 100)); }
+		ScriptArray!(UObject.Color) DrawColors() { mixin(MGPC("ScriptArray!(UObject.Color)", 112)); }
+		ScriptArray!(SoundNodeWave) MessageAnnouncements() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 124)); }
+		ScriptArray!(int) CustomMessageArea() { mixin(MGPC("ScriptArray!(int)", 136)); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

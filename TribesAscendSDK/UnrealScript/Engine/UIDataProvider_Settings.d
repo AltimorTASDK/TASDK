@@ -11,9 +11,9 @@ extern(C++) interface UIDataProvider_Settings : UIDynamicDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataProvider_Settings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataProvider_Settings")); }
 	private static __gshared UIDataProvider_Settings mDefaultProperties;
-	@property final static UIDataProvider_Settings DefaultProperties() { mixin(MGDPC!(UIDataProvider_Settings, "UIDataProvider_Settings Engine.Default__UIDataProvider_Settings")()); }
+	@property final static UIDataProvider_Settings DefaultProperties() { mixin(MGDPC("UIDataProvider_Settings", "UIDataProvider_Settings Engine.Default__UIDataProvider_Settings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,8 +23,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ArrayProviderPropertyChanged() { mixin(MGF!("mArrayProviderPropertyChanged", "Function Engine.UIDataProvider_Settings.ArrayProviderPropertyChanged")()); }
-			ScriptFunction OnSettingValueUpdated() { mixin(MGF!("mOnSettingValueUpdated", "Function Engine.UIDataProvider_Settings.OnSettingValueUpdated")()); }
+			ScriptFunction ArrayProviderPropertyChanged() { mixin(MGF("mArrayProviderPropertyChanged", "Function Engine.UIDataProvider_Settings.ArrayProviderPropertyChanged")); }
+			ScriptFunction OnSettingValueUpdated() { mixin(MGF("mOnSettingValueUpdated", "Function Engine.UIDataProvider_Settings.OnSettingValueUpdated")); }
 		}
 	}
 	struct SettingsArrayProvider
@@ -32,23 +32,23 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataProvider_Settings.SettingsArrayProvider")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.UIDataProvider_Settings.SettingsArrayProvider")); }
 		@property final auto ref
 		{
-			UIDataProvider_SettingsArray Provider() { mixin(MGPS!("UIDataProvider_SettingsArray", 12)()); }
-			ScriptName SettingsName() { mixin(MGPS!("ScriptName", 4)()); }
-			int SettingsId() { mixin(MGPS!("int", 0)()); }
+			UIDataProvider_SettingsArray Provider() { mixin(MGPS("UIDataProvider_SettingsArray", 12)); }
+			ScriptName SettingsName() { mixin(MGPS("ScriptName", 4)); }
+			int SettingsId() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider) SettingsArrayProviders() { mixin(MGPC!("ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider)", 128)()); }
+			ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider) SettingsArrayProviders() { mixin(MGPC("ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider)", 128)); }
 			// WARNING: Property 'Settings' has the same name as a defined type!
 		}
-		bool bIsAListRow() { mixin(MGBPC!(140, 0x1)()); }
-		bool bIsAListRow(bool val) { mixin(MSBPC!(140, 0x1)()); }
+		bool bIsAListRow() { mixin(MGBPC(140, 0x1)); }
+		bool bIsAListRow(bool val) { mixin(MSBPC(140, 0x1)); }
 	}
 final:
 	void ArrayProviderPropertyChanged(UIDataProvider SourceProvider, ScriptName* PropTag = null)

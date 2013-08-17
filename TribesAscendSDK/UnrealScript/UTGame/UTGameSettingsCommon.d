@@ -10,9 +10,9 @@ extern(C++) interface UTGameSettingsCommon : UDKGameSettingsCommon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameSettingsCommon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTGameSettingsCommon")); }
 	private static __gshared UTGameSettingsCommon mDefaultProperties;
-	@property final static UTGameSettingsCommon DefaultProperties() { mixin(MGDPC!(UTGameSettingsCommon, "UTGameSettingsCommon UTGame.Default__UTGameSettingsCommon")()); }
+	@property final static UTGameSettingsCommon DefaultProperties() { mixin(MGDPC("UTGameSettingsCommon", "UTGameSettingsCommon UTGame.Default__UTGameSettingsCommon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,13 +27,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetCustomMapName() { mixin(MGF!("mSetCustomMapName", "Function UTGame.UTGameSettingsCommon.SetCustomMapName")()); }
-			ScriptFunction SetOfficialMutatorBitmask() { mixin(MGF!("mSetOfficialMutatorBitmask", "Function UTGame.UTGameSettingsCommon.SetOfficialMutatorBitmask")()); }
-			ScriptFunction BuildURL() { mixin(MGF!("mBuildURL", "Function UTGame.UTGameSettingsCommon.BuildURL")()); }
-			ScriptFunction UpdateFromURL() { mixin(MGF!("mUpdateFromURL", "Function UTGame.UTGameSettingsCommon.UpdateFromURL")()); }
-			ScriptFunction SetMutators() { mixin(MGF!("mSetMutators", "Function UTGame.UTGameSettingsCommon.SetMutators")()); }
-			ScriptFunction GenerateMutatorBitmaskFromURL() { mixin(MGF!("mGenerateMutatorBitmaskFromURL", "Function UTGame.UTGameSettingsCommon.GenerateMutatorBitmaskFromURL")()); }
-			ScriptFunction SetCustomMutators() { mixin(MGF!("mSetCustomMutators", "Function UTGame.UTGameSettingsCommon.SetCustomMutators")()); }
+			ScriptFunction SetCustomMapName() { mixin(MGF("mSetCustomMapName", "Function UTGame.UTGameSettingsCommon.SetCustomMapName")); }
+			ScriptFunction SetOfficialMutatorBitmask() { mixin(MGF("mSetOfficialMutatorBitmask", "Function UTGame.UTGameSettingsCommon.SetOfficialMutatorBitmask")); }
+			ScriptFunction BuildURL() { mixin(MGF("mBuildURL", "Function UTGame.UTGameSettingsCommon.BuildURL")); }
+			ScriptFunction UpdateFromURL() { mixin(MGF("mUpdateFromURL", "Function UTGame.UTGameSettingsCommon.UpdateFromURL")); }
+			ScriptFunction SetMutators() { mixin(MGF("mSetMutators", "Function UTGame.UTGameSettingsCommon.SetMutators")); }
+			ScriptFunction GenerateMutatorBitmaskFromURL() { mixin(MGF("mGenerateMutatorBitmaskFromURL", "Function UTGame.UTGameSettingsCommon.GenerateMutatorBitmaskFromURL")); }
+			ScriptFunction SetCustomMutators() { mixin(MGF("mSetCustomMutators", "Function UTGame.UTGameSettingsCommon.SetCustomMutators")); }
 		}
 	}
 	static struct Constants
@@ -147,8 +147,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int MaxPlayers() { mixin(MGPC!("int", 172)()); }
-		int MinNetPlayers() { mixin(MGPC!("int", 176)()); }
+		int MaxPlayers() { mixin(MGPC("int", 172)); }
+		int MinNetPlayers() { mixin(MGPC("int", 176)); }
 	}
 final:
 	void SetCustomMapName(ScriptString MapName)

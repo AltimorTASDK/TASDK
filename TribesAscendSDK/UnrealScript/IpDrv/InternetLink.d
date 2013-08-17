@@ -9,9 +9,9 @@ extern(C++) interface InternetLink : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.InternetLink")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.InternetLink")); }
 	private static __gshared InternetLink mDefaultProperties;
-	@property final static InternetLink DefaultProperties() { mixin(MGDPC!(InternetLink, "InternetLink IpDrv.Default__InternetLink")()); }
+	@property final static InternetLink DefaultProperties() { mixin(MGDPC("InternetLink", "InternetLink IpDrv.Default__InternetLink")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,15 +28,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsDataPending() { mixin(MGF!("mIsDataPending", "Function IpDrv.InternetLink.IsDataPending")()); }
-			ScriptFunction ParseURL() { mixin(MGF!("mParseURL", "Function IpDrv.InternetLink.ParseURL")()); }
-			ScriptFunction Resolve() { mixin(MGF!("mResolve", "Function IpDrv.InternetLink.Resolve")()); }
-			ScriptFunction GetLastError() { mixin(MGF!("mGetLastError", "Function IpDrv.InternetLink.GetLastError")()); }
-			ScriptFunction IpAddrToString() { mixin(MGF!("mIpAddrToString", "Function IpDrv.InternetLink.IpAddrToString")()); }
-			ScriptFunction StringToIpAddr() { mixin(MGF!("mStringToIpAddr", "Function IpDrv.InternetLink.StringToIpAddr")()); }
-			ScriptFunction GetLocalIP() { mixin(MGF!("mGetLocalIP", "Function IpDrv.InternetLink.GetLocalIP")()); }
-			ScriptFunction Resolved() { mixin(MGF!("mResolved", "Function IpDrv.InternetLink.Resolved")()); }
-			ScriptFunction ResolveFailed() { mixin(MGF!("mResolveFailed", "Function IpDrv.InternetLink.ResolveFailed")()); }
+			ScriptFunction IsDataPending() { mixin(MGF("mIsDataPending", "Function IpDrv.InternetLink.IsDataPending")); }
+			ScriptFunction ParseURL() { mixin(MGF("mParseURL", "Function IpDrv.InternetLink.ParseURL")); }
+			ScriptFunction Resolve() { mixin(MGF("mResolve", "Function IpDrv.InternetLink.Resolve")); }
+			ScriptFunction GetLastError() { mixin(MGF("mGetLastError", "Function IpDrv.InternetLink.GetLastError")); }
+			ScriptFunction IpAddrToString() { mixin(MGF("mIpAddrToString", "Function IpDrv.InternetLink.IpAddrToString")); }
+			ScriptFunction StringToIpAddr() { mixin(MGF("mStringToIpAddr", "Function IpDrv.InternetLink.StringToIpAddr")); }
+			ScriptFunction GetLocalIP() { mixin(MGF("mGetLocalIP", "Function IpDrv.InternetLink.GetLocalIP")); }
+			ScriptFunction Resolved() { mixin(MGF("mResolved", "Function IpDrv.InternetLink.Resolved")); }
+			ScriptFunction ResolveFailed() { mixin(MGF("mResolveFailed", "Function IpDrv.InternetLink.ResolveFailed")); }
 		}
 	}
 	enum ELinkMode : ubyte
@@ -65,24 +65,24 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.InternetLink.IpAddr")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.InternetLink.IpAddr")); }
 		@property final auto ref
 		{
-			int Port() { mixin(MGPS!("int", 4)()); }
-			int Addr() { mixin(MGPS!("int", 0)()); }
+			int Port() { mixin(MGPS("int", 4)); }
+			int Addr() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		int DataPending() { mixin(MGPC!("int", 496)()); }
-		UObject.Pointer PrivateResolveInfo() { mixin(MGPC!("UObject.Pointer", 492)()); }
-		UObject.Pointer RemoteSocket() { mixin(MGPC!("UObject.Pointer", 488)()); }
-		int Port() { mixin(MGPC!("int", 484)()); }
-		UObject.Pointer Socket() { mixin(MGPC!("UObject.Pointer", 480)()); }
-		InternetLink.EReceiveMode ReceiveMode() { mixin(MGPC!("InternetLink.EReceiveMode", 479)()); }
-		InternetLink.ELineMode OutLineMode() { mixin(MGPC!("InternetLink.ELineMode", 478)()); }
-		InternetLink.ELinkMode LinkMode() { mixin(MGPC!("InternetLink.ELinkMode", 476)()); }
-		InternetLink.ELineMode InLineMode() { mixin(MGPC!("InternetLink.ELineMode", 477)()); }
+		int DataPending() { mixin(MGPC("int", 496)); }
+		UObject.Pointer PrivateResolveInfo() { mixin(MGPC("UObject.Pointer", 492)); }
+		UObject.Pointer RemoteSocket() { mixin(MGPC("UObject.Pointer", 488)); }
+		int Port() { mixin(MGPC("int", 484)); }
+		UObject.Pointer Socket() { mixin(MGPC("UObject.Pointer", 480)); }
+		InternetLink.EReceiveMode ReceiveMode() { mixin(MGPC("InternetLink.EReceiveMode", 479)); }
+		InternetLink.ELineMode OutLineMode() { mixin(MGPC("InternetLink.ELineMode", 478)); }
+		InternetLink.ELinkMode LinkMode() { mixin(MGPC("InternetLink.ELinkMode", 476)); }
+		InternetLink.ELineMode InLineMode() { mixin(MGPC("InternetLink.ELineMode", 477)); }
 	}
 final:
 	bool IsDataPending()

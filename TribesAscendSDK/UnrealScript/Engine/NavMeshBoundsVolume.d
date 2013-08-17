@@ -8,7 +8,7 @@ extern(C++) interface NavMeshBoundsVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshBoundsVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavMeshBoundsVolume")); }
 	private static __gshared NavMeshBoundsVolume mDefaultProperties;
-	@property final static NavMeshBoundsVolume DefaultProperties() { mixin(MGDPC!(NavMeshBoundsVolume, "NavMeshBoundsVolume Engine.Default__NavMeshBoundsVolume")()); }
+	@property final static NavMeshBoundsVolume DefaultProperties() { mixin(MGDPC("NavMeshBoundsVolume", "NavMeshBoundsVolume Engine.Default__NavMeshBoundsVolume")); }
 }

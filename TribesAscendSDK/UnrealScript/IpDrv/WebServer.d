@@ -10,9 +10,9 @@ extern(C++) interface WebServer : TcpLink
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.WebServer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.WebServer")); }
 	private static __gshared WebServer mDefaultProperties;
-	@property final static WebServer DefaultProperties() { mixin(MGDPC!(WebServer, "WebServer IpDrv.Default__WebServer")()); }
+	@property final static WebServer DefaultProperties() { mixin(MGDPC("WebServer", "WebServer IpDrv.Default__WebServer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,31 +25,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetApplication() { mixin(MGF!("mGetApplication", "Function IpDrv.WebServer.GetApplication")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function IpDrv.WebServer.PostBeginPlay")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function IpDrv.WebServer.Destroyed")()); }
-			ScriptFunction GainedChild() { mixin(MGF!("mGainedChild", "Function IpDrv.WebServer.GainedChild")()); }
-			ScriptFunction LostChild() { mixin(MGF!("mLostChild", "Function IpDrv.WebServer.LostChild")()); }
+			ScriptFunction GetApplication() { mixin(MGF("mGetApplication", "Function IpDrv.WebServer.GetApplication")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function IpDrv.WebServer.PostBeginPlay")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function IpDrv.WebServer.Destroyed")); }
+			ScriptFunction GainedChild() { mixin(MGF("mGainedChild", "Function IpDrv.WebServer.GainedChild")); }
+			ScriptFunction LostChild() { mixin(MGF("mLostChild", "Function IpDrv.WebServer.LostChild")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int ConnID() { mixin(MGPC!("int", 868)()); }
-			int DefaultApplication() { mixin(MGPC!("int", 804)()); }
-			ScriptString ApplicationPaths() { mixin(MGPC!("ScriptString", 672)()); }
-			int ExpirationSeconds() { mixin(MGPC!("int", 808)()); }
-			int ConnectionCount() { mixin(MGPC!("int", 864)()); }
-			WebApplication ApplicationObjects() { mixin(MGPC!("WebApplication", 824)()); }
-			ScriptString ServerURL() { mixin(MGPC!("ScriptString", 812)()); }
-			int MaxConnections() { mixin(MGPC!("int", 800)()); }
-			int ListenPort() { mixin(MGPC!("int", 796)()); }
-			ScriptString Applications() { mixin(MGPC!("ScriptString", 552)()); }
-			ScriptString ServerName() { mixin(MGPC!("ScriptString", 540)()); }
+			int ConnID() { mixin(MGPC("int", 868)); }
+			int DefaultApplication() { mixin(MGPC("int", 804)); }
+			ScriptString ApplicationPaths() { mixin(MGPC("ScriptString", 672)); }
+			int ExpirationSeconds() { mixin(MGPC("int", 808)); }
+			int ConnectionCount() { mixin(MGPC("int", 864)); }
+			WebApplication ApplicationObjects() { mixin(MGPC("WebApplication", 824)); }
+			ScriptString ServerURL() { mixin(MGPC("ScriptString", 812)); }
+			int MaxConnections() { mixin(MGPC("int", 800)); }
+			int ListenPort() { mixin(MGPC("int", 796)); }
+			ScriptString Applications() { mixin(MGPC("ScriptString", 552)); }
+			ScriptString ServerName() { mixin(MGPC("ScriptString", 540)); }
 		}
-		bool bEnabled() { mixin(MGBPC!(792, 0x1)()); }
-		bool bEnabled(bool val) { mixin(MSBPC!(792, 0x1)()); }
+		bool bEnabled() { mixin(MGBPC(792, 0x1)); }
+		bool bEnabled(bool val) { mixin(MSBPC(792, 0x1)); }
 	}
 final:
 	WebApplication GetApplication(ScriptString URI, ref ScriptString SubURI)

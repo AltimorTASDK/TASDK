@@ -11,9 +11,9 @@ extern(C++) interface UTGameViewportClient : UDKGameViewportClient
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameViewportClient")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTGameViewportClient")); }
 	private static __gshared UTGameViewportClient mDefaultProperties;
-	@property final static UTGameViewportClient DefaultProperties() { mixin(MGDPC!(UTGameViewportClient, "UTGameViewportClient UTGame.Default__UTGameViewportClient")()); }
+	@property final static UTGameViewportClient DefaultProperties() { mixin(MGDPC("UTGameViewportClient", "UTGameViewportClient UTGame.Default__UTGameViewportClient")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,22 +27,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function UTGame.UTGameViewportClient.PostRender")()); }
-			ScriptFunction DrawTransition() { mixin(MGF!("mDrawTransition", "Function UTGame.UTGameViewportClient.DrawTransition")()); }
-			ScriptFunction RenderHeader() { mixin(MGF!("mRenderHeader", "Function UTGame.UTGameViewportClient.RenderHeader")()); }
-			ScriptFunction UpdateActiveSplitscreenType() { mixin(MGF!("mUpdateActiveSplitscreenType", "Function UTGame.UTGameViewportClient.UpdateActiveSplitscreenType")()); }
-			ScriptFunction SetProgressMessage() { mixin(MGF!("mSetProgressMessage", "Function UTGame.UTGameViewportClient.SetProgressMessage")()); }
-			ScriptFunction NotifyConnectionError() { mixin(MGF!("mNotifyConnectionError", "Function UTGame.UTGameViewportClient.NotifyConnectionError")()); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function UTGame.UTGameViewportClient.PostRender")); }
+			ScriptFunction DrawTransition() { mixin(MGF("mDrawTransition", "Function UTGame.UTGameViewportClient.DrawTransition")); }
+			ScriptFunction RenderHeader() { mixin(MGF("mRenderHeader", "Function UTGame.UTGameViewportClient.RenderHeader")); }
+			ScriptFunction UpdateActiveSplitscreenType() { mixin(MGF("mUpdateActiveSplitscreenType", "Function UTGame.UTGameViewportClient.UpdateActiveSplitscreenType")); }
+			ScriptFunction SetProgressMessage() { mixin(MGF("mSetProgressMessage", "Function UTGame.UTGameViewportClient.SetProgressMessage")); }
+			ScriptFunction NotifyConnectionError() { mixin(MGF("mNotifyConnectionError", "Function UTGame.UTGameViewportClient.NotifyConnectionError")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString LevelActionMessages() { mixin(MGPC!("ScriptString", 300)()); }
-		ScriptString ProgressMessageSceneClassName() { mixin(MGPC!("ScriptString", 396)()); }
-		Font LoadingScreenHintMessageFont() { mixin(MGPC!("Font", 392)()); }
-		Font LoadingScreenGameTypeNameFont() { mixin(MGPC!("Font", 388)()); }
-		Font LoadingScreenMapNameFont() { mixin(MGPC!("Font", 384)()); }
-		ScriptString UTFrontEndString() { mixin(MGPC!("ScriptString", 372)()); }
+		ScriptString LevelActionMessages() { mixin(MGPC("ScriptString", 300)); }
+		ScriptString ProgressMessageSceneClassName() { mixin(MGPC("ScriptString", 396)); }
+		Font LoadingScreenHintMessageFont() { mixin(MGPC("Font", 392)); }
+		Font LoadingScreenGameTypeNameFont() { mixin(MGPC("Font", 388)); }
+		Font LoadingScreenMapNameFont() { mixin(MGPC("Font", 384)); }
+		ScriptString UTFrontEndString() { mixin(MGPC("ScriptString", 372)); }
 	}
 final:
 	void PostRender(Canvas pCanvas)

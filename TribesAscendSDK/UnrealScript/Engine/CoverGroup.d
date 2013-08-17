@@ -10,9 +10,9 @@ extern(C++) interface CoverGroup : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.CoverGroup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.CoverGroup")); }
 	private static __gshared CoverGroup mDefaultProperties;
-	@property final static CoverGroup DefaultProperties() { mixin(MGDPC!(CoverGroup, "CoverGroup Engine.Default__CoverGroup")()); }
+	@property final static CoverGroup DefaultProperties() { mixin(MGDPC("CoverGroup", "CoverGroup Engine.Default__CoverGroup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,10 +24,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EnableGroup() { mixin(MGF!("mEnableGroup", "Function Engine.CoverGroup.EnableGroup")()); }
-			ScriptFunction DisableGroup() { mixin(MGF!("mDisableGroup", "Function Engine.CoverGroup.DisableGroup")()); }
-			ScriptFunction ToggleGroup() { mixin(MGF!("mToggleGroup", "Function Engine.CoverGroup.ToggleGroup")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.CoverGroup.OnToggle")()); }
+			ScriptFunction EnableGroup() { mixin(MGF("mEnableGroup", "Function Engine.CoverGroup.EnableGroup")); }
+			ScriptFunction DisableGroup() { mixin(MGF("mDisableGroup", "Function Engine.CoverGroup.DisableGroup")); }
+			ScriptFunction ToggleGroup() { mixin(MGF("mToggleGroup", "Function Engine.CoverGroup.ToggleGroup")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.CoverGroup.OnToggle")); }
 		}
 	}
 	enum ECoverGroupFillAction : ubyte
@@ -41,9 +41,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ActorReference) CoverLinkRefs() { mixin(MGPC!("ScriptArray!(Actor.ActorReference)", 476)()); }
-		float AutoSelectHeight() { mixin(MGPC!("float", 492)()); }
-		float AutoSelectRadius() { mixin(MGPC!("float", 488)()); }
+		ScriptArray!(Actor.ActorReference) CoverLinkRefs() { mixin(MGPC("ScriptArray!(Actor.ActorReference)", 476)); }
+		float AutoSelectHeight() { mixin(MGPC("float", 492)); }
+		float AutoSelectRadius() { mixin(MGPC("float", 488)); }
 	}
 final:
 	void EnableGroup()

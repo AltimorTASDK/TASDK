@@ -8,13 +8,13 @@ extern(C++) interface UTMutator_WeaponsRespawn : UTMutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator_WeaponsRespawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTMutator_WeaponsRespawn")); }
 	private static __gshared UTMutator_WeaponsRespawn mDefaultProperties;
-	@property final static UTMutator_WeaponsRespawn DefaultProperties() { mixin(MGDPC!(UTMutator_WeaponsRespawn, "UTMutator_WeaponsRespawn UTGame.Default__UTMutator_WeaponsRespawn")()); }
+	@property final static UTMutator_WeaponsRespawn DefaultProperties() { mixin(MGDPC("UTMutator_WeaponsRespawn", "UTMutator_WeaponsRespawn UTGame.Default__UTMutator_WeaponsRespawn")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitMutator;
-		public @property static final ScriptFunction InitMutator() { mixin(MGF!("mInitMutator", "Function UTGame.UTMutator_WeaponsRespawn.InitMutator")()); }
+		public @property static final ScriptFunction InitMutator() { mixin(MGF("mInitMutator", "Function UTGame.UTMutator_WeaponsRespawn.InitMutator")); }
 	}
 	final void InitMutator(ScriptString Options, ref ScriptString ErrorMessage)
 	{

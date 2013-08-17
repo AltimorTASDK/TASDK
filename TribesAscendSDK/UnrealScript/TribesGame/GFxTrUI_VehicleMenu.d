@@ -8,9 +8,9 @@ extern(C++) interface GFxTrUI_VehicleMenu : UTGFxTweenableMoviePlayer
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrUI_VehicleMenu")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrUI_VehicleMenu")); }
 	private static __gshared GFxTrUI_VehicleMenu mDefaultProperties;
-	@property final static GFxTrUI_VehicleMenu DefaultProperties() { mixin(MGDPC!(GFxTrUI_VehicleMenu, "GFxTrUI_VehicleMenu TribesGame.Default__GFxTrUI_VehicleMenu")()); }
+	@property final static GFxTrUI_VehicleMenu DefaultProperties() { mixin(MGDPC("GFxTrUI_VehicleMenu", "GFxTrUI_VehicleMenu TribesGame.Default__GFxTrUI_VehicleMenu")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,13 +25,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Start() { mixin(MGF!("mStart", "Function TribesGame.GFxTrUI_VehicleMenu.Start")()); }
-			ScriptFunction ConfigureOptions() { mixin(MGF!("mConfigureOptions", "Function TribesGame.GFxTrUI_VehicleMenu.ConfigureOptions")()); }
-			ScriptFunction VehicleOptionsComplete() { mixin(MGF!("mVehicleOptionsComplete", "Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsComplete")()); }
-			ScriptFunction VehicleOptionsClear() { mixin(MGF!("mVehicleOptionsClear", "Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsClear")()); }
-			ScriptFunction SetVehicleOption() { mixin(MGF!("mSetVehicleOption", "Function TribesGame.GFxTrUI_VehicleMenu.SetVehicleOption")()); }
-			ScriptFunction GetSelectedVehicle() { mixin(MGF!("mGetSelectedVehicle", "Function TribesGame.GFxTrUI_VehicleMenu.GetSelectedVehicle")()); }
-			ScriptFunction OnVehicleScreenFinished() { mixin(MGF!("mOnVehicleScreenFinished", "Function TribesGame.GFxTrUI_VehicleMenu.OnVehicleScreenFinished")()); }
+			ScriptFunction Start() { mixin(MGF("mStart", "Function TribesGame.GFxTrUI_VehicleMenu.Start")); }
+			ScriptFunction ConfigureOptions() { mixin(MGF("mConfigureOptions", "Function TribesGame.GFxTrUI_VehicleMenu.ConfigureOptions")); }
+			ScriptFunction VehicleOptionsComplete() { mixin(MGF("mVehicleOptionsComplete", "Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsComplete")); }
+			ScriptFunction VehicleOptionsClear() { mixin(MGF("mVehicleOptionsClear", "Function TribesGame.GFxTrUI_VehicleMenu.VehicleOptionsClear")); }
+			ScriptFunction SetVehicleOption() { mixin(MGF("mSetVehicleOption", "Function TribesGame.GFxTrUI_VehicleMenu.SetVehicleOption")); }
+			ScriptFunction GetSelectedVehicle() { mixin(MGF("mGetSelectedVehicle", "Function TribesGame.GFxTrUI_VehicleMenu.GetSelectedVehicle")); }
+			ScriptFunction OnVehicleScreenFinished() { mixin(MGF("mOnVehicleScreenFinished", "Function TribesGame.GFxTrUI_VehicleMenu.OnVehicleScreenFinished")); }
 		}
 	}
 final:

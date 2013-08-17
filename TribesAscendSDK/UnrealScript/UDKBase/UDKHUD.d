@@ -10,9 +10,9 @@ extern(C++) interface UDKHUD : MobileHUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKHUD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKHUD")); }
 	private static __gshared UDKHUD mDefaultProperties;
-	@property final static UDKHUD DefaultProperties() { mixin(MGDPC!(UDKHUD, "UDKHUD UDKBase.Default__UDKHUD")()); }
+	@property final static UDKHUD DefaultProperties() { mixin(MGDPC("UDKHUD", "UDKHUD UDKBase.Default__UDKHUD")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,19 +22,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction DrawGlowText() { mixin(MGF!("mDrawGlowText", "Function UDKBase.UDKHUD.DrawGlowText")()); }
-			ScriptFunction TranslateBindToFont() { mixin(MGF!("mTranslateBindToFont", "Function UDKBase.UDKHUD.TranslateBindToFont")()); }
+			ScriptFunction DrawGlowText() { mixin(MGF("mDrawGlowText", "Function UDKBase.UDKHUD.DrawGlowText")); }
+			ScriptFunction TranslateBindToFont() { mixin(MGF("mTranslateBindToFont", "Function UDKBase.UDKHUD.TranslateBindToFont")); }
 		}
 	}
 	@property final auto ref
 	{
-		Font BindTextFont() { mixin(MGPC!("Font", 1424)()); }
-		Font ConsoleIconFont() { mixin(MGPC!("Font", 1420)()); }
-		Canvas.FontRenderInfo TextRenderInfo() { mixin(MGPC!("Canvas.FontRenderInfo", 1380)()); }
-		float PulseMultiplier() { mixin(MGPC!("float", 1376)()); }
-		float PulseSplit() { mixin(MGPC!("float", 1372)()); }
-		float PulseDuration() { mixin(MGPC!("float", 1368)()); }
-		Font GlowFonts() { mixin(MGPC!("Font", 1360)()); }
+		Font BindTextFont() { mixin(MGPC("Font", 1424)); }
+		Font ConsoleIconFont() { mixin(MGPC("Font", 1420)); }
+		Canvas.FontRenderInfo TextRenderInfo() { mixin(MGPC("Canvas.FontRenderInfo", 1380)); }
+		float PulseMultiplier() { mixin(MGPC("float", 1376)); }
+		float PulseSplit() { mixin(MGPC("float", 1372)); }
+		float PulseDuration() { mixin(MGPC("float", 1368)); }
+		Font GlowFonts() { mixin(MGPC("Font", 1360)); }
 	}
 final:
 	void DrawGlowText(ScriptString Text, float X, float Y, float* MaxHeightInPixels = null, float* PulseTime = null, bool* bRightJustified = null)

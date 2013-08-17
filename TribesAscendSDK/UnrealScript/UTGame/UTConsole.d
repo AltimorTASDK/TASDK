@@ -9,9 +9,9 @@ extern(C++) interface UTConsole : Console
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTConsole")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTConsole")); }
 	private static __gshared UTConsole mDefaultProperties;
-	@property final static UTConsole DefaultProperties() { mixin(MGDPC!(UTConsole, "UTConsole UTGame.Default__UTConsole")()); }
+	@property final static UTConsole DefaultProperties() { mixin(MGDPC("UTConsole", "UTConsole UTGame.Default__UTConsole")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,17 +22,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnyBrowserOpen() { mixin(MGF!("mAnyBrowserOpen", "Function UTGame.UTConsole.AnyBrowserOpen")()); }
-			ScriptFunction InputKey() { mixin(MGF!("mInputKey", "Function UTGame.UTConsole.InputKey")()); }
-			ScriptFunction OutputTextLine() { mixin(MGF!("mOutputTextLine", "Function UTGame.UTConsole.OutputTextLine")()); }
+			ScriptFunction AnyBrowserOpen() { mixin(MGF("mAnyBrowserOpen", "Function UTGame.UTConsole.AnyBrowserOpen")); }
+			ScriptFunction InputKey() { mixin(MGF("mInputKey", "Function UTGame.UTConsole.InputKey")); }
+			ScriptFunction OutputTextLine() { mixin(MGF("mOutputTextLine", "Function UTGame.UTConsole.OutputTextLine")); }
 		}
 	}
 	static struct Typing
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTConsole.Typing")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTConsole.Typing")); }
 	}
-	@property final auto ref int TextCount() { mixin(MGPC!("int", 452)()); }
+	@property final auto ref int TextCount() { mixin(MGPC("int", 452)); }
 final:
 	bool AnyBrowserOpen()
 	{

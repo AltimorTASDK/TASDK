@@ -9,9 +9,9 @@ extern(C++) interface SceneCapture2DHitMaskComponent : SceneCaptureComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SceneCapture2DHitMaskComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SceneCapture2DHitMaskComponent")); }
 	private static __gshared SceneCapture2DHitMaskComponent mDefaultProperties;
-	@property final static SceneCapture2DHitMaskComponent DefaultProperties() { mixin(MGDPC!(SceneCapture2DHitMaskComponent, "SceneCapture2DHitMaskComponent Engine.Default__SceneCapture2DHitMaskComponent")()); }
+	@property final static SceneCapture2DHitMaskComponent DefaultProperties() { mixin(MGDPC("SceneCapture2DHitMaskComponent", "SceneCapture2DHitMaskComponent Engine.Default__SceneCapture2DHitMaskComponent")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,22 +22,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetCaptureTargetTexture() { mixin(MGF!("mSetCaptureTargetTexture", "Function Engine.SceneCapture2DHitMaskComponent.SetCaptureTargetTexture")()); }
-			ScriptFunction SetCaptureParameters() { mixin(MGF!("mSetCaptureParameters", "Function Engine.SceneCapture2DHitMaskComponent.SetCaptureParameters")()); }
-			ScriptFunction SetFadingStartTimeSinceHit() { mixin(MGF!("mSetFadingStartTimeSinceHit", "Function Engine.SceneCapture2DHitMaskComponent.SetFadingStartTimeSinceHit")()); }
+			ScriptFunction SetCaptureTargetTexture() { mixin(MGF("mSetCaptureTargetTexture", "Function Engine.SceneCapture2DHitMaskComponent.SetCaptureTargetTexture")); }
+			ScriptFunction SetCaptureParameters() { mixin(MGF("mSetCaptureParameters", "Function Engine.SceneCapture2DHitMaskComponent.SetCaptureParameters")); }
+			ScriptFunction SetFadingStartTimeSinceHit() { mixin(MGF("mSetFadingStartTimeSinceHit", "Function Engine.SceneCapture2DHitMaskComponent.SetFadingStartTimeSinceHit")); }
 		}
 	}
 	@property final auto ref
 	{
-		float FadingIntervalTime() { mixin(MGPC!("float", 176)()); }
-		float FadingDurationTime() { mixin(MGPC!("float", 172)()); }
-		float FadingPercentage() { mixin(MGPC!("float", 168)()); }
-		float FadingStartTimeSinceHit() { mixin(MGPC!("float", 164)()); }
-		int HitMaskCullDistance() { mixin(MGPC!("int", 160)()); }
-		int ForceLOD() { mixin(MGPC!("int", 156)()); }
-		int MaterialIndex() { mixin(MGPC!("int", 152)()); }
+		float FadingIntervalTime() { mixin(MGPC("float", 176)); }
+		float FadingDurationTime() { mixin(MGPC("float", 172)); }
+		float FadingPercentage() { mixin(MGPC("float", 168)); }
+		float FadingStartTimeSinceHit() { mixin(MGPC("float", 164)); }
+		int HitMaskCullDistance() { mixin(MGPC("int", 160)); }
+		int ForceLOD() { mixin(MGPC("int", 156)); }
+		int MaterialIndex() { mixin(MGPC("int", 152)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkeletalMeshComp'!
-		TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 144)()); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC("TextureRenderTarget2D", 144)); }
 	}
 final:
 	void SetCaptureTargetTexture(in TextureRenderTarget2D InTextureTarget)

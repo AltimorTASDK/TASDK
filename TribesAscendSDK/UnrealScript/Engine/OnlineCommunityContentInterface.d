@@ -9,9 +9,9 @@ extern(C++) interface OnlineCommunityContentInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineCommunityContentInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineCommunityContentInterface")); }
 	private static __gshared OnlineCommunityContentInterface mDefaultProperties;
-	@property final static OnlineCommunityContentInterface DefaultProperties() { mixin(MGDPC!(OnlineCommunityContentInterface, "OnlineCommunityContentInterface Engine.Default__OnlineCommunityContentInterface")()); }
+	@property final static OnlineCommunityContentInterface DefaultProperties() { mixin(MGDPC("OnlineCommunityContentInterface", "OnlineCommunityContentInterface Engine.Default__OnlineCommunityContentInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -44,31 +44,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.OnlineCommunityContentInterface.Init")()); }
-			ScriptFunction Exit() { mixin(MGF!("mExit", "Function Engine.OnlineCommunityContentInterface.Exit")()); }
-			ScriptFunction ReadContentList() { mixin(MGF!("mReadContentList", "Function Engine.OnlineCommunityContentInterface.ReadContentList")()); }
-			ScriptFunction OnReadContentListComplete() { mixin(MGF!("mOnReadContentListComplete", "Function Engine.OnlineCommunityContentInterface.OnReadContentListComplete")()); }
-			ScriptFunction OnGetContentPayloadComplete() { mixin(MGF!("mOnGetContentPayloadComplete", "Function Engine.OnlineCommunityContentInterface.OnGetContentPayloadComplete")()); }
-			ScriptFunction OnDownloadContentComplete() { mixin(MGF!("mOnDownloadContentComplete", "Function Engine.OnlineCommunityContentInterface.OnDownloadContentComplete")()); }
-			ScriptFunction OnUploadContentComplete() { mixin(MGF!("mOnUploadContentComplete", "Function Engine.OnlineCommunityContentInterface.OnUploadContentComplete")()); }
-			ScriptFunction OnReadFriendsContentListComplete() { mixin(MGF!("mOnReadFriendsContentListComplete", "Function Engine.OnlineCommunityContentInterface.OnReadFriendsContentListComplete")()); }
-			ScriptFunction AddReadContentListCompleteDelegate() { mixin(MGF!("mAddReadContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddReadContentListCompleteDelegate")()); }
-			ScriptFunction ClearReadContentListCompleteDelegate() { mixin(MGF!("mClearReadContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearReadContentListCompleteDelegate")()); }
-			ScriptFunction GetContentList() { mixin(MGF!("mGetContentList", "Function Engine.OnlineCommunityContentInterface.GetContentList")()); }
-			ScriptFunction ReadFriendsContentList() { mixin(MGF!("mReadFriendsContentList", "Function Engine.OnlineCommunityContentInterface.ReadFriendsContentList")()); }
-			ScriptFunction AddReadFriendsContentListCompleteDelegate() { mixin(MGF!("mAddReadFriendsContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddReadFriendsContentListCompleteDelegate")()); }
-			ScriptFunction ClearReadFriendsContentListCompleteDelegate() { mixin(MGF!("mClearReadFriendsContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearReadFriendsContentListCompleteDelegate")()); }
-			ScriptFunction GetFriendsContentList() { mixin(MGF!("mGetFriendsContentList", "Function Engine.OnlineCommunityContentInterface.GetFriendsContentList")()); }
-			ScriptFunction UploadContent() { mixin(MGF!("mUploadContent", "Function Engine.OnlineCommunityContentInterface.UploadContent")()); }
-			ScriptFunction AddUploadContentCompleteDelegate() { mixin(MGF!("mAddUploadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddUploadContentCompleteDelegate")()); }
-			ScriptFunction ClearUploadContentCompleteDelegate() { mixin(MGF!("mClearUploadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearUploadContentCompleteDelegate")()); }
-			ScriptFunction DownloadContent() { mixin(MGF!("mDownloadContent", "Function Engine.OnlineCommunityContentInterface.DownloadContent")()); }
-			ScriptFunction AddDownloadContentCompleteDelegate() { mixin(MGF!("mAddDownloadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddDownloadContentCompleteDelegate")()); }
-			ScriptFunction ClearDownloadContentCompleteDelegate() { mixin(MGF!("mClearDownloadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearDownloadContentCompleteDelegate")()); }
-			ScriptFunction GetContentPayload() { mixin(MGF!("mGetContentPayload", "Function Engine.OnlineCommunityContentInterface.GetContentPayload")()); }
-			ScriptFunction AddGetContentPayloadCompleteDelegate() { mixin(MGF!("mAddGetContentPayloadCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddGetContentPayloadCompleteDelegate")()); }
-			ScriptFunction ClearGetContentPayloadCompleteDelegate() { mixin(MGF!("mClearGetContentPayloadCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearGetContentPayloadCompleteDelegate")()); }
-			ScriptFunction RateContent() { mixin(MGF!("mRateContent", "Function Engine.OnlineCommunityContentInterface.RateContent")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.OnlineCommunityContentInterface.Init")); }
+			ScriptFunction Exit() { mixin(MGF("mExit", "Function Engine.OnlineCommunityContentInterface.Exit")); }
+			ScriptFunction ReadContentList() { mixin(MGF("mReadContentList", "Function Engine.OnlineCommunityContentInterface.ReadContentList")); }
+			ScriptFunction OnReadContentListComplete() { mixin(MGF("mOnReadContentListComplete", "Function Engine.OnlineCommunityContentInterface.OnReadContentListComplete")); }
+			ScriptFunction OnGetContentPayloadComplete() { mixin(MGF("mOnGetContentPayloadComplete", "Function Engine.OnlineCommunityContentInterface.OnGetContentPayloadComplete")); }
+			ScriptFunction OnDownloadContentComplete() { mixin(MGF("mOnDownloadContentComplete", "Function Engine.OnlineCommunityContentInterface.OnDownloadContentComplete")); }
+			ScriptFunction OnUploadContentComplete() { mixin(MGF("mOnUploadContentComplete", "Function Engine.OnlineCommunityContentInterface.OnUploadContentComplete")); }
+			ScriptFunction OnReadFriendsContentListComplete() { mixin(MGF("mOnReadFriendsContentListComplete", "Function Engine.OnlineCommunityContentInterface.OnReadFriendsContentListComplete")); }
+			ScriptFunction AddReadContentListCompleteDelegate() { mixin(MGF("mAddReadContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddReadContentListCompleteDelegate")); }
+			ScriptFunction ClearReadContentListCompleteDelegate() { mixin(MGF("mClearReadContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearReadContentListCompleteDelegate")); }
+			ScriptFunction GetContentList() { mixin(MGF("mGetContentList", "Function Engine.OnlineCommunityContentInterface.GetContentList")); }
+			ScriptFunction ReadFriendsContentList() { mixin(MGF("mReadFriendsContentList", "Function Engine.OnlineCommunityContentInterface.ReadFriendsContentList")); }
+			ScriptFunction AddReadFriendsContentListCompleteDelegate() { mixin(MGF("mAddReadFriendsContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddReadFriendsContentListCompleteDelegate")); }
+			ScriptFunction ClearReadFriendsContentListCompleteDelegate() { mixin(MGF("mClearReadFriendsContentListCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearReadFriendsContentListCompleteDelegate")); }
+			ScriptFunction GetFriendsContentList() { mixin(MGF("mGetFriendsContentList", "Function Engine.OnlineCommunityContentInterface.GetFriendsContentList")); }
+			ScriptFunction UploadContent() { mixin(MGF("mUploadContent", "Function Engine.OnlineCommunityContentInterface.UploadContent")); }
+			ScriptFunction AddUploadContentCompleteDelegate() { mixin(MGF("mAddUploadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddUploadContentCompleteDelegate")); }
+			ScriptFunction ClearUploadContentCompleteDelegate() { mixin(MGF("mClearUploadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearUploadContentCompleteDelegate")); }
+			ScriptFunction DownloadContent() { mixin(MGF("mDownloadContent", "Function Engine.OnlineCommunityContentInterface.DownloadContent")); }
+			ScriptFunction AddDownloadContentCompleteDelegate() { mixin(MGF("mAddDownloadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddDownloadContentCompleteDelegate")); }
+			ScriptFunction ClearDownloadContentCompleteDelegate() { mixin(MGF("mClearDownloadContentCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearDownloadContentCompleteDelegate")); }
+			ScriptFunction GetContentPayload() { mixin(MGF("mGetContentPayload", "Function Engine.OnlineCommunityContentInterface.GetContentPayload")); }
+			ScriptFunction AddGetContentPayloadCompleteDelegate() { mixin(MGF("mAddGetContentPayloadCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.AddGetContentPayloadCompleteDelegate")); }
+			ScriptFunction ClearGetContentPayloadCompleteDelegate() { mixin(MGF("mClearGetContentPayloadCompleteDelegate", "Function Engine.OnlineCommunityContentInterface.ClearGetContentPayloadCompleteDelegate")); }
+			ScriptFunction RateContent() { mixin(MGF("mRateContent", "Function Engine.OnlineCommunityContentInterface.RateContent")); }
 		}
 	}
 	@property final auto ref

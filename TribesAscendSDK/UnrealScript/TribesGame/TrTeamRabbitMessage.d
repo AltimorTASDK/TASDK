@@ -11,9 +11,9 @@ extern(C++) interface TrTeamRabbitMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTeamRabbitMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrTeamRabbitMessage")); }
 	private static __gshared TrTeamRabbitMessage mDefaultProperties;
-	@property final static TrTeamRabbitMessage DefaultProperties() { mixin(MGDPC!(TrTeamRabbitMessage, "TrTeamRabbitMessage TribesGame.Default__TrTeamRabbitMessage")()); }
+	@property final static TrTeamRabbitMessage DefaultProperties() { mixin(MGDPC("TrTeamRabbitMessage", "TrTeamRabbitMessage TribesGame.Default__TrTeamRabbitMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,20 +23,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrTeamRabbitMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrTeamRabbitMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrTeamRabbitMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrTeamRabbitMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString LivesLeft() { mixin(MGPC!("ScriptString", 184)()); }
-		ScriptString EnemyTeamHas() { mixin(MGPC!("ScriptString", 172)()); }
-		ScriptString YourTeamHas() { mixin(MGPC!("ScriptString", 160)()); }
-		ScriptString DroppedTheFlag() { mixin(MGPC!("ScriptString", 148)()); }
-		ScriptString KillBonus() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString YourTeamHasTheFlag() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString TheEnemyHasTheFlag() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString YouHaveTheFlag() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString LivesLeft() { mixin(MGPC("ScriptString", 184)); }
+		ScriptString EnemyTeamHas() { mixin(MGPC("ScriptString", 172)); }
+		ScriptString YourTeamHas() { mixin(MGPC("ScriptString", 160)); }
+		ScriptString DroppedTheFlag() { mixin(MGPC("ScriptString", 148)); }
+		ScriptString KillBonus() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString YourTeamHasTheFlag() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString TheEnemyHasTheFlag() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString YouHaveTheFlag() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

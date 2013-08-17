@@ -8,7 +8,7 @@ extern(C++) interface TrEmitterSpawnable : EmitterSpawnable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEmitterSpawnable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEmitterSpawnable")); }
 	private static __gshared TrEmitterSpawnable mDefaultProperties;
-	@property final static TrEmitterSpawnable DefaultProperties() { mixin(MGDPC!(TrEmitterSpawnable, "TrEmitterSpawnable TribesGame.Default__TrEmitterSpawnable")()); }
+	@property final static TrEmitterSpawnable DefaultProperties() { mixin(MGDPC("TrEmitterSpawnable", "TrEmitterSpawnable TribesGame.Default__TrEmitterSpawnable")); }
 }

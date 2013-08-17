@@ -10,9 +10,9 @@ extern(C++) interface TrDeployable_Sensor : TrDeployable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_Sensor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployable_Sensor")); }
 	private static __gshared TrDeployable_Sensor mDefaultProperties;
-	@property final static TrDeployable_Sensor DefaultProperties() { mixin(MGDPC!(TrDeployable_Sensor, "TrDeployable_Sensor TribesGame.Default__TrDeployable_Sensor")()); }
+	@property final static TrDeployable_Sensor DefaultProperties() { mixin(MGDPC("TrDeployable_Sensor", "TrDeployable_Sensor TribesGame.Default__TrDeployable_Sensor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,34 +37,34 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CheckLOS() { mixin(MGF!("mCheckLOS", "Function TribesGame.TrDeployable_Sensor.CheckLOS")()); }
-			ScriptFunction DeployComplete() { mixin(MGF!("mDeployComplete", "Function TribesGame.TrDeployable_Sensor.DeployComplete")()); }
-			ScriptFunction ModifyDetectedPawn() { mixin(MGF!("mModifyDetectedPawn", "Function TribesGame.TrDeployable_Sensor.ModifyDetectedPawn")()); }
-			ScriptFunction SetPowered() { mixin(MGF!("mSetPowered", "Function TribesGame.TrDeployable_Sensor.SetPowered")()); }
-			ScriptFunction AddDetectedPawn() { mixin(MGF!("mAddDetectedPawn", "Function TribesGame.TrDeployable_Sensor.AddDetectedPawn")()); }
-			ScriptFunction RemoveDetectedPawn() { mixin(MGF!("mRemoveDetectedPawn", "Function TribesGame.TrDeployable_Sensor.RemoveDetectedPawn")()); }
-			ScriptFunction ReleaseAllDetectedPawns() { mixin(MGF!("mReleaseAllDetectedPawns", "Function TribesGame.TrDeployable_Sensor.ReleaseAllDetectedPawns")()); }
-			ScriptFunction ManageEnemiesOutOfSight() { mixin(MGF!("mManageEnemiesOutOfSight", "Function TribesGame.TrDeployable_Sensor.ManageEnemiesOutOfSight")()); }
-			ScriptFunction ReleaseOutOfSightEnemies() { mixin(MGF!("mReleaseOutOfSightEnemies", "Function TribesGame.TrDeployable_Sensor.ReleaseOutOfSightEnemies")()); }
-			ScriptFunction ShouldDetectPawn() { mixin(MGF!("mShouldDetectPawn", "Function TribesGame.TrDeployable_Sensor.ShouldDetectPawn")()); }
-			ScriptFunction OnPawnDetectedByCollisionProxy() { mixin(MGF!("mOnPawnDetectedByCollisionProxy", "Function TribesGame.TrDeployable_Sensor.OnPawnDetectedByCollisionProxy")()); }
-			ScriptFunction IsInRange() { mixin(MGF!("mIsInRange", "Function TribesGame.TrDeployable_Sensor.IsInRange")()); }
-			ScriptFunction OnPawnExitedCollisionProxy() { mixin(MGF!("mOnPawnExitedCollisionProxy", "Function TribesGame.TrDeployable_Sensor.OnPawnExitedCollisionProxy")()); }
-			ScriptFunction IsDeployed() { mixin(MGF!("mIsDeployed", "Function TribesGame.TrDeployable_Sensor.IsDeployed")()); }
-			ScriptFunction ScanTargets() { mixin(MGF!("mScanTargets", "Function TribesGame.TrDeployable_Sensor.ScanTargets")()); }
-			ScriptFunction OnPowerStatusChanged() { mixin(MGF!("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_Sensor.OnPowerStatusChanged")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDeployable_Sensor.GetMarker")()); }
+			ScriptFunction CheckLOS() { mixin(MGF("mCheckLOS", "Function TribesGame.TrDeployable_Sensor.CheckLOS")); }
+			ScriptFunction DeployComplete() { mixin(MGF("mDeployComplete", "Function TribesGame.TrDeployable_Sensor.DeployComplete")); }
+			ScriptFunction ModifyDetectedPawn() { mixin(MGF("mModifyDetectedPawn", "Function TribesGame.TrDeployable_Sensor.ModifyDetectedPawn")); }
+			ScriptFunction SetPowered() { mixin(MGF("mSetPowered", "Function TribesGame.TrDeployable_Sensor.SetPowered")); }
+			ScriptFunction AddDetectedPawn() { mixin(MGF("mAddDetectedPawn", "Function TribesGame.TrDeployable_Sensor.AddDetectedPawn")); }
+			ScriptFunction RemoveDetectedPawn() { mixin(MGF("mRemoveDetectedPawn", "Function TribesGame.TrDeployable_Sensor.RemoveDetectedPawn")); }
+			ScriptFunction ReleaseAllDetectedPawns() { mixin(MGF("mReleaseAllDetectedPawns", "Function TribesGame.TrDeployable_Sensor.ReleaseAllDetectedPawns")); }
+			ScriptFunction ManageEnemiesOutOfSight() { mixin(MGF("mManageEnemiesOutOfSight", "Function TribesGame.TrDeployable_Sensor.ManageEnemiesOutOfSight")); }
+			ScriptFunction ReleaseOutOfSightEnemies() { mixin(MGF("mReleaseOutOfSightEnemies", "Function TribesGame.TrDeployable_Sensor.ReleaseOutOfSightEnemies")); }
+			ScriptFunction ShouldDetectPawn() { mixin(MGF("mShouldDetectPawn", "Function TribesGame.TrDeployable_Sensor.ShouldDetectPawn")); }
+			ScriptFunction OnPawnDetectedByCollisionProxy() { mixin(MGF("mOnPawnDetectedByCollisionProxy", "Function TribesGame.TrDeployable_Sensor.OnPawnDetectedByCollisionProxy")); }
+			ScriptFunction IsInRange() { mixin(MGF("mIsInRange", "Function TribesGame.TrDeployable_Sensor.IsInRange")); }
+			ScriptFunction OnPawnExitedCollisionProxy() { mixin(MGF("mOnPawnExitedCollisionProxy", "Function TribesGame.TrDeployable_Sensor.OnPawnExitedCollisionProxy")); }
+			ScriptFunction IsDeployed() { mixin(MGF("mIsDeployed", "Function TribesGame.TrDeployable_Sensor.IsDeployed")); }
+			ScriptFunction ScanTargets() { mixin(MGF("mScanTargets", "Function TribesGame.TrDeployable_Sensor.ScanTargets")); }
+			ScriptFunction OnPowerStatusChanged() { mixin(MGF("mOnPowerStatusChanged", "Function TribesGame.TrDeployable_Sensor.OnPowerStatusChanged")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrDeployable_Sensor.GetMarker")); }
 		}
 	}
 	static struct BlownUp
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable_Sensor.BlownUp")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDeployable_Sensor.BlownUp")); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Pawn) m_DetectedPawns() { mixin(MGPC!("ScriptArray!(Pawn)", 1524)()); }
-		float m_fDetectionZOffset() { mixin(MGPC!("float", 1536)()); }
+		ScriptArray!(Pawn) m_DetectedPawns() { mixin(MGPC("ScriptArray!(Pawn)", 1524)); }
+		float m_fDetectionZOffset() { mixin(MGPC("float", 1536)); }
 	}
 final:
 	bool CheckLOS(Pawn Target)

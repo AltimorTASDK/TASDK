@@ -10,9 +10,9 @@ extern(C++) interface OnlineVoiceInterfaceMcts : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class OnlineSubsystemMcts.OnlineVoiceInterfaceMcts")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class OnlineSubsystemMcts.OnlineVoiceInterfaceMcts")); }
 	private static __gshared OnlineVoiceInterfaceMcts mDefaultProperties;
-	@property final static OnlineVoiceInterfaceMcts DefaultProperties() { mixin(MGDPC!(OnlineVoiceInterfaceMcts, "OnlineVoiceInterfaceMcts OnlineSubsystemMcts.Default__OnlineVoiceInterfaceMcts")()); }
+	@property final static OnlineVoiceInterfaceMcts DefaultProperties() { mixin(MGDPC("OnlineVoiceInterfaceMcts", "OnlineVoiceInterfaceMcts OnlineSubsystemMcts.Default__OnlineVoiceInterfaceMcts")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,31 +45,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnRecognitionComplete() { mixin(MGF!("mOnRecognitionComplete", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.OnRecognitionComplete")()); }
-			ScriptFunction OnPlayerTalkingStateChange() { mixin(MGF!("mOnPlayerTalkingStateChange", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.OnPlayerTalkingStateChange")()); }
-			ScriptFunction RegisterLocalTalker() { mixin(MGF!("mRegisterLocalTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.RegisterLocalTalker")()); }
-			ScriptFunction UnregisterLocalTalker() { mixin(MGF!("mUnregisterLocalTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnregisterLocalTalker")()); }
-			ScriptFunction RegisterRemoteTalker() { mixin(MGF!("mRegisterRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.RegisterRemoteTalker")()); }
-			ScriptFunction UnregisterRemoteTalker() { mixin(MGF!("mUnregisterRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnregisterRemoteTalker")()); }
-			ScriptFunction IsLocalPlayerTalking() { mixin(MGF!("mIsLocalPlayerTalking", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.IsLocalPlayerTalking")()); }
-			ScriptFunction IsRemotePlayerTalking() { mixin(MGF!("mIsRemotePlayerTalking", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.IsRemotePlayerTalking")()); }
-			ScriptFunction IsHeadsetPresent() { mixin(MGF!("mIsHeadsetPresent", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.IsHeadsetPresent")()); }
-			ScriptFunction SetRemoteTalkerPriority() { mixin(MGF!("mSetRemoteTalkerPriority", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.SetRemoteTalkerPriority")()); }
-			ScriptFunction MuteRemoteTalker() { mixin(MGF!("mMuteRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.MuteRemoteTalker")()); }
-			ScriptFunction UnmuteRemoteTalker() { mixin(MGF!("mUnmuteRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnmuteRemoteTalker")()); }
-			ScriptFunction AddPlayerTalkingDelegate() { mixin(MGF!("mAddPlayerTalkingDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.AddPlayerTalkingDelegate")()); }
-			ScriptFunction ClearPlayerTalkingDelegate() { mixin(MGF!("mClearPlayerTalkingDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.ClearPlayerTalkingDelegate")()); }
-			ScriptFunction StartNetworkedVoice() { mixin(MGF!("mStartNetworkedVoice", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StartNetworkedVoice")()); }
-			ScriptFunction StopNetworkedVoice() { mixin(MGF!("mStopNetworkedVoice", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StopNetworkedVoice")()); }
-			ScriptFunction StartSpeechRecognition() { mixin(MGF!("mStartSpeechRecognition", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StartSpeechRecognition")()); }
-			ScriptFunction StopSpeechRecognition() { mixin(MGF!("mStopSpeechRecognition", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StopSpeechRecognition")()); }
-			ScriptFunction GetRecognitionResults() { mixin(MGF!("mGetRecognitionResults", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.GetRecognitionResults")()); }
-			ScriptFunction AddRecognitionCompleteDelegate() { mixin(MGF!("mAddRecognitionCompleteDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.AddRecognitionCompleteDelegate")()); }
-			ScriptFunction ClearRecognitionCompleteDelegate() { mixin(MGF!("mClearRecognitionCompleteDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.ClearRecognitionCompleteDelegate")()); }
-			ScriptFunction SelectVocabulary() { mixin(MGF!("mSelectVocabulary", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.SelectVocabulary")()); }
-			ScriptFunction SetSpeechRecognitionObject() { mixin(MGF!("mSetSpeechRecognitionObject", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.SetSpeechRecognitionObject")()); }
-			ScriptFunction MuteAll() { mixin(MGF!("mMuteAll", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.MuteAll")()); }
-			ScriptFunction UnmuteAll() { mixin(MGF!("mUnmuteAll", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnmuteAll")()); }
+			ScriptFunction OnRecognitionComplete() { mixin(MGF("mOnRecognitionComplete", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.OnRecognitionComplete")); }
+			ScriptFunction OnPlayerTalkingStateChange() { mixin(MGF("mOnPlayerTalkingStateChange", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.OnPlayerTalkingStateChange")); }
+			ScriptFunction RegisterLocalTalker() { mixin(MGF("mRegisterLocalTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.RegisterLocalTalker")); }
+			ScriptFunction UnregisterLocalTalker() { mixin(MGF("mUnregisterLocalTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnregisterLocalTalker")); }
+			ScriptFunction RegisterRemoteTalker() { mixin(MGF("mRegisterRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.RegisterRemoteTalker")); }
+			ScriptFunction UnregisterRemoteTalker() { mixin(MGF("mUnregisterRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnregisterRemoteTalker")); }
+			ScriptFunction IsLocalPlayerTalking() { mixin(MGF("mIsLocalPlayerTalking", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.IsLocalPlayerTalking")); }
+			ScriptFunction IsRemotePlayerTalking() { mixin(MGF("mIsRemotePlayerTalking", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.IsRemotePlayerTalking")); }
+			ScriptFunction IsHeadsetPresent() { mixin(MGF("mIsHeadsetPresent", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.IsHeadsetPresent")); }
+			ScriptFunction SetRemoteTalkerPriority() { mixin(MGF("mSetRemoteTalkerPriority", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.SetRemoteTalkerPriority")); }
+			ScriptFunction MuteRemoteTalker() { mixin(MGF("mMuteRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.MuteRemoteTalker")); }
+			ScriptFunction UnmuteRemoteTalker() { mixin(MGF("mUnmuteRemoteTalker", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnmuteRemoteTalker")); }
+			ScriptFunction AddPlayerTalkingDelegate() { mixin(MGF("mAddPlayerTalkingDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.AddPlayerTalkingDelegate")); }
+			ScriptFunction ClearPlayerTalkingDelegate() { mixin(MGF("mClearPlayerTalkingDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.ClearPlayerTalkingDelegate")); }
+			ScriptFunction StartNetworkedVoice() { mixin(MGF("mStartNetworkedVoice", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StartNetworkedVoice")); }
+			ScriptFunction StopNetworkedVoice() { mixin(MGF("mStopNetworkedVoice", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StopNetworkedVoice")); }
+			ScriptFunction StartSpeechRecognition() { mixin(MGF("mStartSpeechRecognition", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StartSpeechRecognition")); }
+			ScriptFunction StopSpeechRecognition() { mixin(MGF("mStopSpeechRecognition", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.StopSpeechRecognition")); }
+			ScriptFunction GetRecognitionResults() { mixin(MGF("mGetRecognitionResults", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.GetRecognitionResults")); }
+			ScriptFunction AddRecognitionCompleteDelegate() { mixin(MGF("mAddRecognitionCompleteDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.AddRecognitionCompleteDelegate")); }
+			ScriptFunction ClearRecognitionCompleteDelegate() { mixin(MGF("mClearRecognitionCompleteDelegate", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.ClearRecognitionCompleteDelegate")); }
+			ScriptFunction SelectVocabulary() { mixin(MGF("mSelectVocabulary", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.SelectVocabulary")); }
+			ScriptFunction SetSpeechRecognitionObject() { mixin(MGF("mSetSpeechRecognitionObject", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.SetSpeechRecognitionObject")); }
+			ScriptFunction MuteAll() { mixin(MGF("mMuteAll", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.MuteAll")); }
+			ScriptFunction UnmuteAll() { mixin(MGF("mUnmuteAll", "Function OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.UnmuteAll")); }
 		}
 	}
 	enum EMuteType : ubyte
@@ -84,43 +84,43 @@ public extern(D):
 		private ubyte __buffer__[5];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.LocalTalkerMcts")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.LocalTalkerMcts")); }
 		@property final
 		{
-			@property final auto ref OnlineVoiceInterfaceMcts.EMuteType MuteType() { mixin(MGPS!("OnlineVoiceInterfaceMcts.EMuteType", 4)()); }
-			bool bIsRegistered() { mixin(MGBPS!(0, 0x20)()); }
-			bool bIsRegistered(bool val) { mixin(MSBPS!(0, 0x20)()); }
-			bool bIsTalking() { mixin(MGBPS!(0, 0x10)()); }
-			bool bIsTalking(bool val) { mixin(MSBPS!(0, 0x10)()); }
-			bool bWasTalking() { mixin(MGBPS!(0, 0x8)()); }
-			bool bWasTalking(bool val) { mixin(MSBPS!(0, 0x8)()); }
-			bool bIsRecognizingSpeech() { mixin(MGBPS!(0, 0x4)()); }
-			bool bIsRecognizingSpeech(bool val) { mixin(MSBPS!(0, 0x4)()); }
-			bool bHasNetworkedVoice() { mixin(MGBPS!(0, 0x2)()); }
-			bool bHasNetworkedVoice(bool val) { mixin(MSBPS!(0, 0x2)()); }
-			bool bHasVoice() { mixin(MGBPS!(0, 0x1)()); }
-			bool bHasVoice(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			@property final auto ref OnlineVoiceInterfaceMcts.EMuteType MuteType() { mixin(MGPS("OnlineVoiceInterfaceMcts.EMuteType", 4)); }
+			bool bIsRegistered() { mixin(MGBPS(0, 0x20)); }
+			bool bIsRegistered(bool val) { mixin(MSBPS(0, 0x20)); }
+			bool bIsTalking() { mixin(MGBPS(0, 0x10)); }
+			bool bIsTalking(bool val) { mixin(MSBPS(0, 0x10)); }
+			bool bWasTalking() { mixin(MGBPS(0, 0x8)); }
+			bool bWasTalking(bool val) { mixin(MSBPS(0, 0x8)); }
+			bool bIsRecognizingSpeech() { mixin(MGBPS(0, 0x4)); }
+			bool bIsRecognizingSpeech(bool val) { mixin(MSBPS(0, 0x4)); }
+			bool bHasNetworkedVoice() { mixin(MGBPS(0, 0x2)); }
+			bool bHasNetworkedVoice(bool val) { mixin(MSBPS(0, 0x2)); }
+			bool bHasVoice() { mixin(MGBPS(0, 0x1)); }
+			bool bHasVoice(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.RemoteTalker) RemoteTalkers() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.RemoteTalker)", 76)()); }
-		ScriptArray!(OnlineSubsystem.UniqueNetId) MuteList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 88)()); }
+		ScriptArray!(OnlineSubsystem.RemoteTalker) RemoteTalkers() { mixin(MGPC("ScriptArray!(OnlineSubsystem.RemoteTalker)", 76)); }
+		ScriptArray!(OnlineSubsystem.UniqueNetId) MuteList() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 88)); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) SpeechRecognitionCompleteDelegates() { mixin(MGPC!("ScriptArray!(
+void*) SpeechRecognitionCompleteDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 100)()); }
+void*)", 100)); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) TalkingDelegates() { mixin(MGPC!("ScriptArray!(
+void*) TalkingDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 112)()); }
+void*)", 112)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnRecognitionComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPlayerTalkingStateChange__Delegate'!
-		OnlineVoiceInterfaceMcts.LocalTalkerMcts CurrentLocalTalker() { mixin(MGPC!("OnlineVoiceInterfaceMcts.LocalTalkerMcts", 68)()); }
-		UObject.Pointer VoiceEnginePtr() { mixin(MGPC!("UObject.Pointer", 64)()); }
-		UObject.Pointer MctsSubsystem() { mixin(MGPC!("UObject.Pointer", 60)()); }
+		OnlineVoiceInterfaceMcts.LocalTalkerMcts CurrentLocalTalker() { mixin(MGPC("OnlineVoiceInterfaceMcts.LocalTalkerMcts", 68)); }
+		UObject.Pointer VoiceEnginePtr() { mixin(MGPC("UObject.Pointer", 64)); }
+		UObject.Pointer MctsSubsystem() { mixin(MGPC("UObject.Pointer", 60)); }
 	}
 final:
 	void OnRecognitionComplete()

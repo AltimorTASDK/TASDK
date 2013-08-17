@@ -11,9 +11,9 @@ extern(C++) interface TgGameEngine : GameEngine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class PlatformCommon.TgGameEngine")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class PlatformCommon.TgGameEngine")); }
 	private static __gshared TgGameEngine mDefaultProperties;
-	@property final static TgGameEngine DefaultProperties() { mixin(MGDPC!(TgGameEngine, "TgGameEngine PlatformCommon.Default__TgGameEngine")()); }
+	@property final static TgGameEngine DefaultProperties() { mixin(MGDPC("TgGameEngine", "TgGameEngine PlatformCommon.Default__TgGameEngine")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -37,22 +37,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnMarshalEvent() { mixin(MGF!("mOnMarshalEvent", "Function PlatformCommon.TgGameEngine.OnMarshalEvent")()); }
-			ScriptFunction SetFunction() { mixin(MGF!("mSetFunction", "Function PlatformCommon.TgGameEngine.SetFunction")()); }
-			ScriptFunction SetFieldInt() { mixin(MGF!("mSetFieldInt", "Function PlatformCommon.TgGameEngine.SetFieldInt")()); }
-			ScriptFunction SetFieldFloat() { mixin(MGF!("mSetFieldFloat", "Function PlatformCommon.TgGameEngine.SetFieldFloat")()); }
-			ScriptFunction SetFieldString() { mixin(MGF!("mSetFieldString", "Function PlatformCommon.TgGameEngine.SetFieldString")()); }
-			ScriptFunction ClearMarshal() { mixin(MGF!("mClearMarshal", "Function PlatformCommon.TgGameEngine.ClearMarshal")()); }
-			ScriptFunction SendMarshal() { mixin(MGF!("mSendMarshal", "Function PlatformCommon.TgGameEngine.SendMarshal")()); }
-			ScriptFunction SendMarshalAll() { mixin(MGF!("mSendMarshalAll", "Function PlatformCommon.TgGameEngine.SendMarshalAll")()); }
-			ScriptFunction GetFieldInt() { mixin(MGF!("mGetFieldInt", "Function PlatformCommon.TgGameEngine.GetFieldInt")()); }
-			ScriptFunction GetFieldFloat() { mixin(MGF!("mGetFieldFloat", "Function PlatformCommon.TgGameEngine.GetFieldFloat")()); }
-			ScriptFunction GetFieldString() { mixin(MGF!("mGetFieldString", "Function PlatformCommon.TgGameEngine.GetFieldString")()); }
-			ScriptFunction AddMarshalEventDelegate() { mixin(MGF!("mAddMarshalEventDelegate", "Function PlatformCommon.TgGameEngine.AddMarshalEventDelegate")()); }
-			ScriptFunction ClearMarshalEventDelegate() { mixin(MGF!("mClearMarshalEventDelegate", "Function PlatformCommon.TgGameEngine.ClearMarshalEventDelegate")()); }
-			ScriptFunction SendCtrlRequest() { mixin(MGF!("mSendCtrlRequest", "Function PlatformCommon.TgGameEngine.SendCtrlRequest")()); }
-			ScriptFunction SendGameRequest() { mixin(MGF!("mSendGameRequest", "Function PlatformCommon.TgGameEngine.SendGameRequest")()); }
-			ScriptFunction HandlePlayerCommandInput() { mixin(MGF!("mHandlePlayerCommandInput", "Function PlatformCommon.TgGameEngine.HandlePlayerCommandInput")()); }
+			ScriptFunction OnMarshalEvent() { mixin(MGF("mOnMarshalEvent", "Function PlatformCommon.TgGameEngine.OnMarshalEvent")); }
+			ScriptFunction SetFunction() { mixin(MGF("mSetFunction", "Function PlatformCommon.TgGameEngine.SetFunction")); }
+			ScriptFunction SetFieldInt() { mixin(MGF("mSetFieldInt", "Function PlatformCommon.TgGameEngine.SetFieldInt")); }
+			ScriptFunction SetFieldFloat() { mixin(MGF("mSetFieldFloat", "Function PlatformCommon.TgGameEngine.SetFieldFloat")); }
+			ScriptFunction SetFieldString() { mixin(MGF("mSetFieldString", "Function PlatformCommon.TgGameEngine.SetFieldString")); }
+			ScriptFunction ClearMarshal() { mixin(MGF("mClearMarshal", "Function PlatformCommon.TgGameEngine.ClearMarshal")); }
+			ScriptFunction SendMarshal() { mixin(MGF("mSendMarshal", "Function PlatformCommon.TgGameEngine.SendMarshal")); }
+			ScriptFunction SendMarshalAll() { mixin(MGF("mSendMarshalAll", "Function PlatformCommon.TgGameEngine.SendMarshalAll")); }
+			ScriptFunction GetFieldInt() { mixin(MGF("mGetFieldInt", "Function PlatformCommon.TgGameEngine.GetFieldInt")); }
+			ScriptFunction GetFieldFloat() { mixin(MGF("mGetFieldFloat", "Function PlatformCommon.TgGameEngine.GetFieldFloat")); }
+			ScriptFunction GetFieldString() { mixin(MGF("mGetFieldString", "Function PlatformCommon.TgGameEngine.GetFieldString")); }
+			ScriptFunction AddMarshalEventDelegate() { mixin(MGF("mAddMarshalEventDelegate", "Function PlatformCommon.TgGameEngine.AddMarshalEventDelegate")); }
+			ScriptFunction ClearMarshalEventDelegate() { mixin(MGF("mClearMarshalEventDelegate", "Function PlatformCommon.TgGameEngine.ClearMarshalEventDelegate")); }
+			ScriptFunction SendCtrlRequest() { mixin(MGF("mSendCtrlRequest", "Function PlatformCommon.TgGameEngine.SendCtrlRequest")); }
+			ScriptFunction SendGameRequest() { mixin(MGF("mSendGameRequest", "Function PlatformCommon.TgGameEngine.SendGameRequest")); }
+			ScriptFunction HandlePlayerCommandInput() { mixin(MGF("mHandlePlayerCommandInput", "Function PlatformCommon.TgGameEngine.HandlePlayerCommandInput")); }
 		}
 	}
 	struct MAR_EVENT
@@ -60,32 +60,32 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct PlatformCommon.TgGameEngine.MAR_EVENT")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct PlatformCommon.TgGameEngine.MAR_EVENT")); }
 		@property final
 		{
 			auto ref
 			{
-				UObject.Pointer pMarshal() { mixin(MGPS!("UObject.Pointer", 40)()); }
-				ScriptString fsMessage() { mixin(MGPS!("ScriptString", 28)()); }
-				int nStmMsgId() { mixin(MGPS!("int", 24)()); }
-				QWord qwInfo() { mixin(MGPS!("QWord", 16)()); }
-				QWord qwId() { mixin(MGPS!("QWord", 8)()); }
-				int nFunction() { mixin(MGPS!("int", 4)()); }
+				UObject.Pointer pMarshal() { mixin(MGPS("UObject.Pointer", 40)); }
+				ScriptString fsMessage() { mixin(MGPS("ScriptString", 28)); }
+				int nStmMsgId() { mixin(MGPS("int", 24)); }
+				QWord qwInfo() { mixin(MGPS("QWord", 16)); }
+				QWord qwId() { mixin(MGPS("QWord", 8)); }
+				int nFunction() { mixin(MGPS("int", 4)); }
 			}
-			bool bSuccess() { mixin(MGBPS!(0, 0x1)()); }
-			bool bSuccess(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bSuccess() { mixin(MGBPS(0, 0x1)); }
+			bool bSuccess(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) MarshalEventDelegates() { mixin(MGPC!("ScriptArray!(
+void*) MarshalEventDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 1808)()); }
+void*)", 1808)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnMarshalEvent__Delegate'!
-		UObject.Pointer pEventMarshal() { mixin(MGPC!("UObject.Pointer", 1824)()); }
-		UObject.Pointer pOutgoingMarshal() { mixin(MGPC!("UObject.Pointer", 1820)()); }
+		UObject.Pointer pEventMarshal() { mixin(MGPC("UObject.Pointer", 1824)); }
+		UObject.Pointer pOutgoingMarshal() { mixin(MGPC("UObject.Pointer", 1820)); }
 	}
 final:
 	void OnMarshalEvent(UObject.Pointer pMarEvent)

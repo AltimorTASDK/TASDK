@@ -8,7 +8,7 @@ extern(C++) interface FixAmbiguousMaterialParametersCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.FixAmbiguousMaterialParametersCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.FixAmbiguousMaterialParametersCommandlet")); }
 	private static __gshared FixAmbiguousMaterialParametersCommandlet mDefaultProperties;
-	@property final static FixAmbiguousMaterialParametersCommandlet DefaultProperties() { mixin(MGDPC!(FixAmbiguousMaterialParametersCommandlet, "FixAmbiguousMaterialParametersCommandlet UnrealEd.Default__FixAmbiguousMaterialParametersCommandlet")()); }
+	@property final static FixAmbiguousMaterialParametersCommandlet DefaultProperties() { mixin(MGDPC("FixAmbiguousMaterialParametersCommandlet", "FixAmbiguousMaterialParametersCommandlet UnrealEd.Default__FixAmbiguousMaterialParametersCommandlet")); }
 }

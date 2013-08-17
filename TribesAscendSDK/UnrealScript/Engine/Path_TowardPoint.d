@@ -9,9 +9,9 @@ extern(C++) interface Path_TowardPoint : PathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Path_TowardPoint")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Path_TowardPoint")); }
 	private static __gshared Path_TowardPoint mDefaultProperties;
-	@property final static Path_TowardPoint DefaultProperties() { mixin(MGDPC!(Path_TowardPoint, "Path_TowardPoint Engine.Default__Path_TowardPoint")()); }
+	@property final static Path_TowardPoint DefaultProperties() { mixin(MGDPC("Path_TowardPoint", "Path_TowardPoint Engine.Default__Path_TowardPoint")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TowardPoint() { mixin(MGF!("mTowardPoint", "Function Engine.Path_TowardPoint.TowardPoint")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_TowardPoint.Recycle")()); }
+			ScriptFunction TowardPoint() { mixin(MGF("mTowardPoint", "Function Engine.Path_TowardPoint.TowardPoint")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.Path_TowardPoint.Recycle")); }
 		}
 	}
-	@property final auto ref Vector GoalPoint() { mixin(MGPC!("Vector", 68)()); }
+	@property final auto ref Vector GoalPoint() { mixin(MGPC("Vector", 68)); }
 final:
 	static bool TowardPoint(Pawn P, Vector Point)
 	{

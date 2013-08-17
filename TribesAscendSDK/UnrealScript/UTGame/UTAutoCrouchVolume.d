@@ -10,9 +10,9 @@ extern(C++) interface UTAutoCrouchVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAutoCrouchVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAutoCrouchVolume")); }
 	private static __gshared UTAutoCrouchVolume mDefaultProperties;
-	@property final static UTAutoCrouchVolume DefaultProperties() { mixin(MGDPC!(UTAutoCrouchVolume, "UTAutoCrouchVolume UTGame.Default__UTAutoCrouchVolume")()); }
+	@property final static UTAutoCrouchVolume DefaultProperties() { mixin(MGDPC("UTAutoCrouchVolume", "UTAutoCrouchVolume UTGame.Default__UTAutoCrouchVolume")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,10 +24,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTAutoCrouchVolume.Touch")()); }
-			ScriptFunction SetCrouch() { mixin(MGF!("mSetCrouch", "Function UTGame.UTAutoCrouchVolume.SetCrouch")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function UTGame.UTAutoCrouchVolume.UnTouch")()); }
-			ScriptFunction CrouchTimer() { mixin(MGF!("mCrouchTimer", "Function UTGame.UTAutoCrouchVolume.CrouchTimer")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function UTGame.UTAutoCrouchVolume.Touch")); }
+			ScriptFunction SetCrouch() { mixin(MGF("mSetCrouch", "Function UTGame.UTAutoCrouchVolume.SetCrouch")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function UTGame.UTAutoCrouchVolume.UnTouch")); }
+			ScriptFunction CrouchTimer() { mixin(MGF("mCrouchTimer", "Function UTGame.UTAutoCrouchVolume.CrouchTimer")); }
 		}
 	}
 final:

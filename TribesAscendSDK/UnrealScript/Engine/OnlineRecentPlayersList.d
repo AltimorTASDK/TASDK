@@ -9,9 +9,9 @@ extern(C++) interface OnlineRecentPlayersList : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineRecentPlayersList")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineRecentPlayersList")); }
 	private static __gshared OnlineRecentPlayersList mDefaultProperties;
-	@property final static OnlineRecentPlayersList DefaultProperties() { mixin(MGDPC!(OnlineRecentPlayersList, "OnlineRecentPlayersList Engine.Default__OnlineRecentPlayersList")()); }
+	@property final static OnlineRecentPlayersList DefaultProperties() { mixin(MGDPC("OnlineRecentPlayersList", "OnlineRecentPlayersList Engine.Default__OnlineRecentPlayersList")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,21 +34,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AddPlayerToRecentPlayers() { mixin(MGF!("mAddPlayerToRecentPlayers", "Function Engine.OnlineRecentPlayersList.AddPlayerToRecentPlayers")()); }
-			ScriptFunction ClearRecentPlayers() { mixin(MGF!("mClearRecentPlayers", "Function Engine.OnlineRecentPlayersList.ClearRecentPlayers")()); }
-			ScriptFunction AddPartyToRecentParties() { mixin(MGF!("mAddPartyToRecentParties", "Function Engine.OnlineRecentPlayersList.AddPartyToRecentParties")()); }
-			ScriptFunction ClearRecentParties() { mixin(MGF!("mClearRecentParties", "Function Engine.OnlineRecentPlayersList.ClearRecentParties")()); }
-			ScriptFunction GetPlayersFromRecentParties() { mixin(MGF!("mGetPlayersFromRecentParties", "Function Engine.OnlineRecentPlayersList.GetPlayersFromRecentParties")()); }
-			ScriptFunction GetPlayersFromCurrentPlayers() { mixin(MGF!("mGetPlayersFromCurrentPlayers", "Function Engine.OnlineRecentPlayersList.GetPlayersFromCurrentPlayers")()); }
-			ScriptFunction GetSkillForCurrentPlayer() { mixin(MGF!("mGetSkillForCurrentPlayer", "Function Engine.OnlineRecentPlayersList.GetSkillForCurrentPlayer")()); }
-			ScriptFunction GetTeamForCurrentPlayer() { mixin(MGF!("mGetTeamForCurrentPlayer", "Function Engine.OnlineRecentPlayersList.GetTeamForCurrentPlayer")()); }
-			ScriptFunction SetLastParty() { mixin(MGF!("mSetLastParty", "Function Engine.OnlineRecentPlayersList.SetLastParty")()); }
-			ScriptFunction ShowRecentPlayerList() { mixin(MGF!("mShowRecentPlayerList", "Function Engine.OnlineRecentPlayersList.ShowRecentPlayerList")()); }
-			ScriptFunction ShowRecentPartiesPlayerList() { mixin(MGF!("mShowRecentPartiesPlayerList", "Function Engine.OnlineRecentPlayersList.ShowRecentPartiesPlayerList")()); }
-			ScriptFunction ShowLastPartyPlayerList() { mixin(MGF!("mShowLastPartyPlayerList", "Function Engine.OnlineRecentPlayersList.ShowLastPartyPlayerList")()); }
-			ScriptFunction ShowCurrentPlayersList() { mixin(MGF!("mShowCurrentPlayersList", "Function Engine.OnlineRecentPlayersList.ShowCurrentPlayersList")()); }
-			ScriptFunction SetCurrentPlayersList() { mixin(MGF!("mSetCurrentPlayersList", "Function Engine.OnlineRecentPlayersList.SetCurrentPlayersList")()); }
-			ScriptFunction GetCurrentPlayersListCount() { mixin(MGF!("mGetCurrentPlayersListCount", "Function Engine.OnlineRecentPlayersList.GetCurrentPlayersListCount")()); }
+			ScriptFunction AddPlayerToRecentPlayers() { mixin(MGF("mAddPlayerToRecentPlayers", "Function Engine.OnlineRecentPlayersList.AddPlayerToRecentPlayers")); }
+			ScriptFunction ClearRecentPlayers() { mixin(MGF("mClearRecentPlayers", "Function Engine.OnlineRecentPlayersList.ClearRecentPlayers")); }
+			ScriptFunction AddPartyToRecentParties() { mixin(MGF("mAddPartyToRecentParties", "Function Engine.OnlineRecentPlayersList.AddPartyToRecentParties")); }
+			ScriptFunction ClearRecentParties() { mixin(MGF("mClearRecentParties", "Function Engine.OnlineRecentPlayersList.ClearRecentParties")); }
+			ScriptFunction GetPlayersFromRecentParties() { mixin(MGF("mGetPlayersFromRecentParties", "Function Engine.OnlineRecentPlayersList.GetPlayersFromRecentParties")); }
+			ScriptFunction GetPlayersFromCurrentPlayers() { mixin(MGF("mGetPlayersFromCurrentPlayers", "Function Engine.OnlineRecentPlayersList.GetPlayersFromCurrentPlayers")); }
+			ScriptFunction GetSkillForCurrentPlayer() { mixin(MGF("mGetSkillForCurrentPlayer", "Function Engine.OnlineRecentPlayersList.GetSkillForCurrentPlayer")); }
+			ScriptFunction GetTeamForCurrentPlayer() { mixin(MGF("mGetTeamForCurrentPlayer", "Function Engine.OnlineRecentPlayersList.GetTeamForCurrentPlayer")); }
+			ScriptFunction SetLastParty() { mixin(MGF("mSetLastParty", "Function Engine.OnlineRecentPlayersList.SetLastParty")); }
+			ScriptFunction ShowRecentPlayerList() { mixin(MGF("mShowRecentPlayerList", "Function Engine.OnlineRecentPlayersList.ShowRecentPlayerList")); }
+			ScriptFunction ShowRecentPartiesPlayerList() { mixin(MGF("mShowRecentPartiesPlayerList", "Function Engine.OnlineRecentPlayersList.ShowRecentPartiesPlayerList")); }
+			ScriptFunction ShowLastPartyPlayerList() { mixin(MGF("mShowLastPartyPlayerList", "Function Engine.OnlineRecentPlayersList.ShowLastPartyPlayerList")); }
+			ScriptFunction ShowCurrentPlayersList() { mixin(MGF("mShowCurrentPlayersList", "Function Engine.OnlineRecentPlayersList.ShowCurrentPlayersList")); }
+			ScriptFunction SetCurrentPlayersList() { mixin(MGF("mSetCurrentPlayersList", "Function Engine.OnlineRecentPlayersList.SetCurrentPlayersList")); }
+			ScriptFunction GetCurrentPlayersListCount() { mixin(MGF("mGetCurrentPlayersListCount", "Function Engine.OnlineRecentPlayersList.GetCurrentPlayersListCount")); }
 		}
 	}
 	struct RecentParty
@@ -56,11 +56,11 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineRecentPlayersList.RecentParty")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineRecentPlayersList.RecentParty")); }
 		@property final auto ref
 		{
-			ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers() { mixin(MGPS!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 8)()); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers() { mixin(MGPS("ScriptArray!(OnlineSubsystem.UniqueNetId)", 8)); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 		}
 	}
 	struct CurrentPlayerMet
@@ -68,24 +68,24 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineRecentPlayersList.CurrentPlayerMet")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.OnlineRecentPlayersList.CurrentPlayerMet")); }
 		@property final auto ref
 		{
-			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 8)()); }
-			int Skill() { mixin(MGPS!("int", 4)()); }
-			int TeamNum() { mixin(MGPS!("int", 0)()); }
+			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 8)); }
+			int Skill() { mixin(MGPS("int", 4)); }
+			int TeamNum() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.UniqueNetId) RecentPlayers() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 60)()); }
-		ScriptArray!(OnlineRecentPlayersList.RecentParty) RecentParties() { mixin(MGPC!("ScriptArray!(OnlineRecentPlayersList.RecentParty)", 72)()); }
-		ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet) CurrentPlayers() { mixin(MGPC!("ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet)", 120)()); }
-		int RecentPartiesAddIndex() { mixin(MGPC!("int", 116)()); }
-		int RecentPlayersAddIndex() { mixin(MGPC!("int", 112)()); }
-		int MaxRecentParties() { mixin(MGPC!("int", 108)()); }
-		int MaxRecentPlayers() { mixin(MGPC!("int", 104)()); }
-		OnlineRecentPlayersList.RecentParty LastParty() { mixin(MGPC!("OnlineRecentPlayersList.RecentParty", 84)()); }
+		ScriptArray!(OnlineSubsystem.UniqueNetId) RecentPlayers() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 60)); }
+		ScriptArray!(OnlineRecentPlayersList.RecentParty) RecentParties() { mixin(MGPC("ScriptArray!(OnlineRecentPlayersList.RecentParty)", 72)); }
+		ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet) CurrentPlayers() { mixin(MGPC("ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet)", 120)); }
+		int RecentPartiesAddIndex() { mixin(MGPC("int", 116)); }
+		int RecentPlayersAddIndex() { mixin(MGPC("int", 112)); }
+		int MaxRecentParties() { mixin(MGPC("int", 108)); }
+		int MaxRecentPlayers() { mixin(MGPC("int", 104)); }
+		OnlineRecentPlayersList.RecentParty LastParty() { mixin(MGPC("OnlineRecentPlayersList.RecentParty", 84)); }
 	}
 final:
 	void AddPlayerToRecentPlayers(OnlineSubsystem.UniqueNetId NewPlayer)

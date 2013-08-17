@@ -9,9 +9,9 @@ extern(C++) interface TrEquipInterface : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEquipInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEquipInterface")); }
 	private static __gshared TrEquipInterface mDefaultProperties;
-	@property final static TrEquipInterface DefaultProperties() { mixin(MGDPC!(TrEquipInterface, "TrEquipInterface TribesGame.Default__TrEquipInterface")()); }
+	@property final static TrEquipInterface DefaultProperties() { mixin(MGDPC("TrEquipInterface", "TrEquipInterface TribesGame.Default__TrEquipInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -84,78 +84,78 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction IsClassOwned() { mixin(MGF!("mIsClassOwned", "Function TribesGame.TrEquipInterface.IsClassOwned")()); }
-			ScriptFunction IsLoadoutOwned() { mixin(MGF!("mIsLoadoutOwned", "Function TribesGame.TrEquipInterface.IsLoadoutOwned")()); }
-			ScriptFunction GetLoadoutName() { mixin(MGF!("mGetLoadoutName", "Function TribesGame.TrEquipInterface.GetLoadoutName")()); }
-			ScriptFunction GetClassUnlockPercent() { mixin(MGF!("mGetClassUnlockPercent", "Function TribesGame.TrEquipInterface.GetClassUnlockPercent")()); }
-			ScriptFunction GetClassPrice() { mixin(MGF!("mGetClassPrice", "Function TribesGame.TrEquipInterface.GetClassPrice")()); }
-			ScriptFunction GetDailyDealItemId() { mixin(MGF!("mGetDailyDealItemId", "Function TribesGame.TrEquipInterface.GetDailyDealItemId")()); }
-			ScriptFunction GetDailyDealPercentOff() { mixin(MGF!("mGetDailyDealPercentOff", "Function TribesGame.TrEquipInterface.GetDailyDealPercentOff")()); }
-			ScriptFunction GetBundleParent() { mixin(MGF!("mGetBundleParent", "Function TribesGame.TrEquipInterface.GetBundleParent")()); }
-			ScriptFunction IsBundleOwned() { mixin(MGF!("mIsBundleOwned", "Function TribesGame.TrEquipInterface.IsBundleOwned")()); }
-			ScriptFunction GetVendorSize() { mixin(MGF!("mGetVendorSize", "Function TribesGame.TrEquipInterface.GetVendorSize")()); }
-			ScriptFunction GetVendorItemId() { mixin(MGF!("mGetVendorItemId", "Function TribesGame.TrEquipInterface.GetVendorItemId")()); }
-			ScriptFunction GetVendorItemPrice() { mixin(MGF!("mGetVendorItemPrice", "Function TribesGame.TrEquipInterface.GetVendorItemPrice")()); }
-			ScriptFunction GetVendorItemInfo() { mixin(MGF!("mGetVendorItemInfo", "Function TribesGame.TrEquipInterface.GetVendorItemInfo")()); }
-			ScriptFunction RequestPurchaseGeneral() { mixin(MGF!("mRequestPurchaseGeneral", "Function TribesGame.TrEquipInterface.RequestPurchaseGeneral")()); }
-			ScriptFunction GetActiveEquipId() { mixin(MGF!("mGetActiveEquipId", "Function TribesGame.TrEquipInterface.GetActiveEquipId")()); }
-			ScriptFunction GetEquipCount() { mixin(MGF!("mGetEquipCount", "Function TribesGame.TrEquipInterface.GetEquipCount")()); }
-			ScriptFunction GetEquipId() { mixin(MGF!("mGetEquipId", "Function TribesGame.TrEquipInterface.GetEquipId")()); }
-			ScriptFunction SetLoadoutName() { mixin(MGF!("mSetLoadoutName", "Function TribesGame.TrEquipInterface.SetLoadoutName")()); }
-			ScriptFunction GetFirstClassId() { mixin(MGF!("mGetFirstClassId", "Function TribesGame.TrEquipInterface.GetFirstClassId")()); }
-			ScriptFunction GetNextClassId() { mixin(MGF!("mGetNextClassId", "Function TribesGame.TrEquipInterface.GetNextClassId")()); }
-			ScriptFunction GetClassId() { mixin(MGF!("mGetClassId", "Function TribesGame.TrEquipInterface.GetClassId")()); }
-			ScriptFunction RequestPurchaseClass() { mixin(MGF!("mRequestPurchaseClass", "Function TribesGame.TrEquipInterface.RequestPurchaseClass")()); }
-			ScriptFunction GetReticuleValue() { mixin(MGF!("mGetReticuleValue", "Function TribesGame.TrEquipInterface.GetReticuleValue")()); }
-			ScriptFunction GetReticuleString() { mixin(MGF!("mGetReticuleString", "Function TribesGame.TrEquipInterface.GetReticuleString")()); }
-			ScriptFunction SetActiveEquipId() { mixin(MGF!("mSetActiveEquipId", "Function TribesGame.TrEquipInterface.SetActiveEquipId")()); }
-			ScriptFunction IsEquipOwned() { mixin(MGF!("mIsEquipOwned", "Function TribesGame.TrEquipInterface.IsEquipOwned")()); }
-			ScriptFunction IsEquipMaxed() { mixin(MGF!("mIsEquipMaxed", "Function TribesGame.TrEquipInterface.IsEquipMaxed")()); }
-			ScriptFunction GetEquipLevel() { mixin(MGF!("mGetEquipLevel", "Function TribesGame.TrEquipInterface.GetEquipLevel")()); }
-			ScriptFunction HasReticule() { mixin(MGF!("mHasReticule", "Function TribesGame.TrEquipInterface.HasReticule")()); }
-			ScriptFunction GetMasteryPrice() { mixin(MGF!("mGetMasteryPrice", "Function TribesGame.TrEquipInterface.GetMasteryPrice")()); }
-			ScriptFunction GetEquipPrice() { mixin(MGF!("mGetEquipPrice", "Function TribesGame.TrEquipInterface.GetEquipPrice")()); }
-			ScriptFunction RequestPurchaseMastery() { mixin(MGF!("mRequestPurchaseMastery", "Function TribesGame.TrEquipInterface.RequestPurchaseMastery")()); }
-			ScriptFunction RequestPurchaseEquip() { mixin(MGF!("mRequestPurchaseEquip", "Function TribesGame.TrEquipInterface.RequestPurchaseEquip")()); }
-			ScriptFunction SetReticuleValue() { mixin(MGF!("mSetReticuleValue", "Function TribesGame.TrEquipInterface.SetReticuleValue")()); }
-			ScriptFunction SetReticuleString() { mixin(MGF!("mSetReticuleString", "Function TribesGame.TrEquipInterface.SetReticuleString")()); }
-			ScriptFunction GetLoadoutPrice() { mixin(MGF!("mGetLoadoutPrice", "Function TribesGame.TrEquipInterface.GetLoadoutPrice")()); }
-			ScriptFunction RequestPurchaseLoadout() { mixin(MGF!("mRequestPurchaseLoadout", "Function TribesGame.TrEquipInterface.RequestPurchaseLoadout")()); }
-			ScriptFunction IsDailyDealOwned() { mixin(MGF!("mIsDailyDealOwned", "Function TribesGame.TrEquipInterface.IsDailyDealOwned")()); }
-			ScriptFunction GetDailyDealOldPrice() { mixin(MGF!("mGetDailyDealOldPrice", "Function TribesGame.TrEquipInterface.GetDailyDealOldPrice")()); }
-			ScriptFunction GetDailyDealNewPrice() { mixin(MGF!("mGetDailyDealNewPrice", "Function TribesGame.TrEquipInterface.GetDailyDealNewPrice")()); }
-			ScriptFunction GetDailyDealClass() { mixin(MGF!("mGetDailyDealClass", "Function TribesGame.TrEquipInterface.GetDailyDealClass")()); }
-			ScriptFunction GetDailyDealType() { mixin(MGF!("mGetDailyDealType", "Function TribesGame.TrEquipInterface.GetDailyDealType")()); }
-			ScriptFunction GetDailyDealSecsLeft() { mixin(MGF!("mGetDailyDealSecsLeft", "Function TribesGame.TrEquipInterface.GetDailyDealSecsLeft")()); }
-			ScriptFunction GetDailyDealXPPrice() { mixin(MGF!("mGetDailyDealXPPrice", "Function TribesGame.TrEquipInterface.GetDailyDealXPPrice")()); }
-			ScriptFunction RequestPurchaseDeal() { mixin(MGF!("mRequestPurchaseDeal", "Function TribesGame.TrEquipInterface.RequestPurchaseDeal")()); }
-			ScriptFunction OwnsReticule() { mixin(MGF!("mOwnsReticule", "Function TribesGame.TrEquipInterface.OwnsReticule")()); }
-			ScriptFunction DelegateOnMarshalEvent() { mixin(MGF!("mDelegateOnMarshalEvent", "Function TribesGame.TrEquipInterface.DelegateOnMarshalEvent")()); }
-			ScriptFunction LoadInventory() { mixin(MGF!("mLoadInventory", "Function TribesGame.TrEquipInterface.LoadInventory")()); }
-			ScriptFunction InitClass() { mixin(MGF!("mInitClass", "Function TribesGame.TrEquipInterface.InitClass")()); }
-			ScriptFunction SetDefaultEquip() { mixin(MGF!("mSetDefaultEquip", "Function TribesGame.TrEquipInterface.SetDefaultEquip")()); }
-			ScriptFunction OnMarshalEvent() { mixin(MGF!("mOnMarshalEvent", "Function TribesGame.TrEquipInterface.OnMarshalEvent")()); }
-			ScriptFunction RegisterMarshalCallback() { mixin(MGF!("mRegisterMarshalCallback", "Function TribesGame.TrEquipInterface.RegisterMarshalCallback")()); }
-			ScriptFunction GetClassCount() { mixin(MGF!("mGetClassCount", "Function TribesGame.TrEquipInterface.GetClassCount")()); }
-			ScriptFunction GetClassRibbon() { mixin(MGF!("mGetClassRibbon", "Function TribesGame.TrEquipInterface.GetClassRibbon")()); }
-			ScriptFunction GetNextEquipId() { mixin(MGF!("mGetNextEquipId", "Function TribesGame.TrEquipInterface.GetNextEquipId")()); }
-			ScriptFunction GetEquipRibbon() { mixin(MGF!("mGetEquipRibbon", "Function TribesGame.TrEquipInterface.GetEquipRibbon")()); }
-			ScriptFunction GetFirstEquipId() { mixin(MGF!("mGetFirstEquipId", "Function TribesGame.TrEquipInterface.GetFirstEquipId")()); }
-			ScriptFunction GetDailyDealLootId() { mixin(MGF!("mGetDailyDealLootId", "Function TribesGame.TrEquipInterface.GetDailyDealLootId")()); }
-			ScriptFunction RetrieveActives() { mixin(MGF!("mRetrieveActives", "Function TribesGame.TrEquipInterface.RetrieveActives")()); }
-			ScriptFunction GetUpgradePrice() { mixin(MGF!("mGetUpgradePrice", "Function TribesGame.TrEquipInterface.GetUpgradePrice")()); }
-			ScriptFunction RequestPurchaseReticule() { mixin(MGF!("mRequestPurchaseReticule", "Function TribesGame.TrEquipInterface.RequestPurchaseReticule")()); }
-			ScriptFunction RequestPurchaseUpgrade() { mixin(MGF!("mRequestPurchaseUpgrade", "Function TribesGame.TrEquipInterface.RequestPurchaseUpgrade")()); }
-			ScriptFunction SaveProfile() { mixin(MGF!("mSaveProfile", "Function TribesGame.TrEquipInterface.SaveProfile")()); }
-			ScriptFunction InitEquipManager() { mixin(MGF!("mInitEquipManager", "Function TribesGame.TrEquipInterface.InitEquipManager")()); }
-			ScriptFunction InitClassList() { mixin(MGF!("mInitClassList", "Function TribesGame.TrEquipInterface.InitClassList")()); }
+			ScriptFunction IsClassOwned() { mixin(MGF("mIsClassOwned", "Function TribesGame.TrEquipInterface.IsClassOwned")); }
+			ScriptFunction IsLoadoutOwned() { mixin(MGF("mIsLoadoutOwned", "Function TribesGame.TrEquipInterface.IsLoadoutOwned")); }
+			ScriptFunction GetLoadoutName() { mixin(MGF("mGetLoadoutName", "Function TribesGame.TrEquipInterface.GetLoadoutName")); }
+			ScriptFunction GetClassUnlockPercent() { mixin(MGF("mGetClassUnlockPercent", "Function TribesGame.TrEquipInterface.GetClassUnlockPercent")); }
+			ScriptFunction GetClassPrice() { mixin(MGF("mGetClassPrice", "Function TribesGame.TrEquipInterface.GetClassPrice")); }
+			ScriptFunction GetDailyDealItemId() { mixin(MGF("mGetDailyDealItemId", "Function TribesGame.TrEquipInterface.GetDailyDealItemId")); }
+			ScriptFunction GetDailyDealPercentOff() { mixin(MGF("mGetDailyDealPercentOff", "Function TribesGame.TrEquipInterface.GetDailyDealPercentOff")); }
+			ScriptFunction GetBundleParent() { mixin(MGF("mGetBundleParent", "Function TribesGame.TrEquipInterface.GetBundleParent")); }
+			ScriptFunction IsBundleOwned() { mixin(MGF("mIsBundleOwned", "Function TribesGame.TrEquipInterface.IsBundleOwned")); }
+			ScriptFunction GetVendorSize() { mixin(MGF("mGetVendorSize", "Function TribesGame.TrEquipInterface.GetVendorSize")); }
+			ScriptFunction GetVendorItemId() { mixin(MGF("mGetVendorItemId", "Function TribesGame.TrEquipInterface.GetVendorItemId")); }
+			ScriptFunction GetVendorItemPrice() { mixin(MGF("mGetVendorItemPrice", "Function TribesGame.TrEquipInterface.GetVendorItemPrice")); }
+			ScriptFunction GetVendorItemInfo() { mixin(MGF("mGetVendorItemInfo", "Function TribesGame.TrEquipInterface.GetVendorItemInfo")); }
+			ScriptFunction RequestPurchaseGeneral() { mixin(MGF("mRequestPurchaseGeneral", "Function TribesGame.TrEquipInterface.RequestPurchaseGeneral")); }
+			ScriptFunction GetActiveEquipId() { mixin(MGF("mGetActiveEquipId", "Function TribesGame.TrEquipInterface.GetActiveEquipId")); }
+			ScriptFunction GetEquipCount() { mixin(MGF("mGetEquipCount", "Function TribesGame.TrEquipInterface.GetEquipCount")); }
+			ScriptFunction GetEquipId() { mixin(MGF("mGetEquipId", "Function TribesGame.TrEquipInterface.GetEquipId")); }
+			ScriptFunction SetLoadoutName() { mixin(MGF("mSetLoadoutName", "Function TribesGame.TrEquipInterface.SetLoadoutName")); }
+			ScriptFunction GetFirstClassId() { mixin(MGF("mGetFirstClassId", "Function TribesGame.TrEquipInterface.GetFirstClassId")); }
+			ScriptFunction GetNextClassId() { mixin(MGF("mGetNextClassId", "Function TribesGame.TrEquipInterface.GetNextClassId")); }
+			ScriptFunction GetClassId() { mixin(MGF("mGetClassId", "Function TribesGame.TrEquipInterface.GetClassId")); }
+			ScriptFunction RequestPurchaseClass() { mixin(MGF("mRequestPurchaseClass", "Function TribesGame.TrEquipInterface.RequestPurchaseClass")); }
+			ScriptFunction GetReticuleValue() { mixin(MGF("mGetReticuleValue", "Function TribesGame.TrEquipInterface.GetReticuleValue")); }
+			ScriptFunction GetReticuleString() { mixin(MGF("mGetReticuleString", "Function TribesGame.TrEquipInterface.GetReticuleString")); }
+			ScriptFunction SetActiveEquipId() { mixin(MGF("mSetActiveEquipId", "Function TribesGame.TrEquipInterface.SetActiveEquipId")); }
+			ScriptFunction IsEquipOwned() { mixin(MGF("mIsEquipOwned", "Function TribesGame.TrEquipInterface.IsEquipOwned")); }
+			ScriptFunction IsEquipMaxed() { mixin(MGF("mIsEquipMaxed", "Function TribesGame.TrEquipInterface.IsEquipMaxed")); }
+			ScriptFunction GetEquipLevel() { mixin(MGF("mGetEquipLevel", "Function TribesGame.TrEquipInterface.GetEquipLevel")); }
+			ScriptFunction HasReticule() { mixin(MGF("mHasReticule", "Function TribesGame.TrEquipInterface.HasReticule")); }
+			ScriptFunction GetMasteryPrice() { mixin(MGF("mGetMasteryPrice", "Function TribesGame.TrEquipInterface.GetMasteryPrice")); }
+			ScriptFunction GetEquipPrice() { mixin(MGF("mGetEquipPrice", "Function TribesGame.TrEquipInterface.GetEquipPrice")); }
+			ScriptFunction RequestPurchaseMastery() { mixin(MGF("mRequestPurchaseMastery", "Function TribesGame.TrEquipInterface.RequestPurchaseMastery")); }
+			ScriptFunction RequestPurchaseEquip() { mixin(MGF("mRequestPurchaseEquip", "Function TribesGame.TrEquipInterface.RequestPurchaseEquip")); }
+			ScriptFunction SetReticuleValue() { mixin(MGF("mSetReticuleValue", "Function TribesGame.TrEquipInterface.SetReticuleValue")); }
+			ScriptFunction SetReticuleString() { mixin(MGF("mSetReticuleString", "Function TribesGame.TrEquipInterface.SetReticuleString")); }
+			ScriptFunction GetLoadoutPrice() { mixin(MGF("mGetLoadoutPrice", "Function TribesGame.TrEquipInterface.GetLoadoutPrice")); }
+			ScriptFunction RequestPurchaseLoadout() { mixin(MGF("mRequestPurchaseLoadout", "Function TribesGame.TrEquipInterface.RequestPurchaseLoadout")); }
+			ScriptFunction IsDailyDealOwned() { mixin(MGF("mIsDailyDealOwned", "Function TribesGame.TrEquipInterface.IsDailyDealOwned")); }
+			ScriptFunction GetDailyDealOldPrice() { mixin(MGF("mGetDailyDealOldPrice", "Function TribesGame.TrEquipInterface.GetDailyDealOldPrice")); }
+			ScriptFunction GetDailyDealNewPrice() { mixin(MGF("mGetDailyDealNewPrice", "Function TribesGame.TrEquipInterface.GetDailyDealNewPrice")); }
+			ScriptFunction GetDailyDealClass() { mixin(MGF("mGetDailyDealClass", "Function TribesGame.TrEquipInterface.GetDailyDealClass")); }
+			ScriptFunction GetDailyDealType() { mixin(MGF("mGetDailyDealType", "Function TribesGame.TrEquipInterface.GetDailyDealType")); }
+			ScriptFunction GetDailyDealSecsLeft() { mixin(MGF("mGetDailyDealSecsLeft", "Function TribesGame.TrEquipInterface.GetDailyDealSecsLeft")); }
+			ScriptFunction GetDailyDealXPPrice() { mixin(MGF("mGetDailyDealXPPrice", "Function TribesGame.TrEquipInterface.GetDailyDealXPPrice")); }
+			ScriptFunction RequestPurchaseDeal() { mixin(MGF("mRequestPurchaseDeal", "Function TribesGame.TrEquipInterface.RequestPurchaseDeal")); }
+			ScriptFunction OwnsReticule() { mixin(MGF("mOwnsReticule", "Function TribesGame.TrEquipInterface.OwnsReticule")); }
+			ScriptFunction DelegateOnMarshalEvent() { mixin(MGF("mDelegateOnMarshalEvent", "Function TribesGame.TrEquipInterface.DelegateOnMarshalEvent")); }
+			ScriptFunction LoadInventory() { mixin(MGF("mLoadInventory", "Function TribesGame.TrEquipInterface.LoadInventory")); }
+			ScriptFunction InitClass() { mixin(MGF("mInitClass", "Function TribesGame.TrEquipInterface.InitClass")); }
+			ScriptFunction SetDefaultEquip() { mixin(MGF("mSetDefaultEquip", "Function TribesGame.TrEquipInterface.SetDefaultEquip")); }
+			ScriptFunction OnMarshalEvent() { mixin(MGF("mOnMarshalEvent", "Function TribesGame.TrEquipInterface.OnMarshalEvent")); }
+			ScriptFunction RegisterMarshalCallback() { mixin(MGF("mRegisterMarshalCallback", "Function TribesGame.TrEquipInterface.RegisterMarshalCallback")); }
+			ScriptFunction GetClassCount() { mixin(MGF("mGetClassCount", "Function TribesGame.TrEquipInterface.GetClassCount")); }
+			ScriptFunction GetClassRibbon() { mixin(MGF("mGetClassRibbon", "Function TribesGame.TrEquipInterface.GetClassRibbon")); }
+			ScriptFunction GetNextEquipId() { mixin(MGF("mGetNextEquipId", "Function TribesGame.TrEquipInterface.GetNextEquipId")); }
+			ScriptFunction GetEquipRibbon() { mixin(MGF("mGetEquipRibbon", "Function TribesGame.TrEquipInterface.GetEquipRibbon")); }
+			ScriptFunction GetFirstEquipId() { mixin(MGF("mGetFirstEquipId", "Function TribesGame.TrEquipInterface.GetFirstEquipId")); }
+			ScriptFunction GetDailyDealLootId() { mixin(MGF("mGetDailyDealLootId", "Function TribesGame.TrEquipInterface.GetDailyDealLootId")); }
+			ScriptFunction RetrieveActives() { mixin(MGF("mRetrieveActives", "Function TribesGame.TrEquipInterface.RetrieveActives")); }
+			ScriptFunction GetUpgradePrice() { mixin(MGF("mGetUpgradePrice", "Function TribesGame.TrEquipInterface.GetUpgradePrice")); }
+			ScriptFunction RequestPurchaseReticule() { mixin(MGF("mRequestPurchaseReticule", "Function TribesGame.TrEquipInterface.RequestPurchaseReticule")); }
+			ScriptFunction RequestPurchaseUpgrade() { mixin(MGF("mRequestPurchaseUpgrade", "Function TribesGame.TrEquipInterface.RequestPurchaseUpgrade")); }
+			ScriptFunction SaveProfile() { mixin(MGF("mSaveProfile", "Function TribesGame.TrEquipInterface.SaveProfile")); }
+			ScriptFunction InitEquipManager() { mixin(MGF("mInitEquipManager", "Function TribesGame.TrEquipInterface.InitEquipManager")); }
+			ScriptFunction InitClassList() { mixin(MGF("mInitClassList", "Function TribesGame.TrEquipInterface.InitClassList")); }
 		}
 	}
 	@property final
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateOnMarshalEvent__Delegate'!
-		bool m_bLoadComplete() { mixin(MGBPC!(60, 0x1)()); }
-		bool m_bLoadComplete(bool val) { mixin(MSBPC!(60, 0x1)()); }
+		bool m_bLoadComplete() { mixin(MGBPC(60, 0x1)); }
+		bool m_bLoadComplete(bool val) { mixin(MSBPC(60, 0x1)); }
 	}
 final:
 	bool IsClassOwned(int ClassId)

@@ -17,9 +17,9 @@ extern(C++) interface UTCTFGame : UTTeamGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTCTFGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTCTFGame")); }
 	private static __gshared UTCTFGame mDefaultProperties;
-	@property final static UTCTFGame DefaultProperties() { mixin(MGDPC!(UTCTFGame, "UTCTFGame UTGame.Default__UTCTFGame")()); }
+	@property final static UTCTFGame DefaultProperties() { mixin(MGDPC("UTCTFGame", "UTCTFGame UTGame.Default__UTCTFGame")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,28 +38,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTCTFGame.PostBeginPlay")()); }
-			ScriptFunction SetEndGameFocus() { mixin(MGF!("mSetEndGameFocus", "Function UTGame.UTCTFGame.SetEndGameFocus")()); }
-			ScriptFunction GetHandicapNeed() { mixin(MGF!("mGetHandicapNeed", "Function UTGame.UTCTFGame.GetHandicapNeed")()); }
-			ScriptFunction GetLocationFor() { mixin(MGF!("mGetLocationFor", "Function UTGame.UTCTFGame.GetLocationFor")()); }
-			ScriptFunction RegisterFlag() { mixin(MGF!("mRegisterFlag", "Function UTGame.UTCTFGame.RegisterFlag")()); }
-			ScriptFunction NearGoal() { mixin(MGF!("mNearGoal", "Function UTGame.UTCTFGame.NearGoal")()); }
-			ScriptFunction WantFastSpawnFor() { mixin(MGF!("mWantFastSpawnFor", "Function UTGame.UTCTFGame.WantFastSpawnFor")()); }
-			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function UTGame.UTCTFGame.CheckEndGame")()); }
-			ScriptFunction ScoreFlag() { mixin(MGF!("mScoreFlag", "Function UTGame.UTCTFGame.ScoreFlag")()); }
-			ScriptFunction ViewObjective() { mixin(MGF!("mViewObjective", "Function UTGame.UTCTFGame.ViewObjective")()); }
-			ScriptFunction GetAutoObjectiveFor() { mixin(MGF!("mGetAutoObjectiveFor", "Function UTGame.UTCTFGame.GetAutoObjectiveFor")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTCTFGame.PostBeginPlay")); }
+			ScriptFunction SetEndGameFocus() { mixin(MGF("mSetEndGameFocus", "Function UTGame.UTCTFGame.SetEndGameFocus")); }
+			ScriptFunction GetHandicapNeed() { mixin(MGF("mGetHandicapNeed", "Function UTGame.UTCTFGame.GetHandicapNeed")); }
+			ScriptFunction GetLocationFor() { mixin(MGF("mGetLocationFor", "Function UTGame.UTCTFGame.GetLocationFor")); }
+			ScriptFunction RegisterFlag() { mixin(MGF("mRegisterFlag", "Function UTGame.UTCTFGame.RegisterFlag")); }
+			ScriptFunction NearGoal() { mixin(MGF("mNearGoal", "Function UTGame.UTCTFGame.NearGoal")); }
+			ScriptFunction WantFastSpawnFor() { mixin(MGF("mWantFastSpawnFor", "Function UTGame.UTCTFGame.WantFastSpawnFor")); }
+			ScriptFunction CheckEndGame() { mixin(MGF("mCheckEndGame", "Function UTGame.UTCTFGame.CheckEndGame")); }
+			ScriptFunction ScoreFlag() { mixin(MGF("mScoreFlag", "Function UTGame.UTCTFGame.ScoreFlag")); }
+			ScriptFunction ViewObjective() { mixin(MGF("mViewObjective", "Function UTGame.UTCTFGame.ViewObjective")); }
+			ScriptFunction GetAutoObjectiveFor() { mixin(MGF("mGetAutoObjectiveFor", "Function UTGame.UTCTFGame.GetAutoObjectiveFor")); }
 		}
 	}
 	static struct MatchOver
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTCTFGame.MatchOver")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.UTCTFGame.MatchOver")); }
 	}
 	@property final auto ref
 	{
-		ScriptClass AnnouncerMessageClass() { mixin(MGPC!("ScriptClass", 1336)()); }
-		UTCTFFlag Flags() { mixin(MGPC!("UTCTFFlag", 1328)()); }
+		ScriptClass AnnouncerMessageClass() { mixin(MGPC("ScriptClass", 1336)); }
+		UTCTFFlag Flags() { mixin(MGPC("UTCTFFlag", 1328)); }
 	}
 final:
 	void PostBeginPlay()

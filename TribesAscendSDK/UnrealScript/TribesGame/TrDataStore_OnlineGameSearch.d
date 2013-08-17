@@ -9,9 +9,9 @@ extern(C++) interface TrDataStore_OnlineGameSearch : UIDataStore_OnlineGameSearc
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDataStore_OnlineGameSearch")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDataStore_OnlineGameSearch")); }
 	private static __gshared TrDataStore_OnlineGameSearch mDefaultProperties;
-	@property final static TrDataStore_OnlineGameSearch DefaultProperties() { mixin(MGDPC!(TrDataStore_OnlineGameSearch, "TrDataStore_OnlineGameSearch TribesGame.Default__TrDataStore_OnlineGameSearch")()); }
+	@property final static TrDataStore_OnlineGameSearch DefaultProperties() { mixin(MGDPC("TrDataStore_OnlineGameSearch", "TrDataStore_OnlineGameSearch TribesGame.Default__TrDataStore_OnlineGameSearch")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,14 +24,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrDataStore_OnlineGameSearch.Init")()); }
-			ScriptFunction SubmitGameSearch() { mixin(MGF!("mSubmitGameSearch", "Function TribesGame.TrDataStore_OnlineGameSearch.SubmitGameSearch")()); }
-			ScriptFunction OnSearchComplete() { mixin(MGF!("mOnSearchComplete", "Function TribesGame.TrDataStore_OnlineGameSearch.OnSearchComplete")()); }
-			ScriptFunction HasOutstandingQueries() { mixin(MGF!("mHasOutstandingQueries", "Function TribesGame.TrDataStore_OnlineGameSearch.HasOutstandingQueries")()); }
-			ScriptFunction HasExistingSearchResults() { mixin(MGF!("mHasExistingSearchResults", "Function TribesGame.TrDataStore_OnlineGameSearch.HasExistingSearchResults")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrDataStore_OnlineGameSearch.Init")); }
+			ScriptFunction SubmitGameSearch() { mixin(MGF("mSubmitGameSearch", "Function TribesGame.TrDataStore_OnlineGameSearch.SubmitGameSearch")); }
+			ScriptFunction OnSearchComplete() { mixin(MGF("mOnSearchComplete", "Function TribesGame.TrDataStore_OnlineGameSearch.OnSearchComplete")); }
+			ScriptFunction HasOutstandingQueries() { mixin(MGF("mHasOutstandingQueries", "Function TribesGame.TrDataStore_OnlineGameSearch.HasOutstandingQueries")); }
+			ScriptFunction HasExistingSearchResults() { mixin(MGF("mHasExistingSearchResults", "Function TribesGame.TrDataStore_OnlineGameSearch.HasExistingSearchResults")); }
 		}
 	}
-	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { mixin(MGPC!("UDKUIDataProvider_ServerDetails", 168)()); }
+	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { mixin(MGPC("UDKUIDataProvider_ServerDetails", 168)); }
 final:
 	void Init()
 	{

@@ -10,19 +10,19 @@ extern(C++) interface TrAutoBalanceMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAutoBalanceMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrAutoBalanceMessage")); }
 	private static __gshared TrAutoBalanceMessage mDefaultProperties;
-	@property final static TrAutoBalanceMessage DefaultProperties() { mixin(MGDPC!(TrAutoBalanceMessage, "TrAutoBalanceMessage TribesGame.Default__TrAutoBalanceMessage")()); }
+	@property final static TrAutoBalanceMessage DefaultProperties() { mixin(MGDPC("TrAutoBalanceMessage", "TrAutoBalanceMessage TribesGame.Default__TrAutoBalanceMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;
-		public @property static final ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrAutoBalanceMessage.GetString")()); }
+		public @property static final ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrAutoBalanceMessage.GetString")); }
 	}
 	@property final auto ref
 	{
-		ScriptString TeamsAutoBalanced() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString AutoBalanceInFive() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString AutoBalanceInTwenty() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString TeamsAutoBalanced() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString AutoBalanceInFive() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString AutoBalanceInTwenty() { mixin(MGPC("ScriptString", 100)); }
 	}
 	final static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

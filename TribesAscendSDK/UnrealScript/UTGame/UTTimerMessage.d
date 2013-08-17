@@ -13,9 +13,9 @@ extern(C++) interface UTTimerMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTimerMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTimerMessage")); }
 	private static __gshared UTTimerMessage mDefaultProperties;
-	@property final static UTTimerMessage DefaultProperties() { mixin(MGDPC!(UTTimerMessage, "UTTimerMessage UTGame.Default__UTTimerMessage")()); }
+	@property final static UTTimerMessage DefaultProperties() { mixin(MGDPC("UTTimerMessage", "UTTimerMessage UTGame.Default__UTTimerMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,13 +27,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTTimerMessage.ClientReceive")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTTimerMessage.GetString")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTTimerMessage.AnnouncementSound")()); }
-			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function UTGame.UTTimerMessage.GetFontSize")()); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTTimerMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTTimerMessage.GetString")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTTimerMessage.AnnouncementSound")); }
+			ScriptFunction GetFontSize() { mixin(MGF("mGetFontSize", "Function UTGame.UTTimerMessage.GetFontSize")); }
 		}
 	}
-	@property final auto ref ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo) Announcements() { mixin(MGPC!("ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo)", 100)()); }
+	@property final auto ref ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo) Announcements() { mixin(MGPC("ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo)", 100)); }
 final:
 	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

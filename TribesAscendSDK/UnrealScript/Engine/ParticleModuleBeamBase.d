@@ -8,9 +8,9 @@ extern(C++) interface ParticleModuleBeamBase : ParticleModule
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleBeamBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleBeamBase")); }
 	private static __gshared ParticleModuleBeamBase mDefaultProperties;
-	@property final static ParticleModuleBeamBase DefaultProperties() { mixin(MGDPC!(ParticleModuleBeamBase, "ParticleModuleBeamBase Engine.Default__ParticleModuleBeamBase")()); }
+	@property final static ParticleModuleBeamBase DefaultProperties() { mixin(MGDPC("ParticleModuleBeamBase", "ParticleModuleBeamBase Engine.Default__ParticleModuleBeamBase")); }
 	enum Beam2SourceTargetMethod : ubyte
 	{
 		PEB2STM_Default = 0,

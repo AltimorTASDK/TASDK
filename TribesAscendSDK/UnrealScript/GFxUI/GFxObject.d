@@ -10,9 +10,9 @@ extern(C++) interface GFxObject : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GFxUI.GFxObject")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GFxUI.GFxObject")); }
 	private static __gshared GFxObject mDefaultProperties;
-	@property final static GFxObject DefaultProperties() { mixin(MGDPC!(GFxObject, "GFxObject GFxUI.Default__GFxObject")()); }
+	@property final static GFxObject DefaultProperties() { mixin(MGDPC("GFxObject", "GFxObject GFxUI.Default__GFxObject")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -88,74 +88,74 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Get() { mixin(MGF!("mGet", "Function GFxUI.GFxObject.Get")()); }
-			ScriptFunction GetBool() { mixin(MGF!("mGetBool", "Function GFxUI.GFxObject.GetBool")()); }
-			ScriptFunction GetFloat() { mixin(MGF!("mGetFloat", "Function GFxUI.GFxObject.GetFloat")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function GFxUI.GFxObject.GetString")()); }
-			ScriptFunction GetObject() { mixin(MGF!("mGetObject", "Function GFxUI.GFxObject.GetObject")()); }
-			ScriptFunction Set() { mixin(MGF!("mSet", "Function GFxUI.GFxObject.Set")()); }
-			ScriptFunction SetBool() { mixin(MGF!("mSetBool", "Function GFxUI.GFxObject.SetBool")()); }
-			ScriptFunction SetFloat() { mixin(MGF!("mSetFloat", "Function GFxUI.GFxObject.SetFloat")()); }
-			ScriptFunction SetString() { mixin(MGF!("mSetString", "Function GFxUI.GFxObject.SetString")()); }
-			ScriptFunction SetObject() { mixin(MGF!("mSetObject", "Function GFxUI.GFxObject.SetObject")()); }
-			ScriptFunction SetFunction() { mixin(MGF!("mSetFunction", "Function GFxUI.GFxObject.SetFunction")()); }
-			ScriptFunction TranslateString() { mixin(MGF!("mTranslateString", "Function GFxUI.GFxObject.TranslateString")()); }
-			ScriptFunction GetDisplayInfo() { mixin(MGF!("mGetDisplayInfo", "Function GFxUI.GFxObject.GetDisplayInfo")()); }
-			ScriptFunction GetPosition() { mixin(MGF!("mGetPosition", "Function GFxUI.GFxObject.GetPosition")()); }
-			ScriptFunction GetColorTransform() { mixin(MGF!("mGetColorTransform", "Function GFxUI.GFxObject.GetColorTransform")()); }
-			ScriptFunction GetDisplayMatrix() { mixin(MGF!("mGetDisplayMatrix", "Function GFxUI.GFxObject.GetDisplayMatrix")()); }
-			ScriptFunction SetDisplayInfo() { mixin(MGF!("mSetDisplayInfo", "Function GFxUI.GFxObject.SetDisplayInfo")()); }
-			ScriptFunction SetPosition() { mixin(MGF!("mSetPosition", "Function GFxUI.GFxObject.SetPosition")()); }
-			ScriptFunction SetColorTransform() { mixin(MGF!("mSetColorTransform", "Function GFxUI.GFxObject.SetColorTransform")()); }
-			ScriptFunction SetDisplayMatrix() { mixin(MGF!("mSetDisplayMatrix", "Function GFxUI.GFxObject.SetDisplayMatrix")()); }
-			ScriptFunction SetDisplayMatrix3D() { mixin(MGF!("mSetDisplayMatrix3D", "Function GFxUI.GFxObject.SetDisplayMatrix3D")()); }
-			ScriptFunction SetVisible() { mixin(MGF!("mSetVisible", "Function GFxUI.GFxObject.SetVisible")()); }
-			ScriptFunction GetText() { mixin(MGF!("mGetText", "Function GFxUI.GFxObject.GetText")()); }
-			ScriptFunction SetText() { mixin(MGF!("mSetText", "Function GFxUI.GFxObject.SetText")()); }
-			ScriptFunction GetElement() { mixin(MGF!("mGetElement", "Function GFxUI.GFxObject.GetElement")()); }
-			ScriptFunction GetElementObject() { mixin(MGF!("mGetElementObject", "Function GFxUI.GFxObject.GetElementObject")()); }
-			ScriptFunction GetElementBool() { mixin(MGF!("mGetElementBool", "Function GFxUI.GFxObject.GetElementBool")()); }
-			ScriptFunction GetElementFloat() { mixin(MGF!("mGetElementFloat", "Function GFxUI.GFxObject.GetElementFloat")()); }
-			ScriptFunction GetElementString() { mixin(MGF!("mGetElementString", "Function GFxUI.GFxObject.GetElementString")()); }
-			ScriptFunction SetElement() { mixin(MGF!("mSetElement", "Function GFxUI.GFxObject.SetElement")()); }
-			ScriptFunction SetElementObject() { mixin(MGF!("mSetElementObject", "Function GFxUI.GFxObject.SetElementObject")()); }
-			ScriptFunction SetElementBool() { mixin(MGF!("mSetElementBool", "Function GFxUI.GFxObject.SetElementBool")()); }
-			ScriptFunction SetElementFloat() { mixin(MGF!("mSetElementFloat", "Function GFxUI.GFxObject.SetElementFloat")()); }
-			ScriptFunction SetElementString() { mixin(MGF!("mSetElementString", "Function GFxUI.GFxObject.SetElementString")()); }
-			ScriptFunction GetElementDisplayInfo() { mixin(MGF!("mGetElementDisplayInfo", "Function GFxUI.GFxObject.GetElementDisplayInfo")()); }
-			ScriptFunction GetElementDisplayMatrix() { mixin(MGF!("mGetElementDisplayMatrix", "Function GFxUI.GFxObject.GetElementDisplayMatrix")()); }
-			ScriptFunction SetElementDisplayInfo() { mixin(MGF!("mSetElementDisplayInfo", "Function GFxUI.GFxObject.SetElementDisplayInfo")()); }
-			ScriptFunction SetElementDisplayMatrix() { mixin(MGF!("mSetElementDisplayMatrix", "Function GFxUI.GFxObject.SetElementDisplayMatrix")()); }
-			ScriptFunction SetElementVisible() { mixin(MGF!("mSetElementVisible", "Function GFxUI.GFxObject.SetElementVisible")()); }
-			ScriptFunction SetElementPosition() { mixin(MGF!("mSetElementPosition", "Function GFxUI.GFxObject.SetElementPosition")()); }
-			ScriptFunction SetElementColorTransform() { mixin(MGF!("mSetElementColorTransform", "Function GFxUI.GFxObject.SetElementColorTransform")()); }
-			ScriptFunction GetElementMember() { mixin(MGF!("mGetElementMember", "Function GFxUI.GFxObject.GetElementMember")()); }
-			ScriptFunction GetElementMemberObject() { mixin(MGF!("mGetElementMemberObject", "Function GFxUI.GFxObject.GetElementMemberObject")()); }
-			ScriptFunction GetElementMemberBool() { mixin(MGF!("mGetElementMemberBool", "Function GFxUI.GFxObject.GetElementMemberBool")()); }
-			ScriptFunction GetElementMemberFloat() { mixin(MGF!("mGetElementMemberFloat", "Function GFxUI.GFxObject.GetElementMemberFloat")()); }
-			ScriptFunction GetElementMemberString() { mixin(MGF!("mGetElementMemberString", "Function GFxUI.GFxObject.GetElementMemberString")()); }
-			ScriptFunction SetElementMember() { mixin(MGF!("mSetElementMember", "Function GFxUI.GFxObject.SetElementMember")()); }
-			ScriptFunction SetElementMemberObject() { mixin(MGF!("mSetElementMemberObject", "Function GFxUI.GFxObject.SetElementMemberObject")()); }
-			ScriptFunction SetElementMemberBool() { mixin(MGF!("mSetElementMemberBool", "Function GFxUI.GFxObject.SetElementMemberBool")()); }
-			ScriptFunction SetElementMemberFloat() { mixin(MGF!("mSetElementMemberFloat", "Function GFxUI.GFxObject.SetElementMemberFloat")()); }
-			ScriptFunction SetElementMemberString() { mixin(MGF!("mSetElementMemberString", "Function GFxUI.GFxObject.SetElementMemberString")()); }
-			ScriptFunction ActionScriptSetFunction() { mixin(MGF!("mActionScriptSetFunction", "Function GFxUI.GFxObject.ActionScriptSetFunction")()); }
-			ScriptFunction ActionScriptSetFunctionOn() { mixin(MGF!("mActionScriptSetFunctionOn", "Function GFxUI.GFxObject.ActionScriptSetFunctionOn")()); }
-			ScriptFunction Invoke() { mixin(MGF!("mInvoke", "Function GFxUI.GFxObject.Invoke")()); }
-			ScriptFunction ActionScriptVoid() { mixin(MGF!("mActionScriptVoid", "Function GFxUI.GFxObject.ActionScriptVoid")()); }
-			ScriptFunction ActionScriptInt() { mixin(MGF!("mActionScriptInt", "Function GFxUI.GFxObject.ActionScriptInt")()); }
-			ScriptFunction ActionScriptFloat() { mixin(MGF!("mActionScriptFloat", "Function GFxUI.GFxObject.ActionScriptFloat")()); }
-			ScriptFunction ActionScriptString() { mixin(MGF!("mActionScriptString", "Function GFxUI.GFxObject.ActionScriptString")()); }
-			ScriptFunction ActionScriptObject() { mixin(MGF!("mActionScriptObject", "Function GFxUI.GFxObject.ActionScriptObject")()); }
-			ScriptFunction ActionScriptArray() { mixin(MGF!("mActionScriptArray", "Function GFxUI.GFxObject.ActionScriptArray")()); }
-			ScriptFunction GotoAndPlay() { mixin(MGF!("mGotoAndPlay", "Function GFxUI.GFxObject.GotoAndPlay")()); }
-			ScriptFunction GotoAndPlayI() { mixin(MGF!("mGotoAndPlayI", "Function GFxUI.GFxObject.GotoAndPlayI")()); }
-			ScriptFunction GotoAndStop() { mixin(MGF!("mGotoAndStop", "Function GFxUI.GFxObject.GotoAndStop")()); }
-			ScriptFunction GotoAndStopI() { mixin(MGF!("mGotoAndStopI", "Function GFxUI.GFxObject.GotoAndStopI")()); }
-			ScriptFunction CreateEmptyMovieClip() { mixin(MGF!("mCreateEmptyMovieClip", "Function GFxUI.GFxObject.CreateEmptyMovieClip")()); }
-			ScriptFunction AttachMovie() { mixin(MGF!("mAttachMovie", "Function GFxUI.GFxObject.AttachMovie")()); }
-			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function GFxUI.GFxObject.WidgetInitialized")()); }
-			ScriptFunction WidgetUnloaded() { mixin(MGF!("mWidgetUnloaded", "Function GFxUI.GFxObject.WidgetUnloaded")()); }
+			ScriptFunction Get() { mixin(MGF("mGet", "Function GFxUI.GFxObject.Get")); }
+			ScriptFunction GetBool() { mixin(MGF("mGetBool", "Function GFxUI.GFxObject.GetBool")); }
+			ScriptFunction GetFloat() { mixin(MGF("mGetFloat", "Function GFxUI.GFxObject.GetFloat")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function GFxUI.GFxObject.GetString")); }
+			ScriptFunction GetObject() { mixin(MGF("mGetObject", "Function GFxUI.GFxObject.GetObject")); }
+			ScriptFunction Set() { mixin(MGF("mSet", "Function GFxUI.GFxObject.Set")); }
+			ScriptFunction SetBool() { mixin(MGF("mSetBool", "Function GFxUI.GFxObject.SetBool")); }
+			ScriptFunction SetFloat() { mixin(MGF("mSetFloat", "Function GFxUI.GFxObject.SetFloat")); }
+			ScriptFunction SetString() { mixin(MGF("mSetString", "Function GFxUI.GFxObject.SetString")); }
+			ScriptFunction SetObject() { mixin(MGF("mSetObject", "Function GFxUI.GFxObject.SetObject")); }
+			ScriptFunction SetFunction() { mixin(MGF("mSetFunction", "Function GFxUI.GFxObject.SetFunction")); }
+			ScriptFunction TranslateString() { mixin(MGF("mTranslateString", "Function GFxUI.GFxObject.TranslateString")); }
+			ScriptFunction GetDisplayInfo() { mixin(MGF("mGetDisplayInfo", "Function GFxUI.GFxObject.GetDisplayInfo")); }
+			ScriptFunction GetPosition() { mixin(MGF("mGetPosition", "Function GFxUI.GFxObject.GetPosition")); }
+			ScriptFunction GetColorTransform() { mixin(MGF("mGetColorTransform", "Function GFxUI.GFxObject.GetColorTransform")); }
+			ScriptFunction GetDisplayMatrix() { mixin(MGF("mGetDisplayMatrix", "Function GFxUI.GFxObject.GetDisplayMatrix")); }
+			ScriptFunction SetDisplayInfo() { mixin(MGF("mSetDisplayInfo", "Function GFxUI.GFxObject.SetDisplayInfo")); }
+			ScriptFunction SetPosition() { mixin(MGF("mSetPosition", "Function GFxUI.GFxObject.SetPosition")); }
+			ScriptFunction SetColorTransform() { mixin(MGF("mSetColorTransform", "Function GFxUI.GFxObject.SetColorTransform")); }
+			ScriptFunction SetDisplayMatrix() { mixin(MGF("mSetDisplayMatrix", "Function GFxUI.GFxObject.SetDisplayMatrix")); }
+			ScriptFunction SetDisplayMatrix3D() { mixin(MGF("mSetDisplayMatrix3D", "Function GFxUI.GFxObject.SetDisplayMatrix3D")); }
+			ScriptFunction SetVisible() { mixin(MGF("mSetVisible", "Function GFxUI.GFxObject.SetVisible")); }
+			ScriptFunction GetText() { mixin(MGF("mGetText", "Function GFxUI.GFxObject.GetText")); }
+			ScriptFunction SetText() { mixin(MGF("mSetText", "Function GFxUI.GFxObject.SetText")); }
+			ScriptFunction GetElement() { mixin(MGF("mGetElement", "Function GFxUI.GFxObject.GetElement")); }
+			ScriptFunction GetElementObject() { mixin(MGF("mGetElementObject", "Function GFxUI.GFxObject.GetElementObject")); }
+			ScriptFunction GetElementBool() { mixin(MGF("mGetElementBool", "Function GFxUI.GFxObject.GetElementBool")); }
+			ScriptFunction GetElementFloat() { mixin(MGF("mGetElementFloat", "Function GFxUI.GFxObject.GetElementFloat")); }
+			ScriptFunction GetElementString() { mixin(MGF("mGetElementString", "Function GFxUI.GFxObject.GetElementString")); }
+			ScriptFunction SetElement() { mixin(MGF("mSetElement", "Function GFxUI.GFxObject.SetElement")); }
+			ScriptFunction SetElementObject() { mixin(MGF("mSetElementObject", "Function GFxUI.GFxObject.SetElementObject")); }
+			ScriptFunction SetElementBool() { mixin(MGF("mSetElementBool", "Function GFxUI.GFxObject.SetElementBool")); }
+			ScriptFunction SetElementFloat() { mixin(MGF("mSetElementFloat", "Function GFxUI.GFxObject.SetElementFloat")); }
+			ScriptFunction SetElementString() { mixin(MGF("mSetElementString", "Function GFxUI.GFxObject.SetElementString")); }
+			ScriptFunction GetElementDisplayInfo() { mixin(MGF("mGetElementDisplayInfo", "Function GFxUI.GFxObject.GetElementDisplayInfo")); }
+			ScriptFunction GetElementDisplayMatrix() { mixin(MGF("mGetElementDisplayMatrix", "Function GFxUI.GFxObject.GetElementDisplayMatrix")); }
+			ScriptFunction SetElementDisplayInfo() { mixin(MGF("mSetElementDisplayInfo", "Function GFxUI.GFxObject.SetElementDisplayInfo")); }
+			ScriptFunction SetElementDisplayMatrix() { mixin(MGF("mSetElementDisplayMatrix", "Function GFxUI.GFxObject.SetElementDisplayMatrix")); }
+			ScriptFunction SetElementVisible() { mixin(MGF("mSetElementVisible", "Function GFxUI.GFxObject.SetElementVisible")); }
+			ScriptFunction SetElementPosition() { mixin(MGF("mSetElementPosition", "Function GFxUI.GFxObject.SetElementPosition")); }
+			ScriptFunction SetElementColorTransform() { mixin(MGF("mSetElementColorTransform", "Function GFxUI.GFxObject.SetElementColorTransform")); }
+			ScriptFunction GetElementMember() { mixin(MGF("mGetElementMember", "Function GFxUI.GFxObject.GetElementMember")); }
+			ScriptFunction GetElementMemberObject() { mixin(MGF("mGetElementMemberObject", "Function GFxUI.GFxObject.GetElementMemberObject")); }
+			ScriptFunction GetElementMemberBool() { mixin(MGF("mGetElementMemberBool", "Function GFxUI.GFxObject.GetElementMemberBool")); }
+			ScriptFunction GetElementMemberFloat() { mixin(MGF("mGetElementMemberFloat", "Function GFxUI.GFxObject.GetElementMemberFloat")); }
+			ScriptFunction GetElementMemberString() { mixin(MGF("mGetElementMemberString", "Function GFxUI.GFxObject.GetElementMemberString")); }
+			ScriptFunction SetElementMember() { mixin(MGF("mSetElementMember", "Function GFxUI.GFxObject.SetElementMember")); }
+			ScriptFunction SetElementMemberObject() { mixin(MGF("mSetElementMemberObject", "Function GFxUI.GFxObject.SetElementMemberObject")); }
+			ScriptFunction SetElementMemberBool() { mixin(MGF("mSetElementMemberBool", "Function GFxUI.GFxObject.SetElementMemberBool")); }
+			ScriptFunction SetElementMemberFloat() { mixin(MGF("mSetElementMemberFloat", "Function GFxUI.GFxObject.SetElementMemberFloat")); }
+			ScriptFunction SetElementMemberString() { mixin(MGF("mSetElementMemberString", "Function GFxUI.GFxObject.SetElementMemberString")); }
+			ScriptFunction ActionScriptSetFunction() { mixin(MGF("mActionScriptSetFunction", "Function GFxUI.GFxObject.ActionScriptSetFunction")); }
+			ScriptFunction ActionScriptSetFunctionOn() { mixin(MGF("mActionScriptSetFunctionOn", "Function GFxUI.GFxObject.ActionScriptSetFunctionOn")); }
+			ScriptFunction Invoke() { mixin(MGF("mInvoke", "Function GFxUI.GFxObject.Invoke")); }
+			ScriptFunction ActionScriptVoid() { mixin(MGF("mActionScriptVoid", "Function GFxUI.GFxObject.ActionScriptVoid")); }
+			ScriptFunction ActionScriptInt() { mixin(MGF("mActionScriptInt", "Function GFxUI.GFxObject.ActionScriptInt")); }
+			ScriptFunction ActionScriptFloat() { mixin(MGF("mActionScriptFloat", "Function GFxUI.GFxObject.ActionScriptFloat")); }
+			ScriptFunction ActionScriptString() { mixin(MGF("mActionScriptString", "Function GFxUI.GFxObject.ActionScriptString")); }
+			ScriptFunction ActionScriptObject() { mixin(MGF("mActionScriptObject", "Function GFxUI.GFxObject.ActionScriptObject")); }
+			ScriptFunction ActionScriptArray() { mixin(MGF("mActionScriptArray", "Function GFxUI.GFxObject.ActionScriptArray")); }
+			ScriptFunction GotoAndPlay() { mixin(MGF("mGotoAndPlay", "Function GFxUI.GFxObject.GotoAndPlay")); }
+			ScriptFunction GotoAndPlayI() { mixin(MGF("mGotoAndPlayI", "Function GFxUI.GFxObject.GotoAndPlayI")); }
+			ScriptFunction GotoAndStop() { mixin(MGF("mGotoAndStop", "Function GFxUI.GFxObject.GotoAndStop")); }
+			ScriptFunction GotoAndStopI() { mixin(MGF("mGotoAndStopI", "Function GFxUI.GFxObject.GotoAndStopI")); }
+			ScriptFunction CreateEmptyMovieClip() { mixin(MGF("mCreateEmptyMovieClip", "Function GFxUI.GFxObject.CreateEmptyMovieClip")); }
+			ScriptFunction AttachMovie() { mixin(MGF("mAttachMovie", "Function GFxUI.GFxObject.AttachMovie")); }
+			ScriptFunction WidgetInitialized() { mixin(MGF("mWidgetInitialized", "Function GFxUI.GFxObject.WidgetInitialized")); }
+			ScriptFunction WidgetUnloaded() { mixin(MGF("mWidgetUnloaded", "Function GFxUI.GFxObject.WidgetUnloaded")); }
 		}
 	}
 	struct ASDisplayInfo
@@ -163,46 +163,46 @@ public extern(D):
 		private ubyte __buffer__[44];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxObject.ASDisplayInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GFxUI.GFxObject.ASDisplayInfo")); }
 		@property final
 		{
 			auto ref
 			{
-				float Alpha() { mixin(MGPS!("float", 36)()); }
-				float ZScale() { mixin(MGPS!("float", 32)()); }
-				float YScale() { mixin(MGPS!("float", 28)()); }
-				float XScale() { mixin(MGPS!("float", 24)()); }
-				float YRotation() { mixin(MGPS!("float", 20)()); }
-				float XRotation() { mixin(MGPS!("float", 16)()); }
-				float Rotation() { mixin(MGPS!("float", 12)()); }
-				float Z() { mixin(MGPS!("float", 8)()); }
-				float Y() { mixin(MGPS!("float", 4)()); }
-				float X() { mixin(MGPS!("float", 0)()); }
+				float Alpha() { mixin(MGPS("float", 36)); }
+				float ZScale() { mixin(MGPS("float", 32)); }
+				float YScale() { mixin(MGPS("float", 28)); }
+				float XScale() { mixin(MGPS("float", 24)); }
+				float YRotation() { mixin(MGPS("float", 20)); }
+				float XRotation() { mixin(MGPS("float", 16)); }
+				float Rotation() { mixin(MGPS("float", 12)); }
+				float Z() { mixin(MGPS("float", 8)); }
+				float Y() { mixin(MGPS("float", 4)); }
+				float X() { mixin(MGPS("float", 0)); }
 			}
-			bool hasVisible() { mixin(MGBPS!(40, 0x800)()); }
-			bool hasVisible(bool val) { mixin(MSBPS!(40, 0x800)()); }
-			bool hasAlpha() { mixin(MGBPS!(40, 0x400)()); }
-			bool hasAlpha(bool val) { mixin(MSBPS!(40, 0x400)()); }
-			bool hasZScale() { mixin(MGBPS!(40, 0x200)()); }
-			bool hasZScale(bool val) { mixin(MSBPS!(40, 0x200)()); }
-			bool hasYScale() { mixin(MGBPS!(40, 0x100)()); }
-			bool hasYScale(bool val) { mixin(MSBPS!(40, 0x100)()); }
-			bool hasXScale() { mixin(MGBPS!(40, 0x80)()); }
-			bool hasXScale(bool val) { mixin(MSBPS!(40, 0x80)()); }
-			bool hasYRotation() { mixin(MGBPS!(40, 0x40)()); }
-			bool hasYRotation(bool val) { mixin(MSBPS!(40, 0x40)()); }
-			bool hasXRotation() { mixin(MGBPS!(40, 0x20)()); }
-			bool hasXRotation(bool val) { mixin(MSBPS!(40, 0x20)()); }
-			bool hasRotation() { mixin(MGBPS!(40, 0x10)()); }
-			bool hasRotation(bool val) { mixin(MSBPS!(40, 0x10)()); }
-			bool hasZ() { mixin(MGBPS!(40, 0x8)()); }
-			bool hasZ(bool val) { mixin(MSBPS!(40, 0x8)()); }
-			bool hasY() { mixin(MGBPS!(40, 0x4)()); }
-			bool hasY(bool val) { mixin(MSBPS!(40, 0x4)()); }
-			bool hasX() { mixin(MGBPS!(40, 0x2)()); }
-			bool hasX(bool val) { mixin(MSBPS!(40, 0x2)()); }
-			bool Visible() { mixin(MGBPS!(40, 0x1)()); }
-			bool Visible(bool val) { mixin(MSBPS!(40, 0x1)()); }
+			bool hasVisible() { mixin(MGBPS(40, 0x800)); }
+			bool hasVisible(bool val) { mixin(MSBPS(40, 0x800)); }
+			bool hasAlpha() { mixin(MGBPS(40, 0x400)); }
+			bool hasAlpha(bool val) { mixin(MSBPS(40, 0x400)); }
+			bool hasZScale() { mixin(MGBPS(40, 0x200)); }
+			bool hasZScale(bool val) { mixin(MSBPS(40, 0x200)); }
+			bool hasYScale() { mixin(MGBPS(40, 0x100)); }
+			bool hasYScale(bool val) { mixin(MSBPS(40, 0x100)); }
+			bool hasXScale() { mixin(MGBPS(40, 0x80)); }
+			bool hasXScale(bool val) { mixin(MSBPS(40, 0x80)); }
+			bool hasYRotation() { mixin(MGBPS(40, 0x40)); }
+			bool hasYRotation(bool val) { mixin(MSBPS(40, 0x40)); }
+			bool hasXRotation() { mixin(MGBPS(40, 0x20)); }
+			bool hasXRotation(bool val) { mixin(MSBPS(40, 0x20)); }
+			bool hasRotation() { mixin(MGBPS(40, 0x10)); }
+			bool hasRotation(bool val) { mixin(MSBPS(40, 0x10)); }
+			bool hasZ() { mixin(MGBPS(40, 0x8)); }
+			bool hasZ(bool val) { mixin(MSBPS(40, 0x8)); }
+			bool hasY() { mixin(MGBPS(40, 0x4)); }
+			bool hasY(bool val) { mixin(MSBPS(40, 0x4)); }
+			bool hasX() { mixin(MGBPS(40, 0x2)); }
+			bool hasX(bool val) { mixin(MSBPS(40, 0x2)); }
+			bool Visible() { mixin(MGBPS(40, 0x1)); }
+			bool Visible(bool val) { mixin(MSBPS(40, 0x1)); }
 		}
 	}
 	struct ASColorTransform
@@ -210,17 +210,17 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxObject.ASColorTransform")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GFxUI.GFxObject.ASColorTransform")); }
 		@property final auto ref
 		{
-			UObject.LinearColor Add() { mixin(MGPS!("UObject.LinearColor", 16)()); }
-			UObject.LinearColor Multiply() { mixin(MGPS!("UObject.LinearColor", 0)()); }
+			UObject.LinearColor Add() { mixin(MGPS("UObject.LinearColor", 16)); }
+			UObject.LinearColor Multiply() { mixin(MGPS("UObject.LinearColor", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) SubWidgetBindings() { mixin(MGPC!("ScriptArray!(GFxMoviePlayer.GFxWidgetBinding)", 108)()); }
-		int Value() { mixin(MGPC!("int", 60)()); }
+		ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) SubWidgetBindings() { mixin(MGPC("ScriptArray!(GFxMoviePlayer.GFxWidgetBinding)", 108)); }
+		int Value() { mixin(MGPC("int", 60)); }
 	}
 final:
 	GFxMoviePlayer.ASValue Get(ScriptString Member)

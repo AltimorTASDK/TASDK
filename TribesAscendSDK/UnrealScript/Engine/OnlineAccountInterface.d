@@ -9,9 +9,9 @@ extern(C++) interface OnlineAccountInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineAccountInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineAccountInterface")); }
 	private static __gshared OnlineAccountInterface mDefaultProperties;
-	@property final static OnlineAccountInterface DefaultProperties() { mixin(MGDPC!(OnlineAccountInterface, "OnlineAccountInterface Engine.Default__OnlineAccountInterface")()); }
+	@property final static OnlineAccountInterface DefaultProperties() { mixin(MGDPC("OnlineAccountInterface", "OnlineAccountInterface Engine.Default__OnlineAccountInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,14 +27,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateOnlineAccount() { mixin(MGF!("mCreateOnlineAccount", "Function Engine.OnlineAccountInterface.CreateOnlineAccount")()); }
-			ScriptFunction OnCreateOnlineAccountCompleted() { mixin(MGF!("mOnCreateOnlineAccountCompleted", "Function Engine.OnlineAccountInterface.OnCreateOnlineAccountCompleted")()); }
-			ScriptFunction AddCreateOnlineAccountCompletedDelegate() { mixin(MGF!("mAddCreateOnlineAccountCompletedDelegate", "Function Engine.OnlineAccountInterface.AddCreateOnlineAccountCompletedDelegate")()); }
-			ScriptFunction ClearCreateOnlineAccountCompletedDelegate() { mixin(MGF!("mClearCreateOnlineAccountCompletedDelegate", "Function Engine.OnlineAccountInterface.ClearCreateOnlineAccountCompletedDelegate")()); }
-			ScriptFunction CreateLocalAccount() { mixin(MGF!("mCreateLocalAccount", "Function Engine.OnlineAccountInterface.CreateLocalAccount")()); }
-			ScriptFunction RenameLocalAccount() { mixin(MGF!("mRenameLocalAccount", "Function Engine.OnlineAccountInterface.RenameLocalAccount")()); }
-			ScriptFunction DeleteLocalAccount() { mixin(MGF!("mDeleteLocalAccount", "Function Engine.OnlineAccountInterface.DeleteLocalAccount")()); }
-			ScriptFunction GetLocalAccountNames() { mixin(MGF!("mGetLocalAccountNames", "Function Engine.OnlineAccountInterface.GetLocalAccountNames")()); }
+			ScriptFunction CreateOnlineAccount() { mixin(MGF("mCreateOnlineAccount", "Function Engine.OnlineAccountInterface.CreateOnlineAccount")); }
+			ScriptFunction OnCreateOnlineAccountCompleted() { mixin(MGF("mOnCreateOnlineAccountCompleted", "Function Engine.OnlineAccountInterface.OnCreateOnlineAccountCompleted")); }
+			ScriptFunction AddCreateOnlineAccountCompletedDelegate() { mixin(MGF("mAddCreateOnlineAccountCompletedDelegate", "Function Engine.OnlineAccountInterface.AddCreateOnlineAccountCompletedDelegate")); }
+			ScriptFunction ClearCreateOnlineAccountCompletedDelegate() { mixin(MGF("mClearCreateOnlineAccountCompletedDelegate", "Function Engine.OnlineAccountInterface.ClearCreateOnlineAccountCompletedDelegate")); }
+			ScriptFunction CreateLocalAccount() { mixin(MGF("mCreateLocalAccount", "Function Engine.OnlineAccountInterface.CreateLocalAccount")); }
+			ScriptFunction RenameLocalAccount() { mixin(MGF("mRenameLocalAccount", "Function Engine.OnlineAccountInterface.RenameLocalAccount")); }
+			ScriptFunction DeleteLocalAccount() { mixin(MGF("mDeleteLocalAccount", "Function Engine.OnlineAccountInterface.DeleteLocalAccount")); }
+			ScriptFunction GetLocalAccountNames() { mixin(MGF("mGetLocalAccountNames", "Function Engine.OnlineAccountInterface.GetLocalAccountNames")); }
 		}
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnCreateOnlineAccountCompleted__Delegate'!

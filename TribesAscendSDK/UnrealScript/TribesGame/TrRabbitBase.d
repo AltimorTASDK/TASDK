@@ -18,9 +18,9 @@ extern(C++) interface TrRabbitBase : UTGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrRabbitBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrRabbitBase")); }
 	private static __gshared TrRabbitBase mDefaultProperties;
-	@property final static TrRabbitBase DefaultProperties() { mixin(MGDPC!(TrRabbitBase, "TrRabbitBase TribesGame.Default__TrRabbitBase")()); }
+	@property final static TrRabbitBase DefaultProperties() { mixin(MGDPC("TrRabbitBase", "TrRabbitBase TribesGame.Default__TrRabbitBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,36 +39,36 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrRabbitBase.PostBeginPlay")()); }
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrRabbitBase.PostInitAnimTree")()); }
-			ScriptFunction GetBestViewTarget() { mixin(MGF!("mGetBestViewTarget", "Function TribesGame.TrRabbitBase.GetBestViewTarget")()); }
-			ScriptFunction GetLocationMessageIndex() { mixin(MGF!("mGetLocationMessageIndex", "Function TribesGame.TrRabbitBase.GetLocationMessageIndex")()); }
-			ScriptFunction GetLocationSpeechFor() { mixin(MGF!("mGetLocationSpeechFor", "Function TribesGame.TrRabbitBase.GetLocationSpeechFor")()); }
-			ScriptFunction ObjectiveChanged() { mixin(MGF!("mObjectiveChanged", "Function TribesGame.TrRabbitBase.ObjectiveChanged")()); }
-			ScriptFunction GetFlag() { mixin(MGF!("mGetFlag", "Function TribesGame.TrRabbitBase.GetFlag")()); }
-			ScriptFunction IsActive() { mixin(MGF!("mIsActive", "Function TribesGame.TrRabbitBase.IsActive")()); }
-			ScriptFunction OnFlagComesHome() { mixin(MGF!("mOnFlagComesHome", "Function TribesGame.TrRabbitBase.OnFlagComesHome")()); }
-			ScriptFunction OnFlagTaken() { mixin(MGF!("mOnFlagTaken", "Function TribesGame.TrRabbitBase.OnFlagTaken")()); }
-			ScriptFunction SpawnHelpTextCollisionProxy() { mixin(MGF!("mSpawnHelpTextCollisionProxy", "Function TribesGame.TrRabbitBase.SpawnHelpTextCollisionProxy")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrRabbitBase.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrRabbitBase.PostInitAnimTree")); }
+			ScriptFunction GetBestViewTarget() { mixin(MGF("mGetBestViewTarget", "Function TribesGame.TrRabbitBase.GetBestViewTarget")); }
+			ScriptFunction GetLocationMessageIndex() { mixin(MGF("mGetLocationMessageIndex", "Function TribesGame.TrRabbitBase.GetLocationMessageIndex")); }
+			ScriptFunction GetLocationSpeechFor() { mixin(MGF("mGetLocationSpeechFor", "Function TribesGame.TrRabbitBase.GetLocationSpeechFor")); }
+			ScriptFunction ObjectiveChanged() { mixin(MGF("mObjectiveChanged", "Function TribesGame.TrRabbitBase.ObjectiveChanged")); }
+			ScriptFunction GetFlag() { mixin(MGF("mGetFlag", "Function TribesGame.TrRabbitBase.GetFlag")); }
+			ScriptFunction IsActive() { mixin(MGF("mIsActive", "Function TribesGame.TrRabbitBase.IsActive")); }
+			ScriptFunction OnFlagComesHome() { mixin(MGF("mOnFlagComesHome", "Function TribesGame.TrRabbitBase.OnFlagComesHome")); }
+			ScriptFunction OnFlagTaken() { mixin(MGF("mOnFlagTaken", "Function TribesGame.TrRabbitBase.OnFlagTaken")); }
+			ScriptFunction SpawnHelpTextCollisionProxy() { mixin(MGF("mSpawnHelpTextCollisionProxy", "Function TribesGame.TrRabbitBase.SpawnHelpTextCollisionProxy")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundNodeWave) NearLocationSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1072)()); }
-		ScriptArray!(SoundNodeWave) MidfieldHighSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1084)()); }
-		ScriptArray!(SoundNodeWave) MidfieldLowSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1096)()); }
-		TrAnimNodeBlendList m_OpenCloseBlendList() { mixin(MGPC!("TrAnimNodeBlendList", 1112)()); }
+		ScriptArray!(SoundNodeWave) NearLocationSpeech() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 1072)); }
+		ScriptArray!(SoundNodeWave) MidfieldHighSpeech() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 1084)); }
+		ScriptArray!(SoundNodeWave) MidfieldLowSpeech() { mixin(MGPC("ScriptArray!(SoundNodeWave)", 1096)); }
+		TrAnimNodeBlendList m_OpenCloseBlendList() { mixin(MGPC("TrAnimNodeBlendList", 1112)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FlagStandMesh'!
-		ScriptClass CTFAnnouncerMessagesClass() { mixin(MGPC!("ScriptClass", 1068)()); }
+		ScriptClass CTFAnnouncerMessagesClass() { mixin(MGPC("ScriptClass", 1068)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagBaseMesh'!
-		MaterialInstanceConstant MIC_FlagBaseColor() { mixin(MGPC!("MaterialInstanceConstant", 1060)()); }
-		MaterialInstanceConstant FlagBaseMaterial() { mixin(MGPC!("MaterialInstanceConstant", 1056)()); }
+		MaterialInstanceConstant MIC_FlagBaseColor() { mixin(MGPC("MaterialInstanceConstant", 1060)); }
+		MaterialInstanceConstant FlagBaseMaterial() { mixin(MGPC("MaterialInstanceConstant", 1056)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagEmptyParticles'!
-		float BaseExitTime() { mixin(MGPC!("float", 1048)()); }
-		float NearBaseRadius() { mixin(MGPC!("float", 1044)()); }
-		float MidFieldLowZOffset() { mixin(MGPC!("float", 1040)()); }
-		float MidFieldHighZOffset() { mixin(MGPC!("float", 1036)()); }
-		TrFlagRabbit myFlag() { mixin(MGPC!("TrFlagRabbit", 1032)()); }
+		float BaseExitTime() { mixin(MGPC("float", 1048)); }
+		float NearBaseRadius() { mixin(MGPC("float", 1044)); }
+		float MidFieldLowZOffset() { mixin(MGPC("float", 1040)); }
+		float MidFieldHighZOffset() { mixin(MGPC("float", 1036)); }
+		TrFlagRabbit myFlag() { mixin(MGPC("TrFlagRabbit", 1032)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'TakenSound'!
 	}
 final:

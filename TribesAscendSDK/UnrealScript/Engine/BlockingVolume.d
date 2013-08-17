@@ -9,18 +9,18 @@ extern(C++) interface BlockingVolume : Volume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.BlockingVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.BlockingVolume")); }
 	private static __gshared BlockingVolume mDefaultProperties;
-	@property final static BlockingVolume DefaultProperties() { mixin(MGDPC!(BlockingVolume, "BlockingVolume Engine.Default__BlockingVolume")()); }
+	@property final static BlockingVolume DefaultProperties() { mixin(MGDPC("BlockingVolume", "BlockingVolume Engine.Default__BlockingVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;
-		public @property static final ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.BlockingVolume.OnToggle")()); }
+		public @property static final ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.BlockingVolume.OnToggle")); }
 	}
 	@property final
 	{
-		bool bBlockCamera() { mixin(MGBPC!(520, 0x1)()); }
-		bool bBlockCamera(bool val) { mixin(MSBPC!(520, 0x1)()); }
+		bool bBlockCamera() { mixin(MGBPC(520, 0x1)); }
+		bool bBlockCamera(bool val) { mixin(MSBPC(520, 0x1)); }
 	}
 	final void OnToggle(SeqAct_Toggle Action)
 	{

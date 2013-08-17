@@ -8,7 +8,7 @@ extern(C++) interface TrDmgType_MIRVGrenade : TrDmgType_Explosive
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDmgType_MIRVGrenade")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDmgType_MIRVGrenade")); }
 	private static __gshared TrDmgType_MIRVGrenade mDefaultProperties;
-	@property final static TrDmgType_MIRVGrenade DefaultProperties() { mixin(MGDPC!(TrDmgType_MIRVGrenade, "TrDmgType_MIRVGrenade TribesGame.Default__TrDmgType_MIRVGrenade")()); }
+	@property final static TrDmgType_MIRVGrenade DefaultProperties() { mixin(MGDPC("TrDmgType_MIRVGrenade", "TrDmgType_MIRVGrenade TribesGame.Default__TrDmgType_MIRVGrenade")); }
 }

@@ -11,9 +11,9 @@ extern(C++) interface DemoRecSpectator : UTPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.DemoRecSpectator")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.DemoRecSpectator")); }
 	private static __gshared DemoRecSpectator mDefaultProperties;
-	@property final static DemoRecSpectator DefaultProperties() { mixin(MGDPC!(DemoRecSpectator, "DemoRecSpectator UTGame.Default__DemoRecSpectator")()); }
+	@property final static DemoRecSpectator DefaultProperties() { mixin(MGDPC("DemoRecSpectator", "DemoRecSpectator UTGame.Default__DemoRecSpectator")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,39 +34,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.DemoRecSpectator.PostBeginPlay")()); }
-			ScriptFunction ReceivedPlayer() { mixin(MGF!("mReceivedPlayer", "Function UTGame.DemoRecSpectator.ReceivedPlayer")()); }
-			ScriptFunction InitPlayerReplicationInfo() { mixin(MGF!("mInitPlayerReplicationInfo", "Function UTGame.DemoRecSpectator.InitPlayerReplicationInfo")()); }
-			ScriptFunction Slomo() { mixin(MGF!("mSlomo", "Function UTGame.DemoRecSpectator.Slomo")()); }
-			ScriptFunction ViewClass() { mixin(MGF!("mViewClass", "Function UTGame.DemoRecSpectator.ViewClass")()); }
-			ScriptFunction DemoViewNextPlayer() { mixin(MGF!("mDemoViewNextPlayer", "Function UTGame.DemoRecSpectator.DemoViewNextPlayer")()); }
-			ScriptFunction SetViewTarget() { mixin(MGF!("mSetViewTarget", "Function UTGame.DemoRecSpectator.SetViewTarget")()); }
-			ScriptFunction ServerViewSelf() { mixin(MGF!("mServerViewSelf", "Function UTGame.DemoRecSpectator.ServerViewSelf")()); }
-			ScriptFunction ClientSetRealViewTarget() { mixin(MGF!("mClientSetRealViewTarget", "Function UTGame.DemoRecSpectator.ClientSetRealViewTarget")()); }
-			ScriptFunction SetPause() { mixin(MGF!("mSetPause", "Function UTGame.DemoRecSpectator.SetPause")()); }
-			ScriptFunction Pause() { mixin(MGF!("mPause", "Function UTGame.DemoRecSpectator.Pause")()); }
-			ScriptFunction GetPlayerViewPoint() { mixin(MGF!("mGetPlayerViewPoint", "Function UTGame.DemoRecSpectator.GetPlayerViewPoint")()); }
-			ScriptFunction UpdateRotation() { mixin(MGF!("mUpdateRotation", "Function UTGame.DemoRecSpectator.UpdateRotation")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.DemoRecSpectator.PostBeginPlay")); }
+			ScriptFunction ReceivedPlayer() { mixin(MGF("mReceivedPlayer", "Function UTGame.DemoRecSpectator.ReceivedPlayer")); }
+			ScriptFunction InitPlayerReplicationInfo() { mixin(MGF("mInitPlayerReplicationInfo", "Function UTGame.DemoRecSpectator.InitPlayerReplicationInfo")); }
+			ScriptFunction Slomo() { mixin(MGF("mSlomo", "Function UTGame.DemoRecSpectator.Slomo")); }
+			ScriptFunction ViewClass() { mixin(MGF("mViewClass", "Function UTGame.DemoRecSpectator.ViewClass")); }
+			ScriptFunction DemoViewNextPlayer() { mixin(MGF("mDemoViewNextPlayer", "Function UTGame.DemoRecSpectator.DemoViewNextPlayer")); }
+			ScriptFunction SetViewTarget() { mixin(MGF("mSetViewTarget", "Function UTGame.DemoRecSpectator.SetViewTarget")); }
+			ScriptFunction ServerViewSelf() { mixin(MGF("mServerViewSelf", "Function UTGame.DemoRecSpectator.ServerViewSelf")); }
+			ScriptFunction ClientSetRealViewTarget() { mixin(MGF("mClientSetRealViewTarget", "Function UTGame.DemoRecSpectator.ClientSetRealViewTarget")); }
+			ScriptFunction SetPause() { mixin(MGF("mSetPause", "Function UTGame.DemoRecSpectator.SetPause")); }
+			ScriptFunction Pause() { mixin(MGF("mPause", "Function UTGame.DemoRecSpectator.Pause")); }
+			ScriptFunction GetPlayerViewPoint() { mixin(MGF("mGetPlayerViewPoint", "Function UTGame.DemoRecSpectator.GetPlayerViewPoint")); }
+			ScriptFunction UpdateRotation() { mixin(MGF("mUpdateRotation", "Function UTGame.DemoRecSpectator.UpdateRotation")); }
 		}
 	}
 	static struct Spectating
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.DemoRecSpectator.Spectating")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State UTGame.DemoRecSpectator.Spectating")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float AutoSwitchPlayerInterval() { mixin(MGPC!("float", 2184)()); }
-			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC!("PlayerReplicationInfo", 2180)()); }
+			float AutoSwitchPlayerInterval() { mixin(MGPC("float", 2184)); }
+			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC("PlayerReplicationInfo", 2180)); }
 		}
-		bool bAutoSwitchPlayers() { mixin(MGBPC!(2176, 0x4)()); }
-		bool bAutoSwitchPlayers(bool val) { mixin(MSBPC!(2176, 0x4)()); }
-		bool bLockRotationToViewTarget() { mixin(MGBPC!(2176, 0x2)()); }
-		bool bLockRotationToViewTarget(bool val) { mixin(MSBPC!(2176, 0x2)()); }
-		bool bFindPlayer() { mixin(MGBPC!(2176, 0x1)()); }
-		bool bFindPlayer(bool val) { mixin(MSBPC!(2176, 0x1)()); }
+		bool bAutoSwitchPlayers() { mixin(MGBPC(2176, 0x4)); }
+		bool bAutoSwitchPlayers(bool val) { mixin(MSBPC(2176, 0x4)); }
+		bool bLockRotationToViewTarget() { mixin(MGBPC(2176, 0x2)); }
+		bool bLockRotationToViewTarget(bool val) { mixin(MSBPC(2176, 0x2)); }
+		bool bFindPlayer() { mixin(MGBPC(2176, 0x1)); }
+		bool bFindPlayer(bool val) { mixin(MSBPC(2176, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

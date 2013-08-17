@@ -8,13 +8,13 @@ extern(C++) interface UTVehicleCTFGame : UTCTFGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTVehicleCTFGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTVehicleCTFGame")); }
 	private static __gshared UTVehicleCTFGame mDefaultProperties;
-	@property final static UTVehicleCTFGame DefaultProperties() { mixin(MGDPC!(UTVehicleCTFGame, "UTVehicleCTFGame UTGame.Default__UTVehicleCTFGame")()); }
+	@property final static UTVehicleCTFGame DefaultProperties() { mixin(MGDPC("UTVehicleCTFGame", "UTVehicleCTFGame UTGame.Default__UTVehicleCTFGame")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mAllowMutator;
-		public @property static final ScriptFunction AllowMutator() { mixin(MGF!("mAllowMutator", "Function UTGame.UTVehicleCTFGame.AllowMutator")()); }
+		public @property static final ScriptFunction AllowMutator() { mixin(MGF("mAllowMutator", "Function UTGame.UTVehicleCTFGame.AllowMutator")); }
 	}
 	final static bool AllowMutator(ScriptString MutatorClassName)
 	{

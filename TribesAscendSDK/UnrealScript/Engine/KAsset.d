@@ -14,9 +14,9 @@ extern(C++) interface KAsset : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KAsset")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.KAsset")); }
 	private static __gshared KAsset mDefaultProperties;
-	@property final static KAsset DefaultProperties() { mixin(MGDPC!(KAsset, "KAsset Engine.Default__KAsset")()); }
+	@property final static KAsset DefaultProperties() { mixin(MGDPC("KAsset", "KAsset Engine.Default__KAsset")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,30 +32,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.KAsset.PostBeginPlay")()); }
-			ScriptFunction SetMeshAndPhysAsset() { mixin(MGF!("mSetMeshAndPhysAsset", "Function Engine.KAsset.SetMeshAndPhysAsset")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.KAsset.ReplicatedEvent")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function Engine.KAsset.TakeDamage")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.KAsset.TakeRadiusDamage")()); }
-			ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.KAsset.OnToggle")()); }
-			ScriptFunction OnTeleport() { mixin(MGF!("mOnTeleport", "Function Engine.KAsset.OnTeleport")()); }
-			ScriptFunction DoKismetAttachment() { mixin(MGF!("mDoKismetAttachment", "Function Engine.KAsset.DoKismetAttachment")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.KAsset.PostBeginPlay")); }
+			ScriptFunction SetMeshAndPhysAsset() { mixin(MGF("mSetMeshAndPhysAsset", "Function Engine.KAsset.SetMeshAndPhysAsset")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.KAsset.ReplicatedEvent")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function Engine.KAsset.TakeDamage")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function Engine.KAsset.TakeRadiusDamage")); }
+			ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.KAsset.OnToggle")); }
+			ScriptFunction OnTeleport() { mixin(MGF("mOnTeleport", "Function Engine.KAsset.OnTeleport")); }
+			ScriptFunction DoKismetAttachment() { mixin(MGF("mDoKismetAttachment", "Function Engine.KAsset.DoKismetAttachment")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PhysicsAsset ReplicatedPhysAsset() { mixin(MGPC!("PhysicsAsset", 488)()); }
-			SkeletalMesh ReplicatedMesh() { mixin(MGPC!("SkeletalMesh", 484)()); }
+			PhysicsAsset ReplicatedPhysAsset() { mixin(MGPC("PhysicsAsset", 488)); }
+			SkeletalMesh ReplicatedMesh() { mixin(MGPC("SkeletalMesh", 484)); }
 			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
 		}
-		bool bBlockPawns() { mixin(MGBPC!(480, 0x4)()); }
-		bool bBlockPawns(bool val) { mixin(MSBPC!(480, 0x4)()); }
-		bool bWakeOnLevelStart() { mixin(MGBPC!(480, 0x2)()); }
-		bool bWakeOnLevelStart(bool val) { mixin(MSBPC!(480, 0x2)()); }
-		bool bDamageAppliesImpulse() { mixin(MGBPC!(480, 0x1)()); }
-		bool bDamageAppliesImpulse(bool val) { mixin(MSBPC!(480, 0x1)()); }
+		bool bBlockPawns() { mixin(MGBPC(480, 0x4)); }
+		bool bBlockPawns(bool val) { mixin(MSBPC(480, 0x4)); }
+		bool bWakeOnLevelStart() { mixin(MGBPC(480, 0x2)); }
+		bool bWakeOnLevelStart(bool val) { mixin(MSBPC(480, 0x2)); }
+		bool bDamageAppliesImpulse() { mixin(MGBPC(480, 0x1)); }
+		bool bDamageAppliesImpulse(bool val) { mixin(MSBPC(480, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

@@ -9,9 +9,9 @@ extern(C++) interface OnlineNewsInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineNewsInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineNewsInterface")); }
 	private static __gshared OnlineNewsInterface mDefaultProperties;
-	@property final static OnlineNewsInterface DefaultProperties() { mixin(MGDPC!(OnlineNewsInterface, "OnlineNewsInterface Engine.Default__OnlineNewsInterface")()); }
+	@property final static OnlineNewsInterface DefaultProperties() { mixin(MGDPC("OnlineNewsInterface", "OnlineNewsInterface Engine.Default__OnlineNewsInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,11 +24,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ReadNews() { mixin(MGF!("mReadNews", "Function Engine.OnlineNewsInterface.ReadNews")()); }
-			ScriptFunction OnReadNewsCompleted() { mixin(MGF!("mOnReadNewsCompleted", "Function Engine.OnlineNewsInterface.OnReadNewsCompleted")()); }
-			ScriptFunction AddReadNewsCompletedDelegate() { mixin(MGF!("mAddReadNewsCompletedDelegate", "Function Engine.OnlineNewsInterface.AddReadNewsCompletedDelegate")()); }
-			ScriptFunction ClearReadNewsCompletedDelegate() { mixin(MGF!("mClearReadNewsCompletedDelegate", "Function Engine.OnlineNewsInterface.ClearReadNewsCompletedDelegate")()); }
-			ScriptFunction GetNews() { mixin(MGF!("mGetNews", "Function Engine.OnlineNewsInterface.GetNews")()); }
+			ScriptFunction ReadNews() { mixin(MGF("mReadNews", "Function Engine.OnlineNewsInterface.ReadNews")); }
+			ScriptFunction OnReadNewsCompleted() { mixin(MGF("mOnReadNewsCompleted", "Function Engine.OnlineNewsInterface.OnReadNewsCompleted")); }
+			ScriptFunction AddReadNewsCompletedDelegate() { mixin(MGF("mAddReadNewsCompletedDelegate", "Function Engine.OnlineNewsInterface.AddReadNewsCompletedDelegate")); }
+			ScriptFunction ClearReadNewsCompletedDelegate() { mixin(MGF("mClearReadNewsCompletedDelegate", "Function Engine.OnlineNewsInterface.ClearReadNewsCompletedDelegate")); }
+			ScriptFunction GetNews() { mixin(MGF("mGetNews", "Function Engine.OnlineNewsInterface.GetNews")); }
 		}
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadNewsCompleted__Delegate'!

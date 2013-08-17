@@ -8,9 +8,9 @@ extern(C++) interface UDKAnimBlendByWeapon : AnimNodeBlendPerBone
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendByWeapon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKAnimBlendByWeapon")); }
 	private static __gshared UDKAnimBlendByWeapon mDefaultProperties;
-	@property final static UDKAnimBlendByWeapon DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByWeapon, "UDKAnimBlendByWeapon UDKBase.Default__UDKAnimBlendByWeapon")()); }
+	@property final static UDKAnimBlendByWeapon DefaultProperties() { mixin(MGDPC("UDKAnimBlendByWeapon", "UDKAnimBlendByWeapon UDKBase.Default__UDKAnimBlendByWeapon")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -20,19 +20,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnimFire() { mixin(MGF!("mAnimFire", "Function UDKBase.UDKAnimBlendByWeapon.AnimFire")()); }
-			ScriptFunction AnimStopFire() { mixin(MGF!("mAnimStopFire", "Function UDKBase.UDKAnimBlendByWeapon.AnimStopFire")()); }
+			ScriptFunction AnimFire() { mixin(MGF("mAnimFire", "Function UDKBase.UDKAnimBlendByWeapon.AnimFire")); }
+			ScriptFunction AnimStopFire() { mixin(MGF("mAnimStopFire", "Function UDKBase.UDKAnimBlendByWeapon.AnimStopFire")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float BlendTime() { mixin(MGPC!("float", 312)()); }
-			ScriptName LoopingAnim() { mixin(MGPC!("ScriptName", 304)()); }
+			float BlendTime() { mixin(MGPC("float", 312)); }
+			ScriptName LoopingAnim() { mixin(MGPC("ScriptName", 304)); }
 		}
-		bool bLooping() { mixin(MGBPC!(300, 0x1)()); }
-		bool bLooping(bool val) { mixin(MSBPC!(300, 0x1)()); }
+		bool bLooping() { mixin(MGBPC(300, 0x1)); }
+		bool bLooping(bool val) { mixin(MSBPC(300, 0x1)); }
 	}
 final:
 	void AnimFire(ScriptName FireSequence, bool bAutoFire, float* AnimRate = null, float* SpecialBlendTime = null, ScriptName* LoopSequence = null)

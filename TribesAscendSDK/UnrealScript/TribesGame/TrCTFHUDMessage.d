@@ -12,9 +12,9 @@ extern(C++) interface TrCTFHUDMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCTFHUDMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCTFHUDMessage")); }
 	private static __gshared TrCTFHUDMessage mDefaultProperties;
-	@property final static TrCTFHUDMessage DefaultProperties() { mixin(MGDPC!(TrCTFHUDMessage, "TrCTFHUDMessage TribesGame.Default__TrCTFHUDMessage")()); }
+	@property final static TrCTFHUDMessage DefaultProperties() { mixin(MGDPC("TrCTFHUDMessage", "TrCTFHUDMessage TribesGame.Default__TrCTFHUDMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,10 +26,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrCTFHUDMessage.ClientReceive")()); }
-			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function TribesGame.TrCTFHUDMessage.GetColor")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrCTFHUDMessage.GetString")()); }
-			ScriptFunction AddAnnouncement() { mixin(MGF!("mAddAnnouncement", "Function TribesGame.TrCTFHUDMessage.AddAnnouncement")()); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrCTFHUDMessage.ClientReceive")); }
+			ScriptFunction GetColor() { mixin(MGF("mGetColor", "Function TribesGame.TrCTFHUDMessage.GetColor")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrCTFHUDMessage.GetString")); }
+			ScriptFunction AddAnnouncement() { mixin(MGF("mAddAnnouncement", "Function TribesGame.TrCTFHUDMessage.AddAnnouncement")); }
 		}
 	}
 	enum CTF_HUD_MESSAGE : ubyte
@@ -41,12 +41,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.Color YellowColor() { mixin(MGPC!("UObject.Color", 152)()); }
-		UObject.Color RedColor() { mixin(MGPC!("UObject.Color", 148)()); }
-		ScriptString YouHaveFlagReminderString() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString BothFlagsString() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString EnemyHasFlagString() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString YouHaveFlagString() { mixin(MGPC!("ScriptString", 100)()); }
+		UObject.Color YellowColor() { mixin(MGPC("UObject.Color", 152)); }
+		UObject.Color RedColor() { mixin(MGPC("UObject.Color", 148)); }
+		ScriptString YouHaveFlagReminderString() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString BothFlagsString() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString EnemyHasFlagString() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString YouHaveFlagString() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

@@ -10,9 +10,9 @@ extern(C++) interface GameCrowdForcePoint : GameCrowdInteractionPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdForcePoint")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdForcePoint")); }
 	private static __gshared GameCrowdForcePoint mDefaultProperties;
-	@property final static GameCrowdForcePoint DefaultProperties() { mixin(MGDPC!(GameCrowdForcePoint, "GameCrowdForcePoint GameFramework.Default__GameCrowdForcePoint")()); }
+	@property final static GameCrowdForcePoint DefaultProperties() { mixin(MGDPC("GameCrowdForcePoint", "GameCrowdForcePoint GameFramework.Default__GameCrowdForcePoint")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,9 +23,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function GameFramework.GameCrowdForcePoint.Touch")()); }
-			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function GameFramework.GameCrowdForcePoint.UnTouch")()); }
-			ScriptFunction AppliedForce() { mixin(MGF!("mAppliedForce", "Function GameFramework.GameCrowdForcePoint.AppliedForce")()); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function GameFramework.GameCrowdForcePoint.Touch")); }
+			ScriptFunction UnTouch() { mixin(MGF("mUnTouch", "Function GameFramework.GameCrowdForcePoint.UnTouch")); }
+			ScriptFunction AppliedForce() { mixin(MGF("mAppliedForce", "Function GameFramework.GameCrowdForcePoint.AppliedForce")); }
 		}
 	}
 final:

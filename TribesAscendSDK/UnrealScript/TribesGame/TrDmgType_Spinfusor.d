@@ -8,7 +8,7 @@ extern(C++) interface TrDmgType_Spinfusor : TrDmgType_Base
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDmgType_Spinfusor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDmgType_Spinfusor")); }
 	private static __gshared TrDmgType_Spinfusor mDefaultProperties;
-	@property final static TrDmgType_Spinfusor DefaultProperties() { mixin(MGDPC!(TrDmgType_Spinfusor, "TrDmgType_Spinfusor TribesGame.Default__TrDmgType_Spinfusor")()); }
+	@property final static TrDmgType_Spinfusor DefaultProperties() { mixin(MGDPC("TrDmgType_Spinfusor", "TrDmgType_Spinfusor TribesGame.Default__TrDmgType_Spinfusor")); }
 }

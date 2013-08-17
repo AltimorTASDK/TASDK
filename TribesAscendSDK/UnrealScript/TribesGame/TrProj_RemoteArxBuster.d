@@ -10,9 +10,9 @@ extern(C++) interface TrProj_RemoteArxBuster : TrProj_StickyGrenade
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_RemoteArxBuster")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_RemoteArxBuster")); }
 	private static __gshared TrProj_RemoteArxBuster mDefaultProperties;
-	@property final static TrProj_RemoteArxBuster DefaultProperties() { mixin(MGDPC!(TrProj_RemoteArxBuster, "TrProj_RemoteArxBuster TribesGame.Default__TrProj_RemoteArxBuster")()); }
+	@property final static TrProj_RemoteArxBuster DefaultProperties() { mixin(MGDPC("TrProj_RemoteArxBuster", "TrProj_RemoteArxBuster TribesGame.Default__TrProj_RemoteArxBuster")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function TribesGame.TrProj_RemoteArxBuster.PreBeginPlay")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function TribesGame.TrProj_RemoteArxBuster.TakeRadiusDamage")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrProj_RemoteArxBuster.TakeDamage")()); }
-			ScriptFunction ReportDestroyedByOtherToParentDevice() { mixin(MGF!("mReportDestroyedByOtherToParentDevice", "Function TribesGame.TrProj_RemoteArxBuster.ReportDestroyedByOtherToParentDevice")()); }
-			ScriptFunction StickToTarget() { mixin(MGF!("mStickToTarget", "Function TribesGame.TrProj_RemoteArxBuster.StickToTarget")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrProj_RemoteArxBuster.Destroyed")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function TribesGame.TrProj_RemoteArxBuster.PreBeginPlay")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function TribesGame.TrProj_RemoteArxBuster.TakeRadiusDamage")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrProj_RemoteArxBuster.TakeDamage")); }
+			ScriptFunction ReportDestroyedByOtherToParentDevice() { mixin(MGF("mReportDestroyedByOtherToParentDevice", "Function TribesGame.TrProj_RemoteArxBuster.ReportDestroyedByOtherToParentDevice")); }
+			ScriptFunction StickToTarget() { mixin(MGF("mStickToTarget", "Function TribesGame.TrProj_RemoteArxBuster.StickToTarget")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrProj_RemoteArxBuster.Destroyed")); }
 		}
 	}
 	@property final
 	{
-		bool m_bIsDetonating() { mixin(MGBPC!(892, 0x1)()); }
-		bool m_bIsDetonating(bool val) { mixin(MSBPC!(892, 0x1)()); }
+		bool m_bIsDetonating() { mixin(MGBPC(892, 0x1)); }
+		bool m_bIsDetonating(bool val) { mixin(MSBPC(892, 0x1)); }
 	}
 final:
 	void PreBeginPlay()

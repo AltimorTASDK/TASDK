@@ -9,13 +9,13 @@ extern(C++) interface DebugCameraInput : PlayerInput
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DebugCameraInput")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DebugCameraInput")); }
 	private static __gshared DebugCameraInput mDefaultProperties;
-	@property final static DebugCameraInput DefaultProperties() { mixin(MGDPC!(DebugCameraInput, "DebugCameraInput Engine.Default__DebugCameraInput")()); }
+	@property final static DebugCameraInput DefaultProperties() { mixin(MGDPC("DebugCameraInput", "DebugCameraInput Engine.Default__DebugCameraInput")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInputKey;
-		public @property static final ScriptFunction InputKey() { mixin(MGF!("mInputKey", "Function Engine.DebugCameraInput.InputKey")()); }
+		public @property static final ScriptFunction InputKey() { mixin(MGF("mInputKey", "Function Engine.DebugCameraInput.InputKey")); }
 	}
 	final bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float* AmountDepressed = null, bool* bGamepad = null)
 	{

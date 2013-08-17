@@ -9,9 +9,9 @@ extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineProfileSettings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineProfileSettings")); }
 	private static __gshared OnlineProfileSettings mDefaultProperties;
-	@property final static OnlineProfileSettings DefaultProperties() { mixin(MGDPC!(OnlineProfileSettings, "OnlineProfileSettings Engine.Default__OnlineProfileSettings")()); }
+	@property final static OnlineProfileSettings DefaultProperties() { mixin(MGDPC("OnlineProfileSettings", "OnlineProfileSettings Engine.Default__OnlineProfileSettings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,12 +25,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetProfileSettingDefaultId() { mixin(MGF!("mGetProfileSettingDefaultId", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultId")()); }
-			ScriptFunction GetProfileSettingDefaultInt() { mixin(MGF!("mGetProfileSettingDefaultInt", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultInt")()); }
-			ScriptFunction GetProfileSettingDefaultFloat() { mixin(MGF!("mGetProfileSettingDefaultFloat", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultFloat")()); }
-			ScriptFunction SetToDefaults() { mixin(MGF!("mSetToDefaults", "Function Engine.OnlineProfileSettings.SetToDefaults")()); }
-			ScriptFunction AppendVersionToReadIds() { mixin(MGF!("mAppendVersionToReadIds", "Function Engine.OnlineProfileSettings.AppendVersionToReadIds")()); }
-			ScriptFunction ModifyAvailableProfileSettings() { mixin(MGF!("mModifyAvailableProfileSettings", "Function Engine.OnlineProfileSettings.ModifyAvailableProfileSettings")()); }
+			ScriptFunction GetProfileSettingDefaultId() { mixin(MGF("mGetProfileSettingDefaultId", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultId")); }
+			ScriptFunction GetProfileSettingDefaultInt() { mixin(MGF("mGetProfileSettingDefaultInt", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultInt")); }
+			ScriptFunction GetProfileSettingDefaultFloat() { mixin(MGF("mGetProfileSettingDefaultFloat", "Function Engine.OnlineProfileSettings.GetProfileSettingDefaultFloat")); }
+			ScriptFunction SetToDefaults() { mixin(MGF("mSetToDefaults", "Function Engine.OnlineProfileSettings.SetToDefaults")); }
+			ScriptFunction AppendVersionToReadIds() { mixin(MGF("mAppendVersionToReadIds", "Function Engine.OnlineProfileSettings.AppendVersionToReadIds")); }
+			ScriptFunction ModifyAvailableProfileSettings() { mixin(MGF("mModifyAvailableProfileSettings", "Function Engine.OnlineProfileSettings.ModifyAvailableProfileSettings")); }
 		}
 	}
 	enum EProfileSettingID : ubyte
@@ -173,9 +173,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) ProfileSettingIds() { mixin(MGPC!("ScriptArray!(int)", 100)()); }
-		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { mixin(MGPC!("ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)", 112)()); }
-		ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { mixin(MGPC!("ScriptArray!(Settings.IdToStringMapping)", 124)()); }
+		ScriptArray!(int) ProfileSettingIds() { mixin(MGPC("ScriptArray!(int)", 100)); }
+		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { mixin(MGPC("ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)", 112)); }
+		ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { mixin(MGPC("ScriptArray!(Settings.IdToStringMapping)", 124)); }
 	}
 final:
 	bool GetProfileSettingDefaultId(int ProfileSettingId, ref int DefaultId, ref int ListIndex)

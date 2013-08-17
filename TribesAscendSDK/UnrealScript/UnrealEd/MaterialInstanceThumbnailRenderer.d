@@ -8,7 +8,7 @@ extern(C++) interface MaterialInstanceThumbnailRenderer : DefaultSizedThumbnailR
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.MaterialInstanceThumbnailRenderer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.MaterialInstanceThumbnailRenderer")); }
 	private static __gshared MaterialInstanceThumbnailRenderer mDefaultProperties;
-	@property final static MaterialInstanceThumbnailRenderer DefaultProperties() { mixin(MGDPC!(MaterialInstanceThumbnailRenderer, "MaterialInstanceThumbnailRenderer UnrealEd.Default__MaterialInstanceThumbnailRenderer")()); }
+	@property final static MaterialInstanceThumbnailRenderer DefaultProperties() { mixin(MGDPC("MaterialInstanceThumbnailRenderer", "MaterialInstanceThumbnailRenderer UnrealEd.Default__MaterialInstanceThumbnailRenderer")); }
 }

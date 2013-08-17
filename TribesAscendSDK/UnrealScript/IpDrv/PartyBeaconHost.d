@@ -11,9 +11,9 @@ extern(C++) interface PartyBeaconHost : PartyBeacon
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.PartyBeaconHost")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.PartyBeaconHost")); }
 	private static __gshared PartyBeaconHost mDefaultProperties;
-	@property final static PartyBeaconHost DefaultProperties() { mixin(MGDPC!(PartyBeaconHost, "PartyBeaconHost IpDrv.Default__PartyBeaconHost")()); }
+	@property final static PartyBeaconHost DefaultProperties() { mixin(MGDPC("PartyBeaconHost", "PartyBeaconHost IpDrv.Default__PartyBeaconHost")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,27 +42,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnClientCancellationReceived() { mixin(MGF!("mOnClientCancellationReceived", "Function IpDrv.PartyBeaconHost.OnClientCancellationReceived")()); }
-			ScriptFunction OnReservationsFull() { mixin(MGF!("mOnReservationsFull", "Function IpDrv.PartyBeaconHost.OnReservationsFull")()); }
-			ScriptFunction OnReservationChange() { mixin(MGF!("mOnReservationChange", "Function IpDrv.PartyBeaconHost.OnReservationChange")()); }
-			ScriptFunction PauseReservationRequests() { mixin(MGF!("mPauseReservationRequests", "Function IpDrv.PartyBeaconHost.PauseReservationRequests")()); }
-			ScriptFunction InitHostBeacon() { mixin(MGF!("mInitHostBeacon", "Function IpDrv.PartyBeaconHost.InitHostBeacon")()); }
-			ScriptFunction AddPartyReservationEntry() { mixin(MGF!("mAddPartyReservationEntry", "Function IpDrv.PartyBeaconHost.AddPartyReservationEntry")()); }
-			ScriptFunction UpdatePartyReservationEntry() { mixin(MGF!("mUpdatePartyReservationEntry", "Function IpDrv.PartyBeaconHost.UpdatePartyReservationEntry")()); }
-			ScriptFunction GetExistingReservation() { mixin(MGF!("mGetExistingReservation", "Function IpDrv.PartyBeaconHost.GetExistingReservation")()); }
-			ScriptFunction HandlePlayerLogout() { mixin(MGF!("mHandlePlayerLogout", "Function IpDrv.PartyBeaconHost.HandlePlayerLogout")()); }
-			ScriptFunction DestroyBeacon() { mixin(MGF!("mDestroyBeacon", "Function IpDrv.PartyBeaconHost.DestroyBeacon")()); }
-			ScriptFunction TellClientsToTravel() { mixin(MGF!("mTellClientsToTravel", "Function IpDrv.PartyBeaconHost.TellClientsToTravel")()); }
-			ScriptFunction TellClientsHostIsReady() { mixin(MGF!("mTellClientsHostIsReady", "Function IpDrv.PartyBeaconHost.TellClientsHostIsReady")()); }
-			ScriptFunction TellClientsHostHasCancelled() { mixin(MGF!("mTellClientsHostHasCancelled", "Function IpDrv.PartyBeaconHost.TellClientsHostHasCancelled")()); }
-			ScriptFunction AreReservationsFull() { mixin(MGF!("mAreReservationsFull", "Function IpDrv.PartyBeaconHost.AreReservationsFull")()); }
-			ScriptFunction RegisterPartyMembers() { mixin(MGF!("mRegisterPartyMembers", "Function IpDrv.PartyBeaconHost.RegisterPartyMembers")()); }
-			ScriptFunction UnregisterPartyMembers() { mixin(MGF!("mUnregisterPartyMembers", "Function IpDrv.PartyBeaconHost.UnregisterPartyMembers")()); }
-			ScriptFunction UnregisterParty() { mixin(MGF!("mUnregisterParty", "Function IpDrv.PartyBeaconHost.UnregisterParty")()); }
-			ScriptFunction AppendReservationSkillsToSearch() { mixin(MGF!("mAppendReservationSkillsToSearch", "Function IpDrv.PartyBeaconHost.AppendReservationSkillsToSearch")()); }
-			ScriptFunction GetPlayers() { mixin(MGF!("mGetPlayers", "Function IpDrv.PartyBeaconHost.GetPlayers")()); }
-			ScriptFunction GetPartyLeaders() { mixin(MGF!("mGetPartyLeaders", "Function IpDrv.PartyBeaconHost.GetPartyLeaders")()); }
-			ScriptFunction GetMaxAvailableTeamSize() { mixin(MGF!("mGetMaxAvailableTeamSize", "Function IpDrv.PartyBeaconHost.GetMaxAvailableTeamSize")()); }
+			ScriptFunction OnClientCancellationReceived() { mixin(MGF("mOnClientCancellationReceived", "Function IpDrv.PartyBeaconHost.OnClientCancellationReceived")); }
+			ScriptFunction OnReservationsFull() { mixin(MGF("mOnReservationsFull", "Function IpDrv.PartyBeaconHost.OnReservationsFull")); }
+			ScriptFunction OnReservationChange() { mixin(MGF("mOnReservationChange", "Function IpDrv.PartyBeaconHost.OnReservationChange")); }
+			ScriptFunction PauseReservationRequests() { mixin(MGF("mPauseReservationRequests", "Function IpDrv.PartyBeaconHost.PauseReservationRequests")); }
+			ScriptFunction InitHostBeacon() { mixin(MGF("mInitHostBeacon", "Function IpDrv.PartyBeaconHost.InitHostBeacon")); }
+			ScriptFunction AddPartyReservationEntry() { mixin(MGF("mAddPartyReservationEntry", "Function IpDrv.PartyBeaconHost.AddPartyReservationEntry")); }
+			ScriptFunction UpdatePartyReservationEntry() { mixin(MGF("mUpdatePartyReservationEntry", "Function IpDrv.PartyBeaconHost.UpdatePartyReservationEntry")); }
+			ScriptFunction GetExistingReservation() { mixin(MGF("mGetExistingReservation", "Function IpDrv.PartyBeaconHost.GetExistingReservation")); }
+			ScriptFunction HandlePlayerLogout() { mixin(MGF("mHandlePlayerLogout", "Function IpDrv.PartyBeaconHost.HandlePlayerLogout")); }
+			ScriptFunction DestroyBeacon() { mixin(MGF("mDestroyBeacon", "Function IpDrv.PartyBeaconHost.DestroyBeacon")); }
+			ScriptFunction TellClientsToTravel() { mixin(MGF("mTellClientsToTravel", "Function IpDrv.PartyBeaconHost.TellClientsToTravel")); }
+			ScriptFunction TellClientsHostIsReady() { mixin(MGF("mTellClientsHostIsReady", "Function IpDrv.PartyBeaconHost.TellClientsHostIsReady")); }
+			ScriptFunction TellClientsHostHasCancelled() { mixin(MGF("mTellClientsHostHasCancelled", "Function IpDrv.PartyBeaconHost.TellClientsHostHasCancelled")); }
+			ScriptFunction AreReservationsFull() { mixin(MGF("mAreReservationsFull", "Function IpDrv.PartyBeaconHost.AreReservationsFull")); }
+			ScriptFunction RegisterPartyMembers() { mixin(MGF("mRegisterPartyMembers", "Function IpDrv.PartyBeaconHost.RegisterPartyMembers")); }
+			ScriptFunction UnregisterPartyMembers() { mixin(MGF("mUnregisterPartyMembers", "Function IpDrv.PartyBeaconHost.UnregisterPartyMembers")); }
+			ScriptFunction UnregisterParty() { mixin(MGF("mUnregisterParty", "Function IpDrv.PartyBeaconHost.UnregisterParty")); }
+			ScriptFunction AppendReservationSkillsToSearch() { mixin(MGF("mAppendReservationSkillsToSearch", "Function IpDrv.PartyBeaconHost.AppendReservationSkillsToSearch")); }
+			ScriptFunction GetPlayers() { mixin(MGF("mGetPlayers", "Function IpDrv.PartyBeaconHost.GetPlayers")); }
+			ScriptFunction GetPartyLeaders() { mixin(MGF("mGetPartyLeaders", "Function IpDrv.PartyBeaconHost.GetPartyLeaders")); }
+			ScriptFunction GetMaxAvailableTeamSize() { mixin(MGF("mGetMaxAvailableTeamSize", "Function IpDrv.PartyBeaconHost.GetMaxAvailableTeamSize")); }
 		}
 	}
 	enum EPartyBeaconHostState : ubyte
@@ -76,35 +76,35 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeaconHost.ClientBeaconConnection")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.PartyBeaconHost.ClientBeaconConnection")); }
 		@property final auto ref
 		{
-			UObject.Pointer Socket() { mixin(MGPS!("UObject.Pointer", 12)()); }
-			float ElapsedHeartbeatTime() { mixin(MGPS!("float", 8)()); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
+			UObject.Pointer Socket() { mixin(MGPS("UObject.Pointer", 12)); }
+			float ElapsedHeartbeatTime() { mixin(MGPS("float", 8)); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PartyBeaconHost.ClientBeaconConnection) Clients() { mixin(MGPC!("ScriptArray!(PartyBeaconHost.ClientBeaconConnection)", 104)()); }
-			ScriptArray!(PartyBeacon.PartyReservation) Reservations() { mixin(MGPC!("ScriptArray!(PartyBeacon.PartyReservation)", 132)()); }
+			ScriptArray!(PartyBeaconHost.ClientBeaconConnection) Clients() { mixin(MGPC("ScriptArray!(PartyBeaconHost.ClientBeaconConnection)", 104)); }
+			ScriptArray!(PartyBeacon.PartyReservation) Reservations() { mixin(MGPC("ScriptArray!(PartyBeacon.PartyReservation)", 132)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnClientCancellationReceived__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationsFull__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationChange__Delegate'!
-			PartyBeaconHost.EPartyBeaconHostState BeaconState() { mixin(MGPC!("PartyBeaconHost.EPartyBeaconHostState", 168)()); }
-			int ReservedHostTeamNum() { mixin(MGPC!("int", 160)()); }
-			int ForceTeamNum() { mixin(MGPC!("int", 156)()); }
-			int ConnectionBacklog() { mixin(MGPC!("int", 152)()); }
-			ScriptName OnlineSessionName() { mixin(MGPC!("ScriptName", 144)()); }
-			int NumConsumedReservations() { mixin(MGPC!("int", 128)()); }
-			int NumReservations() { mixin(MGPC!("int", 124)()); }
-			int NumPlayersPerTeam() { mixin(MGPC!("int", 120)()); }
-			int NumTeams() { mixin(MGPC!("int", 116)()); }
+			PartyBeaconHost.EPartyBeaconHostState BeaconState() { mixin(MGPC("PartyBeaconHost.EPartyBeaconHostState", 168)); }
+			int ReservedHostTeamNum() { mixin(MGPC("int", 160)); }
+			int ForceTeamNum() { mixin(MGPC("int", 156)); }
+			int ConnectionBacklog() { mixin(MGPC("int", 152)); }
+			ScriptName OnlineSessionName() { mixin(MGPC("ScriptName", 144)); }
+			int NumConsumedReservations() { mixin(MGPC("int", 128)); }
+			int NumReservations() { mixin(MGPC("int", 124)); }
+			int NumPlayersPerTeam() { mixin(MGPC("int", 120)); }
+			int NumTeams() { mixin(MGPC("int", 116)); }
 		}
-		bool bBestFitTeamAssignment() { mixin(MGBPC!(164, 0x1)()); }
-		bool bBestFitTeamAssignment(bool val) { mixin(MSBPC!(164, 0x1)()); }
+		bool bBestFitTeamAssignment() { mixin(MGBPC(164, 0x1)); }
+		bool bBestFitTeamAssignment(bool val) { mixin(MSBPC(164, 0x1)); }
 	}
 final:
 	void OnClientCancellationReceived(OnlineSubsystem.UniqueNetId PartyLeader)

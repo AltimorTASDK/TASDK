@@ -10,9 +10,9 @@ extern(C++) interface TrVehicleWeapon_HavocPilot : TrVehicleWeapon_BurstShot
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicleWeapon_HavocPilot")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicleWeapon_HavocPilot")); }
 	private static __gshared TrVehicleWeapon_HavocPilot mDefaultProperties;
-	@property final static TrVehicleWeapon_HavocPilot DefaultProperties() { mixin(MGDPC!(TrVehicleWeapon_HavocPilot, "TrVehicleWeapon_HavocPilot TribesGame.Default__TrVehicleWeapon_HavocPilot")()); }
+	@property final static TrVehicleWeapon_HavocPilot DefaultProperties() { mixin(MGDPC("TrVehicleWeapon_HavocPilot", "TrVehicleWeapon_HavocPilot TribesGame.Default__TrVehicleWeapon_HavocPilot")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,16 +23,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrVehicleWeapon_HavocPilot.PostBeginPlay")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrVehicleWeapon_HavocPilot.Destroyed")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrVehicleWeapon_HavocPilot.Tick")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrVehicleWeapon_HavocPilot.PostBeginPlay")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrVehicleWeapon_HavocPilot.Destroyed")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrVehicleWeapon_HavocPilot.Tick")); }
 		}
 	}
 	@property final auto ref
 	{
-		TrEffect_MovableDecal m_BombMarkerDecal() { mixin(MGPC!("TrEffect_MovableDecal", 1804)()); }
-		MaterialInstanceConstant m_BombMarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 1800)()); }
-		MaterialInstanceConstant m_BombMarkerTemplate() { mixin(MGPC!("MaterialInstanceConstant", 1796)()); }
+		TrEffect_MovableDecal m_BombMarkerDecal() { mixin(MGPC("TrEffect_MovableDecal", 1804)); }
+		MaterialInstanceConstant m_BombMarkerMIC() { mixin(MGPC("MaterialInstanceConstant", 1800)); }
+		MaterialInstanceConstant m_BombMarkerTemplate() { mixin(MGPC("MaterialInstanceConstant", 1796)); }
 	}
 final:
 	void PostBeginPlay()

@@ -10,9 +10,9 @@ extern(C++) interface dsWebAdmin : WebApplication
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.dsWebAdmin")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.dsWebAdmin")); }
 	private static __gshared dsWebAdmin mDefaultProperties;
-	@property final static dsWebAdmin DefaultProperties() { mixin(MGDPC!(dsWebAdmin, "dsWebAdmin TribesGame.Default__dsWebAdmin")()); }
+	@property final static dsWebAdmin DefaultProperties() { mixin(MGDPC("dsWebAdmin", "dsWebAdmin TribesGame.Default__dsWebAdmin")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,8 +22,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.dsWebAdmin.Init")()); }
-			ScriptFunction Query() { mixin(MGF!("mQuery", "Function TribesGame.dsWebAdmin.Query")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.dsWebAdmin.Init")); }
+			ScriptFunction Query() { mixin(MGF("mQuery", "Function TribesGame.dsWebAdmin.Query")); }
 		}
 	}
 final:

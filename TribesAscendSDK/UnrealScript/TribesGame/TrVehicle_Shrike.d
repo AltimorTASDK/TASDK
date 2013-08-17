@@ -9,13 +9,13 @@ extern(C++) interface TrVehicle_Shrike : TrVehicle_BaseFlying
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicle_Shrike")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicle_Shrike")); }
 	private static __gshared TrVehicle_Shrike mDefaultProperties;
-	@property final static TrVehicle_Shrike DefaultProperties() { mixin(MGDPC!(TrVehicle_Shrike, "TrVehicle_Shrike TribesGame.Default__TrVehicle_Shrike")()); }
+	@property final static TrVehicle_Shrike DefaultProperties() { mixin(MGDPC("TrVehicle_Shrike", "TrVehicle_Shrike TribesGame.Default__TrVehicle_Shrike")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSitDriver;
-		public @property static final ScriptFunction SitDriver() { mixin(MGF!("mSitDriver", "Function TribesGame.TrVehicle_Shrike.SitDriver")()); }
+		public @property static final ScriptFunction SitDriver() { mixin(MGF("mSitDriver", "Function TribesGame.TrVehicle_Shrike.SitDriver")); }
 	}
 	final void SitDriver(UTPawn UTP, int SeatIndex)
 	{

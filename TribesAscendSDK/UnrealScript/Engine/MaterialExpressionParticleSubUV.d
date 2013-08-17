@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionParticleSubUV : MaterialExpressionTextur
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionParticleSubUV")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionParticleSubUV")); }
 	private static __gshared MaterialExpressionParticleSubUV mDefaultProperties;
-	@property final static MaterialExpressionParticleSubUV DefaultProperties() { mixin(MGDPC!(MaterialExpressionParticleSubUV, "MaterialExpressionParticleSubUV Engine.Default__MaterialExpressionParticleSubUV")()); }
+	@property final static MaterialExpressionParticleSubUV DefaultProperties() { mixin(MGDPC("MaterialExpressionParticleSubUV", "MaterialExpressionParticleSubUV Engine.Default__MaterialExpressionParticleSubUV")); }
 }

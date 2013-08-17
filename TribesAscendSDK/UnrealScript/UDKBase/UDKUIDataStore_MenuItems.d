@@ -10,9 +10,9 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKUIDataStore_MenuItems")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKUIDataStore_MenuItems")); }
 	private static __gshared UDKUIDataStore_MenuItems mDefaultProperties;
-	@property final static UDKUIDataStore_MenuItems DefaultProperties() { mixin(MGDPC!(UDKUIDataStore_MenuItems, "UDKUIDataStore_MenuItems UDKBase.Default__UDKUIDataStore_MenuItems")()); }
+	@property final static UDKUIDataStore_MenuItems DefaultProperties() { mixin(MGDPC("UDKUIDataStore_MenuItems", "UDKUIDataStore_MenuItems UDKBase.Default__UDKUIDataStore_MenuItems")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,25 +29,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetProviderCount() { mixin(MGF!("mGetProviderCount", "Function UDKBase.UDKUIDataStore_MenuItems.GetProviderCount")()); }
-			ScriptFunction IsProviderFiltered() { mixin(MGF!("mIsProviderFiltered", "Function UDKBase.UDKUIDataStore_MenuItems.IsProviderFiltered")()); }
-			ScriptFunction GetAllResourceDataProviders() { mixin(MGF!("mGetAllResourceDataProviders", "Function UDKBase.UDKUIDataStore_MenuItems.GetAllResourceDataProviders")()); }
-			ScriptFunction FindValueInProviderSet() { mixin(MGF!("mFindValueInProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.FindValueInProviderSet")()); }
-			ScriptFunction GetValueFromProviderSet() { mixin(MGF!("mGetValueFromProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.GetValueFromProviderSet")()); }
-			ScriptFunction GetProviderSet() { mixin(MGF!("mGetProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.GetProviderSet")()); }
-			ScriptFunction InitializeListElementProviders() { mixin(MGF!("mInitializeListElementProviders", "Function UDKBase.UDKUIDataStore_MenuItems.InitializeListElementProviders")()); }
-			ScriptFunction RemoveListElementProvidersKey() { mixin(MGF!("mRemoveListElementProvidersKey", "Function UDKBase.UDKUIDataStore_MenuItems.RemoveListElementProvidersKey")()); }
-			ScriptFunction AddListElementProvidersKey() { mixin(MGF!("mAddListElementProvidersKey", "Function UDKBase.UDKUIDataStore_MenuItems.AddListElementProvidersKey")()); }
+			ScriptFunction GetProviderCount() { mixin(MGF("mGetProviderCount", "Function UDKBase.UDKUIDataStore_MenuItems.GetProviderCount")); }
+			ScriptFunction IsProviderFiltered() { mixin(MGF("mIsProviderFiltered", "Function UDKBase.UDKUIDataStore_MenuItems.IsProviderFiltered")); }
+			ScriptFunction GetAllResourceDataProviders() { mixin(MGF("mGetAllResourceDataProviders", "Function UDKBase.UDKUIDataStore_MenuItems.GetAllResourceDataProviders")); }
+			ScriptFunction FindValueInProviderSet() { mixin(MGF("mFindValueInProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.FindValueInProviderSet")); }
+			ScriptFunction GetValueFromProviderSet() { mixin(MGF("mGetValueFromProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.GetValueFromProviderSet")); }
+			ScriptFunction GetProviderSet() { mixin(MGF("mGetProviderSet", "Function UDKBase.UDKUIDataStore_MenuItems.GetProviderSet")); }
+			ScriptFunction InitializeListElementProviders() { mixin(MGF("mInitializeListElementProviders", "Function UDKBase.UDKUIDataStore_MenuItems.InitializeListElementProviders")); }
+			ScriptFunction RemoveListElementProvidersKey() { mixin(MGF("mRemoveListElementProvidersKey", "Function UDKBase.UDKUIDataStore_MenuItems.RemoveListElementProvidersKey")); }
+			ScriptFunction AddListElementProvidersKey() { mixin(MGF("mAddListElementProvidersKey", "Function UDKBase.UDKUIDataStore_MenuItems.AddListElementProvidersKey")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) EnabledMutators() { mixin(MGPC!("ScriptArray!(int)", 204)()); }
-		ScriptArray!(int) MapCycle() { mixin(MGPC!("ScriptArray!(int)", 216)()); }
-		ScriptArray!(int) WeaponPriority() { mixin(MGPC!("ScriptArray!(int)", 228)()); }
-		int GameModeFilter() { mixin(MGPC!("int", 240)()); }
-		ScriptClass MapInfoDataProviderClass() { mixin(MGPC!("ScriptClass", 200)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 196)()); }
+		ScriptArray!(int) EnabledMutators() { mixin(MGPC("ScriptArray!(int)", 204)); }
+		ScriptArray!(int) MapCycle() { mixin(MGPC("ScriptArray!(int)", 216)); }
+		ScriptArray!(int) WeaponPriority() { mixin(MGPC("ScriptArray!(int)", 228)); }
+		int GameModeFilter() { mixin(MGPC("int", 240)); }
+		ScriptClass MapInfoDataProviderClass() { mixin(MGPC("ScriptClass", 200)); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 196)); }
 	}
 final:
 	int GetProviderCount(ScriptName FieldName)

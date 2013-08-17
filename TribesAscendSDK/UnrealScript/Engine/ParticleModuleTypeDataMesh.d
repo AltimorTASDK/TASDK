@@ -10,9 +10,9 @@ extern(C++) interface ParticleModuleTypeDataMesh : ParticleModuleTypeDataBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleTypeDataMesh")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleTypeDataMesh")); }
 	private static __gshared ParticleModuleTypeDataMesh mDefaultProperties;
-	@property final static ParticleModuleTypeDataMesh DefaultProperties() { mixin(MGDPC!(ParticleModuleTypeDataMesh, "ParticleModuleTypeDataMesh Engine.Default__ParticleModuleTypeDataMesh")()); }
+	@property final static ParticleModuleTypeDataMesh DefaultProperties() { mixin(MGDPC("ParticleModuleTypeDataMesh", "ParticleModuleTypeDataMesh Engine.Default__ParticleModuleTypeDataMesh")); }
 	enum EMeshCameraFacingOptions : ubyte
 	{
 		XAxisFacing_NoUp = 0,
@@ -50,26 +50,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			float Yaw() { mixin(MGPC!("float", 92)()); }
-			float Roll() { mixin(MGPC!("float", 88)()); }
-			float Pitch() { mixin(MGPC!("float", 84)()); }
-			ParticleModuleTypeDataMesh.EMeshCameraFacingOptions CameraFacingOption() { mixin(MGPC!("ParticleModuleTypeDataMesh.EMeshCameraFacingOptions", 83)()); }
-			ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis CameraFacingUpAxisOption() { mixin(MGPC!("ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis", 82)()); }
-			ParticleModuleOrientationAxisLock.EParticleAxisLock AxisLockOption() { mixin(MGPC!("ParticleModuleOrientationAxisLock.EParticleAxisLock", 81)()); }
-			ParticleModuleTypeDataMesh.EMeshScreenAlignment MeshAlignment() { mixin(MGPC!("ParticleModuleTypeDataMesh.EMeshScreenAlignment", 80)()); }
-			StaticMesh Mesh() { mixin(MGPC!("StaticMesh", 72)()); }
+			float Yaw() { mixin(MGPC("float", 92)); }
+			float Roll() { mixin(MGPC("float", 88)); }
+			float Pitch() { mixin(MGPC("float", 84)); }
+			ParticleModuleTypeDataMesh.EMeshCameraFacingOptions CameraFacingOption() { mixin(MGPC("ParticleModuleTypeDataMesh.EMeshCameraFacingOptions", 83)); }
+			ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis CameraFacingUpAxisOption() { mixin(MGPC("ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis", 82)); }
+			ParticleModuleOrientationAxisLock.EParticleAxisLock AxisLockOption() { mixin(MGPC("ParticleModuleOrientationAxisLock.EParticleAxisLock", 81)); }
+			ParticleModuleTypeDataMesh.EMeshScreenAlignment MeshAlignment() { mixin(MGPC("ParticleModuleTypeDataMesh.EMeshScreenAlignment", 80)); }
+			StaticMesh Mesh() { mixin(MGPC("StaticMesh", 72)); }
 		}
-		bool bApplyParticleRotationAsSpin() { mixin(MGBPC!(76, 0x20)()); }
-		bool bApplyParticleRotationAsSpin(bool val) { mixin(MSBPC!(76, 0x20)()); }
-		bool bCameraFacing() { mixin(MGBPC!(76, 0x10)()); }
-		bool bCameraFacing(bool val) { mixin(MSBPC!(76, 0x10)()); }
-		bool bOverrideMaterial() { mixin(MGBPC!(76, 0x8)()); }
-		bool bOverrideMaterial(bool val) { mixin(MSBPC!(76, 0x8)()); }
-		bool bAllowMotionBlur() { mixin(MGBPC!(76, 0x4)()); }
-		bool bAllowMotionBlur(bool val) { mixin(MSBPC!(76, 0x4)()); }
-		bool DoCollisions() { mixin(MGBPC!(76, 0x2)()); }
-		bool DoCollisions(bool val) { mixin(MSBPC!(76, 0x2)()); }
-		bool CastShadows() { mixin(MGBPC!(76, 0x1)()); }
-		bool CastShadows(bool val) { mixin(MSBPC!(76, 0x1)()); }
+		bool bApplyParticleRotationAsSpin() { mixin(MGBPC(76, 0x20)); }
+		bool bApplyParticleRotationAsSpin(bool val) { mixin(MSBPC(76, 0x20)); }
+		bool bCameraFacing() { mixin(MGBPC(76, 0x10)); }
+		bool bCameraFacing(bool val) { mixin(MSBPC(76, 0x10)); }
+		bool bOverrideMaterial() { mixin(MGBPC(76, 0x8)); }
+		bool bOverrideMaterial(bool val) { mixin(MSBPC(76, 0x8)); }
+		bool bAllowMotionBlur() { mixin(MGBPC(76, 0x4)); }
+		bool bAllowMotionBlur(bool val) { mixin(MSBPC(76, 0x4)); }
+		bool DoCollisions() { mixin(MGBPC(76, 0x2)); }
+		bool DoCollisions(bool val) { mixin(MSBPC(76, 0x2)); }
+		bool CastShadows() { mixin(MGBPC(76, 0x1)); }
+		bool CastShadows(bool val) { mixin(MSBPC(76, 0x1)); }
 	}
 }

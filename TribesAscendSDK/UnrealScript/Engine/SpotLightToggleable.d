@@ -8,9 +8,9 @@ extern(C++) interface SpotLightToggleable : SpotLight
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SpotLightToggleable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SpotLightToggleable")); }
 	private static __gshared SpotLightToggleable mDefaultProperties;
-	@property final static SpotLightToggleable DefaultProperties() { mixin(MGDPC!(SpotLightToggleable, "SpotLightToggleable Engine.Default__SpotLightToggleable")()); }
+	@property final static SpotLightToggleable DefaultProperties() { mixin(MGDPC("SpotLightToggleable", "SpotLightToggleable Engine.Default__SpotLightToggleable")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,9 +21,9 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.SpotLightToggleable.ShouldSaveForCheckpoint")()); }
-			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.SpotLightToggleable.CreateCheckpointRecord")()); }
-			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.SpotLightToggleable.ApplyCheckpointRecord")()); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF("mShouldSaveForCheckpoint", "Function Engine.SpotLightToggleable.ShouldSaveForCheckpoint")); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF("mCreateCheckpointRecord", "Function Engine.SpotLightToggleable.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF("mApplyCheckpointRecord", "Function Engine.SpotLightToggleable.ApplyCheckpointRecord")); }
 		}
 	}
 	struct CheckpointRecord
@@ -31,11 +31,11 @@ public extern(D):
 		private ubyte __buffer__[4];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SpotLightToggleable.CheckpointRecord")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.SpotLightToggleable.CheckpointRecord")); }
 		@property final
 		{
-			bool bEnabled() { mixin(MGBPS!(0, 0x1)()); }
-			bool bEnabled(bool val) { mixin(MSBPS!(0, 0x1)()); }
+			bool bEnabled() { mixin(MGBPS(0, 0x1)); }
+			bool bEnabled(bool val) { mixin(MSBPS(0, 0x1)); }
 		}
 	}
 final:

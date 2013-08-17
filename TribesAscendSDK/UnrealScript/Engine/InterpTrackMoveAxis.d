@@ -9,9 +9,9 @@ extern(C++) interface InterpTrackMoveAxis : InterpTrackFloatBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackMoveAxis")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.InterpTrackMoveAxis")); }
 	private static __gshared InterpTrackMoveAxis mDefaultProperties;
-	@property final static InterpTrackMoveAxis DefaultProperties() { mixin(MGDPC!(InterpTrackMoveAxis, "InterpTrackMoveAxis Engine.Default__InterpTrackMoveAxis")()); }
+	@property final static InterpTrackMoveAxis DefaultProperties() { mixin(MGDPC("InterpTrackMoveAxis", "InterpTrackMoveAxis Engine.Default__InterpTrackMoveAxis")); }
 	enum EInterpMoveAxis : ubyte
 	{
 		AXIS_TranslationX = 0,
@@ -24,7 +24,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		InterpTrackMove.InterpLookupTrack LookupTrack() { mixin(MGPC!("InterpTrackMove.InterpLookupTrack", 152)()); }
-		InterpTrackMoveAxis.EInterpMoveAxis MoveAxis() { mixin(MGPC!("InterpTrackMoveAxis.EInterpMoveAxis", 148)()); }
+		InterpTrackMove.InterpLookupTrack LookupTrack() { mixin(MGPC("InterpTrackMove.InterpLookupTrack", 152)); }
+		InterpTrackMoveAxis.EInterpMoveAxis MoveAxis() { mixin(MGPC("InterpTrackMoveAxis.EInterpMoveAxis", 148)); }
 	}
 }

@@ -8,7 +8,7 @@ extern(C++) interface UTLavaVolume : WaterVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTLavaVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTLavaVolume")); }
 	private static __gshared UTLavaVolume mDefaultProperties;
-	@property final static UTLavaVolume DefaultProperties() { mixin(MGDPC!(UTLavaVolume, "UTLavaVolume UTGame.Default__UTLavaVolume")()); }
+	@property final static UTLavaVolume DefaultProperties() { mixin(MGDPC("UTLavaVolume", "UTLavaVolume UTGame.Default__UTLavaVolume")); }
 }

@@ -10,9 +10,9 @@ extern(C++) interface TrLockWarningMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLockWarningMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrLockWarningMessage")); }
 	private static __gshared TrLockWarningMessage mDefaultProperties;
-	@property final static TrLockWarningMessage DefaultProperties() { mixin(MGDPC!(TrLockWarningMessage, "TrLockWarningMessage TribesGame.Default__TrLockWarningMessage")()); }
+	@property final static TrLockWarningMessage DefaultProperties() { mixin(MGDPC("TrLockWarningMessage", "TrLockWarningMessage TribesGame.Default__TrLockWarningMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,17 +23,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction AnnouncementLevel() { mixin(MGF!("mAnnouncementLevel", "Function TribesGame.TrLockWarningMessage.AnnouncementLevel")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrLockWarningMessage.GetString")()); }
-			ScriptFunction GetColor() { mixin(MGF!("mGetColor", "Function TribesGame.TrLockWarningMessage.GetColor")()); }
+			ScriptFunction AnnouncementLevel() { mixin(MGF("mAnnouncementLevel", "Function TribesGame.TrLockWarningMessage.AnnouncementLevel")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrLockWarningMessage.GetString")); }
+			ScriptFunction GetColor() { mixin(MGF("mGetColor", "Function TribesGame.TrLockWarningMessage.GetColor")); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject.Color YellowColor() { mixin(MGPC!("UObject.Color", 128)()); }
-		UObject.Color RedColor() { mixin(MGPC!("UObject.Color", 124)()); }
-		ScriptString RadarLockString() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString MissileLockOnString() { mixin(MGPC!("ScriptString", 100)()); }
+		UObject.Color YellowColor() { mixin(MGPC("UObject.Color", 128)); }
+		UObject.Color RedColor() { mixin(MGPC("UObject.Color", 124)); }
+		ScriptString RadarLockString() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString MissileLockOnString() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ubyte AnnouncementLevel(ubyte MessageIndex)

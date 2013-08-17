@@ -8,9 +8,9 @@ extern(C++) interface FrameworkGame : GameInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.FrameworkGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.FrameworkGame")); }
 	private static __gshared FrameworkGame mDefaultProperties;
-	@property final static FrameworkGame DefaultProperties() { mixin(MGDPC!(FrameworkGame, "FrameworkGame GameFramework.Default__FrameworkGame")()); }
+	@property final static FrameworkGame DefaultProperties() { mixin(MGDPC("FrameworkGame", "FrameworkGame GameFramework.Default__FrameworkGame")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,12 +24,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TgStartGame() { mixin(MGF!("mTgStartGame", "Function GameFramework.FrameworkGame.TgStartGame")()); }
-			ScriptFunction TgEndGame() { mixin(MGF!("mTgEndGame", "Function GameFramework.FrameworkGame.TgEndGame")()); }
-			ScriptFunction TgTimer() { mixin(MGF!("mTgTimer", "Function GameFramework.FrameworkGame.TgTimer")()); }
-			ScriptFunction TgChangeScore() { mixin(MGF!("mTgChangeScore", "Function GameFramework.FrameworkGame.TgChangeScore")()); }
-			ScriptFunction TgChangeTime() { mixin(MGF!("mTgChangeTime", "Function GameFramework.FrameworkGame.TgChangeTime")()); }
-			ScriptFunction TgGetSpectators() { mixin(MGF!("mTgGetSpectators", "Function GameFramework.FrameworkGame.TgGetSpectators")()); }
+			ScriptFunction TgStartGame() { mixin(MGF("mTgStartGame", "Function GameFramework.FrameworkGame.TgStartGame")); }
+			ScriptFunction TgEndGame() { mixin(MGF("mTgEndGame", "Function GameFramework.FrameworkGame.TgEndGame")); }
+			ScriptFunction TgTimer() { mixin(MGF("mTgTimer", "Function GameFramework.FrameworkGame.TgTimer")); }
+			ScriptFunction TgChangeScore() { mixin(MGF("mTgChangeScore", "Function GameFramework.FrameworkGame.TgChangeScore")); }
+			ScriptFunction TgChangeTime() { mixin(MGF("mTgChangeTime", "Function GameFramework.FrameworkGame.TgChangeTime")); }
+			ScriptFunction TgGetSpectators() { mixin(MGF("mTgGetSpectators", "Function GameFramework.FrameworkGame.TgGetSpectators")); }
 		}
 	}
 	struct RequiredMobileInputConfig
@@ -37,19 +37,19 @@ public extern(D):
 		private ubyte __buffer__[28];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.FrameworkGame.RequiredMobileInputConfig")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GameFramework.FrameworkGame.RequiredMobileInputConfig")); }
 		@property final
 		{
 			auto ref
 			{
-				ScriptArray!(ScriptString) RequireZoneNames() { mixin(MGPS!("ScriptArray!(ScriptString)", 12)()); }
-				ScriptString GroupName() { mixin(MGPS!("ScriptString", 0)()); }
+				ScriptArray!(ScriptString) RequireZoneNames() { mixin(MGPS("ScriptArray!(ScriptString)", 12)); }
+				ScriptString GroupName() { mixin(MGPS("ScriptString", 0)); }
 			}
-			bool bIsAttractModeGroup() { mixin(MGBPS!(24, 0x1)()); }
-			bool bIsAttractModeGroup(bool val) { mixin(MSBPS!(24, 0x1)()); }
+			bool bIsAttractModeGroup() { mixin(MGBPS(24, 0x1)); }
+			bool bIsAttractModeGroup(bool val) { mixin(MSBPS(24, 0x1)); }
 		}
 	}
-	@property final auto ref ScriptArray!(FrameworkGame.RequiredMobileInputConfig) RequiredMobileInputConfigs() { mixin(MGPC!("ScriptArray!(FrameworkGame.RequiredMobileInputConfig)", 884)()); }
+	@property final auto ref ScriptArray!(FrameworkGame.RequiredMobileInputConfig) RequiredMobileInputConfigs() { mixin(MGPC("ScriptArray!(FrameworkGame.RequiredMobileInputConfig)", 884)); }
 final:
 	void TgStartGame(ref ScriptString Reason)
 	{

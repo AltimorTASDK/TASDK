@@ -12,9 +12,9 @@ extern(C++) interface OnlineSuppliedUIInterface : UInterface
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineSuppliedUIInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineSuppliedUIInterface")); }
 	private static __gshared OnlineSuppliedUIInterface mDefaultProperties;
-	@property final static OnlineSuppliedUIInterface DefaultProperties() { mixin(MGDPC!(OnlineSuppliedUIInterface, "OnlineSuppliedUIInterface Engine.Default__OnlineSuppliedUIInterface")()); }
+	@property final static OnlineSuppliedUIInterface DefaultProperties() { mixin(MGDPC("OnlineSuppliedUIInterface", "OnlineSuppliedUIInterface Engine.Default__OnlineSuppliedUIInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,11 +27,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnShowOnlineStatsUIComplete() { mixin(MGF!("mOnShowOnlineStatsUIComplete", "Function Engine.OnlineSuppliedUIInterface.OnShowOnlineStatsUIComplete")()); }
-			ScriptFunction ShowOnlineStatsUI() { mixin(MGF!("mShowOnlineStatsUI", "Function Engine.OnlineSuppliedUIInterface.ShowOnlineStatsUI")()); }
-			ScriptFunction AddShowOnlineStatsUICompleteDelegate() { mixin(MGF!("mAddShowOnlineStatsUICompleteDelegate", "Function Engine.OnlineSuppliedUIInterface.AddShowOnlineStatsUICompleteDelegate")()); }
-			ScriptFunction ClearShowOnlineStatsUICompleteDelegate() { mixin(MGF!("mClearShowOnlineStatsUICompleteDelegate", "Function Engine.OnlineSuppliedUIInterface.ClearShowOnlineStatsUICompleteDelegate")()); }
-			ScriptFunction ShowMatchmakingUI() { mixin(MGF!("mShowMatchmakingUI", "Function Engine.OnlineSuppliedUIInterface.ShowMatchmakingUI")()); }
+			ScriptFunction OnShowOnlineStatsUIComplete() { mixin(MGF("mOnShowOnlineStatsUIComplete", "Function Engine.OnlineSuppliedUIInterface.OnShowOnlineStatsUIComplete")); }
+			ScriptFunction ShowOnlineStatsUI() { mixin(MGF("mShowOnlineStatsUI", "Function Engine.OnlineSuppliedUIInterface.ShowOnlineStatsUI")); }
+			ScriptFunction AddShowOnlineStatsUICompleteDelegate() { mixin(MGF("mAddShowOnlineStatsUICompleteDelegate", "Function Engine.OnlineSuppliedUIInterface.AddShowOnlineStatsUICompleteDelegate")); }
+			ScriptFunction ClearShowOnlineStatsUICompleteDelegate() { mixin(MGF("mClearShowOnlineStatsUICompleteDelegate", "Function Engine.OnlineSuppliedUIInterface.ClearShowOnlineStatsUICompleteDelegate")); }
+			ScriptFunction ShowMatchmakingUI() { mixin(MGF("mShowMatchmakingUI", "Function Engine.OnlineSuppliedUIInterface.ShowMatchmakingUI")); }
 		}
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnShowOnlineStatsUIComplete__Delegate'!

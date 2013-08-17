@@ -9,8 +9,8 @@ extern(C++) interface MaterialExpressionTextureSampleParameterNormal : MaterialE
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionTextureSampleParameterNormal")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionTextureSampleParameterNormal")); }
 	private static __gshared MaterialExpressionTextureSampleParameterNormal mDefaultProperties;
-	@property final static MaterialExpressionTextureSampleParameterNormal DefaultProperties() { mixin(MGDPC!(MaterialExpressionTextureSampleParameterNormal, "MaterialExpressionTextureSampleParameterNormal Engine.Default__MaterialExpressionTextureSampleParameterNormal")()); }
-	@property final auto ref UObject.Pointer InstanceOverride() { mixin(MGPC!("UObject.Pointer", 164)()); }
+	@property final static MaterialExpressionTextureSampleParameterNormal DefaultProperties() { mixin(MGDPC("MaterialExpressionTextureSampleParameterNormal", "MaterialExpressionTextureSampleParameterNormal Engine.Default__MaterialExpressionTextureSampleParameterNormal")); }
+	@property final auto ref UObject.Pointer InstanceOverride() { mixin(MGPC("UObject.Pointer", 164)); }
 }

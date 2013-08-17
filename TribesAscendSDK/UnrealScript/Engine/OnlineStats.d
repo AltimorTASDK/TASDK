@@ -9,9 +9,9 @@ extern(C++) interface OnlineStats : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.OnlineStats")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.OnlineStats")); }
 	private static __gshared OnlineStats mDefaultProperties;
-	@property final static OnlineStats DefaultProperties() { mixin(MGDPC!(OnlineStats, "OnlineStats Engine.Default__OnlineStats")()); }
+	@property final static OnlineStats DefaultProperties() { mixin(MGDPC("OnlineStats", "OnlineStats Engine.Default__OnlineStats")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,11 +21,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetViewId() { mixin(MGF!("mGetViewId", "Function Engine.OnlineStats.GetViewId")()); }
-			ScriptFunction GetViewName() { mixin(MGF!("mGetViewName", "Function Engine.OnlineStats.GetViewName")()); }
+			ScriptFunction GetViewId() { mixin(MGF("mGetViewId", "Function Engine.OnlineStats.GetViewId")); }
+			ScriptFunction GetViewName() { mixin(MGF("mGetViewName", "Function Engine.OnlineStats.GetViewName")); }
 		}
 	}
-	@property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { mixin(MGPC!("ScriptArray!(Settings.StringIdToStringMapping)", 60)()); }
+	@property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { mixin(MGPC("ScriptArray!(Settings.StringIdToStringMapping)", 60)); }
 final:
 	bool GetViewId(ScriptName ViewName, ref int ViewId)
 	{

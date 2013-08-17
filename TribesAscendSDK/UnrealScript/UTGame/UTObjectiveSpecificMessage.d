@@ -13,9 +13,9 @@ extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTObjectiveSpecificMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTObjectiveSpecificMessage")); }
 	private static __gshared UTObjectiveSpecificMessage mDefaultProperties;
-	@property final static UTObjectiveSpecificMessage DefaultProperties() { mixin(MGDPC!(UTObjectiveSpecificMessage, "UTObjectiveSpecificMessage UTGame.Default__UTObjectiveSpecificMessage")()); }
+	@property final static UTObjectiveSpecificMessage DefaultProperties() { mixin(MGDPC("UTObjectiveSpecificMessage", "UTObjectiveSpecificMessage UTGame.Default__UTObjectiveSpecificMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,11 +28,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetObjectiveAnnouncement() { mixin(MGF!("mGetObjectiveAnnouncement", "Function UTGame.UTObjectiveSpecificMessage.GetObjectiveAnnouncement")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function UTGame.UTObjectiveSpecificMessage.AnnouncementSound")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTObjectiveSpecificMessage.ClientReceive")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTObjectiveSpecificMessage.GetString")()); }
-			ScriptFunction SetHUDDisplay() { mixin(MGF!("mSetHUDDisplay", "Function UTGame.UTObjectiveSpecificMessage.SetHUDDisplay")()); }
+			ScriptFunction GetObjectiveAnnouncement() { mixin(MGF("mGetObjectiveAnnouncement", "Function UTGame.UTObjectiveSpecificMessage.GetObjectiveAnnouncement")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function UTGame.UTObjectiveSpecificMessage.AnnouncementSound")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTObjectiveSpecificMessage.ClientReceive")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTObjectiveSpecificMessage.GetString")); }
+			ScriptFunction SetHUDDisplay() { mixin(MGF("mSetHUDDisplay", "Function UTGame.UTObjectiveSpecificMessage.SetHUDDisplay")); }
 		}
 	}
 final:

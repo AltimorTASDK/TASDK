@@ -10,9 +10,9 @@ extern(C++) interface NavMeshPath_SameCoverLink : NavMeshPathConstraint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshPath_SameCoverLink")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavMeshPath_SameCoverLink")); }
 	private static __gshared NavMeshPath_SameCoverLink mDefaultProperties;
-	@property final static NavMeshPath_SameCoverLink DefaultProperties() { mixin(MGDPC!(NavMeshPath_SameCoverLink, "NavMeshPath_SameCoverLink Engine.Default__NavMeshPath_SameCoverLink")()); }
+	@property final static NavMeshPath_SameCoverLink DefaultProperties() { mixin(MGDPC("NavMeshPath_SameCoverLink", "NavMeshPath_SameCoverLink Engine.Default__NavMeshPath_SameCoverLink")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +22,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SameCoverLink() { mixin(MGF!("mSameCoverLink", "Function Engine.NavMeshPath_SameCoverLink.SameCoverLink")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPath_SameCoverLink.Recycle")()); }
+			ScriptFunction SameCoverLink() { mixin(MGF("mSameCoverLink", "Function Engine.NavMeshPath_SameCoverLink.SameCoverLink")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.NavMeshPath_SameCoverLink.Recycle")); }
 		}
 	}
-	@property final auto ref CoverLink TestLink() { mixin(MGPC!("CoverLink", 80)()); }
+	@property final auto ref CoverLink TestLink() { mixin(MGPC("CoverLink", 80)); }
 final:
 	static void SameCoverLink(NavigationHandle NavHandle, CoverLink InLink)
 	{

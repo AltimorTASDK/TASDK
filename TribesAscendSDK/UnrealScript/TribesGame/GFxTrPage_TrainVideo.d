@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_TrainVideo : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_TrainVideo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_TrainVideo")); }
 	private static __gshared GFxTrPage_TrainVideo mDefaultProperties;
-	@property final static GFxTrPage_TrainVideo DefaultProperties() { mixin(MGDPC!(GFxTrPage_TrainVideo, "GFxTrPage_TrainVideo TribesGame.Default__GFxTrPage_TrainVideo")()); }
+	@property final static GFxTrPage_TrainVideo DefaultProperties() { mixin(MGDPC("GFxTrPage_TrainVideo", "GFxTrPage_TrainVideo TribesGame.Default__GFxTrPage_TrainVideo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,18 +26,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_TrainVideo.Initialize")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_TrainVideo.ShowModel")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_TrainVideo.SpecialAction")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_TrainVideo.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_TrainVideo.FillOption")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_TrainVideo.FillDescription")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_TrainVideo.Initialize")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_TrainVideo.ShowModel")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_TrainVideo.SpecialAction")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_TrainVideo.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_TrainVideo.FillOption")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_TrainVideo.FillDescription")); }
 		}
 	}
 	@property final
 	{
-		bool bValid() { mixin(MGBPC!(356, 0x1)()); }
-		bool bValid(bool val) { mixin(MSBPC!(356, 0x1)()); }
+		bool bValid() { mixin(MGBPC(356, 0x1)); }
+		bool bValid(bool val) { mixin(MSBPC(356, 0x1)); }
 	}
 final:
 	void Initialize()

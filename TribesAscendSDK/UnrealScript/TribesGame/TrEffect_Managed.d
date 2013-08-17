@@ -10,9 +10,9 @@ extern(C++) interface TrEffect_Managed : TrEffect
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrEffect_Managed")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrEffect_Managed")); }
 	private static __gshared TrEffect_Managed mDefaultProperties;
-	@property final static TrEffect_Managed DefaultProperties() { mixin(MGDPC!(TrEffect_Managed, "TrEffect_Managed TribesGame.Default__TrEffect_Managed")()); }
+	@property final static TrEffect_Managed DefaultProperties() { mixin(MGDPC("TrEffect_Managed", "TrEffect_Managed TribesGame.Default__TrEffect_Managed")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,15 +23,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_Managed.Apply")()); }
-			ScriptFunction RemoveEffect() { mixin(MGF!("mRemoveEffect", "Function TribesGame.TrEffect_Managed.RemoveEffect")()); }
-			ScriptFunction Remove() { mixin(MGF!("mRemove", "Function TribesGame.TrEffect_Managed.Remove")()); }
+			ScriptFunction Apply() { mixin(MGF("mApply", "Function TribesGame.TrEffect_Managed.Apply")); }
+			ScriptFunction RemoveEffect() { mixin(MGF("mRemoveEffect", "Function TribesGame.TrEffect_Managed.RemoveEffect")); }
+			ScriptFunction Remove() { mixin(MGF("mRemove", "Function TribesGame.TrEffect_Managed.Remove")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fLifeTime() { mixin(MGPC!("float", 84)()); }
-		TrPawn m_PawnTarget() { mixin(MGPC!("TrPawn", 80)()); }
+		float m_fLifeTime() { mixin(MGPC("float", 84)); }
+		TrPawn m_PawnTarget() { mixin(MGPC("TrPawn", 80)); }
 	}
 final:
 	void Apply(Actor Target, Actor.ImpactInfo* Impact = null)

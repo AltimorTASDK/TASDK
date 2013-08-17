@@ -16,9 +16,9 @@ extern(C++) interface GameExplosionActor : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameExplosionActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameExplosionActor")); }
 	private static __gshared GameExplosionActor mDefaultProperties;
-	@property final static GameExplosionActor DefaultProperties() { mixin(MGDPC!(GameExplosionActor, "GameExplosionActor GameFramework.Default__GameExplosionActor")()); }
+	@property final static GameExplosionActor DefaultProperties() { mixin(MGDPC("GameExplosionActor", "GameExplosionActor GameFramework.Default__GameExplosionActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,55 +45,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function GameFramework.GameExplosionActor.PreBeginPlay")()); }
-			ScriptFunction GetPhysicalMaterial() { mixin(MGF!("mGetPhysicalMaterial", "Function GameFramework.GameExplosionActor.GetPhysicalMaterial")()); }
-			ScriptFunction DoFullDamageToActor() { mixin(MGF!("mDoFullDamageToActor", "Function GameFramework.GameExplosionActor.DoFullDamageToActor")()); }
-			ScriptFunction IsBehindExplosion() { mixin(MGF!("mIsBehindExplosion", "Function GameFramework.GameExplosionActor.IsBehindExplosion")()); }
-			ScriptFunction BoxDistanceToPoint() { mixin(MGF!("mBoxDistanceToPoint", "Function GameFramework.GameExplosionActor.BoxDistanceToPoint")()); }
-			ScriptFunction DoExplosionDamage() { mixin(MGF!("mDoExplosionDamage", "Function GameFramework.GameExplosionActor.DoExplosionDamage")()); }
-			ScriptFunction GetEffectCheckRadius() { mixin(MGF!("mGetEffectCheckRadius", "Function GameFramework.GameExplosionActor.GetEffectCheckRadius")()); }
-			ScriptFunction SpecialPawnEffectsFor() { mixin(MGF!("mSpecialPawnEffectsFor", "Function GameFramework.GameExplosionActor.SpecialPawnEffectsFor")()); }
-			ScriptFunction UpdateExplosionTemplateWithPerMaterialFX() { mixin(MGF!("mUpdateExplosionTemplateWithPerMaterialFX", "Function GameFramework.GameExplosionActor.UpdateExplosionTemplateWithPerMaterialFX")()); }
-			ScriptFunction SpawnExplosionParticleSystem() { mixin(MGF!("mSpawnExplosionParticleSystem", "Function GameFramework.GameExplosionActor.SpawnExplosionParticleSystem")()); }
-			ScriptFunction SpawnExplosionDecal() { mixin(MGF!("mSpawnExplosionDecal", "Function GameFramework.GameExplosionActor.SpawnExplosionDecal")()); }
-			ScriptFunction SpawnExplosionFogVolume() { mixin(MGF!("mSpawnExplosionFogVolume", "Function GameFramework.GameExplosionActor.SpawnExplosionFogVolume")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function GameFramework.GameExplosionActor.Explode")()); }
-			ScriptFunction DelayedExplosionDamage() { mixin(MGF!("mDelayedExplosionDamage", "Function GameFramework.GameExplosionActor.DelayedExplosionDamage")()); }
-			ScriptFunction DrawDebug() { mixin(MGF!("mDrawDebug", "Function GameFramework.GameExplosionActor.DrawDebug")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function GameFramework.GameExplosionActor.Tick")()); }
-			ScriptFunction DoExplosionCameraEffects() { mixin(MGF!("mDoExplosionCameraEffects", "Function GameFramework.GameExplosionActor.DoExplosionCameraEffects")()); }
-			ScriptFunction SpawnCameraLensEffects() { mixin(MGF!("mSpawnCameraLensEffects", "Function GameFramework.GameExplosionActor.SpawnCameraLensEffects")()); }
-			ScriptFunction ChooseCameraShake() { mixin(MGF!("mChooseCameraShake", "Function GameFramework.GameExplosionActor.ChooseCameraShake")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function GameFramework.GameExplosionActor.PreBeginPlay")); }
+			ScriptFunction GetPhysicalMaterial() { mixin(MGF("mGetPhysicalMaterial", "Function GameFramework.GameExplosionActor.GetPhysicalMaterial")); }
+			ScriptFunction DoFullDamageToActor() { mixin(MGF("mDoFullDamageToActor", "Function GameFramework.GameExplosionActor.DoFullDamageToActor")); }
+			ScriptFunction IsBehindExplosion() { mixin(MGF("mIsBehindExplosion", "Function GameFramework.GameExplosionActor.IsBehindExplosion")); }
+			ScriptFunction BoxDistanceToPoint() { mixin(MGF("mBoxDistanceToPoint", "Function GameFramework.GameExplosionActor.BoxDistanceToPoint")); }
+			ScriptFunction DoExplosionDamage() { mixin(MGF("mDoExplosionDamage", "Function GameFramework.GameExplosionActor.DoExplosionDamage")); }
+			ScriptFunction GetEffectCheckRadius() { mixin(MGF("mGetEffectCheckRadius", "Function GameFramework.GameExplosionActor.GetEffectCheckRadius")); }
+			ScriptFunction SpecialPawnEffectsFor() { mixin(MGF("mSpecialPawnEffectsFor", "Function GameFramework.GameExplosionActor.SpecialPawnEffectsFor")); }
+			ScriptFunction UpdateExplosionTemplateWithPerMaterialFX() { mixin(MGF("mUpdateExplosionTemplateWithPerMaterialFX", "Function GameFramework.GameExplosionActor.UpdateExplosionTemplateWithPerMaterialFX")); }
+			ScriptFunction SpawnExplosionParticleSystem() { mixin(MGF("mSpawnExplosionParticleSystem", "Function GameFramework.GameExplosionActor.SpawnExplosionParticleSystem")); }
+			ScriptFunction SpawnExplosionDecal() { mixin(MGF("mSpawnExplosionDecal", "Function GameFramework.GameExplosionActor.SpawnExplosionDecal")); }
+			ScriptFunction SpawnExplosionFogVolume() { mixin(MGF("mSpawnExplosionFogVolume", "Function GameFramework.GameExplosionActor.SpawnExplosionFogVolume")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function GameFramework.GameExplosionActor.Explode")); }
+			ScriptFunction DelayedExplosionDamage() { mixin(MGF("mDelayedExplosionDamage", "Function GameFramework.GameExplosionActor.DelayedExplosionDamage")); }
+			ScriptFunction DrawDebug() { mixin(MGF("mDrawDebug", "Function GameFramework.GameExplosionActor.DrawDebug")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function GameFramework.GameExplosionActor.Tick")); }
+			ScriptFunction DoExplosionCameraEffects() { mixin(MGF("mDoExplosionCameraEffects", "Function GameFramework.GameExplosionActor.DoExplosionCameraEffects")); }
+			ScriptFunction SpawnCameraLensEffects() { mixin(MGF("mSpawnCameraLensEffects", "Function GameFramework.GameExplosionActor.SpawnCameraLensEffects")); }
+			ScriptFunction ChooseCameraShake() { mixin(MGF("mChooseCameraShake", "Function GameFramework.GameExplosionActor.ChooseCameraShake")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector ExplosionDirection() { mixin(MGPC!("Vector", 552)()); }
-			float DirectionalExplosionMinDot() { mixin(MGPC!("float", 548)()); }
-			Controller AttacheeController() { mixin(MGPC!("Controller", 544)()); }
-			Actor Attachee() { mixin(MGPC!("Actor", 540)()); }
-			Vector HitLocationFromPhysMaterialTrace() { mixin(MGPC!("Vector", 528)()); }
-			Actor HitActorFromPhysMaterialTrace() { mixin(MGPC!("Actor", 524)()); }
-			Controller InstigatorController() { mixin(MGPC!("Controller", 520)()); }
+			Vector ExplosionDirection() { mixin(MGPC("Vector", 552)); }
+			float DirectionalExplosionMinDot() { mixin(MGPC("float", 548)); }
+			Controller AttacheeController() { mixin(MGPC("Controller", 544)); }
+			Actor Attachee() { mixin(MGPC("Actor", 540)); }
+			Vector HitLocationFromPhysMaterialTrace() { mixin(MGPC("Vector", 528)); }
+			Actor HitActorFromPhysMaterialTrace() { mixin(MGPC("Actor", 524)); }
+			Controller InstigatorController() { mixin(MGPC("Controller", 520)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RadialImpulseComponent'!
-			GameExplosion ExplosionTemplate() { mixin(MGPC!("GameExplosion", 512)()); }
-			float RadialBlurMaxBlurAmount() { mixin(MGPC!("float", 508)()); }
-			float RadialBlurFadeTimeRemaining() { mixin(MGPC!("float", 504)()); }
-			float RadialBlurFadeTime() { mixin(MGPC!("float", 500)()); }
+			GameExplosion ExplosionTemplate() { mixin(MGPC("GameExplosion", 512)); }
+			float RadialBlurMaxBlurAmount() { mixin(MGPC("float", 508)); }
+			float RadialBlurFadeTimeRemaining() { mixin(MGPC("float", 504)); }
+			float RadialBlurFadeTime() { mixin(MGPC("float", 500)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ExplosionRadialBlur'!
-			float LightInitialBrightness() { mixin(MGPC!("float", 492)()); }
-			float LightFadeTimeRemaining() { mixin(MGPC!("float", 488)()); }
-			float LightFadeTime() { mixin(MGPC!("float", 484)()); }
+			float LightInitialBrightness() { mixin(MGPC("float", 492)); }
+			float LightFadeTimeRemaining() { mixin(MGPC("float", 488)); }
+			float LightFadeTime() { mixin(MGPC("float", 484)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ExplosionLight'!
 		}
-		bool bDrawDebug() { mixin(MGBPC!(476, 0x4)()); }
-		bool bDrawDebug(bool val) { mixin(MSBPC!(476, 0x4)()); }
-		bool bExplodeMoreThanOnce() { mixin(MGBPC!(476, 0x2)()); }
-		bool bExplodeMoreThanOnce(bool val) { mixin(MSBPC!(476, 0x2)()); }
-		bool bHasExploded() { mixin(MGBPC!(476, 0x1)()); }
-		bool bHasExploded(bool val) { mixin(MSBPC!(476, 0x1)()); }
+		bool bDrawDebug() { mixin(MGBPC(476, 0x4)); }
+		bool bDrawDebug(bool val) { mixin(MSBPC(476, 0x4)); }
+		bool bExplodeMoreThanOnce() { mixin(MGBPC(476, 0x2)); }
+		bool bExplodeMoreThanOnce(bool val) { mixin(MSBPC(476, 0x2)); }
+		bool bHasExploded() { mixin(MGBPC(476, 0x1)); }
+		bool bHasExploded(bool val) { mixin(MSBPC(476, 0x1)); }
 	}
 final:
 	void PreBeginPlay()

@@ -10,9 +10,9 @@ extern(C++) interface TrPartySettings : OnlineGameSettings
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPartySettings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrPartySettings")); }
 	private static __gshared TrPartySettings mDefaultProperties;
-	@property final static TrPartySettings DefaultProperties() { mixin(MGDPC!(TrPartySettings, "TrPartySettings TribesGame.Default__TrPartySettings")()); }
+	@property final static TrPartySettings DefaultProperties() { mixin(MGDPC("TrPartySettings", "TrPartySettings TribesGame.Default__TrPartySettings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrPartySettings.Init")()); }
-			ScriptFunction Close() { mixin(MGF!("mClose", "Function TribesGame.TrPartySettings.Close")()); }
-			ScriptFunction OnLoginChange() { mixin(MGF!("mOnLoginChange", "Function TribesGame.TrPartySettings.OnLoginChange")()); }
-			ScriptFunction RefreshMembersList() { mixin(MGF!("mRefreshMembersList", "Function TribesGame.TrPartySettings.RefreshMembersList")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrPartySettings.Init")); }
+			ScriptFunction Close() { mixin(MGF("mClose", "Function TribesGame.TrPartySettings.Close")); }
+			ScriptFunction OnLoginChange() { mixin(MGF("mOnLoginChange", "Function TribesGame.TrPartySettings.OnLoginChange")); }
+			ScriptFunction RefreshMembersList() { mixin(MGF("mRefreshMembersList", "Function TribesGame.TrPartySettings.RefreshMembersList")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlinePartyMember) MemberList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.OnlinePartyMember)", 184)()); }
+		ScriptArray!(OnlineSubsystem.OnlinePartyMember) MemberList() { mixin(MGPC("ScriptArray!(OnlineSubsystem.OnlinePartyMember)", 184)); }
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterface'!
-		OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 172)()); }
+		OnlineSubsystem OnlineSub() { mixin(MGPC("OnlineSubsystem", 172)); }
 	}
 final:
 	void Init(LocalPlayer InPlayer)

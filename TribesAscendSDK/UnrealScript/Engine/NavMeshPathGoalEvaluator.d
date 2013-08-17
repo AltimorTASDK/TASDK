@@ -9,9 +9,9 @@ extern(C++) interface NavMeshPathGoalEvaluator : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshPathGoalEvaluator")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavMeshPathGoalEvaluator")); }
 	private static __gshared NavMeshPathGoalEvaluator mDefaultProperties;
-	@property final static NavMeshPathGoalEvaluator DefaultProperties() { mixin(MGDPC!(NavMeshPathGoalEvaluator, "NavMeshPathGoalEvaluator Engine.Default__NavMeshPathGoalEvaluator")()); }
+	@property final static NavMeshPathGoalEvaluator DefaultProperties() { mixin(MGDPC("NavMeshPathGoalEvaluator", "NavMeshPathGoalEvaluator Engine.Default__NavMeshPathGoalEvaluator")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPathGoalEvaluator.Recycle")()); }
-			ScriptFunction GetDumpString() { mixin(MGF!("mGetDumpString", "Function Engine.NavMeshPathGoalEvaluator.GetDumpString")()); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.NavMeshPathGoalEvaluator.Recycle")); }
+			ScriptFunction GetDumpString() { mixin(MGF("mGetDumpString", "Function Engine.NavMeshPathGoalEvaluator.GetDumpString")); }
 		}
 	}
 	struct BiasedGoalActor
@@ -30,24 +30,24 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavMeshPathGoalEvaluator.BiasedGoalActor")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.NavMeshPathGoalEvaluator.BiasedGoalActor")); }
 		@property final auto ref
 		{
-			int ExtraCost() { mixin(MGPS!("int", 4)()); }
-			Actor Goal() { mixin(MGPS!("Actor", 0)()); }
+			int ExtraCost() { mixin(MGPS("int", 4)); }
+			Actor Goal() { mixin(MGPS("Actor", 0)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int NumNodesProcessed() { mixin(MGPC!("int", 76)()); }
-			int NumNodesThrownOut() { mixin(MGPC!("int", 72)()); }
-			int MaxPathVisits() { mixin(MGPC!("int", 64)()); }
-			NavMeshPathGoalEvaluator NextEvaluator() { mixin(MGPC!("NavMeshPathGoalEvaluator", 60)()); }
+			int NumNodesProcessed() { mixin(MGPC("int", 76)); }
+			int NumNodesThrownOut() { mixin(MGPC("int", 72)); }
+			int MaxPathVisits() { mixin(MGPC("int", 64)); }
+			NavMeshPathGoalEvaluator NextEvaluator() { mixin(MGPC("NavMeshPathGoalEvaluator", 60)); }
 		}
-		bool bAlwaysCallEvaluateGoal() { mixin(MGBPC!(68, 0x1)()); }
-		bool bAlwaysCallEvaluateGoal(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool bAlwaysCallEvaluateGoal() { mixin(MGBPC(68, 0x1)); }
+		bool bAlwaysCallEvaluateGoal(bool val) { mixin(MSBPC(68, 0x1)); }
 	}
 final:
 	void Recycle()

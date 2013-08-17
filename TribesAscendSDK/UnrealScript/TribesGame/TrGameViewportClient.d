@@ -10,9 +10,9 @@ extern(C++) interface TrGameViewportClient : UTGameViewportClient
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameViewportClient")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameViewportClient")); }
 	private static __gshared TrGameViewportClient mDefaultProperties;
-	@property final static TrGameViewportClient DefaultProperties() { mixin(MGDPC!(TrGameViewportClient, "TrGameViewportClient TribesGame.Default__TrGameViewportClient")()); }
+	@property final static TrGameViewportClient DefaultProperties() { mixin(MGDPC("TrGameViewportClient", "TrGameViewportClient TribesGame.Default__TrGameViewportClient")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +22,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrGameViewportClient.Init")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function TribesGame.TrGameViewportClient.PostRender")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrGameViewportClient.Init")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function TribesGame.TrGameViewportClient.PostRender")); }
 		}
 	}
-	@property final auto ref TrChatConsole ChatConsole() { mixin(MGPC!("TrChatConsole", 408)()); }
+	@property final auto ref TrChatConsole ChatConsole() { mixin(MGPC("TrChatConsole", 408)); }
 final:
 	bool Init(ref ScriptString OutError)
 	{

@@ -11,9 +11,9 @@ extern(C++) interface UTFirstBloodMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTFirstBloodMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTFirstBloodMessage")); }
 	private static __gshared UTFirstBloodMessage mDefaultProperties;
-	@property final static UTFirstBloodMessage DefaultProperties() { mixin(MGDPC!(UTFirstBloodMessage, "UTFirstBloodMessage UTGame.Default__UTFirstBloodMessage")()); }
+	@property final static UTFirstBloodMessage DefaultProperties() { mixin(MGDPC("UTFirstBloodMessage", "UTFirstBloodMessage UTGame.Default__UTFirstBloodMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function UTGame.UTFirstBloodMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function UTGame.UTFirstBloodMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function UTGame.UTFirstBloodMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function UTGame.UTFirstBloodMessage.ClientReceive")); }
 		}
 	}
-	@property final auto ref ScriptString FirstBloodString() { mixin(MGPC!("ScriptString", 100)()); }
+	@property final auto ref ScriptString FirstBloodString() { mixin(MGPC("ScriptString", 100)); }
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

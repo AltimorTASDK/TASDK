@@ -9,9 +9,9 @@ extern(C++) interface WebResponse : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.WebResponse")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.WebResponse")); }
 	private static __gshared WebResponse mDefaultProperties;
-	@property final static WebResponse DefaultProperties() { mixin(MGDPC!(WebResponse, "WebResponse IpDrv.Default__WebResponse")()); }
+	@property final static WebResponse DefaultProperties() { mixin(MGDPC("WebResponse", "WebResponse IpDrv.Default__WebResponse")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -40,43 +40,43 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Subst() { mixin(MGF!("mSubst", "Function IpDrv.WebResponse.Subst")()); }
-			ScriptFunction IncludeUHTM() { mixin(MGF!("mIncludeUHTM", "Function IpDrv.WebResponse.IncludeUHTM")()); }
-			ScriptFunction FileExists() { mixin(MGF!("mFileExists", "Function IpDrv.WebResponse.FileExists")()); }
-			ScriptFunction IncludeBinaryFile() { mixin(MGF!("mIncludeBinaryFile", "Function IpDrv.WebResponse.IncludeBinaryFile")()); }
-			ScriptFunction ClearSubst() { mixin(MGF!("mClearSubst", "Function IpDrv.WebResponse.ClearSubst")()); }
-			ScriptFunction LoadParsedUHTM() { mixin(MGF!("mLoadParsedUHTM", "Function IpDrv.WebResponse.LoadParsedUHTM")()); }
-			ScriptFunction GetHTTPExpiration() { mixin(MGF!("mGetHTTPExpiration", "Function IpDrv.WebResponse.GetHTTPExpiration")()); }
-			ScriptFunction Dump() { mixin(MGF!("mDump", "Function IpDrv.WebResponse.Dump")()); }
-			ScriptFunction SendText() { mixin(MGF!("mSendText", "Function IpDrv.WebResponse.SendText")()); }
-			ScriptFunction SendBinary() { mixin(MGF!("mSendBinary", "Function IpDrv.WebResponse.SendBinary")()); }
-			ScriptFunction SendCachedFile() { mixin(MGF!("mSendCachedFile", "Function IpDrv.WebResponse.SendCachedFile")()); }
-			ScriptFunction FailAuthentication() { mixin(MGF!("mFailAuthentication", "Function IpDrv.WebResponse.FailAuthentication")()); }
-			ScriptFunction HTTPResponse() { mixin(MGF!("mHTTPResponse", "Function IpDrv.WebResponse.HTTPResponse")()); }
-			ScriptFunction HTTPHeader() { mixin(MGF!("mHTTPHeader", "Function IpDrv.WebResponse.HTTPHeader")()); }
-			ScriptFunction AddHeader() { mixin(MGF!("mAddHeader", "Function IpDrv.WebResponse.AddHeader")()); }
-			ScriptFunction SendHeaders() { mixin(MGF!("mSendHeaders", "Function IpDrv.WebResponse.SendHeaders")()); }
-			ScriptFunction HTTPError() { mixin(MGF!("mHTTPError", "Function IpDrv.WebResponse.HTTPError")()); }
-			ScriptFunction SendStandardHeaders() { mixin(MGF!("mSendStandardHeaders", "Function IpDrv.WebResponse.SendStandardHeaders")()); }
-			ScriptFunction Redirect() { mixin(MGF!("mRedirect", "Function IpDrv.WebResponse.Redirect")()); }
-			ScriptFunction SentText() { mixin(MGF!("mSentText", "Function IpDrv.WebResponse.SentText")()); }
-			ScriptFunction SentResponse() { mixin(MGF!("mSentResponse", "Function IpDrv.WebResponse.SentResponse")()); }
+			ScriptFunction Subst() { mixin(MGF("mSubst", "Function IpDrv.WebResponse.Subst")); }
+			ScriptFunction IncludeUHTM() { mixin(MGF("mIncludeUHTM", "Function IpDrv.WebResponse.IncludeUHTM")); }
+			ScriptFunction FileExists() { mixin(MGF("mFileExists", "Function IpDrv.WebResponse.FileExists")); }
+			ScriptFunction IncludeBinaryFile() { mixin(MGF("mIncludeBinaryFile", "Function IpDrv.WebResponse.IncludeBinaryFile")); }
+			ScriptFunction ClearSubst() { mixin(MGF("mClearSubst", "Function IpDrv.WebResponse.ClearSubst")); }
+			ScriptFunction LoadParsedUHTM() { mixin(MGF("mLoadParsedUHTM", "Function IpDrv.WebResponse.LoadParsedUHTM")); }
+			ScriptFunction GetHTTPExpiration() { mixin(MGF("mGetHTTPExpiration", "Function IpDrv.WebResponse.GetHTTPExpiration")); }
+			ScriptFunction Dump() { mixin(MGF("mDump", "Function IpDrv.WebResponse.Dump")); }
+			ScriptFunction SendText() { mixin(MGF("mSendText", "Function IpDrv.WebResponse.SendText")); }
+			ScriptFunction SendBinary() { mixin(MGF("mSendBinary", "Function IpDrv.WebResponse.SendBinary")); }
+			ScriptFunction SendCachedFile() { mixin(MGF("mSendCachedFile", "Function IpDrv.WebResponse.SendCachedFile")); }
+			ScriptFunction FailAuthentication() { mixin(MGF("mFailAuthentication", "Function IpDrv.WebResponse.FailAuthentication")); }
+			ScriptFunction HTTPResponse() { mixin(MGF("mHTTPResponse", "Function IpDrv.WebResponse.HTTPResponse")); }
+			ScriptFunction HTTPHeader() { mixin(MGF("mHTTPHeader", "Function IpDrv.WebResponse.HTTPHeader")); }
+			ScriptFunction AddHeader() { mixin(MGF("mAddHeader", "Function IpDrv.WebResponse.AddHeader")); }
+			ScriptFunction SendHeaders() { mixin(MGF("mSendHeaders", "Function IpDrv.WebResponse.SendHeaders")); }
+			ScriptFunction HTTPError() { mixin(MGF("mHTTPError", "Function IpDrv.WebResponse.HTTPError")); }
+			ScriptFunction SendStandardHeaders() { mixin(MGF("mSendStandardHeaders", "Function IpDrv.WebResponse.SendStandardHeaders")); }
+			ScriptFunction Redirect() { mixin(MGF("mRedirect", "Function IpDrv.WebResponse.Redirect")); }
+			ScriptFunction SentText() { mixin(MGF("mSentText", "Function IpDrv.WebResponse.SentText")); }
+			ScriptFunction SentResponse() { mixin(MGF("mSentResponse", "Function IpDrv.WebResponse.SentResponse")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			WebConnection Connection() { mixin(MGPC!("WebConnection", 156)()); }
-			ScriptArray!(ScriptString) headers() { mixin(MGPC!("ScriptArray!(ScriptString)", 60)()); }
-			ScriptString CharSet() { mixin(MGPC!("ScriptString", 144)()); }
-			ScriptString IncludePath() { mixin(MGPC!("ScriptString", 132)()); }
-			UObject.Map_Mirror ReplacementMap() { mixin(MGPC!("UObject.Map_Mirror", 72)()); }
+			WebConnection Connection() { mixin(MGPC("WebConnection", 156)); }
+			ScriptArray!(ScriptString) headers() { mixin(MGPC("ScriptArray!(ScriptString)", 60)); }
+			ScriptString CharSet() { mixin(MGPC("ScriptString", 144)); }
+			ScriptString IncludePath() { mixin(MGPC("ScriptString", 132)); }
+			UObject.Map_Mirror ReplacementMap() { mixin(MGPC("UObject.Map_Mirror", 72)); }
 		}
-		bool bSentResponse() { mixin(MGBPC!(160, 0x2)()); }
-		bool bSentResponse(bool val) { mixin(MSBPC!(160, 0x2)()); }
-		bool bSentText() { mixin(MGBPC!(160, 0x1)()); }
-		bool bSentText(bool val) { mixin(MSBPC!(160, 0x1)()); }
+		bool bSentResponse() { mixin(MGBPC(160, 0x2)); }
+		bool bSentResponse(bool val) { mixin(MSBPC(160, 0x2)); }
+		bool bSentText() { mixin(MGBPC(160, 0x1)); }
+		bool bSentText(bool val) { mixin(MSBPC(160, 0x1)); }
 	}
 final:
 	void Subst(ScriptString Variable, ScriptString Value, bool* bClear = null)

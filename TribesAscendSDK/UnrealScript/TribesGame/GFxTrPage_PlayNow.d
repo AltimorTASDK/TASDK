@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_PlayNow : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_PlayNow")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_PlayNow")); }
 	private static __gshared GFxTrPage_PlayNow mDefaultProperties;
-	@property final static GFxTrPage_PlayNow DefaultProperties() { mixin(MGDPC!(GFxTrPage_PlayNow, "GFxTrPage_PlayNow TribesGame.Default__GFxTrPage_PlayNow")()); }
+	@property final static GFxTrPage_PlayNow DefaultProperties() { mixin(MGDPC("GFxTrPage_PlayNow", "GFxTrPage_PlayNow TribesGame.Default__GFxTrPage_PlayNow")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,16 +30,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetMeshEnumFromVV() { mixin(MGF!("mGetMeshEnumFromVV", "Function TribesGame.GFxTrPage_PlayNow.GetMeshEnumFromVV")()); }
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_PlayNow.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_PlayNow.SpecialAction")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_PlayNow.TakeAction")()); }
-			ScriptFunction RefreshButtons() { mixin(MGF!("mRefreshButtons", "Function TribesGame.GFxTrPage_PlayNow.RefreshButtons")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_PlayNow.FillData")()); }
-			ScriptFunction RemoveDuplicateQueues() { mixin(MGF!("mRemoveDuplicateQueues", "Function TribesGame.GFxTrPage_PlayNow.RemoveDuplicateQueues")()); }
-			ScriptFunction HaveDuplicates() { mixin(MGF!("mHaveDuplicates", "Function TribesGame.GFxTrPage_PlayNow.HaveDuplicates")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_PlayNow.FillOption")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_PlayNow.TakeFocus")()); }
+			ScriptFunction GetMeshEnumFromVV() { mixin(MGF("mGetMeshEnumFromVV", "Function TribesGame.GFxTrPage_PlayNow.GetMeshEnumFromVV")); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_PlayNow.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_PlayNow.SpecialAction")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_PlayNow.TakeAction")); }
+			ScriptFunction RefreshButtons() { mixin(MGF("mRefreshButtons", "Function TribesGame.GFxTrPage_PlayNow.RefreshButtons")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_PlayNow.FillData")); }
+			ScriptFunction RemoveDuplicateQueues() { mixin(MGF("mRemoveDuplicateQueues", "Function TribesGame.GFxTrPage_PlayNow.RemoveDuplicateQueues")); }
+			ScriptFunction HaveDuplicates() { mixin(MGF("mHaveDuplicates", "Function TribesGame.GFxTrPage_PlayNow.HaveDuplicates")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_PlayNow.FillOption")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_PlayNow.TakeFocus")); }
 		}
 	}
 	static struct Constants
@@ -56,17 +56,17 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString SeasonUpcomingSubtext() { mixin(MGPC!("ScriptString", 476)()); }
-		ScriptString NoFriendsOnlineLabel() { mixin(MGPC!("ScriptString", 464)()); }
-		ScriptString RegionsSubtext() { mixin(MGPC!("ScriptString", 452)()); }
-		ScriptString RegionsLabel() { mixin(MGPC!("ScriptString", 440)()); }
-		ScriptString RankedLabel() { mixin(MGPC!("ScriptString", 428)()); }
-		ScriptString CustomServerLabel() { mixin(MGPC!("ScriptString", 416)()); }
-		ScriptString JoinFriendLabel() { mixin(MGPC!("ScriptString", 404)()); }
-		ScriptString JoinFriendInGameSubLabel() { mixin(MGPC!("ScriptString", 392)()); }
-		ScriptString JoinFriendSubLabel() { mixin(MGPC!("ScriptString", 380)()); }
-		ScriptString CustomServerSubtext() { mixin(MGPC!("ScriptString", 368)()); }
-		ScriptString ComingSoonSubtext() { mixin(MGPC!("ScriptString", 356)()); }
+		ScriptString SeasonUpcomingSubtext() { mixin(MGPC("ScriptString", 476)); }
+		ScriptString NoFriendsOnlineLabel() { mixin(MGPC("ScriptString", 464)); }
+		ScriptString RegionsSubtext() { mixin(MGPC("ScriptString", 452)); }
+		ScriptString RegionsLabel() { mixin(MGPC("ScriptString", 440)); }
+		ScriptString RankedLabel() { mixin(MGPC("ScriptString", 428)); }
+		ScriptString CustomServerLabel() { mixin(MGPC("ScriptString", 416)); }
+		ScriptString JoinFriendLabel() { mixin(MGPC("ScriptString", 404)); }
+		ScriptString JoinFriendInGameSubLabel() { mixin(MGPC("ScriptString", 392)); }
+		ScriptString JoinFriendSubLabel() { mixin(MGPC("ScriptString", 380)); }
+		ScriptString CustomServerSubtext() { mixin(MGPC("ScriptString", 368)); }
+		ScriptString ComingSoonSubtext() { mixin(MGPC("ScriptString", 356)); }
 	}
 final:
 	int GetMeshEnumFromVV(int InVal)

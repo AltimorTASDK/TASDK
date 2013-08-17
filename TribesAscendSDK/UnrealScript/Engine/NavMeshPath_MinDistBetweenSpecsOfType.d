@@ -10,9 +10,9 @@ extern(C++) interface NavMeshPath_MinDistBetweenSpecsOfType : NavMeshPathConstra
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.NavMeshPath_MinDistBetweenSpecsOfType")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.NavMeshPath_MinDistBetweenSpecsOfType")); }
 	private static __gshared NavMeshPath_MinDistBetweenSpecsOfType mDefaultProperties;
-	@property final static NavMeshPath_MinDistBetweenSpecsOfType DefaultProperties() { mixin(MGDPC!(NavMeshPath_MinDistBetweenSpecsOfType, "NavMeshPath_MinDistBetweenSpecsOfType Engine.Default__NavMeshPath_MinDistBetweenSpecsOfType")()); }
+	@property final static NavMeshPath_MinDistBetweenSpecsOfType DefaultProperties() { mixin(MGDPC("NavMeshPath_MinDistBetweenSpecsOfType", "NavMeshPath_MinDistBetweenSpecsOfType Engine.Default__NavMeshPath_MinDistBetweenSpecsOfType")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,15 +22,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EnforceMinDist() { mixin(MGF!("mEnforceMinDist", "Function Engine.NavMeshPath_MinDistBetweenSpecsOfType.EnforceMinDist")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPath_MinDistBetweenSpecsOfType.Recycle")()); }
+			ScriptFunction EnforceMinDist() { mixin(MGF("mEnforceMinDist", "Function Engine.NavMeshPath_MinDistBetweenSpecsOfType.EnforceMinDist")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.NavMeshPath_MinDistBetweenSpecsOfType.Recycle")); }
 		}
 	}
 	@property final auto ref
 	{
-		Pylon.ENavMeshEdgeType EdgeType() { mixin(MGPC!("Pylon.ENavMeshEdgeType", 96)()); }
-		Vector InitLocation() { mixin(MGPC!("Vector", 84)()); }
-		float MinDistBetweenEdgeTypes() { mixin(MGPC!("float", 80)()); }
+		Pylon.ENavMeshEdgeType EdgeType() { mixin(MGPC("Pylon.ENavMeshEdgeType", 96)); }
+		Vector InitLocation() { mixin(MGPC("Vector", 84)); }
+		float MinDistBetweenEdgeTypes() { mixin(MGPC("float", 80)); }
 	}
 final:
 	static bool EnforceMinDist(NavigationHandle NavHandle, float InMinDist, Pylon.ENavMeshEdgeType InEdgeType, Vector* LastLocation = null)

@@ -8,7 +8,7 @@ extern(C++) interface ActorFactoryAmbientSoundNonLoop : ActorFactoryAmbientSound
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryAmbientSoundNonLoop")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ActorFactoryAmbientSoundNonLoop")); }
 	private static __gshared ActorFactoryAmbientSoundNonLoop mDefaultProperties;
-	@property final static ActorFactoryAmbientSoundNonLoop DefaultProperties() { mixin(MGDPC!(ActorFactoryAmbientSoundNonLoop, "ActorFactoryAmbientSoundNonLoop Engine.Default__ActorFactoryAmbientSoundNonLoop")()); }
+	@property final static ActorFactoryAmbientSoundNonLoop DefaultProperties() { mixin(MGDPC("ActorFactoryAmbientSoundNonLoop", "ActorFactoryAmbientSoundNonLoop Engine.Default__ActorFactoryAmbientSoundNonLoop")); }
 }

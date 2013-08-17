@@ -12,9 +12,9 @@ extern(C++) interface TrLockedStationMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrLockedStationMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrLockedStationMessage")); }
 	private static __gshared TrLockedStationMessage mDefaultProperties;
-	@property final static TrLockedStationMessage DefaultProperties() { mixin(MGDPC!(TrLockedStationMessage, "TrLockedStationMessage TribesGame.Default__TrLockedStationMessage")()); }
+	@property final static TrLockedStationMessage DefaultProperties() { mixin(MGDPC("TrLockedStationMessage", "TrLockedStationMessage TribesGame.Default__TrLockedStationMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrLockedStationMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrLockedStationMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrLockedStationMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrLockedStationMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		SoundCue DeniedSound() { mixin(MGPC!("SoundCue", 136)()); }
-		ScriptString Second() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString Seconds() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString StationLocked() { mixin(MGPC!("ScriptString", 100)()); }
+		SoundCue DeniedSound() { mixin(MGPC("SoundCue", 136)); }
+		ScriptString Second() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString Seconds() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString StationLocked() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

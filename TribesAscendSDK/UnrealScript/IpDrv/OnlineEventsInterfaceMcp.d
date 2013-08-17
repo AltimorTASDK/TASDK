@@ -13,9 +13,9 @@ extern(C++) interface OnlineEventsInterfaceMcp : MCPBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.OnlineEventsInterfaceMcp")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.OnlineEventsInterfaceMcp")); }
 	private static __gshared OnlineEventsInterfaceMcp mDefaultProperties;
-	@property final static OnlineEventsInterfaceMcp DefaultProperties() { mixin(MGDPC!(OnlineEventsInterfaceMcp, "OnlineEventsInterfaceMcp IpDrv.Default__OnlineEventsInterfaceMcp")()); }
+	@property final static OnlineEventsInterfaceMcp DefaultProperties() { mixin(MGDPC("OnlineEventsInterfaceMcp", "OnlineEventsInterfaceMcp IpDrv.Default__OnlineEventsInterfaceMcp")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,10 +27,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UploadPlayerData() { mixin(MGF!("mUploadPlayerData", "Function IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData")()); }
-			ScriptFunction UploadGameplayEventsData() { mixin(MGF!("mUploadGameplayEventsData", "Function IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData")()); }
-			ScriptFunction UpdatePlaylistPopulation() { mixin(MGF!("mUpdatePlaylistPopulation", "Function IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation")()); }
-			ScriptFunction UploadMatchmakingStats() { mixin(MGF!("mUploadMatchmakingStats", "Function IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats")()); }
+			ScriptFunction UploadPlayerData() { mixin(MGF("mUploadPlayerData", "Function IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData")); }
+			ScriptFunction UploadGameplayEventsData() { mixin(MGF("mUploadGameplayEventsData", "Function IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData")); }
+			ScriptFunction UpdatePlaylistPopulation() { mixin(MGF("mUpdatePlaylistPopulation", "Function IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation")); }
+			ScriptFunction UploadMatchmakingStats() { mixin(MGF("mUploadMatchmakingStats", "Function IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats")); }
 		}
 	}
 	enum EEventUploadType : ubyte
@@ -46,29 +46,29 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlineEventsInterfaceMcp.EventUploadConfig")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.OnlineEventsInterfaceMcp.EventUploadConfig")); }
 		@property final
 		{
 			auto ref
 			{
-				float TimeOut() { mixin(MGPS!("float", 16)()); }
-				ScriptString UploadUrl() { mixin(MGPS!("ScriptString", 4)()); }
-				OnlineEventsInterfaceMcp.EEventUploadType UploadType() { mixin(MGPS!("OnlineEventsInterfaceMcp.EEventUploadType", 0)()); }
+				float TimeOut() { mixin(MGPS("float", 16)); }
+				ScriptString UploadUrl() { mixin(MGPS("ScriptString", 4)); }
+				OnlineEventsInterfaceMcp.EEventUploadType UploadType() { mixin(MGPS("OnlineEventsInterfaceMcp.EEventUploadType", 0)); }
 			}
-			bool bUseCompression() { mixin(MGBPS!(20, 0x1)()); }
-			bool bUseCompression(bool val) { mixin(MSBPS!(20, 0x1)()); }
+			bool bUseCompression() { mixin(MGBPS(20, 0x1)); }
+			bool bUseCompression(bool val) { mixin(MSBPS(20, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig) EventUploadConfigs() { mixin(MGPC!("ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig)", 64)()); }
-			ScriptArray!(UObject.Pointer) HttpPostObjects() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 76)()); }
-			ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType) DisabledUploadTypes() { mixin(MGPC!("ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType)", 88)()); }
+			ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig) EventUploadConfigs() { mixin(MGPC("ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig)", 64)); }
+			ScriptArray!(UObject.Pointer) HttpPostObjects() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 76)); }
+			ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType) DisabledUploadTypes() { mixin(MGPC("ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType)", 88)); }
 		}
-		bool bBinaryStats() { mixin(MGBPC!(100, 0x1)()); }
-		bool bBinaryStats(bool val) { mixin(MSBPC!(100, 0x1)()); }
+		bool bBinaryStats() { mixin(MGBPC(100, 0x1)); }
+		bool bBinaryStats(bool val) { mixin(MSBPC(100, 0x1)); }
 	}
 final:
 	bool UploadPlayerData(OnlineSubsystem.UniqueNetId UniqueId, ScriptString PlayerNick, OnlineProfileSettings ProfileSettings, OnlinePlayerStorage PlayerStorage)

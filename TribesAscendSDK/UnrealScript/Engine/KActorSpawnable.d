@@ -8,9 +8,9 @@ extern(C++) interface KActorSpawnable : KActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KActorSpawnable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.KActorSpawnable")); }
 	private static __gshared KActorSpawnable mDefaultProperties;
-	@property final static KActorSpawnable DefaultProperties() { mixin(MGDPC!(KActorSpawnable, "KActorSpawnable Engine.Default__KActorSpawnable")()); }
+	@property final static KActorSpawnable DefaultProperties() { mixin(MGDPC("KActorSpawnable", "KActorSpawnable Engine.Default__KActorSpawnable")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,18 +22,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function Engine.KActorSpawnable.Initialize")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.KActorSpawnable.Recycle")()); }
-			ScriptFunction RecycleInternal() { mixin(MGF!("mRecycleInternal", "Function Engine.KActorSpawnable.RecycleInternal")()); }
-			ScriptFunction ResetComponents() { mixin(MGF!("mResetComponents", "Function Engine.KActorSpawnable.ResetComponents")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function Engine.KActorSpawnable.Initialize")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.KActorSpawnable.Recycle")); }
+			ScriptFunction RecycleInternal() { mixin(MGF("mRecycleInternal", "Function Engine.KActorSpawnable.RecycleInternal")); }
+			ScriptFunction ResetComponents() { mixin(MGF("mResetComponents", "Function Engine.KActorSpawnable.ResetComponents")); }
 		}
 	}
 	@property final
 	{
-		bool bScalingToZero() { mixin(MGBPC!(712, 0x2)()); }
-		bool bScalingToZero(bool val) { mixin(MSBPC!(712, 0x2)()); }
-		bool bRecycleScaleToZero() { mixin(MGBPC!(712, 0x1)()); }
-		bool bRecycleScaleToZero(bool val) { mixin(MSBPC!(712, 0x1)()); }
+		bool bScalingToZero() { mixin(MGBPC(712, 0x2)); }
+		bool bScalingToZero(bool val) { mixin(MSBPC(712, 0x2)); }
+		bool bRecycleScaleToZero() { mixin(MGBPC(712, 0x1)); }
+		bool bRecycleScaleToZero(bool val) { mixin(MSBPC(712, 0x1)); }
 	}
 final:
 	void Initialize()

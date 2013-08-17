@@ -10,9 +10,9 @@ extern(C++) interface UIDataStore : UIDataProvider
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStore")); }
 	private static __gshared UIDataStore mDefaultProperties;
-	@property final static UIDataStore DefaultProperties() { mixin(MGDPC!(UIDataStore, "UIDataStore Engine.Default__UIDataStore")()); }
+	@property final static UIDataStore DefaultProperties() { mixin(MGDPC("UIDataStore", "UIDataStore Engine.Default__UIDataStore")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,25 +29,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function Engine.UIDataStore.NotifyGameSessionEnded")()); }
-			ScriptFunction OnDataStoreValueUpdated() { mixin(MGF!("mOnDataStoreValueUpdated", "Function Engine.UIDataStore.OnDataStoreValueUpdated")()); }
-			ScriptFunction Registered() { mixin(MGF!("mRegistered", "Function Engine.UIDataStore.Registered")()); }
-			ScriptFunction Unregistered() { mixin(MGF!("mUnregistered", "Function Engine.UIDataStore.Unregistered")()); }
-			ScriptFunction SubscriberAttached() { mixin(MGF!("mSubscriberAttached", "Function Engine.UIDataStore.SubscriberAttached")()); }
-			ScriptFunction SubscriberDetached() { mixin(MGF!("mSubscriberDetached", "Function Engine.UIDataStore.SubscriberDetached")()); }
-			ScriptFunction RefreshSubscribers() { mixin(MGF!("mRefreshSubscribers", "Function Engine.UIDataStore.RefreshSubscribers")()); }
-			ScriptFunction OnCommit() { mixin(MGF!("mOnCommit", "Function Engine.UIDataStore.OnCommit")()); }
-			ScriptFunction GetDataStoreClient() { mixin(MGF!("mGetDataStoreClient", "Function Engine.UIDataStore.GetDataStoreClient")()); }
+			ScriptFunction NotifyGameSessionEnded() { mixin(MGF("mNotifyGameSessionEnded", "Function Engine.UIDataStore.NotifyGameSessionEnded")); }
+			ScriptFunction OnDataStoreValueUpdated() { mixin(MGF("mOnDataStoreValueUpdated", "Function Engine.UIDataStore.OnDataStoreValueUpdated")); }
+			ScriptFunction Registered() { mixin(MGF("mRegistered", "Function Engine.UIDataStore.Registered")); }
+			ScriptFunction Unregistered() { mixin(MGF("mUnregistered", "Function Engine.UIDataStore.Unregistered")); }
+			ScriptFunction SubscriberAttached() { mixin(MGF("mSubscriberAttached", "Function Engine.UIDataStore.SubscriberAttached")); }
+			ScriptFunction SubscriberDetached() { mixin(MGF("mSubscriberDetached", "Function Engine.UIDataStore.SubscriberDetached")); }
+			ScriptFunction RefreshSubscribers() { mixin(MGF("mRefreshSubscribers", "Function Engine.UIDataStore.RefreshSubscribers")); }
+			ScriptFunction OnCommit() { mixin(MGF("mOnCommit", "Function Engine.UIDataStore.OnCommit")); }
+			ScriptFunction GetDataStoreClient() { mixin(MGF("mGetDataStoreClient", "Function Engine.UIDataStore.GetDataStoreClient")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptName Tag() { mixin(MGPC!("ScriptName", 88)()); }
+		ScriptName Tag() { mixin(MGPC("ScriptName", 88)); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) RefreshSubscriberNotifies() { mixin(MGPC!("ScriptArray!(
+void*) RefreshSubscriberNotifies() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*)", 96)()); }
+void*)", 96)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDataStoreValueUpdated__Delegate'!
 	}
 final:

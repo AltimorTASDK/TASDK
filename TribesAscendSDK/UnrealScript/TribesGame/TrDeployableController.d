@@ -10,9 +10,9 @@ extern(C++) interface TrDeployableController : AIController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployableController")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployableController")); }
 	private static __gshared TrDeployableController mDefaultProperties;
-	@property final static TrDeployableController DefaultProperties() { mixin(MGDPC!(TrDeployableController, "TrDeployableController TribesGame.Default__TrDeployableController")()); }
+	@property final static TrDeployableController DefaultProperties() { mixin(MGDPC("TrDeployableController", "TrDeployableController TribesGame.Default__TrDeployableController")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,11 +22,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CanFireWeapon() { mixin(MGF!("mCanFireWeapon", "Function TribesGame.TrDeployableController.CanFireWeapon")()); }
-			ScriptFunction ScriptGetTeamNum() { mixin(MGF!("mScriptGetTeamNum", "Function TribesGame.TrDeployableController.ScriptGetTeamNum")()); }
+			ScriptFunction CanFireWeapon() { mixin(MGF("mCanFireWeapon", "Function TribesGame.TrDeployableController.CanFireWeapon")); }
+			ScriptFunction ScriptGetTeamNum() { mixin(MGF("mScriptGetTeamNum", "Function TribesGame.TrDeployableController.ScriptGetTeamNum")); }
 		}
 	}
-	@property final auto ref TrPlayerController m_SpawnedFromController() { mixin(MGPC!("TrPlayerController", 924)()); }
+	@property final auto ref TrPlayerController m_SpawnedFromController() { mixin(MGPC("TrPlayerController", 924)); }
 final:
 	bool CanFireWeapon(Weapon Wpn, ubyte FireModeNum)
 	{

@@ -8,7 +8,7 @@ extern(C++) interface UTSkelControl_MassBoneScaling : UDKSkelControl_MassBoneSca
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTSkelControl_MassBoneScaling")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTSkelControl_MassBoneScaling")); }
 	private static __gshared UTSkelControl_MassBoneScaling mDefaultProperties;
-	@property final static UTSkelControl_MassBoneScaling DefaultProperties() { mixin(MGDPC!(UTSkelControl_MassBoneScaling, "UTSkelControl_MassBoneScaling UTGame.Default__UTSkelControl_MassBoneScaling")()); }
+	@property final static UTSkelControl_MassBoneScaling DefaultProperties() { mixin(MGDPC("UTSkelControl_MassBoneScaling", "UTSkelControl_MassBoneScaling UTGame.Default__UTSkelControl_MassBoneScaling")); }
 }

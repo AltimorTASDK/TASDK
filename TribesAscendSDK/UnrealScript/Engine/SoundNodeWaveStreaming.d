@@ -8,9 +8,9 @@ extern(C++) interface SoundNodeWaveStreaming : SoundNodeWave
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SoundNodeWaveStreaming")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SoundNodeWaveStreaming")); }
 	private static __gshared SoundNodeWaveStreaming mDefaultProperties;
-	@property final static SoundNodeWaveStreaming DefaultProperties() { mixin(MGDPC!(SoundNodeWaveStreaming, "SoundNodeWaveStreaming Engine.Default__SoundNodeWaveStreaming")()); }
+	@property final static SoundNodeWaveStreaming DefaultProperties() { mixin(MGDPC("SoundNodeWaveStreaming", "SoundNodeWaveStreaming Engine.Default__SoundNodeWaveStreaming")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,13 +22,13 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction QueueAudio() { mixin(MGF!("mQueueAudio", "Function Engine.SoundNodeWaveStreaming.QueueAudio")()); }
-			ScriptFunction ResetAudio() { mixin(MGF!("mResetAudio", "Function Engine.SoundNodeWaveStreaming.ResetAudio")()); }
-			ScriptFunction AvailableAudioBytes() { mixin(MGF!("mAvailableAudioBytes", "Function Engine.SoundNodeWaveStreaming.AvailableAudioBytes")()); }
-			ScriptFunction GeneratePCMData() { mixin(MGF!("mGeneratePCMData", "Function Engine.SoundNodeWaveStreaming.GeneratePCMData")()); }
+			ScriptFunction QueueAudio() { mixin(MGF("mQueueAudio", "Function Engine.SoundNodeWaveStreaming.QueueAudio")); }
+			ScriptFunction ResetAudio() { mixin(MGF("mResetAudio", "Function Engine.SoundNodeWaveStreaming.ResetAudio")); }
+			ScriptFunction AvailableAudioBytes() { mixin(MGF("mAvailableAudioBytes", "Function Engine.SoundNodeWaveStreaming.AvailableAudioBytes")); }
+			ScriptFunction GeneratePCMData() { mixin(MGF("mGeneratePCMData", "Function Engine.SoundNodeWaveStreaming.GeneratePCMData")); }
 		}
 	}
-	@property final auto ref ScriptArray!(ubyte) QueuedAudio() { mixin(MGPC!("ScriptArray!(ubyte)", 436)()); }
+	@property final auto ref ScriptArray!(ubyte) QueuedAudio() { mixin(MGPC("ScriptArray!(ubyte)", 436)); }
 final:
 	void QueueAudio(ScriptArray!(ubyte) Data)
 	{

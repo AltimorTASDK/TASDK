@@ -10,9 +10,9 @@ extern(C++) interface UTTeamStaticMesh : StaticMeshActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamStaticMesh")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeamStaticMesh")); }
 	private static __gshared UTTeamStaticMesh mDefaultProperties;
-	@property final static UTTeamStaticMesh DefaultProperties() { mixin(MGDPC!(UTTeamStaticMesh, "UTTeamStaticMesh UTGame.Default__UTTeamStaticMesh")()); }
+	@property final static UTTeamStaticMesh DefaultProperties() { mixin(MGDPC("UTTeamStaticMesh", "UTTeamStaticMesh UTGame.Default__UTTeamStaticMesh")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,14 +22,14 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTTeamStaticMesh.PreBeginPlay")()); }
-			ScriptFunction SetTeamNum() { mixin(MGF!("mSetTeamNum", "Function UTGame.UTTeamStaticMesh.SetTeamNum")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function UTGame.UTTeamStaticMesh.PreBeginPlay")); }
+			ScriptFunction SetTeamNum() { mixin(MGF("mSetTeamNum", "Function UTGame.UTTeamStaticMesh.SetTeamNum")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MaterialInterface) TeamMaterials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 484)()); }
-		Material NeutralMaterial() { mixin(MGPC!("Material", 496)()); }
+		ScriptArray!(MaterialInterface) TeamMaterials() { mixin(MGPC("ScriptArray!(MaterialInterface)", 484)); }
+		Material NeutralMaterial() { mixin(MGPC("Material", 496)); }
 	}
 final:
 	void PreBeginPlay()

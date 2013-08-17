@@ -13,9 +13,9 @@ extern(C++) interface UTDefensePoint : UDKScriptedNavigationPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDefensePoint")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDefensePoint")); }
 	private static __gshared UTDefensePoint mDefaultProperties;
-	@property final static UTDefensePoint DefaultProperties() { mixin(MGDPC!(UTDefensePoint, "UTDefensePoint UTGame.Default__UTDefensePoint")()); }
+	@property final static UTDefensePoint DefaultProperties() { mixin(MGDPC("UTDefensePoint", "UTDefensePoint UTGame.Default__UTDefensePoint")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,12 +29,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetMoveTarget() { mixin(MGF!("mGetMoveTarget", "Function UTGame.UTDefensePoint.GetMoveTarget")()); }
-			ScriptFunction HigherPriorityThan() { mixin(MGF!("mHigherPriorityThan", "Function UTGame.UTDefensePoint.HigherPriorityThan")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTDefensePoint.Reset")()); }
-			ScriptFunction FreePoint() { mixin(MGF!("mFreePoint", "Function UTGame.UTDefensePoint.FreePoint")()); }
-			ScriptFunction CheckForErrors() { mixin(MGF!("mCheckForErrors", "Function UTGame.UTDefensePoint.CheckForErrors")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTDefensePoint.PreBeginPlay")()); }
+			ScriptFunction GetMoveTarget() { mixin(MGF("mGetMoveTarget", "Function UTGame.UTDefensePoint.GetMoveTarget")); }
+			ScriptFunction HigherPriorityThan() { mixin(MGF("mHigherPriorityThan", "Function UTGame.UTDefensePoint.HigherPriorityThan")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function UTGame.UTDefensePoint.Reset")); }
+			ScriptFunction FreePoint() { mixin(MGF("mFreePoint", "Function UTGame.UTDefensePoint.FreePoint")); }
+			ScriptFunction CheckForErrors() { mixin(MGF("mCheckForErrors", "Function UTGame.UTDefensePoint.CheckForErrors")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function UTGame.UTDefensePoint.PreBeginPlay")); }
 		}
 	}
 	enum EDefensePriority : ubyte
@@ -47,22 +47,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass WeaponPreference() { mixin(MGPC!("ScriptClass", 712)()); }
-			UDKGameObjective DefendedObjective() { mixin(MGPC!("UDKGameObjective", 704)()); }
-			ScriptName DefenseGroup() { mixin(MGPC!("ScriptName", 716)()); }
-			UTDefensePoint NextDefensePoint() { mixin(MGPC!("UTDefensePoint", 700)()); }
-			Controller CurrentUser() { mixin(MGPC!("Controller", 696)()); }
-			ScriptArray!(Texture2D) TeamSprites() { mixin(MGPC!("ScriptArray!(Texture2D)", 728)()); }
-			UTDefensePoint.EDefensePriority DefensePriority() { mixin(MGPC!("UTDefensePoint.EDefensePriority", 724)()); }
+			ScriptClass WeaponPreference() { mixin(MGPC("ScriptClass", 712)); }
+			UDKGameObjective DefendedObjective() { mixin(MGPC("UDKGameObjective", 704)); }
+			ScriptName DefenseGroup() { mixin(MGPC("ScriptName", 716)); }
+			UTDefensePoint NextDefensePoint() { mixin(MGPC("UTDefensePoint", 700)); }
+			Controller CurrentUser() { mixin(MGPC("Controller", 696)); }
+			ScriptArray!(Texture2D) TeamSprites() { mixin(MGPC("ScriptArray!(Texture2D)", 728)); }
+			UTDefensePoint.EDefensePriority DefensePriority() { mixin(MGPC("UTDefensePoint.EDefensePriority", 724)); }
 		}
-		bool bSniping() { mixin(MGBPC!(708, 0x2)()); }
-		bool bSniping(bool val) { mixin(MSBPC!(708, 0x2)()); }
-		bool bFirstScript() { mixin(MGBPC!(708, 0x1)()); }
-		bool bFirstScript(bool val) { mixin(MSBPC!(708, 0x1)()); }
-		bool bOnlyOnFoot() { mixin(MGBPC!(708, 0x4)()); }
-		bool bOnlyOnFoot(bool val) { mixin(MSBPC!(708, 0x4)()); }
-		bool bOnlySkilled() { mixin(MGBPC!(708, 0x8)()); }
-		bool bOnlySkilled(bool val) { mixin(MSBPC!(708, 0x8)()); }
+		bool bSniping() { mixin(MGBPC(708, 0x2)); }
+		bool bSniping(bool val) { mixin(MSBPC(708, 0x2)); }
+		bool bFirstScript() { mixin(MGBPC(708, 0x1)); }
+		bool bFirstScript(bool val) { mixin(MSBPC(708, 0x1)); }
+		bool bOnlyOnFoot() { mixin(MGBPC(708, 0x4)); }
+		bool bOnlyOnFoot(bool val) { mixin(MSBPC(708, 0x4)); }
+		bool bOnlySkilled() { mixin(MGBPC(708, 0x8)); }
+		bool bOnlySkilled(bool val) { mixin(MSBPC(708, 0x8)); }
 	}
 final:
 	Actor GetMoveTarget()

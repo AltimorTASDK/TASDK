@@ -9,13 +9,13 @@ extern(C++) interface UIDataStorePublisher : UIDataStoreSubscriber
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStorePublisher")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.UIDataStorePublisher")); }
 	private static __gshared UIDataStorePublisher mDefaultProperties;
-	@property final static UIDataStorePublisher DefaultProperties() { mixin(MGDPC!(UIDataStorePublisher, "UIDataStorePublisher Engine.Default__UIDataStorePublisher")()); }
+	@property final static UIDataStorePublisher DefaultProperties() { mixin(MGDPC("UIDataStorePublisher", "UIDataStorePublisher Engine.Default__UIDataStorePublisher")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSaveSubscriberValue;
-		public @property static final ScriptFunction SaveSubscriberValue() { mixin(MGF!("mSaveSubscriberValue", "Function Engine.UIDataStorePublisher.SaveSubscriberValue")()); }
+		public @property static final ScriptFunction SaveSubscriberValue() { mixin(MGF("mSaveSubscriberValue", "Function Engine.UIDataStorePublisher.SaveSubscriberValue")); }
 	}
 	final bool SaveSubscriberValue(ref ScriptArray!(UIDataStore) out_BoundDataStores, int* BindingIndex = null)
 	{

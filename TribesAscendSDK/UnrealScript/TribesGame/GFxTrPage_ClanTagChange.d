@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_ClanTagChange : GFxTrPage_VendorTable
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ClanTagChange")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_ClanTagChange")); }
 	private static __gshared GFxTrPage_ClanTagChange mDefaultProperties;
-	@property final static GFxTrPage_ClanTagChange DefaultProperties() { mixin(MGDPC!(GFxTrPage_ClanTagChange, "GFxTrPage_ClanTagChange TribesGame.Default__GFxTrPage_ClanTagChange")()); }
+	@property final static GFxTrPage_ClanTagChange DefaultProperties() { mixin(MGDPC("GFxTrPage_ClanTagChange", "GFxTrPage_ClanTagChange TribesGame.Default__GFxTrPage_ClanTagChange")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,30 +27,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ClanTagChange.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ClanTagChange.FillOption")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ClanTagChange.FillDescription")()); }
-			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_ClanTagChange.ModifyAction")()); }
-			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_ClanTagChange.CheckPricing")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ClanTagChange.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ClanTagChange.PopupComplete")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ClanTagChange.ShowModel")()); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_ClanTagChange.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_ClanTagChange.FillOption")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_ClanTagChange.FillDescription")); }
+			ScriptFunction ModifyAction() { mixin(MGF("mModifyAction", "Function TribesGame.GFxTrPage_ClanTagChange.ModifyAction")); }
+			ScriptFunction CheckPricing() { mixin(MGF("mCheckPricing", "Function TribesGame.GFxTrPage_ClanTagChange.CheckPricing")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_ClanTagChange.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_ClanTagChange.PopupComplete")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_ClanTagChange.ShowModel")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString RemovePopupTitle() { mixin(MGPC!("ScriptString", 464)()); }
-		ScriptString ChangePopupTitle() { mixin(MGPC!("ScriptString", 452)()); }
-		ScriptString RemovePopupBody() { mixin(MGPC!("ScriptString", 440)()); }
-		ScriptString ChangePopupBody() { mixin(MGPC!("ScriptString", 428)()); }
-		int RemoveItem() { mixin(MGPC!("int", 424)()); }
-		int ChangeItem() { mixin(MGPC!("int", 420)()); }
-		int xpPrice() { mixin(MGPC!("int", 416)()); }
-		int gpPrice() { mixin(MGPC!("int", 412)()); }
-		int CurrencyNum() { mixin(MGPC!("int", 408)()); }
-		int ConfirmNum() { mixin(MGPC!("int", 404)()); }
-		int EntryNum() { mixin(MGPC!("int", 400)()); }
-		int PopupNum() { mixin(MGPC!("int", 396)()); }
+		ScriptString RemovePopupTitle() { mixin(MGPC("ScriptString", 464)); }
+		ScriptString ChangePopupTitle() { mixin(MGPC("ScriptString", 452)); }
+		ScriptString RemovePopupBody() { mixin(MGPC("ScriptString", 440)); }
+		ScriptString ChangePopupBody() { mixin(MGPC("ScriptString", 428)); }
+		int RemoveItem() { mixin(MGPC("int", 424)); }
+		int ChangeItem() { mixin(MGPC("int", 420)); }
+		int xpPrice() { mixin(MGPC("int", 416)); }
+		int gpPrice() { mixin(MGPC("int", 412)); }
+		int CurrencyNum() { mixin(MGPC("int", 408)); }
+		int ConfirmNum() { mixin(MGPC("int", 404)); }
+		int EntryNum() { mixin(MGPC("int", 400)); }
+		int PopupNum() { mixin(MGPC("int", 396)); }
 	}
 final:
 	void FillData(GFxObject DataList)

@@ -12,9 +12,9 @@ extern(C++) interface TrTimerMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTimerMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrTimerMessage")); }
 	private static __gshared TrTimerMessage mDefaultProperties;
-	@property final static TrTimerMessage DefaultProperties() { mixin(MGDPC!(TrTimerMessage, "TrTimerMessage TribesGame.Default__TrTimerMessage")()); }
+	@property final static TrTimerMessage DefaultProperties() { mixin(MGDPC("TrTimerMessage", "TrTimerMessage TribesGame.Default__TrTimerMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,17 +24,17 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrTimerMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrTimerMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrTimerMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrTimerMessage.ClientReceive")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString TimerMessage() { mixin(MGPC!("ScriptString", 116)()); }
-		SoundCue m_sOneMinuteWarningBE() { mixin(MGPC!("SoundCue", 112)()); }
-		SoundCue m_sFiveMinuteWarningBE() { mixin(MGPC!("SoundCue", 108)()); }
-		SoundCue m_sOneMinuteWarningDS() { mixin(MGPC!("SoundCue", 104)()); }
-		SoundCue m_sFiveMinuteWarningDS() { mixin(MGPC!("SoundCue", 100)()); }
+		ScriptString TimerMessage() { mixin(MGPC("ScriptString", 116)); }
+		SoundCue m_sOneMinuteWarningBE() { mixin(MGPC("SoundCue", 112)); }
+		SoundCue m_sFiveMinuteWarningBE() { mixin(MGPC("SoundCue", 108)); }
+		SoundCue m_sOneMinuteWarningDS() { mixin(MGPC("SoundCue", 104)); }
+		SoundCue m_sFiveMinuteWarningDS() { mixin(MGPC("SoundCue", 100)); }
 	}
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)

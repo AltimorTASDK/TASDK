@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_PartyInvite : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_PartyInvite")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_PartyInvite")); }
 	private static __gshared GFxTrPage_PartyInvite mDefaultProperties;
-	@property final static GFxTrPage_PartyInvite DefaultProperties() { mixin(MGDPC!(GFxTrPage_PartyInvite, "GFxTrPage_PartyInvite TribesGame.Default__GFxTrPage_PartyInvite")()); }
+	@property final static GFxTrPage_PartyInvite DefaultProperties() { mixin(MGDPC("GFxTrPage_PartyInvite", "GFxTrPage_PartyInvite TribesGame.Default__GFxTrPage_PartyInvite")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,27 +30,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_PartyInvite.FillData")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_PartyInvite.SpecialAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_PartyInvite.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_PartyInvite.PopupComplete")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_PartyInvite.FillOption")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_PartyInvite.TakeFocus")()); }
-			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_PartyInvite.CheckPricing")()); }
-			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage_PartyInvite.FillPricing")()); }
-			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_PartyInvite.ModifyAction")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_PartyInvite.ShowModel")()); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_PartyInvite.FillData")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_PartyInvite.SpecialAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_PartyInvite.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_PartyInvite.PopupComplete")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_PartyInvite.FillOption")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_PartyInvite.TakeFocus")); }
+			ScriptFunction CheckPricing() { mixin(MGF("mCheckPricing", "Function TribesGame.GFxTrPage_PartyInvite.CheckPricing")); }
+			ScriptFunction FillPricing() { mixin(MGF("mFillPricing", "Function TribesGame.GFxTrPage_PartyInvite.FillPricing")); }
+			ScriptFunction ModifyAction() { mixin(MGF("mModifyAction", "Function TribesGame.GFxTrPage_PartyInvite.ModifyAction")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_PartyInvite.ShowModel")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) ShownFriends() { mixin(MGPC!("ScriptArray!(ScriptString)", 388)()); }
-		ScriptString MemberName() { mixin(MGPC!("ScriptString", 376)()); }
-		int Action_InviteFailed() { mixin(MGPC!("int", 372)()); }
-		int Action_SendMessage() { mixin(MGPC!("int", 368)()); }
-		int Action_InviteSent() { mixin(MGPC!("int", 364)()); }
-		int Action_ByName() { mixin(MGPC!("int", 360)()); }
-		int PopupNum() { mixin(MGPC!("int", 356)()); }
+		ScriptArray!(ScriptString) ShownFriends() { mixin(MGPC("ScriptArray!(ScriptString)", 388)); }
+		ScriptString MemberName() { mixin(MGPC("ScriptString", 376)); }
+		int Action_InviteFailed() { mixin(MGPC("int", 372)); }
+		int Action_SendMessage() { mixin(MGPC("int", 368)); }
+		int Action_InviteSent() { mixin(MGPC("int", 364)); }
+		int Action_ByName() { mixin(MGPC("int", 360)); }
+		int PopupNum() { mixin(MGPC("int", 356)); }
 	}
 final:
 	void FillData(GFxObject DataList)

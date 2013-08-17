@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_Class : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Class")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Class")); }
 	private static __gshared GFxTrPage_Class mDefaultProperties;
-	@property final static GFxTrPage_Class DefaultProperties() { mixin(MGDPC!(GFxTrPage_Class, "GFxTrPage_Class TribesGame.Default__GFxTrPage_Class")()); }
+	@property final static GFxTrPage_Class DefaultProperties() { mixin(MGDPC("GFxTrPage_Class", "GFxTrPage_Class TribesGame.Default__GFxTrPage_Class")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,19 +33,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Class.Initialize")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Class.FillData")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Class.SpecialAction")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Class.TakeAction")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_Class.FillOption")()); }
-			ScriptFunction GetEquipType() { mixin(MGF!("mGetEquipType", "Function TribesGame.GFxTrPage_Class.GetEquipType")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_Class.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_Class.FillDescription")()); }
-			ScriptFunction GetArmorName() { mixin(MGF!("mGetArmorName", "Function TribesGame.GFxTrPage_Class.GetArmorName")()); }
-			ScriptFunction GetEquipName() { mixin(MGF!("mGetEquipName", "Function TribesGame.GFxTrPage_Class.GetEquipName")()); }
-			ScriptFunction HelpButton() { mixin(MGF!("mHelpButton", "Function TribesGame.GFxTrPage_Class.HelpButton")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_Class.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_Class.PopupComplete")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_Class.Initialize")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_Class.FillData")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_Class.SpecialAction")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_Class.TakeAction")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_Class.FillOption")); }
+			ScriptFunction GetEquipType() { mixin(MGF("mGetEquipType", "Function TribesGame.GFxTrPage_Class.GetEquipType")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_Class.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_Class.FillDescription")); }
+			ScriptFunction GetArmorName() { mixin(MGF("mGetArmorName", "Function TribesGame.GFxTrPage_Class.GetArmorName")); }
+			ScriptFunction GetEquipName() { mixin(MGF("mGetEquipName", "Function TribesGame.GFxTrPage_Class.GetEquipName")); }
+			ScriptFunction HelpButton() { mixin(MGF("mHelpButton", "Function TribesGame.GFxTrPage_Class.HelpButton")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_Class.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_Class.PopupComplete")); }
 		}
 	}
 	enum MENU_ACTION_CLASS : ubyte
@@ -65,13 +65,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			int NumRenameLoadout() { mixin(MGPC!("int", 360)()); }
-			int PopupNum() { mixin(MGPC!("int", 356)()); }
+			int NumRenameLoadout() { mixin(MGPC("int", 360)); }
+			int PopupNum() { mixin(MGPC("int", 356)); }
 		}
-		bool bViewingEquip() { mixin(MGBPC!(364, 0x2)()); }
-		bool bViewingEquip(bool val) { mixin(MSBPC!(364, 0x2)()); }
-		bool bClassLocked() { mixin(MGBPC!(364, 0x1)()); }
-		bool bClassLocked(bool val) { mixin(MSBPC!(364, 0x1)()); }
+		bool bViewingEquip() { mixin(MGBPC(364, 0x2)); }
+		bool bViewingEquip(bool val) { mixin(MSBPC(364, 0x2)); }
+		bool bClassLocked() { mixin(MGBPC(364, 0x1)); }
+		bool bClassLocked(bool val) { mixin(MSBPC(364, 0x1)); }
 	}
 final:
 	void Initialize()

@@ -9,9 +9,9 @@ extern(C++) interface TrPawnCollisionProxy : TrCollisionProxy
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrPawnCollisionProxy")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrPawnCollisionProxy")); }
 	private static __gshared TrPawnCollisionProxy mDefaultProperties;
-	@property final static TrPawnCollisionProxy DefaultProperties() { mixin(MGDPC!(TrPawnCollisionProxy, "TrPawnCollisionProxy TribesGame.Default__TrPawnCollisionProxy")()); }
+	@property final static TrPawnCollisionProxy DefaultProperties() { mixin(MGDPC("TrPawnCollisionProxy", "TrPawnCollisionProxy TribesGame.Default__TrPawnCollisionProxy")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnPawnAdded() { mixin(MGF!("mOnPawnAdded", "Function TribesGame.TrPawnCollisionProxy.OnPawnAdded")()); }
-			ScriptFunction OnPawnRemoved() { mixin(MGF!("mOnPawnRemoved", "Function TribesGame.TrPawnCollisionProxy.OnPawnRemoved")()); }
+			ScriptFunction OnPawnAdded() { mixin(MGF("mOnPawnAdded", "Function TribesGame.TrPawnCollisionProxy.OnPawnAdded")); }
+			ScriptFunction OnPawnRemoved() { mixin(MGF("mOnPawnRemoved", "Function TribesGame.TrPawnCollisionProxy.OnPawnRemoved")); }
 		}
 	}
 final:

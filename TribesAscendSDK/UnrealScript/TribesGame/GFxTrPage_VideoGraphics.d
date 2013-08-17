@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_VideoGraphics : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_VideoGraphics")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_VideoGraphics")); }
 	private static __gshared GFxTrPage_VideoGraphics mDefaultProperties;
-	@property final static GFxTrPage_VideoGraphics DefaultProperties() { mixin(MGDPC!(GFxTrPage_VideoGraphics, "GFxTrPage_VideoGraphics TribesGame.Default__GFxTrPage_VideoGraphics")()); }
+	@property final static GFxTrPage_VideoGraphics DefaultProperties() { mixin(MGDPC("GFxTrPage_VideoGraphics", "GFxTrPage_VideoGraphics TribesGame.Default__GFxTrPage_VideoGraphics")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,10 +24,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_VideoGraphics.Initialize")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_VideoGraphics.FillData")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_VideoGraphics.SpecialAction")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_VideoGraphics.FillOption")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_VideoGraphics.Initialize")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_VideoGraphics.FillData")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_VideoGraphics.SpecialAction")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_VideoGraphics.FillOption")); }
 		}
 	}
 	enum MENU_ACTION_VIDEOGRAPHICS : ubyte
@@ -39,7 +39,7 @@ public extern(D):
 		MAVG_VERYHIGH = 4,
 		MAVG_MAX = 5,
 	}
-	@property final auto ref int CurrGraphics() { mixin(MGPC!("int", 356)()); }
+	@property final auto ref int CurrGraphics() { mixin(MGPC("int", 356)); }
 final:
 	void Initialize()
 	{

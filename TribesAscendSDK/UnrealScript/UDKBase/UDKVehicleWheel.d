@@ -10,9 +10,9 @@ extern(C++) interface UDKVehicleWheel : SVehicleWheel
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKVehicleWheel")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKVehicleWheel")); }
 	private static __gshared UDKVehicleWheel mDefaultProperties;
-	@property final static UDKVehicleWheel DefaultProperties() { mixin(MGDPC!(UDKVehicleWheel, "UDKVehicleWheel UDKBase.Default__UDKVehicleWheel")()); }
+	@property final static UDKVehicleWheel DefaultProperties() { mixin(MGDPC("UDKVehicleWheel", "UDKVehicleWheel UDKBase.Default__UDKVehicleWheel")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -22,21 +22,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetParticleEffect() { mixin(MGF!("mSetParticleEffect", "Function UDKBase.UDKVehicleWheel.SetParticleEffect")()); }
-			ScriptFunction OldEffectFinished() { mixin(MGF!("mOldEffectFinished", "Function UDKBase.UDKVehicleWheel.OldEffectFinished")()); }
+			ScriptFunction SetParticleEffect() { mixin(MGF("mSetParticleEffect", "Function UDKBase.UDKVehicleWheel.SetParticleEffect")); }
+			ScriptFunction OldEffectFinished() { mixin(MGF("mOldEffectFinished", "Function UDKBase.UDKVehicleWheel.OldEffectFinished")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float EffectDesiredSpinDir() { mixin(MGPC!("float", 284)()); }
+			float EffectDesiredSpinDir() { mixin(MGPC("float", 284)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OldWheelParticleComp'!
 		}
-		bool bDisableWheelOnDeath() { mixin(MGBPC!(276, 0x2)()); }
-		bool bDisableWheelOnDeath(bool val) { mixin(MSBPC!(276, 0x2)()); }
-		bool bUseMaterialSpecificEffects() { mixin(MGBPC!(276, 0x1)()); }
-		bool bUseMaterialSpecificEffects(bool val) { mixin(MSBPC!(276, 0x1)()); }
+		bool bDisableWheelOnDeath() { mixin(MGBPC(276, 0x2)); }
+		bool bDisableWheelOnDeath(bool val) { mixin(MSBPC(276, 0x2)); }
+		bool bUseMaterialSpecificEffects() { mixin(MGBPC(276, 0x1)); }
+		bool bUseMaterialSpecificEffects(bool val) { mixin(MSBPC(276, 0x1)); }
 	}
 final:
 	void SetParticleEffect(UDKVehicle OwnerVehicle, ParticleSystem NewTemplate)

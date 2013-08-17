@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_BuyBoost : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_BuyBoost")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_BuyBoost")); }
 	private static __gshared GFxTrPage_BuyBoost mDefaultProperties;
-	@property final static GFxTrPage_BuyBoost DefaultProperties() { mixin(MGDPC!(GFxTrPage_BuyBoost, "GFxTrPage_BuyBoost TribesGame.Default__GFxTrPage_BuyBoost")()); }
+	@property final static GFxTrPage_BuyBoost DefaultProperties() { mixin(MGDPC("GFxTrPage_BuyBoost", "GFxTrPage_BuyBoost TribesGame.Default__GFxTrPage_BuyBoost")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,24 +30,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_BuyBoost.TakeFocus")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_BuyBoost.FillData")()); }
-			ScriptFunction CheckPricing() { mixin(MGF!("mCheckPricing", "Function TribesGame.GFxTrPage_BuyBoost.CheckPricing")()); }
-			ScriptFunction FillPricing() { mixin(MGF!("mFillPricing", "Function TribesGame.GFxTrPage_BuyBoost.FillPricing")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_BuyBoost.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_BuyBoost.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_BuyBoost.FillDescription")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_BuyBoost.ShowModel")()); }
-			ScriptFunction ModifyAction() { mixin(MGF!("mModifyAction", "Function TribesGame.GFxTrPage_BuyBoost.ModifyAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_BuyBoost.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_BuyBoost.PopupComplete")()); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_BuyBoost.TakeFocus")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_BuyBoost.FillData")); }
+			ScriptFunction CheckPricing() { mixin(MGF("mCheckPricing", "Function TribesGame.GFxTrPage_BuyBoost.CheckPricing")); }
+			ScriptFunction FillPricing() { mixin(MGF("mFillPricing", "Function TribesGame.GFxTrPage_BuyBoost.FillPricing")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_BuyBoost.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_BuyBoost.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_BuyBoost.FillDescription")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_BuyBoost.ShowModel")); }
+			ScriptFunction ModifyAction() { mixin(MGF("mModifyAction", "Function TribesGame.GFxTrPage_BuyBoost.ModifyAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_BuyBoost.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_BuyBoost.PopupComplete")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString DescriptionLabel() { mixin(MGPC!("ScriptString", 364)()); }
-		int selectedVendorItemId() { mixin(MGPC!("int", 360)()); }
-		int selectedActionIdx() { mixin(MGPC!("int", 356)()); }
+		ScriptString DescriptionLabel() { mixin(MGPC("ScriptString", 364)); }
+		int selectedVendorItemId() { mixin(MGPC("int", 360)); }
+		int selectedActionIdx() { mixin(MGPC("int", 356)); }
 	}
 final:
 	int TakeFocus(int ActionIndex, GFxObject DataList)

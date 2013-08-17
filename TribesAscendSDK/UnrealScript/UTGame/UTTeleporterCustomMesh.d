@@ -11,9 +11,9 @@ extern(C++) interface UTTeleporterCustomMesh : Teleporter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeleporterCustomMesh")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeleporterCustomMesh")); }
 	private static __gshared UTTeleporterCustomMesh mDefaultProperties;
-	@property final static UTTeleporterCustomMesh DefaultProperties() { mixin(MGDPC!(UTTeleporterCustomMesh, "UTTeleporterCustomMesh UTGame.Default__UTTeleporterCustomMesh")()); }
+	@property final static UTTeleporterCustomMesh DefaultProperties() { mixin(MGDPC("UTTeleporterCustomMesh", "UTTeleporterCustomMesh UTGame.Default__UTTeleporterCustomMesh")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,15 +23,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Accept() { mixin(MGF!("mAccept", "Function UTGame.UTTeleporterCustomMesh.Accept")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTTeleporterCustomMesh.Touch")()); }
+			ScriptFunction Accept() { mixin(MGF("mAccept", "Function UTGame.UTTeleporterCustomMesh.Accept")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function UTGame.UTTeleporterCustomMesh.Touch")); }
 		}
 	}
 	@property final auto ref
 	{
-		float LastTime() { mixin(MGPC!("float", 744)()); }
-		UTPawn LastPawn() { mixin(MGPC!("UTPawn", 740)()); }
-		SoundCue TeleportingSound() { mixin(MGPC!("SoundCue", 736)()); }
+		float LastTime() { mixin(MGPC("float", 744)); }
+		UTPawn LastPawn() { mixin(MGPC("UTPawn", 740)); }
+		SoundCue TeleportingSound() { mixin(MGPC("SoundCue", 736)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
 	}
 final:

@@ -8,7 +8,7 @@ extern(C++) interface TrVehicleStation_BloodEagle : TrVehicleStation
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVehicleStation_BloodEagle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVehicleStation_BloodEagle")); }
 	private static __gshared TrVehicleStation_BloodEagle mDefaultProperties;
-	@property final static TrVehicleStation_BloodEagle DefaultProperties() { mixin(MGDPC!(TrVehicleStation_BloodEagle, "TrVehicleStation_BloodEagle TribesGame.Default__TrVehicleStation_BloodEagle")()); }
+	@property final static TrVehicleStation_BloodEagle DefaultProperties() { mixin(MGDPC("TrVehicleStation_BloodEagle", "TrVehicleStation_BloodEagle TribesGame.Default__TrVehicleStation_BloodEagle")); }
 }

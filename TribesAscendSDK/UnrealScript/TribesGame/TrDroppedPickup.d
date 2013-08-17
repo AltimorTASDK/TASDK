@@ -15,9 +15,9 @@ extern(C++) interface TrDroppedPickup : UTDroppedPickup
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDroppedPickup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDroppedPickup")); }
 	private static __gshared TrDroppedPickup mDefaultProperties;
-	@property final static TrDroppedPickup DefaultProperties() { mixin(MGDPC!(TrDroppedPickup, "TrDroppedPickup TribesGame.Default__TrDroppedPickup")()); }
+	@property final static TrDroppedPickup DefaultProperties() { mixin(MGDPC("TrDroppedPickup", "TrDroppedPickup TribesGame.Default__TrDroppedPickup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,37 +33,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrDroppedPickup.Destroyed")()); }
-			ScriptFunction GiveTo() { mixin(MGF!("mGiveTo", "Function TribesGame.TrDroppedPickup.GiveTo")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDroppedPickup.PostBeginPlay")()); }
-			ScriptFunction DoBounce() { mixin(MGF!("mDoBounce", "Function TribesGame.TrDroppedPickup.DoBounce")()); }
-			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function TribesGame.TrDroppedPickup.HitWall")()); }
-			ScriptFunction OnCollisionProxyTouched() { mixin(MGF!("mOnCollisionProxyTouched", "Function TribesGame.TrDroppedPickup.OnCollisionProxyTouched")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrDroppedPickup.Tick")()); }
-			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrDroppedPickup.PostRenderFor")()); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrDroppedPickup.Destroyed")); }
+			ScriptFunction GiveTo() { mixin(MGF("mGiveTo", "Function TribesGame.TrDroppedPickup.GiveTo")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrDroppedPickup.PostBeginPlay")); }
+			ScriptFunction DoBounce() { mixin(MGF("mDoBounce", "Function TribesGame.TrDroppedPickup.DoBounce")); }
+			ScriptFunction HitWall() { mixin(MGF("mHitWall", "Function TribesGame.TrDroppedPickup.HitWall")); }
+			ScriptFunction OnCollisionProxyTouched() { mixin(MGF("mOnCollisionProxyTouched", "Function TribesGame.TrDroppedPickup.OnCollisionProxyTouched")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrDroppedPickup.Tick")); }
+			ScriptFunction PostRenderFor() { mixin(MGF("mPostRenderFor", "Function TribesGame.TrDroppedPickup.PostRenderFor")); }
 		}
 	}
 	static struct Pickup
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDroppedPickup.Pickup")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDroppedPickup.Pickup")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrCollisionProxy", 552)()); }
-			float m_fMarkerOpacity() { mixin(MGPC!("float", 548)()); }
-			float m_fCurrentMarkerTime() { mixin(MGPC!("float", 544)()); }
-			Rotator m_rMarkerRot() { mixin(MGPC!("Rotator", 532)()); }
-			float m_fMarkerBlinkSpeed() { mixin(MGPC!("float", 528)()); }
-			float m_fMarkerScale() { mixin(MGPC!("float", 524)()); }
-			float m_fMarkerZOffset() { mixin(MGPC!("float", 520)()); }
-			float m_PctAmmoToRefill() { mixin(MGPC!("float", 516)()); }
-			SoundCue m_AmmoPickupSound() { mixin(MGPC!("SoundCue", 512)()); }
+			TrCollisionProxy m_CollisionProxy() { mixin(MGPC("TrCollisionProxy", 552)); }
+			float m_fMarkerOpacity() { mixin(MGPC("float", 548)); }
+			float m_fCurrentMarkerTime() { mixin(MGPC("float", 544)); }
+			Rotator m_rMarkerRot() { mixin(MGPC("Rotator", 532)); }
+			float m_fMarkerBlinkSpeed() { mixin(MGPC("float", 528)); }
+			float m_fMarkerScale() { mixin(MGPC("float", 524)); }
+			float m_fMarkerZOffset() { mixin(MGPC("float", 520)); }
+			float m_PctAmmoToRefill() { mixin(MGPC("float", 516)); }
+			SoundCue m_AmmoPickupSound() { mixin(MGPC("SoundCue", 512)); }
 		}
-		bool m_bHasHitObjective() { mixin(MGBPC!(556, 0x1)()); }
-		bool m_bHasHitObjective(bool val) { mixin(MSBPC!(556, 0x1)()); }
+		bool m_bHasHitObjective() { mixin(MGBPC(556, 0x1)); }
+		bool m_bHasHitObjective(bool val) { mixin(MSBPC(556, 0x1)); }
 	}
 final:
 	void Destroyed()

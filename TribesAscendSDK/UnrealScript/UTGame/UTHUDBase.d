@@ -16,9 +16,9 @@ extern(C++) interface UTHUDBase : UDKHUD
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTHUDBase")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTHUDBase")); }
 	private static __gshared UTHUDBase mDefaultProperties;
-	@property final static UTHUDBase DefaultProperties() { mixin(MGDPC!(UTHUDBase, "UTHUDBase UTGame.Default__UTHUDBase")()); }
+	@property final static UTHUDBase DefaultProperties() { mixin(MGDPC("UTHUDBase", "UTHUDBase UTGame.Default__UTHUDBase")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -45,60 +45,60 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTHUDBase.PostBeginPlay")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTHUDBase.Timer")()); }
-			ScriptFunction ShowMenu() { mixin(MGF!("mShowMenu", "Function UTGame.UTHUDBase.ShowMenu")()); }
-			ScriptFunction ResolutionChanged() { mixin(MGF!("mResolutionChanged", "Function UTGame.UTHUDBase.ResolutionChanged")()); }
-			ScriptFunction DisplayHit() { mixin(MGF!("mDisplayHit", "Function UTGame.UTHUDBase.DisplayHit")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function UTGame.UTHUDBase.PostRender")()); }
-			ScriptFunction RemoveMovies() { mixin(MGF!("mRemoveMovies", "Function UTGame.UTHUDBase.RemoveMovies")()); }
-			ScriptFunction SetVisible() { mixin(MGF!("mSetVisible", "Function UTGame.UTHUDBase.SetVisible")()); }
-			ScriptFunction CloseOtherMenus() { mixin(MGF!("mCloseOtherMenus", "Function UTGame.UTHUDBase.CloseOtherMenus")()); }
-			ScriptFunction TogglePauseMenu() { mixin(MGF!("mTogglePauseMenu", "Function UTGame.UTHUDBase.TogglePauseMenu")()); }
-			ScriptFunction CompletePauseMenuClose() { mixin(MGF!("mCompletePauseMenuClose", "Function UTGame.UTHUDBase.CompletePauseMenuClose")()); }
-			ScriptFunction ReleaseShowScores() { mixin(MGF!("mReleaseShowScores", "Function UTGame.UTHUDBase.ReleaseShowScores")()); }
-			ScriptFunction GetLocalPlayerOwnerIndex() { mixin(MGF!("mGetLocalPlayerOwnerIndex", "Function UTGame.UTHUDBase.GetLocalPlayerOwnerIndex")()); }
-			ScriptFunction DrawToolTip() { mixin(MGF!("mDrawToolTip", "Function UTGame.UTHUDBase.DrawToolTip")()); }
-			ScriptFunction CheckCrosshairOnFriendly() { mixin(MGF!("mCheckCrosshairOnFriendly", "Function UTGame.UTHUDBase.CheckCrosshairOnFriendly")()); }
-			ScriptFunction ClearCrosshairOnFriendly() { mixin(MGF!("mClearCrosshairOnFriendly", "Function UTGame.UTHUDBase.ClearCrosshairOnFriendly")()); }
-			ScriptFunction DrawShadowedTile() { mixin(MGF!("mDrawShadowedTile", "Function UTGame.UTHUDBase.DrawShadowedTile")()); }
-			ScriptFunction DrawShadowedStretchedTile() { mixin(MGF!("mDrawShadowedStretchedTile", "Function UTGame.UTHUDBase.DrawShadowedStretchedTile")()); }
-			ScriptFunction DrawShadowedRotatedTile() { mixin(MGF!("mDrawShadowedRotatedTile", "Function UTGame.UTHUDBase.DrawShadowedRotatedTile")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTHUDBase.PostBeginPlay")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function UTGame.UTHUDBase.Timer")); }
+			ScriptFunction ShowMenu() { mixin(MGF("mShowMenu", "Function UTGame.UTHUDBase.ShowMenu")); }
+			ScriptFunction ResolutionChanged() { mixin(MGF("mResolutionChanged", "Function UTGame.UTHUDBase.ResolutionChanged")); }
+			ScriptFunction DisplayHit() { mixin(MGF("mDisplayHit", "Function UTGame.UTHUDBase.DisplayHit")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function UTGame.UTHUDBase.PostRender")); }
+			ScriptFunction RemoveMovies() { mixin(MGF("mRemoveMovies", "Function UTGame.UTHUDBase.RemoveMovies")); }
+			ScriptFunction SetVisible() { mixin(MGF("mSetVisible", "Function UTGame.UTHUDBase.SetVisible")); }
+			ScriptFunction CloseOtherMenus() { mixin(MGF("mCloseOtherMenus", "Function UTGame.UTHUDBase.CloseOtherMenus")); }
+			ScriptFunction TogglePauseMenu() { mixin(MGF("mTogglePauseMenu", "Function UTGame.UTHUDBase.TogglePauseMenu")); }
+			ScriptFunction CompletePauseMenuClose() { mixin(MGF("mCompletePauseMenuClose", "Function UTGame.UTHUDBase.CompletePauseMenuClose")); }
+			ScriptFunction ReleaseShowScores() { mixin(MGF("mReleaseShowScores", "Function UTGame.UTHUDBase.ReleaseShowScores")); }
+			ScriptFunction GetLocalPlayerOwnerIndex() { mixin(MGF("mGetLocalPlayerOwnerIndex", "Function UTGame.UTHUDBase.GetLocalPlayerOwnerIndex")); }
+			ScriptFunction DrawToolTip() { mixin(MGF("mDrawToolTip", "Function UTGame.UTHUDBase.DrawToolTip")); }
+			ScriptFunction CheckCrosshairOnFriendly() { mixin(MGF("mCheckCrosshairOnFriendly", "Function UTGame.UTHUDBase.CheckCrosshairOnFriendly")); }
+			ScriptFunction ClearCrosshairOnFriendly() { mixin(MGF("mClearCrosshairOnFriendly", "Function UTGame.UTHUDBase.ClearCrosshairOnFriendly")); }
+			ScriptFunction DrawShadowedTile() { mixin(MGF("mDrawShadowedTile", "Function UTGame.UTHUDBase.DrawShadowedTile")); }
+			ScriptFunction DrawShadowedStretchedTile() { mixin(MGF("mDrawShadowedStretchedTile", "Function UTGame.UTHUDBase.DrawShadowedStretchedTile")); }
+			ScriptFunction DrawShadowedRotatedTile() { mixin(MGF("mDrawShadowedRotatedTile", "Function UTGame.UTHUDBase.DrawShadowedRotatedTile")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Color BlackColor() { mixin(MGPC!("UObject.Color", 1492)()); }
-			Texture2D IconHudTexture() { mixin(MGPC!("Texture2D", 1468)()); }
-			float ResolutionScale() { mixin(MGPC!("float", 1508)()); }
-			float LastPickupTime() { mixin(MGPC!("float", 1488)()); }
-			float ConfiguredCrosshairScaling() { mixin(MGPC!("float", 1484)()); }
-			UObject.Color LightGreenColor() { mixin(MGPC!("UObject.Color", 1504)()); }
-			int ViewY() { mixin(MGPC!("int", 1520)()); }
-			int ViewX() { mixin(MGPC!("int", 1516)()); }
-			float ResolutionScaleX() { mixin(MGPC!("float", 1512)()); }
-			UObject.Color LightGoldColor() { mixin(MGPC!("UObject.Color", 1500)()); }
-			UObject.Color GoldColor() { mixin(MGPC!("UObject.Color", 1496)()); }
-			ScriptString ConsoleIconFontClassName() { mixin(MGPC!("ScriptString", 1472)()); }
-			float LastTimeTooltipDrawn() { mixin(MGPC!("float", 1464)()); }
-			UIRoot.TextureCoordinates ToolTipSepCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 1448)()); }
-			UTGameReplicationInfo UTGRI() { mixin(MGPC!("UTGameReplicationInfo", 1440)()); }
-			UTPlayerController UTPlayerOwner() { mixin(MGPC!("UTPlayerController", 1436)()); }
-			ScriptClass MusicManagerClass() { mixin(MGPC!("ScriptClass", 1432)()); }
-			GFxUI_PauseMenu PauseMenuMovie() { mixin(MGPC!("GFxUI_PauseMenu", 1428)()); }
+			UObject.Color BlackColor() { mixin(MGPC("UObject.Color", 1492)); }
+			Texture2D IconHudTexture() { mixin(MGPC("Texture2D", 1468)); }
+			float ResolutionScale() { mixin(MGPC("float", 1508)); }
+			float LastPickupTime() { mixin(MGPC("float", 1488)); }
+			float ConfiguredCrosshairScaling() { mixin(MGPC("float", 1484)); }
+			UObject.Color LightGreenColor() { mixin(MGPC("UObject.Color", 1504)); }
+			int ViewY() { mixin(MGPC("int", 1520)); }
+			int ViewX() { mixin(MGPC("int", 1516)); }
+			float ResolutionScaleX() { mixin(MGPC("float", 1512)); }
+			UObject.Color LightGoldColor() { mixin(MGPC("UObject.Color", 1500)); }
+			UObject.Color GoldColor() { mixin(MGPC("UObject.Color", 1496)); }
+			ScriptString ConsoleIconFontClassName() { mixin(MGPC("ScriptString", 1472)); }
+			float LastTimeTooltipDrawn() { mixin(MGPC("float", 1464)); }
+			UIRoot.TextureCoordinates ToolTipSepCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 1448)); }
+			UTGameReplicationInfo UTGRI() { mixin(MGPC("UTGameReplicationInfo", 1440)); }
+			UTPlayerController UTPlayerOwner() { mixin(MGPC("UTPlayerController", 1436)); }
+			ScriptClass MusicManagerClass() { mixin(MGPC("ScriptClass", 1432)); }
+			GFxUI_PauseMenu PauseMenuMovie() { mixin(MGPC("GFxUI_PauseMenu", 1428)); }
 		}
-		bool bCrosshairShow() { mixin(MGBPC!(1444, 0x4)()); }
-		bool bCrosshairShow(bool val) { mixin(MSBPC!(1444, 0x4)()); }
-		bool bCrosshairOnFriendly() { mixin(MGBPC!(1444, 0x8)()); }
-		bool bCrosshairOnFriendly(bool val) { mixin(MSBPC!(1444, 0x8)()); }
-		bool bGreenCrosshair() { mixin(MGBPC!(1444, 0x10)()); }
-		bool bGreenCrosshair(bool val) { mixin(MSBPC!(1444, 0x10)()); }
-		bool bIsSplitScreen() { mixin(MGBPC!(1444, 0x1)()); }
-		bool bIsSplitScreen(bool val) { mixin(MSBPC!(1444, 0x1)()); }
-		bool bEnableActorOverlays() { mixin(MGBPC!(1444, 0x2)()); }
-		bool bEnableActorOverlays(bool val) { mixin(MSBPC!(1444, 0x2)()); }
+		bool bCrosshairShow() { mixin(MGBPC(1444, 0x4)); }
+		bool bCrosshairShow(bool val) { mixin(MSBPC(1444, 0x4)); }
+		bool bCrosshairOnFriendly() { mixin(MGBPC(1444, 0x8)); }
+		bool bCrosshairOnFriendly(bool val) { mixin(MSBPC(1444, 0x8)); }
+		bool bGreenCrosshair() { mixin(MGBPC(1444, 0x10)); }
+		bool bGreenCrosshair(bool val) { mixin(MSBPC(1444, 0x10)); }
+		bool bIsSplitScreen() { mixin(MGBPC(1444, 0x1)); }
+		bool bIsSplitScreen(bool val) { mixin(MSBPC(1444, 0x1)); }
+		bool bEnableActorOverlays() { mixin(MGBPC(1444, 0x2)); }
+		bool bEnableActorOverlays(bool val) { mixin(MSBPC(1444, 0x2)); }
 	}
 final:
 	void PostBeginPlay()

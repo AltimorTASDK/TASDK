@@ -10,9 +10,9 @@ extern(C++) interface TrMusicManager : Info
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrMusicManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrMusicManager")); }
 	private static __gshared TrMusicManager mDefaultProperties;
-	@property final static TrMusicManager DefaultProperties() { mixin(MGDPC!(TrMusicManager, "TrMusicManager TribesGame.Default__TrMusicManager")()); }
+	@property final static TrMusicManager DefaultProperties() { mixin(MGDPC("TrMusicManager", "TrMusicManager TribesGame.Default__TrMusicManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -29,15 +29,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrMusicManager.PostBeginPlay")()); }
-			ScriptFunction CreateNewTrack() { mixin(MGF!("mCreateNewTrack", "Function TribesGame.TrMusicManager.CreateNewTrack")()); }
-			ScriptFunction StartMusic() { mixin(MGF!("mStartMusic", "Function TribesGame.TrMusicManager.StartMusic")()); }
-			ScriptFunction SetStateBasedOnGameState() { mixin(MGF!("mSetStateBasedOnGameState", "Function TribesGame.TrMusicManager.SetStateBasedOnGameState")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrMusicManager.Tick")()); }
-			ScriptFunction MusicEvent() { mixin(MGF!("mMusicEvent", "Function TribesGame.TrMusicManager.MusicEvent")()); }
-			ScriptFunction SetPendingState() { mixin(MGF!("mSetPendingState", "Function TribesGame.TrMusicManager.SetPendingState")()); }
-			ScriptFunction SetCurrentState() { mixin(MGF!("mSetCurrentState", "Function TribesGame.TrMusicManager.SetCurrentState")()); }
-			ScriptFunction PlayerScoredFlag() { mixin(MGF!("mPlayerScoredFlag", "Function TribesGame.TrMusicManager.PlayerScoredFlag")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrMusicManager.PostBeginPlay")); }
+			ScriptFunction CreateNewTrack() { mixin(MGF("mCreateNewTrack", "Function TribesGame.TrMusicManager.CreateNewTrack")); }
+			ScriptFunction StartMusic() { mixin(MGF("mStartMusic", "Function TribesGame.TrMusicManager.StartMusic")); }
+			ScriptFunction SetStateBasedOnGameState() { mixin(MGF("mSetStateBasedOnGameState", "Function TribesGame.TrMusicManager.SetStateBasedOnGameState")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrMusicManager.Tick")); }
+			ScriptFunction MusicEvent() { mixin(MGF("mMusicEvent", "Function TribesGame.TrMusicManager.MusicEvent")); }
+			ScriptFunction SetPendingState() { mixin(MGF("mSetPendingState", "Function TribesGame.TrMusicManager.SetPendingState")); }
+			ScriptFunction SetCurrentState() { mixin(MGF("mSetCurrentState", "Function TribesGame.TrMusicManager.SetCurrentState")); }
+			ScriptFunction PlayerScoredFlag() { mixin(MGF("mPlayerScoredFlag", "Function TribesGame.TrMusicManager.PlayerScoredFlag")); }
 		}
 	}
 	enum ETgMusicState : ubyte
@@ -55,14 +55,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrPlayerController m_PlayerOwner() { mixin(MGPC!("TrPlayerController", 476)()); }
-		float m_fMusicVolume() { mixin(MGPC!("float", 480)()); }
+		TrPlayerController m_PlayerOwner() { mixin(MGPC("TrPlayerController", 476)); }
+		float m_fMusicVolume() { mixin(MGPC("float", 480)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CurrentTrack'!
-		TrMusicManager.ETgMusicState m_CurrentState() { mixin(MGPC!("TrMusicManager.ETgMusicState", 488)()); }
-		TrMusicManager.ETgMusicState m_PendingState() { mixin(MGPC!("TrMusicManager.ETgMusicState", 489)()); }
-		float m_fStingerVolumeMultiplier() { mixin(MGPC!("float", 484)()); }
+		TrMusicManager.ETgMusicState m_CurrentState() { mixin(MGPC("TrMusicManager.ETgMusicState", 488)); }
+		TrMusicManager.ETgMusicState m_PendingState() { mixin(MGPC("TrMusicManager.ETgMusicState", 489)); }
+		float m_fStingerVolumeMultiplier() { mixin(MGPC("float", 484)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_MusicTracks'!
-		float m_CTFTeamScores() { mixin(MGPC!("float", 532)()); }
+		float m_CTFTeamScores() { mixin(MGPC("float", 532)); }
 	}
 final:
 	void PostBeginPlay()

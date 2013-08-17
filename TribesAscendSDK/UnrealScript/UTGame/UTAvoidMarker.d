@@ -8,13 +8,13 @@ extern(C++) interface UTAvoidMarker : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTAvoidMarker")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTAvoidMarker")); }
 	private static __gshared UTAvoidMarker mDefaultProperties;
-	@property final static UTAvoidMarker DefaultProperties() { mixin(MGDPC!(UTAvoidMarker, "UTAvoidMarker UTGame.Default__UTAvoidMarker")()); }
+	@property final static UTAvoidMarker DefaultProperties() { mixin(MGDPC("UTAvoidMarker", "UTAvoidMarker UTGame.Default__UTAvoidMarker")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTouch;
-		public @property static final ScriptFunction Touch() { mixin(MGF!("mTouch", "Function UTGame.UTAvoidMarker.Touch")()); }
+		public @property static final ScriptFunction Touch() { mixin(MGF("mTouch", "Function UTGame.UTAvoidMarker.Touch")); }
 	}
 	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CollisionCylinder'!
 	final void Touch(Actor Other, 

@@ -8,7 +8,7 @@ extern(C++) interface KAssetSpawnable : KAsset
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KAssetSpawnable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.KAssetSpawnable")); }
 	private static __gshared KAssetSpawnable mDefaultProperties;
-	@property final static KAssetSpawnable DefaultProperties() { mixin(MGDPC!(KAssetSpawnable, "KAssetSpawnable Engine.Default__KAssetSpawnable")()); }
+	@property final static KAssetSpawnable DefaultProperties() { mixin(MGDPC("KAssetSpawnable", "KAssetSpawnable Engine.Default__KAssetSpawnable")); }
 }

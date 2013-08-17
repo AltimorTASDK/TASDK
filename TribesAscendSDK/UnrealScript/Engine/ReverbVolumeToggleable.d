@@ -9,13 +9,13 @@ extern(C++) interface ReverbVolumeToggleable : ReverbVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ReverbVolumeToggleable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ReverbVolumeToggleable")); }
 	private static __gshared ReverbVolumeToggleable mDefaultProperties;
-	@property final static ReverbVolumeToggleable DefaultProperties() { mixin(MGDPC!(ReverbVolumeToggleable, "ReverbVolumeToggleable Engine.Default__ReverbVolumeToggleable")()); }
+	@property final static ReverbVolumeToggleable DefaultProperties() { mixin(MGDPC("ReverbVolumeToggleable", "ReverbVolumeToggleable Engine.Default__ReverbVolumeToggleable")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;
-		public @property static final ScriptFunction OnToggle() { mixin(MGF!("mOnToggle", "Function Engine.ReverbVolumeToggleable.OnToggle")()); }
+		public @property static final ScriptFunction OnToggle() { mixin(MGF("mOnToggle", "Function Engine.ReverbVolumeToggleable.OnToggle")); }
 	}
 	final void OnToggle(SeqAct_Toggle Action)
 	{

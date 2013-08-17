@@ -9,9 +9,9 @@ extern(C++) interface TrConduitVolume : TrPhysicsVolume
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrConduitVolume")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrConduitVolume")); }
 	private static __gshared TrConduitVolume mDefaultProperties;
-	@property final static TrConduitVolume DefaultProperties() { mixin(MGDPC!(TrConduitVolume, "TrConduitVolume TribesGame.Default__TrConduitVolume")()); }
+	@property final static TrConduitVolume DefaultProperties() { mixin(MGDPC("TrConduitVolume", "TrConduitVolume TribesGame.Default__TrConduitVolume")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PawnEnteredVolume() { mixin(MGF!("mPawnEnteredVolume", "Function TribesGame.TrConduitVolume.PawnEnteredVolume")()); }
-			ScriptFunction PawnLeavingVolume() { mixin(MGF!("mPawnLeavingVolume", "Function TribesGame.TrConduitVolume.PawnLeavingVolume")()); }
+			ScriptFunction PawnEnteredVolume() { mixin(MGF("mPawnEnteredVolume", "Function TribesGame.TrConduitVolume.PawnEnteredVolume")); }
+			ScriptFunction PawnLeavingVolume() { mixin(MGF("mPawnLeavingVolume", "Function TribesGame.TrConduitVolume.PawnLeavingVolume")); }
 		}
 	}
 final:

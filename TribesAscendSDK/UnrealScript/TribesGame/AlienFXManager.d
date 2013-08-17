@@ -8,9 +8,9 @@ extern(C++) interface AlienFXManager : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.AlienFXManager")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.AlienFXManager")); }
 	private static __gshared AlienFXManager mDefaultProperties;
-	@property final static AlienFXManager DefaultProperties() { mixin(MGDPC!(AlienFXManager, "AlienFXManager TribesGame.Default__AlienFXManager")()); }
+	@property final static AlienFXManager DefaultProperties() { mixin(MGDPC("AlienFXManager", "AlienFXManager TribesGame.Default__AlienFXManager")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,19 +31,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.AlienFXManager.Init")()); }
-			ScriptFunction Close() { mixin(MGF!("mClose", "Function TribesGame.AlienFXManager.Close")()); }
-			ScriptFunction Queued() { mixin(MGF!("mQueued", "Function TribesGame.AlienFXManager.Queued")()); }
-			ScriptFunction Objective() { mixin(MGF!("mObjective", "Function TribesGame.AlienFXManager.Objective")()); }
-			ScriptFunction SwapWeapon() { mixin(MGF!("mSwapWeapon", "Function TribesGame.AlienFXManager.SwapWeapon")()); }
-			ScriptFunction CheckHealth() { mixin(MGF!("mCheckHealth", "Function TribesGame.AlienFXManager.CheckHealth")()); }
-			ScriptFunction menu() { mixin(MGF!("mmenu", "Function TribesGame.AlienFXManager.menu")()); }
-			ScriptFunction Damage() { mixin(MGF!("mDamage", "Function TribesGame.AlienFXManager.Damage")()); }
-			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function TribesGame.AlienFXManager.SetTeam")()); }
-			ScriptFunction SetHealth() { mixin(MGF!("mSetHealth", "Function TribesGame.AlienFXManager.SetHealth")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.AlienFXManager.Tick")()); }
-			ScriptFunction Overlay() { mixin(MGF!("mOverlay", "Function TribesGame.AlienFXManager.Overlay")()); }
-			ScriptFunction DamageConvert() { mixin(MGF!("mDamageConvert", "Function TribesGame.AlienFXManager.DamageConvert")()); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.AlienFXManager.Init")); }
+			ScriptFunction Close() { mixin(MGF("mClose", "Function TribesGame.AlienFXManager.Close")); }
+			ScriptFunction Queued() { mixin(MGF("mQueued", "Function TribesGame.AlienFXManager.Queued")); }
+			ScriptFunction Objective() { mixin(MGF("mObjective", "Function TribesGame.AlienFXManager.Objective")); }
+			ScriptFunction SwapWeapon() { mixin(MGF("mSwapWeapon", "Function TribesGame.AlienFXManager.SwapWeapon")); }
+			ScriptFunction CheckHealth() { mixin(MGF("mCheckHealth", "Function TribesGame.AlienFXManager.CheckHealth")); }
+			ScriptFunction menu() { mixin(MGF("mmenu", "Function TribesGame.AlienFXManager.menu")); }
+			ScriptFunction Damage() { mixin(MGF("mDamage", "Function TribesGame.AlienFXManager.Damage")); }
+			ScriptFunction SetTeam() { mixin(MGF("mSetTeam", "Function TribesGame.AlienFXManager.SetTeam")); }
+			ScriptFunction SetHealth() { mixin(MGF("mSetHealth", "Function TribesGame.AlienFXManager.SetHealth")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.AlienFXManager.Tick")); }
+			ScriptFunction Overlay() { mixin(MGF("mOverlay", "Function TribesGame.AlienFXManager.Overlay")); }
+			ScriptFunction DamageConvert() { mixin(MGF("mDamageConvert", "Function TribesGame.AlienFXManager.DamageConvert")); }
 		}
 	}
 	enum FXOverlay : ubyte
@@ -73,29 +73,29 @@ public extern(D):
 	{
 		auto ref
 		{
-			AlienFXManager.FXOverlay eLastOverlay() { mixin(MGPC!("AlienFXManager.FXOverlay", 141)()); }
-			AlienFXManager.FXOverlay eCurrOverlay() { mixin(MGPC!("AlienFXManager.FXOverlay", 140)()); }
-			float fIntervalCount() { mixin(MGPC!("float", 136)()); }
-			float fInterval() { mixin(MGPC!("float", 132)()); }
-			float fSpeed() { mixin(MGPC!("float", 128)()); }
-			float fBoundsPct() { mixin(MGPC!("float", 124)()); }
-			float fHighBounds() { mixin(MGPC!("float", 120)()); }
-			float fLowBounds() { mixin(MGPC!("float", 116)()); }
-			int nTarget() { mixin(MGPC!("int", 112)()); }
-			float fDamages() { mixin(MGPC!("float", 80)()); }
-			float fObjectiveTime() { mixin(MGPC!("float", 76)()); }
-			float fDamageTime() { mixin(MGPC!("float", 72)()); }
-			int nHealth() { mixin(MGPC!("int", 64)()); }
-			int nTeam() { mixin(MGPC!("int", 60)()); }
+			AlienFXManager.FXOverlay eLastOverlay() { mixin(MGPC("AlienFXManager.FXOverlay", 141)); }
+			AlienFXManager.FXOverlay eCurrOverlay() { mixin(MGPC("AlienFXManager.FXOverlay", 140)); }
+			float fIntervalCount() { mixin(MGPC("float", 136)); }
+			float fInterval() { mixin(MGPC("float", 132)); }
+			float fSpeed() { mixin(MGPC("float", 128)); }
+			float fBoundsPct() { mixin(MGPC("float", 124)); }
+			float fHighBounds() { mixin(MGPC("float", 120)); }
+			float fLowBounds() { mixin(MGPC("float", 116)); }
+			int nTarget() { mixin(MGPC("int", 112)); }
+			float fDamages() { mixin(MGPC("float", 80)); }
+			float fObjectiveTime() { mixin(MGPC("float", 76)); }
+			float fDamageTime() { mixin(MGPC("float", 72)); }
+			int nHealth() { mixin(MGPC("int", 64)); }
+			int nTeam() { mixin(MGPC("int", 60)); }
 		}
-		bool bBrighten() { mixin(MGBPC!(68, 0x8)()); }
-		bool bBrighten(bool val) { mixin(MSBPC!(68, 0x8)()); }
-		bool bMenuOpen() { mixin(MGBPC!(68, 0x4)()); }
-		bool bMenuOpen(bool val) { mixin(MSBPC!(68, 0x4)()); }
-		bool bLoaded() { mixin(MGBPC!(68, 0x2)()); }
-		bool bLoaded(bool val) { mixin(MSBPC!(68, 0x2)()); }
-		bool bShowFX() { mixin(MGBPC!(68, 0x1)()); }
-		bool bShowFX(bool val) { mixin(MSBPC!(68, 0x1)()); }
+		bool bBrighten() { mixin(MGBPC(68, 0x8)); }
+		bool bBrighten(bool val) { mixin(MSBPC(68, 0x8)); }
+		bool bMenuOpen() { mixin(MGBPC(68, 0x4)); }
+		bool bMenuOpen(bool val) { mixin(MSBPC(68, 0x4)); }
+		bool bLoaded() { mixin(MGBPC(68, 0x2)); }
+		bool bLoaded(bool val) { mixin(MSBPC(68, 0x2)); }
+		bool bShowFX() { mixin(MGBPC(68, 0x1)); }
+		bool bShowFX(bool val) { mixin(MSBPC(68, 0x1)); }
 	}
 final:
 	void Init(bool bEnable)

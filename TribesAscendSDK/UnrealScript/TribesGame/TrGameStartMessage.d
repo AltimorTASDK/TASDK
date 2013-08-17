@@ -11,9 +11,9 @@ extern(C++) interface TrGameStartMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameStartMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGameStartMessage")); }
 	private static __gshared TrGameStartMessage mDefaultProperties;
-	@property final static TrGameStartMessage DefaultProperties() { mixin(MGDPC!(TrGameStartMessage, "TrGameStartMessage TribesGame.Default__TrGameStartMessage")()); }
+	@property final static TrGameStartMessage DefaultProperties() { mixin(MGDPC("TrGameStartMessage", "TrGameStartMessage TribesGame.Default__TrGameStartMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrGameStartMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrGameStartMessage.ClientReceive")()); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrGameStartMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrGameStartMessage.ClientReceive")); }
 		}
 	}
-	@property final auto ref ScriptString MatchAboutToStart() { mixin(MGPC!("ScriptString", 100)()); }
+	@property final auto ref ScriptString MatchAboutToStart() { mixin(MGPC("ScriptString", 100)); }
 final:
 	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{

@@ -13,9 +13,9 @@ extern(C++) interface TrStation : TrGameObjective
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStation")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrStation")); }
 	private static __gshared TrStation mDefaultProperties;
-	@property final static TrStation DefaultProperties() { mixin(MGDPC!(TrStation, "TrStation TribesGame.Default__TrStation")()); }
+	@property final static TrStation DefaultProperties() { mixin(MGDPC("TrStation", "TrStation TribesGame.Default__TrStation")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,27 +31,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrStation.PostBeginPlay")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrStation.ReplicatedEvent")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function TribesGame.TrStation.Destroyed")()); }
-			ScriptFunction PawnEnteredStation() { mixin(MGF!("mPawnEnteredStation", "Function TribesGame.TrStation.PawnEnteredStation")()); }
-			ScriptFunction PawnLeftStation() { mixin(MGF!("mPawnLeftStation", "Function TribesGame.TrStation.PawnLeftStation")()); }
-			ScriptFunction PlayStationEnteredEffects() { mixin(MGF!("mPlayStationEnteredEffects", "Function TribesGame.TrStation.PlayStationEnteredEffects")()); }
-			ScriptFunction PlayStationLeftEffects() { mixin(MGF!("mPlayStationLeftEffects", "Function TribesGame.TrStation.PlayStationLeftEffects")()); }
-			ScriptFunction BlocksLineChecksFromSourceActor() { mixin(MGF!("mBlocksLineChecksFromSourceActor", "Function TribesGame.TrStation.BlocksLineChecksFromSourceActor")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrStation.PostBeginPlay")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrStation.ReplicatedEvent")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function TribesGame.TrStation.Destroyed")); }
+			ScriptFunction PawnEnteredStation() { mixin(MGF("mPawnEnteredStation", "Function TribesGame.TrStation.PawnEnteredStation")); }
+			ScriptFunction PawnLeftStation() { mixin(MGF("mPawnLeftStation", "Function TribesGame.TrStation.PawnLeftStation")); }
+			ScriptFunction PlayStationEnteredEffects() { mixin(MGF("mPlayStationEnteredEffects", "Function TribesGame.TrStation.PlayStationEnteredEffects")); }
+			ScriptFunction PlayStationLeftEffects() { mixin(MGF("mPlayStationLeftEffects", "Function TribesGame.TrStation.PlayStationLeftEffects")); }
+			ScriptFunction BlocksLineChecksFromSourceActor() { mixin(MGF("mBlocksLineChecksFromSourceActor", "Function TribesGame.TrStation.BlocksLineChecksFromSourceActor")); }
 		}
 	}
 	@property final auto ref
 	{
-		TrCaHCapturePoint m_OwningCaHCapturePoint() { mixin(MGPC!("TrCaHCapturePoint", 1392)()); }
+		TrCaHCapturePoint m_OwningCaHCapturePoint() { mixin(MGPC("TrCaHCapturePoint", 1392)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StationLeftAudioComponent'!
-		SoundCue m_StationLeftSoundCue() { mixin(MGPC!("SoundCue", 1384)()); }
+		SoundCue m_StationLeftSoundCue() { mixin(MGPC("SoundCue", 1384)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StationEnteredAudioComponent'!
-		SoundCue m_StationEnteredSoundCue() { mixin(MGPC!("SoundCue", 1376)()); }
-		ScriptClass StationCollisionClass() { mixin(MGPC!("ScriptClass", 1372)()); }
-		TrPawn r_CurrentPawn() { mixin(MGPC!("TrPawn", 1368)()); }
-		TrStationCollision m_Collision() { mixin(MGPC!("TrStationCollision", 1364)()); }
-		float m_fStationZOffset() { mixin(MGPC!("float", 1360)()); }
+		SoundCue m_StationEnteredSoundCue() { mixin(MGPC("SoundCue", 1376)); }
+		ScriptClass StationCollisionClass() { mixin(MGPC("ScriptClass", 1372)); }
+		TrPawn r_CurrentPawn() { mixin(MGPC("TrPawn", 1368)); }
+		TrStationCollision m_Collision() { mixin(MGPC("TrStationCollision", 1364)); }
+		float m_fStationZOffset() { mixin(MGPC("float", 1360)); }
 	}
 final:
 	void PostBeginPlay()

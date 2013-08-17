@@ -15,9 +15,9 @@ extern(C++) interface GameThirdPersonCamera : GameCameraBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameThirdPersonCamera")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameThirdPersonCamera")); }
 	private static __gshared GameThirdPersonCamera mDefaultProperties;
-	@property final static GameThirdPersonCamera DefaultProperties() { mixin(MGDPC!(GameThirdPersonCamera, "GameThirdPersonCamera GameFramework.Default__GameThirdPersonCamera")()); }
+	@property final static GameThirdPersonCamera DefaultProperties() { mixin(MGDPC("GameThirdPersonCamera", "GameThirdPersonCamera GameFramework.Default__GameThirdPersonCamera")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -47,28 +47,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CreateCameraMode() { mixin(MGF!("mCreateCameraMode", "Function GameFramework.GameThirdPersonCamera.CreateCameraMode")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function GameFramework.GameThirdPersonCamera.Reset")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function GameFramework.GameThirdPersonCamera.Init")()); }
-			ScriptFunction GetDesiredFOV() { mixin(MGF!("mGetDesiredFOV", "Function GameFramework.GameThirdPersonCamera.GetDesiredFOV")()); }
-			ScriptFunction UpdateCamera() { mixin(MGF!("mUpdateCamera", "Function GameFramework.GameThirdPersonCamera.UpdateCamera")()); }
-			ScriptFunction UpdateCameraMode() { mixin(MGF!("mUpdateCameraMode", "Function GameFramework.GameThirdPersonCamera.UpdateCameraMode")()); }
-			ScriptFunction PlayerUpdateCamera() { mixin(MGF!("mPlayerUpdateCamera", "Function GameFramework.GameThirdPersonCamera.PlayerUpdateCamera")()); }
-			ScriptFunction BeginTurn() { mixin(MGF!("mBeginTurn", "Function GameFramework.GameThirdPersonCamera.BeginTurn")()); }
-			ScriptFunction EndTurn() { mixin(MGF!("mEndTurn", "Function GameFramework.GameThirdPersonCamera.EndTurn")()); }
-			ScriptFunction AdjustTurn() { mixin(MGF!("mAdjustTurn", "Function GameFramework.GameThirdPersonCamera.AdjustTurn")()); }
-			ScriptFunction SetFocusOnLoc() { mixin(MGF!("mSetFocusOnLoc", "Function GameFramework.GameThirdPersonCamera.SetFocusOnLoc")()); }
-			ScriptFunction SetFocusOnActor() { mixin(MGF!("mSetFocusOnActor", "Function GameFramework.GameThirdPersonCamera.SetFocusOnActor")()); }
-			ScriptFunction GetFocusActor() { mixin(MGF!("mGetFocusActor", "Function GameFramework.GameThirdPersonCamera.GetFocusActor")()); }
-			ScriptFunction ClearFocusPoint() { mixin(MGF!("mClearFocusPoint", "Function GameFramework.GameThirdPersonCamera.ClearFocusPoint")()); }
-			ScriptFunction UpdateFocusPoint() { mixin(MGF!("mUpdateFocusPoint", "Function GameFramework.GameThirdPersonCamera.UpdateFocusPoint")()); }
-			ScriptFunction GetActualFocusLocation() { mixin(MGF!("mGetActualFocusLocation", "Function GameFramework.GameThirdPersonCamera.GetActualFocusLocation")()); }
-			ScriptFunction AdjustFocusPointInterpolation() { mixin(MGF!("mAdjustFocusPointInterpolation", "Function GameFramework.GameThirdPersonCamera.AdjustFocusPointInterpolation")()); }
-			ScriptFunction FindBestCameraMode() { mixin(MGF!("mFindBestCameraMode", "Function GameFramework.GameThirdPersonCamera.FindBestCameraMode")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function GameFramework.GameThirdPersonCamera.ProcessViewRotation")()); }
-			ScriptFunction OnBecomeActive() { mixin(MGF!("mOnBecomeActive", "Function GameFramework.GameThirdPersonCamera.OnBecomeActive")()); }
-			ScriptFunction ModifyPostProcessSettings() { mixin(MGF!("mModifyPostProcessSettings", "Function GameFramework.GameThirdPersonCamera.ModifyPostProcessSettings")()); }
-			ScriptFunction ResetInterpolation() { mixin(MGF!("mResetInterpolation", "Function GameFramework.GameThirdPersonCamera.ResetInterpolation")()); }
+			ScriptFunction CreateCameraMode() { mixin(MGF("mCreateCameraMode", "Function GameFramework.GameThirdPersonCamera.CreateCameraMode")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function GameFramework.GameThirdPersonCamera.Reset")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function GameFramework.GameThirdPersonCamera.Init")); }
+			ScriptFunction GetDesiredFOV() { mixin(MGF("mGetDesiredFOV", "Function GameFramework.GameThirdPersonCamera.GetDesiredFOV")); }
+			ScriptFunction UpdateCamera() { mixin(MGF("mUpdateCamera", "Function GameFramework.GameThirdPersonCamera.UpdateCamera")); }
+			ScriptFunction UpdateCameraMode() { mixin(MGF("mUpdateCameraMode", "Function GameFramework.GameThirdPersonCamera.UpdateCameraMode")); }
+			ScriptFunction PlayerUpdateCamera() { mixin(MGF("mPlayerUpdateCamera", "Function GameFramework.GameThirdPersonCamera.PlayerUpdateCamera")); }
+			ScriptFunction BeginTurn() { mixin(MGF("mBeginTurn", "Function GameFramework.GameThirdPersonCamera.BeginTurn")); }
+			ScriptFunction EndTurn() { mixin(MGF("mEndTurn", "Function GameFramework.GameThirdPersonCamera.EndTurn")); }
+			ScriptFunction AdjustTurn() { mixin(MGF("mAdjustTurn", "Function GameFramework.GameThirdPersonCamera.AdjustTurn")); }
+			ScriptFunction SetFocusOnLoc() { mixin(MGF("mSetFocusOnLoc", "Function GameFramework.GameThirdPersonCamera.SetFocusOnLoc")); }
+			ScriptFunction SetFocusOnActor() { mixin(MGF("mSetFocusOnActor", "Function GameFramework.GameThirdPersonCamera.SetFocusOnActor")); }
+			ScriptFunction GetFocusActor() { mixin(MGF("mGetFocusActor", "Function GameFramework.GameThirdPersonCamera.GetFocusActor")); }
+			ScriptFunction ClearFocusPoint() { mixin(MGF("mClearFocusPoint", "Function GameFramework.GameThirdPersonCamera.ClearFocusPoint")); }
+			ScriptFunction UpdateFocusPoint() { mixin(MGF("mUpdateFocusPoint", "Function GameFramework.GameThirdPersonCamera.UpdateFocusPoint")); }
+			ScriptFunction GetActualFocusLocation() { mixin(MGF("mGetActualFocusLocation", "Function GameFramework.GameThirdPersonCamera.GetActualFocusLocation")); }
+			ScriptFunction AdjustFocusPointInterpolation() { mixin(MGF("mAdjustFocusPointInterpolation", "Function GameFramework.GameThirdPersonCamera.AdjustFocusPointInterpolation")); }
+			ScriptFunction FindBestCameraMode() { mixin(MGF("mFindBestCameraMode", "Function GameFramework.GameThirdPersonCamera.FindBestCameraMode")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function GameFramework.GameThirdPersonCamera.ProcessViewRotation")); }
+			ScriptFunction OnBecomeActive() { mixin(MGF("mOnBecomeActive", "Function GameFramework.GameThirdPersonCamera.OnBecomeActive")); }
+			ScriptFunction ModifyPostProcessSettings() { mixin(MGF("mModifyPostProcessSettings", "Function GameFramework.GameThirdPersonCamera.ModifyPostProcessSettings")); }
+			ScriptFunction ResetInterpolation() { mixin(MGF("mResetInterpolation", "Function GameFramework.GameThirdPersonCamera.ResetInterpolation")); }
 		}
 	}
 	struct PenetrationAvoidanceFeeler
@@ -76,15 +76,15 @@ public extern(D):
 		private ubyte __buffer__[40];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameThirdPersonCamera.PenetrationAvoidanceFeeler")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GameFramework.GameThirdPersonCamera.PenetrationAvoidanceFeeler")); }
 		@property final auto ref
 		{
-			int FramesUntilNextTrace() { mixin(MGPS!("int", 36)()); }
-			int TraceInterval() { mixin(MGPS!("int", 32)()); }
-			Vector Extent() { mixin(MGPS!("Vector", 20)()); }
-			float PawnWeight() { mixin(MGPS!("float", 16)()); }
-			float WorldWeight() { mixin(MGPS!("float", 12)()); }
-			Rotator AdjustmentRot() { mixin(MGPS!("Rotator", 0)()); }
+			int FramesUntilNextTrace() { mixin(MGPS("int", 36)); }
+			int TraceInterval() { mixin(MGPS("int", 32)); }
+			Vector Extent() { mixin(MGPS("Vector", 20)); }
+			float PawnWeight() { mixin(MGPS("float", 16)); }
+			float WorldWeight() { mixin(MGPS("float", 12)); }
+			Rotator AdjustmentRot() { mixin(MGPS("Rotator", 0)); }
 		}
 	}
 	struct CamFocusPointParams
@@ -92,87 +92,87 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameThirdPersonCamera.CamFocusPointParams")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GameFramework.GameThirdPersonCamera.CamFocusPointParams")); }
 		@property final
 		{
 			auto ref
 			{
-				float FocusPitchOffsetDeg() { mixin(MGPS!("float", 48)()); }
-				UObject.Vector2D InFocusFOV() { mixin(MGPS!("UObject.Vector2D", 36)()); }
-				UObject.Vector2D InterpSpeedRange() { mixin(MGPS!("UObject.Vector2D", 28)()); }
-				float CameraFOV() { mixin(MGPS!("float", 24)()); }
-				Vector FocusWorldLoc() { mixin(MGPS!("Vector", 12)()); }
-				ScriptName FocusBoneName() { mixin(MGPS!("ScriptName", 4)()); }
-				Actor FocusActor() { mixin(MGPS!("Actor", 0)()); }
+				float FocusPitchOffsetDeg() { mixin(MGPS("float", 48)); }
+				UObject.Vector2D InFocusFOV() { mixin(MGPS("UObject.Vector2D", 36)); }
+				UObject.Vector2D InterpSpeedRange() { mixin(MGPS("UObject.Vector2D", 28)); }
+				float CameraFOV() { mixin(MGPS("float", 24)); }
+				Vector FocusWorldLoc() { mixin(MGPS("Vector", 12)); }
+				ScriptName FocusBoneName() { mixin(MGPS("ScriptName", 4)); }
+				Actor FocusActor() { mixin(MGPS("Actor", 0)); }
 			}
-			bool bIgnoreTrace() { mixin(MGBPS!(44, 0x4)()); }
-			bool bIgnoreTrace(bool val) { mixin(MSBPS!(44, 0x4)()); }
-			bool bAdjustCamera() { mixin(MGBPS!(44, 0x2)()); }
-			bool bAdjustCamera(bool val) { mixin(MSBPS!(44, 0x2)()); }
-			bool bAlwaysFocus() { mixin(MGBPS!(44, 0x1)()); }
-			bool bAlwaysFocus(bool val) { mixin(MSBPS!(44, 0x1)()); }
+			bool bIgnoreTrace() { mixin(MGBPS(44, 0x4)); }
+			bool bIgnoreTrace(bool val) { mixin(MSBPS(44, 0x4)); }
+			bool bAdjustCamera() { mixin(MGBPS(44, 0x2)); }
+			bool bAdjustCamera(bool val) { mixin(MSBPS(44, 0x2)); }
+			bool bAlwaysFocus() { mixin(MGBPS(44, 0x1)); }
+			bool bAlwaysFocus(bool val) { mixin(MSBPS(44, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler) PenetrationAvoidanceFeelers() { mixin(MGPC!("ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler)", 348)()); }
-			Vector LastOffsetAdjustment() { mixin(MGPC!("Vector", 360)()); }
-			Rotator LastPreModifierCameraRot() { mixin(MGPC!("Rotator", 336)()); }
-			Vector LastPreModifierCameraLoc() { mixin(MGPC!("Vector", 324)()); }
-			Vector LastWorstLocationLocal() { mixin(MGPC!("Vector", 312)()); }
-			float WorstLocInterpSpeed() { mixin(MGPC!("float", 308)()); }
-			float DirectLookInterpSpeed() { mixin(MGPC!("float", 304)()); }
-			int DirectLookYaw() { mixin(MGPC!("int", 300)()); }
-			int LastPostCamTurnYaw() { mixin(MGPC!("int", 296)()); }
-			float TurnDelay() { mixin(MGPC!("float", 292)()); }
-			float TurnTotalTime() { mixin(MGPC!("float", 288)()); }
-			int TurnEndAngle() { mixin(MGPC!("int", 284)()); }
-			int TurnStartAngle() { mixin(MGPC!("int", 280)()); }
-			float TurnCurTime() { mixin(MGPC!("float", 276)()); }
-			GameThirdPersonCamera.CamFocusPointParams FocusPoint() { mixin(MGPC!("GameThirdPersonCamera.CamFocusPointParams", 220)()); }
-			Vector LastFocusPointLoc() { mixin(MGPC!("Vector", 208)()); }
-			Vector ActualFocusPointWorldLoc() { mixin(MGPC!("Vector", 196)()); }
-			float LastFocusChangeTime() { mixin(MGPC!("float", 192)()); }
-			float Focus_FastAdjustKickInTime() { mixin(MGPC!("float", 188)()); }
-			int Focus_MaxTries() { mixin(MGPC!("int", 184)()); }
-			float Focus_StepHeightAdjustment() { mixin(MGPC!("float", 180)()); }
-			float Focus_BackOffStrength() { mixin(MGPC!("float", 176)()); }
-			float LeftoverPitchAdjustment() { mixin(MGPC!("float", 172)()); }
-			float LastYawAdjustment() { mixin(MGPC!("float", 168)()); }
-			float LastPitchAdjustment() { mixin(MGPC!("float", 164)()); }
-			float LastHeightAdjustment() { mixin(MGPC!("float", 160)()); }
-			GameThirdPersonCameraMode CurrentCamMode() { mixin(MGPC!("GameThirdPersonCameraMode", 156)()); }
-			ScriptClass ThirdPersonCamDefaultClass() { mixin(MGPC!("ScriptClass", 152)()); }
-			GameThirdPersonCameraMode ThirdPersonCamDefault() { mixin(MGPC!("GameThirdPersonCameraMode", 148)()); }
-			float LastCamFOV() { mixin(MGPC!("float", 144)()); }
-			Vector LastViewOffset() { mixin(MGPC!("Vector", 132)()); }
-			float OriginOffsetInterpSpeed() { mixin(MGPC!("float", 128)()); }
-			Rotator LastActualCameraOriginRot() { mixin(MGPC!("Rotator", 116)()); }
-			Vector LastActualOriginOffset() { mixin(MGPC!("Vector", 104)()); }
-			float PenetrationExtentScale() { mixin(MGPC!("float", 100)()); }
-			float PenetrationBlockedPct() { mixin(MGPC!("float", 96)()); }
-			float PenetrationBlendInTime() { mixin(MGPC!("float", 92)()); }
-			float PenetrationBlendOutTime() { mixin(MGPC!("float", 88)()); }
-			float WorstLocPenetrationExtentScale() { mixin(MGPC!("float", 84)()); }
-			float WorstLocBlockedPct() { mixin(MGPC!("float", 80)()); }
-			Vector LastActualCameraOrigin() { mixin(MGPC!("Vector", 68)()); }
+			ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler) PenetrationAvoidanceFeelers() { mixin(MGPC("ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler)", 348)); }
+			Vector LastOffsetAdjustment() { mixin(MGPC("Vector", 360)); }
+			Rotator LastPreModifierCameraRot() { mixin(MGPC("Rotator", 336)); }
+			Vector LastPreModifierCameraLoc() { mixin(MGPC("Vector", 324)); }
+			Vector LastWorstLocationLocal() { mixin(MGPC("Vector", 312)); }
+			float WorstLocInterpSpeed() { mixin(MGPC("float", 308)); }
+			float DirectLookInterpSpeed() { mixin(MGPC("float", 304)); }
+			int DirectLookYaw() { mixin(MGPC("int", 300)); }
+			int LastPostCamTurnYaw() { mixin(MGPC("int", 296)); }
+			float TurnDelay() { mixin(MGPC("float", 292)); }
+			float TurnTotalTime() { mixin(MGPC("float", 288)); }
+			int TurnEndAngle() { mixin(MGPC("int", 284)); }
+			int TurnStartAngle() { mixin(MGPC("int", 280)); }
+			float TurnCurTime() { mixin(MGPC("float", 276)); }
+			GameThirdPersonCamera.CamFocusPointParams FocusPoint() { mixin(MGPC("GameThirdPersonCamera.CamFocusPointParams", 220)); }
+			Vector LastFocusPointLoc() { mixin(MGPC("Vector", 208)); }
+			Vector ActualFocusPointWorldLoc() { mixin(MGPC("Vector", 196)); }
+			float LastFocusChangeTime() { mixin(MGPC("float", 192)); }
+			float Focus_FastAdjustKickInTime() { mixin(MGPC("float", 188)); }
+			int Focus_MaxTries() { mixin(MGPC("int", 184)); }
+			float Focus_StepHeightAdjustment() { mixin(MGPC("float", 180)); }
+			float Focus_BackOffStrength() { mixin(MGPC("float", 176)); }
+			float LeftoverPitchAdjustment() { mixin(MGPC("float", 172)); }
+			float LastYawAdjustment() { mixin(MGPC("float", 168)); }
+			float LastPitchAdjustment() { mixin(MGPC("float", 164)); }
+			float LastHeightAdjustment() { mixin(MGPC("float", 160)); }
+			GameThirdPersonCameraMode CurrentCamMode() { mixin(MGPC("GameThirdPersonCameraMode", 156)); }
+			ScriptClass ThirdPersonCamDefaultClass() { mixin(MGPC("ScriptClass", 152)); }
+			GameThirdPersonCameraMode ThirdPersonCamDefault() { mixin(MGPC("GameThirdPersonCameraMode", 148)); }
+			float LastCamFOV() { mixin(MGPC("float", 144)); }
+			Vector LastViewOffset() { mixin(MGPC("Vector", 132)); }
+			float OriginOffsetInterpSpeed() { mixin(MGPC("float", 128)); }
+			Rotator LastActualCameraOriginRot() { mixin(MGPC("Rotator", 116)); }
+			Vector LastActualOriginOffset() { mixin(MGPC("Vector", 104)); }
+			float PenetrationExtentScale() { mixin(MGPC("float", 100)); }
+			float PenetrationBlockedPct() { mixin(MGPC("float", 96)); }
+			float PenetrationBlendInTime() { mixin(MGPC("float", 92)); }
+			float PenetrationBlendOutTime() { mixin(MGPC("float", 88)); }
+			float WorstLocPenetrationExtentScale() { mixin(MGPC("float", 84)); }
+			float WorstLocBlockedPct() { mixin(MGPC("float", 80)); }
+			Vector LastActualCameraOrigin() { mixin(MGPC("Vector", 68)); }
 		}
-		bool bDebugChangedCameraMode() { mixin(MGBPC!(272, 0x40)()); }
-		bool bDebugChangedCameraMode(bool val) { mixin(MSBPC!(272, 0x40)()); }
-		bool bDoingDirectLook() { mixin(MGBPC!(272, 0x20)()); }
-		bool bDoingDirectLook(bool val) { mixin(MSBPC!(272, 0x20)()); }
-		bool bDrawDebug() { mixin(MGBPC!(272, 0x10)()); }
-		bool bDrawDebug(bool val) { mixin(MSBPC!(272, 0x10)()); }
-		bool bTurnAlignTargetWhenFinished() { mixin(MGBPC!(272, 0x8)()); }
-		bool bTurnAlignTargetWhenFinished(bool val) { mixin(MSBPC!(272, 0x8)()); }
-		bool bDoingACameraTurn() { mixin(MGBPC!(272, 0x4)()); }
-		bool bDoingACameraTurn(bool val) { mixin(MSBPC!(272, 0x4)()); }
-		bool bFocusPointSuccessful() { mixin(MGBPC!(272, 0x2)()); }
-		bool bFocusPointSuccessful(bool val) { mixin(MSBPC!(272, 0x2)()); }
-		bool bFocusPointSet() { mixin(MGBPC!(272, 0x1)()); }
-		bool bFocusPointSet(bool val) { mixin(MSBPC!(272, 0x1)()); }
+		bool bDebugChangedCameraMode() { mixin(MGBPC(272, 0x40)); }
+		bool bDebugChangedCameraMode(bool val) { mixin(MSBPC(272, 0x40)); }
+		bool bDoingDirectLook() { mixin(MGBPC(272, 0x20)); }
+		bool bDoingDirectLook(bool val) { mixin(MSBPC(272, 0x20)); }
+		bool bDrawDebug() { mixin(MGBPC(272, 0x10)); }
+		bool bDrawDebug(bool val) { mixin(MSBPC(272, 0x10)); }
+		bool bTurnAlignTargetWhenFinished() { mixin(MGBPC(272, 0x8)); }
+		bool bTurnAlignTargetWhenFinished(bool val) { mixin(MSBPC(272, 0x8)); }
+		bool bDoingACameraTurn() { mixin(MGBPC(272, 0x4)); }
+		bool bDoingACameraTurn(bool val) { mixin(MSBPC(272, 0x4)); }
+		bool bFocusPointSuccessful() { mixin(MGBPC(272, 0x2)); }
+		bool bFocusPointSuccessful(bool val) { mixin(MSBPC(272, 0x2)); }
+		bool bFocusPointSet() { mixin(MGBPC(272, 0x1)); }
+		bool bFocusPointSet(bool val) { mixin(MSBPC(272, 0x1)); }
 	}
 final:
 	GameThirdPersonCameraMode CreateCameraMode(ScriptClass ModeClass)

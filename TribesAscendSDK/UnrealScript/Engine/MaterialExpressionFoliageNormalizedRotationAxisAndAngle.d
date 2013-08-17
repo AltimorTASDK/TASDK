@@ -8,7 +8,7 @@ extern(C++) interface MaterialExpressionFoliageNormalizedRotationAxisAndAngle : 
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionFoliageNormalizedRotationAxisAndAngle")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionFoliageNormalizedRotationAxisAndAngle")); }
 	private static __gshared MaterialExpressionFoliageNormalizedRotationAxisAndAngle mDefaultProperties;
-	@property final static MaterialExpressionFoliageNormalizedRotationAxisAndAngle DefaultProperties() { mixin(MGDPC!(MaterialExpressionFoliageNormalizedRotationAxisAndAngle, "MaterialExpressionFoliageNormalizedRotationAxisAndAngle Engine.Default__MaterialExpressionFoliageNormalizedRotationAxisAndAngle")()); }
+	@property final static MaterialExpressionFoliageNormalizedRotationAxisAndAngle DefaultProperties() { mixin(MGDPC("MaterialExpressionFoliageNormalizedRotationAxisAndAngle", "MaterialExpressionFoliageNormalizedRotationAxisAndAngle Engine.Default__MaterialExpressionFoliageNormalizedRotationAxisAndAngle")); }
 }

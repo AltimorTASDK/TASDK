@@ -8,7 +8,7 @@ extern(C++) interface UTTeamPlayerStart : UDKTeamPlayerStart
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamPlayerStart")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeamPlayerStart")); }
 	private static __gshared UTTeamPlayerStart mDefaultProperties;
-	@property final static UTTeamPlayerStart DefaultProperties() { mixin(MGDPC!(UTTeamPlayerStart, "UTTeamPlayerStart UTGame.Default__UTTeamPlayerStart")()); }
+	@property final static UTTeamPlayerStart DefaultProperties() { mixin(MGDPC("UTTeamPlayerStart", "UTTeamPlayerStart UTGame.Default__UTTeamPlayerStart")); }
 }

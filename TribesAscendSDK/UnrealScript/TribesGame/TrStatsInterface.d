@@ -11,9 +11,9 @@ extern(C++) interface TrStatsInterface : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrStatsInterface")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrStatsInterface")); }
 	private static __gshared TrStatsInterface mDefaultProperties;
-	@property final static TrStatsInterface DefaultProperties() { mixin(MGDPC!(TrStatsInterface, "TrStatsInterface TribesGame.Default__TrStatsInterface")()); }
+	@property final static TrStatsInterface DefaultProperties() { mixin(MGDPC("TrStatsInterface", "TrStatsInterface TribesGame.Default__TrStatsInterface")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -68,53 +68,53 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.TrStatsInterface.Initialize")()); }
-			ScriptFunction AddKill() { mixin(MGF!("mAddKill", "Function TribesGame.TrStatsInterface.AddKill")()); }
-			ScriptFunction AddDeath() { mixin(MGF!("mAddDeath", "Function TribesGame.TrStatsInterface.AddDeath")()); }
-			ScriptFunction AddAssist() { mixin(MGF!("mAddAssist", "Function TribesGame.TrStatsInterface.AddAssist")()); }
-			ScriptFunction AddAccolade() { mixin(MGF!("mAddAccolade", "Function TribesGame.TrStatsInterface.AddAccolade")()); }
-			ScriptFunction AddCredits() { mixin(MGF!("mAddCredits", "Function TribesGame.TrStatsInterface.AddCredits")()); }
-			ScriptFunction UpdateTimePlayed() { mixin(MGF!("mUpdateTimePlayed", "Function TribesGame.TrStatsInterface.UpdateTimePlayed")()); }
-			ScriptFunction UpdateWeapon() { mixin(MGF!("mUpdateWeapon", "Function TribesGame.TrStatsInterface.UpdateWeapon")()); }
-			ScriptFunction UpdateDamage() { mixin(MGF!("mUpdateDamage", "Function TribesGame.TrStatsInterface.UpdateDamage")()); }
-			ScriptFunction SetIdentification() { mixin(MGF!("mSetIdentification", "Function TribesGame.TrStatsInterface.SetIdentification")()); }
-			ScriptFunction SetActiveClass() { mixin(MGF!("mSetActiveClass", "Function TribesGame.TrStatsInterface.SetActiveClass")()); }
-			ScriptFunction AddRepair() { mixin(MGF!("mAddRepair", "Function TribesGame.TrStatsInterface.AddRepair")()); }
-			ScriptFunction AddFlagCap() { mixin(MGF!("mAddFlagCap", "Function TribesGame.TrStatsInterface.AddFlagCap")()); }
-			ScriptFunction AddFlagGrab() { mixin(MGF!("mAddFlagGrab", "Function TribesGame.TrStatsInterface.AddFlagGrab")()); }
-			ScriptFunction AddFlagReturn() { mixin(MGF!("mAddFlagReturn", "Function TribesGame.TrStatsInterface.AddFlagReturn")()); }
-			ScriptFunction AddMidairKill() { mixin(MGF!("mAddMidairKill", "Function TribesGame.TrStatsInterface.AddMidairKill")()); }
-			ScriptFunction AddVehicleKill() { mixin(MGF!("mAddVehicleKill", "Function TribesGame.TrStatsInterface.AddVehicleKill")()); }
-			ScriptFunction SetXP() { mixin(MGF!("mSetXP", "Function TribesGame.TrStatsInterface.SetXP")()); }
-			ScriptFunction SetTeam() { mixin(MGF!("mSetTeam", "Function TribesGame.TrStatsInterface.SetTeam")()); }
-			ScriptFunction AddVehicleDestruction() { mixin(MGF!("mAddVehicleDestruction", "Function TribesGame.TrStatsInterface.AddVehicleDestruction")()); }
-			ScriptFunction SetSpeedSkied() { mixin(MGF!("mSetSpeedSkied", "Function TribesGame.TrStatsInterface.SetSpeedSkied")()); }
-			ScriptFunction AddDeployableDestruction() { mixin(MGF!("mAddDeployableDestruction", "Function TribesGame.TrStatsInterface.AddDeployableDestruction")()); }
-			ScriptFunction AddCreditsSpent() { mixin(MGF!("mAddCreditsSpent", "Function TribesGame.TrStatsInterface.AddCreditsSpent")()); }
-			ScriptFunction SetDistanceKill() { mixin(MGF!("mSetDistanceKill", "Function TribesGame.TrStatsInterface.SetDistanceKill")()); }
-			ScriptFunction SetSpeedFlagCap() { mixin(MGF!("mSetSpeedFlagCap", "Function TribesGame.TrStatsInterface.SetSpeedFlagCap")()); }
-			ScriptFunction AddCreditsEarned() { mixin(MGF!("mAddCreditsEarned", "Function TribesGame.TrStatsInterface.AddCreditsEarned")()); }
-			ScriptFunction AddDistanceSkied() { mixin(MGF!("mAddDistanceSkied", "Function TribesGame.TrStatsInterface.AddDistanceSkied")()); }
-			ScriptFunction SetSpeedFlagGrab() { mixin(MGF!("mSetSpeedFlagGrab", "Function TribesGame.TrStatsInterface.SetSpeedFlagGrab")()); }
-			ScriptFunction SetDistanceHeadshot() { mixin(MGF!("mSetDistanceHeadshot", "Function TribesGame.TrStatsInterface.SetDistanceHeadshot")()); }
-			ScriptFunction FallingDeath() { mixin(MGF!("mFallingDeath", "Function TribesGame.TrStatsInterface.FallingDeath")()); }
-			ScriptFunction SkiDistance() { mixin(MGF!("mSkiDistance", "Function TribesGame.TrStatsInterface.SkiDistance")()); }
-			ScriptFunction BeltKill() { mixin(MGF!("mBeltKill", "Function TribesGame.TrStatsInterface.BeltKill")()); }
-			ScriptFunction CallIn() { mixin(MGF!("mCallIn", "Function TribesGame.TrStatsInterface.CallIn")()); }
-			ScriptFunction CallInKill() { mixin(MGF!("mCallInKill", "Function TribesGame.TrStatsInterface.CallInKill")()); }
-			ScriptFunction RegeneratedToFull() { mixin(MGF!("mRegeneratedToFull", "Function TribesGame.TrStatsInterface.RegeneratedToFull")()); }
-			ScriptFunction FlagGrabSpeed() { mixin(MGF!("mFlagGrabSpeed", "Function TribesGame.TrStatsInterface.FlagGrabSpeed")()); }
-			ScriptFunction VEHICLEKILL() { mixin(MGF!("mVEHICLEKILL", "Function TribesGame.TrStatsInterface.VEHICLEKILL")()); }
-			ScriptFunction InvStationVisited() { mixin(MGF!("mInvStationVisited", "Function TribesGame.TrStatsInterface.InvStationVisited")()); }
-			ScriptFunction SkiSpeed() { mixin(MGF!("mSkiSpeed", "Function TribesGame.TrStatsInterface.SkiSpeed")()); }
-			ScriptFunction BaseUpgrade() { mixin(MGF!("mBaseUpgrade", "Function TribesGame.TrStatsInterface.BaseUpgrade")()); }
-			ScriptFunction TrackPlayerMovement() { mixin(MGF!("mTrackPlayerMovement", "Function TribesGame.TrStatsInterface.TrackPlayerMovement")()); }
-			ScriptFunction AddVehicleSpawn() { mixin(MGF!("mAddVehicleSpawn", "Function TribesGame.TrStatsInterface.AddVehicleSpawn")()); }
-			ScriptFunction AddGeneratorDestruction() { mixin(MGF!("mAddGeneratorDestruction", "Function TribesGame.TrStatsInterface.AddGeneratorDestruction")()); }
-			ScriptFunction WriteMatchStats() { mixin(MGF!("mWriteMatchStats", "Function TribesGame.TrStatsInterface.WriteMatchStats")()); }
-			ScriptFunction WritePlayerStats() { mixin(MGF!("mWritePlayerStats", "Function TribesGame.TrStatsInterface.WritePlayerStats")()); }
-			ScriptFunction GameEnd() { mixin(MGF!("mGameEnd", "Function TribesGame.TrStatsInterface.GameEnd")()); }
-			ScriptFunction Flush() { mixin(MGF!("mFlush", "Function TribesGame.TrStatsInterface.Flush")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.TrStatsInterface.Initialize")); }
+			ScriptFunction AddKill() { mixin(MGF("mAddKill", "Function TribesGame.TrStatsInterface.AddKill")); }
+			ScriptFunction AddDeath() { mixin(MGF("mAddDeath", "Function TribesGame.TrStatsInterface.AddDeath")); }
+			ScriptFunction AddAssist() { mixin(MGF("mAddAssist", "Function TribesGame.TrStatsInterface.AddAssist")); }
+			ScriptFunction AddAccolade() { mixin(MGF("mAddAccolade", "Function TribesGame.TrStatsInterface.AddAccolade")); }
+			ScriptFunction AddCredits() { mixin(MGF("mAddCredits", "Function TribesGame.TrStatsInterface.AddCredits")); }
+			ScriptFunction UpdateTimePlayed() { mixin(MGF("mUpdateTimePlayed", "Function TribesGame.TrStatsInterface.UpdateTimePlayed")); }
+			ScriptFunction UpdateWeapon() { mixin(MGF("mUpdateWeapon", "Function TribesGame.TrStatsInterface.UpdateWeapon")); }
+			ScriptFunction UpdateDamage() { mixin(MGF("mUpdateDamage", "Function TribesGame.TrStatsInterface.UpdateDamage")); }
+			ScriptFunction SetIdentification() { mixin(MGF("mSetIdentification", "Function TribesGame.TrStatsInterface.SetIdentification")); }
+			ScriptFunction SetActiveClass() { mixin(MGF("mSetActiveClass", "Function TribesGame.TrStatsInterface.SetActiveClass")); }
+			ScriptFunction AddRepair() { mixin(MGF("mAddRepair", "Function TribesGame.TrStatsInterface.AddRepair")); }
+			ScriptFunction AddFlagCap() { mixin(MGF("mAddFlagCap", "Function TribesGame.TrStatsInterface.AddFlagCap")); }
+			ScriptFunction AddFlagGrab() { mixin(MGF("mAddFlagGrab", "Function TribesGame.TrStatsInterface.AddFlagGrab")); }
+			ScriptFunction AddFlagReturn() { mixin(MGF("mAddFlagReturn", "Function TribesGame.TrStatsInterface.AddFlagReturn")); }
+			ScriptFunction AddMidairKill() { mixin(MGF("mAddMidairKill", "Function TribesGame.TrStatsInterface.AddMidairKill")); }
+			ScriptFunction AddVehicleKill() { mixin(MGF("mAddVehicleKill", "Function TribesGame.TrStatsInterface.AddVehicleKill")); }
+			ScriptFunction SetXP() { mixin(MGF("mSetXP", "Function TribesGame.TrStatsInterface.SetXP")); }
+			ScriptFunction SetTeam() { mixin(MGF("mSetTeam", "Function TribesGame.TrStatsInterface.SetTeam")); }
+			ScriptFunction AddVehicleDestruction() { mixin(MGF("mAddVehicleDestruction", "Function TribesGame.TrStatsInterface.AddVehicleDestruction")); }
+			ScriptFunction SetSpeedSkied() { mixin(MGF("mSetSpeedSkied", "Function TribesGame.TrStatsInterface.SetSpeedSkied")); }
+			ScriptFunction AddDeployableDestruction() { mixin(MGF("mAddDeployableDestruction", "Function TribesGame.TrStatsInterface.AddDeployableDestruction")); }
+			ScriptFunction AddCreditsSpent() { mixin(MGF("mAddCreditsSpent", "Function TribesGame.TrStatsInterface.AddCreditsSpent")); }
+			ScriptFunction SetDistanceKill() { mixin(MGF("mSetDistanceKill", "Function TribesGame.TrStatsInterface.SetDistanceKill")); }
+			ScriptFunction SetSpeedFlagCap() { mixin(MGF("mSetSpeedFlagCap", "Function TribesGame.TrStatsInterface.SetSpeedFlagCap")); }
+			ScriptFunction AddCreditsEarned() { mixin(MGF("mAddCreditsEarned", "Function TribesGame.TrStatsInterface.AddCreditsEarned")); }
+			ScriptFunction AddDistanceSkied() { mixin(MGF("mAddDistanceSkied", "Function TribesGame.TrStatsInterface.AddDistanceSkied")); }
+			ScriptFunction SetSpeedFlagGrab() { mixin(MGF("mSetSpeedFlagGrab", "Function TribesGame.TrStatsInterface.SetSpeedFlagGrab")); }
+			ScriptFunction SetDistanceHeadshot() { mixin(MGF("mSetDistanceHeadshot", "Function TribesGame.TrStatsInterface.SetDistanceHeadshot")); }
+			ScriptFunction FallingDeath() { mixin(MGF("mFallingDeath", "Function TribesGame.TrStatsInterface.FallingDeath")); }
+			ScriptFunction SkiDistance() { mixin(MGF("mSkiDistance", "Function TribesGame.TrStatsInterface.SkiDistance")); }
+			ScriptFunction BeltKill() { mixin(MGF("mBeltKill", "Function TribesGame.TrStatsInterface.BeltKill")); }
+			ScriptFunction CallIn() { mixin(MGF("mCallIn", "Function TribesGame.TrStatsInterface.CallIn")); }
+			ScriptFunction CallInKill() { mixin(MGF("mCallInKill", "Function TribesGame.TrStatsInterface.CallInKill")); }
+			ScriptFunction RegeneratedToFull() { mixin(MGF("mRegeneratedToFull", "Function TribesGame.TrStatsInterface.RegeneratedToFull")); }
+			ScriptFunction FlagGrabSpeed() { mixin(MGF("mFlagGrabSpeed", "Function TribesGame.TrStatsInterface.FlagGrabSpeed")); }
+			ScriptFunction VEHICLEKILL() { mixin(MGF("mVEHICLEKILL", "Function TribesGame.TrStatsInterface.VEHICLEKILL")); }
+			ScriptFunction InvStationVisited() { mixin(MGF("mInvStationVisited", "Function TribesGame.TrStatsInterface.InvStationVisited")); }
+			ScriptFunction SkiSpeed() { mixin(MGF("mSkiSpeed", "Function TribesGame.TrStatsInterface.SkiSpeed")); }
+			ScriptFunction BaseUpgrade() { mixin(MGF("mBaseUpgrade", "Function TribesGame.TrStatsInterface.BaseUpgrade")); }
+			ScriptFunction TrackPlayerMovement() { mixin(MGF("mTrackPlayerMovement", "Function TribesGame.TrStatsInterface.TrackPlayerMovement")); }
+			ScriptFunction AddVehicleSpawn() { mixin(MGF("mAddVehicleSpawn", "Function TribesGame.TrStatsInterface.AddVehicleSpawn")); }
+			ScriptFunction AddGeneratorDestruction() { mixin(MGF("mAddGeneratorDestruction", "Function TribesGame.TrStatsInterface.AddGeneratorDestruction")); }
+			ScriptFunction WriteMatchStats() { mixin(MGF("mWriteMatchStats", "Function TribesGame.TrStatsInterface.WriteMatchStats")); }
+			ScriptFunction WritePlayerStats() { mixin(MGF("mWritePlayerStats", "Function TribesGame.TrStatsInterface.WritePlayerStats")); }
+			ScriptFunction GameEnd() { mixin(MGF("mGameEnd", "Function TribesGame.TrStatsInterface.GameEnd")); }
+			ScriptFunction Flush() { mixin(MGF("mFlush", "Function TribesGame.TrStatsInterface.Flush")); }
 		}
 	}
 final:

@@ -18,9 +18,9 @@ extern(C++) interface TrGame_TRCTF : TrGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame_TRCTF")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGame_TRCTF")); }
 	private static __gshared TrGame_TRCTF mDefaultProperties;
-	@property final static TrGame_TRCTF DefaultProperties() { mixin(MGDPC!(TrGame_TRCTF, "TrGame_TRCTF TribesGame.Default__TrGame_TRCTF")()); }
+	@property final static TrGame_TRCTF DefaultProperties() { mixin(MGDPC("TrGame_TRCTF", "TrGame_TRCTF TribesGame.Default__TrGame_TRCTF")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,31 +42,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrGame_TRCTF.PostBeginPlay")()); }
-			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrGame_TRCTF.ApplyServerSettings")()); }
-			ScriptFunction GetHandicapNeed() { mixin(MGF!("mGetHandicapNeed", "Function TribesGame.TrGame_TRCTF.GetHandicapNeed")()); }
-			ScriptFunction GetLocationFor() { mixin(MGF!("mGetLocationFor", "Function TribesGame.TrGame_TRCTF.GetLocationFor")()); }
-			ScriptFunction RegisterFlag() { mixin(MGF!("mRegisterFlag", "Function TribesGame.TrGame_TRCTF.RegisterFlag")()); }
-			ScriptFunction NearGoal() { mixin(MGF!("mNearGoal", "Function TribesGame.TrGame_TRCTF.NearGoal")()); }
-			ScriptFunction WantFastSpawnFor() { mixin(MGF!("mWantFastSpawnFor", "Function TribesGame.TrGame_TRCTF.WantFastSpawnFor")()); }
-			ScriptFunction CheckEndGame() { mixin(MGF!("mCheckEndGame", "Function TribesGame.TrGame_TRCTF.CheckEndGame")()); }
-			ScriptFunction ScoreFlag() { mixin(MGF!("mScoreFlag", "Function TribesGame.TrGame_TRCTF.ScoreFlag")()); }
-			ScriptFunction ViewObjective() { mixin(MGF!("mViewObjective", "Function TribesGame.TrGame_TRCTF.ViewObjective")()); }
-			ScriptFunction GetAutoObjectiveFor() { mixin(MGF!("mGetAutoObjectiveFor", "Function TribesGame.TrGame_TRCTF.GetAutoObjectiveFor")()); }
-			ScriptFunction AnnounceScore() { mixin(MGF!("mAnnounceScore", "Function TribesGame.TrGame_TRCTF.AnnounceScore")()); }
-			ScriptFunction CheckScore() { mixin(MGF!("mCheckScore", "Function TribesGame.TrGame_TRCTF.CheckScore")()); }
-			ScriptFunction GetGameTypeId() { mixin(MGF!("mGetGameTypeId", "Function TribesGame.TrGame_TRCTF.GetGameTypeId")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrGame_TRCTF.PostBeginPlay")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF("mApplyServerSettings", "Function TribesGame.TrGame_TRCTF.ApplyServerSettings")); }
+			ScriptFunction GetHandicapNeed() { mixin(MGF("mGetHandicapNeed", "Function TribesGame.TrGame_TRCTF.GetHandicapNeed")); }
+			ScriptFunction GetLocationFor() { mixin(MGF("mGetLocationFor", "Function TribesGame.TrGame_TRCTF.GetLocationFor")); }
+			ScriptFunction RegisterFlag() { mixin(MGF("mRegisterFlag", "Function TribesGame.TrGame_TRCTF.RegisterFlag")); }
+			ScriptFunction NearGoal() { mixin(MGF("mNearGoal", "Function TribesGame.TrGame_TRCTF.NearGoal")); }
+			ScriptFunction WantFastSpawnFor() { mixin(MGF("mWantFastSpawnFor", "Function TribesGame.TrGame_TRCTF.WantFastSpawnFor")); }
+			ScriptFunction CheckEndGame() { mixin(MGF("mCheckEndGame", "Function TribesGame.TrGame_TRCTF.CheckEndGame")); }
+			ScriptFunction ScoreFlag() { mixin(MGF("mScoreFlag", "Function TribesGame.TrGame_TRCTF.ScoreFlag")); }
+			ScriptFunction ViewObjective() { mixin(MGF("mViewObjective", "Function TribesGame.TrGame_TRCTF.ViewObjective")); }
+			ScriptFunction GetAutoObjectiveFor() { mixin(MGF("mGetAutoObjectiveFor", "Function TribesGame.TrGame_TRCTF.GetAutoObjectiveFor")); }
+			ScriptFunction AnnounceScore() { mixin(MGF("mAnnounceScore", "Function TribesGame.TrGame_TRCTF.AnnounceScore")); }
+			ScriptFunction CheckScore() { mixin(MGF("mCheckScore", "Function TribesGame.TrGame_TRCTF.CheckScore")); }
+			ScriptFunction GetGameTypeId() { mixin(MGF("mGetGameTypeId", "Function TribesGame.TrGame_TRCTF.GetGameTypeId")); }
 		}
 	}
 	static struct MatchOver
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame_TRCTF.MatchOver")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrGame_TRCTF.MatchOver")); }
 	}
 	@property final auto ref
 	{
-		TrFlagCTF m_Flags() { mixin(MGPC!("TrFlagCTF", 1456)()); }
-		ScriptClass AnnouncerMessageClass() { mixin(MGPC!("ScriptClass", 1464)()); }
+		TrFlagCTF m_Flags() { mixin(MGPC("TrFlagCTF", 1456)); }
+		ScriptClass AnnouncerMessageClass() { mixin(MGPC("ScriptClass", 1464)); }
 	}
 final:
 	void PostBeginPlay()

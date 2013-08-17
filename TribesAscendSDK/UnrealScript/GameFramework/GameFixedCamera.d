@@ -11,9 +11,9 @@ extern(C++) interface GameFixedCamera : GameCameraBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameFixedCamera")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameFixedCamera")); }
 	private static __gshared GameFixedCamera mDefaultProperties;
-	@property final static GameFixedCamera DefaultProperties() { mixin(MGDPC!(GameFixedCamera, "GameFixedCamera GameFramework.Default__GameFixedCamera")()); }
+	@property final static GameFixedCamera DefaultProperties() { mixin(MGDPC("GameFixedCamera", "GameFixedCamera GameFramework.Default__GameFixedCamera")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,11 +23,11 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateCamera() { mixin(MGF!("mUpdateCamera", "Function GameFramework.GameFixedCamera.UpdateCamera")()); }
-			ScriptFunction OnBecomeActive() { mixin(MGF!("mOnBecomeActive", "Function GameFramework.GameFixedCamera.OnBecomeActive")()); }
+			ScriptFunction UpdateCamera() { mixin(MGF("mUpdateCamera", "Function GameFramework.GameFixedCamera.UpdateCamera")); }
+			ScriptFunction OnBecomeActive() { mixin(MGF("mOnBecomeActive", "Function GameFramework.GameFixedCamera.OnBecomeActive")); }
 		}
 	}
-	@property final auto ref float DefaultFOV() { mixin(MGPC!("float", 68)()); }
+	@property final auto ref float DefaultFOV() { mixin(MGPC("float", 68)); }
 final:
 	void UpdateCamera(Pawn P, GamePlayerCamera pCameraActor, float DeltaTime, ref Camera.TViewTarget OutVT)
 	{

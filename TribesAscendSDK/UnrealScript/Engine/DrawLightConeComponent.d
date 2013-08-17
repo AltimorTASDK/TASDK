@@ -8,7 +8,7 @@ extern(C++) interface DrawLightConeComponent : DrawConeComponent
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DrawLightConeComponent")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.DrawLightConeComponent")); }
 	private static __gshared DrawLightConeComponent mDefaultProperties;
-	@property final static DrawLightConeComponent DefaultProperties() { mixin(MGDPC!(DrawLightConeComponent, "DrawLightConeComponent Engine.Default__DrawLightConeComponent")()); }
+	@property final static DrawLightConeComponent DefaultProperties() { mixin(MGDPC("DrawLightConeComponent", "DrawLightConeComponent Engine.Default__DrawLightConeComponent")); }
 }

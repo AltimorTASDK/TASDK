@@ -15,9 +15,9 @@ extern(C++) interface TrTimedPowerup : TrInventory
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrTimedPowerup")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrTimedPowerup")); }
 	private static __gshared TrTimedPowerup mDefaultProperties;
-	@property final static TrTimedPowerup DefaultProperties() { mixin(MGDPC!(TrTimedPowerup, "TrTimedPowerup TribesGame.Default__TrTimedPowerup")()); }
+	@property final static TrTimedPowerup DefaultProperties() { mixin(MGDPC("TrTimedPowerup", "TrTimedPowerup TribesGame.Default__TrTimedPowerup")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -38,33 +38,33 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrTimedPowerup.Tick")()); }
-			ScriptFunction GivenTo() { mixin(MGF!("mGivenTo", "Function TribesGame.TrTimedPowerup.GivenTo")()); }
-			ScriptFunction ClientGivenTo() { mixin(MGF!("mClientGivenTo", "Function TribesGame.TrTimedPowerup.ClientGivenTo")()); }
-			ScriptFunction AdjustPPEffects() { mixin(MGF!("mAdjustPPEffects", "Function TribesGame.TrTimedPowerup.AdjustPPEffects")()); }
-			ScriptFunction ClientLostItem() { mixin(MGF!("mClientLostItem", "Function TribesGame.TrTimedPowerup.ClientLostItem")()); }
-			ScriptFunction ClientSetTimeRemaining() { mixin(MGF!("mClientSetTimeRemaining", "Function TribesGame.TrTimedPowerup.ClientSetTimeRemaining")()); }
-			ScriptFunction TimeRemaingUpdated() { mixin(MGF!("mTimeRemaingUpdated", "Function TribesGame.TrTimedPowerup.TimeRemaingUpdated")()); }
-			ScriptFunction DisplayPowerup() { mixin(MGF!("mDisplayPowerup", "Function TribesGame.TrTimedPowerup.DisplayPowerup")()); }
-			ScriptFunction DenyPickupQuery() { mixin(MGF!("mDenyPickupQuery", "Function TribesGame.TrTimedPowerup.DenyPickupQuery")()); }
-			ScriptFunction TimeExpired() { mixin(MGF!("mTimeExpired", "Function TribesGame.TrTimedPowerup.TimeExpired")()); }
-			ScriptFunction BotDesireability() { mixin(MGF!("mBotDesireability", "Function TribesGame.TrTimedPowerup.BotDesireability")()); }
-			ScriptFunction DetourWeight() { mixin(MGF!("mDetourWeight", "Function TribesGame.TrTimedPowerup.DetourWeight")()); }
-			ScriptFunction GetPowerupStatName() { mixin(MGF!("mGetPowerupStatName", "Function TribesGame.TrTimedPowerup.GetPowerupStatName")()); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrTimedPowerup.Tick")); }
+			ScriptFunction GivenTo() { mixin(MGF("mGivenTo", "Function TribesGame.TrTimedPowerup.GivenTo")); }
+			ScriptFunction ClientGivenTo() { mixin(MGF("mClientGivenTo", "Function TribesGame.TrTimedPowerup.ClientGivenTo")); }
+			ScriptFunction AdjustPPEffects() { mixin(MGF("mAdjustPPEffects", "Function TribesGame.TrTimedPowerup.AdjustPPEffects")); }
+			ScriptFunction ClientLostItem() { mixin(MGF("mClientLostItem", "Function TribesGame.TrTimedPowerup.ClientLostItem")); }
+			ScriptFunction ClientSetTimeRemaining() { mixin(MGF("mClientSetTimeRemaining", "Function TribesGame.TrTimedPowerup.ClientSetTimeRemaining")); }
+			ScriptFunction TimeRemaingUpdated() { mixin(MGF("mTimeRemaingUpdated", "Function TribesGame.TrTimedPowerup.TimeRemaingUpdated")); }
+			ScriptFunction DisplayPowerup() { mixin(MGF("mDisplayPowerup", "Function TribesGame.TrTimedPowerup.DisplayPowerup")); }
+			ScriptFunction DenyPickupQuery() { mixin(MGF("mDenyPickupQuery", "Function TribesGame.TrTimedPowerup.DenyPickupQuery")); }
+			ScriptFunction TimeExpired() { mixin(MGF("mTimeExpired", "Function TribesGame.TrTimedPowerup.TimeExpired")); }
+			ScriptFunction BotDesireability() { mixin(MGF("mBotDesireability", "Function TribesGame.TrTimedPowerup.BotDesireability")); }
+			ScriptFunction DetourWeight() { mixin(MGF("mDetourWeight", "Function TribesGame.TrTimedPowerup.DetourWeight")); }
+			ScriptFunction GetPowerupStatName() { mixin(MGF("mGetPowerupStatName", "Function TribesGame.TrTimedPowerup.GetPowerupStatName")); }
 		}
 	}
 	@property final auto ref
 	{
-		float PP_Scene_Desaturation() { mixin(MGPC!("float", 620)()); }
-		Vector PP_Scene_HighLights() { mixin(MGPC!("Vector", 608)()); }
-		float WarningTime() { mixin(MGPC!("float", 604)()); }
-		float TransitionDuration() { mixin(MGPC!("float", 600)()); }
-		float TransitionTime() { mixin(MGPC!("float", 596)()); }
-		UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 580)()); }
-		ScriptName PowerupStatName() { mixin(MGPC!("ScriptName", 572)()); }
-		SoundCue PowerupOverSound() { mixin(MGPC!("SoundCue", 568)()); }
-		int HudIndex() { mixin(MGPC!("int", 564)()); }
-		float TimeRemaining() { mixin(MGPC!("float", 560)()); }
+		float PP_Scene_Desaturation() { mixin(MGPC("float", 620)); }
+		Vector PP_Scene_HighLights() { mixin(MGPC("Vector", 608)); }
+		float WarningTime() { mixin(MGPC("float", 604)); }
+		float TransitionDuration() { mixin(MGPC("float", 600)); }
+		float TransitionTime() { mixin(MGPC("float", 596)); }
+		UIRoot.TextureCoordinates IconCoords() { mixin(MGPC("UIRoot.TextureCoordinates", 580)); }
+		ScriptName PowerupStatName() { mixin(MGPC("ScriptName", 572)); }
+		SoundCue PowerupOverSound() { mixin(MGPC("SoundCue", 568)); }
+		int HudIndex() { mixin(MGPC("int", 564)); }
+		float TimeRemaining() { mixin(MGPC("float", 560)); }
 	}
 final:
 	void Tick(float DeltaTime)

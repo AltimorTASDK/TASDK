@@ -11,9 +11,9 @@ extern(C++) interface TrDevice_Shotgun : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDevice_Shotgun")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDevice_Shotgun")); }
 	private static __gshared TrDevice_Shotgun mDefaultProperties;
-	@property final static TrDevice_Shotgun DefaultProperties() { mixin(MGDPC!(TrDevice_Shotgun, "TrDevice_Shotgun TribesGame.Default__TrDevice_Shotgun")()); }
+	@property final static TrDevice_Shotgun DefaultProperties() { mixin(MGDPC("TrDevice_Shotgun", "TrDevice_Shotgun TribesGame.Default__TrDevice_Shotgun")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -31,37 +31,37 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostInitAnimTree() { mixin(MGF!("mPostInitAnimTree", "Function TribesGame.TrDevice_Shotgun.PostInitAnimTree")()); }
-			ScriptFunction SetFlashLocation() { mixin(MGF!("mSetFlashLocation", "Function TribesGame.TrDevice_Shotgun.SetFlashLocation")()); }
-			ScriptFunction PerformInactiveReload() { mixin(MGF!("mPerformInactiveReload", "Function TribesGame.TrDevice_Shotgun.PerformInactiveReload")()); }
-			ScriptFunction CustomFire() { mixin(MGF!("mCustomFire", "Function TribesGame.TrDevice_Shotgun.CustomFire")()); }
-			ScriptFunction FireAmmunition() { mixin(MGF!("mFireAmmunition", "Function TribesGame.TrDevice_Shotgun.FireAmmunition")()); }
-			ScriptFunction StartFire() { mixin(MGF!("mStartFire", "Function TribesGame.TrDevice_Shotgun.StartFire")()); }
-			ScriptFunction ConsumeAmmo() { mixin(MGF!("mConsumeAmmo", "Function TribesGame.TrDevice_Shotgun.ConsumeAmmo")()); }
-			ScriptFunction ConsumeAmmo_Internal() { mixin(MGF!("mConsumeAmmo_Internal", "Function TribesGame.TrDevice_Shotgun.ConsumeAmmo_Internal")()); }
-			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF!("mProcessInstantHit_Internal", "Function TribesGame.TrDevice_Shotgun.ProcessInstantHit_Internal")()); }
-			ScriptFunction OnAnimEnd() { mixin(MGF!("mOnAnimEnd", "Function TribesGame.TrDevice_Shotgun.OnAnimEnd")()); }
+			ScriptFunction PostInitAnimTree() { mixin(MGF("mPostInitAnimTree", "Function TribesGame.TrDevice_Shotgun.PostInitAnimTree")); }
+			ScriptFunction SetFlashLocation() { mixin(MGF("mSetFlashLocation", "Function TribesGame.TrDevice_Shotgun.SetFlashLocation")); }
+			ScriptFunction PerformInactiveReload() { mixin(MGF("mPerformInactiveReload", "Function TribesGame.TrDevice_Shotgun.PerformInactiveReload")); }
+			ScriptFunction CustomFire() { mixin(MGF("mCustomFire", "Function TribesGame.TrDevice_Shotgun.CustomFire")); }
+			ScriptFunction FireAmmunition() { mixin(MGF("mFireAmmunition", "Function TribesGame.TrDevice_Shotgun.FireAmmunition")); }
+			ScriptFunction StartFire() { mixin(MGF("mStartFire", "Function TribesGame.TrDevice_Shotgun.StartFire")); }
+			ScriptFunction ConsumeAmmo() { mixin(MGF("mConsumeAmmo", "Function TribesGame.TrDevice_Shotgun.ConsumeAmmo")); }
+			ScriptFunction ConsumeAmmo_Internal() { mixin(MGF("mConsumeAmmo_Internal", "Function TribesGame.TrDevice_Shotgun.ConsumeAmmo_Internal")); }
+			ScriptFunction ProcessInstantHit_Internal() { mixin(MGF("mProcessInstantHit_Internal", "Function TribesGame.TrDevice_Shotgun.ProcessInstantHit_Internal")); }
+			ScriptFunction OnAnimEnd() { mixin(MGF("mOnAnimEnd", "Function TribesGame.TrDevice_Shotgun.OnAnimEnd")); }
 		}
 	}
 	static struct WeaponFiring
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_Shotgun.WeaponFiring")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_Shotgun.WeaponFiring")); }
 	}
 	static struct DeviceReloading
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDevice_Shotgun.DeviceReloading")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDevice_Shotgun.DeviceReloading")); }
 	}
 	@property final auto ref
 	{
-		AnimNodePlayCustomAnim ReloadCustomAnimNode() { mixin(MGPC!("AnimNodePlayCustomAnim", 2172)()); }
-		int m_nConsumeShotsFired() { mixin(MGPC!("int", 2168)()); }
-		int m_nShotsFired() { mixin(MGPC!("int", 2164)()); }
-		float m_fInnerDefaultAccuracy() { mixin(MGPC!("float", 2160)()); }
-		float m_fConsumeAmmoTimeStamp() { mixin(MGPC!("float", 2156)()); }
-		int m_nImpactCounter() { mixin(MGPC!("int", 2152)()); }
-		int m_nMinShotCount() { mixin(MGPC!("int", 2148)()); }
+		AnimNodePlayCustomAnim ReloadCustomAnimNode() { mixin(MGPC("AnimNodePlayCustomAnim", 2172)); }
+		int m_nConsumeShotsFired() { mixin(MGPC("int", 2168)); }
+		int m_nShotsFired() { mixin(MGPC("int", 2164)); }
+		float m_fInnerDefaultAccuracy() { mixin(MGPC("float", 2160)); }
+		float m_fConsumeAmmoTimeStamp() { mixin(MGPC("float", 2156)); }
+		int m_nImpactCounter() { mixin(MGPC("int", 2152)); }
+		int m_nMinShotCount() { mixin(MGPC("int", 2148)); }
 	}
 final:
 	void PostInitAnimTree(

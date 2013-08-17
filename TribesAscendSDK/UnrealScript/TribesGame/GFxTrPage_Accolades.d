@@ -11,9 +11,9 @@ extern(C++) interface GFxTrPage_Accolades : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_Accolades")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_Accolades")); }
 	private static __gshared GFxTrPage_Accolades mDefaultProperties;
-	@property final static GFxTrPage_Accolades DefaultProperties() { mixin(MGDPC!(GFxTrPage_Accolades, "GFxTrPage_Accolades TribesGame.Default__GFxTrPage_Accolades")()); }
+	@property final static GFxTrPage_Accolades DefaultProperties() { mixin(MGDPC("GFxTrPage_Accolades", "GFxTrPage_Accolades TribesGame.Default__GFxTrPage_Accolades")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,15 +30,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_Accolades.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_Accolades.SpecialAction")()); }
-			ScriptFunction TakeAction() { mixin(MGF!("mTakeAction", "Function TribesGame.GFxTrPage_Accolades.TakeAction")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_Accolades.ShowModel")()); }
-			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_Accolades.TakeFocus")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_Accolades.FillData")()); }
-			ScriptFunction FillAccolades() { mixin(MGF!("mFillAccolades", "Function TribesGame.GFxTrPage_Accolades.FillAccolades")()); }
-			ScriptFunction FillAccolade() { mixin(MGF!("mFillAccolade", "Function TribesGame.GFxTrPage_Accolades.FillAccolade")()); }
-			ScriptFunction GetAccoladeClass() { mixin(MGF!("mGetAccoladeClass", "Function TribesGame.GFxTrPage_Accolades.GetAccoladeClass")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_Accolades.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_Accolades.SpecialAction")); }
+			ScriptFunction TakeAction() { mixin(MGF("mTakeAction", "Function TribesGame.GFxTrPage_Accolades.TakeAction")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_Accolades.ShowModel")); }
+			ScriptFunction TakeFocus() { mixin(MGF("mTakeFocus", "Function TribesGame.GFxTrPage_Accolades.TakeFocus")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_Accolades.FillData")); }
+			ScriptFunction FillAccolades() { mixin(MGF("mFillAccolades", "Function TribesGame.GFxTrPage_Accolades.FillAccolades")); }
+			ScriptFunction FillAccolade() { mixin(MGF("mFillAccolade", "Function TribesGame.GFxTrPage_Accolades.FillAccolade")); }
+			ScriptFunction GetAccoladeClass() { mixin(MGF("mGetAccoladeClass", "Function TribesGame.GFxTrPage_Accolades.GetAccoladeClass")); }
 		}
 	}
 	static struct Constants
@@ -307,7 +307,7 @@ public extern(D):
 			MIN_CREDITS_FOR_XP = 100,
 		}
 	}
-	@property final auto ref int AccoladeType() { mixin(MGPC!("int", 356)()); }
+	@property final auto ref int AccoladeType() { mixin(MGPC("int", 356)); }
 final:
 	void Initialize()
 	{

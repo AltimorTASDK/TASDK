@@ -11,9 +11,9 @@ extern(C++) interface Projectile : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Projectile")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.Projectile")); }
 	private static __gshared Projectile mDefaultProperties;
-	@property final static Projectile DefaultProperties() { mixin(MGDPC!(Projectile, "Projectile Engine.Default__Projectile")()); }
+	@property final static Projectile DefaultProperties() { mixin(MGDPC("Projectile", "Projectile Engine.Default__Projectile")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,27 +42,27 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.Projectile.EncroachingOn")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function Engine.Projectile.PreBeginPlay")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.Projectile.PostBeginPlay")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function Engine.Projectile.Init")()); }
-			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.Projectile.GetTeamNum")()); }
-			ScriptFunction CanSplash() { mixin(MGF!("mCanSplash", "Function Engine.Projectile.CanSplash")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function Engine.Projectile.Reset")()); }
-			ScriptFunction ProjectileHurtRadius() { mixin(MGF!("mProjectileHurtRadius", "Function Engine.Projectile.ProjectileHurtRadius")()); }
-			ScriptFunction HurtRadius() { mixin(MGF!("mHurtRadius", "Function Engine.Projectile.HurtRadius")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.Projectile.Touch")()); }
-			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function Engine.Projectile.ProcessTouch")()); }
-			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function Engine.Projectile.HitWall")()); }
-			ScriptFunction EncroachedBy() { mixin(MGF!("mEncroachedBy", "Function Engine.Projectile.EncroachedBy")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function Engine.Projectile.Explode")()); }
-			ScriptFunction RandSpin() { mixin(MGF!("mRandSpin", "Function Engine.Projectile.RandSpin")()); }
-			ScriptFunction IsStationary() { mixin(MGF!("mIsStationary", "Function Engine.Projectile.IsStationary")()); }
-			ScriptFunction FellOutOfWorld() { mixin(MGF!("mFellOutOfWorld", "Function Engine.Projectile.FellOutOfWorld")()); }
-			ScriptFunction GetTimeToLocation() { mixin(MGF!("mGetTimeToLocation", "Function Engine.Projectile.GetTimeToLocation")()); }
-			ScriptFunction StaticGetTimeToLocation() { mixin(MGF!("mStaticGetTimeToLocation", "Function Engine.Projectile.StaticGetTimeToLocation")()); }
-			ScriptFunction GetRange() { mixin(MGF!("mGetRange", "Function Engine.Projectile.GetRange")()); }
-			ScriptFunction ApplyFluidSurfaceImpact() { mixin(MGF!("mApplyFluidSurfaceImpact", "Function Engine.Projectile.ApplyFluidSurfaceImpact")()); }
+			ScriptFunction EncroachingOn() { mixin(MGF("mEncroachingOn", "Function Engine.Projectile.EncroachingOn")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function Engine.Projectile.PreBeginPlay")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.Projectile.PostBeginPlay")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function Engine.Projectile.Init")); }
+			ScriptFunction GetTeamNum() { mixin(MGF("mGetTeamNum", "Function Engine.Projectile.GetTeamNum")); }
+			ScriptFunction CanSplash() { mixin(MGF("mCanSplash", "Function Engine.Projectile.CanSplash")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function Engine.Projectile.Reset")); }
+			ScriptFunction ProjectileHurtRadius() { mixin(MGF("mProjectileHurtRadius", "Function Engine.Projectile.ProjectileHurtRadius")); }
+			ScriptFunction HurtRadius() { mixin(MGF("mHurtRadius", "Function Engine.Projectile.HurtRadius")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.Projectile.Touch")); }
+			ScriptFunction ProcessTouch() { mixin(MGF("mProcessTouch", "Function Engine.Projectile.ProcessTouch")); }
+			ScriptFunction HitWall() { mixin(MGF("mHitWall", "Function Engine.Projectile.HitWall")); }
+			ScriptFunction EncroachedBy() { mixin(MGF("mEncroachedBy", "Function Engine.Projectile.EncroachedBy")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function Engine.Projectile.Explode")); }
+			ScriptFunction RandSpin() { mixin(MGF("mRandSpin", "Function Engine.Projectile.RandSpin")); }
+			ScriptFunction IsStationary() { mixin(MGF("mIsStationary", "Function Engine.Projectile.IsStationary")); }
+			ScriptFunction FellOutOfWorld() { mixin(MGF("mFellOutOfWorld", "Function Engine.Projectile.FellOutOfWorld")); }
+			ScriptFunction GetTimeToLocation() { mixin(MGF("mGetTimeToLocation", "Function Engine.Projectile.GetTimeToLocation")); }
+			ScriptFunction StaticGetTimeToLocation() { mixin(MGF("mStaticGetTimeToLocation", "Function Engine.Projectile.StaticGetTimeToLocation")); }
+			ScriptFunction GetRange() { mixin(MGF("mGetRange", "Function Engine.Projectile.GetRange")); }
+			ScriptFunction ApplyFluidSurfaceImpact() { mixin(MGF("mApplyFluidSurfaceImpact", "Function Engine.Projectile.ApplyFluidSurfaceImpact")); }
 		}
 	}
 	@property final
@@ -70,28 +70,28 @@ public extern(D):
 		auto ref
 		{
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-			float NetCullDistanceSquared() { mixin(MGPC!("float", 528)()); }
-			Actor ImpactedActor() { mixin(MGPC!("Actor", 524)()); }
-			Controller InstigatorController() { mixin(MGPC!("Controller", 520)()); }
-			SoundCue ImpactSound() { mixin(MGPC!("SoundCue", 516)()); }
-			SoundCue SpawnSound() { mixin(MGPC!("SoundCue", 512)()); }
-			ScriptClass MyDamageType() { mixin(MGPC!("ScriptClass", 508)()); }
-			float MomentumTransfer() { mixin(MGPC!("float", 504)()); }
-			float DamageRadius() { mixin(MGPC!("float", 500)()); }
-			float Damage() { mixin(MGPC!("float", 496)()); }
+			float NetCullDistanceSquared() { mixin(MGPC("float", 528)); }
+			Actor ImpactedActor() { mixin(MGPC("Actor", 524)); }
+			Controller InstigatorController() { mixin(MGPC("Controller", 520)); }
+			SoundCue ImpactSound() { mixin(MGPC("SoundCue", 516)); }
+			SoundCue SpawnSound() { mixin(MGPC("SoundCue", 512)); }
+			ScriptClass MyDamageType() { mixin(MGPC("ScriptClass", 508)); }
+			float MomentumTransfer() { mixin(MGPC("float", 504)); }
+			float DamageRadius() { mixin(MGPC("float", 500)); }
+			float Damage() { mixin(MGPC("float", 496)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ZeroColliderComponent'!
-			Actor ZeroCollider() { mixin(MGPC!("Actor", 488)()); }
-			float MaxSpeed() { mixin(MGPC!("float", 480)()); }
-			float Speed() { mixin(MGPC!("float", 476)()); }
+			Actor ZeroCollider() { mixin(MGPC("Actor", 488)); }
+			float MaxSpeed() { mixin(MGPC("float", 480)); }
+			float Speed() { mixin(MGPC("float", 476)); }
 		}
-		bool bRotationFollowsVelocity() { mixin(MGBPC!(484, 0x8)()); }
-		bool bRotationFollowsVelocity(bool val) { mixin(MSBPC!(484, 0x8)()); }
-		bool bBegunPlay() { mixin(MGBPC!(484, 0x4)()); }
-		bool bBegunPlay(bool val) { mixin(MSBPC!(484, 0x4)()); }
-		bool bBlockedByInstigator() { mixin(MGBPC!(484, 0x2)()); }
-		bool bBlockedByInstigator(bool val) { mixin(MSBPC!(484, 0x2)()); }
-		bool bSwitchToZeroCollision() { mixin(MGBPC!(484, 0x1)()); }
-		bool bSwitchToZeroCollision(bool val) { mixin(MSBPC!(484, 0x1)()); }
+		bool bRotationFollowsVelocity() { mixin(MGBPC(484, 0x8)); }
+		bool bRotationFollowsVelocity(bool val) { mixin(MSBPC(484, 0x8)); }
+		bool bBegunPlay() { mixin(MGBPC(484, 0x4)); }
+		bool bBegunPlay(bool val) { mixin(MSBPC(484, 0x4)); }
+		bool bBlockedByInstigator() { mixin(MGBPC(484, 0x2)); }
+		bool bBlockedByInstigator(bool val) { mixin(MSBPC(484, 0x2)); }
+		bool bSwitchToZeroCollision() { mixin(MGBPC(484, 0x1)); }
+		bool bSwitchToZeroCollision(bool val) { mixin(MSBPC(484, 0x1)); }
 	}
 final:
 	bool EncroachingOn(Actor Other)

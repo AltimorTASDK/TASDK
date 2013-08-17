@@ -23,9 +23,9 @@ extern(C++) interface TrGame : UTTeamGame
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGame")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrGame")); }
 	private static __gshared TrGame mDefaultProperties;
-	@property final static TrGame DefaultProperties() { mixin(MGDPC!(TrGame, "TrGame TribesGame.Default__TrGame")()); }
+	@property final static TrGame DefaultProperties() { mixin(MGDPC("TrGame", "TrGame TribesGame.Default__TrGame")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -106,79 +106,79 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction RequestTeam() { mixin(MGF!("mRequestTeam", "Function TribesGame.TrGame.RequestTeam")()); }
-			ScriptFunction AutoAssignTeam() { mixin(MGF!("mAutoAssignTeam", "Function TribesGame.TrGame.AutoAssignTeam")()); }
-			ScriptFunction AllowRespawn() { mixin(MGF!("mAllowRespawn", "Function TribesGame.TrGame.AllowRespawn")()); }
-			ScriptFunction CanEnterSpectate() { mixin(MGF!("mCanEnterSpectate", "Function TribesGame.TrGame.CanEnterSpectate")()); }
-			ScriptFunction CreditsSortViaPC() { mixin(MGF!("mCreditsSortViaPC", "Function TribesGame.TrGame.CreditsSortViaPC")()); }
-			ScriptFunction CreditSort() { mixin(MGF!("mCreditSort", "Function TribesGame.TrGame.CreditSort")()); }
-			ScriptFunction ScoreSort() { mixin(MGF!("mScoreSort", "Function TribesGame.TrGame.ScoreSort")()); }
-			ScriptFunction GetNextEffectInstanceId() { mixin(MGF!("mGetNextEffectInstanceId", "Function TribesGame.TrGame.GetNextEffectInstanceId")()); }
-			ScriptFunction LocalLeaveGame() { mixin(MGF!("mLocalLeaveGame", "Function TribesGame.TrGame.LocalLeaveGame")()); }
-			ScriptFunction OnServerInitialized() { mixin(MGF!("mOnServerInitialized", "Function TribesGame.TrGame.OnServerInitialized")()); }
-			ScriptFunction SetOnlinePlayerName() { mixin(MGF!("mSetOnlinePlayerName", "Function TribesGame.TrGame.SetOnlinePlayerName")()); }
-			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrGame.ApplyServerSettings")()); }
-			ScriptFunction ReduceDamage() { mixin(MGF!("mReduceDamage", "Function TribesGame.TrGame.ReduceDamage")()); }
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function TribesGame.TrGame.PreBeginPlay")()); }
-			ScriptFunction AddInitialBots() { mixin(MGF!("mAddInitialBots", "Function TribesGame.TrGame.AddInitialBots")()); }
-			ScriptFunction AddBot() { mixin(MGF!("mAddBot", "Function TribesGame.TrGame.AddBot")()); }
-			ScriptFunction AddBots() { mixin(MGF!("mAddBots", "Function TribesGame.TrGame.AddBots")()); }
-			ScriptFunction SpawnBot() { mixin(MGF!("mSpawnBot", "Function TribesGame.TrGame.SpawnBot")()); }
-			ScriptFunction InitializeBot() { mixin(MGF!("mInitializeBot", "Function TribesGame.TrGame.InitializeBot")()); }
-			ScriptFunction StartBots() { mixin(MGF!("mStartBots", "Function TribesGame.TrGame.StartBots")()); }
-			ScriptFunction KickIdler() { mixin(MGF!("mKickIdler", "Function TribesGame.TrGame.KickIdler")()); }
-			ScriptFunction Login() { mixin(MGF!("mLogin", "Function TribesGame.TrGame.Login")()); }
-			ScriptFunction SpawnDefaultPawnFor() { mixin(MGF!("mSpawnDefaultPawnFor", "Function TribesGame.TrGame.SpawnDefaultPawnFor")()); }
-			ScriptFunction DetermineWinningTeam() { mixin(MGF!("mDetermineWinningTeam", "Function TribesGame.TrGame.DetermineWinningTeam")()); }
-			ScriptFunction EndGame() { mixin(MGF!("mEndGame", "Function TribesGame.TrGame.EndGame")()); }
-			ScriptFunction EndOnlineGame() { mixin(MGF!("mEndOnlineGame", "Function TribesGame.TrGame.EndOnlineGame")()); }
-			ScriptFunction SetEndGameFocus() { mixin(MGF!("mSetEndGameFocus", "Function TribesGame.TrGame.SetEndGameFocus")()); }
-			ScriptFunction TrackPlayerMovement() { mixin(MGF!("mTrackPlayerMovement", "Function TribesGame.TrGame.TrackPlayerMovement")()); }
-			ScriptFunction RespawnPlayers() { mixin(MGF!("mRespawnPlayers", "Function TribesGame.TrGame.RespawnPlayers")()); }
-			ScriptFunction ResetScores() { mixin(MGF!("mResetScores", "Function TribesGame.TrGame.ResetScores")()); }
-			ScriptFunction ResetRound() { mixin(MGF!("mResetRound", "Function TribesGame.TrGame.ResetRound")()); }
-			ScriptFunction ForceRoundStart() { mixin(MGF!("mForceRoundStart", "Function TribesGame.TrGame.ForceRoundStart")()); }
-			ScriptFunction NotifySpree() { mixin(MGF!("mNotifySpree", "Function TribesGame.TrGame.NotifySpree")()); }
-			ScriptFunction EndSpree() { mixin(MGF!("mEndSpree", "Function TribesGame.TrGame.EndSpree")()); }
-			ScriptFunction GenericPlayerInitialization() { mixin(MGF!("mGenericPlayerInitialization", "Function TribesGame.TrGame.GenericPlayerInitialization")()); }
-			ScriptFunction SetGameType() { mixin(MGF!("mSetGameType", "Function TribesGame.TrGame.SetGameType")()); }
-			ScriptFunction PlayEndOfMatchMessage() { mixin(MGF!("mPlayEndOfMatchMessage", "Function TribesGame.TrGame.PlayEndOfMatchMessage")()); }
-			ScriptFunction SendMatchOver() { mixin(MGF!("mSendMatchOver", "Function TribesGame.TrGame.SendMatchOver")()); }
-			ScriptFunction SendShowSummary() { mixin(MGF!("mSendShowSummary", "Function TribesGame.TrGame.SendShowSummary")()); }
-			ScriptFunction SendNextMatchCountdown() { mixin(MGF!("mSendNextMatchCountdown", "Function TribesGame.TrGame.SendNextMatchCountdown")()); }
-			ScriptFunction SendMatchCountdown() { mixin(MGF!("mSendMatchCountdown", "Function TribesGame.TrGame.SendMatchCountdown")()); }
-			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function TribesGame.TrGame.ScoreKill")()); }
-			ScriptFunction ForceRespawn() { mixin(MGF!("mForceRespawn", "Function TribesGame.TrGame.ForceRespawn")()); }
-			ScriptFunction RestartPlayer() { mixin(MGF!("mRestartPlayer", "Function TribesGame.TrGame.RestartPlayer")()); }
-			ScriptFunction ChangeTeam() { mixin(MGF!("mChangeTeam", "Function TribesGame.TrGame.ChangeTeam")()); }
-			ScriptFunction PickTeam() { mixin(MGF!("mPickTeam", "Function TribesGame.TrGame.PickTeam")()); }
-			ScriptFunction PickTeamForMigration() { mixin(MGF!("mPickTeamForMigration", "Function TribesGame.TrGame.PickTeamForMigration")()); }
-			ScriptFunction HandleSeamlessTravelPlayer() { mixin(MGF!("mHandleSeamlessTravelPlayer", "Function TribesGame.TrGame.HandleSeamlessTravelPlayer")()); }
-			ScriptFunction SetPlayerDefaults() { mixin(MGF!("mSetPlayerDefaults", "Function TribesGame.TrGame.SetPlayerDefaults")()); }
-			ScriptFunction Killed() { mixin(MGF!("mKilled", "Function TribesGame.TrGame.Killed")()); }
-			ScriptFunction AllowCheats() { mixin(MGF!("mAllowCheats", "Function TribesGame.TrGame.AllowCheats")()); }
-			ScriptFunction AreTeamsUnbalanced() { mixin(MGF!("mAreTeamsUnbalanced", "Function TribesGame.TrGame.AreTeamsUnbalanced")()); }
-			ScriptFunction CheckForAutoBalance() { mixin(MGF!("mCheckForAutoBalance", "Function TribesGame.TrGame.CheckForAutoBalance")()); }
-			ScriptFunction AutoBalanceInTwenty() { mixin(MGF!("mAutoBalanceInTwenty", "Function TribesGame.TrGame.AutoBalanceInTwenty")()); }
-			ScriptFunction AutoBalanceInFive() { mixin(MGF!("mAutoBalanceInFive", "Function TribesGame.TrGame.AutoBalanceInFive")()); }
-			ScriptFunction AutoBalanceTeams() { mixin(MGF!("mAutoBalanceTeams", "Function TribesGame.TrGame.AutoBalanceTeams")()); }
-			ScriptFunction MoveRandomPlayerFromTeam() { mixin(MGF!("mMoveRandomPlayerFromTeam", "Function TribesGame.TrGame.MoveRandomPlayerFromTeam")()); }
-			ScriptFunction InitGame() { mixin(MGF!("mInitGame", "Function TribesGame.TrGame.InitGame")()); }
-			ScriptFunction SetPRI() { mixin(MGF!("mSetPRI", "Function TribesGame.TrGame.SetPRI")()); }
-			ScriptFunction GetRankFromXP() { mixin(MGF!("mGetRankFromXP", "Function TribesGame.TrGame.GetRankFromXP")()); }
-			ScriptFunction CanSpectate() { mixin(MGF!("mCanSpectate", "Function TribesGame.TrGame.CanSpectate")()); }
-			ScriptFunction BroadcastAccolade() { mixin(MGF!("mBroadcastAccolade", "Function TribesGame.TrGame.BroadcastAccolade")()); }
-			ScriptFunction SendMessageToAll() { mixin(MGF!("mSendMessageToAll", "Function TribesGame.TrGame.SendMessageToAll")()); }
-			ScriptFunction OnServerSpawnedPlayer() { mixin(MGF!("mOnServerSpawnedPlayer", "Function TribesGame.TrGame.OnServerSpawnedPlayer")()); }
-			ScriptFunction FindGameTypeId() { mixin(MGF!("mFindGameTypeId", "Function TribesGame.TrGame.FindGameTypeId")()); }
-			ScriptFunction GetGameTypeId() { mixin(MGF!("mGetGameTypeId", "Function TribesGame.TrGame.GetGameTypeId")()); }
-			ScriptFunction OnGeneratorPowerChange() { mixin(MGF!("mOnGeneratorPowerChange", "Function TribesGame.TrGame.OnGeneratorPowerChange")()); }
-			ScriptFunction TgStartGame() { mixin(MGF!("mTgStartGame", "Function TribesGame.TrGame.TgStartGame")()); }
-			ScriptFunction TgEndGame() { mixin(MGF!("mTgEndGame", "Function TribesGame.TrGame.TgEndGame")()); }
-			ScriptFunction TgChangeScore() { mixin(MGF!("mTgChangeScore", "Function TribesGame.TrGame.TgChangeScore")()); }
-			ScriptFunction TgChangeTime() { mixin(MGF!("mTgChangeTime", "Function TribesGame.TrGame.TgChangeTime")()); }
-			ScriptFunction TgGetSpectators() { mixin(MGF!("mTgGetSpectators", "Function TribesGame.TrGame.TgGetSpectators")()); }
-			ScriptFunction FindPlayerStart() { mixin(MGF!("mFindPlayerStart", "Function TribesGame.TrGame.FindPlayerStart")()); }
+			ScriptFunction RequestTeam() { mixin(MGF("mRequestTeam", "Function TribesGame.TrGame.RequestTeam")); }
+			ScriptFunction AutoAssignTeam() { mixin(MGF("mAutoAssignTeam", "Function TribesGame.TrGame.AutoAssignTeam")); }
+			ScriptFunction AllowRespawn() { mixin(MGF("mAllowRespawn", "Function TribesGame.TrGame.AllowRespawn")); }
+			ScriptFunction CanEnterSpectate() { mixin(MGF("mCanEnterSpectate", "Function TribesGame.TrGame.CanEnterSpectate")); }
+			ScriptFunction CreditsSortViaPC() { mixin(MGF("mCreditsSortViaPC", "Function TribesGame.TrGame.CreditsSortViaPC")); }
+			ScriptFunction CreditSort() { mixin(MGF("mCreditSort", "Function TribesGame.TrGame.CreditSort")); }
+			ScriptFunction ScoreSort() { mixin(MGF("mScoreSort", "Function TribesGame.TrGame.ScoreSort")); }
+			ScriptFunction GetNextEffectInstanceId() { mixin(MGF("mGetNextEffectInstanceId", "Function TribesGame.TrGame.GetNextEffectInstanceId")); }
+			ScriptFunction LocalLeaveGame() { mixin(MGF("mLocalLeaveGame", "Function TribesGame.TrGame.LocalLeaveGame")); }
+			ScriptFunction OnServerInitialized() { mixin(MGF("mOnServerInitialized", "Function TribesGame.TrGame.OnServerInitialized")); }
+			ScriptFunction SetOnlinePlayerName() { mixin(MGF("mSetOnlinePlayerName", "Function TribesGame.TrGame.SetOnlinePlayerName")); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF("mApplyServerSettings", "Function TribesGame.TrGame.ApplyServerSettings")); }
+			ScriptFunction ReduceDamage() { mixin(MGF("mReduceDamage", "Function TribesGame.TrGame.ReduceDamage")); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function TribesGame.TrGame.PreBeginPlay")); }
+			ScriptFunction AddInitialBots() { mixin(MGF("mAddInitialBots", "Function TribesGame.TrGame.AddInitialBots")); }
+			ScriptFunction AddBot() { mixin(MGF("mAddBot", "Function TribesGame.TrGame.AddBot")); }
+			ScriptFunction AddBots() { mixin(MGF("mAddBots", "Function TribesGame.TrGame.AddBots")); }
+			ScriptFunction SpawnBot() { mixin(MGF("mSpawnBot", "Function TribesGame.TrGame.SpawnBot")); }
+			ScriptFunction InitializeBot() { mixin(MGF("mInitializeBot", "Function TribesGame.TrGame.InitializeBot")); }
+			ScriptFunction StartBots() { mixin(MGF("mStartBots", "Function TribesGame.TrGame.StartBots")); }
+			ScriptFunction KickIdler() { mixin(MGF("mKickIdler", "Function TribesGame.TrGame.KickIdler")); }
+			ScriptFunction Login() { mixin(MGF("mLogin", "Function TribesGame.TrGame.Login")); }
+			ScriptFunction SpawnDefaultPawnFor() { mixin(MGF("mSpawnDefaultPawnFor", "Function TribesGame.TrGame.SpawnDefaultPawnFor")); }
+			ScriptFunction DetermineWinningTeam() { mixin(MGF("mDetermineWinningTeam", "Function TribesGame.TrGame.DetermineWinningTeam")); }
+			ScriptFunction EndGame() { mixin(MGF("mEndGame", "Function TribesGame.TrGame.EndGame")); }
+			ScriptFunction EndOnlineGame() { mixin(MGF("mEndOnlineGame", "Function TribesGame.TrGame.EndOnlineGame")); }
+			ScriptFunction SetEndGameFocus() { mixin(MGF("mSetEndGameFocus", "Function TribesGame.TrGame.SetEndGameFocus")); }
+			ScriptFunction TrackPlayerMovement() { mixin(MGF("mTrackPlayerMovement", "Function TribesGame.TrGame.TrackPlayerMovement")); }
+			ScriptFunction RespawnPlayers() { mixin(MGF("mRespawnPlayers", "Function TribesGame.TrGame.RespawnPlayers")); }
+			ScriptFunction ResetScores() { mixin(MGF("mResetScores", "Function TribesGame.TrGame.ResetScores")); }
+			ScriptFunction ResetRound() { mixin(MGF("mResetRound", "Function TribesGame.TrGame.ResetRound")); }
+			ScriptFunction ForceRoundStart() { mixin(MGF("mForceRoundStart", "Function TribesGame.TrGame.ForceRoundStart")); }
+			ScriptFunction NotifySpree() { mixin(MGF("mNotifySpree", "Function TribesGame.TrGame.NotifySpree")); }
+			ScriptFunction EndSpree() { mixin(MGF("mEndSpree", "Function TribesGame.TrGame.EndSpree")); }
+			ScriptFunction GenericPlayerInitialization() { mixin(MGF("mGenericPlayerInitialization", "Function TribesGame.TrGame.GenericPlayerInitialization")); }
+			ScriptFunction SetGameType() { mixin(MGF("mSetGameType", "Function TribesGame.TrGame.SetGameType")); }
+			ScriptFunction PlayEndOfMatchMessage() { mixin(MGF("mPlayEndOfMatchMessage", "Function TribesGame.TrGame.PlayEndOfMatchMessage")); }
+			ScriptFunction SendMatchOver() { mixin(MGF("mSendMatchOver", "Function TribesGame.TrGame.SendMatchOver")); }
+			ScriptFunction SendShowSummary() { mixin(MGF("mSendShowSummary", "Function TribesGame.TrGame.SendShowSummary")); }
+			ScriptFunction SendNextMatchCountdown() { mixin(MGF("mSendNextMatchCountdown", "Function TribesGame.TrGame.SendNextMatchCountdown")); }
+			ScriptFunction SendMatchCountdown() { mixin(MGF("mSendMatchCountdown", "Function TribesGame.TrGame.SendMatchCountdown")); }
+			ScriptFunction ScoreKill() { mixin(MGF("mScoreKill", "Function TribesGame.TrGame.ScoreKill")); }
+			ScriptFunction ForceRespawn() { mixin(MGF("mForceRespawn", "Function TribesGame.TrGame.ForceRespawn")); }
+			ScriptFunction RestartPlayer() { mixin(MGF("mRestartPlayer", "Function TribesGame.TrGame.RestartPlayer")); }
+			ScriptFunction ChangeTeam() { mixin(MGF("mChangeTeam", "Function TribesGame.TrGame.ChangeTeam")); }
+			ScriptFunction PickTeam() { mixin(MGF("mPickTeam", "Function TribesGame.TrGame.PickTeam")); }
+			ScriptFunction PickTeamForMigration() { mixin(MGF("mPickTeamForMigration", "Function TribesGame.TrGame.PickTeamForMigration")); }
+			ScriptFunction HandleSeamlessTravelPlayer() { mixin(MGF("mHandleSeamlessTravelPlayer", "Function TribesGame.TrGame.HandleSeamlessTravelPlayer")); }
+			ScriptFunction SetPlayerDefaults() { mixin(MGF("mSetPlayerDefaults", "Function TribesGame.TrGame.SetPlayerDefaults")); }
+			ScriptFunction Killed() { mixin(MGF("mKilled", "Function TribesGame.TrGame.Killed")); }
+			ScriptFunction AllowCheats() { mixin(MGF("mAllowCheats", "Function TribesGame.TrGame.AllowCheats")); }
+			ScriptFunction AreTeamsUnbalanced() { mixin(MGF("mAreTeamsUnbalanced", "Function TribesGame.TrGame.AreTeamsUnbalanced")); }
+			ScriptFunction CheckForAutoBalance() { mixin(MGF("mCheckForAutoBalance", "Function TribesGame.TrGame.CheckForAutoBalance")); }
+			ScriptFunction AutoBalanceInTwenty() { mixin(MGF("mAutoBalanceInTwenty", "Function TribesGame.TrGame.AutoBalanceInTwenty")); }
+			ScriptFunction AutoBalanceInFive() { mixin(MGF("mAutoBalanceInFive", "Function TribesGame.TrGame.AutoBalanceInFive")); }
+			ScriptFunction AutoBalanceTeams() { mixin(MGF("mAutoBalanceTeams", "Function TribesGame.TrGame.AutoBalanceTeams")); }
+			ScriptFunction MoveRandomPlayerFromTeam() { mixin(MGF("mMoveRandomPlayerFromTeam", "Function TribesGame.TrGame.MoveRandomPlayerFromTeam")); }
+			ScriptFunction InitGame() { mixin(MGF("mInitGame", "Function TribesGame.TrGame.InitGame")); }
+			ScriptFunction SetPRI() { mixin(MGF("mSetPRI", "Function TribesGame.TrGame.SetPRI")); }
+			ScriptFunction GetRankFromXP() { mixin(MGF("mGetRankFromXP", "Function TribesGame.TrGame.GetRankFromXP")); }
+			ScriptFunction CanSpectate() { mixin(MGF("mCanSpectate", "Function TribesGame.TrGame.CanSpectate")); }
+			ScriptFunction BroadcastAccolade() { mixin(MGF("mBroadcastAccolade", "Function TribesGame.TrGame.BroadcastAccolade")); }
+			ScriptFunction SendMessageToAll() { mixin(MGF("mSendMessageToAll", "Function TribesGame.TrGame.SendMessageToAll")); }
+			ScriptFunction OnServerSpawnedPlayer() { mixin(MGF("mOnServerSpawnedPlayer", "Function TribesGame.TrGame.OnServerSpawnedPlayer")); }
+			ScriptFunction FindGameTypeId() { mixin(MGF("mFindGameTypeId", "Function TribesGame.TrGame.FindGameTypeId")); }
+			ScriptFunction GetGameTypeId() { mixin(MGF("mGetGameTypeId", "Function TribesGame.TrGame.GetGameTypeId")); }
+			ScriptFunction OnGeneratorPowerChange() { mixin(MGF("mOnGeneratorPowerChange", "Function TribesGame.TrGame.OnGeneratorPowerChange")); }
+			ScriptFunction TgStartGame() { mixin(MGF("mTgStartGame", "Function TribesGame.TrGame.TgStartGame")); }
+			ScriptFunction TgEndGame() { mixin(MGF("mTgEndGame", "Function TribesGame.TrGame.TgEndGame")); }
+			ScriptFunction TgChangeScore() { mixin(MGF("mTgChangeScore", "Function TribesGame.TrGame.TgChangeScore")); }
+			ScriptFunction TgChangeTime() { mixin(MGF("mTgChangeTime", "Function TribesGame.TrGame.TgChangeTime")); }
+			ScriptFunction TgGetSpectators() { mixin(MGF("mTgGetSpectators", "Function TribesGame.TrGame.TgGetSpectators")); }
+			ScriptFunction FindPlayerStart() { mixin(MGF("mFindPlayerStart", "Function TribesGame.TrGame.FindPlayerStart")); }
 		}
 	}
 	static struct Constants
@@ -1563,71 +1563,71 @@ public extern(D):
 	static struct MatchOver
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame.MatchOver")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrGame.MatchOver")); }
 	}
 	static struct MatchInProgress
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame.MatchInProgress")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrGame.MatchInProgress")); }
 	}
 	static struct PendingRoundStart
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame.PendingRoundStart")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrGame.PendingRoundStart")); }
 	}
 	static struct PendingMatch
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrGame.PendingMatch")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrGame.PendingMatch")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 1364)()); }
-			float m_fFriendlyFireDamageScale() { mixin(MGPC!("float", 1396)()); }
-			float m_fForcedRespawnTime() { mixin(MGPC!("float", 1404)()); }
-			TrSeekingMissileManager m_SeekingMissileManager() { mixin(MGPC!("TrSeekingMissileManager", 1400)()); }
+			TrStatsInterface Stats() { mixin(MGPC("TrStatsInterface", 1364)); }
+			float m_fFriendlyFireDamageScale() { mixin(MGPC("float", 1396)); }
+			float m_fForcedRespawnTime() { mixin(MGPC("float", 1404)); }
+			TrSeekingMissileManager m_SeekingMissileManager() { mixin(MGPC("TrSeekingMissileManager", 1400)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditsSortViaPC__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditSort__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__ScoreSort__Delegate'!
-			int m_nMinNetPlayers() { mixin(MGPC!("int", 1416)()); }
-			int m_nRoundCountdownRemainingTime() { mixin(MGPC!("int", 1412)()); }
-			int m_nRoundCountdownTime() { mixin(MGPC!("int", 1408)()); }
-			int m_nAutoBalanceTeamDifference() { mixin(MGPC!("int", 1392)()); }
-			float m_fAutoBalanceTime() { mixin(MGPC!("float", 1388)()); }
-			int m_nPlayerTrackingInterval() { mixin(MGPC!("int", 1384)()); }
-			int m_nPlayerTrackingCount() { mixin(MGPC!("int", 1380)()); }
-			int CountdownWait() { mixin(MGPC!("int", 1376)()); }
-			int SummaryWait() { mixin(MGPC!("int", 1372)()); }
-			int EndGameWait() { mixin(MGPC!("int", 1368)()); }
-			int MINIMUM_CREDITS_FOR_EXPERIENCE() { mixin(MGPC!("int", 1360)()); }
-			float m_OvertimeTimeLimit() { mixin(MGPC!("float", 1356)()); }
-			int m_nNextEffectInstanceId() { mixin(MGPC!("int", 1352)()); }
-			int m_nEndMatchCounter() { mixin(MGPC!("int", 1348)()); }
-			int m_nWinningTeam() { mixin(MGPC!("int", 1344)()); }
-			ScriptString m_sWinnerName() { mixin(MGPC!("ScriptString", 1332)()); }
+			int m_nMinNetPlayers() { mixin(MGPC("int", 1416)); }
+			int m_nRoundCountdownRemainingTime() { mixin(MGPC("int", 1412)); }
+			int m_nRoundCountdownTime() { mixin(MGPC("int", 1408)); }
+			int m_nAutoBalanceTeamDifference() { mixin(MGPC("int", 1392)); }
+			float m_fAutoBalanceTime() { mixin(MGPC("float", 1388)); }
+			int m_nPlayerTrackingInterval() { mixin(MGPC("int", 1384)); }
+			int m_nPlayerTrackingCount() { mixin(MGPC("int", 1380)); }
+			int CountdownWait() { mixin(MGPC("int", 1376)); }
+			int SummaryWait() { mixin(MGPC("int", 1372)); }
+			int EndGameWait() { mixin(MGPC("int", 1368)); }
+			int MINIMUM_CREDITS_FOR_EXPERIENCE() { mixin(MGPC("int", 1360)); }
+			float m_OvertimeTimeLimit() { mixin(MGPC("float", 1356)); }
+			int m_nNextEffectInstanceId() { mixin(MGPC("int", 1352)); }
+			int m_nEndMatchCounter() { mixin(MGPC("int", 1348)); }
+			int m_nWinningTeam() { mixin(MGPC("int", 1344)); }
+			ScriptString m_sWinnerName() { mixin(MGPC("ScriptString", 1332)); }
 		}
-		bool bFirstBloodAchieved() { mixin(MGBPC!(1328, 0x8)()); }
-		bool bFirstBloodAchieved(bool val) { mixin(MSBPC!(1328, 0x8)()); }
-		bool m_bRoamingMap() { mixin(MGBPC!(1328, 0x200)()); }
-		bool m_bRoamingMap(bool val) { mixin(MSBPC!(1328, 0x200)()); }
-		bool m_bShouldAutoBalance() { mixin(MGBPC!(1328, 0x100)()); }
-		bool m_bShouldAutoBalance(bool val) { mixin(MSBPC!(1328, 0x100)()); }
-		bool PlayedEndOfGame() { mixin(MGBPC!(1328, 0x80)()); }
-		bool PlayedEndOfGame(bool val) { mixin(MSBPC!(1328, 0x80)()); }
-		bool bPlayedDSWinning() { mixin(MGBPC!(1328, 0x40)()); }
-		bool bPlayedDSWinning(bool val) { mixin(MSBPC!(1328, 0x40)()); }
-		bool bPlayedBEWinning() { mixin(MGBPC!(1328, 0x20)()); }
-		bool bPlayedBEWinning(bool val) { mixin(MSBPC!(1328, 0x20)()); }
-		bool bPlayTeamAudio() { mixin(MGBPC!(1328, 0x10)()); }
-		bool bPlayTeamAudio(bool val) { mixin(MSBPC!(1328, 0x10)()); }
-		bool bForceRoundStart() { mixin(MGBPC!(1328, 0x4)()); }
-		bool bForceRoundStart(bool val) { mixin(MSBPC!(1328, 0x4)()); }
-		bool bForceEndGame() { mixin(MGBPC!(1328, 0x2)()); }
-		bool bForceEndGame(bool val) { mixin(MSBPC!(1328, 0x2)()); }
-		bool m_bPostedStats() { mixin(MGBPC!(1328, 0x1)()); }
-		bool m_bPostedStats(bool val) { mixin(MSBPC!(1328, 0x1)()); }
+		bool bFirstBloodAchieved() { mixin(MGBPC(1328, 0x8)); }
+		bool bFirstBloodAchieved(bool val) { mixin(MSBPC(1328, 0x8)); }
+		bool m_bRoamingMap() { mixin(MGBPC(1328, 0x200)); }
+		bool m_bRoamingMap(bool val) { mixin(MSBPC(1328, 0x200)); }
+		bool m_bShouldAutoBalance() { mixin(MGBPC(1328, 0x100)); }
+		bool m_bShouldAutoBalance(bool val) { mixin(MSBPC(1328, 0x100)); }
+		bool PlayedEndOfGame() { mixin(MGBPC(1328, 0x80)); }
+		bool PlayedEndOfGame(bool val) { mixin(MSBPC(1328, 0x80)); }
+		bool bPlayedDSWinning() { mixin(MGBPC(1328, 0x40)); }
+		bool bPlayedDSWinning(bool val) { mixin(MSBPC(1328, 0x40)); }
+		bool bPlayedBEWinning() { mixin(MGBPC(1328, 0x20)); }
+		bool bPlayedBEWinning(bool val) { mixin(MSBPC(1328, 0x20)); }
+		bool bPlayTeamAudio() { mixin(MGBPC(1328, 0x10)); }
+		bool bPlayTeamAudio(bool val) { mixin(MSBPC(1328, 0x10)); }
+		bool bForceRoundStart() { mixin(MGBPC(1328, 0x4)); }
+		bool bForceRoundStart(bool val) { mixin(MSBPC(1328, 0x4)); }
+		bool bForceEndGame() { mixin(MGBPC(1328, 0x2)); }
+		bool bForceEndGame(bool val) { mixin(MSBPC(1328, 0x2)); }
+		bool m_bPostedStats() { mixin(MGBPC(1328, 0x1)); }
+		bool m_bPostedStats(bool val) { mixin(MSBPC(1328, 0x1)); }
 	}
 final:
 	bool RequestTeam(ubyte RequestedTeamNum, Controller C)

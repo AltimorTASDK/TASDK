@@ -9,9 +9,9 @@ extern(C++) interface GFxTrPage_RoamRabbit : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_RoamRabbit")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_RoamRabbit")); }
 	private static __gshared GFxTrPage_RoamRabbit mDefaultProperties;
-	@property final static GFxTrPage_RoamRabbit DefaultProperties() { mixin(MGDPC!(GFxTrPage_RoamRabbit, "GFxTrPage_RoamRabbit TribesGame.Default__GFxTrPage_RoamRabbit")()); }
+	@property final static GFxTrPage_RoamRabbit DefaultProperties() { mixin(MGDPC("GFxTrPage_RoamRabbit", "GFxTrPage_RoamRabbit TribesGame.Default__GFxTrPage_RoamRabbit")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,10 +23,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_RoamRabbit.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_RoamRabbit.SpecialAction")()); }
-			ScriptFunction JoinLocalGame() { mixin(MGF!("mJoinLocalGame", "Function TribesGame.GFxTrPage_RoamRabbit.JoinLocalGame")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_RoamRabbit.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_RoamRabbit.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_RoamRabbit.SpecialAction")); }
+			ScriptFunction JoinLocalGame() { mixin(MGF("mJoinLocalGame", "Function TribesGame.GFxTrPage_RoamRabbit.JoinLocalGame")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_RoamRabbit.ShowModel")); }
 		}
 	}
 final:

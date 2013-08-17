@@ -12,9 +12,9 @@ extern(C++) interface TrKillingSpreeMessage : UTLocalMessage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrKillingSpreeMessage")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrKillingSpreeMessage")); }
 	private static __gshared TrKillingSpreeMessage mDefaultProperties;
-	@property final static TrKillingSpreeMessage DefaultProperties() { mixin(MGDPC!(TrKillingSpreeMessage, "TrKillingSpreeMessage TribesGame.Default__TrKillingSpreeMessage")()); }
+	@property final static TrKillingSpreeMessage DefaultProperties() { mixin(MGDPC("TrKillingSpreeMessage", "TrKillingSpreeMessage TribesGame.Default__TrKillingSpreeMessage")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,21 +26,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetFontSize() { mixin(MGF!("mGetFontSize", "Function TribesGame.TrKillingSpreeMessage.GetFontSize")()); }
-			ScriptFunction GetString() { mixin(MGF!("mGetString", "Function TribesGame.TrKillingSpreeMessage.GetString")()); }
-			ScriptFunction ClientReceive() { mixin(MGF!("mClientReceive", "Function TribesGame.TrKillingSpreeMessage.ClientReceive")()); }
-			ScriptFunction AnnouncementSound() { mixin(MGF!("mAnnouncementSound", "Function TribesGame.TrKillingSpreeMessage.AnnouncementSound")()); }
+			ScriptFunction GetFontSize() { mixin(MGF("mGetFontSize", "Function TribesGame.TrKillingSpreeMessage.GetFontSize")); }
+			ScriptFunction GetString() { mixin(MGF("mGetString", "Function TribesGame.TrKillingSpreeMessage.GetString")); }
+			ScriptFunction ClientReceive() { mixin(MGF("mClientReceive", "Function TribesGame.TrKillingSpreeMessage.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { mixin(MGF("mAnnouncementSound", "Function TribesGame.TrKillingSpreeMessage.AnnouncementSound")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString EndSpreeNoteTrailer() { mixin(MGPC!("ScriptString", 276)()); }
-		SoundNodeWave SpreeSound() { mixin(MGPC!("SoundNodeWave", 256)()); }
-		ScriptString SelfSpreeNote() { mixin(MGPC!("ScriptString", 196)()); }
-		ScriptString SpreeNote() { mixin(MGPC!("ScriptString", 136)()); }
-		ScriptString MultiKillString() { mixin(MGPC!("ScriptString", 124)()); }
-		ScriptString EndSelfSpree() { mixin(MGPC!("ScriptString", 112)()); }
-		ScriptString EndSpreeNote() { mixin(MGPC!("ScriptString", 100)()); }
+		ScriptString EndSpreeNoteTrailer() { mixin(MGPC("ScriptString", 276)); }
+		SoundNodeWave SpreeSound() { mixin(MGPC("SoundNodeWave", 256)); }
+		ScriptString SelfSpreeNote() { mixin(MGPC("ScriptString", 196)); }
+		ScriptString SpreeNote() { mixin(MGPC("ScriptString", 136)); }
+		ScriptString MultiKillString() { mixin(MGPC("ScriptString", 124)); }
+		ScriptString EndSelfSpree() { mixin(MGPC("ScriptString", 112)); }
+		ScriptString EndSpreeNote() { mixin(MGPC("ScriptString", 100)); }
 	}
 final:
 	static int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)

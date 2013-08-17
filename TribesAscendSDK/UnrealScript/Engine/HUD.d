@@ -14,9 +14,9 @@ extern(C++) interface HUD : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.HUD")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.HUD")); }
 	private static __gshared HUD mDefaultProperties;
-	@property final static HUD DefaultProperties() { mixin(MGDPC!(HUD, "HUD Engine.Default__HUD")()); }
+	@property final static HUD DefaultProperties() { mixin(MGDPC("HUD", "HUD Engine.Default__HUD")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -57,39 +57,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ShouldDisplayDebug() { mixin(MGF!("mShouldDisplayDebug", "Function Engine.HUD.ShouldDisplayDebug")()); }
-			ScriptFunction Draw3DLine() { mixin(MGF!("mDraw3DLine", "Function Engine.HUD.Draw3DLine")()); }
-			ScriptFunction Draw2DLine() { mixin(MGF!("mDraw2DLine", "Function Engine.HUD.Draw2DLine")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.HUD.PostBeginPlay")()); }
-			ScriptFunction DrawActorOverlays() { mixin(MGF!("mDrawActorOverlays", "Function Engine.HUD.DrawActorOverlays")()); }
-			ScriptFunction RemovePostRenderedActor() { mixin(MGF!("mRemovePostRenderedActor", "Function Engine.HUD.RemovePostRenderedActor")()); }
-			ScriptFunction AddPostRenderedActor() { mixin(MGF!("mAddPostRenderedActor", "Function Engine.HUD.AddPostRenderedActor")()); }
-			ScriptFunction ToggleHUD() { mixin(MGF!("mToggleHUD", "Function Engine.HUD.ToggleHUD")()); }
-			ScriptFunction ShowHUD() { mixin(MGF!("mShowHUD", "Function Engine.HUD.ShowHUD")()); }
-			ScriptFunction ShowScores() { mixin(MGF!("mShowScores", "Function Engine.HUD.ShowScores")()); }
-			ScriptFunction SetShowScores() { mixin(MGF!("mSetShowScores", "Function Engine.HUD.SetShowScores")()); }
-			ScriptFunction ShowDebug() { mixin(MGF!("mShowDebug", "Function Engine.HUD.ShowDebug")()); }
-			ScriptFunction ShowDebugInfo() { mixin(MGF!("mShowDebugInfo", "Function Engine.HUD.ShowDebugInfo")()); }
-			ScriptFunction DrawRoute() { mixin(MGF!("mDrawRoute", "Function Engine.HUD.DrawRoute")()); }
-			ScriptFunction PreCalcValues() { mixin(MGF!("mPreCalcValues", "Function Engine.HUD.PreCalcValues")()); }
-			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function Engine.HUD.PostRender")()); }
-			ScriptFunction DrawHUD() { mixin(MGF!("mDrawHUD", "Function Engine.HUD.DrawHUD")()); }
-			ScriptFunction DisplayBadConnectionAlert() { mixin(MGF!("mDisplayBadConnectionAlert", "Function Engine.HUD.DisplayBadConnectionAlert")()); }
-			ScriptFunction ClearMessage() { mixin(MGF!("mClearMessage", "Function Engine.HUD.ClearMessage")()); }
-			ScriptFunction Message() { mixin(MGF!("mMessage", "Function Engine.HUD.Message")()); }
-			ScriptFunction DisplayConsoleMessages() { mixin(MGF!("mDisplayConsoleMessages", "Function Engine.HUD.DisplayConsoleMessages")()); }
-			ScriptFunction AddConsoleMessage() { mixin(MGF!("mAddConsoleMessage", "Function Engine.HUD.AddConsoleMessage")()); }
-			ScriptFunction LocalizedMessage() { mixin(MGF!("mLocalizedMessage", "Function Engine.HUD.LocalizedMessage")()); }
-			ScriptFunction AddLocalizedMessage() { mixin(MGF!("mAddLocalizedMessage", "Function Engine.HUD.AddLocalizedMessage")()); }
-			ScriptFunction GetScreenCoords() { mixin(MGF!("mGetScreenCoords", "Function Engine.HUD.GetScreenCoords")()); }
-			ScriptFunction DrawMessage() { mixin(MGF!("mDrawMessage", "Function Engine.HUD.DrawMessage")()); }
-			ScriptFunction DrawMessageText() { mixin(MGF!("mDrawMessageText", "Function Engine.HUD.DrawMessageText")()); }
-			ScriptFunction DisplayLocalMessages() { mixin(MGF!("mDisplayLocalMessages", "Function Engine.HUD.DisplayLocalMessages")()); }
-			ScriptFunction DisplayKismetMessages() { mixin(MGF!("mDisplayKismetMessages", "Function Engine.HUD.DisplayKismetMessages")()); }
-			ScriptFunction DrawText() { mixin(MGF!("mDrawText", "Function Engine.HUD.DrawText")()); }
-			ScriptFunction GetFontSizeIndex() { mixin(MGF!("mGetFontSizeIndex", "Function Engine.HUD.GetFontSizeIndex")()); }
-			ScriptFunction PlayerOwnerDied() { mixin(MGF!("mPlayerOwnerDied", "Function Engine.HUD.PlayerOwnerDied")()); }
-			ScriptFunction OnLostFocusPause() { mixin(MGF!("mOnLostFocusPause", "Function Engine.HUD.OnLostFocusPause")()); }
+			ScriptFunction ShouldDisplayDebug() { mixin(MGF("mShouldDisplayDebug", "Function Engine.HUD.ShouldDisplayDebug")); }
+			ScriptFunction Draw3DLine() { mixin(MGF("mDraw3DLine", "Function Engine.HUD.Draw3DLine")); }
+			ScriptFunction Draw2DLine() { mixin(MGF("mDraw2DLine", "Function Engine.HUD.Draw2DLine")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.HUD.PostBeginPlay")); }
+			ScriptFunction DrawActorOverlays() { mixin(MGF("mDrawActorOverlays", "Function Engine.HUD.DrawActorOverlays")); }
+			ScriptFunction RemovePostRenderedActor() { mixin(MGF("mRemovePostRenderedActor", "Function Engine.HUD.RemovePostRenderedActor")); }
+			ScriptFunction AddPostRenderedActor() { mixin(MGF("mAddPostRenderedActor", "Function Engine.HUD.AddPostRenderedActor")); }
+			ScriptFunction ToggleHUD() { mixin(MGF("mToggleHUD", "Function Engine.HUD.ToggleHUD")); }
+			ScriptFunction ShowHUD() { mixin(MGF("mShowHUD", "Function Engine.HUD.ShowHUD")); }
+			ScriptFunction ShowScores() { mixin(MGF("mShowScores", "Function Engine.HUD.ShowScores")); }
+			ScriptFunction SetShowScores() { mixin(MGF("mSetShowScores", "Function Engine.HUD.SetShowScores")); }
+			ScriptFunction ShowDebug() { mixin(MGF("mShowDebug", "Function Engine.HUD.ShowDebug")); }
+			ScriptFunction ShowDebugInfo() { mixin(MGF("mShowDebugInfo", "Function Engine.HUD.ShowDebugInfo")); }
+			ScriptFunction DrawRoute() { mixin(MGF("mDrawRoute", "Function Engine.HUD.DrawRoute")); }
+			ScriptFunction PreCalcValues() { mixin(MGF("mPreCalcValues", "Function Engine.HUD.PreCalcValues")); }
+			ScriptFunction PostRender() { mixin(MGF("mPostRender", "Function Engine.HUD.PostRender")); }
+			ScriptFunction DrawHUD() { mixin(MGF("mDrawHUD", "Function Engine.HUD.DrawHUD")); }
+			ScriptFunction DisplayBadConnectionAlert() { mixin(MGF("mDisplayBadConnectionAlert", "Function Engine.HUD.DisplayBadConnectionAlert")); }
+			ScriptFunction ClearMessage() { mixin(MGF("mClearMessage", "Function Engine.HUD.ClearMessage")); }
+			ScriptFunction Message() { mixin(MGF("mMessage", "Function Engine.HUD.Message")); }
+			ScriptFunction DisplayConsoleMessages() { mixin(MGF("mDisplayConsoleMessages", "Function Engine.HUD.DisplayConsoleMessages")); }
+			ScriptFunction AddConsoleMessage() { mixin(MGF("mAddConsoleMessage", "Function Engine.HUD.AddConsoleMessage")); }
+			ScriptFunction LocalizedMessage() { mixin(MGF("mLocalizedMessage", "Function Engine.HUD.LocalizedMessage")); }
+			ScriptFunction AddLocalizedMessage() { mixin(MGF("mAddLocalizedMessage", "Function Engine.HUD.AddLocalizedMessage")); }
+			ScriptFunction GetScreenCoords() { mixin(MGF("mGetScreenCoords", "Function Engine.HUD.GetScreenCoords")); }
+			ScriptFunction DrawMessage() { mixin(MGF("mDrawMessage", "Function Engine.HUD.DrawMessage")); }
+			ScriptFunction DrawMessageText() { mixin(MGF("mDrawMessageText", "Function Engine.HUD.DrawMessageText")); }
+			ScriptFunction DisplayLocalMessages() { mixin(MGF("mDisplayLocalMessages", "Function Engine.HUD.DisplayLocalMessages")); }
+			ScriptFunction DisplayKismetMessages() { mixin(MGF("mDisplayKismetMessages", "Function Engine.HUD.DisplayKismetMessages")); }
+			ScriptFunction DrawText() { mixin(MGF("mDrawText", "Function Engine.HUD.DrawText")); }
+			ScriptFunction GetFontSizeIndex() { mixin(MGF("mGetFontSizeIndex", "Function Engine.HUD.GetFontSizeIndex")); }
+			ScriptFunction PlayerOwnerDied() { mixin(MGF("mPlayerOwnerDied", "Function Engine.HUD.PlayerOwnerDied")); }
+			ScriptFunction OnLostFocusPause() { mixin(MGF("mOnLostFocusPause", "Function Engine.HUD.OnLostFocusPause")); }
 		}
 	}
 	struct KismetDrawTextInfo
@@ -97,16 +97,16 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.HUD.KismetDrawTextInfo")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.HUD.KismetDrawTextInfo")); }
 		@property final auto ref
 		{
-			UObject.Vector2D MessageOffset() { mixin(MGPS!("UObject.Vector2D", 36)()); }
-			float MessageEndTime() { mixin(MGPS!("float", 48)()); }
-			UObject.Color MessageColor() { mixin(MGPS!("UObject.Color", 44)()); }
-			UObject.Vector2D MessageFontScale() { mixin(MGPS!("UObject.Vector2D", 28)()); }
-			Font MessageFont() { mixin(MGPS!("Font", 24)()); }
-			ScriptString AppendedText() { mixin(MGPS!("ScriptString", 12)()); }
-			ScriptString MessageText() { mixin(MGPS!("ScriptString", 0)()); }
+			UObject.Vector2D MessageOffset() { mixin(MGPS("UObject.Vector2D", 36)); }
+			float MessageEndTime() { mixin(MGPS("float", 48)); }
+			UObject.Color MessageColor() { mixin(MGPS("UObject.Color", 44)); }
+			UObject.Vector2D MessageFontScale() { mixin(MGPS("UObject.Vector2D", 28)); }
+			Font MessageFont() { mixin(MGPS("Font", 24)); }
+			ScriptString AppendedText() { mixin(MGPS("ScriptString", 12)); }
+			ScriptString MessageText() { mixin(MGPS("ScriptString", 0)); }
 		}
 	}
 	struct ConsoleMessage
@@ -114,13 +114,13 @@ public extern(D):
 		private ubyte __buffer__[24];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.HUD.ConsoleMessage")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.HUD.ConsoleMessage")); }
 		@property final auto ref
 		{
-			PlayerReplicationInfo PRI() { mixin(MGPS!("PlayerReplicationInfo", 20)()); }
-			float MessageLife() { mixin(MGPS!("float", 16)()); }
-			UObject.Color TextColor() { mixin(MGPS!("UObject.Color", 12)()); }
-			ScriptString Text() { mixin(MGPS!("ScriptString", 0)()); }
+			PlayerReplicationInfo PRI() { mixin(MGPS("PlayerReplicationInfo", 20)); }
+			float MessageLife() { mixin(MGPS("float", 16)); }
+			UObject.Color TextColor() { mixin(MGPS("UObject.Color", 12)); }
+			ScriptString Text() { mixin(MGPS("ScriptString", 0)); }
 		}
 	}
 	struct HudLocalizedMessage
@@ -128,27 +128,27 @@ public extern(D):
 		private ubyte __buffer__[64];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.HUD.HudLocalizedMessage")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.HUD.HudLocalizedMessage")); }
 		@property final
 		{
 			auto ref
 			{
-				UObject OptionalObject() { mixin(MGPS!("UObject", 60)()); }
-				int Count() { mixin(MGPS!("int", 56)()); }
-				float DY() { mixin(MGPS!("float", 48)()); }
-				float DX() { mixin(MGPS!("float", 44)()); }
-				Font StringFont() { mixin(MGPS!("Font", 40)()); }
-				int FontSize() { mixin(MGPS!("int", 36)()); }
-				UObject.Color DrawColor() { mixin(MGPS!("UObject.Color", 32)()); }
-				float PosY() { mixin(MGPS!("float", 28)()); }
-				float Lifetime() { mixin(MGPS!("float", 24)()); }
-				float EndOfLife() { mixin(MGPS!("float", 20)()); }
-				int Switch() { mixin(MGPS!("int", 16)()); }
-				ScriptString StringMessage() { mixin(MGPS!("ScriptString", 4)()); }
-				ScriptClass Message() { mixin(MGPS!("ScriptClass", 0)()); }
+				UObject OptionalObject() { mixin(MGPS("UObject", 60)); }
+				int Count() { mixin(MGPS("int", 56)); }
+				float DY() { mixin(MGPS("float", 48)); }
+				float DX() { mixin(MGPS("float", 44)); }
+				Font StringFont() { mixin(MGPS("Font", 40)); }
+				int FontSize() { mixin(MGPS("int", 36)); }
+				UObject.Color DrawColor() { mixin(MGPS("UObject.Color", 32)); }
+				float PosY() { mixin(MGPS("float", 28)); }
+				float Lifetime() { mixin(MGPS("float", 24)); }
+				float EndOfLife() { mixin(MGPS("float", 20)); }
+				int Switch() { mixin(MGPS("int", 16)); }
+				ScriptString StringMessage() { mixin(MGPS("ScriptString", 4)); }
+				ScriptClass Message() { mixin(MGPS("ScriptClass", 0)); }
 			}
-			bool Drawn() { mixin(MGBPS!(52, 0x1)()); }
-			bool Drawn(bool val) { mixin(MSBPS!(52, 0x1)()); }
+			bool Drawn() { mixin(MGBPS(52, 0x1)); }
+			bool Drawn(bool val) { mixin(MSBPS(52, 0x1)); }
 		}
 	}
 	@property final
@@ -156,46 +156,46 @@ public extern(D):
 		auto ref
 		{
 			// WARNING: Property 'Canvas' has the same name as a defined type!
-			ScriptArray!(Actor) PostRenderedActors() { mixin(MGPC!("ScriptArray!(Actor)", 500)()); }
-			ScriptArray!(HUD.ConsoleMessage) ConsoleMessages() { mixin(MGPC!("ScriptArray!(HUD.ConsoleMessage)", 512)()); }
-			ScriptArray!(ScriptName) DebugDisplay() { mixin(MGPC!("ScriptArray!(ScriptName)", 1100)()); }
-			ScriptArray!(HUD.KismetDrawTextInfo) KismetTextInfo() { mixin(MGPC!("ScriptArray!(HUD.KismetDrawTextInfo)", 1112)()); }
-			float RatioY() { mixin(MGPC!("float", 1096)()); }
-			float RatioX() { mixin(MGPC!("float", 1092)()); }
-			float CenterY() { mixin(MGPC!("float", 1088)()); }
-			float CenterX() { mixin(MGPC!("float", 1084)()); }
-			float SizeY() { mixin(MGPC!("float", 1080)()); }
-			float SizeX() { mixin(MGPC!("float", 1076)()); }
-			float RenderDelta() { mixin(MGPC!("float", 1072)()); }
-			float LastHUDRenderTime() { mixin(MGPC!("float", 1068)()); }
-			float ConsoleMessagePosY() { mixin(MGPC!("float", 1060)()); }
-			float ConsoleMessagePosX() { mixin(MGPC!("float", 1056)()); }
-			HUD.HudLocalizedMessage LocalMessages() { mixin(MGPC!("HUD.HudLocalizedMessage", 544)()); }
-			int MaxHUDAreaMessageCount() { mixin(MGPC!("int", 540)()); }
-			int MessageFontOffset() { mixin(MGPC!("int", 536)()); }
-			int ConsoleFontSize() { mixin(MGPC!("int", 532)()); }
-			int ConsoleMessageCount() { mixin(MGPC!("int", 528)()); }
-			UObject.Color ConsoleColor() { mixin(MGPC!("UObject.Color", 524)()); }
-			float HudCanvasScale() { mixin(MGPC!("float", 496)()); }
-			PlayerController PlayerOwner() { mixin(MGPC!("PlayerController", 488)()); }
-			UObject.Color RedColor() { mixin(MGPC!("UObject.Color", 484)()); }
-			UObject.Color GreenColor() { mixin(MGPC!("UObject.Color", 480)()); }
-			UObject.Color WhiteColor() { mixin(MGPC!("UObject.Color", 476)()); }
+			ScriptArray!(Actor) PostRenderedActors() { mixin(MGPC("ScriptArray!(Actor)", 500)); }
+			ScriptArray!(HUD.ConsoleMessage) ConsoleMessages() { mixin(MGPC("ScriptArray!(HUD.ConsoleMessage)", 512)); }
+			ScriptArray!(ScriptName) DebugDisplay() { mixin(MGPC("ScriptArray!(ScriptName)", 1100)); }
+			ScriptArray!(HUD.KismetDrawTextInfo) KismetTextInfo() { mixin(MGPC("ScriptArray!(HUD.KismetDrawTextInfo)", 1112)); }
+			float RatioY() { mixin(MGPC("float", 1096)); }
+			float RatioX() { mixin(MGPC("float", 1092)); }
+			float CenterY() { mixin(MGPC("float", 1088)); }
+			float CenterX() { mixin(MGPC("float", 1084)); }
+			float SizeY() { mixin(MGPC("float", 1080)); }
+			float SizeX() { mixin(MGPC("float", 1076)); }
+			float RenderDelta() { mixin(MGPC("float", 1072)); }
+			float LastHUDRenderTime() { mixin(MGPC("float", 1068)); }
+			float ConsoleMessagePosY() { mixin(MGPC("float", 1060)); }
+			float ConsoleMessagePosX() { mixin(MGPC("float", 1056)); }
+			HUD.HudLocalizedMessage LocalMessages() { mixin(MGPC("HUD.HudLocalizedMessage", 544)); }
+			int MaxHUDAreaMessageCount() { mixin(MGPC("int", 540)); }
+			int MessageFontOffset() { mixin(MGPC("int", 536)); }
+			int ConsoleFontSize() { mixin(MGPC("int", 532)); }
+			int ConsoleMessageCount() { mixin(MGPC("int", 528)); }
+			UObject.Color ConsoleColor() { mixin(MGPC("UObject.Color", 524)); }
+			float HudCanvasScale() { mixin(MGPC("float", 496)); }
+			PlayerController PlayerOwner() { mixin(MGPC("PlayerController", 488)); }
+			UObject.Color RedColor() { mixin(MGPC("UObject.Color", 484)); }
+			UObject.Color GreenColor() { mixin(MGPC("UObject.Color", 480)); }
+			UObject.Color WhiteColor() { mixin(MGPC("UObject.Color", 476)); }
 		}
-		bool bShowOverlays() { mixin(MGBPC!(492, 0x40)()); }
-		bool bShowOverlays(bool val) { mixin(MSBPC!(492, 0x40)()); }
-		bool bMessageBeep() { mixin(MGBPC!(492, 0x20)()); }
-		bool bMessageBeep(bool val) { mixin(MSBPC!(492, 0x20)()); }
-		bool bShowBadConnectionAlert() { mixin(MGBPC!(492, 0x10)()); }
-		bool bShowBadConnectionAlert(bool val) { mixin(MSBPC!(492, 0x10)()); }
-		bool bShowDebugInfo() { mixin(MGBPC!(492, 0x8)()); }
-		bool bShowDebugInfo(bool val) { mixin(MSBPC!(492, 0x8)()); }
-		bool bShowScores() { mixin(MGBPC!(492, 0x4)()); }
-		bool bShowScores(bool val) { mixin(MSBPC!(492, 0x4)()); }
-		bool bShowHUD() { mixin(MGBPC!(492, 0x2)()); }
-		bool bShowHUD(bool val) { mixin(MSBPC!(492, 0x2)()); }
-		bool bLostFocusPaused() { mixin(MGBPC!(492, 0x1)()); }
-		bool bLostFocusPaused(bool val) { mixin(MSBPC!(492, 0x1)()); }
+		bool bShowOverlays() { mixin(MGBPC(492, 0x40)); }
+		bool bShowOverlays(bool val) { mixin(MSBPC(492, 0x40)); }
+		bool bMessageBeep() { mixin(MGBPC(492, 0x20)); }
+		bool bMessageBeep(bool val) { mixin(MSBPC(492, 0x20)); }
+		bool bShowBadConnectionAlert() { mixin(MGBPC(492, 0x10)); }
+		bool bShowBadConnectionAlert(bool val) { mixin(MSBPC(492, 0x10)); }
+		bool bShowDebugInfo() { mixin(MGBPC(492, 0x8)); }
+		bool bShowDebugInfo(bool val) { mixin(MSBPC(492, 0x8)); }
+		bool bShowScores() { mixin(MGBPC(492, 0x4)); }
+		bool bShowScores(bool val) { mixin(MSBPC(492, 0x4)); }
+		bool bShowHUD() { mixin(MGBPC(492, 0x2)); }
+		bool bShowHUD(bool val) { mixin(MSBPC(492, 0x2)); }
+		bool bLostFocusPaused() { mixin(MGBPC(492, 0x1)); }
+		bool bLostFocusPaused(bool val) { mixin(MSBPC(492, 0x1)); }
 	}
 final:
 	bool ShouldDisplayDebug(ScriptName DebugType)

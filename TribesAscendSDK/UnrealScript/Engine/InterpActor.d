@@ -13,9 +13,9 @@ extern(C++) interface InterpActor : DynamicSMActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpActor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.InterpActor")); }
 	private static __gshared InterpActor mDefaultProperties;
-	@property final static InterpActor DefaultProperties() { mixin(MGDPC!(InterpActor, "InterpActor Engine.Default__InterpActor")()); }
+	@property final static InterpActor DefaultProperties() { mixin(MGDPC("InterpActor", "InterpActor Engine.Default__InterpActor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,22 +39,22 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function Engine.InterpActor.PostBeginPlay")()); }
-			ScriptFunction SetShadowParentOnAllAttachedComponents() { mixin(MGF!("mSetShadowParentOnAllAttachedComponents", "Function Engine.InterpActor.SetShadowParentOnAllAttachedComponents")()); }
-			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function Engine.InterpActor.EncroachingOn")()); }
-			ScriptFunction RanInto() { mixin(MGF!("mRanInto", "Function Engine.InterpActor.RanInto")()); }
-			ScriptFunction Attach() { mixin(MGF!("mAttach", "Function Engine.InterpActor.Attach")()); }
-			ScriptFunction Detach() { mixin(MGF!("mDetach", "Function Engine.InterpActor.Detach")()); }
-			ScriptFunction Restart() { mixin(MGF!("mRestart", "Function Engine.InterpActor.Restart")()); }
-			ScriptFunction FinishedOpen() { mixin(MGF!("mFinishedOpen", "Function Engine.InterpActor.FinishedOpen")()); }
-			ScriptFunction PlayMovingSound() { mixin(MGF!("mPlayMovingSound", "Function Engine.InterpActor.PlayMovingSound")()); }
-			ScriptFunction InterpolationStarted() { mixin(MGF!("mInterpolationStarted", "Function Engine.InterpActor.InterpolationStarted")()); }
-			ScriptFunction InterpolationFinished() { mixin(MGF!("mInterpolationFinished", "Function Engine.InterpActor.InterpolationFinished")()); }
-			ScriptFunction InterpolationChanged() { mixin(MGF!("mInterpolationChanged", "Function Engine.InterpActor.InterpolationChanged")()); }
-			ScriptFunction ShutDown() { mixin(MGF!("mShutDown", "Function Engine.InterpActor.ShutDown")()); }
-			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF!("mShouldSaveForCheckpoint", "Function Engine.InterpActor.ShouldSaveForCheckpoint")()); }
-			ScriptFunction CreateCheckpointRecord() { mixin(MGF!("mCreateCheckpointRecord", "Function Engine.InterpActor.CreateCheckpointRecord")()); }
-			ScriptFunction ApplyCheckpointRecord() { mixin(MGF!("mApplyCheckpointRecord", "Function Engine.InterpActor.ApplyCheckpointRecord")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function Engine.InterpActor.PostBeginPlay")); }
+			ScriptFunction SetShadowParentOnAllAttachedComponents() { mixin(MGF("mSetShadowParentOnAllAttachedComponents", "Function Engine.InterpActor.SetShadowParentOnAllAttachedComponents")); }
+			ScriptFunction EncroachingOn() { mixin(MGF("mEncroachingOn", "Function Engine.InterpActor.EncroachingOn")); }
+			ScriptFunction RanInto() { mixin(MGF("mRanInto", "Function Engine.InterpActor.RanInto")); }
+			ScriptFunction Attach() { mixin(MGF("mAttach", "Function Engine.InterpActor.Attach")); }
+			ScriptFunction Detach() { mixin(MGF("mDetach", "Function Engine.InterpActor.Detach")); }
+			ScriptFunction Restart() { mixin(MGF("mRestart", "Function Engine.InterpActor.Restart")); }
+			ScriptFunction FinishedOpen() { mixin(MGF("mFinishedOpen", "Function Engine.InterpActor.FinishedOpen")); }
+			ScriptFunction PlayMovingSound() { mixin(MGF("mPlayMovingSound", "Function Engine.InterpActor.PlayMovingSound")); }
+			ScriptFunction InterpolationStarted() { mixin(MGF("mInterpolationStarted", "Function Engine.InterpActor.InterpolationStarted")); }
+			ScriptFunction InterpolationFinished() { mixin(MGF("mInterpolationFinished", "Function Engine.InterpActor.InterpolationFinished")); }
+			ScriptFunction InterpolationChanged() { mixin(MGF("mInterpolationChanged", "Function Engine.InterpActor.InterpolationChanged")); }
+			ScriptFunction ShutDown() { mixin(MGF("mShutDown", "Function Engine.InterpActor.ShutDown")); }
+			ScriptFunction ShouldSaveForCheckpoint() { mixin(MGF("mShouldSaveForCheckpoint", "Function Engine.InterpActor.ShouldSaveForCheckpoint")); }
+			ScriptFunction CreateCheckpointRecord() { mixin(MGF("mCreateCheckpointRecord", "Function Engine.InterpActor.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { mixin(MGF("mApplyCheckpointRecord", "Function Engine.InterpActor.ApplyCheckpointRecord")); }
 		}
 	}
 	struct CheckpointRecord
@@ -62,54 +62,54 @@ public extern(D):
 		private ubyte __buffer__[32];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpActor.CheckpointRecord")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.InterpActor.CheckpointRecord")); }
 		@property final
 		{
 			auto ref
 			{
-				Actor.ECollisionType CollisionType() { mixin(MGPS!("Actor.ECollisionType", 24)()); }
-				Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
-				Vector Location() { mixin(MGPS!("Vector", 0)()); }
+				Actor.ECollisionType CollisionType() { mixin(MGPS("Actor.ECollisionType", 24)); }
+				Rotator Rotation() { mixin(MGPS("Rotator", 12)); }
+				Vector Location() { mixin(MGPS("Vector", 0)); }
 			}
-			bool bNeedsPositionReplication() { mixin(MGBPS!(28, 0x4)()); }
-			bool bNeedsPositionReplication(bool val) { mixin(MSBPS!(28, 0x4)()); }
-			bool bIsShutdown() { mixin(MGBPS!(28, 0x2)()); }
-			bool bIsShutdown(bool val) { mixin(MSBPS!(28, 0x2)()); }
-			bool bHidden() { mixin(MGBPS!(28, 0x1)()); }
-			bool bHidden(bool val) { mixin(MSBPS!(28, 0x1)()); }
+			bool bNeedsPositionReplication() { mixin(MGBPS(28, 0x4)); }
+			bool bNeedsPositionReplication(bool val) { mixin(MSBPS(28, 0x4)); }
+			bool bIsShutdown() { mixin(MGBPS(28, 0x2)); }
+			bool bIsShutdown(bool val) { mixin(MSBPS(28, 0x2)); }
+			bool bHidden() { mixin(MGBPS(28, 0x1)); }
+			bool bHidden(bool val) { mixin(MSBPS(28, 0x1)); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			NavigationPoint MyMarker() { mixin(MGPC!("NavigationPoint", 536)()); }
+			NavigationPoint MyMarker() { mixin(MGPC("NavigationPoint", 536)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientSoundComponent'!
-			SoundCue ClosedSound() { mixin(MGPC!("SoundCue", 568)()); }
-			SoundCue ClosingAmbientSound() { mixin(MGPC!("SoundCue", 564)()); }
-			SoundCue CloseSound() { mixin(MGPC!("SoundCue", 560)()); }
-			SoundCue OpenedSound() { mixin(MGPC!("SoundCue", 556)()); }
-			SoundCue OpeningAmbientSound() { mixin(MGPC!("SoundCue", 552)()); }
-			SoundCue OpenSound() { mixin(MGPC!("SoundCue", 548)()); }
-			float StayOpenTime() { mixin(MGPC!("float", 544)()); }
-			float MaxZVelocity() { mixin(MGPC!("float", 540)()); }
+			SoundCue ClosedSound() { mixin(MGPC("SoundCue", 568)); }
+			SoundCue ClosingAmbientSound() { mixin(MGPC("SoundCue", 564)); }
+			SoundCue CloseSound() { mixin(MGPC("SoundCue", 560)); }
+			SoundCue OpenedSound() { mixin(MGPC("SoundCue", 556)); }
+			SoundCue OpeningAmbientSound() { mixin(MGPC("SoundCue", 552)); }
+			SoundCue OpenSound() { mixin(MGPC("SoundCue", 548)); }
+			float StayOpenTime() { mixin(MGPC("float", 544)); }
+			float MaxZVelocity() { mixin(MGPC("float", 540)); }
 		}
-		bool bMonitorMover() { mixin(MGBPC!(532, 0x2)()); }
-		bool bMonitorMover(bool val) { mixin(MSBPC!(532, 0x2)()); }
-		bool bIsLift() { mixin(MGBPC!(532, 0x80)()); }
-		bool bIsLift(bool val) { mixin(MSBPC!(532, 0x80)()); }
-		bool bShouldShadowParentAllAttachedActors() { mixin(MGBPC!(532, 0x40)()); }
-		bool bShouldShadowParentAllAttachedActors(bool val) { mixin(MSBPC!(532, 0x40)()); }
-		bool bStopOnEncroach() { mixin(MGBPC!(532, 0x20)()); }
-		bool bStopOnEncroach(bool val) { mixin(MSBPC!(532, 0x20)()); }
-		bool bContinueOnEncroachPhysicsObject() { mixin(MGBPC!(532, 0x10)()); }
-		bool bContinueOnEncroachPhysicsObject(bool val) { mixin(MSBPC!(532, 0x10)()); }
-		bool bDestroyProjectilesOnEncroach() { mixin(MGBPC!(532, 0x8)()); }
-		bool bDestroyProjectilesOnEncroach(bool val) { mixin(MSBPC!(532, 0x8)()); }
-		bool bMonitorZVelocity() { mixin(MGBPC!(532, 0x4)()); }
-		bool bMonitorZVelocity(bool val) { mixin(MSBPC!(532, 0x4)()); }
-		bool bShouldSaveForCheckpoint() { mixin(MGBPC!(532, 0x1)()); }
-		bool bShouldSaveForCheckpoint(bool val) { mixin(MSBPC!(532, 0x1)()); }
+		bool bMonitorMover() { mixin(MGBPC(532, 0x2)); }
+		bool bMonitorMover(bool val) { mixin(MSBPC(532, 0x2)); }
+		bool bIsLift() { mixin(MGBPC(532, 0x80)); }
+		bool bIsLift(bool val) { mixin(MSBPC(532, 0x80)); }
+		bool bShouldShadowParentAllAttachedActors() { mixin(MGBPC(532, 0x40)); }
+		bool bShouldShadowParentAllAttachedActors(bool val) { mixin(MSBPC(532, 0x40)); }
+		bool bStopOnEncroach() { mixin(MGBPC(532, 0x20)); }
+		bool bStopOnEncroach(bool val) { mixin(MSBPC(532, 0x20)); }
+		bool bContinueOnEncroachPhysicsObject() { mixin(MGBPC(532, 0x10)); }
+		bool bContinueOnEncroachPhysicsObject(bool val) { mixin(MSBPC(532, 0x10)); }
+		bool bDestroyProjectilesOnEncroach() { mixin(MGBPC(532, 0x8)); }
+		bool bDestroyProjectilesOnEncroach(bool val) { mixin(MSBPC(532, 0x8)); }
+		bool bMonitorZVelocity() { mixin(MGBPC(532, 0x4)); }
+		bool bMonitorZVelocity(bool val) { mixin(MSBPC(532, 0x4)); }
+		bool bShouldSaveForCheckpoint() { mixin(MGBPC(532, 0x1)); }
+		bool bShouldSaveForCheckpoint(bool val) { mixin(MSBPC(532, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

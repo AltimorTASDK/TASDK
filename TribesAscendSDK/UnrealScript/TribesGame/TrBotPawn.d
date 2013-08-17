@@ -8,9 +8,9 @@ extern(C++) interface TrBotPawn : TrPlayerPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrBotPawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrBotPawn")); }
 	private static __gshared TrBotPawn mDefaultProperties;
-	@property final static TrBotPawn DefaultProperties() { mixin(MGDPC!(TrBotPawn, "TrBotPawn TribesGame.Default__TrBotPawn")()); }
+	@property final static TrBotPawn DefaultProperties() { mixin(MGDPC("TrBotPawn", "TrBotPawn TribesGame.Default__TrBotPawn")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,15 +21,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction SetMovementPhysics() { mixin(MGF!("mSetMovementPhysics", "Function TribesGame.TrBotPawn.SetMovementPhysics")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrBotPawn.Tick")()); }
-			ScriptFunction RechargeHealthPool() { mixin(MGF!("mRechargeHealthPool", "Function TribesGame.TrBotPawn.RechargeHealthPool")()); }
+			ScriptFunction SetMovementPhysics() { mixin(MGF("mSetMovementPhysics", "Function TribesGame.TrBotPawn.SetMovementPhysics")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrBotPawn.Tick")); }
+			ScriptFunction RechargeHealthPool() { mixin(MGF("mRechargeHealthPool", "Function TribesGame.TrBotPawn.RechargeHealthPool")); }
 		}
 	}
 	static struct Dying
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrBotPawn.Dying")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrBotPawn.Dying")); }
 	}
 final:
 	void SetMovementPhysics()

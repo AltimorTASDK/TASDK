@@ -10,9 +10,9 @@ extern(C++) interface TeamInfo : ReplicationInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.TeamInfo")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.TeamInfo")); }
 	private static __gshared TeamInfo mDefaultProperties;
-	@property final static TeamInfo DefaultProperties() { mixin(MGDPC!(TeamInfo, "TeamInfo Engine.Default__TeamInfo")()); }
+	@property final static TeamInfo DefaultProperties() { mixin(MGDPC("TeamInfo", "TeamInfo Engine.Default__TeamInfo")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -26,21 +26,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetHumanReadableName() { mixin(MGF!("mGetHumanReadableName", "Function Engine.TeamInfo.GetHumanReadableName")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.TeamInfo.ReplicatedEvent")()); }
-			ScriptFunction Destroyed() { mixin(MGF!("mDestroyed", "Function Engine.TeamInfo.Destroyed")()); }
-			ScriptFunction AddToTeam() { mixin(MGF!("mAddToTeam", "Function Engine.TeamInfo.AddToTeam")()); }
-			ScriptFunction RemoveFromTeam() { mixin(MGF!("mRemoveFromTeam", "Function Engine.TeamInfo.RemoveFromTeam")()); }
-			ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function Engine.TeamInfo.GetTeamNum")()); }
+			ScriptFunction GetHumanReadableName() { mixin(MGF("mGetHumanReadableName", "Function Engine.TeamInfo.GetHumanReadableName")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function Engine.TeamInfo.ReplicatedEvent")); }
+			ScriptFunction Destroyed() { mixin(MGF("mDestroyed", "Function Engine.TeamInfo.Destroyed")); }
+			ScriptFunction AddToTeam() { mixin(MGF("mAddToTeam", "Function Engine.TeamInfo.AddToTeam")); }
+			ScriptFunction RemoveFromTeam() { mixin(MGF("mRemoveFromTeam", "Function Engine.TeamInfo.RemoveFromTeam")); }
+			ScriptFunction GetTeamNum() { mixin(MGF("mGetTeamNum", "Function Engine.TeamInfo.GetTeamNum")); }
 		}
 	}
 	@property final auto ref
 	{
-		int TeamIndex() { mixin(MGPC!("int", 496)()); }
-		float Score() { mixin(MGPC!("float", 492)()); }
-		UObject.Color TeamColor() { mixin(MGPC!("UObject.Color", 500)()); }
-		int Size() { mixin(MGPC!("int", 488)()); }
-		ScriptString TeamName() { mixin(MGPC!("ScriptString", 476)()); }
+		int TeamIndex() { mixin(MGPC("int", 496)); }
+		float Score() { mixin(MGPC("float", 492)); }
+		UObject.Color TeamColor() { mixin(MGPC("UObject.Color", 500)); }
+		int Size() { mixin(MGPC("int", 488)); }
+		ScriptString TeamName() { mixin(MGPC("ScriptString", 476)); }
 	}
 final:
 	ScriptString GetHumanReadableName()

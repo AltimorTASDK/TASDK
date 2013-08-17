@@ -10,9 +10,9 @@ extern(C++) interface TgSupportCommands : UObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class PlatformCommon.TgSupportCommands")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class PlatformCommon.TgSupportCommands")); }
 	private static __gshared TgSupportCommands mDefaultProperties;
-	@property final static TgSupportCommands DefaultProperties() { mixin(MGDPC!(TgSupportCommands, "TgSupportCommands PlatformCommon.Default__TgSupportCommands")()); }
+	@property final static TgSupportCommands DefaultProperties() { mixin(MGDPC("TgSupportCommands", "TgSupportCommands PlatformCommon.Default__TgSupportCommands")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,25 +39,25 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction gmMatchForce() { mixin(MGF!("mgmMatchForce", "Function PlatformCommon.TgSupportCommands.gmMatchForce")()); }
-			ScriptFunction gmMatchNext() { mixin(MGF!("mgmMatchNext", "Function PlatformCommon.TgSupportCommands.gmMatchNext")()); }
-			ScriptFunction gmCommand() { mixin(MGF!("mgmCommand", "Function PlatformCommon.TgSupportCommands.gmCommand")()); }
-			ScriptFunction gmC() { mixin(MGF!("mgmC", "Function PlatformCommon.TgSupportCommands.gmC")()); }
-			ScriptFunction GPerfDebugFeet() { mixin(MGF!("mGPerfDebugFeet", "Function PlatformCommon.TgSupportCommands.GPerfDebugFeet")()); }
-			ScriptFunction GPerfDebugSkips() { mixin(MGF!("mGPerfDebugSkips", "Function PlatformCommon.TgSupportCommands.GPerfDebugSkips")()); }
-			ScriptFunction GPerfDebugRelevMode() { mixin(MGF!("mGPerfDebugRelevMode", "Function PlatformCommon.TgSupportCommands.GPerfDebugRelevMode")()); }
-			ScriptFunction scLog() { mixin(MGF!("mscLog", "Function PlatformCommon.TgSupportCommands.scLog")()); }
-			ScriptFunction scLogMark() { mixin(MGF!("mscLogMark", "Function PlatformCommon.TgSupportCommands.scLogMark")()); }
-			ScriptFunction scStartGame() { mixin(MGF!("mscStartGame", "Function PlatformCommon.TgSupportCommands.scStartGame")()); }
-			ScriptFunction scEndGame() { mixin(MGF!("mscEndGame", "Function PlatformCommon.TgSupportCommands.scEndGame")()); }
-			ScriptFunction scScore() { mixin(MGF!("mscScore", "Function PlatformCommon.TgSupportCommands.scScore")()); }
-			ScriptFunction scTime() { mixin(MGF!("mscTime", "Function PlatformCommon.TgSupportCommands.scTime")()); }
-			ScriptFunction scTimer() { mixin(MGF!("mscTimer", "Function PlatformCommon.TgSupportCommands.scTimer")()); }
-			ScriptFunction scDemoRec() { mixin(MGF!("mscDemoRec", "Function PlatformCommon.TgSupportCommands.scDemoRec")()); }
-			ScriptFunction scDemoStop() { mixin(MGF!("mscDemoStop", "Function PlatformCommon.TgSupportCommands.scDemoStop")()); }
-			ScriptFunction scPerfDebugFeet() { mixin(MGF!("mscPerfDebugFeet", "Function PlatformCommon.TgSupportCommands.scPerfDebugFeet")()); }
-			ScriptFunction scPerfDebugSkip() { mixin(MGF!("mscPerfDebugSkip", "Function PlatformCommon.TgSupportCommands.scPerfDebugSkip")()); }
-			ScriptFunction scPerfDebugRelevMode() { mixin(MGF!("mscPerfDebugRelevMode", "Function PlatformCommon.TgSupportCommands.scPerfDebugRelevMode")()); }
+			ScriptFunction gmMatchForce() { mixin(MGF("mgmMatchForce", "Function PlatformCommon.TgSupportCommands.gmMatchForce")); }
+			ScriptFunction gmMatchNext() { mixin(MGF("mgmMatchNext", "Function PlatformCommon.TgSupportCommands.gmMatchNext")); }
+			ScriptFunction gmCommand() { mixin(MGF("mgmCommand", "Function PlatformCommon.TgSupportCommands.gmCommand")); }
+			ScriptFunction gmC() { mixin(MGF("mgmC", "Function PlatformCommon.TgSupportCommands.gmC")); }
+			ScriptFunction GPerfDebugFeet() { mixin(MGF("mGPerfDebugFeet", "Function PlatformCommon.TgSupportCommands.GPerfDebugFeet")); }
+			ScriptFunction GPerfDebugSkips() { mixin(MGF("mGPerfDebugSkips", "Function PlatformCommon.TgSupportCommands.GPerfDebugSkips")); }
+			ScriptFunction GPerfDebugRelevMode() { mixin(MGF("mGPerfDebugRelevMode", "Function PlatformCommon.TgSupportCommands.GPerfDebugRelevMode")); }
+			ScriptFunction scLog() { mixin(MGF("mscLog", "Function PlatformCommon.TgSupportCommands.scLog")); }
+			ScriptFunction scLogMark() { mixin(MGF("mscLogMark", "Function PlatformCommon.TgSupportCommands.scLogMark")); }
+			ScriptFunction scStartGame() { mixin(MGF("mscStartGame", "Function PlatformCommon.TgSupportCommands.scStartGame")); }
+			ScriptFunction scEndGame() { mixin(MGF("mscEndGame", "Function PlatformCommon.TgSupportCommands.scEndGame")); }
+			ScriptFunction scScore() { mixin(MGF("mscScore", "Function PlatformCommon.TgSupportCommands.scScore")); }
+			ScriptFunction scTime() { mixin(MGF("mscTime", "Function PlatformCommon.TgSupportCommands.scTime")); }
+			ScriptFunction scTimer() { mixin(MGF("mscTimer", "Function PlatformCommon.TgSupportCommands.scTimer")); }
+			ScriptFunction scDemoRec() { mixin(MGF("mscDemoRec", "Function PlatformCommon.TgSupportCommands.scDemoRec")); }
+			ScriptFunction scDemoStop() { mixin(MGF("mscDemoStop", "Function PlatformCommon.TgSupportCommands.scDemoStop")); }
+			ScriptFunction scPerfDebugFeet() { mixin(MGF("mscPerfDebugFeet", "Function PlatformCommon.TgSupportCommands.scPerfDebugFeet")); }
+			ScriptFunction scPerfDebugSkip() { mixin(MGF("mscPerfDebugSkip", "Function PlatformCommon.TgSupportCommands.scPerfDebugSkip")); }
+			ScriptFunction scPerfDebugRelevMode() { mixin(MGF("mscPerfDebugRelevMode", "Function PlatformCommon.TgSupportCommands.scPerfDebugRelevMode")); }
 		}
 	}
 	static struct Constants
@@ -116,7 +116,7 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'WorldInfo' has the same name as a defined type!
-		PlayerController PC() { mixin(MGPC!("PlayerController", 60)()); }
+		PlayerController PC() { mixin(MGPC("PlayerController", 60)); }
 	}
 final:
 	void gmMatchForce(int* nQueueId = null)

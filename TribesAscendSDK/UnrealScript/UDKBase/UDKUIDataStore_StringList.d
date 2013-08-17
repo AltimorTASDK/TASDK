@@ -11,9 +11,9 @@ extern(C++) interface UDKUIDataStore_StringList : UIDataStore_StringBase
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKUIDataStore_StringList")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKUIDataStore_StringList")); }
 	private static __gshared UDKUIDataStore_StringList mDefaultProperties;
-	@property final static UDKUIDataStore_StringList DefaultProperties() { mixin(MGDPC!(UDKUIDataStore_StringList, "UDKUIDataStore_StringList UDKBase.Default__UDKUIDataStore_StringList")()); }
+	@property final static UDKUIDataStore_StringList DefaultProperties() { mixin(MGDPC("UDKUIDataStore_StringList", "UDKUIDataStore_StringList UDKBase.Default__UDKUIDataStore_StringList")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,20 +35,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Registered() { mixin(MGF!("mRegistered", "Function UDKBase.UDKUIDataStore_StringList.Registered")()); }
-			ScriptFunction GetFieldIndex() { mixin(MGF!("mGetFieldIndex", "Function UDKBase.UDKUIDataStore_StringList.GetFieldIndex")()); }
-			ScriptFunction AddStr() { mixin(MGF!("mAddStr", "Function UDKBase.UDKUIDataStore_StringList.AddStr")()); }
-			ScriptFunction InsertStr() { mixin(MGF!("mInsertStr", "Function UDKBase.UDKUIDataStore_StringList.InsertStr")()); }
-			ScriptFunction RemoveStr() { mixin(MGF!("mRemoveStr", "Function UDKBase.UDKUIDataStore_StringList.RemoveStr")()); }
-			ScriptFunction RemoveStrByIndex() { mixin(MGF!("mRemoveStrByIndex", "Function UDKBase.UDKUIDataStore_StringList.RemoveStrByIndex")()); }
-			ScriptFunction Empty() { mixin(MGF!("mEmpty", "Function UDKBase.UDKUIDataStore_StringList.Empty")()); }
-			ScriptFunction FindStr() { mixin(MGF!("mFindStr", "Function UDKBase.UDKUIDataStore_StringList.FindStr")()); }
-			ScriptFunction GetStr() { mixin(MGF!("mGetStr", "Function UDKBase.UDKUIDataStore_StringList.GetStr")()); }
-			ScriptFunction GetList() { mixin(MGF!("mGetList", "Function UDKBase.UDKUIDataStore_StringList.GetList")()); }
-			ScriptFunction GetCurrentValue() { mixin(MGF!("mGetCurrentValue", "Function UDKBase.UDKUIDataStore_StringList.GetCurrentValue")()); }
-			ScriptFunction GetCurrentValueIndex() { mixin(MGF!("mGetCurrentValueIndex", "Function UDKBase.UDKUIDataStore_StringList.GetCurrentValueIndex")()); }
-			ScriptFunction SetCurrentValueIndex() { mixin(MGF!("mSetCurrentValueIndex", "Function UDKBase.UDKUIDataStore_StringList.SetCurrentValueIndex")()); }
-			ScriptFunction Num() { mixin(MGF!("mNum", "Function UDKBase.UDKUIDataStore_StringList.Num")()); }
+			ScriptFunction Registered() { mixin(MGF("mRegistered", "Function UDKBase.UDKUIDataStore_StringList.Registered")); }
+			ScriptFunction GetFieldIndex() { mixin(MGF("mGetFieldIndex", "Function UDKBase.UDKUIDataStore_StringList.GetFieldIndex")); }
+			ScriptFunction AddStr() { mixin(MGF("mAddStr", "Function UDKBase.UDKUIDataStore_StringList.AddStr")); }
+			ScriptFunction InsertStr() { mixin(MGF("mInsertStr", "Function UDKBase.UDKUIDataStore_StringList.InsertStr")); }
+			ScriptFunction RemoveStr() { mixin(MGF("mRemoveStr", "Function UDKBase.UDKUIDataStore_StringList.RemoveStr")); }
+			ScriptFunction RemoveStrByIndex() { mixin(MGF("mRemoveStrByIndex", "Function UDKBase.UDKUIDataStore_StringList.RemoveStrByIndex")); }
+			ScriptFunction Empty() { mixin(MGF("mEmpty", "Function UDKBase.UDKUIDataStore_StringList.Empty")); }
+			ScriptFunction FindStr() { mixin(MGF("mFindStr", "Function UDKBase.UDKUIDataStore_StringList.FindStr")); }
+			ScriptFunction GetStr() { mixin(MGF("mGetStr", "Function UDKBase.UDKUIDataStore_StringList.GetStr")); }
+			ScriptFunction GetList() { mixin(MGF("mGetList", "Function UDKBase.UDKUIDataStore_StringList.GetList")); }
+			ScriptFunction GetCurrentValue() { mixin(MGF("mGetCurrentValue", "Function UDKBase.UDKUIDataStore_StringList.GetCurrentValue")); }
+			ScriptFunction GetCurrentValueIndex() { mixin(MGF("mGetCurrentValueIndex", "Function UDKBase.UDKUIDataStore_StringList.GetCurrentValueIndex")); }
+			ScriptFunction SetCurrentValueIndex() { mixin(MGF("mSetCurrentValueIndex", "Function UDKBase.UDKUIDataStore_StringList.SetCurrentValueIndex")); }
+			ScriptFunction Num() { mixin(MGF("mNum", "Function UDKBase.UDKUIDataStore_StringList.Num")); }
 		}
 	}
 	static struct Constants
@@ -60,22 +60,22 @@ public extern(D):
 		private ubyte __buffer__[52];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKUIDataStore_StringList.EStringListData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UDKBase.UDKUIDataStore_StringList.EStringListData")); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) Strings() { mixin(MGPS!("ScriptArray!(ScriptString)", 36)()); }
-			UDKUIDataProvider_StringArray DataProvider() { mixin(MGPS!("UDKUIDataProvider_StringArray", 48)()); }
-			int DefaultValueIndex() { mixin(MGPS!("int", 32)()); }
-			ScriptString CurrentValue() { mixin(MGPS!("ScriptString", 20)()); }
-			ScriptString ColumnHeaderText() { mixin(MGPS!("ScriptString", 8)()); }
-			ScriptName Tag() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(ScriptString) Strings() { mixin(MGPS("ScriptArray!(ScriptString)", 36)); }
+			UDKUIDataProvider_StringArray DataProvider() { mixin(MGPS("UDKUIDataProvider_StringArray", 48)); }
+			int DefaultValueIndex() { mixin(MGPS("int", 32)); }
+			ScriptString CurrentValue() { mixin(MGPS("ScriptString", 20)); }
+			ScriptString ColumnHeaderText() { mixin(MGPS("ScriptString", 8)); }
+			ScriptName Tag() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKUIDataStore_StringList.EStringListData) StringData() { mixin(MGPC!("ScriptArray!(UDKUIDataStore_StringList.EStringListData)", 128)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
+		ScriptArray!(UDKUIDataStore_StringList.EStringListData) StringData() { mixin(MGPC("ScriptArray!(UDKUIDataStore_StringList.EStringListData)", 128)); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 124)); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
 	}
 final:
 	void Registered(LocalPlayer PlayerOwner)

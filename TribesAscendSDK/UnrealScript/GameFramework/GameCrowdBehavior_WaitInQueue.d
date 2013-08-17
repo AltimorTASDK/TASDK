@@ -11,9 +11,9 @@ extern(C++) interface GameCrowdBehavior_WaitInQueue : GameCrowdAgentBehavior
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdBehavior_WaitInQueue")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdBehavior_WaitInQueue")); }
 	private static __gshared GameCrowdBehavior_WaitInQueue mDefaultProperties;
-	@property final static GameCrowdBehavior_WaitInQueue DefaultProperties() { mixin(MGDPC!(GameCrowdBehavior_WaitInQueue, "GameCrowdBehavior_WaitInQueue GameFramework.Default__GameCrowdBehavior_WaitInQueue")()); }
+	@property final static GameCrowdBehavior_WaitInQueue DefaultProperties() { mixin(MGDPC("GameCrowdBehavior_WaitInQueue", "GameCrowdBehavior_WaitInQueue GameFramework.Default__GameCrowdBehavior_WaitInQueue")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,19 +27,19 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HandleMovement() { mixin(MGF!("mHandleMovement", "Function GameFramework.GameCrowdBehavior_WaitInQueue.HandleMovement")()); }
-			ScriptFunction ChangingDestination() { mixin(MGF!("mChangingDestination", "Function GameFramework.GameCrowdBehavior_WaitInQueue.ChangingDestination")()); }
-			ScriptFunction GetDestinationActor() { mixin(MGF!("mGetDestinationActor", "Function GameFramework.GameCrowdBehavior_WaitInQueue.GetDestinationActor")()); }
-			ScriptFunction GetBehaviorString() { mixin(MGF!("mGetBehaviorString", "Function GameFramework.GameCrowdBehavior_WaitInQueue.GetBehaviorString")()); }
-			ScriptFunction ShouldEndIdle() { mixin(MGF!("mShouldEndIdle", "Function GameFramework.GameCrowdBehavior_WaitInQueue.ShouldEndIdle")()); }
-			ScriptFunction StopBehavior() { mixin(MGF!("mStopBehavior", "Function GameFramework.GameCrowdBehavior_WaitInQueue.StopBehavior")()); }
+			ScriptFunction HandleMovement() { mixin(MGF("mHandleMovement", "Function GameFramework.GameCrowdBehavior_WaitInQueue.HandleMovement")); }
+			ScriptFunction ChangingDestination() { mixin(MGF("mChangingDestination", "Function GameFramework.GameCrowdBehavior_WaitInQueue.ChangingDestination")); }
+			ScriptFunction GetDestinationActor() { mixin(MGF("mGetDestinationActor", "Function GameFramework.GameCrowdBehavior_WaitInQueue.GetDestinationActor")); }
+			ScriptFunction GetBehaviorString() { mixin(MGF("mGetBehaviorString", "Function GameFramework.GameCrowdBehavior_WaitInQueue.GetBehaviorString")); }
+			ScriptFunction ShouldEndIdle() { mixin(MGF("mShouldEndIdle", "Function GameFramework.GameCrowdBehavior_WaitInQueue.ShouldEndIdle")); }
+			ScriptFunction StopBehavior() { mixin(MGF("mStopBehavior", "Function GameFramework.GameCrowdBehavior_WaitInQueue.StopBehavior")); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref GameCrowdDestinationQueuePoint QueuePosition() { mixin(MGPC!("GameCrowdDestinationQueuePoint", 88)()); }
-		bool bStoppingBehavior() { mixin(MGBPC!(84, 0x1)()); }
-		bool bStoppingBehavior(bool val) { mixin(MSBPC!(84, 0x1)()); }
+		@property final auto ref GameCrowdDestinationQueuePoint QueuePosition() { mixin(MGPC("GameCrowdDestinationQueuePoint", 88)); }
+		bool bStoppingBehavior() { mixin(MGBPC(84, 0x1)); }
+		bool bStoppingBehavior(bool val) { mixin(MSBPC(84, 0x1)); }
 	}
 final:
 	bool HandleMovement()

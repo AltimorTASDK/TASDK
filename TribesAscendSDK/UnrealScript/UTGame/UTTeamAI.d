@@ -16,9 +16,9 @@ extern(C++) interface UTTeamAI : UDKTeamOwnedInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTTeamAI")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTTeamAI")); }
 	private static __gshared UTTeamAI mDefaultProperties;
-	@property final static UTTeamAI DefaultProperties() { mixin(MGDPC!(UTTeamAI, "UTTeamAI UTGame.Default__UTTeamAI")()); }
+	@property final static UTTeamAI DefaultProperties() { mixin(MGDPC("UTTeamAI", "UTTeamAI UTGame.Default__UTTeamAI")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -52,55 +52,55 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction FindHumanSquad() { mixin(MGF!("mFindHumanSquad", "Function UTGame.UTTeamAI.FindHumanSquad")()); }
-			ScriptFunction GetPriorityAttackObjectiveFor() { mixin(MGF!("mGetPriorityAttackObjectiveFor", "Function UTGame.UTTeamAI.GetPriorityAttackObjectiveFor")()); }
-			ScriptFunction FriendlyToward() { mixin(MGF!("mFriendlyToward", "Function UTGame.UTTeamAI.FriendlyToward")()); }
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function UTGame.UTTeamAI.PostBeginPlay")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTTeamAI.Timer")()); }
-			ScriptFunction CriticalObjectiveWarning() { mixin(MGF!("mCriticalObjectiveWarning", "Function UTGame.UTTeamAI.CriticalObjectiveWarning")()); }
-			ScriptFunction FindSuperItems() { mixin(MGF!("mFindSuperItems", "Function UTGame.UTTeamAI.FindSuperItems")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function UTGame.UTTeamAI.Reset")()); }
-			ScriptFunction ReAssessStrategy() { mixin(MGF!("mReAssessStrategy", "Function UTGame.UTTeamAI.ReAssessStrategy")()); }
-			ScriptFunction NotifyKilled() { mixin(MGF!("mNotifyKilled", "Function UTGame.UTTeamAI.NotifyKilled")()); }
-			ScriptFunction FindNewObjectives() { mixin(MGF!("mFindNewObjectives", "Function UTGame.UTTeamAI.FindNewObjectives")()); }
-			ScriptFunction FindNewObjectiveFor() { mixin(MGF!("mFindNewObjectiveFor", "Function UTGame.UTTeamAI.FindNewObjectiveFor")()); }
-			ScriptFunction RemoveSquad() { mixin(MGF!("mRemoveSquad", "Function UTGame.UTTeamAI.RemoveSquad")()); }
-			ScriptFunction SetObjectiveLists() { mixin(MGF!("mSetObjectiveLists", "Function UTGame.UTTeamAI.SetObjectiveLists")()); }
-			ScriptFunction AddHumanSquad() { mixin(MGF!("mAddHumanSquad", "Function UTGame.UTTeamAI.AddHumanSquad")()); }
-			ScriptFunction PutBotOnSquadLedBy() { mixin(MGF!("mPutBotOnSquadLedBy", "Function UTGame.UTTeamAI.PutBotOnSquadLedBy")()); }
-			ScriptFunction AddSquadWithLeader() { mixin(MGF!("mAddSquadWithLeader", "Function UTGame.UTTeamAI.AddSquadWithLeader")()); }
-			ScriptFunction GetLeastDefendedObjective() { mixin(MGF!("mGetLeastDefendedObjective", "Function UTGame.UTTeamAI.GetLeastDefendedObjective")()); }
-			ScriptFunction GetPriorityStandaloneObjectiveFor() { mixin(MGF!("mGetPriorityStandaloneObjectiveFor", "Function UTGame.UTTeamAI.GetPriorityStandaloneObjectiveFor")()); }
-			ScriptFunction GetPriorityFreelanceObjectiveFor() { mixin(MGF!("mGetPriorityFreelanceObjectiveFor", "Function UTGame.UTTeamAI.GetPriorityFreelanceObjectiveFor")()); }
-			ScriptFunction PutOnDefense() { mixin(MGF!("mPutOnDefense", "Function UTGame.UTTeamAI.PutOnDefense")()); }
-			ScriptFunction PutOnOffense() { mixin(MGF!("mPutOnOffense", "Function UTGame.UTTeamAI.PutOnOffense")()); }
-			ScriptFunction PutOnFreelance() { mixin(MGF!("mPutOnFreelance", "Function UTGame.UTTeamAI.PutOnFreelance")()); }
-			ScriptFunction SetBotOrders() { mixin(MGF!("mSetBotOrders", "Function UTGame.UTTeamAI.SetBotOrders")()); }
-			ScriptFunction SetOrders() { mixin(MGF!("mSetOrders", "Function UTGame.UTTeamAI.SetOrders")()); }
-			ScriptFunction RemoveFromTeam() { mixin(MGF!("mRemoveFromTeam", "Function UTGame.UTTeamAI.RemoveFromTeam")()); }
+			ScriptFunction FindHumanSquad() { mixin(MGF("mFindHumanSquad", "Function UTGame.UTTeamAI.FindHumanSquad")); }
+			ScriptFunction GetPriorityAttackObjectiveFor() { mixin(MGF("mGetPriorityAttackObjectiveFor", "Function UTGame.UTTeamAI.GetPriorityAttackObjectiveFor")); }
+			ScriptFunction FriendlyToward() { mixin(MGF("mFriendlyToward", "Function UTGame.UTTeamAI.FriendlyToward")); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function UTGame.UTTeamAI.PostBeginPlay")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function UTGame.UTTeamAI.Timer")); }
+			ScriptFunction CriticalObjectiveWarning() { mixin(MGF("mCriticalObjectiveWarning", "Function UTGame.UTTeamAI.CriticalObjectiveWarning")); }
+			ScriptFunction FindSuperItems() { mixin(MGF("mFindSuperItems", "Function UTGame.UTTeamAI.FindSuperItems")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function UTGame.UTTeamAI.Reset")); }
+			ScriptFunction ReAssessStrategy() { mixin(MGF("mReAssessStrategy", "Function UTGame.UTTeamAI.ReAssessStrategy")); }
+			ScriptFunction NotifyKilled() { mixin(MGF("mNotifyKilled", "Function UTGame.UTTeamAI.NotifyKilled")); }
+			ScriptFunction FindNewObjectives() { mixin(MGF("mFindNewObjectives", "Function UTGame.UTTeamAI.FindNewObjectives")); }
+			ScriptFunction FindNewObjectiveFor() { mixin(MGF("mFindNewObjectiveFor", "Function UTGame.UTTeamAI.FindNewObjectiveFor")); }
+			ScriptFunction RemoveSquad() { mixin(MGF("mRemoveSquad", "Function UTGame.UTTeamAI.RemoveSquad")); }
+			ScriptFunction SetObjectiveLists() { mixin(MGF("mSetObjectiveLists", "Function UTGame.UTTeamAI.SetObjectiveLists")); }
+			ScriptFunction AddHumanSquad() { mixin(MGF("mAddHumanSquad", "Function UTGame.UTTeamAI.AddHumanSquad")); }
+			ScriptFunction PutBotOnSquadLedBy() { mixin(MGF("mPutBotOnSquadLedBy", "Function UTGame.UTTeamAI.PutBotOnSquadLedBy")); }
+			ScriptFunction AddSquadWithLeader() { mixin(MGF("mAddSquadWithLeader", "Function UTGame.UTTeamAI.AddSquadWithLeader")); }
+			ScriptFunction GetLeastDefendedObjective() { mixin(MGF("mGetLeastDefendedObjective", "Function UTGame.UTTeamAI.GetLeastDefendedObjective")); }
+			ScriptFunction GetPriorityStandaloneObjectiveFor() { mixin(MGF("mGetPriorityStandaloneObjectiveFor", "Function UTGame.UTTeamAI.GetPriorityStandaloneObjectiveFor")); }
+			ScriptFunction GetPriorityFreelanceObjectiveFor() { mixin(MGF("mGetPriorityFreelanceObjectiveFor", "Function UTGame.UTTeamAI.GetPriorityFreelanceObjectiveFor")); }
+			ScriptFunction PutOnDefense() { mixin(MGF("mPutOnDefense", "Function UTGame.UTTeamAI.PutOnDefense")); }
+			ScriptFunction PutOnOffense() { mixin(MGF("mPutOnOffense", "Function UTGame.UTTeamAI.PutOnOffense")); }
+			ScriptFunction PutOnFreelance() { mixin(MGF("mPutOnFreelance", "Function UTGame.UTTeamAI.PutOnFreelance")); }
+			ScriptFunction SetBotOrders() { mixin(MGF("mSetBotOrders", "Function UTGame.UTTeamAI.SetBotOrders")); }
+			ScriptFunction SetOrders() { mixin(MGF("mSetOrders", "Function UTGame.UTTeamAI.SetOrders")); }
+			ScriptFunction RemoveFromTeam() { mixin(MGF("mRemoveFromTeam", "Function UTGame.UTTeamAI.RemoveFromTeam")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UTTeamInfo EnemyTeam() { mixin(MGPC!("UTTeamInfo", 480)()); }
-			UTGameObjective Objectives() { mixin(MGPC!("UTGameObjective", 488)()); }
-			UTSquadAI Squads() { mixin(MGPC!("UTSquadAI", 500)()); }
-			ScriptArray!(UTVehicleFactory) ImportantVehicleFactories() { mixin(MGPC!("ScriptArray!(UTVehicleFactory)", 656)()); }
-			int NumSuperPickups() { mixin(MGPC!("int", 648)()); }
-			UTPickupFactory SuperPickups() { mixin(MGPC!("UTPickupFactory", 584)()); }
-			ScriptName OrderList() { mixin(MGPC!("ScriptName", 520)()); }
-			int OrderOffset() { mixin(MGPC!("int", 516)()); }
-			ScriptClass SquadType() { mixin(MGPC!("ScriptClass", 512)()); }
-			UTSquadAI FreelanceSquad() { mixin(MGPC!("UTSquadAI", 508)()); }
-			UTSquadAI AttackSquad() { mixin(MGPC!("UTSquadAI", 504)()); }
-			UTGameObjective PickedStandaloneObjective() { mixin(MGPC!("UTGameObjective", 496)()); }
-			UTGameObjective PickedObjective() { mixin(MGPC!("UTGameObjective", 492)()); }
-			int NumSupportingPlayer() { mixin(MGPC!("int", 484)()); }
+			UTTeamInfo EnemyTeam() { mixin(MGPC("UTTeamInfo", 480)); }
+			UTGameObjective Objectives() { mixin(MGPC("UTGameObjective", 488)); }
+			UTSquadAI Squads() { mixin(MGPC("UTSquadAI", 500)); }
+			ScriptArray!(UTVehicleFactory) ImportantVehicleFactories() { mixin(MGPC("ScriptArray!(UTVehicleFactory)", 656)); }
+			int NumSuperPickups() { mixin(MGPC("int", 648)); }
+			UTPickupFactory SuperPickups() { mixin(MGPC("UTPickupFactory", 584)); }
+			ScriptName OrderList() { mixin(MGPC("ScriptName", 520)); }
+			int OrderOffset() { mixin(MGPC("int", 516)); }
+			ScriptClass SquadType() { mixin(MGPC("ScriptClass", 512)); }
+			UTSquadAI FreelanceSquad() { mixin(MGPC("UTSquadAI", 508)); }
+			UTSquadAI AttackSquad() { mixin(MGPC("UTSquadAI", 504)); }
+			UTGameObjective PickedStandaloneObjective() { mixin(MGPC("UTGameObjective", 496)); }
+			UTGameObjective PickedObjective() { mixin(MGPC("UTGameObjective", 492)); }
+			int NumSupportingPlayer() { mixin(MGPC("int", 484)); }
 		}
-		bool bFoundSuperItems() { mixin(MGBPC!(652, 0x1)()); }
-		bool bFoundSuperItems(bool val) { mixin(MSBPC!(652, 0x1)()); }
+		bool bFoundSuperItems() { mixin(MGBPC(652, 0x1)); }
+		bool bFoundSuperItems(bool val) { mixin(MSBPC(652, 0x1)); }
 	}
 final:
 	UTSquadAI FindHumanSquad()

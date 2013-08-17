@@ -9,9 +9,9 @@ extern(C++) interface TrProj_Tracer : TrProjectile
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Tracer")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_Tracer")); }
 	private static __gshared TrProj_Tracer mDefaultProperties;
-	@property final static TrProj_Tracer DefaultProperties() { mixin(MGDPC!(TrProj_Tracer, "TrProj_Tracer TribesGame.Default__TrProj_Tracer")()); }
+	@property final static TrProj_Tracer DefaultProperties() { mixin(MGDPC("TrProj_Tracer", "TrProj_Tracer TribesGame.Default__TrProj_Tracer")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,39 +33,39 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrProj_Tracer.PostBeginPlay")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function TribesGame.TrProj_Tracer.ReplicatedEvent")()); }
-			ScriptFunction CalcTracerAccel() { mixin(MGF!("mCalcTracerAccel", "Function TribesGame.TrProj_Tracer.CalcTracerAccel")()); }
-			ScriptFunction InitTracer() { mixin(MGF!("mInitTracer", "Function TribesGame.TrProj_Tracer.InitTracer")()); }
-			ScriptFunction KillProjectile() { mixin(MGF!("mKillProjectile", "Function TribesGame.TrProj_Tracer.KillProjectile")()); }
-			ScriptFunction ScaleDownFinishedNotify() { mixin(MGF!("mScaleDownFinishedNotify", "Function TribesGame.TrProj_Tracer.ScaleDownFinishedNotify")()); }
-			ScriptFunction ScaleUpFinishedNotify() { mixin(MGF!("mScaleUpFinishedNotify", "Function TribesGame.TrProj_Tracer.ScaleUpFinishedNotify")()); }
-			ScriptFunction OutsideWorldBounds() { mixin(MGF!("mOutsideWorldBounds", "Function TribesGame.TrProj_Tracer.OutsideWorldBounds")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrProj_Tracer.Tick")()); }
-			ScriptFunction Explode() { mixin(MGF!("mExplode", "Function TribesGame.TrProj_Tracer.Explode")()); }
-			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function TribesGame.TrProj_Tracer.Recycle")()); }
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrProj_Tracer.Reset")()); }
-			ScriptFunction WakeProjectile() { mixin(MGF!("mWakeProjectile", "Function TribesGame.TrProj_Tracer.WakeProjectile")()); }
-			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_Tracer.ProcessTouch")()); }
+			ScriptFunction PostBeginPlay() { mixin(MGF("mPostBeginPlay", "Function TribesGame.TrProj_Tracer.PostBeginPlay")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function TribesGame.TrProj_Tracer.ReplicatedEvent")); }
+			ScriptFunction CalcTracerAccel() { mixin(MGF("mCalcTracerAccel", "Function TribesGame.TrProj_Tracer.CalcTracerAccel")); }
+			ScriptFunction InitTracer() { mixin(MGF("mInitTracer", "Function TribesGame.TrProj_Tracer.InitTracer")); }
+			ScriptFunction KillProjectile() { mixin(MGF("mKillProjectile", "Function TribesGame.TrProj_Tracer.KillProjectile")); }
+			ScriptFunction ScaleDownFinishedNotify() { mixin(MGF("mScaleDownFinishedNotify", "Function TribesGame.TrProj_Tracer.ScaleDownFinishedNotify")); }
+			ScriptFunction ScaleUpFinishedNotify() { mixin(MGF("mScaleUpFinishedNotify", "Function TribesGame.TrProj_Tracer.ScaleUpFinishedNotify")); }
+			ScriptFunction OutsideWorldBounds() { mixin(MGF("mOutsideWorldBounds", "Function TribesGame.TrProj_Tracer.OutsideWorldBounds")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrProj_Tracer.Tick")); }
+			ScriptFunction Explode() { mixin(MGF("mExplode", "Function TribesGame.TrProj_Tracer.Explode")); }
+			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function TribesGame.TrProj_Tracer.Recycle")); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function TribesGame.TrProj_Tracer.Reset")); }
+			ScriptFunction WakeProjectile() { mixin(MGF("mWakeProjectile", "Function TribesGame.TrProj_Tracer.WakeProjectile")); }
+			ScriptFunction ProcessTouch() { mixin(MGF("mProcessTouch", "Function TribesGame.TrProj_Tracer.ProcessTouch")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector m_vTracerDrawScale3D() { mixin(MGPC!("Vector", 824)()); }
-			Vector m_vInitialFrameOfRefVelocity() { mixin(MGPC!("Vector", 864)()); }
-			Vector m_vDestinationLoc() { mixin(MGPC!("Vector", 852)()); }
-			float m_fMeshScaleDownTime() { mixin(MGPC!("float", 848)()); }
-			float m_fCurScale() { mixin(MGPC!("float", 844)()); }
-			float m_fMeshScaleUpTime() { mixin(MGPC!("float", 836)()); }
-			float m_fAccelRate() { mixin(MGPC!("float", 820)()); }
+			Vector m_vTracerDrawScale3D() { mixin(MGPC("Vector", 824)); }
+			Vector m_vInitialFrameOfRefVelocity() { mixin(MGPC("Vector", 864)); }
+			Vector m_vDestinationLoc() { mixin(MGPC("Vector", 852)); }
+			float m_fMeshScaleDownTime() { mixin(MGPC("float", 848)); }
+			float m_fCurScale() { mixin(MGPC("float", 844)); }
+			float m_fMeshScaleUpTime() { mixin(MGPC("float", 836)); }
+			float m_fAccelRate() { mixin(MGPC("float", 820)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TracerPSC'!
 		}
-		bool m_bScalingDown() { mixin(MGBPC!(840, 0x2)()); }
-		bool m_bScalingDown(bool val) { mixin(MSBPC!(840, 0x2)()); }
-		bool m_bScaledUp() { mixin(MGBPC!(840, 0x1)()); }
-		bool m_bScaledUp(bool val) { mixin(MSBPC!(840, 0x1)()); }
+		bool m_bScalingDown() { mixin(MGBPC(840, 0x2)); }
+		bool m_bScalingDown(bool val) { mixin(MSBPC(840, 0x2)); }
+		bool m_bScaledUp() { mixin(MGBPC(840, 0x1)); }
+		bool m_bScaledUp(bool val) { mixin(MSBPC(840, 0x1)); }
 	}
 final:
 	void PostBeginPlay()

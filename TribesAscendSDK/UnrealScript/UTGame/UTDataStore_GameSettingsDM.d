@@ -8,7 +8,7 @@ extern(C++) interface UTDataStore_GameSettingsDM : UIDataStore_OnlineGameSetting
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDataStore_GameSettingsDM")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDataStore_GameSettingsDM")); }
 	private static __gshared UTDataStore_GameSettingsDM mDefaultProperties;
-	@property final static UTDataStore_GameSettingsDM DefaultProperties() { mixin(MGDPC!(UTDataStore_GameSettingsDM, "UTDataStore_GameSettingsDM UTGame.Default__UTDataStore_GameSettingsDM")()); }
+	@property final static UTDataStore_GameSettingsDM DefaultProperties() { mixin(MGDPC("UTDataStore_GameSettingsDM", "UTDataStore_GameSettingsDM UTGame.Default__UTDataStore_GameSettingsDM")); }
 }

@@ -9,9 +9,9 @@ extern(C++) interface GameplayEventsReader : GameplayEvents
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.GameplayEventsReader")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.GameplayEventsReader")); }
 	private static __gshared GameplayEventsReader mDefaultProperties;
-	@property final static GameplayEventsReader DefaultProperties() { mixin(MGDPC!(GameplayEventsReader, "GameplayEventsReader Engine.Default__GameplayEventsReader")()); }
+	@property final static GameplayEventsReader DefaultProperties() { mixin(MGDPC("GameplayEventsReader", "GameplayEventsReader Engine.Default__GameplayEventsReader")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -34,24 +34,24 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OpenStatsFile() { mixin(MGF!("mOpenStatsFile", "Function Engine.GameplayEventsReader.OpenStatsFile")()); }
-			ScriptFunction CloseStatsFile() { mixin(MGF!("mCloseStatsFile", "Function Engine.GameplayEventsReader.CloseStatsFile")()); }
-			ScriptFunction SerializeHeader() { mixin(MGF!("mSerializeHeader", "Function Engine.GameplayEventsReader.SerializeHeader")()); }
-			ScriptFunction RegisterHandler() { mixin(MGF!("mRegisterHandler", "Function Engine.GameplayEventsReader.RegisterHandler")()); }
-			ScriptFunction UnregisterHandler() { mixin(MGF!("mUnregisterHandler", "Function Engine.GameplayEventsReader.UnregisterHandler")()); }
-			ScriptFunction ProcessStreamStart() { mixin(MGF!("mProcessStreamStart", "Function Engine.GameplayEventsReader.ProcessStreamStart")()); }
-			ScriptFunction ProcessStream() { mixin(MGF!("mProcessStream", "Function Engine.GameplayEventsReader.ProcessStream")()); }
-			ScriptFunction ProcessStreamEnd() { mixin(MGF!("mProcessStreamEnd", "Function Engine.GameplayEventsReader.ProcessStreamEnd")()); }
-			ScriptFunction GetSessionID() { mixin(MGF!("mGetSessionID", "Function Engine.GameplayEventsReader.GetSessionID")()); }
-			ScriptFunction GetTitleID() { mixin(MGF!("mGetTitleID", "Function Engine.GameplayEventsReader.GetTitleID")()); }
-			ScriptFunction GetPlatform() { mixin(MGF!("mGetPlatform", "Function Engine.GameplayEventsReader.GetPlatform")()); }
-			ScriptFunction GetSessionTimestamp() { mixin(MGF!("mGetSessionTimestamp", "Function Engine.GameplayEventsReader.GetSessionTimestamp")()); }
-			ScriptFunction GetSessionStart() { mixin(MGF!("mGetSessionStart", "Function Engine.GameplayEventsReader.GetSessionStart")()); }
-			ScriptFunction GetSessionEnd() { mixin(MGF!("mGetSessionEnd", "Function Engine.GameplayEventsReader.GetSessionEnd")()); }
-			ScriptFunction GetSessionDuration() { mixin(MGF!("mGetSessionDuration", "Function Engine.GameplayEventsReader.GetSessionDuration")()); }
+			ScriptFunction OpenStatsFile() { mixin(MGF("mOpenStatsFile", "Function Engine.GameplayEventsReader.OpenStatsFile")); }
+			ScriptFunction CloseStatsFile() { mixin(MGF("mCloseStatsFile", "Function Engine.GameplayEventsReader.CloseStatsFile")); }
+			ScriptFunction SerializeHeader() { mixin(MGF("mSerializeHeader", "Function Engine.GameplayEventsReader.SerializeHeader")); }
+			ScriptFunction RegisterHandler() { mixin(MGF("mRegisterHandler", "Function Engine.GameplayEventsReader.RegisterHandler")); }
+			ScriptFunction UnregisterHandler() { mixin(MGF("mUnregisterHandler", "Function Engine.GameplayEventsReader.UnregisterHandler")); }
+			ScriptFunction ProcessStreamStart() { mixin(MGF("mProcessStreamStart", "Function Engine.GameplayEventsReader.ProcessStreamStart")); }
+			ScriptFunction ProcessStream() { mixin(MGF("mProcessStream", "Function Engine.GameplayEventsReader.ProcessStream")); }
+			ScriptFunction ProcessStreamEnd() { mixin(MGF("mProcessStreamEnd", "Function Engine.GameplayEventsReader.ProcessStreamEnd")); }
+			ScriptFunction GetSessionID() { mixin(MGF("mGetSessionID", "Function Engine.GameplayEventsReader.GetSessionID")); }
+			ScriptFunction GetTitleID() { mixin(MGF("mGetTitleID", "Function Engine.GameplayEventsReader.GetTitleID")); }
+			ScriptFunction GetPlatform() { mixin(MGF("mGetPlatform", "Function Engine.GameplayEventsReader.GetPlatform")); }
+			ScriptFunction GetSessionTimestamp() { mixin(MGF("mGetSessionTimestamp", "Function Engine.GameplayEventsReader.GetSessionTimestamp")); }
+			ScriptFunction GetSessionStart() { mixin(MGF("mGetSessionStart", "Function Engine.GameplayEventsReader.GetSessionStart")); }
+			ScriptFunction GetSessionEnd() { mixin(MGF("mGetSessionEnd", "Function Engine.GameplayEventsReader.GetSessionEnd")); }
+			ScriptFunction GetSessionDuration() { mixin(MGF("mGetSessionDuration", "Function Engine.GameplayEventsReader.GetSessionDuration")); }
 		}
 	}
-	@property final auto ref ScriptArray!(GameplayEventsHandler) RegisteredHandlers() { mixin(MGPC!("ScriptArray!(GameplayEventsHandler)", 336)()); }
+	@property final auto ref ScriptArray!(GameplayEventsHandler) RegisteredHandlers() { mixin(MGPC("ScriptArray!(GameplayEventsHandler)", 336)); }
 final:
 	bool OpenStatsFile(ScriptString Filename)
 	{

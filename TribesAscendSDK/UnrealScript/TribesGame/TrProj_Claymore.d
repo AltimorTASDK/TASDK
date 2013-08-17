@@ -10,9 +10,9 @@ extern(C++) interface TrProj_Claymore : TrProj_Mine
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrProj_Claymore")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrProj_Claymore")); }
 	private static __gshared TrProj_Claymore mDefaultProperties;
-	@property final static TrProj_Claymore DefaultProperties() { mixin(MGDPC!(TrProj_Claymore, "TrProj_Claymore TribesGame.Default__TrProj_Claymore")()); }
+	@property final static TrProj_Claymore DefaultProperties() { mixin(MGDPC("TrProj_Claymore", "TrProj_Claymore TribesGame.Default__TrProj_Claymore")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,16 +24,16 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction InitProjectile() { mixin(MGF!("mInitProjectile", "Function TribesGame.TrProj_Claymore.InitProjectile")()); }
-			ScriptFunction SetExplosionEffectParameters() { mixin(MGF!("mSetExplosionEffectParameters", "Function TribesGame.TrProj_Claymore.SetExplosionEffectParameters")()); }
-			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF!("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Claymore.PawnEnteredDetonationArea")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrProj_Claymore.GetMarker")()); }
+			ScriptFunction InitProjectile() { mixin(MGF("mInitProjectile", "Function TribesGame.TrProj_Claymore.InitProjectile")); }
+			ScriptFunction SetExplosionEffectParameters() { mixin(MGF("mSetExplosionEffectParameters", "Function TribesGame.TrProj_Claymore.SetExplosionEffectParameters")); }
+			ScriptFunction PawnEnteredDetonationArea() { mixin(MGF("mPawnEnteredDetonationArea", "Function TribesGame.TrProj_Claymore.PawnEnteredDetonationArea")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrProj_Claymore.GetMarker")); }
 		}
 	}
 	@property final auto ref
 	{
-		float m_fScalarAngle() { mixin(MGPC!("float", 904)()); }
-		float m_fDetonationAngle() { mixin(MGPC!("float", 900)()); }
+		float m_fScalarAngle() { mixin(MGPC("float", 904)); }
+		float m_fDetonationAngle() { mixin(MGPC("float", 900)); }
 	}
 final:
 	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)

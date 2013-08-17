@@ -9,9 +9,9 @@ extern(C++) interface AnimNodeCrossfader : AnimNodeBlend
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNodeCrossfader")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.AnimNodeCrossfader")); }
 	private static __gshared AnimNodeCrossfader mDefaultProperties;
-	@property final static AnimNodeCrossfader DefaultProperties() { mixin(MGDPC!(AnimNodeCrossfader, "AnimNodeCrossfader Engine.Default__AnimNodeCrossfader")()); }
+	@property final static AnimNodeCrossfader DefaultProperties() { mixin(MGDPC("AnimNodeCrossfader", "AnimNodeCrossfader Engine.Default__AnimNodeCrossfader")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -23,21 +23,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PlayOneShotAnim() { mixin(MGF!("mPlayOneShotAnim", "Function Engine.AnimNodeCrossfader.PlayOneShotAnim")()); }
-			ScriptFunction BlendToLoopingAnim() { mixin(MGF!("mBlendToLoopingAnim", "Function Engine.AnimNodeCrossfader.BlendToLoopingAnim")()); }
-			ScriptFunction GetAnimName() { mixin(MGF!("mGetAnimName", "Function Engine.AnimNodeCrossfader.GetAnimName")()); }
-			ScriptFunction GetActiveChild() { mixin(MGF!("mGetActiveChild", "Function Engine.AnimNodeCrossfader.GetActiveChild")()); }
+			ScriptFunction PlayOneShotAnim() { mixin(MGF("mPlayOneShotAnim", "Function Engine.AnimNodeCrossfader.PlayOneShotAnim")); }
+			ScriptFunction BlendToLoopingAnim() { mixin(MGF("mBlendToLoopingAnim", "Function Engine.AnimNodeCrossfader.BlendToLoopingAnim")); }
+			ScriptFunction GetAnimName() { mixin(MGF("mGetAnimName", "Function Engine.AnimNodeCrossfader.GetAnimName")); }
+			ScriptFunction GetActiveChild() { mixin(MGF("mGetActiveChild", "Function Engine.AnimNodeCrossfader.GetActiveChild")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float PendingBlendOutTimeOneShot() { mixin(MGPC!("float", 272)()); }
-			ScriptName DefaultAnimSeqName() { mixin(MGPC!("ScriptName", 260)()); }
+			float PendingBlendOutTimeOneShot() { mixin(MGPC("float", 272)); }
+			ScriptName DefaultAnimSeqName() { mixin(MGPC("ScriptName", 260)); }
 		}
-		bool bDontBlendOutOneShot() { mixin(MGBPC!(268, 0x1)()); }
-		bool bDontBlendOutOneShot(bool val) { mixin(MSBPC!(268, 0x1)()); }
+		bool bDontBlendOutOneShot() { mixin(MGBPC(268, 0x1)); }
+		bool bDontBlendOutOneShot(bool val) { mixin(MSBPC(268, 0x1)); }
 	}
 final:
 	void PlayOneShotAnim(ScriptName AnimSeqName, float* BlendInTime = null, float* BlendOutTime = null, bool* bDontBlendOut = null, float* Rate = null)

@@ -9,18 +9,18 @@ extern(C++) interface UTDMRoster : UTTeamInfo
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDMRoster")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDMRoster")); }
 	private static __gshared UTDMRoster mDefaultProperties;
-	@property final static UTDMRoster DefaultProperties() { mixin(MGDPC!(UTDMRoster, "UTDMRoster UTGame.Default__UTDMRoster")()); }
+	@property final static UTDMRoster DefaultProperties() { mixin(MGDPC("UTDMRoster", "UTDMRoster UTGame.Default__UTDMRoster")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mAddToTeam;
-		public @property static final ScriptFunction AddToTeam() { mixin(MGF!("mAddToTeam", "Function UTGame.UTDMRoster.AddToTeam")()); }
+		public @property static final ScriptFunction AddToTeam() { mixin(MGF("mAddToTeam", "Function UTGame.UTDMRoster.AddToTeam")); }
 	}
 	@property final auto ref
 	{
-		ScriptClass DMSquadClass() { mixin(MGPC!("ScriptClass", 600)()); }
-		int Position() { mixin(MGPC!("int", 596)()); }
+		ScriptClass DMSquadClass() { mixin(MGPC("ScriptClass", 600)); }
+		int Position() { mixin(MGPC("int", 596)); }
 	}
 	final bool AddToTeam(Controller Other)
 	{

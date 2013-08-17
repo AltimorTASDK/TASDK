@@ -8,9 +8,9 @@ extern(C++) interface TcpLink : InternetLink
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.TcpLink")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class IpDrv.TcpLink")); }
 	private static __gshared TcpLink mDefaultProperties;
-	@property final static TcpLink DefaultProperties() { mixin(MGDPC!(TcpLink, "TcpLink IpDrv.Default__TcpLink")()); }
+	@property final static TcpLink DefaultProperties() { mixin(MGDPC("TcpLink", "TcpLink IpDrv.Default__TcpLink")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,21 +33,21 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction BindPort() { mixin(MGF!("mBindPort", "Function IpDrv.TcpLink.BindPort")()); }
-			ScriptFunction Listen() { mixin(MGF!("mListen", "Function IpDrv.TcpLink.Listen")()); }
-			ScriptFunction Open() { mixin(MGF!("mOpen", "Function IpDrv.TcpLink.Open")()); }
-			ScriptFunction Close() { mixin(MGF!("mClose", "Function IpDrv.TcpLink.Close")()); }
-			ScriptFunction IsConnected() { mixin(MGF!("mIsConnected", "Function IpDrv.TcpLink.IsConnected")()); }
-			ScriptFunction SendText() { mixin(MGF!("mSendText", "Function IpDrv.TcpLink.SendText")()); }
-			ScriptFunction SendBinary() { mixin(MGF!("mSendBinary", "Function IpDrv.TcpLink.SendBinary")()); }
-			ScriptFunction ReadText() { mixin(MGF!("mReadText", "Function IpDrv.TcpLink.ReadText")()); }
-			ScriptFunction ReadBinary() { mixin(MGF!("mReadBinary", "Function IpDrv.TcpLink.ReadBinary")()); }
-			ScriptFunction Accepted() { mixin(MGF!("mAccepted", "Function IpDrv.TcpLink.Accepted")()); }
-			ScriptFunction Opened() { mixin(MGF!("mOpened", "Function IpDrv.TcpLink.Opened")()); }
-			ScriptFunction Closed() { mixin(MGF!("mClosed", "Function IpDrv.TcpLink.Closed")()); }
-			ScriptFunction ReceivedText() { mixin(MGF!("mReceivedText", "Function IpDrv.TcpLink.ReceivedText")()); }
-			ScriptFunction ReceivedLine() { mixin(MGF!("mReceivedLine", "Function IpDrv.TcpLink.ReceivedLine")()); }
-			ScriptFunction ReceivedBinary() { mixin(MGF!("mReceivedBinary", "Function IpDrv.TcpLink.ReceivedBinary")()); }
+			ScriptFunction BindPort() { mixin(MGF("mBindPort", "Function IpDrv.TcpLink.BindPort")); }
+			ScriptFunction Listen() { mixin(MGF("mListen", "Function IpDrv.TcpLink.Listen")); }
+			ScriptFunction Open() { mixin(MGF("mOpen", "Function IpDrv.TcpLink.Open")); }
+			ScriptFunction Close() { mixin(MGF("mClose", "Function IpDrv.TcpLink.Close")); }
+			ScriptFunction IsConnected() { mixin(MGF("mIsConnected", "Function IpDrv.TcpLink.IsConnected")); }
+			ScriptFunction SendText() { mixin(MGF("mSendText", "Function IpDrv.TcpLink.SendText")); }
+			ScriptFunction SendBinary() { mixin(MGF("mSendBinary", "Function IpDrv.TcpLink.SendBinary")); }
+			ScriptFunction ReadText() { mixin(MGF("mReadText", "Function IpDrv.TcpLink.ReadText")); }
+			ScriptFunction ReadBinary() { mixin(MGF("mReadBinary", "Function IpDrv.TcpLink.ReadBinary")); }
+			ScriptFunction Accepted() { mixin(MGF("mAccepted", "Function IpDrv.TcpLink.Accepted")); }
+			ScriptFunction Opened() { mixin(MGF("mOpened", "Function IpDrv.TcpLink.Opened")); }
+			ScriptFunction Closed() { mixin(MGF("mClosed", "Function IpDrv.TcpLink.Closed")); }
+			ScriptFunction ReceivedText() { mixin(MGF("mReceivedText", "Function IpDrv.TcpLink.ReceivedText")); }
+			ScriptFunction ReceivedLine() { mixin(MGF("mReceivedLine", "Function IpDrv.TcpLink.ReceivedLine")); }
+			ScriptFunction ReceivedBinary() { mixin(MGF("mReceivedBinary", "Function IpDrv.TcpLink.ReceivedBinary")); }
 		}
 	}
 	enum ELinkState : ubyte
@@ -65,11 +65,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ubyte) SendFIFO() { mixin(MGPC!("ScriptArray!(ubyte)", 516)()); }
-		ScriptString RecvBuf() { mixin(MGPC!("ScriptString", 528)()); }
-		ScriptClass AcceptClass() { mixin(MGPC!("ScriptClass", 512)()); }
-		InternetLink.IpAddr RemoteAddr() { mixin(MGPC!("InternetLink.IpAddr", 504)()); }
-		TcpLink.ELinkState LinkState() { mixin(MGPC!("TcpLink.ELinkState", 500)()); }
+		ScriptArray!(ubyte) SendFIFO() { mixin(MGPC("ScriptArray!(ubyte)", 516)); }
+		ScriptString RecvBuf() { mixin(MGPC("ScriptString", 528)); }
+		ScriptClass AcceptClass() { mixin(MGPC("ScriptClass", 512)); }
+		InternetLink.IpAddr RemoteAddr() { mixin(MGPC("InternetLink.IpAddr", 504)); }
+		TcpLink.ELinkState LinkState() { mixin(MGPC("TcpLink.ELinkState", 500)); }
 	}
 final:
 	int BindPort(int* PortNum = null, bool* bUseNextAvailable = null)

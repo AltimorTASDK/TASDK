@@ -8,7 +8,7 @@ extern(C++) interface ChangePrefabSequenceClassCommandlet : ResavePackagesComman
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.ChangePrefabSequenceClassCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.ChangePrefabSequenceClassCommandlet")); }
 	private static __gshared ChangePrefabSequenceClassCommandlet mDefaultProperties;
-	@property final static ChangePrefabSequenceClassCommandlet DefaultProperties() { mixin(MGDPC!(ChangePrefabSequenceClassCommandlet, "ChangePrefabSequenceClassCommandlet UnrealEd.Default__ChangePrefabSequenceClassCommandlet")()); }
+	@property final static ChangePrefabSequenceClassCommandlet DefaultProperties() { mixin(MGDPC("ChangePrefabSequenceClassCommandlet", "ChangePrefabSequenceClassCommandlet UnrealEd.Default__ChangePrefabSequenceClassCommandlet")); }
 }

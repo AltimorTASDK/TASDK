@@ -11,9 +11,9 @@ extern(C++) interface KActorFromStatic : KActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KActorFromStatic")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.KActorFromStatic")); }
 	private static __gshared KActorFromStatic mDefaultProperties;
-	@property final static KActorFromStatic DefaultProperties() { mixin(MGDPC!(KActorFromStatic, "KActorFromStatic Engine.Default__KActorFromStatic")()); }
+	@property final static KActorFromStatic DefaultProperties() { mixin(MGDPC("KActorFromStatic", "KActorFromStatic Engine.Default__KActorFromStatic")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -32,28 +32,28 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction MakeDynamic() { mixin(MGF!("mMakeDynamic", "Function Engine.KActorFromStatic.MakeDynamic")()); }
-			ScriptFunction DisablePrecomputedLighting() { mixin(MGF!("mDisablePrecomputedLighting", "Function Engine.KActorFromStatic.DisablePrecomputedLighting")()); }
-			ScriptFunction OnSleepRBPhysics() { mixin(MGF!("mOnSleepRBPhysics", "Function Engine.KActorFromStatic.OnSleepRBPhysics")()); }
-			ScriptFunction OnWakeRBPhysics() { mixin(MGF!("mOnWakeRBPhysics", "Function Engine.KActorFromStatic.OnWakeRBPhysics")()); }
-			ScriptFunction BecomeStatic() { mixin(MGF!("mBecomeStatic", "Function Engine.KActorFromStatic.BecomeStatic")()); }
-			ScriptFunction MakeStatic() { mixin(MGF!("mMakeStatic", "Function Engine.KActorFromStatic.MakeStatic")()); }
-			ScriptFunction ApplyImpulse() { mixin(MGF!("mApplyImpulse", "Function Engine.KActorFromStatic.ApplyImpulse")()); }
-			ScriptFunction ReceiveImpulse() { mixin(MGF!("mReceiveImpulse", "Function Engine.KActorFromStatic.ReceiveImpulse")()); }
-			ScriptFunction Bump() { mixin(MGF!("mBump", "Function Engine.KActorFromStatic.Bump")()); }
-			ScriptFunction Touch() { mixin(MGF!("mTouch", "Function Engine.KActorFromStatic.Touch")()); }
-			ScriptFunction TakeRadiusDamage() { mixin(MGF!("mTakeRadiusDamage", "Function Engine.KActorFromStatic.TakeRadiusDamage")()); }
+			ScriptFunction MakeDynamic() { mixin(MGF("mMakeDynamic", "Function Engine.KActorFromStatic.MakeDynamic")); }
+			ScriptFunction DisablePrecomputedLighting() { mixin(MGF("mDisablePrecomputedLighting", "Function Engine.KActorFromStatic.DisablePrecomputedLighting")); }
+			ScriptFunction OnSleepRBPhysics() { mixin(MGF("mOnSleepRBPhysics", "Function Engine.KActorFromStatic.OnSleepRBPhysics")); }
+			ScriptFunction OnWakeRBPhysics() { mixin(MGF("mOnWakeRBPhysics", "Function Engine.KActorFromStatic.OnWakeRBPhysics")); }
+			ScriptFunction BecomeStatic() { mixin(MGF("mBecomeStatic", "Function Engine.KActorFromStatic.BecomeStatic")); }
+			ScriptFunction MakeStatic() { mixin(MGF("mMakeStatic", "Function Engine.KActorFromStatic.MakeStatic")); }
+			ScriptFunction ApplyImpulse() { mixin(MGF("mApplyImpulse", "Function Engine.KActorFromStatic.ApplyImpulse")); }
+			ScriptFunction ReceiveImpulse() { mixin(MGF("mReceiveImpulse", "Function Engine.KActorFromStatic.ReceiveImpulse")); }
+			ScriptFunction Bump() { mixin(MGF("mBump", "Function Engine.KActorFromStatic.Bump")); }
+			ScriptFunction Touch() { mixin(MGF("mTouch", "Function Engine.KActorFromStatic.Touch")); }
+			ScriptFunction TakeRadiusDamage() { mixin(MGF("mTakeRadiusDamage", "Function Engine.KActorFromStatic.TakeRadiusDamage")); }
 		}
 	}
 	static struct Initializing
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State Engine.KActorFromStatic.Initializing")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State Engine.KActorFromStatic.Initializing")); }
 	}
 	@property final auto ref
 	{
-		float MaxImpulseSpeed() { mixin(MGPC!("float", 716)()); }
-		Actor MyStaticMeshActor() { mixin(MGPC!("Actor", 712)()); }
+		float MaxImpulseSpeed() { mixin(MGPC("float", 716)); }
+		Actor MyStaticMeshActor() { mixin(MGPC("Actor", 712)); }
 	}
 final:
 	static KActorFromStatic MakeDynamic(

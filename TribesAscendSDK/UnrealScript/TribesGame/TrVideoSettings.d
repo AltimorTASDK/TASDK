@@ -9,9 +9,9 @@ extern(C++) interface TrVideoSettings : GFxObject
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrVideoSettings")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrVideoSettings")); }
 	private static __gshared TrVideoSettings mDefaultProperties;
-	@property final static TrVideoSettings DefaultProperties() { mixin(MGDPC!(TrVideoSettings, "TrVideoSettings TribesGame.Default__TrVideoSettings")()); }
+	@property final static TrVideoSettings DefaultProperties() { mixin(MGDPC("TrVideoSettings", "TrVideoSettings TribesGame.Default__TrVideoSettings")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -39,26 +39,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetCurrentSettingValue() { mixin(MGF!("mGetCurrentSettingValue", "Function TribesGame.TrVideoSettings.GetCurrentSettingValue")()); }
-			ScriptFunction GetSmoothFramerateValue() { mixin(MGF!("mGetSmoothFramerateValue", "Function TribesGame.TrVideoSettings.GetSmoothFramerateValue")()); }
-			ScriptFunction GetAllowedResolutions() { mixin(MGF!("mGetAllowedResolutions", "Function TribesGame.TrVideoSettings.GetAllowedResolutions")()); }
-			ScriptFunction ApplyVideoSettings() { mixin(MGF!("mApplyVideoSettings", "Function TribesGame.TrVideoSettings.ApplyVideoSettings")()); }
-			ScriptFunction ChangeScreenType() { mixin(MGF!("mChangeScreenType", "Function TribesGame.TrVideoSettings.ChangeScreenType")()); }
-			ScriptFunction ChangeResolution() { mixin(MGF!("mChangeResolution", "Function TribesGame.TrVideoSettings.ChangeResolution")()); }
-			ScriptFunction ChangeShadowDetail() { mixin(MGF!("mChangeShadowDetail", "Function TribesGame.TrVideoSettings.ChangeShadowDetail")()); }
-			ScriptFunction ChangeTextureDetail() { mixin(MGF!("mChangeTextureDetail", "Function TribesGame.TrVideoSettings.ChangeTextureDetail")()); }
-			ScriptFunction GetResolutions() { mixin(MGF!("mGetResolutions", "Function TribesGame.TrVideoSettings.GetResolutions")()); }
-			ScriptFunction SetVSync() { mixin(MGF!("mSetVSync", "Function TribesGame.TrVideoSettings.SetVSync")()); }
-			ScriptFunction SetMotionBlur() { mixin(MGF!("mSetMotionBlur", "Function TribesGame.TrVideoSettings.SetMotionBlur")()); }
-			ScriptFunction LoadVideoSettings() { mixin(MGF!("mLoadVideoSettings", "Function TribesGame.TrVideoSettings.LoadVideoSettings")()); }
-			ScriptFunction AddVideoSettingToList() { mixin(MGF!("mAddVideoSettingToList", "Function TribesGame.TrVideoSettings.AddVideoSettingToList")()); }
-			ScriptFunction LoadVideoResolutions() { mixin(MGF!("mLoadVideoResolutions", "Function TribesGame.TrVideoSettings.LoadVideoResolutions")()); }
-			ScriptFunction LoadResolutions() { mixin(MGF!("mLoadResolutions", "Function TribesGame.TrVideoSettings.LoadResolutions")()); }
-			ScriptFunction AddResolutionToList() { mixin(MGF!("mAddResolutionToList", "Function TribesGame.TrVideoSettings.AddResolutionToList")()); }
-			ScriptFunction GetSettingNameFromType() { mixin(MGF!("mGetSettingNameFromType", "Function TribesGame.TrVideoSettings.GetSettingNameFromType")()); }
-			ScriptFunction GetSettingTypeFromName() { mixin(MGF!("mGetSettingTypeFromName", "Function TribesGame.TrVideoSettings.GetSettingTypeFromName")()); }
-			ScriptFunction CacheVideoSetting() { mixin(MGF!("mCacheVideoSetting", "Function TribesGame.TrVideoSettings.CacheVideoSetting")()); }
-			ScriptFunction SetSmoothFramerateValue() { mixin(MGF!("mSetSmoothFramerateValue", "Function TribesGame.TrVideoSettings.SetSmoothFramerateValue")()); }
+			ScriptFunction GetCurrentSettingValue() { mixin(MGF("mGetCurrentSettingValue", "Function TribesGame.TrVideoSettings.GetCurrentSettingValue")); }
+			ScriptFunction GetSmoothFramerateValue() { mixin(MGF("mGetSmoothFramerateValue", "Function TribesGame.TrVideoSettings.GetSmoothFramerateValue")); }
+			ScriptFunction GetAllowedResolutions() { mixin(MGF("mGetAllowedResolutions", "Function TribesGame.TrVideoSettings.GetAllowedResolutions")); }
+			ScriptFunction ApplyVideoSettings() { mixin(MGF("mApplyVideoSettings", "Function TribesGame.TrVideoSettings.ApplyVideoSettings")); }
+			ScriptFunction ChangeScreenType() { mixin(MGF("mChangeScreenType", "Function TribesGame.TrVideoSettings.ChangeScreenType")); }
+			ScriptFunction ChangeResolution() { mixin(MGF("mChangeResolution", "Function TribesGame.TrVideoSettings.ChangeResolution")); }
+			ScriptFunction ChangeShadowDetail() { mixin(MGF("mChangeShadowDetail", "Function TribesGame.TrVideoSettings.ChangeShadowDetail")); }
+			ScriptFunction ChangeTextureDetail() { mixin(MGF("mChangeTextureDetail", "Function TribesGame.TrVideoSettings.ChangeTextureDetail")); }
+			ScriptFunction GetResolutions() { mixin(MGF("mGetResolutions", "Function TribesGame.TrVideoSettings.GetResolutions")); }
+			ScriptFunction SetVSync() { mixin(MGF("mSetVSync", "Function TribesGame.TrVideoSettings.SetVSync")); }
+			ScriptFunction SetMotionBlur() { mixin(MGF("mSetMotionBlur", "Function TribesGame.TrVideoSettings.SetMotionBlur")); }
+			ScriptFunction LoadVideoSettings() { mixin(MGF("mLoadVideoSettings", "Function TribesGame.TrVideoSettings.LoadVideoSettings")); }
+			ScriptFunction AddVideoSettingToList() { mixin(MGF("mAddVideoSettingToList", "Function TribesGame.TrVideoSettings.AddVideoSettingToList")); }
+			ScriptFunction LoadVideoResolutions() { mixin(MGF("mLoadVideoResolutions", "Function TribesGame.TrVideoSettings.LoadVideoResolutions")); }
+			ScriptFunction LoadResolutions() { mixin(MGF("mLoadResolutions", "Function TribesGame.TrVideoSettings.LoadResolutions")); }
+			ScriptFunction AddResolutionToList() { mixin(MGF("mAddResolutionToList", "Function TribesGame.TrVideoSettings.AddResolutionToList")); }
+			ScriptFunction GetSettingNameFromType() { mixin(MGF("mGetSettingNameFromType", "Function TribesGame.TrVideoSettings.GetSettingNameFromType")); }
+			ScriptFunction GetSettingTypeFromName() { mixin(MGF("mGetSettingTypeFromName", "Function TribesGame.TrVideoSettings.GetSettingTypeFromName")); }
+			ScriptFunction CacheVideoSetting() { mixin(MGF("mCacheVideoSetting", "Function TribesGame.TrVideoSettings.CacheVideoSetting")); }
+			ScriptFunction SetSmoothFramerateValue() { mixin(MGF("mSetSmoothFramerateValue", "Function TribesGame.TrVideoSettings.SetSmoothFramerateValue")); }
 		}
 	}
 	enum EVideoSettingType : ubyte
@@ -102,26 +102,26 @@ public extern(D):
 		private ubyte __buffer__[8];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrVideoSettings.ResolutionData")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrVideoSettings.ResolutionData")); }
 		@property final auto ref
 		{
-			int ResY() { mixin(MGPS!("int", 4)()); }
-			int ResX() { mixin(MGPS!("int", 0)()); }
+			int ResY() { mixin(MGPS("int", 4)); }
+			int ResX() { mixin(MGPS("int", 0)); }
 		}
 	}
 	@property final auto ref
 	{
-		int m_Cached_Resolution() { mixin(MGPC!("int", 156)()); }
-		int m_VideoSettingsCount() { mixin(MGPC!("int", 124)()); }
-		GFxObject m_VideoSettingsList() { mixin(MGPC!("GFxObject", 132)()); }
-		int m_ResolutionCount() { mixin(MGPC!("int", 120)()); }
-		GFxObject m_ResolutionList() { mixin(MGPC!("GFxObject", 128)()); }
-		int m_Cached_ShadowDetail() { mixin(MGPC!("int", 136)()); }
-		int m_Cached_TextureDetail() { mixin(MGPC!("int", 140)()); }
-		int m_Cached_ScreenType() { mixin(MGPC!("int", 144)()); }
-		int m_Cached_MotionBlur() { mixin(MGPC!("int", 148)()); }
-		int m_Cached_VerticalSync() { mixin(MGPC!("int", 152)()); }
-		int m_Cached_SmoothFramerate() { mixin(MGPC!("int", 160)()); }
+		int m_Cached_Resolution() { mixin(MGPC("int", 156)); }
+		int m_VideoSettingsCount() { mixin(MGPC("int", 124)); }
+		GFxObject m_VideoSettingsList() { mixin(MGPC("GFxObject", 132)); }
+		int m_ResolutionCount() { mixin(MGPC("int", 120)); }
+		GFxObject m_ResolutionList() { mixin(MGPC("GFxObject", 128)); }
+		int m_Cached_ShadowDetail() { mixin(MGPC("int", 136)); }
+		int m_Cached_TextureDetail() { mixin(MGPC("int", 140)); }
+		int m_Cached_ScreenType() { mixin(MGPC("int", 144)); }
+		int m_Cached_MotionBlur() { mixin(MGPC("int", 148)); }
+		int m_Cached_VerticalSync() { mixin(MGPC("int", 152)); }
+		int m_Cached_SmoothFramerate() { mixin(MGPC("int", 160)); }
 	}
 final:
 	int GetCurrentSettingValue(TrVideoSettings.EVideoSettingType Type)

@@ -16,9 +16,9 @@ extern(C++) interface TrDmgType_Base : UTDamageType
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDmgType_Base")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDmgType_Base")); }
 	private static __gshared TrDmgType_Base mDefaultProperties;
-	@property final static TrDmgType_Base DefaultProperties() { mixin(MGDPC!(TrDmgType_Base, "TrDmgType_Base TribesGame.Default__TrDmgType_Base")()); }
+	@property final static TrDmgType_Base DefaultProperties() { mixin(MGDPC("TrDmgType_Base", "TrDmgType_Base TribesGame.Default__TrDmgType_Base")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -33,53 +33,53 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction CalculateRangeDamageFalloff() { mixin(MGF!("mCalculateRangeDamageFalloff", "Function TribesGame.TrDmgType_Base.CalculateRangeDamageFalloff")()); }
-			ScriptFunction GetActorCausingDamage() { mixin(MGF!("mGetActorCausingDamage", "Function TribesGame.TrDmgType_Base.GetActorCausingDamage")()); }
-			ScriptFunction ModifyOverheadNumberLocation() { mixin(MGF!("mModifyOverheadNumberLocation", "Function TribesGame.TrDmgType_Base.ModifyOverheadNumberLocation")()); }
-			ScriptFunction GetDamageScale() { mixin(MGF!("mGetDamageScale", "Function TribesGame.TrDmgType_Base.GetDamageScale")()); }
-			ScriptFunction GetRandomDeathAnimName() { mixin(MGF!("mGetRandomDeathAnimName", "Function TribesGame.TrDmgType_Base.GetRandomDeathAnimName")()); }
-			ScriptFunction VehicleDamageScalingFor() { mixin(MGF!("mVehicleDamageScalingFor", "Function TribesGame.TrDmgType_Base.VehicleDamageScalingFor")()); }
-			ScriptFunction GetCameraShake() { mixin(MGF!("mGetCameraShake", "Function TribesGame.TrDmgType_Base.GetCameraShake")()); }
+			ScriptFunction CalculateRangeDamageFalloff() { mixin(MGF("mCalculateRangeDamageFalloff", "Function TribesGame.TrDmgType_Base.CalculateRangeDamageFalloff")); }
+			ScriptFunction GetActorCausingDamage() { mixin(MGF("mGetActorCausingDamage", "Function TribesGame.TrDmgType_Base.GetActorCausingDamage")); }
+			ScriptFunction ModifyOverheadNumberLocation() { mixin(MGF("mModifyOverheadNumberLocation", "Function TribesGame.TrDmgType_Base.ModifyOverheadNumberLocation")); }
+			ScriptFunction GetDamageScale() { mixin(MGF("mGetDamageScale", "Function TribesGame.TrDmgType_Base.GetDamageScale")); }
+			ScriptFunction GetRandomDeathAnimName() { mixin(MGF("mGetRandomDeathAnimName", "Function TribesGame.TrDmgType_Base.GetRandomDeathAnimName")); }
+			ScriptFunction VehicleDamageScalingFor() { mixin(MGF("mVehicleDamageScalingFor", "Function TribesGame.TrDmgType_Base.VehicleDamageScalingFor")); }
+			ScriptFunction GetCameraShake() { mixin(MGF("mGetCameraShake", "Function TribesGame.TrDmgType_Base.GetCameraShake")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int DBWeaponId() { mixin(MGPC!("int", 300)()); }
-			float m_fDamageMultiplierAgainstArmor() { mixin(MGPC!("float", 328)()); }
-			float m_fDamageMultiplierAgainstNonArmoredObjectives() { mixin(MGPC!("float", 336)()); }
-			float m_EnergyDrainAmount() { mixin(MGPC!("float", 396)()); }
-			SoundCue m_RingingSound() { mixin(MGPC!("SoundCue", 380)()); }
-			ScriptName m_nmTakeHitSoundMode() { mixin(MGPC!("ScriptName", 384)()); }
-			float m_fGibRadius() { mixin(MGPC!("float", 348)()); }
-			float m_fGibStrength() { mixin(MGPC!("float", 352)()); }
-			PrimitiveComponent.ERadialImpulseFalloff m_GibFalloff() { mixin(MGPC!("PrimitiveComponent.ERadialImpulseFalloff", 356)()); }
-			float m_fDamageMultiplierAgainstGenerators() { mixin(MGPC!("float", 332)()); }
-			ScriptArray!(ScriptName) m_nmDeathAnimNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 360)()); }
-			UObject.Vector2D m_v2DDamageNumbersMinMaxZ() { mixin(MGPC!("UObject.Vector2D", 416)()); }
-			UObject.Vector2D m_v2DDamageNumbersMinMaxY() { mixin(MGPC!("UObject.Vector2D", 408)()); }
-			UObject.Vector2D m_v2DDamageNumbersMinMaxX() { mixin(MGPC!("UObject.Vector2D", 400)()); }
-			int m_nKillIconIndex() { mixin(MGPC!("int", 392)()); }
-			ScriptName m_nmCameraShake() { mixin(MGPC!("ScriptName", 372)()); }
-			float m_fDamageMultiplierAgainstShrike() { mixin(MGPC!("float", 340)()); }
-			float m_fBulletDamageRange() { mixin(MGPC!("float", 324)()); }
-			float m_fMinDamagePct() { mixin(MGPC!("float", 320)()); }
-			float m_fMinDamageRangePct() { mixin(MGPC!("float", 316)()); }
-			float m_fMaxDamageRangePct() { mixin(MGPC!("float", 312)()); }
-			int DBWeaponTypeId() { mixin(MGPC!("int", 308)()); }
-			int DBWeaponBaseId() { mixin(MGPC!("int", 304)()); }
+			int DBWeaponId() { mixin(MGPC("int", 300)); }
+			float m_fDamageMultiplierAgainstArmor() { mixin(MGPC("float", 328)); }
+			float m_fDamageMultiplierAgainstNonArmoredObjectives() { mixin(MGPC("float", 336)); }
+			float m_EnergyDrainAmount() { mixin(MGPC("float", 396)); }
+			SoundCue m_RingingSound() { mixin(MGPC("SoundCue", 380)); }
+			ScriptName m_nmTakeHitSoundMode() { mixin(MGPC("ScriptName", 384)); }
+			float m_fGibRadius() { mixin(MGPC("float", 348)); }
+			float m_fGibStrength() { mixin(MGPC("float", 352)); }
+			PrimitiveComponent.ERadialImpulseFalloff m_GibFalloff() { mixin(MGPC("PrimitiveComponent.ERadialImpulseFalloff", 356)); }
+			float m_fDamageMultiplierAgainstGenerators() { mixin(MGPC("float", 332)); }
+			ScriptArray!(ScriptName) m_nmDeathAnimNames() { mixin(MGPC("ScriptArray!(ScriptName)", 360)); }
+			UObject.Vector2D m_v2DDamageNumbersMinMaxZ() { mixin(MGPC("UObject.Vector2D", 416)); }
+			UObject.Vector2D m_v2DDamageNumbersMinMaxY() { mixin(MGPC("UObject.Vector2D", 408)); }
+			UObject.Vector2D m_v2DDamageNumbersMinMaxX() { mixin(MGPC("UObject.Vector2D", 400)); }
+			int m_nKillIconIndex() { mixin(MGPC("int", 392)); }
+			ScriptName m_nmCameraShake() { mixin(MGPC("ScriptName", 372)); }
+			float m_fDamageMultiplierAgainstShrike() { mixin(MGPC("float", 340)); }
+			float m_fBulletDamageRange() { mixin(MGPC("float", 324)); }
+			float m_fMinDamagePct() { mixin(MGPC("float", 320)); }
+			float m_fMinDamageRangePct() { mixin(MGPC("float", 316)); }
+			float m_fMaxDamageRangePct() { mixin(MGPC("float", 312)); }
+			int DBWeaponTypeId() { mixin(MGPC("int", 308)); }
+			int DBWeaponBaseId() { mixin(MGPC("int", 304)); }
 		}
-		bool m_bCausesGib() { mixin(MGBPC!(344, 0x1)()); }
-		bool m_bCausesGib(bool val) { mixin(MSBPC!(344, 0x1)()); }
-		bool m_bEnableMotors() { mixin(MGBPC!(344, 0x2)()); }
-		bool m_bEnableMotors(bool val) { mixin(MSBPC!(344, 0x2)()); }
-		bool bOffhandType() { mixin(MGBPC!(344, 0x10)()); }
-		bool bOffhandType(bool val) { mixin(MSBPC!(344, 0x10)()); }
-		bool m_bImpulsesFlags() { mixin(MGBPC!(344, 0x8)()); }
-		bool m_bImpulsesFlags(bool val) { mixin(MSBPC!(344, 0x8)()); }
-		bool m_bIgnoreDamageFalloff() { mixin(MGBPC!(344, 0x4)()); }
-		bool m_bIgnoreDamageFalloff(bool val) { mixin(MSBPC!(344, 0x4)()); }
+		bool m_bCausesGib() { mixin(MGBPC(344, 0x1)); }
+		bool m_bCausesGib(bool val) { mixin(MSBPC(344, 0x1)); }
+		bool m_bEnableMotors() { mixin(MGBPC(344, 0x2)); }
+		bool m_bEnableMotors(bool val) { mixin(MSBPC(344, 0x2)); }
+		bool bOffhandType() { mixin(MGBPC(344, 0x10)); }
+		bool bOffhandType(bool val) { mixin(MSBPC(344, 0x10)); }
+		bool m_bImpulsesFlags() { mixin(MGBPC(344, 0x8)); }
+		bool m_bImpulsesFlags(bool val) { mixin(MSBPC(344, 0x8)); }
+		bool m_bIgnoreDamageFalloff() { mixin(MGBPC(344, 0x4)); }
+		bool m_bIgnoreDamageFalloff(bool val) { mixin(MSBPC(344, 0x4)); }
 	}
 final:
 	static float CalculateRangeDamageFalloff(float Dist, float damageRange, TrPlayerController* TrPCDamager = null, TrObject.TR_EQUIP_POINT* EquipPoint = null, bool* bMinDamageAlwaysApplied = null)

@@ -8,7 +8,7 @@ extern(C++) interface TextBufferExporterTXT : Exporter
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.TextBufferExporterTXT")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.TextBufferExporterTXT")); }
 	private static __gshared TextBufferExporterTXT mDefaultProperties;
-	@property final static TextBufferExporterTXT DefaultProperties() { mixin(MGDPC!(TextBufferExporterTXT, "TextBufferExporterTXT UnrealEd.Default__TextBufferExporterTXT")()); }
+	@property final static TextBufferExporterTXT DefaultProperties() { mixin(MGDPC("TextBufferExporterTXT", "TextBufferExporterTXT UnrealEd.Default__TextBufferExporterTXT")); }
 }

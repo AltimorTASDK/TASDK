@@ -9,9 +9,9 @@ extern(C++) interface TrSubDevice : TrDevice
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrSubDevice")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrSubDevice")); }
 	private static __gshared TrSubDevice mDefaultProperties;
-	@property final static TrSubDevice DefaultProperties() { mixin(MGDPC!(TrSubDevice, "TrSubDevice TribesGame.Default__TrSubDevice")()); }
+	@property final static TrSubDevice DefaultProperties() { mixin(MGDPC("TrSubDevice", "TrSubDevice TribesGame.Default__TrSubDevice")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -21,8 +21,8 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Reset() { mixin(MGF!("mReset", "Function TribesGame.TrSubDevice.Reset")()); }
-			ScriptFunction CalcWeaponFire() { mixin(MGF!("mCalcWeaponFire", "Function TribesGame.TrSubDevice.CalcWeaponFire")()); }
+			ScriptFunction Reset() { mixin(MGF("mReset", "Function TribesGame.TrSubDevice.Reset")); }
+			ScriptFunction CalcWeaponFire() { mixin(MGF("mCalcWeaponFire", "Function TribesGame.TrSubDevice.CalcWeaponFire")); }
 		}
 	}
 final:

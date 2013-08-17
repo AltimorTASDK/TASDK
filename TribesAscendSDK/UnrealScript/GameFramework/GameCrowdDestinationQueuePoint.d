@@ -10,9 +10,9 @@ extern(C++) interface GameCrowdDestinationQueuePoint : GameCrowdInteractionPoint
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class GameFramework.GameCrowdDestinationQueuePoint")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class GameFramework.GameCrowdDestinationQueuePoint")); }
 	private static __gshared GameCrowdDestinationQueuePoint mDefaultProperties;
-	@property final static GameCrowdDestinationQueuePoint DefaultProperties() { mixin(MGDPC!(GameCrowdDestinationQueuePoint, "GameCrowdDestinationQueuePoint GameFramework.Default__GameCrowdDestinationQueuePoint")()); }
+	@property final static GameCrowdDestinationQueuePoint DefaultProperties() { mixin(MGDPC("GameCrowdDestinationQueuePoint", "GameCrowdDestinationQueuePoint GameFramework.Default__GameCrowdDestinationQueuePoint")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,31 +28,31 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction HasCustomer() { mixin(MGF!("mHasCustomer", "Function GameFramework.GameCrowdDestinationQueuePoint.HasCustomer")()); }
-			ScriptFunction HasSpace() { mixin(MGF!("mHasSpace", "Function GameFramework.GameCrowdDestinationQueuePoint.HasSpace")()); }
-			ScriptFunction QueueReachedBy() { mixin(MGF!("mQueueReachedBy", "Function GameFramework.GameCrowdDestinationQueuePoint.QueueReachedBy")()); }
-			ScriptFunction ReachedDestination() { mixin(MGF!("mReachedDestination", "Function GameFramework.GameCrowdDestinationQueuePoint.ReachedDestination")()); }
-			ScriptFunction AdvanceCustomerTo() { mixin(MGF!("mAdvanceCustomerTo", "Function GameFramework.GameCrowdDestinationQueuePoint.AdvanceCustomerTo")()); }
-			ScriptFunction ActuallyAdvance() { mixin(MGF!("mActuallyAdvance", "Function GameFramework.GameCrowdDestinationQueuePoint.ActuallyAdvance")()); }
-			ScriptFunction AddCustomer() { mixin(MGF!("mAddCustomer", "Function GameFramework.GameCrowdDestinationQueuePoint.AddCustomer")()); }
-			ScriptFunction ClearQueue() { mixin(MGF!("mClearQueue", "Function GameFramework.GameCrowdDestinationQueuePoint.ClearQueue")()); }
+			ScriptFunction HasCustomer() { mixin(MGF("mHasCustomer", "Function GameFramework.GameCrowdDestinationQueuePoint.HasCustomer")); }
+			ScriptFunction HasSpace() { mixin(MGF("mHasSpace", "Function GameFramework.GameCrowdDestinationQueuePoint.HasSpace")); }
+			ScriptFunction QueueReachedBy() { mixin(MGF("mQueueReachedBy", "Function GameFramework.GameCrowdDestinationQueuePoint.QueueReachedBy")); }
+			ScriptFunction ReachedDestination() { mixin(MGF("mReachedDestination", "Function GameFramework.GameCrowdDestinationQueuePoint.ReachedDestination")); }
+			ScriptFunction AdvanceCustomerTo() { mixin(MGF("mAdvanceCustomerTo", "Function GameFramework.GameCrowdDestinationQueuePoint.AdvanceCustomerTo")); }
+			ScriptFunction ActuallyAdvance() { mixin(MGF("mActuallyAdvance", "Function GameFramework.GameCrowdDestinationQueuePoint.ActuallyAdvance")); }
+			ScriptFunction AddCustomer() { mixin(MGF("mAddCustomer", "Function GameFramework.GameCrowdDestinationQueuePoint.AddCustomer")); }
+			ScriptFunction ClearQueue() { mixin(MGF("mClearQueue", "Function GameFramework.GameCrowdDestinationQueuePoint.ClearQueue")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GameCrowdAgent QueuedAgent() { mixin(MGPC!("GameCrowdAgent", 492)()); }
-			GameCrowdDestinationQueuePoint NextQueuePosition() { mixin(MGPC!("GameCrowdDestinationQueuePoint", 484)()); }
-			ScriptClass QueueBehaviorClass() { mixin(MGPC!("ScriptClass", 508)()); }
-			float AverageReactionTime() { mixin(MGPC!("float", 504)()); }
-			GameCrowdDestination QueueDestination() { mixin(MGPC!("GameCrowdDestination", 496)()); }
-			GameCrowdInteractionPoint PreviousQueuePosition() { mixin(MGPC!("GameCrowdInteractionPoint", 488)()); }
+			GameCrowdAgent QueuedAgent() { mixin(MGPC("GameCrowdAgent", 492)); }
+			GameCrowdDestinationQueuePoint NextQueuePosition() { mixin(MGPC("GameCrowdDestinationQueuePoint", 484)); }
+			ScriptClass QueueBehaviorClass() { mixin(MGPC("ScriptClass", 508)); }
+			float AverageReactionTime() { mixin(MGPC("float", 504)); }
+			GameCrowdDestination QueueDestination() { mixin(MGPC("GameCrowdDestination", 496)); }
+			GameCrowdInteractionPoint PreviousQueuePosition() { mixin(MGPC("GameCrowdInteractionPoint", 488)); }
 		}
-		bool bPendingAdvance() { mixin(MGBPC!(500, 0x2)()); }
-		bool bPendingAdvance(bool val) { mixin(MSBPC!(500, 0x2)()); }
-		bool bClearingQueue() { mixin(MGBPC!(500, 0x1)()); }
-		bool bClearingQueue(bool val) { mixin(MSBPC!(500, 0x1)()); }
+		bool bPendingAdvance() { mixin(MGBPC(500, 0x2)); }
+		bool bPendingAdvance(bool val) { mixin(MSBPC(500, 0x2)); }
+		bool bClearingQueue() { mixin(MGBPC(500, 0x1)); }
+		bool bClearingQueue(bool val) { mixin(MSBPC(500, 0x1)); }
 	}
 final:
 	bool HasCustomer()

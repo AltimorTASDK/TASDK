@@ -17,9 +17,9 @@ extern(C++) interface UTWeaponPawn : UDKWeaponPawn
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTWeaponPawn")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTWeaponPawn")); }
 	private static __gshared UTWeaponPawn mDefaultProperties;
-	@property final static UTWeaponPawn DefaultProperties() { mixin(MGDPC!(UTWeaponPawn, "UTWeaponPawn UTGame.Default__UTWeaponPawn")()); }
+	@property final static UTWeaponPawn DefaultProperties() { mixin(MGDPC("UTWeaponPawn", "UTWeaponPawn UTGame.Default__UTWeaponPawn")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -59,38 +59,38 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetVehicleDrivingStatName() { mixin(MGF!("mGetVehicleDrivingStatName", "Function UTGame.UTWeaponPawn.GetVehicleDrivingStatName")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTWeaponPawn.DisplayDebug")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UTGame.UTWeaponPawn.ReplicatedEvent")()); }
-			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function UTGame.UTWeaponPawn.CalcCamera")()); }
-			ScriptFunction ProcessViewRotation() { mixin(MGF!("mProcessViewRotation", "Function UTGame.UTWeaponPawn.ProcessViewRotation")()); }
-			ScriptFunction SetFiringMode() { mixin(MGF!("mSetFiringMode", "Function UTGame.UTWeaponPawn.SetFiringMode")()); }
-			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function UTGame.UTWeaponPawn.IncrementFlashCount")()); }
-			ScriptFunction ClearFlashCount() { mixin(MGF!("mClearFlashCount", "Function UTGame.UTWeaponPawn.ClearFlashCount")()); }
-			ScriptFunction SetFlashLocation() { mixin(MGF!("mSetFlashLocation", "Function UTGame.UTWeaponPawn.SetFlashLocation")()); }
-			ScriptFunction ClearFlashLocation() { mixin(MGF!("mClearFlashLocation", "Function UTGame.UTWeaponPawn.ClearFlashLocation")()); }
-			ScriptFunction PossessedBy() { mixin(MGF!("mPossessedBy", "Function UTGame.UTWeaponPawn.PossessedBy")()); }
-			ScriptFunction DriverLeft() { mixin(MGF!("mDriverLeft", "Function UTGame.UTWeaponPawn.DriverLeft")()); }
-			ScriptFunction ServerAdjacentSeat() { mixin(MGF!("mServerAdjacentSeat", "Function UTGame.UTWeaponPawn.ServerAdjacentSeat")()); }
-			ScriptFunction ServerChangeSeat() { mixin(MGF!("mServerChangeSeat", "Function UTGame.UTWeaponPawn.ServerChangeSeat")()); }
-			ScriptFunction AdjustCameraScale() { mixin(MGF!("mAdjustCameraScale", "Function UTGame.UTWeaponPawn.AdjustCameraScale")()); }
-			ScriptFunction PlaceExitingDriver() { mixin(MGF!("mPlaceExitingDriver", "Function UTGame.UTWeaponPawn.PlaceExitingDriver")()); }
-			ScriptFunction DropToGround() { mixin(MGF!("mDropToGround", "Function UTGame.UTWeaponPawn.DropToGround")()); }
-			ScriptFunction AddVelocity() { mixin(MGF!("mAddVelocity", "Function UTGame.UTWeaponPawn.AddVelocity")()); }
-			ScriptFunction JumpOffPawn() { mixin(MGF!("mJumpOffPawn", "Function UTGame.UTWeaponPawn.JumpOffPawn")()); }
-			ScriptFunction BaseChange() { mixin(MGF!("mBaseChange", "Function UTGame.UTWeaponPawn.BaseChange")()); }
-			ScriptFunction SetMovementPhysics() { mixin(MGF!("mSetMovementPhysics", "Function UTGame.UTWeaponPawn.SetMovementPhysics")()); }
-			ScriptFunction DoJump() { mixin(MGF!("mDoJump", "Function UTGame.UTWeaponPawn.DoJump")()); }
-			ScriptFunction GetCollisionRadius() { mixin(MGF!("mGetCollisionRadius", "Function UTGame.UTWeaponPawn.GetCollisionRadius")()); }
-			ScriptFunction SetBaseEyeheight() { mixin(MGF!("mSetBaseEyeheight", "Function UTGame.UTWeaponPawn.SetBaseEyeheight")()); }
-			ScriptFunction AttachDriver() { mixin(MGF!("mAttachDriver", "Function UTGame.UTWeaponPawn.AttachDriver")()); }
-			ScriptFunction HoldGameObject() { mixin(MGF!("mHoldGameObject", "Function UTGame.UTWeaponPawn.HoldGameObject")()); }
-			ScriptFunction FaceRotation() { mixin(MGF!("mFaceRotation", "Function UTGame.UTWeaponPawn.FaceRotation")()); }
-			ScriptFunction DriverLeave() { mixin(MGF!("mDriverLeave", "Function UTGame.UTWeaponPawn.DriverLeave")()); }
-			ScriptFunction Died() { mixin(MGF!("mDied", "Function UTGame.UTWeaponPawn.Died")()); }
-			ScriptFunction TooCloseToAttack() { mixin(MGF!("mTooCloseToAttack", "Function UTGame.UTWeaponPawn.TooCloseToAttack")()); }
-			ScriptFunction DisplayHud() { mixin(MGF!("mDisplayHud", "Function UTGame.UTWeaponPawn.DisplayHud")()); }
-			ScriptFunction ApplyWeaponEffects() { mixin(MGF!("mApplyWeaponEffects", "Function UTGame.UTWeaponPawn.ApplyWeaponEffects")()); }
+			ScriptFunction GetVehicleDrivingStatName() { mixin(MGF("mGetVehicleDrivingStatName", "Function UTGame.UTWeaponPawn.GetVehicleDrivingStatName")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function UTGame.UTWeaponPawn.DisplayDebug")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UTGame.UTWeaponPawn.ReplicatedEvent")); }
+			ScriptFunction CalcCamera() { mixin(MGF("mCalcCamera", "Function UTGame.UTWeaponPawn.CalcCamera")); }
+			ScriptFunction ProcessViewRotation() { mixin(MGF("mProcessViewRotation", "Function UTGame.UTWeaponPawn.ProcessViewRotation")); }
+			ScriptFunction SetFiringMode() { mixin(MGF("mSetFiringMode", "Function UTGame.UTWeaponPawn.SetFiringMode")); }
+			ScriptFunction IncrementFlashCount() { mixin(MGF("mIncrementFlashCount", "Function UTGame.UTWeaponPawn.IncrementFlashCount")); }
+			ScriptFunction ClearFlashCount() { mixin(MGF("mClearFlashCount", "Function UTGame.UTWeaponPawn.ClearFlashCount")); }
+			ScriptFunction SetFlashLocation() { mixin(MGF("mSetFlashLocation", "Function UTGame.UTWeaponPawn.SetFlashLocation")); }
+			ScriptFunction ClearFlashLocation() { mixin(MGF("mClearFlashLocation", "Function UTGame.UTWeaponPawn.ClearFlashLocation")); }
+			ScriptFunction PossessedBy() { mixin(MGF("mPossessedBy", "Function UTGame.UTWeaponPawn.PossessedBy")); }
+			ScriptFunction DriverLeft() { mixin(MGF("mDriverLeft", "Function UTGame.UTWeaponPawn.DriverLeft")); }
+			ScriptFunction ServerAdjacentSeat() { mixin(MGF("mServerAdjacentSeat", "Function UTGame.UTWeaponPawn.ServerAdjacentSeat")); }
+			ScriptFunction ServerChangeSeat() { mixin(MGF("mServerChangeSeat", "Function UTGame.UTWeaponPawn.ServerChangeSeat")); }
+			ScriptFunction AdjustCameraScale() { mixin(MGF("mAdjustCameraScale", "Function UTGame.UTWeaponPawn.AdjustCameraScale")); }
+			ScriptFunction PlaceExitingDriver() { mixin(MGF("mPlaceExitingDriver", "Function UTGame.UTWeaponPawn.PlaceExitingDriver")); }
+			ScriptFunction DropToGround() { mixin(MGF("mDropToGround", "Function UTGame.UTWeaponPawn.DropToGround")); }
+			ScriptFunction AddVelocity() { mixin(MGF("mAddVelocity", "Function UTGame.UTWeaponPawn.AddVelocity")); }
+			ScriptFunction JumpOffPawn() { mixin(MGF("mJumpOffPawn", "Function UTGame.UTWeaponPawn.JumpOffPawn")); }
+			ScriptFunction BaseChange() { mixin(MGF("mBaseChange", "Function UTGame.UTWeaponPawn.BaseChange")); }
+			ScriptFunction SetMovementPhysics() { mixin(MGF("mSetMovementPhysics", "Function UTGame.UTWeaponPawn.SetMovementPhysics")); }
+			ScriptFunction DoJump() { mixin(MGF("mDoJump", "Function UTGame.UTWeaponPawn.DoJump")); }
+			ScriptFunction GetCollisionRadius() { mixin(MGF("mGetCollisionRadius", "Function UTGame.UTWeaponPawn.GetCollisionRadius")); }
+			ScriptFunction SetBaseEyeheight() { mixin(MGF("mSetBaseEyeheight", "Function UTGame.UTWeaponPawn.SetBaseEyeheight")); }
+			ScriptFunction AttachDriver() { mixin(MGF("mAttachDriver", "Function UTGame.UTWeaponPawn.AttachDriver")); }
+			ScriptFunction HoldGameObject() { mixin(MGF("mHoldGameObject", "Function UTGame.UTWeaponPawn.HoldGameObject")); }
+			ScriptFunction FaceRotation() { mixin(MGF("mFaceRotation", "Function UTGame.UTWeaponPawn.FaceRotation")); }
+			ScriptFunction DriverLeave() { mixin(MGF("mDriverLeave", "Function UTGame.UTWeaponPawn.DriverLeave")); }
+			ScriptFunction Died() { mixin(MGF("mDied", "Function UTGame.UTWeaponPawn.Died")); }
+			ScriptFunction TooCloseToAttack() { mixin(MGF("mTooCloseToAttack", "Function UTGame.UTWeaponPawn.TooCloseToAttack")); }
+			ScriptFunction DisplayHud() { mixin(MGF("mDisplayHud", "Function UTGame.UTWeaponPawn.DisplayHud")); }
+			ScriptFunction ApplyWeaponEffects() { mixin(MGF("mApplyWeaponEffects", "Function UTGame.UTWeaponPawn.ApplyWeaponEffects")); }
 		}
 	}
 final:

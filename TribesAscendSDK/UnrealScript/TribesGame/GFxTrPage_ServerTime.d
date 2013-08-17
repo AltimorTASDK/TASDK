@@ -10,9 +10,9 @@ extern(C++) interface GFxTrPage_ServerTime : GFxTrPage
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.GFxTrPage_ServerTime")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.GFxTrPage_ServerTime")); }
 	private static __gshared GFxTrPage_ServerTime mDefaultProperties;
-	@property final static GFxTrPage_ServerTime DefaultProperties() { mixin(MGDPC!(GFxTrPage_ServerTime, "GFxTrPage_ServerTime TribesGame.Default__GFxTrPage_ServerTime")()); }
+	@property final static GFxTrPage_ServerTime DefaultProperties() { mixin(MGDPC("GFxTrPage_ServerTime", "GFxTrPage_ServerTime TribesGame.Default__GFxTrPage_ServerTime")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -30,35 +30,35 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrPage_ServerTime.Initialize")()); }
-			ScriptFunction SpecialAction() { mixin(MGF!("mSpecialAction", "Function TribesGame.GFxTrPage_ServerTime.SpecialAction")()); }
-			ScriptFunction PopupData() { mixin(MGF!("mPopupData", "Function TribesGame.GFxTrPage_ServerTime.PopupData")()); }
-			ScriptFunction PopupComplete() { mixin(MGF!("mPopupComplete", "Function TribesGame.GFxTrPage_ServerTime.PopupComplete")()); }
-			ScriptFunction ShowBoundsError() { mixin(MGF!("mShowBoundsError", "Function TribesGame.GFxTrPage_ServerTime.ShowBoundsError")()); }
-			ScriptFunction FillData() { mixin(MGF!("mFillData", "Function TribesGame.GFxTrPage_ServerTime.FillData")()); }
-			ScriptFunction FillOption() { mixin(MGF!("mFillOption", "Function TribesGame.GFxTrPage_ServerTime.FillOption")()); }
-			ScriptFunction CheckDescription() { mixin(MGF!("mCheckDescription", "Function TribesGame.GFxTrPage_ServerTime.CheckDescription")()); }
-			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_ServerTime.FillDescription")()); }
-			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_ServerTime.ShowModel")()); }
+			ScriptFunction Initialize() { mixin(MGF("mInitialize", "Function TribesGame.GFxTrPage_ServerTime.Initialize")); }
+			ScriptFunction SpecialAction() { mixin(MGF("mSpecialAction", "Function TribesGame.GFxTrPage_ServerTime.SpecialAction")); }
+			ScriptFunction PopupData() { mixin(MGF("mPopupData", "Function TribesGame.GFxTrPage_ServerTime.PopupData")); }
+			ScriptFunction PopupComplete() { mixin(MGF("mPopupComplete", "Function TribesGame.GFxTrPage_ServerTime.PopupComplete")); }
+			ScriptFunction ShowBoundsError() { mixin(MGF("mShowBoundsError", "Function TribesGame.GFxTrPage_ServerTime.ShowBoundsError")); }
+			ScriptFunction FillData() { mixin(MGF("mFillData", "Function TribesGame.GFxTrPage_ServerTime.FillData")); }
+			ScriptFunction FillOption() { mixin(MGF("mFillOption", "Function TribesGame.GFxTrPage_ServerTime.FillOption")); }
+			ScriptFunction CheckDescription() { mixin(MGF("mCheckDescription", "Function TribesGame.GFxTrPage_ServerTime.CheckDescription")); }
+			ScriptFunction FillDescription() { mixin(MGF("mFillDescription", "Function TribesGame.GFxTrPage_ServerTime.FillDescription")); }
+			ScriptFunction ShowModel() { mixin(MGF("mShowModel", "Function TribesGame.GFxTrPage_ServerTime.ShowModel")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxBOunds() { mixin(MGPC!("int", 360)()); }
-			int MinBounds() { mixin(MGPC!("int", 356)()); }
+			int MaxBOunds() { mixin(MGPC("int", 360)); }
+			int MinBounds() { mixin(MGPC("int", 356)); }
 		}
-		bool bBoundsPopup() { mixin(MGBPC!(364, 0x10)()); }
-		bool bBoundsPopup(bool val) { mixin(MSBPC!(364, 0x10)()); }
-		bool bRespawnTimePopup() { mixin(MGBPC!(364, 0x8)()); }
-		bool bRespawnTimePopup(bool val) { mixin(MSBPC!(364, 0x8)()); }
-		bool bOverTimeLimitPopup() { mixin(MGBPC!(364, 0x4)()); }
-		bool bOverTimeLimitPopup(bool val) { mixin(MSBPC!(364, 0x4)()); }
-		bool bTimeLimitPopup() { mixin(MGBPC!(364, 0x2)()); }
-		bool bTimeLimitPopup(bool val) { mixin(MSBPC!(364, 0x2)()); }
-		bool bWarmupTimePopup() { mixin(MGBPC!(364, 0x1)()); }
-		bool bWarmupTimePopup(bool val) { mixin(MSBPC!(364, 0x1)()); }
+		bool bBoundsPopup() { mixin(MGBPC(364, 0x10)); }
+		bool bBoundsPopup(bool val) { mixin(MSBPC(364, 0x10)); }
+		bool bRespawnTimePopup() { mixin(MGBPC(364, 0x8)); }
+		bool bRespawnTimePopup(bool val) { mixin(MSBPC(364, 0x8)); }
+		bool bOverTimeLimitPopup() { mixin(MGBPC(364, 0x4)); }
+		bool bOverTimeLimitPopup(bool val) { mixin(MSBPC(364, 0x4)); }
+		bool bTimeLimitPopup() { mixin(MGBPC(364, 0x2)); }
+		bool bTimeLimitPopup(bool val) { mixin(MSBPC(364, 0x2)); }
+		bool bWarmupTimePopup() { mixin(MGBPC(364, 0x1)); }
+		bool bWarmupTimePopup(bool val) { mixin(MSBPC(364, 0x1)); }
 	}
 final:
 	void Initialize()

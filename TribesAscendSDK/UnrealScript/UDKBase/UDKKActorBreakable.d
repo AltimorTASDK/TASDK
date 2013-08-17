@@ -11,9 +11,9 @@ extern(C++) interface UDKKActorBreakable : KActor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKKActorBreakable")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UDKBase.UDKKActorBreakable")); }
 	private static __gshared UDKKActorBreakable mDefaultProperties;
-	@property final static UDKKActorBreakable DefaultProperties() { mixin(MGDPC!(UDKKActorBreakable, "UDKKActorBreakable UDKBase.Default__UDKKActorBreakable")()); }
+	@property final static UDKKActorBreakable DefaultProperties() { mixin(MGDPC("UDKKActorBreakable", "UDKKActorBreakable UDKBase.Default__UDKKActorBreakable")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -27,12 +27,12 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction OnEncroach() { mixin(MGF!("mOnEncroach", "Function UDKBase.UDKKActorBreakable.OnEncroach")()); }
-			ScriptFunction OnBreakApart() { mixin(MGF!("mOnBreakApart", "Function UDKBase.UDKKActorBreakable.OnBreakApart")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function UDKBase.UDKKActorBreakable.TakeDamage")()); }
-			ScriptFunction EncroachingOn() { mixin(MGF!("mEncroachingOn", "Function UDKBase.UDKKActorBreakable.EncroachingOn")()); }
-			ScriptFunction BreakApart() { mixin(MGF!("mBreakApart", "Function UDKBase.UDKKActorBreakable.BreakApart")()); }
-			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function UDKBase.UDKKActorBreakable.ReplicatedEvent")()); }
+			ScriptFunction OnEncroach() { mixin(MGF("mOnEncroach", "Function UDKBase.UDKKActorBreakable.OnEncroach")); }
+			ScriptFunction OnBreakApart() { mixin(MGF("mOnBreakApart", "Function UDKBase.UDKKActorBreakable.OnBreakApart")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function UDKBase.UDKKActorBreakable.TakeDamage")); }
+			ScriptFunction EncroachingOn() { mixin(MGF("mEncroachingOn", "Function UDKBase.UDKKActorBreakable.EncroachingOn")); }
+			ScriptFunction BreakApart() { mixin(MGF("mBreakApart", "Function UDKBase.UDKKActorBreakable.BreakApart")); }
+			ScriptFunction ReplicatedEvent() { mixin(MGF("mReplicatedEvent", "Function UDKBase.UDKKActorBreakable.ReplicatedEvent")); }
 		}
 	}
 	@property final
@@ -41,26 +41,26 @@ public extern(D):
 		{
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnEncroach__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnBreakApart__Delegate'!
-			Controller InstigatorController() { mixin(MGPC!("Controller", 740)()); }
-			ParticleSystem BrokenTemplate() { mixin(MGPC!("ParticleSystem", 736)()); }
-			int DOEResetThreshold() { mixin(MGPC!("int", 732)()); }
-			ScriptClass DmgTypeClass() { mixin(MGPC!("ScriptClass", 728)()); }
-			int EncroachDamage_Self() { mixin(MGPC!("int", 724)()); }
-			int EncroachDamage_Other() { mixin(MGPC!("int", 720)()); }
-			int Health() { mixin(MGPC!("int", 716)()); }
+			Controller InstigatorController() { mixin(MGPC("Controller", 740)); }
+			ParticleSystem BrokenTemplate() { mixin(MGPC("ParticleSystem", 736)); }
+			int DOEResetThreshold() { mixin(MGPC("int", 732)); }
+			ScriptClass DmgTypeClass() { mixin(MGPC("ScriptClass", 728)); }
+			int EncroachDamage_Self() { mixin(MGPC("int", 724)); }
+			int EncroachDamage_Other() { mixin(MGPC("int", 720)); }
+			int Health() { mixin(MGPC("int", 716)); }
 		}
-		bool bBroken() { mixin(MGBPC!(712, 0x20)()); }
-		bool bBroken(bool val) { mixin(MSBPC!(712, 0x20)()); }
-		bool bBreakWhenCausingDamage() { mixin(MGBPC!(712, 0x10)()); }
-		bool bBreakWhenCausingDamage(bool val) { mixin(MSBPC!(712, 0x10)()); }
-		bool bTakeDamageOnEncroachment() { mixin(MGBPC!(712, 0x8)()); }
-		bool bTakeDamageOnEncroachment(bool val) { mixin(MSBPC!(712, 0x8)()); }
-		bool bResetDOEWhenAsleep() { mixin(MGBPC!(712, 0x4)()); }
-		bool bResetDOEWhenAsleep(bool val) { mixin(MSBPC!(712, 0x4)()); }
-		bool bDamageOnEncroachment() { mixin(MGBPC!(712, 0x2)()); }
-		bool bDamageOnEncroachment(bool val) { mixin(MSBPC!(712, 0x2)()); }
-		bool bHasHealth() { mixin(MGBPC!(712, 0x1)()); }
-		bool bHasHealth(bool val) { mixin(MSBPC!(712, 0x1)()); }
+		bool bBroken() { mixin(MGBPC(712, 0x20)); }
+		bool bBroken(bool val) { mixin(MSBPC(712, 0x20)); }
+		bool bBreakWhenCausingDamage() { mixin(MGBPC(712, 0x10)); }
+		bool bBreakWhenCausingDamage(bool val) { mixin(MSBPC(712, 0x10)); }
+		bool bTakeDamageOnEncroachment() { mixin(MGBPC(712, 0x8)); }
+		bool bTakeDamageOnEncroachment(bool val) { mixin(MSBPC(712, 0x8)); }
+		bool bResetDOEWhenAsleep() { mixin(MGBPC(712, 0x4)); }
+		bool bResetDOEWhenAsleep(bool val) { mixin(MSBPC(712, 0x4)); }
+		bool bDamageOnEncroachment() { mixin(MGBPC(712, 0x2)); }
+		bool bDamageOnEncroachment(bool val) { mixin(MSBPC(712, 0x2)); }
+		bool bHasHealth() { mixin(MGBPC(712, 0x1)); }
+		bool bHasHealth(bool val) { mixin(MSBPC(712, 0x1)); }
 	}
 final:
 	bool OnEncroach(Actor Other)

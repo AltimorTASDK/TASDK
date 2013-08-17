@@ -8,9 +8,9 @@ extern(C++) interface UTGameSearchCommon : OnlineGameSearch
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGameSearchCommon")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTGameSearchCommon")); }
 	private static __gshared UTGameSearchCommon mDefaultProperties;
-	@property final static UTGameSearchCommon DefaultProperties() { mixin(MGDPC!(UTGameSearchCommon, "UTGameSearchCommon UTGame.Default__UTGameSearchCommon")()); }
+	@property final static UTGameSearchCommon DefaultProperties() { mixin(MGDPC("UTGameSearchCommon", "UTGameSearchCommon UTGame.Default__UTGameSearchCommon")); }
 	static struct Constants
 	{
 		enum

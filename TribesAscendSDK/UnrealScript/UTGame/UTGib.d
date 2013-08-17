@@ -18,9 +18,9 @@ extern(C++) interface UTGib : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTGib")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTGib")); }
 	private static __gshared UTGib mDefaultProperties;
-	@property final static UTGib DefaultProperties() { mixin(MGDPC!(UTGib, "UTGib UTGame.Default__UTGib")()); }
+	@property final static UTGib DefaultProperties() { mixin(MGDPC("UTGib", "UTGib UTGame.Default__UTGib")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -42,20 +42,20 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction PreBeginPlay() { mixin(MGF!("mPreBeginPlay", "Function UTGame.UTGib.PreBeginPlay")()); }
-			ScriptFunction SetTexturesToBeResident() { mixin(MGF!("mSetTexturesToBeResident", "Function UTGame.UTGib.SetTexturesToBeResident")()); }
-			ScriptFunction DisplayDebug() { mixin(MGF!("mDisplayDebug", "Function UTGame.UTGib.DisplayDebug")()); }
-			ScriptFunction SetGibStaticMesh() { mixin(MGF!("mSetGibStaticMesh", "Function UTGame.UTGib.SetGibStaticMesh")()); }
-			ScriptFunction ChooseGib() { mixin(MGF!("mChooseGib", "Function UTGame.UTGib.ChooseGib")()); }
-			ScriptFunction DoCustomGibEffects() { mixin(MGF!("mDoCustomGibEffects", "Function UTGame.UTGib.DoCustomGibEffects")()); }
-			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function UTGame.UTGib.Timer")()); }
-			ScriptFunction BecomeViewTarget() { mixin(MGF!("mBecomeViewTarget", "Function UTGame.UTGib.BecomeViewTarget")()); }
-			ScriptFunction CalcCamera() { mixin(MGF!("mCalcCamera", "Function UTGame.UTGib.CalcCamera")()); }
-			ScriptFunction RigidBodyCollision() { mixin(MGF!("mRigidBodyCollision", "Function UTGame.UTGib.RigidBodyCollision")()); }
-			ScriptFunction LeaveADecal() { mixin(MGF!("mLeaveADecal", "Function UTGame.UTGib.LeaveADecal")()); }
-			ScriptFunction TurnOnCollision() { mixin(MGF!("mTurnOnCollision", "Function UTGame.UTGib.TurnOnCollision")()); }
-			ScriptFunction Landed() { mixin(MGF!("mLanded", "Function UTGame.UTGib.Landed")()); }
-			ScriptFunction HitWall() { mixin(MGF!("mHitWall", "Function UTGame.UTGib.HitWall")()); }
+			ScriptFunction PreBeginPlay() { mixin(MGF("mPreBeginPlay", "Function UTGame.UTGib.PreBeginPlay")); }
+			ScriptFunction SetTexturesToBeResident() { mixin(MGF("mSetTexturesToBeResident", "Function UTGame.UTGib.SetTexturesToBeResident")); }
+			ScriptFunction DisplayDebug() { mixin(MGF("mDisplayDebug", "Function UTGame.UTGib.DisplayDebug")); }
+			ScriptFunction SetGibStaticMesh() { mixin(MGF("mSetGibStaticMesh", "Function UTGame.UTGib.SetGibStaticMesh")); }
+			ScriptFunction ChooseGib() { mixin(MGF("mChooseGib", "Function UTGame.UTGib.ChooseGib")); }
+			ScriptFunction DoCustomGibEffects() { mixin(MGF("mDoCustomGibEffects", "Function UTGame.UTGib.DoCustomGibEffects")); }
+			ScriptFunction Timer() { mixin(MGF("mTimer", "Function UTGame.UTGib.Timer")); }
+			ScriptFunction BecomeViewTarget() { mixin(MGF("mBecomeViewTarget", "Function UTGame.UTGib.BecomeViewTarget")); }
+			ScriptFunction CalcCamera() { mixin(MGF("mCalcCamera", "Function UTGame.UTGib.CalcCamera")); }
+			ScriptFunction RigidBodyCollision() { mixin(MGF("mRigidBodyCollision", "Function UTGame.UTGib.RigidBodyCollision")); }
+			ScriptFunction LeaveADecal() { mixin(MGF("mLeaveADecal", "Function UTGame.UTGib.LeaveADecal")); }
+			ScriptFunction TurnOnCollision() { mixin(MGF("mTurnOnCollision", "Function UTGame.UTGib.TurnOnCollision")); }
+			ScriptFunction Landed() { mixin(MGF("mLanded", "Function UTGame.UTGib.Landed")); }
+			ScriptFunction HitWall() { mixin(MGF("mHitWall", "Function UTGame.UTGib.HitWall")); }
 		}
 	}
 	struct StaticMeshDatum
@@ -63,18 +63,18 @@ public extern(D):
 		private ubyte __buffer__[20];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGib.StaticMeshDatum")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct UTGame.UTGib.StaticMeshDatum")); }
 		@property final
 		{
 			auto ref
 			{
-				float DrawScale() { mixin(MGPS!("float", 12)()); }
-				PhysicsAsset ThePhysAsset() { mixin(MGPS!("PhysicsAsset", 8)()); }
-				SkeletalMesh TheSkelMesh() { mixin(MGPS!("SkeletalMesh", 4)()); }
-				StaticMesh TheStaticMesh() { mixin(MGPS!("StaticMesh", 0)()); }
+				float DrawScale() { mixin(MGPS("float", 12)); }
+				PhysicsAsset ThePhysAsset() { mixin(MGPS("PhysicsAsset", 8)); }
+				SkeletalMesh TheSkelMesh() { mixin(MGPS("SkeletalMesh", 4)); }
+				StaticMesh TheStaticMesh() { mixin(MGPS("StaticMesh", 0)); }
 			}
-			bool bUseSecondaryGibMeshMITV() { mixin(MGBPS!(16, 0x1)()); }
-			bool bUseSecondaryGibMeshMITV(bool val) { mixin(MSBPS!(16, 0x1)()); }
+			bool bUseSecondaryGibMeshMITV() { mixin(MGBPS(16, 0x1)); }
+			bool bUseSecondaryGibMeshMITV(bool val) { mixin(MSBPS(16, 0x1)); }
 		}
 	}
 	@property final
@@ -82,27 +82,27 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GibMeshComp'!
-			ScriptName DecalDissolveParamName() { mixin(MGPC!("ScriptName", 500)()); }
-			float DecalWaitTimeBeforeDissolve() { mixin(MGPC!("float", 508)()); }
-			ScriptArray!(UTGib.StaticMeshDatum) GibMeshesData() { mixin(MGPC!("ScriptArray!(UTGib.StaticMeshDatum)", 544)()); }
-			Rotator OldCamRot() { mixin(MGPC!("Rotator", 568)()); }
-			Vector OldCamLoc() { mixin(MGPC!("Vector", 556)()); }
-			ParticleSystem PS_CustomEffect() { mixin(MGPC!("ParticleSystem", 536)()); }
+			ScriptName DecalDissolveParamName() { mixin(MGPC("ScriptName", 500)); }
+			float DecalWaitTimeBeforeDissolve() { mixin(MGPC("float", 508)); }
+			ScriptArray!(UTGib.StaticMeshDatum) GibMeshesData() { mixin(MGPC("ScriptArray!(UTGib.StaticMeshDatum)", 544)); }
+			Rotator OldCamRot() { mixin(MGPC("Rotator", 568)); }
+			Vector OldCamLoc() { mixin(MGPC("Vector", 556)); }
+			ParticleSystem PS_CustomEffect() { mixin(MGPC("ParticleSystem", 536)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PSC_GibEffect'!
-			float GibMeshWaitTimeBeforeDissolve() { mixin(MGPC!("float", 528)()); }
-			ScriptName GibMeshDissolveParamName() { mixin(MGPC!("ScriptName", 520)()); }
-			MaterialInstanceTimeVarying MITV_GibMeshTemplateSecondary() { mixin(MGPC!("MaterialInstanceTimeVarying", 516)()); }
-			MaterialInstanceTimeVarying MITV_GibMeshTemplate() { mixin(MGPC!("MaterialInstanceTimeVarying", 512)()); }
-			MaterialInstanceTimeVarying MITV_DecalTemplate() { mixin(MGPC!("MaterialInstanceTimeVarying", 496)()); }
-			MaterialInstance MI_Decal() { mixin(MGPC!("MaterialInstance", 492)()); }
-			MaterialInstanceConstant MIC_Gib() { mixin(MGPC!("MaterialInstanceConstant", 488)()); }
-			SoundCue HitSound() { mixin(MGPC!("SoundCue", 480)()); }
+			float GibMeshWaitTimeBeforeDissolve() { mixin(MGPC("float", 528)); }
+			ScriptName GibMeshDissolveParamName() { mixin(MGPC("ScriptName", 520)); }
+			MaterialInstanceTimeVarying MITV_GibMeshTemplateSecondary() { mixin(MGPC("MaterialInstanceTimeVarying", 516)); }
+			MaterialInstanceTimeVarying MITV_GibMeshTemplate() { mixin(MGPC("MaterialInstanceTimeVarying", 512)); }
+			MaterialInstanceTimeVarying MITV_DecalTemplate() { mixin(MGPC("MaterialInstanceTimeVarying", 496)); }
+			MaterialInstance MI_Decal() { mixin(MGPC("MaterialInstance", 492)); }
+			MaterialInstanceConstant MIC_Gib() { mixin(MGPC("MaterialInstanceConstant", 488)); }
+			SoundCue HitSound() { mixin(MGPC("SoundCue", 480)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GibLightEnvironment'!
 		}
-		bool bUseUnrealPhysics() { mixin(MGBPC!(540, 0x1)()); }
-		bool bUseUnrealPhysics(bool val) { mixin(MSBPC!(540, 0x1)()); }
-		bool bStopMovingCamera() { mixin(MGBPC!(540, 0x2)()); }
-		bool bStopMovingCamera(bool val) { mixin(MSBPC!(540, 0x2)()); }
+		bool bUseUnrealPhysics() { mixin(MGBPC(540, 0x1)); }
+		bool bUseUnrealPhysics(bool val) { mixin(MSBPC(540, 0x1)); }
+		bool bStopMovingCamera() { mixin(MGBPC(540, 0x2)); }
+		bool bStopMovingCamera(bool val) { mixin(MSBPC(540, 0x2)); }
 	}
 final:
 	void PreBeginPlay()

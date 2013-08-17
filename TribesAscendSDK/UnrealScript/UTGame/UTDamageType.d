@@ -18,9 +18,9 @@ extern(C++) interface UTDamageType : DamageType
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTDamageType")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTDamageType")); }
 	private static __gshared UTDamageType mDefaultProperties;
-	@property final static UTDamageType DefaultProperties() { mixin(MGDPC!(UTDamageType, "UTDamageType UTGame.Default__UTDamageType")()); }
+	@property final static UTDamageType DefaultProperties() { mixin(MGDPC("UTDamageType", "UTDamageType UTGame.Default__UTDamageType")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -49,108 +49,108 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetDeathCameraEffectInstigator() { mixin(MGF!("mGetDeathCameraEffectInstigator", "Function UTGame.UTDamageType.GetDeathCameraEffectInstigator")()); }
-			ScriptFunction GetHitEffectDuration() { mixin(MGF!("mGetHitEffectDuration", "Function UTGame.UTDamageType.GetHitEffectDuration")()); }
-			ScriptFunction ShouldGib() { mixin(MGF!("mShouldGib", "Function UTGame.UTDamageType.ShouldGib")()); }
-			ScriptFunction GetDeathCameraEffectVictim() { mixin(MGF!("mGetDeathCameraEffectVictim", "Function UTGame.UTDamageType.GetDeathCameraEffectVictim")()); }
-			ScriptFunction DeathMessage() { mixin(MGF!("mDeathMessage", "Function UTGame.UTDamageType.DeathMessage")()); }
-			ScriptFunction SuicideMessage() { mixin(MGF!("mSuicideMessage", "Function UTGame.UTDamageType.SuicideMessage")()); }
-			ScriptFunction SpawnHitEffect() { mixin(MGF!("mSpawnHitEffect", "Function UTGame.UTDamageType.SpawnHitEffect")()); }
-			ScriptFunction IncrementKills() { mixin(MGF!("mIncrementKills", "Function UTGame.UTDamageType.IncrementKills")()); }
-			ScriptFunction IncrementDeaths() { mixin(MGF!("mIncrementDeaths", "Function UTGame.UTDamageType.IncrementDeaths")()); }
-			ScriptFunction IncrementSuicides() { mixin(MGF!("mIncrementSuicides", "Function UTGame.UTDamageType.IncrementSuicides")()); }
-			ScriptFunction GetStatsName() { mixin(MGF!("mGetStatsName", "Function UTGame.UTDamageType.GetStatsName")()); }
-			ScriptFunction ScoreKill() { mixin(MGF!("mScoreKill", "Function UTGame.UTDamageType.ScoreKill")()); }
-			ScriptFunction PawnTornOff() { mixin(MGF!("mPawnTornOff", "Function UTGame.UTDamageType.PawnTornOff")()); }
-			ScriptFunction SpawnGibEffects() { mixin(MGF!("mSpawnGibEffects", "Function UTGame.UTDamageType.SpawnGibEffects")()); }
-			ScriptFunction DoCustomDamageEffects() { mixin(MGF!("mDoCustomDamageEffects", "Function UTGame.UTDamageType.DoCustomDamageEffects")()); }
-			ScriptFunction CreateDeathSkeleton() { mixin(MGF!("mCreateDeathSkeleton", "Function UTGame.UTDamageType.CreateDeathSkeleton")()); }
-			ScriptFunction BoneBreaker() { mixin(MGF!("mBoneBreaker", "Function UTGame.UTDamageType.BoneBreaker")()); }
-			ScriptFunction CreateDeathGoreChunks() { mixin(MGF!("mCreateDeathGoreChunks", "Function UTGame.UTDamageType.CreateDeathGoreChunks")()); }
-			ScriptFunction SpawnExtraGibEffects() { mixin(MGF!("mSpawnExtraGibEffects", "Function UTGame.UTDamageType.SpawnExtraGibEffects")()); }
-			ScriptFunction DrawKillIcon() { mixin(MGF!("mDrawKillIcon", "Function UTGame.UTDamageType.DrawKillIcon")()); }
-			ScriptFunction CalcDeathCamera() { mixin(MGF!("mCalcDeathCamera", "Function UTGame.UTDamageType.CalcDeathCamera")()); }
+			ScriptFunction GetDeathCameraEffectInstigator() { mixin(MGF("mGetDeathCameraEffectInstigator", "Function UTGame.UTDamageType.GetDeathCameraEffectInstigator")); }
+			ScriptFunction GetHitEffectDuration() { mixin(MGF("mGetHitEffectDuration", "Function UTGame.UTDamageType.GetHitEffectDuration")); }
+			ScriptFunction ShouldGib() { mixin(MGF("mShouldGib", "Function UTGame.UTDamageType.ShouldGib")); }
+			ScriptFunction GetDeathCameraEffectVictim() { mixin(MGF("mGetDeathCameraEffectVictim", "Function UTGame.UTDamageType.GetDeathCameraEffectVictim")); }
+			ScriptFunction DeathMessage() { mixin(MGF("mDeathMessage", "Function UTGame.UTDamageType.DeathMessage")); }
+			ScriptFunction SuicideMessage() { mixin(MGF("mSuicideMessage", "Function UTGame.UTDamageType.SuicideMessage")); }
+			ScriptFunction SpawnHitEffect() { mixin(MGF("mSpawnHitEffect", "Function UTGame.UTDamageType.SpawnHitEffect")); }
+			ScriptFunction IncrementKills() { mixin(MGF("mIncrementKills", "Function UTGame.UTDamageType.IncrementKills")); }
+			ScriptFunction IncrementDeaths() { mixin(MGF("mIncrementDeaths", "Function UTGame.UTDamageType.IncrementDeaths")); }
+			ScriptFunction IncrementSuicides() { mixin(MGF("mIncrementSuicides", "Function UTGame.UTDamageType.IncrementSuicides")); }
+			ScriptFunction GetStatsName() { mixin(MGF("mGetStatsName", "Function UTGame.UTDamageType.GetStatsName")); }
+			ScriptFunction ScoreKill() { mixin(MGF("mScoreKill", "Function UTGame.UTDamageType.ScoreKill")); }
+			ScriptFunction PawnTornOff() { mixin(MGF("mPawnTornOff", "Function UTGame.UTDamageType.PawnTornOff")); }
+			ScriptFunction SpawnGibEffects() { mixin(MGF("mSpawnGibEffects", "Function UTGame.UTDamageType.SpawnGibEffects")); }
+			ScriptFunction DoCustomDamageEffects() { mixin(MGF("mDoCustomDamageEffects", "Function UTGame.UTDamageType.DoCustomDamageEffects")); }
+			ScriptFunction CreateDeathSkeleton() { mixin(MGF("mCreateDeathSkeleton", "Function UTGame.UTDamageType.CreateDeathSkeleton")); }
+			ScriptFunction BoneBreaker() { mixin(MGF("mBoneBreaker", "Function UTGame.UTDamageType.BoneBreaker")); }
+			ScriptFunction CreateDeathGoreChunks() { mixin(MGF("mCreateDeathGoreChunks", "Function UTGame.UTDamageType.CreateDeathGoreChunks")); }
+			ScriptFunction SpawnExtraGibEffects() { mixin(MGF("mSpawnExtraGibEffects", "Function UTGame.UTDamageType.SpawnExtraGibEffects")); }
+			ScriptFunction DrawKillIcon() { mixin(MGF("mDrawKillIcon", "Function UTGame.UTDamageType.DrawKillIcon")); }
+			ScriptFunction CalcDeathCamera() { mixin(MGF("mCalcDeathCamera", "Function UTGame.UTDamageType.CalcDeathCamera")); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			CameraAnim DamageCameraAnim() { mixin(MGPC!("CameraAnim", 192)()); }
-			ScriptClass DamageWeaponClass() { mixin(MGPC!("ScriptClass", 152)()); }
-			float GibPerterbation() { mixin(MGPC!("float", 132)()); }
-			ScriptName DeathAnim() { mixin(MGPC!("ScriptName", 172)()); }
-			float DeathAnimRate() { mixin(MGPC!("float", 180)()); }
-			float MotorDecayTime() { mixin(MGPC!("float", 184)()); }
-			float StopAnimAfterDamageInterval() { mixin(MGPC!("float", 188)()); }
-			float DamageOverlayTime() { mixin(MGPC!("float", 116)()); }
-			float XRayEffectTime() { mixin(MGPC!("float", 124)()); }
-			UObject.LinearColor DamageBodyMatColor() { mixin(MGPC!("UObject.LinearColor", 100)()); }
-			float PhysicsTakeHitMomentumThreshold() { mixin(MGPC!("float", 148)()); }
-			UObject.LinearColor HitEffectColor() { mixin(MGPC!("UObject.LinearColor", 248)()); }
-			ScriptString MaleSuicide() { mixin(MGPC!("ScriptString", 288)()); }
-			ScriptString FemaleSuicide() { mixin(MGPC!("ScriptString", 276)()); }
-			ScriptString DeathString() { mixin(MGPC!("ScriptString", 264)()); }
-			int CustomTauntIndex() { mixin(MGPC!("int", 244)()); }
-			ScriptName RewardEvent() { mixin(MGPC!("ScriptName", 236)()); }
-			int RewardAnnouncementSwitch() { mixin(MGPC!("int", 232)()); }
-			ScriptClass RewardAnnouncementClass() { mixin(MGPC!("ScriptClass", 228)()); }
-			int RewardCount() { mixin(MGPC!("int", 224)()); }
-			ScriptName SuicideStatsName() { mixin(MGPC!("ScriptName", 216)()); }
-			ScriptName DeathStatsName() { mixin(MGPC!("ScriptName", 208)()); }
-			ScriptName KillStatsName() { mixin(MGPC!("ScriptName", 200)()); }
-			float NodeDamageScaling() { mixin(MGPC!("float", 196)()); }
-			ScriptClass DeathCameraEffectInstigator() { mixin(MGPC!("ScriptClass", 168)()); }
-			ScriptClass DeathCameraEffectVictim() { mixin(MGPC!("ScriptClass", 164)()); }
-			ParticleSystem GibTrail() { mixin(MGPC!("ParticleSystem", 160)()); }
-			int DamageWeaponFireMode() { mixin(MGPC!("int", 156)()); }
-			int AlwaysGibDamageThreshold() { mixin(MGPC!("int", 144)()); }
-			int MinAccumulateDamageThreshold() { mixin(MGPC!("int", 140)()); }
-			int GibThreshold() { mixin(MGPC!("int", 136)()); }
-			float DeathOverlayTime() { mixin(MGPC!("float", 120)()); }
+			CameraAnim DamageCameraAnim() { mixin(MGPC("CameraAnim", 192)); }
+			ScriptClass DamageWeaponClass() { mixin(MGPC("ScriptClass", 152)); }
+			float GibPerterbation() { mixin(MGPC("float", 132)); }
+			ScriptName DeathAnim() { mixin(MGPC("ScriptName", 172)); }
+			float DeathAnimRate() { mixin(MGPC("float", 180)); }
+			float MotorDecayTime() { mixin(MGPC("float", 184)); }
+			float StopAnimAfterDamageInterval() { mixin(MGPC("float", 188)); }
+			float DamageOverlayTime() { mixin(MGPC("float", 116)); }
+			float XRayEffectTime() { mixin(MGPC("float", 124)); }
+			UObject.LinearColor DamageBodyMatColor() { mixin(MGPC("UObject.LinearColor", 100)); }
+			float PhysicsTakeHitMomentumThreshold() { mixin(MGPC("float", 148)); }
+			UObject.LinearColor HitEffectColor() { mixin(MGPC("UObject.LinearColor", 248)); }
+			ScriptString MaleSuicide() { mixin(MGPC("ScriptString", 288)); }
+			ScriptString FemaleSuicide() { mixin(MGPC("ScriptString", 276)); }
+			ScriptString DeathString() { mixin(MGPC("ScriptString", 264)); }
+			int CustomTauntIndex() { mixin(MGPC("int", 244)); }
+			ScriptName RewardEvent() { mixin(MGPC("ScriptName", 236)); }
+			int RewardAnnouncementSwitch() { mixin(MGPC("int", 232)); }
+			ScriptClass RewardAnnouncementClass() { mixin(MGPC("ScriptClass", 228)); }
+			int RewardCount() { mixin(MGPC("int", 224)); }
+			ScriptName SuicideStatsName() { mixin(MGPC("ScriptName", 216)); }
+			ScriptName DeathStatsName() { mixin(MGPC("ScriptName", 208)); }
+			ScriptName KillStatsName() { mixin(MGPC("ScriptName", 200)); }
+			float NodeDamageScaling() { mixin(MGPC("float", 196)); }
+			ScriptClass DeathCameraEffectInstigator() { mixin(MGPC("ScriptClass", 168)); }
+			ScriptClass DeathCameraEffectVictim() { mixin(MGPC("ScriptClass", 164)); }
+			ParticleSystem GibTrail() { mixin(MGPC("ParticleSystem", 160)); }
+			int DamageWeaponFireMode() { mixin(MGPC("int", 156)); }
+			int AlwaysGibDamageThreshold() { mixin(MGPC("int", 144)); }
+			int MinAccumulateDamageThreshold() { mixin(MGPC("int", 140)); }
+			int GibThreshold() { mixin(MGPC("int", 136)); }
+			float DeathOverlayTime() { mixin(MGPC("float", 120)); }
 		}
-		bool bLocationalHit() { mixin(MGBPC!(128, 0x2)()); }
-		bool bLocationalHit(bool val) { mixin(MSBPC!(128, 0x2)()); }
-		bool bDirectDamage() { mixin(MGBPC!(128, 0x10)()); }
-		bool bDirectDamage(bool val) { mixin(MSBPC!(128, 0x10)()); }
-		bool bHeadGibCamera() { mixin(MGBPC!(128, 0x40000)()); }
-		bool bHeadGibCamera(bool val) { mixin(MSBPC!(128, 0x40000)()); }
-		bool bUseDamageBasedDeathEffects() { mixin(MGBPC!(128, 0x2000)()); }
-		bool bUseDamageBasedDeathEffects(bool val) { mixin(MSBPC!(128, 0x2000)()); }
-		bool bAnimateHipsForDeathAnim() { mixin(MGBPC!(128, 0x8000)()); }
-		bool bAnimateHipsForDeathAnim(bool val) { mixin(MSBPC!(128, 0x8000)()); }
-		bool bSeversHead() { mixin(MGBPC!(128, 0x20)()); }
-		bool bSeversHead(bool val) { mixin(MSBPC!(128, 0x20)()); }
-		bool bCausesBloodSplatterDecals() { mixin(MGBPC!(128, 0x80000)()); }
-		bool bCausesBloodSplatterDecals(bool val) { mixin(MSBPC!(128, 0x80000)()); }
-		bool bCausesBlood() { mixin(MGBPC!(128, 0x1)()); }
-		bool bCausesBlood(bool val) { mixin(MSBPC!(128, 0x1)()); }
-		bool bSpecialDeathCamera() { mixin(MGBPC!(128, 0x4000)()); }
-		bool bSpecialDeathCamera(bool val) { mixin(MSBPC!(128, 0x4000)()); }
-		bool bThrowRagdoll() { mixin(MGBPC!(128, 0x100)()); }
-		bool bThrowRagdoll(bool val) { mixin(MSBPC!(128, 0x100)()); }
-		bool bOverrideHitEffectColor() { mixin(MGBPC!(128, 0x20000)()); }
-		bool bOverrideHitEffectColor(bool val) { mixin(MSBPC!(128, 0x20000)()); }
-		bool bDontHurtInstigator() { mixin(MGBPC!(128, 0x100000)()); }
-		bool bDontHurtInstigator(bool val) { mixin(MSBPC!(128, 0x100000)()); }
-		bool bComplainFriendlyFire() { mixin(MGBPC!(128, 0x10000)()); }
-		bool bComplainFriendlyFire(bool val) { mixin(MSBPC!(128, 0x10000)()); }
-		bool bSelfDestructDamage() { mixin(MGBPC!(128, 0x1000)()); }
-		bool bSelfDestructDamage(bool val) { mixin(MSBPC!(128, 0x1000)()); }
-		bool bVehicleHit() { mixin(MGBPC!(128, 0x800)()); }
-		bool bVehicleHit(bool val) { mixin(MSBPC!(128, 0x800)()); }
-		bool bBulletHit() { mixin(MGBPC!(128, 0x400)()); }
-		bool bBulletHit(bool val) { mixin(MSBPC!(128, 0x400)()); }
-		bool bLeaveBodyEffect() { mixin(MGBPC!(128, 0x200)()); }
-		bool bLeaveBodyEffect(bool val) { mixin(MSBPC!(128, 0x200)()); }
-		bool bUseTearOffMomentum() { mixin(MGBPC!(128, 0x80)()); }
-		bool bUseTearOffMomentum(bool val) { mixin(MSBPC!(128, 0x80)()); }
-		bool bCauseConvulsions() { mixin(MGBPC!(128, 0x40)()); }
-		bool bCauseConvulsions(bool val) { mixin(MSBPC!(128, 0x40)()); }
-		bool bNeverGibs() { mixin(MGBPC!(128, 0x8)()); }
-		bool bNeverGibs(bool val) { mixin(MSBPC!(128, 0x8)()); }
-		bool bAlwaysGibs() { mixin(MGBPC!(128, 0x4)()); }
-		bool bAlwaysGibs(bool val) { mixin(MSBPC!(128, 0x4)()); }
+		bool bLocationalHit() { mixin(MGBPC(128, 0x2)); }
+		bool bLocationalHit(bool val) { mixin(MSBPC(128, 0x2)); }
+		bool bDirectDamage() { mixin(MGBPC(128, 0x10)); }
+		bool bDirectDamage(bool val) { mixin(MSBPC(128, 0x10)); }
+		bool bHeadGibCamera() { mixin(MGBPC(128, 0x40000)); }
+		bool bHeadGibCamera(bool val) { mixin(MSBPC(128, 0x40000)); }
+		bool bUseDamageBasedDeathEffects() { mixin(MGBPC(128, 0x2000)); }
+		bool bUseDamageBasedDeathEffects(bool val) { mixin(MSBPC(128, 0x2000)); }
+		bool bAnimateHipsForDeathAnim() { mixin(MGBPC(128, 0x8000)); }
+		bool bAnimateHipsForDeathAnim(bool val) { mixin(MSBPC(128, 0x8000)); }
+		bool bSeversHead() { mixin(MGBPC(128, 0x20)); }
+		bool bSeversHead(bool val) { mixin(MSBPC(128, 0x20)); }
+		bool bCausesBloodSplatterDecals() { mixin(MGBPC(128, 0x80000)); }
+		bool bCausesBloodSplatterDecals(bool val) { mixin(MSBPC(128, 0x80000)); }
+		bool bCausesBlood() { mixin(MGBPC(128, 0x1)); }
+		bool bCausesBlood(bool val) { mixin(MSBPC(128, 0x1)); }
+		bool bSpecialDeathCamera() { mixin(MGBPC(128, 0x4000)); }
+		bool bSpecialDeathCamera(bool val) { mixin(MSBPC(128, 0x4000)); }
+		bool bThrowRagdoll() { mixin(MGBPC(128, 0x100)); }
+		bool bThrowRagdoll(bool val) { mixin(MSBPC(128, 0x100)); }
+		bool bOverrideHitEffectColor() { mixin(MGBPC(128, 0x20000)); }
+		bool bOverrideHitEffectColor(bool val) { mixin(MSBPC(128, 0x20000)); }
+		bool bDontHurtInstigator() { mixin(MGBPC(128, 0x100000)); }
+		bool bDontHurtInstigator(bool val) { mixin(MSBPC(128, 0x100000)); }
+		bool bComplainFriendlyFire() { mixin(MGBPC(128, 0x10000)); }
+		bool bComplainFriendlyFire(bool val) { mixin(MSBPC(128, 0x10000)); }
+		bool bSelfDestructDamage() { mixin(MGBPC(128, 0x1000)); }
+		bool bSelfDestructDamage(bool val) { mixin(MSBPC(128, 0x1000)); }
+		bool bVehicleHit() { mixin(MGBPC(128, 0x800)); }
+		bool bVehicleHit(bool val) { mixin(MSBPC(128, 0x800)); }
+		bool bBulletHit() { mixin(MGBPC(128, 0x400)); }
+		bool bBulletHit(bool val) { mixin(MSBPC(128, 0x400)); }
+		bool bLeaveBodyEffect() { mixin(MGBPC(128, 0x200)); }
+		bool bLeaveBodyEffect(bool val) { mixin(MSBPC(128, 0x200)); }
+		bool bUseTearOffMomentum() { mixin(MGBPC(128, 0x80)); }
+		bool bUseTearOffMomentum(bool val) { mixin(MSBPC(128, 0x80)); }
+		bool bCauseConvulsions() { mixin(MGBPC(128, 0x40)); }
+		bool bCauseConvulsions(bool val) { mixin(MSBPC(128, 0x40)); }
+		bool bNeverGibs() { mixin(MGBPC(128, 0x8)); }
+		bool bNeverGibs(bool val) { mixin(MSBPC(128, 0x8)); }
+		bool bAlwaysGibs() { mixin(MGBPC(128, 0x4)); }
+		bool bAlwaysGibs(bool val) { mixin(MSBPC(128, 0x4)); }
 	}
 final:
 	static ScriptClass GetDeathCameraEffectInstigator(UTPawn UTP)

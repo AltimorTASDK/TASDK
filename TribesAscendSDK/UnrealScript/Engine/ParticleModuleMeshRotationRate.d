@@ -9,8 +9,8 @@ extern(C++) interface ParticleModuleMeshRotationRate : ParticleModuleRotationRat
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleMeshRotationRate")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ParticleModuleMeshRotationRate")); }
 	private static __gshared ParticleModuleMeshRotationRate mDefaultProperties;
-	@property final static ParticleModuleMeshRotationRate DefaultProperties() { mixin(MGDPC!(ParticleModuleMeshRotationRate, "ParticleModuleMeshRotationRate Engine.Default__ParticleModuleMeshRotationRate")()); }
-	@property final auto ref DistributionVector.RawDistributionVector StartRotationRate() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
+	@property final static ParticleModuleMeshRotationRate DefaultProperties() { mixin(MGDPC("ParticleModuleMeshRotationRate", "ParticleModuleMeshRotationRate Engine.Default__ParticleModuleMeshRotationRate")); }
+	@property final auto ref DistributionVector.RawDistributionVector StartRotationRate() { mixin(MGPC("DistributionVector.RawDistributionVector", 72)); }
 }

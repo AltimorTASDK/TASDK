@@ -13,9 +13,9 @@ extern(C++) interface TrDeployable_RadarSensor : TrDeployable_Sensor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrDeployable_RadarSensor")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrDeployable_RadarSensor")); }
 	private static __gshared TrDeployable_RadarSensor mDefaultProperties;
-	@property final static TrDeployable_RadarSensor DefaultProperties() { mixin(MGDPC!(TrDeployable_RadarSensor, "TrDeployable_RadarSensor TribesGame.Default__TrDeployable_RadarSensor")()); }
+	@property final static TrDeployable_RadarSensor DefaultProperties() { mixin(MGDPC("TrDeployable_RadarSensor", "TrDeployable_RadarSensor TribesGame.Default__TrDeployable_RadarSensor")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,26 +35,26 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction ApplyServerSettings() { mixin(MGF!("mApplyServerSettings", "Function TribesGame.TrDeployable_RadarSensor.ApplyServerSettings")()); }
-			ScriptFunction ReceivesPowerFromGenerator() { mixin(MGF!("mReceivesPowerFromGenerator", "Function TribesGame.TrDeployable_RadarSensor.ReceivesPowerFromGenerator")()); }
-			ScriptFunction SpawnHelpTextCollisionProxy() { mixin(MGF!("mSpawnHelpTextCollisionProxy", "Function TribesGame.TrDeployable_RadarSensor.SpawnHelpTextCollisionProxy")()); }
-			ScriptFunction ShouldShowHelpText() { mixin(MGF!("mShouldShowHelpText", "Function TribesGame.TrDeployable_RadarSensor.ShouldShowHelpText")()); }
-			ScriptFunction GetMarker() { mixin(MGF!("mGetMarker", "Function TribesGame.TrDeployable_RadarSensor.GetMarker")()); }
-			ScriptFunction SetPowered() { mixin(MGF!("mSetPowered", "Function TribesGame.TrDeployable_RadarSensor.SetPowered")()); }
-			ScriptFunction RadarBlip() { mixin(MGF!("mRadarBlip", "Function TribesGame.TrDeployable_RadarSensor.RadarBlip")()); }
-			ScriptFunction IsDeployed() { mixin(MGF!("mIsDeployed", "Function TribesGame.TrDeployable_RadarSensor.IsDeployed")()); }
-			ScriptFunction GiveDestroyAccolade() { mixin(MGF!("mGiveDestroyAccolade", "Function TribesGame.TrDeployable_RadarSensor.GiveDestroyAccolade")()); }
-			ScriptFunction ReleaseOutOfSightEnemies() { mixin(MGF!("mReleaseOutOfSightEnemies", "Function TribesGame.TrDeployable_RadarSensor.ReleaseOutOfSightEnemies")()); }
-			ScriptFunction TakeDamage() { mixin(MGF!("mTakeDamage", "Function TribesGame.TrDeployable_RadarSensor.TakeDamage")()); }
-			ScriptFunction AwardUpgradeAssists() { mixin(MGF!("mAwardUpgradeAssists", "Function TribesGame.TrDeployable_RadarSensor.AwardUpgradeAssists")()); }
+			ScriptFunction ApplyServerSettings() { mixin(MGF("mApplyServerSettings", "Function TribesGame.TrDeployable_RadarSensor.ApplyServerSettings")); }
+			ScriptFunction ReceivesPowerFromGenerator() { mixin(MGF("mReceivesPowerFromGenerator", "Function TribesGame.TrDeployable_RadarSensor.ReceivesPowerFromGenerator")); }
+			ScriptFunction SpawnHelpTextCollisionProxy() { mixin(MGF("mSpawnHelpTextCollisionProxy", "Function TribesGame.TrDeployable_RadarSensor.SpawnHelpTextCollisionProxy")); }
+			ScriptFunction ShouldShowHelpText() { mixin(MGF("mShouldShowHelpText", "Function TribesGame.TrDeployable_RadarSensor.ShouldShowHelpText")); }
+			ScriptFunction GetMarker() { mixin(MGF("mGetMarker", "Function TribesGame.TrDeployable_RadarSensor.GetMarker")); }
+			ScriptFunction SetPowered() { mixin(MGF("mSetPowered", "Function TribesGame.TrDeployable_RadarSensor.SetPowered")); }
+			ScriptFunction RadarBlip() { mixin(MGF("mRadarBlip", "Function TribesGame.TrDeployable_RadarSensor.RadarBlip")); }
+			ScriptFunction IsDeployed() { mixin(MGF("mIsDeployed", "Function TribesGame.TrDeployable_RadarSensor.IsDeployed")); }
+			ScriptFunction GiveDestroyAccolade() { mixin(MGF("mGiveDestroyAccolade", "Function TribesGame.TrDeployable_RadarSensor.GiveDestroyAccolade")); }
+			ScriptFunction ReleaseOutOfSightEnemies() { mixin(MGF("mReleaseOutOfSightEnemies", "Function TribesGame.TrDeployable_RadarSensor.ReleaseOutOfSightEnemies")); }
+			ScriptFunction TakeDamage() { mixin(MGF("mTakeDamage", "Function TribesGame.TrDeployable_RadarSensor.TakeDamage")); }
+			ScriptFunction AwardUpgradeAssists() { mixin(MGF("mAwardUpgradeAssists", "Function TribesGame.TrDeployable_RadarSensor.AwardUpgradeAssists")); }
 		}
 	}
 	static struct BlownUp
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrDeployable_RadarSensor.BlownUp")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrDeployable_RadarSensor.BlownUp")); }
 	}
-	@property final auto ref float m_fBlipIntervalTime() { mixin(MGPC!("float", 1540)()); }
+	@property final auto ref float m_fBlipIntervalTime() { mixin(MGPC("float", 1540)); }
 final:
 	void ApplyServerSettings()
 	{

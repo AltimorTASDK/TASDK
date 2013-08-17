@@ -11,9 +11,9 @@ extern(C++) interface GFxUDKFrontEnd_MapSelect : GFxUDKFrontEnd_Screen
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.GFxUDKFrontEnd_MapSelect")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.GFxUDKFrontEnd_MapSelect")); }
 	private static __gshared GFxUDKFrontEnd_MapSelect mDefaultProperties;
-	@property final static GFxUDKFrontEnd_MapSelect DefaultProperties() { mixin(MGDPC!(GFxUDKFrontEnd_MapSelect, "GFxUDKFrontEnd_MapSelect UTGame.Default__GFxUDKFrontEnd_MapSelect")()); }
+	@property final static GFxUDKFrontEnd_MapSelect DefaultProperties() { mixin(MGDPC("GFxUDKFrontEnd_MapSelect", "GFxUDKFrontEnd_MapSelect UTGame.Default__GFxUDKFrontEnd_MapSelect")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -35,30 +35,30 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetImageMarkupByMapName() { mixin(MGF!("mGetImageMarkupByMapName", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetImageMarkupByMapName")()); }
-			ScriptFunction OnViewLoaded() { mixin(MGF!("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnViewLoaded")()); }
-			ScriptFunction OnTopMostView() { mixin(MGF!("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnTopMostView")()); }
-			ScriptFunction DisableSubComponents() { mixin(MGF!("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_MapSelect.DisableSubComponents")()); }
-			ScriptFunction OnMapList_ValueChanged() { mixin(MGF!("mOnMapList_ValueChanged", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnMapList_ValueChanged")()); }
-			ScriptFunction SetList() { mixin(MGF!("mSetList", "Function UTGame.GFxUDKFrontEnd_MapSelect.SetList")()); }
-			ScriptFunction OnListItemPress() { mixin(MGF!("mOnListItemPress", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnListItemPress")()); }
-			ScriptFunction UpdateListDataProvider() { mixin(MGF!("mUpdateListDataProvider", "Function UTGame.GFxUDKFrontEnd_MapSelect.UpdateListDataProvider")()); }
-			ScriptFunction GetMapFriendlyName() { mixin(MGF!("mGetMapFriendlyName", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetMapFriendlyName")()); }
-			ScriptFunction SetImgScroller() { mixin(MGF!("mSetImgScroller", "Function UTGame.GFxUDKFrontEnd_MapSelect.SetImgScroller")()); }
-			ScriptFunction GetCurrentGameMode() { mixin(MGF!("mGetCurrentGameMode", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetCurrentGameMode")()); }
-			ScriptFunction SetupMapCycle() { mixin(MGF!("mSetupMapCycle", "Function UTGame.GFxUDKFrontEnd_MapSelect.SetupMapCycle")()); }
-			ScriptFunction GetSelectedMap() { mixin(MGF!("mGetSelectedMap", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetSelectedMap")()); }
-			ScriptFunction WidgetInitialized() { mixin(MGF!("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_MapSelect.WidgetInitialized")()); }
+			ScriptFunction GetImageMarkupByMapName() { mixin(MGF("mGetImageMarkupByMapName", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetImageMarkupByMapName")); }
+			ScriptFunction OnViewLoaded() { mixin(MGF("mOnViewLoaded", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnViewLoaded")); }
+			ScriptFunction OnTopMostView() { mixin(MGF("mOnTopMostView", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnTopMostView")); }
+			ScriptFunction DisableSubComponents() { mixin(MGF("mDisableSubComponents", "Function UTGame.GFxUDKFrontEnd_MapSelect.DisableSubComponents")); }
+			ScriptFunction OnMapList_ValueChanged() { mixin(MGF("mOnMapList_ValueChanged", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnMapList_ValueChanged")); }
+			ScriptFunction SetList() { mixin(MGF("mSetList", "Function UTGame.GFxUDKFrontEnd_MapSelect.SetList")); }
+			ScriptFunction OnListItemPress() { mixin(MGF("mOnListItemPress", "Function UTGame.GFxUDKFrontEnd_MapSelect.OnListItemPress")); }
+			ScriptFunction UpdateListDataProvider() { mixin(MGF("mUpdateListDataProvider", "Function UTGame.GFxUDKFrontEnd_MapSelect.UpdateListDataProvider")); }
+			ScriptFunction GetMapFriendlyName() { mixin(MGF("mGetMapFriendlyName", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetMapFriendlyName")); }
+			ScriptFunction SetImgScroller() { mixin(MGF("mSetImgScroller", "Function UTGame.GFxUDKFrontEnd_MapSelect.SetImgScroller")); }
+			ScriptFunction GetCurrentGameMode() { mixin(MGF("mGetCurrentGameMode", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetCurrentGameMode")); }
+			ScriptFunction SetupMapCycle() { mixin(MGF("mSetupMapCycle", "Function UTGame.GFxUDKFrontEnd_MapSelect.SetupMapCycle")); }
+			ScriptFunction GetSelectedMap() { mixin(MGF("mGetSelectedMap", "Function UTGame.GFxUDKFrontEnd_MapSelect.GetSelectedMap")); }
+			ScriptFunction WidgetInitialized() { mixin(MGF("mWidgetInitialized", "Function UTGame.GFxUDKFrontEnd_MapSelect.WidgetInitialized")); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTUIDataProvider_MapInfo) MapList() { mixin(MGPC!("ScriptArray!(UTUIDataProvider_MapInfo)", 236)()); }
-		int LastSelectedItem() { mixin(MGPC!("int", 248)()); }
-		GFxObject MenuMC() { mixin(MGPC!("GFxObject", 232)()); }
-		GFxClikWidget ImgScrollerMC() { mixin(MGPC!("GFxClikWidget", 228)()); }
-		GFxObject ListDataProvider() { mixin(MGPC!("GFxObject", 224)()); }
-		GFxClikWidget ListMC() { mixin(MGPC!("GFxClikWidget", 220)()); }
+		ScriptArray!(UTUIDataProvider_MapInfo) MapList() { mixin(MGPC("ScriptArray!(UTUIDataProvider_MapInfo)", 236)); }
+		int LastSelectedItem() { mixin(MGPC("int", 248)); }
+		GFxObject MenuMC() { mixin(MGPC("GFxObject", 232)); }
+		GFxClikWidget ImgScrollerMC() { mixin(MGPC("GFxClikWidget", 228)); }
+		GFxObject ListDataProvider() { mixin(MGPC("GFxObject", 224)); }
+		GFxClikWidget ListMC() { mixin(MGPC("GFxClikWidget", 220)); }
 	}
 final:
 	static ScriptString GetImageMarkupByMapName(ScriptString InMapName)

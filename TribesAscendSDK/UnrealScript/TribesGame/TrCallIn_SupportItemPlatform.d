@@ -9,9 +9,9 @@ extern(C++) interface TrCallIn_SupportItemPlatform : Actor
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrCallIn_SupportItemPlatform")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrCallIn_SupportItemPlatform")); }
 	private static __gshared TrCallIn_SupportItemPlatform mDefaultProperties;
-	@property final static TrCallIn_SupportItemPlatform DefaultProperties() { mixin(MGDPC!(TrCallIn_SupportItemPlatform, "TrCallIn_SupportItemPlatform TribesGame.Default__TrCallIn_SupportItemPlatform")()); }
+	@property final static TrCallIn_SupportItemPlatform DefaultProperties() { mixin(MGDPC("TrCallIn_SupportItemPlatform", "TrCallIn_SupportItemPlatform TribesGame.Default__TrCallIn_SupportItemPlatform")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -24,18 +24,18 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetBoundingCylinder() { mixin(MGF!("mGetBoundingCylinder", "Function TribesGame.TrCallIn_SupportItemPlatform.GetBoundingCylinder")()); }
-			ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.TrCallIn_SupportItemPlatform.Init")()); }
-			ScriptFunction ScriptGetTeamNum() { mixin(MGF!("mScriptGetTeamNum", "Function TribesGame.TrCallIn_SupportItemPlatform.ScriptGetTeamNum")()); }
-			ScriptFunction HideMesh() { mixin(MGF!("mHideMesh", "Function TribesGame.TrCallIn_SupportItemPlatform.HideMesh")()); }
-			ScriptFunction Tick() { mixin(MGF!("mTick", "Function TribesGame.TrCallIn_SupportItemPlatform.Tick")()); }
+			ScriptFunction GetBoundingCylinder() { mixin(MGF("mGetBoundingCylinder", "Function TribesGame.TrCallIn_SupportItemPlatform.GetBoundingCylinder")); }
+			ScriptFunction Init() { mixin(MGF("mInit", "Function TribesGame.TrCallIn_SupportItemPlatform.Init")); }
+			ScriptFunction ScriptGetTeamNum() { mixin(MGF("mScriptGetTeamNum", "Function TribesGame.TrCallIn_SupportItemPlatform.ScriptGetTeamNum")); }
+			ScriptFunction HideMesh() { mixin(MGF("mHideMesh", "Function TribesGame.TrCallIn_SupportItemPlatform.HideMesh")); }
+			ScriptFunction Tick() { mixin(MGF("mTick", "Function TribesGame.TrCallIn_SupportItemPlatform.Tick")); }
 		}
 	}
 	@property final auto ref
 	{
-		TrGameObjective r_DeployedItem() { mixin(MGPC!("TrGameObjective", 476)()); }
-		ubyte DefenderTeamIndex() { mixin(MGPC!("ubyte", 496)()); }
-		ScriptName ItemAttachPointName() { mixin(MGPC!("ScriptName", 488)()); }
+		TrGameObjective r_DeployedItem() { mixin(MGPC("TrGameObjective", 476)); }
+		ubyte DefenderTeamIndex() { mixin(MGPC("ubyte", 496)); }
+		ScriptName ItemAttachPointName() { mixin(MGPC("ScriptName", 488)); }
 		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
 	}

@@ -8,7 +8,7 @@ extern(C++) interface ScaleAudioVolumeCommandlet : Commandlet
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UnrealEd.ScaleAudioVolumeCommandlet")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UnrealEd.ScaleAudioVolumeCommandlet")); }
 	private static __gshared ScaleAudioVolumeCommandlet mDefaultProperties;
-	@property final static ScaleAudioVolumeCommandlet DefaultProperties() { mixin(MGDPC!(ScaleAudioVolumeCommandlet, "ScaleAudioVolumeCommandlet UnrealEd.Default__ScaleAudioVolumeCommandlet")()); }
+	@property final static ScaleAudioVolumeCommandlet DefaultProperties() { mixin(MGDPC("ScaleAudioVolumeCommandlet", "ScaleAudioVolumeCommandlet UnrealEd.Default__ScaleAudioVolumeCommandlet")); }
 }

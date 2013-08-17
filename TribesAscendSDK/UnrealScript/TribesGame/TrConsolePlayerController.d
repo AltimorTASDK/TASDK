@@ -9,9 +9,9 @@ extern(C++) interface TrConsolePlayerController : TrPlayerController
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrConsolePlayerController")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class TribesGame.TrConsolePlayerController")); }
 	private static __gshared TrConsolePlayerController mDefaultProperties;
-	@property final static TrConsolePlayerController DefaultProperties() { mixin(MGDPC!(TrConsolePlayerController, "TrConsolePlayerController TribesGame.Default__TrConsolePlayerController")()); }
+	@property final static TrConsolePlayerController DefaultProperties() { mixin(MGDPC("TrConsolePlayerController", "TrConsolePlayerController TribesGame.Default__TrConsolePlayerController")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -28,15 +28,15 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction UpdateRotation() { mixin(MGF!("mUpdateRotation", "Function TribesGame.TrConsolePlayerController.UpdateRotation")()); }
-			ScriptFunction AimingHelp() { mixin(MGF!("mAimingHelp", "Function TribesGame.TrConsolePlayerController.AimingHelp")()); }
-			ScriptFunction AimHelpModifier() { mixin(MGF!("mAimHelpModifier", "Function TribesGame.TrConsolePlayerController.AimHelpModifier")()); }
-			ScriptFunction PerformedUseAction() { mixin(MGF!("mPerformedUseAction", "Function TribesGame.TrConsolePlayerController.PerformedUseAction")()); }
-			ScriptFunction ClientSmartUse() { mixin(MGF!("mClientSmartUse", "Function TribesGame.TrConsolePlayerController.ClientSmartUse")()); }
-			ScriptFunction ClientRestart() { mixin(MGF!("mClientRestart", "Function TribesGame.TrConsolePlayerController.ClientRestart")()); }
-			ScriptFunction PrevWeapon() { mixin(MGF!("mPrevWeapon", "Function TribesGame.TrConsolePlayerController.PrevWeapon")()); }
-			ScriptFunction NextWeapon() { mixin(MGF!("mNextWeapon", "Function TribesGame.TrConsolePlayerController.NextWeapon")()); }
-			ScriptFunction ResetPlayerMovementInput() { mixin(MGF!("mResetPlayerMovementInput", "Function TribesGame.TrConsolePlayerController.ResetPlayerMovementInput")()); }
+			ScriptFunction UpdateRotation() { mixin(MGF("mUpdateRotation", "Function TribesGame.TrConsolePlayerController.UpdateRotation")); }
+			ScriptFunction AimingHelp() { mixin(MGF("mAimingHelp", "Function TribesGame.TrConsolePlayerController.AimingHelp")); }
+			ScriptFunction AimHelpModifier() { mixin(MGF("mAimHelpModifier", "Function TribesGame.TrConsolePlayerController.AimHelpModifier")); }
+			ScriptFunction PerformedUseAction() { mixin(MGF("mPerformedUseAction", "Function TribesGame.TrConsolePlayerController.PerformedUseAction")); }
+			ScriptFunction ClientSmartUse() { mixin(MGF("mClientSmartUse", "Function TribesGame.TrConsolePlayerController.ClientSmartUse")); }
+			ScriptFunction ClientRestart() { mixin(MGF("mClientRestart", "Function TribesGame.TrConsolePlayerController.ClientRestart")); }
+			ScriptFunction PrevWeapon() { mixin(MGF("mPrevWeapon", "Function TribesGame.TrConsolePlayerController.PrevWeapon")); }
+			ScriptFunction NextWeapon() { mixin(MGF("mNextWeapon", "Function TribesGame.TrConsolePlayerController.NextWeapon")); }
+			ScriptFunction ResetPlayerMovementInput() { mixin(MGF("mResetPlayerMovementInput", "Function TribesGame.TrConsolePlayerController.ResetPlayerMovementInput")); }
 		}
 	}
 	struct ProfileSettingToUE3BindingDatum
@@ -44,29 +44,29 @@ public extern(D):
 		private ubyte __buffer__[16];
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrConsolePlayerController.ProfileSettingToUE3BindingDatum")()); }
+		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrConsolePlayerController.ProfileSettingToUE3BindingDatum")); }
 		@property final auto ref
 		{
-			ScriptName UE3BindingName() { mixin(MGPS!("ScriptName", 8)()); }
-			ScriptName ProfileSettingName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptName UE3BindingName() { mixin(MGPS("ScriptName", 8)); }
+			ScriptName ProfileSettingName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
 	static struct PlayerWalking
 	{
 		private static __gshared ScriptState mStaticClass;
-		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrConsolePlayerController.PlayerWalking")()); }
+		@property final static ScriptState StaticClass() { mixin(MGSCSA("State TribesGame.TrConsolePlayerController.PlayerWalking")); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMapping360() { mixin(MGPC!("ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum)", 3436)()); }
-			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMappingPS3() { mixin(MGPC!("ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum)", 3448)()); }
+			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMapping360() { mixin(MGPC("ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum)", 3436)); }
+			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMappingPS3() { mixin(MGPC("ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum)", 3448)); }
 		}
-		bool bDebugTargetAdhesion() { mixin(MGBPC!(3432, 0x2)()); }
-		bool bDebugTargetAdhesion(bool val) { mixin(MSBPC!(3432, 0x2)()); }
-		bool bTargetAdhesionEnabled() { mixin(MGBPC!(3432, 0x1)()); }
-		bool bTargetAdhesionEnabled(bool val) { mixin(MSBPC!(3432, 0x1)()); }
+		bool bDebugTargetAdhesion() { mixin(MGBPC(3432, 0x2)); }
+		bool bDebugTargetAdhesion(bool val) { mixin(MSBPC(3432, 0x2)); }
+		bool bTargetAdhesionEnabled() { mixin(MGBPC(3432, 0x1)); }
+		bool bTargetAdhesionEnabled(bool val) { mixin(MSBPC(3432, 0x1)); }
 	}
 final:
 	void UpdateRotation(float DeltaTime)

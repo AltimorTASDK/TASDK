@@ -11,9 +11,9 @@ extern(C++) interface UTMutator : Mutator
 {
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
-	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTMutator")()); }
+	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class UTGame.UTMutator")); }
 	private static __gshared UTMutator mDefaultProperties;
-	@property final static UTMutator DefaultProperties() { mixin(MGDPC!(UTMutator, "UTMutator UTGame.Default__UTMutator")()); }
+	@property final static UTMutator DefaultProperties() { mixin(MGDPC("UTMutator", "UTMutator UTGame.Default__UTMutator")); }
 	static struct Functions
 	{
 		private static __gshared
@@ -25,10 +25,10 @@ public extern(D):
 		}
 		public @property static final
 		{
-			ScriptFunction GetNextUTMutator() { mixin(MGF!("mGetNextUTMutator", "Function UTGame.UTMutator.GetNextUTMutator")()); }
-			ScriptFunction MutatorIsAllowed() { mixin(MGF!("mMutatorIsAllowed", "Function UTGame.UTMutator.MutatorIsAllowed")()); }
-			ScriptFunction ReplaceWith() { mixin(MGF!("mReplaceWith", "Function UTGame.UTMutator.ReplaceWith")()); }
-			ScriptFunction ProcessSpeechRecognition() { mixin(MGF!("mProcessSpeechRecognition", "Function UTGame.UTMutator.ProcessSpeechRecognition")()); }
+			ScriptFunction GetNextUTMutator() { mixin(MGF("mGetNextUTMutator", "Function UTGame.UTMutator.GetNextUTMutator")); }
+			ScriptFunction MutatorIsAllowed() { mixin(MGF("mMutatorIsAllowed", "Function UTGame.UTMutator.MutatorIsAllowed")); }
+			ScriptFunction ReplaceWith() { mixin(MGF("mReplaceWith", "Function UTGame.UTMutator.ReplaceWith")); }
+			ScriptFunction ProcessSpeechRecognition() { mixin(MGF("mProcessSpeechRecognition", "Function UTGame.UTMutator.ProcessSpeechRecognition")); }
 		}
 	}
 final:
