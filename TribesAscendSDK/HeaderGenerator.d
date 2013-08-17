@@ -594,16 +594,16 @@ final class FunctionArgumentDescriptor : Descriptor
 			if (InnerProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("*%s = %s[%u];", ArgumentName, bufName, InnerProperty.Offset);
+					wtr.WriteLine("%s = %s[%u];", ArgumentName, bufName, InnerProperty.Offset);
 				else
-					wtr.WriteLine("*%s = *cast(%s*)&%s[%u];", ArgumentName, tpName, bufName, InnerProperty.Offset);
+					wtr.WriteLine("%s = *cast(%s*)&%s[%u];", ArgumentName, tpName, bufName, InnerProperty.Offset);
 			}
 			else
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("*%s = %s[0];", ArgumentName, bufName);
+					wtr.WriteLine("%s = %s[0];", ArgumentName, bufName);
 				else
-					wtr.WriteLine("*%s = *cast(%s*)%s.ptr;", ArgumentName, tpName, bufName);
+					wtr.WriteLine("%s = *cast(%s*)%s.ptr;", ArgumentName, tpName, bufName);
 			}
 		}
 	}
