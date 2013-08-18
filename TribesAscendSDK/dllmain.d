@@ -9,6 +9,7 @@ private import ScriptHooks;
 private import SigScans;
 private import Win32API;
 private import HeaderGenerator;
+private import TestMod;
 
 __gshared HINSTANCE g_hInst = NULL;
 
@@ -38,8 +39,8 @@ static void Init()
 		
 		//OutputLog("\n");
 
-		//ModInit();
-		HeaderGenerator.Generate();
+		ModInit();
+		//HeaderGenerator.Generate();
 	}
 	catch (Throwable e)
 	{

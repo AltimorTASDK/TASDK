@@ -4,11 +4,12 @@ private import std.conv;
 private import std.math;
 private import std.encoding;
 private import std.c.string;
+private import std.c.stdlib;
 
 private import Flags : Flags;
 
 public alias ulong QWord; // Total size: 0x08
-public alias void* Pointer;
+public alias void* Pointer; // Total size: 0x04
 
 public struct ScriptArray(T) // Total size: 0x0C
 {
@@ -20,9 +21,9 @@ private:
 public:
 	@property
 	{
-		final T* Data() { return mData; }
-		final int Count() { return mCount; }
-		final int Max() { return mMax; }
+		final auto ref T* Data() { return mData; }
+		final auto ref int Count() { return mCount; }
+		final auto ref int Max() { return mMax; }
 	}
 
 	// The slice operation that occurs first takes care of
@@ -37,6 +38,16 @@ private:
 	ScriptArray!(wchar) mString;
 
 public:
+	public this(string str)
+	{
+		wstring dst;
+		transcode(str, dst);
+		mString.Max = dst.length + 1;
+		mString.Count = mString.Max;
+		mString.Data = cast(wchar*)calloc(wchar.sizeof * (mString.Count), 1);
+		mString.Data[0..mString.Count][] = dst;
+	}
+
 	string ToString()
 	{
 		string dst;
@@ -44,6 +55,7 @@ public:
 		return dst;
 	}
 }
+public static final ScriptString ToScriptString(string pThis) { return ScriptString(pThis); }
 
 public struct ScriptNameEntry // Total size: N/A (This structure is dynamically sized)
 {
