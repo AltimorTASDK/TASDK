@@ -17,7 +17,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer InstanceOverride() { mixin(MGPC("UObject.Pointer", 192)); }
+			Pointer InstanceOverride() { mixin(MGPC("Pointer", 192)); }
 			MaterialExpression.ExpressionInput B() { mixin(MGPC("MaterialExpression.ExpressionInput", 164)); }
 			MaterialExpression.ExpressionInput A() { mixin(MGPC("MaterialExpression.ExpressionInput", 136)); }
 		}

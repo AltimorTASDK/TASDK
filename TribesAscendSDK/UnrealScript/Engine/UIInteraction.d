@@ -110,9 +110,9 @@ public extern(D):
 			ScriptClass SceneClientClass() { mixin(MGPC("ScriptClass", 128)); }
 			ScriptClass UIManagerClass() { mixin(MGPC("ScriptClass", 124)); }
 			// WARNING: Property 'UIManager' has the same name as a defined type!
-			UObject.Pointer VfTable_FCallbackEventDevice() { mixin(MGPC("UObject.Pointer", 116)); }
-			UObject.Pointer VfTable_FGlobalDataStoreClientManager() { mixin(MGPC("UObject.Pointer", 112)); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC("UObject.Pointer", 108)); }
+			Pointer VfTable_FCallbackEventDevice() { mixin(MGPC("Pointer", 116)); }
+			Pointer VfTable_FGlobalDataStoreClientManager() { mixin(MGPC("Pointer", 112)); }
+			Pointer VfTable_FExec() { mixin(MGPC("Pointer", 108)); }
 		}
 		bool bProcessInput() { mixin(MGBPC(152, 0x1)); }
 		bool bProcessInput(bool val) { mixin(MSBPC(152, 0x1)); }

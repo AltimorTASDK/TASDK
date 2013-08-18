@@ -38,7 +38,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ReleaseCodecFence() { mixin(MGPC("UObject.Pointer", 312)); }
+			Pointer ReleaseCodecFence() { mixin(MGPC("Pointer", 312)); }
 			UObject.UntypedBulkData_Mirror Data() { mixin(MGPC("UObject.UntypedBulkData_Mirror", 260)); }
 			CodecMovie Decoder() { mixin(MGPC("CodecMovie", 252)); }
 			ScriptClass DecoderClass() { mixin(MGPC("ScriptClass", 248)); }

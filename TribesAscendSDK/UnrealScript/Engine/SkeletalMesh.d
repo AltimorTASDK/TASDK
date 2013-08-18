@@ -187,7 +187,7 @@ public extern(D):
 			int LODBiasXbox360() { mixin(MGPC("int", 368)); }
 			ScriptString SourceFilePath() { mixin(MGPC("ScriptString", 372)); }
 			ScriptString SourceFileTimestamp() { mixin(MGPC("ScriptString", 384)); }
-			ScriptArray!(UObject.Pointer) ClothMesh() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 396)); }
+			ScriptArray!(Pointer) ClothMesh() { mixin(MGPC("ScriptArray!(Pointer)", 396)); }
 			ScriptArray!(float) ClothMeshScale() { mixin(MGPC("ScriptArray!(float)", 408)); }
 			ScriptArray!(int) ClothToGraphicsVertMap() { mixin(MGPC("ScriptArray!(int)", 420)); }
 			ScriptArray!(float) ClothMovementScale() { mixin(MGPC("ScriptArray!(float)", 432)); }
@@ -229,7 +229,7 @@ public extern(D):
 			ScriptArray!(Vector) SoftBodyTetraVertsUnscaled() { mixin(MGPC("ScriptArray!(Vector)", 740)); }
 			ScriptArray!(int) SoftBodyTetraIndices() { mixin(MGPC("ScriptArray!(int)", 752)); }
 			ScriptArray!(SkeletalMesh.SoftBodyTetraLink) SoftBodyTetraLinks() { mixin(MGPC("ScriptArray!(SkeletalMesh.SoftBodyTetraLink)", 764)); }
-			ScriptArray!(UObject.Pointer) CachedSoftBodyMeshes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 776)); }
+			ScriptArray!(Pointer) CachedSoftBodyMeshes() { mixin(MGPC("ScriptArray!(Pointer)", 776)); }
 			ScriptArray!(float) CachedSoftBodyMeshScales() { mixin(MGPC("ScriptArray!(float)", 788)); }
 			ScriptArray!(ScriptName) SoftBodyBones() { mixin(MGPC("ScriptArray!(ScriptName)", 800)); }
 			ScriptArray!(SkeletalMesh.SoftBodySpecialBoneInfo) SoftBodySpecialBones() { mixin(MGPC("ScriptArray!(SkeletalMesh.SoftBodySpecialBoneInfo)", 812)); }

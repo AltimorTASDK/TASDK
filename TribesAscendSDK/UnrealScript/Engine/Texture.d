@@ -203,7 +203,7 @@ public extern(D):
 			float AdjustBrightnessCurve() { mixin(MGPC("float", 212)); }
 			float AdjustBrightness() { mixin(MGPC("float", 208)); }
 			UObject.Guid LightingGuid() { mixin(MGPC("UObject.Guid", 192)); }
-			UObject.Pointer Resource() { mixin(MGPC("UObject.Pointer", 188)); }
+			Pointer Resource() { mixin(MGPC("Pointer", 188)); }
 			ScriptString SourceFileTimestamp() { mixin(MGPC("ScriptString", 176)); }
 			ScriptString SourceFilePath() { mixin(MGPC("ScriptString", 164)); }
 			int NumCinematicMipLevels() { mixin(MGPC("int", 160)); }

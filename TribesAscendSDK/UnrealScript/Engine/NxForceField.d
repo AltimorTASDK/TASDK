@@ -31,12 +31,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) ConvexMeshes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 496)); }
-			ScriptArray!(UObject.Pointer) ExclusionShapes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 508)); }
-			ScriptArray!(UObject.Pointer) ExclusionShapePoses() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 520)); }
+			ScriptArray!(Pointer) ConvexMeshes() { mixin(MGPC("ScriptArray!(Pointer)", 496)); }
+			ScriptArray!(Pointer) ExclusionShapes() { mixin(MGPC("ScriptArray!(Pointer)", 508)); }
+			ScriptArray!(Pointer) ExclusionShapePoses() { mixin(MGPC("ScriptArray!(Pointer)", 520)); }
 			int SceneIndex() { mixin(MGPC("int", 536)); }
-			UObject.Pointer U2NRotation() { mixin(MGPC("UObject.Pointer", 532)); }
-			UObject.Pointer ForceField() { mixin(MGPC("UObject.Pointer", 492)); }
+			Pointer U2NRotation() { mixin(MGPC("Pointer", 532)); }
+			Pointer ForceField() { mixin(MGPC("Pointer", 492)); }
 			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC("PrimitiveComponent.ERBCollisionChannel", 488)); }
 			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC("PrimitiveComponent.RBCollisionChannelContainer", 484)); }
 			int ExcludeChannel() { mixin(MGPC("int", 476)); }

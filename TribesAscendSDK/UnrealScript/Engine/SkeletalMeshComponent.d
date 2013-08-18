@@ -392,10 +392,10 @@ public extern(D):
 			ScriptArray!(int) AnimTickRelevancyArray() { mixin(MGPC("ScriptArray!(int)", 540)); }
 			ScriptArray!(float) AnimTickWeightsArray() { mixin(MGPC("ScriptArray!(float)", 552)); }
 			ScriptArray!(SkelControlBase) SkelControlTickArray() { mixin(MGPC("ScriptArray!(SkelControlBase)", 564)); }
-			UObject.Pointer ApexClothing() { mixin(MGPC("UObject.Pointer", 584)); }
+			Pointer ApexClothing() { mixin(MGPC("Pointer", 584)); }
 			float PhysicsWeight() { mixin(MGPC("float", 588)); }
 			float GlobalAnimRateScale() { mixin(MGPC("float", 592)); }
-			UObject.Pointer MeshObject() { mixin(MGPC("UObject.Pointer", 596)); }
+			Pointer MeshObject() { mixin(MGPC("Pointer", 596)); }
 			UObject.Color WireframeColor() { mixin(MGPC("UObject.Color", 600)); }
 			ScriptArray!(UObject.BoneAtom) SpaceBases() { mixin(MGPC("ScriptArray!(UObject.BoneAtom)", 604)); }
 			ScriptArray!(UObject.BoneAtom) LocalAtoms() { mixin(MGPC("ScriptArray!(UObject.BoneAtom)", 616)); }
@@ -451,7 +451,7 @@ public extern(D):
 			Vector MaxPosDampRange() { mixin(MGPC("Vector", 1076)); }
 			Vector MinPosDampScale() { mixin(MGPC("Vector", 1088)); }
 			Vector MaxPosDampScale() { mixin(MGPC("Vector", 1100)); }
-			UObject.Pointer ClothSim() { mixin(MGPC("UObject.Pointer", 1112)); }
+			Pointer ClothSim() { mixin(MGPC("Pointer", 1112)); }
 			int SceneIndex() { mixin(MGPC("int", 1116)); }
 			ScriptArray!(Vector) ClothMeshPosData() { mixin(MGPC("ScriptArray!(Vector)", 1120)); }
 			ScriptArray!(Vector) ClothMeshNormalData() { mixin(MGPC("ScriptArray!(Vector)", 1132)); }
@@ -475,7 +475,7 @@ public extern(D):
 			PrimitiveComponent.RBCollisionChannelContainer ApexClothingRBCollideWithChannels() { mixin(MGPC("PrimitiveComponent.RBCollisionChannelContainer", 1264)); }
 			Vector WindVelocity() { mixin(MGPC("Vector", 1272)); }
 			float WindVelocityBlendTime() { mixin(MGPC("float", 1284)); }
-			UObject.Pointer SoftBodySim() { mixin(MGPC("UObject.Pointer", 1292)); }
+			Pointer SoftBodySim() { mixin(MGPC("Pointer", 1292)); }
 			int SoftBodySceneIndex() { mixin(MGPC("int", 1296)); }
 			ScriptArray!(Vector) SoftBodyTetraPosData() { mixin(MGPC("ScriptArray!(Vector)", 1304)); }
 			ScriptArray!(int) SoftBodyTetraIndexData() { mixin(MGPC("ScriptArray!(int)", 1316)); }
@@ -484,7 +484,7 @@ public extern(D):
 			float SoftBodyImpulseScale() { mixin(MGPC("float", 1336)); }
 			PrimitiveComponent.ERBCollisionChannel SoftBodyRBChannel() { mixin(MGPC("PrimitiveComponent.ERBCollisionChannel", 1344)); }
 			PrimitiveComponent.RBCollisionChannelContainer SoftBodyRBCollideWithChannels() { mixin(MGPC("PrimitiveComponent.RBCollisionChannelContainer", 1348)); }
-			UObject.Pointer SoftBodyASVPlane() { mixin(MGPC("UObject.Pointer", 1352)); }
+			Pointer SoftBodyASVPlane() { mixin(MGPC("Pointer", 1352)); }
 			Material LimitMaterial() { mixin(MGPC("Material", 1356)); }
 			UObject.BoneAtom RootMotionDelta() { mixin(MGPC("UObject.BoneAtom", 1360)); }
 			Vector RootMotionVelocity() { mixin(MGPC("Vector", 1392)); }
@@ -497,7 +497,7 @@ public extern(D):
 			int bRMMOneFrameDelay() { mixin(MGPC("int", 1432)); }
 			SkeletalMeshComponent.ERootMotionRotationMode RootMotionRotationMode() { mixin(MGPC("SkeletalMeshComponent.ERootMotionRotationMode", 1436)); }
 			SkeletalMeshComponent.EFaceFXBlendMode FaceFXBlendMode() { mixin(MGPC("SkeletalMeshComponent.EFaceFXBlendMode", 1437)); }
-			UObject.Pointer FaceFXActorInstance() { mixin(MGPC("UObject.Pointer", 1440)); }
+			Pointer FaceFXActorInstance() { mixin(MGPC("Pointer", 1440)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CachedFaceFXAudioComp'!
 			ScriptArray!(ubyte) BoneVisibility() { mixin(MGPC("ScriptArray!(ubyte)", 1448)); }
 			UObject.BoneAtom LocalToWorldBoneAtom() { mixin(MGPC("UObject.BoneAtom", 1472)); }

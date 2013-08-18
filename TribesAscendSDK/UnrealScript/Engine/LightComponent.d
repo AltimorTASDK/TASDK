@@ -149,7 +149,7 @@ public extern(D):
 			float Brightness() { mixin(MGPC("float", 256)); }
 			UObject.Color LightColor() { mixin(MGPC("UObject.Color", 260)); }
 			// WARNING: Property 'Function' has the same name as a defined type!
-			UObject.Pointer SceneInfo() { mixin(MGPC("UObject.Pointer", 88)); }
+			Pointer SceneInfo() { mixin(MGPC("Pointer", 88)); }
 			UObject.Matrix WorldToLight() { mixin(MGPC("UObject.Matrix", 96)); }
 			UObject.Matrix LightToWorld() { mixin(MGPC("UObject.Matrix", 160)); }
 			UObject.Guid LightGuid() { mixin(MGPC("UObject.Guid", 224)); }
@@ -161,8 +161,8 @@ public extern(D):
 			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC("LightComponent.LightingChannelContainer", 296)); }
 			ScriptArray!(Brush) InclusionVolumes() { mixin(MGPC("ScriptArray!(Brush)", 300)); }
 			ScriptArray!(Brush) ExclusionVolumes() { mixin(MGPC("ScriptArray!(Brush)", 312)); }
-			ScriptArray!(UObject.Pointer) InclusionConvexVolumes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 324)); }
-			ScriptArray!(UObject.Pointer) ExclusionConvexVolumes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 336)); }
+			ScriptArray!(Pointer) InclusionConvexVolumes() { mixin(MGPC("ScriptArray!(Pointer)", 324)); }
+			ScriptArray!(Pointer) ExclusionConvexVolumes() { mixin(MGPC("ScriptArray!(Pointer)", 336)); }
 			LightComponent.ELightAffectsClassification LightAffectsClassification() { mixin(MGPC("LightComponent.ELightAffectsClassification", 348)); }
 			LightComponent.ELightShadowMode LightShadowMode() { mixin(MGPC("LightComponent.ELightShadowMode", 349)); }
 			UObject.LinearColor ModShadowColor() { mixin(MGPC("UObject.LinearColor", 352)); }

@@ -41,15 +41,15 @@ public extern(D):
 			ScriptString SourceFileTimestamp() { mixin(MGPC("ScriptString", 424)); }
 			ScriptString SourceFilePath() { mixin(MGPC("ScriptString", 412)); }
 			ScriptString Comment() { mixin(MGPC("ScriptString", 388)); }
-			UObject.Pointer ResourceData() { mixin(MGPC("UObject.Pointer", 372)); }
+			Pointer ResourceData() { mixin(MGPC("Pointer", 372)); }
 			int ResourceSize() { mixin(MGPC("int", 368)); }
 			int ResourceID() { mixin(MGPC("int", 364)); }
 			UObject.UntypedBulkData_Mirror CompressedPS3Data() { mixin(MGPC("UObject.UntypedBulkData_Mirror", 312)); }
 			UObject.UntypedBulkData_Mirror CompressedXbox360Data() { mixin(MGPC("UObject.UntypedBulkData_Mirror", 260)); }
 			UObject.UntypedBulkData_Mirror CompressedPCData() { mixin(MGPC("UObject.UntypedBulkData_Mirror", 208)); }
 			int RawPCMDataSize() { mixin(MGPC("int", 204)); }
-			UObject.Pointer RawPCMData() { mixin(MGPC("UObject.Pointer", 200)); }
-			UObject.Pointer VorbisDecompressor() { mixin(MGPC("UObject.Pointer", 196)); }
+			Pointer RawPCMData() { mixin(MGPC("Pointer", 200)); }
+			Pointer VorbisDecompressor() { mixin(MGPC("Pointer", 196)); }
 			UObject.UntypedBulkData_Mirror RawData() { mixin(MGPC("UObject.UntypedBulkData_Mirror", 144)); }
 			int SampleRate() { mixin(MGPC("int", 116)); }
 			int NumChannels() { mixin(MGPC("int", 112)); }

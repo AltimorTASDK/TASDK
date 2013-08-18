@@ -60,7 +60,7 @@ public extern(D):
 			ScriptArray!(ubyte) VoiceData() { mixin(MGPC("ScriptArray!(ubyte)", 88)); }
 			ScriptArray!(ubyte) WorkingVoiceData() { mixin(MGPC("ScriptArray!(ubyte)", 100)); }
 			ScriptArray!(ubyte) UserData() { mixin(MGPC("ScriptArray!(ubyte)", 112)); }
-			UObject.Pointer FnxVoiceData() { mixin(MGPC("UObject.Pointer", 192)); }
+			Pointer FnxVoiceData() { mixin(MGPC("Pointer", 192)); }
 			SpeechRecognition.RecogUserData InstanceData() { mixin(MGPC("SpeechRecognition.RecogUserData", 124)); }
 			float ConfidenceThreshhold() { mixin(MGPC("float", 72)); }
 			ScriptString Language() { mixin(MGPC("ScriptString", 60)); }

@@ -50,8 +50,8 @@ public extern(D):
 			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPS("ScriptArray!(ShadowMap2D)", 0)); }
 			ScriptArray!(UObject) ShadowVertexBuffers() { mixin(MGPS("ScriptArray!(UObject)", 12)); }
 			ScriptArray!(Vector) VertexColorPositions() { mixin(MGPS("ScriptArray!(Vector)", 32)); }
-			UObject.Pointer OverrideVertexColors() { mixin(MGPS("UObject.Pointer", 28)); }
-			UObject.Pointer LightMap() { mixin(MGPS("UObject.Pointer", 24)); }
+			Pointer OverrideVertexColors() { mixin(MGPS("Pointer", 28)); }
+			Pointer LightMap() { mixin(MGPS("Pointer", 24)); }
 		}
 	}
 	@property final

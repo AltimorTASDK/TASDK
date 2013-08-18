@@ -224,11 +224,11 @@ public extern(D):
 			UObject.Matrix LocalToWorld() { mixin(MGPC("UObject.Matrix", 160)); }
 			int ThreadTag() { mixin(MGPC("int", 92)); }
 			UObject.BoxSphereBounds Bounds() { mixin(MGPC("UObject.BoxSphereBounds", 120)); }
-			UObject.Pointer SceneInfo() { mixin(MGPC("UObject.Pointer", 148)); }
+			Pointer SceneInfo() { mixin(MGPC("Pointer", 148)); }
 			int DetachFence() { mixin(MGPC("int", 152)); }
 			float LocalToWorldDeterminant() { mixin(MGPC("float", 156)); }
 			int MotionBlurInfoIndex() { mixin(MGPC("int", 224)); }
-			ScriptArray!(UObject.Pointer) DecalList() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 228)); }
+			ScriptArray!(Pointer) DecalList() { mixin(MGPC("ScriptArray!(Pointer)", 228)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*) DecalsToReattach() { mixin(MGPC("ScriptArray!(

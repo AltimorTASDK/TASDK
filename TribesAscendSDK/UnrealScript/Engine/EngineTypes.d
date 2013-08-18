@@ -166,7 +166,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.EngineTypes.LightMapRef")); }
-		@property final auto ref UObject.Pointer Reference() { mixin(MGPS("UObject.Pointer", 0)); }
+		@property final auto ref Pointer Reference() { mixin(MGPS("Pointer", 0)); }
 	}
 	struct DominantShadowInfo
 	{

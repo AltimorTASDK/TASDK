@@ -21,7 +21,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.Pointer Kernel() { mixin(MGPC("UObject.Pointer", 564)); }
+		Pointer Kernel() { mixin(MGPC("Pointer", 564)); }
 		PrimitiveComponent.ERadialImpulseFalloff ForceFalloff() { mixin(MGPC("PrimitiveComponent.ERadialImpulseFalloff", 560)); }
 		float SelfRotationStrength() { mixin(MGPC("float", 556)); }
 		float ForceRadius() { mixin(MGPC("float", 552)); }

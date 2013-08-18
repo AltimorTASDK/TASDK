@@ -17,7 +17,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer InstanceOverride() { mixin(MGPC("UObject.Pointer", 164)); }
+			Pointer InstanceOverride() { mixin(MGPC("Pointer", 164)); }
 			// WARNING: Property 'Input' has the same name as a defined type!
 		}
 		bool DefaultA() { mixin(MGBPC(160, 0x8)); }

@@ -22,7 +22,7 @@ public extern(D):
 		float m_fNewValue() { mixin(MGPC("float", 68)); }
 		ScriptName m_nmClassPropertyName() { mixin(MGPC("ScriptName", 60)); }
 		TrGameObjective m_Owner() { mixin(MGPC("TrGameObjective", 76)); }
-		UObject.Pointer m_ClassPropertyPointer() { mixin(MGPC("UObject.Pointer", 72)); }
+		Pointer m_ClassPropertyPointer() { mixin(MGPC("Pointer", 72)); }
 	}
 	final void InitUpgrade(TrGameObjective OwnerObject)
 	{

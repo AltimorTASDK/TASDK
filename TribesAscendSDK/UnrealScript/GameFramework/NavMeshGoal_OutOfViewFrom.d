@@ -33,7 +33,7 @@ public extern(D):
 		auto ref
 		{
 			Vector OutOfViewLocation() { mixin(MGPC("Vector", 84)); }
-			UObject.Pointer GoalPoly() { mixin(MGPC("UObject.Pointer", 80)); }
+			Pointer GoalPoly() { mixin(MGPC("Pointer", 80)); }
 		}
 		bool bShowDebug() { mixin(MGBPC(96, 0x1)); }
 		bool bShowDebug(bool val) { mixin(MSBPC(96, 0x1)); }

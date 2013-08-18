@@ -56,7 +56,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) DLCConfigCacheChanges() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 60)); }
+		ScriptArray!(Pointer) DLCConfigCacheChanges() { mixin(MGPC("ScriptArray!(Pointer)", 60)); }
 		ScriptArray!(ScriptString) InstalledDLC() { mixin(MGPC("ScriptArray!(ScriptString)", 72)); }
 		ScriptArray!(ScriptClass) ClassesToReload() { mixin(MGPC("ScriptArray!(ScriptClass)", 144)); }
 		ScriptArray!(UObject) ObjectsToReload() { mixin(MGPC("ScriptArray!(UObject)", 156)); }

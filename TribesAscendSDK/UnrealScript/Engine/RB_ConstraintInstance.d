@@ -62,7 +62,7 @@ public extern(D):
 		auto ref
 		{
 			int ConstraintIndex() { mixin(MGPC("int", 68)); }
-			UObject.Pointer DummyKinActor() { mixin(MGPC("UObject.Pointer", 168)); }
+			Pointer DummyKinActor() { mixin(MGPC("Pointer", 168)); }
 			float AngularDriveForceLimit() { mixin(MGPC("float", 164)); }
 			float AngularDriveDamping() { mixin(MGPC("float", 160)); }
 			float AngularDriveSpring() { mixin(MGPC("float", 156)); }
@@ -73,7 +73,7 @@ public extern(D):
 			float LinearDriveSpring() { mixin(MGPC("float", 108)); }
 			Vector LinearVelocityTarget() { mixin(MGPC("Vector", 96)); }
 			Vector LinearPositionTarget() { mixin(MGPC("Vector", 84)); }
-			UObject.Pointer ConstraintData() { mixin(MGPC("UObject.Pointer", 80)); }
+			Pointer ConstraintData() { mixin(MGPC("Pointer", 80)); }
 			int SceneIndex() { mixin(MGPC("int", 72)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OwnerComponent'!
 			Actor Owner() { mixin(MGPC("Actor", 60)); }

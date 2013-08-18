@@ -21,8 +21,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 116)); }
-			UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 112)); }
+			Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 116)); }
+			Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 112)); }
 		}
 		bool bSkipDuringEnumeration() { mixin(MGBPC(120, 0x2)); }
 		bool bSkipDuringEnumeration(bool val) { mixin(MSBPC(120, 0x2)); }

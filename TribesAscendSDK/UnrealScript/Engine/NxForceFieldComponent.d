@@ -22,14 +22,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) ConvexMeshes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 516)); }
-			ScriptArray!(UObject.Pointer) ExclusionShapes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 528)); }
-			ScriptArray!(UObject.Pointer) ExclusionShapePoses() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 540)); }
-			UObject.Pointer RBPhysScene() { mixin(MGPC("UObject.Pointer", 564)); }
+			ScriptArray!(Pointer) ConvexMeshes() { mixin(MGPC("ScriptArray!(Pointer)", 516)); }
+			ScriptArray!(Pointer) ExclusionShapes() { mixin(MGPC("ScriptArray!(Pointer)", 528)); }
+			ScriptArray!(Pointer) ExclusionShapePoses() { mixin(MGPC("ScriptArray!(Pointer)", 540)); }
+			Pointer RBPhysScene() { mixin(MGPC("Pointer", 564)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
 			float ElapsedTime() { mixin(MGPC("float", 556)); }
 			int SceneIndex() { mixin(MGPC("int", 552)); }
-			UObject.Pointer ForceField() { mixin(MGPC("UObject.Pointer", 512)); }
+			Pointer ForceField() { mixin(MGPC("Pointer", 512)); }
 			float Duration() { mixin(MGPC("float", 508)); }
 			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC("PrimitiveComponent.RBCollisionChannelContainer", 504)); }
 			int ExcludeChannel() { mixin(MGPC("int", 496)); }

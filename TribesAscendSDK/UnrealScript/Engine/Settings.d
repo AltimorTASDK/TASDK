@@ -195,7 +195,7 @@ public extern(D):
 		{
 			Settings.ESettingsDataType Type() { mixin(MGPS("Settings.ESettingsDataType", 0)); }
 			int Value1() { mixin(MGPS("int", 4)); }
-			UObject.Pointer Value2() { mixin(MGPS("UObject.Pointer", 8)); }
+			Pointer Value2() { mixin(MGPS("Pointer", 8)); }
 		}
 	}
 	struct IdToStringMapping

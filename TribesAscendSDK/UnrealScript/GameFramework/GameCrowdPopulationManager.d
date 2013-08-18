@@ -99,7 +99,7 @@ public extern(D):
 			float SplitScreenNumReduction() { mixin(MGPC("float", 492)); }
 			int SpawnNum() { mixin(MGPC("int", 488)); }
 			float SpawnRate() { mixin(MGPC("float", 484)); }
-			UObject.Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC("UObject.Pointer", 476)); }
+			Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC("Pointer", 476)); }
 		}
 		bool bWarmupPosition() { mixin(MGBPC(480, 0x40)); }
 		bool bWarmupPosition(bool val) { mixin(MSBPC(480, 0x40)); }

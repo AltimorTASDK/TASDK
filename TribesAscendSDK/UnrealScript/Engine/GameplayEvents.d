@@ -196,7 +196,7 @@ public extern(D):
 		GameplayEvents.GameSessionInformation CurrentSessionInfo() { mixin(MGPC("GameplayEvents.GameSessionInformation", 120)); }
 		GameplayEvents.GameplayEventsHeader Header() { mixin(MGPC("GameplayEvents.GameplayEventsHeader", 76)); }
 		ScriptString StatsFileName() { mixin(MGPC("ScriptString", 64)); }
-		UObject.Pointer Archive() { mixin(MGPC("UObject.Pointer", 60)); }
+		Pointer Archive() { mixin(MGPC("Pointer", 60)); }
 	}
 final:
 	bool OpenStatsFile(ScriptString Filename)

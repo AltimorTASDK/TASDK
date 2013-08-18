@@ -158,7 +158,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Terrain.CachedTerrainMaterialArray")); }
-		@property final auto ref ScriptArray!(UObject.Pointer) CachedMaterials() { mixin(MGPS("ScriptArray!(UObject.Pointer)", 0)); }
+		@property final auto ref ScriptArray!(Pointer) CachedMaterials() { mixin(MGPS("ScriptArray!(Pointer)", 0)); }
 	}
 	@property final
 	{
@@ -180,7 +180,7 @@ void*)", 540)); }
 			UObject.Guid LightingGuid() { mixin(MGPC("UObject.Guid", 716)); }
 			UObject.Color WireframeColor() { mixin(MGPC("UObject.Color", 712)); }
 			int EditorTessellationLevel() { mixin(MGPC("int", 696)); }
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC("UObject.Pointer", 692)); }
+			Pointer ReleaseResourcesFence() { mixin(MGPC("Pointer", 692)); }
 			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC("EngineTypes.LightmassPrimitiveSettings", 664)); }
 			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC("LightComponent.LightingChannelContainer", 660)); }
 			PhysicalMaterial TerrainPhysMaterialOverride() { mixin(MGPC("PhysicalMaterial", 656)); }

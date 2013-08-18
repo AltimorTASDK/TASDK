@@ -52,7 +52,7 @@ public extern(D):
 		ScriptArray!(UIResourceDataProvider) UnRankedDataProviders() { mixin(MGPC("ScriptArray!(UIResourceDataProvider)", 152)); }
 		ScriptClass ProviderClass() { mixin(MGPC("ScriptClass", 136)); }
 		ScriptString ProviderClassName() { mixin(MGPC("ScriptString", 124)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 120)); }
 	}
 final:
 	int GetProviderCount(ScriptName ProviderTag)

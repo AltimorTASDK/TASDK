@@ -22,7 +22,7 @@ public extern(D):
 void*) DependentComponents() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)", 656)); }
-			UObject.Pointer ComponentSkinResources() { mixin(MGPC("UObject.Pointer", 640)); }
+			Pointer ComponentSkinResources() { mixin(MGPC("Pointer", 640)); }
 		}
 		bool bFragmentTransformsChanged() { mixin(MGBPC(668, 0x2)); }
 		bool bFragmentTransformsChanged(bool val) { mixin(MSBPC(668, 0x2)); }

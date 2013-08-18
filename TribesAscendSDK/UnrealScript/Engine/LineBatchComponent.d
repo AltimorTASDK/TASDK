@@ -14,10 +14,10 @@ public extern(D):
 	@property final static LineBatchComponent DefaultProperties() { mixin(MGDPC("LineBatchComponent", "LineBatchComponent Engine.Default__LineBatchComponent")); }
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) BatchedLines() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 496)); }
-		ScriptArray!(UObject.Pointer) BatchedPoints() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 508)); }
+		ScriptArray!(Pointer) BatchedLines() { mixin(MGPC("ScriptArray!(Pointer)", 496)); }
+		ScriptArray!(Pointer) BatchedPoints() { mixin(MGPC("ScriptArray!(Pointer)", 508)); }
 		float DefaultLifeTime() { mixin(MGPC("float", 520)); }
-		UObject.Pointer FPrimitiveDrawInterfaceView() { mixin(MGPC("UObject.Pointer", 492)); }
-		UObject.Pointer FPrimitiveDrawInterfaceVfTable() { mixin(MGPC("UObject.Pointer", 488)); }
+		Pointer FPrimitiveDrawInterfaceView() { mixin(MGPC("Pointer", 492)); }
+		Pointer FPrimitiveDrawInterfaceVfTable() { mixin(MGPC("Pointer", 488)); }
 	}
 }

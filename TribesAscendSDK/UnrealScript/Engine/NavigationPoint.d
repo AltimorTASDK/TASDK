@@ -89,7 +89,7 @@ public extern(D):
 		{
 			ubyte OwnerType() { mixin(MGPS("ubyte", 48)); }
 			UObject Owner() { mixin(MGPS("UObject", 44)); }
-			UObject.Pointer OctreeNode() { mixin(MGPS("UObject.Pointer", 40)); }
+			Pointer OctreeNode() { mixin(MGPS("Pointer", 40)); }
 			Vector BoxCenter() { mixin(MGPS("Vector", 28)); }
 			UObject.Box BoundingBox() { mixin(MGPS("UObject.Box", 0)); }
 		}

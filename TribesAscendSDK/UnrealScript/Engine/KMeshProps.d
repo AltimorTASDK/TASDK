@@ -102,7 +102,7 @@ public extern(D):
 				ScriptArray!(KMeshProps.KBoxElem) BoxElems() { mixin(MGPS("ScriptArray!(KMeshProps.KBoxElem)", 12)); }
 				ScriptArray!(KMeshProps.KSphylElem) SphylElems() { mixin(MGPS("ScriptArray!(KMeshProps.KSphylElem)", 24)); }
 				ScriptArray!(KMeshProps.KConvexElem) ConvexElems() { mixin(MGPS("ScriptArray!(KMeshProps.KConvexElem)", 36)); }
-				UObject.Pointer RenderInfo() { mixin(MGPS("UObject.Pointer", 48)); }
+				Pointer RenderInfo() { mixin(MGPS("Pointer", 48)); }
 			}
 			bool bSkipCloseAndParallelChecks() { mixin(MGBPS(52, 0x1)); }
 			bool bSkipCloseAndParallelChecks(bool val) { mixin(MSBPS(52, 0x1)); }

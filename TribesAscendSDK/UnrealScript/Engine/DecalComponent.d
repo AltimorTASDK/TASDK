@@ -53,7 +53,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.DecalComponent.DecalReceiver")); }
 		@property final auto ref
 		{
-			UObject.Pointer RenderData() { mixin(MGPS("UObject.Pointer", 4)); }
+			Pointer RenderData() { mixin(MGPS("Pointer", 4)); }
 			// WARNING: Property 'Component' has the same name as a defined type!
 		}
 	}
@@ -63,7 +63,7 @@ public extern(D):
 		{
 			ScriptArray!(int) HitNodeIndices() { mixin(MGPC("ScriptArray!(int)", 632)); }
 			ScriptArray!(DecalComponent.DecalReceiver) DecalReceivers() { mixin(MGPC("ScriptArray!(DecalComponent.DecalReceiver)", 644)); }
-			ScriptArray!(UObject.Pointer) StaticReceivers() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 656)); }
+			ScriptArray!(Pointer) StaticReceivers() { mixin(MGPC("ScriptArray!(Pointer)", 656)); }
 			ScriptArray!(UObject.Plane) Planes() { mixin(MGPC("ScriptArray!(UObject.Plane)", 672)); }
 			ScriptArray!(Actor) Filter() { mixin(MGPC("ScriptArray!(Actor)", 712)); }
 			ScriptArray!(
@@ -82,7 +82,7 @@ void*)", 724)); }
 			int SortOrder() { mixin(MGPC("int", 692)); }
 			float SlopeScaleDepthBias() { mixin(MGPC("float", 688)); }
 			float DepthBias() { mixin(MGPC("float", 684)); }
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC("UObject.Pointer", 668)); }
+			Pointer ReleaseResourcesFence() { mixin(MGPC("Pointer", 668)); }
 			int FracturedStaticMeshComponentIndex() { mixin(MGPC("int", 628)); }
 			int HitLevelIndex() { mixin(MGPC("int", 624)); }
 			int HitNodeIndex() { mixin(MGPC("int", 620)); }

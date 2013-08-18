@@ -28,7 +28,7 @@ public extern(D):
 		{
 			int CachedPhysBrushDataVersion() { mixin(MGPC("int", 564)); }
 			BrushComponent.KCachedConvexData_Mirror CachedPhysBrushData() { mixin(MGPC("BrushComponent.KCachedConvexData_Mirror", 552)); }
-			UObject.Pointer BrushPhysDesc() { mixin(MGPC("UObject.Pointer", 548)); }
+			Pointer BrushPhysDesc() { mixin(MGPC("Pointer", 548)); }
 			KMeshProps.KAggregateGeom BrushAggGeom() { mixin(MGPC("KMeshProps.KAggregateGeom", 492)); }
 			// WARNING: Property 'Brush' has the same name as a defined type!
 		}

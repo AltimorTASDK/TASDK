@@ -78,8 +78,8 @@ public extern(D):
 		UIDataStore_OnlineStats.RankMetaData RankNameMetaData() { mixin(MGPC("UIDataStore_OnlineStats.RankMetaData", 168)); }
 		UIDataStore_OnlineStats.PlayerNickMetaData PlayerNickData() { mixin(MGPC("UIDataStore_OnlineStats.PlayerNickMetaData", 148)); }
 		ScriptName StatsReadName() { mixin(MGPC("ScriptName", 140)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 124)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 124)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 120)); }
 	}
 final:
 	void Init()

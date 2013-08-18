@@ -39,7 +39,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) CollisionGeom() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 152)); }
+			ScriptArray!(Pointer) CollisionGeom() { mixin(MGPC("ScriptArray!(Pointer)", 152)); }
 			ScriptArray!(Vector) CollisionGeomScale3D() { mixin(MGPC("ScriptArray!(Vector)", 164)); }
 			ScriptArray!(Vector) PreCachedPhysScale() { mixin(MGPC("ScriptArray!(Vector)", 176)); }
 			ScriptArray!(RB_BodySetup.KCachedConvexData) PreCachedPhysData() { mixin(MGPC("ScriptArray!(RB_BodySetup.KCachedConvexData)", 188)); }

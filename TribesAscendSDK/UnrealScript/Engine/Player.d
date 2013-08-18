@@ -27,7 +27,7 @@ public extern(D):
 		float PP_DesaturationMultiplier() { mixin(MGPC("float", 80)); }
 		int ConfiguredLanSpeed() { mixin(MGPC("int", 76)); }
 		int ConfiguredInternetSpeed() { mixin(MGPC("int", 72)); }
-		UObject.Pointer VfTable_FExec() { mixin(MGPC("UObject.Pointer", 60)); }
+		Pointer VfTable_FExec() { mixin(MGPC("Pointer", 60)); }
 	}
 	final void SwitchController(PlayerController PC)
 	{

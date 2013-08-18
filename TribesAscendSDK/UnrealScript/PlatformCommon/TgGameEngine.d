@@ -65,7 +65,7 @@ public extern(D):
 		{
 			auto ref
 			{
-				UObject.Pointer pMarshal() { mixin(MGPS("UObject.Pointer", 40)); }
+				Pointer pMarshal() { mixin(MGPS("Pointer", 40)); }
 				ScriptString fsMessage() { mixin(MGPS("ScriptString", 28)); }
 				int nStmMsgId() { mixin(MGPS("int", 24)); }
 				QWord qwInfo() { mixin(MGPS("QWord", 16)); }
@@ -84,15 +84,15 @@ void*) MarshalEventDelegates() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void*)", 1808)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnMarshalEvent__Delegate'!
-		UObject.Pointer pEventMarshal() { mixin(MGPC("UObject.Pointer", 1824)); }
-		UObject.Pointer pOutgoingMarshal() { mixin(MGPC("UObject.Pointer", 1820)); }
+		Pointer pEventMarshal() { mixin(MGPC("Pointer", 1824)); }
+		Pointer pOutgoingMarshal() { mixin(MGPC("Pointer", 1820)); }
 	}
 final:
-	void OnMarshalEvent(UObject.Pointer pMarEvent)
+	void OnMarshalEvent(Pointer pMarEvent)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(UObject.Pointer*)params.ptr = pMarEvent;
+		*cast(Pointer*)params.ptr = pMarEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnMarshalEvent, params.ptr, cast(void*)0);
 	}
 	bool SetFunction(int nFunction)

@@ -171,8 +171,8 @@ public extern(D):
 			AnimSequence.AnimationKeyFormat KeyEncodingFormat() { mixin(MGPC("AnimSequence.AnimationKeyFormat", 186)); }
 			ScriptArray!(int) CompressedTrackOffsets() { mixin(MGPC("ScriptArray!(int)", 188)); }
 			ScriptArray!(ubyte) CompressedByteStream() { mixin(MGPC("ScriptArray!(ubyte)", 200)); }
-			UObject.Pointer TranslationCodec() { mixin(MGPC("UObject.Pointer", 212)); }
-			UObject.Pointer RotationCodec() { mixin(MGPC("UObject.Pointer", 216)); }
+			Pointer TranslationCodec() { mixin(MGPC("Pointer", 212)); }
+			Pointer RotationCodec() { mixin(MGPC("Pointer", 216)); }
 			ScriptArray!(UObject.BoneAtom) AdditiveRefPose() { mixin(MGPC("ScriptArray!(UObject.BoneAtom)", 220)); }
 			ScriptArray!(AnimSequence.RawAnimSequenceTrack) AdditiveBasePose() { mixin(MGPC("ScriptArray!(AnimSequence.RawAnimSequenceTrack)", 232)); }
 			ScriptName AdditiveRefName() { mixin(MGPC("ScriptName", 244)); }

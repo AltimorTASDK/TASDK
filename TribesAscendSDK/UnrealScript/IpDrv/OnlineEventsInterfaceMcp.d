@@ -64,7 +64,7 @@ public extern(D):
 		auto ref
 		{
 			ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig) EventUploadConfigs() { mixin(MGPC("ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig)", 64)); }
-			ScriptArray!(UObject.Pointer) HttpPostObjects() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 76)); }
+			ScriptArray!(Pointer) HttpPostObjects() { mixin(MGPC("ScriptArray!(Pointer)", 76)); }
 			ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType) DisabledUploadTypes() { mixin(MGPC("ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType)", 88)); }
 		}
 		bool bBinaryStats() { mixin(MGBPC(100, 0x1)); }

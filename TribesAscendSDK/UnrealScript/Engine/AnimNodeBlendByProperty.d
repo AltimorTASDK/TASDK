@@ -23,9 +23,9 @@ public extern(D):
 			float FloatPropMin() { mixin(MGPC("float", 316)); }
 			float BlendTime() { mixin(MGPC("float", 312)); }
 			Actor CachedOwner() { mixin(MGPC("Actor", 308)); }
-			UObject.Pointer CachedByteProperty() { mixin(MGPC("UObject.Pointer", 304)); }
-			UObject.Pointer CachedBoolProperty() { mixin(MGPC("UObject.Pointer", 300)); }
-			UObject.Pointer CachedFloatProperty() { mixin(MGPC("UObject.Pointer", 296)); }
+			Pointer CachedByteProperty() { mixin(MGPC("Pointer", 304)); }
+			Pointer CachedBoolProperty() { mixin(MGPC("Pointer", 300)); }
+			Pointer CachedFloatProperty() { mixin(MGPC("Pointer", 296)); }
 			ScriptName CachedPropertyName() { mixin(MGPC("ScriptName", 288)); }
 			ScriptName PropertyName() { mixin(MGPC("ScriptName", 276)); }
 		}

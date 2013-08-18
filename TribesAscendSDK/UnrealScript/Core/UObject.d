@@ -698,19 +698,6 @@ public extern(D):
 		ABT_EaseInOutExponent5 = 6,
 		ABT_MAX = 7,
 	}
-	struct Rotator
-	{
-		private ubyte __buffer__[12];
-	public extern(D):
-		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Rotator")); }
-		@property final auto ref
-		{
-			int Pitch() { mixin(MGPS("int", 0)); }
-			int Yaw() { mixin(MGPS("int", 4)); }
-			int Roll() { mixin(MGPS("int", 8)); }
-		}
-	}
 	struct Plane
 	{
 		private ubyte __buffer__[16];
@@ -724,19 +711,6 @@ public extern(D):
 			float Z() { mixin(MGPS("float", 8)); }
 		}
 		@property final auto ref float W() { mixin(MGPS("float", 12)); }
-	}
-	struct Vector
-	{
-		private ubyte __buffer__[12];
-	public extern(D):
-		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Vector")); }
-		@property final auto ref
-		{
-			float X() { mixin(MGPS("float", 0)); }
-			float Y() { mixin(MGPS("float", 4)); }
-			float Z() { mixin(MGPS("float", 8)); }
-		}
 	}
 	struct Guid
 	{
@@ -989,7 +963,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.OctreeElementId")); }
 		@property final auto ref
 		{
-			UObject.Pointer Node() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer Node() { mixin(MGPS("Pointer", 0)); }
 			int ElementIndex() { mixin(MGPS("int", 4)); }
 		}
 	}
@@ -1000,14 +974,6 @@ public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.RenderCommandFence")); }
 		@property final auto ref int NumPendingFences() { mixin(MGPS("int", 0)); }
-	}
-	struct Pointer
-	{
-		private ubyte __buffer__[4];
-	public extern(D):
-		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Pointer")); }
-		@property final auto ref int Dummy() { mixin(MGPS("int", 0)); }
 	}
 	struct RawDistribution
 	{
@@ -1178,7 +1144,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.InlinePointerArray_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer InlineData() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer InlineData() { mixin(MGPS("Pointer", 0)); }
 			UObject.Array_Mirror SecondaryData() { mixin(MGPS("UObject.Array_Mirror", 4)); }
 		}
 	}
@@ -1190,7 +1156,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.Array_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer Data() { mixin(MGPS("Pointer", 0)); }
 			int ArrayNum() { mixin(MGPS("int", 4)); }
 			int ArrayMax() { mixin(MGPS("int", 8)); }
 		}
@@ -1203,7 +1169,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.IndirectArray_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer Data() { mixin(MGPS("Pointer", 0)); }
 			int ArrayNum() { mixin(MGPS("int", 4)); }
 			int ArrayMax() { mixin(MGPS("int", 8)); }
 		}
@@ -1216,8 +1182,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.FColorVertexBuffer_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { mixin(MGPS("UObject.Pointer", 0)); }
-			UObject.Pointer VertexData() { mixin(MGPS("UObject.Pointer", 4)); }
+			Pointer VfTable() { mixin(MGPS("Pointer", 0)); }
+			Pointer VertexData() { mixin(MGPS("Pointer", 4)); }
 			int Data() { mixin(MGPS("int", 8)); }
 			int Stride() { mixin(MGPS("int", 12)); }
 			int NumVertices() { mixin(MGPS("int", 16)); }
@@ -1239,7 +1205,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.UntypedBulkData_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer VfTable() { mixin(MGPS("Pointer", 0)); }
 			int BulkDataFlags() { mixin(MGPS("int", 4)); }
 			int ElementCount() { mixin(MGPS("int", 8)); }
 			int BulkDataOffsetInFile() { mixin(MGPS("int", 12)); }
@@ -1248,9 +1214,9 @@ public extern(D):
 			int SavedElementCount() { mixin(MGPS("int", 24)); }
 			int SavedBulkDataOffsetInFile() { mixin(MGPS("int", 28)); }
 			int SavedBulkDataSizeOnDisk() { mixin(MGPS("int", 32)); }
-			UObject.Pointer BulkData() { mixin(MGPS("UObject.Pointer", 36)); }
+			Pointer BulkData() { mixin(MGPS("Pointer", 36)); }
 			int LockStatus() { mixin(MGPS("int", 40)); }
-			UObject.Pointer AttachedAr() { mixin(MGPS("UObject.Pointer", 44)); }
+			Pointer AttachedAr() { mixin(MGPS("Pointer", 44)); }
 			int bShouldFreeOnEmpty() { mixin(MGPS("int", 48)); }
 		}
 	}
@@ -1279,7 +1245,7 @@ public extern(D):
 		@property final auto ref
 		{
 			UObject.SparseArray_Mirror Elements() { mixin(MGPS("UObject.SparseArray_Mirror", 0)); }
-			UObject.Pointer Hash() { mixin(MGPS("UObject.Pointer", 48)); }
+			Pointer Hash() { mixin(MGPS("Pointer", 48)); }
 			int InlineHash() { mixin(MGPS("int", 52)); }
 			int HashSize() { mixin(MGPS("int", 56)); }
 		}
@@ -1306,7 +1272,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.BitArray_Mirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer IndirectData() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer IndirectData() { mixin(MGPS("Pointer", 0)); }
 			int InlineData() { mixin(MGPS("int", 4)); }
 			int NumBits() { mixin(MGPS("int", 20)); }
 			int MaxBits() { mixin(MGPS("int", 24)); }
@@ -1332,30 +1298,18 @@ public extern(D):
 			int B() { mixin(MGPS("int", 4)); }
 		}
 	}
-	struct QWord
-	{
-		private ubyte __buffer__[8];
-	public extern(D):
-		private static __gshared ScriptStruct mStaticClass;
-		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Core.Object.QWord")); }
-		@property final auto ref
-		{
-			int A() { mixin(MGPS("int", 0)); }
-			int B() { mixin(MGPS("int", 4)); }
-		}
-	}
 	@property final auto ref
 	{
 		UObject Outer() { mixin(MGPC("UObject", 40)); }
 		ScriptName Name() { mixin(MGPC("ScriptName", 44)); }
-		UObject.Pointer VfTableObject() { mixin(MGPC("UObject.Pointer", 0)); }
+		Pointer VfTableObject() { mixin(MGPC("Pointer", 0)); }
 		int ObjectInternalInteger() { mixin(MGPC("int", 4)); }
 		QWord ObjectFlags() { mixin(MGPC("QWord", 8)); }
-		UObject.Pointer HashNext() { mixin(MGPC("UObject.Pointer", 16)); }
-		UObject.Pointer HashOuterNext() { mixin(MGPC("UObject.Pointer", 20)); }
-		UObject.Pointer StateFrame() { mixin(MGPC("UObject.Pointer", 24)); }
+		Pointer HashNext() { mixin(MGPC("Pointer", 16)); }
+		Pointer HashOuterNext() { mixin(MGPC("Pointer", 20)); }
+		Pointer StateFrame() { mixin(MGPC("Pointer", 24)); }
 		// WARNING: Property 'Linker' has the same name as a defined type!
-		UObject.Pointer LinkerIndex() { mixin(MGPC("UObject.Pointer", 32)); }
+		Pointer LinkerIndex() { mixin(MGPC("Pointer", 32)); }
 		int NetIndex() { mixin(MGPC("int", 36)); }
 		// WARNING: Property 'Class' has the same name as a defined type!
 		UObject ObjectArchetype() { mixin(MGPC("UObject", 56)); }

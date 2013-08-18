@@ -14,7 +14,7 @@ public extern(D):
 	@property final static NxRadialCustomForceField DefaultProperties() { mixin(MGDPC("NxRadialCustomForceField", "NxRadialCustomForceField Engine.Default__NxRadialCustomForceField")); }
 	@property final auto ref
 	{
-		UObject.Pointer Kernel() { mixin(MGPC("UObject.Pointer", 564)); }
+		Pointer Kernel() { mixin(MGPC("Pointer", 564)); }
 		float SelfRotationStrength() { mixin(MGPC("float", 560)); }
 	}
 }

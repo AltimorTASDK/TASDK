@@ -78,14 +78,14 @@ public extern(D):
 			float MaxExpansionRadius() { mixin(MGPC("float", 760)); }
 			float ExpansionRadius() { mixin(MGPC("float", 756)); }
 			Pylon NextPylon() { mixin(MGPC("Pylon", 740)); }
-			UObject.Pointer OctreeIWasAddedTo() { mixin(MGPC("UObject.Pointer", 736)); }
+			Pointer OctreeIWasAddedTo() { mixin(MGPC("Pointer", 736)); }
 			UObject.OctreeElementId OctreeId() { mixin(MGPC("UObject.OctreeElementId", 728)); }
-			UObject.Pointer PathObjectsThatAffectThisPylon() { mixin(MGPC("UObject.Pointer", 712)); }
-			UObject.Pointer WorkingSetPtr() { mixin(MGPC("UObject.Pointer", 708)); }
-			UObject.Pointer DynamicObstacleMesh() { mixin(MGPC("UObject.Pointer", 704)); }
-			UObject.Pointer ObstacleMesh() { mixin(MGPC("UObject.Pointer", 700)); }
-			UObject.Pointer NavMeshPtr() { mixin(MGPC("UObject.Pointer", 696)); }
-			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("UObject.Pointer", 692)); }
+			Pointer PathObjectsThatAffectThisPylon() { mixin(MGPC("Pointer", 712)); }
+			Pointer WorkingSetPtr() { mixin(MGPC("Pointer", 708)); }
+			Pointer DynamicObstacleMesh() { mixin(MGPC("Pointer", 704)); }
+			Pointer ObstacleMesh() { mixin(MGPC("Pointer", 700)); }
+			Pointer NavMeshPtr() { mixin(MGPC("Pointer", 696)); }
+			Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("Pointer", 692)); }
 		}
 		bool bForceObstacleMeshCollision() { mixin(MGBPC(768, 0x400)); }
 		bool bForceObstacleMeshCollision(bool val) { mixin(MSBPC(768, 0x400)); }

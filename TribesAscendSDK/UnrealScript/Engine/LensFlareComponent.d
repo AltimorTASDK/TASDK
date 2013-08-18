@@ -50,7 +50,7 @@ public extern(D):
 		{
 			ScriptArray!(LensFlareComponent.LensFlareElementMaterials) Materials() { mixin(MGPC("ScriptArray!(LensFlareComponent.LensFlareElementMaterials)", 540)); }
 			float NextTraceTime() { mixin(MGPC("float", 556)); }
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC("UObject.Pointer", 552)); }
+			Pointer ReleaseResourcesFence() { mixin(MGPC("Pointer", 552)); }
 			UObject.LinearColor SourceColor() { mixin(MGPC("UObject.LinearColor", 524)); }
 			float Radius() { mixin(MGPC("float", 520)); }
 			float ConeFudgeFactor() { mixin(MGPC("float", 516)); }

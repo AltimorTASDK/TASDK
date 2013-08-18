@@ -46,9 +46,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Texture2D.TextureLinkedListMirror")); }
 		@property final auto ref
 		{
-			UObject.Pointer PrevLink() { mixin(MGPS("UObject.Pointer", 8)); }
-			UObject.Pointer Next() { mixin(MGPS("UObject.Pointer", 4)); }
-			UObject.Pointer Element() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer PrevLink() { mixin(MGPS("Pointer", 8)); }
+			Pointer Next() { mixin(MGPS("Pointer", 4)); }
+			Pointer Element() { mixin(MGPS("Pointer", 0)); }
 		}
 	}
 	@property final
@@ -58,7 +58,7 @@ public extern(D):
 			ScriptArray!(ubyte) SystemMemoryData() { mixin(MGPC("ScriptArray!(ubyte)", 324)); }
 			float Timer() { mixin(MGPC("float", 364)); }
 			int FirstResourceMemMip() { mixin(MGPC("int", 360)); }
-			UObject.Pointer ResourceMem() { mixin(MGPC("UObject.Pointer", 356)); }
+			Pointer ResourceMem() { mixin(MGPC("Pointer", 356)); }
 			int MipTailBaseIdx() { mixin(MGPC("int", 352)); }
 			int StreamingIndex() { mixin(MGPC("int", 348)); }
 			Texture2D.TextureLinkedListMirror StreamableTexturesLink() { mixin(MGPC("Texture2D.TextureLinkedListMirror", 336)); }

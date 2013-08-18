@@ -8,6 +8,7 @@ private import std.c.string;
 private import Flags : Flags;
 
 public alias ulong QWord; // Total size: 0x08
+public alias void* Pointer;
 
 public struct ScriptArray(T) // Total size: 0x0C
 {
@@ -1088,11 +1089,8 @@ public:
 	@property
 	{
 		auto ref float X() { return mX; }
-		float X(float x) { return mX = x; }
 		auto ref float Y() { return mY; }
-		float Y(float y) { return mY = y; }
 		auto ref float Z() { return mZ; }
-		float Z(float z) { return mZ = z; }
 	}
 	
 	Vector opBinary(string op)(float num)
@@ -1164,11 +1162,8 @@ public:
 	@property
 	{
 		auto ref int Pitch() { return mPitch; }
-		int Pitch(int pitch) { return mPitch = pitch; }
 		auto ref int Yaw() { return mYaw; }
-		int Yaw(int yaw) { return mYaw = yaw; }
 		auto ref int Roll() { return mRoll; }
-		int Roll(int roll) { return mRoll = roll; }
 	}
 	
 	Rotator opBinary(string op)(float num)

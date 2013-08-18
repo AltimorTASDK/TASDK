@@ -270,8 +270,8 @@ public extern(D):
 				ScriptArray!(ubyte) ControlIdUtf8() { mixin(MGPS("ScriptArray!(ubyte)", 112)); }
 				// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'ListDataProvider'!
 				ScriptArray!(ScriptName) FullCellTags() { mixin(MGPS("ScriptArray!(ScriptName)", 132)); }
-				UObject.Pointer ModelRef() { mixin(MGPS("UObject.Pointer", 144)); }
-				UObject.Pointer ControlRef() { mixin(MGPS("UObject.Pointer", 148)); }
+				Pointer ModelRef() { mixin(MGPS("Pointer", 144)); }
+				Pointer ControlRef() { mixin(MGPS("Pointer", 148)); }
 			}
 			bool bEditable() { mixin(MGBPS(84, 0x1)); }
 			bool bEditable(bool val) { mixin(MSBPS(84, 0x1)); }
@@ -296,9 +296,9 @@ public extern(D):
 			int LocalPlayerOwnerIndex() { mixin(MGPC("int", 208)); }
 			SwfMovie MovieInfo() { mixin(MGPC("SwfMovie", 196)); }
 			UObject ExternalInterface() { mixin(MGPC("UObject", 212)); }
-			UObject.Pointer pMovie() { mixin(MGPC("UObject.Pointer", 60)); }
-			UObject.Pointer pCaptureKeys() { mixin(MGPC("UObject.Pointer", 64)); }
-			UObject.Pointer pFocusIgnoreKeys() { mixin(MGPC("UObject.Pointer", 68)); }
+			Pointer pMovie() { mixin(MGPC("Pointer", 60)); }
+			Pointer pCaptureKeys() { mixin(MGPC("Pointer", 64)); }
+			Pointer pFocusIgnoreKeys() { mixin(MGPC("Pointer", 68)); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'ASUClasses'!
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'ASUObjects'!
 			int NextASUObject() { mixin(MGPC("int", 192)); }

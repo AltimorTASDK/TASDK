@@ -37,7 +37,7 @@ public extern(D):
 			float SpringSaturateDist() { mixin(MGPC("float", 132)); }
 			float MinBodyMass() { mixin(MGPC("float", 128)); }
 			float TimeSinceActivation() { mixin(MGPC("float", 124)); }
-			UObject.Pointer SpringData() { mixin(MGPC("UObject.Pointer", 120)); }
+			Pointer SpringData() { mixin(MGPC("Pointer", 120)); }
 			int SceneIndex() { mixin(MGPC("int", 112)); }
 			ScriptName BoneName2() { mixin(MGPC("ScriptName", 104)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Component2'!

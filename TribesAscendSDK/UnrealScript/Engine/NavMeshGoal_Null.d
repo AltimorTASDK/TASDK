@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction Recycle() { mixin(MGF("mRecycle", "Function Engine.NavMeshGoal_Null.Recycle")); }
 		}
 	}
-	@property final auto ref UObject.Pointer PartialGoal() { mixin(MGPC("UObject.Pointer", 80)); }
+	@property final auto ref Pointer PartialGoal() { mixin(MGPC("Pointer", 80)); }
 final:
 	static bool GoUntilBust(NavigationHandle NavHandle, int* InMaxPathVisits = null)
 	{

@@ -95,7 +95,7 @@ public extern(D):
 		@property final auto ref
 		{
 			ScriptArray!(int) AutoCompleteListIndices() { mixin(MGPS("ScriptArray!(int)", 4)); }
-			ScriptArray!(UObject.Pointer) ChildNodes() { mixin(MGPS("ScriptArray!(UObject.Pointer)", 16)); }
+			ScriptArray!(Pointer) ChildNodes() { mixin(MGPS("ScriptArray!(Pointer)", 16)); }
 			int IndexChar() { mixin(MGPS("int", 0)); }
 		}
 	}

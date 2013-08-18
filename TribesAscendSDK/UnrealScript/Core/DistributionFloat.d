@@ -37,7 +37,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref UObject.Pointer VfTable_FCurveEdInterface() { mixin(MGPC("UObject.Pointer", 72)); }
+		@property final auto ref Pointer VfTable_FCurveEdInterface() { mixin(MGPC("Pointer", 72)); }
 		bool bIsDirty() { mixin(MGBPC(76, 0x2)); }
 		bool bIsDirty(bool val) { mixin(MSBPC(76, 0x2)); }
 		bool bCanBeBaked() { mixin(MGBPC(76, 0x1)); }

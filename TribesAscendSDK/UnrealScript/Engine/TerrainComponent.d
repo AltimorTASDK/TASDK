@@ -56,7 +56,7 @@ public extern(D):
 			ScriptArray!(TerrainComponent.TerrainPatchBounds) PatchBounds() { mixin(MGPC("ScriptArray!(TerrainComponent.TerrainPatchBounds)", 544)); }
 			ScriptArray!(TerrainComponent.TerrainMaterialMask) BatchMaterials() { mixin(MGPC("ScriptArray!(TerrainComponent.TerrainMaterialMask)", 556)); }
 			ScriptArray!(Vector) CollisionVertices() { mixin(MGPC("ScriptArray!(Vector)", 584)); }
-			UObject.Pointer RBHeightfield() { mixin(MGPC("UObject.Pointer", 596)); }
+			Pointer RBHeightfield() { mixin(MGPC("Pointer", 596)); }
 			TerrainComponent.TerrainBVTree BVTree() { mixin(MGPC("TerrainComponent.TerrainBVTree", 572)); }
 			int FullBatch() { mixin(MGPC("int", 568)); }
 			EngineTypes.LightMapRef LightMap() { mixin(MGPC("EngineTypes.LightMapRef", 540)); }
@@ -66,7 +66,7 @@ public extern(D):
 			int SectionSizeX() { mixin(MGPC("int", 524)); }
 			int SectionBaseY() { mixin(MGPC("int", 520)); }
 			int SectionBaseX() { mixin(MGPC("int", 516)); }
-			UObject.Pointer TerrainObject() { mixin(MGPC("UObject.Pointer", 512)); }
+			Pointer TerrainObject() { mixin(MGPC("Pointer", 512)); }
 		}
 		bool bDisplayCollisionLevel() { mixin(MGBPC(600, 0x1)); }
 		bool bDisplayCollisionLevel(bool val) { mixin(MSBPC(600, 0x1)); }

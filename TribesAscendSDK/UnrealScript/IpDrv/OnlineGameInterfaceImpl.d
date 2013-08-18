@@ -241,8 +241,8 @@ void*)", 204)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUpdateOnlineGameComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnCreateOnlineGameComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFindOnlineGamesComplete__Delegate'!
-		UObject.Pointer SessionInfo() { mixin(MGPC("UObject.Pointer", 240)); }
-		UObject.Pointer LanBeacon() { mixin(MGPC("UObject.Pointer", 236)); }
+		Pointer SessionInfo() { mixin(MGPC("Pointer", 240)); }
+		Pointer LanBeacon() { mixin(MGPC("Pointer", 236)); }
 		float LanQueryTimeout() { mixin(MGPC("float", 232)); }
 		float LanQueryTimeLeft() { mixin(MGPC("float", 228)); }
 		int LanPacketPlatformMask() { mixin(MGPC("int", 224)); }

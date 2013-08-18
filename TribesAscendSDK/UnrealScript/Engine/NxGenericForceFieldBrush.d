@@ -37,11 +37,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) ConvexMeshes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 684)); }
-		ScriptArray!(UObject.Pointer) ExclusionShapes() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 696)); }
-		ScriptArray!(UObject.Pointer) ExclusionShapePoses() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 708)); }
-		UObject.Pointer LinearKernel() { mixin(MGPC("UObject.Pointer", 720)); }
-		UObject.Pointer ForceField() { mixin(MGPC("UObject.Pointer", 680)); }
+		ScriptArray!(Pointer) ConvexMeshes() { mixin(MGPC("ScriptArray!(Pointer)", 684)); }
+		ScriptArray!(Pointer) ExclusionShapes() { mixin(MGPC("ScriptArray!(Pointer)", 696)); }
+		ScriptArray!(Pointer) ExclusionShapePoses() { mixin(MGPC("ScriptArray!(Pointer)", 708)); }
+		Pointer LinearKernel() { mixin(MGPC("Pointer", 720)); }
+		Pointer ForceField() { mixin(MGPC("Pointer", 680)); }
 		float TorusRadius() { mixin(MGPC("float", 676)); }
 		Vector FalloffQuadratic() { mixin(MGPC("Vector", 664)); }
 		Vector FalloffLinear() { mixin(MGPC("Vector", 652)); }

@@ -35,8 +35,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer PartialGoal() { mixin(MGPC("UObject.Pointer", 104)); }
-			UObject.Pointer GoalPoly() { mixin(MGPC("UObject.Pointer", 100)); }
+			Pointer PartialGoal() { mixin(MGPC("Pointer", 104)); }
+			Pointer GoalPoly() { mixin(MGPC("Pointer", 100)); }
 			float GoalDist() { mixin(MGPC("float", 92)); }
 			Vector Goal() { mixin(MGPC("Vector", 80)); }
 		}

@@ -376,7 +376,7 @@ public extern(D):
 			ubyte bFire() { mixin(MGPC("ubyte", 500)); }
 			Controller NextController() { mixin(MGPC("Controller", 492)); }
 			int PlayerNum() { mixin(MGPC("int", 488)); }
-			UObject.Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC("UObject.Pointer", 476)); }
+			Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC("Pointer", 476)); }
 		}
 		bool bGodMode() { mixin(MGBPC(496, 0x2)); }
 		bool bGodMode(bool val) { mixin(MSBPC(496, 0x2)); }

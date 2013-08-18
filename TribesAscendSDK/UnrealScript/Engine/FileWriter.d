@@ -42,7 +42,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ArchivePtr() { mixin(MGPC("UObject.Pointer", 476)); }
+			Pointer ArchivePtr() { mixin(MGPC("Pointer", 476)); }
 			ScriptString Filename() { mixin(MGPC("ScriptString", 480)); }
 			FileWriter.FWFileType FileType() { mixin(MGPC("FileWriter.FWFileType", 492)); }
 		}

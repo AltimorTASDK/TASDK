@@ -65,7 +65,7 @@ public extern(D):
 		UObject.MultiMap_Mirror ResourceProviders() { mixin(MGPC("UObject.MultiMap_Mirror", 144)); }
 		UIDataStore_GameResource GameResourceDataStore() { mixin(MGPC("UIDataStore_GameResource", 128)); }
 		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC("UIDataProvider_OnlineProfileSettings", 124)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 120)); }
 	}
 final:
 	int FindProviderTypeIndex(ScriptName ProviderTag)

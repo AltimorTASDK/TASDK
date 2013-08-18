@@ -19,7 +19,7 @@ public extern(D):
 		{
 			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedRotationFormats() { mixin(MGPC("ScriptArray!(AnimSequence.AnimationCompressionFormat)", 120)); }
 			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedTranslationFormats() { mixin(MGPC("ScriptArray!(AnimSequence.AnimationCompressionFormat)", 132)); }
-			UObject.Pointer PerReductionCachedData() { mixin(MGPC("UObject.Pointer", 184)); }
+			Pointer PerReductionCachedData() { mixin(MGPC("Pointer", 184)); }
 			float PerturbationProbeSize() { mixin(MGPC("float", 180)); }
 			float MaxErrorPerTrackRatio() { mixin(MGPC("float", 176)); }
 			float TranslationErrorSourceRatio() { mixin(MGPC("float", 172)); }

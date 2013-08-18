@@ -60,7 +60,7 @@ public extern(D):
 	{
 		ScriptArray!(Input.KeyBind) Bindings() { mixin(MGPC("ScriptArray!(Input.KeyBind)", 108)); }
 		ScriptArray!(ScriptName) PressedKeys() { mixin(MGPC("ScriptArray!(ScriptName)", 120)); }
-		ScriptArray!(UObject.Pointer) AxisArray() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 204)); }
+		ScriptArray!(Pointer) AxisArray() { mixin(MGPC("ScriptArray!(Pointer)", 204)); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'NameToPtr'!
 		float CurrentDeltaTime() { mixin(MGPC("float", 140)); }
 		float CurrentDelta() { mixin(MGPC("float", 136)); }

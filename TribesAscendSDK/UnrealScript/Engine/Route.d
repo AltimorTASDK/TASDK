@@ -52,7 +52,7 @@ public extern(D):
 	{
 		ScriptArray!(Actor.ActorReference) RouteList() { mixin(MGPC("ScriptArray!(Actor.ActorReference)", 484)); }
 		Route.ERouteType RouteType() { mixin(MGPC("Route.ERouteType", 480)); }
-		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("UObject.Pointer", 476)); }
+		Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("Pointer", 476)); }
 		float FudgeFactor() { mixin(MGPC("float", 496)); }
 		int RouteIndexOffset() { mixin(MGPC("int", 500)); }
 	}

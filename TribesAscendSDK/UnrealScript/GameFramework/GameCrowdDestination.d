@@ -67,7 +67,7 @@ public extern(D):
 			float Frequency() { mixin(MGPC("float", 512)); }
 			int Capacity() { mixin(MGPC("int", 508)); }
 			GameCrowdDestinationQueuePoint QueueHead() { mixin(MGPC("GameCrowdDestinationQueuePoint", 504)); }
-			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("UObject.Pointer", 484)); }
+			Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC("Pointer", 484)); }
 		}
 		bool bHasNavigationMesh() { mixin(MGBPC(488, 0x20000)); }
 		bool bHasNavigationMesh(bool val) { mixin(MSBPC(488, 0x20000)); }

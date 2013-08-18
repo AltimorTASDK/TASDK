@@ -37,8 +37,8 @@ public extern(D):
 		{
 			ShadowMap2D ShadowmapTexture() { mixin(MGPS("ShadowMap2D", 12)); }
 			Texture2D LightmapTexture() { mixin(MGPS("Texture2D", 8)); }
-			UObject.Pointer LightMap() { mixin(MGPS("UObject.Pointer", 4)); }
-			UObject.Pointer Mapping() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer LightMap() { mixin(MGPS("Pointer", 4)); }
+			Pointer Mapping() { mixin(MGPS("Pointer", 0)); }
 		}
 	}
 	@property final auto ref

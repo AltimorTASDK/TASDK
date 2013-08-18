@@ -15,7 +15,7 @@ public extern(D):
 	@property final static NxGenericForceField DefaultProperties() { mixin(MGDPC("NxGenericForceField", "NxGenericForceField Engine.Default__NxGenericForceField")); }
 	@property final auto ref
 	{
-		UObject.Pointer LinearKernel() { mixin(MGPC("UObject.Pointer", 692)); }
+		Pointer LinearKernel() { mixin(MGPC("Pointer", 692)); }
 		float TorusRadius() { mixin(MGPC("float", 688)); }
 		Vector FalloffQuadratic() { mixin(MGPC("Vector", 676)); }
 		Vector FalloffLinear() { mixin(MGPC("Vector", 664)); }

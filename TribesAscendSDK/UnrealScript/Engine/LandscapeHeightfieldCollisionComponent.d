@@ -18,7 +18,7 @@ public extern(D):
 		ScriptArray!(ubyte) CollisionQuadFlags() { mixin(MGPC("ScriptArray!(ubyte)", 556)); }
 		ScriptArray!(PhysicalMaterial) PhysicalMaterials() { mixin(MGPC("ScriptArray!(PhysicalMaterial)", 568)); }
 		UObject.BoxSphereBounds CachedBoxSphereBounds() { mixin(MGPC("UObject.BoxSphereBounds", 584)); }
-		UObject.Pointer RBHeightfield() { mixin(MGPC("UObject.Pointer", 580)); }
+		Pointer RBHeightfield() { mixin(MGPC("Pointer", 580)); }
 		float CollisionScale() { mixin(MGPC("float", 552)); }
 		int CollisionSizeQuads() { mixin(MGPC("int", 548)); }
 		int SectionBaseY() { mixin(MGPC("int", 544)); }

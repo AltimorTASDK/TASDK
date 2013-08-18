@@ -56,7 +56,7 @@ public extern(D):
 		ParticleSystem m_LaserTemplate() { mixin(MGPC("ParticleSystem", 912)); }
 		float m_fTripDistance() { mixin(MGPC("float", 908)); }
 		TrTripActor m_TripActor() { mixin(MGPC("TrTripActor", 904)); }
-		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("UObject.Pointer", 900)); }
+		Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("Pointer", 900)); }
 	}
 final:
 	void PawnEnteredDetonationArea(Pawn Other)

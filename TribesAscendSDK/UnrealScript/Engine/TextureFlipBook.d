@@ -46,7 +46,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC("UObject.Pointer", 428)); }
+			Pointer ReleaseResourcesFence() { mixin(MGPC("Pointer", 428)); }
 			float RenderOffsetV() { mixin(MGPC("float", 424)); }
 			float RenderOffsetU() { mixin(MGPC("float", 420)); }
 			int CurrentColumn() { mixin(MGPC("int", 416)); }
@@ -54,7 +54,7 @@ public extern(D):
 			float FrameTime() { mixin(MGPC("float", 408)); }
 			float FrameRate() { mixin(MGPC("float", 404)); }
 			TextureFlipBook.TextureFlipBookMethod FBMethod() { mixin(MGPC("TextureFlipBook.TextureFlipBookMethod", 400)); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC("UObject.Pointer", 368)); }
+			Pointer VfTable_FTickableObject() { mixin(MGPC("Pointer", 368)); }
 			int VerticalImages() { mixin(MGPC("int", 396)); }
 			int HorizontalImages() { mixin(MGPC("int", 392)); }
 			float VerticalScale() { mixin(MGPC("float", 384)); }

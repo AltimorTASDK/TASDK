@@ -33,7 +33,7 @@ public extern(D):
 			ScriptFunction CloseAllMoviePlayers() { mixin(MGF("mCloseAllMoviePlayers", "Function GFxUI.GFxInteraction.CloseAllMoviePlayers")); }
 		}
 	}
-	@property final auto ref UObject.Pointer VfTable_FCallbackEventDevice() { mixin(MGPC("UObject.Pointer", 108)); }
+	@property final auto ref Pointer VfTable_FCallbackEventDevice() { mixin(MGPC("Pointer", 108)); }
 final:
 	GFxMoviePlayer GetFocusMovie(int ControllerId)
 	{

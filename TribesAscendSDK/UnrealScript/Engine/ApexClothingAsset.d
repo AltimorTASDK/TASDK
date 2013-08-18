@@ -28,7 +28,7 @@ public extern(D):
 			float MaxDistanceBlendTime() { mixin(MGPC("float", 136)); }
 			int UVChannelForTangentUpdate() { mixin(MGPC("int", 132)); }
 			ApexGenericAsset ApexClothingLibrary() { mixin(MGPC("ApexGenericAsset", 124)); }
-			UObject.Pointer MApexAsset() { mixin(MGPC("UObject.Pointer", 108)); }
+			Pointer MApexAsset() { mixin(MGPC("Pointer", 108)); }
 		}
 		bool bRecomputeNormals() { mixin(MGBPC(128, 0x8)); }
 		bool bRecomputeNormals(bool val) { mixin(MSBPC(128, 0x8)); }

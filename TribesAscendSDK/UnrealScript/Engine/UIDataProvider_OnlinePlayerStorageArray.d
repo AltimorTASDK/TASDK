@@ -20,7 +20,7 @@ public extern(D):
 		ScriptName PlayerStorageName() { mixin(MGPC("ScriptName", 104)); }
 		int PlayerStorageId() { mixin(MGPC("int", 100)); }
 		OnlinePlayerStorage PlayerStorage() { mixin(MGPC("OnlinePlayerStorage", 96)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 88)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 92)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 88)); }
 	}
 }

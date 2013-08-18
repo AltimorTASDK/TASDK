@@ -74,9 +74,9 @@ public extern(D):
 			float BoneAngularSpring() { mixin(MGPC("float", 120)); }
 			float BoneLinearDamping() { mixin(MGPC("float", 116)); }
 			float BoneLinearSpring() { mixin(MGPC("float", 112)); }
-			UObject.Pointer BoneSpringKinActor() { mixin(MGPC("UObject.Pointer", 104)); }
-			UObject.Pointer BoneSpring() { mixin(MGPC("UObject.Pointer", 100)); }
-			UObject.Pointer BodyData() { mixin(MGPC("UObject.Pointer", 96)); }
+			Pointer BoneSpringKinActor() { mixin(MGPC("Pointer", 104)); }
+			Pointer BoneSpring() { mixin(MGPC("Pointer", 100)); }
+			Pointer BodyData() { mixin(MGPC("Pointer", 96)); }
 			int SceneIndex() { mixin(MGPC("int", 92)); }
 			Vector PreviousVelocity() { mixin(MGPC("Vector", 80)); }
 			Vector Velocity() { mixin(MGPC("Vector", 68)); }

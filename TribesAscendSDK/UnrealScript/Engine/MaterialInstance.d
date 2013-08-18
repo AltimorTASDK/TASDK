@@ -48,9 +48,9 @@ public extern(D):
 			ScriptArray!(Texture) ReferencedTextures() { mixin(MGPC("ScriptArray!(Texture)", 392)); }
 			ScriptArray!(UObject.Guid) ReferencedTextureGuids() { mixin(MGPC("ScriptArray!(UObject.Guid)", 404)); }
 			UObject.Guid ParentLightingGuid() { mixin(MGPC("UObject.Guid", 416)); }
-			UObject.Pointer Resources() { mixin(MGPC("UObject.Pointer", 380)); }
-			UObject.Pointer StaticPermutationResources() { mixin(MGPC("UObject.Pointer", 372)); }
-			UObject.Pointer StaticParameters() { mixin(MGPC("UObject.Pointer", 364)); }
+			Pointer Resources() { mixin(MGPC("Pointer", 380)); }
+			Pointer StaticPermutationResources() { mixin(MGPC("Pointer", 372)); }
+			Pointer StaticParameters() { mixin(MGPC("Pointer", 364)); }
 			PhysicalMaterial WhitePhysicalMaterial() { mixin(MGPC("PhysicalMaterial", 356)); }
 			PhysicalMaterial BlackPhysicalMaterial() { mixin(MGPC("PhysicalMaterial", 352)); }
 			int PhysMaterialMaskUVChannel() { mixin(MGPC("int", 348)); }

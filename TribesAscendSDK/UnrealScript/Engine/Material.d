@@ -146,8 +146,8 @@ public extern(D):
 			int EditorPitch() { mixin(MGPC("int", 1164)); }
 			int EditorY() { mixin(MGPC("int", 1160)); }
 			int EditorX() { mixin(MGPC("int", 1156)); }
-			UObject.Pointer DefaultMaterialInstances() { mixin(MGPC("UObject.Pointer", 1144)); }
-			UObject.Pointer MaterialResources() { mixin(MGPC("UObject.Pointer", 1136)); }
+			Pointer DefaultMaterialInstances() { mixin(MGPC("Pointer", 1144)); }
+			Pointer MaterialResources() { mixin(MGPC("Pointer", 1136)); }
 			Material.ScalarMaterialInput SubsurfaceScatteringRadius() { mixin(MGPC("Material.ScalarMaterialInput", 1092)); }
 			Material.ColorMaterialInput SubsurfaceAbsorptionColor() { mixin(MGPC("Material.ColorMaterialInput", 1056)); }
 			Material.ColorMaterialInput SubsurfaceInscatteringColor() { mixin(MGPC("Material.ColorMaterialInput", 1020)); }

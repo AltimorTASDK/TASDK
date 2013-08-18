@@ -35,7 +35,7 @@ public extern(D):
 	{
 		ScriptArray!(NavMeshGoal_Filter) GoalFilters() { mixin(MGPC("ScriptArray!(NavMeshGoal_Filter)", 80)); }
 		NavigationHandle MyNavigationHandle() { mixin(MGPC("NavigationHandle", 96)); }
-		UObject.Pointer SuccessfulGoal() { mixin(MGPC("UObject.Pointer", 92)); }
+		Pointer SuccessfulGoal() { mixin(MGPC("Pointer", 92)); }
 	}
 final:
 	static NavMeshGoal_GenericFilterContainer CreateAndAddFilterToNavHandle(NavigationHandle NavHandle, int* InMaxPathVisits = null)

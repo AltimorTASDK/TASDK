@@ -31,7 +31,7 @@ public extern(D):
 	@property final auto ref
 	{
 		ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) GoalList() { mixin(MGPC("ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor)", 80)); }
-		UObject.Pointer CachedAnchorPoly() { mixin(MGPC("UObject.Pointer", 152)); }
+		Pointer CachedAnchorPoly() { mixin(MGPC("Pointer", 152)); }
 		UObject.MultiMap_Mirror PolyToGoalActorMap() { mixin(MGPC("UObject.MultiMap_Mirror", 92)); }
 	}
 final:

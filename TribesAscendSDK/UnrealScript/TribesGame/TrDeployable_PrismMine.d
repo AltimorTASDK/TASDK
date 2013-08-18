@@ -66,7 +66,7 @@ public extern(D):
 		ScriptClass m_DamageType() { mixin(MGPC("ScriptClass", 1552)); }
 		ScriptName m_nSocketTraceName() { mixin(MGPC("ScriptName", 1544)); }
 		float m_fPrismRadius() { mixin(MGPC("float", 1540)); }
-		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("UObject.Pointer", 1524)); }
+		Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("Pointer", 1524)); }
 	}
 final:
 	void CreateTripActor(TrDeployable_PrismMine Right, Vector LeftLocation, Vector RightLocation)

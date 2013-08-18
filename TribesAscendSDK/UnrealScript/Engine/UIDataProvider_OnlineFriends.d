@@ -50,7 +50,7 @@ public extern(D):
 		ScriptString FriendStateCol() { mixin(MGPC("ScriptString", 132)); }
 		ScriptString PresenceInfoCol() { mixin(MGPC("ScriptString", 120)); }
 		ScriptString NickNameCol() { mixin(MGPC("ScriptString", 108)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 92)); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

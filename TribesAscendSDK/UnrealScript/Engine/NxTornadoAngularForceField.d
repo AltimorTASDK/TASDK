@@ -16,7 +16,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer Kernel() { mixin(MGPC("UObject.Pointer", 584)); }
+			Pointer Kernel() { mixin(MGPC("Pointer", 584)); }
 			float SelfRotationStrength() { mixin(MGPC("float", 580)); }
 			float HeightOffset() { mixin(MGPC("float", 572)); }
 			float ForceHeight() { mixin(MGPC("float", 568)); }

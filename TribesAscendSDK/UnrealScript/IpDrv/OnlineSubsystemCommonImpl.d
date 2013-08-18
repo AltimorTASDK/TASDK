@@ -37,7 +37,7 @@ public extern(D):
 			OnlineGameInterfaceImpl GameInterfaceImpl() { mixin(MGPC("OnlineGameInterfaceImpl", 240)); }
 			int MaxRemoteTalkers() { mixin(MGPC("int", 232)); }
 			int MaxLocalTalkers() { mixin(MGPC("int", 228)); }
-			UObject.Pointer VoiceEngine() { mixin(MGPC("UObject.Pointer", 224)); }
+			Pointer VoiceEngine() { mixin(MGPC("Pointer", 224)); }
 		}
 		bool bIsUsingSpeechRecognition() { mixin(MGBPC(236, 0x1)); }
 		bool bIsUsingSpeechRecognition(bool val) { mixin(MSBPC(236, 0x1)); }

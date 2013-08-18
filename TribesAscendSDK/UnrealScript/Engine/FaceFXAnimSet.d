@@ -19,7 +19,7 @@ public extern(D):
 		ScriptArray!(ubyte) RawFaceFXMiniSessionBytes() { mixin(MGPC("ScriptArray!(ubyte)", 80)); }
 		ScriptArray!(SoundCue) ReferencedSoundCues() { mixin(MGPC("ScriptArray!(SoundCue)", 92)); }
 		int NumLoadErrors() { mixin(MGPC("int", 104)); }
-		UObject.Pointer InternalFaceFXAnimSet() { mixin(MGPC("UObject.Pointer", 64)); }
+		Pointer InternalFaceFXAnimSet() { mixin(MGPC("Pointer", 64)); }
 		FaceFXAsset DefaultFaceFXAsset() { mixin(MGPC("FaceFXAsset", 60)); }
 	}
 }

@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		UObject.LinearColor ResetColor() { mixin(MGPC("UObject.LinearColor", 72)); }
-		UObject.Pointer ColorProp() { mixin(MGPC("UObject.Pointer", 68)); }
+		Pointer ColorProp() { mixin(MGPC("Pointer", 68)); }
 	}
 }

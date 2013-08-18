@@ -50,7 +50,7 @@ public extern(D):
 			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { mixin(MGPS("OnlineSubsystem.EOnlineEnumerationReadState", 12)); }
 			ScriptArray!(ubyte) Data() { mixin(MGPS("ScriptArray!(ubyte)", 16)); }
 		}
-		@property final auto ref UObject.Pointer HttpDownloader() { mixin(MGPS("UObject.Pointer", 28)); }
+		@property final auto ref Pointer HttpDownloader() { mixin(MGPS("Pointer", 28)); }
 	}
 	struct FileNameToURLMapping
 	{

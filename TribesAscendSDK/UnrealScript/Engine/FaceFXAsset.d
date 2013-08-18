@@ -36,7 +36,7 @@ public extern(D):
 		ScriptArray!(FaceFXAnimSet) MountedFaceFXAnimSets() { mixin(MGPC("ScriptArray!(FaceFXAnimSet)", 104)); }
 		ScriptArray!(SoundCue) ReferencedSoundCues() { mixin(MGPC("ScriptArray!(SoundCue)", 116)); }
 		int NumLoadErrors() { mixin(MGPC("int", 128)); }
-		UObject.Pointer FaceFXActor() { mixin(MGPC("UObject.Pointer", 64)); }
+		Pointer FaceFXActor() { mixin(MGPC("Pointer", 64)); }
 		SkeletalMesh DefaultSkelMesh() { mixin(MGPC("SkeletalMesh", 60)); }
 	}
 final:

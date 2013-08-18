@@ -58,7 +58,7 @@ void*)", 616)); }
 		int NumSubsections() { mixin(MGPC("int", 820)); }
 		int SubsectionSizeQuads() { mixin(MGPC("int", 816)); }
 		int ComponentSizeQuads() { mixin(MGPC("int", 812)); }
-		UObject.Pointer DataInterface() { mixin(MGPC("UObject.Pointer", 808)); }
+		Pointer DataInterface() { mixin(MGPC("Pointer", 808)); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'WeightmapUsageMap'!
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'XYtoCollisionComponentMap'!
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'XYtoComponentMap'!

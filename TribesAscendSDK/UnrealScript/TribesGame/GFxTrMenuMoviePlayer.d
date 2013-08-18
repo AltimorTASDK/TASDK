@@ -2293,11 +2293,11 @@ final:
 		*cast(GFxObject*)&params[4] = List;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DelegateIntGFxList, params.ptr, cast(void*)0);
 	}
-	void DelegateOnMarshalEvent(UObject.Pointer pMarEvent)
+	void DelegateOnMarshalEvent(Pointer pMarEvent)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(UObject.Pointer*)params.ptr = pMarEvent;
+		*cast(Pointer*)params.ptr = pMarEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DelegateOnMarshalEvent, params.ptr, cast(void*)0);
 	}
 	int DelegateGetInt()
@@ -2450,11 +2450,11 @@ final:
 			*cast(ScriptString*)&params[12] = *Message;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PurchasedItem, params.ptr, cast(void*)0);
 	}
-	void OnMarshalEvent(UObject.Pointer pMarEvent)
+	void OnMarshalEvent(Pointer pMarEvent)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(UObject.Pointer*)params.ptr = pMarEvent;
+		*cast(Pointer*)params.ptr = pMarEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnMarshalEvent, params.ptr, cast(void*)0);
 	}
 	bool ReadPlayerProfileData(TgPlayerProfile Profile)
@@ -2465,11 +2465,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadPlayerProfileData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void UserLoginChanged(UObject.Pointer pMarEvent)
+	void UserLoginChanged(Pointer pMarEvent)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(UObject.Pointer*)params.ptr = pMarEvent;
+		*cast(Pointer*)params.ptr = pMarEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UserLoginChanged, params.ptr, cast(void*)0);
 	}
 	bool RegisterMarshalCallback(

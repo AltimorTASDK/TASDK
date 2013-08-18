@@ -114,9 +114,9 @@ public extern(D):
 			ApexDestructibleAsset.NxDestructibleParameters DestructibleParameters() { mixin(MGPC("ApexDestructibleAsset.NxDestructibleParameters", 172)); }
 			ScriptString DustEmitterName() { mixin(MGPC("ScriptString", 160)); }
 			ScriptString CrumbleEmitterName() { mixin(MGPC("ScriptString", 148)); }
-			UObject.Pointer MDestructibleThumbnailComponent() { mixin(MGPC("UObject.Pointer", 140)); }
+			Pointer MDestructibleThumbnailComponent() { mixin(MGPC("Pointer", 140)); }
 			PhysicalMaterial DefaultPhysMaterial() { mixin(MGPC("PhysicalMaterial", 136)); }
-			UObject.Pointer MApexAsset() { mixin(MGPC("UObject.Pointer", 108)); }
+			Pointer MApexAsset() { mixin(MGPC("Pointer", 108)); }
 		}
 		bool bDynamic() { mixin(MGBPC(144, 0x2)); }
 		bool bDynamic(bool val) { mixin(MSBPC(144, 0x2)); }

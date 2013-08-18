@@ -20,7 +20,7 @@ public extern(D):
 		ScriptName SettingsName() { mixin(MGPC("ScriptName", 104)); }
 		int SettingsId() { mixin(MGPC("int", 100)); }
 		// WARNING: Property 'Settings' has the same name as a defined type!
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 88)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 92)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 88)); }
 	}
 }

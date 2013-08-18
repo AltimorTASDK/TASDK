@@ -54,8 +54,8 @@ public extern(D):
 	{
 		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC("UIDataProvider_OnlineProfileSettings", 100)); }
 		UIResourceDataProvider StaticDataProvider() { mixin(MGPC("UIResourceDataProvider", 96)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 88)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 92)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 88)); }
 	}
 final:
 	void InitializeProvider(bool bIsEditor, UIResourceDataProvider InStaticResourceProvider, UIDataProvider_OnlineProfileSettings InProfileProvider)

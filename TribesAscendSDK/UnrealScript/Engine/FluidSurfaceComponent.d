@@ -38,7 +38,7 @@ public extern(D):
 			float ForceImpact() { mixin(MGPC("float", 568)); }
 			ScriptArray!(ubyte) ClampMap() { mixin(MGPC("ScriptArray!(ubyte)", 692)); }
 			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPC("ScriptArray!(ShadowMap2D)", 704)); }
-			UObject.Pointer FluidSimulation() { mixin(MGPC("UObject.Pointer", 720)); }
+			Pointer FluidSimulation() { mixin(MGPC("Pointer", 720)); }
 			EngineTypes.LightMapRef LightMap() { mixin(MGPC("EngineTypes.LightMapRef", 716)); }
 			Vector EditorViewPosition() { mixin(MGPC("Vector", 680)); }
 			Vector DetailPosition() { mixin(MGPC("Vector", 668)); }

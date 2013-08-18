@@ -75,7 +75,7 @@ public extern(D):
 			float SubtitlePriority() { mixin(MGPC("float", 308)); }
 			// WARNING: Property 'SoundCue' has the same name as a defined type!
 			ScriptArray!(AudioComponent.AudioComponentParam) InstanceParameters() { mixin(MGPC("ScriptArray!(AudioComponent.AudioComponentParam)", 96)); }
-			ScriptArray!(UObject.Pointer) WaveInstances() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 124)); }
+			ScriptArray!(Pointer) WaveInstances() { mixin(MGPC("ScriptArray!(Pointer)", 124)); }
 			ScriptArray!(ubyte) SoundNodeData() { mixin(MGPC("ScriptArray!(ubyte)", 136)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnQueueSubtitles__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnAudioFinished__Delegate'!

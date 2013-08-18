@@ -48,7 +48,7 @@ public extern(D):
 	@property final auto ref
 	{
 		ScriptArray!(OnlineSubsystem.AchievementDetails) Achievements() { mixin(MGPC("ScriptArray!(OnlineSubsystem.AchievementDetails)", 96)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 92)); }
 	}
 final:
 	int GetTotalGamerScore()

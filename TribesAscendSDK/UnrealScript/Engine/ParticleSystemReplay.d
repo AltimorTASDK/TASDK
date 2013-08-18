@@ -27,7 +27,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.ParticleSystemReplay.ParticleEmitterReplayFrame")); }
 		@property final auto ref
 		{
-			UObject.Pointer FrameState() { mixin(MGPS("UObject.Pointer", 8)); }
+			Pointer FrameState() { mixin(MGPS("Pointer", 8)); }
 			int OriginalEmitterIndex() { mixin(MGPS("int", 4)); }
 			int EmitterType() { mixin(MGPS("int", 0)); }
 		}

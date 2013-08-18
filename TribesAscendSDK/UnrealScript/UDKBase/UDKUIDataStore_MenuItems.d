@@ -47,7 +47,7 @@ public extern(D):
 		ScriptArray!(int) WeaponPriority() { mixin(MGPC("ScriptArray!(int)", 228)); }
 		int GameModeFilter() { mixin(MGPC("int", 240)); }
 		ScriptClass MapInfoDataProviderClass() { mixin(MGPC("ScriptClass", 200)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 196)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 196)); }
 	}
 final:
 	int GetProviderCount(ScriptName FieldName)

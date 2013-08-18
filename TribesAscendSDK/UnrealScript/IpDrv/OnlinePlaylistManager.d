@@ -161,7 +161,7 @@ public extern(D):
 		int VersionNumber() { mixin(MGPC("int", 108)); }
 		int SuccessfulCount() { mixin(MGPC("int", 104)); }
 		int DownloadCount() { mixin(MGPC("int", 100)); }
-		UObject.Pointer VfTable_FTickableObject() { mixin(MGPC("UObject.Pointer", 60)); }
+		Pointer VfTable_FTickableObject() { mixin(MGPC("Pointer", 60)); }
 	}
 final:
 	void OnPlaylistPopulationDataUpdated()

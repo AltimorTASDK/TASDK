@@ -15,7 +15,7 @@ public extern(D):
 	@property final static NxRadialForceField DefaultProperties() { mixin(MGDPC("NxRadialForceField", "NxRadialForceField Engine.Default__NxRadialForceField")); }
 	@property final auto ref
 	{
-		UObject.Pointer LinearKernel() { mixin(MGPC("UObject.Pointer", 556)); }
+		Pointer LinearKernel() { mixin(MGPC("Pointer", 556)); }
 		PrimitiveComponent.ERadialImpulseFalloff ForceFalloff() { mixin(MGPC("PrimitiveComponent.ERadialImpulseFalloff", 552)); }
 		float ForceRadius() { mixin(MGPC("float", 548)); }
 		float ForceStrength() { mixin(MGPC("float", 544)); }

@@ -148,7 +148,7 @@ public extern(D):
 			ScriptArray!(Engine.DropNoteInfo) PendingDroppedNotes() { mixin(MGPC("ScriptArray!(Engine.DropNoteInfo)", 1360)); }
 			ScriptArray!(ScriptName) IgnoreSimulatedFuncWarnings() { mixin(MGPC("ScriptArray!(ScriptName)", 1460)); }
 			TranslationContext GlobalTranslationContext() { mixin(MGPC("TranslationContext", 1480)); }
-			UObject.Pointer ScreenSaverInhibitor() { mixin(MGPC("UObject.Pointer", 1476)); }
+			Pointer ScreenSaverInhibitor() { mixin(MGPC("Pointer", 1476)); }
 			int ScreenSaverInhibitorSemaphore() { mixin(MGPC("int", 1472)); }
 			UObject.LinearColor UnselectedMaterialColor() { mixin(MGPC("UObject.LinearColor", 1444)); }
 			UObject.LinearColor SelectedMaterialColor() { mixin(MGPC("UObject.LinearColor", 1428)); }
@@ -190,8 +190,8 @@ public extern(D):
 			UObject.Color C_AddWire() { mixin(MGPC("UObject.Color", 1216)); }
 			UObject.Color C_BrushWire() { mixin(MGPC("UObject.Color", 1212)); }
 			UObject.Color C_WorldBox() { mixin(MGPC("UObject.Color", 1208)); }
-			UObject.Pointer MobileMaterialEmulator() { mixin(MGPC("UObject.Pointer", 1204)); }
-			UObject.Pointer RemoteControlExec() { mixin(MGPC("UObject.Pointer", 1200)); }
+			Pointer MobileMaterialEmulator() { mixin(MGPC("Pointer", 1204)); }
+			Pointer RemoteControlExec() { mixin(MGPC("Pointer", 1200)); }
 			float MinSmoothedFrameRate() { mixin(MGPC("float", 1196)); }
 			float MaxSmoothedFrameRate() { mixin(MGPC("float", 1192)); }
 			int ClientCycles() { mixin(MGPC("int", 1188)); }

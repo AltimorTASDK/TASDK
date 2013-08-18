@@ -73,7 +73,7 @@ public extern(D):
 				float GoodHostRatio() { mixin(MGPS("float", 68)); }
 				OnlineSubsystem.ENATType NatType() { mixin(MGPS("OnlineSubsystem.ENATType", 60)); }
 				MeshBeaconHost.ClientConnectionBandwidthTestData BandwidthTest() { mixin(MGPS("MeshBeaconHost.ClientConnectionBandwidthTestData", 20)); }
-				UObject.Pointer Socket() { mixin(MGPS("UObject.Pointer", 12)); }
+				Pointer Socket() { mixin(MGPS("Pointer", 12)); }
 				float ElapsedHeartbeatTime() { mixin(MGPS("float", 8)); }
 				OnlineSubsystem.UniqueNetId PlayerNetId() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 			}

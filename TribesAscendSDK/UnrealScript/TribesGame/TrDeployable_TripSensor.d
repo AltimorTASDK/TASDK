@@ -38,7 +38,7 @@ public extern(D):
 			ScriptFunction OnTripSleep() { mixin(MGF("mOnTripSleep", "Function TribesGame.TrDeployable_TripSensor.OnTripSleep")); }
 		}
 	}
-	@property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("UObject.Pointer", 1540)); }
+	@property final auto ref Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC("Pointer", 1540)); }
 final:
 	void AddTripActor(TrTripActor NewTrip)
 	{

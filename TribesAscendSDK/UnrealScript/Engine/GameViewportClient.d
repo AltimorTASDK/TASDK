@@ -219,13 +219,13 @@ public extern(D):
 			ScriptString ConnectingMessage() { mixin(MGPC("ScriptString", 132)); }
 			ScriptString PrecachingMessage() { mixin(MGPC("ScriptString", 156)); }
 			ScriptString PausedMessage() { mixin(MGPC("ScriptString", 144)); }
-			UObject.Pointer VfTable_FViewportClient() { mixin(MGPC("UObject.Pointer", 60)); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC("UObject.Pointer", 64)); }
-			UObject.Pointer Viewport() { mixin(MGPC("UObject.Pointer", 68)); }
-			UObject.Pointer ViewportFrame() { mixin(MGPC("UObject.Pointer", 72)); }
+			Pointer VfTable_FViewportClient() { mixin(MGPC("Pointer", 60)); }
+			Pointer VfTable_FExec() { mixin(MGPC("Pointer", 64)); }
+			Pointer Viewport() { mixin(MGPC("Pointer", 68)); }
+			Pointer ViewportFrame() { mixin(MGPC("Pointer", 72)); }
 			QWord ShowFlags() { mixin(MGPC("QWord", 100)); }
 			ScriptArray!(GameViewportClient.DebugDisplayProperty) DebugProperties() { mixin(MGPC("ScriptArray!(GameViewportClient.DebugDisplayProperty)", 236)); }
-			UObject.Pointer ScaleformInteraction() { mixin(MGPC("UObject.Pointer", 248)); }
+			Pointer ScaleformInteraction() { mixin(MGPC("Pointer", 248)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputKey__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputAxis__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputChar__Delegate'!

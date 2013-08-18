@@ -133,7 +133,7 @@ public extern(D):
 		@property final auto ref
 		{
 			OnlineGameSettings GameSettings() { mixin(MGPS("OnlineGameSettings", 0)); }
-			UObject.Pointer PlatformData() { mixin(MGPS("UObject.Pointer", 4)); }
+			Pointer PlatformData() { mixin(MGPS("Pointer", 4)); }
 		}
 	}
 	@property final

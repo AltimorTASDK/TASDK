@@ -39,7 +39,7 @@ public extern(D):
 	{
 		UObject DataSource() { mixin(MGPC("UObject", 120)); }
 		ScriptClass DataClass() { mixin(MGPC("ScriptClass", 116)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 112)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 112)); }
 	}
 final:
 	bool BindProviderInstance(UObject DataSourceInstance)

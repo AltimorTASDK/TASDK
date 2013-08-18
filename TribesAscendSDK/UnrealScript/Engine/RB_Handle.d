@@ -48,8 +48,8 @@ public extern(D):
 			Vector LinearStiffnessScale3D() { mixin(MGPC("Vector", 124)); }
 			float LinearStiffness() { mixin(MGPC("float", 120)); }
 			float LinearDamping() { mixin(MGPC("float", 116)); }
-			UObject.Pointer KinActorData() { mixin(MGPC("UObject.Pointer", 112)); }
-			UObject.Pointer HandleData() { mixin(MGPC("UObject.Pointer", 108)); }
+			Pointer KinActorData() { mixin(MGPC("Pointer", 112)); }
+			Pointer HandleData() { mixin(MGPC("Pointer", 108)); }
 			int SceneIndex() { mixin(MGPC("int", 100)); }
 			ScriptName GrabbedBoneName() { mixin(MGPC("ScriptName", 92)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GrabbedComponent'!

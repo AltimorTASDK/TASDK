@@ -16,6 +16,6 @@ public extern(D):
 	@property final auto ref
 	{
 		ScriptArray!(MaterialInterface) Materials() { mixin(MGPC("ScriptArray!(MaterialInterface)", 112)); }
-		UObject.Pointer MApexAsset() { mixin(MGPC("UObject.Pointer", 108)); }
+		Pointer MApexAsset() { mixin(MGPC("Pointer", 108)); }
 	}
 }

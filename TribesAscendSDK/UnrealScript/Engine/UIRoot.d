@@ -143,7 +143,7 @@ public extern(D):
 			UIRoot.EUIDataProviderFieldType PropertyType() { mixin(MGPS("UIRoot.EUIDataProviderFieldType", 8)); }
 			ScriptName PropertyTag() { mixin(MGPS("ScriptName", 0)); }
 		}
-		@property final auto ref UObject.Pointer CustomStringNode() { mixin(MGPS("UObject.Pointer", 84)); }
+		@property final auto ref Pointer CustomStringNode() { mixin(MGPS("Pointer", 84)); }
 	}
 	struct InputKeyAction
 	{

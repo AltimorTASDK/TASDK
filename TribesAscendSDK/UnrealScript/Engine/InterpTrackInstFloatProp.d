@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		float ResetFloat() { mixin(MGPC("float", 72)); }
-		UObject.Pointer FloatProp() { mixin(MGPC("UObject.Pointer", 68)); }
+		Pointer FloatProp() { mixin(MGPC("Pointer", 68)); }
 	}
 }

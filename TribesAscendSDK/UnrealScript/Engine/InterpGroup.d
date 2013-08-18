@@ -35,7 +35,7 @@ public extern(D):
 			ScriptArray!(AnimSet) GroupAnimSets() { mixin(MGPC("ScriptArray!(AnimSet)", 88)); }
 			UObject.Color GroupColor() { mixin(MGPC("UObject.Color", 84)); }
 			ScriptName GroupName() { mixin(MGPC("ScriptName", 76)); }
-			UObject.Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC("UObject.Pointer", 60)); }
+			Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC("Pointer", 60)); }
 		}
 		bool bIsSelected() { mixin(MGBPC(100, 0x10)); }
 		bool bIsSelected(bool val) { mixin(MSBPC(100, 0x10)); }

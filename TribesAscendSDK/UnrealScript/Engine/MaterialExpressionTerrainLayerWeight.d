@@ -19,6 +19,6 @@ public extern(D):
 		ScriptName ParameterName() { mixin(MGPC("ScriptName", 168)); }
 		MaterialExpression.ExpressionInput Layer() { mixin(MGPC("MaterialExpression.ExpressionInput", 140)); }
 		MaterialExpression.ExpressionInput Base() { mixin(MGPC("MaterialExpression.ExpressionInput", 112)); }
-		UObject.Pointer InstanceOverride() { mixin(MGPC("UObject.Pointer", 108)); }
+		Pointer InstanceOverride() { mixin(MGPC("Pointer", 108)); }
 	}
 }

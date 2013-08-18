@@ -192,7 +192,7 @@ public extern(D):
 			ScriptArray!(OnlineSubsystem.OnlineRegistrant) Registrants() { mixin(MGPS("ScriptArray!(OnlineSubsystem.OnlineRegistrant)", 16)); }
 			ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant) ArbitrationRegistrants() { mixin(MGPS("ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant)", 28)); }
 			ScriptName SessionName() { mixin(MGPS("ScriptName", 0)); }
-			UObject.Pointer SessionInfo() { mixin(MGPS("UObject.Pointer", 8)); }
+			Pointer SessionInfo() { mixin(MGPS("Pointer", 8)); }
 		}
 	}
 	struct OnlineRegistrant
@@ -512,7 +512,7 @@ public extern(D):
 		auto ref
 		{
 			ScriptArray!(OnlineSubsystem.NamedSession) Sessions() { mixin(MGPC("ScriptArray!(OnlineSubsystem.NamedSession)", 184)); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC("UObject.Pointer", 60)); }
+			Pointer VfTable_FTickableObject() { mixin(MGPC("Pointer", 60)); }
 			ScriptArray!(OnlineSubsystem.NamedInterface) NamedInterfaces() { mixin(MGPC("ScriptArray!(OnlineSubsystem.NamedInterface)", 160)); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'ChatInterface'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'TitleFileInterface'!

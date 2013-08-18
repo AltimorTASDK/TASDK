@@ -18,6 +18,6 @@ public extern(D):
 		float Frequency() { mixin(MGPC("float", 100)); }
 		float Phase() { mixin(MGPC("float", 96)); }
 		float Strength() { mixin(MGPC("float", 92)); }
-		UObject.Pointer SceneProxy() { mixin(MGPC("UObject.Pointer", 88)); }
+		Pointer SceneProxy() { mixin(MGPC("Pointer", 88)); }
 	}
 }

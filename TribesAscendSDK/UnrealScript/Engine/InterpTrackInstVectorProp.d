@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		Vector ResetVector() { mixin(MGPC("Vector", 72)); }
-		UObject.Pointer VectorProp() { mixin(MGPC("UObject.Pointer", 68)); }
+		Pointer VectorProp() { mixin(MGPC("Pointer", 68)); }
 	}
 }

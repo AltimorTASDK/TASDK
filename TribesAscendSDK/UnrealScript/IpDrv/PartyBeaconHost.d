@@ -79,7 +79,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct IpDrv.PartyBeaconHost.ClientBeaconConnection")); }
 		@property final auto ref
 		{
-			UObject.Pointer Socket() { mixin(MGPS("UObject.Pointer", 12)); }
+			Pointer Socket() { mixin(MGPS("Pointer", 12)); }
 			float ElapsedHeartbeatTime() { mixin(MGPS("float", 8)); }
 			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS("OnlineSubsystem.UniqueNetId", 0)); }
 		}

@@ -33,8 +33,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer PSys() { mixin(MGPC("UObject.Pointer", 156)); }
-			UObject.Pointer CascadeScene() { mixin(MGPC("UObject.Pointer", 152)); }
+			Pointer PSys() { mixin(MGPC("Pointer", 156)); }
+			Pointer CascadeScene() { mixin(MGPC("Pointer", 152)); }
 			float CollisionResponseCoefficient() { mixin(MGPC("float", 148)); }
 			float Viscosity() { mixin(MGPC("float", 144)); }
 			float Stiffness() { mixin(MGPC("float", 140)); }

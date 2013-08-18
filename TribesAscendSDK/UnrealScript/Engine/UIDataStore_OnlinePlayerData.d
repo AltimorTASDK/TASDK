@@ -71,7 +71,7 @@ public extern(D):
 		ScriptString PlayerNick() { mixin(MGPC("ScriptString", 132)); }
 		int PlayerControllerId() { mixin(MGPC("int", 128)); }
 		UIDataProvider_OnlineFriends FriendsProvider() { mixin(MGPC("UIDataProvider_OnlineFriends", 124)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 120)); }
 	}
 final:
 	void OnSettingProviderChanged(UIDataProvider SourceProvider, ScriptName* SettingsName = null)

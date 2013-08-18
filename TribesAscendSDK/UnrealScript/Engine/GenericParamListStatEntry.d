@@ -42,7 +42,7 @@ public extern(D):
 	@property final auto ref
 	{
 		GameplayEventsWriter Writer() { mixin(MGPC("GameplayEventsWriter", 64)); }
-		UObject.Pointer StatEvent() { mixin(MGPC("UObject.Pointer", 60)); }
+		Pointer StatEvent() { mixin(MGPC("Pointer", 60)); }
 	}
 final:
 	void AddFloat(ScriptName ParamName, float Value)

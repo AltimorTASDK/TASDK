@@ -175,10 +175,10 @@ public extern(D):
 				Actor AimTarget() { mixin(MGPS("Actor", 164)); }
 				Vector AimPoint() { mixin(MGPS("Vector", 152)); }
 				Rotator LastWeaponRotation() { mixin(MGPS("Rotator", 116)); }
-				UObject.Pointer FiringModeProperty() { mixin(MGPS("UObject.Pointer", 112)); }
-				UObject.Pointer FlashCountProperty() { mixin(MGPS("UObject.Pointer", 108)); }
-				UObject.Pointer FlashLocationProperty() { mixin(MGPS("UObject.Pointer", 104)); }
-				UObject.Pointer WeaponRotationProperty() { mixin(MGPS("UObject.Pointer", 100)); }
+				Pointer FiringModeProperty() { mixin(MGPS("Pointer", 112)); }
+				Pointer FlashCountProperty() { mixin(MGPS("Pointer", 108)); }
+				Pointer FlashLocationProperty() { mixin(MGPS("Pointer", 104)); }
+				Pointer WeaponRotationProperty() { mixin(MGPS("Pointer", 100)); }
 				ScriptName FiringModeName() { mixin(MGPS("ScriptName", 92)); }
 				ScriptName FlashCountName() { mixin(MGPS("ScriptName", 84)); }
 				ScriptName FlashLocationName() { mixin(MGPS("ScriptName", 76)); }

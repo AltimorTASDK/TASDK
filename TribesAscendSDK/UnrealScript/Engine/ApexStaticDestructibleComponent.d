@@ -16,7 +16,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ApexDestructiblePreview() { mixin(MGPC("UObject.Pointer", 532)); }
+			Pointer ApexDestructiblePreview() { mixin(MGPC("Pointer", 532)); }
 			// WARNING: Property 'ApexDestructibleActor' has the same name as a defined type!
 			float SleepDamping() { mixin(MGPC("float", 524)); }
 			float SleepEnergyThreshold() { mixin(MGPC("float", 520)); }

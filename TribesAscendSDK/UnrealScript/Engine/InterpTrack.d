@@ -60,8 +60,8 @@ public extern(D):
 			ScriptString TrackTitle() { mixin(MGPC("ScriptString", 112)); }
 			InterpTrack.ETrackActiveCondition ActiveCondition() { mixin(MGPC("InterpTrack.ETrackActiveCondition", 108)); }
 			ScriptClass TrackInstClass() { mixin(MGPC("ScriptClass", 104)); }
-			UObject.Pointer CurveEdVTable() { mixin(MGPC("UObject.Pointer", 64)); }
-			UObject.Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC("UObject.Pointer", 60)); }
+			Pointer CurveEdVTable() { mixin(MGPC("Pointer", 64)); }
+			Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC("Pointer", 60)); }
 		}
 		bool bIsCollapsed() { mixin(MGBPC(124, 0x100)); }
 		bool bIsCollapsed(bool val) { mixin(MSBPC(124, 0x100)); }

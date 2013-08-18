@@ -62,7 +62,7 @@ public extern(D):
 		ScriptArray!(UObject.Guid) IrrelevantLights() { mixin(MGPC("ScriptArray!(UObject.Guid)", 684)); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Neighbors'!
 		int CollisionMipLevel() { mixin(MGPC("int", 704)); }
-		UObject.Pointer EditToolRenderData() { mixin(MGPC("UObject.Pointer", 700)); }
+		Pointer EditToolRenderData() { mixin(MGPC("Pointer", 700)); }
 		EngineTypes.LightMapRef LightMap() { mixin(MGPC("EngineTypes.LightMapRef", 696)); }
 		UObject.Guid LightingGuid() { mixin(MGPC("UObject.Guid", 656)); }
 		int StaticLightingResolution() { mixin(MGPC("int", 652)); }

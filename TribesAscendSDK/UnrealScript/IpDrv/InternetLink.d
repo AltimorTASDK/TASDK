@@ -75,10 +75,10 @@ public extern(D):
 	@property final auto ref
 	{
 		int DataPending() { mixin(MGPC("int", 496)); }
-		UObject.Pointer PrivateResolveInfo() { mixin(MGPC("UObject.Pointer", 492)); }
-		UObject.Pointer RemoteSocket() { mixin(MGPC("UObject.Pointer", 488)); }
+		Pointer PrivateResolveInfo() { mixin(MGPC("Pointer", 492)); }
+		Pointer RemoteSocket() { mixin(MGPC("Pointer", 488)); }
 		int Port() { mixin(MGPC("int", 484)); }
-		UObject.Pointer Socket() { mixin(MGPC("UObject.Pointer", 480)); }
+		Pointer Socket() { mixin(MGPC("Pointer", 480)); }
 		InternetLink.EReceiveMode ReceiveMode() { mixin(MGPC("InternetLink.EReceiveMode", 479)); }
 		InternetLink.ELineMode OutLineMode() { mixin(MGPC("InternetLink.ELineMode", 478)); }
 		InternetLink.ELinkMode LinkMode() { mixin(MGPC("InternetLink.ELinkMode", 476)); }

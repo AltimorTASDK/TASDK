@@ -38,9 +38,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) PostProcessProxies() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 132)); }
-			UObject.Pointer ViewState() { mixin(MGPC("UObject.Pointer", 128)); }
-			UObject.Pointer CaptureInfo() { mixin(MGPC("UObject.Pointer", 124)); }
+			ScriptArray!(Pointer) PostProcessProxies() { mixin(MGPC("ScriptArray!(Pointer)", 132)); }
+			Pointer ViewState() { mixin(MGPC("Pointer", 128)); }
+			Pointer CaptureInfo() { mixin(MGPC("Pointer", 124)); }
 			float MaxStreamingUpdateDist() { mixin(MGPC("float", 120)); }
 			float MaxViewDistanceOverride() { mixin(MGPC("float", 116)); }
 			float MaxUpdateDist() { mixin(MGPC("float", 112)); }

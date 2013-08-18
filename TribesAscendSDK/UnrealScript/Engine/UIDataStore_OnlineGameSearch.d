@@ -81,8 +81,8 @@ public extern(D):
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
 		OnlineSubsystem OnlineSub() { mixin(MGPC("OnlineSubsystem", 136)); }
 		ScriptName SearchResultsName() { mixin(MGPC("ScriptName", 128)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 124)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 124)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 120)); }
 	}
 final:
 	void Init()

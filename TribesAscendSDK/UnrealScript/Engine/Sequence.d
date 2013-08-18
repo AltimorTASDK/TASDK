@@ -78,7 +78,7 @@ public extern(D):
 			float DefaultViewZoom() { mixin(MGPC("float", 296)); }
 			int DefaultViewY() { mixin(MGPC("int", 292)); }
 			int DefaultViewX() { mixin(MGPC("int", 288)); }
-			UObject.Pointer LogFile() { mixin(MGPC("UObject.Pointer", 208)); }
+			Pointer LogFile() { mixin(MGPC("Pointer", 208)); }
 		}
 		bool bEnabled() { mixin(MGBPC(272, 0x1)); }
 		bool bEnabled(bool val) { mixin(MSBPC(272, 0x1)); }

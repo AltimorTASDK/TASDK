@@ -74,8 +74,8 @@ public extern(D):
 	@property final auto ref
 	{
 		ScriptArray!(UDKUIDataStore_StringList.EStringListData) StringData() { mixin(MGPC("ScriptArray!(UDKUIDataStore_StringList.EStringListData)", 128)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 124)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 124)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 120)); }
 	}
 final:
 	void Registered(LocalPlayer PlayerOwner)

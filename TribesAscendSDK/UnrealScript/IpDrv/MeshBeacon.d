@@ -106,9 +106,9 @@ public extern(D):
 			ScriptName BeaconName() { mixin(MGPC("ScriptName", 84)); }
 			float ElapsedHeartbeatTime() { mixin(MGPC("float", 80)); }
 			float HeartbeatTimeout() { mixin(MGPC("float", 76)); }
-			UObject.Pointer Socket() { mixin(MGPC("UObject.Pointer", 68)); }
+			Pointer Socket() { mixin(MGPC("Pointer", 68)); }
 			int MeshBeaconPort() { mixin(MGPC("int", 64)); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC("UObject.Pointer", 60)); }
+			Pointer VfTable_FTickableObject() { mixin(MGPC("Pointer", 60)); }
 		}
 		bool bShouldTick() { mixin(MGBPC(72, 0x4)); }
 		bool bShouldTick(bool val) { mixin(MSBPC(72, 0x4)); }

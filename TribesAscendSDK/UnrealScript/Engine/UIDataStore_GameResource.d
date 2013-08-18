@@ -59,7 +59,7 @@ public extern(D):
 	{
 		ScriptArray!(UIDataStore_GameResource.GameResourceDataProvider) ElementProviderTypes() { mixin(MGPC("ScriptArray!(UIDataStore_GameResource.GameResourceDataProvider)", 124)); }
 		UObject.MultiMap_Mirror ListElementProviders() { mixin(MGPC("UObject.MultiMap_Mirror", 136)); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC("UObject.Pointer", 120)); }
+		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 120)); }
 	}
 final:
 	int FindProviderTypeIndex(ScriptName ProviderTag)

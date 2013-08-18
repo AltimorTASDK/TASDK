@@ -42,7 +42,7 @@ public extern(D):
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'WheelParticleComp'!
 			ScriptClass WheelPSCClass() { mixin(MGPC("ScriptClass", 260)); }
 			int WheelMaterialIndex() { mixin(MGPC("int", 256)); }
-			UObject.Pointer WheelShape() { mixin(MGPC("UObject.Pointer", 252)); }
+			Pointer WheelShape() { mixin(MGPC("Pointer", 252)); }
 			float CurrentRotation() { mixin(MGPC("float", 248)); }
 			float SuspensionPosition() { mixin(MGPC("float", 244)); }
 			float DesiredSuspensionPosition() { mixin(MGPC("float", 240)); }

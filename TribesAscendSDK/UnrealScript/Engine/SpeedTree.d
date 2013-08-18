@@ -26,7 +26,7 @@ public extern(D):
 			MaterialInterface Branch2Material() { mixin(MGPC("MaterialInterface", 76)); }
 			MaterialInterface Branch1Material() { mixin(MGPC("MaterialInterface", 72)); }
 			float LeafStaticShadowOpacity() { mixin(MGPC("float", 68)); }
-			UObject.Pointer SRH() { mixin(MGPC("UObject.Pointer", 64)); }
+			Pointer SRH() { mixin(MGPC("Pointer", 64)); }
 		}
 		bool bLegacySpeedTree() { mixin(MGBPC(60, 0x1)); }
 		bool bLegacySpeedTree(bool val) { mixin(MSBPC(60, 0x1)); }

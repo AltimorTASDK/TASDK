@@ -42,7 +42,7 @@ public extern(D):
 		ScriptString IsLocalCol() { mixin(MGPC("ScriptString", 144)); }
 		ScriptString NatTypeCol() { mixin(MGPC("ScriptString", 132)); }
 		ScriptString NickNameCol() { mixin(MGPC("ScriptString", 120)); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("UObject.Pointer", 92)); }
+		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 92)); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

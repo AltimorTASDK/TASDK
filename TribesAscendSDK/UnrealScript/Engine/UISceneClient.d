@@ -54,8 +54,8 @@ public extern(D):
 			UObject.Matrix CanvasToScreen() { mixin(MGPC("UObject.Matrix", 80)); }
 			DataStoreClient DataStoreManager() { mixin(MGPC("DataStoreClient", 76)); }
 			UObject.IntPoint MousePosition() { mixin(MGPC("UObject.IntPoint", 68)); }
-			UObject.Pointer RenderViewport() { mixin(MGPC("UObject.Pointer", 64)); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC("UObject.Pointer", 60)); }
+			Pointer RenderViewport() { mixin(MGPC("Pointer", 64)); }
+			Pointer VfTable_FExec() { mixin(MGPC("Pointer", 60)); }
 		}
 		bool bEnablePostProcess() { mixin(MGBPC(212, 0x1)); }
 		bool bEnablePostProcess(bool val) { mixin(MSBPC(212, 0x1)); }

@@ -42,7 +42,7 @@ public extern(D):
 	@property final auto ref
 	{
 		GFxMoviePlayer Movie() { mixin(MGPC("GFxMoviePlayer", 64)); }
-		UObject.Pointer VfTable_IUIDataStorePublisher() { mixin(MGPC("UObject.Pointer", 60)); }
+		Pointer VfTable_IUIDataStorePublisher() { mixin(MGPC("Pointer", 60)); }
 	}
 final:
 	void PublishValues()

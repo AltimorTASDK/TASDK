@@ -42,7 +42,7 @@ public extern(D):
 		{
 			auto ref
 			{
-				UObject.Pointer HttpDownloader() { mixin(MGPS("UObject.Pointer", 36)); }
+				Pointer HttpDownloader() { mixin(MGPS("Pointer", 36)); }
 				float TimeOut() { mixin(MGPS("float", 28)); }
 				ScriptString NewsItem() { mixin(MGPS("ScriptString", 16)); }
 				OnlineSubsystem.EOnlineNewsType NewsType() { mixin(MGPS("OnlineSubsystem.EOnlineNewsType", 13)); }

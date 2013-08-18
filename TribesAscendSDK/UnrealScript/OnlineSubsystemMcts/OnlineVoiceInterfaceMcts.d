@@ -119,8 +119,8 @@ void*)", 112)); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnRecognitionComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPlayerTalkingStateChange__Delegate'!
 		OnlineVoiceInterfaceMcts.LocalTalkerMcts CurrentLocalTalker() { mixin(MGPC("OnlineVoiceInterfaceMcts.LocalTalkerMcts", 68)); }
-		UObject.Pointer VoiceEnginePtr() { mixin(MGPC("UObject.Pointer", 64)); }
-		UObject.Pointer MctsSubsystem() { mixin(MGPC("UObject.Pointer", 60)); }
+		Pointer VoiceEnginePtr() { mixin(MGPC("Pointer", 64)); }
+		Pointer MctsSubsystem() { mixin(MGPC("Pointer", 60)); }
 	}
 final:
 	void OnRecognitionComplete()

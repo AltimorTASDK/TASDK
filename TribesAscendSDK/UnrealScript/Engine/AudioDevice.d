@@ -120,13 +120,13 @@ public extern(D):
 void*) AudioComponents() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)", 128)); }
-			ScriptArray!(UObject.Pointer) Sources() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 140)); }
-			ScriptArray!(UObject.Pointer) FreeSources() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 152)); }
+			ScriptArray!(Pointer) Sources() { mixin(MGPC("ScriptArray!(Pointer)", 140)); }
+			ScriptArray!(Pointer) FreeSources() { mixin(MGPC("ScriptArray!(Pointer)", 152)); }
 			ScriptArray!(AudioDevice.Listener) Listeners() { mixin(MGPC("ScriptArray!(AudioDevice.Listener)", 224)); }
 			float LastUpdateTime() { mixin(MGPC("float", 704)); }
 			float TransientMasterVolume() { mixin(MGPC("float", 700)); }
 			AudioDevice.EDebugState DebugState() { mixin(MGPC("AudioDevice.EDebugState", 696)); }
-			UObject.Pointer TextToSpeech() { mixin(MGPC("UObject.Pointer", 692)); }
+			Pointer TextToSpeech() { mixin(MGPC("Pointer", 692)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'TestAudioComponent'!
 			float ExteriorLPFInterp() { mixin(MGPC("float", 684)); }
 			float ExteriorVolumeInterp() { mixin(MGPC("float", 680)); }
@@ -145,7 +145,7 @@ void*)", 128)); }
 			UObject.Double SoundModeStartTime() { mixin(MGPC("UObject.Double", 560)); }
 			SoundMode CurrentMode() { mixin(MGPC("SoundMode", 556)); }
 			ScriptName BaseSoundModeName() { mixin(MGPC("ScriptName", 548)); }
-			UObject.Pointer Effects() { mixin(MGPC("UObject.Pointer", 544)); }
+			Pointer Effects() { mixin(MGPC("Pointer", 544)); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'SoundModes'!
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'DestinationSoundClasses'!
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'CurrentSoundClasses'!
@@ -154,7 +154,7 @@ void*)", 128)); }
 			QWord CurrentTick() { mixin(MGPC("QWord", 236)); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'WaveInstanceSourceMap'!
 			int CommonAudioPoolFreeBytes() { mixin(MGPC("int", 124)); }
-			UObject.Pointer CommonAudioPool() { mixin(MGPC("UObject.Pointer", 120)); }
+			Pointer CommonAudioPool() { mixin(MGPC("Pointer", 120)); }
 			SoundNodeWave ChirpOutSoundNodeWave() { mixin(MGPC("SoundNodeWave", 112)); }
 			ScriptString ChirpOutSoundNodeWaveName() { mixin(MGPC("ScriptString", 100)); }
 			SoundNodeWave ChirpInSoundNodeWave() { mixin(MGPC("SoundNodeWave", 96)); }

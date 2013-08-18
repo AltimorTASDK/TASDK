@@ -672,7 +672,7 @@ public extern(D):
 			ubyte FlashCount() { mixin(MGPC("ubyte", 539)); }
 			ubyte RemoteViewPitch() { mixin(MGPC("ubyte", 538)); }
 			Pawn.EPathSearchType PathSearchType() { mixin(MGPC("Pawn.EPathSearchType", 537)); }
-			UObject.Pointer VfTable_IInterface_Speaker() { mixin(MGPC("UObject.Pointer", 476)); }
+			Pointer VfTable_IInterface_Speaker() { mixin(MGPC("Pointer", 476)); }
 			Actor LastViewer() { mixin(MGPC("Actor", 524)); }
 			PlayerController LastRealViewer() { mixin(MGPC("PlayerController", 520)); }
 			float NetRelevancyTime() { mixin(MGPC("float", 516)); }

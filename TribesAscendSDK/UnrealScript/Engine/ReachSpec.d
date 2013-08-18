@@ -51,7 +51,7 @@ public extern(D):
 			NavigationPoint Start() { mixin(MGPC("NavigationPoint", 80)); }
 			Vector Direction() { mixin(MGPC("Vector", 68)); }
 			int Distance() { mixin(MGPC("int", 64)); }
-			UObject.Pointer NavOctreeObject() { mixin(MGPC("UObject.Pointer", 60)); }
+			Pointer NavOctreeObject() { mixin(MGPC("Pointer", 60)); }
 		}
 		bool bDisabled() { mixin(MGBPC(124, 0x10)); }
 		bool bDisabled(bool val) { mixin(MSBPC(124, 0x10)); }

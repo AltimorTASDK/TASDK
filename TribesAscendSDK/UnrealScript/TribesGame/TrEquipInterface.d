@@ -571,11 +571,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.OwnsReticule, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void DelegateOnMarshalEvent(UObject.Pointer pMarEvent)
+	void DelegateOnMarshalEvent(Pointer pMarEvent)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(UObject.Pointer*)params.ptr = pMarEvent;
+		*cast(Pointer*)params.ptr = pMarEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DelegateOnMarshalEvent, params.ptr, cast(void*)0);
 	}
 	void LoadInventory()
@@ -598,11 +598,11 @@ final:
 		*cast(int*)&params[8] = equip;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDefaultEquip, params.ptr, cast(void*)0);
 	}
-	void OnMarshalEvent(UObject.Pointer pMarEvent)
+	void OnMarshalEvent(Pointer pMarEvent)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(UObject.Pointer*)params.ptr = pMarEvent;
+		*cast(Pointer*)params.ptr = pMarEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnMarshalEvent, params.ptr, cast(void*)0);
 	}
 	bool RegisterMarshalCallback(

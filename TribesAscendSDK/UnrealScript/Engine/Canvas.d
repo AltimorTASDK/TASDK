@@ -189,7 +189,7 @@ public extern(D):
 			// WARNING: Property 'Font' has the same name as a defined type!
 			Texture2D DefaultTexture() { mixin(MGPC("Texture2D", 144)); }
 			UObject.Plane ColorModulate() { mixin(MGPC("UObject.Plane", 128)); }
-			UObject.Pointer SceneView() { mixin(MGPC("UObject.Pointer", 116)); }
+			Pointer SceneView() { mixin(MGPC("Pointer", 116)); }
 			// WARNING: Property 'Canvas' has the same name as a defined type!
 			int SizeY() { mixin(MGPC("int", 108)); }
 			int SizeX() { mixin(MGPC("int", 104)); }

@@ -28,7 +28,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.Pointer LinearKernel() { mixin(MGPC("UObject.Pointer", 712)); }
+		Pointer LinearKernel() { mixin(MGPC("Pointer", 712)); }
 		float TorusRadius() { mixin(MGPC("float", 708)); }
 		Vector FalloffQuadratic() { mixin(MGPC("Vector", 696)); }
 		Vector FalloffLinear() { mixin(MGPC("Vector", 684)); }

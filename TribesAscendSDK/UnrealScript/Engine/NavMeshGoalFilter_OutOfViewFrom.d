@@ -21,7 +21,7 @@ public extern(D):
 	@property final auto ref
 	{
 		Vector OutOfViewLocation() { mixin(MGPC("Vector", 76)); }
-		UObject.Pointer GoalPoly() { mixin(MGPC("UObject.Pointer", 72)); }
+		Pointer GoalPoly() { mixin(MGPC("Pointer", 72)); }
 	}
 	final static bool MustBeHiddenFromThisPoint(NavMeshGoal_GenericFilterContainer FilterContainer, Vector InOutOfViewLocation)
 	{

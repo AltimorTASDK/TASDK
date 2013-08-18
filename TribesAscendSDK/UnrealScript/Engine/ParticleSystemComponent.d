@@ -283,7 +283,7 @@ public extern(D):
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnSystemFinished__Delegate'!
 			ParticleSystem Template() { mixin(MGPC("ParticleSystem", 488)); }
 			ScriptClass LightEnvironmentClass() { mixin(MGPC("ScriptClass", 492)); }
-			ScriptArray!(UObject.Pointer) EmitterInstances() { mixin(MGPC("ScriptArray!(UObject.Pointer)", 496)); }
+			ScriptArray!(Pointer) EmitterInstances() { mixin(MGPC("ScriptArray!(Pointer)", 496)); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*) SMComponents() { mixin(MGPC("ScriptArray!(
@@ -317,7 +317,7 @@ void*)", 532)); }
 			ScriptArray!(ParticleSystemComponent.ParticleEventDeathData) DeathEvents() { mixin(MGPC("ScriptArray!(ParticleSystemComponent.ParticleEventDeathData)", 676)); }
 			ScriptArray!(ParticleSystemComponent.ParticleEventCollideData) CollisionEvents() { mixin(MGPC("ScriptArray!(ParticleSystemComponent.ParticleEventCollideData)", 688)); }
 			ScriptArray!(ParticleSystemComponent.ParticleEventKismetData) KismetEvents() { mixin(MGPC("ScriptArray!(ParticleSystemComponent.ParticleEventKismetData)", 700)); }
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC("UObject.Pointer", 712)); }
+			Pointer ReleaseResourcesFence() { mixin(MGPC("Pointer", 712)); }
 			float CustomTimeDilation() { mixin(MGPC("float", 716)); }
 			float EmitterDelay() { mixin(MGPC("float", 720)); }
 		}

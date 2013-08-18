@@ -40,7 +40,7 @@ public extern(D):
 			int bResetStaticMesh() { mixin(MGPC("int", 636)); }
 			int NumResourceIndices() { mixin(MGPC("int", 632)); }
 			UObject.RenderCommandFence_Mirror ReleaseResourcesFence() { mixin(MGPC("UObject.RenderCommandFence_Mirror", 612)); }
-			UObject.Pointer ComponentBaseResources() { mixin(MGPC("UObject.Pointer", 608)); }
+			Pointer ComponentBaseResources() { mixin(MGPC("Pointer", 608)); }
 		}
 		bool bUseDynamicIBWithHiddenFragments() { mixin(MGBPC(628, 0x10)); }
 		bool bUseDynamicIBWithHiddenFragments(bool val) { mixin(MSBPC(628, 0x10)); }

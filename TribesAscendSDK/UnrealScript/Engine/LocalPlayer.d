@@ -102,7 +102,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.LocalPlayer.SynchronizedActorVisibilityHistory")); }
 		@property final auto ref
 		{
-			UObject.Pointer CriticalSection() { mixin(MGPS("UObject.Pointer", 4)); }
+			Pointer CriticalSection() { mixin(MGPS("Pointer", 4)); }
 			// WARNING: Property 'State' has the same name as a defined type!
 		}
 	}
@@ -123,7 +123,7 @@ public extern(D):
 			LocalPlayer.CurrentPostProcessVolumeInfo CurrentPPInfo() { mixin(MGPC("LocalPlayer.CurrentPostProcessVolumeInfo", 160)); }
 			Vector LastViewLocation() { mixin(MGPC("Vector", 148)); }
 			LocalPlayer.SynchronizedActorVisibilityHistory ActorVisibilityHistory() { mixin(MGPC("LocalPlayer.SynchronizedActorVisibilityHistory", 140)); }
-			UObject.Pointer ViewState() { mixin(MGPC("UObject.Pointer", 136)); }
+			Pointer ViewState() { mixin(MGPC("Pointer", 136)); }
 			PostProcessChain PlayerPostProcess() { mixin(MGPC("PostProcessChain", 120)); }
 		}
 		bool bSentSplitJoin() { mixin(MGBPC(652, 0x2)); }

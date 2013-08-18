@@ -117,7 +117,7 @@ public extern(D):
 		{
 			Vector P2() { mixin(MGPS("Vector", 16)); }
 			Vector P1() { mixin(MGPS("Vector", 4)); }
-			UObject.Pointer Poly() { mixin(MGPS("UObject.Pointer", 0)); }
+			Pointer Poly() { mixin(MGPS("Pointer", 0)); }
 		}
 	}
 	struct NavMeshPathParams
@@ -160,7 +160,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.NavigationHandle.EdgePointer")); }
-		@property final auto ref UObject.Pointer Dummy() { mixin(MGPS("UObject.Pointer", 0)); }
+		@property final auto ref Pointer Dummy() { mixin(MGPS("Pointer", 0)); }
 	}
 	@property final
 	{
@@ -172,11 +172,11 @@ public extern(D):
 			NavMeshPathGoalEvaluator PathGoalList() { mixin(MGPC("NavMeshPathGoalEvaluator", 152)); }
 			NavMeshPathConstraint PathConstraintList() { mixin(MGPC("NavMeshPathConstraint", 148)); }
 			Actor.BasedPosition FinalDestination() { mixin(MGPC("Actor.BasedPosition", 92)); }
-			UObject.Pointer SubGoal_DestPoly() { mixin(MGPC("UObject.Pointer", 88)); }
-			UObject.Pointer CurrentEdge() { mixin(MGPC("UObject.Pointer", 84)); }
-			UObject.Pointer BestUnfinishedPathPoint() { mixin(MGPC("UObject.Pointer", 80)); }
+			Pointer SubGoal_DestPoly() { mixin(MGPC("Pointer", 88)); }
+			Pointer CurrentEdge() { mixin(MGPC("Pointer", 84)); }
+			Pointer BestUnfinishedPathPoint() { mixin(MGPC("Pointer", 80)); }
 			NavigationHandle.PathStore PathCache() { mixin(MGPC("NavigationHandle.PathStore", 68)); }
-			UObject.Pointer AnchorPoly() { mixin(MGPC("UObject.Pointer", 64)); }
+			Pointer AnchorPoly() { mixin(MGPC("Pointer", 64)); }
 			Pylon AnchorPylon() { mixin(MGPC("Pylon", 60)); }
 		}
 		bool bUltraVerbosePathDebugging() { mixin(MGBPC(144, 0x8)); }
