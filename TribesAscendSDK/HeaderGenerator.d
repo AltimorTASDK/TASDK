@@ -265,6 +265,7 @@ abstract class Descriptor
 	{
 		switch (name)
 		{
+			case "Pointer":
 			case "QWord":
 			case "Rotator":
 			case "Vector":
@@ -1050,8 +1051,24 @@ final class StructDescriptor : NestableContainer
 		RequireChildren(mgr);
 	}
 
+	bool ShouldGenerateSelf()
+	{
+		switch (InnerStruct.GetFullName())
+		{
+			case "ScriptStruct Core.Object.Pointer":
+			case "ScriptStruct Core.Object.QWord":
+			case "ScriptStruct Core.Object.Rotator":
+			case "ScriptStruct Core.Object.Vector":
+				return false;
+			default:
+				return true;
+		}
+	}
+
 	override void Write(IndentedStreamWriter wtr)
 	{
+		if (!ShouldGenerateSelf())
+			return;
 		wtr.Write("struct %s", EscapeName(InnerStruct.GetName()));
 		wtr.WriteLine();
 		wtr.WriteLine("{");
