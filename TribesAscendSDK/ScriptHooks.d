@@ -174,9 +174,8 @@ public:
 					asm
 					{
 						mov ECX, po;
-						// TODO: These and the others are pushing the params in the wrong order.
-						push stack;
 						push retLocation;
+						push stack;
 						call nFunc;
 					}
 					//mNativeArray[*stack.Code++](stack.ParentObject, stack, funcArgs + argOffset);
@@ -203,9 +202,9 @@ public:
 						asm
 						{
 							mov ECX, thisPtr;
-							push stack;
-							push result;
 							push ht;
+							push result;
+							push stack;
 							call mCallFunction;
 						}
 						//mCallFunction(thisPtr, stack, result, mHookArray[i].HookTarget);
@@ -219,9 +218,9 @@ public:
 						asm
 						{
 							mov ECX, thisPtr;
-							push stack;
-							push result;
 							push ht;
+							push result;
+							push stack;
 							call mCallFunction;
 						}
 						//mCallFunction(thisPtr, stack, result, mHookArray[i].HookTarget);
