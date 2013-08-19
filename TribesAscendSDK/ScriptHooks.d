@@ -4,9 +4,10 @@ private import ScriptClasses;
 private import std.c.stdlib;
 
 alias extern(D) HookType function(void* obj, void* result, ubyte* args) HookFunction;
-// TODO: This should be __stdcall
 alias extern(Windows) void function(ScriptStackFrame* stack, void* result, ScriptFunction func) CleanupStack;
-// TODO: These should both be __thiscall
+// These are __thiscall, but, as D doesn't support __thiscall, they are declared
+// as __cdecl, and an assembly stub is used to pass the this argument in ECX,
+// and push the arguments in right to left order.
 alias extern(C++) void function(ScriptStackFrame* stack, void* result) NativeFunction;
 alias extern(C++) void function(ScriptStackFrame* stack, void* result, ScriptFunction func) CallFunction;
 
@@ -133,7 +134,8 @@ public:
 		}
 	}
 
-	// TODO: This needs to be __fastcall
+	// __stdcall in combination with the thunk above should produce
+	// the same effects as __fastcall.
 	export extern(Windows) static void HookHandler(ScriptObject thisPtr, int edx, ScriptStackFrame* stack, void* result)
 	{
 		size_t func;
