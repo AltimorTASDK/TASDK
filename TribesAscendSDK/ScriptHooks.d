@@ -147,6 +147,9 @@ public:
 			mov retAddr, EAX;
 			pop EAX;
 		}
+		//size_t funcPtr = cast(size_t)mCallFunction.funcptr;
+		//size_t mPtr = cast(size_t)mCallFunction.ptr;
+		size_t mmcallfunc = cast(size_t)mCallFunction;
 		if (retAddr >= cast(size_t)mCallFunction && retAddr <= cast(size_t)mCallFunction + 0x100)
 		{
 			//lea ebp, [esp-404] in CallFunction

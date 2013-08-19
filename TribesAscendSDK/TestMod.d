@@ -9,12 +9,12 @@ private import UnrealScript.TribesGame.TrPlayerController;
 private import UnrealScript.TribesGame.TrDevice_ThumperD;
 
 
-HookType TribesGame_TrPlayerController_PlayerTick(TrPlayerController pThis, ref void* result, float DeltaTime)
+HookType TribesGame_TrPlayerController_PlayRespawnSoonSound(TrPlayerController pThis, ref void* result)
 {
 	IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDK-ItWorks.txt");
 	wtr.WriteLine();
 	wtr.Close();
-	return HookType.Continue;
+	return HookType.Block;
 }
 
 void ModInit()
@@ -22,8 +22,8 @@ void ModInit()
 	TrDevice_ThumperD.DefaultProperties.m_nMaxCarriedAmmo = 50;
 	TrDevice_ThumperD.DefaultProperties.m_nCarriedAmmo = 50;
 	TrDevice_ThumperD.DefaultProperties.m_fReloadTime = 0.3f;
-
-	AddHook(TrPlayerController.Functions.PlayerTick, &TribesGame_TrPlayerController_PlayerTick);
+	
+	AddHook(TrPlayerController.Functions.PlayRespawnSoonSound, &TribesGame_TrPlayerController_PlayRespawnSoonSound);
 	//RInterpTo(
 	//RInterpTo(Rotator(), Rotator(), 0, 0);
 	//bool b;
