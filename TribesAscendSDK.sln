@@ -43,6 +43,8 @@ Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "WinDrv", "TribesAscendSDK\U
 EndProject
 Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "XAudio2", "TribesAscendSDK\UnrealScript\XAudio2\XAudio2.dproj", "{74155233-8AA9-4A14-9AF3-636600991B4A}"
 EndProject
+Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "UnrealScript2", "TribesAscendSDK\UnrealScript\UnrealScript.dproj", "{9eacc67c-4918-4d92-a7c6-b699e6554666}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,12 @@ Global
 		{74155233-8AA9-4A14-9AF3-636600991B4A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{74155233-8AA9-4A14-9AF3-636600991B4A}.Unittest|Any CPU.ActiveCfg = Debug|Any CPU
 		{74155233-8AA9-4A14-9AF3-636600991B4A}.Unittest|Any CPU.Build.0 = Debug|Any CPU
+		{9eacc67c-4918-4d92-a7c6-b699e6554666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9eacc67c-4918-4d92-a7c6-b699e6554666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9eacc67c-4918-4d92-a7c6-b699e6554666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9eacc67c-4918-4d92-a7c6-b699e6554666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9eacc67c-4918-4d92-a7c6-b699e6554666}.Unittest|Any CPU.ActiveCfg = Debug|Any CPU
+		{9eacc67c-4918-4d92-a7c6-b699e6554666}.Unittest|Any CPU.Build.0 = Debug|Any CPU
 		{77B194F3-D905-4B2B-BA17-AC85EE7749D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77B194F3-D905-4B2B-BA17-AC85EE7749D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77B194F3-D905-4B2B-BA17-AC85EE7749D6}.Release|Any CPU.ActiveCfg = Release|Any CPU

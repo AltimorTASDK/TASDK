@@ -727,7 +727,7 @@ public:
 		final bool IsParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.Param); }
 		final bool IsReturnParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.ReturnParam); }
 
-		final const(ScriptPropertyType) Type()
+		final ScriptPropertyType Type()
 		{
 			switch (ObjectClass.GetName())
 			{

@@ -44,7 +44,7 @@
         <Lib>lib/XAudio2.lib</Lib>
       </Libs>
     </Libs>
-    <ExtraCompilerArguments>-gs -property -L+.\lib\</ExtraCompilerArguments>
+    <ExtraCompilerArguments>-gs</ExtraCompilerArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
