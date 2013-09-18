@@ -87,11 +87,12 @@ extern(Windows)
 			mov EDX, 0xFFFF;
 			push 0xDEADBEEF;
 
+			popfd;
 			//pop 0xDEADBEEF;
 		}
 	}
 
-	immutable(immutable(ubyte)[0x0E]) ThunkData =
+	immutable(immutable(ubyte)[0x0F]) ThunkData =
 	[
 		0x55, // push EBP
 		0x89, 0xE5, // mov EBP, ESP
@@ -109,6 +110,7 @@ extern(Windows)
 		0x5D, // pop EBP
 		0x5B, // pop EBX
 		0x58, // pop EAX
+		0x9D, // popfd
 		0xC3, // ret
 	];
 	immutable string SDKLocation = `C:\Tribes\TribesAscendSDK\TribesAscendSDK\bin\Debug\TribesAscendSDK.dll`;
@@ -161,6 +163,9 @@ extern(Windows)
 		threadContext.Esp -= 4;
 		if (!WriteProcessMemory(mainProcessHandle, cast(LPCVOID)threadContext.Esp, &threadContext.Eip, threadContext.Eip.sizeof, cast(SIZE_T*)NULL))
 			Die("Failed to write the old eip to the stack!");
+		threadContext.Esp -= 4;
+		if (!WriteProcessMemory(mainProcessHandle, cast(LPCVOID)threadContext.Esp, &threadContext.EFlags, threadContext.EFlags.sizeof, cast(SIZE_T*)NULL))
+			Die("Failed to write the old eflags to the stack!");
 		threadContext.Esp -= 4;
 		if (!WriteProcessMemory(mainProcessHandle, cast(LPCVOID)threadContext.Esp, &threadContext.Eax, threadContext.Eax.sizeof, cast(SIZE_T*)NULL))
 			Die("Failed to write the old eax to the stack!");
