@@ -6,7 +6,7 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BC4EE21F-9D85-4AC8-81DF-E16F77288936}</ProjectGuid>
-    <Compiler>DMD2</Compiler>
+    <Compiler>DMD HEAD</Compiler>
     <PreferOneStepBuild>true</PreferOneStepBuild>
     <UseDefaultCompiler>true</UseDefaultCompiler>
     <IncrementalLinking>true</IncrementalLinking>
@@ -40,11 +40,7 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WindowsClient.d">
-      <LastGenOutput>obj\Debug\WindowsClient.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="XnaForceFeedbackManager.d">
-      <LastGenOutput>obj\Debug\XnaForceFeedbackManager.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="WindowsClient.d" />
+    <Compile Include="XnaForceFeedbackManager.d" />
   </ItemGroup>
 </Project>

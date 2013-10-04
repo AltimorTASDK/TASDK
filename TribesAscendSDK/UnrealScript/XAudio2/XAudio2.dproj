@@ -6,7 +6,7 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{74155233-8AA9-4A14-9AF3-636600991B4A}</ProjectGuid>
-    <Compiler>DMD2</Compiler>
+    <Compiler>DMD HEAD</Compiler>
     <PreferOneStepBuild>true</PreferOneStepBuild>
     <UseDefaultCompiler>true</UseDefaultCompiler>
     <IncrementalLinking>true</IncrementalLinking>
@@ -36,8 +36,6 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="XAudio2Device.d">
-      <LastGenOutput>obj\Debug\XAudio2Device.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="XAudio2Device.d" />
   </ItemGroup>
 </Project>

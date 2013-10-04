@@ -6,7 +6,7 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3C5455BD-4463-4F59-BEB7-F5415773E4DC}</ProjectGuid>
-    <Compiler>DMD2</Compiler>
+    <Compiler>DMD HEAD</Compiler>
     <PreferOneStepBuild>true</PreferOneStepBuild>
     <UseDefaultCompiler>true</UseDefaultCompiler>
     <IncrementalLinking>true</IncrementalLinking>
