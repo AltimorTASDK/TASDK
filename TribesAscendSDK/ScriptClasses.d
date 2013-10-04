@@ -9,7 +9,10 @@ private import std.c.stdlib;
 private import Flags : Flags;
 
 public alias ulong QWord; // Total size: 0x08
+static assert(QWord.sizeof == 0x08);
+
 public alias void* Pointer; // Total size: 0x04
+static assert(Pointer.sizeof == 0x04);
 
 public struct ScriptArray(T) // Total size: 0x0C
 {
@@ -31,6 +34,7 @@ public:
 	final T opIndex(uint idx) { return mData[0..mCount][idx]; }
 	final T opIndex(int idx) { return mData[0..mCount][idx]; }
 }
+static assert(ScriptArray!(int).sizeof == 0x0C);
 
 public struct ScriptString // Total size: 0x0C
 {
@@ -56,6 +60,7 @@ public:
 	}
 }
 public static final ScriptString ToScriptString(string pThis) { return ScriptString(pThis); }
+static assert(ScriptString.sizeof == 0x0C);
 
 public struct ScriptNameEntry // Total size: N/A (This structure is dynamically sized)
 {
@@ -89,6 +94,7 @@ public:
 
 	@property final static auto ref ScriptArray!(ScriptNameEntry*)* NameArray() { return mNameArray; }
 }
+static assert(ScriptName.sizeof == 0x08);
 
 extern(C++) public interface ScriptObject // Total size: 0x3C
 {
@@ -246,6 +252,7 @@ private:
 public:
 	void ProcessEvent(ScriptFunction func, void* params, void* result);
 }
+//static assert(ScriptObject.sizeof == 0x3C);
 
 public enum ScriptObjectFlags : ulong
 {

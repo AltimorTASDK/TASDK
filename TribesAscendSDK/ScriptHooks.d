@@ -3,7 +3,7 @@ module ScriptHooks;
 private import ScriptClasses;
 private import std.c.stdlib;
 
-alias extern(D) HookType function(void* obj, void* result, ubyte* args) HookFunction;
+alias HookType function(void* obj, void* result, ubyte* args) HookFunction;
 alias extern(Windows) void function(ScriptStackFrame* stack, void* result, ScriptFunction func) CleanupStack;
 // These are __thiscall, but, as D doesn't support __thiscall, they are declared
 // as __cdecl, and an assembly stub is used to pass the this argument in ECX,
@@ -136,7 +136,7 @@ public:
 
 	// __stdcall in combination with the thunk above should produce
 	// the same effects as __fastcall.
-	export extern(Windows) static void HookHandler(ScriptObject thisPtr, int edx, ScriptStackFrame* stack, void* result)
+	export extern(Windows) static void HookHandler(ScriptObject thisPtr, uint edx, ScriptStackFrame* stack, void* result)
 	{
 		size_t func;
 		size_t retAddr;
@@ -244,7 +244,7 @@ public:
 
 					void* params = *cast(void**)(*GetEBP() + 0xC);
 					
-					if( mHookArray[ i ].OriginalFunction )
+					if(mHookArray[i].OriginalFunction)
 					{
 						mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
 						thisPtr.ProcessEvent(mHookArray[i].HookTarget, params, result);
