@@ -6,13 +6,13 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4B273231-088D-4BEE-822F-F4A7B875847F}</ProjectGuid>
-    <Compiler>DMD HEAD</Compiler>
+    <Compiler>DMD2</Compiler>
     <PreferOneStepBuild>true</PreferOneStepBuild>
     <UseDefaultCompiler>true</UseDefaultCompiler>
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
+        <Path>../../</Path>
       </Includes>
     </Includes>
   </PropertyGroup>

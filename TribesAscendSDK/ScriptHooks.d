@@ -128,15 +128,14 @@ public:
 		asm
 		{
 			naked;
-			push EDX;
 			push ECX;
 			jmp HookHandler;
 		}
 	}
 
 	// __stdcall in combination with the thunk above should produce
-	// the same effects as __fastcall.
-	export extern(Windows) static void HookHandler(ScriptObject thisPtr, uint edx, ScriptStackFrame* stack, void* result)
+	// the same effects as __thiscall.
+	export extern(Windows) static void HookHandler(ScriptObject thisPtr, ScriptStackFrame* stack, void* result)
 	{
 		size_t func;
 		size_t retAddr;
@@ -175,6 +174,7 @@ public:
 					
 					ScriptObject po = stack.ParentObject;
 					NativeFunction nFunc = mNativeArray[*stack.Code++];
+					nFunc(null, null);
 					ubyte* retLocation = funcArgs + argOffset;
 					asm
 					{
