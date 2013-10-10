@@ -36,8 +36,6 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="ClientBeaconAddressResolver.d" />
     <Compile Include="HelloWeb.d" />
     <Compile Include="HTTPDownload.d" />

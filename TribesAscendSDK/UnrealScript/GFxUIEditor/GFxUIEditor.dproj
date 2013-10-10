@@ -36,8 +36,6 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="GenericBrowserType_GFxMovie.d" />
     <Compile Include="GFxImportCommandlet.d" />
     <Compile Include="GFxReimportCommandlet.d" />

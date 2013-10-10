@@ -36,8 +36,6 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="DynamicGameCrowdDestination.d" />
     <Compile Include="DynamicSpriteComponent.d" />
     <Compile Include="FrameworkGame.d" />

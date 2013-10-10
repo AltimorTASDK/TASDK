@@ -36,10 +36,6 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="SearFiles.d" />
     <Compile Include="TgBrowserInteraction.d" />
     <Compile Include="TgCheatManager.d" />

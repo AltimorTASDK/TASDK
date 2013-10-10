@@ -36,8 +36,6 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="FlashMovie.d" />
     <Compile Include="GFxAction_CloseMovie.d" />
     <Compile Include="GFxAction_GetVariable.d" />
