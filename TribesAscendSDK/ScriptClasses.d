@@ -31,8 +31,8 @@ public:
 
 	// The slice operation that occurs first takes care of
 	// the bounds checking for us.
-	final T opIndex(uint idx) { return mData[0..mCount][idx]; }
-	final T opIndex(int idx) { return mData[0..mCount][idx]; }
+	auto ref T opIndex(uint idx) { return mData[0..mCount][idx]; }
+	auto ref T opIndex(int idx) { return mData[0..mCount][idx]; }
 }
 static assert(ScriptArray!(int).sizeof == 0x0C);
 
@@ -252,7 +252,6 @@ private:
 public:
 	void ProcessEvent(ScriptFunction func, void* params, void* result);
 }
-//static assert(ScriptObject.sizeof == 0x3C);
 
 public enum ScriptObjectFlags : ulong
 {
@@ -508,6 +507,7 @@ public enum ScriptObjectFlags : ulong
 
 	AllFlags = 0xFFFFFFFFFFFFFFFF,
 }
+static assert(ScriptObjectFlags.sizeof == 0x08);
 
 extern(C++) public interface ScriptField : ScriptObject // Total size: 0x40
 {
@@ -694,6 +694,7 @@ public enum ScriptFunctionFlags : uint // Total size: 0x04
 
 	AllFlags = 0xFFFFFFFF,
 }
+static assert(ScriptFunctionFlags.sizeof == 0x04);
 
 extern(C++) public interface ScriptState : ScriptStruct // Total size: 0xD8
 {
@@ -993,6 +994,7 @@ public enum ScriptPropertyFlags : ulong // Total size: 0x08
 	 */
 	CrossLevel = CrossLevelPassive | CrossLevelActive,
 }
+static assert(ScriptPropertyFlags.sizeof == 0x08);
 
 extern(C++) public interface ScriptObjectProperty : ScriptProperty // Total size: 0x84
 {
@@ -1164,6 +1166,7 @@ public:
 		return Vector(Y * other.Z - Z * other.Y, Z * other.X - X * other.Z, X * other.Y - Y * other.X);
 	}
 }
+static assert(Vector.sizeof == 0x0C);
 
 public struct Rotator // Total size: 0x0C
 {
@@ -1262,3 +1265,4 @@ public:
 		return Vector(cosRoll * sinPitch * cosYaw + sinRoll * sinYaw, cosRoll * sinPitch * sinYaw - sinRoll * cosYaw, -cosRoll * cosPitch);
 	}
 }
+static assert(Rotator.sizeof == 0x0C);

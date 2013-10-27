@@ -1,6 +1,7 @@
 module ScriptHooks;
 
 private import ScriptClasses;
+private import IndentedStreamWriter;
 private import std.c.stdlib;
 
 alias HookType function(void* obj, void* result, ubyte* args) HookFunction;
@@ -15,19 +16,19 @@ public struct ScriptStackFrame
 {
 private:
 	byte __padding__[0x10];
-
-	ScriptStruct mNode;
-	ScriptObject mObject;
+	
+	ScriptStruct* mNode;
+	ScriptObject* mObject;
 	ubyte* mCode;
 	ubyte* mLocals;
-
+	
 	ScriptStackFrame* mPreviousFrame;
-
+	
 public:
 	@property
 	{
-		auto ref ScriptStruct Node() { return mNode; }
-		auto ref ScriptObject ParentObject() { return mObject; }
+		auto ref ScriptStruct* Node() { return mNode; }
+		auto ref ScriptObject* ParentObject() { return mObject; }
 		auto ref ubyte* Code() { return mCode; }
 		auto ref ubyte* Locals() { return mLocals; }
 		auto ref ScriptStackFrame* PreviousFrame() { return mPreviousFrame; }
@@ -48,7 +49,7 @@ private:
 	NativeFunction mOriginalFunction;
 	int[] mArgumentSizes;
 	int mStackSize;
-
+	
 public:
 	@property
 	{
@@ -63,12 +64,12 @@ version(D_InlineAsm_X86)
 {
 private:
 	static __gshared HookInfo[] mHookArray;
-
+	
 	static __gshared NativeFunction* mNativeArray;
 	static __gshared NativeFunction mOriginalVirtualFunction;
 	static __gshared CleanupStack mCleanupStack;
 	static __gshared CallFunction mCallFunction;
-
+	
 public:
 	@property
 	{
@@ -76,44 +77,50 @@ public:
 		final static auto ref CleanupStack CleanupStackPtr() { return mCleanupStack; }
 		final static auto ref CallFunction CallFunctionPtr() { return mCallFunction; }
 	}
-	static HookType CallHook(HookFunction func, ScriptObject obj, int paramSize, void* result, ubyte* funcArgs)
+	
+	static HookType CallHook(HookFunction func, ScriptObject* obj, int paramSize, void* result, ubyte* funcArgs)
 	{
 		asm
 		{
 			naked;
-
+			
 			push EBP;
 			mov EBP, ESP;
 			push EDX;
 			push ECX;
-
+			
 			mov ECX, funcArgs;
 			add ECX, paramSize;
-
+			
 			mov EDX, funcArgs;
-	pushLoop:
+			
+			cmp EDX, ECX;
+			je endLoop;
+			
+		pushLoop:
 			push [EDX];
 			add EDX, 4;
-
+			
 			cmp EDX, ECX;
 			jl pushLoop;
-
+			
+		endLoop:
 			push result;
 			push obj;
-
+			
 			call func;
 			add ESP, 8;
 			add ESP, paramSize;
-
+			
 			pop ECX;
 			pop EDX;
 			pop EBP;
-
+			
 			ret;
 		}
 	}
-
-	static size_t* GetEBP()
+	
+	static size_t** GetEBP()
 	{
 		asm
 		{
@@ -122,44 +129,48 @@ public:
 			ret;
 		}
 	}
-
+	
 	static void HookThunk()
 	{
 		asm
 		{
 			naked;
+			
+			push EBP;
+			mov EBP, ESP;
+			
+			push dword ptr [EBP+0xC];
+			push dword ptr [EBP+0x8];
+			push dword ptr [EBP+0x4];
 			push ECX;
-			jmp HookHandler;
+			call HookHandler;
+			add ESP, 0x10;
+			
+			pop EBP;
+			
+			ret 0x8;
 		}
 	}
-
-	// __stdcall in combination with the thunk above should produce
-	// the same effects as __thiscall.
-	export extern(Windows) static void HookHandler(ScriptObject thisPtr, ScriptStackFrame* stack, void* result)
+	
+	export extern(C) static void HookHandler(ScriptObject thisPtr, size_t retAddr, ScriptStackFrame* stack, void* result)
 	{
+		IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDK-Debug.txt");
+		
 		size_t func;
-		size_t retAddr;
-		asm
-		{
-			push EAX;
-			mov EAX, [EBP+4];
-			mov retAddr, EAX;
-			pop EAX;
-		}
 		//size_t funcPtr = cast(size_t)mCallFunction.funcptr;
 		//size_t mPtr = cast(size_t)mCallFunction.ptr;
 		size_t mmcallfunc = cast(size_t)mCallFunction;
 		if (retAddr >= cast(size_t)mCallFunction && retAddr <= cast(size_t)mCallFunction + 0x100)
 		{
 			//lea ebp, [esp-404] in CallFunction
-			func = *cast(size_t*)(*GetEBP() + 0x414); //3rd arg of CallFunction
+			func = *cast(size_t*)(**GetEBP() + 0x404 + 0x10); //3rd arg of CallFunction
 		}
 		else //ProcessEvent
 		{
 			//OutputLog( "ProcessEvent: 0x%X\n", ret_addr );
-			func = *cast(size_t*)(*GetEBP() + 0x8); //1st arg of ProcessEvent
+			func = *cast(size_t*)(**GetEBP() + 0x8); //1st arg of ProcessEvent
 		}
-
+		
 		ubyte* origCode = stack.Code;
 		for (uint i = 0; i < mHookArray.length; i++)
 		{
@@ -167,14 +178,13 @@ public:
 			{
 				int argOffset = mHookArray[i].StackSize;
 				ubyte* funcArgs = cast(ubyte*)malloc(argOffset);
-
+				
 				for (uint paramNum = 0; *stack.Code != 0x16 && paramNum < mHookArray[i].ArgumentSizes.length; paramNum++) //copy args to buffer, respecting LIFO
 				{
 					argOffset -= mHookArray[i].ArgumentSizes[paramNum];
 					
-					ScriptObject po = stack.ParentObject;
+					ScriptObject *po = stack.ParentObject;
 					NativeFunction nFunc = mNativeArray[*stack.Code++];
-					nFunc(null, null);
 					ubyte* retLocation = funcArgs + argOffset;
 					asm
 					{
@@ -185,24 +195,29 @@ public:
 					}
 					//mNativeArray[*stack.Code++](stack.ParentObject, stack, funcArgs + argOffset);
 				}
-
+				
+				wtr.WriteLine("Got args");
+				
 				if (retAddr >= cast(size_t)mCallFunction && retAddr <= cast(size_t)mCallFunction + 0x100)
 				{
 					//OutputLog( "Function: %s\n", hook_array[ i ].hook_target->GetName() );
 					if(CallHook(mHookArray[i].FunctionHook, stack.ParentObject, mHookArray[i].StackSize, result, funcArgs) == HookType.Block)
 					{
+						wtr.WriteLine("Function blocked");
 						mCleanupStack(stack, result, mHookArray[i].HookTarget);
+						wtr.WriteLine("Stack cleaned");
 						free(funcArgs);
 						return;
 					}
 					
 					free(funcArgs);
 					stack.Code = origCode;
+					wtr.WriteLine("Function continued");
 					
 					if(mHookArray[i].OriginalFunction)
 					{
 						mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
-
+						
 						ScriptFunction ht = mHookArray[i].HookTarget;
 						asm
 						{
@@ -241,7 +256,7 @@ public:
 					}
 					
 					free(funcArgs);
-
+					
 					void* params = *cast(void**)(*GetEBP() + 0xC);
 					
 					if(mHookArray[i].OriginalFunction)
@@ -260,20 +275,23 @@ public:
 				
 				return;
 			}
-
+			
 		}
+		
+		wtr.Close();
 	}
-
+	
 	static void AddHook(immutable string functionName, void* hook)
 	{
 		ScriptFunction scriptFunction = ScriptObject.Find!(ScriptFunction)(functionName);
+		IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDK-Error.txt");
 		
 		if(scriptFunction)
 			AddHook(scriptFunction, hook);
-		//else
-		//	OutputLog( "Error: could not find function %s.\n\n", function_name );
+		else
+			wtr.WriteLine( "Failed to find function %s.", functionName );
 	}
-
+	
 	static void AddHook(ScriptFunction scriptFunction, void* hook)
 	{
 		HookInfo newHook;
@@ -291,7 +309,7 @@ public:
 		{
 			newHook.OriginalFunction = null;
 		}
-
+		
 		
 		for(ScriptProperty scriptProperty = cast(ScriptProperty)scriptFunction.Children; scriptProperty; scriptProperty = cast(ScriptProperty)scriptProperty.Next)
 		{
@@ -309,7 +327,7 @@ public:
 		
 		scriptFunction.Function = &HookThunk;
 		scriptFunction.FunctionFlags.SetFlag(ScriptFunctionFlags.Native);
-
+		
 		//OutputLog( "Hooked function %s (0x%X) (args %i)\n\n", function_name, script_function, new_hook.stack_size );
 	}
 }

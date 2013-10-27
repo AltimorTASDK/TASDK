@@ -9,7 +9,7 @@ private import UnrealScript.TribesGame.TrPlayerController;
 private import UnrealScript.TribesGame.TrDevice_ThumperD;
 
 
-HookType TribesGame_TrPlayerController_PlayRespawnSoonSound(TrPlayerController pThis, ref void* result)
+extern(C) HookType TribesGame_TrPlayerController_PlayRespawnSoonSound(TrPlayerController pThis, ref void* result)
 {
 	IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDK-ItWorks.txt");
 	wtr.WriteLine("Hello!");
