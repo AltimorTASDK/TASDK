@@ -250,7 +250,7 @@ private:
 	void Vfunc64();
 	void Vfunc65();
 public:
-	void ProcessEvent(ScriptFunction func, void* params, void* result);
+	extern(C) void ProcessEvent(ScriptFunction func, void* params, void* result);
 }
 
 public enum ScriptObjectFlags : ulong

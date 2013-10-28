@@ -3,6 +3,7 @@ module ScriptHooks;
 private import ScriptClasses;
 private import IndentedStreamWriter;
 private import std.c.stdlib;
+private import std.c.string;
 
 alias HookType function(void* obj, void* result, ubyte* args) HookFunction;
 alias extern(Windows) void function(ScriptStackFrame* stack, void* result, ScriptFunction func) CleanupStack;
@@ -78,7 +79,7 @@ public:
 		final static auto ref CallFunction CallFunctionPtr() { return mCallFunction; }
 	}
 	
-	static HookType CallHook(HookFunction func, ScriptObject* obj, int paramSize, void* result, ubyte* funcArgs)
+	static extern(C) HookType CallHook(HookFunction func, ScriptObject* obj, int paramSize, void* result, byte* funcArgs)
 	{
 		asm
 		{
@@ -98,7 +99,7 @@ public:
 			je endLoop;
 			
 		pushLoop:
-			push [EDX];
+			push dword ptr [EDX];
 			add EDX, 4;
 			
 			cmp EDX, ECX;
@@ -154,8 +155,6 @@ public:
 	
 	export extern(C) static void HookHandler(ScriptObject thisPtr, size_t retAddr, ScriptStackFrame* stack, void* result)
 	{
-		IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDK-Debug.txt");
-		
 		size_t func;
 		//size_t funcPtr = cast(size_t)mCallFunction.funcptr;
 		//size_t mPtr = cast(size_t)mCallFunction.ptr;
@@ -177,42 +176,37 @@ public:
 			if (func == cast(size_t)cast(void*)mHookArray[i].HookTarget)
 			{
 				int argOffset = mHookArray[i].StackSize;
-				ubyte* funcArgs = cast(ubyte*)malloc(argOffset);
-				
-				for (uint paramNum = 0; *stack.Code != 0x16 && paramNum < mHookArray[i].ArgumentSizes.length; paramNum++) //copy args to buffer, respecting LIFO
-				{
-					argOffset -= mHookArray[i].ArgumentSizes[paramNum];
-					
-					ScriptObject *po = stack.ParentObject;
-					NativeFunction nFunc = mNativeArray[*stack.Code++];
-					ubyte* retLocation = funcArgs + argOffset;
-					asm
-					{
-						mov ECX, po;
-						push retLocation;
-						push stack;
-						call nFunc;
-					}
-					//mNativeArray[*stack.Code++](stack.ParentObject, stack, funcArgs + argOffset);
-				}
-				
-				wtr.WriteLine("Got args");
+				byte* funcArgs = cast(byte*)malloc(argOffset);
 				
 				if (retAddr >= cast(size_t)mCallFunction && retAddr <= cast(size_t)mCallFunction + 0x100)
 				{
+					for (uint paramNum = 0; *stack.Code != 0x16 && paramNum < mHookArray[i].ArgumentSizes.length; paramNum++) //copy args to buffer, respecting LIFO
+					{
+						argOffset -= mHookArray[i].ArgumentSizes[paramNum];
+						
+						ScriptObject *po = stack.ParentObject;
+						NativeFunction nFunc = mNativeArray[*stack.Code++];
+						byte* retLocation = funcArgs + argOffset;
+						asm
+						{
+							mov ECX, po;
+							push retLocation;
+							push stack;
+							call nFunc;
+						}
+						//mNativeArray[*stack.Code++](stack.ParentObject, stack, funcArgs + argOffset);
+					}
+					
 					//OutputLog( "Function: %s\n", hook_array[ i ].hook_target->GetName() );
 					if(CallHook(mHookArray[i].FunctionHook, stack.ParentObject, mHookArray[i].StackSize, result, funcArgs) == HookType.Block)
 					{
-						wtr.WriteLine("Function blocked");
 						mCleanupStack(stack, result, mHookArray[i].HookTarget);
-						wtr.WriteLine("Stack cleaned");
 						free(funcArgs);
 						return;
 					}
 					
 					free(funcArgs);
 					stack.Code = origCode;
-					wtr.WriteLine("Function continued");
 					
 					if(mHookArray[i].OriginalFunction)
 					{
@@ -249,6 +243,18 @@ public:
 				}
 				else
 				{
+					ubyte* params = *cast(ubyte**)(**GetEBP() + 0xC);
+					int paramsOffset = 0;
+					
+					for (uint paramNum = 0; paramNum < mHookArray[i].ArgumentSizes.length; paramNum++) //copy args to buffer, respecting LIFO
+					{
+						argOffset -= mHookArray[i].ArgumentSizes[paramNum];
+						
+						memcpy(funcArgs + argOffset, params + paramsOffset, mHookArray[i].ArgumentSizes[paramNum]);
+						
+						paramsOffset += mHookArray[i].ArgumentSizes[paramNum];
+					}
+					
 					if(CallHook(mHookArray[i].FunctionHook, stack.ParentObject, mHookArray[i].StackSize, result, funcArgs) == HookType.Block)
 					{
 						free(funcArgs);
@@ -256,8 +262,6 @@ public:
 					}
 					
 					free(funcArgs);
-					
-					void* params = *cast(void**)(*GetEBP() + 0xC);
 					
 					if(mHookArray[i].OriginalFunction)
 					{
@@ -277,8 +281,6 @@ public:
 			}
 			
 		}
-		
-		wtr.Close();
 	}
 	
 	static void AddHook(immutable string functionName, void* hook)
