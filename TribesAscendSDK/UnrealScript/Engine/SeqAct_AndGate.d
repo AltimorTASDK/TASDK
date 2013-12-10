@@ -2,7 +2,6 @@ module UnrealScript.Engine.SeqAct_AndGate;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_AndGate : SequenceAction

@@ -109,7 +109,7 @@ public extern(D):
 			DataStoreClient DataStoreManager() { mixin(MGPC("DataStoreClient", 148)); }
 			ScriptClass SceneClientClass() { mixin(MGPC("ScriptClass", 128)); }
 			ScriptClass UIManagerClass() { mixin(MGPC("ScriptClass", 124)); }
-			// WARNING: Property 'UIManager' has the same name as a defined type!
+			UIManager UIManagerVar() { mixin(MGPC("UIManager", 120)); }
 			Pointer VfTable_FCallbackEventDevice() { mixin(MGPC("Pointer", 116)); }
 			Pointer VfTable_FGlobalDataStoreClientManager() { mixin(MGPC("Pointer", 112)); }
 			Pointer VfTable_FExec() { mixin(MGPC("Pointer", 108)); }

@@ -85,7 +85,7 @@ public extern(D):
 				ScriptArray!(int) ContentIds() { mixin(MGPS("ScriptArray!(int)", 32)); }
 				ScriptArray!(ScriptName) MapCycle() { mixin(MGPS("ScriptArray!(ScriptName)", 84)); }
 				ScriptArray!(OnlinePlaylistManager.InventorySwap) InventorySwaps() { mixin(MGPS("ScriptArray!(OnlinePlaylistManager.InventorySwap)", 96)); }
-				// WARNING: Property 'URL' has the same name as a defined type!
+				ScriptString URLVar() { mixin(MGPS("ScriptString", 68)); }
 				ScriptString Name() { mixin(MGPS("ScriptString", 56)); }
 				int MaxPartySize() { mixin(MGPS("int", 52)); }
 				int TeamCount() { mixin(MGPS("int", 48)); }
@@ -122,7 +122,7 @@ public extern(D):
 		@property final auto ref
 		{
 			OnlineGameSettings GameSettings() { mixin(MGPS("OnlineGameSettings", 28)); }
-			// WARNING: Property 'URL' has the same name as a defined type!
+			ScriptString URLVar() { mixin(MGPS("ScriptString", 16)); }
 			ScriptString GameSettingsClassName() { mixin(MGPS("ScriptString", 4)); }
 			int GameSettingId() { mixin(MGPS("int", 0)); }
 		}

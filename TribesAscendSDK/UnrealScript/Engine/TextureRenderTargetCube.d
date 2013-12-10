@@ -14,7 +14,7 @@ public extern(D):
 	@property final static TextureRenderTargetCube DefaultProperties() { mixin(MGDPC("TextureRenderTargetCube", "TextureRenderTargetCube Engine.Default__TextureRenderTargetCube")); }
 	@property final auto ref
 	{
-		// WARNING: Property 'Format' has the same name as a defined type!
+		Texture.EPixelFormat FormatVar() { mixin(MGPC("Texture.EPixelFormat", 248)); }
 		int SizeX() { mixin(MGPC("int", 244)); }
 	}
 }

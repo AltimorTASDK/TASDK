@@ -213,7 +213,7 @@ public extern(D):
 				ScriptArray!(ScriptName) AnimSeqs() { mixin(MGPS("ScriptArray!(ScriptName)", 8)); }
 				ScriptName AnimPlayerName() { mixin(MGPS("ScriptName", 28)); }
 				float AnimRate() { mixin(MGPS("float", 20)); }
-				// WARNING: Property 'AnimTag' has the same name as a defined type!
+				ScriptName AnimTagVar() { mixin(MGPS("ScriptName", 0)); }
 			}
 			bool bAnimLoopLastSeq() { mixin(MGBPS(24, 0x1)); }
 			bool bAnimLoopLastSeq(bool val) { mixin(MSBPS(24, 0x1)); }

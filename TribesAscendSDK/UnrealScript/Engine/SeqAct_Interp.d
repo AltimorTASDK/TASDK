@@ -72,7 +72,7 @@ public extern(D):
 			int PreferredSplitScreenNum() { mixin(MGPC("int", 420)); }
 			MatineeActor ReplicatedActor() { mixin(MGPC("MatineeActor", 416)); }
 			ScriptClass ReplicatedActorClass() { mixin(MGPC("ScriptClass", 412)); }
-			// WARNING: Property 'InterpData' has the same name as a defined type!
+			InterpData InterpDataVar() { mixin(MGPC("InterpData", 396)); }
 			float ForceStartPosition() { mixin(MGPC("float", 376)); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'SavedActorVisibilities'!
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'SavedActorTransforms'!

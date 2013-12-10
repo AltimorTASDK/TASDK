@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.ActorFactoryDecal")); }
 	private static __gshared ActorFactoryDecal mDefaultProperties;
 	@property final static ActorFactoryDecal DefaultProperties() { mixin(MGDPC("ActorFactoryDecal", "ActorFactoryDecal Engine.Default__ActorFactoryDecal")); }
-	// WARNING: Property 'DecalMaterial' has the same name as a defined type!
+	@property final auto ref MaterialInterface DecalMaterialVar() { mixin(MGPC("MaterialInterface", 92)); }
 }

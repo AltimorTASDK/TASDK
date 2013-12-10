@@ -23,7 +23,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			// WARNING: Property 'ShakeParams' has the same name as a defined type!
+			CameraShake ShakeParamsVar() { mixin(MGPC("CameraShake", 140)); }
 			ScriptName BoneName() { mixin(MGPC("ScriptName", 132)); }
 			float ShakeRadius() { mixin(MGPC("float", 128)); }
 			float FOVFrequency() { mixin(MGPC("float", 120)); }

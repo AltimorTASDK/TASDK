@@ -78,11 +78,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GameFramework.GameStatsAggregator.TeamEvents")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'PawnEvents' has the same name as a defined type!
-			// WARNING: Property 'ProjectileEvents' has the same name as a defined type!
+			GameStatsAggregator.PawnEvents PawnEventsVar() { mixin(MGPS("GameStatsAggregator.PawnEvents", 348)); }
+			GameStatsAggregator.ProjectileEvents ProjectileEventsVar() { mixin(MGPS("GameStatsAggregator.ProjectileEvents", 276)); }
 			GameStatsAggregator.DamageEvents DamageAsTargetEvents() { mixin(MGPS("GameStatsAggregator.DamageEvents", 204)); }
 			GameStatsAggregator.DamageEvents DamageAsPlayerEvents() { mixin(MGPS("GameStatsAggregator.DamageEvents", 132)); }
-			// WARNING: Property 'WeaponEvents' has the same name as a defined type!
+			GameStatsAggregator.WeaponEvents WeaponEventsVar() { mixin(MGPS("GameStatsAggregator.WeaponEvents", 60)); }
 			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS("GameStatsAggregator.GameEvents", 0)); }
 		}
 	}
@@ -94,11 +94,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct GameFramework.GameStatsAggregator.PlayerEvents")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'PawnEvents' has the same name as a defined type!
-			// WARNING: Property 'ProjectileEvents' has the same name as a defined type!
+			GameStatsAggregator.PawnEvents PawnEventsVar() { mixin(MGPS("GameStatsAggregator.PawnEvents", 348)); }
+			GameStatsAggregator.ProjectileEvents ProjectileEventsVar() { mixin(MGPS("GameStatsAggregator.ProjectileEvents", 276)); }
 			GameStatsAggregator.DamageEvents DamageAsTargetEvents() { mixin(MGPS("GameStatsAggregator.DamageEvents", 204)); }
 			GameStatsAggregator.DamageEvents DamageAsPlayerEvents() { mixin(MGPS("GameStatsAggregator.DamageEvents", 132)); }
-			// WARNING: Property 'WeaponEvents' has the same name as a defined type!
+			GameStatsAggregator.WeaponEvents WeaponEventsVar() { mixin(MGPS("GameStatsAggregator.WeaponEvents", 60)); }
 			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS("GameStatsAggregator.GameEvents", 0)); }
 		}
 	}

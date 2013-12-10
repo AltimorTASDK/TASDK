@@ -2,7 +2,6 @@ module UnrealScript.Core.DistributionVector;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Core.Component;
 
 extern(C++) interface DistributionVector : Component

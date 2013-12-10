@@ -5,7 +5,6 @@ import UnrealScript.Helpers;
 import UnrealScript.TribesGame.TrProj_Mine;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.ParticleSystem;
-import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrTripActor;
 
 extern(C++) interface TrProj_PrismMine : TrProj_Mine

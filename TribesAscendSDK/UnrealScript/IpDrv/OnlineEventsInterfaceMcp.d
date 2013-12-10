@@ -3,7 +3,6 @@ module UnrealScript.IpDrv.OnlineEventsInterfaceMcp;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.OnlineProfileSettings;
 import UnrealScript.IpDrv.MCPBase;
 import UnrealScript.Engine.OnlineMatchmakingStats;

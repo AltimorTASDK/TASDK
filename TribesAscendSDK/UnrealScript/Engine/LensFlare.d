@@ -34,7 +34,7 @@ public extern(D):
 				DistributionVector.RawDistributionVector DistMap_Scale() { mixin(MGPS("DistributionVector.RawDistributionVector", 240)); }
 				DistributionVector.RawDistributionVector Offset() { mixin(MGPS("DistributionVector.RawDistributionVector", 212)); }
 				DistributionFloat.RawDistributionFloat Alpha() { mixin(MGPS("DistributionFloat.RawDistributionFloat", 184)); }
-				// WARNING: Property 'Color' has the same name as a defined type!
+				DistributionVector.RawDistributionVector ColorVar() { mixin(MGPS("DistributionVector.RawDistributionVector", 156)); }
 				DistributionFloat.RawDistributionFloat Rotation() { mixin(MGPS("DistributionFloat.RawDistributionFloat", 124)); }
 				DistributionVector.RawDistributionVector AxisScaling() { mixin(MGPS("DistributionVector.RawDistributionVector", 96)); }
 				DistributionFloat.RawDistributionFloat Scaling() { mixin(MGPS("DistributionFloat.RawDistributionFloat", 68)); }

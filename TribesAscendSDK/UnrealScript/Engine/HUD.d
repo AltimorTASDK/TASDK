@@ -155,7 +155,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			// WARNING: Property 'Canvas' has the same name as a defined type!
+			Canvas CanvasVar() { mixin(MGPC("Canvas", 1064)); }
 			ScriptArray!(Actor) PostRenderedActors() { mixin(MGPC("ScriptArray!(Actor)", 500)); }
 			ScriptArray!(HUD.ConsoleMessage) ConsoleMessages() { mixin(MGPC("ScriptArray!(HUD.ConsoleMessage)", 512)); }
 			ScriptArray!(ScriptName) DebugDisplay() { mixin(MGPC("ScriptArray!(ScriptName)", 1100)); }

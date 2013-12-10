@@ -3,7 +3,6 @@ module UnrealScript.GameFramework.NavMeshGoal_OutOfViewFrom;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationHandle;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.NavMeshPathGoalEvaluator;
 
 extern(C++) interface NavMeshGoal_OutOfViewFrom : NavMeshPathGoalEvaluator

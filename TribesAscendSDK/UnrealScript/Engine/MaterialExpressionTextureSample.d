@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		MaterialExpression.ExpressionInput Coordinates() { mixin(MGPC("MaterialExpression.ExpressionInput", 112)); }
-		// WARNING: Property 'Texture' has the same name as a defined type!
+		Texture TextureVar() { mixin(MGPC("Texture", 108)); }
 	}
 }

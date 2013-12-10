@@ -41,7 +41,7 @@ public extern(D):
 	{
 		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) ExtremeContent() { mixin(MGPC("ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum)", 480)); }
 		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) NonExtremeContent() { mixin(MGPC("ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum)", 492)); }
-		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticMeshComponent'!
 	}
 final:
 	void PostBeginPlay()

@@ -98,7 +98,7 @@ public extern(D):
 			auto ref
 			{
 				ScriptName HitBone() { mixin(MGPS("ScriptName", 32)); }
-				// WARNING: Property 'DamageType' has the same name as a defined type!
+				ScriptClass DamageTypeVar() { mixin(MGPS("ScriptClass", 28)); }
 				Vector Momentum() { mixin(MGPS("Vector", 16)); }
 				Vector HitLocation() { mixin(MGPS("Vector", 4)); }
 				int Damage() { mixin(MGPS("int", 0)); }

@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		Vector DrawScale3D() { mixin(MGPC("Vector", 96)); }
-		// WARNING: Property 'StaticMesh' has the same name as a defined type!
+		StaticMesh StaticMeshVar() { mixin(MGPC("StaticMesh", 92)); }
 	}
 }

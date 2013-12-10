@@ -2,7 +2,6 @@ module UnrealScript.IpDrv.InternetLink;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Info;
 
 extern(C++) interface InternetLink : Info

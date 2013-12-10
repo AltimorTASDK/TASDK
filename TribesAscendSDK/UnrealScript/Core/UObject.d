@@ -1308,10 +1308,10 @@ public extern(D):
 		Pointer HashNext() { mixin(MGPC("Pointer", 16)); }
 		Pointer HashOuterNext() { mixin(MGPC("Pointer", 20)); }
 		Pointer StateFrame() { mixin(MGPC("Pointer", 24)); }
-		// WARNING: Property 'Linker' has the same name as a defined type!
+		UObject LinkerVar() { mixin(MGPC("UObject", 28)); }
 		Pointer LinkerIndex() { mixin(MGPC("Pointer", 32)); }
 		int NetIndex() { mixin(MGPC("int", 36)); }
-		// WARNING: Property 'Class' has the same name as a defined type!
+		ScriptClass ClassVar() { mixin(MGPC("ScriptClass", 52)); }
 		UObject ObjectArchetype() { mixin(MGPC("UObject", 56)); }
 	}
 final:

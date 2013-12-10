@@ -75,7 +75,7 @@ public extern(D):
 		@property final auto ref
 		{
 			StaticMesh Mesh() { mixin(MGPS("StaticMesh", 0)); }
-			// WARNING: Property 'Material' has the same name as a defined type!
+			MaterialInterface MaterialVar() { mixin(MGPS("MaterialInterface", 4)); }
 		}
 	}
 	@property final

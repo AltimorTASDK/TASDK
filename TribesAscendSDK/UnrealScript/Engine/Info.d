@@ -48,7 +48,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Info.ServerResponseLine")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'ServerInfo' has the same name as a defined type!
+			ScriptArray!(Info.KeyValuePair) ServerInfoVar() { mixin(MGPS("ScriptArray!(Info.KeyValuePair)", 72)); }
 			ScriptArray!(Info.PlayerResponseLine) PlayerInfo() { mixin(MGPS("ScriptArray!(Info.PlayerResponseLine)", 84)); }
 			int Ping() { mixin(MGPS("int", 68)); }
 			int MaxPlayers() { mixin(MGPS("int", 64)); }

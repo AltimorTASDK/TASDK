@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.WindDirectionalSource")); }
 	private static __gshared WindDirectionalSource mDefaultProperties;
 	@property final static WindDirectionalSource DefaultProperties() { mixin(MGDPC("WindDirectionalSource", "WindDirectionalSource Engine.Default__WindDirectionalSource")); }
-	// WARNING: Property 'Component' has the same name as a defined type!
+	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Component'!
 }

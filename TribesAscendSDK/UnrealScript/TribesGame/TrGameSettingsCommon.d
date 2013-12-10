@@ -1397,6 +1397,7 @@ public extern(D):
 			ScriptString MapName() { mixin(MGPC("ScriptString", 196)); }
 			ScriptString GameMode() { mixin(MGPC("ScriptString", 184)); }
 		}
-		// WARNING: Property 'Console' has the same name as a defined type!
+		bool ConsoleVar() { mixin(MGBPC(180, 0x1)); }
+		bool ConsoleVar(bool val) { mixin(MSBPC(180, 0x1)); }
 	}
 }

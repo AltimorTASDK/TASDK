@@ -80,7 +80,7 @@ public extern(D):
 			float NotifyWeightThreshold() { mixin(MGPC("float", 260)); }
 			ScriptName SynchGroupName() { mixin(MGPC("ScriptName", 264)); }
 			float SynchPosOffset() { mixin(MGPC("float", 272)); }
-			// WARNING: Property 'CameraAnim' has the same name as a defined type!
+			CameraAnim CameraAnimVar() { mixin(MGPC("CameraAnim", 276)); }
 			CameraAnimInst ActiveCameraAnimInstance() { mixin(MGPC("CameraAnimInst", 280)); }
 			float CameraAnimScale() { mixin(MGPC("float", 284)); }
 			float CameraAnimPlayRate() { mixin(MGPC("float", 288)); }

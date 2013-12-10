@@ -60,9 +60,9 @@ public extern(D):
 			GFxObject CompassIcon() { mixin(MGPC("GFxObject", 144)); }
 			GFxObject PlayerIcon() { mixin(MGPC("GFxObject", 140)); }
 			int MapTexSize() { mixin(MGPC("int", 132)); }
-			// WARNING: Property 'MapInfo' has the same name as a defined type!
+			UTMapInfo MapInfoVar() { mixin(MGPC("UTMapInfo", 128)); }
 			WorldInfo ThisWorld() { mixin(MGPC("WorldInfo", 124)); }
-			// WARNING: Property 'HUD' has the same name as a defined type!
+			GFxMinimapHud HUDVar() { mixin(MGPC("GFxMinimapHud", 120)); }
 		}
 		bool bNeedsUpdateData() { mixin(MGBPC(136, 0x1)); }
 		bool bNeedsUpdateData(bool val) { mixin(MSBPC(136, 0x1)); }

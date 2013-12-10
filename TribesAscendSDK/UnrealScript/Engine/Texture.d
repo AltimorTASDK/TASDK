@@ -210,7 +210,7 @@ public extern(D):
 			int CachedCombinedLODBias() { mixin(MGPC("int", 156)); }
 			int LODBias() { mixin(MGPC("int", 152)); }
 			Texture.TextureMipGenSettings MipGenSettings() { mixin(MGPC("Texture.TextureMipGenSettings", 151)); }
-			// WARNING: Property 'LODGroup' has the same name as a defined type!
+			Texture.TextureGroup LODGroupVar() { mixin(MGPC("Texture.TextureGroup", 150)); }
 			Texture.TextureFilter Filter() { mixin(MGPC("Texture.TextureFilter", 149)); }
 			Texture.TextureCompressionSettings CompressionSettings() { mixin(MGPC("Texture.TextureCompressionSettings", 148)); }
 			UObject.UntypedBulkData_Mirror SourceArt() { mixin(MGPC("UObject.UntypedBulkData_Mirror", 96)); }

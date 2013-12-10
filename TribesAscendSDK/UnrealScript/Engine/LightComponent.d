@@ -148,7 +148,7 @@ public extern(D):
 		{
 			float Brightness() { mixin(MGPC("float", 256)); }
 			UObject.Color LightColor() { mixin(MGPC("UObject.Color", 260)); }
-			// WARNING: Property 'Function' has the same name as a defined type!
+			LightFunction FunctionVar() { mixin(MGPC("LightFunction", 264)); }
 			Pointer SceneInfo() { mixin(MGPC("Pointer", 88)); }
 			UObject.Matrix WorldToLight() { mixin(MGPC("UObject.Matrix", 96)); }
 			UObject.Matrix LightToWorld() { mixin(MGPC("UObject.Matrix", 160)); }

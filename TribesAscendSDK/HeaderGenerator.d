@@ -484,11 +484,12 @@ final class PropertyDescriptor : Descriptor
 
 	void Write(IndentedStreamWriter wtr, bool alone)
 	{
+		string propertyName = InnerProperty.GetName();
+
 		// Check to see if the property name is the same as a valid type.
-		if (TypeIdentifiersTable.get(InnerProperty.GetName(), null))
+		while (TypeIdentifiersTable.get(propertyName, null))
 		{
-			wtr.WriteLine("// WARNING: Property '%s' has the same name as a defined type!", InnerProperty.GetName());
-			return;
+			propertyName ~= "Var";
 		}
 
 		final switch (InnerProperty.Type)
@@ -498,13 +499,13 @@ final class PropertyDescriptor : Descriptor
 					wtr.Write("@property final ");
 				if (ParentIsStruct)
 				{
-					wtr.WriteLine("bool %s() { mixin(MGBPS(%u, 0x%X)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("bool %s(bool val) { mixin(MSBPS(%u, 0x%x)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { mixin(MGBPS(%u, 0x%X)); }", propertyName, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { mixin(MSBPS(%u, 0x%x)); }", propertyName, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				else
 				{
-					wtr.WriteLine("bool %s() { mixin(MGBPC(%u, 0x%X)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("bool %s(bool val) { mixin(MSBPC(%u, 0x%X)); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { mixin(MGBPC(%u, 0x%X)); }", propertyName, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { mixin(MSBPC(%u, 0x%X)); }", propertyName, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				break;
 
@@ -521,9 +522,9 @@ final class PropertyDescriptor : Descriptor
 				if (alone)
 					wtr.Write("@property final auto ref ");
 				if (ParentIsStruct)
-					wtr.WriteLine(`%s %s() { mixin(MGPS("%s", %u)); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine(`%s %s() { mixin(MGPS("%s", %u)); }`, GetTypeName(InnerProperty), propertyName, GetTypeName(InnerProperty), InnerProperty.Offset);
 				else
-					wtr.WriteLine(`%s %s() { mixin(MGPC("%s", %u)); }`, GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine(`%s %s() { mixin(MGPC("%s", %u)); }`, GetTypeName(InnerProperty), propertyName, GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 				
 			case ScriptPropertyType.Component:

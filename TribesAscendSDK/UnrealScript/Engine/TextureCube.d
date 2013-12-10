@@ -23,7 +23,7 @@ public extern(D):
 			Texture2D FaceNegX() { mixin(MGPC("Texture2D", 260)); }
 			Texture2D FacePosX() { mixin(MGPC("Texture2D", 256)); }
 			int NumMips() { mixin(MGPC("int", 248)); }
-			// WARNING: Property 'Format' has the same name as a defined type!
+			Texture.EPixelFormat FormatVar() { mixin(MGPC("Texture.EPixelFormat", 244)); }
 			int SizeY() { mixin(MGPC("int", 240)); }
 			int SizeX() { mixin(MGPC("int", 236)); }
 		}

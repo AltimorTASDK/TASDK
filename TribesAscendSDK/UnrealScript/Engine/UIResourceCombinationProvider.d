@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataProvider_OnlineProfileSettings;
 import UnrealScript.Engine.UIResourceDataProvider;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIRoot;
 import UnrealScript.Engine.UIDataProvider;
 

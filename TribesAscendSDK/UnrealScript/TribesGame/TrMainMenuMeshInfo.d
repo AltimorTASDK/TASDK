@@ -27,7 +27,7 @@ public extern(D):
 		@property final auto ref
 		{
 			ScriptName SocketName() { mixin(MGPS("ScriptName", 4)); }
-			// WARNING: Property 'ParticleSystem' has the same name as a defined type!
+			ParticleSystem ParticleSystemVar() { mixin(MGPS("ParticleSystem", 0)); }
 		}
 	}
 	@property final auto ref

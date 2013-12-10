@@ -64,7 +64,7 @@ public extern(D):
 		@property final auto ref
 		{
 			SplineActor ConnectTo() { mixin(MGPS("SplineActor", 4)); }
-			// WARNING: Property 'SplineComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SplineComponent'!
 		}
 	}
 	@property final

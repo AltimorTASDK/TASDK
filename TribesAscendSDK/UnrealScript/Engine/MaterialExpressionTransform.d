@@ -30,6 +30,6 @@ public extern(D):
 	{
 		MaterialExpressionTransform.EMaterialVectorCoordTransform TransformType() { mixin(MGPC("MaterialExpressionTransform.EMaterialVectorCoordTransform", 137)); }
 		MaterialExpressionTransform.EMaterialVectorCoordTransformSource TransformSourceType() { mixin(MGPC("MaterialExpressionTransform.EMaterialVectorCoordTransformSource", 136)); }
-		// WARNING: Property 'Input' has the same name as a defined type!
+		MaterialExpression.ExpressionInput InputVar() { mixin(MGPC("MaterialExpression.ExpressionInput", 108)); }
 	}
 }

@@ -39,7 +39,7 @@ void*)", 284)); }
 			float MinShadowAngle() { mixin(MGPC("float", 248)); }
 			float BouncedLightingFactor() { mixin(MGPC("float", 244)); }
 			DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod BoundsMethod() { mixin(MGPC("DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod", 242)); }
-			// WARNING: Property 'State' has the same name as a defined type!
+			Pointer StateVar() { mixin(MGPC("Pointer", 112)); }
 			LightComponent.ELightShadowMode LightShadowMode() { mixin(MGPC("LightComponent.ELightShadowMode", 241)); }
 			LightComponent.EShadowFilterQuality ShadowFilterQuality() { mixin(MGPC("LightComponent.EShadowFilterQuality", 240)); }
 			int ShadowFadeResolution() { mixin(MGPC("int", 236)); }

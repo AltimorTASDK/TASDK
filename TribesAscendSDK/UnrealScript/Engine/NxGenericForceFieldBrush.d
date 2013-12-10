@@ -2,7 +2,6 @@ module UnrealScript.Engine.NxGenericForceFieldBrush;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.Volume;
 import UnrealScript.Engine.PrimitiveComponent;

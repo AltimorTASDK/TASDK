@@ -2,7 +2,6 @@ module UnrealScript.Engine.MaterialExpressionStaticComponentMaskParameter;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpressionParameter;
 import UnrealScript.Engine.MaterialExpression;
 
@@ -18,7 +17,7 @@ public extern(D):
 		auto ref
 		{
 			Pointer InstanceOverride() { mixin(MGPC("Pointer", 164)); }
-			// WARNING: Property 'Input' has the same name as a defined type!
+			MaterialExpression.ExpressionInput InputVar() { mixin(MGPC("MaterialExpression.ExpressionInput", 132)); }
 		}
 		bool DefaultA() { mixin(MGBPC(160, 0x8)); }
 		bool DefaultA(bool val) { mixin(MSBPC(160, 0x8)); }

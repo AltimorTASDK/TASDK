@@ -44,7 +44,7 @@ public extern(D):
 		{
 			ScriptArray!(ScriptName) AnimationList() { mixin(MGPC("ScriptArray!(ScriptName)", 84)); }
 			int AnimationIndex() { mixin(MGPC("int", 124)); }
-			// WARNING: Property 'AnimSequence' has the same name as a defined type!
+			SeqAct_PlayAgentAnimation AnimSequenceVar() { mixin(MGPC("SeqAct_PlayAgentAnimation", 120)); }
 			float LoopTime() { mixin(MGPC("float", 116)); }
 			int LoopIndex() { mixin(MGPC("int", 112)); }
 			Actor CustomActionTarget() { mixin(MGPC("Actor", 108)); }

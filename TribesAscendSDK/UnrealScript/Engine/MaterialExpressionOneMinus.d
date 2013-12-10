@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionOneMinus")); }
 	private static __gshared MaterialExpressionOneMinus mDefaultProperties;
 	@property final static MaterialExpressionOneMinus DefaultProperties() { mixin(MGDPC("MaterialExpressionOneMinus", "MaterialExpressionOneMinus Engine.Default__MaterialExpressionOneMinus")); }
-	// WARNING: Property 'Input' has the same name as a defined type!
+	@property final auto ref MaterialExpression.ExpressionInput InputVar() { mixin(MGPC("MaterialExpression.ExpressionInput", 108)); }
 }

@@ -45,7 +45,7 @@ public extern(D):
 		auto ref
 		{
 			ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider) SettingsArrayProviders() { mixin(MGPC("ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider)", 128)); }
-			// WARNING: Property 'Settings' has the same name as a defined type!
+			Settings SettingsVar() { mixin(MGPC("Settings", 124)); }
 		}
 		bool bIsAListRow() { mixin(MGBPC(140, 0x1)); }
 		bool bIsAListRow(bool val) { mixin(MSBPC(140, 0x1)); }

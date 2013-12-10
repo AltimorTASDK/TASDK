@@ -484,7 +484,7 @@ public extern(D):
 		{
 			Vector ViewOffset() { mixin(MGPS("Vector", 16)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FirstPersonMesh'!
-			// WARNING: Property 'Projectile' has the same name as a defined type!
+			TrProjectile ProjectileVar() { mixin(MGPS("TrProjectile", 8)); }
 			ScriptName SocketName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}

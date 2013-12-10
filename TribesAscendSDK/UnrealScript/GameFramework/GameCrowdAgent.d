@@ -197,7 +197,7 @@ public extern(D):
 			float LastPathingAttempt() { mixin(MGPC("float", 732)); }
 			float WalkableFloorZ() { mixin(MGPC("float", 728)); }
 			int ObstacleCheckCount() { mixin(MGPC("int", 724)); }
-			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
+			NavigationHandle NavigationHandleVar() { mixin(MGPC("NavigationHandle", 720)); }
 			ScriptClass NavigationHandleClass() { mixin(MGPC("ScriptClass", 716)); }
 			Vector SearchExtent() { mixin(MGPC("Vector", 704)); }
 			Vector IntermediatePoint() { mixin(MGPC("Vector", 692)); }

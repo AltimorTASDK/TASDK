@@ -2,7 +2,6 @@ module UnrealScript.Engine.UIDataStore_OnlineStats;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataStore_Remote;
 import UnrealScript.Engine.OnlineStatsRead;
 

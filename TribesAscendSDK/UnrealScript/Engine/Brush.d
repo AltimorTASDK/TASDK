@@ -40,8 +40,8 @@ public extern(D):
 		auto ref
 		{
 			ScriptArray!(Brush.GeomSelection) SavedSelections() { mixin(MGPC("ScriptArray!(Brush.GeomSelection)", 500)); }
-			// WARNING: Property 'BrushComponent' has the same name as a defined type!
-			// WARNING: Property 'Brush' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BrushComponent'!
+			Model BrushVar() { mixin(MGPC("Model", 492)); }
 			int PolyFlags() { mixin(MGPC("int", 484)); }
 			UObject.Color BrushColor() { mixin(MGPC("UObject.Color", 480)); }
 			Brush.ECsgOper CsgOper() { mixin(MGPC("Brush.ECsgOper", 476)); }

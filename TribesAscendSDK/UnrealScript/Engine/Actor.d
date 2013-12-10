@@ -719,8 +719,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.ActorReference")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Guid' has the same name as a defined type!
-			// WARNING: Property 'Actor' has the same name as a defined type!
+			UObject.Guid GuidVar() { mixin(MGPS("UObject.Guid", 4)); }
+			Actor ActorVar() { mixin(MGPS("Actor", 0)); }
 		}
 	}
 	struct NavReference
@@ -731,7 +731,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.NavReference")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Guid' has the same name as a defined type!
+			UObject.Guid GuidVar() { mixin(MGPS("UObject.Guid", 4)); }
 			NavigationPoint Nav() { mixin(MGPS("NavigationPoint", 0)); }
 		}
 	}
@@ -758,7 +758,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Actor.TraceHitInfo")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Material' has the same name as a defined type!
+			Material MaterialVar() { mixin(MGPS("Material", 0)); }
 			PhysicalMaterial PhysMaterial() { mixin(MGPS("PhysicalMaterial", 4)); }
 			int Item() { mixin(MGPS("int", 8)); }
 			int LevelIndex() { mixin(MGPS("int", 12)); }
@@ -825,7 +825,7 @@ public extern(D):
 void*) Components() { mixin(MGPC("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)", 60)); }
-			// WARNING: Property 'WorldInfo' has the same name as a defined type!
+			WorldInfo WorldInfoVar() { mixin(MGPC("WorldInfo", 244)); }
 			ScriptName InitialState() { mixin(MGPC("ScriptName", 268)); }
 			Pawn Instigator() { mixin(MGPC("Pawn", 240)); }
 			ScriptArray!(SequenceEvent) GeneratedEvents() { mixin(MGPC("ScriptArray!(SequenceEvent)", 452)); }
@@ -833,7 +833,7 @@ void*)", 60)); }
 			Rotator Rotation() { mixin(MGPC("Rotator", 84)); }
 			Actor.ENetRole Role() { mixin(MGPC("Actor.ENetRole", 138)); }
 			Actor.ENetRole RemoteRole() { mixin(MGPC("Actor.ENetRole", 137)); }
-			// WARNING: Property 'PhysicsVolume' has the same name as a defined type!
+			PhysicsVolume PhysicsVolumeVar() { mixin(MGPC("PhysicsVolume", 324)); }
 			Actor Base() { mixin(MGPC("Actor", 148)); }
 			Vector RelativeLocation() { mixin(MGPC("Vector", 388)); }
 			Rotator RelativeRotation() { mixin(MGPC("Rotator", 400)); }

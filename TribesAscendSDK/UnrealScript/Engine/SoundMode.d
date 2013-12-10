@@ -25,7 +25,7 @@ public extern(D):
 				float VoiceCenterChannelVolumeAdjuster() { mixin(MGPS("float", 24)); }
 				float PitchAdjuster() { mixin(MGPS("float", 16)); }
 				float VolumeAdjuster() { mixin(MGPS("float", 12)); }
-				// WARNING: Property 'SoundClass' has the same name as a defined type!
+				ScriptName SoundClassVar() { mixin(MGPS("ScriptName", 4)); }
 				AudioDevice.ESoundClassName SoundClassName() { mixin(MGPS("AudioDevice.ESoundClassName", 0)); }
 			}
 			bool bApplyToChildren() { mixin(MGBPS(20, 0x1)); }

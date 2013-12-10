@@ -70,7 +70,7 @@ public extern(D):
 			float ForceMipLevelsToBeResidentTimestamp() { mixin(MGPC("float", 284)); }
 			Texture.TextureAddress AddressY() { mixin(MGPC("Texture.TextureAddress", 278)); }
 			Texture.TextureAddress AddressX() { mixin(MGPC("Texture.TextureAddress", 277)); }
-			// WARNING: Property 'Format' has the same name as a defined type!
+			Texture.EPixelFormat FormatVar() { mixin(MGPC("Texture.EPixelFormat", 276)); }
 			int OriginalSizeY() { mixin(MGPC("int", 272)); }
 			int OriginalSizeX() { mixin(MGPC("int", 268)); }
 			int SizeY() { mixin(MGPC("int", 264)); }

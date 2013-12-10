@@ -37,7 +37,7 @@ public extern(D):
 		auto ref
 		{
 			WorldInfo ThisWorld() { mixin(MGPC("WorldInfo", 124)); }
-			// WARNING: Property 'HUD' has the same name as a defined type!
+			GFxMinimapHud HUDVar() { mixin(MGPC("GFxMinimapHud", 120)); }
 		}
 		bool bNeedsUpdateData() { mixin(MGBPC(128, 0x1)); }
 		bool bNeedsUpdateData(bool val) { mixin(MSBPC(128, 0x1)); }

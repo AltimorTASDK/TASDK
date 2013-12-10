@@ -2,7 +2,6 @@ module UnrealScript.Engine.UIDataProvider_SettingsArray;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataProvider;
 import UnrealScript.Engine.Settings;
 
@@ -19,7 +18,7 @@ public extern(D):
 		ScriptString ColumnHeaderText() { mixin(MGPC("ScriptString", 112)); }
 		ScriptName SettingsName() { mixin(MGPC("ScriptName", 104)); }
 		int SettingsId() { mixin(MGPC("int", 100)); }
-		// WARNING: Property 'Settings' has the same name as a defined type!
+		Settings SettingsVar() { mixin(MGPC("Settings", 96)); }
 		Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC("Pointer", 92)); }
 		Pointer VfTable_IUIListElementProvider() { mixin(MGPC("Pointer", 88)); }
 	}

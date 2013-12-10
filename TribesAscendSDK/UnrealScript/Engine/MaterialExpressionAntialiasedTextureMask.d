@@ -21,7 +21,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		// WARNING: Property 'Channel' has the same name as a defined type!
+		MaterialExpressionAntialiasedTextureMask.ETextureColorChannel ChannelVar() { mixin(MGPC("MaterialExpressionAntialiasedTextureMask.ETextureColorChannel", 168)); }
 		float Threshold() { mixin(MGPC("float", 164)); }
 	}
 }

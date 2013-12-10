@@ -3,7 +3,6 @@ module UnrealScript.Engine.NavMeshGoal_At;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationHandle;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.NavMeshPathGoalEvaluator;
 

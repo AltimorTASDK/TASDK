@@ -241,7 +241,7 @@ public extern(D):
 			ScriptArray!(ubyte) ShouldFireOnRelease() { mixin(MGPC("ScriptArray!(ubyte)", 696)); }
 			float CachedMaxRange() { mixin(MGPC("float", 712)); }
 			float AIRating() { mixin(MGPC("float", 708)); }
-			// WARNING: Property 'AIController' has the same name as a defined type!
+			AIController AIControllerVar() { mixin(MGPC("AIController", 692)); }
 			float Priority() { mixin(MGPC("float", 688)); }
 			float DefaultAnimSpeed() { mixin(MGPC("float", 684)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!

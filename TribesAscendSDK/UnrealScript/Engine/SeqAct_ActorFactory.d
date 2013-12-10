@@ -38,7 +38,7 @@ public extern(D):
 			float SpawnDelay() { mixin(MGPC("float", 300)); }
 			int SpawnCount() { mixin(MGPC("int", 296)); }
 			SeqAct_ActorFactory.EPointSelection PointSelection() { mixin(MGPC("SeqAct_ActorFactory.EPointSelection", 256)); }
-			// WARNING: Property 'Factory' has the same name as a defined type!
+			ActorFactory FactoryVar() { mixin(MGPC("ActorFactory", 252)); }
 		}
 		bool bCheckSpawnCollision() { mixin(MGBPC(248, 0x4)); }
 		bool bCheckSpawnCollision(bool val) { mixin(MSBPC(248, 0x4)); }

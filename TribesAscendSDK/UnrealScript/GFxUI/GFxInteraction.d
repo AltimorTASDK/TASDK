@@ -3,7 +3,6 @@ module UnrealScript.GFxUI.GFxInteraction;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
-import UnrealScript.Core.UObject;
 import UnrealScript.GFxUI.GFxMoviePlayer;
 import UnrealScript.Engine.Interaction;
 

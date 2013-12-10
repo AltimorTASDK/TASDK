@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.GameEngine;
 import UnrealScript.Engine.OnlineSubsystem;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface TgGameEngine : GameEngine

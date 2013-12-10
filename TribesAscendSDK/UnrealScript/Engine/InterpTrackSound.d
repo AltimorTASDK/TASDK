@@ -22,7 +22,7 @@ public extern(D):
 		{
 			SoundCue Sound() { mixin(MGPS("SoundCue", 12)); }
 			float Pitch() { mixin(MGPS("float", 8)); }
-			// WARNING: Property 'Volume' has the same name as a defined type!
+			float VolumeVar() { mixin(MGPS("float", 4)); }
 			float Time() { mixin(MGPS("float", 0)); }
 		}
 	}

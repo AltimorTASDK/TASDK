@@ -95,7 +95,7 @@ public extern(D):
 			float FractureCullMinDistance() { mixin(MGPC("float", 532)); }
 			float ChunkHealthScale() { mixin(MGPC("float", 516)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkinnedComponent'!
-			// WARNING: Property 'FracturedStaticMeshComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FracturedStaticMeshComponent'!
 			int MaxPartsToSpawnAtOnce() { mixin(MGPC("int", 476)); }
 		}
 		bool bBreakChunksOnActorTouch() { mixin(MGBPC(500, 0x2)); }

@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.IpDrv.PartyBeacon;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.OnlineGameSearch;
 
 extern(C++) interface PartyBeaconHost : PartyBeacon

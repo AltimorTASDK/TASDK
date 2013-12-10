@@ -53,7 +53,7 @@ public extern(D):
 			MaterialInterface ReplicatedMaterial() { mixin(MGPC("MaterialInterface", 488)); }
 			StaticMesh ReplicatedMesh() { mixin(MGPC("StaticMesh", 484)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
-			// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticMeshComponent'!
 		}
 		bool bSafeBaseIfAsleep() { mixin(MGBPC(492, 0x4)); }
 		bool bSafeBaseIfAsleep(bool val) { mixin(MSBPC(492, 0x4)); }

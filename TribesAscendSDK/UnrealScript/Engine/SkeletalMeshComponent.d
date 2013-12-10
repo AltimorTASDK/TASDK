@@ -357,7 +357,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.SkeletalMeshComponent.Attachment")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Component' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Component'!
 			ScriptName BoneName() { mixin(MGPS("ScriptName", 4)); }
 			Vector RelativeLocation() { mixin(MGPS("Vector", 12)); }
 			Rotator RelativeRotation() { mixin(MGPS("Rotator", 24)); }
@@ -381,10 +381,10 @@ public extern(D):
 		auto ref
 		{
 			AnimNode Animations() { mixin(MGPC("AnimNode", 512)); }
-			// WARNING: Property 'PhysicsAssetInstance' has the same name as a defined type!
+			PhysicsAssetInstance PhysicsAssetInstanceVar() { mixin(MGPC("PhysicsAssetInstance", 580)); }
 			ScriptArray!(SkeletalMeshComponent.SkelMeshComponentLODInfo) LODInfo() { mixin(MGPC("ScriptArray!(SkeletalMeshComponent.SkelMeshComponentLODInfo)", 976)); }
-			// WARNING: Property 'PhysicsAsset' has the same name as a defined type!
-			// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
+			PhysicsAsset PhysicsAssetVar() { mixin(MGPC("PhysicsAsset", 576)); }
+			SkeletalMesh SkeletalMeshVar() { mixin(MGPC("SkeletalMesh", 500)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AttachedToSkelComponent'!
 			AnimTree AnimTreeTemplate() { mixin(MGPC("AnimTree", 508)); }
 			ScriptArray!(AnimNode) AnimTickArray() { mixin(MGPC("ScriptArray!(AnimNode)", 516)); }

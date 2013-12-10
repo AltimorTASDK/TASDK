@@ -3,7 +3,6 @@ module UnrealScript.TribesGame.TrDeployable_TripSensor;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.Pawn;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.TribesGame.TrDeployable_Sensor;
 import UnrealScript.TribesGame.TrTripActor;

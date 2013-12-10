@@ -29,7 +29,7 @@ public extern(D):
 			float Rate() { mixin(MGPC("float", 248)); }
 			float BlendOutTime() { mixin(MGPC("float", 244)); }
 			float BlendInTime() { mixin(MGPC("float", 240)); }
-			// WARNING: Property 'CameraAnim' has the same name as a defined type!
+			CameraAnim CameraAnimVar() { mixin(MGPC("CameraAnim", 232)); }
 		}
 		bool bRandomStartTime() { mixin(MGBPC(236, 0x2)); }
 		bool bRandomStartTime(bool val) { mixin(MSBPC(236, 0x2)); }

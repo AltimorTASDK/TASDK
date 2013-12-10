@@ -286,7 +286,7 @@ public extern(D):
 		@property final auto ref
 		{
 			ScriptString Resource() { mixin(MGPS("ScriptString", 0)); }
-			// WARNING: Property 'Texture' has the same name as a defined type!
+			Texture TextureVar() { mixin(MGPS("Texture", 12)); }
 		}
 	}
 	@property final

@@ -55,7 +55,7 @@ public extern(D):
 			int NumChannels() { mixin(MGPC("int", 112)); }
 			float Duration() { mixin(MGPC("float", 108)); }
 			float Pitch() { mixin(MGPC("float", 104)); }
-			// WARNING: Property 'Volume' has the same name as a defined type!
+			float VolumeVar() { mixin(MGPC("float", 100)); }
 			ScriptString SpokenText() { mixin(MGPC("ScriptString", 88)); }
 			SoundNodeWave.EDecompressionType DecompressionType() { mixin(MGPC("SoundNodeWave.EDecompressionType", 85)); }
 			AudioDevice.ETTSSpeaker TTSSpeaker() { mixin(MGPC("AudioDevice.ETTSSpeaker", 84)); }

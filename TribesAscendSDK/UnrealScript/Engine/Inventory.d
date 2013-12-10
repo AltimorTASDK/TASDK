@@ -64,7 +64,7 @@ public extern(D):
 			float RespawnTime() { mixin(MGPC("float", 500)); }
 			ScriptString ItemName() { mixin(MGPC("ScriptString", 484)); }
 			InventoryManager InvManager() { mixin(MGPC("InventoryManager", 480)); }
-			// WARNING: Property 'Inventory' has the same name as a defined type!
+			Inventory InventoryVar() { mixin(MGPC("Inventory", 476)); }
 		}
 		bool bPredictRespawns() { mixin(MGBPC(496, 0x4)); }
 		bool bPredictRespawns(bool val) { mixin(MSBPC(496, 0x4)); }

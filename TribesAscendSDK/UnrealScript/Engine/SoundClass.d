@@ -39,7 +39,7 @@ public extern(D):
 				float LFEBleed() { mixin(MGPS("float", 12)); }
 				float StereoBleed() { mixin(MGPS("float", 8)); }
 				float Pitch() { mixin(MGPS("float", 4)); }
-				// WARNING: Property 'Volume' has the same name as a defined type!
+				float VolumeVar() { mixin(MGPS("float", 0)); }
 			}
 			bool bBassBoost() { mixin(MGBPS(28, 0x40)); }
 			bool bBassBoost(bool val) { mixin(MSBPS(28, 0x40)); }

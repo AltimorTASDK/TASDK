@@ -90,7 +90,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.TrSeekingMissileManager.SeekingMissileInfo")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Missile' has the same name as a defined type!
+			TrProj_TrackingMissile MissileVar() { mixin(MGPS("TrProj_TrackingMissile", 0)); }
 			TrPlayerController VictimController() { mixin(MGPS("TrPlayerController", 4)); }
 		}
 	}

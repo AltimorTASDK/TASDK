@@ -3,7 +3,6 @@ module UnrealScript.Engine.NavMeshGoalFilter_OutOfViewFrom;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NavMeshGoal_Filter;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.NavMeshGoal_GenericFilterContainer;
 
 extern(C++) interface NavMeshGoalFilter_OutOfViewFrom : NavMeshGoal_Filter

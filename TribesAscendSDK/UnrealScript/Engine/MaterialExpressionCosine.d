@@ -14,6 +14,6 @@ public extern(D):
 	@property final auto ref
 	{
 		float Period() { mixin(MGPC("float", 136)); }
-		// WARNING: Property 'Input' has the same name as a defined type!
+		MaterialExpression.ExpressionInput InputVar() { mixin(MGPC("MaterialExpression.ExpressionInput", 108)); }
 	}
 }

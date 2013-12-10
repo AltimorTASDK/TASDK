@@ -18,7 +18,7 @@ public extern(D):
 		ScriptArray!(UObject) PrefabArchetypes() { mixin(MGPC("ScriptArray!(UObject)", 64)); }
 		ScriptArray!(UObject) RemovedArchetypes() { mixin(MGPC("ScriptArray!(UObject)", 76)); }
 		Texture2D PrefabPreview() { mixin(MGPC("Texture2D", 92)); }
-		// WARNING: Property 'PrefabSequence' has the same name as a defined type!
+		PrefabSequence PrefabSequenceVar() { mixin(MGPC("PrefabSequence", 88)); }
 		int PrefabVersion() { mixin(MGPC("int", 60)); }
 	}
 }

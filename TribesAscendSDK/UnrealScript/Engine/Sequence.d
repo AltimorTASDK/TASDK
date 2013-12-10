@@ -5,7 +5,6 @@ import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.SequenceEvent;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SequenceOp;
 
 extern(C++) interface Sequence : SequenceOp

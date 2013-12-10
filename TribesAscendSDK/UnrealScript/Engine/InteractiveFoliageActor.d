@@ -41,7 +41,7 @@ public extern(D):
 		Vector FoliageForce() { mixin(MGPC("Vector", 512)); }
 		Vector FoliageVelocity() { mixin(MGPC("Vector", 500)); }
 		Vector TouchingActorEntryPosition() { mixin(MGPC("Vector", 488)); }
-		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 	}
 final:
 	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)

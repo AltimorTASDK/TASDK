@@ -2,7 +2,6 @@ module UnrealScript.Engine.InterpTrackInstVectorProp;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.InterpTrackInstProperty;
 
 extern(C++) interface InterpTrackInstVectorProp : InterpTrackInstProperty

@@ -99,7 +99,7 @@ public extern(D):
 		{
 			auto ref
 			{
-				// WARNING: Property 'State' has the same name as a defined type!
+				MobileInputZone.EZoneTouchEvent StateVar() { mixin(MGPS("MobileInputZone.EZoneTouchEvent", 48)); }
 				MobileInputZone Zone() { mixin(MGPS("MobileInputZone", 44)); }
 				int Handle() { mixin(MGPS("int", 0)); }
 				ScriptArray!(MobilePlayerInput.TouchDataEvent) Events() { mixin(MGPS("ScriptArray!(MobilePlayerInput.TouchDataEvent)", 52)); }

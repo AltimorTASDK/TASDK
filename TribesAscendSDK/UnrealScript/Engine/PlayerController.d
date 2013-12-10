@@ -822,7 +822,7 @@ public extern(D):
 			{
 				Actor SrcActor() { mixin(MGPS("Actor", 0)); }
 				float TimeRemaining() { mixin(MGPS("float", 40)); }
-				// WARNING: Property 'Font' has the same name as a defined type!
+				Font FontVar() { mixin(MGPS("Font", 68)); }
 				Vector SrcActorOffset() { mixin(MGPS("Vector", 4)); }
 				Vector SrcActorDesiredOffset() { mixin(MGPS("Vector", 16)); }
 				float Duration() { mixin(MGPS("float", 44)); }
@@ -962,7 +962,7 @@ public extern(D):
 		auto ref
 		{
 			float LODDistanceFactor() { mixin(MGPC("float", 960)); }
-			// WARNING: Property 'Player' has the same name as a defined type!
+			Player PlayerVar() { mixin(MGPC("Player", 900)); }
 			Actor ViewTarget() { mixin(MGPC("Actor", 936)); }
 			Camera PlayerCamera() { mixin(MGPC("Camera", 904)); }
 			CoverReplicator MyCoverReplicator() { mixin(MGPC("CoverReplicator", 1352)); }
@@ -978,11 +978,11 @@ public extern(D):
 			float WaitDelay() { mixin(MGPC("float", 920)); }
 			SavedMove SavedMoves() { mixin(MGPC("SavedMove", 1000)); }
 			SavedMove PendingMove() { mixin(MGPC("SavedMove", 1008)); }
-			// WARNING: Property 'PlayerInput' has the same name as a defined type!
+			PlayerInput PlayerInputVar() { mixin(MGPC("PlayerInput", 1132)); }
 			ScriptClass InputClass() { mixin(MGPC("ScriptClass", 1136)); }
 			ScriptArray!(Interaction) Interactions() { mixin(MGPC("ScriptArray!(Interaction)", 1172)); }
 			ScriptString ForceFeedbackManagerClassName() { mixin(MGPC("ScriptString", 1156)); }
-			// WARNING: Property 'ForceFeedbackManager' has the same name as a defined type!
+			ForceFeedbackManager ForceFeedbackManagerVar() { mixin(MGPC("ForceFeedbackManager", 1168)); }
 			UIDataStore_OnlinePlayerData OnlinePlayerData() { mixin(MGPC("UIDataStore_OnlinePlayerData", 1260)); }
 			Pawn AcknowledgedPawn() { mixin(MGPC("Pawn", 924)); }
 			ScriptArray!(
@@ -1032,7 +1032,7 @@ void*)", 1396)); }
 			ScriptArray!(OnlineSubsystem.UniqueNetId) VoiceMuteList() { mixin(MGPC("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1184)); }
 			ScriptArray!(PlayerController.DebugTextInfo) DebugTextList() { mixin(MGPC("ScriptArray!(PlayerController.DebugTextInfo)", 1356)); }
 			ubyte NetPlayerIndex() { mixin(MGPC("ubyte", 933)); }
-			// WARNING: Property 'CheatManager' has the same name as a defined type!
+			CheatManager CheatManagerVar() { mixin(MGPC("CheatManager", 1124)); }
 			InterpTrackInstDirector ControllingDirTrackInst() { mixin(MGPC("InterpTrackInstDirector", 944)); }
 			Rotator TargetViewRotation() { mixin(MGPC("Rotator", 964)); }
 			float TargetEyeHeight() { mixin(MGPC("float", 976)); }
@@ -1040,7 +1040,7 @@ void*)", 1396)); }
 			float DynamicPingThreshold() { mixin(MGPC("float", 1056)); }
 			ScriptClass CheatClass() { mixin(MGPC("ScriptClass", 1128)); }
 			Vector FailedPathStart() { mixin(MGPC("Vector", 1140)); }
-			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 			ScriptName DelayedJoinSessionName() { mixin(MGPC("ScriptName", 1268)); }
 			ScriptArray!(PlayerController.InputMatchRequest) InputRequests() { mixin(MGPC("ScriptArray!(PlayerController.InputMatchRequest)", 1276)); }
 			int MaxConcurrentHearSounds() { mixin(MGPC("int", 1380)); }

@@ -18,6 +18,6 @@ public extern(D):
 		ScriptArray!(Pointer) Elements() { mixin(MGPC("ScriptArray!(Pointer)", 512)); }
 		int ComponentIndex() { mixin(MGPC("int", 496)); }
 		int ZoneIndex() { mixin(MGPC("int", 492)); }
-		// WARNING: Property 'Model' has the same name as a defined type!
+		UObject ModelVar() { mixin(MGPC("UObject", 488)); }
 	}
 }

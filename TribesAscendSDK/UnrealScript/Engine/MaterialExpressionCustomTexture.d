@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialExpressionCustomTexture")); }
 	private static __gshared MaterialExpressionCustomTexture mDefaultProperties;
 	@property final static MaterialExpressionCustomTexture DefaultProperties() { mixin(MGDPC("MaterialExpressionCustomTexture", "MaterialExpressionCustomTexture Engine.Default__MaterialExpressionCustomTexture")); }
-	// WARNING: Property 'Texture' has the same name as a defined type!
+	@property final auto ref Texture TextureVar() { mixin(MGPC("Texture", 108)); }
 }

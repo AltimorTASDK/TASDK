@@ -3,7 +3,6 @@ module UnrealScript.Engine.RB_BodySetup;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.KMeshProps;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PhysicalMaterial;
 
 extern(C++) interface RB_BodySetup : KMeshProps

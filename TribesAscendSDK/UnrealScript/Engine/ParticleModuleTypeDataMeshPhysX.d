@@ -3,7 +3,6 @@ module UnrealScript.Engine.ParticleModuleTypeDataMeshPhysX;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.ParticleModuleTypeDataPhysX;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleModuleTypeDataMesh;
 import UnrealScript.Engine.PhysXParticleSystem;
 

@@ -114,7 +114,7 @@ public extern(D):
 			ScriptArray!(int) LODMaterialMap() { mixin(MGPS("ScriptArray!(int)", 8)); }
 			ScriptArray!(bool) bEnableShadowCasting() { mixin(MGPS("ScriptArray!(bool)", 20)); }
 			ScriptArray!(SkeletalMesh.TriangleSortOption) TriangleSorting() { mixin(MGPS("ScriptArray!(SkeletalMesh.TriangleSortOption)", 32)); }
-			// WARNING: Property 'TriangleSortSettings' has the same name as a defined type!
+			ScriptArray!(SkeletalMesh.TriangleSortSettings) TriangleSortSettingsVar() { mixin(MGPS("ScriptArray!(SkeletalMesh.TriangleSortSettings)", 44)); }
 		}
 	}
 	struct TriangleSortSettings
@@ -159,7 +159,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			// WARNING: Property 'FaceFXAsset' has the same name as a defined type!
+			FaceFXAsset FaceFXAssetVar() { mixin(MGPC("FaceFXAsset", 340)); }
 			UObject.BoxSphereBounds Bounds() { mixin(MGPC("UObject.BoxSphereBounds", 60)); }
 			ScriptArray!(MaterialInterface) Materials() { mixin(MGPC("ScriptArray!(MaterialInterface)", 88)); }
 			ScriptArray!(ApexClothingAsset) ClothingAssets() { mixin(MGPC("ScriptArray!(ApexClothingAsset)", 100)); }

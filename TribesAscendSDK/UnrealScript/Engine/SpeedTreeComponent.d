@@ -54,7 +54,7 @@ public extern(D):
 			ShadowMap1D LeafMeshShadowMap() { mixin(MGPS("ShadowMap1D", 24)); }
 			ShadowMap1D FrondShadowMap() { mixin(MGPS("ShadowMap1D", 20)); }
 			ShadowMap1D BranchShadowMap() { mixin(MGPS("ShadowMap1D", 16)); }
-			// WARNING: Property 'Guid' has the same name as a defined type!
+			UObject.Guid GuidVar() { mixin(MGPS("UObject.Guid", 0)); }
 		}
 	}
 	@property final
@@ -81,7 +81,7 @@ public extern(D):
 			float LodBillboardStart() { mixin(MGPC("float", 504)); }
 			float Lod3DEnd() { mixin(MGPC("float", 500)); }
 			float Lod3DStart() { mixin(MGPC("float", 496)); }
-			// WARNING: Property 'SpeedTree' has the same name as a defined type!
+			SpeedTree SpeedTreeVar() { mixin(MGPC("SpeedTree", 488)); }
 		}
 		bool bUseBillboards() { mixin(MGBPC(492, 0x10)); }
 		bool bUseBillboards(bool val) { mixin(MSBPC(492, 0x10)); }

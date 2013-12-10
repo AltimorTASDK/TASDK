@@ -18,7 +18,7 @@ public extern(D):
 	}
 	@property final
 	{
-		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticMeshComponent'!
 		bool bDisableAutoBaseOnProcBuilding() { mixin(MGBPC(480, 0x1)); }
 		bool bDisableAutoBaseOnProcBuilding(bool val) { mixin(MSBPC(480, 0x1)); }
 	}

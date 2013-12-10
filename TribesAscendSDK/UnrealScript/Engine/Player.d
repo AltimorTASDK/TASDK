@@ -20,7 +20,7 @@ public extern(D):
 	@property final auto ref
 	{
 		int CurrentNetSpeed() { mixin(MGPC("int", 68)); }
-		// WARNING: Property 'Actor' has the same name as a defined type!
+		PlayerController ActorVar() { mixin(MGPC("PlayerController", 64)); }
 		float PP_ShadowsMultiplier() { mixin(MGPC("float", 92)); }
 		float PP_MidTonesMultiplier() { mixin(MGPC("float", 88)); }
 		float PP_HighlightsMultiplier() { mixin(MGPC("float", 84)); }

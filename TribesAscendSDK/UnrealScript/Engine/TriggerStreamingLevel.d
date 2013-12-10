@@ -26,7 +26,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.TriggerStreamingLevel.LevelStreamingData")); }
 		@property final
 		{
-			// WARNING: Property 'Level' has the same name as a defined type!
+			@property final auto ref LevelStreaming LevelVar() { mixin(MGPS("LevelStreaming", 4)); }
 			bool bShouldBlockOnLoad() { mixin(MGBPS(0, 0x4)); }
 			bool bShouldBlockOnLoad(bool val) { mixin(MSBPS(0, 0x4)); }
 			bool bShouldBeVisible() { mixin(MGBPS(0, 0x2)); }

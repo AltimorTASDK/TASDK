@@ -72,7 +72,7 @@ public extern(D):
 			auto ref
 			{
 				ReverbVolume.ReverbPreset ReverbType() { mixin(MGPS("ReverbVolume.ReverbPreset", 4)); }
-				// WARNING: Property 'Volume' has the same name as a defined type!
+				float VolumeVar() { mixin(MGPS("float", 8)); }
 				float FadeTime() { mixin(MGPS("float", 12)); }
 			}
 			bool bApplyReverb() { mixin(MGBPS(0, 0x1)); }
@@ -85,7 +85,7 @@ public extern(D):
 		{
 			ReverbVolume NextLowerPriorityVolume() { mixin(MGPC("ReverbVolume", 580)); }
 			ReverbVolume.InteriorSettings AmbientZoneSettings() { mixin(MGPC("ReverbVolume.InteriorSettings", 544)); }
-			// WARNING: Property 'Settings' has the same name as a defined type!
+			ReverbVolume.ReverbSettings SettingsVar() { mixin(MGPC("ReverbVolume.ReverbSettings", 528)); }
 			float Priority() { mixin(MGPC("float", 520)); }
 		}
 		bool bEnabled() { mixin(MGBPC(524, 0x1)); }

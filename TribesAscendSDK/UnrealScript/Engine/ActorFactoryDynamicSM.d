@@ -19,7 +19,7 @@ public extern(D):
 		{
 			Actor.ECollisionType CollisionType() { mixin(MGPC("Actor.ECollisionType", 112)); }
 			Vector DrawScale3D() { mixin(MGPC("Vector", 96)); }
-			// WARNING: Property 'StaticMesh' has the same name as a defined type!
+			StaticMesh StaticMeshVar() { mixin(MGPC("StaticMesh", 92)); }
 		}
 		bool bCastDynamicShadow() { mixin(MGBPC(108, 0x10)); }
 		bool bCastDynamicShadow(bool val) { mixin(MSBPC(108, 0x10)); }

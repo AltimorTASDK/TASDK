@@ -62,7 +62,7 @@ public extern(D):
 			float BlendOutTime() { mixin(MGPC("float", 80)); }
 			float BlendInTime() { mixin(MGPC("float", 76)); }
 			float CurTime() { mixin(MGPC("float", 68)); }
-			// WARNING: Property 'InterpGroupInst' has the same name as a defined type!
+			InterpGroupInst InterpGroupInstVar() { mixin(MGPC("InterpGroupInst", 64)); }
 			CameraAnim CamAnim() { mixin(MGPC("CameraAnim", 60)); }
 		}
 		bool bBlendingOut() { mixin(MGBPC(72, 0x10)); }

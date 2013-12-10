@@ -16,6 +16,6 @@ public extern(D):
 	{
 		UObject.LinearColor LuminanceFactors() { mixin(MGPC("UObject.LinearColor", 164)); }
 		MaterialExpression.ExpressionInput Percent() { mixin(MGPC("MaterialExpression.ExpressionInput", 136)); }
-		// WARNING: Property 'Input' has the same name as a defined type!
+		MaterialExpression.ExpressionInput InputVar() { mixin(MGPC("MaterialExpression.ExpressionInput", 108)); }
 	}
 }

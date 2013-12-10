@@ -46,7 +46,7 @@ public extern(D):
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'EditorData'!
 		SoundNode FirstNode() { mixin(MGPC("SoundNode", 72)); }
 		AudioDevice.ESoundClassName SoundClassName() { mixin(MGPC("AudioDevice.ESoundClassName", 68)); }
-		// WARNING: Property 'SoundClass' has the same name as a defined type!
+		ScriptName SoundClassVar() { mixin(MGPC("ScriptName", 60)); }
 	}
 	final float GetCueDuration()
 	{

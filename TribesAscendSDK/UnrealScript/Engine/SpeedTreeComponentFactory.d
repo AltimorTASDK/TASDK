@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SpeedTreeComponentFactory")); }
 	private static __gshared SpeedTreeComponentFactory mDefaultProperties;
 	@property final static SpeedTreeComponentFactory DefaultProperties() { mixin(MGDPC("SpeedTreeComponentFactory", "SpeedTreeComponentFactory Engine.Default__SpeedTreeComponentFactory")); }
-	// WARNING: Property 'SpeedTreeComponent' has the same name as a defined type!
+	// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SpeedTreeComponent'!
 }

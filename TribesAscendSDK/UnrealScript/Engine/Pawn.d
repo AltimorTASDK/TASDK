@@ -5,7 +5,6 @@ import UnrealScript.Helpers;
 import UnrealScript.Engine.SequenceEvent;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.FaceFXAnimSet;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PlayerReplicationInfo;
 import UnrealScript.Engine.PlayerStart;
 import UnrealScript.Engine.PhysicsVolume;
@@ -557,16 +556,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			// WARNING: Property 'Controller' has the same name as a defined type!
+			Controller ControllerVar() { mixin(MGPC("Controller", 508)); }
 			int MaxPitchLimit() { mixin(MGPC("int", 664)); }
-			// WARNING: Property 'Weapon' has the same name as a defined type!
+			Weapon WeaponVar() { mixin(MGPC("Weapon", 984)); }
 			InventoryManager InvManager() { mixin(MGPC("InventoryManager", 980)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
 			float EyeHeight() { mixin(MGPC("float", 728)); }
 			float BaseEyeHeight() { mixin(MGPC("float", 724)); }
 			int Health() { mixin(MGPC("int", 752)); }
 			Vector Floor() { mixin(MGPC("Vector", 732)); }
-			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 			float CrouchHeight() { mixin(MGPC("float", 548)); }
 			float MaxStepHeight() { mixin(MGPC("float", 480)); }
 			float VehicleCheckRadius() { mixin(MGPC("float", 944)); }
@@ -612,7 +611,7 @@ public extern(D):
 			ScriptClass HitDamageType() { mixin(MGPC("ScriptClass", 904)); }
 			Vector TakeHitLocation() { mixin(MGPC("Vector", 892)); }
 			PlayerStart LastStartSpot() { mixin(MGPC("PlayerStart", 884)); }
-			// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
+			PlayerReplicationInfo PlayerReplicationInfoVar() { mixin(MGPC("PlayerReplicationInfo", 860)); }
 			ScriptClass ControllerClass() { mixin(MGPC("ScriptClass", 856)); }
 			ScriptString MenuName() { mixin(MGPC("ScriptString", 844)); }
 			float DamageScaling() { mixin(MGPC("float", 840)); }

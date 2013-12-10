@@ -17,7 +17,7 @@ public extern(D):
 		auto ref
 		{
 			ScriptName LevelName() { mixin(MGPC("ScriptName", 256)); }
-			// WARNING: Property 'Level' has the same name as a defined type!
+			LevelStreaming LevelVar() { mixin(MGPC("LevelStreaming", 252)); }
 		}
 		bool bStatusIsOk() { mixin(MGBPC(264, 0x1)); }
 		bool bStatusIsOk(bool val) { mixin(MSBPC(264, 0x1)); }

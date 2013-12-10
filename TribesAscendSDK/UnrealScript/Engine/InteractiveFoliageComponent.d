@@ -2,7 +2,6 @@ module UnrealScript.Engine.InteractiveFoliageComponent;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.StaticMeshComponent;
 
 extern(C++) interface InteractiveFoliageComponent : StaticMeshComponent

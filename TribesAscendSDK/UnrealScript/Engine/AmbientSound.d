@@ -13,7 +13,7 @@ public extern(D):
 	@property final static AmbientSound DefaultProperties() { mixin(MGDPC("AmbientSound", "AmbientSound Engine.Default__AmbientSound")); }
 	@property final
 	{
-		// WARNING: Property 'AudioComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AudioComponent'!
 		bool bIsPlaying() { mixin(MGBPC(480, 0x2)); }
 		bool bIsPlaying(bool val) { mixin(MSBPC(480, 0x2)); }
 		bool bAutoPlay() { mixin(MGBPC(480, 0x1)); }

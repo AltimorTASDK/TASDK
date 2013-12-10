@@ -99,7 +99,7 @@ public extern(D):
 			float UL() { mixin(MGPS("float", 12)); }
 			float V() { mixin(MGPS("float", 8)); }
 			float U() { mixin(MGPS("float", 4)); }
-			// WARNING: Property 'Texture' has the same name as a defined type!
+			Texture TextureVar() { mixin(MGPS("Texture", 0)); }
 		}
 	}
 	struct DepthFieldGlowInfo
@@ -186,11 +186,11 @@ public extern(D):
 		auto ref
 		{
 			UObject.Color DrawColor() { mixin(MGPC("UObject.Color", 96)); }
-			// WARNING: Property 'Font' has the same name as a defined type!
+			Font FontVar() { mixin(MGPC("Font", 60)); }
 			Texture2D DefaultTexture() { mixin(MGPC("Texture2D", 144)); }
 			UObject.Plane ColorModulate() { mixin(MGPC("UObject.Plane", 128)); }
 			Pointer SceneView() { mixin(MGPC("Pointer", 116)); }
-			// WARNING: Property 'Canvas' has the same name as a defined type!
+			Pointer CanvasVar() { mixin(MGPC("Pointer", 112)); }
 			int SizeY() { mixin(MGPC("int", 108)); }
 			int SizeX() { mixin(MGPC("int", 104)); }
 			float CurYL() { mixin(MGPC("float", 92)); }

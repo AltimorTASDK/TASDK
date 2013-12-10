@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 		bool bIsEnabled() { mixin(MGBPC(476, 0x1)); }
 		bool bIsEnabled(bool val) { mixin(MSBPC(476, 0x1)); }
 	}

@@ -22,7 +22,7 @@ public extern(D):
 		{
 			DistributionFloat.RawDistributionFloat FadeOutDistance() { mixin(MGPS("DistributionFloat.RawDistributionFloat", 48)); }
 			DistributionFloat.RawDistributionFloat FadeInDistance() { mixin(MGPS("DistributionFloat.RawDistributionFloat", 20)); }
-			// WARNING: Property 'Volume' has the same name as a defined type!
+			float VolumeVar() { mixin(MGPS("float", 16)); }
 			float FadeOutDistanceEnd() { mixin(MGPS("float", 12)); }
 			float FadeOutDistanceStart() { mixin(MGPS("float", 8)); }
 			float FadeInDistanceEnd() { mixin(MGPS("float", 4)); }

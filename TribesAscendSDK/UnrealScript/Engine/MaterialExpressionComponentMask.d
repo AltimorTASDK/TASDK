@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionComponentMask DefaultProperties() { mixin(MGDPC("MaterialExpressionComponentMask", "MaterialExpressionComponentMask Engine.Default__MaterialExpressionComponentMask")); }
 	@property final
 	{
-		// WARNING: Property 'Input' has the same name as a defined type!
+		@property final auto ref MaterialExpression.ExpressionInput InputVar() { mixin(MGPC("MaterialExpression.ExpressionInput", 108)); }
 		bool A() { mixin(MGBPC(136, 0x8)); }
 		bool A(bool val) { mixin(MSBPC(136, 0x8)); }
 		bool B() { mixin(MGBPC(136, 0x4)); }

@@ -49,7 +49,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		// WARNING: Property 'Selection' has the same name as a defined type!
+		ubyte SelectionVar() { mixin(MGPC("ubyte", 444)); }
 		ScriptString CampaignMap() { mixin(MGPC("ScriptString", 432)); }
 		ScriptString InstantActionMap() { mixin(MGPC("ScriptString", 420)); }
 		GFxClikWidget MenuBtn6MC() { mixin(MGPC("GFxClikWidget", 416)); }

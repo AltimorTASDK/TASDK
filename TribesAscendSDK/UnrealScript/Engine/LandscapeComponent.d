@@ -74,7 +74,7 @@ public extern(D):
 		float WeightmapSubsectionOffset() { mixin(MGPC("float", 576)); }
 		UObject.Vector4 WeightmapScaleBias() { mixin(MGPC("UObject.Vector4", 560)); }
 		ScriptName EditingAlphaLayerName() { mixin(MGPC("ScriptName", 524)); }
-		// WARNING: Property 'MaterialInstance' has the same name as a defined type!
+		MaterialInstanceConstant MaterialInstanceVar() { mixin(MGPC("MaterialInstanceConstant", 508)); }
 		int NumSubsections() { mixin(MGPC("int", 504)); }
 		int SubsectionSizeQuads() { mixin(MGPC("int", 500)); }
 		int ComponentSizeQuads() { mixin(MGPC("int", 496)); }

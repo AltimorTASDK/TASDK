@@ -83,7 +83,7 @@ public extern(D):
 		@property final auto ref
 		{
 			ScriptName ParamName() { mixin(MGPS("ScriptName", 0)); }
-			// WARNING: Property 'Color' has the same name as a defined type!
+			UObject.LinearColor ColorVar() { mixin(MGPS("UObject.LinearColor", 8)); }
 		}
 	}
 	struct PBFracMeshCompInfo

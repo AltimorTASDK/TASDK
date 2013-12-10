@@ -3,7 +3,6 @@ module UnrealScript.IpDrv.OnlineNewsInterfaceMcp;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
-import UnrealScript.Core.UObject;
 import UnrealScript.IpDrv.MCPBase;
 
 extern(C++) interface OnlineNewsInterfaceMcp : MCPBase

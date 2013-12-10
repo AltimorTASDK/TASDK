@@ -27,7 +27,7 @@ public extern(D):
 	}
 	@property final
 	{
-		// WARNING: Property 'SoundMode' has the same name as a defined type!
+		@property final auto ref SoundMode SoundModeVar() { mixin(MGPC("SoundMode", 232)); }
 		bool bTopPriority() { mixin(MGBPC(236, 0x1)); }
 		bool bTopPriority(bool val) { mixin(MSBPC(236, 0x1)); }
 	}

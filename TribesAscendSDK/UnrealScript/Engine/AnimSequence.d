@@ -157,7 +157,7 @@ public extern(D):
 			float RateScale() { mixin(MGPC("float", 112)); }
 			ScriptName SequenceName() { mixin(MGPC("ScriptName", 60)); }
 			ScriptArray!(AnimSequence.AnimNotifyEvent) Notifies() { mixin(MGPC("ScriptArray!(AnimSequence.AnimNotifyEvent)", 68)); }
-			// WARNING: Property 'MetaData' has the same name as a defined type!
+			ScriptArray!(AnimMetaData) MetaDataVar() { mixin(MGPC("ScriptArray!(AnimMetaData)", 80)); }
 			ScriptArray!(AnimSequence.SkelControlModifier) BoneControlModifiers() { mixin(MGPC("ScriptArray!(AnimSequence.SkelControlModifier)", 92)); }
 			int NumFrames() { mixin(MGPC("int", 108)); }
 			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimData() { mixin(MGPC("ScriptArray!(AnimSequence.RawAnimSequenceTrack)", 120)); }

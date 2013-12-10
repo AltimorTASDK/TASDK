@@ -3,7 +3,6 @@ module UnrealScript.Engine.UIDataStore_OnlinePlaylists;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.UIResourceDataProvider;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIRoot;
 import UnrealScript.Engine.OnlinePlaylistProvider;
 import UnrealScript.Engine.UIDataStore;

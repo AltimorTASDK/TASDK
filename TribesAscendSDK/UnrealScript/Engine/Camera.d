@@ -126,7 +126,7 @@ public extern(D):
 			Actor Target() { mixin(MGPS("Actor", 0)); }
 			UObject.TPOV POV() { mixin(MGPS("UObject.TPOV", 8)); }
 			float AspectRatio() { mixin(MGPS("float", 36)); }
-			// WARNING: Property 'Controller' has the same name as a defined type!
+			Controller ControllerVar() { mixin(MGPS("Controller", 4)); }
 			PlayerReplicationInfo PRI() { mixin(MGPS("PlayerReplicationInfo", 40)); }
 		}
 	}

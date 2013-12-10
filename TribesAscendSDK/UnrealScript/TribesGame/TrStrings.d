@@ -248,9 +248,9 @@ public extern(D):
 		ScriptString FlagsMoveEveryCap() { mixin(MGPC("ScriptString", 4056)); }
 		ScriptString Featured() { mixin(MGPC("ScriptString", 3564)); }
 		ScriptString AvailableAtLevel() { mixin(MGPC("ScriptString", 1728)); }
-		// WARNING: Property 'Player' has the same name as a defined type!
+		ScriptString PlayerVar() { mixin(MGPC("ScriptString", 2088)); }
 		ScriptString Overview() { mixin(MGPC("ScriptString", 2076)); }
-		// WARNING: Property 'Level' has the same name as a defined type!
+		ScriptString LevelVar() { mixin(MGPC("ScriptString", 2316)); }
 		ScriptString Account() { mixin(MGPC("ScriptString", 2556)); }
 		ScriptString Boosted() { mixin(MGPC("ScriptString", 2940)); }
 		ScriptString TrClassUsage() { mixin(MGPC("ScriptString", 3120)); }
@@ -321,7 +321,7 @@ public extern(D):
 		ScriptString TrLocal() { mixin(MGPC("ScriptString", 2388)); }
 		ScriptString Display() { mixin(MGPC("ScriptString", 2820)); }
 		ScriptString Description() { mixin(MGPC("ScriptString", 3000)); }
-		// WARNING: Property 'Admin' has the same name as a defined type!
+		ScriptString AdminVar() { mixin(MGPC("ScriptString", 3084)); }
 		ScriptString TrPublic() { mixin(MGPC("ScriptString", 3132)); }
 		ScriptString TrDefault() { mixin(MGPC("ScriptString", 2604)); }
 		ScriptString Max() { mixin(MGPC("ScriptString", 3732)); }

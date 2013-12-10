@@ -3,7 +3,6 @@ module UnrealScript.Engine.ApexStaticDestructibleComponent;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.ApexStaticComponent;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface ApexStaticDestructibleComponent : ApexStaticComponent
 {
@@ -17,7 +16,7 @@ public extern(D):
 		auto ref
 		{
 			Pointer ApexDestructiblePreview() { mixin(MGPC("Pointer", 532)); }
-			// WARNING: Property 'ApexDestructibleActor' has the same name as a defined type!
+			Pointer ApexDestructibleActorVar() { mixin(MGPC("Pointer", 528)); }
 			float SleepDamping() { mixin(MGPC("float", 524)); }
 			float SleepEnergyThreshold() { mixin(MGPC("float", 520)); }
 		}

@@ -2,7 +2,6 @@ module UnrealScript.PlatformCommon.TgBrowserInteraction;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Interaction;
 
 extern(C++) interface TgBrowserInteraction : Interaction

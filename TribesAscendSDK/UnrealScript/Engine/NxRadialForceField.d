@@ -3,7 +3,6 @@ module UnrealScript.Engine.NxRadialForceField;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NxForceField;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 
 extern(C++) interface NxRadialForceField : NxForceField

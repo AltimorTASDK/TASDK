@@ -60,7 +60,7 @@ public extern(D):
 		ScriptArray!(ScriptString) InstalledDLC() { mixin(MGPC("ScriptArray!(ScriptString)", 72)); }
 		ScriptArray!(ScriptClass) ClassesToReload() { mixin(MGPC("ScriptArray!(ScriptClass)", 144)); }
 		ScriptArray!(UObject) ObjectsToReload() { mixin(MGPC("ScriptArray!(UObject)", 156)); }
-		// WARNING: Property 'GameEngine' has the same name as a defined type!
+		GameEngine GameEngineVar() { mixin(MGPC("GameEngine", 168)); }
 		UObject.Map_Mirror TextureCachePathMap() { mixin(MGPC("UObject.Map_Mirror", 84)); }
 	}
 final:

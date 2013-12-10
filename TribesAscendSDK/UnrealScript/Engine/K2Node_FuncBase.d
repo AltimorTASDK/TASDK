@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.K2Node_FuncBase")); }
 	private static __gshared K2Node_FuncBase mDefaultProperties;
 	@property final static K2Node_FuncBase DefaultProperties() { mixin(MGDPC("K2Node_FuncBase", "K2Node_FuncBase Engine.Default__K2Node_FuncBase")); }
-	// WARNING: Property 'Function' has the same name as a defined type!
+	@property final auto ref Function FunctionVar() { mixin(MGPC("Function", 92)); }
 }

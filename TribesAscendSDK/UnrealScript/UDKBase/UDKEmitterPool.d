@@ -38,7 +38,7 @@ public extern(D):
 		{
 			Vector RelativeLocation() { mixin(MGPS("Vector", 8)); }
 			Actor Base() { mixin(MGPS("Actor", 4)); }
-			// WARNING: Property 'Light' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Light'!
 		}
 	}
 	@property final auto ref ScriptArray!(UDKEmitterPool.AttachedExplosionLight) RelativeExplosionLights() { mixin(MGPC("ScriptArray!(UDKEmitterPool.AttachedExplosionLight)", 564)); }

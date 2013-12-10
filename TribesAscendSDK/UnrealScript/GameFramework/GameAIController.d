@@ -74,8 +74,8 @@ public extern(D):
 			float DebugTextMaxLen() { mixin(MGPC("float", 988)); }
 			FileLog AILogFile() { mixin(MGPC("FileLog", 984)); }
 			GameAICommand CommandList() { mixin(MGPC("GameAICommand", 980)); }
-			// WARNING: Property 'AITreeHandle' has the same name as a defined type!
-			// WARNING: Property 'AITree' has the same name as a defined type!
+			AITree.AITreeHandle AITreeHandleVar() { mixin(MGPC("AITree.AITreeHandle", 928)); }
+			AITree AITreeVar() { mixin(MGPC("AITree", 924)); }
 		}
 		bool bAIBroken() { mixin(MGBPC(976, 0x80)); }
 		bool bAIBroken(bool val) { mixin(MSBPC(976, 0x80)); }

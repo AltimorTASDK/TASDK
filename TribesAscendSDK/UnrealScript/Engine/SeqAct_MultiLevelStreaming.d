@@ -21,7 +21,7 @@ public extern(D):
 		@property final auto ref
 		{
 			ScriptName LevelName() { mixin(MGPS("ScriptName", 4)); }
-			// WARNING: Property 'Level' has the same name as a defined type!
+			LevelStreaming LevelVar() { mixin(MGPS("LevelStreaming", 0)); }
 		}
 	}
 	@property final

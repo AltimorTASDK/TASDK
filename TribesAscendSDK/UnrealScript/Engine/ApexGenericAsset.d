@@ -2,7 +2,6 @@ module UnrealScript.Engine.ApexGenericAsset;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ApexAsset;
 import UnrealScript.Engine.MaterialInterface;
 

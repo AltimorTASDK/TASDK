@@ -25,7 +25,7 @@ public extern(D):
 			UObject.LinearColor ClearColor() { mixin(MGPC("UObject.LinearColor", 256)); }
 			Texture.TextureAddress AddressY() { mixin(MGPC("Texture.TextureAddress", 254)); }
 			Texture.TextureAddress AddressX() { mixin(MGPC("Texture.TextureAddress", 253)); }
-			// WARNING: Property 'Format' has the same name as a defined type!
+			Texture.EPixelFormat FormatVar() { mixin(MGPC("Texture.EPixelFormat", 252)); }
 			int SizeY() { mixin(MGPC("int", 248)); }
 			int SizeX() { mixin(MGPC("int", 244)); }
 		}

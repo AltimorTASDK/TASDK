@@ -534,7 +534,7 @@ public extern(D):
 			auto ref
 			{
 				float CharacterLightingContrastFactor() { mixin(MGPS("float", 48)); }
-				// WARNING: Property 'AnimSet' has the same name as a defined type!
+				AnimSet AnimSetVar() { mixin(MGPS("AnimSet", 40)); }
 				AnimTree AnimTreeTemplate() { mixin(MGPS("AnimTree", 36)); }
 				PhysicsAsset PhysAsset() { mixin(MGPS("PhysicsAsset", 32)); }
 				SkeletalMesh SkelMesh() { mixin(MGPS("SkeletalMesh", 28)); }
@@ -573,7 +573,7 @@ public extern(D):
 			int Damage() { mixin(MGPS("int", 0)); }
 			Vector HitLocation() { mixin(MGPS("Vector", 4)); }
 			Vector Momentum() { mixin(MGPS("Vector", 16)); }
-			// WARNING: Property 'DamageType' has the same name as a defined type!
+			ScriptClass DamageTypeVar() { mixin(MGPS("ScriptClass", 28)); }
 			ScriptName HitBone() { mixin(MGPS("ScriptName", 32)); }
 		}
 	}

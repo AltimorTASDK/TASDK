@@ -19,7 +19,7 @@ public extern(D):
 		auto ref
 		{
 			ScriptArray!(MorphNodeWeightByBoneAngle.BoneAngleMorph) WeightArray() { mixin(MGPC("ScriptArray!(MorphNodeWeightByBoneAngle.BoneAngleMorph)", 144)); }
-			// WARNING: Property 'MaterialInstanceConstant' has the same name as a defined type!
+			MaterialInstanceConstant MaterialInstanceConstantVar() { mixin(MGPC("MaterialInstanceConstant", 168)); }
 			ScriptName ScalarParameterName() { mixin(MGPC("ScriptName", 160)); }
 			int MaterialSlotId() { mixin(MGPC("int", 156)); }
 			UObject.EAxis BoneAxis() { mixin(MGPC("UObject.EAxis", 136)); }

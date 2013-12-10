@@ -33,7 +33,7 @@ public extern(D):
 			ParticleModuleSpawn SpawnModule() { mixin(MGPC("ParticleModuleSpawn", 88)); }
 			ParticleModule TypeDataModule() { mixin(MGPC("ParticleModule", 84)); }
 			ParticleModuleRequired RequiredModule() { mixin(MGPC("ParticleModuleRequired", 68)); }
-			// WARNING: Property 'Level' has the same name as a defined type!
+			int LevelVar() { mixin(MGPC("int", 60)); }
 		}
 		bool ConvertedModules() { mixin(MGBPC(64, 0x2)); }
 		bool ConvertedModules(bool val) { mixin(MSBPC(64, 0x2)); }

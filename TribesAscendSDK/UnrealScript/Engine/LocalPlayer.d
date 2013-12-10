@@ -72,7 +72,7 @@ public extern(D):
 				float BlendInDuration() { mixin(MGPS("float", 232)); }
 				float CurrentBlendOutTime() { mixin(MGPS("float", 228)); }
 				float CurrentBlendInTime() { mixin(MGPS("float", 224)); }
-				// WARNING: Property 'Settings' has the same name as a defined type!
+				PostProcessVolume.PostProcessSettings SettingsVar() { mixin(MGPS("PostProcessVolume.PostProcessSettings", 0)); }
 			}
 			bool bBlendingOut() { mixin(MGBPS(220, 0x2)); }
 			bool bBlendingOut(bool val) { mixin(MSBPS(220, 0x2)); }
@@ -103,7 +103,7 @@ public extern(D):
 		@property final auto ref
 		{
 			Pointer CriticalSection() { mixin(MGPS("Pointer", 4)); }
-			// WARNING: Property 'State' has the same name as a defined type!
+			Pointer StateVar() { mixin(MGPS("Pointer", 0)); }
 		}
 	}
 	@property final

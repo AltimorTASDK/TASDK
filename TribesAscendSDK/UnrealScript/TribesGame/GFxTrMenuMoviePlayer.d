@@ -6,7 +6,6 @@ import UnrealScript.PlatformCommon.TgPlayerProfile;
 import UnrealScript.TribesGame.TrBrowserManager;
 import UnrealScript.TribesGame.TrInventoryHelper;
 import UnrealScript.Engine.OnlineSubsystem;
-import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.GFxTrScene_EULA;
 import UnrealScript.TribesGame.TrQueueManager;
 import UnrealScript.TribesGame.GFxTrScene_PlayerSummary;

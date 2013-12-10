@@ -21,7 +21,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.StaticMesh.StaticMeshLODElement")); }
 		@property final
 		{
-			// WARNING: Property 'Material' has the same name as a defined type!
+			@property final auto ref MaterialInterface MaterialVar() { mixin(MGPS("MaterialInterface", 0)); }
 			bool bEnableShadowCasting() { mixin(MGBPS(4, 0x1)); }
 			bool bEnableShadowCasting(bool val) { mixin(MSBPS(4, 0x1)); }
 			bool bEnableCollision() { mixin(MGBPS(12, 0x1)); }

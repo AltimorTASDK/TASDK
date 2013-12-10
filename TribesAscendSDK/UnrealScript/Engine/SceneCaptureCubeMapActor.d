@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		MaterialInstanceConstant CubeMaterialInst() { mixin(MGPC("MaterialInstanceConstant", 484)); }
-		// WARNING: Property 'StaticMesh' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticMesh'!
 	}
 }

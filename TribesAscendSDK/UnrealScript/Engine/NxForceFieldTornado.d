@@ -3,7 +3,6 @@ module UnrealScript.Engine.NxForceFieldTornado;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NxForceField;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ForceFieldShape;
 
 extern(C++) interface NxForceFieldTornado : NxForceField

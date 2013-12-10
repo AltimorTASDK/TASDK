@@ -21,7 +21,7 @@ public extern(D):
 		@property final auto ref
 		{
 			float Weight() { mixin(MGPS("float", 24)); }
-			// WARNING: Property 'AnimInfo' has the same name as a defined type!
+			AnimNodeSequenceBlendBase.AnimInfo AnimInfoVar() { mixin(MGPS("AnimNodeSequenceBlendBase.AnimInfo", 8)); }
 			ScriptName AnimName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}

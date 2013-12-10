@@ -15,7 +15,7 @@ public extern(D):
 	@property final auto ref
 	{
 		ScriptArray!(int) MorphLODModels() { mixin(MGPC("ScriptArray!(int)", 60)); }
-		// WARNING: Property 'MaterialInstanceConstant' has the same name as a defined type!
+		MaterialInstanceConstant MaterialInstanceConstantVar() { mixin(MGPC("MaterialInstanceConstant", 84)); }
 		ScriptName ScalarParameterName() { mixin(MGPC("ScriptName", 76)); }
 		int MaterialSlotId() { mixin(MGPC("int", 72)); }
 	}

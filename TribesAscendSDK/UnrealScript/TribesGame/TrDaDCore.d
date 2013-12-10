@@ -51,7 +51,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticMeshComponent'!
 		TrDaDShell m_Shell() { mixin(MGPC("TrDaDShell", 1392)); }
 		TrDaDCoreShield m_Shields() { mixin(MGPC("TrDaDCoreShield", 1380)); }
 		TrDaDCapacitor m_Capacitors() { mixin(MGPC("TrDaDCapacitor", 1368)); }

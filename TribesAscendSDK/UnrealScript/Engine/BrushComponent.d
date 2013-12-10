@@ -3,7 +3,6 @@ module UnrealScript.Engine.BrushComponent;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.KMeshProps;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Model;
 import UnrealScript.Engine.PrimitiveComponent;
 
@@ -30,7 +29,7 @@ public extern(D):
 			BrushComponent.KCachedConvexData_Mirror CachedPhysBrushData() { mixin(MGPC("BrushComponent.KCachedConvexData_Mirror", 552)); }
 			Pointer BrushPhysDesc() { mixin(MGPC("Pointer", 548)); }
 			KMeshProps.KAggregateGeom BrushAggGeom() { mixin(MGPC("KMeshProps.KAggregateGeom", 492)); }
-			// WARNING: Property 'Brush' has the same name as a defined type!
+			Model BrushVar() { mixin(MGPC("Model", 488)); }
 		}
 		bool bBlockComplexCollisionTrace() { mixin(MGBPC(568, 0x1)); }
 		bool bBlockComplexCollisionTrace(bool val) { mixin(MSBPC(568, 0x1)); }

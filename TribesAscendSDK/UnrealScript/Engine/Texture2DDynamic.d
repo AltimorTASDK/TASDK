@@ -29,7 +29,7 @@ public extern(D):
 		auto ref
 		{
 			int NumMips() { mixin(MGPC("int", 248)); }
-			// WARNING: Property 'Format' has the same name as a defined type!
+			Texture.EPixelFormat FormatVar() { mixin(MGPC("Texture.EPixelFormat", 244)); }
 			int SizeY() { mixin(MGPC("int", 240)); }
 			int SizeX() { mixin(MGPC("int", 236)); }
 		}

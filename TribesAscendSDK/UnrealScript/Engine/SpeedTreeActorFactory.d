@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.SpeedTreeActorFactory")); }
 	private static __gshared SpeedTreeActorFactory mDefaultProperties;
 	@property final static SpeedTreeActorFactory DefaultProperties() { mixin(MGDPC("SpeedTreeActorFactory", "SpeedTreeActorFactory Engine.Default__SpeedTreeActorFactory")); }
-	// WARNING: Property 'SpeedTree' has the same name as a defined type!
+	@property final auto ref SpeedTree SpeedTreeVar() { mixin(MGPC("SpeedTree", 92)); }
 }

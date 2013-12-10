@@ -36,7 +36,7 @@ public extern(D):
 		{
 			UObject.ETickingGroup TickGroup() { mixin(MGPC("UObject.ETickingGroup", 84)); }
 			Actor Owner() { mixin(MGPC("Actor", 76)); }
-			// WARNING: Property 'Scene' has the same name as a defined type!
+			Pointer SceneVar() { mixin(MGPC("Pointer", 72)); }
 		}
 		bool bNeedsUpdateTransform() { mixin(MGBPC(80, 0x8)); }
 		bool bNeedsUpdateTransform(bool val) { mixin(MSBPC(80, 0x8)); }

@@ -125,7 +125,7 @@ public extern(D):
 			float Scale() { mixin(MGPS("float", 12)); }
 			float Y() { mixin(MGPS("float", 8)); }
 			float X() { mixin(MGPS("float", 4)); }
-			// WARNING: Property 'Component' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Component'!
 		}
 	}
 	struct TerrainDecoration
@@ -142,7 +142,7 @@ public extern(D):
 			float Density() { mixin(MGPS("float", 12)); }
 			float MaxScale() { mixin(MGPS("float", 8)); }
 			float MinScale() { mixin(MGPS("float", 4)); }
-			// WARNING: Property 'Factory' has the same name as a defined type!
+			PrimitiveComponentFactory FactoryVar() { mixin(MGPS("PrimitiveComponentFactory", 0)); }
 		}
 	}
 	struct TerrainMaterialResource

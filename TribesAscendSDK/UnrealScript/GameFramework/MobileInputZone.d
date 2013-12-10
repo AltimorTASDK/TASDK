@@ -93,7 +93,7 @@ public extern(D):
 		{
 			UObject.Color RenderColor() { mixin(MGPC("UObject.Color", 180)); }
 			float AnimatingFadeOpacity() { mixin(MGPC("float", 376)); }
-			// WARNING: Property 'State' has the same name as a defined type!
+			MobileInputZone.EZoneState StateVar() { mixin(MGPC("MobileInputZone.EZoneState", 61)); }
 			float InactiveAlpha() { mixin(MGPC("float", 184)); }
 			float TransitionTime() { mixin(MGPC("float", 384)); }
 			float ActivateTime() { mixin(MGPC("float", 172)); }

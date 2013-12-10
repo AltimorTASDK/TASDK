@@ -160,7 +160,7 @@ public extern(D):
 			Material.ColorMaterialInput CustomSkylightDiffuse() { mixin(MGPC("Material.ColorMaterialInput", 740)); }
 			Material.ColorMaterialInput CustomLighting() { mixin(MGPC("Material.ColorMaterialInput", 704)); }
 			EngineTypes.EMaterialTessellationMode D3D11TessellationMode() { mixin(MGPC("EngineTypes.EMaterialTessellationMode", 702)); }
-			// WARNING: Property 'LightingModel' has the same name as a defined type!
+			EngineTypes.EMaterialLightingModel LightingModelVar() { mixin(MGPC("EngineTypes.EMaterialLightingModel", 701)); }
 			EngineTypes.EBlendMode BlendMode() { mixin(MGPC("EngineTypes.EBlendMode", 700)); }
 			Material.Vector2MaterialInput Distortion() { mixin(MGPC("Material.Vector2MaterialInput", 660)); }
 			float OpacityMaskClipValue() { mixin(MGPC("float", 656)); }
@@ -176,7 +176,7 @@ public extern(D):
 			PhysicalMaterial BlackPhysicalMaterial() { mixin(MGPC("PhysicalMaterial", 352)); }
 			int PhysMaterialMaskUVChannel() { mixin(MGPC("int", 348)); }
 			Texture2D PhysMaterialMask() { mixin(MGPC("Texture2D", 344)); }
-			// WARNING: Property 'PhysicalMaterial' has the same name as a defined type!
+			ScriptClass PhysicalMaterialVar() { mixin(MGPC("ScriptClass", 340)); }
 			PhysicalMaterial PhysMaterial() { mixin(MGPC("PhysicalMaterial", 336)); }
 		}
 		bool bIsPreviewMaterial() { mixin(MGBPC(1132, 0x1000)); }

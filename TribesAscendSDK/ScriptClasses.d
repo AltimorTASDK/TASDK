@@ -5,6 +5,7 @@ private import std.math;
 private import std.encoding;
 private import std.c.string;
 private import std.c.stdlib;
+private import IndentedStreamWriter;
 
 private import Flags : Flags;
 
@@ -78,7 +79,7 @@ private:
 	int mIndex;
 	int mInstanceNumber;
 	
-	static ScriptArray!(ScriptNameEntry*)* mNameArray;
+	static __gshared ScriptArray!(ScriptNameEntry*)* mNameArray;
 
 public:
 	final string GetName()
@@ -115,12 +116,12 @@ public:
 		final auto ref ScriptObject ObjectArchetype() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x38); }							// 0x38 (0x04)
 	}
 
-	private static ScriptArray!(ScriptObject)* mObjectArray;
+	private static __gshared ScriptArray!(ScriptObject)* mObjectArray;
 	@property final static ScriptArray!(ScriptObject)* ObjectArray() { return mObjectArray; }
 	
-	private static ScriptClass[string] mClassLookup;
-	private static ScriptFunction[string] mFunctionLookup;
-	private static ScriptStruct[string] mStructLookup;
+	//private static __gshared ScriptClass[string] mClassLookup;
+	//private static __gshared ScriptFunction[string] mFunctionLookup;
+	//private static __gshared ScriptStruct[string] mStructLookup;
 	final static void SetObjectArray(ScriptArray!(ScriptObject)* arr)
 	{
 		mObjectArray = arr;
@@ -154,15 +155,21 @@ public:
 		//else static if (is(T == ScriptStruct))
 		//	return mStructLookup.get(name, null);
 		//else
+		//{
+		IndentedStreamWriter wtr = new IndentedStreamWriter( "TribesAscendSDK-Log.txt" );
+		wtr.WriteLine("%s", name);
+
+		for(int i = 0; i < ObjectArray.Count; i++)
 		{
-			for(int i = 0; i < ObjectArray.Count; i++)
+			ScriptObject object = (*ObjectArray)[i];
+
+			if(object.GetFullName() == name)
 			{
-				ScriptObject object = (*ObjectArray)[i];
-				if(object.GetFullName() == name)
-					return cast(T)object;
+				return cast(T)object;
 			}
-			return null;
 		}
+		return null;
+		//}
 	}
 
 	final immutable(string) GetName() { return Name.GetName(); }
@@ -183,7 +190,7 @@ public:
 
 	
 private:
-	void Vfunc00();
+	/*void Vfunc00();
 	void Vfunc01();
 	void Vfunc02();
 	void Vfunc03();
@@ -248,9 +255,33 @@ private:
 	void Vfunc62();
 	void Vfunc63();
 	void Vfunc64();
-	void Vfunc65();
+	void Vfunc65();*/
 public:
-	extern(C) void ProcessEvent(ScriptFunction func, void* params, void* result);
+	extern(C) final void ProcessEvent(ScriptFunction func, void* params, void* result)
+	{
+		asm
+		{
+			naked;
+			
+			push EBP;
+			mov EBP, ESP;
+
+			push EAX;
+			
+			push dword ptr [EBP+0x14];
+			push dword ptr [EBP+0x10];
+			push dword ptr [EBP+0xC];
+			mov ECX, [EBP+0x8];
+			mov EAX, [ECX];
+			call [EAX+0x108];
+
+			pop EAX;
+
+			pop EBP;
+			
+			ret;
+		}
+	}
 }
 
 public enum ScriptObjectFlags : ulong
@@ -719,11 +750,11 @@ extern(C++) public interface ScriptProperty : ScriptField // Total size: 0x80
 public:
 	@property
 	{
-		final auto ref uint ArrayDimentions() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x40); }													// 0x40 (0x04)
-		final auto ref uint ElementSize() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x44); }														// 0x44 (0x04)
-		final auto ref Flags!(ScriptPropertyFlags) PropertyFlags() { return *cast(Flags!(ScriptPropertyFlags)*)(cast(size_t)cast(void*)this + 0x48); }		// 0x48 (0x08)
+		final auto ref uint ArrayDimentions() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x40); }												// 0x40 (0x04)
+		final auto ref uint ElementSize() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x44); }													// 0x44 (0x04)
+		final auto ref Flags!(ScriptPropertyFlags) PropertyFlags() { return *cast(Flags!(ScriptPropertyFlags)*)(cast(size_t)cast(void*)this + 0x48); }	// 0x48 (0x08)
 		// __padding1__ 0x50 (0x10)
-		final auto ref uint Offset() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x60); }															// 0x60 (0x04)
+		final auto ref uint Offset() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x60); }														// 0x60 (0x04)
 		// __padding2__ 0x64 (0x1C)
 
 

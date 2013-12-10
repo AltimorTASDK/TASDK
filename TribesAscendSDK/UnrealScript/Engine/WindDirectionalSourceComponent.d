@@ -3,7 +3,6 @@ module UnrealScript.Engine.WindDirectionalSourceComponent;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.ActorComponent;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface WindDirectionalSourceComponent : ActorComponent
 {

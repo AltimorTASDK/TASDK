@@ -2,7 +2,6 @@ module UnrealScript.Engine.AnimationCompressionAlgorithm_PerTrackCompression;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.AnimSequence;
 import UnrealScript.Engine.AnimationCompressionAlgorithm_RemoveLinearKeys;
 

@@ -2,7 +2,6 @@ module UnrealScript.Engine.InterpTrackInstFloatProp;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.InterpTrackInstProperty;
 
 extern(C++) interface InterpTrackInstFloatProp : InterpTrackInstProperty

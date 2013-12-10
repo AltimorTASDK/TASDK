@@ -16,7 +16,7 @@ public extern(D):
 	@property final auto ref
 	{
 		ScriptName AnimSequenceName() { mixin(MGPC("ScriptName", 100)); }
-		// WARNING: Property 'AnimSet' has the same name as a defined type!
-		// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
+		AnimSet AnimSetVar() { mixin(MGPC("AnimSet", 96)); }
+		SkeletalMesh SkeletalMeshVar() { mixin(MGPC("SkeletalMesh", 92)); }
 	}
 }

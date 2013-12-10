@@ -19,7 +19,7 @@ public extern(D):
 		{
 			ScriptArray!(EngineTypes.MaterialReferenceList) Materials() { mixin(MGPC("ScriptArray!(EngineTypes.MaterialReferenceList)", 148)); }
 			ScriptName ParamName() { mixin(MGPC("ScriptName", 164)); }
-			// WARNING: Property 'Material' has the same name as a defined type!
+			MaterialInterface MaterialVar() { mixin(MGPC("MaterialInterface", 160)); }
 		}
 		bool bNeedsMaterialRefsUpdate() { mixin(MGBPC(172, 0x1)); }
 		bool bNeedsMaterialRefsUpdate(bool val) { mixin(MSBPC(172, 0x1)); }

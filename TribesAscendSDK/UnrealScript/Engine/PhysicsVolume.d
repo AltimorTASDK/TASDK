@@ -95,7 +95,7 @@ public extern(D):
 			float PainInterval() { mixin(MGPC("float", 560)); }
 			float FluidFriction() { mixin(MGPC("float", 556)); }
 			int Priority() { mixin(MGPC("int", 552)); }
-			// WARNING: Property 'DamageType' has the same name as a defined type!
+			ScriptClass DamageTypeVar() { mixin(MGPC("ScriptClass", 548)); }
 			float TerminalVelocity() { mixin(MGPC("float", 540)); }
 			float GroundFriction() { mixin(MGPC("float", 536)); }
 			Vector ZoneVelocity() { mixin(MGPC("Vector", 520)); }

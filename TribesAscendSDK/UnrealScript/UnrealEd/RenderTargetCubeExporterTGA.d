@@ -15,5 +15,5 @@ public extern(D):
 	{
 		CubeFace_MAX = 0,
 	}
-	// WARNING: Property 'CubeFace' has the same name as a defined type!
+	@property final auto ref RenderTargetCubeExporterTGA.CubeFace CubeFaceVar() { mixin(MGPC("RenderTargetCubeExporterTGA.CubeFace", 100)); }
 }

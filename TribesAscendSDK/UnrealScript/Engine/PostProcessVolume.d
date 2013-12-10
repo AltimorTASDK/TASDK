@@ -178,7 +178,7 @@ public extern(D):
 		auto ref
 		{
 			PostProcessVolume NextLowerPriorityVolume() { mixin(MGPC("PostProcessVolume", 744)); }
-			// WARNING: Property 'Settings' has the same name as a defined type!
+			PostProcessVolume.PostProcessSettings SettingsVar() { mixin(MGPC("PostProcessVolume.PostProcessSettings", 524)); }
 			float Priority() { mixin(MGPC("float", 520)); }
 		}
 		bool bEnabled() { mixin(MGBPC(748, 0x1)); }

@@ -78,7 +78,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct TribesGame.GFxTrPage_Main.BundleData")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Model' has the same name as a defined type!
+			TrObject.EContentDataType ModelVar() { mixin(MGPS("TrObject.EContentDataType", 4)); }
 			int LootId() { mixin(MGPS("int", 0)); }
 		}
 	}

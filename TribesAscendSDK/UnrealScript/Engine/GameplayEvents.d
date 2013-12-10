@@ -131,7 +131,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.GameplayEvents.GameStatGroup")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Level' has the same name as a defined type!
+			int LevelVar() { mixin(MGPS("int", 4)); }
 			GameplayEvents.EGameStatGroups Group() { mixin(MGPS("GameplayEvents.EGameStatGroups", 0)); }
 		}
 	}

@@ -3,7 +3,6 @@ module UnrealScript.Engine.NxForceFieldGenericComponent;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NxForceFieldComponent;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.NxForceFieldGeneric;
 
 extern(C++) interface NxForceFieldGenericComponent : NxForceFieldComponent

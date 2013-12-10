@@ -47,7 +47,7 @@ public extern(D):
 		ScriptString StringC() { mixin(MGPC("ScriptString", 1404)); }
 		ScriptString StringB() { mixin(MGPC("ScriptString", 1392)); }
 		ScriptString StringA() { mixin(MGPC("ScriptString", 1380)); }
-		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticMeshComponent'!
 		int m_CapacitorIndex() { mixin(MGPC("int", 1372)); }
 		TrDaDCore m_Core() { mixin(MGPC("TrDaDCore", 1368)); }
 		float m_fShieldBarPlacementY() { mixin(MGPC("float", 1364)); }

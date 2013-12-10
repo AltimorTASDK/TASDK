@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineGameSearch;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataStore_Remote;
 import UnrealScript.Engine.UIDataProvider_Settings;
 

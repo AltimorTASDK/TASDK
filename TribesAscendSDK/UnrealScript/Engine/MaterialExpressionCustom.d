@@ -27,7 +27,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.MaterialExpressionCustom.CustomInput")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Input' has the same name as a defined type!
+			MaterialExpression.ExpressionInput InputVar() { mixin(MGPS("MaterialExpression.ExpressionInput", 12)); }
 			ScriptString InputName() { mixin(MGPS("ScriptString", 0)); }
 		}
 	}

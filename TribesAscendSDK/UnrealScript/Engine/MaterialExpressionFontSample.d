@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		int FontTexturePage() { mixin(MGPC("int", 112)); }
-		// WARNING: Property 'Font' has the same name as a defined type!
+		Font FontVar() { mixin(MGPC("Font", 108)); }
 	}
 }

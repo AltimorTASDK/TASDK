@@ -16,6 +16,6 @@ public extern(D):
 	{
 		float Height() { mixin(MGPC("float", 496)); }
 		float Width() { mixin(MGPC("float", 492)); }
-		// WARNING: Property 'Texture' has the same name as a defined type!
+		Texture TextureVar() { mixin(MGPC("Texture", 488)); }
 	}
 }

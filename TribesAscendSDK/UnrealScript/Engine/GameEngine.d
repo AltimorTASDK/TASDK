@@ -86,7 +86,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.GameEngine.NamedNetDriver")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'NetDriver' has the same name as a defined type!
+			Pointer NetDriverVar() { mixin(MGPS("Pointer", 8)); }
 			ScriptName NetDriverName() { mixin(MGPS("ScriptName", 0)); }
 		}
 	}
@@ -118,7 +118,7 @@ public extern(D):
 			ScriptArray!(ScriptString) ServerActors() { mixin(MGPC("ScriptArray!(ScriptString)", 1636)); }
 			ScriptString TravelURL() { mixin(MGPC("ScriptString", 1648)); }
 			ubyte TravelType() { mixin(MGPC("ubyte", 1660)); }
-			// WARNING: Property 'OnlineSubsystem' has the same name as a defined type!
+			OnlineSubsystem OnlineSubsystemVar() { mixin(MGPC("OnlineSubsystem", 1668)); }
 			DownloadableContentEnumerator DLCEnumerator() { mixin(MGPC("DownloadableContentEnumerator", 1672)); }
 			ScriptString DownloadableContentEnumeratorClassName() { mixin(MGPC("ScriptString", 1676)); }
 			DownloadableContentManager DLCManager() { mixin(MGPC("DownloadableContentManager", 1688)); }

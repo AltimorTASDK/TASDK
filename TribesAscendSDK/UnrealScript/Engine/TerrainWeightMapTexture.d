@@ -3,7 +3,6 @@ module UnrealScript.Engine.TerrainWeightMapTexture;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.Texture2D;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Terrain;
 
 extern(C++) interface TerrainWeightMapTexture : Texture2D

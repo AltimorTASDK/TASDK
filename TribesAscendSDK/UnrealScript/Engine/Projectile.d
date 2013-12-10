@@ -69,7 +69,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 			float NetCullDistanceSquared() { mixin(MGPC("float", 528)); }
 			Actor ImpactedActor() { mixin(MGPC("Actor", 524)); }
 			Controller InstigatorController() { mixin(MGPC("Controller", 520)); }

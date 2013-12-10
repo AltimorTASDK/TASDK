@@ -3,7 +3,6 @@ module UnrealScript.Engine.CrowdAgentBase;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.Actor;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface CrowdAgentBase : Actor
 {

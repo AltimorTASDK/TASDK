@@ -16,7 +16,7 @@ public extern(D):
 		auto ref
 		{
 			float KillZ() { mixin(MGPC("float", 476)); }
-			// WARNING: Property 'KillZDamageType' has the same name as a defined type!
+			ScriptClass KillZDamageTypeVar() { mixin(MGPC("ScriptClass", 484)); }
 			float SoftKill() { mixin(MGPC("float", 480)); }
 		}
 		bool bSoftKillZ() { mixin(MGBPC(488, 0x1)); }

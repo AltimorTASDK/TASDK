@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC("Class Engine.MaterialEffect")); }
 	private static __gshared MaterialEffect mDefaultProperties;
 	@property final static MaterialEffect DefaultProperties() { mixin(MGDPC("MaterialEffect", "MaterialEffect Engine.Default__MaterialEffect")); }
-	// WARNING: Property 'Material' has the same name as a defined type!
+	@property final auto ref MaterialInterface MaterialVar() { mixin(MGPC("MaterialInterface", 100)); }
 }

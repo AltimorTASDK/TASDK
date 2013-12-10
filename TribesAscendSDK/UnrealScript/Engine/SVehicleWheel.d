@@ -3,7 +3,6 @@ module UnrealScript.Engine.SVehicleWheel;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.SkelControlWheel;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleSystem;
 import UnrealScript.Core.Component;
 

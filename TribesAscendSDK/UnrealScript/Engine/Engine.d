@@ -198,7 +198,7 @@ public extern(D):
 			int GameCycles() { mixin(MGPC("int", 1184)); }
 			int TickCycles() { mixin(MGPC("int", 1180)); }
 			GameViewportClient GameViewport() { mixin(MGPC("GameViewportClient", 1164)); }
-			// WARNING: Property 'Client' has the same name as a defined type!
+			Client ClientVar() { mixin(MGPC("Client", 1148)); }
 			float TimeBetweenPurgingPendingKillObjects() { mixin(MGPC("float", 1144)); }
 			ScriptString DefaultSoundName() { mixin(MGPC("ScriptString", 1132)); }
 			SoundNodeWave DefaultSound() { mixin(MGPC("SoundNodeWave", 1128)); }

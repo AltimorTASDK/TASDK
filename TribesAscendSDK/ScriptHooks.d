@@ -42,14 +42,22 @@ public enum HookType
 	Block,
 }
 
+public enum HookOrder
+{
+	Pre,
+	Post,
+}
+
 public struct HookInfo
 {
 private:
 	HookFunction mFunctionHook;
 	ScriptFunction mHookTarget;
 	NativeFunction mOriginalFunction;
+	ScriptProperty mReturnParam;
 	int[] mArgumentSizes;
 	int mStackSize;
+	HookOrder mOrder;
 	
 public:
 	@property
@@ -57,8 +65,10 @@ public:
 		auto ref HookFunction FunctionHook() { return mFunctionHook; }
 		auto ref ScriptFunction HookTarget() { return mHookTarget; }
 		auto ref NativeFunction OriginalFunction() { return mOriginalFunction; }
+		auto ref ScriptProperty ReturnParam() { return mReturnParam; }
 		auto ref int[] ArgumentSizes() { return mArgumentSizes; }
 		auto ref int StackSize() { return mStackSize; }
+		auto ref HookOrder Order() { return mOrder; }
 	}
 }
 version(D_InlineAsm_X86)
@@ -176,8 +186,8 @@ public:
 			if (func == cast(size_t)cast(void*)mHookArray[i].HookTarget)
 			{
 				int argOffset = mHookArray[i].StackSize;
-				byte* funcArgs = cast(byte*)malloc(argOffset);
-				
+				byte* funcArgs = cast(byte*)malloc(argOffset + 3);
+
 				if (retAddr >= cast(size_t)mCallFunction && retAddr <= cast(size_t)mCallFunction + 0x100)
 				{
 					for (uint paramNum = 0; *stack.Code != 0x16 && paramNum < mHookArray[i].ArgumentSizes.length; paramNum++) //copy args to buffer, respecting LIFO
@@ -196,56 +206,103 @@ public:
 						}
 						//mNativeArray[*stack.Code++](stack.ParentObject, stack, funcArgs + argOffset);
 					}
-					
-					//OutputLog( "Function: %s\n", hook_array[ i ].hook_target->GetName() );
-					if(CallHook(mHookArray[i].FunctionHook, stack.ParentObject, mHookArray[i].StackSize, result, funcArgs) == HookType.Block)
+
+					stack.Code = origCode;
+
+
+					if (mHookArray[i].Order == HookOrder.Post)
 					{
+						if (mHookArray[i].OriginalFunction)
+						{
+							mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
+							
+							ScriptFunction ht = mHookArray[i].HookTarget;
+							asm
+							{
+								mov ECX, thisPtr;
+								push ht;
+								push result;
+								push stack;
+								call mCallFunction;
+							}
+							
+							mHookArray[i].HookTarget.Function = &HookThunk;
+						}
+						else
+						{
+							mHookArray[i].HookTarget.FunctionFlags.UnsetFlag(ScriptFunctionFlags.Native);
+							
+							ScriptFunction ht = mHookArray[i].HookTarget;
+							asm
+							{
+								mov ECX, thisPtr;
+								push ht;
+								push result;
+								push stack;
+								call mCallFunction;
+							}
+							
+							mHookArray[i].HookTarget.FunctionFlags.SetFlag(ScriptFunctionFlags.Native);
+						}
+					}
+
+					if(CallHook(mHookArray[i].FunctionHook, stack.ParentObject, mHookArray[i].StackSize, result, funcArgs + argOffset) == HookType.Block)
+					{
+						if(mHookArray[i].ReturnParam)
+							mHookArray[i].ReturnParam.PropertyFlags.UnsetFlag(~ScriptPropertyFlags.Param);
+
 						mCleanupStack(stack, result, mHookArray[i].HookTarget);
+
+						if(mHookArray[i].ReturnParam)
+							mHookArray[i].ReturnParam.PropertyFlags.SetFlag(~ScriptPropertyFlags.Param);
+
 						free(funcArgs);
 						return;
 					}
 					
 					free(funcArgs);
-					stack.Code = origCode;
-					
-					if(mHookArray[i].OriginalFunction)
+
+					if (mHookArray[i].Order == HookOrder.Pre)
 					{
-						mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
-						
-						ScriptFunction ht = mHookArray[i].HookTarget;
-						asm
+						if (mHookArray[i].OriginalFunction)
 						{
-							mov ECX, thisPtr;
-							push ht;
-							push result;
-							push stack;
-							call mCallFunction;
+							mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
+							
+							ScriptFunction ht = mHookArray[i].HookTarget;
+							asm
+							{
+								mov ECX, thisPtr;
+								push ht;
+								push result;
+								push stack;
+								call mCallFunction;
+							}
+							//mCallFunction(thisPtr, stack, result, mHookArray[i].HookTarget);
+							mHookArray[i].HookTarget.Function = &HookThunk;
 						}
-						//mCallFunction(thisPtr, stack, result, mHookArray[i].HookTarget);
-						mHookArray[i].HookTarget.Function = &HookThunk;
-					}
-					else
-					{
-						mHookArray[i].HookTarget.FunctionFlags.UnsetFlag(ScriptFunctionFlags.Native);
-						
-						ScriptFunction ht = mHookArray[i].HookTarget;
-						asm
+						else
 						{
-							mov ECX, thisPtr;
-							push ht;
-							push result;
-							push stack;
-							call mCallFunction;
+							mHookArray[i].HookTarget.FunctionFlags.UnsetFlag(ScriptFunctionFlags.Native);
+							
+							ScriptFunction ht = mHookArray[i].HookTarget;
+							asm
+							{
+								mov ECX, thisPtr;
+								push ht;
+								push result;
+								push stack;
+								call mCallFunction;
+							}
+							//mCallFunction(thisPtr, stack, result, mHookArray[i].HookTarget);
+							mHookArray[i].HookTarget.FunctionFlags.SetFlag(ScriptFunctionFlags.Native);
 						}
-						//mCallFunction(thisPtr, stack, result, mHookArray[i].HookTarget);
-						mHookArray[i].HookTarget.FunctionFlags.SetFlag(ScriptFunctionFlags.Native);
 					}
 				}
 				else
 				{
 					ubyte* params = *cast(ubyte**)(**GetEBP() + 0xC);
 					int paramsOffset = 0;
-					
+
 					for (uint paramNum = 0; paramNum < mHookArray[i].ArgumentSizes.length; paramNum++) //copy args to buffer, respecting LIFO
 					{
 						argOffset -= mHookArray[i].ArgumentSizes[paramNum];
@@ -254,26 +311,45 @@ public:
 						
 						paramsOffset += mHookArray[i].ArgumentSizes[paramNum];
 					}
-					
-					if(CallHook(mHookArray[i].FunctionHook, stack.ParentObject, mHookArray[i].StackSize, result, funcArgs) == HookType.Block)
+
+					if (mHookArray[i].Order == HookOrder.Post)
+					{
+						if (mHookArray[i].OriginalFunction)
+						{
+							mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
+							thisPtr.ProcessEvent(mHookArray[i].HookTarget, params, result);
+							mHookArray[i].HookTarget.Function = &HookThunk;
+						}
+						else
+						{
+							mHookArray[i].HookTarget.FunctionFlags.UnsetFlag(ScriptFunctionFlags.Native);
+							thisPtr.ProcessEvent(mHookArray[i].HookTarget, params, result);
+							mHookArray[i].HookTarget.FunctionFlags.SetFlag(ScriptFunctionFlags.Native);
+						}
+					}
+
+					if(CallHook(mHookArray[i].FunctionHook, stack.ParentObject, mHookArray[i].StackSize, result, funcArgs + argOffset) == HookType.Block)
 					{
 						free(funcArgs);
 						return;
 					}
 					
 					free(funcArgs);
-					
-					if(mHookArray[i].OriginalFunction)
+
+					if (mHookArray[i].Order == HookOrder.Pre)
 					{
-						mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
-						thisPtr.ProcessEvent(mHookArray[i].HookTarget, params, result);
-						mHookArray[i].HookTarget.Function = &HookThunk;
-					}
-					else
-					{
-						mHookArray[i].HookTarget.FunctionFlags.UnsetFlag(ScriptFunctionFlags.Native);
-						thisPtr.ProcessEvent(mHookArray[i].HookTarget, params, result);
-						mHookArray[i].HookTarget.FunctionFlags.SetFlag(ScriptFunctionFlags.Native);
+						if (mHookArray[i].OriginalFunction)
+						{
+							mHookArray[i].HookTarget.Function = mHookArray[i].OriginalFunction;
+							thisPtr.ProcessEvent(mHookArray[i].HookTarget, params, result);
+							mHookArray[i].HookTarget.Function = &HookThunk;
+						}
+						else
+						{
+							mHookArray[i].HookTarget.FunctionFlags.UnsetFlag(ScriptFunctionFlags.Native);
+							thisPtr.ProcessEvent(mHookArray[i].HookTarget, params, result);
+							mHookArray[i].HookTarget.FunctionFlags.SetFlag(ScriptFunctionFlags.Native);
+						}
 					}
 				}
 				
@@ -283,23 +359,24 @@ public:
 		}
 	}
 	
-	static void AddHook(immutable string functionName, void* hook)
+	static void AddHook(immutable string functionName, void* hook, HookOrder order)
 	{
 		ScriptFunction scriptFunction = ScriptObject.Find!(ScriptFunction)(functionName);
 		IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDK-Error.txt");
 		
 		if(scriptFunction)
-			AddHook(scriptFunction, hook);
+			AddHook(scriptFunction, hook, order);
 		else
 			wtr.WriteLine( "Failed to find function %s.", functionName );
 	}
 	
-	static void AddHook(ScriptFunction scriptFunction, void* hook)
+	static void AddHook(ScriptFunction scriptFunction, void* hook, HookOrder order)
 	{
 		HookInfo newHook;
 		
 		newHook.FunctionHook = cast(HookFunction)hook;
 		newHook.HookTarget = scriptFunction;
+		newHook.Order = order;
 		
 		newHook.StackSize = 0;
 		
@@ -318,8 +395,15 @@ public:
 			if(scriptProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.Param))
 			{
 				//OutputLog( "Arg %s size %i\n", script_property->GetName(), script_property->element_size );
-				newHook.ArgumentSizes ~= scriptProperty.ElementSize;
-				newHook.StackSize += scriptProperty.ElementSize;
+				if(scriptProperty.IsReturnParameter())
+				{
+					newHook.mReturnParam = scriptProperty;
+				}
+				else
+				{
+					newHook.ArgumentSizes ~= scriptProperty.ElementSize;
+					newHook.StackSize += scriptProperty.ElementSize;
+				}
 			}
 		}
 		

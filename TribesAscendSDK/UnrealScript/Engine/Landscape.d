@@ -3,7 +3,6 @@ module UnrealScript.Engine.Landscape;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.MaterialInstanceConstant;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Info;
 import UnrealScript.Engine.EngineTypes;
 import UnrealScript.Engine.Material;

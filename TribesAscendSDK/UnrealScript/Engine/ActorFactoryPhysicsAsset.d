@@ -19,8 +19,8 @@ public extern(D):
 		{
 			Vector DrawScale3D() { mixin(MGPC("Vector", 116)); }
 			Vector InitialVelocity() { mixin(MGPC("Vector", 104)); }
-			// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
-			// WARNING: Property 'PhysicsAsset' has the same name as a defined type!
+			SkeletalMesh SkeletalMeshVar() { mixin(MGPC("SkeletalMesh", 96)); }
+			PhysicsAsset PhysicsAssetVar() { mixin(MGPC("PhysicsAsset", 92)); }
 		}
 		bool bCastDynamicShadow() { mixin(MGBPC(100, 0x10)); }
 		bool bCastDynamicShadow(bool val) { mixin(MSBPC(100, 0x10)); }

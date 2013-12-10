@@ -23,7 +23,7 @@ public extern(D):
 		{
 			Actor Instigator() { mixin(MGPC("Actor", 252)); }
 			float Amount() { mixin(MGPC("float", 240)); }
-			// WARNING: Property 'DamageType' has the same name as a defined type!
+			ScriptClass DamageTypeVar() { mixin(MGPC("ScriptClass", 232)); }
 			float Momentum() { mixin(MGPC("float", 236)); }
 			float Radius() { mixin(MGPC("float", 244)); }
 		}

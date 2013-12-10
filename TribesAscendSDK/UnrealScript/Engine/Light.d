@@ -27,7 +27,7 @@ public extern(D):
 	}
 	@property final
 	{
-		// WARNING: Property 'LightComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightComponent'!
 		bool bEnabled() { mixin(MGBPC(480, 0x1)); }
 		bool bEnabled(bool val) { mixin(MSBPC(480, 0x1)); }
 	}

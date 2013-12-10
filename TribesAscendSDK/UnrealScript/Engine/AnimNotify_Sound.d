@@ -20,7 +20,7 @@ public extern(D):
 			float VolumeMultiplier() { mixin(MGPC("float", 84)); }
 			float PercentToPlay() { mixin(MGPC("float", 80)); }
 			ScriptName BoneName() { mixin(MGPC("ScriptName", 72)); }
-			// WARNING: Property 'SoundCue' has the same name as a defined type!
+			SoundCue SoundCueVar() { mixin(MGPC("SoundCue", 64)); }
 		}
 		bool bIgnoreIfActorHidden() { mixin(MGBPC(68, 0x2)); }
 		bool bIgnoreIfActorHidden(bool val) { mixin(MSBPC(68, 0x2)); }

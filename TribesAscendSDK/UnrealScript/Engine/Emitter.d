@@ -76,7 +76,7 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
-			// WARNING: Property 'ParticleSystemComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ParticleSystemComponent'!
 		}
 		bool bCurrentlyActive() { mixin(MGBPC(484, 0x4)); }
 		bool bCurrentlyActive(bool val) { mixin(MSBPC(484, 0x4)); }

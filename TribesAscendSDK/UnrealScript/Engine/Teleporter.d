@@ -41,7 +41,7 @@ public extern(D):
 			float LastFired() { mixin(MGPC("float", 728)); }
 			Vector TargetVelocity() { mixin(MGPC("Vector", 716)); }
 			ScriptName ProductRequired() { mixin(MGPC("ScriptName", 704)); }
-			// WARNING: Property 'URL' has the same name as a defined type!
+			ScriptString URLVar() { mixin(MGPC("ScriptString", 692)); }
 		}
 		bool bCanTeleportVehicles() { mixin(MGBPC(712, 0x40)); }
 		bool bCanTeleportVehicles(bool val) { mixin(MSBPC(712, 0x40)); }

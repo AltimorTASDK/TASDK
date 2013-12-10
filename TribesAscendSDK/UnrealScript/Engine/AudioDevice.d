@@ -94,7 +94,7 @@ public extern(D):
 			Vector Right() { mixin(MGPS("Vector", 28)); }
 			Vector Up() { mixin(MGPS("Vector", 16)); }
 			Vector Location() { mixin(MGPS("Vector", 4)); }
-			// WARNING: Property 'PortalVolume' has the same name as a defined type!
+			PortalVolume PortalVolumeVar() { mixin(MGPS("PortalVolume", 0)); }
 		}
 	}
 	struct AudioClassInfo

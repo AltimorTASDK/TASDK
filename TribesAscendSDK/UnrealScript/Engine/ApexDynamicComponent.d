@@ -3,7 +3,6 @@ module UnrealScript.Engine.ApexDynamicComponent;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.ApexComponentBase;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface ApexDynamicComponent : ApexComponentBase
 {

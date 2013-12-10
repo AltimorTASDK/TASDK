@@ -155,11 +155,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.ParticleSystemComponent.ParticleSysParam")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Material' has the same name as a defined type!
-			// WARNING: Property 'Actor' has the same name as a defined type!
-			// WARNING: Property 'Color' has the same name as a defined type!
+			MaterialInterface MaterialVar() { mixin(MGPS("MaterialInterface", 52)); }
+			Actor ActorVar() { mixin(MGPS("Actor", 48)); }
+			UObject.Color ColorVar() { mixin(MGPS("UObject.Color", 44)); }
 			Vector Vector_Low() { mixin(MGPS("Vector", 32)); }
-			// WARNING: Property 'Vector' has the same name as a defined type!
+			Vector VectorVar() { mixin(MGPS("Vector", 20)); }
 			float Scalar_Low() { mixin(MGPS("float", 16)); }
 			float Scalar() { mixin(MGPS("float", 12)); }
 			ParticleSystemComponent.EParticleSysParamType ParamType() { mixin(MGPS("ParticleSystemComponent.EParticleSysParamType", 8)); }

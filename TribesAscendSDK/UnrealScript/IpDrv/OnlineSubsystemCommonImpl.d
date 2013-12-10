@@ -3,7 +3,6 @@ module UnrealScript.IpDrv.OnlineSubsystemCommonImpl;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.OnlineSubsystem;
-import UnrealScript.Core.UObject;
 import UnrealScript.IpDrv.OnlineGameInterfaceImpl;
 
 extern(C++) interface OnlineSubsystemCommonImpl : OnlineSubsystem

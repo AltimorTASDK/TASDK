@@ -15,7 +15,7 @@ public extern(D):
 	@property final static DrawFrustumComponent DefaultProperties() { mixin(MGDPC("DrawFrustumComponent", "DrawFrustumComponent Engine.Default__DrawFrustumComponent")); }
 	@property final auto ref
 	{
-		// WARNING: Property 'Texture' has the same name as a defined type!
+		Texture TextureVar() { mixin(MGPC("Texture", 508)); }
 		float FrustumEndDist() { mixin(MGPC("float", 504)); }
 		float FrustumStartDist() { mixin(MGPC("float", 500)); }
 		float FrustumAspectRatio() { mixin(MGPC("float", 496)); }

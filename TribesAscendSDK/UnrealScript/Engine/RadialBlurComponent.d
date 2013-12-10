@@ -50,7 +50,7 @@ public extern(D):
 			float BlurFalloffExponent() { mixin(MGPC("float", 100)); }
 			float BlurScale() { mixin(MGPC("float", 96)); }
 			Scene.ESceneDepthPriorityGroup DepthPriorityGroup() { mixin(MGPC("Scene.ESceneDepthPriorityGroup", 92)); }
-			// WARNING: Property 'Material' has the same name as a defined type!
+			MaterialInterface MaterialVar() { mixin(MGPC("MaterialInterface", 88)); }
 		}
 		bool bEnabled() { mixin(MGBPC(116, 0x2)); }
 		bool bEnabled(bool val) { mixin(MSBPC(116, 0x2)); }

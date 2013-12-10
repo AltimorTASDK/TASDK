@@ -30,7 +30,7 @@ public extern(D):
 			ScriptFunction KillActor() { mixin(MGF("mKillActor", "Function UTGame.UTKillZVolume.KillActor")); }
 		}
 	}
-	// WARNING: Property 'KillZDamageType' has the same name as a defined type!
+	@property final auto ref ScriptClass KillZDamageTypeVar() { mixin(MGPC("ScriptClass", 584)); }
 final:
 	void ActorEnteredVolume(Actor Other)
 	{

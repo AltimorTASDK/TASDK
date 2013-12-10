@@ -3,7 +3,6 @@ module UnrealScript.Engine.NavMeshGoal_Null;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NavigationHandle;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.NavMeshPathGoalEvaluator;
 
 extern(C++) interface NavMeshGoal_Null : NavMeshPathGoalEvaluator

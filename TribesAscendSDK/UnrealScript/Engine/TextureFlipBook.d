@@ -3,7 +3,6 @@ module UnrealScript.Engine.TextureFlipBook;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.Texture2D;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface TextureFlipBook : Texture2D
 {

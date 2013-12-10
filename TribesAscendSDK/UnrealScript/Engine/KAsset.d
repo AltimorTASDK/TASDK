@@ -48,7 +48,7 @@ public extern(D):
 		{
 			PhysicsAsset ReplicatedPhysAsset() { mixin(MGPC("PhysicsAsset", 488)); }
 			SkeletalMesh ReplicatedMesh() { mixin(MGPC("SkeletalMesh", 484)); }
-			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkeletalMeshComponent'!
 		}
 		bool bBlockPawns() { mixin(MGBPC(480, 0x4)); }
 		bool bBlockPawns(bool val) { mixin(MSBPC(480, 0x4)); }

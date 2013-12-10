@@ -2,7 +2,6 @@ module UnrealScript.Engine.LineBatchComponent;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 
 extern(C++) interface LineBatchComponent : PrimitiveComponent

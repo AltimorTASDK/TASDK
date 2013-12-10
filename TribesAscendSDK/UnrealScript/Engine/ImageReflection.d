@@ -13,7 +13,7 @@ public extern(D):
 	@property final static ImageReflection DefaultProperties() { mixin(MGDPC("ImageReflection", "ImageReflection Engine.Default__ImageReflection")); }
 	@property final auto ref
 	{
-		// WARNING: Property 'ImageReflectionComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImageReflectionComponent'!
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ReflectionComponent'!
 	}
 }

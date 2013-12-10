@@ -25,7 +25,7 @@ public extern(D):
 	{
 		float DisplacementScale() { mixin(MGPC("float", 156)); }
 		Texture2D DisplacementMap() { mixin(MGPC("Texture2D", 152)); }
-		// WARNING: Property 'Material' has the same name as a defined type!
+		MaterialInterface MaterialVar() { mixin(MGPC("MaterialInterface", 148)); }
 		float MappingPanV() { mixin(MGPC("float", 144)); }
 		float MappingPanU() { mixin(MGPC("float", 140)); }
 		float MappingRotation() { mixin(MGPC("float", 136)); }

@@ -54,7 +54,7 @@ public extern(D):
 		@property final auto ref
 		{
 			Pointer RenderData() { mixin(MGPS("Pointer", 4)); }
-			// WARNING: Property 'Component' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Component'!
 		}
 	}
 	@property final
@@ -104,7 +104,7 @@ void*)", 724)); }
 			float TileX() { mixin(MGPC("float", 500)); }
 			float Height() { mixin(MGPC("float", 496)); }
 			float Width() { mixin(MGPC("float", 492)); }
-			// WARNING: Property 'DecalMaterial' has the same name as a defined type!
+			MaterialInterface DecalMaterialVar() { mixin(MGPC("MaterialInterface", 488)); }
 		}
 		bool bHasBeenAttached() { mixin(MGBPC(604, 0x800)); }
 		bool bHasBeenAttached(bool val) { mixin(MSBPC(604, 0x800)); }

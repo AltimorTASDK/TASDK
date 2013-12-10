@@ -252,8 +252,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.CoverLink.CoverReference")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Guid' has the same name as a defined type!
-			// WARNING: Property 'Actor' has the same name as a defined type!
+			UObject.Guid GuidVar() { mixin(MGPS("UObject.Guid", 4)); }
+			Actor ActorVar() { mixin(MGPS("Actor", 0)); }
 		}
 		@property final auto ref int SlotIdx() { mixin(MGPS("int", 20)); }
 	}

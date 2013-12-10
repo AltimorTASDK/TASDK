@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.SeqAct_Toggle;
 import UnrealScript.Engine.Actor;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 
 extern(C++) interface NxForceField : Actor

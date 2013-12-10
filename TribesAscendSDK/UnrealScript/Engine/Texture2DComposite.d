@@ -35,7 +35,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS("ScriptStruct Engine.Texture2DComposite.SourceTexture2DRegion")); }
 		@property final auto ref
 		{
-			// WARNING: Property 'Texture2D' has the same name as a defined type!
+			Texture2D Texture2DVar() { mixin(MGPS("Texture2D", 16)); }
 			int SizeY() { mixin(MGPS("int", 12)); }
 			int SizeX() { mixin(MGPS("int", 8)); }
 			int OffsetY() { mixin(MGPS("int", 4)); }

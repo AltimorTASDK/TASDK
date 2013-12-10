@@ -69,7 +69,7 @@ public extern(D):
 		{
 			Vector Scale3D() { mixin(MGPS("Vector", 8)); }
 			float Chance() { mixin(MGPS("float", 4)); }
-			// WARNING: Property 'StaticMesh' has the same name as a defined type!
+			StaticMesh StaticMeshVar() { mixin(MGPS("StaticMesh", 0)); }
 		}
 	}
 	@property final
@@ -95,7 +95,7 @@ public extern(D):
 			AnimNodeSequence ActionSeqNode() { mixin(MGPC("AnimNodeSequence", 976)); }
 			AnimNodeSlot FullBodySlot() { mixin(MGPC("AnimNodeSlot", 972)); }
 			AnimNodeBlend SpeedBlendNode() { mixin(MGPC("AnimNodeBlend", 968)); }
-			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkeletalMeshComponent'!
 		}
 		bool bAnimateThisTick() { mixin(MGBPC(1080, 0x8)); }
 		bool bAnimateThisTick(bool val) { mixin(MSBPC(1080, 0x8)); }

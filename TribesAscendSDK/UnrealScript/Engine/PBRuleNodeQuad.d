@@ -20,7 +20,7 @@ public extern(D):
 			int QuadLightmapRes() { mixin(MGPC("int", 116)); }
 			float RepeatMaxSizeZ() { mixin(MGPC("float", 112)); }
 			float RepeatMaxSizeX() { mixin(MGPC("float", 108)); }
-			// WARNING: Property 'Material' has the same name as a defined type!
+			MaterialInterface MaterialVar() { mixin(MGPC("MaterialInterface", 104)); }
 		}
 		bool bDisableMaterialRepeat() { mixin(MGBPC(124, 0x1)); }
 		bool bDisableMaterialRepeat(bool val) { mixin(MSBPC(124, 0x1)); }

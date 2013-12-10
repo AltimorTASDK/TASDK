@@ -6,7 +6,6 @@ import UnrealScript.Engine.CrowdPopulationManagerBase;
 import UnrealScript.GameFramework.GameCrowdAgent;
 import UnrealScript.Engine.NavigationHandle;
 import UnrealScript.GameFramework.GameCrowdDestination;
-import UnrealScript.Core.UObject;
 import UnrealScript.GameFramework.GameCrowdGroup;
 import UnrealScript.GameFramework.SeqAct_GameCrowdSpawner;
 import UnrealScript.Engine.LightComponent;
@@ -76,7 +75,7 @@ public extern(D):
 			ScriptArray!(GameCrowdDestination) PrioritizedSpawnPoints() { mixin(MGPC("ScriptArray!(GameCrowdDestination)", 556)); }
 			ScriptArray!(GameCrowdDestination) PotentialSpawnPoints() { mixin(MGPC("ScriptArray!(GameCrowdDestination)", 572)); }
 			GameCrowdAgent QueryingAgent() { mixin(MGPC("GameCrowdAgent", 624)); }
-			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
+			NavigationHandle NavigationHandleVar() { mixin(MGPC("NavigationHandle", 620)); }
 			ScriptClass NavigationHandleClass() { mixin(MGPC("ScriptClass", 616)); }
 			float InitialPopulationPct() { mixin(MGPC("float", 612)); }
 			float HeadVisibilityOffset() { mixin(MGPC("float", 608)); }

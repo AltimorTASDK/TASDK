@@ -2,7 +2,6 @@ module UnrealScript.Engine.MaterialExpressionTextureSampleParameterNormal;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpressionTextureSampleParameter;
 
 extern(C++) interface MaterialExpressionTextureSampleParameterNormal : MaterialExpressionTextureSampleParameter

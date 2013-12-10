@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.AnimNodeBlendList;
 import UnrealScript.Engine.Actor;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface AnimNodeBlendByProperty : AnimNodeBlendList
 {

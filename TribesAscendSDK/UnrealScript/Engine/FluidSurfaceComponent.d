@@ -2,7 +2,6 @@ module UnrealScript.Engine.FluidSurfaceComponent;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.ShadowMap2D;

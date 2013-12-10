@@ -77,10 +77,10 @@ public extern(D):
 		{
 			Vector HitLocation() { mixin(MGPS("Vector", 0)); }
 			Vector Momentum() { mixin(MGPS("Vector", 12)); }
-			// WARNING: Property 'DamageType' has the same name as a defined type!
+			ScriptClass DamageTypeVar() { mixin(MGPS("ScriptClass", 24)); }
 			Pawn InstigatedBy() { mixin(MGPS("Pawn", 28)); }
 			ubyte HitBoneIndex() { mixin(MGPS("ubyte", 32)); }
-			// WARNING: Property 'PhysicalMaterial' has the same name as a defined type!
+			PhysicalMaterial PhysicalMaterialVar() { mixin(MGPS("PhysicalMaterial", 36)); }
 			float Damage() { mixin(MGPS("float", 40)); }
 			Vector RadialDamageOrigin() { mixin(MGPS("Vector", 44)); }
 		}

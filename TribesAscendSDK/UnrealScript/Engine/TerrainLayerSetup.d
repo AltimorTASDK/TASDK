@@ -27,7 +27,7 @@ public extern(D):
 		{
 			auto ref
 			{
-				// WARNING: Property 'Material' has the same name as a defined type!
+				TerrainMaterial MaterialVar() { mixin(MGPS("TerrainMaterial", 80)); }
 				float Alpha() { mixin(MGPS("float", 76)); }
 				TerrainLayerSetup.FilterLimit MaxSlope() { mixin(MGPS("TerrainLayerSetup.FilterLimit", 60)); }
 				TerrainLayerSetup.FilterLimit MinSlope() { mixin(MGPS("TerrainLayerSetup.FilterLimit", 44)); }

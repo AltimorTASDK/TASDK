@@ -70,7 +70,7 @@ public extern(D):
 			int OverriddenLightMapRes() { mixin(MGPC("int", 524)); }
 			int OverriddenLightMapResolution() { mixin(MGPC("int", 520)); }
 			UObject.Color WireframeColor() { mixin(MGPC("UObject.Color", 512)); }
-			// WARNING: Property 'StaticMesh' has the same name as a defined type!
+			StaticMesh StaticMeshVar() { mixin(MGPC("StaticMesh", 508)); }
 			int PreviousLODLevel() { mixin(MGPC("int", 504)); }
 		}
 		bool bNeverBecomeDynamic() { mixin(MGBPC(548, 0x1)); }

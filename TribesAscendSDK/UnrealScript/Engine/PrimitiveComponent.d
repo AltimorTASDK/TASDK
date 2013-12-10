@@ -161,8 +161,10 @@ public extern(D):
 			bool Default(bool val) { mixin(MSBPS(0, 0x1)); }
 			bool Nothing() { mixin(MGBPS(0, 0x2)); }
 			bool Nothing(bool val) { mixin(MSBPS(0, 0x2)); }
-			// WARNING: Property 'Pawn' has the same name as a defined type!
-			// WARNING: Property 'Vehicle' has the same name as a defined type!
+			bool PawnVar() { mixin(MGBPS(0, 0x4)); }
+			bool PawnVar(bool val) { mixin(MSBPS(0, 0x4)); }
+			bool VehicleVar() { mixin(MGBPS(0, 0x8)); }
+			bool VehicleVar(bool val) { mixin(MSBPS(0, 0x8)); }
 			bool Water() { mixin(MGBPS(0, 0x10)); }
 			bool Water(bool val) { mixin(MSBPS(0, 0x10)); }
 			bool GameplayPhysics() { mixin(MGBPS(0, 0x20)); }
@@ -185,7 +187,8 @@ public extern(D):
 			bool SoftBody(bool val) { mixin(MSBPS(0, 0x2000)); }
 			bool FracturedMeshPart() { mixin(MGBPS(0, 0x4000)); }
 			bool FracturedMeshPart(bool val) { mixin(MSBPS(0, 0x4000)); }
-			// WARNING: Property 'BlockingVolume' has the same name as a defined type!
+			bool BlockingVolumeVar() { mixin(MGBPS(0, 0x8000)); }
+			bool BlockingVolumeVar(bool val) { mixin(MSBPS(0, 0x8000)); }
 			bool DeadPawn() { mixin(MGBPS(0, 0x10000)); }
 			bool DeadPawn(bool val) { mixin(MSBPS(0, 0x10000)); }
 			bool Clothing() { mixin(MGBPS(0, 0x20000)); }

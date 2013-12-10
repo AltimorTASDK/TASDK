@@ -2,7 +2,6 @@ module UnrealScript.Engine.UIDataProvider_OnlinePlayerStorageArray;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataProvider;
 import UnrealScript.Engine.OnlinePlayerStorage;
 

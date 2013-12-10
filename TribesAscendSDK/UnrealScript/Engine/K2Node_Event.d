@@ -14,7 +14,7 @@ public extern(D):
 	@property final static K2Node_Event DefaultProperties() { mixin(MGDPC("K2Node_Event", "K2Node_Event Engine.Default__K2Node_Event")); }
 	@property final auto ref
 	{
-		// WARNING: Property 'Function' has the same name as a defined type!
+		Function FunctionVar() { mixin(MGPC("Function", 104)); }
 		ScriptString EventName() { mixin(MGPC("ScriptString", 92)); }
 	}
 }

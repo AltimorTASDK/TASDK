@@ -73,7 +73,7 @@ public extern(D):
 			float VolumeMultiplier() { mixin(MGPC("float", 488)); }
 			float PitchMultiplier() { mixin(MGPC("float", 492)); }
 			float SubtitlePriority() { mixin(MGPC("float", 308)); }
-			// WARNING: Property 'SoundCue' has the same name as a defined type!
+			SoundCue SoundCueVar() { mixin(MGPC("SoundCue", 88)); }
 			ScriptArray!(AudioComponent.AudioComponentParam) InstanceParameters() { mixin(MGPC("ScriptArray!(AudioComponent.AudioComponentParam)", 96)); }
 			ScriptArray!(Pointer) WaveInstances() { mixin(MGPC("ScriptArray!(Pointer)", 124)); }
 			ScriptArray!(ubyte) SoundNodeData() { mixin(MGPC("ScriptArray!(ubyte)", 136)); }
@@ -116,9 +116,9 @@ public extern(D):
 			float FadeInStartTime() { mixin(MGPC("float", 312)); }
 			Actor LastOwner() { mixin(MGPC("Actor", 304)); }
 			Vector ComponentLocation() { mixin(MGPC("Vector", 292)); }
-			// WARNING: Property 'PortalVolume' has the same name as a defined type!
+			PortalVolume PortalVolumeVar() { mixin(MGPC("PortalVolume", 276)); }
 			float PlaybackTime() { mixin(MGPC("float", 272)); }
-			// WARNING: Property 'Listener' has the same name as a defined type!
+			Pointer ListenerVar() { mixin(MGPC("Pointer", 268)); }
 			UObject.MultiMap_Mirror SoundNodeResetWaveMap() { mixin(MGPC("UObject.MultiMap_Mirror", 208)); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'SoundNodeOffsetMap'!
 			float LFEBleed() { mixin(MGPC("float", 116)); }

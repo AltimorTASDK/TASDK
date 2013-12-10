@@ -222,7 +222,7 @@ public extern(D):
 				ScriptString MenuString() { mixin(MGPS("ScriptString", 36)); }
 				ScriptString ChatString() { mixin(MGPS("ScriptString", 24)); }
 				ScriptString KeyBindPath() { mixin(MGPS("ScriptString", 12)); }
-				// WARNING: Property 'KeyBind' has the same name as a defined type!
+				ScriptName KeyBindVar() { mixin(MGPS("ScriptName", 4)); }
 				TrVGSCommandList.EVGSScope VGSScope() { mixin(MGPS("TrVGSCommandList.EVGSScope", 0)); }
 			}
 			bool bIsContext() { mixin(MGBPS(48, 0x1)); }

@@ -137,7 +137,7 @@ public extern(D):
 			SkeletalMesh ReplicatedMesh() { mixin(MGPC("SkeletalMesh", 492)); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FacialAudioComp'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
-			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkeletalMeshComponent'!
 		}
 		bool bCollideActors_OldValue() { mixin(MGBPC(476, 0x8)); }
 		bool bCollideActors_OldValue(bool val) { mixin(MSBPC(476, 0x8)); }

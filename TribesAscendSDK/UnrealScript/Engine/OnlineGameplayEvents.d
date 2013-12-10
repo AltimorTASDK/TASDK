@@ -64,8 +64,8 @@ public extern(D):
 			ScriptArray!(OnlineGameplayEvents.PlayerInformation) PlayerList() { mixin(MGPC("ScriptArray!(OnlineGameplayEvents.PlayerInformation)", 60)); }
 			ScriptArray!(ScriptString) EventDescList() { mixin(MGPC("ScriptArray!(ScriptString)", 72)); }
 			ScriptArray!(ScriptName) EventNames() { mixin(MGPC("ScriptArray!(ScriptName)", 84)); }
-			// WARNING: Property 'GameplayEvents' has the same name as a defined type!
-			// WARNING: Property 'PlayerEvents' has the same name as a defined type!
+			ScriptArray!(OnlineGameplayEvents.GameplayEvent) GameplayEventsVar() { mixin(MGPC("ScriptArray!(OnlineGameplayEvents.GameplayEvent)", 96)); }
+			ScriptArray!(OnlineGameplayEvents.PlayerEvent) PlayerEventsVar() { mixin(MGPC("ScriptArray!(OnlineGameplayEvents.PlayerEvent)", 108)); }
 			UObject.Guid GameplaySessionID() { mixin(MGPC("UObject.Guid", 136)); }
 			ScriptString GameplaySessionStartTime() { mixin(MGPC("ScriptString", 120)); }
 		}

@@ -307,7 +307,7 @@ public extern(D):
 			ScriptArray!(ScriptString) MapPrefixes() { mixin(MGPC("ScriptArray!(ScriptString)", 1116)); }
 			ScriptArray!(UTGame.GameMapCycle) GameSpecificMapCycles() { mixin(MGPC("ScriptArray!(UTGame.GameMapCycle)", 1148)); }
 			ScriptArray!(UTGame.ActiveBotInfo) ActiveBots() { mixin(MGPC("ScriptArray!(UTGame.ActiveBotInfo)", 1164)); }
-			// WARNING: Property 'GameplayEventsWriter' has the same name as a defined type!
+			GameplayEventsWriter GameplayEventsWriterVar() { mixin(MGPC("GameplayEventsWriter", 1252)); }
 			ScriptString GameplayEventsWriterClassName() { mixin(MGPC("ScriptString", 1240)); }
 			ScriptName MidgameScorePanelTag() { mixin(MGPC("ScriptName", 1232)); }
 			Pawn Sniper() { mixin(MGPC("Pawn", 1228)); }

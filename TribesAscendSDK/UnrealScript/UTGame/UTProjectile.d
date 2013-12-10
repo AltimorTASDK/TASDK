@@ -105,7 +105,7 @@ public extern(D):
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ProjEffects'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientComponent'!
 			SoundCue ExplosionSound() { mixin(MGPC("SoundCue", 604)); }
-			// WARNING: Property 'AmbientSound' has the same name as a defined type!
+			SoundCue AmbientSoundVar() { mixin(MGPC("SoundCue", 600)); }
 		}
 		bool bAttachExplosionToVehicles() { mixin(MGBPC(596, 0x40)); }
 		bool bAttachExplosionToVehicles(bool val) { mixin(MSBPC(596, 0x40)); }

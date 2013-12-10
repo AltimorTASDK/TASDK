@@ -136,7 +136,7 @@ public extern(D):
 				Vector SearchStart() { mixin(MGPS("Vector", 24)); }
 				float SearchLaneMultiplier() { mixin(MGPS("float", 20)); }
 				Vector SearchExtent() { mixin(MGPS("Vector", 8)); }
-				// WARNING: Property 'Interface' has the same name as a defined type!
+				Pointer InterfaceVar() { mixin(MGPS("Pointer", 0)); }
 			}
 			bool bAbleToSearch() { mixin(MGBPS(4, 0x4)); }
 			bool bAbleToSearch(bool val) { mixin(MSBPS(4, 0x4)); }

@@ -42,11 +42,11 @@ public extern(D):
 			UObject.UntypedBulkData_Mirror Data() { mixin(MGPC("UObject.UntypedBulkData_Mirror", 260)); }
 			CodecMovie Decoder() { mixin(MGPC("CodecMovie", 252)); }
 			ScriptClass DecoderClass() { mixin(MGPC("ScriptClass", 248)); }
-			// WARNING: Property 'MovieStreamSource' has the same name as a defined type!
+			TextureMovie.EMovieStreamSource MovieStreamSourceVar() { mixin(MGPC("TextureMovie.EMovieStreamSource", 247)); }
 			int SizeX() { mixin(MGPC("int", 236)); }
 			Texture.TextureAddress AddressY() { mixin(MGPC("Texture.TextureAddress", 246)); }
 			Texture.TextureAddress AddressX() { mixin(MGPC("Texture.TextureAddress", 245)); }
-			// WARNING: Property 'Format' has the same name as a defined type!
+			Texture.EPixelFormat FormatVar() { mixin(MGPC("Texture.EPixelFormat", 244)); }
 			int SizeY() { mixin(MGPC("int", 240)); }
 		}
 		bool AutoPlay() { mixin(MGBPC(256, 0x8)); }

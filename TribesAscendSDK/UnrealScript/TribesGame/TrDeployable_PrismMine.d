@@ -5,7 +5,6 @@ import UnrealScript.Helpers;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.ParticleSystem;
-import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrDeployable;
 import UnrealScript.TribesGame.TrTripActor;
 

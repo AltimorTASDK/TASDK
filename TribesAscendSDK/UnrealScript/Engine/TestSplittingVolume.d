@@ -2,7 +2,6 @@ module UnrealScript.Engine.TestSplittingVolume;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Volume;
 
 extern(C++) interface TestSplittingVolume : Volume

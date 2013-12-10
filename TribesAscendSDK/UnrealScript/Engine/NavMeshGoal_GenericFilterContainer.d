@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.NavMeshGoal_Filter;
 import UnrealScript.Engine.NavigationHandle;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.NavMeshPathGoalEvaluator;
 
 extern(C++) interface NavMeshGoal_GenericFilterContainer : NavMeshPathGoalEvaluator

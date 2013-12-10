@@ -2,7 +2,6 @@ module UnrealScript.Engine.NxForceFieldComponent;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.ForceFieldShape;
 

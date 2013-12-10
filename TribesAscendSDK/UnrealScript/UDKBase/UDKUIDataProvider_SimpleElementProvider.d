@@ -2,7 +2,6 @@ module UnrealScript.UDKBase.UDKUIDataProvider_SimpleElementProvider;
 
 import ScriptClasses;
 import UnrealScript.Helpers;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataProvider;
 
 extern(C++) interface UDKUIDataProvider_SimpleElementProvider : UIDataProvider

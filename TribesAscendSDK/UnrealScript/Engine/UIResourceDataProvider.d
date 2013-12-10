@@ -3,7 +3,6 @@ module UnrealScript.Engine.UIResourceDataProvider;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.UIPropertyDataProvider;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface UIResourceDataProvider : UIPropertyDataProvider
 {

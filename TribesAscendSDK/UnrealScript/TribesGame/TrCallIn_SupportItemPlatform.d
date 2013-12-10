@@ -36,7 +36,7 @@ public extern(D):
 		TrGameObjective r_DeployedItem() { mixin(MGPC("TrGameObjective", 476)); }
 		ubyte DefenderTeamIndex() { mixin(MGPC("ubyte", 496)); }
 		ScriptName ItemAttachPointName() { mixin(MGPC("ScriptName", 488)); }
-		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
 	}
 final:

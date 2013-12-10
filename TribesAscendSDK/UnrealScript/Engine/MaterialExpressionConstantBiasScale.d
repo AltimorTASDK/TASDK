@@ -15,6 +15,6 @@ public extern(D):
 	{
 		float Scale() { mixin(MGPC("float", 140)); }
 		float Bias() { mixin(MGPC("float", 136)); }
-		// WARNING: Property 'Input' has the same name as a defined type!
+		MaterialExpression.ExpressionInput InputVar() { mixin(MGPC("MaterialExpression.ExpressionInput", 108)); }
 	}
 }

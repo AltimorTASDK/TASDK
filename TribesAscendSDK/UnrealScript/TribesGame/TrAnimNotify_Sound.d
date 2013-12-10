@@ -21,7 +21,7 @@ public extern(D):
 		@property final auto ref
 		{
 			ScriptClass DeviceClass() { mixin(MGPS("ScriptClass", 4)); }
-			// WARNING: Property 'SoundCue' has the same name as a defined type!
+			SoundCue SoundCueVar() { mixin(MGPS("SoundCue", 0)); }
 		}
 	}
 	@property final auto ref

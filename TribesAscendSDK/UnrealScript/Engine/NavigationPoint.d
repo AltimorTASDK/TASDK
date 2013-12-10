@@ -124,7 +124,7 @@ public extern(D):
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GoodSprite'!
 			UObject.Guid NavGuid() { mixin(MGPC("UObject.Guid", 656)); }
 			UObject.Cylinder MaxPathSize() { mixin(MGPC("UObject.Cylinder", 648)); }
-			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 			float LastDetourWeight() { mixin(MGPC("float", 640)); }
 			float InventoryDist() { mixin(MGPC("float", 636)); }
 			DroppedPickup InventoryCache() { mixin(MGPC("DroppedPickup", 632)); }

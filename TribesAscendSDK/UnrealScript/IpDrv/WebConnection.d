@@ -62,7 +62,7 @@ public extern(D):
 			WebResponse Response() { mixin(MGPC("WebResponse", 560)); }
 			WebRequest Request() { mixin(MGPC("WebRequest", 556)); }
 			ScriptString ReceivedData() { mixin(MGPC("ScriptString", 544)); }
-			// WARNING: Property 'WebServer' has the same name as a defined type!
+			WebServer WebServerVar() { mixin(MGPC("WebServer", 540)); }
 		}
 		bool bDelayCleanup() { mixin(MGBPC(568, 0x1)); }
 		bool bDelayCleanup(bool val) { mixin(MSBPC(568, 0x1)); }

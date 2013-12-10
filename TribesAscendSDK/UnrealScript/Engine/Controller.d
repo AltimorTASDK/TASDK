@@ -6,7 +6,6 @@ import UnrealScript.Engine.Projectile;
 import UnrealScript.Engine.FaceFXAnimSet;
 import UnrealScript.Engine.NavigationPoint;
 import UnrealScript.Engine.ReachSpec;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.InterpActor;
 import UnrealScript.Engine.NavigationHandle;
 import UnrealScript.Engine.PhysicsVolume;
@@ -23,8 +22,8 @@ import UnrealScript.Engine.Pawn;
 import UnrealScript.Engine.CoverLink;
 import UnrealScript.Engine.SeqAct_ModifyHealth;
 import UnrealScript.Engine.LiftCenter;
-import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.HUD;
+import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.SeqAct_ToggleGodMode;
 import UnrealScript.Engine.SeqAct_Interp;
 import UnrealScript.Engine.InterpGroupInst;
@@ -330,8 +329,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			// WARNING: Property 'Pawn' has the same name as a defined type!
-			// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
+			Pawn PawnVar() { mixin(MGPC("Pawn", 480)); }
+			PlayerReplicationInfo PlayerReplicationInfoVar() { mixin(MGPC("PlayerReplicationInfo", 484)); }
 			ScriptArray!(NavigationPoint) RouteCache() { mixin(MGPC("ScriptArray!(NavigationPoint)", 716)); }
 			ScriptArray!(Controller.VisiblePortalInfo) VisiblePortals() { mixin(MGPC("ScriptArray!(Controller.VisiblePortalInfo)", 860)); }
 			Vector NavMeshPath_SearchExtent_Modifier() { mixin(MGPC("Vector", 888)); }
@@ -369,7 +368,7 @@ public extern(D):
 			Actor MoveTarget() { mixin(MGPC("Actor", 532)); }
 			float MoveTimer() { mixin(MGPC("float", 528)); }
 			Vector OverrideSearchStart() { mixin(MGPC("Vector", 516)); }
-			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
+			NavigationHandle NavigationHandleVar() { mixin(MGPC("NavigationHandle", 512)); }
 			ScriptClass NavigationHandleClass() { mixin(MGPC("ScriptClass", 508)); }
 			float MinHitWall() { mixin(MGPC("float", 504)); }
 			ubyte bAltFire() { mixin(MGPC("ubyte", 501)); }

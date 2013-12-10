@@ -115,7 +115,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		// WARNING: Property 'WorldInfo' has the same name as a defined type!
+		WorldInfo WorldInfoVar() { mixin(MGPC("WorldInfo", 64)); }
 		PlayerController PC() { mixin(MGPC("PlayerController", 60)); }
 	}
 final:

@@ -75,7 +75,7 @@ public extern(D):
 			GFxObject ActiveReticule() { mixin(MGPC("GFxObject", 132)); }
 			GFxObject ReticulesMC() { mixin(MGPC("GFxObject", 128)); }
 			WorldInfo ThisWorld() { mixin(MGPC("WorldInfo", 124)); }
-			// WARNING: Property 'HUD' has the same name as a defined type!
+			GfxTrHud HUDVar() { mixin(MGPC("GfxTrHud", 120)); }
 		}
 		bool m_bVisible() { mixin(MGBPC(156, 0x1)); }
 		bool m_bVisible(bool val) { mixin(MSBPC(156, 0x1)); }

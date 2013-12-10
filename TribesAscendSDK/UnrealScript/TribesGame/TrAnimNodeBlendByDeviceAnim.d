@@ -67,7 +67,7 @@ public extern(D):
 				float Scale() { mixin(MGPS("float", 16)); }
 				float Rate() { mixin(MGPS("float", 12)); }
 				CameraAnimInst CameraAnimInstance() { mixin(MGPS("CameraAnimInst", 8)); }
-				// WARNING: Property 'CameraAnim' has the same name as a defined type!
+				CameraAnim CameraAnimVar() { mixin(MGPS("CameraAnim", 4)); }
 				int ChildIndex() { mixin(MGPS("int", 0)); }
 			}
 			bool bRandomStartTime() { mixin(MGBPS(28, 0x2)); }

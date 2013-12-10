@@ -4,7 +4,6 @@ import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.UIDataStore_GameResource;
 import UnrealScript.UDKBase.UDKUIResourceDataProvider;
-import UnrealScript.Core.UObject;
 
 extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 {

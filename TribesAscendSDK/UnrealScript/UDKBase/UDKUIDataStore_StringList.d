@@ -3,7 +3,6 @@ module UnrealScript.UDKBase.UDKUIDataStore_StringList;
 import ScriptClasses;
 import UnrealScript.Helpers;
 import UnrealScript.Engine.LocalPlayer;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.UIDataStore_StringBase;
 import UnrealScript.UDKBase.UDKUIDataProvider_StringArray;
 

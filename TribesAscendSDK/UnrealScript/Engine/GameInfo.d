@@ -416,12 +416,12 @@ public extern(D):
 			int AdjustedNetSpeed() { mixin(MGPC("int", 776)); }
 			int MaxDynamicBandwidth() { mixin(MGPC("int", 792)); }
 			float GameSpeed() { mixin(MGPC("float", 552)); }
-			// WARNING: Property 'GameReplicationInfo' has the same name as a defined type!
+			GameReplicationInfo GameReplicationInfoVar() { mixin(MGPC("GameReplicationInfo", 688)); }
 			ScriptClass GameReplicationInfoClass() { mixin(MGPC("ScriptClass", 684)); }
 			CoverReplicator CoverReplicatorBase() { mixin(MGPC("CoverReplicator", 756)); }
 			ScriptString GameName() { mixin(MGPC("ScriptString", 612)); }
-			// WARNING: Property 'BroadcastHandler' has the same name as a defined type!
-			// WARNING: Property 'AccessControl' has the same name as a defined type!
+			BroadcastHandler BroadcastHandlerVar() { mixin(MGPC("BroadcastHandler", 664)); }
+			AccessControl AccessControlVar() { mixin(MGPC("AccessControl", 656)); }
 			int NumTravellingPlayers() { mixin(MGPC("int", 592)); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CanUnpause__Delegate'!
 			ScriptArray!(

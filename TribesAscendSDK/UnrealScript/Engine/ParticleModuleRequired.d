@@ -54,7 +54,7 @@ public extern(D):
 			ParticleEmitter.EParticleSubUVInterpMethod InterpolationMethod() { mixin(MGPC("ParticleEmitter.EParticleSubUVInterpMethod", 79)); }
 			ParticleEmitter.EParticleBurstMethod ParticleBurstMethod() { mixin(MGPC("ParticleEmitter.EParticleBurstMethod", 78)); }
 			ParticleModuleRequired.EParticleSortMode SortMode() { mixin(MGPC("ParticleModuleRequired.EParticleSortMode", 77)); }
-			// WARNING: Property 'Material' has the same name as a defined type!
+			MaterialInterface MaterialVar() { mixin(MGPC("MaterialInterface", 72)); }
 			ParticleSpriteEmitter.EParticleScreenAlignment ScreenAlignment() { mixin(MGPC("ParticleSpriteEmitter.EParticleScreenAlignment", 76)); }
 		}
 		bool bUseMaxDrawCount() { mixin(MGBPC(84, 0x800)); }

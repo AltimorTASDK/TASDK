@@ -52,7 +52,7 @@ public extern(D):
 		auto ref
 		{
 			float AITriggerDelay() { mixin(MGPC("float", 484)); }
-			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
+			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CylinderComponent'!
 		}
 		bool bRecentlyTriggered() { mixin(MGBPC(480, 0x1)); }
 		bool bRecentlyTriggered(bool val) { mixin(MSBPC(480, 0x1)); }

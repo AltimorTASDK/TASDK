@@ -7,7 +7,6 @@ import UnrealScript.Engine.UIDataProvider_OnlineProfileSettings;
 import UnrealScript.Engine.UIDataProvider_OnlinePartyChatList;
 import UnrealScript.Engine.UIDataProvider_PlayerAchievements;
 import UnrealScript.Engine.UIDataProvider_OnlineFriendMessages;
-import UnrealScript.Core.UObject;
 import UnrealScript.Engine.OnlineProfileSettings;
 import UnrealScript.Engine.UIDataStore_Remote;
 import UnrealScript.Engine.UIDataProvider_OnlineFriends;
