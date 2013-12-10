@@ -84,17 +84,12 @@ extern(C) HookType TribesGame_TrPlayerController_SwitchToCallIn(TrPlayerControll
 
 		if (invManager)
 		{
-			TrDevice device = invManager.GetDeviceByEquipPoint(TrObject.TR_EQUIP_POINT.EQP_LaserTarget);
-
-			if (cast(TrDevice)(pawn.WeaponVar) != device) //Make sure it's not already equipped
-			{
-				if (T == 1)
-					invManager.SwitchWeaponByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Tertiary);
-				else if (T == 2)
-					invManager.SwitchWeaponByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Quaternary);
-				else if (T == 3)
-					invManager.SwitchWeaponByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Quinary);
-			}
+			if (T == 1 && cast(TrDevice)(pawn.WeaponVar) != invManager.GetDeviceByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Tertiary))
+				invManager.SwitchWeaponByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Tertiary);
+			else if (T == 2 && cast(TrDevice)(pawn.WeaponVar) != invManager.GetDeviceByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Quaternary))
+				invManager.SwitchWeaponByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Quaternary);
+			else if (T == 3 && cast(TrDevice)(pawn.WeaponVar) != invManager.GetDeviceByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Quinary))
+				invManager.SwitchWeaponByEquipPoint(CUSTOM_EQUIP_POINT.EQP_Quinary);
 		}
 	}
 	
